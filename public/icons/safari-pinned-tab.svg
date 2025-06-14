@@ -1,0 +1,15 @@
+
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Simplified monochrome version -->
+  <circle cx="256" cy="256" r="240" fill="black"/>
+  <text x="180" y="280" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="white" text-anchor="middle">30</text>
+  <g transform="translate(300, 200)" fill="white">
+    <rect x="20" y="40" width="8" height="80" rx="4"/>
+    <circle cx="24" cy="35" r="12" fill="none" stroke="white" stroke-width="4"/>
+    <circle cx="24" cy="125" r="8"/>
+    <rect x="40" y="50" width="6" height="70" rx="3"/>
+    <rect x="37" y="45" width="12" height="8" rx="2"/>
+    <rect x="60" y="60" width="5" height="60" rx="2"/>
+    <rect x="55" y="55" width="15" height="10" rx="3"/>
+  </g>
+</svg>

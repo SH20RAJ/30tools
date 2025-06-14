@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -93,24 +94,36 @@ export const metadata = {
     'msapplication-config': '/browserconfig.xml',
   },
 };
-// Google Analytics tracking script
-export const analytics = {
-  google: {
-    trackingId: 'G-0LV8F646TM',
-    script: `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-0LV8F646TM');
-    `
-  }
-};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0LV8F646TM');
+            `,
+          }}
+        />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         {children}
