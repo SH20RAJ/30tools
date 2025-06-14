@@ -117,11 +117,11 @@ export default function Home() {
               Free Online Tools for Everyone
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Compress images, merge PDFs, convert videos, and process files instantly. 
-              <strong className="text-foreground"> No sign-up required.</strong> 
+              Compress images, merge PDFs, convert videos, and process files instantly.
+              <strong className="text-foreground"> No sign-up required.</strong>
               <strong className="text-green-600"> 100% privacy guaranteed.</strong>
             </p>
-            
+
             {/* Search Bar */}
             <div className="max-w-2xl mx-auto mb-12">
               <form onSubmit={handleSearch} className="relative">
@@ -132,15 +132,15 @@ export default function Home() {
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="pl-12 pr-24 h-14 text-lg bg-background/50 backdrop-blur border-2 focus:border-primary"
                 />
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="absolute right-2 top-1/2 transform -translate-y-1/2 h-10"
                   disabled={!searchQuery.trim()}
                 >
                   Search
                 </Button>
               </form>
-              
+
               {/* Quick Search Tags */}
               <div className="flex flex-wrap justify-center gap-2 mt-4">
                 {['image compressor', 'pdf merger', 'video converter', 'word counter'].map((tag) => (
@@ -185,7 +185,7 @@ export default function Home() {
               Explore our comprehensive collection of tools organized by type. Each category offers powerful utilities for your daily workflow.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {toolCategories.map((category) => {
               const IconComponent = category.icon;
@@ -224,7 +224,7 @@ export default function Home() {
                           )}
                         </div>
                       )}
-                      
+
                       {(!category.tools || category.tools.length === 0) && (
                         <div className="text-center py-4">
                           <p className="text-muted-foreground text-sm mb-2">Coming Soon</p>
@@ -249,7 +249,7 @@ export default function Home() {
               Built with modern technology and user privacy in mind. All tools work directly in your browser for maximum security and speed.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
@@ -282,17 +282,17 @@ export default function Home() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Free Online Tools for Every Need</h2>
               <p className="text-lg text-muted-foreground">
-                30tools.com offers a comprehensive suite of free online tools designed to help you process files quickly and securely. 
+                30tools.com offers a comprehensive suite of free online tools designed to help you process files quickly and securely.
                 From image compression to PDF manipulation, our tools are built with privacy and performance in mind.
               </p>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div>
                 <h3 className="text-xl font-semibold mb-4">🖼️ Image Processing Tools</h3>
                 <p className="text-muted-foreground mb-4">
-                  Compress JPEG, PNG, and WebP images without losing quality. Our advanced image compression algorithms 
-                  reduce file sizes by up to 80% while maintaining visual clarity. Perfect for web optimization, 
+                  Compress JPEG, PNG, and WebP images without losing quality. Our advanced image compression algorithms
+                  reduce file sizes by up to 80% while maintaining visual clarity. Perfect for web optimization,
                   email attachments, and storage management.
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
@@ -302,11 +302,11 @@ export default function Home() {
                   <li>• No file size limits or watermarks</li>
                 </ul>
               </div>
-              
+
               <div>
                 <h3 className="text-xl font-semibold mb-4">📄 PDF Management Tools</h3>
                 <p className="text-muted-foreground mb-4">
-                  Merge multiple PDFs into one document, split large PDFs into smaller files, or compress PDFs to reduce file size. 
+                  Merge multiple PDFs into one document, split large PDFs into smaller files, or compress PDFs to reduce file size.
                   Our PDF tools work entirely in your browser, ensuring your documents remain private and secure.
                 </p>
                 <ul className="text-sm text-muted-foreground space-y-1">
@@ -317,11 +317,11 @@ export default function Home() {
                 </ul>
               </div>
             </div>
-            
+
             <div className="bg-primary/5 rounded-lg p-8 text-center">
               <h3 className="text-2xl font-semibold mb-4">Privacy-First File Processing</h3>
               <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-                Unlike other online tools that upload your files to servers, 30tools.com processes everything locally in your browser. 
+                Unlike other online tools that upload your files to servers, 30tools.com processes everything locally in your browser.
                 This means your sensitive documents, images, and files never leave your device, providing ultimate privacy and security.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -358,7 +358,7 @@ export default function Home() {
                 <h3 className="text-lg font-semibold">30tools</h3>
               </div>
               <p className="text-muted-foreground text-sm mb-4">
-                Free online tools for image compression, PDF processing, and file conversion. 
+                Free online tools for image compression, PDF processing, and file conversion.
                 Privacy-first, lightning-fast, and completely free.
               </p>
               <div className="flex space-x-4">
@@ -366,7 +366,7 @@ export default function Home() {
                 <Badge variant="outline">Free Forever</Badge>
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Popular Tools</h4>
               <ul className="space-y-2 text-sm">
@@ -376,7 +376,7 @@ export default function Home() {
                 <li><Link href="/search?q=audio+converter" className="text-muted-foreground hover:text-foreground transition-colors">Audio Converter</Link></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Categories</h4>
               <ul className="space-y-2 text-sm">
@@ -386,7 +386,7 @@ export default function Home() {
                 <li><Link href="/search?category=text" className="text-muted-foreground hover:text-foreground transition-colors">Text Tools</Link></li>
               </ul>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
@@ -397,11 +397,11 @@ export default function Home() {
               </ul>
             </div>
           </div>
-          
+
           <Separator className="my-8" />
-          
+
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-            <p>© 2024 30tools.com. All rights reserved.</p>
+            <p>© 2025 30tools.com. All rights reserved.</p>
             <p>Built with ❤️ for privacy and performance.</p>
           </div>
         </div>

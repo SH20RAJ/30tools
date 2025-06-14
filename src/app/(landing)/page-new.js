@@ -415,7 +415,7 @@ export default function Home() {
           <Separator className="my-8" />
 
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
-            <p>© 2024 30tools.com. All rights reserved.</p>
+            <p>© 2025 30tools.com. All rights reserved.</p>
             <p>Built with ❤️ for privacy and performance.</p>
           </div>
         </div>

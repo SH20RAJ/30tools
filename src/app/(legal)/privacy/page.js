@@ -22,9 +22,9 @@ export default function PrivacyPolicyPage() {
           </Link>
           <div className="flex items-center gap-2 mb-2">
             <h1 className="text-3xl font-bold">Privacy Policy</h1>
-            <Badge variant="secondary">Updated Dec 2024</Badge>
+            <Badge variant="secondary">Updated Dec 2025</Badge>
           </div>
-          <p className="text-muted-foreground">Effective Date: December 14, 2024</p>
+          <p className="text-muted-foreground">Effective Date: December 14, 2025</p>
         </div>
 
         <div className="prose prose-gray max-w-none space-y-6">

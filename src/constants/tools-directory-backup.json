@@ -11,8 +11,19 @@
           "slug": "image-compressor",
           "component": "compression",
           "description": "Compress images without losing quality. Reduce file sizes by up to 80%.",
-          "keywords": ["compress images", "image optimization", "reduce file size", "jpeg compressor", "png compressor"],
-          "seoRoutes": ["free-image-compressor", "compress-images-online", "image-optimizer", "image-minimizer"],
+          "keywords": [
+            "compress images",
+            "image optimization",
+            "reduce file size",
+            "jpeg compressor",
+            "png compressor"
+          ],
+          "seoRoutes": [
+            "free-image-compressor",
+            "compress-images-online",
+            "image-optimizer",
+            "image-minimizer"
+          ],
           "status": "live",
           "featured": true,
           "category": "image"
@@ -20,7 +31,7 @@
       ]
     },
     "video": {
-      "name": "Video Tools", 
+      "name": "Video Tools",
       "description": "Video compression, conversion, and editing tools",
       "icon": "VideoIcon",
       "tools": []
@@ -28,7 +39,7 @@
     "audio": {
       "name": "Audio Tools",
       "description": "Audio format conversion, compression, and editing",
-      "icon": "MusicIcon", 
+      "icon": "MusicIcon",
       "tools": []
     },
     "pdf": {
@@ -45,7 +56,7 @@
     }
   },
   "meta": {
-    "lastUpdated": "2024-06-14",
+    "lastUpdated": "2025-06-14",
     "totalTools": 1,
     "version": "1.0"
   }

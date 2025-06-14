@@ -9,15 +9,15 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Progress } from '@/components/ui/progress';
-import { 
-  Upload, 
-  Download, 
-  Trash2, 
-  Eye, 
-  EyeOff, 
-  CheckCircle, 
-  AlertCircle, 
-  Loader, 
+import {
+  Upload,
+  Download,
+  Trash2,
+  Eye,
+  EyeOff,
+  CheckCircle,
+  AlertCircle,
+  Loader,
   Image as ImageIcon,
   Scissors,
   Wand2,
@@ -63,17 +63,17 @@ export default function BackgroundRemoverTool() {
     const validFiles = fileList.filter(file => {
       const isValidType = supportedFormats.includes(file.type);
       const isValidSize = file.size <= maxFileSize;
-      
+
       if (!isValidType) {
         alert(`${file.name} is not a supported image format. Please use JPG, PNG, or WebP.`);
         return false;
       }
-      
+
       if (!isValidSize) {
         alert(`${file.name} is too large. Maximum size is ${formatFileSize(maxFileSize)}.`);
         return false;
       }
-      
+
       return true;
     });
 
@@ -99,33 +99,33 @@ export default function BackgroundRemoverTool() {
       img.onload = () => {
         const canvas = document.createElement('canvas');
         const ctx = canvas.getContext('2d');
-        
+
         canvas.width = img.width;
         canvas.height = img.height;
-        
+
         // Draw the original image
         ctx.drawImage(img, 0, 0);
-        
+
         // Simulate background removal by creating a simple edge detection effect
         // In a real implementation, this would use ML models or API services
         const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
         const data = imageData.data;
-        
+
         // Simple background removal simulation - make light colors transparent
         for (let i = 0; i < data.length; i += 4) {
           const r = data[i];
           const g = data[i + 1];
           const b = data[i + 2];
           const brightness = (r + g + b) / 3;
-          
+
           // If pixel is bright (likely background), make it transparent
           if (brightness > 200) {
             data[i + 3] = 0; // Set alpha to 0 (transparent)
           }
         }
-        
+
         ctx.putImageData(imageData, 0, 0);
-        
+
         canvas.toBlob((blob) => {
           const processedUrl = URL.createObjectURL(blob);
           resolve({
@@ -134,7 +134,7 @@ export default function BackgroundRemoverTool() {
           });
         }, 'image/png');
       };
-      
+
       img.src = fileData.originalUrl;
     });
   }, []);
@@ -149,7 +149,7 @@ export default function BackgroundRemoverTool() {
       const file = files[i];
       if (file.status === 'completed') continue;
 
-      setFiles(prev => prev.map(f => 
+      setFiles(prev => prev.map(f =>
         f.id === file.id ? { ...f, status: 'processing', progress: 0 } : f
       ));
 
@@ -157,14 +157,14 @@ export default function BackgroundRemoverTool() {
         // Simulate processing progress
         for (let p = 0; p <= 100; p += 10) {
           await new Promise(resolve => setTimeout(resolve, 100));
-          setFiles(prev => prev.map(f => 
+          setFiles(prev => prev.map(f =>
             f.id === file.id ? { ...f, progress: p } : f
           ));
         }
 
         const result = await removeBackground(file);
-        
-        setFiles(prev => prev.map(f => 
+
+        setFiles(prev => prev.map(f =>
           f.id === file.id ? {
             ...f,
             status: 'completed',
@@ -174,7 +174,7 @@ export default function BackgroundRemoverTool() {
           } : f
         ));
       } catch (error) {
-        setFiles(prev => prev.map(f => 
+        setFiles(prev => prev.map(f =>
           f.id === file.id ? { ...f, status: 'error', progress: 0 } : f
         ));
       }
@@ -187,7 +187,7 @@ export default function BackgroundRemoverTool() {
 
   const downloadFile = (fileData) => {
     if (!fileData.processedBlob) return;
-    
+
     const link = document.createElement('a');
     link.href = fileData.processedUrl;
     link.download = `no-bg-${fileData.name.replace(/\.[^/.]+$/, '')}.png`;
@@ -237,7 +237,7 @@ export default function BackgroundRemoverTool() {
       completed: 'default',
       error: 'destructive'
     };
-    
+
     const labels = {
       ready: 'Ready',
       processing: 'Processing...',
@@ -253,10 +253,10 @@ export default function BackgroundRemoverTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free Background Remover</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Remove backgrounds from images instantly. AI-powered background removal tool 
+          Remove backgrounds from images instantly. AI-powered background removal tool
           for professional results. Perfect for product photos, portraits, and design projects.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Wand2 className="h-5 w-5 text-primary" />
@@ -285,7 +285,7 @@ export default function BackgroundRemoverTool() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div 
+          <div
             className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center"
             onDrop={handleDrop}
             onDragOver={handleDragOver}
@@ -315,7 +315,7 @@ export default function BackgroundRemoverTool() {
         <Alert className="mb-6">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            <strong>Note:</strong> This is a demo version using simplified background removal. 
+            <strong>Note:</strong> This is a demo version using simplified background removal.
             In production, this would use advanced AI models for professional results.
           </AlertDescription>
         </Alert>
@@ -377,9 +377,9 @@ export default function BackgroundRemoverTool() {
                           <Download className="h-4 w-4" />
                         </Button>
                       )}
-                      <Button 
-                        onClick={() => removeFile(file.id)} 
-                        variant="outline" 
+                      <Button
+                        onClick={() => removeFile(file.id)}
+                        variant="outline"
                         size="sm"
                       >
                         <Trash2 className="h-4 w-4" />
@@ -411,7 +411,7 @@ export default function BackgroundRemoverTool() {
                         </div>
                       </div>
                     )}
-                    
+
                     {file.processedUrl && (
                       <div className={showOriginal ? '' : 'md:col-span-2'}>
                         <Label className="text-sm font-medium mb-2 block">
@@ -433,8 +433,8 @@ export default function BackgroundRemoverTool() {
 
             {files.length > 0 && !isProcessing && (
               <div className="mt-6">
-                <Button 
-                  onClick={handleRemoveBackground} 
+                <Button
+                  onClick={handleRemoveBackground}
                   disabled={files.every(f => f.status === 'completed')}
                   className="w-full"
                 >

@@ -10,16 +10,16 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  Upload, 
-  Video, 
-  Download, 
-  Trash2, 
-  Play, 
-  Pause, 
-  CheckCircle, 
-  AlertCircle, 
-  Loader, 
+import {
+  Upload,
+  Video,
+  Download,
+  Trash2,
+  Play,
+  Pause,
+  CheckCircle,
+  AlertCircle,
+  Loader,
   FileVideo,
   Smartphone,
   Monitor,
@@ -68,17 +68,17 @@ export default function VideoCompressorTool() {
     const validFiles = fileList.filter(file => {
       const isValidType = supportedFormats.includes(file.type);
       const isValidSize = file.size <= maxFileSize;
-      
+
       if (!isValidType) {
         alert(`${file.name} is not a supported video format`);
         return false;
       }
-      
+
       if (!isValidSize) {
         alert(`${file.name} is too large. Maximum size is ${formatFileSize(maxFileSize)}`);
         return false;
       }
-      
+
       return true;
     });
 
@@ -104,11 +104,11 @@ export default function VideoCompressorTool() {
         const originalSize = fileData.size;
         const compressionRatio = (100 - quality) / 100;
         const compressedSize = Math.max(originalSize * (1 - compressionRatio), originalSize * 0.1);
-        
+
         // Create a mock compressed blob (in real implementation, use FFmpeg.wasm)
         const compressedBlob = new Blob(['compressed video data'], { type: 'video/mp4' });
         Object.defineProperty(compressedBlob, 'size', { value: compressedSize });
-        
+
         resolve({
           blob: compressedBlob,
           size: compressedSize
@@ -130,14 +130,14 @@ export default function VideoCompressorTool() {
       const file = files[i];
       if (file.status === 'compressed') continue;
 
-      setFiles(prev => prev.map(f => 
+      setFiles(prev => prev.map(f =>
         f.id === file.id ? { ...f, status: 'compressing', progress: 0 } : f
       ));
 
       try {
         const result = await compressVideo(file, compressionLevel[0]);
-        
-        setFiles(prev => prev.map(f => 
+
+        setFiles(prev => prev.map(f =>
           f.id === file.id ? {
             ...f,
             status: 'compressed',
@@ -147,7 +147,7 @@ export default function VideoCompressorTool() {
           } : f
         ));
       } catch (error) {
-        setFiles(prev => prev.map(f => 
+        setFiles(prev => prev.map(f =>
           f.id === file.id ? { ...f, status: 'error', progress: 0 } : f
         ));
       }
@@ -160,7 +160,7 @@ export default function VideoCompressorTool() {
 
   const downloadFile = (fileData) => {
     if (!fileData.compressedBlob) return;
-    
+
     const url = URL.createObjectURL(fileData.compressedBlob);
     const a = document.createElement('a');
     a.href = url;
@@ -210,7 +210,7 @@ export default function VideoCompressorTool() {
       compressed: 'default',
       error: 'destructive'
     };
-    
+
     const labels = {
       ready: 'Ready',
       compressing: 'Compressing...',
@@ -233,7 +233,7 @@ export default function VideoCompressorTool() {
           Compress videos online for free. Reduce file size by up to 80% while maintaining quality.
           Perfect for WhatsApp, social media, and web optimization.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Smartphone className="h-5 w-5 text-primary" />
@@ -344,9 +344,9 @@ export default function VideoCompressorTool() {
                             <Download className="h-4 w-4" />
                           </Button>
                         )}
-                        <Button 
-                          onClick={() => removeFile(file.id)} 
-                          variant="outline" 
+                        <Button
+                          onClick={() => removeFile(file.id)}
+                          variant="outline"
                           size="sm"
                         >
                           <Trash2 className="h-4 w-4" />
@@ -358,8 +358,8 @@ export default function VideoCompressorTool() {
 
                 {files.length > 0 && (
                   <div className="mt-6 flex flex-col sm:flex-row gap-4">
-                    <Button 
-                      onClick={handleCompress} 
+                    <Button
+                      onClick={handleCompress}
                       disabled={isCompressing || files.every(f => f.status === 'compressed')}
                       className="flex-1"
                     >
@@ -431,8 +431,8 @@ export default function VideoCompressorTool() {
                 <Label className="text-base font-medium mb-4 block">Quick Presets</Label>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                   {Object.entries(compressionPresets).map(([key, preset]) => (
-                    <Card 
-                      key={key} 
+                    <Card
+                      key={key}
                       className="cursor-pointer hover:bg-accent transition-colors"
                       onClick={() => setCompressionLevel([preset.quality])}
                     >
@@ -500,7 +500,7 @@ export default function VideoCompressorTool() {
                     <strong>WhatsApp limit:</strong> Use 50% quality or lower to stay under 16MB limit
                   </AlertDescription>
                 </Alert>
-                
+
                 <div className="grid gap-4 md:grid-cols-2">
                   <div>
                     <h4 className="font-medium mb-2">Quality Guidelines:</h4>

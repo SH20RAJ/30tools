@@ -10,12 +10,14 @@ This is the core rulebook that will help us **strategically outrank competitors*
 We aren't selling the tools, there are so many websites who are providing these same tools we are unique we are providing ux. we are providing them for free to build a community and get backlinks and traffic.
 
 ## 📌 Key Principles
+
 1. **SEO-First Development**: Every tool must be built with SEO in mind from day one.
 2. **User-Centric Design**: Prioritize user happiness and satisfaction.
 3. **Transparency & Trust**: Build trust through clear communication and privacy-first policies.
 4. **Continuous Improvement**: Always iterate based on user feedback and analytics.
 5. **Scalability**: Design components and architecture for easy scaling and future growth.
-6. **Offline Usage**: 
+6. **Offline Usage**:
+
 ---
 
 ## 📈 SEO Domination Strategy
@@ -211,14 +213,14 @@ We aren't selling the tools, there are so many websites who are providing these 
 
 ### ✅ **Quality Gates (NO EXCEPTIONS):**
 
-- ❌ **NEVER** commit without metadata
-- ❌ **NEVER** create page.js with functionality
-- ❌ **NEVER** mix constants in same file
-- ❌ **NEVER** forget FAQ sections
-- ❌ **NEVER** skip WH-questions content
-- ❌ **NEVER** create tool without batch processing
-- ❌ **NEVER** forget mobile optimization
-- ❌ **NEVER** skip internal linking
+* ❌ **NEVER** commit without metadata
+* ❌ **NEVER** create page.js with functionality
+* ❌ **NEVER** mix constants in same file
+* ❌ **NEVER** forget FAQ sections
+* ❌ **NEVER** skip WH-questions content
+* ❌ **NEVER** create tool without batch processing
+* ❌ **NEVER** forget mobile optimization
+* ❌ **NEVER** skip internal linking
 
 ---
 
@@ -226,7 +228,8 @@ We aren't selling the tools, there are so many websites who are providing these 
 
 ### ✅ **1. Page Structure**
 
-- **NEVER** write actual functionality code in `page.js` files
+* **NEVER** write actual functionality code in `page.js` files
+
 * `page.js` files should ONLY import and return components
 * All tool functionality must be in separate components under `/components/tools/`
 
@@ -254,7 +257,8 @@ We aren't selling the tools, there are so many websites who are providing these 
 
 ### ✅ **3. Multiple Route Support**
 
-- Same components can be used across multiple routes for SEO optimization but dont create multiple `page.js` files create a single component and use it for multiple routes I will create a JSON file to manage this.
+* Same components can be used across multiple routes for SEO optimization but dont create multiple `page.js` files create a single component and use it for multiple routes I will create a JSON file to manage this.
+
 * Use descriptive names for components that reflect their functionality
 * Example: `compression.jsx` can be used for:
   * `/image-compressor`
@@ -276,7 +280,8 @@ export default function PageName() {
 
 ### ✅ **5. Component Requirements**
 
-- Each tool component must be self-contained
+* Each tool component must be self-contained
+
 * Use only shadcn/ui components (NO custom CSS)
 * Must be responsive and accessible
 * Include proper error handling
@@ -286,7 +291,8 @@ export default function PageName() {
 
 ### ✅ **6. File Processing Rules**
 
-- All processing must happen client-side for privacy
+* All processing must happen client-side for privacy
+
 * Use appropriate libraries (Sharp for images, PDF-lib for PDFs, etc.)
 * Show progress indicators for long operations
 * Allow multiple file processing when applicable
@@ -297,6 +303,7 @@ export default function PageName() {
 ### ✅ **7. Route Groups & SEO Structure (CRITICAL FOR RANKING)**
 
 **MANDATORY ROUTE GROUP STRUCTURE:**
+
 ```
 src/app/
   /(landing)/
@@ -324,6 +331,7 @@ src/app/
 ### ✅ **8. Metadata Strategy (MONEY MAKER)**
 
 **EVERY PAGE MUST HAVE:**
+
 ```javascript
 export const metadata = {
   title: "Free Image Compressor - Reduce File Size by 80% | 30tools",
@@ -359,16 +367,17 @@ export const metadata = {
 ### ✅ **9. High-Volume Long-Tail Keywords Strategy**
 
 **TARGET THESE PATTERNS:**
-- "free [tool] online no watermark"
-- "compress [file type] without losing quality"
-- "batch [action] multiple files"
-- "[tool] for social media posts"
-- "best free [tool] 2024"
-- "[action] [file] for web optimization"
+* "free [tool] online no watermark"
+* "compress [file type] without losing quality"
+* "batch [action] multiple files"
+* "[tool] for social media posts"
+* "best free [tool] 2025"
+* "[action] [file] for web optimization"
 
 ### ✅ **10. Content Structure for SEO (MANDATORY)**
 
 **EVERY TOOL PAGE MUST INCLUDE:**
+
 ```javascript
 const pageContent = {
   // Above the fold
@@ -404,6 +413,7 @@ const pageContent = {
 ### ✅ **11. Constants Organization (CLEAN CODE)**
 
 **MANDATORY FOLDER STRUCTURE:**
+
 ```
 src/constants/
   /image/
@@ -434,6 +444,7 @@ src/constants/
 ### ✅ **12. Layout.js Strategy for Route Groups**
 
 **EACH ROUTE GROUP MUST HAVE:**
+
 ```javascript
 // (image)/layout.js
 import ImageToolsNavbar from '@/components/navigation/ImageToolsNavbar';
@@ -453,15 +464,16 @@ export default function ImageToolsLayout({ children }) {
 ### ✅ **13. Internal Linking Strategy (RANKING BOOST)**
 
 **MANDATORY CROSS-LINKING:**
-- Every image tool must link to other image tools
-- Use contextual anchor text with keywords
-- Add "Related Tools" section at bottom
-- Link to relevant blog posts (if created)
-- Use breadcrumbs for navigation
+* Every image tool must link to other image tools
+* Use contextual anchor text with keywords
+* Add "Related Tools" section at bottom
+* Link to relevant blog posts (if created)
+* Use breadcrumbs for navigation
 
 ### ✅ **14. Schema.org Structured Data (RICH RESULTS)**
 
 **EVERY TOOL PAGE MUST INCLUDE:**
+
 ```javascript
 const structuredData = {
   "@context": "https://schema.org",
@@ -486,19 +498,20 @@ const structuredData = {
 
 **CRITICAL CHANGE - READ CAREFULLY:**
 
-- ❌ **DON'T** create multiple routes for same tool (like `/image-compressor` + `/image-minimizer`)
-- ✅ **DO** focus on building MAXIMUM different working tools
-- ✅ **DO** create one primary route per tool functionality
-- ✅ **DO** programmatically generate multiple SEO routes later via JSON config
+* ❌ **DON'T** create multiple routes for same tool (like `/image-compressor` + `/image-minimizer`)
+* ✅ **DO** focus on building MAXIMUM different working tools
+* ✅ **DO** create one primary route per tool functionality
+* ✅ **DO** programmatically generate multiple SEO routes later via JSON config
 
 **REASONING:**
-- More unique tools = broader keyword coverage
-- Better user value = higher rankings
-- Programmatic route generation = scalable SEO
+* More unique tools = broader keyword coverage
+* Better user value = higher rankings
+* Programmatic route generation = scalable SEO
 
 ### ✅ **16. Tool Organization JSON (MANDATORY)**
 
 **CREATE `/constants/tools-directory.json`:**
+
 ```json
 {
   "image": [
@@ -521,29 +534,29 @@ const structuredData = {
 ### ✅ **17. Automated Sitemap Generation**
 
 **MUST INCLUDE:**
-- Dynamic sitemap.xml generation from tools directory
-- All tool pages + SEO routes
-- Landing pages and category pages
-- Proper lastmod, changefreq, priority
-- Submit to Google Search Console automatically
+* Dynamic sitemap.xml generation from tools directory
+* All tool pages + SEO routes
+* Landing pages and category pages
+* Proper lastmod, changefreq, priority
+* Submit to Google Search Console automatically
 
 ### ✅ **18. Progressive Web App (PWA) Requirements**
 
 **MANDATORY PWA FEATURES:**
-- Install prompt for mobile users
-- Offline functionality for tools
-- Service worker for caching
-- App-like experience
-- Icon sets for all devices
+* Install prompt for mobile users
+* Offline functionality for tools
+* Service worker for caching
+* App-like experience
+* Icon sets for all devices
 
 ### ✅ **19. Next.js Optimization (LEVERAGE EVERYTHING)**
 
 **MUST USE:**
-- next/image for all images with Sharp
-- Dynamic imports for code splitting
-- Static generation where possible
-- Edge runtime for faster responses
-- Metadata API for SEO
-- Server components by default
+* next/image for all images with Sharp
+* Dynamic imports for code splitting
+* Static generation where possible
+* Edge runtime for faster responses
+* Metadata API for SEO
+* Server components by default
 
 ---

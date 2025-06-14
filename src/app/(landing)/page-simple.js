@@ -319,7 +319,7 @@ export default function LandingPage() {
           </div>
 
           <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2024 30tools.com - All rights reserved. Made with ❤️ for the web.</p>
+            <p>&copy; 2025 30tools.com - All rights reserved. Made with ❤️ for the web.</p>
           </div>
         </div>
       </footer>

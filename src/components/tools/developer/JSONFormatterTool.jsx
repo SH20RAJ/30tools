@@ -8,14 +8,14 @@ import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  Code, 
-  Copy, 
-  Download, 
-  Upload, 
-  CheckCircle, 
-  AlertCircle, 
-  Minimize2, 
+import {
+  Code,
+  Copy,
+  Download,
+  Upload,
+  CheckCircle,
+  AlertCircle,
+  Minimize2,
   Maximize2,
   FileJson,
   Zap,
@@ -40,29 +40,29 @@ export default function JSONFormatterTool() {
     try {
       // Parse JSON to validate
       const parsed = JSON.parse(jsonText);
-      
+
       // Sort keys if option is enabled
       const processedObj = sortKeys ? sortObjectKeys(parsed) : parsed;
-      
+
       // Format with proper indentation
       const formatted = JSON.stringify(processedObj, null, indentSize);
       const minified = JSON.stringify(processedObj);
-      
+
       setFormattedJson(formatted);
       setMinifiedJson(minified);
       setIsValid(true);
       setErrors([]);
-      
+
       return { isValid: true, formatted, minified };
     } catch (error) {
       setIsValid(false);
       setFormattedJson('');
       setMinifiedJson('');
-      
+
       // Parse error details
       const errorDetails = parseJSONError(error.message, jsonText);
       setErrors(errorDetails);
-      
+
       return { isValid: false, error: error.message };
     }
   }, [indentSize, sortKeys]);
@@ -82,7 +82,7 @@ export default function JSONFormatterTool() {
 
   const parseJSONError = (errorMessage, jsonText) => {
     const errors = [];
-    
+
     // Extract position information from error message
     const positionMatch = errorMessage.match(/position (\d+)/);
     if (positionMatch) {
@@ -90,7 +90,7 @@ export default function JSONFormatterTool() {
       const lines = jsonText.substring(0, position).split('\n');
       const lineNumber = lines.length;
       const columnNumber = lines[lines.length - 1].length + 1;
-      
+
       errors.push({
         type: 'Syntax Error',
         message: errorMessage,
@@ -104,7 +104,7 @@ export default function JSONFormatterTool() {
         message: errorMessage
       });
     }
-    
+
     return errors;
   };
 
@@ -179,10 +179,10 @@ export default function JSONFormatterTool() {
           },
           "languages": ["en", "es", "fr"]
         },
-        "lastLogin": "2024-01-15T10:30:00Z",
+        "lastLogin": "2025-01-15T10:30:00Z",
         "metadata": {
           "created": "2023-06-01T00:00:00Z",
-          "updated": "2024-01-15T10:30:00Z",
+          "updated": "2025-01-15T10:30:00Z",
           "version": "1.2.3"
         }
       },
@@ -203,7 +203,7 @@ export default function JSONFormatterTool() {
         }
       ]
     };
-    
+
     const jsonString = JSON.stringify(sampleJSON);
     setJsonInput(jsonString);
     validateAndFormat(jsonString);
@@ -211,7 +211,7 @@ export default function JSONFormatterTool() {
 
   const getJsonStats = () => {
     if (!formattedJson) return null;
-    
+
     try {
       const parsed = JSON.parse(formattedJson);
       const stats = analyzeJSON(parsed);
@@ -247,8 +247,8 @@ export default function JSONFormatterTool() {
         stats = mergeStats(stats, childStats);
       });
     } else {
-      const type = obj === null ? 'nulls' : typeof obj === 'string' ? 'strings' : 
-                   typeof obj === 'number' ? 'numbers' : 'booleans';
+      const type = obj === null ? 'nulls' : typeof obj === 'string' ? 'strings' :
+        typeof obj === 'number' ? 'numbers' : 'booleans';
       stats[type]++;
     }
 
@@ -275,10 +275,10 @@ export default function JSONFormatterTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free JSON Formatter & Validator</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Format, validate, and minify JSON data online. Perfect for developers, API testing, 
+          Format, validate, and minify JSON data online. Perfect for developers, API testing,
           and data processing. Includes error detection and JSON analytics.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Zap className="h-5 w-5 text-primary" />
@@ -327,9 +327,9 @@ export default function JSONFormatterTool() {
                 onChange={handleFileUpload}
                 className="hidden"
               />
-              <Button 
-                onClick={() => fileInputRef.current?.click()} 
-                variant="outline" 
+              <Button
+                onClick={() => fileInputRef.current?.click()}
+                variant="outline"
                 size="sm"
               >
                 <Upload className="h-4 w-4 mr-2" />
@@ -344,7 +344,7 @@ export default function JSONFormatterTool() {
                 onChange={(e) => handleInputChange(e.target.value)}
                 className="font-mono text-sm min-h-96"
               />
-              
+
               {!isValid && errors.length > 0 && (
                 <Alert variant="destructive">
                   <AlertCircle className="h-4 w-4" />
@@ -364,7 +364,7 @@ export default function JSONFormatterTool() {
                   </AlertDescription>
                 </Alert>
               )}
-              
+
               {isValid && jsonInput.trim() && (
                 <Alert>
                   <CheckCircle className="h-4 w-4" />
@@ -541,7 +541,7 @@ export default function JSONFormatterTool() {
                     <p className="text-sm text-muted-foreground">Max Depth</p>
                   </div>
                 </div>
-                
+
                 <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
                   <div>
                     <Badge variant="outline">{jsonStats.strings} Strings</Badge>

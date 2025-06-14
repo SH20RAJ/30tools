@@ -9,13 +9,13 @@ import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Textarea } from '@/components/ui/textarea';
-import { 
-  Link as LinkIcon, 
-  Copy, 
-  QrCode, 
-  BarChart3, 
-  Eye, 
-  MousePointer, 
+import {
+  Link as LinkIcon,
+  Copy,
+  QrCode,
+  BarChart3,
+  Eye,
+  MousePointer,
   Calendar,
   Trash2,
   Plus,
@@ -66,7 +66,7 @@ export default function URLShortenerTool() {
 
     const shortCode = alias || generateShortCode();
     const shortUrl = `https://30t.me/${shortCode}`;
-    
+
     return {
       id: Math.random().toString(36).substr(2, 9),
       originalUrl,
@@ -176,7 +176,7 @@ export default function URLShortenerTool() {
           Create short, trackable links instantly. Custom aliases, QR codes, and detailed analytics.
           Perfect for social media, marketing campaigns, and link management.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Zap className="h-5 w-5 text-primary" />
@@ -224,7 +224,7 @@ export default function URLShortenerTool() {
                   className="text-base"
                 />
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="alias">Custom Alias (Optional)</Label>
                 <Input
@@ -239,8 +239,8 @@ export default function URLShortenerTool() {
                 </p>
               </div>
 
-              <Button 
-                onClick={handleShortenUrl} 
+              <Button
+                onClick={handleShortenUrl}
                 disabled={!currentUrl.trim() || isProcessing}
                 className="w-full"
               >
@@ -278,8 +278,8 @@ export default function URLShortenerTool() {
                 </p>
               </div>
 
-              <Button 
-                onClick={handleBulkShorten} 
+              <Button
+                onClick={handleBulkShorten}
                 disabled={!bulkUrls.trim() || isProcessing}
                 className="w-full"
               >
@@ -366,7 +366,7 @@ export default function URLShortenerTool() {
                           </Button>
                         </div>
                       </div>
-                      
+
                       <div>
                         <Label className="text-sm font-medium">Original URL</Label>
                         <p className="text-sm text-muted-foreground truncate mt-1">
@@ -374,10 +374,10 @@ export default function URLShortenerTool() {
                         </p>
                       </div>
                     </div>
-                    
-                    <Button 
-                      onClick={() => removeUrl(urlData.id)} 
-                      variant="outline" 
+
+                    <Button
+                      onClick={() => removeUrl(urlData.id)}
+                      variant="outline"
                       size="sm"
                       className="ml-4"
                     >

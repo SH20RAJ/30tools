@@ -113,7 +113,7 @@ export default function ImageToolsFooter() {
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <p className="text-sm text-muted-foreground">
-            © 2024 30tools.com - All rights reserved
+            © 2025 30tools.com - All rights reserved
           </p>
           <p className="flex items-center text-sm text-muted-foreground">
             Made with <HeartIcon className="h-4 w-4 mx-1 text-red-500 fill-current" /> for the web

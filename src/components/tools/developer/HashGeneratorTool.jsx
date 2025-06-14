@@ -8,13 +8,13 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  Hash, 
-  Copy, 
-  Upload, 
-  CheckCircle, 
-  Key, 
-  Shield, 
+import {
+  Hash,
+  Copy,
+  Upload,
+  CheckCircle,
+  Key,
+  Shield,
   FileText,
   Zap,
   Lock,
@@ -43,13 +43,13 @@ export default function HashGeneratorTool() {
   const simpleHash = (str, algorithm) => {
     let hash = 0;
     if (str.length === 0) return hash.toString(16);
-    
+
     for (let i = 0; i < str.length; i++) {
       const char = str.charCodeAt(i);
       hash = ((hash << 5) - hash) + char;
       hash = hash & hash; // Convert to 32bit integer
     }
-    
+
     // Different algorithms return different length hashes
     const hashStr = Math.abs(hash).toString(16);
     switch (algorithm) {
@@ -75,7 +75,7 @@ export default function HashGeneratorTool() {
     try {
       const encoder = new TextEncoder();
       const dataBuffer = encoder.encode(data);
-      
+
       let algoName;
       switch (algorithm) {
         case 'sha1': algoName = 'SHA-1'; break;
@@ -83,7 +83,7 @@ export default function HashGeneratorTool() {
         case 'sha512': algoName = 'SHA-512'; break;
         default: return simpleHash(data, algorithm);
       }
-      
+
       const hashBuffer = await crypto.subtle.digest(algoName, dataBuffer);
       const hashArray = Array.from(new Uint8Array(hashBuffer));
       return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
@@ -95,7 +95,7 @@ export default function HashGeneratorTool() {
   const generateAllHashes = useCallback(async (text) => {
     setIsProcessing(true);
     const newHashes = {};
-    
+
     for (const algo of hashAlgorithms) {
       try {
         const hash = await generateCryptoHash(text, algo.id);
@@ -104,7 +104,7 @@ export default function HashGeneratorTool() {
         newHashes[algo.id] = simpleHash(text, algo.id);
       }
     }
-    
+
     setHashes(newHashes);
     setIsProcessing(false);
   }, []);
@@ -145,7 +145,7 @@ export default function HashGeneratorTool() {
     const hashText = hashAlgorithms
       .map(algo => `${algo.name}: ${hashes[algo.id] || 'N/A'}`)
       .join('\n');
-    
+
     try {
       await navigator.clipboard.writeText(hashText);
       setCopiedHash('all');
@@ -204,10 +204,10 @@ export default function HashGeneratorTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free Hash Generator</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Generate secure cryptographic hashes from text or files. Support for MD5, SHA-1, SHA-256, 
+          Generate secure cryptographic hashes from text or files. Support for MD5, SHA-1, SHA-256,
           SHA-512, and more. Perfect for data integrity verification and security applications.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary" />
@@ -251,7 +251,7 @@ export default function HashGeneratorTool() {
                   Clear
                 </Button>
               </div>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="text-input">Input Text</Label>
                 <Textarea
@@ -298,7 +298,7 @@ export default function HashGeneratorTool() {
                   Choose File
                 </Button>
               </div>
-              
+
               {inputFile && (
                 <div className="mt-4 p-3 bg-muted rounded">
                   <p className="text-sm font-medium">Selected File:</p>
@@ -364,11 +364,11 @@ export default function HashGeneratorTool() {
                       )}
                     </Button>
                   </div>
-                  
+
                   <p className="text-sm text-muted-foreground mb-3">
                     {algo.description}
                   </p>
-                  
+
                   <div className="bg-muted rounded p-3">
                     <code className="text-sm font-mono break-all">
                       {showHashes ? (hashes[algo.id] || 'Generating...') : '••••••••••••••••••••••••••••••••'}
@@ -414,7 +414,7 @@ export default function HashGeneratorTool() {
                 </div>
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-medium mb-3">Legacy Algorithms (Not Recommended)</h4>
               <div className="space-y-3">
@@ -431,10 +431,10 @@ export default function HashGeneratorTool() {
                   </p>
                 </div>
               </div>
-              
+
               <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded">
                 <p className="text-sm text-yellow-800">
-                  <strong>Security Note:</strong> Use SHA-256 or higher for password hashing, 
+                  <strong>Security Note:</strong> Use SHA-256 or higher for password hashing,
                   digital signatures, and security-critical applications.
                 </p>
               </div>

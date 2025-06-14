@@ -8,13 +8,13 @@ import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Slider } from '@/components/ui/slider';
-import { 
-  Palette, 
-  Copy, 
-  Download, 
-  Upload, 
-  RefreshCw, 
-  Eye, 
+import {
+  Palette,
+  Copy,
+  Download,
+  Upload,
+  RefreshCw,
+  Eye,
   Shuffle,
   CheckCircle,
   Lock,
@@ -96,14 +96,14 @@ export default function ColorPaletteGeneratorTool() {
     switch (paletteType) {
       case 'monochromatic':
         for (let i = 0; i < count; i++) {
-          const newL = Math.max(10, Math.min(90, l + (i - Math.floor(count/2)) * 15));
+          const newL = Math.max(10, Math.min(90, l + (i - Math.floor(count / 2)) * 15));
           newColors.push(hslToHex(h, s, newL));
         }
         break;
 
       case 'analogous':
         for (let i = 0; i < count; i++) {
-          const newH = (h + (i - Math.floor(count/2)) * 30) % 360;
+          const newH = (h + (i - Math.floor(count / 2)) * 30) % 360;
           newColors.push(hslToHex(newH < 0 ? newH + 360 : newH, s, l));
         }
         break;
@@ -158,12 +158,12 @@ export default function ColorPaletteGeneratorTool() {
 
       default: // random
         newColors = Array(count).fill().map(() => {
-          return `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`;
+          return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
         });
     }
 
     // Keep locked colors
-    const finalColors = newColors.map((color, index) => 
+    const finalColors = newColors.map((color, index) =>
       index < colors.length && lockedColors[index] ? colors[index] : color
     );
 
@@ -176,43 +176,43 @@ export default function ColorPaletteGeneratorTool() {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
     const img = new Image();
-    
+
     img.onload = () => {
       // Resize image for faster processing
       const maxSize = 100;
       const ratio = Math.min(maxSize / img.width, maxSize / img.height);
       canvas.width = img.width * ratio;
       canvas.height = img.height * ratio;
-      
+
       ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-      
+
       const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
       const data = imageData.data;
       const colorMap = new Map();
-      
+
       // Sample every 10th pixel for performance
       for (let i = 0; i < data.length; i += 40) {
         const r = data[i];
         const g = data[i + 1];
         const b = data[i + 2];
         const alpha = data[i + 3];
-        
+
         if (alpha > 128) { // Skip transparent pixels
           const hex = `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
           colorMap.set(hex, (colorMap.get(hex) || 0) + 1);
         }
       }
-      
+
       // Get most frequent colors
       const sortedColors = Array.from(colorMap.entries())
         .sort((a, b) => b[1] - a[1])
         .slice(0, 10)
         .map(([color]) => color);
-      
+
       setExtractedColors(sortedColors);
       setColors(sortedColors.slice(0, colorCount[0]));
     };
-    
+
     img.src = URL.createObjectURL(file);
   }, [colorCount]);
 
@@ -296,7 +296,7 @@ export default function ColorPaletteGeneratorTool() {
       '#A52A2A': 'Brown', '#808080': 'Gray', '#000000': 'Black',
       '#FFFFFF': 'White'
     };
-    
+
     return colorNames[hex.toUpperCase()] || hex;
   };
 
@@ -318,10 +318,10 @@ export default function ColorPaletteGeneratorTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free Color Palette Generator</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Generate beautiful color palettes instantly. Create harmonious color schemes, 
+          Generate beautiful color palettes instantly. Create harmonious color schemes,
           extract colors from images, and export in multiple formats for your design projects.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Wand2 className="h-5 w-5 text-primary" />
@@ -528,7 +528,7 @@ export default function ColorPaletteGeneratorTool() {
                       )}
                     </Button>
                   </div>
-                  
+
                   <div className="text-center space-y-1">
                     <code className="text-sm font-mono bg-muted px-2 py-1 rounded">
                       {color.toUpperCase()}
@@ -548,7 +548,7 @@ export default function ColorPaletteGeneratorTool() {
                 const r = parseInt(color.slice(1, 3), 16);
                 const g = parseInt(color.slice(3, 5), 16);
                 const b = parseInt(color.slice(5, 7), 16);
-                
+
                 return (
                   <Card key={index} className="p-3">
                     <div className="space-y-2 text-xs">

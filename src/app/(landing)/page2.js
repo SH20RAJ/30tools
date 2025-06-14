@@ -4,11 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import toolsDirectory from '@/constants/tools-directory.json';
-import { 
-  ImageIcon, 
-  VideoIcon, 
-  MusicIcon, 
-  FileTextIcon, 
+import {
+  ImageIcon,
+  VideoIcon,
+  MusicIcon,
+  FileTextIcon,
   FileIcon,
   ArrowRightIcon,
   ZapIcon,
@@ -72,11 +72,11 @@ export default function Home() {
       <section className="container mx-auto px-4 py-16 text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tight">
-            Your Ultimate 
+            Your Ultimate
             <span className="text-primary"> Online Toolkit</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Fast, free, and privacy-focused tools for image, video, audio, PDF, and text processing. 
+            Fast, free, and privacy-focused tools for image, video, audio, PDF, and text processing.
             No sign-up required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -116,7 +116,7 @@ export default function Home() {
             Everything you need for your digital files, all in one place
           </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {toolCategories.map((category, index) => (
             <Card key={index} className="hover:shadow-lg transition-shadow">
@@ -209,7 +209,7 @@ export default function Home() {
       <footer className="border-t bg-muted/50">
         <div className="container mx-auto px-4 py-8">
           <div className="text-center text-muted-foreground">
-            <p>&copy; 2024 30tools.com - All rights reserved</p>
+            <p>&copy; 2025 30tools.com - All rights reserved</p>
             <p className="mt-2 text-sm">
               Fast, free, and privacy-focused online tools for everyone
             </p>
