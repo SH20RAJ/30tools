@@ -3,10 +3,12 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeftIcon, MailIcon, MessageCircleIcon, BugIcon } from 'lucide-react';
+import TallyContactForm from '@/components/TallyContactForm';
 
 export const metadata = {
   title: "Contact Us - 30tools.com",
-  description: "Get in touch with the 30tools.com team. Contact us for support, feedback, business inquiries, or technical issues.",
+  description: "Get in touch with the 30tools.com team through our contact form or email. Contact us for support, feedback, business inquiries, or technical issues at mail@30tools.com.",
+  keywords: "contact 30tools, support, feedback, business inquiries, technical support, mail@30tools.com",
   robots: { index: true, follow: true }
 };
 
@@ -27,82 +29,76 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <MailIcon className="h-5 w-5 text-primary" />
-                General Support
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                For general questions, tool support, or user guidance
-              </p>
-              <div className="space-y-2">
-                <p><strong>Email:</strong> support@30tools.com</p>
-                <p><strong>Response Time:</strong> Within 24 hours</p>
-                <Badge variant="secondary">Most Popular</Badge>
-              </div>
-            </CardContent>
-          </Card>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+          {/* Contact Form */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Send us a Message</h2>
+            <p className="text-muted-foreground mb-6">
+              Use the form below to get in touch with us. We'll respond as quickly as possible.
+            </p>
+            
+            {/* Tally Form Embed */}
+            <TallyContactForm />
+          </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <BugIcon className="h-5 w-5 text-primary" />
-                Technical Issues
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Report bugs, technical problems, or performance issues
-              </p>
-              <div className="space-y-2">
-                <p><strong>Email:</strong> tech@30tools.com</p>
-                <p><strong>Response Time:</strong> Within 12 hours</p>
-                <Badge variant="outline">Priority Support</Badge>
-              </div>
-            </CardContent>
-          </Card>
+          {/* Contact Information */}
+          <div>
+            <h2 className="text-2xl font-bold mb-4">Get in Touch</h2>
+            <p className="text-muted-foreground mb-6">
+              Prefer email? Send us a message directly for any type of inquiry.
+            </p>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <MessageCircleIcon className="h-5 w-5 text-primary" />
-                Feature Requests
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Suggest new tools, features, or improvements
-              </p>
-              <div className="space-y-2">
-                <p><strong>Email:</strong> feedback@30tools.com</p>
-                <p><strong>Response Time:</strong> Within 48 hours</p>
-                <Badge variant="secondary">Community Driven</Badge>
-              </div>
-            </CardContent>
-          </Card>
+            <Card className="mb-6">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MailIcon className="h-5 w-5 text-primary" />
+                  General Contact
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  For all inquiries including support, feedback, business partnerships, and technical issues
+                </p>
+                <div className="space-y-2">
+                  <p><strong>Email:</strong> <a href="mailto:mail@30tools.com" className="text-primary hover:underline">mail@30tools.com</a></p>
+                  <p><strong>Response Time:</strong> Within 24 hours</p>
+                  <Badge variant="secondary">All Inquiries Welcome</Badge>
+                </div>
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <MailIcon className="h-5 w-5 text-primary" />
-                Business Inquiries
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground mb-4">
-                Partnerships, API access, or enterprise solutions
-              </p>
-              <div className="space-y-2">
-                <p><strong>Email:</strong> business@30tools.com</p>
-                <p><strong>Response Time:</strong> Within 24 hours</p>
-                <Badge variant="outline">Enterprise</Badge>
-              </div>
-            </CardContent>
-          </Card>
+            <div className="grid grid-cols-1 gap-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <BugIcon className="h-5 w-5 text-primary" />
+                    Technical Support
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-2">
+                    Report bugs, technical problems, or performance issues
+                  </p>
+                  <Badge variant="outline">Priority Response</Badge>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2">
+                    <MessageCircleIcon className="h-5 w-5 text-primary" />
+                    Feature Requests
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-2">
+                    Suggest new tools, features, or improvements
+                  </p>
+                  <Badge variant="secondary">Community Driven</Badge>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </div>
 
         <Card className="mb-8">
@@ -114,28 +110,35 @@ export default function ContactPage() {
               <div>
                 <h3 className="font-semibold mb-2">How do I report a bug?</h3>
                 <p className="text-muted-foreground">
-                  Email us at tech@30tools.com with details about the issue, including your browser, device, and steps to reproduce the problem.
+                  Email us at <a href="mailto:mail@30tools.com" className="text-primary hover:underline">mail@30tools.com</a> or use the contact form above with details about the issue, including your browser, device, and steps to reproduce the problem.
                 </p>
               </div>
               
               <div>
                 <h3 className="font-semibold mb-2">Can I request a new tool?</h3>
                 <p className="text-muted-foreground">
-                  Absolutely! Send your suggestions to feedback@30tools.com. We regularly add new tools based on user requests.
+                  Absolutely! Send your suggestions to <a href="mailto:mail@30tools.com" className="text-primary hover:underline">mail@30tools.com</a> or use our contact form. We regularly add new tools based on user requests.
                 </p>
               </div>
               
               <div>
                 <h3 className="font-semibold mb-2">Is there an API available?</h3>
                 <p className="text-muted-foreground">
-                  We&apos;re working on API access for developers. Contact business@30tools.com to join our early access program.
+                  We&apos;re working on API access for developers. Contact <a href="mailto:mail@30tools.com" className="text-primary hover:underline">mail@30tools.com</a> to join our early access program.
                 </p>
               </div>
               
               <div>
                 <h3 className="font-semibold mb-2">How can I support the project?</h3>
                 <p className="text-muted-foreground">
-                  Share 30tools.com with others, provide feedback, and consider whitelisting our ads to help keep the service free.
+                  Share 30tools.com with others, provide feedback through our contact form, and consider whitelisting our ads to help keep the service free.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold mb-2">Do you respond to all messages?</h3>
+                <p className="text-muted-foreground">
+                  Yes! We read and respond to every message sent through our contact form or email. Response times are typically within 24 hours.
                 </p>
               </div>
             </div>
