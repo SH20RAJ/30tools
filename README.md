@@ -1,7 +1,3 @@
-Here’s a **professional and attractive README.md** for your project `30tools.com`:
-
----
-
 # 30tools.com 🔧✨
 
 **Your Ultimate Free Online Toolkit — Image, Video, Audio, PDF, and More!**
@@ -42,7 +38,7 @@ Here’s a **professional and attractive README.md** for your project `30tools.c
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/30tools.git
+git clone https://github.com/sh20raj/30tools.git
 
 # Navigate into the project directory
 cd 30tools
@@ -109,15 +105,5 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 ## 📬 Contact
 
 * Website: [30tools.com](https://30tools.com)
-* GitHub: [@yourusername](https://github.com/yourusername)
-* Email: [youremail@example.com](mailto:youremail@example.com)
-
----
-
-If you want, I can help you **customize it further** when you finalize:
-
-* Your GitHub repo name
-* Your actual tech stack
-* Your contact details
-
-Let me know! 😊
+* GitHub: [@sh20raj](https://github.com/sh20raj)
+* Email: [sh20raj@gmail.com](mailto:sh20raj@gmail.com)
