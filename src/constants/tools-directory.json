@@ -500,7 +500,72 @@
         "sound editor online"
       ],
       "breadcrumb": ["Home", "Audio Tools"],
-      "tools": []
+      "tools": [
+        {
+          "id": "audio-compressor",
+          "name": "Audio Compressor",
+          "shortName": "Compress",
+          "description": "Compress audio files to reduce size by up to 90% while maintaining quality. Support for MP3, WAV, FLAC formats.",
+          "longDescription": "Advanced audio compression tool that reduces file sizes significantly while preserving audio quality. Perfect for sharing on social media, email, or saving storage space.",
+          "category": "audio",
+          "subcategory": "compression",
+          "primaryKeyword": "audio compressor",
+          "keywords": [
+            "compress audio online",
+            "audio compressor free",
+            "reduce audio size",
+            "audio file compressor",
+            "compress mp3 online",
+            "audio size reducer",
+            "shrink audio file",
+            "optimize audio online"
+          ],
+          "longTailKeywords": [
+            "compress audio file online free no watermark",
+            "reduce audio size for email attachment",
+            "compress large audio files for whatsapp",
+            "audio compressor online free without losing quality",
+            "compress mp3 audio for web upload",
+            "reduce audio file size for sharing",
+            "compress audio to specific size online"
+          ],
+          "routes": [
+            "/audio-compressor",
+            "/compress-audio-online",
+            "/reduce-audio-size",
+            "/audio-size-reducer",
+            "/optimize-audio-online"
+          ],
+          "features": [
+            "Up to 90% size reduction",
+            "Quality presets",
+            "Custom compression settings",
+            "Batch processing",
+            "Format preservation",
+            "Preview before download",
+            "No watermarks",
+            "Fast processing"
+          ],
+          "useCases": [
+            "Email attachments",
+            "WhatsApp sharing",
+            "Website optimization",
+            "Storage saving",
+            "Podcast distribution",
+            "Music streaming"
+          ],
+          "fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC"],
+          "maxFileSize": "100MB",
+          "processingTime": "10-60 seconds",
+          "popular": true,
+          "trending": true,
+          "completed": true,
+          "monthlySearches": 89000,
+          "difficulty": "Medium",
+          "cpc": "$1.15",
+          "intent": "High"
+        }
+      ]
     },
     "text": {
       "name": "Text Tools",
@@ -520,7 +585,200 @@
         "lorem ipsum generator"
       ],
       "breadcrumb": ["Home", "Text Tools"],
-      "tools": []
+      "tools": [
+        {
+          "id": "word-counter",
+          "name": "Word Counter",
+          "shortName": "Count",
+          "description": "Count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, and content creation.",
+          "longDescription": "Professional word counter tool with real-time analysis. Count words, characters (with/without spaces), sentences, paragraphs, and get reading time estimates. Essential for writers, students, and content creators.",
+          "category": "text",
+          "subcategory": "analysis",
+          "primaryKeyword": "word counter",
+          "keywords": [
+            "word counter online",
+            "character counter free",
+            "word count tool",
+            "count words online",
+            "text counter",
+            "sentence counter",
+            "paragraph counter",
+            "writing tools"
+          ],
+          "longTailKeywords": [
+            "free word counter online no registration",
+            "word and character counter for essays",
+            "count words characters sentences paragraphs",
+            "real time word counter for writing",
+            "academic word counter with reading time",
+            "professional text analysis tool free",
+            "word counter for social media posts"
+          ],
+          "routes": [
+            "/word-counter",
+            "/character-counter",
+            "/text-counter",
+            "/count-words-online",
+            "/word-count-tool"
+          ],
+          "features": [
+            "Real-time counting",
+            "Words, characters, sentences, paragraphs",
+            "Reading time estimation",
+            "Speaking time calculation",
+            "Most common words analysis",
+            "Writing statistics",
+            "Export reports",
+            "Mobile-friendly"
+          ],
+          "useCases": [
+            "Essay writing",
+            "Social media posts",
+            "Academic papers",
+            "Blog articles",
+            "SEO content",
+            "Marketing copy"
+          ],
+          "fileFormats": ["Text"],
+          "maxFileSize": "Unlimited",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": true,
+          "completed": true,
+          "monthlySearches": 245000,
+          "difficulty": "Low",
+          "cpc": "$0.95",
+          "intent": "High"
+        },
+        {
+          "id": "password-generator",
+          "name": "Password Generator",
+          "shortName": "Generate",
+          "description": "Generate strong, secure passwords with customizable length and character sets. Perfect for online security.",
+          "longDescription": "Create cryptographically secure passwords with full customization. Choose length, character types, and advanced options to generate passwords that protect your accounts.",
+          "category": "text",
+          "subcategory": "security",
+          "primaryKeyword": "password generator",
+          "keywords": [
+            "secure password generator",
+            "strong password generator",
+            "random password generator",
+            "password creator online",
+            "password maker free",
+            "generate password online",
+            "password tool secure",
+            "create strong password"
+          ],
+          "longTailKeywords": [
+            "free secure password generator online",
+            "strong password generator no storage",
+            "cryptographically secure password creator",
+            "custom length password generator free",
+            "password generator with special characters",
+            "bulk password generator for accounts",
+            "password strength checker generator"
+          ],
+          "routes": [
+            "/password-generator",
+            "/secure-password-generator",
+            "/strong-password-creator",
+            "/random-password-maker",
+            "/generate-password-online"
+          ],
+          "features": [
+            "Customizable length (4-128 chars)",
+            "Multiple character sets",
+            "Password strength analysis",
+            "Generate multiple passwords",
+            "Exclude similar characters",
+            "No storage or logging",
+            "Copy to clipboard",
+            "Cryptographically secure"
+          ],
+          "useCases": [
+            "Account security",
+            "Website registration",
+            "Password manager",
+            "Business accounts",
+            "Personal security",
+            "Team password creation"
+          ],
+          "fileFormats": ["Text"],
+          "maxFileSize": "N/A",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": true,
+          "completed": true,
+          "monthlySearches": 198000,
+          "difficulty": "Low",
+          "cpc": "$1.35",
+          "intent": "High"
+        },
+        {
+          "id": "lorem-ipsum-generator",
+          "name": "Lorem Ipsum Generator",
+          "shortName": "Lorem",
+          "description": "Generate Lorem Ipsum placeholder text instantly. Create dummy text for web design, graphic design, and typesetting.",
+          "longDescription": "Classic Lorem Ipsum generator with full customization. Generate paragraphs, sentences, or words with options for HTML formatting and custom length.",
+          "category": "text",
+          "subcategory": "content",
+          "primaryKeyword": "lorem ipsum generator",
+          "keywords": [
+            "placeholder text generator",
+            "dummy text generator",
+            "lorem ipsum text",
+            "fake text generator",
+            "lipsum generator",
+            "filler text generator",
+            "design placeholder text",
+            "lorem generator"
+          ],
+          "longTailKeywords": [
+            "free lorem ipsum generator online",
+            "lorem ipsum placeholder text creator",
+            "dummy text generator for web design",
+            "lorem ipsum with html paragraph tags",
+            "custom length lorem ipsum generator",
+            "lorem ipsum filler text for design",
+            "placeholder content generator free"
+          ],
+          "routes": [
+            "/lorem-ipsum-generator",
+            "/placeholder-text-generator",
+            "/dummy-text-generator",
+            "/lipsum-generator",
+            "/lorem-generator"
+          ],
+          "features": [
+            "Generate paragraphs, sentences, words",
+            "Customizable text length",
+            "HTML paragraph formatting",
+            "Start with 'Lorem ipsum' option",
+            "Copy to clipboard",
+            "Download as TXT/HTML",
+            "Classic Lorem Ipsum text",
+            "Real-time generation"
+          ],
+          "useCases": [
+            "Web design mockups",
+            "Graphic design layouts",
+            "Typography testing",
+            "Content planning",
+            "Template creation",
+            "Print design"
+          ],
+          "fileFormats": ["Text", "HTML"],
+          "maxFileSize": "N/A",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": false,
+          "completed": true,
+          "monthlySearches": 156000,
+          "difficulty": "Low",
+          "cpc": "$0.65",
+          "intent": "Medium"
+        }
+      ]
     },
     "developer": {
       "name": "Developer Tools",

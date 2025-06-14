@@ -7,7 +7,15 @@ Here’s a detailed, actionable `RULEBOOK.md` for your project to **bypass compe
 ## The 30tools.com Growth Playbook: Bypass SEO Competition & Dominate Rankings
 
 This is the core rulebook that will help us **strategically outrank competitors**, maximize SEO efficiency, and **truly delight users**.
+We aren't selling the tools, there are so many websites who are providing these same tools we are unique we are providing ux. we are providing them for free to build a community and get backlinks and traffic.
 
+## 📌 Key Principles
+1. **SEO-First Development**: Every tool must be built with SEO in mind from day one.
+2. **User-Centric Design**: Prioritize user happiness and satisfaction.
+3. **Transparency & Trust**: Build trust through clear communication and privacy-first policies.
+4. **Continuous Improvement**: Always iterate based on user feedback and analytics.
+5. **Scalability**: Design components and architecture for easy scaling and future growth.
+6. **Offline Usage**: 
 ---
 
 ## 📈 SEO Domination Strategy
