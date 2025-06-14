@@ -165,11 +165,13 @@ This is the core rulebook that will help us **strategically outrank competitors*
 ## 🏗️ Component Architecture Rules
 
 ### ✅ **1. Page Structure**
+
 - **NEVER** write actual functionality code in `page.js` files
-- `page.js` files should ONLY import and return components
-- All tool functionality must be in separate components under `/components/tools/`
+* `page.js` files should ONLY import and return components
+* All tool functionality must be in separate components under `/components/tools/`
 
 ### ✅ **2. Component Organization**
+
 ```
 /components/tools/
   /image/
@@ -191,15 +193,17 @@ This is the core rulebook that will help us **strategically outrank competitors*
 ```
 
 ### ✅ **3. Multiple Route Support**
+
 - Same components can be used across multiple routes for SEO optimization
-- Example: `compression.jsx` can be used for:
-  - `/image-compressor`
-  - `/image-minimizer`
-  - `/compress-image`
-  - `/image-optimizer` 
-  - `/free-image-compressor`
+* Example: `compression.jsx` can be used for:
+  * `/image-compressor`
+  * `/image-minimizer`
+  * `/compress-image`
+  * `/image-optimizer`
+  * `/free-image-compressor`
 
 ### ✅ **4. Import Pattern**
+
 ```javascript
 // page.js should only contain:
 import ComponentName from '@/components/tools/category/component';
@@ -210,20 +214,22 @@ export default function PageName() {
 ```
 
 ### ✅ **5. Component Requirements**
+
 - Each tool component must be self-contained
-- Use only shadcn/ui components (NO custom CSS)
-- Must be responsive and accessible
-- Include proper error handling
-- Support drag & drop file upload
-- Show file size before/after processing
-- Batch upload support for competitive advantage
+* Use only shadcn/ui components (NO custom CSS)
+* Must be responsive and accessible
+* Include proper error handling
+* Support drag & drop file upload
+* Show file size before/after processing
+* Batch upload support for competitive advantage
 
 ### ✅ **6. File Processing Rules**
+
 - All processing must happen client-side for privacy
-- Use appropriate libraries (Sharp for images, PDF-lib for PDFs, etc.)
-- Show progress indicators for long operations
-- Allow multiple file processing when applicable
-- Provide download options for processed files
+* Use appropriate libraries (Sharp for images, PDF-lib for PDFs, etc.)
+* Show progress indicators for long operations
+* Allow multiple file processing when applicable
+* Provide download options for processed files
 
 ---
 
@@ -254,4 +260,4 @@ export default function PageName() {
 
 Let’s build it like the best, to beat the rest 🚀
 
-- keep constants in constants folder
+* keep constants in constants folder
