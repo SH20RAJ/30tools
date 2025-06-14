@@ -352,7 +352,7 @@
           "processingTime": "5-30 seconds",
           "popular": true,
           "trending": true,
-          "completed": false,
+          "completed": true,
           "monthlySearches": 201000,
           "difficulty": "Low",
           "cpc": "$1.45",
@@ -992,6 +992,94 @@
         "Developer Tools"
       ],
       "tools": []
+    },
+    "seo": {
+      "name": "SEO Tools",
+      "slug": "seo-tools",
+      "description": "Professional SEO tools for meta tags, Open Graph, schema markup, sitemaps, and website optimization. Boost your search rankings.",
+      "icon": "SearchIcon",
+      "seoTitle": "Free SEO Tools Online - Meta Tags, Open Graph, Schema | 30tools",
+      "seoDescription": "Professional SEO tools: generate meta tags, Open Graph tags, schema markup, sitemaps, and optimize your website for search engines. Free SEO utilities.",
+      "keywords": [
+        "seo tools online",
+        "meta tags generator",
+        "open graph generator",
+        "schema markup generator",
+        "sitemap generator",
+        "seo optimizer free",
+        "website seo tools",
+        "search engine optimization"
+      ],
+      "breadcrumb": [
+        "Home",
+        "SEO Tools"
+      ],
+      "tools": [
+        {
+          "id": "meta-tags-generator",
+          "name": "Meta Tags Generator",
+          "shortName": "Meta Tags",
+          "description": "Generate SEO-optimized meta tags for your website. Create title tags, meta descriptions, Open Graph tags, and Twitter Cards.",
+          "longDescription": "Create perfect meta tags for SEO and social media sharing. Generate title tags, meta descriptions, Open Graph tags, and Twitter Cards with real-time character counting and preview.",
+          "category": "seo",
+          "subcategory": "meta-optimization",
+          "primaryKeyword": "meta tags generator",
+          "keywords": [
+            "seo meta tags",
+            "meta tag creator",
+            "html meta tags generator",
+            "open graph generator",
+            "twitter card generator",
+            "meta description generator",
+            "title tag generator",
+            "seo tags generator"
+          ],
+          "longTailKeywords": [
+            "free meta tags generator online no registration",
+            "seo meta tags generator with character count",
+            "open graph meta tags generator for social media",
+            "twitter card meta tags generator free",
+            "html meta tags creator for website seo",
+            "meta description generator with preview",
+            "complete meta tags generator for wordpress"
+          ],
+          "routes": [
+            "/meta-tags-generator",
+            "/seo-meta-generator",
+            "/html-meta-creator",
+            "/open-graph-generator",
+            "/twitter-card-generator"
+          ],
+          "features": [
+            "SEO title tag generation",
+            "Meta description optimization",
+            "Open Graph tags for social media",
+            "Twitter Card meta tags",
+            "Real-time character counting",
+            "Search result preview",
+            "Social media preview",
+            "Copy and download HTML code"
+          ],
+          "useCases": [
+            "Website SEO optimization",
+            "Social media sharing",
+            "Blog post optimization",
+            "E-commerce product pages",
+            "Landing page SEO",
+            "Content marketing"
+          ],
+          "fileFormats": ["HTML"],
+          "maxFileSize": "N/A",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": true,
+          "completed": true,
+          "monthlySearches": 78000,
+          "difficulty": "Low",
+          "cpc": "$1.85",
+          "intent": "High"
+        }
+      ]
     },
     "design": {
       "name": "Design Tools",
