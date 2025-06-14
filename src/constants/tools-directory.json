@@ -262,7 +262,7 @@
           "processingTime": "1-8 seconds",
           "popular": true,
           "trending": true,
-          "completed": false,
+          "completed": true,
           "monthlySearches": 125000,
           "difficulty": "Medium",
           "cpc": "$1.10",
