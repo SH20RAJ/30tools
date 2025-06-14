@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 const suggestions = [
   "image compressor",
-  "free image compressor", 
+  "free image compressor",
   "image optimizer",
   "compress images online",
   "image minimizer",

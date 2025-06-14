@@ -36,7 +36,7 @@ export default function ContactPage() {
             <p className="text-muted-foreground mb-6">
               Use the form below to get in touch with us. We'll respond as quickly as possible.
             </p>
-            
+
             {/* Tally Form Embed */}
             <TallyContactForm />
           </div>
@@ -113,21 +113,21 @@ export default function ContactPage() {
                   Email us at <a href="mailto:mail@30tools.com" className="text-primary hover:underline">mail@30tools.com</a> or use the contact form above with details about the issue, including your browser, device, and steps to reproduce the problem.
                 </p>
               </div>
-              
+
               <div>
                 <h3 className="font-semibold mb-2">Can I request a new tool?</h3>
                 <p className="text-muted-foreground">
                   Absolutely! Send your suggestions to <a href="mailto:mail@30tools.com" className="text-primary hover:underline">mail@30tools.com</a> or use our contact form. We regularly add new tools based on user requests.
                 </p>
               </div>
-              
+
               <div>
                 <h3 className="font-semibold mb-2">Is there an API available?</h3>
                 <p className="text-muted-foreground">
                   We&apos;re working on API access for developers. Contact <a href="mailto:mail@30tools.com" className="text-primary hover:underline">mail@30tools.com</a> to join our early access program.
                 </p>
               </div>
-              
+
               <div>
                 <h3 className="font-semibold mb-2">How can I support the project?</h3>
                 <p className="text-muted-foreground">
@@ -151,10 +151,10 @@ export default function ContactPage() {
           </CardHeader>
           <CardContent>
             <p className="text-muted-foreground mb-4">
-              30tools.com is built and maintained by a passionate team of developers who believe in making powerful tools 
+              30tools.com is built and maintained by a passionate team of developers who believe in making powerful tools
               accessible to everyone. We&apos;re committed to privacy, performance, and user experience.
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
               <div className="text-center">
                 <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2">
@@ -163,7 +163,7 @@ export default function ContactPage() {
                 <h3 className="font-semibold">Fast Response</h3>
                 <p className="text-sm text-muted-foreground">Quick replies to all inquiries</p>
               </div>
-              
+
               <div className="text-center">
                 <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2">
                   <span className="text-2xl">🔒</span>
@@ -171,7 +171,7 @@ export default function ContactPage() {
                 <h3 className="font-semibold">Privacy Focused</h3>
                 <p className="text-sm text-muted-foreground">Your data stays private</p>
               </div>
-              
+
               <div className="text-center">
                 <div className="bg-primary/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-2">
                   <span className="text-2xl">💡</span>

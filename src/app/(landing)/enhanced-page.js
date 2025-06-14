@@ -185,7 +185,7 @@ export default function HomePage() {
                 <p className="text-sm text-muted-foreground">Free Online Toolkit</p>
               </div>
             </div>
-            
+
             <nav className="hidden md:flex items-center space-x-6">
               <Link href="/search" className="text-muted-foreground hover:text-foreground transition-colors">
                 All Tools
@@ -216,8 +216,8 @@ export default function HomePage() {
                 Free Online Tools for Everything
               </h1>
               <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Professional toolkit with 100+ free online tools for image compression, PDF manipulation, 
-                video conversion, audio editing, and text processing. No watermarks, no registration, 
+                Professional toolkit with 100+ free online tools for image compression, PDF manipulation,
+                video conversion, audio editing, and text processing. No watermarks, no registration,
                 no limits - just powerful tools that work instantly in your browser.
               </p>
 
@@ -302,7 +302,7 @@ export default function HomePage() {
               <div className="text-center mb-12">
                 <h2 className="text-3xl font-bold mb-4">Featured Tools</h2>
                 <p className="text-muted-foreground max-w-2xl mx-auto">
-                  Our most popular and powerful tools, ready to use instantly. 
+                  Our most popular and powerful tools, ready to use instantly.
                   No sign-up required, no watermarks added.
                 </p>
               </div>
@@ -335,10 +335,10 @@ export default function HomePage() {
                             </Badge>
                           ))}
                         </div>
-                        
+
                         <div className="flex items-center justify-between">
                           <div className="text-sm text-muted-foreground">
-                            {tool.monthlySearches ? `${Math.round(tool.monthlySearches/1000)}K+ searches/month` : 'Popular tool'}
+                            {tool.monthlySearches ? `${Math.round(tool.monthlySearches / 1000)}K+ searches/month` : 'Popular tool'}
                           </div>
                           <Link href={tool.routes[0]}>
                             <Button size="sm" className="group-hover:bg-primary group-hover:text-primary-foreground">
@@ -362,7 +362,7 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">All Tool Categories</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Explore our comprehensive collection of online tools, organized by category 
+                Explore our comprehensive collection of online tools, organized by category
                 for easy discovery. From image editing to document processing.
               </p>
             </div>
@@ -396,7 +396,7 @@ export default function HomePage() {
                             </Badge>
                           )}
                         </div>
-                        
+
                         <div className="flex justify-between items-center">
                           <div className="flex items-center gap-3">
                             <span className="text-sm text-muted-foreground">
@@ -425,7 +425,7 @@ export default function HomePage() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">Why Choose 30tools?</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Built with privacy, speed, and user experience in mind. 
+                Built with privacy, speed, and user experience in mind.
                 Professional-grade tools that respect your data and time.
               </p>
             </div>
@@ -454,7 +454,7 @@ export default function HomePage() {
             <div className="max-w-2xl mx-auto">
               <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
               <p className="text-muted-foreground mb-8">
-                Join thousands of professionals who trust 30tools for their daily file processing needs. 
+                Join thousands of professionals who trust 30tools for their daily file processing needs.
                 Start using our free tools today - no registration required.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -492,7 +492,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">
-                Professional online tools for image compression, PDF manipulation, video conversion, 
+                Professional online tools for image compression, PDF manipulation, video conversion,
                 and text processing. Always free, always private, always fast.
               </p>
             </div>
@@ -536,7 +536,7 @@ export default function HomePage() {
           </div>
 
           <Separator className="my-8" />
-          
+
           <div className="flex flex-col md:flex-row justify-between items-center text-sm text-muted-foreground">
             <p>&copy; 2025 30tools.com - All rights reserved. Made with ❤️ for productivity.</p>
             <div className="flex items-center space-x-4 mt-4 md:mt-0">

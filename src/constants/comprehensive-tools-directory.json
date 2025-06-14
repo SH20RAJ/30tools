@@ -49,7 +49,10 @@
         "image optimizer",
         "photo tools free"
       ],
-      "breadcrumb": ["Home", "Image Tools"],
+      "breadcrumb": [
+        "Home",
+        "Image Tools"
+      ],
       "tools": [
         {
           "id": "image-compressor",
@@ -81,7 +84,7 @@
           ],
           "routes": [
             "/image-compressor",
-            "/compress-images-online", 
+            "/compress-images-online",
             "/free-image-compressor",
             "/image-optimizer",
             "/image-minimizer",
@@ -106,7 +109,12 @@
             "Blog image optimization",
             "E-commerce product photos"
           ],
-          "fileFormats": ["JPEG", "PNG", "WebP", "GIF"],
+          "fileFormats": [
+            "JPEG",
+            "PNG",
+            "WebP",
+            "GIF"
+          ],
           "maxFileSize": "50MB per file",
           "processingTime": "2-10 seconds",
           "popular": true,
@@ -164,13 +172,19 @@
           ],
           "useCases": [
             "Social media posts",
-            "Website thumbnails", 
+            "Website thumbnails",
             "Email signatures",
             "Print materials",
             "Profile pictures",
             "Product catalogs"
           ],
-          "fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP"],
+          "fileFormats": [
+            "JPEG",
+            "PNG",
+            "WebP",
+            "GIF",
+            "BMP"
+          ],
           "maxFileSize": "25MB per file",
           "processingTime": "1-5 seconds",
           "popular": true,
@@ -192,7 +206,7 @@
           "primaryKeyword": "image converter",
           "keywords": [
             "jpeg to png converter",
-            "png to jpeg converter", 
+            "png to jpeg converter",
             "webp converter online",
             "image format converter",
             "convert image format",
@@ -235,7 +249,15 @@
             "Print preparation",
             "Social media optimization"
           ],
-          "fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP", "HEIC", "TIFF"],
+          "fileFormats": [
+            "JPEG",
+            "PNG",
+            "WebP",
+            "GIF",
+            "BMP",
+            "HEIC",
+            "TIFF"
+          ],
           "maxFileSize": "50MB per file",
           "processingTime": "1-8 seconds",
           "popular": true,
@@ -250,7 +272,7 @@
     },
     "pdf": {
       "name": "PDF Tools",
-      "slug": "pdf-tools", 
+      "slug": "pdf-tools",
       "description": "Complete PDF toolkit for merging, splitting, compressing, and converting PDF files. Professional PDF tools for business and personal use.",
       "icon": "FileTextIcon",
       "seoTitle": "Free PDF Tools Online - Merge, Split, Compress PDFs | 30tools",
@@ -265,7 +287,10 @@
         "pdf merger tool",
         "pdf utilities free"
       ],
-      "breadcrumb": ["Home", "PDF Tools"],
+      "breadcrumb": [
+        "Home",
+        "PDF Tools"
+      ],
       "tools": [
         {
           "id": "pdf-merger",
@@ -298,7 +323,7 @@
           "routes": [
             "/pdf-merger",
             "/merge-pdf-online",
-            "/combine-pdf-files", 
+            "/combine-pdf-files",
             "/join-pdf-documents",
             "/pdf-combiner"
           ],
@@ -320,7 +345,9 @@
             "Invoice compilation",
             "Document archiving"
           ],
-          "fileFormats": ["PDF"],
+          "fileFormats": [
+            "PDF"
+          ],
           "maxFileSize": "Unlimited",
           "processingTime": "5-30 seconds",
           "popular": true,
@@ -384,7 +411,9 @@
             "Legal brief separation",
             "Academic paper sections"
           ],
-          "fileFormats": ["PDF"],
+          "fileFormats": [
+            "PDF"
+          ],
           "maxFileSize": "100MB",
           "processingTime": "3-15 seconds",
           "popular": true,
@@ -398,23 +427,26 @@
       ]
     },
     "video": {
-      "name": "Video Tools", 
+      "name": "Video Tools",
       "slug": "video-tools",
       "description": "Professional video processing tools for compression, conversion, editing, and optimization. Create GIFs, trim videos, and convert formats.",
       "icon": "VideoIcon",
-      "seoTitle": "Free Video Tools Online - Compress, Convert, Edit Videos | 30tools", 
+      "seoTitle": "Free Video Tools Online - Compress, Convert, Edit Videos | 30tools",
       "seoDescription": "Professional video tools: compress videos, convert formats (MP4, AVI, MOV), create GIFs, trim clips, and edit videos online. Free and fast processing.",
       "keywords": [
         "video tools online",
         "compress video free",
-        "video converter online", 
+        "video converter online",
         "video to gif converter",
         "video editor online",
         "video compressor free",
         "video format converter",
         "video trimmer online"
       ],
-      "breadcrumb": ["Home", "Video Tools"],
+      "breadcrumb": [
+        "Home",
+        "Video Tools"
+      ],
       "tools": [
         {
           "id": "video-compressor",
@@ -469,7 +501,13 @@
             "Storage saving",
             "Streaming preparation"
           ],
-          "fileFormats": ["MP4", "AVI", "MOV", "MKV", "WebM"],
+          "fileFormats": [
+            "MP4",
+            "AVI",
+            "MOV",
+            "MKV",
+            "WebM"
+          ],
           "maxFileSize": "500MB",
           "processingTime": "30-180 seconds",
           "popular": true,
@@ -484,7 +522,7 @@
     },
     "audio": {
       "name": "Audio Tools",
-      "slug": "audio-tools", 
+      "slug": "audio-tools",
       "description": "Professional audio processing tools for conversion, compression, editing, and optimization. Convert formats, trim audio, and enhance quality.",
       "icon": "MusicIcon",
       "seoTitle": "Free Audio Tools Online - Convert, Compress, Edit Audio | 30tools",
@@ -499,7 +537,10 @@
         "audio trimmer tool",
         "sound editor online"
       ],
-      "breadcrumb": ["Home", "Audio Tools"],
+      "breadcrumb": [
+        "Home",
+        "Audio Tools"
+      ],
       "tools": []
     },
     "text": {
@@ -511,7 +552,7 @@
       "seoDescription": "Professional text tools: count words and characters, convert text case, generate passwords, create QR codes, and format text online. Free utilities.",
       "keywords": [
         "text tools online",
-        "word counter free", 
+        "word counter free",
         "character counter",
         "text case converter",
         "password generator",
@@ -519,14 +560,17 @@
         "qr code generator",
         "lorem ipsum generator"
       ],
-      "breadcrumb": ["Home", "Text Tools"],
+      "breadcrumb": [
+        "Home",
+        "Text Tools"
+      ],
       "tools": []
     },
     "developer": {
       "name": "Developer Tools",
       "slug": "developer-tools",
       "description": "Essential developer utilities for JSON formatting, code minification, URL encoding, hash generation, and API testing.",
-      "icon": "CodeIcon", 
+      "icon": "CodeIcon",
       "seoTitle": "Free Developer Tools Online - JSON Formatter, Code Minifier | 30tools",
       "seoDescription": "Professional developer tools: format JSON, minify CSS/JS, encode URLs, generate hashes, validate HTML, and test APIs online. Free coding utilities.",
       "keywords": [
@@ -539,7 +583,10 @@
         "html validator free",
         "api tester online"
       ],
-      "breadcrumb": ["Home", "Developer Tools"],
+      "breadcrumb": [
+        "Home",
+        "Developer Tools"
+      ],
       "tools": []
     },
     "design": {
@@ -547,7 +594,7 @@
       "slug": "design-tools",
       "description": "Creative design utilities for color palettes, gradients, fonts, icons, and CSS generators. Perfect for designers and developers.",
       "icon": "PaletteIcon",
-      "seoTitle": "Free Design Tools Online - Color Palette, Gradient Generator | 30tools", 
+      "seoTitle": "Free Design Tools Online - Color Palette, Gradient Generator | 30tools",
       "seoDescription": "Professional design tools: generate color palettes, create CSS gradients, preview fonts, make icons, and design elements online. Free creative utilities.",
       "keywords": [
         "design tools online",
@@ -559,7 +606,10 @@
         "css generator tools",
         "design utilities free"
       ],
-      "breadcrumb": ["Home", "Design Tools"],
+      "breadcrumb": [
+        "Home",
+        "Design Tools"
+      ],
       "tools": []
     }
   },
@@ -578,18 +628,39 @@
     ],
     "competitorAnalysis": {
       "smallpdf": {
-        "strengths": ["PDF focus", "Clean UI", "Premium features"],
-        "weaknesses": ["Limited free features", "Expensive premium"],
+        "strengths": [
+          "PDF focus",
+          "Clean UI",
+          "Premium features"
+        ],
+        "weaknesses": [
+          "Limited free features",
+          "Expensive premium"
+        ],
         "monthlyTraffic": "45M"
       },
       "ilovepdf": {
-        "strengths": ["PDF tools", "Free features", "Good SEO"],
-        "weaknesses": ["PDF only", "Ad heavy"],
+        "strengths": [
+          "PDF tools",
+          "Free features",
+          "Good SEO"
+        ],
+        "weaknesses": [
+          "PDF only",
+          "Ad heavy"
+        ],
         "monthlyTraffic": "35M"
       },
       "convertio": {
-        "strengths": ["Many formats", "Good conversion", "API"],
-        "weaknesses": ["File size limits", "Slow processing"],
+        "strengths": [
+          "Many formats",
+          "Good conversion",
+          "API"
+        ],
+        "weaknesses": [
+          "File size limits",
+          "Slow processing"
+        ],
         "monthlyTraffic": "25M"
       }
     },
@@ -602,7 +673,7 @@
       },
       "secondary": {
         "demographic": "Content creators",
-        "ageRange": "18-35", 
+        "ageRange": "18-35",
         "needs": "Social media optimization",
         "painPoints": "File size limits, Watermarks"
       }

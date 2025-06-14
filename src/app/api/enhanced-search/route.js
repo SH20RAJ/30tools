@@ -6,10 +6,10 @@ export async function GET(request) {
   const query = searchParams.get('q')?.toLowerCase() || '';
   const category = searchParams.get('category') || 'all';
   const limit = parseInt(searchParams.get('limit') || '20');
-  
+
   try {
     let allTools = [];
-    
+
     // Flatten all tools from comprehensive directory
     Object.entries(toolsDirectory.categories).forEach(([catKey, catData]) => {
       if (catData.tools) {
@@ -23,13 +23,13 @@ export async function GET(request) {
         });
       }
     });
-    
+
     // Advanced search scoring algorithm
     const searchResults = allTools
       .map(tool => {
         let score = 0;
         let matchedKeywords = [];
-        
+
         if (!query) {
           score = tool.popular ? 100 : tool.trending ? 80 : 50;
         } else {
@@ -38,19 +38,19 @@ export async function GET(request) {
             score += 100;
             matchedKeywords.push(tool.primaryKeyword);
           }
-          
+
           // Name matching (high weight)
           if (tool.name.toLowerCase().includes(query)) {
             score += 90;
             matchedKeywords.push('name');
           }
-          
+
           // Description matching (medium weight)
           if (tool.description.toLowerCase().includes(query)) {
             score += 70;
             matchedKeywords.push('description');
           }
-          
+
           // Keywords matching (medium weight)
           tool.keywords?.forEach(keyword => {
             if (keyword.toLowerCase().includes(query)) {
@@ -58,7 +58,7 @@ export async function GET(request) {
               matchedKeywords.push(keyword);
             }
           });
-          
+
           // Long-tail keywords matching (high weight for exact matches)
           tool.longTailKeywords?.forEach(longTail => {
             if (longTail.toLowerCase().includes(query)) {
@@ -70,17 +70,17 @@ export async function GET(request) {
               matchedKeywords.push(`exact: ${longTail}`);
             }
           });
-          
+
           // Boost for popular and trending tools
           if (tool.popular) score *= 1.2;
           if (tool.trending) score *= 1.1;
           if (tool.completed) score *= 1.3;
-          
+
           // Boost for high search volume keywords
           if (tool.monthlySearches > 100000) score *= 1.15;
           if (tool.monthlySearches > 50000) score *= 1.1;
         }
-        
+
         return {
           ...tool,
           searchScore: score,
@@ -110,7 +110,7 @@ export async function GET(request) {
         return 0;
       })
       .slice(0, limit);
-    
+
     return Response.json({
       results: searchResults,
       query,
@@ -121,7 +121,7 @@ export async function GET(request) {
         description: generateSearchSEODescription(query, category, searchResults.length)
       }
     });
-    
+
   } catch (error) {
     console.error('Search API error:', error);
     return Response.json(
@@ -133,7 +133,7 @@ export async function GET(request) {
 
 function generateSearchSEOTitle(query, category, resultCount) {
   if (!query) {
-    return category === 'all' 
+    return category === 'all'
       ? "Free Online Tools - 30tools Toolkit"
       : `Free ${category.charAt(0).toUpperCase() + category.slice(1)} Tools Online | 30tools`;
   }

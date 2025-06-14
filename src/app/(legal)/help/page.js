@@ -176,7 +176,7 @@ export default function HelpPage() {
                 <h2 className="text-2xl font-semibold">{section.category}</h2>
                 <Badge variant="secondary">{section.questions.length} questions</Badge>
               </div>
-              
+
               <Accordion type="single" collapsible className="w-full">
                 {section.questions.map((faq, index) => (
                   <AccordionItem key={index} value={`${section.category}-${index}`}>

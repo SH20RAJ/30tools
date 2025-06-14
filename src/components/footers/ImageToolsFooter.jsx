@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { 
+import {
   ImageIcon,
   TwitterIcon,
   GithubIcon,
@@ -44,7 +44,7 @@ export default function ImageToolsFooter() {
               <Badge variant="secondary">Free</Badge>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Free online image tools for compression, optimization, and conversion. 
+              Free online image tools for compression, optimization, and conversion.
               No watermarks, no registration required.
             </p>
             <div className="flex space-x-2">
@@ -63,7 +63,7 @@ export default function ImageToolsFooter() {
             <ul className="space-y-2 text-sm">
               {imageTools.map((tool) => (
                 <li key={tool.href}>
-                  <Link 
+                  <Link
                     href={tool.href}
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -80,7 +80,7 @@ export default function ImageToolsFooter() {
             <ul className="space-y-2 text-sm">
               {relatedTools.map((tool) => (
                 <li key={tool.href}>
-                  <Link 
+                  <Link
                     href={tool.href}
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
@@ -97,7 +97,7 @@ export default function ImageToolsFooter() {
             <ul className="space-y-2 text-sm">
               {resources.map((resource) => (
                 <li key={resource.href}>
-                  <Link 
+                  <Link
                     href={resource.href}
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >

@@ -34,10 +34,10 @@ export default function SearchPageComponent() {
       const params = new URLSearchParams();
       if (searchQuery) params.set('q', searchQuery);
       if (selectedCategory && selectedCategory !== 'all') params.set('category', selectedCategory);
-      
+
       const response = await fetch(`/api/search?${params}`);
       const data = await response.json();
-      
+
       setResults(data.results || []);
       setTotal(data.total || 0);
     } catch (error) {
@@ -52,7 +52,7 @@ export default function SearchPageComponent() {
   useEffect(() => {
     const initialQuery = searchParams.get('q') || '';
     const initialCategory = searchParams.get('category') || 'all';
-    
+
     if (initialQuery || initialCategory !== 'all') {
       searchTools(initialQuery, initialCategory);
     }
@@ -60,33 +60,33 @@ export default function SearchPageComponent() {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    
+
     const params = new URLSearchParams();
     if (query) params.set('q', query);
     if (category && category !== 'all') params.set('category', category);
-    
+
     const searchUrl = params.toString() ? `/search?${params}` : '/search';
     router.push(searchUrl);
-    
+
     searchTools(query, category);
   };
 
   const handleCategoryChange = (newCategory) => {
     setCategory(newCategory);
-    
+
     const params = new URLSearchParams();
     if (query) params.set('q', query);
     if (newCategory && newCategory !== 'all') params.set('category', newCategory);
-    
+
     const searchUrl = params.toString() ? `/search?${params}` : '/search';
     router.push(searchUrl);
-    
+
     searchTools(query, newCategory);
   };
 
   const popularSearches = [
     'image compressor',
-    'video converter', 
+    'video converter',
     'pdf merger',
     'text counter',
     'audio converter'
@@ -132,7 +132,7 @@ export default function SearchPageComponent() {
                 className="pl-10"
               />
             </div>
-            
+
             <Select value={category} onValueChange={handleCategoryChange}>
               <SelectTrigger className="w-full md:w-48">
                 <FilterIcon className="h-4 w-4 mr-2" />
@@ -147,7 +147,7 @@ export default function SearchPageComponent() {
                 ))}
               </SelectContent>
             </Select>
-            
+
             <Button type="submit" disabled={loading}>
               {loading ? 'Searching...' : 'Search'}
             </Button>
@@ -199,7 +199,7 @@ export default function SearchPageComponent() {
                 </Button>
               )}
             </div>
-            
+
             {query && (
               <p className="text-muted-foreground mt-1">
                 Showing results for "{query}"
@@ -256,7 +256,7 @@ export default function SearchPageComponent() {
                         </Badge>
                       ))}
                     </div>
-                    
+
                     <div className="flex flex-wrap gap-2">
                       {tool.routes?.map((route) => (
                         <Link key={route} href={route}>
@@ -309,8 +309,8 @@ export default function SearchPageComponent() {
             <h2 className="text-lg font-semibold mb-6">Browse by Category</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {categories.map((cat) => (
-                <Card 
-                  key={cat.id} 
+                <Card
+                  key={cat.id}
                   className="hover:shadow-lg transition-shadow cursor-pointer"
                   onClick={() => handleCategoryChange(cat.id)}
                 >

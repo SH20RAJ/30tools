@@ -64,7 +64,7 @@ export default function sitemap() {
 
   // Generate tool pages with all route variations
   const toolPages = [];
-  
+
   Object.values(toolsDirectory.categories).forEach(category => {
     if (category.tools && category.tools.length > 0) {
       category.tools.forEach(tool => {
@@ -114,14 +114,14 @@ export default function sitemap() {
     'text-counter',
     'count-words-online',
     'word-count-tool',
-    
+
     // Audio Tools  
     'audio-compressor',
     'compress-audio-online',
     'reduce-audio-size',
     'audio-size-reducer',
     'optimize-audio-online',
-    
+
     // Image Tools
     'image-compressor',
     'compress-images-online',
@@ -135,7 +135,7 @@ export default function sitemap() {
     'photo-compressor',
     'picture-compressor',
     'shrink-images-online',
-    
+
     // QR Code Tools
     'qr-code-generator',
     'qr-generator',
@@ -144,7 +144,7 @@ export default function sitemap() {
     'create-qr-code',
     'qr-code-creator',
     'free-qr-generator',
-    
+
     // Favicon Tools
     'favicon-generator',
     'favicon-maker',
@@ -152,7 +152,7 @@ export default function sitemap() {
     'favicon-creator',
     'ico-generator',
     'generate-favicon',
-    
+
     // Future SEO Tools (to be built)
     'meta-tag-generator',
     'og-tag-generator',
@@ -162,7 +162,7 @@ export default function sitemap() {
     'robots-txt-generator',
     'sitemap-generator',
     'canonical-url-generator',
-    
+
     // Future Developer Tools
     'json-formatter',
     'css-minifier',
@@ -176,7 +176,7 @@ export default function sitemap() {
     'uuid-generator',
     'color-picker',
     'gradient-generator',
-    
+
     // Future PDF Tools
     'pdf-merger',
     'pdf-splitter',
@@ -184,7 +184,7 @@ export default function sitemap() {
     'pdf-to-jpg',
     'jpg-to-pdf',
     'pdf-editor',
-    
+
     // Future Video Tools
     'video-compressor',
     'video-converter',
@@ -223,27 +223,27 @@ export default function sitemap() {
     'compress-photos-for-web',
     'optimize-images-for-website',
     'free-online-image-compressor-no-watermark',
-    
+
     // Word counter long-tail
     'free-word-counter-online-no-registration',
     'word-and-character-counter-for-essays',
     'count-words-characters-sentences-paragraphs',
     'real-time-word-counter-for-writing',
     'academic-word-counter-with-reading-time',
-    
+
     // Password generator long-tail
     'free-secure-password-generator-online',
     'strong-password-generator-no-storage',
     'cryptographically-secure-password-creator',
     'custom-length-password-generator-free',
     'password-generator-with-special-characters',
-    
+
     // Audio compression long-tail
     'compress-audio-file-online-free-no-watermark',
     'reduce-audio-size-for-email-attachment',
     'compress-large-audio-files-for-whatsapp',
     'audio-compressor-online-free-without-losing-quality',
-    
+
     // Lorem ipsum long-tail
     'free-lorem-ipsum-generator-online',
     'lorem-ipsum-placeholder-text-creator',

@@ -10,10 +10,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
-import { 
-  ArrowLeftIcon, 
-  CopyIcon, 
-  RefreshCwIcon, 
+import {
+  ArrowLeftIcon,
+  CopyIcon,
+  RefreshCwIcon,
   FileTextIcon,
   DownloadIcon,
   CodeIcon
@@ -53,19 +53,19 @@ export default function LoremIpsumGeneratorTool() {
   const generateWords = (wordCount) => {
     const words = [];
     const startWords = startWithLorem ? ['lorem', 'ipsum', 'dolor', 'sit', 'amet'] : [];
-    
+
     // Add starting words if requested
     if (startWithLorem && wordCount >= 5) {
       words.push(...startWords);
       wordCount -= 5;
     }
-    
+
     // Generate remaining words
     for (let i = 0; i < wordCount; i++) {
       const randomIndex = Math.floor(Math.random() * loremWords.length);
       words.push(loremWords[randomIndex]);
     }
-    
+
     return words;
   };
 
@@ -79,29 +79,29 @@ export default function LoremIpsumGeneratorTool() {
   const generateParagraph = () => {
     const sentenceCount = Math.floor(Math.random() * 5) + 3; // 3-7 sentences
     const sentences = [];
-    
+
     for (let i = 0; i < sentenceCount; i++) {
       sentences.push(generateSentence());
     }
-    
+
     return sentences.join(' ');
   };
 
   const generatedText = useMemo(() => {
     let result = [];
-    
+
     switch (type) {
       case 'words':
         const words = generateWords(count);
         result = [words.join(' ')];
         break;
-        
+
       case 'sentences':
         for (let i = 0; i < count; i++) {
           result.push(generateSentence());
         }
         break;
-        
+
       case 'paragraphs':
       default:
         for (let i = 0; i < count; i++) {
@@ -109,11 +109,11 @@ export default function LoremIpsumGeneratorTool() {
         }
         break;
     }
-    
+
     if (htmlFormat && type === 'paragraphs') {
       return result.map(p => `<p>${p}</p>`).join('\n\n');
     }
-    
+
     return result.join('\n\n');
   }, [type, count, startWithLorem, htmlFormat]);
 
@@ -185,7 +185,7 @@ export default function LoremIpsumGeneratorTool() {
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <FileTextIcon className="h-6 w-6 text-primary" />
@@ -195,7 +195,7 @@ export default function LoremIpsumGeneratorTool() {
               <p className="text-muted-foreground">Generate placeholder text for design and development</p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant="secondary">Classic Lorem Ipsum</Badge>
             <Badge variant="secondary">HTML Support</Badge>
@@ -267,7 +267,7 @@ export default function LoremIpsumGeneratorTool() {
                 {/* Options */}
                 <div className="space-y-4">
                   <Label className="text-base font-medium">Options</Label>
-                  
+
                   <div className="flex items-center justify-between">
                     <Label htmlFor="start-lorem" className="text-sm">
                       Start with "Lorem ipsum"
@@ -278,7 +278,7 @@ export default function LoremIpsumGeneratorTool() {
                       onCheckedChange={setStartWithLorem}
                     />
                   </div>
-                  
+
                   {type === 'paragraphs' && (
                     <div className="flex items-center justify-between">
                       <Label htmlFor="html-format" className="text-sm">
@@ -304,7 +304,7 @@ export default function LoremIpsumGeneratorTool() {
                     <CopyIcon className="h-4 w-4 mr-2" />
                     {copied ? 'Copied!' : 'Copy Text'}
                   </Button>
-                  
+
                   <Button
                     onClick={downloadAsText}
                     variant="outline"
@@ -313,7 +313,7 @@ export default function LoremIpsumGeneratorTool() {
                     <DownloadIcon className="h-4 w-4 mr-2" />
                     Download as TXT
                   </Button>
-                  
+
                   <Button
                     onClick={downloadAsHTML}
                     variant="outline"
@@ -354,7 +354,7 @@ export default function LoremIpsumGeneratorTool() {
                   className="min-h-[500px] font-serif text-base leading-relaxed"
                   placeholder="Generated Lorem Ipsum text will appear here..."
                 />
-                
+
                 <div className="mt-4 flex flex-wrap gap-2">
                   <Button
                     onClick={copyToClipboard}
@@ -363,7 +363,7 @@ export default function LoremIpsumGeneratorTool() {
                     <CopyIcon className="h-4 w-4 mr-2" />
                     {copied ? 'Copied!' : 'Copy'}
                   </Button>
-                  
+
                   <Button
                     onClick={downloadAsText}
                     variant="outline"
@@ -372,7 +372,7 @@ export default function LoremIpsumGeneratorTool() {
                     <DownloadIcon className="h-4 w-4 mr-2" />
                     TXT
                   </Button>
-                  
+
                   <Button
                     onClick={downloadAsHTML}
                     variant="outline"
@@ -396,11 +396,11 @@ export default function LoremIpsumGeneratorTool() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-sm text-muted-foreground">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the 
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley 
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book.
               </p>
-              
+
               <div>
                 <h4 className="font-medium mb-2">Why use Lorem Ipsum?</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
@@ -427,28 +427,28 @@ export default function LoremIpsumGeneratorTool() {
                     Fill website layouts and templates during development phase
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-medium mb-1">Graphic Design</h4>
                   <p className="text-sm text-muted-foreground">
                     Create mockups for brochures, posters, and marketing materials
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-medium mb-1">Typography Testing</h4>
                   <p className="text-sm text-muted-foreground">
                     Test fonts, sizes, and spacing with realistic text content
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-medium mb-1">Content Planning</h4>
                   <p className="text-sm text-muted-foreground">
                     Estimate space requirements before final content is ready
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-medium mb-1">Presentations</h4>
                   <p className="text-sm text-muted-foreground">

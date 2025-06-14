@@ -37,11 +37,11 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p className="text-lg mb-4">
-                At 30tools.com, we believe that powerful file processing tools should be accessible to everyone, 
+                At 30tools.com, we believe that powerful file processing tools should be accessible to everyone,
                 without compromising privacy or requiring expensive software licenses.
               </p>
               <p className="text-muted-foreground">
-                Our mission is to provide free, fast, and secure online tools that process files directly in your browser, 
+                Our mission is to provide free, fast, and secure online tools that process files directly in your browser,
                 ensuring your data never leaves your device while delivering professional-grade results.
               </p>
             </CardContent>
@@ -60,7 +60,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  All file processing happens locally in your browser. We never see, store, or have access to your files. 
+                  All file processing happens locally in your browser. We never see, store, or have access to your files.
                   Your privacy is guaranteed by design, not just by policy.
                 </p>
               </CardContent>
@@ -75,7 +75,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  No upload/download times. No server delays. Our tools process files instantly in your browser 
+                  No upload/download times. No server delays. Our tools process files instantly in your browser
                   using optimized algorithms and WebAssembly technology.
                 </p>
               </CardContent>
@@ -90,7 +90,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  No subscriptions, no hidden fees, no premium tiers. All tools are free to use with no file size limits 
+                  No subscriptions, no hidden fees, no premium tiers. All tools are free to use with no file size limits
                   or watermarks. Supported by ethical advertising.
                 </p>
               </CardContent>
@@ -105,7 +105,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Use our tools on any device - desktop, tablet, or mobile. No software installation required. 
+                  Use our tools on any device - desktop, tablet, or mobile. No software installation required.
                   Progressive Web App technology for native-like experience.
                 </p>
               </CardContent>
@@ -165,7 +165,7 @@ export default function AboutPage() {
                   Quality & Reliability
                 </h3>
                 <p className="text-muted-foreground">
-                  We continuously test and improve our tools to ensure they work flawlessly across all browsers and devices. 
+                  We continuously test and improve our tools to ensure they work flawlessly across all browsers and devices.
                   Our commitment to quality means you can rely on consistent, professional results every time.
                 </p>
               </CardContent>
@@ -178,7 +178,7 @@ export default function AboutPage() {
                   User-Centric Development
                 </h3>
                 <p className="text-muted-foreground">
-                  Every feature we build is driven by real user needs. We actively listen to feedback and prioritize 
+                  Every feature we build is driven by real user needs. We actively listen to feedback and prioritize
                   tools that solve actual problems faced by our community.
                 </p>
               </CardContent>
@@ -191,7 +191,7 @@ export default function AboutPage() {
                   Sustainable Growth
                 </h3>
                 <p className="text-muted-foreground">
-                  We believe in sustainable, ethical business practices. Our revenue comes from non-intrusive advertising, 
+                  We believe in sustainable, ethical business practices. Our revenue comes from non-intrusive advertising,
                   allowing us to keep all tools free while maintaining and improving our services.
                 </p>
               </CardContent>
@@ -206,7 +206,7 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p className="mb-4">
-                30tools.com is more than just a website - it&apos;s a community of users who value privacy, efficiency, and quality tools. 
+                30tools.com is more than just a website - it&apos;s a community of users who value privacy, efficiency, and quality tools.
                 Here&apos;s how you can be part of our growing community:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -243,7 +243,7 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent>
               <p className="mb-4">
-                We love hearing from our users! Whether you have questions, suggestions, or just want to say hello, 
+                We love hearing from our users! Whether you have questions, suggestions, or just want to say hello,
                 don&apos;t hesitate to reach out.
               </p>
               <div className="flex flex-wrap gap-4">

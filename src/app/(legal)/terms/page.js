@@ -31,7 +31,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
             <p className="mb-4">
-              By accessing and using 30tools.com, you accept and agree to be bound by the terms and provision of this agreement. 
+              By accessing and using 30tools.com, you accept and agree to be bound by the terms and provision of this agreement.
               If you do not agree to abide by the above, please do not use this service.
             </p>
           </section>
@@ -93,7 +93,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">5. Intellectual Property</h2>
             <p className="mb-4">
-              The 30tools.com website, including its design, code, and content, is protected by copyright and other intellectual property laws. 
+              The 30tools.com website, including its design, code, and content, is protected by copyright and other intellectual property laws.
               Users retain full ownership of their uploaded files and processed results.
             </p>
             <ul className="list-disc pl-6 mb-4">
@@ -169,7 +169,7 @@ export default function TermsOfServicePage() {
           <section>
             <h2 className="text-2xl font-semibold mb-4">11. Governing Law</h2>
             <p className="mb-4">
-              These terms shall be governed by and construed in accordance with the laws of the United States, 
+              These terms shall be governed by and construed in accordance with the laws of the United States,
               without regard to its conflict of law provisions.
             </p>
           </section>

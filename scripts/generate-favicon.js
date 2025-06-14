@@ -35,51 +35,51 @@ const faviconSvg = `
 
 async function generateFavicon() {
   console.log('🎨 Generating professional favicon for 30tools...');
-  
+
   try {
     // Create favicon.ico (32x32 and 16x16 sizes)
     const sizes = [16, 32];
     const pngBuffers = [];
-    
+
     for (const size of sizes) {
       const pngBuffer = await sharp(Buffer.from(faviconSvg))
         .resize(size, size)
         .png({ quality: 90, compressionLevel: 9 })
         .toBuffer();
-      
+
       pngBuffers.push(pngBuffer);
-      
+
       // Also save individual PNG files
       await sharp(pngBuffer)
         .toFile(path.join(process.cwd(), 'public', 'icons', `favicon-${size}x${size}.png`));
-      
+
       console.log(`✅ Generated favicon-${size}x${size}.png`);
     }
-    
+
     // Create the main favicon.ico in public root
     await sharp(pngBuffers[1]) // Use 32x32 for main favicon
       .toFile(path.join(process.cwd(), 'public', 'favicon.ico'));
-    
+
     console.log('✅ Generated favicon.ico');
-    
+
     // Update the base icon SVG with the favicon design
     fs.writeFileSync(
-      path.join(process.cwd(), 'public', 'icons', 'favicon.svg'), 
+      path.join(process.cwd(), 'public', 'icons', 'favicon.svg'),
       faviconSvg
     );
-    
+
     console.log('✅ Generated favicon.svg');
-    
+
     // Create Apple touch icon (180x180)
     await sharp(Buffer.from(faviconSvg))
       .resize(180, 180)
       .png({ quality: 90 })
       .toFile(path.join(process.cwd(), 'public', 'icons', 'apple-touch-icon.png'));
-    
+
     console.log('✅ Updated apple-touch-icon.png');
-    
+
     console.log('🎉 Professional favicon generation complete!');
-    
+
   } catch (error) {
     console.error('❌ Error generating favicon:', error);
     process.exit(1);

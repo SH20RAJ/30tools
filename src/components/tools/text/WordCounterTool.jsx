@@ -16,36 +16,36 @@ export default function WordCounterTool() {
   // Real-time text analysis
   const stats = useMemo(() => {
     const trimmedText = text.trim();
-    
+
     // Word count (split by whitespace and filter empty strings)
     const words = trimmedText ? trimmedText.split(/\s+/).filter(word => word.length > 0) : [];
     const wordCount = words.length;
-    
+
     // Character counts
     const charactersWithSpaces = text.length;
     const charactersWithoutSpaces = text.replace(/\s/g, '').length;
-    
+
     // Sentence count (split by sentence-ending punctuation)
     const sentences = trimmedText ? trimmedText.split(/[.!?]+/).filter(sentence => sentence.trim().length > 0) : [];
     const sentenceCount = sentences.length;
-    
+
     // Paragraph count (split by double line breaks)
     const paragraphs = trimmedText ? trimmedText.split(/\n\s*\n/).filter(paragraph => paragraph.trim().length > 0) : [];
     const paragraphCount = paragraphs.length;
-    
+
     // Reading time estimation (average 200 words per minute)
     const readingTimeMinutes = Math.ceil(wordCount / 200);
     const readingTimeSeconds = Math.ceil((wordCount / 200) * 60);
-    
+
     // Speaking time estimation (average 125 words per minute)
     const speakingTimeMinutes = Math.ceil(wordCount / 125);
-    
+
     // Average words per sentence
     const avgWordsPerSentence = sentenceCount > 0 ? Math.round(wordCount / sentenceCount) : 0;
-    
+
     // Average characters per word
     const avgCharsPerWord = wordCount > 0 ? Math.round(charactersWithoutSpaces / wordCount) : 0;
-    
+
     return {
       wordCount,
       charactersWithSpaces,
@@ -65,16 +65,16 @@ export default function WordCounterTool() {
   function getMostCommonWords(words) {
     const wordFreq = {};
     const commonWords = new Set(['the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for', 'of', 'with', 'by', 'is', 'are', 'was', 'were', 'be', 'been', 'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might', 'can', 'this', 'that', 'these', 'those', 'i', 'you', 'he', 'she', 'it', 'we', 'they']);
-    
+
     words.forEach(word => {
       const cleanWord = word.toLowerCase().replace(/[^\w]/g, '');
       if (cleanWord.length > 2 && !commonWords.has(cleanWord)) {
         wordFreq[cleanWord] = (wordFreq[cleanWord] || 0) + 1;
       }
     });
-    
+
     return Object.entries(wordFreq)
-      .sort(([,a], [,b]) => b - a)
+      .sort(([, a], [, b]) => b - a)
       .slice(0, 5)
       .map(([word, count]) => ({ word, count }));
   }
@@ -154,7 +154,7 @@ Generated on: ${new Date().toLocaleString()}
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <TypeIcon className="h-6 w-6 text-primary" />
@@ -164,7 +164,7 @@ Generated on: ${new Date().toLocaleString()}
               <p className="text-muted-foreground">Count words, characters, sentences, and more</p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant="secondary">Real-time Analysis</Badge>
             <Badge variant="secondary">Reading Time</Badge>
@@ -190,42 +190,42 @@ Generated on: ${new Date().toLocaleString()}
                   onChange={(e) => setText(e.target.value)}
                   className="min-h-[400px] text-base leading-relaxed"
                 />
-                
+
                 {/* Quick Actions */}
                 <div className="flex flex-wrap gap-2">
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <Button
+                    variant="outline"
+                    size="sm"
                     onClick={copyToClipboard}
                     disabled={!text}
                   >
                     <CopyIcon className="h-4 w-4 mr-2" />
                     {copied ? 'Copied!' : 'Copy Text'}
                   </Button>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+
+                  <Button
+                    variant="outline"
+                    size="sm"
                     onClick={downloadAsText}
                     disabled={!text}
                   >
                     <DownloadIcon className="h-4 w-4 mr-2" />
                     Download Text
                   </Button>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+
+                  <Button
+                    variant="outline"
+                    size="sm"
                     onClick={downloadStats}
                     disabled={!text}
                   >
                     <FileTextIcon className="h-4 w-4 mr-2" />
                     Download Report
                   </Button>
-                  
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+
+                  <Button
+                    variant="outline"
+                    size="sm"
                     onClick={clearText}
                     disabled={!text}
                   >
@@ -284,9 +284,9 @@ Generated on: ${new Date().toLocaleString()}
                     <div className="text-sm text-muted-foreground">Paragraphs</div>
                   </div>
                 </div>
-                
+
                 <Separator />
-                
+
                 <div className="space-y-2">
                   <div className="flex justify-between">
                     <span className="text-sm">Characters (no spaces)</span>
@@ -386,14 +386,14 @@ Generated on: ${new Date().toLocaleString()}
                   Our word counter uses the same algorithm as Microsoft Word, counting words separated by spaces and line breaks.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-medium mb-1">Is my text stored anywhere?</h4>
                 <p className="text-sm text-muted-foreground">
                   No, all text processing happens in your browser. Your text is never uploaded to our servers.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-medium mb-1">What's the character limit?</h4>
                 <p className="text-sm text-muted-foreground">

@@ -111,7 +111,7 @@ export default function APIDocsPage() {
             <div>
               <h3 className="font-semibold mb-2">Example Response</h3>
               <div className="bg-muted p-3 rounded-lg font-mono text-sm">
-{`[
+                {`[
   "image",
   [
     "image compressor",
@@ -190,7 +190,7 @@ export default function APIDocsPage() {
             <div>
               <h3 className="font-semibold mb-2">JavaScript (Fetch)</h3>
               <div className="bg-muted p-3 rounded-lg font-mono text-sm overflow-x-auto">
-{`async function getSearchSuggestions(query) {
+                {`async function getSearchSuggestions(query) {
   const response = await fetch(
     \`https://30tools.com/api/suggestions?q=\${encodeURIComponent(query)}\`
   );
@@ -207,7 +207,7 @@ console.log(suggestions); // ['image compressor', 'image optimizer', ...]`}
             <div>
               <h3 className="font-semibold mb-2">Python (requests)</h3>
               <div className="bg-muted p-3 rounded-lg font-mono text-sm overflow-x-auto">
-{`import requests
+                {`import requests
 
 def get_search_suggestions(query):
     url = f"https://30tools.com/api/suggestions"
@@ -225,7 +225,7 @@ print(suggestions)  # ['image compressor', 'image optimizer', ...]`}
             <div>
               <h3 className="font-semibold mb-2">PHP (cURL)</h3>
               <div className="bg-muted p-3 rounded-lg font-mono text-sm overflow-x-auto">
-{`function getSearchSuggestions($query) {
+                {`function getSearchSuggestions($query) {
     $url = 'https://30tools.com/api/suggestions?q=' . urlencode($query);
     $response = file_get_contents($url);
     $data = json_decode($response, true);

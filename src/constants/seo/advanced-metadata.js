@@ -4,7 +4,7 @@ import toolsDirectory from './comprehensive-tools-directory.json';
 // Global SEO constants
 export const GLOBAL_SEO = {
   siteName: "30tools - Free Online Toolkit",
-  domain: "30tools.com", 
+  domain: "30tools.com",
   defaultTitle: "30tools - Free Online Tools for Images, PDFs, Videos & More",
   defaultDescription: "Professional online tools for image compression, PDF manipulation, video conversion, and text processing. Free, fast, and secure with no watermarks.",
   defaultKeywords: "free online tools, image compressor, pdf merger, video converter, text tools, file converter, online toolkit, web utilities",
@@ -93,7 +93,7 @@ export const generateFAQSchema = (faqs) => ({
 export const generateToolMetadata = (toolId) => {
   // Find tool in comprehensive directory
   let tool = null;
-  
+
   for (const [, catData] of Object.entries(toolsDirectory.categories)) {
     const foundTool = catData.tools?.find(t => t.id === toolId);
     if (foundTool) {
@@ -101,7 +101,7 @@ export const generateToolMetadata = (toolId) => {
       break;
     }
   }
-  
+
   if (!tool) {
     return getDefaultMetadata();
   }
@@ -175,7 +175,7 @@ export const generateToolMetadata = (toolId) => {
 
 export const generateCategoryMetadata = (categorySlug) => {
   const category = Object.values(toolsDirectory.categories).find(cat => cat.slug === categorySlug);
-  
+
   if (!category) {
     return getDefaultMetadata();
   }
@@ -288,7 +288,7 @@ export const generateLongTailKeywords = (baseTool, intent = 'transactional') => 
       `${baseTool} tool recommendations`
     ]
   };
-  
+
   return intents[intent] || intents.transactional;
 };
 
@@ -302,7 +302,7 @@ export const generateToolContent = (tool) => ({
   benefits: [
     "100% free to use",
     "No watermarks added",
-    "No registration required", 
+    "No registration required",
     "Privacy-first processing",
     "Fast and reliable",
     "Mobile-friendly design"

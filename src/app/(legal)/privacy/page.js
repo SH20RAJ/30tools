@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
             <p className="mb-4">
               30tools.com is committed to protecting your privacy. We do NOT collect, store, or process any personal files you upload to our tools. All file processing happens locally in your browser.
             </p>
-            
+
             <h3 className="text-xl font-medium mb-2">Analytics Data</h3>
             <p className="mb-4">We collect anonymous usage data through Google Analytics to improve our services:</p>
             <ul className="list-disc pl-6 mb-4">
@@ -85,10 +85,10 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-semibold mb-4">5. Third-Party Services</h2>
             <h3 className="text-xl font-medium mb-2">Google Analytics</h3>
             <p className="mb-4">We use Google Analytics to understand how visitors use our site. Google may use this data according to their privacy policy.</p>
-            
+
             <h3 className="text-xl font-medium mb-2">Google AdSense</h3>
             <p className="mb-4">We display advertisements through Google AdSense. Google may use cookies to show relevant ads based on your browsing history.</p>
-            
+
             <h3 className="text-xl font-medium mb-2">Cloudflare</h3>
             <p className="mb-4">Our website is served through Cloudflare for performance and security. Cloudflare may collect technical data for these purposes.</p>
           </section>

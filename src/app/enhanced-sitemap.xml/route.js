@@ -3,7 +3,7 @@ import toolsDirectory from '@/constants/tools-directory.json';
 
 export default function sitemap() {
   const baseUrl = 'https://30tools.com';
-  
+
   // Static pages with high priority
   const staticPages = [
     {
@@ -73,10 +73,10 @@ export default function sitemap() {
         tool.routes?.forEach((route, index) => {
           const priority = tool.completed ? 0.9 : 0.7; // Higher priority for completed tools
           const changeFreq = tool.completed ? 'weekly' : 'monthly';
-          
+
           // Primary route gets higher priority
           const routePriority = index === 0 ? priority : priority - 0.1;
-          
+
           toolPages.push({
             url: `${baseUrl}${route}`,
             lastModified: new Date(),
@@ -91,7 +91,7 @@ export default function sitemap() {
   // Search pages for popular terms (for SEO)
   const popularSearchTerms = [
     'image compressor',
-    'pdf merger', 
+    'pdf merger',
     'video converter',
     'resize image',
     'compress video',
