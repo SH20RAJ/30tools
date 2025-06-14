@@ -777,6 +777,70 @@
           "difficulty": "Low",
           "cpc": "$0.65",
           "intent": "Medium"
+        },
+        {
+          "id": "qr-code-generator",
+          "name": "QR Code Generator",
+          "shortName": "QR Code",
+          "description": "Generate QR codes for URLs, WiFi, contacts, SMS, and email. Customizable colors and high-resolution output.",
+          "longDescription": "Professional QR code generator supporting multiple data types including websites, WiFi credentials, contact information, text messages, and emails. Customize colors, size, and error correction levels.",
+          "category": "text",
+          "subcategory": "generator",
+          "primaryKeyword": "qr code generator",
+          "keywords": [
+            "qr code generator free",
+            "create qr code online",
+            "qr code maker",
+            "wifi qr code generator",
+            "qr generator online",
+            "custom qr code generator",
+            "qr code creator free",
+            "generate qr code"
+          ],
+          "longTailKeywords": [
+            "free qr code generator online no registration",
+            "qr code generator for wifi password sharing",
+            "create custom qr code with logo free",
+            "qr code generator for business cards",
+            "bulk qr code generator for urls",
+            "high resolution qr code generator free",
+            "qr code generator with custom colors"
+          ],
+          "routes": [
+            "/qr-code-generator",
+            "/create-qr-code-online",
+            "/qr-generator",
+            "/wifi-qr-code-generator",
+            "/qr-code-maker"
+          ],
+          "features": [
+            "Multiple QR code types (URL, WiFi, vCard, SMS, Email)",
+            "High-resolution output up to 800×800px",
+            "Custom foreground and background colors",
+            "Adjustable error correction levels",
+            "Real-time preview and generation",
+            "Download as PNG image",
+            "Copy to clipboard functionality",
+            "Mobile-friendly interface"
+          ],
+          "useCases": [
+            "Website URL sharing",
+            "WiFi password sharing",
+            "Business card contact info",
+            "Marketing campaigns",
+            "Event registration",
+            "Social media profiles"
+          ],
+          "fileFormats": ["PNG"],
+          "maxFileSize": "N/A",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": true,
+          "completed": true,
+          "monthlySearches": 368000,
+          "difficulty": "Medium",
+          "cpc": "$1.25",
+          "intent": "High"
         }
       ]
     },
