@@ -470,3 +470,71 @@ const structuredData = {
 ```
 
 ---
+
+## 🎯 **NEW DEVELOPMENT FOCUS (UPDATED STRATEGY)**
+
+### ✅ **15. Prioritize Tool Volume Over Multiple Routes**
+
+**CRITICAL CHANGE - READ CAREFULLY:**
+
+- ❌ **DON'T** create multiple routes for same tool (like `/image-compressor` + `/image-minimizer`)
+- ✅ **DO** focus on building MAXIMUM different working tools
+- ✅ **DO** create one primary route per tool functionality
+- ✅ **DO** programmatically generate multiple SEO routes later via JSON config
+
+**REASONING:**
+- More unique tools = broader keyword coverage
+- Better user value = higher rankings
+- Programmatic route generation = scalable SEO
+
+### ✅ **16. Tool Organization JSON (MANDATORY)**
+
+**CREATE `/constants/tools-directory.json`:**
+```json
+{
+  "image": [
+    {
+      "name": "Image Compressor",
+      "slug": "image-compressor", 
+      "component": "compression",
+      "seoRoutes": ["free-image-compressor", "compress-images-online", "image-optimizer"],
+      "keywords": ["compress images", "image optimization", "reduce file size"],
+      "status": "live"
+    }
+  ],
+  "video": [],
+  "audio": [],
+  "pdf": [],
+  "text": []
+}
+```
+
+### ✅ **17. Automated Sitemap Generation**
+
+**MUST INCLUDE:**
+- Dynamic sitemap.xml generation from tools directory
+- All tool pages + SEO routes
+- Landing pages and category pages
+- Proper lastmod, changefreq, priority
+- Submit to Google Search Console automatically
+
+### ✅ **18. Progressive Web App (PWA) Requirements**
+
+**MANDATORY PWA FEATURES:**
+- Install prompt for mobile users
+- Offline functionality for tools
+- Service worker for caching
+- App-like experience
+- Icon sets for all devices
+
+### ✅ **19. Next.js Optimization (LEVERAGE EVERYTHING)**
+
+**MUST USE:**
+- next/image for all images with Sharp
+- Dynamic imports for code splitting
+- Static generation where possible
+- Edge runtime for faster responses
+- Metadata API for SEO
+- Server components by default
+
+---

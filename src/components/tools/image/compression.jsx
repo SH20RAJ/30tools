@@ -90,16 +90,62 @@ export default function ImageCompressionTool() {
             const img = new Image();
 
             img.onload = () => {
-                canvas.width = img.width;
-                canvas.height = img.height;
-                ctx.drawImage(img, 0, 0);
+                // Calculate optimal dimensions for better compression
+                let { width, height } = img;
+                const maxDimension = 2048; // Max dimension for web optimization
+                
+                if (width > maxDimension || height > maxDimension) {
+                    const ratio = Math.min(maxDimension / width, maxDimension / height);
+                    width *= ratio;
+                    height *= ratio;
+                }
 
-                canvas.toBlob((blob) => {
-                    resolve({
-                        blob,
-                        size: blob.size
-                    });
-                }, 'image/jpeg', quality[0] / 100);
+                canvas.width = width;
+                canvas.height = height;
+                
+                // Use better image rendering
+                ctx.imageSmoothingEnabled = true;
+                ctx.imageSmoothingQuality = 'high';
+                ctx.drawImage(img, 0, 0, width, height);
+
+                // Determine optimal format and quality
+                const originalFormat = fileItem.file.type;
+                let outputFormat = 'image/jpeg';
+                let outputQuality = quality[0] / 100;
+
+                // Use WebP for better compression if supported
+                if (canvas.toBlob && typeof canvas.toBlob === 'function') {
+                    // Test WebP support
+                    canvas.toBlob((testBlob) => {
+                        if (testBlob && testBlob.type === 'image/webp') {
+                            outputFormat = 'image/webp';
+                            outputQuality = Math.max(0.8, quality[0] / 100); // WebP can use higher quality
+                        }
+                        
+                        canvas.toBlob((blob) => {
+                            resolve({
+                                blob,
+                                size: blob.size,
+                                format: outputFormat,
+                                dimensions: { width, height }
+                            });
+                        }, outputFormat, outputQuality);
+                    }, 'image/webp', 0.8);
+                } else {
+                    // Fallback to JPEG
+                    canvas.toBlob((blob) => {
+                        resolve({
+                            blob,
+                            size: blob.size,
+                            format: outputFormat,
+                            dimensions: { width, height }
+                        });
+                    }, outputFormat, outputQuality);
+                }
+            };
+
+            img.onerror = () => {
+                resolve({ error: 'Failed to load image' });
             };
 
             img.src = URL.createObjectURL(fileItem.file);

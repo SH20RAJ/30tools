@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+import toolsDirectory from '@/constants/tools-directory.json';
 import { 
   ImageIcon, 
   VideoIcon, 
@@ -14,39 +16,20 @@ import {
   SmartphoneIcon
 } from "lucide-react";
 
+const iconMap = {
+  ImageIcon,
+  VideoIcon,
+  MusicIcon,
+  FileTextIcon,
+  FileIcon
+};
+
 export default function Home() {
-  const toolCategories = [
-    {
-      icon: ImageIcon,
-      title: "Image Tools",
-      description: "Compress, resize, convert formats",
-      tools: ["Compress", "Resize", "Convert", "Optimize"]
-    },
-    {
-      icon: VideoIcon,
-      title: "Video Tools", 
-      description: "Convert, compress, trim videos",
-      tools: ["Convert", "Compress", "Trim", "Optimize"]
-    },
-    {
-      icon: MusicIcon,
-      title: "Audio Tools",
-      description: "Format conversion, trim, compress",
-      tools: ["Convert", "Trim", "Compress", "Extract"]
-    },
-    {
-      icon: FileIcon,
-      title: "PDF Tools",
-      description: "Merge, split, compress PDFs",
-      tools: ["Merge", "Split", "Compress", "Convert"]
-    },
-    {
-      icon: FileTextIcon,
-      title: "Text Tools",
-      description: "Word count, case convert, format",
-      tools: ["Word Count", "Case Convert", "JSON Format", "Minify"]
-    }
-  ];
+  const toolCategories = Object.entries(toolsDirectory.categories).map(([key, category]) => ({
+    ...category,
+    icon: iconMap[category.icon] || ImageIcon,
+    key
+  }));
 
   const features = [
     {
@@ -65,6 +48,11 @@ export default function Home() {
       description: "Works perfectly on all devices and screen sizes"
     }
   ];
+
+  const totalTools = toolsDirectory.meta.totalTools;
+  const featuredTools = Object.values(toolsDirectory.categories)
+    .flatMap(category => category.tools)
+    .filter(tool => tool.featured);
 
   return (
     <div className="min-h-screen bg-background">
@@ -123,7 +111,7 @@ export default function Home() {
       {/* Tool Categories */}
       <section className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <h3 className="text-3xl font-bold mb-4">30+ Tools Across 5 Categories</h3>
+          <h3 className="text-3xl font-bold mb-4">{totalTools}+ Tools Across {Object.keys(toolsDirectory.categories).length} Categories</h3>
           <p className="text-muted-foreground text-lg">
             Everything you need for your digital files, all in one place
           </p>
@@ -138,7 +126,7 @@ export default function Home() {
                     <category.icon className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <CardTitle className="text-lg">{category.title}</CardTitle>
+                    <CardTitle className="text-lg">{category.name}</CardTitle>
                     <CardDescription>{category.description}</CardDescription>
                   </div>
                 </div>
@@ -146,15 +134,59 @@ export default function Home() {
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {category.tools.map((tool, toolIndex) => (
-                    <Badge key={toolIndex} variant="secondary" className="text-xs">
-                      {tool}
-                    </Badge>
+                    <Link key={toolIndex} href={`/${tool.slug}`}>
+                      <Badge variant="secondary" className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer">
+                        {tool.name}
+                      </Badge>
+                    </Link>
                   ))}
+                  {category.tools.length === 0 && (
+                    <Badge variant="outline" className="text-xs">
+                      Coming Soon
+                    </Badge>
+                  )}
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {/* Featured Tools Section */}
+        {featuredTools.length > 0 && (
+          <>
+            <Separator className="my-16" />
+            <div className="text-center mb-12">
+              <h3 className="text-2xl font-bold mb-4">Popular Tools</h3>
+              <p className="text-muted-foreground">
+                Most used tools by our community
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {featuredTools.map((tool) => (
+                <Link key={tool.id} href={`/${tool.slug}`}>
+                  <Card className="hover:shadow-lg transition-shadow cursor-pointer">
+                    <CardHeader>
+                      <CardTitle className="text-lg flex items-center gap-2">
+                        {tool.name}
+                        <Badge variant="secondary" className="text-xs">Popular</Badge>
+                      </CardTitle>
+                      <CardDescription>{tool.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex flex-wrap gap-1">
+                        {tool.keywords.slice(0, 3).map((keyword, idx) => (
+                          <Badge key={idx} variant="outline" className="text-xs">
+                            {keyword}
+                          </Badge>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+          </>
+        )}
       </section>
 
       <Separator className="container mx-auto" />
