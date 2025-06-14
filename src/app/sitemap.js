@@ -31,7 +31,7 @@ export default function sitemap() {
   ];
 
   // Generate category pages
-  const categoryPages = Object.entries(toolsDirectory.categories).map(([key, category]) => ({
+  const categoryPages = Object.entries(toolsDirectory.categories).map(([key]) => ({
     url: `${BASE_URL}/${key}-tools`,
     lastModified: new Date(),
     changeFrequency: 'weekly',

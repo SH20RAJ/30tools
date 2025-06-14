@@ -246,7 +246,8 @@ This is the core rulebook that will help us **strategically outrank competitors*
 
 ### ✅ **3. Multiple Route Support**
 
-- Same components can be used across multiple routes for SEO optimization
+- Same components can be used across multiple routes for SEO optimization but dont create multiple `page.js` files create a single component and use it for multiple routes I will create a JSON file to manage this.
+* Use descriptive names for components that reflect their functionality
 * Example: `compression.jsx` can be used for:
   * `/image-compressor`
   * `/image-minimizer`

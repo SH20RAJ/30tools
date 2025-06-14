@@ -1,6 +1,6 @@
 import ImageToolsNavbar from '@/components/navigation/ImageToolsNavbar';
 import ImageToolsFooter from '@/components/footers/ImageToolsFooter';
-import { SEO_TEMPLATES, OPEN_GRAPH_DEFAULTS, TWITTER_DEFAULTS } from '@/constants/seo/metadata-templates';
+import { OPEN_GRAPH_DEFAULTS, TWITTER_DEFAULTS } from '@/constants/seo/metadata-templates';
 
 export const metadata = {
   title: "Image Tools - Free Online Image Processing | 30tools",

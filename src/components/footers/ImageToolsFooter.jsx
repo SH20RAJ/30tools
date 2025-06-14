@@ -24,10 +24,12 @@ export default function ImageToolsFooter() {
   ];
 
   const resources = [
-    { name: "Blog", href: "/blog" },
-    { name: "API", href: "/api" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact", href: "/contact" },
     { name: "Privacy Policy", href: "/privacy" },
     { name: "Terms of Service", href: "/terms" },
+    { name: "Help & FAQ", href: "/help" },
+    { name: "API Documentation", href: "/api-docs" },
   ];
 
   return (
