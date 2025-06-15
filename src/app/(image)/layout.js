@@ -20,9 +20,12 @@ export const metadata = {
 
 export default function ImageToolsLayout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gradient-cute">
       <ImageToolsNavbar />
-      <main className="flex-1">{children}</main>
+      <main className="flex-1 relative">
+        <div className="absolute inset-0 bg-gradient-cute opacity-50"></div>
+        <div className="relative z-10">{children}</div>
+      </main>
       <ImageToolsFooter />
     </div>
   );
