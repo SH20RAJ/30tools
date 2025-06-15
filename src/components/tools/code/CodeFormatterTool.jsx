@@ -24,41 +24,124 @@ import {
   Eye
 } from 'lucide-react';
 
-// Load Prettier from CDN
-const loadPrettier = () => {
-  return new Promise((resolve, reject) => {
-    if (window.prettier) {
-      resolve(window.prettier);
-      return;
-    }
+// Simple code formatting functions without external dependencies
+const formatJavaScript = (code, options) => {
+  try {
+    // Basic JavaScript formatting
+    let formatted = code
+      .replace(/;\s*}/g, ';\n}')
+      .replace(/{\s*/g, '{\n')
+      .replace(/}\s*/g, '\n}\n')
+      .replace(/,\s*/g, ',\n')
+      .replace(/;\s*/g, ';\n')
+      .replace(/\n\s*\n/g, '\n');
+
+    // Add proper indentation
+    const lines = formatted.split('\n');
+    let indentLevel = 0;
+    const indent = options.useTabs ? '\t' : ' '.repeat(options.tabWidth);
     
-    // Load Prettier core
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/prettier@3.0.3/standalone.js';
-    script.onload = () => {
-      // Load parser plugins
-      const parsers = [
-        'https://cdn.jsdelivr.net/npm/prettier@3.0.3/plugins/babel.js',
-        'https://cdn.jsdelivr.net/npm/prettier@3.0.3/plugins/postcss.js',
-        'https://cdn.jsdelivr.net/npm/prettier@3.0.3/plugins/html.js',
-        'https://cdn.jsdelivr.net/npm/prettier@3.0.3/plugins/typescript.js'
-      ];
+    const formattedLines = lines.map(line => {
+      const trimmed = line.trim();
+      if (!trimmed) return '';
       
-      Promise.all(parsers.map(src => {
-        return new Promise((resolveParser) => {
-          const parserScript = document.createElement('script');
-          parserScript.src = src;
-          parserScript.onload = resolveParser;
-          parserScript.onerror = resolveParser; // Continue even if some parsers fail
-          document.head.appendChild(parserScript);
-        });
-      })).then(() => {
-        resolve(window.prettier);
-      });
-    };
-    script.onerror = reject;
-    document.head.appendChild(script);
-  });
+      // Decrease indent for closing braces
+      if (trimmed.includes('}')) {
+        indentLevel = Math.max(0, indentLevel - 1);
+      }
+      
+      const indentedLine = indent.repeat(indentLevel) + trimmed;
+      
+      // Increase indent for opening braces
+      if (trimmed.includes('{')) {
+        indentLevel++;
+      }
+      
+      return indentedLine;
+    });
+    
+    return formattedLines.join('\n');
+  } catch (error) {
+    throw new Error('JavaScript formatting failed: ' + error.message);
+  }
+};
+
+const formatCSS = (code, options) => {
+  try {
+    let formatted = code
+      .replace(/{\s*/g, ' {\n')
+      .replace(/}\s*/g, '\n}\n')
+      .replace(/;\s*/g, ';\n')
+      .replace(/,\s*/g, ',\n')
+      .replace(/\n\s*\n/g, '\n');
+
+    const lines = formatted.split('\n');
+    let indentLevel = 0;
+    const indent = options.useTabs ? '\t' : ' '.repeat(options.tabWidth);
+    
+    const formattedLines = lines.map(line => {
+      const trimmed = line.trim();
+      if (!trimmed) return '';
+      
+      if (trimmed.includes('}')) {
+        indentLevel = Math.max(0, indentLevel - 1);
+      }
+      
+      const indentedLine = indent.repeat(indentLevel) + trimmed;
+      
+      if (trimmed.includes('{')) {
+        indentLevel++;
+      }
+      
+      return indentedLine;
+    });
+    
+    return formattedLines.join('\n');
+  } catch (error) {
+    throw new Error('CSS formatting failed: ' + error.message);
+  }
+};
+
+const formatHTML = (code, options) => {
+  try {
+    const indent = options.useTabs ? '\t' : ' '.repeat(options.tabWidth);
+    let formatted = code;
+    let indentLevel = 0;
+    
+    // Basic HTML formatting
+    formatted = formatted
+      .replace(/>\s*</g, '>\n<')
+      .replace(/^\s+|\s+$/g, '');
+    
+    const lines = formatted.split('\n');
+    const formattedLines = lines.map(line => {
+      const trimmed = line.trim();
+      if (!trimmed) return '';
+      
+      // Check for closing tags
+      if (trimmed.startsWith('</')) {
+        indentLevel = Math.max(0, indentLevel - 1);
+      }
+      
+      const indentedLine = indent.repeat(indentLevel) + trimmed;
+      
+      // Check for opening tags (but not self-closing)
+      if (trimmed.startsWith('<') && !trimmed.startsWith('</') && !trimmed.endsWith('/>')) {
+        indentLevel++;
+      }
+      
+      return indentedLine;
+    });
+    
+    return formattedLines.join('\n');
+  } catch (error) {
+    throw new Error('HTML formatting failed: ' + error.message);
+  }
+};
+
+const formatTypeScript = (code, options) => {
+  // Use same logic as JavaScript for now
+  return formatJavaScript(code, options);
 };
 
 export default function CodeFormatterTool() {
@@ -166,27 +249,25 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
     setError('');
 
     try {
-      const prettier = await loadPrettier();
-      const language = languages.find(lang => lang.value === activeTab);
+      let formatted = '';
       
-      if (!language) {
-        throw new Error('Unsupported language');
+      switch (activeTab) {
+        case 'javascript':
+          formatted = formatJavaScript(inputCode[activeTab], options);
+          break;
+        case 'typescript':
+          formatted = formatTypeScript(inputCode[activeTab], options);
+          break;
+        case 'css':
+          formatted = formatCSS(inputCode[activeTab], options);
+          break;
+        case 'html':
+          formatted = formatHTML(inputCode[activeTab], options);
+          break;
+        default:
+          throw new Error('Unsupported language');
       }
 
-      const prettierOptions = {
-        parser: language.parser,
-        tabWidth: options.tabWidth,
-        useTabs: options.useTabs,
-        semi: options.semicolons,
-        singleQuote: options.singleQuote,
-        trailingComma: options.trailingComma,
-        bracketSpacing: options.bracketSpacing,
-        bracketSameLine: options.bracketSameLine,
-        printWidth: options.printWidth,
-        plugins: [prettierBabel, prettierPostcss, prettierHtml, prettierTypescript]
-      };
-
-      const formatted = prettier.format(inputCode[activeTab], prettierOptions);
       setFormattedCode(formatted);
 
     } catch (err) {
