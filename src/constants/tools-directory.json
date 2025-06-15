@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "version": "2.0",
-    "lastUpdated": "2025-06-14",
-    "totalTools": 105,
-    "totalCategories": 7,
+    "version": "2.1",
+    "lastUpdated": "2025-06-15",
+    "totalTools": 115,
+    "totalCategories": 8,
     "seoOptimized": true
   },
   "seoConfig": {
@@ -266,6 +266,145 @@
           "monthlySearches": 125000,
           "difficulty": "Medium",
           "cpc": "$1.10",
+          "intent": "High"
+        },
+        {
+          "id": "background-remover",
+          "name": "Background Remover",
+          "shortName": "Remove BG",
+          "description": "Remove image backgrounds automatically with AI. Create transparent PNG images for e-commerce, social media, and professional use.",
+          "longDescription": "AI-powered background removal tool that automatically detects and removes backgrounds from images. Create professional transparent PNGs perfect for product photography, profile pictures, and graphic design.",
+          "category": "image",
+          "subcategory": "editing",
+          "primaryKeyword": "background remover",
+          "keywords": [
+            "remove background from image",
+            "background eraser online",
+            "transparent background maker",
+            "cut out image background",
+            "photo background removal",
+            "ai background remover",
+            "remove image background free",
+            "background remover tool"
+          ],
+          "longTailKeywords": [
+            "remove background from image free online",
+            "ai background remover no watermark",
+            "bulk background removal tool online",
+            "remove background from product photos",
+            "automatic background eraser online",
+            "create transparent png from jpg",
+            "professional background removal service"
+          ],
+          "routes": [
+            "/background-remover",
+            "/remove-background",
+            "/transparent-background",
+            "/background-eraser",
+            "/cut-out-image"
+          ],
+          "features": [
+            "AI-powered detection",
+            "Automatic background removal",
+            "Transparent PNG output",
+            "Batch processing",
+            "Edge refinement",
+            "Preview before download",
+            "No watermarks",
+            "High-quality results"
+          ],
+          "useCases": [
+            "E-commerce product photos",
+            "Profile pictures",
+            "Social media posts",
+            "Graphic design projects",
+            "Marketing materials",
+            "Presentations"
+          ],
+          "fileFormats": [
+            "JPEG",
+            "PNG",
+            "WebP",
+            "GIF"
+          ],
+          "maxFileSize": "25MB per file",
+          "processingTime": "3-15 seconds",
+          "popular": true,
+          "trending": true,
+          "completed": false,
+          "monthlySearches": 350000,
+          "difficulty": "High",
+          "cpc": "$2.45",
+          "intent": "High"
+        },
+        {
+          "id": "image-cropper",
+          "name": "Image Cropper",
+          "shortName": "Crop",
+          "description": "Crop images online with custom aspect ratios and preset sizes. Perfect for social media, profile pictures, and thumbnails.",
+          "longDescription": "Professional image cropper with custom aspect ratios, preset social media sizes, and manual selection tools. Create perfectly sized images for any platform or use case.",
+          "category": "image",
+          "subcategory": "editing",
+          "primaryKeyword": "image cropper",
+          "keywords": [
+            "crop image online",
+            "photo cropper free",
+            "image crop tool",
+            "resize and crop image",
+            "crop photo online",
+            "image cropping tool",
+            "crop picture online",
+            "photo crop editor"
+          ],
+          "longTailKeywords": [
+            "crop image to specific size online",
+            "crop photos for social media",
+            "square image cropper online free",
+            "crop image with aspect ratio",
+            "batch crop multiple images",
+            "crop image for instagram post",
+            "professional photo cropping tool"
+          ],
+          "routes": [
+            "/image-cropper",
+            "/crop-image-online",
+            "/photo-cropper",
+            "/crop-photos",
+            "/image-crop-tool"
+          ],
+          "features": [
+            "Custom aspect ratios",
+            "Social media presets",
+            "Manual selection tool",
+            "Batch cropping",
+            "Preview mode",
+            "Zoom and pan",
+            "Grid overlay",
+            "Undo/redo functionality"
+          ],
+          "useCases": [
+            "Social media posts",
+            "Profile pictures",
+            "Website thumbnails",
+            "Product photography",
+            "Blog images",
+            "Print materials"
+          ],
+          "fileFormats": [
+            "JPEG",
+            "PNG",
+            "WebP",
+            "GIF",
+            "BMP"
+          ],
+          "maxFileSize": "25MB per file",
+          "processingTime": "1-3 seconds",
+          "popular": true,
+          "trending": false,
+          "completed": false,
+          "monthlySearches": 180000,
+          "difficulty": "Low",
+          "cpc": "$0.95",
           "intent": "High"
         }
       ]
@@ -989,6 +1128,77 @@
           "difficulty": "Medium",
           "cpc": "$1.35",
           "intent": "High"
+        },
+        {
+          "id": "video-to-gif",
+          "name": "Video to GIF Converter",
+          "shortName": "GIF",
+          "description": "Convert video files to animated GIFs online. Trim videos, adjust frame rate, and create high-quality GIFs for social media.",
+          "longDescription": "Professional video to GIF converter with advanced options for trimming, frame rate adjustment, and quality optimization. Perfect for creating animated GIFs for social media, websites, and presentations.",
+          "category": "video",
+          "subcategory": "conversion",
+          "primaryKeyword": "video to gif converter",
+          "keywords": [
+            "convert video to gif",
+            "video to gif online",
+            "make gif from video",
+            "gif creator from video",
+            "video gif converter",
+            "animated gif maker",
+            "mp4 to gif converter",
+            "create gif online"
+          ],
+          "longTailKeywords": [
+            "convert mp4 video to gif online free",
+            "make animated gif from video clip",
+            "video to gif converter with frame control",
+            "convert long video to gif online",
+            "create high quality gif from video",
+            "trim video and convert to gif",
+            "batch video to gif converter online"
+          ],
+          "routes": [
+            "/video-to-gif",
+            "/convert-video-to-gif",
+            "/gif-creator",
+            "/animated-gif-maker",
+            "/mp4-to-gif"
+          ],
+          "features": [
+            "Custom time range selection",
+            "Frame rate adjustment",
+            "GIF quality control",
+            "Size optimization",
+            "Preview before conversion",
+            "Batch processing",
+            "Multiple video formats",
+            "No watermarks"
+          ],
+          "useCases": [
+            "Social media posts",
+            "Website animations",
+            "Email attachments",
+            "Presentations",
+            "Tutorials",
+            "Memes creation"
+          ],
+          "fileFormats": [
+            "MP4",
+            "AVI",
+            "MOV",
+            "MKV",
+            "WebM",
+            "GIF"
+          ],
+          "maxFileSize": "200MB",
+          "processingTime": "15-60 seconds",
+          "popular": true,
+          "trending": true,
+          "completed": false,
+          "monthlySearches": 245000,
+          "difficulty": "Medium",
+          "cpc": "$1.25",
+          "intent": "High"
         }
       ]
     },
@@ -1082,6 +1292,149 @@
           "monthlySearches": 89000,
           "difficulty": "Medium",
           "cpc": "$1.15",
+          "intent": "High"
+        },
+        {
+          "id": "audio-format-converter",
+          "name": "Audio Format Converter",
+          "shortName": "Convert",
+          "description": "Convert audio between formats: MP3, WAV, FLAC, OGG, AAC, M4A. High-quality conversion with metadata preservation.",
+          "longDescription": "Professional audio format converter supporting all popular formats. Convert between MP3, WAV, FLAC, OGG, AAC, and M4A with quality control and metadata preservation.",
+          "category": "audio",
+          "subcategory": "conversion",
+          "primaryKeyword": "audio converter",
+          "keywords": [
+            "mp3 converter online",
+            "wav to mp3 converter",
+            "flac to mp3 converter",
+            "audio format converter",
+            "convert audio online",
+            "m4a to mp3 converter",
+            "ogg converter online",
+            "audio file converter"
+          ],
+          "longTailKeywords": [
+            "convert wav to mp3 online free",
+            "flac to mp3 converter high quality",
+            "batch audio converter online free",
+            "convert m4a to mp3 without quality loss",
+            "audio format converter with metadata",
+            "convert ogg to mp3 online tool",
+            "free audio converter no file size limit"
+          ],
+          "routes": [
+            "/audio-converter",
+            "/mp3-converter",
+            "/wav-to-mp3",
+            "/flac-converter",
+            "/audio-format-converter"
+          ],
+          "features": [
+            "Multiple format support",
+            "Batch conversion",
+            "Quality control",
+            "Metadata preservation",
+            "Custom bitrate settings",
+            "Sample rate adjustment",
+            "No file size limits",
+            "Fast processing"
+          ],
+          "useCases": [
+            "Music format conversion",
+            "Podcast preparation",
+            "Audio file compatibility",
+            "Digital audio workstation",
+            "Mobile device optimization",
+            "Streaming platform prep"
+          ],
+          "fileFormats": [
+            "MP3",
+            "WAV",
+            "FLAC",
+            "OGG",
+            "AAC",
+            "M4A",
+            "WMA"
+          ],
+          "maxFileSize": "200MB",
+          "processingTime": "15-90 seconds",
+          "popular": true,
+          "trending": true,
+          "completed": false,
+          "monthlySearches": 290000,
+          "difficulty": "Medium",
+          "cpc": "$1.45",
+          "intent": "High"
+        },
+        {
+          "id": "audio-trimmer",
+          "name": "Audio Trimmer",
+          "shortName": "Trim",
+          "description": "Trim and cut audio files online. Extract specific portions from audio tracks with precision timing controls.",
+          "longDescription": "Professional audio trimmer for cutting and extracting specific portions from audio files. Perfect for creating ringtones, podcast clips, and music samples.",
+          "category": "audio",
+          "subcategory": "editing",
+          "primaryKeyword": "audio trimmer",
+          "keywords": [
+            "cut audio online",
+            "trim mp3 online",
+            "audio cutter free",
+            "split audio file",
+            "extract audio clip",
+            "audio editor online",
+            "crop audio file",
+            "audio splitter tool"
+          ],
+          "longTailKeywords": [
+            "trim audio file online free no upload",
+            "cut mp3 file to specific length",
+            "extract audio clip from song",
+            "trim audio for ringtone maker",
+            "cut audio with precise timing",
+            "split long audio file online",
+            "audio trimmer with waveform view"
+          ],
+          "routes": [
+            "/audio-trimmer",
+            "/cut-audio-online",
+            "/trim-mp3",
+            "/audio-cutter",
+            "/extract-audio-clip"
+          ],
+          "features": [
+            "Precise timing controls",
+            "Waveform visualization",
+            "Fade in/out effects",
+            "Multiple selection support",
+            "Real-time preview",
+            "Batch trimming",
+            "No quality loss",
+            "Easy drag controls"
+          ],
+          "useCases": [
+            "Ringtone creation",
+            "Podcast editing",
+            "Music sampling",
+            "Audio clips for videos",
+            "Sound effect extraction",
+            "Voice message editing"
+          ],
+          "fileFormats": [
+            "MP3",
+            "WAV",
+            "FLAC",
+            "OGG",
+            "AAC",
+            "M4A"
+          ],
+          "maxFileSize": "100MB",
+          "processingTime": "5-30 seconds",
+          "popular": true,
+          "trending": false,
+          "completed": false,
+          "monthlySearches": 150000,
+          "difficulty": "Medium",
+          "cpc": "$1.10",
           "intent": "High"
         }
       ]
@@ -1463,7 +1816,136 @@
         "Home",
         "Developer Tools"
       ],
-      "tools": []
+      "tools": [
+        {
+          "id": "json-formatter",
+          "name": "JSON Formatter & Validator",
+          "shortName": "JSON",
+          "description": "Format, validate, and minify JSON data online. Syntax highlighting, error detection, and tree view for complex JSON structures.",
+          "longDescription": "Professional JSON formatter with syntax highlighting, validation, minification, and tree view. Essential tool for developers working with APIs, configuration files, and JSON data processing.",
+          "category": "developer",
+          "subcategory": "data-formatting",
+          "primaryKeyword": "json formatter",
+          "keywords": [
+            "json validator online",
+            "json beautifier free",
+            "json minifier tool",
+            "format json online",
+            "validate json syntax",
+            "json parser online",
+            "json editor free",
+            "json pretty print"
+          ],
+          "longTailKeywords": [
+            "free json formatter validator online no signup",
+            "json syntax validator with error detection",
+            "beautify json online with syntax highlighting",
+            "minify json data for api responses",
+            "format large json files online free",
+            "json tree view explorer online tool",
+            "validate json schema online free"
+          ],
+          "routes": [
+            "/json-formatter",
+            "/json-validator",
+            "/json-beautifier",
+            "/format-json-online",
+            "/validate-json-syntax"
+          ],
+          "features": [
+            "JSON syntax validation",
+            "Pretty print formatting",
+            "JSON minification",
+            "Syntax highlighting",
+            "Error detection with line numbers",
+            "Tree view for complex JSON",
+            "Copy formatted output",
+            "Download as JSON file"
+          ],
+          "useCases": [
+            "API response formatting",
+            "Configuration file validation",
+            "Debug JSON syntax errors",
+            "Minify JSON for production",
+            "Format API documentation",
+            "Validate webhook payloads"
+          ],
+          "fileFormats": ["JSON"],
+          "maxFileSize": "10MB",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": true,
+          "completed": true,
+          "monthlySearches": 380000,
+          "difficulty": "Low",
+          "cpc": "$1.95",
+          "intent": "High"
+        },
+        {
+          "id": "hash-generator",
+          "name": "Hash Generator",
+          "shortName": "Hash",
+          "description": "Generate MD5, SHA1, SHA256, SHA512 hashes for text and files. Secure hash calculator for data integrity verification.",
+          "longDescription": "Professional hash generator supporting multiple algorithms including MD5, SHA1, SHA256, and SHA512. Essential for data integrity verification, password hashing, and security applications.",
+          "category": "developer",
+          "subcategory": "security",
+          "primaryKeyword": "hash generator",
+          "keywords": [
+            "md5 hash generator",
+            "sha256 generator online",
+            "sha1 hash calculator",
+            "sha512 hash tool",
+            "file hash generator",
+            "checksum calculator",
+            "hash function online",
+            "crypto hash generator"
+          ],
+          "longTailKeywords": [
+            "free md5 hash generator online no upload",
+            "sha256 hash calculator for file integrity",
+            "generate password hash online secure",
+            "bulk hash generator for multiple files",
+            "compare file hashes online tool",
+            "verify file integrity with hash",
+            "secure hash generator for developers"
+          ],
+          "routes": [
+            "/hash-generator",
+            "/md5-generator",
+            "/sha256-generator",
+            "/checksum-calculator",
+            "/file-hash-generator"
+          ],
+          "features": [
+            "Multiple hash algorithms",
+            "Text and file hashing",
+            "Batch hash generation",
+            "Hash comparison tool",
+            "Copy hash results",
+            "Secure client-side processing",
+            "No file upload required",
+            "Real-time hash calculation"
+          ],
+          "useCases": [
+            "File integrity verification",
+            "Password security",
+            "Data validation",
+            "Digital forensics",
+            "Software distribution",
+            "Database security"
+          ],
+          "fileFormats": ["Any file type", "Text"],
+          "maxFileSize": "100MB",
+          "processingTime": "1-5 seconds",
+          "popular": true,
+          "trending": false,
+          "completed": true,
+          "monthlySearches": 190000,
+          "difficulty": "Medium",
+          "cpc": "$2.15",
+          "intent": "High"
+        }
+      ]
     },
     "seo": {
       "name": "SEO Tools",
@@ -1549,6 +2031,229 @@
           "monthlySearches": 78000,
           "difficulty": "Low",
           "cpc": "$1.85",
+          "intent": "High"
+        }
+      ]
+    },
+    "utilities": {
+      "name": "File & Utility Tools",
+      "slug": "utility-tools",
+      "description": "Essential file processing and utility tools for compression, encryption, conversion, and calculation. Boost your productivity with these handy utilities.",
+      "icon": "FolderIcon",
+      "seoTitle": "Free File & Utility Tools Online - ZIP, Hash, Unit Converter | 30tools",
+      "seoDescription": "Professional utility tools: create ZIP files, generate hashes, convert units, calculate percentages, and process files online. Free productivity tools.",
+      "keywords": [
+        "file tools online",
+        "zip creator free",
+        "hash generator tool",
+        "unit converter online",
+        "percentage calculator",
+        "file utilities free",
+        "productivity tools",
+        "online calculators"
+      ],
+      "breadcrumb": [
+        "Home",
+        "Utility Tools"
+      ],
+      "tools": [
+        {
+          "id": "zip-creator",
+          "name": "ZIP File Creator",
+          "shortName": "ZIP",
+          "description": "Create ZIP files online by compressing multiple files and folders. Reduce file sizes and organize your files efficiently.",
+          "longDescription": "Professional ZIP file creator for compressing multiple files and folders into a single archive. Perfect for file organization, email attachments, and storage optimization.",
+          "category": "utilities",
+          "subcategory": "compression",
+          "primaryKeyword": "zip creator",
+          "keywords": [
+            "create zip file online",
+            "zip file maker",
+            "compress files to zip",
+            "online zip creator",
+            "zip archive creator",
+            "file compression tool",
+            "make zip file",
+            "zip files online"
+          ],
+          "longTailKeywords": [
+            "create zip file from multiple files",
+            "compress folder to zip online",
+            "make zip archive for email",
+            "batch compress files to zip",
+            "create password protected zip",
+            "zip multiple files together",
+            "online zip file generator"
+          ],
+          "routes": [
+            "/zip-creator",
+            "/create-zip-file",
+            "/zip-maker",
+            "/compress-to-zip",
+            "/zip-archive-creator"
+          ],
+          "features": [
+            "Multiple file support",
+            "Folder compression",
+            "Password protection",
+            "Compression level control",
+            "Batch processing",
+            "Drag and drop interface",
+            "No file size limits",
+            "Fast compression"
+          ],
+          "useCases": [
+            "Email attachments",
+            "File organization",
+            "Storage optimization",
+            "File sharing",
+            "Backup creation",
+            "Archive management"
+          ],
+          "fileFormats": [
+            "Any file type",
+            "ZIP"
+          ],
+          "maxFileSize": "500MB total",
+          "processingTime": "5-60 seconds",
+          "popular": true,
+          "trending": false,
+          "completed": false,
+          "monthlySearches": 220000,
+          "difficulty": "Medium",
+          "cpc": "$1.25",
+          "intent": "High"
+        },
+        {
+          "id": "unit-converter",
+          "name": "Unit Converter",
+          "shortName": "Convert",
+          "description": "Convert between units of length, weight, temperature, volume, area, and more. Comprehensive unit conversion calculator.",
+          "longDescription": "Professional unit converter supporting length, weight, temperature, volume, area, speed, and energy conversions. Essential tool for students, engineers, and professionals.",
+          "category": "utilities",
+          "subcategory": "calculation",
+          "primaryKeyword": "unit converter",
+          "keywords": [
+            "length converter online",
+            "weight converter kg to lbs",
+            "temperature converter celsius",
+            "volume converter liters",
+            "area converter square meters",
+            "speed converter mph kmh",
+            "metric converter online",
+            "unit conversion calculator"
+          ],
+          "longTailKeywords": [
+            "convert feet to meters online",
+            "celsius to fahrenheit converter",
+            "kg to pounds converter calculator",
+            "liters to gallons conversion tool",
+            "square feet to square meters",
+            "miles per hour to kilometers",
+            "comprehensive unit converter tool"
+          ],
+          "routes": [
+            "/unit-converter",
+            "/convert-units",
+            "/metric-converter",
+            "/length-converter",
+            "/weight-converter"
+          ],
+          "features": [
+            "20+ unit categories",
+            "Instant conversion",
+            "Precision results",
+            "Historical conversions",
+            "Favorites system",
+            "Reverse conversion",
+            "Copy results",
+            "Mobile optimized"
+          ],
+          "useCases": [
+            "Engineering calculations",
+            "Cooking measurements",
+            "Travel planning",
+            "Academic work",
+            "Construction projects",
+            "International business"
+          ],
+          "fileFormats": [
+            "Text"
+          ],
+          "maxFileSize": "N/A",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": true,
+          "completed": false,
+          "monthlySearches": 380000,
+          "difficulty": "Low",
+          "cpc": "$0.75",
+          "intent": "High"
+        },
+        {
+          "id": "percentage-calculator",
+          "name": "Percentage Calculator",
+          "shortName": "Percent",
+          "description": "Calculate percentages, percentage increase/decrease, and find what percent one number is of another. Comprehensive percentage tool.",
+          "longDescription": "Professional percentage calculator for all types of percentage calculations including increase/decrease, discounts, tips, and percentage relationships.",
+          "category": "utilities",
+          "subcategory": "calculation",
+          "primaryKeyword": "percentage calculator",
+          "keywords": [
+            "calculate percentage online",
+            "percentage increase calculator",
+            "percentage decrease calculator",
+            "percent of number calculator",
+            "discount percentage calculator",
+            "tip percentage calculator",
+            "percentage change calculator",
+            "percent calculator online"
+          ],
+          "longTailKeywords": [
+            "calculate percentage increase between two numbers",
+            "find what percent one number is of another",
+            "percentage discount calculator for shopping",
+            "calculate tip percentage for restaurant",
+            "percentage change calculator for business",
+            "find percentage of total amount",
+            "calculate grade percentage from marks"
+          ],
+          "routes": [
+            "/percentage-calculator",
+            "/calculate-percentage",
+            "/percent-calculator",
+            "/percentage-tool",
+            "/percent-change"
+          ],
+          "features": [
+            "Multiple calculation types",
+            "Percentage increase/decrease",
+            "Discount calculations",
+            "Tip calculator",
+            "Grade percentage",
+            "Step-by-step solutions",
+            "Copy results",
+            "History tracking"
+          ],
+          "useCases": [
+            "Shopping discounts",
+            "Restaurant tips",
+            "Grade calculations",
+            "Business analytics",
+            "Financial planning",
+            "Statistical analysis"
+          ],
+          "fileFormats": [
+            "Text"
+          ],
+          "maxFileSize": "N/A",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": true,
+          "completed": false,
+          "monthlySearches": 340000,
+          "difficulty": "Low",
+          "cpc": "$0.85",
           "intent": "High"
         }
       ]
