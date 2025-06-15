@@ -23,6 +23,7 @@ import {
   Sparkles,
   Eye
 } from 'lucide-react';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 // Simple code formatting functions without external dependencies
 const formatJavaScript = (code, options) => {
@@ -666,6 +667,16 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
           </div>
         </CardContent>
       </Card>
+
+      {/* Social Share */}
+      <div className="mt-8">
+        <SocialShareButtons
+          toolName="Code Formatter"
+          toolDescription="Format and beautify JavaScript, TypeScript, CSS, and HTML code with Prettier engine. Professional code formatting online"
+          toolUrl="https://30tools.com/code-formatter"
+          category="developer"
+        />
+      </div>
     </div>
   );
 }

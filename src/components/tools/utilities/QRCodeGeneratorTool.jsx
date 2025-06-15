@@ -26,6 +26,7 @@ import {
   MapPinIcon
 } from 'lucide-react';
 import Link from 'next/link';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 export default function QRCodeGeneratorTool() {
   const [qrType, setQrType] = useState('url');
@@ -807,6 +808,16 @@ export default function QRCodeGeneratorTool() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* Social Share */}
+      <div className="mt-8">
+        <SocialShareButtons
+          toolName="QR Code Generator"
+          toolDescription="Free QR code generator for URLs, WiFi, contacts, and more. Customize colors, size, and download in multiple formats"
+          toolUrl="https://30tools.com/qr-code-generator"
+          category="utility"
+        />
       </div>
     </div>
   );

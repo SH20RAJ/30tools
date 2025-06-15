@@ -20,6 +20,7 @@ import {
   BarChart3,
   RefreshCw
 } from 'lucide-react';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 // CDN libraries for minification
 const loadTerser = () => {
@@ -568,6 +569,16 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           </div>
         </CardContent>
       </Card>
+
+      {/* Social Share */}
+      <div className="mt-8">
+        <SocialShareButtons
+          toolName="Code Minifier"
+          toolDescription="Minify JavaScript, CSS, and HTML code to reduce file sizes and improve website performance. Advanced compression with analytics"
+          toolUrl="https://30tools.com/code-minifier"
+          category="developer"
+        />
+      </div>
     </div>
   );
 }

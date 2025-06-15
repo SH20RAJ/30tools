@@ -28,6 +28,7 @@ import {
   Shield,
   Globe
 } from 'lucide-react';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 export default function URLShortenerTool() {
   const [urls, setUrls] = useState([]);
@@ -503,6 +504,16 @@ export default function URLShortenerTool() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Social Share */}
+      <div className="mt-8">
+        <SocialShareButtons
+          toolName="URL Shortener"
+          toolDescription="Create short, trackable links with analytics and QR codes. Free online URL shortener tool with detailed click tracking"
+          toolUrl="https://30tools.com/url-shortener"
+          category="marketing"
+        />
+      </div>
     </div>
   );
 }

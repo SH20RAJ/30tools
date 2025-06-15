@@ -23,6 +23,7 @@ import {
   RefreshCwIcon
 } from 'lucide-react';
 import Link from 'next/link';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 export default function ImageResizerTool() {
   const [files, setFiles] = useState([]);
@@ -689,6 +690,16 @@ export default function ImageResizerTool() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* Social Share */}
+      <div className="mt-8">
+        <SocialShareButtons
+          toolName="Image Resizer"
+          toolDescription="Free online image resizer tool. Resize images for social media, web, and print with batch processing and quality control"
+          toolUrl="https://30tools.com/image-resizer"
+          category="image editing"
+        />
       </div>
     </div>
   );

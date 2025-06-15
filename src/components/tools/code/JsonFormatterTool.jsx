@@ -25,6 +25,7 @@ import {
   Minimize2,
   Maximize2
 } from 'lucide-react';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 export default function JsonFormatterTool() {
   const [jsonInput, setJsonInput] = useState('');
@@ -616,6 +617,16 @@ export default function JsonFormatterTool() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Social Share */}
+      <div className="mt-8">
+        <SocialShareButtons
+          toolName="JSON Formatter"
+          toolDescription="Free online JSON formatter and validator. Format, minify, and validate JSON with syntax highlighting and error detection"
+          toolUrl="https://30tools.com/json-formatter"
+          category="developer"
+        />
+      </div>
     </div>
   );
 }

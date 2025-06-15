@@ -19,6 +19,7 @@ import {
   CodeIcon
 } from 'lucide-react';
 import Link from 'next/link';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 export default function LoremIpsumGeneratorTool() {
   const [type, setType] = useState('paragraphs');
@@ -459,6 +460,16 @@ export default function LoremIpsumGeneratorTool() {
             </CardContent>
           </Card>
         </div>
+      </div>
+
+      {/* Social Share */}
+      <div className="mt-8">
+        <SocialShareButtons
+          toolName="Lorem Ipsum Generator"
+          toolDescription="Generate placeholder text for your designs and mockups. Classic Lorem Ipsum with HTML formatting options"
+          toolUrl="https://30tools.com/lorem-ipsum-generator"
+          category="design"
+        />
       </div>
     </div>
   );

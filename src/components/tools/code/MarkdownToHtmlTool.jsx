@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Download, Upload, FileText, CheckCircle, AlertCircle } from 'lucide-react';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 export default function MarkdownToHtmlTool() {
   const [markdown, setMarkdown] = useState('');
@@ -90,6 +91,16 @@ export default function MarkdownToHtmlTool() {
           )}
         </CardContent>
       </Card>
+
+      {/* Social Share */}
+      <div className="mt-8 max-w-2xl mx-auto">
+        <SocialShareButtons
+          toolName="Markdown to HTML Converter"
+          toolDescription="Convert Markdown text to HTML instantly. Free online tool with live preview and download options"
+          toolUrl="https://30tools.com/markdown-to-html"
+          category="developer"
+        />
+      </div>
     </div>
   );
 }
