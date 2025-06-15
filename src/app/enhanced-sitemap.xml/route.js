@@ -1,5 +1,5 @@
 // Enhanced sitemap with comprehensive tools and SEO optimization
-import toolsDirectory from '@/constants/tools-directory.json';
+import { getAllTools, getAllCategories } from '@/constants/tools-utils';
 
 export default function sitemap() {
   const baseUrl = 'https://30tools.com';

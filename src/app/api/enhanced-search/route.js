@@ -1,5 +1,5 @@
 // Enhanced search API with advanced SEO integration
-import toolsDirectory from '@/constants/comprehensive-tools-directory.json';
+import toolsData from '@/constants/tools.json';
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -10,8 +10,8 @@ export async function GET(request) {
   try {
     let allTools = [];
 
-    // Flatten all tools from comprehensive directory
-    Object.entries(toolsDirectory.categories).forEach(([catKey, catData]) => {
+    // Flatten all tools from tools directory
+    Object.entries(toolsData.categories).forEach(([catKey, catData]) => {
       if (catData.tools) {
         catData.tools.forEach(tool => {
           allTools.push({

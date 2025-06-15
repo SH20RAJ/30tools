@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
-import toolsDirectory from '@/constants/tools-directory.json';
+import toolsData from '@/constants/tools.json';
 import {
   ImageIcon,
   VideoIcon,
@@ -15,7 +15,9 @@ import {
   UsersIcon,
   TrendingUpIcon,
   StarIcon,
-  SearchIcon
+  SearchIcon,
+  PaletteIcon,
+  PenToolIcon
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -24,10 +26,13 @@ export default function LandingPage() {
     VideoIcon,
     MusicIcon,
     FileTextIcon,
-    FileIcon
+    FileIcon,
+    PaletteIcon,
+    PenToolIcon,
+    SearchIcon
   };
 
-  const toolCategories = Object.entries(toolsDirectory.categories).map(([key, category]) => ({
+  const toolCategories = Object.entries(toolsData.categories).map(([key, category]) => ({
     ...category,
     icon: iconMap[category.icon] || ImageIcon,
     key

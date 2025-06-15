@@ -1870,7 +1870,9 @@
             "Format API documentation",
             "Validate webhook payloads"
           ],
-          "fileFormats": ["JSON"],
+          "fileFormats": [
+            "JSON"
+          ],
           "maxFileSize": "10MB",
           "processingTime": "Instant",
           "popular": true,
@@ -1934,7 +1936,10 @@
             "Software distribution",
             "Database security"
           ],
-          "fileFormats": ["Any file type", "Text"],
+          "fileFormats": [
+            "Any file type",
+            "Text"
+          ],
           "maxFileSize": "100MB",
           "processingTime": "1-5 seconds",
           "popular": true,
@@ -2022,7 +2027,9 @@
             "Landing page SEO",
             "Content marketing"
           ],
-          "fileFormats": ["HTML"],
+          "fileFormats": [
+            "HTML"
+          ],
           "maxFileSize": "N/A",
           "processingTime": "Instant",
           "popular": true,
@@ -2298,7 +2305,10 @@
         "developer utilities",
         "online code tools"
       ],
-      "breadcrumb": ["Home", "Code Tools"],
+      "breadcrumb": [
+        "Home",
+        "Code Tools"
+      ],
       "tools": [
         {
           "id": "json-formatter",
@@ -2309,12 +2319,41 @@
           "category": "code",
           "subcategory": "formatting",
           "primaryKeyword": "json formatter",
-          "keywords": ["json formatter", "json validator", "json beautifier", "json minifier", "format json online", "validate json", "json tool free"],
-          "longTailKeywords": ["free online json formatter and validator", "json beautifier with error highlighting", "minify and format json data online", "json validator for api testing"],
-          "routes": ["/json-formatter"],
-          "features": ["Format and beautify JSON", "Validate JSON syntax", "Minify JSON", "Copy/download result", "Error highlighting", "JSON statistics"],
-          "useCases": ["API development", "Data analysis", "Debugging JSON", "Learning JSON syntax"],
-          "fileFormats": ["JSON"],
+          "keywords": [
+            "json formatter",
+            "json validator",
+            "json beautifier",
+            "json minifier",
+            "format json online",
+            "validate json",
+            "json tool free"
+          ],
+          "longTailKeywords": [
+            "free online json formatter and validator",
+            "json beautifier with error highlighting",
+            "minify and format json data online",
+            "json validator for api testing"
+          ],
+          "routes": [
+            "/json-formatter"
+          ],
+          "features": [
+            "Format and beautify JSON",
+            "Validate JSON syntax",
+            "Minify JSON",
+            "Copy/download result",
+            "Error highlighting",
+            "JSON statistics"
+          ],
+          "useCases": [
+            "API development",
+            "Data analysis",
+            "Debugging JSON",
+            "Learning JSON syntax"
+          ],
+          "fileFormats": [
+            "JSON"
+          ],
           "maxFileSize": "2MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2334,12 +2373,40 @@
           "category": "code",
           "subcategory": "conversion",
           "primaryKeyword": "csv to json",
-          "keywords": ["csv to json", "convert csv to json", "csv json converter", "csv online tool", "csv parser", "csv to json free"],
-          "longTailKeywords": ["free csv to json converter online", "convert csv data to json instantly", "csv to json for api import", "csv to json for spreadsheet export"],
-          "routes": ["/csv-to-json"],
-          "features": ["Paste or upload CSV", "Header row detection", "Error handling", "Copy/download JSON", "Privacy-first processing"],
-          "useCases": ["Data migration", "API import/export", "Spreadsheet conversion", "Data analysis"],
-          "fileFormats": ["CSV", "JSON"],
+          "keywords": [
+            "csv to json",
+            "convert csv to json",
+            "csv json converter",
+            "csv online tool",
+            "csv parser",
+            "csv to json free"
+          ],
+          "longTailKeywords": [
+            "free csv to json converter online",
+            "convert csv data to json instantly",
+            "csv to json for api import",
+            "csv to json for spreadsheet export"
+          ],
+          "routes": [
+            "/csv-to-json"
+          ],
+          "features": [
+            "Paste or upload CSV",
+            "Header row detection",
+            "Error handling",
+            "Copy/download JSON",
+            "Privacy-first processing"
+          ],
+          "useCases": [
+            "Data migration",
+            "API import/export",
+            "Spreadsheet conversion",
+            "Data analysis"
+          ],
+          "fileFormats": [
+            "CSV",
+            "JSON"
+          ],
           "maxFileSize": "2MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2359,12 +2426,41 @@
           "category": "code",
           "subcategory": "optimization",
           "primaryKeyword": "code minifier",
-          "keywords": ["js minifier", "css minifier", "html minifier", "minify code online", "compress javascript", "minify css", "minify html"],
-          "longTailKeywords": ["free online js css html minifier", "minify javascript for production", "css minifier for web optimization", "html minifier for seo"],
-          "routes": ["/code-minifier"],
-          "features": ["Minify JS, CSS, HTML", "Copy/download minified code", "Privacy-first processing", "No file size limits"],
-          "useCases": ["Web optimization", "Production deployment", "SEO improvement", "Faster load times"],
-          "fileFormats": ["JS", "CSS", "HTML"],
+          "keywords": [
+            "js minifier",
+            "css minifier",
+            "html minifier",
+            "minify code online",
+            "compress javascript",
+            "minify css",
+            "minify html"
+          ],
+          "longTailKeywords": [
+            "free online js css html minifier",
+            "minify javascript for production",
+            "css minifier for web optimization",
+            "html minifier for seo"
+          ],
+          "routes": [
+            "/code-minifier"
+          ],
+          "features": [
+            "Minify JS, CSS, HTML",
+            "Copy/download minified code",
+            "Privacy-first processing",
+            "No file size limits"
+          ],
+          "useCases": [
+            "Web optimization",
+            "Production deployment",
+            "SEO improvement",
+            "Faster load times"
+          ],
+          "fileFormats": [
+            "JS",
+            "CSS",
+            "HTML"
+          ],
           "maxFileSize": "1MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2384,12 +2480,42 @@
           "category": "code",
           "subcategory": "formatting",
           "primaryKeyword": "code formatter",
-          "keywords": ["code formatter", "prettier online", "format js css html", "beautify code", "format javascript", "format css", "format html"],
-          "longTailKeywords": ["free online code formatter prettier", "format js css html for readability", "prettier code formatter online free", "beautify code for collaboration"],
-          "routes": ["/code-formatter"],
-          "features": ["Format JS, CSS, HTML, JSON", "Copy/download formatted code", "Prettier via CDN", "Privacy-first processing"],
-          "useCases": ["Code review", "Debugging", "Learning best practices", "Team collaboration"],
-          "fileFormats": ["JS", "CSS", "HTML", "JSON"],
+          "keywords": [
+            "code formatter",
+            "prettier online",
+            "format js css html",
+            "beautify code",
+            "format javascript",
+            "format css",
+            "format html"
+          ],
+          "longTailKeywords": [
+            "free online code formatter prettier",
+            "format js css html for readability",
+            "prettier code formatter online free",
+            "beautify code for collaboration"
+          ],
+          "routes": [
+            "/code-formatter"
+          ],
+          "features": [
+            "Format JS, CSS, HTML, JSON",
+            "Copy/download formatted code",
+            "Prettier via CDN",
+            "Privacy-first processing"
+          ],
+          "useCases": [
+            "Code review",
+            "Debugging",
+            "Learning best practices",
+            "Team collaboration"
+          ],
+          "fileFormats": [
+            "JS",
+            "CSS",
+            "HTML",
+            "JSON"
+          ],
           "maxFileSize": "1MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2409,12 +2535,39 @@
           "category": "code",
           "subcategory": "testing",
           "primaryKeyword": "regex tester",
-          "keywords": ["regex tester", "regular expression tester", "regex online", "test regex", "regex tool", "regex match", "regex debug"],
-          "longTailKeywords": ["free online regex tester", "test regular expressions instantly", "regex tester for javascript", "regex debug tool online"],
-          "routes": ["/regex-tester"],
-          "features": ["Test regex patterns", "Show matches and groups", "Error highlighting", "Privacy-first processing"],
-          "useCases": ["Pattern design", "Debugging regex", "Learning regex", "Data validation"],
-          "fileFormats": ["Text"],
+          "keywords": [
+            "regex tester",
+            "regular expression tester",
+            "regex online",
+            "test regex",
+            "regex tool",
+            "regex match",
+            "regex debug"
+          ],
+          "longTailKeywords": [
+            "free online regex tester",
+            "test regular expressions instantly",
+            "regex tester for javascript",
+            "regex debug tool online"
+          ],
+          "routes": [
+            "/regex-tester"
+          ],
+          "features": [
+            "Test regex patterns",
+            "Show matches and groups",
+            "Error highlighting",
+            "Privacy-first processing"
+          ],
+          "useCases": [
+            "Pattern design",
+            "Debugging regex",
+            "Learning regex",
+            "Data validation"
+          ],
+          "fileFormats": [
+            "Text"
+          ],
           "maxFileSize": "Unlimited",
           "processingTime": "Instant",
           "popular": true,
@@ -2434,12 +2587,39 @@
           "category": "code",
           "subcategory": "conversion",
           "primaryKeyword": "markdown to html",
-          "keywords": ["markdown to html", "convert markdown to html", "markdown html converter", "markdown online tool", "markdown parser", "markdown to html free"],
-          "longTailKeywords": ["free markdown to html converter online", "convert markdown text to html instantly", "markdown to html for blogging", "markdown to html for documentation"],
-          "routes": ["/markdown-to-html"],
-          "features": ["Paste or upload Markdown", "Convert to HTML", "Copy/download HTML", "Privacy-first processing"],
-          "useCases": ["Documentation", "Blogging", "Web publishing", "Markdown preview"],
-          "fileFormats": ["Markdown", "HTML"],
+          "keywords": [
+            "markdown to html",
+            "convert markdown to html",
+            "markdown html converter",
+            "markdown online tool",
+            "markdown parser",
+            "markdown to html free"
+          ],
+          "longTailKeywords": [
+            "free markdown to html converter online",
+            "convert markdown text to html instantly",
+            "markdown to html for blogging",
+            "markdown to html for documentation"
+          ],
+          "routes": [
+            "/markdown-to-html"
+          ],
+          "features": [
+            "Paste or upload Markdown",
+            "Convert to HTML",
+            "Copy/download HTML",
+            "Privacy-first processing"
+          ],
+          "useCases": [
+            "Documentation",
+            "Blogging",
+            "Web publishing",
+            "Markdown preview"
+          ],
+          "fileFormats": [
+            "Markdown",
+            "HTML"
+          ],
           "maxFileSize": "1MB",
           "processingTime": "Instant",
           "popular": true,

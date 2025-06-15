@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
           </Link>
           <div className="flex items-center gap-2 mb-2">
             <h1 className="text-3xl font-bold">Privacy Policy</h1>
-            <Badge variant="secondary">Updated Dec 2025</Badge>
+            <Badge variant="secondary">Updated Dec 2024</Badge>
           </div>
           <p className="text-muted-foreground">Effective Date: December 14, 2025</p>
         </div>
@@ -142,7 +142,7 @@ export default function PrivacyPolicyPage() {
               If you have any questions about this Privacy Policy, please contact us at:
             </p>
             <div className="bg-muted p-4 rounded-lg">
-              <p><strong>Email:</strong> privacy@30tools.com</p>
+              <p><strong>Email:</strong> mail@30tools.com</p>
               <p><strong>Website:</strong> https://30tools.com</p>
               <p><strong>Response Time:</strong> Within 48 hours</p>
             </div>

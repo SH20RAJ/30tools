@@ -10,7 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Skeleton } from '@/components/ui/skeleton';
 import { SearchIcon, FilterIcon, ArrowLeftIcon, StarIcon } from 'lucide-react';
-import toolsDirectory from '@/constants/tools-directory.json';
+import toolsData from '@/constants/tools.json';
 
 export default function SearchPageComponent() {
   const searchParams = useSearchParams();
@@ -22,7 +22,7 @@ export default function SearchPageComponent() {
   const [total, setTotal] = useState(0);
 
   const categories = useMemo(() => {
-    return Object.entries(toolsDirectory.categories).map(([key, cat]) => ({
+    return Object.entries(toolsData.categories).map(([key, cat]) => ({
       id: key,
       name: cat.name
     }));
@@ -258,13 +258,18 @@ export default function SearchPageComponent() {
                     </div>
 
                     <div className="flex flex-wrap gap-2">
-                      {tool.routes?.map((route) => (
+                      {/* {tool.routes?.map((route) => (
                         <Link key={route} href={route}>
                           <Button size="sm" className="text-xs">
                             Use Tool
                           </Button>
                         </Link>
-                      ))}
+                      ))} */}
+                      <Link href={tool.routes[0]}>
+                        <Button size="sm" className="text-xs">
+                          Use Tool
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>
@@ -317,12 +322,12 @@ export default function SearchPageComponent() {
                   <CardHeader>
                     <CardTitle className="text-lg">{cat.name}</CardTitle>
                     <p className="text-sm text-muted-foreground">
-                      {toolsDirectory.categories[cat.id]?.description}
+                      {toolsData.categories[cat.id]?.description}
                     </p>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-1">
-                      {toolsDirectory.categories[cat.id]?.tools?.slice(0, 4).map((tool, i) => (
+                      {toolsData.categories[cat.id]?.tools?.slice(0, 4).map((tool, i) => (
                         <Badge key={i} variant="outline" className="text-xs">
                           {tool.name}
                         </Badge>

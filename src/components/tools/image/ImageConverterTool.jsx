@@ -11,10 +11,10 @@ import { Slider } from '@/components/ui/slider';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  ArrowLeftIcon, 
-  UploadIcon, 
-  DownloadIcon, 
+import {
+  ArrowLeftIcon,
+  UploadIcon,
+  DownloadIcon,
   ImageIcon,
   RefreshCwIcon,
   TrashIcon,
@@ -84,7 +84,7 @@ export default function ImageConverterTool() {
     e.preventDefault();
     e.stopPropagation();
     setDragActive(false);
-    
+
     const droppedFiles = Array.from(e.dataTransfer.files);
     processFiles(droppedFiles);
   }, []);
@@ -108,7 +108,7 @@ export default function ImageConverterTool() {
 
   const processFiles = (fileList) => {
     const validFiles = fileList.filter(file => {
-      const isValidFormat = Object.keys(supportedFormats.input).some(format => 
+      const isValidFormat = Object.keys(supportedFormats.input).some(format =>
         file.type === format || file.name.toLowerCase().endsWith(format.split('/')[1])
       );
       return isValidFormat && file.size <= 50 * 1024 * 1024; // 50MB limit
@@ -134,7 +134,7 @@ export default function ImageConverterTool() {
       if (fileData.file.type.startsWith('image/')) {
         const reader = new FileReader();
         reader.onload = (e) => {
-          setFiles(prev => prev.map(f => 
+          setFiles(prev => prev.map(f =>
             f.id === fileData.id ? { ...f, preview: e.target.result } : f
           ));
         };
@@ -152,11 +152,11 @@ export default function ImageConverterTool() {
       img.onload = () => {
         // Calculate new dimensions if resize is enabled
         let { width, height } = img;
-        
+
         if (conversionSettings.enableResize) {
           const newWidth = parseInt(conversionSettings.resizeWidth) || width;
           const newHeight = parseInt(conversionSettings.resizeHeight) || height;
-          
+
           if (conversionSettings.maintainAspectRatio) {
             const aspectRatio = width / height;
             if (newWidth && !newHeight) {
@@ -213,17 +213,17 @@ export default function ImageConverterTool() {
 
     for (let i = 0; i < files.length; i++) {
       const fileData = files[i];
-      
+
       try {
-        setFiles(prev => prev.map(f => 
+        setFiles(prev => prev.map(f =>
           f.id === fileData.id ? { ...f, status: 'converting' } : f
         ));
 
         const result = await convertImage(fileData);
-        
-        setFiles(prev => prev.map(f => 
-          f.id === fileData.id ? { 
-            ...f, 
+
+        setFiles(prev => prev.map(f =>
+          f.id === fileData.id ? {
+            ...f,
             status: 'completed',
             convertedBlob: result.blob,
             convertedSize: result.size,
@@ -234,7 +234,7 @@ export default function ImageConverterTool() {
 
       } catch (error) {
         console.error('Conversion failed:', error);
-        setFiles(prev => prev.map(f => 
+        setFiles(prev => prev.map(f =>
           f.id === fileData.id ? { ...f, status: 'error' } : f
         ));
       }
@@ -251,11 +251,11 @@ export default function ImageConverterTool() {
     const url = URL.createObjectURL(fileData.convertedBlob);
     const link = document.createElement('a');
     link.href = url;
-    
+
     const extension = supportedFormats.output[conversionSettings.outputFormat].ext;
     const nameWithoutExt = fileData.name.replace(/\.[^/.]+$/, '');
     link.download = `${nameWithoutExt}_converted${extension}`;
-    
+
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -264,7 +264,7 @@ export default function ImageConverterTool() {
 
   const downloadAll = async () => {
     const completedFiles = files.filter(f => f.status === 'completed' && f.convertedBlob);
-    
+
     if (completedFiles.length === 0) return;
 
     if (completedFiles.length === 1) {
@@ -320,7 +320,7 @@ export default function ImageConverterTool() {
       completed: 'success',
       error: 'destructive'
     };
-    
+
     const labels = {
       ready: 'Ready',
       converting: 'Converting...',
@@ -353,7 +353,7 @@ export default function ImageConverterTool() {
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <ImageIcon className="h-6 w-6 text-primary" />
@@ -363,7 +363,7 @@ export default function ImageConverterTool() {
               <p className="text-muted-foreground">Convert your images to any format with advanced options</p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-6">
             <Badge variant="secondary">8+ Formats</Badge>
             <Badge variant="secondary">Batch Conversion</Badge>
@@ -386,11 +386,10 @@ export default function ImageConverterTool() {
               </CardHeader>
               <CardContent>
                 <div
-                  className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
-                    dragActive 
-                      ? 'border-primary bg-primary/5' 
+                  className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${dragActive
+                      ? 'border-primary bg-primary/5'
                       : 'border-muted-foreground/25 hover:border-primary/50'
-                  }`}
+                    }`}
                   onDrop={handleDrop}
                   onDragOver={handleDragOver}
                   onDragLeave={handleDragLeave}
@@ -398,12 +397,12 @@ export default function ImageConverterTool() {
                   <UploadIcon className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
                   <h3 className="text-lg font-semibold mb-2">Drop images here or click to browse</h3>
                   <p className="text-muted-foreground mb-4">Supports JPG, PNG, WebP, GIF, BMP, TIFF, HEIC formats</p>
-                  
+
                   <Button onClick={() => fileInputRef.current?.click()}>
                     <FolderIcon className="h-4 w-4 mr-2" />
                     Choose Files
                   </Button>
-                  
+
                   <input
                     ref={fileInputRef}
                     type="file"
@@ -447,8 +446,8 @@ export default function ImageConverterTool() {
                   <TabsContent value="format" className="space-y-4">
                     <div>
                       <Label>Output Format</Label>
-                      <Select 
-                        value={conversionSettings.outputFormat} 
+                      <Select
+                        value={conversionSettings.outputFormat}
                         onValueChange={(value) => setConversionSettings(prev => ({ ...prev, outputFormat: value }))}
                       >
                         <SelectTrigger>
@@ -475,7 +474,7 @@ export default function ImageConverterTool() {
                       <Switch
                         id="preserve-exif"
                         checked={conversionSettings.preserveExif}
-                        onCheckedChange={(checked) => 
+                        onCheckedChange={(checked) =>
                           setConversionSettings(prev => ({ ...prev, preserveExif: checked }))
                         }
                       />
@@ -530,7 +529,7 @@ export default function ImageConverterTool() {
                       <Switch
                         id="enable-resize"
                         checked={conversionSettings.enableResize}
-                        onCheckedChange={(checked) => 
+                        onCheckedChange={(checked) =>
                           setConversionSettings(prev => ({ ...prev, enableResize: checked }))
                         }
                       />
@@ -546,9 +545,9 @@ export default function ImageConverterTool() {
                               type="number"
                               placeholder="e.g. 1920"
                               value={conversionSettings.resizeWidth}
-                              onChange={(e) => setConversionSettings(prev => ({ 
-                                ...prev, 
-                                resizeWidth: e.target.value 
+                              onChange={(e) => setConversionSettings(prev => ({
+                                ...prev,
+                                resizeWidth: e.target.value
                               }))}
                               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             />
@@ -560,9 +559,9 @@ export default function ImageConverterTool() {
                               type="number"
                               placeholder="e.g. 1080"
                               value={conversionSettings.resizeHeight}
-                              onChange={(e) => setConversionSettings(prev => ({ 
-                                ...prev, 
-                                resizeHeight: e.target.value 
+                              onChange={(e) => setConversionSettings(prev => ({
+                                ...prev,
+                                resizeHeight: e.target.value
                               }))}
                               className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                             />
@@ -574,7 +573,7 @@ export default function ImageConverterTool() {
                           <Switch
                             id="maintain-aspect"
                             checked={conversionSettings.maintainAspectRatio}
-                            onCheckedChange={(checked) => 
+                            onCheckedChange={(checked) =>
                               setConversionSettings(prev => ({ ...prev, maintainAspectRatio: checked }))
                             }
                           />
@@ -599,14 +598,14 @@ export default function ImageConverterTool() {
                   <div className="space-y-4">
                     {files.map((fileData) => {
                       const savings = getSavingsInfo(fileData.size, fileData.convertedSize);
-                      
+
                       return (
                         <div key={fileData.id} className="flex items-center gap-4 p-4 border rounded-lg">
                           {/* Preview */}
                           <div className="flex-shrink-0">
                             {fileData.preview ? (
-                              <img 
-                                src={fileData.preview} 
+                              <img
+                                src={fileData.preview}
                                 alt={fileData.name}
                                 className="w-16 h-16 object-cover rounded"
                               />
@@ -623,7 +622,7 @@ export default function ImageConverterTool() {
                               <span className="font-medium truncate">{fileData.name}</span>
                               {getStatusIcon(fileData.status)}
                             </div>
-                            
+
                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
                               <span>{formatFileSize(fileData.size)}</span>
                               <ArrowRightIcon className="h-3 w-3" />
@@ -637,7 +636,7 @@ export default function ImageConverterTool() {
                                 </Badge>
                               )}
                             </div>
-                            
+
                             <div className="mt-2">
                               {getStatusBadge(fileData.status)}
                             </div>
@@ -830,7 +829,7 @@ export default function ImageConverterTool() {
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -842,7 +841,7 @@ export default function ImageConverterTool() {
                   </p>
                 </CardContent>
               </Card>
-              
+
               <Card>
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">

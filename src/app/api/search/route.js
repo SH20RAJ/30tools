@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
-import toolsDirectory from '@/constants/tools-directory.json';
+import toolsData from '@/constants/tools.json';
 
 const getAllTools = () => {
   const tools = [];
-  Object.values(toolsDirectory.categories).forEach(category => {
+  Object.values(toolsData.categories).forEach(category => {
     if (category.tools) {
       tools.push(...category.tools.map(tool => ({
         ...tool,

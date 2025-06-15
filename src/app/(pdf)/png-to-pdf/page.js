@@ -58,21 +58,16 @@ export const metadata = {
 function PngToPdfTool() {
   return (
     <div>
-      {/* Override the title and description for PNG-specific messaging */}
-      <style jsx global>{`
-        h1 { display: none; }
-      `}</style>
-      
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold mb-4">Free PNG to PDF Converter</h1>
           <p className="text-xl text-muted-foreground mb-6">
-            Convert PNG images to PDF documents with full transparency support. 
+            Convert PNG images to PDF documents with full transparency support.
             Perfect for logos, graphics, and designs that need transparent backgrounds.
           </p>
         </div>
       </div>
-      
+
       <JpgToPdfTool />
     </div>
   );

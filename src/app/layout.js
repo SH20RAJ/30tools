@@ -126,7 +126,7 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={` antialiased`}>
         {children}
         <PWAInstallPrompt />
       </body>

@@ -1,0 +1,213 @@
+{
+    "seoConfig": {
+        "primaryDomain": "30tools.com",
+        "brandName": "30tools",
+        "tagline": "Free Online Toolkit - Professional Tools for Everyone",
+        "primaryKeywords": [
+            "free online tools",
+            "image tools online",
+            "pdf tools free",
+            "video converter online",
+            "text tools free",
+            "file converter",
+            "online toolkit",
+            "web tools",
+            "digital tools"
+        ],
+        "globalSchemaMarkup": {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "30tools - Free Online Toolkit",
+            "url": "https://30tools.com",
+            "description": "Professional online tools for image processing, PDF manipulation, video conversion, text analysis, and more. Free, fast, and secure.",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://30tools.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    },
+    "categoryDescriptions": {
+        "image": {
+            "longDescription": "Professional image processing tools for compression, format conversion, resizing, and background removal. Our image tools support all major formats including JPEG, PNG, WebP, GIF, and more. Process images locally in your browser for maximum security and speed.",
+            "seoTitle": "Free Image Tools Online - Compress, Convert, Edit Images | 30tools",
+            "seoDescription": "Professional image tools: compress images up to 90%, convert between formats (JPEG, PNG, WebP), resize photos, remove backgrounds with AI. Free, fast, and secure.",
+            "benefits": [
+                "Reduce image file sizes up to 90% while maintaining quality",
+                "Convert between all major image formats instantly",
+                "AI-powered background removal with precision",
+                "Batch processing for multiple images",
+                "No watermarks or file size limits",
+                "100% secure - all processing done locally"
+            ]
+        },
+        "pdf": {
+            "longDescription": "Comprehensive PDF manipulation tools for merging, splitting, compression, password protection, and format conversion. Handle PDF documents with professional-grade features including page rotation, numbering, and metadata editing.",
+            "seoTitle": "Free PDF Tools Online - Merge, Split, Compress PDFs | 30tools",
+            "seoDescription": "Professional PDF tools: merge multiple PDFs, split documents, compress files, add passwords, convert images to PDF. No file limits, watermark-free results.",
+            "benefits": [
+                "Merge unlimited PDF files into single documents",
+                "Split PDFs by page ranges or extract specific pages",
+                "Compress PDFs to reduce file sizes significantly",
+                "Add password protection and security features",
+                "Convert images to PDF while preserving quality",
+                "Professional-grade results without software installation"
+            ]
+        },
+        "video": {
+            "longDescription": "Advanced video processing tools for compression, format conversion, and GIF creation. Optimize videos for web, social media, or storage while maintaining visual quality.",
+            "seoTitle": "Free Video Tools Online - Compress Videos, Create GIFs | 30tools",
+            "seoDescription": "Professional video tools: compress videos for web, convert to GIF animations, optimize for social media. Fast processing, high quality results.",
+            "benefits": [
+                "Compress videos up to 80% smaller for faster loading",
+                "Create high-quality animated GIFs from videos",
+                "Optimize videos for different platforms and devices",
+                "Maintain visual quality while reducing file sizes",
+                "Support for all major video formats",
+                "Fast processing with real-time preview"
+            ]
+        },
+        "audio": {
+            "longDescription": "Professional audio processing tools for compression and format conversion. Convert between popular audio formats while maintaining sound quality and metadata.",
+            "seoTitle": "Free Audio Tools Online - Convert MP3, WAV, FLAC | 30tools",
+            "seoDescription": "Professional audio tools: convert between MP3, WAV, FLAC, AAC formats, compress audio files, maintain metadata. High-quality results, batch processing.",
+            "benefits": [
+                "Convert between all major audio formats seamlessly",
+                "Compress audio files while preserving sound quality",
+                "Batch process multiple audio files simultaneously",
+                "Preserve metadata and album information",
+                "Customize bitrates and sample rates",
+                "Professional audio processing in your browser"
+            ]
+        },
+        "text": {
+            "longDescription": "Essential text manipulation and analysis tools for content creators, writers, and developers. Count words and characters, generate passwords, convert text cases, and create placeholder content.",
+            "seoTitle": "Free Text Tools Online - Word Counter, Password Generator | 30tools",
+            "seoDescription": "Essential text tools: count words and characters, generate secure passwords, convert text cases, create Lorem Ipsum. Perfect for writers and developers.",
+            "benefits": [
+                "Accurate word and character counting for any text",
+                "Generate cryptographically secure passwords",
+                "Convert text between different case formats instantly",
+                "Create professional Lorem Ipsum placeholder text",
+                "Real-time text analysis and statistics",
+                "Essential tools for writers and content creators"
+            ]
+        },
+        "developer": {
+            "longDescription": "Essential development tools for programmers and web developers. Format JSON data, generate secure hashes, and validate code with professional-grade utilities.",
+            "seoTitle": "Free Developer Tools Online - JSON Formatter, Hash Generator | 30tools",
+            "seoDescription": "Essential developer tools: format and validate JSON, generate MD5/SHA hashes, test regular expressions. Professional utilities for programmers.",
+            "benefits": [
+                "Format and validate JSON data with syntax highlighting",
+                "Generate secure MD5, SHA1, SHA256 hashes instantly",
+                "Professional code formatting and validation",
+                "Essential utilities for debugging and development",
+                "Fast and reliable results for daily development tasks",
+                "No installation required - works in any browser"
+            ]
+        },
+        "code": {
+            "longDescription": "Comprehensive code processing tools for formatting, minification, and conversion. Support for HTML, CSS, JavaScript, CSV, Markdown, and regular expressions.",
+            "seoTitle": "Free Code Tools Online - Format, Minify, Convert Code | 30tools",
+            "seoDescription": "Professional code tools: format and beautify code, minify CSS/JS/HTML, convert CSV to JSON, test regex patterns. Essential for developers.",
+            "benefits": [
+                "Format and beautify code with professional indentation",
+                "Minify CSS, JavaScript, and HTML for production",
+                "Convert between data formats like CSV to JSON",
+                "Test and validate regular expressions with examples",
+                "Support for multiple programming languages",
+                "Improve code quality and reduce file sizes"
+            ]
+        },
+        "design": {
+            "longDescription": "Creative design tools for generating color palettes and creating favicons. Perfect for designers, developers, and anyone working on visual projects.",
+            "seoTitle": "Free Design Tools Online - Color Palettes, Favicon Generator | 30tools",
+            "seoDescription": "Professional design tools: generate beautiful color palettes, create favicons for websites. Perfect for designers and developers.",
+            "benefits": [
+                "Generate harmonious color palettes for any project",
+                "Create professional favicons in multiple formats",
+                "Export colors in various formats (HEX, RGB, HSL)",
+                "Perfect for web design and branding projects",
+                "Instant results with professional quality",
+                "Essential tools for visual design workflows"
+            ]
+        },
+        "utilities": {
+            "longDescription": "Essential utility tools for everyday tasks including unit conversion, file compression, and URL shortening. Practical tools that save time and improve productivity.",
+            "seoTitle": "Free Utility Tools Online - Unit Converter, ZIP Creator | 30tools",
+            "seoDescription": "Essential utility tools: convert units of measurement, create ZIP files, shorten URLs. Practical tools for everyday tasks.",
+            "benefits": [
+                "Convert between units of measurement instantly",
+                "Create ZIP files from multiple documents",
+                "Shorten long URLs for easy sharing",
+                "Essential tools for productivity and convenience",
+                "Accurate calculations and reliable results",
+                "Save time on common everyday tasks"
+            ]
+        },
+        "seo": {
+            "longDescription": "SEO and marketing tools for optimizing web presence. Generate meta tags, create QR codes, and improve website visibility with professional SEO utilities.",
+            "seoTitle": "Free SEO Tools Online - Meta Tags, QR Code Generator | 30tools",
+            "seoDescription": "Professional SEO tools: generate HTML meta tags, create QR codes, optimize website metadata. Essential for digital marketing and web optimization.",
+            "benefits": [
+                "Generate optimized HTML meta tags for better SEO",
+                "Create professional QR codes for marketing campaigns",
+                "Improve website visibility in search engines",
+                "Professional tools for digital marketers",
+                "Boost website performance and discoverability",
+                "Essential utilities for online presence optimization"
+            ]
+        }
+    },
+    "globalContent": {
+        "howItWorks": [
+            {
+                "step": 1,
+                "title": "Upload Your Files",
+                "description": "Select or drag and drop your files into the tool. All processing happens locally in your browser for maximum security."
+            },
+            {
+                "step": 2,
+                "title": "Choose Settings",
+                "description": "Customize quality, format, and other options based on your specific needs. Preview changes in real-time."
+            },
+            {
+                "step": 3,
+                "title": "Download Results",
+                "description": "Get your processed files instantly. No watermarks, no registration required, completely free to use."
+            }
+        ],
+        "features": [
+            "100% Free - No hidden costs or subscriptions",
+            "No Watermarks - Professional quality results",
+            "Secure Processing - All work done locally in your browser",
+            "No File Limits - Process files of any size",
+            "Fast Results - Optimized for speed and efficiency",
+            "Mobile Friendly - Works on all devices and browsers",
+            "No Registration - Start using tools immediately",
+            "Professional Quality - Enterprise-grade processing"
+        ],
+        "faqs": [
+            {
+                "question": "Are these tools really free to use?",
+                "answer": "Yes, all tools on 30tools are completely free with no hidden costs, subscriptions, or premium features. You get full access to all functionality."
+            },
+            {
+                "question": "Is my data secure when using these tools?",
+                "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data."
+            },
+            {
+                "question": "Do I need to create an account?",
+                "answer": "No registration required. You can start using any tool immediately without creating an account or providing personal information."
+            },
+            {
+                "question": "Are there any file size limits?",
+                "answer": "No, there are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files."
+            },
+            {
+                "question": "Can I use these tools on mobile devices?",
+                "answer": "Yes, all tools are fully responsive and work perfectly on smartphones, tablets, and desktop computers."
+            }
+        ]
+    }
+}

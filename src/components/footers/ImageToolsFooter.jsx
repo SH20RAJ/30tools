@@ -48,10 +48,10 @@ export default function ImageToolsFooter() {
               No watermarks, no registration required.
             </p>
             <div className="flex space-x-2">
-              <Link href="https://twitter.com/30tools" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://twitter.com/sh20raj" className="text-muted-foreground hover:text-foreground">
                 <TwitterIcon className="h-5 w-5" />
               </Link>
-              <Link href="https://github.com/30tools" className="text-muted-foreground hover:text-foreground">
+              <Link href="https://github.com/sh20raj" className="text-muted-foreground hover:text-foreground">
                 <GithubIcon className="h-5 w-5" />
               </Link>
             </div>
