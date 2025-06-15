@@ -1,5 +1,5 @@
 // Advanced SEO metadata templates with long-tail keywords and optimization
-import toolsDirectory from './comprehensive-tools-directory.json';
+import { getAllTools, getAllCategories } from '@/constants/tools-utils';
 
 // Global SEO constants
 export const GLOBAL_SEO = {
@@ -92,15 +92,7 @@ export const generateFAQSchema = (faqs) => ({
 // SEO metadata generators
 export const generateToolMetadata = (toolId) => {
   // Find tool in comprehensive directory
-  let tool = null;
-
-  for (const [, catData] of Object.entries(toolsDirectory.categories)) {
-    const foundTool = catData.tools?.find(t => t.id === toolId);
-    if (foundTool) {
-      tool = foundTool;
-      break;
-    }
-  }
+  const tool = getAllTools().find(t => t.id === toolId);
 
   if (!tool) {
     return getDefaultMetadata();
@@ -174,7 +166,7 @@ export const generateToolMetadata = (toolId) => {
 };
 
 export const generateCategoryMetadata = (categorySlug) => {
-  const category = Object.values(toolsDirectory.categories).find(cat => cat.slug === categorySlug);
+  const category = getAllCategories().find(cat => cat.slug === categorySlug);
 
   if (!category) {
     return getDefaultMetadata();

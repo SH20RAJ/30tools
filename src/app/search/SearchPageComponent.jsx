@@ -24,7 +24,9 @@ export default function SearchPageComponent() {
   const categories = useMemo(() => {
     return Object.entries(toolsData.categories).map(([key, cat]) => ({
       id: key,
-      name: cat.name
+      name: cat.name,
+      description: cat.description,
+      slug: cat.slug
     }));
   }, []);
 
