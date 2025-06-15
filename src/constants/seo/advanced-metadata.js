@@ -23,7 +23,7 @@ export const generateToolSchema = (tool) => ({
   "@type": "SoftwareApplication",
   "name": tool.name,
   "description": tool.longDescription,
-  "url": `https://30tools.com${tool.routes[0]}`,
+  "url": `https://30tools.com${tool.routes}`,
   "applicationCategory": "WebApplication",
   "operatingSystem": "Web Browser",
   "offers": {
@@ -59,7 +59,7 @@ export const generateCategorySchema = (category) => ({
       "item": {
         "@type": "SoftwareApplication",
         "name": tool.name,
-        "url": `https://30tools.com${tool.routes[0]}`
+        "url": `https://30tools.com${tool.routes}`
       }
     }))
   }
@@ -119,14 +119,14 @@ export const generateToolMetadata = (toolId) => {
     title: `${tool.name} - Free ${tool.primaryKeyword.charAt(0).toUpperCase() + tool.primaryKeyword.slice(1)} Online | 30tools`,
     description: `${tool.longDescription.substring(0, 155)}...`,
     keywords: [...tool.keywords, ...longTailVariations].join(', '),
-    canonical: `https://30tools.com${tool.routes[0]}`,
+    canonical: `https://30tools.com${tool.routes}`,
     alternates: {
-      canonical: `https://30tools.com${tool.routes[0]}`
+      canonical: `https://30tools.com${tool.routes}`
     },
     openGraph: {
       title: `${tool.name} - Free Online Tool`,
       description: tool.description,
-      url: `https://30tools.com${tool.routes[0]}`,
+      url: `https://30tools.com${tool.routes}`,
       siteName: GLOBAL_SEO.siteName,
       images: [
         {

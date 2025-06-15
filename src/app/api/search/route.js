@@ -3,11 +3,13 @@ import toolsData from '@/constants/tools.json';
 
 const getAllTools = () => {
   const tools = [];
-  Object.values(toolsData.categories).forEach(category => {
+  Object.entries(toolsData.categories).forEach(([categoryKey, category]) => {
     if (category.tools) {
       tools.push(...category.tools.map(tool => ({
         ...tool,
-        categoryName: category.name
+        categoryKey,
+        categoryName: category.name,
+        categorySlug: category.slug
       })));
     }
   });
@@ -23,7 +25,7 @@ export async function GET(request) {
 
   // Filter by category if specified
   if (category && category !== 'all') {
-    allTools = allTools.filter(tool => tool.category === category);
+    allTools = allTools.filter(tool => tool.categoryKey === category);
   }
 
   // If no query, return all tools
@@ -32,7 +34,7 @@ export async function GET(request) {
       query: '',
       results: allTools,
       total: allTools.length,
-      categories: Object.keys(toolsDirectory.categories)
+      categories: Object.keys(toolsData.categories)
     });
   }
 
@@ -42,10 +44,8 @@ export async function GET(request) {
       let score = 0;
       const nameMatch = tool.name.toLowerCase().includes(query);
       const descMatch = tool.description.toLowerCase().includes(query);
-      const keywordMatch = tool.keywords?.some(keyword =>
-        keyword.toLowerCase().includes(query)
-      );
-      const urlMatch = tool.url.toLowerCase().includes(query);
+      const categoryMatch = tool.categoryName.toLowerCase().includes(query);
+      const routeMatch = tool.route.toLowerCase().includes(query);
 
       // Scoring system
       if (tool.name.toLowerCase() === query) score += 100;
@@ -53,8 +53,8 @@ export async function GET(request) {
       else if (nameMatch) score += 25;
 
       if (descMatch) score += 15;
-      if (keywordMatch) score += 20;
-      if (urlMatch) score += 10;
+      if (categoryMatch) score += 20;
+      if (routeMatch) score += 10;
       if (tool.popular) score += 5;
 
       return { ...tool, score };
@@ -66,6 +66,6 @@ export async function GET(request) {
     query,
     results: searchResults,
     total: searchResults.length,
-    categories: Object.keys(toolsDirectory.categories)
+    categories: Object.keys(toolsData.categories)
   });
 }

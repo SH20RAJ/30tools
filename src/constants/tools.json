@@ -10,6 +10,7 @@
             "name": "Image Tools",
             "slug": "image-tools",
             "icon": "ImageIcon",
+            "description": "Compress, convert, resize, and edit images online",
             "tools": [
                 {
                     "id": "image-compressor",
@@ -49,6 +50,7 @@
             "name": "PDF Tools",
             "slug": "pdf-tools",
             "icon": "FileTextIcon",
+            "description": "Merge, split, compress, and manipulate PDF documents",
             "tools": [
                 {
                     "id": "pdf-merger",
@@ -128,6 +130,7 @@
             "name": "Video Tools",
             "slug": "video-tools",
             "icon": "VideoIcon",
+            "description": "Compress videos and convert to GIF format",
             "tools": [
                 {
                     "id": "video-compressor",
@@ -151,6 +154,7 @@
             "name": "Audio Tools",
             "slug": "audio-tools",
             "icon": "MusicIcon",
+            "description": "Compress and convert audio files between formats",
             "tools": [
                 {
                     "id": "audio-compressor",
@@ -174,6 +178,7 @@
             "name": "Text Tools",
             "slug": "text-tools",
             "icon": "TypeIcon",
+            "description": "Count words, generate passwords, and manipulate text",
             "tools": [
                 {
                     "id": "word-counter",
@@ -221,6 +226,7 @@
             "name": "Developer Tools",
             "slug": "developer-tools",
             "icon": "CodeIcon",
+            "description": "Format JSON, generate hashes, and developer utilities",
             "tools": [
                 {
                     "id": "json-formatter",
@@ -244,6 +250,7 @@
             "name": "Code Tools",
             "slug": "code-tools",
             "icon": "BracesIcon",
+            "description": "Format, minify, and convert code and data formats",
             "tools": [
                 {
                     "id": "code-formatter",
@@ -291,6 +298,7 @@
             "name": "Design Tools",
             "slug": "design-tools",
             "icon": "PaletteIcon",
+            "description": "Generate color palettes and create design assets",
             "tools": [
                 {
                     "id": "color-palette-generator",
@@ -314,6 +322,7 @@
             "name": "Utility Tools",
             "slug": "utility-tools",
             "icon": "SettingsIcon",
+            "description": "Convert units, create ZIP files, and essential utilities",
             "tools": [
                 {
                     "id": "unit-converter",
@@ -345,6 +354,7 @@
             "name": "SEO Tools",
             "slug": "seo-tools",
             "icon": "SearchIcon",
+            "description": "Generate meta tags, QR codes, and SEO utilities",
             "tools": [
                 {
                     "id": "meta-tags-generator",

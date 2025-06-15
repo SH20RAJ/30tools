@@ -265,7 +265,7 @@ export default function SearchPageComponent() {
                           </Button>
                         </Link>
                       ))} */}
-                      <Link href={tool.routes[0]}>
+                      <Link href={tool.route}>
                         <Button size="sm" className="text-xs">
                           Use Tool
                         </Button>
