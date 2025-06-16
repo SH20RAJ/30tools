@@ -20,7 +20,13 @@
 	}
 	,
 	"build": {
-		"command": "npm install && npm run build"
+		"command": "npm install && npm run build",
+		"watch_dir": ".open-next",
+		"upload_format": "service-worker",
+		"upload": {
+			"format": "service-worker",
+			"main_module": ".open-next/worker.js"
+		}
 	}
 	/**
 	 * Smart Placement
