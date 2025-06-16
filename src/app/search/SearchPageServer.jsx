@@ -216,35 +216,35 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
           ) : results.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {results.map((tool) => (
-                <Card key={tool.id} className="hover:shadow-md transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <CardTitle className="text-lg">{formatToolName(tool.name)}</CardTitle>
-                      {tool.popular && (
-                        <Badge variant="secondary" className="ml-2">
-                          <TrendingUpIcon className="h-3 w-3 mr-1" />
-                          Popular
+                <Link key={tool.id} href={tool.route} className="block">
+                  <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
+                    <CardHeader>
+                      <div className="flex items-start justify-between">
+                        <CardTitle className="text-lg group-hover:text-primary transition-colors">{formatToolName(tool.name)}</CardTitle>
+                        {tool.popular && (
+                          <Badge variant="secondary" className="ml-2">
+                            <TrendingUpIcon className="h-3 w-3 mr-1" />
+                            Popular
+                          </Badge>
+                        )}
+                      </div>
+                      <CardDescription className="text-sm group-hover:text-foreground transition-colors">
+                        {tool.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex items-center justify-between">
+                        <Badge variant="outline" className="capitalize">
+                          {tool.category.replace('-', ' ')}
                         </Badge>
-                      )}
-                    </div>
-                    <CardDescription className="text-sm">
-                      {tool.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center justify-between">
-                      <Badge variant="outline" className="capitalize">
-                        {tool.category.replace('-', ' ')}
-                      </Badge>
-                      <Button asChild variant="ghost" size="sm">
-                        <Link href={tool.route}>
+                        <div className="inline-flex items-center justify-center text-sm px-3 py-1 bg-transparent rounded-md group-hover:bg-primary/10 transition-colors">
                           Try it
                           <ArrowRightIcon className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           ) : (

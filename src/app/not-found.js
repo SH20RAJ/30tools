@@ -40,7 +40,7 @@ export default function NotFoundPage() {
             Popular Tools
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Link href="/color-picker">
+            <Link href="/color-picker" className="block">
               <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base group-hover:text-primary transition-colors">Color Picker</CardTitle>
@@ -49,15 +49,15 @@ export default function NotFoundPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/10">
-                    Try it
+                  <div className="w-full flex items-center justify-between p-2 rounded-md bg-transparent group-hover:bg-primary/10 transition-colors">
+                    <span className="text-sm">Try it</span>
                     <ArrowRightIcon className="w-4 h-4" />
-                  </Button>
+                  </div>
                 </CardContent>
               </Card>
             </Link>
 
-            <Link href="/password-generator">
+            <Link href="/password-generator" className="block">
               <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base group-hover:text-primary transition-colors">Password Generator</CardTitle>
@@ -66,15 +66,15 @@ export default function NotFoundPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/10">
-                    Try it
+                  <div className="w-full flex items-center justify-between p-2 rounded-md bg-transparent group-hover:bg-primary/10 transition-colors">
+                    <span className="text-sm">Try it</span>
                     <ArrowRightIcon className="w-4 h-4" />
-                  </Button>
+                  </div>
                 </CardContent>
               </Card>
             </Link>
 
-            <Link href="/qr-code-generator">
+            <Link href="/qr-code-generator" className="block">
               <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base group-hover:text-primary transition-colors">QR Code Generator</CardTitle>
@@ -83,15 +83,15 @@ export default function NotFoundPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/10">
-                    Try it
+                  <div className="w-full flex items-center justify-between p-2 rounded-md bg-transparent group-hover:bg-primary/10 transition-colors">
+                    <span className="text-sm">Try it</span>
                     <ArrowRightIcon className="w-4 h-4" />
-                  </Button>
+                  </div>
                 </CardContent>
               </Card>
             </Link>
 
-            <Link href="/base64-tool">
+            <Link href="/base64-tool" className="block">
               <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                 <CardHeader className="pb-3">
                   <CardTitle className="text-base group-hover:text-primary transition-colors">Base64 Encoder</CardTitle>
@@ -100,10 +100,10 @@ export default function NotFoundPage() {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/10">
-                    Try it
+                  <div className="w-full flex items-center justify-between p-2 rounded-md bg-transparent group-hover:bg-primary/10 transition-colors">
+                    <span className="text-sm">Try it</span>
                     <ArrowRightIcon className="w-4 h-4" />
-                  </Button>
+                  </div>
                 </CardContent>
               </Card>
             </Link>

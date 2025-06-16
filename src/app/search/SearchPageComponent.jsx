@@ -232,7 +232,7 @@ export default function SearchPageComponent() {
         {!loading && results.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {results.map((tool) => (
-              <Link key={tool.id} href={tool.route}>
+              <Link key={tool.id} href={tool.route} className="block">
                 <Card className="hover:shadow-lg transition-shadow cursor-pointer group h-full">
                   <CardHeader>
                     <div className="flex items-start justify-between">
@@ -261,10 +261,10 @@ export default function SearchPageComponent() {
                       </div>
 
                       <div className="flex flex-wrap gap-2">
-                        <Button size="sm" className="text-xs group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                        <div className="inline-flex items-center justify-center text-xs px-3 py-2 bg-primary text-primary-foreground rounded-md group-hover:bg-primary/90 transition-colors">
                           Use Tool
                           <ArrowRightIcon className="ml-1 h-3 w-3" />
-                        </Button>
+                        </div>
                       </div>
                     </div>
                   </CardContent>
