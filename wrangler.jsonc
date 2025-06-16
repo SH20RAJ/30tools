@@ -19,9 +19,7 @@
 		"enabled": true
 	},
 	"build": {
-		"command": "ls -la",
-		"cwd": ".open-next",
-		"watch_dir": ".open-next"
+		"command": "npx opennextjs-cloudflare build",
 	},
 	/**
 	 * Smart Placement
