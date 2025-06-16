@@ -1,9 +1,9 @@
 {
     "metadata": {
-        "version": "4.0",
+        "version": "5.0",
         "lastUpdated": "2025-06-16",
-        "totalTools": 58,
-        "totalCategories": 9
+        "totalTools": 75,
+        "totalCategories": 11
     },
     "categories": {
         "image": {
@@ -235,6 +235,30 @@
                     "route": "/lorem-ipsum-generator",
                     "popular": false,
                     "category": "text"
+                },
+                {
+                    "id": "text-to-speech",
+                    "name": "Text to Speech",
+                    "description": "Convert text to natural-sounding speech with voice options",
+                    "route": "/text-to-speech",
+                    "popular": true,
+                    "category": "text"
+                },
+                {
+                    "id": "duplicate-text-remover",
+                    "name": "Duplicate Text Remover",
+                    "description": "Remove duplicate lines and text from content",
+                    "route": "/duplicate-text-remover",
+                    "popular": false,
+                    "category": "text"
+                },
+                {
+                    "id": "text-diff-checker",
+                    "name": "Text Diff Checker",
+                    "description": "Compare two texts and highlight differences",
+                    "route": "/text-diff-checker",
+                    "popular": true,
+                    "category": "text"
                 }
             ]
         },
@@ -403,6 +427,38 @@
                     "route": "/url-shortener",
                     "popular": false,
                     "category": "utilities"
+                },
+                {
+                    "id": "random-number-generator",
+                    "name": "Random Number Generator",
+                    "description": "Generate random numbers with custom ranges",
+                    "route": "/random-number-generator",
+                    "popular": true,
+                    "category": "utilities"
+                },
+                {
+                    "id": "dice-roller",
+                    "name": "Dice Roller",
+                    "description": "Roll virtual dice with custom sides and quantities",
+                    "route": "/dice-roller",
+                    "popular": false,
+                    "category": "utilities"
+                },
+                {
+                    "id": "stopwatch",
+                    "name": "Online Stopwatch",
+                    "description": "Precise stopwatch and timer for activities",
+                    "route": "/stopwatch",
+                    "popular": true,
+                    "category": "utilities"
+                },
+                {
+                    "id": "countdown-timer",
+                    "name": "Countdown Timer",
+                    "description": "Set countdown timers for events and activities",
+                    "route": "/countdown-timer",
+                    "popular": true,
+                    "category": "utilities"
                 }
             ]
         },
@@ -435,6 +491,86 @@
                     "route": "/website-analyzer",
                     "popular": false,
                     "category": "seo"
+                }
+            ]
+        },
+        "converter": {
+            "name": "File Converters",
+            "slug": "file-converters",
+            "icon": "RefreshCwIcon",
+            "description": "Convert between different file formats",
+            "tools": [
+                {
+                    "id": "webp-to-jpg",
+                    "name": "WebP to JPG Converter",
+                    "description": "Convert WebP images to JPG format",
+                    "route": "/webp-to-jpg",
+                    "popular": true,
+                    "category": "converter"
+                },
+                {
+                    "id": "heic-to-jpg",
+                    "name": "HEIC to JPG Converter",
+                    "description": "Convert iPhone HEIC photos to JPG",
+                    "route": "/heic-to-jpg",
+                    "popular": true,
+                    "category": "converter"
+                },
+                {
+                    "id": "svg-to-png",
+                    "name": "SVG to PNG Converter",
+                    "description": "Convert SVG vector graphics to PNG images",
+                    "route": "/svg-to-png",
+                    "popular": true,
+                    "category": "converter"
+                },
+                {
+                    "id": "mp4-to-mp3",
+                    "name": "MP4 to MP3 Converter",
+                    "description": "Extract audio from MP4 videos as MP3",
+                    "route": "/mp4-to-mp3",
+                    "popular": true,
+                    "category": "converter"
+                },
+                {
+                    "id": "youtube-thumbnail-downloader",
+                    "name": "YouTube Thumbnail Downloader",
+                    "description": "Download YouTube video thumbnails in HD",
+                    "route": "/youtube-thumbnail-downloader",
+                    "popular": true,
+                    "category": "converter"
+                }
+            ]
+        },
+        "security": {
+            "name": "Security Tools",
+            "slug": "security-tools",
+            "icon": "ShieldIcon",
+            "description": "Encrypt, decrypt, and secure your data",
+            "tools": [
+                {
+                    "id": "file-encryptor",
+                    "name": "File Encryptor",
+                    "description": "Encrypt files with AES-256 encryption",
+                    "route": "/file-encryptor",
+                    "popular": true,
+                    "category": "security"
+                },
+                {
+                    "id": "text-encryptor",
+                    "name": "Text Encryptor",
+                    "description": "Encrypt and decrypt text messages securely",
+                    "route": "/text-encryptor",
+                    "popular": false,
+                    "category": "security"
+                },
+                {
+                    "id": "secure-note-generator",
+                    "name": "Secure Note Generator",
+                    "description": "Create self-destructing secure notes",
+                    "route": "/secure-note-generator",
+                    "popular": false,
+                    "category": "security"
                 }
             ]
         }
