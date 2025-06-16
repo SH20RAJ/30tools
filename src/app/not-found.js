@@ -40,73 +40,73 @@ export default function NotFoundPage() {
             Popular Tools
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <Card className="hover:shadow-md transition-shadow">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base">Color Picker</CardTitle>
-                <CardDescription className="text-sm">
-                  Pick and convert colors
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <Button asChild variant="ghost" className="w-full justify-between">
-                  <Link href="/color-picker">
+            <Link href="/color-picker">
+              <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">Color Picker</CardTitle>
+                  <CardDescription className="text-sm group-hover:text-foreground transition-colors">
+                    Pick and convert colors
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/10">
                     Try it
                     <ArrowRightIcon className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card className="hover:shadow-md transition-shadow">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base">Password Generator</CardTitle>
-                <CardDescription className="text-sm">
-                  Generate secure passwords
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <Button asChild variant="ghost" className="w-full justify-between">
-                  <Link href="/password-generator">
+            <Link href="/password-generator">
+              <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">Password Generator</CardTitle>
+                  <CardDescription className="text-sm group-hover:text-foreground transition-colors">
+                    Generate secure passwords
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/10">
                     Try it
                     <ArrowRightIcon className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card className="hover:shadow-md transition-shadow">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base">QR Code Generator</CardTitle>
-                <CardDescription className="text-sm">
-                  Create QR codes instantly
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <Button asChild variant="ghost" className="w-full justify-between">
-                  <Link href="/qr-code-generator">
+            <Link href="/qr-code-generator">
+              <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">QR Code Generator</CardTitle>
+                  <CardDescription className="text-sm group-hover:text-foreground transition-colors">
+                    Create QR codes instantly
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/10">
                     Try it
                     <ArrowRightIcon className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
 
-            <Card className="hover:shadow-md transition-shadow">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-base">Base64 Encoder</CardTitle>
-                <CardDescription className="text-sm">
-                  Encode and decode Base64
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="pt-0">
-                <Button asChild variant="ghost" className="w-full justify-between">
-                  <Link href="/base64-tool">
+            <Link href="/base64-tool">
+              <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">Base64 Encoder</CardTitle>
+                  <CardDescription className="text-sm group-hover:text-foreground transition-colors">
+                    Encode and decode Base64
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <Button variant="ghost" className="w-full justify-between group-hover:bg-primary/10">
                     Try it
                     <ArrowRightIcon className="w-4 h-4" />
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </div>

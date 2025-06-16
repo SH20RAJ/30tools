@@ -181,47 +181,47 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {toolCategories.map((category) => (
-                <Card key={category.key} className="hover:shadow-lg transition-shadow cursor-pointer group">
-                  <CardHeader>
-                    <div className="flex items-center space-x-3">
-                      <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                        <category.icon className="h-6 w-6 text-primary" />
+                <Link key={category.key} href={`/search?category=${category.key}`}>
+                  <Card className="hover:shadow-lg transition-shadow cursor-pointer group h-full">
+                    <CardHeader>
+                      <div className="flex items-center space-x-3">
+                        <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                          <category.icon className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <CardTitle className="text-lg group-hover:text-primary transition-colors">{category.name}</CardTitle>
+                          <CardDescription className="group-hover:text-foreground transition-colors">{category.description}</CardDescription>
+                        </div>
                       </div>
-                      <div>
-                        <CardTitle className="text-lg">{category.name}</CardTitle>
-                        <CardDescription>{category.description}</CardDescription>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-3">
-                      <div className="flex flex-wrap gap-1">
-                        {category.tools?.slice(0, 4).map((tool, i) => (
-                          <Badge key={i} variant="outline" className="text-xs">
-                            {tool.name}
-                          </Badge>
-                        ))}
-                        {category.tools?.length > 4 && (
-                          <Badge variant="outline" className="text-xs">
-                            +{category.tools.length - 4} more
-                          </Badge>
-                        )}
-                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-3">
+                        <div className="flex flex-wrap gap-1">
+                          {category.tools?.slice(0, 4).map((tool, i) => (
+                            <Badge key={i} variant="outline" className="text-xs">
+                              {tool.name}
+                            </Badge>
+                          ))}
+                          {category.tools?.length > 4 && (
+                            <Badge variant="outline" className="text-xs">
+                              +{category.tools.length - 4} more
+                            </Badge>
+                          )}
+                        </div>
 
-                      <div className="flex justify-between items-center">
-                        <span className="text-sm text-muted-foreground">
-                          {category.tools?.length || 0} tools
-                        </span>
-                        <Link href={`/search?category=${category.key}`}>
-                          <Button variant="ghost" size="sm">
+                        <div className="flex justify-between items-center">
+                          <span className="text-sm text-muted-foreground">
+                            {category.tools?.length || 0} tools
+                          </span>
+                          <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
                             View All
                             <ArrowRightIcon className="ml-1 h-4 w-4" />
                           </Button>
-                        </Link>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
+                    </CardContent>
+                  </Card>
+                </Link>
               ))}
             </div>
           </div>

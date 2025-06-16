@@ -9,7 +9,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Skeleton } from '@/components/ui/skeleton';
-import { SearchIcon, FilterIcon, ArrowLeftIcon, StarIcon } from 'lucide-react';
+import { SearchIcon, FilterIcon, ArrowLeftIcon, ArrowRightIcon, StarIcon } from 'lucide-react';
 import toolsData from '@/constants/tools.json';
 
 export default function SearchPageComponent() {
@@ -232,50 +232,44 @@ export default function SearchPageComponent() {
         {!loading && results.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {results.map((tool) => (
-              <Card key={tool.id} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
-                      <CardTitle className="text-lg">{tool.name}</CardTitle>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {tool.description}
-                      </p>
-                    </div>
-                    {tool.popular && (
-                      <Badge variant="secondary" className="ml-2">
-                        <StarIcon className="h-3 w-3 mr-1" />
-                        Popular
-                      </Badge>
-                    )}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-3">
-                    <div className="flex flex-wrap gap-1">
-                      {tool.features?.slice(0, 3).map((feature, i) => (
-                        <Badge key={i} variant="outline" className="text-xs">
-                          {feature}
+              <Link key={tool.id} href={tool.route}>
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer group h-full">
+                  <CardHeader>
+                    <div className="flex items-start justify-between">
+                      <div className="flex-1">
+                        <CardTitle className="text-lg group-hover:text-primary transition-colors">{tool.name}</CardTitle>
+                        <p className="text-sm text-muted-foreground mt-1 group-hover:text-foreground transition-colors">
+                          {tool.description}
+                        </p>
+                      </div>
+                      {tool.popular && (
+                        <Badge variant="secondary" className="ml-2">
+                          <StarIcon className="h-3 w-3 mr-1" />
+                          Popular
                         </Badge>
-                      ))}
+                      )}
                     </div>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="flex flex-wrap gap-1">
+                        {tool.features?.slice(0, 3).map((feature, i) => (
+                          <Badge key={i} variant="outline" className="text-xs">
+                            {feature}
+                          </Badge>
+                        ))}
+                      </div>
 
-                    <div className="flex flex-wrap gap-2">
-                      {/* {tool.routes?.map((route) => (
-                        <Link key={route} href={route}>
-                          <Button size="sm" className="text-xs">
-                            Use Tool
-                          </Button>
-                        </Link>
-                      ))} */}
-                      <Link href={tool.route}>
-                        <Button size="sm" className="text-xs">
+                      <div className="flex flex-wrap gap-2">
+                        <Button size="sm" className="text-xs group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                           Use Tool
+                          <ArrowRightIcon className="ml-1 h-3 w-3" />
                         </Button>
-                      </Link>
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         )}
