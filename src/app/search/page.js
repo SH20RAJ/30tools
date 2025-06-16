@@ -27,6 +27,7 @@ export default async function SearchPage({ searchParams }) {
   // Get search parameters
   const query = params?.q || '';
   const category = params?.category || 'all';
+  const premium = params?.premium === 'true';
   
   // Server-side filtering for initial results
   let filteredTools = allTools;
@@ -43,12 +44,17 @@ export default async function SearchPage({ searchParams }) {
   if (category && category !== 'all') {
     filteredTools = filteredTools.filter(tool => tool.category === category);
   }
+
+  if (premium) {
+    filteredTools = filteredTools.filter(tool => tool.premium === true);
+  }
   
   return (
     <SearchPageServer 
       initialTools={filteredTools}
       initialQuery={query}
       initialCategory={category}
+      initialPremium={premium}
       allTools={allTools}
     />
   );

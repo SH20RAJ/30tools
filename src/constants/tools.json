@@ -9,6 +9,7 @@
         "image": {
             "name": "Image Tools",
             "slug": "image-tools",
+            
             "icon": "ImageIcon",
             "description": "Compress, convert, resize, and edit images online",
             "tools": [
@@ -42,14 +43,16 @@
                     "description": "Remove image backgrounds automatically with AI",
                     "route": "/background-remover",
                     "popular": true,
+                    "premium": true,
                     "category": "image"
                 },
                 {
                     "id": "image-editor",
                     "name": "Image Editor",
-                    "description": "Edit images online with filters, effects, and basic editing tools",
+                    "description": "Professional image editing with filters, effects, and advanced tools",
                     "route": "/image-editor",
                     "popular": true,
+                    "premium": true,
                     "category": "image"
                 },
                 {
@@ -58,6 +61,7 @@
                     "description": "Enhance photo quality with AI-powered image enhancement",
                     "route": "/photo-enhancer",
                     "popular": true,
+                    "premium": true,
                     "category": "image"
                 },
                 {
@@ -151,9 +155,10 @@
                 {
                     "id": "pdf-editor",
                     "name": "PDF Editor",
-                    "description": "Edit PDF text, add annotations, and modify content",
+                    "description": "Professional PDF editing - add text, annotations, and modify content",
                     "route": "/pdf-editor",
                     "popular": true,
+                    "premium": true,
                     "category": "pdf"
                 },
                 {
@@ -207,9 +212,10 @@
                 {
                     "id": "video-editor",
                     "name": "Video Editor",
-                    "description": "Basic video editing - trim, cut, and merge videos",
+                    "description": "Professional video editing - trim, cut, and merge videos",
                     "route": "/video-editor",
                     "popular": true,
+                    "premium": true,
                     "category": "video"
                 },
                 {
@@ -255,9 +261,10 @@
                 {
                     "id": "audio-editor",
                     "name": "Audio Editor",
-                    "description": "Edit audio files - trim, merge, and apply effects",
+                    "description": "Professional audio editing with real-time effects and multi-track support",
                     "route": "/audio-editor",
                     "popular": true,
+                    "premium": true,
                     "category": "audio"
                 },
                 {
