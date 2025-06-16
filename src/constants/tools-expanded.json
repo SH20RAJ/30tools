@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "version": "5.1",
+        "version": "5.0",
         "lastUpdated": "2025-06-16",
-        "totalTools": 77,
+        "totalTools": 75,
         "totalCategories": 11
     },
     "categories": {
@@ -665,22 +665,6 @@
                     "name": "QR Code Generator",
                     "description": "Generate QR codes for text, URLs, WiFi, and more",
                     "route": "/qr-code-generator",
-                    "popular": true,
-                    "category": "seo"
-                },
-                {
-                    "id": "youtube-tag-generator",
-                    "name": "YouTube Tag Generator",
-                    "description": "Generate optimized YouTube tags to boost video SEO and discoverability",
-                    "route": "/youtube-tag-generator",
-                    "popular": true,
-                    "category": "seo"
-                },
-                {
-                    "id": "tiktok-tag-generator",
-                    "name": "TikTok Hashtag Generator",
-                    "description": "Generate trending TikTok hashtags to boost video reach and engagement",
-                    "route": "/tiktok-tag-generator",
                     "popular": true,
                     "category": "seo"
                 },

@@ -18,12 +18,15 @@ export const metadata = {
 };
 
 export default async function SearchPage({ searchParams }) {
+  // Await searchParams to fix Next.js 15 async APIs
+  const params = await searchParams;
+  
   // Get all tools server-side
   const allTools = getAllTools();
   
   // Get search parameters
-  const query = searchParams?.q || '';
-  const category = searchParams?.category || 'all';
+  const query = params?.q || '';
+  const category = params?.category || 'all';
   
   // Server-side filtering for initial results
   let filteredTools = allTools;

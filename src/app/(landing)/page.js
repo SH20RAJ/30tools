@@ -18,7 +18,12 @@ import {
   StarIcon,
   SearchIcon,
   PaletteIcon,
-  PenToolIcon
+  PenToolIcon,
+  CodeIcon,
+  BracesIcon,
+  TypeIcon,
+  SettingsIcon,
+  RefreshCwIcon
 } from 'lucide-react';
 
 export default function LandingPage() {
@@ -30,7 +35,12 @@ export default function LandingPage() {
     FileIcon,
     PaletteIcon,
     PenToolIcon,
-    SearchIcon
+    SearchIcon,
+    CodeIcon,
+    BracesIcon,
+    TypeIcon,
+    SettingsIcon,
+    RefreshCwIcon
   };
 
   const toolCategories = Object.entries(toolsData.categories).map(([key, category]) => ({
@@ -44,7 +54,7 @@ export default function LandingPage() {
   const stats = [
     { icon: UsersIcon, value: "10K+", label: "Happy Users" },
     { icon: TrendingUpIcon, value: "99.9%", label: "Uptime" },
-    { icon: ZapIcon, value: "30+", label: "Free Tools" },
+    { icon: ZapIcon, value: "75+", label: "Free Tools" },
     { icon: StarIcon, value: "4.9", label: "User Rating" }
   ];
 

@@ -2,6 +2,7 @@ import { Poppins } from "next/font/google";
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
 import StructuredData from '@/components/shared/StructuredData';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from 'sonner';
 import "./globals.css";
 import "./css/cute.css";
 import Script from "next/script";
@@ -14,10 +15,10 @@ const poppins = Poppins({
 
 export const metadata = {
   title: {
-    default: "30tools - Free Online Toolkit | 30+ Tools for Image, Video, PDF & More",
+    default: "30tools - Free Online Toolkit | 75+ Tools for Image, Video, PDF & More",
     template: "%s | 30tools - Free Online Tools"
   },
-  description: "Access 30+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required. Privacy-focused and fast.",
+  description: "Access 75+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, file conversion and more. No sign-up required. Privacy-focused and fast.",
   keywords: [
     "free online tools",
     "image compressor", 
@@ -58,14 +59,14 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://30tools.com',
     siteName: '30tools - Free Online Toolkit',
-    title: '30tools - Free Online Toolkit | 30+ Tools for Image, Video, PDF & More',
-    description: 'Access 30+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required.',
+    title: '30tools - Free Online Toolkit | 75+ Tools for Image, Video, PDF & More',
+    description: 'Access 75+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, file conversion and more. No sign-up required.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: '30tools - Free Online Toolkit with 30+ Tools',
+        alt: '30tools - Free Online Toolkit with 75+ Tools',
         type: 'image/jpeg',
       },
     ],
@@ -74,8 +75,8 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@30tools',
     creator: '@30tools',
-    title: '30tools - Free Online Toolkit | 30+ Tools for Image, Video, PDF & More',
-    description: 'Access 30+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required.',
+    title: '30tools - Free Online Toolkit | 75+ Tools for Image, Video, PDF & More',
+    description: 'Access 75+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, file conversion and more. No sign-up required.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -186,6 +187,7 @@ export default function RootLayout({ children }) {
           <StructuredData />
           {children}
           <PWAInstallPrompt />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
