@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "version": "3.0",
-        "lastUpdated": "2025-06-15",
-        "totalTools": 43,
+        "version": "4.0",
+        "lastUpdated": "2025-06-16",
+        "totalTools": 58,
         "totalCategories": 9
     },
     "categories": {
@@ -199,7 +199,7 @@
                 {
                     "id": "text-case-converter",
                     "name": "Text Case Converter",
-                    "description": "Convert text between different cases",
+                    "description": "Convert text between different cases (upper, lower, title)",
                     "route": "/text-case-converter",
                     "popular": false,
                     "category": "text"
@@ -207,15 +207,31 @@
                 {
                     "id": "password-generator",
                     "name": "Password Generator",
-                    "description": "Generate secure random passwords",
+                    "description": "Generate secure random passwords with custom options",
                     "route": "/password-generator",
+                    "popular": true,
+                    "category": "text"
+                },
+                {
+                    "id": "password-generator2",
+                    "name": "Advanced Password Generator",
+                    "description": "Advanced password generator with more customization options",
+                    "route": "/password-generator2",
+                    "popular": false,
+                    "category": "text"
+                },
+                {
+                    "id": "password-strength-checker",
+                    "name": "Password Strength Checker",
+                    "description": "Check the strength and security of your passwords",
+                    "route": "/password-strength-checker",
                     "popular": true,
                     "category": "text"
                 },
                 {
                     "id": "lorem-ipsum-generator",
                     "name": "Lorem Ipsum Generator",
-                    "description": "Generate placeholder text for design",
+                    "description": "Generate placeholder text for design and development",
                     "route": "/lorem-ipsum-generator",
                     "popular": false,
                     "category": "text"
@@ -231,7 +247,7 @@
                 {
                     "id": "json-formatter",
                     "name": "JSON Formatter",
-                    "description": "Format and validate JSON data",
+                    "description": "Format, validate, and beautify JSON data",
                     "route": "/json-formatter",
                     "popular": true,
                     "category": "developer"
@@ -239,8 +255,32 @@
                 {
                     "id": "hash-generator",
                     "name": "Hash Generator",
-                    "description": "Generate MD5, SHA1, SHA256 hashes",
+                    "description": "Generate MD5, SHA1, SHA256 hashes from text",
                     "route": "/hash-generator",
+                    "popular": false,
+                    "category": "developer"
+                },
+                {
+                    "id": "hash-generator2",
+                    "name": "Advanced Hash Generator",
+                    "description": "Generate various hash types with advanced options",
+                    "route": "/hash-generator2",
+                    "popular": false,
+                    "category": "developer"
+                },
+                {
+                    "id": "base64-tool",
+                    "name": "Base64 Encoder/Decoder",
+                    "description": "Encode and decode Base64 strings and files",
+                    "route": "/base64-tool",
+                    "popular": true,
+                    "category": "developer"
+                },
+                {
+                    "id": "regex-tester2",
+                    "name": "Advanced Regex Tester",
+                    "description": "Test and validate regular expressions with advanced features",
+                    "route": "/regex-tester2",
                     "popular": false,
                     "category": "developer"
                 }
@@ -255,7 +295,7 @@
                 {
                     "id": "code-formatter",
                     "name": "Code Formatter",
-                    "description": "Format and beautify code",
+                    "description": "Format and beautify HTML, CSS, JavaScript code",
                     "route": "/code-formatter",
                     "popular": true,
                     "category": "code"
@@ -263,15 +303,15 @@
                 {
                     "id": "code-minifier",
                     "name": "Code Minifier",
-                    "description": "Minify CSS, JavaScript, HTML code",
+                    "description": "Minify CSS, JavaScript, HTML code for production",
                     "route": "/code-minifier",
                     "popular": false,
                     "category": "code"
                 },
                 {
                     "id": "csv-to-json",
-                    "name": "CSV to JSON",
-                    "description": "Convert CSV data to JSON format",
+                    "name": "CSV to JSON Converter",
+                    "description": "Convert CSV data to JSON format easily",
                     "route": "/csv-to-json",
                     "popular": false,
                     "category": "code"
@@ -279,7 +319,7 @@
                 {
                     "id": "markdown-to-html",
                     "name": "Markdown to HTML",
-                    "description": "Convert Markdown to HTML",
+                    "description": "Convert Markdown text to HTML format",
                     "route": "/markdown-to-html",
                     "popular": false,
                     "category": "code"
@@ -287,7 +327,7 @@
                 {
                     "id": "regex-tester",
                     "name": "Regex Tester",
-                    "description": "Test and validate regular expressions",
+                    "description": "Test and validate regular expressions with live preview",
                     "route": "/regex-tester",
                     "popular": false,
                     "category": "code"
@@ -301,17 +341,33 @@
             "description": "Generate color palettes and create design assets",
             "tools": [
                 {
+                    "id": "color-picker",
+                    "name": "Color Picker",
+                    "description": "Pick colors and get values in all formats with harmony suggestions",
+                    "route": "/color-picker",
+                    "popular": true,
+                    "category": "design"
+                },
+                {
                     "id": "color-palette-generator",
                     "name": "Color Palette Generator",
-                    "description": "Generate beautiful color palettes",
+                    "description": "Generate beautiful color palettes and schemes",
                     "route": "/color-palette-generator",
+                    "popular": true,
+                    "category": "design"
+                },
+                {
+                    "id": "css-gradient-generator",
+                    "name": "CSS Gradient Generator",
+                    "description": "Create beautiful CSS gradients with live preview",
+                    "route": "/css-gradient-generator",
                     "popular": true,
                     "category": "design"
                 },
                 {
                     "id": "favicon-generator",
                     "name": "Favicon Generator",
-                    "description": "Create favicons for websites",
+                    "description": "Create favicons and app icons for websites",
                     "route": "/favicon-generator",
                     "popular": false,
                     "category": "design"
@@ -327,15 +383,15 @@
                 {
                     "id": "unit-converter",
                     "name": "Unit Converter",
-                    "description": "Convert between units of measurement",
+                    "description": "Convert between different units of measurement",
                     "route": "/unit-converter",
                     "popular": true,
                     "category": "utilities"
                 },
                 {
                     "id": "zip-creator",
-                    "name": "ZIP Creator",
-                    "description": "Create ZIP files from multiple files",
+                    "name": "ZIP File Creator",
+                    "description": "Create ZIP archives from multiple files",
                     "route": "/zip-creator",
                     "popular": false,
                     "category": "utilities"
@@ -343,7 +399,7 @@
                 {
                     "id": "url-shortener",
                     "name": "URL Shortener",
-                    "description": "Shorten long URLs",
+                    "description": "Shorten long URLs for easier sharing",
                     "route": "/url-shortener",
                     "popular": false,
                     "category": "utilities"
@@ -359,7 +415,7 @@
                 {
                     "id": "meta-tags-generator",
                     "name": "Meta Tags Generator",
-                    "description": "Generate HTML meta tags for SEO",
+                    "description": "Generate HTML meta tags for SEO optimization",
                     "route": "/meta-tags-generator",
                     "popular": false,
                     "category": "seo"
@@ -367,9 +423,17 @@
                 {
                     "id": "qr-code-generator",
                     "name": "QR Code Generator",
-                    "description": "Generate QR codes for text, URLs, etc.",
+                    "description": "Generate QR codes for text, URLs, WiFi, and more",
                     "route": "/qr-code-generator",
                     "popular": true,
+                    "category": "seo"
+                },
+                {
+                    "id": "website-analyzer",
+                    "name": "Website Analyzer",
+                    "description": "Analyze website performance, SEO, and technical details",
+                    "route": "/website-analyzer",
+                    "popular": false,
                     "category": "seo"
                 }
             ]

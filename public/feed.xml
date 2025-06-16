@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>30tools - Free Online Toolkit</title>
-    <description>Access 43+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required.</description>
+    <description>Access 58+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required.</description>
     <link>https://30tools.com</link>
     <atom:link href="https://30tools.com/feed.xml" rel="self" type="application/rss+xml" />
     <language>en-US</language>
-    <lastBuildDate>Mon, 16 Jun 2025 09:18:46 GMT</lastBuildDate>
-    <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+    <lastBuildDate>Mon, 16 Jun 2025 09:21:41 GMT</lastBuildDate>
+    <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
     <managingEditor>support@30tools.com (30tools Team)</managingEditor>
     <webMaster>support@30tools.com (30tools Team)</webMaster>
     <generator>30tools RSS Generator</generator>
@@ -26,7 +26,7 @@
       <description><![CDATA[Compress images to reduce file size while maintaining quality. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/image-compressor</link>
       <guid>https://30tools.com/image-compressor</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -35,7 +35,7 @@
       <description><![CDATA[Convert images between different formats (JPEG, PNG, WebP). Free online tool - no registration required.]]></description>
       <link>https://30tools.com/image-converter</link>
       <guid>https://30tools.com/image-converter</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -44,7 +44,7 @@
       <description><![CDATA[Remove image backgrounds automatically with AI. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/background-remover</link>
       <guid>https://30tools.com/background-remover</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -53,7 +53,7 @@
       <description><![CDATA[Merge multiple PDF files into one document. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/pdf-merger</link>
       <guid>https://30tools.com/pdf-merger</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>PDF Tools</category>
     </item>
   
@@ -62,7 +62,7 @@
       <description><![CDATA[Split PDF files into separate pages or ranges. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/pdf-splitter</link>
       <guid>https://30tools.com/pdf-splitter</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>PDF Tools</category>
     </item>
   
@@ -71,7 +71,7 @@
       <description><![CDATA[Compress PDF files to reduce size. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/pdf-compressor</link>
       <guid>https://30tools.com/pdf-compressor</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>PDF Tools</category>
     </item>
   
@@ -80,7 +80,7 @@
       <description><![CDATA[Compress video files to reduce size. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/video-compressor</link>
       <guid>https://30tools.com/video-compressor</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>Video Tools</category>
     </item>
   
@@ -89,7 +89,7 @@
       <description><![CDATA[Convert videos to animated GIFs. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/video-to-gif</link>
       <guid>https://30tools.com/video-to-gif</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>Video Tools</category>
     </item>
   
@@ -98,7 +98,7 @@
       <description><![CDATA[Compress audio files to reduce size. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/audio-compressor</link>
       <guid>https://30tools.com/audio-compressor</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>Audio Tools</category>
     </item>
   
@@ -107,7 +107,7 @@
       <description><![CDATA[Convert audio between formats (MP3, WAV, FLAC). Free online tool - no registration required.]]></description>
       <link>https://30tools.com/audio-converter</link>
       <guid>https://30tools.com/audio-converter</guid>
-      <pubDate>Mon, 16 Jun 2025 09:18:46 GMT</pubDate>
+      <pubDate>Mon, 16 Jun 2025 09:21:41 GMT</pubDate>
       <category>Audio Tools</category>
     </item>
   
