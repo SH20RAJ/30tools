@@ -1,27 +1,22 @@
-export default function OpenSearchXml() {
-  return new Response(
-    `<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
   <ShortName>30tools</ShortName>
-  <Description>Search free online tools for image, video, PDF, and text processing</Description>
+  <Description>Search 30+ free online tools for image compression, video conversion, PDF editing, and more</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://30tools.com/favicon.ico</Image>
   <Image width="32" height="32" type="image/png">https://30tools.com/icons/icon-32x32.png</Image>
+  <Image width="64" height="64" type="image/png">https://30tools.com/icons/icon-64x64.png</Image>
   <Url type="text/html" template="https://30tools.com/search?q={searchTerms}"/>
   <Url type="application/x-suggestions+json" template="https://30tools.com/api/search/suggestions?q={searchTerms}"/>
-  <moz:SearchForm>https://30tools.com</moz:SearchForm>
+  <moz:SearchForm>https://30tools.com/search</moz:SearchForm>
   <Query role="example" searchTerms="image compressor" />
-  <Developer>30tools.com Team</Developer>
+  <Query role="example" searchTerms="password generator" />
+  <Query role="example" searchTerms="pdf merger" />
+  <Developer>30tools Team</Developer>
   <Contact>support@30tools.com</Contact>
-  <Tags>tools file converter image video pdf compression</Tags>
+  <Tags>free online tools image compressor video converter pdf tools password generator qr code color picker base64 encoder text tools file converter utilities web tools</Tags>
   <Language>en-us</Language>
   <OutputEncoding>UTF-8</OutputEncoding>
-</OpenSearchDescription>`,
-    {
-      headers: {
-        'Content-Type': 'application/opensearchdescription+xml',
-      },
-    }
-  );
-}
+  <AdultContent>false</AdultContent>
+</OpenSearchDescription>

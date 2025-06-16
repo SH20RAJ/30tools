@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
 import toolsData from '@/constants/tools.json';
 import {
@@ -64,6 +65,7 @@ export default function LandingPage() {
             </div>
 
             <div className="flex items-center space-x-4">
+              <ThemeToggle />
               <Link href="/search">
                 <Button variant="ghost">
                   <SearchIcon className="h-4 w-4 mr-2" />
@@ -79,38 +81,56 @@ export default function LandingPage() {
       </header>
 
       <main>
-        {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+         {/* Hero Section */}
+        <section className="py-24 relative overflow-hidden">
+          {/* Background decoration */}
+          <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
+
+          <div className="container mx-auto px-4 relative">
+            <div className="max-w-4xl mx-auto text-center">
+              {/* Main heading with animated gradient */}
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-gradient bg-gradient-to-r from-primary via-secondary to-primary bg-300% bg-clip-text text-transparent">
                 Your Ultimate Online Toolkit
               </h1>
-              <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Fast, free, and privacy-focused tools for image, video, audio, PDF, and text processing.
+
+              {/* Subheading with better spacing */}
+              <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+                Fast, free, and privacy-focused tools for all your file processing needs.
                 No sign-up required, no watermarks added.
               </p>
 
-              {/* Quick Search Tags */}
-              <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {/* Quick search tags with hover effects */}
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
                 {quickSearchTags.map((tag) => (
                   <Link key={tag} href={`/search?q=${encodeURIComponent(tag)}`}>
-                    <Badge variant="secondary" className="cursor-pointer hover:bg-secondary/80 transition-colors">
+                    <Badge
+                      variant="secondary"
+                      className="px-4 py-2 text-sm cursor-pointer transform transition-all hover:scale-105 hover:bg-secondary/90"
+                    >
                       {tag}
                     </Badge>
                   </Link>
                 ))}
               </div>
 
+              {/* CTA buttons with hover animations */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/search">
-                  <Button size="lg" className="min-w-[200px]">
+                  <Button
+                    size="lg"
+                    className="min-w-[200px] transform transition-all hover:scale-105 hover:shadow-lg"
+                  >
                     Browse All Tools
-                    <ArrowRightIcon className="ml-2 h-5 w-5" />
+                    <ArrowRightIcon className="ml-2 h-5 w-5 animate-bounce-x" />
                   </Button>
                 </Link>
                 <Link href="/image-compressor">
-                  <Button variant="outline" size="lg" className="min-w-[200px]">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="min-w-[200px] transform transition-all hover:scale-105 hover:shadow-lg hover:bg-secondary/10"
+                  >
                     Try Image Compressor
                   </Button>
                 </Link>

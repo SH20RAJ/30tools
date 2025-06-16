@@ -1,5 +1,7 @@
 import { Poppins } from "next/font/google";
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
+import StructuredData from '@/components/shared/StructuredData';
+import { ThemeProvider } from '@/components/theme-provider';
 import "./globals.css";
 import "./css/cute.css";
 import Script from "next/script";
@@ -12,14 +14,31 @@ const poppins = Poppins({
 
 export const metadata = {
   title: {
-    default: "30tools - Free Online Toolkit",
-    template: "%s | 30tools"
+    default: "30tools - Free Online Toolkit | 30+ Tools for Image, Video, PDF & More",
+    template: "%s | 30tools - Free Online Tools"
   },
-  description: "Fast, free, and privacy-focused tools for image, video, audio, PDF, and text processing. No sign-up required.",
-  keywords: "free online tools, image compressor, video converter, pdf tools, text tools, file converter",
-  authors: [{ name: "30tools" }],
+  description: "Access 30+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required. Privacy-focused and fast.",
+  keywords: [
+    "free online tools",
+    "image compressor", 
+    "video converter",
+    "pdf tools",
+    "password generator",
+    "qr code generator",
+    "color picker",
+    "base64 encoder",
+    "text tools",
+    "file converter",
+    "online utilities",
+    "web tools",
+    "free software",
+    "no registration tools"
+  ].join(", "),
+  authors: [{ name: "30tools", url: "https://30tools.com" }],
   creator: "30tools",
   publisher: "30tools",
+  category: "Technology",
+  classification: "Online Tools and Utilities",
   formatDetection: {
     email: false,
     address: false,
@@ -28,20 +47,26 @@ export const metadata = {
   metadataBase: new URL('https://30tools.com'),
   alternates: {
     canonical: '/',
+    types: {
+      'application/rss+xml': [
+        { url: '/feed.xml', title: '30tools RSS Feed' }
+      ]
+    }
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://30tools.com',
-    siteName: '30tools',
-    title: '30tools - Free Online Toolkit',
-    description: 'Fast, free, and privacy-focused tools for image, video, audio, PDF, and text processing.',
+    siteName: '30tools - Free Online Toolkit',
+    title: '30tools - Free Online Toolkit | 30+ Tools for Image, Video, PDF & More',
+    description: 'Access 30+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: '30tools - Free Online Toolkit',
+        alt: '30tools - Free Online Toolkit with 30+ Tools',
+        type: 'image/jpeg',
       },
     ],
   },
@@ -49,8 +74,8 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@30tools',
     creator: '@30tools',
-    title: '30tools - Free Online Toolkit',
-    description: 'Fast, free, and privacy-focused tools for image, video, audio, PDF, and text processing.',
+    title: '30tools - Free Online Toolkit | 30+ Tools for Image, Video, PDF & More',
+    description: 'Access 30+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -63,6 +88,9 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google Search Console verification
   },
   manifest: '/manifest.json',
   icons: {
@@ -98,7 +126,37 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        
+        {/* Enhanced SEO Meta Tags */}
+        <meta name="application-name" content="30tools" />
+        <meta name="apple-mobile-web-app-title" content="30tools" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        
+        {/* Site Links Enhancement */}
+        <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+        <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
+        
+        {/* Rich Snippets */}
+        <meta property="og:site_name" content="30tools" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:site" content="@30tools" />
+        <meta name="twitter:creator" content="@30tools" />
+        
+        {/* Search Box */}
         <link rel="search" type="application/opensearchdescription+xml" title="30tools Search" href="/opensearch.xml" />
+        
+        {/* Canonical and Alternate */}
+        <link rel="canonical" href="https://30tools.com" />
+        <link rel="alternate" type="application/rss+xml" title="30tools RSS Feed" href="/feed.xml" />
+        
+        {/* Preconnect for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
@@ -124,8 +182,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${poppins.variable} font-sans antialiased`}>
-        {children}
-        <PWAInstallPrompt />
+        <ThemeProvider>
+          <StructuredData />
+          {children}
+          <PWAInstallPrompt />
+        </ThemeProvider>
       </body>
     </html>
   );
