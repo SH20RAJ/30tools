@@ -13,7 +13,7 @@ import {
   PaletteIcon, 
   CopyIcon,
   CheckCircleIcon,
-  EyeDropperIcon,
+  PipetteIcon,
   RefreshCwIcon,
   DownloadIcon,
   WandIcon,
@@ -283,7 +283,7 @@ export default function ColorPickerTool() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <EyeDropperIcon className="h-5 w-5" />
+                <PipetteIcon className="h-5 w-5" />
                 Color Selection
               </CardTitle>
             </CardHeader>
