@@ -1,4 +1,0 @@
-# Cloudflare Pages Configuration
-build_command = "npm run build"
-build_output_directory = ".open-next"
-node_version = "22"
