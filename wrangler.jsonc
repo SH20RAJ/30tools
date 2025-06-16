@@ -17,7 +17,12 @@
 	},
 	"observability": {
 		"enabled": true
-	}
+	},
+	"build": {
+		"command": "ls -la",
+		"cwd": ".open-next",
+		"watch_dir": ".open-next"
+	},
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
