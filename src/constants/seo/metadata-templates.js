@@ -79,6 +79,71 @@ export const SEO_TEMPLATES = {
       "character counter with spaces",
       "paragraph and sentence counter"
     ]
+  },
+  TEXT_TO_SPEECH: {
+    title: "Free Text to Speech - Convert Text to Audio Online | 30tools",
+    description: "Convert text to natural speech with AI voices. Free text to speech generator with multiple languages and voice options.",
+    keywords: "text to speech, tts, voice generator, speech synthesizer, text to audio",
+    canonical: "/text-to-speech",
+    longTailKeywords: [
+      "text to speech online free natural",
+      "convert text to mp3 online", 
+      "natural voice generator",
+      "ai text to speech free",
+      "text to audio converter"
+    ]
+  },
+  UNIT_CONVERTER: {
+    title: "Free Unit Converter - Convert Length, Weight, Temperature | 30tools",
+    description: "Convert between units of measurement. Length, weight, temperature, volume conversions with instant results.",
+    keywords: "unit converter, measurement converter, length converter, weight converter, temperature converter",
+    canonical: "/unit-converter",
+    longTailKeywords: [
+      "length converter feet to meters",
+      "weight converter kg to pounds",
+      "unit conversion calculator",
+      "metric imperial converter",
+      "distance measurement converter"
+    ]
+  },
+  CURRENCY_CONVERTER: {
+    title: "Free Currency Converter - Real-Time Exchange Rates | 30tools", 
+    description: "Convert currencies with live exchange rates. 170+ currencies, historical data, and real-time conversion rates.",
+    keywords: "currency converter, exchange rate, money converter, forex converter, currency calculator",
+    canonical: "/currency-converter",
+    longTailKeywords: [
+      "real time currency converter",
+      "historical currency rates",
+      "live exchange rate calculator", 
+      "currency conversion calculator",
+      "foreign exchange converter"
+    ]
+  },
+  GRADIENT_GENERATOR: {
+    title: "Free CSS Gradient Generator - Create Beautiful Gradients | 30tools",
+    description: "Create stunning CSS gradients with live preview. Linear and radial gradients with color picker and CSS export.",
+    keywords: "gradient generator, css gradient, color gradient, gradient maker, css background",
+    canonical: "/gradient-generator",
+    longTailKeywords: [
+      "css gradient generator with preview",
+      "radial gradient generator online",
+      "linear gradient maker free",
+      "gradient color picker tool",
+      "css background gradient generator"
+    ]
+  },
+  AUDIO_TRIMMER: {
+    title: "Free Audio Trimmer - Cut & Trim Audio Files Online | 30tools",
+    description: "Trim and cut audio files online. Precise audio editing with waveform visualization for MP3, WAV, and more.",
+    keywords: "audio trimmer, cut audio, trim audio, audio cutter, audio editor",
+    canonical: "/audio-trimmer",
+    longTailKeywords: [
+      "cut audio online free",
+      "trim mp3 file online",
+      "audio clipper tool",
+      "cut audio track online", 
+      "trim audio file free"
+    ]
   }
 };
 

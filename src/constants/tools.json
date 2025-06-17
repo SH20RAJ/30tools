@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "version": "7.0",
+        "version": "8.0",
         "lastUpdated": "2025-06-17",
-        "totalTools": 115,
+        "totalTools": 130,
         "totalCategories": 12
     },
     "categories": {
@@ -278,7 +278,71 @@
                     "description": "Convert PDF pages to high-quality JPG, PNG images",
                     "route": "/pdf-to-image",
                     "popular": true,
-                    "category": "pdf"
+                    "category": "pdf",
+                    "keywords": ["pdf to image", "pdf to jpg", "convert pdf to png", "pdf converter"],
+                    "longTailKeywords": [
+                        "pdf to jpg converter high quality",
+                        "convert pdf pages to png",
+                        "pdf to image converter online free",
+                        "extract images from pdf online",
+                        "pdf pages to pictures converter"
+                    ],
+                    "primaryKeyword": "pdf to image converter",
+                    "features": ["High quality conversion", "Multiple formats", "Batch processing", "Custom DPI", "All pages or selection"]
+                },
+                {
+                    "id": "excel-to-pdf",
+                    "name": "Excel to PDF",
+                    "description": "Convert Excel spreadsheets to PDF format with formatting",
+                    "route": "/excel-to-pdf",
+                    "popular": true,
+                    "category": "pdf",
+                    "keywords": ["excel to pdf", "xlsx to pdf", "spreadsheet to pdf", "convert excel"],
+                    "longTailKeywords": [
+                        "convert xlsx to pdf online",
+                        "excel spreadsheet to pdf",
+                        "xlsx to pdf converter free",
+                        "excel workbook to pdf",
+                        "preserve excel formatting in pdf"
+                    ],
+                    "primaryKeyword": "excel to pdf converter",
+                    "features": ["Preserve formatting", "Multiple sheets", "Chart support", "Custom page size", "Password protection"]
+                },
+                {
+                    "id": "powerpoint-to-pdf",
+                    "name": "PowerPoint to PDF",
+                    "description": "Convert PowerPoint presentations to PDF format",
+                    "route": "/powerpoint-to-pdf",
+                    "popular": true,
+                    "category": "pdf",
+                    "keywords": ["powerpoint to pdf", "pptx to pdf", "presentation to pdf", "convert ppt"],
+                    "longTailKeywords": [
+                        "pptx to pdf converter online",
+                        "presentation to pdf free",
+                        "powerpoint slides to pdf",
+                        "convert ppt to pdf online",
+                        "pptx pdf converter no watermark"
+                    ],
+                    "primaryKeyword": "powerpoint to pdf converter",
+                    "features": ["Slide transitions preserved", "Speaker notes", "Custom quality", "Batch conversion", "Layout optimization"]
+                },
+                {
+                    "id": "image-to-pdf",
+                    "name": "Image to PDF",
+                    "description": "Convert multiple images to a single PDF document",
+                    "route": "/image-to-pdf",
+                    "popular": true,
+                    "category": "pdf",
+                    "keywords": ["image to pdf", "jpg to pdf", "convert images to pdf", "photos to pdf"],
+                    "longTailKeywords": [
+                        "convert multiple images to pdf",
+                        "jpg to pdf converter online",
+                        "merge images into pdf",
+                        "photos to pdf online free",
+                        "combine pictures into pdf"
+                    ],
+                    "primaryKeyword": "image to pdf converter",
+                    "features": ["Multiple image formats", "Custom page layouts", "Compression options", "Drag & drop ordering", "Auto-resize images"]
                 },
                 {
                     "id": "excel-to-pdf",
@@ -435,8 +499,18 @@
                     "name": "Audio Trimmer",
                     "description": "Trim and cut audio clips to specific lengths",
                     "route": "/audio-trimmer",
-                    "popular": false,
-                    "category": "audio"
+                    "popular": true,
+                    "category": "audio",
+                    "keywords": ["audio trimmer", "cut audio", "trim audio", "audio cutter"],
+                    "longTailKeywords": [
+                        "cut audio online free",
+                        "trim mp3 file online",
+                        "audio clipper tool",
+                        "cut audio track online",
+                        "trim audio file free"
+                    ],
+                    "primaryKeyword": "audio trimmer",
+                    "features": ["Precise trimming", "Waveform visualization", "Multiple formats", "Fade in/out", "Loop creation"]
                 },
                 {
                     "id": "voice-recorder",
@@ -444,7 +518,17 @@
                     "description": "Record voice and audio directly in your browser",
                     "route": "/voice-recorder",
                     "popular": true,
-                    "category": "audio"
+                    "category": "audio",
+                    "keywords": ["voice recorder", "online recorder", "audio recorder", "microphone recorder"],
+                    "longTailKeywords": [
+                        "online voice recorder free",
+                        "record audio from browser",
+                        "web voice recorder",
+                        "browser audio recorder",
+                        "microphone recorder online"
+                    ],
+                    "primaryKeyword": "voice recorder",
+                    "features": ["High quality recording", "Real-time monitoring", "Download options", "No time limits", "Background noise reduction"]
                 },
                 {
                     "id": "text-to-speech",
@@ -452,7 +536,17 @@
                     "description": "Convert text to natural sounding speech audio",
                     "route": "/text-to-speech",
                     "popular": true,
-                    "category": "audio"
+                    "category": "audio",
+                    "keywords": ["text to speech", "tts", "voice generator", "speech synthesizer"],
+                    "longTailKeywords": [
+                        "text to speech online free natural",
+                        "convert text to mp3 online",
+                        "natural voice generator",
+                        "ai text to speech free",
+                        "text to audio converter"
+                    ],
+                    "primaryKeyword": "text to speech",
+                    "features": ["Natural voices", "Multiple languages", "Speed control", "Download MP3", "SSML support"]
                 }
             ]
         },
@@ -543,6 +637,42 @@
                     "route": "/text-formatter",
                     "popular": false,
                     "category": "text"
+                },
+                {
+                    "id": "text-case-converter", 
+                    "name": "Text Case Converter",
+                    "description": "Convert text to different cases - uppercase, lowercase, title case",
+                    "route": "/text-case-converter",
+                    "popular": true,
+                    "category": "text",
+                    "keywords": ["text case converter", "uppercase", "lowercase", "title case", "case converter"],
+                    "longTailKeywords": [
+                        "convert text to title case online",
+                        "uppercase to lowercase converter",
+                        "text case changer free",
+                        "camelcase converter online",
+                        "sentence case converter"
+                    ],
+                    "primaryKeyword": "text case converter",
+                    "features": ["Multiple case types", "Bulk text processing", "Smart capitalization", "Copy to clipboard", "Preserve formatting"]
+                },
+                {
+                    "id": "duplicate-line-remover",
+                    "name": "Duplicate Line Remover", 
+                    "description": "Remove duplicate lines from text and lists",
+                    "route": "/duplicate-line-remover",
+                    "popular": true,
+                    "category": "text",
+                    "keywords": ["duplicate remover", "remove duplicates", "unique lines", "text cleaner"],
+                    "longTailKeywords": [
+                        "remove duplicate lines from text",
+                        "text duplicate finder",
+                        "unique lines extractor",
+                        "duplicate text remover online",
+                        "clean duplicate entries"
+                    ],
+                    "primaryKeyword": "duplicate line remover",
+                    "features": ["Case sensitivity options", "Sort results", "Statistics", "Keep first/last occurrence", "Blank line handling"]
                 }
             ]
         },
@@ -583,6 +713,42 @@
                     "route": "/html-to-pdf",
                     "popular": true,
                     "category": "converter"
+                },
+                {
+                    "id": "csv-to-json-converter",
+                    "name": "CSV to JSON Converter",
+                    "description": "Convert CSV files to JSON format with customization options",
+                    "route": "/csv-to-json-converter", 
+                    "popular": true,
+                    "category": "converter",
+                    "keywords": ["csv to json", "convert csv", "csv converter", "json converter"],
+                    "longTailKeywords": [
+                        "convert csv file to json online",
+                        "csv to json array converter",
+                        "csv to json online free",
+                        "csv data to json format",
+                        "excel csv to json converter"
+                    ],
+                    "primaryKeyword": "csv to json converter",
+                    "features": ["Custom delimiters", "Header row options", "Nested JSON", "Array formatting", "Large file support"]
+                },
+                {
+                    "id": "xml-to-json-converter",
+                    "name": "XML to JSON Converter", 
+                    "description": "Convert XML files to JSON format with structure preservation",
+                    "route": "/xml-to-json-converter",
+                    "popular": true,
+                    "category": "converter",
+                    "keywords": ["xml to json", "convert xml", "xml converter", "xml parser"],
+                    "longTailKeywords": [
+                        "xml to json converter online",
+                        "convert xml file to json",
+                        "xml to json online free",
+                        "xml parser to json",
+                        "xml data converter"
+                    ],
+                    "primaryKeyword": "xml to json converter",
+                    "features": ["Attribute handling", "Namespace support", "Structure preservation", "Pretty formatting", "Validation"]
                 }
             ]
         },
@@ -632,7 +798,71 @@
                     "description": "Encode and decode Base64 strings and files",
                     "route": "/base64-tool",
                     "popular": true,
-                    "category": "developer"
+                    "category": "developer",
+                    "keywords": ["base64 encoder", "base64 decoder", "base64 converter", "encode decode base64"],
+                    "longTailKeywords": [
+                        "base64 encode image online",
+                        "base64 decode to text",
+                        "file to base64 converter",
+                        "base64 string encoder",
+                        "decode base64 to file"
+                    ],
+                    "primaryKeyword": "base64 encoder decoder",
+                    "features": ["Text & file encoding", "Image to base64", "Bulk processing", "Copy to clipboard", "Format validation"]
+                },
+                {
+                    "id": "javascript-minifier",
+                    "name": "JavaScript Minifier",
+                    "description": "Minify JavaScript code to reduce file size and improve performance",
+                    "route": "/javascript-minifier",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": ["javascript minifier", "js minifier", "minify javascript", "compress js"],
+                    "longTailKeywords": [
+                        "js minifier and obfuscator",
+                        "javascript compressor online",
+                        "minify js online free",
+                        "javascript optimizer tool",
+                        "compress javascript for production"
+                    ],
+                    "primaryKeyword": "javascript minifier",
+                    "features": ["Variable renaming", "Dead code removal", "Source map generation", "ES6+ support", "Compression statistics"]
+                },
+                {
+                    "id": "regex-tester",
+                    "name": "Regex Tester",
+                    "description": "Test and validate regular expressions with real-time matching",
+                    "route": "/regex-tester",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": ["regex tester", "regular expression", "regex validator", "pattern tester"],
+                    "longTailKeywords": [
+                        "regular expression tester online",
+                        "regex pattern validator",
+                        "test regex patterns",
+                        "regex debugger online",
+                        "regular expression matcher"
+                    ],
+                    "primaryKeyword": "regex tester",
+                    "features": ["Real-time matching", "Pattern explanation", "Test data generator", "Common regex library", "Match highlighting"]
+                },
+                {
+                    "id": "sql-formatter",
+                    "name": "SQL Formatter",
+                    "description": "Format and beautify SQL queries with syntax highlighting",
+                    "route": "/sql-formatter",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": ["sql formatter", "sql beautifier", "format sql query", "sql validator"],
+                    "longTailKeywords": [
+                        "sql query formatter online",
+                        "sql beautifier and validator",
+                        "format sql code online",
+                        "sql syntax formatter",
+                        "pretty print sql queries"
+                    ],
+                    "primaryKeyword": "sql formatter",
+                    "features": ["Multiple SQL dialects", "Syntax highlighting", "Query validation", "Minify option", "Custom formatting rules"]
                 },
                 {
                     "id": "regex-tester2",
@@ -831,6 +1061,60 @@
                     "route": "/css-box-shadow",
                     "popular": false,
                     "category": "design"
+                },
+                {
+                    "id": "gradient-generator",
+                    "name": "Gradient Generator",
+                    "description": "Create beautiful CSS gradients with live preview",
+                    "route": "/gradient-generator",
+                    "popular": true,
+                    "category": "design",
+                    "keywords": ["gradient generator", "css gradient", "color gradient", "gradient maker"],
+                    "longTailKeywords": [
+                        "css gradient generator with preview",
+                        "radial gradient generator online",
+                        "linear gradient maker free",
+                        "gradient color picker tool",
+                        "css background gradient generator"
+                    ],
+                    "primaryKeyword": "gradient generator",
+                    "features": ["Linear & radial gradients", "CSS code export", "Color picker", "Preset gradients", "Live preview"]
+                },
+                {
+                    "id": "color-picker",
+                    "name": "Color Picker",
+                    "description": "Pick colors from images and generate color codes",
+                    "route": "/color-picker",
+                    "popular": true,
+                    "category": "design",
+                    "keywords": ["color picker", "eyedropper", "hex color", "color extractor"],
+                    "longTailKeywords": [
+                        "color picker from image online",
+                        "hex color picker with preview",
+                        "rgb color picker tool",
+                        "extract colors from image",
+                        "eyedropper color picker"
+                    ],
+                    "primaryKeyword": "color picker",
+                    "features": ["Image color extraction", "Multiple color formats", "Color harmonies", "Palette generation", "Accessibility checker"]
+                },
+                {
+                    "id": "font-previewer",
+                    "name": "Font Previewer",
+                    "description": "Preview and compare Google Fonts with custom text",
+                    "route": "/font-previewer",
+                    "popular": true,
+                    "category": "design",
+                    "keywords": ["font previewer", "google fonts", "font tester", "typography tool"],
+                    "longTailKeywords": [
+                        "google fonts preview generator",
+                        "font pairing generator online",
+                        "web font preview tool",
+                        "font combination tester",
+                        "typography preview generator"
+                    ],
+                    "primaryKeyword": "font previewer",
+                    "features": ["1000+ Google Fonts", "Font pairing suggestions", "Custom text preview", "Font download links", "Typography guidelines"]
                 }
             ]
         },
@@ -887,6 +1171,78 @@
                     "route": "/random-generator",
                     "popular": false,
                     "category": "utilities"
+                },
+                {
+                    "id": "unit-converter",
+                    "name": "Unit Converter",
+                    "description": "Convert between different units of measurement",
+                    "route": "/unit-converter",
+                    "popular": true,
+                    "category": "utilities",
+                    "keywords": ["unit converter", "measurement converter", "length converter", "weight converter"],
+                    "longTailKeywords": [
+                        "length converter feet to meters",
+                        "weight converter kg to pounds",
+                        "unit conversion calculator",
+                        "metric imperial converter",
+                        "distance measurement converter"
+                    ],
+                    "primaryKeyword": "unit converter",
+                    "features": ["Length, weight, volume", "Temperature conversion", "Area calculations", "Speed conversions", "Real-time conversion"]
+                },
+                {
+                    "id": "currency-converter",
+                    "name": "Currency Converter",
+                    "description": "Convert currencies with real-time exchange rates",
+                    "route": "/currency-converter",
+                    "popular": true,
+                    "category": "utilities",
+                    "keywords": ["currency converter", "exchange rate", "money converter", "forex converter"],
+                    "longTailKeywords": [
+                        "real time currency converter",
+                        "historical currency rates",
+                        "live exchange rate calculator",
+                        "currency conversion calculator",
+                        "foreign exchange converter"
+                    ],
+                    "primaryKeyword": "currency converter",
+                    "features": ["170+ currencies", "Real-time rates", "Historical data", "Rate charts", "Favorites list"]
+                },
+                {
+                    "id": "percentage-calculator",
+                    "name": "Percentage Calculator",
+                    "description": "Calculate percentages, increases, decreases, and ratios",
+                    "route": "/percentage-calculator",
+                    "popular": true,
+                    "category": "utilities",
+                    "keywords": ["percentage calculator", "percent calculator", "percentage of number", "percentage increase"],
+                    "longTailKeywords": [
+                        "percentage increase calculator",
+                        "percentage of a number calculator",
+                        "calculate percentage difference",
+                        "percentage decrease calculator",
+                        "percentage change calculator"
+                    ],
+                    "primaryKeyword": "percentage calculator",
+                    "features": ["Multiple calculation types", "Step-by-step solutions", "Visual representations", "Formula explanations", "History tracking"]
+                },
+                {
+                    "id": "timezone-converter",
+                    "name": "Time Zone Converter",
+                    "description": "Convert time between different time zones worldwide",
+                    "route": "/timezone-converter",
+                    "popular": true,
+                    "category": "utilities",
+                    "keywords": ["timezone converter", "time zone", "world clock", "time converter"],
+                    "longTailKeywords": [
+                        "world time zone converter",
+                        "meeting time zone calculator",
+                        "convert time zones online",
+                        "global time converter",
+                        "timezone difference calculator"
+                    ],
+                    "primaryKeyword": "timezone converter",
+                    "features": ["500+ time zones", "Daylight saving time", "Meeting planner", "World clock", "UTC conversion"]
                 }
             ]
         },
@@ -961,6 +1317,60 @@
                     "route": "/keyword-density",
                     "popular": false,
                     "category": "seo"
+                },
+                {
+                    "id": "robots-txt-generator",
+                    "name": "Robots.txt Generator",
+                    "description": "Generate robots.txt files for website crawling control",
+                    "route": "/robots-txt-generator",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": ["robots txt generator", "robots.txt", "website crawling", "seo robots"],
+                    "longTailKeywords": [
+                        "robots txt generator for wordpress",
+                        "robots txt validator and tester",
+                        "create robots txt file online",
+                        "robots.txt generator free",
+                        "website robots txt maker"
+                    ],
+                    "primaryKeyword": "robots txt generator",
+                    "features": ["Syntax validation", "Common templates", "Crawling rules", "Sitemap integration", "Testing tool"]
+                },
+                {
+                    "id": "schema-generator",
+                    "name": "Schema Markup Generator",
+                    "description": "Generate JSON-LD schema markup for rich snippets",
+                    "route": "/schema-generator",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": ["schema markup", "json-ld", "structured data", "rich snippets"],
+                    "longTailKeywords": [
+                        "json-ld schema generator free",
+                        "local business schema generator",
+                        "product schema markup generator",
+                        "article schema generator",
+                        "structured data markup tool"
+                    ],
+                    "primaryKeyword": "schema markup generator",
+                    "features": ["Multiple schema types", "Validation", "Preview snippets", "Google testing", "Export options"]
+                },
+                {
+                    "id": "ssl-checker",
+                    "name": "SSL Certificate Checker",
+                    "description": "Check SSL certificate status, expiry, and security details",
+                    "route": "/ssl-checker",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": ["ssl checker", "ssl certificate", "website security", "ssl validator"],
+                    "longTailKeywords": [
+                        "ssl certificate expiry checker",
+                        "ssl chain validator online",
+                        "website ssl security check",
+                        "ssl certificate analyzer",
+                        "free ssl certificate tester"
+                    ],
+                    "primaryKeyword": "ssl certificate checker",
+                    "features": ["Certificate details", "Expiry monitoring", "Chain validation", "Security rating", "Mobile compatibility"]
                 }
             ]
         },

@@ -3,7 +3,7 @@ import WordCounterTool from '@/components/tools/text/WordCounterTool';
 export const metadata = {
   title: "Free Word Counter Online - Count Words, Characters, Sentences | 30tools",
   description: "Professional word counter tool to count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, social media posts, and SEO content. Free and accurate.",
-  keywords: "word counter, character counter, word count tool, count words online, text counter, word counter online free, character count, sentence counter, paragraph counter, writing tools",
+  keywords: "word counter, character counter, word count tool, count words online, text counter, word counter online free, character count, sentence counter, paragraph counter, writing tools, word counter for google docs, academic word counter with citations, word counter online free no limit, character counter with spaces",
   canonical: "https://30tools.com/word-counter",
   alternates: {
     canonical: "https://30tools.com/word-counter"
