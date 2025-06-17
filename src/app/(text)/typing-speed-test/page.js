@@ -1,0 +1,49 @@
+import TypingSpeedTestTool from '@/components/tools/text/TypingSpeedTestTool';
+import { SEO_TEMPLATES } from '@/constants/seo/metadata-templates';
+
+export const metadata = {
+  title: SEO_TEMPLATES.TYPING_SPEED_TEST.title,
+  description: SEO_TEMPLATES.TYPING_SPEED_TEST.description,
+  keywords: SEO_TEMPLATES.TYPING_SPEED_TEST.keywords,
+  openGraph: {
+    title: SEO_TEMPLATES.TYPING_SPEED_TEST.title,
+    description: SEO_TEMPLATES.TYPING_SPEED_TEST.description,
+    url: `https://30tools.com${SEO_TEMPLATES.TYPING_SPEED_TEST.canonical}`,
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/typing-speed-test.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Free Typing Speed Test Tool - 30tools"
+      }
+    ],
+    locale: 'en_US',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: SEO_TEMPLATES.TYPING_SPEED_TEST.title,
+    description: SEO_TEMPLATES.TYPING_SPEED_TEST.description,
+    images: ["/og-images/typing-speed-test.jpg"],
+    creator: '@30tools'
+  },
+  alternates: {
+    canonical: `https://30tools.com${SEO_TEMPLATES.TYPING_SPEED_TEST.canonical}`
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  }
+};
+
+export default function TypingSpeedTestPage() {
+  return <TypingSpeedTestTool />;
+}

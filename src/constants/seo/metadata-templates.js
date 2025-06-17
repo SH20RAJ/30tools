@@ -144,6 +144,19 @@ export const SEO_TEMPLATES = {
       "cut audio track online", 
       "trim audio file free"
     ]
+  },
+  TYPING_SPEED_TEST: {
+    title: "Free Typing Speed Test - Check Your WPM & Accuracy | 30tools",
+    description: "Test your typing speed and accuracy online. Real-time WPM calculation, detailed statistics, and progress tracking. Free typing test tool.",
+    keywords: "typing speed test, typing test, wpm test, typing speed checker, keyboard test, words per minute",
+    canonical: "/typing-speed-test",
+    longTailKeywords: [
+      "typing speed test online free",
+      "wpm typing test with accuracy",
+      "typing speed checker words per minute",
+      "keyboard typing speed test",
+      "typing test 1 minute free"
+    ]
   }
 };
 

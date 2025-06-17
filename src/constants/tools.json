@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "version": "8.0",
+        "version": "8.1",
         "lastUpdated": "2025-06-17",
-        "totalTools": 130,
+        "totalTools": 131,
         "totalCategories": 12
     },
     "categories": {
@@ -673,6 +673,24 @@
                     ],
                     "primaryKeyword": "duplicate line remover",
                     "features": ["Case sensitivity options", "Sort results", "Statistics", "Keep first/last occurrence", "Blank line handling"]
+                },
+                {
+                    "id": "typing-speed-test",
+                    "name": "Typing Speed Test",
+                    "description": "Test your typing speed and accuracy with real-time WPM calculation",
+                    "route": "/typing-speed-test",
+                    "popular": true,
+                    "category": "text",
+                    "keywords": ["typing speed test", "typing test", "wpm test", "typing speed checker", "keyboard test"],
+                    "longTailKeywords": [
+                        "typing speed test online free",
+                        "wpm typing test with accuracy",
+                        "typing speed checker words per minute",
+                        "keyboard typing speed test",
+                        "typing test 1 minute free"
+                    ],
+                    "primaryKeyword": "typing speed test",
+                    "features": ["Real-time WPM calculation", "Accuracy tracking", "Multiple test durations", "Progress statistics", "Custom text options"]
                 }
             ]
         },
