@@ -1,9 +1,9 @@
 {
     "metadata": {
-        "version": "5.1",
-        "lastUpdated": "2025-06-16",
-        "totalTools": 77,
-        "totalCategories": 11
+        "version": "7.0",
+        "lastUpdated": "2025-06-17",
+        "totalTools": 115,
+        "totalCategories": 12
     },
     "categories": {
         "image": {
@@ -19,7 +19,17 @@
                     "description": "Compress images to reduce file size while maintaining quality",
                     "route": "/image-compressor",
                     "popular": true,
-                    "category": "image"
+                    "category": "image",
+                    "keywords": ["image compressor", "compress image", "image optimizer", "reduce image size"],
+                    "longTailKeywords": [
+                        "compress image without losing quality",
+                        "bulk image compressor online free",
+                        "jpeg png compressor online",
+                        "image compressor for web upload",
+                        "compress images for email attachment"
+                    ],
+                    "primaryKeyword": "image compressor",
+                    "features": ["Up to 90% size reduction", "Batch compression", "Quality control", "Multiple formats", "No watermark"]
                 },
                 {
                     "id": "image-converter",
@@ -71,6 +81,81 @@
                     "route": "/image-cropper",
                     "popular": false,
                     "category": "image"
+                },
+                {
+                    "id": "instagram-story-resizer",
+                    "name": "Instagram Story Resizer",
+                    "description": "Resize images for Instagram stories with perfect dimensions",
+                    "route": "/instagram-story-resizer",
+                    "popular": true,
+                    "category": "image"
+                },
+                {
+                    "id": "social-media-resizer",
+                    "name": "Social Media Resizer",
+                    "description": "Resize images for all social media platforms",
+                    "route": "/social-media-resizer",
+                    "popular": true,
+                    "category": "image"
+                },
+                {
+                    "id": "photo-collage-maker",
+                    "name": "Photo Collage Maker",
+                    "description": "Create stunning photo collages with multiple images",
+                    "route": "/photo-collage-maker",
+                    "popular": true,
+                    "category": "image"
+                },
+                {
+                    "id": "logo-generator",
+                    "name": "Logo Generator",
+                    "description": "Create professional logos with text, fonts, and custom colors",
+                    "route": "/logo-generator",
+                    "popular": true,
+                    "category": "image",
+                    "keywords": ["logo maker", "free logo generator", "logo creator", "business logo", "brand logo"],
+                    "longTailKeywords": [
+                        "free logo generator no watermark",
+                        "simple logo maker online",
+                        "business logo creator free",
+                        "text based logo generator",
+                        "professional logo design tool"
+                    ],
+                    "primaryKeyword": "logo generator"
+                },
+                {
+                    "id": "favicon-generator",
+                    "name": "Favicon Generator",
+                    "description": "Generate favicons from text, images, or emojis for websites",
+                    "route": "/favicon-generator",
+                    "popular": true,
+                    "category": "image",
+                    "keywords": ["favicon maker", "website icon", "ico generator", "app icon"],
+                    "longTailKeywords": [
+                        "favicon generator from text online",
+                        "emoji favicon generator",
+                        "favicon generator all sizes",
+                        "website favicon creator free",
+                        "ico file generator online"
+                    ],
+                    "primaryKeyword": "favicon generator"
+                },
+                {
+                    "id": "icon-generator",
+                    "name": "Icon Generator",
+                    "description": "Generate app icons for iOS, Android, and web applications",
+                    "route": "/icon-generator",
+                    "popular": true,
+                    "category": "image",
+                    "keywords": ["app icon", "ios icon", "android icon", "web icon"],
+                    "longTailKeywords": [
+                        "app icon generator all sizes",
+                        "social media icon generator",
+                        "ios app icon creator",
+                        "android icon maker free",
+                        "web app icon generator"
+                    ],
+                    "primaryKeyword": "icon generator"
                 }
             ]
         },
@@ -86,7 +171,17 @@
                     "description": "Merge multiple PDF files into one document",
                     "route": "/pdf-merger",
                     "popular": true,
-                    "category": "pdf"
+                    "category": "pdf",
+                    "keywords": ["merge pdf", "combine pdf", "pdf joiner", "pdf merger online"],
+                    "longTailKeywords": [
+                        "merge pdf files online free no watermark",
+                        "combine multiple pdf into one online",
+                        "pdf merger with bookmark preservation",
+                        "bulk pdf merger free tool",
+                        "merge pdf files without losing quality"
+                    ],
+                    "primaryKeyword": "pdf merger",
+                    "features": ["Drag & drop interface", "Merge unlimited files", "Preserve bookmarks", "No file size limits", "Batch processing"]
                 },
                 {
                     "id": "pdf-splitter",
@@ -176,6 +271,30 @@
                     "route": "/pdf-to-word",
                     "popular": true,
                     "category": "pdf"
+                },
+                {
+                    "id": "pdf-to-image",
+                    "name": "PDF to Image",
+                    "description": "Convert PDF pages to high-quality JPG, PNG images",
+                    "route": "/pdf-to-image",
+                    "popular": true,
+                    "category": "pdf"
+                },
+                {
+                    "id": "excel-to-pdf",
+                    "name": "Excel to PDF",
+                    "description": "Convert Excel spreadsheets to PDF format",
+                    "route": "/excel-to-pdf",
+                    "popular": true,
+                    "category": "pdf"
+                },
+                {
+                    "id": "powerpoint-to-pdf",
+                    "name": "PowerPoint to PDF",
+                    "description": "Convert PowerPoint presentations to PDF format",
+                    "route": "/powerpoint-to-pdf",
+                    "popular": true,
+                    "category": "pdf"
                 }
             ]
         },
@@ -191,7 +310,17 @@
                     "description": "Compress video files to reduce size",
                     "route": "/video-compressor",
                     "popular": true,
-                    "category": "video"
+                    "category": "video",
+                    "keywords": ["compress video", "reduce video size", "video optimizer", "video compressor online"],
+                    "longTailKeywords": [
+                        "compress video for whatsapp online free",
+                        "reduce video size without losing quality",
+                        "video compressor for email attachment",
+                        "compress video online no watermark",
+                        "bulk video compressor free"
+                    ],
+                    "primaryKeyword": "video compressor",
+                    "features": ["Reduce file size by 80%", "Multiple format support", "Batch compression", "No watermark", "Quality presets"]
                 },
                 {
                     "id": "video-to-gif",
@@ -231,6 +360,40 @@
                     "name": "Screen Recorder",
                     "description": "Record your screen and save as video file",
                     "route": "/screen-recorder",
+                    "popular": true,
+                    "category": "video"
+                },
+                {
+                    "id": "mp3-converter",
+                    "name": "MP3 Converter",
+                    "description": "Convert videos and audio files to MP3 format",
+                    "route": "/mp3-converter",
+                    "popular": true,
+                    "category": "video",
+                    "keywords": ["mp3 converter", "video to mp3", "audio converter", "convert to mp3"],
+                    "longTailKeywords": [
+                        "convert video to mp3 online free",
+                        "youtube to mp3 converter",
+                        "mp4 to mp3 converter online",
+                        "video to audio converter",
+                        "extract audio from video free"
+                    ],
+                    "primaryKeyword": "mp3 converter",
+                    "features": ["High quality conversion", "Multiple input formats", "Fast processing", "No file limits", "Batch conversion"]
+                },
+                {
+                    "id": "youtube-thumbnail-generator",
+                    "name": "YouTube Thumbnail Generator",
+                    "description": "Create eye-catching YouTube thumbnails with templates",
+                    "route": "/youtube-thumbnail-generator",
+                    "popular": true,
+                    "category": "video"
+                },
+                {
+                    "id": "tiktok-video-resizer",
+                    "name": "TikTok Video Resizer",
+                    "description": "Resize videos for TikTok with perfect aspect ratio",
+                    "route": "/tiktok-video-resizer",
                     "popular": true,
                     "category": "video"
                 }
@@ -282,6 +445,14 @@
                     "route": "/voice-recorder",
                     "popular": true,
                     "category": "audio"
+                },
+                {
+                    "id": "text-to-speech",
+                    "name": "Text to Speech",
+                    "description": "Convert text to natural sounding speech audio",
+                    "route": "/text-to-speech",
+                    "popular": true,
+                    "category": "audio"
                 }
             ]
         },
@@ -297,7 +468,17 @@
                     "description": "Count words, characters, paragraphs in text",
                     "route": "/word-counter",
                     "popular": true,
-                    "category": "text"
+                    "category": "text",
+                    "keywords": ["word counter", "character counter", "text counter", "word count"],
+                    "longTailKeywords": [
+                        "word counter for google docs",
+                        "academic word counter with citations",
+                        "word counter online free no limit",
+                        "character counter with spaces",
+                        "paragraph and sentence counter"
+                    ],
+                    "primaryKeyword": "word counter",
+                    "features": ["Real-time counting", "Words, characters, paragraphs", "Reading time estimate", "Keyword density", "Export stats"]
                 },
                 {
                     "id": "character-counter",
@@ -417,7 +598,17 @@
                     "description": "Format, validate, and beautify JSON data",
                     "route": "/json-formatter",
                     "popular": true,
-                    "category": "developer"
+                    "category": "developer",
+                    "keywords": ["json formatter", "json validator", "json beautifier", "json minifier"],
+                    "longTailKeywords": [
+                        "json formatter and validator online",
+                        "json minifier and beautifier",
+                        "json pretty print online free",
+                        "validate json format online",
+                        "json syntax checker free"
+                    ],
+                    "primaryKeyword": "json formatter",
+                    "features": ["Format & validate JSON", "Minify JSON", "Error detection", "Tree view", "Copy formatted code"]
                 },
                 {
                     "id": "hash-generator",
@@ -473,7 +664,53 @@
                     "description": "Encode and decode URLs and query parameters",
                     "route": "/url-encoder",
                     "popular": false,
-                    "category": "developer"
+                    "category": "developer",
+                    "keywords": ["url encoder", "url decoder", "percent encoding", "url escape"],
+                    "longTailKeywords": [
+                        "url encode special characters",
+                        "decode url parameters online",
+                        "percent encoding decoder",
+                        "url escape characters tool",
+                        "query parameter encoder"
+                    ],
+                    "primaryKeyword": "url encoder decoder",
+                    "features": ["Encode & decode URLs", "Query parameter support", "Batch processing", "Copy results", "Special characters"]
+                },
+                {
+                    "id": "css-minifier",
+                    "name": "CSS Minifier",
+                    "description": "Minify CSS code to reduce file size and improve loading speed",
+                    "route": "/css-minifier",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": ["css minifier", "css compressor", "minify css", "css optimizer"],
+                    "longTailKeywords": [
+                        "css minifier with source map",
+                        "css compressor online free",
+                        "minify css online tool",
+                        "compress css for production",
+                        "css file size reducer"
+                    ],
+                    "primaryKeyword": "css minifier",
+                    "features": ["Reduce CSS size", "Remove comments", "Optimize properties", "Source map support", "Compression stats"]
+                },
+                {
+                    "id": "html-validator",
+                    "name": "HTML Validator",
+                    "description": "Validate HTML markup and check for errors and warnings",
+                    "route": "/html-validator",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": ["html validator", "html checker", "markup validator", "html5 validator"],
+                    "longTailKeywords": [
+                        "html5 validator with error fixing",
+                        "html markup validator online",
+                        "w3c html validator free",
+                        "html syntax checker tool",
+                        "validate html code online"
+                    ],
+                    "primaryKeyword": "html validator",
+                    "features": ["W3C compliance", "Error detection", "Line-by-line validation", "HTML5 support", "Accessibility checks"]
                 }
             ]
         },
@@ -673,7 +910,17 @@
                     "description": "Generate QR codes for text, URLs, WiFi, and more",
                     "route": "/qr-code-generator",
                     "popular": true,
-                    "category": "seo"
+                    "category": "seo",
+                    "keywords": ["qr code", "qr generator", "qr code maker", "qr creator"],
+                    "longTailKeywords": [
+                        "free qr code generator no sign up",
+                        "qr code generator for wifi password",
+                        "bulk qr code generator excel",
+                        "custom qr code generator with logo",
+                        "vcard qr code generator free"
+                    ],
+                    "primaryKeyword": "qr code generator",
+                    "features": ["Text, URL, WiFi QR codes", "Custom colors", "High resolution", "Bulk generation", "Logo embedding"]
                 },
                 {
                     "id": "youtube-tag-generator",
@@ -714,6 +961,86 @@
                     "route": "/keyword-density",
                     "popular": false,
                     "category": "seo"
+                }
+            ]
+        },
+        "social": {
+            "name": "Social Media Tools",
+            "slug": "social-media-tools",
+            "icon": "ShareIcon",
+            "description": "Create and optimize content for social media platforms",
+            "tools": [
+                {
+                    "id": "instagram-story-maker",
+                    "name": "Instagram Story Maker",
+                    "description": "Create stunning Instagram stories with templates and effects",
+                    "route": "/instagram-story-maker",
+                    "popular": true,
+                    "category": "social",
+                    "keywords": ["instagram story", "story maker", "social media content", "story template"],
+                    "longTailKeywords": [
+                        "resize image for instagram story",
+                        "instagram story template generator",
+                        "create instagram story online free",
+                        "instagram story size optimizer",
+                        "story maker with text and effects"
+                    ],
+                    "primaryKeyword": "instagram story maker",
+                    "features": ["Templates", "Text overlay", "Perfect sizing", "Effects", "Export HD"]
+                },
+                {
+                    "id": "youtube-thumbnail-creator",
+                    "name": "YouTube Thumbnail Creator",
+                    "description": "Design eye-catching YouTube thumbnails that boost click-through rates",
+                    "route": "/youtube-thumbnail-creator",
+                    "popular": true,
+                    "category": "social",
+                    "keywords": ["youtube thumbnail", "thumbnail maker", "youtube thumbnail design", "video thumbnail"],
+                    "longTailKeywords": [
+                        "youtube thumbnail maker free",
+                        "youtube thumbnail size optimizer",
+                        "custom youtube thumbnail creator",
+                        "youtube thumbnail design tool",
+                        "video thumbnail generator online"
+                    ],
+                    "primaryKeyword": "youtube thumbnail creator",
+                    "features": ["Professional templates", "1280x720 sizing", "Custom fonts", "Graphics library", "Click-through optimization"]
+                },
+                {
+                    "id": "whatsapp-link-generator",
+                    "name": "WhatsApp Link Generator",
+                    "description": "Generate WhatsApp click-to-chat links for business and personal use",
+                    "route": "/whatsapp-link-generator",
+                    "popular": true,
+                    "category": "social",
+                    "keywords": ["whatsapp link", "whatsapp chat", "click to chat", "whatsapp business"],
+                    "longTailKeywords": [
+                        "whatsapp click to chat generator",
+                        "whatsapp business link creator",
+                        "generate whatsapp chat link",
+                        "whatsapp direct message link",
+                        "custom whatsapp link maker"
+                    ],
+                    "primaryKeyword": "whatsapp link generator",
+                    "features": ["Custom messages", "QR code generation", "Multiple formats", "No phone save required", "Business integration"]
+                },
+                {
+                    "id": "social-media-post-resizer",
+                    "name": "Social Media Post Resizer",
+                    "description": "Resize images for all social media platforms with perfect dimensions",
+                    "route": "/social-media-post-resizer",
+                    "popular": true,
+                    "category": "social",
+                    "keywords": ["social media resize", "post resizer", "social media dimensions", "image resize"],
+                    "longTailKeywords": [
+                        "resize image for all social media",
+                        "social media image size generator",
+                        "facebook instagram twitter resize",
+                        "social media post optimizer",
+                        "bulk social media resizer"
+                    ],
+                    "primaryKeyword": "social media resizer",
+                    "features": ["All platform sizes", "Batch processing", "Smart cropping", "Quality preservation", "Multiple exports"]
                 }
             ]
         }
