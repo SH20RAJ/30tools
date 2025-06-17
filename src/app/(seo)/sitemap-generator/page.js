@@ -1,4 +1,4 @@
-import SitemapGenerator from '@/components/tools/SitemapGenerator';
+import SitemapGenerator from "@/components/tools/seo/SitemapGeneratorTool";
 
 export const metadata = {
   title: 'Sitemap Generator - Generate XML Sitemaps | 30tools',

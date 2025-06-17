@@ -1,4 +1,4 @@
-import RandomGenerator from '@/components/tools/RandomGenerator';
+import RandomGenerator from "@/components/tools/utilities/RandomGeneratorTool";
 
 export const metadata = {
   title: 'Random Generator - Generate Random Data | 30tools',

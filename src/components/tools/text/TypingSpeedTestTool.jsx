@@ -63,9 +63,15 @@ export default function TypingSpeedTestTool() {
   const textareaRef = useRef(null);
   const intervalRef = useRef(null);
 
-  // Initialize with random text
+  // Initialize with random text and focus textarea
   useEffect(() => {
     resetTest();
+    // Focus textarea after component mounts
+    setTimeout(() => {
+      if (textareaRef.current) {
+        textareaRef.current.focus();
+      }
+    }, 100);
   }, [selectedDifficulty]);
 
   const getRandomText = useCallback(() => {
@@ -103,7 +109,8 @@ export default function TypingSpeedTestTool() {
     intervalRef.current = setInterval(() => {
       setTimeLeft(prev => {
         if (prev <= 1) {
-          endTest();
+          // Auto-end test when time runs out
+          setTimeout(() => endTest(), 100); // Small delay to ensure state updates
           return 0;
         }
         return prev - 1;
@@ -145,12 +152,39 @@ export default function TypingSpeedTestTool() {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
     }
+
+    // Optional: Play completion sound (browser's default notification sound)
+    try {
+      // Create a brief audio notification
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const oscillator = audioContext.createOscillator();
+      const gainNode = audioContext.createGain();
+      
+      oscillator.connect(gainNode);
+      gainNode.connect(audioContext.destination);
+      
+      oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+      gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+      
+      oscillator.start(audioContext.currentTime);
+      oscillator.stop(audioContext.currentTime + 0.3);
+    } catch (e) {
+      // Ignore audio errors (some browsers may block audio without user interaction)
+    }
   }, [isTestActive, startTime, userInput, selectedText, errors, selectedDifficulty]);
 
   const handleInputChange = useCallback((e) => {
+    const value = e.target.value;
+    
+    // Auto-start test on first character typed (if not already active)
+    if (!isTestActive && value.length === 1 && timeLeft === selectedDuration) {
+      startTest();
+      return; // Don't process this input yet, let the test start first
+    }
+    
     if (!isTestActive) return;
 
-    const value = e.target.value;
     setUserInput(value);
     setCurrentCharIndex(value.length);
 
@@ -167,7 +201,7 @@ export default function TypingSpeedTestTool() {
     if (value.length >= selectedText.length) {
       endTest();
     }
-  }, [isTestActive, selectedText, endTest]);
+  }, [isTestActive, selectedText, endTest, startTest, timeLeft, selectedDuration]);
 
   const handleKeyDown = useCallback((e) => {
     if (!isTestActive && e.key === 'Enter') {
@@ -300,10 +334,10 @@ export default function TypingSpeedTestTool() {
                 <div className="flex items-center justify-between">
                   <CardTitle className="flex items-center gap-2">
                     <TargetIcon className="h-5 w-5" />
-                    Free Typing Speed Test Online
+                    Free Typing Speed Test Online {isTestActive && <Badge variant="secondary" className="ml-2">Active</Badge>}
                   </CardTitle>
                   <div className="flex items-center gap-4">
-                    <div className="text-2xl font-bold">
+                    <div className={`text-2xl font-bold ${timeLeft <= 10 && isTestActive ? 'text-red-500 animate-pulse' : ''}`}>
                       {formatTime(timeLeft)}
                     </div>
                     {isTestActive && (
@@ -319,7 +353,9 @@ export default function TypingSpeedTestTool() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {/* Text to type */}
-                <div className="p-4 bg-muted/30 rounded-lg border-2 border-dashed">
+                <div className={`p-4 bg-muted/30 rounded-lg border-2 transition-colors ${
+                  isTestActive ? 'border-primary' : 'border-dashed'
+                }`}>
                   <div className="text-lg leading-relaxed font-mono">
                     {selectedText.split('').map((char, index) => (
                       <span key={index} className={getCharacterClass(index)}>
@@ -327,6 +363,13 @@ export default function TypingSpeedTestTool() {
                       </span>
                     ))}
                   </div>
+                  {!isTestActive && timeLeft === selectedDuration && (
+                    <div className="mt-3 text-center">
+                      <Badge variant="outline" className="animate-pulse">
+                        Ready to start - begin typing above text
+                      </Badge>
+                    </div>
+                  )}
                 </div>
 
                 {/* Input area */}
@@ -336,32 +379,64 @@ export default function TypingSpeedTestTool() {
                     value={userInput}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
-                    placeholder={isTestActive ? "Start typing the text above..." : "Click 'Start Test' to begin your typing speed test"}
-                    disabled={!isTestActive && timeLeft > 0 && timeLeft < selectedDuration}
+                    placeholder={isTestActive ? "Type the text above..." : "Start typing to begin test automatically, or click 'Start Test' button"}
+                    disabled={results && timeLeft === 0}
                     className="w-full h-32 p-4 text-lg font-mono border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary"
                     spellCheck="false"
                     autoCorrect="off"
                     autoCapitalize="off"
                   />
+                  {!isTestActive && timeLeft === selectedDuration && (
+                    <p className="text-sm text-muted-foreground mt-2 text-center">
+                      💡 <strong>Tip:</strong> Just start typing to begin the test automatically, or use the button below
+                    </p>
+                  )}
+                  {isTestActive && (
+                    <div className="mt-2 flex justify-between items-center text-sm text-muted-foreground">
+                      <span>Progress: {userInput.length}/{selectedText.length} characters</span>
+                      <span>Errors: {errors.length}</span>
+                    </div>
+                  )}
                 </div>
 
                 {/* Controls */}
-                <div className="flex justify-center gap-4">
-                  {!isTestActive && timeLeft === selectedDuration ? (
-                    <Button onClick={startTest} size="lg">
-                      <PlayIcon className="h-4 w-4 mr-2" />
-                      Start Typing Test
-                    </Button>
-                  ) : isTestActive ? (
-                    <Button onClick={endTest} variant="destructive" size="lg">
-                      <PauseIcon className="h-4 w-4 mr-2" />
-                      End Test
-                    </Button>
-                  ) : (
-                    <Button onClick={resetTest} size="lg">
-                      <RefreshCwIcon className="h-4 w-4 mr-2" />
-                      Reset Test
-                    </Button>
+                <div className="flex flex-col items-center gap-4">
+                  <div className="flex justify-center gap-4">
+                    {!isTestActive && timeLeft === selectedDuration ? (
+                      <Button onClick={startTest} size="lg">
+                        <PlayIcon className="h-4 w-4 mr-2" />
+                        Start Typing Test
+                      </Button>
+                    ) : isTestActive ? (
+                      <Button onClick={endTest} variant="destructive" size="lg">
+                        <PauseIcon className="h-4 w-4 mr-2" />
+                        Stop Test
+                      </Button>
+                    ) : (
+                      <Button onClick={resetTest} size="lg">
+                        <RefreshCwIcon className="h-4 w-4 mr-2" />
+                        New Test
+                      </Button>
+                    )}
+                  </div>
+                  
+                  {!isTestActive && timeLeft === selectedDuration && (
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground">
+                        <strong>Auto-start:</strong> Test begins automatically when you start typing
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        Test will stop automatically after {selectedDuration} seconds
+                      </p>
+                    </div>
+                  )}
+                  
+                  {isTestActive && (
+                    <div className="text-center">
+                      <p className="text-sm text-muted-foreground">
+                        ⏱️ Test will end automatically in {formatTime(timeLeft)} or click "Stop Test"
+                      </p>
+                    </div>
                   )}
                 </div>
               </CardContent>
@@ -525,10 +600,12 @@ export default function TypingSpeedTestTool() {
                 <p className="text-muted-foreground leading-relaxed">
                   Take our completely free typing speed test online without any registration or downloads. Our WPM typing test 
                   with accuracy measurement provides instant results showing your words per minute, character accuracy, and 
-                  detailed performance analytics. Perfect for students preparing for exams, professionals improving workplace 
-                  efficiency, and job seekers enhancing their resume skills.
+                  detailed performance analytics. Features auto-start when you begin typing and auto-stop when time expires.
+                  Perfect for students preparing for exams, professionals improving workplace efficiency, and job seekers 
+                  enhancing their resume skills.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
+                  <Badge variant="outline">Auto-start/stop</Badge>
                   <Badge variant="outline">No Registration</Badge>
                   <Badge variant="outline">Instant Results</Badge>
                   <Badge variant="outline">100% Free</Badge>

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calculator } from 'lucide-react';
+import { CalculatorIcon } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function Calculator() {
@@ -36,7 +36,7 @@ export default function Calculator() {
           <Card className="mb-6">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Calculator className="w-5 h-5" />
+                <CalculatorIcon className="w-5 h-5" />
                 Advanced Calculator
               </CardTitle>
               <CardDescription>
@@ -45,7 +45,7 @@ export default function Calculator() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="text-center py-12">
-                <Calculator className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
+                <CalculatorIcon className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
                 <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
                 <p className="text-muted-foreground mb-4">
                   We're working hard to bring you this amazing tool. Stay tuned!
@@ -63,7 +63,7 @@ export default function Calculator() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Scientific calculator with advanced functions. This tool will provide a user-friendly interface 
+                Scientific calculator with advanced functions. This tool will provide a user-friendly interface
                 with advanced features to help you accomplish your tasks efficiently.
               </p>
             </CardContent>

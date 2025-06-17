@@ -1,4 +1,4 @@
-import Calculator from '@/components/tools/Calculator';
+import Calculator from "@/components/tools/utilities/CalculatorTool";
 
 export const metadata = {
   title: 'Advanced Calculator - Scientific Calculator | 30tools',

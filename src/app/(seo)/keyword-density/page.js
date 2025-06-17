@@ -1,4 +1,4 @@
-import KeywordDensity from '@/components/tools/KeywordDensity';
+import KeywordDensity from "@/components/tools/seo/KeywordDensityTool";
 
 export const metadata = {
   title: 'Keyword Density Checker - Analyze Text Keywords | 30tools',
