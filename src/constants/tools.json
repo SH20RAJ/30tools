@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "version": "8.1",
+        "version": "8.3",
         "lastUpdated": "2025-06-17",
-        "totalTools": 131,
+        "totalTools": 135,
         "totalCategories": 12
     },
     "categories": {
@@ -73,6 +73,24 @@
                     "popular": true,
                     "premium": true,
                     "category": "image"
+                },
+                {
+                    "id": "base64-image",
+                    "name": "Base64 Image Converter",
+                    "description": "Convert images to Base64 strings and decode Base64 to images",
+                    "route": "/base64-image",
+                    "popular": true,
+                    "category": "image",
+                    "keywords": ["base64 image", "image to base64", "base64 to image", "base64 encoder"],
+                    "longTailKeywords": [
+                        "image to base64 converter online",
+                        "base64 image encoder decoder",
+                        "convert image to base64 string",
+                        "base64 to image converter free",
+                        "online base64 image tool"
+                    ],
+                    "primaryKeyword": "base64 image converter",
+                    "features": ["Image upload", "Base64 encoding/decoding", "Image preview", "Download converted images", "Multiple image formats"]
                 },
                 {
                     "id": "image-cropper",
@@ -691,6 +709,24 @@
                     ],
                     "primaryKeyword": "typing speed test",
                     "features": ["Real-time WPM calculation", "Accuracy tracking", "Multiple test durations", "Progress statistics", "Custom text options"]
+                },
+                {
+                    "id": "binary-converter",
+                    "name": "Binary Converter",
+                    "description": "Convert text to binary and binary to text with UTF-8 support",
+                    "route": "/binary-converter",
+                    "popular": true,
+                    "category": "text",
+                    "keywords": ["binary converter", "text to binary", "binary to text", "ascii converter"],
+                    "longTailKeywords": [
+                        "text to binary converter online",
+                        "binary to text decoder free",
+                        "ascii binary converter tool",
+                        "binary code converter online",
+                        "text binary encoder decoder"
+                    ],
+                    "primaryKeyword": "binary converter",
+                    "features": ["Bidirectional conversion", "UTF-8 encoding", "Copy to clipboard", "Binary format validation", "Educational examples"]
                 }
             ]
         },
@@ -1133,6 +1169,24 @@
                     ],
                     "primaryKeyword": "font previewer",
                     "features": ["1000+ Google Fonts", "Font pairing suggestions", "Custom text preview", "Font download links", "Typography guidelines"]
+                },
+                {
+                    "id": "color-converter",
+                    "name": "Color Converter",
+                    "description": "Convert colors between HEX, RGB, HSL and other formats",
+                    "route": "/color-converter",
+                    "popular": true,
+                    "category": "design",
+                    "keywords": ["color converter", "hex to rgb", "rgb to hsl", "color format converter"],
+                    "longTailKeywords": [
+                        "hex to rgb converter online",
+                        "rgb to hsl color converter",
+                        "css color format converter",
+                        "hex color code converter",
+                        "color space converter free"
+                    ],
+                    "primaryKeyword": "color converter",
+                    "features": ["Multiple color formats", "Live color preview", "Copy color values", "Random color generator", "Color format guide"]
                 }
             ]
         },
@@ -1261,6 +1315,24 @@
                     ],
                     "primaryKeyword": "timezone converter",
                     "features": ["500+ time zones", "Daylight saving time", "Meeting planner", "World clock", "UTC conversion"]
+                },
+                {
+                    "id": "epoch-converter",
+                    "name": "Epoch Timestamp Converter",
+                    "description": "Convert Unix timestamps to human-readable dates and vice versa",
+                    "route": "/epoch-converter",
+                    "popular": true,
+                    "category": "utilities",
+                    "keywords": ["epoch converter", "unix timestamp", "timestamp converter", "epoch time"],
+                    "longTailKeywords": [
+                        "unix timestamp to date converter",
+                        "epoch time converter online",
+                        "timestamp to human date",
+                        "unix time calculator",
+                        "epoch seconds converter"
+                    ],
+                    "primaryKeyword": "epoch converter",
+                    "features": ["Unix timestamp conversion", "Multiple date formats", "Live current time", "Relative time display", "Milliseconds support"]
                 }
             ]
         },

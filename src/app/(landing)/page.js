@@ -174,70 +174,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* Premium Tools Section */}
-        <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full">
-                  <StarIcon className="h-4 w-4 text-white" />
-                </div>
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Premium Tools
-                </h2>
-                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full">
-                  <StarIcon className="h-4 w-4 text-white" />
-                </div>
-              </div>
-              <p className="text-muted-foreground max-w-2xl mx-auto">
-                Professional-grade tools with advanced features and capabilities
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {premiumTools.map((tool) => (
-                <Link key={tool.id} href={tool.route}>
-                  <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white to-primary/5">
-                    <CardHeader className="relative">
-                      <div className="absolute top-3 right-3">
-                        <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0">
-                          <StarIcon className="h-3 w-3 mr-1" />
-                          Premium
-                        </Badge>
-                      </div>
-                      <CardTitle className="text-xl group-hover:text-primary transition-colors pr-20">
-                        {tool.name}
-                      </CardTitle>
-                      <CardDescription className="group-hover:text-foreground transition-colors">
-                        {tool.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex justify-between items-center">
-                        <Badge variant="outline" className="capitalize">
-                          {tool.category}
-                        </Badge>
-                        <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
-                          Try Now
-                          <ArrowRightIcon className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-
-            <div className="text-center mt-8">
-              <Link href="/search?premium=true">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
-                  View All Premium Tools
-                  <ArrowRightIcon className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
 
         {/* Categories Section */}
         <section className="py-16">
@@ -348,6 +284,70 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Premium Tools Section */}
+        <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <div className="flex items-center justify-center gap-2 mb-4">
+                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full">
+                  <StarIcon className="h-4 w-4 text-white" />
+                </div>
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Premium Tools
+                </h2>
+                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full">
+                  <StarIcon className="h-4 w-4 text-white" />
+                </div>
+              </div>
+              <p className="text-muted-foreground max-w-2xl mx-auto">
+                Professional-grade tools with advanced features and capabilities
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {premiumTools.map((tool) => (
+                <Link key={tool.id} href={tool.route}>
+                  <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white to-primary/5">
+                    <CardHeader className="relative">
+                      <div className="absolute top-3 right-3">
+                        <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0">
+                          <StarIcon className="h-3 w-3 mr-1" />
+                          Premium
+                        </Badge>
+                      </div>
+                      <CardTitle className="text-xl group-hover:text-primary transition-colors pr-20">
+                        {tool.name}
+                      </CardTitle>
+                      <CardDescription className="group-hover:text-foreground transition-colors">
+                        {tool.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="flex justify-between items-center">
+                        <Badge variant="outline" className="capitalize">
+                          {tool.category}
+                        </Badge>
+                        <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
+                          Try Now
+                          <ArrowRightIcon className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </Link>
+              ))}
+            </div>
+
+            <div className="text-center mt-8">
+              <Link href="/search?premium=true">
+                <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
+                  View All Premium Tools
+                  <ArrowRightIcon className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </section>
         {/* CTA Section */}
         <section className="py-16">
           <div className="container mx-auto px-4 text-center">
