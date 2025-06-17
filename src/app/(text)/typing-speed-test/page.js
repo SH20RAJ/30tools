@@ -2,13 +2,13 @@ import TypingSpeedTestTool from '@/components/tools/text/TypingSpeedTestTool';
 import { SEO_TEMPLATES } from '@/constants/seo/metadata-templates';
 
 export const metadata = {
-  title: SEO_TEMPLATES.TYPING_SPEED_TEST.title,
-  description: SEO_TEMPLATES.TYPING_SPEED_TEST.description,
-  keywords: SEO_TEMPLATES.TYPING_SPEED_TEST.keywords,
+  title: "Free Typing Speed Test Online - Check Your WPM & Accuracy | 30tools",
+  description: "Test your typing speed with our free online WPM test. Get instant results, track accuracy, and improve your keyboard skills. No registration required - start typing test now!",
+  keywords: "typing speed test, typing test online free, wpm test, typing speed checker, keyboard typing speed test, typing test 1 minute free, words per minute test, typing accuracy test, free typing test no registration, online typing speed test",
   openGraph: {
-    title: SEO_TEMPLATES.TYPING_SPEED_TEST.title,
-    description: SEO_TEMPLATES.TYPING_SPEED_TEST.description,
-    url: `https://30tools.com${SEO_TEMPLATES.TYPING_SPEED_TEST.canonical}`,
+    title: "Free Typing Speed Test Online - Check Your WPM & Accuracy | 30tools",
+    description: "Test your typing speed with our free online WPM test. Get instant results, track accuracy, and improve your keyboard skills. No registration required!",
+    url: "https://30tools.com/typing-speed-test",
     siteName: "30tools",
     images: [
       {
@@ -23,13 +23,13 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: SEO_TEMPLATES.TYPING_SPEED_TEST.title,
-    description: SEO_TEMPLATES.TYPING_SPEED_TEST.description,
+    title: "Free Typing Speed Test Online - Check Your WPM & Accuracy | 30tools",
+    description: "Test your typing speed with our free online WPM test. Get instant results, track accuracy, and improve your keyboard skills.",
     images: ["/og-images/typing-speed-test.jpg"],
     creator: '@30tools'
   },
   alternates: {
-    canonical: `https://30tools.com${SEO_TEMPLATES.TYPING_SPEED_TEST.canonical}`
+    canonical: "https://30tools.com/typing-speed-test"
   },
   robots: {
     index: true,

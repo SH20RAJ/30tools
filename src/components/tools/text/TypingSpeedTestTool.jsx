@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   ArrowLeftIcon,
   PlayIcon,
@@ -19,8 +18,7 @@ import {
   TrendingUpIcon,
   AwardIcon,
   BookOpenIcon,
-  CheckCircleIcon,
-  XCircleIcon
+  CheckCircleIcon
 } from 'lucide-react';
 import Link from 'next/link';
 
@@ -229,14 +227,7 @@ export default function TypingSpeedTestTool() {
           </div>
         </div>
 
-        <Tabs defaultValue="test" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="test">Typing Test</TabsTrigger>
-            <TabsTrigger value="results">Results</TabsTrigger>
-            <TabsTrigger value="statistics">Statistics</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="test" className="space-y-6">
+        <div className="space-y-6">
             {/* Test Settings */}
             <Card>
               <CardHeader>
@@ -309,7 +300,7 @@ export default function TypingSpeedTestTool() {
                 <div className="flex items-center justify-between">
                   <CardTitle className="flex items-center gap-2">
                     <TargetIcon className="h-5 w-5" />
-                    Typing Test
+                    Free Typing Speed Test Online
                   </CardTitle>
                   <div className="flex items-center gap-4">
                     <div className="text-2xl font-bold">
@@ -345,7 +336,7 @@ export default function TypingSpeedTestTool() {
                     value={userInput}
                     onChange={handleInputChange}
                     onKeyDown={handleKeyDown}
-                    placeholder={isTestActive ? "Start typing..." : "Click 'Start Test' or press Enter to begin"}
+                    placeholder={isTestActive ? "Start typing the text above..." : "Click 'Start Test' to begin your typing speed test"}
                     disabled={!isTestActive && timeLeft > 0 && timeLeft < selectedDuration}
                     className="w-full h-32 p-4 text-lg font-mono border rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-primary"
                     spellCheck="false"
@@ -359,7 +350,7 @@ export default function TypingSpeedTestTool() {
                   {!isTestActive && timeLeft === selectedDuration ? (
                     <Button onClick={startTest} size="lg">
                       <PlayIcon className="h-4 w-4 mr-2" />
-                      Start Test
+                      Start Typing Test
                     </Button>
                   ) : isTestActive ? (
                     <Button onClick={endTest} variant="destructive" size="lg">
@@ -375,256 +366,452 @@ export default function TypingSpeedTestTool() {
                 </div>
               </CardContent>
             </Card>
-          </TabsContent>
 
-          <TabsContent value="results" className="space-y-6">
-            {results ? (
-              <Card>
+            {/* Live Results - Show immediately after test completion */}
+            {results && (
+              <Card className="border-2 border-primary/20 bg-primary/5">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <AwardIcon className="h-5 w-5" />
-                    Test Results
+                    <AwardIcon className="h-5 w-5 text-primary" />
+                    Your Typing Speed Test Results
                   </CardTitle>
+                  <CardDescription>
+                    Test completed! Here's your detailed typing performance analysis
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-primary mb-2">{results.wpm}</div>
-                      <div className="text-sm text-muted-foreground">Words per Minute</div>
+                    <div className="text-center p-4 bg-white rounded-lg border">
+                      <div className="text-4xl font-bold text-primary mb-2">{results.wpm}</div>
+                      <div className="text-sm text-muted-foreground mb-1">Words per Minute</div>
                       <div className={`text-sm font-medium ${getWPMRating(results.wpm).color}`}>
                         {getWPMRating(results.wpm).label}
                       </div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-green-600 mb-2">{results.accuracy}%</div>
-                      <div className="text-sm text-muted-foreground">Accuracy</div>
+                    <div className="text-center p-4 bg-white rounded-lg border">
+                      <div className="text-4xl font-bold text-green-600 mb-2">{results.accuracy}%</div>
+                      <div className="text-sm text-muted-foreground mb-1">Typing Accuracy</div>
+                      <div className="text-sm font-medium">
+                        {results.accuracy >= 95 ? 'Excellent' : results.accuracy >= 85 ? 'Good' : 'Needs Practice'}
+                      </div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-blue-600 mb-2">{results.cpm}</div>
-                      <div className="text-sm text-muted-foreground">Characters per Minute</div>
+                    <div className="text-center p-4 bg-white rounded-lg border">
+                      <div className="text-4xl font-bold text-blue-600 mb-2">{results.cpm}</div>
+                      <div className="text-sm text-muted-foreground mb-1">Characters per Minute</div>
+                      <div className="text-sm font-medium">Including spaces</div>
                     </div>
-                    <div className="text-center">
-                      <div className="text-3xl font-bold text-orange-600 mb-2">{results.errors}</div>
-                      <div className="text-sm text-muted-foreground">Errors</div>
+                    <div className="text-center p-4 bg-white rounded-lg border">
+                      <div className="text-4xl font-bold text-orange-600 mb-2">{results.errors}</div>
+                      <div className="text-sm text-muted-foreground mb-1">Typing Errors</div>
+                      <div className="text-sm font-medium">
+                        {results.errors === 0 ? 'Perfect!' : `${((results.errors / results.charactersTyped) * 100).toFixed(1)}% error rate`}
+                      </div>
                     </div>
                   </div>
                   
                   <Separator className="my-6" />
                   
                   <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                    <div>
-                      <span className="text-muted-foreground">Time Elapsed:</span>
-                      <div className="font-medium">{results.timeElapsed}s</div>
+                    <div className="text-center">
+                      <span className="text-muted-foreground block">Time Elapsed</span>
+                      <div className="font-medium text-lg">{results.timeElapsed}s</div>
                     </div>
-                    <div>
-                      <span className="text-muted-foreground">Characters Typed:</span>
-                      <div className="font-medium">{results.charactersTyped}</div>
+                    <div className="text-center">
+                      <span className="text-muted-foreground block">Characters Typed</span>
+                      <div className="font-medium text-lg">{results.charactersTyped}</div>
                     </div>
-                    <div>
-                      <span className="text-muted-foreground">Correct Characters:</span>
-                      <div className="font-medium">{results.correctCharacters}</div>
+                    <div className="text-center">
+                      <span className="text-muted-foreground block">Correct Characters</span>
+                      <div className="font-medium text-lg">{results.correctCharacters}</div>
                     </div>
-                    <div>
-                      <span className="text-muted-foreground">Difficulty:</span>
-                      <div className="font-medium capitalize">{results.difficulty}</div>
+                    <div className="text-center">
+                      <span className="text-muted-foreground block">Test Difficulty</span>
+                      <div className="font-medium text-lg capitalize">{results.difficulty}</div>
                     </div>
+                  </div>
+
+                  <div className="mt-6 text-center">
+                    <Button onClick={resetTest} className="mr-4">
+                      <RefreshCwIcon className="h-4 w-4 mr-2" />
+                      Take Another Test
+                    </Button>
+                    <Button variant="outline" onClick={() => {
+                      const text = `I just scored ${results.wpm} WPM with ${results.accuracy}% accuracy on the typing speed test at 30tools.com! 🚀`;
+                      navigator.share ? navigator.share({title: 'My Typing Speed', text}) : navigator.clipboard.writeText(text);
+                    }}>
+                      Share Results
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
-            ) : (
-              <Card>
-                <CardContent className="py-12 text-center">
-                  <BookOpenIcon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-lg font-medium mb-2">No Results Yet</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Complete a typing test to see your results here
-                  </p>
-                  <Button onClick={() => document.querySelector('[value="test"]').click()}>
-                    Take a Test
-                  </Button>
-                </CardContent>
-              </Card>
             )}
-          </TabsContent>
 
-          <TabsContent value="statistics" className="space-y-6">
-            {history.length > 0 ? (
+            {/* Test History - Show if user has previous tests */}
+            {history.length > 0 && (
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <TrendingUpIcon className="h-5 w-5" />
-                    Your Progress
+                    Your Typing Progress History
                   </CardTitle>
+                  <CardDescription>
+                    Track your improvement over time with detailed statistics
+                  </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
-                    {history.map((result, index) => (
-                      <div key={index} className="flex items-center justify-between p-4 border rounded-lg">
-                        <div className="grid grid-cols-4 gap-4 flex-1">
+                  <div className="space-y-3">
+                    {history.slice(0, 5).map((result, index) => (
+                      <div key={index} className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50">
+                        <div className="grid grid-cols-5 gap-4 flex-1 text-sm">
                           <div>
                             <div className="font-medium">{result.wpm} WPM</div>
-                            <div className="text-sm text-muted-foreground">Speed</div>
+                            <div className="text-xs text-muted-foreground">Speed</div>
                           </div>
                           <div>
                             <div className="font-medium">{result.accuracy}%</div>
-                            <div className="text-sm text-muted-foreground">Accuracy</div>
+                            <div className="text-xs text-muted-foreground">Accuracy</div>
+                          </div>
+                          <div>
+                            <div className="font-medium">{result.errors}</div>
+                            <div className="text-xs text-muted-foreground">Errors</div>
                           </div>
                           <div>
                             <div className="font-medium capitalize">{result.difficulty}</div>
-                            <div className="text-sm text-muted-foreground">Difficulty</div>
+                            <div className="text-xs text-muted-foreground">Level</div>
                           </div>
                           <div>
                             <div className="font-medium">
                               {new Date(result.date).toLocaleDateString()}
                             </div>
-                            <div className="text-sm text-muted-foreground">Date</div>
+                            <div className="text-xs text-muted-foreground">Date</div>
                           </div>
                         </div>
-                        <Badge variant={result.accuracy >= 95 ? 'default' : 'secondary'}>
+                        <Badge variant={result.accuracy >= 95 ? 'default' : 'secondary'} className="ml-4">
                           {getWPMRating(result.wpm).label}
                         </Badge>
                       </div>
                     ))}
                   </div>
-                </CardContent>
-              </Card>
-            ) : (
-              <Card>
-                <CardContent className="py-12 text-center">
-                  <TrendingUpIcon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                  <h3 className="text-lg font-medium mb-2">No History Yet</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Your typing test history will appear here
-                  </p>
-                  <Button onClick={() => document.querySelector('[value="test"]').click()}>
-                    Take Your First Test
-                  </Button>
+                  {history.length > 5 && (
+                    <div className="text-center mt-4">
+                      <Badge variant="outline">{history.length - 5} more tests in history</Badge>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             )}
-          </TabsContent>
-        </Tabs>
+        </div>
 
-        {/* SEO Content Section */}
-        <Separator className="my-12" />
+        {/* Comprehensive SEO Content Section with Long-tail Keywords */}
+        <Separator className="my-16" />
         
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold mb-4">Improve Your Typing Speed & Accuracy</h2>
-            <p className="text-muted-foreground text-lg">
-              Master keyboard skills with our comprehensive typing speed test and detailed performance analytics.
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-6">Master Your Keyboard Skills with the Best Free Typing Speed Test Online</h2>
+            <p className="text-muted-foreground text-xl max-w-4xl mx-auto leading-relaxed">
+              Improve your typing speed and accuracy with our comprehensive typing test. Get instant WPM results, 
+              detailed accuracy analysis, and track your progress over time. Perfect for students, professionals, 
+              and anyone looking to enhance their keyboard skills.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <Card>
+          {/* Main SEO Content Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <Card className="h-full">
               <CardHeader>
-                <CardTitle className="text-lg">Free Typing Speed Test Online</CardTitle>
+                <CardTitle className="text-xl text-primary">Free Typing Speed Test Online - No Registration Required</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Test your typing speed with our free online WPM test. Get instant results showing your words per minute, 
-                  accuracy percentage, and detailed performance metrics. Perfect for students, professionals, and anyone 
-                  looking to improve their keyboard skills.
+                <p className="text-muted-foreground leading-relaxed">
+                  Take our completely free typing speed test online without any registration or downloads. Our WPM typing test 
+                  with accuracy measurement provides instant results showing your words per minute, character accuracy, and 
+                  detailed performance analytics. Perfect for students preparing for exams, professionals improving workplace 
+                  efficiency, and job seekers enhancing their resume skills.
                 </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <Badge variant="outline">No Registration</Badge>
+                  <Badge variant="outline">Instant Results</Badge>
+                  <Badge variant="outline">100% Free</Badge>
+                </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="h-full">
               <CardHeader>
-                <CardTitle className="text-lg">Real-time WPM Calculation</CardTitle>
+                <CardTitle className="text-xl text-primary">WPM Typing Test with Accuracy Tracking</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Our advanced algorithm calculates your typing speed in real-time, providing instant feedback on your 
-                  performance. Track your progress across multiple difficulty levels and time durations to identify 
-                  areas for improvement.
+                <p className="text-muted-foreground leading-relaxed">
+                  Our advanced typing speed checker calculates your words per minute in real-time while tracking every 
+                  keystroke for precise accuracy measurement. The keyboard typing speed test includes visual feedback 
+                  with color-coded character highlighting, helping you identify and correct typing mistakes instantly. 
+                  Choose from multiple test durations and difficulty levels to challenge yourself appropriately.
                 </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <Badge variant="outline">Real-time WPM</Badge>
+                  <Badge variant="outline">Visual Feedback</Badge>
+                  <Badge variant="outline">Multiple Levels</Badge>
+                </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="h-full">
               <CardHeader>
-                <CardTitle className="text-lg">Accuracy Tracking & Error Analysis</CardTitle>
+                <CardTitle className="text-xl text-primary">Professional Keyboard Typing Speed Test for All Skill Levels</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Monitor your typing accuracy with detailed error tracking. Visual feedback highlights mistakes in 
-                  real-time, helping you identify common errors and improve your typing precision over time.
+                <p className="text-muted-foreground leading-relaxed">
+                  Whether you're a beginner learning touch typing or an advanced typist aiming for 100+ WPM, our typing test 
+                  1 minute free option provides the perfect practice environment. The test includes common words, business 
+                  terminology, and technical vocabulary to simulate real-world typing scenarios. Track your improvement over 
+                  time with detailed statistics and performance history.
                 </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <Badge variant="outline">All Skill Levels</Badge>
+                  <Badge variant="outline">Progress Tracking</Badge>
+                  <Badge variant="outline">Real-world Text</Badge>
+                </div>
               </CardContent>
             </Card>
 
-            <Card>
+            <Card className="h-full">
               <CardHeader>
-                <CardTitle className="text-lg">Multiple Test Options</CardTitle>
+                <CardTitle className="text-xl text-primary">Best Typing Speed Test for Students and Professionals</CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">
-                  Choose from various test durations (30 seconds to 5 minutes) and difficulty levels. Practice with 
-                  different text types to challenge yourself and develop well-rounded typing skills for any situation.
+                <p className="text-muted-foreground leading-relaxed">
+                  Designed specifically for educational and professional environments, our typing speed test online free 
+                  tool helps students improve their academic performance and professionals enhance their workplace productivity. 
+                  The test measures not just speed but also consistency, error patterns, and typing rhythm. Ideal for 
+                  preparing for typing-intensive careers, standardized tests, and professional certifications.
                 </p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  <Badge variant="outline">Educational Focus</Badge>
+                  <Badge variant="outline">Career Prep</Badge>
+                  <Badge variant="outline">Professional Standards</Badge>
+                </div>
               </CardContent>
             </Card>
           </div>
 
-          {/* Typing Speed Benchmarks */}
-          <div className="bg-muted/30 rounded-lg p-8 mb-12">
-            <h3 className="text-2xl font-bold mb-6 text-center">Typing Speed Benchmarks</h3>
+          {/* Typing Speed Benchmarks with Long-tail Keywords */}
+          <div className="bg-gradient-to-r from-primary/5 to-blue-50 rounded-xl p-8 mb-16">
+            <h3 className="text-3xl font-bold text-center mb-8">Professional Typing Speed Benchmarks - Know Your WPM Level</h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🐌</span>
+                </div>
+                <h4 className="font-bold text-lg mb-2">Beginner Level</h4>
+                <div className="text-2xl font-bold text-red-600 mb-2">Under 30 WPM</div>
+                <p className="text-sm text-muted-foreground">
+                  Perfect for those just starting their typing journey. Focus on accuracy over speed and learn proper finger placement.
+                </p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🚶</span>
+                </div>
+                <h4 className="font-bold text-lg mb-2">Average Typist</h4>
+                <div className="text-2xl font-bold text-yellow-600 mb-2">30-50 WPM</div>
+                <p className="text-sm text-muted-foreground">
+                  Suitable for most office work and academic typing. Adequate for email, documents, and basic data entry tasks.
+                </p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🏃</span>
+                </div>
+                <h4 className="font-bold text-lg mb-2">Good Typist</h4>
+                <div className="text-2xl font-bold text-blue-600 mb-2">50-70 WPM</div>
+                <p className="text-sm text-muted-foreground">
+                  Excellent for professional environments. Suitable for transcription, content writing, and administrative roles.
+                </p>
+              </div>
+              <div className="text-center p-6 bg-white rounded-lg shadow-sm">
+                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-3xl">🏆</span>
+                </div>
+                <h4 className="font-bold text-lg mb-2">Expert Level</h4>
+                <div className="text-2xl font-bold text-green-600 mb-2">70+ WPM</div>
+                <p className="text-sm text-muted-foreground">
+                  Professional standard for typists, court reporters, and high-volume data entry positions. Top 10% of all typists.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Comprehensive Improvement Guide */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-center mb-8">How to Improve Your Typing Speed - Complete Guide</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircleIcon className="h-6 w-6 text-green-600" />
+                  </div>
+                  <CardTitle className="text-lg">Master Touch Typing Technique</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Learn proper finger placement on the home row (ASDF JKL;) and use all ten fingers. Practice muscle memory 
+                    through consistent daily sessions of 15-30 minutes. Focus on accuracy first - speed will naturally follow.
+                  </p>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Position fingers on home row keys</li>
+                    <li>• Use correct finger for each key</li>
+                    <li>• Keep wrists straight and relaxed</li>
+                    <li>• Maintain good posture while typing</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                    <TargetIcon className="h-6 w-6 text-blue-600" />
+                  </div>
+                  <CardTitle className="text-lg">Practice Consistency and Accuracy</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Aim for 95%+ accuracy before focusing on speed improvement. Regular practice with our typing speed test 
+                    helps identify weak areas and common mistakes. Set daily goals and track progress over time.
+                  </p>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Practice 15-30 minutes daily</li>
+                    <li>• Focus on problem characters/words</li>
+                    <li>• Use proper typing rhythm</li>
+                    <li>• Track accuracy percentage</li>
+                  </ul>
+                </CardContent>
+              </Card>
+
+              <Card className="h-full">
+                <CardHeader>
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                    <KeyboardIcon className="h-6 w-6 text-purple-600" />
+                  </div>
+                  <CardTitle className="text-lg">Optimize Your Typing Environment</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Use a comfortable keyboard and maintain proper ergonomics. Good lighting, correct monitor height, 
+                    and a supportive chair significantly impact typing performance and reduce fatigue during long sessions.
+                  </p>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• Use mechanical or ergonomic keyboard</li>
+                    <li>• Adjust monitor to eye level</li>
+                    <li>• Ensure adequate lighting</li>
+                    <li>• Take regular breaks to avoid strain</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* FAQ Section for SEO */}
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions - Typing Speed Test</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">What is a good typing speed for beginners?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    For beginners, 20-30 WPM with 90%+ accuracy is a good starting point. Focus on developing proper 
+                    technique and accuracy before trying to increase speed. With consistent practice, most people can 
+                    reach 40-50 WPM within 3-6 months.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">How often should I take typing speed tests?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Take a typing speed test once or twice per week to track progress. Daily practice is more important 
+                    than frequent testing. Use tests to identify improvement areas and celebrate milestones in your 
+                    typing journey.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">What typing speed do employers expect?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Most office jobs require 40-60 WPM with high accuracy. Data entry positions typically require 
+                    60+ WPM, while administrative roles usually expect 45+ WPM. Customer service and content creation 
+                    roles benefit from 50+ WPM typing speeds.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Can I improve my typing speed at any age?</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Yes! People of all ages can improve their typing speed with proper practice and technique. While 
+                    younger learners may progress faster, adults can achieve significant improvements through consistent 
+                    practice and proper finger positioning.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+
+          {/* Industry Usage and Benefits */}
+          <div className="bg-muted/30 rounded-xl p-8">
+            <h3 className="text-3xl font-bold text-center mb-8">Why Typing Speed Matters in Today's Digital World</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🐌</span>
-                </div>
-                <h4 className="font-semibold mb-2">Beginner</h4>
-                <p className="text-sm text-muted-foreground">Under 30 WPM</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🚶</span>
-                </div>
-                <h4 className="font-semibold mb-2">Average</h4>
-                <p className="text-sm text-muted-foreground">30-50 WPM</p>
-              </div>
-              <div className="text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🏃</span>
+                  <span className="text-2xl">💼</span>
                 </div>
-                <h4 className="font-semibold mb-2">Good</h4>
-                <p className="text-sm text-muted-foreground">50-70 WPM</p>
+                <h4 className="font-semibold mb-2">Career Advancement</h4>
+                <p className="text-sm text-muted-foreground">
+                  Higher typing speeds increase productivity and open doors to better job opportunities in administrative, 
+                  content creation, and technical fields.
+                </p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">🏆</span>
+                  <span className="text-2xl">🎓</span>
                 </div>
-                <h4 className="font-semibold mb-2">Excellent</h4>
-                <p className="text-sm text-muted-foreground">70+ WPM</p>
+                <h4 className="font-semibold mb-2">Academic Success</h4>
+                <p className="text-sm text-muted-foreground">
+                  Students with faster typing speeds complete assignments more efficiently, take better notes, 
+                  and perform better on computer-based exams.
+                </p>
               </div>
-            </div>
-          </div>
-
-          {/* Tips for improvement */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="text-center p-6 bg-muted/20 rounded-lg">
-              <CheckCircleIcon className="h-8 w-8 text-green-500 mx-auto mb-4" />
-              <h4 className="font-semibold mb-2">Practice Regularly</h4>
-              <p className="text-sm text-muted-foreground">
-                Consistent daily practice, even for 10-15 minutes, leads to significant improvement
-              </p>
-            </div>
-            <div className="text-center p-6 bg-muted/20 rounded-lg">
-              <TargetIcon className="h-8 w-8 text-blue-500 mx-auto mb-4" />
-              <h4 className="font-semibold mb-2">Focus on Accuracy</h4>
-              <p className="text-sm text-muted-foreground">
-                Prioritize accuracy over speed initially; speed will naturally increase with accuracy
-              </p>
-            </div>
-            <div className="text-center p-6 bg-muted/20 rounded-lg">
-              <KeyboardIcon className="h-8 w-8 text-purple-500 mx-auto mb-4" />
-              <h4 className="font-semibold mb-2">Proper Technique</h4>
-              <p className="text-sm text-muted-foreground">
-                Use all fingers, maintain good posture, and keep your wrists straight while typing
-              </p>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">⚡</span>
+                </div>
+                <h4 className="font-semibold mb-2">Daily Productivity</h4>
+                <p className="text-sm text-muted-foreground">
+                  Faster typing saves hours of time daily in emails, messaging, document creation, and online communication. 
+                  Improve efficiency in all digital tasks.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl">🧠</span>
+                </div>
+                <h4 className="font-semibold mb-2">Cognitive Benefits</h4>
+                <p className="text-sm text-muted-foreground">
+                  Typing practice improves hand-eye coordination, muscle memory, and multitasking abilities. 
+                  Regular practice enhances overall digital literacy.
+                </p>
+              </div>
             </div>
           </div>
         </div>
