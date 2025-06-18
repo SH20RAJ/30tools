@@ -37,8 +37,10 @@ export default function QRCodeGeneratorTool() {
   const [errorCorrectionLevel, setErrorCorrectionLevel] = useState('M');
   const [includeMargin, setIncludeMargin] = useState(true);
   const [qrCodeSvg, setQrCodeSvg] = useState('');
+  const qrContainerRef = useRef(null);
   const canvasRef = useRef(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [qrCodeLibLoaded, setQrCodeLibLoaded] = useState(false);
 
   // WiFi specific fields
   const [wifiSSID, setWifiSSID] = useState('');
@@ -66,8 +68,33 @@ export default function QRCodeGeneratorTool() {
   const [locationLat, setLocationLat] = useState('');
   const [locationLng, setLocationLng] = useState('');
 
-  // Simple QR Code generation function (basic implementation)
-  const generateQRCode = () => {
+  // Load QRCode.js library from CDN
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js';
+    script.async = true;
+    script.onload = () => {
+      setQrCodeLibLoaded(true);
+      generateQRCode(); // Generate initial QR code
+    };
+    script.onerror = () => {
+      console.error('Failed to load QRCode library');
+      setQrCodeLibLoaded(false);
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup: remove script on unmount
+      document.head.removeChild(script);
+    };
+  }, []);
+
+  // Enhanced QR Code generation function using QRCode.js library
+  const generateQRCode = async () => {
+    if (!qrCodeLibLoaded || !window.QRCode) {
+      return;
+    }
+
     setIsGenerating(true);
     
     let dataToEncode = '';
@@ -98,72 +125,58 @@ export default function QRCodeGeneratorTool() {
         dataToEncode = qrData;
     }
 
-    // Simple QR code generation using canvas (basic grid pattern)
-    // In a real implementation, you'd use a proper QR code library like 'qrcode'
-    const canvas = canvasRef.current;
-    if (!canvas) return;
+    try {
+      // Clear previous QR code
+      if (qrContainerRef.current) {
+        qrContainerRef.current.innerHTML = '';
+      }
 
-    const ctx = canvas.getContext('2d');
-    const size = qrSize[0];
-    const margin = includeMargin ? 20 : 0;
-    
-    canvas.width = size + (margin * 2);
-    canvas.height = size + (margin * 2);
-    
-    // Fill background
-    ctx.fillStyle = backgroundColor;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    
-    // Generate simple pattern (this is a placeholder - real QR generation would be more complex)
-    ctx.fillStyle = foregroundColor;
-    const moduleSize = size / 25; // 25x25 grid for simplicity
-    
-    // Create a simple pattern based on data
-    const pattern = dataToEncode.split('').map(char => char.charCodeAt(0) % 2);
-    
-    for (let i = 0; i < 25; i++) {
-      for (let j = 0; j < 25; j++) {
-        const index = (i * 25 + j) % pattern.length;
-        if (pattern[index] || (i < 3 && j < 3) || (i < 3 && j > 21) || (i > 21 && j < 3)) {
-          ctx.fillRect(
-            margin + j * moduleSize,
-            margin + i * moduleSize,
-            moduleSize,
-            moduleSize
-          );
-        }
+      // Generate QR code using QRCode.js
+      const canvas = canvasRef.current;
+      if (canvas) {
+        await window.QRCode.toCanvas(canvas, dataToEncode, {
+          width: qrSize[0],
+          margin: includeMargin ? 2 : 0,
+          color: {
+            dark: foregroundColor,
+            light: backgroundColor
+          },
+          errorCorrectionLevel: errorCorrectionLevel
+        });
       }
+
+      // Generate SVG version
+      const svgString = await window.QRCode.toString(dataToEncode, {
+        type: 'svg',
+        width: qrSize[0],
+        margin: includeMargin ? 2 : 0,
+        color: {
+          dark: foregroundColor,
+          light: backgroundColor
+        },
+        errorCorrectionLevel: errorCorrectionLevel
+      });
+      
+      setQrCodeSvg(svgString);
+
+    } catch (error) {
+      console.error('Error generating QR code:', error);
+    } finally {
+      setIsGenerating(false);
     }
-    
-    // Generate SVG version
-    const svgSize = size + (margin * 2);
-    let svgContent = `<svg width="${svgSize}" height="${svgSize}" xmlns="http://www.w3.org/2000/svg">`;
-    svgContent += `<rect width="${svgSize}" height="${svgSize}" fill="${backgroundColor}"/>`;
-    
-    for (let i = 0; i < 25; i++) {
-      for (let j = 0; j < 25; j++) {
-        const index = (i * 25 + j) % pattern.length;
-        if (pattern[index] || (i < 3 && j < 3) || (i < 3 && j > 21) || (i > 21 && j < 3)) {
-          svgContent += `<rect x="${margin + j * moduleSize}" y="${margin + i * moduleSize}" width="${moduleSize}" height="${moduleSize}" fill="${foregroundColor}"/>`;
-        }
-      }
-    }
-    
-    svgContent += '</svg>';
-    setQrCodeSvg(svgContent);
-    
-    setTimeout(() => setIsGenerating(false), 500);
   };
 
   // Generate QR code on mount and when data changes
   useEffect(() => {
-    generateQRCode();
+    if (qrCodeLibLoaded) {
+      generateQRCode();
+    }
   }, [qrType, qrData, qrSize, foregroundColor, backgroundColor, errorCorrectionLevel, includeMargin, 
       wifiSSID, wifiPassword, wifiSecurity, wifiHidden,
       contactName, contactPhone, contactEmail, contactOrg, contactUrl,
       emailTo, emailSubject, emailBody,
       smsNumber, smsMessage,
-      locationLat, locationLng]);
+      locationLat, locationLng, qrCodeLibLoaded]);
 
   const downloadPNG = () => {
     const canvas = canvasRef.current;
