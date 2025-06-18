@@ -2,716 +2,740 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://30tools.com</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://30tools.com/search</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   
   <url>
     <loc>https://30tools.com/image-compressor</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/image-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/image-resizer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/background-remover</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/image-editor</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/photo-enhancer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://30tools.com/base64-image</loc>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/image-cropper</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/instagram-story-resizer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/social-media-resizer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/photo-collage-maker</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/logo-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/favicon-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/icon-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-merger</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-splitter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-compressor</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/jpg-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/png-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-protect</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-unlocker</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-rotate</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-add-page-numbers</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-editor</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/word-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-to-word</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/pdf-to-image</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/excel-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/powerpoint-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/image-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/excel-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/powerpoint-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/video-compressor</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/video-to-gif</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/video-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/video-editor</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/video-trimmer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/screen-recorder</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/mp3-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/youtube-thumbnail-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/tiktok-video-resizer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/audio-compressor</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/audio-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/audio-editor</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/audio-trimmer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/voice-recorder</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/text-to-speech</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/word-counter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/character-counter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/text-case-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/password-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/password-generator2</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/password-strength-checker</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/lorem-ipsum-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/text-diff</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/text-formatter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/text-case-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/duplicate-line-remover</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/typing-speed-test</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://30tools.com/binary-converter</loc>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/file-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/document-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/epub-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/html-to-pdf</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/csv-to-json-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/xml-to-json-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/json-formatter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/hash-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/hash-generator2</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/base64-tool</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/javascript-minifier</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/regex-tester</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/sql-formatter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/regex-tester2</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/api-tester</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/jwt-decoder</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/url-encoder</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/css-minifier</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/html-validator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/code-formatter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/code-minifier</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/csv-to-json</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/markdown-to-html</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/regex-tester</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/sql-formatter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/xml-formatter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/color-picker</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/color-palette-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/css-gradient-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/favicon-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/logo-maker</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/css-box-shadow</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/gradient-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/color-picker</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/font-previewer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://30tools.com/color-converter</loc>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/unit-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/zip-creator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/url-shortener</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/timestamp-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/calculator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/random-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/unit-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/currency-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/percentage-calculator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/timezone-converter</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://30tools.com/epoch-converter</loc>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/meta-tags-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/qr-code-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/youtube-tag-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/tiktok-tag-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/website-analyzer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/sitemap-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/keyword-density</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://30tools.com/robots-txt-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/schema-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/ssl-checker</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/instagram-story-maker</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/youtube-thumbnail-creator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/whatsapp-link-generator</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://30tools.com/social-media-post-resizer</loc>
-    <lastmod>2025-06-17T14:42:17.493Z</lastmod>
+    <lastmod>2025-06-18T15:39:23.291Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>

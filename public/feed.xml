@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>30tools - Free Online Toolkit</title>
-    <description>Access 131+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required.</description>
+    <description>Access 135+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, and more. No sign-up required.</description>
     <link>https://30tools.com</link>
     <atom:link href="https://30tools.com/feed.xml" rel="self" type="application/rss+xml" />
     <language>en-US</language>
-    <lastBuildDate>Tue, 17 Jun 2025 14:42:17 GMT</lastBuildDate>
-    <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+    <lastBuildDate>Wed, 18 Jun 2025 15:39:23 GMT</lastBuildDate>
+    <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
     <managingEditor>support@30tools.com (30tools Team)</managingEditor>
     <webMaster>support@30tools.com (30tools Team)</webMaster>
     <generator>30tools RSS Generator</generator>
@@ -26,7 +26,7 @@
       <description><![CDATA[Compress images to reduce file size while maintaining quality. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/image-compressor</link>
       <guid>https://30tools.com/image-compressor</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -35,7 +35,7 @@
       <description><![CDATA[Convert images between different formats (JPEG, PNG, WebP). Free online tool - no registration required.]]></description>
       <link>https://30tools.com/image-converter</link>
       <guid>https://30tools.com/image-converter</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -44,7 +44,7 @@
       <description><![CDATA[Remove image backgrounds automatically with AI. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/background-remover</link>
       <guid>https://30tools.com/background-remover</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -53,7 +53,7 @@
       <description><![CDATA[Professional image editing with filters, effects, and advanced tools. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/image-editor</link>
       <guid>https://30tools.com/image-editor</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -62,7 +62,16 @@
       <description><![CDATA[Enhance photo quality with AI-powered image enhancement. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/photo-enhancer</link>
       <guid>https://30tools.com/photo-enhancer</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
+      <category>Image Tools</category>
+    </item>
+  
+    <item>
+      <title>Base64 Image Converter - Convert images to Base64 strings and decode Base64 to images</title>
+      <description><![CDATA[Convert images to Base64 strings and decode Base64 to images. Free online tool - no registration required.]]></description>
+      <link>https://30tools.com/base64-image</link>
+      <guid>https://30tools.com/base64-image</guid>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -71,7 +80,7 @@
       <description><![CDATA[Resize images for Instagram stories with perfect dimensions. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/instagram-story-resizer</link>
       <guid>https://30tools.com/instagram-story-resizer</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -80,7 +89,7 @@
       <description><![CDATA[Resize images for all social media platforms. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/social-media-resizer</link>
       <guid>https://30tools.com/social-media-resizer</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -89,7 +98,7 @@
       <description><![CDATA[Create stunning photo collages with multiple images. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/photo-collage-maker</link>
       <guid>https://30tools.com/photo-collage-maker</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
@@ -98,16 +107,7 @@
       <description><![CDATA[Create professional logos with text, fonts, and custom colors. Free online tool - no registration required.]]></description>
       <link>https://30tools.com/logo-generator</link>
       <guid>https://30tools.com/logo-generator</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
-      <category>Image Tools</category>
-    </item>
-  
-    <item>
-      <title>Favicon Generator - Generate favicons from text, images, or emojis for websites</title>
-      <description><![CDATA[Generate favicons from text, images, or emojis for websites. Free online tool - no registration required.]]></description>
-      <link>https://30tools.com/favicon-generator</link>
-      <guid>https://30tools.com/favicon-generator</guid>
-      <pubDate>Tue, 17 Jun 2025 14:42:17 GMT</pubDate>
+      <pubDate>Wed, 18 Jun 2025 15:39:23 GMT</pubDate>
       <category>Image Tools</category>
     </item>
   
