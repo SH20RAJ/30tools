@@ -13,7 +13,7 @@ import {
   ArrowLeftIcon,
   DownloadIcon,
   RefreshCwIcon,
-  CompressIcon,
+  MinimizeIcon,
   InfoIcon,
   AlertCircleIcon,
   CheckCircleIcon
@@ -166,7 +166,7 @@ export default function PdfCompressorTool() {
           
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-              <CompressIcon className="h-6 w-6 text-primary" />
+              <MinimizeIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
               <h1 className="text-3xl font-bold">PDF Compressor</h1>
@@ -293,7 +293,7 @@ export default function PdfCompressorTool() {
                     size="lg"
                     disabled={isCompressing}
                   >
-                    <CompressIcon className="h-4 w-4 mr-2" />
+                    <MinimizeIcon className="h-4 w-4 mr-2" />
                     {isCompressing ? 'Compressing...' : 'Compress PDF'}
                   </Button>
                 </div>
@@ -313,7 +313,7 @@ export default function PdfCompressorTool() {
               {isCompressing ? (
                 <div className="space-y-4">
                   <div className="text-center">
-                    <CompressIcon className="h-12 w-12 mx-auto mb-4 text-primary animate-spin" />
+                    <MinimizeIcon className="h-12 w-12 mx-auto mb-4 text-primary animate-spin" />
                     <p className="font-medium">Compressing PDF...</p>
                     <p className="text-sm text-muted-foreground">
                       This may take a few moments
