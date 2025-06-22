@@ -15,31 +15,58 @@ const poppins = Poppins({
 
 export const metadata = {
   title: {
-    default: "30tools - Free Online Toolkit | 75+ Tools for Image, Video, PDF & More",
-    template: "%s | 30tools - Free Online Tools"
+    default: "30tools - 135+ Free Online Tools | Image, PDF, Video, SEO & Developer Tools",
+    template: "%s | 30tools - Free Online Toolkit"
   },
-  description: "Access 75+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, file conversion and more. No sign-up required. Privacy-focused and fast.",
+  description: "Professional online toolkit with 135+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities & more. No registration required. Privacy-focused, fast & secure.",
   keywords: [
+    // Primary keywords
     "free online tools",
     "image compressor", 
-    "video converter",
     "pdf tools",
-    "password generator",
-    "qr code generator",
-    "color picker",
-    "base64 encoder",
-    "text tools",
-    "file converter",
+    "video converter",
+    "seo tools",
+    "developer tools",
+    
+    // Long-tail keywords
+    "compress images online free",
+    "pdf merger free online",
+    "video to gif converter",
+    "password generator secure",
+    "qr code generator free",
+    "color picker tool",
+    "base64 encoder decoder",
+    "text case converter",
+    "url shortener free",
+    "json formatter online",
+    
+    // Semantic keywords
     "online utilities",
     "web tools",
-    "free software",
-    "no registration tools"
+    "digital toolkit",
+    "file converter",
+    "image editor online",
+    "document tools",
+    "media converter",
+    "text tools",
+    "productivity tools",
+    "browser tools",
+    
+    // Technical keywords
+    "no registration tools",
+    "privacy focused tools",
+    "client side processing",
+    "secure online tools",
+    "professional web tools",
+    "instant online tools"
   ].join(", "),
-  authors: [{ name: "30tools", url: "https://30tools.com" }],
+  authors: [{ name: "30tools Team", url: "https://30tools.com" }],
   creator: "30tools",
   publisher: "30tools",
   category: "Technology",
   classification: "Online Tools and Utilities",
+  applicationName: "30tools",
+  referrer: "origin-when-cross-origin",
   formatDetection: {
     email: false,
     address: false,
@@ -59,15 +86,22 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://30tools.com',
     siteName: '30tools - Free Online Toolkit',
-    title: '30tools - Free Online Toolkit | 75+ Tools for Image, Video, PDF & More',
-    description: 'Access 75+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, file conversion and more. No sign-up required.',
+    title: '30tools - 135+ Free Online Tools | Professional Toolkit for Everyone',
+    description: 'Professional online toolkit with 135+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities & more. No registration required.',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: '30tools - Free Online Toolkit with 75+ Tools',
+        alt: '30tools - Professional Free Online Toolkit with 135+ Tools',
         type: 'image/jpeg',
+      },
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: '30tools - Free Online Tools for Professionals',
+        type: 'image/png',
       },
     ],
   },
@@ -75,23 +109,30 @@ export const metadata = {
     card: 'summary_large_image',
     site: '@30tools',
     creator: '@30tools',
-    title: '30tools - Free Online Toolkit | 75+ Tools for Image, Video, PDF & More',
-    description: 'Access 75+ free online tools for image compression, video conversion, PDF editing, password generation, QR codes, file conversion and more. No sign-up required.',
+    title: '30tools - 135+ Free Online Tools | Professional Toolkit',
+    description: 'Professional online toolkit with 135+ free tools. Image compression, PDF editing, video conversion, SEO analysis & more. No registration required.',
     images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
+      noimageindex: false,
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
   },
   verification: {
-    google: 'your-google-verification-code', // Add your Google Search Console verification
+    google: 'your-google-search-console-verification-code',
+    yandex: 'your-yandex-verification-code',
+    yahoo: 'your-yahoo-verification-code',
+    other: {
+      'msvalidate.01': 'your-bing-verification-code',
+    },
   },
   manifest: '/manifest.json',
   icons: {
