@@ -119,6 +119,109 @@ const videoTools = [
     href: '/video-player',
     icon: Video,
     category: 'Viewing'
+  },
+  {
+    name: 'AI Video Summarizer',
+    description: 'Get AI-powered summaries of long videos and meetings',
+    href: '/ai-video-summarizer',
+    icon: Video,
+    category: 'AI Tools',
+    featured: true,
+    trending: true
+  },
+  {
+    name: 'Video Watermark Remover',
+    description: 'Remove watermarks from videos using AI technology',
+    href: '/video-watermark-remover',
+    icon: Edit,
+    category: 'AI Tools',
+    featured: true,
+    trending: true
+  },
+  {
+    name: 'TikTok Video Downloader',
+    description: 'Download TikTok videos without watermarks',
+    href: '/tiktok-downloader',
+    icon: Download,
+    category: 'Social Media',
+    featured: true,
+    trending: true
+  },
+  {
+    name: 'YouTube Shorts Creator',
+    description: 'Convert long videos into viral YouTube Shorts',
+    href: '/youtube-shorts-creator',
+    icon: Film,
+    category: 'Social Media',
+    featured: true,
+    trending: true
+  },
+  {
+    name: 'Instagram Reel Maker',
+    description: 'Create engaging Instagram Reels with templates',
+    href: '/instagram-reel-maker',
+    icon: Video,
+    category: 'Social Media',
+    featured: true,
+    trending: true
+  },
+  {
+    name: 'Faceless Video Generator',
+    description: 'Create faceless YouTube videos for monetization',
+    href: '/faceless-video-generator',
+    icon: Video,
+    category: 'Content Creation',
+    featured: true,
+    trending: true
+  },
+  {
+    name: 'Video Background Remover',
+    description: 'Remove and replace video backgrounds with AI',
+    href: '/video-background-remover',
+    icon: Edit,
+    category: 'AI Tools',
+    featured: true,
+    trending: true
+  },
+  {
+    name: 'Podcast Video Creator',
+    description: 'Turn podcasts into engaging video content',
+    href: '/podcast-video-creator',
+    icon: Video,
+    category: 'Content Creation',
+    trending: true
+  },
+  {
+    name: 'Zoom Meeting Recorder',
+    description: 'Record and edit Zoom meetings with highlights',
+    href: '/zoom-recorder',
+    icon: Monitor,
+    category: 'Business',
+    trending: true
+  },
+  {
+    name: 'Course Video Maker',
+    description: 'Create professional online course videos',
+    href: '/course-video-maker',
+    icon: Video,
+    category: 'Education',
+    trending: true
+  },
+  {
+    name: 'Video Sales Letter Creator',
+    description: 'Create high-converting video sales letters',
+    href: '/video-sales-letter',
+    icon: Video,
+    category: 'Marketing',
+    trending: true
+  },
+  {
+    name: 'Meme Video Generator',
+    description: 'Create viral meme videos with templates',
+    href: '/meme-video-generator',
+    icon: Film,
+    category: 'Entertainment',
+    trending: true
   }
 ]
 
@@ -127,11 +230,19 @@ const categories = [
   { name: 'Editing', count: 5, color: 'bg-purple-100 text-purple-800' },
   { name: 'Optimization', count: 1, color: 'bg-green-100 text-green-800' },
   { name: 'Recording', count: 1, color: 'bg-red-100 text-red-800' },
-  { name: 'Viewing', count: 1, color: 'bg-gray-100 text-gray-800' }
+  { name: 'Viewing', count: 1, color: 'bg-gray-100 text-gray-800' },
+  { name: 'AI Tools', count: 3, color: 'bg-pink-100 text-pink-800' },
+  { name: 'Social Media', count: 3, color: 'bg-orange-100 text-orange-800' },
+  { name: 'Content Creation', count: 3, color: 'bg-indigo-100 text-indigo-800' },
+  { name: 'Business', count: 1, color: 'bg-cyan-100 text-cyan-800' },
+  { name: 'Education', count: 1, color: 'bg-emerald-100 text-emerald-800' },
+  { name: 'Marketing', count: 1, color: 'bg-rose-100 text-rose-800' },
+  { name: 'Entertainment', count: 1, color: 'bg-amber-100 text-amber-800' }
 ]
 
 export default function VideoToolsPage() {
   const featuredTools = videoTools.filter(tool => tool.featured)
+  const trendingTools = videoTools.filter(tool => tool.trending)
   const allTools = videoTools
 
   return (
@@ -206,8 +317,15 @@ export default function VideoToolsPage() {
                       <div className="p-2 bg-primary/10 rounded-lg">
                         <IconComponent className="h-6 w-6 text-primary" />
                       </div>
-                      <div>
-                        <CardTitle className="text-lg">{tool.name}</CardTitle>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2">
+                          <CardTitle className="text-lg">{tool.name}</CardTitle>
+                          {tool.trending && (
+                            <Badge variant="destructive" className="text-xs">
+                              🔥 Trending
+                            </Badge>
+                          )}
+                        </div>
                         <Badge variant="outline" className="text-xs">
                           {tool.category}
                         </Badge>
@@ -221,6 +339,45 @@ export default function VideoToolsPage() {
                     <Link href={tool.href}>
                       <button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 rounded-md text-sm font-medium transition-colors">
                         Try Now
+                      </button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              )
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Trending Tools */}
+      {trendingTools.length > 0 && (
+        <div>
+          <h2 className="text-2xl font-bold mb-4">🔥 Trending Video Tools</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {trendingTools.slice(0, 8).map((tool) => {
+              const IconComponent = tool.icon
+              return (
+                <Card key={tool.name} className="hover:shadow-lg transition-shadow border-orange-200">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="p-1.5 bg-orange-100 rounded-lg">
+                        <IconComponent className="h-4 w-4 text-orange-600" />
+                      </div>
+                      <div>
+                        <CardTitle className="text-sm font-semibold">{tool.name}</CardTitle>
+                        <Badge variant="outline" className="text-xs">
+                          {tool.category}
+                        </Badge>
+                      </div>
+                    </div>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <CardDescription className="text-xs mb-3">
+                      {tool.description}
+                    </CardDescription>
+                    <Link href={tool.href}>
+                      <button className="w-full border border-orange-300 bg-orange-50 hover:bg-orange-100 text-orange-700 h-8 px-3 py-1 rounded-md text-xs font-medium transition-colors">
+                        Try Tool
                       </button>
                     </Link>
                   </CardContent>
