@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Image, Compress, FileImage, Crop, Palette, Eye, Scissors, Download } from 'lucide-react'
+import { Image, Archive, FileImage, Crop, Palette, Eye, Scissors, Download } from 'lucide-react'
 
 export const metadata = {
   title: 'Image Tools - Free Online Image Processing & Editing | 30tools',
@@ -37,7 +37,7 @@ const imageTools = [
     name: 'Image Compressor',
     description: 'Compress images up to 90% while maintaining quality using advanced algorithms',
     href: '/image-compressor',
-    icon: Compress,
+    icon: Archive,
     category: 'Optimization',
     featured: true
   },
@@ -110,14 +110,14 @@ const imageTools = [
     name: 'Batch Image Processor',
     description: 'Process multiple images simultaneously with bulk operations',
     href: '/batch-image-processor',
-    icon: Compress,
+    icon: Archive,
     category: 'Batch'
   },
   {
     name: 'Image Optimizer',
     description: 'Optimize images for web with perfect balance of size and quality',
     href: '/image-optimizer',
-    icon: Compress,
+    icon: Archive,
     category: 'Optimization'
   }
 ]

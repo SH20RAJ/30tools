@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Download, QrCode, Share2, Copy, Check } from 'lucide-react'
-import { useToast } from '@/hooks/use-toast'
+import { toast } from 'sonner'
 
 export default function QrGeneratorTool() {
   const [text, setText] = useState('')
@@ -16,15 +16,10 @@ export default function QrGeneratorTool() {
   const [qrCodeUrl, setQrCodeUrl] = useState('')
   const [isGenerating, setIsGenerating] = useState(false)
   const [copied, setCopied] = useState(false)
-  const { toast } = useToast()
 
   const generateQrCode = async () => {
     if (!text.trim()) {
-      toast({
-        title: "Input Required",
-        description: "Please enter text or URL to generate QR code",
-        variant: "destructive"
-      })
+      toast.error("Please enter text or URL to generate QR code")
       return
     }
 
@@ -36,16 +31,9 @@ export default function QrGeneratorTool() {
       const url = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodedText}&ecc=${errorLevel}&format=png`
       setQrCodeUrl(url)
       
-      toast({
-        title: "QR Code Generated",
-        description: "Your QR code has been generated successfully"
-      })
+      toast.success("Your QR code has been generated successfully")
     } catch (error) {
-      toast({
-        title: "Generation Failed",
-        description: "Failed to generate QR code. Please try again.",
-        variant: "destructive"
-      })
+      toast.error("Failed to generate QR code. Please try again.")
     } finally {
       setIsGenerating(false)
     }
@@ -66,16 +54,9 @@ export default function QrGeneratorTool() {
       document.body.removeChild(a)
       window.URL.revokeObjectURL(url)
       
-      toast({
-        title: "Download Started",
-        description: "QR code image is being downloaded"
-      })
+      toast.success("QR code image is being downloaded")
     } catch (error) {
-      toast({
-        title: "Download Failed",
-        description: "Failed to download QR code. Please try again.",
-        variant: "destructive"
-      })
+      toast.error("Failed to download QR code. Please try again.")
     }
   }
 
@@ -84,16 +65,9 @@ export default function QrGeneratorTool() {
       await navigator.clipboard.writeText(qrCodeUrl)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
-      toast({
-        title: "Copied to Clipboard",
-        description: "QR code URL copied successfully"
-      })
+      toast.success("QR code URL copied successfully")
     } catch (error) {
-      toast({
-        title: "Copy Failed",
-        description: "Failed to copy URL to clipboard",
-        variant: "destructive"
-      })
+      toast.error("Failed to copy URL to clipboard")
     }
   }
 

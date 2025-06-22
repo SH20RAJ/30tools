@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { FileText, Combine, Split, Lock, Unlock, Compress, FileImage, Edit } from 'lucide-react'
+import { FileText, Combine, Split, Lock, Unlock, Archive, FileImage, Edit } from 'lucide-react'
 
 export const metadata = {
   title: 'PDF Tools - Free Online PDF Editor & Converter | 30tools',
@@ -60,7 +60,7 @@ const pdfTools = [
     name: 'PDF Compressor',
     description: 'Reduce PDF file size while maintaining quality',
     href: '/pdf-compressor',
-    icon: Compress,
+    icon: Archive,
     category: 'Optimization',
     featured: true
   },

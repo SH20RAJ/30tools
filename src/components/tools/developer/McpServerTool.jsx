@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Download, Server, Copy, Check, Code, Settings, PlayCircle } from 'lucide-react'
-import { useToast } from '@/hooks/use-toast'
+import { toast } from 'sonner'
 
 export default function McpServerTool() {
   const [serverName, setServerName] = useState('')
@@ -19,15 +19,10 @@ export default function McpServerTool() {
   const [port, setPort] = useState('3000')
   const [generatedCode, setGeneratedCode] = useState('')
   const [copied, setCopied] = useState(false)
-  const { toast } = useToast()
 
   const generateMcpServer = () => {
     if (!serverName.trim()) {
-      toast({
-        title: "Server Name Required",
-        description: "Please enter a name for your MCP server",
-        variant: "destructive"
-      })
+      toast.error("Please enter a name for your MCP server")
       return
     }
 
@@ -350,10 +345,7 @@ if __name__ == "__main__":
     }
 
     setGeneratedCode(code)
-    toast({
-      title: "MCP Server Generated",
-      description: "Your Model Context Protocol server code has been generated successfully"
-    })
+    toast.success("Your Model Context Protocol server code has been generated successfully")
   }
 
   const downloadCode = () => {
@@ -372,10 +364,7 @@ if __name__ == "__main__":
     document.body.removeChild(a)
     window.URL.revokeObjectURL(url)
     
-    toast({
-      title: "Download Started",
-      description: `MCP server code downloaded as ${fileName}`
-    })
+    toast.success(`MCP server code downloaded as ${fileName}`)
   }
 
   const copyCode = async () => {
@@ -385,16 +374,9 @@ if __name__ == "__main__":
       await navigator.clipboard.writeText(generatedCode)
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
-      toast({
-        title: "Copied to Clipboard",
-        description: "MCP server code copied successfully"
-      })
+      toast.success("MCP server code copied successfully")
     } catch (error) {
-      toast({
-        title: "Copy Failed",
-        description: "Failed to copy code to clipboard",
-        variant: "destructive"
-      })
+      toast.error("Failed to copy code to clipboard")
     }
   }
 

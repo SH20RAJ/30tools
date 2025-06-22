@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { Label } from '@/components/ui/label'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Slider } from '@/components/ui/slider'
 import { Play, Pause, Square, Download, Volume2, Settings } from 'lucide-react'
-import { useToast } from '@/hooks/use-toast'
+import { toast } from 'sonner'
 
 export default function TextToSpeechTool() {
   const [text, setText] = useState('')
@@ -23,33 +23,39 @@ export default function TextToSpeechTool() {
   const speechRef = useRef(null)
   const mediaRecorderRef = useRef(null)
   const audioChunksRef = useRef([])
-  const { toast } = useToast()
 
   // Initialize voices when component mounts
-  useState(() => {
+  useEffect(() => {
     const loadVoices = () => {
-      const availableVoices = speechSynthesis.getVoices()
-      setVoices(availableVoices)
-      if (availableVoices.length > 0 && !selectedVoice) {
-        setSelectedVoice(availableVoices[0].name)
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        const availableVoices = speechSynthesis.getVoices()
+        setVoices(availableVoices)
+        if (availableVoices.length > 0 && !selectedVoice) {
+          setSelectedVoice(availableVoices[0].name)
+        }
       }
     }
 
     loadVoices()
-    speechSynthesis.addEventListener('voiceschanged', loadVoices)
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      speechSynthesis.addEventListener('voiceschanged', loadVoices)
+    }
 
     return () => {
-      speechSynthesis.removeEventListener('voiceschanged', loadVoices)
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        speechSynthesis.removeEventListener('voiceschanged', loadVoices)
+      }
     }
   }, [])
 
   const speakText = () => {
     if (!text.trim()) {
-      toast({
-        title: "Text Required",
-        description: "Please enter text to convert to speech",
-        variant: "destructive"
-      })
+      toast.error("Please enter text to convert to speech")
+      return
+    }
+
+    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
+      toast.error("Speech synthesis is not supported in this browser")
       return
     }
 
@@ -91,11 +97,7 @@ export default function TextToSpeechTool() {
     }
 
     utterance.onerror = (event) => {
-      toast({
-        title: "Speech Error",
-        description: "An error occurred during speech synthesis",
-        variant: "destructive"
-      })
+      toast.error("An error occurred during speech synthesis")
       setIsPlaying(false)
       setIsPaused(false)
     }
@@ -105,27 +107,21 @@ export default function TextToSpeechTool() {
   }
 
   const stopSpeech = () => {
-    speechSynthesis.cancel()
+    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      speechSynthesis.cancel()
+    }
     setIsPlaying(false)
     setIsPaused(false)
   }
 
   const downloadAudio = async () => {
     if (!('MediaRecorder' in window)) {
-      toast({
-        title: "Not Supported",
-        description: "Audio recording is not supported in your browser",
-        variant: "destructive"
-      })
+      toast.error("Audio recording is not supported in your browser")
       return
     }
 
     if (!text.trim()) {
-      toast({
-        title: "Text Required",
-        description: "Please enter text to convert to audio",
-        variant: "destructive"
-      })
+      toast.error("Please enter text to convert to audio")
       return
     }
 
@@ -137,20 +133,13 @@ export default function TextToSpeechTool() {
       // We'll simulate audio generation since direct TTS recording has limitations
       // In a real implementation, you might use Web Audio API or server-side TTS
       
-      toast({
-        title: "Download Started",
-        description: "Note: Direct TTS audio download requires additional browser permissions. Using speech synthesis instead.",
-      })
+      toast.success("Note: Direct TTS audio download requires additional browser permissions. Using speech synthesis instead.")
       
       // For now, just play the audio - in production you'd implement proper audio capture
       speakText()
       
     } catch (error) {
-      toast({
-        title: "Download Failed",
-        description: "Could not generate downloadable audio file",
-        variant: "destructive"
-      })
+      toast.error("Could not generate downloadable audio file")
     }
   }
 

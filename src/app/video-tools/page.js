@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Video, Film, Scissors, Compress, FileVideo, Monitor, Download, Edit } from 'lucide-react'
+import { Video, Film, Scissors, Archive, FileVideo, Monitor, Download, Edit } from 'lucide-react'
 
 export const metadata = {
   title: 'Video Tools - Free Online Video Editor & Converter | 30tools',
@@ -45,7 +45,7 @@ const videoTools = [
     name: 'Video Compressor',
     description: 'Reduce video file size while maintaining quality',
     href: '/video-compressor',
-    icon: Compress,
+    icon: Archive,
     category: 'Optimization',
     featured: true
   },

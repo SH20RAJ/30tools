@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { Volume2, Mic, FileAudio, Scissors, Edit, Waveform, Settings, Headphones } from 'lucide-react'
+import { Volume2, Mic, FileAudio, Scissors, Edit, BarChart3, Settings, Headphones } from 'lucide-react'
 
 export const metadata = {
   title: 'Audio Tools - Free Online Audio Editor & Converter | 30tools',
@@ -96,7 +96,7 @@ const audioTools = [
     name: 'Audio Normalizer',
     description: 'Normalize audio levels for consistent volume',
     href: '/audio-normalizer',
-    icon: Waveform,
+    icon: BarChart3,
     category: 'Enhancement'
   },
   {
@@ -117,7 +117,7 @@ const audioTools = [
     name: 'Audio Spectrum Analyzer',
     description: 'Visualize audio frequencies and waveforms',
     href: '/audio-spectrum',
-    icon: Waveform,
+    icon: BarChart3,
     category: 'Analysis'
   }
 ]
