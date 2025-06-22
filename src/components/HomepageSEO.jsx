@@ -42,7 +42,15 @@ export function HomepageSchemas() {
       "Developer Utilities",
       "Text Processing",
       "File Conversion",
-      "Web Development Tools"
+      "Web Development Tools",
+      "Model Context Protocol",
+      "MCP Server Development",
+      "#21stdev Tools",
+      "AI Integration Tools",
+      "Claude AI Tools",
+      "Anthropic MCP",
+      "Developer Automation",
+      "Modern Development Practices"
     ]
   };
 
@@ -115,7 +123,10 @@ export function HomepageSchemas() {
       "Developer tools for JSON, XML, Base64 processing",
       "Text analysis and formatting tools",
       "Color picker and palette generator",
-      "File format conversion for all major types"
+      "File format conversion for all major types",
+      "MCP server generation for Claude AI integration",
+      "AI development tools for #21stdev developers",
+      "Model Context Protocol server scaffolding"
     ],
     "screenshot": [
       "https://30tools.com/screenshots/desktop.png",
@@ -251,7 +262,66 @@ export function HomepageSchemas() {
           "@type": "Answer",
           "text": "Yes, all tools are fully responsive and work perfectly on mobile devices, tablets, and desktop computers. The interface adapts to your screen size for optimal usability."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "What is MCP and how can I build MCP servers?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Model Context Protocol (MCP) is Anthropic's open standard for connecting AI assistants like Claude to external data and tools. Our MCP server generator helps #21stdev developers create production-ready MCP servers in TypeScript, JavaScript, or Python with authentication, CORS support, and comprehensive tool definitions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are these tools suitable for professional use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Our tools are designed for professional use with enterprise-grade performance, security, and reliability. Many businesses and developers use our tools for daily operations, including AI development, content creation, and workflow automation."
+        }
       }
+    ]
+  };
+
+  // MCP Tools Schema for #21stdev
+  const mcpToolsSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "MCP Server Generator for #21stdev",
+    "applicationCategory": "DeveloperApplication",
+    "description": "Generate Model Context Protocol servers for Claude AI integration. Perfect for #21stdev developers building AI-first applications.",
+    "url": "https://30tools.com/mcp-server",
+    "author": {
+      "@type": "Organization",
+      "name": "30tools"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "operatingSystem": "Any",
+    "programmingLanguage": ["TypeScript", "JavaScript", "Python"],
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Model Context Protocol",
+        "alternateName": "MCP",
+        "description": "Anthropic's open standard for connecting AI assistants to external data and tools"
+      },
+      {
+        "@type": "Thing", 
+        "name": "#21stdev",
+        "description": "Modern development practices for AI-first applications and tools"
+      }
+    ],
+    "featureList": [
+      "TypeScript MCP server generation",
+      "JavaScript MCP server templates", 
+      "Python MCP server scaffolding",
+      "Authentication integration",
+      "CORS configuration",
+      "Tool definitions and handlers",
+      "Ready-to-deploy code"
     ]
   };
 
@@ -281,6 +351,11 @@ export function HomepageSchemas() {
         id="faq-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <Script
+        id="mcp-tools-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(mcpToolsSchema) }}
       />
     </>
   );
@@ -332,7 +407,24 @@ export function HomepageSEOContent() {
       <p>
         Format and validate JSON, XML, HTML, CSS, and JavaScript code. Test regular expressions with real-time matching. 
         Encode and decode Base64, URL, and HTML entities. Generate secure passwords and API keys. Create QR codes with 
-        custom designs. Hash text using MD5, SHA-1, SHA-256 algorithms. Test APIs and web services.
+        custom designs. Hash text using MD5, SHA-1, SHA-256 algorithms. Test APIs and web services. Generate Model Context 
+        Protocol (MCP) servers for Claude AI integration. Perfect for #21stdev developers building AI-first applications.
+      </p>
+      
+      <h3>AI Development Tools for #21stdev</h3>
+      <p>
+        Build the future with our AI development toolkit. Generate MCP (Model Context Protocol) servers for Claude AI 
+        integration. Create custom tools for Anthropic's AI assistants. Perfect for #21stdev developers embracing AI-first 
+        development practices. Our MCP server generator supports TypeScript, JavaScript, and Python, helping you create 
+        production-ready AI integrations with authentication, CORS support, and comprehensive tool definitions.
+      </p>
+      
+      <h3>Model Context Protocol (MCP) Tools</h3>
+      <p>
+        Generate ready-to-deploy MCP servers for Claude AI and other AI assistants. Build custom AI tools with our 
+        comprehensive MCP server generator. Support for multiple programming languages and frameworks. Essential for 
+        developers working with Anthropic's Model Context Protocol ecosystem. Join the #21stdev movement and create 
+        powerful AI integrations that bridge artificial intelligence with real-world data and services.
       </p>
       
       <h3>Why Choose 30tools?</h3>
