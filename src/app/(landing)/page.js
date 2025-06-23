@@ -155,6 +155,87 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Premium Banner - Design Tools Directory */}
+        <section className="py-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjEiPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIi8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iMTAiIHI9IjIiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMTAiIGN5PSI1MCIgcj0iMiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=')] opacity-10" />
+          
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="flex-1 text-center lg:text-left">
+                <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
+                  <Badge className="bg-white text-purple-700 border-0 hover:bg-white/90 font-semibold shadow-lg">
+                    🎨 New Premium Resource
+                  </Badge>
+                  <Badge className="bg-amber-500 text-foreground border-0 font-semibold shadow-lg">
+                    <StarIcon className="h-3 w-3 mr-1" />
+                    Featured
+                  </Badge>
+                </div>
+                
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 drop-shadow-2xl [text-shadow:_2px_2px_4px_rgb(0_0_0_/_80%)]">
+                  Professional Design Tools Directory
+                </h2>
+                
+                <p className="text-foreground text-lg mb-6 max-w-2xl drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
+                  Discover 1600+ carefully curated design tools, resources, and inspiration. 
+                  From icons and illustrations to mockups and typography - everything designers need in one place.
+                </p>
+                
+                <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
+                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                    🎨 180+ Inspiration Tools
+                  </Badge>
+                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                    ✨ 92+ Icon Libraries
+                  </Badge>
+                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                    🖼️ 123+ Illustration Resources
+                  </Badge>
+                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                    📚 110+ Learning Resources
+                  </Badge>
+                </div>
+              </div>
+              
+              <div className="flex-shrink-0">
+                <div className="text-center">
+                  <a 
+                    href="https://design.30tools.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block"
+                  >
+                    <Button 
+                      size="lg" 
+                      className="bg-white text-purple-600 hover:bg-white/90 shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl min-w-[200px] font-semibold"
+                    >
+                      <PaletteIcon className="mr-2 h-5 w-5" />
+                      Explore Design Directory
+                      <ArrowRightIcon className="ml-2 h-5 w-5" />
+                    </Button>
+                  </a>
+                  
+                  <div className="flex items-center justify-center gap-4 mt-4 text-foreground text-sm drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
+                    <div className="flex items-center gap-1 font-bold">
+                      <UsersIcon className="h-4 w-4" />
+                      <span>1600+ Tools</span>
+                    </div>
+                    <div className="flex items-center gap-1 font-bold">
+                      <RefreshCwIcon className="h-4 w-4" />
+                      <span>Regularly Updated</span>
+                    </div>
+                    <div className="flex items-center gap-1 font-bold">
+                      <StarIcon className="h-4 w-4 text-amber-300" />
+                      <span>Curated</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Stats Section */}
         <section className="py-16 border-b">
           <div className="container mx-auto px-4">
@@ -290,13 +371,13 @@ export default function LandingPage() {
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-2 mb-4">
                 <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full">
-                  <StarIcon className="h-4 w-4 text-white" />
+                  <StarIcon className="h-4 w-4 text-foreground" />
                 </div>
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Premium Tools
                 </h2>
                 <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full">
-                  <StarIcon className="h-4 w-4 text-white" />
+                  <StarIcon className="h-4 w-4 text-foreground" />
                 </div>
               </div>
               <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -306,35 +387,67 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {premiumTools.map((tool) => (
-                <Link key={tool.id} href={tool.route}>
-                  <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white to-primary/5">
-                    <CardHeader className="relative">
-                      <div className="absolute top-3 right-3">
-                        <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0">
-                          <StarIcon className="h-3 w-3 mr-1" />
-                          Premium
-                        </Badge>
-                      </div>
-                      <CardTitle className="text-xl group-hover:text-primary transition-colors pr-20">
-                        {tool.name}
-                      </CardTitle>
-                      <CardDescription className="group-hover:text-foreground transition-colors">
-                        {tool.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="flex justify-between items-center">
-                        <Badge variant="outline" className="capitalize">
-                          {tool.category}
-                        </Badge>
-                        <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
-                          Try Now
-                          <ArrowRightIcon className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </Button>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                tool.external ? (
+                  <a key={tool.id} href={tool.route} target="_blank" rel="noopener noreferrer">
+                    <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white to-primary/5">
+                      <CardHeader className="relative">
+                        <div className="absolute top-3 right-3">
+                          <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-foreground border-0">
+                            <StarIcon className="h-3 w-3 mr-1" />
+                            Premium
+                          </Badge>
+                        </div>
+                        <CardTitle className="text-xl group-hover:text-primary transition-colors pr-20">
+                          {tool.name}
+                        </CardTitle>
+                        <CardDescription className="group-hover:text-foreground transition-colors">
+                          {tool.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex justify-between items-center">
+                          <Badge variant="outline" className="capitalize">
+                            {tool.category}
+                          </Badge>
+                          <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
+                            Visit Site
+                            <ArrowRightIcon className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </a>
+                ) : (
+                  <Link key={tool.id} href={tool.route}>
+                    <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white to-primary/5">
+                      <CardHeader className="relative">
+                        <div className="absolute top-3 right-3">
+                          <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-foreground border-0">
+                            <StarIcon className="h-3 w-3 mr-1" />
+                            Premium
+                          </Badge>
+                        </div>
+                        <CardTitle className="text-xl group-hover:text-primary transition-colors pr-20">
+                          {tool.name}
+                        </CardTitle>
+                        <CardDescription className="group-hover:text-foreground transition-colors">
+                          {tool.description}
+                        </CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="flex justify-between items-center">
+                          <Badge variant="outline" className="capitalize">
+                            {tool.category}
+                          </Badge>
+                          <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
+                            Try Now
+                            <ArrowRightIcon className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                )
               ))}
             </div>
 

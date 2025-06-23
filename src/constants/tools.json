@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "version": "8.3",
+        "version": "8.4",
         "lastUpdated": "2025-06-17",
-        "totalTools": 135,
+        "totalTools": 136,
         "totalCategories": 12
     },
     "categories": {
@@ -1068,6 +1068,26 @@
             "icon": "PaletteIcon",
             "description": "Generate color palettes and create design assets",
             "tools": [
+                {
+                    "id": "design-tools-directory",
+                    "name": "Design Tools Directory",
+                    "description": "Professional directory of 1600+ curated design tools, resources, and inspiration",
+                    "route": "https://design.30tools.com/",
+                    "popular": true,
+                    "premium": true,
+                    "external": true,
+                    "category": "design",
+                    "keywords": ["design tools", "design resources", "design inspiration", "design directory"],
+                    "longTailKeywords": [
+                        "professional design tools directory",
+                        "curated design resources collection",
+                        "design inspiration gallery",
+                        "design tools database",
+                        "free design resources directory"
+                    ],
+                    "primaryKeyword": "design tools directory",
+                    "features": ["1600+ curated tools", "18 categories", "Free & premium resources", "Regularly updated", "Professional grade"]
+                },
                 {
                     "id": "color-picker",
                     "name": "Color Picker",
