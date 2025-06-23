@@ -32,7 +32,7 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
   // Popular search terms
   const popularSearches = [
     'image compressor',
-    'video converter', 
+    'video converter',
     'pdf merger',
     'password generator',
     'color picker',
@@ -44,30 +44,30 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
   // Filter tools based on search
   const searchTools = (searchQuery, selectedCategory) => {
     setLoading(true);
-    
+
     let filtered = allTools;
-    
+
     if (searchQuery.trim()) {
       const searchTerm = searchQuery.toLowerCase();
-      filtered = allTools.filter(tool => 
+      filtered = allTools.filter(tool =>
         tool.name.toLowerCase().includes(searchTerm) ||
         tool.description.toLowerCase().includes(searchTerm) ||
         tool.category.toLowerCase().includes(searchTerm)
       );
     }
-    
+
     if (selectedCategory && selectedCategory !== 'all') {
       filtered = filtered.filter(tool => tool.category === selectedCategory);
     }
-    
+
     setResults(filtered);
     setLoading(false);
-    
+
     // Update URL
     const params = new URLSearchParams();
     if (searchQuery.trim()) params.set('q', searchQuery);
     if (selectedCategory && selectedCategory !== 'all') params.set('category', selectedCategory);
-    
+
     const queryString = params.toString();
     const newUrl = queryString ? `/search?${queryString}` : '/search';
     router.push(newUrl, { scroll: false });
@@ -107,10 +107,14 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
                 <p className="text-sm text-muted-foreground">Free Online Toolkit</p>
               </div>
             </Link>
-            
-            <Link href="/about">
-              <Button variant="outline">About</Button>
-            </Link>
+            <div>
+              <Link href="/about">
+                <Button variant="outline">About</Button>
+              </Link>
+              <Link href="/handler/sign-in">
+                <Button variant="secondary">Sign In</Button>
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -123,7 +127,7 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
               Find the Perfect Tool
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Search through our collection of {allTools.length}+ free online tools. 
+              Search through our collection of {allTools.length}+ free online tools.
               Everything you need for file processing and conversion.
             </p>
           </div>
@@ -140,7 +144,7 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
                 className="pl-10 h-12 text-lg"
               />
             </div>
-            
+
             <Select value={category} onValueChange={handleCategoryChange}>
               <SelectTrigger className="w-full md:w-48 h-12">
                 <FilterIcon className="h-4 w-4 mr-2" />
@@ -154,7 +158,7 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
                 ))}
               </SelectContent>
             </Select>
-            
+
             <Button type="submit" size="lg" className="h-12 px-8">
               Search
             </Button>
@@ -190,7 +194,7 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
                 'All Tools'
               )}
             </h2>
-            
+
             {results.length > 0 && (
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <TrendingUpIcon className="h-4 w-4" />

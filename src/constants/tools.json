@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "version": "8.4",
-        "lastUpdated": "2025-06-17",
-        "totalTools": 136,
+        "version": "8.5",
+        "lastUpdated": "2025-06-23",
+        "totalTools": 137,
         "totalCategories": 12
     },
     "categories": {
@@ -478,6 +478,26 @@
                     "route": "/tiktok-video-resizer",
                     "popular": true,
                     "category": "video"
+                },
+                {
+                    "id": "video-player",
+                    "name": "Video Player Generator",
+                    "description": "Create customizable video players with multiple themes and libraries",
+                    "route": "/video-player",
+                    "popular": true,
+                    "category": "video",
+                    "keywords": ["video player generator", "custom video player", "embed video player", "html5 video player"],
+                    "longTailKeywords": [
+                        "create custom video player online",
+                        "video player embed code generator",
+                        "responsive video player generator",
+                        "video player with custom themes",
+                        "plyr video player generator",
+                        "video.js player generator",
+                        "fluid player generator"
+                    ],
+                    "primaryKeyword": "video player generator",
+                    "features": ["Multiple player libraries", "Custom themes", "Embed codes", "Fullscreen support", "Share links"]
                 }
             ]
         },

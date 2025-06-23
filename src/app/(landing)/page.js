@@ -25,6 +25,7 @@ import {
   SettingsIcon,
   RefreshCwIcon
 } from 'lucide-react';
+import { UserButton } from "@stackframe/stack";
 
 export default function LandingPage() {
   const iconMap = {
@@ -54,6 +55,9 @@ export default function LandingPage() {
     .flatMap(category => category.tools || [])
     .filter(tool => tool.premium === true)
     .slice(0, 6); // Show first 6 premium tools
+
+    // get session from stack
+  const session = 1; // Replace with actual session retrieval logic
 
   const quickSearchTags = ["image compressor", "video converter", "pdf merger", "text counter"];
 
@@ -91,13 +95,20 @@ export default function LandingPage() {
               <Link href="/about">
                 <Button variant="outline">About</Button>
               </Link>
+              {session ? (
+                <UserButton />
+              ) : (
+                <Link href="/handler/sign-in">
+                  <Button variant="secondary">Sign In</Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
       </header>
 
       <main>
-         {/* Hero Section */}
+        {/* Hero Section */}
         <section className="py-24 relative overflow-hidden">
           {/* Background decoration */}
           <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
@@ -159,7 +170,7 @@ export default function LandingPage() {
         <section className="py-12  border-2  relative overflow-hidden">
           <div className="absolute inset-0 " />
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjEiPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIi8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iMTAiIHI9IjIiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMTAiIGN5PSI1MCIgcj0iMiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=')] opacity-10" />
-          
+
           <div className="container mx-auto px-4 relative z-10">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="flex-1 text-center lg:text-left">
@@ -172,16 +183,16 @@ export default function LandingPage() {
                     Featured
                   </Badge>
                 </div>
-                
+
                 <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 drop-shadow-2xl [text-shadow:_2px_2px_4px_rgb(0_0_0_/_80%)]">
                   Professional Design Tools Directory
                 </h2>
-                
+
                 <p className="text-foreground text-lg mb-6 max-w-2xl drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
-                  Discover 1600+ carefully curated design tools, resources, and inspiration. 
+                  Discover 1600+ carefully curated design tools, resources, and inspiration.
                   From icons and illustrations to mockups and typography - everything designers need in one place.
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
                   <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
                     🎨 180+ Inspiration Tools
@@ -197,17 +208,17 @@ export default function LandingPage() {
                   </Badge>
                 </div>
               </div>
-              
+
               <div className="flex-shrink-0">
                 <div className="text-center">
-                  <a 
-                    href="https://design.30tools.com/" 
-                    target="_blank" 
+                  <a
+                    href="https://design.30tools.com/"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="inline-block"
                   >
-                    <Button 
-                      size="lg" 
+                    <Button
+                      size="lg"
                       className="bg-white text-purple-600 hover:bg-white/90 shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl min-w-[200px] font-semibold"
                     >
                       <PaletteIcon className="mr-2 h-5 w-5" />
@@ -215,7 +226,7 @@ export default function LandingPage() {
                       <ArrowRightIcon className="ml-2 h-5 w-5" />
                     </Button>
                   </a>
-                  
+
                   <div className="flex items-center justify-center gap-4 mt-4 text-foreground text-sm drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
                     <div className="flex items-center gap-1 font-bold">
                       <UsersIcon className="h-4 w-4" />
