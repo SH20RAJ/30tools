@@ -1,4 +1,6 @@
 import { Poppins } from "next/font/google";
+import { StackProvider, StackTheme } from "@stackframe/stack";
+import { stackServerApp } from "../stack";
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
 import StructuredData from '@/components/shared/StructuredData';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -223,14 +225,14 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${poppins.variable} font-sans antialiased`}>
+      <body className={`${poppins.variable} font-sans antialiased`}><StackProvider app={stackServerApp}><StackTheme>
         <ThemeProvider>
           <StructuredData />
           {children}
           <PWAInstallPrompt />
           <Toaster />
         </ThemeProvider>
-      </body>
+      </StackTheme></StackProvider></body>
     </html>
   );
 }
