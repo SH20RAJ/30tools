@@ -377,7 +377,8 @@ export default function VideoPlayerTool() {
       player: selectedPlayer,
       theme: selectedTheme
     }));
-    setShareUrl(`${window.location.origin}/video-player-embed?data=${shareData}`);
+    const baseUrl = window.location.origin;
+    setShareUrl(`${baseUrl}/video-player-embed?data=${shareData}`);
     
     setIsLoading(false);
     toast.success('Video player generated successfully!');
@@ -915,10 +916,14 @@ export default VideoPlayer;`;
                     <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
                       <iframe
                         ref={previewRef}
-                        srcDoc={generatedCode}
+                        src={shareUrl}
                         className="w-full h-64 border-0 rounded"
                         title="Video Player Preview"
+                        allowFullScreen
                       />
+                    </div>
+                    <div className="mt-2 text-xs text-muted-foreground">
+                      This preview shows your video player as it will appear when embedded in other websites (clean YouTube-style embed).
                     </div>
                   </CardContent>
                 </Card>
@@ -983,7 +988,7 @@ export default VideoPlayer;`;
                         </div>
                         <CodeBlock code={generatedIframeCode} language="html" />
                         <div className="text-sm text-muted-foreground">
-                          <p>Use this iframe to embed the video player in any website. The player will be hosted on our servers.</p>
+                          <p>Use this iframe to embed the clean video player (YouTube-style) in any website. Shows only the player without navigation or extra UI elements.</p>
                         </div>
                       </TabsContent>
                       
@@ -1007,7 +1012,7 @@ export default VideoPlayer;`;
                               className="font-mono text-xs"
                             />
                             <p className="text-sm text-muted-foreground mt-1">
-                              Share this link to let others view your video player
+                              Share this link to let others view your video player with full page UI (navigation, description, etc.)
                             </p>
                           </div>
 
@@ -1076,6 +1081,228 @@ export default VideoPlayer;`;
               </>
             )}
           </div>
+        </div>
+
+        {/* SEO Content Section */}
+        <div className="mt-16 space-y-12">
+          {/* How to Use Section */}
+          <section className="max-w-4xl mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">How to Use the Video Player Generator</CardTitle>
+                <CardDescription>
+                  Create professional video players in 3 simple steps - no coding required
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">1</div>
+                    <h3 className="font-semibold mb-2">Configure Your Player</h3>
+                    <p className="text-sm text-muted-foreground">Enter your video URL, title, poster image, and choose from Plyr, Fluid Player, Video.js, or MediaElement.js libraries</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">2</div>
+                    <h3 className="font-semibold mb-2">Generate Code</h3>
+                    <p className="text-sm text-muted-foreground">Click generate to create HTML embed code, React components, and iframe embeds with custom themes and responsive design</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">3</div>
+                    <h3 className="font-semibold mb-2">Embed Anywhere</h3>
+                    <p className="text-sm text-muted-foreground">Copy the generated code and paste it into your website, blog, or application. Works with WordPress, Shopify, and all platforms</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* Why Use This Tool Section */}
+          <section className="max-w-4xl mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">Why Choose Our Video Player Generator?</CardTitle>
+                <CardDescription>
+                  The most comprehensive online video player creator with professional features
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">🎬 Multiple Player Libraries</h3>
+                      <p className="text-muted-foreground">Choose from industry-leading video players: Plyr for modern design, Fluid Player for advertising, Video.js for customization, and MediaElement.js for compatibility. Each player offers unique features for different use cases.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">🎨 Custom Themes & Styling</h3>
+                      <p className="text-muted-foreground">Apply professional themes including dark mode, forest, sea, and city themes. Customize colors, controls, and appearance to match your brand identity perfectly.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">📱 Fully Responsive Design</h3>
+                      <p className="text-muted-foreground">Generated video players automatically adapt to all screen sizes - desktop, tablet, and mobile. Perfect for responsive websites and mobile-first design approaches.</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">⚡ Fast CDN Delivery</h3>
+                      <p className="text-muted-foreground">All video player libraries are loaded from jsDelivr CDN for maximum performance and reliability. No need to host files or manage dependencies.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">🔧 Multiple Export Options</h3>
+                      <p className="text-muted-foreground">Get HTML embed code for static sites, React components for modern apps, and iframe embeds for universal compatibility. Download complete HTML files or copy individual components.</p>
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-lg mb-2">🚀 No Coding Required</h3>
+                      <p className="text-muted-foreground">Visual interface makes it easy for anyone to create professional video players. No JavaScript knowledge needed - just point, click, and generate.</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* Features Section */}
+          <section className="max-w-4xl mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">Advanced Video Player Features</CardTitle>
+                <CardDescription>
+                  Professional-grade video player capabilities for modern websites
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <h4 className="font-medium">🎮 Player Controls</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Play/pause buttons</li>
+                      <li>• Progress bar scrubbing</li>
+                      <li>• Volume control</li>
+                      <li>• Fullscreen toggle</li>
+                      <li>• Playback speed control</li>
+                      <li>• Quality selection</li>
+                    </ul>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium">⚙️ Customization Options</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• Custom poster images</li>
+                      <li>• Autoplay settings</li>
+                      <li>• Loop configuration</li>
+                      <li>• Muted start option</li>
+                      <li>• Responsive dimensions</li>
+                      <li>• Theme customization</li>
+                    </ul>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-medium">🌐 Integration Support</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• WordPress embedding</li>
+                      <li>• Shopify compatibility</li>
+                      <li>• React.js components</li>
+                      <li>• HTML5 compliant</li>
+                      <li>• Cross-browser support</li>
+                      <li>• Mobile optimization</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="max-w-4xl mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
+                <CardDescription>
+                  Common questions about our free video player generator tool
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold mb-2">What video formats are supported by the generated players?</h3>
+                    <p className="text-muted-foreground">Our video player generator supports all modern video formats including MP4, WebM, OGV, and HLS streaming. The players automatically detect the best format for each browser to ensure optimal playback quality and compatibility across all devices.</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold mb-2">Can I customize the video player controls and appearance?</h3>
+                    <p className="text-muted-foreground">Yes! You can customize video player themes, colors, control layouts, and styling. Choose from multiple themes like dark mode, forest, sea, and city themes. Each player library offers different customization options for branding and user experience optimization.</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold mb-2">Is the video player generator completely free to use?</h3>
+                    <p className="text-muted-foreground">Absolutely! Our online video player generator is 100% free with no watermarks, registration requirements, or usage limits. Generate unlimited video players, download HTML files, and embed them anywhere without any restrictions or hidden costs.</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold mb-2">How do I embed the generated video player in WordPress?</h3>
+                    <p className="text-muted-foreground">To embed in WordPress, copy the HTML embed code and paste it into a Custom HTML block in the WordPress editor. Alternatively, use the iframe embed code which works universally across all WordPress themes and page builders like Elementor, Divi, and Gutenberg.</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold mb-2">What's the difference between the player libraries (Plyr, Video.js, etc.)?</h3>
+                    <p className="text-muted-foreground">Each video player library offers unique advantages: Plyr provides modern design and smooth animations, Video.js offers extensive customization and plugin support, Fluid Player includes advertising capabilities, and MediaElement.js ensures maximum browser compatibility including older versions.</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold mb-2">Are the generated video players mobile-friendly and responsive?</h3>
+                    <p className="text-muted-foreground">Yes! All generated video players are fully responsive and mobile-optimized. They automatically adapt to different screen sizes, support touch controls on mobile devices, and provide optimal viewing experiences across desktop, tablet, and smartphone platforms.</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold mb-2">Can I use the video player for commercial websites and projects?</h3>
+                    <p className="text-muted-foreground">Absolutely! The generated video players can be used for any purpose including commercial websites, business presentations, e-learning platforms, and client projects. There are no licensing restrictions or attribution requirements for commercial use.</p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="font-semibold mb-2">Do the video players work with live streaming and HLS videos?</h3>
+                    <p className="text-muted-foreground">Yes, most player libraries support live streaming protocols including HLS (HTTP Live Streaming) and DASH. This makes them perfect for live events, webinars, sports streaming, and real-time video content delivery with adaptive bitrate streaming.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* Use Cases Section */}
+          <section className="max-w-4xl mx-auto">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-2xl">Perfect For Every Video Need</CardTitle>
+                <CardDescription>
+                  Versatile video player solutions for businesses, creators, and developers
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">🎓 E-Learning Platforms</h4>
+                    <p className="text-sm text-muted-foreground">Create engaging course videos with custom branding, progress tracking, and mobile-friendly playback for online education and training platforms.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">🏢 Business Websites</h4>
+                    <p className="text-sm text-muted-foreground">Embed product demos, testimonials, and corporate videos with professional styling that matches your brand identity and website design.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">📱 Social Media Content</h4>
+                    <p className="text-sm text-muted-foreground">Optimize videos for social media embedding with custom thumbnails, autoplay settings, and mobile-first responsive design.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">🛒 E-commerce Stores</h4>
+                    <p className="text-sm text-muted-foreground">Showcase products with high-quality video players featuring custom controls, thumbnails, and seamless Shopify/WooCommerce integration.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">📰 News & Media</h4>
+                    <p className="text-sm text-muted-foreground">Deliver breaking news and media content with fast-loading, bandwidth-optimized video players and adaptive streaming support.</p>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="font-semibold">🎬 Portfolio Websites</h4>
+                    <p className="text-sm text-muted-foreground">Display creative work, showreels, and portfolio pieces with elegant video players that highlight your content professionally.</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
         </div>
       </div>
     </div>

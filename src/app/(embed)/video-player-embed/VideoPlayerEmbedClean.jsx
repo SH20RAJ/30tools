@@ -2,13 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ExternalLinkIcon, ArrowLeftIcon } from 'lucide-react';
-import Link from 'next/link';
 
-export default function VideoPlayerEmbedPage() {
+export default function VideoPlayerEmbedClean() {
   const [playerConfig, setPlayerConfig] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,7 +34,7 @@ export default function VideoPlayerEmbedPage() {
   }, [searchParams]);
 
   const initializePlayer = (config) => {
-    const playerId = 'embedded-video-player';
+    const playerId = 'clean-video-player';
     const player = config.player || 'plyr';
     
     // Remove existing scripts and styles
@@ -47,6 +42,12 @@ export default function VideoPlayerEmbedPage() {
     const existingStyles = document.querySelectorAll('link[data-player]');
     existingScripts.forEach(script => script.remove());
     existingStyles.forEach(style => style.remove());
+
+    // Remove any existing body styles
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+    document.body.style.overflow = 'hidden';
+    document.body.style.backgroundColor = config.theme === 'dark' ? '#000' : '#f0f0f0';
 
     switch (player) {
       case 'plyr':
@@ -72,6 +73,26 @@ export default function VideoPlayerEmbedPage() {
     css.setAttribute('data-player', 'plyr');
     document.head.appendChild(css);
 
+    // Add custom styles for clean embed
+    const customCss = document.createElement('style');
+    customCss.textContent = `
+      .plyr {
+        width: 100% !important;
+        height: 100vh !important;
+      }
+      .plyr__video-wrapper {
+        background: ${config.theme === 'dark' ? '#000' : '#f0f0f0'};
+      }
+      ${config.theme === 'dark' ? `
+      .plyr {
+        --plyr-color-main: #00b3ff;
+        --plyr-video-background: #000;
+        --plyr-menu-background: rgba(0, 0, 0, 0.9);
+        --plyr-menu-color: #fff;
+      }` : ''}
+    `;
+    document.head.appendChild(customCss);
+
     // Load JS
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.min.js';
@@ -89,6 +110,17 @@ export default function VideoPlayerEmbedPage() {
   };
 
   const loadFluidPlayer = (config, playerId) => {
+    // Add custom styles for clean embed
+    const customCss = document.createElement('style');
+    customCss.textContent = `
+      #${playerId} {
+        width: 100% !important;
+        height: 100vh !important;
+        object-fit: contain;
+      }
+    `;
+    document.head.appendChild(customCss);
+
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/fluid-player@3.6.0/dist/fluidplayer.min.js';
     script.setAttribute('data-player', 'fluidplayer');
@@ -124,6 +156,19 @@ export default function VideoPlayerEmbedPage() {
       document.head.appendChild(themeCss);
     }
 
+    // Add custom styles for clean embed
+    const customCss = document.createElement('style');
+    customCss.textContent = `
+      .video-js {
+        width: 100% !important;
+        height: 100vh !important;
+      }
+      .vjs-fluid {
+        padding-top: 0 !important;
+      }
+    `;
+    document.head.appendChild(customCss);
+
     // Load JS
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/video.js@8.6.1/dist/video.min.js';
@@ -135,6 +180,7 @@ export default function VideoPlayerEmbedPage() {
         loop: config.loop || false,
         controls: config.controls !== false,
         responsive: true,
+        fluid: true,
         playbackRates: [0.5, 1, 1.25, 1.5, 2]
       });
     };
@@ -148,6 +194,20 @@ export default function VideoPlayerEmbedPage() {
     css.href = 'https://cdn.jsdelivr.net/npm/mediaelement@6.0.2/build/mediaelementplayer.min.css';
     css.setAttribute('data-player', 'mediaelement');
     document.head.appendChild(css);
+
+    // Add custom styles for clean embed
+    const customCss = document.createElement('style');
+    customCss.textContent = `
+      #${playerId} {
+        width: 100% !important;
+        height: 100vh !important;
+      }
+      .mejs__container {
+        width: 100% !important;
+        height: 100vh !important;
+      }
+    `;
+    document.head.appendChild(customCss);
 
     // Load JS
     const script = document.createElement('script');
@@ -166,121 +226,103 @@ export default function VideoPlayerEmbedPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+      <div style={{ 
+        width: '100vw', 
+        height: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        backgroundColor: '#000',
+        color: '#fff',
+        fontFamily: 'Arial, sans-serif'
+      }}>
+        <div style={{ textAlign: 'center' }}>
+          <div style={{
+            border: '2px solid #fff',
+            borderTop: '2px solid transparent',
+            borderRadius: '50%',
+            width: '30px',
+            height: '30px',
+            animation: 'spin 1s linear infinite',
+            margin: '0 auto 15px'
+          }}></div>
           <p>Loading video player...</p>
         </div>
+        <style jsx>{`
+          @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+          }
+        `}</style>
       </div>
     );
   }
 
   if (error) {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <Card className="w-full max-w-md">
-          <CardHeader>
-            <CardTitle className="text-center text-red-600">Error</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center space-y-4">
-            <p>{error}</p>
-            <Link href="/video-player">
-              <Button>
-                <ArrowLeftIcon className="w-4 h-4 mr-2" />
-                Back to Video Player Generator
-              </Button>
-            </Link>
-          </CardContent>
-        </Card>
+      <div style={{ 
+        width: '100vw', 
+        height: '100vh', 
+        display: 'flex', 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        backgroundColor: '#000',
+        color: '#fff',
+        fontFamily: 'Arial, sans-serif'
+      }}>
+        <div style={{ textAlign: 'center' }}>
+          <h2 style={{ color: '#ff4444', marginBottom: '10px' }}>Error</h2>
+          <p>{error}</p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Header */}
-      <div className="border-b bg-card">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <Link href="/video-player">
-                <Button variant="ghost" size="sm">
-                  <ArrowLeftIcon className="w-4 h-4 mr-2" />
-                  Back to Generator
-                </Button>
-              </Link>
-              <div>
-                <h1 className="text-xl font-bold">{playerConfig.title || 'Video Player'}</h1>
-                <div className="flex items-center space-x-2 mt-1">
-                  <Badge variant="outline">{playerConfig.player || 'plyr'}</Badge>
-                  <Badge variant="outline">{playerConfig.theme || 'default'}</Badge>
-                </div>
-              </div>
-            </div>
-            <Link href="/video-player" target="_blank">
-              <Button size="sm">
-                <ExternalLinkIcon className="w-4 h-4 mr-2" />
-                Create Your Own
-              </Button>
-            </Link>
-          </div>
-        </div>
+    <>
+      <div style={{ 
+        width: '100vw', 
+        height: '100vh', 
+        margin: 0, 
+        padding: 0, 
+        overflow: 'hidden',
+        backgroundColor: playerConfig.theme === 'dark' ? '#000' : '#f0f0f0'
+      }}>
+        <video
+          id="clean-video-player"
+          className={`${playerConfig.player === 'videojs' ? `video-js ${playerConfig.theme !== 'default' ? `vjs-theme-${playerConfig.theme}` : ''}` : ''}`}
+          style={{ 
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain'
+          }}
+          controls={playerConfig.controls !== false}
+          autoPlay={playerConfig.autoplay || false}
+          muted={playerConfig.muted || false}
+          loop={playerConfig.loop || false}
+          poster={playerConfig.posterUrl || ''}
+          data-setup="{}"
+        >
+          <source src={playerConfig.videoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
 
-      {/* Video Player Container */}
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          {/* Video Player */}
-          <div className="mb-6">
-            <video
-              id="embedded-video-player"
-              className={`w-full ${playerConfig.theme === 'dark' ? 'bg-black' : 'bg-gray-100'}`}
-              style={{ 
-                height: playerConfig.height || '400px',
-                maxHeight: '70vh'
-              }}
-              controls={playerConfig.controls !== false}
-              autoPlay={playerConfig.autoplay || false}
-              muted={playerConfig.muted || false}
-              loop={playerConfig.loop || false}
-              poster={playerConfig.posterUrl || ''}
-              data-setup="{}"
-            >
-              <source src={playerConfig.videoUrl} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-
-          {/* Video Info */}
-          {(playerConfig.title || playerConfig.description) && (
-            <Card>
-              <CardContent className="pt-6">
-                {playerConfig.title && (
-                  <h2 className="text-2xl font-bold mb-2">{playerConfig.title}</h2>
-                )}
-                {playerConfig.description && (
-                  <p className="text-muted-foreground leading-relaxed">
-                    {playerConfig.description}
-                  </p>
-                )}
-              </CardContent>
-            </Card>
-          )}
-        </div>
-      </div>
-
-      {/* Footer */}
-      <div className="border-t bg-muted/30 mt-12">
-        <div className="container mx-auto px-4 py-6 text-center">
-          <p className="text-sm text-muted-foreground">
-            Created with{' '}
-            <Link href="/video-player" className="font-medium text-primary hover:underline">
-              Video Player Generator
-            </Link>
-            {' '}by 30tools
-          </p>
-        </div>
-      </div>
-    </div>
+      {/* Global styles for clean embed */}
+      <style jsx global>{`
+        html, body {
+          margin: 0 !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+          width: 100% !important;
+          height: 100% !important;
+        }
+        
+        #__next {
+          width: 100% !important;
+          height: 100% !important;
+        }
+      `}</style>
+    </>
   );
 }
