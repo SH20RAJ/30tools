@@ -18,9 +18,12 @@ import {
   ExternalLinkIcon,
   MonitorIcon,
   CodeIcon,
-  LinkIcon
+  LinkIcon,
+  WandIcon,
+  RefreshCwIcon
 } from 'lucide-react';
 import { toast } from 'sonner';
+import CodeBlock from '@/components/ui/code-block';
 
 export default function VideoPlayerTool() {
   const [formData, setFormData] = useState({
@@ -39,9 +42,21 @@ export default function VideoPlayerTool() {
   const [selectedPlayer, setSelectedPlayer] = useState('plyr');
   const [selectedTheme, setSelectedTheme] = useState('default');
   const [generatedCode, setGeneratedCode] = useState('');
+  const [generatedReactCode, setGeneratedReactCode] = useState('');
+  const [generatedIframeCode, setGeneratedIframeCode] = useState('');
   const [shareUrl, setShareUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const previewRef = useRef(null);
+
+  // Sample data
+  const sampleData = {
+    title: 'Big Buck Bunny',
+    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/CastVideos/mp4/BigBuckBunny.mp4',
+    posterUrl: 'https://sh20raj.github.io/Sopplayer/sample.png',
+    description: 'Big Buck Bunny is a 2008 computer-animated comedy short film featuring the adventures of a giant rabbit who bullies a trio of rodents, only to have the tables turned when the rodents fight back. This open-source 3D animated short film was created by the Blender Foundation.',
+    width: '100%',
+    height: '500px'
+  };
 
   // Load shared configuration from URL
   useEffect(() => {
@@ -105,6 +120,34 @@ export default function VideoPlayerTool() {
       cdn: 'https://cdn.jsdelivr.net/npm/mediaelement@7.0.3/build/mediaelementplayer.min.css',
       js: 'https://cdn.jsdelivr.net/npm/mediaelement@7.0.3/build/mediaelement-and-player.min.js'
     }
+  };
+
+  const fillSampleData = () => {
+    setFormData({
+      ...formData,
+      ...sampleData
+    });
+    toast.success('Sample data filled!');
+  };
+
+  const clearForm = () => {
+    setFormData({
+      title: '',
+      videoUrl: '',
+      posterUrl: '',
+      description: '',
+      width: '100%',
+      height: '400px',
+      autoplay: false,
+      controls: true,
+      muted: false,
+      loop: false
+    });
+    setGeneratedCode('');
+    setGeneratedReactCode('');
+    setGeneratedIframeCode('');
+    setShareUrl('');
+    toast.success('Form cleared!');
   };
 
   const generateEmbedCode = () => {
@@ -320,16 +363,275 @@ export default function VideoPlayerTool() {
 
     setGeneratedCode(embedCode);
     
+    // Generate React code
+    const reactCode = generateReactCode(playerId);
+    setGeneratedReactCode(reactCode);
+    
+    // Generate iframe code
+    const iframeCode = generateIframeCode();
+    setGeneratedIframeCode(iframeCode);
+    
     // Generate share URL (base64 encoded data)
     const shareData = btoa(JSON.stringify({
       ...formData,
       player: selectedPlayer,
       theme: selectedTheme
     }));
-    setShareUrl(`${window.location.origin}/video-player?data=${shareData}`);
+    setShareUrl(`${window.location.origin}/video-player-embed?data=${shareData}`);
     
     setIsLoading(false);
     toast.success('Video player generated successfully!');
+  };
+
+  const generateReactCode = (playerId) => {
+    const player = playerOptions[selectedPlayer];
+    
+    switch (selectedPlayer) {
+      case 'plyr':
+        return `import { useEffect, useRef } from 'react';
+
+const VideoPlayer = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Load Plyr CSS
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = '${player.cdn}';
+    document.head.appendChild(css);
+
+    // Load Plyr JS
+    const script = document.createElement('script');
+    script.src = '${player.js}';
+    script.onload = () => {
+      const player = new window.Plyr(videoRef.current, {
+        controls: ['play-large', 'play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'settings', 'fullscreen'],
+        settings: ['quality', 'speed'],
+        autoplay: ${formData.autoplay},
+        muted: ${formData.muted},
+        loop: { active: ${formData.loop} }
+      });
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup
+      document.querySelectorAll('link[href*="plyr"]').forEach(link => link.remove());
+      document.querySelectorAll('script[src*="plyr"]').forEach(script => script.remove());
+    };
+  }, []);
+
+  return (
+    <div style={{ width: '${formData.width}', height: '${formData.height}' }}>
+      ${formData.title ? `<h2>${formData.title}</h2>` : ''}
+      ${formData.description ? `<p>${formData.description}</p>` : ''}
+      <video
+        ref={videoRef}
+        ${formData.controls ? 'controls' : ''}
+        ${formData.autoplay ? 'autoPlay' : ''}
+        ${formData.muted ? 'muted' : ''}
+        ${formData.loop ? 'loop' : ''}
+        ${formData.posterUrl ? `poster="${formData.posterUrl}"` : ''}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <source src="${formData.videoUrl}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  );
+};
+
+export default VideoPlayer;`;
+
+      case 'fluidplayer':
+        return `import { useEffect, useRef } from 'react';
+
+const VideoPlayer = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = '${player.js}';
+    script.onload = () => {
+      window.fluidPlayer(videoRef.current, {
+        layoutControls: {
+          autoPlay: ${formData.autoplay},
+          mute: ${formData.muted},
+          loop: ${formData.loop},
+          allowTheatre: true,
+          playbackRates: [0.5, 1, 1.5, 2],
+          primaryColor: '${selectedTheme === 'dark' ? '#ffffff' : '#007cba'}'
+        }
+      });
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      document.querySelectorAll('script[src*="fluidplayer"]').forEach(s => s.remove());
+    };
+  }, []);
+
+  return (
+    <div style={{ width: '${formData.width}', height: '${formData.height}' }}>
+      ${formData.title ? `<h2>${formData.title}</h2>` : ''}
+      ${formData.description ? `<p>${formData.description}</p>` : ''}
+      <video
+        ref={videoRef}
+        ${formData.controls ? 'controls' : ''}
+        ${formData.autoplay ? 'autoPlay' : ''}
+        ${formData.muted ? 'muted' : ''}
+        ${formData.loop ? 'loop' : ''}
+        ${formData.posterUrl ? `poster="${formData.posterUrl}"` : ''}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <source src="${formData.videoUrl}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  );
+};
+
+export default VideoPlayer;`;
+
+      case 'videojs':
+        return `import { useEffect, useRef } from 'react';
+
+const VideoPlayer = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Load Video.js CSS
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = '${player.cdn}';
+    document.head.appendChild(css);
+
+    ${selectedTheme !== 'default' ? `
+    // Load theme CSS
+    const themeCss = document.createElement('link');
+    themeCss.rel = 'stylesheet';
+    themeCss.href = 'https://cdn.jsdelivr.net/npm/videojs-themes@1.0.1/dist/video-js-${selectedTheme}.css';
+    document.head.appendChild(themeCss);` : ''}
+
+    // Load Video.js JS
+    const script = document.createElement('script');
+    script.src = '${player.js}';
+    script.onload = () => {
+      const player = window.videojs(videoRef.current, {
+        autoplay: ${formData.autoplay},
+        muted: ${formData.muted},
+        loop: ${formData.loop},
+        controls: ${formData.controls},
+        responsive: true,
+        playbackRates: [0.5, 1, 1.25, 1.5, 2]
+      });
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      document.querySelectorAll('link[href*="video-js"]').forEach(link => link.remove());
+      document.querySelectorAll('script[src*="video.js"]').forEach(script => script.remove());
+    };
+  }, []);
+
+  return (
+    <div style={{ width: '${formData.width}', height: '${formData.height}' }}>
+      ${formData.title ? `<h2>${formData.title}</h2>` : ''}
+      ${formData.description ? `<p>${formData.description}</p>` : ''}
+      <video
+        ref={videoRef}
+        className="video-js ${selectedTheme !== 'default' ? `vjs-theme-${selectedTheme}` : ''}"
+        ${formData.controls ? 'controls' : ''}
+        ${formData.autoplay ? 'autoPlay' : ''}
+        ${formData.muted ? 'muted' : ''}
+        ${formData.loop ? 'loop' : ''}
+        ${formData.posterUrl ? `poster="${formData.posterUrl}"` : ''}
+        data-setup="{}"
+        style={{ width: '100%', height: '100%' }}
+      >
+        <source src="${formData.videoUrl}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  );
+};
+
+export default VideoPlayer;`;
+
+      case 'mediaelements':
+        return `import { useEffect, useRef } from 'react';
+
+const VideoPlayer = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    // Load MediaElement CSS
+    const css = document.createElement('link');
+    css.rel = 'stylesheet';
+    css.href = '${player.cdn}';
+    document.head.appendChild(css);
+
+    // Load MediaElement JS
+    const script = document.createElement('script');
+    script.src = '${player.js}';
+    script.onload = () => {
+      new window.MediaElementPlayer(videoRef.current, {
+        features: ['playpause', 'progress', 'current', 'duration', 'volume', 'fullscreen'],
+        autoplay: ${formData.autoplay},
+        loop: ${formData.loop},
+        muted: ${formData.muted}
+      });
+    };
+    document.head.appendChild(script);
+
+    return () => {
+      document.querySelectorAll('link[href*="mediaelement"]').forEach(link => link.remove());
+      document.querySelectorAll('script[src*="mediaelement"]').forEach(script => script.remove());
+    };
+  }, []);
+
+  return (
+    <div style={{ width: '${formData.width}', height: '${formData.height}' }}>
+      ${formData.title ? `<h2>${formData.title}</h2>` : ''}
+      ${formData.description ? `<p>${formData.description}</p>` : ''}
+      <video
+        ref={videoRef}
+        ${formData.controls ? 'controls' : ''}
+        ${formData.autoplay ? 'autoPlay' : ''}
+        ${formData.muted ? 'muted' : ''}
+        ${formData.loop ? 'loop' : ''}
+        ${formData.posterUrl ? `poster="${formData.posterUrl}"` : ''}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <source src="${formData.videoUrl}" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  );
+};
+
+export default VideoPlayer;`;
+
+      default:
+        return '';
+    }
+  };
+
+  const generateIframeCode = () => {
+    const shareData = btoa(JSON.stringify({
+      ...formData,
+      player: selectedPlayer,
+      theme: selectedTheme
+    }));
+    
+    return `<iframe 
+  src="${window.location.origin}/video-player-embed?data=${shareData}" 
+  width="${formData.width}" 
+  height="${formData.height}"
+  style="border: none; border-radius: 8px;"
+  allowfullscreen
+  title="${formData.title || 'Video Player'}"
+></iframe>`;
   };
 
   const copyToClipboard = async (text, type) => {
@@ -395,6 +697,28 @@ export default function VideoPlayerTool() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
+                {/* Quick Actions */}
+                <div className="flex flex-wrap gap-2 pb-4 border-b">
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={fillSampleData}
+                    className="flex items-center"
+                  >
+                    <WandIcon className="w-4 h-4 mr-2" />
+                    Fill Sample Data
+                  </Button>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={clearForm}
+                    className="flex items-center"
+                  >
+                    <RefreshCwIcon className="w-4 h-4 mr-2" />
+                    Clear Form
+                  </Button>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="title">Video Title</Label>
@@ -607,92 +931,112 @@ export default function VideoPlayerTool() {
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <Tabs defaultValue="embed" className="w-full">
-                      <TabsList className="grid w-full grid-cols-3">
-                        <TabsTrigger value="embed">Embed Code</TabsTrigger>
-                        <TabsTrigger value="share">Share Link</TabsTrigger>
-                        <TabsTrigger value="actions">Actions</TabsTrigger>
+                    <Tabs defaultValue="html" className="w-full">
+                      <TabsList className="grid w-full grid-cols-4">
+                        <TabsTrigger value="html">HTML</TabsTrigger>
+                        <TabsTrigger value="react">React</TabsTrigger>
+                        <TabsTrigger value="iframe">Iframe</TabsTrigger>
+                        <TabsTrigger value="share">Share</TabsTrigger>
                       </TabsList>
                       
-                      <TabsContent value="embed" className="space-y-2">
+                      <TabsContent value="html" className="space-y-4">
                         <div className="flex items-center justify-between">
                           <Label>HTML Embed Code</Label>
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => copyToClipboard(generatedCode, 'Embed code')}
+                            onClick={() => copyToClipboard(generatedCode, 'HTML code')}
                           >
                             <CopyIcon className="h-4 w-4 mr-2" />
                             Copy
                           </Button>
                         </div>
-                        <Textarea
-                          value={generatedCode}
-                          readOnly
-                          rows={8}
-                          className="font-mono text-xs"
-                        />
+                        <CodeBlock code={generatedCode} language="html" />
                       </TabsContent>
-                      
-                      <TabsContent value="share" className="space-y-2">
+
+                      <TabsContent value="react" className="space-y-4">
                         <div className="flex items-center justify-between">
-                          <Label>Shareable Link</Label>
+                          <Label>React Component</Label>
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => copyToClipboard(shareUrl, 'Share link')}
+                            onClick={() => copyToClipboard(generatedReactCode, 'React code')}
                           >
                             <CopyIcon className="h-4 w-4 mr-2" />
                             Copy
                           </Button>
                         </div>
-                        <Input
-                          value={shareUrl}
-                          readOnly
-                          className="font-mono"
-                        />
-                        <p className="text-sm text-muted-foreground">
-                          Share this link to let others use your video player configuration
-                        </p>
+                        <CodeBlock code={generatedReactCode} language="jsx" />
+                      </TabsContent>
+
+                      <TabsContent value="iframe" className="space-y-4">
+                        <div className="flex items-center justify-between">
+                          <Label>Iframe Embed Code</Label>
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => copyToClipboard(generatedIframeCode, 'Iframe code')}
+                          >
+                            <CopyIcon className="h-4 w-4 mr-2" />
+                            Copy
+                          </Button>
+                        </div>
+                        <CodeBlock code={generatedIframeCode} language="html" />
+                        <div className="text-sm text-muted-foreground">
+                          <p>Use this iframe to embed the video player in any website. The player will be hosted on our servers.</p>
+                        </div>
                       </TabsContent>
                       
-                      <TabsContent value="actions" className="space-y-4">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <Button
-                            variant="outline"
-                            onClick={downloadHTML}
-                            className="w-full"
-                          >
-                            <DownloadIcon className="h-4 w-4 mr-2" />
-                            Download HTML
-                          </Button>
-                          
-                          <Button
-                            variant="outline"
-                            onClick={() => copyToClipboard(shareUrl, 'Share link')}
-                            className="w-full"
-                          >
-                            <ShareIcon className="h-4 w-4 mr-2" />
-                            Share Link
-                          </Button>
-                          
-                          <Button
-                            variant="outline"
-                            onClick={() => copyToClipboard(generatedCode, 'Embed code')}
-                            className="w-full"
-                          >
-                            <CodeIcon className="h-4 w-4 mr-2" />
-                            Copy Embed
-                          </Button>
-                          
-                          <Button
-                            variant="outline"
-                            onClick={openFullscreen}
-                            className="w-full"
-                          >
-                            <ExternalLinkIcon className="h-4 w-4 mr-2" />
-                            Open Fullscreen
-                          </Button>
+                      <TabsContent value="share" className="space-y-4">
+                        <div className="space-y-4">
+                          <div>
+                            <div className="flex items-center justify-between mb-2">
+                              <Label>Shareable Link</Label>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => copyToClipboard(shareUrl, 'Share link')}
+                              >
+                                <CopyIcon className="h-4 w-4 mr-2" />
+                                Copy
+                              </Button>
+                            </div>
+                            <Input
+                              value={shareUrl}
+                              readOnly
+                              className="font-mono text-xs"
+                            />
+                            <p className="text-sm text-muted-foreground mt-1">
+                              Share this link to let others view your video player
+                            </p>
+                          </div>
+
+                          <div className="flex flex-wrap gap-2">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={downloadHTML}
+                            >
+                              <DownloadIcon className="h-4 w-4 mr-2" />
+                              Download HTML
+                            </Button>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={openFullscreen}
+                            >
+                              <ExternalLinkIcon className="h-4 w-4 mr-2" />
+                              Open Fullscreen
+                            </Button>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => shareUrl && window.open(shareUrl, '_blank')}
+                            >
+                              <MonitorIcon className="h-4 w-4 mr-2" />
+                              Preview
+                            </Button>
+                          </div>
                         </div>
                       </TabsContent>
                     </Tabs>
