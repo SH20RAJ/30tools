@@ -498,6 +498,29 @@
                     ],
                     "primaryKeyword": "video player generator",
                     "features": ["Multiple player libraries", "Custom themes", "Embed codes", "Fullscreen support", "Share links"]
+                },
+                {
+                    "id": "terabox-downloader",
+                    "name": "Terabox Video Downloader",
+                    "description": "Download Terabox videos with direct links and embed custom video players",
+                    "route": "/terabox-downloader",
+                    "popular": true,
+                    "category": "video",
+                    "keywords": ["terabox downloader", "download terabox videos", "terabox video player", "terabox online downloader"],
+                    "longTailKeywords": [
+                        "terabox video downloader free",
+                        "how to download videos from terabox",
+                        "terabox downloader without login",
+                        "download terabox movies free",
+                        "terabox direct download link",
+                        "terabox video downloader no limit",
+                        "embed terabox videos website",
+                        "terabox player generator",
+                        "terabox video streaming online",
+                        "download large files from terabox"
+                    ],
+                    "primaryKeyword": "terabox video downloader",
+                    "features": ["Free downloads", "Multiple mirrors", "Custom players", "Direct links", "No limits"]
                 }
             ]
         },
