@@ -152,7 +152,7 @@ export default function TeraboxPlayerTool() {
       const iframeCode = generateIframeCode(
         videoResult.data.download_links.url_2, 
         videoResult.data.name || ogResult?.title || 'Terabox Video', 
-        videoResult.data.image || ogResult?.image
+        ogResult?.image || videoResult.data.image 
       );
       setGeneratedIframeCode(iframeCode);
 
@@ -163,7 +163,7 @@ export default function TeraboxPlayerTool() {
         theme: selectedTheme,
         videoUrl: videoResult.data.download_links.url_2,
         title: videoResult.data.name || ogResult?.title || 'Terabox Video',
-        posterUrl: videoResult.data.image || ogResult?.image
+        posterUrl: ogResult?.image || videoResult.data.image 
       }));
       const baseUrl = window.location.origin;
       setShareUrl(`${baseUrl}/video-player-embed?data=${shareData}`);
