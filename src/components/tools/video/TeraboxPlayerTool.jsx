@@ -153,7 +153,7 @@ export default function TeraboxPlayerTool() {
       const iframeCode = generateIframeCode(
         videoResult.data.download_links.url_2, 
         videoResult.data.name || ogResult?.title || 'Terabox Video', 
-        ogResult?.image || videoResult.data.image 
+        ogResult?.image || videoResult.data.image || "https://i.ytimg.com/vi/YE7VzlLtp-4/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgWyhSMA8=&rs=AOn4CLALTULKYCt9cwfRuXwjVGBsTElH1w"
       );
       setGeneratedIframeCode(iframeCode);
 
@@ -164,7 +164,7 @@ export default function TeraboxPlayerTool() {
         theme: selectedTheme,
         videoUrl: videoResult.data.download_links.url_2,
         title: videoResult.data.name || ogResult?.title || 'Terabox Video',
-        posterUrl: ogResult?.image || videoResult.data.image 
+        posterUrl: ogResult?.image || videoResult.data.image  || 'https://i.ytimg.com/vi/YE7VzlLtp-4/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgWyhSMA8=&rs=AOn4CLALTULKYCt9cwfRuXwjVGBsTElH1w'
       }));
       const baseUrl = window.location.origin;
       setShareUrl(`${baseUrl}/video-player-embed?data=${shareData}`);
