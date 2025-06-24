@@ -406,8 +406,77 @@ export default function VideoPlayerTool() {
       return;
     }
 
-    // Create a complete HTML page with the iframe
-    const htmlContent = `<!DOCTYPE html>
+    // Generate complete standalone HTML with the actual player
+    const playerId = `video-player-${Date.now()}`;
+    const player = playerOptions[selectedPlayer];
+    let fullscreenHtml = '';
+
+    switch (selectedPlayer) {
+      case 'plyr':
+        fullscreenHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${formData.title || 'Video Player'}</title>
+    <link rel="stylesheet" href="${player.cdn}" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .player-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .plyr {
+            width: 100%;
+            height: 100%;
+        }
+        ${selectedTheme === 'dark' ? `
+        .plyr {
+            --plyr-color-main: #00b3ff;
+            --plyr-video-background: #000;
+            --plyr-menu-background: rgba(0, 0, 0, 0.9);
+            --plyr-menu-color: #fff;
+        }` : ''}
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <video id="${playerId}" 
+               ${formData.controls ? 'controls' : ''}
+               ${formData.autoplay ? 'autoplay' : ''}
+               ${formData.muted ? 'muted' : ''}
+               ${formData.loop ? 'loop' : ''}
+               ${formData.posterUrl ? `poster="${formData.posterUrl}"` : ''}>
+            <source src="${formData.videoUrl}" type="video/mp4" />
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <script src="${player.js}"></script>
+    <script>
+        const player = new Plyr('#${playerId}', {
+            controls: ['play-large', 'play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'settings', 'fullscreen'],
+            settings: ['quality', 'speed'],
+            autoplay: ${formData.autoplay},
+            muted: ${formData.muted},
+            loop: { active: ${formData.loop} }
+        });
+    </script>
+</body>
+</html>`;
+        break;
+
+      case 'fluidplayer':
+        fullscreenHtml = `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -416,39 +485,170 @@ export default function VideoPlayerTool() {
     <style>
         body {
             margin: 0;
-            padding: 20px;
+            padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #000;
+            overflow: hidden;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .player-container {
+            width: 100vw;
+            height: 100vh;
         }
-        h1 {
-            color: #333;
-            margin-bottom: 20px;
+        .fluid-video-wrapper {
+            width: 100%;
+            height: 100%;
         }
-        .video-container {
-            margin: 20px 0;
+        ${selectedTheme === 'dark' ? `
+        .fp_player_container {
+            background: #000 !important;
+        }` : ''}
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <video id="${playerId}" 
+               ${formData.controls ? 'controls' : ''}
+               ${formData.autoplay ? 'autoplay' : ''}
+               ${formData.muted ? 'muted' : ''}
+               ${formData.loop ? 'loop' : ''}
+               ${formData.posterUrl ? `poster="${formData.posterUrl}"` : ''}>
+            <source src="${formData.videoUrl}" type="video/mp4" />
+        </video>
+    </div>
+    
+    <script src="${player.js}"></script>
+    <script>
+        fluidPlayer('${playerId}', {
+            layoutControls: {
+                primaryColor: "${selectedTheme === 'dark' ? '#ffffff' : '#333333'}",
+                fillToContainer: true,
+                autoplay: ${formData.autoplay},
+                mute: ${formData.muted},
+                loop: ${formData.loop}
+            }
+        });
+    </script>
+</body>
+</html>`;
+        break;
+
+      case 'videojs':
+        const themeClass = selectedTheme !== 'default' ? `vjs-theme-${selectedTheme}` : '';
+        fullscreenHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${formData.title || 'Video Player'}</title>
+    <link rel="stylesheet" href="${player.cdn}" />
+    ${selectedTheme !== 'default' ? `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@videojs/themes@1.0.1/dist/${selectedTheme}/index.css" />` : ''}
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .player-container {
+            width: 100vw;
+            height: 100vh;
+        }
+        .video-js {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        ${formData.title ? `<h1>${formData.title}</h1>` : ''}
-        ${formData.description ? `<p>${formData.description}</p>` : ''}
-        <div class="video-container">
-            ${generatedIframeCode}
-        </div>
+    <div class="player-container">
+        <video id="${playerId}" 
+               class="video-js ${themeClass}"
+               ${formData.controls ? 'controls' : ''}
+               ${formData.autoplay ? 'autoplay' : ''}
+               ${formData.muted ? 'muted' : ''}
+               ${formData.loop ? 'loop' : ''}
+               ${formData.posterUrl ? `poster="${formData.posterUrl}"` : ''}
+               data-setup="{}">
+            <source src="${formData.videoUrl}" type="video/mp4" />
+        </video>
     </div>
+    
+    <script src="${player.js}"></script>
+    <script>
+        var player = videojs('${playerId}', {
+            fluid: true,
+            responsive: true,
+            fill: true,
+            autoplay: ${formData.autoplay},
+            muted: ${formData.muted},
+            loop: ${formData.loop}
+        });
+    </script>
 </body>
 </html>`;
+        break;
 
-    const blob = new Blob([htmlContent], { type: 'text/html' });
+      case 'mediaelements':
+        fullscreenHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${formData.title || 'Video Player'}</title>
+    <link rel="stylesheet" href="${player.cdn}" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .player-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mejs__container {
+            width: 100%;
+            height: 100%;
+        }
+        ${selectedTheme === 'wmp' ? `
+        .mejs__container .mejs__controls {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+        }` : ''}
+    </style>
+</head>
+<body>
+    <div class="player-container">
+        <video id="${playerId}" 
+               ${formData.controls ? 'controls' : ''}
+               ${formData.autoplay ? 'autoplay' : ''}
+               ${formData.muted ? 'muted' : ''}
+               ${formData.loop ? 'loop' : ''}
+               ${formData.posterUrl ? `poster="${formData.posterUrl}"` : ''}>
+            <source src="${formData.videoUrl}" type="video/mp4" />
+        </video>
+    </div>
+    
+    <script src="${player.js}"></script>
+    <script>
+        new MediaElementPlayer('#${playerId}', {
+            features: ['playpause', 'progress', 'current', 'duration', 'volume', 'fullscreen'],
+            autoplay: ${formData.autoplay},
+            loop: ${formData.loop},
+            muted: ${formData.muted}
+        });
+    </script>
+</body>
+</html>`;
+        break;
+    }
+
+    const blob = new Blob([fullscreenHtml], { type: 'text/html' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -457,7 +657,7 @@ export default function VideoPlayerTool() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    toast.success('HTML file downloaded!');
+    toast.success('Fullscreen HTML file downloaded!');
   };
 
   const getCleanEmbedUrl = () => {
