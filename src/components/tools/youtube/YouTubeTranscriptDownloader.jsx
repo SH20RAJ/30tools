@@ -41,11 +41,34 @@ export default function YouTubeTranscriptDownloader() {
   };
 
   const handleDownload = (content, filename, format) => {
-    const blob = new Blob([content], { type: 'text/plain' });
+    let mimeType = 'text/plain';
+    let fileExtension = '.txt';
+    
+    switch (format) {
+      case 'srt':
+        mimeType = 'text/srt';
+        fileExtension = '.srt';
+        break;
+      case 'vtt':
+        mimeType = 'text/vtt';
+        fileExtension = '.vtt';
+        break;
+      case 'json':
+        mimeType = 'application/json';
+        fileExtension = '.json';
+        break;
+      case 'txt':
+      default:
+        mimeType = 'text/plain';
+        fileExtension = '.txt';
+        break;
+    }
+    
+    const blob = new Blob([content], { type: mimeType });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = filename;
+    link.download = `${filename}${fileExtension}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -55,41 +78,6 @@ export default function YouTubeTranscriptDownloader() {
   const handleCopy = (content) => {
     navigator.clipboard.writeText(content);
     // You could add a toast notification here
-  };
-
-  const formatSRT = (transcript) => {
-    if (!transcript.segments) return transcript.text;
-    
-    return transcript.segments.map((segment, index) => {
-      const startTime = formatTime(segment.start);
-      const endTime = formatTime(segment.end);
-      return `${index + 1}\n${startTime} --> ${endTime}\n${segment.text}\n`;
-    }).join('\n');
-  };
-
-  const formatVTT = (transcript) => {
-    if (!transcript.segments) return `WEBVTT\n\n${transcript.text}`;
-    
-    const vttContent = transcript.segments.map(segment => {
-      const startTime = formatTime(segment.start, true);
-      const endTime = formatTime(segment.end, true);
-      return `${startTime} --> ${endTime}\n${segment.text}\n`;
-    }).join('\n');
-    
-    return `WEBVTT\n\n${vttContent}`;
-  };
-
-  const formatTime = (seconds, isVTT = false) => {
-    const hours = Math.floor(seconds / 3600);
-    const minutes = Math.floor((seconds % 3600) / 60);
-    const secs = Math.floor(seconds % 60);
-    const ms = Math.floor((seconds % 1) * 1000);
-    
-    if (isVTT) {
-      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${ms.toString().padStart(3, '0')}`;
-    } else {
-      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')},${ms.toString().padStart(3, '0')}`;
-    }
   };
 
   return (

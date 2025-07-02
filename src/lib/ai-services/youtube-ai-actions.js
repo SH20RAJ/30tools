@@ -230,6 +230,68 @@ Format as: TIME - TITLE - DESCRIPTION`;
   }
 }
 
+// AI-powered YouTube tag generation
+export async function generateYouTubeTagsAI(query) {
+  try {
+    if (!query.trim()) {
+      return { error: 'Please provide a video topic or keyword' };
+    }
+
+    const systemPrompt = `You are an expert YouTube SEO specialist and content strategist. Generate highly optimized YouTube tags that maximize discoverability, ranking, and engagement. Focus on trending keywords, search volume, and competition analysis.`;
+
+    const prompt = `Generate 15-20 optimized YouTube tags for this video topic: "${query}"
+
+Requirements:
+1. **Primary Keywords:** Include the main keyword and its variations
+2. **Long-tail Keywords:** Add specific, low-competition phrases
+3. **Trending Terms:** Include currently popular related keywords
+4. **Niche-specific Tags:** Add tags specific to the content category
+5. **Broader Categories:** Include general category tags for wider reach
+6. **SEO Optimization:** Focus on tags that improve search ranking
+
+Guidelines:
+- Mix of broad and specific tags
+- Include trending keywords in the niche
+- Use tags that real viewers would search for
+- Avoid overly generic tags
+- Focus on discoverability and relevance
+
+Format your response as a simple comma-separated list of tags only. Example:
+web development, learn coding, javascript tutorial, programming for beginners, coding tips
+
+Provide only the tags, no explanations or additional text:`;
+
+    const result = await generateText(prompt, systemPrompt, {
+      temperature: 0.7,
+      maxTokens: 800
+    });
+
+    if (result.success) {
+      // Parse the tags from the AI response
+      const tagsText = result.content.trim();
+      const tags = tagsText
+        .split(',')
+        .map(tag => tag.trim())
+        .filter(tag => tag.length > 0 && tag.length <= 50) // YouTube tag length limit
+        .slice(0, 20); // Limit to 20 tags
+
+      return {
+        success: true,
+        data: {
+          tags,
+          query: query.trim(),
+          total: tags.length,
+          aiModel: result.model
+        }
+      };
+    } else {
+      return await handleAIError(result.error, 'Failed to generate YouTube tags');
+    }
+  } catch (error) {
+    return await handleAIError(error, 'YouTube tag generation failed');
+  }
+}
+
 // Helper function to parse video ideas from AI response
 function parseVideoIdeas(content) {
   const ideas = [];

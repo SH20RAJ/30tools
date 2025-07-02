@@ -264,65 +264,158 @@ export async function downloadYouTubeShorts(url) {
 
 // Server action for YouTube Transcript Downloader
 export async function downloadYouTubeTranscript(url, language = 'en') {
+  return await downloadYouTubeTranscriptTactiq(url, language);
+}
+
+// Server action to download YouTube transcript using Tactiq API
+export async function downloadYouTubeTranscriptTactiq(url, langCode = 'en') {
   try {
+    if (!url) {
+      return { error: 'Please provide a YouTube URL' };
+    }
+
+    // Validate YouTube URL
     const videoIdResult = await extractYouTubeVideoId(url);
     if (!videoIdResult.success) {
-      return { success: false, error: videoIdResult.error };
+      return { error: 'Invalid YouTube URL. Please check the URL and try again.' };
     }
 
-    const metadata = await getYouTubeVideoMetadata(videoIdResult.videoId);
-    if (!metadata.success) {
-      return { success: false, error: metadata.error };
+    // Call Tactiq API
+    const response = await fetch('https://tactiq-apps-prod.tactiq.io/transcript', {
+      method: 'POST',
+      headers: {
+        'accept': '*/*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        'origin': 'https://tactiq.io',
+        'referer': 'https://tactiq.io/',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
+      },
+      body: JSON.stringify({
+        videoUrl: url,
+        langCode: langCode
+      })
+    });
+
+    if (!response.ok) {
+      throw new Error(`API request failed: ${response.status}`);
     }
 
-    // Generate thumbnail for preview
-    const thumbnailUrls = await generateThumbnailUrls(videoIdResult.videoId);
-    const thumbnail = thumbnailUrls.success ? thumbnailUrls.thumbnails[2].url : null;
+    const data = await response.json();
 
-    // Simulate transcript data (in real implementation, you'd extract actual captions)
-    const sampleTranscript = `Welcome to this amazing video tutorial. In this video, we'll be covering some incredible topics that will help you learn and grow. 
+    if (!data.captions || data.captions.length === 0) {
+      return { 
+        error: 'No transcript found for this video. The video may not have captions or they may not be available in the selected language.' 
+      };
+    }
 
-First, we'll start with the basics and gradually move to more advanced concepts. This comprehensive guide will take you through each step carefully.
-
-Remember to like and subscribe if you find this content helpful. Your support means the world to us and helps us create more valuable content.
-
-Don't forget to hit the notification bell to stay updated with our latest videos. We upload new content regularly to keep you informed and entertained.`;
-
-    const segments = [
-      { start: 0, end: 5.5, text: "Welcome to this amazing video tutorial." },
-      { start: 5.5, end: 12.3, text: "In this video, we'll be covering some incredible topics that will help you learn and grow." },
-      { start: 12.3, end: 18.7, text: "First, we'll start with the basics and gradually move to more advanced concepts." },
-      { start: 18.7, end: 24.2, text: "This comprehensive guide will take you through each step carefully." },
-      { start: 24.2, end: 30.8, text: "Remember to like and subscribe if you find this content helpful." },
-      { start: 30.8, end: 36.5, text: "Your support means the world to us and helps us create more valuable content." },
-      { start: 36.5, end: 43.2, text: "Don't forget to hit the notification bell to stay updated with our latest videos." },
-      { start: 43.2, end: 48.9, text: "We upload new content regularly to keep you informed and entertained." }
-    ];
-
-    const transcriptData = {
-      videoId: videoIdResult.videoId,
-      title: metadata.title,
-      channelName: metadata.channelName,
-      thumbnail: thumbnail,
-      duration: '48:54',
-      language: language || 'English',
-      wordCount: sampleTranscript.split(' ').length,
-      text: sampleTranscript,
-      segments: segments,
-      availableLanguages: ['en', 'es', 'fr', 'de', 'it', 'pt', 'ru', 'ja', 'ko', 'zh']
-    };
+    // Process the transcript data
+    const processedTranscript = processTranscriptData(data);
 
     return {
       success: true,
-      data: transcriptData
+      data: processedTranscript
     };
+
   } catch (error) {
-    console.error('Error extracting YouTube transcript:', error);
-    return {
-      success: false,
-      error: 'Failed to extract transcript from YouTube video. Make sure the video has captions available.'
+    console.error('Error downloading transcript:', error);
+    return { 
+      error: error.message.includes('API request failed') 
+        ? 'Failed to fetch transcript from the API. Please try again later.'
+        : 'Failed to download transcript. Please check the video URL and try again.' 
     };
   }
+}
+
+// Helper function to process and format transcript data
+function processTranscriptData(tactiqData) {
+  const { title, captions } = tactiqData;
+  
+  // Convert Tactiq format to our standard format
+  const segments = captions.map(caption => ({
+    start: parseFloat(caption.start),
+    end: parseFloat(caption.start) + parseFloat(caption.dur),
+    dur: parseFloat(caption.dur),
+    text: caption.text.trim()
+  }));
+
+  // Create plain text version
+  const plainText = segments.map(segment => segment.text).join(' ');
+
+  // Create timestamped text
+  const timestampedText = segments.map(segment => {
+    const startTime = formatTimestamp(segment.start);
+    return `[${startTime}] ${segment.text}`;
+  }).join('\n');
+
+  // Create SRT format
+  const srtContent = segments.map((segment, index) => {
+    const startTime = formatSRTTime(segment.start);
+    const endTime = formatSRTTime(segment.end);
+    return `${index + 1}\n${startTime} --> ${endTime}\n${segment.text}\n`;
+  }).join('\n');
+
+  // Create VTT format
+  const vttContent = `WEBVTT\n\n` + segments.map(segment => {
+    const startTime = formatVTTTime(segment.start);
+    const endTime = formatVTTTime(segment.end);
+    return `${startTime} --> ${endTime}\n${segment.text}\n`;
+  }).join('\n');
+
+  // Create JSON format
+  const jsonContent = JSON.stringify({
+    title: title || 'YouTube Video Transcript',
+    language: 'auto-detected',
+    segments: segments,
+    totalDuration: segments.length > 0 ? segments[segments.length - 1].end : 0,
+    wordCount: plainText.split(' ').length
+  }, null, 2);
+
+  return {
+    title: title || 'YouTube Video Transcript',
+    language: 'auto-detected',
+    segments: segments,
+    plainText: plainText,
+    timestampedText: timestampedText,
+    srtContent: srtContent,
+    vttContent: vttContent,
+    jsonContent: jsonContent,
+    wordCount: plainText.split(' ').length,
+    duration: segments.length > 0 ? segments[segments.length - 1].end : 0,
+    segmentCount: segments.length
+  };
+}
+
+// Helper function to format timestamp for display
+function formatTimestamp(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+  
+  if (hours > 0) {
+    return `${hours}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
+  return `${minutes}:${secs.toString().padStart(2, '0')}`;
+}
+
+// Helper function to format time for SRT
+function formatSRTTime(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+  const ms = Math.floor((seconds % 1) * 1000);
+  
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')},${ms.toString().padStart(3, '0')}`;
+}
+
+// Helper function to format time for VTT
+function formatVTTTime(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+  const ms = Math.floor((seconds % 1) * 1000);
+  
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${ms.toString().padStart(3, '0')}`;
 }
 
 // Server action to generate YouTube timestamps
