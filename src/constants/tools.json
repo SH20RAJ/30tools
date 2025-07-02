@@ -3,7 +3,7 @@
         "version": "8.5",
         "lastUpdated": "2025-06-23",
         "totalTools": 137,
-        "totalCategories": 12
+        "totalCategories": 13
     },
     "categories": {
         "image": {
@@ -521,6 +521,230 @@
                     ],
                     "primaryKeyword": "terabox video downloader",
                     "features": ["Free downloads", "Multiple mirrors", "Custom players", "Direct links", "No limits"]
+                }
+            ]
+        },
+        "youtube": {
+            "name": "YouTube Tools",
+            "slug": "youtube-tools", 
+            "icon": "YoutubeIcon",
+            "description": "Download, optimize, and create content for YouTube",
+            "tools": [
+                {
+                    "id": "youtube-thumbnail-downloader",
+                    "name": "YouTube Thumbnail Downloader",
+                    "description": "Download YouTube video thumbnails in HD, FHD, and 4K quality",
+                    "route": "/youtube-thumbnail-downloader",
+                    "popular": true,
+                    "category": "youtube",
+                    "keywords": ["youtube thumbnail", "download thumbnail", "youtube image", "video thumbnail"],
+                    "longTailKeywords": [
+                        "download youtube thumbnail hd",
+                        "youtube thumbnail downloader online free",
+                        "get youtube video thumbnail image",
+                        "youtube thumbnail extractor",
+                        "download youtube thumbnail 4k quality"
+                    ],
+                    "primaryKeyword": "youtube thumbnail downloader",
+                    "features": ["HD/FHD/4K quality", "Bulk download", "All formats", "No watermark", "Fast downloads"]
+                },
+                {
+                    "id": "youtube-downloader",
+                    "name": "YouTube Video/Audio Downloader", 
+                    "description": "Download YouTube videos and audio in multiple formats and qualities",
+                    "route": "/youtube-downloader",
+                    "popular": true,
+                    "category": "youtube",
+                    "keywords": ["youtube downloader", "download youtube video", "youtube to mp3", "youtube to mp4"],
+                    "longTailKeywords": [
+                        "download youtube video online free",
+                        "youtube to mp3 converter high quality",
+                        "youtube video downloader 1080p",
+                        "download youtube audio only",
+                        "youtube downloader no software needed"
+                    ],
+                    "primaryKeyword": "youtube video downloader",
+                    "features": ["Multiple formats", "HD quality", "Audio extraction", "Batch download", "No registration"]
+                },
+                {
+                    "id": "youtube-tag-generator",
+                    "name": "YouTube Tag Generator",
+                    "description": "Generate optimized YouTube tags to boost video SEO and discoverability",
+                    "route": "/youtube-tag-generator",
+                    "popular": true,
+                    "category": "youtube",
+                    "keywords": ["youtube tags", "video tags", "youtube seo", "tag generator"],
+                    "longTailKeywords": [
+                        "youtube tag generator for more views",
+                        "best youtube tags for viral videos",
+                        "youtube hashtag generator free",
+                        "video tag optimizer for youtube",
+                        "youtube tag research tool"
+                    ],
+                    "primaryKeyword": "youtube tag generator",
+                    "features": ["SEO optimized", "Trending tags", "Bulk generation", "Competitor analysis", "Category specific"]
+                },
+                {
+                    "id": "youtube-transcript-downloader",
+                    "name": "YouTube Transcript/Subtitle Downloader",
+                    "description": "Download YouTube video transcripts and subtitles in multiple formats",
+                    "route": "/youtube-transcript-downloader",
+                    "popular": true,
+                    "category": "youtube",
+                    "keywords": ["youtube transcript", "youtube subtitles", "download captions", "youtube srt"],
+                    "longTailKeywords": [
+                        "download youtube transcript free",
+                        "youtube subtitle downloader srt",
+                        "extract text from youtube video",
+                        "youtube caption downloader",
+                        "convert youtube to text transcript"
+                    ],
+                    "primaryKeyword": "youtube transcript downloader",
+                    "features": ["Multiple languages", "SRT/VTT formats", "Auto-generated captions", "Timestamped", "Bulk processing"]
+                },
+                {
+                    "id": "youtube-shorts-downloader", 
+                    "name": "YouTube Shorts Downloader",
+                    "description": "Download YouTube Shorts videos in high quality for offline viewing",
+                    "route": "/youtube-shorts-downloader",
+                    "popular": true,
+                    "category": "youtube",
+                    "keywords": ["youtube shorts", "download shorts", "shorts downloader", "youtube short video"],
+                    "longTailKeywords": [
+                        "download youtube shorts video free",
+                        "youtube shorts downloader online",
+                        "save youtube shorts to phone",
+                        "youtube shorts video downloader hd",
+                        "download vertical videos from youtube"
+                    ],
+                    "primaryKeyword": "youtube shorts downloader",
+                    "features": ["HD quality", "Fast downloads", "Mobile optimized", "Batch download", "No watermark"]
+                },
+                {
+                    "id": "youtube-timestamp-generator",
+                    "name": "YouTube Timestamp Generator",
+                    "description": "Automatically generate chapter timestamps for YouTube videos",
+                    "route": "/youtube-timestamp-generator", 
+                    "popular": false,
+                    "category": "youtube",
+                    "keywords": ["youtube timestamps", "video chapters", "youtube chapters", "timestamp generator"],
+                    "longTailKeywords": [
+                        "youtube timestamp generator free",
+                        "create youtube video chapters",
+                        "automatic timestamp generator",
+                        "youtube chapter maker",
+                        "video timestamp tool"
+                    ],
+                    "primaryKeyword": "youtube timestamp generator",
+                    "features": ["Auto generation", "Custom chapters", "Copy-paste format", "Time optimization", "SEO benefits"]
+                },
+                {
+                    "id": "youtube-embed-generator",
+                    "name": "YouTube Embed Code Generator",
+                    "description": "Generate customized YouTube embed codes with advanced options",
+                    "route": "/youtube-embed-generator",
+                    "popular": false,
+                    "category": "youtube",
+                    "keywords": ["youtube embed", "embed code", "youtube iframe", "embed generator"],
+                    "longTailKeywords": [
+                        "youtube embed code generator custom",
+                        "responsive youtube embed code",
+                        "youtube iframe generator",
+                        "embed youtube video in website",
+                        "custom youtube player embed"
+                    ],
+                    "primaryKeyword": "youtube embed code generator",
+                    "features": ["Custom dimensions", "Responsive design", "Privacy options", "Autoplay control", "No related videos"]
+                },
+                {
+                    "id": "youtube-gif-maker",
+                    "name": "YouTube GIF Maker",
+                    "description": "Create animated GIFs from YouTube video clips",
+                    "route": "/youtube-gif-maker",
+                    "popular": false,
+                    "category": "youtube",
+                    "keywords": ["youtube to gif", "gif maker", "video to gif", "youtube gif"],
+                    "longTailKeywords": [
+                        "create gif from youtube video",
+                        "youtube to gif converter online",
+                        "make gif from youtube clip",
+                        "youtube video gif maker free",
+                        "convert youtube to animated gif"
+                    ],
+                    "primaryKeyword": "youtube to gif converter",
+                    "features": ["Custom duration", "Quality control", "Size optimization", "Frame rate control", "Easy sharing"]
+                },
+                {
+                    "id": "youtube-script-generator",
+                    "name": "AI YouTube Script Generator",
+                    "description": "Generate engaging YouTube video scripts with AI assistance",
+                    "route": "/youtube-script-generator",
+                    "popular": false,
+                    "category": "youtube",
+                    "keywords": ["youtube script", "ai script", "video script", "script generator"],
+                    "longTailKeywords": [
+                        "ai youtube script generator free",
+                        "youtube video script writer",
+                        "automatic script generator for youtube",
+                        "ai video script creator",
+                        "youtube content script maker"
+                    ],
+                    "primaryKeyword": "youtube script generator",
+                    "features": ["AI powered", "Multiple styles", "SEO optimized", "Hook generation", "Call-to-action suggestions"]
+                },
+                {
+                    "id": "youtube-comment-responder",
+                    "name": "AI YouTube Comment Responder",
+                    "description": "Generate smart replies for YouTube comments with different tones",
+                    "route": "/youtube-comment-responder",
+                    "popular": false,
+                    "category": "youtube",
+                    "keywords": ["youtube comments", "comment reply", "ai response", "comment manager"],
+                    "longTailKeywords": [
+                        "ai youtube comment responder",
+                        "automatic comment reply generator",
+                        "youtube comment management tool",
+                        "smart comment replies youtube",
+                        "ai comment response generator"
+                    ],
+                    "primaryKeyword": "youtube comment responder",
+                    "features": ["Multiple tones", "Context aware", "Bulk responses", "Engagement boost", "Time saving"]
+                },
+                {
+                    "id": "youtube-idea-generator",
+                    "name": "YouTube Idea Generator",
+                    "description": "Generate viral video ideas based on your channel niche",
+                    "route": "/youtube-idea-generator",
+                    "popular": false,
+                    "category": "youtube",
+                    "keywords": ["youtube ideas", "video ideas", "content ideas", "youtube inspiration"],
+                    "longTailKeywords": [
+                        "youtube video idea generator",
+                        "viral youtube content ideas",
+                        "youtube channel content planner",
+                        "youtube video topic generator",
+                        "creative youtube video ideas"
+                    ],
+                    "primaryKeyword": "youtube video idea generator",
+                    "features": ["Niche specific", "Trending topics", "Title suggestions", "Thumbnail ideas", "Series concepts"]
+                },
+                {
+                    "id": "youtube-pack-downloader",
+                    "name": "YouTube Pack Downloader",
+                    "description": "Download all YouTube video assets: title, description, tags, transcript, and thumbnail",
+                    "route": "/youtube-pack-downloader",
+                    "popular": false,
+                    "category": "youtube",
+                    "keywords": ["youtube pack", "youtube assets", "video assets", "youtube data"],
+                    "longTailKeywords": [
+                        "download youtube video assets bundle",
+                        "youtube video pack downloader",
+                        "extract all youtube video data",
+                        "youtube video information downloader",
+                        "youtube content pack extractor"
+                    ],
+                    "primaryKeyword": "youtube pack downloader",
+                    "features": ["Complete package", "One-click download", "Multiple formats", "Organized structure", "Research tool"]
                 }
             ]
         },
@@ -1430,14 +1654,6 @@
                     ],
                     "primaryKeyword": "qr code generator",
                     "features": ["Text, URL, WiFi QR codes", "Custom colors", "High resolution", "Bulk generation", "Logo embedding"]
-                },
-                {
-                    "id": "youtube-tag-generator",
-                    "name": "YouTube Tag Generator",
-                    "description": "Generate optimized YouTube tags to boost video SEO and discoverability",
-                    "route": "/youtube-tag-generator",
-                    "popular": true,
-                    "category": "seo"
                 },
                 {
                     "id": "tiktok-tag-generator",

@@ -44,3 +44,4 @@ next-env.d.ts
 public/sw.js
 build.log
 public/sw.*
+workbox-*
