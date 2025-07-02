@@ -37,10 +37,11 @@ const nextConfig = {
       'framer-motion'
     ],
     webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
-    instrumentationHook: true,
-    bundlePagesExternals: true,
     esmExternals: true,
   },
+  
+  // Bundle dependencies for pages router
+  bundlePagesRouterDependencies: true,
   
   // Compression and security
   compress: true,

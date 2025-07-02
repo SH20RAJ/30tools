@@ -1,6 +1,6 @@
 'use server';
 
-import { openRouterService, handleAIError } from './openrouter-service.js';
+import { generateText, handleAIError } from './openrouter-service.js';
 
 // AI-powered YouTube script generation
 export async function generateYouTubeScriptAI(scriptData) {
@@ -31,7 +31,7 @@ Please structure the script with:
 
 Make the script conversational, engaging, and optimized for YouTube's algorithm. Include specific timing cues and engagement prompts throughout.`;
 
-    const result = await openRouterService.generateText(prompt, systemPrompt, {
+    const result = await generateText(prompt, systemPrompt, {
       temperature: 0.8,
       maxTokens: 3000
     });
@@ -85,7 +85,7 @@ ${contextInstruction}
 
 Provide exactly 4 distinct response options, each on a new line, without numbering or formatting.`;
 
-    const result = await openRouterService.generateText(prompt, systemPrompt, {
+    const result = await generateText(prompt, systemPrompt, {
       temperature: 0.9,
       maxTokens: 800
     });
@@ -146,7 +146,7 @@ For each idea, provide:
 
 Focus on current trends, evergreen appeal, and high engagement potential. Make titles compelling but not clickbait.`;
 
-    const result = await openRouterService.generateText(prompt, systemPrompt, {
+    const result = await generateText(prompt, systemPrompt, {
       temperature: 0.8,
       maxTokens: 3500
     });
@@ -206,7 +206,7 @@ Requirements:
 
 Format as: TIME - TITLE - DESCRIPTION`;
 
-    const result = await openRouterService.generateText(prompt, systemPrompt, {
+    const result = await generateText(prompt, systemPrompt, {
       temperature: 0.7,
       maxTokens: 1500
     });

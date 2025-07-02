@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Lightbulb, Copy, RefreshCw, TrendingUp, Youtube, CheckCircle, Sparkles } from 'lucide-react';
-import { generateYouTubeIdeasAI } from '@/lib/ai-services/youtube-ai-actions';
+import { generateYouTubeIdeas } from '@/lib/youtube-actions';
 
 export default function YouTubeIdeaGenerator() {
   const [niche, setNiche] = useState('');
@@ -103,7 +103,7 @@ export default function YouTubeIdeaGenerator() {
         trendingTopics: trendingTopics.trim()
       };
 
-      const result = await generateYouTubeIdeasAI(requestData);
+      const result = await generateYouTubeIdeas(requestData);
       
       if (result.success) {
         setIdeas(result.ideas);
