@@ -56,7 +56,7 @@ export default function LandingPage() {
     .filter(tool => tool.premium === true)
     .slice(0, 6); // Show first 6 premium tools
 
-    // get session from stack
+  // get session from stack
   const session = 1; // Replace with actual session retrieval logic
 
   const quickSearchTags = ["image compressor", "video converter", "pdf merger", "text counter"];
@@ -90,6 +90,11 @@ export default function LandingPage() {
                 <Button variant="ghost">
                   <SearchIcon className="h-4 w-4 mr-2" />
                   Search
+                </Button>
+              </Link>
+              <Link href="/search?">
+                <Button variant="ghost">
+                  Other Tools
                 </Button>
               </Link>
               <Link href="/about">
@@ -534,6 +539,7 @@ export default function LandingPage() {
                 <li><Link href="/search?category=video" className="text-muted-foreground hover:text-foreground">Video Tools</Link></li>
                 <li><Link href="/search?category=audio" className="text-muted-foreground hover:text-foreground">Audio Tools</Link></li>
                 <li><Link href="/search?category=pdf" className="text-muted-foreground hover:text-foreground">PDF Tools</Link></li>
+                <li><Link href="/search?" className="text-muted-foreground hover:text-foreground">Other Tools</Link></li>
               </ul>
             </div>
 

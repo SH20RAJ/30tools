@@ -15,7 +15,18 @@ export default function TextToolsNavbar() {
             <span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">30tools</span>
             <span className="text-sm text-muted-foreground font-medium">Text</span>
           </Link>
-          <Link href="/search"><Button variant="outline" size="sm" className="btn-cute">All Tools</Button></Link>
+          <div className="flex items-center space-x-2">
+            <Link href="/other-tools">
+              <Button variant="ghost" size="sm" className="btn-cute">
+                Other Tools
+              </Button>
+            </Link>
+            <Link href="/search">
+              <Button variant="outline" size="sm" className="btn-cute">
+                All Tools
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

@@ -1,0 +1,338 @@
+'use client';
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Download, FileText, Loader2, Copy, Clock, Languages } from 'lucide-react';
+import { downloadYouTubeTranscript } from '@/lib/youtube-actions';
+
+export default function YouTubeTranscriptDownloader() {
+  const [url, setUrl] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [transcriptData, setTranscriptData] = useState(null);
+  const [error, setError] = useState('');
+  const [selectedLanguage, setSelectedLanguage] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!url.trim()) {
+      setError('Please enter a YouTube URL');
+      return;
+    }
+
+    setIsLoading(true);
+    setError('');
+    setTranscriptData(null);
+
+    try {
+      const result = await downloadYouTubeTranscript(url, selectedLanguage);
+      if (result.success) {
+        setTranscriptData(result.data);
+      } else {
+        setError(result.error || 'Failed to extract transcript from YouTube video');
+      }
+    } catch (err) {
+      setError('An error occurred while extracting the transcript');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDownload = (content, filename, format) => {
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
+  const handleCopy = (content) => {
+    navigator.clipboard.writeText(content);
+    // You could add a toast notification here
+  };
+
+  const formatSRT = (transcript) => {
+    if (!transcript.segments) return transcript.text;
+    
+    return transcript.segments.map((segment, index) => {
+      const startTime = formatTime(segment.start);
+      const endTime = formatTime(segment.end);
+      return `${index + 1}\n${startTime} --> ${endTime}\n${segment.text}\n`;
+    }).join('\n');
+  };
+
+  const formatVTT = (transcript) => {
+    if (!transcript.segments) return `WEBVTT\n\n${transcript.text}`;
+    
+    const vttContent = transcript.segments.map(segment => {
+      const startTime = formatTime(segment.start, true);
+      const endTime = formatTime(segment.end, true);
+      return `${startTime} --> ${endTime}\n${segment.text}\n`;
+    }).join('\n');
+    
+    return `WEBVTT\n\n${vttContent}`;
+  };
+
+  const formatTime = (seconds, isVTT = false) => {
+    const hours = Math.floor(seconds / 3600);
+    const minutes = Math.floor((seconds % 3600) / 60);
+    const secs = Math.floor(seconds % 60);
+    const ms = Math.floor((seconds % 1) * 1000);
+    
+    if (isVTT) {
+      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}.${ms.toString().padStart(3, '0')}`;
+    } else {
+      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')},${ms.toString().padStart(3, '0')}`;
+    }
+  };
+
+  return (
+    <div className="w-full max-w-4xl mx-auto">
+      <Card className="border-2 border-blue-500/20 shadow-lg">
+        <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20">
+          <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
+            <FileText className="w-6 h-6 text-blue-500" />
+            YouTube Transcript & Subtitle Downloader
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="p-6">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Input
+                type="url"
+                placeholder="Paste YouTube video URL here (e.g., https://www.youtube.com/watch?v=...)"
+                value={url}
+                onChange={(e) => {
+                  setUrl(e.target.value);
+                  setError('');
+                }}
+                className="flex-1 border-blue-200 focus:border-blue-500 focus:ring-blue-500"
+                disabled={isLoading}
+              />
+              <Button 
+                type="submit" 
+                disabled={isLoading || !url.trim()}
+                className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                    Extracting...
+                  </>
+                ) : (
+                  <>
+                    <FileText className="w-4 h-4 mr-2" />
+                    Extract Transcript
+                  </>
+                )}
+              </Button>
+            </div>
+            
+            {error && (
+              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg">
+                {error}
+              </div>
+            )}
+          </form>
+
+          {transcriptData && (
+            <div className="mt-6 space-y-4">
+              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-green-200 rounded-lg p-4">
+                <div className="flex items-start gap-4">
+                  {transcriptData.thumbnail && (
+                    <img 
+                      src={transcriptData.thumbnail} 
+                      alt="Video thumbnail"
+                      className="w-32 h-24 object-cover rounded-lg shadow-md"
+                    />
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-lg mb-2 text-green-800 dark:text-green-200">
+                      {transcriptData.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      <Badge variant="outline" className="text-green-600 border-green-300">
+                        <Clock className="w-3 h-3 mr-1" />
+                        Duration: {transcriptData.duration}
+                      </Badge>
+                      <Badge variant="outline" className="text-green-600 border-green-300">
+                        <Languages className="w-3 h-3 mr-1" />
+                        Language: {transcriptData.language}
+                      </Badge>
+                      <Badge variant="outline" className="text-green-600 border-green-300">
+                        Words: {transcriptData.wordCount}
+                      </Badge>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <Tabs defaultValue="preview" className="w-full">
+                <TabsList className="grid w-full grid-cols-4">
+                  <TabsTrigger value="preview">Preview</TabsTrigger>
+                  <TabsTrigger value="srt">SRT Format</TabsTrigger>
+                  <TabsTrigger value="vtt">VTT Format</TabsTrigger>
+                  <TabsTrigger value="text">Plain Text</TabsTrigger>
+                </TabsList>
+                
+                <TabsContent value="preview" className="mt-4">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">Transcript Preview</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="max-h-96 overflow-y-auto bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
+                        {transcriptData.segments ? (
+                          <div className="space-y-2">
+                            {transcriptData.segments.slice(0, 10).map((segment, index) => (
+                              <div key={index} className="flex gap-3">
+                                <span className="text-blue-500 font-mono text-sm">
+                                  {formatTime(segment.start).split(',')[0]}
+                                </span>
+                                <span className="text-sm">{segment.text}</span>
+                              </div>
+                            ))}
+                            {transcriptData.segments.length > 10 && (
+                              <p className="text-muted-foreground text-sm">
+                                ... and {transcriptData.segments.length - 10} more segments
+                              </p>
+                            )}
+                          </div>
+                        ) : (
+                          <p className="text-sm">{transcriptData.text?.slice(0, 1000)}...</p>
+                        )}
+                      </div>
+                      <div className="flex gap-2 mt-4">
+                        <Button
+                          onClick={() => handleCopy(transcriptData.text)}
+                          variant="outline"
+                          size="sm"
+                        >
+                          <Copy className="w-4 h-4 mr-1" />
+                          Copy
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="srt" className="mt-4">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">SRT Subtitle Format</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="max-h-96 overflow-y-auto bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
+                        <pre className="text-sm whitespace-pre-wrap">
+                          {formatSRT(transcriptData).slice(0, 1000)}...
+                        </pre>
+                      </div>
+                      <div className="flex gap-2 mt-4">
+                        <Button
+                          onClick={() => handleDownload(formatSRT(transcriptData), `${transcriptData.title}.srt`, 'srt')}
+                          className="bg-blue-500 hover:bg-blue-600"
+                          size="sm"
+                        >
+                          <Download className="w-4 h-4 mr-1" />
+                          Download SRT
+                        </Button>
+                        <Button
+                          onClick={() => handleCopy(formatSRT(transcriptData))}
+                          variant="outline"
+                          size="sm"
+                        >
+                          <Copy className="w-4 h-4 mr-1" />
+                          Copy
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="vtt" className="mt-4">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">VTT Subtitle Format</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="max-h-96 overflow-y-auto bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
+                        <pre className="text-sm whitespace-pre-wrap">
+                          {formatVTT(transcriptData).slice(0, 1000)}...
+                        </pre>
+                      </div>
+                      <div className="flex gap-2 mt-4">
+                        <Button
+                          onClick={() => handleDownload(formatVTT(transcriptData), `${transcriptData.title}.vtt`, 'vtt')}
+                          className="bg-purple-500 hover:bg-purple-600"
+                          size="sm"
+                        >
+                          <Download className="w-4 h-4 mr-1" />
+                          Download VTT
+                        </Button>
+                        <Button
+                          onClick={() => handleCopy(formatVTT(transcriptData))}
+                          variant="outline"
+                          size="sm"
+                        >
+                          <Copy className="w-4 h-4 mr-1" />
+                          Copy
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+                
+                <TabsContent value="text" className="mt-4">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle className="text-lg">Plain Text Format</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="max-h-96 overflow-y-auto bg-gray-50 dark:bg-gray-900 p-4 rounded-lg">
+                        <p className="text-sm whitespace-pre-wrap">
+                          {transcriptData.text?.slice(0, 1000)}...
+                        </p>
+                      </div>
+                      <div className="flex gap-2 mt-4">
+                        <Button
+                          onClick={() => handleDownload(transcriptData.text, `${transcriptData.title}.txt`, 'txt')}
+                          className="bg-green-500 hover:bg-green-600"
+                          size="sm"
+                        >
+                          <Download className="w-4 h-4 mr-1" />
+                          Download TXT
+                        </Button>
+                        <Button
+                          onClick={() => handleCopy(transcriptData.text)}
+                          variant="outline"
+                          size="sm"
+                        >
+                          <Copy className="w-4 h-4 mr-1" />
+                          Copy
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </TabsContent>
+              </Tabs>
+
+              <div className="text-center text-sm text-muted-foreground">
+                <p>Transcript extracted successfully! Choose your preferred format above to download or copy the content.</p>
+              </div>
+            </div>
+          )}
+
+          <div className="mt-6 text-center text-sm text-muted-foreground">
+            <p>Extract transcripts and subtitles from YouTube videos for research, accessibility, and content creation. Supports auto-generated and manual captions.</p>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}
