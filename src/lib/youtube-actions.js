@@ -426,69 +426,8 @@ export async function generateYouTubeScript(scriptData) {
       return { error: 'Video topic is required' };
     }
 
-    // Mock AI script generation
-    // In a real implementation, this would use OpenAI GPT or similar
-    const mockScript = `# ${topic}
-
-## Hook & Introduction (0-15 seconds)
-Hey everyone! Welcome back to my channel. If you've ever wondered about ${topic.toLowerCase()}, then this video is exactly what you need. In the next ${duration} minutes, I'm going to show you everything you need to know, and trust me - by the end of this video, you'll be an expert!
-
-## Value Proposition (15-30 seconds)
-Before we dive in, make sure to hit that subscribe button and ring the notification bell because I post new content every week that will help you master ${topic.toLowerCase()}. And if this video helps you out, don't forget to give it a thumbs up!
-
-## Main Content Section 1 (30 seconds - ${Math.floor(duration * 0.4)} minutes)
-Let's start with the basics. ${additionalInfo ? `As mentioned, ${additionalInfo.toLowerCase()}.` : ''} The first thing you need to understand about ${topic.toLowerCase()} is...
-
-[Key Point 1: Detailed explanation with examples]
-[Key Point 2: Step-by-step demonstration]
-[Key Point 3: Common mistakes to avoid]
-
-## Main Content Section 2 (${Math.floor(duration * 0.4)} - ${Math.floor(duration * 0.8)} minutes)
-Now that you understand the fundamentals, let's move on to some more advanced techniques...
-
-[Advanced strategies and tips]
-[Real-world examples and case studies]
-[Pro tips for better results]
-
-## Conclusion & Call to Action (${Math.floor(duration * 0.8)} minutes - end)
-And there you have it! Those are the essential steps for ${topic.toLowerCase()}. If you found this helpful, definitely subscribe for more content like this. Also, let me know in the comments below - what would you like to see me cover next?
-
-Don't forget to check out my other videos on related topics, and I'll see you in the next one!
-
----
-
-## Additional Notes:
-- Target Audience: ${targetAudience}
-- Tone: ${tone}
-- Video Type: ${videoType}
-- Duration: ${duration} minutes
-
-## Engagement Hooks to Include:
-- "But wait, there's more..."
-- "The secret that nobody talks about..."
-- "Before you do anything else, you need to know this..."
-- "This changed everything for me..."
-
-## Call-to-Action Reminders:
-- Subscribe button
-- Like the video
-- Comment engagement
-- Share with friends
-- Check description for links`;
-
-    // Simulate AI processing time
-    await new Promise(resolve => setTimeout(resolve, 2500));
-
-    return {
-      success: true,
-      script: mockScript,
-      metadata: {
-        wordCount: mockScript.split(' ').length,
-        estimatedDuration: duration,
-        tone,
-        videoType
-      }
-    };
+    // Use AI service for script generation
+    return await generateYouTubeScriptAI(scriptData);
   } catch (error) {
     console.error('Error generating script:', error);
     return { error: 'Failed to generate script' };
@@ -504,76 +443,144 @@ export async function generateCommentResponse(requestData) {
       return { error: 'Comment is required' };
     }
 
-    // Mock AI comment response generation
-    // In a real implementation, this would use OpenAI GPT or similar
-    const responses = [];
-    const emojis = includeEmoji ? ['😊', '👍', '🙏', '💯', '🔥', '❤️', '✨'] : [];
-    const questionStarters = includeQuestion ? [
-      'What do you think about',
-      'Have you tried',
-      'Would you like me to cover',
-      'What\'s your experience with',
-      'How did it work out for you?'
-    ] : [];
-
-    // Generate 3-4 different response options
-    for (let i = 0; i < 3; i++) {
-      let response = '';
-      
-      switch (tone) {
-        case 'friendly':
-          response = `Thanks for watching and commenting! ${includeEmoji ? emojis[0] : ''} I'm so glad you found this helpful. ${includeQuestion ? 'What other topics would you like me to cover?' : ''}`;
-          break;
-        case 'professional':
-          response = `Thank you for your feedback. I appreciate you taking the time to engage with the content. ${includeQuestion ? 'Please let me know if you have any specific questions.' : ''}`;
-          break;
-        case 'humorous':
-          response = `Haha, thanks for watching! ${includeEmoji ? emojis[4] : ''} You made my day with this comment. ${includeQuestion ? 'Got any other burning questions for me?' : ''}`;
-          break;
-        case 'grateful':
-          response = `I'm incredibly grateful for viewers like you! ${includeEmoji ? emojis[2] : ''} Your support means everything to me. ${includeQuestion ? 'What would you like to see next?' : ''}`;
-          break;
-        case 'educational':
-          response = `Great observation! You've touched on an important point. ${includeQuestion ? 'Would you like me to dive deeper into this topic in a future video?' : ''}`;
-          break;
-        case 'enthusiastic':
-          response = `YES! ${includeEmoji ? emojis[4] : ''} I'm so excited you're getting value from this! ${includeQuestion ? 'What other exciting topics should we explore together?' : ''}`;
-          break;
-        case 'empathetic':
-          response = `I completely understand where you're coming from. Many people face this same challenge. ${includeQuestion ? 'How can I better help you with this?' : ''}`;
-          break;
-        case 'concise':
-          response = `Thanks for watching! ${includeEmoji ? emojis[1] : ''} ${includeQuestion ? 'Any questions?' : ''}`;
-          break;
-      }
-
-      // Add channel context if provided
-      if (channelContext && i === 0) {
-        response += ` As always, ${channelContext.toLowerCase()}.`;
-      }
-
-      responses.push(response);
-    }
-
-    // Add a more personalized response as the 4th option
-    const personalizedResponse = `Hey there! I really appreciate you taking the time to share your thoughts. ${includeEmoji ? emojis[Math.floor(Math.random() * emojis.length)] : ''} Comments like yours keep me motivated to create better content. ${includeQuestion ? 'Is there anything specific you\'d like me to cover in upcoming videos?' : ''} Thanks for being part of this amazing community!`;
-    responses.push(personalizedResponse);
-
-    // Simulate AI processing time
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    return {
-      success: true,
-      responses,
-      settings: {
-        tone,
-        includeQuestion,
-        includeEmoji,
-        hasContext: !!channelContext
-      }
-    };
+    // Use AI service for comment response generation
+    return await generateCommentResponseAI(requestData);
   } catch (error) {
     console.error('Error generating comment response:', error);
     return { error: 'Failed to generate comment responses' };
   }
+}
+
+// Server action to download YouTube video pack
+export async function downloadYouTubePack(videoUrl, selectedAssets) {
+  try {
+    if (!videoUrl) {
+      return { error: 'Please provide a YouTube URL' };
+    }
+
+    const result = await extractYouTubeVideoId(videoUrl);
+    if (result.error) {
+      return { error: result.error };
+    }
+
+    const videoId = result.videoId;
+
+    // Get video metadata
+    const metadata = await getYouTubeVideoMetadata(videoId);
+    if (metadata.error) {
+      return { error: metadata.error };
+    }
+
+    // Build comprehensive video data pack
+    const packData = {
+      videoId,
+      url: videoUrl,
+      extractedAt: new Date().toISOString(),
+      selectedAssets,
+    };
+
+    // Add metadata if selected
+    if (selectedAssets.metadata || selectedAssets.title) {
+      packData.metadata = {
+        title: metadata.title || 'YouTube Video',
+        description: metadata.description || '',
+        duration: metadata.duration || 'Unknown',
+        publishedAt: metadata.publishedAt || new Date().toISOString(),
+        viewCount: Math.floor(Math.random() * 1000000) + 10000, // Mock data
+        likeCount: Math.floor(Math.random() * 50000) + 1000,
+        commentCount: Math.floor(Math.random() * 10000) + 100,
+      };
+    }
+
+    // Add title and description if selected
+    if (selectedAssets.title) {
+      packData.title = metadata.title || 'YouTube Video';
+      packData.description = metadata.description || 'No description available';
+    }
+
+    // Add tags if selected
+    if (selectedAssets.tags) {
+      packData.tags = [
+        'youtube', 'video', 'content', 'tutorial', 'how-to',
+        'education', 'entertainment', 'viral', 'trending'
+      ]; // Mock tags - in real implementation, extract from video
+    }
+
+    // Add transcript if selected
+    if (selectedAssets.transcript) {
+      packData.transcript = {
+        available: true,
+        language: 'en',
+        content: 'This is a sample transcript. In a real implementation, this would contain the actual video transcript extracted using YouTube Data API or caption parsing.',
+        wordCount: 150
+      };
+    }
+
+    // Add thumbnail data if selected
+    if (selectedAssets.thumbnail) {
+      packData.thumbnails = {
+        default: `https://img.youtube.com/vi/${videoId}/default.jpg`,
+        medium: `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
+        high: `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+        standard: `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+        maxres: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`
+      };
+    }
+
+    // Add channel information if selected
+    if (selectedAssets.channelInfo) {
+      packData.channel = {
+        id: 'UC' + videoId.substring(0, 22), // Mock channel ID
+        title: metadata.author_name || 'YouTube Channel',
+        subscriberCount: Math.floor(Math.random() * 1000000) + 1000,
+        videoCount: Math.floor(Math.random() * 1000) + 50,
+        description: 'Sample channel description',
+        joinedDate: '2020-01-01',
+        verified: Math.random() > 0.5
+      };
+    }
+
+    // Add analytics if selected
+    if (selectedAssets.analytics) {
+      packData.analytics = {
+        performance: {
+          avgViewDuration: '4:32',
+          clickThroughRate: '3.2%',
+          engagementRate: '4.8%',
+          retentionRate: '65%'
+        },
+        demographics: {
+          topCountries: ['United States', 'United Kingdom', 'Canada'],
+          ageGroups: {
+            '18-24': '25%',
+            '25-34': '35%',
+            '35-44': '20%',
+            '45+': '20%'
+          },
+          genderSplit: {
+            male: '60%',
+            female: '40%'
+          }
+        }
+      };
+    }
+
+    // Simulate processing time
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    return {
+      success: true,
+      data: packData,
+      videoId,
+      assetCount: Object.values(selectedAssets).filter(Boolean).length
+    };
+  } catch (error) {
+    console.error('Error downloading YouTube pack:', error);
+    return { error: 'Failed to download YouTube video pack' };
+  }
+}
+
+// Server action for AI-powered YouTube idea generation
+export async function generateYouTubeIdeas(requestData) {
+  return await generateYouTubeIdeasAI(requestData);
 }
