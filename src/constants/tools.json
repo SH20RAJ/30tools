@@ -2,7 +2,7 @@
     "metadata": {
         "version": "8.5",
         "lastUpdated": "2025-06-23",
-        "totalTools": 137,
+        "totalTools": 138,
         "totalCategories": 13
     },
     "categories": {
@@ -1438,6 +1438,26 @@
                     ],
                     "primaryKeyword": "color picker",
                     "features": ["Image color extraction", "Multiple color formats", "Color harmonies", "Palette generation", "Accessibility checker"]
+                },
+                {
+                    "id": "whiteboard",
+                    "name": "Online Whiteboard",
+                    "description": "Free unlimited online whiteboard for drawing, sketching, brainstorming and collaboration",
+                    "route": "/whiteboard",
+                    "popular": true,
+                    "category": "design",
+                    "keywords": ["online whiteboard", "free whiteboard", "drawing board", "sketch pad", "digital whiteboard", "collaborative whiteboard"],
+                    "longTailKeywords": [
+                        "free online whiteboard unlimited",
+                        "digital whiteboard for brainstorming",
+                        "online drawing board free",
+                        "collaborative whiteboard tool",
+                        "sketch pad online free",
+                        "whiteboard app no registration",
+                        "online whiteboard with export"
+                    ],
+                    "primaryKeyword": "online whiteboard",
+                    "features": ["Unlimited drawing space", "Multiple drawing tools", "Color palette", "Export PNG/JPG", "Undo/Redo", "No registration required"]
                 },
                 {
                     "id": "font-previewer",

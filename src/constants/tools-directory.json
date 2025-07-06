@@ -2,7 +2,7 @@
   "metadata": {
     "version": "2.1",
     "lastUpdated": "2025-06-15",
-    "totalTools": 115,
+    "totalTools": 116,
     "totalCategories": 8,
     "seoOptimized": true
   },
@@ -2286,7 +2286,75 @@
         "Home",
         "Design Tools"
       ],
-      "tools": []
+      "tools": [
+        {
+          "id": "whiteboard",
+          "name": "Online Whiteboard",
+          "shortName": "Whiteboard",
+          "description": "Free unlimited online whiteboard for drawing, sketching, brainstorming and collaboration. No registration required.",
+          "longDescription": "Professional online whiteboard with unlimited drawing space, multiple tools, and export capabilities. Perfect for brainstorming, education, design sketching, and collaboration. Features pen, eraser, shapes, colors, and undo/redo functionality.",
+          "category": "design",
+          "subcategory": "drawing",
+          "primaryKeyword": "online whiteboard",
+          "keywords": [
+            "online whiteboard",
+            "free whiteboard",
+            "drawing board",
+            "sketch pad",
+            "digital whiteboard",
+            "collaborative whiteboard",
+            "whiteboard online free",
+            "drawing tool online"
+          ],
+          "longTailKeywords": [
+            "free online whiteboard unlimited",
+            "digital whiteboard for brainstorming",
+            "online drawing board free",
+            "collaborative whiteboard tool",
+            "sketch pad online free",
+            "whiteboard app no registration",
+            "online whiteboard with export"
+          ],
+          "routes": [
+            "/whiteboard",
+            "/online-whiteboard",
+            "/free-whiteboard",
+            "/drawing-board",
+            "/sketch-pad"
+          ],
+          "features": [
+            "Unlimited drawing space",
+            "Multiple drawing tools",
+            "Color palette & custom colors",
+            "Export PNG/JPG",
+            "Undo/Redo functionality",
+            "No registration required",
+            "Shapes and lines",
+            "Adjustable brush sizes"
+          ],
+          "useCases": [
+            "Brainstorming sessions",
+            "Educational explanations",
+            "Design sketching",
+            "Meeting notes",
+            "Mind mapping",
+            "Wireframe creation"
+          ],
+          "fileFormats": [
+            "PNG",
+            "JPG"
+          ],
+          "maxFileSize": "Unlimited",
+          "processingTime": "Instant",
+          "popular": true,
+          "trending": true,
+          "completed": true,
+          "monthlySearches": 95000,
+          "difficulty": "Low",
+          "cpc": "$0.90",
+          "intent": "High"
+        }
+      ]
     },
     "code": {
       "name": "Code Tools",
