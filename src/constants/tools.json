@@ -2,7 +2,7 @@
     "metadata": {
         "version": "8.5",
         "lastUpdated": "2025-06-23",
-        "totalTools": 140,
+        "totalTools": 141,
         "totalCategories": 13
     },
     "categories": {
@@ -1302,6 +1302,25 @@
                     ],
                     "primaryKeyword": "email breach checker",
                     "features": ["Email breach checking", "Detailed breach info", "HaveIBeenPwned integration", "Privacy focused", "Real-time results", "Breach history"]
+                },
+                {
+                    "id": "temp-email-checker",
+                    "name": "Temporary Email Checker",
+                    "description": "Detect disposable and temporary email addresses using comprehensive blocklist and allowlist databases",
+                    "route": "/temp-email-checker",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": ["temporary email checker", "disposable email detector", "temp mail checker", "email validation", "fake email detector", "throwaway email checker"],
+                    "longTailKeywords": [
+                        "temporary email address checker online",
+                        "disposable email domain detector",
+                        "temp mail validation tool free",
+                        "fake email address checker",
+                        "throwaway email detector online",
+                        "email domain validation tool"
+                    ],
+                    "primaryKeyword": "temporary email checker",
+                    "features": ["Disposable email detection", "Domain validation", "Comprehensive database", "Real-time checking", "Email and domain support", "Open source data"]
                 }
             ]
         },
