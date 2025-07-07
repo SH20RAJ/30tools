@@ -2,7 +2,7 @@
     "metadata": {
         "version": "8.5",
         "lastUpdated": "2025-06-23",
-        "totalTools": 138,
+        "totalTools": 140,
         "totalCategories": 13
     },
     "categories": {
@@ -1262,6 +1262,46 @@
                     ],
                     "primaryKeyword": "html validator",
                     "features": ["W3C compliance", "Error detection", "Line-by-line validation", "HTML5 support", "Accessibility checks"]
+                },
+                {
+                    "id": "password-breach-checker",
+                    "name": "Password Breach Checker",
+                    "description": "Check if your password has been compromised in data breaches using k-anonymity for maximum privacy",
+                    "route": "/password-breach-checker",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": ["password breach checker", "email breach check", "data breach checker", "password security", "compromised password", "haveibeenpwned", "security check"],
+                    "longTailKeywords": [
+                        "check if password is compromised free",
+                        "email data breach checker online",
+                        "haveibeenpwned password checker",
+                        "check if email is breached",
+                        "password security breach checker",
+                        "compromised password lookup tool",
+                        "data breach email checker free"
+                    ],
+                    "primaryKeyword": "password breach checker",
+                    "features": ["Password security check", "K-anonymity privacy", "Client-side hashing", "Real-time results", "No data storage", "HaveIBeenPwned integration"]
+                },
+                {
+                    "id": "email-breach-checker",
+                    "name": "Email Breach Checker",
+                    "description": "Check if your email has been compromised in data breaches using HaveIBeenPwned database",
+                    "route": "/email-breach-checker",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": ["email breach checker", "data breach checker", "email security", "compromised email", "haveibeenpwned", "email breach check"],
+                    "longTailKeywords": [
+                        "email data breach checker online",
+                        "check if email is breached",
+                        "data breach email checker free",
+                        "email security breach lookup",
+                        "compromised email checker",
+                        "haveibeenpwned email checker",
+                        "email breach detection tool"
+                    ],
+                    "primaryKeyword": "email breach checker",
+                    "features": ["Email breach checking", "Detailed breach info", "HaveIBeenPwned integration", "Privacy focused", "Real-time results", "Breach history"]
                 }
             ]
         },

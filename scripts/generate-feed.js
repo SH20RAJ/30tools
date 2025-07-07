@@ -121,6 +121,7 @@ try {
   // Generate and write enhanced sitemap
   const sitemapContent = generateToolsSitemap();
   fs.writeFileSync(path.join(publicDir, 'enhanced-sitemap.xml'), sitemapContent);
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapContent);
   console.log('✅ Enhanced sitemap generated: public/enhanced-sitemap.xml');
   
   // Display stats
