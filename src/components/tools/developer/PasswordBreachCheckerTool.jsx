@@ -5,12 +5,12 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  Shield, 
-  ShieldAlert, 
-  ShieldCheck, 
-  Search, 
-  AlertTriangle, 
+import {
+  Shield,
+  ShieldAlert,
+  ShieldCheck,
+  Search,
+  AlertTriangle,
   Info,
   Eye,
   EyeOff,
@@ -50,10 +50,10 @@ export default function PasswordBreachCheckerTool() {
     try {
       // Hash password client-side
       const passwordHash = await createPasswordHash(password);
-      
+
       // Send only hash to server
       const result = await checkPasswordBreaches(passwordHash);
-      
+
       if (result.success) {
         setResults({
           count: result.data.count,
@@ -82,14 +82,14 @@ export default function PasswordBreachCheckerTool() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-red-50 to-orange-50 p-4">
+    <div className="min-h-screen   p-4">
       <div className="max-w-4xl mx-auto">
         {/* SEO Content - Hidden but accessible to search engines */}
         <div className="sr-only">
           <h1>Password Breach Checker - Check if Your Email/Password is Compromised | 30tools</h1>
           <p>
-            Free password breach checker to see if your email or password has been compromised in data breaches. 
-            Check against billions of breached accounts instantly using HaveIBeenPwned database. Protect your 
+            Free password breach checker to see if your email or password has been compromised in data breaches.
+            Check against billions of breached accounts instantly using HaveIBeenPwned database. Protect your
             online security by checking if your credentials have been exposed in data breaches.
           </p>
           <h2>Features</h2>
@@ -121,7 +121,7 @@ export default function PasswordBreachCheckerTool() {
             Password Breach Checker
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            Check if your password has been compromised in data breaches. 
+            Check if your password has been compromised in data breaches.
             Secure password checking using k-anonymity for maximum privacy.
           </p>
           <div className="flex flex-wrap justify-center gap-2 mt-4">
@@ -177,8 +177,8 @@ export default function PasswordBreachCheckerTool() {
                 )}
 
                 {/* Check Button */}
-                <Button 
-                  onClick={handleCheck} 
+                <Button
+                  onClick={handleCheck}
                   disabled={loading}
                   className="w-full bg-red-600 hover:bg-red-700 text-white"
                   size="lg"
@@ -200,29 +200,26 @@ export default function PasswordBreachCheckerTool() {
                 {results && (
                   <div className="space-y-4">
                     {/* Password Results */}
-                    <div className={`flex items-center gap-3 p-4 rounded-lg border-2 ${
-                      results.isCompromised 
-                        ? 'bg-red-50 border-red-200' 
+                    <div className={`flex items-center gap-3 p-4 rounded-lg border-2 ${results.isCompromised
+                        ? 'bg-red-50 border-red-200'
                         : 'bg-green-50 border-green-200'
-                    }`}>
+                      }`}>
                       {results.isCompromised ? (
                         <ShieldAlert className="w-8 h-8 text-red-600" />
                       ) : (
                         <ShieldCheck className="w-8 h-8 text-green-600" />
                       )}
                       <div>
-                        <h3 className={`font-semibold ${
-                          results.isCompromised ? 'text-red-800' : 'text-green-800'
-                        }`}>
-                          {results.isCompromised 
+                        <h3 className={`font-semibold ${results.isCompromised ? 'text-red-800' : 'text-green-800'
+                          }`}>
+                          {results.isCompromised
                             ? 'Password Compromised!'
                             : 'Password Looks Safe'
                           }
                         </h3>
-                        <p className={`text-sm ${
-                          results.isCompromised ? 'text-red-600' : 'text-green-600'
-                        }`}>
-                          {results.isCompromised 
+                        <p className={`text-sm ${results.isCompromised ? 'text-red-600' : 'text-green-600'
+                          }`}>
+                          {results.isCompromised
                             ? `Found in ${formatNumber(results.count)} breach${results.count > 1 ? 'es' : ''}`
                             : 'This password was not found in any known breaches'
                           }
@@ -234,7 +231,7 @@ export default function PasswordBreachCheckerTool() {
                       <Alert variant="destructive">
                         <AlertTriangle className="h-4 w-4" />
                         <AlertDescription>
-                          This password has been seen {formatNumber(results.count)} times in data breaches. 
+                          This password has been seen {formatNumber(results.count)} times in data breaches.
                           We recommend changing it immediately and using a unique password for each account.
                         </AlertDescription>
                       </Alert>
@@ -279,14 +276,14 @@ export default function PasswordBreachCheckerTool() {
                 <div>
                   <h4 className="font-semibold mb-2">Email Checking</h4>
                   <p className="text-muted-foreground">
-                    We check your email against the HaveIBeenPwned database, which contains 
+                    We check your email against the HaveIBeenPwned database, which contains
                     billions of compromised accounts from known data breaches.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold mb-2">Password Checking</h4>
                   <p className="text-muted-foreground">
-                    Your password is hashed locally and checked using k-anonymity. 
+                    Your password is hashed locally and checked using k-anonymity.
                     Your actual password never leaves your browser.
                   </p>
                 </div>
