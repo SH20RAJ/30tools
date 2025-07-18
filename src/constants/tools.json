@@ -6,6 +6,86 @@
         "totalCategories": 13
     },
     "categories": {
+        "generators": {
+            "name": "Fun Generators",
+            "slug": "generators",
+            "icon": "SparklesIcon",
+            "description": "Create viral content with AI-powered fun generators",
+            "tools": [
+                {
+                    "id": "aesthetic-bio-generator",
+                    "name": "Aesthetic Bio Generator",
+                    "description": "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes",
+                    "route": "/aesthetic-bio-generator",
+                    "popular": true,
+                    "category": "generators",
+                    "keywords": ["aesthetic bio generator", "instagram bio", "twitter bio", "tiktok bio", "social media bio"],
+                    "longTailKeywords": [
+                        "aesthetic bio generator for instagram",
+                        "cute bio generator with emojis",
+                        "aesthetic twitter bio ideas",
+                        "tiktok bio generator aesthetic",
+                        "social media bio creator"
+                    ],
+                    "primaryKeyword": "aesthetic bio generator",
+                    "features": ["6 aesthetic themes", "AI-powered suggestions", "Platform optimization", "Emoji integration", "Copy to clipboard"]
+                },
+                {
+                    "id": "startup-name-generator",
+                    "name": "Startup Name Generator",
+                    "description": "Generate trendy startup names with AI. Perfect for indie hackers and entrepreneurs",
+                    "route": "/startup-name-generator",
+                    "popular": true,
+                    "category": "generators",
+                    "keywords": ["startup name generator", "business name generator", "company name ideas", "startup names"],
+                    "longTailKeywords": [
+                        "ai startup name generator free",
+                        "tech startup name ideas",
+                        "creative business name generator",
+                        "startup company name generator",
+                        "indie hacker name generator"
+                    ],
+                    "primaryKeyword": "startup name generator",
+                    "features": ["AI-powered names", "Industry-specific", "Domain suggestions", "Trending patterns", "Save favorites"]
+                },
+                {
+                    "id": "fake-chat-generator",
+                    "name": "Fake Chat Generator",
+                    "description": "Create realistic fake chat screenshots for WhatsApp, Instagram DM, iMessage, and Discord",
+                    "route": "/fake-chat-generator",
+                    "popular": true,
+                    "category": "generators",
+                    "keywords": ["fake chat generator", "whatsapp fake chat", "instagram dm generator", "imessage generator"],
+                    "longTailKeywords": [
+                        "fake whatsapp chat generator",
+                        "fake instagram dm creator",
+                        "imessage fake conversation",
+                        "discord fake chat maker",
+                        "fake text message generator"
+                    ],
+                    "primaryKeyword": "fake chat generator",
+                    "features": ["4 chat platforms", "Realistic design", "Export as image", "Custom messages", "Meme ready"]
+                },
+                {
+                    "id": "excuse-generator",
+                    "name": "Excuse Generator",
+                    "description": "Generate creative excuses for work, school, social events, and family situations",
+                    "route": "/excuse-generator",
+                    "popular": true,
+                    "category": "generators",
+                    "keywords": ["excuse generator", "funny excuses", "creative excuses", "excuse maker"],
+                    "longTailKeywords": [
+                        "excuse generator for work",
+                        "funny excuse generator",
+                        "creative excuse maker",
+                        "excuse generator for school",
+                        "social excuse generator"
+                    ],
+                    "primaryKeyword": "excuse generator",
+                    "features": ["Multiple categories", "Believability levels", "AI-powered creativity", "Share to social", "Humor-focused"]
+                }
+            ]
+        },
         "image": {
             "name": "Image Tools",
             "slug": "image-tools",
