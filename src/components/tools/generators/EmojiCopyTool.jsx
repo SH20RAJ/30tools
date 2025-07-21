@@ -155,6 +155,13 @@ function EmojiCopyTool() {
     }
   }, []);
 
+  // Ensure activeCategory is valid
+  useEffect(() => {
+    if (!EMOJI_CATEGORIES[activeCategory]) {
+      setActiveCategory('smileys');
+    }
+  }, [activeCategory]);
+
   const handleCopyEmoji = (emoji) => {
     navigator.clipboard.writeText(emoji);
     setCopiedEmoji(emoji);
@@ -175,7 +182,7 @@ function EmojiCopyTool() {
     Object.values(EMOJI_CATEGORIES).flatMap(category =>
       category.emojis.filter(emoji => emoji.includes(searchQuery))
     ) :
-    (EMOJI_CATEGORIES[activeCategory] ? EMOJI_CATEGORIES[activeCategory].emojis : EMOJI_CATEGORIES.smileys.emojis);
+    EMOJI_CATEGORIES[activeCategory]?.emojis || EMOJI_CATEGORIES.smileys.emojis;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-gray-900 dark:via-purple-900 dark:to-blue-900">

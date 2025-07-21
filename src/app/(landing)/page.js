@@ -557,6 +557,7 @@ export default function LandingPage() {
           <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
             <p>&copy; 2025 30tools.com - All rights reserved. Made with ❤️ for the web.</p>
           </div>
+          <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" /></a>
         </div>
       </footer>
     </div>
