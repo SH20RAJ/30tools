@@ -57,7 +57,7 @@ const jsonLd = {
   },
   "featureList": [
     "Satirical startup quotes",
-    "Buzzword combinations", 
+    "Buzzword combinations",
     "LinkedIn-style formatting",
     "Meme template export",
     "Social media sharing"

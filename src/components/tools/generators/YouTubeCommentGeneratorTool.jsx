@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Copy, Shuffle, Play, Download, Share2, RefreshCw, Heart, ThumbsUp } from 'lucide-react';
 import { toast } from 'sonner';
-import { SocialShareButtons } from '@/components/shared/SocialShareButtons';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 const YouTubeCommentGeneratorTool = () => {
   const [comment, setComment] = useState('');
@@ -130,9 +130,9 @@ Make it feel genuine but entertaining!`;
         commentStyles.find(s => s.id === selectedStyle)?.name,
         emotions.find(e => e.id === selectedEmotion)?.name
       );
-      
+
       setComment(generated);
-      
+
       // Add to history
       const newComment = {
         id: Date.now(),
@@ -143,7 +143,7 @@ Make it feel genuine but entertaining!`;
         timestamp: new Date().toLocaleString()
       };
       setGeneratedComments(prev => [newComment, ...prev.slice(0, 9)]);
-      
+
       toast.success('Comment generated successfully!');
     } catch (error) {
       toast.error('Failed to generate comment. Please try again.');
@@ -264,8 +264,8 @@ Make it feel genuine but entertaining!`;
                     </Select>
                   </div>
 
-                  <Button 
-                    onClick={handleGenerate} 
+                  <Button
+                    onClick={handleGenerate}
                     disabled={isGenerating || !selectedStyle || !selectedEmotion}
                     className="w-full bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700"
                   >
@@ -320,7 +320,7 @@ Make it feel genuine but entertaining!`;
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="flex flex-wrap gap-2">
                         <Button
                           onClick={() => copyToClipboard(comment)}

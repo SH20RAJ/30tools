@@ -11,7 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Copy, Shuffle, Sparkles, Download, Share2, RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
-import { SocialShareButtons } from '@/components/shared/SocialShareButtons';
+import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 const ChatGPTPersonaGeneratorTool = () => {
   const [persona, setPersona] = useState('');
@@ -126,9 +126,9 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
         tones.find(t => t.id === selectedTone)?.name,
         customInput
       );
-      
+
       setPersona(generated);
-      
+
       // Add to history
       const newPersona = {
         id: Date.now(),
@@ -138,7 +138,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
         timestamp: new Date().toLocaleString()
       };
       setGeneratedPersonas(prev => [newPersona, ...prev.slice(0, 9)]);
-      
+
       toast.success('Persona generated successfully!');
     } catch (error) {
       toast.error('Failed to generate persona. Please try again.');
@@ -257,8 +257,8 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                     />
                   </div>
 
-                  <Button 
-                    onClick={handleGenerate} 
+                  <Button
+                    onClick={handleGenerate}
                     disabled={isGenerating || !selectedCategory || !selectedTone}
                     className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
                   >
@@ -294,7 +294,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                       <div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-gray-200">
                         <p className="text-sm text-gray-700 whitespace-pre-wrap">{persona}</p>
                       </div>
-                      
+
                       <div className="flex flex-wrap gap-2">
                         <Button
                           onClick={() => copyToClipboard(persona)}

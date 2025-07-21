@@ -113,32 +113,74 @@ export default function LandingPage() {
       </header>
 
       <main>
-        {/* Hero Section */}
-        <section className="py-24 relative overflow-hidden">
-          {/* Background decoration */}
-          <div className="absolute inset-0 bg-grid-slate-100/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
+        {/* Enhanced Hero Section */}
+        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0">
+            {/* Gradient Orbs */}
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse" />
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-pink-400/20 to-orange-600/20 rounded-full blur-3xl animate-pulse delay-1000" />
+            
+            {/* Grid Pattern */}
+            <div className="absolute inset-0 bg-grid-slate-100/50 dark:bg-grid-slate-800/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+            
+            {/* Floating Elements */}
+            <div className="absolute top-20 left-10 w-4 h-4 bg-primary/30 rounded-full animate-bounce delay-300" />
+            <div className="absolute top-40 right-20 w-6 h-6 bg-secondary/30 rounded-full animate-bounce delay-700" />
+            <div className="absolute bottom-40 left-20 w-3 h-3 bg-accent/30 rounded-full animate-bounce delay-1000" />
+            <div className="absolute bottom-20 right-10 w-5 h-5 bg-primary/30 rounded-full animate-bounce delay-500" />
+          </div>
 
-          <div className="container mx-auto px-4 relative">
-            <div className="max-w-4xl mx-auto text-center">
-              {/* Main heading with animated gradient */}
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-gradient bg-gradient-to-r from-primary via-secondary to-primary bg-300% bg-clip-text text-transparent">
-                Your Ultimate Online Toolkit
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="max-w-5xl mx-auto text-center">
+              {/* Badge with animation */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-8 animate-fade-in">
+                <ZapIcon className="h-4 w-4 text-primary animate-pulse" />
+                <span className="text-sm font-medium text-primary">141+ Professional Tools</span>
+                <Badge variant="secondary" className="text-xs">Free Forever</Badge>
+              </div>
+
+              {/* Main heading with enhanced animations */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
+                <span className="block bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent animate-fade-in-up">
+                  Your Ultimate
+                </span>
+                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in-up delay-200 bg-300% animate-gradient">
+                  Online Toolkit
+                </span>
               </h1>
 
-              {/* Subheading with better spacing */}
-              <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-                Fast, free, and privacy-focused tools for all your file processing needs.
-                No sign-up required, no watermarks added.
+              {/* Enhanced subheading */}
+              <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-400">
+                <span className="font-semibold text-foreground">Fast, free, and privacy-focused</span> tools for all your creative and professional needs.
+                <br className="hidden md:block" />
+                <span className="text-lg">No sign-up required � No watermarks � No limits</span>
               </p>
 
-              {/* Quick search tags with hover effects */}
-              <div className="flex flex-wrap justify-center gap-3 mb-10">
-                {quickSearchTags.map((tag) => (
+              {/* Feature highlights */}
+              <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up delay-600">
+                <div className="flex items-center gap-2 px-4 py-2 bg-green-50 dark:bg-green-900/20 rounded-full border border-green-200 dark:border-green-800">
+                  <ShieldCheckIcon className="h-4 w-4 text-green-600" />
+                  <span className="text-sm font-medium text-green-700 dark:text-green-300">100% Private</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full border border-blue-200 dark:border-blue-800">
+                  <ZapIcon className="h-4 w-4 text-blue-600" />
+                  <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Lightning Fast</span>
+                </div>
+                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 dark:bg-purple-900/20 rounded-full border border-purple-200 dark:border-purple-800">
+                  <StarIcon className="h-4 w-4 text-purple-600" />
+                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Professional Quality</span>
+                </div>
+              </div>
+
+              {/* Quick search tags with enhanced styling */}
+              <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up delay-700">
+                {quickSearchTags.map((tag, index) => (
                   <Link key={tag} href={`/search?q=${encodeURIComponent(tag)}`}>
                     <Badge
-                      variant="secondary"
-                      className="px-4 py-2 text-sm cursor-pointer transform transition-all hover:scale-105 hover:bg-secondary/90"
+                      variant="outline"
+                      className="px-4 py-2 text-sm cursor-pointer transform transition-all duration-300 hover:scale-110 hover:bg-primary hover:text-primary-foreground hover:border-primary hover:shadow-lg animate-fade-in-up"
+                      style={{ animationDelay: `${800 + index * 100}ms` }}
                     >
                       {tag}
                     </Badge>
@@ -146,111 +188,57 @@ export default function LandingPage() {
                 ))}
               </div>
 
-              {/* CTA buttons with hover animations */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* Enhanced CTA buttons */}
+              <div className="flex flex-col sm:flex-row gap-6 justify-center animate-fade-in-up delay-1000">
                 <Link href="/search">
                   <Button
                     size="lg"
-                    className="min-w-[200px] transform transition-all hover:scale-105 hover:shadow-lg"
+                    className="min-w-[220px] h-14 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 group"
                   >
-                    Browse All Tools
-                    <ArrowRightIcon className="ml-2 h-5 w-5 animate-bounce-x" />
+                    <SearchIcon className="mr-3 h-5 w-5 group-hover:animate-pulse" />
+                    Explore All Tools
+                    <ArrowRightIcon className="ml-3 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
                 <Link href="/image-compressor">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="min-w-[200px] transform transition-all hover:scale-105 hover:shadow-lg hover:bg-secondary/10"
+                    className="min-w-[220px] h-14 text-lg font-semibold border-2 transform transition-all duration-300 hover:scale-105 hover:shadow-xl hover:bg-secondary/50 group"
                   >
-                    Try Image Compressor
+                    <ImageIcon className="mr-3 h-5 w-5 group-hover:animate-pulse" />
+                    Try Image Tools
                   </Button>
                 </Link>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Premium Banner - Design Tools Directory */}
-        <section className="py-12  border-2  relative overflow-hidden">
-          <div className="absolute inset-0 " />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjEiPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIi8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iMTAiIHI9IjIiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMTAiIGN5PSI1MCIgcj0iMiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=')] opacity-10" />
-
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
-              <div className="flex-1 text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
-                  <Badge className="bg-white text-purple-700 border-0 hover:bg-white/90 font-semibold shadow-lg">
-                    🎨 New Premium Resource
-                  </Badge>
-                  <Badge className="bg-amber-500 text-foreground border-0 font-semibold shadow-lg">
-                    <StarIcon className="h-3 w-3 mr-1" />
-                    Featured
-                  </Badge>
+              {/* Trust indicators */}
+              <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-sm text-muted-foreground animate-fade-in-up delay-1200">
+                <div className="flex items-center gap-2">
+                  <UsersIcon className="h-4 w-4" />
+                  <span>Trusted by 2M+ users</span>
                 </div>
-
-                <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 drop-shadow-2xl [text-shadow:_2px_2px_4px_rgb(0_0_0_/_80%)]">
-                  Professional Design Tools Directory
-                </h2>
-
-                <p className="text-foreground text-lg mb-6 max-w-2xl drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
-                  Discover 1600+ carefully curated design tools, resources, and inspiration.
-                  From icons and illustrations to mockups and typography - everything designers need in one place.
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
-                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
-                    🎨 180+ Inspiration Tools
-                  </Badge>
-                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
-                    ✨ 92+ Icon Libraries
-                  </Badge>
-                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
-                    🖼️ 123+ Illustration Resources
-                  </Badge>
-                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
-                    📚 110+ Learning Resources
-                  </Badge>
+                <div className="flex items-center gap-2">
+                  <TrendingUpIcon className="h-4 w-4" />
+                  <span>50M+ files processed</span>
                 </div>
-              </div>
-
-              <div className="flex-shrink-0">
-                <div className="text-center">
-                  <a
-                    href="https://design.30tools.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block"
-                  >
-                    <Button
-                      size="lg"
-                      className="bg-white text-purple-600 hover:bg-white/90 shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl min-w-[200px] font-semibold"
-                    >
-                      <PaletteIcon className="mr-2 h-5 w-5" />
-                      Explore Design Directory
-                      <ArrowRightIcon className="ml-2 h-5 w-5" />
-                    </Button>
-                  </a>
-
-                  <div className="flex items-center justify-center gap-4 mt-4 text-foreground text-sm drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
-                    <div className="flex items-center gap-1 font-bold">
-                      <UsersIcon className="h-4 w-4" />
-                      <span>1600+ Tools</span>
-                    </div>
-                    <div className="flex items-center gap-1 font-bold">
-                      <RefreshCwIcon className="h-4 w-4" />
-                      <span>Regularly Updated</span>
-                    </div>
-                    <div className="flex items-center gap-1 font-bold">
-                      <StarIcon className="h-4 w-4 text-amber-300" />
-                      <span>Curated</span>
-                    </div>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <StarIcon className="h-4 w-4 fill-current text-yellow-500" />
+                  <span>4.9/5 user rating</span>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Scroll indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="w-6 h-10 border-2 border-muted-foreground/30 rounded-full flex justify-center">
+              <div className="w-1 h-3 bg-muted-foreground/50 rounded-full mt-2 animate-pulse"></div>
+            </div>
+          </div>
         </section>
+
+
 
         {/* Stats Section */}
         <section className="py-16 border-b">
@@ -381,6 +369,87 @@ export default function LandingPage() {
           </div>
         </section>
 
+        {/* Premium Banner - Design Tools Directory */}
+        <section className="py-12  border-2  relative overflow-hidden">
+          <div className="absolute inset-0 " />
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPGcgZmlsbD0iIzAwMCIgZmlsbC1vcGFjaXR5PSIwLjEiPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMCIgY3k9IjEwIiByPSIyIi8+CiAgICAgICAgICAgIDxjaXJjbGUgY3g9IjUwIiBjeT0iMTAiIHI9IjIiLz4KICAgICAgICAgICAgPGNpcmNsZSBjeD0iMTAiIGN5PSI1MCIgcj0iMiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSI1MCIgY3k9IjUwIiByPSIyIi8+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=')] opacity-10" />
+
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+              <div className="flex-1 text-center lg:text-left">
+                <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
+                  <Badge className="bg-white text-purple-700 border-0 hover:bg-white/90 font-semibold shadow-lg">
+                    🎨 New Premium Resource
+                  </Badge>
+                  <Badge className="bg-amber-500 text-foreground border-0 font-semibold shadow-lg">
+                    <StarIcon className="h-3 w-3 mr-1" />
+                    Featured
+                  </Badge>
+                </div>
+
+                <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-4 drop-shadow-2xl [text-shadow:_2px_2px_4px_rgb(0_0_0_/_80%)]">
+                  Professional Design Tools Directory
+                </h2>
+
+                <p className="text-foreground text-lg mb-6 max-w-2xl drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
+                  Discover 1600+ carefully curated design tools, resources, and inspiration.
+                  From icons and illustrations to mockups and typography - everything designers need in one place.
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
+                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                    🎨 180+ Inspiration Tools
+                  </Badge>
+                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                    ✨ 92+ Icon Libraries
+                  </Badge>
+                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                    🖼️ 123+ Illustration Resources
+                  </Badge>
+                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                    📚 110+ Learning Resources
+                  </Badge>
+                </div>
+              </div>
+
+              <div className="flex-shrink-0">
+                <div className="text-center">
+                  <a
+                    href="https://design.30tools.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block"
+                  >
+                    <Button
+                      size="lg"
+                      className="bg-white text-purple-600 hover:bg-white/90 shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl min-w-[200px] font-semibold"
+                    >
+                      <PaletteIcon className="mr-2 h-5 w-5" />
+                      Explore Design Directory
+                      <ArrowRightIcon className="ml-2 h-5 w-5" />
+                    </Button>
+                  </a>
+
+                  <div className="flex items-center justify-center gap-4 mt-4 text-foreground text-sm drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
+                    <div className="flex items-center gap-1 font-bold">
+                      <UsersIcon className="h-4 w-4" />
+                      <span>1600+ Tools</span>
+                    </div>
+                    <div className="flex items-center gap-1 font-bold">
+                      <RefreshCwIcon className="h-4 w-4" />
+                      <span>Regularly Updated</span>
+                    </div>
+                    <div className="flex items-center gap-1 font-bold">
+                      <StarIcon className="h-4 w-4 text-amber-300" />
+                      <span>Curated</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Premium Tools Section */}
         <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
           <div className="container mx-auto px-4">
@@ -405,7 +474,7 @@ export default function LandingPage() {
               {premiumTools.map((tool) => (
                 tool.external ? (
                   <a key={tool.id} href={tool.route} target="_blank" rel="noopener noreferrer">
-                    <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white to-primary/5">
+                    <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20  ">
                       <CardHeader className="relative">
                         <div className="absolute top-3 right-3">
                           <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-foreground border-0">
