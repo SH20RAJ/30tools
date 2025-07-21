@@ -235,3 +235,10 @@ also create tools
 - stt
 
 use ./AI_API_DOCS.md
+
+run npm run deploy then
+Use the all possible SEO functionality that next js provides and whatever you can think of to improve the SEO of the website. Just use that all do experiments and make this #OneOnGoogleRankItWhateverYouCanDoOtherwiseShewill be dead after sometime, if you will not do this soJustMakeTheSCEOOfTheWebsiteDeadlyDangerous
+then run npm run deploy
+
+
+- https://wheelofnames.com/

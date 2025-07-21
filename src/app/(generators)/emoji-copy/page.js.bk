@@ -1,0 +1,73 @@
+// import EmojiCopyTool from '@/components/tools/generators/EmojiCopyTool';
+
+export const metadata = {
+  title: "Emoji Copy - Copy & Paste Emojis for Social Media | 30tools",
+  description: "Copy and paste emojis easily for Instagram, Twitter, Facebook, and all social media platforms. Browse thousands of emojis by category.",
+  keywords: "emoji copy, copy paste emoji, emoji for instagram, emoji for twitter, social media emojis, emoji keyboard",
+  canonical: "https://30tools.com/emoji-copy",
+  openGraph: {
+    title: "Emoji Copy - Copy & Paste Emojis for Social Media",
+    description: "Copy and paste emojis easily for Instagram, Twitter, Facebook, and all social media platforms. Browse thousands of emojis! 😍🔥✨",
+    url: "https://30tools.com/emoji-copy",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/emoji-copy.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Emoji Copy Tool - 30tools"
+      }
+    ],
+    locale: 'en_US',
+    type: 'website'
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Emoji Copy - Copy & Paste Emojis for Social Media",
+    description: "Copy and paste emojis easily for all social media platforms! 😍🔥✨",
+    images: ["/og-images/emoji-copy.jpg"],
+    creator: '@30tools'
+  }
+};
+
+export default function EmojiCopyPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Emoji Copy - Emoji Keyboard & Copy Tool",
+    "description": "Copy and paste emojis easily for Instagram, Twitter, Facebook, and all social media platforms. Browse thousands of emojis by category.",
+    "url": "https://30tools.com/emoji-copy",
+    "applicationCategory": "WebApplication",
+    "operatingSystem": "Web Browser",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "30tools",
+      "url": "https://30tools.com"
+    },
+    "featureList": [
+      "Copy emojis with one click",
+      "Browse by categories",
+      "Search emojis",
+      "Recent emojis history",
+      "Skin tone variations",
+      "Unicode support",
+      "Mobile-friendly",
+      "No installation required"
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* <EmojiCopyTool /> */}
+    </>
+  );
+}

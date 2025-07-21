@@ -21,7 +21,7 @@ import {
   GraduationCapIcon,
   BriefcaseIcon,
   HomeIcon,
-  DiceIcon
+  Dice6Icon
 } from 'lucide-react';
 import Link from 'next/link';
 import SocialShareButtons from '@/components/shared/SocialShareButtons';
@@ -130,18 +130,38 @@ export default function ExcuseGeneratorTool() {
   const [customSituation, setCustomSituation] = useState('');
   const [generatedExcuse, setGeneratedExcuse] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
-  const [useAI, setUseAI] = useState(false);
+  const [useAI, setUseAI] = useState(true);
   const [copied, setCopied] = useState(false);
   const [excuseHistory, setExcuseHistory] = useState([]);
 
   const generateAIExcuse = async (category, situation, believabilityLevel) => {
     try {
-      const prompt = `Generate a ${believabilityLevel} excuse for ${category} situation: "${situation}". Make it ${BELIEVABILITY_LEVELS[believabilityLevel].modifier} and appropriate for the context. Keep it under 100 characters.`;
+      const contextualPrompt = `Create a ${BELIEVABILITY_LEVELS[believabilityLevel].modifier} excuse for a ${category} situation: "${situation}". 
+
+Requirements:
+- Make it ${BELIEVABILITY_LEVELS[believabilityLevel].description.toLowerCase()}
+- Keep it conversational and natural
+- Maximum 120 characters
+- Include appropriate emotion/context
+- Make it sound like something a real person would say
+
+Style: ${believabilityLevel === 'low' ? 'Absurd and funny' : believabilityLevel === 'medium' ? 'Creative but plausible' : 'Realistic and believable'}`;
       
-      const response = await fetch(`https://text.pollinations.ai/${encodeURIComponent(prompt)}`);
+      const response = await fetch(`https://text.pollinations.ai/${encodeURIComponent(contextualPrompt)}`);
       const aiText = await response.text();
       
-      return aiText.trim();
+      // Clean up the response
+      let cleanExcuse = aiText.trim()
+        .replace(/^["']|["']$/g, '') // Remove quotes
+        .replace(/^Excuse:\s*/i, '') // Remove "Excuse:" prefix
+        .replace(/^\d+\.\s*/, ''); // Remove numbering
+      
+      // Ensure it's not too long
+      if (cleanExcuse.length > 120) {
+        cleanExcuse = cleanExcuse.substring(0, 117) + '...';
+      }
+      
+      return cleanExcuse || generateTemplateExcuse(category, situation);
     } catch (error) {
       console.error('AI generation failed:', error);
       return generateTemplateExcuse(category, situation);
@@ -326,15 +346,20 @@ export default function ExcuseGeneratorTool() {
                 </div>
 
                 {/* AI Toggle */}
-                <div className="flex items-center space-x-2">
-                  <Switch
-                    id="useAI"
-                    checked={useAI}
-                    onCheckedChange={setUseAI}
-                  />
-                  <Label htmlFor="useAI" className="text-sm">
-                    🤖 Use AI for creative excuses
-                  </Label>
+                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg border">
+                  <div className="flex items-center space-x-2">
+                    <Switch
+                      id="useAI"
+                      checked={useAI}
+                      onCheckedChange={setUseAI}
+                    />
+                    <Label htmlFor="useAI" className="text-sm font-medium">
+                      🤖 AI-Powered Excuses
+                    </Label>
+                  </div>
+                  <Badge variant={useAI ? "default" : "secondary"} className="text-xs">
+                    {useAI ? "Enhanced" : "Basic"}
+                  </Badge>
                 </div>
 
                 <div className="flex gap-2">
@@ -361,7 +386,7 @@ export default function ExcuseGeneratorTool() {
                     variant="outline"
                     disabled={isGenerating}
                   >
-                    <DiceIcon className="h-4 w-4" />
+                    <Dice6Icon className="h-4 w-4" />
                   </Button>
                 </div>
               </CardContent>
