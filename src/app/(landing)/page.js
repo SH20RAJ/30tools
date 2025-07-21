@@ -154,7 +154,7 @@ export default function LandingPage() {
               <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-400">
                 <span className="font-semibold text-foreground">Fast, free, and privacy-focused</span> tools for all your creative and professional needs.
                 <br className="hidden md:block" />
-                <span className="text-lg">No sign-up required ¥ No watermarks ¥ No limits</span>
+                <span className="text-lg">No sign-up required â€“ No watermarks â€“ No limits</span>
               </p>
 
               {/* Feature highlights */}
