@@ -10,8 +10,10 @@ export default function TeraboxVideoPlayer({ videoData }) {
 
   if (!videoData) return null;
 
-  // Create proxy URL for our CORS-friendly endpoint
-  const proxyVideoUrl = `/api/video-proxy?url=${encodeURIComponent(videoData.proxy_url)}`;
+  // Use the direct stream URL from the new API
+  const streamUrl = videoData.stream_url;
+  // Fallback proxy URL if direct stream fails
+  const proxyUrl = `/api/video-proxy?url=${encodeURIComponent(streamUrl)}`;
 
   const handleVideoError = (e) => {
     console.error('Video playback error:', e);
@@ -20,7 +22,7 @@ export default function TeraboxVideoPlayer({ videoData }) {
   };
 
   const openInNewTab = () => {
-    window.open(videoData.proxy_url, '_blank', 'noopener,noreferrer');
+    window.open(videoData.stream_url, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -38,7 +40,7 @@ export default function TeraboxVideoPlayer({ videoData }) {
             onError={handleVideoError}
             onLoadStart={() => setVideoError(false)}
           >
-            <source src={proxyVideoUrl} type="video/mp4" />
+            <source src={streamUrl} type="video/mp4" />
             <p className="text-center p-4 text-sm text-muted-foreground">
               Your browser does not support the video tag.
             </p>

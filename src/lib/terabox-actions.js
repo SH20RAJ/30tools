@@ -55,20 +55,11 @@ export async function fetchTeraboxVideoData(url) {
       return { error: 'Invalid Terabox URL' };
     }
 
-    const apiUrl = 'https://teraplay.tera-api.workers.dev/';
+    const apiUrl = `https://yellow-art-6e57.terafast.workers.dev/?link=${encodeURIComponent(url)}`;
     const response = await fetch(apiUrl, {
-      method: 'POST',
       headers: {
-        'accept': '*/*',
-        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
-        'content-type': 'application/json',
-        'origin': 'https://teraplay.me',
-        'referer': 'https://teraplay.me/',
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
-      },
-      body: JSON.stringify({
-        link: url
-      })
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
+      }
     });
     
     if (!response.ok) {
@@ -77,22 +68,28 @@ export async function fetchTeraboxVideoData(url) {
     
     const data = await response.json();
     
-    if (!data || !data.proxy_url) {
+    if (!data || !data.stream_url) {
       throw new Error('Invalid video data received');
     }
 
+    // Extract file name from stream URL or use default
+    const fileName = data.stream_url.includes('name=') 
+      ? decodeURIComponent(data.stream_url.split('name=')[1].split('&')[0])
+      : 'Terabox Video';
+
     // Transform the response to match the expected format
     const transformedData = {
-      name: data.file_name || 'Terabox Video',
+      name: fileName,
       type: 'video',
-      size: data.size_bytes || 0,
+      size: 0, // Size not provided by this API
       image: data.thumbnail || null,
       download_links: {
-        url_1: data.download_link || data.fast_download_link,
-        url_2: data.fast_download_link || data.download_link
+        url_1: data.stream_url, // Use stream URL for download
+        url_2: data.stream_url  // Same URL for both options
       },
-      proxy_url: data.proxy_url,
-      file_size: data.file_size
+      stream_url: data.stream_url, // Direct stream URL for video player
+      thumbnail: data.thumbnail,
+      file_size: 'Unknown' // Size not provided by this API
     };
 
     return {

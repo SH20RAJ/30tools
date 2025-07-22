@@ -94,7 +94,7 @@ export default function TeraboxPlayerTool() {
         throw new Error(videoResult.error);
       }
 
-      if (!videoResult.data || !videoResult.data.proxy_url) {
+      if (!videoResult.data || !videoResult.data.stream_url) {
         throw new Error('Invalid video data received');
       }
 
