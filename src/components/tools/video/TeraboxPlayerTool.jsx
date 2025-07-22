@@ -9,11 +9,11 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  PlayIcon, 
-  CopyIcon, 
-  DownloadIcon, 
-  ShareIcon, 
+import {
+  PlayIcon,
+  CopyIcon,
+  DownloadIcon,
+  ShareIcon,
   SettingsIcon,
   ExternalLinkIcon,
   MonitorIcon,
@@ -129,7 +129,7 @@ export default function TeraboxPlayerTool() {
       // Get OG data first for quick preview
       const ogResult = await ogPromise;
       setIsLoadingOG(false);
-      
+
       if (ogResult && !ogResult.error) {
         setOgData(ogResult);
         toast.success('Video preview loaded!');
@@ -143,28 +143,28 @@ export default function TeraboxPlayerTool() {
         throw new Error(videoResult.error);
       }
 
-      if (!videoResult.data || !videoResult.data.download_links || !videoResult.data.download_links.url_2) {
+      if (!videoResult.data || !videoResult.data.proxy_url) {
         throw new Error('Invalid video data received');
       }
 
       setVideoData(videoResult.data);
 
-      // Generate iframe code using the fetched video URL
+      // Generate iframe code using the proxy URL for video playback
       const iframeCode = generateIframeCode(
-        videoResult.data.download_links.url_2, 
-        videoResult.data.name || ogResult?.title || 'Terabox Video', 
+        videoResult.data.proxy_url,
+        videoResult.data.name || ogResult?.title || 'Terabox Video',
         ogResult?.image || videoResult.data.image || "https://i.ytimg.com/vi/YE7VzlLtp-4/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgWyhSMA8=&rs=AOn4CLALTULKYCt9cwfRuXwjVGBsTElH1w"
       );
       setGeneratedIframeCode(iframeCode);
 
-      // Generate share URL
+      // Generate share URL using proxy URL for video playback
       const shareData = btoa(JSON.stringify({
         ...formData,
         player: selectedPlayer,
         theme: selectedTheme,
-        videoUrl: videoResult.data.download_links.url_2,
+        videoUrl: videoResult.data.proxy_url,
         title: videoResult.data.name || ogResult?.title || 'Terabox Video',
-        posterUrl: ogResult?.image || videoResult.data.image  || 'https://i.ytimg.com/vi/YE7VzlLtp-4/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgWyhSMA8=&rs=AOn4CLALTULKYCt9cwfRuXwjVGBsTElH1w'
+        posterUrl: ogResult?.image || videoResult.data.image || 'https://i.ytimg.com/vi/YE7VzlLtp-4/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgWyhSMA8=&rs=AOn4CLALTULKYCt9cwfRuXwjVGBsTElH1w'
       }));
       const baseUrl = window.location.origin;
       setShareUrl(`${baseUrl}/video-player-embed?data=${shareData}`);
@@ -185,7 +185,7 @@ export default function TeraboxPlayerTool() {
       ...formData,
       player: selectedPlayer,
       theme: selectedTheme,
-      videoUrl: videoUrl,
+      videoUrl: videoUrl, // This will be the proxy URL for playback
       title: title || 'Terabox Video',
       posterUrl: posterUrl
     }));
@@ -212,6 +212,7 @@ export default function TeraboxPlayerTool() {
   const downloadVideo = (url, filename) => {
     const link = document.createElement('a');
     link.href = url;
+    link.rel = "nofollow noreferrer noopener";
     link.download = filename || 'terabox-video';
     link.target = '_blank';
     document.body.appendChild(link);
@@ -525,7 +526,7 @@ export default function TeraboxPlayerTool() {
                             onClick={() => downloadVideo(videoData.download_links.url_1, videoData.name)}
                           >
                             <DownloadIcon className="h-4 w-4 mr-2" />
-                            Download (Mirror 1)
+                            Direct Download
                           </Button>
                           <Button
                             variant="outline"
@@ -533,7 +534,7 @@ export default function TeraboxPlayerTool() {
                             onClick={() => downloadVideo(videoData.download_links.url_2, videoData.name)}
                           >
                             <DownloadIcon className="h-4 w-4 mr-2" />
-                            Download (Mirror 2)
+                            Fast Download
                           </Button>
                         </div>
                       </div>
