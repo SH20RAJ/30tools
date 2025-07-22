@@ -14,7 +14,8 @@ import {
   CopyIcon, 
   EyeIcon,
   SettingsIcon,
-  MonitorIcon
+  MonitorIcon,
+  Badge
 } from 'lucide-react';
 import { toast } from 'sonner';
 import CodeBlock from '@/components/ui/code-block';
@@ -143,12 +144,14 @@ export default TeraboxVideo;`;
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <Tabs defaultValue="settings" className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="settings">Settings</TabsTrigger>
-            <TabsTrigger value="code">Embed Code</TabsTrigger>
-            <TabsTrigger value="preview">Preview</TabsTrigger>
-          </TabsList>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Left Side - Settings and Code */}
+          <div className="space-y-6">
+            <Tabs defaultValue="settings" className="w-full">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="settings">Settings</TabsTrigger>
+                <TabsTrigger value="code">Embed Code</TabsTrigger>
+              </TabsList>
 
           <TabsContent value="settings" className="space-y-6">
             {/* Dimensions */}
@@ -354,6 +357,103 @@ export default TeraboxVideo;`;
             </div>
           </TabsContent>
         </Tabs>
+      </div>
+
+      {/* Right Side - Live Preview */}
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h4 className="font-semibold">Live Preview</h4>
+          <Badge variant="outline" className="text-xs">
+            {previewMode} - {embedSettings.width} x {embedSettings.height}
+          </Badge>
+        </div>
+
+        {videoData && (
+          <div className="space-y-4">
+            <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+              <iframe
+                src={previewUrl}
+                width="100%"
+                height="200"
+                style={{ 
+                  border: 'none', 
+                  borderRadius: '8px',
+                  maxWidth: embedSettings.responsive ? '100%' : 'none'
+                }}
+                title="Embed Preview"
+                allowFullScreen
+              />
+            </div>
+            
+            <div className="text-center">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => window.open(previewUrl, '_blank')}
+              >
+                <EyeIcon className="h-4 w-4 mr-2" />
+                Open Fullscreen Preview
+              </Button>
+            </div>
+
+            <div className="space-y-2 text-xs text-muted-foreground">
+              <div className="flex justify-between">
+                <span>Embed Type:</span>
+                <span className="capitalize">{previewMode}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Dimensions:</span>
+                <span>{embedSettings.width} x {embedSettings.height}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Responsive:</span>
+                <span>{embedSettings.responsive ? 'Yes' : 'No'}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Controls:</span>
+                <span>{embedSettings.controls ? 'Enabled' : 'Disabled'}</span>
+              </div>
+            </div>
+
+            <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <h5 className="font-medium text-sm mb-2">Quick Actions</h5>
+              <div className="flex flex-wrap gap-2">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => copyToClipboard(
+                    previewMode === 'iframe' ? generateIframeCode() :
+                    previewMode === 'video' ? generateDirectVideoCode() :
+                    previewMode === 'react' ? generateReactCode() :
+                    generateWordPressCode(),
+                    'Embed code'
+                  )}
+                >
+                  <CopyIcon className="h-4 w-4 mr-1" />
+                  Copy Code
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => copyToClipboard(previewUrl, 'Preview URL')}
+                >
+                  <CopyIcon className="h-4 w-4 mr-1" />
+                  Copy URL
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {!videoData && (
+          <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
+            <MonitorIcon className="h-12 w-12 mx-auto text-gray-400 mb-3" />
+            <p className="text-sm text-gray-500 mb-2">Embed preview will appear here</p>
+            <p className="text-xs text-gray-400">Load a video to see live embed preview</p>
+          </div>
+        )}
+      </div>
+    </div>
       </CardContent>
     </Card>
   );

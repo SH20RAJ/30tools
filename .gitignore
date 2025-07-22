@@ -45,3 +45,4 @@ public/sw.js
 build.log
 public/sw.*
 workbox-*
+send.js

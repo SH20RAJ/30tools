@@ -5,14 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { 
   PlayIcon, 
-  PaletteIcon,
-  SettingsIcon,
-  MonitorIcon,
-  InfoIcon
+  ExternalLinkIcon,
+  MonitorIcon
 } from 'lucide-react';
 
 export default function TeraboxPlayerSelector({ 
@@ -22,40 +19,34 @@ export default function TeraboxPlayerSelector({
   onThemeChange,
   videoData 
 }) {
-  const [activeTab, setActiveTab] = useState('player');
-
   const playerOptions = {
     plyr: {
       name: 'Plyr.js',
       description: 'Modern HTML5 video player with beautiful UI',
       features: ['Custom controls', 'Keyboard shortcuts', 'Fullscreen API', 'Picture-in-picture'],
       themes: ['default', 'dark', 'light', 'blue', 'red', 'green'],
-      pros: ['Lightweight', 'Responsive', 'Accessible', 'Modern design'],
-      preview: '/images/players/plyr-preview.jpg'
+      pros: ['Lightweight', 'Responsive', 'Accessible', 'Modern design']
     },
     videojs: {
       name: 'Video.js',
       description: 'Industry standard HTML5 video player',
       features: ['Plugin ecosystem', 'HLS support', 'DASH support', 'VR support'],
       themes: ['default', 'city', 'fantasy', 'forest', 'sea', 'tech'],
-      pros: ['Highly customizable', 'Large community', 'Plugin support', 'Enterprise ready'],
-      preview: '/images/players/videojs-preview.jpg'
+      pros: ['Highly customizable', 'Large community', 'Plugin support', 'Enterprise ready']
     },
     mediaelements: {
       name: 'MediaElement.js',
       description: 'Universal media player with Flash fallback',
       features: ['Flash fallback', 'Silverlight fallback', 'YouTube API', 'Vimeo API'],
       themes: ['default', 'minimal', 'classic', 'modern', 'retro'],
-      pros: ['Cross-browser', 'Legacy support', 'Multiple formats', 'API integration'],
-      preview: '/images/players/mediaelements-preview.jpg'
+      pros: ['Cross-browser', 'Legacy support', 'Multiple formats', 'API integration']
     },
     fluidplayer: {
       name: 'Fluid Player',
       description: 'Free HTML5 video player with advertising support',
       features: ['VAST ads', 'VPAID support', 'Analytics', 'Responsive design'],
       themes: ['default', 'dark', 'light', 'minimal', 'branded'],
-      pros: ['Ad support', 'Analytics', 'Free', 'Commercial use'],
-      preview: '/images/players/fluidplayer-preview.jpg'
+      pros: ['Ad support', 'Analytics', 'Free', 'Commercial use']
     }
   };
 
@@ -83,6 +74,23 @@ export default function TeraboxPlayerSelector({
   const currentPlayer = playerOptions[selectedPlayer];
   const availableThemes = currentPlayer?.themes || ['default'];
 
+  const generatePreviewUrl = () => {
+    if (!videoData) return null;
+    
+    const embedData = {
+      videoUrl: videoData.stream_url,
+      title: videoData.name,
+      poster: videoData.thumbnail,
+      player: selectedPlayer,
+      theme: selectedTheme,
+      controls: true,
+      autoplay: false,
+      muted: true
+    };
+
+    return `/embed/video?data=${btoa(JSON.stringify(embedData))}`;
+  };
+
   return (
     <Card>
       <CardHeader>
@@ -92,14 +100,10 @@ export default function TeraboxPlayerSelector({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3">
-            <TabsTrigger value="player">Player</TabsTrigger>
-            <TabsTrigger value="theme">Theme</TabsTrigger>
-            <TabsTrigger value="preview">Preview</TabsTrigger>
-          </TabsList>
-
-          <TabsContent value="player" className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Left Side - Controls */}
+          <div className="space-y-6">
+            {/* Player Selection */}
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label>Video Player</Label>
@@ -123,40 +127,32 @@ export default function TeraboxPlayerSelector({
               </div>
 
               {currentPlayer && (
-                <div className="space-y-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                <div className="space-y-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
                   <div>
-                    <h4 className="font-semibold text-lg">{currentPlayer.name}</h4>
+                    <h4 className="font-semibold">{currentPlayer.name}</h4>
                     <p className="text-sm text-muted-foreground">{currentPlayer.description}</p>
                   </div>
 
                   <div>
-                    <h5 className="font-medium mb-2">Key Features</h5>
-                    <div className="flex flex-wrap gap-2">
-                      {currentPlayer.features.map((feature, index) => (
+                    <h5 className="font-medium text-sm mb-1">Key Features</h5>
+                    <div className="flex flex-wrap gap-1">
+                      {currentPlayer.features.slice(0, 3).map((feature, index) => (
                         <Badge key={index} variant="secondary" className="text-xs">
                           {feature}
                         </Badge>
                       ))}
+                      {currentPlayer.features.length > 3 && (
+                        <Badge variant="secondary" className="text-xs">
+                          +{currentPlayer.features.length - 3} more
+                        </Badge>
+                      )}
                     </div>
-                  </div>
-
-                  <div>
-                    <h5 className="font-medium mb-2">Advantages</h5>
-                    <ul className="text-sm text-muted-foreground space-y-1">
-                      {currentPlayer.pros.map((pro, index) => (
-                        <li key={index} className="flex items-center">
-                          <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2"></div>
-                          {pro}
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </div>
               )}
             </div>
-          </TabsContent>
 
-          <TabsContent value="theme" className="space-y-6">
+            {/* Theme Selection */}
             <div className="space-y-4">
               <div className="space-y-2">
                 <Label>Theme</Label>
@@ -177,116 +173,116 @@ export default function TeraboxPlayerSelector({
                 </Select>
               </div>
 
-              <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">
-                <h4 className="font-semibold mb-2 capitalize">{selectedTheme} Theme</h4>
-                <p className="text-sm text-muted-foreground">
-                  {themeDescriptions[selectedTheme] || 'Custom theme with unique styling'}
-                </p>
-              </div>
-
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-                {availableThemes.map((theme) => (
+              <div className="grid grid-cols-3 gap-2">
+                {availableThemes.slice(0, 6).map((theme) => (
                   <button
                     key={theme}
                     onClick={() => onThemeChange(theme)}
-                    className={`p-3 border rounded-lg text-left transition-colors ${
+                    className={`p-2 border rounded text-center transition-colors ${
                       selectedTheme === theme 
                         ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
                         : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
                     }`}
                   >
-                    <div className="flex items-center space-x-2 mb-1">
-                      <div className={`w-3 h-3 rounded-full ${getThemeColor(theme)}`}></div>
-                      <span className="font-medium text-sm capitalize">{theme}</span>
-                    </div>
-                    <p className="text-xs text-muted-foreground">
-                      {themeDescriptions[theme]?.substring(0, 40)}...
-                    </p>
+                    <div className={`w-4 h-4 rounded-full ${getThemeColor(theme)} mx-auto mb-1`}></div>
+                    <span className="text-xs capitalize">{theme}</span>
                   </button>
                 ))}
               </div>
             </div>
-          </TabsContent>
 
-          <TabsContent value="preview" className="space-y-6">
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <h4 className="font-semibold">Player Preview</h4>
-                <Badge variant="outline">
-                  {currentPlayer?.name} - {selectedTheme}
-                </Badge>
-              </div>
-
-              {videoData ? (
-                <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
-                  <div className="aspect-video bg-gray-200 dark:bg-gray-700 rounded-lg flex items-center justify-center mb-4">
-                    <div className="text-center space-y-2">
-                      <MonitorIcon className="h-12 w-12 mx-auto text-gray-400" />
-                      <p className="text-sm text-gray-500">
-                        {currentPlayer?.name} Preview
-                      </p>
-                      <p className="text-xs text-gray-400">
-                        Theme: {selectedTheme}
-                      </p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <h5 className="font-medium">{videoData.name}</h5>
-                    <div className="flex items-center space-x-4 text-sm text-muted-foreground">
-                      <span>Player: {currentPlayer?.name}</span>
-                      <span>Theme: {selectedTheme}</span>
-                      <span>Size: {videoData.file_size}</span>
-                    </div>
-                  </div>
+            {/* Configuration Summary */}
+            <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <h5 className="font-medium text-sm mb-2">Current Selection</h5>
+              <div className="text-sm space-y-1">
+                <div className="flex justify-between">
+                  <span>Player:</span>
+                  <span className="font-medium">{currentPlayer?.name}</span>
                 </div>
-              ) : (
-                <div className="text-center py-8 text-muted-foreground">
-                  <InfoIcon className="h-8 w-8 mx-auto mb-2" />
-                  <p>Load a video to see the player preview</p>
+                <div className="flex justify-between">
+                  <span>Theme:</span>
+                  <span className="font-medium capitalize">{selectedTheme}</span>
                 </div>
-              )}
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <h5 className="font-medium">Selected Configuration</h5>
-                  <div className="text-sm space-y-1">
-                    <div className="flex justify-between">
-                      <span>Player:</span>
-                      <span className="font-medium">{currentPlayer?.name}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Theme:</span>
-                      <span className="font-medium capitalize">{selectedTheme}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Features:</span>
-                      <span className="font-medium">{currentPlayer?.features.length}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <h5 className="font-medium">Compatibility</h5>
-                  <div className="text-sm space-y-1">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span>Modern Browsers</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span>Mobile Devices</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      <span>Responsive Design</span>
-                    </div>
-                  </div>
+                <div className="flex justify-between">
+                  <span>Features:</span>
+                  <span className="font-medium">{currentPlayer?.features.length}</span>
                 </div>
               </div>
             </div>
-          </TabsContent>
-        </Tabs>
+          </div>
+
+          {/* Right Side - Live Preview */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <h4 className="font-semibold">Live Preview</h4>
+              <Badge variant="outline" className="text-xs">
+                {currentPlayer?.name} - {selectedTheme}
+              </Badge>
+            </div>
+
+            {videoData && generatePreviewUrl() ? (
+              <div className="space-y-3">
+                <div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg">
+                  <iframe
+                    src={generatePreviewUrl()}
+                    className="w-full h-48 border-0 rounded"
+                    title="Player Preview"
+                    allowFullScreen
+                  />
+                </div>
+                
+                <div className="text-center">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => window.open(generatePreviewUrl(), '_blank')}
+                  >
+                    <ExternalLinkIcon className="h-4 w-4 mr-2" />
+                    Open Fullscreen Preview
+                  </Button>
+                </div>
+
+                <div className="text-xs text-muted-foreground space-y-1">
+                  <div className="flex justify-between">
+                    <span>Video:</span>
+                    <span className="truncate ml-2">{videoData.name}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Size:</span>
+                    <span>{videoData.file_size}</span>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
+                <MonitorIcon className="h-12 w-12 mx-auto text-gray-400 mb-3" />
+                <p className="text-sm text-gray-500 mb-2">Preview will appear here</p>
+                <p className="text-xs text-gray-400">Load a video to see live preview</p>
+              </div>
+            )}
+
+            {/* Compatibility Info */}
+            <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+              <h5 className="font-medium text-sm mb-2 text-green-800 dark:text-green-200">
+                Compatibility
+              </h5>
+              <div className="text-sm space-y-1">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-green-700 dark:text-green-300">Modern Browsers</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-green-700 dark:text-green-300">Mobile Devices</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-green-700 dark:text-green-300">Responsive Design</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </CardContent>
     </Card>
   );
