@@ -100,7 +100,7 @@ export default function TeraboxPlayerSelector({
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
           {/* Left Side - Controls */}
           <div className="space-y-6">
             {/* Player Selection */}

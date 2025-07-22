@@ -7,21 +7,43 @@ export default function EmbedVideoPlayer() {
   const searchParams = useSearchParams();
   const [videoConfig, setVideoConfig] = useState(null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     try {
       const data = searchParams.get('data');
       if (!data) {
         setError('No video data provided');
+        setLoading(false);
         return;
       }
 
       const decodedData = JSON.parse(atob(data));
+      if (!decodedData.videoUrl) {
+        setError('Invalid video configuration');
+        setLoading(false);
+        return;
+      }
+
       setVideoConfig(decodedData);
+      setLoading(false);
     } catch (err) {
-      setError('Invalid video data');
+      console.error('Error parsing video data:', err);
+      setError('Invalid video data format');
+      setLoading(false);
     }
   }, [searchParams]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-black text-white">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
+          <p>Loading video...</p>
+        </div>
+      </div>
+    );
+  }
 
   if (error) {
     return (
@@ -38,71 +60,48 @@ export default function EmbedVideoPlayer() {
     return (
       <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
-          <p>Loading video...</p>
+          <p>No video configuration found</p>
         </div>
       </div>
     );
   }
 
-  const getPlayerStyles = () => {
-    const baseStyles = {
-      width: '100%',
-      height: '100vh',
-      backgroundColor: '#000'
-    };
-
-    if (videoConfig.appearance) {
-      return {
-        ...baseStyles,
-        '--primary-color': videoConfig.appearance.primaryColor || '#3b82f6',
-        '--accent-color': videoConfig.appearance.accentColor || '#10b981'
-      };
-    }
-
-    return baseStyles;
+  const containerStyle = {
+    width: '100%',
+    height: '100vh',
+    backgroundColor: '#000',
+    display: 'flex',
+    flexDirection: 'column'
   };
 
-  const renderPlayer = () => {
-    const playerProps = {
-      src: videoConfig.videoUrl,
-      poster: videoConfig.poster,
-      controls: videoConfig.controls !== false,
-      autoPlay: videoConfig.autoplay || false,
-      muted: videoConfig.muted || false,
-      loop: videoConfig.loop || false,
-      preload: videoConfig.performance?.preload || 'metadata',
-      style: {
-        width: '100%',
-        height: '100%',
-        borderRadius: videoConfig.appearance?.borderRadius ? `${videoConfig.appearance.borderRadius}px` : '0'
-      }
-    };
-
-    switch (videoConfig.player) {
-      case 'plyr':
-        return <PlyrPlayer {...playerProps} theme={videoConfig.theme} />;
-      case 'videojs':
-        return <VideoJSPlayer {...playerProps} theme={videoConfig.theme} />;
-      case 'mediaelements':
-        return <MediaElementPlayer {...playerProps} theme={videoConfig.theme} />;
-      case 'fluidplayer':
-        return <FluidPlayer {...playerProps} theme={videoConfig.theme} />;
-      default:
-        return <NativePlayer {...playerProps} />;
-    }
+  const videoStyle = {
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#000'
   };
 
   return (
-    <div style={getPlayerStyles()}>
-      {videoConfig.showTitle && (
+    <div style={containerStyle}>
+      {videoConfig.showTitle && videoConfig.title && (
         <div className="bg-black bg-opacity-75 text-white p-4">
           <h1 className="text-lg font-semibold">{videoConfig.title}</h1>
         </div>
       )}
       
-      <div className="relative w-full h-full">
-        {renderPlayer()}
+      <div className="flex-1 relative">
+        <video
+          src={videoConfig.videoUrl}
+          poster={videoConfig.poster}
+          controls={videoConfig.controls !== false}
+          autoPlay={videoConfig.autoplay || false}
+          muted={videoConfig.muted || false}
+          loop={videoConfig.loop || false}
+          preload="metadata"
+          style={videoStyle}
+          className="w-full h-full object-contain"
+        >
+          Your browser does not support the video tag.
+        </video>
         
         {videoConfig.appearance?.showLogo && videoConfig.appearance?.logoUrl && (
           <div className="absolute top-4 right-4 z-10">
@@ -115,9 +114,9 @@ export default function EmbedVideoPlayer() {
         )}
       </div>
 
-      {videoConfig.showDescription && (
+      {videoConfig.showDescription && videoConfig.description && (
         <div className="bg-black bg-opacity-75 text-white p-4">
-          <p className="text-sm">{videoConfig.description || `Watch ${videoConfig.title}`}</p>
+          <p className="text-sm">{videoConfig.description}</p>
         </div>
       )}
 
@@ -126,189 +125,5 @@ export default function EmbedVideoPlayer() {
         <style dangerouslySetInnerHTML={{ __html: videoConfig.appearance.customCSS }} />
       )}
     </div>
-  );
-}
-
-// Native HTML5 Video Player
-function NativePlayer({ src, poster, controls, autoPlay, muted, loop, preload, style }) {
-  return (
-    <video
-      src={src}
-      poster={poster}
-      controls={controls}
-      autoPlay={autoPlay}
-      muted={muted}
-      loop={loop}
-      preload={preload}
-      style={style}
-      className="w-full h-full object-contain"
-    >
-      Your browser does not support the video tag.
-    </video>
-  );
-}
-
-// Plyr Player Component
-function PlyrPlayer({ src, poster, controls, autoPlay, muted, loop, theme, style }) {
-  useEffect(() => {
-    // Load Plyr CSS and JS
-    const loadPlyr = async () => {
-      if (typeof window !== 'undefined' && !window.Plyr) {
-        // Load CSS
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://cdn.plyr.io/3.7.8/plyr.css';
-        document.head.appendChild(link);
-
-        // Load JS
-        const script = document.createElement('script');
-        script.src = 'https://cdn.plyr.io/3.7.8/plyr.polyfilled.js';
-        script.onload = () => {
-          const player = new window.Plyr('#plyr-player', {
-            controls: controls ? ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'settings', 'fullscreen'] : [],
-            autoplay: autoPlay,
-            muted: muted,
-            loop: { active: loop }
-          });
-        };
-        document.head.appendChild(script);
-      }
-    };
-
-    loadPlyr();
-  }, []);
-
-  return (
-    <video
-      id="plyr-player"
-      src={src}
-      poster={poster}
-      style={style}
-      className={`plyr-${theme || 'default'}`}
-    />
-  );
-}
-
-// Video.js Player Component
-function VideoJSPlayer({ src, poster, controls, autoPlay, muted, loop, theme, style }) {
-  useEffect(() => {
-    const loadVideoJS = async () => {
-      if (typeof window !== 'undefined' && !window.videojs) {
-        // Load CSS
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://vjs.zencdn.net/8.6.1/video-js.css';
-        document.head.appendChild(link);
-
-        // Load JS
-        const script = document.createElement('script');
-        script.src = 'https://vjs.zencdn.net/8.6.1/video.min.js';
-        script.onload = () => {
-          const player = window.videojs('videojs-player', {
-            controls: controls,
-            autoplay: autoPlay,
-            muted: muted,
-            loop: loop,
-            responsive: true,
-            fluid: true
-          });
-        };
-        document.head.appendChild(script);
-      }
-    };
-
-    loadVideoJS();
-  }, []);
-
-  return (
-    <video
-      id="videojs-player"
-      className={`video-js vjs-theme-${theme || 'default'}`}
-      src={src}
-      poster={poster}
-      style={style}
-      data-setup="{}"
-    />
-  );
-}
-
-// MediaElement Player Component
-function MediaElementPlayer({ src, poster, controls, autoPlay, muted, loop, theme, style }) {
-  useEffect(() => {
-    const loadMediaElement = async () => {
-      if (typeof window !== 'undefined' && !window.MediaElementPlayer) {
-        // Load CSS
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://cdn.jsdelivr.net/npm/mediaelement@5.1.1/build/mediaelementplayer.min.css';
-        document.head.appendChild(link);
-
-        // Load JS
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/mediaelement@5.1.1/build/mediaelement-and-player.min.js';
-        script.onload = () => {
-          new window.MediaElementPlayer('#mediaelements-player', {
-            features: controls ? ['playpause', 'progress', 'current', 'duration', 'tracks', 'volume', 'fullscreen'] : [],
-            autoplay: autoPlay,
-            loop: loop,
-            startVolume: muted ? 0 : 0.8
-          });
-        };
-        document.head.appendChild(script);
-      }
-    };
-
-    loadMediaElement();
-  }, []);
-
-  return (
-    <video
-      id="mediaelements-player"
-      src={src}
-      poster={poster}
-      style={style}
-      className={`mejs-${theme || 'default'}`}
-    />
-  );
-}
-
-// Fluid Player Component
-function FluidPlayer({ src, poster, controls, autoPlay, muted, loop, theme, style }) {
-  useEffect(() => {
-    const loadFluidPlayer = async () => {
-      if (typeof window !== 'undefined' && !window.fluidPlayer) {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js';
-        script.onload = () => {
-          window.fluidPlayer('fluid-player', {
-            layoutControls: {
-              autoPlay: autoPlay,
-              mute: muted,
-              loop: loop,
-              allowTheatre: false,
-              playPauseAnimation: true,
-              playbackRateEnabled: true,
-              allowDownload: false,
-              playButtonShowing: true,
-              fillToContainer: true,
-              posterImage: poster
-            }
-          });
-        };
-        document.head.appendChild(script);
-      }
-    };
-
-    loadFluidPlayer();
-  }, []);
-
-  return (
-    <video
-      id="fluid-player"
-      src={src}
-      poster={poster}
-      style={style}
-      className={`fluid-${theme || 'default'}`}
-    />
   );
 }
