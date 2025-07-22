@@ -83,6 +83,60 @@
                     ],
                     "primaryKeyword": "excuse generator",
                     "features": ["Multiple categories", "Believability levels", "AI-powered creativity", "Share to social", "Humor-focused"]
+                },
+                {
+                    "id": "ai-image-generator",
+                    "name": "AI Image Generator",
+                    "description": "Generate stunning images from text prompts using free AI. Enter your idea, get a unique image instantly.",
+                    "route": "/ai-image-generator",
+                    "popular": true,
+                    "category": "generators",
+                    "keywords": ["ai image generator", "text to image", "image ai", "generate image", "ai art"],
+                    "longTailKeywords": [
+                        "free ai image generator online",
+                        "text to image ai generator",
+                        "generate images from prompts",
+                        "ai art generator no signup",
+                        "create images with ai free"
+                    ],
+                    "primaryKeyword": "ai image generator",
+                    "features": ["Text-to-image AI", "No signup required", "Fast generation", "Download image", "Shareable results"]
+                },
+                {
+                    "id": "ai-poetry-generator",
+                    "name": "AI Poetry Generator",
+                    "description": "Create original poems on any topic with AI. Enter a theme or mood and get a unique poem instantly.",
+                    "route": "/ai-poetry-generator",
+                    "popular": true,
+                    "category": "generators",
+                    "keywords": ["ai poetry generator", "poem generator", "ai poem", "generate poem", "poetry ai"],
+                    "longTailKeywords": [
+                        "free ai poetry generator online",
+                        "generate poems with ai",
+                        "ai poem writer",
+                        "poetry generator no signup",
+                        "create poems with ai free"
+                    ],
+                    "primaryKeyword": "ai poetry generator",
+                    "features": ["AI poem creation", "Custom themes", "Instant results", "Copy & share", "Minimal UI"]
+                },
+                {
+                    "id": "ai-voice-generator",
+                    "name": "AI Voice Generator",
+                    "description": "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
+                    "route": "/ai-voice-generator",
+                    "popular": true,
+                    "category": "generators",
+                    "keywords": ["ai voice generator", "text to speech", "ai audio", "generate voice", "speech ai"],
+                    "longTailKeywords": [
+                        "free ai voice generator online",
+                        "text to speech ai generator",
+                        "generate audio from text",
+                        "ai speech generator no signup",
+                        "create voice with ai free"
+                    ],
+                    "primaryKeyword": "ai voice generator",
+                    "features": ["Text-to-speech AI", "Multiple voices", "Download MP3", "No signup required", "Minimal UI"]
                 }
             ]
         },

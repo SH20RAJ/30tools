@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Copy, Shuffle, Sparkles, Download, Share2, RefreshCw } from 'lucide-react';
 import { toast } from 'sonner';
+// Import SocialShareButtons component
 import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 const ChatGPTPersonaGeneratorTool = () => {

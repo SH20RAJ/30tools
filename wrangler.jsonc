@@ -18,9 +18,6 @@
 	"observability": {
 		"enabled": true
 	},
-	"build": {
-		"command": "npx opennextjs-cloudflare build",
-	},
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

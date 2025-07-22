@@ -55,11 +55,20 @@ export async function fetchTeraboxVideoData(url) {
       return { error: 'Invalid Terabox URL' };
     }
 
-    const apiUrl = `https://terabox-latest.shraj.workers.dev/?url=${encodeURIComponent(url)}`;
+    const apiUrl = 'https://teraplay.tera-api.workers.dev/';
     const response = await fetch(apiUrl, {
+      method: 'POST',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36',
+        'accept': '*/*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        'origin': 'https://teraplay.me',
+        'referer': 'https://teraplay.me/',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
       },
+      body: JSON.stringify({
+        link: url
+      })
     });
     
     if (!response.ok) {
@@ -68,13 +77,27 @@ export async function fetchTeraboxVideoData(url) {
     
     const data = await response.json();
     
-    if (!data || !data.download_links) {
+    if (!data || !data.proxy_url) {
       throw new Error('Invalid video data received');
     }
 
+    // Transform the response to match the expected format
+    const transformedData = {
+      name: data.file_name || 'Terabox Video',
+      type: 'video',
+      size: data.size_bytes || 0,
+      image: data.thumbnail || null,
+      download_links: {
+        url_1: data.download_link || data.fast_download_link,
+        url_2: data.fast_download_link || data.download_link
+      },
+      proxy_url: data.proxy_url,
+      file_size: data.file_size
+    };
+
     return {
       success: true,
-      data: data
+      data: transformedData
     };
   } catch (error) {
     console.error('Error fetching video data:', error);

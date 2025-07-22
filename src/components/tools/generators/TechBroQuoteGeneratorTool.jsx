@@ -78,7 +78,7 @@ const QUOTE_STYLES = {
     blog: 'Medium Article'
 };
 
-function TechBroQuoteGeneratorTool() {
+const TechBroQuoteGeneratorTool = () => {
     const [generatedQuote, setGeneratedQuote] = useState('');
     const [isGenerating, setIsGenerating] = useState(false);
     const [selectedStyle, setSelectedStyle] = useState('linkedin');
@@ -306,6 +306,6 @@ function TechBroQuoteGeneratorTool() {
             </div>
         </div>
     );
-}
+};
 
 export default TechBroQuoteGeneratorTool;

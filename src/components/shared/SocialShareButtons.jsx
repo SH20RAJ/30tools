@@ -4,9 +4,9 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Share2, 
-  Copy, 
+import {
+  Share2,
+  Copy,
   CheckCircle,
   Twitter,
   Facebook,
@@ -16,19 +16,19 @@ import {
   Heart
 } from 'lucide-react';
 
-export default function SocialShareButtons({ 
-  toolName, 
-  toolDescription, 
-  toolUrl, 
+const SocialShareButtons = ({
+  toolName,
+  toolDescription,
+  toolUrl,
   category = "tool",
-  customMessage = null 
-}) {
+  customMessage = null
+}) => {
   const [copied, setCopied] = useState(false);
 
   // Generate attractive share messages
   const generateShareText = (platform) => {
     if (customMessage) return customMessage;
-    
+
     const messages = {
       twitter: `🚀 Just discovered ${toolName} on 30tools! ${toolDescription} Perfect for ${category} work. Try it free: ${toolUrl} #${category}tools #webtools #free`,
       facebook: `Amazing free tool alert! 🎉 ${toolName} - ${toolDescription}. This saved me so much time! Check it out at ${toolUrl}`,
@@ -82,7 +82,7 @@ export default function SocialShareButtons({
             <Twitter className="h-4 w-4 mr-2" />
             Twitter
           </Button>
-          
+
           <Button
             variant="outline"
             size="sm"
@@ -92,7 +92,7 @@ export default function SocialShareButtons({
             <Facebook className="h-4 w-4 mr-2" />
             Facebook
           </Button>
-          
+
           <Button
             variant="outline"
             size="sm"
@@ -102,7 +102,7 @@ export default function SocialShareButtons({
             <Linkedin className="h-4 w-4 mr-2" />
             LinkedIn
           </Button>
-          
+
           <Button
             variant="outline"
             size="sm"
@@ -125,7 +125,7 @@ export default function SocialShareButtons({
             <Mail className="h-4 w-4 mr-2" />
             Email
           </Button>
-          
+
           <Button
             variant="outline"
             size="sm"
@@ -151,4 +151,6 @@ export default function SocialShareButtons({
       </CardContent>
     </Card>
   );
-}
+};
+
+export default SocialShareButtons;

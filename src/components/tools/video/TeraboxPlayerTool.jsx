@@ -2,6 +2,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
@@ -29,6 +30,9 @@ import CodeBlock from '@/components/ui/code-block';
 import { fetchTeraboxOGData, fetchTeraboxVideoData } from '@/lib/terabox-actions';
 
 export default function TeraboxPlayerTool() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  
   const [formData, setFormData] = useState({
     teraboxUrl: '',
     width: '100%',
@@ -50,6 +54,7 @@ export default function TeraboxPlayerTool() {
   const [videoData, setVideoData] = useState(null);
   const [error, setError] = useState('');
   const previewRef = useRef(null);
+  const debounceRef = useRef(null);
 
   // Sample data
   const sampleData = {
@@ -73,15 +78,61 @@ export default function TeraboxPlayerTool() {
     'default', 'dark', 'light', 'blue', 'red', 'green', 'purple', 'orange'
   ];
 
+  // Load URL from search params on component mount
+  useEffect(() => {
+    const urlParam = searchParams.get('url');
+    if (urlParam && urlParam.includes('teraboxapp.com')) {
+      setFormData(prev => ({ ...prev, teraboxUrl: urlParam }));
+      // Auto-load video when URL is present in params
+      loadVideoFromUrl(urlParam);
+    }
+  }, [searchParams]);
+
+  // Update URL when teraboxUrl changes
+  const updateUrlParams = (url) => {
+    const params = new URLSearchParams(window.location.search);
+    if (url && url.includes('teraboxapp.com')) {
+      params.set('url', url);
+    } else {
+      params.delete('url');
+    }
+    const newUrl = `${window.location.pathname}${params.toString() ? '?' + params.toString() : ''}`;
+    router.replace(newUrl, { scroll: false });
+  };
+
   const handleInputChange = (field, value) => {
     setFormData(prev => ({
       ...prev,
       [field]: value
     }));
+
+    // Auto-load video when URL is pasted
+    if (field === 'teraboxUrl') {
+      updateUrlParams(value);
+      
+      // Clear previous debounce
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+
+      // Debounce the API call
+      if (value && value.includes('teraboxapp.com')) {
+        debounceRef.current = setTimeout(() => {
+          loadVideoFromUrl(value);
+        }, 1000); // Wait 1 second after user stops typing
+      } else {
+        // Clear video data if URL is invalid or empty
+        setVideoData(null);
+        setOgData(null);
+        setError('');
+      }
+    }
   };
 
   const loadSampleData = () => {
     setFormData(sampleData);
+    updateUrlParams(sampleData.teraboxUrl);
+    loadVideoFromUrl(sampleData.teraboxUrl);
     toast.success('Sample data loaded!');
   };
 
@@ -100,17 +151,13 @@ export default function TeraboxPlayerTool() {
     setOgData(null);
     setVideoData(null);
     setError('');
+    updateUrlParams(''); // Clear URL params
     toast.success('Form cleared!');
   };
 
-  const generateEmbedCode = async () => {
-    if (!formData.teraboxUrl) {
-      toast.error('Please enter a Terabox URL');
-      return;
-    }
-
-    if (!formData.teraboxUrl.includes('teraboxapp.com')) {
-      toast.error('Please enter a valid Terabox URL');
+  // Renamed and simplified function for auto-loading
+  const loadVideoFromUrl = async (url) => {
+    if (!url || !url.includes('teraboxapp.com')) {
       return;
     }
 
@@ -123,16 +170,15 @@ export default function TeraboxPlayerTool() {
 
     try {
       // Start both API calls in parallel
-      const ogPromise = fetchTeraboxOGData(formData.teraboxUrl);
-      const videoPromise = fetchTeraboxVideoData(formData.teraboxUrl);
+      const ogPromise = fetchTeraboxOGData(url);
+      const videoPromise = fetchTeraboxVideoData(url);
 
       // Get OG data first for quick preview
       const ogResult = await ogPromise;
       setIsLoadingOG(false);
-
+      
       if (ogResult && !ogResult.error) {
         setOgData(ogResult);
-        toast.success('Video preview loaded!');
       }
 
       // Wait for full video data
@@ -151,33 +197,29 @@ export default function TeraboxPlayerTool() {
 
       // Generate iframe code using the proxy URL for video playback
       const iframeCode = generateIframeCode(
-        videoResult.data.proxy_url,
-        videoResult.data.name || ogResult?.title || 'Terabox Video',
+        videoResult.data.proxy_url, 
+        videoResult.data.name || ogResult?.title || 'Terabox Video', 
         ogResult?.image || videoResult.data.image || "https://i.ytimg.com/vi/YE7VzlLtp-4/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgWyhSMA8=&rs=AOn4CLALTULKYCt9cwfRuXwjVGBsTElH1w"
       );
       setGeneratedIframeCode(iframeCode);
 
-      // Generate share URL using proxy URL for video playback
-      const shareData = btoa(JSON.stringify({
-        ...formData,
-        player: selectedPlayer,
-        theme: selectedTheme,
-        videoUrl: videoResult.data.proxy_url,
-        title: videoResult.data.name || ogResult?.title || 'Terabox Video',
-        posterUrl: ogResult?.image || videoResult.data.image || 'https://i.ytimg.com/vi/YE7VzlLtp-4/hq720.jpg?sqp=-oaymwE7CK4FEIIDSFryq4qpAy0IARUAAAAAGAElAADIQj0AgKJD8AEB-AH-CYAC0AWKAgwIABABGGUgWyhSMA8=&rs=AOn4CLALTULKYCt9cwfRuXwjVGBsTElH1w'
-      }));
-      const baseUrl = window.location.origin;
-      setShareUrl(`${baseUrl}/video-player-embed?data=${shareData}`);
+      // Generate shareable URL for this specific video
+      const currentUrl = new URL(window.location);
+      currentUrl.searchParams.set('url', url);
+      setShareUrl(currentUrl.toString());
 
-      toast.success('Terabox video player generated successfully!');
     } catch (error) {
       setError(error.message);
-      toast.error(error.message);
     } finally {
       setIsLoading(false);
       setIsLoadingOG(false);
       setIsLoadingVideo(false);
     }
+  };
+
+  // Keep the manual generate function for backward compatibility
+  const generateEmbedCode = () => {
+    loadVideoFromUrl(formData.teraboxUrl);
   };
 
   const generateIframeCode = (videoUrl, title, posterUrl) => {
@@ -566,7 +608,7 @@ export default function TeraboxPlayerTool() {
                       <CardTitle className="flex items-center justify-between">
                         <span className="flex items-center">
                           <MonitorIcon className="h-5 w-5 mr-2" />
-                          Player Preview
+                          Video Player
                         </span>
                         <div className="flex space-x-2">
                           <Button
@@ -582,16 +624,18 @@ export default function TeraboxPlayerTool() {
                     </CardHeader>
                     <CardContent>
                       <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
-                        <iframe
-                          ref={previewRef}
-                          src={shareUrl ? getCleanEmbedUrl() : ''}
-                          className="w-full h-64 border-0 rounded"
-                          title="Video Player Preview"
-                          allowFullScreen
-                        />
+                        <video
+                          className="w-full h-64 rounded"
+                          controls
+                          poster={videoData.image}
+                          preload="metadata"
+                        >
+                          <source src={videoData.proxy_url} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
                       <div className="mt-2 text-xs text-muted-foreground">
-                        This preview shows your Terabox video player as it will appear when embedded.
+                        Direct video player using Terabox proxy URL for seamless streaming.
                       </div>
                     </CardContent>
                   </Card>
