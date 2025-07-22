@@ -207,49 +207,192 @@ export default function TeraboxPlayerTool() {
 
         {/* SEO Content Section */}
         <div className="mt-16 space-y-8">
+          {/* Main SEO Content */}
           <Card>
             <CardContent className="p-8">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-                <div>
-                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">1</div>
-                  <h3 className="font-semibold mb-2">Paste URL</h3>
-                  <p className="text-sm text-muted-foreground">Copy your Terabox link and paste it - video loads automatically</p>
+              <div className="max-w-4xl mx-auto">
+                <h2 className="text-3xl font-bold mb-6 text-center">Watch Terabox Videos Online Without App - Use 30Tools.com!</h2>
+                
+                <p className="text-lg leading-relaxed mb-6">
+                  Are you tired of downloading the Terabox app just to watch a video someone shared with you? Good news - now you don't have to! With <strong>30Tools.com</strong>, you can open Terabox links, play videos online, and enjoy smooth streaming directly from your browser - no downloads, no signup, no app needed.
+                </p>
+
+                <h3 className="text-2xl font-semibold mb-4">What Is 30Tools Terabox Player?</h3>
+                <p className="mb-4">30Tools.com is a free online Terabox video player that lets you:</p>
+                <ul className="list-disc pl-6 mb-6 space-y-2">
+                  <li>Open any Terabox link in your browser</li>
+                  <li>Watch Terabox videos without downloading the app</li>
+                  <li>Stream videos instantly with full-screen support</li>
+                  <li>Skip the hassle and save time</li>
+                </ul>
+                <p className="mb-6">It's the easiest way to turn a Terabox link into a playable video on any device.</p>
+
+                <h3 className="text-2xl font-semibold mb-4">How to Use Terabox Link Opener on 30Tools.com</h3>
+                <ol className="list-decimal pl-6 mb-6 space-y-2">
+                  <li>Get your Terabox video link (example: https://teraboxapp.com/s/xyz...)</li>
+                  <li>Go to 30Tools.com/terabox-downloader</li>
+                  <li>Paste your link in the box</li>
+                  <li>Wait for automatic loading</li>
+                  <li>Sit back and watch your video online for free</li>
+                </ol>
+                <p className="mb-6 font-semibold">No login. No Terabox app. Just paste, and enjoy!</p>
+
+                <h3 className="text-2xl font-semibold mb-4">Why Use 30Tools as Your Terabox Player?</h3>
+                <p className="mb-4">People use 30Tools.com for many reasons:</p>
+                <ul className="list-disc pl-6 mb-6 space-y-2">
+                  <li><strong>Terabox Link Opener</strong> - instantly access Terabox files</li>
+                  <li><strong>Terabox Link Player</strong> - play Terabox video links in one click</li>
+                  <li><strong>Terabox Viewer</strong> - stream your video securely in-browser</li>
+                  <li><strong>Online Terabox Video Player</strong> - full-screen support, fast buffering</li>
+                  <li><strong>No Ads</strong> - clean and smooth experience</li>
+                  <li><strong>Works on All Devices</strong> - mobile, tablet, or desktop</li>
+                </ul>
+                <p className="mb-6">Whether you're looking to watch Terabox video online, open a Terabox movie, or preview large files without downloading - 30Tools.com is the tool you need.</p>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Features Grid */}
+          <Card>
+            <CardContent className="p-8">
+              <h2 className="text-2xl font-bold mb-6 text-center">Features of 30Tools Terabox Player</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="text-center p-4 border rounded-lg">
+                  <h4 className="font-semibold mb-2">Online Terabox Link Player</h4>
+                  <p className="text-sm text-muted-foreground">Play any Terabox video directly in your browser</p>
                 </div>
-                <div>
-                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">2</div>
-                  <h3 className="font-semibold mb-2">Instant Play</h3>
-                  <p className="text-sm text-muted-foreground">Video player loads with CORS-friendly proxy for seamless streaming</p>
+                <div className="text-center p-4 border rounded-lg">
+                  <h4 className="font-semibold mb-2">No Login Required</h4>
+                  <p className="text-sm text-muted-foreground">Watch Terabox videos without creating an account</p>
                 </div>
-                <div>
-                  <div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">3</div>
-                  <h3 className="font-semibold mb-2">Share & Download</h3>
-                  <p className="text-sm text-muted-foreground">Get shareable links and direct download options instantly</p>
+                <div className="text-center p-4 border rounded-lg">
+                  <h4 className="font-semibold mb-2">App-Free Experience</h4>
+                  <p className="text-sm text-muted-foreground">No need to download the Terabox app</p>
+                </div>
+                <div className="text-center p-4 border rounded-lg">
+                  <h4 className="font-semibold mb-2">Fast Streaming</h4>
+                  <p className="text-sm text-muted-foreground">Instant video loading with smooth playback</p>
+                </div>
+                <div className="text-center p-4 border rounded-lg">
+                  <h4 className="font-semibold mb-2">Mobile Compatible</h4>
+                  <p className="text-sm text-muted-foreground">Works perfectly on phones, tablets, and desktops</p>
+                </div>
+                <div className="text-center p-4 border rounded-lg">
+                  <h4 className="font-semibold mb-2">Download Options</h4>
+                  <p className="text-sm text-muted-foreground">Multiple download links for offline viewing</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
+          {/* Use Cases */}
           <Card>
             <CardContent className="p-8">
-              <h2 className="text-2xl font-bold mb-4 text-center">Features</h2>
+              <h2 className="text-2xl font-bold mb-6 text-center">Popular Use Cases</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <h4 className="font-semibold">Auto-Loading</h4>
-                  <p className="text-sm text-muted-foreground">Videos load automatically when you paste a URL - no buttons to click</p>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div>
+                      <h4 className="font-semibold">Watch viral Terabox videos online</h4>
+                      <p className="text-sm text-muted-foreground">Access trending content shared on social media</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div>
+                      <h4 className="font-semibold">Play Terabox videos on school or office PCs</h4>
+                      <p className="text-sm text-muted-foreground">No app installation needed on restricted computers</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div>
+                      <h4 className="font-semibold">Open Terabox video links instantly</h4>
+                      <p className="text-sm text-muted-foreground">Quick access to shared educational content</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <h4 className="font-semibold">Shareable URLs</h4>
-                  <p className="text-sm text-muted-foreground">Copy the page URL to share videos with others instantly</p>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="font-semibold">CORS-Free Playback</h4>
-                  <p className="text-sm text-muted-foreground">Custom proxy ensures videos play in any browser without restrictions</p>
-                </div>
-                <div className="space-y-2">
-                  <h4 className="font-semibold">Multiple Downloads</h4>
-                  <p className="text-sm text-muted-foreground">Direct and fast download options with original quality</p>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div>
+                      <h4 className="font-semibold">Terabox video viewer on mobile</h4>
+                      <p className="text-sm text-muted-foreground">Stream videos on phones without app storage</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div>
+                      <h4 className="font-semibold">Access content from friends</h4>
+                      <p className="text-sm text-muted-foreground">View shared videos without signing up</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div>
+                      <h4 className="font-semibold">Preview large video files</h4>
+                      <p className="text-sm text-muted-foreground">Check content before downloading</p>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+
+          {/* FAQ Section */}
+          <Card>
+            <CardContent className="p-8">
+              <h2 className="text-2xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">What is a Terabox Player?</h3>
+                  <p className="text-muted-foreground">A Terabox Player is an online tool that allows you to watch Terabox videos directly in your web browser without downloading the Terabox app. 30Tools.com provides a free Terabox player that supports instant streaming, full-screen viewing, and download options.</p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">How do I use a Terabox Link Opener?</h3>
+                  <p className="text-muted-foreground">Simply paste your Terabox link into the URL field on 30Tools.com. The video will automatically load and start playing in your browser. No registration, no app download, and no complicated setup required.</p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Can I watch Terabox videos online without the app?</h3>
+                  <p className="text-muted-foreground">Yes! 30Tools.com lets you watch any Terabox video online without installing the Terabox app. Our online player works on all devices including phones, tablets, and computers.</p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Is the Terabox Player free to use?</h3>
+                  <p className="text-muted-foreground">Absolutely! 30Tools.com offers a completely free Terabox video player. There are no hidden fees, no premium subscriptions, and no limits on how many videos you can watch.</p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Does the online Terabox player work on mobile and desktop?</h3>
+                  <p className="text-muted-foreground">Yes, our Terabox player is fully responsive and works seamlessly on mobile phones, tablets, and desktop computers. The interface automatically adapts to your screen size for the best viewing experience.</p>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-semibold mb-2">Are there any ads or popups in the Terabox Player?</h3>
+                  <p className="text-muted-foreground">No, 30Tools.com offers an ad-free Terabox video player experience. Enjoy smooth, uninterrupted streaming of your Terabox videos online without annoying advertisements.</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Final CTA */}
+          <Card>
+            <CardContent className="p-8 text-center">
+              <h2 className="text-2xl font-bold mb-4">Ready to Watch Terabox Videos Online?</h2>
+              <p className="text-lg mb-6">
+                If you ever received a Terabox video link and didn't know how to play it without installing the Terabox app - just remember one thing:
+              </p>
+              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-6">
+                <p className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+                  Go to 30Tools.com and start watching instantly!
+                </p>
+              </div>
+              <p className="text-muted-foreground">
+                It's the best Terabox link player online - fast, free, and user-friendly. No app downloads, no signups, just paste your link and enjoy seamless video streaming.
+              </p>
             </CardContent>
           </Card>
         </div>
