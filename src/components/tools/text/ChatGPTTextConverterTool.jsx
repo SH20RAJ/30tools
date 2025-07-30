@@ -100,7 +100,12 @@ export default function ChatGPTTextConverterTool() {
     const handleInputChange = (e) => {
         const text = e.target.value;
         setInputText(text);
+        // Real-time conversion for immediate feedback
         setOutputText(convertText(text));
+    };
+
+    const handleConvert = () => {
+        setOutputText(convertText(inputText));
     };
 
     const copyToClipboard = async () => {
@@ -268,6 +273,15 @@ Markdown is a powerful and simple way to format your text for the web. Whether y
                             />
 
                             <div className="flex flex-wrap gap-2">
+                                <Button
+                                    onClick={handleConvert}
+                                    disabled={!inputText}
+                                    size="sm"
+                                >
+                                    <ArrowRightIcon className="h-4 w-4 mr-2" />
+                                    Convert
+                                </Button>
+
                                 <Button
                                     variant="outline"
                                     size="sm"

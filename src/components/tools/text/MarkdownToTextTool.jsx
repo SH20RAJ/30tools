@@ -116,7 +116,12 @@ export default function MarkdownToTextTool() {
     const handleInputChange = (e) => {
         const markdown = e.target.value;
         setInputText(markdown);
+        // Real-time conversion for immediate feedback
         setOutputText(convertMarkdownToText(markdown));
+    };
+
+    const handleConvert = () => {
+        setOutputText(convertMarkdownToText(inputText));
     };
 
     const copyToClipboard = async () => {
@@ -243,6 +248,15 @@ Perfect for cleaning up documentation and content!`;
                             />
 
                             <div className="flex flex-wrap gap-2">
+                                <Button
+                                    onClick={handleConvert}
+                                    disabled={!inputText}
+                                    size="sm"
+                                >
+                                    <ArrowRightIcon className="h-4 w-4 mr-2" />
+                                    Convert
+                                </Button>
+
                                 <Button
                                     variant="outline"
                                     size="sm"
