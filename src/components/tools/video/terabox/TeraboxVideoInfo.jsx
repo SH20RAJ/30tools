@@ -4,20 +4,20 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Label } from '@/components/ui/label';
-import { 
-  DownloadIcon, 
-  CheckCircleIcon, 
+import {
+  DownloadIcon,
+  CheckCircleIcon,
   LoaderIcon,
   ShareIcon,
   CopyIcon
 } from 'lucide-react';
 import { toast } from 'sonner';
 
-export default function TeraboxVideoInfo({ 
-  videoData, 
-  ogData, 
-  isLoadingVideo, 
-  shareUrl 
+export default function TeraboxVideoInfo({
+  videoData,
+  ogData,
+  isLoadingVideo,
+  shareUrl
 }) {
   const formatFileSize = (bytes) => {
     if (!bytes || bytes === 0) return '0 Bytes';
@@ -81,7 +81,7 @@ export default function TeraboxVideoInfo({
                 <>
                   <Badge variant="outline">{videoData.type}</Badge>
                   <Badge variant="outline">
-                    {videoData.file_size || formatFileSize(parseInt(videoData.size))}
+                    {videoData.size_formatted || videoData.file_size || formatFileSize(parseInt(videoData.size))}
                   </Badge>
                 </>
               ) : ogData ? (
@@ -94,27 +94,44 @@ export default function TeraboxVideoInfo({
         </div>
 
         {/* Download Options */}
-        {videoData && (
+        {videoData && videoData.download_links && (
           <div className="space-y-2">
             <Label className="text-sm font-semibold">Download Options</Label>
             <div className="flex flex-wrap gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => downloadVideo(videoData.download_links.url_1, videoData.name)}
-              >
-                <DownloadIcon className="h-4 w-4 mr-2" />
-                Direct Download
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={() => downloadVideo(videoData.download_links.url_2, videoData.name)}
-              >
-                <DownloadIcon className="h-4 w-4 mr-2" />
-                Fast Download
-              </Button>
+              {videoData.download_links.url_1 && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => downloadVideo(videoData.download_links.url_1, videoData.name)}
+                >
+                  <DownloadIcon className="h-4 w-4 mr-2" />
+                  Direct Download
+                </Button>
+              )}
+              {videoData.download_links.url_2 && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => downloadVideo(videoData.download_links.url_2, videoData.name)}
+                >
+                  <DownloadIcon className="h-4 w-4 mr-2" />
+                  Fast Download
+                </Button>
+              )}
+              {videoData.download_links.stream && (
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => downloadVideo(videoData.download_links.stream, videoData.name)}
+                >
+                  <DownloadIcon className="h-4 w-4 mr-2" />
+                  Stream Download
+                </Button>
+              )}
             </div>
+            <p className="text-xs text-muted-foreground">
+              Multiple download options available. Fast download is recommended for better speed.
+            </p>
           </div>
         )}
 

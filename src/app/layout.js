@@ -24,12 +24,12 @@ export const metadata = {
   keywords: [
     // Primary keywords
     "free online tools",
-    "image compressor", 
+    "image compressor",
     "pdf tools",
     "video converter",
     "seo tools",
     "developer tools",
-    
+
     // Long-tail keywords
     "compress images online free",
     "pdf merger free online",
@@ -41,7 +41,7 @@ export const metadata = {
     "text case converter",
     "url shortener free",
     "json formatter online",
-    
+
     // Semantic keywords
     "online utilities",
     "web tools",
@@ -53,7 +53,7 @@ export const metadata = {
     "text tools",
     "productivity tools",
     "browser tools",
-    
+
     // Technical keywords
     "no registration tools",
     "privacy focused tools",
@@ -170,7 +170,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="theme-color" content="#000000" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
-        
+
         {/* Enhanced SEO Meta Tags */}
         <meta name="application-name" content="30tools" />
         <meta name="apple-mobile-web-app-title" content="30tools" />
@@ -179,28 +179,28 @@ export default function RootLayout({ children }) {
         <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-tap-highlight" content="no" />
-        
+
         {/* Site Links Enhancement */}
         <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
         <meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1" />
-        
+
         {/* Rich Snippets */}
         <meta property="og:site_name" content="30tools" />
         <meta property="og:type" content="website" />
         <meta name="twitter:site" content="@30tools" />
         <meta name="twitter:creator" content="@30tools" />
-        
+
         {/* Search Box */}
         <link rel="search" type="application/opensearchdescription+xml" title="30tools Search" href="/opensearch.xml" />
-        
+
         {/* Canonical and Alternate */}
         <link rel="canonical" href="https://30tools.com" />
         <link rel="alternate" type="application/rss+xml" title="30tools RSS Feed" href="/feed.xml" />
-        
+
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
@@ -225,15 +225,19 @@ export default function RootLayout({ children }) {
           strategy="afterInteractive"
         />
       </head>
-      <body className={`${poppins.variable} font-sans antialiased`}><StackProvider app={stackServerApp}><StackTheme>
-        <ThemeProvider>
-          <StructuredData />
-          {children}
-          <PWAInstallPrompt />
-          <Toaster />
-          <a className="sr-only" href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" /></a>
-        </ThemeProvider>
-      </StackTheme></StackProvider></body>
+      <StackProvider app={stackServerApp}>
+        <body className={`${poppins.variable} font-sans antialiased`}>
+          <StackTheme>
+            <ThemeProvider>
+              <StructuredData />
+              {children}
+              <PWAInstallPrompt />
+              <Toaster />
+              <a className="sr-only" href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" /></a>
+            </ThemeProvider>
+          </StackTheme>
+        </body>
+      </StackProvider>
     </html>
   );
 }

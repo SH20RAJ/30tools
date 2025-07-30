@@ -19,16 +19,16 @@ export async function fetchTeraboxOGData(url) {
     }
 
     const html = await response.text();
-    
+
     // Extract OG meta tags using regex
     const titleMatch = html.match(/<meta[^>]*property="og:title"[^>]*content="([^"]*)"[^>]*>/i);
     const descriptionMatch = html.match(/<meta[^>]*property="og:description"[^>]*content="([^"]*)"[^>]*>/i);
     const imageMatch = html.match(/<meta[^>]*property="og:image"[^>]*content="([^"]*)"[^>]*>/i);
     const typeMatch = html.match(/<meta[^>]*property="og:type"[^>]*content="([^"]*)"[^>]*>/i);
-    
+
     // Also try to extract from title tag if OG title not found
     const pageTitleMatch = html.match(/<title[^>]*>([^<]*)<\/title>/i);
-    
+
     return {
       title: titleMatch?.[1] || pageTitleMatch?.[1] || 'Terabox Video',
       description: descriptionMatch?.[1] || 'Video from Terabox',
@@ -55,41 +55,60 @@ export async function fetchTeraboxVideoData(url) {
       return { error: 'Invalid Terabox URL' };
     }
 
-    const apiUrl = `https://yellow-art-6e57.terafast.workers.dev/?link=${encodeURIComponent(url)}`;
+    const apiUrl = 'https://api.iteraplay.com/';
     const response = await fetch(apiUrl, {
+      method: 'POST',
       headers: {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'
-      }
+        'accept': '*/*',
+        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
+        'content-type': 'application/json',
+        'origin': 'https://iteraplay.com',
+        'referer': 'https://iteraplay.com/',
+        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
+        'x-api-key': 'terabox_pro_api_2025_premium_new'
+      },
+      body: JSON.stringify({
+        link: url
+      })
     });
-    
+
     if (!response.ok) {
       throw new Error('Failed to fetch video data from API');
     }
-    
+
     const data = await response.json();
-    
-    if (!data || !data.stream_url) {
+
+    if (!data || data.status !== 'success' || !data.list || data.list.length === 0) {
       throw new Error('Invalid video data received');
     }
 
-    // Extract file name from stream URL or use default
-    const fileName = data.stream_url.includes('name=') 
-      ? decodeURIComponent(data.stream_url.split('name=')[1].split('&')[0])
-      : 'Terabox Video';
+    // Get the first file from the list
+    const fileData = data.list[0];
+
+    if (!fileData.stream_url) {
+      throw new Error('No stream URL available');
+    }
 
     // Transform the response to match the expected format
     const transformedData = {
-      name: fileName,
-      type: 'video',
-      size: 0, // Size not provided by this API
-      image: data.thumbnail || null,
+      name: fileData.name || 'Terabox Video',
+      type: fileData.type || 'video',
+      size: fileData.size || 0,
+      size_formatted: fileData.size_formatted || 'Unknown',
+      image: fileData.thumbnail || null,
       download_links: {
-        url_1: data.stream_url, // Use stream URL for download
-        url_2: data.stream_url  // Same URL for both options
+        url_1: fileData.download_link || fileData.stream_url, // Direct download link
+        url_2: fileData.fast_download_link || fileData.stream_url, // Fast download link
+        stream: fileData.stream_url // Stream URL for playing
       },
-      stream_url: data.stream_url, // Direct stream URL for video player
-      thumbnail: data.thumbnail,
-      file_size: 'Unknown' // Size not provided by this API
+      stream_url: fileData.stream_url, // Direct stream URL for video player
+      thumbnail: fileData.thumbnail,
+      file_size: fileData.size_formatted || 'Unknown',
+      // Additional metadata from the new API
+      fs_id: fileData.fs_id,
+      folder: fileData.folder,
+      total_files: data.total_files,
+      shorturl: data.shorturl
     };
 
     return {
