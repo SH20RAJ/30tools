@@ -104,8 +104,8 @@ export default function MarkdownToTextTool() {
         // Clean up multiple consecutive newlines
         text = text.replace(/\n{3,}/g, '\n\n');
 
-        // Remove leading/trailing whitespace from each line
-        text = text.split('\n').map(line => line.trim()).join('\n');
+        // Remove trailing whitespace from each line while preserving indentation
+        text = text.split('\n').map(line => line.trimEnd()).join('\n');
 
         // Remove empty lines at the beginning and end
         text = text.trim();

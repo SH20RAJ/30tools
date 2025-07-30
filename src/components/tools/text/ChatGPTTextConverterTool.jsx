@@ -16,8 +16,8 @@ export default function ChatGPTTextConverterTool() {
     const convertText = (text) => {
         let converted = text;
 
-        // Remove headers (### ## #)
-        converted = converted.replace(/^#{1,6}\s+(.+)$/gm, '$1');
+        // Remove headers (### ## #) and add proper spacing
+        converted = converted.replace(/^#{1,6}\s+(.+)$/gm, '$1\n');
 
         // Remove bold formatting (**text** or __text__)
         converted = converted.replace(/\*\*(.*?)\*\*/g, '$1');
@@ -38,31 +38,44 @@ export default function ChatGPTTextConverterTool() {
             return match.replace(/```\w*\n?/g, '').replace(/```/g, '');
         });
 
-        // Convert unordered lists (- item or * item)
-        converted = converted.replace(/^[\s]*[-*+]\s+(.+)$/gm, '• $1');
+        // Convert unordered lists with proper indentation
+        converted = converted.replace(/^(\s*)[-*+]\s+(.+)$/gm, (match, indent, content) => {
+            const level = Math.floor(indent.length / 2);
+            const indentation = '  '.repeat(level);
+            return `${indentation}• ${content}`;
+        });
 
-        // Convert ordered lists (1. item)
-        converted = converted.replace(/^[\s]*\d+\.\s+(.+)$/gm, (match, content, offset, string) => {
+        // Convert ordered lists with proper numbering and indentation
+        converted = converted.replace(/^(\s*)\d+\.\s+(.+)$/gm, (match, indent, content, offset, string) => {
+            const level = Math.floor(indent.length / 2);
+            const indentation = '  '.repeat(level);
+
+            // Count previous numbered items at the same level to get correct numbering
             const lines = string.substring(0, offset).split('\n');
-            const currentLineIndex = lines.length - 1;
             let listNumber = 1;
 
-            // Count previous list items to get correct numbering
-            for (let i = currentLineIndex - 1; i >= 0; i--) {
-                if (lines[i].match(/^[\s]*\d+\.\s+/)) {
-                    listNumber++;
-                } else if (lines[i].trim() === '') {
+            for (let i = lines.length - 2; i >= 0; i--) {
+                const line = lines[i];
+                const listMatch = line.match(/^(\s*)\d+\.\s+/);
+                if (listMatch) {
+                    const lineLevel = Math.floor(listMatch[1].length / 2);
+                    if (lineLevel === level) {
+                        listNumber++;
+                    } else if (lineLevel < level) {
+                        break;
+                    }
+                } else if (line.trim() === '') {
                     continue;
                 } else {
                     break;
                 }
             }
 
-            return `${listNumber}. ${content}`;
+            return `${indentation}${listNumber}. ${content}`;
         });
 
-        // Convert blockquotes (> text)
-        converted = converted.replace(/^>\s+(.+)$/gm, '"$1"');
+        // Convert blockquotes with proper formatting
+        converted = converted.replace(/^>\s*(.+)$/gm, '"$1"');
 
         // Remove horizontal rules (--- or ***)
         converted = converted.replace(/^[-*]{3,}$/gm, '');
@@ -73,8 +86,12 @@ export default function ChatGPTTextConverterTool() {
         // Remove images ![alt](url)
         converted = converted.replace(/!\[[^\]]*\]\([^)]+\)/g, '');
 
-        // Clean up extra whitespace and line breaks
+        // Clean up multiple consecutive newlines but preserve paragraph structure
         converted = converted.replace(/\n{3,}/g, '\n\n');
+
+        // Remove leading/trailing whitespace from each line while preserving indentation
+        converted = converted.split('\n').map(line => line.trimEnd()).join('\n');
+
         converted = converted.trim();
 
         return converted;
