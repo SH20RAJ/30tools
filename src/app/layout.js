@@ -236,6 +236,10 @@ export default function RootLayout({ children }) {
               <a className="sr-only" href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" /></a>
             </ThemeProvider>
           </StackTheme>
+          <script 
+ defer 
+ src="https://assets.onedollarstats.com/stonks.js"
+></script>
         </body>
       </StackProvider>
     </html>
