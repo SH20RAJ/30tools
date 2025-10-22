@@ -1,8 +1,8 @@
 {
     "metadata": {
-        "version": "8.6",
+        "version": "8.7",
         "lastUpdated": "2025-01-30",
-        "totalTools": 143,
+        "totalTools": 144,
         "totalCategories": 13
     },
     "categories": {
@@ -2107,6 +2107,44 @@
                         "Real-time checking",
                         "Email and domain support",
                         "Open source data"
+                    ]
+                },
+                {
+                    "id": "complexity-analyzer",
+                    "name": "Time & Space Complexity Analyzer",
+                    "description": "Analyze the time and space complexity of your code using AI-powered analysis. Get Big O notation, optimization suggestions, and algorithm insights.",
+                    "route": "/complexity-analyzer",
+                    "popular": true,
+                    "category": "developer",
+                    "keywords": [
+                        "time complexity analyzer",
+                        "space complexity",
+                        "big o notation",
+                        "algorithm analysis",
+                        "code complexity",
+                        "performance analysis",
+                        "ai code analyzer",
+                        "algorithm optimization",
+                        "computational complexity",
+                        "code efficiency"
+                    ],
+                    "longTailKeywords": [
+                        "time complexity analyzer online free",
+                        "big o notation calculator ai",
+                        "code performance analysis tool",
+                        "algorithm complexity checker",
+                        "space complexity calculator",
+                        "ai powered complexity analyzer",
+                        "code optimization suggestions tool"
+                    ],
+                    "primaryKeyword": "time complexity analyzer",
+                    "features": [
+                        "AI-powered analysis",
+                        "Big O notation results",
+                        "Multiple programming languages",
+                        "Optimization suggestions",
+                        "Algorithm type detection",
+                        "Detailed explanations"
                     ]
                 }
             ]

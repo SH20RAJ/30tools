@@ -1,5 +1,3 @@
-import { getAllTools } from '@/constants/tools-utils';
-
 export default function robots() {
   const baseUrl = 'https://30tools.com';
   

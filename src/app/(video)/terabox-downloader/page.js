@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import TeraboxPlayerTool from '@/components/tools/video/TeraboxPlayerTool';
 
 export const metadata = {

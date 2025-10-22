@@ -1,4 +1,4 @@
-import { getAllTools, getToolsByCategory } from '@/constants/tools-utils';
+import { getAllTools } from '@/constants/tools-utils';
 
 // Advanced Schema.org markup generator for 30tools
 export function generateOrganizationSchema() {

@@ -1,5 +1,4 @@
 import TypingSpeedTestTool from '@/components/tools/text/TypingSpeedTestTool';
-import { SEO_TEMPLATES } from '@/constants/seo/metadata-templates';
 
 export const metadata = {
   title: "Free Typing Speed Test Online - Check Your WPM & Accuracy | 30tools",

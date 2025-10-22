@@ -43,7 +43,7 @@ async function createOpenRouterCompletion(messages, options = {}) {
       try {
         const errorData = await response.json();
         errorMessage += ` - ${errorData.error?.message || errorData.message || 'Unknown error'}`;
-      } catch (parseError) {
+      } catch {
         const errorText = await response.text();
         errorMessage += ` - ${errorText || 'Unknown error'}`;
       }

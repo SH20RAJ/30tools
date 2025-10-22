@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import YouTubeThumbnailDownloader from '@/components/tools/youtube/YouTubeThumbnailDownloader';
 
 export const metadata = {

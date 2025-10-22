@@ -48,6 +48,9 @@ const nextConfig = {
   // Bundle dependencies for pages router
   bundlePagesRouterDependencies: true,
   
+  // Output configuration for Cloudflare deployment
+  output: 'standalone',
+  
   // Compression and security
   compress: true,
   poweredByHeader: false,
