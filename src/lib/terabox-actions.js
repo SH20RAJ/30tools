@@ -49,74 +49,70 @@ export async function fetchTeraboxOGData(url) {
 }
 
 // Server action to fetch full video data from Terabox API
-export async function fetchTeraboxVideoData(url) {
+export async function fetchTeraboxVideoData(url, cookies = 'ndus=Ye4ozFx5eHui9m4JWsYNeYKpotzW5RsuPMbrkNYS') {
   try {
     if (!url || !url.includes('teraboxapp.com')) {
       return { error: 'Invalid Terabox URL' };
     }
 
-    const apiUrl = 'https://api.iteraplay.com/';
+    console.log('🔍 Fetching Terabox video data for:', url);
+
+    // Use the new TeraSnap API
+    const apiUrl = 'https://terasnap.netlify.app/api/download';
     const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
-        'accept': '*/*',
-        'accept-language': 'en-GB,en-US;q=0.9,en;q=0.8',
-        'content-type': 'application/json',
-        'origin': 'https://iteraplay.com',
-        'referer': 'https://iteraplay.com/',
-        'user-agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
-        'x-api-key': 'terabox_pro_api_2025_premium_new'
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        link: url
+        link: url,
+        cookies: cookies
       })
     });
 
     if (!response.ok) {
-      throw new Error('Failed to fetch video data from API');
+      const errorText = await response.text();
+      console.error('❌ API Error:', response.status, errorText);
+      throw new Error(`API request failed: ${response.status}`);
     }
 
     const data = await response.json();
+    console.log('✅ Received data from API:', data);
 
-    if (!data || data.status !== 'success' || !data.list || data.list.length === 0) {
+    if (!data || !data.file_name) {
       throw new Error('Invalid video data received');
     }
 
-    // Get the first file from the list
-    const fileData = data.list[0];
-
-    if (!fileData.stream_url) {
-      throw new Error('No stream URL available');
-    }
-
     // Transform the response to match the expected format
+    // proxy_url is the video src for playback
     const transformedData = {
-      name: fileData.name || 'Terabox Video',
-      type: fileData.type || 'video',
-      size: fileData.size || 0,
-      size_formatted: fileData.size_formatted || 'Unknown',
-      image: fileData.thumbnail || null,
+      name: data.file_name || 'Terabox Video',
+      type: 'video',
+      size: data.size_bytes || 0,
+      size_formatted: data.file_size || 'Unknown',
+      image: data.thumbnail || null,
       download_links: {
-        url_1: fileData.download_link || fileData.stream_url, // Direct download link
-        url_2: fileData.fast_download_link || fileData.stream_url, // Fast download link
-        stream: fileData.stream_url // Stream URL for playing
+        url_1: data.download_link, // Original download link
+        url_2: data.proxy_url, // Proxied download link (more reliable)
+        stream: data.proxy_url // Stream URL for playing (use proxy_url for video src)
       },
-      stream_url: fileData.stream_url, // Direct stream URL for video player
-      thumbnail: fileData.thumbnail,
-      file_size: fileData.size_formatted || 'Unknown',
+      stream_url: data.proxy_url, // Use proxy_url as the video source
+      thumbnail: data.thumbnail,
+      file_size: data.file_size || 'Unknown',
       // Additional metadata from the new API
-      fs_id: fileData.fs_id,
-      folder: fileData.folder,
-      total_files: data.total_files,
-      shorturl: data.shorturl
+      download_link: data.download_link,
+      proxy_url: data.proxy_url, // This is the key field for video playback
+      size_bytes: data.size_bytes
     };
+
+    console.log('✅ Transformed data:', transformedData);
 
     return {
       success: true,
       data: transformedData
     };
   } catch (error) {
-    console.error('Error fetching video data:', error);
+    console.error('❌ Error fetching video data:', error);
     return {
       error: error.message || 'Unable to fetch video from Terabox. Please check the URL and try again.'
     };
