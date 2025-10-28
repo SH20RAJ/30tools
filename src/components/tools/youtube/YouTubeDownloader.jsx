@@ -4,14 +4,22 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Download, Video, Music, Loader2, ExternalLink } from 'lucide-react';
+import { Download, Video, Music, Loader2, LogIn } from 'lucide-react';
 import { downloadYouTubeVideo } from '@/lib/youtube-actions';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 export default function YouTubeDownloader() {
   const [url, setUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [videoData, setVideoData] = useState(null);
   const [error, setError] = useState('');
+  const [showLoginDialog, setShowLoginDialog] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,21 +39,16 @@ export default function YouTubeDownloader() {
       } else {
         setError(result.error || 'Failed to process YouTube video');
       }
-    } catch (err) {
+    } catch {
       setError('An error occurred while processing the video');
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleDownload = (downloadUrl, filename, format) => {
-    const link = document.createElement('a');
-    link.href = downloadUrl;
-    link.download = filename;
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = (_downloadUrl, _filename, _format) => {
+    // Show login dialog instead of downloading
+    setShowLoginDialog(true);
   };
 
   return (
@@ -226,6 +229,49 @@ export default function YouTubeDownloader() {
           </div>
         </CardContent>
       </Card>
+
+      {/* Login Dialog */}
+      <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-xl">
+              <LogIn className="w-5 h-5 text-red-500" />
+              Login Required
+            </DialogTitle>
+            <DialogDescription className="pt-2 space-y-3">
+              <p className="text-base">
+                You need to be logged in to download videos.
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Create a free account to enjoy unlimited downloads of YouTube videos and audio files.
+              </p>
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex flex-col gap-3 mt-4">
+            <Button 
+              className="w-full bg-red-500 hover:bg-red-600"
+              onClick={() => window.location.href = '/handler/sign-in'}
+            >
+              <LogIn className="w-4 h-4 mr-2" />
+              Login to Download
+            </Button>
+            <Button 
+              variant="outline"
+              className="w-full"
+              onClick={() => window.location.href = '/handler/sign-up'}
+            >
+              Create Free Account
+            </Button>
+            <Button 
+              variant="ghost"
+              className="w-full"
+              onClick={() => setShowLoginDialog(false)}
+            >
+              Cancel
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

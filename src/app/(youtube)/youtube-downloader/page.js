@@ -173,6 +173,79 @@ export default function YouTubeDownloaderPage() {
                 </div>
               </div>
             </div>
+
+            <div className="bg-card rounded-lg p-6 border">
+              <h2 className="text-2xl font-semibold mb-4">More Developer & Utility Tools</h2>
+              <p className="text-sm text-muted-foreground mb-6">
+                Explore our collection of professional tools designed to boost your productivity and streamline your workflow.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <a
+                  href="https://coders.30tools.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 border rounded-lg hover:border-primary hover:shadow-md transition-all group"
+                >
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">🚀 Coders - Developer Tools</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Essential developer tools including JSON formatter, code beautifier, API tester, and complexity analyzer. Built for developers, by developers.
+                  </p>
+                  <span className="text-xs text-primary mt-2 inline-block">Visit Coders →</span>
+                </a>
+
+                <a
+                  href="https://online-tools.30tools.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 border rounded-lg hover:border-primary hover:shadow-md transition-all group"
+                >
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">🔧 Online Tools</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Comprehensive online utilities for hashing (MD5, SHA256), encoding (Base64, Base32), encryption (AES, RSA), and format conversion.
+                  </p>
+                  <span className="text-xs text-primary mt-2 inline-block">Visit Online Tools →</span>
+                </a>
+
+                <a
+                  href="https://devtools.30tools.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 border rounded-lg hover:border-primary hover:shadow-md transition-all group"
+                >
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">⚙️ DevTools</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Professional development tools featuring hash generators, cryptography utilities, JSON/XML formatters, and case converters.
+                  </p>
+                  <span className="text-xs text-primary mt-2 inline-block">Visit DevTools →</span>
+                </a>
+
+                <a
+                  href="https://it-tools.30tools.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 border rounded-lg hover:border-primary hover:shadow-md transition-all group"
+                >
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">🛠️ IT-Tools</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Handy IT tools collection with token generators, UUID/ULID generators, QR code creator, JWT parser, and 80+ more utilities.
+                  </p>
+                  <span className="text-xs text-primary mt-2 inline-block">Visit IT-Tools →</span>
+                </a>
+
+                <a
+                  href="https://terabox.beer/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block p-4 border rounded-lg hover:border-primary hover:shadow-md transition-all group"
+                >
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">📦 TeraBox Downloader</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Free TeraBox video downloader with inline player. Download and play TeraBox videos directly in your browser with our Telegram bot.
+                  </p>
+                  <span className="text-xs text-primary mt-2 inline-block">Visit TeraBox.beer →</span>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
