@@ -92,8 +92,13 @@ export default function LandingPage() {
                   Search
                 </Button>
               </Link>
+              <Link href="/more-tools">
+                <Button variant="ghost" className="hidden sm:flex">
+                  More Tools
+                </Button>
+              </Link>
               <Link href="/search?">
-                <Button variant="ghost">
+                <Button variant="ghost" className="hidden md:flex">
                   Other Tools
                 </Button>
               </Link>
@@ -546,6 +551,111 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
+        {/* More Developer & Utility Tools Section */}
+        <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+                Explore Our Specialized Platforms
+              </h2>
+              <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
+                Beyond this platform, discover our comprehensive ecosystem of 9 specialized tools and platforms, each designed to solve specific challenges.
+              </p>
+              <div className="flex flex-wrap justify-center gap-2 text-sm">
+                <Badge variant="secondary">🚀 800+ Total Tools</Badge>
+                <Badge variant="secondary">🌐 9 Platforms</Badge>
+                <Badge variant="secondary">💯 Always Free</Badge>
+                <Badge variant="secondary">⚡ Lightning Fast</Badge>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+              {/* Coders */}
+              <a href="https://coders.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-500">
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-2">
+                      <span className="text-4xl">🚀</span>
+                      <Badge variant="outline">Developer Tools</Badge>
+                    </div>
+                    <CardTitle className="group-hover:text-blue-600 transition-colors">
+                      Coders
+                    </CardTitle>
+                    <CardDescription>
+                      Essential developer tools including JSON formatter, code beautifier, API tester, and complexity analyzer.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-sm text-primary font-medium group-hover:underline">
+                      Explore Coders →
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
+
+              {/* IT-Tools */}
+              <a href="https://it-tools.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-500">
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-2">
+                      <span className="text-4xl">🛠️</span>
+                      <Badge variant="outline">IT Tools</Badge>
+                    </div>
+                    <CardTitle className="group-hover:text-blue-600 transition-colors">
+                      IT-Tools
+                    </CardTitle>
+                    <CardDescription>
+                      Handy tools collection with 80+ utilities including token generators, UUID generators, QR codes, and JWT parser.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-sm text-primary font-medium group-hover:underline">
+                      Explore IT-Tools →
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
+
+              {/* AI Agents */}
+              <a href="https://ai-agents.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-500">
+                  <CardHeader>
+                    <div className="flex items-start justify-between mb-2">
+                      <span className="text-4xl">🤖</span>
+                      <Badge variant="outline">AI Tools</Badge>
+                    </div>
+                    <CardTitle className="group-hover:text-blue-600 transition-colors">
+                      AI Agents Directory
+                    </CardTitle>
+                    <CardDescription>
+                      Discover 557+ AI agents across 19 categories for coding, productivity, customer service, and more.
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="text-sm text-primary font-medium group-hover:underline">
+                      Explore AI Agents →
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
+            </div>
+
+            <div className="text-center">
+              <Link href="/more-tools">
+                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg">
+                  <ZapIcon className="mr-2 h-5 w-5" />
+                  View All 9 Platforms
+                  <ArrowRightIcon className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <p className="text-sm text-muted-foreground mt-4">
+                Explore TeraBox downloader, Online Tools, DevTools, Piano Notes, Converto and more!
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-16">
           <div className="container mx-auto px-4 text-center">
@@ -608,7 +718,7 @@ export default function LandingPage() {
                 <li><Link href="/search?category=video" className="text-muted-foreground hover:text-foreground">Video Tools</Link></li>
                 <li><Link href="/search?category=audio" className="text-muted-foreground hover:text-foreground">Audio Tools</Link></li>
                 <li><Link href="/search?category=pdf" className="text-muted-foreground hover:text-foreground">PDF Tools</Link></li>
-                <li><Link href="/search?" className="text-muted-foreground hover:text-foreground">Other Tools</Link></li>
+                <li><Link href="/more-tools" className="text-muted-foreground hover:text-foreground">More Platforms</Link></li>
               </ul>
             </div>
 
