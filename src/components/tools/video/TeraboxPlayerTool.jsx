@@ -173,6 +173,35 @@ export default function TeraboxPlayerTool() {
           </p>
         </div>
 
+        {/* Announcement Banner */}
+        <div className="mb-8">
+          <Card className="border-blue-500 bg-blue-50 dark:bg-blue-950/30">
+            <CardContent className="py-4">
+              <div className="flex items-start space-x-3">
+                <div className="flex-shrink-0">
+                  <AlertCircleIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                    🎉 Terabox Player Has Moved!
+                  </h3>
+                  <p className="text-blue-800 dark:text-blue-200 mb-3">
+                    Our Terabox player has been upgraded and moved to a dedicated platform for better performance and features.
+                  </p>
+                  <a
+                    href="https://terabox.beer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                  >
+                    Visit terabox.beer →
+                  </a>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Left Panel - Input and Controls */}
           <div className="space-y-6">
