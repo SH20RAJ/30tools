@@ -2655,76 +2655,767 @@
             "name": "SEO Tools",
             "slug": "seo-tools",
             "icon": "SearchIcon",
-            "description": "Generate meta tags, QR codes, and SEO utilities",
+            "description": "Professional SEO tools for keyword research, rank tracking, technical SEO, and website optimization. Boost your search rankings with our comprehensive SEO toolkit.",
             "tools": [
                 {
-                    "id": "meta-tags-generator",
-                    "name": "Meta Tags Generator",
-                    "description": "Generate HTML meta tags for SEO optimization",
-                    "route": "/meta-tags-generator",
-                    "popular": false,
-                    "category": "seo"
-                },
-                {
-                    "id": "qr-code-generator",
-                    "name": "QR Code Generator",
-                    "description": "Generate QR codes for text, URLs, WiFi, and more",
-                    "route": "/qr-code-generator",
+                    "id": "bulk-keyword-rank-checker",
+                    "name": "Free Bulk Keyword Rank Checker",
+                    "description": "Check Google rankings for multiple keywords at once. Track keyword positions for any domain across different locations and devices.",
+                    "route": "/bulk-keyword-rank-checker",
                     "popular": true,
                     "category": "seo",
                     "keywords": [
-                        "qr code",
-                        "qr generator",
-                        "qr code maker",
-                        "qr creator"
+                        "keyword rank checker",
+                        "bulk rank checker",
+                        "google rank tracker",
+                        "keyword position checker",
+                        "serp checker",
+                        "rank tracking tool",
+                        "keyword ranking tool",
+                        "google ranking checker"
                     ],
                     "longTailKeywords": [
-                        "free qr code generator no sign up",
-                        "qr code generator for wifi password",
-                        "bulk qr code generator excel",
-                        "custom qr code generator with logo",
-                        "vcard qr code generator free"
+                        "free bulk keyword rank checker tool",
+                        "check google rankings for multiple keywords",
+                        "bulk keyword position tracker online",
+                        "google serp position checker free",
+                        "track keyword rankings in bulk",
+                        "multiple keyword rank checker google",
+                        "free google ranking checker tool"
                     ],
-                    "primaryKeyword": "qr code generator",
+                    "primaryKeyword": "bulk keyword rank checker",
                     "features": [
-                        "Text, URL, WiFi QR codes",
-                        "Custom colors",
-                        "High resolution",
-                        "Bulk generation",
-                        "Logo embedding"
+                        "Check up to 500 keywords at once",
+                        "Google search results tracking",
+                        "Multiple location support",
+                        "Desktop and mobile rankings",
+                        "Export results to CSV/Excel",
+                        "Historical ranking data",
+                        "Competitor comparison",
+                        "SERP features detection"
                     ]
                 },
                 {
-                    "id": "tiktok-tag-generator",
-                    "name": "TikTok Hashtag Generator",
-                    "description": "Generate trending TikTok hashtags to boost video reach and engagement",
-                    "route": "/tiktok-tag-generator",
+                    "id": "bulk-google-index-checker",
+                    "name": "Bulk Google Index Checker",
+                    "description": "Check if multiple URLs are indexed by Google. Verify indexation status for entire websites or URL lists in bulk.",
+                    "route": "/bulk-google-index-checker",
                     "popular": true,
-                    "category": "seo"
+                    "category": "seo",
+                    "keywords": [
+                        "google index checker",
+                        "bulk index checker",
+                        "url index checker",
+                        "google indexation tool",
+                        "check if page indexed",
+                        "google index status",
+                        "indexed pages checker",
+                        "google crawl checker"
+                    ],
+                    "longTailKeywords": [
+                        "bulk google index checker free",
+                        "check if urls are indexed by google",
+                        "google indexation status checker",
+                        "bulk url index verification tool",
+                        "check multiple pages google index",
+                        "google search console alternative",
+                        "verify google indexation bulk"
+                    ],
+                    "primaryKeyword": "bulk google index checker",
+                    "features": [
+                        "Check up to 1000 URLs at once",
+                        "Real-time Google index verification",
+                        "Export results to CSV/Excel",
+                        "Index status indicators",
+                        "Bulk URL upload",
+                        "Sitemap URL extraction",
+                        "De-indexation detection",
+                        "Crawl error identification"
+                    ]
                 },
                 {
-                    "id": "website-analyzer",
-                    "name": "Website Analyzer",
-                    "description": "Analyze website performance, SEO, and technical details",
-                    "route": "/website-analyzer",
-                    "popular": false,
-                    "category": "seo"
+                    "id": "title-rewrite-checker",
+                    "name": "Title Rewrite Checker",
+                    "description": "Check if Google rewrites your page titles in search results. Compare your original titles with what Google displays in SERPs.",
+                    "route": "/title-rewrite-checker",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "title rewrite checker",
+                        "google title rewrite",
+                        "serp title checker",
+                        "google title change",
+                        "title tag rewrite",
+                        "google title modification",
+                        "serp snippet preview",
+                        "title optimization tool"
+                    ],
+                    "longTailKeywords": [
+                        "google title rewrite checker free",
+                        "check if google rewrites page titles",
+                        "serp title vs actual title checker",
+                        "google title tag modification tool",
+                        "title rewrite detection tool",
+                        "compare serp titles with meta titles",
+                        "google search result title checker"
+                    ],
+                    "primaryKeyword": "title rewrite checker",
+                    "features": [
+                        "Compare original vs SERP titles",
+                        "Bulk title rewrite detection",
+                        "SERP snippet preview",
+                        "Title optimization suggestions",
+                        "Character count analysis",
+                        "Export comparison reports",
+                        "Multiple search engine support",
+                        "Title performance scoring"
+                    ]
+                },
+                {
+                    "id": "xml-sitemap-extractor",
+                    "name": "XML Sitemap Extractor",
+                    "description": "Extract all URLs from XML sitemaps and export them in various formats (CSV, TXT, XML, HTML, Excel). Analyze sitemap structure and URL data.",
+                    "route": "/xml-sitemap-extractor",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "sitemap extractor",
+                        "xml sitemap parser",
+                        "sitemap url extractor",
+                        "sitemap analyzer",
+                        "xml parser tool",
+                        "sitemap crawler",
+                        "url list extractor",
+                        "sitemap reader"
+                    ],
+                    "longTailKeywords": [
+                        "extract urls from xml sitemap",
+                        "xml sitemap url extractor free",
+                        "parse xml sitemap online tool",
+                        "sitemap url list generator",
+                        "extract sitemap urls to csv",
+                        "xml sitemap parser and analyzer",
+                        "bulk url extraction from sitemap"
+                    ],
+                    "primaryKeyword": "xml sitemap extractor",
+                    "features": [
+                        "Extract URLs from any XML sitemap",
+                        "Export to CSV, TXT, XML, HTML, Excel",
+                        "Sitemap index file support",
+                        "URL metadata extraction",
+                        "Last modified date analysis",
+                        "Priority and changefreq data",
+                        "Nested sitemap processing",
+                        "URL validation and filtering"
+                    ]
                 },
                 {
                     "id": "sitemap-generator",
-                    "name": "Sitemap Generator",
-                    "description": "Generate XML sitemaps for websites",
+                    "name": "Advanced Sitemap Generator",
+                    "description": "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata.",
                     "route": "/sitemap-generator",
-                    "popular": false,
-                    "category": "seo"
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "sitemap generator",
+                        "xml sitemap generator",
+                        "website sitemap creator",
+                        "sitemap builder",
+                        "auto sitemap generator",
+                        "sitemap maker",
+                        "xml sitemap tool",
+                        "website crawler"
+                    ],
+                    "longTailKeywords": [
+                        "free xml sitemap generator online",
+                        "generate sitemap for website automatically",
+                        "website sitemap creator tool",
+                        "auto generate xml sitemap from url",
+                        "create sitemap for google search console",
+                        "sitemap generator for seo",
+                        "website xml sitemap builder"
+                    ],
+                    "primaryKeyword": "xml sitemap generator",
+                    "features": [
+                        "Automatic website crawling",
+                        "XML sitemap generation",
+                        "Custom crawl depth settings",
+                        "URL filtering options",
+                        "Priority and changefreq settings",
+                        "Google/Bing sitemap format",
+                        "Image and video sitemaps",
+                        "Sitemap validation"
+                    ]
                 },
                 {
-                    "id": "keyword-density",
-                    "name": "Keyword Density Checker",
-                    "description": "Check keyword density and frequency in text",
-                    "route": "/keyword-density",
+                    "id": "url-extractor",
+                    "name": "URL Extractor Tool",
+                    "description": "Extract all URLs from any webpage, text, or document. Find internal links, external links, images, and resources from any content.",
+                    "route": "/url-extractor",
                     "popular": false,
-                    "category": "seo"
+                    "category": "seo",
+                    "keywords": [
+                        "url extractor",
+                        "link extractor",
+                        "webpage url finder",
+                        "extract links from text",
+                        "url parser tool",
+                        "link harvester",
+                        "url scraper",
+                        "link finder tool"
+                    ],
+                    "longTailKeywords": [
+                        "extract urls from webpage online",
+                        "find all links on website",
+                        "url extractor from text free",
+                        "extract links from html code",
+                        "webpage link extractor tool",
+                        "bulk url extraction from website",
+                        "link finder and extractor online"
+                    ],
+                    "primaryKeyword": "url extractor",
+                    "features": [
+                        "Extract URLs from webpages",
+                        "Text and HTML URL extraction",
+                        "Internal vs external link classification",
+                        "Export to multiple formats",
+                        "Duplicate URL removal",
+                        "URL validation",
+                        "Broken link detection",
+                        "Anchor text analysis"
+                    ]
+                },
+                {
+                    "id": "broken-link-checker",
+                    "name": "Broken Link Checker",
+                    "description": "Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages.",
+                    "route": "/broken-link-checker",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "broken link checker",
+                        "dead link finder",
+                        "404 error checker",
+                        "link validator",
+                        "website link checker",
+                        "broken url finder",
+                        "link health checker",
+                        "dead link detector"
+                    ],
+                    "longTailKeywords": [
+                        "free broken link checker online",
+                        "find broken links on website",
+                        "check for dead links website",
+                        "404 error link checker tool",
+                        "website broken link detector",
+                        "bulk broken link checker free",
+                        "find 404 errors on website"
+                    ],
+                    "primaryKeyword": "broken link checker",
+                    "features": [
+                        "Full website link scanning",
+                        "404 and error detection",
+                        "Redirect chain analysis",
+                        "Response time monitoring",
+                        "Export broken link reports",
+                        "Internal and external link checks",
+                        "Bulk URL testing",
+                        "Link fixing suggestions"
+                    ]
+                },
+                {
+                    "id": "duplicate-content-finder",
+                    "name": "Duplicate Content Finder",
+                    "description": "Detect duplicate content across your website or compare content with other sites. Find plagiarized content and improve SEO.",
+                    "route": "/duplicate-content-finder",
+                    "popular": false,
+                    "category": "seo",
+                    "keywords": [
+                        "duplicate content checker",
+                        "plagiarism checker",
+                        "content duplication finder",
+                        "duplicate content detector",
+                        "content similarity checker",
+                        "seo duplicate content",
+                        "copied content finder",
+                        "content uniqueness checker"
+                    ],
+                    "longTailKeywords": [
+                        "free duplicate content checker seo",
+                        "find duplicate content on website",
+                        "check for plagiarized content online",
+                        "duplicate content detection tool",
+                        "website content duplication finder",
+                        "seo duplicate content checker",
+                        "content similarity analysis tool"
+                    ],
+                    "primaryKeyword": "duplicate content checker",
+                    "features": [
+                        "Website duplicate content scanning",
+                        "Cross-site content comparison",
+                        "Similarity percentage analysis",
+                        "Internal duplication detection",
+                        "Content uniqueness scoring",
+                        "Plagiarism detection",
+                        "Export duplicate reports",
+                        "Content optimization suggestions"
+                    ]
+                },
+                {
+                    "id": "meta-tag-analyzer",
+                    "name": "Meta Tag Analyzer",
+                    "description": "Analyze and audit meta tags across your website. Check title tags, meta descriptions, Open Graph tags, and other SEO metadata.",
+                    "route": "/meta-tag-analyzer",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "meta tag analyzer",
+                        "meta tag checker",
+                        "seo meta audit",
+                        "title tag analyzer",
+                        "meta description checker",
+                        "meta tag validator",
+                        "seo tag analyzer",
+                        "website meta checker"
+                    ],
+                    "longTailKeywords": [
+                        "meta tag analyzer and checker free",
+                        "analyze meta tags for seo",
+                        "check meta tags on website",
+                        "meta tag audit tool online",
+                        "website meta description analyzer",
+                        "seo meta tag optimization tool",
+                        "bulk meta tag checker"
+                    ],
+                    "primaryKeyword": "meta tag analyzer",
+                    "features": [
+                        "Complete meta tag analysis",
+                        "Title tag length checking",
+                        "Meta description optimization",
+                        "Open Graph tag validation",
+                        "Twitter Card analysis",
+                        "Bulk page scanning",
+                        "SEO recommendations",
+                        "Export audit reports"
+                    ]
+                },
+                {
+                    "id": "page-speed-test",
+                    "name": "Page Speed Test Tool",
+                    "description": "Test website page speed and performance. Get detailed insights on Core Web Vitals, loading times, and optimization suggestions.",
+                    "route": "/page-speed-test",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "page speed test",
+                        "website speed test",
+                        "core web vitals",
+                        "site speed checker",
+                        "performance test",
+                        "loading speed test",
+                        "google pagespeed",
+                        "website performance"
+                    ],
+                    "longTailKeywords": [
+                        "free page speed test tool",
+                        "website loading speed checker",
+                        "core web vitals test online",
+                        "google page speed insights alternative",
+                        "website performance analyzer",
+                        "site speed optimization tool",
+                        "page load time checker"
+                    ],
+                    "primaryKeyword": "page speed test",
+                    "features": [
+                        "Core Web Vitals analysis",
+                        "Mobile and desktop testing",
+                        "Detailed performance metrics",
+                        "Optimization recommendations",
+                        "Global test locations",
+                        "Historical performance data",
+                        "Competitor comparison",
+                        "Export performance reports"
+                    ]
+                },
+                {
+                    "id": "seo-audit-tool",
+                    "name": "Complete SEO Audit Tool",
+                    "description": "Comprehensive SEO audit tool that analyzes technical SEO, on-page optimization, content quality, and provides actionable recommendations.",
+                    "route": "/seo-audit-tool",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "seo audit tool",
+                        "website seo audit",
+                        "seo analyzer",
+                        "seo checker",
+                        "website seo checker",
+                        "seo analysis tool",
+                        "seo report tool",
+                        "seo scanner"
+                    ],
+                    "longTailKeywords": [
+                        "free seo audit tool online",
+                        "complete website seo analysis",
+                        "seo audit checker free",
+                        "website seo audit report",
+                        "comprehensive seo analyzer",
+                        "on page seo audit tool",
+                        "technical seo audit free"
+                    ],
+                    "primaryKeyword": "seo audit tool",
+                    "features": [
+                        "Complete technical SEO audit",
+                        "On-page optimization analysis",
+                        "Content quality assessment",
+                        "Mobile-friendliness check",
+                        "Site structure analysis",
+                        "Internal linking audit",
+                        "Schema markup validation",
+                        "Actionable recommendations"
+                    ]
+                },
+                {
+                    "id": "backlink-checker",
+                    "name": "Free Backlink Checker",
+                    "description": "Check backlinks for any website. Analyze link profile, domain authority, anchor text distribution, and competitor backlinks.",
+                    "route": "/backlink-checker",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "backlink checker",
+                        "link profile analyzer",
+                        "backlink analysis",
+                        "domain authority checker",
+                        "link building tool",
+                        "backlink monitor",
+                        "link checker tool",
+                        "website backlinks"
+                    ],
+                    "longTailKeywords": [
+                        "free backlink checker tool",
+                        "check website backlinks online",
+                        "backlink analysis tool free",
+                        "domain backlink checker",
+                        "competitor backlink analysis",
+                        "link profile checker free",
+                        "website link analysis tool"
+                    ],
+                    "primaryKeyword": "backlink checker",
+                    "features": [
+                        "Comprehensive backlink analysis",
+                        "Domain authority metrics",
+                        "Anchor text analysis",
+                        "Referring domains count",
+                        "Link quality assessment",
+                        "Competitor comparison",
+                        "Export backlink data",
+                        "New/lost links tracking"
+                    ]
+                },
+                {
+                    "id": "competitor-analysis-tool",
+                    "name": "SEO Competitor Analysis",
+                    "description": "Analyze competitor SEO strategies. Compare keywords, backlinks, content gaps, and identify opportunities to outrank competitors.",
+                    "route": "/competitor-analysis-tool",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "competitor analysis",
+                        "seo competitor research",
+                        "competitor keyword analysis",
+                        "competitive analysis tool",
+                        "competitor seo audit",
+                        "market analysis seo",
+                        "competitor research tool",
+                        "seo competition analysis"
+                    ],
+                    "longTailKeywords": [
+                        "free seo competitor analysis tool",
+                        "competitor keyword research free",
+                        "analyze competitor seo strategy",
+                        "competitor backlink analysis",
+                        "seo competitive intelligence",
+                        "competitor content analysis seo",
+                        "compare competitor seo metrics"
+                    ],
+                    "primaryKeyword": "seo competitor analysis",
+                    "features": [
+                        "Competitor keyword analysis",
+                        "Backlink profile comparison",
+                        "Content gap identification",
+                        "SERP position analysis",
+                        "Traffic estimation",
+                        "Social media presence",
+                        "Technical SEO comparison",
+                        "Opportunity identification"
+                    ]
+                },
+                {
+                    "id": "keyword-research-tool",
+                    "name": "Advanced Keyword Research",
+                    "description": "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO.",
+                    "route": "/keyword-research-tool",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "keyword research tool",
+                        "keyword planner",
+                        "keyword finder",
+                        "seo keyword tool",
+                        "keyword generator",
+                        "keyword analysis",
+                        "keyword difficulty checker",
+                        "long tail keywords"
+                    ],
+                    "longTailKeywords": [
+                        "free keyword research tool online",
+                        "keyword research for seo free",
+                        "keyword planner alternative free",
+                        "long tail keyword generator",
+                        "keyword difficulty checker free",
+                        "seo keyword analysis tool",
+                        "keyword search volume checker"
+                    ],
+                    "primaryKeyword": "keyword research tool",
+                    "features": [
+                        "Search volume data",
+                        "Keyword difficulty scoring",
+                        "CPC and competition data",
+                        "Related keyword suggestions",
+                        "Long-tail keyword generation",
+                        "Seasonal trend analysis",
+                        "Export keyword lists",
+                        "SERP analysis integration"
+                    ]
+                },
+                {
+                    "id": "rank-tracking-tool",
+                    "name": "Keyword Rank Tracker",
+                    "description": "Track keyword rankings over time. Monitor SERP positions for multiple keywords and domains with detailed reporting and alerts.",
+                    "route": "/rank-tracking-tool",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "rank tracker",
+                        "keyword rank tracking",
+                        "serp tracker",
+                        "ranking monitor",
+                        "keyword position tracker",
+                        "seo rank tracker",
+                        "google rank tracker",
+                        "ranking tool"
+                    ],
+                    "longTailKeywords": [
+                        "free keyword rank tracking tool",
+                        "google ranking tracker free",
+                        "keyword position monitoring",
+                        "serp rank tracker online",
+                        "daily keyword rank tracker",
+                        "keyword ranking software free",
+                        "track google rankings daily"
+                    ],
+                    "primaryKeyword": "keyword rank tracker",
+                    "features": [
+                        "Daily rank tracking",
+                        "Multiple search engines",
+                        "Local and global tracking",
+                        "Historical data analysis",
+                        "Ranking alerts",
+                        "Competitor tracking",
+                        "Mobile and desktop rankings",
+                        "Detailed reports and charts"
+                    ]
+                },
+                {
+                    "id": "mobile-seo-checker",
+                    "name": "Mobile SEO Checker",
+                    "description": "Test mobile SEO performance and mobile-friendliness. Check Core Web Vitals, mobile usability, and mobile search optimization.",
+                    "route": "/mobile-seo-checker",
+                    "popular": false,
+                    "category": "seo",
+                    "keywords": [
+                        "mobile seo checker",
+                        "mobile friendly test",
+                        "mobile usability test",
+                        "mobile optimization",
+                        "responsive design test",
+                        "mobile page speed",
+                        "mobile search optimization",
+                        "mobile seo audit"
+                    ],
+                    "longTailKeywords": [
+                        "mobile seo checker free online",
+                        "test website mobile friendliness",
+                        "mobile usability checker google",
+                        "mobile page speed test tool",
+                        "mobile seo optimization tool",
+                        "responsive website checker",
+                        "mobile search ranking factors"
+                    ],
+                    "primaryKeyword": "mobile seo checker",
+                    "features": [
+                        "Mobile-friendliness testing",
+                        "Mobile page speed analysis",
+                        "Core Web Vitals for mobile",
+                        "Touch elements sizing",
+                        "Viewport configuration check",
+                        "Mobile usability scoring",
+                        "AMP validation",
+                        "Mobile SERP preview"
+                    ]
+                },
+                {
+                    "id": "local-seo-tool",
+                    "name": "Local SEO Optimizer",
+                    "description": "Optimize for local search with local SEO tools. Check Google My Business optimization, local citations, and local search rankings.",
+                    "route": "/local-seo-tool",
+                    "popular": false,
+                    "category": "seo",
+                    "keywords": [
+                        "local seo tool",
+                        "local seo checker",
+                        "google my business optimizer",
+                        "local search optimization",
+                        "local citation checker",
+                        "local ranking tracker",
+                        "local seo audit",
+                        "local search tool"
+                    ],
+                    "longTailKeywords": [
+                        "local seo optimization tool free",
+                        "google my business seo checker",
+                        "local search ranking tool",
+                        "local citation builder free",
+                        "local seo audit tool",
+                        "local keyword rank tracker",
+                        "local business seo analyzer"
+                    ],
+                    "primaryKeyword": "local seo tool",
+                    "features": [
+                        "Google My Business audit",
+                        "Local citation analysis",
+                        "Local keyword tracking",
+                        "NAP consistency check",
+                        "Local competitor analysis",
+                        "Review management insights",
+                        "Local search visibility",
+                        "Schema markup for local"
+                    ]
+                },
+                {
+                    "id": "serp-snippet-optimizer",
+                    "name": "SERP Snippet Optimizer",
+                    "description": "Optimize title tags and meta descriptions for better click-through rates. Preview how your pages will appear in search results.",
+                    "route": "/serp-snippet-optimizer",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "serp snippet optimizer",
+                        "meta description optimizer",
+                        "title tag optimizer",
+                        "serp preview tool",
+                        "snippet preview",
+                        "search result preview",
+                        "ctr optimization",
+                        "serp simulator"
+                    ],
+                    "longTailKeywords": [
+                        "serp snippet preview tool free",
+                        "google search result preview",
+                        "meta description preview tool",
+                        "title tag length checker",
+                        "serp snippet generator",
+                        "search result simulator",
+                        "optimize serp snippets"
+                    ],
+                    "primaryKeyword": "serp snippet optimizer",
+                    "features": [
+                        "Live SERP preview",
+                        "Character count optimization",
+                        "CTR improvement suggestions",
+                        "A/B testing templates",
+                        "Rich snippets preview",
+                        "Mobile SERP simulation",
+                        "Competitor snippet analysis",
+                        "Best practices guidance"
+                    ]
+                },
+                {
+                    "id": "structured-data-tester",
+                    "name": "Structured Data Tester",
+                    "description": "Test and validate structured data markup. Check schema.org implementation and preview rich snippets in search results.",
+                    "route": "/structured-data-tester",
+                    "popular": false,
+                    "category": "seo",
+                    "keywords": [
+                        "structured data tester",
+                        "schema markup validator",
+                        "rich snippets tester",
+                        "json-ld validator",
+                        "microdata tester",
+                        "structured data validator",
+                        "schema tester",
+                        "rich snippets validator"
+                    ],
+                    "longTailKeywords": [
+                        "google structured data testing tool",
+                        "schema markup validator free",
+                        "rich snippets testing tool",
+                        "json-ld structured data tester",
+                        "validate schema markup online",
+                        "structured data markup tester",
+                        "google rich results tester"
+                    ],
+                    "primaryKeyword": "structured data tester",
+                    "features": [
+                        "Schema markup validation",
+                        "Rich snippets preview",
+                        "JSON-LD testing",
+                        "Microdata validation",
+                        "Error detection and fixing",
+                        "Multiple schema types",
+                        "Google guidelines compliance",
+                        "Rich results eligibility"
+                    ]
+                },
+                {
+                    "id": "image-seo-analyzer",
+                    "name": "Image SEO Analyzer",
+                    "description": "Optimize images for SEO. Check alt text, file sizes, formats, and image optimization opportunities across your website.",
+                    "route": "/image-seo-analyzer",
+                    "popular": false,
+                    "category": "seo",
+                    "keywords": [
+                        "image seo analyzer",
+                        "image optimization seo",
+                        "alt text checker",
+                        "image seo audit",
+                        "image search optimization",
+                        "image seo tool",
+                        "visual search optimization",
+                        "image alt tag checker"
+                    ],
+                    "longTailKeywords": [
+                        "image seo optimization tool",
+                        "alt text analyzer for seo",
+                        "image search ranking tool",
+                        "optimize images for google",
+                        "image seo best practices",
+                        "visual search optimization tool",
+                        "image alt attribute checker"
+                    ],
+                    "primaryKeyword": "image seo analyzer",
+                    "features": [
+                        "Alt text analysis",
+                        "Image size optimization",
+                        "Format recommendations",
+                        "Lazy loading detection",
+                        "Image sitemap generation",
+                        "Visual search optimization",
+                        "Compression analysis",
+                        "Image SEO scoring"
+                    ]
                 },
                 {
                     "id": "robots-txt-generator",
@@ -2812,6 +3503,51 @@
                         "Security rating",
                         "Mobile compatibility"
                     ]
+                },
+                {
+                    "id": "meta-tags-generator",
+                    "name": "Meta Tags Generator",
+                    "description": "Generate HTML meta tags for SEO optimization",
+                    "route": "/meta-tags-generator",
+                    "popular": true,
+                    "category": "seo"
+                },
+                {
+                    "id": "qr-code-generator",
+                    "name": "QR Code Generator",
+                    "description": "Generate QR codes for text, URLs, WiFi, and more",
+                    "route": "/qr-code-generator",
+                    "popular": true,
+                    "category": "seo",
+                    "keywords": [
+                        "qr code",
+                        "qr generator",
+                        "qr code maker",
+                        "qr creator"
+                    ],
+                    "longTailKeywords": [
+                        "free qr code generator no sign up",
+                        "qr code generator for wifi password",
+                        "bulk qr code generator excel",
+                        "custom qr code generator with logo",
+                        "vcard qr code generator free"
+                    ],
+                    "primaryKeyword": "qr code generator",
+                    "features": [
+                        "Text, URL, WiFi QR codes",
+                        "Custom colors",
+                        "High resolution",
+                        "Bulk generation",
+                        "Logo embedding"
+                    ]
+                },
+                {
+                    "id": "keyword-density",
+                    "name": "Keyword Density Checker",
+                    "description": "Check keyword density and frequency in text",
+                    "route": "/keyword-density",
+                    "popular": false,
+                    "category": "seo"
                 }
             ]
         },
