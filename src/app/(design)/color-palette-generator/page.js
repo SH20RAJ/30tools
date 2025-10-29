@@ -1,11 +1,11 @@
 import ColorPaletteGeneratorTool from '@/components/tools/design/ColorPaletteGeneratorTool';
 
 export const metadata = {
-  title: "Free Color Palette Generator Online - Create Beautiful Color Schemes | 30tools",
+  title: "Color Palette Generator - Create Beautiful Color Schemes",
   description: "Generate beautiful color palettes instantly. Create harmonious color schemes, extract colors from images, and export in CSS, SCSS, JSON formats. Perfect for designers and developers.",
   keywords: "color palette generator, color scheme generator, color harmony, extract colors from image, css color palette, design colors, color picker, website color palette",
   openGraph: {
-    title: "Free Color Palette Generator Online - Create Beautiful Color Schemes",
+    title: "Color Palette Generator - Create Beautiful Color Schemes",
     description: "Generate beautiful color palettes instantly. Create harmonious color schemes and extract colors from images.",
     url: "https://30tools.com/color-palette-generator",
     siteName: "30tools",
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Color Palette Generator Online - Create Beautiful Color Schemes",
+    title: "Color Palette Generator - Create Beautiful Color Schemes",
     description: "Generate beautiful color palettes instantly. Perfect for designers and developers.",
     images: ["/og-images/color-palette-generator.jpg"],
     creator: "@30tools"

@@ -1,7 +1,7 @@
 import VideoCompressorTool from '@/components/tools/video/VideoCompressorTool';
 
 export const metadata = {
-  title: "Free Video Compressor Online - Reduce Video File Size by 80% | 30tools",
+  title: "Free Video Compressor - Reduce Video File Size by 80%",
   description: "Compress videos online for free. Reduce MP4, AVI, MOV file sizes by up to 80% without quality loss. Perfect for WhatsApp, social media, and web optimization. No watermarks, instant download.",
   keywords: "video compressor, compress video online, reduce video file size, free video compressor, compress video for whatsapp, video size reducer, compress mp4 online, video optimizer, compress video for whatsapp online free, reduce video size without losing quality, video compressor for email attachment, compress video online no watermark, bulk video compressor free",
   openGraph: {

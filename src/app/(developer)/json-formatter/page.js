@@ -1,11 +1,11 @@
 import JSONFormatterTool from '@/components/tools/developer/JSONFormatterTool';
 
 export const metadata = {
-  title: "Free JSON Formatter & Validator Online - Format, Minify, Validate | 30tools",
+  title: "JSON Formatter & Validator - Format, Minify, Validate",
   description: "Free JSON formatter and validator online. Format, validate, minify JSON data with error detection and analytics. Perfect for developers, API testing, and data processing.",
   keywords: "json formatter, json validator, json minifier, json beautifier, format json online, validate json, json parser, json editor, json analyzer",
   openGraph: {
-    title: "Free JSON Formatter & Validator Online - Format, Minify, Validate",
+    title: "JSON Formatter & Validator - Format, Minify, Validate",
     description: "Free JSON formatter and validator online. Format, validate, minify JSON data with error detection and analytics.",
     url: "https://30tools.com/json-formatter",
     siteName: "30tools",
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free JSON Formatter & Validator Online - Format, Minify, Validate",
+    title: "JSON Formatter & Validator - Format, Minify, Validate",
     description: "Free JSON formatter and validator online. Perfect for developers and API testing.",
     images: ["/og-images/json-formatter.jpg"],
     creator: "@30tools"

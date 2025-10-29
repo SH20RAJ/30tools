@@ -1,7 +1,7 @@
 import StartupNameGeneratorTool from '@/components/tools/generators/StartupNameGeneratorTool';
 
 export const metadata = {
-  title: "Startup Name Generator - AI-Powered Business Name Ideas | 30tools",
+  title: "Startup Name Generator - AI-Powered Business Name Ideas",
   description: "Generate trendy startup names with AI. Perfect for indie hackers, entrepreneurs, and YC applicants. Get creative business names with domain suggestions.",
   keywords: "startup name generator, business name generator, company name ideas, startup names, business names, domain name generator, indie hacker tools",
   canonical: "https://30tools.com/startup-name-generator",

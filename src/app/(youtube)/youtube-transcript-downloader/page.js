@@ -1,7 +1,7 @@
 import YouTubeTranscriptDownloader from '@/components/tools/youtube/YouTubeTranscriptDownloader';
 
 export const metadata = {
-  title: "YouTube Transcript Downloader - Download Video Subtitles Free | 30tools",
+  title: "YouTube Transcript Downloader - 30tools",
   description: "Download YouTube video transcripts and subtitles in multiple formats. Extract text content from YouTube videos for free with our transcript downloader tool.",
   keywords: [
     // Primary keywords
@@ -28,7 +28,7 @@ export const metadata = {
     "download youtube video scripts free"
   ].join(", "),
   openGraph: {
-    title: "Free YouTube Transcript Downloader - Download Video Subtitles",
+    title: "YouTube Transcript Downloader - Download Video Subtitles",
     description: "Download YouTube video transcripts and subtitles in multiple formats. Extract text content from videos for free.",
     url: "https://30tools.com/youtube-transcript-downloader",
     siteName: "30tools",
@@ -44,7 +44,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "YouTube Transcript Downloader - Download Video Subtitles Free",
+    title: "YouTube Transcript Downloader - 30tools",
     description: "Download YouTube video transcripts and subtitles in multiple formats. Extract text content for free.",
     images: ["/og-images/youtube-transcript-downloader.jpg"]
   },

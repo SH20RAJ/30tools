@@ -1,7 +1,7 @@
 import XmlSitemapExtractor from '@/components/tools/seo/XmlSitemapExtractor';
 
 export const metadata = {
-  title: "Free XML Sitemap Extractor - Extract URLs to CSV, TXT, Excel | 30tools",
+  title: "XML Sitemap Extractor - Extract URLs to CSV, TXT, Excel",
   description: "Extract all URLs from XML sitemaps and export them in various formats (CSV, TXT, XML, HTML, Excel). Analyze sitemap structure and URL data for SEO audits and competitor research.",
   keywords: "xml sitemap extractor, sitemap url extractor, sitemap parser, sitemap analyzer, xml parser tool, sitemap crawler, url list extractor, sitemap reader, extract urls from xml sitemap, sitemap url list generator",
   openGraph: {

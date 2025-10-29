@@ -1,11 +1,11 @@
 import CodeFormatterTool from '@/components/tools/code/CodeFormatterTool';
 
 export const metadata = {
-  title: "Free Code Formatter Online - Prettier JavaScript, CSS, HTML, TypeScript | 30tools",
+  title: "Code Formatter - Prettier JavaScript, CSS, HTML, TypeScript",
   description: "Format and beautify JavaScript, TypeScript, CSS, and HTML code with Prettier engine. Professional code formatting with customizable style options. Free and secure.",
   keywords: "code formatter, prettier online, javascript formatter, css formatter, html formatter, typescript formatter, code beautifier, code style",
   openGraph: {
-    title: "Free Code Formatter Online - Prettier for JavaScript, CSS, HTML, TypeScript",
+    title: "Code Formatter - 30tools",
     description: "Professional code formatting with Prettier engine and customizable style options.",
     url: "https://30tools.com/code-formatter",
     siteName: "30tools",
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Code Formatter Online - Prettier for JavaScript, CSS, HTML, TypeScript",
+    title: "Code Formatter - 30tools",
     description: "Format code with industry-standard Prettier engine. Customizable options for perfect styling.",
     images: ["/og-images/code-formatter.jpg"],
     creator: "@30tools"

@@ -1,10 +1,9 @@
 import QRCodeGeneratorTool from '@/components/tools/utilities/QRCodeGeneratorTool';
 
 export const metadata = {
-  title: "Free QR Code Generator Online - Create Custom QR Codes | 30tools",
+  title: "Free QR Code Generator - Create Custom QR Codes",
   description: "Generate QR codes instantly for URLs, text, WiFi, contact cards, and more. Customize colors, add logos, and download high-quality PNG/SVG QR codes for free.",
   keywords: "qr code generator, free qr code generator, qr code maker, create qr code online, custom qr code generator, qr code creator, generate qr code free, qr code generator with logo",
-  canonical: "https://30tools.com/qr-code-generator",
   alternates: {
     canonical: "https://30tools.com/qr-code-generator"
   },

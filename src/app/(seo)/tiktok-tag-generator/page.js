@@ -1,7 +1,7 @@
 import TikTokTagGeneratorClient from './TikTokTagGeneratorClient';
 
 export const metadata = {
-  title: "TikTok Tag Generator - Generate Hashtags for TikTok Videos | 30tools",
+  title: "TikTok Tag Generator - Generate Hashtags for TikTok Videos",
   description: "Generate trending TikTok hashtags to boost your video's reach and engagement. Get relevant hashtags to improve your TikTok content discoverability.",
   keywords: "tiktok hashtags, tiktok tag generator, tiktok trends, viral hashtags, tiktok seo, hashtag generator, tiktok keywords",
   openGraph: {

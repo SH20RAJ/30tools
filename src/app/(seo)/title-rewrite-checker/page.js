@@ -1,11 +1,11 @@
 import TitleRewriteChecker from '@/components/tools/seo/TitleRewriteChecker';
 
 export const metadata = {
-  title: "Free Title Rewrite Checker - See How Google Changes Your Titles | 30tools",
+  title: "Title Rewrite Checker - See How Google Changes Your Titles",
   description: "Check if Google rewrites your page titles in search results. Compare your original titles with what Google displays in SERPs. Free title rewrite detector with optimization suggestions.",
   keywords: "title rewrite checker, google title rewrite, serp title checker, google title change, title tag rewrite, google title modification, serp snippet preview, title optimization tool, google title rewrite checker free",
   openGraph: {
-    title: "Free Title Rewrite Checker - See How Google Changes Your Titles",
+    title: "Title Rewrite Checker - See How Google Changes Your Titles",
     description: "Check if Google rewrites your page titles in search results. Compare your original titles with what Google displays in SERPs.",
     url: "https://30tools.com/title-rewrite-checker",
     siteName: "30tools",
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Title Rewrite Checker - See How Google Changes Your Titles",
+    title: "Title Rewrite Checker - See How Google Changes Your Titles",
     description: "Check if Google rewrites your page titles in search results. Perfect for SEO optimization.",
     images: ["/og-images/title-rewrite-checker.jpg"],
     creator: "@30tools"

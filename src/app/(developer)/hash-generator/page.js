@@ -1,11 +1,11 @@
 import HashGeneratorTool from '@/components/tools/developer/HashGeneratorTool';
 
 export const metadata = {
-  title: "Free Hash Generator Online - MD5, SHA-256, SHA-512 Hash Calculator | 30tools",
+  title: "Hash Generator - MD5, SHA-256, SHA-512 Hash Calculator",
   description: "Generate secure cryptographic hashes from text or files. Support for MD5, SHA-1, SHA-256, SHA-512, and more. Perfect for data integrity verification and security applications.",
   keywords: "hash generator, md5 generator, sha256 generator, sha512 generator, cryptographic hash, checksum calculator, hash calculator online, data integrity",
   openGraph: {
-    title: "Free Hash Generator Online - MD5, SHA-256, SHA-512 Hash Calculator",
+    title: "Hash Generator - MD5, SHA-256, SHA-512 Hash Calculator",
     description: "Generate secure cryptographic hashes from text or files. Support for MD5, SHA-256, SHA-512, and more.",
     url: "https://30tools.com/hash-generator",
     siteName: "30tools",
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Hash Generator Online - MD5, SHA-256, SHA-512 Hash Calculator",
+    title: "Hash Generator - MD5, SHA-256, SHA-512 Hash Calculator",
     description: "Generate secure cryptographic hashes from text or files. Perfect for developers and security applications.",
     images: ["/og-images/hash-generator.jpg"],
     creator: "@30tools"

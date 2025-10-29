@@ -1,11 +1,11 @@
 import BackgroundRemoverTool from '@/components/tools/image/BackgroundRemoverTool';
 
 export const metadata = {
-  title: "Free Background Remover Online - Remove Image Backgrounds Instantly | 30tools",
+  title: "Background Remover - Remove Image Backgrounds Instantly",
   description: "Remove backgrounds from images instantly with AI. Free background remover tool for professional results. Perfect for product photos, portraits, and design projects. No watermarks.",
   keywords: "background remover, remove background from image, background eraser, cut out image background, transparent background, remove bg, image background removal",
   openGraph: {
-    title: "Free Background Remover Online - Remove Image Backgrounds Instantly",
+    title: "Background Remover - Remove Image Backgrounds Instantly",
     description: "Remove backgrounds from images instantly with AI. Free background remover tool for professional results.",
     url: "https://30tools.com/background-remover",
     siteName: "30tools",
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Background Remover Online - Remove Image Backgrounds Instantly",
+    title: "Background Remover - Remove Image Backgrounds Instantly",
     description: "Remove backgrounds from images instantly with AI. Perfect for product photos and design projects.",
     images: ["/og-images/background-remover.jpg"],
     creator: "@30tools"

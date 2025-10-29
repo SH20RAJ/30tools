@@ -1,7 +1,7 @@
 import FacelessVideoGeneratorTool from '@/components/tools/video/FacelessVideoGeneratorTool'
 
 export const metadata = {
-  title: 'Faceless Video Generator - Create Viral YouTube Videos | 30tools',
+  title: 'Faceless Video Generator - Create Viral YouTube Videos',
   description: 'Generate faceless YouTube videos for monetization. AI-powered content creation for motivation, education, and lifestyle videos. No camera required.',
   keywords: 'faceless video generator, youtube automation, faceless youtube channel, ai video creator, youtube monetization, viral video maker',
   openGraph: {

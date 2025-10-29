@@ -1,7 +1,7 @@
 import TeraboxPlayerTool from '@/components/tools/video/TeraboxPlayerTool';
 
 export const metadata = {
-  title: 'Free Terabox Video Downloader & Player | Download Terabox Videos Online',
+  title: 'Terabox Video Downloader Player | Download Terabox Videos...',
   description: 'Download Terabox videos for free with our online downloader. Get direct download links, embed videos with custom players, and stream Terabox content without limits. Fast, safe, and easy to use.',
   keywords: [
     // Primary keywords
@@ -60,7 +60,7 @@ export const metadata = {
     'terabox direct link generator'
   ].join(', '),
   openGraph: {
-    title: 'Free Terabox Video Downloader & Player | Download Videos Online',
+    title: 'Terabox Video Downloader Player | Download Videos Online',
     description: 'Download Terabox videos for free with multiple mirrors. Get direct links, embed videos, and stream content without restrictions. Fast, safe, and easy.',
     type: 'website',
     images: [

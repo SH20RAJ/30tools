@@ -1,7 +1,7 @@
 import YouTubeShortsDownloader from '@/components/tools/youtube/YouTubeShortsDownloader';
 
 export const metadata = {
-  title: "YouTube Shorts Downloader - Download Short Videos Free | 30tools",
+  title: "YouTube Shorts Downloader - Download Short Videos Free",
   description: "Download YouTube Shorts videos in HD quality for free. Save vertical short videos from YouTube to your device instantly with our fast and secure YouTube Shorts downloader.",
   keywords: [
     // Primary keywords
@@ -28,7 +28,7 @@ export const metadata = {
     "download private youtube shorts with link"
   ].join(", "),
   openGraph: {
-    title: "Free YouTube Shorts Downloader - Download Short Videos Online",
+    title: "YouTube Shorts Downloader - Download Short Videos Online",
     description: "Download YouTube Shorts in HD quality. Save vertical short videos from YouTube instantly with our free online downloader.",
     url: "https://30tools.com/youtube-shorts-downloader",
     siteName: "30tools",

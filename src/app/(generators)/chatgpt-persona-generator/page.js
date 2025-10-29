@@ -1,7 +1,7 @@
 import ChatGPTPersonaGeneratorTool from '@/components/tools/generators/ChatGPTPersonaGeneratorTool';
 
 export const metadata = {
-  title: "ChatGPT Persona Generator - Create AI Personalities & Prompts | 30tools",
+  title: "ChatGPT Persona Generator - Create AI Personalities Prompts",
   description: "Generate quirky ChatGPT personas and custom AI prompts. Create unique AI personalities for creative conversations, roleplay, and enhanced AI interactions.",
   keywords: "ChatGPT persona, AI personality generator, custom AI prompts, ChatGPT prompts, AI character generator, roleplay prompts, AI conversation starters",
   canonical: "https://30tools.com/chatgpt-persona-generator",

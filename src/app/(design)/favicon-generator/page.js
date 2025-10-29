@@ -1,7 +1,7 @@
 import FaviconGeneratorTool from '@/components/tools/design/FaviconGeneratorTool';
 
 export const metadata = {
-  title: "Free Favicon Generator Online - Create Favicon from Image | 30tools",
+  title: "Free Favicon Generator - Create Favicon from Image",
   description: "Generate favicons for your website from any image. Create all favicon sizes (16x16, 32x32, 180x180, etc.) in seconds. Free favicon generator with instant download.",
   keywords: "favicon generator, create favicon, favicon from image, website icon generator, apple touch icon, android icon, favicon maker online",
   openGraph: {

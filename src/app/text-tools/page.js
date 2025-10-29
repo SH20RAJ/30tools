@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Type, FileText, Hash, AlignLeft, Eye, Search, Shuffle, Key } from 'lucide-react'
 
 export const metadata = {
-  title: 'Text Tools - Free Online Text Processing & Analysis | 30tools',
+  title: 'Text Tools - Free Online Text Processing & Analysis',
   description: 'Comprehensive collection of free text tools for processing, formatting, analysis, and manipulation. Password generator, text formatter, case converter, word counter, and more.',
   keywords: 'text tools, text processing, text formatter, case converter, word counter, password generator, text analysis, string manipulation, text editor, free text tools',
   openGraph: {

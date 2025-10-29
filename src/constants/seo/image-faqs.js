@@ -1,58 +1,70 @@
 // FAQ data for image compression tools
 export const IMAGE_COMPRESSOR_FAQS = [
   {
-    question: "Is image compression free on 30tools?",
-    answer: "Yes, our image compressor is completely free with no file limits, watermarks, or registration required. You can compress as many images as you need."
+    question: "How to compress an image online for free?",
+    answer: "Use our free image compressor to compress images online without watermarks. Simply upload your JPEG, PNG, or WebP images, adjust quality settings, and download compressed files instantly. No registration required."
   },
   {
-    question: "What image formats does the compressor support?",
-    answer: "Our image compressor supports all major formats including JPEG, JPG, PNG, WebP, BMP, and GIF. The tool automatically detects the format and applies optimal compression."
+    question: "How to make image size smaller without losing quality?",
+    answer: "Our image compressor uses advanced algorithms to reduce image file size by up to 80% while maintaining visual quality. Use the quality slider to balance file size reduction with image quality preservation."
   },
   {
-    question: "How much can I reduce my image file size?",
-    answer: "You can typically reduce image file sizes by 50-80% while maintaining visual quality. The exact savings depend on the original image format, content, and quality settings you choose."
+    question: "What's the best alternative to TinyPNG and iLoveIMG?",
+    answer: "Our free online image compressor offers similar compression quality to TinyPNG and iLoveIMG but with no file limits, batch processing, and complete privacy since all compression happens in your browser."
   },
   {
-    question: "Does image compression reduce quality?",
-    answer: "Our smart compression algorithm minimizes quality loss while maximizing file size reduction. You can control the balance between file size and quality using our quality slider."
+    question: "How to reduce JPEG file size and compress JPG images?",
+    answer: "Upload your JPEG or JPG images to our compressor, select your desired quality level (we recommend 80% for optimal balance), and download the compressed images. Perfect for reducing photo file sizes for web use."
   },
   {
-    question: "Can I compress multiple images at once?",
-    answer: "Yes! Our batch image compressor allows you to upload and compress multiple images simultaneously, saving you time when working with many files."
+    question: "Can I compress multiple images at once with bulk image compressor?",
+    answer: "Yes! Our bulk image compressor allows you to upload and compress multiple images simultaneously. Process dozens of photos at once, perfect for mass image compression for websites, portfolios, or social media."
   },
   {
-    question: "Are my images stored on your servers?",
-    answer: "No, all image compression happens directly in your browser. Your images are never uploaded to our servers, ensuring complete privacy and security."
+    question: "How to compress images for email attachments and web upload?",
+    answer: "Use our photo size reducer to compress images before emailing or uploading to websites. Reduce image file sizes to meet email attachment limits and improve website loading speeds with optimized images."
   },
   {
-    question: "Can I use compressed images for websites?",
-    answer: "Absolutely! Compressed images are perfect for websites, social media, email attachments, and any application where file size matters. They help improve page loading speed and SEO."
+    question: "What's the difference between image compression and image resizing?",
+    answer: "Image compression reduces file size by removing unnecessary data while keeping dimensions the same. Image resizing changes the actual pixel dimensions. Our tool focuses on compression to maintain image quality while reducing MB size."
   },
   {
-    question: "What's the maximum file size I can compress?",
-    answer: "Since compression happens in your browser, the limit depends on your device's memory. Most modern devices can handle images up to 50MB without issues."
+    question: "How to optimize images for web without compromising quality?",
+    answer: "Our image optimizer compresses photos while preserving visual quality. Use 80-90% quality settings for photographs and 90-100% for graphics with text. This reduces loading times and improves SEO rankings."
+  },
+  {
+    question: "Is this image compressor better than Optimizilla?",
+    answer: "Our compressor offers similar quality to Optimizilla but with enhanced privacy (browser-based processing), unlimited file uploads, batch compression, and support for more image formats including WebP."
+  },
+  {
+    question: "How to reduce photo size in KB for profile pictures and thumbnails?",
+    answer: "Upload your photos to our size reducer, set quality to 60-80% for profile pictures, and download the compressed images. Perfect for reducing photo file sizes for social media, dating apps, and website thumbnails."
   }
 ];
 
 export const WH_QUESTIONS_CONTENT = [
   {
-    question: "What is image compression?",
-    answer: "Image compression is the process of reducing the file size of digital images by removing unnecessary data while preserving visual quality. It's essential for web optimization, faster loading times, and saving storage space."
+    question: "What is the best free image compressor online?",
+    answer: "Our free image compressor offers professional-grade compression without watermarks. Unlike TinyPNG or iLoveIMG, all processing happens in your browser for complete privacy. Compress JPEG, PNG, and WebP images with up to 80% size reduction while maintaining quality."
   },
   {
-    question: "Why should you compress images?",
-    answer: "Compressing images reduces file sizes, leading to faster website loading, better SEO rankings, reduced bandwidth usage, and more efficient storage. It's crucial for web performance and user experience."
+    question: "Why compress images for web and social media?",
+    answer: "Compressing images reduces file sizes for faster website loading, better SEO rankings, reduced bandwidth usage, and improved user experience. Essential for e-commerce sites, blogs, social media posts, and email attachments where file size matters."
   },
   {
-    question: "How does our image compressor work?",
-    answer: "Our compressor uses advanced algorithms to analyze your images and remove redundant data. It processes images directly in your browser using HTML5 Canvas technology, ensuring privacy and speed."
+    question: "How to reduce image file size in KB and MB?",
+    answer: "Upload your images to our size reducer, adjust the quality slider (80% recommended), and download compressed files. Our bulk image compressor can process multiple photos simultaneously, perfect for mass image optimization and photo size reduction."
   },
   {
-    question: "When should you compress images?",
-    answer: "Compress images before uploading to websites, sharing on social media, sending via email, or storing in cloud services. It's especially important for e-commerce sites, blogs, and mobile applications."
+    question: "When should you use a photo compressor vs image resizer?",
+    answer: "Use a photo compressor when you want to reduce file size while keeping the same dimensions. Use an image resizer when you need to change pixel dimensions. Our compressor focuses on reducing MB size without changing image dimensions."
   },
   {
-    question: "Where can you use compressed images?",
-    answer: "Compressed images are perfect for websites, mobile apps, social media posts, email newsletters, online portfolios, e-commerce product galleries, and any digital platform where loading speed matters."
+    question: "Where can compressed images be used effectively?",
+    answer: "Compressed images are perfect for websites, mobile apps, social media posts, email newsletters, online portfolios, e-commerce product galleries, dating app profiles, and any digital platform where loading speed and storage efficiency matter."
+  },
+  {
+    question: "Which image formats compress best - JPEG vs PNG?",
+    answer: "JPEG compresses better for photographs with many colors, while PNG is better for images with few colors or transparency. Our compressor automatically optimizes both formats and can convert to WebP for even better compression ratios."
   }
 ];

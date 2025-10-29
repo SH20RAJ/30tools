@@ -1,7 +1,7 @@
 import ComplexityAnalyzer from '@/components/tools/developer/ComplexityAnalyzer';
 
 export const metadata = {
-  title: 'Time & Space Complexity Analyzer - Free AI Code Analysis Tool',
+  title: 'Time & Space Complexity Analyzer - AI Code Analysis',
   description: 'Analyze the time and space complexity of your code with AI-powered analysis. Get detailed Big O notation, optimization suggestions, and algorithm insights for any programming language.',
   keywords: [
     'time complexity analyzer',

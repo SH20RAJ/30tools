@@ -1,7 +1,7 @@
 import TikTokDownloaderTool from '@/components/tools/video/TikTokDownloaderTool'
 
 export const metadata = {
-  title: 'TikTok Video Downloader - Download Without Watermark | 30tools',
+  title: 'TikTok Video Downloader - Download Without Watermark',
   description: 'Free TikTok video downloader. Download TikTok videos without watermarks in HD quality. Fast, safe, and no registration required.',
   keywords: 'tiktok downloader, download tiktok video, tiktok without watermark, tiktok video saver, tiktok mp4 download, save tiktok video',
   openGraph: {

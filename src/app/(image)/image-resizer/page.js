@@ -4,7 +4,6 @@ export const metadata = {
   title: "Free Image Resizer Online - Resize Photos & Images | 30tools",
   description: "Resize images online for free. Change image dimensions, maintain aspect ratio, batch resize multiple photos. Perfect for social media, web, and print. No watermarks.",
   keywords: "image resizer, resize image online, photo resizer, resize photo, image dimensions, resize pictures online, batch image resize, social media image sizes",
-  canonical: "https://30tools.com/image-resizer",
   alternates: {
     canonical: "https://30tools.com/image-resizer"
   },

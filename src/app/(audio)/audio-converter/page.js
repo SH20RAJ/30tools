@@ -3,9 +3,7 @@ import AudioConverterTool from '@/components/tools/audio/AudioConverterTool';
 export const metadata = {
     title: "Free Audio Converter Online - MP3, WAV, FLAC, AAC | 30tools",
     description: "Convert audio formats online for free. Transform MP3, WAV, FLAC, AAC, OGG, M4A files with quality control. Fast batch conversion, no watermarks.",
-    keywords: "audio converter, mp3 converter, wav to mp3, flac converter, audio format converter, convert audio online, m4a to mp3, ogg converter",
-    canonical: "https://30tools.com/audio-converter",
-    alternates: {
+    keywords: "audio converter, mp3 converter, wav to mp3, flac converter, audio format converter, convert audio online, m4a to mp3, ogg converter",    alternates: {
         canonical: "https://30tools.com/audio-converter"
     },
     openGraph: {

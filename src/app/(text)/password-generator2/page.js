@@ -1,7 +1,7 @@
 import PasswordGeneratorTool from '@/components/tools/security/PasswordGeneratorTool';
 
 export const metadata = {
-  title: "Password Generator - Generate Secure Random Passwords | 30tools",
+  title: "Password Generator - Generate Secure Random Passwords",
   description: "Generate strong, secure passwords with customizable length and character sets. Includes password strength analysis and security tips. Free online password generator.",
   keywords: "password generator, secure password generator, random password generator, strong password creator, password strength checker",
   openGraph: {

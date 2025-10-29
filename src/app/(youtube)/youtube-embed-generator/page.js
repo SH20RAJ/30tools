@@ -1,7 +1,7 @@
 import YouTubeEmbedGenerator from '@/components/tools/youtube/YouTubeEmbedGenerator';
 
 export const metadata = {
-  title: "YouTube Embed Code Generator - Custom Player Options | Free Embed Generator",
+  title: "YouTube Embed Code Generator - 30tools",
   description: "Generate customized YouTube embed codes with advanced player options, privacy settings, and responsive design. Create professional YouTube embeds for websites and blogs with full control.",
   keywords: "youtube embed generator, youtube embed code, custom youtube player, youtube iframe generator, responsive youtube embed, youtube player customization, embed youtube video, youtube embed options, website video embed, blog video embed",
   openGraph: {

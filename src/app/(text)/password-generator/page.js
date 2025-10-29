@@ -1,10 +1,9 @@
 import PasswordGeneratorTool from '@/components/tools/text/PasswordGeneratorTool';
 
 export const metadata = {
-  title: "Free Password Generator Online - Create Strong Secure Passwords | 30tools",
+  title: "Password Generator - Create Strong Secure Passwords",
   description: "Generate strong, secure passwords instantly with our free password generator. Customize length, include special characters, numbers, and symbols. Perfect for online security.",
   keywords: "password generator, secure password generator, strong password generator, random password generator, password creator, secure password maker, password generator online free, generate password",
-  canonical: "https://30tools.com/password-generator",
   alternates: {
     canonical: "https://30tools.com/password-generator"
   },

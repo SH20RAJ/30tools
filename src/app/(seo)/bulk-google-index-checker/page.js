@@ -1,7 +1,7 @@
 import BulkGoogleIndexChecker from '@/components/tools/seo/BulkGoogleIndexChecker';
 
 export const metadata = {
-  title: "Free Bulk Google Index Checker - Check 1000+ URLs at Once | 30tools",
+  title: "Bulk Google Index Checker - Check 1000+ URLs at Once",
   description: "Check if multiple URLs are indexed by Google. Verify indexation status for entire websites or URL lists in bulk. Free Google index checker with detailed reports and export options.",
   keywords: "bulk google index checker, google index checker, url index checker, google indexation tool, check if page indexed, google index status, indexed pages checker, google crawl checker, bulk url index verification tool",
   openGraph: {

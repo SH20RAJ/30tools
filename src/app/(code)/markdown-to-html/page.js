@@ -1,7 +1,7 @@
 import MarkdownToHtmlTool from '@/components/tools/code/MarkdownToHtmlTool';
 
 export const metadata = {
-  title: "Free Markdown to HTML Converter - Convert Markdown Online | 30tools",
+  title: "Markdown to HTML Converter - Convert Markdown Online",
   description: "Convert Markdown text to HTML instantly. Paste your Markdown, click convert, and copy or download the result. Fast, secure, privacy-first.",
   keywords: "markdown to html, convert markdown to html, markdown html converter, markdown online tool, markdown parser, markdown to html free",
   openGraph: {

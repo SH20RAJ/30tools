@@ -1,11 +1,9 @@
 import MarkdownToTextTool from '@/components/tools/text/MarkdownToTextTool';
 
 export const metadata = {
-    title: "Markdown to Text Converter - Convert MD to Plain Text Online | 30tools",
+    title: "Markdown to Text Converter - Convert MD to Plain Text Online",
     description: "Convert Markdown to plain text instantly. Remove all markdown formatting and get clean, readable text. Perfect for content creators and developers.",
-    keywords: "markdown to text, md to text converter, markdown converter, remove markdown formatting, plain text converter, markdown parser, text converter, md converter",
-    canonical: "https://30tools.com/markdown-to-text",
-    alternates: {
+    keywords: "markdown to text, md to text converter, markdown converter, remove markdown formatting, plain text converter, markdown parser, text converter, md converter",    alternates: {
         canonical: "https://30tools.com/markdown-to-text"
     },
     openGraph: {

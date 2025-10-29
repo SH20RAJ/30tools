@@ -1,10 +1,9 @@
 import MetaTagsGeneratorTool from '@/components/tools/seo/MetaTagsGeneratorTool';
 
 export const metadata = {
-  title: "Free Meta Tags Generator - Create SEO Meta Tags Online | 30tools",
+  title: "Free Meta Tags Generator - Create SEO Meta Tags Online",
   description: "Generate SEO-optimized meta tags for your website. Create title tags, meta descriptions, Open Graph tags, and Twitter Cards. Free meta tag generator with character limits and previews.",
   keywords: "meta tags generator, seo meta tags, meta tag creator, html meta tags generator, open graph generator, twitter card generator, meta description generator, title tag generator, seo tags generator",
-  canonical: "https://30tools.com/meta-tags-generator",
   alternates: {
     canonical: "https://30tools.com/meta-tags-generator"
   },

@@ -1,10 +1,9 @@
 import AudioCompressorTool from '@/components/tools/audio/AudioCompressorTool';
 
 export const metadata = {
-  title: "Free Audio Compressor Online - Reduce MP3, WAV File Size | 30tools",
+  title: "Free Audio Compressor - Reduce MP3, WAV File Size",
   description: "Compress audio files online for free. Reduce MP3, WAV, FLAC, OGG file sizes by up to 90% while maintaining quality. Perfect for email, storage, and web use.",
   keywords: "audio compressor, compress audio online, reduce audio file size, mp3 compressor, wav compressor, audio file compressor, compress audio free, reduce mp3 size",
-  canonical: "https://30tools.com/audio-compressor",
   alternates: {
     canonical: "https://30tools.com/audio-compressor"
   },

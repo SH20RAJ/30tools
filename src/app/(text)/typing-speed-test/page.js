@@ -1,11 +1,11 @@
 import TypingSpeedTestTool from '@/components/tools/text/TypingSpeedTestTool';
 
 export const metadata = {
-  title: "Free Typing Speed Test Online - Check Your WPM & Accuracy | 30tools",
+  title: "Free Typing Speed Test - Check Your WPM & Accuracy",
   description: "Test your typing speed with our free online WPM test. Get instant results, track accuracy, and improve your keyboard skills. No registration required - start typing test now!",
   keywords: "typing speed test, typing test online free, wpm test, typing speed checker, keyboard typing speed test, typing test 1 minute free, words per minute test, typing accuracy test, free typing test no registration, online typing speed test",
   openGraph: {
-    title: "Free Typing Speed Test Online - Check Your WPM & Accuracy | 30tools",
+    title: "Free Typing Speed Test - Check Your WPM & Accuracy",
     description: "Test your typing speed with our free online WPM test. Get instant results, track accuracy, and improve your keyboard skills. No registration required!",
     url: "https://30tools.com/typing-speed-test",
     siteName: "30tools",
@@ -22,7 +22,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Free Typing Speed Test Online - Check Your WPM & Accuracy | 30tools",
+    title: "Free Typing Speed Test - Check Your WPM & Accuracy",
     description: "Test your typing speed with our free online WPM test. Get instant results, track accuracy, and improve your keyboard skills.",
     images: ["/og-images/typing-speed-test.jpg"],
     creator: '@30tools'

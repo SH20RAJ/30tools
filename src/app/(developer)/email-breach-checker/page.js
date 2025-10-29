@@ -1,7 +1,7 @@
 import EmailBreachCheckerTool from '@/components/tools/developer/EmailBreachCheckerTool';
 
 export const metadata = {
-  title: "Email Breach Checker - Check if Your Email is Compromised | 30tools",
+  title: "Email Breach Checker - Check if Your Email is Compromised",
   description: "Free email breach checker to see if your email has been compromised in data breaches. Check against billions of breached accounts using HaveIBeenPwned database.",
   keywords: "email breach checker, data breach checker, email security, compromised email, haveibeenpwned, email breach check",
   openGraph: {

@@ -1,7 +1,7 @@
 import YouTubeGifMaker from '@/components/tools/youtube/YouTubeGifMaker';
 
 export const metadata = {
-  title: "YouTube GIF Maker - Create Animated GIFs from YouTube Videos | Free GIF Generator",
+  title: "YouTube GIF Maker - 30tools",
   description: "Create high-quality animated GIFs from YouTube video clips. Convert YouTube videos to GIFs with custom duration, quality settings, and frame rate optimization for social media sharing.",
   keywords: "youtube gif maker, youtube to gif converter, animated gif creator, video to gif converter, youtube gif generator, create gif from youtube, youtube clip to gif, animated gif maker, youtube gif downloader, social media gif creator",
   openGraph: {

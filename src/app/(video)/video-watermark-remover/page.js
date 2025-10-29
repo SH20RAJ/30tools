@@ -1,7 +1,7 @@
 import VideoWatermarkRemoverTool from '@/components/tools/video/VideoWatermarkRemoverTool'
 
 export const metadata = {
-  title: 'Video Watermark Remover - Remove Watermarks from Videos | 30tools',
+  title: 'Video Watermark Remover - Remove Watermarks from Videos',
   description: 'Remove watermarks from videos using AI technology. Clean your videos from logos, text overlays, and watermarks while preserving quality.',
   keywords: 'video watermark remover, remove watermark from video, ai watermark removal, clean video, remove logo from video, video editor',
   openGraph: {

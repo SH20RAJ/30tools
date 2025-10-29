@@ -1,7 +1,7 @@
 import YouTubeIdeaGenerator from '@/components/tools/youtube/YouTubeIdeaGenerator';
 
 export const metadata = {
-  title: "YouTube Idea Generator - Viral Video Ideas for Creators | Free Content Ideas",
+  title: "YouTube Idea Generator - 30tools",
   description: "Generate unlimited viral YouTube video ideas based on your niche, audience, and trending topics. Get creative content inspiration for tutorials, vlogs, reviews, and viral videos that boost channel growth.",
   keywords: "youtube idea generator, viral video ideas, youtube content ideas, video topic generator, youtube video inspiration, content creation ideas, viral youtube content, youtube niche ideas, video brainstorming tool, youtube creator ideas",
   openGraph: {

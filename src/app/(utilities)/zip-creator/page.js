@@ -1,11 +1,9 @@
 import ZipCreatorTool from '@/components/tools/utilities/ZipCreatorTool';
 
 export const metadata = {
-    title: "Free ZIP File Creator Online - Compress Multiple Files | 30tools",
+    title: "Free ZIP File Creator - Compress Multiple Files",
     description: "Create ZIP files online for free. Compress multiple files and folders into a single archive. Fast, secure, and no file size limits.",
-    keywords: "zip creator, create zip file, compress files, zip maker, online archive, file compression, zip multiple files, compress folder",
-    canonical: "https://30tools.com/zip-creator",
-    alternates: {
+    keywords: "zip creator, create zip file, compress files, zip maker, online archive, file compression, zip multiple files, compress folder",    alternates: {
         canonical: "https://30tools.com/zip-creator"
     },
     openGraph: {

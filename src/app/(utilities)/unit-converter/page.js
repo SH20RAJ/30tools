@@ -1,11 +1,9 @@
 import UnitConverterTool from '@/components/tools/utilities/UnitConverterTool';
 
 export const metadata = {
-    title: "Free Unit Converter Online - Length, Weight, Temperature | 30tools",
+    title: "Free Unit Converter - Length, Weight, Temperature",
     description: "Convert units of measurement online for free. Length, weight, temperature, volume, area, speed conversions. Metric to Imperial and vice versa.",
-    keywords: "unit converter, length converter, weight converter, temperature converter, metric converter, feet to meters, celsius to fahrenheit, kg to pounds",
-    canonical: "https://30tools.com/unit-converter",
-    alternates: {
+    keywords: "unit converter, length converter, weight converter, temperature converter, metric converter, feet to meters, celsius to fahrenheit, kg to pounds",    alternates: {
         canonical: "https://30tools.com/unit-converter"
     },
     openGraph: {

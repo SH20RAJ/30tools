@@ -32,7 +32,7 @@ export default function PDFToolsFooter() {
               </span>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
-              Free, cute, and powerful PDF tools for everyone. Process your PDFs with love! 💖
+              Free PDF tools like IlovePDF. Merge PDF, split PDF, compress PDF, convert PDF to Word, Word to PDF. Professional PDF processing alternative to SmallPDF and SodaPDF. Process your PDFs with love! 💖
             </p>
             <div className="flex space-x-4">
               <a href="https://github.com" className="text-muted-foreground hover:text-primary transition-colors">

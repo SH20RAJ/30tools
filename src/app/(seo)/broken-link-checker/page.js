@@ -1,7 +1,7 @@
 import BrokenLinkChecker from '@/components/tools/seo/BrokenLinkChecker';
 
 export const metadata = {
-  title: "Free Broken Link Checker - Find 404 Errors & Dead Links | 30tools",
+  title: "Free Broken Link Checker - Find 404 Errors & Dead Links",
   description: "Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages. Free broken link detector with detailed reports.",
   keywords: "broken link checker, dead link finder, 404 error checker, link validator, website link checker, broken url finder, link health checker, dead link detector, free broken link checker online",
   openGraph: {

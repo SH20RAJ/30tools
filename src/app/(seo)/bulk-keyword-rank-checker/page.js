@@ -1,7 +1,7 @@
 import BulkKeywordRankChecker from '@/components/tools/seo/BulkKeywordRankChecker';
 
 export const metadata = {
-  title: "Free Bulk Keyword Rank Checker - Track 500+ Keywords at Once | 30tools",
+  title: "Bulk Keyword Rank Checker - Track 500+ Keywords at Once",
   description: "Check Google rankings for multiple keywords at once. Track keyword positions for any domain across different locations and devices. Free bulk keyword rank tracker with export to CSV/Excel.",
   keywords: "bulk keyword rank checker, keyword position tracker, google rank checker, serp checker, rank tracking tool, keyword ranking tool, google ranking checker, bulk rank tracker online free, check google rankings for multiple keywords, keyword position checker free",
   openGraph: {

@@ -1,7 +1,7 @@
 import ExcuseGeneratorTool from '@/components/tools/generators/ExcuseGeneratorTool';
 
 export const metadata = {
-  title: "Excuse Generator - Creative & Funny Excuses for Any Situation | 30tools",
+  title: "Excuse Generator - Creative Funny Excuses for Any Situation",
   description: "Generate creative and funny excuses for work, school, social events, and family situations. AI-powered excuse maker with believability levels.",
   keywords: "excuse generator, funny excuses, creative excuses, excuse maker, work excuses, school excuses, social excuses",
   canonical: "https://30tools.com/excuse-generator",

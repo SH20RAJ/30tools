@@ -1,7 +1,7 @@
 import TempEmailCheckerTool from '@/components/tools/developer/TempEmailCheckerTool';
 
 export const metadata = {
-  title: "Temporary Email Checker - Detect Disposable Email Addresses | 30tools",
+  title: "Temporary Email Checker - Detect Disposable Email Addresses",
   description: "Free temporary email checker to detect disposable and temporary email addresses. Validate emails against comprehensive blocklist and allowlist databases.",
   keywords: "temporary email checker, disposable email detector, temp mail checker, email validation, fake email detector, throwaway email checker",
   longTailKeywords: [

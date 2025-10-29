@@ -1,7 +1,7 @@
 import WebsiteAnalyzerTool from '@/components/tools/web/WebsiteAnalyzerTool';
 
 export const metadata = {
-  title: "Website Performance Analyzer - Free SEO & Speed Test | 30tools",
+  title: "Website Performance Analyzer - Free SEO & Speed Test",
   description: "Comprehensive website analysis tool. Check performance, SEO, accessibility, security, and mobile optimization. Free online website audit.",
   keywords: "website analyzer, performance test, SEO audit, accessibility check, website speed test, site analyzer",
   openGraph: {

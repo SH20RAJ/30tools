@@ -1,7 +1,7 @@
 import ProductivityRoastGeneratorTool from '@/components/tools/generators/ProductivityRoastGeneratorTool';
 
 export const metadata = {
-  title: "Productivity Roast Generator - Get Roasted for Your Habits | 30tools",
+  title: "Productivity Roast Generator - Get Roasted for Your Habits",
   description: "Get hilariously roasted for your productivity habits with AI. Fun self-deprecating humor about work habits, procrastination, and daily routines.",
   keywords: "productivity roast, habit roast, procrastination humor, work habits, productivity memes, self deprecating humor, productivity jokes",
   canonical: "https://30tools.com/productivity-roast-generator",

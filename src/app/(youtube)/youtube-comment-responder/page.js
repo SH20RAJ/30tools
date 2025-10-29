@@ -1,7 +1,7 @@
 import YouTubeCommentResponder from '@/components/tools/youtube/YouTubeCommentResponder';
 
 export const metadata = {
-  title: "AI YouTube Comment Responder - Smart Reply Generator | Free Comment Assistant",
+  title: "AI YouTube Comment Responder - 30tools",
   description: "Generate intelligent YouTube comment replies with AI assistance. Create engaging responses in different tones to boost community engagement, manage customer service, and build stronger audience relationships.",
   keywords: "youtube comment responder, ai comment replies, youtube engagement tool, smart comment generator, youtube community management, ai comment assistant, automated youtube replies, comment engagement tool, youtube creator tools, social media engagement",
   openGraph: {

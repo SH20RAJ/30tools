@@ -3,7 +3,7 @@ import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
-  title: "More Developer & Utility Tools by 30Tools - Free Online Tools Collection",
+  title: "More Developer Utilitys by 30Tools - Online Tools Collection",
   description: "Discover our comprehensive collection of developer tools, online utilities, and specialized platforms. From code formatters to AI agents, terabox downloaders to music tools - all free and always available.",
   keywords: [
     "developer tools",

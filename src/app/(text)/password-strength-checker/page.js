@@ -1,7 +1,7 @@
 import PasswordCheckerTool from '@/components/tools/security/PasswordCheckerTool';
 
 export const metadata = {
-  title: "Password Strength Checker - Free Online Security Tool | 30tools",
+  title: "Password Strength Checker - Free Online Security Tool",
   description: "Check password strength, get security tips, and generate secure passwords. Free online password analyzer with crack time estimation.",
   keywords: "password strength checker, password security, secure password generator, password analyzer, cybersecurity tools",
   openGraph: {

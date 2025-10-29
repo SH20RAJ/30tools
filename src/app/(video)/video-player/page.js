@@ -1,7 +1,7 @@
 import VideoPlayerTool from '@/components/tools/video/VideoPlayerTool';
 
 export const metadata = {
-  title: "Free Video Player Generator - Create Custom HTML5 Video Players Online | 30tools",
+  title: "Video Player Generator - 30tools",
   description: "Generate professional video players with Plyr, Video.js, Fluid Player & MediaElement.js. Free online tool with custom themes, responsive design, embed codes & React components. No coding required!",
   keywords: [
     // Primary keywords
@@ -68,7 +68,7 @@ export const metadata = {
     "video player maker tool"
   ],
   openGraph: {
-    title: "Free Video Player Generator - Create Custom HTML5 Video Players",
+    title: "Video Player Generator - Create Custom HTML5 Video Players",
     description: "Generate professional video players with custom themes, responsive design & embed codes. Supports Plyr, Video.js, Fluid Player & MediaElement.js. Free online tool, no coding required!",
     type: "website",
     images: [

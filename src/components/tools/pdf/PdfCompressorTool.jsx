@@ -175,11 +175,14 @@ export default function PdfCompressorTool() {
           </div>
           
           <div className="flex flex-wrap gap-2 mb-4">
-            <Badge variant="secondary">Size Reduction</Badge>
-            <Badge variant="secondary">Quality Control</Badge>
-            <Badge variant="secondary">Batch Processing</Badge>
-            <Badge variant="secondary">Free Online</Badge>
-          </div>
+            <Badge variant="secondary">PDF Compressor Free</Badge>
+            <Badge variant="secondary">Reduce PDF Size</Badge>
+            <Badge variant="secondary">Compress PDF Online</Badge>
+            <Badge variant="secondary">IlovePDF Compress</Badge>
+            <Badge variant="secondary">Free PDF Tools</Badge>
+            <Badge variant="secondary">No Registration</Badge>
+            <Badge variant="secondary">Secure Processing</Badge>
+            <Badge variant="secondary">No Watermarks</Badge></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">

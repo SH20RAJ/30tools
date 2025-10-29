@@ -4,7 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Image, Archive, FileImage, Crop, Palette, Eye, Scissors, Download } from 'lucide-react'
 
 export const metadata = {
-  title: 'Image Tools - Free Online Image Processing & Editing | 30tools',
+  title: 'Image Tools - Free Online Image Processing & Editing',
   description: 'Professional image tools for compression, conversion, editing, and optimization. Image compressor, format converter, resizer, cropper, and more. Process images locally in your browser.',
   keywords: 'image tools, image compressor, image converter, photo editor, image resizer, image cropper, webp converter, png to jpg, image optimization, free image tools',
   openGraph: {

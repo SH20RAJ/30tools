@@ -1,11 +1,11 @@
 import URLShortenerTool from '@/components/tools/utilities/URLShortenerTool';
 
 export const metadata = {
-  title: "Free URL Shortener Online - Create Short Links with Analytics | 30tools",
+  title: "Free URL Shortener - Create Short Links with Analytics",
   description: "Free URL shortener with custom aliases, QR codes, and click analytics. Create short, trackable links instantly. Perfect for social media, marketing campaigns, and link management.",
   keywords: "url shortener, short link generator, custom url shortener, link shortener free, shorten url online, tiny url, short links with analytics, qr code generator",
   openGraph: {
-    title: "Free URL Shortener Online - Create Short Links with Analytics",
+    title: "Free URL Shortener - Create Short Links with Analytics",
     description: "Free URL shortener with custom aliases, QR codes, and click analytics. Create short, trackable links instantly.",
     url: "https://30tools.com/url-shortener",
     siteName: "30tools",
@@ -21,7 +21,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free URL Shortener Online - Create Short Links with Analytics",
+    title: "Free URL Shortener - Create Short Links with Analytics",
     description: "Free URL shortener with custom aliases, QR codes, and click analytics.",
     images: ["/og-images/url-shortener.jpg"],
     creator: "@30tools"

@@ -1,7 +1,7 @@
 import YouTubePackDownloader from '@/components/tools/youtube/YouTubePackDownloader';
 
 export const metadata = {
-  title: "YouTube Pack Downloader - Download All Video Assets | Complete YouTube Tool",
+  title: "YouTube Pack Downloader - 30tools",
   description: "Download complete YouTube video packages including title, description, tags, transcript, thumbnail, and metadata. All-in-one YouTube video asset downloader for content creators and marketers.",
   keywords: "youtube pack downloader, youtube video assets, youtube metadata downloader, youtube title description tags, youtube thumbnail transcript downloader, complete youtube video package, youtube content analyzer, video seo data extractor",
   openGraph: {

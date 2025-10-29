@@ -1,7 +1,7 @@
 import AestheticBioGeneratorTool from '@/components/tools/generators/AestheticBioGeneratorTool';
 
 export const metadata = {
-  title: "Aesthetic Bio Generator - Create Instagram & Twitter Bios | 30tools",
+  title: "Aesthetic Bio Generator - Create Instagram Twitter Bios",
   description: "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis, fonts, and themes. Perfect for Gen Z, influencers, and social media profiles.",
   keywords: "aesthetic bio generator, instagram bio, twitter bio, tiktok bio, social media bio, aesthetic text, bio ideas, profile bio generator",
   canonical: "https://30tools.com/aesthetic-bio-generator",

@@ -1,11 +1,9 @@
 import TextCaseConverterTool from '@/components/tools/text/TextCaseConverterTool';
 
 export const metadata = {
-    title: "Text Case Converter - Convert to UPPERCASE, lowercase, Title Case | 30tools",
+    title: "Text Case Converter - 30tools",
     description: "Convert text case instantly: UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more. Free online text transformation tool with bulk conversion support.",
-    keywords: "text case converter, uppercase converter, lowercase converter, title case converter, camelcase converter, snake case converter, text transformer, case converter online",
-    canonical: "https://30tools.com/text-case-converter",
-    alternates: {
+    keywords: "text case converter, uppercase converter, lowercase converter, title case converter, camelcase converter, snake case converter, text transformer, case converter online",    alternates: {
         canonical: "https://30tools.com/text-case-converter"
     },
     openGraph: {
