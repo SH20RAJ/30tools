@@ -10,10 +10,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { 
-  Upload, Download, Play, Pause, Volume2, RotateCcw, Scissors, Copy, 
-  ZoomIn, ZoomOut, SkipBack, SkipForward, Mic, Square, Music, 
-   Settings, Filter, Volume, Headphones, FileAudio,
+import {
+  Upload, Download, Play, Pause, Volume2, RotateCcw, Scissors, Copy,
+  ZoomIn, ZoomOut, SkipBack, SkipForward, Mic, Square, Music,
+  Settings, Filter, Volume, Headphones, FileAudio,
   Maximize2, Minimize2, Save, FolderOpen, Plus, Minus, RefreshCw,
   Layers, Move, Trash2, Eye, EyeOff, Lock, Unlock, Shuffle,
   Repeat, Rewind, FastForward, StopCircle, Record, Edit3,
@@ -22,8 +22,7 @@ import {
 import { toast } from 'sonner';
 import dynamic from 'next/dynamic';
 
-// Dynamically import libraries to avoid SSR issues
-const WaveSurfer = dynamic(() => import('wavesurfer.js'), { ssr: false });
+// WaveSurfer loaded from CDN
 
 export default function AudioEditor() {
   // Core state
@@ -35,7 +34,7 @@ export default function AudioEditor() {
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [zoom, setZoom] = useState(50);
-  
+
   // Audio processing state
   const [volume, setVolume] = useState(80);
   const [playbackRate, setPlaybackRate] = useState(1);
@@ -43,14 +42,14 @@ export default function AudioEditor() {
   const [tracks, setTracks] = useState([]);
   const [undoStack, setUndoStack] = useState([]);
   const [redoStack, setRedoStack] = useState([]);
-  
+
   // Effects state
   const [effects, setEffects] = useState({
     // EQ
     lowGain: 0,
     midGain: 0,
     highGain: 0,
-    
+
     // Dynamics
     compressorThreshold: -24,
     compressorRatio: 4,
@@ -58,14 +57,14 @@ export default function AudioEditor() {
     compressorRelease: 250,
     limiterThreshold: -3,
     gateThreshold: -40,
-    
+
     // Time-based effects
     reverbAmount: 0,
     reverbDecay: 2,
     delayTime: 0.3,
     delayFeedback: 0.3,
     delayAmount: 0,
-    
+
     // Modulation
     chorusRate: 1.5,
     chorusDepth: 0.35,
@@ -76,12 +75,12 @@ export default function AudioEditor() {
     phaserRate: 0.5,
     phaserDepth: 1,
     phaserAmount: 0,
-    
+
     // Distortion
     distortionAmount: 0,
     overdrive: 0,
     bitcrusher: 0,
-    
+
     // Filters
     lowPassFreq: 20000,
     highPassFreq: 20,
@@ -89,7 +88,7 @@ export default function AudioEditor() {
     bandPassQ: 1,
     notchFreq: 1000,
     notchQ: 1,
-    
+
     // Advanced
     pitch: 0,
     formant: 0,
@@ -98,24 +97,24 @@ export default function AudioEditor() {
     deesser: 0,
     exciter: 0,
     stereoWidth: 100,
-    
+
     // Master
     masterGain: 0,
     masterLimiter: true
   });
-  
+
   // Analysis state
   const [spectrumAnalyzer, setSpectrumAnalyzer] = useState(true);
   const [waveformView, setWaveformView] = useState('stereo');
   const [showGrid, setShowGrid] = useState(true);
   const [snapToGrid, setSnapToGrid] = useState(false);
-  
+
   // Export settings
   const [exportFormat, setExportFormat] = useState('wav');
   const [exportQuality, setExportQuality] = useState('high');
   const [exportSampleRate, setExportSampleRate] = useState(44100);
   const [exportBitDepth, setExportBitDepth] = useState(16);
-  
+
   // Refs
   const wavesurferRef = useRef(null);
   const audioContextRef = useRef(null);
@@ -123,7 +122,7 @@ export default function AudioEditor() {
   const canvasRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const recordingChunksRef = useRef([]);
-  
+
   // Advanced audio processing nodes
   const audioNodesRef = useRef({
     source: null,
@@ -160,52 +159,52 @@ export default function AudioEditor() {
     if (!ctx) return;
 
     const nodes = audioNodesRef.current;
-    
+
     // EQ (3-band)
     nodes.eq.low = ctx.createBiquadFilter();
     nodes.eq.low.type = 'lowshelf';
     nodes.eq.low.frequency.value = 320;
-    
+
     nodes.eq.mid = ctx.createBiquadFilter();
     nodes.eq.mid.type = 'peaking';
     nodes.eq.mid.frequency.value = 1000;
     nodes.eq.mid.Q.value = 0.5;
-    
+
     nodes.eq.high = ctx.createBiquadFilter();
     nodes.eq.high.type = 'highshelf';
     nodes.eq.high.frequency.value = 3200;
-    
+
     // Dynamics
     nodes.compressor = ctx.createDynamicsCompressor();
     nodes.limiter = ctx.createDynamicsCompressor();
     nodes.gate = ctx.createGain();
-    
+
     // Time-based effects
     nodes.delay = ctx.createDelay(2);
     const delayGain = ctx.createGain();
     const delayFeedback = ctx.createGain();
-    
+
     // Filters
     nodes.filters.lowpass = ctx.createBiquadFilter();
     nodes.filters.lowpass.type = 'lowpass';
-    
+
     nodes.filters.highpass = ctx.createBiquadFilter();
     nodes.filters.highpass.type = 'highpass';
-    
+
     nodes.filters.bandpass = ctx.createBiquadFilter();
     nodes.filters.bandpass.type = 'bandpass';
-    
+
     nodes.filters.notch = ctx.createBiquadFilter();
     nodes.filters.notch.type = 'notch';
-    
+
     // Analyzer
     nodes.analyzer = ctx.createAnalyser();
     nodes.analyzer.fftSize = 2048;
     nodes.analyzer.smoothingTimeConstant = 0.8;
-    
+
     // Master gain
     nodes.destination = ctx.createGain();
-    
+
     // Connect the chain
     connectAudioNodes();
   };
@@ -222,7 +221,7 @@ export default function AudioEditor() {
           node.disconnect();
         }
       });
-      
+
       // Connect in order: EQ -> Dynamics -> Filters -> Effects -> Analyzer -> Destination
       if (nodes.source) {
         nodes.source
@@ -247,17 +246,17 @@ export default function AudioEditor() {
   // File handling
   const handleFileUpload = useCallback(async (files) => {
     const fileArray = Array.from(files);
-    
+
     for (const file of fileArray) {
       if (!file.type.startsWith('audio/')) {
         toast.error(`${file.name} is not a valid audio file`);
         continue;
       }
-      
+
       try {
         const arrayBuffer = await file.arrayBuffer();
         const audioBuffer = await audioContextRef.current.decodeAudioData(arrayBuffer);
-        
+
         const newTrack = {
           id: Date.now() + Math.random(),
           name: file.name,
@@ -274,15 +273,15 @@ export default function AudioEditor() {
           locked: false,
           effects: { ...effects }
         };
-        
+
         setTracks(prev => [...prev, newTrack]);
         setAudioFiles(prev => [...prev, file]);
-        
+
         // Initialize WaveSurfer for the first track
         if (tracks.length === 0) {
           initializeWaveSurfer(newTrack);
         }
-        
+
         toast.success(`Loaded ${file.name}`);
       } catch (error) {
         console.error('Error loading audio file:', error);
@@ -293,14 +292,15 @@ export default function AudioEditor() {
 
   const initializeWaveSurfer = async (track) => {
     if (typeof window === 'undefined') return;
-    
+
     try {
-      const WaveSurfer = (await import('wavesurfer.js')).default;
-      
+      const { loadWaveSurfer } = await import('@/lib/cdn-loader');
+      const WaveSurfer = await loadWaveSurfer();
+
       if (wavesurferRef.current) {
         wavesurferRef.current.destroy();
       }
-      
+
       wavesurferRef.current = WaveSurfer.create({
         container: '#waveform',
         waveColor: '#3b82f6',
@@ -314,21 +314,21 @@ export default function AudioEditor() {
         backend: 'WebAudio',
         mediaControls: false
       });
-      
+
       wavesurferRef.current.loadBlob(track.file);
-      
+
       wavesurferRef.current.on('ready', () => {
         setDuration(wavesurferRef.current.getDuration());
       });
-      
+
       wavesurferRef.current.on('audioprocess', () => {
         setCurrentTime(wavesurferRef.current.getCurrentTime());
       });
-      
+
       wavesurferRef.current.on('finish', () => {
         setIsPlaying(false);
       });
-      
+
     } catch (error) {
       console.error('Error initializing WaveSurfer:', error);
       toast.error('Failed to initialize waveform display');
@@ -338,7 +338,7 @@ export default function AudioEditor() {
   // Playback controls
   const togglePlayPause = () => {
     if (!wavesurferRef.current) return;
-    
+
     if (isPlaying) {
       wavesurferRef.current.pause();
     } else {
@@ -370,7 +370,7 @@ export default function AudioEditor() {
   // Recording functionality
   const startRecording = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ 
+      const stream = await navigator.mediaDevices.getUserMedia({
         audio: {
           echoCancellation: false,
           noiseSuppression: false,
@@ -378,32 +378,32 @@ export default function AudioEditor() {
           sampleRate: 44100
         }
       });
-      
+
       const options = {
         mimeType: 'audio/webm;codecs=opus',
         audioBitsPerSecond: 128000
       };
-      
+
       mediaRecorderRef.current = new MediaRecorder(stream, options);
       recordingChunksRef.current = [];
-      
+
       mediaRecorderRef.current.ondataavailable = (event) => {
         recordingChunksRef.current.push(event.data);
       };
-      
+
       mediaRecorderRef.current.onstop = async () => {
         const blob = new Blob(recordingChunksRef.current, { type: 'audio/webm' });
         const file = new File([blob], `Recording_${new Date().toISOString()}.webm`, { type: 'audio/webm' });
         await handleFileUpload([file]);
-        
+
         // Stop all tracks
         stream.getTracks().forEach(track => track.stop());
       };
-      
+
       mediaRecorderRef.current.start();
       setIsRecording(true);
       toast.success('Recording started');
-      
+
     } catch (error) {
       console.error('Error starting recording:', error);
       toast.error('Failed to start recording');
@@ -421,20 +421,20 @@ export default function AudioEditor() {
   // Audio processing functions
   const applyEffects = useCallback(async () => {
     if (!audioContextRef.current || tracks.length === 0) return;
-    
+
     setIsProcessing(true);
-    
+
     try {
       const ctx = audioContextRef.current;
       const nodes = audioNodesRef.current;
-      
+
       // Apply EQ
       if (nodes.eq.low) {
         nodes.eq.low.gain.value = effects.lowGain;
         nodes.eq.mid.gain.value = effects.midGain;
         nodes.eq.high.gain.value = effects.highGain;
       }
-      
+
       // Apply dynamics
       if (nodes.compressor) {
         nodes.compressor.threshold.value = effects.compressorThreshold;
@@ -442,7 +442,7 @@ export default function AudioEditor() {
         nodes.compressor.attack.value = effects.compressorAttack / 1000;
         nodes.compressor.release.value = effects.compressorRelease / 1000;
       }
-      
+
       // Apply filters
       if (nodes.filters.lowpass) {
         nodes.filters.lowpass.frequency.value = effects.lowPassFreq;
@@ -452,19 +452,19 @@ export default function AudioEditor() {
         nodes.filters.notch.frequency.value = effects.notchFreq;
         nodes.filters.notch.Q.value = effects.notchQ;
       }
-      
+
       // Apply master gain
       if (nodes.destination) {
         nodes.destination.gain.value = Math.pow(10, effects.masterGain / 20);
       }
-      
+
       toast.success('Effects applied successfully!');
-      
+
     } catch (error) {
       console.error('Error applying effects:', error);
       toast.error('Failed to apply effects');
     }
-    
+
     setIsProcessing(false);
   }, [effects, tracks]);
 
@@ -474,20 +474,20 @@ export default function AudioEditor() {
       toast.error('No audio tracks to export');
       return;
     }
-    
+
     setIsProcessing(true);
-    
+
     try {
       const ctx = audioContextRef.current;
       const currentTrack = tracks[currentTrackIndex];
-      
+
       if (!currentTrack) {
         toast.error('No track selected for export');
         return;
       }
-      
+
       let exportBlob;
-      
+
       if (exportFormat === 'mp3') {
         // Use lamejs for MP3 export
         const lamejs = await import('lamejs');
@@ -496,18 +496,18 @@ export default function AudioEditor() {
           currentTrack.sampleRate,
           exportQuality === 'high' ? 320 : exportQuality === 'medium' ? 192 : 128
         );
-        
+
         const samples = new Int16Array(currentTrack.audioBuffer.length);
         const left = currentTrack.audioBuffer.getChannelData(0);
         const right = currentTrack.channels > 1 ? currentTrack.audioBuffer.getChannelData(1) : left;
-        
+
         for (let i = 0; i < samples.length; i++) {
           samples[i] = Math.max(-1, Math.min(1, left[i])) * 0x7fff;
         }
-        
+
         const mp3Data = [];
         const sampleBlockSize = 1152;
-        
+
         for (let i = 0; i < samples.length; i += sampleBlockSize) {
           const leftChunk = samples.subarray(i, i + sampleBlockSize);
           const rightChunk = currentTrack.channels > 1 ? samples.subarray(i, i + sampleBlockSize) : leftChunk;
@@ -516,21 +516,21 @@ export default function AudioEditor() {
             mp3Data.push(mp3buf);
           }
         }
-        
+
         const mp3buf = mp3encoder.flush();
         if (mp3buf.length > 0) {
           mp3Data.push(mp3buf);
         }
-        
+
         exportBlob = new Blob(mp3Data, { type: 'audio/mp3' });
-        
+
       } else {
         // Use audiobuffer-to-wav for WAV export
         const audioBufferToWav = await import('audiobuffer-to-wav');
         const wavArrayBuffer = audioBufferToWav.default(currentTrack.audioBuffer);
         exportBlob = new Blob([wavArrayBuffer], { type: 'audio/wav' });
       }
-      
+
       // Download the file
       const url = URL.createObjectURL(exportBlob);
       const a = document.createElement('a');
@@ -540,14 +540,14 @@ export default function AudioEditor() {
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      
+
       toast.success(`Audio exported as ${exportFormat.toUpperCase()}!`);
-      
+
     } catch (error) {
       console.error('Error exporting audio:', error);
       toast.error('Failed to export audio');
     }
-    
+
     setIsProcessing(false);
   };
 
@@ -584,12 +584,12 @@ export default function AudioEditor() {
       noisereduction: 0, deesser: 0, exciter: 0,
       stereoWidth: 100, masterGain: 0, masterLimiter: true
     });
-    
+
     if (wavesurferRef.current) {
       wavesurferRef.current.destroy();
       wavesurferRef.current = null;
     }
-    
+
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
     }
@@ -635,7 +635,7 @@ export default function AudioEditor() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div 
+                  <div
                     className="border-2 border-dashed border-blue-200/50 rounded-lg p-6 text-center cursor-pointer hover:border-blue-300 transition-colors"
                     onClick={() => fileInputRef.current?.click()}
                   >
@@ -655,11 +655,11 @@ export default function AudioEditor() {
                     onChange={(e) => handleFileUpload(e.target.files)}
                     className="hidden"
                   />
-                  
+
                   <Separator className="my-4" />
-                  
+
                   <div className="space-y-2">
-                    <Button 
+                    <Button
                       onClick={isRecording ? stopRecording : startRecording}
                       variant={isRecording ? "destructive" : "default"}
                       className="w-full"
@@ -693,20 +693,19 @@ export default function AudioEditor() {
                   <CardContent className="p-2">
                     <div className="space-y-2 max-h-60 overflow-y-auto">
                       {tracks.map((track, index) => (
-                        <div 
+                        <div
                           key={track.id}
-                          className={`p-3 rounded-lg border cursor-pointer transition-colors ${
-                            index === currentTrackIndex 
-                              ? 'bg-blue-50 border-blue-200' 
-                              : 'bg-white border-gray-200 hover:bg-gray-50'
-                          }`}
+                          className={`p-3 rounded-lg border cursor-pointer transition-colors ${index === currentTrackIndex
+                            ? 'bg-blue-50 border-blue-200'
+                            : 'bg-white border-gray-200 hover:bg-gray-50'
+                            }`}
                           onClick={() => setCurrentTrackIndex(index)}
                         >
                           <div className="flex items-center justify-between">
                             <div className="flex-1 min-w-0">
                               <p className="text-sm font-medium truncate">{track.name}</p>
                               <p className="text-xs text-muted-foreground">
-                                {formatTime(track.duration)} • {track.channels}ch • {Math.round(track.sampleRate/1000)}kHz
+                                {formatTime(track.duration)} • {track.channels}ch • {Math.round(track.sampleRate / 1000)}kHz
                               </p>
                             </div>
                             <div className="flex items-center gap-1">
@@ -847,7 +846,7 @@ export default function AudioEditor() {
                           <Label className="text-sm font-medium">Low (320Hz)</Label>
                           <Slider
                             value={[effects.lowGain]}
-                            onValueChange={(value) => setEffects(prev => ({...prev, lowGain: value[0]}))}
+                            onValueChange={(value) => setEffects(prev => ({ ...prev, lowGain: value[0] }))}
                             min={-20}
                             max={20}
                             step={0.5}
@@ -859,7 +858,7 @@ export default function AudioEditor() {
                           <Label className="text-sm font-medium">Mid (1kHz)</Label>
                           <Slider
                             value={[effects.midGain]}
-                            onValueChange={(value) => setEffects(prev => ({...prev, midGain: value[0]}))}
+                            onValueChange={(value) => setEffects(prev => ({ ...prev, midGain: value[0] }))}
                             min={-20}
                             max={20}
                             step={0.5}
@@ -871,7 +870,7 @@ export default function AudioEditor() {
                           <Label className="text-sm font-medium">High (3.2kHz)</Label>
                           <Slider
                             value={[effects.highGain]}
-                            onValueChange={(value) => setEffects(prev => ({...prev, highGain: value[0]}))}
+                            onValueChange={(value) => setEffects(prev => ({ ...prev, highGain: value[0] }))}
                             min={-20}
                             max={20}
                             step={0.5}
@@ -892,7 +891,7 @@ export default function AudioEditor() {
                               <Label className="text-sm">Threshold</Label>
                               <Slider
                                 value={[effects.compressorThreshold]}
-                                onValueChange={(value) => setEffects(prev => ({...prev, compressorThreshold: value[0]}))}
+                                onValueChange={(value) => setEffects(prev => ({ ...prev, compressorThreshold: value[0] }))}
                                 min={-60}
                                 max={0}
                                 step={1}
@@ -903,7 +902,7 @@ export default function AudioEditor() {
                               <Label className="text-sm">Ratio</Label>
                               <Slider
                                 value={[effects.compressorRatio]}
-                                onValueChange={(value) => setEffects(prev => ({...prev, compressorRatio: value[0]}))}
+                                onValueChange={(value) => setEffects(prev => ({ ...prev, compressorRatio: value[0] }))}
                                 min={1}
                                 max={20}
                                 step={0.1}
@@ -919,7 +918,7 @@ export default function AudioEditor() {
                               <Label className="text-sm">Threshold</Label>
                               <Slider
                                 value={[effects.limiterThreshold]}
-                                onValueChange={(value) => setEffects(prev => ({...prev, limiterThreshold: value[0]}))}
+                                onValueChange={(value) => setEffects(prev => ({ ...prev, limiterThreshold: value[0] }))}
                                 min={-20}
                                 max={0}
                                 step={0.1}
@@ -941,7 +940,7 @@ export default function AudioEditor() {
                               <Label className="text-sm">Amount</Label>
                               <Slider
                                 value={[effects.reverbAmount]}
-                                onValueChange={(value) => setEffects(prev => ({...prev, reverbAmount: value[0]}))}
+                                onValueChange={(value) => setEffects(prev => ({ ...prev, reverbAmount: value[0] }))}
                                 min={0}
                                 max={100}
                                 step={1}
@@ -957,7 +956,7 @@ export default function AudioEditor() {
                               <Label className="text-sm">Amount</Label>
                               <Slider
                                 value={[effects.delayAmount]}
-                                onValueChange={(value) => setEffects(prev => ({...prev, delayAmount: value[0]}))}
+                                onValueChange={(value) => setEffects(prev => ({ ...prev, delayAmount: value[0] }))}
                                 min={0}
                                 max={100}
                                 step={1}
@@ -1031,7 +1030,7 @@ export default function AudioEditor() {
                           </div>
                         </div>
                       </div>
-                      
+
                       <div className="flex gap-2 pt-4">
                         <Button onClick={exportAudio} disabled={isProcessing || tracks.length === 0} className="flex-1">
                           {isProcessing ? (
