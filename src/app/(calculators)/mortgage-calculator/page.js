@@ -117,7 +117,7 @@ export default function MortgageCalculatorPage() {
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>Property Tax:</strong> Annual property tax amount</li>
                                         <li>• <strong>Home Insurance:</strong> Annual homeowner's insurance</li>
-                                        <li>• <strong>PMI:</strong> Private mortgage insurance (if down payment < 20%)</li>
+                                        <li>• <strong>PMI:</strong> Private mortgage insurance (if down payment &lt; 20%)</li>
                                         <li>• <strong>HOA Fees:</strong> Homeowner association fees</li>
                                     </ul>
                                 </div>
