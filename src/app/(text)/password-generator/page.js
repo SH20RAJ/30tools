@@ -1,9 +1,50 @@
 import PasswordGeneratorTool from '@/components/tools/text/PasswordGeneratorTool';
 
 export const metadata = {
-  title: "Password Generator - Create Strong Secure Passwords",
-  description: "Generate strong, secure passwords instantly with our free password generator. Customize length, include special characters, numbers, and symbols. Perfect for online security.",
-  keywords: "password generator, secure password generator, strong password generator, random password generator, password creator, secure password maker, password generator online free, generate password",
+  title: "Free Password Generator - Create Strong Random Passwords Online | 30tools",
+  description: "Generate strong, secure passwords instantly with our 100% free password generator. No limits, no registration. Create random passwords with custom length (8-128 characters), symbols, and numbers.",
+  keywords: [
+    // Primary high-volume keywords from research
+    "password generator",
+    "random password generator",
+    "password generator 12 characters",
+    "password generator free",
+    "strong password generator",
+    "generate password",
+    "password generator 15 characters",
+    "lastpass password generator",
+    "norton password generator",
+    "password generator 8 characters",
+    "secure password generator",
+    "password generator lastpass",
+    "bitwarden password generator",
+    "generate strong password",
+    "free password generator",
+    "generate secure password",
+    "google password generator",
+    "password generator random",
+    "passwords generator",
+    "strong random password generator",
+    "generate random password",
+    "generate a password",
+    "last pass password generator",
+
+    // Long-tail keywords for SEO ranking
+    "password generator online free no registration unlimited",
+    "random password generator strong secure custom length",
+    "password generator 12 characters symbols numbers uppercase",
+    "strong password generator with special characters",
+    "secure password generator for websites accounts business",
+    "password generator free no ads clean interface",
+    "random password generator copy paste clipboard ready",
+    "password generator tool cybersecurity best practices",
+    "strong password generator bulk multiple passwords",
+    "secure password generator privacy protected local",
+    "password generator with character type options",
+    "random password generator instant generation one click",
+    "password generator for personal business professional use",
+    "strong password generator meets security requirements"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/password-generator"
   },

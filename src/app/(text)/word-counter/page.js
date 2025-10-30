@@ -1,9 +1,50 @@
 import WordCounterTool from '@/components/tools/text/WordCounterTool';
 
 export const metadata = {
-  title: "Free Word Counter - Count Words, Characters, Sentences",
-  description: "Professional word counter tool to count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, social media posts, and SEO content. Free and accurate.",
-  keywords: "word counter, character counter, word count tool, count words online, text counter, word counter online free, character count, sentence counter, paragraph counter, writing tools, word counter for google docs, academic word counter with citations, word counter online free no limit, character counter with spaces",
+  title: "Word Counter - Count Words & Characters Online Free | 30tools",
+  description: "Free online word counter tool with instant results. Count words, characters (with/without spaces), sentences, and paragraphs. No limits, no registration. Perfect for essays, SEO, and social media.",
+  keywords: [
+    // Primary high-volume keywords
+    "word counter",
+    "character counter",
+    "word count",
+    "text counter",
+    "word counter online",
+    "character count",
+    "word count tool",
+    "paragraph counter",
+    "sentence counter",
+    "character counter online",
+    "word counter free",
+    "text word counter",
+    "online word counter",
+    "word count checker",
+    "character counter tool",
+    "word counter with spaces",
+    "word counter no spaces",
+    "word counter google",
+    "word counter microsoft word",
+    "character counter with spaces",
+    "word counter for essays",
+    "character counter twitter",
+    "word counter real time",
+
+    // Long-tail keywords for SEO ranking
+    "word counter online free no registration unlimited",
+    "character counter with spaces without spaces accurate",
+    "word count tool for essays assignments academic writing",
+    "real time word counter live counting instant results",
+    "word counter for social media posts twitter instagram",
+    "character counter for twitter instagram facebook limits",
+    "word count checker for academic writing students",
+    "paragraph counter for blog posts articles content",
+    "sentence counter for content analysis writing",
+    "word frequency counter text analysis statistics",
+    "word counter with reading time calculator estimate",
+    "character limit checker for forms applications",
+    "word counter for seo content optimization length",
+    "bulk text word counter multiple documents batch"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/word-counter"
   },

@@ -3,7 +3,48 @@ import TextCaseConverterTool from '@/components/tools/text/TextCaseConverterTool
 export const metadata = {
     title: "Text Case Converter - 30tools",
     description: "Convert text case instantly: UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more. Free online text transformation tool with bulk conversion support.",
-    keywords: "text case converter, uppercase converter, lowercase converter, title case converter, camelcase converter, snake case converter, text transformer, case converter online",    alternates: {
+    keywords: [
+        // Primary high-volume keywords
+        "text case converter",
+        "uppercase converter",
+        "lowercase converter",
+        "title case converter",
+        "sentence case converter",
+        "case converter",
+        "text converter",
+        "camel case converter",
+        "pascal case converter",
+        "snake case converter",
+        "kebab case converter",
+        "text case changer",
+        "case changer",
+        "text formatter",
+        "uppercase lowercase converter",
+        "title case generator",
+        "text case tool",
+        "case conversion tool",
+        "text transformation tool",
+        "alternating case converter",
+        "inverse case converter",
+        "text case online",
+        "case converter online",
+
+        // Long-tail keywords for SEO ranking
+        "text case converter online free no registration",
+        "uppercase lowercase converter bulk text processing",
+        "title case converter for headlines articles proper",
+        "sentence case converter proper capitalization grammar",
+        "text case changer multiple formats programming",
+        "camel case converter programming variables functions",
+        "pascal case converter coding standards classes",
+        "snake case converter underscore format python",
+        "kebab case converter dash separated css urls",
+        "alternating case converter spongebob mocking text",
+        "inverse case converter flip capitalization toggle",
+        "text formatter case conversion bulk processing",
+        "case converter for social media posts content",
+        "text case converter copy paste clipboard ready"
+    ].join(", "), alternates: {
         canonical: "https://30tools.com/text-case-converter"
     },
     openGraph: {
