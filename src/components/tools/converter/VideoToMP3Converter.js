@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Upload, Download, Loader2, AlertCircle, CheckCircle, Music, FileVideo } from 'lucide-react';
+import { Upload, Download, Loader2, AlertCircle, CheckCircle, Music } from 'lucide-react';
 
 export default function VideoToMP3Converter() {
     const [file, setFile] = useState(null);
@@ -54,7 +54,7 @@ export default function VideoToMP3Converter() {
                 outputSize: fileSizeMap[selectedQuality],
                 downloadUrl: '#'
             });
-        } catch (err) {
+        } catch (_err) {
             setError('Failed to convert video to MP3. Please try again.');
         } finally {
             setIsLoading(false);

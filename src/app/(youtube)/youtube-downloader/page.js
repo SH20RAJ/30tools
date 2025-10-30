@@ -10,7 +10,7 @@ export const metadata = {
     "youtube to mp4",
     "youtube to mp3",
     "youtube video downloader online",
-    
+
     // Long-tail keywords for SEO ranking
     "download youtube video online free without software",
     "youtube video downloader high quality 1080p 4k",
@@ -101,9 +101,9 @@ export default function YouTubeDownloaderPage() {
               <span className="bg-primary/10 px-3 py-1 rounded-full">✓ Unlimited Downloads</span>
             </div>
           </div>
-          
+
           <YouTubeDownloader />
-          
+
           <div className="mt-12 space-y-8">
             <div className="bg-card rounded-lg p-6 border">
               <h2 className="text-2xl font-semibold mb-4">How to Download YouTube Videos Online Free</h2>
@@ -138,14 +138,14 @@ export default function YouTubeDownloaderPage() {
                 <div>
                   <h3 className="font-medium mb-2 text-red-600">🎥 High Quality Video Downloads</h3>
                   <p className="text-sm text-muted-foreground mb-4">Download YouTube videos in original quality including HD 720p, Full HD 1080p, and even 4K resolution when available. Our YouTube downloader preserves the original video quality for the best viewing experience.</p>
-                  
+
                   <h3 className="font-medium mb-2 text-red-600">🎵 Convert YouTube to MP3 Audio</h3>
                   <p className="text-sm text-muted-foreground mb-4">Extract high-quality audio from YouTube videos and save as MP3 files. Perfect for downloading music, podcasts, lectures, and audiobooks from YouTube with crystal-clear sound quality up to 320kbps.</p>
                 </div>
                 <div>
                   <h3 className="font-medium mb-2 text-red-600">⚡ Lightning Fast Download Speed</h3>
                   <p className="text-sm text-muted-foreground mb-4">Our optimized servers ensure super-fast YouTube video downloads. No waiting times, no slow downloads - get your YouTube videos downloaded in seconds, not minutes.</p>
-                  
+
                   <h3 className="font-medium mb-2 text-red-600">🔒 100% Safe and Secure</h3>
                   <p className="text-sm text-muted-foreground mb-4">Your privacy is our priority. All YouTube downloads are processed securely without storing any personal data. No malware, no viruses, just clean and safe YouTube video downloads.</p>
                 </div>
@@ -171,6 +171,34 @@ export default function YouTubeDownloaderPage() {
                   <h3 className="font-medium mb-2">Is there a download limit?</h3>
                   <p className="text-sm text-muted-foreground">No, there are no download limits! You can download as many YouTube videos as you want, completely free of charge.</p>
                 </div>
+              </div>
+            </div>
+
+            <div className="bg-card rounded-lg p-6 border">
+              <h2 className="text-2xl font-semibold mb-4">Follow & Feedback</h2>
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <a
+                  href="https://x.com/sh20raj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 p-4 border rounded-lg hover:border-blue-500 hover:shadow-md transition-all group text-center"
+                >
+                  <h3 className="font-semibold mb-2 group-hover:text-blue-500">🐦 Follow @sh20raj</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Follow us on X (Twitter) for updates, tips, and new tool announcements.
+                  </p>
+                </a>
+                <a
+                  href="https://x.com/sh20raj"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 p-4 border rounded-lg hover:border-green-500 hover:shadow-md transition-all group text-center"
+                >
+                  <h3 className="font-semibold mb-2 group-hover:text-green-500">💬 Submit Feedback</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Share your thoughts, report issues, or suggest new features.
+                  </p>
+                </a>
               </div>
             </div>
 

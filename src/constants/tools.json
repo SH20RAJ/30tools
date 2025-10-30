@@ -2,7 +2,7 @@
     "metadata": {
         "version": "9.0",
         "lastUpdated": "2025-01-30",
-        "totalTools": 174,
+        "totalTools": 173,
         "totalCategories": 14
     },
     "categories": {
@@ -3084,36 +3084,6 @@
                         "Creative Content",
                         "HD Downloads",
                         "Fast Processing"
-                    ]
-                },
-                {
-                    "id": "youtube-shorts-downloader",
-                    "name": "YouTube Shorts Downloader",
-                    "description": "Download YouTube Shorts videos in vertical format with audio extraction support",
-                    "route": "/youtube-shorts-downloader",
-                    "popular": true,
-                    "category": "downloaders",
-                    "keywords": [
-                        "youtube shorts downloader",
-                        "download youtube shorts",
-                        "youtube shorts download",
-                        "save youtube shorts",
-                        "youtube shorts video downloader"
-                    ],
-                    "longTailKeywords": [
-                        "youtube shorts downloader online free",
-                        "download youtube shorts without app",
-                        "youtube shorts downloader hd quality",
-                        "save youtube shorts to phone",
-                        "youtube shorts downloader for pc mobile"
-                    ],
-                    "primaryKeyword": "youtube shorts downloader",
-                    "features": [
-                        "Vertical Format",
-                        "HD Quality",
-                        "Audio Extraction",
-                        "Fast Processing",
-                        "Mobile Optimized"
                     ]
                 },
                 {

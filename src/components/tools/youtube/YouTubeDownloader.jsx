@@ -74,8 +74,8 @@ export default function YouTubeDownloader() {
                 className="flex-1 border-red-200 focus:border-red-500 focus:ring-red-500"
                 disabled={isLoading}
               />
-              <Button 
-                type="submit" 
+              <Button
+                type="submit"
                 disabled={isLoading || !url.trim()}
                 className="bg-red-500 hover:bg-red-600 text-white font-medium px-6"
               >
@@ -92,7 +92,7 @@ export default function YouTubeDownloader() {
                 )}
               </Button>
             </div>
-            
+
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg">
                 {error}
@@ -105,8 +105,8 @@ export default function YouTubeDownloader() {
               <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-green-200 rounded-lg p-4">
                 <div className="flex items-start gap-4">
                   {videoData.thumbnail && (
-                    <img 
-                      src={videoData.thumbnail} 
+                    <img
+                      src={videoData.thumbnail}
                       alt="Video thumbnail"
                       className="w-32 h-24 object-cover rounded-lg shadow-md"
                     />
@@ -156,21 +156,21 @@ export default function YouTubeDownloader() {
                         </Button>
                       </div>
                     )) || (
-                      <div className="flex items-center justify-between p-3 bg-blue-50/50 dark:bg-blue-950/10 rounded-lg">
-                        <div>
-                          <div className="font-medium">HD MP4</div>
-                          <div className="text-sm text-muted-foreground">{videoData.fileSize}</div>
+                        <div className="flex items-center justify-between p-3 bg-blue-50/50 dark:bg-blue-950/10 rounded-lg">
+                          <div>
+                            <div className="font-medium">HD MP4</div>
+                            <div className="text-sm text-muted-foreground">{videoData.fileSize}</div>
+                          </div>
+                          <Button
+                            onClick={() => handleDownload(videoData.downloadUrl, `${videoData.title}.mp4`, 'video')}
+                            size="sm"
+                            className="bg-blue-500 hover:bg-blue-600"
+                          >
+                            <Download className="w-4 h-4 mr-1" />
+                            Download
+                          </Button>
                         </div>
-                        <Button
-                          onClick={() => handleDownload(videoData.downloadUrl, `${videoData.title}.mp4`, 'video')}
-                          size="sm"
-                          className="bg-blue-500 hover:bg-blue-600"
-                        >
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </Button>
-                      </div>
-                    )}
+                      )}
                   </CardContent>
                 </Card>
 
@@ -199,21 +199,21 @@ export default function YouTubeDownloader() {
                         </Button>
                       </div>
                     )) || (
-                      <div className="flex items-center justify-between p-3 bg-green-50/50 dark:bg-green-950/10 rounded-lg">
-                        <div>
-                          <div className="font-medium">High Quality MP3</div>
-                          <div className="text-sm text-muted-foreground">~{Math.round(parseInt(videoData.fileSize || '0') * 0.1)}MB</div>
+                        <div className="flex items-center justify-between p-3 bg-green-50/50 dark:bg-green-950/10 rounded-lg">
+                          <div>
+                            <div className="font-medium">High Quality MP3</div>
+                            <div className="text-sm text-muted-foreground">~{Math.round(parseInt(videoData.fileSize || '0') * 0.1)}MB</div>
+                          </div>
+                          <Button
+                            onClick={() => handleDownload(videoData.audioUrl || videoData.downloadUrl, `${videoData.title}.mp3`, 'audio')}
+                            size="sm"
+                            className="bg-green-500 hover:bg-green-600"
+                          >
+                            <Download className="w-4 h-4 mr-1" />
+                            Download
+                          </Button>
                         </div>
-                        <Button
-                          onClick={() => handleDownload(videoData.audioUrl || videoData.downloadUrl, `${videoData.title}.mp3`, 'audio')}
-                          size="sm"
-                          className="bg-green-500 hover:bg-green-600"
-                        >
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </Button>
-                      </div>
-                    )}
+                      )}
                   </CardContent>
                 </Card>
               </div>
@@ -248,21 +248,37 @@ export default function YouTubeDownloader() {
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col gap-3 mt-4">
-            <Button 
+            <Button
               className="w-full bg-red-500 hover:bg-red-600"
               onClick={() => window.location.href = '/handler/sign-in'}
             >
               <LogIn className="w-4 h-4 mr-2" />
               Login to Download
             </Button>
-            <Button 
+            <Button
               variant="outline"
               className="w-full"
               onClick={() => window.location.href = '/handler/sign-up'}
             >
               Create Free Account
             </Button>
-            <Button 
+            <div className="flex gap-2">
+              <Button
+                variant="outline"
+                className="flex-1 text-blue-500 border-blue-200 hover:bg-blue-50"
+                onClick={() => window.open('https://x.com/sh20raj', '_blank')}
+              >
+                Follow @sh20raj
+              </Button>
+              <Button
+                variant="outline"
+                className="flex-1 text-green-500 border-green-200 hover:bg-green-50"
+                onClick={() => window.open('https://x.com/sh20raj', '_blank')}
+              >
+                Submit Feedback
+              </Button>
+            </div>
+            <Button
               variant="ghost"
               className="w-full"
               onClick={() => setShowLoginDialog(false)}

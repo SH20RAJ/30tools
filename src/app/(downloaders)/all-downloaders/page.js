@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Video, Image, Music, Users, Smartphone } from 'lucide-react';
+import { Video, Image, Users, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
