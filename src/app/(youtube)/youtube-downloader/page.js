@@ -104,6 +104,17 @@ export default function YouTubeDownloaderPage() {
 
           <YouTubeDownloader />
 
+          {/* Ad Unit 1 */}
+          <div className="my-8 text-center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+            <ins className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-format="autorelaxed"
+              data-ad-client="ca-pub-1828915420581549"
+              data-ad-slot="9420953810"></ins>
+            <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
+          </div>
+
           <div className="mt-12 space-y-8">
             <div className="bg-card rounded-lg p-6 border">
               <h2 className="text-2xl font-semibold mb-4">How to Download YouTube Videos Online Free</h2>
@@ -132,6 +143,17 @@ export default function YouTubeDownloaderPage() {
               </div>
             </div>
 
+            {/* Ad Unit 2 */}
+            <div className="my-8 text-center">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+              <ins className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-1828915420581549"
+                data-ad-slot="9420953810"></ins>
+              <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
+            </div>
+
             <div className="bg-card rounded-lg p-6 border">
               <h2 className="text-2xl font-semibold mb-4">Why Choose Our YouTube Video Downloader?</h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -150,6 +172,17 @@ export default function YouTubeDownloaderPage() {
                   <p className="text-sm text-muted-foreground mb-4">Your privacy is our priority. All YouTube downloads are processed securely without storing any personal data. No malware, no viruses, just clean and safe YouTube video downloads.</p>
                 </div>
               </div>
+            </div>
+
+            {/* Ad Unit 3 */}
+            <div className="my-8 text-center">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+              <ins className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-1828915420581549"
+                data-ad-slot="9420953810"></ins>
+              <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
             </div>
 
             <div className="bg-card rounded-lg p-6 border">
@@ -200,6 +233,17 @@ export default function YouTubeDownloaderPage() {
                   </p>
                 </a>
               </div>
+            </div>
+
+            {/* Ad Unit 4 */}
+            <div className="my-8 text-center">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+              <ins className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-1828915420581549"
+                data-ad-slot="9420953810"></ins>
+              <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
             </div>
 
             <div className="bg-card rounded-lg p-6 border">
