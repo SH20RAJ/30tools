@@ -273,8 +273,7 @@ export default function ImageConverterTool() {
     }
 
     // For multiple files, create a zip
-    const { loadJSZip } = await import('@/lib/cdn-loader');
-    const JSZip = await loadJSZip();
+    const JSZip = (await import('jszip')).default;
     const zip = new JSZip();
 
     completedFiles.forEach(fileData => {
@@ -388,8 +387,8 @@ export default function ImageConverterTool() {
               <CardContent>
                 <div
                   className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${dragActive
-                    ? 'border-primary bg-primary/5'
-                    : 'border-muted-foreground/25 hover:border-primary/50'
+                      ? 'border-primary bg-primary/5'
+                      : 'border-muted-foreground/25 hover:border-primary/50'
                     }`}
                   onDrop={handleDrop}
                   onDragOver={handleDragOver}

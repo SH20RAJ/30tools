@@ -25,7 +25,7 @@ import {
     SettingsIcon,
     RefreshCwIcon
 } from 'lucide-react';
-// UserButton removed to reduce bundle size
+import { UserButton } from "@stackframe/stack";
 
 export default function LandingPage() {
     const iconMap = {
@@ -100,10 +100,13 @@ export default function LandingPage() {
                             <Link href="/about">
                                 <Button variant="outline">About</Button>
                             </Link>
-                            {/* Authentication removed to reduce bundle size */}
-                            <Link href="#tools">
-                                <Button variant="secondary">Get Started</Button>
-                            </Link>
+                            {session ? (
+                                <UserButton />
+                            ) : (
+                                <Link href="/handler/sign-in">
+                                    <Button variant="secondary">Sign In</Button>
+                                </Link>
+                            )}
                         </div>
                     </div>
                 </div>

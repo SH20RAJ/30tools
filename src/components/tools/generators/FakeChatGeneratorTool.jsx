@@ -23,7 +23,7 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import SocialShareButtons from '@/components/shared/SocialShareButtons';
-// html2canvas loaded from CDN
+import html2canvas from 'html2canvas';
 
 const CHAT_PLATFORMS = {
   whatsapp: {
@@ -76,7 +76,7 @@ export default function FakeChatGeneratorTool() {
 
   const addMessage = () => {
     if (!newMessage.trim()) return;
-
+    
     const newMsg = {
       id: Date.now(),
       text: newMessage,
@@ -84,14 +84,14 @@ export default function FakeChatGeneratorTool() {
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       read: true
     };
-
+    
     setMessages(prev => [...prev, newMsg]);
     setNewMessage('');
   };
 
   const addReceivedMessage = () => {
     if (!newMessage.trim()) return;
-
+    
     const newMsg = {
       id: Date.now(),
       text: newMessage,
@@ -99,7 +99,7 @@ export default function FakeChatGeneratorTool() {
       time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       read: true
     };
-
+    
     setMessages(prev => [...prev, newMsg]);
     setNewMessage('');
   };
@@ -110,19 +110,17 @@ export default function FakeChatGeneratorTool() {
 
   const exportAsImage = async () => {
     if (!chatRef.current) return;
-
+    
     setIsExporting(true);
-
+    
     try {
-      const { loadHTML2Canvas } = await import('@/lib/cdn-loader');
-      const html2canvas = await loadHTML2Canvas();
       const canvas = await html2canvas(chatRef.current, {
         backgroundColor: CHAT_PLATFORMS[platform].bgColor,
         scale: 2,
         useCORS: true,
         allowTaint: true
       });
-
+      
       const link = document.createElement('a');
       link.download = `fake-chat-${platform}-${Date.now()}.png`;
       link.href = canvas.toDataURL();
@@ -130,13 +128,13 @@ export default function FakeChatGeneratorTool() {
     } catch (error) {
       console.error('Export failed:', error);
     }
-
+    
     setIsExporting(false);
   };
 
   const renderMessage = (message) => {
     const platformStyle = CHAT_PLATFORMS[platform];
-
+    
     return (
       <div
         key={message.id}
@@ -151,26 +149,27 @@ export default function FakeChatGeneratorTool() {
               <span className="text-xs text-gray-500">{contactName}</span>
             </div>
           )}
-
+          
           <div
-            className={`px-3 py-2 rounded-lg relative ${message.sent
-              ? 'rounded-br-none'
-              : 'rounded-bl-none'
-              }`}
+            className={`px-3 py-2 rounded-lg relative ${
+              message.sent 
+                ? 'rounded-br-none' 
+                : 'rounded-bl-none'
+            }`}
             style={{
-              backgroundColor: message.sent
-                ? platformStyle.bubbleColor
+              backgroundColor: message.sent 
+                ? platformStyle.bubbleColor 
                 : platformStyle.receivedColor,
-              color: message.sent
-                ? platformStyle.textColor
+              color: message.sent 
+                ? platformStyle.textColor 
                 : '#000000'
             }}
           >
             <p className="text-sm whitespace-pre-wrap">{message.text}</p>
-
+            
             {showTimestamps && (
               <div className="flex items-center justify-end mt-1 gap-1">
-                <span
+                <span 
                   className="text-xs opacity-70"
                   style={{ color: message.sent ? platformStyle.timeColor : '#666' }}
                 >
@@ -188,7 +187,7 @@ export default function FakeChatGeneratorTool() {
               </div>
             )}
           </div>
-
+          
           <Button
             size="sm"
             variant="ghost"
@@ -210,7 +209,7 @@ export default function FakeChatGeneratorTool() {
             <ArrowLeftIcon className="mr-2 h-4 w-4" />
             Back to Design Tools
           </Link>
-
+          
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg">
               <MessageCircleIcon className="h-6 w-6 text-white" />
@@ -285,7 +284,7 @@ export default function FakeChatGeneratorTool() {
                       Show timestamps
                     </Label>
                   </div>
-
+                  
                   <div className="flex items-center space-x-2">
                     <Switch
                       id="readReceipts"
@@ -319,16 +318,16 @@ export default function FakeChatGeneratorTool() {
                     rows={3}
                   />
                 </div>
-
+                
                 <div className="flex gap-2">
-                  <Button
+                  <Button 
                     onClick={addMessage}
                     className="flex-1"
                     disabled={!newMessage.trim()}
                   >
                     Add Sent
                   </Button>
-                  <Button
+                  <Button 
                     onClick={addReceivedMessage}
                     variant="outline"
                     className="flex-1"
@@ -349,7 +348,7 @@ export default function FakeChatGeneratorTool() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Button
+                <Button 
                   onClick={exportAsImage}
                   className="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600"
                   disabled={isExporting || messages.length === 0}
@@ -385,15 +384,15 @@ export default function FakeChatGeneratorTool() {
               <CardContent className="p-0">
                 <div className="border rounded-lg overflow-hidden">
                   {/* Chat Header */}
-                  <div
+                  <div 
                     className="px-4 py-3 border-b flex items-center gap-3"
-                    style={{
-                      backgroundColor: platform === 'whatsapp' ? '#075e54' :
-                        platform === 'instagram' ? '#ffffff' :
-                          platform === 'imessage' ? '#f6f6f6' : '#36393f',
+                    style={{ 
+                      backgroundColor: platform === 'whatsapp' ? '#075e54' : 
+                                     platform === 'instagram' ? '#ffffff' :
+                                     platform === 'imessage' ? '#f6f6f6' : '#36393f',
                       color: platform === 'whatsapp' ? '#ffffff' :
-                        platform === 'instagram' ? '#000000' :
-                          platform === 'imessage' ? '#000000' : '#ffffff'
+                             platform === 'instagram' ? '#000000' :
+                             platform === 'imessage' ? '#000000' : '#ffffff'
                     }}
                   >
                     <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm font-semibold">
@@ -408,13 +407,13 @@ export default function FakeChatGeneratorTool() {
                   </div>
 
                   {/* Chat Messages */}
-                  <div
+                  <div 
                     ref={chatRef}
                     className="p-4 min-h-96 max-h-96 overflow-y-auto"
                     style={{ backgroundColor: CHAT_PLATFORMS[platform].bgColor }}
                   >
                     {messages.map(renderMessage)}
-
+                    
                     {messages.length === 0 && (
                       <div className="text-center py-12 text-gray-500">
                         <MessageCircleIcon className="h-12 w-12 mx-auto mb-4 opacity-50" />
@@ -424,20 +423,20 @@ export default function FakeChatGeneratorTool() {
                   </div>
 
                   {/* Chat Input (Visual Only) */}
-                  <div
+                  <div 
                     className="px-4 py-3 border-t flex items-center gap-2"
-                    style={{
-                      backgroundColor: platform === 'whatsapp' ? '#f0f0f0' :
-                        platform === 'instagram' ? '#ffffff' :
-                          platform === 'imessage' ? '#f6f6f6' : '#40444b'
+                    style={{ 
+                      backgroundColor: platform === 'whatsapp' ? '#f0f0f0' : 
+                                     platform === 'instagram' ? '#ffffff' :
+                                     platform === 'imessage' ? '#f6f6f6' : '#40444b'
                     }}
                   >
-                    <div
+                    <div 
                       className="flex-1 px-3 py-2 rounded-full text-sm"
-                      style={{
-                        backgroundColor: platform === 'whatsapp' ? '#ffffff' :
-                          platform === 'instagram' ? '#efefef' :
-                            platform === 'imessage' ? '#ffffff' : '#484c52',
+                      style={{ 
+                        backgroundColor: platform === 'whatsapp' ? '#ffffff' : 
+                                       platform === 'instagram' ? '#efefef' :
+                                       platform === 'imessage' ? '#ffffff' : '#484c52',
                         color: platform === 'discord' ? '#ffffff' : '#000000'
                       }}
                     >

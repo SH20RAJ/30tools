@@ -25,7 +25,7 @@ import {
   SettingsIcon,
   RefreshCwIcon
 } from 'lucide-react';
-// UserButton removed to reduce bundle size
+import { UserButton } from "@stackframe/stack";
 
 export default function LandingPage() {
   const iconMap = {
@@ -105,10 +105,13 @@ export default function LandingPage() {
               <Link href="/about">
                 <Button variant="outline">About</Button>
               </Link>
-              {/* Authentication removed to reduce bundle size */}
-              <Link href="#tools">
-                <Button variant="secondary">Get Started</Button>
-              </Link>
+              {session ? (
+                <UserButton />
+              ) : (
+                <Link href="/handler/sign-in">
+                  <Button variant="secondary">Sign In</Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -122,10 +125,10 @@ export default function LandingPage() {
             {/* Gradient Orbs */}
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-600/20 rounded-full blur-3xl animate-pulse" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-r from-pink-400/20 to-orange-600/20 rounded-full blur-3xl animate-pulse delay-1000" />
-
+            
             {/* Grid Pattern */}
             <div className="absolute inset-0 bg-grid-slate-100/50 dark:bg-grid-slate-800/50 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-
+            
             {/* Floating Elements */}
             <div className="absolute top-20 left-10 w-4 h-4 bg-primary/30 rounded-full animate-bounce delay-300" />
             <div className="absolute top-40 right-20 w-6 h-6 bg-secondary/30 rounded-full animate-bounce delay-700" />

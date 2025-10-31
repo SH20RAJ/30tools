@@ -6,10 +6,10 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
-import {
-  ArrowLeftIcon,
-  UploadIcon,
-  DownloadIcon,
+import { 
+  ArrowLeftIcon, 
+  UploadIcon, 
+  DownloadIcon, 
   FileTextIcon,
   TrashIcon,
   GripVerticalIcon,
@@ -30,16 +30,22 @@ export default function PDFMergerTool() {
   const [draggedIndex, setDraggedIndex] = useState(null);
 
   const loadPDFLib = useCallback(async () => {
-    // Load from CDN to reduce bundle size
-    const { loadPDFLib } = await import('@/lib/cdn-loader');
-    const PDFLib = await loadPDFLib();
-    return PDFLib;
+    if (typeof window !== 'undefined' && !window.PDFLib) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js';
+      document.head.appendChild(script);
+      
+      return new Promise((resolve) => {
+        script.onload = () => resolve(window.PDFLib);
+      });
+    }
+    return window.PDFLib;
   }, []);
 
   const handleFileSelect = async (event) => {
     const selectedFiles = Array.from(event.target.files);
     const validFiles = selectedFiles.filter(file => file.type === 'application/pdf');
-
+    
     if (validFiles.length !== selectedFiles.length) {
       alert('Please select only PDF files.');
     }
@@ -47,7 +53,7 @@ export default function PDFMergerTool() {
     const newFiles = await Promise.all(
       validFiles.map(async (file, index) => {
         const arrayBuffer = await file.arrayBuffer();
-
+        
         return {
           id: Date.now() + index,
           file,
@@ -103,15 +109,15 @@ export default function PDFMergerTool() {
 
   const handleDrop = (e, dropIndex) => {
     e.preventDefault();
-
+    
     if (draggedIndex === null || draggedIndex === dropIndex) return;
-
+    
     const newFiles = [...files];
     const draggedFile = newFiles[draggedIndex];
-
+    
     newFiles.splice(draggedIndex, 1);
     newFiles.splice(dropIndex, 0, draggedFile);
-
+    
     setFiles(newFiles);
     setDraggedIndex(null);
   };
@@ -128,30 +134,30 @@ export default function PDFMergerTool() {
     try {
       const PDFLib = await loadPDFLib();
       const mergedPdf = await PDFLib.PDFDocument.create();
-
+      
       for (let i = 0; i < files.length; i++) {
         setProgress(((i + 1) / files.length) * 90);
-
+        
         const file = files[i];
         const sourcePdf = await PDFLib.PDFDocument.load(file.arrayBuffer);
         const pageIndices = sourcePdf.getPageIndices();
-
+        
         const copiedPages = await mergedPdf.copyPages(sourcePdf, pageIndices);
         copiedPages.forEach((page) => mergedPdf.addPage(page));
       }
 
       setProgress(95);
-
+      
       const pdfBytes = await mergedPdf.save();
       const blob = new Blob([pdfBytes], { type: 'application/pdf' });
-
+      
       setMergedPdf({
         blob,
         size: blob.size,
         pageCount: mergedPdf.getPageCount(),
         name: `merged-${files.length}-files.pdf`
       });
-
+      
       setProgress(100);
     } catch (error) {
       console.error('Error merging PDFs:', error);
@@ -188,7 +194,7 @@ export default function PDFMergerTool() {
               Back to Home
             </Button>
           </Link>
-
+          
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <FileTextIcon className="h-6 w-6 text-primary" />
@@ -198,7 +204,7 @@ export default function PDFMergerTool() {
               <p className="text-muted-foreground">Merge PDF files free, combine multiple PDF documents into one file, join PDFs online</p>
             </div>
           </div>
-
+          
           <div className="flex flex-wrap gap-2 mb-6">
             <Badge variant="secondary">IlovePDF Alternative</Badge>
             <Badge variant="secondary">PDF Joiner</Badge>
@@ -236,7 +242,7 @@ export default function PDFMergerTool() {
                       </div>
                     </div>
                   </Button>
-
+                  
                   <input
                     ref={fileInputRef}
                     type="file"
@@ -245,7 +251,7 @@ export default function PDFMergerTool() {
                     onChange={handleFileSelect}
                     className="hidden"
                   />
-
+                  
                   {files.length > 0 && (
                     <div className="flex justify-between items-center">
                       <span className="text-sm text-muted-foreground">
@@ -286,21 +292,21 @@ export default function PDFMergerTool() {
                         className="flex items-center gap-3 p-3 border rounded-lg cursor-move hover:bg-muted/50 transition-colors"
                       >
                         <GripVerticalIcon className="h-4 w-4 text-muted-foreground" />
-
+                        
                         <div className="flex items-center gap-2 text-primary">
                           <span className="text-sm font-medium bg-primary/10 px-2 py-1 rounded">
                             #{index + 1}
                           </span>
                           <FileTextIcon className="h-4 w-4" />
                         </div>
-
+                        
                         <div className="flex-1 min-w-0">
                           <div className="font-medium truncate">{file.name}</div>
                           <div className="text-sm text-muted-foreground">
                             {file.pageCount} pages • {formatFileSize(file.size)}
                           </div>
                         </div>
-
+                        
                         <Button
                           variant="ghost"
                           size="sm"
@@ -439,7 +445,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3 text-primary">Merge PDF Files Free</h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Our <strong>free PDF merger</strong> lets you combine multiple PDF documents into one file without any cost.
+                    Our <strong>free PDF merger</strong> lets you combine multiple PDF documents into one file without any cost. 
                     Merge PDFs free online with no watermarks or limitations.
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -454,7 +460,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3 text-primary">Combine PDF Online</h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    <strong>Combine PDF files online</strong> with our professional PDF combiner. Join PDF documents,
+                    <strong>Combine PDF files online</strong> with our professional PDF combiner. Join PDF documents, 
                     merge PDF pages, and create comprehensive documents easily.
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -469,7 +475,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3 text-primary">PDF Merge Online Free</h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Experience the best <strong>PDF merge online free</strong> service. Our online PDF merger works like
+                    Experience the best <strong>PDF merge online free</strong> service. Our online PDF merger works like 
                     SmallPDF merge, but completely free with unlimited usage.
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -484,7 +490,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3 text-primary">Alternative to Adobe PDF Merger</h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Skip expensive <strong>Adobe Acrobat merge PDF</strong> subscriptions. Our tool offers the same functionality as
+                    Skip expensive <strong>Adobe Acrobat merge PDF</strong> subscriptions. Our tool offers the same functionality as 
                     Adobe PDF merger but completely free online.
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -499,7 +505,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3 text-primary">I Love PDF Alternative</h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Experience <strong>IlovePDF merge</strong> functionality without limits. Our tool works like
+                    Experience <strong>IlovePDF merge</strong> functionality without limits. Our tool works like 
                     <strong>i love pdf merge</strong> but with better performance and no restrictions.
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -514,7 +520,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-3 text-primary">Multi-Language Support</h3>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Supports global users: <strong>fusionner PDF</strong> (French), <strong>combinar PDF</strong> (Spanish),
+                    Supports global users: <strong>fusionner PDF</strong> (French), <strong>combinar PDF</strong> (Spanish), 
                     <strong>unir PDF</strong> (Spanish), and <strong>دمج PDF</strong> (Arabic).
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -538,12 +544,12 @@ export default function PDFMergerTool() {
                   </div>
                   <h3 className="font-semibold mb-2">1. Upload PDF Files to Merge</h3>
                   <p className="text-sm text-muted-foreground">
-                    Select multiple PDF files from your computer. Our <strong>free PDF merger</strong> supports unlimited
+                    Select multiple PDF files from your computer. Our <strong>free PDF merger</strong> supports unlimited 
                     file uploads with no size restrictions. Merge PDF files free download.
                   </p>
                 </CardContent>
               </Card>
-
+              
               <Card>
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -551,12 +557,12 @@ export default function PDFMergerTool() {
                   </div>
                   <h3 className="font-semibold mb-2">2. Arrange PDF Merge Order</h3>
                   <p className="text-sm text-muted-foreground">
-                    Drag and drop PDF files to arrange them in your preferred order. <strong>Combine PDF online free</strong>
+                    Drag and drop PDF files to arrange them in your preferred order. <strong>Combine PDF online free</strong> 
                     with full control over document sequence and organization.
                   </p>
                 </CardContent>
               </Card>
-
+              
               <Card>
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -564,7 +570,7 @@ export default function PDFMergerTool() {
                   </div>
                   <h3 className="font-semibold mb-2">3. Download Merged PDF Free</h3>
                   <p className="text-sm text-muted-foreground">
-                    Click merge and download your combined PDF file instantly. <strong>PDF merge online free</strong>
+                    Click merge and download your combined PDF file instantly. <strong>PDF merge online free</strong> 
                     with professional quality and no watermarks added.
                   </p>
                 </CardContent>
@@ -687,7 +693,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">Is it free to merge PDF files online?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Yes! Our <strong>PDF merger free online</strong> service is completely free with no hidden fees, watermarks, or file limits.
+                    Yes! Our <strong>PDF merger free online</strong> service is completely free with no hidden fees, watermarks, or file limits. 
                     <strong>Merge PDF files free</strong> without any restrictions or premium subscriptions.
                   </p>
                 </CardContent>
@@ -697,7 +703,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">How secure is your free PDF merger?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Absolutely secure! Our <strong>PDF merge online free</strong> tool processes everything in your browser.
+                    Absolutely secure! Our <strong>PDF merge online free</strong> tool processes everything in your browser. 
                     Your files never leave your device, ensuring complete privacy when you <strong>combine PDF online</strong>.
                   </p>
                 </CardContent>
@@ -707,7 +713,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">What's the maximum file size for PDF merge?</h3>
                   <p className="text-sm text-muted-foreground">
-                    There are no file size limits! <strong>Merge PDF files online</strong> of any size. Our <strong>free PDF merger</strong>
+                    There are no file size limits! <strong>Merge PDF files online</strong> of any size. Our <strong>free PDF merger</strong> 
                     handles large PDFs, hundreds of pages, and high-resolution documents without restrictions.
                   </p>
                 </CardContent>
@@ -717,7 +723,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">Does PDF quality decrease after merging?</h3>
                   <p className="text-sm text-muted-foreground">
-                    No! Our <strong>PDF combiner free</strong> preserves original quality. Text, images, and formatting remain
+                    No! Our <strong>PDF combiner free</strong> preserves original quality. Text, images, and formatting remain 
                     exactly as they were. <strong>Combine PDF files free</strong> with professional-grade results.
                   </p>
                 </CardContent>
@@ -727,7 +733,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">Can I merge password-protected PDF files?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Currently, password-protected PDFs need to be unlocked before using our <strong>online PDF merger</strong>.
+                    Currently, password-protected PDFs need to be unlocked before using our <strong>online PDF merger</strong>. 
                     We recommend removing passwords first, then using our <strong>free PDF merge</strong> tool.
                   </p>
                 </CardContent>
@@ -737,7 +743,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">How many PDF files can I merge at once?</h3>
                   <p className="text-sm text-muted-foreground">
-                    You can <strong>merge unlimited PDF files</strong> in a single operation. Our <strong>PDF joiner</strong> automatically
+                    You can <strong>merge unlimited PDF files</strong> in a single operation. Our <strong>PDF joiner</strong> automatically 
                     handles large batches efficiently, whether you need to <strong>join PDF online</strong> for 2 files or 200+ files.
                   </p>
                 </CardContent>
@@ -747,7 +753,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">How does this compare to Adobe PDF merger?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Our tool offers the same functionality as <strong>Adobe merge PDF</strong> but completely free. No subscription
+                    Our tool offers the same functionality as <strong>Adobe merge PDF</strong> but completely free. No subscription 
                     required like <strong>Adobe Acrobat merge PDF</strong>, and works directly in your browser.
                   </p>
                 </CardContent>
@@ -757,7 +763,7 @@ export default function PDFMergerTool() {
                 <CardContent className="p-6">
                   <h3 className="font-semibold mb-2">Is this better than SmallPDF merge PDF?</h3>
                   <p className="text-sm text-muted-foreground">
-                    Yes! Unlike <strong>SmallPDF merge PDF</strong> which has limitations, our <strong>free PDF merger online</strong>
+                    Yes! Unlike <strong>SmallPDF merge PDF</strong> which has limitations, our <strong>free PDF merger online</strong> 
                     offers unlimited merging, no watermarks, and faster processing speeds completely free.
                   </p>
                 </CardContent>
@@ -770,30 +776,30 @@ export default function PDFMergerTool() {
             <h2 className="text-2xl font-bold mb-4">Professional Free PDF Merger - Merge PDF Files Online Free</h2>
             <div className="prose prose-sm max-w-none text-muted-foreground">
               <p className="mb-4">
-                <strong>Merge PDF files online free</strong> with our professional <strong>PDF merger free online</strong> tool.
-                <strong>Combine PDF files free</strong>, <strong>join PDF online</strong>, and create comprehensive documents with
-                drag-and-drop simplicity. Perfect for businesses, students, and professionals who need to <strong>merge PDF documents</strong>
-                quickly and securely. Our <strong>online PDF merger</strong> works like <strong>SmallPDF merge PDF</strong> and
+                <strong>Merge PDF files online free</strong> with our professional <strong>PDF merger free online</strong> tool. 
+                <strong>Combine PDF files free</strong>, <strong>join PDF online</strong>, and create comprehensive documents with 
+                drag-and-drop simplicity. Perfect for businesses, students, and professionals who need to <strong>merge PDF documents</strong> 
+                quickly and securely. Our <strong>online PDF merger</strong> works like <strong>SmallPDF merge PDF</strong> and 
                 <strong>Adobe PDF merger</strong> but completely free.
               </p>
               <p className="mb-4">
-                <strong>Key features of our PDF combiner:</strong> <strong>merge PDFs free</strong> with unlimited file uploads,
-                drag-and-drop reordering, preserved bookmarks and metadata, no watermarks or branding, client-side processing for privacy,
-                support for large files, and professional-quality output. Our <strong>free PDF merger</strong> supports all popular
-                formats and works entirely in your browser, ensuring your sensitive documents never leave your device when you
+                <strong>Key features of our PDF combiner:</strong> <strong>merge PDFs free</strong> with unlimited file uploads, 
+                drag-and-drop reordering, preserved bookmarks and metadata, no watermarks or branding, client-side processing for privacy, 
+                support for large files, and professional-quality output. Our <strong>free PDF merger</strong> supports all popular 
+                formats and works entirely in your browser, ensuring your sensitive documents never leave your device when you 
                 <strong>combine PDF online</strong>.
               </p>
               <p className="mb-4">
-                <strong>Popular use cases for PDF merge online free:</strong> <strong>Merge PDF files</strong> for business reports and presentations,
-                <strong>combine PDF documents</strong> for legal contracts and agreements, <strong>join PDF online</strong> for academic papers
-                and research materials, consolidate invoices and financial documents, merge application materials for job applications,
-                and create comprehensive project documentation. Whether you need to <strong>merge two PDFs</strong> or combine hundreds of documents,
+                <strong>Popular use cases for PDF merge online free:</strong> <strong>Merge PDF files</strong> for business reports and presentations, 
+                <strong>combine PDF documents</strong> for legal contracts and agreements, <strong>join PDF online</strong> for academic papers 
+                and research materials, consolidate invoices and financial documents, merge application materials for job applications, 
+                and create comprehensive project documentation. Whether you need to <strong>merge two PDFs</strong> or combine hundreds of documents, 
                 our <strong>PDF joiner</strong> handles it all.
               </p>
               <p>
-                <strong>Trusted alternative to premium services:</strong> Skip expensive subscriptions and use our <strong>free PDF merge</strong> tool
-                instead of paid services like <strong>Adobe Acrobat merge PDF</strong>, <strong>SmallPDF merge</strong>, or <strong>IlovePDF merge PDF</strong>.
-                Our <strong>PDF combiner free</strong> offers the same professional results with better privacy protection and unlimited usage.
+                <strong>Trusted alternative to premium services:</strong> Skip expensive subscriptions and use our <strong>free PDF merge</strong> tool 
+                instead of paid services like <strong>Adobe Acrobat merge PDF</strong>, <strong>SmallPDF merge</strong>, or <strong>IlovePDF merge PDF</strong>. 
+                Our <strong>PDF combiner free</strong> offers the same professional results with better privacy protection and unlimited usage. 
                 <strong>Merge PDF online</strong> with confidence - no registration required, no watermarks added, and no file size restrictions.
               </p>
             </div>
@@ -807,7 +813,7 @@ export default function PDFMergerTool() {
             </p>
             <h4>Alternative PDF Tools</h4>
             <p>
-              ilovepdf alternative, smallpdf alternative, sejda alternative, soda pdf alternative,
+              ilovepdf alternative, smallpdf alternative, sejda alternative, soda pdf alternative, 
               pdf24 alternative, hipdf alternative, easypdf alternative, pdfcandy alternative,
               lightpdf alternative, freepdfconvert alternative, pdf converter ultimate alternative,
               pdfescape alternative, foxit online alternative, nitro pdf alternative,
