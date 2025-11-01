@@ -25,7 +25,7 @@ import {
     SettingsIcon,
     RefreshCwIcon
 } from 'lucide-react';
-import { UserButton } from "@stackframe/stack";
+import AuthComponent from '@/components/auth/AuthComponent';
 
 export default function LandingPage() {
     const iconMap = {
@@ -55,9 +55,6 @@ export default function LandingPage() {
         .flatMap(category => category.tools || [])
         .filter(tool => tool.premium === true)
         .slice(0, 6); // Show first 6 premium tools
-
-    // get session from stack
-    const session = 1; // Replace with actual session retrieval logic
 
     const quickSearchTags = ["image compressor", "video converter", "pdf merger", "text counter"];
 
@@ -92,21 +89,10 @@ export default function LandingPage() {
                                     Search
                                 </Button>
                             </Link>
-                            <Link href="/search?">
-                                <Button variant="ghost">
-                                    Other Tools
-                                </Button>
-                            </Link>
                             <Link href="/about">
                                 <Button variant="outline">About</Button>
                             </Link>
-                            {session ? (
-                                <UserButton />
-                            ) : (
-                                <Link href="/handler/sign-in">
-                                    <Button variant="secondary">Sign In</Button>
-                                </Link>
-                            )}
+                            <AuthComponent />
                         </div>
                     </div>
                 </div>

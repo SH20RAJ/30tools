@@ -81,6 +81,13 @@
       "description": "Compress images without quality loss",
       "url": "/image-compressor",
       "icons": [{ "src": "/icons/compress-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "YouTube Downloader",
+      "short_name": "YT Download",
+      "description": "Download YouTube videos and audio",
+      "url": "/youtube-downloader",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
     }
   ]
 }

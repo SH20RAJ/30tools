@@ -13,6 +13,7 @@ import {
   Globe,
   CheckCircle
 } from 'lucide-react';
+import AuthComponent from '@/components/auth/AuthComponent';
 
 export default function SEOToolsNavbar() {
   const seoTools = [
@@ -50,6 +51,7 @@ export default function SEOToolsNavbar() {
                   All Tools
                 </Button>
               </Link>
+              <AuthComponent />
             </div>
           </div>
         </div>

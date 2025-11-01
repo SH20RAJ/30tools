@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Video } from 'lucide-react';
+import AuthComponent from '@/components/auth/AuthComponent';
 
 export default function VideoToolsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -51,10 +52,12 @@ export default function VideoToolsNavbar() {
                   All Tools
                 </Button>
               </Link>
+              <AuthComponent />
             </div>
           </div>
 
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <AuthComponent />
             <Button
               variant="ghost"
               size="sm"

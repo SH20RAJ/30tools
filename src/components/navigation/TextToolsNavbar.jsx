@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Type } from 'lucide-react';
+import AuthComponent from '@/components/auth/AuthComponent';
 
 export default function TextToolsNavbar() {
   return (
@@ -26,6 +27,7 @@ export default function TextToolsNavbar() {
                 All Tools
               </Button>
             </Link>
+            <AuthComponent />
           </div>
         </div>
       </div>

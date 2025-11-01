@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Sparkles } from 'lucide-react';
+import AuthComponent from '@/components/auth/AuthComponent';
 
 export default function PDFToolsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -56,11 +57,13 @@ export default function PDFToolsNavbar() {
                   All Tools
                 </Button>
               </Link>
+              <AuthComponent />
             </div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <AuthComponent />
             <Button
               variant="ghost"
               size="sm"

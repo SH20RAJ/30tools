@@ -107,13 +107,11 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
                 <p className="text-sm text-muted-foreground">Free Online Toolkit</p>
               </div>
             </Link>
-            <div>
+            <div className="flex items-center space-x-2">
               <Link href="/about">
                 <Button variant="outline">About</Button>
               </Link>
-              <Link href="/handler/sign-in">
-                <Button variant="secondary">Sign In</Button>
-              </Link>
+              <AuthComponent />
             </div>
           </div>
         </div>
