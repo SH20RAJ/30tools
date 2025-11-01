@@ -7,7 +7,15 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Label } from '@/components/ui/label';
-import { Copy, Download, Plus, Trash2, Robot, Globe, FileText } from 'lucide-react';
+import { 
+  Copy, 
+  Download, 
+  Plus, 
+  Trash2, 
+  Bot as Robot, 
+  Globe, 
+  FileText 
+} from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function RobotsTxtGenerator() {
