@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
-import { User, LogIn, LogOut, Settings } from 'lucide-react';
+import { LogIn, LogOut, Settings } from 'lucide-react';
 import Link from 'next/link';
 
 export default function AuthComponent() {

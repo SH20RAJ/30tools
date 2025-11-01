@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -14,7 +14,6 @@ import AuthComponent from '@/components/auth/AuthComponent';
 
 export default function SearchPageServer({ initialTools, initialQuery, initialCategory, allTools }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState(initialCategory);
   const [results, setResults] = useState(initialTools);

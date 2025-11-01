@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Star, Crown, Zap, Lock } from 'lucide-react';
+import { Star, Crown, Zap } from 'lucide-react';
 import { useToolAuth } from '@/hooks/useToolAuth';
 
 export function ToolSignButton({ 
