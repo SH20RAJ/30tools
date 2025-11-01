@@ -115,7 +115,7 @@ const textTools = [
   {
     name: 'Regex Tester',
     description: 'Test and validate regular expressions',
-    href: '/regex-tester',
+    href: '/code-tools',
     icon: Search,
     category: 'Validation'
   }

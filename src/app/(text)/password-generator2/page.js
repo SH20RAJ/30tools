@@ -4,10 +4,13 @@ export const metadata = {
   title: "Password Generator - Generate Secure Random Passwords",
   description: "Generate strong, secure passwords with customizable length and character sets. Includes password strength analysis and security tips. Free online password generator.",
   keywords: "password generator, secure password generator, random password generator, strong password creator, password strength checker",
+  alternates: {
+    canonical: "https://30tools.com/password-generator2"
+  },
   openGraph: {
     title: "Password Generator - Generate Secure Random Passwords",
     description: "Generate strong, secure passwords with customizable options and strength analysis.",
-    url: "https://30tools.com/password-generator",
+    url: "https://30tools.com/password-generator2",
     images: [
       {
         url: "/og-images/password-generator.jpg",

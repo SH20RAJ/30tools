@@ -1,8 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-/* @import './css/minimilastic.css'; */
-@import './css/brutal.css';
+@import './css/minimilastic.css';
+/* @import './css/brutal.css'; */
 
 @layer base {
   :root {

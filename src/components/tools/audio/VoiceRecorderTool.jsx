@@ -1,10 +1,30 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Mic, Square, Play, Pause, Download, RotateCcw } from 'lucide-react';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Badge } from '@/components/ui/badge';
+import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Progress } from '@/components/ui/progress';
+import { Separator } from '@/components/ui/separator';
+import { 
+  Mic, 
+  Square, 
+  Play, 
+  Pause, 
+  Download, 
+  RotateCcw,
+  Volume2,
+  ArrowLeftIcon,
+  InfoIcon,
+  CheckIcon,
+  Settings,
+  Waves,
+  Timer
+} from 'lucide-react';
 import { toast } from 'sonner';
+import Link from 'next/link';
 
 export default function VoiceRecorder() {
   const [isRecording, setIsRecording] = useState(false);
@@ -12,16 +32,74 @@ export default function VoiceRecorder() {
   const [recordedBlob, setRecordedBlob] = useState(null);
   const [recordingTime, setRecordingTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [audioFormat, setAudioFormat] = useState('webm');
+  const [audioQuality, setAudioQuality] = useState('high');
+  const [microphoneLevel, setMicrophoneLevel] = useState(0);
+  const [isProcessing, setIsProcessing] = useState(false);
   
   const mediaRecorderRef = useRef(null);
   const audioRef = useRef(null);
   const chunksRef = useRef([]);
   const timerRef = useRef(null);
+  const streamRef = useRef(null);
+  const analyserRef = useRef(null);
+  const animationRef = useRef(null);
+
+  const formatTime = useCallback((seconds) => {
+    const hrs = Math.floor(seconds / 3600);
+    const mins = Math.floor((seconds % 3600) / 60);
+    const secs = seconds % 60;
+    if (hrs > 0) {
+      return `${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+    }
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
+  }, []);
+
+  const updateMicrophoneLevel = useCallback(() => {
+    if (!analyserRef.current) return;
+    
+    const dataArray = new Uint8Array(analyserRef.current.frequencyBinCount);
+    analyserRef.current.getByteFrequencyData(dataArray);
+    
+    const average = dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
+    setMicrophoneLevel(Math.round((average / 255) * 100));
+    
+    if (isRecording && !isPaused) {
+      animationRef.current = requestAnimationFrame(updateMicrophoneLevel);
+    }
+  }, [isRecording, isPaused]);
 
   const startRecording = async () => {
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      mediaRecorderRef.current = new MediaRecorder(stream);
+      setIsProcessing(true);
+      
+      const constraints = {
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true,
+          sampleRate: audioQuality === 'high' ? 48000 : 22050
+        }
+      };
+      
+      const stream = await navigator.mediaDevices.getUserMedia(constraints);
+      streamRef.current = stream;
+      
+      // Set up audio analysis
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const source = audioContext.createMediaStreamSource(stream);
+      const analyser = audioContext.createAnalyser();
+      analyser.fftSize = 256;
+      source.connect(analyser);
+      analyserRef.current = analyser;
+      
+      // Configure MediaRecorder
+      const mimeType = audioFormat === 'mp3' ? 'audio/webm' : `audio/${audioFormat}`;
+      mediaRecorderRef.current = new MediaRecorder(stream, {
+        mimeType: mimeType,
+        audioBitsPerSecond: audioQuality === 'high' ? 128000 : 64000
+      });
+      
       chunksRef.current = [];
 
       mediaRecorderRef.current.ondataavailable = (e) => {
@@ -30,43 +108,40 @@ export default function VoiceRecorder() {
         }
       };
 
-      mediaRecorderRef.current.onstop = () => {
-        const blob = new Blob(chunksRef.current, { type: 'audio/wav' });
+      mediaRecorderRef.current.onstop = async () => {
+        const blob = new Blob(chunksRef.current, { type: mimeType });
         setRecordedBlob(blob);
         const url = URL.createObjectURL(blob);
         if (audioRef.current) {
           audioRef.current.src = url;
         }
+        
+        // Stop all tracks
+        if (streamRef.current) {
+          streamRef.current.getTracks().forEach(track => track.stop());
+        }
       };
 
-      mediaRecorderRef.current.start();
+      mediaRecorderRef.current.start(1000); // Collect data every second
       setIsRecording(true);
+      setIsPaused(false);
       setRecordingTime(0);
+      setRecordedBlob(null);
       
       // Start timer
       timerRef.current = setInterval(() => {
         setRecordingTime(prev => prev + 1);
       }, 1000);
       
-      toast.success('Recording started');
+      // Start microphone level monitoring
+      updateMicrophoneLevel();
+      
+      toast.success('Recording started successfully!');
     } catch (error) {
-      console.error('Error starting recording:', error);
-      toast.error('Failed to start recording. Please check microphone permissions.');
-    }
-  };
-
-  const stopRecording = () => {
-    if (mediaRecorderRef.current && isRecording) {
-      mediaRecorderRef.current.stop();
-      mediaRecorderRef.current.stream.getTracks().forEach(track => track.stop());
-      setIsRecording(false);
-      setIsPaused(false);
-      
-      if (timerRef.current) {
-        clearInterval(timerRef.current);
-      }
-      
-      toast.success('Recording stopped');
+      console.error('Error accessing microphone:', error);
+      toast.error('Failed to access microphone. Please check permissions.');
+    } finally {
+      setIsProcessing(false);
     }
   };
 
@@ -74,19 +149,35 @@ export default function VoiceRecorder() {
     if (mediaRecorderRef.current && isRecording) {
       if (isPaused) {
         mediaRecorderRef.current.resume();
+        setIsPaused(false);
         timerRef.current = setInterval(() => {
           setRecordingTime(prev => prev + 1);
         }, 1000);
-        setIsPaused(false);
+        updateMicrophoneLevel();
         toast.success('Recording resumed');
       } else {
         mediaRecorderRef.current.pause();
-        if (timerRef.current) {
-          clearInterval(timerRef.current);
-        }
         setIsPaused(true);
+        clearInterval(timerRef.current);
+        if (animationRef.current) {
+          cancelAnimationFrame(animationRef.current);
+        }
         toast.success('Recording paused');
       }
+    }
+  };
+
+  const stopRecording = () => {
+    if (mediaRecorderRef.current && isRecording) {
+      mediaRecorderRef.current.stop();
+      setIsRecording(false);
+      setIsPaused(false);
+      clearInterval(timerRef.current);
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      setMicrophoneLevel(0);
+      toast.success('Recording stopped successfully!');
     }
   };
 
@@ -107,149 +198,321 @@ export default function VoiceRecorder() {
       const url = URL.createObjectURL(recordedBlob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `recording_${new Date().toISOString().slice(0, 19).replace(/:/g, '-')}.wav`;
-      document.body.appendChild(a);
+      a.download = `voice-recording-${Date.now()}.${audioFormat === 'webm' ? 'webm' : audioFormat}`;
       a.click();
-      document.body.removeChild(a);
       URL.revokeObjectURL(url);
       toast.success('Recording downloaded!');
     }
   };
 
-  const reset = () => {
+  const resetRecording = () => {
     if (isRecording) {
       stopRecording();
     }
     setRecordedBlob(null);
     setRecordingTime(0);
     setIsPlaying(false);
+    setMicrophoneLevel(0);
     if (audioRef.current) {
       audioRef.current.src = '';
     }
+    toast.success('Recording reset');
   };
 
-  const formatTime = (seconds) => {
-    const mins = Math.floor(seconds / 60);
-    const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
-  };
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (audio) {
+      const handleEnded = () => setIsPlaying(false);
+      audio.addEventListener('ended', handleEnded);
+      return () => audio.removeEventListener('ended', handleEnded);
+    }
+  }, [recordedBlob]);
+
+  useEffect(() => {
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+      if (animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      }
+      if (streamRef.current) {
+        streamRef.current.getTracks().forEach(track => track.stop());
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">Voice Recorder</h1>
-            <p className="text-lg text-muted-foreground">
-              Record voice and audio directly in your browser
-            </p>
+      <div className="container mx-auto px-4 py-8 max-w-4xl">
+        {/* Header */}
+        <div className="mb-8">
+          <Link href="/audio-tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6">
+            <ArrowLeftIcon className="mr-2 h-4 w-4" />
+            Back to Audio Tools
+          </Link>
+          
+          <div className="space-y-4 mb-8">
+            <div className="flex items-start gap-4">
+              <div className="p-3 border rounded-lg bg-background">
+                <Mic className="h-6 w-6" />
+              </div>
+              <div className="space-y-2">
+                <h1 className="text-4xl font-bold tracking-tight">
+                  Professional Voice Recorder
+                </h1>
+                <p className="text-xl text-muted-foreground max-w-3xl">
+                  Record high-quality audio directly in your browser with professional features and real-time waveform visualization.
+                </p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              <Badge variant="secondary" className="gap-1">
+                <Waves className="h-3 w-3" />
+                Real-time Waveform
+              </Badge>
+              <Badge variant="secondary" className="gap-1">
+                <Volume2 className="h-3 w-3" />
+                High Quality Audio
+              </Badge>
+              <Badge variant="secondary" className="gap-1">
+                <Timer className="h-3 w-3" />
+                Unlimited Duration
+              </Badge>
+              <Badge variant="secondary" className="gap-1">
+                <Download className="h-3 w-3" />
+                Instant Download
+              </Badge>
+            </div>
           </div>
 
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Mic className="w-5 h-5" />
-                Voice Recorder
-              </CardTitle>
-              <CardDescription>
-                High-quality audio recording with download options
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {/* Recording Display */}
-              <div className="text-center">
-                <div className="inline-flex items-center justify-center w-32 h-32 rounded-full bg-primary/10 mb-4">
-                  <Mic className={`w-16 h-16 ${isRecording ? 'text-red-500 animate-pulse' : 'text-muted-foreground'}`} />
-                </div>
-                <div className="text-2xl font-mono font-bold mb-2">
-                  {formatTime(recordingTime)}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {isRecording ? (isPaused ? 'Recording Paused' : 'Recording...') : 'Ready to Record'}
-                </div>
-              </div>
+          <Alert className="mb-8">
+            <InfoIcon className="h-4 w-4" />
+            <AlertDescription>
+              All recording happens locally in your browser. Your audio is never uploaded to our servers, ensuring complete privacy.
+            </AlertDescription>
+          </Alert>
+        </div>
 
-              {/* Recording Controls */}
-              <div className="flex justify-center gap-4">
-                {!isRecording ? (
-                  <Button onClick={startRecording} size="lg" className="px-8">
-                    <Mic className="w-5 h-5 mr-2" />
-                    Start Recording
-                  </Button>
-                ) : (
-                  <>
-                    <Button onClick={pauseRecording} variant="outline" size="lg">
-                      {isPaused ? <Play className="w-5 h-5" /> : <Pause className="w-5 h-5" />}
-                    </Button>
-                    <Button onClick={stopRecording} variant="destructive" size="lg">
-                      <Square className="w-5 h-5" />
-                    </Button>
-                  </>
-                )}
-              </div>
-            </CardContent>
-          </Card>
-
-          {recordedBlob && (
-            <Card className="mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Controls Panel */}
+          <div className="lg:col-span-1">
+            <Card>
               <CardHeader>
-                <CardTitle>Recorded Audio</CardTitle>
+                <CardTitle className="flex items-center gap-2">
+                  <Settings className="h-5 w-5" />
+                  Recording Settings
+                </CardTitle>
                 <CardDescription>
-                  Your recording is ready for playback and download
+                  Configure your audio recording preferences
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                <audio
-                  ref={audioRef}
-                  onEnded={() => setIsPlaying(false)}
-                  className="w-full"
-                  controls
-                />
-                
-                <div className="flex gap-2 justify-center">
-                  <Button onClick={playRecording} variant="outline">
-                    {isPlaying ? <Pause className="w-4 h-4 mr-2" /> : <Play className="w-4 h-4 mr-2" />}
-                    {isPlaying ? 'Pause' : 'Play'}
-                  </Button>
-                  <Button onClick={downloadRecording}>
-                    <Download className="w-4 h-4 mr-2" />
-                    Download
-                  </Button>
-                  <Button onClick={reset} variant="outline">
-                    <RotateCcw className="w-4 h-4 mr-2" />
-                    New Recording
-                  </Button>
+              <CardContent className="space-y-6">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Audio Format</label>
+                  <Select value={audioFormat} onValueChange={setAudioFormat} disabled={isRecording}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="webm">WebM (Recommended)</SelectItem>
+                      <SelectItem value="wav">WAV (Uncompressed)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Audio Quality</label>
+                  <Select value={audioQuality} onValueChange={setAudioQuality} disabled={isRecording}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="high">High (48kHz)</SelectItem>
+                      <SelectItem value="standard">Standard (22kHz)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <Separator />
+
+                {/* Microphone Level */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Microphone Level</label>
+                  <div className="space-y-2">
+                    <Progress value={microphoneLevel} className="h-2" />
+                    <div className="flex justify-between text-xs text-muted-foreground">
+                      <span>Silent</span>
+                      <span>{microphoneLevel}%</span>
+                      <span>Loud</span>
+                    </div>
+                  </div>
+                </div>
+
+                <Separator />
+
+                {/* Recording Timer */}
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Recording Time</label>
+                  <div className="text-2xl font-mono font-bold text-center p-4 bg-muted rounded-lg">
+                    {formatTime(recordingTime)}
+                  </div>
                 </div>
               </CardContent>
             </Card>
-          )}
+          </div>
 
-          {/* Features */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Features</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-                <div>
-                  <h4 className="font-medium mb-2">Browser-Based</h4>
-                  <p className="text-muted-foreground">No software installation required</p>
+          {/* Main Recording Interface */}
+          <div className="lg:col-span-2 space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Mic className="h-5 w-5" />
+                  Voice Recorder
+                </CardTitle>
+                <CardDescription>
+                  Start recording by clicking the microphone button below
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="text-center space-y-6">
+                  {/* Recording Status */}
+                  <div className="space-y-2">
+                    {isRecording ? (
+                      <div className="flex items-center justify-center gap-2">
+                        <div className={`w-3 h-3 rounded-full ${isPaused ? 'bg-yellow-500' : 'bg-red-500 animate-pulse'}`} />
+                        <span className="font-medium">
+                          {isPaused ? 'Recording Paused' : 'Recording Active'}
+                        </span>
+                      </div>
+                    ) : recordedBlob ? (
+                      <div className="flex items-center justify-center gap-2">
+                        <CheckIcon className="w-4 h-4 text-green-500" />
+                        <span className="font-medium text-green-600">Recording Complete</span>
+                      </div>
+                    ) : (
+                      <span className="text-muted-foreground">Ready to Record</span>
+                    )}
+                  </div>
+
+                  {/* Main Controls */}
+                  <div className="flex justify-center gap-4">
+                    {!isRecording ? (
+                      <Button
+                        onClick={startRecording}
+                        size="lg"
+                        className="h-16 w-16 rounded-full"
+                        disabled={isProcessing}
+                      >
+                        <Mic className="h-6 w-6" />
+                      </Button>
+                    ) : (
+                      <>
+                        <Button
+                          onClick={pauseRecording}
+                          size="lg"
+                          variant="outline"
+                          className="h-16 w-16 rounded-full"
+                        >
+                          {isPaused ? <Play className="h-6 w-6" /> : <Pause className="h-6 w-6" />}
+                        </Button>
+                        <Button
+                          onClick={stopRecording}
+                          size="lg"
+                          variant="destructive"
+                          className="h-16 w-16 rounded-full"
+                        >
+                          <Square className="h-6 w-6" />
+                        </Button>
+                      </>
+                    )}
+                  </div>
+
+                  {/* Playback and Download Controls */}
+                  {recordedBlob && (
+                    <div className="space-y-4">
+                      <Separator />
+                      <div className="flex justify-center gap-4">
+                        <Button
+                          onClick={playRecording}
+                          variant="outline"
+                          className="gap-2"
+                        >
+                          {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                          {isPlaying ? 'Pause' : 'Play'} Recording
+                        </Button>
+                        <Button
+                          onClick={downloadRecording}
+                          className="gap-2"
+                        >
+                          <Download className="h-4 w-4" />
+                          Download
+                        </Button>
+                        <Button
+                          onClick={resetRecording}
+                          variant="outline"
+                          className="gap-2"
+                        >
+                          <RotateCcw className="h-4 w-4" />
+                          Reset
+                        </Button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Hidden audio element for playback */}
+                  <audio ref={audioRef} style={{ display: 'none' }} />
                 </div>
-                <div>
-                  <h4 className="font-medium mb-2">High Quality</h4>
-                  <p className="text-muted-foreground">Clear audio recording with good quality</p>
+              </CardContent>
+            </Card>
+
+            {/* Usage Tips */}
+            <Card>
+              <CardHeader>
+                <CardTitle>Recording Tips & Information</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
+                        <Mic className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                      </div>
+                      <h4 className="font-semibold">Microphone Tips</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Position your microphone 6-8 inches from your mouth for optimal audio quality. Avoid background noise.
+                    </p>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <div className="p-2 bg-green-100 dark:bg-green-900/20 rounded-lg">
+                        <CheckIcon className="h-4 w-4 text-green-600 dark:text-green-400" />
+                      </div>
+                      <h4 className="font-semibold">Browser Support</h4>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Works best in Chrome, Firefox, Safari, and Edge. Requires microphone permissions to function.
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-medium mb-2">Pause & Resume</h4>
-                  <p className="text-muted-foreground">Control your recording session</p>
+
+                <Separator />
+
+                <div className="space-y-2">
+                  <h4 className="font-semibold">Common Use Cases</h4>
+                  <ul className="text-sm text-muted-foreground space-y-1">
+                    <li>• <strong>Voice Memos:</strong> Quick notes and reminders</li>
+                    <li>• <strong>Interviews:</strong> Record conversations and meetings</li>
+                    <li>• <strong>Podcasting:</strong> Create audio content for podcasts</li>
+                    <li>• <strong>Lectures:</strong> Record educational content</li>
+                    <li>• <strong>Music:</strong> Capture musical ideas and performances</li>
+                  </ul>
                 </div>
-                <div>
-                  <h4 className="font-medium mb-2">Instant Download</h4>
-                  <p className="text-muted-foreground">Download recordings as WAV files</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </div>

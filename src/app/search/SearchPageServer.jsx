@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { SearchIcon, ArrowRightIcon, TrendingUpIcon, ZapIcon, FilterIcon } from 'lucide-react';
 import Link from 'next/link';
 import toolsData from '@/constants/tools.json';
+import AuthComponent from '@/components/auth/AuthComponent';
 
 export default function SearchPageServer({ initialTools, initialQuery, initialCategory, allTools }) {
   const router = useRouter();

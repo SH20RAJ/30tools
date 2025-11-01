@@ -3,69 +3,288 @@
 import { useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Key } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
+import { Separator } from '@/components/ui/separator';
+import { ArrowLeftIcon, CopyIcon, RefreshCwIcon, Key, CheckCircleIcon, AlertTriangleIcon } from 'lucide-react';
+import Link from 'next/link';
 import { toast } from 'sonner';
 
 export default function JWTDecoder() {
-  const [isProcessing, setIsProcessing] = useState(false);
+  const [jwtToken, setJwtToken] = useState('');
+  const [header, setHeader] = useState('');
+  const [payload, setPayload] = useState('');
+  const [signature, setSignature] = useState('');
+  const [isValid, setIsValid] = useState(null);
+  const [copied, setCopied] = useState('');
 
-  const handleProcess = async () => {
-    setIsProcessing(true);
+  const decodeJWT = () => {
     try {
-      // Simulate processing
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast.success('Operation completed successfully!');
+      if (!jwtToken.trim()) {
+        toast.error('Please enter a JWT token');
+        return;
+      }
+
+      const parts = jwtToken.split('.');
+      if (parts.length !== 3) {
+        throw new Error('Invalid JWT format');
+      }
+
+      // Decode header
+      const decodedHeader = JSON.parse(atob(parts[0].replace(/-/g, '+').replace(/_/g, '/')));
+      setHeader(JSON.stringify(decodedHeader, null, 2));
+
+      // Decode payload
+      const decodedPayload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')));
+      setPayload(JSON.stringify(decodedPayload, null, 2));
+
+      // Set signature
+      setSignature(parts[2]);
+      setIsValid(true);
+
+      toast.success('JWT decoded successfully!');
     } catch (error) {
-      toast.error('Operation failed. Please try again.');
-    } finally {
-      setIsProcessing(false);
+      toast.error('Invalid JWT token format');
+      setHeader('');
+      setPayload('');
+      setSignature('');
+      setIsValid(false);
     }
   };
 
+  const copyToClipboard = async (text, type) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(type);
+      toast.success(`${type} copied to clipboard!`);
+      setTimeout(() => setCopied(''), 2000);
+    } catch (err) {
+      toast.error('Failed to copy to clipboard');
+    }
+  };
+
+  const clearAll = () => {
+    setJwtToken('');
+    setHeader('');
+    setPayload('');
+    setSignature('');
+    setIsValid(null);
+  };
+
+  const sampleJWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">JWT Decoder</h1>
-            <p className="text-lg text-muted-foreground">
-              Decode and verify JSON Web Tokens
-            </p>
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <div className="mb-8">
+          <Link href="/">
+            <Button variant="ghost" className="mb-4">
+              <ArrowLeftIcon className="h-4 w-4 mr-2" />
+              Back to Home
+            </Button>
+          </Link>
+
+          <div className="flex items-center gap-3 mb-4">
+            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+              <Key className="h-6 w-6 text-primary" />
+            </div>
+            <div>
+              <h1 className="text-3xl font-bold">JWT Decoder</h1>
+              <p className="text-muted-foreground">Decode and analyze JSON Web Tokens</p>
+            </div>
           </div>
 
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Key className="w-5 h-5" />
-                JWT Decoder
-              </CardTitle>
-              <CardDescription>
-                This tool is currently under development. More features coming soon!
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center py-12">
-                <Key className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-                <p className="text-muted-foreground mb-4">
-                  We're working hard to bring you this amazing tool. Stay tuned!
-                </p>
-                <Button onClick={handleProcess} disabled={isProcessing}>
-                  {isProcessing ? 'Processing...' : 'Try Demo'}
+          <div className="flex flex-wrap gap-2 mb-4">
+            <Badge variant="secondary">JWT Decoding</Badge>
+            <Badge variant="secondary">Token Analysis</Badge>
+            <Badge variant="secondary">Security</Badge>
+            <Badge variant="secondary">Free Forever</Badge>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>JWT Token Input</CardTitle>
+                <CardDescription>
+                  Paste your JWT token below to decode it
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <Label htmlFor="jwt">JWT Token</Label>
+                  <Textarea
+                    id="jwt"
+                    placeholder="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+                    value={jwtToken}
+                    onChange={(e) => setJwtToken(e.target.value)}
+                    className="min-h-[120px] font-mono text-sm"
+                  />
+                </div>
+
+                <div className="flex gap-2">
+                  <Button onClick={decodeJWT} className="flex-1">
+                    Decode JWT
+                  </Button>
+                  <Button onClick={() => setJwtToken(sampleJWT)} variant="outline">
+                    Load Sample
+                  </Button>
+                  <Button onClick={clearAll} variant="outline">
+                    <RefreshCwIcon className="h-4 w-4 mr-2" />
+                    Clear
+                  </Button>
+                </div>
+
+                {isValid !== null && (
+                  <div className={`flex items-center gap-2 p-3 rounded-lg ${isValid ? 'bg-green-50 dark:bg-green-950' : 'bg-red-50 dark:bg-red-950'}`}>
+                    {isValid ? (
+                      <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                    ) : (
+                      <AlertTriangleIcon className="h-5 w-5 text-red-600" />
+                    )}
+                    <span className={`text-sm font-medium ${isValid ? 'text-green-800 dark:text-green-200' : 'text-red-800 dark:text-red-200'}`}>
+                      {isValid ? 'Valid JWT Format' : 'Invalid JWT Format'}
+                    </span>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="space-y-6">
+            <Card>
+              <CardHeader>
+                <CardTitle>Decoded Header</CardTitle>
+                <CardDescription>JWT header contains algorithm and token type</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Textarea
+                  value={header}
+                  readOnly
+                  placeholder="Decoded header will appear here..."
+                  className="min-h-[100px] font-mono text-sm bg-muted"
+                />
+                <Button
+                  onClick={() => copyToClipboard(header, 'Header')}
+                  disabled={!header}
+                  variant="outline"
+                  size="sm"
+                >
+                  <CopyIcon className="h-4 w-4 mr-2" />
+                  {copied === 'Header' ? 'Copied!' : 'Copy Header'}
                 </Button>
-              </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Decoded Payload</CardTitle>
+                <CardDescription>JWT payload contains the claims and data</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <Textarea
+                  value={payload}
+                  readOnly
+                  placeholder="Decoded payload will appear here..."
+                  className="min-h-[150px] font-mono text-sm bg-muted"
+                />
+                <Button
+                  onClick={() => copyToClipboard(payload, 'Payload')}
+                  disabled={!payload}
+                  variant="outline"
+                  size="sm"
+                >
+                  <CopyIcon className="h-4 w-4 mr-2" />
+                  {copied === 'Payload' ? 'Copied!' : 'Copy Payload'}
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardHeader>
+                <CardTitle>Signature</CardTitle>
+                <CardDescription>JWT signature for verification</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="p-3 bg-muted rounded-lg font-mono text-sm break-all">
+                  {signature || 'Signature will appear here...'}
+                </div>
+                <Button
+                  onClick={() => copyToClipboard(signature, 'Signature')}
+                  disabled={!signature}
+                  variant="outline"
+                  size="sm"
+                >
+                  <CopyIcon className="h-4 w-4 mr-2" />
+                  {copied === 'Signature' ? 'Copied!' : 'Copy Signature'}
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>Features</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  Decode JWT header and payload
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  Extract signature information
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  Validate JWT format
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  Copy decoded parts separately
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  Sample JWT for testing
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  No server communication
+                </li>
+              </ul>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>What to Expect</CardTitle>
+              <CardTitle>Security & Privacy</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Decode and verify JSON Web Tokens. This tool will provide a user-friendly interface 
-                with advanced features to help you accomplish your tasks efficiently.
-              </p>
+            <CardContent className="space-y-4">
+              <div>
+                <h4 className="font-medium mb-1">Client-Side Only</h4>
+                <p className="text-sm text-muted-foreground">
+                  All JWT decoding happens in your browser. Tokens are never sent to our servers.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-medium mb-1">What is JWT?</h4>
+                <p className="text-sm text-muted-foreground">
+                  JSON Web Token is a compact, URL-safe means of representing claims securely between two parties.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-medium mb-1">Verification Note</h4>
+                <p className="text-sm text-muted-foreground">
+                  This tool only decodes JWTs. Signature verification requires the secret key.
+                </p>
+              </div>
             </CardContent>
           </Card>
         </div>

@@ -670,14 +670,6 @@
                     ]
                 },
                 {
-                    "id": "excel-to-pdf",
-                    "name": "Excel to PDF",
-                    "description": "Convert Excel spreadsheets to PDF format",
-                    "route": "/excel-to-pdf",
-                    "popular": true,
-                    "category": "pdf"
-                },
-                {
                     "id": "powerpoint-to-pdf",
                     "name": "PowerPoint to PDF",
                     "description": "Convert PowerPoint presentations to PDF format",
