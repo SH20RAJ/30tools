@@ -4,22 +4,15 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Download, Video, Music, Loader2, LogIn } from 'lucide-react';
-import { downloadYouTubeVideo } from '@/lib/youtube-actions';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from '@/components/ui/dialog';
+import { Download, Video, Music, Loader2 } from 'lucide-react';
+// dialog removed — login flow not required
 
 export default function YouTubeDownloader() {
   const [url, setUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [videoData, setVideoData] = useState(null);
   const [error, setError] = useState('');
-  const [showLoginDialog, setShowLoginDialog] = useState(false);
+  // login dialog removed; downloads use external API
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,12 +26,88 @@ export default function YouTubeDownloader() {
     setVideoData(null);
 
     try {
-      const result = await downloadYouTubeVideo(url);
-      if (result.success) {
-        setVideoData(result.data);
-      } else {
-        setError(result.error || 'Failed to process YouTube video');
+      // Use the public API to fetch video info
+      const encoded = encodeURIComponent(url.trim());
+      const apiUrl = `https://ytdl.socialplug.io/api/video-info?url=${encoded}`;
+      const res = await fetch(apiUrl, {
+        headers: {
+          accept: 'application/json, text/plain, */*',
+          origin: 'https://www.socialplug.io',
+        },
+      });
+
+      if (!res.ok) {
+        const txt = await res.text().catch(() => '');
+        throw new Error(`API error: ${res.status} ${txt}`);
       }
+
+      const data = await res.json();
+
+      // Helpers to format bytes and duration
+      const formatBytes = (bytes) => {
+        if (!bytes || isNaN(bytes)) return '';
+        const b = Number(bytes);
+        const units = ['B', 'KB', 'MB', 'GB'];
+        let i = 0;
+        let val = b;
+        while (val >= 1024 && i < units.length - 1) {
+          val /= 1024;
+          i++;
+        }
+        return `${Math.round(val * 10) / 10}${units[i]}`;
+      };
+
+      const formatDuration = (secs) => {
+        const s = Number(secs) || 0;
+        const m = Math.floor(s / 60);
+        const r = s % 60;
+        return `${m}:${r.toString().padStart(2, '0')}`;
+      };
+
+      // Normalize response to the shape used by the component
+      const title = data.title || 'YouTube Video';
+      const thumbnail = data.image || data.thumbnail || data.videoDetails?.thumbnail || null;
+      const duration = data.lengthSeconds ? formatDuration(data.lengthSeconds) : (data.duration || '');
+
+      // video formats present at data.format_options.video.mp4 (array)
+      const rawVideoFormats = (data.format_options && data.format_options.video && data.format_options.video.mp4) || [];
+      const videoFormats = rawVideoFormats.map((f) => ({
+        quality: f.quality || (f.mimeType ? f.mimeType.split('/')[1] : 'video'),
+        fileSize: formatBytes(parseInt(f.fileSize || f.filesize || '0', 10)),
+        downloadUrl: f.url || f.src || '#',
+        mimeType: f.mimeType || '',
+        hasAudio: f.hasAudio || false,
+      }));
+
+      // audio formats (if any) — API example returns audio.mp3 === false
+      let audioFormats = [];
+      if (data.format_options && data.format_options.audio) {
+        // if audio lists exist, map similarly (not present in your example)
+        const rawAudio = data.format_options.audio.mp3 || [];
+        audioFormats = (rawAudio || []).map((f) => ({
+          quality: f.quality || f.bitrate || 'audio',
+          fileSize: formatBytes(parseInt(f.fileSize || f.filesize || '0', 10)),
+          downloadUrl: f.url || '#',
+        }));
+      }
+
+      // pick largest video file size as overall fileSize display (fallback)
+      // overall fileSize left blank — individual formats show sizes
+      const fileSize = '';
+
+      const normalized = {
+        title,
+        thumbnail,
+        duration,
+        quality: videoFormats[videoFormats.length - 1]?.quality || '',
+        fileSize,
+        videoFormats,
+        audioFormats,
+        downloadUrl: videoFormats[0]?.downloadUrl || '#',
+        audioUrl: audioFormats[0]?.downloadUrl || null,
+      };
+
+      setVideoData(normalized);
     } catch {
       setError('An error occurred while processing the video');
     } finally {
@@ -46,9 +115,28 @@ export default function YouTubeDownloader() {
     }
   };
 
-  const handleDownload = (_downloadUrl, _filename, _format) => {
-    // Show login dialog instead of downloading
-    setShowLoginDialog(true);
+  const handleDownload = (downloadUrl, _filename, _format) => {
+    if (!downloadUrl || downloadUrl.startsWith('#')) {
+      setError('Download URL is not available for this format');
+      return;
+    }
+
+    // For real download URLs, open in new tab (some urls block programmatic download)
+    try {
+      // Try to trigger download. Some CDN responses require navigation.
+      const link = document.createElement('a');
+      link.href = downloadUrl;
+      link.target = '_blank';
+      // Don't always set download attribute; let browser handle content-disposition
+      // link.download = filename;
+      link.style.display = 'none';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    } catch (error) {
+      console.error('Download failed:', error);
+      setError('Download failed. Please try again.');
+    }
   };
 
   return (
@@ -230,64 +318,7 @@ export default function YouTubeDownloader() {
         </CardContent>
       </Card>
 
-      {/* Login Dialog */}
-      <Dialog open={showLoginDialog} onOpenChange={setShowLoginDialog}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader>
-            <DialogTitle className="flex items-center gap-2 text-xl">
-              <LogIn className="w-5 h-5 text-red-500" />
-              Login Required
-            </DialogTitle>
-            <DialogDescription className="pt-2 space-y-3">
-              <p className="text-base">
-                You need to be logged in to download videos.
-              </p>
-              <p className="text-sm text-muted-foreground">
-                Create a free account to enjoy unlimited downloads of YouTube videos and audio files.
-              </p>
-            </DialogDescription>
-          </DialogHeader>
-          <div className="flex flex-col gap-3 mt-4">
-            <Button
-              className="w-full bg-red-500 hover:bg-red-600"
-              onClick={() => window.location.href = '/handler/sign-in'}
-            >
-              <LogIn className="w-4 h-4 mr-2" />
-              Login to Download
-            </Button>
-            <Button
-              variant="outline"
-              className="w-full"
-              onClick={() => window.location.href = '/handler/sign-up'}
-            >
-              Create Free Account
-            </Button>
-            <div className="flex gap-2">
-              <Button
-                variant="outline"
-                className="flex-1 text-blue-500 border-blue-200 hover:bg-blue-50"
-                onClick={() => window.open('https://x.com/sh20raj', '_blank')}
-              >
-                Follow @sh20raj
-              </Button>
-              <Button
-                variant="outline"
-                className="flex-1 text-green-500 border-green-200 hover:bg-green-50"
-                onClick={() => window.open('https://x.com/sh20raj', '_blank')}
-              >
-                Submit Feedback
-              </Button>
-            </div>
-            <Button
-              variant="ghost"
-              className="w-full"
-              onClick={() => setShowLoginDialog(false)}
-            >
-              Cancel
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
+      {/* Login flow removed — downloads use external API */}
     </div>
   );
 }
