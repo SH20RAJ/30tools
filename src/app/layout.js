@@ -75,7 +75,6 @@ export const metadata = {
   },
   metadataBase: new URL('https://30tools.com'),
   alternates: {
-    canonical: '/',
     types: {
       'application/rss+xml': [
         { url: '/feed.xml', title: '30tools RSS Feed' }
@@ -192,8 +191,7 @@ export default function RootLayout({ children }) {
         {/* Search Box */}
         <link rel="search" type="application/opensearchdescription+xml" title="30tools Search" href="/opensearch.xml" />
 
-        {/* Canonical and Alternate */}
-        <link rel="canonical" href="https://30tools.com" />
+        {/* Alternate */}
         <link rel="alternate" type="application/rss+xml" title="30tools RSS Feed" href="/feed.xml" />
 
         {/* Preconnect for performance */}
