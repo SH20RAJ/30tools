@@ -2,7 +2,7 @@ import MortgageCalculatorTool from '@/components/tools/calculators/MortgageCalcu
 
 export const metadata = {
     title: "Mortgage Calculator - Calculate Monthly Payments Online Free | 30tools",
-    description: "Free mortgage calculator to calculate monthly mortgage payments, total interest, and amortization schedule. Include taxes, insurance, PMI, and HOA fees. Compare loan options instantly.",
+    description: "Free mortgage calculator for monthly payments, total interest, and amortization schedule. Include taxes, insurance, and PMI.",
     keywords: [
         // Primary high-volume keywords
         "mortgage calculator",

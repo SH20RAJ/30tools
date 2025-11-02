@@ -2,7 +2,7 @@ import BMICalculatorTool from '@/components/tools/calculators/BMICalculatorTool'
 
 export const metadata = {
     title: "BMI Calculator - Calculate Body Mass Index Online Free | 30tools",
-    description: "Free BMI calculator to calculate Body Mass Index for adults and children. Check if you're underweight, normal, overweight, or obese. Includes BMI chart and health recommendations.",
+    description: "Free BMI calculator to check Body Mass Index for adults and children. Includes BMI chart and health recommendations.",
     keywords: [
         // Primary high-volume keywords
         "bmi calculator",

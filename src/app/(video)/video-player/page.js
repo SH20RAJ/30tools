@@ -2,7 +2,7 @@ import VideoPlayerTool from '@/components/tools/video/VideoPlayerTool';
 
 export const metadata = {
   title: "Video Player Generator - 30tools",
-  description: "Generate professional video players with Plyr, Video.js, Fluid Player & MediaElement.js. Free online tool with custom themes, responsive design, embed codes & React components. No coding required!",
+  description: "Create professional video players with themes and embed codes. Supports multiple libraries. Free tool, no coding needed!",
   keywords: [
     // Primary keywords
     "video player generator",

@@ -2,7 +2,7 @@ import ColorPaletteGeneratorTool from '@/components/tools/design/ColorPaletteGen
 
 export const metadata = {
   title: "Color Palette Generator - Create Beautiful Color Schemes",
-  description: "Generate beautiful color palettes instantly. Create harmonious color schemes, extract colors from images, and export in CSS, SCSS, JSON formats. Perfect for designers and developers.",
+  description: "Generate beautiful color palettes instantly. Create harmonious color schemes and extract colors from images.",
   keywords: "color palette generator, color scheme generator, color harmony, extract colors from image, css color palette, design colors, color picker, website color palette",
   openGraph: {
     title: "Color Palette Generator - Create Beautiful Color Schemes",

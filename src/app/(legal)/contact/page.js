@@ -7,7 +7,7 @@ import TallyContactForm from '@/components/TallyContactForm';
 
 export const metadata = {
   title: "Contact Us - 30tools.com",
-  description: "Get in touch with the 30tools.com team through our contact form or email. Contact us for support, feedback, business inquiries, or technical issues at mail@30tools.com.",
+  description: "Contact the 30tools.com team for support, feedback, or business inquiries at mail@30tools.com.",
   keywords: "contact 30tools, support, feedback, business inquiries, technical support, mail@30tools.com",
   robots: { index: true, follow: true }
 };

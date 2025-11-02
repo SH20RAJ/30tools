@@ -2,7 +2,7 @@ import PercentageCalculatorTool from '@/components/tools/calculators/PercentageC
 
 export const metadata = {
     title: "Percentage Calculator - Calculate Percentages Online Free | 30tools",
-    description: "Free percentage calculator to find percentages, percentage increase/decrease, and percentage change. Calculate what is X% of Y, percentage of marks, discounts, and more instantly.",
+    description: "Free percentage calculator to find percentages, increases, decreases, and changes. Calculate discounts and percentages instantly.",
     keywords: [
         // Primary high-volume keywords
         "percentage calculator",

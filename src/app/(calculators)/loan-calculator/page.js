@@ -2,7 +2,7 @@ import LoanCalculatorTool from '@/components/tools/calculators/LoanCalculatorToo
 
 export const metadata = {
     title: "Loan Calculator - Calculate Monthly Loan Payments Online Free | 30tools",
-    description: "Free loan calculator for personal loans, auto loans, and business loans. Calculate monthly payments, total interest, and amortization schedule. Compare loan options instantly.",
+    description: "Free loan calculator for personal, auto, and business loans. Calculate monthly payments, total interest, and amortization schedule.",
     keywords: [
         // Primary high-volume keywords
         "loan calculator",

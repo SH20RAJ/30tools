@@ -2,7 +2,7 @@ import CodeMinifierTool from '@/components/tools/code/CodeMinifierTool';
 
 export const metadata = {
   title: "Free Code Minifier - Minify JavaScript, CSS, HTML",
-  description: "Advanced code minifier for JavaScript, CSS, and HTML. Reduce file sizes, improve website performance, and get detailed compression statistics. Free and secure.",
+  description: "Minify JavaScript, CSS, and HTML code. Reduce file sizes and improve website performance with detailed statistics.",
   keywords: "code minifier, javascript minifier, css minifier, html minifier, code compression, minify js css html, web performance optimization",
   openGraph: {
     title: "Free Code Minifier Online - Optimize JavaScript, CSS, HTML",

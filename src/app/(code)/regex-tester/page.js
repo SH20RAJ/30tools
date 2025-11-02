@@ -2,7 +2,7 @@ import RegexTesterTool from '@/components/tools/code/RegexTesterTool';
 
 export const metadata = {
   title: "Free Regex Tester - Test Regular Expressions Online",
-  description: "Test and debug regular expressions instantly. See all matches, groups, and errors in real time. Fast, privacy-first regex tool.",
+  description: "Test and debug regular expressions instantly. See all matches, groups, and errors in real time.",
   keywords: "regex tester, regular expression tester, regex online, test regex, regex tool, regex match, regex debug",
   openGraph: {
     title: "Free Regex Tester - Test Regular Expressions Online",

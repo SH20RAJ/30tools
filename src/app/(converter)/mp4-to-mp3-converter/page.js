@@ -2,7 +2,7 @@ import MP4ToMP3Converter from '@/components/tools/converter/MP4ToMP3Converter';
 
 export const metadata = {
     title: "MP4 to MP3 Converter - Convert MP4 Video to MP3 Audio Free | 30tools",
-    description: "Convert MP4 video files to MP3 audio format online for free. Extract high-quality audio from MP4 videos with 320kbps output. Fast, secure, unlimited conversions.",
+    description: "Convert MP4 videos to high-quality MP3 audio format online for free. Extract audio from MP4 files instantly.",
     keywords: [
         // Primary MP4 to MP3 keywords
         "mp4 to mp3 converter",

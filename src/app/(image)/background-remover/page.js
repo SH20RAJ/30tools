@@ -2,7 +2,7 @@ import BackgroundRemoverTool from '@/components/tools/image/BackgroundRemoverToo
 
 export const metadata = {
   title: "Background Remover - Remove Image Backgrounds Instantly",
-  description: "Remove backgrounds from images instantly with AI. Free background remover tool for professional results. Perfect for product photos, portraits, and design projects. No watermarks.",
+  description: "Remove backgrounds from images instantly with AI. Perfect for product photos and design projects.",
   keywords: "background remover, remove background from image, background eraser, cut out image background, transparent background, remove bg, image background removal",
   openGraph: {
     title: "Background Remover - Remove Image Backgrounds Instantly",

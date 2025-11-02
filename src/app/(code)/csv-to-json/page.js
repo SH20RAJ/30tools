@@ -2,7 +2,7 @@ import CsvToJsonTool from '@/components/tools/code/CsvToJsonTool';
 
 export const metadata = {
   title: "Free CSV to JSON Converter - Convert CSV Data to JSON",
-  description: "Convert CSV data to JSON format with customizable delimiters and output structures. Smart data type detection, flexible formatting options. Perfect for developers.",
+  description: "Convert CSV to JSON with smart data type detection and flexible output formats. Perfect for developers.",
   keywords: "csv to json converter, convert csv to json online, csv json converter, csv parser, data conversion, csv to json api, excel to json",
   openGraph: {
     title: "Free CSV to JSON Converter - Convert CSV Data to JSON Online",

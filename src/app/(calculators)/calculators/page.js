@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
     title: 'Free Online Calculators - Math, Finance, Health & More | 30tools',
-    description: 'Access 25+ free online calculators for math, finance, health, and everyday calculations. Percentage calculator, mortgage calculator, BMI calculator, and more. No registration required.',
+    description: 'Access 25+ free online calculators for math, finance, health, and everyday calculations. No registration required.',
     keywords: [
         // Primary high-volume keywords
         "online calculators",

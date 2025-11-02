@@ -2,7 +2,7 @@ import CSSGradientTool from '@/components/tools/design/CSSGradientTool';
 
 export const metadata = {
   title: "CSS Gradient Generator - Free Online Tool | 30tools",
-  description: "Create beautiful CSS gradients with live preview. Generate linear and radial gradients with custom colors, export to CSS, SCSS, and SVG formats.",
+  description: "Create beautiful CSS gradients with live preview and export options for web development.",
   keywords: "css gradient generator, linear gradient, radial gradient, css background, web design tools, gradient maker",
   openGraph: {
     title: "CSS Gradient Generator - Free Online Tool",

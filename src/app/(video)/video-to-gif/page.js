@@ -2,7 +2,7 @@ import VideoToGifTool from '@/components/tools/video/VideoToGifTool';
 
 export const metadata = {
     title: "Free Video to GIF Converter - Create Animated GIFs",
-    description: "Convert videos to animated GIFs online for free. Trim videos, adjust frame rate, and create high-quality GIFs for social media. No watermarks, fast processing.",
+    description: "Convert videos to animated GIFs online. Perfect for social media, websites, and presentations.",
     keywords: "video to gif converter, convert video to gif, animated gif maker, mp4 to gif, gif creator, video gif converter, make gif from video, create animated gif",
     alternates: {
         canonical: "https://30tools.com/video-to-gif"

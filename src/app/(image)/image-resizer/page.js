@@ -2,7 +2,7 @@ import ImageResizerTool from '@/components/tools/image/ImageResizerTool';
 
 export const metadata = {
   title: "Free Image Resizer Online - Resize Photos & Images | 30tools",
-  description: "Resize images online for free. Change image dimensions, maintain aspect ratio, batch resize multiple photos. Perfect for social media, web, and print. No watermarks.",
+  description: "Resize images online for free. Change dimensions, maintain aspect ratio, batch resize. Perfect for social media, web, and print.",
   keywords: "image resizer, resize image online, photo resizer, resize photo, image dimensions, resize pictures online, batch image resize, social media image sizes",
   alternates: {
     canonical: "https://30tools.com/image-resizer"

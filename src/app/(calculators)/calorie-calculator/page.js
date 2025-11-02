@@ -2,7 +2,7 @@ import CalorieCalculatorTool from '@/components/tools/calculators/CalorieCalcula
 
 export const metadata = {
     title: "Calorie Calculator - Calculate Daily Calorie Needs Online Free | 30tools",
-    description: "Free calorie calculator to determine daily calorie needs for weight loss, gain, or maintenance. Calculate BMR, TDEE, and macronutrient requirements based on age, gender, and activity level.",
+    description: "Free calorie calculator to determine daily calorie needs for weight loss, gain, or maintenance. Calculate BMR and TDEE.",
     keywords: [
         // Primary high-volume keywords
         "calorie calculator",

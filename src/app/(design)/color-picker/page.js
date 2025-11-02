@@ -2,7 +2,7 @@ import ColorPickerTool from '@/components/tools/design/ColorPickerTool';
 
 export const metadata = {
   title: "Color Picker - Pick Colors & Get All Formats | 30tools",
-  description: "Professional color picker tool with HEX, RGB, HSL, CMYK formats. Generate color harmonies, save palettes, and get contrast ratios. Free online color picker.",
+  description: "Professional color picker with HEX, RGB, HSL, CMYK formats and color harmony generation.",
   keywords: "color picker, hex color picker, rgb color picker, color harmonies, color palette generator, color converter",
   openGraph: {
     title: "Color Picker - Pick Colors & Get All Formats",
