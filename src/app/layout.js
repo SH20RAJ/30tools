@@ -6,7 +6,6 @@ import StructuredData from '@/components/shared/StructuredData';
 import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from 'sonner';
 import "./globals.css";
-import "./css/cute.css";
 import Script from "next/script";
 
 const poppins = Poppins({

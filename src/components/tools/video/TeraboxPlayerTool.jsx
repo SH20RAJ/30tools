@@ -76,7 +76,7 @@ export default function TeraboxPlayerTool() {
   // Load URL from search params on component mount
   useEffect(() => {
     const urlParam = searchParams.get('url');
-    if (urlParam && urlParam.includes('teraboxapp.com')) {
+    if (urlParam && (urlParam.includes('teraboxapp.com') || urlParam.includes('teraboxshare.com'))) {
       setTeraboxUrl(urlParam);
       loadVideoFromUrl(urlParam);
     }
@@ -85,7 +85,7 @@ export default function TeraboxPlayerTool() {
   // Update URL parameters
   const updateUrlParams = (url) => {
     const params = new URLSearchParams(window.location.search);
-    if (url && url.includes('teraboxapp.com')) {
+    if (url && (url.includes('teraboxapp.com') || url.includes('teraboxshare.com'))) {
       params.set('url', url);
     } else {
       params.delete('url');
@@ -100,7 +100,7 @@ export default function TeraboxPlayerTool() {
     updateUrlParams(url);
     
     // Clear data if URL is invalid or empty
-    if (!url || !url.includes('teraboxapp.com')) {
+    if (!url || (!url.includes('teraboxapp.com') && !url.includes('teraboxshare.com'))) {
       setVideoData(null);
       setOgData(null);
       setError('');
@@ -110,7 +110,7 @@ export default function TeraboxPlayerTool() {
 
   // Load video from URL
   const loadVideoFromUrl = async (url) => {
-    if (!url || !url.includes('teraboxapp.com')) {
+    if (!url || (!url.includes('teraboxapp.com') && !url.includes('teraboxshare.com'))) {
       return;
     }
 

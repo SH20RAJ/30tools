@@ -668,14 +668,6 @@
                         "Drag & drop ordering",
                         "Auto-resize images"
                     ]
-                },
-                {
-                    "id": "powerpoint-to-pdf",
-                    "name": "PowerPoint to PDF",
-                    "description": "Convert PowerPoint presentations to PDF format",
-                    "route": "/powerpoint-to-pdf",
-                    "popular": true,
-                    "category": "pdf"
                 }
             ]
         },
@@ -1441,36 +1433,6 @@
                     "route": "/text-formatter",
                     "popular": false,
                     "category": "text"
-                },
-                {
-                    "id": "text-case-converter",
-                    "name": "Text Case Converter",
-                    "description": "Convert text to different cases - uppercase, lowercase, title case",
-                    "route": "/text-case-converter",
-                    "popular": true,
-                    "category": "text",
-                    "keywords": [
-                        "text case converter",
-                        "uppercase",
-                        "lowercase",
-                        "title case",
-                        "case converter"
-                    ],
-                    "longTailKeywords": [
-                        "convert text to title case online",
-                        "uppercase to lowercase converter",
-                        "text case changer free",
-                        "camelcase converter online",
-                        "sentence case converter"
-                    ],
-                    "primaryKeyword": "text case converter",
-                    "features": [
-                        "Multiple case types",
-                        "Bulk text processing",
-                        "Smart capitalization",
-                        "Copy to clipboard",
-                        "Preserve formatting"
-                    ]
                 },
                 {
                     "id": "duplicate-line-remover",
@@ -2480,22 +2442,6 @@
                     "category": "code"
                 },
                 {
-                    "id": "regex-tester",
-                    "name": "Regex Tester",
-                    "description": "Test and validate regular expressions with live preview",
-                    "route": "/regex-tester",
-                    "popular": false,
-                    "category": "code"
-                },
-                {
-                    "id": "sql-formatter",
-                    "name": "SQL Formatter",
-                    "description": "Format and beautify SQL queries",
-                    "route": "/sql-formatter",
-                    "popular": false,
-                    "category": "code"
-                },
-                {
                     "id": "xml-formatter",
                     "name": "XML Formatter",
                     "description": "Format and validate XML documents",
@@ -2567,14 +2513,6 @@
                     "category": "design"
                 },
                 {
-                    "id": "favicon-generator",
-                    "name": "Favicon Generator",
-                    "description": "Create favicons and app icons for websites",
-                    "route": "/favicon-generator",
-                    "popular": false,
-                    "category": "design"
-                },
-                {
                     "id": "logo-maker",
                     "name": "Logo Maker",
                     "description": "Create simple logos and brand graphics",
@@ -2617,35 +2555,6 @@
                         "Color picker",
                         "Preset gradients",
                         "Live preview"
-                    ]
-                },
-                {
-                    "id": "color-picker",
-                    "name": "Color Picker",
-                    "description": "Pick colors from images and generate color codes",
-                    "route": "/color-picker",
-                    "popular": true,
-                    "category": "design",
-                    "keywords": [
-                        "color picker",
-                        "eyedropper",
-                        "hex color",
-                        "color extractor"
-                    ],
-                    "longTailKeywords": [
-                        "color picker from image online",
-                        "hex color picker with preview",
-                        "rgb color picker tool",
-                        "extract colors from image",
-                        "eyedropper color picker"
-                    ],
-                    "primaryKeyword": "color picker",
-                    "features": [
-                        "Image color extraction",
-                        "Multiple color formats",
-                        "Color harmonies",
-                        "Palette generation",
-                        "Accessibility checker"
                     ]
                 },
                 {
@@ -3163,35 +3072,6 @@
                     "route": "/random-generator",
                     "popular": false,
                     "category": "utilities"
-                },
-                {
-                    "id": "unit-converter",
-                    "name": "Unit Converter",
-                    "description": "Convert between different units of measurement",
-                    "route": "/unit-converter",
-                    "popular": true,
-                    "category": "utilities",
-                    "keywords": [
-                        "unit converter",
-                        "measurement converter",
-                        "length converter",
-                        "weight converter"
-                    ],
-                    "longTailKeywords": [
-                        "length converter feet to meters",
-                        "weight converter kg to pounds",
-                        "unit conversion calculator",
-                        "metric imperial converter",
-                        "distance measurement converter"
-                    ],
-                    "primaryKeyword": "unit converter",
-                    "features": [
-                        "Length, weight, volume",
-                        "Temperature conversion",
-                        "Area calculations",
-                        "Speed conversions",
-                        "Real-time conversion"
-                    ]
                 },
                 {
                     "id": "currency-converter",
@@ -4371,35 +4251,6 @@
                     ]
                 },
                 {
-                    "id": "percentage-calculator",
-                    "name": "Percentage Calculator",
-                    "description": "Calculate percentages, increases, decreases, and changes",
-                    "route": "/percentage-calculator",
-                    "popular": true,
-                    "category": "calculators",
-                    "keywords": [
-                        "percentage calculator",
-                        "percentage calculator of marks",
-                        "percentage increase calculator",
-                        "percentage change calculator",
-                        "calculate percentage"
-                    ],
-                    "longTailKeywords": [
-                        "percentage calculator online free no registration unlimited",
-                        "calculate percentage of marks obtained in exam",
-                        "percentage increase decrease calculator with formula",
-                        "percentage calculator for discount shopping sales"
-                    ],
-                    "primaryKeyword": "percentage calculator",
-                    "features": [
-                        "Calculate what is X% of Y",
-                        "Calculate percentage increase/decrease",
-                        "Calculate percentage change",
-                        "Step-by-step calculations",
-                        "Multiple percentage formulas"
-                    ]
-                },
-                {
                     "id": "bmi-calculator",
                     "name": "BMI Calculator",
                     "description": "Calculate Body Mass Index and assess health status",
@@ -4878,62 +4729,6 @@
                         "Exercise intensity zones",
                         "Fat burning zone",
                         "Fitness level assessment"
-                    ]
-                },
-                {
-                    "id": "unit-converter",
-                    "name": "Unit Converter",
-                    "description": "Convert between different units of measurement",
-                    "route": "/unit-converter",
-                    "popular": true,
-                    "category": "calculators",
-                    "keywords": [
-                        "unit converter",
-                        "measurement converter",
-                        "metric converter",
-                        "imperial converter"
-                    ],
-                    "longTailKeywords": [
-                        "unit converter metric imperial online",
-                        "measurement converter length weight volume",
-                        "metric converter feet meters pounds kg",
-                        "unit conversion calculator all units"
-                    ],
-                    "primaryKeyword": "unit converter",
-                    "features": [
-                        "Length, weight, volume conversion",
-                        "Metric and imperial units",
-                        "Temperature conversion",
-                        "Area and speed conversion",
-                        "Bulk conversion support"
-                    ]
-                },
-                {
-                    "id": "currency-converter",
-                    "name": "Currency Converter",
-                    "description": "Convert between world currencies with live rates",
-                    "route": "/currency-converter",
-                    "popular": true,
-                    "category": "calculators",
-                    "keywords": [
-                        "currency converter",
-                        "exchange rate calculator",
-                        "money converter",
-                        "forex calculator"
-                    ],
-                    "longTailKeywords": [
-                        "currency converter live exchange rates",
-                        "money converter usd eur gbp",
-                        "exchange rate calculator real time",
-                        "forex calculator currency conversion"
-                    ],
-                    "primaryKeyword": "currency converter",
-                    "features": [
-                        "Live exchange rates",
-                        "200+ world currencies",
-                        "Historical rate charts",
-                        "Rate change alerts",
-                        "Offline rate caching"
                     ]
                 },
                 {

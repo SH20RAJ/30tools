@@ -16,7 +16,7 @@ export default function TeraboxUrlInput({
 }) {
   const debounceRef = useRef(null);
 
-  const sampleUrl = 'https://teraboxapp.com/s/1EWkWY66FhZKS2WfxwBgd0Q';
+  const sampleUrl = 'https://teraboxshare.com/s/1Qx3vtX3rpRcI6poGaRe5wA';
 
   const handleUrlChange = (value) => {
     onUrlChange(value);
@@ -26,8 +26,8 @@ export default function TeraboxUrlInput({
       clearTimeout(debounceRef.current);
     }
 
-    // Auto-load video when URL is pasted
-    if (value && value.includes('teraboxapp.com')) {
+    // Auto-load video when URL is pasted (support both teraboxapp.com and teraboxshare.com)
+    if (value && (value.includes('teraboxapp.com') || value.includes('teraboxshare.com'))) {
       debounceRef.current = setTimeout(() => {
         onLoadVideo(value);
       }, 1000); // Wait 1 second after user stops typing
@@ -62,7 +62,7 @@ export default function TeraboxUrlInput({
           <div className="relative">
             <Input
               id="terabox-url"
-              placeholder="https://teraboxapp.com/s/..."
+              placeholder="https://teraboxapp.com/s/... or https://teraboxshare.com/s/..."
               value={teraboxUrl}
               onChange={(e) => handleUrlChange(e.target.value)}
               disabled={isLoading}
@@ -96,9 +96,9 @@ export default function TeraboxUrlInput({
           </Button>
         </div>
 
-        {teraboxUrl && !teraboxUrl.includes('teraboxapp.com') && (
+        {teraboxUrl && !teraboxUrl.includes('teraboxapp.com') && !teraboxUrl.includes('teraboxshare.com') && (
           <div className="text-sm text-orange-600 dark:text-orange-400">
-            Please enter a valid Terabox URL (teraboxapp.com)
+            Please enter a valid Terabox URL (teraboxapp.com or teraboxshare.com)
           </div>
         )}
       </CardContent>
