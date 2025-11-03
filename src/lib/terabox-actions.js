@@ -187,7 +187,7 @@ export async function fetchTeraboxVideoDataMdiskplay(url) {
 }
 
 // Server action to fetch full video data from Terabox API with mdiskplay fallback
-export async function fetchTeraboxVideoData(url, cookies = 'ndus=Ye4ozFx5eHui9m4JWsYNeYKpotzW5RsuPMbrkNYS') {
+export async function fetchTeraboxVideoData(url, cookies = 'ndus=Y2YqaCTteHuiU3Ud_MYU7vHoVW4DNBi0MPmg_1tQ') {
   try {
     if (!url || (!url.includes('teraboxapp.com') && !url.includes('teraboxshare.com'))) {
       return { error: 'Invalid Terabox URL' };
