@@ -11,7 +11,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  
+
   // Advanced image optimization
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -31,52 +31,52 @@ const nextConfig = {
       }
     ],
   },
-  
+
   // Performance optimizations
   experimental: {
     optimizeCss: true,
     optimizePackageImports: [
-      'lucide-react', 
+      'lucide-react',
       '@radix-ui/react-icons',
       'react-icons',
       'framer-motion'
-        ],
+    ],
     webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
     esmExternals: true,
-      },
-  
+  },
+
   // Bundle dependencies for pages router
   bundlePagesRouterDependencies: true,
-  
+
   // Output configuration for Cloudflare deployment
   output: 'standalone',
-  
+
   // Compression and security
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
-  
+
   // SEO and crawling optimizations
   trailingSlash: false,
-  
+
   // Headers for better SEO and performance
   async headers() {
     return [
       {
         source: '/(.*)',
         headers: [
-      {
+          {
             key: 'X-DNS-Prefetch-Control',
             value: 'on'
-  },
-    {
+          },
+          {
             key: 'X-XSS-Protection',
             value: '1; mode=block'
-        },
+          },
           {
             key: 'X-Frame-Options',
             value: 'SAMEORIGIN'
-    },
+          },
           {
             key: 'X-Content-Type-Options',
             value: 'nosniff'
@@ -89,7 +89,7 @@ const nextConfig = {
             key: 'Permissions-Policy',
             value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
           }
-  ],
+        ],
       },
       {
         source: '/api/(.*)',
@@ -120,7 +120,7 @@ const nextConfig = {
       }
     ]
   },
-  
+
   // Redirects for SEO
   async redirects() {
     return [
@@ -136,7 +136,10 @@ const nextConfig = {
       }
     ]
   },
-  
+
+  // Turbopack configuration (empty to silence Next.js 16 warning)
+  turbopack: {},
+
   // Webpack optimizations
   webpack: (config, { dev, isServer }) => {
     // Production optimizations
@@ -144,7 +147,7 @@ const nextConfig = {
       config.optimization.sideEffects = false;
       config.optimization.usedExports = true;
     }
-    
+
     // Bundle analysis in development
     if (dev) {
       config.watchOptions = {
@@ -152,7 +155,7 @@ const nextConfig = {
         aggregateTimeout: 300,
       }
     }
-    
+
     // Fix for Stack framework cookie dependency issue
     config.externals = config.externals || [];
     if (!isServer) {
@@ -164,7 +167,7 @@ const nextConfig = {
         "util": false
       };
     }
-    
+
     return config;
   },
 };
