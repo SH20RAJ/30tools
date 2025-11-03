@@ -104,6 +104,16 @@ export default function YouTubeDownloaderPage() {
 
           <YouTubeDownloader />
 
+          {/* Ad Unit 1 */}
+          <div className="my-8 text-center">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+            <ins className="adsbygoogle"
+              style={{ display: 'block' }}
+              data-ad-format="autorelaxed"
+              data-ad-client="ca-pub-1828915420581549"
+              data-ad-slot="9420953810"></ins>
+            <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
+          </div>
 
           <div className="mt-12 space-y-8">
             <div className="bg-card rounded-lg p-6 border">
@@ -133,6 +143,17 @@ export default function YouTubeDownloaderPage() {
               </div>
             </div>
 
+            {/* Ad Unit 2 */}
+            <div className="my-8 text-center">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+              <ins className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-1828915420581549"
+                data-ad-slot="9420953810"></ins>
+              <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
+            </div>
+
             <div className="bg-card rounded-lg p-6 border">
               <h2 className="text-2xl font-semibold mb-4">Why Choose Our YouTube Video Downloader?</h2>
               <div className="grid md:grid-cols-2 gap-6">
@@ -153,6 +174,17 @@ export default function YouTubeDownloaderPage() {
               </div>
             </div>
 
+            {/* Ad Unit 3 */}
+            <div className="my-8 text-center">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+              <ins className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-1828915420581549"
+                data-ad-slot="9420953810"></ins>
+              <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
+            </div>
+
             <div className="bg-card rounded-lg p-6 border">
               <h2 className="text-2xl font-semibold mb-4 text-center">What Our Users Say</h2>
               <p className="text-center text-muted-foreground mb-6">Join thousands of satisfied users who trust our YouTube downloader</p>
@@ -166,7 +198,7 @@ export default function YouTubeDownloaderPage() {
                   <p className="text-xs font-medium">- Sarah M.</p>
                   <p className="text-xs text-muted-foreground">Verified User</p>
                 </div>
-                
+
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
@@ -176,7 +208,7 @@ export default function YouTubeDownloaderPage() {
                   <p className="text-xs font-medium">- Michael R.</p>
                   <p className="text-xs text-muted-foreground">Content Creator</p>
                 </div>
-                
+
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
@@ -186,7 +218,7 @@ export default function YouTubeDownloaderPage() {
                   <p className="text-xs font-medium">- Jessica L.</p>
                   <p className="text-xs text-muted-foreground">Student</p>
                 </div>
-                
+
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
@@ -196,7 +228,7 @@ export default function YouTubeDownloaderPage() {
                   <p className="text-xs font-medium">- David K.</p>
                   <p className="text-xs text-muted-foreground">Music Enthusiast</p>
                 </div>
-                
+
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
@@ -206,7 +238,7 @@ export default function YouTubeDownloaderPage() {
                   <p className="text-xs font-medium">- Emily T.</p>
                   <p className="text-xs text-muted-foreground">High School Teacher</p>
                 </div>
-                
+
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
@@ -220,6 +252,17 @@ export default function YouTubeDownloaderPage() {
               <div className="mt-6 text-center">
                 <p className="text-sm text-muted-foreground">⭐ Rated 5.0 out of 5 stars by over 50,000+ users worldwide</p>
               </div>
+            </div>
+
+            {/* Ad Unit 4 */}
+            <div className="my-8 text-center">
+              <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+              <ins className="adsbygoogle"
+                style={{ display: 'block' }}
+                data-ad-format="autorelaxed"
+                data-ad-client="ca-pub-1828915420581549"
+                data-ad-slot="9420953810"></ins>
+              <script dangerouslySetInnerHTML={{ __html: '(adsbygoogle = window.adsbygoogle || []).push({});' }}></script>
             </div>
 
             <div className="bg-card rounded-lg p-6 border">
@@ -244,7 +287,13 @@ export default function YouTubeDownloaderPage() {
               </div>
             </div>
 
-         
+            {/* Visitor Badge */}
+            <div className="text-center mt-8">
+              <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2Fyoutube-downloader">
+                <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2Fyoutube-downloader&countColor=%23263759&style=flat&labelStyle=upper" alt="Visitor Badge" />
+              </a>
+            </div>
+
           </div>
         </div>
       </div>
