@@ -27,6 +27,7 @@ import {
 } from 'lucide-react';
 import AuthComponent from '@/components/auth/AuthComponent';
 import InstagramEmbed from '@/components/shared/InstagramEmbed';
+import UnstoryOpenmindCTA from '@/components/shared/UnstoryOpenmindCTA';
 
 export default function LandingPage() {
     const iconMap = {
@@ -58,13 +59,6 @@ export default function LandingPage() {
         .slice(0, 6); // Show first 6 premium tools
 
     const quickSearchTags = ["image compressor", "video converter", "pdf merger", "text counter"];
-
-    const stats = [
-        { icon: UsersIcon, value: "10K+", label: "Happy Users" },
-        { icon: TrendingUpIcon, value: "99.9%", label: "Uptime" },
-        { icon: ZapIcon, value: "75+", label: "Free Tools" },
-        { icon: StarIcon, value: "4.9", label: "User Rating" }
-    ];
 
     return (
         <div className="min-h-screen bg-background">
@@ -150,17 +144,6 @@ export default function LandingPage() {
                                 </div>
                             </div>
 
-                           <div className="my-8 text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                               <h2 className="text-2xl font-semibold mb-2 text-blue-800 dark:text-blue-300">Find Your Calm</h2>
-                               <p className="text-muted-foreground mb-4">
-                               Join Unstory Openmind, a safe space for authentic conversations and personal growth. Share your story, judgment-free.
-                               </p>
-                               <InstagramEmbed />
-                               <a href="https://unstory.live" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium mt-4">
-                               Explore Openmind
-                               </a>
-                           </div>
-
                             {/* Quick search tags */}
                             <div className="flex flex-wrap justify-center gap-3 mb-8">
                                 {quickSearchTags.map((tag) => (
@@ -174,7 +157,7 @@ export default function LandingPage() {
                                     </Link>
                                 ))}
                             </div>
-
+                            <UnstoryOpenmindCTA />
                             {/* CTA buttons */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link href="/search">
@@ -218,7 +201,7 @@ export default function LandingPage() {
                 </section>
 
 
- 
+
 
                 {/* Categories Section */}
                 <section className="py-16">

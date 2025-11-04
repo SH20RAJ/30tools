@@ -24,7 +24,7 @@ export default function YouTubeDownloader() {
     // Load bookmarked URLs
     const savedBookmarks = JSON.parse(localStorage.getItem('bookmarked-youtube-urls') || '[]');
     setBookmarkedUrls(savedBookmarks);
-    
+
     // Check if URL is bookmarked
     setIsBookmarked(savedBookmarks.some(item => item.url === url));
 
@@ -38,10 +38,10 @@ export default function YouTubeDownloader() {
     // Check if already installed
     const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
     const isPWA = window.navigator.standalone === true;
-    
+
     if (!isStandalone && !isPWA) {
       window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      
+
       // For iOS, always show the PWA button
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
       if (isIOS) {
@@ -163,7 +163,7 @@ export default function YouTubeDownloader() {
 
     try {
       const currentBookmarks = JSON.parse(localStorage.getItem('bookmarked-youtube-urls') || '[]');
-      
+
       if (isBookmarked) {
         // Remove bookmark
         const filteredUrls = currentBookmarks.filter(item => item.url !== url);
@@ -180,7 +180,7 @@ export default function YouTubeDownloader() {
           bookmarkedAt: new Date().toISOString()
         };
         const updatedBookmarks = [newBookmark, ...currentBookmarks];
-        
+
         // Keep only last 50 bookmarks
         const limitedBookmarks = updatedBookmarks.slice(0, 50);
         localStorage.setItem('bookmarked-youtube-urls', JSON.stringify(limitedBookmarks));
@@ -198,12 +198,12 @@ export default function YouTubeDownloader() {
       const filteredUrls = bookmarkedUrls.filter(item => item.url !== urlToRemove);
       localStorage.setItem('bookmarked-youtube-urls', JSON.stringify(filteredUrls));
       setBookmarkedUrls(filteredUrls);
-      
+
       // Update current URL bookmark status if it matches
       if (url === urlToRemove) {
         setIsBookmarked(false);
       }
-      
+
       toast.success('Bookmark removed');
     } catch (error) {
       toast.error('Failed to remove bookmark');
@@ -218,7 +218,7 @@ export default function YouTubeDownloader() {
 
   const handlePWAInstall = async () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    
+
     if (isIOS) {
       toast.info('To install: Tap Share → Add to Home Screen → Add', {
         duration: 5000
@@ -266,277 +266,297 @@ export default function YouTubeDownloader() {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <Card className="border-2 border-red-500/20 shadow-lg">
-        <CardHeader className="bg-gradient-to-r from-red-50 to-red-100 dark:from-red-950/20 dark:to-red-900/20">
-          <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
-            <Video className="w-6 h-6 text-red-500" />
-            YouTube Video & Audio Downloader
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Input
-                type="url"
-                placeholder="Paste YouTube video URL here (e.g., https://www.youtube.com/watch?v=...)"
-                value={url}
-                onChange={(e) => {
-                  setUrl(e.target.value);
-                  setError('');
-                }}
-                className="flex-1 border-red-200 focus:border-red-500 focus:ring-red-500"
-                disabled={isLoading}
-              />
-              <div className="flex gap-2">
-                <Button
-                  type="button"
-                  variant="outline"
-                  onClick={handleBookmark}
-                  disabled={!url.trim()}
-                  className="px-3"
-                  title={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
-                >
-                  {isBookmarked ? (
-                    <BookmarkCheck className="w-4 h-4 text-yellow-500" />
-                  ) : (
-                    <Bookmark className="w-4 h-4" />
-                  )}
-                </Button>
-                <Button
-                  type="submit"
-                  disabled={isLoading || !url.trim()}
-                  className="bg-red-500 hover:bg-red-600 text-white font-medium px-6"
-                >
-                  {isLoading ? (
-                    <>
-                      <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-                      Processing...
-                    </>
-                  ) : (
-                    <>
-                      <Download className="w-4 h-4 mr-2" />
-                      Get Download Links
-                    </>
-                  )}
-                </Button>
+      {/* Main Download Card */}
+      <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm dark:bg-gray-800/80">
+        <CardContent className="p-8">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            {/* URL Input Section */}
+            <div className="space-y-4">
+              <div className="relative">
+                <Input
+                  type="url"
+                  placeholder="Paste YouTube URL here..."
+                  value={url}
+                  onChange={(e) => {
+                    setUrl(e.target.value);
+                    setError('');
+                  }}
+                  className="h-14 text-lg pl-4 pr-20 border-2 border-gray-200 focus:border-red-500 focus:ring-red-500 rounded-xl"
+                  disabled={isLoading}
+                />
+                {url.trim() && (
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    onClick={handleBookmark}
+                    className="absolute right-2 top-2 h-10 w-10 p-0"
+                    title={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
+                  >
+                    {isBookmarked ? (
+                      <BookmarkCheck className="w-5 h-5 text-yellow-500" />
+                    ) : (
+                      <Bookmark className="w-5 h-5 text-gray-400" />
+                    )}
+                  </Button>
+                )}
               </div>
+
+              <Button
+                type="submit"
+                disabled={isLoading || !url.trim()}
+                className="w-full h-14 text-lg font-semibold bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-200"
+              >
+                {isLoading ? (
+                  <>
+                    <Loader2 className="w-5 h-5 mr-3 animate-spin" />
+                    Processing...
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-5 h-5 mr-3" />
+                    Download Video
+                  </>
+                )}
+              </Button>
             </div>
 
             {/* PWA Install Button */}
             {showPWAButton && (
-              <div className="flex justify-center">
+              <div className="text-center">
                 <Button
                   type="button"
                   variant="outline"
                   onClick={handlePWAInstall}
-                  className="text-sm border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                  className="text-sm border-2 border-gray-300 hover:border-gray-400 text-gray-700 hover:bg-gray-50 rounded-lg px-4 py-2"
                 >
                   <SmartphoneIcon className="w-4 h-4 mr-2" />
-                  Install YouTube Downloader App
+                  Install App
                 </Button>
               </div>
             )}
 
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg">
-                {error}
+              <div className="bg-red-50 border-l-4 border-red-400 text-red-700 px-4 py-3 rounded-r-lg">
+                <div className="flex items-center">
+                  <div className="text-sm">{error}</div>
+                </div>
               </div>
             )}
           </form>
 
           {videoData && (
-            <div className="mt-6 space-y-4">
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-green-200 rounded-lg p-4">
-                <div className="flex items-start gap-4">
-                  {videoData.thumbnail && (
-                    <img
-                      src={videoData.thumbnail}
-                      alt="Video thumbnail"
-                      className="w-32 h-24 object-cover rounded-lg shadow-md"
-                    />
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-lg mb-2 text-green-800 dark:text-green-200">
-                      {videoData.title}
-                    </h3>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      <Badge variant="outline" className="text-green-600 border-green-300">
-                        Duration: {videoData.duration}
-                      </Badge>
-                      <Badge variant="outline" className="text-green-600 border-green-300">
-                        Quality: {videoData.quality}
-                      </Badge>
-                      <Badge variant="outline" className="text-green-600 border-green-300">
-                        Size: {videoData.fileSize}
-                      </Badge>
+            <div className="mt-8 space-y-6">
+              {/* Video Info Card */}
+              <Card className="border-0 shadow-lg bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-6">
+                    {videoData.thumbnail && (
+                      <div className="flex-shrink-0">
+                        <img
+                          src={videoData.thumbnail}
+                          alt="Video thumbnail"
+                          className="w-40 h-28 object-cover rounded-xl shadow-lg"
+                        />
+                      </div>
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <h3 className="font-bold text-xl mb-4 text-gray-800 dark:text-gray-100 line-clamp-2">
+                        {videoData.title}
+                      </h3>
+                      <div className="flex flex-wrap gap-3">
+                        {videoData.duration && (
+                          <span className="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-sm font-medium">
+                            ⏱️ {videoData.duration}
+                          </span>
+                        )}
+                        {videoData.quality && (
+                          <span className="inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-800 text-sm font-medium">
+                            🎥 {videoData.quality}
+                          </span>
+                        )}
+                        {videoData.fileSize && (
+                          <span className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-sm font-medium">
+                            📁 {videoData.fileSize}
+                          </span>
+                        )}
+                      </div>
                     </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Download Options */}
+              <div className="space-y-4">
+                {/* Video Downloads */}
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-200">
+                    <Video className="w-5 h-5 text-blue-500" />
+                    Video Downloads
+                  </h3>
+                  <div className="space-y-2">
+                    {videoData.videoFormats?.map((format, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                            <Video className="w-5 h-5 text-blue-600" />
+                          </div>
+                          <div>
+                            <div className="font-semibold text-gray-900 dark:text-gray-100">{format.quality} MP4</div>
+                            <div className="text-sm text-gray-500">{format.fileSize}</div>
+                          </div>
+                        </div>
+                        <Button
+                          onClick={() => handleDownload(format.downloadUrl, `${videoData.title}.mp4`, 'video')}
+                          className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium"
+                        >
+                          <Download className="w-4 h-4 mr-2" />
+                          Download
+                        </Button>
+                      </div>
+                    )) || (
+                        <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                              <Video className="w-5 h-5 text-blue-600" />
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 dark:text-gray-100">HD MP4</div>
+                              <div className="text-sm text-gray-500">{videoData.fileSize}</div>
+                            </div>
+                          </div>
+                          <Button
+                            onClick={() => handleDownload(videoData.downloadUrl, `${videoData.title}.mp4`, 'video')}
+                            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-medium"
+                          >
+                            <Download className="w-4 h-4 mr-2" />
+                            Download
+                          </Button>
+                        </div>
+                      )}
+                  </div>
+                </div>
+
+                {/* Audio Downloads */}
+                <div className="space-y-3">
+                  <h3 className="text-lg font-semibold flex items-center gap-2 text-gray-800 dark:text-gray-200">
+                    <Music className="w-5 h-5 text-green-500" />
+                    Audio Downloads
+                  </h3>
+                  <div className="space-y-2">
+                    {videoData.audioFormats?.map((format, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+                            <Music className="w-5 h-5 text-green-600" />
+                          </div>
+                          <div>
+                            <div className="font-semibold text-gray-900 dark:text-gray-100">{format.quality} MP3</div>
+                            <div className="text-sm text-gray-500">{format.fileSize}</div>
+                          </div>
+                        </div>
+                        <Button
+                          onClick={() => handleDownload(format.downloadUrl, `${videoData.title}.mp3`, 'audio')}
+                          className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium"
+                        >
+                          <Download className="w-4 h-4 mr-2" />
+                          Download
+                        </Button>
+                      </div>
+                    )) || (
+                        <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-md transition-shadow">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
+                              <Music className="w-5 h-5 text-green-600" />
+                            </div>
+                            <div>
+                              <div className="font-semibold text-gray-900 dark:text-gray-100">High Quality MP3</div>
+                              <div className="text-sm text-gray-500">~{Math.round(parseInt(videoData.fileSize || '0') * 0.1)}MB</div>
+                            </div>
+                          </div>
+                          <Button
+                            onClick={() => handleDownload(videoData.audioUrl || videoData.downloadUrl, `${videoData.title}.mp3`, 'audio')}
+                            className="bg-green-500 hover:bg-green-600 text-white px-6 py-2 rounded-lg font-medium"
+                          >
+                            <Download className="w-4 h-4 mr-2" />
+                            Download
+                          </Button>
+                        </div>
+                      )}
                   </div>
                 </div>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-4">
-                {/* Video Download Options */}
-                <Card className="border-blue-200">
-                  <CardHeader className="bg-blue-50 dark:bg-blue-950/20">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Video className="w-5 h-5 text-blue-500" />
-                      Video Downloads
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-4 space-y-3">
-                    {videoData.videoFormats?.map((format, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-blue-50/50 dark:bg-blue-950/10 rounded-lg">
-                        <div>
-                          <div className="font-medium">{format.quality} MP4</div>
-                          <div className="text-sm text-muted-foreground">{format.fileSize}</div>
-                        </div>
-                        <Button
-                          onClick={() => handleDownload(format.downloadUrl, `${videoData.title}.mp4`, 'video')}
-                          size="sm"
-                          className="bg-blue-500 hover:bg-blue-600"
-                        >
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </Button>
-                      </div>
-                    )) || (
-                        <div className="flex items-center justify-between p-3 bg-blue-50/50 dark:bg-blue-950/10 rounded-lg">
-                          <div>
-                            <div className="font-medium">HD MP4</div>
-                            <div className="text-sm text-muted-foreground">{videoData.fileSize}</div>
-                          </div>
-                          <Button
-                            onClick={() => handleDownload(videoData.downloadUrl, `${videoData.title}.mp4`, 'video')}
-                            size="sm"
-                            className="bg-blue-500 hover:bg-blue-600"
-                          >
-                            <Download className="w-4 h-4 mr-1" />
-                            Download
-                          </Button>
-                        </div>
-                      )}
-                  </CardContent>
-                </Card>
-
-                {/* Audio Download Options */}
-                <Card className="border-green-200">
-                  <CardHeader className="bg-green-50 dark:bg-green-950/20">
-                    <CardTitle className="text-lg flex items-center gap-2">
-                      <Music className="w-5 h-5 text-green-500" />
-                      Audio Downloads
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-4 space-y-3">
-                    {videoData.audioFormats?.map((format, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-green-50/50 dark:bg-green-950/10 rounded-lg">
-                        <div>
-                          <div className="font-medium">{format.quality} MP3</div>
-                          <div className="text-sm text-muted-foreground">{format.fileSize}</div>
-                        </div>
-                        <Button
-                          onClick={() => handleDownload(format.downloadUrl, `${videoData.title}.mp3`, 'audio')}
-                          size="sm"
-                          className="bg-green-500 hover:bg-green-600"
-                        >
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </Button>
-                      </div>
-                    )) || (
-                        <div className="flex items-center justify-between p-3 bg-green-50/50 dark:bg-green-950/10 rounded-lg">
-                          <div>
-                            <div className="font-medium">High Quality MP3</div>
-                            <div className="text-sm text-muted-foreground">~{Math.round(parseInt(videoData.fileSize || '0') * 0.1)}MB</div>
-                          </div>
-                          <Button
-                            onClick={() => handleDownload(videoData.audioUrl || videoData.downloadUrl, `${videoData.title}.mp3`, 'audio')}
-                            size="sm"
-                            className="bg-green-500 hover:bg-green-600"
-                          >
-                            <Download className="w-4 h-4 mr-1" />
-                            Download
-                          </Button>
-                        </div>
-                      )}
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="text-center text-sm text-muted-foreground">
-                <p>Downloads are processed securely and privately. We don't store any of your downloaded content.</p>
+              {/* Security Notice */}
+              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  🔒 Downloads are processed securely and privately. We don't store any of your content.
+                </p>
               </div>
             </div>
           )}
 
-          <div className="mt-6 text-center text-sm text-muted-foreground">
-            <p>Supports all YouTube video formats including HD, Full HD, and 4K quality downloads. Convert YouTube videos to MP4 or extract high-quality MP3 audio files instantly.</p>
-          </div>
-
           {/* Bookmarks Section */}
           {bookmarkedUrls.length > 0 && (
-            <div className="mt-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
-                  Bookmarked Videos ({bookmarkedUrls.length})
-                </h3>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setShowBookmarks(!showBookmarks)}
-                >
-                  {showBookmarks ? 'Hide' : 'Show'} Bookmarks
-                </Button>
-              </div>
-              
-              {showBookmarks && (
-                <Card className="border-yellow-200 bg-yellow-50/50 dark:bg-yellow-950/10">
-                  <CardContent className="p-4">
-                    <div className="space-y-3 max-h-64 overflow-y-auto">
-                      {bookmarkedUrls.map((bookmark, index) => (
-                        <div key={index} className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border">
-                          {bookmark.thumbnail && (
-                            <img
-                              src={bookmark.thumbnail}
-                              alt="Thumbnail"
-                              className="w-16 h-12 object-cover rounded"
-                            />
-                          )}
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-medium text-sm truncate">
-                              {bookmark.title}
-                            </h4>
-                            <p className="text-xs text-muted-foreground truncate">
-                              {bookmark.url}
-                            </p>
-                            <p className="text-xs text-muted-foreground">
-                              {new Date(bookmark.bookmarkedAt).toLocaleDateString()}
-                            </p>
-                          </div>
-                          <div className="flex gap-2">
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => handleLoadBookmarkedUrl(bookmark.url)}
-                              className="text-xs"
-                            >
-                              Load
-                            </Button>
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => handleRemoveBookmark(bookmark.url)}
-                              className="text-xs text-red-600 hover:text-red-700"
-                            >
-                              Remove
-                            </Button>
-                          </div>
+            <Card className="mt-8 border-0 shadow-lg">
+              <CardContent className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 flex items-center gap-2">
+                    <Bookmark className="w-5 h-5 text-yellow-500" />
+                    Bookmarks ({bookmarkedUrls.length})
+                  </h3>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => setShowBookmarks(!showBookmarks)}
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    {showBookmarks ? 'Hide' : 'Show'}
+                  </Button>
+                </div>
+
+                {showBookmarks && (
+                  <div className="space-y-3 max-h-64 overflow-y-auto">
+                    {bookmarkedUrls.map((bookmark, index) => (
+                      <div key={index} className="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                        {bookmark.thumbnail && (
+                          <img
+                            src={bookmark.thumbnail}
+                            alt="Thumbnail"
+                            className="w-16 h-12 object-cover rounded-lg"
+                          />
+                        )}
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium text-sm truncate text-gray-900 dark:text-gray-100">
+                            {bookmark.title}
+                          </h4>
+                          <p className="text-xs text-gray-500 truncate">
+                            {new Date(bookmark.bookmarkedAt).toLocaleDateString()}
+                          </p>
                         </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              )}
-            </div>
+                        <div className="flex gap-2">
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => handleLoadBookmarkedUrl(bookmark.url)}
+                            className="text-xs px-3 py-1"
+                          >
+                            Load
+                          </Button>
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => handleRemoveBookmark(bookmark.url)}
+                            className="text-xs px-2 py-1 text-red-600 hover:text-red-700 hover:bg-red-50"
+                          >
+                            ×
+                          </Button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           )}
         </CardContent>
       </Card>

@@ -96,7 +96,7 @@ export default function sitemap() {
     }
     
     return {
-      url: `${BASE_URL}${tool.route}`,
+      url: tool.external ? tool.route : `${BASE_URL}${tool.route}`,
       lastModified: currentDate,
       changeFrequency,
       priority: Math.round(priority * 100) / 100, // Round to 2 decimal places

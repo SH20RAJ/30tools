@@ -1,58 +1,28 @@
-import JSONFormatterTool from '@/components/tools/developer/JSONFormatterTool';
+import { Metadata } from 'next';
 import { 
   BreadcrumbsEnhanced,
   FAQSection, 
   ReviewSnippets,
+  SEOBooster,
+  SocialShare,
   RelatedTools,
   ToolFeatures,
   UserComments,
+  DeviceCompatibility,
   QuickActions
 } from '@/components/seo';
 import { DeveloperToolFeatures, DeveloperToolExamples } from '@/components/seo/DeveloperToolsHub';
 import { generateDeveloperToolMeta } from '@/constants/seo/developer-tools-seo';
 import { getDeveloperToolFAQs } from '@/constants/seo/developer-faqs';
+import JSONFormatterTool from '@/components/tools/developer/JSONFormatterTool';
 
-export const metadata = {
-  title: "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON | 30tools",
-  description: "Professional JSON formatter, validator & minifier for developers. Format messy JSON, validate syntax errors, minify for production. Tree view, error detection, copy formatted code. Free developer tool.",
-  keywords: "json formatter, json validator, json beautifier, json minifier, json parser, json syntax checker, format json online, validate json online, json pretty print, json editor online, json formatter and validator online free, json minifier and beautifier tool, json syntax checker with error detection, format json online no signup required, validate json format online free, json pretty print formatter, json parser and formatter online, json beautifier with tree view",
-  openGraph: {
-    title: "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON",
-    description: "Professional JSON formatter, validator & minifier for developers. Format messy JSON, validate syntax errors, minify for production.",
-    url: "https://30tools.com/json-formatter",
-    siteName: "30tools",
-    images: [
-      {
-        url: "/og-images/json-formatter.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Free JSON Formatter & Validator Online"
-      }
-    ],
-    type: "website"
+// Enhanced metadata for JSON Formatter
+export const metadata: Metadata = {
+  ...generateDeveloperToolMeta('json-formatter'),
+  verification: {
+    google: 'your-google-verification-code',
+    bing: 'your-bing-verification-code'
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON",
-    description: "Professional JSON formatter, validator & minifier for developers. Perfect for API testing and development.",
-    images: ["/og-images/json-formatter.jpg"],
-    creator: "@30tools"
-  },
-  alternates: {
-    canonical: "https://30tools.com/json-formatter"
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  category: 'Developer Tools',
   other: {
     'application-name': '30tools',
     'mobile-web-app-capable': 'yes',
@@ -60,8 +30,6 @@ export const metadata = {
     'apple-mobile-web-app-status-bar-style': 'default',
     'apple-mobile-web-app-title': 'JSON Formatter - 30tools',
     'format-detection': 'telephone=no',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
   }
 };
@@ -84,14 +52,38 @@ export default function JSONFormatterPage() {
 
   // Tool features
   const features = [
-    'Format & validate JSON instantly',
-    'Minify JSON for production use',
-    'Real-time error detection',
-    'Tree view for complex JSON',
-    'Copy formatted code',
-    'Supports large JSON files',
-    'Syntax highlighting',
-    'Client-side processing'
+    {
+      title: 'Format & Validate JSON',
+      description: 'Instantly format messy JSON and detect syntax errors with detailed error messages'
+    },
+    {
+      title: 'Minify for Production',
+      description: 'Remove whitespace and reduce file size for faster data transmission'
+    },
+    {
+      title: 'Tree View Display',
+      description: 'Visualize complex nested JSON structures with expandable tree view'
+    },
+    {
+      title: 'Error Detection',
+      description: 'Real-time syntax validation with line numbers and error descriptions'
+    },
+    {
+      title: 'Copy to Clipboard',
+      description: 'One-click copying of formatted JSON ready for your code editor'
+    },
+    {
+      title: 'Large File Support',
+      description: 'Handle JSON files up to 10MB with optimized performance'
+    },
+    {
+      title: 'Client-side Processing',
+      description: 'All processing happens in your browser - your data never leaves your device'
+    },
+    {
+      title: 'Syntax Highlighting',
+      description: 'Color-coded JSON elements for better readability and debugging'
+    }
   ];
 
   // Usage examples
@@ -99,13 +91,18 @@ export default function JSONFormatterPage() {
     {
       title: 'Format API Response',
       description: 'Clean up messy JSON from API responses for better readability',
-      input: '{"users":[{"id":1,"name":"John","email":"john@example.com"}]}',
+      input: '{"users":[{"id":1,"name":"John","email":"john@example.com"},{"id":2,"name":"Jane","email":"jane@example.com"}]}',
       output: `{
   "users": [
     {
       "id": 1,
       "name": "John", 
       "email": "john@example.com"
+    },
+    {
+      "id": 2,
+      "name": "Jane",
+      "email": "jane@example.com"
     }
   ]
 }`
@@ -113,13 +110,33 @@ export default function JSONFormatterPage() {
     {
       title: 'Validate Configuration',
       description: 'Check configuration files for syntax errors before deployment',
-      input: '{"database":{"host":"localhost","port":5432}}',
+      input: '{"database":{"host":"localhost","port":5432,"credentials":{"username":"admin","password":"secret"}},"logging":{"level":"info","file":"/var/log/app.log"}}',
       output: `{
   "database": {
     "host": "localhost",
-    "port": 5432
+    "port": 5432,
+    "credentials": {
+      "username": "admin",
+      "password": "secret"
+    }
+  },
+  "logging": {
+    "level": "info",
+    "file": "/var/log/app.log"
   }
 }`
+    },
+    {
+      title: 'Minify for Production',
+      description: 'Remove whitespace to reduce file size for production deployment',
+      input: `{
+  "config": {
+    "api_url": "https://api.example.com",
+    "timeout": 5000,
+    "retries": 3
+  }
+}`,
+      output: '{"config":{"api_url":"https://api.example.com","timeout":5000,"retries":3}}'
     }
   ];
 
@@ -130,7 +147,8 @@ export default function JSONFormatterPage() {
   const relatedTools = [
     { id: 'xml-formatter', name: 'XML Formatter', description: 'Format and validate XML documents', route: '/xml-formatter', category: 'developer-tools' },
     { id: 'base64-tool', name: 'Base64 Encoder', description: 'Encode and decode Base64 strings', route: '/base64-tool', category: 'developer-tools' },
-    { id: 'api-tester', name: 'API Tester', description: 'Test REST APIs with custom headers', route: '/api-tester', category: 'developer-tools' }
+    { id: 'api-tester', name: 'API Tester', description: 'Test REST APIs with custom headers', route: '/api-tester', category: 'developer-tools' },
+    { id: 'jwt-decoder', name: 'JWT Decoder', description: 'Decode JSON Web Tokens', route: '/jwt-decoder', category: 'developer-tools' }
   ];
 
   return (
@@ -152,6 +170,7 @@ export default function JSONFormatterPage() {
             minify for production. Tree view, error detection, copy formatted code. Completely free with client-side processing.
           </p>
           
+          {/* Quick actions */}
           <QuickActions 
             toolName="JSON Formatter"
             toolUrl="https://30tools.com/json-formatter"
@@ -166,16 +185,15 @@ export default function JSONFormatterPage() {
         </div>
 
         {/* Key Features */}
-        <div className="mb-12">
-          <ToolFeatures 
-            features={features}
-            title="Why Choose Our JSON Formatter?"
-            variant="grid"
-          />
-        </div>
+        <DeveloperToolFeatures tool={toolData} features={features} />
 
         {/* Usage Examples */}
         <DeveloperToolExamples tool={toolData} examples={examples} />
+
+        {/* Device Compatibility */}
+        <div className="mb-12">
+          <DeviceCompatibility />
+        </div>
 
         {/* User Reviews */}
         <div className="mb-12">
@@ -216,6 +234,20 @@ export default function JSONFormatterPage() {
           showStats={true}
           allowComments={true}
         />
+
+        {/* SEO Performance Dashboard (development only) */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mt-12 border-t pt-8">
+            <SEOBooster 
+              toolName="JSON Formatter"
+              category="developer-tools"
+              primaryKeyword="json formatter"
+              relatedKeywords={['json validator', 'json beautifier', 'json minifier', 'format json online']}
+              showTechnicalSEO={true}
+              showPerformanceMetrics={true}
+            />
+          </div>
+        )}
       </main>
 
       {/* Structured Data for Tool */}
@@ -240,7 +272,7 @@ export default function JSONFormatterPage() {
               "name": "30tools",
               "url": "https://30tools.com"
             },
-            "featureList": features,
+            "featureList": features.map(f => f.title),
             "screenshot": "https://30tools.com/screenshots/json-formatter.jpg",
             "aggregateRating": {
               "@type": "AggregateRating",
@@ -248,7 +280,21 @@ export default function JSONFormatterPage() {
               "reviewCount": "2847",
               "bestRating": "5",
               "worstRating": "1"
-            }
+            },
+            "review": [
+              {
+                "@type": "Review",
+                "author": {
+                  "@type": "Person",
+                  "name": "Sarah Chen"
+                },
+                "reviewRating": {
+                  "@type": "Rating",
+                  "ratingValue": "5"
+                },
+                "reviewBody": "Perfect JSON formatter for development work. The error detection is incredibly helpful and the tree view makes complex JSON easy to understand."
+              }
+            ]
           })
         }}
       />
