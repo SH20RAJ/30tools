@@ -165,6 +165,16 @@ export default function YouTubeDownloaderPage() {
             </div>
           </div>
 
+          <div className="my-8 text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+            <h2 className="text-2xl font-semibold mb-2 text-blue-800 dark:text-blue-300">Find Your Calm</h2>
+            <p className="text-muted-foreground mb-4">
+              Join Unstory Openmind, a safe space for authentic conversations and personal growth. Share your story, judgment-free.
+            </p>
+            <a href="https://unstory.live" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+              Explore Openmind
+            </a>
+          </div>
+
           <YouTubeDownloader />
 
           {/* Ad Unit 1 */}
