@@ -8,7 +8,7 @@ export const metadata = {
   openGraph: {
     title: "Audio Tools - Free Online Audio Processing",
     description: "Professional audio tools for compression and format conversion.",
-    url: "https://30tools.com/audio-tools", 
+    url: "https://30tools.com/audio-tools",
     siteName: "30tools",
     images: [
       {
@@ -24,11 +24,10 @@ export const metadata = {
 
 export default function AudioToolsLayout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col bg-gradient-cute">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <AudioToolsNavbar />
-      <main className="flex-1 relative">
-        <div className="absolute inset-0 bg-gradient-cute opacity-50"></div>
-        <div className="relative z-10">{children}</div>
+      <main className="flex-1">
+        {children}
       </main>
       <AudioToolsFooter />
     </div>

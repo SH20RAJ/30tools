@@ -1,13 +1,23 @@
 import AestheticBioGeneratorTool from '@/components/tools/generators/AestheticBioGeneratorTool';
+import { 
+  BreadcrumbsEnhanced,
+  FAQSection, 
+  ReviewSnippets,
+  RelatedTools,
+  ToolFeatures,
+  UserComments,
+  QuickActions
+} from '@/components/seo';
+import { GeneratorToolFeatures, GeneratorToolExamples } from '@/components/seo/GeneratorToolsHub';
+import { getGeneratorToolFAQs } from '@/constants/seo/generator-faqs';
 
 export const metadata = {
-  title: "Aesthetic Bio Generator - Create Instagram Twitter Bios",
-  description: "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis, fonts, and themes. Perfect for Gen Z, influencers, and social media profiles.",
-  keywords: "aesthetic bio generator, instagram bio, twitter bio, tiktok bio, social media bio, aesthetic text, bio ideas, profile bio generator",
-  canonical: "https://30tools.com/aesthetic-bio-generator",
+  title: "Free Aesthetic Bio Generator - Instagram, Twitter, TikTok Bios | 30tools",
+  description: "Generate aesthetic bios for Instagram, Twitter & TikTok with emojis, fonts & themes. 6 aesthetic styles, AI-powered suggestions. Perfect for influencers, Gen Z & viral profiles.",
+  keywords: "aesthetic bio generator, instagram bio generator, twitter bio generator, tiktok bio generator, social media bio, cute bio generator, aesthetic text generator, bio ideas generator, profile bio creator, emoji bio generator, aesthetic bio generator for instagram free, cute bio generator with emojis, aesthetic twitter bio ideas generator, tiktok bio generator aesthetic themes, social media bio creator online, instagram bio maker with fonts, aesthetic profile bio generator, viral bio generator for social media",
   openGraph: {
-    title: "Aesthetic Bio Generator - Create Viral Social Media Bios",
-    description: "Generate aesthetic bios with emojis, fonts, and themes for Instagram, Twitter, and TikTok. Perfect for influencers and Gen Z users.",
+    title: "Free Aesthetic Bio Generator - Instagram, Twitter, TikTok Bios",
+    description: "Generate aesthetic bios for Instagram, Twitter & TikTok with emojis, fonts & themes. Perfect for influencers and viral profiles.",
     url: "https://30tools.com/aesthetic-bio-generator",
     siteName: "30tools",
     images: [
@@ -23,10 +33,13 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Aesthetic Bio Generator - Create Viral Social Media Bios",
-    description: "Generate aesthetic bios with emojis and themes for Instagram, Twitter, and TikTok.",
+    title: "Free Aesthetic Bio Generator - Instagram, Twitter, TikTok Bios",
+    description: "Generate aesthetic bios with emojis and themes for Instagram, Twitter, and TikTok. Perfect for viral profiles!",
     images: ["/og-images/aesthetic-bio-generator.jpg"],
     creator: '@30tools'
+  },
+  alternates: {
+    canonical: "https://30tools.com/aesthetic-bio-generator"
   },
   robots: {
     index: true,
@@ -38,7 +51,8 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  }
+  },
+  category: 'Generators',
 };
 
 export default function AestheticBioGeneratorPage() {
