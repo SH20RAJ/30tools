@@ -8,6 +8,14 @@ Sitemap: https://30tools.com/enhanced-sitemap.xml
 # RSS Feed
 Sitemap: https://30tools.com/feed.xml
 
+# Important YouTube tools
+Allow: /youtube-downloader
+Allow: /youtube-thumbnail-downloader
+Allow: /youtube-transcript-downloader
+Allow: /youtube-shorts-downloader
+Allow: /youtube-tag-generator
+Allow: /youtube-summary-generator
+
 # Important pages
 Allow: /search
 Allow: /color-picker
