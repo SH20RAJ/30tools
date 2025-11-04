@@ -165,6 +165,7 @@ export default function YouTubeDownloaderPage() {
               <span className="bg-primary/10 px-3 py-1 rounded-full">✓ All Devices Supported</span>
             </div>
           </div>
+          <YouTubeDownloader />
 
           <div className="my-8 text-center p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
             <h2 className="text-2xl font-semibold mb-2 text-blue-800 dark:text-blue-300">Find Your Calm</h2>
@@ -177,7 +178,6 @@ export default function YouTubeDownloaderPage() {
             </a>
           </div>
 
-          <YouTubeDownloader />
 
           {/* Ad Unit 1 */}
           <div className="my-8 text-center">
