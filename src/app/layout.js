@@ -1,4 +1,4 @@
-import { Poppins } from "next/font/google";
+import { Open_Sans } from "next/font/google";
 import { StackProvider, StackTheme } from "@stackframe/stack";
 import { stackServerApp } from "../stack";
 import PWAInstallPrompt from '@/components/PWAInstallPrompt';
@@ -8,8 +8,8 @@ import { Toaster } from 'sonner';
 import "./globals.css";
 import Script from "next/script";
 
-const poppins = Poppins({
-  variable: "--font-poppins",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
 });
@@ -223,7 +223,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <StackProvider app={stackServerApp}>
-        <body className={`${poppins.variable} font-sans antialiased`}>
+        <body className={`${openSans.variable} font-sans antialiased`}>
           <StackTheme>
             <ThemeProvider>
               <StructuredData />

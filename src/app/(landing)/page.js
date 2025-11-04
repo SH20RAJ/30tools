@@ -26,6 +26,7 @@ import {
     RefreshCwIcon
 } from 'lucide-react';
 import AuthComponent from '@/components/auth/AuthComponent';
+import InstagramEmbed from '@/components/shared/InstagramEmbed';
 
 export default function LandingPage() {
     const iconMap = {
@@ -154,7 +155,8 @@ export default function LandingPage() {
                                <p className="text-muted-foreground mb-4">
                                Join Unstory Openmind, a safe space for authentic conversations and personal growth. Share your story, judgment-free.
                                </p>
-                               <a href="https://unstory.live" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                               <InstagramEmbed />
+                               <a href="https://unstory.live" target="_blank" rel="noopener noreferrer" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium mt-4">
                                Explore Openmind
                                </a>
                            </div>

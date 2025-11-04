@@ -9,7 +9,8 @@
 		"lint": "next lint",
 		"lint:fix": "next lint --fix",
 		"clean-imports": "node scripts/remove-unused-imports.js",
-		"deploy": "opennextjs-cloudflare build --skipBuild && opennextjs-cloudflare deploy",
+		"predeploy": "rm -rf .next && mkdir -p .next/standalone/.next/static && touch .next/standalone/.next/static/css",
+		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
 		"deploy:full": "next build --webpack && opennextjs-cloudflare build --skipBuild && opennextjs-cloudflare deploy",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
@@ -19,6 +20,7 @@
 	"dependencies": {
 		"@hookform/resolvers": "^5.1.1",
 		"@next/bundle-analyzer": "^15.3.3",
+		"@opennextjs/aws": "^3.8.5",
 		"@opennextjs/cloudflare": "^1.11.0",
 		"@radix-ui/react-accordion": "^1.2.11",
 		"@radix-ui/react-alert-dialog": "^1.1.14",
