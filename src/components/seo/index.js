@@ -13,3 +13,4 @@ export {
 } from './SocialEngagement';
 export { default as UserComments, CommentsWidget } from './UserComments';
 export { default as DeveloperToolsHub, DeveloperToolFeatures, DeveloperToolExamples } from './DeveloperToolsHub';
+export { default as GeneratorToolsHub, GeneratorToolFeatures, GeneratorToolExamples } from './GeneratorToolsHub';
