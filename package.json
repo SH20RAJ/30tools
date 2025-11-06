@@ -89,6 +89,7 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3",
 		"@tailwindcss/postcss": "^4",
+		"@types/minimatch": "^5.1.2",
 		"@types/node": "^24.9.1",
 		"@types/react": "^19.2.2",
 		"@types/react-dom": "^19.2.2",

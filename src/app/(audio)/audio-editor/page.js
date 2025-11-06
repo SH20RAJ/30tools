@@ -10,15 +10,13 @@ export const metadata = {
     description: 'Edit audio files - trim, merge, and apply effects.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Audio Editor - Free Online Tool | Professional Results",
     description: "Professional audio editor tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/audio-editor.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/audio-editor"
   }

@@ -9,7 +9,6 @@ export const metadata = {
     description: 'Format and beautify SQL queries online.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Sql Formatter - Free Online Tool | Professional Results",

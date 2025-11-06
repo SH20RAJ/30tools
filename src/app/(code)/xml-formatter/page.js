@@ -9,7 +9,6 @@ export const metadata = {
     description: 'Format and validate XML documents online.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Xml Formatter - Free Online Tool | Professional Results",
