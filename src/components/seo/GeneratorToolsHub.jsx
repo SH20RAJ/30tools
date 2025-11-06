@@ -23,7 +23,7 @@ import {
   Search,
   Rocket,
   Brain,
-  Magic,
+  Wand,
   CheckCircle2,
   ArrowRight,
   Instagram,
@@ -97,7 +97,7 @@ export default function GeneratorToolsHub({ tools = [], faqs = [], tutorials = [
           {/* Key Benefits */}
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
             {[
-              { icon: Magic, title: 'AI-Powered', desc: 'Advanced algorithms' },
+              { icon: Wand, title: 'AI-Powered', desc: 'Advanced algorithms' },
               { icon: Zap, title: 'Instant Results', desc: 'Generate in seconds' },
               { icon: Heart, title: '500K+ Users', desc: 'Loved by creators' },
               { icon: CheckCircle2, title: 'Always Free', desc: 'No hidden costs' }
