@@ -130,7 +130,7 @@ export default function YouTubeScriptGenerator() {
       <Card className="card-cute">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <PenTool className="w-5 h-5 text-red-500" />
+            <PenTool className="w-5 h-5 text-destructive" />
             AI Script Generator
           </CardTitle>
           <CardDescription>
@@ -240,7 +240,7 @@ export default function YouTubeScriptGenerator() {
             <Button
               onClick={handleGenerateScript}
               disabled={isGenerating || !topic.trim()}
-              className="flex-1 btn-cute bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+              className="flex-1 btn-cute bg-background"
             >
               {isGenerating ? (
                 <>
@@ -263,7 +263,7 @@ export default function YouTubeScriptGenerator() {
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <Youtube className="w-5 h-5 text-red-500" />
+                <Youtube className="w-5 h-5 text-destructive" />
                 Generated Script
               </span>
               <div className="flex gap-2">
@@ -274,7 +274,7 @@ export default function YouTubeScriptGenerator() {
                   className="btn-cute"
                 >
                   {copied ? (
-                    <CheckCircle className="w-4 h-4 mr-1 text-green-500" />
+                    <CheckCircle className="w-4 h-4 mr-1 text-primary" />
                   ) : (
                     <Copy className="w-4 h-4 mr-1" />
                   )}

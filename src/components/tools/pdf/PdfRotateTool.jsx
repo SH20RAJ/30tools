@@ -467,7 +467,7 @@ export default function PdfRotateTool() {
         <Card className="mb-6">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-primary" />
               PDF Rotated Successfully
             </CardTitle>
             <CardDescription>
@@ -477,7 +477,7 @@ export default function PdfRotateTool() {
           <CardContent>
             <div className="flex items-center justify-between p-4 bg-muted rounded-lg mb-4">
               <div className="flex items-center gap-3">
-                <RotateCw className="h-6 w-6 text-green-500" />
+                <RotateCw className="h-6 w-6 text-primary" />
                 <div>
                   <p className="font-medium">{rotatedFile.name}</p>
                   <p className="text-sm text-muted-foreground">

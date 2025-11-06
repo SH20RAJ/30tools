@@ -106,7 +106,7 @@ export default function FacebookVideoDownloaderPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-blue-600 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Facebook Video Downloader
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -127,22 +127,22 @@ export default function FacebookVideoDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Download Facebook Videos Online Free</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Copy Facebook Video URL</h3>
                                     <p className="text-sm text-muted-foreground">Copy the Facebook video link from your browser or Facebook app share option</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Paste URL & Process</h3>
                                     <p className="text-sm text-muted-foreground">Paste the Facebook video URL and click download to process the video</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Save to Device</h3>
                                     <p className="text-sm text-muted-foreground">Choose quality and download your Facebook video instantly to your device</p>
@@ -154,17 +154,17 @@ export default function FacebookVideoDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">Why Choose Our Facebook Video Downloader?</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🎥 Download All Facebook Content</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎥 Download All Facebook Content</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download Facebook videos, reels, stories, and live streams in original quality. Our Facebook downloader works with all types of Facebook content including private videos shared with you.</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">📱 Mobile & Desktop Compatible</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📱 Mobile & Desktop Compatible</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Works perfectly on all devices - iPhone, Android, PC, Mac, and tablets. Download Facebook videos directly to your phone gallery or computer storage with one click.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">⚡ Super Fast Processing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Super Fast Processing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our optimized servers process Facebook videos in seconds. No waiting times, no slow downloads - get your Facebook videos downloaded instantly with maximum speed.</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">🔒 Privacy Protected</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔒 Privacy Protected</h3>
                                     <p className="text-sm text-muted-foreground mb-4">We don't store your Facebook videos or personal data. All downloads are processed securely and privately. Your Facebook login information is never required or accessed.</p>
                                 </div>
                             </div>

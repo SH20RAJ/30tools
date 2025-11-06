@@ -211,9 +211,9 @@ export default function TypingSpeedTestTool() {
 
   const getCharacterClass = useCallback((index) => {
     if (index < currentCharIndex) {
-      return errors.includes(index) ? 'text-red-500 bg-red-100' : 'text-green-600 bg-green-100';
+      return errors.includes(index) ? 'text-destructive bg-destructive/20' : 'text-primary bg-muted';
     } else if (index === currentCharIndex) {
-      return 'bg-blue-200 border-b-2 border-blue-500';
+      return 'bg-muted border-b-2 border-border';
     }
     return 'text-muted-foreground';
   }, [currentCharIndex, errors]);
@@ -225,10 +225,10 @@ export default function TypingSpeedTestTool() {
   };
 
   const getWPMRating = (wpm) => {
-    if (wpm >= 70) return { label: 'Excellent', color: 'text-green-600' };
-    if (wpm >= 50) return { label: 'Good', color: 'text-blue-600' };
-    if (wpm >= 30) return { label: 'Average', color: 'text-yellow-600' };
-    return { label: 'Needs Practice', color: 'text-red-600' };
+    if (wpm >= 70) return { label: 'Excellent', color: 'text-primary' };
+    if (wpm >= 50) return { label: 'Good', color: 'text-primary' };
+    if (wpm >= 30) return { label: 'Average', color: 'text-primary' };
+    return { label: 'Needs Practice', color: 'text-destructive' };
   };
 
   return (
@@ -337,7 +337,7 @@ export default function TypingSpeedTestTool() {
                     Free Typing Speed Test Online {isTestActive && <Badge variant="secondary" className="ml-2">Active</Badge>}
                   </CardTitle>
                   <div className="flex items-center gap-4">
-                    <div className={`text-2xl font-bold ${timeLeft <= 10 && isTestActive ? 'text-red-500 animate-pulse' : ''}`}>
+                    <div className={`text-2xl font-bold ${timeLeft <= 10 && isTestActive ? 'text-destructive animate-pulse' : ''}`}>
                       {formatTime(timeLeft)}
                     </div>
                     {isTestActive && (
@@ -464,19 +464,19 @@ export default function TypingSpeedTestTool() {
                       </div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg border">
-                      <div className="text-4xl font-bold text-green-600 mb-2">{results.accuracy}%</div>
+                      <div className="text-4xl font-bold text-primary mb-2">{results.accuracy}%</div>
                       <div className="text-sm text-muted-foreground mb-1">Typing Accuracy</div>
                       <div className="text-sm font-medium">
                         {results.accuracy >= 95 ? 'Excellent' : results.accuracy >= 85 ? 'Good' : 'Needs Practice'}
                       </div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg border">
-                      <div className="text-4xl font-bold text-blue-600 mb-2">{results.cpm}</div>
+                      <div className="text-4xl font-bold text-primary mb-2">{results.cpm}</div>
                       <div className="text-sm text-muted-foreground mb-1">Characters per Minute</div>
                       <div className="text-sm font-medium">Including spaces</div>
                     </div>
                     <div className="text-center p-4 bg-white rounded-lg border">
-                      <div className="text-4xl font-bold text-orange-600 mb-2">{results.errors}</div>
+                      <div className="text-4xl font-bold text-primary mb-2">{results.errors}</div>
                       <div className="text-sm text-muted-foreground mb-1">Typing Errors</div>
                       <div className="text-sm font-medium">
                         {results.errors === 0 ? 'Perfect!' : `${((results.errors / results.charactersTyped) * 100).toFixed(1)}% error rate`}
@@ -676,41 +676,41 @@ export default function TypingSpeedTestTool() {
             <h3 className="text-3xl font-bold text-center mb-8">Professional Typing Speed Benchmarks - Know Your WPM Level</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 bg-destructive/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">🐌</span>
                 </div>
                 <h4 className="font-bold text-lg mb-2">Beginner Level</h4>
-                <div className="text-2xl font-bold text-red-600 mb-2">Under 30 WPM</div>
+                <div className="text-2xl font-bold text-destructive mb-2">Under 30 WPM</div>
                 <p className="text-sm text-muted-foreground">
                   Perfect for those just starting their typing journey. Focus on accuracy over speed and learn proper finger placement.
                 </p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <div className="w-20 h-20 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">🚶</span>
                 </div>
                 <h4 className="font-bold text-lg mb-2">Average Typist</h4>
-                <div className="text-2xl font-bold text-yellow-600 mb-2">30-50 WPM</div>
+                <div className="text-2xl font-bold text-primary mb-2">30-50 WPM</div>
                 <p className="text-sm text-muted-foreground">
                   Suitable for most office work and academic typing. Adequate for email, documents, and basic data entry tasks.
                 </p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <div className="w-20 h-20 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">🏃</span>
                 </div>
                 <h4 className="font-bold text-lg mb-2">Good Typist</h4>
-                <div className="text-2xl font-bold text-blue-600 mb-2">50-70 WPM</div>
+                <div className="text-2xl font-bold text-primary mb-2">50-70 WPM</div>
                 <p className="text-sm text-muted-foreground">
                   Excellent for professional environments. Suitable for transcription, content writing, and administrative roles.
                 </p>
               </div>
               <div className="text-center p-6 bg-white rounded-lg shadow-sm">
-                <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-20 h-20 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">🏆</span>
                 </div>
                 <h4 className="font-bold text-lg mb-2">Expert Level</h4>
-                <div className="text-2xl font-bold text-green-600 mb-2">70+ WPM</div>
+                <div className="text-2xl font-bold text-primary mb-2">70+ WPM</div>
                 <p className="text-sm text-muted-foreground">
                   Professional standard for typists, court reporters, and high-volume data entry positions. Top 10% of all typists.
                 </p>
@@ -724,8 +724,8 @@ export default function TypingSpeedTestTool() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <Card className="h-full">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
-                    <CheckCircleIcon className="h-6 w-6 text-green-600" />
+                  <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mb-4">
+                    <CheckCircleIcon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-lg">Master Touch Typing Technique</CardTitle>
                 </CardHeader>
@@ -745,8 +745,8 @@ export default function TypingSpeedTestTool() {
 
               <Card className="h-full">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                    <TargetIcon className="h-6 w-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mb-4">
+                    <TargetIcon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-lg">Practice Consistency and Accuracy</CardTitle>
                 </CardHeader>
@@ -766,8 +766,8 @@ export default function TypingSpeedTestTool() {
 
               <Card className="h-full">
                 <CardHeader>
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
-                    <KeyboardIcon className="h-6 w-6 text-purple-600" />
+                  <div className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center mb-4">
+                    <KeyboardIcon className="h-6 w-6 text-primary" />
                   </div>
                   <CardTitle className="text-lg">Optimize Your Typing Environment</CardTitle>
                 </CardHeader>
@@ -850,7 +850,7 @@ export default function TypingSpeedTestTool() {
             <h3 className="text-3xl font-bold text-center mb-8">Why Typing Speed Matters in Today's Digital World</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">💼</span>
                 </div>
                 <h4 className="font-semibold mb-2">Career Advancement</h4>
@@ -860,7 +860,7 @@ export default function TypingSpeedTestTool() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">🎓</span>
                 </div>
                 <h4 className="font-semibold mb-2">Academic Success</h4>
@@ -870,7 +870,7 @@ export default function TypingSpeedTestTool() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">⚡</span>
                 </div>
                 <h4 className="font-semibold mb-2">Daily Productivity</h4>
@@ -880,7 +880,7 @@ export default function TypingSpeedTestTool() {
                 </p>
               </div>
               <div className="text-center">
-                <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-muted rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl">🧠</span>
                 </div>
                 <h4 className="font-semibold mb-2">Cognitive Benefits</h4>

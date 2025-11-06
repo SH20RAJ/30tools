@@ -86,7 +86,7 @@ export default function TikTokAudioDownloader() {
                     </div>
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -94,7 +94,7 @@ export default function TikTokAudioDownloader() {
 
                     {audioData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">TikTok audio extracted successfully!</span>
                             </div>
@@ -121,8 +121,8 @@ export default function TikTokAudioDownloader() {
                                                 {audioData.music}
                                             </p>
                                             <div className="flex items-center gap-1 text-xs">
-                                                <span className="bg-green-100 text-green-700 px-2 py-1 rounded">Audio Only</span>
-                                                <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">No Watermark</span>
+                                                <span className="bg-muted text-primary px-2 py-1 rounded">Audio Only</span>
+                                                <span className="bg-muted text-primary px-2 py-1 rounded">No Watermark</span>
                                             </div>
                                         </div>
                                     </div>
@@ -132,7 +132,7 @@ export default function TikTokAudioDownloader() {
                                         {audioData.audioQualities.map((quality, index) => (
                                             <div key={index} className="flex items-center justify-between p-3 border rounded">
                                                 <div className="flex items-center gap-2">
-                                                    <Music className="h-4 w-4 text-pink-500" />
+                                                    <Music className="h-4 w-4 text-primary" />
                                                     <div>
                                                         <span className="text-sm font-medium">{quality.quality}</span>
                                                         <span className="text-xs text-muted-foreground ml-2">({quality.size})</span>

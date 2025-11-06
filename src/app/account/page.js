@@ -199,7 +199,7 @@ export default async function AccountPage() {
               <CardContent className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span className="text-sm">Email Verified</span>
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-muted/500 rounded-full"></div>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-sm">2FA Enabled</span>
@@ -229,7 +229,7 @@ export default async function AccountPage() {
                   <ShieldIcon className="h-4 w-4 mr-2" />
                   Privacy Settings
                 </Button>
-                <Button variant="ghost" size="sm" className="w-full justify-start text-red-600 hover:text-red-600 hover:bg-red-50">
+                <Button variant="ghost" size="sm" className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10">
                   Delete Account
                 </Button>
               </CardContent>

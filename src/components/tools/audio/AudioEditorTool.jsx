@@ -596,27 +596,27 @@ export default function AudioEditor() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-950 dark:to-slate-900">
+    <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-6">
         <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-8">
-            <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-4">
+            <h1 className="text-5xl font-bold bg-background">
               Pro Audio Editor
             </h1>
             <p className="text-xl text-muted-foreground">
               Professional-grade audio editing with real-time effects and multi-track support
             </p>
             <div className="flex items-center justify-center gap-2 mt-4">
-              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+              <Badge variant="outline" className="bg-muted/50 text-primary border-border">
                 <Waves className="w-3 h-3 mr-1" />
                 Multi-track
               </Badge>
-              <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+              <Badge variant="outline" className="bg-muted/50 text-primary border-border">
                 <Headphones className="w-3 h-3 mr-1" />
                 Real-time Effects
               </Badge>
-              <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
+              <Badge variant="outline" className="bg-muted/50 text-primary border-border">
                 <FileAudio className="w-3 h-3 mr-1" />
                 Professional Export
               </Badge>
@@ -627,23 +627,23 @@ export default function AudioEditor() {
           <div className="grid grid-cols-1 xl:grid-cols-4 gap-6">
             {/* Left Sidebar - File Management & Recording */}
             <div className="xl:col-span-1 space-y-4">
-              <Card className="border-2 border-dashed border-blue-200 bg-blue-50/50 hover:border-blue-300 transition-colors">
+              <Card className="border-2 border-dashed border-border bg-muted/50/50 hover:border-border transition-colors">
                 <CardHeader className="pb-4">
-                  <CardTitle className="flex items-center gap-2 text-blue-700">
+                  <CardTitle className="flex items-center gap-2 text-primary">
                     <Upload className="w-5 h-5" />
                     Import Audio
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div 
-                    className="border-2 border-dashed border-blue-200/50 rounded-lg p-6 text-center cursor-pointer hover:border-blue-300 transition-colors"
+                    className="border-2 border-dashed border-border/50 rounded-lg p-6 text-center cursor-pointer hover:border-border transition-colors"
                     onClick={() => fileInputRef.current?.click()}
                   >
-                    <FileAudio className="w-8 h-8 mx-auto mb-2 text-blue-500" />
-                    <p className="text-sm font-medium text-blue-700 mb-1">
+                    <FileAudio className="w-8 h-8 mx-auto mb-2 text-primary" />
+                    <p className="text-sm font-medium text-primary mb-1">
                       Drop files here or click to browse
                     </p>
-                    <p className="text-xs text-blue-600/70">
+                    <p className="text-xs text-primary/70">
                       Supports MP3, WAV, FLAC, M4A, OGG
                     </p>
                   </div>
@@ -697,8 +697,8 @@ export default function AudioEditor() {
                           key={track.id}
                           className={`p-3 rounded-lg border cursor-pointer transition-colors ${
                             index === currentTrackIndex 
-                              ? 'bg-blue-50 border-blue-200' 
-                              : 'bg-white border-gray-200 hover:bg-gray-50'
+                              ? 'bg-muted/50 border-border' 
+                              : 'bg-white border-border hover:bg-gray-50'
                           }`}
                           onClick={() => setCurrentTrackIndex(index)}
                         >

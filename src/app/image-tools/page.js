@@ -123,11 +123,11 @@ const imageTools = [
 ]
 
 const categories = [
-  { name: 'Optimization', count: 3, color: 'bg-green-100 text-green-800' },
-  { name: 'Conversion', count: 3, color: 'bg-blue-100 text-blue-800' },
-  { name: 'Editing', count: 4, color: 'bg-purple-100 text-purple-800' },
-  { name: 'Enhancement', count: 1, color: 'bg-yellow-100 text-yellow-800' },
-  { name: 'Batch', count: 1, color: 'bg-red-100 text-red-800' }
+  { name: 'Optimization', count: 3, color: 'bg-muted text-foreground' },
+  { name: 'Conversion', count: 3, color: 'bg-muted text-foreground' },
+  { name: 'Editing', count: 4, color: 'bg-muted text-foreground' },
+  { name: 'Enhancement', count: 1, color: 'bg-muted text-primary' },
+  { name: 'Batch', count: 1, color: 'bg-destructive/20 text-destructive' }
 ]
 
 export default function ImageToolsPage() {

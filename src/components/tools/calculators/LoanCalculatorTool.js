@@ -125,9 +125,9 @@ export default function LoanCalculatorTool() {
                     {result && (
                         <div className="space-y-4">
                             {/* Main Result */}
-                            <div className="p-6 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg text-center">
+                            <div className="p-6 bg-background">
                                 <p className="text-sm text-muted-foreground">Monthly Payment</p>
-                                <p className="text-4xl font-bold text-gray-800">${result.monthlyPayment}</p>
+                                <p className="text-4xl font-bold text-foreground">${result.monthlyPayment}</p>
                             </div>
 
                             {/* Detailed Breakdown */}
@@ -150,7 +150,7 @@ export default function LoanCalculatorTool() {
                                     </div>
                                 </div>
 
-                                <div className="p-4 bg-blue-50 rounded-lg">
+                                <div className="p-4 bg-muted/50 rounded-lg">
                                     <h3 className="font-medium mb-3">Loan Details</h3>
                                     <div className="space-y-2 text-sm">
                                         <div className="flex justify-between">
@@ -182,7 +182,7 @@ export default function LoanCalculatorTool() {
                     )}
 
                     {/* Tips */}
-                    <div className="p-4 bg-yellow-50 rounded-lg">
+                    <div className="p-4 bg-muted/50 rounded-lg">
                         <h3 className="font-medium mb-2">💡 Loan Tips</h3>
                         <ul className="text-sm text-muted-foreground space-y-1">
                             <li>• Shop around with multiple lenders for the best rates</li>

@@ -138,13 +138,13 @@ export default function JWTDecoder() {
                 </div>
 
                 {isValid !== null && (
-                  <div className={`flex items-center gap-2 p-3 rounded-lg ${isValid ? 'bg-green-50 dark:bg-green-950' : 'bg-red-50 dark:bg-red-950'}`}>
+                  <div className={`flex items-center gap-2 p-3 rounded-lg ${isValid ? 'bg-muted/50 dark:bg-green-950' : 'bg-destructive/10 dark:bg-red-950'}`}>
                     {isValid ? (
-                      <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary" />
                     ) : (
-                      <AlertTriangleIcon className="h-5 w-5 text-red-600" />
+                      <AlertTriangleIcon className="h-5 w-5 text-destructive" />
                     )}
-                    <span className={`text-sm font-medium ${isValid ? 'text-green-800 dark:text-green-200' : 'text-red-800 dark:text-red-200'}`}>
+                    <span className={`text-sm font-medium ${isValid ? 'text-foreground dark:text-green-200' : 'text-destructive dark:text-red-200'}`}>
                       {isValid ? 'Valid JWT Format' : 'Invalid JWT Format'}
                     </span>
                   </div>
@@ -233,27 +233,27 @@ export default function JWTDecoder() {
             <CardContent>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Decode JWT header and payload
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Extract signature information
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Validate JWT format
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Copy decoded parts separately
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Sample JWT for testing
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   No server communication
                 </li>
               </ul>

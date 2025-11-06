@@ -108,19 +108,19 @@ export default function AgeCalculatorTool() {
                     {result && (
                         <div className="space-y-6">
                             {/* Main Age Display */}
-                            <div className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg text-center">
+                            <div className="p-6 bg-background">
                                 <p className="text-sm text-muted-foreground mb-2">Your Age Is</p>
                                 <div className="flex justify-center items-center gap-4 text-3xl font-bold">
                                     <div className="text-center">
-                                        <div className="text-blue-600">{result.years}</div>
+                                        <div className="text-primary">{result.years}</div>
                                         <div className="text-xs text-muted-foreground font-normal">Years</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-purple-600">{result.months}</div>
+                                        <div className="text-primary">{result.months}</div>
                                         <div className="text-xs text-muted-foreground font-normal">Months</div>
                                     </div>
                                     <div className="text-center">
-                                        <div className="text-green-600">{result.days}</div>
+                                        <div className="text-primary">{result.days}</div>
                                         <div className="text-xs text-muted-foreground font-normal">Days</div>
                                     </div>
                                 </div>
@@ -128,29 +128,29 @@ export default function AgeCalculatorTool() {
 
                             {/* Detailed Breakdown */}
                             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                                <div className="p-3 bg-blue-50 rounded-lg text-center">
-                                    <p className="text-lg font-bold text-blue-600">{result.totalDays.toLocaleString()}</p>
+                                <div className="p-3 bg-muted/50 rounded-lg text-center">
+                                    <p className="text-lg font-bold text-primary">{result.totalDays.toLocaleString()}</p>
                                     <p className="text-xs text-muted-foreground">Total Days</p>
                                 </div>
-                                <div className="p-3 bg-green-50 rounded-lg text-center">
-                                    <p className="text-lg font-bold text-green-600">{result.totalHours.toLocaleString()}</p>
+                                <div className="p-3 bg-muted/50 rounded-lg text-center">
+                                    <p className="text-lg font-bold text-primary">{result.totalHours.toLocaleString()}</p>
                                     <p className="text-xs text-muted-foreground">Total Hours</p>
                                 </div>
-                                <div className="p-3 bg-purple-50 rounded-lg text-center">
-                                    <p className="text-lg font-bold text-purple-600">{result.totalMinutes.toLocaleString()}</p>
+                                <div className="p-3 bg-muted/50 rounded-lg text-center">
+                                    <p className="text-lg font-bold text-primary">{result.totalMinutes.toLocaleString()}</p>
                                     <p className="text-xs text-muted-foreground">Total Minutes</p>
                                 </div>
-                                <div className="p-3 bg-orange-50 rounded-lg text-center">
-                                    <p className="text-lg font-bold text-orange-600">{result.totalSeconds.toLocaleString()}</p>
+                                <div className="p-3 bg-muted/50 rounded-lg text-center">
+                                    <p className="text-lg font-bold text-primary">{result.totalSeconds.toLocaleString()}</p>
                                     <p className="text-xs text-muted-foreground">Total Seconds</p>
                                 </div>
                             </div>
 
                             {/* Next Birthday */}
-                            <div className="p-4 bg-yellow-50 rounded-lg">
+                            <div className="p-4 bg-muted/50 rounded-lg">
                                 <h3 className="font-medium mb-2 text-center">🎂 Next Birthday</h3>
                                 <div className="text-center">
-                                    <p className="text-lg font-semibold text-yellow-600">
+                                    <p className="text-lg font-semibold text-primary">
                                         {result.daysToNextBirthday} days to go
                                     </p>
                                     <p className="text-sm text-muted-foreground">
@@ -195,7 +195,7 @@ export default function AgeCalculatorTool() {
                     )}
 
                     {/* Quick Examples */}
-                    <div className="p-4 bg-blue-50 rounded-lg">
+                    <div className="p-4 bg-muted/50 rounded-lg">
                         <h3 className="font-medium mb-2">💡 Quick Tips</h3>
                         <ul className="text-sm text-muted-foreground space-y-1">
                             <li>• Use this calculator for official documents and forms</li>

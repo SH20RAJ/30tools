@@ -105,7 +105,7 @@ export default function InstagramVideoDownloaderPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Instagram Video Downloader
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -126,22 +126,22 @@ export default function InstagramVideoDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Download Instagram Videos & Reels</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Copy Instagram URL</h3>
                                     <p className="text-sm text-muted-foreground">Copy the Instagram video, reel, or story link from the Instagram app or website</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Paste & Analyze</h3>
                                     <p className="text-sm text-muted-foreground">Paste the Instagram URL and let our tool analyze the content automatically</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download Instantly</h3>
                                     <p className="text-sm text-muted-foreground">Choose your preferred quality and download the Instagram content to your device</p>
@@ -153,17 +153,17 @@ export default function InstagramVideoDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">Features of Our Instagram Video Downloader</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-pink-600">📱 All Instagram Content Types</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📱 All Instagram Content Types</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download Instagram videos, reels, stories, IGTV, and highlights. Our downloader supports all types of Instagram content including carousel posts with multiple videos.</p>
 
-                                    <h3 className="font-medium mb-2 text-pink-600">🎥 High Quality Downloads</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎥 High Quality Downloads</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Save Instagram content in original quality up to 1080p HD. Maintain the same video quality as posted on Instagram for the best viewing experience.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-pink-600">⚡ Lightning Fast Speed</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Lightning Fast Speed</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our optimized servers process Instagram content in seconds. Download Instagram reels and videos instantly without any waiting time or speed limitations.</p>
 
-                                    <h3 className="font-medium mb-2 text-pink-600">🔐 Safe & Anonymous</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔐 Safe & Anonymous</h3>
                                     <p className="text-sm text-muted-foreground mb-4">No Instagram login required. We don't access your Instagram account or store any personal information. All downloads are processed anonymously and securely.</p>
                                 </div>
                             </div>

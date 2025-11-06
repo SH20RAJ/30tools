@@ -128,10 +128,10 @@ export default function MailtoLinkGeneratorTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Mailto Link Generator
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Create clickable email links with custom subject, body, CC, and BCC fields for your website or application.
           </p>
         </div>
@@ -172,7 +172,7 @@ export default function MailtoLinkGeneratorTool() {
                   value={formData.cc}
                   onChange={(e) => handleInputChange('cc', e.target.value)}
                 />
-                <p className="text-sm text-gray-500">Optional: Add CC recipients</p>
+                <p className="text-sm text-muted-foreground">Optional: Add CC recipients</p>
               </div>
               <div className="space-y-2">
                 <Label htmlFor="bcc">BCC (Blind Carbon Copy)</Label>
@@ -183,7 +183,7 @@ export default function MailtoLinkGeneratorTool() {
                   value={formData.bcc}
                   onChange={(e) => handleInputChange('bcc', e.target.value)}
                 />
-                <p className="text-sm text-gray-500">Optional: Add BCC recipients</p>
+                <p className="text-sm text-muted-foreground">Optional: Add BCC recipients</p>
               </div>
             </div>
 
@@ -196,7 +196,7 @@ export default function MailtoLinkGeneratorTool() {
                 value={formData.subject}
                 onChange={(e) => handleInputChange('subject', e.target.value)}
               />
-              <p className="text-sm text-gray-500">Optional: Pre-fill the email subject</p>
+              <p className="text-sm text-muted-foreground">Optional: Pre-fill the email subject</p>
             </div>
 
             {/* Body */}
@@ -209,7 +209,7 @@ export default function MailtoLinkGeneratorTool() {
                 onChange={(e) => handleInputChange('body', e.target.value)}
                 rows={6}
               />
-              <p className="text-sm text-gray-500">Optional: Pre-fill the email content</p>
+              <p className="text-sm text-muted-foreground">Optional: Pre-fill the email content</p>
             </div>
 
             {/* Action Buttons */}
@@ -296,7 +296,7 @@ export default function MailtoLinkGeneratorTool() {
                 <h3 className="font-semibold mb-2">Preview:</h3>
                 <a 
                   href={generatedLink}
-                  className="text-blue-600 hover:text-blue-800 underline"
+                  className="text-primary hover:text-foreground underline"
                 >
                   Send Email to {formData.email}
                 </a>
@@ -359,9 +359,9 @@ export default function MailtoLinkGeneratorTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Mail className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <Mail className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Email Integration</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Create seamless email integration for websites
                 </p>
               </div>
@@ -371,9 +371,9 @@ export default function MailtoLinkGeneratorTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Copy className="h-8 w-8 text-green-600 mx-auto mb-3" />
+                <Copy className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Copy & Paste</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Easily copy links and HTML code
                 </p>
               </div>
@@ -383,9 +383,9 @@ export default function MailtoLinkGeneratorTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <ExternalLink className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                <ExternalLink className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Test & Preview</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Test your email links before using them
                 </p>
               </div>

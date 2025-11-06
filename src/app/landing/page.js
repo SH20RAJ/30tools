@@ -238,10 +238,10 @@ export default function LandingPage() {
 
               {/* Main heading with enhanced animations */}
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
-                <span className="block bg-gradient-to-r from-gray-900 via-blue-900 to-gray-900 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent animate-fade-in-up">
+                <span className="block bg-muted/20 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent animate-fade-in-up">
                   Your Ultimate
                 </span>
-                <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in-up delay-200 bg-300% animate-gradient">
+                <span className="block bg-muted/20 bg-clip-text text-transparent animate-fade-in-up delay-200 bg-300% animate-gradient">
                   Online Toolkit
                 </span>
               </h1>
@@ -255,17 +255,17 @@ export default function LandingPage() {
 
               {/* Feature highlights */}
               <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up delay-600">
-                <div className="flex items-center gap-2 px-4 py-2 bg-green-50 dark:bg-green-900/20 rounded-full border border-green-200 dark:border-green-800">
-                  <ShieldCheckIcon className="h-4 w-4 text-green-600" />
-                  <span className="text-sm font-medium text-green-700 dark:text-green-300">100% Private</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
+                  <ShieldCheckIcon className="h-4 w-4 text-primary" />
+                  <span className="text-sm font-medium text-primary dark:text-green-300">100% Private</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full border border-blue-200 dark:border-blue-800">
-                  <ZapIcon className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Lightning Fast</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
+                  <ZapIcon className="h-4 w-4 text-primary" />
+                  <span className="text-sm font-medium text-primary dark:text-blue-300">Lightning Fast</span>
                 </div>
-                <div className="flex items-center gap-2 px-4 py-2 bg-purple-50 dark:bg-purple-900/20 rounded-full border border-purple-200 dark:border-purple-800">
-                  <StarIcon className="h-4 w-4 text-purple-600" />
-                  <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Professional Quality</span>
+                <div className="flex items-center gap-2 px-4 py-2 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
+                  <StarIcon className="h-4 w-4 text-primary" />
+                  <span className="text-sm font-medium text-primary dark:text-purple-300">Professional Quality</span>
                 </div>
               </div>
 
@@ -289,7 +289,7 @@ export default function LandingPage() {
                 <Link href="/search">
                   <Button
                     size="lg"
-                    className="min-w-[220px] h-14 text-lg font-semibold bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 group"
+                    className="min-w-[220px] h-14 text-lg font-semibold bg-background/25 group"
                   >
                     <SearchIcon className="mr-3 h-5 w-5 group-hover:animate-pulse" />
                     Explore All Tools
@@ -319,7 +319,7 @@ export default function LandingPage() {
                   <span>50M+ files processed</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <StarIcon className="h-4 w-4 fill-current text-yellow-500" />
+                  <StarIcon className="h-4 w-4 fill-current text-primary" />
                   <span>4.9/5 user rating</span>
                 </div>
               </div>
@@ -474,10 +474,10 @@ export default function LandingPage() {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               <div className="flex-1 text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
-                  <Badge className="bg-white text-purple-700 border-0 hover:bg-white/90 font-semibold shadow-lg">
+                  <Badge className="bg-white text-primary border-0 hover:bg-white/90 font-semibold shadow-lg">
                     🎨 New Premium Resource
                   </Badge>
-                  <Badge className="bg-amber-500 text-foreground border-0 font-semibold shadow-lg">
+                  <Badge className="bg-muted/500 text-foreground border-0 font-semibold shadow-lg">
                     <StarIcon className="h-3 w-3 mr-1" />
                     Featured
                   </Badge>
@@ -493,16 +493,16 @@ export default function LandingPage() {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
-                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                  <Badge variant="secondary" className="bg-white text-primary border-0 font-medium shadow-md">
                     🎨 180+ Inspiration Tools
                   </Badge>
-                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                  <Badge variant="secondary" className="bg-white text-primary border-0 font-medium shadow-md">
                     ✨ 92+ Icon Libraries
                   </Badge>
-                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                  <Badge variant="secondary" className="bg-white text-primary border-0 font-medium shadow-md">
                     🖼️ 123+ Illustration Resources
                   </Badge>
-                  <Badge variant="secondary" className="bg-white text-purple-700 border-0 font-medium shadow-md">
+                  <Badge variant="secondary" className="bg-white text-primary border-0 font-medium shadow-md">
                     📚 110+ Learning Resources
                   </Badge>
                 </div>
@@ -518,7 +518,7 @@ export default function LandingPage() {
                   >
                     <Button
                       size="lg"
-                      className="bg-white text-purple-600 hover:bg-white/90 shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl min-w-[200px] font-semibold"
+                      className="bg-white text-primary hover:bg-white/90 shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl min-w-[200px] font-semibold"
                     >
                       <PaletteIcon className="mr-2 h-5 w-5" />
                       Explore Design Directory
@@ -551,13 +551,13 @@ export default function LandingPage() {
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
               <div className="flex items-center justify-center gap-2 mb-4">
-                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full">
+                <div className="flex items-center justify-center w-8 h-8 bg-background">
                   <StarIcon className="h-4 w-4 text-foreground" />
                 </div>
                 <h2 className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   Premium Tools
                 </h2>
-                <div className="flex items-center justify-center w-8 h-8 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full">
+                <div className="flex items-center justify-center w-8 h-8 bg-background">
                   <StarIcon className="h-4 w-4 text-foreground" />
                 </div>
               </div>
@@ -573,7 +573,7 @@ export default function LandingPage() {
                     <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20  ">
                       <CardHeader className="relative">
                         <div className="absolute top-3 right-3">
-                          <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-foreground border-0">
+                          <Badge className="bg-background">
                             <StarIcon className="h-3 w-3 mr-1" />
                             Premium
                           </Badge>
@@ -603,7 +603,7 @@ export default function LandingPage() {
                     <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20 bg-gradient-to-br from-white to-primary/5">
                       <CardHeader className="relative">
                         <div className="absolute top-3 right-3">
-                          <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-foreground border-0">
+                          <Badge className="bg-background">
                             <StarIcon className="h-3 w-3 mr-1" />
                             Premium
                           </Badge>
@@ -644,10 +644,10 @@ export default function LandingPage() {
         </section>
 
         {/* More Developer & Utility Tools Section */}
-        <section className="py-16 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20">
+        <section className="py-16 bg-background/20 dark:to-indigo-950/20">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-background">
                 Explore Our Specialized Platforms
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
@@ -664,13 +664,13 @@ export default function LandingPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {/* Coders */}
               <a href="https://coders.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
-                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-500">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-border">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
                       <span className="text-4xl">🚀</span>
                       <Badge variant="outline">Developer Tools</Badge>
                     </div>
-                    <CardTitle className="group-hover:text-blue-600 transition-colors">
+                    <CardTitle className="group-hover:text-primary transition-colors">
                       Coders
                     </CardTitle>
                     <CardDescription>
@@ -687,13 +687,13 @@ export default function LandingPage() {
 
               {/* IT-Tools */}
               <a href="https://it-tools.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
-                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-500">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-border">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
                       <span className="text-4xl">🛠️</span>
                       <Badge variant="outline">IT Tools</Badge>
                     </div>
-                    <CardTitle className="group-hover:text-blue-600 transition-colors">
+                    <CardTitle className="group-hover:text-primary transition-colors">
                       IT-Tools
                     </CardTitle>
                     <CardDescription>
@@ -710,13 +710,13 @@ export default function LandingPage() {
 
               {/* AI Agents */}
               <a href="https://ai-agents.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
-                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-500">
+                <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-border">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
                       <span className="text-4xl">🤖</span>
                       <Badge variant="outline">AI Tools</Badge>
                     </div>
-                    <CardTitle className="group-hover:text-blue-600 transition-colors">
+                    <CardTitle className="group-hover:text-primary transition-colors">
                       AI Agents Directory
                     </CardTitle>
                     <CardDescription>
@@ -734,7 +734,7 @@ export default function LandingPage() {
 
             <div className="text-center">
               <Link href="/more-tools">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg">
+                <Button size="lg" className="bg-background">
                   <ZapIcon className="mr-2 h-5 w-5" />
                   View All 9 Platforms
                   <ArrowRightIcon className="ml-2 h-5 w-5" />

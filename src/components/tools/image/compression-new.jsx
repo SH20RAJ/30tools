@@ -332,7 +332,7 @@ export default function ImageCompressionTool() {
                                         <div className="flex items-center space-x-2">
                                             {fileItem.status === 'completed' && (
                                                 <>
-                                                    <CheckIcon className="h-4 w-4 text-green-500" />
+                                                    <CheckIcon className="h-4 w-4 text-primary" />
                                                     <Button onClick={() => downloadFile(fileItem)} size="sm">
                                                         <DownloadIcon className="h-4 w-4 mr-2" />
                                                         Download

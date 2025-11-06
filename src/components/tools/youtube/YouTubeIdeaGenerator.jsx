@@ -140,7 +140,7 @@ export default function YouTubeIdeaGenerator() {
       <Card className="card-cute">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Lightbulb className="w-5 h-5 text-red-500" />
+            <Lightbulb className="w-5 h-5 text-destructive" />
             YouTube Idea Generator
           </CardTitle>
           <CardDescription>
@@ -267,7 +267,7 @@ export default function YouTubeIdeaGenerator() {
             <Button
               onClick={handleGenerateIdeas}
               disabled={isGenerating || !niche.trim()}
-              className="flex-1 btn-cute bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+              className="flex-1 btn-cute bg-background"
             >
               {isGenerating ? (
                 <>
@@ -302,7 +302,7 @@ export default function YouTubeIdeaGenerator() {
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
                 <span className="flex items-center gap-2">
-                  <Youtube className="w-5 h-5 text-red-500" />
+                  <Youtube className="w-5 h-5 text-destructive" />
                   Generated Video Ideas ({ideas.length})
                 </span>
                 <Badge variant="secondary" className="flex items-center gap-1">
@@ -372,7 +372,7 @@ export default function YouTubeIdeaGenerator() {
                     className="shrink-0 opacity-60 hover:opacity-100 transition-opacity"
                   >
                     {copiedIndex === index ? (
-                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <CheckCircle className="w-4 h-4 text-primary" />
                     ) : (
                       <Copy className="w-4 h-4" />
                     )}

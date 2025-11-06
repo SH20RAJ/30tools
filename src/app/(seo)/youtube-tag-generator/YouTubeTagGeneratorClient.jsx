@@ -63,8 +63,8 @@ export default function YouTubeTagGeneratorClient() {
       {/* Header */}
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
-          <div className="p-3 bg-red-100 dark:bg-red-900/20 rounded-lg mr-3">
-            <PlayIcon className="h-8 w-8 text-red-600 dark:text-red-400" />
+          <div className="p-3 bg-destructive/20 dark:bg-primary/20 rounded-lg mr-3">
+            <PlayIcon className="h-8 w-8 text-destructive dark:text-destructive" />
           </div>
           <h1 className="text-3xl font-bold">YouTube Tag Generator</h1>
         </div>

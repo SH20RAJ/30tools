@@ -113,14 +113,14 @@ export default function PasswordBreachCheckerTool() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-orange-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-xl">
               <Shield className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-slate-800 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Password Breach Checker
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Check if your password has been compromised in data breaches.
             Secure password checking using k-anonymity for maximum privacy.
           </p>
@@ -152,13 +152,13 @@ export default function PasswordBreachCheckerTool() {
                       placeholder="Enter your password"
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
-                      className="border-slate-200 focus:border-red-500 focus:ring-red-500 pr-10"
+                      className="border-border focus:border-border focus:ring-primary pr-10"
                       onKeyPress={(e) => e.key === 'Enter' && handleCheck()}
                     />
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+                      className="absolute right-3 top-1/2 transform -translate-y-1/2 text-muted-foreground hover:text-foreground"
                     >
                       {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                     </button>
@@ -180,7 +180,7 @@ export default function PasswordBreachCheckerTool() {
                 <Button
                   onClick={handleCheck}
                   disabled={loading}
-                  className="w-full bg-red-600 hover:bg-red-700 text-white"
+                  className="w-full bg-destructive hover:bg-destructive/90 text-white"
                   size="lg"
                 >
                   {loading ? (
@@ -201,23 +201,23 @@ export default function PasswordBreachCheckerTool() {
                   <div className="space-y-4">
                     {/* Password Results */}
                     <div className={`flex items-center gap-3 p-4 rounded-lg border-2 ${results.isCompromised
-                        ? 'bg-red-50 border-red-200'
-                        : 'bg-green-50 border-green-200'
+                        ? 'bg-destructive/10 border-destructive/50'
+                        : 'bg-muted/50 border-border'
                       }`}>
                       {results.isCompromised ? (
-                        <ShieldAlert className="w-8 h-8 text-red-600" />
+                        <ShieldAlert className="w-8 h-8 text-destructive" />
                       ) : (
-                        <ShieldCheck className="w-8 h-8 text-green-600" />
+                        <ShieldCheck className="w-8 h-8 text-primary" />
                       )}
                       <div>
-                        <h3 className={`font-semibold ${results.isCompromised ? 'text-red-800' : 'text-green-800'
+                        <h3 className={`font-semibold ${results.isCompromised ? 'text-destructive' : 'text-foreground'
                           }`}>
                           {results.isCompromised
                             ? 'Password Compromised!'
                             : 'Password Looks Safe'
                           }
                         </h3>
-                        <p className={`text-sm ${results.isCompromised ? 'text-red-600' : 'text-green-600'
+                        <p className={`text-sm ${results.isCompromised ? 'text-destructive' : 'text-primary'
                           }`}>
                           {results.isCompromised
                             ? `Found in ${formatNumber(results.count)} breach${results.count > 1 ? 'es' : ''}`
@@ -238,18 +238,18 @@ export default function PasswordBreachCheckerTool() {
                     )}
 
                     {/* Email Check Suggestion */}
-                    <Card className="bg-gradient-to-r from-blue-50 to-cyan-50 border-blue-200">
+                    <Card className="bg-background">
                       <CardContent className="p-4">
                         <div className="flex items-center gap-3">
-                          <Mail className="w-6 h-6 text-blue-600" />
+                          <Mail className="w-6 h-6 text-primary" />
                           <div className="flex-1">
-                            <h4 className="font-semibold text-blue-800">Check Your Email Too</h4>
-                            <p className="text-sm text-blue-700">
+                            <h4 className="font-semibold text-foreground">Check Your Email Too</h4>
+                            <p className="text-sm text-primary">
                               Also check if your email has been compromised in data breaches.
                             </p>
                           </div>
                           <Link href="/email-breach-checker">
-                            <Button variant="outline" size="sm" className="border-blue-300 text-blue-700 hover:bg-blue-100">
+                            <Button variant="outline" size="sm" className="border-border text-primary hover:bg-muted">
                               Check Email
                               <ArrowRight className="w-4 h-4 ml-1" />
                             </Button>
@@ -292,26 +292,26 @@ export default function PasswordBreachCheckerTool() {
 
             <Card className="bg-white shadow-lg border-0 rounded-xl">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-slate-800">
+                <CardTitle className="flex items-center gap-2 text-foreground">
                   <Shield className="w-5 h-5" />
                   Privacy & Security
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-sm">
                 <div className="flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 text-green-500 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-primary mt-0.5" />
                   <span>Passwords are hashed locally</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 text-green-500 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-primary mt-0.5" />
                   <span>No data stored on our servers</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 text-green-500 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-primary mt-0.5" />
                   <span>Uses k-anonymity for security</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 text-green-500 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-primary mt-0.5" />
                   <span>Powered by HaveIBeenPwned</span>
                 </div>
               </CardContent>
@@ -319,7 +319,7 @@ export default function PasswordBreachCheckerTool() {
 
             <Card className="bg-white shadow-lg border-0 rounded-xl">
               <CardHeader>
-                <CardTitle className="text-slate-800">Security Tips</CardTitle>
+                <CardTitle className="text-foreground">Security Tips</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <p>• Use unique passwords for each account</p>

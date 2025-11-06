@@ -160,34 +160,34 @@ const toolsCollection = [
 
 const colorClasses = {
   blue: {
-    border: "border-blue-200 hover:border-blue-400",
-    bg: "bg-blue-50 dark:bg-blue-950/20",
-    text: "text-blue-600 dark:text-blue-400",
-    badge: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300"
+    border: "border-border hover:border-border",
+    bg: "bg-muted/50 dark:bg-blue-950/20",
+    text: "text-primary dark:text-primary",
+    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-blue-300"
   },
   green: {
-    border: "border-green-200 hover:border-green-400",
-    bg: "bg-green-50 dark:bg-green-950/20",
-    text: "text-green-600 dark:text-green-400",
-    badge: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300"
+    border: "border-border hover:border-border",
+    bg: "bg-muted/50 dark:bg-green-950/20",
+    text: "text-primary dark:text-primary",
+    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-green-300"
   },
   purple: {
-    border: "border-purple-200 hover:border-purple-400",
-    bg: "bg-purple-50 dark:bg-purple-950/20",
-    text: "text-purple-600 dark:text-purple-400",
-    badge: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300"
+    border: "border-border hover:border-border",
+    bg: "bg-muted/50 dark:bg-purple-950/20",
+    text: "text-primary dark:text-primary",
+    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-purple-300"
   },
   orange: {
-    border: "border-orange-200 hover:border-orange-400",
-    bg: "bg-orange-50 dark:bg-orange-950/20",
-    text: "text-orange-600 dark:text-orange-400",
-    badge: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300"
+    border: "border-border hover:border-border",
+    bg: "bg-muted/50 dark:bg-orange-950/20",
+    text: "text-primary dark:text-primary",
+    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-orange-300"
   },
   red: {
-    border: "border-red-200 hover:border-red-400",
-    bg: "bg-red-50 dark:bg-red-950/20",
-    text: "text-red-600 dark:text-red-400",
-    badge: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300"
+    border: "border-destructive/50 hover:border-border",
+    bg: "bg-destructive/10 dark:bg-red-950/20",
+    text: "text-destructive dark:text-destructive",
+    badge: "bg-destructive/20 text-destructive dark:bg-primary/30 dark:text-red-300"
   }
 };
 

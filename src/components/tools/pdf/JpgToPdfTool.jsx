@@ -314,7 +314,7 @@ export default function JpgToPdfTool() {
                             size="sm"
                             variant="outline"
                             onClick={() => removeImage(img.id)}
-                            className="h-6 w-6 p-0 text-red-500 hover:text-red-700"
+                            className="h-6 w-6 p-0 text-destructive hover:text-destructive"
                           >
                             <X className="h-3 w-3" />
                           </Button>
@@ -481,7 +481,7 @@ export default function JpgToPdfTool() {
         <Card className="mb-6">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-primary" />
               PDF Created Successfully
             </CardTitle>
             <CardDescription>
@@ -491,7 +491,7 @@ export default function JpgToPdfTool() {
           <CardContent>
             <div className="flex items-center justify-between p-4 bg-muted rounded-lg mb-4">
               <div className="flex items-center gap-3">
-                <FileText className="h-6 w-6 text-green-500" />
+                <FileText className="h-6 w-6 text-primary" />
                 <div>
                   <p className="font-medium">{pdfFile.name}</p>
                   <p className="text-sm text-muted-foreground">

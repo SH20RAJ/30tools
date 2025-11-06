@@ -78,7 +78,7 @@ export default function UnstoryOpenmindCTA() {
   return (
     <div className="my-12 max-w-6xl mx-auto px-4">
       <Card 
-        className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30 border-0 shadow-2xl"
+        className="relative overflow-hidden bg-muted/20 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30 border-0 shadow-2xl"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
@@ -88,10 +88,10 @@ export default function UnstoryOpenmindCTA() {
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-200/20 to-purple-200/20 dark:from-pink-700/10 dark:to-purple-700/10 rounded-full blur-3xl" />
           {/* Floating Elements */}
           <div className={`absolute transition-all duration-1000 ${isHovered ? 'translate-y-2 scale-110' : 'translate-y-0'}`}>
-            <Heart className="absolute top-20 left-20 w-6 h-6 text-pink-300/40 dark:text-pink-400/30" />
-            <Star className="absolute top-32 right-32 w-4 h-4 text-yellow-300/40 dark:text-yellow-400/30" />
-            <Sparkles className="absolute bottom-24 left-32 w-5 h-5 text-purple-300/40 dark:text-purple-400/30" />
-            <Coffee className="absolute bottom-32 right-24 w-5 h-5 text-orange-300/40 dark:text-orange-400/30" />
+            <Heart className="absolute top-20 left-20 w-6 h-6 text-pink-300/40 dark:text-primary/30" />
+            <Star className="absolute top-32 right-32 w-4 h-4 text-yellow-300/40 dark:text-primary/30" />
+            <Sparkles className="absolute bottom-24 left-32 w-5 h-5 text-purple-300/40 dark:text-primary/30" />
+            <Coffee className="absolute bottom-32 right-24 w-5 h-5 text-orange-300/40 dark:text-primary/30" />
           </div>
         </div>
 
@@ -99,20 +99,20 @@ export default function UnstoryOpenmindCTA() {
           {/* Header Section */}
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg transform hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-background">
                 <Heart className="w-8 h-8 text-white" />
               </div>
             </div>
             
             <Badge 
               variant="secondary" 
-              className="mb-4 px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/50 dark:to-purple-900/50 text-blue-700 dark:text-blue-300 border-0"
+              className="mb-4 px-4 py-2 bg-background/50 dark:to-purple-900/50 text-primary dark:text-blue-300 border-0"
             >
               <Sparkles className="w-4 h-4 mr-2" />
               Find Your Calm & Share Your Story
             </Badge>
             
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-muted/20 bg-clip-text text-transparent">
               Join Unstory Openmind
             </h2>
             
@@ -131,7 +131,7 @@ export default function UnstoryOpenmindCTA() {
                   key={index}
                   className="text-center p-6 rounded-2xl bg-white/50 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 hover:bg-white/70 dark:hover:bg-gray-800/50 transition-all duration-300 group"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 bg-background:scale-110 transition-transform duration-300">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
@@ -147,7 +147,7 @@ export default function UnstoryOpenmindCTA() {
               const IconComponent = stat.icon;
               return (
                 <div key={index} className="text-center p-4 rounded-xl bg-white/30 dark:bg-gray-800/20 backdrop-blur-sm">
-                  <IconComponent className="w-5 h-5 text-blue-600 dark:text-blue-400 mx-auto mb-1" />
+                  <IconComponent className="w-5 h-5 text-primary dark:text-primary mx-auto mb-1" />
                   <div className="text-lg font-bold text-foreground">{stat.value}</div>
                   <div className="text-xs text-muted-foreground">{stat.label}</div>
                 </div>
@@ -158,7 +158,7 @@ export default function UnstoryOpenmindCTA() {
           {/* Testimonial Carousel */}
           <div className="mb-8 p-6 rounded-2xl bg-white/40 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/20">
             <div className="text-center min-h-[100px] flex flex-col justify-center">
-              <MessageCircle className="w-8 h-8 text-blue-500 mx-auto mb-3" />
+              <MessageCircle className="w-8 h-8 text-primary mx-auto mb-3" />
               <blockquote className="text-lg italic text-foreground mb-3 transition-all duration-500">
                 "{testimonials[currentTestimonial].text}"
               </blockquote>
@@ -175,7 +175,7 @@ export default function UnstoryOpenmindCTA() {
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === currentTestimonial 
-                      ? 'bg-blue-500 w-6' 
+                      ? 'bg-muted/500 w-6' 
                       : 'bg-gray-300 dark:bg-gray-600'
                   }`}
                 />
@@ -194,7 +194,7 @@ export default function UnstoryOpenmindCTA() {
               <Button
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 min-w-[200px] group"
+                className="bg-background[200px] group"
               >
                 <a 
                   href="https://unstory.live" 
@@ -211,7 +211,7 @@ export default function UnstoryOpenmindCTA() {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-2 border-purple-200 dark:border-purple-700 hover:bg-purple-50 dark:hover:bg-purple-900/20 min-w-[200px] group"
+                className="border-2 border-border dark:border-border hover:bg-muted/50 dark:hover:bg-primary/20 min-w-[200px] group"
               >
                 <PenTool className="w-5 h-5 mr-2" />
                 Start Writing
@@ -227,15 +227,15 @@ export default function UnstoryOpenmindCTA() {
           {/* Trust Indicators */}
           <div className="flex justify-center items-center mt-6 space-x-6 text-xs text-muted-foreground">
             <div className="flex items-center">
-              <Shield className="w-4 h-4 mr-1 text-green-500" />
+              <Shield className="w-4 h-4 mr-1 text-primary" />
               Safe & Secure
             </div>
             <div className="flex items-center">
-              <Users className="w-4 h-4 mr-1 text-blue-500" />
+              <Users className="w-4 h-4 mr-1 text-primary" />
               Active Community
             </div>
             <div className="flex items-center">
-              <Heart className="w-4 h-4 mr-1 text-pink-500" />
+              <Heart className="w-4 h-4 mr-1 text-primary" />
               Judgment-Free
             </div>
           </div>

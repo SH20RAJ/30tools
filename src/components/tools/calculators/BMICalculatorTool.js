@@ -46,25 +46,25 @@ export default function BMICalculatorTool() {
         if (bmi < 18.5) {
             return {
                 name: 'Underweight',
-                color: 'text-blue-600',
+                color: 'text-primary',
                 description: 'Below normal weight range'
             };
         } else if (bmi < 25) {
             return {
                 name: 'Normal weight',
-                color: 'text-green-600',
+                color: 'text-primary',
                 description: 'Healthy weight range'
             };
         } else if (bmi < 30) {
             return {
                 name: 'Overweight',
-                color: 'text-yellow-600',
+                color: 'text-primary',
                 description: 'Above normal weight range'
             };
         } else {
             return {
                 name: 'Obese',
-                color: 'text-red-600',
+                color: 'text-destructive',
                 description: 'Significantly above normal weight'
             };
         }
@@ -171,10 +171,10 @@ export default function BMICalculatorTool() {
                     {/* Results */}
                     {result && (
                         <div className="space-y-4">
-                            <div className="p-6 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg">
+                            <div className="p-6 bg-background">
                                 <div className="text-center">
                                     <p className="text-sm text-muted-foreground">Your BMI is</p>
-                                    <p className="text-4xl font-bold text-gray-800">{result.bmi}</p>
+                                    <p className="text-4xl font-bold text-foreground">{result.bmi}</p>
                                     <p className={`text-lg font-semibold ${result.categoryColor}`}>
                                         {result.category}
                                     </p>
@@ -199,31 +199,31 @@ export default function BMICalculatorTool() {
                                 <h3 className="font-medium mb-3">BMI Categories</h3>
                                 <div className="space-y-2 text-sm">
                                     <div className="flex justify-between">
-                                        <span className="text-blue-600">Underweight</span>
+                                        <span className="text-primary">Underweight</span>
                                         <span>Below 18.5</span>
                                     </div>
                                     <div className="flex justify-between">
-                                        <span className="text-green-600">Normal weight</span>
+                                        <span className="text-primary">Normal weight</span>
                                         <span>18.5 - 24.9</span>
                                     </div>
                                     <div className="flex justify-between">
-                                        <span className="text-yellow-600">Overweight</span>
+                                        <span className="text-primary">Overweight</span>
                                         <span>25.0 - 29.9</span>
                                     </div>
                                     <div className="flex justify-between">
-                                        <span className="text-red-600">Obese</span>
+                                        <span className="text-destructive">Obese</span>
                                         <span>30.0 and above</span>
                                     </div>
                                 </div>
                             </div>
 
                             {/* Ideal Weight Range */}
-                            <div className="p-4 bg-green-50 rounded-lg">
+                            <div className="p-4 bg-muted/50 rounded-lg">
                                 <h3 className="font-medium mb-2">Ideal Weight Range</h3>
                                 <p className="text-sm text-muted-foreground">
                                     For your height, a healthy weight range is:
                                 </p>
-                                <p className="text-lg font-semibold text-green-600">
+                                <p className="text-lg font-semibold text-primary">
                                     {result.idealWeight}
                                 </p>
                             </div>
@@ -231,7 +231,7 @@ export default function BMICalculatorTool() {
                     )}
 
                     {/* Disclaimer */}
-                    <div className="p-4 bg-yellow-50 rounded-lg">
+                    <div className="p-4 bg-muted/50 rounded-lg">
                         <p className="text-xs text-muted-foreground">
                             <strong>Disclaimer:</strong> BMI is a screening tool and not a diagnostic tool.
                             It doesn't account for muscle mass, bone density, or overall body composition.

@@ -129,7 +129,7 @@ export default function PrivacyPolicyPage() {
 
           <section>
             <h2 className="text-2xl font-semibold mb-4">3. File Processing Privacy</h2>
-            <p className="mb-4 font-semibold text-green-700">
+            <p className="mb-4 font-semibold text-primary">
               🔒 Your files NEVER leave your device. All image compression, PDF processing, and file conversions happen locally in your browser using JavaScript and WebAssembly.
             </p>
             <ul className="list-disc pl-6 mb-4">

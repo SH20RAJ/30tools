@@ -83,7 +83,7 @@ export default function MP4ToMP3Converter() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {/* File Upload */}
-                    <div className="border-2 border-dashed border-blue-300 rounded-lg p-6 text-center">
+                    <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
                         <input
                             type="file"
                             accept=".mp4,video/mp4"
@@ -92,7 +92,7 @@ export default function MP4ToMP3Converter() {
                             id="mp4-upload"
                         />
                         <label htmlFor="mp4-upload" className="cursor-pointer">
-                            <FileVideo className="h-12 w-12 mx-auto mb-4 text-blue-400" />
+                            <FileVideo className="h-12 w-12 mx-auto mb-4 text-primary" />
                             <p className="text-lg font-medium mb-2">
                                 {file ? file.name : 'Choose MP4 File'}
                             </p>
@@ -108,14 +108,14 @@ export default function MP4ToMP3Converter() {
                             <h4 className="text-sm font-medium">Select MP3 Quality:</h4>
                             <div className="grid grid-cols-1 gap-2">
                                 {qualityOptions.map((option) => (
-                                    <label key={option.value} className="flex items-center space-x-3 p-3 border rounded cursor-pointer hover:bg-blue-50">
+                                    <label key={option.value} className="flex items-center space-x-3 p-3 border rounded cursor-pointer hover:bg-muted/50">
                                         <input
                                             type="radio"
                                             name="quality"
                                             value={option.value}
                                             checked={selectedQuality === option.value}
                                             onChange={(e) => setSelectedQuality(e.target.value)}
-                                            className="text-blue-600"
+                                            className="text-primary"
                                         />
                                         <div className="flex-1">
                                             <div className="font-medium text-sm">{option.label}</div>
@@ -132,7 +132,7 @@ export default function MP4ToMP3Converter() {
                         <Button
                             onClick={handleConvert}
                             disabled={isLoading}
-                            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+                            className="w-full bg-background"
                         >
                             {isLoading ? (
                                 <>
@@ -149,7 +149,7 @@ export default function MP4ToMP3Converter() {
                     )}
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -157,7 +157,7 @@ export default function MP4ToMP3Converter() {
 
                     {conversionData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">MP4 converted to MP3 successfully!</span>
                             </div>
@@ -165,8 +165,8 @@ export default function MP4ToMP3Converter() {
                             <Card>
                                 <CardContent className="p-4">
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center">
-                                            <Music className="h-8 w-8 text-blue-600" />
+                                        <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
+                                            <Music className="h-8 w-8 text-primary" />
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="font-medium text-sm mb-1">MP3 Audio File</h3>
@@ -176,9 +176,9 @@ export default function MP4ToMP3Converter() {
                                         </div>
                                     </div>
 
-                                    <div className="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                                    <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
                                         <div className="flex items-center gap-2">
-                                            <Music className="h-4 w-4 text-blue-600" />
+                                            <Music className="h-4 w-4 text-primary" />
                                             <div>
                                                 <p className="text-sm font-medium">High Quality MP3</p>
                                                 <p className="text-xs text-muted-foreground">Size: {conversionData.outputSize}</p>
@@ -186,7 +186,7 @@ export default function MP4ToMP3Converter() {
                                         </div>
                                         <Button
                                             onClick={downloadMP3}
-                                            className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700"
+                                            className="bg-background"
                                         >
                                             <Download className="h-4 w-4 mr-1" />
                                             Download MP3

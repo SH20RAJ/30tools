@@ -105,7 +105,7 @@ export default function VideoToMP3ConverterPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Video to MP3 Converter
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -126,22 +126,22 @@ export default function VideoToMP3ConverterPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Convert Video to MP3 Online</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Upload Video File</h3>
                                     <p className="text-sm text-muted-foreground">Select and upload your video file (MP4, AVI, MOV, MKV, etc.)</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Choose Quality</h3>
                                     <p className="text-sm text-muted-foreground">Select your preferred MP3 quality from 128kbps to 320kbps</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download MP3</h3>
                                     <p className="text-sm text-muted-foreground">Convert and download your video as high-quality MP3 audio file</p>
@@ -153,17 +153,17 @@ export default function VideoToMP3ConverterPage() {
                             <h2 className="text-2xl font-semibold mb-4">Video to MP3 Converter Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">🎵 Premium Audio Quality</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎵 Premium Audio Quality</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Extract audio from videos with up to 320kbps quality. Our advanced audio processing preserves the original sound fidelity for the best listening experience.</p>
 
-                                    <h3 className="font-medium mb-2 text-purple-600">📁 Multiple Video Formats</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📁 Multiple Video Formats</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Support for all popular video formats including MP4, AVI, MOV, MKV, WMV, FLV, WebM, and more. Convert any video file to MP3 audio.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">⚡ Lightning Fast Processing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Lightning Fast Processing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our optimized servers convert videos to MP3 in seconds. Advanced algorithms ensure fast processing without compromising audio quality.</p>
 
-                                    <h3 className="font-medium mb-2 text-purple-600">📦 Batch Conversion</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📦 Batch Conversion</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Convert multiple video files to MP3 at once. Perfect for processing entire video collections or creating music libraries from video content.</p>
                                 </div>
                             </div>

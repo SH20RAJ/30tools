@@ -351,7 +351,7 @@ export default function CSSGradientTool() {
                   onClick={() => copyToClipboard(cssOutput)}
                 >
                   {copied ? (
-                    <CheckCircleIcon className="h-4 w-4 text-green-600" />
+                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                   ) : (
                     <CopyIcon className="h-4 w-4" />
                   )}

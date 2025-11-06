@@ -123,22 +123,22 @@ export default function TextDiffPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Compare Texts</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-destructive font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Enter Original Text</h3>
                   <p className="text-sm text-muted-foreground">Paste your original text in the left panel</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-destructive font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Enter Modified Text</h3>
                   <p className="text-sm text-muted-foreground">Paste the modified version in the right panel</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-destructive font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">View Differences</h3>
                   <p className="text-sm text-muted-foreground">See highlighted additions, deletions, and changes</p>
@@ -150,7 +150,7 @@ export default function TextDiffPage() {
               <h2 className="text-2xl font-semibold mb-4">Text Comparison Features</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-red-600">🔍 Advanced Comparison</h3>
+                  <h3 className="font-medium mb-2 text-destructive">🔍 Advanced Comparison</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Side-by-side text comparison</li>
                     <li>• Line-by-line difference detection</li>
@@ -160,7 +160,7 @@ export default function TextDiffPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-red-600">✨ Visual Highlights</h3>
+                  <h3 className="font-medium mb-2 text-destructive">✨ Visual Highlights</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Green highlighting for additions</li>
                     <li>• Red highlighting for deletions</li>
@@ -176,7 +176,7 @@ export default function TextDiffPage() {
               <h2 className="text-2xl font-semibold mb-4">When to Use Text Diff Checker</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">📝 Writing & Editing</h3>
+                  <h3 className="font-medium mb-2 text-primary">📝 Writing & Editing</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Compare document revisions</li>
                     <li>• Track changes in articles</li>
@@ -186,7 +186,7 @@ export default function TextDiffPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">💻 Development & Code</h3>
+                  <h3 className="font-medium mb-2 text-primary">💻 Development & Code</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Compare code versions</li>
                     <li>• Review configuration changes</li>

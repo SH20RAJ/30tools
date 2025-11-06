@@ -142,17 +142,17 @@ export default function BrokenLinkChecker() {
   const getStatusBadge = (status, working) => {
     if (working) {
       if (status >= 300 && status < 400) {
-        return <Badge className="bg-yellow-500">Redirect ({status})</Badge>;
+        return <Badge className="bg-muted/500">Redirect ({status})</Badge>;
       }
-      return <Badge className="bg-green-500">OK ({status})</Badge>;
+      return <Badge className="bg-muted/500">OK ({status})</Badge>;
     }
     return <Badge variant="destructive">Broken ({status})</Badge>;
   };
 
   const getResponseTimeColor = (time) => {
-    if (time > 3000) return 'text-red-600';
-    if (time > 1000) return 'text-yellow-600';
-    return 'text-green-600';
+    if (time > 3000) return 'text-destructive';
+    if (time > 1000) return 'text-primary';
+    return 'text-primary';
   };
 
   const stats = {
@@ -168,11 +168,11 @@ export default function BrokenLinkChecker() {
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
-          <Link className="h-8 w-8 text-red-600" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-destructive/20 rounded-full mb-4">
+          <Link className="h-8 w-8 text-destructive" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900">Broken Link Checker</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-foreground">Broken Link Checker</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages.
         </p>
       </div>
@@ -181,11 +181,11 @@ export default function BrokenLinkChecker() {
       <div className="grid md:grid-cols-3 gap-6">
         <Card>
           <CardHeader className="text-center pb-3">
-            <CheckCircle className="h-8 w-8 text-green-500 mx-auto mb-2" />
+            <CheckCircle className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Improve SEO</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Fix broken links to improve user experience and search engine rankings.
             </p>
           </CardContent>
@@ -193,11 +193,11 @@ export default function BrokenLinkChecker() {
         
         <Card>
           <CardHeader className="text-center pb-3">
-            <Globe className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+            <Globe className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Site Health</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Monitor website health by identifying and fixing broken internal and external links.
             </p>
           </CardContent>
@@ -205,11 +205,11 @@ export default function BrokenLinkChecker() {
         
         <Card>
           <CardHeader className="text-center pb-3">
-            <Zap className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+            <Zap className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Fast Scanning</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Quickly scan entire websites or specific pages for broken links and get detailed reports.
             </p>
           </CardContent>
@@ -287,38 +287,38 @@ export default function BrokenLinkChecker() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-blue-600">{stats.total}</div>
-              <div className="text-sm text-gray-600">Total Links</div>
+              <div className="text-2xl font-bold text-primary">{stats.total}</div>
+              <div className="text-sm text-muted-foreground">Total Links</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-green-600">{stats.working}</div>
-              <div className="text-sm text-gray-600">Working</div>
+              <div className="text-2xl font-bold text-primary">{stats.working}</div>
+              <div className="text-sm text-muted-foreground">Working</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-red-600">{stats.broken}</div>
-              <div className="text-sm text-gray-600">Broken</div>
+              <div className="text-2xl font-bold text-destructive">{stats.broken}</div>
+              <div className="text-sm text-muted-foreground">Broken</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-yellow-600">{stats.redirects}</div>
-              <div className="text-sm text-gray-600">Redirects</div>
+              <div className="text-2xl font-bold text-primary">{stats.redirects}</div>
+              <div className="text-sm text-muted-foreground">Redirects</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-purple-600">{stats.internal}</div>
-              <div className="text-sm text-gray-600">Internal</div>
+              <div className="text-2xl font-bold text-primary">{stats.internal}</div>
+              <div className="text-sm text-muted-foreground">Internal</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-orange-600">{stats.external}</div>
-              <div className="text-sm text-gray-600">External</div>
+              <div className="text-2xl font-bold text-primary">{stats.external}</div>
+              <div className="text-sm text-muted-foreground">External</div>
             </CardContent>
           </Card>
         </div>
@@ -352,12 +352,12 @@ export default function BrokenLinkChecker() {
                       <td className="p-3">
                         <div className="flex items-center gap-2">
                           {link.isInternal ? (
-                            <Link className="h-4 w-4 text-blue-500" />
+                            <Link className="h-4 w-4 text-primary" />
                           ) : (
-                            <ExternalLink className="h-4 w-4 text-gray-500" />
+                            <ExternalLink className="h-4 w-4 text-muted-foreground" />
                           )}
                           <a href={link.url} target="_blank" rel="noopener noreferrer" 
-                             className="text-blue-600 hover:underline text-sm max-w-xs truncate">
+                             className="text-primary hover:underline text-sm max-w-xs truncate">
                             {link.url}
                           </a>
                         </div>
@@ -376,20 +376,20 @@ export default function BrokenLinkChecker() {
                       <td className="p-3 text-sm max-w-xs truncate">
                         {link.anchorText}
                       </td>
-                      <td className="p-3 text-sm text-gray-600">
+                      <td className="p-3 text-sm text-muted-foreground">
                         {link.error && (
-                          <div className="flex items-center gap-1 text-red-600">
+                          <div className="flex items-center gap-1 text-destructive">
                             <AlertTriangle className="h-3 w-3" />
                             {link.error}
                           </div>
                         )}
                         {link.redirectTo && (
-                          <div className="text-yellow-600">
+                          <div className="text-primary">
                             Redirects to: {link.redirectTo.substring(0, 30)}...
                           </div>
                         )}
                         {link.working && !link.error && !link.redirectTo && (
-                          <span className="text-green-600">OK</span>
+                          <span className="text-primary">OK</span>
                         )}
                       </td>
                     </tr>
@@ -413,7 +413,7 @@ export default function BrokenLinkChecker() {
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2">Common Solutions</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Update URLs to correct destinations</li>
                 <li>• Remove completely broken links</li>
                 <li>• Set up 301 redirects for moved content</li>
@@ -423,7 +423,7 @@ export default function BrokenLinkChecker() {
             </div>
             <div>
               <h4 className="font-semibold mb-2">Prevention Tips</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Regular link audits (monthly/quarterly)</li>
                 <li>• Use relative URLs for internal links</li>
                 <li>• Monitor external link destinations</li>

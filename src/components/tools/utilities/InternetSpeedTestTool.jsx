@@ -64,10 +64,10 @@ export default function InternetSpeedTestTool() {
   };
 
   const getSpeedCategory = (speed) => {
-    if (speed < 25) return { label: 'Slow', color: 'text-red-600' };
-    if (speed < 50) return { label: 'Fair', color: 'text-yellow-600' };
-    if (speed < 100) return { label: 'Good', color: 'text-green-600' };
-    return { label: 'Excellent', color: 'text-blue-600' };
+    if (speed < 25) return { label: 'Slow', color: 'text-destructive' };
+    if (speed < 50) return { label: 'Fair', color: 'text-primary' };
+    if (speed < 100) return { label: 'Good', color: 'text-primary' };
+    return { label: 'Excellent', color: 'text-primary' };
   };
 
   return (
@@ -75,10 +75,10 @@ export default function InternetSpeedTestTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Internet Speed Test
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Test your internet connection speed. Check download speed, upload speed, and ping latency.
           </p>
         </div>
@@ -97,11 +97,11 @@ export default function InternetSpeedTestTool() {
           <CardContent>
             {!isTestRunning && !results && (
               <div className="text-center py-12">
-                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                <div className="w-32 h-32 mx-auto mb-6 bg-background">
                   <Play className="h-12 w-12 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">Ready to Test</h2>
-                <p className="text-gray-600 mb-6">
+                <p className="text-muted-foreground mb-6">
                   Click the button below to start testing your internet speed
                 </p>
                 <Button onClick={simulateSpeedTest} size="lg" className="px-8">
@@ -112,7 +112,7 @@ export default function InternetSpeedTestTool() {
 
             {isTestRunning && (
               <div className="text-center py-12">
-                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
+                <div className="w-32 h-32 mx-auto mb-6 bg-background">
                   <RefreshCw className="h-12 w-12 text-white animate-spin" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">
@@ -121,7 +121,7 @@ export default function InternetSpeedTestTool() {
                           'Ping & Jitter'}
                 </h2>
                 <Progress value={progress} className="w-full max-w-md mx-auto mb-4" />
-                <p className="text-gray-600">{progress}% Complete</p>
+                <p className="text-muted-foreground">{progress}% Complete</p>
               </div>
             )}
 
@@ -129,47 +129,47 @@ export default function InternetSpeedTestTool() {
               <div className="space-y-6">
                 <div className="text-center py-6">
                   <h2 className="text-2xl font-bold mb-4">Test Results</h2>
-                  <p className="text-gray-600">Completed at {results.timestamp}</p>
+                  <p className="text-muted-foreground">Completed at {results.timestamp}</p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6">
                   {/* Download Speed */}
                   <Card className="text-center">
                     <CardContent className="pt-6">
-                      <Download className="h-8 w-8 text-green-600 mx-auto mb-3" />
+                      <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                       <div className="text-3xl font-bold mb-2">{results.download}</div>
-                      <div className="text-sm text-gray-600 mb-2">Mbps</div>
+                      <div className="text-sm text-muted-foreground mb-2">Mbps</div>
                       <div className={`text-sm font-medium ${getSpeedCategory(results.download).color}`}>
                         {getSpeedCategory(results.download).label}
                       </div>
-                      <div className="text-xs text-gray-500 mt-1">Download</div>
+                      <div className="text-xs text-muted-foreground mt-1">Download</div>
                     </CardContent>
                   </Card>
 
                   {/* Upload Speed */}
                   <Card className="text-center">
                     <CardContent className="pt-6">
-                      <Upload className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                      <Upload className="h-8 w-8 text-primary mx-auto mb-3" />
                       <div className="text-3xl font-bold mb-2">{results.upload}</div>
-                      <div className="text-sm text-gray-600 mb-2">Mbps</div>
+                      <div className="text-sm text-muted-foreground mb-2">Mbps</div>
                       <div className={`text-sm font-medium ${getSpeedCategory(results.upload).color}`}>
                         {getSpeedCategory(results.upload).label}
                       </div>
-                      <div className="text-xs text-gray-500 mt-1">Upload</div>
+                      <div className="text-xs text-muted-foreground mt-1">Upload</div>
                     </CardContent>
                   </Card>
 
                   {/* Ping */}
                   <Card className="text-center">
                     <CardContent className="pt-6">
-                      <Clock className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                      <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
                       <div className="text-3xl font-bold mb-2">{results.ping}</div>
-                      <div className="text-sm text-gray-600 mb-2">ms</div>
-                      <div className={`text-sm font-medium ${results.ping < 20 ? 'text-green-600' : 
-                                      results.ping < 50 ? 'text-yellow-600' : 'text-red-600'}`}>
+                      <div className="text-sm text-muted-foreground mb-2">ms</div>
+                      <div className={`text-sm font-medium ${results.ping < 20 ? 'text-primary' : 
+                                      results.ping < 50 ? 'text-primary' : 'text-destructive'}`}>
                         {results.ping < 20 ? 'Excellent' : results.ping < 50 ? 'Good' : 'Fair'}
                       </div>
-                      <div className="text-xs text-gray-500 mt-1">Ping</div>
+                      <div className="text-xs text-muted-foreground mt-1">Ping</div>
                     </CardContent>
                   </Card>
                 </div>
@@ -213,23 +213,23 @@ export default function InternetSpeedTestTool() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-semibold mb-2">Basic Browsing</h3>
-                <div className="text-2xl font-bold text-blue-600">1-5 Mbps</div>
-                <p className="text-sm text-gray-600 mt-1">Web browsing, email</p>
+                <div className="text-2xl font-bold text-primary">1-5 Mbps</div>
+                <p className="text-sm text-muted-foreground mt-1">Web browsing, email</p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-semibold mb-2">HD Streaming</h3>
-                <div className="text-2xl font-bold text-green-600">5-25 Mbps</div>
-                <p className="text-sm text-gray-600 mt-1">Netflix, YouTube HD</p>
+                <div className="text-2xl font-bold text-primary">5-25 Mbps</div>
+                <p className="text-sm text-muted-foreground mt-1">Netflix, YouTube HD</p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-semibold mb-2">4K Streaming</h3>
-                <div className="text-2xl font-bold text-purple-600">25+ Mbps</div>
-                <p className="text-sm text-gray-600 mt-1">Ultra HD content</p>
+                <div className="text-2xl font-bold text-primary">25+ Mbps</div>
+                <p className="text-sm text-muted-foreground mt-1">Ultra HD content</p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-semibold mb-2">Gaming</h3>
-                <div className="text-2xl font-bold text-red-600">&lt;50ms</div>
-                <p className="text-sm text-gray-600 mt-1">Low ping required</p>
+                <div className="text-2xl font-bold text-destructive">&lt;50ms</div>
+                <p className="text-sm text-muted-foreground mt-1">Low ping required</p>
               </div>
             </div>
           </CardContent>
@@ -240,9 +240,9 @@ export default function InternetSpeedTestTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Download className="h-8 w-8 text-green-600 mx-auto mb-3" />
+                <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Download Test</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Measure your download speed accurately
                 </p>
               </div>
@@ -252,9 +252,9 @@ export default function InternetSpeedTestTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Upload className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <Upload className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Upload Test</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Check your upload speed performance
                 </p>
               </div>
@@ -264,9 +264,9 @@ export default function InternetSpeedTestTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Clock className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Ping & Latency</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Test connection latency and jitter
                 </p>
               </div>

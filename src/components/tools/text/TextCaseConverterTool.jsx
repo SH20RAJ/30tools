@@ -374,7 +374,7 @@ export default function TextCaseConverterTool() {
                                                         size="sm"
                                                     >
                                                         {copiedCase === caseType.id ? (
-                                                            <CheckIcon className="h-4 w-4 text-green-500" />
+                                                            <CheckIcon className="h-4 w-4 text-primary" />
                                                         ) : (
                                                             <CopyIcon className="h-4 w-4" />
                                                         )}
@@ -424,7 +424,7 @@ export default function TextCaseConverterTool() {
                                                         size="sm"
                                                     >
                                                         {copiedCase === caseType.id ? (
-                                                            <CheckIcon className="h-4 w-4 text-green-500" />
+                                                            <CheckIcon className="h-4 w-4 text-primary" />
                                                         ) : (
                                                             <CopyIcon className="h-4 w-4" />
                                                         )}

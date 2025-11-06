@@ -116,7 +116,7 @@ export default function YouTubePackDownloader() {
       <Card className="card-cute">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Package className="w-5 h-5 text-red-500" />
+            <Package className="w-5 h-5 text-destructive" />
             YouTube Pack Downloader
           </CardTitle>
           <CardDescription>
@@ -191,7 +191,7 @@ export default function YouTubePackDownloader() {
           <Button
             onClick={handleDownloadPack}
             disabled={isLoading || !videoUrl || getSelectedCount() === 0}
-            className="w-full btn-cute bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+            className="w-full btn-cute bg-background"
           >
             {isLoading ? (
               <>
@@ -213,12 +213,12 @@ export default function YouTubePackDownloader() {
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <Youtube className="w-5 h-5 text-red-500" />
+                <Youtube className="w-5 h-5 text-destructive" />
                 Pack Ready for Download
               </span>
               <Button
                 onClick={downloadPack}
-                className="btn-cute bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
+                className="btn-cute bg-background"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download Pack
@@ -249,7 +249,7 @@ export default function YouTubePackDownloader() {
                         const asset = assetOptions.find(a => a.id === assetId);
                         return (
                           <div key={assetId} className="flex items-center gap-2">
-                            <CheckCircle className="w-3 h-3 text-green-500" />
+                            <CheckCircle className="w-3 h-3 text-primary" />
                             {asset?.label}
                           </div>
                         );

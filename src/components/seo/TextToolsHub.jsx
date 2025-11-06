@@ -81,12 +81,12 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
       {/* Hero Section */}
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 text-blue-700 dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-background/30 dark:to-indigo-900/30 text-primary dark:text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
             <Type className="h-4 w-4" />
             Professional Text Processing Tools
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-muted/20 bg-clip-text text-transparent">
             Free Text Tools
           </h1>
           
@@ -106,7 +106,7 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
               const Icon = benefit.icon;
               return (
                 <div key={index} className="text-center">
-                  <Icon className="h-8 w-8 mx-auto mb-2 text-blue-500" />
+                  <Icon className="h-8 w-8 mx-auto mb-2 text-primary" />
                   <h3 className="font-semibold mb-1">{benefit.title}</h3>
                   <p className="text-sm text-muted-foreground">{benefit.desc}</p>
                 </div>
@@ -121,7 +121,7 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
               placeholder="Search text tools..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 h-12 text-lg border-blue-200 focus:border-blue-400"
+              className="pl-10 h-12 text-lg border-border focus:border-border"
             />
           </div>
         </div>
@@ -141,24 +141,24 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
               const stats = TOOL_STATS[tool.id] || { users: '0', usage: '0%', rating: 4.0 };
               
               return (
-                <Card key={tool.id} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-blue-200 dark:hover:border-blue-800">
+                <Card key={tool.id} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-border dark:hover:border-border">
                   <CardHeader className="pb-3">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
-                        <div className="p-2 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-blue-900/30 dark:to-indigo-900/30 rounded-lg group-hover:scale-110 transition-transform">
-                          <Icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                        <div className="p-2 bg-background/30 dark:to-indigo-900/30 rounded-lg group-hover:scale-110 transition-transform">
+                          <Icon className="h-5 w-5 text-primary dark:text-primary" />
                         </div>
-                        <Badge variant="secondary" className="text-xs bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+                        <Badge variant="secondary" className="text-xs bg-muted text-primary dark:bg-primary/30 dark:text-blue-300">
                           #{index + 1} Popular
                         </Badge>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                        <Star className="h-4 w-4 text-primary fill-current" />
                         <span className="text-sm font-medium">{stats.rating}</span>
                       </div>
                     </div>
                     
-                    <CardTitle className="text-lg group-hover:text-blue-600 transition-colors">
+                    <CardTitle className="text-lg group-hover:text-primary transition-colors">
                       {tool.name}
                     </CardTitle>
                   </CardHeader>
@@ -179,7 +179,7 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
                       </div>
                     </div>
 
-                    <Button asChild className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:from-blue-600 hover:to-indigo-600" size="sm">
+                    <Button asChild className="w-full bg-background" size="sm">
                       <Link href={tool.route}>
                         Use Tool
                         <ArrowRight className="ml-2 h-4 w-4" />
@@ -206,8 +206,8 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
                   onClick={() => setSelectedCategory(category.id)}
                   className={`flex items-center gap-2 ${
                     selectedCategory === category.id 
-                      ? 'bg-gradient-to-r from-blue-500 to-indigo-500' 
-                      : 'border-blue-200 hover:border-blue-400'
+                      ? 'bg-background' 
+                      : 'border-border hover:border-border'
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -224,12 +224,12 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
               const stats = TOOL_STATS[tool.id];
               
               return (
-                <Card key={tool.id} className="group hover:shadow-lg transition-all duration-300 hover:border-blue-200 dark:hover:border-blue-800">
+                <Card key={tool.id} className="group hover:shadow-lg transition-all duration-300 hover:border-border dark:hover:border-border">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2 mb-2">
-                      <Icon className="h-5 w-5 text-blue-600 dark:text-blue-400" />
+                      <Icon className="h-5 w-5 text-primary dark:text-primary" />
                       {tool.popular && (
-                        <Badge variant="secondary" className="text-xs bg-gradient-to-r from-blue-100 to-indigo-100 text-blue-700 dark:from-blue-900/30 dark:to-indigo-900/30 dark:text-blue-300">
+                        <Badge variant="secondary" className="text-xs bg-background/30 dark:to-indigo-900/30 dark:text-blue-300">
                           Popular
                         </Badge>
                       )}
@@ -331,7 +331,7 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
               const Icon = stat.icon;
               return (
                 <div key={index} className="text-center">
-                  <Icon className="h-8 w-8 mx-auto mb-2 text-blue-500" />
+                  <Icon className="h-8 w-8 mx-auto mb-2 text-primary" />
                   <div className="text-3xl font-bold text-foreground">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
@@ -350,7 +350,7 @@ export function TextToolFeatures({ tool, features = [] }) {
     <Card className="mb-8">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <CheckCircle2 className="h-5 w-5 text-blue-500" />
+          <CheckCircle2 className="h-5 w-5 text-primary" />
           Key Features
         </CardTitle>
       </CardHeader>
@@ -358,7 +358,7 @@ export function TextToolFeatures({ tool, features = [] }) {
         <div className="grid md:grid-cols-2 gap-4">
           {features.map((feature, index) => (
             <div key={index} className="flex items-start gap-3">
-              <div className="flex-shrink-0 w-2 h-2 bg-blue-500 rounded-full mt-2" />
+              <div className="flex-shrink-0 w-2 h-2 bg-muted/500 rounded-full mt-2" />
               <div>
                 <h4 className="font-medium text-sm">{feature.title || feature}</h4>
                 {feature.description && (
@@ -381,7 +381,7 @@ export function TextToolExamples({ tool, examples = [] }) {
     <Card className="mb-8">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <BookOpen className="h-5 w-5 text-blue-500" />
+          <BookOpen className="h-5 w-5 text-primary" />
           Usage Examples
         </CardTitle>
       </CardHeader>
@@ -394,7 +394,7 @@ export function TextToolExamples({ tool, examples = [] }) {
                 variant={activeExample === index ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveExample(index)}
-                className={activeExample === index ? 'bg-gradient-to-r from-blue-500 to-indigo-500' : ''}
+                className={activeExample === index ? 'bg-background' : ''}
               >
                 {example.title}
               </Button>
@@ -420,7 +420,7 @@ export function TextToolExamples({ tool, examples = [] }) {
               {examples[activeExample].output && (
                 <div>
                   <label className="text-xs font-medium text-muted-foreground">Output:</label>
-                  <div className="mt-1 p-3 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-lg text-sm">
+                  <div className="mt-1 p-3 bg-background/20 dark:to-indigo-950/20 rounded-lg text-sm">
                     {examples[activeExample].output}
                   </div>
                 </div>

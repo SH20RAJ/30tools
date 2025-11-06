@@ -248,7 +248,7 @@ Style: ${believabilityLevel === 'low' ? 'Absurd and funny' : believabilityLevel 
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 dark:from-gray-900 dark:via-yellow-900 dark:to-orange-900">
+    <div className="min-h-screen bg-muted/20 dark:from-gray-900 dark:via-yellow-900 dark:to-orange-900">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <Link href="/text-tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
@@ -257,11 +257,11 @@ Style: ${believabilityLevel === 'low' ? 'Absurd and funny' : believabilityLevel 
           </Link>
           
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg">
+            <div className="p-2 bg-background">
               <SmileIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-background">
                 Excuse Generator
               </h1>
               <p className="text-muted-foreground">Generate creative excuses for any situation (use responsibly! 😅)</p>
@@ -346,7 +346,7 @@ Style: ${believabilityLevel === 'low' ? 'Absurd and funny' : believabilityLevel 
                 </div>
 
                 {/* AI Toggle */}
-                <div className="flex items-center justify-between p-3 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg border">
+                <div className="flex items-center justify-between p-3 bg-background/20 dark:to-blue-900/20 rounded-lg border">
                   <div className="flex items-center space-x-2">
                     <Switch
                       id="useAI"
@@ -365,7 +365,7 @@ Style: ${believabilityLevel === 'low' ? 'Absurd and funny' : believabilityLevel 
                 <div className="flex gap-2">
                   <Button 
                     onClick={handleGenerate} 
-                    className="flex-1 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600"
+                    className="flex-1 bg-background"
                     disabled={isGenerating}
                   >
                     {isGenerating ? (
@@ -408,7 +408,7 @@ Style: ${believabilityLevel === 'low' ? 'Absurd and funny' : believabilityLevel 
               <CardContent>
                 {generatedExcuse ? (
                   <div className="space-y-4">
-                    <div className="p-4 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg border">
+                    <div className="p-4 bg-background/20 dark:to-orange-900/20 rounded-lg border">
                       <div className="text-lg font-medium mb-2">
                         "{generatedExcuse}"
                       </div>
@@ -480,15 +480,15 @@ Style: ${believabilityLevel === 'low' ? 'Absurd and funny' : believabilityLevel 
         </div>
 
         {/* Disclaimer */}
-        <Card className="mt-8 border-yellow-200 bg-yellow-50 dark:bg-yellow-900/20">
+        <Card className="mt-8 border-border bg-muted/50 dark:bg-primary/20">
           <CardContent className="pt-6">
             <div className="flex items-start gap-3">
-              <SmileIcon className="h-5 w-5 text-yellow-600 mt-0.5" />
+              <SmileIcon className="h-5 w-5 text-primary mt-0.5" />
               <div className="text-sm">
-                <p className="font-medium text-yellow-800 dark:text-yellow-200 mb-1">
+                <p className="font-medium text-primary dark:text-yellow-200 mb-1">
                   😅 Disclaimer: For Entertainment Purposes
                 </p>
-                <p className="text-yellow-700 dark:text-yellow-300">
+                <p className="text-primary dark:text-yellow-300">
                   These excuses are generated for fun and humor. Please use them responsibly and consider the impact on your relationships and responsibilities. Honesty is usually the best policy! 
                 </p>
               </div>

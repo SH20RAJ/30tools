@@ -128,7 +128,7 @@ export default function CalorieCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Understanding Calorie Needs</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-orange-600">🔥 BMR vs TDEE</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔥 BMR vs TDEE</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>BMR:</strong> Calories burned at rest (basic functions)</li>
                                         <li>• <strong>TDEE:</strong> Total calories including activity</li>
@@ -138,7 +138,7 @@ export default function CalorieCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-orange-600">⚖️ Weight Goals</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚖️ Weight Goals</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>Weight Loss:</strong> 500-1000 calorie deficit per day</li>
                                         <li>• <strong>Weight Gain:</strong> 300-500 calorie surplus per day</li>

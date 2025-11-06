@@ -414,7 +414,7 @@ export default function PdfSplitterTool() {
               {splitResults.map((result) => (
                 <div key={result.id} className="flex items-center justify-between p-3 border rounded-lg">
                   <div className="flex items-center gap-3">
-                    <FileText className="h-5 w-5 text-blue-500" />
+                    <FileText className="h-5 w-5 text-primary" />
                     <div>
                       <p className="font-medium">{result.name}</p>
                       <p className="text-sm text-muted-foreground">

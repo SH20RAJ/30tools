@@ -105,7 +105,7 @@ export default function InstagramDPDownloaderPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Instagram DP Downloader
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -126,22 +126,22 @@ export default function InstagramDPDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Download Instagram Profile Pictures</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Enter Username</h3>
                                     <p className="text-sm text-muted-foreground">Enter the Instagram username whose profile picture you want to download</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">View Full Size</h3>
                                     <p className="text-sm text-muted-foreground">Our tool will fetch and display the profile picture in full resolution</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download HD Image</h3>
                                     <p className="text-sm text-muted-foreground">Click download to save the Instagram profile picture to your device</p>
@@ -153,17 +153,17 @@ export default function InstagramDPDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">Instagram DP Downloader Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-pink-600">🖼️ Full Resolution Quality</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🖼️ Full Resolution Quality</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download Instagram profile pictures in their original full size and highest quality. Get crystal clear images without any compression or quality loss.</p>
 
-                                    <h3 className="font-medium mb-2 text-pink-600">👤 Anonymous Viewing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">👤 Anonymous Viewing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">View and download Instagram profile pictures completely anonymously. The profile owner will never know you accessed or downloaded their profile photo.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-pink-600">⚡ Instant Access</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Instant Access</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Get instant access to any public Instagram profile picture. Our tool fetches profile photos in seconds without any waiting time or processing delays.</p>
 
-                                    <h3 className="font-medium mb-2 text-pink-600">📱 Mobile Friendly</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📱 Mobile Friendly</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Perfectly optimized for mobile devices. Download Instagram profile pictures directly to your phone gallery with just a few taps on any device.</p>
                                 </div>
                             </div>

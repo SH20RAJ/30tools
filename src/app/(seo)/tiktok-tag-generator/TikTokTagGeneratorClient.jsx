@@ -63,8 +63,8 @@ export default function TikTokTagGeneratorClient() {
       {/* Header */}
       <div className="text-center mb-8">
         <div className="flex items-center justify-center mb-4">
-          <div className="p-3 bg-pink-100 dark:bg-pink-900/20 rounded-lg mr-3">
-            <MusicIcon className="h-8 w-8 text-pink-600 dark:text-pink-400" />
+          <div className="p-3 bg-muted dark:bg-primary/20 rounded-lg mr-3">
+            <MusicIcon className="h-8 w-8 text-primary dark:text-primary" />
           </div>
           <h1 className="text-3xl font-bold">TikTok Hashtag Generator</h1>
         </div>

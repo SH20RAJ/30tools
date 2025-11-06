@@ -77,7 +77,7 @@ export default function InstagramReelDownloader() {
                         <Button
                             onClick={handleDownload}
                             disabled={isLoading}
-                            className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+                            className="bg-background"
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -89,7 +89,7 @@ export default function InstagramReelDownloader() {
                     </div>
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -97,7 +97,7 @@ export default function InstagramReelDownloader() {
 
                     {reelData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">Instagram Reel processed successfully!</span>
                             </div>
@@ -126,7 +126,7 @@ export default function InstagramReelDownloader() {
                                                 <Music className="h-3 w-3" />
                                                 {reelData.music}
                                             </p>
-                                            <p className="text-xs text-gray-600 line-clamp-2">{reelData.caption}</p>
+                                            <p className="text-xs text-muted-foreground line-clamp-2">{reelData.caption}</p>
                                         </div>
                                     </div>
 
@@ -140,7 +140,7 @@ export default function InstagramReelDownloader() {
                                                         <span className="text-xs text-muted-foreground ml-2">({quality.size})</span>
                                                     </div>
                                                     {quality.type === 'video' && (
-                                                        <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
+                                                        <span className="text-xs bg-muted text-primary px-2 py-1 rounded">
                                                             No Watermark
                                                         </span>
                                                     )}
@@ -148,7 +148,7 @@ export default function InstagramReelDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadContent(quality)}
-                                                    className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600"
+                                                    className="bg-background"
                                                 >
                                                     {quality.type === 'audio' ? (
                                                         <Music className="h-3 w-3 mr-1" />

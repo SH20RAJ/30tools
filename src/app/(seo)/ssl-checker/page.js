@@ -87,7 +87,7 @@ export default function SSLCheckerPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
               SSL Certificate Checker
             </h1>
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -108,22 +108,22 @@ export default function SSLCheckerPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Use SSL Checker</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-green-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Enter Website URL</h3>
                   <p className="text-sm text-muted-foreground">Enter the domain or full URL you want to check (e.g., example.com)</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-green-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Run SSL Check</h3>
                   <p className="text-sm text-muted-foreground">Our tool will analyze the SSL certificate and security configuration</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-green-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Review Results</h3>
                   <p className="text-sm text-muted-foreground">Get detailed certificate information and security recommendations</p>
@@ -135,17 +135,17 @@ export default function SSLCheckerPage() {
               <h2 className="text-2xl font-semibold mb-4">Why SSL Certificates Matter</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">🔒 Data Encryption</h3>
+                  <h3 className="font-medium mb-2 text-primary">🔒 Data Encryption</h3>
                   <p className="text-sm text-muted-foreground mb-4">SSL certificates encrypt data transmitted between users and your website, protecting sensitive information like passwords, credit card numbers, and personal data from interceptors.</p>
 
-                  <h3 className="font-medium mb-2 text-green-600">🏆 Trust & Credibility</h3>
+                  <h3 className="font-medium mb-2 text-primary">🏆 Trust & Credibility</h3>
                   <p className="text-sm text-muted-foreground mb-4">Websites with valid SSL certificates display a padlock icon and "https://" in the browser, showing visitors that the site is secure and trustworthy, which increases user confidence.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">📈 SEO Benefits</h3>
+                  <h3 className="font-medium mb-2 text-primary">📈 SEO Benefits</h3>
                   <p className="text-sm text-muted-foreground mb-4">Google and other search engines prioritize HTTPS websites in search results. Having a valid SSL certificate is a ranking factor that can improve your website's search engine visibility.</p>
 
-                  <h3 className="font-medium mb-2 text-green-600">✅ Compliance Requirements</h3>
+                  <h3 className="font-medium mb-2 text-primary">✅ Compliance Requirements</h3>
                   <p className="text-sm text-muted-foreground mb-4">Many industries and regulations (like PCI DSS for payment processing) require SSL certificates. They're essential for e-commerce sites and any website handling sensitive data.</p>
                 </div>
               </div>
@@ -185,19 +185,19 @@ export default function SSLCheckerPage() {
               <h2 className="text-2xl font-semibold mb-4">Common SSL Issues & Solutions</h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium mb-2 text-red-600">Certificate Expired</h3>
+                  <h3 className="font-medium mb-2 text-destructive">Certificate Expired</h3>
                   <p className="text-sm text-muted-foreground">Your SSL certificate has passed its expiry date. Contact your certificate provider or hosting company to renew the certificate immediately to avoid security warnings.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-yellow-600">Domain Mismatch</h3>
+                  <h3 className="font-medium mb-2 text-primary">Domain Mismatch</h3>
                   <p className="text-sm text-muted-foreground">The certificate doesn't match the domain name. Ensure the certificate covers all domains/subdomains your site uses, or get a wildcard certificate.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-orange-600">Incomplete Certificate Chain</h3>
+                  <h3 className="font-medium mb-2 text-primary">Incomplete Certificate Chain</h3>
                   <p className="text-sm text-muted-foreground">The intermediate certificates are missing. Install the complete certificate chain including all intermediate certificates from your CA.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">Mixed Content</h3>
+                  <h3 className="font-medium mb-2 text-primary">Mixed Content</h3>
                   <p className="text-sm text-muted-foreground">Your HTTPS page loads HTTP resources. Update all internal links, images, scripts, and stylesheets to use HTTPS URLs to avoid security warnings.</p>
                 </div>
               </div>

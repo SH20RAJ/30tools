@@ -132,15 +132,15 @@ export default function PasswordGeneratorTool() {
 
     // Determine strength label and color
     if (score < 30) {
-      return { score, label: 'Very Weak', color: 'bg-red-500', feedback: ['Password is too short', 'Add more character types'] };
+      return { score, label: 'Very Weak', color: 'bg-destructive/100', feedback: ['Password is too short', 'Add more character types'] };
     } else if (score < 50) {
-      return { score, label: 'Weak', color: 'bg-orange-500', feedback: ['Consider adding special characters', 'Increase length'] };
+      return { score, label: 'Weak', color: 'bg-muted/500', feedback: ['Consider adding special characters', 'Increase length'] };
     } else if (score < 75) {
-      return { score, label: 'Good', color: 'bg-yellow-500', feedback: ['Good password strength'] };
+      return { score, label: 'Good', color: 'bg-muted/500', feedback: ['Good password strength'] };
     } else if (score < 90) {
-      return { score, label: 'Strong', color: 'bg-green-500', feedback: ['Strong password'] };
+      return { score, label: 'Strong', color: 'bg-muted/500', feedback: ['Strong password'] };
     } else {
-      return { score, label: 'Very Strong', color: 'bg-green-600', feedback: ['Excellent password strength'] };
+      return { score, label: 'Very Strong', color: 'bg-primary', feedback: ['Excellent password strength'] };
     }
   };
 
@@ -431,35 +431,35 @@ export default function PasswordGeneratorTool() {
             <CardContent>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Cryptographically secure random generation
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Customizable length (4-128 characters)
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Multiple character sets support
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Password strength analysis
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Generate multiple passwords at once
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   No passwords stored or logged
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Exclude similar/ambiguous characters
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Mobile-friendly interface
                 </li>
               </ul>
@@ -474,7 +474,7 @@ export default function PasswordGeneratorTool() {
             <CardContent className="space-y-4">
               <div>
                 <h4 className="font-medium mb-1 flex items-center gap-2">
-                  <ShieldIcon className="h-4 w-4 text-green-500" />
+                  <ShieldIcon className="h-4 w-4 text-primary" />
                   Complete Privacy
                 </h4>
                 <p className="text-sm text-muted-foreground">

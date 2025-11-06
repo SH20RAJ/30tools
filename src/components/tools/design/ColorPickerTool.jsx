@@ -290,7 +290,7 @@ export default function ColorPickerTool() {
             <CardContent className="space-y-4">
               <div className="flex items-center gap-4">
                 <div 
-                  className="w-32 h-32 rounded-lg border-2 border-gray-200 shadow-inner"
+                  className="w-32 h-32 rounded-lg border-2 border-border shadow-inner"
                   style={{ backgroundColor: selectedColor }}
                 />
                 <div className="flex-1 space-y-3">
@@ -356,7 +356,7 @@ export default function ColorPickerTool() {
                       onClick={() => copyToClipboard(value, format)}
                     >
                       {copied === format ? (
-                        <CheckCircleIcon className="h-4 w-4 text-green-600" />
+                        <CheckCircleIcon className="h-4 w-4 text-primary" />
                       ) : (
                         <CopyIcon className="h-4 w-4" />
                       )}

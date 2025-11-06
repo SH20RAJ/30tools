@@ -55,10 +55,10 @@ export default function TextSizeCalculatorTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Text Size Calculator
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Calculate text size, character count, word count, and get detailed text statistics and analysis.
           </p>
         </div>
@@ -105,21 +105,21 @@ export default function TextSizeCalculatorTool() {
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600">{results.characters}</div>
-                  <div className="text-sm text-gray-600">Characters</div>
+                <div className="text-center p-4 bg-muted/50 rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{results.characters}</div>
+                  <div className="text-sm text-muted-foreground">Characters</div>
                 </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <div className="text-2xl font-bold text-green-600">{results.words}</div>
-                  <div className="text-sm text-gray-600">Words</div>
+                <div className="text-center p-4 bg-muted/50 rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{results.words}</div>
+                  <div className="text-sm text-muted-foreground">Words</div>
                 </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <div className="text-2xl font-bold text-purple-600">{results.sentences}</div>
-                  <div className="text-sm text-gray-600">Sentences</div>
+                <div className="text-center p-4 bg-muted/50 rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{results.sentences}</div>
+                  <div className="text-sm text-muted-foreground">Sentences</div>
                 </div>
-                <div className="text-center p-4 bg-orange-50 rounded-lg">
-                  <div className="text-2xl font-bold text-orange-600">{results.paragraphs}</div>
-                  <div className="text-sm text-gray-600">Paragraphs</div>
+                <div className="text-center p-4 bg-muted/50 rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{results.paragraphs}</div>
+                  <div className="text-sm text-muted-foreground">Paragraphs</div>
                 </div>
               </div>
             </CardContent>

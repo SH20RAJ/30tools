@@ -57,7 +57,7 @@ export default function TeraboxVideoPlayerPage() {
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-primary bg-clip-text text-transparent">
               Terabox Video Player
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -71,7 +71,7 @@ export default function TeraboxVideoPlayerPage() {
           {/* Features Section */}
           <div className="mt-16 grid md:grid-cols-3 gap-6">
             <div className="bg-card border rounded-lg p-6">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-muted dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-2xl">🎬</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Instant Streaming</h3>
@@ -81,7 +81,7 @@ export default function TeraboxVideoPlayerPage() {
             </div>
 
             <div className="bg-card border rounded-lg p-6">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-muted dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-2xl">⬇️</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">Direct Download</h3>
@@ -91,7 +91,7 @@ export default function TeraboxVideoPlayerPage() {
             </div>
 
             <div className="bg-card border rounded-lg p-6">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center mb-4">
+              <div className="w-12 h-12 bg-muted dark:bg-primary/20 rounded-lg flex items-center justify-center mb-4">
                 <span className="text-2xl">🔒</span>
               </div>
               <h3 className="text-lg font-semibold mb-2">No Login Required</h3>
@@ -102,11 +102,11 @@ export default function TeraboxVideoPlayerPage() {
           </div>
 
           {/* How to Use Section */}
-          <div className="mt-16 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-lg p-8">
+          <div className="mt-16 bg-background/20 dark:to-cyan-950/20 rounded-lg p-8">
             <h2 className="text-2xl font-bold mb-6 text-center">How to Use Terabox Video Player</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 font-bold">
+                <div className="w-8 h-8 bg-muted/500 text-white rounded-full flex items-center justify-center mb-4 font-bold">
                   1
                 </div>
                 <h3 className="font-semibold mb-2">Copy Terabox Link</h3>
@@ -116,7 +116,7 @@ export default function TeraboxVideoPlayerPage() {
               </div>
 
               <div className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 font-bold">
+                <div className="w-8 h-8 bg-muted/500 text-white rounded-full flex items-center justify-center mb-4 font-bold">
                   2
                 </div>
                 <h3 className="font-semibold mb-2">Paste & Load</h3>
@@ -126,7 +126,7 @@ export default function TeraboxVideoPlayerPage() {
               </div>
 
               <div className="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-sm">
-                <div className="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4 font-bold">
+                <div className="w-8 h-8 bg-muted/500 text-white rounded-full flex items-center justify-center mb-4 font-bold">
                   3
                 </div>
                 <h3 className="font-semibold mb-2">Play or Download</h3>

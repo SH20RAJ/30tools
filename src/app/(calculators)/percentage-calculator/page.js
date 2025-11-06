@@ -128,20 +128,20 @@ export default function PercentageCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Use Percentage Calculator</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">📊 Basic Percentage</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📊 Basic Percentage</h3>
                                     <p className="text-sm text-muted-foreground mb-2">What is X% of Y?</p>
                                     <p className="text-xs text-muted-foreground mb-4">Example: What is 25% of 200? Answer: 50</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">📈 Percentage Increase</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📈 Percentage Increase</h3>
                                     <p className="text-sm text-muted-foreground mb-2">Calculate percentage increase from old to new value</p>
                                     <p className="text-xs text-muted-foreground mb-4">Example: From 100 to 120 = 20% increase</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">📉 Percentage Decrease</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📉 Percentage Decrease</h3>
                                     <p className="text-sm text-muted-foreground mb-2">Calculate percentage decrease from old to new value</p>
                                     <p className="text-xs text-muted-foreground mb-4">Example: From 100 to 80 = 20% decrease</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">🔍 Find Percentage</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔍 Find Percentage</h3>
                                     <p className="text-sm text-muted-foreground mb-2">What percentage is X of Y?</p>
                                     <p className="text-xs text-muted-foreground mb-4">Example: What % is 25 of 100? Answer: 25%</p>
                                 </div>
@@ -152,7 +152,7 @@ export default function PercentageCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Common Percentage Calculations</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-green-600">🎓 Academic Use</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎓 Academic Use</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Calculate exam marks percentage</li>
                                         <li>• Convert CGPA to percentage</li>
@@ -162,7 +162,7 @@ export default function PercentageCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">💰 Financial Use</h3>
+                                    <h3 className="font-medium mb-2 text-primary">💰 Financial Use</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Calculate discounts and sales</li>
                                         <li>• Calculate tips at restaurants</li>
@@ -177,15 +177,15 @@ export default function PercentageCalculatorPage() {
                         <div className="bg-card rounded-lg p-6 border">
                             <h2 className="text-2xl font-semibold mb-4">Percentage Formulas</h2>
                             <div className="space-y-4">
-                                <div className="p-4 bg-blue-50 rounded-lg">
+                                <div className="p-4 bg-muted/50 rounded-lg">
                                     <h3 className="font-medium mb-2">Basic Percentage Formula</h3>
                                     <p className="text-sm text-muted-foreground">Percentage = (Part / Whole) × 100</p>
                                 </div>
-                                <div className="p-4 bg-green-50 rounded-lg">
+                                <div className="p-4 bg-muted/50 rounded-lg">
                                     <h3 className="font-medium mb-2">Percentage Increase Formula</h3>
                                     <p className="text-sm text-muted-foreground">% Increase = ((New Value - Old Value) / Old Value) × 100</p>
                                 </div>
-                                <div className="p-4 bg-red-50 rounded-lg">
+                                <div className="p-4 bg-destructive/10 rounded-lg">
                                     <h3 className="font-medium mb-2">Percentage Decrease Formula</h3>
                                     <p className="text-sm text-muted-foreground">% Decrease = ((Old Value - New Value) / Old Value) × 100</p>
                                 </div>

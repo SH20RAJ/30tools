@@ -204,7 +204,7 @@ export default function StartupNameGeneratorTool() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
+    <div className="min-h-screen bg-muted/20 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <Link href="/text-tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
@@ -213,11 +213,11 @@ export default function StartupNameGeneratorTool() {
           </Link>
           
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
+            <div className="p-2 bg-background">
               <RocketIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-background">
                 Startup Name Generator
               </h1>
               <p className="text-muted-foreground">Generate trendy startup names loved by indie hackers and VCs</p>
@@ -291,7 +291,7 @@ export default function StartupNameGeneratorTool() {
 
                 <Button 
                   onClick={handleGenerate} 
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+                  className="w-full bg-background"
                   disabled={isGenerating}
                 >
                   {isGenerating ? (
@@ -352,7 +352,7 @@ export default function StartupNameGeneratorTool() {
                               size="sm"
                               variant="ghost"
                               onClick={() => toggleFavorite(name)}
-                              className={favorites.includes(name) ? 'text-red-500' : ''}
+                              className={favorites.includes(name) ? 'text-destructive' : ''}
                             >
                               <HeartIcon className={`h-4 w-4 ${favorites.includes(name) ? 'fill-current' : ''}`} />
                             </Button>
@@ -390,7 +390,7 @@ export default function StartupNameGeneratorTool() {
               <Card className="mt-6">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <HeartIcon className="h-5 w-5 text-red-500" />
+                    <HeartIcon className="h-5 w-5 text-destructive" />
                     Favorites ({favorites.length})
                   </CardTitle>
                 </CardHeader>
@@ -418,15 +418,15 @@ export default function StartupNameGeneratorTool() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">🎯 Keep it Short</h4>
                 <p>5-8 characters work best for domains and branding</p>
               </div>
-              <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">🔤 Easy to Spell</h4>
                 <p>Avoid complex spellings that confuse users</p>
               </div>
-              <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">🌐 Check Domains</h4>
                 <p>Secure .com, .io, or industry-specific domains</p>
               </div>

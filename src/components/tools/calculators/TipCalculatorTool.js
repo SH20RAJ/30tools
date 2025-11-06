@@ -110,19 +110,19 @@ export default function TipCalculatorTool() {
                         <div className="space-y-4">
                             {/* Main Results */}
                             <div className="grid grid-cols-2 gap-4">
-                                <div className="p-4 bg-green-50 rounded-lg text-center">
+                                <div className="p-4 bg-muted/50 rounded-lg text-center">
                                     <p className="text-sm text-muted-foreground">Tip Amount</p>
-                                    <p className="text-2xl font-bold text-green-600">${result.tipAmount}</p>
+                                    <p className="text-2xl font-bold text-primary">${result.tipAmount}</p>
                                 </div>
-                                <div className="p-4 bg-blue-50 rounded-lg text-center">
+                                <div className="p-4 bg-muted/50 rounded-lg text-center">
                                     <p className="text-sm text-muted-foreground">Total Amount</p>
-                                    <p className="text-2xl font-bold text-blue-600">${result.totalAmount}</p>
+                                    <p className="text-2xl font-bold text-primary">${result.totalAmount}</p>
                                 </div>
                             </div>
 
                             {/* Per Person Breakdown */}
                             {parseInt(numberOfPeople) > 1 && (
-                                <div className="p-4 bg-purple-50 rounded-lg">
+                                <div className="p-4 bg-muted/50 rounded-lg">
                                     <h3 className="font-medium mb-3 text-center">Per Person ({numberOfPeople} people)</h3>
                                     <div className="grid grid-cols-3 gap-4 text-center">
                                         <div>
@@ -173,7 +173,7 @@ export default function TipCalculatorTool() {
                     )}
 
                     {/* Service Quality Guide */}
-                    <div className="p-4 bg-yellow-50 rounded-lg">
+                    <div className="p-4 bg-muted/50 rounded-lg">
                         <h3 className="font-medium mb-2">💡 Service Quality Guide</h3>
                         <div className="grid grid-cols-2 gap-2 text-xs">
                             <div>

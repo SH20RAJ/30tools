@@ -302,15 +302,15 @@ export default function TikTokDownloaderTool() {
                   <div className="flex justify-between items-center text-sm">
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-1">
-                        <Heart className="h-4 w-4 text-red-500" />
+                        <Heart className="h-4 w-4 text-destructive" />
                         <span>{videoData.stats.likes}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <MessageCircle className="h-4 w-4 text-blue-500" />
+                        <MessageCircle className="h-4 w-4 text-primary" />
                         <span>{videoData.stats.comments}</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Share className="h-4 w-4 text-green-500" />
+                        <Share className="h-4 w-4 text-primary" />
                         <span>{videoData.stats.shares}</span>
                       </div>
                     </div>

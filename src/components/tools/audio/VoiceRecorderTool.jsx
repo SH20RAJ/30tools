@@ -381,15 +381,15 @@ export default function VoiceRecorder() {
                   <div className="space-y-2">
                     {isRecording ? (
                       <div className="flex items-center justify-center gap-2">
-                        <div className={`w-3 h-3 rounded-full ${isPaused ? 'bg-yellow-500' : 'bg-red-500 animate-pulse'}`} />
+                        <div className={`w-3 h-3 rounded-full ${isPaused ? 'bg-muted/500' : 'bg-destructive/100 animate-pulse'}`} />
                         <span className="font-medium">
                           {isPaused ? 'Recording Paused' : 'Recording Active'}
                         </span>
                       </div>
                     ) : recordedBlob ? (
                       <div className="flex items-center justify-center gap-2">
-                        <CheckIcon className="w-4 h-4 text-green-500" />
-                        <span className="font-medium text-green-600">Recording Complete</span>
+                        <CheckIcon className="w-4 h-4 text-primary" />
+                        <span className="font-medium text-primary">Recording Complete</span>
                       </div>
                     ) : (
                       <span className="text-muted-foreground">Ready to Record</span>
@@ -476,8 +476,8 @@ export default function VoiceRecorder() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <div className="p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
-                        <Mic className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                      <div className="p-2 bg-muted dark:bg-primary/20 rounded-lg">
+                        <Mic className="h-4 w-4 text-primary dark:text-primary" />
                       </div>
                       <h4 className="font-semibold">Microphone Tips</h4>
                     </div>
@@ -487,8 +487,8 @@ export default function VoiceRecorder() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <div className="p-2 bg-green-100 dark:bg-green-900/20 rounded-lg">
-                        <CheckIcon className="h-4 w-4 text-green-600 dark:text-green-400" />
+                      <div className="p-2 bg-muted dark:bg-primary/20 rounded-lg">
+                        <CheckIcon className="h-4 w-4 text-primary dark:text-primary" />
                       </div>
                       <h4 className="font-semibold">Browser Support</h4>
                     </div>

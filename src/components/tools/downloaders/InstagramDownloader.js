@@ -73,7 +73,7 @@ export default function InstagramDownloader() {
                         <Button
                             onClick={handleDownload}
                             disabled={isLoading}
-                            className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700"
+                            className="bg-background"
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -85,7 +85,7 @@ export default function InstagramDownloader() {
                     </div>
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -93,7 +93,7 @@ export default function InstagramDownloader() {
 
                     {videoData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">Instagram content processed successfully!</span>
                             </div>
@@ -124,7 +124,7 @@ export default function InstagramDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadVideo(quality)}
-                                                    className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700"
+                                                    className="bg-background"
                                                 >
                                                     <Download className="h-3 w-3 mr-1" />
                                                     Download

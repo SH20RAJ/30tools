@@ -123,12 +123,12 @@ const pdfTools = [
 ]
 
 const categories = [
-  { name: 'Editing', count: 1, color: 'bg-blue-100 text-blue-800' },
-  { name: 'Manipulation', count: 2, color: 'bg-green-100 text-green-800' },
-  { name: 'Optimization', count: 1, color: 'bg-yellow-100 text-yellow-800' },
-  { name: 'Security', count: 2, color: 'bg-red-100 text-red-800' },
-  { name: 'Conversion', count: 5, color: 'bg-purple-100 text-purple-800' },
-  { name: 'Viewing', count: 1, color: 'bg-gray-100 text-gray-800' }
+  { name: 'Editing', count: 1, color: 'bg-muted text-foreground' },
+  { name: 'Manipulation', count: 2, color: 'bg-muted text-foreground' },
+  { name: 'Optimization', count: 1, color: 'bg-muted text-primary' },
+  { name: 'Security', count: 2, color: 'bg-destructive/20 text-destructive' },
+  { name: 'Conversion', count: 5, color: 'bg-muted text-foreground' },
+  { name: 'Viewing', count: 1, color: 'bg-gray-100 text-foreground' }
 ]
 
 export default function PdfToolsPage() {

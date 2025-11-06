@@ -104,7 +104,7 @@ export default function PDFToolsFooter() {
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-sm text-muted-foreground">
-              © 2025 30tools. Made with <Heart className="w-4 h-4 inline text-red-500 animate-pulse" /> for everyone.
+              © 2025 30tools. Made with <Heart className="w-4 h-4 inline text-destructive animate-pulse" /> for everyone.
             </p>
             <p className="text-sm text-muted-foreground mt-2 md:mt-0">
               Free • Secure • No Registration Required

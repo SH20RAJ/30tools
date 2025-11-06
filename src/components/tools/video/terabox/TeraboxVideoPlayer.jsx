@@ -170,10 +170,10 @@ export default function TeraboxVideoPlayer({ videoData }) {
           
           {/* M3U8 Info */}
           {isM3u8 && (
-            <div className="mt-2 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded">
+            <div className="mt-2 p-3 bg-muted/50 dark:bg-primary/20 border border-border dark:border-border rounded">
               <div className="flex items-center">
-                <InfoIcon className="h-4 w-4 text-blue-600 dark:text-blue-400 mr-2" />
-                <span className="text-sm text-blue-700 dark:text-blue-300">
+                <InfoIcon className="h-4 w-4 text-primary dark:text-primary mr-2" />
+                <span className="text-sm text-primary dark:text-blue-300">
                   M3U8 streaming format{videoData.total_segments ? ` with ${videoData.total_segments} segments` : ''}
                   {hlsLoaded ? ' (HLS.js enabled)' : ' (Loading HLS.js...)'}
                 </span>
@@ -182,10 +182,10 @@ export default function TeraboxVideoPlayer({ videoData }) {
           )}
           
           {videoError && (
-            <div className="mt-2 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded">
+            <div className="mt-2 p-3 bg-muted/50 dark:bg-primary/20 border border-border dark:border-border rounded">
               <div className="flex items-center">
-                <AlertCircleIcon className="h-4 w-4 text-yellow-600 dark:text-yellow-400 mr-2" />
-                <span className="text-sm text-yellow-700 dark:text-yellow-300">
+                <AlertCircleIcon className="h-4 w-4 text-primary dark:text-primary mr-2" />
+                <span className="text-sm text-primary dark:text-yellow-300">
                   Having trouble? Try the fallback options below.
                 </span>
               </div>
@@ -215,7 +215,7 @@ export default function TeraboxVideoPlayer({ videoData }) {
               <Button
                 onClick={openInNewTab}
                 size="lg"
-                className="bg-blue-600 hover:bg-blue-700"
+                className="bg-primary hover:bg-primary/90"
               >
                 <PlayIcon className="h-5 w-5 mr-2" />
                 Play Video in New Tab

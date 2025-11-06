@@ -145,10 +145,10 @@ export default function PhoneValidatorTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Phone Number Validator
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Validate phone numbers from any country. Check format, carrier information, and get detailed analysis.
           </p>
         </div>
@@ -174,7 +174,7 @@ export default function PhoneValidatorTool() {
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 className="text-lg font-mono"
               />
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-muted-foreground">
                 Include country code (e.g., +1 for US, +44 for UK, +91 for India)
               </p>
             </div>
@@ -202,8 +202,8 @@ export default function PhoneValidatorTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center py-8">
-                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
-                <p className="text-gray-600">Validating phone number...</p>
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-border mx-auto mb-4"></div>
+                <p className="text-muted-foreground">Validating phone number...</p>
               </div>
             </CardContent>
           </Card>
@@ -217,12 +217,12 @@ export default function PhoneValidatorTool() {
               <CardContent className="pt-6">
                 <div className="text-center py-6">
                   <div className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${
-                    validationResult.isValid ? 'bg-green-100' : 'bg-red-100'
+                    validationResult.isValid ? 'bg-muted' : 'bg-destructive/20'
                   }`}>
                     {validationResult.isValid ? (
-                      <Check className="h-10 w-10 text-green-600" />
+                      <Check className="h-10 w-10 text-primary" />
                     ) : (
-                      <X className="h-10 w-10 text-red-600" />
+                      <X className="h-10 w-10 text-destructive" />
                     )}
                   </div>
                   <h2 className="text-2xl font-bold mb-2">
@@ -311,16 +311,16 @@ export default function PhoneValidatorTool() {
                   </CardHeader>
                   <CardContent>
                     <div className="grid md:grid-cols-3 gap-4">
-                      <div className="text-center p-4 bg-blue-50 rounded-lg">
-                        <h3 className="font-semibold text-blue-800 mb-2">International</h3>
+                      <div className="text-center p-4 bg-muted/50 rounded-lg">
+                        <h3 className="font-semibold text-foreground mb-2">International</h3>
                         <div className="text-lg font-mono">{validationResult.format.international}</div>
                       </div>
-                      <div className="text-center p-4 bg-green-50 rounded-lg">
-                        <h3 className="font-semibold text-green-800 mb-2">National</h3>
+                      <div className="text-center p-4 bg-muted/50 rounded-lg">
+                        <h3 className="font-semibold text-foreground mb-2">National</h3>
                         <div className="text-lg font-mono">{validationResult.format.national}</div>
                       </div>
-                      <div className="text-center p-4 bg-purple-50 rounded-lg">
-                        <h3 className="font-semibold text-purple-800 mb-2">E.164</h3>
+                      <div className="text-center p-4 bg-muted/50 rounded-lg">
+                        <h3 className="font-semibold text-foreground mb-2">E.164</h3>
                         <div className="text-lg font-mono">{validationResult.format.e164}</div>
                       </div>
                     </div>
@@ -380,13 +380,13 @@ export default function PhoneValidatorTool() {
         </Card>
 
         {/* Warning */}
-        <Card className="border-yellow-200 bg-yellow-50 mt-6">
+        <Card className="border-border bg-muted/50 mt-6">
           <CardContent className="pt-6">
             <div className="flex items-start gap-3">
-              <AlertCircle className="h-5 w-5 text-yellow-600 mt-0.5" />
+              <AlertCircle className="h-5 w-5 text-primary mt-0.5" />
               <div>
-                <h3 className="font-semibold text-yellow-800 mb-2">Privacy Notice</h3>
-                <p className="text-sm text-yellow-700">
+                <h3 className="font-semibold text-primary mb-2">Privacy Notice</h3>
+                <p className="text-sm text-primary">
                   This tool validates phone number formats only. No actual calls are made and no personal data is stored. 
                   Carrier and location information is estimated and may not be 100% accurate.
                 </p>
@@ -400,9 +400,9 @@ export default function PhoneValidatorTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Phone className="h-8 w-8 text-emerald-600 mx-auto mb-3" />
+                <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Format Validation</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Validate phone number format and structure
                 </p>
               </div>
@@ -412,9 +412,9 @@ export default function PhoneValidatorTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Globe className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <Globe className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Country Detection</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Identify country and region from number
                 </p>
               </div>
@@ -424,9 +424,9 @@ export default function PhoneValidatorTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <MapPin className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Carrier Info</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Get carrier and line type information
                 </p>
               </div>

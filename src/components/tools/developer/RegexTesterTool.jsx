@@ -192,7 +192,7 @@ export default function RegexTesterTool() {
       const matchText = highlighted.substring(start, end);
       const after = highlighted.substring(end);
       
-      highlighted = before + `<mark class="bg-yellow-200 px-1 rounded">${matchText}</mark>` + after;
+      highlighted = before + `<mark class="bg-muted px-1 rounded">${matchText}</mark>` + after;
     });
 
     return highlighted;

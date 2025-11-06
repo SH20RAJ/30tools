@@ -386,23 +386,23 @@ export default function TextCaseConverterTool() {
           <CardContent>
             <div className="grid gap-4 md:grid-cols-5">
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-blue-600">{stats.characters}</div>
+                <div className="text-lg font-bold text-primary">{stats.characters}</div>
                 <div className="text-xs text-muted-foreground">Characters</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-green-600">{stats.charactersNoSpaces}</div>
+                <div className="text-lg font-bold text-primary">{stats.charactersNoSpaces}</div>
                 <div className="text-xs text-muted-foreground">No Spaces</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-purple-600">{stats.words}</div>
+                <div className="text-lg font-bold text-primary">{stats.words}</div>
                 <div className="text-xs text-muted-foreground">Words</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-orange-600">{stats.sentences}</div>
+                <div className="text-lg font-bold text-primary">{stats.sentences}</div>
                 <div className="text-xs text-muted-foreground">Sentences</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-red-600">{stats.paragraphs}</div>
+                <div className="text-lg font-bold text-destructive">{stats.paragraphs}</div>
                 <div className="text-xs text-muted-foreground">Paragraphs</div>
               </div>
             </div>

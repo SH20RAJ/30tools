@@ -149,14 +149,14 @@ export default function OtherToolsPage({ categories, otherTools }) {
           </Card>
           <Card className="text-center">
             <CardContent className="p-4">
-              <Star className="w-8 h-8 text-yellow-500 mx-auto mb-2" />
+              <Star className="w-8 h-8 text-primary mx-auto mb-2" />
               <div className="text-2xl font-bold">{allOtherTools.filter(tool => tool.popular).length}</div>
               <div className="text-sm text-muted-foreground">Popular</div>
             </CardContent>
           </Card>
           <Card className="text-center">
             <CardContent className="p-4">
-              <Settings className="w-8 h-8 text-green-500 mx-auto mb-2" />
+              <Settings className="w-8 h-8 text-primary mx-auto mb-2" />
               <div className="text-2xl font-bold">{filteredTools.length}</div>
               <div className="text-sm text-muted-foreground">Showing</div>
             </CardContent>
@@ -191,7 +191,7 @@ export default function OtherToolsPage({ categories, otherTools }) {
                                 {tool.name}
                               </CardTitle>
                               {tool.popular && (
-                                <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0">
+                                <Badge className="bg-background">
                                   <Star className="h-3 w-3 mr-1" />
                                   Popular
                                 </Badge>

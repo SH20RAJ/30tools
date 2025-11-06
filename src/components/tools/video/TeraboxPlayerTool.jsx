@@ -175,24 +175,24 @@ export default function TeraboxPlayerTool() {
 
         {/* Announcement Banner */}
         <div className="mb-8">
-          <Card className="border-blue-500 bg-blue-50 dark:bg-blue-950/30">
+          <Card className="border-border bg-muted/50 dark:bg-blue-950/30">
             <CardContent className="py-4">
               <div className="flex items-start space-x-3">
                 <div className="flex-shrink-0">
-                  <AlertCircleIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+                  <AlertCircleIcon className="h-6 w-6 text-primary dark:text-primary" />
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                  <h3 className="text-lg font-semibold text-primary dark:text-blue-100 mb-2">
                     🎉 Terabox Player Has Moved!
                   </h3>
-                  <p className="text-blue-800 dark:text-blue-200 mb-3">
+                  <p className="text-foreground dark:text-blue-200 mb-3">
                     Our Terabox player has been upgraded and moved to a dedicated platform for better performance and features.
                   </p>
                   <a
                     href="https://terabox.beer"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+                    className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg transition-colors"
                   >
                     Visit terabox.beer →
                   </a>
@@ -239,7 +239,7 @@ export default function TeraboxPlayerTool() {
               <Card>
                 <CardContent className="py-8">
                   <div className="text-center space-y-3">
-                    <LoaderIcon className="h-8 w-8 animate-spin mx-auto text-blue-500" />
+                    <LoaderIcon className="h-8 w-8 animate-spin mx-auto text-primary" />
                     <div>
                       <h3 className="font-semibold">Loading Video</h3>
                       <p className="text-sm text-muted-foreground">Fetching video information...</p>
@@ -275,8 +275,8 @@ export default function TeraboxPlayerTool() {
               <Card>
                 <CardContent className="py-8">
                   <div className="text-center space-y-3">
-                    <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto">
-                      <PlayIcon className="h-8 w-8 text-blue-600" />
+                    <div className="w-16 h-16 bg-muted dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto">
+                      <PlayIcon className="h-8 w-8 text-primary" />
                     </div>
                     <div>
                       <h3 className="font-semibold">Ready to Play Videos</h3>
@@ -416,21 +416,21 @@ export default function TeraboxPlayerTool() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
                     <div>
                       <h4 className="font-semibold">Watch viral Terabox videos online</h4>
                       <p className="text-sm text-muted-foreground">Access trending content shared on social media</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
                     <div>
                       <h4 className="font-semibold">Play Terabox videos on school or office PCs</h4>
                       <p className="text-sm text-muted-foreground">No app installation needed on restricted computers</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
                     <div>
                       <h4 className="font-semibold">Open Terabox video links instantly</h4>
                       <p className="text-sm text-muted-foreground">Quick access to shared educational content</p>
@@ -439,21 +439,21 @@ export default function TeraboxPlayerTool() {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
                     <div>
                       <h4 className="font-semibold">Terabox video viewer on mobile</h4>
                       <p className="text-sm text-muted-foreground">Stream videos on phones without app storage</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
                     <div>
                       <h4 className="font-semibold">Access content from friends</h4>
                       <p className="text-sm text-muted-foreground">View shared videos without signing up</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
+                    <div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
                     <div>
                       <h4 className="font-semibold">Preview large video files</h4>
                       <p className="text-sm text-muted-foreground">Check content before downloading</p>
@@ -509,8 +509,8 @@ export default function TeraboxPlayerTool() {
               <p className="text-lg mb-6">
                 If you ever received a Terabox video link and didn't know how to play it without installing the Terabox app - just remember one thing:
               </p>
-              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg mb-6">
-                <p className="text-xl font-semibold text-blue-600 dark:text-blue-400">
+              <div className="bg-muted/50 dark:bg-primary/20 p-6 rounded-lg mb-6">
+                <p className="text-xl font-semibold text-primary dark:text-primary">
                   Go to 30Tools.com and start watching instantly!
                 </p>
               </div>

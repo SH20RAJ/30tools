@@ -86,7 +86,7 @@ export default function YouTubeTimestampGenerator() {
       <Card className="card-cute">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Clock className="w-5 h-5 text-red-500" />
+            <Clock className="w-5 h-5 text-destructive" />
             Generate YouTube Timestamps
           </CardTitle>
           <CardDescription>
@@ -125,7 +125,7 @@ export default function YouTubeTimestampGenerator() {
           <Button
             onClick={handleGenerate}
             disabled={isGenerating || (!videoUrl && !transcript)}
-            className="w-full btn-cute bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+            className="w-full btn-cute bg-background"
           >
             {isGenerating ? (
               <>
@@ -147,7 +147,7 @@ export default function YouTubeTimestampGenerator() {
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <Youtube className="w-5 h-5 text-red-500" />
+                <Youtube className="w-5 h-5 text-destructive" />
                 Generated Timestamps ({timestamps.length} chapters)
               </span>
               <div className="flex gap-2">
@@ -158,7 +158,7 @@ export default function YouTubeTimestampGenerator() {
                   className="btn-cute"
                 >
                   {copiedIndex === 'all' ? (
-                    <CheckCircle className="w-4 h-4 mr-1 text-green-500" />
+                    <CheckCircle className="w-4 h-4 mr-1 text-primary" />
                   ) : (
                     <Copy className="w-4 h-4 mr-1" />
                   )}
@@ -206,7 +206,7 @@ export default function YouTubeTimestampGenerator() {
                     className="opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     {copiedIndex === index ? (
-                      <CheckCircle className="w-4 h-4 text-green-500" />
+                      <CheckCircle className="w-4 h-4 text-primary" />
                     ) : (
                       <Copy className="w-4 h-4" />
                     )}

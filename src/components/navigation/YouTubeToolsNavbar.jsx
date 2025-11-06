@@ -33,10 +33,10 @@ export default function YouTubeToolsNavbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     <Link href="/" className="flex items-center space-x-2 group">
-                        <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center group-hover:animate-bounce-cute">
+                        <div className="w-8 h-8 bg-background:animate-bounce-cute">
                             <Youtube className="w-5 h-5 text-white" />
                         </div>
-                        <span className="text-xl font-semibold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
+                        <span className="text-xl font-semibold bg-background">
                             30tools
                         </span>
                         <span className="text-sm text-muted-foreground font-medium">YouTube</span>
@@ -48,14 +48,14 @@ export default function YouTubeToolsNavbar() {
                                 <Link
                                     key={tool.name}
                                     href={tool.href}
-                                    className="text-sm font-medium text-foreground/80 hover:text-red-500 transition-colors hover:underline decoration-2 underline-offset-4 decoration-red-500"
+                                    className="text-sm font-medium text-foreground/80 hover:text-destructive transition-colors hover:underline decoration-2 underline-offset-4 decoration-red-500"
                                 >
                                     {tool.name}
                                 </Link>
                             ))}
                             <div className="relative">
                                 <button
-                                    className="flex items-center text-sm font-medium text-foreground/80 hover:text-red-500 transition-colors"
+                                    className="flex items-center text-sm font-medium text-foreground/80 hover:text-destructive transition-colors"
                                     onClick={() => setIsDropdownOpen((open) => !open)}
                                     onBlur={() => setTimeout(() => setIsDropdownOpen(false), 150)}
                                     type="button"
@@ -68,7 +68,7 @@ export default function YouTubeToolsNavbar() {
                                             <Link
                                                 key={tool.name}
                                                 href={tool.href}
-                                                className="block px-4 py-2 text-sm text-foreground/80 hover:bg-accent/20 hover:text-red-500 transition-colors"
+                                                className="block px-4 py-2 text-sm text-foreground/80 hover:bg-accent/20 hover:text-destructive transition-colors"
                                                 onClick={() => setIsDropdownOpen(false)}
                                             >
                                                 {tool.name}
@@ -107,7 +107,7 @@ export default function YouTubeToolsNavbar() {
                                 <Link
                                     key={tool.name}
                                     href={tool.href}
-                                    className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:text-red-500 hover:bg-accent/20 rounded-lg transition-colors"
+                                    className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:text-destructive hover:bg-accent/20 rounded-lg transition-colors"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     {tool.name}
@@ -115,14 +115,14 @@ export default function YouTubeToolsNavbar() {
                             ))}
                             <Link
                                 href="/other-tools"
-                                className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:text-red-500"
+                                className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:text-destructive"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 Other Tools
                             </Link>
                             <Link
                                 href="/search"
-                                className="block px-3 py-2 text-sm font-medium text-red-500"
+                                className="block px-3 py-2 text-sm font-medium text-destructive"
                                 onClick={() => setIsMenuOpen(false)}
                             >
                                 All Tools

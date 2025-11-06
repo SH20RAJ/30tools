@@ -325,11 +325,11 @@ export default function VideoToGifTool() {
 
                                                         {/* Trim markers */}
                                                         <div
-                                                            className="absolute top-0 w-1 h-4 bg-green-500 rounded cursor-pointer transform -translate-y-1"
+                                                            className="absolute top-0 w-1 h-4 bg-muted/500 rounded cursor-pointer transform -translate-y-1"
                                                             style={{ left: `${(settings.startTime / duration) * 100}%` }}
                                                         />
                                                         <div
-                                                            className="absolute top-0 w-1 h-4 bg-red-500 rounded cursor-pointer transform -translate-y-1"
+                                                            className="absolute top-0 w-1 h-4 bg-destructive/100 rounded cursor-pointer transform -translate-y-1"
                                                             style={{ left: `${(settings.endTime / duration) * 100}%` }}
                                                         />
                                                     </div>
@@ -388,7 +388,7 @@ export default function VideoToGifTool() {
                             <Card>
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
-                                        <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                                         Conversion Complete
                                     </CardTitle>
                                     <CardDescription>
@@ -576,19 +576,19 @@ export default function VideoToGifTool() {
                             <CardContent>
                                 <ul className="space-y-2 text-sm">
                                     <li className="flex items-center gap-2">
-                                        <ScissorsIcon className="h-4 w-4 text-blue-500" />
+                                        <ScissorsIcon className="h-4 w-4 text-primary" />
                                         <span>Precise video trimming</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <SettingsIcon className="h-4 w-4 text-green-500" />
+                                        <SettingsIcon className="h-4 w-4 text-primary" />
                                         <span>Advanced quality controls</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <ZapIcon className="h-4 w-4 text-purple-500" />
+                                        <ZapIcon className="h-4 w-4 text-primary" />
                                         <span>Fast WASM processing</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                        <CheckCircleIcon className="h-4 w-4 text-primary" />
                                         <span>No watermarks or limits</span>
                                     </li>
                                 </ul>

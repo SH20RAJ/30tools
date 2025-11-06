@@ -83,7 +83,7 @@ export default function VideoToMP3Converter() {
                 </CardHeader>
                 <CardContent className="space-y-4">
                     {/* File Upload */}
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                    <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
                         <input
                             type="file"
                             accept="video/*"
@@ -92,7 +92,7 @@ export default function VideoToMP3Converter() {
                             id="video-upload"
                         />
                         <label htmlFor="video-upload" className="cursor-pointer">
-                            <Upload className="h-12 w-12 mx-auto mb-4 text-gray-400" />
+                            <Upload className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
                             <p className="text-lg font-medium mb-2">
                                 {file ? file.name : 'Choose Video File'}
                             </p>
@@ -115,7 +115,7 @@ export default function VideoToMP3Converter() {
                                             value={option.value}
                                             checked={selectedQuality === option.value}
                                             onChange={(e) => setSelectedQuality(e.target.value)}
-                                            className="text-purple-600"
+                                            className="text-primary"
                                         />
                                         <div className="flex-1">
                                             <div className="font-medium text-sm">{option.label}</div>
@@ -132,7 +132,7 @@ export default function VideoToMP3Converter() {
                         <Button
                             onClick={handleConvert}
                             disabled={isLoading}
-                            className="w-full bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700"
+                            className="w-full bg-background"
                         >
                             {isLoading ? (
                                 <>
@@ -149,7 +149,7 @@ export default function VideoToMP3Converter() {
                     )}
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -157,7 +157,7 @@ export default function VideoToMP3Converter() {
 
                     {conversionData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">Video converted to MP3 successfully!</span>
                             </div>
@@ -165,8 +165,8 @@ export default function VideoToMP3Converter() {
                             <Card>
                                 <CardContent className="p-4">
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center">
-                                            <Music className="h-8 w-8 text-purple-600" />
+                                        <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
+                                            <Music className="h-8 w-8 text-primary" />
                                         </div>
                                         <div className="flex-1">
                                             <h3 className="font-medium text-sm mb-1">MP3 Audio File</h3>
@@ -178,7 +178,7 @@ export default function VideoToMP3Converter() {
 
                                     <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
                                         <div className="flex items-center gap-2">
-                                            <Music className="h-4 w-4 text-purple-600" />
+                                            <Music className="h-4 w-4 text-primary" />
                                             <div>
                                                 <p className="text-sm font-medium">High Quality MP3</p>
                                                 <p className="text-xs text-muted-foreground">Size: {conversionData.outputSize}</p>
@@ -186,7 +186,7 @@ export default function VideoToMP3Converter() {
                                         </div>
                                         <Button
                                             onClick={downloadMP3}
-                                            className="bg-gradient-to-r from-purple-500 to-pink-600 hover:from-purple-600 hover:to-pink-700"
+                                            className="bg-background"
                                         >
                                             <Download className="h-4 w-4 mr-1" />
                                             Download MP3

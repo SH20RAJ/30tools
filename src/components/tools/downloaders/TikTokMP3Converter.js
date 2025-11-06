@@ -110,7 +110,7 @@ export default function TikTokMP3Converter() {
                                         value={option.value}
                                         checked={selectedQuality === option.value}
                                         onChange={(e) => setSelectedQuality(e.target.value)}
-                                        className="text-pink-600"
+                                        className="text-primary"
                                     />
                                     <div>
                                         <div className="font-medium text-sm">{option.label}</div>
@@ -122,7 +122,7 @@ export default function TikTokMP3Converter() {
                     </div>
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -130,7 +130,7 @@ export default function TikTokMP3Converter() {
 
                     {conversionData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">TikTok converted to MP3 successfully!</span>
                             </div>
@@ -157,15 +157,15 @@ export default function TikTokMP3Converter() {
                                                 {conversionData.music}
                                             </p>
                                             <div className="flex items-center gap-1 text-xs">
-                                                <span className="bg-green-100 text-green-700 px-2 py-1 rounded">MP3 {conversionData.outputQuality}</span>
-                                                <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded">{conversionData.outputSize}</span>
+                                                <span className="bg-muted text-primary px-2 py-1 rounded">MP3 {conversionData.outputQuality}</span>
+                                                <span className="bg-muted text-primary px-2 py-1 rounded">{conversionData.outputSize}</span>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div className="flex items-center justify-between p-3 bg-black bg-opacity-5 rounded-lg">
                                         <div className="flex items-center gap-2">
-                                            <Music className="h-4 w-4 text-pink-600" />
+                                            <Music className="h-4 w-4 text-primary" />
                                             <div>
                                                 <p className="text-sm font-medium">High Quality MP3</p>
                                                 <p className="text-xs text-muted-foreground">Bitrate: {conversionData.outputQuality}</p>

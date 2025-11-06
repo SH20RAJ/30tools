@@ -382,7 +382,7 @@ export default function PDFMergerTool() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                    <CheckCircleIcon className="h-5 w-5 text-primary" />
                     PDF Merge Complete - Free Download
                   </CardTitle>
                 </CardHeader>
@@ -616,19 +616,19 @@ export default function PDFMergerTool() {
                   <h3 className="font-semibold mb-3 text-primary">vs SmallPDF Merge PDF</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>Completely free (no premium required)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>Unlimited file uploads</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>No watermarks on merged PDFs</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>Faster processing speed</span>
                     </div>
                   </div>
@@ -640,19 +640,19 @@ export default function PDFMergerTool() {
                   <h3 className="font-semibold mb-3 text-primary">vs Adobe Acrobat Merge PDF</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>No subscription fees</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>Works in any web browser</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>No software installation required</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>Same professional quality output</span>
                     </div>
                   </div>
@@ -664,19 +664,19 @@ export default function PDFMergerTool() {
                   <h3 className="font-semibold mb-3 text-primary">vs IlovePDF Merge</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>Better privacy protection</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>No file size limitations</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>Client-side processing only</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                       <span>More intuitive interface</span>
                     </div>
                   </div>

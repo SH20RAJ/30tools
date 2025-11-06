@@ -89,7 +89,7 @@ export default function NotesPage() {
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-indigo-500 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                 Notes
               </h1>
               <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -104,22 +104,22 @@ export default function NotesPage() {
                 <h2 className="text-2xl font-semibold mb-4">Features</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-indigo-500 font-bold">💾</span>
+                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-primary font-bold">💾</span>
                     </div>
                     <h3 className="font-medium mb-2">Auto-Save</h3>
                     <p className="text-sm text-muted-foreground">Your notes are automatically saved to your browser as you type</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-indigo-500 font-bold">🔒</span>
+                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-primary font-bold">🔒</span>
                     </div>
                     <h3 className="font-medium mb-2">Private</h3>
                     <p className="text-sm text-muted-foreground">All notes stay in your browser - no data sent to servers</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <span className="text-indigo-500 font-bold">📱</span>
+                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <span className="text-primary font-bold">📱</span>
                     </div>
                     <h3 className="font-medium mb-2">Offline</h3>
                     <p className="text-sm text-muted-foreground">Works without internet connection once loaded</p>

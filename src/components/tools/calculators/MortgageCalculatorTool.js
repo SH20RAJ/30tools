@@ -147,7 +147,7 @@ export default function MortgageCalculatorTool() {
 
                     {result && (
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="p-4 bg-blue-50 rounded-lg">
+                            <div className="p-4 bg-muted/50 rounded-lg">
                                 <h3 className="font-medium mb-2">Monthly Payment Breakdown</h3>
                                 <div className="space-y-2 text-sm">
                                     <div className="flex justify-between">
@@ -161,7 +161,7 @@ export default function MortgageCalculatorTool() {
                                 </div>
                             </div>
 
-                            <div className="p-4 bg-green-50 rounded-lg">
+                            <div className="p-4 bg-muted/50 rounded-lg">
                                 <h3 className="font-medium mb-2">Loan Summary</h3>
                                 <div className="space-y-2 text-sm">
                                     <div className="flex justify-between">

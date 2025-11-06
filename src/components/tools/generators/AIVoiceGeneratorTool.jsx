@@ -40,7 +40,7 @@ export default function AIVoiceGeneratorTool() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Volume2Icon className="h-5 w-5 text-green-500" />
+            <Volume2Icon className="h-5 w-5 text-primary" />
             AI Voice Generator
           </CardTitle>
         </CardHeader>
@@ -58,7 +58,7 @@ export default function AIVoiceGeneratorTool() {
               Generate Voice
             </Button>
           </div>
-          {error && <div className="text-red-500 text-sm">{error}</div>}
+          {error && <div className="text-destructive text-sm">{error}</div>}
           {audioUrl && (
             <div className="flex flex-col items-center gap-2 mt-4">
               <audio controls src={audioUrl} className="w-full" />

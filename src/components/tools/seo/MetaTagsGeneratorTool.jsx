@@ -79,10 +79,10 @@ export default function MetaTagsGeneratorTool() {
   const getCharacterStatus = (text, limit) => {
     const length = text.length;
     if (length === 0) return { status: 'empty', color: 'text-muted-foreground' };
-    if (length < limit.min) return { status: 'short', color: 'text-yellow-600' };
-    if (limit.ideal && length >= limit.ideal[0] && length <= limit.ideal[1]) return { status: 'ideal', color: 'text-green-600' };
-    if (length <= limit.max) return { status: 'good', color: 'text-blue-600' };
-    return { status: 'long', color: 'text-red-600' };
+    if (length < limit.min) return { status: 'short', color: 'text-primary' };
+    if (limit.ideal && length >= limit.ideal[0] && length <= limit.ideal[1]) return { status: 'ideal', color: 'text-primary' };
+    if (length <= limit.max) return { status: 'good', color: 'text-primary' };
+    return { status: 'long', color: 'text-destructive' };
   };
 
   const generateMetaTags = useMemo(() => {
@@ -609,13 +609,13 @@ ${generateMetaTags}
               </CardHeader>
               <CardContent>
                 <div className="border rounded-lg p-4 bg-muted/20">
-                  <div className="text-blue-600 text-lg font-medium hover:underline cursor-pointer">
+                  <div className="text-primary text-lg font-medium hover:underline cursor-pointer">
                     {previewData.title}
                   </div>
-                  <div className="text-green-700 text-sm">
+                  <div className="text-primary text-sm">
                     {previewData.url}
                   </div>
-                  <div className="text-gray-600 text-sm mt-1">
+                  <div className="text-muted-foreground text-sm mt-1">
                     {previewData.description}
                   </div>
                 </div>
@@ -647,13 +647,13 @@ ${generateMetaTags}
                       </div>
                     )}
                     <div className="p-3 bg-white border-t">
-                      <div className="text-xs text-gray-500 uppercase mb-1">
+                      <div className="text-xs text-muted-foreground uppercase mb-1">
                         {metaData.ogSiteName || 'yourwebsite.com'}
                       </div>
                       <div className="font-semibold text-sm">
                         {metaData.ogTitle || metaData.title || 'Your Page Title'}
                       </div>
-                      <div className="text-xs text-gray-600 mt-1">
+                      <div className="text-xs text-muted-foreground mt-1">
                         {metaData.ogDescription || metaData.description || 'Your page description'}
                       </div>
                     </div>
@@ -677,10 +677,10 @@ ${generateMetaTags}
                       <div className="font-semibold text-sm">
                         {metaData.twitterTitle || metaData.ogTitle || metaData.title || 'Your Page Title'}
                       </div>
-                      <div className="text-xs text-gray-600 mt-1">
+                      <div className="text-xs text-muted-foreground mt-1">
                         {metaData.twitterDescription || metaData.ogDescription || metaData.description || 'Your page description'}
                       </div>
-                      <div className="text-xs text-gray-500 mt-1">
+                      <div className="text-xs text-muted-foreground mt-1">
                         {metaData.canonicalUrl || 'yourwebsite.com'}
                       </div>
                     </div>
@@ -725,27 +725,27 @@ ${generateMetaTags}
               <CardContent>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li className="flex gap-2">
-                    <CheckCircleIcon className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircleIcon className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     Keep title tags between 50-60 characters
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircleIcon className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircleIcon className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     Write meta descriptions 150-160 characters
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircleIcon className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircleIcon className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     Include target keywords naturally
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircleIcon className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircleIcon className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     Use compelling calls-to-action
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircleIcon className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircleIcon className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     Optimize OG images (1200x630px)
                   </li>
                   <li className="flex gap-2">
-                    <CheckCircleIcon className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                    <CheckCircleIcon className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
                     Test social media previews
                   </li>
                 </ul>

@@ -127,8 +127,8 @@ export default function LoanCalculatorPage() {
                         <div className="bg-card rounded-lg p-6 border">
                             <h2 className="text-2xl font-semibold mb-4">Types of Loans</h2>
                             <div className="grid md:grid-cols-3 gap-4">
-                                <div className="p-4 bg-blue-50 rounded-lg">
-                                    <h3 className="font-medium mb-2 text-blue-600">💳 Personal Loans</h3>
+                                <div className="p-4 bg-muted/50 rounded-lg">
+                                    <h3 className="font-medium mb-2 text-primary">💳 Personal Loans</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1">
                                         <li>• Debt consolidation</li>
                                         <li>• Home improvements</li>
@@ -137,8 +137,8 @@ export default function LoanCalculatorPage() {
                                         <li>• Emergency expenses</li>
                                     </ul>
                                 </div>
-                                <div className="p-4 bg-green-50 rounded-lg">
-                                    <h3 className="font-medium mb-2 text-green-600">🚗 Auto Loans</h3>
+                                <div className="p-4 bg-muted/50 rounded-lg">
+                                    <h3 className="font-medium mb-2 text-primary">🚗 Auto Loans</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1">
                                         <li>• New car financing</li>
                                         <li>• Used car loans</li>
@@ -147,8 +147,8 @@ export default function LoanCalculatorPage() {
                                         <li>• Boat loans</li>
                                     </ul>
                                 </div>
-                                <div className="p-4 bg-purple-50 rounded-lg">
-                                    <h3 className="font-medium mb-2 text-purple-600">🏢 Business Loans</h3>
+                                <div className="p-4 bg-muted/50 rounded-lg">
+                                    <h3 className="font-medium mb-2 text-primary">🏢 Business Loans</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1">
                                         <li>• Equipment financing</li>
                                         <li>• Working capital</li>
@@ -164,7 +164,7 @@ export default function LoanCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Loan Payment Factors</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-orange-600">📊 Key Variables</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📊 Key Variables</h3>
                                     <ul className="text-sm text-muted-foreground space-y-2 mb-4">
                                         <li>• <strong>Principal Amount:</strong> The total loan amount borrowed</li>
                                         <li>• <strong>Interest Rate:</strong> Annual percentage rate (APR)</li>
@@ -173,7 +173,7 @@ export default function LoanCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-orange-600">💰 Payment Components</h3>
+                                    <h3 className="font-medium mb-2 text-primary">💰 Payment Components</h3>
                                     <ul className="text-sm text-muted-foreground space-y-2 mb-4">
                                         <li>• <strong>Principal:</strong> Amount that reduces loan balance</li>
                                         <li>• <strong>Interest:</strong> Cost of borrowing money</li>
@@ -188,7 +188,7 @@ export default function LoanCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Loan Comparison Tips</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-red-600">🔍 What to Compare</h3>
+                                    <h3 className="font-medium mb-2 text-destructive">🔍 What to Compare</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Annual Percentage Rate (APR)</li>
                                         <li>• Monthly payment amount</li>
@@ -199,7 +199,7 @@ export default function LoanCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-red-600">💡 Money-Saving Tips</h3>
+                                    <h3 className="font-medium mb-2 text-destructive">💡 Money-Saving Tips</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Shop around with multiple lenders</li>
                                         <li>• Improve credit score before applying</li>

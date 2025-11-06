@@ -197,40 +197,40 @@ export default function CalorieCalculatorTool() {
                         <div className="space-y-6">
                             {/* Main Results */}
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                <div className="p-4 bg-blue-50 rounded-lg text-center">
+                                <div className="p-4 bg-muted/50 rounded-lg text-center">
                                     <p className="text-sm text-muted-foreground">BMR</p>
-                                    <p className="text-2xl font-bold text-blue-600">{result.bmr}</p>
+                                    <p className="text-2xl font-bold text-primary">{result.bmr}</p>
                                     <p className="text-xs text-muted-foreground">calories/day at rest</p>
                                 </div>
-                                <div className="p-4 bg-green-50 rounded-lg text-center">
+                                <div className="p-4 bg-muted/50 rounded-lg text-center">
                                     <p className="text-sm text-muted-foreground">TDEE</p>
-                                    <p className="text-2xl font-bold text-green-600">{result.tdee}</p>
+                                    <p className="text-2xl font-bold text-primary">{result.tdee}</p>
                                     <p className="text-xs text-muted-foreground">maintenance calories</p>
                                 </div>
-                                <div className="p-4 bg-orange-50 rounded-lg text-center">
+                                <div className="p-4 bg-muted/50 rounded-lg text-center">
                                     <p className="text-sm text-muted-foreground">Target Calories</p>
-                                    <p className="text-2xl font-bold text-orange-600">{result.targetCalories}</p>
+                                    <p className="text-2xl font-bold text-primary">{result.targetCalories}</p>
                                     <p className="text-xs text-muted-foreground">{result.weeklyChange}/week</p>
                                 </div>
                             </div>
 
                             {/* Macro Breakdown */}
-                            <div className="p-6 bg-purple-50 rounded-lg">
+                            <div className="p-6 bg-muted/50 rounded-lg">
                                 <h3 className="font-medium mb-4 text-center">Daily Macro Breakdown</h3>
                                 <div className="grid grid-cols-3 gap-4 text-center">
                                     <div>
                                         <p className="text-sm text-muted-foreground">Protein</p>
-                                        <p className="text-xl font-bold text-purple-600">{result.macros.protein}g</p>
+                                        <p className="text-xl font-bold text-primary">{result.macros.protein}g</p>
                                         <p className="text-xs text-muted-foreground">30% of calories</p>
                                     </div>
                                     <div>
                                         <p className="text-sm text-muted-foreground">Carbs</p>
-                                        <p className="text-xl font-bold text-purple-600">{result.macros.carbs}g</p>
+                                        <p className="text-xl font-bold text-primary">{result.macros.carbs}g</p>
                                         <p className="text-xs text-muted-foreground">35% of calories</p>
                                     </div>
                                     <div>
                                         <p className="text-sm text-muted-foreground">Fat</p>
-                                        <p className="text-xl font-bold text-purple-600">{result.macros.fat}g</p>
+                                        <p className="text-xl font-bold text-primary">{result.macros.fat}g</p>
                                         <p className="text-xs text-muted-foreground">35% of calories</p>
                                     </div>
                                 </div>
@@ -249,7 +249,7 @@ export default function CalorieCalculatorTool() {
                     )}
 
                     {/* Disclaimer */}
-                    <div className="p-4 bg-yellow-50 rounded-lg">
+                    <div className="p-4 bg-muted/50 rounded-lg">
                         <p className="text-xs text-muted-foreground">
                             <strong>Disclaimer:</strong> This calculator provides estimates based on standard formulas.
                             Individual metabolic rates can vary. Consult with a healthcare professional or registered

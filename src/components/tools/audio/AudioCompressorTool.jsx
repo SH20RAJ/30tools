@@ -214,11 +214,11 @@ export default function AudioCompressorTool() {
       case 'pending':
         return <FileIcon className="h-4 w-4 text-muted-foreground" />;
       case 'compressing':
-        return <RefreshCwIcon className="h-4 w-4 text-blue-500 animate-spin" />;
+        return <RefreshCwIcon className="h-4 w-4 text-primary animate-spin" />;
       case 'completed':
-        return <CheckCircleIcon className="h-4 w-4 text-green-500" />;
+        return <CheckCircleIcon className="h-4 w-4 text-primary" />;
       case 'error':
-        return <AlertCircleIcon className="h-4 w-4 text-red-500" />;
+        return <AlertCircleIcon className="h-4 w-4 text-destructive" />;
       default:
         return <FileIcon className="h-4 w-4 text-muted-foreground" />;
     }
@@ -229,11 +229,11 @@ export default function AudioCompressorTool() {
       case 'pending':
         return <Badge variant="outline">Pending</Badge>;
       case 'compressing':
-        return <Badge variant="outline" className="text-blue-600">Compressing...</Badge>;
+        return <Badge variant="outline" className="text-primary">Compressing...</Badge>;
       case 'completed':
-        return <Badge variant="outline" className="text-green-600">Complete</Badge>;
+        return <Badge variant="outline" className="text-primary">Complete</Badge>;
       case 'error':
-        return <Badge variant="outline" className="text-red-600">Error</Badge>;
+        return <Badge variant="outline" className="text-destructive">Error</Badge>;
       default:
         return <Badge variant="outline">Unknown</Badge>;
     }
@@ -414,7 +414,7 @@ export default function AudioCompressorTool() {
                               {fileData.compressedSize && (
                                 <>
                                   <span>Compressed: {formatFileSize(fileData.compressedSize)}</span>
-                                  <Badge variant="outline" className="text-green-600">
+                                  <Badge variant="outline" className="text-primary">
                                     {calculateSavings(fileData.originalSize, fileData.compressedSize)}% smaller
                                   </Badge>
                                 </>

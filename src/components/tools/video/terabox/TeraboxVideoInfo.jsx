@@ -55,9 +55,9 @@ export default function TeraboxVideoInfo({
       <CardHeader>
         <CardTitle className="flex items-center">
           {videoData ? (
-            <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500" />
+            <CheckCircleIcon className="h-5 w-5 mr-2 text-primary" />
           ) : (
-            <LoaderIcon className="h-5 w-5 mr-2 text-blue-500 animate-spin" />
+            <LoaderIcon className="h-5 w-5 mr-2 text-primary animate-spin" />
           )}
           Video Information
         </CardTitle>

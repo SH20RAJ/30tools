@@ -661,8 +661,8 @@ export default function RandomGenerator() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <div className="p-2 bg-blue-100 dark:bg-blue-900/20 rounded-lg">
-                        <Key className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+                      <div className="p-2 bg-muted dark:bg-primary/20 rounded-lg">
+                        <Key className="h-4 w-4 text-primary dark:text-primary" />
                       </div>
                       <h4 className="font-semibold">Security Features</h4>
                     </div>
@@ -672,8 +672,8 @@ export default function RandomGenerator() {
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center gap-2">
-                      <div className="p-2 bg-green-100 dark:bg-green-900/20 rounded-lg">
-                        <Download className="h-4 w-4 text-green-600 dark:text-green-400" />
+                      <div className="p-2 bg-muted dark:bg-primary/20 rounded-lg">
+                        <Download className="h-4 w-4 text-primary dark:text-primary" />
                       </div>
                       <h4 className="font-semibold">Export Options</h4>
                     </div>

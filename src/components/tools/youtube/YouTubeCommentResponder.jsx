@@ -101,7 +101,7 @@ export default function YouTubeCommentResponder() {
       <Card className="card-cute">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <MessageCircle className="w-5 h-5 text-red-500" />
+            <MessageCircle className="w-5 h-5 text-destructive" />
             AI Comment Responder
           </CardTitle>
           <CardDescription>
@@ -215,7 +215,7 @@ export default function YouTubeCommentResponder() {
             <Button
               onClick={handleGenerateResponses}
               disabled={isGenerating || !comment.trim()}
-              className="flex-1 btn-cute bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+              className="flex-1 btn-cute bg-background"
             >
               {isGenerating ? (
                 <>
@@ -248,7 +248,7 @@ export default function YouTubeCommentResponder() {
         <Card className="card-cute">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <Youtube className="w-5 h-5 text-red-500" />
+              <Youtube className="w-5 h-5 text-destructive" />
               Generated Responses ({responses.length})
             </CardTitle>
             <CardDescription>
@@ -283,7 +283,7 @@ export default function YouTubeCommentResponder() {
                       className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
                     >
                       {copiedIndex === index ? (
-                        <CheckCircle className="w-4 h-4 text-green-500" />
+                        <CheckCircle className="w-4 h-4 text-primary" />
                       ) : (
                         <Copy className="w-4 h-4" />
                       )}

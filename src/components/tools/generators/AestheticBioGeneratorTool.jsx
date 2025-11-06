@@ -196,7 +196,7 @@ export default function AestheticBioGeneratorTool() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
+    <div className="min-h-screen bg-muted/20 dark:from-gray-900 dark:via-purple-900 dark:to-indigo-900">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <Link href="/text-tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
@@ -205,11 +205,11 @@ export default function AestheticBioGeneratorTool() {
           </Link>
           
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg">
+            <div className="p-2 bg-background">
               <SparklesIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-background">
                 Aesthetic Bio Generator
               </h1>
               <p className="text-muted-foreground">Create viral social media bios with emojis and aesthetic themes</p>
@@ -352,7 +352,7 @@ export default function AestheticBioGeneratorTool() {
 
                 <Button 
                   onClick={handleGenerate} 
-                  className="w-full bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600"
+                  className="w-full bg-background"
                   disabled={isGenerating}
                 >
                   {isGenerating ? (
@@ -386,14 +386,14 @@ export default function AestheticBioGeneratorTool() {
               <CardContent>
                 {generatedBio ? (
                   <div className="space-y-4">
-                    <div className="p-4 bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-900/20 dark:to-purple-900/20 rounded-lg border">
+                    <div className="p-4 bg-background/20 dark:to-purple-900/20 rounded-lg border">
                       <div className="whitespace-pre-wrap text-sm font-medium">
                         {generatedBio}
                       </div>
                       <div className="mt-2 text-xs text-muted-foreground">
                         {generatedBio.length} / {platformLimits[platform]} characters
                         {generatedBio.length > platformLimits[platform] && (
-                          <span className="text-red-500 ml-2">⚠️ Too long for {platform}</span>
+                          <span className="text-destructive ml-2">⚠️ Too long for {platform}</span>
                         )}
                       </div>
                     </div>

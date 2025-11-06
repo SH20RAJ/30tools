@@ -89,7 +89,7 @@ export default function SchemaGeneratorPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-green-500 to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
               Schema Markup Generator
             </h1>
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -110,22 +110,22 @@ export default function SchemaGeneratorPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Use Schema Markup Generator</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-green-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Choose Schema Type</h3>
                   <p className="text-sm text-muted-foreground">Select the type of structured data you want to create (Business, Product, Article, etc.)</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-green-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Fill in Details</h3>
                   <p className="text-sm text-muted-foreground">Enter your business, product, or content information in the form fields</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-green-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Copy & Implement</h3>
                   <p className="text-sm text-muted-foreground">Copy the generated JSON-LD code and add it to your website's HTML head</p>
@@ -137,17 +137,17 @@ export default function SchemaGeneratorPage() {
               <h2 className="text-2xl font-semibold mb-4">Benefits of Schema Markup</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">🌟 Rich Snippets in Search</h3>
+                  <h3 className="font-medium mb-2 text-primary">🌟 Rich Snippets in Search</h3>
                   <p className="text-sm text-muted-foreground mb-4">Schema markup helps your website appear with enhanced information in search results, including ratings, prices, images, and more details that attract clicks.</p>
 
-                  <h3 className="font-medium mb-2 text-green-600">📍 Local Business Visibility</h3>
+                  <h3 className="font-medium mb-2 text-primary">📍 Local Business Visibility</h3>
                   <p className="text-sm text-muted-foreground mb-4">Local business schema helps you appear in Google Maps, local search results, and knowledge panels with accurate business information and customer reviews.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">📈 Higher Click-Through Rates</h3>
+                  <h3 className="font-medium mb-2 text-primary">📈 Higher Click-Through Rates</h3>
                   <p className="text-sm text-muted-foreground mb-4">Rich snippets with structured data stand out in search results, leading to higher click-through rates and more organic traffic to your website.</p>
 
-                  <h3 className="font-medium mb-2 text-green-600">🤖 Better Search Understanding</h3>
+                  <h3 className="font-medium mb-2 text-primary">🤖 Better Search Understanding</h3>
                   <p className="text-sm text-muted-foreground mb-4">Structured data helps search engines understand your content better, leading to more accurate indexing and improved relevance in search results.</p>
                 </div>
               </div>

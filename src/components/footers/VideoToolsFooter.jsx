@@ -37,7 +37,7 @@ export default function VideoToolsFooter() {
 
         <div className="mt-12 pt-8 border-t border-border text-center">
           <p className="text-sm text-muted-foreground">
-            © 2025 30tools. Made with <Heart className="w-4 h-4 inline text-red-500 animate-pulse" /> for everyone.
+            © 2025 30tools. Made with <Heart className="w-4 h-4 inline text-destructive animate-pulse" /> for everyone.
           </p>
         </div>
       </div>

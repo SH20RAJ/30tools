@@ -113,7 +113,7 @@ export default function YouTubeGifMaker() {
       <Card className="card-cute">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <ImageIcon className="w-5 h-5 text-red-500" />
+            <ImageIcon className="w-5 h-5 text-destructive" />
             YouTube to GIF Converter
           </CardTitle>
           <CardDescription>
@@ -287,7 +287,7 @@ export default function YouTubeGifMaker() {
           <Button
             onClick={handleCreateGif}
             disabled={isCreating || !videoUrl || endTime <= startTime}
-            className="w-full btn-cute bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700"
+            className="w-full btn-cute bg-background"
           >
             {isCreating ? (
               <>
@@ -309,12 +309,12 @@ export default function YouTubeGifMaker() {
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <Youtube className="w-5 h-5 text-red-500" />
+                <Youtube className="w-5 h-5 text-destructive" />
                 Your GIF is Ready!
               </span>
               <Button
                 onClick={downloadGif}
-                className="btn-cute bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
+                className="btn-cute bg-background"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download GIF

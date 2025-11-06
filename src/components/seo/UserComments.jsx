@@ -106,7 +106,7 @@ function CommentItem({ comment, onReply, onLike, depth = 0 }) {
     return Array.from({ length: 5 }, (_, i) => (
       <span
         key={i}
-        className={`text-sm ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
+        className={`text-sm ${i < rating ? 'text-primary' : 'text-gray-300'}`}
       >
         ★
       </span>
@@ -132,7 +132,7 @@ function CommentItem({ comment, onReply, onLike, depth = 0 }) {
               </Badge>
             )}
             {comment.helpful && (
-              <Badge variant="outline" className="text-xs text-green-600">
+              <Badge variant="outline" className="text-xs text-primary">
                 Helpful
               </Badge>
             )}
@@ -159,7 +159,7 @@ function CommentItem({ comment, onReply, onLike, depth = 0 }) {
               variant="ghost"
               size="sm"
               onClick={handleLike}
-              className={`h-auto p-1 ${liked ? 'text-red-500' : 'text-muted-foreground'}`}
+              className={`h-auto p-1 ${liked ? 'text-destructive' : 'text-muted-foreground'}`}
             >
               <Heart className={`h-4 w-4 mr-1 ${liked ? 'fill-current' : ''}`} />
               {comment.likes + (liked ? 1 : 0)}
@@ -450,7 +450,7 @@ export function CommentsWidget({ toolId, compact = false }) {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <span className="font-medium text-sm">{comment.author}</span>
-                <div className="flex text-xs text-yellow-400">
+                <div className="flex text-xs text-primary">
                   {Array.from({ length: comment.toolRating || 5 }, (_, i) => '★')}
                 </div>
               </div>

@@ -131,22 +131,22 @@ export default function PasswordCheckerPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Check Password Strength</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-yellow-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Enter Password</h3>
                   <p className="text-sm text-muted-foreground">Type your password in the secure input field</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-yellow-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">View Analysis</h3>
                   <p className="text-sm text-muted-foreground">See strength score, crack time, and security analysis</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-yellow-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-yellow-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Get Recommendations</h3>
                   <p className="text-sm text-muted-foreground">Follow suggestions to improve password security</p>
@@ -158,7 +158,7 @@ export default function PasswordCheckerPage() {
               <h2 className="text-2xl font-semibold mb-4">Password Security Analysis</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-yellow-600">🔍 Comprehensive Testing</h3>
+                  <h3 className="font-medium mb-2 text-primary">🔍 Comprehensive Testing</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Length and complexity analysis</li>
                     <li>• Character variety assessment</li>
@@ -168,7 +168,7 @@ export default function PasswordCheckerPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-yellow-600">📊 Security Metrics</h3>
+                  <h3 className="font-medium mb-2 text-primary">📊 Security Metrics</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Strength score (0-100)</li>
                     <li>• Estimated crack time</li>
@@ -184,7 +184,7 @@ export default function PasswordCheckerPage() {
               <h2 className="text-2xl font-semibold mb-4">Password Security Best Practices</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">✅ Strong Password Guidelines</h3>
+                  <h3 className="font-medium mb-2 text-primary">✅ Strong Password Guidelines</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Use at least 12 characters</li>
                     <li>• Include uppercase and lowercase letters</li>
@@ -194,7 +194,7 @@ export default function PasswordCheckerPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-red-600">❌ Common Password Mistakes</h3>
+                  <h3 className="font-medium mb-2 text-destructive">❌ Common Password Mistakes</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Using the same password everywhere</li>
                     <li>• Simple substitutions (@ for a)</li>

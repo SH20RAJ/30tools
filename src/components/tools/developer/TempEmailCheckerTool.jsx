@@ -86,7 +86,7 @@ export default function TempEmailCheckerTool() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-16 h-16 bg-background">
               <Shield className="w-8 h-8 text-white" />
             </div>
           </div>
@@ -113,8 +113,8 @@ export default function TempEmailCheckerTool() {
           <Card className="card-cute">
             <CardContent className="p-6">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-red-100 dark:bg-red-900/20 rounded-lg flex items-center justify-center">
-                  <XCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
+                <div className="w-10 h-10 bg-destructive/20 dark:bg-primary/20 rounded-lg flex items-center justify-center">
+                  <XCircle className="w-5 h-5 text-destructive dark:text-destructive" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Blocked Domains</p>
@@ -127,8 +127,8 @@ export default function TempEmailCheckerTool() {
           <Card className="card-cute">
             <CardContent className="p-6">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
-                  <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
+                <div className="w-10 h-10 bg-muted dark:bg-primary/20 rounded-lg flex items-center justify-center">
+                  <CheckCircle className="w-5 h-5 text-primary dark:text-primary" />
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Allowed Domains</p>
@@ -337,7 +337,7 @@ export default function TempEmailCheckerTool() {
           <CardContent>
             <div className="flex items-start space-x-3">
               <div className="w-10 h-10 bg-gray-100 dark:bg-gray-800 rounded-lg flex items-center justify-center">
-                <ExternalLink className="w-5 h-5 text-gray-600 dark:text-gray-400" />
+                <ExternalLink className="w-5 h-5 text-muted-foreground dark:text-muted-foreground" />
               </div>
               <div className="flex-1">
                 <p className="text-sm text-muted-foreground mb-2">
@@ -381,7 +381,7 @@ export default function TempEmailCheckerTool() {
               <Link href="/email-breach-checker" className="group">
                 <div className="p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
                   <div className="flex items-center space-x-3 mb-2">
-                    <ShieldAlert className="w-5 h-5 text-red-500" />
+                    <ShieldAlert className="w-5 h-5 text-destructive" />
                     <span className="font-medium group-hover:text-primary">Email Breach Checker</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -393,7 +393,7 @@ export default function TempEmailCheckerTool() {
               <Link href="/password-breach-checker" className="group">
                 <div className="p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
                   <div className="flex items-center gap-3 mb-2">
-                    <Shield className="w-5 h-5 text-orange-500" />
+                    <Shield className="w-5 h-5 text-primary" />
                     <span className="font-medium group-hover:text-primary">Password Breach Checker</span>
                   </div>
                   <p className="text-sm text-muted-foreground">
@@ -405,7 +405,7 @@ export default function TempEmailCheckerTool() {
               <Link href="/hash-generator" className="group">
                 <div className="p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
                   <div className="flex items-center space-x-3 mb-2">
-                    <Shield className="w-5 h-5 text-blue-500" />
+                    <Shield className="w-5 h-5 text-primary" />
                     <span className="font-medium group-hover:text-primary">Hash Generator</span>
                   </div>
                   <p className="text-sm text-muted-foreground">

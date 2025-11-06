@@ -319,7 +319,7 @@ export default function ZipCreatorTool() {
                             <Card>
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
-                                        <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                                         ZIP Archive Created
                                     </CardTitle>
                                     <CardDescription>
@@ -327,14 +327,14 @@ export default function ZipCreatorTool() {
                                     </CardDescription>
                                 </CardHeader>
                                 <CardContent className="space-y-4">
-                                    <div className="flex items-center gap-4 p-4 bg-green-50 rounded-lg border border-green-200">
+                                    <div className="flex items-center gap-4 p-4 bg-muted/50 rounded-lg border border-border">
                                         <div className="text-3xl">📦</div>
                                         <div className="flex-1">
                                             <div className="font-medium">{zipFile.filename}</div>
                                             <div className="text-sm text-muted-foreground">
                                                 {formatFileSize(zipFile.size)} • {zipFile.fileCount} files • {zipFile.compressionRatio}% compression
                                             </div>
-                                            <div className="text-xs text-green-700 mt-1">
+                                            <div className="text-xs text-primary mt-1">
                                                 Saved {formatFileSize(zipFile.originalSize - zipFile.size)} of storage space
                                             </div>
                                         </div>
@@ -406,7 +406,7 @@ export default function ZipCreatorTool() {
                                             value={settings.password}
                                             onChange={(e) => setSettings(prev => ({ ...prev, password: e.target.value }))}
                                         />
-                                        <div className="text-xs text-amber-600 mt-1">
+                                        <div className="text-xs text-primary mt-1">
                                             Note: Password protection requires additional setup
                                         </div>
                                     </div>
@@ -461,7 +461,7 @@ export default function ZipCreatorTool() {
                                     {settings.passwordProtected && (
                                         <div className="flex justify-between text-sm">
                                             <span>Protection:</span>
-                                            <span className="font-medium text-green-600">Password</span>
+                                            <span className="font-medium text-primary">Password</span>
                                         </div>
                                     )}
                                 </CardContent>
@@ -476,23 +476,23 @@ export default function ZipCreatorTool() {
                             <CardContent>
                                 <ul className="space-y-2 text-sm">
                                     <li className="flex items-center gap-2">
-                                        <PackageIcon className="h-4 w-4 text-blue-500" />
+                                        <PackageIcon className="h-4 w-4 text-primary" />
                                         <span>Multiple file compression</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <ShieldIcon className="h-4 w-4 text-green-500" />
+                                        <ShieldIcon className="h-4 w-4 text-primary" />
                                         <span>Password protection support</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <HardDriveIcon className="h-4 w-4 text-purple-500" />
+                                        <HardDriveIcon className="h-4 w-4 text-primary" />
                                         <span>Adjustable compression levels</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-orange-500" />
+                                        <ClockIcon className="h-4 w-4 text-primary" />
                                         <span>Fast processing</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                        <CheckCircleIcon className="h-4 w-4 text-primary" />
                                         <span>No file size limits</span>
                                     </li>
                                 </ul>

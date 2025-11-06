@@ -100,14 +100,14 @@ export default function EmailBreachCheckerTool() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-cyan-600 rounded-2xl flex items-center justify-center shadow-xl">
+            <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-xl">
               <Mail className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-slate-800 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Email Breach Checker
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Check if your email has been compromised in data breaches. 
             Get detailed information about security incidents affecting your email.
           </p>
@@ -138,7 +138,7 @@ export default function EmailBreachCheckerTool() {
                     placeholder="Enter your email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="border-slate-200 focus:border-blue-500 focus:ring-blue-500"
+                    className="border-border focus:border-primary focus:ring-primary"
                     onKeyPress={(e) => e.key === 'Enter' && handleCheck()}
                   />
                 </div>
@@ -155,7 +155,7 @@ export default function EmailBreachCheckerTool() {
                 <Button 
                   onClick={handleCheck} 
                   disabled={loading}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
+                  className="w-full bg-primary hover:bg-primary/90 text-white"
                   size="lg"
                 >
                   {loading ? (
@@ -177,17 +177,17 @@ export default function EmailBreachCheckerTool() {
                     {/* Email Results Summary */}
                     <div className={`flex items-center gap-3 p-4 rounded-lg border-2 ${
                       results.breaches.length > 0 
-                        ? 'bg-red-50 border-red-200' 
-                        : 'bg-green-50 border-green-200'
+                        ? 'bg-destructive/10 border-destructive/50' 
+                        : 'bg-muted/50 border-border'
                     }`}>
                       {results.breaches.length > 0 ? (
-                        <ShieldAlert className="w-8 h-8 text-red-600" />
+                        <ShieldAlert className="w-8 h-8 text-destructive" />
                       ) : (
-                        <ShieldCheck className="w-8 h-8 text-green-600" />
+                        <ShieldCheck className="w-8 h-8 text-primary" />
                       )}
                       <div>
                         <h3 className={`font-semibold ${
-                          results.breaches.length > 0 ? 'text-red-800' : 'text-green-800'
+                          results.breaches.length > 0 ? 'text-destructive' : 'text-foreground'
                         }`}>
                           {results.breaches.length > 0 
                             ? `Found in ${results.breaches.length} breach${results.breaches.length > 1 ? 'es' : ''}`
@@ -195,7 +195,7 @@ export default function EmailBreachCheckerTool() {
                           }
                         </h3>
                         <p className={`text-sm ${
-                          results.breaches.length > 0 ? 'text-red-600' : 'text-green-600'
+                          results.breaches.length > 0 ? 'text-destructive' : 'text-primary'
                         }`}>
                           Email: {results.email}
                         </p>
@@ -245,18 +245,18 @@ export default function EmailBreachCheckerTool() {
                     )}
 
                     {/* Password Check Suggestion */}
-                    <Card className="bg-gradient-to-r from-orange-50 to-red-50 border-orange-200">
+                    <Card className="bg-background">
                       <CardContent className="p-4">
                         <div className="flex items-center gap-3">
-                          <Lock className="w-6 h-6 text-orange-600" />
+                          <Lock className="w-6 h-6 text-primary" />
                           <div className="flex-1">
-                            <h4 className="font-semibold text-orange-800">Check Your Passwords Too</h4>
-                            <p className="text-sm text-orange-700">
+                            <h4 className="font-semibold text-primary">Check Your Passwords Too</h4>
+                            <p className="text-sm text-primary">
                               Also check if your passwords have been compromised in data breaches.
                             </p>
                           </div>
                           <Link href="/password-breach-checker">
-                            <Button variant="outline" size="sm" className="border-orange-300 text-orange-700 hover:bg-orange-100">
+                            <Button variant="outline" size="sm" className="border-border text-primary hover:bg-muted">
                               Check Passwords
                               <ArrowRight className="w-4 h-4 ml-1" />
                             </Button>
@@ -299,26 +299,26 @@ export default function EmailBreachCheckerTool() {
 
             <Card className="bg-white shadow-lg border-0 rounded-xl">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2 text-slate-800">
+                <CardTitle className="flex items-center gap-2 text-foreground">
                   <Shield className="w-5 h-5" />
                   Privacy & Security
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-3 text-sm">
                 <div className="flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 text-green-500 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-primary mt-0.5" />
                   <span>No data stored on our servers</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 text-green-500 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-primary mt-0.5" />
                   <span>Powered by HaveIBeenPwned</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 text-green-500 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-primary mt-0.5" />
                   <span>Secure server-side checking</span>
                 </div>
                 <div className="flex items-start gap-2">
-                  <ShieldCheck className="w-4 h-4 text-green-500 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-primary mt-0.5" />
                   <span>Real-time breach database</span>
                 </div>
               </CardContent>
@@ -326,7 +326,7 @@ export default function EmailBreachCheckerTool() {
 
             <Card className="bg-white shadow-lg border-0 rounded-xl">
               <CardHeader>
-                <CardTitle className="text-slate-800">Security Tips</CardTitle>
+                <CardTitle className="text-foreground">Security Tips</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2 text-sm">
                 <p>• Use unique passwords for each account</p>
@@ -338,15 +338,15 @@ export default function EmailBreachCheckerTool() {
             </Card>
 
             {/* Link to Password Checker */}
-            <Card className="bg-gradient-to-br from-orange-50 to-red-50 border-2 border-orange-200 shadow-lg rounded-xl">
+            <Card className="bg-background">
               <CardContent className="p-4 text-center">
-                <Lock className="w-8 h-8 mx-auto mb-2 text-orange-600" />
-                <h3 className="font-semibold text-orange-800 mb-2">Password Security</h3>
-                <p className="text-sm text-orange-700 mb-3">
+                <Lock className="w-8 h-8 mx-auto mb-2 text-primary" />
+                <h3 className="font-semibold text-primary mb-2">Password Security</h3>
+                <p className="text-sm text-primary mb-3">
                   Check if your passwords have been compromised too.
                 </p>
                 <Link href="/password-breach-checker">
-                  <Button className="w-full bg-orange-600 hover:bg-orange-700">
+                  <Button className="w-full bg-primary hover:bg-primary/90">
                     Check Passwords
                     <ArrowRight className="w-4 h-4 ml-1" />
                   </Button>

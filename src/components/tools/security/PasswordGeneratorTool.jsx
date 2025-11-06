@@ -166,10 +166,10 @@ export default function PasswordGeneratorTool() {
   };
 
   const getStrengthColor = () => {
-    if (strength < 30) return 'bg-red-500';
-    if (strength < 60) return 'bg-yellow-500';
-    if (strength < 80) return 'bg-blue-500';
-    return 'bg-green-500';
+    if (strength < 30) return 'bg-destructive/100';
+    if (strength < 60) return 'bg-muted/500';
+    if (strength < 80) return 'bg-muted/500';
+    return 'bg-muted/500';
   };
 
   const passwordRequirements = [
@@ -242,7 +242,7 @@ export default function PasswordGeneratorTool() {
                     disabled={!password}
                   >
                     {copied ? (
-                      <CheckCircleIcon className="h-4 w-4 text-green-600" />
+                      <CheckCircleIcon className="h-4 w-4 text-primary" />
                     ) : (
                       <CopyIcon className="h-4 w-4" />
                     )}
@@ -256,10 +256,10 @@ export default function PasswordGeneratorTool() {
                   <div className="flex justify-between items-center">
                     <span className="text-sm font-medium">Password Strength</span>
                     <span className={`text-sm font-medium ${
-                      strength < 30 ? 'text-red-600' :
-                      strength < 60 ? 'text-yellow-600' :
-                      strength < 80 ? 'text-blue-600' :
-                      'text-green-600'
+                      strength < 30 ? 'text-destructive' :
+                      strength < 60 ? 'text-primary' :
+                      strength < 80 ? 'text-primary' :
+                      'text-primary'
                     }`}>
                       {strengthText} ({strength}%)
                     </span>
@@ -446,11 +446,11 @@ export default function PasswordGeneratorTool() {
                   {passwordRequirements.map((req, index) => (
                     <div key={index} className="flex items-center gap-2">
                       {req.met ? (
-                        <CheckIcon className="h-4 w-4 text-green-600" />
+                        <CheckIcon className="h-4 w-4 text-primary" />
                       ) : (
-                        <XIcon className="h-4 w-4 text-red-600" />
+                        <XIcon className="h-4 w-4 text-destructive" />
                       )}
-                      <span className={`text-sm ${req.met ? 'text-green-600' : 'text-red-600'}`}>
+                      <span className={`text-sm ${req.met ? 'text-primary' : 'text-destructive'}`}>
                         {req.text}
                       </span>
                     </div>

@@ -191,7 +191,7 @@ export default function Base64ImageTool() {
               {mode === 'encode' ? (
                 <div className="space-y-4">
                   <div 
-                    className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
+                    className="border-2 border-dashed border-border rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
                     onClick={() => fileInputRef.current?.click()}
                   >
                     <UploadIcon className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />

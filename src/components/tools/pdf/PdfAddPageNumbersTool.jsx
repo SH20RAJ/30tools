@@ -474,7 +474,7 @@ export default function PdfAddPageNumbersTool() {
           <CardContent>
             <div className="border rounded-lg p-8 bg-gray-50 relative">
               <div className="bg-white border rounded shadow-sm aspect-[3/4] relative mx-auto max-w-xs">
-                <div className="absolute inset-4 border-2 border-dashed border-gray-200 rounded flex items-center justify-center text-gray-400">
+                <div className="absolute inset-4 border-2 border-dashed border-border rounded flex items-center justify-center text-muted-foreground">
                   <div className="text-center">
                     <FileText className="h-8 w-8 mx-auto mb-2" />
                     <div className="text-sm">PDF Page Content</div>
@@ -545,7 +545,7 @@ export default function PdfAddPageNumbersTool() {
         <Card className="mb-6">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-primary" />
               Page Numbers Added Successfully
             </CardTitle>
             <CardDescription>
@@ -555,7 +555,7 @@ export default function PdfAddPageNumbersTool() {
           <CardContent>
             <div className="flex items-center justify-between p-4 bg-muted rounded-lg mb-4">
               <div className="flex items-center gap-3">
-                <Hash className="h-6 w-6 text-green-500" />
+                <Hash className="h-6 w-6 text-primary" />
                 <div>
                   <p className="font-medium">{numberedFile.name}</p>
                   <p className="text-sm text-muted-foreground">

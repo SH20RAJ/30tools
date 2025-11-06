@@ -87,7 +87,7 @@ export default function YouTubeShortsDownloaderPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 to-pink-500 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
               YouTube Shorts Downloader
             </h1>
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -108,22 +108,22 @@ export default function YouTubeShortsDownloaderPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Download YouTube Shorts Videos</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-pink-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Find YouTube Shorts</h3>
                   <p className="text-sm text-muted-foreground">Copy the YouTube Shorts URL from the mobile app or web browser</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-pink-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Paste Shorts Link</h3>
                   <p className="text-sm text-muted-foreground">Paste the YouTube Shorts URL into our downloader tool</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-pink-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Download Instantly</h3>
                   <p className="text-sm text-muted-foreground">Click download and save the YouTube Shorts video to your device</p>
@@ -135,17 +135,17 @@ export default function YouTubeShortsDownloaderPage() {
               <h2 className="text-2xl font-semibold mb-4">Why Use Our YouTube Shorts Downloader?</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-pink-600">📱 Perfect for Mobile Viewing</h3>
+                  <h3 className="font-medium mb-2 text-primary">📱 Perfect for Mobile Viewing</h3>
                   <p className="text-sm text-muted-foreground mb-4">Download YouTube Shorts in their original vertical format, perfect for mobile viewing and social media sharing. Our downloader preserves the 9:16 aspect ratio that makes Shorts so engaging.</p>
                   
-                  <h3 className="font-medium mb-2 text-pink-600">⚡ Lightning Fast Downloads</h3>
+                  <h3 className="font-medium mb-2 text-primary">⚡ Lightning Fast Downloads</h3>
                   <p className="text-sm text-muted-foreground mb-4">YouTube Shorts are typically short videos, and our optimized servers make downloading them incredibly fast. Get your favorite Shorts downloaded in seconds, not minutes.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-pink-600">🎨 Content Creation Ready</h3>
+                  <h3 className="font-medium mb-2 text-primary">🎨 Content Creation Ready</h3>
                   <p className="text-sm text-muted-foreground mb-4">Perfect for content creators who want to study successful Shorts, create compilation videos, or use as reference material for their own creative projects.</p>
                   
-                  <h3 className="font-medium mb-2 text-pink-600">🔒 Safe and Private</h3>
+                  <h3 className="font-medium mb-2 text-primary">🔒 Safe and Private</h3>
                   <p className="text-sm text-muted-foreground mb-4">Your downloads are processed securely without storing any personal information. We prioritize your privacy while providing the best YouTube Shorts downloading experience.</p>
                 </div>
               </div>

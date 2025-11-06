@@ -73,28 +73,28 @@ export default function SSLChecker() {
 
   const getGradeColor = (grade) => {
     switch (grade) {
-      case 'A': return 'text-green-600 bg-green-50 border-green-200';
-      case 'B': return 'text-blue-600 bg-blue-50 border-blue-200';
-      case 'C': return 'text-yellow-600 bg-yellow-50 border-yellow-200';
-      case 'D': return 'text-orange-600 bg-orange-50 border-orange-200';
-      case 'F': return 'text-red-600 bg-red-50 border-red-200';
-      default: return 'text-gray-600 bg-gray-50 border-gray-200';
+      case 'A': return 'text-primary bg-muted/50 border-border';
+      case 'B': return 'text-primary bg-muted/50 border-border';
+      case 'C': return 'text-primary bg-muted/50 border-border';
+      case 'D': return 'text-primary bg-muted/50 border-border';
+      case 'F': return 'text-destructive bg-destructive/10 border-destructive/50';
+      default: return 'text-muted-foreground bg-gray-50 border-border';
     }
   };
 
   const getExpiryStatus = (days) => {
-    if (days < 0) return { color: 'text-red-600', text: 'Expired', icon: XCircle };
-    if (days < 7) return { color: 'text-red-600', text: 'Expires Soon', icon: AlertTriangle };
-    if (days < 30) return { color: 'text-yellow-600', text: 'Expires Soon', icon: AlertTriangle };
-    return { color: 'text-green-600', text: 'Valid', icon: CheckCircle };
+    if (days < 0) return { color: 'text-destructive', text: 'Expired', icon: XCircle };
+    if (days < 7) return { color: 'text-destructive', text: 'Expires Soon', icon: AlertTriangle };
+    if (days < 30) return { color: 'text-primary', text: 'Expires Soon', icon: AlertTriangle };
+    return { color: 'text-primary', text: 'Valid', icon: CheckCircle };
   };
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <Card className="border-2 border-green-500/20 shadow-lg mb-6">
-        <CardHeader className="bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-900/20">
+      <Card className="border-2 border-border/20 shadow-lg mb-6">
+        <CardHeader className="bg-background/20 dark:to-blue-900/20">
           <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
-            <Shield className="w-6 h-6 text-green-500" />
+            <Shield className="w-6 h-6 text-primary" />
             SSL Certificate Checker
           </CardTitle>
         </CardHeader>
@@ -108,13 +108,13 @@ export default function SSLChecker() {
                 setUrl(e.target.value);
                 setError('');
               }}
-              className="flex-1 border-green-200 focus:border-green-500 focus:ring-green-500"
+              className="flex-1 border-border focus:border-primary focus:ring-primary"
               disabled={isLoading}
             />
             <Button
               onClick={checkSSL}
               disabled={isLoading || !url.trim()}
-              className="bg-green-500 hover:bg-green-600 text-white font-medium px-6"
+              className="bg-muted/500 hover:bg-primary text-white font-medium px-6"
             >
               {isLoading ? (
                 <>
@@ -131,7 +131,7 @@ export default function SSLChecker() {
           </div>
 
           {error && (
-            <div className="mt-4 bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg">
+            <div className="mt-4 bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 rounded-lg">
               {error}
             </div>
           )}
@@ -141,13 +141,13 @@ export default function SSLChecker() {
       {sslData && (
         <div className="space-y-6">
           {/* SSL Status Overview */}
-          <Card className={`border-2 ${sslData.isValid ? 'border-green-500/20' : 'border-red-500/20'} shadow-lg`}>
+          <Card className={`border-2 ${sslData.isValid ? 'border-border/20' : 'border-border/20'} shadow-lg`}>
             <CardHeader className={`bg-gradient-to-r ${sslData.isValid ? 'from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-900/20' : 'from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-900/20'}`}>
               <CardTitle className="flex items-center gap-2">
                 {sslData.isValid ? (
-                  <CheckCircle className="w-6 h-6 text-green-500" />
+                  <CheckCircle className="w-6 h-6 text-primary" />
                 ) : (
-                  <XCircle className="w-6 h-6 text-red-500" />
+                  <XCircle className="w-6 h-6 text-destructive" />
                 )}
                 SSL Certificate Status for {sslData.domain}
               </CardTitle>
@@ -184,7 +184,7 @@ export default function SSLChecker() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 text-blue-600 bg-blue-50">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 text-primary bg-muted/50">
                     <Lock className="w-8 h-8" />
                   </div>
                   <h3 className="font-medium">Encryption</h3>
@@ -199,7 +199,7 @@ export default function SSLChecker() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-blue-500" />
+                  <Award className="w-5 h-5 text-primary" />
                   Certificate Information
                 </CardTitle>
               </CardHeader>
@@ -230,7 +230,7 @@ export default function SSLChecker() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Lock className="w-5 h-5 text-green-500" />
+                  <Lock className="w-5 h-5 text-primary" />
                   Security Features
                 </CardTitle>
               </CardHeader>
@@ -275,7 +275,7 @@ export default function SSLChecker() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Globe className="w-5 h-5 text-purple-500" />
+                <Globe className="w-5 h-5 text-primary" />
                 Certificate Chain
               </CardTitle>
             </CardHeader>
@@ -283,7 +283,7 @@ export default function SSLChecker() {
               <div className="space-y-3">
                 {sslData.certificateChain.map((cert, index) => (
                   <div key={index} className="flex items-center gap-3 p-3 border rounded-lg">
-                    <div className="w-8 h-8 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-sm">
+                    <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center text-primary font-bold text-sm">
                       {index + 1}
                     </div>
                     <div className="flex-1">
@@ -303,34 +303,34 @@ export default function SSLChecker() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <AlertTriangle className="w-5 h-5 text-yellow-500" />
+                <AlertTriangle className="w-5 h-5 text-primary" />
                 Recommendations
               </CardTitle>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 {sslData.daysUntilExpiry < 30 && (
-                  <div className="p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
-                    <h4 className="font-medium text-yellow-800">Certificate Expiry Warning</h4>
-                    <p className="text-sm text-yellow-700 mt-1">
+                  <div className="p-4 bg-muted/50 border border-border rounded-lg">
+                    <h4 className="font-medium text-primary">Certificate Expiry Warning</h4>
+                    <p className="text-sm text-primary mt-1">
                       Your SSL certificate expires in {sslData.daysUntilExpiry} days. Consider renewing it soon to avoid service interruption.
                     </p>
                   </div>
                 )}
                 
                 {!sslData.features.hsts && (
-                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                    <h4 className="font-medium text-blue-800">Enable HSTS</h4>
-                    <p className="text-sm text-blue-700 mt-1">
+                  <div className="p-4 bg-muted/50 border border-border rounded-lg">
+                    <h4 className="font-medium text-foreground">Enable HSTS</h4>
+                    <p className="text-sm text-primary mt-1">
                       HTTP Strict Transport Security (HSTS) is not enabled. Consider enabling it to improve security.
                     </p>
                   </div>
                 )}
                 
                 {sslData.grade !== 'A' && (
-                  <div className="p-4 bg-green-50 border border-green-200 rounded-lg">
-                    <h4 className="font-medium text-green-800">Improve SSL Grade</h4>
-                    <p className="text-sm text-green-700 mt-1">
+                  <div className="p-4 bg-muted/50 border border-border rounded-lg">
+                    <h4 className="font-medium text-foreground">Improve SSL Grade</h4>
+                    <p className="text-sm text-primary mt-1">
                       Your SSL configuration could be improved. Consider updating cipher suites and enabling additional security features.
                     </p>
                   </div>

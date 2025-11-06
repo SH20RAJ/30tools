@@ -128,7 +128,7 @@ export default function AgeCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Age Calculator Uses</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">📋 Official Documents</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📋 Official Documents</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Passport and visa applications</li>
                                         <li>• School admission forms</li>
@@ -138,7 +138,7 @@ export default function AgeCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🎉 Personal Use</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎉 Personal Use</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Birthday planning</li>
                                         <li>• Milestone celebrations</li>

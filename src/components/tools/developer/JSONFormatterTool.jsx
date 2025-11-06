@@ -441,7 +441,7 @@ export default function JSONFormatterTool() {
                     variant="outline"
                   >
                     {copied === 'formatted' ? (
-                      <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                      <CheckCircle className="h-4 w-4 mr-2 text-primary" />
                     ) : (
                       <Copy className="h-4 w-4 mr-2" />
                     )}
@@ -485,7 +485,7 @@ export default function JSONFormatterTool() {
                     variant="outline"
                   >
                     {copied === 'minified' ? (
-                      <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                      <CheckCircle className="h-4 w-4 mr-2 text-primary" />
                     ) : (
                       <Copy className="h-4 w-4 mr-2" />
                     )}

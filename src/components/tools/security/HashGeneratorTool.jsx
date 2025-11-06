@@ -236,7 +236,7 @@ export default function HashGeneratorTool() {
                 </TabsContent>
 
                 <TabsContent value="file" className="space-y-4">
-                  <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                  <div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
                     <UploadIcon className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
                     <Label htmlFor="file-upload" className="cursor-pointer">
                       <span className="text-primary font-medium">Click to upload</span> or drag and drop
@@ -307,7 +307,7 @@ export default function HashGeneratorTool() {
                           onClick={() => copyToClipboard(hash, algorithm.name)}
                         >
                           {copied === algorithm.name ? (
-                            <CheckCircleIcon className="h-4 w-4 text-green-600" />
+                            <CheckCircleIcon className="h-4 w-4 text-primary" />
                           ) : (
                             <CopyIcon className="h-4 w-4" />
                           )}

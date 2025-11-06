@@ -189,7 +189,7 @@ export default function RemoveDuplicatesPage() {
               <h2 className="text-2xl font-semibold mb-4">When to Use Duplicate Remover</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">📋 Data Cleaning</h3>
+                  <h3 className="font-medium mb-2 text-primary">📋 Data Cleaning</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Clean CSV and Excel data</li>
                     <li>• Remove duplicate email addresses</li>
@@ -199,7 +199,7 @@ export default function RemoveDuplicatesPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">💻 Programming & Development</h3>
+                  <h3 className="font-medium mb-2 text-primary">💻 Programming & Development</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Clean log files and output</li>
                     <li>• Remove duplicate URLs</li>

@@ -305,10 +305,10 @@ export default function ImageConverterTool() {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'ready': return <ImageIcon className="h-4 w-4 text-blue-500" />;
-      case 'converting': return <RefreshCwIcon className="h-4 w-4 text-yellow-500 animate-spin" />;
-      case 'completed': return <CheckCircleIcon className="h-4 w-4 text-green-500" />;
-      case 'error': return <AlertCircleIcon className="h-4 w-4 text-red-500" />;
+      case 'ready': return <ImageIcon className="h-4 w-4 text-primary" />;
+      case 'converting': return <RefreshCwIcon className="h-4 w-4 text-primary animate-spin" />;
+      case 'completed': return <CheckCircleIcon className="h-4 w-4 text-primary" />;
+      case 'error': return <AlertCircleIcon className="h-4 w-4 text-destructive" />;
       default: return <ImageIcon className="h-4 w-4" />;
     }
   };
@@ -787,23 +787,23 @@ export default function ImageConverterTool() {
               <CardContent>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
-                    <ShieldIcon className="h-4 w-4 text-green-500" />
+                    <ShieldIcon className="h-4 w-4 text-primary" />
                     <span>100% client-side processing</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <ZapIcon className="h-4 w-4 text-blue-500" />
+                    <ZapIcon className="h-4 w-4 text-primary" />
                     <span>Batch conversion support</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <SettingsIcon className="h-4 w-4 text-purple-500" />
+                    <SettingsIcon className="h-4 w-4 text-primary" />
                     <span>Advanced quality control</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <ImageIcon className="h-4 w-4 text-orange-500" />
+                    <ImageIcon className="h-4 w-4 text-primary" />
                     <span>8+ supported formats</span>
                   </li>
                   <li className="flex items-center gap-2">
-                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                     <span>No watermarks or limits</span>
                   </li>
                 </ul>

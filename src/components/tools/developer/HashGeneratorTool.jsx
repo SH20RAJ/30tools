@@ -358,7 +358,7 @@ export default function HashGeneratorTool() {
                       variant="outline"
                     >
                       {copiedHash === algo.id ? (
-                        <CheckCircle className="h-4 w-4 text-green-500" />
+                        <CheckCircle className="h-4 w-4 text-primary" />
                       ) : (
                         <Copy className="h-4 w-4" />
                       )}
@@ -432,8 +432,8 @@ export default function HashGeneratorTool() {
                 </div>
               </div>
 
-              <div className="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded">
-                <p className="text-sm text-yellow-800">
+              <div className="mt-4 p-3 bg-muted/50 border border-border rounded">
+                <p className="text-sm text-primary">
                   <strong>Security Note:</strong> Use SHA-256 or higher for password hashing,
                   digital signatures, and security-critical applications.
                 </p>

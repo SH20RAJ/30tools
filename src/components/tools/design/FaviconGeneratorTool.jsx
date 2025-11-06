@@ -483,7 +483,7 @@ export default function FaviconGeneratorTool() {
                                     <div className="text-center space-y-3">
                                         <SmartphoneIcon className="h-8 w-8 mx-auto text-muted-foreground" />
                                         <h4 className="font-medium">iPhone Home Screen</h4>
-                                        <div className="bg-gradient-to-b from-blue-400 to-blue-600 p-4 rounded-lg">
+                                        <div className="bg-background">
                                             <div className="bg-white p-2 rounded-xl shadow-sm w-fit mx-auto">
                                                 <img
                                                     src={generatedFavicons.find(f => f.size === 180)?.dataUrl}
@@ -499,7 +499,7 @@ export default function FaviconGeneratorTool() {
                                     <div className="text-center space-y-3">
                                         <TabletIcon className="h-8 w-8 mx-auto text-muted-foreground" />
                                         <h4 className="font-medium">Android Home Screen</h4>
-                                        <div className="bg-gradient-to-b from-green-400 to-green-600 p-4 rounded-lg">
+                                        <div className="bg-background">
                                             <div className="bg-white p-1 rounded-full shadow-sm w-fit mx-auto">
                                                 <img
                                                     src={generatedFavicons.find(f => f.size === 192)?.dataUrl}
@@ -526,35 +526,35 @@ export default function FaviconGeneratorTool() {
                         <CardContent>
                             <ul className="space-y-2 text-sm">
                                 <li className="flex items-center gap-2">
-                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                                     Generate all favicon sizes (16x16 to 512x512)
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                                     Apple Touch Icons for iOS devices
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                                     Android Chrome Icons for PWA
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                                     HTML code snippets included
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                                     Web App Manifest generation
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                                     High-quality image resizing
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                                     No watermarks or limits
                                 </li>
                                 <li className="flex items-center gap-2">
-                                    <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                    <CheckCircleIcon className="h-4 w-4 text-primary" />
                                     Mobile-friendly interface
                                 </li>
                             </ul>

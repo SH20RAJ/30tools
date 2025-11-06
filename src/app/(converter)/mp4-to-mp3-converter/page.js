@@ -105,7 +105,7 @@ export default function MP4ToMP3ConverterPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             MP4 to MP3 Converter
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -126,22 +126,22 @@ export default function MP4ToMP3ConverterPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Convert MP4 to MP3 Online</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Upload MP4 File</h3>
                                     <p className="text-sm text-muted-foreground">Select and upload your MP4 video file from your device</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Select Quality</h3>
                                     <p className="text-sm text-muted-foreground">Choose your preferred MP3 quality from 128kbps to 320kbps</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download MP3</h3>
                                     <p className="text-sm text-muted-foreground">Convert and download your MP4 as high-quality MP3 audio file</p>
@@ -153,17 +153,17 @@ export default function MP4ToMP3ConverterPage() {
                             <h2 className="text-2xl font-semibold mb-4">MP4 to MP3 Converter Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🎵 Optimized for MP4</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎵 Optimized for MP4</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Specially designed for MP4 video files. Our converter is optimized to handle MP4 format efficiently, ensuring the best audio extraction quality and speed.</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">🔊 Premium Audio Quality</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔊 Premium Audio Quality</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Extract audio from MP4 videos with up to 320kbps quality. Advanced audio processing preserves the original sound fidelity for professional results.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">⚡ Lightning Fast Speed</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Lightning Fast Speed</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our specialized MP4 processing engines convert your videos to MP3 in seconds. Optimized algorithms ensure maximum speed without quality loss.</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">📦 Batch Processing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📦 Batch Processing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Convert multiple MP4 files to MP3 simultaneously. Perfect for processing video collections, movie soundtracks, or music video libraries.</p>
                                 </div>
                             </div>
@@ -173,17 +173,17 @@ export default function MP4ToMP3ConverterPage() {
                             <h2 className="text-2xl font-semibold mb-4">Why Choose Our MP4 to MP3 Converter?</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🎯 MP4 Specialist</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎯 MP4 Specialist</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Unlike generic converters, we specialize in MP4 format. This means better compatibility, faster processing, and higher quality audio extraction from your MP4 videos.</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">🔧 Advanced Audio Processing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔧 Advanced Audio Processing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our advanced audio processing algorithms ensure optimal audio extraction from MP4 videos, preserving stereo channels, dynamic range, and frequency response.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">📊 Quality Options</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📊 Quality Options</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Choose from multiple quality options: 128kbps (small files), 192kbps (balanced), 256kbps (high quality), and 320kbps (premium quality) to suit your needs.</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">🔒 Secure Processing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔒 Secure Processing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">All MP4 files are processed securely and deleted immediately after conversion. Your privacy is protected with encrypted file transfers and secure processing.</p>
                                 </div>
                             </div>

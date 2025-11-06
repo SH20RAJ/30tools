@@ -524,7 +524,7 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500" />
+                <CheckCircle className="h-5 w-5 text-primary" />
                 Formatted Code
               </span>
               <div className="flex gap-2">

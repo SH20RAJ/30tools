@@ -75,12 +75,12 @@ export default function PdfUnlockTool() {
                         <div className="flex items-center justify-center w-full">
                             <label
                                 htmlFor="pdf-upload"
-                                className="flex flex-col items-center justify-center w-full h-48 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
+                                className="flex flex-col items-center justify-center w-full h-48 border-2 border-border border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
                             >
                                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                    <UploadCloud className="w-10 h-10 mb-3 text-gray-400" />
-                                    <p className="mb-2 text-sm text-gray-500 dark:text-gray-400"><span className="font-semibold">Click to upload</span> or drag and drop</p>
-                                    <p className="text-xs text-gray-500 dark:text-gray-400">PDF file (MAX. 50MB)</p>
+                                    <UploadCloud className="w-10 h-10 mb-3 text-muted-foreground" />
+                                    <p className="mb-2 text-sm text-muted-foreground dark:text-muted-foreground"><span className="font-semibold">Click to upload</span> or drag and drop</p>
+                                    <p className="text-xs text-muted-foreground dark:text-muted-foreground">PDF file (MAX. 50MB)</p>
                                 </div>
                                 <Input id="pdf-upload" type="file" className="hidden" accept=".pdf" onChange={handleFileChange} />
                             </label>
@@ -92,7 +92,7 @@ export default function PdfUnlockTool() {
                             <div className="flex justify-between items-center">
                                 <p className="text-sm font-medium">Selected File: {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)</p>
                                 <Button variant="ghost" size="sm" onClick={removeFile}>
-                                    <XCircle className="w-4 h-4 text-red-500" />
+                                    <XCircle className="w-4 h-4 text-destructive" />
                                 </Button>
                             </div>
                             <div className="space-y-1">
@@ -116,8 +116,8 @@ export default function PdfUnlockTool() {
                     )}
 
                     {unlockedFile && (
-                        <div className="space-y-2 p-3 border rounded-md bg-green-50 border-green-200">
-                            <h3 className="text-md font-medium text-green-700">File Unlocked Successfully!</h3>
+                        <div className="space-y-2 p-3 border rounded-md bg-muted/50 border-border">
+                            <h3 className="text-md font-medium text-primary">File Unlocked Successfully!</h3>
                             <div className="flex justify-between items-center">
                                 <p className="text-sm">{unlockedFile.name}</p>
                                 <Button variant="outline" size="sm" onClick={() => handleDownload(unlockedFile.url, unlockedFile.name)}>

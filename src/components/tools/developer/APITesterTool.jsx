@@ -243,9 +243,9 @@ export default function APITester() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex items-center gap-2">
                       {status.code >= 200 && status.code < 300 ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <XCircleIcon className="h-5 w-5 text-red-500" />
+                        <XCircleIcon className="h-5 w-5 text-destructive" />
                       )}
                       <span className="font-mono">
                         {status.code} {status.statusText}
@@ -313,27 +313,27 @@ export default function APITester() {
             <CardContent>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Support for all HTTP methods
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Custom headers configuration
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Request body for POST/PUT requests
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Response time measurement
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   Response headers viewer
                 </li>
                 <li className="flex items-center gap-2">
-                  <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                  <CheckCircleIcon className="h-4 w-4 text-primary" />
                   JSON response formatting
                 </li>
               </ul>

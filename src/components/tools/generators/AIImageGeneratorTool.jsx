@@ -710,7 +710,7 @@ export default function AIImageGeneratorTool() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <HeartIcon className="h-5 w-5 text-red-500" />
+                  <HeartIcon className="h-5 w-5 text-destructive" />
                   Favorite Images
                 </CardTitle>
                 <CardDescription>

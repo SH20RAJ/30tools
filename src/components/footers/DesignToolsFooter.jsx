@@ -13,7 +13,7 @@ export default function DesignToolsFooter() {
             <span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">30tools</span>
           </Link>
           <p className="text-sm text-muted-foreground">
-            © 2025 30tools. Made with <Heart className="w-4 h-4 inline text-red-500 animate-pulse" /> for everyone.
+            © 2025 30tools. Made with <Heart className="w-4 h-4 inline text-destructive animate-pulse" /> for everyone.
           </p>
         </div>
       </div>

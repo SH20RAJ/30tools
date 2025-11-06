@@ -501,15 +501,15 @@ Bob Johnson,35,Chicago`,
           <CardContent>
             <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-blue-600">{stats.rows}</div>
+                <div className="text-lg font-bold text-primary">{stats.rows}</div>
                 <div className="text-xs text-muted-foreground">Rows</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-green-600">{stats.columns}</div>
+                <div className="text-lg font-bold text-primary">{stats.columns}</div>
                 <div className="text-xs text-muted-foreground">Columns</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-purple-600">{stats.totalCells}</div>
+                <div className="text-lg font-bold text-primary">{stats.totalCells}</div>
                 <div className="text-xs text-muted-foreground">Total Cells</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
@@ -521,7 +521,7 @@ Bob Johnson,35,Chicago`,
                 <div className="text-xs text-muted-foreground">JSON Size</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-orange-600">{stats.compression}</div>
+                <div className="text-lg font-bold text-primary">{stats.compression}</div>
                 <div className="text-xs text-muted-foreground">Size Change</div>
               </div>
             </div>

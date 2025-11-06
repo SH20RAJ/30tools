@@ -168,10 +168,10 @@ export default function CalculatorsPage() {
                             Access 25+ professional calculators for math, finance, health, and everyday calculations
                         </p>
                         <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-                            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full">✓ 100% Free</span>
-                            <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">✓ No Registration</span>
-                            <span className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">✓ Instant Results</span>
-                            <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full">✓ Mobile Friendly</span>
+                            <span className="bg-muted text-foreground px-3 py-1 rounded-full">✓ 100% Free</span>
+                            <span className="bg-muted text-foreground px-3 py-1 rounded-full">✓ No Registration</span>
+                            <span className="bg-muted text-foreground px-3 py-1 rounded-full">✓ Instant Results</span>
+                            <span className="bg-muted text-primary px-3 py-1 rounded-full">✓ Mobile Friendly</span>
                         </div>
                     </div>
 
@@ -208,23 +208,23 @@ export default function CalculatorsPage() {
                         <h2 className="text-2xl font-semibold mb-4">Why Use Our Online Calculators?</h2>
                         <div className="grid md:grid-cols-2 gap-8">
                             <div>
-                                <h3 className="font-medium mb-2 text-blue-600">🚀 Fast & Accurate</h3>
+                                <h3 className="font-medium mb-2 text-primary">🚀 Fast & Accurate</h3>
                                 <p className="text-sm text-muted-foreground mb-4">
                                     Get instant, precise calculations with our professionally designed calculators. No waiting, no errors, just reliable results every time.
                                 </p>
 
-                                <h3 className="font-medium mb-2 text-blue-600">📱 Mobile Optimized</h3>
+                                <h3 className="font-medium mb-2 text-primary">📱 Mobile Optimized</h3>
                                 <p className="text-sm text-muted-foreground mb-4">
                                     All calculators work perfectly on desktop, tablet, and mobile devices. Calculate anywhere, anytime with responsive design.
                                 </p>
                             </div>
                             <div>
-                                <h3 className="font-medium mb-2 text-blue-600">🔒 Privacy Protected</h3>
+                                <h3 className="font-medium mb-2 text-primary">🔒 Privacy Protected</h3>
                                 <p className="text-sm text-muted-foreground mb-4">
                                     All calculations are performed locally in your browser. We never store or transmit your data, ensuring complete privacy and security.
                                 </p>
 
-                                <h3 className="font-medium mb-2 text-blue-600">💯 Always Free</h3>
+                                <h3 className="font-medium mb-2 text-primary">💯 Always Free</h3>
                                 <p className="text-sm text-muted-foreground mb-4">
                                     No hidden fees, no registration required, no limits. Use all our calculators completely free forever.
                                 </p>

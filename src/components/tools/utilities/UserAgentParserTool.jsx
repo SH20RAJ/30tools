@@ -172,10 +172,10 @@ export default function UserAgentParserTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             Online User Agent Parser
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Parse and analyze user agent strings to extract browser, OS, and device information.
           </p>
         </div>
@@ -226,27 +226,27 @@ export default function UserAgentParserTool() {
               </CardHeader>
               <CardContent>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <div className="text-center p-4 bg-blue-50 rounded-lg">
-                    <h3 className="font-semibold text-blue-800 mb-2">Browser</h3>
+                  <div className="text-center p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-semibold text-foreground mb-2">Browser</h3>
                     <div className="text-lg font-bold">{parsedData.browser.name}</div>
-                    <div className="text-sm text-gray-600">{parsedData.browser.version}</div>
+                    <div className="text-sm text-muted-foreground">{parsedData.browser.version}</div>
                   </div>
-                  <div className="text-center p-4 bg-green-50 rounded-lg">
-                    <h3 className="font-semibold text-green-800 mb-2">Operating System</h3>
+                  <div className="text-center p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-semibold text-foreground mb-2">Operating System</h3>
                     <div className="text-lg font-bold">{parsedData.os.name}</div>
-                    <div className="text-sm text-gray-600">{parsedData.os.version}</div>
+                    <div className="text-sm text-muted-foreground">{parsedData.os.version}</div>
                   </div>
-                  <div className="text-center p-4 bg-purple-50 rounded-lg">
-                    <h3 className="font-semibold text-purple-800 mb-2">Device Type</h3>
+                  <div className="text-center p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-semibold text-foreground mb-2">Device Type</h3>
                     <div className="text-lg font-bold">{parsedData.device.type}</div>
-                    <div className="text-sm text-gray-600">
+                    <div className="text-sm text-muted-foreground">
                       {parsedData.device.vendor} {parsedData.device.model}
                     </div>
                   </div>
-                  <div className="text-center p-4 bg-orange-50 rounded-lg">
-                    <h3 className="font-semibold text-orange-800 mb-2">Engine</h3>
+                  <div className="text-center p-4 bg-muted/50 rounded-lg">
+                    <h3 className="font-semibold text-primary mb-2">Engine</h3>
                     <div className="text-lg font-bold">{parsedData.engine.name}</div>
-                    <div className="text-sm text-gray-600">{parsedData.engine.version}</div>
+                    <div className="text-sm text-muted-foreground">{parsedData.engine.version}</div>
                   </div>
                 </div>
               </CardContent>
@@ -323,9 +323,9 @@ export default function UserAgentParserTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Monitor className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <Monitor className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Browser Detection</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Identify browser name and version accurately
                 </p>
               </div>
@@ -335,9 +335,9 @@ export default function UserAgentParserTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Smartphone className="h-8 w-8 text-green-600 mx-auto mb-3" />
+                <Smartphone className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Device Analysis</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Detect device type, vendor, and model
                 </p>
               </div>
@@ -347,9 +347,9 @@ export default function UserAgentParserTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Copy className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                <Copy className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Easy Sharing</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Copy results and user agent strings
                 </p>
               </div>

@@ -64,7 +64,7 @@ const downloaderTools = [
         description: "Download Facebook videos, reels, and stories in HD quality without software installation.",
         icon: Video,
         href: "/facebook-video-downloader",
-        color: "bg-blue-500",
+        color: "bg-muted/500",
         features: ["Videos & Reels", "Stories Support", "HD Quality", "No Login Required"]
     },
     {
@@ -72,7 +72,7 @@ const downloaderTools = [
         description: "Save Instagram videos, reels, stories, and IGTV content in high quality for free.",
         icon: Image,
         href: "/instagram-video-downloader",
-        color: "bg-gradient-to-r from-pink-500 to-purple-600",
+        color: "bg-background",
         features: ["Reels & Stories", "IGTV Support", "HD Downloads", "Anonymous Access"]
     },
     {
@@ -80,7 +80,7 @@ const downloaderTools = [
         description: "Download Instagram stories and highlights anonymously without notifications.",
         icon: Users,
         href: "/instagram-story-downloader",
-        color: "bg-gradient-to-r from-purple-500 to-pink-500",
+        color: "bg-background",
         features: ["Anonymous Viewing", "Stories & Highlights", "Photos & Videos", "No Notification"]
     },
     {
@@ -88,7 +88,7 @@ const downloaderTools = [
         description: "Download Instagram profile pictures in full size HD quality for free.",
         icon: Image,
         href: "/instagram-dp-downloader",
-        color: "bg-gradient-to-r from-pink-500 to-orange-500",
+        color: "bg-background",
         features: ["Full Size HD", "Profile Pictures", "Anonymous Access", "Instant Download"]
     },
     {
@@ -96,7 +96,7 @@ const downloaderTools = [
         description: "Download Instagram Reels without watermark in HD quality with audio extraction.",
         icon: Video,
         href: "/instagram-reel-downloader",
-        color: "bg-gradient-to-r from-purple-500 to-pink-500",
+        color: "bg-background",
         features: ["No Watermark", "HD Quality", "Audio Extraction", "Fast Processing"]
     },
     {
@@ -104,7 +104,7 @@ const downloaderTools = [
         description: "Download Twitter and X platform videos and GIFs in high quality for free.",
         icon: Video,
         href: "/twitter-video-downloader",
-        color: "bg-blue-500",
+        color: "bg-muted/500",
         features: ["Videos & GIFs", "X Platform Support", "HD Quality", "Fast Downloads"]
     },
     {
@@ -120,7 +120,7 @@ const downloaderTools = [
         description: "Download Pinterest videos, GIFs, and idea pins in high quality for inspiration.",
         icon: Video,
         href: "/pinterest-video-downloader",
-        color: "bg-red-600",
+        color: "bg-destructive",
         features: ["Videos & GIFs", "Idea Pins", "Creative Content", "HD Downloads"]
     },
     {
@@ -128,7 +128,7 @@ const downloaderTools = [
         description: "Download YouTube Shorts videos in vertical format with audio extraction support.",
         icon: Video,
         href: "/youtube-shorts-downloader",
-        color: "bg-red-600",
+        color: "bg-destructive",
         features: ["Vertical Format", "HD Quality", "Audio Extraction", "Fast Processing"]
     }
 ];
@@ -168,7 +168,7 @@ export default function DownloadersPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-12">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Social Media Video Downloaders
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed max-w-3xl mx-auto">
@@ -204,7 +204,7 @@ export default function DownloadersPage() {
                                             {tool.features.map((feature, featureIndex) => (
                                                 <span
                                                     key={featureIndex}
-                                                    className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded"
+                                                    className="text-xs bg-gray-100 text-foreground px-2 py-1 rounded"
                                                 >
                                                     {feature}
                                                 </span>
@@ -240,22 +240,22 @@ export default function DownloadersPage() {
                         <div className="bg-card rounded-lg p-6 border">
                             <h2 className="text-2xl font-semibold mb-4">Supported Social Media Platforms</h2>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                                    <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white text-sm font-bold">F</div>
+                                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                                    <div className="w-8 h-8 bg-muted/500 rounded flex items-center justify-center text-white text-sm font-bold">F</div>
                                     <div>
                                         <h4 className="font-medium text-sm">Facebook</h4>
                                         <p className="text-xs text-muted-foreground">Videos, Reels, Stories</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 p-3 bg-pink-50 rounded-lg">
-                                    <div className="w-8 h-8 bg-gradient-to-r from-pink-500 to-purple-600 rounded flex items-center justify-center text-white text-sm font-bold">IG</div>
+                                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                                    <div className="w-8 h-8 bg-background">IG</div>
                                     <div>
                                         <h4 className="font-medium text-sm">Instagram</h4>
                                         <p className="text-xs text-muted-foreground">Videos, Reels, Stories, DP</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 p-3 bg-blue-50 rounded-lg">
-                                    <div className="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white text-sm font-bold">X</div>
+                                <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+                                    <div className="w-8 h-8 bg-muted/500 rounded flex items-center justify-center text-white text-sm font-bold">X</div>
                                     <div>
                                         <h4 className="font-medium text-sm">Twitter/X</h4>
                                         <p className="text-xs text-muted-foreground">Videos, GIFs</p>
@@ -268,15 +268,15 @@ export default function DownloadersPage() {
                                         <p className="text-xs text-muted-foreground">Videos, Audio</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
-                                    <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center text-white text-sm font-bold">P</div>
+                                <div className="flex items-center gap-3 p-3 bg-destructive/10 rounded-lg">
+                                    <div className="w-8 h-8 bg-destructive rounded flex items-center justify-center text-white text-sm font-bold">P</div>
                                     <div>
                                         <h4 className="font-medium text-sm">Pinterest</h4>
                                         <p className="text-xs text-muted-foreground">Videos, GIFs, Pins</p>
                                     </div>
                                 </div>
-                                <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg">
-                                    <div className="w-8 h-8 bg-red-600 rounded flex items-center justify-center text-white text-sm font-bold">YT</div>
+                                <div className="flex items-center gap-3 p-3 bg-destructive/10 rounded-lg">
+                                    <div className="w-8 h-8 bg-destructive rounded flex items-center justify-center text-white text-sm font-bold">YT</div>
                                     <div>
                                         <h4 className="font-medium text-sm">YouTube Shorts</h4>
                                         <p className="text-xs text-muted-foreground">Vertical Videos, Audio</p>

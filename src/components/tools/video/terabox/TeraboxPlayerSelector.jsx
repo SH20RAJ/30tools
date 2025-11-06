@@ -180,8 +180,8 @@ export default function TeraboxPlayerSelector({
                     onClick={() => onThemeChange(theme)}
                     className={`p-2 border rounded text-center transition-colors ${
                       selectedTheme === theme 
-                        ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/20' 
-                        : 'border-gray-200 dark:border-gray-700 hover:border-gray-300'
+                        ? 'border-border bg-muted/50 dark:bg-primary/20' 
+                        : 'border-border dark:border-gray-700 hover:border-border'
                     }`}
                   >
                     <div className={`w-4 h-4 rounded-full ${getThemeColor(theme)} mx-auto mb-1`}></div>
@@ -192,7 +192,7 @@ export default function TeraboxPlayerSelector({
             </div>
 
             {/* Configuration Summary */}
-            <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+            <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
               <h5 className="font-medium text-sm mb-2">Current Selection</h5>
               <div className="text-sm space-y-1">
                 <div className="flex justify-between">
@@ -255,29 +255,29 @@ export default function TeraboxPlayerSelector({
               </div>
             ) : (
               <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
-                <MonitorIcon className="h-12 w-12 mx-auto text-gray-400 mb-3" />
-                <p className="text-sm text-gray-500 mb-2">Preview will appear here</p>
-                <p className="text-xs text-gray-400">Load a video to see live preview</p>
+                <MonitorIcon className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
+                <p className="text-sm text-muted-foreground mb-2">Preview will appear here</p>
+                <p className="text-xs text-muted-foreground">Load a video to see live preview</p>
               </div>
             )}
 
             {/* Compatibility Info */}
-            <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-              <h5 className="font-medium text-sm mb-2 text-green-800 dark:text-green-200">
+            <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+              <h5 className="font-medium text-sm mb-2 text-foreground dark:text-green-200">
                 Compatibility
               </h5>
               <div className="text-sm space-y-1">
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-green-700 dark:text-green-300">Modern Browsers</span>
+                  <div className="w-2 h-2 bg-muted/500 rounded-full"></div>
+                  <span className="text-primary dark:text-green-300">Modern Browsers</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-green-700 dark:text-green-300">Mobile Devices</span>
+                  <div className="w-2 h-2 bg-muted/500 rounded-full"></div>
+                  <span className="text-primary dark:text-green-300">Mobile Devices</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                  <span className="text-green-700 dark:text-green-300">Responsive Design</span>
+                  <div className="w-2 h-2 bg-muted/500 rounded-full"></div>
+                  <span className="text-primary dark:text-green-300">Responsive Design</span>
                 </div>
               </div>
             </div>
@@ -293,21 +293,21 @@ function getThemeColor(theme) {
     default: 'bg-gray-500',
     dark: 'bg-gray-800',
     light: 'bg-gray-200',
-    blue: 'bg-blue-500',
-    red: 'bg-red-500',
-    green: 'bg-green-500',
-    purple: 'bg-purple-500',
-    orange: 'bg-orange-500',
+    blue: 'bg-muted/500',
+    red: 'bg-destructive/100',
+    green: 'bg-muted/500',
+    purple: 'bg-muted/500',
+    orange: 'bg-muted/500',
     city: 'bg-slate-500',
-    fantasy: 'bg-pink-500',
-    forest: 'bg-emerald-600',
-    sea: 'bg-cyan-500',
-    tech: 'bg-indigo-500',
+    fantasy: 'bg-muted/500',
+    forest: 'bg-primary',
+    sea: 'bg-muted/500',
+    tech: 'bg-muted/500',
     minimal: 'bg-gray-300',
-    classic: 'bg-amber-600',
-    modern: 'bg-violet-500',
-    retro: 'bg-yellow-500',
-    branded: 'bg-rose-500'
+    classic: 'bg-primary',
+    modern: 'bg-primary',
+    retro: 'bg-muted/500',
+    branded: 'bg-primary'
   };
   return colors[theme] || 'bg-gray-500';
 }

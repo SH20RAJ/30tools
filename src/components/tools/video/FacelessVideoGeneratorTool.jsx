@@ -375,17 +375,17 @@ export default function FacelessVideoGeneratorTool() {
                   
                   <div className="grid grid-cols-3 gap-4 text-sm">
                     <div className="text-center p-3 bg-muted rounded-lg">
-                      <Eye className="h-4 w-4 mx-auto mb-1 text-blue-500" />
+                      <Eye className="h-4 w-4 mx-auto mb-1 text-primary" />
                       <div className="font-semibold">{generatedVideo.stats.estimated_views.toLocaleString()}</div>
                       <div className="text-xs text-muted-foreground">Est. Views</div>
                     </div>
                     <div className="text-center p-3 bg-muted rounded-lg">
-                      <TrendingUp className="h-4 w-4 mx-auto mb-1 text-green-500" />
+                      <TrendingUp className="h-4 w-4 mx-auto mb-1 text-primary" />
                       <div className="font-semibold">{generatedVideo.stats.engagement_rate}%</div>
                       <div className="text-xs text-muted-foreground">Engagement</div>
                     </div>
                     <div className="text-center p-3 bg-muted rounded-lg">
-                      <DollarSign className="h-4 w-4 mx-auto mb-1 text-yellow-500" />
+                      <DollarSign className="h-4 w-4 mx-auto mb-1 text-primary" />
                       <div className="font-semibold">${generatedVideo.stats.monetization_potential}</div>
                       <div className="text-xs text-muted-foreground">Est. Revenue</div>
                     </div>

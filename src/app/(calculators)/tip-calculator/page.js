@@ -128,7 +128,7 @@ export default function TipCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Tipping Guidelines</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-green-600">🍽️ Restaurant Service</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🍽️ Restaurant Service</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>Excellent service:</strong> 20-25%</li>
                                         <li>• <strong>Good service:</strong> 18-20%</li>
@@ -138,7 +138,7 @@ export default function TipCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🚗 Other Services</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🚗 Other Services</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>Taxi/Uber:</strong> 15-20%</li>
                                         <li>• <strong>Hair salon:</strong> 15-20%</li>
@@ -154,7 +154,7 @@ export default function TipCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Tipping Etiquette</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">✅ Good Practices</h3>
+                                    <h3 className="font-medium mb-2 text-primary">✅ Good Practices</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Tip based on pre-tax amount</li>
                                         <li>• Consider service quality</li>
@@ -164,7 +164,7 @@ export default function TipCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">❌ Things to Avoid</h3>
+                                    <h3 className="font-medium mb-2 text-primary">❌ Things to Avoid</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Don't tip on tax amount</li>
                                         <li>• Don't over-tip to show off</li>

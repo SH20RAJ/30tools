@@ -122,10 +122,10 @@ function StarRating({ rating, showNumber = true, size = "small" }) {
     <div className="flex items-center gap-1">
       <div className="flex items-center">
         {[...Array(fullStars)].map((_, i) => (
-          <Star key={i} className={`${starSize} fill-yellow-400 text-yellow-400`} />
+          <Star key={i} className={`${starSize} fill-yellow-400 text-primary`} />
         ))}
         {hasHalfStar && (
-          <StarHalf className={`${starSize} fill-yellow-400 text-yellow-400`} />
+          <StarHalf className={`${starSize} fill-yellow-400 text-primary`} />
         )}
         {[...Array(emptyStars)].map((_, i) => (
           <Star key={i} className={`${starSize} text-gray-300`} />

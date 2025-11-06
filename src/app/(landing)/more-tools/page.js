@@ -251,7 +251,7 @@ export default function MoreToolsPage() {
               <h2 className="text-3xl font-bold mb-6 text-center">Why Choose 30Tools Ecosystem?</h2>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-blue-100 dark:bg-blue-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-muted dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-3xl">🎯</span>
                   </div>
                   <h3 className="font-semibold mb-2">Specialized Solutions</h3>
@@ -261,7 +261,7 @@ export default function MoreToolsPage() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-muted dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-3xl">🔒</span>
                   </div>
                   <h3 className="font-semibold mb-2">Privacy First</h3>
@@ -271,7 +271,7 @@ export default function MoreToolsPage() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-muted dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-3xl">⚡</span>
                   </div>
                   <h3 className="font-semibold mb-2">Lightning Fast</h3>
@@ -281,7 +281,7 @@ export default function MoreToolsPage() {
                 </div>
                 
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-muted dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <span className="text-3xl">💯</span>
                   </div>
                   <h3 className="font-semibold mb-2">Always Free</h3>

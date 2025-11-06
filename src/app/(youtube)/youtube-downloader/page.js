@@ -149,28 +149,28 @@ export default function YouTubeDownloaderPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
             {/* Clean Header */}
             <div className="text-center mb-12">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-500 via-red-600 to-pink-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-muted/20 bg-clip-text text-transparent">
                 YouTube Downloader
               </h1>
-              <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground dark:text-gray-300 mb-8 max-w-2xl mx-auto">
                 Download YouTube videos and audio in high quality. Fast, free, and secure - no registration required.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
-                <span className="inline-flex items-center px-4 py-2 rounded-full bg-green-100 text-green-800 text-sm font-medium">
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-muted text-foreground text-sm font-medium">
                   ✓ HD Quality
                 </span>
-                <span className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium">
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-muted text-foreground text-sm font-medium">
                   ✓ MP4 & MP3
                 </span>
-                <span className="inline-flex items-center px-4 py-2 rounded-full bg-purple-100 text-purple-800 text-sm font-medium">
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-muted text-foreground text-sm font-medium">
                   ✓ No Limits
                 </span>
-                <span className="inline-flex items-center px-4 py-2 rounded-full bg-orange-100 text-orange-800 text-sm font-medium">
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-muted text-primary text-sm font-medium">
                   ✓ 100% Free
                 </span>
               </div>
@@ -194,30 +194,30 @@ export default function YouTubeDownloaderPage() {
             {/* How it Works - Simplified */}
             <div className="mt-16 mb-12">
               <div className="text-center mb-8">
-                <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-4">How It Works</h2>
-                <p className="text-gray-600 dark:text-gray-400">Simple 3-step process to download any YouTube video</p>
+                <h2 className="text-2xl font-bold text-foreground dark:text-gray-200 mb-4">How It Works</h2>
+                <p className="text-muted-foreground dark:text-muted-foreground">Simple 3-step process to download any YouTube video</p>
               </div>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-background">
                     <span className="text-white font-bold text-xl">1</span>
                   </div>
-                  <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">Paste URL</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Copy and paste your YouTube video link</p>
+                  <h3 className="font-semibold mb-2 text-foreground dark:text-gray-200">Paste URL</h3>
+                  <p className="text-sm text-muted-foreground dark:text-muted-foreground">Copy and paste your YouTube video link</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-background">
                     <span className="text-white font-bold text-xl">2</span>
                   </div>
-                  <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">Choose Format</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Select video quality or audio format</p>
+                  <h3 className="font-semibold mb-2 text-foreground dark:text-gray-200">Choose Format</h3>
+                  <p className="text-sm text-muted-foreground dark:text-muted-foreground">Select video quality or audio format</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <div className="w-16 h-16 bg-background">
                     <span className="text-white font-bold text-xl">3</span>
                   </div>
-                  <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">Download</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Click download and save to your device</p>
+                  <h3 className="font-semibold mb-2 text-foreground dark:text-gray-200">Download</h3>
+                  <p className="text-sm text-muted-foreground dark:text-muted-foreground">Click download and save to your device</p>
                 </div>
               </div>
             </div>
@@ -235,27 +235,27 @@ export default function YouTubeDownloaderPage() {
 
             {/* Features - Simplified */}
             <div className="text-center mb-12">
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-8">Why Choose Our Downloader?</h2>
+              <h2 className="text-2xl font-bold text-foreground dark:text-gray-200 mb-8">Why Choose Our Downloader?</h2>
               <div className="grid md:grid-cols-4 gap-6">
                 <div className="p-4">
                   <div className="text-3xl mb-3">🎥</div>
-                  <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">HD Quality</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Download in 720p, 1080p, and 4K</p>
+                  <h3 className="font-semibold mb-2 text-foreground dark:text-gray-200">HD Quality</h3>
+                  <p className="text-sm text-muted-foreground dark:text-muted-foreground">Download in 720p, 1080p, and 4K</p>
                 </div>
                 <div className="p-4">
                   <div className="text-3xl mb-3">🎵</div>
-                  <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">MP3 Audio</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Extract high-quality audio files</p>
+                  <h3 className="font-semibold mb-2 text-foreground dark:text-gray-200">MP3 Audio</h3>
+                  <p className="text-sm text-muted-foreground dark:text-muted-foreground">Extract high-quality audio files</p>
                 </div>
                 <div className="p-4">
                   <div className="text-3xl mb-3">⚡</div>
-                  <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">Fast Speed</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Lightning-fast downloads</p>
+                  <h3 className="font-semibold mb-2 text-foreground dark:text-gray-200">Fast Speed</h3>
+                  <p className="text-sm text-muted-foreground dark:text-muted-foreground">Lightning-fast downloads</p>
                 </div>
                 <div className="p-4">
                   <div className="text-3xl mb-3">🔒</div>
-                  <h3 className="font-semibold mb-2 text-gray-800 dark:text-gray-200">Secure</h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">100% safe and private</p>
+                  <h3 className="font-semibold mb-2 text-foreground dark:text-gray-200">Secure</h3>
+                  <p className="text-sm text-muted-foreground dark:text-muted-foreground">100% safe and private</p>
                 </div>
               </div>
             </div>
@@ -274,10 +274,10 @@ export default function YouTubeDownloaderPage() {
             {/* User Rating - Minimal */}
             <div className="text-center py-8">
               <div className="flex items-center justify-center gap-2 mb-2">
-                <div className="flex text-yellow-500 text-2xl">★★★★★</div>
-                <span className="text-lg font-semibold text-gray-800 dark:text-gray-200">5.0</span>
+                <div className="flex text-primary text-2xl">★★★★★</div>
+                <span className="text-lg font-semibold text-foreground dark:text-gray-200">5.0</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-400">Trusted by 50,000+ users worldwide</p>
+              <p className="text-muted-foreground dark:text-muted-foreground">Trusted by 50,000+ users worldwide</p>
             </div>
 
             {/* Ad Unit 4 */}
@@ -295,44 +295,44 @@ export default function YouTubeDownloaderPage() {
               <h2 className="text-2xl font-semibold mb-4 text-center">Related YouTube Tools</h2>
               <p className="text-center text-muted-foreground mb-6">Enhance your YouTube experience with our comprehensive suite of YouTube tools</p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="bg-background rounded-lg p-4 border hover:border-red-300 transition-colors">
-                  <h3 className="font-medium mb-2 text-red-600">🎬 YouTube Thumbnail Downloader</h3>
+                <div className="bg-background rounded-lg p-4 border hover:border-destructive/50 transition-colors">
+                  <h3 className="font-medium mb-2 text-destructive">🎬 YouTube Thumbnail Downloader</h3>
                   <p className="text-sm text-muted-foreground mb-3">Download high-quality YouTube video thumbnails in various resolutions for your projects.</p>
-                  <a href="/youtube-thumbnail-downloader" className="text-sm text-red-600 hover:text-red-700 font-medium">Try Tool →</a>
+                  <a href="/youtube-thumbnail-downloader" className="text-sm text-destructive hover:text-destructive font-medium">Try Tool →</a>
                 </div>
 
-                <div className="bg-background rounded-lg p-4 border hover:border-red-300 transition-colors">
-                  <h3 className="font-medium mb-2 text-red-600">📝 YouTube Transcript Downloader</h3>
+                <div className="bg-background rounded-lg p-4 border hover:border-destructive/50 transition-colors">
+                  <h3 className="font-medium mb-2 text-destructive">📝 YouTube Transcript Downloader</h3>
                   <p className="text-sm text-muted-foreground mb-3">Extract and download YouTube video transcripts and subtitles in text format.</p>
-                  <a href="/youtube-transcript-downloader" className="text-sm text-red-600 hover:text-red-700 font-medium">Try Tool →</a>
+                  <a href="/youtube-transcript-downloader" className="text-sm text-destructive hover:text-destructive font-medium">Try Tool →</a>
                 </div>
 
-                <div className="bg-background rounded-lg p-4 border hover:border-red-300 transition-colors">
-                  <h3 className="font-medium mb-2 text-red-600">🎵 YouTube to MP3 Converter</h3>
+                <div className="bg-background rounded-lg p-4 border hover:border-destructive/50 transition-colors">
+                  <h3 className="font-medium mb-2 text-destructive">🎵 YouTube to MP3 Converter</h3>
                   <p className="text-sm text-muted-foreground mb-3">Convert YouTube videos to high-quality MP3 audio files for music and podcasts.</p>
-                  <a href="/youtube-downloader" className="text-sm text-red-600 hover:text-red-700 font-medium">Current Tool ✓</a>
+                  <a href="/youtube-downloader" className="text-sm text-destructive hover:text-destructive font-medium">Current Tool ✓</a>
                 </div>
 
-                <div className="bg-background rounded-lg p-4 border hover:border-red-300 transition-colors">
-                  <h3 className="font-medium mb-2 text-red-600">📱 YouTube Shorts Downloader</h3>
+                <div className="bg-background rounded-lg p-4 border hover:border-destructive/50 transition-colors">
+                  <h3 className="font-medium mb-2 text-destructive">📱 YouTube Shorts Downloader</h3>
                   <p className="text-sm text-muted-foreground mb-3">Download YouTube Shorts videos in vertical format with original quality.</p>
-                  <a href="/youtube-shorts-downloader" className="text-sm text-red-600 hover:text-red-700 font-medium">Try Tool →</a>
+                  <a href="/youtube-shorts-downloader" className="text-sm text-destructive hover:text-destructive font-medium">Try Tool →</a>
                 </div>
 
-                <div className="bg-background rounded-lg p-4 border hover:border-red-300 transition-colors">
-                  <h3 className="font-medium mb-2 text-red-600">🎯 YouTube Tag Generator</h3>
+                <div className="bg-background rounded-lg p-4 border hover:border-destructive/50 transition-colors">
+                  <h3 className="font-medium mb-2 text-destructive">🎯 YouTube Tag Generator</h3>
                   <p className="text-sm text-muted-foreground mb-3">Generate relevant tags for your YouTube videos to improve discoverability and SEO.</p>
-                  <a href="/youtube-tag-generator" className="text-sm text-red-600 hover:text-red-700 font-medium">Try Tool →</a>
+                  <a href="/youtube-tag-generator" className="text-sm text-destructive hover:text-destructive font-medium">Try Tool →</a>
                 </div>
 
-                <div className="bg-background rounded-lg p-4 border hover:border-red-300 transition-colors">
-                  <h3 className="font-medium mb-2 text-red-600">📊 YouTube Summary Generator</h3>
+                <div className="bg-background rounded-lg p-4 border hover:border-destructive/50 transition-colors">
+                  <h3 className="font-medium mb-2 text-destructive">📊 YouTube Summary Generator</h3>
                   <p className="text-sm text-muted-foreground mb-3">Generate AI-powered summaries of YouTube videos for quick content overview.</p>
-                  <a href="/youtube-summary-generator" className="text-sm text-red-600 hover:text-red-700 font-medium">Try Tool →</a>
+                  <a href="/youtube-summary-generator" className="text-sm text-destructive hover:text-destructive font-medium">Try Tool →</a>
                 </div>
               </div>
               <div className="mt-6 text-center">
-                <a href="/search?q=youtube" className="inline-flex items-center px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-medium">
+                <a href="/search?q=youtube" className="inline-flex items-center px-4 py-2 bg-destructive/100 text-white rounded-lg hover:bg-destructive transition-colors font-medium">
                   View All YouTube Tools →
                 </a>
               </div>
@@ -351,23 +351,23 @@ export default function YouTubeDownloaderPage() {
 
             {/* FAQ - Simplified */}
             <div className="mb-12">
-              <h2 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-200 mb-8">FAQ</h2>
+              <h2 className="text-2xl font-bold text-center text-foreground dark:text-gray-200 mb-8">FAQ</h2>
               <div className="space-y-4 max-w-2xl mx-auto">
                 <details className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm border">
-                  <summary className="font-semibold cursor-pointer text-gray-800 dark:text-gray-200">Is it legal to download YouTube videos?</summary>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Yes, for personal use and content you own. Always respect copyright laws.</p>
+                  <summary className="font-semibold cursor-pointer text-foreground dark:text-gray-200">Is it legal to download YouTube videos?</summary>
+                  <p className="mt-2 text-sm text-muted-foreground dark:text-muted-foreground">Yes, for personal use and content you own. Always respect copyright laws.</p>
                 </details>
                 <details className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm border">
-                  <summary className="font-semibold cursor-pointer text-gray-800 dark:text-gray-200">What formats are supported?</summary>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">MP4 video (360p to 4K) and MP3 audio in high quality.</p>
+                  <summary className="font-semibold cursor-pointer text-foreground dark:text-gray-200">What formats are supported?</summary>
+                  <p className="mt-2 text-sm text-muted-foreground dark:text-muted-foreground">MP4 video (360p to 4K) and MP3 audio in high quality.</p>
                 </details>
                 <details className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm border">
-                  <summary className="font-semibold cursor-pointer text-gray-800 dark:text-gray-200">Are there any limits?</summary>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">No limits, no registration required. Completely free to use.</p>
+                  <summary className="font-semibold cursor-pointer text-foreground dark:text-gray-200">Are there any limits?</summary>
+                  <p className="mt-2 text-sm text-muted-foreground dark:text-muted-foreground">No limits, no registration required. Completely free to use.</p>
                 </details>
                 <details className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm border">
-                  <summary className="font-semibold cursor-pointer text-gray-800 dark:text-gray-200">Does it work on mobile?</summary>
-                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">Yes, works on all devices - phones, tablets, and computers.</p>
+                  <summary className="font-semibold cursor-pointer text-foreground dark:text-gray-200">Does it work on mobile?</summary>
+                  <p className="mt-2 text-sm text-muted-foreground dark:text-muted-foreground">Yes, works on all devices - phones, tablets, and computers.</p>
                 </details>
               </div>
             </div>

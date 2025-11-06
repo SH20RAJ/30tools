@@ -128,7 +128,7 @@ export default function BasicCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Calculator Functions</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🧮 Basic Operations</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🧮 Basic Operations</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>Addition (+):</strong> Add two or more numbers</li>
                                         <li>• <strong>Subtraction (-):</strong> Subtract one number from another</li>
@@ -138,7 +138,7 @@ export default function BasicCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🔧 Additional Functions</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔧 Additional Functions</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>Percentage (%):</strong> Calculate percentages</li>
                                         <li>• <strong>Square Root (√):</strong> Find square root of numbers</li>
@@ -154,22 +154,22 @@ export default function BasicCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Use the Calculator</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Enter Numbers</h3>
                                     <p className="text-sm text-muted-foreground">Click number buttons or use your keyboard to enter numbers</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Choose Operation</h3>
                                     <p className="text-sm text-muted-foreground">Select the operation you want to perform (+, -, ×, ÷)</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Get Result</h3>
                                     <p className="text-sm text-muted-foreground">Press equals (=) to calculate and display the result</p>
@@ -181,7 +181,7 @@ export default function BasicCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Keyboard Shortcuts</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-green-600">⌨️ Number Keys</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⌨️ Number Keys</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>0-9:</strong> Enter numbers</li>
                                         <li>• <strong>. (period):</strong> Decimal point</li>
@@ -190,7 +190,7 @@ export default function BasicCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-green-600">🔣 Operation Keys</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔣 Operation Keys</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>+ (plus):</strong> Addition</li>
                                         <li>• <strong>- (minus):</strong> Subtraction</li>
@@ -205,7 +205,7 @@ export default function BasicCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Calculator Tips</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">💡 Usage Tips</h3>
+                                    <h3 className="font-medium mb-2 text-primary">💡 Usage Tips</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Use parentheses for complex calculations</li>
                                         <li>• Double-check your entries before calculating</li>
@@ -215,7 +215,7 @@ export default function BasicCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">⚠️ Common Mistakes</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚠️ Common Mistakes</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Forgetting to clear previous calculations</li>
                                         <li>• Mixing up multiplication and addition signs</li>

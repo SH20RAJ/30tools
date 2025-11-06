@@ -175,18 +175,18 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
   const shareText = persona ? `Check out this awesome ChatGPT persona I created: "${persona.substring(0, 100)}..." Create your own at` : 'Create unique ChatGPT personas with AI at';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100 p-4">
+    <div className="min-h-screen bg-muted/20 p-4">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-full text-sm font-medium">
+          <div className="inline-flex items-center gap-2 bg-background">
             <Sparkles className="w-4 h-4" />
             AI-Powered Persona Generator
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold bg-muted/20 bg-clip-text text-transparent">
             ChatGPT Persona Generator
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Create unique, quirky, and engaging ChatGPT personas that make your AI conversations more fun and memorable!
           </p>
         </div>
@@ -204,7 +204,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Sparkles className="w-5 h-5 text-purple-600" />
+                    <Sparkles className="w-5 h-5 text-primary" />
                     Persona Settings
                   </CardTitle>
                   <CardDescription>
@@ -239,7 +239,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                           <SelectItem key={tone.id} value={tone.id}>
                             <div>
                               <div className="font-medium">{tone.name}</div>
-                              <div className="text-sm text-gray-500">{tone.description}</div>
+                              <div className="text-sm text-muted-foreground">{tone.description}</div>
                             </div>
                           </SelectItem>
                         ))}
@@ -261,7 +261,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                   <Button
                     onClick={handleGenerate}
                     disabled={isGenerating || !selectedCategory || !selectedTone}
-                    className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700"
+                    className="w-full bg-background"
                   >
                     {isGenerating ? (
                       <>
@@ -282,7 +282,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Copy className="w-5 h-5 text-blue-600" />
+                    <Copy className="w-5 h-5 text-primary" />
                     Generated Persona
                   </CardTitle>
                   <CardDescription>
@@ -292,8 +292,8 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                 <CardContent className="space-y-4">
                   {persona ? (
                     <>
-                      <div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-gray-200">
-                        <p className="text-sm text-gray-700 whitespace-pre-wrap">{persona}</p>
+                      <div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-border">
+                        <p className="text-sm text-foreground whitespace-pre-wrap">{persona}</p>
                       </div>
 
                       <div className="flex flex-wrap gap-2">
@@ -330,7 +330,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                       />
                     </>
                   ) : (
-                    <div className="text-center py-8 text-gray-500">
+                    <div className="text-center py-8 text-muted-foreground">
                       <Sparkles className="w-12 h-12 mx-auto mb-4 text-gray-300" />
                       <p>Generate a persona to see the result here</p>
                     </div>
@@ -348,7 +348,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                     <CardTitle className="text-lg">{preset.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                    <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                       {preset.prompt.substring(0, 120)}...
                     </p>
                     <div className="flex gap-2">
@@ -404,7 +404,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                       </div>
                     </CardHeader>
                     <CardContent>
-                      <p className="text-sm text-gray-700 line-clamp-3">
+                      <p className="text-sm text-foreground line-clamp-3">
                         {item.prompt}
                       </p>
                     </CardContent>
@@ -412,7 +412,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                 ))}
               </div>
             ) : (
-              <div className="text-center py-8 text-gray-500">
+              <div className="text-center py-8 text-muted-foreground">
                 <Sparkles className="w-12 h-12 mx-auto mb-4 text-gray-300" />
                 <p>No personas generated yet. Create your first one!</p>
               </div>
@@ -425,12 +425,12 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Sparkles className="w-5 h-5 text-purple-600" />
+                <Sparkles className="w-5 h-5 text-primary" />
                 AI-Powered
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Uses advanced AI to create unique, engaging personas with distinct personalities and quirks.
               </p>
             </CardContent>
@@ -439,12 +439,12 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Copy className="w-5 h-5 text-blue-600" />
+                <Copy className="w-5 h-5 text-primary" />
                 Ready to Use
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Generated prompts are ready to copy and paste directly into ChatGPT for immediate use.
               </p>
             </CardContent>
@@ -453,12 +453,12 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Share2 className="w-5 h-5 text-green-600" />
+                <Share2 className="w-5 h-5 text-primary" />
                 Shareable
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Share your favorite personas with friends or save them for later use across different projects.
               </p>
             </CardContent>

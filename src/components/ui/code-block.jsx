@@ -26,23 +26,23 @@ const CodeBlock = ({ code, language = 'html', className = '' }) => {
       case 'html':
         // HTML tags
         highlighted = highlighted.replace(/(&lt;\/?)([a-zA-Z][a-zA-Z0-9]*)(.*?)(&gt;)/g, 
-          '<span class="text-blue-600">$1</span><span class="text-purple-600">$2</span><span class="text-green-600">$3</span><span class="text-blue-600">$4</span>');
+          '<span class="text-primary">$1</span><span class="text-primary">$2</span><span class="text-primary">$3</span><span class="text-primary">$4</span>');
         // Attributes
         highlighted = highlighted.replace(/(\s)([a-zA-Z-]+)(=)(&quot;.*?&quot;)/g, 
-          '$1<span class="text-orange-600">$2</span><span class="text-gray-500">$3</span><span class="text-green-500">$4</span>');
+          '$1<span class="text-primary">$2</span><span class="text-muted-foreground">$3</span><span class="text-primary">$4</span>');
         break;
       
       case 'javascript':
       case 'jsx':
         // Keywords
         highlighted = highlighted.replace(/\b(const|let|var|function|return|if|else|for|while|class|import|export|from|default)\b/g, 
-          '<span class="text-purple-600">$1</span>');
+          '<span class="text-primary">$1</span>');
         // Strings
         highlighted = highlighted.replace(/(["'`])((?:\\.|(?!\1)[^\\])*?)\1/g, 
-          '<span class="text-green-500">$1$2$1</span>');
+          '<span class="text-primary">$1$2$1</span>');
         // Comments
         highlighted = highlighted.replace(/(\/\/.*$|\/\*[\s\S]*?\*\/)/gm, 
-          '<span class="text-gray-500">$1</span>');
+          '<span class="text-muted-foreground">$1</span>');
         break;
       
       default:

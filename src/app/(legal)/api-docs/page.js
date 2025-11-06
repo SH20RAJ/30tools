@@ -95,17 +95,17 @@ export default function APIDocsPage() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-green-50 rounded-lg">
-                <div className="text-2xl font-bold text-green-600">Free</div>
-                <div className="text-sm text-green-700">No API keys required</div>
+              <div className="text-center p-4 bg-muted/50 rounded-lg">
+                <div className="text-2xl font-bold text-primary">Free</div>
+                <div className="text-sm text-primary">No API keys required</div>
               </div>
-              <div className="text-center p-4 bg-blue-50 rounded-lg">
-                <div className="text-2xl font-bold text-blue-600">Fast</div>
-                <div className="text-sm text-blue-700">Sub-100ms response times</div>
+              <div className="text-center p-4 bg-muted/50 rounded-lg">
+                <div className="text-2xl font-bold text-primary">Fast</div>
+                <div className="text-sm text-primary">Sub-100ms response times</div>
               </div>
-              <div className="text-center p-4 bg-purple-50 rounded-lg">
-                <div className="text-2xl font-bold text-purple-600">Simple</div>
-                <div className="text-sm text-purple-700">JSON responses</div>
+              <div className="text-center p-4 bg-muted/50 rounded-lg">
+                <div className="text-2xl font-bold text-primary">Simple</div>
+                <div className="text-sm text-primary">JSON responses</div>
               </div>
             </div>
           </CardContent>

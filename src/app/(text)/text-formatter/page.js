@@ -123,22 +123,22 @@ export default function TextFormatterPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Format Text</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-indigo-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Paste Your Text</h3>
                   <p className="text-sm text-muted-foreground">Copy and paste messy or unformatted text into the editor</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-indigo-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Choose Options</h3>
                   <p className="text-sm text-muted-foreground">Select formatting options like removing spaces or fixing line breaks</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-indigo-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Get Clean Text</h3>
                   <p className="text-sm text-muted-foreground">Copy the formatted, clean text ready for use</p>
@@ -150,7 +150,7 @@ export default function TextFormatterPage() {
               <h2 className="text-2xl font-semibold mb-4">Text Formatting Features</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-indigo-600">🧹 Text Cleaning</h3>
+                  <h3 className="font-medium mb-2 text-primary">🧹 Text Cleaning</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Remove extra spaces between words</li>
                     <li>• Clean up multiple line breaks</li>
@@ -160,7 +160,7 @@ export default function TextFormatterPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-indigo-600">✨ Text Formatting</h3>
+                  <h3 className="font-medium mb-2 text-primary">✨ Text Formatting</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Standardize line endings</li>
                     <li>• Fix indentation issues</li>
@@ -176,7 +176,7 @@ export default function TextFormatterPage() {
               <h2 className="text-2xl font-semibold mb-4">When to Use Text Formatter</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">📄 Content Creation</h3>
+                  <h3 className="font-medium mb-2 text-primary">📄 Content Creation</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Clean copied text from websites</li>
                     <li>• Format text for blog posts</li>
@@ -186,7 +186,7 @@ export default function TextFormatterPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">💼 Professional Use</h3>
+                  <h3 className="font-medium mb-2 text-primary">💼 Professional Use</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Clean data for spreadsheets</li>
                     <li>• Format text for documents</li>

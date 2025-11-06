@@ -59,22 +59,22 @@ export function SocialShare({
     {
       name: 'Twitter',
       url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-      color: 'bg-blue-500 hover:bg-blue-600'
+      color: 'bg-muted/500 hover:bg-primary'
     },
     {
       name: 'Facebook',
       url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-      color: 'bg-blue-600 hover:bg-blue-700'
+      color: 'bg-primary hover:bg-primary/90'
     },
     {
       name: 'LinkedIn',
       url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-      color: 'bg-blue-700 hover:bg-blue-800'
+      color: 'bg-primary/90 hover:bg-primary'
     },
     {
       name: 'Reddit',
       url: `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
-      color: 'bg-orange-500 hover:bg-orange-600'
+      color: 'bg-muted/500 hover:bg-primary'
     }
   ];
 
@@ -216,7 +216,7 @@ export function PopularTools({
                   <Badge variant="secondary" className="text-xs">
                     #{index + 1} Popular
                   </Badge>
-                  <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                  <Star className="h-4 w-4 text-primary fill-current" />
                 </div>
                 <CardTitle className="text-lg">{tool.name}</CardTitle>
               </CardHeader>
@@ -274,10 +274,10 @@ export function DeviceCompatibility() {
             return (
               <div key={device.name} className="text-center">
                 <div className="flex items-center justify-center mb-2">
-                  <Icon className={`h-8 w-8 ${device.supported ? 'text-green-500' : 'text-gray-400'}`} />
+                  <Icon className={`h-8 w-8 ${device.supported ? 'text-primary' : 'text-muted-foreground'}`} />
                 </div>
                 <div className="text-sm font-medium">{device.name}</div>
-                <div className={`text-xs ${device.supported ? 'text-green-600' : 'text-gray-500'}`}>
+                <div className={`text-xs ${device.supported ? 'text-primary' : 'text-muted-foreground'}`}>
                   {device.supported ? 'Supported' : 'Not Supported'}
                 </div>
               </div>
@@ -311,9 +311,9 @@ export function QuickActions({
           variant="outline"
           size="sm"
           onClick={handleBookmark}
-          className={bookmarked ? 'bg-yellow-50 border-yellow-200' : ''}
+          className={bookmarked ? 'bg-muted/50 border-border' : ''}
         >
-          <Bookmark className={`h-4 w-4 mr-2 ${bookmarked ? 'fill-current text-yellow-500' : ''}`} />
+          <Bookmark className={`h-4 w-4 mr-2 ${bookmarked ? 'fill-current text-primary' : ''}`} />
           {bookmarked ? 'Bookmarked' : 'Bookmark'}
         </Button>
       )}

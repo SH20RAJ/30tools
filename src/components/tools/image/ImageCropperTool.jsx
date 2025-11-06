@@ -251,11 +251,11 @@ export default function ImageCropper() {
               Professional photo cropper tool to crop images online free. Resize photos, cut pictures, and create perfect crops with our advanced image cropping tool.
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-4">
-              <span className="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Auto Crop</span>
-              <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Circular Crop</span>
-              <span className="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">PNG Cropper</span>
-              <span className="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">JPG Crop</span>
-              <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Photo Resizer</span>
+              <span className="bg-muted text-foreground text-xs font-medium px-2.5 py-0.5 rounded">Auto Crop</span>
+              <span className="bg-muted text-foreground text-xs font-medium px-2.5 py-0.5 rounded">Circular Crop</span>
+              <span className="bg-muted text-foreground text-xs font-medium px-2.5 py-0.5 rounded">PNG Cropper</span>
+              <span className="bg-muted text-primary text-xs font-medium px-2.5 py-0.5 rounded">JPG Crop</span>
+              <span className="bg-destructive/20 text-destructive text-xs font-medium px-2.5 py-0.5 rounded">Photo Resizer</span>
             </div>
           </div>
 
@@ -503,10 +503,10 @@ export default function ImageCropper() {
               
               <section className="mb-8">
                 <h3 className="text-2xl font-semibold mb-4">What is an Image Cropper?</h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-foreground mb-4">
                   An <strong>image cropper</strong> is a powerful online tool that allows you to <strong>crop images</strong>, <strong>resize photos</strong>, and <strong>cut pictures</strong> to your desired dimensions. Our <strong>free online image cropper</strong> provides professional-grade photo cropping capabilities without requiring any software installation.
                 </p>
-                <p className="text-gray-700 mb-4">
+                <p className="text-foreground mb-4">
                   Whether you need to <strong>crop photos</strong> for social media, create perfect profile pictures, or resize images for your website, our <strong>photo cropper tool</strong> delivers exceptional results. With features like <strong>auto crop</strong>, <strong>circular crop image</strong>, and custom dimensions, it's the best <strong>image cropper online</strong>.
                 </p>
               </section>
@@ -516,26 +516,26 @@ export default function ImageCropper() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Free Image Resizer</h4>
-                    <p className="text-sm text-gray-600">Resize images online with our free image resizer. Change picture size and photo dimensions effortlessly.</p>
+                    <p className="text-sm text-muted-foreground">Resize images online with our free image resizer. Change picture size and photo dimensions effortlessly.</p>
                   </div>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">PNG Cropper & JPG Crop</h4>
-                    <p className="text-sm text-gray-600">Professional PNG cropper and JPG crop functionality for all image formats.</p>
+                    <p className="text-sm text-muted-foreground">Professional PNG cropper and JPG crop functionality for all image formats.</p>
                   </div>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Circular Crop Image</h4>
-                    <p className="text-sm text-gray-600">Create perfect circular crops and round crop images for profile pictures and avatars.</p>
+                    <p className="text-sm text-muted-foreground">Create perfect circular crops and round crop images for profile pictures and avatars.</p>
                   </div>
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <h4 className="font-semibold mb-2">Auto Crop Image</h4>
-                    <p className="text-sm text-gray-600">Smart auto crop feature automatically detects the best crop area for your images.</p>
+                    <p className="text-sm text-muted-foreground">Smart auto crop feature automatically detects the best crop area for your images.</p>
                   </div>
                 </div>
               </section>
 
               <section className="mb-8">
                 <h3 className="text-2xl font-semibold mb-4">How to Crop Images Online</h3>
-                <ol className="list-decimal list-inside space-y-3 text-gray-700">
+                <ol className="list-decimal list-inside space-y-3 text-foreground">
                   <li><strong>Upload Your Image:</strong> Click "Browse Files" or drag and drop your photo into our online image cropper</li>
                   <li><strong>Select Crop Area:</strong> Choose the area you want to crop using our intuitive cropping tool</li>
                   <li><strong>Adjust Dimensions:</strong> Set custom width and height or use preset sizes for social media</li>
@@ -547,7 +547,7 @@ export default function ImageCropper() {
 
               <section className="mb-8">
                 <h3 className="text-2xl font-semibold mb-4">Popular Image Cropping Use Cases</h3>
-                <div className="space-y-4 text-gray-700">
+                <div className="space-y-4 text-foreground">
                   <div>
                     <h4 className="font-semibold">Social Media Photo Cropping</h4>
                     <p>Perfect your social media presence with our <strong>photo crop online</strong> tool. Create Instagram posts, Facebook covers, Twitter headers, and LinkedIn banners with precise dimensions.</p>
@@ -569,9 +569,9 @@ export default function ImageCropper() {
 
               <section className="mb-8">
                 <h3 className="text-2xl font-semibold mb-4">Advanced Cropping Features</h3>
-                <div className="bg-blue-50 p-6 rounded-lg mb-6">
+                <div className="bg-muted/50 p-6 rounded-lg mb-6">
                   <h4 className="font-semibold mb-3">Professional Image Editing Tools</h4>
-                  <ul className="space-y-2 text-gray-700">
+                  <ul className="space-y-2 text-foreground">
                     <li>• <strong>Image Trimmer:</strong> Precise trimming with pixel-perfect accuracy</li>
                     <li>• <strong>Picture Cutter:</strong> Advanced cutting tools for complex shapes</li>
                     <li>• <strong>Photo Size Editor:</strong> Comprehensive size adjustment options</li>
@@ -586,22 +586,22 @@ export default function ImageCropper() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
                   <div className="text-center p-4 border rounded-lg">
                     <h4 className="font-semibold mb-2">100% Free</h4>
-                    <p className="text-sm text-gray-600">No hidden costs, watermarks, or premium features. Complete access to all cropping tools.</p>
+                    <p className="text-sm text-muted-foreground">No hidden costs, watermarks, or premium features. Complete access to all cropping tools.</p>
                   </div>
                   <div className="text-center p-4 border rounded-lg">
                     <h4 className="font-semibold mb-2">No Software Required</h4>
-                    <p className="text-sm text-gray-600">Works entirely in your browser. No downloads, installations, or registrations needed.</p>
+                    <p className="text-sm text-muted-foreground">Works entirely in your browser. No downloads, installations, or registrations needed.</p>
                   </div>
                   <div className="text-center p-4 border rounded-lg">
                     <h4 className="font-semibold mb-2">High Quality Results</h4>
-                    <p className="text-sm text-gray-600">Maintain image quality while cropping. Professional results every time.</p>
+                    <p className="text-sm text-muted-foreground">Maintain image quality while cropping. Professional results every time.</p>
                   </div>
                 </div>
               </section>
 
               <section className="mb-8">
                 <h3 className="text-2xl font-semibold mb-4">Supported Image Formats</h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-foreground mb-4">
                   Our <strong>cropping tool</strong> supports all major image formats including JPG, PNG, GIF, WebP, and more. Whether you need to <strong>crop PNG online</strong> or perform <strong>JPG crop</strong> operations, our tool handles all formats with ease.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-6">
@@ -619,29 +619,29 @@ export default function ImageCropper() {
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold">How to crop an image online for free?</h4>
-                    <p className="text-gray-700">Simply upload your image to our free online image cropper, select the crop area, adjust dimensions if needed, and click crop. Download your perfectly cropped image instantly.</p>
+                    <p className="text-foreground">Simply upload your image to our free online image cropper, select the crop area, adjust dimensions if needed, and click crop. Download your perfectly cropped image instantly.</p>
                   </div>
                   <div>
                     <h4 className="font-semibold">Can I crop images without losing quality?</h4>
-                    <p className="text-gray-700">Yes! Our image cropper maintains the original quality of your photos during the cropping process. No compression or quality loss occurs.</p>
+                    <p className="text-foreground">Yes! Our image cropper maintains the original quality of your photos during the cropping process. No compression or quality loss occurs.</p>
                   </div>
                   <div>
                     <h4 className="font-semibold">Is there a limit to image size?</h4>
-                    <p className="text-gray-700">Our online crop tool can handle large images efficiently. We support files up to 50MB for optimal performance.</p>
+                    <p className="text-foreground">Our online crop tool can handle large images efficiently. We support files up to 50MB for optimal performance.</p>
                   </div>
                   <div>
                     <h4 className="font-semibold">How to make image smaller while cropping?</h4>
-                    <p className="text-gray-700">Use our resize image feature combined with cropping. Set custom dimensions in the width and height fields to make your image smaller.</p>
+                    <p className="text-foreground">Use our resize image feature combined with cropping. Set custom dimensions in the width and height fields to make your image smaller.</p>
                   </div>
                 </div>
               </section>
 
-              <section className="mb-8 bg-green-50 p-6 rounded-lg">
+              <section className="mb-8 bg-muted/50 p-6 rounded-lg">
                 <h3 className="text-2xl font-semibold mb-4">Start Cropping Images Now</h3>
-                <p className="text-gray-700 mb-4">
+                <p className="text-foreground mb-4">
                   Ready to crop your images? Our professional <strong>photo cropper</strong> tool is completely free and requires no registration. Whether you need to <strong>crop pictures</strong>, <strong>resize photos</strong>, or create perfect social media images, we've got you covered.
                 </p>
-                <p className="text-gray-700">
+                <p className="text-foreground">
                   Join thousands of users who trust our <strong>online image cropper</strong> for their photo editing needs. Experience the best <strong>image crop</strong> tool available online today!
                 </p>
               </section>

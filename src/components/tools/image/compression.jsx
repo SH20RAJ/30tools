@@ -382,7 +382,7 @@ export default function ImageCompressionTool() {
                                         <div className="flex items-center space-x-2">
                                             {fileItem.status === 'completed' && (
                                                 <>
-                                                    <CheckIcon className="h-4 w-4 text-green-500" />
+                                                    <CheckIcon className="h-4 w-4 text-primary" />
                                                     <Button onClick={() => downloadFile(fileItem)} size="sm">
                                                         <DownloadIcon className="h-4 w-4 mr-2" />
                                                         Download
@@ -559,39 +559,39 @@ export default function ImageCompressionTool() {
                     
                     <div className="mb-6 not-prose">
                         <div className="overflow-x-auto">
-                            <table className="w-full border-collapse border border-gray-300">
+                            <table className="w-full border-collapse border border-border">
                                 <thead>
                                     <tr className="bg-gray-50 dark:bg-gray-800">
-                                        <th className="border border-gray-300 px-4 py-2 text-left">Feature</th>
-                                        <th className="border border-gray-300 px-4 py-2 text-center">Our Compressor</th>
-                                        <th className="border border-gray-300 px-4 py-2 text-center">TinyPNG</th>
-                                        <th className="border border-gray-300 px-4 py-2 text-center">iLoveIMG</th>
+                                        <th className="border border-border px-4 py-2 text-left">Feature</th>
+                                        <th className="border border-border px-4 py-2 text-center">Our Compressor</th>
+                                        <th className="border border-border px-4 py-2 text-center">TinyPNG</th>
+                                        <th className="border border-border px-4 py-2 text-center">iLoveIMG</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td className="border border-gray-300 px-4 py-2">Free Usage</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">✅ Unlimited</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">⚠️ 20 images/month</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">⚠️ Limited</td>
+                                        <td className="border border-border px-4 py-2">Free Usage</td>
+                                        <td className="border border-border px-4 py-2 text-center">✅ Unlimited</td>
+                                        <td className="border border-border px-4 py-2 text-center">⚠️ 20 images/month</td>
+                                        <td className="border border-border px-4 py-2 text-center">⚠️ Limited</td>
                                     </tr>
                                     <tr>
-                                        <td className="border border-gray-300 px-4 py-2">Watermarks</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">✅ None</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">✅ None</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">❌ Yes (free plan)</td>
+                                        <td className="border border-border px-4 py-2">Watermarks</td>
+                                        <td className="border border-border px-4 py-2 text-center">✅ None</td>
+                                        <td className="border border-border px-4 py-2 text-center">✅ None</td>
+                                        <td className="border border-border px-4 py-2 text-center">❌ Yes (free plan)</td>
                                     </tr>
                                     <tr>
-                                        <td className="border border-gray-300 px-4 py-2">Privacy</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">✅ Browser-based</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">❌ Server upload</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">❌ Server upload</td>
+                                        <td className="border border-border px-4 py-2">Privacy</td>
+                                        <td className="border border-border px-4 py-2 text-center">✅ Browser-based</td>
+                                        <td className="border border-border px-4 py-2 text-center">❌ Server upload</td>
+                                        <td className="border border-border px-4 py-2 text-center">❌ Server upload</td>
                                     </tr>
                                     <tr>
-                                        <td className="border border-gray-300 px-4 py-2">Batch Processing</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">✅ Unlimited</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">⚠️ Limited</td>
-                                        <td className="border border-gray-300 px-4 py-2 text-center">✅ Yes</td>
+                                        <td className="border border-border px-4 py-2">Batch Processing</td>
+                                        <td className="border border-border px-4 py-2 text-center">✅ Unlimited</td>
+                                        <td className="border border-border px-4 py-2 text-center">⚠️ Limited</td>
+                                        <td className="border border-border px-4 py-2 text-center">✅ Yes</td>
                                     </tr>
                                 </tbody>
                             </table>

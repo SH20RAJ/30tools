@@ -301,10 +301,10 @@ private:
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+            <div className="w-12 h-12 bg-background">
               <BrainIcon className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl font-bold bg-background">
               Complexity Analyzer
             </h1>
           </div>
@@ -412,7 +412,7 @@ private:
                 <div className="flex items-center justify-between mt-2 text-xs text-muted-foreground">
                   <span>{code.length} / 50,000 characters</span>
                   {code.length > 40000 && (
-                    <span className="text-orange-600">Approaching limit</span>
+                    <span className="text-primary">Approaching limit</span>
                   )}
                 </div>
               </div>
@@ -520,7 +520,7 @@ private:
 
               {!analysis && !error && !isAnalyzing && (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-background">
                     <SparklesIcon className="w-8 h-8 text-muted-foreground" />
                   </div>
                   <h3 className="text-lg font-semibold mb-2">Ready to Analyze</h3>
@@ -543,13 +543,13 @@ private:
                     {/* Time Complexity */}
                     <div className="space-y-3">
                       <div className="flex items-center">
-                        <ClockIcon className="w-5 h-5 mr-2 text-blue-600" />
+                        <ClockIcon className="w-5 h-5 mr-2 text-primary" />
                         <h3 className="text-lg font-semibold">Time Complexity</h3>
                       </div>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         <div className="bg-muted/30 rounded-lg p-3 text-center">
                           <div className="text-xs text-muted-foreground mb-1">Big O</div>
-                          <div className="font-mono font-semibold text-lg text-blue-600">
+                          <div className="font-mono font-semibold text-lg text-primary">
                             {analysis.timeComplexity.bigO}
                           </div>
                         </div>
@@ -582,13 +582,13 @@ private:
                     {/* Space Complexity */}
                     <div className="space-y-3">
                       <div className="flex items-center">
-                        <DatabaseIcon className="w-5 h-5 mr-2 text-green-600" />
+                        <DatabaseIcon className="w-5 h-5 mr-2 text-primary" />
                         <h3 className="text-lg font-semibold">Space Complexity</h3>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div className="bg-muted/30 rounded-lg p-3 text-center">
                           <div className="text-xs text-muted-foreground mb-1">Big O</div>
-                          <div className="font-mono font-semibold text-lg text-green-600">
+                          <div className="font-mono font-semibold text-lg text-primary">
                             {analysis.spaceComplexity.bigO}
                           </div>
                         </div>
@@ -608,7 +608,7 @@ private:
                   <TabsContent value="insights" className="space-y-4">
                     <div className="space-y-4">
                       <div className="flex items-center">
-                        <LightbulbIcon className="w-5 h-5 mr-2 text-yellow-600" />
+                        <LightbulbIcon className="w-5 h-5 mr-2 text-primary" />
                         <h3 className="text-lg font-semibold">Algorithm Type</h3>
                       </div>
                       <p className="text-muted-foreground bg-muted/30 rounded-lg p-3">
@@ -621,7 +621,7 @@ private:
                           <ul className="space-y-2">
                             {analysis.keyInsights.map((insight, index) => (
                               <li key={index} className="flex items-start">
-                                <InfoIcon className="w-4 h-4 mr-2 mt-0.5 text-blue-600 flex-shrink-0" />
+                                <InfoIcon className="w-4 h-4 mr-2 mt-0.5 text-primary flex-shrink-0" />
                                 <span className="text-sm">{insight}</span>
                               </li>
                             ))}
@@ -634,14 +634,14 @@ private:
                   <TabsContent value="optimizations" className="space-y-4">
                     <div className="space-y-4">
                       <div className="flex items-center">
-                        <ZapIcon className="w-5 h-5 mr-2 text-orange-600" />
+                        <ZapIcon className="w-5 h-5 mr-2 text-primary" />
                         <h3 className="text-lg font-semibold">Optimization Suggestions</h3>
                       </div>
                       {analysis.optimizations && analysis.optimizations.length > 0 ? (
                         <ul className="space-y-3">
                           {analysis.optimizations.map((optimization, index) => (
                             <li key={index} className="flex items-start">
-                              <TrendingUpIcon className="w-4 h-4 mr-2 mt-0.5 text-green-600 flex-shrink-0" />
+                              <TrendingUpIcon className="w-4 h-4 mr-2 mt-0.5 text-primary flex-shrink-0" />
                               <span className="text-sm">{optimization}</span>
                             </li>
                           ))}
@@ -658,7 +658,7 @@ private:
                     {analysis.complexity_analysis && (
                       <div className="space-y-4">
                         <div className="flex items-center">
-                          <LayersIcon className="w-5 h-5 mr-2 text-purple-600" />
+                          <LayersIcon className="w-5 h-5 mr-2 text-primary" />
                           <h3 className="text-lg font-semibold">Detailed Analysis</h3>
                         </div>
                         

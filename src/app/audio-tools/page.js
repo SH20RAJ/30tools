@@ -123,14 +123,14 @@ const audioTools = [
 ]
 
 const categories = [
-  { name: 'Conversion', count: 1, color: 'bg-blue-100 text-blue-800' },
-  { name: 'Recording', count: 1, color: 'bg-red-100 text-red-800' },
-  { name: 'Editing', count: 4, color: 'bg-purple-100 text-purple-800' },
-  { name: 'Generation', count: 1, color: 'bg-yellow-100 text-yellow-800' },
-  { name: 'Optimization', count: 1, color: 'bg-green-100 text-green-800' },
-  { name: 'Enhancement', count: 2, color: 'bg-pink-100 text-pink-800' },
-  { name: 'Analysis', count: 1, color: 'bg-indigo-100 text-indigo-800' },
-  { name: 'Playback', count: 1, color: 'bg-gray-100 text-gray-800' }
+  { name: 'Conversion', count: 1, color: 'bg-muted text-foreground' },
+  { name: 'Recording', count: 1, color: 'bg-destructive/20 text-destructive' },
+  { name: 'Editing', count: 4, color: 'bg-muted text-foreground' },
+  { name: 'Generation', count: 1, color: 'bg-muted text-primary' },
+  { name: 'Optimization', count: 1, color: 'bg-muted text-foreground' },
+  { name: 'Enhancement', count: 2, color: 'bg-muted text-primary' },
+  { name: 'Analysis', count: 1, color: 'bg-muted text-primary' },
+  { name: 'Playback', count: 1, color: 'bg-gray-100 text-foreground' }
 ]
 
 export default function AudioToolsPage() {

@@ -222,10 +222,10 @@ export default function BackgroundRemoverTool() {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'ready': return <ImageIcon className="h-4 w-4 text-blue-500" />;
-      case 'processing': return <Loader className="h-4 w-4 text-orange-500 animate-spin" />;
-      case 'completed': return <CheckCircle className="h-4 w-4 text-green-500" />;
-      case 'error': return <AlertCircle className="h-4 w-4 text-red-500" />;
+      case 'ready': return <ImageIcon className="h-4 w-4 text-primary" />;
+      case 'processing': return <Loader className="h-4 w-4 text-primary animate-spin" />;
+      case 'completed': return <CheckCircle className="h-4 w-4 text-primary" />;
+      case 'error': return <AlertCircle className="h-4 w-4 text-destructive" />;
       default: return <ImageIcon className="h-4 w-4" />;
     }
   };

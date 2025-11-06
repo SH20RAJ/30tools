@@ -214,17 +214,17 @@ ${urls.map(u => `  <url>
 
   const getPriorityColor = (priority) => {
     const p = parseFloat(priority);
-    if (p >= 0.8) return 'bg-green-500';
-    if (p >= 0.5) return 'bg-blue-500';
-    if (p >= 0.3) return 'bg-yellow-500';
+    if (p >= 0.8) return 'bg-muted/500';
+    if (p >= 0.5) return 'bg-muted/500';
+    if (p >= 0.3) return 'bg-muted/500';
     return 'bg-gray-500';
   };
 
   const getChangeFreqColor = (freq) => {
     switch (freq) {
-      case 'daily': return 'bg-green-500';
-      case 'weekly': return 'bg-blue-500';
-      case 'monthly': return 'bg-yellow-500';
+      case 'daily': return 'bg-muted/500';
+      case 'weekly': return 'bg-muted/500';
+      case 'monthly': return 'bg-muted/500';
       case 'yearly': return 'bg-gray-500';
       default: return 'bg-gray-400';
     }
@@ -234,11 +234,11 @@ ${urls.map(u => `  <url>
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-purple-100 rounded-full mb-4">
-          <FileText className="h-8 w-8 text-purple-600" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
+          <FileText className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900">XML Sitemap Extractor</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-foreground">XML Sitemap Extractor</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Extract all URLs from XML sitemaps and export them in various formats (CSV, TXT, XML, HTML, Excel). Analyze sitemap structure and URL data.
         </p>
       </div>
@@ -247,11 +247,11 @@ ${urls.map(u => `  <url>
       <div className="grid md:grid-cols-3 gap-6">
         <Card>
           <CardHeader className="text-center pb-3">
-            <Search className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+            <Search className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">SEO Analysis</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Analyze competitor sitemaps to discover their content structure and identify new opportunities.
             </p>
           </CardContent>
@@ -259,11 +259,11 @@ ${urls.map(u => `  <url>
         
         <Card>
           <CardHeader className="text-center pb-3">
-            <Target className="h-8 w-8 text-green-500 mx-auto mb-2" />
+            <Target className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Content Audit</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Extract URL lists for comprehensive content audits, indexation checks, and site structure analysis.
             </p>
           </CardContent>
@@ -271,11 +271,11 @@ ${urls.map(u => `  <url>
         
         <Card>
           <CardHeader className="text-center pb-3">
-            <Zap className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+            <Zap className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Multiple Formats</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Export extracted URLs in CSV, TXT, XML, HTML formats for use in other SEO tools and analysis.
             </p>
           </CardContent>
@@ -300,7 +300,7 @@ ${urls.map(u => `  <url>
               onChange={(e) => setSitemapUrl(e.target.value)}
               disabled={isExtracting}
             />
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               Enter the full URL of an XML sitemap (e.g., https://example.com/sitemap.xml)
             </p>
           </div>
@@ -347,26 +347,26 @@ ${urls.map(u => `  <url>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-blue-600">{stats.totalUrls}</div>
-              <div className="text-sm text-gray-600">Total URLs</div>
+              <div className="text-2xl font-bold text-primary">{stats.totalUrls}</div>
+              <div className="text-sm text-muted-foreground">Total URLs</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-green-600">{stats.totalImages}</div>
-              <div className="text-sm text-gray-600">Images</div>
+              <div className="text-2xl font-bold text-primary">{stats.totalImages}</div>
+              <div className="text-sm text-muted-foreground">Images</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-purple-600">{stats.totalVideos}</div>
-              <div className="text-sm text-gray-600">Videos</div>
+              <div className="text-2xl font-bold text-primary">{stats.totalVideos}</div>
+              <div className="text-sm text-muted-foreground">Videos</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-orange-600">{stats.avgPriority}</div>
-              <div className="text-sm text-gray-600">Avg Priority</div>
+              <div className="text-2xl font-bold text-primary">{stats.avgPriority}</div>
+              <div className="text-sm text-muted-foreground">Avg Priority</div>
             </CardContent>
           </Card>
         </div>
@@ -421,7 +421,7 @@ ${urls.map(u => `  <url>
                   {Object.entries(stats.changeFreqDistribution).map(([freq, count]) => (
                     <div key={freq} className="text-center">
                       <div className="text-lg font-bold">{count}</div>
-                      <div className="text-sm text-gray-600 capitalize">{freq}</div>
+                      <div className="text-sm text-muted-foreground capitalize">{freq}</div>
                     </div>
                   ))}
                 </div>
@@ -457,7 +457,7 @@ ${urls.map(u => `  <url>
                     <tr key={index} className="border-b hover:bg-gray-50">
                       <td className="p-3">
                         <a href={url.url} target="_blank" rel="noopener noreferrer" 
-                           className="text-blue-600 hover:underline text-sm break-all">
+                           className="text-primary hover:underline text-sm break-all">
                           {url.url}
                         </a>
                       </td>
@@ -483,7 +483,7 @@ ${urls.map(u => `  <url>
                 </tbody>
               </table>
               {urls.length > 50 && (
-                <div className="p-4 text-center text-gray-500">
+                <div className="p-4 text-center text-muted-foreground">
                   Showing 50 of {urls.length} URLs. Export to see all results.
                 </div>
               )}
@@ -504,7 +504,7 @@ ${urls.map(u => `  <url>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2">Sitemap Optimization</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Keep sitemaps under 50MB and 50,000 URLs</li>
                 <li>• Use sitemap index files for large sites</li>
                 <li>• Include only canonical URLs</li>
@@ -514,7 +514,7 @@ ${urls.map(u => `  <url>
             </div>
             <div>
               <h4 className="font-semibold mb-2">SEO Benefits</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Helps search engines discover content</li>
                 <li>• Improves crawl efficiency</li>
                 <li>• Provides metadata for better indexing</li>

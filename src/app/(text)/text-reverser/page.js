@@ -189,7 +189,7 @@ export default function TextReverserPage() {
               <h2 className="text-2xl font-semibold mb-4">When to Use Text Reverser</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">🎨 Creative Writing</h3>
+                  <h3 className="font-medium mb-2 text-primary">🎨 Creative Writing</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Create mirror writing effects</li>
                     <li>• Generate backwards text for art</li>
@@ -199,7 +199,7 @@ export default function TextReverserPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">💻 Programming & Development</h3>
+                  <h3 className="font-medium mb-2 text-primary">💻 Programming & Development</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Test string reversal algorithms</li>
                     <li>• Debug text processing code</li>

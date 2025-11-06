@@ -128,7 +128,7 @@ export default function MortgageCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Use Mortgage Calculator</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🏠 Basic Information</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🏠 Basic Information</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>Home Price:</strong> Total purchase price of the home</li>
                                         <li>• <strong>Down Payment:</strong> Amount paid upfront (typically 10-20%)</li>
@@ -137,7 +137,7 @@ export default function MortgageCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">💰 Additional Costs</h3>
+                                    <h3 className="font-medium mb-2 text-primary">💰 Additional Costs</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• <strong>Property Tax:</strong> Annual property tax amount</li>
                                         <li>• <strong>Home Insurance:</strong> Annual homeowner's insurance</li>
@@ -152,28 +152,28 @@ export default function MortgageCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Understanding Mortgage Payments</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-green-600">📊 PITI Breakdown</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📊 PITI Breakdown</h3>
                                     <div className="space-y-2">
-                                        <div className="flex justify-between p-2 bg-blue-50 rounded">
+                                        <div className="flex justify-between p-2 bg-muted/50 rounded">
                                             <span className="text-sm font-medium">Principal</span>
                                             <span className="text-sm">Loan amount repayment</span>
                                         </div>
-                                        <div className="flex justify-between p-2 bg-green-50 rounded">
+                                        <div className="flex justify-between p-2 bg-muted/50 rounded">
                                             <span className="text-sm font-medium">Interest</span>
                                             <span className="text-sm">Cost of borrowing money</span>
                                         </div>
-                                        <div className="flex justify-between p-2 bg-yellow-50 rounded">
+                                        <div className="flex justify-between p-2 bg-muted/50 rounded">
                                             <span className="text-sm font-medium">Taxes</span>
                                             <span className="text-sm">Property tax payments</span>
                                         </div>
-                                        <div className="flex justify-between p-2 bg-red-50 rounded">
+                                        <div className="flex justify-between p-2 bg-destructive/10 rounded">
                                             <span className="text-sm font-medium">Insurance</span>
                                             <span className="text-sm">Homeowner's insurance</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-green-600">💡 Key Factors</h3>
+                                    <h3 className="font-medium mb-2 text-primary">💡 Key Factors</h3>
                                     <ul className="text-sm text-muted-foreground space-y-2">
                                         <li>• <strong>Loan Amount:</strong> Home price minus down payment</li>
                                         <li>• <strong>Interest Rate:</strong> Higher rates = higher payments</li>
@@ -188,7 +188,7 @@ export default function MortgageCalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Mortgage Tips and Strategies</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">💰 Save Money Tips</h3>
+                                    <h3 className="font-medium mb-2 text-primary">💰 Save Money Tips</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Make a larger down payment to avoid PMI</li>
                                         <li>• Shop around for the best interest rates</li>
@@ -198,7 +198,7 @@ export default function MortgageCalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">📈 Payment Strategies</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📈 Payment Strategies</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Bi-weekly payments can save thousands in interest</li>
                                         <li>• Round up monthly payments to nearest $50 or $100</li>

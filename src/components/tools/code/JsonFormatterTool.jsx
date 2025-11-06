@@ -335,9 +335,9 @@ export default function JsonFormatterTool() {
       {/* Success Status */}
       {isValid === true && (
         <Alert className="mb-6" variant="default">
-          <CheckCircle className="h-4 w-4 text-green-500" />
+          <CheckCircle className="h-4 w-4 text-primary" />
           <AlertDescription>
-            <span className="text-green-600 font-medium">Valid JSON!</span> Your JSON data is properly formatted and valid.
+            <span className="text-primary font-medium">Valid JSON!</span> Your JSON data is properly formatted and valid.
           </AlertDescription>
         </Alert>
       )}
@@ -363,11 +363,11 @@ export default function JsonFormatterTool() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Formatted:</span>
-                    <span className="font-mono">{stats.formattedSize} <span className="text-blue-600">({stats.formattedIncrease})</span></span>
+                    <span className="font-mono">{stats.formattedSize} <span className="text-primary">({stats.formattedIncrease})</span></span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Minified:</span>
-                    <span className="font-mono">{stats.minifiedSize} <span className="text-green-600">({stats.minifiedReduction})</span></span>
+                    <span className="font-mono">{stats.minifiedSize} <span className="text-primary">({stats.minifiedReduction})</span></span>
                   </div>
                 </div>
               </div>

@@ -87,7 +87,7 @@ export default function YouTubeTranscriptDownloaderPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
               YouTube Transcript Downloader
             </h1>
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -108,22 +108,22 @@ export default function YouTubeTranscriptDownloaderPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Download YouTube Video Transcripts</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-blue-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Copy Video URL</h3>
                   <p className="text-sm text-muted-foreground">Copy the YouTube video link that has captions or transcripts available</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-blue-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Extract Transcript</h3>
                   <p className="text-sm text-muted-foreground">Our tool automatically detects and extracts available subtitles and transcripts</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-blue-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Download Text</h3>
                   <p className="text-sm text-muted-foreground">Download the transcript in your preferred format: SRT, VTT, or plain text</p>
@@ -135,17 +135,17 @@ export default function YouTubeTranscriptDownloaderPage() {
               <h2 className="text-2xl font-semibold mb-4">Why Download YouTube Transcripts?</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">🎓 Educational Research</h3>
+                  <h3 className="font-medium mb-2 text-primary">🎓 Educational Research</h3>
                   <p className="text-sm text-muted-foreground mb-4">Perfect for students, researchers, and educators who need to analyze video content, extract quotes, or create study materials from educational YouTube videos.</p>
                   
-                  <h3 className="font-medium mb-2 text-blue-600">♿ Accessibility Support</h3>
+                  <h3 className="font-medium mb-2 text-primary">♿ Accessibility Support</h3>
                   <p className="text-sm text-muted-foreground mb-4">Download transcripts to improve accessibility for hearing-impaired viewers or to create better captions for your own video content.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">📝 Content Creation</h3>
+                  <h3 className="font-medium mb-2 text-primary">📝 Content Creation</h3>
                   <p className="text-sm text-muted-foreground mb-4">Extract transcripts to create blog posts, articles, or social media content based on YouTube videos. Perfect for content repurposing and SEO optimization.</p>
                   
-                  <h3 className="font-medium mb-2 text-blue-600">🔍 SEO and Analysis</h3>
+                  <h3 className="font-medium mb-2 text-primary">🔍 SEO and Analysis</h3>
                   <p className="text-sm text-muted-foreground mb-4">Analyze video content for keyword research, competitor analysis, or to understand trending topics in your niche.</p>
                 </div>
               </div>
@@ -154,16 +154,16 @@ export default function YouTubeTranscriptDownloaderPage() {
             <div className="bg-card rounded-lg p-6 border">
               <h2 className="text-2xl font-semibold mb-4">Supported Transcript Formats</h2>
               <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-blue-50 dark:bg-blue-950/20 p-4 rounded-lg">
-                  <h3 className="font-medium mb-2 text-blue-600">SRT Format</h3>
+                <div className="bg-muted/50 dark:bg-blue-950/20 p-4 rounded-lg">
+                  <h3 className="font-medium mb-2 text-primary">SRT Format</h3>
                   <p className="text-sm text-muted-foreground">Standard subtitle format with timestamps, compatible with most video players and editing software.</p>
                 </div>
-                <div className="bg-purple-50 dark:bg-purple-950/20 p-4 rounded-lg">
-                  <h3 className="font-medium mb-2 text-purple-600">VTT Format</h3>
+                <div className="bg-muted/50 dark:bg-purple-950/20 p-4 rounded-lg">
+                  <h3 className="font-medium mb-2 text-primary">VTT Format</h3>
                   <p className="text-sm text-muted-foreground">Web Video Text Tracks format, perfect for web-based video players and HTML5 videos.</p>
                 </div>
-                <div className="bg-green-50 dark:bg-green-950/20 p-4 rounded-lg">
-                  <h3 className="font-medium mb-2 text-green-600">Plain Text</h3>
+                <div className="bg-muted/50 dark:bg-green-950/20 p-4 rounded-lg">
+                  <h3 className="font-medium mb-2 text-primary">Plain Text</h3>
                   <p className="text-sm text-muted-foreground">Clean text format without timestamps, ideal for reading, analysis, and content creation.</p>
                 </div>
               </div>

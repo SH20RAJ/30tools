@@ -78,7 +78,7 @@ export default function YouTubeShortsDownloader() {
                         <Button
                             onClick={handleDownload}
                             disabled={isLoading}
-                            className="bg-red-600 hover:bg-red-700"
+                            className="bg-destructive hover:bg-destructive/90"
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -90,7 +90,7 @@ export default function YouTubeShortsDownloader() {
                     </div>
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -98,7 +98,7 @@ export default function YouTubeShortsDownloader() {
 
                     {shortsData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">YouTube Shorts processed successfully!</span>
                             </div>
@@ -113,7 +113,7 @@ export default function YouTubeShortsDownloader() {
                                                 className="w-20 h-32 object-cover rounded"
                                             />
                                             <div className="absolute inset-0 flex items-center justify-center">
-                                                <Play className="h-8 w-8 text-white bg-red-600 bg-opacity-80 rounded-full p-1" />
+                                                <Play className="h-8 w-8 text-white bg-destructive bg-opacity-80 rounded-full p-1" />
                                             </div>
                                             <div className="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-xs px-1 rounded">
                                                 {shortsData.duration}
@@ -126,7 +126,7 @@ export default function YouTubeShortsDownloader() {
                                                 👁️ {shortsData.views} • 👍 {shortsData.likes}
                                             </p>
                                             <p className="text-xs text-muted-foreground mb-2">Uploaded: {shortsData.uploadDate}</p>
-                                            <p className="text-xs text-gray-600 line-clamp-2">{shortsData.description}</p>
+                                            <p className="text-xs text-muted-foreground line-clamp-2">{shortsData.description}</p>
                                         </div>
                                     </div>
 
@@ -140,7 +140,7 @@ export default function YouTubeShortsDownloader() {
                                                         <span className="text-xs text-muted-foreground ml-2">({quality.size})</span>
                                                     </div>
                                                     {quality.quality.includes('Vertical') && (
-                                                        <span className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
+                                                        <span className="text-xs bg-muted text-primary px-2 py-1 rounded">
                                                             9:16 Format
                                                         </span>
                                                     )}
@@ -148,7 +148,7 @@ export default function YouTubeShortsDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadContent(quality)}
-                                                    className="bg-red-600 hover:bg-red-700"
+                                                    className="bg-destructive hover:bg-destructive/90"
                                                 >
                                                     {quality.type === 'audio' ? (
                                                         <Music className="h-3 w-3 mr-1" />

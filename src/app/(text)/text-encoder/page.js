@@ -199,7 +199,7 @@ export default function TextEncoderPage() {
               <h2 className="text-2xl font-semibold mb-4">When to Use Text Encoding</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">🌐 Web Development</h3>
+                  <h3 className="font-medium mb-2 text-primary">🌐 Web Development</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• URL parameter encoding</li>
                     <li>• Form data submission</li>
@@ -209,7 +209,7 @@ export default function TextEncoderPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">💻 Data Processing</h3>
+                  <h3 className="font-medium mb-2 text-primary">💻 Data Processing</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Email attachment encoding</li>
                     <li>• Database text storage</li>
@@ -265,28 +265,28 @@ export default function TextEncoderPage() {
             <div className="bg-card rounded-lg p-6 border">
               <h2 className="text-2xl font-semibold mb-4">Common Use Cases</h2>
               <div className="space-y-4">
-                <div className="border-l-4 border-blue-500 pl-4">
+                <div className="border-l-4 border-border pl-4">
                   <h3 className="font-medium mb-2">🔗 URL Parameters</h3>
                   <p className="text-sm text-muted-foreground">
                     When passing data through URL query strings, special characters like spaces, ampersands, and symbols need to be URL-encoded to ensure proper transmission.
                   </p>
                 </div>
                 
-                <div className="border-l-4 border-green-500 pl-4">
+                <div className="border-l-4 border-border pl-4">
                   <h3 className="font-medium mb-2">📧 Email Attachments</h3>
                   <p className="text-sm text-muted-foreground">
                     Base64 encoding is commonly used for email attachments and embedded images, ensuring binary data can be transmitted safely through text-based protocols.
                   </p>
                 </div>
                 
-                <div className="border-l-4 border-purple-500 pl-4">
+                <div className="border-l-4 border-border pl-4">
                   <h3 className="font-medium mb-2">🛡️ HTML Security</h3>
                   <p className="text-sm text-muted-foreground">
                     HTML entity encoding prevents XSS attacks by converting dangerous characters like &lt;, &gt;, and &amp; into safe HTML entities.
                   </p>
                 </div>
                 
-                <div className="border-l-4 border-orange-500 pl-4">
+                <div className="border-l-4 border-border pl-4">
                   <h3 className="font-medium mb-2">🔄 Data Exchange</h3>
                   <p className="text-sm text-muted-foreground">
                     APIs and web services often require specific text encoding formats to ensure data integrity during transmission between different systems.

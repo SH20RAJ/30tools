@@ -50,7 +50,7 @@ export default function EmbedVideoPlayer() {
       <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white">
         <div className="text-center">
           <h2 className="text-xl font-semibold mb-2">Error</h2>
-          <p className="text-gray-400">{error}</p>
+          <p className="text-muted-foreground">{error}</p>
         </div>
       </div>
     );

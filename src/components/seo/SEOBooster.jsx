@@ -159,15 +159,15 @@ export default function SEOBooster({
     switch (status) {
       case 'excellent':
       case 'good':
-        return 'bg-green-100 text-green-800 border-green-200';
+        return 'bg-muted text-foreground border-border';
       case 'needs-improvement':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+        return 'bg-muted text-primary border-border';
       case 'poor':
-        return 'bg-red-100 text-red-800 border-red-200';
+        return 'bg-destructive/20 text-destructive border-destructive/50';
       case 'loading':
-        return 'bg-gray-100 text-gray-800 border-gray-200';
+        return 'bg-gray-100 text-foreground border-border';
       default:
-        return 'bg-blue-100 text-blue-800 border-blue-200';
+        return 'bg-muted text-foreground border-border';
     }
   };
 
@@ -201,7 +201,7 @@ export default function SEOBooster({
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2"
-                    className="text-green-500"
+                    className="text-primary"
                     strokeDasharray={`${seoScore}, 100`}
                   />
                 </svg>
@@ -216,7 +216,7 @@ export default function SEOBooster({
                 </p>
               </div>
             </div>
-            <Badge className="bg-green-100 text-green-800">
+            <Badge className="bg-muted text-foreground">
               <Award className="h-3 w-3 mr-1" />
               SEO Ready
             </Badge>

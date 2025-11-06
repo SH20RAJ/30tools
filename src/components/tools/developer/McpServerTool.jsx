@@ -597,11 +597,11 @@ if __name__ == "__main__":
               </ol>
             </div>
 
-            <div className="bg-blue-50 dark:bg-blue-950/20 p-6 rounded-lg">
-              <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+            <div className="bg-muted/50 dark:bg-blue-950/20 p-6 rounded-lg">
+              <h4 className="font-semibold text-primary dark:text-blue-100 mb-2">
                 Perfect for #21stdev Developers
               </h4>
-              <p className="text-blue-800 dark:text-blue-200">
+              <p className="text-foreground dark:text-blue-200">
                 MCP servers are essential tools for modern developers building AI-first applications. 
                 Join the #21stdev movement and create powerful AI integrations that bridge the gap 
                 between artificial intelligence and real-world data.

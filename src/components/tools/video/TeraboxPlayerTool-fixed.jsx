@@ -457,7 +457,7 @@ export default function TeraboxPlayerTool() {
               <Card>
                 <CardContent className="py-8">
                   <div className="text-center space-y-3">
-                    <LoaderIcon className="h-8 w-8 animate-spin mx-auto text-blue-500" />
+                    <LoaderIcon className="h-8 w-8 animate-spin mx-auto text-primary" />
                     <div>
                       <h3 className="font-semibold">Fetching Video Preview</h3>
                       <p className="text-sm text-muted-foreground">Getting basic video information...</p>
@@ -475,9 +475,9 @@ export default function TeraboxPlayerTool() {
                   <CardHeader>
                     <CardTitle className="flex items-center">
                       {videoData ? (
-                        <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500" />
+                        <CheckCircleIcon className="h-5 w-5 mr-2 text-primary" />
                       ) : (
-                        <LoaderIcon className="h-5 w-5 mr-2 text-blue-500 animate-spin" />
+                        <LoaderIcon className="h-5 w-5 mr-2 text-primary animate-spin" />
                       )}
                       Video Information
                     </CardTitle>

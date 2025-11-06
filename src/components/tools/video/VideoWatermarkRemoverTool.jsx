@@ -378,7 +378,7 @@ export default function VideoWatermarkRemoverTool() {
                       </div>
                       <div className="flex justify-between">
                         <span>Size Reduction:</span>
-                        <span className="text-green-600">{processedVideo.stats.compressionRatio}</span>
+                        <span className="text-primary">{processedVideo.stats.compressionRatio}</span>
                       </div>
                     </div>
                     <div className="space-y-2">
@@ -388,7 +388,7 @@ export default function VideoWatermarkRemoverTool() {
                       </div>
                       <div className="flex justify-between">
                         <span>Removal Accuracy:</span>
-                        <span className="text-green-600">{processedVideo.stats.removalAccuracy}</span>
+                        <span className="text-primary">{processedVideo.stats.removalAccuracy}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Method Used:</span>

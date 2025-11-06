@@ -105,7 +105,7 @@ export default function InstagramReelDownloaderPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Instagram Reel Downloader
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -126,22 +126,22 @@ export default function InstagramReelDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Download Instagram Reels Without Watermark</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Copy Reel URL</h3>
                                     <p className="text-sm text-muted-foreground">Copy the Instagram Reel link from the Instagram app or website share option</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Paste & Process</h3>
                                     <p className="text-sm text-muted-foreground">Paste the Reel URL and our tool will process it to remove watermarks</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download Clean Reel</h3>
                                     <p className="text-sm text-muted-foreground">Download the Instagram Reel without watermark in your preferred quality</p>
@@ -153,17 +153,17 @@ export default function InstagramReelDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">Instagram Reel Downloader Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">🚫 Watermark Removal</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🚫 Watermark Removal</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download Instagram Reels without the Instagram watermark. Get clean, professional-looking videos perfect for reposting, editing, or personal collection without branding.</p>
 
-                                    <h3 className="font-medium mb-2 text-purple-600">🎵 Audio Extraction</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎵 Audio Extraction</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Extract high-quality audio from Instagram Reels and save as MP3 files. Perfect for downloading trending music, sounds, and audio clips from popular Reels.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">📱 Mobile Optimized</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📱 Mobile Optimized</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Specially designed for mobile users. Download Instagram Reels directly to your phone gallery with optimized performance for iOS and Android devices.</p>
 
-                                    <h3 className="font-medium mb-2 text-purple-600">⚡ Lightning Speed</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Lightning Speed</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our high-performance servers process Instagram Reels in seconds. No waiting queues, no slow processing - get your watermark-free Reels instantly.</p>
                                 </div>
                             </div>

@@ -126,22 +126,22 @@ export default function TikTokAudioDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Download TikTok Audio as MP3</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Copy TikTok URL</h3>
                                     <p className="text-sm text-muted-foreground">Copy the TikTok video link containing the audio you want to download</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Extract Audio</h3>
                                     <p className="text-sm text-muted-foreground">Our tool will extract the audio from the TikTok video automatically</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download MP3</h3>
                                     <p className="text-sm text-muted-foreground">Download the TikTok audio as high-quality MP3 file to your device</p>
@@ -153,17 +153,17 @@ export default function TikTokAudioDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">TikTok Audio Downloader Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-pink-600">🎵 High Quality Audio</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎵 High Quality Audio</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Extract TikTok audio in high quality MP3 format up to 320kbps. Get crystal-clear sound quality perfect for music, sound effects, and audio clips.</p>
 
-                                    <h3 className="font-medium mb-2 text-pink-600">🎶 Trending Music & Sounds</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎶 Trending Music & Sounds</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download trending TikTok music, viral sounds, and popular audio clips. Perfect for content creators, DJs, and music enthusiasts looking for the latest trends.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-pink-600">⚡ Lightning Fast Processing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Lightning Fast Processing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our advanced servers extract TikTok audio in seconds. No waiting times, no slow processing - get your TikTok audio files instantly.</p>
 
-                                    <h3 className="font-medium mb-2 text-pink-600">📱 Mobile Optimized</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📱 Mobile Optimized</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Specially designed for mobile users. Download TikTok audio directly to your phone music library with optimized performance for iOS and Android devices.</p>
                                 </div>
                             </div>

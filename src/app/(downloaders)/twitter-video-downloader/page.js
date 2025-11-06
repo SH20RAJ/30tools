@@ -109,7 +109,7 @@ export default function TwitterVideoDownloaderPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Twitter/X Video Downloader
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -130,22 +130,22 @@ export default function TwitterVideoDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Download Twitter/X Videos</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Copy Tweet URL</h3>
                                     <p className="text-sm text-muted-foreground">Copy the Twitter/X tweet link containing the video you want to download</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Paste & Process</h3>
                                     <p className="text-sm text-muted-foreground">Paste the tweet URL and our tool will extract all available video content</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-blue-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download Video</h3>
                                     <p className="text-sm text-muted-foreground">Select quality and download the Twitter video or GIF to your device</p>
@@ -157,17 +157,17 @@ export default function TwitterVideoDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">Twitter Video Downloader Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🎬 All Twitter Content</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎬 All Twitter Content</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download all types of Twitter/X video content including regular videos, GIFs, live stream recordings, and video threads. Support for both Twitter and X platform content.</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">📱 Cross-Platform Support</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📱 Cross-Platform Support</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Works on all devices and platforms - iPhone, Android, Windows, Mac, and Linux. Download Twitter videos directly to your phone gallery or computer storage.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">⚡ Instant Processing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Instant Processing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our high-speed servers process Twitter videos in seconds. No waiting queues, no slow downloads - get your Twitter content downloaded immediately.</p>
 
-                                    <h3 className="font-medium mb-2 text-blue-600">🔒 Secure & Private</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔒 Secure & Private</h3>
                                     <p className="text-sm text-muted-foreground mb-4">No Twitter login required. We don't store your videos or access your Twitter account. All downloads are processed securely and anonymously.</p>
                                 </div>
                             </div>

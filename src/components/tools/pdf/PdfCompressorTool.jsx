@@ -202,7 +202,7 @@ export default function PdfCompressorTool() {
             <CardContent>
               {!selectedFile ? (
                 <div 
-                  className="border-2 border-dashed border-gray-300 rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
+                  className="border-2 border-dashed border-border rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <UploadIcon className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
@@ -224,7 +224,7 @@ export default function PdfCompressorTool() {
               ) : (
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-4 border rounded-lg">
-                    <FileIcon className="h-8 w-8 text-red-500" />
+                    <FileIcon className="h-8 w-8 text-destructive" />
                     <div className="flex-1">
                       <p className="font-medium">{selectedFile.name}</p>
                       <p className="text-sm text-muted-foreground">
@@ -334,7 +334,7 @@ export default function PdfCompressorTool() {
               ) : compressionStats ? (
                 <div className="space-y-6">
                   <div className="text-center">
-                    <CheckCircleIcon className="h-12 w-12 mx-auto mb-4 text-green-500" />
+                    <CheckCircleIcon className="h-12 w-12 mx-auto mb-4 text-primary" />
                     <p className="font-medium text-lg">Compression Complete!</p>
                     <p className="text-sm text-muted-foreground">
                       Your PDF has been successfully compressed
@@ -344,13 +344,13 @@ export default function PdfCompressorTool() {
                   <div className="space-y-4">
                     <div className="grid grid-cols-2 gap-4 text-center">
                       <div className="p-4 bg-muted/50 rounded-lg">
-                        <p className="text-2xl font-bold text-red-500">
+                        <p className="text-2xl font-bold text-destructive">
                           {formatFileSize(compressionStats.originalSize)}
                         </p>
                         <p className="text-sm text-muted-foreground">Original Size</p>
                       </div>
                       <div className="p-4 bg-muted/50 rounded-lg">
-                        <p className="text-2xl font-bold text-green-500">
+                        <p className="text-2xl font-bold text-primary">
                           {formatFileSize(compressionStats.compressedSize)}
                         </p>
                         <p className="text-sm text-muted-foreground">Compressed Size</p>
@@ -438,21 +438,21 @@ export default function PdfCompressorTool() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="font-medium">Quality Control</h4>
                         <p className="text-sm text-muted-foreground">Choose from 4 compression levels</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="font-medium">Image Optimization</h4>
                         <p className="text-sm text-muted-foreground">Reduce image sizes within PDFs</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="font-medium">Metadata Removal</h4>
                         <p className="text-sm text-muted-foreground">Remove unnecessary metadata</p>
@@ -461,21 +461,21 @@ export default function PdfCompressorTool() {
                   </div>
                   <div className="space-y-3">
                     <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="font-medium">Progress Tracking</h4>
                         <p className="text-sm text-muted-foreground">Real-time compression progress</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="font-medium">Instant Download</h4>
                         <p className="text-sm text-muted-foreground">Download compressed files immediately</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <CheckCircleIcon className="h-5 w-5 text-green-500 mt-0.5" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary mt-0.5" />
                       <div>
                         <h4 className="font-medium">File Security</h4>
                         <p className="text-sm text-muted-foreground">Files processed locally and securely</p>
@@ -488,7 +488,7 @@ export default function PdfCompressorTool() {
               <TabsContent value="tips" className="space-y-4">
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <InfoIcon className="h-5 w-5 text-blue-500 mt-0.5" />
+                    <InfoIcon className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-medium">Choose the Right Quality</h4>
                       <p className="text-sm text-muted-foreground">
@@ -497,7 +497,7 @@ export default function PdfCompressorTool() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <InfoIcon className="h-5 w-5 text-blue-500 mt-0.5" />
+                    <InfoIcon className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-medium">Image-Heavy PDFs</h4>
                       <p className="text-sm text-muted-foreground">
@@ -506,7 +506,7 @@ export default function PdfCompressorTool() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <InfoIcon className="h-5 w-5 text-blue-500 mt-0.5" />
+                    <InfoIcon className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-medium">Text-Only Documents</h4>
                       <p className="text-sm text-muted-foreground">
@@ -515,7 +515,7 @@ export default function PdfCompressorTool() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <AlertCircleIcon className="h-5 w-5 text-orange-500 mt-0.5" />
+                    <AlertCircleIcon className="h-5 w-5 text-primary mt-0.5" />
                     <div>
                       <h4 className="font-medium">Password-Protected Files</h4>
                       <p className="text-sm text-muted-foreground">

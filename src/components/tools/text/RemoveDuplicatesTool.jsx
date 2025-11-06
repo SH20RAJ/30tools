@@ -200,19 +200,19 @@ export default function RemoveDuplicatesTool() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-blue-600">{stats.totalLines}</div>
+                  <div className="text-2xl font-bold text-primary">{stats.totalLines}</div>
                   <div className="text-muted-foreground">Total Lines</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-green-600">{stats.uniqueLines}</div>
+                  <div className="text-2xl font-bold text-primary">{stats.uniqueLines}</div>
                   <div className="text-muted-foreground">Unique Lines</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-red-600">{stats.duplicatesRemoved}</div>
+                  <div className="text-2xl font-bold text-destructive">{stats.duplicatesRemoved}</div>
                   <div className="text-muted-foreground">Duplicates Removed</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-purple-600">{stats.percentage}%</div>
+                  <div className="text-2xl font-bold text-primary">{stats.percentage}%</div>
                   <div className="text-muted-foreground">Reduction</div>
                 </div>
               </div>

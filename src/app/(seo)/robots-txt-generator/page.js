@@ -87,7 +87,7 @@ export default function RobotsTxtGeneratorPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
               Robots.txt Generator
             </h1>
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -108,22 +108,22 @@ export default function RobotsTxtGeneratorPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Use Robots.txt Generator</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Configure Rules</h3>
                   <p className="text-sm text-muted-foreground">Set user-agent rules, allow/disallow paths, and crawl delays</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Add Sitemaps</h3>
                   <p className="text-sm text-muted-foreground">Include your XML sitemap URLs for better indexing</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Download & Upload</h3>
                   <p className="text-sm text-muted-foreground">Download the robots.txt file and upload it to your website root</p>
@@ -135,17 +135,17 @@ export default function RobotsTxtGeneratorPage() {
               <h2 className="text-2xl font-semibold mb-4">What is Robots.txt?</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-orange-600">🤖 Search Engine Instructions</h3>
+                  <h3 className="font-medium mb-2 text-primary">🤖 Search Engine Instructions</h3>
                   <p className="text-sm text-muted-foreground mb-4">Robots.txt is a file that tells search engines which pages or sections of your website they should or shouldn't crawl and index.</p>
 
-                  <h3 className="font-medium mb-2 text-orange-600">📁 Website Root Location</h3>
+                  <h3 className="font-medium mb-2 text-primary">📁 Website Root Location</h3>
                   <p className="text-sm text-muted-foreground mb-4">The robots.txt file must be placed in the root directory of your website (e.g., https://yoursite.com/robots.txt) to be effective.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-orange-600">🎯 Crawl Control</h3>
+                  <h3 className="font-medium mb-2 text-primary">🎯 Crawl Control</h3>
                   <p className="text-sm text-muted-foreground mb-4">Use robots.txt to block access to private areas, prevent duplicate content issues, and optimize your crawl budget for important pages.</p>
 
-                  <h3 className="font-medium mb-2 text-orange-600">🗺️ Sitemap Declaration</h3>
+                  <h3 className="font-medium mb-2 text-primary">🗺️ Sitemap Declaration</h3>
                   <p className="text-sm text-muted-foreground mb-4">Include your XML sitemap URLs in robots.txt to help search engines discover and index your content more efficiently.</p>
                 </div>
               </div>
@@ -190,7 +190,7 @@ export default function RobotsTxtGeneratorPage() {
                 <div>
                   <h3 className="font-medium mb-2">Basic E-commerce Site</h3>
                   <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                    <pre className="text-sm text-gray-800 dark:text-gray-200">
+                    <pre className="text-sm text-foreground dark:text-gray-200">
 {`User-agent: *
 Disallow: /admin/
 Disallow: /cart/
@@ -206,7 +206,7 @@ Sitemap: https://yoursite.com/sitemap.xml`}
                 <div>
                   <h3 className="font-medium mb-2">Blog/Content Site</h3>
                   <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                    <pre className="text-sm text-gray-800 dark:text-gray-200">
+                    <pre className="text-sm text-foreground dark:text-gray-200">
 {`User-agent: *
 Disallow: /wp-admin/
 Disallow: /wp-includes/

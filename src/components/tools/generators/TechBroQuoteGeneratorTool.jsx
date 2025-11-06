@@ -139,7 +139,7 @@ const TechBroQuoteGeneratorTool = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
+        <div className="min-h-screen bg-muted/20 dark:from-gray-900 dark:via-blue-900 dark:to-indigo-900">
             <div className="container mx-auto px-4 py-8">
                 <div className="mb-8">
                     <Link href="/generators" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
@@ -148,11 +148,11 @@ const TechBroQuoteGeneratorTool = () => {
                     </Link>
 
                     <div className="flex items-center gap-3 mb-4">
-                        <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg">
+                        <div className="p-2 bg-background">
                             <TrendingUpIcon className="h-6 w-6 text-white" />
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            <h1 className="text-3xl font-bold bg-background">
                                 Tech Bro Quote Generator
                             </h1>
                             <p className="text-muted-foreground">Generate satirical startup quotes and tech bro buzzwords</p>
@@ -199,7 +199,7 @@ const TechBroQuoteGeneratorTool = () => {
 
                                 <Button
                                     onClick={generateQuote}
-                                    className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+                                    className="w-full bg-background"
                                     disabled={isGenerating}
                                 >
                                     {isGenerating ? (
@@ -233,8 +233,8 @@ const TechBroQuoteGeneratorTool = () => {
                             <CardContent>
                                 {generatedQuote ? (
                                     <div className="space-y-4">
-                                        <div className="p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg border-2 border-dashed border-blue-200 dark:border-blue-700">
-                                            <pre className="whitespace-pre-wrap font-medium text-gray-800 dark:text-gray-200 leading-relaxed">
+                                        <div className="p-6 bg-background/20 dark:to-purple-900/20 rounded-lg border-2 border-dashed border-border dark:border-border">
+                                            <pre className="whitespace-pre-wrap font-medium text-foreground dark:text-gray-200 leading-relaxed">
                                                 {generatedQuote}
                                             </pre>
                                         </div>
@@ -278,15 +278,15 @@ const TechBroQuoteGeneratorTool = () => {
                     </CardHeader>
                     <CardContent>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                            <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                            <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                                 <h4 className="font-semibold mb-2">🎯 Perfect for Memes</h4>
                                 <p>Use these quotes for satirical content and startup parody posts</p>
                             </div>
-                            <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                            <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                                 <h4 className="font-semibold mb-2">📱 Social Media Ready</h4>
                                 <p>Formatted for LinkedIn, Twitter, and other social platforms</p>
                             </div>
-                            <div className="p-3 bg-indigo-50 dark:bg-indigo-900/20 rounded-lg">
+                            <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                                 <h4 className="font-semibold mb-2">😂 Satirical Content</h4>
                                 <p>Perfect for poking fun at startup culture and tech buzzwords</p>
                             </div>

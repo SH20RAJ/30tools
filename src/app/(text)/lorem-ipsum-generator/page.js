@@ -124,22 +124,22 @@ export default function LoremIpsumGeneratorPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Generate Lorem Ipsum Text</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Choose Format</h3>
                   <p className="text-sm text-muted-foreground">Select paragraphs, sentences, or words based on your needs</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Set Quantity</h3>
                   <p className="text-sm text-muted-foreground">Specify how many paragraphs, sentences, or words you need</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-primary font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Generate & Copy</h3>
                   <p className="text-sm text-muted-foreground">Click generate and copy your Lorem Ipsum text instantly</p>
@@ -151,17 +151,17 @@ export default function LoremIpsumGeneratorPage() {
               <h2 className="text-2xl font-semibold mb-4">What is Lorem Ipsum?</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-orange-600">📜 Historical Background</h3>
+                  <h3 className="font-medium mb-2 text-primary">📜 Historical Background</h3>
                   <p className="text-sm text-muted-foreground mb-4">Lorem Ipsum is placeholder text derived from a work by Cicero written in 45 BC. It has been the industry standard dummy text since the 1500s when an unknown printer scrambled a galley of type to make a type specimen book.</p>
 
-                  <h3 className="font-medium mb-2 text-orange-600">🎨 Design Industry Standard</h3>
+                  <h3 className="font-medium mb-2 text-primary">🎨 Design Industry Standard</h3>
                   <p className="text-sm text-muted-foreground mb-4">Lorem Ipsum has become the standard placeholder text in the printing and typesetting industry. It's used by designers, developers, and content creators worldwide for mockups and prototypes.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-orange-600">🔤 Why Use Lorem Ipsum?</h3>
+                  <h3 className="font-medium mb-2 text-primary">🔤 Why Use Lorem Ipsum?</h3>
                   <p className="text-sm text-muted-foreground mb-4">Lorem Ipsum prevents viewers from being distracted by readable content when focusing on design elements. It provides a neutral text that doesn't compete with the visual design for attention.</p>
 
-                  <h3 className="font-medium mb-2 text-orange-600">⚡ Professional Benefits</h3>
+                  <h3 className="font-medium mb-2 text-primary">⚡ Professional Benefits</h3>
                   <p className="text-sm text-muted-foreground mb-4">Using Lorem Ipsum helps maintain focus on layout, typography, and visual hierarchy without the distraction of meaningful content. It's essential for professional design workflows.</p>
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function LoremIpsumGeneratorPage() {
               <h2 className="text-2xl font-semibold mb-4">When to Use Lorem Ipsum Text</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">🎨 Design & Development</h3>
+                  <h3 className="font-medium mb-2 text-primary">🎨 Design & Development</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Website mockups and wireframes</li>
                     <li>• Print design layouts and templates</li>
@@ -181,7 +181,7 @@ export default function LoremIpsumGeneratorPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-purple-600">💼 Professional Use Cases</h3>
+                  <h3 className="font-medium mb-2 text-primary">💼 Professional Use Cases</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Client presentations and proposals</li>
                     <li>• Content management system testing</li>
@@ -226,9 +226,9 @@ export default function LoremIpsumGeneratorPage() {
                   href="https://x.com/sh20raj"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 p-4 border rounded-lg hover:border-blue-500 hover:shadow-md transition-all group text-center"
+                  className="flex-1 p-4 border rounded-lg hover:border-border hover:shadow-md transition-all group text-center"
                 >
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-500">🐦 Follow @sh20raj</h3>
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">🐦 Follow @sh20raj</h3>
                   <p className="text-sm text-muted-foreground">
                     Follow us on X (Twitter) for design tips and new tool announcements.
                   </p>
@@ -237,9 +237,9 @@ export default function LoremIpsumGeneratorPage() {
                   href="https://x.com/sh20raj"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 p-4 border rounded-lg hover:border-green-500 hover:shadow-md transition-all group text-center"
+                  className="flex-1 p-4 border rounded-lg hover:border-border hover:shadow-md transition-all group text-center"
                 >
-                  <h3 className="font-semibold mb-2 group-hover:text-green-500">💬 Submit Feedback</h3>
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">💬 Submit Feedback</h3>
                   <p className="text-sm text-muted-foreground">
                     Share your thoughts, report issues, or suggest new features.
                   </p>

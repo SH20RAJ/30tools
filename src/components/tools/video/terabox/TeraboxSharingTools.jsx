@@ -122,7 +122,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
                 onClick={() => shareToSocial('facebook')}
                 className="justify-start"
               >
-                <div className="w-4 h-4 mr-2 bg-blue-600 rounded"></div>
+                <div className="w-4 h-4 mr-2 bg-primary rounded"></div>
                 Facebook
               </Button>
               <Button
@@ -131,7 +131,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
                 onClick={() => shareToSocial('twitter')}
                 className="justify-start"
               >
-                <div className="w-4 h-4 mr-2 bg-sky-500 rounded"></div>
+                <div className="w-4 h-4 mr-2 bg-primary rounded"></div>
                 Twitter
               </Button>
               <Button
@@ -140,7 +140,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
                 onClick={() => shareToSocial('linkedin')}
                 className="justify-start"
               >
-                <div className="w-4 h-4 mr-2 bg-blue-700 rounded"></div>
+                <div className="w-4 h-4 mr-2 bg-primary/90 rounded"></div>
                 LinkedIn
               </Button>
               <Button
@@ -149,7 +149,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
                 onClick={() => shareToSocial('whatsapp')}
                 className="justify-start"
               >
-                <div className="w-4 h-4 mr-2 bg-green-500 rounded"></div>
+                <div className="w-4 h-4 mr-2 bg-muted/500 rounded"></div>
                 WhatsApp
               </Button>
               <Button
@@ -158,7 +158,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
                 onClick={() => shareToSocial('telegram')}
                 className="justify-start"
               >
-                <div className="w-4 h-4 mr-2 bg-blue-500 rounded"></div>
+                <div className="w-4 h-4 mr-2 bg-muted/500 rounded"></div>
                 Telegram
               </Button>
               <Button

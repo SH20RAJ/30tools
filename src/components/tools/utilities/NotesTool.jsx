@@ -125,7 +125,7 @@ export default function NotesTool() {
       <CardHeader className="pb-4">
         <div className="flex items-center justify-between">
           <CardTitle className="flex items-center gap-2 text-xl">
-            <FileText className="w-5 h-5 text-indigo-500" />
+            <FileText className="w-5 h-5 text-primary" />
             Your Notes
           </CardTitle>
           <div className="flex items-center gap-2">
@@ -155,7 +155,7 @@ Features:
 • Download as text file
 • Copy to clipboard
 • Works offline"
-            className="min-h-[400px] resize-none border-border/50 bg-background/50 text-base leading-relaxed focus:ring-1 focus:ring-indigo-500/50 focus:border-indigo-500/50 transition-all"
+            className="min-h-[400px] resize-none border-border/50 bg-background/50 text-base leading-relaxed focus:ring-1 focus:ring-primary/50 focus:border-border/50 transition-all"
             style={{ fontFamily: 'ui-monospace, "SF Mono", Monaco, monospace' }}
           />
         </div>
@@ -209,7 +209,7 @@ Features:
               size="sm"
               onClick={clearNotes}
               disabled={!content.trim()}
-              className="text-xs text-red-600 hover:text-red-700 border-red-200 hover:border-red-300"
+              className="text-xs text-destructive hover:text-destructive border-destructive/50 hover:border-destructive/50"
             >
               <Trash2 className="w-3 h-3 mr-1" />
               Clear
@@ -219,9 +219,9 @@ Features:
 
         {/* Quick Tips */}
         {content.length === 0 && (
-          <div className="bg-indigo-50 dark:bg-indigo-950/20 border border-indigo-200 dark:border-indigo-800 rounded-lg p-4 mt-4">
-            <h4 className="font-medium text-indigo-900 dark:text-indigo-100 mb-2">Quick Tips:</h4>
-            <ul className="text-sm text-indigo-700 dark:text-indigo-300 space-y-1">
+          <div className="bg-muted/50 dark:bg-indigo-950/20 border border-border dark:border-border rounded-lg p-4 mt-4">
+            <h4 className="font-medium text-primary dark:text-indigo-100 mb-2">Quick Tips:</h4>
+            <ul className="text-sm text-primary dark:text-indigo-300 space-y-1">
               <li>• Your notes auto-save as you type</li>
               <li>• All data stays in your browser (100% private)</li>
               <li>• Works offline once loaded</li>

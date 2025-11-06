@@ -9,7 +9,6 @@ export const metadata = {
     description: 'Convert between document formats easily.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Document Converter - Free Online Converter | Instant Conversion",

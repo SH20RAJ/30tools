@@ -119,10 +119,10 @@ export default function TeraboxVideoPlayer() {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <Card className="border-2 border-blue-500/20 shadow-lg">
-        <CardHeader className="bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20">
+      <Card className="border-2 border-border/20 shadow-lg">
+        <CardHeader className="bg-background/20 dark:to-cyan-950/20">
           <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
-            <Play className="w-6 h-6 text-blue-500" />
+            <Play className="w-6 h-6 text-primary" />
             Terabox Video Player
           </CardTitle>
         </CardHeader>
@@ -137,13 +137,13 @@ export default function TeraboxVideoPlayer() {
                   setUrl(e.target.value);
                   setError('');
                 }}
-                className="flex-1 border-blue-200 focus:border-blue-500 focus:ring-blue-500"
+                className="flex-1 border-border focus:border-primary focus:ring-primary"
                 disabled={isLoading}
               />
               <Button
                 type="submit"
                 disabled={isLoading || !url.trim()}
-                className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6"
+                className="bg-muted/500 hover:bg-primary text-white font-medium px-6"
               >
                 {isLoading ? (
                   <>
@@ -160,7 +160,7 @@ export default function TeraboxVideoPlayer() {
             </div>
 
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg flex items-start gap-2">
+              <div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 rounded-lg flex items-start gap-2">
                 <AlertCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <span>{error}</span>
               </div>
@@ -186,7 +186,7 @@ export default function TeraboxVideoPlayer() {
                     <Button
                       onClick={handlePlay}
                       size="lg"
-                      className="bg-blue-500 hover:bg-blue-600 text-white rounded-full w-20 h-20"
+                      className="bg-muted/500 hover:bg-primary text-white rounded-full w-20 h-20"
                     >
                       <Play className="w-10 h-10" />
                     </Button>
@@ -198,7 +198,7 @@ export default function TeraboxVideoPlayer() {
               <div className="flex justify-center">
                 <Button
                   onClick={handleDownload}
-                  className="bg-green-500 hover:bg-green-600 text-white"
+                  className="bg-muted/500 hover:bg-primary text-white"
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Download Video (MP4)
@@ -206,8 +206,8 @@ export default function TeraboxVideoPlayer() {
               </div>
 
               {/* Video Info */}
-              <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 rounded-lg p-4">
-                <h3 className="font-semibold text-lg mb-2 text-blue-800 dark:text-blue-200">
+              <div className="bg-muted/50 dark:bg-blue-950/20 border border-border rounded-lg p-4">
+                <h3 className="font-semibold text-lg mb-2 text-foreground dark:text-blue-200">
                   Video Ready
                 </h3>
                 <div className="space-y-2 text-sm text-muted-foreground">

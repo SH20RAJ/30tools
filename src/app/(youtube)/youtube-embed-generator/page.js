@@ -67,7 +67,7 @@ export default function YouTubeEmbedGeneratorPage() {
         <div className="container mx-auto px-4 py-8">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold bg-background">
                 YouTube Embed Code Generator
               </h1>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">

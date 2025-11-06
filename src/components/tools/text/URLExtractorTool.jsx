@@ -158,10 +158,10 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             URL/Link Extractor
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Extract all URLs and links from text, documents, or web content. Find and organize website links efficiently.
           </p>
         </div>
@@ -231,21 +231,21 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
             </CardHeader>
             <CardContent>
               <div className="grid md:grid-cols-4 gap-4 mb-6">
-                <div className="text-center p-4 bg-blue-50 rounded-lg">
-                  <div className="text-2xl font-bold text-blue-600">{stats.total}</div>
-                  <div className="text-sm text-gray-600">Total URLs</div>
+                <div className="text-center p-4 bg-muted/50 rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{stats.total}</div>
+                  <div className="text-sm text-muted-foreground">Total URLs</div>
                 </div>
-                <div className="text-center p-4 bg-green-50 rounded-lg">
-                  <div className="text-2xl font-bold text-green-600">{stats.valid}</div>
-                  <div className="text-sm text-gray-600">Valid URLs</div>
+                <div className="text-center p-4 bg-muted/50 rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{stats.valid}</div>
+                  <div className="text-sm text-muted-foreground">Valid URLs</div>
                 </div>
-                <div className="text-center p-4 bg-red-50 rounded-lg">
-                  <div className="text-2xl font-bold text-red-600">{stats.invalid}</div>
-                  <div className="text-sm text-gray-600">Invalid URLs</div>
+                <div className="text-center p-4 bg-destructive/10 rounded-lg">
+                  <div className="text-2xl font-bold text-destructive">{stats.invalid}</div>
+                  <div className="text-sm text-muted-foreground">Invalid URLs</div>
                 </div>
-                <div className="text-center p-4 bg-purple-50 rounded-lg">
-                  <div className="text-2xl font-bold text-purple-600">{stats.uniqueDomains}</div>
-                  <div className="text-sm text-gray-600">Unique Domains</div>
+                <div className="text-center p-4 bg-muted/50 rounded-lg">
+                  <div className="text-2xl font-bold text-primary">{stats.uniqueDomains}</div>
+                  <div className="text-sm text-muted-foreground">Unique Domains</div>
                 </div>
               </div>
             </CardContent>
@@ -276,13 +276,13 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
                         >
                           {urlData.isValid ? 'Valid' : 'Invalid'}
                         </Badge>
-                        <span className="text-sm text-gray-500">{urlData.domain}</span>
+                        <span className="text-sm text-muted-foreground">{urlData.domain}</span>
                       </div>
                       <div className="font-mono text-sm truncate">
                         {urlData.normalized}
                       </div>
                       {urlData.original !== urlData.normalized && (
-                        <div className="text-xs text-gray-500 truncate">
+                        <div className="text-xs text-muted-foreground truncate">
                           Original: {urlData.original}
                         </div>
                       )}
@@ -317,9 +317,9 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Link className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <Link className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Smart Detection</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Automatically detect and extract all URL formats
                 </p>
               </div>
@@ -329,9 +329,9 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Copy className="h-8 w-8 text-green-600 mx-auto mb-3" />
+                <Copy className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Easy Export</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Copy individual URLs or download all as a file
                 </p>
               </div>
@@ -341,9 +341,9 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <ExternalLink className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                <ExternalLink className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Quick Access</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Open URLs directly or validate link integrity
                 </p>
               </div>

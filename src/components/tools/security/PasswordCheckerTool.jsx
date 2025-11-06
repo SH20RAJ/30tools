@@ -134,10 +134,10 @@ export default function PasswordCheckerTool() {
   }, [password]);
 
   const getStrengthColor = () => {
-    if (strength < 30) return 'text-red-600 bg-red-100';
-    if (strength < 60) return 'text-yellow-600 bg-yellow-100';
-    if (strength < 80) return 'text-blue-600 bg-blue-100';
-    return 'text-green-600 bg-green-100';
+    if (strength < 30) return 'text-destructive bg-destructive/20';
+    if (strength < 60) return 'text-primary bg-muted';
+    if (strength < 80) return 'text-primary bg-muted';
+    return 'text-primary bg-muted';
   };
 
   const getStrengthText = () => {
@@ -279,13 +279,13 @@ export default function PasswordCheckerTool() {
                   {feedback.map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
                       {item.type === 'success' && (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600 flex-shrink-0" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary flex-shrink-0" />
                       )}
                       {item.type === 'error' && (
-                        <AlertTriangleIcon className="h-5 w-5 text-red-600 flex-shrink-0" />
+                        <AlertTriangleIcon className="h-5 w-5 text-destructive flex-shrink-0" />
                       )}
                       {item.type === 'warning' && (
-                        <AlertTriangleIcon className="h-5 w-5 text-yellow-600 flex-shrink-0" />
+                        <AlertTriangleIcon className="h-5 w-5 text-primary flex-shrink-0" />
                       )}
                       <span className="text-sm">{item.message}</span>
                     </div>
@@ -353,7 +353,7 @@ export default function PasswordCheckerTool() {
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h4 className="font-medium mb-3 text-green-600">✅ Do This</h4>
+              <h4 className="font-medium mb-3 text-primary">✅ Do This</h4>
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li>• Use at least 12 characters</li>
                 <li>• Include uppercase, lowercase, numbers, and symbols</li>
@@ -363,7 +363,7 @@ export default function PasswordCheckerTool() {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-3 text-red-600">❌ Avoid This</h4>
+              <h4 className="font-medium mb-3 text-destructive">❌ Avoid This</h4>
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li>• Common words or personal information</li>
                 <li>• Sequential patterns (123, abc)</li>

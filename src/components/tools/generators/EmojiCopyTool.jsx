@@ -185,7 +185,7 @@ function EmojiCopyTool() {
     EMOJI_CATEGORIES[activeCategory]?.emojis || EMOJI_CATEGORIES.smileys.emojis;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 dark:from-gray-900 dark:via-purple-900 dark:to-blue-900">
+    <div className="min-h-screen bg-muted/20 dark:from-gray-900 dark:via-purple-900 dark:to-blue-900">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <Link href="/generators" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
@@ -194,11 +194,11 @@ function EmojiCopyTool() {
           </Link>
 
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg">
+            <div className="p-2 bg-background">
               <SmileIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-background">
                 Emoji Copy Tool
               </h1>
               <p className="text-muted-foreground">Find, copy, and paste emojis easily for your messages and content</p>
@@ -336,15 +336,15 @@ function EmojiCopyTool() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div className="p-3 bg-pink-50 dark:bg-pink-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">🔍 Find Emojis Fast</h4>
                 <p>Use the search bar to quickly find specific emojis by typing keywords</p>
               </div>
-              <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">📋 One-Click Copy</h4>
                 <p>Click any emoji to instantly copy it to your clipboard for pasting anywhere</p>
               </div>
-              <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">🌈 Emoji Categories</h4>
                 <p>Browse emojis by category to find the perfect one for your message</p>
               </div>

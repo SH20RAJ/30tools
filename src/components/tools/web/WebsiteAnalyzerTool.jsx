@@ -101,9 +101,9 @@ export default function WebsiteAnalyzerTool() {
   };
 
   const getScoreColor = (score) => {
-    if (score >= 90) return 'text-green-600';
-    if (score >= 70) return 'text-yellow-600';
-    return 'text-red-600';
+    if (score >= 90) return 'text-primary';
+    if (score >= 70) return 'text-primary';
+    return 'text-destructive';
   };
 
   const getScoreGrade = (score) => {
@@ -261,7 +261,7 @@ export default function WebsiteAnalyzerTool() {
                 <CardTitle className="text-sm font-medium">Security</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="text-3xl font-bold text-green-600">
+                <div className="text-3xl font-bold text-primary">
                   {results.security.https ? 'A' : 'C'}
                 </div>
                 <div className="text-sm text-muted-foreground">
@@ -350,34 +350,34 @@ export default function WebsiteAnalyzerTool() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       {results.seo.title ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <XCircleIcon className="h-5 w-5 text-red-600" />
+                        <XCircleIcon className="h-5 w-5 text-destructive" />
                       )}
                       <span className="text-sm">Page has title tag</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.seo.metaDescription ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <XCircleIcon className="h-5 w-5 text-red-600" />
+                        <XCircleIcon className="h-5 w-5 text-destructive" />
                       )}
                       <span className="text-sm">Meta description present</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.seo.headings ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <AlertTriangleIcon className="h-5 w-5 text-yellow-600" />
+                        <AlertTriangleIcon className="h-5 w-5 text-primary" />
                       )}
                       <span className="text-sm">Proper heading structure</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary" />
                       <span className="text-sm">{results.seo.images} images found</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                      <CheckCircleIcon className="h-5 w-5 text-primary" />
                       <span className="text-sm">{results.seo.links} internal links</span>
                     </div>
                   </div>
@@ -394,33 +394,33 @@ export default function WebsiteAnalyzerTool() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       {results.accessibility.altText ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <XCircleIcon className="h-5 w-5 text-red-600" />
+                        <XCircleIcon className="h-5 w-5 text-destructive" />
                       )}
                       <span className="text-sm">Images have alt text</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.accessibility.contrast ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <AlertTriangleIcon className="h-5 w-5 text-yellow-600" />
+                        <AlertTriangleIcon className="h-5 w-5 text-primary" />
                       )}
                       <span className="text-sm">Sufficient color contrast</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.accessibility.labels ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <XCircleIcon className="h-5 w-5 text-red-600" />
+                        <XCircleIcon className="h-5 w-5 text-destructive" />
                       )}
                       <span className="text-sm">Form labels present</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.accessibility.headingStructure ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <AlertTriangleIcon className="h-5 w-5 text-yellow-600" />
+                        <AlertTriangleIcon className="h-5 w-5 text-primary" />
                       )}
                       <span className="text-sm">Logical heading structure</span>
                     </div>
@@ -441,33 +441,33 @@ export default function WebsiteAnalyzerTool() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       {results.security.https ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <XCircleIcon className="h-5 w-5 text-red-600" />
+                        <XCircleIcon className="h-5 w-5 text-destructive" />
                       )}
                       <span className="text-sm">HTTPS enabled</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.security.hsts ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <AlertTriangleIcon className="h-5 w-5 text-yellow-600" />
+                        <AlertTriangleIcon className="h-5 w-5 text-primary" />
                       )}
                       <span className="text-sm">HSTS header present</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.security.xss ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <AlertTriangleIcon className="h-5 w-5 text-yellow-600" />
+                        <AlertTriangleIcon className="h-5 w-5 text-primary" />
                       )}
                       <span className="text-sm">XSS protection enabled</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.security.csrf ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <AlertTriangleIcon className="h-5 w-5 text-yellow-600" />
+                        <AlertTriangleIcon className="h-5 w-5 text-primary" />
                       )}
                       <span className="text-sm">CSRF protection</span>
                     </div>
@@ -488,25 +488,25 @@ export default function WebsiteAnalyzerTool() {
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       {results.mobile.responsive ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <XCircleIcon className="h-5 w-5 text-red-600" />
+                        <XCircleIcon className="h-5 w-5 text-destructive" />
                       )}
                       <span className="text-sm">Responsive design</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.mobile.viewport ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <XCircleIcon className="h-5 w-5 text-red-600" />
+                        <XCircleIcon className="h-5 w-5 text-destructive" />
                       )}
                       <span className="text-sm">Viewport meta tag</span>
                     </div>
                     <div className="flex items-center gap-3">
                       {results.mobile.touchTargets ? (
-                        <CheckCircleIcon className="h-5 w-5 text-green-600" />
+                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                       ) : (
-                        <AlertTriangleIcon className="h-5 w-5 text-yellow-600" />
+                        <AlertTriangleIcon className="h-5 w-5 text-primary" />
                       )}
                       <span className="text-sm">Touch targets sized appropriately</span>
                     </div>

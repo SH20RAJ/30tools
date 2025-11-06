@@ -239,7 +239,7 @@ export default function YouTubeThumbnailDownloader() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <CheckCircleIcon className="h-5 w-5 mr-2 text-green-500" />
+                    <CheckCircleIcon className="h-5 w-5 mr-2 text-primary" />
                     Video Information
                   </CardTitle>
                 </CardHeader>

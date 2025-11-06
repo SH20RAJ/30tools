@@ -400,19 +400,19 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           <CardContent>
             <div className="grid gap-4 md:grid-cols-4">
               <div className="text-center p-4 bg-muted rounded-lg">
-                <div className="text-2xl font-bold text-blue-600">{stats.originalSize}</div>
+                <div className="text-2xl font-bold text-primary">{stats.originalSize}</div>
                 <div className="text-sm text-muted-foreground">Original Size</div>
               </div>
               <div className="text-center p-4 bg-muted rounded-lg">
-                <div className="text-2xl font-bold text-green-600">{stats.minifiedSize}</div>
+                <div className="text-2xl font-bold text-primary">{stats.minifiedSize}</div>
                 <div className="text-sm text-muted-foreground">Minified Size</div>
               </div>
               <div className="text-center p-4 bg-muted rounded-lg">
-                <div className="text-2xl font-bold text-purple-600">{stats.reduction}</div>
+                <div className="text-2xl font-bold text-primary">{stats.reduction}</div>
                 <div className="text-sm text-muted-foreground">Size Reduction</div>
               </div>
               <div className="text-center p-4 bg-muted rounded-lg">
-                <div className="text-2xl font-bold text-orange-600">{stats.reductionPercent}%</div>
+                <div className="text-2xl font-bold text-primary">{stats.reductionPercent}%</div>
                 <div className="text-sm text-muted-foreground">Compression Ratio</div>
               </div>
             </div>
@@ -426,7 +426,7 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <CheckCircle className="h-5 w-5 text-green-500" />
+                <CheckCircle className="h-5 w-5 text-primary" />
                 Minified Code
               </span>
               <div className="flex gap-2">

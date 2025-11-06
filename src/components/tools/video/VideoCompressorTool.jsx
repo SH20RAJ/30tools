@@ -195,10 +195,10 @@ export default function VideoCompressorTool() {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'ready': return <FileVideo className="h-4 w-4 text-blue-500" />;
-      case 'compressing': return <Loader className="h-4 w-4 text-orange-500 animate-spin" />;
-      case 'compressed': return <CheckCircle className="h-4 w-4 text-green-500" />;
-      case 'error': return <AlertCircle className="h-4 w-4 text-red-500" />;
+      case 'ready': return <FileVideo className="h-4 w-4 text-primary" />;
+      case 'compressing': return <Loader className="h-4 w-4 text-primary animate-spin" />;
+      case 'compressed': return <CheckCircle className="h-4 w-4 text-primary" />;
+      case 'error': return <AlertCircle className="h-4 w-4 text-destructive" />;
       default: return <FileVideo className="h-4 w-4" />;
     }
   };
@@ -326,7 +326,7 @@ export default function VideoCompressorTool() {
                             {file.compressedSize && (
                               <>
                                 <span>Compressed: {formatFileSize(file.compressedSize)}</span>
-                                <span className="text-green-600 font-medium">
+                                <span className="text-primary font-medium">
                                   -{calculateSavings(file.size, file.compressedSize)}%
                                 </span>
                               </>
@@ -408,7 +408,7 @@ export default function VideoCompressorTool() {
                     <p className="text-sm text-muted-foreground">Compressed Size</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-green-600">{totalSavings}%</p>
+                    <p className="text-2xl font-bold text-primary">{totalSavings}%</p>
                     <p className="text-sm text-muted-foreground">Space Saved</p>
                   </div>
                 </div>

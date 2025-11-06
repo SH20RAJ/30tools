@@ -128,28 +128,28 @@ export default function BMICalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Understanding BMI Categories</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-3 text-blue-600">BMI Categories for Adults</h3>
+                                    <h3 className="font-medium mb-3 text-primary">BMI Categories for Adults</h3>
                                     <div className="space-y-2">
-                                        <div className="flex justify-between p-2 bg-blue-50 rounded">
+                                        <div className="flex justify-between p-2 bg-muted/50 rounded">
                                             <span className="text-sm font-medium">Underweight</span>
                                             <span className="text-sm">Below 18.5</span>
                                         </div>
-                                        <div className="flex justify-between p-2 bg-green-50 rounded">
+                                        <div className="flex justify-between p-2 bg-muted/50 rounded">
                                             <span className="text-sm font-medium">Normal weight</span>
                                             <span className="text-sm">18.5 - 24.9</span>
                                         </div>
-                                        <div className="flex justify-between p-2 bg-yellow-50 rounded">
+                                        <div className="flex justify-between p-2 bg-muted/50 rounded">
                                             <span className="text-sm font-medium">Overweight</span>
                                             <span className="text-sm">25.0 - 29.9</span>
                                         </div>
-                                        <div className="flex justify-between p-2 bg-red-50 rounded">
+                                        <div className="flex justify-between p-2 bg-destructive/10 rounded">
                                             <span className="text-sm font-medium">Obese</span>
                                             <span className="text-sm">30.0 and above</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-3 text-blue-600">Health Implications</h3>
+                                    <h3 className="font-medium mb-3 text-primary">Health Implications</h3>
                                     <ul className="text-sm text-muted-foreground space-y-2">
                                         <li>• <strong>Underweight:</strong> May indicate malnutrition or health issues</li>
                                         <li>• <strong>Normal:</strong> Associated with lowest health risks</li>
@@ -164,8 +164,8 @@ export default function BMICalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Calculate BMI</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-green-600">📏 Metric Formula</h3>
-                                    <div className="p-4 bg-green-50 rounded-lg mb-4">
+                                    <h3 className="font-medium mb-2 text-primary">📏 Metric Formula</h3>
+                                    <div className="p-4 bg-muted/50 rounded-lg mb-4">
                                         <p className="font-medium">BMI = weight (kg) / height² (m²)</p>
                                         <p className="text-sm text-muted-foreground mt-1">
                                             Example: 70 kg ÷ (1.75 m)² = 22.9 BMI
@@ -173,8 +173,8 @@ export default function BMICalculatorPage() {
                                     </div>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-green-600">📐 Imperial Formula</h3>
-                                    <div className="p-4 bg-green-50 rounded-lg mb-4">
+                                    <h3 className="font-medium mb-2 text-primary">📐 Imperial Formula</h3>
+                                    <div className="p-4 bg-muted/50 rounded-lg mb-4">
                                         <p className="font-medium">BMI = (weight (lbs) / height² (in²)) × 703</p>
                                         <p className="text-sm text-muted-foreground mt-1">
                                             Example: (154 lbs ÷ (69 in)²) × 703 = 22.7 BMI
@@ -188,7 +188,7 @@ export default function BMICalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">BMI Limitations and Considerations</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-orange-600">⚠️ BMI Limitations</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚠️ BMI Limitations</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Doesn't distinguish between muscle and fat</li>
                                         <li>• May not be accurate for athletes</li>
@@ -198,7 +198,7 @@ export default function BMICalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-orange-600">💡 Additional Factors</h3>
+                                    <h3 className="font-medium mb-2 text-primary">💡 Additional Factors</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Waist circumference measurement</li>
                                         <li>• Body fat percentage</li>
@@ -214,7 +214,7 @@ export default function BMICalculatorPage() {
                             <h2 className="text-2xl font-semibold mb-4">Healthy Weight Management Tips</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🥗 Nutrition Tips</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🥗 Nutrition Tips</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Eat a balanced, nutritious diet</li>
                                         <li>• Control portion sizes</li>
@@ -224,7 +224,7 @@ export default function BMICalculatorPage() {
                                     </ul>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-blue-600">🏃 Exercise Tips</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🏃 Exercise Tips</h3>
                                     <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                                         <li>• Aim for 150 minutes of moderate activity weekly</li>
                                         <li>• Include strength training exercises</li>

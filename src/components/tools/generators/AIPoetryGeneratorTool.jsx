@@ -42,7 +42,7 @@ export default function AIPoetryGeneratorTool() {
       <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <SparklesIcon className="h-5 w-5 text-purple-500" />
+            <SparklesIcon className="h-5 w-5 text-primary" />
             AI Poetry Generator
           </CardTitle>
         </CardHeader>
@@ -60,7 +60,7 @@ export default function AIPoetryGeneratorTool() {
               Generate Poem
             </Button>
           </div>
-          {error && <div className="text-red-500 text-sm">{error}</div>}
+          {error && <div className="text-destructive text-sm">{error}</div>}
           {poem && (
             <div className="flex flex-col items-center gap-2 mt-4">
               <pre className="rounded border bg-muted p-4 w-full whitespace-pre-wrap text-sm font-medium">{poem}</pre>

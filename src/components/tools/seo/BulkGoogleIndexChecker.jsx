@@ -138,9 +138,9 @@ export default function BulkGoogleIndexChecker() {
   const getStatusBadge = (status, indexed) => {
     if (indexed) {
       if (status === 'indexed-with-issues') {
-        return <Badge className="bg-yellow-500">Indexed (Issues)</Badge>;
+        return <Badge className="bg-muted/500">Indexed (Issues)</Badge>;
       }
-      return <Badge className="bg-green-500">Indexed</Badge>;
+      return <Badge className="bg-muted/500">Indexed</Badge>;
     }
     
     switch (status) {
@@ -149,7 +149,7 @@ export default function BulkGoogleIndexChecker() {
       case 'blocked':
         return <Badge variant="destructive">Blocked</Badge>;
       case 'noindex':
-        return <Badge className="bg-orange-500">NoIndex</Badge>;
+        return <Badge className="bg-muted/500">NoIndex</Badge>;
       case 'error':
         return <Badge variant="destructive">Error</Badge>;
       default:
@@ -159,9 +159,9 @@ export default function BulkGoogleIndexChecker() {
 
   const getStatusIcon = (status, indexed) => {
     if (indexed) {
-      return <CheckCircle className="h-4 w-4 text-green-500" />;
+      return <CheckCircle className="h-4 w-4 text-primary" />;
     }
-    return <XCircle className="h-4 w-4 text-red-500" />;
+    return <XCircle className="h-4 w-4 text-destructive" />;
   };
 
   const stats = {
@@ -183,11 +183,11 @@ export default function BulkGoogleIndexChecker() {
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
-          <Search className="h-8 w-8 text-green-600" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
+          <Search className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900">Bulk Google Index Checker</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-foreground">Bulk Google Index Checker</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Check if multiple URLs are indexed by Google. Verify indexation status for entire websites or URL lists in bulk.
         </p>
       </div>
@@ -196,11 +196,11 @@ export default function BulkGoogleIndexChecker() {
       <div className="grid md:grid-cols-3 gap-6">
         <Card>
           <CardHeader className="text-center pb-3">
-            <Globe className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+            <Globe className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Indexation Status</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Verify which pages are indexed by Google to ensure your content is discoverable in search results.
             </p>
           </CardContent>
@@ -208,11 +208,11 @@ export default function BulkGoogleIndexChecker() {
         
         <Card>
           <CardHeader className="text-center pb-3">
-            <AlertTriangle className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+            <AlertTriangle className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Find Issues</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Identify indexation problems, blocked pages, and technical issues preventing Google from crawling your site.
             </p>
           </CardContent>
@@ -220,11 +220,11 @@ export default function BulkGoogleIndexChecker() {
         
         <Card>
           <CardHeader className="text-center pb-3">
-            <FileText className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+            <FileText className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Bulk Analysis</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Check up to 1000 URLs at once and export detailed reports for comprehensive site analysis.
             </p>
           </CardContent>
@@ -252,7 +252,7 @@ export default function BulkGoogleIndexChecker() {
               className="font-mono text-sm"
             />
             <div className="flex justify-between items-center">
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-muted-foreground">
                 {urls.split('\n').filter(url => url.trim() && (url.startsWith('http://') || url.startsWith('https://'))).length} valid URLs entered (max 1000)
               </p>
               <div className="flex gap-2">
@@ -338,26 +338,26 @@ export default function BulkGoogleIndexChecker() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-blue-600">{stats.total}</div>
-              <div className="text-sm text-gray-600">Total URLs</div>
+              <div className="text-2xl font-bold text-primary">{stats.total}</div>
+              <div className="text-sm text-muted-foreground">Total URLs</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-green-600">{stats.indexed}</div>
-              <div className="text-sm text-gray-600">Indexed</div>
+              <div className="text-2xl font-bold text-primary">{stats.indexed}</div>
+              <div className="text-sm text-muted-foreground">Indexed</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-red-600">{stats.notIndexed}</div>
-              <div className="text-sm text-gray-600">Not Indexed</div>
+              <div className="text-2xl font-bold text-destructive">{stats.notIndexed}</div>
+              <div className="text-sm text-muted-foreground">Not Indexed</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-orange-600">{stats.withIssues}</div>
-              <div className="text-sm text-gray-600">With Issues</div>
+              <div className="text-2xl font-bold text-primary">{stats.withIssues}</div>
+              <div className="text-sm text-muted-foreground">With Issues</div>
             </CardContent>
           </Card>
         </div>
@@ -391,12 +391,12 @@ export default function BulkGoogleIndexChecker() {
                         <div className="flex items-center gap-2">
                           {getStatusIcon(result.status, result.indexed)}
                           <a href={result.url} target="_blank" rel="noopener noreferrer" 
-                             className="text-blue-600 hover:underline text-sm max-w-xs truncate">
+                             className="text-primary hover:underline text-sm max-w-xs truncate">
                             {result.url}
                           </a>
                         </div>
                         {result.title && (
-                          <div className="text-xs text-gray-500 mt-1 max-w-xs truncate">
+                          <div className="text-xs text-muted-foreground mt-1 max-w-xs truncate">
                             {result.title}
                           </div>
                         )}
@@ -410,7 +410,7 @@ export default function BulkGoogleIndexChecker() {
                           {result.responseTime}ms
                         </Badge>
                       </td>
-                      <td className="p-3 text-sm text-gray-600">
+                      <td className="p-3 text-sm text-muted-foreground">
                         {result.reason || (result.issues ? result.issues.join(', ') : '-')}
                       </td>
                     </tr>
@@ -434,7 +434,7 @@ export default function BulkGoogleIndexChecker() {
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2">Technical SEO</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Submit XML sitemaps to Search Console</li>
                 <li>• Fix crawl errors and broken links</li>
                 <li>• Optimize robots.txt file</li>
@@ -444,7 +444,7 @@ export default function BulkGoogleIndexChecker() {
             </div>
             <div>
               <h4 className="font-semibold mb-2">Content Strategy</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Create high-quality, unique content</li>
                 <li>• Use proper internal linking</li>
                 <li>• Remove duplicate content</li>

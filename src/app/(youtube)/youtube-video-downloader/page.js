@@ -88,7 +88,7 @@ export default function YouTubeDownloaderPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
               YouTube Video Downloader
             </h1>
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -120,22 +120,22 @@ export default function YouTubeDownloaderPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Download YouTube Videos Online Free</h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">1</span>
+                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-destructive font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Copy YouTube URL</h3>
                   <p className="text-sm text-muted-foreground">Copy the YouTube video link you want to download from your browser address bar</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">2</span>
+                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-destructive font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Paste & Select Quality</h3>
                   <p className="text-sm text-muted-foreground">Paste the URL and choose your preferred video quality or audio format</p>
                 </div>
                 <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">3</span>
+                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-destructive font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Download Instantly</h3>
                   <p className="text-sm text-muted-foreground">Click download and save your YouTube video or audio file to your device</p>
@@ -158,17 +158,17 @@ export default function YouTubeDownloaderPage() {
               <h2 className="text-2xl font-semibold mb-4">Why Choose Our YouTube Video Downloader?</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-red-600">🎥 High Quality Video Downloads</h3>
+                  <h3 className="font-medium mb-2 text-destructive">🎥 High Quality Video Downloads</h3>
                   <p className="text-sm text-muted-foreground mb-4">Download YouTube videos in original quality including HD 720p, Full HD 1080p, and even 4K resolution when available. Our YouTube downloader preserves the original video quality for the best viewing experience.</p>
 
-                  <h3 className="font-medium mb-2 text-red-600">🎵 Convert YouTube to MP3 Audio</h3>
+                  <h3 className="font-medium mb-2 text-destructive">🎵 Convert YouTube to MP3 Audio</h3>
                   <p className="text-sm text-muted-foreground mb-4">Extract high-quality audio from YouTube videos and save as MP3 files. Perfect for downloading music, podcasts, lectures, and audiobooks from YouTube with crystal-clear sound quality up to 320kbps.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-red-600">⚡ Lightning Fast Download Speed</h3>
+                  <h3 className="font-medium mb-2 text-destructive">⚡ Lightning Fast Download Speed</h3>
                   <p className="text-sm text-muted-foreground mb-4">Our optimized servers ensure super-fast YouTube video downloads. No waiting times, no slow downloads - get your YouTube videos downloaded in seconds, not minutes.</p>
 
-                  <h3 className="font-medium mb-2 text-red-600">🔒 100% Safe and Secure</h3>
+                  <h3 className="font-medium mb-2 text-destructive">🔒 100% Safe and Secure</h3>
                   <p className="text-sm text-muted-foreground mb-4">Your privacy is our priority. All YouTube downloads are processed securely without storing any personal data. No malware, no viruses, just clean and safe YouTube video downloads.</p>
                 </div>
               </div>
@@ -214,9 +214,9 @@ export default function YouTubeDownloaderPage() {
                   href="https://x.com/sh20raj"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 p-4 border rounded-lg hover:border-blue-500 hover:shadow-md transition-all group text-center"
+                  className="flex-1 p-4 border rounded-lg hover:border-border hover:shadow-md transition-all group text-center"
                 >
-                  <h3 className="font-semibold mb-2 group-hover:text-blue-500">🐦 Follow @sh20raj</h3>
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">🐦 Follow @sh20raj</h3>
                   <p className="text-sm text-muted-foreground">
                     Follow us on X (Twitter) for updates, tips, and new tool announcements.
                   </p>
@@ -225,9 +225,9 @@ export default function YouTubeDownloaderPage() {
                   href="https://x.com/sh20raj"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 p-4 border rounded-lg hover:border-green-500 hover:shadow-md transition-all group text-center"
+                  className="flex-1 p-4 border rounded-lg hover:border-border hover:shadow-md transition-all group text-center"
                 >
-                  <h3 className="font-semibold mb-2 group-hover:text-green-500">💬 Submit Feedback</h3>
+                  <h3 className="font-semibold mb-2 group-hover:text-primary">💬 Submit Feedback</h3>
                   <p className="text-sm text-muted-foreground">
                     Share your thoughts, report issues, or suggest new features.
                   </p>

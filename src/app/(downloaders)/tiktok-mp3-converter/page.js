@@ -126,22 +126,22 @@ export default function TikTokMP3ConverterPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Convert TikTok Videos to MP3</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Paste TikTok URL</h3>
                                     <p className="text-sm text-muted-foreground">Copy and paste the TikTok video URL you want to convert to MP3</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Choose Quality</h3>
                                     <p className="text-sm text-muted-foreground">Select your preferred MP3 quality from 128kbps to 320kbps</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-pink-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-pink-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download MP3</h3>
                                     <p className="text-sm text-muted-foreground">Convert and download your TikTok video as high-quality MP3 file</p>
@@ -153,17 +153,17 @@ export default function TikTokMP3ConverterPage() {
                             <h2 className="text-2xl font-semibold mb-4">TikTok to MP3 Converter Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-pink-600">🎵 Premium Audio Quality</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🎵 Premium Audio Quality</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Convert TikTok videos to MP3 with up to 320kbps quality. Our advanced audio processing ensures crystal-clear sound that preserves the original audio fidelity.</p>
 
-                                    <h3 className="font-medium mb-2 text-pink-600">⚡ Lightning Fast Conversion</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⚡ Lightning Fast Conversion</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our optimized servers convert TikTok videos to MP3 in seconds. No waiting times, no slow processing - get your MP3 files instantly with maximum speed.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-pink-600">📦 Batch Conversion</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📦 Batch Conversion</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Convert multiple TikTok videos to MP3 at once. Perfect for creating music playlists or downloading entire collections of your favorite TikTok sounds.</p>
 
-                                    <h3 className="font-medium mb-2 text-pink-600">🔒 Privacy & Security</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔒 Privacy & Security</h3>
                                     <p className="text-sm text-muted-foreground mb-4">All conversions are processed securely and privately. We don't store your TikTok videos or MP3 files. Your data remains completely confidential.</p>
                                 </div>
                             </div>

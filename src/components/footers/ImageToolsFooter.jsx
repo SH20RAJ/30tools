@@ -116,7 +116,7 @@ export default function ImageToolsFooter() {
             © 2025 30tools.com - All rights reserved
           </p>
           <p className="flex items-center text-sm text-muted-foreground">
-            Made with <HeartIcon className="h-4 w-4 mx-1 text-red-500 fill-current" /> for the web
+            Made with <HeartIcon className="h-4 w-4 mx-1 text-destructive fill-current" /> for the web
           </p>
         </div>
       </div>

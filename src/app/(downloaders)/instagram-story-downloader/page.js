@@ -105,7 +105,7 @@ export default function InstagramStoryDownloaderPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Instagram Story Downloader
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -126,22 +126,22 @@ export default function InstagramStoryDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Download Instagram Stories Anonymously</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Enter Username</h3>
                                     <p className="text-sm text-muted-foreground">Enter the Instagram username whose stories you want to download</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">View Stories</h3>
                                     <p className="text-sm text-muted-foreground">Browse available stories and highlights anonymously without notification</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-purple-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-primary font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download Content</h3>
                                     <p className="text-sm text-muted-foreground">Select and download Instagram stories or highlights to your device</p>
@@ -153,17 +153,17 @@ export default function InstagramStoryDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">Instagram Story Downloader Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">👻 Anonymous Viewing</h3>
+                                    <h3 className="font-medium mb-2 text-primary">👻 Anonymous Viewing</h3>
                                     <p className="text-sm text-muted-foreground mb-4">View and download Instagram stories completely anonymously. The story owner will never know you viewed or downloaded their content. Perfect for discreet content research and archiving.</p>
 
-                                    <h3 className="font-medium mb-2 text-purple-600">📸 Photos & Videos</h3>
+                                    <h3 className="font-medium mb-2 text-primary">📸 Photos & Videos</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download both Instagram story photos and videos in their original quality. Save complete story sequences including multiple photos and videos from a single story.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-purple-600">⭐ Highlights Support</h3>
+                                    <h3 className="font-medium mb-2 text-primary">⭐ Highlights Support</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download Instagram highlights and saved story collections. Access and save highlight content that users have permanently saved to their profile.</p>
 
-                                    <h3 className="font-medium mb-2 text-purple-600">🔒 Privacy Protected</h3>
+                                    <h3 className="font-medium mb-2 text-primary">🔒 Privacy Protected</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Your activity is completely private. We don't store your searches or downloaded content. No Instagram login required, ensuring complete anonymity.</p>
                                 </div>
                             </div>

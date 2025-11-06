@@ -123,7 +123,7 @@ export default function BinaryConverterPage() {
               <h2 className="text-2xl font-semibold mb-4">How to Use Binary Converter</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-cyan-600">📝 Text to Binary</h3>
+                  <h3 className="font-medium mb-2 text-primary">📝 Text to Binary</h3>
                   <ol className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>1. Enter your text in the input field</li>
                     <li>2. Click "Convert to Binary" button</li>
@@ -132,7 +132,7 @@ export default function BinaryConverterPage() {
                   </ol>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-cyan-600">🔢 Binary to Text</h3>
+                  <h3 className="font-medium mb-2 text-primary">🔢 Binary to Text</h3>
                   <ol className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>1. Paste binary code in the input field</li>
                     <li>2. Click "Convert to Text" button</li>
@@ -147,17 +147,17 @@ export default function BinaryConverterPage() {
               <h2 className="text-2xl font-semibold mb-4">Understanding Binary Code</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-cyan-600">💻 What is Binary?</h3>
+                  <h3 className="font-medium mb-2 text-primary">💻 What is Binary?</h3>
                   <p className="text-sm text-muted-foreground mb-4">Binary is a base-2 number system using only 0s and 1s. It's the fundamental language of computers, where each character is represented by a unique sequence of binary digits (bits).</p>
 
-                  <h3 className="font-medium mb-2 text-cyan-600">🔤 ASCII Encoding</h3>
+                  <h3 className="font-medium mb-2 text-primary">🔤 ASCII Encoding</h3>
                   <p className="text-sm text-muted-foreground mb-4">Each character has a corresponding ASCII value that gets converted to an 8-bit binary representation. For example, 'A' = 65 = 01000001 in binary.</p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-cyan-600">🌐 UTF-8 Support</h3>
+                  <h3 className="font-medium mb-2 text-primary">🌐 UTF-8 Support</h3>
                   <p className="text-sm text-muted-foreground mb-4">Our converter supports UTF-8 encoding, allowing conversion of international characters, emojis, and special symbols beyond basic ASCII characters.</p>
 
-                  <h3 className="font-medium mb-2 text-cyan-600">📚 Educational Value</h3>
+                  <h3 className="font-medium mb-2 text-primary">📚 Educational Value</h3>
                   <p className="text-sm text-muted-foreground mb-4">Perfect for computer science students, programmers learning about data representation, and anyone curious about how computers store text information.</p>
                 </div>
               </div>
@@ -167,7 +167,7 @@ export default function BinaryConverterPage() {
               <h2 className="text-2xl font-semibold mb-4">Binary Converter Use Cases</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">🎓 Education & Learning</h3>
+                  <h3 className="font-medium mb-2 text-primary">🎓 Education & Learning</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Computer science coursework</li>
                     <li>• Understanding data representation</li>
@@ -177,7 +177,7 @@ export default function BinaryConverterPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">💻 Development & Programming</h3>
+                  <h3 className="font-medium mb-2 text-primary">💻 Development & Programming</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Data encoding and decoding</li>
                     <li>• Debugging binary data</li>

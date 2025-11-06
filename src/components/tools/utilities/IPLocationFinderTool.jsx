@@ -66,10 +66,10 @@ export default function IPLocationFinderTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             What Is My IP Location
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Find your IP address location, ISP information, and detailed geolocation data instantly.
           </p>
         </div>
@@ -88,16 +88,16 @@ export default function IPLocationFinderTool() {
           <CardContent>
             {loading ? (
               <div className="text-center py-8">
-                <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4 text-blue-600" />
-                <p className="text-gray-600">Getting your IP location...</p>
+                <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
+                <p className="text-muted-foreground">Getting your IP location...</p>
               </div>
             ) : ipInfo ? (
               <div className="space-y-6">
                 {/* IP Address */}
-                <div className="text-center py-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg">
-                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Your IP Address</h2>
+                <div className="text-center py-6 bg-background">
+                  <h2 className="text-2xl font-bold text-foreground mb-2">Your IP Address</h2>
                   <div className="flex items-center justify-center gap-2">
-                    <code className="text-3xl font-mono font-bold text-blue-600 bg-white px-4 py-2 rounded-lg shadow-sm">
+                    <code className="text-3xl font-mono font-bold text-primary bg-white px-4 py-2 rounded-lg shadow-sm">
                       {ipInfo.ip}
                     </code>
                     <Button
@@ -227,7 +227,7 @@ export default function IPLocationFinderTool() {
               </div>
             ) : (
               <div className="text-center py-8">
-                <p className="text-gray-600 mb-4">Click to get your IP location information</p>
+                <p className="text-muted-foreground mb-4">Click to get your IP location information</p>
                 <Button onClick={getIPLocation}>
                   Get My IP Location
                 </Button>
@@ -241,9 +241,9 @@ export default function IPLocationFinderTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <MapPin className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Accurate Location</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Get precise geolocation data for your IP address
                 </p>
               </div>
@@ -253,9 +253,9 @@ export default function IPLocationFinderTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Wifi className="h-8 w-8 text-green-600 mx-auto mb-3" />
+                <Wifi className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Network Info</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   View ISP, timezone, and network details
                 </p>
               </div>
@@ -265,9 +265,9 @@ export default function IPLocationFinderTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Globe className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                <Globe className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Global Coverage</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Works worldwide with comprehensive database
                 </p>
               </div>

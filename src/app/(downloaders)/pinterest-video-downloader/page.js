@@ -105,7 +105,7 @@ export default function PinterestVideoDownloaderPage() {
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-8">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 to-red-600 bg-clip-text text-transparent">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
                             Pinterest Video Downloader
                         </h1>
                         <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
@@ -126,22 +126,22 @@ export default function PinterestVideoDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">How to Download Pinterest Videos & GIFs</h2>
                             <div className="grid md:grid-cols-3 gap-4">
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-red-500 font-bold">1</span>
+                                    <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-destructive font-bold">1</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Copy Pinterest URL</h3>
                                     <p className="text-sm text-muted-foreground">Copy the Pinterest pin link containing the video or GIF you want to download</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-red-500 font-bold">2</span>
+                                    <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-destructive font-bold">2</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Paste & Analyze</h3>
                                     <p className="text-sm text-muted-foreground">Paste the Pinterest URL and our tool will analyze the pin content automatically</p>
                                 </div>
                                 <div className="text-center">
-                                    <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                                        <span className="text-red-500 font-bold">3</span>
+                                    <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
+                                        <span className="text-destructive font-bold">3</span>
                                     </div>
                                     <h3 className="font-medium mb-2">Download Content</h3>
                                     <p className="text-sm text-muted-foreground">Select quality and download the Pinterest video or GIF to your device</p>
@@ -153,17 +153,17 @@ export default function PinterestVideoDownloaderPage() {
                             <h2 className="text-2xl font-semibold mb-4">Pinterest Downloader Features</h2>
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <h3 className="font-medium mb-2 text-red-600">📌 All Pinterest Content</h3>
+                                    <h3 className="font-medium mb-2 text-destructive">📌 All Pinterest Content</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Download all types of Pinterest video content including regular video pins, idea pins, story pins, and animated GIFs. Perfect for saving DIY tutorials, recipes, and creative inspiration.</p>
 
-                                    <h3 className="font-medium mb-2 text-red-600">🎨 Creative Content Focus</h3>
+                                    <h3 className="font-medium mb-2 text-destructive">🎨 Creative Content Focus</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Specially designed for creative professionals, DIY enthusiasts, and content creators. Save Pinterest videos for offline inspiration, project references, and creative collections.</p>
                                 </div>
                                 <div>
-                                    <h3 className="font-medium mb-2 text-red-600">⚡ Lightning Fast</h3>
+                                    <h3 className="font-medium mb-2 text-destructive">⚡ Lightning Fast</h3>
                                     <p className="text-sm text-muted-foreground mb-4">Our optimized servers process Pinterest content instantly. Download Pinterest videos and GIFs in seconds without any waiting time or processing delays.</p>
 
-                                    <h3 className="font-medium mb-2 text-red-600">🔐 Safe & Secure</h3>
+                                    <h3 className="font-medium mb-2 text-destructive">🔐 Safe & Secure</h3>
                                     <p className="text-sm text-muted-foreground mb-4">No Pinterest login required. We don't access your Pinterest account or store any personal information. All downloads are processed securely and privately.</p>
                                 </div>
                             </div>

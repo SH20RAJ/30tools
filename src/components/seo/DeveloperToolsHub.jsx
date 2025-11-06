@@ -151,7 +151,7 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
                         </Badge>
                       </div>
                       <div className="flex items-center gap-1">
-                        <Star className="h-4 w-4 text-yellow-500 fill-current" />
+                        <Star className="h-4 w-4 text-primary fill-current" />
                         <span className="text-sm font-medium">{stats.rating}</span>
                       </div>
                     </div>

@@ -391,12 +391,12 @@ export default function UnitConverterTool() {
 
                                 {/* Result Display */}
                                 {toValue && (
-                                    <div className="p-4 bg-green-50 rounded-lg border border-green-200">
+                                    <div className="p-4 bg-muted/50 rounded-lg border border-border">
                                         <div className="text-center">
-                                            <div className="text-2xl font-bold text-green-800">
+                                            <div className="text-2xl font-bold text-foreground">
                                                 {formatResult(fromValue)} {categoryData.units[fromUnit].symbol} = {formatResult(toValue)} {categoryData.units[toUnit].symbol}
                                             </div>
-                                            <div className="text-sm text-green-600 mt-1">
+                                            <div className="text-sm text-primary mt-1">
                                                 {categoryData.units[fromUnit].name} to {categoryData.units[toUnit].name}
                                             </div>
                                         </div>
@@ -514,23 +514,23 @@ export default function UnitConverterTool() {
                             <CardContent>
                                 <ul className="space-y-2 text-sm">
                                     <li className="flex items-center gap-2">
-                                        <ZapIcon className="h-4 w-4 text-blue-500" />
+                                        <ZapIcon className="h-4 w-4 text-primary" />
                                         <span>Instant conversions</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <RulerIcon className="h-4 w-4 text-green-500" />
+                                        <RulerIcon className="h-4 w-4 text-primary" />
                                         <span>High precision results</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <ArrowRightLeftIcon className="h-4 w-4 text-purple-500" />
+                                        <ArrowRightLeftIcon className="h-4 w-4 text-primary" />
                                         <span>Bidirectional conversion</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <CopyIcon className="h-4 w-4 text-orange-500" />
+                                        <CopyIcon className="h-4 w-4 text-primary" />
                                         <span>Copy results easily</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <StarIcon className="h-4 w-4 text-yellow-500" />
+                                        <StarIcon className="h-4 w-4 text-primary" />
                                         <span>Save favorites</span>
                                     </li>
                                 </ul>

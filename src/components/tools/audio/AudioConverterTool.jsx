@@ -350,8 +350,8 @@ export default function AudioConverterTool() {
                                                     <div className="font-medium truncate">{fileData.name}</div>
                                                     <div className="text-sm text-muted-foreground">
                                                         {formatFileSize(fileData.size)} • {formatDuration(fileData.duration)}
-                                                        {fileData.status === 'converting' && <span className="text-blue-600"> • Converting...</span>}
-                                                        {fileData.status === 'completed' && <span className="text-green-600"> • ✓ Completed</span>}
+                                                        {fileData.status === 'converting' && <span className="text-primary"> • Converting...</span>}
+                                                        {fileData.status === 'completed' && <span className="text-primary"> • ✓ Completed</span>}
                                                     </div>
                                                 </div>
 
@@ -387,7 +387,7 @@ export default function AudioConverterTool() {
                             <Card>
                                 <CardHeader>
                                     <CardTitle className="flex items-center gap-2">
-                                        <CheckCircleIcon className="h-5 w-5 text-green-500" />
+                                        <CheckCircleIcon className="h-5 w-5 text-primary" />
                                         Conversion Complete
                                     </CardTitle>
                                     <CardDescription>
@@ -407,11 +407,11 @@ export default function AudioConverterTool() {
 
                                     <div className="space-y-2">
                                         {convertedFiles.map((file) => (
-                                            <div key={file.id} className="flex items-center gap-3 p-3 bg-green-50 rounded-lg border border-green-200">
+                                            <div key={file.id} className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg border border-border">
                                                 <div className="text-2xl">🎵</div>
                                                 <div className="flex-1">
                                                     <div className="font-medium">{file.convertedName}</div>
-                                                    <div className="text-sm text-green-700">
+                                                    <div className="text-sm text-primary">
                                                         {formatFileSize(file.convertedSize)} • {file.quality} kbps • {formatDuration(file.duration)}
                                                     </div>
                                                 </div>
@@ -571,23 +571,23 @@ export default function AudioConverterTool() {
                             <CardContent>
                                 <ul className="space-y-2 text-sm">
                                     <li className="flex items-center gap-2">
-                                        <FileAudioIcon className="h-4 w-4 text-blue-500" />
+                                        <FileAudioIcon className="h-4 w-4 text-primary" />
                                         <span>Multiple format support</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <Volume2Icon className="h-4 w-4 text-green-500" />
+                                        <Volume2Icon className="h-4 w-4 text-primary" />
                                         <span>Quality control settings</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <ZapIcon className="h-4 w-4 text-purple-500" />
+                                        <ZapIcon className="h-4 w-4 text-primary" />
                                         <span>Batch processing</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <SettingsIcon className="h-4 w-4 text-orange-500" />
+                                        <SettingsIcon className="h-4 w-4 text-primary" />
                                         <span>Metadata preservation</span>
                                     </li>
                                     <li className="flex items-center gap-2">
-                                        <CheckCircleIcon className="h-4 w-4 text-green-500" />
+                                        <CheckCircleIcon className="h-4 w-4 text-primary" />
                                         <span>No watermarks or limits</span>
                                     </li>
                                 </ul>

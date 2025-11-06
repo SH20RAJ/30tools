@@ -77,7 +77,7 @@ export default function InstagramDPDownloader() {
                         <Button
                             onClick={handleGetProfile}
                             disabled={isLoading}
-                            className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600"
+                            className="bg-background"
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -89,7 +89,7 @@ export default function InstagramDPDownloader() {
                     </div>
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -97,7 +97,7 @@ export default function InstagramDPDownloader() {
 
                     {profileData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">Profile picture loaded successfully!</span>
                             </div>
@@ -110,10 +110,10 @@ export default function InstagramDPDownloader() {
                                             <img
                                                 src={profileData.profilePicUrl}
                                                 alt="Profile Picture"
-                                                className="w-24 h-24 rounded-full object-cover border-2 border-gray-200"
+                                                className="w-24 h-24 rounded-full object-cover border-2 border-border"
                                             />
                                             {profileData.isVerified && (
-                                                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+                                                <div className="absolute -bottom-1 -right-1 w-6 h-6 bg-muted/500 rounded-full flex items-center justify-center">
                                                     <CheckCircle className="h-4 w-4 text-white" />
                                                 </div>
                                             )}
@@ -122,7 +122,7 @@ export default function InstagramDPDownloader() {
                                             <div className="flex items-center gap-2 mb-1">
                                                 <h3 className="font-semibold">@{profileData.username}</h3>
                                                 {profileData.isPrivate && (
-                                                    <span className="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                                                    <span className="text-xs bg-gray-100 text-muted-foreground px-2 py-1 rounded">
                                                         Private
                                                     </span>
                                                 )}
@@ -151,7 +151,7 @@ export default function InstagramDPDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadProfilePic(option)}
-                                                    className="bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600"
+                                                    className="bg-background"
                                                 >
                                                     <Download className="h-3 w-3 mr-1" />
                                                     Download

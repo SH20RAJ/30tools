@@ -9,9 +9,9 @@ export default function NotFoundPage() {
       <div className="text-center space-y-8">
         {/* 404 Header */}
         <div className="space-y-4">
-          <h1 className="text-6xl font-bold text-gray-900">404</h1>
-          <h2 className="text-2xl font-semibold text-gray-700">Page Not Found</h2>
-          <p className="text-gray-600 max-w-md mx-auto">
+          <h1 className="text-6xl font-bold text-foreground">404</h1>
+          <h2 className="text-2xl font-semibold text-foreground">Page Not Found</h2>
+          <p className="text-muted-foreground max-w-md mx-auto">
             Sorry, we couldn't find the page you're looking for. 
             But don't worry, we have plenty of useful tools to explore!
           </p>
@@ -36,7 +36,7 @@ export default function NotFoundPage() {
 
         {/* Popular Tools */}
         <div className="mt-16">
-          <h3 className="text-xl font-semibold text-gray-900 mb-6">
+          <h3 className="text-xl font-semibold text-foreground mb-6">
             Popular Tools
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">

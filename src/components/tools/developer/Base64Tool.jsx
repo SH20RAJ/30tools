@@ -284,7 +284,7 @@ export default function Base64Tool() {
                     disabled={!output}
                   >
                     {copied ? (
-                      <CheckCircleIcon className="h-4 w-4 mr-2 text-green-600" />
+                      <CheckCircleIcon className="h-4 w-4 mr-2 text-primary" />
                     ) : (
                       <CopyIcon className="h-4 w-4 mr-2" />
                     )}

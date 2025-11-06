@@ -99,7 +99,7 @@ export default function BasicCalculatorTool() {
             <CardContent className="space-y-4">
                 {/* Display */}
                 <div className="bg-gray-100 p-4 rounded-lg">
-                    <div className="text-right text-2xl font-mono font-bold text-gray-800 min-h-[2rem] overflow-hidden">
+                    <div className="text-right text-2xl font-mono font-bold text-foreground min-h-[2rem] overflow-hidden">
                         {display}
                     </div>
                 </div>
@@ -107,7 +107,7 @@ export default function BasicCalculatorTool() {
                 {/* Calculator Buttons */}
                 <div className="grid grid-cols-4 gap-2">
                     {/* Row 1 */}
-                    <Button variant="outline" onClick={clear} className="h-12 text-red-600">
+                    <Button variant="outline" onClick={clear} className="h-12 text-destructive">
                         AC
                     </Button>
                     <Button variant="outline" onClick={handlePercentage} className="h-12">
@@ -116,7 +116,7 @@ export default function BasicCalculatorTool() {
                     <Button variant="outline" onClick={handleSquareRoot} className="h-12">
                         √
                     </Button>
-                    <Button variant="outline" onClick={() => performOperation('÷')} className="h-12 bg-blue-50">
+                    <Button variant="outline" onClick={() => performOperation('÷')} className="h-12 bg-muted/50">
                         ÷
                     </Button>
 
@@ -130,7 +130,7 @@ export default function BasicCalculatorTool() {
                     <Button variant="outline" onClick={() => inputNumber(9)} className="h-12">
                         9
                     </Button>
-                    <Button variant="outline" onClick={() => performOperation('×')} className="h-12 bg-blue-50">
+                    <Button variant="outline" onClick={() => performOperation('×')} className="h-12 bg-muted/50">
                         ×
                     </Button>
 
@@ -144,7 +144,7 @@ export default function BasicCalculatorTool() {
                     <Button variant="outline" onClick={() => inputNumber(6)} className="h-12">
                         6
                     </Button>
-                    <Button variant="outline" onClick={() => performOperation('-')} className="h-12 bg-blue-50">
+                    <Button variant="outline" onClick={() => performOperation('-')} className="h-12 bg-muted/50">
                         -
                     </Button>
 
@@ -158,7 +158,7 @@ export default function BasicCalculatorTool() {
                     <Button variant="outline" onClick={() => inputNumber(3)} className="h-12">
                         3
                     </Button>
-                    <Button variant="outline" onClick={() => performOperation('+')} className="h-12 bg-blue-50">
+                    <Button variant="outline" onClick={() => performOperation('+')} className="h-12 bg-muted/50">
                         +
                     </Button>
 
@@ -169,7 +169,7 @@ export default function BasicCalculatorTool() {
                     <Button variant="outline" onClick={inputDecimal} className="h-12">
                         .
                     </Button>
-                    <Button onClick={handleEquals} className="h-12 bg-blue-600 hover:bg-blue-700 text-white">
+                    <Button onClick={handleEquals} className="h-12 bg-primary hover:bg-primary/90 text-white">
                         =
                     </Button>
                 </div>

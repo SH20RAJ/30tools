@@ -92,11 +92,11 @@ export default function PercentageCalculatorTool() {
                             </div>
 
                             {basicCalc.result && (
-                                <div className="p-4 bg-green-50 rounded-lg">
+                                <div className="p-4 bg-muted/50 rounded-lg">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-sm text-muted-foreground">Result:</p>
-                                            <p className="text-2xl font-bold text-green-600">{basicCalc.result}</p>
+                                            <p className="text-2xl font-bold text-primary">{basicCalc.result}</p>
                                             <p className="text-sm text-muted-foreground">
                                                 {basicCalc.percentage}% of {basicCalc.value} = {basicCalc.result}
                                             </p>
@@ -148,11 +148,11 @@ export default function PercentageCalculatorTool() {
                             </div>
 
                             {increaseCalc.result && (
-                                <div className="p-4 bg-blue-50 rounded-lg">
+                                <div className="p-4 bg-muted/50 rounded-lg">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-sm text-muted-foreground">Result:</p>
-                                            <p className="text-2xl font-bold text-blue-600">{increaseCalc.result}</p>
+                                            <p className="text-2xl font-bold text-primary">{increaseCalc.result}</p>
                                             <p className="text-sm text-muted-foreground">
                                                 From {increaseCalc.oldValue} to {increaseCalc.newValue}
                                             </p>
@@ -204,11 +204,11 @@ export default function PercentageCalculatorTool() {
                             </div>
 
                             {findPercentCalc.result && (
-                                <div className="p-4 bg-purple-50 rounded-lg">
+                                <div className="p-4 bg-muted/50 rounded-lg">
                                     <div className="flex justify-between items-center">
                                         <div>
                                             <p className="text-sm text-muted-foreground">Result:</p>
-                                            <p className="text-2xl font-bold text-purple-600">{findPercentCalc.result}</p>
+                                            <p className="text-2xl font-bold text-primary">{findPercentCalc.result}</p>
                                             <p className="text-sm text-muted-foreground">
                                                 {findPercentCalc.part} is {findPercentCalc.result} of {findPercentCalc.whole}
                                             </p>

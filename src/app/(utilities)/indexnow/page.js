@@ -256,14 +256,14 @@ https://30tools.com/pdf-merger"
 
           {/* Result */}
           {result && (
-            <Alert className={result.success ? 'border-green-500 bg-green-50 dark:bg-green-950' : 'border-red-500 bg-red-50 dark:bg-red-950'}>
+            <Alert className={result.success ? 'border-border bg-muted/50 dark:bg-green-950' : 'border-border bg-destructive/10 dark:bg-red-950'}>
               <div className="flex items-start gap-2">
                 {result.success ? (
-                  <CheckCircle className="h-5 w-5 text-green-600 dark:text-green-400 mt-0.5" />
+                  <CheckCircle className="h-5 w-5 text-primary dark:text-primary mt-0.5" />
                 ) : (
-                  <XCircle className="h-5 w-5 text-red-600 dark:text-red-400 mt-0.5" />
+                  <XCircle className="h-5 w-5 text-destructive dark:text-destructive mt-0.5" />
                 )}
-                <AlertDescription className={result.success ? 'text-green-800 dark:text-green-200' : 'text-red-800 dark:text-red-200'}>
+                <AlertDescription className={result.success ? 'text-foreground dark:text-green-200' : 'text-destructive dark:text-red-200'}>
                   <div className="font-semibold mb-1">{result.message}</div>
                   {result.count && (
                     <div className="text-sm">Submitted {result.count} URL{result.count !== 1 ? 's' : ''}</div>

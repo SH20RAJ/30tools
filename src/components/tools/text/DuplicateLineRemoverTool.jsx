@@ -145,7 +145,7 @@ apple`;
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-16 h-16 bg-background">
               <Filter className="w-8 h-8 text-white" />
             </div>
           </div>
@@ -306,19 +306,19 @@ apple`;
 
                 {processedData.uniqueLines.length > 0 && (
                   <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                    <div className="text-center p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+                      <div className="text-2xl font-bold text-primary dark:text-primary">
                         {processedData.keptCount}
                       </div>
-                      <div className="text-xs text-green-600 dark:text-green-400">
+                      <div className="text-xs text-primary dark:text-primary">
                         Unique Lines Kept
                       </div>
                     </div>
-                    <div className="text-center p-3 bg-red-50 dark:bg-red-900/20 rounded-lg">
-                      <div className="text-2xl font-bold text-red-600 dark:text-red-400">
+                    <div className="text-center p-3 bg-destructive/10 dark:bg-primary/20 rounded-lg">
+                      <div className="text-2xl font-bold text-destructive dark:text-destructive">
                         {processedData.removedCount}
                       </div>
-                      <div className="text-xs text-red-600 dark:text-red-400">
+                      <div className="text-xs text-destructive dark:text-destructive">
                         Duplicate Lines Removed
                       </div>
                     </div>
@@ -413,29 +413,29 @@ apple`;
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="text-center p-4">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Filter className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                <div className="w-12 h-12 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Filter className="w-6 h-6 text-primary dark:text-primary" />
                 </div>
                 <h4 className="font-medium mb-2">Smart Detection</h4>
                 <p className="text-sm text-muted-foreground">Accurately identifies and removes duplicate lines</p>
               </div>
               <div className="text-center p-4">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <ArrowUpDown className="w-6 h-6 text-green-600 dark:text-green-400" />
+                <div className="w-12 h-12 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <ArrowUpDown className="w-6 h-6 text-primary dark:text-primary" />
                 </div>
                 <h4 className="font-medium mb-2">Flexible Options</h4>
                 <p className="text-sm text-muted-foreground">Case sensitivity, sorting, and empty line handling</p>
               </div>
               <div className="text-center p-4">
-                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <Copy className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+                <div className="w-12 h-12 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <Copy className="w-6 h-6 text-primary dark:text-primary" />
                 </div>
                 <h4 className="font-medium mb-2">Easy Export</h4>
                 <p className="text-sm text-muted-foreground">Copy to clipboard or download as text file</p>
               </div>
               <div className="text-center p-4">
-                <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center mx-auto mb-3">
-                  <AlertTriangle className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+                <div className="w-12 h-12 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center mx-auto mb-3">
+                  <AlertTriangle className="w-6 h-6 text-primary dark:text-primary" />
                 </div>
                 <h4 className="font-medium mb-2">Statistics</h4>
                 <p className="text-sm text-muted-foreground">Detailed stats on duplicates found and removed</p>

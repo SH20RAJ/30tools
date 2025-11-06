@@ -313,7 +313,7 @@ export default TeraboxVideo;`;
                 </div>
               </div>
 
-              <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h5 className="font-medium text-sm mb-2">Quick Actions</h5>
                 <div className="flex flex-wrap gap-2">
                   <Button

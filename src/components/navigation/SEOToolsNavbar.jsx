@@ -34,10 +34,10 @@ export default function SEOToolsNavbar() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link href="/" className="flex items-center space-x-2 group">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center group-hover:animate-bounce-cute">
+              <div className="w-8 h-8 bg-background:animate-bounce-cute">
                 <Search className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-semibold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">30tools</span>
+              <span className="text-xl font-semibold bg-background">30tools</span>
               <span className="text-sm text-muted-foreground font-medium">SEO Tools</span>
             </Link>
             <div className="flex items-center space-x-2">
@@ -59,8 +59,8 @@ export default function SEOToolsNavbar() {
 
       {/* SEO Tools Quick Access */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-4">
-          <h3 className="text-lg font-semibold text-gray-900 mb-3">Professional SEO Tools</h3>
+        <div className="bg-background">
+          <h3 className="text-lg font-semibold text-foreground mb-3">Professional SEO Tools</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {seoTools.map((tool) => (
               <Link key={tool.href} href={tool.href}>
@@ -69,7 +69,7 @@ export default function SEOToolsNavbar() {
                   className="w-full justify-start h-auto p-3 hover:bg-white/50 transition-colors"
                 >
                   <div className="flex items-center space-x-2">
-                    <tool.icon className="h-4 w-4 text-blue-600" />
+                    <tool.icon className="h-4 w-4 text-primary" />
                     <div className="flex flex-col items-start">
                       <span className="text-sm font-medium">{tool.name}</span>
                       {tool.popular && (

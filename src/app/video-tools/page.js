@@ -226,18 +226,18 @@ const videoTools = [
 ]
 
 const categories = [
-  { name: 'Conversion', count: 3, color: 'bg-blue-100 text-blue-800' },
-  { name: 'Editing', count: 5, color: 'bg-purple-100 text-purple-800' },
-  { name: 'Optimization', count: 1, color: 'bg-green-100 text-green-800' },
-  { name: 'Recording', count: 1, color: 'bg-red-100 text-red-800' },
-  { name: 'Viewing', count: 1, color: 'bg-gray-100 text-gray-800' },
-  { name: 'AI Tools', count: 3, color: 'bg-pink-100 text-pink-800' },
-  { name: 'Social Media', count: 3, color: 'bg-orange-100 text-orange-800' },
-  { name: 'Content Creation', count: 3, color: 'bg-indigo-100 text-indigo-800' },
-  { name: 'Business', count: 1, color: 'bg-cyan-100 text-cyan-800' },
-  { name: 'Education', count: 1, color: 'bg-emerald-100 text-emerald-800' },
-  { name: 'Marketing', count: 1, color: 'bg-rose-100 text-rose-800' },
-  { name: 'Entertainment', count: 1, color: 'bg-amber-100 text-amber-800' }
+  { name: 'Conversion', count: 3, color: 'bg-muted text-foreground' },
+  { name: 'Editing', count: 5, color: 'bg-muted text-foreground' },
+  { name: 'Optimization', count: 1, color: 'bg-muted text-foreground' },
+  { name: 'Recording', count: 1, color: 'bg-destructive/20 text-destructive' },
+  { name: 'Viewing', count: 1, color: 'bg-gray-100 text-foreground' },
+  { name: 'AI Tools', count: 3, color: 'bg-muted text-primary' },
+  { name: 'Social Media', count: 3, color: 'bg-muted text-primary' },
+  { name: 'Content Creation', count: 3, color: 'bg-muted text-primary' },
+  { name: 'Business', count: 1, color: 'bg-muted text-primary' },
+  { name: 'Education', count: 1, color: 'bg-muted text-primary' },
+  { name: 'Marketing', count: 1, color: 'bg-muted/30 text-primary' },
+  { name: 'Entertainment', count: 1, color: 'bg-muted text-primary' }
 ]
 
 export default function VideoToolsPage() {
@@ -357,11 +357,11 @@ export default function VideoToolsPage() {
             {trendingTools.slice(0, 8).map((tool) => {
               const IconComponent = tool.icon
               return (
-                <Card key={tool.name} className="hover:shadow-lg transition-shadow border-orange-200">
+                <Card key={tool.name} className="hover:shadow-lg transition-shadow border-border">
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
-                      <div className="p-1.5 bg-orange-100 rounded-lg">
-                        <IconComponent className="h-4 w-4 text-orange-600" />
+                      <div className="p-1.5 bg-muted rounded-lg">
+                        <IconComponent className="h-4 w-4 text-primary" />
                       </div>
                       <div>
                         <CardTitle className="text-sm font-semibold">{tool.name}</CardTitle>
@@ -376,7 +376,7 @@ export default function VideoToolsPage() {
                       {tool.description}
                     </CardDescription>
                     <Link href={tool.href}>
-                      <button className="w-full border border-orange-300 bg-orange-50 hover:bg-orange-100 text-orange-700 h-8 px-3 py-1 rounded-md text-xs font-medium transition-colors">
+                      <button className="w-full border border-border bg-muted/50 hover:bg-muted text-primary h-8 px-3 py-1 rounded-md text-xs font-medium transition-colors">
                         Try Tool
                       </button>
                     </Link>

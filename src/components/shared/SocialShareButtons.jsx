@@ -77,7 +77,7 @@ const SocialShareButtons = ({
             variant="outline"
             size="sm"
             onClick={() => handleShare('twitter')}
-            className="bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-700 hover:text-blue-800"
+            className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-foreground"
           >
             <Twitter className="h-4 w-4 mr-2" />
             Twitter
@@ -87,7 +87,7 @@ const SocialShareButtons = ({
             variant="outline"
             size="sm"
             onClick={() => handleShare('facebook')}
-            className="bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-600 hover:text-blue-700"
+            className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-primary"
           >
             <Facebook className="h-4 w-4 mr-2" />
             Facebook
@@ -97,7 +97,7 @@ const SocialShareButtons = ({
             variant="outline"
             size="sm"
             onClick={() => handleShare('linkedin')}
-            className="bg-blue-50 hover:bg-blue-100 border-blue-200 text-blue-800 hover:text-blue-900"
+            className="bg-muted/50 hover:bg-muted border-border text-foreground hover:text-primary"
           >
             <Linkedin className="h-4 w-4 mr-2" />
             LinkedIn
@@ -107,7 +107,7 @@ const SocialShareButtons = ({
             variant="outline"
             size="sm"
             onClick={() => handleShare('whatsapp')}
-            className="bg-green-50 hover:bg-green-100 border-green-200 text-green-700 hover:text-green-800"
+            className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-foreground"
           >
             <MessageCircle className="h-4 w-4 mr-2" />
             WhatsApp
@@ -120,7 +120,7 @@ const SocialShareButtons = ({
             variant="outline"
             size="sm"
             onClick={() => handleShare('email')}
-            className="flex-1 bg-gray-50 hover:bg-gray-100 border-gray-200"
+            className="flex-1 bg-gray-50 hover:bg-gray-100 border-border"
           >
             <Mail className="h-4 w-4 mr-2" />
             Email
@@ -130,10 +130,10 @@ const SocialShareButtons = ({
             variant="outline"
             size="sm"
             onClick={() => handleShare('copy')}
-            className="flex-1 bg-purple-50 hover:bg-purple-100 border-purple-200 text-purple-700"
+            className="flex-1 bg-muted/50 hover:bg-muted border-border text-primary"
           >
             {copied ? (
-              <CheckCircle className="h-4 w-4 mr-2 text-green-600" />
+              <CheckCircle className="h-4 w-4 mr-2 text-primary" />
             ) : (
               <Copy className="h-4 w-4 mr-2" />
             )}

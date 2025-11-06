@@ -69,7 +69,7 @@ export default function TeraboxUrlInput({
             />
             {isLoading && (
               <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
-                <LoaderIcon className="h-4 w-4 animate-spin text-blue-500" />
+                <LoaderIcon className="h-4 w-4 animate-spin text-primary" />
               </div>
             )}
           </div>
@@ -97,7 +97,7 @@ export default function TeraboxUrlInput({
         </div>
 
         {teraboxUrl && !teraboxUrl.includes('teraboxapp.com') && !teraboxUrl.includes('teraboxshare.com') && (
-          <div className="text-sm text-orange-600 dark:text-orange-400">
+          <div className="text-sm text-primary dark:text-primary">
             Please enter a valid Terabox URL (teraboxapp.com or teraboxshare.com)
           </div>
         )}

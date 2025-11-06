@@ -146,7 +146,7 @@ export default function FakeChatGeneratorTool() {
               <div className="w-6 h-6 bg-gray-300 rounded-full mr-2 flex items-center justify-center text-xs">
                 {contactName.charAt(0)}
               </div>
-              <span className="text-xs text-gray-500">{contactName}</span>
+              <span className="text-xs text-muted-foreground">{contactName}</span>
             </div>
           )}
           
@@ -192,7 +192,7 @@ export default function FakeChatGeneratorTool() {
             size="sm"
             variant="ghost"
             onClick={() => deleteMessage(message.id)}
-            className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity w-6 h-6 p-0 bg-red-500 hover:bg-red-600 text-white rounded-full"
+            className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity w-6 h-6 p-0 bg-destructive/100 hover:bg-destructive text-white rounded-full"
           >
             <TrashIcon className="w-3 h-3" />
           </Button>
@@ -202,7 +202,7 @@ export default function FakeChatGeneratorTool() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-gray-900 dark:via-green-900 dark:to-blue-900">
+    <div className="min-h-screen bg-muted/20 dark:from-gray-900 dark:via-green-900 dark:to-blue-900">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
           <Link href="/design-tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
@@ -211,11 +211,11 @@ export default function FakeChatGeneratorTool() {
           </Link>
           
           <div className="flex items-center gap-3 mb-4">
-            <div className="p-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg">
+            <div className="p-2 bg-background">
               <MessageCircleIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-3xl font-bold bg-background">
                 Fake Chat Generator
               </h1>
               <p className="text-muted-foreground">Create realistic chat screenshots for memes and viral content</p>
@@ -350,7 +350,7 @@ export default function FakeChatGeneratorTool() {
               <CardContent>
                 <Button 
                   onClick={exportAsImage}
-                  className="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600"
+                  className="w-full bg-background"
                   disabled={isExporting || messages.length === 0}
                 >
                   {isExporting ? (
@@ -415,7 +415,7 @@ export default function FakeChatGeneratorTool() {
                     {messages.map(renderMessage)}
                     
                     {messages.length === 0 && (
-                      <div className="text-center py-12 text-gray-500">
+                      <div className="text-center py-12 text-muted-foreground">
                         <MessageCircleIcon className="h-12 w-12 mx-auto mb-4 opacity-50" />
                         <p>Add some messages to see your chat!</p>
                       </div>
@@ -442,7 +442,7 @@ export default function FakeChatGeneratorTool() {
                     >
                       Type a message...
                     </div>
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="w-8 h-8 bg-muted/500 rounded-full flex items-center justify-center">
                       <span className="text-white text-xs">→</span>
                     </div>
                   </div>
@@ -459,15 +459,15 @@ export default function FakeChatGeneratorTool() {
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-              <div className="p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">🎭 Keep it Believable</h4>
                 <p>Use realistic names and conversation flow for better engagement</p>
               </div>
-              <div className="p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">⏰ Timing Matters</h4>
                 <p>Use appropriate timestamps to make conversations feel natural</p>
               </div>
-              <div className="p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+              <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">😂 Add Humor</h4>
                 <p>Funny conversations get shared more on social media</p>
               </div>

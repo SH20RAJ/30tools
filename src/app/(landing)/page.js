@@ -220,17 +220,17 @@ export default function LandingPage() {
 
                             {/* Feature highlights */}
                             <div className="flex flex-wrap justify-center gap-4 mb-8">
-                                <div className="flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-full border border-green-200 dark:border-green-800">
-                                    <ShieldCheckIcon className="h-4 w-4 text-green-600" />
-                                    <span className="text-sm font-medium text-green-700 dark:text-green-300">100% Private</span>
+                                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
+                                    <ShieldCheckIcon className="h-4 w-4 text-primary" />
+                                    <span className="text-sm font-medium text-primary dark:text-green-300">100% Private</span>
                                 </div>
-                                <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-full border border-blue-200 dark:border-blue-800">
-                                    <ZapIcon className="h-4 w-4 text-blue-600" />
-                                    <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Lightning Fast</span>
+                                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
+                                    <ZapIcon className="h-4 w-4 text-primary" />
+                                    <span className="text-sm font-medium text-primary dark:text-blue-300">Lightning Fast</span>
                                 </div>
-                                <div className="flex items-center gap-2 px-3 py-1.5 bg-purple-50 dark:bg-purple-900/20 rounded-full border border-purple-200 dark:border-purple-800">
-                                    <StarIcon className="h-4 w-4 text-purple-600" />
-                                    <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Professional Quality</span>
+                                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
+                                    <StarIcon className="h-4 w-4 text-primary" />
+                                    <span className="text-sm font-medium text-primary dark:text-purple-300">Professional Quality</span>
                                 </div>
                             </div>
 
@@ -281,7 +281,7 @@ export default function LandingPage() {
                                     <span>50M+ files processed</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <StarIcon className="h-4 w-4 fill-current text-yellow-500" />
+                                    <StarIcon className="h-4 w-4 fill-current text-primary" />
                                     <span>4.9/5 user rating</span>
                                 </div>
                             </div>

@@ -239,7 +239,7 @@ export default function LogoGeneratorTool() {
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg">
+            <div className="w-16 h-16 bg-background">
               <Palette className="w-8 h-8 text-white" />
             </div>
           </div>
@@ -467,7 +467,7 @@ export default function LogoGeneratorTool() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="flex justify-center p-8 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-lg">
+                <div className="flex justify-center p-8 bg-background">
                   <canvas
                     ref={canvasRef}
                     className="border border-border rounded-lg shadow-lg"
@@ -531,8 +531,8 @@ export default function LogoGeneratorTool() {
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-green-100 dark:bg-green-900/30 rounded-lg flex items-center justify-center">
-                      <Zap className="w-4 h-4 text-green-600 dark:text-green-400" />
+                    <div className="w-8 h-8 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+                      <Zap className="w-4 h-4 text-primary dark:text-primary" />
                     </div>
                     <div>
                       <h4 className="font-medium">Instant Generation</h4>
@@ -540,8 +540,8 @@ export default function LogoGeneratorTool() {
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
-                      <Type className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+                    <div className="w-8 h-8 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+                      <Type className="w-4 h-4 text-primary dark:text-primary" />
                     </div>
                     <div>
                       <h4 className="font-medium">Professional Fonts</h4>
@@ -549,8 +549,8 @@ export default function LogoGeneratorTool() {
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-purple-100 dark:bg-purple-900/30 rounded-lg flex items-center justify-center">
-                      <Palette className="w-4 h-4 text-purple-600 dark:text-purple-400" />
+                    <div className="w-8 h-8 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+                      <Palette className="w-4 h-4 text-primary dark:text-primary" />
                     </div>
                     <div>
                       <h4 className="font-medium">Color Palettes</h4>
@@ -558,8 +558,8 @@ export default function LogoGeneratorTool() {
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className="w-8 h-8 bg-orange-100 dark:bg-orange-900/30 rounded-lg flex items-center justify-center">
-                      <Download className="w-4 h-4 text-orange-600 dark:text-orange-400" />
+                    <div className="w-8 h-8 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+                      <Download className="w-4 h-4 text-primary dark:text-primary" />
                     </div>
                     <div>
                       <h4 className="font-medium">Multiple Formats</h4>

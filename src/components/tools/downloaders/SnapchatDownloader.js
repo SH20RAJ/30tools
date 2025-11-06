@@ -74,7 +74,7 @@ export default function SnapchatDownloader() {
                         <Button
                             onClick={handleDownload}
                             disabled={isLoading}
-                            className="bg-yellow-500 hover:bg-yellow-600"
+                            className="bg-muted/500 hover:bg-primary"
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -86,7 +86,7 @@ export default function SnapchatDownloader() {
                     </div>
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -94,7 +94,7 @@ export default function SnapchatDownloader() {
 
                     {snapData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">Snapchat content processed successfully!</span>
                             </div>
@@ -108,8 +108,8 @@ export default function SnapchatDownloader() {
                                                 alt="Snapchat thumbnail"
                                                 className="w-24 h-16 object-cover rounded"
                                             />
-                                            <div className="absolute inset-0 flex items-center justify-center bg-yellow-500 bg-opacity-20 rounded">
-                                                <Camera className="h-6 w-6 text-yellow-600" />
+                                            <div className="absolute inset-0 flex items-center justify-center bg-muted/500 bg-opacity-20 rounded">
+                                                <Camera className="h-6 w-6 text-primary" />
                                             </div>
                                         </div>
                                         <div className="flex-1">
@@ -131,7 +131,7 @@ export default function SnapchatDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadContent(quality)}
-                                                    className="bg-yellow-500 hover:bg-yellow-600"
+                                                    className="bg-muted/500 hover:bg-primary"
                                                 >
                                                     <Download className="h-3 w-3 mr-1" />
                                                     Download

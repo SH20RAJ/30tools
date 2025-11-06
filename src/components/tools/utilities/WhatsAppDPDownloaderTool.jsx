@@ -71,10 +71,10 @@ export default function WhatsAppDPDownloaderTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-4xl font-bold text-foreground mb-4">
             WhatsApp DP Downloader
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Download WhatsApp profile pictures in high quality. Enter a phone number with country code to get the profile picture URL.
           </p>
         </div>
@@ -100,7 +100,7 @@ export default function WhatsAppDPDownloaderTool() {
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 className="text-lg"
               />
-              <p className="text-sm text-gray-500">
+              <p className="text-sm text-muted-foreground">
                 Include country code (e.g., +1 for US, +91 for India)
               </p>
             </div>
@@ -162,13 +162,13 @@ export default function WhatsAppDPDownloaderTool() {
         </Card>
 
         {/* Warning */}
-        <Card className="border-yellow-200 bg-yellow-50">
+        <Card className="border-border bg-muted/50">
           <CardContent className="pt-6">
             <div className="flex items-start gap-3">
-              <AlertCircle className="h-5 w-5 text-yellow-600 mt-0.5" />
+              <AlertCircle className="h-5 w-5 text-primary mt-0.5" />
               <div>
-                <h3 className="font-semibold text-yellow-800 mb-2">Important Notes</h3>
-                <ul className="text-sm text-yellow-700 space-y-1">
+                <h3 className="font-semibold text-primary mb-2">Important Notes</h3>
+                <ul className="text-sm text-primary space-y-1">
                   <li>• Profile pictures may not be available for all numbers</li>
                   <li>• Privacy settings affect visibility of profile pictures</li>
                   <li>• Some profile pictures may be low resolution or default images</li>
@@ -184,9 +184,9 @@ export default function WhatsAppDPDownloaderTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Phone className="h-8 w-8 text-green-600 mx-auto mb-3" />
+                <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Easy Number Input</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Simply enter phone number with country code
                 </p>
               </div>
@@ -196,9 +196,9 @@ export default function WhatsAppDPDownloaderTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Download className="h-8 w-8 text-blue-600 mx-auto mb-3" />
+                <Download className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Quick Download</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Download profile pictures instantly
                 </p>
               </div>
@@ -208,9 +208,9 @@ export default function WhatsAppDPDownloaderTool() {
           <Card>
             <CardContent className="pt-6">
               <div className="text-center">
-                <Copy className="h-8 w-8 text-purple-600 mx-auto mb-3" />
+                <Copy className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-semibold mb-2">Copy URL</h3>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-muted-foreground">
                   Copy profile picture URL to clipboard
                 </p>
               </div>

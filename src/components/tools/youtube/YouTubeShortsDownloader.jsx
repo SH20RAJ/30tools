@@ -264,10 +264,10 @@ export default function YouTubeShortsDownloader() {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      <Card className="border-2 border-pink-500/20 shadow-lg">
-        <CardHeader className="bg-gradient-to-r from-pink-50 to-red-50 dark:from-pink-950/20 dark:to-red-950/20">
+      <Card className="border-2 border-border/20 shadow-lg">
+        <CardHeader className="bg-background/20 dark:to-red-950/20">
           <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
-            <Smartphone className="w-6 h-6 text-pink-500" />
+            <Smartphone className="w-6 h-6 text-primary" />
             YouTube Shorts Downloader
           </CardTitle>
         </CardHeader>
@@ -282,7 +282,7 @@ export default function YouTubeShortsDownloader() {
                   setUrl(e.target.value);
                   setError('');
                 }}
-                className="flex-1 border-pink-200 focus:border-pink-500 focus:ring-pink-500"
+                className="flex-1 border-border focus:border-border focus:ring-primary"
                 disabled={isLoading}
               />
               <div className="flex gap-2">
@@ -295,7 +295,7 @@ export default function YouTubeShortsDownloader() {
                   title={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
                 >
                   {isBookmarked ? (
-                    <BookmarkCheck className="w-4 h-4 text-yellow-500" />
+                    <BookmarkCheck className="w-4 h-4 text-primary" />
                   ) : (
                     <Bookmark className="w-4 h-4" />
                   )}
@@ -303,7 +303,7 @@ export default function YouTubeShortsDownloader() {
                 <Button 
                   type="submit" 
                   disabled={isLoading || !url.trim()}
-                  className="bg-pink-500 hover:bg-pink-600 text-white font-medium px-6"
+                  className="bg-muted/500 hover:bg-primary text-white font-medium px-6"
                 >
                   {isLoading ? (
                     <>
@@ -336,7 +336,7 @@ export default function YouTubeShortsDownloader() {
             )}
             
             {error && (
-              <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-lg">
+              <div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 rounded-lg">
                 {error}
               </div>
             )}
@@ -344,7 +344,7 @@ export default function YouTubeShortsDownloader() {
 
           {shortsData && (
             <div className="mt-6 space-y-4">
-              <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-950/20 border border-green-200 rounded-lg p-4">
+              <div className="bg-background/20 dark:to-emerald-950/20 border border-border rounded-lg p-4">
                 <div className="flex items-start gap-4">
                   <div className="relative">
                     {shortsData.thumbnail && (
@@ -360,17 +360,17 @@ export default function YouTubeShortsDownloader() {
                     </div>
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-lg mb-2 text-green-800 dark:text-green-200">
+                    <h3 className="font-semibold text-lg mb-2 text-foreground dark:text-green-200">
                       {shortsData.title}
                     </h3>
                     <div className="flex flex-wrap gap-2 mb-3">
-                      <Badge variant="outline" className="text-green-600 border-green-300">
+                      <Badge variant="outline" className="text-primary border-border">
                         Duration: {shortsData.duration}
                       </Badge>
-                      <Badge variant="outline" className="text-green-600 border-green-300">
+                      <Badge variant="outline" className="text-primary border-border">
                         Format: Vertical Video
                       </Badge>
-                      <Badge variant="outline" className="text-green-600 border-green-300">
+                      <Badge variant="outline" className="text-primary border-border">
                         Size: {shortsData.fileSize}
                       </Badge>
                     </div>
@@ -383,16 +383,16 @@ export default function YouTubeShortsDownloader() {
 
               <div className="grid md:grid-cols-2 gap-4">
                 {/* Video Download Options */}
-                <Card className="border-pink-200">
-                  <CardHeader className="bg-pink-50 dark:bg-pink-950/20">
+                <Card className="border-border">
+                  <CardHeader className="bg-muted/50 dark:bg-pink-950/20">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Smartphone className="w-5 h-5 text-pink-500" />
+                      <Smartphone className="w-5 h-5 text-primary" />
                       Shorts Video Downloads
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
                     {shortsData.videoFormats?.map((format, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-pink-50/50 dark:bg-pink-950/10 rounded-lg">
+                      <div key={index} className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg">
                         <div>
                           <div className="font-medium">{format.quality} MP4 (Vertical)</div>
                           <div className="text-sm text-muted-foreground">{format.fileSize} • 9:16 aspect ratio</div>
@@ -400,14 +400,14 @@ export default function YouTubeShortsDownloader() {
                         <Button
                           onClick={() => handleDownload(format.downloadUrl, `${shortsData.title}_shorts.mp4`, 'video')}
                           size="sm"
-                          className="bg-pink-500 hover:bg-pink-600"
+                          className="bg-muted/500 hover:bg-primary"
                         >
                           <Download className="w-4 h-4 mr-1" />
                           Download
                         </Button>
                       </div>
                     )) || (
-                        <div className="flex items-center justify-between p-3 bg-pink-50/50 dark:bg-pink-950/10 rounded-lg">
+                        <div className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg">
                           <div>
                             <div className="font-medium">HD Vertical Video (MP4)</div>
                             <div className="text-sm text-muted-foreground">
@@ -417,7 +417,7 @@ export default function YouTubeShortsDownloader() {
                           <Button
                             onClick={() => handleDownload(shortsData.downloadUrl, `${shortsData.title}_shorts.mp4`, 'video')}
                             size="sm"
-                            className="bg-pink-500 hover:bg-pink-600"
+                            className="bg-muted/500 hover:bg-primary"
                           >
                             <Download className="w-4 h-4 mr-1" />
                             Download
@@ -428,16 +428,16 @@ export default function YouTubeShortsDownloader() {
                 </Card>
 
                 {/* Audio Download Options */}
-                <Card className="border-purple-200">
-                  <CardHeader className="bg-purple-50 dark:bg-purple-950/20">
+                <Card className="border-border">
+                  <CardHeader className="bg-muted/50 dark:bg-purple-950/20">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Play className="w-5 h-5 text-purple-500" />
+                      <Play className="w-5 h-5 text-primary" />
                       Audio Downloads
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
                     {shortsData.audioFormats?.map((format, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-purple-50/50 dark:bg-purple-950/10 rounded-lg">
+                      <div key={index} className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg">
                         <div>
                           <div className="font-medium">{format.quality} MP3</div>
                           <div className="text-sm text-muted-foreground">{format.fileSize}</div>
@@ -445,7 +445,7 @@ export default function YouTubeShortsDownloader() {
                         <Button
                           onClick={() => handleDownload(format.downloadUrl, `${shortsData.title}_audio.mp3`, 'audio')}
                           size="sm"
-                          className="bg-purple-500 hover:bg-purple-600"
+                          className="bg-muted/500 hover:bg-primary"
                         >
                           <Download className="w-4 h-4 mr-1" />
                           Download
@@ -453,7 +453,7 @@ export default function YouTubeShortsDownloader() {
                       </div>
                     )) || (
                         shortsData.audioUrl && (
-                          <div className="flex items-center justify-between p-3 bg-purple-50/50 dark:bg-purple-950/10 rounded-lg">
+                          <div className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg">
                             <div>
                               <div className="font-medium">High Quality MP3</div>
                               <div className="text-sm text-muted-foreground">
@@ -463,7 +463,7 @@ export default function YouTubeShortsDownloader() {
                             <Button
                               onClick={() => handleDownload(shortsData.audioUrl, `${shortsData.title}_audio.mp3`, 'audio')}
                               size="sm"
-                              className="bg-purple-500 hover:bg-purple-600"
+                              className="bg-muted/500 hover:bg-primary"
                             >
                               <Download className="w-4 h-4 mr-1" />
                               Audio
@@ -489,7 +489,7 @@ export default function YouTubeShortsDownloader() {
           {bookmarkedUrls.length > 0 && (
             <div className="mt-6">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+                <h3 className="text-lg font-semibold text-foreground dark:text-gray-200">
                   Bookmarked Shorts ({bookmarkedUrls.length})
                 </h3>
                 <Button
@@ -502,7 +502,7 @@ export default function YouTubeShortsDownloader() {
               </div>
               
               {showBookmarks && (
-                <Card className="border-yellow-200 bg-yellow-50/50 dark:bg-yellow-950/10">
+                <Card className="border-border bg-muted/50/50 dark:bg-yellow-950/10">
                   <CardContent className="p-4">
                     <div className="space-y-3 max-h-64 overflow-y-auto">
                       {bookmarkedUrls.map((bookmark, index) => (
@@ -539,7 +539,7 @@ export default function YouTubeShortsDownloader() {
                               variant="outline"
                               size="sm"
                               onClick={() => handleRemoveBookmark(bookmark.url)}
-                              className="text-xs text-red-600 hover:text-red-700"
+                              className="text-xs text-destructive hover:text-destructive"
                             >
                               Remove
                             </Button>
@@ -553,7 +553,7 @@ export default function YouTubeShortsDownloader() {
             </div>
           )}
 
-          <div className="mt-6 bg-gradient-to-r from-pink-50 to-purple-50 dark:from-pink-950/20 dark:to-purple-950/20 rounded-lg p-4">
+          <div className="mt-6 bg-background/20 dark:to-purple-950/20 rounded-lg p-4">
             <h3 className="font-medium mb-2 text-center">💡 Pro Tips for YouTube Shorts Downloads</h3>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
               <div>

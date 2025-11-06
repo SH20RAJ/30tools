@@ -199,7 +199,7 @@ export default function LineSorterPage() {
               <h2 className="text-2xl font-semibold mb-4">When to Use Line Sorter</h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-blue-600">📋 Data Organization</h3>
+                  <h3 className="font-medium mb-2 text-primary">📋 Data Organization</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Organize customer lists</li>
                     <li>• Sort product catalogs</li>
@@ -209,7 +209,7 @@ export default function LineSorterPage() {
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-green-600">💻 Development & Content</h3>
+                  <h3 className="font-medium mb-2 text-primary">💻 Development & Content</h3>
                   <ul className="text-sm text-muted-foreground space-y-1 mb-4">
                     <li>• Sort CSS properties</li>
                     <li>• Organize import statements</li>

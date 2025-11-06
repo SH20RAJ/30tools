@@ -125,7 +125,7 @@ export default function YouTubeEmbedGenerator() {
       <Card className="card-cute">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Code className="w-5 h-5 text-red-500" />
+            <Code className="w-5 h-5 text-destructive" />
             YouTube Embed Generator
           </CardTitle>
           <CardDescription>
@@ -299,7 +299,7 @@ export default function YouTubeEmbedGenerator() {
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <Youtube className="w-5 h-5 text-red-500" />
+                <Youtube className="w-5 h-5 text-destructive" />
                 Generated Embed Code
               </span>
               <Button
@@ -309,7 +309,7 @@ export default function YouTubeEmbedGenerator() {
                 className="btn-cute"
               >
                 {copied ? (
-                  <CheckCircle className="w-4 h-4 mr-1 text-green-500" />
+                  <CheckCircle className="w-4 h-4 mr-1 text-primary" />
                 ) : (
                   <Copy className="w-4 h-4 mr-1" />
                 )}

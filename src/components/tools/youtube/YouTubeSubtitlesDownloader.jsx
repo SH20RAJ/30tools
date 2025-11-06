@@ -133,10 +133,10 @@ export default function YouTubeSubtitlesDownloader() {
     <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+        <h1 className="text-3xl font-bold text-foreground dark:text-white">
           YouTube Subtitles Downloader
         </h1>
-        <p className="text-gray-600 dark:text-gray-300">
+        <p className="text-muted-foreground dark:text-gray-300">
           Download and convert YouTube video subtitles to multiple formats (TXT, SRT, VTT, JSON, CSV)
         </p>
       </div>
@@ -199,9 +199,9 @@ export default function YouTubeSubtitlesDownloader() {
 
       {/* Error Display */}
       {error && (
-        <Card className="border-red-200 bg-red-50 dark:border-red-800 dark:bg-red-900/20">
+        <Card className="border-destructive/50 bg-destructive/10 dark:border-border dark:bg-primary/20">
           <CardContent className="pt-6">
-            <p className="text-red-600 dark:text-red-400">{error}</p>
+            <p className="text-destructive dark:text-destructive">{error}</p>
           </CardContent>
         </Card>
       )}
@@ -229,7 +229,7 @@ export default function YouTubeSubtitlesDownloader() {
                 {subtitleData.language}
               </Badge>
             </div>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
+            <p className="text-sm text-muted-foreground dark:text-gray-300">
               <strong>Title:</strong> {subtitleData.title}
             </p>
           </CardHeader>
@@ -423,17 +423,17 @@ export default function YouTubeSubtitlesDownloader() {
       )}
 
       {/* Features Info */}
-      <Card className="bg-blue-50 dark:bg-blue-900/20 border-blue-200 dark:border-blue-800">
+      <Card className="bg-muted/50 dark:bg-primary/20 border-border dark:border-border">
         <CardContent className="pt-6">
-          <h3 className="font-medium mb-2 text-blue-900 dark:text-blue-100">Supported Formats:</h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm text-blue-700 dark:text-blue-200">
+          <h3 className="font-medium mb-2 text-primary dark:text-blue-100">Supported Formats:</h3>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm text-primary dark:text-blue-200">
             <div>• Plain Text (.txt)</div>
             <div>• SubRip (.srt)</div>
             <div>• WebVTT (.vtt)</div>
             <div>• JSON (.json)</div>
             <div>• CSV (.csv)</div>
           </div>
-          <p className="text-sm text-blue-600 dark:text-blue-300 mt-2">
+          <p className="text-sm text-primary dark:text-blue-300 mt-2">
             Download subtitles in your preferred format for editing, translation, or integration with video editing software.
           </p>
         </CardContent>

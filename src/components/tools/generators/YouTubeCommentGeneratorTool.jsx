@@ -180,18 +180,18 @@ Make it feel genuine but entertaining!`;
   const shareText = comment ? `Check out this hilarious YouTube comment I generated: "${comment.substring(0, 100)}..." Create your own at` : 'Generate viral YouTube comments at';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-pink-50 to-orange-100 p-4">
+    <div className="min-h-screen bg-muted/20 p-4">
       <div className="max-w-6xl mx-auto space-y-8">
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-pink-600 text-white px-6 py-2 rounded-full text-sm font-medium">
+          <div className="inline-flex items-center gap-2 bg-background">
             <Play className="w-4 h-4" />
             Viral Comment Generator
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold bg-muted/20 bg-clip-text text-transparent">
             YouTube Comment Generator
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Create dramatic, funny, and viral YouTube comments that capture the essence of internet culture!
           </p>
         </div>
@@ -209,7 +209,7 @@ Make it feel genuine but entertaining!`;
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Play className="w-5 h-5 text-red-600" />
+                    <Play className="w-5 h-5 text-destructive" />
                     Comment Settings
                   </CardTitle>
                   <CardDescription>
@@ -240,7 +240,7 @@ Make it feel genuine but entertaining!`;
                               <span>{style.icon}</span>
                               <div>
                                 <div className="font-medium">{style.name}</div>
-                                <div className="text-sm text-gray-500">{style.description}</div>
+                                <div className="text-sm text-muted-foreground">{style.description}</div>
                               </div>
                             </div>
                           </SelectItem>
@@ -268,7 +268,7 @@ Make it feel genuine but entertaining!`;
                   <Button
                     onClick={handleGenerate}
                     disabled={isGenerating || !selectedStyle || !selectedEmotion}
-                    className="w-full bg-gradient-to-r from-red-600 to-pink-600 hover:from-red-700 hover:to-pink-700"
+                    className="w-full bg-background"
                   >
                     {isGenerating ? (
                       <>
@@ -289,7 +289,7 @@ Make it feel genuine but entertaining!`;
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Copy className="w-5 h-5 text-pink-600" />
+                    <Copy className="w-5 h-5 text-primary" />
                     Generated Comment
                   </CardTitle>
                   <CardDescription>
@@ -299,20 +299,20 @@ Make it feel genuine but entertaining!`;
                 <CardContent className="space-y-4">
                   {comment ? (
                     <>
-                      <div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-gray-200">
+                      <div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-border">
                         <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
+                          <div className="w-8 h-8 bg-background">
                             U
                           </div>
                           <div className="flex-1">
-                            <div className="font-medium text-sm text-gray-700 mb-1">@RandomUser2024</div>
-                            <p className="text-sm text-gray-800 whitespace-pre-wrap">{comment}</p>
-                            <div className="flex items-center gap-4 mt-2 text-xs text-gray-500">
-                              <button className="flex items-center gap-1 hover:text-gray-700">
+                            <div className="font-medium text-sm text-foreground mb-1">@RandomUser2024</div>
+                            <p className="text-sm text-foreground whitespace-pre-wrap">{comment}</p>
+                            <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
+                              <button className="flex items-center gap-1 hover:text-foreground">
                                 <ThumbsUp className="w-3 h-3" />
                                 <span>42</span>
                               </button>
-                              <button className="flex items-center gap-1 hover:text-gray-700">
+                              <button className="flex items-center gap-1 hover:text-foreground">
                                 <Heart className="w-3 h-3" />
                                 <span>Reply</span>
                               </button>
@@ -356,7 +356,7 @@ Make it feel genuine but entertaining!`;
                       />
                     </>
                   ) : (
-                    <div className="text-center py-8 text-gray-500">
+                    <div className="text-center py-8 text-muted-foreground">
                       <Play className="w-12 h-12 mx-auto mb-4 text-gray-300" />
                       <p>Generate a comment to see the result here</p>
                     </div>
@@ -379,12 +379,12 @@ Make it feel genuine but entertaining!`;
                   <CardContent>
                     <div className="bg-gray-50 p-3 rounded-lg mb-4">
                       <div className="flex items-start gap-2">
-                        <div className="w-6 h-6 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                        <div className="w-6 h-6 bg-background">
                           U
                         </div>
                         <div className="flex-1">
-                          <div className="font-medium text-xs text-gray-600 mb-1">@ExampleUser</div>
-                          <p className="text-sm text-gray-800">{preset.text}</p>
+                          <div className="font-medium text-xs text-muted-foreground mb-1">@ExampleUser</div>
+                          <p className="text-sm text-foreground">{preset.text}</p>
                         </div>
                       </div>
                     </div>
@@ -443,14 +443,14 @@ Make it feel genuine but entertaining!`;
                     </CardHeader>
                     <CardContent>
                       <div className="bg-gray-50 p-3 rounded-lg">
-                        <p className="text-sm text-gray-700">{item.text}</p>
+                        <p className="text-sm text-foreground">{item.text}</p>
                       </div>
                     </CardContent>
                   </Card>
                 ))}
               </div>
             ) : (
-              <div className="text-center py-8 text-gray-500">
+              <div className="text-center py-8 text-muted-foreground">
                 <Play className="w-12 h-12 mx-auto mb-4 text-gray-300" />
                 <p>No comments generated yet. Create your first one!</p>
               </div>
@@ -463,12 +463,12 @@ Make it feel genuine but entertaining!`;
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Play className="w-5 h-5 text-red-600" />
+                <Play className="w-5 h-5 text-destructive" />
                 Viral Ready
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Comments designed to capture attention and engagement, perfect for social media sharing.
               </p>
             </CardContent>
@@ -477,12 +477,12 @@ Make it feel genuine but entertaining!`;
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Copy className="w-5 h-5 text-pink-600" />
+                <Copy className="w-5 h-5 text-primary" />
                 Authentic Styles
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Realistic comment styles that match actual YouTube user behavior and internet culture.
               </p>
             </CardContent>
@@ -491,12 +491,12 @@ Make it feel genuine but entertaining!`;
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-lg">
-                <Share2 className="w-5 h-5 text-orange-600" />
+                <Share2 className="w-5 h-5 text-primary" />
                 Meme Material
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 Perfect for creating meme content, social media posts, and viral entertainment.
               </p>
             </CardContent>

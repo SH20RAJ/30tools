@@ -171,7 +171,7 @@ export default function RegexTesterTool() {
     let offset = 0;
 
     matches.forEach((match) => {
-      const startTag = '<mark class="bg-yellow-200 dark:bg-yellow-800">';
+      const startTag = '<mark class="bg-muted dark:bg-primary">';
       const endTag = '</mark>';
       const actualIndex = match.index + offset;
       
@@ -210,18 +210,18 @@ export default function RegexTesterTool() {
                 placeholder="Enter your regex pattern (e.g., \\d+|[a-zA-Z]+)"
                 value={pattern}
                 onChange={(e) => setPattern(e.target.value)}
-                className={`font-mono ${error ? 'border-red-500' : isValid && pattern ? 'border-green-500' : ''}`}
+                className={`font-mono ${error ? 'border-border' : isValid && pattern ? 'border-border' : ''}`}
               />
               <div className="absolute right-2 top-1/2 transform -translate-y-1/2">
                 {error ? (
-                  <AlertCircle className="h-4 w-4 text-red-500" />
+                  <AlertCircle className="h-4 w-4 text-destructive" />
                 ) : isValid && pattern ? (
-                  <CheckCircle className="h-4 w-4 text-green-500" />
+                  <CheckCircle className="h-4 w-4 text-primary" />
                 ) : null}
               </div>
             </div>
             {error && (
-              <div className="text-sm text-red-500 flex items-center gap-2">
+              <div className="text-sm text-destructive flex items-center gap-2">
                 <AlertCircle className="h-4 w-4" />
                 {error}
               </div>

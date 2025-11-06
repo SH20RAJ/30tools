@@ -86,7 +86,7 @@ export default function TikTokDownloader() {
                     </div>
 
                     {error && (
-                        <div className="flex items-center gap-2 p-3 bg-red-50 border border-red-200 rounded-lg text-red-700">
+                        <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
                             <AlertCircle className="h-4 w-4" />
                             <span className="text-sm">{error}</span>
                         </div>
@@ -94,7 +94,7 @@ export default function TikTokDownloader() {
 
                     {videoData && (
                         <div className="space-y-4">
-                            <div className="flex items-center gap-2 p-3 bg-green-50 border border-green-200 rounded-lg text-green-700">
+                            <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
                                 <CheckCircle className="h-4 w-4" />
                                 <span className="text-sm">TikTok video processed successfully!</span>
                             </div>
@@ -126,7 +126,7 @@ export default function TikTokDownloader() {
                                                     <span className="text-sm font-medium">{quality.quality}</span>
                                                     <span className="text-xs text-muted-foreground ml-2">({quality.size})</span>
                                                     {quality.type === 'video' && (
-                                                        <span className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded ml-2">
+                                                        <span className="text-xs bg-muted text-primary px-2 py-1 rounded ml-2">
                                                             No Watermark
                                                         </span>
                                                     )}

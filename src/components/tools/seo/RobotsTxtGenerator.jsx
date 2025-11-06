@@ -203,10 +203,10 @@ Sitemap: https://yoursite.com/sitemap.xml`;
     <div className="w-full max-w-6xl mx-auto">
       <div className="grid lg:grid-cols-2 gap-6">
         {/* Configuration Panel */}
-        <Card className="border-2 border-orange-500/20 shadow-lg">
-          <CardHeader className="bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-900/20">
+        <Card className="border-2 border-border/20 shadow-lg">
+          <CardHeader className="bg-background/20 dark:to-red-900/20">
             <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
-              <Robot className="w-6 h-6 text-orange-500" />
+              <Robot className="w-6 h-6 text-primary" />
               Robots.txt Configuration
             </CardTitle>
           </CardHeader>
@@ -383,7 +383,7 @@ Sitemap: https://yoursite.com/sitemap.xml`;
 
             <Button 
               onClick={generateRobotsTxt} 
-              className="w-full bg-orange-500 hover:bg-orange-600 text-white"
+              className="w-full bg-muted/500 hover:bg-primary text-white"
             >
               <Robot className="w-4 h-4 mr-2" />
               Generate Robots.txt
@@ -392,10 +392,10 @@ Sitemap: https://yoursite.com/sitemap.xml`;
         </Card>
 
         {/* Generated Output */}
-        <Card className="border-2 border-blue-500/20 shadow-lg">
-          <CardHeader className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-900/20">
+        <Card className="border-2 border-border/20 shadow-lg">
+          <CardHeader className="bg-background/20 dark:to-purple-900/20">
             <CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
-              <FileText className="w-6 h-6 text-blue-500" />
+              <FileText className="w-6 h-6 text-primary" />
               Generated Robots.txt
             </CardTitle>
           </CardHeader>
@@ -419,9 +419,9 @@ Sitemap: https://yoursite.com/sitemap.xml`;
                   </pre>
                 </div>
                 
-                <div className="bg-blue-50 dark:bg-blue-950/20 border border-blue-200 rounded-lg p-4">
-                  <h4 className="font-medium text-blue-800 dark:text-blue-200 mb-2">Implementation Instructions:</h4>
-                  <ol className="text-sm text-blue-700 dark:text-blue-300 space-y-1 list-decimal list-inside">
+                <div className="bg-muted/50 dark:bg-blue-950/20 border border-border rounded-lg p-4">
+                  <h4 className="font-medium text-foreground dark:text-blue-200 mb-2">Implementation Instructions:</h4>
+                  <ol className="text-sm text-primary dark:text-blue-300 space-y-1 list-decimal list-inside">
                     <li>Save the file as "robots.txt" (without quotes)</li>
                     <li>Upload it to your website's root directory</li>
                     <li>Verify it's accessible at yoursite.com/robots.txt</li>

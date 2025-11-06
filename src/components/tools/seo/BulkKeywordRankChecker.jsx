@@ -147,17 +147,17 @@ export default function BulkKeywordRankChecker() {
 
   const getRankBadge = (rank) => {
     if (!rank) return <Badge variant="secondary">Not Found</Badge>;
-    if (rank <= 3) return <Badge className="bg-green-500">#{rank}</Badge>;
-    if (rank <= 10) return <Badge className="bg-blue-500">#{rank}</Badge>;
-    if (rank <= 20) return <Badge className="bg-yellow-500">#{rank}</Badge>;
+    if (rank <= 3) return <Badge className="bg-muted/500">#{rank}</Badge>;
+    if (rank <= 10) return <Badge className="bg-muted/500">#{rank}</Badge>;
+    if (rank <= 20) return <Badge className="bg-muted/500">#{rank}</Badge>;
     return <Badge variant="secondary">#{rank}</Badge>;
   };
 
   const getTrendIcon = (trend) => {
     switch (trend) {
-      case 'up': return <TrendingUp className="h-4 w-4 text-green-500" />;
-      case 'down': return <TrendingDown className="h-4 w-4 text-red-500" />;
-      default: return <Minus className="h-4 w-4 text-gray-500" />;
+      case 'up': return <TrendingUp className="h-4 w-4 text-primary" />;
+      case 'down': return <TrendingDown className="h-4 w-4 text-destructive" />;
+      default: return <Minus className="h-4 w-4 text-muted-foreground" />;
     }
   };
 
@@ -172,11 +172,11 @@ export default function BulkKeywordRankChecker() {
     <div className="max-w-6xl mx-auto p-6 space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
-        <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-          <Search className="h-8 w-8 text-blue-600" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
+          <Search className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900">Free Bulk Keyword Rank Checker</h1>
-        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        <h1 className="text-4xl font-bold text-foreground">Free Bulk Keyword Rank Checker</h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Check Google rankings for multiple keywords at once. Track keyword positions for any domain across different locations and devices.
         </p>
       </div>
@@ -185,11 +185,11 @@ export default function BulkKeywordRankChecker() {
       <div className="grid md:grid-cols-3 gap-6">
         <Card>
           <CardHeader className="text-center pb-3">
-            <TrendingUp className="h-8 w-8 text-green-500 mx-auto mb-2" />
+            <TrendingUp className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Track Performance</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Monitor keyword rankings to measure SEO success and identify optimization opportunities.
             </p>
           </CardContent>
@@ -197,11 +197,11 @@ export default function BulkKeywordRankChecker() {
         
         <Card>
           <CardHeader className="text-center pb-3">
-            <MapPin className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+            <MapPin className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Local Rankings</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Check rankings in different countries and locations for targeted local SEO strategies.
             </p>
           </CardContent>
@@ -209,11 +209,11 @@ export default function BulkKeywordRankChecker() {
         
         <Card>
           <CardHeader className="text-center pb-3">
-            <Download className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+            <Download className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Export Data</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-muted-foreground">
               Export ranking data to CSV for analysis, reporting, and sharing with your team.
             </p>
           </CardContent>
@@ -294,7 +294,7 @@ export default function BulkKeywordRankChecker() {
               rows={6}
               className="font-mono text-sm"
             />
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-muted-foreground">
               {keywords.split('\n').filter(k => k.trim()).length} keywords entered (max 500)
             </p>
           </div>
@@ -350,26 +350,26 @@ export default function BulkKeywordRankChecker() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-blue-600">{stats.total}</div>
-              <div className="text-sm text-gray-600">Total Keywords</div>
+              <div className="text-2xl font-bold text-primary">{stats.total}</div>
+              <div className="text-sm text-muted-foreground">Total Keywords</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-green-600">{stats.ranking}</div>
-              <div className="text-sm text-gray-600">Found Rankings</div>
+              <div className="text-2xl font-bold text-primary">{stats.ranking}</div>
+              <div className="text-sm text-muted-foreground">Found Rankings</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-blue-600">{stats.topTen}</div>
-              <div className="text-sm text-gray-600">Top 10</div>
+              <div className="text-2xl font-bold text-primary">{stats.topTen}</div>
+              <div className="text-sm text-muted-foreground">Top 10</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-gold-600">{stats.topThree}</div>
-              <div className="text-sm text-gray-600">Top 3</div>
+              <div className="text-sm text-muted-foreground">Top 3</div>
             </CardContent>
           </Card>
         </div>
@@ -406,11 +406,11 @@ export default function BulkKeywordRankChecker() {
                       <td className="p-3">
                         {result.url ? (
                           <a href={result.url} target="_blank" rel="noopener noreferrer" 
-                             className="text-blue-600 hover:underline text-sm">
+                             className="text-primary hover:underline text-sm">
                             {result.url.substring(0, 50)}...
                           </a>
                         ) : (
-                          <span className="text-gray-400">-</span>
+                          <span className="text-muted-foreground">-</span>
                         )}
                       </td>
                       <td className="p-3">{result.searchVolume.toLocaleString()}</td>
@@ -442,7 +442,7 @@ export default function BulkKeywordRankChecker() {
           <div className="grid md:grid-cols-2 gap-6">
             <div>
               <h4 className="font-semibold mb-2">On-Page Optimization</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Optimize title tags with target keywords</li>
                 <li>• Write compelling meta descriptions</li>
                 <li>• Use header tags (H1, H2, H3) properly</li>
@@ -452,7 +452,7 @@ export default function BulkKeywordRankChecker() {
             </div>
             <div>
               <h4 className="font-semibold mb-2">Content Strategy</h4>
-              <ul className="text-sm text-gray-600 space-y-1">
+              <ul className="text-sm text-muted-foreground space-y-1">
                 <li>• Create high-quality, original content</li>
                 <li>• Target long-tail keywords</li>
                 <li>• Update content regularly</li>

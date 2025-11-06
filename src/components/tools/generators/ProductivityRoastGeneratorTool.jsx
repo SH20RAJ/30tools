@@ -141,16 +141,16 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 dark:from-gray-900 dark:via-orange-900 dark:to-red-900">
+    <div className="min-h-screen bg-muted/20 dark:from-gray-900 dark:via-orange-900 dark:to-red-900">
       <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-8">
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="p-3 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl">
+            <div className="p-3 bg-background">
               <Flame className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+              <h1 className="text-4xl font-bold bg-background">
                 Productivity Roast Generator
               </h1>
               <p className="text-muted-foreground mt-2">Get the honest feedback about your work habits you need to hear! 🔥</p>
@@ -158,20 +158,20 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
           </div>
           
           <div className="flex flex-wrap gap-2 justify-center">
-            <Badge variant="secondary" className="bg-orange-100 text-orange-800">🔥 Tough Love</Badge>
-            <Badge variant="secondary" className="bg-red-100 text-red-800">💪 Motivational</Badge>
-            <Badge variant="secondary" className="bg-pink-100 text-pink-800">🤖 AI-Powered</Badge>
-            <Badge variant="secondary" className="bg-purple-100 text-purple-800">📱 Shareable</Badge>
+            <Badge variant="secondary" className="bg-muted text-primary">🔥 Tough Love</Badge>
+            <Badge variant="secondary" className="bg-destructive/20 text-destructive">💪 Motivational</Badge>
+            <Badge variant="secondary" className="bg-muted text-primary">🤖 AI-Powered</Badge>
+            <Badge variant="secondary" className="bg-muted text-foreground">📱 Shareable</Badge>
           </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Input Section */}
           <div className="space-y-6">
-            <Card className="border-2 border-orange-200 shadow-lg">
+            <Card className="border-2 border-border shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-xl">
-                  <Coffee className="h-6 w-6 text-orange-600" />
+                  <Coffee className="h-6 w-6 text-primary" />
                   Roast Configuration
                 </CardTitle>
                 <CardDescription>
@@ -243,7 +243,7 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
                 </div>
 
                 {/* AI Toggle */}
-                <div className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/20 dark:to-blue-900/20 rounded-lg border-2 border-purple-200">
+                <div className="flex items-center justify-between p-4 bg-background/20 dark:to-blue-900/20 rounded-lg border-2 border-border">
                   <div className="flex items-center space-x-3">
                     <Switch
                       id="useAI"
@@ -262,7 +262,7 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
                 {/* Generate Button */}
                 <Button 
                   onClick={handleGenerate} 
-                  className="w-full h-12 text-lg bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 shadow-lg"
+                  className="w-full h-12 text-lg bg-background"
                   disabled={isGenerating || !workStyle}
                 >
                   {isGenerating ? (
@@ -283,10 +283,10 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
 
           {/* Output Section */}
           <div className="space-y-6">
-            <Card className="border-2 border-red-200 shadow-lg">
+            <Card className="border-2 border-destructive/50 shadow-lg">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2 text-xl">
-                  <Flame className="h-6 w-6 text-red-600" />
+                  <Flame className="h-6 w-6 text-destructive" />
                   Your Productivity Roast
                 </CardTitle>
                 <CardDescription>
@@ -296,7 +296,7 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
               <CardContent>
                 {roast ? (
                   <div className="space-y-6">
-                    <div className="p-6 bg-gradient-to-r from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl border-2 border-orange-200">
+                    <div className="p-6 bg-background/20 dark:to-red-900/20 rounded-xl border-2 border-border">
                       <div className="text-lg leading-relaxed mb-4">
                         {roast}
                       </div>
@@ -307,7 +307,7 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
                         <Badge variant="outline" className="bg-white">
                           {roastIntensities.find(i => i.id === roastIntensity)?.emoji} {roastIntensities.find(i => i.id === roastIntensity)?.name}
                         </Badge>
-                        {useAI && <Badge variant="outline" className="bg-purple-50 text-purple-700">🤖 AI-Enhanced</Badge>}
+                        {useAI && <Badge variant="outline" className="bg-muted/50 text-primary">🤖 AI-Enhanced</Badge>}
                       </div>
                     </div>
 
@@ -383,7 +383,7 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
           <Card className="text-center">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-2 text-lg">
-                <Flame className="w-6 h-6 text-orange-600" />
+                <Flame className="w-6 h-6 text-primary" />
                 Tough Love Approach
               </CardTitle>
             </CardHeader>
@@ -397,7 +397,7 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
           <Card className="text-center">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-2 text-lg">
-                <Sparkles className="w-6 h-6 text-purple-600" />
+                <Sparkles className="w-6 h-6 text-primary" />
                 AI-Powered Insights
               </CardTitle>
             </CardHeader>
@@ -411,7 +411,7 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
           <Card className="text-center">
             <CardHeader>
               <CardTitle className="flex items-center justify-center gap-2 text-lg">
-                <Share2 className="w-6 h-6 text-blue-600" />
+                <Share2 className="w-6 h-6 text-primary" />
                 Shareable Fun
               </CardTitle>
             </CardHeader>

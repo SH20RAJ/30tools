@@ -102,7 +102,7 @@ export default function AboutPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <HeartIcon className="h-5 w-5 text-red-500" />
+                <HeartIcon className="h-5 w-5 text-destructive" />
                 Our Mission
               </CardTitle>
             </CardHeader>
@@ -232,7 +232,7 @@ export default function AboutPage() {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <StarIcon className="h-4 w-4 text-yellow-500" />
+                  <StarIcon className="h-4 w-4 text-primary" />
                   Quality & Reliability
                 </h3>
                 <p className="text-muted-foreground">
@@ -245,7 +245,7 @@ export default function AboutPage() {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <UserIcon className="h-4 w-4 text-blue-500" />
+                  <UserIcon className="h-4 w-4 text-primary" />
                   User-Centric Development
                 </h3>
                 <p className="text-muted-foreground">
@@ -258,7 +258,7 @@ export default function AboutPage() {
             <Card>
               <CardContent className="pt-6">
                 <h3 className="font-semibold mb-2 flex items-center gap-2">
-                  <span className="text-green-500">🌱</span>
+                  <span className="text-primary">🌱</span>
                   Sustainable Growth
                 </h3>
                 <p className="text-muted-foreground">

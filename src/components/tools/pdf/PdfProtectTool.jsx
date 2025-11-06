@@ -66,11 +66,11 @@ export default function PdfProtectTool() {
   };
 
   const getPasswordStrength = (password) => {
-    if (password.length < 4) return { strength: 'Very Weak', color: 'text-red-500', score: 1 };
-    if (password.length < 6) return { strength: 'Weak', color: 'text-orange-500', score: 2 };
-    if (password.length < 8) return { strength: 'Fair', color: 'text-yellow-500', score: 3 };
-    if (password.length < 12) return { strength: 'Good', color: 'text-blue-500', score: 4 };
-    return { strength: 'Strong', color: 'text-green-500', score: 5 };
+    if (password.length < 4) return { strength: 'Very Weak', color: 'text-destructive', score: 1 };
+    if (password.length < 6) return { strength: 'Weak', color: 'text-primary', score: 2 };
+    if (password.length < 8) return { strength: 'Fair', color: 'text-primary', score: 3 };
+    if (password.length < 12) return { strength: 'Good', color: 'text-primary', score: 4 };
+    return { strength: 'Strong', color: 'text-primary', score: 5 };
   };
 
   const handleFileSelect = (event) => {
@@ -277,9 +277,9 @@ export default function PdfProtectTool() {
                     <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
                       <div 
                         className={`h-1.5 rounded-full transition-all ${
-                          passwordStrength.score <= 2 ? 'bg-red-500' :
-                          passwordStrength.score <= 3 ? 'bg-yellow-500' :
-                          passwordStrength.score <= 4 ? 'bg-blue-500' : 'bg-green-500'
+                          passwordStrength.score <= 2 ? 'bg-destructive/100' :
+                          passwordStrength.score <= 3 ? 'bg-muted/500' :
+                          passwordStrength.score <= 4 ? 'bg-muted/500' : 'bg-muted/500'
                         }`}
                         style={{ width: `${(passwordStrength.score / 5) * 100}%` }}
                       />
@@ -299,7 +299,7 @@ export default function PdfProtectTool() {
                   className="mt-2"
                 />
                 {confirmPassword && password !== confirmPassword && (
-                  <p className="text-xs text-red-500 mt-1">Passwords do not match</p>
+                  <p className="text-xs text-destructive mt-1">Passwords do not match</p>
                 )}
               </div>
             </div>
@@ -460,7 +460,7 @@ export default function PdfProtectTool() {
         <Card className="mb-6">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-green-500" />
+              <CheckCircle className="h-5 w-5 text-primary" />
               PDF Protected Successfully
             </CardTitle>
             <CardDescription>
@@ -470,7 +470,7 @@ export default function PdfProtectTool() {
           <CardContent>
             <div className="flex items-center justify-between p-4 bg-muted rounded-lg mb-4">
               <div className="flex items-center gap-3">
-                <Lock className="h-6 w-6 text-green-500" />
+                <Lock className="h-6 w-6 text-primary" />
                 <div>
                   <p className="font-medium">{protectedFile.name}</p>
                   <p className="text-sm text-muted-foreground">
