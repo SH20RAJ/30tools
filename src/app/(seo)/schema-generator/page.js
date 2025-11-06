@@ -2,7 +2,7 @@ import SchemaGenerator from '@/components/tools/seo/SchemaGenerator';
 
 export const metadata = {
   title: "Schema Markup Generator - Free JSON-LD Schema Creator | 30tools",
-  description: "Generate structured data markup for rich snippets. Create JSON-LD schema for local business, products, articles, reviews, and more. Free schema generator tool for better SEO.",
+  description: "Generate Process instantly with our free schema generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: [
     // Primary keywords
     "schema markup generator",

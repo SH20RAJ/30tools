@@ -2,7 +2,7 @@ import WordCounterTool from '@/components/tools/text/WordCounterTool';
 
 export const metadata = {
   title: "Word Counter - Count Words & Characters Online Free | 30tools",
-  description: "Free online word counter tool with instant results. Count words, characters (with/without spaces), sentences, and paragraphs. No limits, no registration. Perfect for essays, SEO, and social media.",
+  description: "Professional word counter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: [
     // Primary high-volume keywords
     "word counter",

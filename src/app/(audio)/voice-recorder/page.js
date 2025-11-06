@@ -2,7 +2,7 @@ import VoiceRecorder from "@/components/tools/audio/VoiceRecorderTool";
 
 export const metadata = {
   title: "Voice Recorder - Professional Online Audio Recording | 30tools",
-  description: "Record high-quality audio directly in your browser. Professional voice recorder with real-time waveform, audio formats, noise reduction, and instant download. No software installation required.",
+  description: "Professional voice recorder tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     // Primary keywords
     "voice recorder",

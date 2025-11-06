@@ -12,8 +12,8 @@ import { GeneratorToolFeatures, GeneratorToolExamples } from '@/components/seo/G
 import { getGeneratorToolFAQs } from '@/constants/seo/generator-faqs';
 
 export const metadata = {
-  title: "Free AI Startup Name Generator - Creative Business Names | 30tools",
-  description: "Generate trendy startup names with AI. Perfect for indie hackers, entrepreneurs & YC applicants. Creative business names with domain suggestions. Tech, SaaS & startup focused.",
+  title: "Startup Name Generator - Free Online Generator | Create Instantly",
+  description: "Free startup name generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: "startup name generator, business name generator, company name generator, ai name generator, startup names, business names, company names, domain name generator, brand name generator, tech startup names, ai startup name generator free, tech startup name ideas generator, creative business name generator, startup company name generator, indie hacker name generator, saas startup name generator, unicorn startup name ideas, business name generator with domain",
   openGraph: {
     title: "Free AI Startup Name Generator - Creative Business Names",

@@ -1,8 +1,8 @@
 import PinterestDownloader from '@/components/tools/downloaders/PinterestDownloader';
 
 export const metadata = {
-    title: "Pinterest Video Downloader - Download Pinterest Videos & GIFs Free | 30tools",
-    description: "Download Pinterest videos and GIFs in HD quality for free. Save Pinterest video pins to your device without software installation. Fast, secure, unlimited Pinterest downloads.",
+    title: "Pinterest Video Downloader - Free Online Tool | 30tools",
+    description: "Free pinterest video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
     keywords: [
         // Primary Pinterest keywords
         "pinterest video downloader",

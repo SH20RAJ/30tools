@@ -2,7 +2,7 @@ import TitleRewriteChecker from '@/components/tools/seo/TitleRewriteChecker';
 
 export const metadata = {
   title: "Title Rewrite Checker - See How Google Changes Your Titles",
-  description: "Check if Google rewrites your page titles in search results. Compare your original titles with what Google displays in SERPs. Free title rewrite detector with optimization suggestions.",
+  description: "Professional title rewrite checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
   keywords: "title rewrite checker, google title rewrite, serp title checker, google title change, title tag rewrite, google title modification, serp snippet preview, title optimization tool, google title rewrite checker free",
   openGraph: {
     title: "Title Rewrite Checker - See How Google Changes Your Titles",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Title Rewrite Checker",
+  "description": "Professional title rewrite checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+  "url": "https://30tools.com/title-rewrite-checker",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

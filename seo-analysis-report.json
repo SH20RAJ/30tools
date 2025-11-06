@@ -1,0 +1,2123 @@
+{
+  "summary": {
+    "totalPages": 204,
+    "pagesWithIssues": 125,
+    "totalIssues": 139,
+    "successRate": "38.7"
+  },
+  "issueBreakdown": {
+    "Missing title": 2,
+    "Title length": 0,
+    "Missing description": 2,
+    "Description length": 20,
+    "Missing keywords": 0,
+    "Keywords count": 115,
+    "Missing OpenGraph": 0,
+    "Missing Twitter Card": 0,
+    "Missing canonical": 0,
+    "Missing structured data": 0
+  },
+  "priorityPages": [],
+  "allPages": [
+    {
+      "path": "src/app/(audio)/audio-compressor/page.js",
+      "title": "Free Audio Compressor - Reduce MP3, WAV File Size",
+      "titleLength": 49,
+      "description": "Compress audio files online for free. Reduce MP3, WAV, FLAC, OGG file sizes by up to 90% while maintaining quality. Perfect for email, storage, and web use.",
+      "descriptionLength": 156,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(audio)/audio-converter/page.js",
+      "title": "Free Audio Converter Online - MP3, WAV, FLAC, AAC | 30tools",
+      "titleLength": 59,
+      "description": "Convert audio formats online for free. Transform MP3, WAV, FLAC, AAC, OGG, M4A files with quality control. Fast batch conversion, no watermarks.",
+      "descriptionLength": 144,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(audio)/audio-editor/page.js",
+      "title": "Audio Editor - Edit Audio Files Online | 30tools",
+      "titleLength": 48,
+      "description": "Professional audio editor with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 174,
+      "issues": [
+        "⚠️ Description length 174 chars (optimal: 120-160)",
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(audio)/audio-trimmer/page.js",
+      "title": "Audio Trimmer - Trim and Cut Audio | 30tools",
+      "titleLength": 44,
+      "description": "Professional audio trimmer with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 120,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(audio)/text-to-speech/page.js",
+      "title": "Text to Speech Converter - Free Online TTS Generator",
+      "titleLength": 52,
+      "description": "Professional text to speech to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 147,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(audio)/voice-recorder/page.js",
+      "title": "Voice Recorder - Professional Online Audio Recording | 30tools",
+      "titleLength": 62,
+      "description": "Professional voice recorder tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 126,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/age-calculator/page.js",
+      "title": "Age Calculator - Free Online Calculator | Instant Results",
+      "titleLength": 57,
+      "description": "Free age calculator to calculate exact age in years, months, and days. Find age difference between dates, calculate birthday countdown, and more instantly.",
+      "descriptionLength": 155,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/basic-calculator/page.js",
+      "title": "Basic Calculator - Free Online Calculator | 30tools",
+      "titleLength": 51,
+      "description": "Free basic calculator for simple arithmetic operations. Add, subtract, multiply, divide with instant results. Large buttons, easy to use on desktop and mobile.",
+      "descriptionLength": 159,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/bmi-calculator/page.js",
+      "title": "BMI Calculator - Calculate Body Mass Index Online Free | 30tools",
+      "titleLength": 64,
+      "description": "Free bmi calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+      "descriptionLength": 156,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/calculators/page.js",
+      "title": "Free Online Calculators - Math, Finance, Health & More | 30tools",
+      "titleLength": 64,
+      "description": "Free calculators with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+      "descriptionLength": 153,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/calorie-calculator/page.js",
+      "title": "Calorie Calculator - Free Online Calculator | Instant Results",
+      "titleLength": 61,
+      "description": "Free calorie calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+      "descriptionLength": 160,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/loan-calculator/page.js",
+      "title": "Loan Calculator - Free Online Calculator | Instant Results",
+      "titleLength": 58,
+      "description": "Free loan calculator for personal, auto, and business loans. Calculate monthly payments, total interest, and amortization schedule.",
+      "descriptionLength": 131,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/mortgage-calculator/page.js",
+      "title": "Mortgage Calculator - Free Online Calculator | Instant Results",
+      "titleLength": 62,
+      "description": "Free mortgage calculator for monthly payments, total interest, and amortization schedule. Include taxes, insurance, and PMI.",
+      "descriptionLength": 124,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/percentage-calculator/page.js",
+      "title": "Percentage Calculator - Free Online Calculator | Instant Results",
+      "titleLength": 64,
+      "description": "Free percentage calculator to find percentages, increases, decreases, and changes. Calculate discounts and percentages instantly.",
+      "descriptionLength": 129,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(calculators)/tip-calculator/page.js",
+      "title": "Tip Calculator - Free Online Calculator | Instant Results",
+      "titleLength": 57,
+      "description": "Free tip calculator to calculate tips for restaurants, delivery, and services. Split bills among multiple people and calculate individual amounts instantly.",
+      "descriptionLength": 156,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(code)/code-formatter/page.js",
+      "title": "Code Formatter - Prettier JavaScript, CSS, HTML, TypeScript",
+      "titleLength": 59,
+      "description": "Professional code formatter with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 121,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(code)/code-minifier/page.js",
+      "title": "Free Code Minifier - Minify JavaScript, CSS, HTML",
+      "titleLength": 49,
+      "description": "Professional code minifier with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 120,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(code)/csv-to-json/page.js",
+      "title": "Free CSV to JSON Converter - Convert CSV Data to JSON",
+      "titleLength": 53,
+      "description": "Professional csv to json with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 173,
+      "issues": [
+        "⚠️ Description length 173 chars (optimal: 120-160)",
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(code)/markdown-to-html/page.js",
+      "title": "Markdown to HTML Converter - Convert Markdown Online",
+      "titleLength": 52,
+      "description": "Professional markdown to html with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 123,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(code)/regex-tester/page.js",
+      "title": "Free Regex Tester - Test Regular Expressions Online",
+      "titleLength": 51,
+      "description": "Professional regex tester with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 174,
+      "issues": [
+        "⚠️ Description length 174 chars (optimal: 120-160)",
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(code)/sql-formatter/page.js",
+      "title": "SQL Formatter - Format and Beautify SQL Queries | 30tools",
+      "titleLength": 57,
+      "description": "Format and beautify SQL queries with proper indentation and syntax highlighting. Support for MySQL, PostgreSQL, and more.",
+      "descriptionLength": 121,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(code)/xml-formatter/page.js",
+      "title": "XML Formatter - Format and Validate XML | 30tools",
+      "titleLength": 49,
+      "description": "Professional xml formatter with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 120,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(converter)/document-converter/page.js",
+      "title": "Document Converter - Convert DOC, DOCX, PDF, TXT | 30tools",
+      "titleLength": 58,
+      "description": "Convert Process instantly with our free document converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 149,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(converter)/epub-converter/page.js",
+      "title": "EPUB Converter - Convert to EPUB Format | 30tools",
+      "titleLength": 49,
+      "description": "Convert Process instantly with our free epub converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 145,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(converter)/file-converter/page.js",
+      "title": "Universal File Converter - Convert Any File Format | 30tools",
+      "titleLength": 60,
+      "description": "Convert Process instantly with our free file converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 145,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(converter)/html-to-pdf/page.js",
+      "title": "HTML to PDF Converter - Convert Web Pages to PDF | 30tools",
+      "titleLength": 58,
+      "description": "Convert Process instantly with our free html to pdf. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 142,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(converter)/mp4-to-mp3-converter/page.js",
+      "title": "Mp4 To Mp3 Converter - Free Online Converter | Instant Conversion",
+      "titleLength": 65,
+      "description": "Convert Process instantly with our free mp4 to mp3 converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 151,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(converter)/video-to-mp3-converter/page.js",
+      "title": "Video To Mp3 Converter - Free Online Tool | 30tools",
+      "titleLength": 51,
+      "description": "Free video to mp3 converter tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 129,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(design)/color-converter/page.js",
+      "title": "Color Converter - HEX, RGB, HSL Converter | 30tools",
+      "titleLength": 51,
+      "description": "Convert Process instantly with our free color converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 146,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(design)/color-palette-generator/page.js",
+      "title": "Color Palette Generator - Create Beautiful Color Schemes",
+      "titleLength": 56,
+      "description": "Free color palette generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 130,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(design)/color-picker/page.js",
+      "title": "Color Picker - Pick Colors & Get All Formats | 30tools",
+      "titleLength": 54,
+      "description": "Professional color picker with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 174,
+      "issues": [
+        "⚠️ Description length 174 chars (optimal: 120-160)",
+        "⚠️ Only 6 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(design)/css-box-shadow/page.js",
+      "title": "CSS Box Shadow Generator - Create CSS Shadows | 30tools",
+      "titleLength": 55,
+      "description": "Professional css box shadow with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 121,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(design)/css-gradient-generator/page.js",
+      "title": "Css Gradient Generator - Free Online Tool | Professional Results",
+      "titleLength": 64,
+      "description": "Free css gradient generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 129,
+      "issues": [
+        "⚠️ Only 6 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(design)/favicon-generator/page.js",
+      "title": "Free Favicon Generator - Create Favicon from Image",
+      "titleLength": 50,
+      "description": "Generate Process instantly with our free favicon generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 159,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(design)/logo-generator/page.js",
+      "title": "Logo Generator - Free Online Generator | Create Instantly",
+      "titleLength": 57,
+      "description": "Generate Process instantly with our free logo generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 156,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(design)/logo-maker/page.js",
+      "title": "Logo Maker - Create Simple Logos Online | 30tools",
+      "titleLength": 49,
+      "description": "Professional logo maker with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 172,
+      "issues": [
+        "⚠️ Description length 172 chars (optimal: 120-160)",
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(design)/whiteboard/page.js",
+      "title": "Free Online Whiteboard - Draw, Sketch & Collaborate",
+      "titleLength": 51,
+      "description": "Professional whiteboard with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 172,
+      "issues": [
+        "⚠️ Description length 172 chars (optimal: 120-160)",
+        "⚠️ Only 6 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/api-tester/page.js",
+      "title": "API Tester - Test REST APIs and HTTP Requests | 30tools",
+      "titleLength": 55,
+      "description": "Professional api tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+      "descriptionLength": 131,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/base64-tool/page.js",
+      "title": "Base64 Tool - Free Developer Tool | Professional Coding",
+      "titleLength": 55,
+      "description": "Professional base64 tool for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+      "descriptionLength": 132,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/complexity-analyzer/page.js",
+      "title": "Time & Space Complexity Analyzer - AI Code Analysis",
+      "titleLength": 51,
+      "description": "Professional complexity analyzer for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+      "descriptionLength": 140,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(developer)/email-breach-checker/page.js",
+      "title": "Email Breach Checker - Check if Your Email is Compromised",
+      "titleLength": 57,
+      "description": "Free email breach checker to see if your email has been compromised in data breaches. Check against billions of breached accounts using HaveIBeenPwned database.",
+      "descriptionLength": 160,
+      "issues": [
+        "⚠️ Only 6 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/hash-generator/page.js",
+      "title": "Hash Generator - MD5, SHA-256, SHA-512 Hash Calculator",
+      "titleLength": 54,
+      "description": "Generate Process instantly with our free hash generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 156,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/hash-generator2/page.js",
+      "title": "Hash Generator - MD5, SHA-1, SHA-256, SHA-512, SHA-3",
+      "titleLength": 52,
+      "description": "Generate cryptographic hashes with multiple algorithms. MD5, SHA-1, SHA-256, SHA-512, and SHA-3 hash generator. File and text support with instant results.",
+      "descriptionLength": 155,
+      "issues": [
+        "⚠️ Only 6 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/json-formatter/page.js",
+      "title": "Json Formatter - Free Developer Tool | Professional Coding",
+      "titleLength": 58,
+      "description": "Professional json formatter for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+      "descriptionLength": 135,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/jwt-decoder/page.js",
+      "title": "JWT Decoder - Decode JSON Web Tokens | 30tools",
+      "titleLength": 46,
+      "description": "Professional jwt decoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+      "descriptionLength": 132,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/mcp-server/page.js",
+      "title": "MCP Server Generator - Model Context Protocol for Claude",
+      "titleLength": 56,
+      "description": "Professional mcp server for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+      "descriptionLength": 131,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/password-breach-checker/page.js",
+      "title": "Password Breach Checker - Free Online Tool | Professional Results",
+      "titleLength": 65,
+      "description": "Free password breach checker to see if your email or password has been compromised in data breaches. Check against billions of breached accounts instantly.",
+      "descriptionLength": 155,
+      "issues": [
+        "⚠️ Only 6 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/regex-tester2/page.js",
+      "title": "Regex Tester2 - Free Developer Tool | Professional Coding",
+      "titleLength": 57,
+      "description": "Professional regex tester2 for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+      "descriptionLength": 134,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(developer)/temp-email-checker/page.js",
+      "title": "Temporary Email Checker - Detect Disposable Email Addresses",
+      "titleLength": 59,
+      "description": "Free temporary email checker to detect disposable and temporary email addresses. Validate emails against comprehensive blocklist and allowlist databases.",
+      "descriptionLength": 153,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(developer)/url-encoder/page.js",
+      "title": "URL Encoder/Decoder - Encode and Decode URLs | 30tools",
+      "titleLength": 54,
+      "description": "Professional url encoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+      "descriptionLength": 132,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(downloaders)/all-downloaders/page.js",
+      "title": "All Downloaders - Free Online Tool | Professional Results",
+      "titleLength": 57,
+      "description": "Professional all downloaders tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 127,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/facebook-story-downloader/page.js",
+      "title": "Facebook Story Downloader - Free Online Tool | 30tools",
+      "titleLength": 54,
+      "description": "Professional facebook story downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 137,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/facebook-video-downloader/page.js",
+      "title": "Facebook Video Downloader - Free Online Tool | 30tools",
+      "titleLength": 54,
+      "description": "Free facebook video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 132,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/instagram-dp-downloader/page.js",
+      "title": "Instagram Dp Downloader - Free Online Tool | Professional Results",
+      "titleLength": 65,
+      "description": "Professional instagram dp downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 135,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/instagram-reel-downloader/page.js",
+      "title": "Instagram Reel Downloader - Free Online Tool | 30tools",
+      "titleLength": 54,
+      "description": "Professional instagram reel downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 137,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/instagram-story-downloader/page.js",
+      "title": "Instagram Story Downloader - Free Online Tool | 30tools",
+      "titleLength": 55,
+      "description": "Professional instagram story downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 138,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/instagram-video-downloader/page.js",
+      "title": "Instagram Video Downloader - Free Online Tool | 30tools",
+      "titleLength": 55,
+      "description": "Free instagram video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 133,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/pinterest-video-downloader/page.js",
+      "title": "Pinterest Video Downloader - Free Online Tool | 30tools",
+      "titleLength": 55,
+      "description": "Free pinterest video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 133,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/snapchat-video-downloader/page.js",
+      "title": "Snapchat Video Downloader - Free Online Tool | 30tools",
+      "titleLength": 54,
+      "description": "Free snapchat video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 132,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/tiktok-audio-downloader/page.js",
+      "title": "Tiktok Audio Downloader - Free Online Tool | Professional Results",
+      "titleLength": 65,
+      "description": "Professional tiktok audio downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 135,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/tiktok-mp3-converter/page.js",
+      "title": "Tiktok Mp3 Converter - Free Online Converter | Instant Conversion",
+      "titleLength": 65,
+      "description": "Convert Process instantly with our free tiktok mp3 converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 151,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/tiktok-video-downloader/page.js",
+      "title": "Tiktok Video Downloader - Free Online Tool | 30tools",
+      "titleLength": 52,
+      "description": "Free tiktok video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 130,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(downloaders)/twitter-video-downloader/page.js",
+      "title": "Twitter Video Downloader - Free Online Tool | 30tools",
+      "titleLength": 53,
+      "description": "Free twitter video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 131,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(embed)/video-player-embed/page.js",
+      "title": "Video Player Embed - Free Online Tool | Professional Results",
+      "titleLength": 60,
+      "description": "Free video player embed tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 125,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(generators)/aesthetic-bio-generator/page.js",
+      "title": "Aesthetic Bio Generator - Free Online Tool | Professional Results",
+      "titleLength": 65,
+      "description": "Free aesthetic bio generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 130,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/ai-image-generator/page.js",
+      "title": "AI Image Generator - Free Text to Image Creator | 30tools",
+      "titleLength": 57,
+      "description": "Generate Process instantly with our free ai image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 160,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(generators)/ai-poetry-generator/page.js",
+      "title": "AI Poetry Generator - Free Poem Maker | 30tools",
+      "titleLength": 47,
+      "description": "Free ai poetry generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 126,
+      "issues": [
+        "⚠️ Only 8 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/ai-voice-generator/page.js",
+      "title": "AI Voice Generator - Free Text to Speech Tool | 30tools",
+      "titleLength": 55,
+      "description": "Generate Process instantly with our free ai voice generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 160,
+      "issues": [
+        "⚠️ Only 8 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/chatgpt-persona-generator/page.js",
+      "title": "ChatGPT Persona Generator - Create AI Personalities Prompts",
+      "titleLength": 59,
+      "description": "Generate quirky ChatGPT personas and custom AI prompts. Create unique AI personalities for creative conversations, roleplay, and enhanced AI interactions.",
+      "descriptionLength": 154,
+      "issues": [
+        "⚠️ Only 8 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/emoji-copy/page.js",
+      "title": "Emoji Copy - Copy & Paste Emojis Easily | 30tools",
+      "titleLength": 49,
+      "description": "Copy and paste emojis easily with our comprehensive emoji library. Find the perfect emoji for your messages, social media posts, and content.",
+      "descriptionLength": 141,
+      "issues": [
+        "⚠️ Only 8 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/excuse-generator/page.js",
+      "title": "Excuse Generator - Creative Funny Excuses for Any Situation",
+      "titleLength": 59,
+      "description": "Generate creative and funny excuses for work, school, social events, and family situations. AI-powered excuse maker with believability levels.",
+      "descriptionLength": 142,
+      "issues": [
+        "⚠️ Only 8 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/fake-chat-generator/page.js",
+      "title": "Fake Chat Generator - Free Online Generator | Create Instantly",
+      "titleLength": 62,
+      "description": "Create realistic fake chat screenshots for WhatsApp, Instagram DM, iMessage, and Discord. Perfect for memes, content creation, and social media.",
+      "descriptionLength": 144,
+      "issues": [
+        "⚠️ Only 8 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/productivity-roast-generator/page.js",
+      "title": "Productivity Roast Generator - Get Roasted for Your Habits",
+      "titleLength": 58,
+      "description": "Get hilariously roasted for your productivity habits with AI. Fun self-deprecating humor about work habits, procrastination, and daily routines.",
+      "descriptionLength": 144,
+      "issues": [
+        "⚠️ Only 8 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/startup-name-generator/page.js",
+      "title": "Startup Name Generator - Free Online Generator | Create Instantly",
+      "titleLength": 65,
+      "description": "Free startup name generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 129,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(generators)/tech-bro-quote-generator/page.js",
+      "title": "Tech Bro Quote Generator - Free Online Tool | 30tools",
+      "titleLength": 53,
+      "description": "Free tech bro quote generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 131,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(generators)/youtube-comment-generator/page.js",
+      "title": "YouTube Comment Generator - Create Viral Comments | 30tools",
+      "titleLength": 59,
+      "description": "Generate dramatic, funny, and trending YouTube comments with AI. Perfect for content creators, memes, and social media engagement.",
+      "descriptionLength": 130,
+      "issues": [
+        "⚠️ Only 8 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/background-remover/page.js",
+      "title": "Background Remover - Remove Image Backgrounds Instantly",
+      "titleLength": 55,
+      "description": "Professional background remover for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
+      "descriptionLength": 139,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/base64-image/page.js",
+      "title": "Base64 Image Converter - Image to Base64 Base64 to Image",
+      "titleLength": 56,
+      "description": "Professional base64 image for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
+      "descriptionLength": 133,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/exif-reader/page.js",
+      "title": "EXIF Reader - Extract Image Metadata Information | 30tools",
+      "titleLength": 58,
+      "description": "Read EXIF data from photos online. Extract camera settings, GPS location, timestamp, and other metadata from JPEG, TIFF, and RAW image files.",
+      "descriptionLength": 141,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(image)/free-image-compressor/page.js",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "issues": [
+        "❌ Missing title",
+        "❌ Missing description",
+        "⚠️ Only 0 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/image-compressor/page.js",
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "issues": [
+        "❌ Missing title",
+        "❌ Missing description",
+        "⚠️ Only 0 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/image-converter/page.js",
+      "title": "Image Converter - Convert JPG, PNG, WEBP, GIF, HEIC",
+      "titleLength": 51,
+      "description": "Convert Process instantly with our free image converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 146,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/image-cropper/page.js",
+      "title": "Image Cropper - Crop Images, Photos Pictures | Photo Cropper",
+      "titleLength": 60,
+      "description": "Professional image cropper for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
+      "descriptionLength": 134,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/image-editor/page.js",
+      "title": "Image Editor - Edit Images Online | 30tools",
+      "titleLength": 43,
+      "description": "Edit images online with filters, effects, and basic editing tools. Adjust brightness, contrast, saturation, and apply various filters to enhance your photos.",
+      "descriptionLength": 157,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/image-resizer/page.js",
+      "title": "Free Image Resizer Online - Resize Photos & Images | 30tools",
+      "titleLength": 60,
+      "description": "Resize images online for free. Change dimensions, maintain aspect ratio, batch resize. Perfect for social media, web, and print.",
+      "descriptionLength": 128,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(image)/photo-enhancer/page.js",
+      "title": "Photo Enhancer - AI Image Enhancement | 30tools",
+      "titleLength": 47,
+      "description": "Enhance photo quality with AI-powered image enhancement. Improve sharpness, reduce noise, and enhance colors automatically.",
+      "descriptionLength": 123,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(landing)/more-tools/page.js",
+      "title": "More Developer Utilitys by 30Tools - Online Tools Collection",
+      "titleLength": 60,
+      "description": "Professional more tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 172,
+      "issues": [
+        "⚠️ Description length 172 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(landing)/our-tools/page.js",
+      "title": "Our Developer & Utility Tools Collection | 30tools Network",
+      "titleLength": 58,
+      "description": "Professional our tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 171,
+      "issues": [
+        "⚠️ Description length 171 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(landing)/page.js",
+      "title": "(landing) - Free Online Tool | Professional Results",
+      "titleLength": 51,
+      "description": "Professional (landing) with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 171,
+      "issues": [
+        "⚠️ Description length 171 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(legal)/about/page.js",
+      "title": "About - Free Online Tool | Professional Results",
+      "titleLength": 47,
+      "description": "Learn about 30tools.com - the privacy-first platform for free online tools. Discover our mission, values, and commitment to user privacy.",
+      "descriptionLength": 137,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(legal)/api-docs/page.js",
+      "title": "API Documentation - 30tools.com | Developer Resources",
+      "titleLength": 53,
+      "description": "Professional api docs with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 170,
+      "issues": [
+        "⚠️ Description length 170 chars (optimal: 120-160)",
+        "⚠️ Only 1 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(legal)/contact/page.js",
+      "title": "Contact - Free Online Tool | Professional Results",
+      "titleLength": 49,
+      "description": "Professional contact with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 169,
+      "issues": [
+        "⚠️ Description length 169 chars (optimal: 120-160)",
+        "⚠️ Only 1 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(legal)/help/page.js",
+      "title": "Help - Free Online Tool | Professional Results",
+      "titleLength": 46,
+      "description": "Professional help with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 166,
+      "issues": [
+        "⚠️ Description length 166 chars (optimal: 120-160)",
+        "⚠️ Only 1 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(legal)/privacy/page.js",
+      "title": "Privacy - Free Online Tool | Professional Results",
+      "titleLength": 49,
+      "description": "Learn how 30tools.com protects your privacy. We process all files locally in your browser and never store your data on our servers.",
+      "descriptionLength": 131,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(legal)/terms/page.js",
+      "title": "Terms - Free Online Tool | Professional Results",
+      "titleLength": 47,
+      "description": "Terms of Service for using 30tools.com free online tools. Learn about our usage policies, limitations, and user responsibilities.",
+      "descriptionLength": 129,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(pdf)/jpg-to-pdf/page.js",
+      "title": "JPG to PDF Converter - Convert Images to PDF Online",
+      "titleLength": 51,
+      "description": "Professional jpg to pdf to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 129,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-add-page-numbers/page.js",
+      "title": "PDF Add Page Numbers Tool - Number PDF Pages Online",
+      "titleLength": 51,
+      "description": "Professional pdf add page numbers to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 139,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-compressor/page.js",
+      "title": "PDF Compressor - Reduce PDF File Size Online | 30tools",
+      "titleLength": 54,
+      "description": "Professional pdf compressor to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 133,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-editor/page.js",
+      "title": "PDF Editor - Edit PDF Text and Content | 30tools",
+      "titleLength": 48,
+      "description": "Professional pdf editor to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 129,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-merger/page.js",
+      "title": "PDF Merger - Merge PDF Files & Combine PDF Documents",
+      "titleLength": 52,
+      "description": "Professional pdf merger to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 129,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-protect/page.js",
+      "title": "PDF Password Protector - Add Password Protection to PDF",
+      "titleLength": 55,
+      "description": "Professional pdf protect to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 130,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-rotate/page.js",
+      "title": "Free PDF Rotate Tool - Rotate PDF Pages Online | 30tools",
+      "titleLength": 56,
+      "description": "Professional pdf rotate to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 129,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-splitter/page.js",
+      "title": "Free PDF Splitter - Split PDF into Separate Files",
+      "titleLength": 49,
+      "description": "Professional pdf splitter to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 131,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-to-word/page.js",
+      "title": "PDF to Word Converter - Convert PDF to DOC | 30tools",
+      "titleLength": 52,
+      "description": "Professional pdf to word to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 130,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/pdf-unlocker/page.js",
+      "title": "PDF Unlocker - Best PDF Password Remover Tool Online",
+      "titleLength": 52,
+      "description": "Professional pdf unlocker to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 131,
+      "issues": [
+        "⚠️ Only 5 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/png-to-pdf/page.js",
+      "title": "Free PNG to PDF Converter - Convert PNG Images to PDF",
+      "titleLength": 53,
+      "description": "Professional png to pdf to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 129,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(pdf)/word-to-pdf/page.js",
+      "title": "Word to PDF Converter - Convert DOC to PDF | 30tools",
+      "titleLength": 52,
+      "description": "Professional word to pdf to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 130,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/broken-link-checker/page.js",
+      "title": "Free Broken Link Checker - Find 404 Errors & Dead Links",
+      "titleLength": 55,
+      "description": "Professional broken link checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+      "descriptionLength": 137,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/bulk-google-index-checker/page.js",
+      "title": "Bulk Google Index Checker - Check 1000+ URLs at Once",
+      "titleLength": 52,
+      "description": "Professional bulk google index checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+      "descriptionLength": 143,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/bulk-keyword-rank-checker/page.js",
+      "title": "Bulk Keyword Rank Checker - Track 500+ Keywords at Once",
+      "titleLength": 55,
+      "description": "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+      "descriptionLength": 143,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/keyword-density/page.js",
+      "title": "Keyword Density Checker - Analyze Text Keywords | 30tools",
+      "titleLength": 57,
+      "description": "Professional keyword density for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+      "descriptionLength": 133,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/meta-tags-generator/page.js",
+      "title": "Free Meta Tags Generator - Create SEO Meta Tags Online",
+      "titleLength": 54,
+      "description": "Free meta tags generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 126,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/qr-code-generator/page.js",
+      "title": "Free QR Code Generator - Create Custom QR Codes",
+      "titleLength": 47,
+      "description": "Generate QR codes instantly for URLs, text, WiFi, contact cards, and more. Customize colors, add logos, and download high-quality PNG/SVG QR codes for free.",
+      "descriptionLength": 156,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/robots-txt-generator/page.js",
+      "title": "Robots.txt Generator - Free SEO Robots File Creator | 30tools",
+      "titleLength": 61,
+      "description": "Free robots txt generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 127,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(seo)/schema-generator/page.js",
+      "title": "Schema Markup Generator - Free JSON-LD Schema Creator | 30tools",
+      "titleLength": 63,
+      "description": "Generate Process instantly with our free schema generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 158,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(seo)/sitemap-generator/page.js",
+      "title": "Sitemap Generator - Generate XML Sitemaps | 30tools",
+      "titleLength": 51,
+      "description": "Generate Process instantly with our free sitemap generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 159,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/ssl-checker/page.js",
+      "title": "SSL Checker - Free SSL Certificate Tester | 30tools",
+      "titleLength": 51,
+      "description": "Check SSL certificate status, expiry date, and security details for any website. Free SSL checker tool to verify HTTPS configuration and certificate validity.",
+      "descriptionLength": 158,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(seo)/tiktok-tag-generator/page.js",
+      "title": "TikTok Tag Generator - Generate Hashtags for TikTok Videos",
+      "titleLength": 58,
+      "description": "Free tiktok tag generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 127,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/title-rewrite-checker/page.js",
+      "title": "Title Rewrite Checker - See How Google Changes Your Titles",
+      "titleLength": 58,
+      "description": "Professional title rewrite checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+      "descriptionLength": 139,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/website-analyzer/page.js",
+      "title": "Website Performance Analyzer - Free SEO & Speed Test",
+      "titleLength": 52,
+      "description": "Comprehensive website analysis tool. Check performance, SEO, accessibility, security, and mobile optimization. Free online website audit.",
+      "descriptionLength": 137,
+      "issues": [
+        "⚠️ Only 6 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/xml-sitemap-extractor/page.js",
+      "title": "XML Sitemap Extractor - Extract URLs to CSV, TXT, Excel",
+      "titleLength": 55,
+      "description": "Professional xml sitemap extractor for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+      "descriptionLength": 139,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(seo)/youtube-tag-generator/page.js",
+      "title": "YouTube Tag Generator - Generate SEO Tags for YouTube Videos",
+      "titleLength": 60,
+      "description": "Free youtube tag generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 128,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(text)/binary-converter/page.js",
+      "title": "Binary Converter - Free Online Converter | Instant Conversion",
+      "titleLength": 61,
+      "description": "Convert text to binary and binary to text instantly. Free online binary converter with UTF-8 encoding support for developers, students, and programmers.",
+      "descriptionLength": 152,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/character-counter/page.js",
+      "title": "Character Counter - Free Text Tool | Professional Text Processing",
+      "titleLength": 65,
+      "description": "Professional character counter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 150,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/chatgpt-text-converter/page.js",
+      "title": "ChatGPT Text to Normal Text Converter - 30tools",
+      "titleLength": 47,
+      "description": "Convert Process instantly with our free chatgpt text converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 153,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(text)/duplicate-line-remover/page.js",
+      "title": "Duplicate Line Remover - Free Online Tool | Professional Results",
+      "titleLength": 64,
+      "description": "Free online tool to remove duplicate lines from text and lists. Clean your data by removing repeated entries with options for case sensitivity and sorting.",
+      "descriptionLength": 155,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/line-sorter/page.js",
+      "title": "Line Sorter - Free Text Tool | Professional Text Processing",
+      "titleLength": 59,
+      "description": "Sort text lines alphabetically, numerically, or by length. Ascending/descending order with advanced sorting options. Free online line sorting tool.",
+      "descriptionLength": 147,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/lorem-ipsum-generator/page.js",
+      "title": "Lorem Ipsum Generator - Free Online Generator | Create Instantly",
+      "titleLength": 64,
+      "description": "Free lorem ipsum generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 128,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/markdown-to-text/page.js",
+      "title": "Markdown to Text Converter - Convert MD to Plain Text Online",
+      "titleLength": 60,
+      "description": "Convert Markdown to plain text instantly. Remove all markdown formatting and get clean, readable text. Perfect for content creators and developers.",
+      "descriptionLength": 147,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(text)/password-generator/page.js",
+      "title": "Password Generator - Free Online Generator | Create Instantly",
+      "titleLength": 61,
+      "description": "Generate Process instantly with our free password generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 160,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/password-generator2/page.js",
+      "title": "Password Generator - Generate Secure Random Passwords",
+      "titleLength": 53,
+      "description": "Free password generator2 tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 126,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(text)/password-strength-checker/page.js",
+      "title": "Password Strength Checker - Free Online Tool | 30tools",
+      "titleLength": 54,
+      "description": "Professional password strength checker to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 158,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/remove-duplicates/page.js",
+      "title": "Remove Duplicate Lines - Text Deduplication Tool Online | 30tools",
+      "titleLength": 65,
+      "description": "Professional remove duplicates to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 150,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/text-case-converter/page.js",
+      "title": "Text Case Converter - Free Online Converter | Instant Conversion",
+      "titleLength": 64,
+      "description": "Convert Process instantly with our free text case converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 150,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/text-diff/page.js",
+      "title": "Text Diff Checker - Compare Two Texts Online Free | 30tools",
+      "titleLength": 59,
+      "description": "Professional text diff to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 142,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/text-encoder/page.js",
+      "title": "Text Encoder - Free Text Tool | Professional Text Processing",
+      "titleLength": 60,
+      "description": "Encode and decode text using URL encoding, Base64, HTML entities, and more. Free online text encoder decoder tool with multiple encoding formats.",
+      "descriptionLength": 145,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/text-formatter/page.js",
+      "title": "Text Formatter - Format and Clean Text Online Free | 30tools",
+      "titleLength": 60,
+      "description": "Professional text formatter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 147,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/text-reverser/page.js",
+      "title": "Text Reverser - Reverse Text & Words Online Free | 30tools",
+      "titleLength": 58,
+      "description": "Professional text reverser to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 146,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(text)/typing-speed-test/page.js",
+      "title": "Free Typing Speed Test - Check Your WPM & Accuracy",
+      "titleLength": 50,
+      "description": "Professional typing speed test to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 150,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(text)/word-counter/page.js",
+      "title": "Word Counter - Count Words & Characters Online Free | 30tools",
+      "titleLength": 61,
+      "description": "Professional word counter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 145,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/calculator/page.js",
+      "title": "Advanced Calculator - Scientific Calculator | 30tools",
+      "titleLength": 53,
+      "description": "Free calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+      "descriptionLength": 152,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(utilities)/email-extractor/page.js",
+      "title": "Email Extractor - Extract Email Addresses from Text | 30tools",
+      "titleLength": 61,
+      "description": "Extract email addresses from any text, documents, or websites. Find and extract all email addresses using our powerful email extractor tool.",
+      "descriptionLength": 140,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/epoch-converter/page.js",
+      "title": "Epoch Timestamp Converter - Unix Time to Date | 30tools",
+      "titleLength": 55,
+      "description": "Convert Unix timestamps to human-readable dates and vice versa. Free online epoch time converter with multiple date formats.",
+      "descriptionLength": 124,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(utilities)/indexnow/page.js",
+      "title": "Indexnow - Free Online Tool | Professional Results",
+      "titleLength": 50,
+      "description": "Professional indexnow with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 170,
+      "issues": [
+        "⚠️ Description length 170 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(utilities)/internet-speed-test/page.js",
+      "title": "Internet Speed Test - Check Upload & Download Speed | 30tools",
+      "titleLength": 61,
+      "description": "Test your internet speed for free. Check download speed, upload speed, and ping latency with our accurate internet speed test tool.",
+      "descriptionLength": 131,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/ip-location-finder/page.js",
+      "title": "What Is My IP Location - IP Address Lookup Tool | 30tools",
+      "titleLength": 57,
+      "description": "Find your IP address location instantly. Get detailed information about IP geolocation, ISP, country, city, and more with our free IP lookup tool.",
+      "descriptionLength": 146,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/mailto-link-generator/page.js",
+      "title": "Mailto Link Generator - Create Email Links | 30tools",
+      "titleLength": 52,
+      "description": "Generate mailto links with subject, body, CC, and BCC fields. Create clickable email links for websites with our free mailto link generator tool.",
+      "descriptionLength": 145,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/notes/page.js",
+      "title": "Notes - Simple Online Notepad | 30tools",
+      "titleLength": 39,
+      "description": "Professional notes tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 117,
+      "issues": [
+        "⚠️ Description length 117 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(utilities)/paypal-link-generator/page.js",
+      "title": "PayPal Link Generator - Create Payment Links | 30tools",
+      "titleLength": 54,
+      "description": "Generate PayPal payment links for donations, products, and services. Create custom PayPal.me links and payment buttons with our free generator.",
+      "descriptionLength": 143,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/phone-validator/page.js",
+      "title": "Phone Number Validator - Verify Mobile Numbers | 30tools",
+      "titleLength": 56,
+      "description": "Validate phone numbers from any country. Check mobile number format, carrier info, and verify if phone numbers are valid with our free validator tool.",
+      "descriptionLength": 150,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/qr-generator/page.js",
+      "title": "QR Code Generator - Free Online QR Code Maker | 30tools",
+      "titleLength": 55,
+      "description": "Generate Process instantly with our free qr generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 154,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(utilities)/random-generator/page.js",
+      "title": "Random Generator - Advanced Random Data Creator | 30tools",
+      "titleLength": 57,
+      "description": "Generate Process instantly with our free random generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+      "descriptionLength": 158,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/text-size-calculator/page.js",
+      "title": "Text Size Calculator - Calculate Text Length & Size | 30tools",
+      "titleLength": 61,
+      "description": "Calculate text size in bytes, characters, words, and lines. Analyze text length, file size, and get detailed text statistics with our calculator.",
+      "descriptionLength": 145,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/timestamp-converter/page.js",
+      "title": "Timestamp Converter - Unix Time Converter | 30tools",
+      "titleLength": 51,
+      "description": "Convert Process instantly with our free timestamp converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+      "descriptionLength": 150,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(utilities)/unit-converter/page.js",
+      "title": "Free Unit Converter - Length, Weight, Temperature",
+      "titleLength": 49,
+      "description": "Convert units of measurement online for free. Length, weight, temperature, volume, area, speed conversions. Metric to Imperial and vice versa.",
+      "descriptionLength": 142,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(utilities)/url-extractor/page.js",
+      "title": "URL/Link Extractor - Extract URLs from Text | 30tools",
+      "titleLength": 53,
+      "description": "Extract all URLs and links from text, documents, or web pages. Find and extract website links using our free URL extractor tool.",
+      "descriptionLength": 128,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/url-shortener/page.js",
+      "title": "Free URL Shortener - Create Short Links with Analytics",
+      "titleLength": 54,
+      "description": "Professional url shortener with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 120,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(utilities)/user-agent-parser/page.js",
+      "title": "Online User Agent Parser - Analyze Browser Information | 30tools",
+      "titleLength": 64,
+      "description": "Parse and analyze user agent strings online. Get detailed browser, OS, and device information from any user agent string with our free parser tool.",
+      "descriptionLength": 147,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/whatsapp-checker/page.js",
+      "title": "WhatsApp Checker - Check if Number is on WhatsApp | 30tools",
+      "titleLength": 59,
+      "description": "Check if a phone number is active on WhatsApp. Verify WhatsApp numbers without saving contacts using our free WhatsApp checker tool.",
+      "descriptionLength": 132,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/whatsapp-dp-downloader/page.js",
+      "title": "WhatsApp DP Downloader - Download Profile Pictures | 30tools",
+      "titleLength": 60,
+      "description": "Download WhatsApp profile pictures in high quality. Free WhatsApp DP downloader tool to save profile photos from any WhatsApp contact.",
+      "descriptionLength": 134,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/whatsapp-link-generator/page.js",
+      "title": "WhatsApp Link Generator - Create Click to Chat Links | 30tools",
+      "titleLength": 62,
+      "description": "Generate WhatsApp click-to-chat links with custom messages. Create direct WhatsApp links for easy customer contact and support.",
+      "descriptionLength": 127,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(utilities)/zip-creator/page.js",
+      "title": "Free ZIP File Creator - Compress Multiple Files",
+      "titleLength": 47,
+      "description": "Create ZIP files online for free. Compress multiple files and folders into a single archive. Fast, secure, and no file size limits.",
+      "descriptionLength": 131,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/ai-video-summarizer/page.js",
+      "title": "AI Video Summarizer - Get Instant Video Summaries | 30tools",
+      "titleLength": 59,
+      "description": "Free AI-powered video summarizer that creates instant summaries of long videos, meetings, lectures, and presentations. Save time with automated video analysis.",
+      "descriptionLength": 159,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/faceless-video-generator/page.js",
+      "title": "Faceless Video Generator - Create Viral YouTube Videos",
+      "titleLength": 54,
+      "description": "Generate faceless YouTube videos for monetization. AI-powered content creation for motivation, education, and lifestyle videos. No camera required.",
+      "descriptionLength": 147,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/screen-recorder/page.js",
+      "title": "Screen Recorder - Record Your Screen | 30tools",
+      "titleLength": 46,
+      "description": "Professional screen recorder tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+      "descriptionLength": 158,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/terabox-downloader/page.js",
+      "title": "Terabox Video Downloader Player | Download Terabox Videos...",
+      "titleLength": 60,
+      "description": "Free terabox downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 125,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(video)/terabox-video-player/page.js",
+      "title": "Terabox Video Player - Play & Download Terabox Videos Online Free",
+      "titleLength": 65,
+      "description": "Free terabox video player tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 127,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/tiktok-downloader/page.js",
+      "title": "TikTok Video Downloader - Download Without Watermark",
+      "titleLength": 52,
+      "description": "Free TikTok video downloader. Download TikTok videos without watermarks in HD quality. Fast, safe, and no registration required.",
+      "descriptionLength": 128,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/video-compressor/page.js",
+      "title": "Free Video Compressor - Reduce Video File Size by 80%",
+      "titleLength": 53,
+      "description": "Compress videos online for free. Reduce file sizes by up to 80% without quality loss. Perfect for WhatsApp and social media.",
+      "descriptionLength": 124,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/video-converter/page.js",
+      "title": "Video Converter - Convert Video Formats | 30tools",
+      "titleLength": 49,
+      "description": "Professional video converter tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+      "descriptionLength": 158,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/video-editor/page.js",
+      "title": "Video Editor - Edit Videos Online | 30tools",
+      "titleLength": 43,
+      "description": "Professional video editor tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+      "descriptionLength": 155,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/video-player/page.js",
+      "title": "Video Player Generator - 30tools",
+      "titleLength": 32,
+      "description": "Create professional video players with themes and embed codes. Supports multiple libraries. Free tool, no coding needed!",
+      "descriptionLength": 120,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(video)/video-to-gif/page.js",
+      "title": "Free Video to GIF Converter - Create Animated GIFs",
+      "titleLength": 50,
+      "description": "Professional video to gif tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+      "descriptionLength": 155,
+      "issues": [
+        "⚠️ Only 2 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(video)/video-trimmer/page.js",
+      "title": "Video Trimmer - Free Online Video Tool | High-Quality Results",
+      "titleLength": 61,
+      "description": "Professional video trimmer tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+      "descriptionLength": 156,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(video)/video-watermark-remover/page.js",
+      "title": "Video Watermark Remover - Remove Watermarks from Videos",
+      "titleLength": 55,
+      "description": "Remove watermarks from videos using AI technology. Clean your videos from logos, text overlays, and watermarks while preserving quality.",
+      "descriptionLength": 136,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(youtube)/youtube-analytics/page.js",
+      "title": "YouTube Video Analytics - Analyze Video Performance | 30tools",
+      "titleLength": 61,
+      "description": "Analyze YouTube video performance, get detailed analytics, view counts, engagement rates, and optimization suggestions for your YouTube videos.",
+      "descriptionLength": 143,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-channel-id-finder/page.js",
+      "title": "YouTube Channel ID Finder - Get Channel ID | 30tools",
+      "titleLength": 52,
+      "description": "Find YouTube channel ID from channel URL or name. Get channel statistics, subscriber count, and detailed channel information with our finder tool.",
+      "descriptionLength": 146,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-comment-responder/page.js",
+      "title": "Youtube Comment Responder - Free Tool | 30tools",
+      "titleLength": 47,
+      "description": "Professional youtube comment responder with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 132,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(youtube)/youtube-downloader/page.js",
+      "title": "Youtube Downloader - Free Online Tool | Professional Results",
+      "titleLength": 60,
+      "description": "Professional youtube downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 130,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-embed-generator/page.js",
+      "title": "Youtube Embed Generator - Free Online Tool | Professional Results",
+      "titleLength": 65,
+      "description": "Free youtube embed generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 130,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(youtube)/youtube-gif-maker/page.js",
+      "title": "Youtube Gif Maker - Free Online Tool | Professional Results",
+      "titleLength": 59,
+      "description": "Professional youtube gif maker with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 124,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(youtube)/youtube-idea-generator/page.js",
+      "title": "Youtube Idea Generator - Free Online Tool | Professional Results",
+      "titleLength": 64,
+      "description": "Free youtube idea generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 129,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(youtube)/youtube-pack-downloader/page.js",
+      "title": "Youtube Pack Downloader - Free Online Tool | Professional Results",
+      "titleLength": 65,
+      "description": "Professional youtube pack downloader with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 130,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(youtube)/youtube-script-generator/page.js",
+      "title": "Youtube Script Generator - Free Tool | 30tools",
+      "titleLength": 46,
+      "description": "Free youtube script generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 131,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(youtube)/youtube-shorts-downloader/page.js",
+      "title": "YouTube Shorts Downloader - Download Short Videos Free",
+      "titleLength": 54,
+      "description": "Professional youtube shorts downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 137,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-subtitles-downloader/page.js",
+      "title": "Youtube Subtitles Downloader - Free Tool | 30tools",
+      "titleLength": 50,
+      "description": "Download and convert YouTube video subtitles to multiple formats (TXT, SRT, VTT, JSON, CSV). Extract captions from any YouTube video instantly.",
+      "descriptionLength": 143,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-summary-generator/page.js",
+      "title": "Youtube Summary Generator - Free Tool | 30tools",
+      "titleLength": 47,
+      "description": "Generate intelligent AI summaries of YouTube videos. Extract key insights, topics, and takeaways from any video using advanced artificial intelligence.",
+      "descriptionLength": 151,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-thumbnail-downloader/page.js",
+      "title": "Youtube Thumbnail Downloader - Free Tool | 30tools",
+      "titleLength": 50,
+      "description": "Professional youtube thumbnail downloader with instant results. Free online tool for students, professionals, and businesses worldwide.",
+      "descriptionLength": 135,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-timestamp-generator/page.js",
+      "title": "Youtube Timestamp Generator - Free Tool | 30tools",
+      "titleLength": 49,
+      "description": "Free youtube timestamp generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 134,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/(youtube)/youtube-transcript-downloader/page.js",
+      "title": "YouTube Transcript Downloader - 30tools",
+      "titleLength": 39,
+      "description": "Download YouTube video transcripts and subtitles in multiple formats. Extract text content from YouTube videos for free with our transcript downloader tool.",
+      "descriptionLength": 156,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-trends/page.js",
+      "title": "YouTube Trends - Trending Videos & Analytics | 30tools",
+      "titleLength": 54,
+      "description": "Discover trending YouTube videos, analyze viral content, and track YouTube trends by category and region. Get insights into popular YouTube content.",
+      "descriptionLength": 148,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/(youtube)/youtube-video-downloader/page.js",
+      "title": "YouTube Video Downloader - 30tools",
+      "titleLength": 34,
+      "description": "Free youtube video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+      "descriptionLength": 131,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/account/page.js",
+      "title": "Account - Free Online Tool | Professional Results",
+      "titleLength": 49,
+      "description": "Professional account with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 169,
+      "issues": [
+        "⚠️ Description length 169 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/audio-tools/page.js",
+      "title": "Audio Tools - Free Online Audio Editor & Converter | 30tools",
+      "titleLength": 60,
+      "description": "Professional audio tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 173,
+      "issues": [
+        "⚠️ Description length 173 chars (optimal: 120-160)",
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/dashboard/page.js",
+      "title": "Dashboard - Free Online Tool | Professional Results",
+      "titleLength": 51,
+      "description": "Professional dashboard with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 171,
+      "issues": [
+        "⚠️ Description length 171 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/embed/video/page.js",
+      "title": "Video - Free Online Tool | Professional Results",
+      "titleLength": 47,
+      "description": "Professional video with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 167,
+      "issues": [
+        "⚠️ Description length 167 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/handler/[...stack]/page.js",
+      "title": "[...stack] - Free Online Tool | Professional Results",
+      "titleLength": 52,
+      "description": "Professional [...stack] with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 172,
+      "issues": [
+        "⚠️ Description length 172 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/image-tools/page.js",
+      "title": "Image Tools - Free Online Image Processing & Editing",
+      "titleLength": 52,
+      "description": "Professional image tools for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
+      "descriptionLength": 132,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/landing/page.js",
+      "title": "Landing - Free Online Tool | Professional Results",
+      "titleLength": 49,
+      "description": "Professional landing with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+      "descriptionLength": 169,
+      "issues": [
+        "⚠️ Description length 169 chars (optimal: 120-160)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/other-tools/page.js",
+      "title": "Other Tools - Discover More Free Online Utilities | 30tools",
+      "titleLength": 59,
+      "description": "Professional other tools tool. Free online processing with high-quality results. No registration required, instant results.",
+      "descriptionLength": 123,
+      "issues": [],
+      "hasIssues": false
+    },
+    {
+      "path": "src/app/pdf-tools/page.js",
+      "title": "PDF Tools - Free Online PDF Editor & Converter | 30tools",
+      "titleLength": 56,
+      "description": "Professional pdf tools to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+      "descriptionLength": 128,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/search/page.js",
+      "title": "Search Tools - Find the Perfect Online Tool | 30tools",
+      "titleLength": 53,
+      "description": "Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more. Fast, free, and easy to use.",
+      "descriptionLength": 159,
+      "issues": [
+        "⚠️ Only 4 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/text-tools/page.js",
+      "title": "Text Tools - Free Online Text Processing & Analysis",
+      "titleLength": 51,
+      "description": "Professional text tools to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+      "descriptionLength": 143,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    },
+    {
+      "path": "src/app/video-tools/page.js",
+      "title": "Video Tools - Free Online Video Editor & Converter | 30tools",
+      "titleLength": 60,
+      "description": "Professional video tools tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+      "descriptionLength": 154,
+      "issues": [
+        "⚠️ Only 7 keywords (recommended: 15-25)"
+      ],
+      "hasIssues": true
+    }
+  ]
+}

@@ -2,7 +2,7 @@ import TextReverser from "@/components/tools/text/TextReverserTool";
 
 export const metadata = {
   title: 'Text Reverser - Reverse Text & Words Online Free | 30tools',
-  description: 'Reverse text characters, flip words, or reverse word order instantly. Free online text reverser tool for creative content, coding, and text manipulation. No limits.',
+  description: "Professional text reverser to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: [
     // Primary high-volume keywords
     "text reverser",

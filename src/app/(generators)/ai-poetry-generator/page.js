@@ -2,7 +2,7 @@ import AIPoetryGeneratorTool from '@/components/tools/generators/AIPoetryGenerat
 
 export const metadata = {
   title: "AI Poetry Generator - Free Poem Maker | 30tools",
-  description: "Create original poems on any topic with AI. Enter a theme or mood and get a unique poem instantly. No signup required.",
+  description: "Free ai poetry generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: "ai poetry generator, poem generator, ai poem, generate poem, poetry ai, free ai poetry generator",
   canonical: "https://30tools.com/ai-poetry-generator",
   openGraph: {

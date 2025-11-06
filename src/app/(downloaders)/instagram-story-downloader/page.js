@@ -1,8 +1,8 @@
 import InstagramStoryDownloader from '@/components/tools/downloaders/InstagramStoryDownloader';
 
 export const metadata = {
-    title: "Instagram Story Downloader - Download IG Stories & Highlights Free | 30tools",
-    description: "Download Instagram stories and highlights anonymously in HD quality for free. Save Instagram stories to your device without the user knowing. Fast, secure, unlimited downloads.",
+    title: "Instagram Story Downloader - Free Online Tool | 30tools",
+    description: "Professional instagram story downloader tool. Free online processing with high-quality results. No registration required, instant results.",
     keywords: [
         // Primary Instagram story keywords
         "instagram story downloader",

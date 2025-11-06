@@ -5,21 +5,21 @@ import Link from 'next/link';
 
 export const metadata = {
   title: "Our Developer & Utility Tools Collection | 30tools Network",
-  description: "Explore our complete collection of developer tools, online utilities, IT tools, and more. From code formatters to hash generators, encryption tools to TeraBox downloader - everything you need in one place.",
+  description: "Professional our tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: [
-    "developer tools collection",
-    "online utilities",
-    "IT tools",
-    "code formatter",
-    "hash generator",
-    "encryption tools",
-    "base64 encoder",
-    "JSON formatter",
-    "developer utilities",
-    "free online tools",
-    "30tools network",
-    "coding tools",
-    "web developer tools"
+    "our tools",
+    "our tools online",
+    "free our tools",
+    "our tools tool",
+    "online our tools free",
+    "professional our tools",
+    "our tools online tool",
+    "best our tools free",
+    "our tools web app",
+    "our tools utility",
+    "online tool",
+    "free utility",
+    "web application"
   ].join(", "),
   openGraph: {
     title: "Developer & Utility Tools Collection - 30tools Network",

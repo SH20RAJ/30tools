@@ -2,7 +2,7 @@ import YouTubeDownloader from '@/components/tools/youtube/YouTubeDownloader';
 
 export const metadata = {
   title: "YouTube Video Downloader - 30tools",
-  description: "Download YouTube videos and audio in HD quality for free. Convert YouTube to MP4, MP3 with our fast, secure YouTube downloader tool. No software installation required.",
+  description: "Free youtube video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: [
     // Primary keywords
     "youtube downloader",

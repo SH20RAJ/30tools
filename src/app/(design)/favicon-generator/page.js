@@ -2,7 +2,7 @@ import FaviconGeneratorTool from '@/components/tools/design/FaviconGeneratorTool
 
 export const metadata = {
   title: "Free Favicon Generator - Create Favicon from Image",
-  description: "Generate favicons for your website from any image. Create all favicon sizes in seconds with instant download.",
+  description: "Generate Process instantly with our free favicon generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: "favicon generator, create favicon, favicon from image, website icon generator, apple touch icon, android icon, favicon maker online",
   openGraph: {
     title: "Free Favicon Generator Online - Create Favicon from Image",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Favicon Generator",
+  "description": "Generate Process instantly with our free favicon generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+  "url": "https://30tools.com/favicon-generator",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

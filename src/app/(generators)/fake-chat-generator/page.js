@@ -1,7 +1,7 @@
 import FakeChatGeneratorTool from '@/components/tools/generators/FakeChatGeneratorTool';
 
 export const metadata = {
-  title: "Fake Chat Generator - 30tools",
+  title: "Fake Chat Generator - Free Online Generator | Create Instantly",
   description: "Create realistic fake chat screenshots for WhatsApp, Instagram DM, iMessage, and Discord. Perfect for memes, content creation, and social media.",
   keywords: "fake chat generator, whatsapp fake chat, instagram dm generator, imessage generator, fake text messages, chat screenshot maker",
   canonical: "https://30tools.com/fake-chat-generator",

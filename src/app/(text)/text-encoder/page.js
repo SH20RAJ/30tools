@@ -1,7 +1,7 @@
 import TextEncoder from "@/components/tools/text/TextEncoderTool";
 
 export const metadata = {
-  title: 'Text Encoder Decoder - URL, Base64, HTML Encoding Online | 30tools',
+  title: "Text Encoder - Free Text Tool | Professional Text Processing",
   description: 'Encode and decode text using URL encoding, Base64, HTML entities, and more. Free online text encoder decoder tool with multiple encoding formats.',
   keywords: [
     // Primary high-volume keywords

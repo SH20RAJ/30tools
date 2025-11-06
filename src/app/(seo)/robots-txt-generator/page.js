@@ -2,7 +2,7 @@ import RobotsTxtGenerator from '@/components/tools/seo/RobotsTxtGenerator';
 
 export const metadata = {
   title: "Robots.txt Generator - Free SEO Robots File Creator | 30tools",
-  description: "Generate robots.txt files for better search engine crawling. Create SEO-optimized robots.txt with sitemaps, user-agent rules, and crawl directives. Free robots.txt generator tool.",
+  description: "Free robots txt generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: [
     // Primary keywords
     "robots txt generator",

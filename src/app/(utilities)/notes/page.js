@@ -2,7 +2,7 @@ import NotesTool from '@/components/tools/utilities/NotesTool';
 
 export const metadata = {
   title: "Notes - Simple Online Notepad | 30tools",
-  description: "Clean, minimalistic online notepad for quick notes. Auto-saves to your browser, supports markdown, and works offline. Free note-taking tool with no registration required.",
+  description: "Professional notes tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     // Primary keywords
     "online notepad",

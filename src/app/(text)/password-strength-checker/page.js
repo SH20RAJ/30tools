@@ -1,8 +1,8 @@
 import PasswordCheckerTool from '@/components/tools/security/PasswordCheckerTool';
 
 export const metadata = {
-  title: "Password Strength Checker - Test Password Security Online Free | 30tools",
-  description: "Check password strength, get security tips, and analyze password security. Free online password strength checker with crack time estimation and security recommendations.",
+  title: "Password Strength Checker - Free Online Tool | 30tools",
+  description: "Professional password strength checker to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: [
     // Primary high-volume keywords
     "password strength checker",
@@ -58,6 +58,18 @@ export const metadata = {
       }
     ],
   },
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Password Strength Checker - Free Online Tool | 30tools",
+    description: "Professional password strength checker to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+    images: ["/og-images/password-strength-checker.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/password-strength-checker"
+  }
 };
 
 const jsonLd = {

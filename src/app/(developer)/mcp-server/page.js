@@ -2,7 +2,7 @@ import McpServerTool from '@/components/tools/developer/McpServerTool'
 
 export const metadata = {
   title: 'MCP Server Generator - Model Context Protocol for Claude',
-  description: 'Generate ready-to-use MCP (Model Context Protocol) servers for Claude and AI assistants. Perfect for #21stdev developers building custom AI tools and integrations. Free TypeScript, JavaScript & Python templates.',
+  description: "Professional mcp server for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
   keywords: 'mcp server, model context protocol, claude mcp, anthropic mcp, ai integration, #21stdev, mcp generator, claude tools, ai development, mcp sdk, context protocol',
   openGraph: {
     title: 'MCP Server Generator - Build AI Tools for Claude',

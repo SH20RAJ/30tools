@@ -1,8 +1,8 @@
 import InstagramDownloader from '@/components/tools/downloaders/InstagramDownloader';
 
 export const metadata = {
-    title: "Instagram Video Downloader - Download IG Reels, Stories & IGTV Free | 30tools",
-    description: "Download Instagram videos, reels, stories, and IGTV content in HD quality for free. Save Instagram content to your device without app installation. Fast, secure, unlimited downloads.",
+    title: "Instagram Video Downloader - Free Online Tool | 30tools",
+    description: "Free instagram video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
     keywords: [
         // Primary Instagram keywords
         "instagram video downloader",

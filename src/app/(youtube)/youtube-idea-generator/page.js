@@ -1,8 +1,8 @@
 import YouTubeIdeaGenerator from '@/components/tools/youtube/YouTubeIdeaGenerator';
 
 export const metadata = {
-  title: "YouTube Idea Generator - 30tools",
-  description: "Generate unlimited viral YouTube video ideas based on your niche, audience, and trending topics. Get creative content inspiration for tutorials, vlogs, reviews, and viral videos that boost channel growth.",
+  title: "Youtube Idea Generator - Free Online Tool | Professional Results",
+  description: "Free youtube idea generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: "youtube idea generator, viral video ideas, youtube content ideas, video topic generator, youtube video inspiration, content creation ideas, viral youtube content, youtube niche ideas, video brainstorming tool, youtube creator ideas",
   openGraph: {
     title: "YouTube Idea Generator - Viral Video Ideas for Creators",
@@ -21,6 +21,14 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/youtube-idea-generator"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Youtube Idea Generator - Free Online Generator | Create Instantly",
+    description: "Free youtube idea generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    images: ["/og-images/youtube-idea-generator.jpg"],
+    creator: "@30tools"
   }
 };
 

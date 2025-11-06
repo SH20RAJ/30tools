@@ -2,20 +2,23 @@ import ComplexityAnalyzer from '@/components/tools/developer/ComplexityAnalyzer'
 
 export const metadata = {
   title: 'Time & Space Complexity Analyzer - AI Code Analysis',
-  description: 'Analyze the time and space complexity of your code with AI-powered analysis. Get detailed Big O notation, optimization suggestions, and algorithm insights for any programming language.',
+  description: "Professional complexity analyzer for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
   keywords: [
-    'time complexity analyzer',
-    'space complexity',
-    'big o notation',
-    'algorithm analysis',
-    'code complexity',
-    'performance analysis',
-    'ai code analyzer',
-    'algorithm optimization',
-    'computational complexity',
-    'code efficiency',
-    'pollinations ai',
-    'free complexity tool'
+    "complexity analyzer",
+    "complexity analyzer online",
+    "free complexity analyzer",
+    "complexity analyzer tool",
+    "online complexity analyzer free",
+    "professional complexity analyzer",
+    "complexity analyzer online tool",
+    "best complexity analyzer free",
+    "complexity analyzer web app",
+    "complexity analyzer utility",
+    "developer tools online",
+    "coding tools free",
+    "programming utilities",
+    "web developer tools",
+    "code formatter online"
   ],
   authors: [{ name: '30tools' }],
   creator: '30tools',
@@ -61,6 +64,28 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Complexity Analyzer",
+  "description": "Professional complexity analyzer for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+  "url": "https://30tools.com/complexity-analyzer",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function ComplexityAnalyzerPage() {

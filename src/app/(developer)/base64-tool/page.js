@@ -12,8 +12,8 @@ import { DeveloperToolExamples } from '@/components/seo/DeveloperToolsHub';
 import { getDeveloperToolFAQs } from '@/constants/seo/developer-faqs';
 
 export const metadata = {
-  title: "Free Base64 Encoder & Decoder Online - Text, Files, Images | 30tools",
-  description: "Encode text, files & images to Base64 or decode Base64 strings. Secure client-side processing, supports bulk operations. Perfect for developers & data encoding needs.",
+  title: "Base64 Tool - Free Developer Tool | Professional Coding",
+  description: "Professional base64 tool for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
   keywords: "base64 encoder, base64 decoder, base64 converter, encode decode base64, base64 string encoder, file to base64, image to base64, base64 tools, base64 encode text online free, base64 decode string to text, file to base64 converter online, image to base64 encoder tool, base64 decoder for files, bulk base64 encoding tool, secure base64 converter online, base64 encoder decoder developer tool",
   openGraph: {
     title: "Free Base64 Encoder & Decoder Online - Text, Files, Images",

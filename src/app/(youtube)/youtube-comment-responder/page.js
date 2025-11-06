@@ -1,8 +1,8 @@
 import YouTubeCommentResponder from '@/components/tools/youtube/YouTubeCommentResponder';
 
 export const metadata = {
-  title: "AI YouTube Comment Responder - 30tools",
-  description: "Generate intelligent YouTube comment replies with AI assistance. Create engaging responses in different tones to boost community engagement, manage customer service, and build stronger audience relationships.",
+  title: "Youtube Comment Responder - Free Tool | 30tools",
+  description: "Professional youtube comment responder with instant results. Free online tool for students, professionals, and businesses worldwide.",
   keywords: "youtube comment responder, ai comment replies, youtube engagement tool, smart comment generator, youtube community management, ai comment assistant, automated youtube replies, comment engagement tool, youtube creator tools, social media engagement",
   openGraph: {
     title: "AI YouTube Comment Responder - Smart Reply Generator",
@@ -21,6 +21,14 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/youtube-comment-responder"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Youtube Comment Responder - Free Online Tool | 30tools",
+    description: "Professional youtube comment responder tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/youtube-comment-responder.jpg"],
+    creator: "@30tools"
   }
 };
 

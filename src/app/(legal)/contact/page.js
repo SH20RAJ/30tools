@@ -6,15 +6,71 @@ import { ArrowLeftIcon, MailIcon, MessageCircleIcon, BugIcon } from 'lucide-reac
 import TallyContactForm from '@/components/TallyContactForm';
 
 export const metadata = {
-  title: "Contact Us - 30tools.com",
-  description: "Contact the 30tools.com team for support, feedback, or business inquiries at mail@30tools.com.",
+  title: "Contact - Free Online Tool | Professional Results",
+  description: "Professional contact with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "contact 30tools, support, feedback, business inquiries, technical support, mail@30tools.com",
   robots: { index: true, follow: true }
+,
+  openGraph: {
+    title: "Contact - Free Online Tool | Professional Results",
+    description: "Professional contact tool. Free online processing with high-quality results. No registration required, instant results.",
+    url: "https://30tools.com/contact",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/contact.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Contact - Free Online Tool | Professional Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact - Free Online Tool | Professional Results",
+    description: "Professional contact tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/contact.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/contact"
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Contact",
+  "description": "Professional contact tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/contact",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
           <Link href="/">

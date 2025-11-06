@@ -1,8 +1,8 @@
 import YouTubeScriptGenerator from '@/components/tools/youtube/YouTubeScriptGenerator';
 
 export const metadata = {
-  title: "AI YouTube Script Generator - 30tools",
-  description: "Generate compelling YouTube video scripts with AI assistance. Create engaging intros, content outlines, and call-to-actions for viral videos, tutorials, reviews, and educational content.",
+  title: "Youtube Script Generator - Free Tool | 30tools",
+  description: "Free youtube script generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: "ai youtube script generator, youtube script writer, video script creator, ai script generator, youtube content writer, video script maker, ai video script, youtube script template, content creation ai, viral video script generator",
   openGraph: {
     title: "AI YouTube Script Generator - Create Engaging Video Scripts",
@@ -21,6 +21,14 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/youtube-script-generator"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Youtube Script Generator - Free Online Tool | 30tools",
+    description: "Free youtube script generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    images: ["/og-images/youtube-script-generator.jpg"],
+    creator: "@30tools"
   }
 };
 

@@ -3,7 +3,7 @@ import OtherToolsPage from '@/components/tools/OtherToolsPage';
 
 export const metadata = {
   title: "Other Tools - Discover More Free Online Utilities | 30tools",
-  description: "Explore our collection of specialized online tools including converters, utilities, and niche tools. Find the perfect tool for your specific needs with our comprehensive toolkit.",
+  description: "Professional other tools tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     // Primary keywords
     "other online tools",
@@ -59,7 +59,13 @@ export default async function OtherToolsPageWrapper() {
   const otherToolsResult = await getOtherTools();
 
   return (
-    <OtherToolsPage 
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <OtherToolsPage 
       categories={categoriesResult.data} 
       otherTools={otherToolsResult.data}
     />

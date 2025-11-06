@@ -1,8 +1,8 @@
 import YouTubeGifMaker from '@/components/tools/youtube/YouTubeGifMaker';
 
 export const metadata = {
-  title: "YouTube GIF Maker - 30tools",
-  description: "Create high-quality animated GIFs from YouTube video clips. Convert YouTube videos to GIFs with custom duration, quality settings, and frame rate optimization for social media sharing.",
+  title: "Youtube Gif Maker - Free Online Tool | Professional Results",
+  description: "Professional youtube gif maker with instant results. Free online tool for students, professionals, and businesses worldwide.",
   keywords: "youtube gif maker, youtube to gif converter, animated gif creator, video to gif converter, youtube gif generator, create gif from youtube, youtube clip to gif, animated gif maker, youtube gif downloader, social media gif creator",
   openGraph: {
     title: "YouTube GIF Maker - Create Animated GIFs from YouTube Videos",
@@ -21,6 +21,14 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/youtube-gif-maker"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Youtube Gif Maker - Free Online Tool | Professional Results",
+    description: "Professional youtube gif maker tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/youtube-gif-maker.jpg"],
+    creator: "@30tools"
   }
 };
 

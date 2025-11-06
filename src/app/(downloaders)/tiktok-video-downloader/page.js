@@ -1,8 +1,8 @@
 import TikTokDownloader from '@/components/tools/downloaders/TikTokDownloader';
 
 export const metadata = {
-    title: "TikTok Video Downloader - Download TikTok Videos Without Watermark Free | 30tools",
-    description: "Download TikTok videos without watermark in HD quality for free. Save TikTok videos to your device without app installation. Fast, secure, unlimited TikTok downloads.",
+    title: "Tiktok Video Downloader - Free Online Tool | 30tools",
+    description: "Free tiktok video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
     keywords: [
         // Primary TikTok keywords
         "tiktok video downloader",

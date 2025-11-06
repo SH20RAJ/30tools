@@ -1,8 +1,8 @@
 import LoremIpsumGeneratorTool from '@/components/tools/text/LoremIpsumGeneratorTool';
 
 export const metadata = {
-  title: "Lorem Ipsum Generator - Generate Placeholder Text Online Free | 30tools",
-  description: "Generate Lorem Ipsum placeholder text for your designs and layouts. Customize paragraphs, words, and sentences. Free Lorem Ipsum generator tool for designers and developers.",
+  title: "Lorem Ipsum Generator - Free Online Generator | Create Instantly",
+  description: "Free lorem ipsum generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: [
     // Primary keywords
     "lorem ipsum generator",

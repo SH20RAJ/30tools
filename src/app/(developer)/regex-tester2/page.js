@@ -12,8 +12,8 @@ import { DeveloperToolExamples } from '@/components/seo/DeveloperToolsHub';
 import { getDeveloperToolFAQs } from '@/constants/seo/developer-faqs';
 
 export const metadata = {
-  title: "Free Regex Tester & Pattern Validator Online - Test Regular Expressions | 30tools",
-  description: "Test & validate regular expressions with real-time matching. Supports JavaScript, Python, PHP regex flavors. Pattern explanation, match highlighting, test cases.",
+  title: "Regex Tester2 - Free Developer Tool | Professional Coding",
+  description: "Professional regex tester2 for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
   keywords: "regex tester, regular expression tester, regex validator, pattern tester, regex matcher, regexp tester, regex debugger, pattern validator, regex tester online free javascript, regular expression validator python, regex pattern tester with examples, regex matcher online tool, test regex patterns online, regex debugger with explanations, regular expression tester php, regex validator with test cases",
   openGraph: {
     title: "Free Regex Tester & Pattern Validator Online - Test Regular Expressions",

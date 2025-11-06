@@ -1,8 +1,8 @@
 import VideoTrimmer from "@/components/tools/video/VideoTrimmerTool";
 
 export const metadata = {
-  title: "Video Trimmer - Professional Online Video Cutter & Editor | 30tools",
-  description: "Trim and cut videos online with precision. Professional video trimmer with timeline editor and frame-accurate cutting.",
+  title: "Video Trimmer - Free Online Video Tool | High-Quality Results",
+  description: "Professional video trimmer tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
   keywords: [
     // Primary keywords
     "video trimmer",

@@ -2,7 +2,7 @@ import RegexTesterTool from '@/components/tools/code/RegexTesterTool';
 
 export const metadata = {
   title: "Free Regex Tester - Test Regular Expressions Online",
-  description: "Test and debug regular expressions instantly. See all matches, groups, and errors in real time.",
+  description: "Professional regex tester with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "regex tester, regular expression tester, regex online, test regex, regex tool, regex match, regex debug",
   openGraph: {
     title: "Free Regex Tester - Test Regular Expressions Online",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Regex Tester",
+  "description": "Professional regex tester tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/regex-tester",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

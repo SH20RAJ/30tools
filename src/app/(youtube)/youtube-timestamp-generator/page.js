@@ -1,8 +1,8 @@
 import YouTubeTimestampGenerator from '@/components/tools/youtube/YouTubeTimestampGenerator';
 
 export const metadata = {
-  title: "YouTube Timestamp Generator - 30tools",
-  description: "Generate professional YouTube chapter timestamps automatically from video transcripts. Create perfect video chapters, bookmarks, and navigation timestamps for better viewer engagement and SEO.",
+  title: "Youtube Timestamp Generator - Free Tool | 30tools",
+  description: "Free youtube timestamp generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: "youtube timestamp generator, youtube chapters generator, video timestamps, youtube chapter maker, automatic timestamps, video chapter timestamps, youtube chapter creator, video bookmarks generator, timestamp maker youtube, chapter timestamps tool",
   openGraph: {
     title: "YouTube Timestamp Generator - Auto Create Chapter Timestamps",
@@ -21,6 +21,14 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/youtube-timestamp-generator"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Youtube Timestamp Generator - Free Online Tool | 30tools",
+    description: "Free youtube timestamp generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    images: ["/og-images/youtube-timestamp-generator.jpg"],
+    creator: "@30tools"
   }
 };
 

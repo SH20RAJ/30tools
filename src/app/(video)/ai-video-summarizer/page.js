@@ -29,6 +29,28 @@ export const metadata = {
   }
 }
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Ai Video Summarizer",
+  "description": "Free ai video summarizer tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  "url": "https://30tools.com/ai-video-summarizer",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function AiVideoSummarizerPage() {
   return <AiVideoSummarizerTool />
 }

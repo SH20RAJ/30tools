@@ -2,7 +2,7 @@ import CodeMinifierTool from '@/components/tools/code/CodeMinifierTool';
 
 export const metadata = {
   title: "Free Code Minifier - Minify JavaScript, CSS, HTML",
-  description: "Minify JavaScript, CSS, and HTML code. Reduce file sizes and improve website performance with detailed statistics.",
+  description: "Professional code minifier with instant results. Free online tool for students, professionals, and businesses worldwide.",
   keywords: "code minifier, javascript minifier, css minifier, html minifier, code compression, minify js css html, web performance optimization",
   openGraph: {
     title: "Free Code Minifier Online - Optimize JavaScript, CSS, HTML",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Code Minifier",
+  "description": "Professional code minifier tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/code-minifier",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

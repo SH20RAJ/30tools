@@ -13,8 +13,51 @@ import {
 import Link from "next/link";
 
 export const metadata = {
-  title: "Account Settings - 30tools",
-  description: "Manage your account settings and preferences on 30tools.",
+  title: "Account - Free Online Tool | Professional Results",
+  description: "Professional account with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  keywords: [
+    "account",
+    "account online",
+    "free account",
+    "account tool",
+    "online account free",
+    "professional account",
+    "account online tool",
+    "best account free",
+    "account web app",
+    "account utility",
+    "online tool",
+    "free utility",
+    "web application"
+  ].join(", "),
+,
+  openGraph: {
+    title: "Account - Free Online Tool | Professional Results",
+    description: "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
+    url: "https://30tools.com/account",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/account.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Account - Free Online Tool | Professional Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Account - Free Online Tool | Professional Results",
+    description: "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/account.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/account"
+  }
 };
 
 export default async function AccountPage() {
@@ -41,7 +84,13 @@ export default async function AccountPage() {
     .slice(0, 2);
 
   return (
-    <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
       {/* Header */}
       <header className="border-b">
         <div className="container mx-auto px-4 py-6">

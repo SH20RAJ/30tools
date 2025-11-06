@@ -2,7 +2,7 @@ import BulkKeywordRankChecker from '@/components/tools/seo/BulkKeywordRankChecke
 
 export const metadata = {
   title: "Bulk Keyword Rank Checker - Track 500+ Keywords at Once",
-  description: "Check Google rankings for multiple keywords at once. Track keyword positions for any domain across different locations and devices. Free bulk keyword rank tracker with export to CSV/Excel.",
+  description: "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
   keywords: "bulk keyword rank checker, keyword position tracker, google rank checker, serp checker, rank tracking tool, keyword ranking tool, google ranking checker, bulk rank tracker online free, check google rankings for multiple keywords, keyword position checker free",
   openGraph: {
     title: "Free Bulk Keyword Rank Checker - Track 500+ Keywords at Once",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bulk Keyword Rank Checker",
+  "description": "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+  "url": "https://30tools.com/bulk-keyword-rank-checker",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

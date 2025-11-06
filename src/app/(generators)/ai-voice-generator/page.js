@@ -2,7 +2,7 @@ import AIVoiceGeneratorTool from '@/components/tools/generators/AIVoiceGenerator
 
 export const metadata = {
   title: "AI Voice Generator - Free Text to Speech Tool | 30tools",
-  description: "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. No signup required.",
+  description: "Generate Process instantly with our free ai voice generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: "ai voice generator, text to speech, ai audio, generate voice, speech ai, free ai voice generator",
   canonical: "https://30tools.com/ai-voice-generator",
   openGraph: {

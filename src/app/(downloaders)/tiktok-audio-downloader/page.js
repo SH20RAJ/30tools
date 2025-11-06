@@ -1,8 +1,8 @@
 import TikTokAudioDownloader from '@/components/tools/downloaders/TikTokAudioDownloader';
 
 export const metadata = {
-    title: "TikTok Audio Downloader - Download TikTok MP3 Music & Sounds Free | 30tools",
-    description: "Download TikTok audio and music as MP3 files for free. Extract high-quality audio from TikTok videos without watermark. Fast, secure, unlimited TikTok audio downloads.",
+    title: "Tiktok Audio Downloader - Free Online Tool | Professional Results",
+    description: "Professional tiktok audio downloader tool. Free online processing with high-quality results. No registration required, instant results.",
     keywords: [
         // Primary TikTok audio keywords from CSV data
         "tiktok audio downloader",

@@ -2,7 +2,7 @@ import TextToSpeechTool from '@/components/tools/audio/TextToSpeechTool'
 
 export const metadata = {
   title: 'Text to Speech Converter - Free Online TTS Generator',
-  description: 'Convert text to natural speech online. Free text-to-speech tool with multiple voices, languages, and customizable settings. Perfect for accessibility, learning, and content creation.',
+  description: "Professional text to speech to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: 'text to speech, tts, voice synthesis, speech generator, text reader, accessibility tool, voice over, audio converter, speech synthesis, natural voice',
   openGraph: {
     title: 'Free Text to Speech Converter - Natural Voice Synthesis',

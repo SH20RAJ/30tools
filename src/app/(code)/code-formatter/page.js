@@ -2,7 +2,7 @@ import CodeFormatterTool from '@/components/tools/code/CodeFormatterTool';
 
 export const metadata = {
   title: "Code Formatter - Prettier JavaScript, CSS, HTML, TypeScript",
-  description: "Format code with industry-standard Prettier engine and customizable style options. Free and secure.",
+  description: "Professional code formatter with instant results. Free online tool for students, professionals, and businesses worldwide.",
   keywords: "code formatter, prettier online, javascript formatter, css formatter, html formatter, typescript formatter, code beautifier, code style",
   openGraph: {
     title: "Code Formatter - 30tools",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Code Formatter",
+  "description": "Professional code formatter tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/code-formatter",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

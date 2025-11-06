@@ -3,7 +3,7 @@ import VideoToolsNavbar from '@/components/navigation/VideoToolsNavbar';
 
 export const metadata = {
   title: 'Terabox Video Player - Play & Download Terabox Videos Online Free',
-  description: 'Free online Terabox video player. Stream and download videos from Terabox share links instantly. No login required, no ads. Play Terabox videos directly in your browser with HLS streaming.',
+  description: "Free terabox video player tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: 'terabox video player, terabox downloader, play terabox video online, terabox video stream, download terabox video, terabox share link player, free terabox player, watch terabox videos',
   openGraph: {
     title: 'Terabox Video Player - Stream & Download Terabox Videos Free',
@@ -15,11 +15,43 @@ export const metadata = {
     title: 'Terabox Video Player - Free Online Streaming',
     description: 'Stream and download Terabox videos instantly. No login required.',
   },
+,
+  alternates: {
+    canonical: "https://30tools.com/terabox-video-player"
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Terabox Video Player",
+  "description": "Free terabox video player tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  "url": "https://30tools.com/terabox-video-player",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function TeraboxVideoPlayerPage() {
   return (
-    <>
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <>
       <VideoToolsNavbar />
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4">

@@ -2,7 +2,7 @@ import XmlSitemapExtractor from '@/components/tools/seo/XmlSitemapExtractor';
 
 export const metadata = {
   title: "XML Sitemap Extractor - Extract URLs to CSV, TXT, Excel",
-  description: "Extract all URLs from XML sitemaps and export them in various formats (CSV, TXT, XML, HTML, Excel). Analyze sitemap structure and URL data for SEO audits and competitor research.",
+  description: "Professional xml sitemap extractor for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
   keywords: "xml sitemap extractor, sitemap url extractor, sitemap parser, sitemap analyzer, xml parser tool, sitemap crawler, url list extractor, sitemap reader, extract urls from xml sitemap, sitemap url list generator",
   openGraph: {
     title: "Free XML Sitemap Extractor - Extract URLs to CSV, TXT, Excel",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Xml Sitemap Extractor",
+  "description": "Professional xml sitemap extractor for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+  "url": "https://30tools.com/xml-sitemap-extractor",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

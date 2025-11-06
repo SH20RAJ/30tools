@@ -15,6 +15,10 @@ export const metadata = {
     title: "Search Tools - Find the Perfect Online Tool | 30tools",
     description: "Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more.",
   }
+,
+  alternates: {
+    canonical: "https://30tools.com/search"
+  }
 };
 
 export default async function SearchPage({ searchParams }) {
@@ -50,7 +54,13 @@ export default async function SearchPage({ searchParams }) {
   }
   
   return (
-    <SearchPageServer 
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <SearchPageServer 
       initialTools={filteredTools}
       initialQuery={query}
       initialCategory={category}

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
     title: 'Free Online Calculators - Math, Finance, Health & More | 30tools',
-    description: 'Access 25+ free online calculators for math, finance, health, and everyday calculations. No registration required.',
+    description: "Free calculators with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
     keywords: [
         // Primary high-volume keywords
         "online calculators",
@@ -31,6 +31,30 @@ export const metadata = {
     alternates: {
         canonical: "https://30tools.com/calculators"
     }
+,
+  openGraph: {
+    title: "Calculators - Free Online Calculator | Instant Results",
+    description: "Free calculators with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+    url: "https://30tools.com/calculators",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/calculators.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Calculators - Free Online Calculator | Instant Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Calculators - Free Online Calculator | Instant Results",
+    description: "Free calculators with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+    images: ["/og-images/calculators.jpg"],
+    creator: "@30tools"
+  }
 };
 
 const jsonLd = {

@@ -6,10 +6,38 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowLeftIcon, HelpCircleIcon, BookOpenIcon, LifeBuoyIcon } from 'lucide-react';
 
 export const metadata = {
-  title: "Help & FAQ - 30tools.com | Get Support",
-  description: "Find answers to common questions about 30tools.com. Learn how to use our free online tools effectively.",
+  title: "Help - Free Online Tool | Professional Results",
+  description: "Professional help with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "help, FAQ, support, tutorials, how to use, troubleshooting, guide",
   robots: { index: true, follow: true }
+,
+  openGraph: {
+    title: "Help - Free Online Tool | Professional Results",
+    description: "Professional help tool. Free online processing with high-quality results. No registration required, instant results.",
+    url: "https://30tools.com/help",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/help.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Help - Free Online Tool | Professional Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Help - Free Online Tool | Professional Results",
+    description: "Professional help tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/help.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/help"
+  }
 };
 
 const faqs = [
@@ -99,9 +127,37 @@ const faqs = [
   }
 ];
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Help",
+  "description": "Professional help tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/help",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function HelpPage() {
   return (
-    <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-6">
           <Link href="/">

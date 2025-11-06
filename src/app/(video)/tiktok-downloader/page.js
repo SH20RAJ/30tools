@@ -29,6 +29,28 @@ export const metadata = {
   }
 }
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Tiktok Downloader",
+  "description": "Professional tiktok downloader tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+  "url": "https://30tools.com/tiktok-downloader",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function TikTokDownloaderPage() {
   return <TikTokDownloaderTool />
 }

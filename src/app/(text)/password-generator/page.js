@@ -1,8 +1,8 @@
 import PasswordGeneratorTool from '@/components/tools/text/PasswordGeneratorTool';
 
 export const metadata = {
-  title: "Free Password Generator - Create Strong Random Passwords Online | 30tools",
-  description: "Generate strong, secure passwords instantly with our 100% free password generator. No limits, no registration. Create random passwords with custom length (8-128 characters), symbols, and numbers.",
+  title: "Password Generator - Free Online Generator | Create Instantly",
+  description: "Generate Process instantly with our free password generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: [
     // Primary high-volume keywords from research
     "password generator",

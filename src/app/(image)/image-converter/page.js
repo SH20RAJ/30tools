@@ -2,7 +2,7 @@ import ImageConverterTool from '@/components/tools/image/ImageConverterTool';
 
 export const metadata = {
   title: "Image Converter - Convert JPG, PNG, WEBP, GIF, HEIC",
-  description: "Convert between JPG, PNG, WEBP, GIF, HEIC and more. Batch processing with quality control and instant download.",
+  description: "Convert Process instantly with our free image converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
   keywords: "image converter, convert image format, jpg to png, png to jpg, webp converter, heic to jpeg, gif converter, batch image conversion, image format changer",
   alternates: {
     canonical: "https://30tools.com/image-converter"

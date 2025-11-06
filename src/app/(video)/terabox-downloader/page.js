@@ -2,62 +2,23 @@ import TeraboxPlayerTool from '@/components/tools/video/TeraboxPlayerTool';
 
 export const metadata = {
   title: 'Terabox Video Downloader Player | Download Terabox Videos...',
-  description: 'Download Terabox videos for free with our online downloader. Get direct download links, embed videos with custom players, and stream Terabox content without limits. Fast, safe, and easy to use.',
+  description: "Free terabox downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: [
-    // Primary keywords
-    'terabox video downloader',
-    'download terabox videos',
-    'terabox downloader free',
-    'terabox video player',
-    'terabox online downloader',
-    
-    // Long-tail keywords
-    'how to download videos from terabox',
-    'terabox video downloader without login',
-    'free terabox downloader online',
-    'download terabox movies free',
-    'terabox direct download link',
-    'terabox video downloader no limit',
-    'embed terabox videos website',
-    'terabox player generator',
-    'terabox video streaming',
-    'download large files from terabox',
-    
-    // Alternative spellings and variations
-    'tera box video downloader',
-    'terra box downloader',
-    'terabox file downloader',
-    'terabox mp4 downloader',
-    'terabox movie downloader',
-    'terabox video extractor',
-    'terabox link downloader',
-    'terabox video converter',
-    'terabox downloader tool',
-    'terabox video saver',
-    
-    // Question-based keywords
-    'how to download from terabox',
-    'can i download terabox videos',
-    'terabox download not working',
-    'fastest terabox downloader',
-    'best terabox video downloader',
-    'safe terabox downloader',
-    'terabox downloader for mobile',
-    'terabox downloader chrome',
-    'terabox downloader android',
-    'terabox downloader ios',
-    
-    // Feature-based keywords
-    'terabox batch downloader',
-    'terabox high quality download',
-    'terabox original quality download',
-    'terabox resume download',
-    'terabox multiple mirrors',
-    'terabox fast download',
-    'terabox unlimited download',
-    'terabox premium downloader free',
-    'terabox no ads downloader',
-    'terabox direct link generator'
+    "terabox downloader",
+    "terabox downloader online",
+    "free terabox downloader",
+    "terabox downloader tool",
+    "online terabox downloader free",
+    "professional terabox downloader",
+    "terabox downloader online tool",
+    "best terabox downloader free",
+    "terabox downloader web app",
+    "terabox downloader utility",
+    "video editing online",
+    "video processing tool",
+    "video optimization",
+    "video converter free",
+    "video editor professional"
   ].join(', '),
   openGraph: {
     title: 'Terabox Video Downloader Player | Download Videos Online',

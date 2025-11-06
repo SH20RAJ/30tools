@@ -6,14 +6,70 @@ import { ArrowLeftIcon, CodeIcon, KeyIcon, BookIcon } from 'lucide-react';
 
 export const metadata = {
   title: "API Documentation - 30tools.com | Developer Resources",
-  description: "Learn how to integrate 30tools.com APIs into your applications. Search suggestions and tool metadata endpoints.",
+  description: "Professional api docs with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "API, documentation, developer, integration, search suggestions, REST API",
   robots: { index: true, follow: true }
+,
+  openGraph: {
+    title: "Api Docs - Free Online Tool | Professional Results",
+    description: "Professional api docs tool. Free online processing with high-quality results. No registration required, instant results.",
+    url: "https://30tools.com/api-docs",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/api-docs.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Api Docs - Free Online Tool | Professional Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Api Docs - Free Online Tool | Professional Results",
+    description: "Professional api docs tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/api-docs.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/api-docs"
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Api Docs",
+  "description": "Professional api docs tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/api-docs",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function APIDocsPage() {
   return (
-    <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-6">
           <Link href="/">

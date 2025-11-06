@@ -2,7 +2,7 @@ import RemoveDuplicates from "@/components/tools/text/RemoveDuplicatesTool";
 
 export const metadata = {
   title: 'Remove Duplicate Lines - Text Deduplication Tool Online | 30tools',
-  description: 'Remove duplicate lines from text instantly. Clean up data, remove redundant entries, and organize text lists. Free online duplicate remover tool with advanced options.',
+  description: "Professional remove duplicates to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: [
     // Primary high-volume keywords
     "remove duplicates",

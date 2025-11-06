@@ -2,7 +2,7 @@ import URLShortenerTool from '@/components/tools/utilities/URLShortenerTool';
 
 export const metadata = {
   title: "Free URL Shortener - Create Short Links with Analytics",
-  description: "Free URL shortener with custom aliases, QR codes, and click analytics. Create short, trackable links instantly. Perfect for social media, marketing campaigns, and link management.",
+  description: "Professional url shortener with instant results. Free online tool for students, professionals, and businesses worldwide.",
   keywords: "url shortener, short link generator, custom url shortener, link shortener free, shorten url online, tiny url, short links with analytics, qr code generator",
   openGraph: {
     title: "Free URL Shortener - Create Short Links with Analytics",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Url Shortener",
+  "description": "Professional url shortener tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/url-shortener",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

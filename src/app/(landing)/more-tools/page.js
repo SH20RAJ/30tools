@@ -4,18 +4,21 @@ import Link from 'next/link';
 
 export const metadata = {
   title: "More Developer Utilitys by 30Tools - Online Tools Collection",
-  description: "Discover our comprehensive collection of developer tools, online utilities, and specialized platforms. From code formatters to AI agents, terabox downloaders to music tools - all free and always available.",
+  description: "Professional more tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: [
-    "developer tools",
-    "online utilities",
-    "code formatter",
-    "hash generator",
-    "terabox downloader",
-    "ai agents directory",
-    "music tools",
-    "file converter",
-    "30tools collection",
-    "free online tools"
+    "more tools",
+    "more tools online",
+    "free more tools",
+    "more tools tool",
+    "online more tools free",
+    "professional more tools",
+    "more tools online tool",
+    "best more tools free",
+    "more tools web app",
+    "more tools utility",
+    "online tool",
+    "free utility",
+    "web application"
   ].join(", "),
   openGraph: {
     title: "More Developer & Utility Tools by 30Tools",
@@ -120,9 +123,37 @@ const tools = [
 
 const categories = [...new Set(tools.map(tool => tool.category))];
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "More Tools",
+  "description": "Professional more tools tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/more-tools",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function MoreToolsPage() {
   return (
-    <div className="min-h-screen bg-background py-12">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background py-12">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">

@@ -1,8 +1,8 @@
 import TwitterDownloader from '@/components/tools/downloaders/TwitterDownloader';
 
 export const metadata = {
-    title: "Twitter Video Downloader - Download X Videos & GIFs Free Online | 30tools",
-    description: "Download Twitter/X videos and GIFs in HD quality for free. Save Twitter videos to your device without software installation. Fast, secure, unlimited downloads from Twitter and X platform.",
+    title: "Twitter Video Downloader - Free Online Tool | 30tools",
+    description: "Free twitter video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
     keywords: [
         // Primary Twitter/X keywords
         "twitter video downloader",

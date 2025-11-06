@@ -1,8 +1,8 @@
 import InstagramReelDownloader from '@/components/tools/downloaders/InstagramReelDownloader';
 
 export const metadata = {
-    title: "Instagram Reel Downloader - Download IG Reels HD Without Watermark | 30tools",
-    description: "Download Instagram Reels in HD quality without watermark for free. Save Instagram Reels to your device without app installation. Fast, secure, unlimited Reel downloads.",
+    title: "Instagram Reel Downloader - Free Online Tool | 30tools",
+    description: "Professional instagram reel downloader tool. Free online processing with high-quality results. No registration required, instant results.",
     keywords: [
         // Primary Instagram Reel keywords
         "instagram reel downloader",

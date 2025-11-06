@@ -5,7 +5,7 @@ import { Volume2, Mic, FileAudio, Scissors, Edit, BarChart3, Settings, Headphone
 
 export const metadata = {
   title: 'Audio Tools - Free Online Audio Editor & Converter | 30tools',
-  description: 'Professional audio tools for editing, converting, recording, and processing audio files. Audio converter, voice recorder, audio trimmer, text-to-speech, and more.',
+  description: "Professional audio tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: 'audio tools, audio converter, voice recorder, audio editor, audio trimmer, text to speech, mp3 converter, audio compressor, free audio tools',
   openGraph: {
     title: 'Free Audio Tools - Audio Editor & Converter',

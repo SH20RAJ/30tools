@@ -2,7 +2,7 @@ import ChatGPTTextConverterTool from '@/components/tools/text/ChatGPTTextConvert
 
 export const metadata = {
     title: "ChatGPT Text to Normal Text Converter - 30tools",
-    description: "Convert ChatGPT markdown text to clean, normal text. Remove formatting like **bold**, *italic*, ### headers, and lists. Perfect for cleaning AI-generated content.",
+    description: "Convert Process instantly with our free chatgpt text converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
     keywords: "chatgpt text converter, markdown to text, remove markdown formatting, clean ai text, chatgpt markdown converter, text formatter, ai text cleaner, remove bold italic, convert markdown",    alternates: {
         canonical: "https://30tools.com/chatgpt-text-converter"
     },

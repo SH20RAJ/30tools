@@ -4,14 +4,85 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowLeftIcon } from 'lucide-react';
 
 export const metadata = {
-  title: "Terms of Service - 30tools.com",
+  title: "Terms - Free Online Tool | Professional Results",
   description: "Terms of Service for using 30tools.com free online tools. Learn about our usage policies, limitations, and user responsibilities.",
+  keywords: [
+    "terms",
+    "terms online",
+    "free terms",
+    "terms tool",
+    "online terms free",
+    "professional terms",
+    "terms online tool",
+    "best terms free",
+    "terms web app",
+    "terms utility",
+    "online tool",
+    "free utility",
+    "web application"
+  ].join(", "),
   robots: { index: true, follow: true }
+,
+  openGraph: {
+    title: "Terms - Free Online Tool | Professional Results",
+    description: "Professional terms tool. Free online processing with high-quality results. No registration required, instant results.",
+    url: "https://30tools.com/terms",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/terms.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Terms - Free Online Tool | Professional Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms - Free Online Tool | Professional Results",
+    description: "Professional terms tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/terms.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/terms"
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Terms",
+  "description": "Professional terms tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/terms",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function TermsOfServicePage() {
   return (
-    <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-6">
           <Link href="/">

@@ -2,7 +2,7 @@ import QrGeneratorTool from '@/components/tools/utilities/QrGeneratorTool'
 
 export const metadata = {
   title: 'QR Code Generator - Free Online QR Code Maker | 30tools',
-  description: 'Generate high-quality QR codes instantly for URLs, text, contact info, and more. Free QR code generator with multiple sizes and error correction levels. No watermarks, unlimited use.',
+  description: "Generate Process instantly with our free qr generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: 'qr code generator, qr code maker, free qr generator, qr code creator, barcode generator, qr scanner, quick response code, vcard qr, wifi qr code',
   openGraph: {
     title: 'Free QR Code Generator - Create QR Codes Instantly',

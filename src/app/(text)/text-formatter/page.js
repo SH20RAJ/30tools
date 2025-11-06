@@ -2,7 +2,7 @@ import TextFormatter from "@/components/tools/text/TextFormatterTool";
 
 export const metadata = {
   title: 'Text Formatter - Format and Clean Text Online Free | 30tools',
-  description: 'Format and clean up text with various options. Remove extra spaces, fix line breaks, apply text formatting, and clean messy text instantly. Free online text formatter tool.',
+  description: "Professional text formatter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: [
     // Primary high-volume keywords
     "text formatter",
@@ -50,6 +50,18 @@ export const metadata = {
     description: 'Format and clean up text with various options.',
     type: 'website',
   },
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Text Formatter - Free Text Tool | Professional Text Processing",
+    description: "Professional text formatter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+    images: ["/og-images/text-formatter.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/text-formatter"
+  }
 };
 
 const jsonLd = {

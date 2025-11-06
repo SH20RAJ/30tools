@@ -1,8 +1,8 @@
 import TextCaseConverterTool from '@/components/tools/text/TextCaseConverterTool';
 
 export const metadata = {
-    title: "Text Case Converter - 30tools",
-    description: "Convert text case instantly: UPPERCASE, lowercase, Title Case, camelCase, snake_case, and more. Free online text transformation tool with bulk conversion support.",
+    title: "Text Case Converter - Free Online Converter | Instant Conversion",
+    description: "Convert Process instantly with our free text case converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
     keywords: [
         // Primary high-volume keywords
         "text case converter",

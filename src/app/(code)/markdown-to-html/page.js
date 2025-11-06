@@ -2,7 +2,7 @@ import MarkdownToHtmlTool from '@/components/tools/code/MarkdownToHtmlTool';
 
 export const metadata = {
   title: "Markdown to HTML Converter - Convert Markdown Online",
-  description: "Convert Markdown to HTML instantly. Paste your Markdown, click convert, and copy or download the result.",
+  description: "Professional markdown to html with instant results. Free online tool for students, professionals, and businesses worldwide.",
   keywords: "markdown to html, convert markdown to html, markdown html converter, markdown online tool, markdown parser, markdown to html free",
   openGraph: {
     title: "Free Markdown to HTML Converter - Convert Markdown Online",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Markdown To Html",
+  "description": "Professional markdown to html tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/markdown-to-html",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

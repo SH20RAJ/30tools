@@ -3,8 +3,8 @@ import InstagramEmbed from '@/components/shared/InstagramEmbed';
 import UnstoryOpenmindCTA from '@/components/shared/UnstoryOpenmindCTA';
 
 export const metadata = {
-  title: "⚡ Free YouTube Downloader Online - Download YouTube Videos HD MP4 MP3 | 30tools",
-  description: "⚡ Free YouTube video downloader online. Download YouTube videos in HD 1080p, 4K, convert to MP3. No software required. Fast, secure & unlimited downloads. Works on all devices.",
+  title: "Youtube Downloader - Free Online Tool | Professional Results",
+  description: "Professional youtube downloader tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     // Primary high-volume keywords
     "youtube downloader",

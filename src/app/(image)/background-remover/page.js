@@ -2,7 +2,7 @@ import BackgroundRemoverTool from '@/components/tools/image/BackgroundRemoverToo
 
 export const metadata = {
   title: "Background Remover - Remove Image Backgrounds Instantly",
-  description: "Remove backgrounds from images instantly with AI. Perfect for product photos and design projects.",
+  description: "Professional background remover for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
   keywords: "background remover, remove background from image, background eraser, cut out image background, transparent background, remove bg, image background removal",
   openGraph: {
     title: "Background Remover - Remove Image Backgrounds Instantly",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Background Remover",
+  "description": "Professional background remover for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
+  "url": "https://30tools.com/background-remover",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

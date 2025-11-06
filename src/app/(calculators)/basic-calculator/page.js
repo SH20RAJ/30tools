@@ -48,6 +48,30 @@ export const metadata = {
     alternates: {
         canonical: "https://30tools.com/basic-calculator"
     }
+,
+  openGraph: {
+    title: "Basic Calculator - Free Online Calculator | Instant Results",
+    description: "Free basic calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+    url: "https://30tools.com/basic-calculator",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/basic-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Basic Calculator - Free Online Calculator | Instant Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Basic Calculator - Free Online Calculator | Instant Results",
+    description: "Free basic calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+    images: ["/og-images/basic-calculator.jpg"],
+    creator: "@30tools"
+  }
 };
 
 const jsonLd = {

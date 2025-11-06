@@ -2,7 +2,7 @@ import RandomGenerator from "@/components/tools/utilities/RandomGeneratorTool";
 
 export const metadata = {
   title: "Random Generator - Advanced Random Data Creator | 30tools",
-  description: "Generate random numbers, passwords, strings, UUIDs, colors, and more. Advanced random data generator with customizable options for developers, testers, and general users. Free and unlimited.",
+  description: "Generate Process instantly with our free random generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: [
     // Primary keywords
     "random generator",

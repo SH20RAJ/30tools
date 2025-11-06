@@ -1,8 +1,8 @@
 import TikTokMP3Converter from '@/components/tools/downloaders/TikTokMP3Converter';
 
 export const metadata = {
-    title: "TikTok to MP3 Converter - Convert TikTok Videos to MP3 Free | 30tools",
-    description: "Convert TikTok videos to MP3 audio files for free. High-quality TikTok to MP3 converter with 320kbps output. Fast, secure, unlimited conversions without software.",
+    title: "Tiktok Mp3 Converter - Free Online Converter | Instant Conversion",
+    description: "Convert Process instantly with our free tiktok mp3 converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
     keywords: [
         // Primary TikTok MP3 keywords from CSV (5950 impressions)
         "tiktok mp3 converter",

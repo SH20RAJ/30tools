@@ -5,7 +5,7 @@ import { Image, Archive, FileImage, Crop, Palette, Eye, Scissors, Download } fro
 
 export const metadata = {
   title: 'Image Tools - Free Online Image Processing & Editing',
-  description: 'Professional image tools for compression, conversion, editing, and optimization. Image compressor, format converter, resizer, cropper, and more. Process images locally in your browser.',
+  description: "Professional image tools for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
   keywords: 'image tools, image compressor, image converter, photo editor, image resizer, image cropper, webp converter, png to jpg, image optimization, free image tools',
   openGraph: {
     title: 'Free Image Tools - Image Processing & Editing',

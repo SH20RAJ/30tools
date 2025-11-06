@@ -1,8 +1,8 @@
 import VideoToMP3Converter from '@/components/tools/converter/VideoToMP3Converter';
 
 export const metadata = {
-    title: "Video to MP3 Converter - Convert Video to Audio Online Free | 30tools",
-    description: "Convert video files to MP3 audio format online for free. Extract high-quality audio from video files instantly.",
+    title: "Video To Mp3 Converter - Free Online Tool | 30tools",
+    description: "Free video to mp3 converter tool with professional results. No registration required, instant processing, secure & unlimited use.",
     keywords: [
         // Primary video to MP3 keywords
         "video to mp3 converter",

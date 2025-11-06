@@ -29,6 +29,28 @@ export const metadata = {
   }
 }
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Video Watermark Remover",
+  "description": "Free video watermark remover tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  "url": "https://30tools.com/video-watermark-remover",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function VideoWatermarkRemoverPage() {
   return <VideoWatermarkRemoverTool />
 }

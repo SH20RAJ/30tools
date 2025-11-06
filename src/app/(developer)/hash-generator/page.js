@@ -2,7 +2,7 @@ import HashGeneratorTool from '@/components/tools/developer/HashGeneratorTool';
 
 export const metadata = {
   title: "Hash Generator - MD5, SHA-256, SHA-512 Hash Calculator",
-  description: "Generate secure cryptographic hashes from text or files. Support for MD5, SHA-1, SHA-256, SHA-512, and more. Perfect for data integrity verification and security applications.",
+  description: "Generate Process instantly with our free hash generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: "hash generator, md5 generator, sha256 generator, sha512 generator, cryptographic hash, checksum calculator, hash calculator online, data integrity",
   openGraph: {
     title: "Hash Generator - MD5, SHA-256, SHA-512 Hash Calculator",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Hash Generator",
+  "description": "Generate Process instantly with our free hash generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+  "url": "https://30tools.com/hash-generator",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

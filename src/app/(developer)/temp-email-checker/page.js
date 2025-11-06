@@ -34,6 +34,32 @@ export const metadata = {
     description: "Free temporary email checker to detect disposable and temporary email addresses.",
     images: ["/og-images/temp-email-checker.jpg"]
   }
+,
+  alternates: {
+    canonical: "https://30tools.com/temp-email-checker"
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Temp Email Checker",
+  "description": "Professional temp email checker for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+  "url": "https://30tools.com/temp-email-checker",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function TempEmailCheckerPage() {

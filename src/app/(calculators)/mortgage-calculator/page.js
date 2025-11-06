@@ -1,7 +1,7 @@
 import MortgageCalculatorTool from '@/components/tools/calculators/MortgageCalculatorTool';
 
 export const metadata = {
-    title: "Mortgage Calculator - Calculate Monthly Payments Online Free | 30tools",
+    title: "Mortgage Calculator - Free Online Calculator | Instant Results",
     description: "Free mortgage calculator for monthly payments, total interest, and amortization schedule. Include taxes, insurance, and PMI.",
     keywords: [
         // Primary high-volume keywords
@@ -48,6 +48,30 @@ export const metadata = {
     alternates: {
         canonical: "https://30tools.com/mortgage-calculator"
     }
+,
+  openGraph: {
+    title: "Mortgage Calculator - Free Online Calculator | Instant Results",
+    description: "Free mortgage calculator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    url: "https://30tools.com/mortgage-calculator",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/mortgage-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Mortgage Calculator - Free Online Calculator | Instant Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Mortgage Calculator - Free Online Calculator | Instant Results",
+    description: "Free mortgage calculator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    images: ["/og-images/mortgage-calculator.jpg"],
+    creator: "@30tools"
+  }
 };
 
 const jsonLd = {

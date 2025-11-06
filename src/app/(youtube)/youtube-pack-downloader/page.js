@@ -1,8 +1,8 @@
 import YouTubePackDownloader from '@/components/tools/youtube/YouTubePackDownloader';
 
 export const metadata = {
-  title: "YouTube Pack Downloader - 30tools",
-  description: "Download complete YouTube video packages including title, description, tags, transcript, thumbnail, and metadata. All-in-one YouTube video asset downloader for content creators and marketers.",
+  title: "Youtube Pack Downloader - Free Online Tool | Professional Results",
+  description: "Professional youtube pack downloader with instant results. Free online tool for students, professionals, and businesses worldwide.",
   keywords: "youtube pack downloader, youtube video assets, youtube metadata downloader, youtube title description tags, youtube thumbnail transcript downloader, complete youtube video package, youtube content analyzer, video seo data extractor",
   openGraph: {
     title: "YouTube Pack Downloader - Download All Video Assets",
@@ -21,6 +21,14 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/youtube-pack-downloader"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Youtube Pack Downloader - Free Online Tool | Professional Results",
+    description: "Professional youtube pack downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/youtube-pack-downloader.jpg"],
+    creator: "@30tools"
   }
 };
 

@@ -3,8 +3,8 @@ import { Video, Image, Users, Smartphone } from 'lucide-react';
 import Link from 'next/link';
 
 export const metadata = {
-    title: "Social Media Video Downloaders - Download Videos from All Platforms Free | 30tools",
-    description: "Download videos from Facebook, Instagram, Twitter, TikTok, Pinterest, and YouTube Shorts for free. Fast, secure, and unlimited social media video downloads without software installation.",
+    title: "All Downloaders - Free Online Tool | Professional Results",
+    description: "Professional all downloaders tool. Free online processing with high-quality results. No registration required, instant results.",
     keywords: [
         // Primary downloader keywords
         "social media video downloader",

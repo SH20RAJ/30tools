@@ -2,7 +2,7 @@ import YouTubeShortsDownloader from '@/components/tools/youtube/YouTubeShortsDow
 
 export const metadata = {
   title: "YouTube Shorts Downloader - Download Short Videos Free",
-  description: "Download YouTube Shorts videos in HD quality for free. Save vertical short videos from YouTube to your device instantly with our fast and secure YouTube Shorts downloader.",
+  description: "Professional youtube shorts downloader tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     // Primary keywords
     "youtube shorts downloader",

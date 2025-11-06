@@ -1,8 +1,8 @@
 import CalorieCalculatorTool from '@/components/tools/calculators/CalorieCalculatorTool';
 
 export const metadata = {
-    title: "Calorie Calculator - Calculate Daily Calorie Needs Online Free | 30tools",
-    description: "Free calorie calculator to determine daily calorie needs for weight loss, gain, or maintenance. Calculate BMR and TDEE.",
+    title: "Calorie Calculator - Free Online Calculator | Instant Results",
+    description: "Free calorie calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
     keywords: [
         // Primary high-volume keywords
         "calorie calculator",
@@ -48,6 +48,30 @@ export const metadata = {
     alternates: {
         canonical: "https://30tools.com/calorie-calculator"
     }
+,
+  openGraph: {
+    title: "Calorie Calculator - Free Online Calculator | Instant Results",
+    description: "Free calorie calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+    url: "https://30tools.com/calorie-calculator",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/calorie-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Calorie Calculator - Free Online Calculator | Instant Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Calorie Calculator - Free Online Calculator | Instant Results",
+    description: "Free calorie calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
+    images: ["/og-images/calorie-calculator.jpg"],
+    creator: "@30tools"
+  }
 };
 
 const jsonLd = {

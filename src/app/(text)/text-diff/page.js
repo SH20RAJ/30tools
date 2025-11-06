@@ -2,7 +2,7 @@ import TextDiff from "@/components/tools/text/TextDiffTool";
 
 export const metadata = {
   title: 'Text Diff Checker - Compare Two Texts Online Free | 30tools',
-  description: 'Compare two texts and find differences instantly. Highlight additions, deletions, and changes between text versions. Free online text comparison tool for writers and developers.',
+  description: "Professional text diff to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: [
     // Primary high-volume keywords
     "text diff",
@@ -50,6 +50,18 @@ export const metadata = {
     description: 'Compare two texts and find differences.',
     type: 'website',
   },
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Text Diff - Free Text Tool | Professional Text Processing",
+    description: "Professional text diff to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+    images: ["/og-images/text-diff.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/text-diff"
+  }
 };
 
 const jsonLd = {

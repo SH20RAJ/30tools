@@ -1,8 +1,8 @@
 import FacebookStoryDownloader from '@/components/tools/downloaders/FacebookStoryDownloader';
 
 export const metadata = {
-    title: "Facebook Story Downloader - Download FB Stories & Highlights Free | 30tools",
-    description: "Download Facebook stories and highlights anonymously in HD quality for free. Save Facebook stories to your device without the user knowing. Fast, secure, unlimited downloads.",
+    title: "Facebook Story Downloader - Free Online Tool | 30tools",
+    description: "Professional facebook story downloader tool. Free online processing with high-quality results. No registration required, instant results.",
     keywords: [
         // Primary Facebook story keywords
         "facebook story downloader",

@@ -2,7 +2,7 @@ import AIImageGeneratorTool from '@/components/tools/generators/AIImageGenerator
 
 export const metadata = {
   title: "AI Image Generator - Free Text to Image Creator | 30tools",
-  description: "Generate stunning AI images from text prompts instantly. Free AI art generator with advanced features, styles, and image history. Create unique images with no signup required.",
+  description: "Generate Process instantly with our free ai image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: [
     // Primary keywords
     "ai image generator",

@@ -13,8 +13,8 @@ import { generateDeveloperToolMeta } from '@/constants/seo/developer-tools-seo';
 import { getDeveloperToolFAQs } from '@/constants/seo/developer-faqs';
 
 export const metadata = {
-  title: "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON | 30tools",
-  description: "Professional JSON formatter, validator & minifier for developers. Format messy JSON, validate syntax errors, minify for production. Tree view, error detection, copy formatted code. Free developer tool.",
+  title: "Json Formatter - Free Developer Tool | Professional Coding",
+  description: "Professional json formatter for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
   keywords: "json formatter, json validator, json beautifier, json minifier, json parser, json syntax checker, format json online, validate json online, json pretty print, json editor online, json formatter and validator online free, json minifier and beautifier tool, json syntax checker with error detection, format json online no signup required, validate json format online free, json pretty print formatter, json parser and formatter online, json beautifier with tree view",
   openGraph: {
     title: "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON",

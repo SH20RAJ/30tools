@@ -1,8 +1,8 @@
 import InstagramDPDownloader from '@/components/tools/downloaders/InstagramDPDownloader';
 
 export const metadata = {
-    title: "Instagram DP Downloader - Download Instagram Profile Picture HD Free | 30tools",
-    description: "Download Instagram profile pictures (DP) in full size HD quality for free. View and save Instagram profile photos anonymously without login. Fast, secure, unlimited downloads.",
+    title: "Instagram Dp Downloader - Free Online Tool | Professional Results",
+    description: "Professional instagram dp downloader tool. Free online processing with high-quality results. No registration required, instant results.",
     keywords: [
         // Primary Instagram DP keywords
         "instagram dp downloader",

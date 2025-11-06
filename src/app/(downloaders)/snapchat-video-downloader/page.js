@@ -1,8 +1,8 @@
 import SnapchatDownloader from '@/components/tools/downloaders/SnapchatDownloader';
 
 export const metadata = {
-    title: "Snapchat Video Downloader - Download Snapchat Videos & Stories Free | 30tools",
-    description: "Download Snapchat videos and stories in HD quality for free. Save Snapchat content to your device without app installation. Fast, secure, unlimited Snapchat downloads.",
+    title: "Snapchat Video Downloader - Free Online Tool | 30tools",
+    description: "Free snapchat video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
     keywords: [
         // Primary Snapchat keywords
         "snapchat video downloader",

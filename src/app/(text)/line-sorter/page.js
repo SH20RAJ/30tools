@@ -1,7 +1,7 @@
 import LineSorter from "@/components/tools/text/LineSorterTool";
 
 export const metadata = {
-  title: 'Line Sorter - Sort Text Lines Alphabetically & Numerically | 30tools',
+  title: "Line Sorter - Free Text Tool | Professional Text Processing",
   description: 'Sort text lines alphabetically, numerically, or by length. Ascending/descending order with advanced sorting options. Free online line sorting tool.',
   keywords: [
     // Primary high-volume keywords

@@ -5,7 +5,7 @@ import { Video, Film, Scissors, Archive, FileVideo, Monitor, Download, Edit } fr
 
 export const metadata = {
   title: 'Video Tools - Free Online Video Editor & Converter | 30tools',
-  description: 'Professional video tools for editing, converting, compressing, and processing videos. Free video converter, video compressor, video trimmer, screen recorder, and more.',
+  description: "Professional video tools tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
   keywords: 'video tools, video converter, video compressor, video editor, video trimmer, screen recorder, video to gif, mp4 converter, free video tools',
   openGraph: {
     title: 'Free Video Tools - Video Editor & Converter',

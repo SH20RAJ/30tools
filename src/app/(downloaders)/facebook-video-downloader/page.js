@@ -1,8 +1,8 @@
 import FacebookDownloader from '@/components/tools/downloaders/FacebookDownloader';
 
 export const metadata = {
-    title: "Facebook Video Downloader - Download FB Videos Online Free | 30tools",
-    description: "Download Facebook videos online for free in HD quality. Save Facebook videos, reels, and stories to your device. No software installation required - fast, secure, and unlimited downloads.",
+    title: "Facebook Video Downloader - Free Online Tool | 30tools",
+    description: "Free facebook video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
     keywords: [
         // High-volume primary keywords
         "facebook video downloader",

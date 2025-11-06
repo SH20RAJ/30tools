@@ -2,7 +2,7 @@ import CsvToJsonTool from '@/components/tools/code/CsvToJsonTool';
 
 export const metadata = {
   title: "Free CSV to JSON Converter - Convert CSV Data to JSON",
-  description: "Convert CSV to JSON with smart data type detection and flexible output formats. Perfect for developers.",
+  description: "Professional csv to json with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "csv to json converter, convert csv to json online, csv json converter, csv parser, data conversion, csv to json api, excel to json",
   openGraph: {
     title: "Free CSV to JSON Converter - Convert CSV Data to JSON Online",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Csv To Json",
+  "description": "Professional csv to json tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/csv-to-json",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

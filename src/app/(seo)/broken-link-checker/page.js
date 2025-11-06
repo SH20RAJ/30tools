@@ -2,7 +2,7 @@ import BrokenLinkChecker from '@/components/tools/seo/BrokenLinkChecker';
 
 export const metadata = {
   title: "Free Broken Link Checker - Find 404 Errors & Dead Links",
-  description: "Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages. Free broken link detector with detailed reports.",
+  description: "Professional broken link checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
   keywords: "broken link checker, dead link finder, 404 error checker, link validator, website link checker, broken url finder, link health checker, dead link detector, free broken link checker online",
   openGraph: {
     title: "Free Broken Link Checker - Find 404 Errors & Dead Links",
@@ -51,6 +51,28 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Broken Link Checker",
+  "description": "Professional broken link checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+  "url": "https://30tools.com/broken-link-checker",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
   }
 };
 

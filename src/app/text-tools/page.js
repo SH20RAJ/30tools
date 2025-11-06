@@ -5,7 +5,7 @@ import { Type, FileText, Hash, AlignLeft, Eye, Search, Shuffle, Key } from 'luci
 
 export const metadata = {
   title: 'Text Tools - Free Online Text Processing & Analysis',
-  description: 'Comprehensive collection of free text tools for processing, formatting, analysis, and manipulation. Password generator, text formatter, case converter, word counter, and more.',
+  description: "Professional text tools to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: 'text tools, text processing, text formatter, case converter, word counter, password generator, text analysis, string manipulation, text editor, free text tools',
   openGraph: {
     title: 'Free Text Tools - Text Processing & Analysis',

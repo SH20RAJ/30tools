@@ -1,7 +1,7 @@
 import PercentageCalculatorTool from '@/components/tools/calculators/PercentageCalculatorTool';
 
 export const metadata = {
-    title: "Percentage Calculator - Calculate Percentages Online Free | 30tools",
+    title: "Percentage Calculator - Free Online Calculator | Instant Results",
     description: "Free percentage calculator to find percentages, increases, decreases, and changes. Calculate discounts and percentages instantly.",
     keywords: [
         // Primary high-volume keywords
@@ -48,6 +48,30 @@ export const metadata = {
     alternates: {
         canonical: "https://30tools.com/percentage-calculator"
     }
+,
+  openGraph: {
+    title: "Percentage Calculator - Free Online Calculator | Instant Results",
+    description: "Free percentage calculator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    url: "https://30tools.com/percentage-calculator",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/percentage-calculator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Percentage Calculator - Free Online Calculator | Instant Results"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Percentage Calculator - Free Online Calculator | Instant Results",
+    description: "Free percentage calculator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    images: ["/og-images/percentage-calculator.jpg"],
+    creator: "@30tools"
+  }
 };
 
 const jsonLd = {
