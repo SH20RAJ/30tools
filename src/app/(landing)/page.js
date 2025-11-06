@@ -26,7 +26,6 @@ import {
     RefreshCwIcon
 } from 'lucide-react';
 import AuthComponent from '@/components/auth/AuthComponent';
-import InstagramEmbed from '@/components/shared/InstagramEmbed';
 import UnstoryOpenmindCTA from '@/components/shared/UnstoryOpenmindCTA';
 
 export default function LandingPage() {
@@ -157,7 +156,6 @@ export default function LandingPage() {
                                     </Link>
                                 ))}
                             </div>
-                            <UnstoryOpenmindCTA />
                             {/* CTA buttons */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link href="/search">
@@ -196,12 +194,10 @@ export default function LandingPage() {
                                     <span>4.9/5 user rating</span>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </section>
-
-
-
 
                 {/* Categories Section */}
                 <section className="py-16">
@@ -336,6 +332,10 @@ export default function LandingPage() {
                         </div>
                     </div>
                 </section>
+
+                <UnstoryOpenmindCTA />
+
+
             </main>
 
             {/* Footer */}
