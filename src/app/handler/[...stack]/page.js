@@ -35,7 +35,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "[...stack] - Free Online Tool | Professional Results"
-      }
+      },
     ],
     type: "website"
   },
@@ -71,7 +71,7 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
-  }
+  },
 };
 
 const jsonLd = {
@@ -92,7 +92,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 import { StackHandler } from "@stackframe/stack";
 import { stackServerApp } from "../../../stack";

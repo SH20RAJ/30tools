@@ -37,7 +37,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Schema Markup Generator - SEO Tool"
-      }
+      },
     ]
   },
   twitter: {
@@ -48,7 +48,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/schema-generator"
-  }
+  },
 };
 
 const jsonLd = {

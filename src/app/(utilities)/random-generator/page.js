@@ -78,7 +78,7 @@ export const metadata = {
         height: 630,
         alt: "Random Generator - Advanced Random Data Creator",
         type: "image/jpeg"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -108,7 +108,7 @@ export const metadata = {
     'article:author': '30tools Team',
     'article:section': 'Utility Tools',
     'article:tag': 'random generator, data generation, testing tools, developer utilities'
-  }
+  },
 };
 
 export default function RandomGeneratorPage() {
@@ -169,7 +169,7 @@ export default function RandomGeneratorPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Our random generator uses cryptographically secure algorithms provided by the Web Crypto API when available, ensuring high-quality randomness suitable for security-sensitive applications like password generation."
-        }
+        },
       },
       {
         "@type": "Question", 
@@ -177,7 +177,7 @@ export default function RandomGeneratorPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes! You can generate multiple random values at once and export them in various formats including CSV, JSON, and plain text. Perfect for testing and development purposes."
-        }
+        },
       },
       {
         "@type": "Question",
@@ -185,8 +185,8 @@ export default function RandomGeneratorPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "You can generate random numbers, secure passwords, strings, UUIDs, colors (Hex/RGB/HSL), dates, times, email addresses, IP addresses, and more. Each type has customizable parameters."
-        }
-      }
+        },
+      },
     ]
   };
 

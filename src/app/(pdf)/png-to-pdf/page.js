@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free PNG to PDF Converter"
-      }
+      },
     ],
     type: "website"
   },
@@ -51,7 +51,7 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
-  }
+  },
 };
 
 // Custom component wrapper for PNG-specific messaging
@@ -98,7 +98,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function PngToPdfPage() {

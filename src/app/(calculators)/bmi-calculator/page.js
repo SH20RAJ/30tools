@@ -47,8 +47,8 @@ export const metadata = {
     ].join(", "),
     alternates: {
         canonical: "https://30tools.com/bmi-calculator"
-    }
-,
+    },
+
   openGraph: {
     title: "Bmi Calculator - Free Online Calculator | Instant Results",
     description: "Free bmi calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
@@ -60,18 +60,18 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Bmi Calculator - Free Online Calculator | Instant Results"
-      }
+      },
     ],
     type: "website"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Bmi Calculator - Free Online Calculator | Instant Results",
     description: "Free bmi calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
     images: ["/og-images/bmi-calculator.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 const jsonLd = {
@@ -102,7 +102,7 @@ const jsonLd = {
         "@type": "Organization",
         "name": "30tools",
         "url": "https://30tools.com"
-    }
+    },
 };
 
 export default function BMICalculatorPage() {

@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Video Tools Collection'
-      }
+      },
     ]
   },
   twitter: {
@@ -29,7 +29,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/video-tools'
-  }
+  },
 }
 
 const videoTools = [
@@ -222,7 +222,7 @@ const videoTools = [
     icon: Film,
     category: 'Entertainment',
     trending: true
-  }
+  },
 ]
 
 const categories = [
@@ -552,14 +552,14 @@ export default function VideoToolsPage() {
                   '@type': 'Offer',
                   price: '0',
                   priceCurrency: 'USD'
-                }
+                },
               }))
             },
             provider: {
               '@type': 'Organization',
               name: '30tools',
               url: 'https://30tools.com'
-            }
+            },
           })
         }}
       />

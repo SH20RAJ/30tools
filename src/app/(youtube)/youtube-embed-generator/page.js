@@ -15,21 +15,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "YouTube Embed Code Generator Tool"
-      }
+      },
     ],
     type: "website"
   },
   alternates: {
     canonical: "https://30tools.com/youtube-embed-generator"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Youtube Embed Generator - Free Online Tool | 30tools",
     description: "Free youtube embed generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
     images: ["/og-images/youtube-embed-generator.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 const jsonLd = {

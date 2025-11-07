@@ -30,7 +30,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Terabox Video Downloader Tool'
-      }
+      },
     ]
   },
   twitter: {
@@ -46,7 +46,7 @@ export const metadata = {
     'application-name': '30Tools - Terabox Video Downloader',
     'msapplication-TileColor': '#2563eb',
     'theme-color': '#2563eb'
-  }
+  },
 };
 
 // JSON-LD structured data for SEO
@@ -88,7 +88,7 @@ const jsonLd = {
     '@type': 'CreativeWork',
     name: 'How to Download Terabox Videos',
     text: 'Paste your Terabox URL, select player options, click generate to get download links and embed code.'
-  }
+  },
 };
 
 export default function TeraboxDownloaderPage() {

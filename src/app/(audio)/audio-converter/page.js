@@ -17,7 +17,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: "Free Audio Converter Tool - 30tools"
-            }
+            },
         ],
         locale: 'en_US',
         type: 'website'
@@ -39,7 +39,7 @@ export const metadata = {
             'max-image-preview': 'large',
             'max-snippet': -1,
         },
-    }
+    },
 };
 
 export default function AudioConverterPage() {
@@ -75,7 +75,7 @@ export default function AudioConverterPage() {
             "@type": "AggregateRating",
             "ratingValue": "4.7",
             "reviewCount": "2341"
-        }
+        },
     };
 
     return (

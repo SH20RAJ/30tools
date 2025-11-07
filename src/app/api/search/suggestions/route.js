@@ -7,7 +7,7 @@ const getAllTools = () => {
   Object.values(toolsData.categories).forEach(category => {
     if (category.tools) {
       tools.push(...category.tools);
-    }
+    },
   });
   return tools;
 };
@@ -18,7 +18,7 @@ export async function GET(request) {
 
   if (!query) {
     return NextResponse.json([query, []]);
-  }
+  },
 
   const allTools = getAllTools();
 

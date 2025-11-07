@@ -27,7 +27,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free JSON Formatter & Validator Online"
-      }
+      },
     ],
     type: "website"
   },
@@ -63,7 +63,7 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
-  }
+  },
 };
 
 export default function JSONFormatterPage() {
@@ -106,7 +106,7 @@ export default function JSONFormatterPage() {
       "id": 1,
       "name": "John", 
       "email": "john@example.com"
-    }
+    },
   ]
 }`
     },
@@ -118,9 +118,9 @@ export default function JSONFormatterPage() {
   "database": {
     "host": "localhost",
     "port": 5432
-  }
+  },
 }`
-    }
+    },
   ];
 
   // FAQ data
@@ -248,7 +248,7 @@ export default function JSONFormatterPage() {
               "reviewCount": "2847",
               "bestRating": "5",
               "worstRating": "1"
-            }
+            },
           })
         }}
       />

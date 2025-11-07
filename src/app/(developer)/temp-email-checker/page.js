@@ -24,7 +24,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free Temporary Email Checker Tool"
-      }
+      },
     ],
     type: "website"
   },
@@ -33,11 +33,11 @@ export const metadata = {
     title: "Temporary Email Checker - Detect Disposable Email Addresses",
     description: "Free temporary email checker to detect disposable and temporary email addresses.",
     images: ["/og-images/temp-email-checker.jpg"]
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/temp-email-checker"
-  }
+  },
 };
 
 
@@ -59,7 +59,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function TempEmailCheckerPage() {

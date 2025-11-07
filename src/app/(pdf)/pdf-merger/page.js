@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free PDF Merger Tool - Merge PDF Files Online - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -40,7 +40,7 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  }
+  },
 };
 
 export default function PDFMergerPage() {
@@ -83,7 +83,7 @@ export default function PDFMergerPage() {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "3247"
-    }
+    },
   };
 
   return (

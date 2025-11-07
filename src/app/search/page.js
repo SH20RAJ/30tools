@@ -14,11 +14,11 @@ export const metadata = {
     card: "summary_large_image",
     title: "Search Tools - Find the Perfect Online Tool | 30tools",
     description: "Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more.",
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/search"
-  }
+  },
 };
 
 export default async function SearchPage({ searchParams }) {
@@ -43,15 +43,15 @@ export default async function SearchPage({ searchParams }) {
       tool.description.toLowerCase().includes(searchTerm) ||
       tool.category.toLowerCase().includes(searchTerm)
     );
-  }
+  },
   
   if (category && category !== 'all') {
     filteredTools = filteredTools.filter(tool => tool.category === category);
-  }
+  },
 
   if (premium) {
     filteredTools = filteredTools.filter(tool => tool.premium === true);
-  }
+  },
   
   return (
         <>

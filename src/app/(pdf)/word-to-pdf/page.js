@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Convert Word documents to PDF format online.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Word To Pdf - Free PDF Tool | Professional PDF Processing",
     description: "Professional word to pdf to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
     images: ["/og-images/word-to-pdf.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/word-to-pdf"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function WordToPDFPage() {

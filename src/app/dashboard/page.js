@@ -32,7 +32,7 @@ export const metadata = {
     "free utility",
     "web application"
   ].join(", "),
-,
+
   openGraph: {
     title: "Dashboard - Free Online Tool | Professional Results",
     description: "Professional dashboard tool. Free online processing with high-quality results. No registration required, instant results.",
@@ -44,22 +44,22 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Dashboard - Free Online Tool | Professional Results"
-      }
+      },
     ],
     type: "website"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Dashboard - Free Online Tool | Professional Results",
     description: "Professional dashboard tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/dashboard.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/dashboard"
-  }
+  },
 };
 
 export default async function DashboardPage() {
@@ -67,7 +67,7 @@ export default async function DashboardPage() {
   
   if (!user) {
     redirect("/");
-  }
+  },
 
   const displayName = user.displayName || user.primaryEmail || "User";
   const joinDate = new Date(user.createdAtMillis).toLocaleDateString();

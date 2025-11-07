@@ -16,7 +16,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Excuse Generator Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -27,7 +27,7 @@ export const metadata = {
     description: "Generate creative and funny excuses for any situation! Perfect for when you need a good excuse 😅",
     images: ["/og-images/excuse-generator.jpg"],
     creator: '@30tools'
-  }
+  },
 };
 
 export default function ExcuseGeneratorPage() {

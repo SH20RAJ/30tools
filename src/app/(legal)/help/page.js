@@ -10,7 +10,7 @@ export const metadata = {
   description: "Professional help with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "help, FAQ, support, tutorials, how to use, troubleshooting, guide",
   robots: { index: true, follow: true }
-,
+
   openGraph: {
     title: "Help - Free Online Tool | Professional Results",
     description: "Professional help tool. Free online processing with high-quality results. No registration required, instant results.",
@@ -22,22 +22,22 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Help - Free Online Tool | Professional Results"
-      }
+      },
     ],
     type: "website"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Help - Free Online Tool | Professional Results",
     description: "Professional help tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/help.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/help"
-  }
+  },
 };
 
 const faqs = [
@@ -59,7 +59,7 @@ const faqs = [
       {
         question: "Can I use these tools for commercial projects?",
         answer: "Absolutely! You can use our tools for both personal and commercial projects without any restrictions. Check our Terms of Service for complete details."
-      }
+      },
     ]
   },
   {
@@ -80,7 +80,7 @@ const faqs = [
       {
         question: "Are you GDPR compliant?",
         answer: "Yes, we comply with GDPR regulations. Since we don't store personal data or files, compliance is straightforward. See our Privacy Policy for details."
-      }
+      },
     ]
   },
   {
@@ -101,7 +101,7 @@ const faqs = [
       {
         question: "What if a tool doesn't work?",
         answer: "Try refreshing the page, clearing your browser cache, or using a different browser. If problems persist, contact us with details about your browser and the issue."
-      }
+      },
     ]
   },
   {
@@ -122,9 +122,9 @@ const faqs = [
       {
         question: "What's the best format for my use case?",
         answer: "JPEG for photos, PNG for images with transparency, WebP for web optimization. Our tools often suggest the best format based on your image content."
-      }
+      },
     ]
-  }
+  },
 ];
 
 
@@ -146,7 +146,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function HelpPage() {

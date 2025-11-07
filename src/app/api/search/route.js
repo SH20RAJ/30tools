@@ -11,7 +11,7 @@ const getAllTools = () => {
         categoryName: category.name,
         categorySlug: category.slug
       })));
-    }
+    },
   });
   return tools;
 };
@@ -26,7 +26,7 @@ export async function GET(request) {
   // Filter by category if specified
   if (category && category !== 'all') {
     allTools = allTools.filter(tool => tool.categoryKey === category);
-  }
+  },
 
   // If no query, return all tools
   if (!query) {
@@ -36,7 +36,7 @@ export async function GET(request) {
       total: allTools.length,
       categories: Object.keys(toolsData.categories)
     });
-  }
+  },
 
   // Search logic with scoring
   const searchResults = allTools

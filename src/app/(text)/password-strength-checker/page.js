@@ -55,21 +55,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Password Strength Checker Tool"
-      }
+      },
     ],
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Password Strength Checker - Free Online Tool | 30tools",
     description: "Professional password strength checker to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
     images: ["/og-images/password-strength-checker.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/password-strength-checker"
-  }
+  },
 };
 
 const jsonLd = {
@@ -105,7 +105,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function PasswordCheckerPage() {

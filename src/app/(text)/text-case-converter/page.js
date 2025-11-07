@@ -58,7 +58,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: "Text Case Converter Tool - 30tools"
-            }
+            },
         ],
         locale: 'en_US',
         type: 'website'
@@ -80,7 +80,7 @@ export const metadata = {
             'max-image-preview': 'large',
             'max-snippet': -1,
         },
-    }
+    },
 };
 
 export default function TextCaseConverterPage() {
@@ -118,7 +118,7 @@ export default function TextCaseConverterPage() {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "2145"
-        }
+        },
     };
 
     return (

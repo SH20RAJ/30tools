@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'AI Video Summarizer Tool'
-      }
+      },
     ]
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/ai-video-summarizer'
-  }
+  },
 }
 
 
@@ -48,7 +48,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function AiVideoSummarizerPage() {

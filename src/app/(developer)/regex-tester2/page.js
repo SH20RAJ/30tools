@@ -26,7 +26,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Regex Tester Tool"
-      }
+      },
     ],
     type: "website"
   },
@@ -101,7 +101,7 @@ export default function RegexTesterPage() {
       description: 'Match URLs and extract components',
       input: 'https?://[\\w.-]+\\.[a-zA-Z]{2,}(/[^\\s]*)?',
       output: 'Matches: https://example.com, http://subdomain.site.org/path'
-    }
+    },
   ];
 
   // FAQ data
@@ -229,7 +229,7 @@ export default function RegexTesterPage() {
               "reviewCount": "1645",
               "bestRating": "5",
               "worstRating": "1"
-            }
+            },
           })
         }}
       />

@@ -26,7 +26,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Base64 Encoder/Decoder Tool"
-      }
+      },
     ],
     type: "website"
   },
@@ -101,7 +101,7 @@ export default function Base64Page() {
       description: 'Create data URIs for embedding images in web pages',
       input: '[Image File]',
       output: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...'
-    }
+    },
   ];
 
   // FAQ data
@@ -229,7 +229,7 @@ export default function Base64Page() {
               "reviewCount": "1923",
               "bestRating": "5",
               "worstRating": "1"
-            }
+            },
           })
         }}
       />

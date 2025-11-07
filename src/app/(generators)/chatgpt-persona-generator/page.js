@@ -16,7 +16,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "ChatGPT Persona Generator"
-      }
+      },
     ],
     locale: "en_US",
     type: "website"
@@ -37,8 +37,8 @@ export const metadata = {
       "max-video-preview": -1,
       "max-image-preview": "large",
       "max-snippet": -1
-    }
-  }
+    },
+  },
 };
 
 const jsonLd = {

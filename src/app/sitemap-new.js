@@ -55,7 +55,7 @@ export default function sitemap() {
       lastModified: new Date('2025-06-15'),
       changeFrequency: 'weekly',
       priority: 0.7,
-    }
+    },
   ];
 
   // Tool pages with intelligent priority calculation
@@ -66,7 +66,7 @@ export default function sitemap() {
     // Boost popular tools
     if (tool.popular === true) {
       priority += 0.1;
-    }
+    },
     
     // Category-based priority adjustments
     const categoryPriorities = {
@@ -93,7 +93,7 @@ export default function sitemap() {
       changeFrequency = 'weekly';
     } else {
       changeFrequency = 'monthly';
-    }
+    },
     
     return {
       url: `${BASE_URL}${tool.route}`,

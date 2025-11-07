@@ -56,7 +56,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: "TikTok Video Downloader - Free Online Tool"
-            }
+            },
         ]
     },
     twitter: {
@@ -67,7 +67,7 @@ export const metadata = {
     },
     alternates: {
         canonical: "https://30tools.com/tiktok-video-downloader"
-    }
+    },
 };
 
 const jsonLd = {

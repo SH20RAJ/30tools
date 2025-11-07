@@ -52,7 +52,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free YouTube Video Downloader - Download HD Videos Online"
-      }
+      },
     ]
   },
   twitter: {
@@ -63,7 +63,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/youtube-downloader"
-  }
+  },
 };
 
 const jsonLd = {
@@ -138,7 +138,7 @@ const jsonLd = {
         "ratingValue": "5"
       },
       "reviewBody": "I use this daily for my content creation. The 4K download quality is perfect and it works flawlessly on both my phone and laptop."
-    }
+    },
   ]
 };
 

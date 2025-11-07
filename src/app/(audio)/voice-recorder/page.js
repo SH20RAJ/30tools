@@ -78,7 +78,7 @@ export const metadata = {
         height: 630,
         alt: "Voice Recorder - Professional Online Audio Recording",
         type: "image/jpeg"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -108,7 +108,7 @@ export const metadata = {
     'article:author': '30tools Team',
     'article:section': 'Audio Tools',
     'article:tag': 'voice recording, audio recording, microphone, browser recording'
-  }
+  },
 };
 
 export default function VoiceRecorderPage() {
@@ -169,7 +169,7 @@ export default function VoiceRecorderPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Our voice recorder supports multiple high-quality audio formats including WAV (uncompressed) and MP3 (compressed). WAV provides the highest quality while MP3 offers smaller file sizes for easy sharing."
-        }
+        },
       },
       {
         "@type": "Question", 
@@ -177,7 +177,7 @@ export default function VoiceRecorderPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "No, all audio recording and processing happens locally in your browser. Your recordings are never uploaded to our servers, ensuring complete privacy and security of your audio content."
-        }
+        },
       },
       {
         "@type": "Question",
@@ -185,7 +185,7 @@ export default function VoiceRecorderPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes! Our voice recorder includes pause and resume functionality, allowing you to take breaks during long recordings without losing your progress or having to start over."
-        }
+        },
       },
       {
         "@type": "Question",
@@ -193,8 +193,8 @@ export default function VoiceRecorderPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "There's no artificial limit imposed by our tool. The maximum recording duration depends on your device's available storage and browser capabilities, typically allowing for several hours of continuous recording."
-        }
-      }
+        },
+      },
     ]
   };
 

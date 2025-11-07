@@ -26,7 +26,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Aesthetic Bio Generator Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -102,7 +102,7 @@ export default function AestheticBioGeneratorPage() {
       description: 'Clean and simple aesthetic',
       input: 'photographer, traveler',
       output: 'photographer.\ntraveler.\ndreamer.'
-    }
+    },
   ];
 
   // FAQ data
@@ -224,7 +224,7 @@ export default function AestheticBioGeneratorPage() {
               "reviewCount": "3247",
               "bestRating": "5",
               "worstRating": "1"
-            }
+            },
           })
         }}
       />

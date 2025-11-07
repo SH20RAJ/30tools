@@ -5,13 +5,13 @@ export async function GET(request) {
     
     if (!videoUrl) {
       return new Response('Video URL is required', { status: 400 });
-    }
+    },
 
     // Validate that it's a valid stream URL for security
     if (!videoUrl.includes('tera-cdn.pappaaaa.one/stream') && 
         !videoUrl.includes('teraplay.tera-api.workers.dev/proxy')) {
       return new Response('Invalid video URL', { status: 400 });
-    }
+    },
 
     // Fetch the video stream with proper headers
     const response = await fetch(videoUrl, {
@@ -22,12 +22,12 @@ export async function GET(request) {
         'Accept-Encoding': 'identity',
         'Range': request.headers.get('range') || 'bytes=0-',
         'Referer': 'https://30tools.com/',
-      }
+      },
     });
 
     if (!response.ok) {
       throw new Error(`Failed to fetch video: ${response.status}`);
-    }
+    },
 
     // Get response headers
     const contentType = response.headers.get('content-type') || 'video/mp4';
@@ -48,13 +48,13 @@ export async function GET(request) {
     // Add content headers if available
     if (contentLength) {
       headers.set('Content-Length', contentLength);
-    }
+    },
     if (acceptRanges) {
       headers.set('Accept-Ranges', acceptRanges);
-    }
+    },
     if (contentRange) {
       headers.set('Content-Range', contentRange);
-    }
+    },
 
     // Handle range requests for video seeking
     const status = response.status === 206 ? 206 : 200;
@@ -67,5 +67,5 @@ export async function GET(request) {
   } catch (error) {
     console.error('Video proxy error:', error);
     return new Response('Failed to proxy video stream', { status: 500 });
-  }
+  },
 }

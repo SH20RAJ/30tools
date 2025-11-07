@@ -27,11 +27,11 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'YouTube Subtitles Downloader',
     description: 'Download YouTube subtitles in multiple formats instantly',
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/youtube-subtitles-downloader"
-  }
+  },
 };
 
 
@@ -53,7 +53,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function YouTubeSubtitlesDownloaderPage() {

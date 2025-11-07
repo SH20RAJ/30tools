@@ -55,7 +55,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: "TikTok to MP3 Converter - Free Online Tool"
-            }
+            },
         ]
     },
     twitter: {
@@ -66,7 +66,7 @@ export const metadata = {
     },
     alternates: {
         canonical: "https://30tools.com/tiktok-mp3-converter"
-    }
+    },
 };
 
 const jsonLd = {

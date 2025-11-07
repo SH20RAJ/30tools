@@ -55,7 +55,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: "Pinterest Video Downloader - Free Online Tool"
-            }
+            },
         ]
     },
     twitter: {
@@ -66,7 +66,7 @@ export const metadata = {
     },
     alternates: {
         canonical: "https://30tools.com/pinterest-video-downloader"
-    }
+    },
 };
 
 const jsonLd = {

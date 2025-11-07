@@ -88,7 +88,7 @@ export const metadata = {
         height: 630,
         alt: "Video Trimmer - Professional Online Video Cutter & Editor",
         type: "image/jpeg"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -118,7 +118,7 @@ export const metadata = {
     'article:author': '30tools Team',
     'article:section': 'Video Tools',
     'article:tag': 'video editing, video trimming, video cutting, online editor'
-  }
+  },
 };
 
 export default function VideoTrimmerPage() {
@@ -179,7 +179,7 @@ export default function VideoTrimmerPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Our video trimmer supports all major video formats including MP4, MOV, WebM, AVI, MKV, and more. The output maintains the same format and quality as your original video."
-        }
+        },
       },
       {
         "@type": "Question", 
@@ -187,7 +187,7 @@ export default function VideoTrimmerPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes! Our video trimmer uses advanced algorithms to cut videos without re-encoding, ensuring no quality loss during the trimming process. Your original video quality is preserved."
-        }
+        },
       },
       {
         "@type": "Question",
@@ -195,7 +195,7 @@ export default function VideoTrimmerPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Our video trimmer offers frame-accurate precision, allowing you to trim videos down to the exact frame. You can specify start and end times with millisecond precision."
-        }
+        },
       },
       {
         "@type": "Question",
@@ -203,8 +203,8 @@ export default function VideoTrimmerPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "There are no artificial file size limits imposed by our tool. The only limitations are your device's available memory and browser capabilities, typically supporting videos up to several GB."
-        }
-      }
+        },
+      },
     ]
   };
 

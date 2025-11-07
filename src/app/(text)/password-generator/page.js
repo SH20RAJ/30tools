@@ -59,7 +59,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free Password Generator Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -81,7 +81,7 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  }
+  },
 };
 
 export default function PasswordGeneratorPage() {
@@ -117,7 +117,7 @@ export default function PasswordGeneratorPage() {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
       "reviewCount": "1567"
-    }
+    },
   };
 
   return (

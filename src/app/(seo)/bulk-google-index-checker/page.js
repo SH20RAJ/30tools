@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free Bulk Google Index Checker"
-      }
+      },
     ],
     type: "website"
   },
@@ -51,7 +51,7 @@ export const metadata = {
     'msapplication-TileColor': '#000000',
     'msapplication-config': '/browserconfig.xml',
     'theme-color': '#000000'
-  }
+  },
 };
 
 
@@ -73,7 +73,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function BulkGoogleIndexCheckerPage() {

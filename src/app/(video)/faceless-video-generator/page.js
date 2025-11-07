@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Faceless Video Generator'
-      }
+      },
     ]
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/faceless-video-generator'
-  }
+  },
 }
 
 
@@ -48,7 +48,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function FacelessVideoGeneratorPage() {

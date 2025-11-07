@@ -47,8 +47,8 @@ export const metadata = {
     ].join(", "),
     alternates: {
         canonical: "https://30tools.com/tip-calculator"
-    }
-,
+    },
+
   openGraph: {
     title: "Tip Calculator - Free Online Calculator | Instant Results",
     description: "Free tip calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
@@ -60,18 +60,18 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Tip Calculator - Free Online Calculator | Instant Results"
-      }
+      },
     ],
     type: "website"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Tip Calculator - Free Online Calculator | Instant Results",
     description: "Free tip calculator with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
     images: ["/og-images/tip-calculator.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 const jsonLd = {
@@ -102,7 +102,7 @@ const jsonLd = {
         "@type": "Organization",
         "name": "30tools",
         "url": "https://30tools.com"
-    }
+    },
 };
 
 export default function TipCalculatorPage() {

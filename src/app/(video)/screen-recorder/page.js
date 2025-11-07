@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Record your screen and save as video file.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Screen Recorder - Free Online Video Tool | High-Quality Results",
     description: "Professional screen recorder tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
     images: ["/og-images/screen-recorder.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/screen-recorder"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function ScreenRecorderPage() {

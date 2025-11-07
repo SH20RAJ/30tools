@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Text Tools Collection'
-      }
+      },
     ]
   },
   twitter: {
@@ -29,7 +29,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/text-tools'
-  }
+  },
 }
 
 const textTools = [
@@ -118,7 +118,7 @@ const textTools = [
     href: '/code-tools',
     icon: Search,
     category: 'Validation'
-  }
+  },
 ]
 
 const categories = [
@@ -339,14 +339,14 @@ export default function TextToolsPage() {
                   '@type': 'Offer',
                   price: '0',
                   priceCurrency: 'USD'
-                }
+                },
               }))
             },
             provider: {
               '@type': 'Organization',
               name: '30tools',
               url: 'https://30tools.com'
-            }
+            },
           })
         }}
       />

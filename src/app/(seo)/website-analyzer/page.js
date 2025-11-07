@@ -14,21 +14,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Website Performance Analyzer Tool"
-      }
+      },
     ],
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Website Analyzer - Free SEO Tool | Boost Your Rankings",
     description: "Professional website analyzer for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
     images: ["/og-images/website-analyzer.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/website-analyzer"
-  }
+  },
 };
 
 
@@ -50,7 +50,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function WebsiteAnalyzerPage() {

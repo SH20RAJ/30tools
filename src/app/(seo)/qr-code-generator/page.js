@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free QR Code Generator Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -40,7 +40,7 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  }
+  },
 };
 
 export default function QRCodeGeneratorPage() {
@@ -76,7 +76,7 @@ export default function QRCodeGeneratorPage() {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
       "reviewCount": "3421"
-    }
+    },
   };
 
   return (

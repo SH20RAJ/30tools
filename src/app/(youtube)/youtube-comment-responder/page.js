@@ -15,21 +15,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "AI YouTube Comment Responder Tool"
-      }
+      },
     ],
     type: "website"
   },
   alternates: {
     canonical: "https://30tools.com/youtube-comment-responder"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Youtube Comment Responder - Free Online Tool | 30tools",
     description: "Professional youtube comment responder tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/youtube-comment-responder.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 const jsonLd = {

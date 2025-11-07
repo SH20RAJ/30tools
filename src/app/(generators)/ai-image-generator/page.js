@@ -39,7 +39,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "AI Image Generator - Free Text to Image Tool"
-      }
+      },
     ]
   },
   twitter: {
@@ -51,7 +51,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/ai-image-generator"
-  }
+  },
 };
 
 export default function AIImageGeneratorPage() {
@@ -112,7 +112,7 @@ export default function AIImageGeneratorPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Our AI image generator uses advanced machine learning models to convert text descriptions into visual images. Simply enter a detailed text prompt describing what you want to see, select your preferred style and settings, and the AI will create a unique image based on your description."
-        }
+        },
       },
       {
         "@type": "Question", 
@@ -120,7 +120,7 @@ export default function AIImageGeneratorPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes, our AI image generator is completely free to use with no hidden costs, signup requirements, or usage limits. You can generate unlimited images and download them in high quality."
-        }
+        },
       },
       {
         "@type": "Question",
@@ -128,7 +128,7 @@ export default function AIImageGeneratorPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Yes, you can use the generated images for commercial purposes. However, we recommend checking that your generated content doesn't infringe on existing copyrights or trademarks."
-        }
+        },
       },
       {
         "@type": "Question",
@@ -136,8 +136,8 @@ export default function AIImageGeneratorPage() {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Generated images are available in high-quality PNG format with multiple size options including square formats (512x512, 1024x1024), landscape (1024x768), portrait (768x1024), and HD wallpaper (1920x1080) dimensions."
-        }
-      }
+        },
+      },
     ]
   };
 

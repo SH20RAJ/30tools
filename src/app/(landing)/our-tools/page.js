@@ -33,7 +33,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "30tools Developer & Utility Tools Collection"
-      }
+      },
     ]
   },
   twitter: {
@@ -44,7 +44,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/our-tools"
-  }
+  },
 };
 
 const jsonLd = {
@@ -57,7 +57,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 const toolsCollection = [
@@ -78,7 +78,7 @@ const toolsCollection = [
     stats: {
       tools: "30+",
       category: "Development"
-    }
+    },
   },
   {
     name: "Online Tools",
@@ -97,7 +97,7 @@ const toolsCollection = [
     stats: {
       tools: "50+",
       category: "Utilities"
-    }
+    },
   },
   {
     name: "DevTools",
@@ -116,7 +116,7 @@ const toolsCollection = [
     stats: {
       tools: "60+",
       category: "Development"
-    }
+    },
   },
   {
     name: "IT-Tools",
@@ -135,7 +135,7 @@ const toolsCollection = [
     stats: {
       tools: "80+",
       category: "IT & DevOps"
-    }
+    },
   },
   {
     name: "TeraBox Downloader",
@@ -154,8 +154,8 @@ const toolsCollection = [
     stats: {
       tools: "1",
       category: "Media & Files"
-    }
-  }
+    },
+  },
 ];
 
 const colorClasses = {
@@ -188,7 +188,7 @@ const colorClasses = {
     bg: "bg-destructive/10 dark:bg-red-950/20",
     text: "text-destructive dark:text-destructive",
     badge: "bg-destructive/20 text-destructive dark:bg-primary/30 dark:text-red-300"
-  }
+  },
 };
 
 export default function OurToolsPage() {

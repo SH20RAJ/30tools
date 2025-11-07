@@ -1,94 +1,3 @@
-
-import (landing)Tool from '@/components/tools/general/(landing)Tool';
-
-export const metadata = {
-  title: "(landing) - Free Online Tool | Professional Results",
-  description: "Professional (landing) with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
-  keywords: [
-    "(landing)",
-    "(landing) online",
-    "free (landing)",
-    "(landing) tool",
-    "online (landing) free",
-    "professional (landing)",
-    "(landing) online tool",
-    "best (landing) free",
-    "(landing) web app",
-    "(landing) utility",
-    "online tool",
-    "free utility",
-    "web application"
-  ].join(", "),
-  openGraph: {
-    title: "(landing) - Free Online Tool | Professional Results",
-    description: "Professional (landing) tool. Free online processing with high-quality results. No registration required, instant results.",
-    url: "https://30tools.com/(landing)",
-    siteName: "30tools",
-    images: [
-      {
-        url: "/og-images/(landing).jpg",
-        width: 1200,
-        height: 630,
-        alt: "(landing) - Free Online Tool | Professional Results"
-      }
-    ],
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "(landing) - Free Online Tool | Professional Results",
-    description: "Professional (landing) tool. Free online processing with high-quality results. No registration required, instant results.",
-    images: ["/og-images/(landing).jpg"],
-    creator: "@30tools"
-  },
-  alternates: {
-    canonical: "https://30tools.com/(landing)"
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  category: 'General Tools',
-  other: {
-    'application-name': '30tools',
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': '(landing) - 30tools',
-    'format-detection': 'telephone=no',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-    'theme-color': '#000000'
-  }
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "(landing)",
-  "description": "Professional (landing) tool. Free online processing with high-quality results. No registration required, instant results.",
-  "url": "https://30tools.com/(landing)",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
-  }
-};
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -117,6 +26,7 @@ import {
     RefreshCwIcon
 } from 'lucide-react';
 import AuthComponent from '@/components/auth/AuthComponent';
+import InstagramEmbed from '@/components/shared/InstagramEmbed';
 import UnstoryOpenmindCTA from '@/components/shared/UnstoryOpenmindCTA';
 
 export default function LandingPage() {
@@ -220,17 +130,17 @@ export default function LandingPage() {
 
                             {/* Feature highlights */}
                             <div className="flex flex-wrap justify-center gap-4 mb-8">
-                                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
-                                    <ShieldCheckIcon className="h-4 w-4 text-primary" />
-                                    <span className="text-sm font-medium text-primary dark:text-green-300">100% Private</span>
+                                <div className="flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 rounded-full border border-green-200 dark:border-green-800">
+                                    <ShieldCheckIcon className="h-4 w-4 text-green-600" />
+                                    <span className="text-sm font-medium text-green-700 dark:text-green-300">100% Private</span>
                                 </div>
-                                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
-                                    <ZapIcon className="h-4 w-4 text-primary" />
-                                    <span className="text-sm font-medium text-primary dark:text-blue-300">Lightning Fast</span>
+                                <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 dark:bg-blue-900/20 rounded-full border border-blue-200 dark:border-blue-800">
+                                    <ZapIcon className="h-4 w-4 text-blue-600" />
+                                    <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Lightning Fast</span>
                                 </div>
-                                <div className="flex items-center gap-2 px-3 py-1.5 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
-                                    <StarIcon className="h-4 w-4 text-primary" />
-                                    <span className="text-sm font-medium text-primary dark:text-purple-300">Professional Quality</span>
+                                <div className="flex items-center gap-2 px-3 py-1.5 bg-purple-50 dark:bg-purple-900/20 rounded-full border border-purple-200 dark:border-purple-800">
+                                    <StarIcon className="h-4 w-4 text-purple-600" />
+                                    <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Professional Quality</span>
                                 </div>
                             </div>
 
@@ -247,6 +157,7 @@ export default function LandingPage() {
                                     </Link>
                                 ))}
                             </div>
+                            <UnstoryOpenmindCTA />
                             {/* CTA buttons */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <Link href="/search">
@@ -281,14 +192,16 @@ export default function LandingPage() {
                                     <span>50M+ files processed</span>
                                 </div>
                                 <div className="flex items-center gap-2">
-                                    <StarIcon className="h-4 w-4 fill-current text-primary" />
+                                    <StarIcon className="h-4 w-4 fill-current text-yellow-500" />
                                     <span>4.9/5 user rating</span>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </section>
+
+
+
 
                 {/* Categories Section */}
                 <section className="py-16">
@@ -423,10 +336,6 @@ export default function LandingPage() {
                         </div>
                     </div>
                 </section>
-
-                <UnstoryOpenmindCTA />
-
-
             </main>
 
             {/* Footer */}

@@ -24,9 +24,9 @@ export async function POST(request) {
           category.tools.forEach(tool => {
             if (tool.route && !tool.external) {
               allUrls.push(`https://${SITE_HOST}${tool.route}`);
-            }
+            },
           });
-        }
+        },
       });
       
       // Add important pages
@@ -63,7 +63,7 @@ export async function POST(request) {
           message: 'Failed to submit to IndexNow',
           status: response.status
         }, { status: response.status });
-      }
+      },
     } else if (urls && Array.isArray(urls)) {
       // Submit specific URLs
       const payload = {
@@ -93,13 +93,13 @@ export async function POST(request) {
           message: 'Failed to submit to IndexNow',
           status: response.status
         }, { status: response.status });
-      }
+      },
     } else {
       return NextResponse.json({
         success: false,
         message: 'Invalid request. Provide urls array or action: "submit-all"'
       }, { status: 400 });
-    }
+    },
   } catch (error) {
     console.error('IndexNow API Error:', error);
     return NextResponse.json({
@@ -107,7 +107,7 @@ export async function POST(request) {
       message: 'Internal server error',
       error: error.message
     }, { status: 500 });
-  }
+  },
 }
 
 export async function GET() {
@@ -123,14 +123,14 @@ export async function GET() {
               'https://30tools.com/image-compressor',
               'https://30tools.com/video-converter'
             ]
-          }
+          },
         },
         {
           description: 'Submit all tool pages',
           body: {
             action: 'submit-all'
-          }
-        }
+          },
+        },
       ]
     },
     key: INDEXNOW_API_KEY,

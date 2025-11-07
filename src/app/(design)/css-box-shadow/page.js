@@ -9,18 +9,16 @@ export const metadata = {
     description: 'Generate CSS box-shadow effects visually.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Css Box Shadow - Free Online Tool | Professional Results",
     description: "Professional css box shadow tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/css-box-shadow.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/css-box-shadow"
-  }
+  },
 };
 
 
@@ -42,7 +40,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function CSSBoxShadowPage() {

@@ -24,14 +24,14 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Pdf Unlocker - Free PDF Tool | Professional PDF Processing",
     description: "Professional pdf unlocker to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
     images: ["/og-images/pdf-unlocker.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 export default function PdfUnlockerPage() {

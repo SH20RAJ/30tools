@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Image Tools Collection'
-      }
+      },
     ]
   },
   twitter: {
@@ -29,7 +29,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/image-tools'
-  }
+  },
 }
 
 const imageTools = [
@@ -119,7 +119,7 @@ const imageTools = [
     href: '/image-optimizer',
     icon: Archive,
     category: 'Optimization'
-  }
+  },
 ]
 
 const categories = [
@@ -358,14 +358,14 @@ export default function ImageToolsPage() {
                   '@type': 'Offer',
                   price: '0',
                   priceCurrency: 'USD'
-                }
+                },
               }))
             },
             provider: {
               '@type': 'Organization',
               name: '30tools',
               url: 'https://30tools.com'
-            }
+            },
           })
         }}
       />

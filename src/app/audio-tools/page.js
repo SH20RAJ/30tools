@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Audio Tools Collection'
-      }
+      },
     ]
   },
   twitter: {
@@ -29,7 +29,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/audio-tools'
-  }
+  },
 }
 
 const audioTools = [
@@ -119,7 +119,7 @@ const audioTools = [
     href: '/audio-spectrum',
     icon: BarChart3,
     category: 'Analysis'
-  }
+  },
 ]
 
 const categories = [
@@ -404,14 +404,14 @@ export default function AudioToolsPage() {
                   '@type': 'Offer',
                   price: '0',
                   priceCurrency: 'USD'
-                }
+                },
               }))
             },
             provider: {
               '@type': 'Organization',
               name: '30tools',
               url: 'https://30tools.com'
-            }
+            },
           })
         }}
       />

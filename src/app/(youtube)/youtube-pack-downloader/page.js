@@ -15,21 +15,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "YouTube Pack Downloader Tool"
-      }
+      },
     ],
     type: "website"
   },
   alternates: {
     canonical: "https://30tools.com/youtube-pack-downloader"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Youtube Pack Downloader - Free Online Tool | Professional Results",
     description: "Professional youtube pack downloader tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/youtube-pack-downloader.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 const jsonLd = {

@@ -19,7 +19,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/audio-editor"
-  }
+  },
 };
 
 
@@ -41,7 +41,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function AudioEditorPage() {

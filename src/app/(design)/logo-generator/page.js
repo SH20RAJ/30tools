@@ -40,7 +40,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free Logo Generator Tool"
-      }
+      },
     ],
     type: "website"
   },
@@ -49,11 +49,11 @@ export const metadata = {
     title: "Free Logo Generator - Create Professional Business Logos",
     description: "Create professional logos instantly with our free logo generator. No design skills required.",
     images: ["/og-images/logo-generator.jpg"]
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/logo-generator"
-  }
+  },
 };
 
 
@@ -75,7 +75,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function LogoGeneratorPage() {

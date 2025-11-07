@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'TikTok Video Downloader'
-      }
+      },
     ]
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/tiktok-downloader'
-  }
+  },
 }
 
 
@@ -48,7 +48,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function TikTokDownloaderPage() {

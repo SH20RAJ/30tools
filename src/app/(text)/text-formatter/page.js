@@ -50,18 +50,18 @@ export const metadata = {
     description: 'Format and clean up text with various options.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Text Formatter - Free Text Tool | Professional Text Processing",
     description: "Professional text formatter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
     images: ["/og-images/text-formatter.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/text-formatter"
-  }
+  },
 };
 
 const jsonLd = {
@@ -97,7 +97,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function TextFormatterPage() {

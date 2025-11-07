@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free Meta Tags Generator Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -40,7 +40,7 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  }
+  },
 };
 
 export default function MetaTagsGeneratorPage() {
@@ -76,7 +76,7 @@ export default function MetaTagsGeneratorPage() {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
       "reviewCount": "2156"
-    }
+    },
   };
 
   return (

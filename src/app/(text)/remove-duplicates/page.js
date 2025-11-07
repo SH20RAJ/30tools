@@ -63,7 +63,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Remove Duplicates Tool'
-      }
+      },
     ]
   },
   twitter: {
@@ -74,7 +74,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/remove-duplicates'
-  }
+  },
 };
 
 const jsonLd = {
@@ -110,7 +110,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function RemoveDuplicatesPage() {

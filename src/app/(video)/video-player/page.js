@@ -77,7 +77,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Video Player Generator Tool - Create Custom HTML5 Video Players"
-      }
+      },
     ],
   },
   twitter: {

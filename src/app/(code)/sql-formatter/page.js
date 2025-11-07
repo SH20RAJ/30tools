@@ -15,11 +15,11 @@ export const metadata = {
     description: "Professional sql formatter tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/sql-formatter.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/sql-formatter"
-  }
+  },
 };
 
 
@@ -41,7 +41,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function SQLFormatterPage() {

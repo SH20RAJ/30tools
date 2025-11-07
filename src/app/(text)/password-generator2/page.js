@@ -17,17 +17,17 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Password Generator Tool"
-      }
+      },
     ],
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Password Generator2 - Free Online Generator | Create Instantly",
     description: "Free password generator2 tool with professional results. No registration required, instant processing, secure & unlimited use.",
     images: ["/og-images/password-generator2.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 
@@ -49,7 +49,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function PasswordGeneratorPage() {

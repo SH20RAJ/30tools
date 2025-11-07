@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Check keyword density and frequency in text.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Keyword Density - Free SEO Tool | Boost Your Rankings",
     description: "Professional keyword density for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
     images: ["/og-images/keyword-density.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/keyword-density"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function KeywordDensityPage() {

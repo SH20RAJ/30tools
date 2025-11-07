@@ -9,18 +9,16 @@ export const metadata = {
     description: 'Convert colors between HEX, RGB, and HSL formats with live preview.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Color Converter - Free Online Converter | Instant Conversion",
     description: "Convert Process instantly with our free color converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
     images: ["/og-images/color-converter.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/color-converter"
-  }
+  },
 };
 
 
@@ -42,7 +40,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function ColorConverterPage() {

@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free Image Converter Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -40,7 +40,7 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  }
+  },
 };
 
 export default function ImageConverterPage() {
@@ -76,7 +76,7 @@ export default function ImageConverterPage() {
       "@type": "AggregateRating",
       "ratingValue": "4.8",
       "reviewCount": "2847"
-    }
+    },
   };
 
   return (

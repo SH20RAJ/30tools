@@ -15,11 +15,10 @@ export const metadata = {
     description: "Professional audio trimmer tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/audio-trimmer.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/audio-trimmer"
-  }
+  },
 };
 
 
@@ -41,7 +40,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function AudioTrimmerPage() {

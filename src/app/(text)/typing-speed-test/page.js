@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free Typing Speed Test Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -40,7 +40,7 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  }
+  },
 };
 
 
@@ -62,7 +62,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function TypingSpeedTestPage() {

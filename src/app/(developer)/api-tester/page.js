@@ -9,18 +9,16 @@ export const metadata = {
     description: 'Test REST APIs and HTTP requests online.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Api Tester - Free Developer Tool | Professional Coding",
     description: "Professional api tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
     images: ["/og-images/api-tester.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/api-tester"
-  }
+  },
 };
 
 
@@ -42,7 +40,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function APITesterPage() {

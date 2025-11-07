@@ -42,7 +42,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Free Duplicate Line Remover Tool"
-      }
+      },
     ],
     type: "website"
   },
@@ -51,11 +51,11 @@ export const metadata = {
     title: "Duplicate Line Remover - Remove Duplicate Lines from Text",
     description: "Free online tool to remove duplicate lines from text and lists. Clean your data instantly.",
     images: ["/og-images/duplicate-line-remover.jpg"]
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/duplicate-line-remover"
-  }
+  },
 };
 
 
@@ -77,7 +77,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function DuplicateLineRemoverPage() {

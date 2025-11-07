@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Basic video editing online - trim, cut, and merge videos.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Video Editor - Free Online Video Tool | High-Quality Results",
     description: "Professional video editor tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
     images: ["/og-images/video-editor.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/video-editor"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function VideoEditorPage() {

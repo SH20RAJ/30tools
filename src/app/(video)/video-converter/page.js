@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Convert videos between different formats online.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Video Converter - Free Online Video Tool | High-Quality Results",
     description: "Professional video converter tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
     images: ["/og-images/video-converter.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/video-converter"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function VideoConverterPage() {

@@ -15,10 +15,10 @@ export const metadata = {
     title: 'Terabox Video Player - Free Online Streaming',
     description: 'Stream and download Terabox videos instantly. No login required.',
   },
-,
+
   alternates: {
     canonical: "https://30tools.com/terabox-video-player"
-  }
+  },
 };
 
 
@@ -40,7 +40,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function TeraboxVideoPlayerPage() {

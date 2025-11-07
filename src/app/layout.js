@@ -79,7 +79,7 @@ export const metadata = {
       'application/rss+xml': [
         { url: '/feed.xml', title: '30tools RSS Feed' }
       ]
-    }
+    },
   },
   openGraph: {
     type: 'website',

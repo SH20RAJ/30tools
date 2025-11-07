@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Encode and decode URLs and query parameters.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Url Encoder - Free Developer Tool | Professional Coding",
     description: "Professional url encoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
     images: ["/og-images/url-encoder.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/url-encoder"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function URLEncoderPage() {

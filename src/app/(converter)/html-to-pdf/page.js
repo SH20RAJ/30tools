@@ -9,18 +9,16 @@ export const metadata = {
     description: 'Convert HTML pages and content to PDF format.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Html To Pdf - Free Online Converter | Instant Conversion",
     description: "Convert Process instantly with our free html to pdf. High-quality conversion with privacy protection. No registration required, unlimited use.",
     images: ["/og-images/html-to-pdf.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/html-to-pdf"
-  }
+  },
 };
 
 
@@ -42,7 +40,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function HTMLToPDFPage() {

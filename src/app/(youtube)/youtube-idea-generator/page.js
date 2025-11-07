@@ -15,21 +15,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "YouTube Idea Generator Tool"
-      }
+      },
     ],
     type: "website"
   },
   alternates: {
     canonical: "https://30tools.com/youtube-idea-generator"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Youtube Idea Generator - Free Online Generator | Create Instantly",
     description: "Free youtube idea generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
     images: ["/og-images/youtube-idea-generator.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 const jsonLd = {

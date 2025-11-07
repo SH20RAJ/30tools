@@ -9,18 +9,16 @@ export const metadata = {
     description: 'Create simple logos and brand graphics online.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Logo Maker - Free Online Tool | Professional Results",
     description: "Professional logo maker tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/logo-maker.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/logo-maker"
-  }
+  },
 };
 
 
@@ -42,7 +40,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function LogoMakerPage() {

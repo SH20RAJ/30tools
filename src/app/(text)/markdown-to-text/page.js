@@ -17,7 +17,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: "Markdown to Text Converter - 30tools"
-            }
+            },
         ],
         locale: 'en_US',
         type: 'website'
@@ -39,7 +39,7 @@ export const metadata = {
             'max-image-preview': 'large',
             'max-snippet': -1,
         },
-    }
+    },
 };
 
 export default function MarkdownToTextPage() {
@@ -75,7 +75,7 @@ export default function MarkdownToTextPage() {
             "@type": "AggregateRating",
             "ratingValue": "4.9",
             "reviewCount": "1856"
-        }
+        },
     };
 
     return (

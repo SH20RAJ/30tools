@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Convert between Unix timestamps and readable dates.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Timestamp Converter - Free Online Converter | Instant Conversion",
     description: "Convert Process instantly with our free timestamp converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
     images: ["/og-images/timestamp-converter.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/timestamp-converter"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function TimestampConverterPage() {

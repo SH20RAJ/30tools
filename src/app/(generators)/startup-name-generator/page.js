@@ -26,7 +26,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Startup Name Generator Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -102,7 +102,7 @@ export default function StartupNameGeneratorPage() {
       description: 'Financial technology company names',
       input: 'payments, banking, finance',
       output: 'Payflux, Fintopia, Walletly, Creditech'
-    }
+    },
   ];
 
   // FAQ data
@@ -224,7 +224,7 @@ export default function StartupNameGeneratorPage() {
               "reviewCount": "2156",
               "bestRating": "5",
               "worstRating": "1"
-            }
+            },
           })
         }}
       />

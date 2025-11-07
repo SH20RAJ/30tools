@@ -15,21 +15,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "YouTube GIF Maker Tool"
-      }
+      },
     ],
     type: "website"
   },
   alternates: {
     canonical: "https://30tools.com/youtube-gif-maker"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Youtube Gif Maker - Free Online Tool | Professional Results",
     description: "Professional youtube gif maker tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/youtube-gif-maker.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 const jsonLd = {

@@ -10,7 +10,7 @@ export const metadata = {
   description: "Professional contact with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "contact 30tools, support, feedback, business inquiries, technical support, mail@30tools.com",
   robots: { index: true, follow: true }
-,
+
   openGraph: {
     title: "Contact - Free Online Tool | Professional Results",
     description: "Professional contact tool. Free online processing with high-quality results. No registration required, instant results.",
@@ -22,22 +22,22 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Contact - Free Online Tool | Professional Results"
-      }
+      },
     ],
     type: "website"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Contact - Free Online Tool | Professional Results",
     description: "Professional contact tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/contact.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/contact"
-  }
+  },
 };
 
 
@@ -59,7 +59,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function ContactPage() {

@@ -27,11 +27,11 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'AI YouTube Summary Generator',
     description: 'Generate intelligent summaries of YouTube videos with AI',
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/youtube-summary-generator"
-  }
+  },
 };
 
 
@@ -53,7 +53,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function YouTubeSummaryGeneratorPage() {

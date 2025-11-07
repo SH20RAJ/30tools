@@ -18,7 +18,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'PDF Tools Collection'
-      }
+      },
     ]
   },
   twitter: {
@@ -29,7 +29,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/pdf-tools'
-  }
+  },
 }
 
 const pdfTools = [
@@ -119,7 +119,7 @@ const pdfTools = [
     href: '/pdf-reader',
     icon: FileText,
     category: 'Viewing'
-  }
+  },
 ]
 
 const categories = [
@@ -376,14 +376,14 @@ export default function PdfToolsPage() {
                   '@type': 'Offer',
                   price: '0',
                   priceCurrency: 'USD'
-                }
+                },
               }))
             },
             provider: {
               '@type': 'Organization',
               name: '30tools',
               url: 'https://30tools.com'
-            }
+            },
           })
         }}
       />

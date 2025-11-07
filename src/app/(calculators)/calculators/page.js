@@ -30,8 +30,8 @@ export const metadata = {
     ].join(", "),
     alternates: {
         canonical: "https://30tools.com/calculators"
-    }
-,
+    },
+
   openGraph: {
     title: "Calculators - Free Online Calculator | Instant Results",
     description: "Free calculators with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
@@ -43,18 +43,18 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Calculators - Free Online Calculator | Instant Results"
-      }
+      },
     ],
     type: "website"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Calculators - Free Online Calculator | Instant Results",
     description: "Free calculators with instant accurate results. Process online calculator for students, professionals & everyone. Easy to use, mobile-friendly interface.",
     images: ["/og-images/calculators.jpg"],
     creator: "@30tools"
-  }
+  },
 };
 
 const jsonLd = {
@@ -85,7 +85,7 @@ const jsonLd = {
         "@type": "Organization",
         "name": "30tools",
         "url": "https://30tools.com"
-    }
+    },
 };
 
 const calculatorCategories = [
@@ -150,7 +150,7 @@ const calculatorCategories = [
             { name: "Time Calculator", href: "/time-calculator", description: "Add, subtract, and convert time durations" },
             { name: "Business Days Calculator", href: "/business-days-calculator", description: "Calculate working days excluding weekends and holidays" }
         ]
-    }
+    },
 ];
 
 export default function CalculatorsPage() {

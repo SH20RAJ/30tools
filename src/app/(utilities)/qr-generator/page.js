@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'QR Code Generator Tool'
-      }
+      },
     ]
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/qr-generator'
-  }
+  },
 }
 
 export default function QrGeneratorPage() {
@@ -64,7 +64,7 @@ export default function QrGeneratorPage() {
               '@type': 'Organization',
               name: '30tools',
               url: 'https://30tools.com'
-            }
+            },
           })
         }}
       />

@@ -32,7 +32,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "More Developer & Utility Tools by 30Tools"
-      }
+      },
     ]
   },
   twitter: {
@@ -43,7 +43,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/more-tools"
-  }
+  },
 };
 
 const tools = [
@@ -118,7 +118,7 @@ const tools = [
     description: "Interactive piano learning tool with notes, chords, and music theory resources. Perfect for beginners and professionals alike.",
     category: "Music Tools",
     features: ["Piano Keyboard", "Music Theory", "Chord Library", "Learning Resources"]
-  }
+  },
 ];
 
 const categories = [...new Set(tools.map(tool => tool.category))];
@@ -142,18 +142,17 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function MoreToolsPage() {
   return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <div className="min-h-screen bg-background py-12">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-background py-12">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Header */}
         <div className="text-center mb-12">
@@ -349,5 +348,6 @@ export default function MoreToolsPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

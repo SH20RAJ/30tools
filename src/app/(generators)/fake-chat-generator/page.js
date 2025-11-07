@@ -16,7 +16,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Fake Chat Generator Tool - 30tools"
-      }
+      },
     ],
     locale: 'en_US',
     type: 'website'
@@ -27,7 +27,7 @@ export const metadata = {
     description: "Create realistic fake chat screenshots for memes and viral content! 📱💬",
     images: ["/og-images/fake-chat-generator.jpg"],
     creator: '@30tools'
-  }
+  },
 };
 
 export default function FakeChatGeneratorPage() {

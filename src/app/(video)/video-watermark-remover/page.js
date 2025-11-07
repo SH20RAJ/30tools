@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Video Watermark Remover'
-      }
+      },
     ]
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/video-watermark-remover'
-  }
+  },
 }
 
 
@@ -48,7 +48,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function VideoWatermarkRemoverPage() {

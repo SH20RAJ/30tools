@@ -9,7 +9,7 @@ export const metadata = {
   description: "Professional api docs with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "API, documentation, developer, integration, search suggestions, REST API",
   robots: { index: true, follow: true }
-,
+
   openGraph: {
     title: "Api Docs - Free Online Tool | Professional Results",
     description: "Professional api docs tool. Free online processing with high-quality results. No registration required, instant results.",
@@ -21,22 +21,22 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Api Docs - Free Online Tool | Professional Results"
-      }
+      },
     ],
     type: "website"
-  }
-,
+  },
+
   twitter: {
     card: "summary_large_image",
     title: "Api Docs - Free Online Tool | Professional Results",
     description: "Professional api docs tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/api-docs.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/api-docs"
-  }
+  },
 };
 
 
@@ -58,7 +58,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function APIDocsPage() {

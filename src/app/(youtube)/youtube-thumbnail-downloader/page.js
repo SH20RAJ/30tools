@@ -29,7 +29,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'YouTube Thumbnail Downloader Tool'
-      }
+      },
     ]
   },
   twitter: {
@@ -40,7 +40,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/youtube-thumbnail-downloader'
-  }
+  },
 };
 
 const jsonLd = {

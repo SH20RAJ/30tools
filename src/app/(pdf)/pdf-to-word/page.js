@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Convert PDF files to editable Word documents.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Pdf To Word - Free PDF Tool | Professional PDF Processing",
     description: "Professional pdf to word to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
     images: ["/og-images/pdf-to-word.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/pdf-to-word"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function PDFToWordPage() {

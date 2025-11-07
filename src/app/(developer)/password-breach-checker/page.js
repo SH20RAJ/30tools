@@ -14,21 +14,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Password Breach Checker Tool"
-      }
+      },
     ],
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Password Breach Checker - Free Online Tool | 30tools",
     description: "Professional password breach checker for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
     images: ["/og-images/password-breach-checker.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/password-breach-checker"
-  }
+  },
 };
 
 
@@ -50,7 +50,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function PasswordBreachCheckerPage() {

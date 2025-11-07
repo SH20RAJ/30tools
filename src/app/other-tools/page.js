@@ -40,7 +40,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Other Tools - Free Online Utilities Collection"
-      }
+      },
     ]
   },
   twitter: {
@@ -51,7 +51,7 @@ export const metadata = {
   },
   alternates: {
     canonical: "https://30tools.com/other-tools"
-  }
+  },
 };
 
 export default async function OtherToolsPageWrapper() {

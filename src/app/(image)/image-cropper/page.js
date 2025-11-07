@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Free online image cropper tool to crop images, resize photos, and cut pictures. Professional photo cropping with auto crop, circular crop, and custom dimensions.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Image Cropper - Free Image Tool | Professional Quality",
     description: "Professional image cropper for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
     images: ["/og-images/image-cropper.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/image-cropper"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function ImageCropperPage() {

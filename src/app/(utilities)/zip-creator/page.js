@@ -17,7 +17,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: "Free ZIP Creator Tool - 30tools"
-            }
+            },
         ],
         locale: 'en_US',
         type: 'website'
@@ -39,7 +39,7 @@ export const metadata = {
             'max-image-preview': 'large',
             'max-snippet': -1,
         },
-    }
+    },
 };
 
 export default function ZipCreatorPage() {
@@ -75,7 +75,7 @@ export default function ZipCreatorPage() {
             "@type": "AggregateRating",
             "ratingValue": "4.6",
             "reviewCount": "1847"
-        }
+        },
     };
 
     return (

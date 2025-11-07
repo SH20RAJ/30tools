@@ -35,7 +35,7 @@ export default function robots() {
           '/_next/',
         ],
         crawlDelay: 1,
-      }
+      },
     ],
     sitemap: [
       `${baseUrl}/sitemap.xml`,

@@ -44,7 +44,7 @@ export const metadata = {
                 width: 1200,
                 height: 630,
                 alt: "Social Media Video Downloaders - Free Online Tools"
-            }
+            },
         ]
     },
     twitter: {
@@ -55,7 +55,7 @@ export const metadata = {
     },
     alternates: {
         canonical: "https://30tools.com/downloaders"
-    }
+    },
 };
 
 const downloaderTools = [
@@ -130,7 +130,7 @@ const downloaderTools = [
         href: "/youtube-shorts-downloader",
         color: "bg-destructive",
         features: ["Vertical Format", "HD Quality", "Audio Extraction", "Fast Processing"]
-    }
+    },
 ];
 
 const jsonLd = {
@@ -153,9 +153,9 @@ const jsonLd = {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "USD"
-            }
+            },
         }))
-    }
+    },
 };
 
 export default function DownloadersPage() {

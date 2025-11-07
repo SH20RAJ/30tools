@@ -9,18 +9,18 @@ export const metadata = {
     description: 'Convert images to Base64 and decode Base64 to images instantly.',
     type: 'website',
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Base64 Image - Free Image Tool | Professional Quality",
     description: "Professional base64 image for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
     images: ["/og-images/base64-image.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/base64-image"
-  }
+  },
 };
 
 
@@ -42,7 +42,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function Base64ImagePage() {

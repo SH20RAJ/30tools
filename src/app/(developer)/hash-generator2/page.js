@@ -14,21 +14,21 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Hash Generator Tool"
-      }
+      },
     ],
   },
-,
+
   twitter: {
     card: "summary_large_image",
     title: "Hash Generator2 - Free Online Generator | Create Instantly",
     description: "Generate Process instantly with our free hash generator2. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
     images: ["/og-images/hash-generator2.jpg"],
     creator: "@30tools"
-  }
-,
+  },
+
   alternates: {
     canonical: "https://30tools.com/hash-generator2"
-  }
+  },
 };
 
 
@@ -50,7 +50,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function HashGeneratorPage() {

@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'MCP Server Generator for Claude AI'
-      }
+      },
     ]
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/mcp-server'
-  }
+  },
 }
 
 export default function McpServerPage() {
@@ -81,7 +81,7 @@ export default function McpServerPage() {
                 '@type': 'Thing',
                 name: '#21stdev',
                 description: 'Modern development practices for AI-first applications'
-              }
+              },
             ]
           })
         }}

@@ -15,7 +15,7 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: 'Text to Speech Converter Tool'
-      }
+      },
     ]
   },
   twitter: {
@@ -26,7 +26,7 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://30tools.com/text-to-speech'
-  }
+  },
 }
 
 export default function TextToSpeechPage() {
@@ -71,7 +71,7 @@ export default function TextToSpeechPage() {
               '@type': 'Thing',
               name: 'Text-to-Speech Technology',
               description: 'Technology that converts written text into spoken words using synthetic speech'
-            }
+            },
           })
         }}
       />

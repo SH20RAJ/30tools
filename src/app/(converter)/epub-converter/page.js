@@ -9,18 +9,16 @@ export const metadata = {
     description: 'Convert documents to EPUB format for e-readers.',
     type: 'website',
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Epub Converter - Free Online Converter | Instant Conversion",
     description: "Convert Process instantly with our free epub converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
     images: ["/og-images/epub-converter.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/epub-converter"
-  }
+  },
 };
 
 
@@ -42,7 +40,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function EPUBConverterPage() {

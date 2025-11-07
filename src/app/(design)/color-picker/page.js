@@ -14,21 +14,19 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Color Picker Tool"
-      }
+      },
     ],
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "Color Picker - Free Online Tool | Professional Results",
     description: "Professional color picker tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/color-picker.jpg"],
     creator: "@30tools"
-  }
-,
+  },
   alternates: {
     canonical: "https://30tools.com/color-picker"
-  }
+  },
 };
 
 
@@ -50,7 +48,7 @@ const jsonLd = {
     "@type": "Organization",
     "name": "30tools",
     "url": "https://30tools.com"
-  }
+  },
 };
 
 export default function ColorPickerPage() {
