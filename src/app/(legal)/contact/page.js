@@ -9,7 +9,7 @@ export const metadata = {
   title: "Contact - Free Online Tool | Professional Results",
   description: "Professional contact with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "contact 30tools, support, feedback, business inquiries, technical support, mail@30tools.com",
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true },
 
   openGraph: {
     title: "Contact - Free Online Tool | Professional Results",
@@ -64,13 +64,12 @@ const jsonLd = {
 
 export default function ContactPage() {
   return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <div className="min-h-screen bg-background">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-8">
           <Link href="/">
@@ -240,5 +239,6 @@ export default function ContactPage() {
         </Card>
       </div>
     </div>
+    </>
   );
 }

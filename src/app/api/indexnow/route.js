@@ -12,29 +12,29 @@ export async function POST(request) {
     if (action === 'submit-all') {
       // Submit all tool pages
       const allUrls = [];
-      
+
       // Add homepage
       allUrls.push(`https://${SITE_HOST}/`);
-      
+
       // Add all tools
       Object.keys(toolsData.categories).forEach(categoryKey => {
         const category = toolsData.categories[categoryKey];
-        
+
         if (category.tools && Array.isArray(category.tools)) {
           category.tools.forEach(tool => {
             if (tool.route && !tool.external) {
               allUrls.push(`https://${SITE_HOST}${tool.route}`);
-            },
+            }
           });
-        },
+        }
       });
-      
+
       // Add important pages
       allUrls.push(`https://${SITE_HOST}/about`);
       allUrls.push(`https://${SITE_HOST}/search`);
       allUrls.push(`https://${SITE_HOST}/more-tools`);
       allUrls.push(`https://${SITE_HOST}/contact`);
-      
+
       // Submit to IndexNow
       const payload = {
         host: SITE_HOST,
@@ -63,7 +63,7 @@ export async function POST(request) {
           message: 'Failed to submit to IndexNow',
           status: response.status
         }, { status: response.status });
-      },
+      }
     } else if (urls && Array.isArray(urls)) {
       // Submit specific URLs
       const payload = {
@@ -93,13 +93,13 @@ export async function POST(request) {
           message: 'Failed to submit to IndexNow',
           status: response.status
         }, { status: response.status });
-      },
+      }
     } else {
       return NextResponse.json({
         success: false,
         message: 'Invalid request. Provide urls array or action: "submit-all"'
       }, { status: 400 });
-    },
+    }
   } catch (error) {
     console.error('IndexNow API Error:', error);
     return NextResponse.json({
@@ -107,7 +107,7 @@ export async function POST(request) {
       message: 'Internal server error',
       error: error.message
     }, { status: 500 });
-  },
+  }
 }
 
 export async function GET() {

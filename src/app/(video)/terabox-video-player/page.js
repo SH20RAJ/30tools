@@ -45,13 +45,11 @@ const jsonLd = {
 
 export default function TeraboxVideoPlayerPage() {
   return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <VideoToolsNavbar />
       <div className="min-h-screen bg-background py-12">
         <div className="container mx-auto px-4">

@@ -5,7 +5,7 @@ const BASE_URL = 'https://30tools.com';
 export default function sitemap() {
   const allTools = getAllTools();
   const currentDate = new Date();
-  
+
   // Static pages with optimized priorities
   const staticPages = [
     {
@@ -62,12 +62,12 @@ export default function sitemap() {
   const toolPages = allTools.map(tool => {
     // Calculate priority based on popularity and category importance
     let priority = 0.8; // Base priority for tools
-    
+
     // Boost popular tools
     if (tool.popular === true) {
       priority += 0.1;
-    },
-    
+    }
+
     // Category-based priority adjustments
     const categoryPriorities = {
       'image': 0.95,      // High demand category
@@ -82,9 +82,9 @@ export default function sitemap() {
       'design': 0.82,     // Creative tools
       'legal': 0.75       // Niche category
     };
-    
+
     priority = Math.min(0.95, categoryPriorities[tool.category] || 0.8);
-    
+
     // Determine change frequency based on tool type
     let changeFrequency = 'weekly';
     if (['image', 'pdf', 'video'].includes(tool.category)) {
@@ -93,8 +93,8 @@ export default function sitemap() {
       changeFrequency = 'weekly';
     } else {
       changeFrequency = 'monthly';
-    },
-    
+    }
+
     return {
       url: tool.external ? tool.route : `${BASE_URL}${tool.route}`,
       lastModified: currentDate,

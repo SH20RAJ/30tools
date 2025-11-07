@@ -29,7 +29,7 @@ export async function GET(request) {
 
   if (!query.trim()) {
     return NextResponse.json([query, []]);
-  },
+  }
 
   const filtered = suggestions
     .filter(suggestion => suggestion.includes(query))

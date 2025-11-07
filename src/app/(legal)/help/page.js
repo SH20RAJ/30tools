@@ -9,7 +9,7 @@ export const metadata = {
   title: "Help - Free Online Tool | Professional Results",
   description: "Professional help with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "help, FAQ, support, tutorials, how to use, troubleshooting, guide",
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true },
 
   openGraph: {
     title: "Help - Free Online Tool | Professional Results",
@@ -151,13 +151,12 @@ const jsonLd = {
 
 export default function HelpPage() {
   return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <div className="min-h-screen bg-background">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-6">
           <Link href="/">
@@ -277,5 +276,6 @@ export default function HelpPage() {
         </Card>
       </div>
     </div>
+    </>
   );
 }

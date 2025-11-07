@@ -19,7 +19,7 @@ export const metadata = {
     "free utility",
     "web application"
   ].join(", "),
-  robots: 'noindex, nofollow'
+  robots: 'noindex, nofollow',
 
   openGraph: {
     title: "Video - Free Online Tool | Professional Results",
@@ -74,20 +74,20 @@ const jsonLd = {
 
 export default function EmbedVideoPage() {
   return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <div className="min-h-screen bg-black">
-      <Suspense fallback={
-        <div className="flex items-center justify-center min-h-screen">
-          <div className="text-white">Loading video...</div>
-        </div>
-      }>
-        <EmbedVideoPlayer />
-      </Suspense>
-    </div>        </>
-    );
+    <>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-black">
+        <Suspense fallback={
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="text-white">Loading video...</div>
+          </div>
+        }>
+          <EmbedVideoPlayer />
+        </Suspense>
+      </div>        </>
+  );
 }

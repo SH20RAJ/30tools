@@ -54,32 +54,6 @@ export const metadata = {
   },
 };
 
-// Custom component wrapper for PNG-specific messaging
-function PngToPdfTool() {
-  return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <div>
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4">Free PNG to PDF Converter</h1>
-          <p className="text-xl text-muted-foreground mb-6">
-            Convert PNG images to PDF documents with full transparency support.
-            Perfect for logos, graphics, and designs that need transparent backgrounds.
-          </p>
-        </div>
-      </div>
-
-      <JpgToPdfTool />
-    </div>
-  );
-}
-
-
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
@@ -100,6 +74,30 @@ const jsonLd = {
     "url": "https://30tools.com"
   },
 };
+
+// Custom component wrapper for PNG-specific messaging
+function PngToPdfTool() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="container mx-auto px-4 py-8 max-w-6xl">
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-bold mb-4">Free PNG to PDF Converter</h1>
+          <p className="text-xl text-muted-foreground mb-6">
+            Convert PNG images to PDF documents with full transparency support.
+            Perfect for logos, graphics, and designs that need transparent backgrounds.
+          </p>
+        </div>
+      </div>
+
+      <JpgToPdfTool />
+    </>
+  );
+}
+
 
 export default function PngToPdfPage() {
   return <PngToPdfTool />;

@@ -1,5 +1,5 @@
 
-import [...stack]Tool from '@/components/tools/general/[...stack]Tool';
+import { redirect } from 'next/navigation';
 
 export const metadata = {
   title: "[...stack] - Free Online Tool | Professional Results",
@@ -18,11 +18,6 @@ export const metadata = {
     "online tool",
     "free utility",
     "web application"
-  ]",
-    "[...stack] online",
-    "free [...stack]",
-    "[...stack] tool",
-    "online [...stack] free"
   ].join(", "),
   openGraph: {
     title: "[...stack] - Free Online Tool | Professional Results",

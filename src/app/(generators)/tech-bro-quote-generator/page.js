@@ -1,5 +1,5 @@
 
-import TechBroQuoteGeneratorTool from '@/components/tools/generator/TechBroQuoteGeneratorTool';
+import dynamic from 'next/dynamic';
 
 export const metadata = {
   title: "Tech Bro Quote Generator - Free Online Tool | 30tools",
@@ -74,31 +74,6 @@ export const metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Tech Bro Quote Generator",
-  "description": "Free tech bro quote generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
-  "url": "https://30tools.com/tech-bro-quote-generator",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
-  },
-};
-'use client';
-
-import dynamic from 'next/dynamic';
-
-// Use dynamic import for the component
 const TechBroQuoteGeneratorTool = dynamic(
   () => import('@/components/tools/generators/TechBroQuoteGeneratorTool')
 );

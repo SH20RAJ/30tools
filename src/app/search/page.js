@@ -24,48 +24,49 @@ export const metadata = {
 export default async function SearchPage({ searchParams }) {
   // Await searchParams to fix Next.js 15 async APIs
   const params = await searchParams;
-  
+
   // Get all tools server-side
   const allTools = getAllTools();
-  
+
   // Get search parameters
   const query = params?.q || '';
   const category = params?.category || 'all';
   const premium = params?.premium === 'true';
-  
+
   // Server-side filtering for initial results
   let filteredTools = allTools;
-  
+
   if (query) {
     const searchTerm = query.toLowerCase();
-    filteredTools = allTools.filter(tool => 
+    filteredTools = allTools.filter(tool =>
       tool.name.toLowerCase().includes(searchTerm) ||
       tool.description.toLowerCase().includes(searchTerm) ||
       tool.category.toLowerCase().includes(searchTerm)
     );
-  },
-  
+  }
+
   if (category && category !== 'all') {
     filteredTools = filteredTools.filter(tool => tool.category === category);
-  },
+  }
 
   if (premium) {
     filteredTools = filteredTools.filter(tool => tool.premium === true);
-  },
-  
+  }
+
   return (
         <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <SearchPageServer 
-      initialTools={filteredTools}
-      initialQuery={query}
-      initialCategory={category}
-      initialPremium={premium}
-      allTools={allTools}
-    />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <SearchPageServer
+        initialTools={filteredTools}
+        initialQuery={query}
+        initialCategory={category}
+        initialPremium={premium}
+        allTools={allTools}
+      />
+      </>
   );
 }

@@ -1,6 +1,6 @@
 import { getAllTools } from '@/constants/tools-utils';
 
-export default function RSSFeed() {
+function RSSFeed() {
   const baseUrl = 'https://30tools.com';
   const currentDate = new Date().toISOString();
   const allTools = getAllTools();

@@ -8,7 +8,7 @@ export const metadata = {
   title: "API Documentation - 30tools.com | Developer Resources",
   description: "Professional api docs with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: "API, documentation, developer, integration, search suggestions, REST API",
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true },
 
   openGraph: {
     title: "Api Docs - Free Online Tool | Professional Results",
@@ -63,13 +63,12 @@ const jsonLd = {
 
 export default function APIDocsPage() {
   return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <div className="min-h-screen bg-background">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-6">
           <Link href="/">
@@ -322,5 +321,6 @@ print_r($suggestions); // Array of suggestions`}
         </Card>
       </div>
     </div>
+    </>
   );
 }

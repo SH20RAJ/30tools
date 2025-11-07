@@ -10,7 +10,7 @@ export const metadata = {
     "free utilities",
     "online converters",
     "specialized tools",
-    
+
     // Long-tail keywords for SEO ranking
     "discover free online tools beyond basics",
     "niche online utilities for professionals",
@@ -58,16 +58,36 @@ export default async function OtherToolsPageWrapper() {
   const categoriesResult = await getAllCategories();
   const otherToolsResult = await getOtherTools();
 
+  // Structured data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Other Tools - Free Online Utilities | 30tools",
+    description:
+      "Explore specialized online tools and utilities. Find the perfect tool for your specific needs.",
+    url: "https://30tools.com/other-tools",
+    isPartOf: {
+      "@type": "WebSite",
+      name: "30tools",
+      url: "https://30tools.com",
+    },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://30tools.com/search?q={query}",
+      "query-input": "required name=query",
+    },
+  };
+
   return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <OtherToolsPage 
-      categories={categoriesResult.data} 
-      otherTools={otherToolsResult.data}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <OtherToolsPage
+        categories={categoriesResult.data}
+        otherTools={otherToolsResult.data}
+      />
+    </>
   );
 }

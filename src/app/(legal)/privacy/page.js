@@ -21,7 +21,7 @@ export const metadata = {
     "free utility",
     "web application"
   ].join(", "),
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true },
 
   openGraph: {
     title: "Privacy - Free Online Tool | Professional Results",
@@ -76,13 +76,12 @@ const jsonLd = {
 
 export default function PrivacyPolicyPage() {
   return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <div className="min-h-screen bg-background">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         <div className="mb-6">
           <Link href="/">
@@ -221,5 +220,6 @@ export default function PrivacyPolicyPage() {
         </div>
       </div>
     </div>
+    </>
   );
 }

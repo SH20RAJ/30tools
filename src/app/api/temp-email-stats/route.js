@@ -3,7 +3,7 @@ import { getTempEmailStats } from '@/lib/temp-email-actions';
 export async function GET() {
   try {
     const stats = await getTempEmailStats();
-    
+
     return Response.json(stats, {
       headers: {
         'Cache-Control': 'public, max-age=3600', // Cache for 1 hour
@@ -15,5 +15,5 @@ export async function GET() {
       { error: 'Failed to fetch stats' },
       { status: 500 }
     );
-  },
+  }
 }
