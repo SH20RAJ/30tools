@@ -85,9 +85,9 @@ With **15% capture rate** of target search volume:
 6. **Mobile-First Design**: Perfect mobile experience
 
 ### **✅ SEO Automation Scripts Created**
-- `analyze_seo.js`: Comprehensive SEO analysis tool
-- `fix_seo_issues.js`: Automated SEO optimization
-- `enhance_keywords_traffic.js`: Advanced keyword targeting
+- `scripts/analyze_seo.js`: Comprehensive SEO analysis tool
+- `scripts/fix_seo_issues.js`: Automated SEO optimization
+- `scripts/enhance_keywords_traffic.js`: Advanced keyword targeting
 
 ---
 

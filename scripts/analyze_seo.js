@@ -262,7 +262,7 @@ function analyzeSEO() {
 const results = analyzeSEO();
 
 console.log('\n🎯 NEXT STEPS:');
-console.log('1. Run: node fix_seo_issues.js - to automatically fix common issues');
+console.log('1. Run: node scripts/fix_seo_issues.js - to automatically fix common issues');
 console.log('2. Review seo-analysis-report.json for detailed breakdown');
 console.log('3. Focus on priority pages with 5+ issues first');
 console.log('4. Implement missing structured data');

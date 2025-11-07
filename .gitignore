@@ -46,3 +46,4 @@ build.log
 public/sw.*
 workbox-*
 send.js
+scripts/send.js
