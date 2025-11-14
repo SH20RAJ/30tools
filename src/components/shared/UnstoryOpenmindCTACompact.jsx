@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 
 export default function UnstoryOpenmindCTACompact() {
+  return null;
   return (
     <div className="my-8">
       <Card className="relative overflow-hidden bg-muted/20 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30 border-0 shadow-lg">

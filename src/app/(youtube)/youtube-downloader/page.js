@@ -1,5 +1,4 @@
 import YouTubeDownloader from '@/components/tools/youtube/YouTubeDownloader';
-import InstagramEmbed from '@/components/shared/InstagramEmbed';
 import UnstoryOpenmindCTA from '@/components/shared/UnstoryOpenmindCTA';
 
 export const metadata = {

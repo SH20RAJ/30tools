@@ -95,12 +95,72 @@ const jsonLd = {
     ]
 };
 
+const faqContent = [
+    {
+        question: "How does this converter help TikTok→MP3 searches on Bing?",
+        answer: "Headings, alt text, and schema match Bing keyword clusters (TikTok MP3 converter, TikTok audio download), which helps the page appear in featured snippets and Copilot answers."
+    },
+    {
+        question: "What quality options are available for the MP3 output?",
+        answer: "Pick 128, 192, 256, or 320kbps so you can balance file size with fidelity. We keep the stereo field and loudness from your original TikTok sound."
+    },
+    {
+        question: "Is there any limit on TikTok videos I can convert?",
+        answer: "No limits. Paste as many video URLs as you like or queue them via the batch workflow without needing a login."
+    },
+    {
+        question: "Will my TikTok downloads stay private?",
+        answer: "Everything processes in encrypted sessions. We wipe temporary assets after the MP3 is generated so nothing is stored on our servers."
+    },
+    {
+        question: "Can I keep metadata for my MP3 files?",
+        answer: "Yes. We auto-fill ID3 tags with the TikTok sound title, creator handle, and duration, which makes it easier for Bing Music and Groove to show track names."
+    }
+];
+
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqContent.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+        }
+    }))
+};
+
+const bingSnapshotHighlights = [
+    {
+        title: "Snippet-ready workflow",
+        description: "Bing can quote the 3-step instructions directly for “how to convert TikTok to MP3” queries."
+    },
+    {
+        title: "Copilot trusted schema",
+        description: "WebApplication and FAQ data let Bing Copilot cite the converter with attribution."
+    },
+    {
+        title: "Intent coverage",
+        description: "Targets TikTok sound download, audio extractor, and mp3 converter terms so you cover more Bing impressions."
+    }
+];
+
+const relatedBingLinks = [
+    { href: "/tiktok-downloader", label: "TikTok Video Downloader" },
+    { href: "/audio-tools", label: "Explore Audio Tools" }
+];
+
 export default function TikTokMP3ConverterPage() {
     return (
         <>
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
             />
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-4xl mx-auto">
@@ -169,29 +229,38 @@ export default function TikTokMP3ConverterPage() {
                             </div>
                         </div>
 
+                        <div className="bg-muted rounded-lg p-6 border border-dashed">
+                            <h2 className="text-2xl font-semibold mb-4">Optimized Answers for Bing & Copilot</h2>
+                            <div className="grid md:grid-cols-3 gap-4">
+                                {bingSnapshotHighlights.map((highlight) => (
+                                    <div key={highlight.title} className="bg-background rounded-lg p-4 shadow-sm border">
+                                        <h3 className="font-semibold text-primary mb-2">{highlight.title}</h3>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{highlight.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex flex-wrap gap-3 mt-4">
+                                {relatedBingLinks.map((link) => (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                                    >
+                                        {link.label}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+
                         <div className="bg-card rounded-lg p-6 border">
                             <h2 className="text-2xl font-semibold mb-4">TikTok MP3 Converter FAQ</h2>
                             <div className="space-y-4">
-                                <div>
-                                    <h3 className="font-medium mb-2">What audio quality options are available?</h3>
-                                    <p className="text-sm text-muted-foreground">We offer multiple MP3 quality options: 128kbps (standard), 192kbps (high), 256kbps (very high), and 320kbps (premium) to suit your needs and storage preferences.</p>
-                                </div>
-                                <div>
-                                    <h3 className="font-medium mb-2">Can I convert long TikTok videos to MP3?</h3>
-                                    <p className="text-sm text-muted-foreground">Yes! Our converter supports TikTok videos of any length, from short clips to longer content. The conversion time scales with video length but remains fast.</p>
-                                </div>
-                                <div>
-                                    <h3 className="font-medium mb-2">Is there a limit on conversions?</h3>
-                                    <p className="text-sm text-muted-foreground">No limits! Convert as many TikTok videos to MP3 as you want, completely free. No registration, no premium accounts, no restrictions.</p>
-                                </div>
-                                <div>
-                                    <h3 className="font-medium mb-2">Can I convert TikTok playlists to MP3?</h3>
-                                    <p className="text-sm text-muted-foreground">While we don't support direct playlist conversion, you can easily convert multiple TikTok videos by pasting each URL individually or using our batch conversion feature.</p>
-                                </div>
-                                <div>
-                                    <h3 className="font-medium mb-2">Do the MP3 files have metadata?</h3>
-                                    <p className="text-sm text-muted-foreground">Yes! Our converter automatically adds relevant metadata to MP3 files including title, duration, and source information for better organization in your music library.</p>
-                                </div>
+                                {faqContent.map((item) => (
+                                    <div key={item.question}>
+                                        <h3 className="font-medium mb-2">{item.question}</h3>
+                                        <p className="text-sm text-muted-foreground">{item.answer}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

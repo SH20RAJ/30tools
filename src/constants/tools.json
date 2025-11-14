@@ -1712,10 +1712,10 @@
                     ]
                 },
                 {
-                    "id": "mp4-to-mp3-converter",
+                    "id": "mp4-to-mp3",
                     "name": "MP4 to MP3 Converter",
                     "description": "Convert MP4 video files to MP3 audio format with 320kbps quality for free",
-                    "route": "/mp4-to-mp3-converter",
+                    "route": "/mp4-to-mp3",
                     "popular": true,
                     "category": "converter",
                     "keywords": [

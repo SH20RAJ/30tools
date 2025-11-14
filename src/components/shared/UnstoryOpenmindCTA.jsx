@@ -65,6 +65,7 @@ const communityStats = [
 ];
 
 export default function UnstoryOpenmindCTA() {
+  return null;
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 

@@ -98,11 +98,64 @@ const jsonLd = {
         "Age in various units"
     ],
     "author": {
-        "@type": "Organization",
-        "name": "30tools",
-        "url": "https://30tools.com"
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
     },
 };
+
+const faqContent = [
+    {
+        question: "How precise is this age calculator?",
+        answer: "We use timezone-aware math and leap-year support to return age down to seconds, which is the format Bing snippets prefer when answering “how old am I” searches."
+    },
+    {
+        question: "Can I calculate the age difference between two people?",
+        answer: "Yes. Enter both birth dates and the tool returns the gap in years, months, days, and hours so you can copy the exact wording into Bing Chat or reports."
+    },
+    {
+        question: "Does the calculator support multiple date formats?",
+        answer: "You can paste ISO, US, EU, or textual month formats. We normalize the input before calculating, keeping the output consistent for Bing indexing."
+    },
+    {
+        question: "Will leap years and daylight savings be handled?",
+        answer: "Leap years are automatically included and daylight-saving transitions are converted to UTC internally, so the displayed age stays accurate."
+    }
+];
+
+const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqContent.map((item) => ({
+        "@type": "Question",
+        "name": item.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": item.answer
+        }
+    }))
+};
+
+const bingSnapshotHighlights = [
+    {
+        title: "Snippet-friendly answers",
+        description: "Outputs full sentences (\"You are 27 years, 3 months, 5 days old\") that Bing can lift directly into the results page."
+    },
+    {
+        title: "Copilot context blocks",
+        description: "Structured data + labelled sections explain use cases so Bing Copilot can summarize how to use the calculator."
+    },
+    {
+        title: "Entity coverage",
+        description: "Targets queries like age finder, DOB calculator, and age difference for stronger Bing coverage."
+    }
+];
+
+const relatedBingLinks = [
+    { href: "/calculators", label: "All Calculators" },
+    { href: "/tip-calculator", label: "Tip Calculator" },
+    { href: "/mortgage-calculator", label: "Mortgage Calculator" }
+];
 
 export default function AgeCalculatorPage() {
     return (
@@ -110,6 +163,10 @@ export default function AgeCalculatorPage() {
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
             />
             <div className="container mx-auto px-4 py-8">
                 <div className="max-w-2xl mx-auto">
@@ -149,6 +206,29 @@ export default function AgeCalculatorPage() {
                             </div>
                         </div>
 
+                        <div className="bg-muted rounded-lg p-6 border border-dashed">
+                            <h2 className="text-2xl font-semibold mb-4">Optimized Answers for Bing Search</h2>
+                            <div className="grid md:grid-cols-3 gap-4">
+                                {bingSnapshotHighlights.map((highlight) => (
+                                    <div key={highlight.title} className="bg-background rounded-lg p-4 shadow-sm border">
+                                        <h3 className="font-semibold text-primary mb-2">{highlight.title}</h3>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{highlight.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="flex flex-wrap gap-3 mt-4">
+                                {relatedBingLinks.map((link) => (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                                    >
+                                        {link.label}
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+
                         <div className="bg-card rounded-lg p-6 border">
                             <h2 className="text-2xl font-semibold mb-4">More Date & Time Calculators</h2>
                             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -184,6 +264,18 @@ export default function AgeCalculatorPage() {
                                     </p>
                                     <span className="text-xs text-primary mt-2 inline-block">Calculate Business Days →</span>
                                 </a>
+                            </div>
+                        </div>
+
+                        <div className="bg-card rounded-lg p-6 border">
+                            <h2 className="text-2xl font-semibold mb-4">Age Calculator FAQ</h2>
+                            <div className="space-y-4">
+                                {faqContent.map((item) => (
+                                    <div key={item.question}>
+                                        <h3 className="font-medium mb-2">{item.question}</h3>
+                                        <p className="text-sm text-muted-foreground">{item.answer}</p>
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </div>

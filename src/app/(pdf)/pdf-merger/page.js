@@ -43,6 +43,59 @@ export const metadata = {
   },
 };
 
+const faqContent = [
+  {
+    question: "How is this PDF merger optimized for Bing search?",
+    answer: "We provide descriptive headings, structured data, and keyword clusters such as PDF combiner, join PDF, and merge PDF online so Bing and Copilot can immediately understand the tool."
+  },
+  {
+    question: "Is my data safe while merging PDFs?",
+    answer: "All processing happens in your browser session. Files never leave your device, which satisfies Bing webmaster privacy guidelines."
+  },
+  {
+    question: "Can I reorder or remove pages before merging?",
+    answer: "Yes. Drag-and-drop files to reorder them and remove pages before generating the combined PDF."
+  },
+  {
+    question: "Does the tool preserve metadata, bookmarks, and password protection?",
+    answer: "We keep bookmarks and metadata intact. Password-protected PDFs are supported as long as you supply the unlock password."
+  }
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqContent.map((item) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
+
+const bingSnapshotHighlights = [
+  {
+    title: "Snippet-ready steps",
+    description: "Upload PDFs → arrange order → merge → download. Perfect for Bing's featured answer cards."
+  },
+  {
+    title: "Copilot clarity",
+    description: "WebApplication + FAQ schema gives Bing Copilot trustworthy context when recommending the merger."
+  },
+  {
+    title: "Keyword coverage",
+    description: "Covers merge PDF, PDF combiner, join PDF, and PDF binder phrases that trend inside Bing Webmaster Tools."
+  }
+];
+
+const relatedBingLinks = [
+  { href: "/pdf-splitter", label: "PDF Splitter" },
+  { href: "/pdf-compressor", label: "PDF Compressor" },
+  { href: "/pdf-tools", label: "All PDF Tools" }
+];
+
 export default function PDFMergerPage() {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -92,7 +145,49 @@ export default function PDFMergerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <PDFMergerTool />
+      <div className="container mx-auto px-4 pb-16 max-w-5xl">
+        <div className="mt-12 space-y-8">
+          <div className="bg-muted rounded-lg p-6 border border-dashed">
+            <h2 className="text-2xl font-semibold mb-4">Optimized Answers for Bing & Copilot</h2>
+            <div className="grid md:grid-cols-3 gap-4">
+              {bingSnapshotHighlights.map((highlight) => (
+                <div key={highlight.title} className="bg-background rounded-lg p-4 shadow-sm border">
+                  <h3 className="font-semibold text-primary mb-2">{highlight.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{highlight.description}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3 mt-4">
+              {relatedBingLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-primary underline underline-offset-4 hover:text-primary/80"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-card rounded-lg p-6 border">
+            <h2 className="text-2xl font-semibold mb-4">PDF Merger FAQ</h2>
+            <div className="space-y-4">
+              {faqContent.map((item) => (
+                <div key={item.question}>
+                  <h3 className="font-medium mb-2">{item.question}</h3>
+                  <p className="text-sm text-muted-foreground">{item.answer}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
