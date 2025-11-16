@@ -21,6 +21,8 @@ export const metadata = {
   },
 };
 
+
+
 export default async function SearchPage({ searchParams }) {
   // Await searchParams to fix Next.js 15 async APIs
   const params = await searchParams;
@@ -52,6 +54,20 @@ export default async function SearchPage({ searchParams }) {
   if (premium) {
     filteredTools = filteredTools.filter(tool => tool.premium === true);
   }
+
+  // Create JSON-LD structured data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Search Tools - Find the Perfect Online Tool | 30tools",
+    "description": "Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more. Fast, free, and easy to use.",
+    "url": "https://30tools.com/search",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://30tools.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
 
   return (
         <>
