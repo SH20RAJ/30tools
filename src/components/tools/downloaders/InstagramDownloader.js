@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Link, Loader2, AlertCircle, CheckCircle } from 'lucide-react';
+import { Download, Link, Loader2, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 export default function InstagramDownloader() {
     const [url, setUrl] = useState('');
@@ -94,7 +94,7 @@ export default function InstagramDownloader() {
                     {videoData && (
                         <div className="space-y-4">
                             <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
-                                <CheckCircle className="h-4 w-4" />
+                                <CheckCircle2 className="h-4 w-4" />
                                 <span className="text-sm">Instagram content processed successfully!</span>
                             </div>
 

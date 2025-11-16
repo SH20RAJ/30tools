@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Switch } from '@/components/ui/switch';
-import { MessageCircle, Copy, RefreshCw, Users, Youtube, CheckCircle, Sparkles } from 'lucide-react';
+import { MessageCircle, Copy, RefreshCw, Users, Youtube, CheckCircle2, Sparkles } from 'lucide-react';
 import { generateCommentResponse } from '@/lib/youtube-actions';
 
 export default function YouTubeCommentResponder() {
@@ -283,7 +283,7 @@ export default function YouTubeCommentResponder() {
                       className="opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
                     >
                       {copiedIndex === index ? (
-                        <CheckCircle className="w-4 h-4 text-primary" />
+                        <CheckCircle2 className="w-4 h-4 text-primary" />
                       ) : (
                         <Copy className="w-4 h-4" />
                       )}

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Loader2, AlertCircle, CheckCircle, Music, FileVideo } from 'lucide-react';
+import { Download, Loader2, AlertCircle, Music, FileVideo } from 'lucide-react';
 
 export default function MP4ToMP3Converter() {
     const [file, setFile] = useState(null);

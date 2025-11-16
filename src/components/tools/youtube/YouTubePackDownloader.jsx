@@ -8,7 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Checkbox } from '@/components/ui/checkbox';
 import { Badge } from '@/components/ui/badge';
 import { Separator } from '@/components/ui/separator';
-import { Package, Download, FileText, Image as ImageIcon, Tag, Youtube, CheckCircle, Loader2 } from 'lucide-react';
+import { Package, Download, FileText, Image as ImageIcon, Tag, Youtube, CheckCircle2, Loader2 } from 'lucide-react';
 import { downloadYouTubePack } from '@/lib/youtube-actions';
 
 export default function YouTubePackDownloader() {
@@ -249,7 +249,7 @@ export default function YouTubePackDownloader() {
                         const asset = assetOptions.find(a => a.id === assetId);
                         return (
                           <div key={assetId} className="flex items-center gap-2">
-                            <CheckCircle className="w-3 h-3 text-primary" />
+                            <CheckCircle2 className="w-3 h-3 text-primary" />
                             {asset?.label}
                           </div>
                         );

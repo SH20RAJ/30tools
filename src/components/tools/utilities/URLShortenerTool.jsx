@@ -21,7 +21,7 @@ import {
   Plus,
   Download,
   Share,
-  CheckCircle,
+  CheckCircle2,
   AlertCircle,
   ExternalLink,
   Zap,
@@ -360,7 +360,7 @@ export default function URLShortenerTool() {
                             variant="outline"
                           >
                             {copiedId === urlData.id ? (
-                              <CheckCircle className="h-4 w-4 text-primary" />
+                              <CheckCircle2 className="h-4 w-4 text-primary" />
                             ) : (
                               <Copy className="h-4 w-4" />
                             )}
@@ -421,7 +421,7 @@ export default function URLShortenerTool() {
                       variant="outline"
                     >
                       {copiedId === `orig-${urlData.id}` ? (
-                        <CheckCircle className="h-4 w-4 mr-2 text-primary" />
+                        <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
                       ) : (
                         <Copy className="h-4 w-4 mr-2" />
                       )}

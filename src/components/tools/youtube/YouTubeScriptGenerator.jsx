@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
 import { Slider } from '@/components/ui/slider';
-import { PenTool, Copy, Download, Sparkles, Youtube, CheckCircle, Wand2 } from 'lucide-react';
+import { PenTool, Copy, Download, Sparkles, Youtube, CheckCircle2, Wand2 } from 'lucide-react';
 import { generateYouTubeScript } from '@/lib/youtube-actions';
 
 export default function YouTubeScriptGenerator() {
@@ -274,7 +274,7 @@ export default function YouTubeScriptGenerator() {
                   className="btn-cute"
                 >
                   {copied ? (
-                    <CheckCircle className="w-4 h-4 mr-1 text-primary" />
+                    <CheckCircle2 className="w-4 h-4 mr-1 text-primary" />
                   ) : (
                     <Copy className="w-4 h-4 mr-1" />
                   )}

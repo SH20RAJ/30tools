@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Download, Upload, FileText, CheckCircle, AlertCircle } from 'lucide-react';
+import { Download, Upload, FileText, AlertCircle } from 'lucide-react';
 import SocialShareButtons from '@/components/shared/SocialShareButtons';
 
 export default function MarkdownToHtmlTool() {

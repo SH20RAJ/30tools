@@ -7,7 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import {
   Share2,
   Copy,
-  CheckCircle,
+  CheckCircle2,
   Twitter,
   Facebook,
   Linkedin,
@@ -133,7 +133,7 @@ const SocialShareButtons = ({
             className="flex-1 bg-muted/50 hover:bg-muted border-border text-primary"
           >
             {copied ? (
-              <CheckCircle className="h-4 w-4 mr-2 text-primary" />
+              <CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
             ) : (
               <Copy className="h-4 w-4 mr-2" />
             )}

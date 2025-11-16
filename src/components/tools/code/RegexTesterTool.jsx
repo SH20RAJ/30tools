@@ -6,7 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { CheckCircle, AlertCircle } from 'lucide-react';
+import { CheckCircle2, AlertCircle } from 'lucide-react';
 
 export default function RegexTesterTool() {
   const [pattern, setPattern] = useState('');
@@ -67,7 +67,7 @@ export default function RegexTesterTool() {
           )}
           {matches.length > 0 && (
             <Alert variant="success">
-              <CheckCircle className="h-4 w-4" />
+              <CheckCircle2 className="h-4 w-4" />
               <AlertDescription>
                 {matches.length} match{matches.length > 1 ? 'es' : ''} found.
               </AlertDescription>

@@ -10,7 +10,7 @@ import {
   Zap, 
   Shield, 
   Clock, 
-  CheckCircle,
+  CheckCircle2,
   Star,
   Award,
   Target,
@@ -122,7 +122,7 @@ export default function SEOBooster({
     {
       name: "Structured Data",
       description: "Rich snippets and schema markup implemented",
-      icon: CheckCircle,
+      icon: CheckCircle2,
       status: "excellent"
     },
     {
@@ -296,7 +296,7 @@ export default function SEOBooster({
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <CheckCircle className="h-5 w-5 text-primary" />
+              <CheckCircle2 className="h-5 w-5 text-primary" />
               Technical SEO Features
             </CardTitle>
           </CardHeader>

@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Shield, Globe, AlertTriangle, CheckCircle, XCircle, Clock, Lock, Award } from 'lucide-react';
+import { Shield, Globe, AlertTriangle, CheckCircle2, XCircle, Clock, Lock, Award } from 'lucide-react';
 import { toast } from 'sonner';
 
 export default function SSLChecker() {
@@ -86,7 +86,7 @@ export default function SSLChecker() {
     if (days < 0) return { color: 'text-destructive', text: 'Expired', icon: XCircle };
     if (days < 7) return { color: 'text-destructive', text: 'Expires Soon', icon: AlertTriangle };
     if (days < 30) return { color: 'text-primary', text: 'Expires Soon', icon: AlertTriangle };
-    return { color: 'text-primary', text: 'Valid', icon: CheckCircle };
+    return { color: 'text-primary', text: 'Valid', icon: CheckCircle2 };
   };
 
   return (
@@ -145,7 +145,7 @@ export default function SSLChecker() {
             <CardHeader className={`bg-gradient-to-r ${sslData.isValid ? 'from-green-50 to-emerald-50 dark:from-green-950/20 dark:to-emerald-900/20' : 'from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-900/20'}`}>
               <CardTitle className="flex items-center gap-2">
                 {sslData.isValid ? (
-                  <CheckCircle className="w-6 h-6 text-primary" />
+                  <CheckCircle2 className="w-6 h-6 text-primary" />
                 ) : (
                   <XCircle className="w-6 h-6 text-destructive" />
                 )}

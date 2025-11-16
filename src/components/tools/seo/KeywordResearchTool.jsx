@@ -15,11 +15,11 @@ import {
   Globe,
   Monitor,
   Smartphone,
-  CheckCircle,
   XCircle,
   Clock
 } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { performKeywordResearch } from '@/lib/keyword-research-actions';
 
 export default function KeywordResearchTool({ searchEngine = 'bing' }) {
   const [keyword, setKeyword] = useState('');

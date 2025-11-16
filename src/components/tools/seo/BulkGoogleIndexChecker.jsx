@@ -13,7 +13,7 @@ import {
   Search, 
   Download, 
   Upload, 
-  CheckCircle, 
+  CheckCircle2, 
   XCircle, 
   Clock,
   Info,
@@ -159,7 +159,7 @@ export default function BulkGoogleIndexChecker() {
 
   const getStatusIcon = (status, indexed) => {
     if (indexed) {
-      return <CheckCircle className="h-4 w-4 text-primary" />;
+      return <CheckCircle2 className="h-4 w-4 text-primary" />;
     }
     return <XCircle className="h-4 w-4 text-destructive" />;
   };

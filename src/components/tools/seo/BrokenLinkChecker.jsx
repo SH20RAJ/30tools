@@ -11,7 +11,7 @@ import { Alert, AlertDescription } from '@/components/ui/alert';
 import { 
   Link, 
   Download, 
-  CheckCircle, 
+  CheckCircle2, 
   XCircle, 
   Clock,
   Info,
@@ -181,7 +181,7 @@ export default function BrokenLinkChecker() {
       <div className="grid md:grid-cols-3 gap-6">
         <Card>
           <CardHeader className="text-center pb-3">
-            <CheckCircle className="h-8 w-8 text-primary mx-auto mb-2" />
+            <CheckCircle2 className="h-8 w-8 text-primary mx-auto mb-2" />
             <CardTitle className="text-lg">Improve SEO</CardTitle>
           </CardHeader>
           <CardContent className="text-center">

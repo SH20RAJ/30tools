@@ -9,7 +9,7 @@ import { Switch } from '@/components/ui/switch';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { Badge } from '@/components/ui/badge';
-import { Code, Copy, Eye, Youtube, CheckCircle, Settings } from 'lucide-react';
+import { Code, Copy, Eye, Youtube, CheckCircle2, Settings } from 'lucide-react';
 
 export default function YouTubeEmbedGenerator() {
   const [videoUrl, setVideoUrl] = useState('');
@@ -309,7 +309,7 @@ export default function YouTubeEmbedGenerator() {
                 className="btn-cute"
               >
                 {copied ? (
-                  <CheckCircle className="w-4 h-4 mr-1 text-primary" />
+                  <CheckCircle2 className="w-4 h-4 mr-1 text-primary" />
                 ) : (
                   <Copy className="w-4 h-4 mr-1" />
                 )}

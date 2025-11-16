@@ -11,7 +11,7 @@ import {
   Target,
   Zap,
   Globe,
-  CheckCircle
+  CheckCircle2
 } from 'lucide-react';
 import AuthComponent from '@/components/auth/AuthComponent';
 
@@ -22,7 +22,7 @@ export default function SEOToolsNavbar() {
     { name: "Title Rewrite Checker", href: "/title-rewrite-checker", icon: FileSearch, popular: true },
     { name: "Sitemap Extractor", href: "/xml-sitemap-extractor", icon: Target, popular: true },
     { name: "Broken Link Checker", href: "/broken-link-checker", icon: LinkIcon, popular: false },
-    { name: "Meta Tags Generator", href: "/meta-tags-generator", icon: CheckCircle, popular: false },
+    { name: "Meta Tags Generator", href: "/meta-tags-generator", icon: CheckCircle2, popular: false },
     { name: "QR Code Generator", href: "/qr-code-generator", icon: Zap, popular: true },
     { name: "Sitemap Generator", href: "/sitemap-generator", icon: BarChart, popular: false }
   ];

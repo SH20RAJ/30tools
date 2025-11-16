@@ -8,7 +8,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Badge } from '@/components/ui/badge';
-import { Lightbulb, Copy, RefreshCw, TrendingUp, Youtube, CheckCircle, Sparkles } from 'lucide-react';
+import { Lightbulb, Copy, RefreshCw, TrendingUp, Youtube, CheckCircle2, Sparkles } from 'lucide-react';
 import { generateYouTubeIdeas } from '@/lib/youtube-actions';
 
 export default function YouTubeIdeaGenerator() {
@@ -372,7 +372,7 @@ export default function YouTubeIdeaGenerator() {
                     className="shrink-0 opacity-60 hover:opacity-100 transition-opacity"
                   >
                     {copiedIndex === index ? (
-                      <CheckCircle className="w-4 h-4 text-primary" />
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
                     ) : (
                       <Copy className="w-4 h-4" />
                     )}

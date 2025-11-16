@@ -14,7 +14,7 @@ import {
   Download, 
   Scissors, 
   Eye, 
-  CheckCircle, 
+  CheckCircle2, 
   AlertCircle, 
   Loader, 
   FileText,
@@ -264,7 +264,7 @@ export default function PdfSplitterTool() {
                   </p>
                 </div>
                 <Badge variant="outline" className="ml-2">
-                  <CheckCircle className="h-3 w-3 mr-1" />
+                  <CheckCircle2 className="h-3 w-3 mr-1" />
                   Ready
                 </Badge>
               </div>

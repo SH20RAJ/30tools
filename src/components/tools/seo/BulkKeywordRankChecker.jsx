@@ -19,7 +19,6 @@ import {
   MapPin,
   Smartphone,
   Monitor,
-  CheckCircle,
   XCircle,
   Clock,
   Info

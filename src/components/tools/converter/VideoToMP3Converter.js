@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Upload, Download, Loader2, AlertCircle, CheckCircle, Music } from 'lucide-react';
+import { Upload, Download, Loader2, AlertCircle, CheckCircle2, Music } from 'lucide-react';
 
 export default function VideoToMP3Converter() {
     const [file, setFile] = useState(null);
@@ -158,7 +158,7 @@ export default function VideoToMP3Converter() {
                     {conversionData && (
                         <div className="space-y-4">
                             <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
-                                <CheckCircle className="h-4 w-4" />
+                                <CheckCircle2 className="h-4 w-4" />
                                 <span className="text-sm">Video converted to MP3 successfully!</span>
                             </div>
 

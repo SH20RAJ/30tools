@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Textarea } from '@/components/ui/textarea';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, CheckCircle, XCircle, Send, Globe } from 'lucide-react';
+import { Loader2, CheckCircle2, XCircle, Send, Globe } from 'lucide-react';
 
 export default function IndexNowPage() {
   const [loading, setLoading] = useState(false);
@@ -169,7 +169,7 @@ https://30tools.com/pdf-merger"
             <Alert className={result.success ? 'border-border bg-muted/50 dark:bg-green-950' : 'border-border bg-destructive/10 dark:bg-red-950'}>
               <div className="flex items-start gap-2">
                 {result.success ? (
-                  <CheckCircle className="h-5 w-5 text-primary dark:text-primary mt-0.5" />
+                  <CheckCircle2 className="h-5 w-5 text-primary dark:text-primary mt-0.5" />
                 ) : (
                   <XCircle className="h-5 w-5 text-destructive dark:text-destructive mt-0.5" />
                 )}

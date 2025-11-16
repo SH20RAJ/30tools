@@ -7,7 +7,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Clock, Copy, Download, Wand2, Youtube, CheckCircle } from 'lucide-react';
+import { Clock, Copy, Download, Wand2, Youtube, CheckCircle2 } from 'lucide-react';
 import { generateTimestamps } from '@/lib/youtube-actions';
 
 export default function YouTubeTimestampGenerator() {
@@ -158,7 +158,7 @@ export default function YouTubeTimestampGenerator() {
                   className="btn-cute"
                 >
                   {copiedIndex === 'all' ? (
-                    <CheckCircle className="w-4 h-4 mr-1 text-primary" />
+                    <CheckCircle2 className="w-4 h-4 mr-1 text-primary" />
                   ) : (
                     <Copy className="w-4 h-4 mr-1" />
                   )}
@@ -206,7 +206,7 @@ export default function YouTubeTimestampGenerator() {
                     className="opacity-0 group-hover:opacity-100 transition-opacity"
                   >
                     {copiedIndex === index ? (
-                      <CheckCircle className="w-4 h-4 text-primary" />
+                      <CheckCircle2 className="w-4 h-4 text-primary" />
                     ) : (
                       <Copy className="w-4 h-4" />
                     )}

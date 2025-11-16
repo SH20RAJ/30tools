@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Copy, Search, FileText, AlertCircle, CheckCircle } from "lucide-react";
+import { Copy, Search, FileText, AlertCircle, CheckCircle2 } from "lucide-react";
 import { toast } from "sonner";
 
 export default function RegexTesterTool() {
@@ -216,7 +216,7 @@ export default function RegexTesterTool() {
                 {error ? (
                   <AlertCircle className="h-4 w-4 text-destructive" />
                 ) : isValid && pattern ? (
-                  <CheckCircle className="h-4 w-4 text-primary" />
+                  <CheckCircle2 className="h-4 w-4 text-primary" />
                 ) : null}
               </div>
             </div>
