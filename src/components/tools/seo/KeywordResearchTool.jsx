@@ -28,34 +28,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
   const [error, setError] = useState('');
   const [searchType, setSearchType] = useState('bing');
 
-  // Simulate keyword research (in real implementation, this would call the actual API)
-  const simulateKeywordResearch = async (keyword, engine) => {
-    // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 1000));
-    
-    // Generate simulated keyword research data
-    const tags = ['tools', 'questions', 'comparison', 'lists', 'videos', 'tutorials', 'reviews', 'alternatives'];
-    const simulatedResults = [];
-    
-    for (let i = 0; i < 10; i++) {
-      const tag = tags[Math.floor(Math.random() * tags.length)];
-      const newKeyword = `${keyword} ${['best', 'free', 'online', 'how to', 'review', 'vs', 'top', 'guide', 'tutorial'][Math.floor(Math.random() * 9)]} ${['downloader', 'converter', 'tool', 'app', 'software', 'website', 'service'][Math.floor(Math.random() * 7)]}`;
-      
-      simulatedResults.push({
-        keyword: newKeyword,
-        tag: tag,
-        searchVolume: Math.floor(Math.random() * 10000) + 100,
-        difficulty: Math.floor(Math.random() * 100) + 1,
-        cpc: (Math.random() * 5 + 0.1).toFixed(2),
-        competition: ['Low', 'Medium', 'High'][Math.floor(Math.random() * 3)],
-        trend: ['up', 'down', 'stable'][Math.floor(Math.random() * 3)]
-      });
-    }
-    
-    return simulatedResults;
-  };
-
-  const performKeywordResearch = async () => {
+  const handleKeywordResearch = async () => {
     if (!keyword.trim()) {
       setError('Please enter a keyword');
       return;
@@ -66,10 +39,10 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
     setResults([]);
 
     try {
-      const researchResults = await simulateKeywordResearch(keyword, searchType);
+      const researchResults = await performKeywordResearch(keyword, searchType);
       setResults(researchResults);
     } catch (err) {
-      setError('An error occurred while researching keywords');
+      setError(err.message || 'An error occurred while researching keywords');
     } finally {
       setIsResearching(false);
     }
@@ -191,7 +164,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
 
           <div className="flex gap-4">
             <Button 
-              onClick={performKeywordResearch} 
+              onClick={handleKeywordResearch} 
               disabled={isResearching}
               className="flex-1"
             >

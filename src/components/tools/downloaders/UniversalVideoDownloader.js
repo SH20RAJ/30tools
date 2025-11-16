@@ -7,15 +7,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { Progress } from '@/components/ui/progress';
-'use client';
-
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Progress } from '@/components/ui/progress';
 import {
   Download,
   Link as LinkIcon,
@@ -31,6 +22,7 @@ import {
   Pause,
   AlertTriangle
 } from 'lucide-react';
+import { fetchVideoData } from '@/lib/video-download-actions';
 
 export default function UniversalVideoDownloader() {
   const [url, setUrl] = useState('');
@@ -86,93 +78,11 @@ export default function UniversalVideoDownloader() {
     setProgress(0);
 
     try {
-      // Call the savevideo.me API with the video URL
-      const response = await fetch('https://savevideo.me/en/get/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
-          'Accept': 'application/json, text/html, */*; q=0.01',
-          'X-Requested-With': 'XMLHttpRequest',
-          'Referer': 'https://savevideo.me/en/',
-        },
-        body: `url=${encodeURIComponent(url)}`
-      });
-
-      if (!response.ok) {
-        throw new Error(`API request failed with status ${response.status}`);
-      }
-
-      const data = await response.json();
-      
-      if (data.error) {
-        throw new Error(data.error);
-      }
-
-      // Process the response from savevideo.me API
-      let processedData = {
-        title: data.title || `${platform} Video`,
-        thumbnail: data.thumbnail || '/placeholder-video-thumbnail.jpg',
-        duration: data.duration || '0:30',
-        author: data.author || (platform === 'TikTok' ? '@tiktoker' : platform === 'Twitter/X' ? '@username' : ''),
-        music: data.music || (platform === 'TikTok' ? 'Trending Sound' : ''),
-        qualities: []
-      };
-
-      // Process available formats from API response
-      if (data.formats && Array.isArray(data.formats)) {
-        processedData.qualities = data.formats.map((format, index) => ({
-          quality: format.quality || format.resolution || `Quality ${index + 1}`,
-          size: format.size || 'Unknown',
-          url: format.url || format.download_url || '#',
-          type: format.type || 'video',
-          id: format.id || index
-        }));
-      } else if (data.url) {
-        // Fallback if formats array doesn't exist
-        processedData.qualities = [
-          { 
-            quality: 'HD No Watermark', 
-            size: 'Unknown', 
-            url: data.url, 
-            type: 'video',
-            id: 'default'
-          }
-        ];
-      }
-
-      // Add default qualities if none found
-      if (processedData.qualities.length === 0) {
-        processedData.qualities = [
-          { 
-            quality: 'HD No Watermark', 
-            size: '8.2 MB', 
-            url: '#', 
-            type: 'video',
-            id: 'hd'
-          },
-          { 
-            quality: 'SD No Watermark', 
-            size: '4.8 MB', 
-            url: '#', 
-            type: 'video',
-            id: 'sd'
-          },
-          { 
-            quality: 'Audio Only (MP3)', 
-            size: '1.2 MB', 
-            url: '#', 
-            type: 'audio',
-            id: 'audio'
-          }
-        ];
-      }
-
-      setVideoData({
-        ...processedData,
-        platform: platform
-      });
+      // Use server action instead of direct fetch
+      const result = await fetchVideoData(url);
+      setVideoData(result);
     } catch (err) {
-      setError(`Failed to process the ${detectPlatform(url)} video. Error: ${err.message}`);
+      setError(err.message || `Failed to process the ${detectPlatform(url)} video. Please try again.`);
     } finally {
       setIsLoading(false);
     }
