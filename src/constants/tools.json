@@ -3016,6 +3016,47 @@
                         "No Login Required",
                         "Fast Processing"
                     ]
+                },
+                {
+                    "id": "universal-video-downloader",
+                    "name": "Universal Video Downloader",
+                    "description": "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark downloads, multiple quality options, no registration required.",
+                    "route": "/universal-video-downloader",
+                    "popular": true,
+                    "category": "downloaders",
+                    "keywords": [
+                        "universal video downloader",
+                        "video downloader",
+                        "tiktok downloader",
+                        "facebook video downloader",
+                        "instagram video downloader",
+                        "twitter video downloader",
+                        "vimeo downloader",
+                        "dailymotion downloader",
+                        "reddit video downloader",
+                        "rumble downloader"
+                    ],
+                    "longTailKeywords": [
+                        "universal video downloader free",
+                        "download videos from multiple platforms",
+                        "tiktok instagram facebook video downloader",
+                        "no watermark video downloader",
+                        "multi platform video downloader",
+                        "social media video downloader free",
+                        "download tiktok facebook instagram videos",
+                        "all in one video downloader"
+                    ],
+                    "primaryKeyword": "universal video downloader",
+                    "features": [
+                        "Multiple platform support",
+                        "No watermark downloads",
+                        "Multiple quality options",
+                        "Fast processing",
+                        "No registration required",
+                        "Works on all devices",
+                        "HD quality downloads",
+                        "Audio extraction"
+                    ]
                 }
             ]
         },
@@ -3727,6 +3768,70 @@
                         "Seasonal trend analysis",
                         "Export keyword lists",
                         "SERP analysis integration"
+                    ]
+                },
+                {
+                    "id": "bing-keyword-research",
+                    "name": "Bing Keyword Research",
+                    "description": "Research keywords specifically for Bing search engine. Get search volumes, difficulty scores, and related keyword suggestions for Bing SEO.",
+                    "route": "/bing-keyword-research",
+                    "popular": false,
+                    "category": "seo",
+                    "keywords": [
+                        "bing keyword research",
+                        "bing seo",
+                        "bing keywords",
+                        "bing keyword tool",
+                        "bing keyword planner"
+                    ],
+                    "longTailKeywords": [
+                        "bing keyword research tool free",
+                        "bing keyword planner alternative",
+                        "bing seo keyword research",
+                        "bing keyword suggestions",
+                        "bing keyword difficulty checker"
+                    ],
+                    "primaryKeyword": "bing keyword research",
+                    "features": [
+                        "Bing-specific search volumes",
+                        "Keyword difficulty scores",
+                        "CPC and competition data",
+                        "Related keyword suggestions",
+                        "Long-tail keyword generation",
+                        "Export keyword lists",
+                        "Bing SERP analysis"
+                    ]
+                },
+                {
+                    "id": "google-keyword-research",
+                    "name": "Google Keyword Research",
+                    "description": "Research keywords specifically for Google search engine. Get search volumes, difficulty scores, and related keyword suggestions for Google SEO.",
+                    "route": "/google-keyword-research",
+                    "popular": false,
+                    "category": "seo",
+                    "keywords": [
+                        "google keyword research",
+                        "google keywords",
+                        "google keyword tool",
+                        "google keyword planner",
+                        "google seo"
+                    ],
+                    "longTailKeywords": [
+                        "google keyword research tool free",
+                        "google keyword planner alternative",
+                        "google seo keyword research",
+                        "google keyword suggestions",
+                        "google keyword difficulty checker"
+                    ],
+                    "primaryKeyword": "google keyword research",
+                    "features": [
+                        "Google-specific search volumes",
+                        "Keyword difficulty scores",
+                        "CPC and competition data",
+                        "Related keyword suggestions",
+                        "Long-tail keyword generation",
+                        "Export keyword lists",
+                        "Google SERP analysis"
                     ]
                 },
                 {

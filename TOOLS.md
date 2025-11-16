@@ -2,7 +2,7 @@
 
 # Keyword research for bing 
 
-curl 'https://contentforest.com/api/tools/keywords?keyword=facebook+video+downloader&category=all&searchEngine=bing&includeSearchData=true' \
+curl 'https://contentforest.com/api/tools/keywords?keyword=youtube+video+downloader&category=all&searchEngine=bing&includeSearchData=true' \
   -H 'accept: application/json, text/plain, */*' \
   -H 'accept-language: en-GB,en-US;q=0.9,en;q=0.8' \
   -H 'cookie: __Host-next-auth.csrf-token=768c6451f13522b6d3f3580072577d3105f70873ffb179fa61c4447523246989%7C5781fc4f66d905f92d19dc2853a4f8070d2917d50295f1eed38993c63303815e; __Secure-next-auth.callback-url=https%3A%2F%2Fcontentforest.com' \
