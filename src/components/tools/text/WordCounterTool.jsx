@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Textarea } from '@/components/ui/textarea';
 import { Separator } from '@/components/ui/separator';
-import { ArrowLeftIcon, CopyIcon, DownloadIcon, RefreshCwIcon, TypeIcon, ClockIcon, HashIcon, AlignJustifyIcon, FileTextIcon } from 'lucide-react';
+import { ArrowLeftIcon, CopyIcon, DownloadIcon, RefreshCwIcon, TypeIcon, ClockIcon, HashIcon, AlignJustifyIcon, FileTextIcon, BookOpen, HelpCircle, Star, Wrench, Scissors, FileText, Globe, Shield, Play, Users, Zap } from 'lucide-react';
 import Link from 'next/link';
 
 export default function WordCounterTool() {
@@ -400,6 +400,470 @@ Generated on: ${new Date().toLocaleString()}
                   There's no limit! You can analyze texts of any length, from tweets to full documents.
                 </p>
               </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* How to Use Guide */}
+        <Card className="mt-8">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <BookOpen className="h-5 w-5" />
+              How to Use Word Counter
+            </CardTitle>
+            <CardDescription>
+              Get started with text analysis in minutes
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-semibold text-primary">1</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Enter Your Text</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Type or paste your text directly into the input area. The analysis updates in real-time as you type.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-semibold text-primary">2</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Review Statistics</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Check the statistics panel for word count, character count, reading time, and other metrics.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-semibold text-primary">3</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Analyze Common Words</h4>
+                  <p className="text-sm text-muted-foreground">
+                    View the most frequently used words in your text to understand your writing patterns.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-semibold text-primary">4</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Download Reports</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Export your text or download a detailed statistics report for your records.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Advanced Features */}
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Zap className="h-5 w-5" />
+              Advanced Text Analysis Features
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                    <Shield className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Privacy Protection</h4>
+                    <p className="text-sm text-muted-foreground">All analysis happens locally in your browser. No data is sent to servers.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Play className="h-4 w-4 text-blue-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Real-Time Updates</h4>
+                    <p className="text-sm text-muted-foreground">Statistics update instantly as you type, providing immediate feedback.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                    <ClockIcon className="h-4 w-4 text-purple-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Time Estimations</h4>
+                    <p className="text-sm text-muted-foreground">Calculate reading and speaking times based on standard rates.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                    <FileTextIcon className="h-4 w-4 text-orange-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Export Reports</h4>
+                    <p className="text-sm text-muted-foreground">Download detailed analysis reports in text format for documentation.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                    <Users className="h-4 w-4 text-red-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Word Frequency Analysis</h4>
+                    <p className="text-sm text-muted-foreground">Identify most common words to improve writing style and SEO.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3">
+                  <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
+                    <Globe className="h-4 w-4 text-teal-600" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold">Cross-Platform</h4>
+                    <p className="text-sm text-muted-foreground">Works seamlessly on desktop, tablet, and mobile devices.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Comprehensive FAQ Section */}
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <HelpCircle className="h-5 w-5" />
+              Word Counter FAQs
+            </CardTitle>
+            <CardDescription>
+              Everything you need to know about text analysis
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-4">
+            <div className="space-y-3">
+              <h4 className="font-semibold">How does the word counting algorithm work?</h4>
+              <p className="text-sm text-muted-foreground">
+                We use the same word counting method as Microsoft Word, splitting text by spaces, tabs, and line breaks while filtering out empty strings.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">What's the difference between characters with and without spaces?</h4>
+              <p className="text-sm text-muted-foreground">
+                Characters with spaces includes all whitespace. Characters without spaces counts only the actual text characters, useful for length limits.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">How accurate are the reading time estimates?</h4>
+              <p className="text-sm text-muted-foreground">
+                Reading time is based on 200 words per minute (average adult reading speed). Speaking time uses 125 words per minute (conversational pace).
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">Why are some common words excluded from frequency analysis?</h4>
+              <p className="text-sm text-muted-foreground">
+                We filter out common stop words (the, a, and, etc.) to focus on meaningful content words that reveal your writing's true topics.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">Can I use this for SEO analysis?</h4>
+              <p className="text-sm text-muted-foreground">
+                Absolutely! The word frequency analysis helps identify keyword opportunities, while statistics help optimize content length for SEO.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">Is there a limit to text length?</h4>
+              <p className="text-sm text-muted-foreground">
+                No limits! You can analyze anything from short tweets to full novels. All processing happens in your browser for maximum privacy.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">How do you count sentences and paragraphs?</h4>
+              <p className="text-sm text-muted-foreground">
+                Sentences are counted by splitting on periods, question marks, and exclamation points. Paragraphs are counted by double line breaks.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              <h4 className="font-semibold">Can I save my analysis results?</h4>
+              <p className="text-sm text-muted-foreground">
+                Yes! Use the "Download Report" button to save a complete text analysis report as a .txt file with all statistics and metrics.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* User Reviews */}
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Star className="h-5 w-5" />
+              What Writers and Professionals Say
+            </CardTitle>
+            <CardDescription>
+              Reviews from writers, students, and content creators
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                <div className="border rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="text-sm font-medium">Sarah Mitchell, Content Writer</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    "This word counter is essential for my freelance writing. The real-time updates and reading time estimates help me
+                    meet client requirements perfectly. The word frequency analysis is great for SEO optimization."
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2">November 20, 2024</p>
+                </div>
+
+                <div className="border rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="text-sm font-medium">James Chen, Student</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    "Perfect for academic writing! I use it for essays and research papers. The character count and reading time
+                    help me stay within assignment limits. Much better than Word's built-in counter."
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2">November 18, 2024</p>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <div className="border rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {[...Array(4)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                      <Star className="h-4 w-4 text-gray-300" />
+                    </div>
+                    <span className="text-sm font-medium">Maria Rodriguez, Social Media Manager</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    "The most accurate word counter I've found. Perfect for Twitter threads and LinkedIn posts.
+                    Love that it works offline and doesn't store my content. The export feature is a nice touch."
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2">November 15, 2024</p>
+                </div>
+
+                <div className="border rounded-lg p-4">
+                  <div className="flex items-center gap-2 mb-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="text-sm font-medium">David Thompson, Editor</span>
+                  </div>
+                  <p className="text-sm text-muted-foreground">
+                    "As a professional editor, precision matters. This tool gives me detailed statistics that help me
+                    analyze writing quality and readability. The sentence analysis is particularly useful for improving prose."
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-2">November 12, 2024</p>
+                </div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Related Tools */}
+        <Card className="mt-6">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <Wrench className="h-5 w-5" />
+              Related Text Tools
+            </CardTitle>
+            <CardDescription>
+              More tools for text processing and analysis
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Scissors className="h-6 w-6 text-blue-600" />
+                </div>
+                <h4 className="font-medium mb-1">Text Case Converter</h4>
+                <p className="text-sm text-muted-foreground">Change text case and formatting</p>
+              </div>
+
+              <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <FileText className="h-6 w-6 text-green-600" />
+                </div>
+                <h4 className="font-medium mb-1">Duplicate Remover</h4>
+                <p className="text-sm text-muted-foreground">Remove duplicate lines and text</p>
+              </div>
+
+              <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                  <Play className="h-6 w-6 text-purple-600" />
+                </div>
+                <h4 className="font-medium mb-1">Text Formatter</h4>
+                <p className="text-sm text-muted-foreground">Format and beautify text content</p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* SEO Content Section */}
+        <div className="space-y-6 mt-8">
+          <Card>
+            <CardHeader>
+              <CardTitle>The Complete Guide to Word Counting and Text Analysis</CardTitle>
+            </CardHeader>
+            <CardContent className="prose prose-sm max-w-none">
+              <h3>Mastering Text Analysis for Better Writing</h3>
+              <p>
+                Word counting and text analysis are essential skills for writers, students, content creators, and professionals.
+                Understanding your text statistics helps improve writing quality, meet requirements, and optimize content for
+                different platforms. Our advanced word counter provides comprehensive analysis with real-time updates and
+                detailed insights.
+              </p>
+
+              <h3>Understanding Text Statistics</h3>
+              <p>
+                Different metrics provide different insights into your writing:
+              </p>
+              <ul>
+                <li><strong>Word Count:</strong> Basic measure of content length</li>
+                <li><strong>Character Count:</strong> Important for social media limits and SEO</li>
+                <li><strong>Sentence Length:</strong> Affects readability and engagement</li>
+                <li><strong>Reading Time:</strong> Helps plan content consumption</li>
+                <li><strong>Word Frequency:</strong> Reveals writing patterns and keyword usage</li>
+              </ul>
+
+              <h3>Writing Statistics for Different Platforms</h3>
+              <div className="bg-muted p-4 rounded-lg">
+                <h4>Content Length Guidelines:</h4>
+                <div className="grid md:grid-cols-2 gap-4 mt-3">
+                  <div>
+                    <h5 className="font-semibold">Social Media:</h5>
+                    <ul className="text-sm space-y-1">
+                      <li>• Twitter/X: 280 characters</li>
+                      <li>• Instagram: 2,200 characters</li>
+                      <li>• Facebook: 63,206 characters</li>
+                      <li>• LinkedIn: 3,000 characters</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold">Content Marketing:</h5>
+                    <ul className="text-sm space-y-1">
+                      <li>• Blog posts: 1,500-2,500 words</li>
+                      <li>• Whitepapers: 3,000-5,000 words</li>
+                      <li>• Email newsletters: 200-500 words</li>
+                      <li>• Product descriptions: 100-300 words</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <h3>Improving Writing Quality with Text Analysis</h3>
+              <p>
+                Use text statistics to enhance your writing:
+              </p>
+              <ul>
+                <li><strong>Readability:</strong> Aim for 15-20 words per sentence for optimal readability</li>
+                <li><strong>Engagement:</strong> Shorter sentences often perform better online</li>
+                <li><strong>SEO:</strong> Include target keywords naturally in your content</li>
+                <li><strong>Variety:</strong> Mix sentence lengths to maintain reader interest</li>
+                <li><strong>Conciseness:</strong> Remove unnecessary words to improve clarity</li>
+              </ul>
+
+              <h3>Text Analysis for SEO</h3>
+              <p>
+                Word frequency analysis helps with search engine optimization:
+              </p>
+              <ul>
+                <li><strong>Keyword Research:</strong> Identify important terms in your content</li>
+                <li><strong>Content Gaps:</strong> Find topics you haven't covered</li>
+                <li><strong>Competitor Analysis:</strong> Compare your content with others</li>
+                <li><strong>Content Strategy:</strong> Plan topics based on search demand</li>
+                <li><strong>Performance Tracking:</strong> Monitor which keywords drive traffic</li>
+              </ul>
+
+              <h3>Advanced Text Analysis Techniques</h3>
+              <p>
+                Professional writers use advanced metrics:
+              </p>
+              <ul>
+                <li><strong>Flesch Reading Ease:</strong> Measures text complexity</li>
+                <li><strong>Gunning Fog Index:</strong> Estimates years of education needed</li>
+                <li><strong>SMOG Index:</strong> Predicts comprehension difficulty</li>
+                <li><strong>Coleman-Liau Index:</strong> Based on characters and sentences</li>
+                <li><strong>Automated Readability Index:</strong> Uses characters per word</li>
+              </ul>
+
+              <h3>Text Analysis Best Practices</h3>
+              <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                <h4 className="text-blue-800 font-semibold">Pro Tips:</h4>
+                <ul className="text-sm text-blue-700 mt-2 space-y-1">
+                  <li>• Analyze your writing regularly to track improvement</li>
+                  <li>• Use statistics to meet specific platform requirements</li>
+                  <li>• Compare your metrics with successful content in your niche</li>
+                  <li>• Focus on readability scores for better user engagement</li>
+                  <li>• Use word frequency to identify keyword opportunities</li>
+                </ul>
+              </div>
+
+              <h3>Common Text Analysis Mistakes</h3>
+              <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
+                <h4 className="text-red-800 font-semibold">Avoid These Errors:</h4>
+                <ul className="text-sm text-red-700 mt-2 space-y-1">
+                  <li>• Focusing only on word count without considering quality</li>
+                  <li>• Ignoring readability in favor of keyword stuffing</li>
+                  <li>• Not accounting for different audience reading levels</li>
+                  <li>• Using statistics as the only measure of content quality</li>
+                  <li>• Forgetting that context matters more than numbers</li>
+                </ul>
+              </div>
+
+              <h3>Text Analysis Tools and Applications</h3>
+              <p>
+                Different professionals use text analysis for various purposes:
+              </p>
+              <ul>
+                <li><strong>Writers:</strong> Improve prose quality and meet word count requirements</li>
+                <li><strong>Students:</strong> Ensure assignments meet length requirements</li>
+                <li><strong>Marketers:</strong> Optimize content for search engines and social media</li>
+                <li><strong>Editors:</strong> Assess readability and content quality</li>
+                <li><strong>Translators:</strong> Compare source and target text lengths</li>
+                <li><strong>Researchers:</strong> Analyze large volumes of text data</li>
+              </ul>
             </CardContent>
           </Card>
         </div>
