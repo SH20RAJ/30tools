@@ -307,7 +307,7 @@ export default function ImageResizerTool() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl py-8">
         {/* Header */}
         <div className="mb-8">
           <Link href="/">
@@ -335,7 +335,7 @@ export default function ImageResizerTool() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
           {/* Settings Panel */}
           <div className="lg:col-span-1">
             <Card>
@@ -536,7 +536,7 @@ export default function ImageResizerTool() {
                         {platform === 'linkedin' && <MonitorIcon className="h-4 w-4" />}
                         {platform}
                       </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
                         {Object.values(sizes).map((preset, index) => (
                           <Button
                             key={index}
@@ -645,7 +645,7 @@ export default function ImageResizerTool() {
         </div>
 
         {/* Features & FAQ */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {/* Features */}
           <Card>
             <CardHeader>
@@ -775,7 +775,7 @@ export default function ImageResizerTool() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
@@ -925,7 +925,7 @@ export default function ImageResizerTool() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-4">
                 <div className="border rounded-lg p-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -1010,7 +1010,7 @@ export default function ImageResizerTool() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
               <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Scissors className="h-6 w-6 text-blue-600" />
@@ -1067,7 +1067,7 @@ export default function ImageResizerTool() {
               <h3>Social Media Image Dimensions Guide</h3>
               <div className="bg-muted p-4 rounded-lg">
                 <h4>Optimal Sizes for Major Platforms:</h4>
-                <div className="grid md:grid-cols-2 gap-4 mt-3">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mt-3">
                   <div>
                     <h5 className="font-semibold">Instagram:</h5>
                     <ul className="text-sm space-y-1">

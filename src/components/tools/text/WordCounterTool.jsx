@@ -145,7 +145,7 @@ Generated on: ${new Date().toLocaleString()}
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl py-8">
         {/* Header */}
         <div className="mb-8">
           <Link href="/">
@@ -173,7 +173,7 @@ Generated on: ${new Date().toLocaleString()}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Text Input Area */}
           <div className="lg:col-span-2">
             <Card>
@@ -266,7 +266,7 @@ Generated on: ${new Date().toLocaleString()}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-2 sm:gap-4">
                   <div className="text-center p-3 bg-muted/50 rounded-lg">
                     <div className="text-2xl font-bold text-primary">{stats.wordCount}</div>
                     <div className="text-sm text-muted-foreground">Words</div>
@@ -354,7 +354,7 @@ Generated on: ${new Date().toLocaleString()}
         </div>
 
         {/* Features & FAQ */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
           {/* Features */}
           <Card>
             <CardHeader>
@@ -477,7 +477,7 @@ Generated on: ${new Date().toLocaleString()}
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
@@ -627,7 +627,7 @@ Generated on: ${new Date().toLocaleString()}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <div className="space-y-4">
                 <div className="border rounded-lg p-4">
                   <div className="flex items-center gap-2 mb-2">
@@ -712,7 +712,7 @@ Generated on: ${new Date().toLocaleString()}
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="grid md:grid-cols-3 gap-4">
+            <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
               <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
                   <Scissors className="h-6 w-6 text-blue-600" />
@@ -770,7 +770,7 @@ Generated on: ${new Date().toLocaleString()}
               <h3>Writing Statistics for Different Platforms</h3>
               <div className="bg-muted p-4 rounded-lg">
                 <h4>Content Length Guidelines:</h4>
-                <div className="grid md:grid-cols-2 gap-4 mt-3">
+                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mt-3">
                   <div>
                     <h5 className="font-semibold">Social Media:</h5>
                     <ul className="text-sm space-y-1">

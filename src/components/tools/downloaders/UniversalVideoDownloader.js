@@ -107,7 +107,7 @@ export default function UniversalVideoDownloader() {
   const platform = videoData ? videoData.platform : detectPlatform(url);
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 space-y-6">
+    <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
       {/* Header */}
       <div className="text-center space-y-4">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full">
@@ -122,7 +122,7 @@ export default function UniversalVideoDownloader() {
       </div>
 
       {/* Features */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
         <Card className="text-center">
           <CardContent className="p-4">
             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -164,7 +164,7 @@ export default function UniversalVideoDownloader() {
         </CardHeader>
         <CardContent className="space-y-6">
           {/* URL Input */}
-          <div className="flex flex-col sm:flex-row gap-2">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
             <Input
               type="url"
               placeholder="Paste TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, Rumble or other video URL..."
@@ -176,7 +176,7 @@ export default function UniversalVideoDownloader() {
             <Button
               onClick={handleDownload}
               disabled={isLoading}
-              className="bg-primary hover:bg-primary/90"
+              className="bg-primary hover:bg-primary/90 w-full sm:w-auto"
             >
               {isLoading ? (
                 <>
@@ -330,7 +330,7 @@ export default function UniversalVideoDownloader() {
         <CardHeader>
           <CardTitle>Why Use Our Video Downloader</CardTitle>
         </CardHeader>
-        <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <CardContent className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div className="space-y-2">
             <h4 className="font-medium flex items-center gap-2">
               <CheckCircle2 className="h-5 w-5 text-green-500" />
@@ -377,7 +377,7 @@ export default function UniversalVideoDownloader() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
               <h4 className="font-semibold mb-3 text-lg">For TikTok Videos</h4>
               <ol className="list-decimal list-inside space-y-2 text-sm">
@@ -402,7 +402,7 @@ export default function UniversalVideoDownloader() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
               <h4 className="font-semibold mb-3 text-lg">For Facebook Videos</h4>
               <ol className="list-decimal list-inside space-y-2 text-sm">
@@ -511,7 +511,7 @@ export default function UniversalVideoDownloader() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-4">
               <div className="border rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
@@ -592,7 +592,7 @@ export default function UniversalVideoDownloader() {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Scissors className="h-6 w-6 text-primary" />

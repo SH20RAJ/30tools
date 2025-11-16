@@ -54,7 +54,7 @@ export default function TikTokDownloader() {
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto">
+        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <Card>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2">
@@ -63,7 +63,7 @@ export default function TikTokDownloader() {
                     </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                    <div className="flex gap-2">
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                         <Input
                             type="url"
                             placeholder="Paste TikTok video URL here..."
@@ -74,7 +74,7 @@ export default function TikTokDownloader() {
                         <Button
                             onClick={handleDownload}
                             disabled={isLoading}
-                            className="bg-black hover:bg-gray-800"
+                            className="bg-black hover:bg-gray-800 w-full sm:w-auto"
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -101,13 +101,13 @@ export default function TikTokDownloader() {
 
                             <Card>
                                 <CardContent className="p-4">
-                                    <div className="flex gap-4">
+                                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                         <img
                                             src={videoData.thumbnail}
                                             alt="Video thumbnail"
-                                            className="w-24 h-16 object-cover rounded"
+                                            className="w-full sm:w-24 h-32 sm:h-16 object-cover rounded"
                                         />
-                                        <div className="flex-1">
+                                        <div className="flex-1 min-w-0">
                                             <h3 className="font-medium text-sm mb-1">{videoData.title}</h3>
                                             <p className="text-xs text-muted-foreground">Duration: {videoData.duration}</p>
                                             <p className="text-xs text-muted-foreground">Author: {videoData.author}</p>
@@ -121,8 +121,8 @@ export default function TikTokDownloader() {
                                     <div className="mt-4 space-y-2">
                                         <h4 className="text-sm font-medium">Choose Download Option:</h4>
                                         {videoData.qualities.map((quality, index) => (
-                                            <div key={index} className="flex items-center justify-between p-2 border rounded">
-                                                <div>
+                                            <div key={index} className="flex flex-col sm:flex-row sm:items-center justify-between p-2 border rounded gap-2">
+                                                <div className="flex-1 min-w-0">
                                                     <span className="text-sm font-medium">{quality.quality}</span>
                                                     <span className="text-xs text-muted-foreground ml-2">({quality.size})</span>
                                                     {quality.type === 'video' && (
@@ -134,7 +134,7 @@ export default function TikTokDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadContent(quality)}
-                                                    className="bg-black hover:bg-gray-800"
+                                                    className="bg-black hover:bg-gray-800 w-full sm:w-auto"
                                                 >
                                                     {quality.type === 'audio' ? (
                                                         <Music className="h-3 w-3 mr-1" />
@@ -172,11 +172,11 @@ export default function TikTokDownloader() {
                 </CardHeader>
                 <CardContent>
                     <div className="space-y-4">
-                        <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                             <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                                 <span className="text-sm font-semibold text-primary">1</span>
                             </div>
-                            <div>
+                            <div className="flex-1 min-w-0">
                                 <h4 className="font-semibold">Find the TikTok Video</h4>
                                 <p className="text-sm text-muted-foreground">
                                     Open TikTok app or website and find the video you want to download. Make sure the video is public.
@@ -184,11 +184,11 @@ export default function TikTokDownloader() {
                             </div>
                         </div>
 
-                        <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                             <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                                 <span className="text-sm font-semibold text-primary">2</span>
                             </div>
-                            <div>
+                            <div className="flex-1 min-w-0">
                                 <h4 className="font-semibold">Copy the Video URL</h4>
                                 <p className="text-sm text-muted-foreground">
                                     Tap the share button (arrow icon) and select "Copy link" to get the video URL.
@@ -196,11 +196,11 @@ export default function TikTokDownloader() {
                             </div>
                         </div>
 
-                        <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                             <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                                 <span className="text-sm font-semibold text-primary">3</span>
                             </div>
-                            <div>
+                            <div className="flex-1 min-w-0">
                                 <h4 className="font-semibold">Paste URL and Download</h4>
                                 <p className="text-sm text-muted-foreground">
                                     Paste the URL in the input field above and click download. Choose your preferred quality.
@@ -208,11 +208,11 @@ export default function TikTokDownloader() {
                             </div>
                         </div>
 
-                        <div className="flex gap-4">
+                        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                             <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                                 <span className="text-sm font-semibold text-primary">4</span>
                             </div>
-                            <div>
+                            <div className="flex-1 min-w-0">
                                 <h4 className="font-semibold">Save Your Video</h4>
                                 <p className="text-sm text-muted-foreground">
                                     The video will be downloaded without watermark in your chosen quality format.
@@ -232,33 +232,33 @@ export default function TikTokDownloader() {
                     </CardTitle>
                 </CardHeader>
                 <CardContent>
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <div className="space-y-4">
                             <div className="flex items-start gap-3">
-                                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
+                                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center shrink-0">
                                     <Shield className="h-4 w-4 text-green-600" />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <h4 className="font-semibold">No Watermark</h4>
                                     <p className="text-sm text-muted-foreground">Download videos without TikTok branding</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-3">
-                                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
                                     <Play className="h-4 w-4 text-blue-600" />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <h4 className="font-semibold">HD Quality</h4>
                                     <p className="text-sm text-muted-foreground">Download in high definition resolution</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-3">
-                                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
+                                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center shrink-0">
                                     <Music className="h-4 w-4 text-purple-600" />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <h4 className="font-semibold">Audio Extraction</h4>
                                     <p className="text-sm text-muted-foreground">Extract audio as MP3 format</p>
                                 </div>
@@ -267,30 +267,30 @@ export default function TikTokDownloader() {
 
                         <div className="space-y-4">
                             <div className="flex items-start gap-3">
-                                <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center shrink-0">
                                     <Zap className="h-4 w-4 text-orange-600" />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <h4 className="font-semibold">Fast Download</h4>
                                     <p className="text-sm text-muted-foreground">Quick processing and download speeds</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-3">
-                                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
+                                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center shrink-0">
                                     <Users className="h-4 w-4 text-red-600" />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <h4 className="font-semibold">All TikTok Content</h4>
                                     <p className="text-sm text-muted-foreground">Download videos, stories, and live content</p>
                                 </div>
                             </div>
 
                             <div className="flex items-start gap-3">
-                                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
+                                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center shrink-0">
                                     <Globe className="h-4 w-4 text-teal-600" />
                                 </div>
-                                <div>
+                                <div className="min-w-0">
                                     <h4 className="font-semibold">Cross-Platform</h4>
                                     <p className="text-sm text-muted-foreground">Works on desktop and mobile devices</p>
                                 </div>
@@ -374,7 +374,7 @@ export default function TikTokDownloader() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <div className="space-y-4">
                             <div className="border rounded-lg p-4">
                                 <div className="flex items-center gap-2 mb-2">
@@ -459,7 +459,7 @@ export default function TikTokDownloader() {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <div className="grid md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
                             <div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
                                 <Scissors className="h-6 w-6 text-pink-600" />

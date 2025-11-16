@@ -109,7 +109,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-6 space-y-8">
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
       {/* Header */}
       <div className="text-center space-y-4">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
@@ -132,7 +132,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label htmlFor="keyword">Keyword</Label>
               <Input
@@ -165,7 +165,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
             </Alert>
           )}
 
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               onClick={handleKeywordResearch} 
               disabled={isResearching}
@@ -185,7 +185,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
             </Button>
             
             {results.length > 0 && (
-              <Button onClick={exportResults} variant="outline">
+              <Button onClick={exportResults} variant="outline" className="w-full sm:w-auto">
                 <Download className="mr-2 h-4 w-4" />
                 Export CSV
               </Button>
@@ -196,7 +196,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
 
       {/* Results Stats */}
       {results.length > 0 && (
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
               <div className="text-2xl font-bold text-primary">{stats.total}</div>
@@ -283,7 +283,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
           </CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
               <h4 className="font-semibold mb-2">Keyword Strategy</h4>
               <ul className="text-sm text-muted-foreground space-y-1">
@@ -320,7 +320,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
               <h4 className="font-semibold mb-3">Keyword Difficulty Analysis</h4>
               <div className="space-y-2 text-sm">
@@ -441,7 +441,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div className="space-y-4">
               <div className="border rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
@@ -526,7 +526,7 @@ export default function KeywordResearchTool({ searchEngine = 'bing' }) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
                 <Search className="h-6 w-6 text-primary" />
