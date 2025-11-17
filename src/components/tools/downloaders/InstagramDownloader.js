@@ -73,7 +73,7 @@ export default function InstagramDownloader() {
                         <Button
                             onClick={handleDownload}
                             disabled={isLoading}
-                            className="bg-background"
+                            className=""
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -124,7 +124,7 @@ export default function InstagramDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadVideo(quality)}
-                                                    className="bg-background"
+                                                    className=""
                                                 >
                                                     <Download className="h-3 w-3 mr-1" />
                                                     Download

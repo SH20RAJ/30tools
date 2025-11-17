@@ -262,7 +262,7 @@ Style: ${roastIntensity === 'motivational' ? 'Tough love coach' : roastIntensity
                 {/* Generate Button */}
                 <Button 
                   onClick={handleGenerate} 
-                  className="w-full h-12 text-lg bg-background"
+                  className="w-full text-xl px-12 py-5 shadow-lg"
                   disabled={isGenerating || !workStyle}
                 >
                   {isGenerating ? (

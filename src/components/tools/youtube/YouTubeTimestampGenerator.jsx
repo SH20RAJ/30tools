@@ -125,7 +125,7 @@ export default function YouTubeTimestampGenerator() {
           <Button
             onClick={handleGenerate}
             disabled={isGenerating || (!videoUrl && !transcript)}
-            className="w-full btn-cute bg-background"
+            className="w-full btn-cute"
           >
             {isGenerating ? (
               <>

@@ -191,7 +191,7 @@ export default function YouTubePackDownloader() {
           <Button
             onClick={handleDownloadPack}
             disabled={isLoading || !videoUrl || getSelectedCount() === 0}
-            className="w-full btn-cute bg-background"
+            className="w-full btn-cute"
           >
             {isLoading ? (
               <>
@@ -218,7 +218,7 @@ export default function YouTubePackDownloader() {
               </span>
               <Button
                 onClick={downloadPack}
-                className="btn-cute bg-background"
+                className="btn-cute"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download Pack

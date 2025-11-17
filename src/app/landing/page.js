@@ -289,7 +289,7 @@ export default function LandingPage() {
                 <Link href="/search">
                   <Button
                     size="lg"
-                    className="min-w-[220px] h-14 text-lg font-semibold bg-background/25 group"
+                    className="min-w-[220px] h-14 text-lg font-semibold group"
                   >
                     <SearchIcon className="mr-3 h-5 w-5 group-hover:animate-pulse" />
                     Explore All Tools
@@ -734,7 +734,7 @@ export default function LandingPage() {
 
             <div className="text-center">
               <Link href="/more-tools">
-                <Button size="lg" className="bg-background">
+                <Button size="lg" className="">
                   <ZapIcon className="mr-2 h-5 w-5" />
                   View All 9 Platforms
                   <ArrowRightIcon className="ml-2 h-5 w-5" />

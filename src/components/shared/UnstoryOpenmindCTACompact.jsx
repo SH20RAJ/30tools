@@ -67,7 +67,7 @@ export default function UnstoryOpenmindCTACompact() {
           {/* CTA Button */}
           <Button
             asChild
-            className="bg-background"
+            className=""
           >
             <a 
               href="https://unstory.live" 

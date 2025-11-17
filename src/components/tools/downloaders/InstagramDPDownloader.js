@@ -77,7 +77,7 @@ export default function InstagramDPDownloader() {
                         <Button
                             onClick={handleGetProfile}
                             disabled={isLoading}
-                            className="bg-background"
+                            className=""
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -151,7 +151,7 @@ export default function InstagramDPDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadProfilePic(option)}
-                                                    className="bg-background"
+                                                    className=""
                                                 >
                                                     <Download className="h-3 w-3 mr-1" />
                                                     Download

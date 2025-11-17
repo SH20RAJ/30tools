@@ -55,7 +55,7 @@ export default function AIPoetryGeneratorTool() {
               disabled={loading}
               className="mb-2"
             />
-            <Button onClick={handleGenerate} disabled={loading || !theme} className="w-full">
+            <Button onClick={handleGenerate} disabled={loading || !theme} className="w-full text-xl px-12 py-5 shadow-lg">
               {loading ? <RefreshCwIcon className="animate-spin h-4 w-4 mr-2" /> : <SparklesIcon className="h-4 w-4 mr-2" />}
               Generate Poem
             </Button>

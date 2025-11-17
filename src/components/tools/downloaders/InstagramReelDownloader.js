@@ -77,7 +77,7 @@ export default function InstagramReelDownloader() {
                         <Button
                             onClick={handleDownload}
                             disabled={isLoading}
-                            className="bg-background"
+                            className=""
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -148,7 +148,7 @@ export default function InstagramReelDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadContent(quality)}
-                                                    className="bg-background"
+                                                    className=""
                                                 >
                                                     {quality.type === 'audio' ? (
                                                         <Music className="h-3 w-3 mr-1" />

@@ -30,62 +30,31 @@ export default function XmlSitemapExtractor() {
   const [error, setError] = useState('');
   const [stats, setStats] = useState(null);
 
-  // Simulate sitemap extraction (in real implementation, this would parse actual XML)
-  const simulateSitemapExtraction = useCallback(async (sitemapUrl) => {
+  // Real sitemap extraction implementation
+  const extractSitemapUrls = useCallback(async (sitemapUrl) => {
     setProgress(10);
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    // Simulate fetching sitemap
-    setProgress(30);
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    // Simulate parsing XML
-    setProgress(60);
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    // Generate sample URLs
-    const baseUrl = new URL(sitemapUrl).origin;
-    const sampleUrls = [];
-    const urlPatterns = [
-      '', '/about', '/contact', '/services', '/blog', '/products',
-      '/blog/post-1', '/blog/post-2', '/blog/post-3',
-      '/products/item-1', '/products/item-2', '/services/service-1'
-    ];
-
-    // Generate more realistic URLs
-    for (let i = 0; i < 50 + Math.floor(Math.random() * 200); i++) {
-      const pattern = urlPatterns[Math.floor(Math.random() * urlPatterns.length)];
-      const randomSuffix = Math.random() > 0.5 ? `-${Math.floor(Math.random() * 1000)}` : '';
+    
+    try {
+      // Fetch the sitemap XML
+      const response = await fetch(`/api/sitemap-extract?url=${encodeURIComponent(sitemapUrl)}`);
       
-      sampleUrls.push({
-        url: `${baseUrl}${pattern}${randomSuffix}`,
-        lastModified: new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000),
-        changeFreq: ['daily', 'weekly', 'monthly', 'yearly'][Math.floor(Math.random() * 4)],
-        priority: (Math.random()).toFixed(1),
-        images: Math.floor(Math.random() * 5),
-        videos: Math.floor(Math.random() * 2)
-      });
+      if (!response.ok) {
+        throw new Error(`Failed to fetch sitemap: ${response.status} ${response.statusText}`);
+      }
+      
+      setProgress(50);
+      const data = await response.json();
+      
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      
+      setProgress(100);
+      return data;
+    } catch (error) {
+      console.error('Sitemap extraction error:', error);
+      throw error;
     }
-
-    setProgress(90);
-    await new Promise(resolve => setTimeout(resolve, 300));
-
-    const stats = {
-      totalUrls: sampleUrls.length,
-      lastModified: new Date(),
-      avgPriority: (sampleUrls.reduce((sum, url) => sum + parseFloat(url.priority), 0) / sampleUrls.length).toFixed(2),
-      changeFreqDistribution: {
-        daily: sampleUrls.filter(u => u.changeFreq === 'daily').length,
-        weekly: sampleUrls.filter(u => u.changeFreq === 'weekly').length,
-        monthly: sampleUrls.filter(u => u.changeFreq === 'monthly').length,
-        yearly: sampleUrls.filter(u => u.changeFreq === 'yearly').length
-      },
-      totalImages: sampleUrls.reduce((sum, url) => sum + url.images, 0),
-      totalVideos: sampleUrls.reduce((sum, url) => sum + url.videos, 0)
-    };
-
-    setProgress(100);
-    return { urls: sampleUrls, stats };
   }, []);
 
   const extractSitemap = async () => {
@@ -106,11 +75,11 @@ export default function XmlSitemapExtractor() {
     setStats(null);
 
     try {
-      const result = await simulateSitemapExtraction(sitemapUrl);
+      const result = await extractSitemapUrls(sitemapUrl);
       setUrls(result.urls);
       setStats(result.stats);
     } catch (err) {
-      setError('Failed to extract sitemap. Please check the URL and try again.');
+      setError(err.message || 'Failed to extract sitemap. Please check the URL and try again.');
     } finally {
       setIsExtracting(false);
     }
