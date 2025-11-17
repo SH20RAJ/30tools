@@ -179,7 +179,7 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
                       </div>
                     </div>
 
-                    <Button asChild className="w-full bg-background" size="sm">
+                    <Button asChild className="w-full bgtbd" size="sm">
                       <Link href={tool.route}>
                         Use Tool
                         <ArrowRight className="ml-2 h-4 w-4" />

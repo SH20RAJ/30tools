@@ -352,7 +352,7 @@ export default function AestheticBioGeneratorTool() {
 
                 <Button 
                   onClick={handleGenerate} 
-                  className="w-full bg-background"
+                  className="w-full"
                   disabled={isGenerating}
                 >
                   {isGenerating ? (

@@ -199,7 +199,7 @@ const TechBroQuoteGeneratorTool = () => {
 
                                 <Button
                                     onClick={generateQuote}
-                                    className="w-full bg-background"
+                                    className="w-full bgtbd"
                                     disabled={isGenerating}
                                 >
                                     {isGenerating ? (

@@ -477,7 +477,7 @@ export async function createGifFromYoutube(videoUrl, options) {
     }
 
     const videoId = result.videoId;
-    const { startTime, endTime, width, height, frameRate, quality, subtitles } = options;
+    const { startTime, endTime, width, height, frameRate, quality } = options;
 
     // Validate duration
     if (endTime - startTime > 30) {
@@ -513,7 +513,7 @@ export async function createGifFromYoutube(videoUrl, options) {
 // Server action to generate YouTube script with AI
 export async function generateYouTubeScript(scriptData) {
   try {
-    const { topic, videoType, duration, targetAudience, tone, additionalInfo } = scriptData;
+    const { topic } = scriptData;
 
     if (!topic) {
       return { error: 'Video topic is required' };
@@ -530,7 +530,7 @@ export async function generateYouTubeScript(scriptData) {
 // Server action to generate comment responses
 export async function generateCommentResponse(requestData) {
   try {
-    const { comment, tone, includeQuestion, includeEmoji, channelContext } = requestData;
+    const { comment } = requestData;
 
     if (!comment) {
       return { error: 'Comment is required' };

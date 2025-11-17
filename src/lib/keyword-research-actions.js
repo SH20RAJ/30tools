@@ -91,7 +91,7 @@ function generateFAQs(toolName, category, keywords) {
     },
     {
       question: `How to use ${toolName}?`,
-      answer: `Using ${toolName} is simple. Just ${getUsageSteps(toolName, category)}. The tool processes your request instantly and provides the results immediately.`
+      answer: `Using ${toolName} is simple. Just ${getUsageSteps(toolName)}. The tool processes your request instantly and provides the results immediately.`
     },
     {
       question: `Is ${toolName} free?`,
@@ -131,7 +131,7 @@ function generateHowToGuide(toolName, category) {
       },
       {
         title: 'Prepare Your Input',
-        description: getPreparationStep(toolName, category)
+        description: getPreparationStep(toolName)
       },
       {
         title: 'Process Your Request',
@@ -143,10 +143,10 @@ function generateHowToGuide(toolName, category) {
       }
     ],
     tips: [
-      'Ensure your input meets the tool requirements',
+      `Ensure your input meets the ${category.toLowerCase()} tool requirements`,
       'Check the file size limits if applicable',
       'Use the tool on a stable internet connection',
-      'Try different options for best results'
+      `Try different options for best ${category.toLowerCase()} results`
     ]
   };
 }
@@ -201,7 +201,7 @@ function getToolDescription(toolName, category) {
   return descriptions[toolName.toLowerCase()] || `${category.toLowerCase()} tasks efficiently`;
 }
 
-function getUsageSteps(toolName, category) {
+function getUsageSteps(toolName) {
   const steps = {
     'video downloader': 'paste the video URL, click download, and select your preferred quality',
     'image compressor': 'upload your images, choose compression level, and download the optimized files',
@@ -216,7 +216,7 @@ function getUsageSteps(toolName, category) {
   return steps[toolName.toLowerCase()] || 'follow the on-screen instructions';
 }
 
-function getPreparationStep(toolName, category) {
+function getPreparationStep(toolName) {
   const preparations = {
     'video downloader': 'Copy the video URL from TikTok, Instagram, Facebook, or other supported platforms',
     'image compressor': 'Select high-quality images that need compression',

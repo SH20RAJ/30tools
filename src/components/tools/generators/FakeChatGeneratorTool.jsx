@@ -350,7 +350,7 @@ export default function FakeChatGeneratorTool() {
               <CardContent>
                 <Button 
                   onClick={exportAsImage}
-                  className="w-full bg-background"
+                  className="w-full bgtbd"
                   disabled={isExporting || messages.length === 0}
                 >
                   {isExporting ? (

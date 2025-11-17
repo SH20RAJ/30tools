@@ -261,7 +261,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                   <Button
                     onClick={handleGenerate}
                     disabled={isGenerating || !selectedCategory || !selectedTone}
-                    className="w-full bg-background"
+                    className="w-full bgtbd"
                   >
                     {isGenerating ? (
                       <>

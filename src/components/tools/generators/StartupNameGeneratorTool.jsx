@@ -291,7 +291,7 @@ export default function StartupNameGeneratorTool() {
 
                 <Button 
                   onClick={handleGenerate} 
-                  className="w-full bg-background"
+                  className="w-full bgtbd"
                   disabled={isGenerating}
                 >
                   {isGenerating ? (

@@ -178,7 +178,7 @@ export default function GeneratorToolsHub({ tools = [], faqs = [], tutorials = [
                       </div>
                     </div>
 
-                    <Button asChild className="w-full bg-background" size="sm">
+                    <Button asChild className="w-full bgtbd" size="sm">
                       <Link href={tool.route}>
                         Create Now
                         <ArrowRight className="ml-2 h-4 w-4" />

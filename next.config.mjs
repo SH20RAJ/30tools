@@ -1,10 +1,6 @@
 /** @type {import('next').NextConfig} */
 import withPWA from 'next-pwa';
-import withBundleAnalyzer from '@next/bundle-analyzer';
 
-const bundleAnalyzer = withBundleAnalyzer({
-  enabled: process.env.ANALYZE === 'true',
-});
 
 const nextConfig = {
   // TypeScript configuration

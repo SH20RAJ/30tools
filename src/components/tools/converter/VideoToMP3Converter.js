@@ -132,7 +132,7 @@ export default function VideoToMP3Converter() {
                         <Button
                             onClick={handleConvert}
                             disabled={isLoading}
-                            className="w-full bg-background"
+                            className="w-full bgtbd"
                         >
                             {isLoading ? (
                                 <>

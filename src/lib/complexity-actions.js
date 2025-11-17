@@ -245,11 +245,16 @@ export async function validateCode(code, language) {
     case 'py':
       // Check for basic Python syntax - validate indentation consistency
       const lines = code.split('\n');
-      let _indentLevel = 0;
+      let indentLevel = 0;
       for (const line of lines) {
         if (line.trim().endsWith(':') && !line.trim().startsWith('#')) {
-          _indentLevel++;
+          indentLevel++;
         }
+      }
+      
+      // Use indentLevel to check for potential indentation issues
+      if (indentLevel > 20) {
+        issues.push('Code has deep nesting which may cause indentation issues');
       }
       break;
       

@@ -136,14 +136,32 @@ export function getVideoSegmentUrl(segmentName, videoHash) {
  * Example: https://sin1.contabostorage.com/.../mdiskplay1.m3u8
  * Returns the hash needed for streaming URLs
  */
-export function extractVideoHash(_m3u8Url) {
+export function extractVideoHash(m3u8Url) {
   try {
-    // This is a placeholder - you'll need to determine how to get the hash
-    // from the API response or M3U8 URL
-    // For now, returning a sample hash
-    return 'H0xwA-GXx3RG-KOK2AwX3w';
+    // Extract hash from the M3U8 URL by parsing the path
+    // Looking for patterns in the URL that might contain the video hash
+    const url = new URL(m3u8Url);
+    const pathParts = url.pathname.split('/');
+    
+    // Look for potential hash in the path (usually in the filename or parent directory)
+    for (let i = pathParts.length - 1; i >= 0; i--) {
+      const part = pathParts[i];
+      // Look for a pattern that resembles a video hash (alphanumeric with hyphens)
+      if (part && part.length > 10 && /[a-zA-Z0-9-]/.test(part) && part.includes('-')) {
+        return part;
+      }
+    }
+    
+    // If no hash found in path, return a default or try to extract from query params
+    const hashParam = url.searchParams.get('hash');
+    if (hashParam) {
+      return hashParam;
+    }
+    
+    // If no hash found in path or query params, return null
+    return null;
   } catch (error) {
     console.error('Error extracting video hash:', error);
     return null;
-  }
+ }
 }
