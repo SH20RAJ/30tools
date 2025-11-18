@@ -365,7 +365,7 @@ Style: ${believabilityLevel === 'low' ? 'Absurd and funny' : believabilityLevel 
                 <div className="flex gap-2">
                   <Button 
                     onClick={handleGenerate} 
-                    className="flex-1 text-xl px-12 py-5 shadow-lg"
+                    className="flex-1 bg-background"
                     disabled={isGenerating}
                   >
                     {isGenerating ? (

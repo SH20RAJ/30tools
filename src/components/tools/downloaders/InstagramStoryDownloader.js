@@ -107,7 +107,7 @@ export default function InstagramStoryDownloader() {
                         <Button
                             onClick={handleViewStories}
                             disabled={isLoading}
-                            className=""
+                            className="bg-background"
                         >
                             {isLoading ? (
                                 <Loader2 className="h-4 w-4 animate-spin" />
@@ -171,7 +171,7 @@ export default function InstagramStoryDownloader() {
                                                 <Button
                                                     size="sm"
                                                     onClick={() => downloadStory(story)}
-                                                    className=""
+                                                    className="bg-background"
                                                 >
                                                     <Download className="h-3 w-3 mr-1" />
                                                     Download

@@ -53,7 +53,7 @@ export default function AIVoiceGeneratorTool() {
               disabled={loading}
               className="mb-2"
             />
-            <Button onClick={handleGenerate} disabled={loading || !text} className="w-full text-xl px-12 py-5 shadow-lg">
+            <Button onClick={handleGenerate} disabled={loading || !text} className="w-full">
               {loading ? <RefreshCwIcon className="animate-spin h-4 w-4 mr-2" /> : <Volume2Icon className="h-4 w-4 mr-2" />}
               Generate Voice
             </Button>

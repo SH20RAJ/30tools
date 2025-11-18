@@ -240,7 +240,7 @@ export default function YouTubeScriptGenerator() {
             <Button
               onClick={handleGenerateScript}
               disabled={isGenerating || !topic.trim()}
-              className="flex-1 btn-cute"
+              className="flex-1 btn-cute bg-background"
             >
               {isGenerating ? (
                 <>

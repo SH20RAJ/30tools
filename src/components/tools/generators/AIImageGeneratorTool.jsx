@@ -478,7 +478,7 @@ export default function AIImageGeneratorTool() {
                     <Button 
                       onClick={handleGenerate} 
                       disabled={loading || !prompt.trim()} 
-                      className="w-full text-xl px-12 py-5 shadow-lg"
+                      className="w-full"
                       size="lg"
                     >
                       {loading ? (
@@ -741,7 +741,7 @@ export default function AIImageGeneratorTool() {
                             onClick={() => removeFromFavorites(item.url)}
                             size="sm"
                             variant="outline"
-                            className="absolute top-2 right-2 w-7 h-7 p-0 hover:bg-background"
+                            className="absolute top-2 right-2 w-7 h-7 p-0 bg-background/90 hover:bg-background"
                           >
                             <TrashIcon className="w-3 h-3" />
                           </Button>

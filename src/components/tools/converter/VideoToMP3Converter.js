@@ -186,7 +186,7 @@ export default function VideoToMP3Converter() {
                                         </div>
                                         <Button
                                             onClick={downloadMP3}
-                                            className=""
+                                            className="bg-background"
                                         >
                                             <Download className="h-4 w-4 mr-1" />
                                             Download MP3

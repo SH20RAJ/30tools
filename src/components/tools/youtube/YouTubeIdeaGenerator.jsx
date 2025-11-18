@@ -267,7 +267,7 @@ export default function YouTubeIdeaGenerator() {
             <Button
               onClick={handleGenerateIdeas}
               disabled={isGenerating || !niche.trim()}
-              className="flex-1 btn-cute"
+              className="flex-1 btn-cute bg-background"
             >
               {isGenerating ? (
                 <>

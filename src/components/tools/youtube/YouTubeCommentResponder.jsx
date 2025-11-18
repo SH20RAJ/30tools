@@ -215,7 +215,7 @@ export default function YouTubeCommentResponder() {
             <Button
               onClick={handleGenerateResponses}
               disabled={isGenerating || !comment.trim()}
-              className="flex-1 btn-cute"
+              className="flex-1 btn-cute bg-background"
             >
               {isGenerating ? (
                 <>

@@ -268,7 +268,7 @@ Make it feel genuine but entertaining!`;
                   <Button
                     onClick={handleGenerate}
                     disabled={isGenerating || !selectedStyle || !selectedEmotion}
-                    className="w-full text-xl px-12 py-5 shadow-lg"
+                    className="w-full bgtbd"
                   >
                     {isGenerating ? (
                       <>

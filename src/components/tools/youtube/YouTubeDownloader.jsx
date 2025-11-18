@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent,CardDescription,  CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
 import { Download, Video, Music, Loader2, Bookmark, BookmarkCheck, SmartphoneIcon, Plus, BookOpen, HelpCircle, Star, Wrench, Scissors, FileText, Globe, Shield, Play, Users, Zap } from 'lucide-react';
 import { toast } from 'sonner';
 // dialog removed — login flow not required
@@ -303,7 +304,7 @@ export default function YouTubeDownloader() {
               <Button
                 type="submit"
                 disabled={isLoading || !url.trim()}
-                className="w-full h-14 text-lg font-semibold"
+                className="w-full h-14 text-lg font-semibold bg-background"
               >
                 {isLoading ? (
                   <>
