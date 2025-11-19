@@ -1,11 +1,22 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Wrench, Code, Hash, Lock, Database, Boxes, FileText, Zap } from 'lucide-react';
-import Link from 'next/link';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  ExternalLink,
+  Wrench,
+  Code,
+  Hash,
+  Lock,
+  Database,
+  Boxes,
+  FileText,
+  Zap,
+} from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
   title: "Our Developer & Utility Tools Collection | 30tools Network",
-  description: "Professional our tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description:
+    "Professional our tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: [
     "our tools",
     "our tools online",
@@ -19,11 +30,12 @@ export const metadata = {
     "our tools utility",
     "online tool",
     "free utility",
-    "web application"
+    "web application",
   ].join(", "),
   openGraph: {
     title: "Developer & Utility Tools Collection - 30tools Network",
-    description: "Complete collection of professional developer tools and online utilities. Free, fast, and privacy-focused tools for developers and IT professionals.",
+    description:
+      "Complete collection of professional developer tools and online utilities. Free, fast, and privacy-focused tools for developers and IT professionals.",
     url: "https://30tools.com/our-tools",
     siteName: "30tools",
     type: "website",
@@ -32,31 +44,33 @@ export const metadata = {
         url: "/og-images/our-tools.jpg",
         width: 1200,
         height: 630,
-        alt: "30tools Developer & Utility Tools Collection"
+        alt: "30tools Developer & Utility Tools Collection",
       },
-    ]
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Developer & Utility Tools Collection - 30tools",
-    description: "Professional developer tools and online utilities - all free and open source",
-    images: ["/og-images/our-tools.jpg"]
+    description:
+      "Professional developer tools and online utilities - all free and open source",
+    images: ["/og-images/our-tools.jpg"],
   },
   alternates: {
-    canonical: "https://30tools.com/our-tools"
+    canonical: "https://30tools.com/our-tools",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Developer & Utility Tools Collection",
-  "description": "Complete collection of professional developer tools and online utilities by 30tools",
-  "url": "https://30tools.com/our-tools",
-  "publisher": {
+  name: "Developer & Utility Tools Collection",
+  description:
+    "Complete collection of professional developer tools and online utilities by 30tools",
+  url: "https://30tools.com/our-tools",
+  publisher: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 
@@ -66,18 +80,19 @@ const toolsCollection = [
     url: "https://coders.30tools.com/",
     icon: Code,
     color: "blue",
-    description: "Essential developer tools including JSON formatter, code beautifier, API tester, and complexity analyzer. Built for developers, by developers.",
+    description:
+      "Essential developer tools including JSON formatter, code beautifier, API tester, and complexity analyzer. Built for developers, by developers.",
     features: [
       "JSON Formatter & Validator",
       "Code Beautifier & Minifier",
       "API Testing Tools",
       "Complexity Analyzer",
       "Performance Metrics",
-      "Security Analysis"
+      "Security Analysis",
     ],
     stats: {
       tools: "30+",
-      category: "Development"
+      category: "Development",
     },
   },
   {
@@ -85,18 +100,19 @@ const toolsCollection = [
     url: "https://online-tools.30tools.com/",
     icon: Wrench,
     color: "green",
-    description: "Comprehensive online utilities for hashing (MD5, SHA256), encoding (Base64, Base32), encryption (AES, RSA), and format conversion.",
+    description:
+      "Comprehensive online utilities for hashing (MD5, SHA256), encoding (Base64, Base32), encryption (AES, RSA), and format conversion.",
     features: [
       "Hash Generators (MD5, SHA, etc.)",
       "Base64/Base32 Encoding",
       "AES/RSA Encryption",
       "JSON/XML Formatters",
       "Case Converters",
-      "QR Code Generator"
+      "QR Code Generator",
     ],
     stats: {
       tools: "50+",
-      category: "Utilities"
+      category: "Utilities",
     },
   },
   {
@@ -104,18 +120,19 @@ const toolsCollection = [
     url: "https://devtools.30tools.com/",
     icon: Hash,
     color: "purple",
-    description: "Professional development tools featuring hash generators, cryptography utilities, JSON/XML formatters, and case converters.",
+    description:
+      "Professional development tools featuring hash generators, cryptography utilities, JSON/XML formatters, and case converters.",
     features: [
       "CRC & MD Hash Tools",
       "SHA Family (SHA1, SHA2, SHA3)",
       "Keccak & BLAKE Hashing",
       "ECDSA & RSA Cryptography",
       "Format Validators",
-      "Encoding/Decoding Tools"
+      "Encoding/Decoding Tools",
     ],
     stats: {
       tools: "60+",
-      category: "Development"
+      category: "Development",
     },
   },
   {
@@ -123,18 +140,19 @@ const toolsCollection = [
     url: "https://it-tools.30tools.com/",
     icon: Boxes,
     color: "orange",
-    description: "Handy IT tools collection with token generators, UUID/ULID generators, QR code creator, JWT parser, and 80+ more utilities.",
+    description:
+      "Handy IT tools collection with token generators, UUID/ULID generators, QR code creator, JWT parser, and 80+ more utilities.",
     features: [
       "Token & UUID Generators",
       "Password Strength Analyzer",
       "JWT Parser & Decoder",
       "Device Information",
       "Crontab Generator",
-      "Docker Compose Converter"
+      "Docker Compose Converter",
     ],
     stats: {
       tools: "80+",
-      category: "IT & DevOps"
+      category: "IT & DevOps",
     },
   },
   {
@@ -142,18 +160,19 @@ const toolsCollection = [
     url: "https://terabox.beer/",
     icon: Database,
     color: "red",
-    description: "Free TeraBox video downloader with inline player. Download and play TeraBox videos directly in your browser with our Telegram bot.",
+    description:
+      "Free TeraBox video downloader with inline player. Download and play TeraBox videos directly in your browser with our Telegram bot.",
     features: [
       "Direct Video Downloads",
       "Inline Video Player",
       "Telegram Bot Integration",
       "No File Size Limits",
       "Mobile-Friendly Design",
-      "Free & Secure"
+      "Free & Secure",
     ],
     stats: {
       tools: "1",
-      category: "Media & Files"
+      category: "Media & Files",
     },
   },
 ];
@@ -163,31 +182,32 @@ const colorClasses = {
     border: "border-border hover:border-border",
     bg: "bg-muted/50 dark:bg-blue-950/20",
     text: "text-primary dark:text-primary",
-    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-blue-300"
+    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-blue-300",
   },
   green: {
     border: "border-border hover:border-border",
     bg: "bg-muted/50 dark:bg-green-950/20",
     text: "text-primary dark:text-primary",
-    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-green-300"
+    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-green-300",
   },
   purple: {
     border: "border-border hover:border-border",
     bg: "bg-muted/50 dark:bg-purple-950/20",
     text: "text-primary dark:text-primary",
-    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-purple-300"
+    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-purple-300",
   },
   orange: {
     border: "border-border hover:border-border",
     bg: "bg-muted/50 dark:bg-orange-950/20",
     text: "text-primary dark:text-primary",
-    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-orange-300"
+    badge: "bg-muted text-primary dark:bg-primary/30 dark:text-orange-300",
   },
   red: {
     border: "border-destructive/50 hover:border-border",
     bg: "bg-destructive/10 dark:bg-red-950/20",
     text: "text-destructive dark:text-destructive",
-    badge: "bg-destructive/20 text-destructive dark:bg-primary/30 dark:text-red-300"
+    badge:
+      "bg-destructive/20 text-destructive dark:bg-primary/30 dark:text-red-300",
   },
 };
 
@@ -205,14 +225,17 @@ export default function OurToolsPage() {
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
                 <Zap className="w-4 h-4 text-primary" />
-                <span className="text-sm font-medium text-primary">30tools Network</span>
+                <span className="text-sm font-medium text-primary">
+                  30tools Network
+                </span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Developer & Utility Tools Collection
               </h1>
               <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                Your complete toolkit for development, encryption, hashing, formatting, and more. 
-                All tools are free, open-source, and privacy-focused. No registration required.
+                Your complete toolkit for development, encryption, hashing,
+                formatting, and more. All tools are free, open-source, and
+                privacy-focused. No registration required.
               </p>
               <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <Badge variant="outline" className="px-4 py-2">
@@ -240,9 +263,12 @@ export default function OurToolsPage() {
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Explore Our Tool Collections</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Explore Our Tool Collections
+              </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Each platform is specialized for different use cases. Choose the one that fits your needs best.
+                Each platform is specialized for different use cases. Choose the
+                one that fits your needs best.
               </p>
             </div>
 
@@ -250,24 +276,24 @@ export default function OurToolsPage() {
               {toolsCollection.map((tool, index) => {
                 const Icon = tool.icon;
                 const colors = colorClasses[tool.color];
-                
+
                 return (
-                  <Card 
+                  <Card
                     key={index}
                     className={`${colors.border} hover:shadow-xl transition-all duration-300 group`}
                   >
                     <CardHeader className={colors.bg}>
                       <div className="flex items-start justify-between mb-4">
-                        <div className={`p-3 rounded-lg ${colors.bg} border ${colors.border}`}>
+                        <div
+                          className={`p-3 rounded-lg ${colors.bg} border ${colors.border}`}
+                        >
                           <Icon className={`w-8 h-8 ${colors.text}`} />
                         </div>
                         <div className="flex gap-2">
                           <Badge className={colors.badge}>
                             {tool.stats.tools} Tools
                           </Badge>
-                          <Badge variant="outline">
-                            {tool.stats.category}
-                          </Badge>
+                          <Badge variant="outline">{tool.stats.category}</Badge>
                         </div>
                       </div>
                       <CardTitle className="text-2xl mb-2 group-hover:text-primary transition-colors">
@@ -278,7 +304,7 @@ export default function OurToolsPage() {
                       <p className="text-muted-foreground mb-6">
                         {tool.description}
                       </p>
-                      
+
                       <div className="mb-6">
                         <h4 className="font-semibold mb-3 text-sm uppercase tracking-wide">
                           Key Features
@@ -287,7 +313,9 @@ export default function OurToolsPage() {
                           {tool.features.map((feature, idx) => (
                             <li key={idx} className="flex items-start text-sm">
                               <span className={`mr-2 ${colors.text}`}>•</span>
-                              <span className="text-muted-foreground">{feature}</span>
+                              <span className="text-muted-foreground">
+                                {feature}
+                              </span>
                             </li>
                           ))}
                         </ul>
@@ -314,7 +342,9 @@ export default function OurToolsPage() {
         <div className="bg-muted/50 border-y">
           <div className="container mx-auto px-4 py-16">
             <div className="max-w-5xl mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Why Choose 30tools Network?</h2>
+              <h2 className="text-3xl font-bold text-center mb-12">
+                Why Choose 30tools Network?
+              </h2>
               <div className="grid md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -322,7 +352,8 @@ export default function OurToolsPage() {
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Privacy First</h3>
                   <p className="text-sm text-muted-foreground">
-                    All tools run client-side when possible. We don't store your data or track your usage.
+                    All tools run client-side when possible. We don't store your
+                    data or track your usage.
                   </p>
                 </div>
                 <div className="text-center">
@@ -331,7 +362,8 @@ export default function OurToolsPage() {
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Lightning Fast</h3>
                   <p className="text-sm text-muted-foreground">
-                    Optimized for performance with instant results. No waiting, no loading screens.
+                    Optimized for performance with instant results. No waiting,
+                    no loading screens.
                   </p>
                 </div>
                 <div className="text-center">
@@ -340,7 +372,8 @@ export default function OurToolsPage() {
                   </div>
                   <h3 className="font-semibold text-lg mb-2">Open Source</h3>
                   <p className="text-sm text-muted-foreground">
-                    Built by developers, for developers. Contribute on GitHub and help us improve.
+                    Built by developers, for developers. Contribute on GitHub
+                    and help us improve.
                   </p>
                 </div>
               </div>
@@ -351,9 +384,12 @@ export default function OurToolsPage() {
         {/* CTA Section */}
         <div className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4">Ready to Boost Your Productivity?</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Ready to Boost Your Productivity?
+            </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Join thousands of developers who trust 30tools for their daily workflow.
+              Join thousands of developers who trust 30tools for their daily
+              workflow.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/">
@@ -361,9 +397,9 @@ export default function OurToolsPage() {
                   Explore Main Tools
                 </button>
               </Link>
-              <a 
-                href="https://github.com/SH20RAJ" 
-                target="_blank" 
+              <a
+                href="https://github.com/SH20RAJ"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 border border-input bg-background rounded-lg font-medium hover:bg-accent transition-colors inline-flex items-center gap-2"
               >

@@ -1,12 +1,15 @@
-import CsvToJsonTool from '@/components/tools/code/CsvToJsonTool';
+import CsvToJsonTool from "@/components/tools/code/CsvToJsonTool";
 
 export const metadata = {
   title: "Free CSV to JSON Converter - Convert CSV Data to JSON",
-  description: "Professional csv to json with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
-  keywords: "csv to json converter, convert csv to json online, csv json converter, csv parser, data conversion, csv to json api, excel to json",
+  description:
+    "Professional csv to json with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  keywords:
+    "csv to json converter, convert csv to json online, csv json converter, csv parser, data conversion, csv to json api, excel to json",
   openGraph: {
     title: "Free CSV to JSON Converter - Convert CSV Data to JSON Online",
-    description: "Convert CSV to JSON with smart data type detection and flexible output formats.",
+    description:
+      "Convert CSV to JSON with smart data type detection and flexible output formats.",
     url: "https://30tools.com/csv-to-json",
     siteName: "30tools",
     images: [
@@ -14,20 +17,21 @@ export const metadata = {
         url: "/og-images/csv-to-json.jpg",
         width: 1200,
         height: 630,
-        alt: "Free CSV to JSON Converter"
+        alt: "Free CSV to JSON Converter",
       },
     ],
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Free CSV to JSON Converter - Convert CSV Data to JSON Online",
-    description: "Smart CSV to JSON conversion with multiple output formats. Perfect for data integration.",
+    description:
+      "Smart CSV to JSON conversion with multiple output formats. Perfect for data integration.",
     images: ["/og-images/csv-to-json.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
   alternates: {
-    canonical: "https://30tools.com/csv-to-json"
+    canonical: "https://30tools.com/csv-to-json",
   },
   robots: {
     index: true,
@@ -35,44 +39,44 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  category: 'Code Tools',
+  category: "Code Tools",
   other: {
-    'application-name': '30tools',
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'CSV to JSON - 30tools',
-    'format-detection': 'telephone=no',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-    'theme-color': '#000000'
+    "application-name": "30tools",
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "CSV to JSON - 30tools",
+    "format-detection": "telephone=no",
+    "msapplication-TileColor": "#000000",
+    "msapplication-config": "/browserconfig.xml",
+    "theme-color": "#000000",
   },
 };
-
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Csv To Json",
-  "description": "Professional csv to json tool. Free online processing with high-quality results. No registration required, instant results.",
-  "url": "https://30tools.com/csv-to-json",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "Csv To Json",
+  description:
+    "Professional csv to json tool. Free online processing with high-quality results. No registration required, instant results.",
+  url: "https://30tools.com/csv-to-json",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "author": {
+  author: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 

@@ -1,9 +1,7 @@
-
-
-
 export const metadata = {
   title: "[...stack] - Free Online Tool | Professional Results",
-  description: "Professional [...stack] with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description:
+    "Professional [...stack] with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: [
     "[...stack]",
     "[...stack] online",
@@ -17,11 +15,12 @@ export const metadata = {
     "[...stack] utility",
     "online tool",
     "free utility",
-    "web application"
+    "web application",
   ].join(", "),
   openGraph: {
     title: "[...stack] - Free Online Tool | Professional Results",
-    description: "Professional [...stack] tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional [...stack] tool. Free online processing with high-quality results. No registration required, instant results.",
     url: "https://30tools.com/[...stack]",
     siteName: "30tools",
     images: [
@@ -29,20 +28,21 @@ export const metadata = {
         url: "/og-images/[...stack].jpg",
         width: 1200,
         height: 630,
-        alt: "[...stack] - Free Online Tool | Professional Results"
+        alt: "[...stack] - Free Online Tool | Professional Results",
       },
     ],
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "[...stack] - Free Online Tool | Professional Results",
-    description: "Professional [...stack] tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional [...stack] tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/[...stack].jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
   alternates: {
-    canonical: "https://30tools.com/[...stack]"
+    canonical: "https://30tools.com/[...stack]",
   },
   robots: {
     index: true,
@@ -50,43 +50,44 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  category: 'General Tools',
+  category: "General Tools",
   other: {
-    'application-name': '30tools',
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': '[...stack] - 30tools',
-    'format-detection': 'telephone=no',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-    'theme-color': '#000000'
+    "application-name": "30tools",
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "[...stack] - 30tools",
+    "format-detection": "telephone=no",
+    "msapplication-TileColor": "#000000",
+    "msapplication-config": "/browserconfig.xml",
+    "theme-color": "#000000",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "[...stack]",
-  "description": "Professional [...stack] tool. Free online processing with high-quality results. No registration required, instant results.",
-  "url": "https://30tools.com/[...stack]",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "[...stack]",
+  description:
+    "Professional [...stack] tool. Free online processing with high-quality results. No registration required, instant results.",
+  url: "https://30tools.com/[...stack]",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "author": {
+  author: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 import { StackHandler } from "@stackframe/stack";

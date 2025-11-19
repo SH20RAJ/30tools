@@ -1,14 +1,16 @@
-import { getAllTools } from '@/constants/tools-utils';
+import { getAllTools } from "@/constants/tools-utils";
 
 function RSSFeed() {
-  const baseUrl = 'https://30tools.com';
+  const baseUrl = "https://30tools.com";
   const currentDate = new Date().toISOString();
   const allTools = getAllTools();
-  
+
   // Get latest tools (last 20 added/updated)
   const latestTools = allTools.slice(0, 20);
-  
-  const rssItems = latestTools.map(tool => `
+
+  const rssItems = latestTools
+    .map(
+      (tool) => `
     <item>
       <title><![CDATA[${tool.name} - Free Online Tool]]></title>
       <description><![CDATA[${tool.description}. Use our free ${tool.name} tool online. No registration required, fast and secure processing.]]></description>
@@ -17,9 +19,11 @@ function RSSFeed() {
       <pubDate>${currentDate}</pubDate>
       <category><![CDATA[${tool.category}]]></category>
       <author><![CDATA[30tools Team]]></author>
-      <enclosure url="${baseUrl}/screenshots/${tool.id || 'default'}.png" type="image/png" />
+      <enclosure url="${baseUrl}/screenshots/${tool.id || "default"}.png" type="image/png" />
     </item>
-  `).join('');
+  `,
+    )
+    .join("");
 
   const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" 
@@ -69,8 +73,8 @@ function RSSFeed() {
 
   return new Response(rssFeed, {
     headers: {
-      'Content-Type': 'application/rss+xml; charset=utf-8',
-      'Cache-Control': 'public, max-age=3600, s-maxage=3600',
+      "Content-Type": "application/rss+xml; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=3600",
     },
   });
 }

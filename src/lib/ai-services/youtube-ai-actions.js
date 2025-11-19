@@ -1,14 +1,15 @@
-'use server';
+"use server";
 
-import { generateText, handleAIError } from './openrouter-service.js';
+import { generateText, handleAIError } from "./openrouter-service.js";
 
 // AI-powered YouTube script generation
 export async function generateYouTubeScriptAI(scriptData) {
   try {
-    const { topic, videoType, duration, targetAudience, tone, additionalInfo } = scriptData;
+    const { topic, videoType, duration, targetAudience, tone, additionalInfo } =
+      scriptData;
 
     if (!topic) {
-      return { error: 'Video topic is required' };
+      return { error: "Video topic is required" };
     }
 
     const systemPrompt = `You are an expert YouTube script writer and content strategist. Create engaging, viral-worthy scripts that maximize viewer retention and engagement. Focus on strong hooks, clear value propositions, and strategic call-to-actions.`;
@@ -20,7 +21,7 @@ export async function generateYouTubeScriptAI(scriptData) {
 **Duration:** ${duration} minutes
 **Target Audience:** ${targetAudience}
 **Tone:** ${tone}
-${additionalInfo ? `**Additional Information:** ${additionalInfo}` : ''}
+${additionalInfo ? `**Additional Information:** ${additionalInfo}` : ""}
 
 Please structure the script with:
 1. **HOOK (0-15 seconds):** Attention-grabbing opening that immediately captures interest
@@ -33,7 +34,7 @@ Make the script conversational, engaging, and optimized for YouTube's algorithm.
 
     const result = await generateText(prompt, systemPrompt, {
       temperature: 0.8,
-      maxTokens: 3000
+      maxTokens: 3000,
     });
 
     if (result.success) {
@@ -41,35 +42,45 @@ Make the script conversational, engaging, and optimized for YouTube's algorithm.
         success: true,
         script: result.content,
         metadata: {
-          wordCount: result.content.split(' ').length,
+          wordCount: result.content.split(" ").length,
           estimatedDuration: duration,
           tone,
           videoType,
-          aiModel: result.model
-        }
+          aiModel: result.model,
+        },
       };
     } else {
-      return await handleAIError(result.error, 'Failed to generate YouTube script');
+      return await handleAIError(
+        result.error,
+        "Failed to generate YouTube script",
+      );
     }
   } catch (error) {
-    return await handleAIError(error, 'YouTube script generation failed');
+    return await handleAIError(error, "YouTube script generation failed");
   }
 }
 
 // AI-powered YouTube comment response generation
 export async function generateCommentResponseAI(requestData) {
   try {
-    const { comment, tone, includeQuestion, includeEmoji, channelContext } = requestData;
+    const { comment, tone, includeQuestion, includeEmoji, channelContext } =
+      requestData;
 
     if (!comment) {
-      return { error: 'Comment is required' };
+      return { error: "Comment is required" };
     }
 
     const systemPrompt = `You are an expert YouTube community manager. Generate authentic, engaging comment responses that build community and increase engagement. Responses should feel natural and personalized while maintaining the creator's brand voice.`;
 
-    const emojiInstruction = includeEmoji ? 'Include appropriate emojis naturally.' : 'Do not use emojis.';
-    const questionInstruction = includeQuestion ? 'Include a thoughtful follow-up question to encourage further engagement.' : 'Focus on responding without asking questions.';
-    const contextInstruction = channelContext ? `Channel context: ${channelContext}` : '';
+    const emojiInstruction = includeEmoji
+      ? "Include appropriate emojis naturally."
+      : "Do not use emojis.";
+    const questionInstruction = includeQuestion
+      ? "Include a thoughtful follow-up question to encourage further engagement."
+      : "Focus on responding without asking questions.";
+    const contextInstruction = channelContext
+      ? `Channel context: ${channelContext}`
+      : "";
 
     const prompt = `Generate 4 different response options to this YouTube comment:
 
@@ -87,13 +98,13 @@ Provide exactly 4 distinct response options, each on a new line, without numberi
 
     const result = await generateText(prompt, systemPrompt, {
       temperature: 0.9,
-      maxTokens: 800
+      maxTokens: 800,
     });
 
     if (result.success) {
       const responses = result.content
-        .split('\n')
-        .filter(line => line.trim().length > 0)
+        .split("\n")
+        .filter((line) => line.trim().length > 0)
         .slice(0, 4);
 
       return {
@@ -104,29 +115,41 @@ Provide exactly 4 distinct response options, each on a new line, without numberi
           includeQuestion,
           includeEmoji,
           hasContext: !!channelContext,
-          aiModel: result.model
-        }
+          aiModel: result.model,
+        },
       };
     } else {
-      return await handleAIError(result.error, 'Failed to generate comment responses');
+      return await handleAIError(
+        result.error,
+        "Failed to generate comment responses",
+      );
     }
   } catch (error) {
-    return await handleAIError(error, 'Comment response generation failed');
+    return await handleAIError(error, "Comment response generation failed");
   }
 }
 
 // AI-powered YouTube video idea generation
 export async function generateYouTubeIdeasAI(requestData) {
   try {
-    const { niche, audience, contentType, trendingTopics, videoLength, goalType } = requestData;
+    const {
+      niche,
+      audience,
+      contentType,
+      trendingTopics,
+      videoLength,
+      goalType,
+    } = requestData;
 
     if (!niche) {
-      return { error: 'Niche is required' };
+      return { error: "Niche is required" };
     }
 
     const systemPrompt = `You are a viral YouTube content strategist with deep knowledge of algorithm optimization, trending topics, and audience engagement patterns. Generate creative, data-driven video ideas that have high viral potential.`;
 
-    const trendingInfo = trendingTopics ? `Current trending topics to incorporate: ${trendingTopics}` : '';
+    const trendingInfo = trendingTopics
+      ? `Current trending topics to incorporate: ${trendingTopics}`
+      : "";
 
     const prompt = `Generate 10 viral YouTube video ideas based on these parameters:
 
@@ -148,13 +171,13 @@ Focus on current trends, evergreen appeal, and high engagement potential. Make t
 
     const result = await generateText(prompt, systemPrompt, {
       temperature: 0.8,
-      maxTokens: 3500
+      maxTokens: 3500,
     });
 
     if (result.success) {
       // Parse the structured response into individual ideas
       const ideas = parseVideoIdeas(result.content);
-      
+
       return {
         success: true,
         ideas,
@@ -163,14 +186,17 @@ Focus on current trends, evergreen appeal, and high engagement potential. Make t
           audience,
           contentType,
           totalIdeas: ideas.length,
-          aiModel: result.model
-        }
+          aiModel: result.model,
+        },
       };
     } else {
-      return await handleAIError(result.error, 'Failed to generate video ideas');
+      return await handleAIError(
+        result.error,
+        "Failed to generate video ideas",
+      );
     }
   } catch (error) {
-    return await handleAIError(error, 'Video idea generation failed');
+    return await handleAIError(error, "Video idea generation failed");
   }
 }
 
@@ -178,11 +204,11 @@ Focus on current trends, evergreen appeal, and high engagement potential. Make t
 export async function generateTimestampsAI(videoUrl, transcript) {
   try {
     if (!videoUrl && !transcript) {
-      return { error: 'Please provide either a YouTube URL or transcript' };
+      return { error: "Please provide either a YouTube URL or transcript" };
     }
 
     if (!transcript) {
-      return { error: 'Transcript is required for AI timestamp generation' };
+      return { error: "Transcript is required for AI timestamp generation" };
     }
 
     const systemPrompt = `You are an expert video content analyzer. Generate professional YouTube chapter timestamps that improve viewer navigation and engagement. Focus on natural content breaks and compelling chapter titles.`;
@@ -208,25 +234,25 @@ Format as: TIME - TITLE - DESCRIPTION`;
 
     const result = await generateText(prompt, systemPrompt, {
       temperature: 0.7,
-      maxTokens: 1500
+      maxTokens: 1500,
     });
 
     if (result.success) {
       const timestamps = parseTimestamps(result.content);
-      
+
       return {
         success: true,
         timestamps,
         metadata: {
           totalChapters: timestamps.length,
-          aiModel: result.model
-        }
+          aiModel: result.model,
+        },
       };
     } else {
-      return await handleAIError(result.error, 'Failed to generate timestamps');
+      return await handleAIError(result.error, "Failed to generate timestamps");
     }
   } catch (error) {
-    return await handleAIError(error, 'Timestamp generation failed');
+    return await handleAIError(error, "Timestamp generation failed");
   }
 }
 
@@ -234,7 +260,7 @@ Format as: TIME - TITLE - DESCRIPTION`;
 export async function generateYouTubeTagsAI(query) {
   try {
     if (!query.trim()) {
-      return { error: 'Please provide a video topic or keyword' };
+      return { error: "Please provide a video topic or keyword" };
     }
 
     const systemPrompt = `You are an expert YouTube SEO specialist and content strategist. Generate highly optimized YouTube tags that maximize discoverability, ranking, and engagement. Focus on trending keywords, search volume, and competition analysis.`;
@@ -263,16 +289,16 @@ Provide only the tags, no explanations or additional text:`;
 
     const result = await generateText(prompt, systemPrompt, {
       temperature: 0.7,
-      maxTokens: 800
+      maxTokens: 800,
     });
 
     if (result.success) {
       // Parse the tags from the AI response
       const tagsText = result.content.trim();
       const tags = tagsText
-        .split(',')
-        .map(tag => tag.trim())
-        .filter(tag => tag.length > 0 && tag.length <= 50) // YouTube tag length limit
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter((tag) => tag.length > 0 && tag.length <= 50) // YouTube tag length limit
         .slice(0, 20); // Limit to 20 tags
 
       return {
@@ -281,14 +307,17 @@ Provide only the tags, no explanations or additional text:`;
           tags,
           query: query.trim(),
           total: tags.length,
-          aiModel: result.model
-        }
+          aiModel: result.model,
+        },
       };
     } else {
-      return await handleAIError(result.error, 'Failed to generate YouTube tags');
+      return await handleAIError(
+        result.error,
+        "Failed to generate YouTube tags",
+      );
     }
   } catch (error) {
-    return await handleAIError(error, 'YouTube tag generation failed');
+    return await handleAIError(error, "YouTube tag generation failed");
   }
 }
 
@@ -296,57 +325,60 @@ Provide only the tags, no explanations or additional text:`;
 function parseVideoIdeas(content) {
   const ideas = [];
   const sections = content.split(/\d+\./);
-  
+
   sections.slice(1).forEach((section, index) => {
-    const lines = section.trim().split('\n').filter(line => line.trim());
+    const lines = section
+      .trim()
+      .split("\n")
+      .filter((line) => line.trim());
     if (lines.length > 0) {
-      const title = lines[0].replace(/\*\*Title:\*\*|\*\*|\*/g, '').trim();
-      const hook = extractValue(section, 'Hook');
-      const keyPoints = extractValue(section, 'Key Points');
-      const viralPotential = extractValue(section, 'Viral Potential');
-      const engagement = extractValue(section, 'Engagement Strategy');
-      
+      const title = lines[0].replace(/\*\*Title:\*\*|\*\*|\*/g, "").trim();
+      const hook = extractValue(section, "Hook");
+      const keyPoints = extractValue(section, "Key Points");
+      const viralPotential = extractValue(section, "Viral Potential");
+      const engagement = extractValue(section, "Engagement Strategy");
+
       ideas.push({
         id: index + 1,
         title: title || `Video Idea ${index + 1}`,
-        hook: hook || '',
-        keyPoints: keyPoints || '',
-        viralPotential: viralPotential || '',
-        engagementStrategy: engagement || '',
-        category: 'AI Generated'
+        hook: hook || "",
+        keyPoints: keyPoints || "",
+        viralPotential: viralPotential || "",
+        engagementStrategy: engagement || "",
+        category: "AI Generated",
       });
     }
   });
-  
+
   return ideas;
 }
 
 // Helper function to parse timestamps from AI response
 function parseTimestamps(content) {
   const timestamps = [];
-  const lines = content.split('\n').filter(line => line.trim());
-  
-  lines.forEach(line => {
+  const lines = content.split("\n").filter((line) => line.trim());
+
+  lines.forEach((line) => {
     const timeMatch = line.match(/(\d{1,2}:\d{2})/);
     if (timeMatch) {
       const time = timeMatch[1];
-      const rest = line.replace(timeMatch[0], '').replace(/^[\s\-]+/, '');
-      const parts = rest.split(' - ');
-      
+      const rest = line.replace(timeMatch[0], "").replace(/^[\s\-]+/, "");
+      const parts = rest.split(" - ");
+
       timestamps.push({
         time,
-        title: parts[0] || 'Chapter',
-        description: parts[1] || ''
+        title: parts[0] || "Chapter",
+        description: parts[1] || "",
       });
     }
   });
-  
+
   return timestamps;
 }
 
 // Helper function to extract values from structured text
 function extractValue(text, key) {
-  const regex = new RegExp(`\\*\\*${key}:?\\*\\*([^\\*]+)`, 'i');
+  const regex = new RegExp(`\\*\\*${key}:?\\*\\*([^\\*]+)`, "i");
   const match = text.match(regex);
-  return match ? match[1].trim() : '';
+  return match ? match[1].trim() : "";
 }

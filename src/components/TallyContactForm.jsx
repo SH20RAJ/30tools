@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 export default function TallyContactForm() {
   useEffect(() => {
     // Load Tally embed script
-    const script = document.createElement('script');
-    script.src = 'https://tally.so/widgets/embed.js';
+    const script = document.createElement("script");
+    script.src = "https://tally.so/widgets/embed.js";
     script.async = true;
     script.onload = () => {
       if (window.Tally) {
@@ -17,7 +17,9 @@ export default function TallyContactForm() {
 
     return () => {
       // Cleanup
-      const existingScript = document.querySelector('script[src="https://tally.so/widgets/embed.js"]');
+      const existingScript = document.querySelector(
+        'script[src="https://tally.so/widgets/embed.js"]',
+      );
       if (existingScript) {
         document.body.removeChild(existingScript);
       }

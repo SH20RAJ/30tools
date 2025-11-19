@@ -1,38 +1,50 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Progress } from '@/components/ui/progress';
-import { 
-  Upload, 
-  Download, 
+import { useState, useRef, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Progress } from "@/components/ui/progress";
+import {
+  Upload,
+  Download,
   FileText,
   Image,
-  CheckCircle, 
-  AlertCircle, 
-  Loader, 
+  CheckCircle,
+  AlertCircle,
+  Loader,
   X,
   ArrowUp,
   ArrowDown,
   Zap,
   Shield,
   Settings,
-  Eye
-} from 'lucide-react';
+  Eye,
+} from "lucide-react";
 
 export default function JpgToPdfTool() {
   const [images, setImages] = useState([]);
-  const [pageSize, setPageSize] = useState('a4');
-  const [orientation, setOrientation] = useState('portrait');
+  const [pageSize, setPageSize] = useState("a4");
+  const [orientation, setOrientation] = useState("portrait");
   const [margin, setMargin] = useState(20);
   const [imageQuality, setImageQuality] = useState(85);
-  const [fitToPage, setFitToPage] = useState('fit');
+  const [fitToPage, setFitToPage] = useState("fit");
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const [pdfFile, setPdfFile] = useState(null);
@@ -42,44 +54,64 @@ export default function JpgToPdfTool() {
   const maxFiles = 50; // Maximum 50 images
 
   const pageSizes = [
-    { value: 'a4', label: 'A4 (210 × 297 mm)', width: 210, height: 297 },
-    { value: 'letter', label: 'Letter (8.5 × 11 in)', width: 216, height: 279 },
-    { value: 'legal', label: 'Legal (8.5 × 14 in)', width: 216, height: 356 },
-    { value: 'a3', label: 'A3 (297 × 420 mm)', width: 297, height: 420 },
-    { value: 'a5', label: 'A5 (148 × 210 mm)', width: 148, height: 210 },
-    { value: 'custom', label: 'Custom Size', width: 210, height: 297 }
+    { value: "a4", label: "A4 (210 × 297 mm)", width: 210, height: 297 },
+    { value: "letter", label: "Letter (8.5 × 11 in)", width: 216, height: 279 },
+    { value: "legal", label: "Legal (8.5 × 14 in)", width: 216, height: 356 },
+    { value: "a3", label: "A3 (297 × 420 mm)", width: 297, height: 420 },
+    { value: "a5", label: "A5 (148 × 210 mm)", width: 148, height: 210 },
+    { value: "custom", label: "Custom Size", width: 210, height: 297 },
   ];
 
   const fitOptions = [
-    { value: 'fit', label: 'Fit to Page', description: 'Scale image to fit within page margins' },
-    { value: 'fill', label: 'Fill Page', description: 'Scale image to fill entire page' },
-    { value: 'stretch', label: 'Stretch to Fit', description: 'Stretch image to exact page size' },
-    { value: 'center', label: 'Center Original', description: 'Center image without scaling' }
+    {
+      value: "fit",
+      label: "Fit to Page",
+      description: "Scale image to fit within page margins",
+    },
+    {
+      value: "fill",
+      label: "Fill Page",
+      description: "Scale image to fill entire page",
+    },
+    {
+      value: "stretch",
+      label: "Stretch to Fit",
+      description: "Stretch image to exact page size",
+    },
+    {
+      value: "center",
+      label: "Center Original",
+      description: "Center image without scaling",
+    },
   ];
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const sizes = ["Bytes", "KB", "MB", "GB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const handleFileSelect = (event) => {
     const files = Array.from(event.target.files);
-    
+
     if (images.length + files.length > maxFiles) {
-      alert(`Maximum ${maxFiles} images allowed. You can select ${maxFiles - images.length} more images.`);
+      alert(
+        `Maximum ${maxFiles} images allowed. You can select ${maxFiles - images.length} more images.`,
+      );
       return;
     }
 
-    const validFiles = files.filter(file => {
-      if (!file.type.startsWith('image/')) {
+    const validFiles = files.filter((file) => {
+      if (!file.type.startsWith("image/")) {
         alert(`${file.name} is not a valid image file.`);
         return false;
       }
       if (file.size > maxFileSize) {
-        alert(`${file.name} is too large. Maximum size is ${formatFileSize(maxFileSize)}.`);
+        alert(
+          `${file.name} is too large. Maximum size is ${formatFileSize(maxFileSize)}.`,
+        );
         return false;
       }
       return true;
@@ -100,39 +132,42 @@ export default function JpgToPdfTool() {
                 size: file.size,
                 width: img.width,
                 height: img.height,
-                preview: e.target.result
+                preview: e.target.result,
               });
             };
             img.src = e.target.result;
           };
           reader.readAsDataURL(file);
         });
-      })
+      }),
     ).then((newImages) => {
-      setImages(prev => [...prev, ...newImages]);
+      setImages((prev) => [...prev, ...newImages]);
     });
 
     // Reset file input
-    event.target.value = '';
+    event.target.value = "";
   };
 
   const removeImage = (id) => {
-    setImages(prev => prev.filter(img => img.id !== id));
+    setImages((prev) => prev.filter((img) => img.id !== id));
   };
 
   const moveImage = (id, direction) => {
-    setImages(prev => {
-      const index = prev.findIndex(img => img.id === id);
+    setImages((prev) => {
+      const index = prev.findIndex((img) => img.id === id);
       if (
-        (direction === 'up' && index === 0) ||
-        (direction === 'down' && index === prev.length - 1)
+        (direction === "up" && index === 0) ||
+        (direction === "down" && index === prev.length - 1)
       ) {
         return prev;
       }
 
       const newImages = [...prev];
-      const newIndex = direction === 'up' ? index - 1 : index + 1;
-      [newImages[index], newImages[newIndex]] = [newImages[newIndex], newImages[index]];
+      const newIndex = direction === "up" ? index - 1 : index + 1;
+      [newImages[index], newImages[newIndex]] = [
+        newImages[newIndex],
+        newImages[index],
+      ];
       return newImages;
     });
   };
@@ -147,28 +182,29 @@ export default function JpgToPdfTool() {
     try {
       // Simulate PDF generation process
       for (let i = 0; i <= 100; i += 5) {
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise((resolve) => setTimeout(resolve, 100));
         setProgress(i);
       }
 
       // Calculate estimated PDF size
       const estimatedSize = images.reduce((total, img) => {
         const compressionRatio = imageQuality / 100;
-        return total + (img.size * compressionRatio * 0.8); // Rough estimation
+        return total + img.size * compressionRatio * 0.8; // Rough estimation
       }, 0);
 
       // Create PDF file (simulate)
-      const pdfBlob = new Blob(['PDF content from images'], { type: 'application/pdf' });
+      const pdfBlob = new Blob(["PDF content from images"], {
+        type: "application/pdf",
+      });
       setPdfFile({
         name: `images-to-pdf-${Date.now()}.pdf`,
         blob: pdfBlob,
         size: estimatedSize,
-        pageCount: images.length
+        pageCount: images.length,
       });
-
     } catch (error) {
-      console.error('Error converting to PDF:', error);
-      alert('Error converting images to PDF. Please try again.');
+      console.error("Error converting to PDF:", error);
+      alert("Error converting images to PDF. Please try again.");
     }
 
     setIsProcessing(false);
@@ -176,9 +212,9 @@ export default function JpgToPdfTool() {
 
   const downloadPdf = () => {
     if (!pdfFile) return;
-    
+
     const url = URL.createObjectURL(pdfFile.blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = pdfFile.name;
     document.body.appendChild(link);
@@ -192,15 +228,15 @@ export default function JpgToPdfTool() {
     setPdfFile(null);
     setProgress(0);
     setIsProcessing(false);
-    setPageSize('a4');
-    setOrientation('portrait');
+    setPageSize("a4");
+    setOrientation("portrait");
     setMargin(20);
     setImageQuality(85);
-    setFitToPage('fit');
+    setFitToPage("fit");
   };
 
   const getSelectedPageSize = () => {
-    return pageSizes.find(size => size.value === pageSize) || pageSizes[0];
+    return pageSizes.find((size) => size.value === pageSize) || pageSizes[0];
   };
 
   return (
@@ -208,10 +244,10 @@ export default function JpgToPdfTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free JPG to PDF Converter</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Convert JPG, JPEG, PNG, and other images to PDF documents. 
-          Combine multiple images into a single PDF with custom layouts and settings.
+          Convert JPG, JPEG, PNG, and other images to PDF documents. Combine
+          multiple images into a single PDF with custom layouts and settings.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Zap className="h-5 w-5 text-primary" />
@@ -236,15 +272,19 @@ export default function JpgToPdfTool() {
             Upload Images
           </CardTitle>
           <CardDescription>
-            Upload JPG, JPEG, PNG, or other image files • Max {formatFileSize(maxFileSize)} per image • Up to {maxFiles} images
+            Upload JPG, JPEG, PNG, or other image files • Max{" "}
+            {formatFileSize(maxFileSize)} per image • Up to {maxFiles} images
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
             <Image className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <p className="text-lg font-medium mb-2">Drop images here or click to browse</p>
+            <p className="text-lg font-medium mb-2">
+              Drop images here or click to browse
+            </p>
             <p className="text-sm text-muted-foreground mb-4">
-              Perfect for creating photo albums, reports, presentations, and portfolios
+              Perfect for creating photo albums, reports, presentations, and
+              portfolios
             </p>
             <input
               ref={fileInputRef}
@@ -265,23 +305,30 @@ export default function JpgToPdfTool() {
                 <h3 className="font-medium">
                   Selected Images ({images.length}/{maxFiles})
                 </h3>
-                <Button onClick={() => setImages([])} variant="outline" size="sm">
+                <Button
+                  onClick={() => setImages([])}
+                  variant="outline"
+                  size="sm"
+                >
                   Clear All
                 </Button>
               </div>
-              
+
               <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
                 {images.map((img, index) => (
                   <div key={img.id} className="border rounded-lg p-3">
                     <div className="aspect-square mb-3 bg-gray-100 rounded overflow-hidden">
-                      <img 
-                        src={img.preview} 
+                      <img
+                        src={img.preview}
                         alt={img.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
                     <div className="space-y-2">
-                      <p className="text-sm font-medium truncate" title={img.name}>
+                      <p
+                        className="text-sm font-medium truncate"
+                        title={img.name}
+                      >
                         {img.name}
                       </p>
                       <p className="text-xs text-muted-foreground">
@@ -295,7 +342,7 @@ export default function JpgToPdfTool() {
                           <Button
                             size="sm"
                             variant="outline"
-                            onClick={() => moveImage(img.id, 'up')}
+                            onClick={() => moveImage(img.id, "up")}
                             disabled={index === 0}
                             className="h-6 w-6 p-0"
                           >
@@ -304,7 +351,7 @@ export default function JpgToPdfTool() {
                           <Button
                             size="sm"
                             variant="outline"
-                            onClick={() => moveImage(img.id, 'down')}
+                            onClick={() => moveImage(img.id, "down")}
                             disabled={index === images.length - 1}
                             className="h-6 w-6 p-0"
                           >
@@ -405,7 +452,9 @@ export default function JpgToPdfTool() {
                       <SelectItem key={option.value} value={option.value}>
                         <div>
                           <div className="font-medium">{option.label}</div>
-                          <div className="text-xs text-muted-foreground">{option.description}</div>
+                          <div className="text-xs text-muted-foreground">
+                            {option.description}
+                          </div>
                         </div>
                       </SelectItem>
                     ))}
@@ -421,7 +470,9 @@ export default function JpgToPdfTool() {
                   min="10"
                   max="100"
                   value={imageQuality}
-                  onChange={(e) => setImageQuality(parseInt(e.target.value) || 85)}
+                  onChange={(e) =>
+                    setImageQuality(parseInt(e.target.value) || 85)
+                  }
                   className="mt-2"
                 />
                 <p className="text-xs text-muted-foreground mt-1">
@@ -432,7 +483,8 @@ export default function JpgToPdfTool() {
               <Alert>
                 <Eye className="h-4 w-4" />
                 <AlertDescription>
-                  <strong>Preview:</strong> {getSelectedPageSize().label} • {orientation} • {margin}mm margin
+                  <strong>Preview:</strong> {getSelectedPageSize().label} •{" "}
+                  {orientation} • {margin}mm margin
                 </AlertDescription>
               </Alert>
             </CardContent>
@@ -444,8 +496,8 @@ export default function JpgToPdfTool() {
       {images.length > 0 && (
         <Card className="mb-6">
           <CardContent className="pt-6">
-            <Button 
-              onClick={convertToPdf} 
+            <Button
+              onClick={convertToPdf}
               disabled={isProcessing}
               className="w-full"
               size="lg"
@@ -525,7 +577,8 @@ export default function JpgToPdfTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Convert up to {maxFiles} images at once. Perfect for creating albums, reports, and presentations.
+              Convert up to {maxFiles} images at once. Perfect for creating
+              albums, reports, and presentations.
             </p>
           </CardContent>
         </Card>
@@ -539,7 +592,8 @@ export default function JpgToPdfTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Choose from standard page sizes, orientations, margins, and image fitting options.
+              Choose from standard page sizes, orientations, margins, and image
+              fitting options.
             </p>
           </CardContent>
         </Card>
@@ -553,7 +607,8 @@ export default function JpgToPdfTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Maintain image quality with adjustable compression settings. Perfect balance of quality and file size.
+              Maintain image quality with adjustable compression settings.
+              Perfect balance of quality and file size.
             </p>
           </CardContent>
         </Card>
@@ -598,27 +653,38 @@ export default function JpgToPdfTool() {
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">What image formats are supported?</h4>
+              <h4 className="font-medium mb-2">
+                What image formats are supported?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                We support JPG, JPEG, PNG, GIF, BMP, WebP, and most other common image formats.
+                We support JPG, JPEG, PNG, GIF, BMP, WebP, and most other common
+                image formats.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Can I change the order of images?</h4>
+              <h4 className="font-medium mb-2">
+                Can I change the order of images?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Yes! Use the up/down arrow buttons on each image to reorder them. The order determines the page sequence in your PDF.
+                Yes! Use the up/down arrow buttons on each image to reorder
+                them. The order determines the page sequence in your PDF.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">What happens to image quality?</h4>
+              <h4 className="font-medium mb-2">
+                What happens to image quality?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                You can control the quality with the Image Quality setting. Higher values preserve more detail but create larger files.
+                You can control the quality with the Image Quality setting.
+                Higher values preserve more detail but create larger files.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Are there any limits?</h4>
               <p className="text-sm text-muted-foreground">
-                You can upload up to {maxFiles} images, with each image being maximum {formatFileSize(maxFileSize)}. All processing happens in your browser.
+                You can upload up to {maxFiles} images, with each image being
+                maximum {formatFileSize(maxFileSize)}. All processing happens in
+                your browser.
               </p>
             </div>
           </div>

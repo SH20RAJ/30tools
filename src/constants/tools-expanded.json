@@ -1,698 +1,698 @@
 {
-    "metadata": {
-        "version": "5.0",
-        "lastUpdated": "2025-06-16",
-        "totalTools": 75,
-        "totalCategories": 11
-    },
-    "categories": {
-        "image": {
-            "name": "Image Tools",
-            "slug": "image-tools",
-            "icon": "ImageIcon",
-            "description": "Compress, convert, resize, and edit images online",
-            "tools": [
-                {
-                    "id": "image-compressor",
-                    "name": "Image Compressor",
-                    "description": "Compress images to reduce file size while maintaining quality",
-                    "route": "/image-compressor",
-                    "popular": true,
-                    "category": "image"
-                },
-                {
-                    "id": "image-converter",
-                    "name": "Image Converter",
-                    "description": "Convert images between different formats (JPEG, PNG, WebP)",
-                    "route": "/image-converter",
-                    "popular": true,
-                    "category": "image"
-                },
-                {
-                    "id": "image-resizer",
-                    "name": "Image Resizer",
-                    "description": "Resize images with custom dimensions and aspect ratios",
-                    "route": "/image-resizer",
-                    "popular": false,
-                    "category": "image"
-                },
-                {
-                    "id": "background-remover",
-                    "name": "Background Remover",
-                    "description": "Remove image backgrounds automatically with AI",
-                    "route": "/background-remover",
-                    "popular": true,
-                    "category": "image"
-                },
-                {
-                    "id": "image-editor",
-                    "name": "Image Editor",
-                    "description": "Edit images online with filters, effects, and basic editing tools",
-                    "route": "/image-editor",
-                    "popular": true,
-                    "category": "image"
-                },
-                {
-                    "id": "photo-enhancer",
-                    "name": "Photo Enhancer",
-                    "description": "Enhance photo quality with AI-powered image enhancement",
-                    "route": "/photo-enhancer",
-                    "popular": true,
-                    "category": "image"
-                },
-                {
-                    "id": "image-cropper",
-                    "name": "Image Cropper",
-                    "description": "Crop images to specific dimensions or aspect ratios",
-                    "route": "/image-cropper",
-                    "popular": false,
-                    "category": "image"
-                }
-            ]
+  "metadata": {
+    "version": "5.0",
+    "lastUpdated": "2025-06-16",
+    "totalTools": 75,
+    "totalCategories": 11
+  },
+  "categories": {
+    "image": {
+      "name": "Image Tools",
+      "slug": "image-tools",
+      "icon": "ImageIcon",
+      "description": "Compress, convert, resize, and edit images online",
+      "tools": [
+        {
+          "id": "image-compressor",
+          "name": "Image Compressor",
+          "description": "Compress images to reduce file size while maintaining quality",
+          "route": "/image-compressor",
+          "popular": true,
+          "category": "image"
         },
-        "pdf": {
-            "name": "PDF Tools",
-            "slug": "pdf-tools",
-            "icon": "FileTextIcon",
-            "description": "Merge, split, compress, and manipulate PDF documents",
-            "tools": [
-                {
-                    "id": "pdf-merger",
-                    "name": "PDF Merger",
-                    "description": "Merge multiple PDF files into one document",
-                    "route": "/pdf-merger",
-                    "popular": true,
-                    "category": "pdf"
-                },
-                {
-                    "id": "pdf-splitter",
-                    "name": "PDF Splitter",
-                    "description": "Split PDF files into separate pages or ranges",
-                    "route": "/pdf-splitter",
-                    "popular": true,
-                    "category": "pdf"
-                },
-                {
-                    "id": "pdf-compressor",
-                    "name": "PDF Compressor",
-                    "description": "Compress PDF files to reduce size",
-                    "route": "/pdf-compressor",
-                    "popular": true,
-                    "category": "pdf"
-                },
-                {
-                    "id": "jpg-to-pdf",
-                    "name": "JPG to PDF",
-                    "description": "Convert JPG images to PDF documents",
-                    "route": "/jpg-to-pdf",
-                    "popular": false,
-                    "category": "pdf"
-                },
-                {
-                    "id": "png-to-pdf",
-                    "name": "PNG to PDF",
-                    "description": "Convert PNG images to PDF with transparency support",
-                    "route": "/png-to-pdf",
-                    "popular": false,
-                    "category": "pdf"
-                },
-                {
-                    "id": "pdf-protect",
-                    "name": "PDF Password Protect",
-                    "description": "Add password protection to PDF files",
-                    "route": "/pdf-protect",
-                    "popular": false,
-                    "category": "pdf"
-                },
-                {
-                    "id": "pdf-unlocker",
-                    "name": "PDF Unlocker",
-                    "description": "Remove password protection from PDF files",
-                    "route": "/pdf-unlocker",
-                    "popular": false,
-                    "category": "pdf"
-                },
-                {
-                    "id": "pdf-rotate",
-                    "name": "PDF Rotate",
-                    "description": "Rotate PDF pages in any direction",
-                    "route": "/pdf-rotate",
-                    "popular": false,
-                    "category": "pdf"
-                },
-                {
-                    "id": "pdf-add-page-numbers",
-                    "name": "PDF Page Numbers",
-                    "description": "Add page numbers to PDF documents",
-                    "route": "/pdf-add-page-numbers",
-                    "popular": false,
-                    "category": "pdf"
-                },
-                {
-                    "id": "pdf-editor",
-                    "name": "PDF Editor",
-                    "description": "Edit PDF text, add annotations, and modify content",
-                    "route": "/pdf-editor",
-                    "popular": true,
-                    "category": "pdf"
-                },
-                {
-                    "id": "word-to-pdf",
-                    "name": "Word to PDF",
-                    "description": "Convert Word documents to PDF format",
-                    "route": "/word-to-pdf",
-                    "popular": true,
-                    "category": "pdf"
-                },
-                {
-                    "id": "pdf-to-word",
-                    "name": "PDF to Word",
-                    "description": "Convert PDF files to editable Word documents",
-                    "route": "/pdf-to-word",
-                    "popular": true,
-                    "category": "pdf"
-                }
-            ]
+        {
+          "id": "image-converter",
+          "name": "Image Converter",
+          "description": "Convert images between different formats (JPEG, PNG, WebP)",
+          "route": "/image-converter",
+          "popular": true,
+          "category": "image"
         },
-        "video": {
-            "name": "Video Tools",
-            "slug": "video-tools",
-            "icon": "VideoIcon",
-            "description": "Compress videos, convert formats, and create GIFs",
-            "tools": [
-                {
-                    "id": "video-compressor",
-                    "name": "Video Compressor",
-                    "description": "Compress video files to reduce size",
-                    "route": "/video-compressor",
-                    "popular": true,
-                    "category": "video"
-                },
-                {
-                    "id": "video-to-gif",
-                    "name": "Video to GIF",
-                    "description": "Convert videos to animated GIFs",
-                    "route": "/video-to-gif",
-                    "popular": true,
-                    "category": "video"
-                },
-                {
-                    "id": "video-converter",
-                    "name": "Video Converter",
-                    "description": "Convert videos between different formats (MP4, AVI, MOV)",
-                    "route": "/video-converter",
-                    "popular": true,
-                    "category": "video"
-                },
-                {
-                    "id": "video-editor",
-                    "name": "Video Editor",
-                    "description": "Basic video editing - trim, cut, and merge videos",
-                    "route": "/video-editor",
-                    "popular": true,
-                    "category": "video"
-                },
-                {
-                    "id": "video-trimmer",
-                    "name": "Video Trimmer",
-                    "description": "Trim and cut video clips to specific lengths",
-                    "route": "/video-trimmer",
-                    "popular": false,
-                    "category": "video"
-                },
-                {
-                    "id": "screen-recorder",
-                    "name": "Screen Recorder",
-                    "description": "Record your screen and save as video file",
-                    "route": "/screen-recorder",
-                    "popular": true,
-                    "category": "video"
-                }
-            ]
+        {
+          "id": "image-resizer",
+          "name": "Image Resizer",
+          "description": "Resize images with custom dimensions and aspect ratios",
+          "route": "/image-resizer",
+          "popular": false,
+          "category": "image"
         },
-        "audio": {
-            "name": "Audio Tools",
-            "slug": "audio-tools",
-            "icon": "MusicIcon",
-            "description": "Compress and convert audio files between formats",
-            "tools": [
-                {
-                    "id": "audio-compressor",
-                    "name": "Audio Compressor",
-                    "description": "Compress audio files to reduce size",
-                    "route": "/audio-compressor",
-                    "popular": true,
-                    "category": "audio"
-                },
-                {
-                    "id": "audio-converter",
-                    "name": "Audio Converter",
-                    "description": "Convert audio between formats (MP3, WAV, FLAC)",
-                    "route": "/audio-converter",
-                    "popular": true,
-                    "category": "audio"
-                },
-                {
-                    "id": "audio-editor",
-                    "name": "Audio Editor",
-                    "description": "Edit audio files - trim, merge, and apply effects",
-                    "route": "/audio-editor",
-                    "popular": true,
-                    "category": "audio"
-                },
-                {
-                    "id": "audio-trimmer",
-                    "name": "Audio Trimmer",
-                    "description": "Trim and cut audio clips to specific lengths",
-                    "route": "/audio-trimmer",
-                    "popular": false,
-                    "category": "audio"
-                },
-                {
-                    "id": "voice-recorder",
-                    "name": "Voice Recorder",
-                    "description": "Record voice and audio directly in your browser",
-                    "route": "/voice-recorder",
-                    "popular": true,
-                    "category": "audio"
-                }
-            ]
+        {
+          "id": "background-remover",
+          "name": "Background Remover",
+          "description": "Remove image backgrounds automatically with AI",
+          "route": "/background-remover",
+          "popular": true,
+          "category": "image"
         },
-        "text": {
-            "name": "Text Tools",
-            "slug": "text-tools",
-            "icon": "TypeIcon",
-            "description": "Count words, generate passwords, and manipulate text",
-            "tools": [
-                {
-                    "id": "word-counter",
-                    "name": "Word Counter",
-                    "description": "Count words, characters, paragraphs in text",
-                    "route": "/word-counter",
-                    "popular": true,
-                    "category": "text"
-                },
-                {
-                    "id": "character-counter",
-                    "name": "Character Counter",
-                    "description": "Count characters and letters in text",
-                    "route": "/character-counter",
-                    "popular": true,
-                    "category": "text"
-                },
-                {
-                    "id": "text-case-converter",
-                    "name": "Text Case Converter",
-                    "description": "Convert text between different cases (upper, lower, title)",
-                    "route": "/text-case-converter",
-                    "popular": false,
-                    "category": "text"
-                },
-                {
-                    "id": "password-generator",
-                    "name": "Password Generator",
-                    "description": "Generate secure random passwords with custom options",
-                    "route": "/password-generator",
-                    "popular": true,
-                    "category": "text"
-                },
-                {
-                    "id": "password-generator2",
-                    "name": "Advanced Password Generator",
-                    "description": "Advanced password generator with more customization options",
-                    "route": "/password-generator2",
-                    "popular": false,
-                    "category": "text"
-                },
-                {
-                    "id": "password-strength-checker",
-                    "name": "Password Strength Checker",
-                    "description": "Check the strength and security of your passwords",
-                    "route": "/password-strength-checker",
-                    "popular": true,
-                    "category": "text"
-                },
-                {
-                    "id": "lorem-ipsum-generator",
-                    "name": "Lorem Ipsum Generator",
-                    "description": "Generate placeholder text for design and development",
-                    "route": "/lorem-ipsum-generator",
-                    "popular": false,
-                    "category": "text"
-                },
-                {
-                    "id": "text-diff",
-                    "name": "Text Diff Checker",
-                    "description": "Compare two texts and find differences",
-                    "route": "/text-diff",
-                    "popular": false,
-                    "category": "text"
-                },
-                {
-                    "id": "text-formatter",
-                    "name": "Text Formatter",
-                    "description": "Format and clean up text with various options",
-                    "route": "/text-formatter",
-                    "popular": false,
-                    "category": "text"
-                }
-            ]
+        {
+          "id": "image-editor",
+          "name": "Image Editor",
+          "description": "Edit images online with filters, effects, and basic editing tools",
+          "route": "/image-editor",
+          "popular": true,
+          "category": "image"
         },
-        "converter": {
-            "name": "File Converters",
-            "slug": "file-converters",
-            "icon": "RefreshCwIcon",
-            "description": "Convert files between different formats and types",
-            "tools": [
-                {
-                    "id": "file-converter",
-                    "name": "Universal File Converter",
-                    "description": "Convert files between various formats automatically",
-                    "route": "/file-converter",
-                    "popular": true,
-                    "category": "converter"
-                },
-                {
-                    "id": "document-converter",
-                    "name": "Document Converter",
-                    "description": "Convert between document formats (DOC, DOCX, PDF, TXT)",
-                    "route": "/document-converter",
-                    "popular": true,
-                    "category": "converter"
-                },
-                {
-                    "id": "epub-converter",
-                    "name": "EPUB Converter",
-                    "description": "Convert documents to EPUB format for e-readers",
-                    "route": "/epub-converter",
-                    "popular": false,
-                    "category": "converter"
-                },
-                {
-                    "id": "html-to-pdf",
-                    "name": "HTML to PDF",
-                    "description": "Convert HTML pages and content to PDF",
-                    "route": "/html-to-pdf",
-                    "popular": true,
-                    "category": "converter"
-                }
-            ]
+        {
+          "id": "photo-enhancer",
+          "name": "Photo Enhancer",
+          "description": "Enhance photo quality with AI-powered image enhancement",
+          "route": "/photo-enhancer",
+          "popular": true,
+          "category": "image"
         },
-        "developer": {
-            "name": "Developer Tools",
-            "slug": "developer-tools",
-            "icon": "CodeIcon",
-            "description": "Format JSON, generate hashes, and developer utilities",
-            "tools": [
-                {
-                    "id": "json-formatter",
-                    "name": "JSON Formatter",
-                    "description": "Format, validate, and beautify JSON data",
-                    "route": "/json-formatter",
-                    "popular": true,
-                    "category": "developer"
-                },
-                {
-                    "id": "hash-generator",
-                    "name": "Hash Generator",
-                    "description": "Generate MD5, SHA1, SHA256 hashes from text",
-                    "route": "/hash-generator",
-                    "popular": false,
-                    "category": "developer"
-                },
-                {
-                    "id": "hash-generator2",
-                    "name": "Advanced Hash Generator",
-                    "description": "Generate various hash types with advanced options",
-                    "route": "/hash-generator2",
-                    "popular": false,
-                    "category": "developer"
-                },
-                {
-                    "id": "base64-tool",
-                    "name": "Base64 Encoder/Decoder",
-                    "description": "Encode and decode Base64 strings and files",
-                    "route": "/base64-tool",
-                    "popular": true,
-                    "category": "developer"
-                },
-                {
-                    "id": "regex-tester2",
-                    "name": "Advanced Regex Tester",
-                    "description": "Test and validate regular expressions with advanced features",
-                    "route": "/regex-tester2",
-                    "popular": false,
-                    "category": "developer"
-                },
-                {
-                    "id": "api-tester",
-                    "name": "API Tester",
-                    "description": "Test REST APIs and HTTP requests",
-                    "route": "/api-tester",
-                    "popular": true,
-                    "category": "developer"
-                },
-                {
-                    "id": "jwt-decoder",
-                    "name": "JWT Decoder",
-                    "description": "Decode and verify JSON Web Tokens",
-                    "route": "/jwt-decoder",
-                    "popular": true,
-                    "category": "developer"
-                },
-                {
-                    "id": "url-encoder",
-                    "name": "URL Encoder/Decoder",
-                    "description": "Encode and decode URLs and query parameters",
-                    "route": "/url-encoder",
-                    "popular": false,
-                    "category": "developer"
-                }
-            ]
-        },
-        "code": {
-            "name": "Code Tools",
-            "slug": "code-tools",
-            "icon": "BracesIcon",
-            "description": "Format, minify, and convert code and data formats",
-            "tools": [
-                {
-                    "id": "code-formatter",
-                    "name": "Code Formatter",
-                    "description": "Format and beautify HTML, CSS, JavaScript code",
-                    "route": "/code-formatter",
-                    "popular": true,
-                    "category": "code"
-                },
-                {
-                    "id": "code-minifier",
-                    "name": "Code Minifier",
-                    "description": "Minify CSS, JavaScript, HTML code for production",
-                    "route": "/code-minifier",
-                    "popular": false,
-                    "category": "code"
-                },
-                {
-                    "id": "csv-to-json",
-                    "name": "CSV to JSON Converter",
-                    "description": "Convert CSV data to JSON format easily",
-                    "route": "/csv-to-json",
-                    "popular": false,
-                    "category": "code"
-                },
-                {
-                    "id": "markdown-to-html",
-                    "name": "Markdown to HTML",
-                    "description": "Convert Markdown text to HTML format",
-                    "route": "/markdown-to-html",
-                    "popular": false,
-                    "category": "code"
-                },
-                {
-                    "id": "regex-tester",
-                    "name": "Regex Tester",
-                    "description": "Test and validate regular expressions with live preview",
-                    "route": "/regex-tester",
-                    "popular": false,
-                    "category": "code"
-                },
-                {
-                    "id": "sql-formatter",
-                    "name": "SQL Formatter",
-                    "description": "Format and beautify SQL queries",
-                    "route": "/sql-formatter",
-                    "popular": false,
-                    "category": "code"
-                },
-                {
-                    "id": "xml-formatter",
-                    "name": "XML Formatter",
-                    "description": "Format and validate XML documents",
-                    "route": "/xml-formatter",
-                    "popular": false,
-                    "category": "code"
-                }
-            ]
-        },
-        "design": {
-            "name": "Design Tools",
-            "slug": "design-tools",
-            "icon": "PaletteIcon",
-            "description": "Generate color palettes and create design assets",
-            "tools": [
-                {
-                    "id": "color-picker",
-                    "name": "Color Picker",
-                    "description": "Pick colors and get values in all formats with harmony suggestions",
-                    "route": "/color-picker",
-                    "popular": true,
-                    "category": "design"
-                },
-                {
-                    "id": "color-palette-generator",
-                    "name": "Color Palette Generator",
-                    "description": "Generate beautiful color palettes and schemes",
-                    "route": "/color-palette-generator",
-                    "popular": true,
-                    "category": "design"
-                },
-                {
-                    "id": "css-gradient-generator",
-                    "name": "CSS Gradient Generator",
-                    "description": "Create beautiful CSS gradients with live preview",
-                    "route": "/css-gradient-generator",
-                    "popular": true,
-                    "category": "design"
-                },
-                {
-                    "id": "favicon-generator",
-                    "name": "Favicon Generator",
-                    "description": "Create favicons and app icons for websites",
-                    "route": "/favicon-generator",
-                    "popular": false,
-                    "category": "design"
-                },
-                {
-                    "id": "logo-maker",
-                    "name": "Logo Maker",
-                    "description": "Create simple logos and brand graphics",
-                    "route": "/logo-maker",
-                    "popular": true,
-                    "category": "design"
-                },
-                {
-                    "id": "css-box-shadow",
-                    "name": "CSS Box Shadow Generator",
-                    "description": "Generate CSS box-shadow effects visually",
-                    "route": "/css-box-shadow",
-                    "popular": false,
-                    "category": "design"
-                }
-            ]
-        },
-        "utilities": {
-            "name": "Utility Tools",
-            "slug": "utility-tools",
-            "icon": "SettingsIcon",
-            "description": "Convert units, create ZIP files, and essential utilities",
-            "tools": [
-                {
-                    "id": "unit-converter",
-                    "name": "Unit Converter",
-                    "description": "Convert between different units of measurement",
-                    "route": "/unit-converter",
-                    "popular": true,
-                    "category": "utilities"
-                },
-                {
-                    "id": "zip-creator",
-                    "name": "ZIP File Creator",
-                    "description": "Create ZIP archives from multiple files",
-                    "route": "/zip-creator",
-                    "popular": false,
-                    "category": "utilities"
-                },
-                {
-                    "id": "url-shortener",
-                    "name": "URL Shortener",
-                    "description": "Shorten long URLs for easier sharing",
-                    "route": "/url-shortener",
-                    "popular": false,
-                    "category": "utilities"
-                },
-                {
-                    "id": "timestamp-converter",
-                    "name": "Timestamp Converter",
-                    "description": "Convert between Unix timestamps and readable dates",
-                    "route": "/timestamp-converter",
-                    "popular": false,
-                    "category": "utilities"
-                },
-                {
-                    "id": "calculator",
-                    "name": "Advanced Calculator",
-                    "description": "Scientific calculator with advanced functions",
-                    "route": "/calculator",
-                    "popular": true,
-                    "category": "utilities"
-                },
-                {
-                    "id": "random-generator",
-                    "name": "Random Generator",
-                    "description": "Generate random numbers, strings, and data",
-                    "route": "/random-generator",
-                    "popular": false,
-                    "category": "utilities"
-                }
-            ]
-        },
-        "seo": {
-            "name": "SEO Tools",
-            "slug": "seo-tools",
-            "icon": "SearchIcon",
-            "description": "Generate meta tags, QR codes, and SEO utilities",
-            "tools": [
-                {
-                    "id": "meta-tags-generator",
-                    "name": "Meta Tags Generator",
-                    "description": "Generate HTML meta tags for SEO optimization",
-                    "route": "/meta-tags-generator",
-                    "popular": false,
-                    "category": "seo"
-                },
-                {
-                    "id": "qr-code-generator",
-                    "name": "QR Code Generator",
-                    "description": "Generate QR codes for text, URLs, WiFi, and more",
-                    "route": "/qr-code-generator",
-                    "popular": true,
-                    "category": "seo"
-                },
-                {
-                    "id": "website-analyzer",
-                    "name": "Website Analyzer",
-                    "description": "Analyze website performance, SEO, and technical details",
-                    "route": "/website-analyzer",
-                    "popular": false,
-                    "category": "seo"
-                },
-                {
-                    "id": "sitemap-generator",
-                    "name": "Sitemap Generator",
-                    "description": "Generate XML sitemaps for websites",
-                    "route": "/sitemap-generator",
-                    "popular": false,
-                    "category": "seo"
-                },
-                {
-                    "id": "keyword-density",
-                    "name": "Keyword Density Checker",
-                    "description": "Check keyword density and frequency in text",
-                    "route": "/keyword-density",
-                    "popular": false,
-                    "category": "seo"
-                }
-            ]
+        {
+          "id": "image-cropper",
+          "name": "Image Cropper",
+          "description": "Crop images to specific dimensions or aspect ratios",
+          "route": "/image-cropper",
+          "popular": false,
+          "category": "image"
         }
+      ]
+    },
+    "pdf": {
+      "name": "PDF Tools",
+      "slug": "pdf-tools",
+      "icon": "FileTextIcon",
+      "description": "Merge, split, compress, and manipulate PDF documents",
+      "tools": [
+        {
+          "id": "pdf-merger",
+          "name": "PDF Merger",
+          "description": "Merge multiple PDF files into one document",
+          "route": "/pdf-merger",
+          "popular": true,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-splitter",
+          "name": "PDF Splitter",
+          "description": "Split PDF files into separate pages or ranges",
+          "route": "/pdf-splitter",
+          "popular": true,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-compressor",
+          "name": "PDF Compressor",
+          "description": "Compress PDF files to reduce size",
+          "route": "/pdf-compressor",
+          "popular": true,
+          "category": "pdf"
+        },
+        {
+          "id": "jpg-to-pdf",
+          "name": "JPG to PDF",
+          "description": "Convert JPG images to PDF documents",
+          "route": "/jpg-to-pdf",
+          "popular": false,
+          "category": "pdf"
+        },
+        {
+          "id": "png-to-pdf",
+          "name": "PNG to PDF",
+          "description": "Convert PNG images to PDF with transparency support",
+          "route": "/png-to-pdf",
+          "popular": false,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-protect",
+          "name": "PDF Password Protect",
+          "description": "Add password protection to PDF files",
+          "route": "/pdf-protect",
+          "popular": false,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-unlocker",
+          "name": "PDF Unlocker",
+          "description": "Remove password protection from PDF files",
+          "route": "/pdf-unlocker",
+          "popular": false,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-rotate",
+          "name": "PDF Rotate",
+          "description": "Rotate PDF pages in any direction",
+          "route": "/pdf-rotate",
+          "popular": false,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-add-page-numbers",
+          "name": "PDF Page Numbers",
+          "description": "Add page numbers to PDF documents",
+          "route": "/pdf-add-page-numbers",
+          "popular": false,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-editor",
+          "name": "PDF Editor",
+          "description": "Edit PDF text, add annotations, and modify content",
+          "route": "/pdf-editor",
+          "popular": true,
+          "category": "pdf"
+        },
+        {
+          "id": "word-to-pdf",
+          "name": "Word to PDF",
+          "description": "Convert Word documents to PDF format",
+          "route": "/word-to-pdf",
+          "popular": true,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-to-word",
+          "name": "PDF to Word",
+          "description": "Convert PDF files to editable Word documents",
+          "route": "/pdf-to-word",
+          "popular": true,
+          "category": "pdf"
+        }
+      ]
+    },
+    "video": {
+      "name": "Video Tools",
+      "slug": "video-tools",
+      "icon": "VideoIcon",
+      "description": "Compress videos, convert formats, and create GIFs",
+      "tools": [
+        {
+          "id": "video-compressor",
+          "name": "Video Compressor",
+          "description": "Compress video files to reduce size",
+          "route": "/video-compressor",
+          "popular": true,
+          "category": "video"
+        },
+        {
+          "id": "video-to-gif",
+          "name": "Video to GIF",
+          "description": "Convert videos to animated GIFs",
+          "route": "/video-to-gif",
+          "popular": true,
+          "category": "video"
+        },
+        {
+          "id": "video-converter",
+          "name": "Video Converter",
+          "description": "Convert videos between different formats (MP4, AVI, MOV)",
+          "route": "/video-converter",
+          "popular": true,
+          "category": "video"
+        },
+        {
+          "id": "video-editor",
+          "name": "Video Editor",
+          "description": "Basic video editing - trim, cut, and merge videos",
+          "route": "/video-editor",
+          "popular": true,
+          "category": "video"
+        },
+        {
+          "id": "video-trimmer",
+          "name": "Video Trimmer",
+          "description": "Trim and cut video clips to specific lengths",
+          "route": "/video-trimmer",
+          "popular": false,
+          "category": "video"
+        },
+        {
+          "id": "screen-recorder",
+          "name": "Screen Recorder",
+          "description": "Record your screen and save as video file",
+          "route": "/screen-recorder",
+          "popular": true,
+          "category": "video"
+        }
+      ]
+    },
+    "audio": {
+      "name": "Audio Tools",
+      "slug": "audio-tools",
+      "icon": "MusicIcon",
+      "description": "Compress and convert audio files between formats",
+      "tools": [
+        {
+          "id": "audio-compressor",
+          "name": "Audio Compressor",
+          "description": "Compress audio files to reduce size",
+          "route": "/audio-compressor",
+          "popular": true,
+          "category": "audio"
+        },
+        {
+          "id": "audio-converter",
+          "name": "Audio Converter",
+          "description": "Convert audio between formats (MP3, WAV, FLAC)",
+          "route": "/audio-converter",
+          "popular": true,
+          "category": "audio"
+        },
+        {
+          "id": "audio-editor",
+          "name": "Audio Editor",
+          "description": "Edit audio files - trim, merge, and apply effects",
+          "route": "/audio-editor",
+          "popular": true,
+          "category": "audio"
+        },
+        {
+          "id": "audio-trimmer",
+          "name": "Audio Trimmer",
+          "description": "Trim and cut audio clips to specific lengths",
+          "route": "/audio-trimmer",
+          "popular": false,
+          "category": "audio"
+        },
+        {
+          "id": "voice-recorder",
+          "name": "Voice Recorder",
+          "description": "Record voice and audio directly in your browser",
+          "route": "/voice-recorder",
+          "popular": true,
+          "category": "audio"
+        }
+      ]
+    },
+    "text": {
+      "name": "Text Tools",
+      "slug": "text-tools",
+      "icon": "TypeIcon",
+      "description": "Count words, generate passwords, and manipulate text",
+      "tools": [
+        {
+          "id": "word-counter",
+          "name": "Word Counter",
+          "description": "Count words, characters, paragraphs in text",
+          "route": "/word-counter",
+          "popular": true,
+          "category": "text"
+        },
+        {
+          "id": "character-counter",
+          "name": "Character Counter",
+          "description": "Count characters and letters in text",
+          "route": "/character-counter",
+          "popular": true,
+          "category": "text"
+        },
+        {
+          "id": "text-case-converter",
+          "name": "Text Case Converter",
+          "description": "Convert text between different cases (upper, lower, title)",
+          "route": "/text-case-converter",
+          "popular": false,
+          "category": "text"
+        },
+        {
+          "id": "password-generator",
+          "name": "Password Generator",
+          "description": "Generate secure random passwords with custom options",
+          "route": "/password-generator",
+          "popular": true,
+          "category": "text"
+        },
+        {
+          "id": "password-generator2",
+          "name": "Advanced Password Generator",
+          "description": "Advanced password generator with more customization options",
+          "route": "/password-generator2",
+          "popular": false,
+          "category": "text"
+        },
+        {
+          "id": "password-strength-checker",
+          "name": "Password Strength Checker",
+          "description": "Check the strength and security of your passwords",
+          "route": "/password-strength-checker",
+          "popular": true,
+          "category": "text"
+        },
+        {
+          "id": "lorem-ipsum-generator",
+          "name": "Lorem Ipsum Generator",
+          "description": "Generate placeholder text for design and development",
+          "route": "/lorem-ipsum-generator",
+          "popular": false,
+          "category": "text"
+        },
+        {
+          "id": "text-diff",
+          "name": "Text Diff Checker",
+          "description": "Compare two texts and find differences",
+          "route": "/text-diff",
+          "popular": false,
+          "category": "text"
+        },
+        {
+          "id": "text-formatter",
+          "name": "Text Formatter",
+          "description": "Format and clean up text with various options",
+          "route": "/text-formatter",
+          "popular": false,
+          "category": "text"
+        }
+      ]
+    },
+    "converter": {
+      "name": "File Converters",
+      "slug": "file-converters",
+      "icon": "RefreshCwIcon",
+      "description": "Convert files between different formats and types",
+      "tools": [
+        {
+          "id": "file-converter",
+          "name": "Universal File Converter",
+          "description": "Convert files between various formats automatically",
+          "route": "/file-converter",
+          "popular": true,
+          "category": "converter"
+        },
+        {
+          "id": "document-converter",
+          "name": "Document Converter",
+          "description": "Convert between document formats (DOC, DOCX, PDF, TXT)",
+          "route": "/document-converter",
+          "popular": true,
+          "category": "converter"
+        },
+        {
+          "id": "epub-converter",
+          "name": "EPUB Converter",
+          "description": "Convert documents to EPUB format for e-readers",
+          "route": "/epub-converter",
+          "popular": false,
+          "category": "converter"
+        },
+        {
+          "id": "html-to-pdf",
+          "name": "HTML to PDF",
+          "description": "Convert HTML pages and content to PDF",
+          "route": "/html-to-pdf",
+          "popular": true,
+          "category": "converter"
+        }
+      ]
+    },
+    "developer": {
+      "name": "Developer Tools",
+      "slug": "developer-tools",
+      "icon": "CodeIcon",
+      "description": "Format JSON, generate hashes, and developer utilities",
+      "tools": [
+        {
+          "id": "json-formatter",
+          "name": "JSON Formatter",
+          "description": "Format, validate, and beautify JSON data",
+          "route": "/json-formatter",
+          "popular": true,
+          "category": "developer"
+        },
+        {
+          "id": "hash-generator",
+          "name": "Hash Generator",
+          "description": "Generate MD5, SHA1, SHA256 hashes from text",
+          "route": "/hash-generator",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "hash-generator2",
+          "name": "Advanced Hash Generator",
+          "description": "Generate various hash types with advanced options",
+          "route": "/hash-generator2",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "base64-tool",
+          "name": "Base64 Encoder/Decoder",
+          "description": "Encode and decode Base64 strings and files",
+          "route": "/base64-tool",
+          "popular": true,
+          "category": "developer"
+        },
+        {
+          "id": "regex-tester2",
+          "name": "Advanced Regex Tester",
+          "description": "Test and validate regular expressions with advanced features",
+          "route": "/regex-tester2",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "api-tester",
+          "name": "API Tester",
+          "description": "Test REST APIs and HTTP requests",
+          "route": "/api-tester",
+          "popular": true,
+          "category": "developer"
+        },
+        {
+          "id": "jwt-decoder",
+          "name": "JWT Decoder",
+          "description": "Decode and verify JSON Web Tokens",
+          "route": "/jwt-decoder",
+          "popular": true,
+          "category": "developer"
+        },
+        {
+          "id": "url-encoder",
+          "name": "URL Encoder/Decoder",
+          "description": "Encode and decode URLs and query parameters",
+          "route": "/url-encoder",
+          "popular": false,
+          "category": "developer"
+        }
+      ]
+    },
+    "code": {
+      "name": "Code Tools",
+      "slug": "code-tools",
+      "icon": "BracesIcon",
+      "description": "Format, minify, and convert code and data formats",
+      "tools": [
+        {
+          "id": "code-formatter",
+          "name": "Code Formatter",
+          "description": "Format and beautify HTML, CSS, JavaScript code",
+          "route": "/code-formatter",
+          "popular": true,
+          "category": "code"
+        },
+        {
+          "id": "code-minifier",
+          "name": "Code Minifier",
+          "description": "Minify CSS, JavaScript, HTML code for production",
+          "route": "/code-minifier",
+          "popular": false,
+          "category": "code"
+        },
+        {
+          "id": "csv-to-json",
+          "name": "CSV to JSON Converter",
+          "description": "Convert CSV data to JSON format easily",
+          "route": "/csv-to-json",
+          "popular": false,
+          "category": "code"
+        },
+        {
+          "id": "markdown-to-html",
+          "name": "Markdown to HTML",
+          "description": "Convert Markdown text to HTML format",
+          "route": "/markdown-to-html",
+          "popular": false,
+          "category": "code"
+        },
+        {
+          "id": "regex-tester",
+          "name": "Regex Tester",
+          "description": "Test and validate regular expressions with live preview",
+          "route": "/regex-tester",
+          "popular": false,
+          "category": "code"
+        },
+        {
+          "id": "sql-formatter",
+          "name": "SQL Formatter",
+          "description": "Format and beautify SQL queries",
+          "route": "/sql-formatter",
+          "popular": false,
+          "category": "code"
+        },
+        {
+          "id": "xml-formatter",
+          "name": "XML Formatter",
+          "description": "Format and validate XML documents",
+          "route": "/xml-formatter",
+          "popular": false,
+          "category": "code"
+        }
+      ]
+    },
+    "design": {
+      "name": "Design Tools",
+      "slug": "design-tools",
+      "icon": "PaletteIcon",
+      "description": "Generate color palettes and create design assets",
+      "tools": [
+        {
+          "id": "color-picker",
+          "name": "Color Picker",
+          "description": "Pick colors and get values in all formats with harmony suggestions",
+          "route": "/color-picker",
+          "popular": true,
+          "category": "design"
+        },
+        {
+          "id": "color-palette-generator",
+          "name": "Color Palette Generator",
+          "description": "Generate beautiful color palettes and schemes",
+          "route": "/color-palette-generator",
+          "popular": true,
+          "category": "design"
+        },
+        {
+          "id": "css-gradient-generator",
+          "name": "CSS Gradient Generator",
+          "description": "Create beautiful CSS gradients with live preview",
+          "route": "/css-gradient-generator",
+          "popular": true,
+          "category": "design"
+        },
+        {
+          "id": "favicon-generator",
+          "name": "Favicon Generator",
+          "description": "Create favicons and app icons for websites",
+          "route": "/favicon-generator",
+          "popular": false,
+          "category": "design"
+        },
+        {
+          "id": "logo-maker",
+          "name": "Logo Maker",
+          "description": "Create simple logos and brand graphics",
+          "route": "/logo-maker",
+          "popular": true,
+          "category": "design"
+        },
+        {
+          "id": "css-box-shadow",
+          "name": "CSS Box Shadow Generator",
+          "description": "Generate CSS box-shadow effects visually",
+          "route": "/css-box-shadow",
+          "popular": false,
+          "category": "design"
+        }
+      ]
+    },
+    "utilities": {
+      "name": "Utility Tools",
+      "slug": "utility-tools",
+      "icon": "SettingsIcon",
+      "description": "Convert units, create ZIP files, and essential utilities",
+      "tools": [
+        {
+          "id": "unit-converter",
+          "name": "Unit Converter",
+          "description": "Convert between different units of measurement",
+          "route": "/unit-converter",
+          "popular": true,
+          "category": "utilities"
+        },
+        {
+          "id": "zip-creator",
+          "name": "ZIP File Creator",
+          "description": "Create ZIP archives from multiple files",
+          "route": "/zip-creator",
+          "popular": false,
+          "category": "utilities"
+        },
+        {
+          "id": "url-shortener",
+          "name": "URL Shortener",
+          "description": "Shorten long URLs for easier sharing",
+          "route": "/url-shortener",
+          "popular": false,
+          "category": "utilities"
+        },
+        {
+          "id": "timestamp-converter",
+          "name": "Timestamp Converter",
+          "description": "Convert between Unix timestamps and readable dates",
+          "route": "/timestamp-converter",
+          "popular": false,
+          "category": "utilities"
+        },
+        {
+          "id": "calculator",
+          "name": "Advanced Calculator",
+          "description": "Scientific calculator with advanced functions",
+          "route": "/calculator",
+          "popular": true,
+          "category": "utilities"
+        },
+        {
+          "id": "random-generator",
+          "name": "Random Generator",
+          "description": "Generate random numbers, strings, and data",
+          "route": "/random-generator",
+          "popular": false,
+          "category": "utilities"
+        }
+      ]
+    },
+    "seo": {
+      "name": "SEO Tools",
+      "slug": "seo-tools",
+      "icon": "SearchIcon",
+      "description": "Generate meta tags, QR codes, and SEO utilities",
+      "tools": [
+        {
+          "id": "meta-tags-generator",
+          "name": "Meta Tags Generator",
+          "description": "Generate HTML meta tags for SEO optimization",
+          "route": "/meta-tags-generator",
+          "popular": false,
+          "category": "seo"
+        },
+        {
+          "id": "qr-code-generator",
+          "name": "QR Code Generator",
+          "description": "Generate QR codes for text, URLs, WiFi, and more",
+          "route": "/qr-code-generator",
+          "popular": true,
+          "category": "seo"
+        },
+        {
+          "id": "website-analyzer",
+          "name": "Website Analyzer",
+          "description": "Analyze website performance, SEO, and technical details",
+          "route": "/website-analyzer",
+          "popular": false,
+          "category": "seo"
+        },
+        {
+          "id": "sitemap-generator",
+          "name": "Sitemap Generator",
+          "description": "Generate XML sitemaps for websites",
+          "route": "/sitemap-generator",
+          "popular": false,
+          "category": "seo"
+        },
+        {
+          "id": "keyword-density",
+          "name": "Keyword Density Checker",
+          "description": "Check keyword density and frequency in text",
+          "route": "/keyword-density",
+          "popular": false,
+          "category": "seo"
+        }
+      ]
     }
+  }
 }

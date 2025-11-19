@@ -1,76 +1,147 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Copy, Shuffle, Play, Download, Share2, RefreshCw, Heart, ThumbsUp } from 'lucide-react';
-import { toast } from 'sonner';
+import React, { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Copy,
+  Shuffle,
+  Play,
+  Download,
+  Share2,
+  RefreshCw,
+  Heart,
+  ThumbsUp,
+} from "lucide-react";
+import { toast } from "sonner";
 // Import SocialShareButtons component
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 const YouTubeCommentGeneratorTool = () => {
-  const [comment, setComment] = useState('');
-  const [videoTopic, setVideoTopic] = useState('');
-  const [selectedStyle, setSelectedStyle] = useState('');
-  const [selectedEmotion, setSelectedEmotion] = useState('');
+  const [comment, setComment] = useState("");
+  const [videoTopic, setVideoTopic] = useState("");
+  const [selectedStyle, setSelectedStyle] = useState("");
+  const [selectedEmotion, setSelectedEmotion] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedComments, setGeneratedComments] = useState([]);
 
   const commentStyles = [
-    { id: 'dramatic', name: 'Dramatic', icon: '🎭', description: 'Over-the-top emotional reactions' },
-    { id: 'first', name: 'First Comment', icon: '🥇', description: 'Classic "First!" variations' },
-    { id: 'philosophical', name: 'Philosophical', icon: '🤔', description: 'Deep thoughts about simple videos' },
-    { id: 'conspiracy', name: 'Conspiracy', icon: '👁️', description: 'Everything is connected somehow' },
-    { id: 'nostalgic', name: 'Nostalgic', icon: '😢', description: 'Remember when things were better' },
-    { id: 'expert', name: 'Fake Expert', icon: '🧠', description: 'Pretending to know everything' },
-    { id: 'emotional', name: 'Emotional', icon: '😭', description: 'Crying over everything' },
-    { id: 'hater', name: 'Constructive Hater', icon: '😤', description: 'Negative but oddly specific' },
-    { id: 'bot', name: 'Bot-like', icon: '🤖', description: 'Suspiciously generic praise' },
-    { id: 'random', name: 'Random', icon: '🎲', description: 'Completely unrelated to video' }
+    {
+      id: "dramatic",
+      name: "Dramatic",
+      icon: "🎭",
+      description: "Over-the-top emotional reactions",
+    },
+    {
+      id: "first",
+      name: "First Comment",
+      icon: "🥇",
+      description: 'Classic "First!" variations',
+    },
+    {
+      id: "philosophical",
+      name: "Philosophical",
+      icon: "🤔",
+      description: "Deep thoughts about simple videos",
+    },
+    {
+      id: "conspiracy",
+      name: "Conspiracy",
+      icon: "👁️",
+      description: "Everything is connected somehow",
+    },
+    {
+      id: "nostalgic",
+      name: "Nostalgic",
+      icon: "😢",
+      description: "Remember when things were better",
+    },
+    {
+      id: "expert",
+      name: "Fake Expert",
+      icon: "🧠",
+      description: "Pretending to know everything",
+    },
+    {
+      id: "emotional",
+      name: "Emotional",
+      icon: "😭",
+      description: "Crying over everything",
+    },
+    {
+      id: "hater",
+      name: "Constructive Hater",
+      icon: "😤",
+      description: "Negative but oddly specific",
+    },
+    {
+      id: "bot",
+      name: "Bot-like",
+      icon: "🤖",
+      description: "Suspiciously generic praise",
+    },
+    {
+      id: "random",
+      name: "Random",
+      icon: "🎲",
+      description: "Completely unrelated to video",
+    },
   ];
 
   const emotions = [
-    { id: 'excited', name: 'Excited', emoji: '🤩' },
-    { id: 'angry', name: 'Angry', emoji: '😡' },
-    { id: 'sad', name: 'Sad', emoji: '😢' },
-    { id: 'confused', name: 'Confused', emoji: '😕' },
-    { id: 'amazed', name: 'Amazed', emoji: '🤯' },
-    { id: 'disappointed', name: 'Disappointed', emoji: '😞' },
-    { id: 'grateful', name: 'Grateful', emoji: '🙏' },
-    { id: 'skeptical', name: 'Skeptical', emoji: '🤨' }
+    { id: "excited", name: "Excited", emoji: "🤩" },
+    { id: "angry", name: "Angry", emoji: "😡" },
+    { id: "sad", name: "Sad", emoji: "😢" },
+    { id: "confused", name: "Confused", emoji: "😕" },
+    { id: "amazed", name: "Amazed", emoji: "🤯" },
+    { id: "disappointed", name: "Disappointed", emoji: "😞" },
+    { id: "grateful", name: "Grateful", emoji: "🙏" },
+    { id: "skeptical", name: "Skeptical", emoji: "🤨" },
   ];
 
   const presetComments = [
     {
-      style: 'dramatic',
-      text: "I'M LITERALLY CRYING RIGHT NOW 😭😭😭 This video changed my entire perspective on life and I will never be the same person again. Thank you for this masterpiece 🙏✨"
+      style: "dramatic",
+      text: "I'M LITERALLY CRYING RIGHT NOW 😭😭😭 This video changed my entire perspective on life and I will never be the same person again. Thank you for this masterpiece 🙏✨",
     },
     {
-      style: 'first',
-      text: "FIRST! 🥇 Been waiting for this notification for HOURS. My life is now complete. Edit: Thanks for the heart! Edit 2: OMG 3 likes?? Edit 3: MOM I'M FAMOUS"
+      style: "first",
+      text: "FIRST! 🥇 Been waiting for this notification for HOURS. My life is now complete. Edit: Thanks for the heart! Edit 2: OMG 3 likes?? Edit 3: MOM I'M FAMOUS",
     },
     {
-      style: 'philosophical',
-      text: "This 30-second cat video really makes you think about the fragility of existence and how we're all just floating through the cosmic void searching for meaning... anyway cute cat 🐱"
+      style: "philosophical",
+      text: "This 30-second cat video really makes you think about the fragility of existence and how we're all just floating through the cosmic void searching for meaning... anyway cute cat 🐱",
     },
     {
-      style: 'conspiracy',
-      text: "Notice how the background music is in B minor? That's the same key used in government mind control experiments. Wake up sheeple! 👁️ This isn't just entertainment, it's PROGRAMMING"
+      style: "conspiracy",
+      text: "Notice how the background music is in B minor? That's the same key used in government mind control experiments. Wake up sheeple! 👁️ This isn't just entertainment, it's PROGRAMMING",
     },
     {
-      style: 'nostalgic',
-      text: "Anyone else miss when YouTube was just people filming themselves in their bedrooms with a potato camera? Now everything is so PRODUCED. Take me back to 2009 😢"
+      style: "nostalgic",
+      text: "Anyone else miss when YouTube was just people filming themselves in their bedrooms with a potato camera? Now everything is so PRODUCED. Take me back to 2009 😢",
     },
     {
-      style: 'expert',
-      text: "As someone who has been studying this topic for 47 years (I'm 23 btw), I can confirm that everything in this video is 100% accurate. Source: trust me bro 🧠"
-    }
+      style: "expert",
+      text: "As someone who has been studying this topic for 47 years (I'm 23 btw), I can confirm that everything in this video is 100% accurate. Source: trust me bro 🧠",
+    },
   ];
 
   const generateCommentWithAI = async (topic, style, emotion) => {
@@ -87,11 +158,13 @@ The comment should be:
 
 Make it feel genuine but entertaining!`;
 
-      const response = await fetch(`https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=openai`);
+      const response = await fetch(
+        `https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=openai`,
+      );
       const result = await response.text();
       return result;
     } catch (error) {
-      console.error('AI generation failed:', error);
+      console.error("AI generation failed:", error);
       return generateFallbackComment(style, emotion);
     }
   };
@@ -99,37 +172,47 @@ Make it feel genuine but entertaining!`;
   const generateFallbackComment = (style, emotion) => {
     const templates = {
       dramatic: {
-        excited: "OMG THIS IS LITERALLY THE BEST VIDEO EVER!!! 🤩✨ I can't even breathe right now!!!",
+        excited:
+          "OMG THIS IS LITERALLY THE BEST VIDEO EVER!!! 🤩✨ I can't even breathe right now!!!",
         sad: "I'm literally sobbing 😭😭😭 This hit me right in the feels and I can't stop crying",
-        amazed: "MY MIND IS BLOWN 🤯🤯🤯 How is this even possible?! I need to watch this 100 times!"
+        amazed:
+          "MY MIND IS BLOWN 🤯🤯🤯 How is this even possible?! I need to watch this 100 times!",
       },
       first: {
-        excited: "FIRST!!! 🥇 I've been refreshing for HOURS waiting for this! My life is complete now ✨",
-        angry: "FIRST! And honestly? I'm disappointed. Expected better. Still first though 😤",
-        grateful: "First! 🙏 Thank you for always posting amazing content, you literally saved my day!"
+        excited:
+          "FIRST!!! 🥇 I've been refreshing for HOURS waiting for this! My life is complete now ✨",
+        angry:
+          "FIRST! And honestly? I'm disappointed. Expected better. Still first though 😤",
+        grateful:
+          "First! 🙏 Thank you for always posting amazing content, you literally saved my day!",
       },
       philosophical: {
-        confused: "This really makes you question the nature of reality... are we all just NPCs in someone else's simulation? 🤔",
-        amazed: "The profound simplicity of this content reveals the complex beauty of human existence... deep stuff 🧠✨",
-        sad: "Watching this reminds me how fleeting life is... we're all just temporary visitors in this cosmic dance 😢"
-      }
+        confused:
+          "This really makes you question the nature of reality... are we all just NPCs in someone else's simulation? 🤔",
+        amazed:
+          "The profound simplicity of this content reveals the complex beauty of human existence... deep stuff 🧠✨",
+        sad: "Watching this reminds me how fleeting life is... we're all just temporary visitors in this cosmic dance 😢",
+      },
     };
 
-    return templates[style]?.[emotion] || "This video really speaks to me on so many levels! Thanks for sharing! 🙏✨";
+    return (
+      templates[style]?.[emotion] ||
+      "This video really speaks to me on so many levels! Thanks for sharing! 🙏✨"
+    );
   };
 
   const handleGenerate = async () => {
     if (!selectedStyle || !selectedEmotion) {
-      toast.error('Please select both a comment style and emotion!');
+      toast.error("Please select both a comment style and emotion!");
       return;
     }
 
     setIsGenerating(true);
     try {
       const generated = await generateCommentWithAI(
-        videoTopic || 'this video',
-        commentStyles.find(s => s.id === selectedStyle)?.name,
-        emotions.find(e => e.id === selectedEmotion)?.name
+        videoTopic || "this video",
+        commentStyles.find((s) => s.id === selectedStyle)?.name,
+        emotions.find((e) => e.id === selectedEmotion)?.name,
       );
 
       setComment(generated);
@@ -141,13 +224,13 @@ Make it feel genuine but entertaining!`;
         emotion: selectedEmotion,
         topic: videoTopic,
         text: generated,
-        timestamp: new Date().toLocaleString()
+        timestamp: new Date().toLocaleString(),
       };
-      setGeneratedComments(prev => [newComment, ...prev.slice(0, 9)]);
+      setGeneratedComments((prev) => [newComment, ...prev.slice(0, 9)]);
 
-      toast.success('Comment generated successfully!');
+      toast.success("Comment generated successfully!");
     } catch (error) {
-      toast.error('Failed to generate comment. Please try again.');
+      toast.error("Failed to generate comment. Please try again.");
     } finally {
       setIsGenerating(false);
     }
@@ -160,24 +243,26 @@ Make it feel genuine but entertaining!`;
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    toast.success('Comment copied to clipboard!');
+    toast.success("Comment copied to clipboard!");
   };
 
   const downloadComment = () => {
     const content = `YouTube Comment\n\nGenerated on: ${new Date().toLocaleString()}\nStyle: ${selectedStyle}\nEmotion: ${selectedEmotion}\nTopic: ${videoTopic}\n\n${comment}`;
-    const blob = new Blob([content], { type: 'text/plain' });
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'youtube-comment.txt';
+    a.download = "youtube-comment.txt";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    toast.success('Comment downloaded!');
+    toast.success("Comment downloaded!");
   };
 
-  const shareText = comment ? `Check out this hilarious YouTube comment I generated: "${comment.substring(0, 100)}..." Create your own at` : 'Generate viral YouTube comments at';
+  const shareText = comment
+    ? `Check out this hilarious YouTube comment I generated: "${comment.substring(0, 100)}..." Create your own at`
+    : "Generate viral YouTube comments at";
 
   return (
     <div className="min-h-screen bg-muted/20 p-4">
@@ -192,7 +277,8 @@ Make it feel genuine but entertaining!`;
             YouTube Comment Generator
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Create dramatic, funny, and viral YouTube comments that capture the essence of internet culture!
+            Create dramatic, funny, and viral YouTube comments that capture the
+            essence of internet culture!
           </p>
         </div>
 
@@ -229,7 +315,10 @@ Make it feel genuine but entertaining!`;
 
                   <div className="space-y-2">
                     <Label htmlFor="style">Comment Style</Label>
-                    <Select value={selectedStyle} onValueChange={setSelectedStyle}>
+                    <Select
+                      value={selectedStyle}
+                      onValueChange={setSelectedStyle}
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select a comment style" />
                       </SelectTrigger>
@@ -240,7 +329,9 @@ Make it feel genuine but entertaining!`;
                               <span>{style.icon}</span>
                               <div>
                                 <div className="font-medium">{style.name}</div>
-                                <div className="text-sm text-muted-foreground">{style.description}</div>
+                                <div className="text-sm text-muted-foreground">
+                                  {style.description}
+                                </div>
                               </div>
                             </div>
                           </SelectItem>
@@ -251,7 +342,10 @@ Make it feel genuine but entertaining!`;
 
                   <div className="space-y-2">
                     <Label htmlFor="emotion">Emotion</Label>
-                    <Select value={selectedEmotion} onValueChange={setSelectedEmotion}>
+                    <Select
+                      value={selectedEmotion}
+                      onValueChange={setSelectedEmotion}
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select an emotion" />
                       </SelectTrigger>
@@ -267,7 +361,9 @@ Make it feel genuine but entertaining!`;
 
                   <Button
                     onClick={handleGenerate}
-                    disabled={isGenerating || !selectedStyle || !selectedEmotion}
+                    disabled={
+                      isGenerating || !selectedStyle || !selectedEmotion
+                    }
                     className="w-full bgtbd"
                   >
                     {isGenerating ? (
@@ -301,12 +397,14 @@ Make it feel genuine but entertaining!`;
                     <>
                       <div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-border">
                         <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-background">
-                            U
-                          </div>
+                          <div className="w-8 h-8 bg-background">U</div>
                           <div className="flex-1">
-                            <div className="font-medium text-sm text-foreground mb-1">@RandomUser2024</div>
-                            <p className="text-sm text-foreground whitespace-pre-wrap">{comment}</p>
+                            <div className="font-medium text-sm text-foreground mb-1">
+                              @RandomUser2024
+                            </div>
+                            <p className="text-sm text-foreground whitespace-pre-wrap">
+                              {comment}
+                            </p>
                             <div className="flex items-center gap-4 mt-2 text-xs text-muted-foreground">
                               <button className="flex items-center gap-1 hover:text-foreground">
                                 <ThumbsUp className="w-3 h-3" />
@@ -369,22 +467,30 @@ Make it feel genuine but entertaining!`;
           <TabsContent value="presets" className="space-y-6">
             <div className="grid md:grid-cols-2 gap-4">
               {presetComments.map((preset, index) => (
-                <Card key={index} className="cursor-pointer hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="cursor-pointer hover:shadow-lg transition-shadow"
+                >
                   <CardHeader>
                     <CardTitle className="text-lg flex items-center gap-2">
-                      {commentStyles.find(s => s.id === preset.style)?.icon}
-                      {commentStyles.find(s => s.id === preset.style)?.name} Style
+                      {commentStyles.find((s) => s.id === preset.style)?.icon}
+                      {
+                        commentStyles.find((s) => s.id === preset.style)?.name
+                      }{" "}
+                      Style
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
                     <div className="bg-gray-50 p-3 rounded-lg mb-4">
                       <div className="flex items-start gap-2">
-                        <div className="w-6 h-6 bg-background">
-                          U
-                        </div>
+                        <div className="w-6 h-6 bg-background">U</div>
                         <div className="flex-1">
-                          <div className="font-medium text-xs text-muted-foreground mb-1">@ExampleUser</div>
-                          <p className="text-sm text-foreground">{preset.text}</p>
+                          <div className="font-medium text-xs text-muted-foreground mb-1">
+                            @ExampleUser
+                          </div>
+                          <p className="text-sm text-foreground">
+                            {preset.text}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -419,8 +525,16 @@ Make it feel genuine but entertaining!`;
                       <div className="flex justify-between items-start">
                         <div>
                           <CardTitle className="text-lg flex items-center gap-2">
-                            {commentStyles.find(s => s.id === item.style)?.icon}
-                            {commentStyles.find(s => s.id === item.style)?.name} - {emotions.find(e => e.id === item.emotion)?.name}
+                            {
+                              commentStyles.find((s) => s.id === item.style)
+                                ?.icon
+                            }
+                            {
+                              commentStyles.find((s) => s.id === item.style)
+                                ?.name
+                            }{" "}
+                            -{" "}
+                            {emotions.find((e) => e.id === item.emotion)?.name}
                           </CardTitle>
                           <CardDescription>{item.timestamp}</CardDescription>
                         </div>
@@ -469,7 +583,8 @@ Make it feel genuine but entertaining!`;
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Comments designed to capture attention and engagement, perfect for social media sharing.
+                Comments designed to capture attention and engagement, perfect
+                for social media sharing.
               </p>
             </CardContent>
           </Card>
@@ -483,7 +598,8 @@ Make it feel genuine but entertaining!`;
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Realistic comment styles that match actual YouTube user behavior and internet culture.
+                Realistic comment styles that match actual YouTube user behavior
+                and internet culture.
               </p>
             </CardContent>
           </Card>
@@ -497,7 +613,8 @@ Make it feel genuine but entertaining!`;
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Perfect for creating meme content, social media posts, and viral entertainment.
+                Perfect for creating meme content, social media posts, and viral
+                entertainment.
               </p>
             </CardContent>
           </Card>

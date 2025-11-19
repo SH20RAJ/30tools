@@ -1,86 +1,117 @@
-'use client';
+"use client";
 
-import React, { useState, useCallback } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  Search, 
-  Download, 
-  Upload, 
-  CheckCircle2, 
-  XCircle, 
+import React, { useState, useCallback } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  Search,
+  Download,
+  Upload,
+  CheckCircle2,
+  XCircle,
   Clock,
   Info,
   Globe,
   AlertTriangle,
   FileText,
-  Link
-} from 'lucide-react';
+  Link,
+} from "lucide-react";
 
 export default function BulkGoogleIndexChecker() {
-  const [urls, setUrls] = useState('');
+  const [urls, setUrls] = useState("");
   const [results, setResults] = useState([]);
   const [isChecking, setIsChecking] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   // Simulate index checking (in real implementation, this would use Google's APIs)
   const simulateIndexCheck = useCallback(async (url) => {
     // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 300 + Math.random() * 700));
-    
+    await new Promise((resolve) =>
+      setTimeout(resolve, 300 + Math.random() * 700),
+    );
+
     // Simulate different indexation scenarios
     const scenarios = [
-      { indexed: true, status: 'indexed', lastCrawled: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000) },
-      { indexed: false, status: 'not-indexed', reason: 'Crawled but not indexed' },
-      { indexed: false, status: 'blocked', reason: 'Blocked by robots.txt' },
-      { indexed: false, status: 'noindex', reason: 'Excluded by noindex tag' },
-      { indexed: false, status: 'error', reason: '404 Not Found' },
-      { indexed: true, status: 'indexed-with-issues', lastCrawled: new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000), issues: ['Slow loading', 'Mobile usability issues'] }
+      {
+        indexed: true,
+        status: "indexed",
+        lastCrawled: new Date(
+          Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000,
+        ),
+      },
+      {
+        indexed: false,
+        status: "not-indexed",
+        reason: "Crawled but not indexed",
+      },
+      { indexed: false, status: "blocked", reason: "Blocked by robots.txt" },
+      { indexed: false, status: "noindex", reason: "Excluded by noindex tag" },
+      { indexed: false, status: "error", reason: "404 Not Found" },
+      {
+        indexed: true,
+        status: "indexed-with-issues",
+        lastCrawled: new Date(
+          Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000,
+        ),
+        issues: ["Slow loading", "Mobile usability issues"],
+      },
     ];
-    
+
     const result = scenarios[Math.floor(Math.random() * scenarios.length)];
-    
+
     return {
       url,
       ...result,
-      title: result.indexed ? `Page Title for ${url.split('/').pop() || 'Homepage'}` : null,
+      title: result.indexed
+        ? `Page Title for ${url.split("/").pop() || "Homepage"}`
+        : null,
       responseTime: Math.floor(Math.random() * 3000) + 100,
-      httpStatus: result.status === 'error' ? 404 : 200
+      httpStatus: result.status === "error" ? 404 : 200,
     };
   }, []);
 
   const checkIndexation = async () => {
     if (!urls.trim()) {
-      setError('Please enter at least one URL');
+      setError("Please enter at least one URL");
       return;
     }
 
     setIsChecking(true);
-    setError('');
+    setError("");
     setProgress(0);
     setResults([]);
 
-    const urlList = urls.split('\n')
-      .map(url => url.trim())
-      .filter(url => url && (url.startsWith('http://') || url.startsWith('https://')))
+    const urlList = urls
+      .split("\n")
+      .map((url) => url.trim())
+      .filter(
+        (url) =>
+          url && (url.startsWith("http://") || url.startsWith("https://")),
+      )
       .slice(0, 1000);
-    
+
     if (urlList.length === 0) {
-      setError('Please enter valid URLs (must start with http:// or https://)');
+      setError("Please enter valid URLs (must start with http:// or https://)");
       setIsChecking(false);
       return;
     }
 
     try {
       const newResults = [];
-      
+
       for (let i = 0; i < urlList.length; i++) {
         const url = urlList[i];
         const result = await simulateIndexCheck(url);
@@ -89,7 +120,7 @@ export default function BulkGoogleIndexChecker() {
         setProgress(((i + 1) / urlList.length) * 100);
       }
     } catch (err) {
-      setError('An error occurred while checking indexation status');
+      setError("An error occurred while checking indexation status");
     } finally {
       setIsChecking(false);
     }
@@ -99,24 +130,35 @@ export default function BulkGoogleIndexChecker() {
     if (results.length === 0) return;
 
     const csvContent = [
-      ['URL', 'Status', 'Indexed', 'Last Crawled', 'HTTP Status', 'Response Time (ms)', 'Title', 'Issues/Reason'].join(','),
-      ...results.map(r => [
-        `"${r.url}"`,
-        r.status,
-        r.indexed ? 'Yes' : 'No',
-        r.lastCrawled ? r.lastCrawled.toLocaleDateString() : 'Never',
-        r.httpStatus,
-        r.responseTime,
-        `"${r.title || ''}"`,
-        `"${r.reason || (r.issues ? r.issues.join('; ') : '')}"`
-      ].join(','))
-    ].join('\n');
+      [
+        "URL",
+        "Status",
+        "Indexed",
+        "Last Crawled",
+        "HTTP Status",
+        "Response Time (ms)",
+        "Title",
+        "Issues/Reason",
+      ].join(","),
+      ...results.map((r) =>
+        [
+          `"${r.url}"`,
+          r.status,
+          r.indexed ? "Yes" : "No",
+          r.lastCrawled ? r.lastCrawled.toLocaleDateString() : "Never",
+          r.httpStatus,
+          r.responseTime,
+          `"${r.title || ""}"`,
+          `"${r.reason || (r.issues ? r.issues.join("; ") : "")}"`,
+        ].join(","),
+      ),
+    ].join("\n");
 
-    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const blob = new Blob([csvContent], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `google-index-check-${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `google-index-check-${new Date().toISOString().split("T")[0]}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -137,20 +179,20 @@ export default function BulkGoogleIndexChecker() {
 
   const getStatusBadge = (status, indexed) => {
     if (indexed) {
-      if (status === 'indexed-with-issues') {
+      if (status === "indexed-with-issues") {
         return <Badge className="bg-muted/500">Indexed (Issues)</Badge>;
       }
       return <Badge className="bg-muted/500">Indexed</Badge>;
     }
-    
+
     switch (status) {
-      case 'not-indexed':
+      case "not-indexed":
         return <Badge variant="secondary">Not Indexed</Badge>;
-      case 'blocked':
+      case "blocked":
         return <Badge variant="destructive">Blocked</Badge>;
-      case 'noindex':
+      case "noindex":
         return <Badge className="bg-muted/500">NoIndex</Badge>;
-      case 'error':
+      case "error":
         return <Badge variant="destructive">Error</Badge>;
       default:
         return <Badge variant="secondary">Unknown</Badge>;
@@ -166,16 +208,20 @@ export default function BulkGoogleIndexChecker() {
 
   const stats = {
     total: results.length,
-    indexed: results.filter(r => r.indexed).length,
-    notIndexed: results.filter(r => !r.indexed).length,
-    withIssues: results.filter(r => r.issues && r.issues.length > 0).length
+    indexed: results.filter((r) => r.indexed).length,
+    notIndexed: results.filter((r) => !r.indexed).length,
+    withIssues: results.filter((r) => r.issues && r.issues.length > 0).length,
   };
 
   const extractSitemapUrls = () => {
-    const sitemapUrl = prompt('Enter sitemap URL (e.g., https://example.com/sitemap.xml):');
+    const sitemapUrl = prompt(
+      "Enter sitemap URL (e.g., https://example.com/sitemap.xml):",
+    );
     if (sitemapUrl) {
       // In a real implementation, this would fetch and parse the sitemap
-      alert('Sitemap URL extraction feature coming soon! For now, please manually copy URLs from your sitemap.');
+      alert(
+        "Sitemap URL extraction feature coming soon! For now, please manually copy URLs from your sitemap.",
+      );
     }
   };
 
@@ -186,9 +232,12 @@ export default function BulkGoogleIndexChecker() {
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
           <Search className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-foreground">Bulk Google Index Checker</h1>
+        <h1 className="text-4xl font-bold text-foreground">
+          Bulk Google Index Checker
+        </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Check if multiple URLs are indexed by Google. Verify indexation status for entire websites or URL lists in bulk.
+          Check if multiple URLs are indexed by Google. Verify indexation status
+          for entire websites or URL lists in bulk.
         </p>
       </div>
 
@@ -201,11 +250,12 @@ export default function BulkGoogleIndexChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Verify which pages are indexed by Google to ensure your content is discoverable in search results.
+              Verify which pages are indexed by Google to ensure your content is
+              discoverable in search results.
             </p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="text-center pb-3">
             <AlertTriangle className="h-8 w-8 text-primary mx-auto mb-2" />
@@ -213,11 +263,12 @@ export default function BulkGoogleIndexChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Identify indexation problems, blocked pages, and technical issues preventing Google from crawling your site.
+              Identify indexation problems, blocked pages, and technical issues
+              preventing Google from crawling your site.
             </p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="text-center pb-3">
             <FileText className="h-8 w-8 text-primary mx-auto mb-2" />
@@ -225,7 +276,8 @@ export default function BulkGoogleIndexChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Check up to 1000 URLs at once and export detailed reports for comprehensive site analysis.
+              Check up to 1000 URLs at once and export detailed reports for
+              comprehensive site analysis.
             </p>
           </CardContent>
         </Card>
@@ -236,7 +288,8 @@ export default function BulkGoogleIndexChecker() {
         <CardHeader>
           <CardTitle>Check URL Indexation Status</CardTitle>
           <CardDescription>
-            Enter URLs to check their Google indexation status. You can check up to 1000 URLs at once.
+            Enter URLs to check their Google indexation status. You can check up
+            to 1000 URLs at once.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -253,7 +306,17 @@ export default function BulkGoogleIndexChecker() {
             />
             <div className="flex justify-between items-center">
               <p className="text-sm text-muted-foreground">
-                {urls.split('\n').filter(url => url.trim() && (url.startsWith('http://') || url.startsWith('https://'))).length} valid URLs entered (max 1000)
+                {
+                  urls
+                    .split("\n")
+                    .filter(
+                      (url) =>
+                        url.trim() &&
+                        (url.startsWith("http://") ||
+                          url.startsWith("https://")),
+                    ).length
+                }{" "}
+                valid URLs entered (max 1000)
               </p>
               <div className="flex gap-2">
                 <Button
@@ -270,7 +333,7 @@ export default function BulkGoogleIndexChecker() {
                   type="button"
                   variant="outline"
                   size="sm"
-                  onClick={() => document.getElementById('file-upload').click()}
+                  onClick={() => document.getElementById("file-upload").click()}
                   disabled={isChecking}
                 >
                   <Upload className="mr-2 h-4 w-4" />
@@ -295,8 +358,8 @@ export default function BulkGoogleIndexChecker() {
           )}
 
           <div className="flex gap-4">
-            <Button 
-              onClick={checkIndexation} 
+            <Button
+              onClick={checkIndexation}
               disabled={isChecking}
               className="flex-1"
             >
@@ -312,7 +375,7 @@ export default function BulkGoogleIndexChecker() {
                 </>
               )}
             </Button>
-            
+
             {results.length > 0 && (
               <Button onClick={exportResults} variant="outline">
                 <Download className="mr-2 h-4 w-4" />
@@ -338,25 +401,33 @@ export default function BulkGoogleIndexChecker() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.total}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.total}
+              </div>
               <div className="text-sm text-muted-foreground">Total URLs</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.indexed}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.indexed}
+              </div>
               <div className="text-sm text-muted-foreground">Indexed</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-destructive">{stats.notIndexed}</div>
+              <div className="text-2xl font-bold text-destructive">
+                {stats.notIndexed}
+              </div>
               <div className="text-sm text-muted-foreground">Not Indexed</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.withIssues}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.withIssues}
+              </div>
               <div className="text-sm text-muted-foreground">With Issues</div>
             </CardContent>
           </Card>
@@ -390,8 +461,12 @@ export default function BulkGoogleIndexChecker() {
                       <td className="p-3">
                         <div className="flex items-center gap-2">
                           {getStatusIcon(result.status, result.indexed)}
-                          <a href={result.url} target="_blank" rel="noopener noreferrer" 
-                             className="text-primary hover:underline text-sm max-w-xs truncate">
+                          <a
+                            href={result.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline text-sm max-w-xs truncate"
+                          >
                             {result.url}
                           </a>
                         </div>
@@ -401,17 +476,30 @@ export default function BulkGoogleIndexChecker() {
                           </div>
                         )}
                       </td>
-                      <td className="p-3">{getStatusBadge(result.status, result.indexed)}</td>
-                      <td className="p-3 text-sm">
-                        {result.lastCrawled ? result.lastCrawled.toLocaleDateString() : 'Never'}
+                      <td className="p-3">
+                        {getStatusBadge(result.status, result.indexed)}
                       </td>
                       <td className="p-3 text-sm">
-                        <Badge variant={result.responseTime > 2000 ? 'destructive' : result.responseTime > 1000 ? 'secondary' : 'default'}>
+                        {result.lastCrawled
+                          ? result.lastCrawled.toLocaleDateString()
+                          : "Never"}
+                      </td>
+                      <td className="p-3 text-sm">
+                        <Badge
+                          variant={
+                            result.responseTime > 2000
+                              ? "destructive"
+                              : result.responseTime > 1000
+                                ? "secondary"
+                                : "default"
+                          }
+                        >
                           {result.responseTime}ms
                         </Badge>
                       </td>
                       <td className="p-3 text-sm text-muted-foreground">
-                        {result.reason || (result.issues ? result.issues.join(', ') : '-')}
+                        {result.reason ||
+                          (result.issues ? result.issues.join(", ") : "-")}
                       </td>
                     </tr>
                   ))}

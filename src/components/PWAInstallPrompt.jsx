@@ -1,9 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { DownloadIcon, XIcon, SmartphoneIcon } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { DownloadIcon, XIcon, SmartphoneIcon } from "lucide-react";
 
 export default function PWAInstallPrompt() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -16,19 +22,23 @@ export default function PWAInstallPrompt() {
     setIsIOS(ios);
 
     // Check if already installed
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+    const isStandalone = window.matchMedia(
+      "(display-mode: standalone)",
+    ).matches;
     const isPWA = window.navigator.standalone === true;
-    
+
     if (isStandalone || isPWA) {
       return; // Already installed
     }
 
     // Check if user has dismissed the prompt before
-    const dismissed = localStorage.getItem('pwa-prompt-dismissed');
+    const dismissed = localStorage.getItem("pwa-prompt-dismissed");
     if (dismissed) {
       const dismissedTime = new Date(dismissed);
-      const daysSinceDismissed = (new Date() - dismissedTime) / (1000 * 60 * 60 * 24);
-      if (daysSinceDismissed < 7) { // Don't show again for 7 days
+      const daysSinceDismissed =
+        (new Date() - dismissedTime) / (1000 * 60 * 60 * 24);
+      if (daysSinceDismissed < 7) {
+        // Don't show again for 7 days
         return;
       }
     }
@@ -40,7 +50,7 @@ export default function PWAInstallPrompt() {
       setTimeout(() => setShowPrompt(true), 30000);
     };
 
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+    window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
     // For iOS, show prompt after 1 minute if not installed
     if (ios) {
@@ -48,7 +58,10 @@ export default function PWAInstallPrompt() {
     }
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt,
+      );
     };
   }, []);
 
@@ -56,7 +69,7 @@ export default function PWAInstallPrompt() {
     if (deferredPrompt) {
       deferredPrompt.prompt();
       const { outcome } = await deferredPrompt.userChoice;
-      if (outcome === 'accepted') {
+      if (outcome === "accepted") {
         setDeferredPrompt(null);
         setShowPrompt(false);
       }
@@ -65,7 +78,7 @@ export default function PWAInstallPrompt() {
 
   const handleDismiss = () => {
     setShowPrompt(false);
-    localStorage.setItem('pwa-prompt-dismissed', new Date().toISOString());
+    localStorage.setItem("pwa-prompt-dismissed", new Date().toISOString());
   };
 
   if (!showPrompt) return null;
@@ -79,9 +92,9 @@ export default function PWAInstallPrompt() {
               <SmartphoneIcon className="h-5 w-5 text-primary" />
               <CardTitle className="text-lg">Install 30tools</CardTitle>
             </div>
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               onClick={handleDismiss}
               className="h-8 w-8 p-0"
             >
@@ -89,10 +102,9 @@ export default function PWAInstallPrompt() {
             </Button>
           </div>
           <CardDescription>
-            {isIOS 
-              ? "Add to your home screen for a better experience" 
-              : "Install our app for faster access and offline support"
-            }
+            {isIOS
+              ? "Add to your home screen for a better experience"
+              : "Install our app for faster access and offline support"}
           </CardDescription>
         </CardHeader>
         <CardContent className="pt-0">

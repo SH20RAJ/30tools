@@ -1,18 +1,33 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import { Package, Download, FileText, Image as ImageIcon, Tag, Youtube, CheckCircle2, Loader2 } from 'lucide-react';
-import { downloadYouTubePack } from '@/lib/youtube-actions';
+import { useState, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import {
+  Package,
+  Download,
+  FileText,
+  Image as ImageIcon,
+  Tag,
+  Youtube,
+  CheckCircle2,
+  Loader2,
+} from "lucide-react";
+import { downloadYouTubePack } from "@/lib/youtube-actions";
 
 export default function YouTubePackDownloader() {
-  const [videoUrl, setVideoUrl] = useState('');
+  const [videoUrl, setVideoUrl] = useState("");
   const [selectedAssets, setSelectedAssets] = useState({
     metadata: true,
     title: true,
@@ -21,34 +36,69 @@ export default function YouTubePackDownloader() {
     transcript: true,
     thumbnail: true,
     channelInfo: true,
-    analytics: true
+    analytics: true,
   });
   const [videoData, setVideoData] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [downloadReady, setDownloadReady] = useState(false);
   const downloadRef = useRef(null);
 
   const assetOptions = [
-    { id: 'metadata', label: 'Video Metadata', description: 'Title, description, duration, publish date', icon: FileText },
-    { id: 'title', label: 'Title & Description', description: 'Full title and description text', icon: FileText },
-    { id: 'tags', label: 'SEO Tags', description: 'All video tags for keyword research', icon: Tag },
-    { id: 'transcript', label: 'Video Transcript', description: 'Complete video transcript/captions', icon: FileText },
-    { id: 'thumbnail', label: 'Thumbnails', description: 'High-quality thumbnails (multiple sizes)', icon: ImageIcon },
-    { id: 'channelInfo', label: 'Channel Information', description: 'Creator details and channel data', icon: Youtube },
-    { id: 'analytics', label: 'Performance Data', description: 'View count, likes, engagement metrics', icon: Package }
+    {
+      id: "metadata",
+      label: "Video Metadata",
+      description: "Title, description, duration, publish date",
+      icon: FileText,
+    },
+    {
+      id: "title",
+      label: "Title & Description",
+      description: "Full title and description text",
+      icon: FileText,
+    },
+    {
+      id: "tags",
+      label: "SEO Tags",
+      description: "All video tags for keyword research",
+      icon: Tag,
+    },
+    {
+      id: "transcript",
+      label: "Video Transcript",
+      description: "Complete video transcript/captions",
+      icon: FileText,
+    },
+    {
+      id: "thumbnail",
+      label: "Thumbnails",
+      description: "High-quality thumbnails (multiple sizes)",
+      icon: ImageIcon,
+    },
+    {
+      id: "channelInfo",
+      label: "Channel Information",
+      description: "Creator details and channel data",
+      icon: Youtube,
+    },
+    {
+      id: "analytics",
+      label: "Performance Data",
+      description: "View count, likes, engagement metrics",
+      icon: Package,
+    },
   ];
 
   const handleAssetToggle = (assetId) => {
-    setSelectedAssets(prev => ({
+    setSelectedAssets((prev) => ({
       ...prev,
-      [assetId]: !prev[assetId]
+      [assetId]: !prev[assetId],
     }));
   };
 
   const selectAll = () => {
     const allSelected = {};
-    assetOptions.forEach(asset => {
+    assetOptions.forEach((asset) => {
       allSelected[asset.id] = true;
     });
     setSelectedAssets(allSelected);
@@ -56,7 +106,7 @@ export default function YouTubePackDownloader() {
 
   const selectNone = () => {
     const noneSelected = {};
-    assetOptions.forEach(asset => {
+    assetOptions.forEach((asset) => {
       noneSelected[asset.id] = false;
     });
     setSelectedAssets(noneSelected);
@@ -64,30 +114,30 @@ export default function YouTubePackDownloader() {
 
   const handleDownloadPack = async () => {
     if (!videoUrl) {
-      setError('Please enter a YouTube URL');
+      setError("Please enter a YouTube URL");
       return;
     }
 
     const selectedCount = Object.values(selectedAssets).filter(Boolean).length;
     if (selectedCount === 0) {
-      setError('Please select at least one asset to download');
+      setError("Please select at least one asset to download");
       return;
     }
 
     setIsLoading(true);
-    setError('');
+    setError("");
 
     try {
       const result = await downloadYouTubePack(videoUrl, selectedAssets);
-      
+
       if (result.success) {
         setVideoData(result.data);
         setDownloadReady(true);
       } else {
-        setError(result.error || 'Failed to process YouTube video');
+        setError(result.error || "Failed to process YouTube video");
       }
     } catch (err) {
-      setError('An error occurred while processing the video');
+      setError("An error occurred while processing the video");
     } finally {
       setIsLoading(false);
     }
@@ -96,13 +146,13 @@ export default function YouTubePackDownloader() {
   const downloadPack = () => {
     if (videoData && downloadRef.current) {
       const packData = JSON.stringify(videoData, null, 2);
-      const blob = new Blob([packData], { type: 'application/json' });
+      const blob = new Blob([packData], { type: "application/json" });
       const url = URL.createObjectURL(blob);
-      
+
       downloadRef.current.href = url;
       downloadRef.current.download = `youtube-pack-${videoData.videoId}.json`;
       downloadRef.current.click();
-      
+
       URL.revokeObjectURL(url);
     }
   };
@@ -120,7 +170,8 @@ export default function YouTubePackDownloader() {
             YouTube Pack Downloader
           </CardTitle>
           <CardDescription>
-            Download complete YouTube video asset packages including metadata, transcripts, and thumbnails
+            Download complete YouTube video asset packages including metadata,
+            transcripts, and thumbnails
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -137,12 +188,24 @@ export default function YouTubePackDownloader() {
 
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <Label className="text-base font-semibold">Select Assets to Download</Label>
+              <Label className="text-base font-semibold">
+                Select Assets to Download
+              </Label>
               <div className="flex gap-2">
-                <Button variant="outline" size="sm" onClick={selectAll} className="btn-cute">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={selectAll}
+                  className="btn-cute"
+                >
                   Select All
                 </Button>
-                <Button variant="outline" size="sm" onClick={selectNone} className="btn-cute">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={selectNone}
+                  className="btn-cute"
+                >
                   Clear All
                 </Button>
               </div>
@@ -155,7 +218,9 @@ export default function YouTubePackDownloader() {
                   <div
                     key={asset.id}
                     className={`flex items-start space-x-3 p-4 rounded-lg border transition-all cursor-pointer hover:bg-accent/20 ${
-                      selectedAssets[asset.id] ? 'bg-accent/30 border-primary' : 'border-border'
+                      selectedAssets[asset.id]
+                        ? "bg-accent/30 border-primary"
+                        : "border-border"
                     }`}
                     onClick={() => handleAssetToggle(asset.id)}
                   >
@@ -167,9 +232,13 @@ export default function YouTubePackDownloader() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
                         <Icon className="w-4 h-4 text-primary" />
-                        <span className="font-medium text-sm">{asset.label}</span>
+                        <span className="font-medium text-sm">
+                          {asset.label}
+                        </span>
                       </div>
-                      <p className="text-xs text-muted-foreground">{asset.description}</p>
+                      <p className="text-xs text-muted-foreground">
+                        {asset.description}
+                      </p>
                     </div>
                   </div>
                 );
@@ -177,7 +246,9 @@ export default function YouTubePackDownloader() {
             </div>
 
             <div className="flex items-center justify-between text-sm text-muted-foreground">
-              <span>{getSelectedCount()} of {assetOptions.length} assets selected</span>
+              <span>
+                {getSelectedCount()} of {assetOptions.length} assets selected
+              </span>
               <Badge variant="secondary">{getSelectedCount()} items</Badge>
             </div>
           </div>
@@ -216,16 +287,14 @@ export default function YouTubePackDownloader() {
                 <Youtube className="w-5 h-5 text-destructive" />
                 Pack Ready for Download
               </span>
-              <Button
-                onClick={downloadPack}
-                className="btn-cute bg-background"
-              >
+              <Button onClick={downloadPack} className="btn-cute bg-background">
                 <Download className="w-4 h-4 mr-2" />
                 Download Pack
               </Button>
             </CardTitle>
             <CardDescription>
-              Your YouTube video asset pack is ready. Click download to save all selected data.
+              Your YouTube video asset pack is ready. Click download to save all
+              selected data.
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -234,10 +303,19 @@ export default function YouTubePackDownloader() {
                 <div>
                   <h4 className="font-medium mb-2">Video Information</h4>
                   <div className="space-y-1 text-sm text-muted-foreground">
-                    <div><strong>Title:</strong> {videoData.title}</div>
-                    <div><strong>Duration:</strong> {videoData.duration}</div>
-                    <div><strong>Views:</strong> {videoData.viewCount?.toLocaleString()}</div>
-                    <div><strong>Channel:</strong> {videoData.channelTitle}</div>
+                    <div>
+                      <strong>Title:</strong> {videoData.title}
+                    </div>
+                    <div>
+                      <strong>Duration:</strong> {videoData.duration}
+                    </div>
+                    <div>
+                      <strong>Views:</strong>{" "}
+                      {videoData.viewCount?.toLocaleString()}
+                    </div>
+                    <div>
+                      <strong>Channel:</strong> {videoData.channelTitle}
+                    </div>
                   </div>
                 </div>
                 <div>
@@ -246,9 +324,14 @@ export default function YouTubePackDownloader() {
                     {Object.entries(selectedAssets)
                       .filter(([_, selected]) => selected)
                       .map(([assetId]) => {
-                        const asset = assetOptions.find(a => a.id === assetId);
+                        const asset = assetOptions.find(
+                          (a) => a.id === assetId,
+                        );
                         return (
-                          <div key={assetId} className="flex items-center gap-2">
+                          <div
+                            key={assetId}
+                            className="flex items-center gap-2"
+                          >
                             <CheckCircle2 className="w-3 h-3 text-primary" />
                             {asset?.label}
                           </div>
@@ -257,12 +340,13 @@ export default function YouTubePackDownloader() {
                   </div>
                 </div>
               </div>
-              
+
               <Separator />
-              
+
               <div className="flex items-center justify-between text-sm">
                 <span className="text-muted-foreground">
-                  Package size: ~{Math.ceil(JSON.stringify(videoData).length / 1024)}KB
+                  Package size: ~
+                  {Math.ceil(JSON.stringify(videoData).length / 1024)}KB
                 </span>
                 <Badge variant="outline">JSON Format</Badge>
               </div>
@@ -301,7 +385,7 @@ export default function YouTubePackDownloader() {
         </CardContent>
       </Card>
 
-      <a ref={downloadRef} style={{ display: 'none' }} />
+      <a ref={downloadRef} style={{ display: "none" }} />
     </div>
   );
 }

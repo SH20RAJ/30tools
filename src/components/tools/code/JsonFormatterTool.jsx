@@ -1,20 +1,26 @@
-'use client';
+"use client";
 
-import { useState, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Input } from '@/components/ui/input';
-import { 
-  FileCode, 
-  CheckCircle, 
-  AlertCircle, 
-  Copy, 
-  Download, 
+import { useState, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Input } from "@/components/ui/input";
+import {
+  FileCode,
+  CheckCircle,
+  AlertCircle,
+  Copy,
+  Download,
   RefreshCw,
   Zap,
   Shield,
@@ -23,19 +29,19 @@ import {
   FileJson,
   Search,
   Minimize2,
-  Maximize2
-} from 'lucide-react';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  Maximize2,
+} from "lucide-react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function JsonFormatterTool() {
-  const [jsonInput, setJsonInput] = useState('');
-  const [formattedJson, setFormattedJson] = useState('');
-  const [minifiedJson, setMinifiedJson] = useState('');
+  const [jsonInput, setJsonInput] = useState("");
+  const [formattedJson, setFormattedJson] = useState("");
+  const [minifiedJson, setMinifiedJson] = useState("");
   const [isValid, setIsValid] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [stats, setStats] = useState(null);
-  const [activeTab, setActiveTab] = useState('formatter');
-  const [searchTerm, setSearchTerm] = useState('');
+  const [activeTab, setActiveTab] = useState("formatter");
+  const [searchTerm, setSearchTerm] = useState("");
   const [indentSize, setIndentSize] = useState(2);
 
   const sampleData = {
@@ -93,44 +99,56 @@ export default function JsonFormatterTool() {
   },
   "api_version": "1.2.3",
   "timestamp": "2024-06-14T12:00:00Z"
-}`
+}`,
   };
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB'];
+    const sizes = ["Bytes", "KB", "MB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const calculateStats = (original, formatted, minified) => {
     const originalSize = new Blob([original]).size;
     const formattedSize = new Blob([formatted]).size;
     const minifiedSize = new Blob([minified]).size;
-    
+
     return {
       originalSize: formatFileSize(originalSize),
       formattedSize: formatFileSize(formattedSize),
       minifiedSize: formatFileSize(minifiedSize),
-      formattedIncrease: formattedSize > originalSize ? 
-        `+${Math.round(((formattedSize - originalSize) / originalSize) * 100)}%` : '0%',
-      minifiedReduction: originalSize > minifiedSize ? 
-        `-${Math.round(((originalSize - minifiedSize) / originalSize) * 100)}%` : '0%'
+      formattedIncrease:
+        formattedSize > originalSize
+          ? `+${Math.round(((formattedSize - originalSize) / originalSize) * 100)}%`
+          : "0%",
+      minifiedReduction:
+        originalSize > minifiedSize
+          ? `-${Math.round(((originalSize - minifiedSize) / originalSize) * 100)}%`
+          : "0%",
     };
   };
 
   const analyzeJson = (jsonString) => {
     try {
       const parsed = JSON.parse(jsonString);
-      
+
       const countProperties = (obj, depth = 0) => {
-        let count = { objects: 0, arrays: 0, strings: 0, numbers: 0, booleans: 0, nulls: 0, maxDepth: depth };
-        
+        let count = {
+          objects: 0,
+          arrays: 0,
+          strings: 0,
+          numbers: 0,
+          booleans: 0,
+          nulls: 0,
+          maxDepth: depth,
+        };
+
         if (Array.isArray(obj)) {
           count.arrays++;
           count.maxDepth = Math.max(count.maxDepth, depth);
-          obj.forEach(item => {
+          obj.forEach((item) => {
             const subCount = countProperties(item, depth + 1);
             count.objects += subCount.objects;
             count.arrays += subCount.arrays;
@@ -140,10 +158,10 @@ export default function JsonFormatterTool() {
             count.nulls += subCount.nulls;
             count.maxDepth = Math.max(count.maxDepth, subCount.maxDepth);
           });
-        } else if (obj !== null && typeof obj === 'object') {
+        } else if (obj !== null && typeof obj === "object") {
           count.objects++;
           count.maxDepth = Math.max(count.maxDepth, depth);
-          Object.values(obj).forEach(value => {
+          Object.values(obj).forEach((value) => {
             const subCount = countProperties(value, depth + 1);
             count.objects += subCount.objects;
             count.arrays += subCount.arrays;
@@ -153,16 +171,16 @@ export default function JsonFormatterTool() {
             count.nulls += subCount.nulls;
             count.maxDepth = Math.max(count.maxDepth, subCount.maxDepth);
           });
-        } else if (typeof obj === 'string') {
+        } else if (typeof obj === "string") {
           count.strings++;
-        } else if (typeof obj === 'number') {
+        } else if (typeof obj === "number") {
           count.numbers++;
-        } else if (typeof obj === 'boolean') {
+        } else if (typeof obj === "boolean") {
           count.booleans++;
         } else if (obj === null) {
           count.nulls++;
         }
-        
+
         return count;
       };
 
@@ -174,7 +192,7 @@ export default function JsonFormatterTool() {
 
   const validateAndFormat = useCallback(() => {
     if (!jsonInput.trim()) {
-      setError('Please enter JSON data to validate and format.');
+      setError("Please enter JSON data to validate and format.");
       setIsValid(false);
       return;
     }
@@ -183,22 +201,21 @@ export default function JsonFormatterTool() {
       const parsed = JSON.parse(jsonInput);
       const formatted = JSON.stringify(parsed, null, indentSize);
       const minified = JSON.stringify(parsed);
-      
+
       setFormattedJson(formatted);
       setMinifiedJson(minified);
       setIsValid(true);
-      setError('');
-      
+      setError("");
+
       // Calculate statistics
       const statistics = calculateStats(jsonInput, formatted, minified);
       const analysis = analyzeJson(jsonInput);
       setStats({ ...statistics, analysis });
-      
     } catch (err) {
       setIsValid(false);
       setError(`Invalid JSON: ${err.message}`);
-      setFormattedJson('');
-      setMinifiedJson('');
+      setFormattedJson("");
+      setMinifiedJson("");
       setStats(null);
     }
   }, [jsonInput, indentSize]);
@@ -207,16 +224,16 @@ export default function JsonFormatterTool() {
     try {
       await navigator.clipboard.writeText(text);
       // In a real app, you'd show a toast notification here
-      alert('Copied to clipboard!');
+      alert("Copied to clipboard!");
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
   const handleDownload = (content, filename) => {
-    const blob = new Blob([content], { type: 'application/json' });
+    const blob = new Blob([content], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = filename;
     document.body.appendChild(link);
@@ -231,30 +248,36 @@ export default function JsonFormatterTool() {
   };
 
   const clearAll = () => {
-    setJsonInput('');
-    setFormattedJson('');
-    setMinifiedJson('');
+    setJsonInput("");
+    setFormattedJson("");
+    setMinifiedJson("");
     setIsValid(null);
-    setError('');
+    setError("");
     setStats(null);
-    setSearchTerm('');
+    setSearchTerm("");
   };
 
   const highlightSearchTerm = (text) => {
     if (!searchTerm || !text) return text;
-    const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
-    return text.replace(regex, '<mark>$1</mark>');
+    const regex = new RegExp(
+      `(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
+      "gi",
+    );
+    return text.replace(regex, "<mark>$1</mark>");
   };
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free JSON Formatter & Validator</h1>
+        <h1 className="text-4xl font-bold mb-4">
+          Free JSON Formatter & Validator
+        </h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Format, validate, and analyze JSON data with detailed statistics and error reporting. 
-          Perfect for developers working with APIs and data structures.
+          Format, validate, and analyze JSON data with detailed statistics and
+          error reporting. Perfect for developers working with APIs and data
+          structures.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <CheckCircle className="h-5 w-5 text-primary" />
@@ -284,10 +307,18 @@ export default function JsonFormatterTool() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex flex-wrap gap-2 mb-4">
-            <Button onClick={() => loadSample('simple')} variant="outline" size="sm">
+            <Button
+              onClick={() => loadSample("simple")}
+              variant="outline"
+              size="sm"
+            >
               Load Simple Sample
             </Button>
-            <Button onClick={() => loadSample('complex')} variant="outline" size="sm">
+            <Button
+              onClick={() => loadSample("complex")}
+              variant="outline"
+              size="sm"
+            >
               Load Complex Sample
             </Button>
             <Button onClick={clearAll} variant="outline" size="sm">
@@ -295,7 +326,9 @@ export default function JsonFormatterTool() {
               Clear All
             </Button>
             <div className="flex items-center gap-2 ml-auto">
-              <Label htmlFor="indent-size" className="text-sm">Indent:</Label>
+              <Label htmlFor="indent-size" className="text-sm">
+                Indent:
+              </Label>
               <Input
                 id="indent-size"
                 type="number"
@@ -307,14 +340,14 @@ export default function JsonFormatterTool() {
               />
             </div>
           </div>
-          
+
           <Textarea
             placeholder="Paste your JSON data here..."
             value={jsonInput}
             onChange={(e) => setJsonInput(e.target.value)}
             className="min-h-[300px] font-mono text-sm"
           />
-          
+
           <div className="flex gap-2">
             <Button onClick={validateAndFormat} className="flex-1">
               <CheckCircle className="h-4 w-4 mr-2" />
@@ -337,7 +370,8 @@ export default function JsonFormatterTool() {
         <Alert className="mb-6" variant="default">
           <CheckCircle className="h-4 w-4 text-primary" />
           <AlertDescription>
-            <span className="text-primary font-medium">Valid JSON!</span> Your JSON data is properly formatted and valid.
+            <span className="text-primary font-medium">Valid JSON!</span> Your
+            JSON data is properly formatted and valid.
           </AlertDescription>
         </Alert>
       )}
@@ -363,11 +397,21 @@ export default function JsonFormatterTool() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Formatted:</span>
-                    <span className="font-mono">{stats.formattedSize} <span className="text-primary">({stats.formattedIncrease})</span></span>
+                    <span className="font-mono">
+                      {stats.formattedSize}{" "}
+                      <span className="text-primary">
+                        ({stats.formattedIncrease})
+                      </span>
+                    </span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Minified:</span>
-                    <span className="font-mono">{stats.minifiedSize} <span className="text-primary">({stats.minifiedReduction})</span></span>
+                    <span className="font-mono">
+                      {stats.minifiedSize}{" "}
+                      <span className="text-primary">
+                        ({stats.minifiedReduction})
+                      </span>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -380,15 +424,21 @@ export default function JsonFormatterTool() {
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Objects:</span>
-                        <Badge variant="outline">{stats.analysis.objects}</Badge>
+                        <Badge variant="outline">
+                          {stats.analysis.objects}
+                        </Badge>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Arrays:</span>
                         <Badge variant="outline">{stats.analysis.arrays}</Badge>
                       </div>
                       <div className="flex justify-between">
-                        <span className="text-muted-foreground">Max Depth:</span>
-                        <Badge variant="outline">{stats.analysis.maxDepth}</Badge>
+                        <span className="text-muted-foreground">
+                          Max Depth:
+                        </span>
+                        <Badge variant="outline">
+                          {stats.analysis.maxDepth}
+                        </Badge>
                       </div>
                     </div>
                   </div>
@@ -398,15 +448,21 @@ export default function JsonFormatterTool() {
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Strings:</span>
-                        <Badge variant="outline">{stats.analysis.strings}</Badge>
+                        <Badge variant="outline">
+                          {stats.analysis.strings}
+                        </Badge>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Numbers:</span>
-                        <Badge variant="outline">{stats.analysis.numbers}</Badge>
+                        <Badge variant="outline">
+                          {stats.analysis.numbers}
+                        </Badge>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Booleans:</span>
-                        <Badge variant="outline">{stats.analysis.booleans}</Badge>
+                        <Badge variant="outline">
+                          {stats.analysis.booleans}
+                        </Badge>
                       </div>
                       <div className="flex justify-between">
                         <span className="text-muted-foreground">Nulls:</span>
@@ -430,18 +486,29 @@ export default function JsonFormatterTool() {
               Formatted Output
             </CardTitle>
             <CardDescription>
-              Choose between formatted (readable) or minified (compressed) output
+              Choose between formatted (readable) or minified (compressed)
+              output
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+            <Tabs
+              value={activeTab}
+              onValueChange={setActiveTab}
+              className="w-full"
+            >
               <div className="flex items-center justify-between mb-4">
                 <TabsList>
-                  <TabsTrigger value="formatter" className="flex items-center gap-2">
+                  <TabsTrigger
+                    value="formatter"
+                    className="flex items-center gap-2"
+                  >
                     <Maximize2 className="h-4 w-4" />
                     Formatted
                   </TabsTrigger>
-                  <TabsTrigger value="minified" className="flex items-center gap-2">
+                  <TabsTrigger
+                    value="minified"
+                    className="flex items-center gap-2"
+                  >
                     <Minimize2 className="h-4 w-4" />
                     Minified
                   </TabsTrigger>
@@ -465,11 +532,21 @@ export default function JsonFormatterTool() {
                 <div className="flex justify-between items-center">
                   <Label>Formatted JSON (Human Readable)</Label>
                   <div className="flex gap-2">
-                    <Button onClick={() => handleCopy(formattedJson)} variant="outline" size="sm">
+                    <Button
+                      onClick={() => handleCopy(formattedJson)}
+                      variant="outline"
+                      size="sm"
+                    >
                       <Copy className="h-4 w-4 mr-2" />
                       Copy
                     </Button>
-                    <Button onClick={() => handleDownload(formattedJson, 'formatted.json')} variant="outline" size="sm">
+                    <Button
+                      onClick={() =>
+                        handleDownload(formattedJson, "formatted.json")
+                      }
+                      variant="outline"
+                      size="sm"
+                    >
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
@@ -486,11 +563,21 @@ export default function JsonFormatterTool() {
                 <div className="flex justify-between items-center">
                   <Label>Minified JSON (Compressed)</Label>
                   <div className="flex gap-2">
-                    <Button onClick={() => handleCopy(minifiedJson)} variant="outline" size="sm">
+                    <Button
+                      onClick={() => handleCopy(minifiedJson)}
+                      variant="outline"
+                      size="sm"
+                    >
                       <Copy className="h-4 w-4 mr-2" />
                       Copy
                     </Button>
-                    <Button onClick={() => handleDownload(minifiedJson, 'minified.json')} variant="outline" size="sm">
+                    <Button
+                      onClick={() =>
+                        handleDownload(minifiedJson, "minified.json")
+                      }
+                      variant="outline"
+                      size="sm"
+                    >
                       <Download className="h-4 w-4 mr-2" />
                       Download
                     </Button>
@@ -518,7 +605,8 @@ export default function JsonFormatterTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Instant JSON validation with detailed error messages and line-by-line analysis.
+              Instant JSON validation with detailed error messages and
+              line-by-line analysis.
             </p>
           </CardContent>
         </Card>
@@ -532,7 +620,8 @@ export default function JsonFormatterTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Comprehensive statistics including structure analysis, data type counts, and size metrics.
+              Comprehensive statistics including structure analysis, data type
+              counts, and size metrics.
             </p>
           </CardContent>
         </Card>
@@ -546,7 +635,8 @@ export default function JsonFormatterTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              All processing happens locally in your browser. Your JSON data never leaves your device.
+              All processing happens locally in your browser. Your JSON data
+              never leaves your device.
             </p>
           </CardContent>
         </Card>
@@ -593,25 +683,37 @@ export default function JsonFormatterTool() {
             <div>
               <h4 className="font-medium mb-2">What makes JSON invalid?</h4>
               <p className="text-sm text-muted-foreground">
-                Common issues include missing quotes around strings, trailing commas, unescaped characters, and mismatched brackets or braces.
+                Common issues include missing quotes around strings, trailing
+                commas, unescaped characters, and mismatched brackets or braces.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">What's the difference between formatted and minified JSON?</h4>
+              <h4 className="font-medium mb-2">
+                What's the difference between formatted and minified JSON?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Formatted JSON includes indentation and line breaks for readability. Minified JSON removes all unnecessary whitespace to reduce file size.
+                Formatted JSON includes indentation and line breaks for
+                readability. Minified JSON removes all unnecessary whitespace to
+                reduce file size.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Is there a size limit for JSON input?</h4>
+              <h4 className="font-medium mb-2">
+                Is there a size limit for JSON input?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                The tool can handle large JSON files, but very large files ( - 10MB) may slow down your browser due to client-side processing.
+                The tool can handle large JSON files, but very large files ( -
+                10MB) may slow down your browser due to client-side processing.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Can I use this for JSON with comments?</h4>
+              <h4 className="font-medium mb-2">
+                Can I use this for JSON with comments?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Standard JSON doesn't support comments. This tool validates strict JSON. For JSON with comments (JSONC), remove comments first.
+                Standard JSON doesn't support comments. This tool validates
+                strict JSON. For JSON with comments (JSONC), remove comments
+                first.
               </p>
             </div>
           </div>

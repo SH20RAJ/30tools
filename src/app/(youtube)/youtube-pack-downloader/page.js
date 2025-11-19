@@ -1,12 +1,15 @@
-import YouTubePackDownloader from '@/components/tools/youtube/YouTubePackDownloader';
+import YouTubePackDownloader from "@/components/tools/youtube/YouTubePackDownloader";
 
 export const metadata = {
   title: "Youtube Pack Downloader - Free Online Tool | Professional Results",
-  description: "Professional youtube pack downloader with instant results. Free online tool for students, professionals, and businesses worldwide.",
-  keywords: "youtube pack downloader, youtube video assets, youtube metadata downloader, youtube title description tags, youtube thumbnail transcript downloader, complete youtube video package, youtube content analyzer, video seo data extractor",
+  description:
+    "Professional youtube pack downloader with instant results. Free online tool for students, professionals, and businesses worldwide.",
+  keywords:
+    "youtube pack downloader, youtube video assets, youtube metadata downloader, youtube title description tags, youtube thumbnail transcript downloader, complete youtube video package, youtube content analyzer, video seo data extractor",
   openGraph: {
     title: "YouTube Pack Downloader - Download All Video Assets",
-    description: "Download complete YouTube video packages with title, description, tags, transcript, and thumbnail in one click.",
+    description:
+      "Download complete YouTube video packages with title, description, tags, transcript, and thumbnail in one click.",
     url: "https://30tools.com/youtube-pack-downloader",
     siteName: "30tools",
     images: [
@@ -14,46 +17,48 @@ export const metadata = {
         url: "/og-images/youtube-pack-downloader.jpg",
         width: 1200,
         height: 630,
-        alt: "YouTube Pack Downloader Tool"
+        alt: "YouTube Pack Downloader Tool",
       },
     ],
-    type: "website"
+    type: "website",
   },
   alternates: {
-    canonical: "https://30tools.com/youtube-pack-downloader"
+    canonical: "https://30tools.com/youtube-pack-downloader",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Youtube Pack Downloader - Free Online Tool | Professional Results",
-    description: "Professional youtube pack downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional youtube pack downloader tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/youtube-pack-downloader.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "YouTube Pack Downloader",
-  "description": "Comprehensive tool to download all YouTube video assets including metadata, thumbnail, transcript, and SEO data",
-  "url": "https://30tools.com/youtube-pack-downloader",
-  "applicationCategory": "Multimedia",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "YouTube Pack Downloader",
+  description:
+    "Comprehensive tool to download all YouTube video assets including metadata, thumbnail, transcript, and SEO data",
+  url: "https://30tools.com/youtube-pack-downloader",
+  applicationCategory: "Multimedia",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "featureList": [
+  featureList: [
     "Complete video metadata",
     "High-quality thumbnails",
     "Full video transcripts",
     "SEO tags extraction",
     "Batch processing",
-    "Multiple export formats"
-  ]
+    "Multiple export formats",
+  ],
 };
 
 export default function YouTubePackDownloaderPage() {
@@ -71,48 +76,85 @@ export default function YouTubePackDownloaderPage() {
                 YouTube Pack Downloader
               </h1>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Download complete YouTube video asset packages in one click. Extract titles, descriptions, 
-                tags, transcripts, thumbnails, and metadata for content analysis, competitor research, 
-                and SEO optimization. Perfect for creators and marketers.
+                Download complete YouTube video asset packages in one click.
+                Extract titles, descriptions, tags, transcripts, thumbnails, and
+                metadata for content analysis, competitor research, and SEO
+                optimization. Perfect for creators and marketers.
               </p>
             </div>
-            
+
             <YouTubePackDownloader />
-            
+
             <div className="mt-12 prose prose-gray max-w-none">
-              <h2 className="text-2xl font-semibold mb-4">Complete YouTube Video Asset Extraction</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                Complete YouTube Video Asset Extraction
+              </h2>
               <p>
-                Streamline your content research and analysis with our comprehensive YouTube pack downloader. 
-                Extract all valuable video assets including metadata, SEO tags, thumbnails, and transcripts 
-                in organized packages that save hours of manual work. Essential for competitive analysis, 
-                content planning, and understanding successful video strategies in your niche.
+                Streamline your content research and analysis with our
+                comprehensive YouTube pack downloader. Extract all valuable
+                video assets including metadata, SEO tags, thumbnails, and
+                transcripts in organized packages that save hours of manual
+                work. Essential for competitive analysis, content planning, and
+                understanding successful video strategies in your niche.
               </p>
-              
-              <h3 className="text-xl font-semibold mt-6 mb-3">Comprehensive Asset Collection Features</h3>
+
+              <h3 className="text-xl font-semibold mt-6 mb-3">
+                Comprehensive Asset Collection Features
+              </h3>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Complete Metadata Package:</strong> Title, description, publish date, view count, and engagement metrics</li>
-                <li><strong>SEO Tag Extraction:</strong> All video tags for keyword research and content optimization strategies</li>
-                <li><strong>High-Quality Thumbnails:</strong> Multiple resolution thumbnails for design inspiration and analysis</li>
-                <li><strong>Full Video Transcripts:</strong> Complete text content for content analysis and SEO research</li>
-                <li><strong>Channel Information:</strong> Creator details, subscriber count, and channel metadata</li>
-                <li><strong>Engagement Analytics:</strong> Like/dislike ratios, comment counts, and performance indicators</li>
-                <li><strong>Multiple Export Formats:</strong> JSON, CSV, TXT, and organized ZIP packages for easy analysis</li>
+                <li>
+                  <strong>Complete Metadata Package:</strong> Title,
+                  description, publish date, view count, and engagement metrics
+                </li>
+                <li>
+                  <strong>SEO Tag Extraction:</strong> All video tags for
+                  keyword research and content optimization strategies
+                </li>
+                <li>
+                  <strong>High-Quality Thumbnails:</strong> Multiple resolution
+                  thumbnails for design inspiration and analysis
+                </li>
+                <li>
+                  <strong>Full Video Transcripts:</strong> Complete text content
+                  for content analysis and SEO research
+                </li>
+                <li>
+                  <strong>Channel Information:</strong> Creator details,
+                  subscriber count, and channel metadata
+                </li>
+                <li>
+                  <strong>Engagement Analytics:</strong> Like/dislike ratios,
+                  comment counts, and performance indicators
+                </li>
+                <li>
+                  <strong>Multiple Export Formats:</strong> JSON, CSV, TXT, and
+                  organized ZIP packages for easy analysis
+                </li>
               </ul>
-              
-              <h3 className="text-xl font-semibold mt-6 mb-3">Content Research & Competitive Analysis</h3>
+
+              <h3 className="text-xl font-semibold mt-6 mb-3">
+                Content Research & Competitive Analysis
+              </h3>
               <p>
-                Analyze successful videos in your niche to understand what works and why. Our pack downloader 
-                provides all the data needed for comprehensive competitive analysis, content gap identification, 
-                and trend research. Perfect for content creators, digital marketers, and SEO professionals who 
-                need deep insights into YouTube content performance and optimization strategies.
+                Analyze successful videos in your niche to understand what works
+                and why. Our pack downloader provides all the data needed for
+                comprehensive competitive analysis, content gap identification,
+                and trend research. Perfect for content creators, digital
+                marketers, and SEO professionals who need deep insights into
+                YouTube content performance and optimization strategies.
               </p>
-              
-              <h3 className="text-xl font-semibold mt-6 mb-3">Professional Content Strategy Development</h3>
+
+              <h3 className="text-xl font-semibold mt-6 mb-3">
+                Professional Content Strategy Development
+              </h3>
               <p>
-                Use extracted video assets to develop data-driven content strategies that resonate with your 
-                target audience. Analyze successful titles, descriptions, and tags to optimize your own content 
-                for maximum visibility and engagement. The comprehensive data packages provide everything needed 
-                for informed decision-making in content creation, marketing campaigns, and audience development.
+                Use extracted video assets to develop data-driven content
+                strategies that resonate with your target audience. Analyze
+                successful titles, descriptions, and tags to optimize your own
+                content for maximum visibility and engagement. The comprehensive
+                data packages provide everything needed for informed
+                decision-making in content creation, marketing campaigns, and
+                audience development.
               </p>
             </div>
           </div>

@@ -1,14 +1,14 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { 
-  Type, 
-  FileText, 
-  Hash, 
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Type,
+  FileText,
+  Hash,
   AlignLeft,
   Search,
   Copy,
@@ -25,56 +25,62 @@ import {
   RotateCcw,
   Shuffle,
   Eye,
-  Filter
-} from 'lucide-react';
-import Link from 'next/link';
+  Filter,
+} from "lucide-react";
+import Link from "next/link";
 
 // Text tool icons mapping
 const TOOL_ICONS = {
-  'word-counter': FileText,
-  'character-counter': Type,
-  'password-generator': Shield,
-  'text-case-converter': RotateCcw,
-  'lorem-ipsum-generator': BookOpen,
-  'text-diff': Eye,
-  'text-formatter': Edit3,
-  'duplicate-line-remover': Filter,
-  'text-encoder': Hash,
-  'binary-converter': Hash
+  "word-counter": FileText,
+  "character-counter": Type,
+  "password-generator": Shield,
+  "text-case-converter": RotateCcw,
+  "lorem-ipsum-generator": BookOpen,
+  "text-diff": Eye,
+  "text-formatter": Edit3,
+  "duplicate-line-remover": Filter,
+  "text-encoder": Hash,
+  "binary-converter": Hash,
 };
 
 // Tool statistics (would come from analytics in real app)
 const TOOL_STATS = {
-  'word-counter': { users: '89K', usage: '+34%', rating: 4.9 },
-  'character-counter': { users: '76K', usage: '+28%', rating: 4.8 },
-  'password-generator': { users: '156K', usage: '+45%', rating: 4.9 },
-  'text-case-converter': { users: '45K', usage: '+19%', rating: 4.7 },
-  'lorem-ipsum-generator': { users: '38K', usage: '+22%', rating: 4.6 },
-  'text-diff': { users: '29K', usage: '+15%', rating: 4.8 },
-  'text-formatter': { users: '34K', usage: '+18%', rating: 4.7 },
-  'duplicate-line-remover': { users: '52K', usage: '+31%', rating: 4.8 }
+  "word-counter": { users: "89K", usage: "+34%", rating: 4.9 },
+  "character-counter": { users: "76K", usage: "+28%", rating: 4.8 },
+  "password-generator": { users: "156K", usage: "+45%", rating: 4.9 },
+  "text-case-converter": { users: "45K", usage: "+19%", rating: 4.7 },
+  "lorem-ipsum-generator": { users: "38K", usage: "+22%", rating: 4.6 },
+  "text-diff": { users: "29K", usage: "+15%", rating: 4.8 },
+  "text-formatter": { users: "34K", usage: "+18%", rating: 4.7 },
+  "duplicate-line-remover": { users: "52K", usage: "+31%", rating: 4.8 },
 };
 
-export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+export default function TextToolsHub({
+  tools = [],
+  faqs = [],
+  tutorials = [],
+}) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const categories = [
-    { id: 'all', name: 'All Tools', icon: Type },
-    { id: 'counter', name: 'Counters', icon: FileText },
-    { id: 'generator', name: 'Generators', icon: Shuffle },
-    { id: 'converter', name: 'Converters', icon: RotateCcw },
-    { id: 'formatter', name: 'Formatters', icon: Edit3 }
+    { id: "all", name: "All Tools", icon: Type },
+    { id: "counter", name: "Counters", icon: FileText },
+    { id: "generator", name: "Generators", icon: Shuffle },
+    { id: "converter", name: "Converters", icon: RotateCcw },
+    { id: "formatter", name: "Formatters", icon: Edit3 },
   ];
 
-  const filteredTools = tools.filter(tool => {
-    const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         tool.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
+  const filteredTools = tools.filter((tool) => {
+    const matchesSearch =
+      tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "all" || tool.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
-  const popularTools = tools.filter(tool => tool.popular).slice(0, 6);
+  const popularTools = tools.filter((tool) => tool.popular).slice(0, 6);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-blue-50/20 to-background dark:via-blue-950/10">
@@ -85,30 +91,49 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
             <Type className="h-4 w-4" />
             Professional Text Processing Tools
           </div>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-muted/20 bg-clip-text text-transparent">
             Free Text Tools
           </h1>
-          
+
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Professional text tools for writers, students & developers. Word counter, character counter, 
-            password generator, text formatter & more. Free, fast, secure - no signup required.
+            Professional text tools for writers, students & developers. Word
+            counter, character counter, password generator, text formatter &
+            more. Free, fast, secure - no signup required.
           </p>
 
           {/* Key Benefits */}
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
             {[
-              { icon: Zap, title: 'Instant Results', desc: 'Real-time processing' },
-              { icon: Shield, title: 'Privacy First', desc: 'Local processing only' },
-              { icon: Users, title: '200K+ Writers', desc: 'Trusted by professionals' },
-              { icon: CheckCircle2, title: 'Always Free', desc: 'No limits or registration' }
+              {
+                icon: Zap,
+                title: "Instant Results",
+                desc: "Real-time processing",
+              },
+              {
+                icon: Shield,
+                title: "Privacy First",
+                desc: "Local processing only",
+              },
+              {
+                icon: Users,
+                title: "200K+ Writers",
+                desc: "Trusted by professionals",
+              },
+              {
+                icon: CheckCircle2,
+                title: "Always Free",
+                desc: "No limits or registration",
+              },
             ].map((benefit, index) => {
               const Icon = benefit.icon;
               return (
                 <div key={index} className="text-center">
                   <Icon className="h-8 w-8 mx-auto mb-2 text-primary" />
                   <h3 className="font-semibold mb-1">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.desc}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {benefit.desc}
+                  </p>
                 </div>
               );
             })}
@@ -132,42 +157,56 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Most Popular Text Tools</h2>
-            <p className="text-muted-foreground">The essential tools for writers, students, and professionals</p>
+            <p className="text-muted-foreground">
+              The essential tools for writers, students, and professionals
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {popularTools.map((tool, index) => {
               const Icon = TOOL_ICONS[tool.id] || Type;
-              const stats = TOOL_STATS[tool.id] || { users: '0', usage: '0%', rating: 4.0 };
-              
+              const stats = TOOL_STATS[tool.id] || {
+                users: "0",
+                usage: "0%",
+                rating: 4.0,
+              };
+
               return (
-                <Card key={tool.id} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-border dark:hover:border-border">
+                <Card
+                  key={tool.id}
+                  className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-border dark:hover:border-border"
+                >
                   <CardHeader className="pb-3">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
                         <div className="p-2 bg-background/30 dark:to-indigo-900/30 rounded-lg group-hover:scale-110 transition-transform">
                           <Icon className="h-5 w-5 text-primary dark:text-primary" />
                         </div>
-                        <Badge variant="secondary" className="text-xs bg-muted text-primary dark:bg-primary/30 dark:text-blue-300">
+                        <Badge
+                          variant="secondary"
+                          className="text-xs bg-muted text-primary dark:bg-primary/30 dark:text-blue-300"
+                        >
                           #{index + 1} Popular
                         </Badge>
                       </div>
                       <div className="flex items-center gap-1">
                         <Star className="h-4 w-4 text-primary fill-current" />
-                        <span className="text-sm font-medium">{stats.rating}</span>
+                        <span className="text-sm font-medium">
+                          {stats.rating}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <CardTitle className="text-lg group-hover:text-primary transition-colors">
                       {tool.name}
                     </CardTitle>
                   </CardHeader>
-                  
+
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                       {tool.description}
                     </p>
-                    
+
                     <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
                       <div className="flex items-center gap-1">
                         <Users className="h-3 w-3" />
@@ -202,12 +241,14 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
               return (
                 <Button
                   key={category.id}
-                  variant={selectedCategory === category.id ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category.id ? "default" : "outline"
+                  }
                   onClick={() => setSelectedCategory(category.id)}
                   className={`flex items-center gap-2 ${
-                    selectedCategory === category.id 
-                      ? 'bg-background' 
-                      : 'border-border hover:border-border'
+                    selectedCategory === category.id
+                      ? "bg-background"
+                      : "border-border hover:border-border"
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -222,26 +263,32 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
             {filteredTools.map((tool) => {
               const Icon = TOOL_ICONS[tool.id] || Type;
               const stats = TOOL_STATS[tool.id];
-              
+
               return (
-                <Card key={tool.id} className="group hover:shadow-lg transition-all duration-300 hover:border-border dark:hover:border-border">
+                <Card
+                  key={tool.id}
+                  className="group hover:shadow-lg transition-all duration-300 hover:border-border dark:hover:border-border"
+                >
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2 mb-2">
                       <Icon className="h-5 w-5 text-primary dark:text-primary" />
                       {tool.popular && (
-                        <Badge variant="secondary" className="text-xs bg-background/30 dark:to-indigo-900/30 dark:text-blue-300">
+                        <Badge
+                          variant="secondary"
+                          className="text-xs bg-background/30 dark:to-indigo-900/30 dark:text-blue-300"
+                        >
                           Popular
                         </Badge>
                       )}
                     </div>
                     <CardTitle className="text-lg">{tool.name}</CardTitle>
                   </CardHeader>
-                  
+
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                       {tool.description}
                     </p>
-                    
+
                     {stats && (
                       <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
                         <span>{stats.users} users</span>
@@ -249,10 +296,13 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
                       </div>
                     )}
 
-                    <Button asChild className="w-full" size="sm" variant="outline">
-                      <Link href={tool.route}>
-                        Open Tool
-                      </Link>
+                    <Button
+                      asChild
+                      className="w-full"
+                      size="sm"
+                      variant="outline"
+                    >
+                      <Link href={tool.route}>Open Tool</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -276,40 +326,49 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
       <section className="py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Our Text Tools</h2>
+            <h2 className="text-3xl font-bold mb-4">
+              Why Choose Our Text Tools
+            </h2>
             <p className="text-muted-foreground max-w-3xl mx-auto">
-              Professional-grade text processing tools designed for writers, students, developers, and content creators. 
-              Trusted by 200,000+ users worldwide for reliable, fast, and secure text processing.
+              Professional-grade text processing tools designed for writers,
+              students, developers, and content creators. Trusted by 200,000+
+              users worldwide for reliable, fast, and secure text processing.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: 'Privacy Focused',
-                description: 'All text processing happens locally in your browser. Your data never leaves your device.',
-                icon: '🔒'
+                title: "Privacy Focused",
+                description:
+                  "All text processing happens locally in your browser. Your data never leaves your device.",
+                icon: "🔒",
               },
               {
-                title: 'Lightning Fast',
-                description: 'Real-time processing with instant results. No waiting, no delays, no server uploads.',
-                icon: '⚡'
+                title: "Lightning Fast",
+                description:
+                  "Real-time processing with instant results. No waiting, no delays, no server uploads.",
+                icon: "⚡",
               },
               {
-                title: 'Professional Grade',
-                description: 'Accurate algorithms used by writers, students, and professionals worldwide.',
-                icon: '💼'
+                title: "Professional Grade",
+                description:
+                  "Accurate algorithms used by writers, students, and professionals worldwide.",
+                icon: "💼",
               },
               {
-                title: 'Always Available',
-                description: 'Works offline once loaded. No internet required for most text processing tasks.',
-                icon: '🌐'
-              }
+                title: "Always Available",
+                description:
+                  "Works offline once loaded. No internet required for most text processing tasks.",
+                icon: "🌐",
+              },
             ].map((feature, index) => (
               <div key={index} className="text-center">
                 <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-                <p className="text-sm text-muted-foreground">{feature.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -319,21 +378,27 @@ export default function TextToolsHub({ tools = [], faqs = [], tutorials = [] }) 
       {/* Usage Statistics */}
       <section className="py-12 px-4 bg-gradient-to-r from-blue-600/5 to-indigo-600/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-8">Trusted by Writers & Professionals Worldwide</h2>
-          
+          <h2 className="text-2xl font-bold mb-8">
+            Trusted by Writers & Professionals Worldwide
+          </h2>
+
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { value: '200K+', label: 'Active Users', icon: Users },
-              { value: '5M+', label: 'Text Processed', icon: FileText },
-              { value: '120+', label: 'Countries', icon: TrendingUp },
-              { value: '99.9%', label: 'Uptime', icon: Clock }
+              { value: "200K+", label: "Active Users", icon: Users },
+              { value: "5M+", label: "Text Processed", icon: FileText },
+              { value: "120+", label: "Countries", icon: TrendingUp },
+              { value: "99.9%", label: "Uptime", icon: Clock },
             ].map((stat, index) => {
               const Icon = stat.icon;
               return (
                 <div key={index} className="text-center">
                   <Icon className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <div className="text-3xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-3xl font-bold text-foreground">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
               );
             })}
@@ -360,9 +425,13 @@ export function TextToolFeatures({ tool, features = [] }) {
             <div key={index} className="flex items-start gap-3">
               <div className="flex-shrink-0 w-2 h-2 bg-muted/500 rounded-full mt-2" />
               <div>
-                <h4 className="font-medium text-sm">{feature.title || feature}</h4>
+                <h4 className="font-medium text-sm">
+                  {feature.title || feature}
+                </h4>
                 {feature.description && (
-                  <p className="text-xs text-muted-foreground mt-1">{feature.description}</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {feature.description}
+                  </p>
                 )}
               </div>
             </div>
@@ -394,32 +463,36 @@ export function TextToolExamples({ tool, examples = [] }) {
                 variant={activeExample === index ? "default" : "outline"}
                 size="sm"
                 onClick={() => setActiveExample(index)}
-                className={activeExample === index ? 'bg-background' : ''}
+                className={activeExample === index ? "bg-background" : ""}
               >
                 {example.title}
               </Button>
             ))}
           </div>
-          
+
           {examples[activeExample] && (
             <div className="space-y-3">
               <h4 className="font-medium">{examples[activeExample].title}</h4>
               <p className="text-sm text-muted-foreground">
                 {examples[activeExample].description}
               </p>
-              
+
               {examples[activeExample].input && (
                 <div>
-                  <label className="text-xs font-medium text-muted-foreground">Input:</label>
+                  <label className="text-xs font-medium text-muted-foreground">
+                    Input:
+                  </label>
                   <div className="mt-1 p-3 bg-muted rounded-lg font-mono text-sm">
                     {examples[activeExample].input}
                   </div>
                 </div>
               )}
-              
+
               {examples[activeExample].output && (
                 <div>
-                  <label className="text-xs font-medium text-muted-foreground">Output:</label>
+                  <label className="text-xs font-medium text-muted-foreground">
+                    Output:
+                  </label>
                   <div className="mt-1 p-3 bg-background/20 dark:to-indigo-950/20 rounded-lg text-sm">
                     {examples[activeExample].output}
                   </div>

@@ -1,82 +1,91 @@
-'use client';
+"use client";
 
-import React, { useState, useCallback } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  Type, 
-  Download, 
-  Upload, 
-  XCircle, 
+import React, { useState, useCallback } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  Type,
+  Download,
+  Upload,
+  XCircle,
   Clock,
   Info,
   Search,
   AlertTriangle,
   Eye,
   Edit3,
-  Zap
-} from 'lucide-react';
+  Zap,
+} from "lucide-react";
 
 export default function TitleRewriteChecker() {
-  const [urls, setUrls] = useState('');
+  const [urls, setUrls] = useState("");
   const [results, setResults] = useState([]);
   const [isChecking, setIsChecking] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   // Simulate title rewrite checking (in real implementation, this would check actual SERPs)
   const simulateTitleCheck = useCallback(async (url) => {
     // Simulate API delay
-    await new Promise(resolve => setTimeout(resolve, 400 + Math.random() * 800));
-    
+    await new Promise((resolve) =>
+      setTimeout(resolve, 400 + Math.random() * 800),
+    );
+
     // Generate realistic title scenarios
     const originalTitles = [
-      'Best SEO Tools for 2024 | Complete Guide',
-      'How to Optimize Your Website for Search Engines',
-      'Digital Marketing Services - Agency Name',
-      'Product Name - Features, Reviews & Pricing',
-      'Blog Post Title - Learn Everything About Topic'
+      "Best SEO Tools for 2024 | Complete Guide",
+      "How to Optimize Your Website for Search Engines",
+      "Digital Marketing Services - Agency Name",
+      "Product Name - Features, Reviews & Pricing",
+      "Blog Post Title - Learn Everything About Topic",
     ];
-    
-    const originalTitle = originalTitles[Math.floor(Math.random() * originalTitles.length)];
-    
+
+    const originalTitle =
+      originalTitles[Math.floor(Math.random() * originalTitles.length)];
+
     // Simulate different rewrite scenarios
     const scenarios = [
-      { 
-        rewritten: false, 
+      {
+        rewritten: false,
         serpTitle: originalTitle,
-        reason: null 
+        reason: null,
       },
-      { 
-        rewritten: true, 
-        serpTitle: originalTitle.substring(0, 60) + '...',
-        reason: 'Title too long (truncated)' 
+      {
+        rewritten: true,
+        serpTitle: originalTitle.substring(0, 60) + "...",
+        reason: "Title too long (truncated)",
       },
-      { 
-        rewritten: true, 
-        serpTitle: originalTitle.replace(/\|.*$/, '- Company'),
-        reason: 'Brand name replaced' 
+      {
+        rewritten: true,
+        serpTitle: originalTitle.replace(/\|.*$/, "- Company"),
+        reason: "Brand name replaced",
       },
-      { 
-        rewritten: true, 
-        serpTitle: originalTitle.replace(/^\w+\s/, 'Top '),
-        reason: 'Google added qualifier' 
+      {
+        rewritten: true,
+        serpTitle: originalTitle.replace(/^\w+\s/, "Top "),
+        reason: "Google added qualifier",
       },
-      { 
-        rewritten: true, 
-        serpTitle: originalTitle + ' - 2024',
-        reason: 'Google added current year' 
-      }
+      {
+        rewritten: true,
+        serpTitle: originalTitle + " - 2024",
+        reason: "Google added current year",
+      },
     ];
-    
+
     const result = scenarios[Math.floor(Math.random() * scenarios.length)];
-    
+
     return {
       url,
       originalTitle,
@@ -85,37 +94,42 @@ export default function TitleRewriteChecker() {
       reason: result.reason,
       originalLength: originalTitle.length,
       serpLength: result.serpTitle.length,
-      metaDescription: 'This is a sample meta description that describes the content of the page...',
-      h1: originalTitle.split(' | ')[0] || originalTitle.split(' - ')[0],
-      position: Math.floor(Math.random() * 10) + 1
+      metaDescription:
+        "This is a sample meta description that describes the content of the page...",
+      h1: originalTitle.split(" | ")[0] || originalTitle.split(" - ")[0],
+      position: Math.floor(Math.random() * 10) + 1,
     };
   }, []);
 
   const checkTitleRewrites = async () => {
     if (!urls.trim()) {
-      setError('Please enter at least one URL');
+      setError("Please enter at least one URL");
       return;
     }
 
     setIsChecking(true);
-    setError('');
+    setError("");
     setProgress(0);
     setResults([]);
 
-    const urlList = urls.split('\n')
-      .map(url => url.trim())
-      .filter(url => url && (url.startsWith('http://') || url.startsWith('https://')))
+    const urlList = urls
+      .split("\n")
+      .map((url) => url.trim())
+      .filter(
+        (url) =>
+          url && (url.startsWith("http://") || url.startsWith("https://")),
+      )
       .slice(0, 100);
-    
+
     if (urlList.length === 0) {
-      setError('Please enter valid URLs (must start with http:// or https://)');
+      setError("Please enter valid URLs (must start with http:// or https://)");
       setIsChecking(false);
       return;
     }
 
     try {
       const newResults = [];
-      
+
       for (let i = 0; i < urlList.length; i++) {
         const url = urlList[i];
         const result = await simulateTitleCheck(url);
@@ -124,7 +138,7 @@ export default function TitleRewriteChecker() {
         setProgress(((i + 1) / urlList.length) * 100);
       }
     } catch (err) {
-      setError('An error occurred while checking title rewrites');
+      setError("An error occurred while checking title rewrites");
     } finally {
       setIsChecking(false);
     }
@@ -134,24 +148,35 @@ export default function TitleRewriteChecker() {
     if (results.length === 0) return;
 
     const csvContent = [
-      ['URL', 'Original Title', 'SERP Title', 'Rewritten', 'Reason', 'Original Length', 'SERP Length', 'Position'].join(','),
-      ...results.map(r => [
-        `"${r.url}"`,
-        `"${r.originalTitle}"`,
-        `"${r.serpTitle}"`,
-        r.rewritten ? 'Yes' : 'No',
-        `"${r.reason || ''}"`,
-        r.originalLength,
-        r.serpLength,
-        r.position
-      ].join(','))
-    ].join('\n');
+      [
+        "URL",
+        "Original Title",
+        "SERP Title",
+        "Rewritten",
+        "Reason",
+        "Original Length",
+        "SERP Length",
+        "Position",
+      ].join(","),
+      ...results.map((r) =>
+        [
+          `"${r.url}"`,
+          `"${r.originalTitle}"`,
+          `"${r.serpTitle}"`,
+          r.rewritten ? "Yes" : "No",
+          `"${r.reason || ""}"`,
+          r.originalLength,
+          r.serpLength,
+          r.position,
+        ].join(","),
+      ),
+    ].join("\n");
 
-    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const blob = new Blob([csvContent], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `title-rewrite-analysis-${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `title-rewrite-analysis-${new Date().toISOString().split("T")[0]}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -188,31 +213,31 @@ export default function TitleRewriteChecker() {
 
   const stats = {
     total: results.length,
-    rewritten: results.filter(r => r.rewritten).length,
-    original: results.filter(r => !r.rewritten).length,
-    tooLong: results.filter(r => r.originalLength > 60).length
+    rewritten: results.filter((r) => r.rewritten).length,
+    original: results.filter((r) => !r.rewritten).length,
+    tooLong: results.filter((r) => r.originalLength > 60).length,
   };
 
   const getOptimizationSuggestion = (result) => {
     const suggestions = [];
-    
+
     if (result.originalLength > 60) {
-      suggestions.push('Shorten title to under 60 characters');
+      suggestions.push("Shorten title to under 60 characters");
     }
-    
-    if (result.rewritten && result.reason?.includes('truncated')) {
-      suggestions.push('Title was truncated - make it shorter');
+
+    if (result.rewritten && result.reason?.includes("truncated")) {
+      suggestions.push("Title was truncated - make it shorter");
     }
-    
-    if (result.rewritten && result.reason?.includes('Brand name replaced')) {
-      suggestions.push('Consider placing brand name at the end');
+
+    if (result.rewritten && result.reason?.includes("Brand name replaced")) {
+      suggestions.push("Consider placing brand name at the end");
     }
-    
+
     if (!result.originalTitle.includes(result.h1)) {
-      suggestions.push('Ensure title matches H1 tag');
+      suggestions.push("Ensure title matches H1 tag");
     }
-    
-    return suggestions.length > 0 ? suggestions[0] : 'Title looks good!';
+
+    return suggestions.length > 0 ? suggestions[0] : "Title looks good!";
   };
 
   return (
@@ -222,9 +247,12 @@ export default function TitleRewriteChecker() {
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
           <Type className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-foreground">Title Rewrite Checker</h1>
+        <h1 className="text-4xl font-bold text-foreground">
+          Title Rewrite Checker
+        </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Check if Google rewrites your page titles in search results. Compare your original titles with what Google displays in SERPs.
+          Check if Google rewrites your page titles in search results. Compare
+          your original titles with what Google displays in SERPs.
         </p>
       </div>
 
@@ -237,11 +265,12 @@ export default function TitleRewriteChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Understand how your titles appear in search results and optimize for better click-through rates.
+              Understand how your titles appear in search results and optimize
+              for better click-through rates.
             </p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="text-center pb-3">
             <Edit3 className="h-8 w-8 text-primary mx-auto mb-2" />
@@ -249,11 +278,12 @@ export default function TitleRewriteChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Identify titles that Google rewrites and optimize them to maintain control over your messaging.
+              Identify titles that Google rewrites and optimize them to maintain
+              control over your messaging.
             </p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="text-center pb-3">
             <Zap className="h-8 w-8 text-primary mx-auto mb-2" />
@@ -261,7 +291,8 @@ export default function TitleRewriteChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Check up to 100 URLs at once and get detailed reports on title rewrite patterns across your site.
+              Check up to 100 URLs at once and get detailed reports on title
+              rewrite patterns across your site.
             </p>
           </CardContent>
         </Card>
@@ -272,7 +303,8 @@ export default function TitleRewriteChecker() {
         <CardHeader>
           <CardTitle>Check Title Rewrites</CardTitle>
           <CardDescription>
-            Enter URLs to check if Google rewrites their titles in search results. You can check up to 100 URLs at once.
+            Enter URLs to check if Google rewrites their titles in search
+            results. You can check up to 100 URLs at once.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -289,13 +321,23 @@ export default function TitleRewriteChecker() {
             />
             <div className="flex justify-between items-center">
               <p className="text-sm text-muted-foreground">
-                {urls.split('\n').filter(url => url.trim() && (url.startsWith('http://') || url.startsWith('https://'))).length} valid URLs entered (max 100)
+                {
+                  urls
+                    .split("\n")
+                    .filter(
+                      (url) =>
+                        url.trim() &&
+                        (url.startsWith("http://") ||
+                          url.startsWith("https://")),
+                    ).length
+                }{" "}
+                valid URLs entered (max 100)
               </p>
               <Button
                 type="button"
                 variant="outline"
                 size="sm"
-                onClick={() => document.getElementById('file-upload').click()}
+                onClick={() => document.getElementById("file-upload").click()}
                 disabled={isChecking}
               >
                 <Upload className="mr-2 h-4 w-4" />
@@ -319,8 +361,8 @@ export default function TitleRewriteChecker() {
           )}
 
           <div className="flex gap-4">
-            <Button 
-              onClick={checkTitleRewrites} 
+            <Button
+              onClick={checkTitleRewrites}
               disabled={isChecking}
               className="flex-1"
             >
@@ -336,7 +378,7 @@ export default function TitleRewriteChecker() {
                 </>
               )}
             </Button>
-            
+
             {results.length > 0 && (
               <Button onClick={exportResults} variant="outline">
                 <Download className="mr-2 h-4 w-4" />
@@ -362,25 +404,33 @@ export default function TitleRewriteChecker() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.total}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.total}
+              </div>
               <div className="text-sm text-muted-foreground">Total URLs</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-destructive">{stats.rewritten}</div>
+              <div className="text-2xl font-bold text-destructive">
+                {stats.rewritten}
+              </div>
               <div className="text-sm text-muted-foreground">Rewritten</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.original}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.original}
+              </div>
               <div className="text-sm text-muted-foreground">Original</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.tooLong}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.tooLong}
+              </div>
               <div className="text-sm text-muted-foreground">Too Long</div>
             </CardContent>
           </Card>
@@ -393,7 +443,8 @@ export default function TitleRewriteChecker() {
           <CardHeader>
             <CardTitle>Title Rewrite Analysis</CardTitle>
             <CardDescription>
-              Comparison of original titles vs. how they appear in Google search results
+              Comparison of original titles vs. how they appear in Google search
+              results
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -402,7 +453,9 @@ export default function TitleRewriteChecker() {
                 <thead>
                   <tr className="border-b">
                     <th className="text-left p-3 font-medium">URL</th>
-                    <th className="text-left p-3 font-medium">Original Title</th>
+                    <th className="text-left p-3 font-medium">
+                      Original Title
+                    </th>
                     <th className="text-left p-3 font-medium">SERP Title</th>
                     <th className="text-left p-3 font-medium">Status</th>
                     <th className="text-left p-3 font-medium">Length</th>
@@ -413,8 +466,12 @@ export default function TitleRewriteChecker() {
                   {results.map((result, index) => (
                     <tr key={index} className="border-b hover:bg-gray-50">
                       <td className="p-3">
-                        <a href={result.url} target="_blank" rel="noopener noreferrer" 
-                           className="text-primary hover:underline text-sm max-w-xs truncate block">
+                        <a
+                          href={result.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-sm max-w-xs truncate block"
+                        >
                           {result.url}
                         </a>
                       </td>
@@ -438,9 +495,13 @@ export default function TitleRewriteChecker() {
                       </td>
                       <td className="p-3">
                         <div className="space-y-1">
-                          <div className="text-xs text-muted-foreground">Original:</div>
+                          <div className="text-xs text-muted-foreground">
+                            Original:
+                          </div>
                           {getTitleLengthStatus(result.originalLength)}
-                          <div className="text-xs text-muted-foreground">SERP:</div>
+                          <div className="text-xs text-muted-foreground">
+                            SERP:
+                          </div>
                           {getTitleLengthStatus(result.serpLength)}
                         </div>
                       </td>

@@ -1,54 +1,71 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Separator } from '@/components/ui/separator';
-import { ArrowLeftIcon, CopyIcon, RefreshCwIcon, Key, CheckCircleIcon, AlertTriangleIcon } from 'lucide-react';
-import Link from 'next/link';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Separator } from "@/components/ui/separator";
+import {
+  ArrowLeftIcon,
+  CopyIcon,
+  RefreshCwIcon,
+  Key,
+  CheckCircleIcon,
+  AlertTriangleIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { toast } from "sonner";
 
 export default function JWTDecoder() {
-  const [jwtToken, setJwtToken] = useState('');
-  const [header, setHeader] = useState('');
-  const [payload, setPayload] = useState('');
-  const [signature, setSignature] = useState('');
+  const [jwtToken, setJwtToken] = useState("");
+  const [header, setHeader] = useState("");
+  const [payload, setPayload] = useState("");
+  const [signature, setSignature] = useState("");
   const [isValid, setIsValid] = useState(null);
-  const [copied, setCopied] = useState('');
+  const [copied, setCopied] = useState("");
 
   const decodeJWT = () => {
     try {
       if (!jwtToken.trim()) {
-        toast.error('Please enter a JWT token');
+        toast.error("Please enter a JWT token");
         return;
       }
 
-      const parts = jwtToken.split('.');
+      const parts = jwtToken.split(".");
       if (parts.length !== 3) {
-        throw new Error('Invalid JWT format');
+        throw new Error("Invalid JWT format");
       }
 
       // Decode header
-      const decodedHeader = JSON.parse(atob(parts[0].replace(/-/g, '+').replace(/_/g, '/')));
+      const decodedHeader = JSON.parse(
+        atob(parts[0].replace(/-/g, "+").replace(/_/g, "/")),
+      );
       setHeader(JSON.stringify(decodedHeader, null, 2));
 
       // Decode payload
-      const decodedPayload = JSON.parse(atob(parts[1].replace(/-/g, '+').replace(/_/g, '/')));
+      const decodedPayload = JSON.parse(
+        atob(parts[1].replace(/-/g, "+").replace(/_/g, "/")),
+      );
       setPayload(JSON.stringify(decodedPayload, null, 2));
 
       // Set signature
       setSignature(parts[2]);
       setIsValid(true);
 
-      toast.success('JWT decoded successfully!');
+      toast.success("JWT decoded successfully!");
     } catch (error) {
-      toast.error('Invalid JWT token format');
-      setHeader('');
-      setPayload('');
-      setSignature('');
+      toast.error("Invalid JWT token format");
+      setHeader("");
+      setPayload("");
+      setSignature("");
       setIsValid(false);
     }
   };
@@ -58,21 +75,22 @@ export default function JWTDecoder() {
       await navigator.clipboard.writeText(text);
       setCopied(type);
       toast.success(`${type} copied to clipboard!`);
-      setTimeout(() => setCopied(''), 2000);
+      setTimeout(() => setCopied(""), 2000);
     } catch (err) {
-      toast.error('Failed to copy to clipboard');
+      toast.error("Failed to copy to clipboard");
     }
   };
 
   const clearAll = () => {
-    setJwtToken('');
-    setHeader('');
-    setPayload('');
-    setSignature('');
+    setJwtToken("");
+    setHeader("");
+    setPayload("");
+    setSignature("");
     setIsValid(null);
   };
 
-  const sampleJWT = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
+  const sampleJWT =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
   return (
     <div className="min-h-screen bg-background">
@@ -91,7 +109,9 @@ export default function JWTDecoder() {
             </div>
             <div>
               <h1 className="text-3xl font-bold">JWT Decoder</h1>
-              <p className="text-muted-foreground">Decode and analyze JSON Web Tokens</p>
+              <p className="text-muted-foreground">
+                Decode and analyze JSON Web Tokens
+              </p>
             </div>
           </div>
 
@@ -128,7 +148,10 @@ export default function JWTDecoder() {
                   <Button onClick={decodeJWT} className="flex-1">
                     Decode JWT
                   </Button>
-                  <Button onClick={() => setJwtToken(sampleJWT)} variant="outline">
+                  <Button
+                    onClick={() => setJwtToken(sampleJWT)}
+                    variant="outline"
+                  >
                     Load Sample
                   </Button>
                   <Button onClick={clearAll} variant="outline">
@@ -138,14 +161,18 @@ export default function JWTDecoder() {
                 </div>
 
                 {isValid !== null && (
-                  <div className={`flex items-center gap-2 p-3 rounded-lg ${isValid ? 'bg-muted/50 dark:bg-green-950' : 'bg-destructive/10 dark:bg-red-950'}`}>
+                  <div
+                    className={`flex items-center gap-2 p-3 rounded-lg ${isValid ? "bg-muted/50 dark:bg-green-950" : "bg-destructive/10 dark:bg-red-950"}`}
+                  >
                     {isValid ? (
                       <CheckCircleIcon className="h-5 w-5 text-primary" />
                     ) : (
                       <AlertTriangleIcon className="h-5 w-5 text-destructive" />
                     )}
-                    <span className={`text-sm font-medium ${isValid ? 'text-foreground dark:text-green-200' : 'text-destructive dark:text-red-200'}`}>
-                      {isValid ? 'Valid JWT Format' : 'Invalid JWT Format'}
+                    <span
+                      className={`text-sm font-medium ${isValid ? "text-foreground dark:text-green-200" : "text-destructive dark:text-red-200"}`}
+                    >
+                      {isValid ? "Valid JWT Format" : "Invalid JWT Format"}
                     </span>
                   </div>
                 )}
@@ -157,7 +184,9 @@ export default function JWTDecoder() {
             <Card>
               <CardHeader>
                 <CardTitle>Decoded Header</CardTitle>
-                <CardDescription>JWT header contains algorithm and token type</CardDescription>
+                <CardDescription>
+                  JWT header contains algorithm and token type
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Textarea
@@ -167,13 +196,13 @@ export default function JWTDecoder() {
                   className="min-h-[100px] font-mono text-sm bg-muted"
                 />
                 <Button
-                  onClick={() => copyToClipboard(header, 'Header')}
+                  onClick={() => copyToClipboard(header, "Header")}
                   disabled={!header}
                   variant="outline"
                   size="sm"
                 >
                   <CopyIcon className="h-4 w-4 mr-2" />
-                  {copied === 'Header' ? 'Copied!' : 'Copy Header'}
+                  {copied === "Header" ? "Copied!" : "Copy Header"}
                 </Button>
               </CardContent>
             </Card>
@@ -181,7 +210,9 @@ export default function JWTDecoder() {
             <Card>
               <CardHeader>
                 <CardTitle>Decoded Payload</CardTitle>
-                <CardDescription>JWT payload contains the claims and data</CardDescription>
+                <CardDescription>
+                  JWT payload contains the claims and data
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Textarea
@@ -191,13 +222,13 @@ export default function JWTDecoder() {
                   className="min-h-[150px] font-mono text-sm bg-muted"
                 />
                 <Button
-                  onClick={() => copyToClipboard(payload, 'Payload')}
+                  onClick={() => copyToClipboard(payload, "Payload")}
                   disabled={!payload}
                   variant="outline"
                   size="sm"
                 >
                   <CopyIcon className="h-4 w-4 mr-2" />
-                  {copied === 'Payload' ? 'Copied!' : 'Copy Payload'}
+                  {copied === "Payload" ? "Copied!" : "Copy Payload"}
                 </Button>
               </CardContent>
             </Card>
@@ -205,20 +236,22 @@ export default function JWTDecoder() {
             <Card>
               <CardHeader>
                 <CardTitle>Signature</CardTitle>
-                <CardDescription>JWT signature for verification</CardDescription>
+                <CardDescription>
+                  JWT signature for verification
+                </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="p-3 bg-muted rounded-lg font-mono text-sm break-all">
-                  {signature || 'Signature will appear here...'}
+                  {signature || "Signature will appear here..."}
                 </div>
                 <Button
-                  onClick={() => copyToClipboard(signature, 'Signature')}
+                  onClick={() => copyToClipboard(signature, "Signature")}
                   disabled={!signature}
                   variant="outline"
                   size="sm"
                 >
                   <CopyIcon className="h-4 w-4 mr-2" />
-                  {copied === 'Signature' ? 'Copied!' : 'Copy Signature'}
+                  {copied === "Signature" ? "Copied!" : "Copy Signature"}
                 </Button>
               </CardContent>
             </Card>
@@ -268,21 +301,24 @@ export default function JWTDecoder() {
               <div>
                 <h4 className="font-medium mb-1">Client-Side Only</h4>
                 <p className="text-sm text-muted-foreground">
-                  All JWT decoding happens in your browser. Tokens are never sent to our servers.
+                  All JWT decoding happens in your browser. Tokens are never
+                  sent to our servers.
                 </p>
               </div>
 
               <div>
                 <h4 className="font-medium mb-1">What is JWT?</h4>
                 <p className="text-sm text-muted-foreground">
-                  JSON Web Token is a compact, URL-safe means of representing claims securely between two parties.
+                  JSON Web Token is a compact, URL-safe means of representing
+                  claims securely between two parties.
                 </p>
               </div>
 
               <div>
                 <h4 className="font-medium mb-1">Verification Note</h4>
                 <p className="text-sm text-muted-foreground">
-                  This tool only decodes JWTs. Signature verification requires the secret key.
+                  This tool only decodes JWTs. Signature verification requires
+                  the secret key.
                 </p>
               </div>
             </CardContent>

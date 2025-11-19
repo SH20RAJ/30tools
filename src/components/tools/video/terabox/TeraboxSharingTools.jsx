@@ -1,26 +1,26 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  ShareIcon, 
-  CopyIcon, 
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  ShareIcon,
+  CopyIcon,
   ExternalLinkIcon,
   FacebookIcon,
   TwitterIcon,
   LinkedinIcon,
   MessageCircleIcon,
   MailIcon,
-  QrCodeIcon
-} from 'lucide-react';
-import { toast } from 'sonner';
+  QrCodeIcon,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function TeraboxSharingTools({ shareUrl, videoData }) {
-  const [qrCodeUrl, setQrCodeUrl] = useState('');
+  const [qrCodeUrl, setQrCodeUrl] = useState("");
 
   if (!shareUrl || !videoData) return null;
 
@@ -29,7 +29,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
       await navigator.clipboard.writeText(text);
       toast.success(`${type} copied to clipboard!`);
     } catch (error) {
-      toast.error('Failed to copy to clipboard');
+      toast.error("Failed to copy to clipboard");
     }
   };
 
@@ -41,17 +41,17 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
   const shareToSocial = (platform) => {
     const title = `Watch ${videoData.name} - Terabox Video Player`;
     const text = `Check out this video: ${videoData.name}`;
-    
+
     const urls = {
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`,
       twitter: `https://twitter.com/intent/tweet?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(text)}`,
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`,
-      whatsapp: `https://wa.me/?text=${encodeURIComponent(text + ' ' + shareUrl)}`,
+      whatsapp: `https://wa.me/?text=${encodeURIComponent(text + " " + shareUrl)}`,
       telegram: `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(text)}`,
-      email: `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(text + '\n\n' + shareUrl)}`
+      email: `mailto:?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(text + "\n\n" + shareUrl)}`,
     };
 
-    window.open(urls[platform], '_blank', 'noopener,noreferrer');
+    window.open(urls[platform], "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -83,7 +83,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => copyToClipboard(shareUrl, 'Share link')}
+                  onClick={() => copyToClipboard(shareUrl, "Share link")}
                 >
                   <CopyIcon className="h-4 w-4" />
                 </Button>
@@ -94,7 +94,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open(shareUrl, '_blank')}
+                onClick={() => window.open(shareUrl, "_blank")}
               >
                 <ExternalLinkIcon className="h-4 w-4 mr-2" />
                 Open Link
@@ -102,7 +102,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => copyToClipboard(shareUrl, 'URL')}
+                onClick={() => copyToClipboard(shareUrl, "URL")}
               >
                 <CopyIcon className="h-4 w-4 mr-2" />
                 Copy URL
@@ -110,7 +110,8 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
             </div>
 
             <p className="text-xs text-muted-foreground">
-              Anyone with this link can watch the video instantly without downloading any app.
+              Anyone with this link can watch the video instantly without
+              downloading any app.
             </p>
           </TabsContent>
 
@@ -119,7 +120,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => shareToSocial('facebook')}
+                onClick={() => shareToSocial("facebook")}
                 className="justify-start"
               >
                 <div className="w-4 h-4 mr-2 bg-primary rounded"></div>
@@ -128,7 +129,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => shareToSocial('twitter')}
+                onClick={() => shareToSocial("twitter")}
                 className="justify-start"
               >
                 <div className="w-4 h-4 mr-2 bg-primary rounded"></div>
@@ -137,7 +138,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => shareToSocial('linkedin')}
+                onClick={() => shareToSocial("linkedin")}
                 className="justify-start"
               >
                 <div className="w-4 h-4 mr-2 bg-primary/90 rounded"></div>
@@ -146,7 +147,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => shareToSocial('whatsapp')}
+                onClick={() => shareToSocial("whatsapp")}
                 className="justify-start"
               >
                 <div className="w-4 h-4 mr-2 bg-muted/500 rounded"></div>
@@ -155,7 +156,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => shareToSocial('telegram')}
+                onClick={() => shareToSocial("telegram")}
                 className="justify-start"
               >
                 <div className="w-4 h-4 mr-2 bg-muted/500 rounded"></div>
@@ -164,7 +165,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => shareToSocial('email')}
+                onClick={() => shareToSocial("email")}
                 className="justify-start"
               >
                 <MailIcon className="w-4 h-4 mr-2" />
@@ -196,7 +197,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
                       variant="outline"
                       size="sm"
                       onClick={() => {
-                        const link = document.createElement('a');
+                        const link = document.createElement("a");
                         link.href = qrCodeUrl;
                         link.download = `${videoData.name}-qr-code.png`;
                         link.click();
@@ -207,7 +208,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => copyToClipboard(qrCodeUrl, 'QR Code URL')}
+                      onClick={() => copyToClipboard(qrCodeUrl, "QR Code URL")}
                     >
                       <CopyIcon className="h-4 w-4 mr-2" />
                       Copy QR URL

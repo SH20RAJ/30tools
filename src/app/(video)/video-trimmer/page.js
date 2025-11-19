@@ -2,14 +2,15 @@ import VideoTrimmer from "@/components/tools/video/VideoTrimmerTool";
 
 export const metadata = {
   title: "Video Trimmer - Free Online Video Tool | High-Quality Results",
-  description: "Professional video trimmer tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+  description:
+    "Professional video trimmer tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
   keywords: [
     // Primary keywords
     "video trimmer",
     "video cutter",
     "trim video online",
     "cut video",
-    
+
     // Long-tail keywords
     "video trimmer online free no watermark",
     "professional video cutter browser",
@@ -21,7 +22,7 @@ export const metadata = {
     "frame accurate video trimmer",
     "precision video cutting online",
     "video clip trimmer free",
-    
+
     // Use cases
     "trim video for social media",
     "cut video clips for youtube",
@@ -31,7 +32,7 @@ export const metadata = {
     "shorten video length online",
     "extract video segments",
     "crop video duration",
-    
+
     // Format specific
     "mp4 video trimmer online",
     "mov video cutter free",
@@ -41,7 +42,7 @@ export const metadata = {
     "trim video without quality loss",
     "lossless video trimming",
     "high quality video cutting",
-    
+
     // Technical features
     "timeline video editor",
     "drag and drop video trimmer",
@@ -51,20 +52,20 @@ export const metadata = {
     "second precise video cutting",
     "fast video trimmer online",
     "secure video editing browser",
-    
+
     // Question-based
     "how to trim video online",
     "best free video trimmer",
     "cut video without software",
     "trim video in browser",
     "remove video segments online",
-    
+
     // Modifiers
     "unlimited video trimming",
     "professional video trimmer",
     "fast video cutting",
     "easy video trimmer",
-    "mobile video cutter"
+    "mobile video cutter",
   ].join(", "),
   authors: [{ name: "30tools Team", url: "https://30tools.com" }],
   creator: "30tools",
@@ -72,13 +73,15 @@ export const metadata = {
   category: "Video Tools",
   classification: "Video Editing Tools",
   applicationName: "Video Trimmer",
-  metadataBase: new URL('https://30tools.com'),
+  metadataBase: new URL("https://30tools.com"),
   alternates: {
-    canonical: '/video-trimmer',
+    canonical: "/video-trimmer",
   },
   openGraph: {
-    title: "Video Trimmer - Professional Online Video Cutter & Editor | 30tools",
-    description: "Trim and cut videos online with precision. Professional video trimmer with timeline editor, frame-accurate cutting, and instant preview.",
+    title:
+      "Video Trimmer - Professional Online Video Cutter & Editor | 30tools",
+    description:
+      "Trim and cut videos online with precision. Professional video trimmer with timeline editor, frame-accurate cutting, and instant preview.",
     url: "https://30tools.com/video-trimmer",
     siteName: "30tools",
     images: [
@@ -87,19 +90,20 @@ export const metadata = {
         width: 1200,
         height: 630,
         alt: "Video Trimmer - Professional Online Video Cutter & Editor",
-        type: "image/jpeg"
+        type: "image/jpeg",
       },
     ],
-    locale: 'en_US',
-    type: 'website'
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@30tools',
-    creator: '@30tools',
+    card: "summary_large_image",
+    site: "@30tools",
+    creator: "@30tools",
     title: "Video Trimmer - Professional Online Video Cutter & Editor",
-    description: "Trim and cut videos online with precision! Professional video trimmer with timeline editor & frame-accurate cutting. ✂️",
-    images: ["/og-images/video-trimmer.jpg"]
+    description:
+      "Trim and cut videos online with precision! Professional video trimmer with timeline editor & frame-accurate cutting. ✂️",
+    images: ["/og-images/video-trimmer.jpg"],
   },
   robots: {
     index: true,
@@ -109,15 +113,16 @@ export const metadata = {
       index: true,
       follow: true,
       noimageindex: false,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   other: {
-    'article:author': '30tools Team',
-    'article:section': 'Video Tools',
-    'article:tag': 'video editing, video trimming, video cutting, online editor'
+    "article:author": "30tools Team",
+    "article:section": "Video Tools",
+    "article:tag":
+      "video editing, video trimming, video cutting, online editor",
   },
 };
 
@@ -125,33 +130,34 @@ export default function VideoTrimmerPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Video Trimmer - Professional Online Video Cutter & Editor",
-    "description": "Trim and cut videos online with precision using our professional video trimmer. Features timeline editor, frame-accurate cutting, multiple format support, and instant preview capabilities.",
-    "url": "https://30tools.com/video-trimmer",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Web Browser",
-    "browserRequirements": "Requires JavaScript and modern browser",
-    "softwareVersion": "2.0",
-    "datePublished": "2024-01-01",
-    "dateModified": "2024-12-20",
-    "author": {
+    name: "Video Trimmer - Professional Online Video Cutter & Editor",
+    description:
+      "Trim and cut videos online with precision using our professional video trimmer. Features timeline editor, frame-accurate cutting, multiple format support, and instant preview capabilities.",
+    url: "https://30tools.com/video-trimmer",
+    applicationCategory: "MultimediaApplication",
+    operatingSystem: "Web Browser",
+    browserRequirements: "Requires JavaScript and modern browser",
+    softwareVersion: "2.0",
+    datePublished: "2024-01-01",
+    dateModified: "2024-12-20",
+    author: {
       "@type": "Organization",
-      "name": "30tools",
-      "url": "https://30tools.com"
+      name: "30tools",
+      url: "https://30tools.com",
     },
-    "offers": {
+    offers: {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
     },
-    "aggregateRating": {
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": "4.8",
-      "ratingCount": "3120",
-      "bestRating": "5"
+      ratingValue: "4.8",
+      ratingCount: "3120",
+      bestRating: "5",
     },
-    "featureList": [
+    featureList: [
       "Frame-accurate video trimming",
       "Timeline-based video editor",
       "Multiple video format support (MP4, MOV, WebM, AVI)",
@@ -163,49 +169,50 @@ export default function VideoTrimmerPage() {
       "No watermarks or file size limits",
       "Mobile-responsive interface",
       "Privacy-focused local processing",
-      "Professional quality output"
+      "Professional quality output",
     ],
-    "applicationSubCategory": "Video Editor",
-    "keywords": "video trimming, video cutting, video editing, online video editor"
+    applicationSubCategory: "Video Editor",
+    keywords:
+      "video trimming, video cutting, video editing, online video editor",
   };
 
   const faqJsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
+    mainEntity: [
       {
         "@type": "Question",
-        "name": "What video formats does the trimmer support?",
-        "acceptedAnswer": {
+        name: "What video formats does the trimmer support?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Our video trimmer supports all major video formats including MP4, MOV, WebM, AVI, MKV, and more. The output maintains the same format and quality as your original video."
-        },
-      },
-      {
-        "@type": "Question", 
-        "name": "Is the video trimming process lossless?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes! Our video trimmer uses advanced algorithms to cut videos without re-encoding, ensuring no quality loss during the trimming process. Your original video quality is preserved."
+          text: "Our video trimmer supports all major video formats including MP4, MOV, WebM, AVI, MKV, and more. The output maintains the same format and quality as your original video.",
         },
       },
       {
         "@type": "Question",
-        "name": "How precise can I be with the trimming?",
-        "acceptedAnswer": {
+        name: "Is the video trimming process lossless?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "Our video trimmer offers frame-accurate precision, allowing you to trim videos down to the exact frame. You can specify start and end times with millisecond precision."
+          text: "Yes! Our video trimmer uses advanced algorithms to cut videos without re-encoding, ensuring no quality loss during the trimming process. Your original video quality is preserved.",
         },
       },
       {
         "@type": "Question",
-        "name": "Are there any file size limitations?",
-        "acceptedAnswer": {
+        name: "How precise can I be with the trimming?",
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": "There are no artificial file size limits imposed by our tool. The only limitations are your device's available memory and browser capabilities, typically supporting videos up to several GB."
+          text: "Our video trimmer offers frame-accurate precision, allowing you to trim videos down to the exact frame. You can specify start and end times with millisecond precision.",
         },
       },
-    ]
+      {
+        "@type": "Question",
+        name: "Are there any file size limitations?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "There are no artificial file size limits imposed by our tool. The only limitations are your device's available memory and browser capabilities, typically supporting videos up to several GB.",
+        },
+      },
+    ],
   };
 
   return (

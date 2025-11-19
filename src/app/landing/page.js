@@ -1,9 +1,7 @@
-
-
-
 export const metadata = {
   title: "Landing - Free Online Tool | Professional Results",
-  description: "Professional landing with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description:
+    "Professional landing with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: [
     "landing",
     "landing online",
@@ -17,11 +15,12 @@ export const metadata = {
     "landing utility",
     "online tool",
     "free utility",
-    "web application"
+    "web application",
   ].join(", "),
   openGraph: {
     title: "Landing - Free Online Tool | Professional Results",
-    description: "Professional landing tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional landing tool. Free online processing with high-quality results. No registration required, instant results.",
     url: "https://30tools.com/landing",
     siteName: "30tools",
     images: [
@@ -29,20 +28,21 @@ export const metadata = {
         url: "/og-images/landing.jpg",
         width: 1200,
         height: 630,
-        alt: "Landing - Free Online Tool | Professional Results"
+        alt: "Landing - Free Online Tool | Professional Results",
       },
     ],
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Landing - Free Online Tool | Professional Results",
-    description: "Professional landing tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional landing tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/landing.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
   alternates: {
-    canonical: "https://30tools.com/landing"
+    canonical: "https://30tools.com/landing",
   },
   robots: {
     index: true,
@@ -50,51 +50,58 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  category: 'General Tools',
+  category: "General Tools",
   other: {
-    'application-name': '30tools',
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'Landing - 30tools',
-    'format-detection': 'telephone=no',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-    'theme-color': '#000000'
+    "application-name": "30tools",
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "Landing - 30tools",
+    "format-detection": "telephone=no",
+    "msapplication-TileColor": "#000000",
+    "msapplication-config": "/browserconfig.xml",
+    "theme-color": "#000000",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Landing",
-  "description": "Professional landing tool. Free online processing with high-quality results. No registration required, instant results.",
-  "url": "https://30tools.com/landing",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "Landing",
+  description:
+    "Professional landing tool. Free online processing with high-quality results. No registration required, instant results.",
+  url: "https://30tools.com/landing",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "author": {
+  author: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/theme-toggle";
 import Link from "next/link";
-import toolsData from '@/constants/tools.json';
+import toolsData from "@/constants/tools.json";
 import {
   ImageIcon,
   VideoIcon,
@@ -114,8 +121,8 @@ import {
   BracesIcon,
   TypeIcon,
   SettingsIcon,
-  RefreshCwIcon
-} from 'lucide-react';
+  RefreshCwIcon,
+} from "lucide-react";
 import { UserButton } from "@stackframe/stack";
 
 export default function LandingPage() {
@@ -132,31 +139,38 @@ export default function LandingPage() {
     BracesIcon,
     TypeIcon,
     SettingsIcon,
-    RefreshCwIcon
+    RefreshCwIcon,
   };
 
-  const toolCategories = Object.entries(toolsData.categories).map(([key, category]) => ({
-    ...category,
-    icon: iconMap[category.icon] || ImageIcon,
-    key
-  }));
+  const toolCategories = Object.entries(toolsData.categories).map(
+    ([key, category]) => ({
+      ...category,
+      icon: iconMap[category.icon] || ImageIcon,
+      key,
+    }),
+  );
 
   // Get premium tools from all categories
   const premiumTools = Object.values(toolsData.categories)
-    .flatMap(category => category.tools || [])
-    .filter(tool => tool.premium === true)
+    .flatMap((category) => category.tools || [])
+    .filter((tool) => tool.premium === true)
     .slice(0, 6); // Show first 6 premium tools
 
   // get session from stack
   const session = 1; // Replace with actual session retrieval logic
 
-  const quickSearchTags = ["image compressor", "video converter", "pdf merger", "text counter"];
+  const quickSearchTags = [
+    "image compressor",
+    "video converter",
+    "pdf merger",
+    "text counter",
+  ];
 
   const stats = [
     { icon: UsersIcon, value: "10K+", label: "Happy Users" },
     { icon: TrendingUpIcon, value: "99.9%", label: "Uptime" },
     { icon: ZapIcon, value: "75+", label: "Free Tools" },
-    { icon: StarIcon, value: "4.9", label: "User Rating" }
+    { icon: StarIcon, value: "4.9", label: "User Rating" },
   ];
 
   return (
@@ -171,7 +185,9 @@ export default function LandingPage() {
               </div>
               <div>
                 <h1 className="text-2xl font-bold">30tools</h1>
-                <p className="text-sm text-muted-foreground">Free Online Toolkit</p>
+                <p className="text-sm text-muted-foreground">
+                  Free Online Toolkit
+                </p>
               </div>
             </div>
 
@@ -232,8 +248,12 @@ export default function LandingPage() {
               {/* Badge with animation */}
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full mb-8 animate-fade-in">
                 <ZapIcon className="h-4 w-4 text-primary animate-pulse" />
-                <span className="text-sm font-medium text-primary">141+ Professional Tools</span>
-                <Badge variant="secondary" className="text-xs">Free Forever</Badge>
+                <span className="text-sm font-medium text-primary">
+                  141+ Professional Tools
+                </span>
+                <Badge variant="secondary" className="text-xs">
+                  Free Forever
+                </Badge>
               </div>
 
               {/* Main heading with enhanced animations */}
@@ -248,24 +268,35 @@ export default function LandingPage() {
 
               {/* Enhanced subheading */}
               <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-400">
-                <span className="font-semibold text-foreground">Fast, free, and privacy-focused</span> tools for all your creative and professional needs.
+                <span className="font-semibold text-foreground">
+                  Fast, free, and privacy-focused
+                </span>{" "}
+                tools for all your creative and professional needs.
                 <br className="hidden md:block" />
-                <span className="text-lg">No sign-up required – No watermarks – No limits</span>
+                <span className="text-lg">
+                  No sign-up required – No watermarks – No limits
+                </span>
               </p>
 
               {/* Feature highlights */}
               <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up delay-600">
                 <div className="flex items-center gap-2 px-4 py-2 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
                   <ShieldCheckIcon className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium text-primary dark:text-green-300">100% Private</span>
+                  <span className="text-sm font-medium text-primary dark:text-green-300">
+                    100% Private
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
                   <ZapIcon className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium text-primary dark:text-blue-300">Lightning Fast</span>
+                  <span className="text-sm font-medium text-primary dark:text-blue-300">
+                    Lightning Fast
+                  </span>
                 </div>
                 <div className="flex items-center gap-2 px-4 py-2 bg-muted/50 dark:bg-primary/20 rounded-full border border-border dark:border-border">
                   <StarIcon className="h-4 w-4 text-primary" />
-                  <span className="text-sm font-medium text-primary dark:text-purple-300">Professional Quality</span>
+                  <span className="text-sm font-medium text-primary dark:text-purple-300">
+                    Professional Quality
+                  </span>
                 </div>
               </div>
 
@@ -334,8 +365,6 @@ export default function LandingPage() {
           </div>
         </section>
 
-
-
         {/* Stats Section */}
         <section className="py-16 border-b">
           <div className="container mx-auto px-4">
@@ -348,13 +377,14 @@ export default function LandingPage() {
                     </div>
                   </div>
                   <div className="text-2xl font-bold mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
-
 
         {/* Categories Section */}
         <section className="py-16">
@@ -369,7 +399,10 @@ export default function LandingPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {toolCategories.map((category) => (
-                <Link key={category.key} href={`/search?category=${category.key}`}>
+                <Link
+                  key={category.key}
+                  href={`/search?category=${category.key}`}
+                >
                   <Card className="hover:shadow-lg transition-shadow cursor-pointer group h-full">
                     <CardHeader>
                       <div className="flex items-center space-x-3">
@@ -377,8 +410,12 @@ export default function LandingPage() {
                           <category.icon className="h-6 w-6 text-primary" />
                         </div>
                         <div>
-                          <CardTitle className="text-lg group-hover:text-primary transition-colors">{category.name}</CardTitle>
-                          <CardDescription className="group-hover:text-foreground transition-colors">{category.description}</CardDescription>
+                          <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                            {category.name}
+                          </CardTitle>
+                          <CardDescription className="group-hover:text-foreground transition-colors">
+                            {category.description}
+                          </CardDescription>
                         </div>
                       </div>
                     </CardHeader>
@@ -386,7 +423,11 @@ export default function LandingPage() {
                       <div className="space-y-3">
                         <div className="flex flex-wrap gap-1">
                           {category.tools?.slice(0, 4).map((tool, i) => (
-                            <Badge key={i} variant="outline" className="text-xs">
+                            <Badge
+                              key={i}
+                              variant="outline"
+                              className="text-xs"
+                            >
                               {tool.name}
                             </Badge>
                           ))}
@@ -401,7 +442,11 @@ export default function LandingPage() {
                           <span className="text-sm text-muted-foreground">
                             {category.tools?.length || 0} tools
                           </span>
-                          <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="group-hover:bg-primary/10"
+                          >
                             View All
                             <ArrowRightIcon className="ml-1 h-4 w-4" />
                           </Button>
@@ -434,7 +479,8 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Privacy First</h3>
                 <p className="text-muted-foreground">
-                  All processing happens in your browser. Your files never leave your device.
+                  All processing happens in your browser. Your files never leave
+                  your device.
                 </p>
               </div>
 
@@ -446,7 +492,8 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Lightning Fast</h3>
                 <p className="text-muted-foreground">
-                  Optimized for speed with instant processing and no server delays.
+                  Optimized for speed with instant processing and no server
+                  delays.
                 </p>
               </div>
 
@@ -458,7 +505,8 @@ export default function LandingPage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Always Free</h3>
                 <p className="text-muted-foreground">
-                  No subscriptions, no hidden fees. All tools are completely free forever.
+                  No subscriptions, no hidden fees. All tools are completely
+                  free forever.
                 </p>
               </div>
             </div>
@@ -488,21 +536,34 @@ export default function LandingPage() {
                 </h2>
 
                 <p className="text-foreground text-lg mb-6 max-w-2xl drop-shadow-xl [text-shadow:_1px_1px_2px_rgb(0_0_0_/_60%)]">
-                  Discover 1600+ carefully curated design tools, resources, and inspiration.
-                  From icons and illustrations to mockups and typography - everything designers need in one place.
+                  Discover 1600+ carefully curated design tools, resources, and
+                  inspiration. From icons and illustrations to mockups and
+                  typography - everything designers need in one place.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
-                  <Badge variant="secondary" className="bg-white text-primary border-0 font-medium shadow-md">
+                  <Badge
+                    variant="secondary"
+                    className="bg-white text-primary border-0 font-medium shadow-md"
+                  >
                     🎨 180+ Inspiration Tools
                   </Badge>
-                  <Badge variant="secondary" className="bg-white text-primary border-0 font-medium shadow-md">
+                  <Badge
+                    variant="secondary"
+                    className="bg-white text-primary border-0 font-medium shadow-md"
+                  >
                     ✨ 92+ Icon Libraries
                   </Badge>
-                  <Badge variant="secondary" className="bg-white text-primary border-0 font-medium shadow-md">
+                  <Badge
+                    variant="secondary"
+                    className="bg-white text-primary border-0 font-medium shadow-md"
+                  >
                     🖼️ 123+ Illustration Resources
                   </Badge>
-                  <Badge variant="secondary" className="bg-white text-primary border-0 font-medium shadow-md">
+                  <Badge
+                    variant="secondary"
+                    className="bg-white text-primary border-0 font-medium shadow-md"
+                  >
                     📚 110+ Learning Resources
                   </Badge>
                 </div>
@@ -567,9 +628,14 @@ export default function LandingPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {premiumTools.map((tool) => (
+              {premiumTools.map((tool) =>
                 tool.external ? (
-                  <a key={tool.id} href={tool.route} target="_blank" rel="noopener noreferrer">
+                  <a
+                    key={tool.id}
+                    href={tool.route}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Card className="hover:shadow-xl transition-all duration-300 cursor-pointer group h-full border-2 hover:border-primary/20  ">
                       <CardHeader className="relative">
                         <div className="absolute top-3 right-3">
@@ -590,7 +656,11 @@ export default function LandingPage() {
                           <Badge variant="outline" className="capitalize">
                             {tool.category}
                           </Badge>
-                          <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="group-hover:bg-primary/10"
+                          >
                             Visit Site
                             <ArrowRightIcon className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                           </Button>
@@ -620,7 +690,11 @@ export default function LandingPage() {
                           <Badge variant="outline" className="capitalize">
                             {tool.category}
                           </Badge>
-                          <Button variant="ghost" size="sm" className="group-hover:bg-primary/10">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            className="group-hover:bg-primary/10"
+                          >
                             Try Now
                             <ArrowRightIcon className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                           </Button>
@@ -628,13 +702,16 @@ export default function LandingPage() {
                       </CardContent>
                     </Card>
                   </Link>
-                )
-              ))}
+                ),
+              )}
             </div>
 
             <div className="text-center mt-8">
               <Link href="/search?premium=true">
-                <Button size="lg" className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90"
+                >
                   View All Premium Tools
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
                 </Button>
@@ -651,7 +728,9 @@ export default function LandingPage() {
                 Explore Our Specialized Platforms
               </h2>
               <p className="text-muted-foreground max-w-2xl mx-auto mb-6">
-                Beyond this platform, discover our comprehensive ecosystem of 9 specialized tools and platforms, each designed to solve specific challenges.
+                Beyond this platform, discover our comprehensive ecosystem of 9
+                specialized tools and platforms, each designed to solve specific
+                challenges.
               </p>
               <div className="flex flex-wrap justify-center gap-2 text-sm">
                 <Badge variant="secondary">🚀 800+ Total Tools</Badge>
@@ -663,7 +742,12 @@ export default function LandingPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               {/* Coders */}
-              <a href="https://coders.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
+              <a
+                href="https://coders.30tools.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
                 <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-border">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
@@ -674,7 +758,8 @@ export default function LandingPage() {
                       Coders
                     </CardTitle>
                     <CardDescription>
-                      Essential developer tools including JSON formatter, code beautifier, API tester, and complexity analyzer.
+                      Essential developer tools including JSON formatter, code
+                      beautifier, API tester, and complexity analyzer.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -686,7 +771,12 @@ export default function LandingPage() {
               </a>
 
               {/* IT-Tools */}
-              <a href="https://it-tools.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
+              <a
+                href="https://it-tools.30tools.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
                 <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-border">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
@@ -697,7 +787,8 @@ export default function LandingPage() {
                       IT-Tools
                     </CardTitle>
                     <CardDescription>
-                      Handy tools collection with 80+ utilities including token generators, UUID generators, QR codes, and JWT parser.
+                      Handy tools collection with 80+ utilities including token
+                      generators, UUID generators, QR codes, and JWT parser.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -709,7 +800,12 @@ export default function LandingPage() {
               </a>
 
               {/* AI Agents */}
-              <a href="https://ai-agents.30tools.com/" target="_blank" rel="noopener noreferrer" className="block group">
+              <a
+                href="https://ai-agents.30tools.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group"
+              >
                 <Card className="h-full hover:shadow-xl transition-all duration-300 border-2 hover:border-border">
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
@@ -720,7 +816,8 @@ export default function LandingPage() {
                       AI Agents Directory
                     </CardTitle>
                     <CardDescription>
-                      Discover 557+ AI agents across 19 categories for coding, productivity, customer service, and more.
+                      Discover 557+ AI agents across 19 categories for coding,
+                      productivity, customer service, and more.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -741,7 +838,8 @@ export default function LandingPage() {
                 </Button>
               </Link>
               <p className="text-sm text-muted-foreground mt-4">
-                Explore TeraBox downloader, Online Tools, DevTools, Piano Notes, Converto and more!
+                Explore TeraBox downloader, Online Tools, DevTools, Piano Notes,
+                Converto and more!
               </p>
             </div>
           </div>
@@ -753,7 +851,8 @@ export default function LandingPage() {
             <div className="max-w-2xl mx-auto">
               <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
               <p className="text-muted-foreground mb-8">
-                Join thousands of users who trust 30tools for their daily file processing needs.
+                Join thousands of users who trust 30tools for their daily file
+                processing needs.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link href="/search">
@@ -784,50 +883,149 @@ export default function LandingPage() {
                 </div>
                 <div>
                   <h3 className="font-bold">30tools</h3>
-                  <p className="text-sm text-muted-foreground">Free Online Toolkit</p>
+                  <p className="text-sm text-muted-foreground">
+                    Free Online Toolkit
+                  </p>
                 </div>
               </div>
               <p className="text-sm text-muted-foreground">
-                Your ultimate destination for free online tools. Fast, secure, and always free.
+                Your ultimate destination for free online tools. Fast, secure,
+                and always free.
               </p>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Popular Tools</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/image-compressor" className="text-muted-foreground hover:text-foreground">Image Compressor</Link></li>
-                <li><Link href="/search?q=video converter" className="text-muted-foreground hover:text-foreground">Video Converter</Link></li>
-                <li><Link href="/search?q=pdf merger" className="text-muted-foreground hover:text-foreground">PDF Merger</Link></li>
-                <li><Link href="/search?q=text counter" className="text-muted-foreground hover:text-foreground">Text Counter</Link></li>
+                <li>
+                  <Link
+                    href="/image-compressor"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Image Compressor
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/search?q=video converter"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Video Converter
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/search?q=pdf merger"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    PDF Merger
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/search?q=text counter"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Text Counter
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Categories</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/search?category=image" className="text-muted-foreground hover:text-foreground">Image Tools</Link></li>
-                <li><Link href="/search?category=video" className="text-muted-foreground hover:text-foreground">Video Tools</Link></li>
-                <li><Link href="/search?category=audio" className="text-muted-foreground hover:text-foreground">Audio Tools</Link></li>
-                <li><Link href="/search?category=pdf" className="text-muted-foreground hover:text-foreground">PDF Tools</Link></li>
-                <li><Link href="/more-tools" className="text-muted-foreground hover:text-foreground">More Platforms</Link></li>
+                <li>
+                  <Link
+                    href="/search?category=image"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Image Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/search?category=video"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Video Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/search?category=audio"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Audio Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/search?category=pdf"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    PDF Tools
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/more-tools"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    More Platforms
+                  </Link>
+                </li>
               </ul>
             </div>
 
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                <li><Link href="/about" className="text-muted-foreground hover:text-foreground">About</Link></li>
-                <li><Link href="/privacy" className="text-muted-foreground hover:text-foreground">Privacy Policy</Link></li>
-                <li><Link href="/terms" className="text-muted-foreground hover:text-foreground">Terms of Service</Link></li>
-                <li><Link href="/contact" className="text-muted-foreground hover:text-foreground">Contact</Link></li>
+                <li>
+                  <Link
+                    href="/about"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/privacy"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/terms"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Terms of Service
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>&copy; 2025 30tools.com - All rights reserved. Made with ❤️ for the web.</p>
+            <p>
+              &copy; 2025 30tools.com - All rights reserved. Made with ❤️ for
+              the web.
+            </p>
           </div>
-          <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" /></a>
+          <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F">
+            <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" />
+          </a>
         </div>
       </footer>
     </div>

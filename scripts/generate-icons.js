@@ -1,6 +1,6 @@
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+const sharp = require("sharp");
+const fs = require("fs");
+const path = require("path");
 
 // Create a base SVG icon for 30tools
 const baseSvg = `
@@ -36,59 +36,59 @@ const baseSvg = `
 </svg>`;
 
 // Icon sizes needed
-const iconSizes = [
-  16, 32, 48, 72, 96, 128, 144, 152, 180, 192, 384, 512
-];
+const iconSizes = [16, 32, 48, 72, 96, 128, 144, 152, 180, 192, 384, 512];
 
 // Special icons
 const specialIcons = {
-  'apple-touch-icon.png': 180,
-  'favicon.ico': 32
+  "apple-touch-icon.png": 180,
+  "favicon.ico": 32,
 };
 
 async function generateIcons() {
-  console.log('🎨 Generating icons for 30tools...');
-  
+  console.log("🎨 Generating icons for 30tools...");
+
   // Create base SVG file
-  const svgPath = path.join(process.cwd(), 'public', 'icons', 'base-icon.svg');
+  const svgPath = path.join(process.cwd(), "public", "icons", "base-icon.svg");
   fs.writeFileSync(svgPath, baseSvg);
-  
+
   // Generate PNG icons for all sizes
   for (const size of iconSizes) {
     const filename = `icon-${size}x${size}.png`;
-    const outputPath = path.join(process.cwd(), 'public', 'icons', filename);
-    
+    const outputPath = path.join(process.cwd(), "public", "icons", filename);
+
     await sharp(Buffer.from(baseSvg))
       .resize(size, size)
       .png({ quality: 90, compressionLevel: 9 })
       .toFile(outputPath);
-    
+
     console.log(`✅ Generated ${filename}`);
   }
-  
+
   // Generate special icons
   for (const [filename, size] of Object.entries(specialIcons)) {
-    const outputPath = path.join(process.cwd(), 'public', 'icons', filename);
-    
-    if (filename.endsWith('.ico')) {
+    const outputPath = path.join(process.cwd(), "public", "icons", filename);
+
+    if (filename.endsWith(".ico")) {
       // Generate ICO file
       await sharp(Buffer.from(baseSvg))
         .resize(size, size)
         .png()
-        .toFile(outputPath.replace('.ico', '.png'));
-      
+        .toFile(outputPath.replace(".ico", ".png"));
+
       // Note: For actual ICO conversion, you might want to use a dedicated library
-      console.log(`✅ Generated ${filename} (as PNG, convert to ICO if needed)`);
+      console.log(
+        `✅ Generated ${filename} (as PNG, convert to ICO if needed)`,
+      );
     } else {
       await sharp(Buffer.from(baseSvg))
         .resize(size, size)
         .png({ quality: 90, compressionLevel: 9 })
         .toFile(outputPath);
-      
+
       console.log(`✅ Generated ${filename}`);
     }
   }
-  
+
   // Generate Safari pinned tab SVG (monochrome)
   const safariSvg = `
 <svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -105,11 +105,16 @@ async function generateIcons() {
     <rect x="55" y="55" width="15" height="10" rx="3"/>
   </g>
 </svg>`;
-  
-  const safariSvgPath = path.join(process.cwd(), 'public', 'icons', 'safari-pinned-tab.svg');
+
+  const safariSvgPath = path.join(
+    process.cwd(),
+    "public",
+    "icons",
+    "safari-pinned-tab.svg",
+  );
   fs.writeFileSync(safariSvgPath, safariSvg);
-  console.log('✅ Generated safari-pinned-tab.svg');
-  
+  console.log("✅ Generated safari-pinned-tab.svg");
+
   // Generate compress icon for shortcuts
   const compressSvg = `
 <svg width="96" height="96" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg">
@@ -124,21 +129,21 @@ async function generateIcons() {
     <rect x="-8" y="-8" width="16" height="16" rx="2"/>
   </g>
 </svg>`;
-  
+
   await sharp(Buffer.from(compressSvg))
     .resize(96, 96)
     .png({ quality: 90, compressionLevel: 9 })
-    .toFile(path.join(process.cwd(), 'public', 'icons', 'compress-96x96.png'));
-  
-  console.log('✅ Generated compress-96x96.png');
-  
-  console.log('🎉 All icons generated successfully!');
+    .toFile(path.join(process.cwd(), "public", "icons", "compress-96x96.png"));
+
+  console.log("✅ Generated compress-96x96.png");
+
+  console.log("🎉 All icons generated successfully!");
 }
 
 // Also generate OG image and screenshots
 async function generateOGImage() {
-  console.log('📸 Generating OG image and screenshots...');
-  
+  console.log("📸 Generating OG image and screenshots...");
+
   const ogSvg = `
 <svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
   <defs>
@@ -171,14 +176,14 @@ async function generateOGImage() {
   <!-- URL -->
   <text x="600" y="580" font-family="Arial, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">30tools.com</text>
 </svg>`;
-  
+
   await sharp(Buffer.from(ogSvg))
     .resize(1200, 630)
     .jpeg({ quality: 90 })
-    .toFile(path.join(process.cwd(), 'public', 'og-image.jpg'));
-  
-  console.log('✅ Generated og-image.jpg');
-  
+    .toFile(path.join(process.cwd(), "public", "og-image.jpg"));
+
+  console.log("✅ Generated og-image.jpg");
+
   // Generate desktop screenshot
   const desktopScreenshot = `
 <svg width="1280" height="720" viewBox="0 0 1280 720" xmlns="http://www.w3.org/2000/svg">
@@ -206,14 +211,14 @@ async function generateOGImage() {
   <rect x="680" y="300" width="200" height="120" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2" rx="8"/>
   <text x="780" y="340" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle">PDF Tools</text>
 </svg>`;
-  
+
   await sharp(Buffer.from(desktopScreenshot))
     .resize(1280, 720)
     .png({ quality: 90 })
-    .toFile(path.join(process.cwd(), 'public', 'screenshots', 'desktop.png'));
-  
-  console.log('✅ Generated desktop.png');
-  
+    .toFile(path.join(process.cwd(), "public", "screenshots", "desktop.png"));
+
+  console.log("✅ Generated desktop.png");
+
   // Generate mobile screenshot
   const mobileScreenshot = `
 <svg width="390" height="844" viewBox="0 0 390 844" xmlns="http://www.w3.org/2000/svg">
@@ -232,15 +237,15 @@ async function generateOGImage() {
   <rect x="30" y="320" width="330" height="80" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" rx="8"/>
   <text x="195" y="350" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle">Video Converter</text>
 </svg>`;
-  
+
   await sharp(Buffer.from(mobileScreenshot))
     .resize(390, 844)
     .png({ quality: 90 })
-    .toFile(path.join(process.cwd(), 'public', 'screenshots', 'mobile.png'));
-  
-  console.log('✅ Generated mobile.png');
-  
-  console.log('📸 All images generated successfully!');
+    .toFile(path.join(process.cwd(), "public", "screenshots", "mobile.png"));
+
+  console.log("✅ Generated mobile.png");
+
+  console.log("📸 All images generated successfully!");
 }
 
 // Run the generation
@@ -248,9 +253,9 @@ async function main() {
   try {
     await generateIcons();
     await generateOGImage();
-    console.log('🚀 All assets generated successfully!');
+    console.log("🚀 All assets generated successfully!");
   } catch (error) {
-    console.error('❌ Error generating assets:', error);
+    console.error("❌ Error generating assets:", error);
     process.exit(1);
   }
 }

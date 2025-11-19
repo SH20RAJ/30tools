@@ -1,14 +1,26 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Switch } from '@/components/ui/switch';
+import { useState, useRef } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
 import {
   ArrowLeftIcon,
   DownloadIcon,
@@ -19,56 +31,68 @@ import {
   CheckIcon,
   CheckCheckIcon,
   PlusIcon,
-  TrashIcon
-} from 'lucide-react';
-import Link from 'next/link';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
-import html2canvas from 'html2canvas';
+  TrashIcon,
+} from "lucide-react";
+import Link from "next/link";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import html2canvas from "html2canvas";
 
 const CHAT_PLATFORMS = {
   whatsapp: {
-    name: '💬 WhatsApp',
-    bgColor: '#e5ddd5',
-    bubbleColor: '#dcf8c6',
-    receivedColor: '#ffffff',
-    textColor: '#000000',
-    timeColor: '#999999'
+    name: "💬 WhatsApp",
+    bgColor: "#e5ddd5",
+    bubbleColor: "#dcf8c6",
+    receivedColor: "#ffffff",
+    textColor: "#000000",
+    timeColor: "#999999",
   },
   instagram: {
-    name: '📸 Instagram DM',
-    bgColor: '#ffffff',
-    bubbleColor: '#3797f0',
-    receivedColor: '#efefef',
-    textColor: '#ffffff',
-    timeColor: '#999999'
+    name: "📸 Instagram DM",
+    bgColor: "#ffffff",
+    bubbleColor: "#3797f0",
+    receivedColor: "#efefef",
+    textColor: "#ffffff",
+    timeColor: "#999999",
   },
   imessage: {
-    name: '💙 iMessage',
-    bgColor: '#000000',
-    bubbleColor: '#007aff',
-    receivedColor: '#e5e5ea',
-    textColor: '#ffffff',
-    timeColor: '#999999'
+    name: "💙 iMessage",
+    bgColor: "#000000",
+    bubbleColor: "#007aff",
+    receivedColor: "#e5e5ea",
+    textColor: "#ffffff",
+    timeColor: "#999999",
   },
   discord: {
-    name: '🎮 Discord',
-    bgColor: '#36393f',
-    bubbleColor: '#5865f2',
-    receivedColor: '#40444b',
-    textColor: '#ffffff',
-    timeColor: '#72767d'
-  }
+    name: "🎮 Discord",
+    bgColor: "#36393f",
+    bubbleColor: "#5865f2",
+    receivedColor: "#40444b",
+    textColor: "#ffffff",
+    timeColor: "#72767d",
+  },
 };
 
 export default function FakeChatGeneratorTool() {
-  const [platform, setPlatform] = useState('whatsapp');
-  const [contactName, setContactName] = useState('John Doe');
-  const [profilePic, setProfilePic] = useState('');
+  const [platform, setPlatform] = useState("whatsapp");
+  const [contactName, setContactName] = useState("John Doe");
+  const [profilePic, setProfilePic] = useState("");
   const [messages, setMessages] = useState([
-    { id: 1, text: 'Hey! How are you?', sent: false, time: '10:30 AM', read: true },
-    { id: 2, text: 'I\'m doing great! Thanks for asking 😊', sent: true, time: '10:32 AM', read: true }
+    {
+      id: 1,
+      text: "Hey! How are you?",
+      sent: false,
+      time: "10:30 AM",
+      read: true,
+    },
+    {
+      id: 2,
+      text: "I'm doing great! Thanks for asking 😊",
+      sent: true,
+      time: "10:32 AM",
+      read: true,
+    },
   ]);
-  const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState("");
   const [showTimestamps, setShowTimestamps] = useState(true);
   const [showReadReceipts, setShowReadReceipts] = useState(true);
   const [isExporting, setIsExporting] = useState(false);
@@ -76,69 +100,75 @@ export default function FakeChatGeneratorTool() {
 
   const addMessage = () => {
     if (!newMessage.trim()) return;
-    
+
     const newMsg = {
       id: Date.now(),
       text: newMessage,
       sent: true,
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      read: true
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+      read: true,
     };
-    
-    setMessages(prev => [...prev, newMsg]);
-    setNewMessage('');
+
+    setMessages((prev) => [...prev, newMsg]);
+    setNewMessage("");
   };
 
   const addReceivedMessage = () => {
     if (!newMessage.trim()) return;
-    
+
     const newMsg = {
       id: Date.now(),
       text: newMessage,
       sent: false,
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-      read: true
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+      read: true,
     };
-    
-    setMessages(prev => [...prev, newMsg]);
-    setNewMessage('');
+
+    setMessages((prev) => [...prev, newMsg]);
+    setNewMessage("");
   };
 
   const deleteMessage = (id) => {
-    setMessages(prev => prev.filter(msg => msg.id !== id));
+    setMessages((prev) => prev.filter((msg) => msg.id !== id));
   };
 
   const exportAsImage = async () => {
     if (!chatRef.current) return;
-    
+
     setIsExporting(true);
-    
+
     try {
       const canvas = await html2canvas(chatRef.current, {
         backgroundColor: CHAT_PLATFORMS[platform].bgColor,
         scale: 2,
         useCORS: true,
-        allowTaint: true
+        allowTaint: true,
       });
-      
-      const link = document.createElement('a');
+
+      const link = document.createElement("a");
       link.download = `fake-chat-${platform}-${Date.now()}.png`;
       link.href = canvas.toDataURL();
       link.click();
     } catch (error) {
-      console.error('Export failed:', error);
+      console.error("Export failed:", error);
     }
-    
+
     setIsExporting(false);
   };
 
   const renderMessage = (message) => {
     const platformStyle = CHAT_PLATFORMS[platform];
-    
+
     return (
       <div
         key={message.id}
-        className={`flex mb-2 ${message.sent ? 'justify-end' : 'justify-start'}`}
+        className={`flex mb-2 ${message.sent ? "justify-end" : "justify-start"}`}
       >
         <div className="group relative max-w-xs lg:max-w-md">
           {!message.sent && (
@@ -146,39 +176,42 @@ export default function FakeChatGeneratorTool() {
               <div className="w-6 h-6 bg-gray-300 rounded-full mr-2 flex items-center justify-center text-xs">
                 {contactName.charAt(0)}
               </div>
-              <span className="text-xs text-muted-foreground">{contactName}</span>
+              <span className="text-xs text-muted-foreground">
+                {contactName}
+              </span>
             </div>
           )}
-          
+
           <div
             className={`px-3 py-2 rounded-lg relative ${
-              message.sent 
-                ? 'rounded-br-none' 
-                : 'rounded-bl-none'
+              message.sent ? "rounded-br-none" : "rounded-bl-none"
             }`}
             style={{
-              backgroundColor: message.sent 
-                ? platformStyle.bubbleColor 
+              backgroundColor: message.sent
+                ? platformStyle.bubbleColor
                 : platformStyle.receivedColor,
-              color: message.sent 
-                ? platformStyle.textColor 
-                : '#000000'
+              color: message.sent ? platformStyle.textColor : "#000000",
             }}
           >
             <p className="text-sm whitespace-pre-wrap">{message.text}</p>
-            
+
             {showTimestamps && (
               <div className="flex items-center justify-end mt-1 gap-1">
-                <span 
+                <span
                   className="text-xs opacity-70"
-                  style={{ color: message.sent ? platformStyle.timeColor : '#666' }}
+                  style={{
+                    color: message.sent ? platformStyle.timeColor : "#666",
+                  }}
                 >
                   {message.time}
                 </span>
                 {message.sent && showReadReceipts && (
                   <div className="text-xs opacity-70">
                     {message.read ? (
-                      <CheckCheckIcon className="w-3 h-3" style={{ color: '#4fc3f7' }} />
+                      <CheckCheckIcon
+                        className="w-3 h-3"
+                        style={{ color: "#4fc3f7" }}
+                      />
                     ) : (
                       <CheckIcon className="w-3 h-3" />
                     )}
@@ -187,7 +220,7 @@ export default function FakeChatGeneratorTool() {
               </div>
             )}
           </div>
-          
+
           <Button
             size="sm"
             variant="ghost"
@@ -205,11 +238,14 @@ export default function FakeChatGeneratorTool() {
     <div className="min-h-screen bg-muted/20 dark:from-gray-900 dark:via-green-900 dark:to-blue-900">
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
-          <Link href="/design-tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4">
+          <Link
+            href="/design-tools"
+            className="inline-flex items-center text-sm text-muted-foreground hover:text-primary mb-4"
+          >
             <ArrowLeftIcon className="mr-2 h-4 w-4" />
             Back to Design Tools
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-background">
               <MessageCircleIcon className="h-6 w-6 text-white" />
@@ -218,7 +254,9 @@ export default function FakeChatGeneratorTool() {
               <h1 className="text-3xl font-bold bg-background">
                 Fake Chat Generator
               </h1>
-              <p className="text-muted-foreground">Create realistic chat screenshots for memes and viral content</p>
+              <p className="text-muted-foreground">
+                Create realistic chat screenshots for memes and viral content
+              </p>
             </div>
           </div>
 
@@ -284,7 +322,7 @@ export default function FakeChatGeneratorTool() {
                       Show timestamps
                     </Label>
                   </div>
-                  
+
                   <div className="flex items-center space-x-2">
                     <Switch
                       id="readReceipts"
@@ -318,16 +356,16 @@ export default function FakeChatGeneratorTool() {
                     rows={3}
                   />
                 </div>
-                
+
                 <div className="flex gap-2">
-                  <Button 
+                  <Button
                     onClick={addMessage}
                     className="flex-1"
                     disabled={!newMessage.trim()}
                   >
                     Add Sent
                   </Button>
-                  <Button 
+                  <Button
                     onClick={addReceivedMessage}
                     variant="outline"
                     className="flex-1"
@@ -348,7 +386,7 @@ export default function FakeChatGeneratorTool() {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Button 
+                <Button
                   onClick={exportAsImage}
                   className="w-full bgtbd"
                   disabled={isExporting || messages.length === 0}
@@ -384,15 +422,25 @@ export default function FakeChatGeneratorTool() {
               <CardContent className="p-0">
                 <div className="border rounded-lg overflow-hidden">
                   {/* Chat Header */}
-                  <div 
+                  <div
                     className="px-4 py-3 border-b flex items-center gap-3"
-                    style={{ 
-                      backgroundColor: platform === 'whatsapp' ? '#075e54' : 
-                                     platform === 'instagram' ? '#ffffff' :
-                                     platform === 'imessage' ? '#f6f6f6' : '#36393f',
-                      color: platform === 'whatsapp' ? '#ffffff' :
-                             platform === 'instagram' ? '#000000' :
-                             platform === 'imessage' ? '#000000' : '#ffffff'
+                    style={{
+                      backgroundColor:
+                        platform === "whatsapp"
+                          ? "#075e54"
+                          : platform === "instagram"
+                            ? "#ffffff"
+                            : platform === "imessage"
+                              ? "#f6f6f6"
+                              : "#36393f",
+                      color:
+                        platform === "whatsapp"
+                          ? "#ffffff"
+                          : platform === "instagram"
+                            ? "#000000"
+                            : platform === "imessage"
+                              ? "#000000"
+                              : "#ffffff",
                     }}
                   >
                     <div className="w-8 h-8 bg-gray-300 rounded-full flex items-center justify-center text-sm font-semibold">
@@ -401,19 +449,21 @@ export default function FakeChatGeneratorTool() {
                     <div>
                       <h3 className="font-semibold text-sm">{contactName}</h3>
                       <p className="text-xs opacity-70">
-                        {platform === 'whatsapp' ? 'online' : 'Active now'}
+                        {platform === "whatsapp" ? "online" : "Active now"}
                       </p>
                     </div>
                   </div>
 
                   {/* Chat Messages */}
-                  <div 
+                  <div
                     ref={chatRef}
                     className="p-4 min-h-96 max-h-96 overflow-y-auto"
-                    style={{ backgroundColor: CHAT_PLATFORMS[platform].bgColor }}
+                    style={{
+                      backgroundColor: CHAT_PLATFORMS[platform].bgColor,
+                    }}
                   >
                     {messages.map(renderMessage)}
-                    
+
                     {messages.length === 0 && (
                       <div className="text-center py-12 text-muted-foreground">
                         <MessageCircleIcon className="h-12 w-12 mx-auto mb-4 opacity-50" />
@@ -423,21 +473,31 @@ export default function FakeChatGeneratorTool() {
                   </div>
 
                   {/* Chat Input (Visual Only) */}
-                  <div 
+                  <div
                     className="px-4 py-3 border-t flex items-center gap-2"
-                    style={{ 
-                      backgroundColor: platform === 'whatsapp' ? '#f0f0f0' : 
-                                     platform === 'instagram' ? '#ffffff' :
-                                     platform === 'imessage' ? '#f6f6f6' : '#40444b'
+                    style={{
+                      backgroundColor:
+                        platform === "whatsapp"
+                          ? "#f0f0f0"
+                          : platform === "instagram"
+                            ? "#ffffff"
+                            : platform === "imessage"
+                              ? "#f6f6f6"
+                              : "#40444b",
                     }}
                   >
-                    <div 
+                    <div
                       className="flex-1 px-3 py-2 rounded-full text-sm"
-                      style={{ 
-                        backgroundColor: platform === 'whatsapp' ? '#ffffff' : 
-                                       platform === 'instagram' ? '#efefef' :
-                                       platform === 'imessage' ? '#ffffff' : '#484c52',
-                        color: platform === 'discord' ? '#ffffff' : '#000000'
+                      style={{
+                        backgroundColor:
+                          platform === "whatsapp"
+                            ? "#ffffff"
+                            : platform === "instagram"
+                              ? "#efefef"
+                              : platform === "imessage"
+                                ? "#ffffff"
+                                : "#484c52",
+                        color: platform === "discord" ? "#ffffff" : "#000000",
                       }}
                     >
                       Type a message...
@@ -461,11 +521,16 @@ export default function FakeChatGeneratorTool() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">🎭 Keep it Believable</h4>
-                <p>Use realistic names and conversation flow for better engagement</p>
+                <p>
+                  Use realistic names and conversation flow for better
+                  engagement
+                </p>
               </div>
               <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">⏰ Timing Matters</h4>
-                <p>Use appropriate timestamps to make conversations feel natural</p>
+                <p>
+                  Use appropriate timestamps to make conversations feel natural
+                </p>
               </div>
               <div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
                 <h4 className="font-semibold mb-2">😂 Add Humor</h4>

@@ -1,9 +1,10 @@
-import { getAllCategories, getOtherTools } from '@/lib/other-tools-actions';
-import OtherToolsPage from '@/components/tools/OtherToolsPage';
+import { getAllCategories, getOtherTools } from "@/lib/other-tools-actions";
+import OtherToolsPage from "@/components/tools/OtherToolsPage";
 
 export const metadata = {
   title: "Other Tools - Discover More Free Online Utilities | 30tools",
-  description: "Professional other tools tool. Free online processing with high-quality results. No registration required, instant results.",
+  description:
+    "Professional other tools tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     // Primary keywords
     "other online tools",
@@ -26,11 +27,12 @@ export const metadata = {
     "specialized tools for content creators",
     "advanced online tools for developers",
     "professional online utilities suite",
-    "comprehensive digital toolkit free"
+    "comprehensive digital toolkit free",
   ].join(", "),
   openGraph: {
     title: "Other Tools - Discover More Free Online Utilities",
-    description: "Explore our collection of specialized online tools and utilities. Find the perfect tool for your specific needs.",
+    description:
+      "Explore our collection of specialized online tools and utilities. Find the perfect tool for your specific needs.",
     url: "https://30tools.com/other-tools",
     siteName: "30tools",
     type: "website",
@@ -39,18 +41,19 @@ export const metadata = {
         url: "/og-images/other-tools.jpg",
         width: 1200,
         height: 630,
-        alt: "Other Tools - Free Online Utilities Collection"
+        alt: "Other Tools - Free Online Utilities Collection",
       },
-    ]
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Other Tools - Discover More Free Online Utilities",
-    description: "Explore our collection of specialized online tools and utilities for every need.",
-    images: ["/og-images/other-tools.jpg"]
+    description:
+      "Explore our collection of specialized online tools and utilities for every need.",
+    images: ["/og-images/other-tools.jpg"],
   },
   alternates: {
-    canonical: "https://30tools.com/other-tools"
+    canonical: "https://30tools.com/other-tools",
   },
 };
 

@@ -43,9 +43,9 @@
 :root {
   --background: oklch(0.9961 0.0089 106.47);
   --foreground: oklch(0.2391 0.0347 264.47);
-  --card: oklch(1.0000 0 0);
+  --card: oklch(1 0 0);
   --card-foreground: oklch(0.2391 0.0347 264.47);
-  --popover: oklch(1.0000 0 0);
+  --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2391 0.0347 264.47);
   --primary: oklch(0.7861 0.1538 316.85);
   --primary-foreground: oklch(0.9961 0.0089 106.47);
@@ -73,16 +73,26 @@
   --sidebar-accent-foreground: oklch(0.2391 0.0347 264.47);
   --sidebar-border: oklch(0.8861 0.0438 316.85);
   --sidebar-ring: oklch(0.7861 0.1538 316.85);
-  --font-sans: 'Poppins', Inter, system-ui, sans-serif;
-  --font-serif: 'Poppins', Georgia, serif;
-  --font-mono: 'JetBrains Mono', Monaco, monospace;
+  --font-sans: "Poppins", Inter, system-ui, sans-serif;
+  --font-serif: "Poppins", Georgia, serif;
+  --font-mono: "JetBrains Mono", Monaco, monospace;
   --radius: 16px;
   --shadow-2xs: 0px 1px 2px 0px hsla(316, 85%, 15%, 0.05);
-  --shadow-xs: 0px 1px 3px 0px hsla(316, 85%, 15%, 0.1), 0px 1px 2px 0px hsla(316, 85%, 15%, 0.06);
-  --shadow-sm: 0px 1px 3px 0px hsla(316, 85%, 15%, 0.1), 0px 1px 2px 0px hsla(316, 85%, 15%, 0.06);
-  --shadow: 0px 4px 6px -1px hsla(316, 85%, 15%, 0.1), 0px 2px 4px -1px hsla(316, 85%, 15%, 0.06);
-  --shadow-md: 0px 10px 15px -3px hsla(316, 85%, 15%, 0.1), 0px 4px 6px -2px hsla(316, 85%, 15%, 0.05);
-  --shadow-lg: 0px 20px 25px -5px hsla(316, 85%, 15%, 0.1), 0px 10px 10px -5px hsla(316, 85%, 15%, 0.04);
+  --shadow-xs:
+    0px 1px 3px 0px hsla(316, 85%, 15%, 0.1),
+    0px 1px 2px 0px hsla(316, 85%, 15%, 0.06);
+  --shadow-sm:
+    0px 1px 3px 0px hsla(316, 85%, 15%, 0.1),
+    0px 1px 2px 0px hsla(316, 85%, 15%, 0.06);
+  --shadow:
+    0px 4px 6px -1px hsla(316, 85%, 15%, 0.1),
+    0px 2px 4px -1px hsla(316, 85%, 15%, 0.06);
+  --shadow-md:
+    0px 10px 15px -3px hsla(316, 85%, 15%, 0.1),
+    0px 4px 6px -2px hsla(316, 85%, 15%, 0.05);
+  --shadow-lg:
+    0px 20px 25px -5px hsla(316, 85%, 15%, 0.1),
+    0px 10px 10px -5px hsla(316, 85%, 15%, 0.04);
   --shadow-xl: 0px 25px 50px -12px hsla(316, 85%, 15%, 0.25);
   --shadow-2xl: 0px 25px 50px -12px hsla(316, 85%, 15%, 0.25);
   --tracking-normal: 0.015em;
@@ -121,16 +131,26 @@
   --sidebar-accent-foreground: oklch(0.1391 0.0347 264.47);
   --sidebar-border: oklch(0.3391 0.0547 264.47);
   --sidebar-ring: oklch(0.8861 0.1438 316.85);
-  --font-sans: 'Poppins', Inter, system-ui, sans-serif;
-  --font-serif: 'Poppins', Georgia, serif;
-  --font-mono: 'JetBrains Mono', Monaco, monospace;
+  --font-sans: "Poppins", Inter, system-ui, sans-serif;
+  --font-serif: "Poppins", Georgia, serif;
+  --font-mono: "JetBrains Mono", Monaco, monospace;
   --radius: 16px;
   --shadow-2xs: 0px 1px 2px 0px hsla(316, 85%, 85%, 0.05);
-  --shadow-xs: 0px 1px 3px 0px hsla(316, 85%, 85%, 0.1), 0px 1px 2px 0px hsla(316, 85%, 85%, 0.06);
-  --shadow-sm: 0px 1px 3px 0px hsla(316, 85%, 85%, 0.1), 0px 1px 2px 0px hsla(316, 85%, 85%, 0.06);
-  --shadow: 0px 4px 6px -1px hsla(316, 85%, 85%, 0.1), 0px 2px 4px -1px hsla(316, 85%, 85%, 0.06);
-  --shadow-md: 0px 10px 15px -3px hsla(316, 85%, 85%, 0.1), 0px 4px 6px -2px hsla(316, 85%, 85%, 0.05);
-  --shadow-lg: 0px 20px 25px -5px hsla(316, 85%, 85%, 0.1), 0px 10px 10px -5px hsla(316, 85%, 85%, 0.04);
+  --shadow-xs:
+    0px 1px 3px 0px hsla(316, 85%, 85%, 0.1),
+    0px 1px 2px 0px hsla(316, 85%, 85%, 0.06);
+  --shadow-sm:
+    0px 1px 3px 0px hsla(316, 85%, 85%, 0.1),
+    0px 1px 2px 0px hsla(316, 85%, 85%, 0.06);
+  --shadow:
+    0px 4px 6px -1px hsla(316, 85%, 85%, 0.1),
+    0px 2px 4px -1px hsla(316, 85%, 85%, 0.06);
+  --shadow-md:
+    0px 10px 15px -3px hsla(316, 85%, 85%, 0.1),
+    0px 4px 6px -2px hsla(316, 85%, 85%, 0.05);
+  --shadow-lg:
+    0px 20px 25px -5px hsla(316, 85%, 85%, 0.1),
+    0px 10px 10px -5px hsla(316, 85%, 85%, 0.04);
   --shadow-xl: 0px 25px 50px -12px hsla(316, 85%, 85%, 0.25);
   --shadow-2xl: 0px 25px 50px -12px hsla(316, 85%, 85%, 0.25);
 }
@@ -240,10 +260,15 @@
 
 /* Cute animations */
 @keyframes bounce-cute {
-  0%, 20%, 53%, 80%, 100% {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
     transform: translateY(0);
   }
-  40%, 43% {
+  40%,
+  43% {
     transform: translateY(-10px);
   }
   70% {
@@ -259,7 +284,8 @@
 }
 
 @keyframes float-cute {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
   }
   50% {
@@ -273,17 +299,21 @@
 
 /* Gradient backgrounds */
 .bg-gradient-cute {
-  background: linear-gradient(135deg, 
-    rgba(244, 63, 155, 0.1) 0%, 
-    rgba(255, 154, 158, 0.1) 50%, 
-    rgba(255, 206, 84, 0.1) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(244, 63, 155, 0.1) 0%,
+    rgba(255, 154, 158, 0.1) 50%,
+    rgba(255, 206, 84, 0.1) 100%
+  );
 }
 
 .bg-gradient-cute-dark {
-  background: linear-gradient(135deg, 
-    rgba(244, 63, 155, 0.05) 0%, 
-    rgba(255, 154, 158, 0.05) 50%, 
-    rgba(255, 206, 84, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(244, 63, 155, 0.05) 0%,
+    rgba(255, 154, 158, 0.05) 50%,
+    rgba(255, 206, 84, 0.05) 100%
+  );
 }
 
 /* Cute scrollbar */

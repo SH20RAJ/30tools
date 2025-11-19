@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { StackApp } from "@stackframe/stack";
 

@@ -1,17 +1,29 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Separator } from '@/components/ui/separator';
-import { Slider } from '@/components/ui/slider';
-import { Switch } from '@/components/ui/switch';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState, useRef, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   ArrowLeftIcon,
   DownloadIcon,
@@ -29,56 +41,59 @@ import {
   CalendarIcon,
   FileIcon,
   InstagramIcon,
-  ShareIcon
-} from 'lucide-react';
-import Link from 'next/link';
+  ShareIcon,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function QRCodeGeneratorTool() {
-  const [qrType, setQrType] = useState('url');
+  const [qrType, setQrType] = useState("url");
   const [qrData, setQrData] = useState({
-    url: 'https://30tools.com',
-    text: 'Hello World! Generate QR codes instantly with 30tools.com',
-    wifi: { ssid: '', password: '', security: 'WPA', hidden: false },
-    vcard: { 
-      firstName: '', 
-      lastName: '', 
-      phone: '', 
-      email: '', 
-      organization: '', 
-      url: '',
-      title: '',
-      address: '',
-      note: ''
+    url: "https://30tools.com",
+    text: "Hello World! Generate QR codes instantly with 30tools.com",
+    wifi: { ssid: "", password: "", security: "WPA", hidden: false },
+    vcard: {
+      firstName: "",
+      lastName: "",
+      phone: "",
+      email: "",
+      organization: "",
+      url: "",
+      title: "",
+      address: "",
+      note: "",
     },
-    sms: { phone: '', message: '' },
-    email: { email: '', subject: '', body: '' },
-    whatsapp: { phone: '', message: 'Hello! I found your contact through a QR code.' },
-    location: { latitude: '', longitude: '', name: '' },
+    sms: { phone: "", message: "" },
+    email: { email: "", subject: "", body: "" },
+    whatsapp: {
+      phone: "",
+      message: "Hello! I found your contact through a QR code.",
+    },
+    location: { latitude: "", longitude: "", name: "" },
     event: {
-      title: '',
-      description: '',
-      startDate: '',
-      endDate: '',
-      location: '',
-      url: ''
+      title: "",
+      description: "",
+      startDate: "",
+      endDate: "",
+      location: "",
+      url: "",
     },
     social: {
-      platform: 'instagram',
-      username: '',
-      url: ''
-    }
+      platform: "instagram",
+      username: "",
+      url: "",
+    },
   });
   const [qrOptions, setQrOptions] = useState({
     size: [300],
-    errorCorrectionLevel: 'M',
-    foregroundColor: '#000000',
-    backgroundColor: '#ffffff',
+    errorCorrectionLevel: "M",
+    foregroundColor: "#000000",
+    backgroundColor: "#ffffff",
     margin: 4,
     logoUpload: null,
-    frameStyle: 'none',
-    pattern: 'square'
+    frameStyle: "none",
+    pattern: "square",
   });
-  const [qrCodeDataUrl, setQrCodeDataUrl] = useState('');
+  const [qrCodeDataUrl, setQrCodeDataUrl] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [copied, setCopied] = useState(false);
   const canvasRef = useRef(null);
@@ -86,13 +101,13 @@ export default function QRCodeGeneratorTool() {
   // Generate QR code data based on type
   const getQrCodeData = () => {
     switch (qrType) {
-      case 'url':
+      case "url":
         return qrData.url;
-      case 'text':
+      case "text":
         return qrData.text;
-      case 'wifi':
-        return `WIFI:T:${qrData.wifi.security};S:${qrData.wifi.ssid};P:${qrData.wifi.password};H:${qrData.wifi.hidden ? 'true' : 'false'};;`;
-      case 'vcard':
+      case "wifi":
+        return `WIFI:T:${qrData.wifi.security};S:${qrData.wifi.ssid};P:${qrData.wifi.password};H:${qrData.wifi.hidden ? "true" : "false"};;`;
+      case "vcard":
         return `BEGIN:VCARD
 VERSION:3.0
 FN:${qrData.vcard.firstName} ${qrData.vcard.lastName}
@@ -102,9 +117,9 @@ TEL:${qrData.vcard.phone}
 EMAIL:${qrData.vcard.email}
 URL:${qrData.vcard.url}
 END:VCARD`;
-      case 'sms':
+      case "sms":
         return `SMSTO:${qrData.sms.phone}:${qrData.sms.message}`;
-      case 'email':
+      case "email":
         return `mailto:${qrData.email.email}?subject=${encodeURIComponent(qrData.email.subject)}&body=${encodeURIComponent(qrData.email.body)}`;
       default:
         return qrData.url;
@@ -117,13 +132,13 @@ END:VCARD`;
     try {
       const data = getQrCodeData();
       if (!data.trim()) {
-        alert('Please enter data to generate QR code');
+        alert("Please enter data to generate QR code");
         setIsGenerating(false);
         return;
       }
 
       const canvas = canvasRef.current;
-      const ctx = canvas.getContext('2d');
+      const ctx = canvas.getContext("2d");
       const size = qrOptions.size[0];
 
       canvas.width = size;
@@ -147,31 +162,33 @@ END:VCARD`;
               qrOptions.margin + j * moduleSize,
               qrOptions.margin + i * moduleSize,
               moduleSize,
-              moduleSize
+              moduleSize,
             );
           }
         }
       }
 
-      const dataUrl = canvas.toDataURL('image/png');
+      const dataUrl = canvas.toDataURL("image/png");
       setQrCodeDataUrl(dataUrl);
     } catch (error) {
-      console.error('Error generating QR code:', error);
+      console.error("Error generating QR code:", error);
     }
     setIsGenerating(false);
   };
 
   // Simple pattern generation (placeholder)
   const generatePattern = (data, size) => {
-    const pattern = Array(size).fill().map(() => Array(size).fill(false));
-    const hash = data.split('').reduce((a, b) => {
-      a = ((a << 5) - a) + b.charCodeAt(0);
+    const pattern = Array(size)
+      .fill()
+      .map(() => Array(size).fill(false));
+    const hash = data.split("").reduce((a, b) => {
+      a = (a << 5) - a + b.charCodeAt(0);
       return a & a;
     }, 0);
 
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
-        pattern[i][j] = ((hash + i + j) % 3) === 0;
+        pattern[i][j] = (hash + i + j) % 3 === 0;
       }
     }
 
@@ -187,7 +204,10 @@ END:VCARD`;
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 7; j++) {
         pattern[startRow + i][startCol + j] =
-          (i === 0 || i === 6 || j === 0 || j === 6) ||
+          i === 0 ||
+          i === 6 ||
+          j === 0 ||
+          j === 6 ||
           (i >= 2 && i <= 4 && j >= 2 && j <= 4);
       }
     }
@@ -195,7 +215,7 @@ END:VCARD`;
 
   const downloadQRCode = () => {
     if (!qrCodeDataUrl) return;
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.download = `qr-code-${qrType}-${Date.now()}.png`;
     link.href = qrCodeDataUrl;
     link.click();
@@ -207,12 +227,12 @@ END:VCARD`;
       const response = await fetch(qrCodeDataUrl);
       const blob = await response.blob();
       await navigator.clipboard.write([
-        new ClipboardItem({ 'image/png': blob })
+        new ClipboardItem({ "image/png": blob }),
       ]);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy image: ', err);
+      console.error("Failed to copy image: ", err);
     }
   };
 
@@ -225,17 +245,47 @@ END:VCARD`;
   }, [qrType, qrData, qrOptions]);
 
   const qrTypes = [
-    { id: 'url', name: 'Website URL', icon: LinkIcon, description: 'Link to website or webpage' },
-    { id: 'text', name: 'Plain Text', icon: MessageSquareIcon, description: 'Any text message' },
-    { id: 'wifi', name: 'WiFi Network', icon: WifiIcon, description: 'WiFi connection details' },
-    { id: 'vcard', name: 'Contact Card', icon: UserIcon, description: 'Business card information' },
-    { id: 'sms', name: 'SMS Message', icon: PhoneIcon, description: 'Text message with phone number' },
-    { id: 'email', name: 'Email', icon: MailIcon, description: 'Email with subject and body' }
+    {
+      id: "url",
+      name: "Website URL",
+      icon: LinkIcon,
+      description: "Link to website or webpage",
+    },
+    {
+      id: "text",
+      name: "Plain Text",
+      icon: MessageSquareIcon,
+      description: "Any text message",
+    },
+    {
+      id: "wifi",
+      name: "WiFi Network",
+      icon: WifiIcon,
+      description: "WiFi connection details",
+    },
+    {
+      id: "vcard",
+      name: "Contact Card",
+      icon: UserIcon,
+      description: "Business card information",
+    },
+    {
+      id: "sms",
+      name: "SMS Message",
+      icon: PhoneIcon,
+      description: "Text message with phone number",
+    },
+    {
+      id: "email",
+      name: "Email",
+      icon: MailIcon,
+      description: "Email with subject and body",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
-      <canvas ref={canvasRef} style={{ display: 'none' }} />
+      <canvas ref={canvasRef} style={{ display: "none" }} />
 
       <div className="container mx-auto px-4 py-8 max-w-7xl">
         {/* Header */}
@@ -253,7 +303,9 @@ END:VCARD`;
             </div>
             <div>
               <h1 className="text-3xl font-bold">QR Code Generator</h1>
-              <p className="text-muted-foreground">Create custom QR codes for websites, WiFi, contacts, and more</p>
+              <p className="text-muted-foreground">
+                Create custom QR codes for websites, WiFi, contacts, and more
+              </p>
             </div>
           </div>
 
@@ -284,16 +336,19 @@ END:VCARD`;
                       <button
                         key={type.id}
                         onClick={() => setQrType(type.id)}
-                        className={`p-4 rounded-lg border-2 transition-all text-left ${qrType === type.id
-                            ? 'border-primary bg-primary/5'
-                            : 'border-border hover:border-primary/50'
-                          }`}
+                        className={`p-4 rounded-lg border-2 transition-all text-left ${
+                          qrType === type.id
+                            ? "border-primary bg-primary/5"
+                            : "border-border hover:border-primary/50"
+                        }`}
                       >
                         <div className="flex items-center gap-3 mb-2">
                           <IconComponent className="h-5 w-5 text-primary" />
                           <span className="font-medium">{type.name}</span>
                         </div>
-                        <p className="text-sm text-muted-foreground">{type.description}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {type.description}
+                        </p>
                       </button>
                     );
                   })}
@@ -310,32 +365,36 @@ END:VCARD`;
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                {qrType === 'url' && (
+                {qrType === "url" && (
                   <div className="space-y-2">
                     <Label htmlFor="url">Website URL</Label>
                     <Input
                       id="url"
                       value={qrData.url}
-                      onChange={(e) => setQrData(prev => ({ ...prev, url: e.target.value }))}
+                      onChange={(e) =>
+                        setQrData((prev) => ({ ...prev, url: e.target.value }))
+                      }
                       placeholder="https://example.com"
                     />
                   </div>
                 )}
 
-                {qrType === 'text' && (
+                {qrType === "text" && (
                   <div className="space-y-2">
                     <Label htmlFor="text">Text Message</Label>
                     <Textarea
                       id="text"
                       value={qrData.text}
-                      onChange={(e) => setQrData(prev => ({ ...prev, text: e.target.value }))}
+                      onChange={(e) =>
+                        setQrData((prev) => ({ ...prev, text: e.target.value }))
+                      }
                       placeholder="Enter your text message..."
                       rows={4}
                     />
                   </div>
                 )}
 
-                {qrType === 'wifi' && (
+                {qrType === "wifi" && (
                   <div className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
@@ -343,10 +402,12 @@ END:VCARD`;
                         <Input
                           id="ssid"
                           value={qrData.wifi.ssid}
-                          onChange={(e) => setQrData(prev => ({
-                            ...prev,
-                            wifi: { ...prev.wifi, ssid: e.target.value }
-                          }))}
+                          onChange={(e) =>
+                            setQrData((prev) => ({
+                              ...prev,
+                              wifi: { ...prev.wifi, ssid: e.target.value },
+                            }))
+                          }
                           placeholder="My WiFi Network"
                         />
                       </div>
@@ -356,10 +417,12 @@ END:VCARD`;
                           id="password"
                           type="password"
                           value={qrData.wifi.password}
-                          onChange={(e) => setQrData(prev => ({
-                            ...prev,
-                            wifi: { ...prev.wifi, password: e.target.value }
-                          }))}
+                          onChange={(e) =>
+                            setQrData((prev) => ({
+                              ...prev,
+                              wifi: { ...prev.wifi, password: e.target.value },
+                            }))
+                          }
                           placeholder="WiFi password"
                         />
                       </div>
@@ -369,10 +432,12 @@ END:VCARD`;
                         <Label>Security Type</Label>
                         <Select
                           value={qrData.wifi.security}
-                          onValueChange={(value) => setQrData(prev => ({
-                            ...prev,
-                            wifi: { ...prev.wifi, security: value }
-                          }))}
+                          onValueChange={(value) =>
+                            setQrData((prev) => ({
+                              ...prev,
+                              wifi: { ...prev.wifi, security: value },
+                            }))
+                          }
                         >
                           <SelectTrigger>
                             <SelectValue />
@@ -388,10 +453,12 @@ END:VCARD`;
                         <Switch
                           id="hidden"
                           checked={qrData.wifi.hidden}
-                          onCheckedChange={(checked) => setQrData(prev => ({
-                            ...prev,
-                            wifi: { ...prev.wifi, hidden: checked }
-                          }))}
+                          onCheckedChange={(checked) =>
+                            setQrData((prev) => ({
+                              ...prev,
+                              wifi: { ...prev.wifi, hidden: checked },
+                            }))
+                          }
                         />
                         <Label htmlFor="hidden">Hidden Network</Label>
                       </div>
@@ -407,16 +474,16 @@ END:VCARD`;
             <Card>
               <CardHeader>
                 <CardTitle>Customize QR Code</CardTitle>
-                <CardDescription>
-                  Adjust appearance and size
-                </CardDescription>
+                <CardDescription>Adjust appearance and size</CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="space-y-3">
                   <Label>Size: {qrOptions.size[0]}px</Label>
                   <Slider
                     value={qrOptions.size}
-                    onValueChange={(value) => setQrOptions(prev => ({ ...prev, size: value }))}
+                    onValueChange={(value) =>
+                      setQrOptions((prev) => ({ ...prev, size: value }))
+                    }
                     min={100}
                     max={800}
                     step={50}
@@ -430,12 +497,22 @@ END:VCARD`;
                       <Input
                         type="color"
                         value={qrOptions.foregroundColor}
-                        onChange={(e) => setQrOptions(prev => ({ ...prev, foregroundColor: e.target.value }))}
+                        onChange={(e) =>
+                          setQrOptions((prev) => ({
+                            ...prev,
+                            foregroundColor: e.target.value,
+                          }))
+                        }
                         className="w-16 h-10 p-1"
                       />
                       <Input
                         value={qrOptions.foregroundColor}
-                        onChange={(e) => setQrOptions(prev => ({ ...prev, foregroundColor: e.target.value }))}
+                        onChange={(e) =>
+                          setQrOptions((prev) => ({
+                            ...prev,
+                            foregroundColor: e.target.value,
+                          }))
+                        }
                         className="flex-1"
                       />
                     </div>
@@ -446,12 +523,22 @@ END:VCARD`;
                       <Input
                         type="color"
                         value={qrOptions.backgroundColor}
-                        onChange={(e) => setQrOptions(prev => ({ ...prev, backgroundColor: e.target.value }))}
+                        onChange={(e) =>
+                          setQrOptions((prev) => ({
+                            ...prev,
+                            backgroundColor: e.target.value,
+                          }))
+                        }
                         className="w-16 h-10 p-1"
                       />
                       <Input
                         value={qrOptions.backgroundColor}
-                        onChange={(e) => setQrOptions(prev => ({ ...prev, backgroundColor: e.target.value }))}
+                        onChange={(e) =>
+                          setQrOptions((prev) => ({
+                            ...prev,
+                            backgroundColor: e.target.value,
+                          }))
+                        }
                         className="flex-1"
                       />
                     </div>
@@ -476,7 +563,7 @@ END:VCARD`;
                           src={qrCodeDataUrl}
                           alt="Generated QR Code"
                           className="max-w-full h-auto"
-                          style={{ maxWidth: '300px' }}
+                          style={{ maxWidth: "300px" }}
                         />
                       ) : (
                         <div className="w-64 h-64 flex items-center justify-center text-muted-foreground">
@@ -488,7 +575,9 @@ END:VCARD`;
                           ) : (
                             <div className="text-center">
                               <QrCodeIcon className="h-12 w-12 mx-auto mb-2" />
-                              <p className="text-sm">QR code will appear here</p>
+                              <p className="text-sm">
+                                QR code will appear here
+                              </p>
                             </div>
                           )}
                         </div>
@@ -513,7 +602,7 @@ END:VCARD`;
                         className="w-full"
                       >
                         <CopyIcon className="h-4 w-4 mr-2" />
-                        {copied ? 'Copied!' : 'Copy to Clipboard'}
+                        {copied ? "Copied!" : "Copy to Clipboard"}
                       </Button>
                     </div>
                   )}
@@ -531,7 +620,9 @@ END:VCARD`;
             </CardHeader>
             <CardContent>
               <ul className="space-y-2 text-sm">
-                <li>✅ Generate QR codes for websites, WiFi, contacts instantly</li>
+                <li>
+                  ✅ Generate QR codes for websites, WiFi, contacts instantly
+                </li>
                 <li>✅ High-resolution output up to 800×800 pixels</li>
                 <li>✅ Custom colors for branding and design</li>
                 <li>✅ Multiple QR code types: URL, text, WiFi, vCard, SMS</li>
@@ -579,4 +670,3 @@ END:VCARD`;
     </div>
   );
 }
-  

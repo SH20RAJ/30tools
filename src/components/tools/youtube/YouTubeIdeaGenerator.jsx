@@ -1,97 +1,117 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
-import { Lightbulb, Copy, RefreshCw, TrendingUp, Youtube, CheckCircle2, Sparkles } from 'lucide-react';
-import { generateYouTubeIdeas } from '@/lib/youtube-actions';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import {
+  Lightbulb,
+  Copy,
+  RefreshCw,
+  TrendingUp,
+  Youtube,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
+import { generateYouTubeIdeas } from "@/lib/youtube-actions";
 
 export default function YouTubeIdeaGenerator() {
-  const [niche, setNiche] = useState('');
-  const [audience, setAudience] = useState('general');
-  const [contentType, setContentType] = useState('tutorial');
-  const [videoLength, setVideoLength] = useState('medium');
-  const [goalType, setGoalType] = useState('education');
-  const [trendingTopics, setTrendingTopics] = useState('');
+  const [niche, setNiche] = useState("");
+  const [audience, setAudience] = useState("general");
+  const [contentType, setContentType] = useState("tutorial");
+  const [videoLength, setVideoLength] = useState("medium");
+  const [goalType, setGoalType] = useState("education");
+  const [trendingTopics, setTrendingTopics] = useState("");
   const [ideas, setIdeas] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [copiedIndex, setCopiedIndex] = useState(null);
 
   const audiences = {
-    general: 'General Audience',
-    teens: 'Teenagers (13-19)',
-    young_adults: 'Young Adults (20-35)',
-    professionals: 'Professionals',
-    parents: 'Parents',
-    seniors: 'Seniors (50+)',
-    gamers: 'Gamers',
-    tech: 'Tech Enthusiasts',
-    fitness: 'Fitness Community',
-    business: 'Business Owners',
-    students: 'Students',
-    creators: 'Content Creators'
+    general: "General Audience",
+    teens: "Teenagers (13-19)",
+    young_adults: "Young Adults (20-35)",
+    professionals: "Professionals",
+    parents: "Parents",
+    seniors: "Seniors (50+)",
+    gamers: "Gamers",
+    tech: "Tech Enthusiasts",
+    fitness: "Fitness Community",
+    business: "Business Owners",
+    students: "Students",
+    creators: "Content Creators",
   };
 
   const contentTypes = {
-    tutorial: 'Tutorial/How-to',
-    review: 'Product Review',
-    vlog: 'Vlog/Personal',
-    educational: 'Educational',
-    entertainment: 'Entertainment',
-    unboxing: 'Unboxing',
-    comparison: 'Comparison',
-    listicle: 'Top 10/List',
-    storytelling: 'Storytelling',
-    interview: 'Interview',
-    challenge: 'Challenge',
-    reaction: 'Reaction',
-    news: 'News/Commentary'
+    tutorial: "Tutorial/How-to",
+    review: "Product Review",
+    vlog: "Vlog/Personal",
+    educational: "Educational",
+    entertainment: "Entertainment",
+    unboxing: "Unboxing",
+    comparison: "Comparison",
+    listicle: "Top 10/List",
+    storytelling: "Storytelling",
+    interview: "Interview",
+    challenge: "Challenge",
+    reaction: "Reaction",
+    news: "News/Commentary",
   };
 
   const videoLengths = {
-    short: 'Shorts (< 1 min)',
-    medium: 'Medium (5-15 min)',
-    long: 'Long-form (15+ min)'
+    short: "Shorts (< 1 min)",
+    medium: "Medium (5-15 min)",
+    long: "Long-form (15+ min)",
   };
 
   const goalTypes = {
-    education: 'Education & Teaching',
-    entertainment: 'Entertainment & Fun',
-    inspiration: 'Inspiration & Motivation',
-    business: 'Business & Marketing',
-    viral: 'Viral & Trending',
-    community: 'Community Building'
+    education: "Education & Teaching",
+    entertainment: "Entertainment & Fun",
+    inspiration: "Inspiration & Motivation",
+    business: "Business & Marketing",
+    viral: "Viral & Trending",
+    community: "Community Building",
   };
 
   const popularNiches = [
-    'Technology & Gadgets',
-    'Gaming',
-    'Fitness & Health',
-    'Cooking & Food',
-    'Travel & Adventure',
-    'Fashion & Beauty',
-    'Personal Finance',
-    'DIY & Crafts',
-    'Music & Entertainment',
-    'Education & Learning',
-    'Business & Entrepreneurship',
-    'Lifestyle & Wellness'
+    "Technology & Gadgets",
+    "Gaming",
+    "Fitness & Health",
+    "Cooking & Food",
+    "Travel & Adventure",
+    "Fashion & Beauty",
+    "Personal Finance",
+    "DIY & Crafts",
+    "Music & Entertainment",
+    "Education & Learning",
+    "Business & Entrepreneurship",
+    "Lifestyle & Wellness",
   ];
 
   const handleGenerateIdeas = async () => {
     if (!niche.trim()) {
-      setError('Please enter your niche or topic area');
+      setError("Please enter your niche or topic area");
       return;
     }
 
     setIsGenerating(true);
-    setError('');
+    setError("");
 
     try {
       const requestData = {
@@ -100,18 +120,18 @@ export default function YouTubeIdeaGenerator() {
         contentType,
         videoLength,
         goalType,
-        trendingTopics: trendingTopics.trim()
+        trendingTopics: trendingTopics.trim(),
       };
 
       const result = await generateYouTubeIdeas(requestData);
-      
+
       if (result.success) {
         setIdeas(result.ideas);
       } else {
-        setError(result.error || 'Failed to generate video ideas');
+        setError(result.error || "Failed to generate video ideas");
       }
     } catch (err) {
-      setError('An error occurred while generating ideas');
+      setError("An error occurred while generating ideas");
     } finally {
       setIsGenerating(false);
     }
@@ -119,13 +139,13 @@ export default function YouTubeIdeaGenerator() {
 
   const copyIdea = async (idea, index) => {
     const formattedIdea = `Title: ${idea.title}\n\nHook: ${idea.hook}\n\nKey Points: ${idea.keyPoints}\n\nViral Potential: ${idea.viralPotential}\n\nEngagement Strategy: ${idea.engagementStrategy}`;
-    
+
     try {
       await navigator.clipboard.writeText(formattedIdea);
       setCopiedIndex(index);
       setTimeout(() => setCopiedIndex(null), 2000);
     } catch (err) {
-      console.error('Failed to copy idea:', err);
+      console.error("Failed to copy idea:", err);
     }
   };
 
@@ -245,7 +265,9 @@ export default function YouTubeIdeaGenerator() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="trending-topics">Trending Topics (Optional)</Label>
+                <Label htmlFor="trending-topics">
+                  Trending Topics (Optional)
+                </Label>
                 <Textarea
                   id="trending-topics"
                   placeholder="Enter current trending topics you'd like to incorporate..."
@@ -281,7 +303,7 @@ export default function YouTubeIdeaGenerator() {
                 </>
               )}
             </Button>
-            
+
             {ideas.length > 0 && (
               <Button
                 onClick={regenerateIdeas}
@@ -317,7 +339,10 @@ export default function YouTubeIdeaGenerator() {
           </Card>
 
           {ideas.map((idea, index) => (
-            <Card key={idea.id || index} className="card-cute hover:shadow-md transition-shadow">
+            <Card
+              key={idea.id || index}
+              className="card-cute hover:shadow-md transition-shadow"
+            >
               <CardContent className="p-6">
                 <div className="flex items-start justify-between gap-4">
                   <div className="flex-1 space-y-3">
@@ -329,42 +354,50 @@ export default function YouTubeIdeaGenerator() {
                         {contentTypes[contentType]}
                       </Badge>
                     </div>
-                    
+
                     <h3 className="text-lg font-semibold text-foreground leading-tight">
                       {idea.title}
                     </h3>
-                    
+
                     {idea.hook && (
                       <div>
-                        <h4 className="text-sm font-medium text-muted-foreground mb-1">Hook:</h4>
+                        <h4 className="text-sm font-medium text-muted-foreground mb-1">
+                          Hook:
+                        </h4>
                         <p className="text-sm">{idea.hook}</p>
                       </div>
                     )}
-                    
+
                     {idea.keyPoints && (
                       <div>
-                        <h4 className="text-sm font-medium text-muted-foreground mb-1">Key Points:</h4>
+                        <h4 className="text-sm font-medium text-muted-foreground mb-1">
+                          Key Points:
+                        </h4>
                         <p className="text-sm">{idea.keyPoints}</p>
                       </div>
                     )}
-                    
+
                     <div className="grid md:grid-cols-2 gap-4 text-xs">
                       {idea.viralPotential && (
                         <div>
-                          <h4 className="font-medium text-muted-foreground mb-1">Viral Potential:</h4>
+                          <h4 className="font-medium text-muted-foreground mb-1">
+                            Viral Potential:
+                          </h4>
                           <p>{idea.viralPotential}</p>
                         </div>
                       )}
-                      
+
                       {idea.engagementStrategy && (
                         <div>
-                          <h4 className="font-medium text-muted-foreground mb-1">Engagement Strategy:</h4>
+                          <h4 className="font-medium text-muted-foreground mb-1">
+                            Engagement Strategy:
+                          </h4>
                           <p>{idea.engagementStrategy}</p>
                         </div>
                       )}
                     </div>
                   </div>
-                  
+
                   <Button
                     variant="ghost"
                     size="sm"

@@ -1,28 +1,33 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { RefreshCwIcon, Volume2Icon, DownloadIcon, CopyIcon } from 'lucide-react';
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  RefreshCwIcon,
+  Volume2Icon,
+  DownloadIcon,
+  CopyIcon,
+} from "lucide-react";
 
 export default function AIVoiceGeneratorTool() {
-  const [text, setText] = useState('');
-  const [audioUrl, setAudioUrl] = useState('');
+  const [text, setText] = useState("");
+  const [audioUrl, setAudioUrl] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
 
   const handleGenerate = async () => {
     setLoading(true);
-    setError('');
-    setAudioUrl('');
+    setError("");
+    setAudioUrl("");
     try {
       const url = `https://text.pollinations.ai/${encodeURIComponent(text)}?model=openai-audio&voice=nova`;
       setAudioUrl(url);
     } catch (e) {
-      setError('Failed to generate audio.');
+      setError("Failed to generate audio.");
     }
     setLoading(false);
   };
@@ -49,12 +54,20 @@ export default function AIVoiceGeneratorTool() {
             <Input
               placeholder="Enter text to convert to speech (e.g. Hello world!)"
               value={text}
-              onChange={e => setText(e.target.value)}
+              onChange={(e) => setText(e.target.value)}
               disabled={loading}
               className="mb-2"
             />
-            <Button onClick={handleGenerate} disabled={loading || !text} className="w-full">
-              {loading ? <RefreshCwIcon className="animate-spin h-4 w-4 mr-2" /> : <Volume2Icon className="h-4 w-4 mr-2" />}
+            <Button
+              onClick={handleGenerate}
+              disabled={loading || !text}
+              className="w-full"
+            >
+              {loading ? (
+                <RefreshCwIcon className="animate-spin h-4 w-4 mr-2" />
+              ) : (
+                <Volume2Icon className="h-4 w-4 mr-2" />
+              )}
               Generate Voice
             </Button>
           </div>
@@ -63,11 +76,16 @@ export default function AIVoiceGeneratorTool() {
             <div className="flex flex-col items-center gap-2 mt-4">
               <audio controls src={audioUrl} className="w-full" />
               <div className="flex gap-2 mt-2">
-                <Button variant="outline" size="sm" onClick={() => window.open(audioUrl, '_blank')}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => window.open(audioUrl, "_blank")}
+                >
                   <DownloadIcon className="h-4 w-4 mr-1" /> Download
                 </Button>
                 <Button variant="outline" size="sm" onClick={handleCopy}>
-                  <CopyIcon className="h-4 w-4 mr-1" /> {copied ? 'Copied!' : 'Copy Link'}
+                  <CopyIcon className="h-4 w-4 mr-1" />{" "}
+                  {copied ? "Copied!" : "Copy Link"}
                 </Button>
               </div>
             </div>
@@ -81,4 +99,4 @@ export default function AIVoiceGeneratorTool() {
       </Card>
     </div>
   );
-} 
+}

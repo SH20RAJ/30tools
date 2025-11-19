@@ -1,14 +1,21 @@
-'use client';
-import { useState, useEffect, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Download, Copy, Trash2, FileText, RotateCcw, Save } from 'lucide-react';
-import { toast } from 'sonner';
+"use client";
+import { useState, useEffect, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Download,
+  Copy,
+  Trash2,
+  FileText,
+  RotateCcw,
+  Save,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function NotesTool() {
-  const [content, setContent] = useState('');
+  const [content, setContent] = useState("");
   const [wordCount, setWordCount] = useState(0);
   const [charCount, setCharCount] = useState(0);
   const [lastSaved, setLastSaved] = useState(null);
@@ -16,9 +23,9 @@ export default function NotesTool() {
 
   // Load content from localStorage on mount
   useEffect(() => {
-    const savedContent = localStorage.getItem('notes-content');
-    const savedTime = localStorage.getItem('notes-last-saved');
-    
+    const savedContent = localStorage.getItem("notes-content");
+    const savedTime = localStorage.getItem("notes-last-saved");
+
     if (savedContent) {
       setContent(savedContent);
       if (savedTime) {
@@ -37,15 +44,15 @@ export default function NotesTool() {
 
   // Auto-save functionality
   const saveToStorage = useCallback(() => {
-    localStorage.setItem('notes-content', content);
+    localStorage.setItem("notes-content", content);
     const now = new Date();
-    localStorage.setItem('notes-last-saved', now.toISOString());
+    localStorage.setItem("notes-last-saved", now.toISOString());
     setLastSaved(now);
   }, [content]);
 
   // Auto-save when content changes
   useEffect(() => {
-    if (autoSave && content !== '') {
+    if (autoSave && content !== "") {
       const timeoutId = setTimeout(() => {
         saveToStorage();
       }, 1000); // Save after 1 second of no typing
@@ -59,62 +66,66 @@ export default function NotesTool() {
   };
 
   const clearNotes = () => {
-    if (window.confirm('Are you sure you want to clear all notes? This cannot be undone.')) {
-      setContent('');
-      localStorage.removeItem('notes-content');
-      localStorage.removeItem('notes-last-saved');
+    if (
+      window.confirm(
+        "Are you sure you want to clear all notes? This cannot be undone.",
+      )
+    ) {
+      setContent("");
+      localStorage.removeItem("notes-content");
+      localStorage.removeItem("notes-last-saved");
       setLastSaved(null);
-      toast.success('Notes cleared');
+      toast.success("Notes cleared");
     }
   };
 
   const copyToClipboard = async () => {
     if (!content.trim()) {
-      toast.error('No content to copy');
+      toast.error("No content to copy");
       return;
     }
 
     try {
       await navigator.clipboard.writeText(content);
-      toast.success('Copied to clipboard');
+      toast.success("Copied to clipboard");
     } catch (err) {
-      toast.error('Failed to copy to clipboard');
+      toast.error("Failed to copy to clipboard");
     }
   };
 
   const downloadAsText = () => {
     if (!content.trim()) {
-      toast.error('No content to download');
+      toast.error("No content to download");
       return;
     }
 
-    const blob = new Blob([content], { type: 'text/plain' });
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `notes-${new Date().toISOString().split('T')[0]}.txt`;
+    a.download = `notes-${new Date().toISOString().split("T")[0]}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    toast.success('Notes downloaded');
+    toast.success("Notes downloaded");
   };
 
   const manualSave = () => {
     saveToStorage();
-    toast.success('Notes saved');
+    toast.success("Notes saved");
   };
 
   const formatLastSaved = (date) => {
-    if (!date) return 'Never';
-    
+    if (!date) return "Never";
+
     const now = new Date();
     const diffMs = now - date;
     const diffSecs = Math.floor(diffMs / 1000);
     const diffMins = Math.floor(diffSecs / 60);
     const diffHours = Math.floor(diffMins / 60);
-    
-    if (diffSecs < 60) return 'Just now';
+
+    if (diffSecs < 60) return "Just now";
     if (diffMins < 60) return `${diffMins}m ago`;
     if (diffHours < 24) return `${diffHours}h ago`;
     return date.toLocaleDateString();
@@ -130,7 +141,7 @@ export default function NotesTool() {
           </CardTitle>
           <div className="flex items-center gap-2">
             <Badge variant="outline" className="text-xs">
-              {autoSave ? 'Auto-save on' : 'Auto-save off'}
+              {autoSave ? "Auto-save on" : "Auto-save off"}
             </Badge>
             <Badge variant="outline" className="text-xs">
               Last saved: {formatLastSaved(lastSaved)}
@@ -138,7 +149,7 @@ export default function NotesTool() {
           </div>
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         <div className="relative">
           <Textarea
@@ -165,11 +176,9 @@ Features:
           <div className="flex items-center gap-4 text-sm text-muted-foreground">
             <span>{wordCount} words</span>
             <span>{charCount} characters</span>
-            {content.length > 0 && (
-              <span>{Math.ceil(charCount / 1000)}KB</span>
-            )}
+            {content.length > 0 && <span>{Math.ceil(charCount / 1000)}KB</span>}
           </div>
-          
+
           <div className="flex items-center gap-2">
             <Button
               variant="outline"
@@ -181,7 +190,7 @@ Features:
               <Save className="w-3 h-3 mr-1" />
               Save
             </Button>
-            
+
             <Button
               variant="outline"
               size="sm"
@@ -192,7 +201,7 @@ Features:
               <Copy className="w-3 h-3 mr-1" />
               Copy
             </Button>
-            
+
             <Button
               variant="outline"
               size="sm"
@@ -203,7 +212,7 @@ Features:
               <Download className="w-3 h-3 mr-1" />
               Download
             </Button>
-            
+
             <Button
               variant="outline"
               size="sm"
@@ -220,12 +229,16 @@ Features:
         {/* Quick Tips */}
         {content.length === 0 && (
           <div className="bg-muted/50 dark:bg-indigo-950/20 border border-border dark:border-border rounded-lg p-4 mt-4">
-            <h4 className="font-medium text-primary dark:text-indigo-100 mb-2">Quick Tips:</h4>
+            <h4 className="font-medium text-primary dark:text-indigo-100 mb-2">
+              Quick Tips:
+            </h4>
             <ul className="text-sm text-primary dark:text-indigo-300 space-y-1">
               <li>• Your notes auto-save as you type</li>
               <li>• All data stays in your browser (100% private)</li>
               <li>• Works offline once loaded</li>
-              <li>• Use keyboard shortcuts: Ctrl+A (select all), Ctrl+C (copy)</li>
+              <li>
+                • Use keyboard shortcuts: Ctrl+A (select all), Ctrl+C (copy)
+              </li>
             </ul>
           </div>
         )}

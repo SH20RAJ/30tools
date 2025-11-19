@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Menu, X, Video } from 'lucide-react';
-import AuthComponent from '@/components/auth/AuthComponent';
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Video } from "lucide-react";
+import AuthComponent from "@/components/auth/AuthComponent";
 
 export default function VideoToolsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const videoTools = [
-    { name: 'Video Compressor', href: '/video-compressor' },
-    { name: 'Video to GIF', href: '/video-to-gif' },
+    { name: "Video Compressor", href: "/video-compressor" },
+    { name: "Video to GIF", href: "/video-to-gif" },
   ];
 
   return (
@@ -25,7 +25,9 @@ export default function VideoToolsNavbar() {
             <span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               30tools
             </span>
-            <span className="text-sm text-muted-foreground font-medium">Video</span>
+            <span className="text-sm text-muted-foreground font-medium">
+              Video
+            </span>
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
@@ -40,7 +42,7 @@ export default function VideoToolsNavbar() {
                 </Link>
               ))}
             </div>
-            
+
             <div className="flex items-center space-x-2">
               <Link href="/other-tools">
                 <Button variant="ghost" size="sm" className="btn-cute">
@@ -63,7 +65,11 @@ export default function VideoToolsNavbar() {
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>

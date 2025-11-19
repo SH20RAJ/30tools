@@ -1,123 +1,144 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Download, FileText, Loader2, Copy, Clock, Languages, VideoIcon, FileJson, FileSpreadsheet } from 'lucide-react';
-import { toast } from 'sonner';
-import { downloadYouTubeSubtitles } from '@/lib/subtitles-actions';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Download,
+  FileText,
+  Loader2,
+  Copy,
+  Clock,
+  Languages,
+  VideoIcon,
+  FileJson,
+  FileSpreadsheet,
+} from "lucide-react";
+import { toast } from "sonner";
+import { downloadYouTubeSubtitles } from "@/lib/subtitles-actions";
 
 export default function YouTubeSubtitlesDownloader() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [subtitleData, setSubtitleData] = useState(null);
-  const [error, setError] = useState('');
-  const [selectedLanguage, setSelectedLanguage] = useState('en');
+  const [error, setError] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState("en");
 
   const languageOptions = [
-    { value: 'en', label: 'English' },
-    { value: 'es', label: 'Spanish' },
-    { value: 'fr', label: 'French' },
-    { value: 'de', label: 'German' },
-    { value: 'it', label: 'Italian' },
-    { value: 'pt', label: 'Portuguese' },
-    { value: 'ru', label: 'Russian' },
-    { value: 'ja', label: 'Japanese' },
-    { value: 'ko', label: 'Korean' },
-    { value: 'zh', label: 'Chinese' },
-    { value: 'hi', label: 'Hindi' },
-    { value: 'ar', label: 'Arabic' },
-    { value: 'auto', label: 'Auto-detect' }
+    { value: "en", label: "English" },
+    { value: "es", label: "Spanish" },
+    { value: "fr", label: "French" },
+    { value: "de", label: "German" },
+    { value: "it", label: "Italian" },
+    { value: "pt", label: "Portuguese" },
+    { value: "ru", label: "Russian" },
+    { value: "ja", label: "Japanese" },
+    { value: "ko", label: "Korean" },
+    { value: "zh", label: "Chinese" },
+    { value: "hi", label: "Hindi" },
+    { value: "ar", label: "Arabic" },
+    { value: "auto", label: "Auto-detect" },
   ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!url.trim()) {
-      toast.error('Please enter a YouTube URL');
+      toast.error("Please enter a YouTube URL");
       return;
     }
 
     setIsLoading(true);
-    setError('');
+    setError("");
     setSubtitleData(null);
 
     try {
-      console.log('🎬 Starting subtitle download...');
+      console.log("🎬 Starting subtitle download...");
       const result = await downloadYouTubeSubtitles(url, selectedLanguage);
-      
+
       if (result.success) {
         setSubtitleData(result.data);
-        toast.success('Subtitles downloaded successfully!');
-        console.log('✅ Subtitles loaded:', result.data);
+        toast.success("Subtitles downloaded successfully!");
+        console.log("✅ Subtitles loaded:", result.data);
       } else {
-        setError(result.error || 'Failed to download subtitles from YouTube video');
-        toast.error(result.error || 'Failed to download subtitles');
+        setError(
+          result.error || "Failed to download subtitles from YouTube video",
+        );
+        toast.error(result.error || "Failed to download subtitles");
       }
     } catch (err) {
-      console.error('❌ Error downloading subtitles:', err);
-      setError('An error occurred while downloading the subtitles');
-      toast.error('An error occurred while downloading the subtitles');
+      console.error("❌ Error downloading subtitles:", err);
+      setError("An error occurred while downloading the subtitles");
+      toast.error("An error occurred while downloading the subtitles");
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleDownload = (content, filename, format) => {
-    let mimeType = 'text/plain';
-    let fileExtension = '.txt';
-    
+    let mimeType = "text/plain";
+    let fileExtension = ".txt";
+
     switch (format) {
-      case 'srt':
-        mimeType = 'text/srt';
-        fileExtension = '.srt';
+      case "srt":
+        mimeType = "text/srt";
+        fileExtension = ".srt";
         break;
-      case 'vtt':
-        mimeType = 'text/vtt';
-        fileExtension = '.vtt';
+      case "vtt":
+        mimeType = "text/vtt";
+        fileExtension = ".vtt";
         break;
-      case 'json':
-        mimeType = 'application/json';
-        fileExtension = '.json';
+      case "json":
+        mimeType = "application/json";
+        fileExtension = ".json";
         break;
-      case 'csv':
-        mimeType = 'text/csv';
-        fileExtension = '.csv';
+      case "csv":
+        mimeType = "text/csv";
+        fileExtension = ".csv";
         break;
       default:
-        mimeType = 'text/plain';
-        fileExtension = '.txt';
+        mimeType = "text/plain";
+        fileExtension = ".txt";
     }
 
     const blob = new Blob([content], { type: mimeType });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = `${filename}${fileExtension}`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    
+
     toast.success(`${format.toUpperCase()} file downloaded successfully!`);
   };
 
   const handleCopy = (content, format) => {
-    navigator.clipboard.writeText(content).then(() => {
-      toast.success(`${format.toUpperCase()} content copied to clipboard!`);
-    }).catch(() => {
-      toast.error('Failed to copy to clipboard');
-    });
+    navigator.clipboard
+      .writeText(content)
+      .then(() => {
+        toast.success(`${format.toUpperCase()} content copied to clipboard!`);
+      })
+      .catch(() => {
+        toast.error("Failed to copy to clipboard");
+      });
   };
 
   const formatDuration = (seconds) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const secs = Math.floor(seconds % 60);
-    
+
     if (hours > 0) {
       return `${hours}h ${minutes}m ${secs}s`;
     }
@@ -125,8 +146,10 @@ export default function YouTubeSubtitlesDownloader() {
   };
 
   const getPreviewText = (content, maxLength = 500) => {
-    if (!content) return '';
-    return content.length > maxLength ? content.substring(0, maxLength) + '...' : content;
+    if (!content) return "";
+    return content.length > maxLength
+      ? content.substring(0, maxLength) + "..."
+      : content;
   };
 
   return (
@@ -137,7 +160,8 @@ export default function YouTubeSubtitlesDownloader() {
           YouTube Subtitles Downloader
         </h1>
         <p className="text-muted-foreground dark:text-gray-300">
-          Download and convert YouTube video subtitles to multiple formats (TXT, SRT, VTT, JSON, CSV)
+          Download and convert YouTube video subtitles to multiple formats (TXT,
+          SRT, VTT, JSON, CSV)
         </p>
       </div>
 
@@ -163,7 +187,10 @@ export default function YouTubeSubtitlesDownloader() {
                 />
               </div>
               <div className="w-full sm:w-48">
-                <Select value={selectedLanguage} onValueChange={setSelectedLanguage}>
+                <Select
+                  value={selectedLanguage}
+                  onValueChange={setSelectedLanguage}
+                >
                   <SelectTrigger>
                     <SelectValue placeholder="Language" />
                   </SelectTrigger>
@@ -179,7 +206,11 @@ export default function YouTubeSubtitlesDownloader() {
                   </SelectContent>
                 </Select>
               </div>
-              <Button type="submit" disabled={isLoading} className="w-full sm:w-auto">
+              <Button
+                type="submit"
+                disabled={isLoading}
+                className="w-full sm:w-auto"
+              >
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -222,12 +253,8 @@ export default function YouTubeSubtitlesDownloader() {
               <Badge variant="secondary">
                 {subtitleData.segmentCount} segments
               </Badge>
-              <Badge variant="secondary">
-                {subtitleData.wordCount} words
-              </Badge>
-              <Badge variant="secondary">
-                {subtitleData.language}
-              </Badge>
+              <Badge variant="secondary">{subtitleData.wordCount} words</Badge>
+              <Badge variant="secondary">{subtitleData.language}</Badge>
             </div>
             <p className="text-sm text-muted-foreground dark:text-gray-300">
               <strong>Title:</strong> {subtitleData.title}
@@ -251,7 +278,7 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleCopy(subtitleData.plainText, 'text')}
+                      onClick={() => handleCopy(subtitleData.plainText, "text")}
                     >
                       <Copy className="mr-1 h-4 w-4" />
                       Copy
@@ -259,7 +286,13 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleDownload(subtitleData.plainText, 'subtitles', 'txt')}
+                      onClick={() =>
+                        handleDownload(
+                          subtitleData.plainText,
+                          "subtitles",
+                          "txt",
+                        )
+                      }
                     >
                       <Download className="mr-1 h-4 w-4" />
                       Download TXT
@@ -280,7 +313,7 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleCopy(subtitleData.srtContent, 'SRT')}
+                      onClick={() => handleCopy(subtitleData.srtContent, "SRT")}
                     >
                       <Copy className="mr-1 h-4 w-4" />
                       Copy
@@ -288,7 +321,13 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleDownload(subtitleData.srtContent, 'subtitles', 'srt')}
+                      onClick={() =>
+                        handleDownload(
+                          subtitleData.srtContent,
+                          "subtitles",
+                          "srt",
+                        )
+                      }
                     >
                       <Download className="mr-1 h-4 w-4" />
                       Download SRT
@@ -309,7 +348,7 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleCopy(subtitleData.vttContent, 'VTT')}
+                      onClick={() => handleCopy(subtitleData.vttContent, "VTT")}
                     >
                       <Copy className="mr-1 h-4 w-4" />
                       Copy
@@ -317,7 +356,13 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleDownload(subtitleData.vttContent, 'subtitles', 'vtt')}
+                      onClick={() =>
+                        handleDownload(
+                          subtitleData.vttContent,
+                          "subtitles",
+                          "vtt",
+                        )
+                      }
                     >
                       <Download className="mr-1 h-4 w-4" />
                       Download VTT
@@ -338,7 +383,9 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleCopy(subtitleData.jsonContent, 'JSON')}
+                      onClick={() =>
+                        handleCopy(subtitleData.jsonContent, "JSON")
+                      }
                     >
                       <Copy className="mr-1 h-4 w-4" />
                       Copy
@@ -346,7 +393,13 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleDownload(subtitleData.jsonContent, 'subtitles', 'json')}
+                      onClick={() =>
+                        handleDownload(
+                          subtitleData.jsonContent,
+                          "subtitles",
+                          "json",
+                        )
+                      }
                     >
                       <FileJson className="mr-1 h-4 w-4" />
                       Download JSON
@@ -367,7 +420,7 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleCopy(subtitleData.csvContent, 'CSV')}
+                      onClick={() => handleCopy(subtitleData.csvContent, "CSV")}
                     >
                       <Copy className="mr-1 h-4 w-4" />
                       Copy
@@ -375,7 +428,13 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleDownload(subtitleData.csvContent, 'subtitles', 'csv')}
+                      onClick={() =>
+                        handleDownload(
+                          subtitleData.csvContent,
+                          "subtitles",
+                          "csv",
+                        )
+                      }
                     >
                       <FileSpreadsheet className="mr-1 h-4 w-4" />
                       Download CSV
@@ -396,7 +455,12 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleCopy(subtitleData.timestampedText, 'timestamped text')}
+                      onClick={() =>
+                        handleCopy(
+                          subtitleData.timestampedText,
+                          "timestamped text",
+                        )
+                      }
                     >
                       <Copy className="mr-1 h-4 w-4" />
                       Copy
@@ -404,7 +468,13 @@ export default function YouTubeSubtitlesDownloader() {
                     <Button
                       variant="outline"
                       size="sm"
-                      onClick={() => handleDownload(subtitleData.timestampedText, 'subtitles-timestamped', 'txt')}
+                      onClick={() =>
+                        handleDownload(
+                          subtitleData.timestampedText,
+                          "subtitles-timestamped",
+                          "txt",
+                        )
+                      }
                     >
                       <Download className="mr-1 h-4 w-4" />
                       Download
@@ -425,7 +495,9 @@ export default function YouTubeSubtitlesDownloader() {
       {/* Features Info */}
       <Card className="bg-muted/50 dark:bg-primary/20 border-border dark:border-border">
         <CardContent className="pt-6">
-          <h3 className="font-medium mb-2 text-primary dark:text-blue-100">Supported Formats:</h3>
+          <h3 className="font-medium mb-2 text-primary dark:text-blue-100">
+            Supported Formats:
+          </h3>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm text-primary dark:text-blue-200">
             <div>• Plain Text (.txt)</div>
             <div>• SubRip (.srt)</div>
@@ -434,7 +506,8 @@ export default function YouTubeSubtitlesDownloader() {
             <div>• CSV (.csv)</div>
           </div>
           <p className="text-sm text-primary dark:text-blue-300 mt-2">
-            Download subtitles in your preferred format for editing, translation, or integration with video editing software.
+            Download subtitles in your preferred format for editing,
+            translation, or integration with video editing software.
           </p>
         </CardContent>
       </Card>

@@ -1,17 +1,17 @@
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { 
-  ImageIcon, 
-  HomeIcon,
-  MenuIcon 
-} from 'lucide-react';
-import AuthComponent from '@/components/auth/AuthComponent';
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { ImageIcon, HomeIcon, MenuIcon } from "lucide-react";
+import AuthComponent from "@/components/auth/AuthComponent";
 
 export default function ImageToolsNavbar() {
   const imageTools = [
     { name: "Image Compressor", href: "/image-compressor", popular: true },
-    { name: "Free Image Compressor", href: "/free-image-compressor", popular: true },
+    {
+      name: "Free Image Compressor",
+      href: "/free-image-compressor",
+      popular: true,
+    },
     { name: "Image Optimizer", href: "/image-optimizer" },
     { name: "Compress Images Online", href: "/compress-images-online" },
   ];
@@ -29,15 +29,18 @@ export default function ImageToolsNavbar() {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/" className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors">
+            <Link
+              href="/"
+              className="flex items-center space-x-1 text-muted-foreground hover:text-foreground transition-colors"
+            >
               <HomeIcon className="h-4 w-4" />
               <span>Home</span>
             </Link>
-            
+
             <div className="flex items-center space-x-4">
               {imageTools.map((tool) => (
-                <Link 
-                  key={tool.href} 
+                <Link
+                  key={tool.href}
                   href={tool.href}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors relative"
                 >

@@ -1,20 +1,26 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Play, Loader2, AlertCircle, Link as LinkIcon } from 'lucide-react';
-import { fetchTeraboxVideo } from '@/lib/tera';
-import Hls from 'hls.js';
+import { useState, useRef, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Download,
+  Play,
+  Loader2,
+  AlertCircle,
+  Link as LinkIcon,
+} from "lucide-react";
+import { fetchTeraboxVideo } from "@/lib/tera";
+import Hls from "hls.js";
 
 export default function TeraboxVideoPlayer() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [videoData, setVideoData] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-  
+
   const videoRef = useRef(null);
   const hlsRef = useRef(null);
 
@@ -29,14 +35,14 @@ export default function TeraboxVideoPlayer() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     if (!url.trim()) {
-      setError('Please enter a Terabox URL');
+      setError("Please enter a Terabox URL");
       return;
     }
 
     setIsLoading(true);
-    setError('');
+    setError("");
     setVideoData(null);
     setIsPlaying(false);
 
@@ -44,7 +50,7 @@ export default function TeraboxVideoPlayer() {
       const data = await fetchTeraboxVideo(url);
       setVideoData(data);
     } catch (err) {
-      setError(err.message || 'Failed to load video');
+      setError(err.message || "Failed to load video");
     } finally {
       setIsLoading(false);
     }
@@ -74,19 +80,19 @@ export default function TeraboxVideoPlayer() {
       });
 
       hls.on(Hls.Events.ERROR, (event, data) => {
-        console.error('HLS Error:', data);
+        console.error("HLS Error:", data);
         if (data.fatal) {
           switch (data.type) {
             case Hls.ErrorTypes.NETWORK_ERROR:
-              setError('Network error occurred. Please try again.');
+              setError("Network error occurred. Please try again.");
               hls.startLoad();
               break;
             case Hls.ErrorTypes.MEDIA_ERROR:
-              setError('Media error occurred. Trying to recover...');
+              setError("Media error occurred. Trying to recover...");
               hls.recoverMediaError();
               break;
             default:
-              setError('Fatal error occurred. Cannot play video.');
+              setError("Fatal error occurred. Cannot play video.");
               hls.destroy();
               break;
           }
@@ -94,24 +100,24 @@ export default function TeraboxVideoPlayer() {
       });
 
       hlsRef.current = hls;
-    } else if (videoRef.current.canPlayType('application/vnd.apple.mpegurl')) {
+    } else if (videoRef.current.canPlayType("application/vnd.apple.mpegurl")) {
       // Native HLS support (Safari)
       videoRef.current.src = videoData.source;
       videoRef.current.play();
       setIsPlaying(true);
     } else {
-      setError('Your browser does not support HLS streaming');
+      setError("Your browser does not support HLS streaming");
     }
   };
 
   const handleDownload = () => {
     if (!videoData?.download) return;
 
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = videoData.download;
-    link.download = 'terabox-video.mp4';
-    link.target = '_blank';
-    link.style.display = 'none';
+    link.download = "terabox-video.mp4";
+    link.target = "_blank";
+    link.style.display = "none";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -135,7 +141,7 @@ export default function TeraboxVideoPlayer() {
                 value={url}
                 onChange={(e) => {
                   setUrl(e.target.value);
-                  setError('');
+                  setError("");
                 }}
                 className="flex-1 border-border focus:border-primary focus:ring-primary"
                 disabled={isLoading}
@@ -180,7 +186,7 @@ export default function TeraboxVideoPlayer() {
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
                 />
-                
+
                 {!isPlaying && (
                   <div className="absolute inset-0 flex items-center justify-center bg-black/50">
                     <Button
@@ -221,7 +227,8 @@ export default function TeraboxVideoPlayer() {
 
           <div className="mt-6 text-center text-sm text-muted-foreground space-y-2">
             <p>
-              <strong>How to use:</strong> Paste your Terabox share link and click "Load Video" to play or download.
+              <strong>How to use:</strong> Paste your Terabox share link and
+              click "Load Video" to play or download.
             </p>
             <p className="text-xs">
               Supports: teraboxshare.com, terabox.com, 1024terabox.com

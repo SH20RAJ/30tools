@@ -1,41 +1,54 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { generateYouTubeTags } from '@/lib/tag-actions';
-import { PlayIcon, CopyIcon, TagIcon, TrendingUpIcon, SearchIcon, LoaderIcon } from 'lucide-react';
-import { toast } from 'sonner';
+import { generateYouTubeTags } from "@/lib/tag-actions";
+import {
+  PlayIcon,
+  CopyIcon,
+  TagIcon,
+  TrendingUpIcon,
+  SearchIcon,
+  LoaderIcon,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function YouTubeTagGeneratorClient() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [tags, setTags] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleGenerateTags = async () => {
     if (!query.trim()) {
-      toast.error('Please enter a topic or keyword');
+      toast.error("Please enter a topic or keyword");
       return;
     }
 
     setIsLoading(true);
     try {
       const result = await generateYouTubeTags(query);
-      
+
       if (result.success) {
         setTags(result.data.tags || []);
         setSearchQuery(result.data.query || query);
-        toast.success('YouTube tags generated successfully!');
+        toast.success("YouTube tags generated successfully!");
       } else {
-        toast.error(result.error || 'Failed to generate tags');
+        toast.error(result.error || "Failed to generate tags");
       }
     } catch (error) {
-      toast.error('An error occurred while generating tags');
+      toast.error("An error occurred while generating tags");
     } finally {
       setIsLoading(false);
     }
@@ -43,19 +56,19 @@ export default function YouTubeTagGeneratorClient() {
 
   const copyTag = (tag) => {
     navigator.clipboard.writeText(tag);
-    toast.success('Tag copied to clipboard!');
+    toast.success("Tag copied to clipboard!");
   };
 
   const copyAllTags = () => {
-    const allTags = tags.join(', ');
+    const allTags = tags.join(", ");
     navigator.clipboard.writeText(allTags);
-    toast.success('All tags copied to clipboard!');
+    toast.success("All tags copied to clipboard!");
   };
 
   const copyAsHashtags = () => {
-    const hashtags = tags.map(tag => `#${tag.replace(/\s+/g, '')}`).join(' ');
+    const hashtags = tags.map((tag) => `#${tag.replace(/\s+/g, "")}`).join(" ");
     navigator.clipboard.writeText(hashtags);
-    toast.success('Tags copied as hashtags!');
+    toast.success("Tags copied as hashtags!");
   };
 
   return (
@@ -69,8 +82,9 @@ export default function YouTubeTagGeneratorClient() {
           <h1 className="text-3xl font-bold">YouTube Tag Generator</h1>
         </div>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Generate optimized YouTube tags to improve your video's discoverability and SEO. 
-          Get relevant, trending tags that help boost your video's visibility and reach.
+          Generate optimized YouTube tags to improve your video's
+          discoverability and SEO. Get relevant, trending tags that help boost
+          your video's visibility and reach.
         </p>
       </div>
 
@@ -82,7 +96,8 @@ export default function YouTubeTagGeneratorClient() {
             Generate Tags
           </CardTitle>
           <CardDescription>
-            Enter your video topic, main keyword, or a brief description of your content
+            Enter your video topic, main keyword, or a brief description of your
+            content
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -93,12 +108,12 @@ export default function YouTubeTagGeneratorClient() {
               placeholder="e.g., cooking recipes, tech reviews, travel vlog..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleGenerateTags()}
+              onKeyPress={(e) => e.key === "Enter" && handleGenerateTags()}
             />
           </div>
-          
-          <Button 
-            onClick={handleGenerateTags} 
+
+          <Button
+            onClick={handleGenerateTags}
             disabled={isLoading || !query.trim()}
             className="w-full"
           >
@@ -128,7 +143,8 @@ export default function YouTubeTagGeneratorClient() {
                   Generated Tags
                 </CardTitle>
                 <CardDescription>
-                  {searchQuery && `Tags for: "${searchQuery}"`} • {tags.length} tags generated
+                  {searchQuery && `Tags for: "${searchQuery}"`} • {tags.length}{" "}
+                  tags generated
                 </CardDescription>
               </div>
               <div className="flex gap-2">
@@ -147,9 +163,9 @@ export default function YouTubeTagGeneratorClient() {
             {/* Tags Display */}
             <div className="flex flex-wrap gap-2 mb-6">
               {tags.map((tag, index) => (
-                <Badge 
-                  key={index} 
-                  variant="secondary" 
+                <Badge
+                  key={index}
+                  variant="secondary"
                   className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors px-3 py-1"
                   onClick={() => copyTag(tag)}
                 >
@@ -165,18 +181,20 @@ export default function YouTubeTagGeneratorClient() {
                 <Label htmlFor="tags-text">Tags (comma-separated)</Label>
                 <Textarea
                   id="tags-text"
-                  value={tags.join(', ')}
+                  value={tags.join(", ")}
                   readOnly
                   className="min-h-[100px]"
                   onClick={(e) => e.target.select()}
                 />
               </div>
-              
+
               <div>
                 <Label htmlFor="hashtags-text">Hashtags</Label>
                 <Textarea
                   id="hashtags-text"
-                  value={tags.map(tag => `#${tag.replace(/\s+/g, '')}`).join(' ')}
+                  value={tags
+                    .map((tag) => `#${tag.replace(/\s+/g, "")}`)
+                    .join(" ")}
                   readOnly
                   className="min-h-[100px]"
                   onClick={(e) => e.target.select()}

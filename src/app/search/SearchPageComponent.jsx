@@ -1,22 +1,36 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useMemo } from 'react';
-import { useSearchParams, useRouter } from 'next/navigation';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Skeleton } from '@/components/ui/skeleton';
-import { SearchIcon, FilterIcon, ArrowLeftIcon, ArrowRightIcon, StarIcon } from 'lucide-react';
-import toolsData from '@/constants/tools.json';
+import { useState, useEffect, useMemo } from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Skeleton } from "@/components/ui/skeleton";
+import {
+  SearchIcon,
+  FilterIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  StarIcon,
+} from "lucide-react";
+import toolsData from "@/constants/tools.json";
 
 export default function SearchPageComponent() {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const [query, setQuery] = useState(searchParams.get('q') || '');
-  const [category, setCategory] = useState(searchParams.get('category') || 'all');
+  const [query, setQuery] = useState(searchParams.get("q") || "");
+  const [category, setCategory] = useState(
+    searchParams.get("category") || "all",
+  );
   const [results, setResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
@@ -26,7 +40,7 @@ export default function SearchPageComponent() {
       id: key,
       name: cat.name,
       description: cat.description,
-      slug: cat.slug
+      slug: cat.slug,
     }));
   }, []);
 
@@ -34,8 +48,9 @@ export default function SearchPageComponent() {
     setLoading(true);
     try {
       const params = new URLSearchParams();
-      if (searchQuery) params.set('q', searchQuery);
-      if (selectedCategory && selectedCategory !== 'all') params.set('category', selectedCategory);
+      if (searchQuery) params.set("q", searchQuery);
+      if (selectedCategory && selectedCategory !== "all")
+        params.set("category", selectedCategory);
 
       const response = await fetch(`/api/search?${params}`);
       const data = await response.json();
@@ -43,7 +58,7 @@ export default function SearchPageComponent() {
       setResults(data.results || []);
       setTotal(data.total || 0);
     } catch (error) {
-      console.error('Search failed:', error);
+      console.error("Search failed:", error);
       setResults([]);
       setTotal(0);
     } finally {
@@ -52,10 +67,10 @@ export default function SearchPageComponent() {
   };
 
   useEffect(() => {
-    const initialQuery = searchParams.get('q') || '';
-    const initialCategory = searchParams.get('category') || 'all';
+    const initialQuery = searchParams.get("q") || "";
+    const initialCategory = searchParams.get("category") || "all";
 
-    if (initialQuery || initialCategory !== 'all') {
+    if (initialQuery || initialCategory !== "all") {
       searchTools(initialQuery, initialCategory);
     }
   }, [searchParams]);
@@ -64,10 +79,10 @@ export default function SearchPageComponent() {
     e.preventDefault();
 
     const params = new URLSearchParams();
-    if (query) params.set('q', query);
-    if (category && category !== 'all') params.set('category', category);
+    if (query) params.set("q", query);
+    if (category && category !== "all") params.set("category", category);
 
-    const searchUrl = params.toString() ? `/search?${params}` : '/search';
+    const searchUrl = params.toString() ? `/search?${params}` : "/search";
     router.push(searchUrl);
 
     searchTools(query, category);
@@ -77,25 +92,26 @@ export default function SearchPageComponent() {
     setCategory(newCategory);
 
     const params = new URLSearchParams();
-    if (query) params.set('q', query);
-    if (newCategory && newCategory !== 'all') params.set('category', newCategory);
+    if (query) params.set("q", query);
+    if (newCategory && newCategory !== "all")
+      params.set("category", newCategory);
 
-    const searchUrl = params.toString() ? `/search?${params}` : '/search';
+    const searchUrl = params.toString() ? `/search?${params}` : "/search";
     router.push(searchUrl);
 
     searchTools(query, newCategory);
   };
 
   const popularSearches = [
-    'image compressor',
-    'video converter',
-    'pdf merger',
-    'text counter',
-    'audio converter'
+    "image compressor",
+    "video converter",
+    "pdf merger",
+    "text counter",
+    "audio converter",
   ];
 
   const formatToolName = (name) => {
-    return name.toLowerCase().replace(/\s+/g, '-');
+    return name.toLowerCase().replace(/\s+/g, "-");
   };
 
   return (
@@ -123,7 +139,10 @@ export default function SearchPageComponent() {
       <main className="container mx-auto px-4 py-8">
         {/* Search Form */}
         <div className="mb-8">
-          <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-4">
+          <form
+            onSubmit={handleSearch}
+            className="flex flex-col md:flex-row gap-4"
+          >
             <div className="flex-1 relative">
               <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
               <Input
@@ -151,13 +170,13 @@ export default function SearchPageComponent() {
             </Select>
 
             <Button type="submit" disabled={loading}>
-              {loading ? 'Searching...' : 'Search'}
+              {loading ? "Searching..." : "Search"}
             </Button>
           </form>
         </div>
 
         {/* Popular Searches */}
-        {!query && category === 'all' && (
+        {!query && category === "all" && (
           <div className="mb-8">
             <h2 className="text-lg font-semibold mb-4">Popular Searches</h2>
             <div className="flex flex-wrap gap-2">
@@ -179,7 +198,7 @@ export default function SearchPageComponent() {
         )}
 
         {/* Search Results */}
-        {(query || category !== 'all') && (
+        {(query || category !== "all") && (
           <div className="mb-6">
             <div className="flex items-center justify-between">
               <h2 className="text-lg font-semibold">
@@ -190,11 +209,11 @@ export default function SearchPageComponent() {
                   variant="outline"
                   size="sm"
                   onClick={() => {
-                    setQuery('');
-                    setCategory('all');
+                    setQuery("");
+                    setCategory("all");
                     setResults([]);
                     setTotal(0);
-                    router.push('/search');
+                    router.push("/search");
                   }}
                 >
                   Clear Search
@@ -205,7 +224,8 @@ export default function SearchPageComponent() {
             {query && (
               <p className="text-muted-foreground mt-1">
                 Showing results for "{query}"
-                {category !== 'all' && ` in ${categories.find(c => c.id === category)?.name}`}
+                {category !== "all" &&
+                  ` in ${categories.find((c) => c.id === category)?.name}`}
               </p>
             )}
           </div>
@@ -237,7 +257,9 @@ export default function SearchPageComponent() {
                   <CardHeader>
                     <div className="flex items-start justify-between">
                       <div className="flex-1">
-                        <CardTitle className="text-lg group-hover:text-primary transition-colors">{tool.name}</CardTitle>
+                        <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                          {tool.name}
+                        </CardTitle>
                         <p className="text-sm text-muted-foreground mt-1 group-hover:text-foreground transition-colors">
                           {tool.description}
                         </p>
@@ -275,7 +297,7 @@ export default function SearchPageComponent() {
         )}
 
         {/* No Results */}
-        {!loading && (query || category !== 'all') && results.length === 0 && (
+        {!loading && (query || category !== "all") && results.length === 0 && (
           <div className="text-center py-12">
             <div className="max-w-md mx-auto">
               <SearchIcon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
@@ -287,11 +309,11 @@ export default function SearchPageComponent() {
                 <Button
                   variant="outline"
                   onClick={() => {
-                    setQuery('');
-                    setCategory('all');
+                    setQuery("");
+                    setCategory("all");
                     setResults([]);
                     setTotal(0);
-                    router.push('/search');
+                    router.push("/search");
                   }}
                 >
                   Clear Search
@@ -305,7 +327,7 @@ export default function SearchPageComponent() {
         )}
 
         {/* Category Suggestions */}
-        {!query && category === 'all' && (
+        {!query && category === "all" && (
           <div className="mt-12">
             <h2 className="text-lg font-semibold mb-6">Browse by Category</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -323,11 +345,13 @@ export default function SearchPageComponent() {
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-1">
-                      {toolsData.categories[cat.id]?.tools?.slice(0, 4).map((tool, i) => (
-                        <Badge key={i} variant="outline" className="text-xs">
-                          {tool.name}
-                        </Badge>
-                      ))}
+                      {toolsData.categories[cat.id]?.tools
+                        ?.slice(0, 4)
+                        .map((tool, i) => (
+                          <Badge key={i} variant="outline" className="text-xs">
+                            {tool.name}
+                          </Badge>
+                        ))}
                     </div>
                   </CardContent>
                 </Card>

@@ -1,32 +1,38 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { 
-  MapIcon, 
-  DownloadIcon, 
-  PlusIcon, 
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import {
+  MapIcon,
+  DownloadIcon,
+  PlusIcon,
   XIcon,
   ArrowLeftIcon,
   LinkIcon,
-  CalendarIcon
-} from 'lucide-react';
-import Link from 'next/link';
+  CalendarIcon,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function SitemapGeneratorTool() {
   const [urls, setUrls] = useState([
-    { url: '', changefreq: 'weekly', priority: '0.8' }
+    { url: "", changefreq: "weekly", priority: "0.8" },
   ]);
-  const [baseUrl, setBaseUrl] = useState('');
-  const [generatedXml, setGeneratedXml] = useState('');
+  const [baseUrl, setBaseUrl] = useState("");
+  const [generatedXml, setGeneratedXml] = useState("");
 
   const addUrl = () => {
-    setUrls([...urls, { url: '', changefreq: 'weekly', priority: '0.8' }]);
+    setUrls([...urls, { url: "", changefreq: "weekly", priority: "0.8" }]);
   };
 
   const removeUrl = (index) => {
@@ -42,20 +48,22 @@ export default function SitemapGeneratorTool() {
   };
 
   const generateSitemap = () => {
-    const validUrls = urls.filter(item => item.url.trim() !== '');
-    
+    const validUrls = urls.filter((item) => item.url.trim() !== "");
+
     if (validUrls.length === 0) {
-      alert('Please add at least one URL');
+      alert("Please add at least one URL");
       return;
     }
 
-    const currentDate = new Date().toISOString().split('T')[0];
-    
+    const currentDate = new Date().toISOString().split("T")[0];
+
     let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
     xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
-    
-    validUrls.forEach(item => {
-      const fullUrl = item.url.startsWith('http') ? item.url : `${baseUrl.replace(/\/$/, '')}/${item.url.replace(/^\//, '')}`;
+
+    validUrls.forEach((item) => {
+      const fullUrl = item.url.startsWith("http")
+        ? item.url
+        : `${baseUrl.replace(/\/$/, "")}/${item.url.replace(/^\//, "")}`;
       xml += `  <url>\n`;
       xml += `    <loc>${fullUrl}</loc>\n`;
       xml += `    <lastmod>${currentDate}</lastmod>\n`;
@@ -63,20 +71,20 @@ export default function SitemapGeneratorTool() {
       xml += `    <priority>${item.priority}</priority>\n`;
       xml += `  </url>\n`;
     });
-    
+
     xml += `</urlset>`;
-    
+
     setGeneratedXml(xml);
   };
 
   const downloadSitemap = () => {
     if (!generatedXml) return;
-    
-    const blob = new Blob([generatedXml], { type: 'application/xml' });
+
+    const blob = new Blob([generatedXml], { type: "application/xml" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'sitemap.xml';
+    a.download = "sitemap.xml";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -85,7 +93,7 @@ export default function SitemapGeneratorTool() {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(generatedXml);
-    alert('Sitemap copied to clipboard!');
+    alert("Sitemap copied to clipboard!");
   };
 
   return (
@@ -99,17 +107,19 @@ export default function SitemapGeneratorTool() {
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <MapIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
               <h1 className="text-3xl font-bold">XML Sitemap Generator</h1>
-              <p className="text-muted-foreground">Generate XML sitemaps for better SEO and search engine indexing</p>
+              <p className="text-muted-foreground">
+                Generate XML sitemaps for better SEO and search engine indexing
+              </p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant="secondary">SEO Optimized</Badge>
             <Badge variant="secondary">XML Format</Badge>
@@ -167,19 +177,21 @@ export default function SitemapGeneratorTool() {
                         </Button>
                       )}
                     </div>
-                    
+
                     <Input
                       value={item.url}
-                      onChange={(e) => updateUrl(index, 'url', e.target.value)}
+                      onChange={(e) => updateUrl(index, "url", e.target.value)}
                       placeholder="/about-us or https://example.com/page"
                     />
-                    
+
                     <div className="grid grid-cols-2 gap-3">
                       <div>
                         <Label className="text-xs">Change Frequency</Label>
                         <select
                           value={item.changefreq}
-                          onChange={(e) => updateUrl(index, 'changefreq', e.target.value)}
+                          onChange={(e) =>
+                            updateUrl(index, "changefreq", e.target.value)
+                          }
                           className="w-full mt-1 px-3 py-2 border rounded-md text-sm"
                         >
                           <option value="always">Always</option>
@@ -191,12 +203,14 @@ export default function SitemapGeneratorTool() {
                           <option value="never">Never</option>
                         </select>
                       </div>
-                      
+
                       <div>
                         <Label className="text-xs">Priority</Label>
                         <select
                           value={item.priority}
-                          onChange={(e) => updateUrl(index, 'priority', e.target.value)}
+                          onChange={(e) =>
+                            updateUrl(index, "priority", e.target.value)
+                          }
                           className="w-full mt-1 px-3 py-2 border rounded-md text-sm"
                         >
                           <option value="1.0">1.0 (Highest)</option>
@@ -214,12 +228,12 @@ export default function SitemapGeneratorTool() {
                     </div>
                   </div>
                 ))}
-                
+
                 <Button onClick={addUrl} variant="outline" className="w-full">
                   <PlusIcon className="h-4 w-4 mr-2" />
                   Add Another URL
                 </Button>
-                
+
                 <Button onClick={generateSitemap} className="w-full" size="lg">
                   <MapIcon className="h-4 w-4 mr-2" />
                   Generate Sitemap
@@ -245,7 +259,7 @@ export default function SitemapGeneratorTool() {
                       readOnly
                       className="font-mono text-sm h-64"
                     />
-                    
+
                     <div className="flex gap-2">
                       <Button onClick={downloadSitemap} className="flex-1">
                         <DownloadIcon className="h-4 w-4 mr-2" />
@@ -255,9 +269,12 @@ export default function SitemapGeneratorTool() {
                         Copy to Clipboard
                       </Button>
                     </div>
-                    
+
                     <div className="text-sm text-muted-foreground space-y-1">
-                      <p>• Upload the sitemap.xml file to your website's root directory</p>
+                      <p>
+                        • Upload the sitemap.xml file to your website's root
+                        directory
+                      </p>
                       <p>• Submit the sitemap URL to Google Search Console</p>
                       <p>• Add sitemap location to your robots.txt file</p>
                     </div>
@@ -265,15 +282,18 @@ export default function SitemapGeneratorTool() {
                 ) : (
                   <div className="text-center py-12">
                     <MapIcon className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
-                    <h3 className="text-lg font-medium mb-2">No Sitemap Generated</h3>
+                    <h3 className="text-lg font-medium mb-2">
+                      No Sitemap Generated
+                    </h3>
                     <p className="text-muted-foreground">
-                      Add URLs and click "Generate Sitemap" to create your XML sitemap
+                      Add URLs and click "Generate Sitemap" to create your XML
+                      sitemap
                     </p>
                   </div>
                 )}
               </CardContent>
             </Card>
-            
+
             {/* SEO Tips */}
             <Card>
               <CardHeader>
@@ -287,21 +307,30 @@ export default function SitemapGeneratorTool() {
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <div>
                     <p className="font-medium">Update Frequency</p>
-                    <p className="text-muted-foreground">Set appropriate change frequencies based on how often content updates</p>
+                    <p className="text-muted-foreground">
+                      Set appropriate change frequencies based on how often
+                      content updates
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <div>
                     <p className="font-medium">Priority Settings</p>
-                    <p className="text-muted-foreground">Use higher priorities (0.8-1.0) for important pages like homepage and key content</p>
+                    <p className="text-muted-foreground">
+                      Use higher priorities (0.8-1.0) for important pages like
+                      homepage and key content
+                    </p>
                   </div>
                 </div>
                 <div className="flex items-start gap-2">
                   <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <div>
                     <p className="font-medium">Submit to Search Engines</p>
-                    <p className="text-muted-foreground">Submit your sitemap to Google Search Console and Bing Webmaster Tools</p>
+                    <p className="text-muted-foreground">
+                      Submit your sitemap to Google Search Console and Bing
+                      Webmaster Tools
+                    </p>
                   </div>
                 </div>
               </CardContent>

@@ -1,17 +1,29 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  ArrowLeftIcon, 
-  PaletteIcon, 
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  ArrowLeftIcon,
+  PaletteIcon,
   CopyIcon,
   CheckCircleIcon,
   RefreshCwIcon,
@@ -20,56 +32,104 @@ import {
   EyeIcon,
   CodeIcon,
   GradientIcon,
-  WandIcon
-} from 'lucide-react';
-import Link from 'next/link';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  WandIcon,
+} from "lucide-react";
+import Link from "next/link";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function CSSGradientTool() {
-  const [gradientType, setGradientType] = useState('linear');
-  const [direction, setDirection] = useState('45deg');
+  const [gradientType, setGradientType] = useState("linear");
+  const [direction, setDirection] = useState("45deg");
   const [colors, setColors] = useState([
-    { color: '#FF6B6B', position: 0 },
-    { color: '#4ECDC4', position: 100 }
+    { color: "#FF6B6B", position: 0 },
+    { color: "#4ECDC4", position: 100 },
   ]);
-  const [cssOutput, setCssOutput] = useState('');
+  const [cssOutput, setCssOutput] = useState("");
   const [copied, setCopied] = useState(false);
 
   const presetGradients = [
-    { name: 'Sunset', colors: [{ color: '#FF512F', position: 0 }, { color: '#F09819', position: 100 }] },
-    { name: 'Ocean', colors: [{ color: '#667eea', position: 0 }, { color: '#764ba2', position: 100 }] },
-    { name: 'Forest', colors: [{ color: '#11998e', position: 0 }, { color: '#38ef7d', position: 100 }] },
-    { name: 'Purple Dream', colors: [{ color: '#667eea', position: 0 }, { color: '#764ba2', position: 100 }] },
-    { name: 'Fire', colors: [{ color: '#FF512F', position: 0 }, { color: '#DD2476', position: 100 }] },
-    { name: 'Cool Blues', colors: [{ color: '#2196F3', position: 0 }, { color: '#21CBF3', position: 100 }] },
-    { name: 'Warm Sunset', colors: [{ color: '#fa709a', position: 0 }, { color: '#fee140', position: 100 }] },
-    { name: 'Deep Space', colors: [{ color: '#000428', position: 0 }, { color: '#004e92', position: 100 }] },
+    {
+      name: "Sunset",
+      colors: [
+        { color: "#FF512F", position: 0 },
+        { color: "#F09819", position: 100 },
+      ],
+    },
+    {
+      name: "Ocean",
+      colors: [
+        { color: "#667eea", position: 0 },
+        { color: "#764ba2", position: 100 },
+      ],
+    },
+    {
+      name: "Forest",
+      colors: [
+        { color: "#11998e", position: 0 },
+        { color: "#38ef7d", position: 100 },
+      ],
+    },
+    {
+      name: "Purple Dream",
+      colors: [
+        { color: "#667eea", position: 0 },
+        { color: "#764ba2", position: 100 },
+      ],
+    },
+    {
+      name: "Fire",
+      colors: [
+        { color: "#FF512F", position: 0 },
+        { color: "#DD2476", position: 100 },
+      ],
+    },
+    {
+      name: "Cool Blues",
+      colors: [
+        { color: "#2196F3", position: 0 },
+        { color: "#21CBF3", position: 100 },
+      ],
+    },
+    {
+      name: "Warm Sunset",
+      colors: [
+        { color: "#fa709a", position: 0 },
+        { color: "#fee140", position: 100 },
+      ],
+    },
+    {
+      name: "Deep Space",
+      colors: [
+        { color: "#000428", position: 0 },
+        { color: "#004e92", position: 100 },
+      ],
+    },
   ];
 
   const directions = [
-    { label: '↗ Top Right', value: '45deg' },
-    { label: '→ Right', value: '90deg' },
-    { label: '↘ Bottom Right', value: '135deg' },
-    { label: '↓ Bottom', value: '180deg' },
-    { label: '↙ Bottom Left', value: '225deg' },
-    { label: '← Left', value: '270deg' },
-    { label: '↖ Top Left', value: '315deg' },
-    { label: '↑ Top', value: '0deg' },
+    { label: "↗ Top Right", value: "45deg" },
+    { label: "→ Right", value: "90deg" },
+    { label: "↘ Bottom Right", value: "135deg" },
+    { label: "↓ Bottom", value: "180deg" },
+    { label: "↙ Bottom Left", value: "225deg" },
+    { label: "← Left", value: "270deg" },
+    { label: "↖ Top Left", value: "315deg" },
+    { label: "↑ Top", value: "0deg" },
   ];
 
   const generateCSS = () => {
     const colorStops = colors
       .sort((a, b) => a.position - b.position)
-      .map(c => `${c.color} ${c.position}%`)
-      .join(', ');
+      .map((c) => `${c.color} ${c.position}%`)
+      .join(", ");
 
-    let css = '';
-    if (gradientType === 'linear') {
+    let css = "";
+    if (gradientType === "linear") {
       css = `background: linear-gradient(${direction}, ${colorStops});`;
     } else {
       css = `background: radial-gradient(circle, ${colorStops});`;
     }
-    
+
     setCssOutput(css);
     return css;
   };
@@ -80,7 +140,7 @@ export default function CSSGradientTool() {
 
   const addColor = () => {
     const newPosition = colors.length > 1 ? 50 : 100;
-    setColors([...colors, { color: '#FFB6C1', position: newPosition }]);
+    setColors([...colors, { color: "#FFB6C1", position: newPosition }]);
   };
 
   const removeColor = (index) => {
@@ -107,40 +167,53 @@ export default function CSSGradientTool() {
 
   const randomizeGradient = () => {
     const randomColors = [
-      '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7',
-      '#DDA0DD', '#98D8C8', '#F7DC6F', '#BB8FCE', '#85C1E9'
+      "#FF6B6B",
+      "#4ECDC4",
+      "#45B7D1",
+      "#96CEB4",
+      "#FFEAA7",
+      "#DDA0DD",
+      "#98D8C8",
+      "#F7DC6F",
+      "#BB8FCE",
+      "#85C1E9",
     ];
-    
+
     const newColors = [
-      { 
-        color: randomColors[Math.floor(Math.random() * randomColors.length)], 
-        position: 0 
+      {
+        color: randomColors[Math.floor(Math.random() * randomColors.length)],
+        position: 0,
       },
-      { 
-        color: randomColors[Math.floor(Math.random() * randomColors.length)], 
-        position: 100 
-      }
+      {
+        color: randomColors[Math.floor(Math.random() * randomColors.length)],
+        position: 100,
+      },
     ];
-    
+
     setColors(newColors);
-    setDirection(directions[Math.floor(Math.random() * directions.length)].value);
+    setDirection(
+      directions[Math.floor(Math.random() * directions.length)].value,
+    );
   };
 
   const exportGradient = (format) => {
     const css = generateCSS();
-    let content = '';
-    
+    let content = "";
+
     switch (format) {
-      case 'css':
+      case "css":
         content = `.gradient {\n  ${css}\n}`;
         break;
-      case 'scss':
-        content = `$gradient: ${css.replace('background: ', '').replace(';', '')};\n\n.gradient {\n  background: $gradient;\n}`;
+      case "scss":
+        content = `$gradient: ${css.replace("background: ", "").replace(";", "")};\n\n.gradient {\n  background: $gradient;\n}`;
         break;
-      case 'svg':
-        const svgColors = colors.map((c, i) => 
-          `<stop offset="${c.position}%" style="stop-color:${c.color}" />`
-        ).join('\n    ');
+      case "svg":
+        const svgColors = colors
+          .map(
+            (c, i) =>
+              `<stop offset="${c.position}%" style="stop-color:${c.color}" />`,
+          )
+          .join("\n    ");
         content = `<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -151,10 +224,10 @@ export default function CSSGradientTool() {
 </svg>`;
         break;
     }
-    
-    const blob = new Blob([content], { type: 'text/plain' });
+
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = `gradient.${format}`;
     a.click();
@@ -177,7 +250,9 @@ export default function CSSGradientTool() {
         </div>
         <div>
           <h1 className="text-3xl font-bold">CSS Gradient Generator</h1>
-          <p className="text-muted-foreground">Create beautiful CSS gradients with live preview and export options</p>
+          <p className="text-muted-foreground">
+            Create beautiful CSS gradients with live preview and export options
+          </p>
         </div>
       </div>
 
@@ -208,7 +283,7 @@ export default function CSSGradientTool() {
                 </SelectContent>
               </Select>
 
-              {gradientType === 'linear' && (
+              {gradientType === "linear" && (
                 <div>
                   <Label className="text-sm font-medium">Direction</Label>
                   <Select value={direction} onValueChange={setDirection}>
@@ -216,7 +291,7 @@ export default function CSSGradientTool() {
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
-                      {directions.map(dir => (
+                      {directions.map((dir) => (
                         <SelectItem key={dir.value} value={dir.value}>
                           {dir.label}
                         </SelectItem>
@@ -244,13 +319,17 @@ export default function CSSGradientTool() {
                         <Input
                           type="color"
                           value={color.color}
-                          onChange={(e) => updateColor(index, 'color', e.target.value)}
+                          onChange={(e) =>
+                            updateColor(index, "color", e.target.value)
+                          }
                           className="w-16 h-10 p-1"
                         />
                         <Input
                           type="text"
                           value={color.color}
-                          onChange={(e) => updateColor(index, 'color', e.target.value)}
+                          onChange={(e) =>
+                            updateColor(index, "color", e.target.value)
+                          }
                           className="flex-1"
                         />
                       </div>
@@ -266,12 +345,16 @@ export default function CSSGradientTool() {
                       </Button>
                     )}
                   </div>
-                  
+
                   <div>
-                    <Label className="text-sm">Position: {color.position}%</Label>
+                    <Label className="text-sm">
+                      Position: {color.position}%
+                    </Label>
                     <Slider
                       value={[color.position]}
-                      onValueChange={([value]) => updateColor(index, 'position', value)}
+                      onValueChange={([value]) =>
+                        updateColor(index, "position", value)
+                      }
                       max={100}
                       step={1}
                       className="mt-1"
@@ -293,19 +376,35 @@ export default function CSSGradientTool() {
               <CardTitle className="text-lg">Quick Actions</CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <Button onClick={randomizeGradient} variant="outline" className="w-full">
+              <Button
+                onClick={randomizeGradient}
+                variant="outline"
+                className="w-full"
+              >
                 <RefreshCwIcon className="h-4 w-4 mr-2" />
                 Randomize
               </Button>
-              
+
               <div className="grid grid-cols-3 gap-2">
-                <Button onClick={() => exportGradient('css')} variant="outline" size="sm">
+                <Button
+                  onClick={() => exportGradient("css")}
+                  variant="outline"
+                  size="sm"
+                >
                   CSS
                 </Button>
-                <Button onClick={() => exportGradient('scss')} variant="outline" size="sm">
+                <Button
+                  onClick={() => exportGradient("scss")}
+                  variant="outline"
+                  size="sm"
+                >
                   SCSS
                 </Button>
-                <Button onClick={() => exportGradient('svg')} variant="outline" size="sm">
+                <Button
+                  onClick={() => exportGradient("svg")}
+                  variant="outline"
+                  size="sm"
+                >
                   SVG
                 </Button>
               </div>
@@ -324,9 +423,13 @@ export default function CSSGradientTool() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <div 
+              <div
                 className="w-full h-64 rounded-lg border"
-                style={{ background: cssOutput.replace('background: ', '').replace(';', '') }}
+                style={{
+                  background: cssOutput
+                    .replace("background: ", "")
+                    .replace(";", ""),
+                }}
               />
             </CardContent>
           </Card>
@@ -364,7 +467,9 @@ export default function CSSGradientTool() {
           <Card>
             <CardHeader>
               <CardTitle>Preset Gradients</CardTitle>
-              <CardDescription>Click to apply popular gradient combinations</CardDescription>
+              <CardDescription>
+                Click to apply popular gradient combinations
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -375,7 +480,7 @@ export default function CSSGradientTool() {
                     className="h-20 p-2 flex flex-col"
                     onClick={() => applyPreset(preset)}
                     style={{
-                      background: `linear-gradient(45deg, ${preset.colors[0].color}, ${preset.colors[1].color})`
+                      background: `linear-gradient(45deg, ${preset.colors[0].color}, ${preset.colors[1].color})`,
                     }}
                   >
                     <span className="text-white text-xs font-medium bg-black/50 px-2 py-1 rounded">
@@ -401,7 +506,7 @@ export default function CSSGradientTool() {
               <TabsTrigger value="advanced">Advanced</TabsTrigger>
               <TabsTrigger value="frameworks">Frameworks</TabsTrigger>
             </TabsList>
-            
+
             <TabsContent value="basic" className="space-y-4">
               <div className="space-y-3">
                 <h4 className="font-medium">HTML + CSS</h4>
@@ -450,7 +555,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'custom-gradient': '${cssOutput.replace('background: ', '').replace(';', '')}'
+        'custom-gradient': '${cssOutput.replace("background: ", "").replace(";", "")}'
       }
     }
   }

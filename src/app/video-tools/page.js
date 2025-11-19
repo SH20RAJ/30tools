@@ -1,249 +1,269 @@
-import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Video, Film, Scissors, Archive, FileVideo, Monitor, Download, Edit } from 'lucide-react'
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Video,
+  Film,
+  Scissors,
+  Archive,
+  FileVideo,
+  Monitor,
+  Download,
+  Edit,
+} from "lucide-react";
 
 export const metadata = {
-  title: 'Video Tools - Free Online Video Editor & Converter | 30tools',
-  description: "Professional video tools tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
-  keywords: 'video tools, video converter, video compressor, video editor, video trimmer, screen recorder, video to gif, mp4 converter, free video tools',
+  title: "Video Tools - Free Online Video Editor & Converter | 30tools",
+  description:
+    "Professional video tools tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
+  keywords:
+    "video tools, video converter, video compressor, video editor, video trimmer, screen recorder, video to gif, mp4 converter, free video tools",
   openGraph: {
-    title: 'Free Video Tools - Video Editor & Converter',
-    description: 'Professional video tools for editing, converting, compressing, and processing videos. Process videos securely in your browser.',
-    type: 'website',
-    url: 'https://30tools.com/video-tools',
+    title: "Free Video Tools - Video Editor & Converter",
+    description:
+      "Professional video tools for editing, converting, compressing, and processing videos. Process videos securely in your browser.",
+    type: "website",
+    url: "https://30tools.com/video-tools",
     images: [
       {
-        url: 'https://30tools.com/og-image.jpg',
+        url: "https://30tools.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: 'Video Tools Collection'
+        alt: "Video Tools Collection",
       },
-    ]
+    ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Free Video Tools - Video Editor & Converter',
-    description: 'Professional video tools for editing, converting, compressing, and processing videos.',
-    images: ['https://30tools.com/og-image.jpg']
+    card: "summary_large_image",
+    title: "Free Video Tools - Video Editor & Converter",
+    description:
+      "Professional video tools for editing, converting, compressing, and processing videos.",
+    images: ["https://30tools.com/og-image.jpg"],
   },
   alternates: {
-    canonical: 'https://30tools.com/video-tools'
+    canonical: "https://30tools.com/video-tools",
   },
-}
+};
 
 const videoTools = [
   {
-    name: 'Video Converter',
-    description: 'Convert videos between MP4, AVI, MOV, WebM, and other formats',
-    href: '/video-converter',
+    name: "Video Converter",
+    description:
+      "Convert videos between MP4, AVI, MOV, WebM, and other formats",
+    href: "/video-converter",
     icon: FileVideo,
-    category: 'Conversion',
-    featured: true
+    category: "Conversion",
+    featured: true,
   },
   {
-    name: 'Video Compressor',
-    description: 'Reduce video file size while maintaining quality',
-    href: '/video-compressor',
+    name: "Video Compressor",
+    description: "Reduce video file size while maintaining quality",
+    href: "/video-compressor",
     icon: Archive,
-    category: 'Optimization',
-    featured: true
+    category: "Optimization",
+    featured: true,
   },
   {
-    name: 'Video Editor',
-    description: 'Edit videos with cutting, trimming, and effects',
-    href: '/video-editor',
+    name: "Video Editor",
+    description: "Edit videos with cutting, trimming, and effects",
+    href: "/video-editor",
     icon: Edit,
-    category: 'Editing',
-    featured: true
+    category: "Editing",
+    featured: true,
   },
   {
-    name: 'Video Trimmer',
-    description: 'Cut and trim video clips to specific durations',
-    href: '/video-trimmer',
+    name: "Video Trimmer",
+    description: "Cut and trim video clips to specific durations",
+    href: "/video-trimmer",
     icon: Scissors,
-    category: 'Editing'
+    category: "Editing",
   },
   {
-    name: 'Screen Recorder',
-    description: 'Record your screen for tutorials and presentations',
-    href: '/screen-recorder',
+    name: "Screen Recorder",
+    description: "Record your screen for tutorials and presentations",
+    href: "/screen-recorder",
     icon: Monitor,
-    category: 'Recording'
+    category: "Recording",
   },
   {
-    name: 'Video to GIF',
-    description: 'Convert video clips to animated GIF images',
-    href: '/video-to-gif',
+    name: "Video to GIF",
+    description: "Convert video clips to animated GIF images",
+    href: "/video-to-gif",
     icon: Film,
-    category: 'Conversion'
+    category: "Conversion",
   },
   {
-    name: 'Video Joiner',
-    description: 'Merge multiple video files into one continuous video',
-    href: '/video-joiner',
+    name: "Video Joiner",
+    description: "Merge multiple video files into one continuous video",
+    href: "/video-joiner",
     icon: Video,
-    category: 'Editing'
+    category: "Editing",
   },
   {
-    name: 'Video Splitter',
-    description: 'Split large video files into smaller segments',
-    href: '/video-splitter',
+    name: "Video Splitter",
+    description: "Split large video files into smaller segments",
+    href: "/video-splitter",
     icon: Scissors,
-    category: 'Editing'
+    category: "Editing",
   },
   {
-    name: 'Video to Audio',
-    description: 'Extract audio tracks from video files',
-    href: '/video-to-audio',
+    name: "Video to Audio",
+    description: "Extract audio tracks from video files",
+    href: "/video-to-audio",
     icon: Download,
-    category: 'Conversion'
+    category: "Conversion",
   },
   {
-    name: 'Video Resizer',
-    description: 'Change video resolution and aspect ratio',
-    href: '/video-resizer',
+    name: "Video Resizer",
+    description: "Change video resolution and aspect ratio",
+    href: "/video-resizer",
     icon: Video,
-    category: 'Editing'
+    category: "Editing",
   },
   {
-    name: 'Video Rotator',
-    description: 'Rotate videos to correct orientation',
-    href: '/video-rotator',
+    name: "Video Rotator",
+    description: "Rotate videos to correct orientation",
+    href: "/video-rotator",
     icon: Video,
-    category: 'Editing'
+    category: "Editing",
   },
   {
-    name: 'Video Player',
-    description: 'Play various video formats in your browser',
-    href: '/video-player',
+    name: "Video Player",
+    description: "Play various video formats in your browser",
+    href: "/video-player",
     icon: Video,
-    category: 'Viewing'
+    category: "Viewing",
   },
   {
-    name: 'AI Video Summarizer',
-    description: 'Get AI-powered summaries of long videos and meetings',
-    href: '/ai-video-summarizer',
+    name: "AI Video Summarizer",
+    description: "Get AI-powered summaries of long videos and meetings",
+    href: "/ai-video-summarizer",
     icon: Video,
-    category: 'AI Tools',
+    category: "AI Tools",
     featured: true,
-    trending: true
+    trending: true,
   },
   {
-    name: 'Video Watermark Remover',
-    description: 'Remove watermarks from videos using AI technology',
-    href: '/video-watermark-remover',
+    name: "Video Watermark Remover",
+    description: "Remove watermarks from videos using AI technology",
+    href: "/video-watermark-remover",
     icon: Edit,
-    category: 'AI Tools',
+    category: "AI Tools",
     featured: true,
-    trending: true
+    trending: true,
   },
   {
-    name: 'TikTok Video Downloader',
-    description: 'Download TikTok videos without watermarks',
-    href: '/tiktok-downloader',
+    name: "TikTok Video Downloader",
+    description: "Download TikTok videos without watermarks",
+    href: "/tiktok-downloader",
     icon: Download,
-    category: 'Social Media',
+    category: "Social Media",
     featured: true,
-    trending: true
+    trending: true,
   },
   {
-    name: 'YouTube Shorts Creator',
-    description: 'Convert long videos into viral YouTube Shorts',
-    href: '/youtube-shorts-creator',
+    name: "YouTube Shorts Creator",
+    description: "Convert long videos into viral YouTube Shorts",
+    href: "/youtube-shorts-creator",
     icon: Film,
-    category: 'Social Media',
+    category: "Social Media",
     featured: true,
-    trending: true
+    trending: true,
   },
   {
-    name: 'Instagram Reel Maker',
-    description: 'Create engaging Instagram Reels with templates',
-    href: '/instagram-reel-maker',
+    name: "Instagram Reel Maker",
+    description: "Create engaging Instagram Reels with templates",
+    href: "/instagram-reel-maker",
     icon: Video,
-    category: 'Social Media',
+    category: "Social Media",
     featured: true,
-    trending: true
+    trending: true,
   },
   {
-    name: 'Faceless Video Generator',
-    description: 'Create faceless YouTube videos for monetization',
-    href: '/faceless-video-generator',
+    name: "Faceless Video Generator",
+    description: "Create faceless YouTube videos for monetization",
+    href: "/faceless-video-generator",
     icon: Video,
-    category: 'Content Creation',
+    category: "Content Creation",
     featured: true,
-    trending: true
+    trending: true,
   },
   {
-    name: 'Video Background Remover',
-    description: 'Remove and replace video backgrounds with AI',
-    href: '/video-background-remover',
+    name: "Video Background Remover",
+    description: "Remove and replace video backgrounds with AI",
+    href: "/video-background-remover",
     icon: Edit,
-    category: 'AI Tools',
+    category: "AI Tools",
     featured: true,
-    trending: true
+    trending: true,
   },
   {
-    name: 'Podcast Video Creator',
-    description: 'Turn podcasts into engaging video content',
-    href: '/podcast-video-creator',
+    name: "Podcast Video Creator",
+    description: "Turn podcasts into engaging video content",
+    href: "/podcast-video-creator",
     icon: Video,
-    category: 'Content Creation',
-    trending: true
+    category: "Content Creation",
+    trending: true,
   },
   {
-    name: 'Zoom Meeting Recorder',
-    description: 'Record and edit Zoom meetings with highlights',
-    href: '/zoom-recorder',
+    name: "Zoom Meeting Recorder",
+    description: "Record and edit Zoom meetings with highlights",
+    href: "/zoom-recorder",
     icon: Monitor,
-    category: 'Business',
-    trending: true
+    category: "Business",
+    trending: true,
   },
   {
-    name: 'Course Video Maker',
-    description: 'Create professional online course videos',
-    href: '/course-video-maker',
+    name: "Course Video Maker",
+    description: "Create professional online course videos",
+    href: "/course-video-maker",
     icon: Video,
-    category: 'Education',
-    trending: true
+    category: "Education",
+    trending: true,
   },
   {
-    name: 'Video Sales Letter Creator',
-    description: 'Create high-converting video sales letters',
-    href: '/video-sales-letter',
+    name: "Video Sales Letter Creator",
+    description: "Create high-converting video sales letters",
+    href: "/video-sales-letter",
     icon: Video,
-    category: 'Marketing',
-    trending: true
+    category: "Marketing",
+    trending: true,
   },
   {
-    name: 'Meme Video Generator',
-    description: 'Create viral meme videos with templates',
-    href: '/meme-video-generator',
+    name: "Meme Video Generator",
+    description: "Create viral meme videos with templates",
+    href: "/meme-video-generator",
     icon: Film,
-    category: 'Entertainment',
-    trending: true
+    category: "Entertainment",
+    trending: true,
   },
-]
+];
 
 const categories = [
-  { name: 'Conversion', count: 3, color: 'bg-muted text-foreground' },
-  { name: 'Editing', count: 5, color: 'bg-muted text-foreground' },
-  { name: 'Optimization', count: 1, color: 'bg-muted text-foreground' },
-  { name: 'Recording', count: 1, color: 'bg-destructive/20 text-destructive' },
-  { name: 'Viewing', count: 1, color: 'bg-gray-100 text-foreground' },
-  { name: 'AI Tools', count: 3, color: 'bg-muted text-primary' },
-  { name: 'Social Media', count: 3, color: 'bg-muted text-primary' },
-  { name: 'Content Creation', count: 3, color: 'bg-muted text-primary' },
-  { name: 'Business', count: 1, color: 'bg-muted text-primary' },
-  { name: 'Education', count: 1, color: 'bg-muted text-primary' },
-  { name: 'Marketing', count: 1, color: 'bg-muted/30 text-primary' },
-  { name: 'Entertainment', count: 1, color: 'bg-muted text-primary' }
-]
+  { name: "Conversion", count: 3, color: "bg-muted text-foreground" },
+  { name: "Editing", count: 5, color: "bg-muted text-foreground" },
+  { name: "Optimization", count: 1, color: "bg-muted text-foreground" },
+  { name: "Recording", count: 1, color: "bg-destructive/20 text-destructive" },
+  { name: "Viewing", count: 1, color: "bg-gray-100 text-foreground" },
+  { name: "AI Tools", count: 3, color: "bg-muted text-primary" },
+  { name: "Social Media", count: 3, color: "bg-muted text-primary" },
+  { name: "Content Creation", count: 3, color: "bg-muted text-primary" },
+  { name: "Business", count: 1, color: "bg-muted text-primary" },
+  { name: "Education", count: 1, color: "bg-muted text-primary" },
+  { name: "Marketing", count: 1, color: "bg-muted/30 text-primary" },
+  { name: "Entertainment", count: 1, color: "bg-muted text-primary" },
+];
 
 export default function VideoToolsPage() {
-  const featuredTools = videoTools.filter(tool => tool.featured)
-  const trendingTools = videoTools.filter(tool => tool.trending)
-  const allTools = videoTools
+  const featuredTools = videoTools.filter((tool) => tool.featured);
+  const trendingTools = videoTools.filter((tool) => tool.trending);
+  const allTools = videoTools;
 
   return (
     <div className="max-w-7xl mx-auto p-6 space-y-8">
@@ -254,8 +274,9 @@ export default function VideoToolsPage() {
           <h1 className="text-4xl font-bold">Video Tools</h1>
         </div>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Professional video processing tools for editing, converting, compressing, and optimizing videos. 
-          Support for all major video formats with high-quality output.
+          Professional video processing tools for editing, converting,
+          compressing, and optimizing videos. Support for all major video
+          formats with high-quality output.
         </p>
       </div>
 
@@ -263,7 +284,9 @@ export default function VideoToolsPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-primary">{videoTools.length}+</div>
+            <div className="text-2xl font-bold text-primary">
+              {videoTools.length}+
+            </div>
             <div className="text-sm text-muted-foreground">Video Tools</div>
           </CardContent>
         </Card>
@@ -309,9 +332,12 @@ export default function VideoToolsPage() {
           <h2 className="text-2xl font-bold mb-4">Featured Tools</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredTools.map((tool) => {
-              const IconComponent = tool.icon
+              const IconComponent = tool.icon;
               return (
-                <Card key={tool.name} className="hover:shadow-lg transition-shadow border-primary/20">
+                <Card
+                  key={tool.name}
+                  className="hover:shadow-lg transition-shadow border-primary/20"
+                >
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -343,7 +369,7 @@ export default function VideoToolsPage() {
                     </Link>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </div>
@@ -355,16 +381,21 @@ export default function VideoToolsPage() {
           <h2 className="text-2xl font-bold mb-4">🔥 Trending Video Tools</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
             {trendingTools.slice(0, 8).map((tool) => {
-              const IconComponent = tool.icon
+              const IconComponent = tool.icon;
               return (
-                <Card key={tool.name} className="hover:shadow-lg transition-shadow border-border">
+                <Card
+                  key={tool.name}
+                  className="hover:shadow-lg transition-shadow border-border"
+                >
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2">
                       <div className="p-1.5 bg-muted rounded-lg">
                         <IconComponent className="h-4 w-4 text-primary" />
                       </div>
                       <div>
-                        <CardTitle className="text-sm font-semibold">{tool.name}</CardTitle>
+                        <CardTitle className="text-sm font-semibold">
+                          {tool.name}
+                        </CardTitle>
                         <Badge variant="outline" className="text-xs">
                           {tool.category}
                         </Badge>
@@ -382,7 +413,7 @@ export default function VideoToolsPage() {
                     </Link>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </div>
@@ -393,9 +424,12 @@ export default function VideoToolsPage() {
         <h2 className="text-2xl font-bold mb-4">All Video Tools</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allTools.map((tool) => {
-            const IconComponent = tool.icon
+            const IconComponent = tool.icon;
             return (
-              <Card key={tool.name} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={tool.name}
+                className="hover:shadow-lg transition-shadow"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-muted rounded-lg">
@@ -420,7 +454,7 @@ export default function VideoToolsPage() {
                   </Link>
                 </CardContent>
               </Card>
-            )
+            );
           })}
         </div>
       </div>
@@ -433,56 +467,102 @@ export default function VideoToolsPage() {
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p>
-              Video processing tools are essential for content creators, educators, marketers, and anyone 
-              working with digital video content. Our comprehensive collection of video tools helps you 
-              edit, convert, compress, and optimize videos for various platforms and purposes.
+              Video processing tools are essential for content creators,
+              educators, marketers, and anyone working with digital video
+              content. Our comprehensive collection of video tools helps you
+              edit, convert, compress, and optimize videos for various platforms
+              and purposes.
             </p>
-            
+
             <h3>Why Use Our Video Tools?</h3>
             <ul>
-              <li><strong>High Quality:</strong> Maintain video quality during processing</li>
-              <li><strong>Fast Processing:</strong> Optimized algorithms for quick results</li>
-              <li><strong>Multiple Formats:</strong> Support for MP4, AVI, MOV, WebM, and more</li>
-              <li><strong>Professional Features:</strong> Advanced editing and conversion options</li>
-              <li><strong>Browser-Based:</strong> No software installation required</li>
-              <li><strong>Privacy Focused:</strong> Process videos locally when possible</li>
+              <li>
+                <strong>High Quality:</strong> Maintain video quality during
+                processing
+              </li>
+              <li>
+                <strong>Fast Processing:</strong> Optimized algorithms for quick
+                results
+              </li>
+              <li>
+                <strong>Multiple Formats:</strong> Support for MP4, AVI, MOV,
+                WebM, and more
+              </li>
+              <li>
+                <strong>Professional Features:</strong> Advanced editing and
+                conversion options
+              </li>
+              <li>
+                <strong>Browser-Based:</strong> No software installation
+                required
+              </li>
+              <li>
+                <strong>Privacy Focused:</strong> Process videos locally when
+                possible
+              </li>
             </ul>
 
             <h3>Video Processing Applications:</h3>
             <ul>
-              <li><strong>Content Creation:</strong> YouTube, social media, and marketing videos</li>
-              <li><strong>Education:</strong> Training videos and online courses</li>
-              <li><strong>Business:</strong> Presentations and corporate communications</li>
-              <li><strong>Personal:</strong> Family videos and memories</li>
-              <li><strong>Gaming:</strong> Gameplay recordings and streaming</li>
-              <li><strong>Events:</strong> Wedding videos and special occasions</li>
+              <li>
+                <strong>Content Creation:</strong> YouTube, social media, and
+                marketing videos
+              </li>
+              <li>
+                <strong>Education:</strong> Training videos and online courses
+              </li>
+              <li>
+                <strong>Business:</strong> Presentations and corporate
+                communications
+              </li>
+              <li>
+                <strong>Personal:</strong> Family videos and memories
+              </li>
+              <li>
+                <strong>Gaming:</strong> Gameplay recordings and streaming
+              </li>
+              <li>
+                <strong>Events:</strong> Wedding videos and special occasions
+              </li>
             </ul>
 
             <h3>Supported Video Formats:</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
               <div className="text-center p-3 bg-muted rounded-lg">
                 <div className="font-semibold">MP4</div>
-                <div className="text-sm text-muted-foreground">Most popular format</div>
+                <div className="text-sm text-muted-foreground">
+                  Most popular format
+                </div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
                 <div className="font-semibold">AVI</div>
-                <div className="text-sm text-muted-foreground">Windows standard</div>
+                <div className="text-sm text-muted-foreground">
+                  Windows standard
+                </div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
                 <div className="font-semibold">MOV</div>
-                <div className="text-sm text-muted-foreground">Apple QuickTime</div>
+                <div className="text-sm text-muted-foreground">
+                  Apple QuickTime
+                </div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
                 <div className="font-semibold">WebM</div>
-                <div className="text-sm text-muted-foreground">Web optimized</div>
+                <div className="text-sm text-muted-foreground">
+                  Web optimized
+                </div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
                 <div className="font-semibold">MKV</div>
-                <div className="text-sm text-muted-foreground">Matroska container</div>
+                <div className="text-sm text-muted-foreground">
+                  Matroska container
+                </div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
                 <div className="font-semibold">WMV</div>
-                <div className="text-sm text-muted-foreground">Windows Media</div>
+                <div className="text-sm text-muted-foreground">
+                  Windows Media
+                </div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
                 <div className="font-semibold">FLV</div>
@@ -490,16 +570,19 @@ export default function VideoToolsPage() {
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
                 <div className="font-semibold">3GP</div>
-                <div className="text-sm text-muted-foreground">Mobile format</div>
+                <div className="text-sm text-muted-foreground">
+                  Mobile format
+                </div>
               </div>
             </div>
 
             <h3>Video Quality & Compression:</h3>
             <p>
-              Our video compression tools use advanced algorithms to reduce file sizes while maintaining 
-              visual quality. Choose from different quality presets or customize settings for your specific needs. 
-              Whether you need videos for web streaming, social media, or professional presentations, 
-              our tools ensure optimal results.
+              Our video compression tools use advanced algorithms to reduce file
+              sizes while maintaining visual quality. Choose from different
+              quality presets or customize settings for your specific needs.
+              Whether you need videos for web streaming, social media, or
+              professional presentations, our tools ensure optimal results.
             </p>
 
             <h3>Screen Recording Features:</h3>
@@ -532,37 +615,38 @@ export default function VideoToolsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            name: 'Video Tools Collection',
-            description: 'Professional video tools for editing, converting, compressing, and processing videos',
-            url: 'https://30tools.com/video-tools',
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Video Tools Collection",
+            description:
+              "Professional video tools for editing, converting, compressing, and processing videos",
+            url: "https://30tools.com/video-tools",
             mainEntity: {
-              '@type': 'ItemList',
+              "@type": "ItemList",
               numberOfItems: videoTools.length,
               itemListElement: videoTools.map((tool, index) => ({
-                '@type': 'SoftwareApplication',
+                "@type": "SoftwareApplication",
                 position: index + 1,
                 name: tool.name,
                 description: tool.description,
                 url: `https://30tools.com${tool.href}`,
-                applicationCategory: 'MultimediaApplication',
-                operatingSystem: 'Any',
+                applicationCategory: "MultimediaApplication",
+                operatingSystem: "Any",
                 offers: {
-                  '@type': 'Offer',
-                  price: '0',
-                  priceCurrency: 'USD'
+                  "@type": "Offer",
+                  price: "0",
+                  priceCurrency: "USD",
                 },
-              }))
+              })),
             },
             provider: {
-              '@type': 'Organization',
-              name: '30tools',
-              url: 'https://30tools.com'
+              "@type": "Organization",
+              name: "30tools",
+              url: "https://30tools.com",
             },
-          })
+          }),
         }}
       />
     </div>
-  )
+  );
 }

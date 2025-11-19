@@ -1,12 +1,7 @@
-import Link from 'next/link';
-import { Badge } from '@/components/ui/badge';
-import { Separator } from '@/components/ui/separator';
-import {
-  ImageIcon,
-  TwitterIcon,
-  GithubIcon,
-  HeartIcon
-} from 'lucide-react';
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
+import { ImageIcon, TwitterIcon, GithubIcon, HeartIcon } from "lucide-react";
 
 export default function ImageToolsFooter() {
   const imageTools = [
@@ -44,14 +39,20 @@ export default function ImageToolsFooter() {
               <Badge variant="secondary">Free</Badge>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Free online image tools for compression, optimization, and conversion.
-              No watermarks, no registration required.
+              Free online image tools for compression, optimization, and
+              conversion. No watermarks, no registration required.
             </p>
             <div className="flex space-x-2">
-              <Link href="https://twitter.com/sh20raj" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="https://twitter.com/sh20raj"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <TwitterIcon className="h-5 w-5" />
               </Link>
-              <Link href="https://github.com/sh20raj" className="text-muted-foreground hover:text-foreground">
+              <Link
+                href="https://github.com/sh20raj"
+                className="text-muted-foreground hover:text-foreground"
+              >
                 <GithubIcon className="h-5 w-5" />
               </Link>
             </div>
@@ -116,7 +117,9 @@ export default function ImageToolsFooter() {
             © 2025 30tools.com - All rights reserved
           </p>
           <p className="flex items-center text-sm text-muted-foreground">
-            Made with <HeartIcon className="h-4 w-4 mx-1 text-destructive fill-current" /> for the web
+            Made with{" "}
+            <HeartIcon className="h-4 w-4 mx-1 text-destructive fill-current" />{" "}
+            for the web
           </p>
         </div>
       </div>

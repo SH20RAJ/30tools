@@ -1,10 +1,16 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { BarChart } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { BarChart } from "lucide-react";
+import { toast } from "sonner";
 
 export default function KeywordDensity() {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -13,10 +19,10 @@ export default function KeywordDensity() {
     setIsProcessing(true);
     try {
       // Simulate processing
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast.success('Operation completed successfully!');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      toast.success("Operation completed successfully!");
     } catch (error) {
-      toast.error('Operation failed. Please try again.');
+      toast.error("Operation failed. Please try again.");
     } finally {
       setIsProcessing(false);
     }
@@ -40,7 +46,8 @@ export default function KeywordDensity() {
                 Keyword Density Checker
               </CardTitle>
               <CardDescription>
-                This tool is currently under development. More features coming soon!
+                This tool is currently under development. More features coming
+                soon!
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -51,7 +58,7 @@ export default function KeywordDensity() {
                   We're working hard to bring you this amazing tool. Stay tuned!
                 </p>
                 <Button onClick={handleProcess} disabled={isProcessing}>
-                  {isProcessing ? 'Processing...' : 'Try Demo'}
+                  {isProcessing ? "Processing..." : "Try Demo"}
                 </Button>
               </div>
             </CardContent>
@@ -63,8 +70,9 @@ export default function KeywordDensity() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Check keyword density and frequency in text. This tool will provide a user-friendly interface 
-                with advanced features to help you accomplish your tasks efficiently.
+                Check keyword density and frequency in text. This tool will
+                provide a user-friendly interface with advanced features to help
+                you accomplish your tasks efficiently.
               </p>
             </CardContent>
           </Card>

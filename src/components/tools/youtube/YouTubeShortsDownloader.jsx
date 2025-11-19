@@ -1,17 +1,26 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Download, Smartphone, Loader2, Play, Bookmark, BookmarkCheck, SmartphoneIcon, Plus } from 'lucide-react';
-import { toast } from 'sonner';
+"use client";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Download,
+  Smartphone,
+  Loader2,
+  Play,
+  Bookmark,
+  BookmarkCheck,
+  SmartphoneIcon,
+  Plus,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function YouTubeShortsDownloader() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [shortsData, setShortsData] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showPWAButton, setShowPWAButton] = useState(false);
@@ -20,11 +29,13 @@ export default function YouTubeShortsDownloader() {
 
   useEffect(() => {
     // Load bookmarked URLs
-    const savedBookmarks = JSON.parse(localStorage.getItem('bookmarked-youtube-shorts-urls') || '[]');
+    const savedBookmarks = JSON.parse(
+      localStorage.getItem("bookmarked-youtube-shorts-urls") || "[]",
+    );
     setBookmarkedUrls(savedBookmarks);
-    
+
     // Check if URL is bookmarked
-    setIsBookmarked(savedBookmarks.some(item => item.url === url));
+    setIsBookmarked(savedBookmarks.some((item) => item.url === url));
 
     // PWA install prompt handling
     const handleBeforeInstallPrompt = (e) => {
@@ -34,12 +45,14 @@ export default function YouTubeShortsDownloader() {
     };
 
     // Check if already installed
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+    const isStandalone = window.matchMedia(
+      "(display-mode: standalone)",
+    ).matches;
     const isPWA = window.navigator.standalone === true;
-    
+
     if (!isStandalone && !isPWA) {
-      window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      
+      window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+
       // For iOS, always show the PWA button
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
       if (isIOS) {
@@ -48,19 +61,22 @@ export default function YouTubeShortsDownloader() {
     }
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt,
+      );
     };
   }, [url]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!url.trim()) {
-      setError('Please enter a YouTube Shorts URL');
+      setError("Please enter a YouTube Shorts URL");
       return;
     }
 
     setIsLoading(true);
-    setError('');
+    setError("");
     setShortsData(null);
 
     try {
@@ -69,13 +85,13 @@ export default function YouTubeShortsDownloader() {
       const apiUrl = `https://ytdl.socialplug.io/api/video-info?url=${encoded}`;
       const res = await fetch(apiUrl, {
         headers: {
-          accept: 'application/json, text/plain, */*',
-          origin: 'https://www.socialplug.io',
+          accept: "application/json, text/plain, */*",
+          origin: "https://www.socialplug.io",
         },
       });
 
       if (!res.ok) {
-        const txt = await res.text().catch(() => '');
+        const txt = await res.text().catch(() => "");
         throw new Error(`API error: ${res.status} ${txt}`);
       }
 
@@ -83,9 +99,9 @@ export default function YouTubeShortsDownloader() {
 
       // Helpers to format bytes and duration
       const formatBytes = (bytes) => {
-        if (!bytes || isNaN(bytes)) return '';
+        if (!bytes || isNaN(bytes)) return "";
         const b = Number(bytes);
-        const units = ['B', 'KB', 'MB', 'GB'];
+        const units = ["B", "KB", "MB", "GB"];
         let i = 0;
         let val = b;
         while (val >= 1024 && i < units.length - 1) {
@@ -99,21 +115,28 @@ export default function YouTubeShortsDownloader() {
         const s = Number(secs) || 0;
         const m = Math.floor(s / 60);
         const r = s % 60;
-        return `${m}:${r.toString().padStart(2, '0')}`;
+        return `${m}:${r.toString().padStart(2, "0")}`;
       };
 
       // Normalize response for shorts
-      const title = data.title || 'YouTube Shorts Video';
-      const thumbnail = data.image || data.thumbnail || data.videoDetails?.thumbnail || null;
-      const duration = data.lengthSeconds ? formatDuration(data.lengthSeconds) : (data.duration || '<60s');
+      const title = data.title || "YouTube Shorts Video";
+      const thumbnail =
+        data.image || data.thumbnail || data.videoDetails?.thumbnail || null;
+      const duration = data.lengthSeconds
+        ? formatDuration(data.lengthSeconds)
+        : data.duration || "<60s";
 
       // video formats present at data.format_options.video.mp4 (array)
-      const rawVideoFormats = (data.format_options && data.format_options.video && data.format_options.video.mp4) || [];
+      const rawVideoFormats =
+        (data.format_options &&
+          data.format_options.video &&
+          data.format_options.video.mp4) ||
+        [];
       const videoFormats = rawVideoFormats.map((f) => ({
-        quality: f.quality || (f.mimeType ? f.mimeType.split('/')[1] : 'video'),
-        fileSize: formatBytes(parseInt(f.fileSize || f.filesize || '0', 10)),
-        downloadUrl: f.url || f.src || '#',
-        mimeType: f.mimeType || '',
+        quality: f.quality || (f.mimeType ? f.mimeType.split("/")[1] : "video"),
+        fileSize: formatBytes(parseInt(f.fileSize || f.filesize || "0", 10)),
+        downloadUrl: f.url || f.src || "#",
+        mimeType: f.mimeType || "",
         hasAudio: f.hasAudio || false,
       }));
 
@@ -122,24 +145,25 @@ export default function YouTubeShortsDownloader() {
       if (data.format_options && data.format_options.audio) {
         const rawAudio = data.format_options.audio.mp3 || [];
         audioFormats = (rawAudio || []).map((f) => ({
-          quality: f.quality || f.bitrate || 'audio',
-          fileSize: formatBytes(parseInt(f.fileSize || f.filesize || '0', 10)),
-          downloadUrl: f.url || '#',
+          quality: f.quality || f.bitrate || "audio",
+          fileSize: formatBytes(parseInt(f.fileSize || f.filesize || "0", 10)),
+          downloadUrl: f.url || "#",
         }));
       }
 
       // pick the best quality for shorts display
-      const bestVideoFormat = videoFormats[videoFormats.length - 1] || videoFormats[0];
+      const bestVideoFormat =
+        videoFormats[videoFormats.length - 1] || videoFormats[0];
       const bestAudioFormat = audioFormats[0];
 
       const normalized = {
         title,
         thumbnail,
         duration,
-        quality: bestVideoFormat?.quality || 'HD Vertical',
-        fileSize: bestVideoFormat?.fileSize || '~8MB',
-        description: 'YouTube Shorts video content...',
-        downloadUrl: bestVideoFormat?.downloadUrl || '#',
+        quality: bestVideoFormat?.quality || "HD Vertical",
+        fileSize: bestVideoFormat?.fileSize || "~8MB",
+        description: "YouTube Shorts video content...",
+        downloadUrl: bestVideoFormat?.downloadUrl || "#",
         audioUrl: bestAudioFormat?.downloadUrl || null,
         videoFormats,
         audioFormats,
@@ -147,7 +171,7 @@ export default function YouTubeShortsDownloader() {
 
       setShortsData(normalized);
     } catch {
-      setError('An error occurred while processing the YouTube Shorts video');
+      setError("An error occurred while processing the YouTube Shorts video");
     } finally {
       setIsLoading(false);
     }
@@ -155,110 +179,125 @@ export default function YouTubeShortsDownloader() {
 
   const handleBookmark = () => {
     if (!url.trim()) {
-      toast.error('Please enter a YouTube Shorts URL to bookmark');
+      toast.error("Please enter a YouTube Shorts URL to bookmark");
       return;
     }
 
     try {
-      const currentBookmarks = JSON.parse(localStorage.getItem('bookmarked-youtube-shorts-urls') || '[]');
-      
+      const currentBookmarks = JSON.parse(
+        localStorage.getItem("bookmarked-youtube-shorts-urls") || "[]",
+      );
+
       if (isBookmarked) {
         // Remove bookmark
-        const filteredUrls = currentBookmarks.filter(item => item.url !== url);
-        localStorage.setItem('bookmarked-youtube-shorts-urls', JSON.stringify(filteredUrls));
+        const filteredUrls = currentBookmarks.filter(
+          (item) => item.url !== url,
+        );
+        localStorage.setItem(
+          "bookmarked-youtube-shorts-urls",
+          JSON.stringify(filteredUrls),
+        );
         setBookmarkedUrls(filteredUrls);
         setIsBookmarked(false);
-        toast.success('Bookmark removed');
+        toast.success("Bookmark removed");
       } else {
         // Add bookmark
         const newBookmark = {
           url: url.trim(),
-          title: shortsData?.title || 'YouTube Shorts Video',
+          title: shortsData?.title || "YouTube Shorts Video",
           thumbnail: shortsData?.thumbnail || null,
-          bookmarkedAt: new Date().toISOString()
+          bookmarkedAt: new Date().toISOString(),
         };
         const updatedBookmarks = [newBookmark, ...currentBookmarks];
-        
+
         // Keep only last 50 bookmarks
         const limitedBookmarks = updatedBookmarks.slice(0, 50);
-        localStorage.setItem('bookmarked-youtube-shorts-urls', JSON.stringify(limitedBookmarks));
+        localStorage.setItem(
+          "bookmarked-youtube-shorts-urls",
+          JSON.stringify(limitedBookmarks),
+        );
         setBookmarkedUrls(limitedBookmarks);
         setIsBookmarked(true);
-        toast.success('YouTube Shorts bookmarked');
+        toast.success("YouTube Shorts bookmarked");
       }
     } catch (error) {
-      toast.error('Failed to save bookmark');
+      toast.error("Failed to save bookmark");
     }
   };
 
   const handleRemoveBookmark = (urlToRemove) => {
     try {
-      const filteredUrls = bookmarkedUrls.filter(item => item.url !== urlToRemove);
-      localStorage.setItem('bookmarked-youtube-shorts-urls', JSON.stringify(filteredUrls));
+      const filteredUrls = bookmarkedUrls.filter(
+        (item) => item.url !== urlToRemove,
+      );
+      localStorage.setItem(
+        "bookmarked-youtube-shorts-urls",
+        JSON.stringify(filteredUrls),
+      );
       setBookmarkedUrls(filteredUrls);
-      
+
       // Update current URL bookmark status if it matches
       if (url === urlToRemove) {
         setIsBookmarked(false);
       }
-      
-      toast.success('Bookmark removed');
+
+      toast.success("Bookmark removed");
     } catch (error) {
-      toast.error('Failed to remove bookmark');
+      toast.error("Failed to remove bookmark");
     }
   };
 
   const handleLoadBookmarkedUrl = (bookmarkedUrl) => {
     setUrl(bookmarkedUrl);
-    setError('');
+    setError("");
     setShortsData(null);
   };
 
   const handlePWAInstall = async () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-    
+
     if (isIOS) {
-      toast.info('To install: Tap Share → Add to Home Screen → Add', {
-        duration: 5000
+      toast.info("To install: Tap Share → Add to Home Screen → Add", {
+        duration: 5000,
       });
     } else if (deferredPrompt) {
       try {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
+        if (outcome === "accepted") {
           setDeferredPrompt(null);
           setShowPWAButton(false);
-          toast.success('App installed successfully!');
+          toast.success("App installed successfully!");
         }
       } catch (error) {
-        toast.error('Installation failed');
+        toast.error("Installation failed");
       }
     } else {
-      toast.info('Install option not available in this browser');
+      toast.info("Install option not available in this browser");
     }
   };
 
   const handleDownload = (downloadUrl, filename, _format) => {
-    if (!downloadUrl || downloadUrl.startsWith('#')) {
-      setError('Download URL is not available for this format');
+    if (!downloadUrl || downloadUrl.startsWith("#")) {
+      setError("Download URL is not available for this format");
       return;
     }
 
     // For real download URLs, open in new tab (some urls block programmatic download)
     try {
       // Try to trigger download. Some CDN responses require navigation.
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = downloadUrl;
-      link.target = '_blank';
+      link.target = "_blank";
       // Don't always set download attribute; let browser handle content-disposition
       // link.download = filename;
-      link.style.display = 'none';
+      link.style.display = "none";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      console.error('Download failed:', error);
-      setError('Download failed. Please try again.');
+      console.error("Download failed:", error);
+      setError("Download failed. Please try again.");
     }
   };
 
@@ -280,7 +319,7 @@ export default function YouTubeShortsDownloader() {
                 value={url}
                 onChange={(e) => {
                   setUrl(e.target.value);
-                  setError('');
+                  setError("");
                 }}
                 className="flex-1 border-border focus:border-border focus:ring-primary"
                 disabled={isLoading}
@@ -300,8 +339,8 @@ export default function YouTubeShortsDownloader() {
                     <Bookmark className="w-4 h-4" />
                   )}
                 </Button>
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   disabled={isLoading || !url.trim()}
                   className="bg-muted/500 hover:bg-primary text-white font-medium px-6"
                 >
@@ -334,7 +373,7 @@ export default function YouTubeShortsDownloader() {
                 </Button>
               </div>
             )}
-            
+
             {error && (
               <div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 rounded-lg">
                 {error}
@@ -348,11 +387,11 @@ export default function YouTubeShortsDownloader() {
                 <div className="flex items-start gap-4">
                   <div className="relative">
                     {shortsData.thumbnail && (
-                      <img 
-                        src={shortsData.thumbnail} 
+                      <img
+                        src={shortsData.thumbnail}
                         alt="Shorts thumbnail"
                         className="w-24 h-32 object-cover rounded-lg shadow-md"
-                        style={{ aspectRatio: '9/16' }}
+                        style={{ aspectRatio: "9/16" }}
                       />
                     )}
                     <div className="absolute inset-0 flex items-center justify-center">
@@ -364,18 +403,29 @@ export default function YouTubeShortsDownloader() {
                       {shortsData.title}
                     </h3>
                     <div className="flex flex-wrap gap-2 mb-3">
-                      <Badge variant="outline" className="text-primary border-border">
+                      <Badge
+                        variant="outline"
+                        className="text-primary border-border"
+                      >
                         Duration: {shortsData.duration}
                       </Badge>
-                      <Badge variant="outline" className="text-primary border-border">
+                      <Badge
+                        variant="outline"
+                        className="text-primary border-border"
+                      >
                         Format: Vertical Video
                       </Badge>
-                      <Badge variant="outline" className="text-primary border-border">
+                      <Badge
+                        variant="outline"
+                        className="text-primary border-border"
+                      >
                         Size: {shortsData.fileSize}
                       </Badge>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      {shortsData.description && shortsData.description.slice(0, 150)}...
+                      {shortsData.description &&
+                        shortsData.description.slice(0, 150)}
+                      ...
                     </p>
                   </div>
                 </div>
@@ -392,13 +442,26 @@ export default function YouTubeShortsDownloader() {
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
                     {shortsData.videoFormats?.map((format, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg"
+                      >
                         <div>
-                          <div className="font-medium">{format.quality} MP4 (Vertical)</div>
-                          <div className="text-sm text-muted-foreground">{format.fileSize} • 9:16 aspect ratio</div>
+                          <div className="font-medium">
+                            {format.quality} MP4 (Vertical)
+                          </div>
+                          <div className="text-sm text-muted-foreground">
+                            {format.fileSize} • 9:16 aspect ratio
+                          </div>
                         </div>
                         <Button
-                          onClick={() => handleDownload(format.downloadUrl, `${shortsData.title}_shorts.mp4`, 'video')}
+                          onClick={() =>
+                            handleDownload(
+                              format.downloadUrl,
+                              `${shortsData.title}_shorts.mp4`,
+                              "video",
+                            )
+                          }
                           size="sm"
                           className="bg-muted/500 hover:bg-primary"
                         >
@@ -407,23 +470,32 @@ export default function YouTubeShortsDownloader() {
                         </Button>
                       </div>
                     )) || (
-                        <div className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg">
-                          <div>
-                            <div className="font-medium">HD Vertical Video (MP4)</div>
-                            <div className="text-sm text-muted-foreground">
-                              {shortsData.quality} • {shortsData.fileSize} • 9:16 aspect ratio
-                            </div>
+                      <div className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg">
+                        <div>
+                          <div className="font-medium">
+                            HD Vertical Video (MP4)
                           </div>
-                          <Button
-                            onClick={() => handleDownload(shortsData.downloadUrl, `${shortsData.title}_shorts.mp4`, 'video')}
-                            size="sm"
-                            className="bg-muted/500 hover:bg-primary"
-                          >
-                            <Download className="w-4 h-4 mr-1" />
-                            Download
-                          </Button>
+                          <div className="text-sm text-muted-foreground">
+                            {shortsData.quality} • {shortsData.fileSize} • 9:16
+                            aspect ratio
+                          </div>
                         </div>
-                      )}
+                        <Button
+                          onClick={() =>
+                            handleDownload(
+                              shortsData.downloadUrl,
+                              `${shortsData.title}_shorts.mp4`,
+                              "video",
+                            )
+                          }
+                          size="sm"
+                          className="bg-muted/500 hover:bg-primary"
+                        >
+                          <Download className="w-4 h-4 mr-1" />
+                          Download
+                        </Button>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
 
@@ -437,13 +509,26 @@ export default function YouTubeShortsDownloader() {
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
                     {shortsData.audioFormats?.map((format, index) => (
-                      <div key={index} className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg"
+                      >
                         <div>
-                          <div className="font-medium">{format.quality} MP3</div>
-                          <div className="text-sm text-muted-foreground">{format.fileSize}</div>
+                          <div className="font-medium">
+                            {format.quality} MP3
+                          </div>
+                          <div className="text-sm text-muted-foreground">
+                            {format.fileSize}
+                          </div>
                         </div>
                         <Button
-                          onClick={() => handleDownload(format.downloadUrl, `${shortsData.title}_audio.mp3`, 'audio')}
+                          onClick={() =>
+                            handleDownload(
+                              format.downloadUrl,
+                              `${shortsData.title}_audio.mp3`,
+                              "audio",
+                            )
+                          }
                           size="sm"
                           className="bg-muted/500 hover:bg-primary"
                         >
@@ -451,38 +536,53 @@ export default function YouTubeShortsDownloader() {
                           Download
                         </Button>
                       </div>
-                    )) || (
-                        shortsData.audioUrl && (
-                          <div className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg">
-                            <div>
-                              <div className="font-medium">High Quality MP3</div>
-                              <div className="text-sm text-muted-foreground">
-                                ~{Math.round(parseInt(shortsData.fileSize || '0') * 0.1)}MB
-                              </div>
+                    )) ||
+                      (shortsData.audioUrl && (
+                        <div className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg">
+                          <div>
+                            <div className="font-medium">High Quality MP3</div>
+                            <div className="text-sm text-muted-foreground">
+                              ~
+                              {Math.round(
+                                parseInt(shortsData.fileSize || "0") * 0.1,
+                              )}
+                              MB
                             </div>
-                            <Button
-                              onClick={() => handleDownload(shortsData.audioUrl, `${shortsData.title}_audio.mp3`, 'audio')}
-                              size="sm"
-                              className="bg-muted/500 hover:bg-primary"
-                            >
-                              <Download className="w-4 h-4 mr-1" />
-                              Audio
-                            </Button>
                           </div>
-                        )
-                      )}
+                          <Button
+                            onClick={() =>
+                              handleDownload(
+                                shortsData.audioUrl,
+                                `${shortsData.title}_audio.mp3`,
+                                "audio",
+                              )
+                            }
+                            size="sm"
+                            className="bg-muted/500 hover:bg-primary"
+                          >
+                            <Download className="w-4 h-4 mr-1" />
+                            Audio
+                          </Button>
+                        </div>
+                      ))}
                   </CardContent>
                 </Card>
               </div>
 
               <div className="text-center text-sm text-muted-foreground">
-                <p>Downloads are processed securely and privately. We don't store any of your downloaded content.</p>
+                <p>
+                  Downloads are processed securely and privately. We don't store
+                  any of your downloaded content.
+                </p>
               </div>
             </div>
           )}
 
           <div className="mt-6 text-center text-sm text-muted-foreground">
-            <p>Supports all YouTube Shorts formats in original vertical orientation. Perfect for mobile devices and social media sharing.</p>
+            <p>
+              Supports all YouTube Shorts formats in original vertical
+              orientation. Perfect for mobile devices and social media sharing.
+            </p>
           </div>
 
           {/* Bookmarks Section */}
@@ -497,22 +597,25 @@ export default function YouTubeShortsDownloader() {
                   size="sm"
                   onClick={() => setShowBookmarks(!showBookmarks)}
                 >
-                  {showBookmarks ? 'Hide' : 'Show'} Bookmarks
+                  {showBookmarks ? "Hide" : "Show"} Bookmarks
                 </Button>
               </div>
-              
+
               {showBookmarks && (
                 <Card className="border-border bg-muted/50/50 dark:bg-yellow-950/10">
                   <CardContent className="p-4">
                     <div className="space-y-3 max-h-64 overflow-y-auto">
                       {bookmarkedUrls.map((bookmark, index) => (
-                        <div key={index} className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border">
+                        <div
+                          key={index}
+                          className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border"
+                        >
                           {bookmark.thumbnail && (
                             <img
                               src={bookmark.thumbnail}
                               alt="Thumbnail"
                               className="w-12 h-16 object-cover rounded"
-                              style={{ aspectRatio: '9/16' }}
+                              style={{ aspectRatio: "9/16" }}
                             />
                           )}
                           <div className="flex-1 min-w-0">
@@ -523,14 +626,18 @@ export default function YouTubeShortsDownloader() {
                               {bookmark.url}
                             </p>
                             <p className="text-xs text-muted-foreground">
-                              {new Date(bookmark.bookmarkedAt).toLocaleDateString()}
+                              {new Date(
+                                bookmark.bookmarkedAt,
+                              ).toLocaleDateString()}
                             </p>
                           </div>
                           <div className="flex gap-2">
                             <Button
                               variant="outline"
                               size="sm"
-                              onClick={() => handleLoadBookmarkedUrl(bookmark.url)}
+                              onClick={() =>
+                                handleLoadBookmarkedUrl(bookmark.url)
+                              }
                               className="text-xs"
                             >
                               Load
@@ -554,15 +661,29 @@ export default function YouTubeShortsDownloader() {
           )}
 
           <div className="mt-6 bg-background/20 dark:to-purple-950/20 rounded-lg p-4">
-            <h3 className="font-medium mb-2 text-center">💡 Pro Tips for YouTube Shorts Downloads</h3>
+            <h3 className="font-medium mb-2 text-center">
+              💡 Pro Tips for YouTube Shorts Downloads
+            </h3>
             <div className="grid md:grid-cols-2 gap-4 text-sm text-muted-foreground">
               <div>
-                <p><strong>Mobile Optimized:</strong> Shorts are designed for vertical viewing on mobile devices</p>
-                <p><strong>Perfect for Stories:</strong> Use downloaded Shorts for Instagram/TikTok stories</p>
+                <p>
+                  <strong>Mobile Optimized:</strong> Shorts are designed for
+                  vertical viewing on mobile devices
+                </p>
+                <p>
+                  <strong>Perfect for Stories:</strong> Use downloaded Shorts
+                  for Instagram/TikTok stories
+                </p>
               </div>
               <div>
-                <p><strong>Content Creation:</strong> Study successful Shorts for inspiration</p>
-                <p><strong>Offline Viewing:</strong> Watch your favorite Shorts without internet</p>
+                <p>
+                  <strong>Content Creation:</strong> Study successful Shorts for
+                  inspiration
+                </p>
+                <p>
+                  <strong>Offline Viewing:</strong> Watch your favorite Shorts
+                  without internet
+                </p>
               </div>
             </div>
           </div>

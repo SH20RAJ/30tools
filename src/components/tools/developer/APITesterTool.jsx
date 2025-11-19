@@ -1,34 +1,56 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Separator } from '@/components/ui/separator';
-import { ArrowLeftIcon, SendIcon, CopyIcon, RefreshCwIcon, Globe, CheckCircleIcon, XCircleIcon } from 'lucide-react';
-import Link from 'next/link';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Separator } from "@/components/ui/separator";
+import {
+  ArrowLeftIcon,
+  SendIcon,
+  CopyIcon,
+  RefreshCwIcon,
+  Globe,
+  CheckCircleIcon,
+  XCircleIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { toast } from "sonner";
 
 export default function APITester() {
-  const [method, setMethod] = useState('GET');
-  const [url, setUrl] = useState('');
-  const [headers, setHeaders] = useState('{"Content-Type": "application/json"}');
-  const [body, setBody] = useState('');
-  const [response, setResponse] = useState('');
+  const [method, setMethod] = useState("GET");
+  const [url, setUrl] = useState("");
+  const [headers, setHeaders] = useState(
+    '{"Content-Type": "application/json"}',
+  );
+  const [body, setBody] = useState("");
+  const [response, setResponse] = useState("");
   const [status, setStatus] = useState(null);
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const methods = ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'];
+  const methods = ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"];
 
   const sendRequest = async () => {
     if (!url.trim()) {
-      toast.error('Please enter a URL');
+      toast.error("Please enter a URL");
       return;
     }
 
@@ -39,7 +61,7 @@ export default function APITester() {
         headers: headers ? JSON.parse(headers) : {},
       };
 
-      if (method !== 'GET' && method !== 'HEAD' && body) {
+      if (method !== "GET" && method !== "HEAD" && body) {
         requestOptions.body = body;
       }
 
@@ -48,12 +70,12 @@ export default function APITester() {
       const endTime = Date.now();
 
       const responseText = await res.text();
-      
+
       setStatus({
         code: res.status,
         statusText: res.statusText,
         time: endTime - startTime,
-        headers: Object.fromEntries(res.headers.entries())
+        headers: Object.fromEntries(res.headers.entries()),
       });
 
       // Try to format JSON response
@@ -68,12 +90,12 @@ export default function APITester() {
     } catch (error) {
       setStatus({
         code: 0,
-        statusText: 'Network Error',
+        statusText: "Network Error",
         time: 0,
-        headers: {}
+        headers: {},
       });
       setResponse(`Error: ${error.message}`);
-      toast.error('Request failed');
+      toast.error("Request failed");
     } finally {
       setLoading(false);
     }
@@ -83,41 +105,41 @@ export default function APITester() {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      toast.success('Response copied to clipboard!');
+      toast.success("Response copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      toast.error('Failed to copy response');
+      toast.error("Failed to copy response");
     }
   };
 
   const clearAll = () => {
-    setUrl('');
+    setUrl("");
     setHeaders('{"Content-Type": "application/json"}');
-    setBody('');
-    setResponse('');
+    setBody("");
+    setResponse("");
     setStatus(null);
   };
 
   const loadExample = (type) => {
     const examples = {
       get: {
-        url: 'https://jsonplaceholder.typicode.com/posts/1',
-        method: 'GET',
-        headers: '{"Accept": "application/json"}'
+        url: "https://jsonplaceholder.typicode.com/posts/1",
+        method: "GET",
+        headers: '{"Accept": "application/json"}',
       },
       post: {
-        url: 'https://jsonplaceholder.typicode.com/posts',
-        method: 'POST',
+        url: "https://jsonplaceholder.typicode.com/posts",
+        method: "POST",
         headers: '{"Content-Type": "application/json"}',
-        body: '{"title": "Test Post", "body": "This is a test", "userId": 1}'
-      }
+        body: '{"title": "Test Post", "body": "This is a test", "userId": 1}',
+      },
     };
 
     const example = examples[type];
     setMethod(example.method);
     setUrl(example.url);
     setHeaders(example.headers);
-    setBody(example.body || '');
+    setBody(example.body || "");
   };
 
   return (
@@ -137,7 +159,9 @@ export default function APITester() {
             </div>
             <div>
               <h1 className="text-3xl font-bold">API Tester</h1>
-              <p className="text-muted-foreground">Test REST APIs and HTTP endpoints</p>
+              <p className="text-muted-foreground">
+                Test REST APIs and HTTP endpoints
+              </p>
             </div>
           </div>
 
@@ -166,7 +190,9 @@ export default function APITester() {
                     </SelectTrigger>
                     <SelectContent>
                       {methods.map((m) => (
-                        <SelectItem key={m} value={m}>{m}</SelectItem>
+                        <SelectItem key={m} value={m}>
+                          {m}
+                        </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
@@ -183,7 +209,7 @@ export default function APITester() {
                     <TabsTrigger value="headers">Headers</TabsTrigger>
                     <TabsTrigger value="body">Body</TabsTrigger>
                   </TabsList>
-                  
+
                   <TabsContent value="headers" className="space-y-2">
                     <Label>Request Headers (JSON)</Label>
                     <Textarea
@@ -193,7 +219,7 @@ export default function APITester() {
                       className="min-h-[100px] font-mono text-sm"
                     />
                   </TabsContent>
-                  
+
                   <TabsContent value="body" className="space-y-2">
                     <Label>Request Body</Label>
                     <Textarea
@@ -206,9 +232,13 @@ export default function APITester() {
                 </Tabs>
 
                 <div className="flex gap-2">
-                  <Button onClick={sendRequest} disabled={loading} className="flex-1">
+                  <Button
+                    onClick={sendRequest}
+                    disabled={loading}
+                    className="flex-1"
+                  >
                     <SendIcon className="h-4 w-4 mr-2" />
-                    {loading ? 'Sending...' : 'Send Request'}
+                    {loading ? "Sending..." : "Send Request"}
                   </Button>
                   <Button onClick={clearAll} variant="outline">
                     <RefreshCwIcon className="h-4 w-4 mr-2" />
@@ -221,10 +251,18 @@ export default function APITester() {
                 <div className="space-y-2">
                   <Label>Quick Examples</Label>
                   <div className="flex gap-2">
-                    <Button size="sm" variant="outline" onClick={() => loadExample('get')}>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => loadExample("get")}
+                    >
                       GET Example
                     </Button>
-                    <Button size="sm" variant="outline" onClick={() => loadExample('post')}>
+                    <Button
+                      size="sm"
+                      variant="outline"
+                      onClick={() => loadExample("post")}
+                    >
                       POST Example
                     </Button>
                   </div>
@@ -262,9 +300,7 @@ export default function APITester() {
             <Card>
               <CardHeader>
                 <CardTitle>Response</CardTitle>
-                <CardDescription>
-                  API response data
-                </CardDescription>
+                <CardDescription>API response data</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <Textarea
@@ -280,7 +316,7 @@ export default function APITester() {
                   size="sm"
                 >
                   <CopyIcon className="h-4 w-4 mr-2" />
-                  {copied ? 'Copied!' : 'Copy Response'}
+                  {copied ? "Copied!" : "Copy Response"}
                 </Button>
               </CardContent>
             </Card>
@@ -348,7 +384,8 @@ export default function APITester() {
               <div>
                 <h4 className="font-medium mb-1">CORS Limitations</h4>
                 <p className="text-sm text-muted-foreground">
-                  Some APIs may block requests due to CORS policy. This is a browser security feature.
+                  Some APIs may block requests due to CORS policy. This is a
+                  browser security feature.
                 </p>
               </div>
 
@@ -362,7 +399,8 @@ export default function APITester() {
               <div>
                 <h4 className="font-medium mb-1">Authentication</h4>
                 <p className="text-sm text-muted-foreground">
-                  Add authentication headers like "Authorization": "Bearer token" in the headers section.
+                  Add authentication headers like "Authorization": "Bearer
+                  token" in the headers section.
                 </p>
               </div>
             </CardContent>

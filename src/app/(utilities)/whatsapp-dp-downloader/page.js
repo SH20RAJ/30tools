@@ -1,8 +1,9 @@
-import WhatsAppDPDownloaderTool from '@/components/tools/utilities/WhatsAppDPDownloaderTool';
+import WhatsAppDPDownloaderTool from "@/components/tools/utilities/WhatsAppDPDownloaderTool";
 
 export const metadata = {
-  title: 'WhatsApp DP Downloader - Download Profile Pictures | 30tools',
-  description: 'Download WhatsApp profile pictures in high quality. Free WhatsApp DP downloader tool to save profile photos from any WhatsApp contact.',
+  title: "WhatsApp DP Downloader - Download Profile Pictures | 30tools",
+  description:
+    "Download WhatsApp profile pictures in high quality. Free WhatsApp DP downloader tool to save profile photos from any WhatsApp contact.",
   keywords: [
     "whatsapp dp downloader",
     "whatsapp dp downloader online",
@@ -16,41 +17,43 @@ export const metadata = {
     "whatsapp dp downloader utility",
     "online tool",
     "free utility",
-    "web application"
+    "web application",
   ],
   openGraph: {
-    title: 'WhatsApp DP Downloader - Download Profile Pictures | 30tools',
-    description: 'Download WhatsApp profile pictures in high quality. Free WhatsApp DP downloader tool to save profile photos from any WhatsApp contact.',
-    type: 'website',
-    url: 'https://30tools.com/whatsapp-dp-downloader',
+    title: "WhatsApp DP Downloader - Download Profile Pictures | 30tools",
+    description:
+      "Download WhatsApp profile pictures in high quality. Free WhatsApp DP downloader tool to save profile photos from any WhatsApp contact.",
+    type: "website",
+    url: "https://30tools.com/whatsapp-dp-downloader",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'WhatsApp DP Downloader - Download Profile Pictures | 30tools',
-    description: 'Download WhatsApp profile pictures in high quality. Free WhatsApp DP downloader tool to save profile photos from any WhatsApp contact.',
+    card: "summary_large_image",
+    title: "WhatsApp DP Downloader - Download Profile Pictures | 30tools",
+    description:
+      "Download WhatsApp profile pictures in high quality. Free WhatsApp DP downloader tool to save profile photos from any WhatsApp contact.",
   },
-  canonical: 'https://30tools.com/whatsapp-dp-downloader',
+  canonical: "https://30tools.com/whatsapp-dp-downloader",
 };
-
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Whatsapp Dp Downloader",
-  "description": "Professional whatsapp dp downloader tool. Free online processing with high-quality results. No registration required, instant results.",
-  "url": "https://30tools.com/whatsapp-dp-downloader",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "Whatsapp Dp Downloader",
+  description:
+    "Professional whatsapp dp downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+  url: "https://30tools.com/whatsapp-dp-downloader",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "author": {
+  author: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 

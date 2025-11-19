@@ -1,18 +1,27 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { ChevronDown, ChevronUp, MessageCircle, HelpCircle } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { generateFAQSchema } from '@/constants/seo/advanced-metadata';
+import { useState } from "react";
+import {
+  ChevronDown,
+  ChevronUp,
+  MessageCircle,
+  HelpCircle,
+} from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
+import { generateFAQSchema } from "@/constants/seo/advanced-metadata";
 
-export default function FAQSection({ 
-  faqs = [], 
+export default function FAQSection({
+  faqs = [],
   title = "Frequently Asked Questions",
   showSchema = true,
   variant = "accordion", // "accordion", "grid", "list"
   categoryTitle,
-  toolName
+  toolName,
 }) {
   const [openItems, setOpenItems] = useState(new Set());
 
@@ -55,7 +64,9 @@ export default function FAQSection({
           >
             <CollapsibleTrigger className="w-full px-4 py-3 text-left hover:bg-muted/50 transition-colors">
               <div className="flex items-center justify-between">
-                <h3 className="font-medium text-foreground pr-4">{faq.question}</h3>
+                <h3 className="font-medium text-foreground pr-4">
+                  {faq.question}
+                </h3>
                 {openItems.has(index) ? (
                   <ChevronUp className="h-4 w-4 text-muted-foreground flex-shrink-0" />
                 ) : (
@@ -65,7 +76,9 @@ export default function FAQSection({
             </CollapsibleTrigger>
             <CollapsibleContent className="px-4 pb-3">
               <div className="pt-2 border-t">
-                <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+                <p className="text-muted-foreground leading-relaxed">
+                  {faq.answer}
+                </p>
               </div>
             </CollapsibleContent>
           </Collapsible>
@@ -94,7 +107,9 @@ export default function FAQSection({
               <h3 className="font-medium text-foreground">{faq.question}</h3>
             </CardHeader>
             <CardContent className="pt-0">
-              <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+              <p className="text-muted-foreground leading-relaxed">
+                {faq.answer}
+              </p>
             </CardContent>
           </Card>
         ))}
@@ -116,7 +131,9 @@ export default function FAQSection({
         {faqs.map((faq, index) => (
           <div key={index} className="border-l-4 border-primary pl-4">
             <h3 className="font-medium text-foreground mb-2">{faq.question}</h3>
-            <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
+            <p className="text-muted-foreground leading-relaxed">
+              {faq.answer}
+            </p>
           </div>
         ))}
       </div>
@@ -131,12 +148,12 @@ export default function FAQSection({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       )}
-      
+
       <section className="py-12 bg-muted/30" aria-labelledby="faq-heading">
         <div className="container mx-auto px-4">
-          {variant === 'accordion' && renderAccordionFAQ()}
-          {variant === 'grid' && renderGridFAQ()}
-          {variant === 'list' && renderListFAQ()}
+          {variant === "accordion" && renderAccordionFAQ()}
+          {variant === "grid" && renderGridFAQ()}
+          {variant === "list" && renderListFAQ()}
         </div>
       </section>
     </>
@@ -144,13 +161,13 @@ export default function FAQSection({
 }
 
 // Enhanced FAQ component with search functionality
-export function SearchableFAQ({ 
-  faqs = [], 
+export function SearchableFAQ({
+  faqs = [],
   title = "Help Center",
   placeholder = "Search questions...",
-  showSchema = true 
+  showSchema = true,
 }) {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [filteredFAQs, setFilteredFAQs] = useState(faqs);
 
   const handleSearch = (term) => {
@@ -160,9 +177,10 @@ export function SearchableFAQ({
       return;
     }
 
-    const filtered = faqs.filter(faq => 
-      faq.question.toLowerCase().includes(term.toLowerCase()) ||
-      faq.answer.toLowerCase().includes(term.toLowerCase())
+    const filtered = faqs.filter(
+      (faq) =>
+        faq.question.toLowerCase().includes(term.toLowerCase()) ||
+        faq.answer.toLowerCase().includes(term.toLowerCase()),
     );
     setFilteredFAQs(filtered);
   };
@@ -177,14 +195,17 @@ export function SearchableFAQ({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       )}
-      
+
       <section className="py-12" aria-labelledby="searchable-faq-heading">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 id="searchable-faq-heading" className="text-3xl font-bold text-center mb-8">
+            <h2
+              id="searchable-faq-heading"
+              className="text-3xl font-bold text-center mb-8"
+            >
               {title}
             </h2>
-            
+
             {/* Search Input */}
             <div className="relative mb-8">
               <input
@@ -199,8 +220,8 @@ export function SearchableFAQ({
             {/* FAQ Results */}
             <div className="space-y-4">
               {filteredFAQs.length > 0 ? (
-                <FAQSection 
-                  faqs={filteredFAQs} 
+                <FAQSection
+                  faqs={filteredFAQs}
                   title=""
                   showSchema={false}
                   variant="list"
@@ -225,24 +246,28 @@ export function ImageToolsFAQ() {
   const faqs = [
     {
       question: "How do I compress images without losing quality?",
-      answer: "Our smart compression algorithm maintains visual quality while reducing file size by up to 80%. You can adjust compression levels to balance size and quality."
+      answer:
+        "Our smart compression algorithm maintains visual quality while reducing file size by up to 80%. You can adjust compression levels to balance size and quality.",
     },
     {
       question: "What image formats are supported?",
-      answer: "We support JPEG, PNG, WebP, BMP, GIF, TIFF, and SVG formats. All processing happens in your browser for privacy."
+      answer:
+        "We support JPEG, PNG, WebP, BMP, GIF, TIFF, and SVG formats. All processing happens in your browser for privacy.",
     },
     {
       question: "Is there a file size limit?",
-      answer: "You can process images up to 50MB each. For batch processing, you can handle up to 20 images simultaneously."
+      answer:
+        "You can process images up to 50MB each. For batch processing, you can handle up to 20 images simultaneously.",
     },
     {
       question: "Can I convert image formats?",
-      answer: "Yes! Our tools support conversion between all major image formats including modern formats like WebP for better web optimization."
-    }
+      answer:
+        "Yes! Our tools support conversion between all major image formats including modern formats like WebP for better web optimization.",
+    },
   ];
 
   return (
-    <FAQSection 
+    <FAQSection
       faqs={faqs}
       title="Image Tools FAQ"
       categoryTitle="Image Processing Tools"
@@ -255,24 +280,28 @@ export function PDFToolsFAQ() {
   const faqs = [
     {
       question: "How do I merge multiple PDF files?",
-      answer: "Upload your PDF files, arrange them in the desired order, and click merge. The tool preserves bookmarks and maintains document quality."
+      answer:
+        "Upload your PDF files, arrange them in the desired order, and click merge. The tool preserves bookmarks and maintains document quality.",
     },
     {
       question: "Can I split a large PDF into smaller files?",
-      answer: "Yes, you can split PDFs by page ranges, extract specific pages, or split into individual pages with our PDF splitter tool."
+      answer:
+        "Yes, you can split PDFs by page ranges, extract specific pages, or split into individual pages with our PDF splitter tool.",
     },
     {
       question: "Is my PDF data secure?",
-      answer: "Absolutely. All PDF processing happens locally in your browser. Files are never uploaded to servers or stored anywhere."
+      answer:
+        "Absolutely. All PDF processing happens locally in your browser. Files are never uploaded to servers or stored anywhere.",
     },
     {
       question: "What's the maximum PDF file size?",
-      answer: "You can process PDF files up to 100MB each. For larger files, consider compressing them first with our PDF compressor."
-    }
+      answer:
+        "You can process PDF files up to 100MB each. For larger files, consider compressing them first with our PDF compressor.",
+    },
   ];
 
   return (
-    <FAQSection 
+    <FAQSection
       faqs={faqs}
       title="PDF Tools FAQ"
       categoryTitle="PDF Processing Tools"

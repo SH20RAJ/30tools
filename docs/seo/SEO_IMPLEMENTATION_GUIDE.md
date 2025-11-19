@@ -47,15 +47,15 @@ import { BreadcrumbsEnhanced, RichBreadcrumbs } from '@/components/seo';
 <BreadcrumbsEnhanced />
 
 // Custom breadcrumbs
-<BreadcrumbsEnhanced 
+<BreadcrumbsEnhanced
   customBreadcrumbs={[
     { name: 'Image Tools', url: '/image-tools' },
     { name: 'Image Compressor', url: '/image-compressor' }
-  ]} 
+  ]}
 />
 
 // Rich breadcrumbs with variants
-<RichBreadcrumbs 
+<RichBreadcrumbs
   breadcrumbs={breadcrumbs}
   variant="pills" // "default", "minimal", "pills"
   showSchema={true}
@@ -68,7 +68,7 @@ import { BreadcrumbsEnhanced, RichBreadcrumbs } from '@/components/seo';
 import { FAQSection, SearchableFAQ } from '@/components/seo';
 
 // Basic FAQ section
-<FAQSection 
+<FAQSection
   faqs={faqs}
   title="Frequently Asked Questions"
   variant="accordion" // "accordion", "grid", "list"
@@ -76,7 +76,7 @@ import { FAQSection, SearchableFAQ } from '@/components/seo';
 />
 
 // Searchable FAQ
-<SearchableFAQ 
+<SearchableFAQ
   faqs={faqs}
   title="Help Center"
   placeholder="Search questions..."
@@ -89,7 +89,7 @@ import { FAQSection, SearchableFAQ } from '@/components/seo';
 import { ReviewSnippets, TrustIndicators } from '@/components/seo';
 
 // Review section with ratings
-<ReviewSnippets 
+<ReviewSnippets
   toolId="image-compressor"
   title="What Our Users Say"
   showRatingSummary={true}
@@ -107,7 +107,7 @@ import { ReviewSnippets, TrustIndicators } from '@/components/seo';
 import { SEOBooster, PageAnalytics } from '@/components/seo';
 
 // SEO monitoring (development only)
-<SEOBooster 
+<SEOBooster
   toolName="Image Compressor"
   category="image-tools"
   primaryKeyword="image compressor"
@@ -123,29 +123,29 @@ import { SEOBooster, PageAnalytics } from '@/components/seo';
 ### 5. Social Engagement
 
 ```jsx
-import { 
-  SocialShare, 
-  RelatedTools, 
+import {
+  SocialShare,
+  RelatedTools,
   PopularTools,
-  QuickActions 
+  QuickActions
 } from '@/components/seo';
 
 // Social sharing
-<SocialShare 
+<SocialShare
   url="https://30tools.com/image-compressor"
   title="Free Image Compressor"
   description="Compress images without quality loss"
 />
 
 // Related tools
-<RelatedTools 
+<RelatedTools
   currentTool="image-compressor"
   category="image-tools"
   tools={relatedTools}
 />
 
 // Quick actions
-<QuickActions 
+<QuickActions
   toolName="Image Compressor"
   toolUrl="https://30tools.com/image-compressor"
   showBookmark={true}
@@ -159,7 +159,7 @@ import {
 import { UserComments, CommentsWidget } from '@/components/seo';
 
 // Full comments section
-<UserComments 
+<UserComments
   toolId="image-compressor"
   toolName="Image Compressor"
   showStats={true}
@@ -185,12 +185,12 @@ export async function generateMetadata({ params }): Promise<Metadata> {
 ### Manual Metadata
 
 ```jsx
-import { SEO_CONFIG, generatePageTitle } from '@/constants/seo/seo-config';
+import { SEO_CONFIG, generatePageTitle } from "@/constants/seo/seo-config";
 
 export const metadata = {
-  title: generatePageTitle('image-compressor', 'image-tools'),
+  title: generatePageTitle("image-compressor", "image-tools"),
   description: "Compress images online without quality loss...",
-  keywords: generateKeywords('image-compressor', 'image-tools'),
+  keywords: generateKeywords("image-compressor", "image-tools"),
   // ... other metadata
 };
 ```
@@ -198,6 +198,7 @@ export const metadata = {
 ## 🎯 SEO Best Practices Implemented
 
 ### 1. **Technical SEO**
+
 - ✅ Schema.org structured data
 - ✅ Open Graph optimization
 - ✅ Twitter Cards
@@ -207,6 +208,7 @@ export const metadata = {
 - ✅ Robots.txt optimization
 
 ### 2. **Performance SEO**
+
 - ✅ Core Web Vitals monitoring
 - ✅ Image optimization
 - ✅ Lazy loading
@@ -215,6 +217,7 @@ export const metadata = {
 - ✅ Resource preloading
 
 ### 3. **Content SEO**
+
 - ✅ Keyword-optimized titles
 - ✅ Meta descriptions (120-160 chars)
 - ✅ Header tag hierarchy (H1-H6)
@@ -223,6 +226,7 @@ export const metadata = {
 - ✅ Content depth and quality
 
 ### 4. **User Experience SEO**
+
 - ✅ Mobile-first design
 - ✅ Fast loading times
 - ✅ Clear navigation
@@ -231,6 +235,7 @@ export const metadata = {
 - ✅ Low bounce rate optimization
 
 ### 5. **Rich Snippets**
+
 - ✅ FAQ schema markup
 - ✅ Review and rating schema
 - ✅ Breadcrumb schema
@@ -250,12 +255,12 @@ export const SEO_CONFIG = {
     name: "30tools",
     title: "Your Custom Title",
     description: "Your custom description",
-    url: "https://30tools.com"
+    url: "https://30tools.com",
   },
   analytics: {
     googleAnalytics: "GA_MEASUREMENT_ID",
-    googleAdsense: "ADSENSE_ID"
-  }
+    googleAdsense: "ADSENSE_ID",
+  },
   // ... more configuration
 };
 ```
@@ -272,9 +277,9 @@ export const TOOL_SEO_CONFIG = {
     keywords: ["keyword1", "keyword2"],
     schema: {
       "@type": "SoftwareApplication",
-      "applicationCategory": "UtilitiesApplication"
-    }
-  }
+      applicationCategory: "UtilitiesApplication",
+    },
+  },
 };
 ```
 
@@ -285,25 +290,25 @@ export const TOOL_SEO_CONFIG = {
 The SEO components automatically track:
 
 - **LCP** (Largest Contentful Paint): Target < 2.5s
-- **FID** (First Input Delay): Target < 100ms  
+- **FID** (First Input Delay): Target < 100ms
 - **CLS** (Cumulative Layout Shift): Target < 0.1
 - **TTFB** (Time to First Byte): Target < 200ms
 
 ### SEO Score Calculation
 
 ```jsx
-import { calculateSEOScore } from '@/constants/seo/seo-config';
+import { calculateSEOScore } from "@/constants/seo/seo-config";
 
 const score = calculateSEOScore({
   title: "Page title",
-  description: "Page description", 
+  description: "Page description",
   keywords: ["keyword1", "keyword2"],
   content: "Page content...",
   hasCanonical: true,
   hasStructuredData: true,
   hasOpenGraph: true,
   hasTwitterCard: true,
-  hasAltTags: true
+  hasAltTags: true,
 });
 ```
 
@@ -327,6 +332,7 @@ All components use Tailwind CSS and shadcn/ui components. Customize by:
 ## 🚀 Deployment Checklist
 
 ### Before Deployment
+
 - [ ] Update Google Analytics ID
 - [ ] Configure search console verification codes
 - [ ] Generate sitemap.xml
@@ -337,6 +343,7 @@ All components use Tailwind CSS and shadcn/ui components. Customize by:
 - [ ] Validate HTML and accessibility
 
 ### After Deployment
+
 - [ ] Submit sitemap to search consoles
 - [ ] Monitor Core Web Vitals in PageSpeed Insights
 - [ ] Track rankings for target keywords
@@ -347,6 +354,7 @@ All components use Tailwind CSS and shadcn/ui components. Customize by:
 ## 📚 Additional Resources
 
 ### Tools for SEO Testing
+
 - [Google PageSpeed Insights](https://pagespeed.web.dev/)
 - [Google Search Console](https://search.google.com/search-console)
 - [Schema.org Validator](https://validator.schema.org/)
@@ -355,6 +363,7 @@ All components use Tailwind CSS and shadcn/ui components. Customize by:
 - [WebPageTest](https://www.webpagetest.org/)
 
 ### SEO Guidelines
+
 - [Google Search Essentials](https://developers.google.com/search/docs/essentials)
 - [Web.dev SEO](https://web.dev/learn/seo/)
 - [Schema.org Documentation](https://schema.org/)

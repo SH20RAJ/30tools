@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { 
-  Heart, 
-  Users, 
-  Shield, 
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Heart,
+  Users,
+  Shield,
   ArrowRight,
   Globe,
-  Sparkles
-} from 'lucide-react';
+  Sparkles,
+} from "lucide-react";
 
 export default function UnstoryOpenmindCTACompact() {
   return null;
@@ -30,22 +30,25 @@ export default function UnstoryOpenmindCTACompact() {
               <Heart className="w-6 h-6 text-white" />
             </div>
           </div>
-          
-          <Badge 
-            variant="secondary" 
+
+          <Badge
+            variant="secondary"
             className="mb-3 px-3 py-1 bg-background/50 dark:to-purple-900/50 text-primary dark:text-blue-300 border-0"
           >
             <Sparkles className="w-3 h-3 mr-1" />
             Find Your Calm
           </Badge>
-          
+
           <h2 className="text-2xl font-bold mb-2 bg-muted/20 bg-clip-text text-transparent">
             Join Unstory Openmind
           </h2>
-          
+
           <p className="text-muted-foreground mb-4 max-w-md mx-auto">
-            A safe space for authentic conversations and personal growth. 
-            <span className="font-medium text-foreground"> Share your story, judgment-free.</span>
+            A safe space for authentic conversations and personal growth.
+            <span className="font-medium text-foreground">
+              {" "}
+              Share your story, judgment-free.
+            </span>
           </p>
 
           {/* Trust Indicators */}
@@ -65,13 +68,10 @@ export default function UnstoryOpenmindCTACompact() {
           </div>
 
           {/* CTA Button */}
-          <Button
-            asChild
-            className="bg-background"
-          >
-            <a 
-              href="https://unstory.live" 
-              target="_blank" 
+          <Button asChild className="bg-background">
+            <a
+              href="https://unstory.live"
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center"
             >

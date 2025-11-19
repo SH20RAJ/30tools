@@ -1,151 +1,178 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Badge } from '@/components/ui/badge'
-import { Progress } from '@/components/ui/progress'
-import { Download, Link as LinkIcon, Play, Heart, MessageCircle, Share, Copy, Check, Smartphone } from 'lucide-react'
-import { toast } from 'sonner'
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import {
+  Download,
+  Link as LinkIcon,
+  Play,
+  Heart,
+  MessageCircle,
+  Share,
+  Copy,
+  Check,
+  Smartphone,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function TikTokDownloaderTool() {
-  const [tiktokUrl, setTiktokUrl] = useState('')
-  const [quality, setQuality] = useState('hd')
-  const [format, setFormat] = useState('mp4')
-  const [isProcessing, setIsProcessing] = useState(false)
-  const [progress, setProgress] = useState(0)
-  const [videoData, setVideoData] = useState(null)
-  const [copied, setCopied] = useState(false)
+  const [tiktokUrl, setTiktokUrl] = useState("");
+  const [quality, setQuality] = useState("hd");
+  const [format, setFormat] = useState("mp4");
+  const [isProcessing, setIsProcessing] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const [videoData, setVideoData] = useState(null);
+  const [copied, setCopied] = useState(false);
 
   const handleUrlChange = (e) => {
-    const url = e.target.value
-    setTiktokUrl(url)
-    
+    const url = e.target.value;
+    setTiktokUrl(url);
+
     // Auto-detect TikTok URLs and show preview
-    if (url.includes('tiktok.com') || url.includes('vm.tiktok.com')) {
+    if (url.includes("tiktok.com") || url.includes("vm.tiktok.com")) {
       // Could add URL validation here
     }
-  }
+  };
 
   const simulateProgress = (duration) => {
     return new Promise((resolve) => {
-      const steps = 50
-      const increment = 100 / steps
-      const stepDuration = duration / steps
-      let current = 0
+      const steps = 50;
+      const increment = 100 / steps;
+      const stepDuration = duration / steps;
+      let current = 0;
 
       const interval = setInterval(() => {
-        current += increment
-        setProgress(Math.min(current, 100))
-        
+        current += increment;
+        setProgress(Math.min(current, 100));
+
         if (current >= 100) {
-          clearInterval(interval)
-          resolve()
+          clearInterval(interval);
+          resolve();
         }
-      }, stepDuration)
-    })
-  }
+      }, stepDuration);
+    });
+  };
 
   const generateSampleVideoData = (url) => {
     return {
-      id: 'sample123',
+      id: "sample123",
       url: url,
-      title: 'Amazing TikTok Video - Dance Challenge',
-      author: '@tiktokcreator',
-      authorName: 'TikTok Creator',
-      duration: '00:15',
-      thumbnail: 'https://via.placeholder.com/300x400/FF0050/FFFFFF?text=TikTok+Video',
+      title: "Amazing TikTok Video - Dance Challenge",
+      author: "@tiktokcreator",
+      authorName: "TikTok Creator",
+      duration: "00:15",
+      thumbnail:
+        "https://via.placeholder.com/300x400/FF0050/FFFFFF?text=TikTok+Video",
       stats: {
-        likes: '12.4K',
-        comments: '892',
-        shares: '1.2K',
-        views: '45.6K'
+        likes: "12.4K",
+        comments: "892",
+        shares: "1.2K",
+        views: "45.6K",
       },
       downloadLinks: {
-        hd: 'https://sample-download-link-hd.mp4',
-        sd: 'https://sample-download-link-sd.mp4',
-        audio: 'https://sample-download-link-audio.mp3'
+        hd: "https://sample-download-link-hd.mp4",
+        sd: "https://sample-download-link-sd.mp4",
+        audio: "https://sample-download-link-audio.mp3",
       },
       isWatermarkFree: true,
-      uploadDate: new Date().toLocaleDateString()
-    }
-  }
+      uploadDate: new Date().toLocaleDateString(),
+    };
+  };
 
   const downloadVideo = async () => {
     if (!tiktokUrl.trim()) {
-      toast.error('Please enter a TikTok URL')
-      return
+      toast.error("Please enter a TikTok URL");
+      return;
     }
 
-    if (!tiktokUrl.includes('tiktok.com')) {
-      toast.error('Please enter a valid TikTok URL')
-      return
+    if (!tiktokUrl.includes("tiktok.com")) {
+      toast.error("Please enter a valid TikTok URL");
+      return;
     }
 
-    setIsProcessing(true)
-    setProgress(0)
-    setVideoData(null)
+    setIsProcessing(true);
+    setProgress(0);
+    setVideoData(null);
 
     try {
       // Simulate processing
-      await simulateProgress(3000)
-      
-      // Generate sample video data
-      const sampleData = generateSampleVideoData(tiktokUrl)
-      setVideoData(sampleData)
+      await simulateProgress(3000);
 
-      toast.success('TikTok video processed successfully!')
+      // Generate sample video data
+      const sampleData = generateSampleVideoData(tiktokUrl);
+      setVideoData(sampleData);
+
+      toast.success("TikTok video processed successfully!");
     } catch (error) {
-      toast.error('Failed to process TikTok video. Please try again.')
+      toast.error("Failed to process TikTok video. Please try again.");
     } finally {
-      setIsProcessing(false)
-      setProgress(0)
+      setIsProcessing(false);
+      setProgress(0);
     }
-  }
+  };
 
   const downloadFile = async (downloadUrl, filename) => {
     try {
       // In a real implementation, this would download the actual file
       // For demo purposes, we'll just show a success message
-      toast.success(`Download started: ${filename}`)
-      
+      toast.success(`Download started: ${filename}`);
+
       // Simulate download
-      const link = document.createElement('a')
-      link.href = downloadUrl
-      link.download = filename
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
     } catch (error) {
-      toast.error('Download failed. Please try again.')
+      toast.error("Download failed. Please try again.");
     }
-  }
+  };
 
   const copyToClipboard = async (text) => {
     try {
-      await navigator.clipboard.writeText(text)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-      toast.success('Copied to clipboard!')
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+      toast.success("Copied to clipboard!");
     } catch (error) {
-      toast.error('Failed to copy to clipboard')
+      toast.error("Failed to copy to clipboard");
     }
-  }
+  };
 
   const getQualityDownloadUrl = () => {
-    if (!videoData) return null
-    return quality === 'hd' ? videoData.downloadLinks.hd : videoData.downloadLinks.sd
-  }
+    if (!videoData) return null;
+    return quality === "hd"
+      ? videoData.downloadLinks.hd
+      : videoData.downloadLinks.sd;
+  };
 
   const getFilename = () => {
-    if (!videoData) return 'tiktok-video'
-    const cleanTitle = videoData.title.replace(/[^a-zA-Z0-9]/g, '-').substring(0, 50)
-    const extension = format === 'mp4' ? 'mp4' : 'mp3'
-    return `${cleanTitle}.${extension}`
-  }
+    if (!videoData) return "tiktok-video";
+    const cleanTitle = videoData.title
+      .replace(/[^a-zA-Z0-9]/g, "-")
+      .substring(0, 50);
+    const extension = format === "mp4" ? "mp4" : "mp3";
+    return `${cleanTitle}.${extension}`;
+  };
 
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-8">
@@ -155,8 +182,9 @@ export default function TikTokDownloaderTool() {
           <h1 className="text-3xl font-bold">TikTok Video Downloader</h1>
         </div>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Download TikTok videos without watermarks in HD quality. Save your favorite TikTok content 
-          for offline viewing or sharing. Fast, free, and no registration required.
+          Download TikTok videos without watermarks in HD quality. Save your
+          favorite TikTok content for offline viewing or sharing. Fast, free,
+          and no registration required.
         </p>
         <div className="flex flex-wrap justify-center gap-2">
           <Badge variant="secondary">🚫 No Watermark</Badge>
@@ -191,7 +219,11 @@ export default function TikTokDownloaderTool() {
                   onClick={() => copyToClipboard(tiktokUrl)}
                   disabled={!tiktokUrl.trim()}
                 >
-                  {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                  {copied ? (
+                    <Check className="h-4 w-4" />
+                  ) : (
+                    <Copy className="h-4 w-4" />
+                  )}
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground mt-1">
@@ -202,7 +234,11 @@ export default function TikTokDownloaderTool() {
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <Label htmlFor="quality">Video Quality</Label>
-                <Select value={quality} onValueChange={setQuality} disabled={isProcessing}>
+                <Select
+                  value={quality}
+                  onValueChange={setQuality}
+                  disabled={isProcessing}
+                >
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
@@ -215,7 +251,11 @@ export default function TikTokDownloaderTool() {
 
               <div>
                 <Label htmlFor="format">Download Format</Label>
-                <Select value={format} onValueChange={setFormat} disabled={isProcessing}>
+                <Select
+                  value={format}
+                  onValueChange={setFormat}
+                  disabled={isProcessing}
+                >
                   <SelectTrigger>
                     <SelectValue />
                   </SelectTrigger>
@@ -227,7 +267,7 @@ export default function TikTokDownloaderTool() {
               </div>
             </div>
 
-            <Button 
+            <Button
               onClick={downloadVideo}
               disabled={isProcessing || !tiktokUrl.trim()}
               className="w-full"
@@ -275,8 +315,8 @@ export default function TikTokDownloaderTool() {
             {videoData ? (
               <div className="space-y-4">
                 <div className="aspect-[9/16] bg-black rounded-lg overflow-hidden relative max-w-[300px] mx-auto">
-                  <img 
-                    src={videoData.thumbnail} 
+                  <img
+                    src={videoData.thumbnail}
                     alt={videoData.title}
                     className="w-full h-full object-cover"
                   />
@@ -295,7 +335,8 @@ export default function TikTokDownloaderTool() {
                   <div>
                     <h3 className="font-semibold text-lg">{videoData.title}</h3>
                     <p className="text-sm text-muted-foreground">
-                      Duration: {videoData.duration} • Uploaded: {videoData.uploadDate}
+                      Duration: {videoData.duration} • Uploaded:{" "}
+                      {videoData.uploadDate}
                     </p>
                   </div>
 
@@ -322,17 +363,24 @@ export default function TikTokDownloaderTool() {
                   </div>
 
                   <div className="flex gap-2">
-                    <Button 
-                      onClick={() => downloadFile(getQualityDownloadUrl(), getFilename())}
+                    <Button
+                      onClick={() =>
+                        downloadFile(getQualityDownloadUrl(), getFilename())
+                      }
                       className="flex-1"
                     >
                       <Download className="h-4 w-4 mr-2" />
                       Download {quality.toUpperCase()}
                     </Button>
-                    {format === 'mp4' && (
-                      <Button 
+                    {format === "mp4" && (
+                      <Button
                         variant="outline"
-                        onClick={() => downloadFile(videoData.downloadLinks.audio, `${getFilename().replace('.mp4', '')}.mp3`)}
+                        onClick={() =>
+                          downloadFile(
+                            videoData.downloadLinks.audio,
+                            `${getFilename().replace(".mp4", "")}.mp3`,
+                          )
+                        }
                       >
                         🎵 Audio
                       </Button>
@@ -398,19 +446,38 @@ export default function TikTokDownloaderTool() {
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p>
-              TikTok has become one of the most popular social media platforms, with millions of creative videos 
-              uploaded daily. Our TikTok downloader helps you save these videos for offline viewing, sharing, 
-              or creating compilations while respecting content creators' rights.
+              TikTok has become one of the most popular social media platforms,
+              with millions of creative videos uploaded daily. Our TikTok
+              downloader helps you save these videos for offline viewing,
+              sharing, or creating compilations while respecting content
+              creators' rights.
             </p>
-            
+
             <h3>Why Download TikTok Videos?</h3>
             <ul>
-              <li><strong>Offline Viewing:</strong> Watch videos without internet connection</li>
-              <li><strong>Content Creation:</strong> Use for reactions, compilations, or inspiration</li>
-              <li><strong>Backup:</strong> Save your favorite content before it gets deleted</li>
-              <li><strong>Sharing:</strong> Share videos on other platforms or with friends</li>
-              <li><strong>No Watermarks:</strong> Get clean videos without TikTok branding</li>
-              <li><strong>High Quality:</strong> Download in original resolution</li>
+              <li>
+                <strong>Offline Viewing:</strong> Watch videos without internet
+                connection
+              </li>
+              <li>
+                <strong>Content Creation:</strong> Use for reactions,
+                compilations, or inspiration
+              </li>
+              <li>
+                <strong>Backup:</strong> Save your favorite content before it
+                gets deleted
+              </li>
+              <li>
+                <strong>Sharing:</strong> Share videos on other platforms or
+                with friends
+              </li>
+              <li>
+                <strong>No Watermarks:</strong> Get clean videos without TikTok
+                branding
+              </li>
+              <li>
+                <strong>High Quality:</strong> Download in original resolution
+              </li>
             </ul>
 
             <h3>Supported Features:</h3>
@@ -426,7 +493,9 @@ export default function TikTokDownloaderTool() {
 
             <h3>Supported TikTok URL Formats:</h3>
             <ul>
-              <li>Standard TikTok URLs: https://www.tiktok.com/@username/video/ID</li>
+              <li>
+                Standard TikTok URLs: https://www.tiktok.com/@username/video/ID
+              </li>
               <li>Short URLs: https://vm.tiktok.com/ID</li>
               <li>Mobile app share links</li>
               <li>TikTok.com direct links</li>
@@ -444,5 +513,5 @@ export default function TikTokDownloaderTool() {
         </Card>
       </div>
     </div>
-  )
+  );
 }

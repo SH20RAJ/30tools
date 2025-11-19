@@ -1,79 +1,116 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  VideoIcon, 
-  Loader2, 
-  Copy, 
-  Clock, 
-  BookOpen, 
-  Zap, 
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  VideoIcon,
+  Loader2,
+  Copy,
+  Clock,
+  BookOpen,
+  Zap,
   Brain,
   Download,
   FileText,
   Hash,
-  Eye
-} from 'lucide-react';
-import { toast } from 'sonner';
-import { generateYouTubeSummary, generateQuickSummary, generateDetailedSummary } from '@/lib/summary-actions';
+  Eye,
+} from "lucide-react";
+import { toast } from "sonner";
+import {
+  generateYouTubeSummary,
+  generateQuickSummary,
+  generateDetailedSummary,
+} from "@/lib/summary-actions";
 
 export default function YouTubeSummaryGenerator() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [summaryData, setSummaryData] = useState(null);
-  const [error, setError] = useState('');
-  const [summaryLength, setSummaryLength] = useState('medium');
-  const [summaryStyle, setSummaryStyle] = useState('bullet-points');
+  const [error, setError] = useState("");
+  const [summaryLength, setSummaryLength] = useState("medium");
+  const [summaryStyle, setSummaryStyle] = useState("bullet-points");
   const [includeKeywords, setIncludeKeywords] = useState(true);
   const [includeTimestamps, setIncludeTimestamps] = useState(false);
 
   const lengthOptions = [
-    { value: 'short', label: 'Short', description: 'Brief overview (2-3 sentences)', icon: Zap },
-    { value: 'medium', label: 'Medium', description: 'Comprehensive summary (1-2 paragraphs)', icon: BookOpen },
-    { value: 'long', label: 'Long', description: 'Detailed analysis (3+ paragraphs)', icon: Brain }
+    {
+      value: "short",
+      label: "Short",
+      description: "Brief overview (2-3 sentences)",
+      icon: Zap,
+    },
+    {
+      value: "medium",
+      label: "Medium",
+      description: "Comprehensive summary (1-2 paragraphs)",
+      icon: BookOpen,
+    },
+    {
+      value: "long",
+      label: "Long",
+      description: "Detailed analysis (3+ paragraphs)",
+      icon: Brain,
+    },
   ];
 
   const styleOptions = [
-    { value: 'bullet-points', label: 'Bullet Points', description: 'Clear points for easy scanning' },
-    { value: 'paragraph', label: 'Paragraphs', description: 'Flowing text with transitions' },
-    { value: 'detailed', label: 'Detailed', description: 'Structured sections with headings' }
+    {
+      value: "bullet-points",
+      label: "Bullet Points",
+      description: "Clear points for easy scanning",
+    },
+    {
+      value: "paragraph",
+      label: "Paragraphs",
+      description: "Flowing text with transitions",
+    },
+    {
+      value: "detailed",
+      label: "Detailed",
+      description: "Structured sections with headings",
+    },
   ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!url.trim()) {
-      toast.error('Please enter a YouTube URL');
+      toast.error("Please enter a YouTube URL");
       return;
     }
 
-    await generateSummary('custom');
+    await generateSummary("custom");
   };
 
   const handleQuickSummary = () => {
     if (!url.trim()) {
-      toast.error('Please enter a YouTube URL');
+      toast.error("Please enter a YouTube URL");
       return;
     }
-    generateSummary('quick');
+    generateSummary("quick");
   };
 
   const handleDetailedSummary = () => {
     if (!url.trim()) {
-      toast.error('Please enter a YouTube URL');
+      toast.error("Please enter a YouTube URL");
       return;
     }
-    generateSummary('detailed');
+    generateSummary("detailed");
   };
 
   const generateSummary = async (type) => {
     setIsLoading(true);
-    setError('');
+    setError("");
     setSummaryData(null);
 
     try {
@@ -81,13 +118,13 @@ export default function YouTubeSummaryGenerator() {
       let result;
 
       switch (type) {
-        case 'quick':
+        case "quick":
           result = await generateQuickSummary(url);
           break;
-        case 'detailed':
+        case "detailed":
           result = await generateDetailedSummary(url, {
             includeTimestamps,
-            includeKeywords
+            includeKeywords,
           });
           break;
         default:
@@ -95,54 +132,57 @@ export default function YouTubeSummaryGenerator() {
             summaryLength,
             summaryStyle,
             includeTimestamps,
-            includeKeywords
+            includeKeywords,
           });
       }
 
       if (result.success) {
         setSummaryData(result.data);
-        toast.success('AI summary generated successfully!');
-        console.log('✅ Summary generated:', result.data);
+        toast.success("AI summary generated successfully!");
+        console.log("✅ Summary generated:", result.data);
       } else {
-        setError(result.error || 'Failed to generate video summary');
-        toast.error(result.error || 'Failed to generate summary');
+        setError(result.error || "Failed to generate video summary");
+        toast.error(result.error || "Failed to generate summary");
       }
     } catch (err) {
-      console.error('❌ Error generating summary:', err);
-      setError('An error occurred while generating the summary');
-      toast.error('An error occurred while generating the summary');
+      console.error("❌ Error generating summary:", err);
+      setError("An error occurred while generating the summary");
+      toast.error("An error occurred while generating the summary");
     } finally {
       setIsLoading(false);
     }
   };
 
   const handleCopy = (content, label) => {
-    navigator.clipboard.writeText(content).then(() => {
-      toast.success(`${label} copied to clipboard!`);
-    }).catch(() => {
-      toast.error('Failed to copy to clipboard');
-    });
+    navigator.clipboard
+      .writeText(content)
+      .then(() => {
+        toast.success(`${label} copied to clipboard!`);
+      })
+      .catch(() => {
+        toast.error("Failed to copy to clipboard");
+      });
   };
 
   const handleDownload = (content, filename) => {
-    const blob = new Blob([content], { type: 'text/plain' });
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = `${filename}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    
-    toast.success('Summary downloaded successfully!');
+
+    toast.success("Summary downloaded successfully!");
   };
 
   const formatDuration = (seconds) => {
     const hours = Math.floor(seconds / 3600);
     const minutes = Math.floor((seconds % 3600) / 60);
     const secs = Math.floor(seconds % 60);
-    
+
     if (hours > 0) {
       return `${hours}h ${minutes}m ${secs}s`;
     }
@@ -157,7 +197,8 @@ export default function YouTubeSummaryGenerator() {
           AI YouTube Summary Generator
         </h1>
         <p className="text-muted-foreground dark:text-gray-300">
-          Generate intelligent summaries of YouTube videos using AI. Extract key insights, topics, and takeaways.
+          Generate intelligent summaries of YouTube videos using AI. Extract key
+          insights, topics, and takeaways.
         </p>
       </div>
 
@@ -184,7 +225,7 @@ export default function YouTubeSummaryGenerator() {
 
           {/* Quick Action Buttons */}
           <div className="flex flex-wrap gap-3">
-            <Button 
+            <Button
               onClick={handleQuickSummary}
               disabled={isLoading}
               variant="default"
@@ -193,7 +234,7 @@ export default function YouTubeSummaryGenerator() {
               <Zap className="h-4 w-4" />
               Quick Summary
             </Button>
-            <Button 
+            <Button
               onClick={handleDetailedSummary}
               disabled={isLoading}
               variant="outline"
@@ -209,7 +250,7 @@ export default function YouTubeSummaryGenerator() {
             <summary className="cursor-pointer text-sm font-medium text-foreground dark:text-gray-300 hover:text-foreground dark:hover:text-gray-100">
               Advanced Options
             </summary>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pl-4">
               {/* Length Selection */}
               <div className="space-y-2">
@@ -225,7 +266,9 @@ export default function YouTubeSummaryGenerator() {
                           <option.icon className="h-4 w-4" />
                           <div>
                             <div className="font-medium">{option.label}</div>
-                            <div className="text-xs text-muted-foreground">{option.description}</div>
+                            <div className="text-xs text-muted-foreground">
+                              {option.description}
+                            </div>
                           </div>
                         </div>
                       </SelectItem>
@@ -246,7 +289,9 @@ export default function YouTubeSummaryGenerator() {
                       <SelectItem key={option.value} value={option.value}>
                         <div>
                           <div className="font-medium">{option.label}</div>
-                          <div className="text-xs text-muted-foreground">{option.description}</div>
+                          <div className="text-xs text-muted-foreground">
+                            {option.description}
+                          </div>
                         </div>
                       </SelectItem>
                     ))}
@@ -336,16 +381,12 @@ export default function YouTubeSummaryGenerator() {
               <Badge variant="secondary">
                 {summaryData.segmentCount} segments
               </Badge>
-              <Badge variant="secondary">
-                {summaryData.wordCount} words
-              </Badge>
+              <Badge variant="secondary">{summaryData.wordCount} words</Badge>
               <Badge variant="secondary">
                 {summaryData.summaryLength} · {summaryData.summaryStyle}
               </Badge>
               {summaryData.aiModel && (
-                <Badge variant="outline">
-                  {summaryData.aiModel}
-                </Badge>
+                <Badge variant="outline">{summaryData.aiModel}</Badge>
               )}
             </div>
             <p className="text-sm text-muted-foreground dark:text-gray-300">
@@ -355,15 +396,24 @@ export default function YouTubeSummaryGenerator() {
           <CardContent>
             <Tabs defaultValue="summary" className="w-full">
               <TabsList className="grid w-full grid-cols-4">
-                <TabsTrigger value="summary" className="flex items-center gap-1">
+                <TabsTrigger
+                  value="summary"
+                  className="flex items-center gap-1"
+                >
                   <Eye className="h-4 w-4" />
                   Summary
                 </TabsTrigger>
-                <TabsTrigger value="keywords" className="flex items-center gap-1">
+                <TabsTrigger
+                  value="keywords"
+                  className="flex items-center gap-1"
+                >
                   <Hash className="h-4 w-4" />
                   Keywords
                 </TabsTrigger>
-                <TabsTrigger value="transcript" className="flex items-center gap-1">
+                <TabsTrigger
+                  value="transcript"
+                  className="flex items-center gap-1"
+                >
                   <FileText className="h-4 w-4" />
                   Transcript
                 </TabsTrigger>
@@ -379,7 +429,7 @@ export default function YouTubeSummaryGenerator() {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => handleCopy(summaryData.summary, 'Summary')}
+                    onClick={() => handleCopy(summaryData.summary, "Summary")}
                   >
                     <Copy className="mr-1 h-4 w-4" />
                     Copy
@@ -400,7 +450,12 @@ export default function YouTubeSummaryGenerator() {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => handleCopy(summaryData.keywords?.join(', ') || '', 'Keywords')}
+                    onClick={() =>
+                      handleCopy(
+                        summaryData.keywords?.join(", ") || "",
+                        "Keywords",
+                      )
+                    }
                   >
                     <Copy className="mr-1 h-4 w-4" />
                     Copy
@@ -409,13 +464,19 @@ export default function YouTubeSummaryGenerator() {
                 {summaryData.keywords && summaryData.keywords.length > 0 ? (
                   <div className="flex flex-wrap gap-2">
                     {summaryData.keywords.map((keyword, index) => (
-                      <Badge key={index} variant="secondary" className="text-sm">
+                      <Badge
+                        key={index}
+                        variant="secondary"
+                        className="text-sm"
+                      >
                         {keyword}
                       </Badge>
                     ))}
                   </div>
                 ) : (
-                  <p className="text-muted-foreground italic">No keywords extracted</p>
+                  <p className="text-muted-foreground italic">
+                    No keywords extracted
+                  </p>
                 )}
               </TabsContent>
 
@@ -425,7 +486,9 @@ export default function YouTubeSummaryGenerator() {
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => handleCopy(summaryData.originalTranscript, 'Transcript')}
+                    onClick={() =>
+                      handleCopy(summaryData.originalTranscript, "Transcript")
+                    }
                   >
                     <Copy className="mr-1 h-4 w-4" />
                     Copy
@@ -448,7 +511,9 @@ export default function YouTubeSummaryGenerator() {
                       <Button
                         variant="outline"
                         className="w-full justify-start"
-                        onClick={() => handleDownload(summaryData.summary, 'youtube-summary')}
+                        onClick={() =>
+                          handleDownload(summaryData.summary, "youtube-summary")
+                        }
                       >
                         <Download className="mr-2 h-4 w-4" />
                         Download Summary (.txt)
@@ -456,7 +521,9 @@ export default function YouTubeSummaryGenerator() {
                       <Button
                         variant="outline"
                         className="w-full justify-start"
-                        onClick={() => handleCopy(summaryData.summary, 'Summary')}
+                        onClick={() =>
+                          handleCopy(summaryData.summary, "Summary")
+                        }
                       >
                         <Copy className="mr-2 h-4 w-4" />
                         Copy Summary
@@ -466,7 +533,9 @@ export default function YouTubeSummaryGenerator() {
 
                   <Card>
                     <CardHeader>
-                      <CardTitle className="text-lg">Export Full Report</CardTitle>
+                      <CardTitle className="text-lg">
+                        Export Full Report
+                      </CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-2">
                       <Button
@@ -483,14 +552,18 @@ Generated: ${new Date(summaryData.generatedAt).toLocaleString()}
 SUMMARY:
 ${summaryData.summary}
 
-${summaryData.keywords && summaryData.keywords.length > 0 ? `
+${
+  summaryData.keywords && summaryData.keywords.length > 0
+    ? `
 KEYWORDS:
-${summaryData.keywords.join(', ')}
-` : ''}
+${summaryData.keywords.join(", ")}
+`
+    : ""
+}
 
 ORIGINAL TRANSCRIPT:
 ${summaryData.originalTranscript}`;
-                          handleDownload(report, 'youtube-full-report');
+                          handleDownload(report, "youtube-full-report");
                         }}
                       >
                         <Download className="mr-2 h-4 w-4" />
@@ -500,17 +573,23 @@ ${summaryData.originalTranscript}`;
                         variant="outline"
                         className="w-full justify-start"
                         onClick={() => {
-                          const jsonReport = JSON.stringify(summaryData, null, 2);
-                          const blob = new Blob([jsonReport], { type: 'application/json' });
+                          const jsonReport = JSON.stringify(
+                            summaryData,
+                            null,
+                            2,
+                          );
+                          const blob = new Blob([jsonReport], {
+                            type: "application/json",
+                          });
                           const url = URL.createObjectURL(blob);
-                          const a = document.createElement('a');
+                          const a = document.createElement("a");
                           a.href = url;
-                          a.download = 'youtube-summary.json';
+                          a.download = "youtube-summary.json";
                           document.body.appendChild(a);
                           a.click();
                           document.body.removeChild(a);
                           URL.revokeObjectURL(url);
-                          toast.success('JSON report downloaded!');
+                          toast.success("JSON report downloaded!");
                         }}
                       >
                         <FileText className="mr-2 h-4 w-4" />
@@ -528,7 +607,9 @@ ${summaryData.originalTranscript}`;
       {/* Features Info */}
       <Card className="bg-background/20 dark:to-blue-900/20 border-border dark:border-border">
         <CardContent className="pt-6">
-          <h3 className="font-medium mb-3 text-primary dark:text-purple-100">AI Summary Features:</h3>
+          <h3 className="font-medium mb-3 text-primary dark:text-purple-100">
+            AI Summary Features:
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-primary dark:text-purple-200">
             <div className="space-y-1">
               <div>• Intelligent content analysis</div>
@@ -542,7 +623,8 @@ ${summaryData.originalTranscript}`;
             </div>
           </div>
           <p className="text-sm text-primary dark:text-purple-300 mt-3">
-            Powered by advanced AI to extract meaningful insights and create comprehensive summaries from any YouTube video.
+            Powered by advanced AI to extract meaningful insights and create
+            comprehensive summaries from any YouTube video.
           </p>
         </CardContent>
       </Card>

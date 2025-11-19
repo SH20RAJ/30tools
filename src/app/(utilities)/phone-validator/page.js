@@ -1,8 +1,9 @@
-import PhoneValidatorTool from '@/components/tools/utilities/PhoneValidatorTool';
+import PhoneValidatorTool from "@/components/tools/utilities/PhoneValidatorTool";
 
 export const metadata = {
-  title: 'Phone Number Validator - Verify Mobile Numbers | 30tools',
-  description: 'Validate phone numbers from any country. Check mobile number format, carrier info, and verify if phone numbers are valid with our free validator tool.',
+  title: "Phone Number Validator - Verify Mobile Numbers | 30tools",
+  description:
+    "Validate phone numbers from any country. Check mobile number format, carrier info, and verify if phone numbers are valid with our free validator tool.",
   keywords: [
     "phone validator",
     "phone validator online",
@@ -16,41 +17,43 @@ export const metadata = {
     "phone validator utility",
     "online tool",
     "free utility",
-    "web application"
+    "web application",
   ],
   openGraph: {
-    title: 'Phone Number Validator - Verify Mobile Numbers | 30tools',
-    description: 'Validate phone numbers from any country. Check mobile number format, carrier info, and verify if phone numbers are valid with our free validator tool.',
-    type: 'website',
-    url: 'https://30tools.com/phone-validator',
+    title: "Phone Number Validator - Verify Mobile Numbers | 30tools",
+    description:
+      "Validate phone numbers from any country. Check mobile number format, carrier info, and verify if phone numbers are valid with our free validator tool.",
+    type: "website",
+    url: "https://30tools.com/phone-validator",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Phone Number Validator - Verify Mobile Numbers | 30tools',
-    description: 'Validate phone numbers from any country. Check mobile number format, carrier info, and verify if phone numbers are valid with our free validator tool.',
+    card: "summary_large_image",
+    title: "Phone Number Validator - Verify Mobile Numbers | 30tools",
+    description:
+      "Validate phone numbers from any country. Check mobile number format, carrier info, and verify if phone numbers are valid with our free validator tool.",
   },
-  canonical: 'https://30tools.com/phone-validator',
+  canonical: "https://30tools.com/phone-validator",
 };
-
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Phone Validator",
-  "description": "Professional phone validator tool. Free online processing with high-quality results. No registration required, instant results.",
-  "url": "https://30tools.com/phone-validator",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "Phone Validator",
+  description:
+    "Professional phone validator tool. Free online processing with high-quality results. No registration required, instant results.",
+  url: "https://30tools.com/phone-validator",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "author": {
+  author: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 

@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function EmbedVideoPlayer() {
   const searchParams = useSearchParams();
@@ -11,16 +11,16 @@ export default function EmbedVideoPlayer() {
 
   useEffect(() => {
     try {
-      const data = searchParams.get('data');
+      const data = searchParams.get("data");
       if (!data) {
-        setError('No video data provided');
+        setError("No video data provided");
         setLoading(false);
         return;
       }
 
       const decodedData = JSON.parse(atob(data));
       if (!decodedData.videoUrl) {
-        setError('Invalid video configuration');
+        setError("Invalid video configuration");
         setLoading(false);
         return;
       }
@@ -28,8 +28,8 @@ export default function EmbedVideoPlayer() {
       setVideoConfig(decodedData);
       setLoading(false);
     } catch (err) {
-      console.error('Error parsing video data:', err);
-      setError('Invalid video data format');
+      console.error("Error parsing video data:", err);
+      setError("Invalid video data format");
       setLoading(false);
     }
   }, [searchParams]);
@@ -67,17 +67,17 @@ export default function EmbedVideoPlayer() {
   }
 
   const containerStyle = {
-    width: '100%',
-    height: '100vh',
-    backgroundColor: '#000',
-    display: 'flex',
-    flexDirection: 'column'
+    width: "100%",
+    height: "100vh",
+    backgroundColor: "#000",
+    display: "flex",
+    flexDirection: "column",
   };
 
   const videoStyle = {
-    width: '100%',
-    height: '100%',
-    backgroundColor: '#000'
+    width: "100%",
+    height: "100%",
+    backgroundColor: "#000",
   };
 
   return (
@@ -87,7 +87,7 @@ export default function EmbedVideoPlayer() {
           <h1 className="text-lg font-semibold">{videoConfig.title}</h1>
         </div>
       )}
-      
+
       <div className="flex-1 relative">
         <video
           src={videoConfig.videoUrl}
@@ -102,16 +102,17 @@ export default function EmbedVideoPlayer() {
         >
           Your browser does not support the video tag.
         </video>
-        
-        {videoConfig.appearance?.showLogo && videoConfig.appearance?.logoUrl && (
-          <div className="absolute top-4 right-4 z-10">
-            <img 
-              src={videoConfig.appearance.logoUrl} 
-              alt="Logo" 
-              className="h-8 w-auto opacity-75"
-            />
-          </div>
-        )}
+
+        {videoConfig.appearance?.showLogo &&
+          videoConfig.appearance?.logoUrl && (
+            <div className="absolute top-4 right-4 z-10">
+              <img
+                src={videoConfig.appearance.logoUrl}
+                alt="Logo"
+                className="h-8 w-auto opacity-75"
+              />
+            </div>
+          )}
       </div>
 
       {videoConfig.showDescription && videoConfig.description && (
@@ -122,7 +123,9 @@ export default function EmbedVideoPlayer() {
 
       {/* Custom CSS injection */}
       {videoConfig.appearance?.customCSS && (
-        <style dangerouslySetInnerHTML={{ __html: videoConfig.appearance.customCSS }} />
+        <style
+          dangerouslySetInnerHTML={{ __html: videoConfig.appearance.customCSS }}
+        />
       )}
     </div>
   );

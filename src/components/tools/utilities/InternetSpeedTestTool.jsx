@@ -1,15 +1,21 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
-import { Wifi, Download, Upload, Clock, Play, RefreshCw } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Wifi, Download, Upload, Clock, Play, RefreshCw } from "lucide-react";
+import { toast } from "sonner";
 
 export default function InternetSpeedTestTool() {
   const [isTestRunning, setIsTestRunning] = useState(false);
-  const [currentTest, setCurrentTest] = useState('');
+  const [currentTest, setCurrentTest] = useState("");
   const [results, setResults] = useState(null);
   const [progress, setProgress] = useState(0);
 
@@ -20,24 +26,24 @@ export default function InternetSpeedTestTool() {
 
     try {
       // Simulate download speed test
-      setCurrentTest('download');
+      setCurrentTest("download");
       for (let i = 0; i <= 40; i += 2) {
         setProgress(i);
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise((resolve) => setTimeout(resolve, 100));
       }
 
       // Simulate upload speed test
-      setCurrentTest('upload');
+      setCurrentTest("upload");
       for (let i = 40; i <= 80; i += 2) {
         setProgress(i);
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise((resolve) => setTimeout(resolve, 100));
       }
 
       // Simulate ping test
-      setCurrentTest('ping');
+      setCurrentTest("ping");
       for (let i = 80; i <= 100; i += 2) {
         setProgress(i);
-        await new Promise(resolve => setTimeout(resolve, 100));
+        await new Promise((resolve) => setTimeout(resolve, 100));
       }
 
       // Generate realistic results
@@ -50,24 +56,24 @@ export default function InternetSpeedTestTool() {
         upload: uploadSpeed.toFixed(2),
         ping: ping.toFixed(0),
         jitter: (Math.random() * 5 + 1).toFixed(1),
-        timestamp: new Date().toLocaleString()
+        timestamp: new Date().toLocaleString(),
       });
 
-      toast.success('Speed test completed!');
+      toast.success("Speed test completed!");
     } catch (error) {
-      toast.error('Speed test failed');
+      toast.error("Speed test failed");
     } finally {
       setIsTestRunning(false);
-      setCurrentTest('');
+      setCurrentTest("");
       setProgress(0);
     }
   };
 
   const getSpeedCategory = (speed) => {
-    if (speed < 25) return { label: 'Slow', color: 'text-destructive' };
-    if (speed < 50) return { label: 'Fair', color: 'text-primary' };
-    if (speed < 100) return { label: 'Good', color: 'text-primary' };
-    return { label: 'Excellent', color: 'text-primary' };
+    if (speed < 25) return { label: "Slow", color: "text-destructive" };
+    if (speed < 50) return { label: "Fair", color: "text-primary" };
+    if (speed < 100) return { label: "Good", color: "text-primary" };
+    return { label: "Excellent", color: "text-primary" };
   };
 
   return (
@@ -79,7 +85,8 @@ export default function InternetSpeedTestTool() {
             Internet Speed Test
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Test your internet connection speed. Check download speed, upload speed, and ping latency.
+            Test your internet connection speed. Check download speed, upload
+            speed, and ping latency.
           </p>
         </div>
 
@@ -116,11 +123,17 @@ export default function InternetSpeedTestTool() {
                   <RefreshCw className="h-12 w-12 text-white animate-spin" />
                 </div>
                 <h2 className="text-2xl font-bold mb-4">
-                  Testing {currentTest === 'download' ? 'Download Speed' : 
-                          currentTest === 'upload' ? 'Upload Speed' : 
-                          'Ping & Jitter'}
+                  Testing{" "}
+                  {currentTest === "download"
+                    ? "Download Speed"
+                    : currentTest === "upload"
+                      ? "Upload Speed"
+                      : "Ping & Jitter"}
                 </h2>
-                <Progress value={progress} className="w-full max-w-md mx-auto mb-4" />
+                <Progress
+                  value={progress}
+                  className="w-full max-w-md mx-auto mb-4"
+                />
                 <p className="text-muted-foreground">{progress}% Complete</p>
               </div>
             )}
@@ -129,7 +142,9 @@ export default function InternetSpeedTestTool() {
               <div className="space-y-6">
                 <div className="text-center py-6">
                   <h2 className="text-2xl font-bold mb-4">Test Results</h2>
-                  <p className="text-muted-foreground">Completed at {results.timestamp}</p>
+                  <p className="text-muted-foreground">
+                    Completed at {results.timestamp}
+                  </p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-6">
@@ -137,12 +152,20 @@ export default function InternetSpeedTestTool() {
                   <Card className="text-center">
                     <CardContent className="pt-6">
                       <Download className="h-8 w-8 text-primary mx-auto mb-3" />
-                      <div className="text-3xl font-bold mb-2">{results.download}</div>
-                      <div className="text-sm text-muted-foreground mb-2">Mbps</div>
-                      <div className={`text-sm font-medium ${getSpeedCategory(results.download).color}`}>
+                      <div className="text-3xl font-bold mb-2">
+                        {results.download}
+                      </div>
+                      <div className="text-sm text-muted-foreground mb-2">
+                        Mbps
+                      </div>
+                      <div
+                        className={`text-sm font-medium ${getSpeedCategory(results.download).color}`}
+                      >
                         {getSpeedCategory(results.download).label}
                       </div>
-                      <div className="text-xs text-muted-foreground mt-1">Download</div>
+                      <div className="text-xs text-muted-foreground mt-1">
+                        Download
+                      </div>
                     </CardContent>
                   </Card>
 
@@ -150,12 +173,20 @@ export default function InternetSpeedTestTool() {
                   <Card className="text-center">
                     <CardContent className="pt-6">
                       <Upload className="h-8 w-8 text-primary mx-auto mb-3" />
-                      <div className="text-3xl font-bold mb-2">{results.upload}</div>
-                      <div className="text-sm text-muted-foreground mb-2">Mbps</div>
-                      <div className={`text-sm font-medium ${getSpeedCategory(results.upload).color}`}>
+                      <div className="text-3xl font-bold mb-2">
+                        {results.upload}
+                      </div>
+                      <div className="text-sm text-muted-foreground mb-2">
+                        Mbps
+                      </div>
+                      <div
+                        className={`text-sm font-medium ${getSpeedCategory(results.upload).color}`}
+                      >
                         {getSpeedCategory(results.upload).label}
                       </div>
-                      <div className="text-xs text-muted-foreground mt-1">Upload</div>
+                      <div className="text-xs text-muted-foreground mt-1">
+                        Upload
+                      </div>
                     </CardContent>
                   </Card>
 
@@ -163,13 +194,30 @@ export default function InternetSpeedTestTool() {
                   <Card className="text-center">
                     <CardContent className="pt-6">
                       <Clock className="h-8 w-8 text-primary mx-auto mb-3" />
-                      <div className="text-3xl font-bold mb-2">{results.ping}</div>
-                      <div className="text-sm text-muted-foreground mb-2">ms</div>
-                      <div className={`text-sm font-medium ${results.ping < 20 ? 'text-primary' : 
-                                      results.ping < 50 ? 'text-primary' : 'text-destructive'}`}>
-                        {results.ping < 20 ? 'Excellent' : results.ping < 50 ? 'Good' : 'Fair'}
+                      <div className="text-3xl font-bold mb-2">
+                        {results.ping}
                       </div>
-                      <div className="text-xs text-muted-foreground mt-1">Ping</div>
+                      <div className="text-sm text-muted-foreground mb-2">
+                        ms
+                      </div>
+                      <div
+                        className={`text-sm font-medium ${
+                          results.ping < 20
+                            ? "text-primary"
+                            : results.ping < 50
+                              ? "text-primary"
+                              : "text-destructive"
+                        }`}
+                      >
+                        {results.ping < 20
+                          ? "Excellent"
+                          : results.ping < 50
+                            ? "Good"
+                            : "Fair"}
+                      </div>
+                      <div className="text-xs text-muted-foreground mt-1">
+                        Ping
+                      </div>
                     </CardContent>
                   </Card>
                 </div>
@@ -214,22 +262,32 @@ export default function InternetSpeedTestTool() {
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-semibold mb-2">Basic Browsing</h3>
                 <div className="text-2xl font-bold text-primary">1-5 Mbps</div>
-                <p className="text-sm text-muted-foreground mt-1">Web browsing, email</p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Web browsing, email
+                </p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-semibold mb-2">HD Streaming</h3>
                 <div className="text-2xl font-bold text-primary">5-25 Mbps</div>
-                <p className="text-sm text-muted-foreground mt-1">Netflix, YouTube HD</p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Netflix, YouTube HD
+                </p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-semibold mb-2">4K Streaming</h3>
                 <div className="text-2xl font-bold text-primary">25+ Mbps</div>
-                <p className="text-sm text-muted-foreground mt-1">Ultra HD content</p>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Ultra HD content
+                </p>
               </div>
               <div className="text-center p-4 bg-gray-50 rounded-lg">
                 <h3 className="font-semibold mb-2">Gaming</h3>
-                <div className="text-2xl font-bold text-destructive">&lt;50ms</div>
-                <p className="text-sm text-muted-foreground mt-1">Low ping required</p>
+                <div className="text-2xl font-bold text-destructive">
+                  &lt;50ms
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  Low ping required
+                </p>
               </div>
             </div>
           </CardContent>

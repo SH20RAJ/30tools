@@ -1,13 +1,22 @@
-'use client';
+"use client";
 
-import { Star, StarHalf, Quote, User, Calendar, ThumbsUp, Heart, Award } from 'lucide-react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
+import {
+  Star,
+  StarHalf,
+  Quote,
+  User,
+  Calendar,
+  ThumbsUp,
+  Heart,
+  Award,
+} from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
 
 // Review snippet data - In a real app, this would come from your database/API
 const SAMPLE_REVIEWS = {
-  'image-compressor': [
+  "image-compressor": [
     {
       id: 1,
       author: "Sarah Chen",
@@ -15,10 +24,11 @@ const SAMPLE_REVIEWS = {
       rating: 5,
       date: "2024-01-15",
       title: "Perfect for web optimization",
-      content: "This image compressor is exactly what I needed for my website. Reduced my image sizes by 75% without any visible quality loss. The batch processing feature saves me hours of work!",
+      content:
+        "This image compressor is exactly what I needed for my website. Reduced my image sizes by 75% without any visible quality loss. The batch processing feature saves me hours of work!",
       verified: true,
       helpful: 24,
-      platform: "Trustpilot"
+      platform: "Trustpilot",
     },
     {
       id: 2,
@@ -27,10 +37,11 @@ const SAMPLE_REVIEWS = {
       rating: 4.5,
       date: "2024-01-12",
       title: "Great tool, very fast",
-      content: "Super fast compression and the quality is maintained really well. The interface is clean and easy to use. Only minor issue is it could use more format options.",
+      content:
+        "Super fast compression and the quality is maintained really well. The interface is clean and easy to use. Only minor issue is it could use more format options.",
       verified: true,
       helpful: 18,
-      platform: "Google Reviews"
+      platform: "Google Reviews",
     },
     {
       id: 3,
@@ -39,13 +50,14 @@ const SAMPLE_REVIEWS = {
       rating: 5,
       date: "2024-01-10",
       title: "Saved my project deadline",
-      content: "Had to compress hundreds of images for a client project. This tool processed them all in minutes while maintaining professional quality. Absolutely recommended!",
+      content:
+        "Had to compress hundreds of images for a client project. This tool processed them all in minutes while maintaining professional quality. Absolutely recommended!",
       verified: true,
       helpful: 31,
-      platform: "Capterra"
-    }
+      platform: "Capterra",
+    },
   ],
-  'pdf-merger': [
+  "pdf-merger": [
     {
       id: 4,
       author: "David Kim",
@@ -53,10 +65,11 @@ const SAMPLE_REVIEWS = {
       rating: 5,
       date: "2024-01-18",
       title: "Essential for document management",
-      content: "I merge PDFs daily for work and this tool is perfect. It preserves bookmarks and formatting, which many other tools mess up. The processing is lightning fast too.",
+      content:
+        "I merge PDFs daily for work and this tool is perfect. It preserves bookmarks and formatting, which many other tools mess up. The processing is lightning fast too.",
       verified: true,
       helpful: 27,
-      platform: "G2"
+      platform: "G2",
     },
     {
       id: 5,
@@ -65,13 +78,14 @@ const SAMPLE_REVIEWS = {
       rating: 4.5,
       date: "2024-01-16",
       title: "Simple and effective",
-      content: "Clean interface, no unnecessary features, just does what it promises. Merged 20+ PDFs into one document without any issues. Great for preparing reports.",
+      content:
+        "Clean interface, no unnecessary features, just does what it promises. Merged 20+ PDFs into one document without any issues. Great for preparing reports.",
       verified: true,
       helpful: 19,
-      platform: "Trustpilot"
-    }
+      platform: "Trustpilot",
+    },
   ],
-  'default': [
+  default: [
     {
       id: 6,
       author: "Alex Johnson",
@@ -79,10 +93,11 @@ const SAMPLE_REVIEWS = {
       rating: 5,
       date: "2024-01-20",
       title: "Amazing collection of tools",
-      content: "30tools has become my go-to for all online utilities. Every tool I've used works perfectly and the fact that it's all free is incredible. No ads, no watermarks!",
+      content:
+        "30tools has become my go-to for all online utilities. Every tool I've used works perfectly and the fact that it's all free is incredible. No ads, no watermarks!",
       verified: true,
       helpful: 45,
-      platform: "ProductHunt"
+      platform: "ProductHunt",
     },
     {
       id: 7,
@@ -91,10 +106,11 @@ const SAMPLE_REVIEWS = {
       rating: 4.5,
       date: "2024-01-19",
       title: "Reliable and fast",
-      content: "Been using these tools for months now. They're consistently reliable and much faster than similar tools I've tried. The privacy-first approach is a huge plus.",
+      content:
+        "Been using these tools for months now. They're consistently reliable and much faster than similar tools I've tried. The privacy-first approach is a huge plus.",
       verified: true,
       helpful: 33,
-      platform: "Capterra"
+      platform: "Capterra",
     },
     {
       id: 8,
@@ -103,26 +119,30 @@ const SAMPLE_REVIEWS = {
       rating: 5,
       date: "2024-01-17",
       title: "Professional quality tools",
-      content: "As a freelancer, I need tools that work reliably without breaking the bank. 30tools delivers professional-grade utilities completely free. Highly recommended!",
+      content:
+        "As a freelancer, I need tools that work reliably without breaking the bank. 30tools delivers professional-grade utilities completely free. Highly recommended!",
       verified: true,
       helpful: 29,
-      platform: "Trustpilot"
-    }
-  ]
+      platform: "Trustpilot",
+    },
+  ],
 };
 
 function StarRating({ rating, showNumber = true, size = "small" }) {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-  
+
   const starSize = size === "small" ? "h-4 w-4" : "h-5 w-5";
 
   return (
     <div className="flex items-center gap-1">
       <div className="flex items-center">
         {[...Array(fullStars)].map((_, i) => (
-          <Star key={i} className={`${starSize} fill-yellow-400 text-primary`} />
+          <Star
+            key={i}
+            className={`${starSize} fill-yellow-400 text-primary`}
+          />
         ))}
         {hasHalfStar && (
           <StarHalf className={`${starSize} fill-yellow-400 text-primary`} />
@@ -142,10 +162,10 @@ function StarRating({ rating, showNumber = true, size = "small" }) {
 
 function ReviewCard({ review, variant = "default" }) {
   const formatDate = (dateString) => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
     });
   };
 
@@ -156,7 +176,12 @@ function ReviewCard({ review, variant = "default" }) {
           <div className="flex items-start gap-3">
             <Avatar className="h-10 w-10">
               <AvatarImage src={review.avatar} alt={review.author} />
-              <AvatarFallback>{review.author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+              <AvatarFallback>
+                {review.author
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
+              </AvatarFallback>
             </Avatar>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-2">
@@ -188,7 +213,12 @@ function ReviewCard({ review, variant = "default" }) {
           <div className="flex items-center gap-3">
             <Avatar className="h-12 w-12">
               <AvatarImage src={review.avatar} alt={review.author} />
-              <AvatarFallback>{review.author.split(' ').map(n => n[0]).join('')}</AvatarFallback>
+              <AvatarFallback>
+                {review.author
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")}
+              </AvatarFallback>
             </Avatar>
             <div>
               <div className="flex items-center gap-2">
@@ -234,47 +264,50 @@ function ReviewCard({ review, variant = "default" }) {
   );
 }
 
-export default function ReviewSnippets({ 
-  toolId, 
+export default function ReviewSnippets({
+  toolId,
   title = "What Our Users Say",
   showRatingSummary = true,
   variant = "grid", // "grid", "carousel", "list"
-  limit = 6
+  limit = 6,
 }) {
   const reviews = SAMPLE_REVIEWS[toolId] || SAMPLE_REVIEWS.default;
   const displayedReviews = reviews.slice(0, limit);
-  
+
   // Calculate aggregate rating
-  const avgRating = reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length;
+  const avgRating =
+    reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length;
   const totalReviews = reviews.length * 67; // Simulate more reviews
-  
+
   // Generate structured data for reviews
   const reviewSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": toolId ? `${toolId.replace('-', ' ')} Tool` : "30tools Online Toolkit",
-    "aggregateRating": {
+    name: toolId
+      ? `${toolId.replace("-", " ")} Tool`
+      : "30tools Online Toolkit",
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": avgRating.toFixed(1),
-      "reviewCount": totalReviews,
-      "bestRating": "5",
-      "worstRating": "1"
+      ratingValue: avgRating.toFixed(1),
+      reviewCount: totalReviews,
+      bestRating: "5",
+      worstRating: "1",
     },
-    "review": displayedReviews.map(review => ({
+    review: displayedReviews.map((review) => ({
       "@type": "Review",
-      "author": {
+      author: {
         "@type": "Person",
-        "name": review.author
+        name: review.author,
       },
-      "reviewRating": {
+      reviewRating: {
         "@type": "Rating",
-        "ratingValue": review.rating,
-        "bestRating": "5",
-        "worstRating": "1"
+        ratingValue: review.rating,
+        bestRating: "5",
+        worstRating: "1",
       },
-      "reviewBody": review.content,
-      "datePublished": review.date
-    }))
+      reviewBody: review.content,
+      datePublished: review.date,
+    })),
   };
 
   const renderGrid = () => (
@@ -310,34 +343,40 @@ export default function ReviewSnippets({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
       />
-      
-      <section className="py-12 bg-gradient-to-br from-muted/30 to-muted/10" aria-labelledby="reviews-heading">
+
+      <section
+        className="py-12 bg-gradient-to-br from-muted/30 to-muted/10"
+        aria-labelledby="reviews-heading"
+      >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 id="reviews-heading" className="text-3xl font-bold mb-4">
               {title}
             </h2>
-            
+
             {showRatingSummary && (
               <div className="flex items-center justify-center gap-4 mb-6">
                 <div className="flex items-center gap-2">
                   <StarRating rating={avgRating} size="large" />
-                  <span className="text-2xl font-bold">{avgRating.toFixed(1)}</span>
+                  <span className="text-2xl font-bold">
+                    {avgRating.toFixed(1)}
+                  </span>
                 </div>
                 <div className="text-muted-foreground">
                   Based on {totalReviews.toLocaleString()}+ reviews
                 </div>
               </div>
             )}
-            
+
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Join thousands of satisfied users who trust our tools for their daily tasks
+              Join thousands of satisfied users who trust our tools for their
+              daily tasks
             </p>
           </div>
 
-          {variant === 'grid' && renderGrid()}
-          {variant === 'carousel' && renderCarousel()}
-          {variant === 'list' && renderList()}
+          {variant === "grid" && renderGrid()}
+          {variant === "carousel" && renderCarousel()}
+          {variant === "list" && renderList()}
         </div>
       </section>
     </>
@@ -350,7 +389,7 @@ export function TrustIndicators() {
     { label: "Active Users", value: "50K+", icon: User },
     { label: "Tools Processed", value: "2M+", icon: Star },
     { label: "Average Rating", value: "4.9/5", icon: Heart },
-    { label: "Uptime", value: "99.9%", icon: Award }
+    { label: "Uptime", value: "99.9%", icon: Award },
   ];
 
   return (
@@ -362,8 +401,12 @@ export function TrustIndicators() {
             return (
               <div key={index} className="text-center">
                 <Icon className="h-8 w-8 mx-auto mb-2 text-primary" />
-                <div className="text-2xl font-bold text-foreground">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
+                <div className="text-2xl font-bold text-foreground">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
               </div>
             );
           })}

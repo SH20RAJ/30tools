@@ -1,34 +1,40 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Progress } from '@/components/ui/progress';
-import { 
-  Upload, 
-  Download, 
-  Lock, 
-  Eye, 
+import { useState, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Progress } from "@/components/ui/progress";
+import {
+  Upload,
+  Download,
+  Lock,
+  Eye,
   EyeOff,
-  CheckCircle, 
-  AlertCircle, 
-  Loader, 
+  CheckCircle,
+  AlertCircle,
+  Loader,
   FileText,
   Shield,
   Key,
   Zap,
-  Settings
-} from 'lucide-react';
+  Settings,
+} from "lucide-react";
 
 export default function PdfProtectTool() {
   const [pdfFile, setPdfFile] = useState(null);
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [permissions, setPermissions] = useState({
     printing: false,
@@ -38,7 +44,7 @@ export default function PdfProtectTool() {
     formFilling: false,
     extraction: false,
     assembly: false,
-    degradedPrinting: true
+    degradedPrinting: true,
   });
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -48,16 +54,17 @@ export default function PdfProtectTool() {
   const maxFileSize = 50 * 1024 * 1024; // 50MB
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const sizes = ["Bytes", "KB", "MB", "GB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const generateStrongPassword = () => {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*';
-    let result = '';
+    const chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*";
+    let result = "";
     for (let i = 0; i < 12; i++) {
       result += chars.charAt(Math.floor(Math.random() * chars.length));
     }
@@ -66,44 +73,50 @@ export default function PdfProtectTool() {
   };
 
   const getPasswordStrength = (password) => {
-    if (password.length < 4) return { strength: 'Very Weak', color: 'text-destructive', score: 1 };
-    if (password.length < 6) return { strength: 'Weak', color: 'text-primary', score: 2 };
-    if (password.length < 8) return { strength: 'Fair', color: 'text-primary', score: 3 };
-    if (password.length < 12) return { strength: 'Good', color: 'text-primary', score: 4 };
-    return { strength: 'Strong', color: 'text-primary', score: 5 };
+    if (password.length < 4)
+      return { strength: "Very Weak", color: "text-destructive", score: 1 };
+    if (password.length < 6)
+      return { strength: "Weak", color: "text-primary", score: 2 };
+    if (password.length < 8)
+      return { strength: "Fair", color: "text-primary", score: 3 };
+    if (password.length < 12)
+      return { strength: "Good", color: "text-primary", score: 4 };
+    return { strength: "Strong", color: "text-primary", score: 5 };
   };
 
   const handleFileSelect = (event) => {
     const file = event.target.files[0];
-    if (file && file.type === 'application/pdf') {
+    if (file && file.type === "application/pdf") {
       if (file.size > maxFileSize) {
-        alert(`File too large. Maximum size is ${formatFileSize(maxFileSize)}.`);
+        alert(
+          `File too large. Maximum size is ${formatFileSize(maxFileSize)}.`,
+        );
         return;
       }
       setPdfFile(file);
       setProtectedFile(null);
     } else {
-      alert('Please select a valid PDF file.');
+      alert("Please select a valid PDF file.");
     }
   };
 
   const handlePermissionChange = (permission, checked) => {
-    setPermissions(prev => ({
+    setPermissions((prev) => ({
       ...prev,
-      [permission]: checked
+      [permission]: checked,
     }));
   };
 
   const protectPdf = async () => {
     if (!pdfFile || !password) return;
-    
+
     if (password !== confirmPassword) {
-      alert('Passwords do not match!');
+      alert("Passwords do not match!");
       return;
     }
 
     if (password.length < 4) {
-      alert('Password must be at least 4 characters long.');
+      alert("Password must be at least 4 characters long.");
       return;
     }
 
@@ -113,21 +126,22 @@ export default function PdfProtectTool() {
     try {
       // Simulate PDF protection process
       for (let i = 0; i <= 100; i += 10) {
-        await new Promise(resolve => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 200));
         setProgress(i);
       }
 
       // Create protected file (simulate)
-      const protectedBlob = new Blob(['Protected PDF content'], { type: 'application/pdf' });
+      const protectedBlob = new Blob(["Protected PDF content"], {
+        type: "application/pdf",
+      });
       setProtectedFile({
         name: `protected-${pdfFile.name}`,
         blob: protectedBlob,
-        size: pdfFile.size + 1024 // Slightly larger due to encryption
+        size: pdfFile.size + 1024, // Slightly larger due to encryption
       });
-
     } catch (error) {
-      console.error('Error protecting PDF:', error);
-      alert('Error protecting PDF. Please try again.');
+      console.error("Error protecting PDF:", error);
+      alert("Error protecting PDF. Please try again.");
     }
 
     setIsProcessing(false);
@@ -135,9 +149,9 @@ export default function PdfProtectTool() {
 
   const downloadProtectedFile = () => {
     if (!protectedFile) return;
-    
+
     const url = URL.createObjectURL(protectedFile.blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = protectedFile.name;
     document.body.appendChild(link);
@@ -148,8 +162,8 @@ export default function PdfProtectTool() {
 
   const resetTool = () => {
     setPdfFile(null);
-    setPassword('');
-    setConfirmPassword('');
+    setPassword("");
+    setConfirmPassword("");
     setProtectedFile(null);
     setProgress(0);
     setIsProcessing(false);
@@ -162,10 +176,11 @@ export default function PdfProtectTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free PDF Password Protector</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Add password protection to your PDF files with customizable permissions. 
-          Secure your documents with military-grade encryption in seconds.
+          Add password protection to your PDF files with customizable
+          permissions. Secure your documents with military-grade encryption in
+          seconds.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Shield className="h-5 w-5 text-primary" />
@@ -190,13 +205,16 @@ export default function PdfProtectTool() {
             Upload PDF File
           </CardTitle>
           <CardDescription>
-            Upload your PDF file to add password protection • Max size: {formatFileSize(maxFileSize)}
+            Upload your PDF file to add password protection • Max size:{" "}
+            {formatFileSize(maxFileSize)}
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
             <FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <p className="text-lg font-medium mb-2">Drop PDF file here or click to browse</p>
+            <p className="text-lg font-medium mb-2">
+              Drop PDF file here or click to browse
+            </p>
             <p className="text-sm text-muted-foreground mb-4">
               Your file will be encrypted locally in your browser
             </p>
@@ -263,25 +281,37 @@ export default function PdfProtectTool() {
                     className="absolute right-0 top-0 h-full px-3"
                     onClick={() => setShowPassword(!showPassword)}
                   >
-                    {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                    {showPassword ? (
+                      <EyeOff className="h-4 w-4" />
+                    ) : (
+                      <Eye className="h-4 w-4" />
+                    )}
                   </Button>
                 </div>
                 {password && (
                   <div className="mt-2">
                     <div className="flex items-center gap-2">
                       <span className="text-xs">Strength:</span>
-                      <span className={`text-xs font-medium ${passwordStrength.color}`}>
+                      <span
+                        className={`text-xs font-medium ${passwordStrength.color}`}
+                      >
                         {passwordStrength.strength}
                       </span>
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
-                      <div 
+                      <div
                         className={`h-1.5 rounded-full transition-all ${
-                          passwordStrength.score <= 2 ? 'bg-destructive/100' :
-                          passwordStrength.score <= 3 ? 'bg-muted/500' :
-                          passwordStrength.score <= 4 ? 'bg-muted/500' : 'bg-muted/500'
+                          passwordStrength.score <= 2
+                            ? "bg-destructive/100"
+                            : passwordStrength.score <= 3
+                              ? "bg-muted/500"
+                              : passwordStrength.score <= 4
+                                ? "bg-muted/500"
+                                : "bg-muted/500"
                         }`}
-                        style={{ width: `${(passwordStrength.score / 5) * 100}%` }}
+                        style={{
+                          width: `${(passwordStrength.score / 5) * 100}%`,
+                        }}
                       />
                     </div>
                   </div>
@@ -299,13 +329,19 @@ export default function PdfProtectTool() {
                   className="mt-2"
                 />
                 {confirmPassword && password !== confirmPassword && (
-                  <p className="text-xs text-destructive mt-1">Passwords do not match</p>
+                  <p className="text-xs text-destructive mt-1">
+                    Passwords do not match
+                  </p>
                 )}
               </div>
             </div>
 
             <div className="flex gap-2">
-              <Button onClick={generateStrongPassword} variant="outline" size="sm">
+              <Button
+                onClick={generateStrongPassword}
+                variant="outline"
+                size="sm"
+              >
                 <Key className="h-4 w-4 mr-2" />
                 Generate Strong Password
               </Button>
@@ -330,81 +366,113 @@ export default function PdfProtectTool() {
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-4">
                 <h4 className="font-medium">Allow Users To:</h4>
-                
+
                 <div className="flex items-center space-x-2">
-                  <Checkbox 
+                  <Checkbox
                     id="printing"
                     checked={permissions.printing}
-                    onCheckedChange={(checked) => handlePermissionChange('printing', checked)}
+                    onCheckedChange={(checked) =>
+                      handlePermissionChange("printing", checked)
+                    }
                   />
-                  <Label htmlFor="printing" className="text-sm">Print the document</Label>
+                  <Label htmlFor="printing" className="text-sm">
+                    Print the document
+                  </Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Checkbox 
+                  <Checkbox
                     id="copying"
                     checked={permissions.copying}
-                    onCheckedChange={(checked) => handlePermissionChange('copying', checked)}
+                    onCheckedChange={(checked) =>
+                      handlePermissionChange("copying", checked)
+                    }
                   />
-                  <Label htmlFor="copying" className="text-sm">Copy text and images</Label>
+                  <Label htmlFor="copying" className="text-sm">
+                    Copy text and images
+                  </Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Checkbox 
+                  <Checkbox
                     id="modifying"
                     checked={permissions.modifying}
-                    onCheckedChange={(checked) => handlePermissionChange('modifying', checked)}
+                    onCheckedChange={(checked) =>
+                      handlePermissionChange("modifying", checked)
+                    }
                   />
-                  <Label htmlFor="modifying" className="text-sm">Modify the document</Label>
+                  <Label htmlFor="modifying" className="text-sm">
+                    Modify the document
+                  </Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Checkbox 
+                  <Checkbox
                     id="annotating"
                     checked={permissions.annotating}
-                    onCheckedChange={(checked) => handlePermissionChange('annotating', checked)}
+                    onCheckedChange={(checked) =>
+                      handlePermissionChange("annotating", checked)
+                    }
                   />
-                  <Label htmlFor="annotating" className="text-sm">Add annotations and comments</Label>
+                  <Label htmlFor="annotating" className="text-sm">
+                    Add annotations and comments
+                  </Label>
                 </div>
               </div>
 
               <div className="space-y-4">
                 <h4 className="font-medium">Advanced Permissions:</h4>
-                
+
                 <div className="flex items-center space-x-2">
-                  <Checkbox 
+                  <Checkbox
                     id="formFilling"
                     checked={permissions.formFilling}
-                    onCheckedChange={(checked) => handlePermissionChange('formFilling', checked)}
+                    onCheckedChange={(checked) =>
+                      handlePermissionChange("formFilling", checked)
+                    }
                   />
-                  <Label htmlFor="formFilling" className="text-sm">Fill form fields</Label>
+                  <Label htmlFor="formFilling" className="text-sm">
+                    Fill form fields
+                  </Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Checkbox 
+                  <Checkbox
                     id="extraction"
                     checked={permissions.extraction}
-                    onCheckedChange={(checked) => handlePermissionChange('extraction', checked)}
+                    onCheckedChange={(checked) =>
+                      handlePermissionChange("extraction", checked)
+                    }
                   />
-                  <Label htmlFor="extraction" className="text-sm">Extract pages</Label>
+                  <Label htmlFor="extraction" className="text-sm">
+                    Extract pages
+                  </Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Checkbox 
+                  <Checkbox
                     id="assembly"
                     checked={permissions.assembly}
-                    onCheckedChange={(checked) => handlePermissionChange('assembly', checked)}
+                    onCheckedChange={(checked) =>
+                      handlePermissionChange("assembly", checked)
+                    }
                   />
-                  <Label htmlFor="assembly" className="text-sm">Assemble document</Label>
+                  <Label htmlFor="assembly" className="text-sm">
+                    Assemble document
+                  </Label>
                 </div>
 
                 <div className="flex items-center space-x-2">
-                  <Checkbox 
+                  <Checkbox
                     id="degradedPrinting"
                     checked={permissions.degradedPrinting}
-                    onCheckedChange={(checked) => handlePermissionChange('degradedPrinting', checked)}
+                    onCheckedChange={(checked) =>
+                      handlePermissionChange("degradedPrinting", checked)
+                    }
                   />
-                  <Label htmlFor="degradedPrinting" className="text-sm">Low-quality printing</Label>
+                  <Label htmlFor="degradedPrinting" className="text-sm">
+                    Low-quality printing
+                  </Label>
                 </div>
               </div>
             </div>
@@ -412,7 +480,9 @@ export default function PdfProtectTool() {
             <Alert className="mt-4">
               <AlertCircle className="h-4 w-4" />
               <AlertDescription>
-                <strong>Security Note:</strong> These permissions provide basic protection but may not prevent all unauthorized actions depending on the PDF viewer used.
+                <strong>Security Note:</strong> These permissions provide basic
+                protection but may not prevent all unauthorized actions
+                depending on the PDF viewer used.
               </AlertDescription>
             </Alert>
           </CardContent>
@@ -423,9 +493,11 @@ export default function PdfProtectTool() {
       {pdfFile && password && (
         <Card className="mb-6">
           <CardContent className="pt-6">
-            <Button 
-              onClick={protectPdf} 
-              disabled={isProcessing || password !== confirmPassword || !password}
+            <Button
+              onClick={protectPdf}
+              disabled={
+                isProcessing || password !== confirmPassword || !password
+              }
               className="w-full"
               size="lg"
             >
@@ -504,7 +576,8 @@ export default function PdfProtectTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              256-bit AES encryption ensures your PDFs are protected with the same security used by governments.
+              256-bit AES encryption ensures your PDFs are protected with the
+              same security used by governments.
             </p>
           </CardContent>
         </Card>
@@ -518,7 +591,8 @@ export default function PdfProtectTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Control exactly what users can do - printing, copying, editing, annotations, and more.
+              Control exactly what users can do - printing, copying, editing,
+              annotations, and more.
             </p>
           </CardContent>
         </Card>
@@ -532,7 +606,8 @@ export default function PdfProtectTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Fast local encryption means your files are protected in seconds, not minutes.
+              Fast local encryption means your files are protected in seconds,
+              not minutes.
             </p>
           </CardContent>
         </Card>
@@ -546,27 +621,41 @@ export default function PdfProtectTool() {
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">How secure is the password protection?</h4>
+              <h4 className="font-medium mb-2">
+                How secure is the password protection?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                We use 256-bit AES encryption, the same standard used by banks and governments. This is virtually unbreakable with current technology.
+                We use 256-bit AES encryption, the same standard used by banks
+                and governments. This is virtually unbreakable with current
+                technology.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Can I remove the password later?</h4>
+              <h4 className="font-medium mb-2">
+                Can I remove the password later?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Yes, use our PDF Unlocker tool to remove passwords from protected PDFs if you have the original password.
+                Yes, use our PDF Unlocker tool to remove passwords from
+                protected PDFs if you have the original password.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Do permissions really prevent unauthorized actions?</h4>
+              <h4 className="font-medium mb-2">
+                Do permissions really prevent unauthorized actions?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Permissions provide good protection against casual users, but determined users with specialized tools may bypass them. The password encryption is the primary security layer.
+                Permissions provide good protection against casual users, but
+                determined users with specialized tools may bypass them. The
+                password encryption is the primary security layer.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Are my files stored on your servers?</h4>
+              <h4 className="font-medium mb-2">
+                Are my files stored on your servers?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                No, all encryption happens locally in your browser. Your original and protected files never leave your device.
+                No, all encryption happens locally in your browser. Your
+                original and protected files never leave your device.
               </p>
             </div>
           </div>

@@ -1,36 +1,80 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
-import { Switch } from '@/components/ui/switch';
-import { MessageCircle, Copy, RefreshCw, Users, Youtube, CheckCircle2, Sparkles } from 'lucide-react';
-import { generateCommentResponse } from '@/lib/youtube-actions';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
+import {
+  MessageCircle,
+  Copy,
+  RefreshCw,
+  Users,
+  Youtube,
+  CheckCircle2,
+  Sparkles,
+} from "lucide-react";
+import { generateCommentResponse } from "@/lib/youtube-actions";
 
 export default function YouTubeCommentResponder() {
-  const [comment, setComment] = useState('');
-  const [tone, setTone] = useState('friendly');
+  const [comment, setComment] = useState("");
+  const [tone, setTone] = useState("friendly");
   const [includeQuestion, setIncludeQuestion] = useState(true);
   const [includeEmoji, setIncludeEmoji] = useState(true);
-  const [channelContext, setChannelContext] = useState('');
+  const [channelContext, setChannelContext] = useState("");
   const [responses, setResponses] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [copiedIndex, setCopiedIndex] = useState(null);
 
   const tones = {
-    friendly: { name: 'Friendly & Warm', description: 'Casual and welcoming tone' },
-    professional: { name: 'Professional', description: 'Business-appropriate responses' },
-    humorous: { name: 'Humorous & Fun', description: 'Light-hearted and entertaining' },
-    grateful: { name: 'Grateful & Appreciative', description: 'Thankful and positive' },
-    educational: { name: 'Educational & Helpful', description: 'Informative and instructive' },
-    enthusiastic: { name: 'Enthusiastic & Energetic', description: 'Excited and motivational' },
-    empathetic: { name: 'Empathetic & Understanding', description: 'Compassionate and supportive' },
-    concise: { name: 'Concise & Direct', description: 'Brief and to the point' }
+    friendly: {
+      name: "Friendly & Warm",
+      description: "Casual and welcoming tone",
+    },
+    professional: {
+      name: "Professional",
+      description: "Business-appropriate responses",
+    },
+    humorous: {
+      name: "Humorous & Fun",
+      description: "Light-hearted and entertaining",
+    },
+    grateful: {
+      name: "Grateful & Appreciative",
+      description: "Thankful and positive",
+    },
+    educational: {
+      name: "Educational & Helpful",
+      description: "Informative and instructive",
+    },
+    enthusiastic: {
+      name: "Enthusiastic & Energetic",
+      description: "Excited and motivational",
+    },
+    empathetic: {
+      name: "Empathetic & Understanding",
+      description: "Compassionate and supportive",
+    },
+    concise: {
+      name: "Concise & Direct",
+      description: "Brief and to the point",
+    },
   };
 
   const sampleComments = [
@@ -41,17 +85,17 @@ export default function YouTubeCommentResponder() {
     "I disagree with your approach. There are better ways to do this.",
     "Could you please explain the part about optimization in more detail?",
     "Your channel has helped me so much in my career. You're the best!",
-    "I'm a beginner and this seems too complicated. Any simpler alternatives?"
+    "I'm a beginner and this seems too complicated. Any simpler alternatives?",
   ];
 
   const handleGenerateResponses = async () => {
     if (!comment.trim()) {
-      setError('Please enter a comment to respond to');
+      setError("Please enter a comment to respond to");
       return;
     }
 
     setIsGenerating(true);
-    setError('');
+    setError("");
 
     try {
       const requestData = {
@@ -59,18 +103,18 @@ export default function YouTubeCommentResponder() {
         tone,
         includeQuestion,
         includeEmoji,
-        channelContext: channelContext.trim()
+        channelContext: channelContext.trim(),
       };
 
       const result = await generateCommentResponse(requestData);
-      
+
       if (result.success) {
         setResponses(result.responses);
       } else {
-        setError(result.error || 'Failed to generate responses');
+        setError(result.error || "Failed to generate responses");
       }
     } catch (err) {
-      setError('An error occurred while generating responses');
+      setError("An error occurred while generating responses");
     } finally {
       setIsGenerating(false);
     }
@@ -82,7 +126,7 @@ export default function YouTubeCommentResponder() {
       setCopiedIndex(index);
       setTimeout(() => setCopiedIndex(null), 2000);
     } catch (err) {
-      console.error('Failed to copy response:', err);
+      console.error("Failed to copy response:", err);
     }
   };
 
@@ -131,7 +175,9 @@ export default function YouTubeCommentResponder() {
                   onClick={() => loadSampleComment(sample)}
                   className="text-xs btn-cute max-w-[200px] truncate"
                 >
-                  {sample.length > 40 ? sample.substring(0, 40) + '...' : sample}
+                  {sample.length > 40
+                    ? sample.substring(0, 40) + "..."
+                    : sample}
                 </Button>
               ))}
             </div>
@@ -161,7 +207,9 @@ export default function YouTubeCommentResponder() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="channel-context">Channel Context (Optional)</Label>
+                <Label htmlFor="channel-context">
+                  Channel Context (Optional)
+                </Label>
                 <Textarea
                   id="channel-context"
                   placeholder="Brief description of your channel, niche, or any specific information to include in responses..."
@@ -174,7 +222,7 @@ export default function YouTubeCommentResponder() {
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Response Options</h3>
-              
+
               <div className="flex items-center justify-between">
                 <Label htmlFor="include-question">Ask Follow-up Question</Label>
                 <Switch
@@ -229,7 +277,7 @@ export default function YouTubeCommentResponder() {
                 </>
               )}
             </Button>
-            
+
             {responses.length > 0 && (
               <Button
                 onClick={regenerateResponses}

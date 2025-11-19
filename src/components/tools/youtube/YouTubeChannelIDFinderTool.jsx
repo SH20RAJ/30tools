@@ -1,10 +1,16 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Search } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Search } from "lucide-react";
+import { toast } from "sonner";
 
 export default function YouTubeChannelIDFinderTool() {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -13,10 +19,10 @@ export default function YouTubeChannelIDFinderTool() {
     setIsProcessing(true);
     try {
       // Simulate processing
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast.success('Operation completed successfully!');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      toast.success("Operation completed successfully!");
     } catch (error) {
-      toast.error('Operation failed. Please try again.');
+      toast.error("Operation failed. Please try again.");
     } finally {
       setIsProcessing(false);
     }
@@ -27,7 +33,9 @@ export default function YouTubeChannelIDFinderTool() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">YouTube Channel ID Finder</h1>
+            <h1 className="text-4xl font-bold mb-4">
+              YouTube Channel ID Finder
+            </h1>
             <p className="text-lg text-muted-foreground">
               Find YouTube channel ID and get detailed channel information
             </p>
@@ -40,7 +48,8 @@ export default function YouTubeChannelIDFinderTool() {
                 YouTube Channel ID Finder
               </CardTitle>
               <CardDescription>
-                This tool is currently under development. More features coming soon!
+                This tool is currently under development. More features coming
+                soon!
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -48,14 +57,15 @@ export default function YouTubeChannelIDFinderTool() {
                 <Search className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
                 <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
                 <p className="text-muted-foreground mb-4">
-                  Enter a YouTube channel URL or name to find the channel ID and get detailed statistics.
+                  Enter a YouTube channel URL or name to find the channel ID and
+                  get detailed statistics.
                 </p>
-                <Button 
-                  onClick={handleProcess} 
+                <Button
+                  onClick={handleProcess}
                   disabled={isProcessing}
                   className="bg-primary hover:bg-primary/90"
                 >
-                  {isProcessing ? 'Processing...' : 'Try Demo'}
+                  {isProcessing ? "Processing..." : "Try Demo"}
                 </Button>
               </div>
             </CardContent>

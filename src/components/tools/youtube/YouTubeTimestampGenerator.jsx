@@ -1,41 +1,54 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Clock, Copy, Download, Wand2, Youtube, CheckCircle2 } from 'lucide-react';
-import { generateTimestamps } from '@/lib/youtube-actions';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Clock,
+  Copy,
+  Download,
+  Wand2,
+  Youtube,
+  CheckCircle2,
+} from "lucide-react";
+import { generateTimestamps } from "@/lib/youtube-actions";
 
 export default function YouTubeTimestampGenerator() {
-  const [videoUrl, setVideoUrl] = useState('');
-  const [transcript, setTranscript] = useState('');
+  const [videoUrl, setVideoUrl] = useState("");
+  const [transcript, setTranscript] = useState("");
   const [timestamps, setTimestamps] = useState([]);
   const [isGenerating, setIsGenerating] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [copiedIndex, setCopiedIndex] = useState(null);
 
   const handleGenerate = async () => {
     if (!videoUrl && !transcript) {
-      setError('Please provide either a YouTube URL or video transcript');
+      setError("Please provide either a YouTube URL or video transcript");
       return;
     }
 
     setIsGenerating(true);
-    setError('');
+    setError("");
 
     try {
       const result = await generateTimestamps(videoUrl, transcript);
       if (result.success) {
         setTimestamps(result.timestamps);
       } else {
-        setError(result.error || 'Failed to generate timestamps');
+        setError(result.error || "Failed to generate timestamps");
       }
     } catch (err) {
-      setError('An error occurred while generating timestamps');
+      setError("An error occurred while generating timestamps");
     } finally {
       setIsGenerating(false);
     }
@@ -43,38 +56,40 @@ export default function YouTubeTimestampGenerator() {
 
   const copyTimestamp = async (timestamp, index) => {
     try {
-      await navigator.clipboard.writeText(`${timestamp.time} ${timestamp.title}`);
+      await navigator.clipboard.writeText(
+        `${timestamp.time} ${timestamp.title}`,
+      );
       setCopiedIndex(index);
       setTimeout(() => setCopiedIndex(null), 2000);
     } catch (err) {
-      console.error('Failed to copy timestamp:', err);
+      console.error("Failed to copy timestamp:", err);
     }
   };
 
   const copyAllTimestamps = async () => {
     const formattedTimestamps = timestamps
-      .map(t => `${t.time} ${t.title}`)
-      .join('\n');
-    
+      .map((t) => `${t.time} ${t.title}`)
+      .join("\n");
+
     try {
       await navigator.clipboard.writeText(formattedTimestamps);
-      setCopiedIndex('all');
+      setCopiedIndex("all");
       setTimeout(() => setCopiedIndex(null), 2000);
     } catch (err) {
-      console.error('Failed to copy all timestamps:', err);
+      console.error("Failed to copy all timestamps:", err);
     }
   };
 
   const downloadTimestamps = () => {
     const formattedTimestamps = timestamps
-      .map(t => `${t.time} ${t.title}`)
-      .join('\n');
-    
-    const blob = new Blob([formattedTimestamps], { type: 'text/plain' });
+      .map((t) => `${t.time} ${t.title}`)
+      .join("\n");
+
+    const blob = new Blob([formattedTimestamps], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'youtube-timestamps.txt';
+    a.download = "youtube-timestamps.txt";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -90,7 +105,8 @@ export default function YouTubeTimestampGenerator() {
             Generate YouTube Timestamps
           </CardTitle>
           <CardDescription>
-            Create professional chapter timestamps automatically from YouTube videos or transcripts
+            Create professional chapter timestamps automatically from YouTube
+            videos or transcripts
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -157,7 +173,7 @@ export default function YouTubeTimestampGenerator() {
                   onClick={copyAllTimestamps}
                   className="btn-cute"
                 >
-                  {copiedIndex === 'all' ? (
+                  {copiedIndex === "all" ? (
                     <CheckCircle2 className="w-4 h-4 mr-1 text-primary" />
                   ) : (
                     <Copy className="w-4 h-4 mr-1" />
@@ -176,7 +192,8 @@ export default function YouTubeTimestampGenerator() {
               </div>
             </CardTitle>
             <CardDescription>
-              Copy these timestamps to your YouTube video description to enable chapters
+              Copy these timestamps to your YouTube video description to enable
+              chapters
             </CardDescription>
           </CardHeader>
           <CardContent>

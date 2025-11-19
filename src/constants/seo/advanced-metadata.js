@@ -1,98 +1,100 @@
 // Advanced SEO metadata templates with long-tail keywords and optimization
-import { getAllTools, getAllCategories } from '@/constants/tools-utils';
+import { getAllTools, getAllCategories } from "@/constants/tools-utils";
 
 // Global SEO constants
 export const GLOBAL_SEO = {
   siteName: "30tools - Free Online Toolkit",
   domain: "30tools.com",
   defaultTitle: "30tools - Free Online Tools for Images, PDFs, Videos & More",
-  defaultDescription: "Professional online tools for image compression, PDF manipulation, video conversion, and text processing. Free, fast, and secure with no watermarks.",
-  defaultKeywords: "free online tools, image compressor, pdf merger, video converter, text tools, file converter, online toolkit, web utilities",
+  defaultDescription:
+    "Professional online tools for image compression, PDF manipulation, video conversion, and text processing. Free, fast, and secure with no watermarks.",
+  defaultKeywords:
+    "free online tools, image compressor, pdf merger, video converter, text tools, file converter, online toolkit, web utilities",
   author: "30tools Team",
   robots: "index, follow",
   language: "en",
   ogType: "website",
   twitterCard: "summary_large_image",
   ogImage: "/og-image.jpg",
-  favicon: "/favicon.ico"
+  favicon: "/favicon.ico",
 };
 
 // Schema.org structured data generators
 export const generateToolSchema = (tool) => ({
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  "name": tool.name,
-  "description": tool.longDescription,
-  "url": `https://30tools.com${tool.routes}`,
-  "applicationCategory": "WebApplication",
-  "operatingSystem": "Web Browser",
-  "offers": {
+  name: tool.name,
+  description: tool.longDescription,
+  url: `https://30tools.com${tool.routes}`,
+  applicationCategory: "WebApplication",
+  operatingSystem: "Web Browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "creator": {
+  creator: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
-  "featureList": tool.features,
-  "screenshot": `https://30tools.com/screenshots/${tool.id}.jpg`,
-  "aggregateRating": {
+  featureList: tool.features,
+  screenshot: `https://30tools.com/screenshots/${tool.id}.jpg`,
+  aggregateRating: {
     "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "1250"
-  }
+    ratingValue: "4.8",
+    reviewCount: "1250",
+  },
 });
 
 export const generateCategorySchema = (category) => ({
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": category.seoTitle,
-  "description": category.seoDescription,
-  "url": `https://30tools.com/${category.slug}`,
-  "mainEntity": {
+  name: category.seoTitle,
+  description: category.seoDescription,
+  url: `https://30tools.com/${category.slug}`,
+  mainEntity: {
     "@type": "ItemList",
-    "itemListElement": category.tools.map((tool, index) => ({
+    itemListElement: category.tools.map((tool, index) => ({
       "@type": "ListItem",
-      "position": index + 1,
-      "item": {
+      position: index + 1,
+      item: {
         "@type": "SoftwareApplication",
-        "name": tool.name,
-        "url": `https://30tools.com${tool.routes}`
-      }
-    }))
-  }
+        name: tool.name,
+        url: `https://30tools.com${tool.routes}`,
+      },
+    })),
+  },
 });
 
 export const generateBreadcrumbSchema = (breadcrumbs) => ({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((crumb, index) => ({
+  itemListElement: breadcrumbs.map((crumb, index) => ({
     "@type": "ListItem",
-    "position": index + 1,
-    "name": crumb.name,
-    "item": crumb.url ? `https://30tools.com${crumb.url}` : undefined
-  }))
+    position: index + 1,
+    name: crumb.name,
+    item: crumb.url ? `https://30tools.com${crumb.url}` : undefined,
+  })),
 });
 
 export const generateFAQSchema = (faqs) => ({
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": faqs.map(faq => ({
+  mainEntity: faqs.map((faq) => ({
     "@type": "Question",
-    "name": faq.question,
-    "acceptedAnswer": {
+    name: faq.question,
+    acceptedAnswer: {
       "@type": "Answer",
-      "text": faq.answer
-    }
-  }))
+      text: faq.answer,
+    },
+  })),
 });
 
 // SEO metadata generators
 export const generateToolMetadata = (toolId) => {
   // Find tool in comprehensive directory
-  const tool = getAllTools().find(t => t.id === toolId);
+  const tool = getAllTools().find((t) => t.id === toolId);
 
   if (!tool) {
     return getDefaultMetadata();
@@ -104,16 +106,16 @@ export const generateToolMetadata = (toolId) => {
     `free ${tool.primaryKeyword} online no watermark`,
     `best ${tool.primaryKeyword} tool 2025`,
     `${tool.primaryKeyword} online without registration`,
-    `professional ${tool.primaryKeyword} free tool`
+    `professional ${tool.primaryKeyword} free tool`,
   ];
 
   return {
     title: `${tool.name} - Free ${tool.primaryKeyword.charAt(0).toUpperCase() + tool.primaryKeyword.slice(1)} Online | 30tools`,
     description: `${tool.longDescription.substring(0, 155)}...`,
-    keywords: [...tool.keywords, ...longTailVariations].join(', '),
+    keywords: [...tool.keywords, ...longTailVariations].join(", "),
     canonical: `https://30tools.com${tool.routes}`,
     alternates: {
-      canonical: `https://30tools.com${tool.routes}`
+      canonical: `https://30tools.com${tool.routes}`,
     },
     openGraph: {
       title: `${tool.name} - Free Online Tool`,
@@ -125,18 +127,18 @@ export const generateToolMetadata = (toolId) => {
           url: `/og-images/${tool.id}.jpg`,
           width: 1200,
           height: 630,
-          alt: `${tool.name} - ${tool.description}`
-        }
+          alt: `${tool.name} - ${tool.description}`,
+        },
       ],
-      locale: 'en_US',
-      type: 'website'
+      locale: "en_US",
+      type: "website",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: `${tool.name} - Free Online Tool`,
       description: tool.description,
       images: [`/og-images/${tool.id}.jpg`],
-      creator: '@30tools'
+      creator: "@30tools",
     },
     robots: {
       index: true,
@@ -144,29 +146,29 @@ export const generateToolMetadata = (toolId) => {
       googleBot: {
         index: true,
         follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
     },
     verification: {
-      google: 'your-google-verification-code',
-      yandex: 'your-yandex-verification-code',
-      bing: 'your-bing-verification-code'
+      google: "your-google-verification-code",
+      yandex: "your-yandex-verification-code",
+      bing: "your-bing-verification-code",
     },
     other: {
-      'application-name': '30tools',
-      'apple-mobile-web-app-title': '30tools',
-      'format-detection': 'telephone=no',
-      'mobile-web-app-capable': 'yes',
-      'apple-mobile-web-app-capable': 'yes',
-      'apple-mobile-web-app-status-bar-style': 'black-translucent'
-    }
+      "application-name": "30tools",
+      "apple-mobile-web-app-title": "30tools",
+      "format-detection": "telephone=no",
+      "mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-capable": "yes",
+      "apple-mobile-web-app-status-bar-style": "black-translucent",
+    },
   };
 };
 
 export const generateCategoryMetadata = (categorySlug) => {
-  const category = getAllCategories().find(cat => cat.slug === categorySlug);
+  const category = getAllCategories().find((cat) => cat.slug === categorySlug);
 
   if (!category) {
     return getDefaultMetadata();
@@ -175,7 +177,7 @@ export const generateCategoryMetadata = (categorySlug) => {
   return {
     title: category.seoTitle,
     description: category.seoDescription,
-    keywords: category.keywords.join(', '),
+    keywords: category.keywords.join(", "),
     canonical: `https://30tools.com/${category.slug}`,
     openGraph: {
       title: category.seoTitle,
@@ -187,18 +189,18 @@ export const generateCategoryMetadata = (categorySlug) => {
           url: `/og-images/${category.slug}.jpg`,
           width: 1200,
           height: 630,
-          alt: category.name
-        }
+          alt: category.name,
+        },
       ],
-      locale: 'en_US',
-      type: 'website'
+      locale: "en_US",
+      type: "website",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: category.seoTitle,
       description: category.seoDescription,
       images: [`/og-images/${category.slug}.jpg`],
-      creator: '@30tools'
+      creator: "@30tools",
     },
     robots: {
       index: true,
@@ -206,11 +208,11 @@ export const generateCategoryMetadata = (categorySlug) => {
       googleBot: {
         index: true,
         follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
-    }
+    },
   };
 };
 
@@ -229,18 +231,18 @@ export const getDefaultMetadata = () => ({
         url: GLOBAL_SEO.ogImage,
         width: 1200,
         height: 630,
-        alt: "30tools - Free Online Toolkit"
-      }
+        alt: "30tools - Free Online Toolkit",
+      },
     ],
-    locale: 'en_US',
-    type: 'website'
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: GLOBAL_SEO.defaultTitle,
     description: GLOBAL_SEO.defaultDescription,
     images: [GLOBAL_SEO.ogImage],
-    creator: '@30tools'
+    creator: "@30tools",
   },
   robots: {
     index: true,
@@ -248,37 +250,40 @@ export const getDefaultMetadata = () => ({
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-  }
+  },
 });
 
 // High-value long-tail keyword generators
-export const generateLongTailKeywords = (baseTool, intent = 'transactional') => {
+export const generateLongTailKeywords = (
+  baseTool,
+  intent = "transactional",
+) => {
   const intents = {
     transactional: [
       `free ${baseTool} online`,
       `${baseTool} online no watermark`,
       `best ${baseTool} tool 2025`,
       `${baseTool} without registration`,
-      `professional ${baseTool} free`
+      `professional ${baseTool} free`,
     ],
     informational: [
-      `how to ${baseTool.replace('er', '')}`,
+      `how to ${baseTool.replace("er", "")}`,
       `${baseTool} tutorial guide`,
-      `best way to ${baseTool.replace('er', '')}`,
+      `best way to ${baseTool.replace("er", "")}`,
       `${baseTool} tips and tricks`,
-      `${baseTool} vs alternatives`
+      `${baseTool} vs alternatives`,
     ],
     commercial: [
       `${baseTool} software comparison`,
       `best ${baseTool} tools review`,
       `${baseTool} online vs desktop`,
       `top ${baseTool} applications`,
-      `${baseTool} tool recommendations`
-    ]
+      `${baseTool} tool recommendations`,
+    ],
   };
 
   return intents[intent] || intents.transactional;
@@ -297,32 +302,32 @@ export const generateToolContent = (tool) => ({
     "No registration required",
     "Privacy-first processing",
     "Fast and reliable",
-    "Mobile-friendly design"
+    "Mobile-friendly design",
   ],
   steps: [
     "Upload your files",
     "Configure settings",
     "Process files",
-    "Download results"
+    "Download results",
   ],
   faqs: [
     {
       question: `Is ${tool.name} free to use?`,
-      answer: `Yes, our ${tool.name} is completely free with no hidden charges or watermarks.`
+      answer: `Yes, our ${tool.name} is completely free with no hidden charges or watermarks.`,
     },
     {
       question: `What file formats are supported?`,
-      answer: `We support ${tool.fileFormats.join(', ')} formats with files up to ${tool.maxFileSize}.`
+      answer: `We support ${tool.fileFormats.join(", ")} formats with files up to ${tool.maxFileSize}.`,
     },
     {
       question: `Is my data secure?`,
-      answer: `Yes, all processing happens in your browser. Files are never uploaded to our servers.`
+      answer: `Yes, all processing happens in your browser. Files are never uploaded to our servers.`,
     },
     {
       question: `Can I process multiple files?`,
-      answer: `Yes, our tool supports batch processing for increased productivity.`
-    }
-  ]
+      answer: `Yes, our tool supports batch processing for increased productivity.`,
+    },
+  ],
 });
 
 const seoModule = {
@@ -335,7 +340,7 @@ const seoModule = {
   generateCategoryMetadata,
   getDefaultMetadata,
   generateLongTailKeywords,
-  generateToolContent
+  generateToolContent,
 };
 
 export default seoModule;

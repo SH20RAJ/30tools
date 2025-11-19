@@ -1,44 +1,56 @@
-'use client';
+"use client";
 
-import { useState, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  FileSpreadsheet, 
+import { useState, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  FileSpreadsheet,
   FileJson,
   Upload,
   Download,
-  Copy, 
+  Copy,
   RefreshCw,
-  CheckCircle, 
+  CheckCircle,
   AlertCircle,
   Settings,
   BarChart3,
   Zap,
   Shield,
-  ArrowRight
-} from 'lucide-react';
+  ArrowRight,
+} from "lucide-react";
 
 export default function CsvToJsonTool() {
-  const [csvInput, setCsvInput] = useState('');
-  const [jsonOutput, setJsonOutput] = useState('');
-  const [delimiter, setDelimiter] = useState(',');
+  const [csvInput, setCsvInput] = useState("");
+  const [jsonOutput, setJsonOutput] = useState("");
+  const [delimiter, setDelimiter] = useState(",");
   const [hasHeaders, setHasHeaders] = useState(true);
-  const [outputFormat, setOutputFormat] = useState('array');
+  const [outputFormat, setOutputFormat] = useState("array");
   const [indentSize, setIndentSize] = useState(2);
-  const [customDelimiter, setCustomDelimiter] = useState('');
+  const [customDelimiter, setCustomDelimiter] = useState("");
   const [isConverting, setIsConverting] = useState(false);
   const [stats, setStats] = useState(null);
-  const [error, setError] = useState('');
-  const [activeTab, setActiveTab] = useState('csv');
+  const [error, setError] = useState("");
+  const [activeTab, setActiveTab] = useState("csv");
 
   const sampleData = {
     simple: `name,age,city
@@ -50,45 +62,57 @@ Bob Johnson,35,Chicago`,
 2,"iPhone 14 Pro",Smartphones,999.99,true,4.7,"Latest iPhone with advanced camera"
 3,"AirPods Pro",Audio,249.99,false,4.6,"Noise-cancelling wireless earbuds"
 4,"iPad Air",Tablets,599.99,true,4.5,"Versatile tablet for work and play"
-5,"Apple Watch Series 8",Wearables,399.99,true,4.4,"Advanced fitness and health tracking"`
+5,"Apple Watch Series 8",Wearables,399.99,true,4.4,"Advanced fitness and health tracking"`,
   };
 
   const delimiters = [
-    { value: ',', label: 'Comma (,)' },
-    { value: ';', label: 'Semicolon (;)' },
-    { value: '\t', label: 'Tab' },
-    { value: '|', label: 'Pipe (|)' },
-    { value: 'custom', label: 'Custom' }
+    { value: ",", label: "Comma (,)" },
+    { value: ";", label: "Semicolon (;)" },
+    { value: "\t", label: "Tab" },
+    { value: "|", label: "Pipe (|)" },
+    { value: "custom", label: "Custom" },
   ];
 
   const outputFormats = [
-    { value: 'array', label: 'Array of Objects', description: '[{key: value}, ...]' },
-    { value: 'object', label: 'Object with Arrays', description: '{key: [values], ...}' },
-    { value: 'nested', label: 'Nested by First Column', description: '{id: {data}, ...}' }
+    {
+      value: "array",
+      label: "Array of Objects",
+      description: "[{key: value}, ...]",
+    },
+    {
+      value: "object",
+      label: "Object with Arrays",
+      description: "{key: [values], ...}",
+    },
+    {
+      value: "nested",
+      label: "Nested by First Column",
+      description: "{id: {data}, ...}",
+    },
   ];
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB'];
+    const sizes = ["Bytes", "KB", "MB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const parseCSV = (csvText, delimiter) => {
-    const lines = csvText.trim().split('\n');
+    const lines = csvText.trim().split("\n");
     const result = [];
-    
+
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i];
       const row = [];
-      let current = '';
+      let current = "";
       let inQuotes = false;
-      
+
       for (let j = 0; j < line.length; j++) {
         const char = line[j];
         const nextChar = line[j + 1];
-        
+
         if (char === '"') {
           if (inQuotes && nextChar === '"') {
             current += '"';
@@ -98,41 +122,42 @@ Bob Johnson,35,Chicago`,
           }
         } else if (char === delimiter && !inQuotes) {
           row.push(current.trim());
-          current = '';
+          current = "";
         } else {
           current += char;
         }
       }
-      
+
       row.push(current.trim());
       result.push(row);
     }
-    
+
     return result;
   };
 
   const convertToJson = useCallback(() => {
     if (!csvInput.trim()) {
-      setError('Please enter CSV data to convert.');
+      setError("Please enter CSV data to convert.");
       return;
     }
 
     setIsConverting(true);
-    setError('');
+    setError("");
 
     try {
-      const actualDelimiter = delimiter === 'custom' ? customDelimiter : delimiter;
-      
+      const actualDelimiter =
+        delimiter === "custom" ? customDelimiter : delimiter;
+
       if (!actualDelimiter) {
-        setError('Please specify a delimiter.');
+        setError("Please specify a delimiter.");
         setIsConverting(false);
         return;
       }
 
       const rows = parseCSV(csvInput, actualDelimiter);
-      
+
       if (rows.length === 0) {
-        setError('No data found in CSV input.');
+        setError("No data found in CSV input.");
         setIsConverting(false);
         return;
       }
@@ -145,24 +170,31 @@ Bob Johnson,35,Chicago`,
         dataRows = rows.slice(1);
       } else {
         // Generate generic headers
-        const maxColumns = Math.max(...rows.map(row => row.length));
-        headers = Array.from({ length: maxColumns }, (_, i) => `column_${i + 1}`);
+        const maxColumns = Math.max(...rows.map((row) => row.length));
+        headers = Array.from(
+          { length: maxColumns },
+          (_, i) => `column_${i + 1}`,
+        );
       }
 
       let jsonResult;
 
       switch (outputFormat) {
-        case 'array':
-          jsonResult = dataRows.map(row => {
+        case "array":
+          jsonResult = dataRows.map((row) => {
             const obj = {};
             headers.forEach((header, index) => {
-              const value = row[index] || '';
+              const value = row[index] || "";
               // Try to parse as number or boolean
               let parsedValue = value;
-              if (value === 'true') parsedValue = true;
-              else if (value === 'false') parsedValue = false;
-              else if (value === 'null' || value === '') parsedValue = null;
-              else if (!isNaN(value) && !isNaN(parseFloat(value)) && value.trim() !== '') {
+              if (value === "true") parsedValue = true;
+              else if (value === "false") parsedValue = false;
+              else if (value === "null" || value === "") parsedValue = null;
+              else if (
+                !isNaN(value) &&
+                !isNaN(parseFloat(value)) &&
+                value.trim() !== ""
+              ) {
                 parsedValue = parseFloat(value);
               }
               obj[header] = parsedValue;
@@ -171,16 +203,20 @@ Bob Johnson,35,Chicago`,
           });
           break;
 
-        case 'object':
+        case "object":
           jsonResult = {};
           headers.forEach((header, index) => {
-            jsonResult[header] = dataRows.map(row => {
-              const value = row[index] || '';
+            jsonResult[header] = dataRows.map((row) => {
+              const value = row[index] || "";
               let parsedValue = value;
-              if (value === 'true') parsedValue = true;
-              else if (value === 'false') parsedValue = false;
-              else if (value === 'null' || value === '') parsedValue = null;
-              else if (!isNaN(value) && !isNaN(parseFloat(value)) && value.trim() !== '') {
+              if (value === "true") parsedValue = true;
+              else if (value === "false") parsedValue = false;
+              else if (value === "null" || value === "") parsedValue = null;
+              else if (
+                !isNaN(value) &&
+                !isNaN(parseFloat(value)) &&
+                value.trim() !== ""
+              ) {
                 parsedValue = parseFloat(value);
               }
               return parsedValue;
@@ -188,18 +224,22 @@ Bob Johnson,35,Chicago`,
           });
           break;
 
-        case 'nested':
+        case "nested":
           jsonResult = {};
-          dataRows.forEach(row => {
-            const key = row[0] || 'unknown';
+          dataRows.forEach((row) => {
+            const key = row[0] || "unknown";
             const obj = {};
             headers.slice(1).forEach((header, index) => {
-              const value = row[index + 1] || '';
+              const value = row[index + 1] || "";
               let parsedValue = value;
-              if (value === 'true') parsedValue = true;
-              else if (value === 'false') parsedValue = false;
-              else if (value === 'null' || value === '') parsedValue = null;
-              else if (!isNaN(value) && !isNaN(parseFloat(value)) && value.trim() !== '') {
+              if (value === "true") parsedValue = true;
+              else if (value === "false") parsedValue = false;
+              else if (value === "null" || value === "") parsedValue = null;
+              else if (
+                !isNaN(value) &&
+                !isNaN(parseFloat(value)) &&
+                value.trim() !== ""
+              ) {
                 parsedValue = parseFloat(value);
               }
               obj[header] = parsedValue;
@@ -215,9 +255,10 @@ Bob Johnson,35,Chicago`,
       // Calculate statistics
       const csvSize = new Blob([csvInput]).size;
       const jsonSize = new Blob([jsonString]).size;
-      const compression = csvSize > jsonSize ? 
-        `-${Math.round(((csvSize - jsonSize) / csvSize) * 100)}%` : 
-        `+${Math.round(((jsonSize - csvSize) / csvSize) * 100)}%`;
+      const compression =
+        csvSize > jsonSize
+          ? `-${Math.round(((csvSize - jsonSize) / csvSize) * 100)}%`
+          : `+${Math.round(((jsonSize - csvSize) / csvSize) * 100)}%`;
 
       setStats({
         csvSize: formatFileSize(csvSize),
@@ -225,31 +266,37 @@ Bob Johnson,35,Chicago`,
         compression,
         rows: dataRows.length,
         columns: headers.length,
-        totalCells: dataRows.length * headers.length
+        totalCells: dataRows.length * headers.length,
       });
-
     } catch (err) {
       setError(`Conversion error: ${err.message}`);
-      setJsonOutput('');
+      setJsonOutput("");
       setStats(null);
     }
 
     setIsConverting(false);
-  }, [csvInput, delimiter, customDelimiter, hasHeaders, outputFormat, indentSize]);
+  }, [
+    csvInput,
+    delimiter,
+    customDelimiter,
+    hasHeaders,
+    outputFormat,
+    indentSize,
+  ]);
 
   const handleCopy = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
-      alert('Copied to clipboard!');
+      alert("Copied to clipboard!");
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
   const handleDownload = (content, filename) => {
-    const blob = new Blob([content], { type: 'application/json' });
+    const blob = new Blob([content], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = filename;
     document.body.appendChild(link);
@@ -264,9 +311,9 @@ Bob Johnson,35,Chicago`,
   };
 
   const clearAll = () => {
-    setCsvInput('');
-    setJsonOutput('');
-    setError('');
+    setCsvInput("");
+    setJsonOutput("");
+    setError("");
     setStats(null);
   };
 
@@ -275,10 +322,11 @@ Bob Johnson,35,Chicago`,
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free CSV to JSON Converter</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Convert CSV data to JSON format with customizable delimiters and output structures. 
-          Perfect for data processing, API integration, and database imports.
+          Convert CSV data to JSON format with customizable delimiters and
+          output structures. Perfect for data processing, API integration, and
+          database imports.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Zap className="h-5 w-5 text-primary" />
@@ -322,7 +370,7 @@ Bob Johnson,35,Chicago`,
                   ))}
                 </SelectContent>
               </Select>
-              {delimiter === 'custom' && (
+              {delimiter === "custom" && (
                 <Input
                   placeholder="Enter custom delimiter"
                   value={customDelimiter}
@@ -344,7 +392,9 @@ Bob Johnson,35,Chicago`,
                     <SelectItem key={format.value} value={format.value}>
                       <div>
                         <div className="font-medium">{format.label}</div>
-                        <div className="text-xs text-muted-foreground">{format.description}</div>
+                        <div className="text-xs text-muted-foreground">
+                          {format.description}
+                        </div>
                       </div>
                     </SelectItem>
                   ))}
@@ -366,12 +416,14 @@ Bob Johnson,35,Chicago`,
             </div>
 
             <div className="flex items-center space-x-2 mt-6">
-              <Checkbox 
+              <Checkbox
                 id="headers"
                 checked={hasHeaders}
                 onCheckedChange={setHasHeaders}
               />
-              <Label htmlFor="headers" className="text-sm">First row contains headers</Label>
+              <Label htmlFor="headers" className="text-sm">
+                First row contains headers
+              </Label>
             </div>
           </div>
         </CardContent>
@@ -392,10 +444,18 @@ Bob Johnson,35,Chicago`,
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex flex-wrap gap-2">
-              <Button onClick={() => loadSample('simple')} variant="outline" size="sm">
+              <Button
+                onClick={() => loadSample("simple")}
+                variant="outline"
+                size="sm"
+              >
                 Simple Sample
               </Button>
-              <Button onClick={() => loadSample('complex')} variant="outline" size="sm">
+              <Button
+                onClick={() => loadSample("complex")}
+                variant="outline"
+                size="sm"
+              >
                 Complex Sample
               </Button>
               <Button onClick={clearAll} variant="outline" size="sm">
@@ -403,7 +463,7 @@ Bob Johnson,35,Chicago`,
                 Clear
               </Button>
             </div>
-            
+
             <Textarea
               placeholder="Paste your CSV data here..."
               value={csvInput}
@@ -423,20 +483,26 @@ Bob Johnson,35,Chicago`,
               </span>
               {jsonOutput && (
                 <div className="flex gap-2">
-                  <Button onClick={() => handleCopy(jsonOutput)} variant="outline" size="sm">
+                  <Button
+                    onClick={() => handleCopy(jsonOutput)}
+                    variant="outline"
+                    size="sm"
+                  >
                     <Copy className="h-4 w-4 mr-2" />
                     Copy
                   </Button>
-                  <Button onClick={() => handleDownload(jsonOutput, 'converted.json')} variant="outline" size="sm">
+                  <Button
+                    onClick={() => handleDownload(jsonOutput, "converted.json")}
+                    variant="outline"
+                    size="sm"
+                  >
                     <Download className="h-4 w-4 mr-2" />
                     Download
                   </Button>
                 </div>
               )}
             </CardTitle>
-            <CardDescription>
-              Converted JSON data ready to use
-            </CardDescription>
+            <CardDescription>Converted JSON data ready to use</CardDescription>
           </CardHeader>
           <CardContent>
             {jsonOutput ? (
@@ -460,8 +526,8 @@ Bob Johnson,35,Chicago`,
       {/* Convert Button */}
       <Card className="mb-6">
         <CardContent className="pt-6">
-          <Button 
-            onClick={convertToJson} 
+          <Button
+            onClick={convertToJson}
             disabled={isConverting || !csvInput.trim()}
             className="w-full"
             size="lg"
@@ -501,15 +567,21 @@ Bob Johnson,35,Chicago`,
           <CardContent>
             <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-primary">{stats.rows}</div>
+                <div className="text-lg font-bold text-primary">
+                  {stats.rows}
+                </div>
                 <div className="text-xs text-muted-foreground">Rows</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-primary">{stats.columns}</div>
+                <div className="text-lg font-bold text-primary">
+                  {stats.columns}
+                </div>
                 <div className="text-xs text-muted-foreground">Columns</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-primary">{stats.totalCells}</div>
+                <div className="text-lg font-bold text-primary">
+                  {stats.totalCells}
+                </div>
                 <div className="text-xs text-muted-foreground">Total Cells</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
@@ -521,7 +593,9 @@ Bob Johnson,35,Chicago`,
                 <div className="text-xs text-muted-foreground">JSON Size</div>
               </div>
               <div className="text-center p-3 bg-muted rounded-lg">
-                <div className="text-lg font-bold text-primary">{stats.compression}</div>
+                <div className="text-lg font-bold text-primary">
+                  {stats.compression}
+                </div>
                 <div className="text-xs text-muted-foreground">Size Change</div>
               </div>
             </div>
@@ -540,7 +614,8 @@ Bob Johnson,35,Chicago`,
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Automatically detects and converts numbers, booleans, and null values for proper JSON structure.
+              Automatically detects and converts numbers, booleans, and null
+              values for proper JSON structure.
             </p>
           </CardContent>
         </Card>
@@ -554,7 +629,8 @@ Bob Johnson,35,Chicago`,
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Choose from multiple JSON formats: array of objects, object with arrays, or nested structures.
+              Choose from multiple JSON formats: array of objects, object with
+              arrays, or nested structures.
             </p>
           </CardContent>
         </Card>
@@ -568,7 +644,8 @@ Bob Johnson,35,Chicago`,
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              All conversion happens locally in your browser. Your data never leaves your device.
+              All conversion happens locally in your browser. Your data never
+              leaves your device.
             </p>
           </CardContent>
         </Card>
@@ -613,27 +690,37 @@ Bob Johnson,35,Chicago`,
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">What delimiters are supported?</h4>
+              <h4 className="font-medium mb-2">
+                What delimiters are supported?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Common delimiters like comma, semicolon, tab, and pipe, plus custom delimiters up to 3 characters.
+                Common delimiters like comma, semicolon, tab, and pipe, plus
+                custom delimiters up to 3 characters.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">How are data types handled?</h4>
               <p className="text-sm text-muted-foreground">
-                The tool automatically converts strings to appropriate JSON types: numbers, booleans (true/false), and null values.
+                The tool automatically converts strings to appropriate JSON
+                types: numbers, booleans (true/false), and null values.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">What if my CSV has quoted values?</h4>
+              <h4 className="font-medium mb-2">
+                What if my CSV has quoted values?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                The parser handles quoted values correctly, including escaped quotes and values containing delimiters.
+                The parser handles quoted values correctly, including escaped
+                quotes and values containing delimiters.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Which output format should I choose?</h4>
+              <h4 className="font-medium mb-2">
+                Which output format should I choose?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Array of objects is most common for APIs, object with arrays for data analysis, and nested for key-based lookups.
+                Array of objects is most common for APIs, object with arrays for
+                data analysis, and nested for key-based lookups.
               </p>
             </div>
           </div>

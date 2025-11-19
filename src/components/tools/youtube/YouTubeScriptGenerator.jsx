@@ -1,74 +1,94 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
-import { Slider } from '@/components/ui/slider';
-import { PenTool, Copy, Download, Sparkles, Youtube, CheckCircle2, Wand2 } from 'lucide-react';
-import { generateYouTubeScript } from '@/lib/youtube-actions';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { Slider } from "@/components/ui/slider";
+import {
+  PenTool,
+  Copy,
+  Download,
+  Sparkles,
+  Youtube,
+  CheckCircle2,
+  Wand2,
+} from "lucide-react";
+import { generateYouTubeScript } from "@/lib/youtube-actions";
 
 export default function YouTubeScriptGenerator() {
-  const [topic, setTopic] = useState('');
-  const [videoType, setVideoType] = useState('tutorial');
+  const [topic, setTopic] = useState("");
+  const [videoType, setVideoType] = useState("tutorial");
   const [duration, setDuration] = useState([10]);
-  const [targetAudience, setTargetAudience] = useState('general');
-  const [tone, setTone] = useState('friendly');
-  const [additionalInfo, setAdditionalInfo] = useState('');
-  const [script, setScript] = useState('');
+  const [targetAudience, setTargetAudience] = useState("general");
+  const [tone, setTone] = useState("friendly");
+  const [additionalInfo, setAdditionalInfo] = useState("");
+  const [script, setScript] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
 
   const videoTypes = {
-    tutorial: 'Tutorial/How-to',
-    review: 'Product Review',
-    vlog: 'Vlog/Personal',
-    educational: 'Educational',
-    entertainment: 'Entertainment',
-    unboxing: 'Unboxing',
-    comparison: 'Comparison',
-    listicle: 'Top 10/List',
-    storytelling: 'Storytelling',
-    interview: 'Interview'
+    tutorial: "Tutorial/How-to",
+    review: "Product Review",
+    vlog: "Vlog/Personal",
+    educational: "Educational",
+    entertainment: "Entertainment",
+    unboxing: "Unboxing",
+    comparison: "Comparison",
+    listicle: "Top 10/List",
+    storytelling: "Storytelling",
+    interview: "Interview",
   };
 
   const audiences = {
-    general: 'General Audience',
-    teens: 'Teenagers (13-19)',
-    young_adults: 'Young Adults (20-35)',
-    professionals: 'Professionals',
-    parents: 'Parents',
-    seniors: 'Seniors (50+)',
-    gamers: 'Gamers',
-    tech: 'Tech Enthusiasts',
-    fitness: 'Fitness Community',
-    business: 'Business Owners'
+    general: "General Audience",
+    teens: "Teenagers (13-19)",
+    young_adults: "Young Adults (20-35)",
+    professionals: "Professionals",
+    parents: "Parents",
+    seniors: "Seniors (50+)",
+    gamers: "Gamers",
+    tech: "Tech Enthusiasts",
+    fitness: "Fitness Community",
+    business: "Business Owners",
   };
 
   const tones = {
-    friendly: 'Friendly & Conversational',
-    professional: 'Professional & Informative',
-    casual: 'Casual & Relaxed',
-    energetic: 'Energetic & Enthusiastic',
-    authoritative: 'Authoritative & Expert',
-    humorous: 'Humorous & Fun',
-    inspirational: 'Inspirational & Motivating',
-    educational: 'Educational & Clear'
+    friendly: "Friendly & Conversational",
+    professional: "Professional & Informative",
+    casual: "Casual & Relaxed",
+    energetic: "Energetic & Enthusiastic",
+    authoritative: "Authoritative & Expert",
+    humorous: "Humorous & Fun",
+    inspirational: "Inspirational & Motivating",
+    educational: "Educational & Clear",
   };
 
   const handleGenerateScript = async () => {
     if (!topic.trim()) {
-      setError('Please enter a video topic');
+      setError("Please enter a video topic");
       return;
     }
 
     setIsGenerating(true);
-    setError('');
+    setError("");
 
     try {
       const scriptData = {
@@ -77,18 +97,18 @@ export default function YouTubeScriptGenerator() {
         duration: duration[0],
         targetAudience,
         tone,
-        additionalInfo: additionalInfo.trim()
+        additionalInfo: additionalInfo.trim(),
       };
 
       const result = await generateYouTubeScript(scriptData);
-      
+
       if (result.success) {
         setScript(result.script);
       } else {
-        setError(result.error || 'Failed to generate script');
+        setError(result.error || "Failed to generate script");
       }
     } catch (err) {
-      setError('An error occurred while generating the script');
+      setError("An error occurred while generating the script");
     } finally {
       setIsGenerating(false);
     }
@@ -100,16 +120,16 @@ export default function YouTubeScriptGenerator() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy script:', err);
+      console.error("Failed to copy script:", err);
     }
   };
 
   const downloadScript = () => {
-    const blob = new Blob([script], { type: 'text/plain' });
+    const blob = new Blob([script], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `youtube-script-${topic.replace(/\s+/g, '-').toLowerCase()}.txt`;
+    a.download = `youtube-script-${topic.replace(/\s+/g, "-").toLowerCase()}.txt`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -169,7 +189,10 @@ export default function YouTubeScriptGenerator() {
 
               <div className="space-y-2">
                 <Label htmlFor="target-audience">Target Audience</Label>
-                <Select value={targetAudience} onValueChange={setTargetAudience}>
+                <Select
+                  value={targetAudience}
+                  onValueChange={setTargetAudience}
+                >
                   <SelectTrigger className="input-cute">
                     <SelectValue />
                   </SelectTrigger>
@@ -218,7 +241,9 @@ export default function YouTubeScriptGenerator() {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="additional-info">Additional Information (Optional)</Label>
+                <Label htmlFor="additional-info">
+                  Additional Information (Optional)
+                </Label>
                 <Textarea
                   id="additional-info"
                   placeholder="Any specific points, products, or information to include in the script..."
@@ -278,7 +303,7 @@ export default function YouTubeScriptGenerator() {
                   ) : (
                     <Copy className="w-4 h-4 mr-1" />
                   )}
-                  {copied ? 'Copied!' : 'Copy'}
+                  {copied ? "Copied!" : "Copy"}
                 </Button>
                 <Button
                   variant="outline"
@@ -336,8 +361,9 @@ export default function YouTubeScriptGenerator() {
           </div>
           <div className="p-3 bg-accent/20 rounded-lg">
             <p className="text-sm text-muted-foreground">
-              <strong>Pro Tip:</strong> Use the generated script as a foundation and add your personal touch, 
-              examples, and unique insights to make it truly your own.
+              <strong>Pro Tip:</strong> Use the generated script as a foundation
+              and add your personal touch, examples, and unique insights to make
+              it truly your own.
             </p>
           </div>
         </CardContent>

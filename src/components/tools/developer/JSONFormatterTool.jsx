@@ -1,13 +1,19 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { useState, useRef, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   Code,
   Copy,
@@ -22,59 +28,66 @@ import {
   Shield,
   Search,
   RotateCcw,
-  Settings
-} from 'lucide-react';
+  Settings,
+} from "lucide-react";
 
 export default function JSONFormatterTool() {
-  const [jsonInput, setJsonInput] = useState('{"name":"John Doe","age":30,"city":"New York","hobbies":["reading","coding","gaming"],"address":{"street":"123 Main St","zipCode":"10001"}}');
-  const [formattedJson, setFormattedJson] = useState('');
-  const [minifiedJson, setMinifiedJson] = useState('');
+  const [jsonInput, setJsonInput] = useState(
+    '{"name":"John Doe","age":30,"city":"New York","hobbies":["reading","coding","gaming"],"address":{"street":"123 Main St","zipCode":"10001"}}',
+  );
+  const [formattedJson, setFormattedJson] = useState("");
+  const [minifiedJson, setMinifiedJson] = useState("");
   const [isValid, setIsValid] = useState(true);
   const [errors, setErrors] = useState([]);
-  const [copied, setCopied] = useState('');
+  const [copied, setCopied] = useState("");
   const [indentSize, setIndentSize] = useState(2);
   const [sortKeys, setSortKeys] = useState(false);
   const fileInputRef = useRef(null);
 
-  const validateAndFormat = useCallback((jsonText) => {
-    try {
-      // Parse JSON to validate
-      const parsed = JSON.parse(jsonText);
+  const validateAndFormat = useCallback(
+    (jsonText) => {
+      try {
+        // Parse JSON to validate
+        const parsed = JSON.parse(jsonText);
 
-      // Sort keys if option is enabled
-      const processedObj = sortKeys ? sortObjectKeys(parsed) : parsed;
+        // Sort keys if option is enabled
+        const processedObj = sortKeys ? sortObjectKeys(parsed) : parsed;
 
-      // Format with proper indentation
-      const formatted = JSON.stringify(processedObj, null, indentSize);
-      const minified = JSON.stringify(processedObj);
+        // Format with proper indentation
+        const formatted = JSON.stringify(processedObj, null, indentSize);
+        const minified = JSON.stringify(processedObj);
 
-      setFormattedJson(formatted);
-      setMinifiedJson(minified);
-      setIsValid(true);
-      setErrors([]);
+        setFormattedJson(formatted);
+        setMinifiedJson(minified);
+        setIsValid(true);
+        setErrors([]);
 
-      return { isValid: true, formatted, minified };
-    } catch (error) {
-      setIsValid(false);
-      setFormattedJson('');
-      setMinifiedJson('');
+        return { isValid: true, formatted, minified };
+      } catch (error) {
+        setIsValid(false);
+        setFormattedJson("");
+        setMinifiedJson("");
 
-      // Parse error details
-      const errorDetails = parseJSONError(error.message, jsonText);
-      setErrors(errorDetails);
+        // Parse error details
+        const errorDetails = parseJSONError(error.message, jsonText);
+        setErrors(errorDetails);
 
-      return { isValid: false, error: error.message };
-    }
-  }, [indentSize, sortKeys]);
+        return { isValid: false, error: error.message };
+      }
+    },
+    [indentSize, sortKeys],
+  );
 
   const sortObjectKeys = (obj) => {
     if (Array.isArray(obj)) {
       return obj.map(sortObjectKeys);
-    } else if (obj !== null && typeof obj === 'object') {
+    } else if (obj !== null && typeof obj === "object") {
       const sorted = {};
-      Object.keys(obj).sort().forEach(key => {
-        sorted[key] = sortObjectKeys(obj[key]);
-      });
+      Object.keys(obj)
+        .sort()
+        .forEach((key) => {
+          sorted[key] = sortObjectKeys(obj[key]);
+        });
       return sorted;
     }
     return obj;
@@ -87,21 +100,21 @@ export default function JSONFormatterTool() {
     const positionMatch = errorMessage.match(/position (\d+)/);
     if (positionMatch) {
       const position = parseInt(positionMatch[1]);
-      const lines = jsonText.substring(0, position).split('\n');
+      const lines = jsonText.substring(0, position).split("\n");
       const lineNumber = lines.length;
       const columnNumber = lines[lines.length - 1].length + 1;
 
       errors.push({
-        type: 'Syntax Error',
+        type: "Syntax Error",
         message: errorMessage,
         line: lineNumber,
         column: columnNumber,
-        position
+        position,
       });
     } else {
       errors.push({
-        type: 'Parse Error',
-        message: errorMessage
+        type: "Parse Error",
+        message: errorMessage,
       });
     }
 
@@ -113,8 +126,8 @@ export default function JSONFormatterTool() {
     if (value.trim()) {
       validateAndFormat(value);
     } else {
-      setFormattedJson('');
-      setMinifiedJson('');
+      setFormattedJson("");
+      setMinifiedJson("");
       setIsValid(true);
       setErrors([]);
     }
@@ -137,16 +150,16 @@ export default function JSONFormatterTool() {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(type);
-      setTimeout(() => setCopied(''), 2000);
+      setTimeout(() => setCopied(""), 2000);
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
   const downloadJSON = (content, filename) => {
-    const blob = new Blob([content], { type: 'application/json' });
+    const blob = new Blob([content], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = filename;
     document.body.appendChild(link);
@@ -156,52 +169,52 @@ export default function JSONFormatterTool() {
   };
 
   const clearInput = () => {
-    setJsonInput('');
-    setFormattedJson('');
-    setMinifiedJson('');
+    setJsonInput("");
+    setFormattedJson("");
+    setMinifiedJson("");
     setIsValid(true);
     setErrors([]);
   };
 
   const loadSample = () => {
     const sampleJSON = {
-      "user": {
-        "id": 12345,
-        "name": "Jane Smith",
-        "email": "jane.smith@example.com",
-        "isActive": true,
-        "preferences": {
-          "theme": "dark",
-          "notifications": {
-            "email": true,
-            "push": false,
-            "sms": true
+      user: {
+        id: 12345,
+        name: "Jane Smith",
+        email: "jane.smith@example.com",
+        isActive: true,
+        preferences: {
+          theme: "dark",
+          notifications: {
+            email: true,
+            push: false,
+            sms: true,
           },
-          "languages": ["en", "es", "fr"]
+          languages: ["en", "es", "fr"],
         },
-        "lastLogin": "2025-01-15T10:30:00Z",
-        "metadata": {
-          "created": "2023-06-01T00:00:00Z",
-          "updated": "2025-01-15T10:30:00Z",
-          "version": "1.2.3"
-        }
+        lastLogin: "2025-01-15T10:30:00Z",
+        metadata: {
+          created: "2023-06-01T00:00:00Z",
+          updated: "2025-01-15T10:30:00Z",
+          version: "1.2.3",
+        },
       },
-      "products": [
+      products: [
         {
-          "id": "prod_001",
-          "name": "Wireless Headphones",
-          "price": 99.99,
-          "inStock": true,
-          "tags": ["electronics", "audio", "wireless"]
+          id: "prod_001",
+          name: "Wireless Headphones",
+          price: 99.99,
+          inStock: true,
+          tags: ["electronics", "audio", "wireless"],
         },
         {
-          "id": "prod_002",
-          "name": "Smartphone Case",
-          "price": 24.99,
-          "inStock": false,
-          "tags": ["accessories", "mobile", "protection"]
-        }
-      ]
+          id: "prod_002",
+          name: "Smartphone Case",
+          price: 24.99,
+          inStock: false,
+          tags: ["accessories", "mobile", "protection"],
+        },
+      ],
     };
 
     const jsonString = JSON.stringify(sampleJSON);
@@ -230,25 +243,31 @@ export default function JSONFormatterTool() {
       booleans: 0,
       nulls: 0,
       maxDepth: depth,
-      totalKeys: 0
+      totalKeys: 0,
     };
 
     if (Array.isArray(obj)) {
       stats.arrays++;
-      obj.forEach(item => {
+      obj.forEach((item) => {
         const childStats = analyzeJSON(item, depth + 1);
         stats = mergeStats(stats, childStats);
       });
-    } else if (obj !== null && typeof obj === 'object') {
+    } else if (obj !== null && typeof obj === "object") {
       stats.objects++;
       stats.totalKeys += Object.keys(obj).length;
-      Object.values(obj).forEach(value => {
+      Object.values(obj).forEach((value) => {
         const childStats = analyzeJSON(value, depth + 1);
         stats = mergeStats(stats, childStats);
       });
     } else {
-      const type = obj === null ? 'nulls' : typeof obj === 'string' ? 'strings' :
-        typeof obj === 'number' ? 'numbers' : 'booleans';
+      const type =
+        obj === null
+          ? "nulls"
+          : typeof obj === "string"
+            ? "strings"
+            : typeof obj === "number"
+              ? "numbers"
+              : "booleans";
       stats[type]++;
     }
 
@@ -264,7 +283,7 @@ export default function JSONFormatterTool() {
       booleans: stats1.booleans + stats2.booleans,
       nulls: stats1.nulls + stats2.nulls,
       maxDepth: Math.max(stats1.maxDepth, stats2.maxDepth),
-      totalKeys: stats1.totalKeys + stats2.totalKeys
+      totalKeys: stats1.totalKeys + stats2.totalKeys,
     };
   };
 
@@ -273,10 +292,13 @@ export default function JSONFormatterTool() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-7xl">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free JSON Formatter & Validator</h1>
+        <h1 className="text-4xl font-bold mb-4">
+          Free JSON Formatter & Validator
+        </h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Format, validate, and minify JSON data online. Perfect for developers, API testing,
-          and data processing. Includes error detection and JSON analytics.
+          Format, validate, and minify JSON data online. Perfect for developers,
+          API testing, and data processing. Includes error detection and JSON
+          analytics.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -435,12 +457,12 @@ export default function JSONFormatterTool() {
                 </span>
                 <div className="flex gap-2">
                   <Button
-                    onClick={() => copyToClipboard(formattedJson, 'formatted')}
+                    onClick={() => copyToClipboard(formattedJson, "formatted")}
                     disabled={!formattedJson}
                     size="sm"
                     variant="outline"
                   >
-                    {copied === 'formatted' ? (
+                    {copied === "formatted" ? (
                       <CheckCircle className="h-4 w-4 mr-2 text-primary" />
                     ) : (
                       <Copy className="h-4 w-4 mr-2" />
@@ -448,7 +470,9 @@ export default function JSONFormatterTool() {
                     Copy
                   </Button>
                   <Button
-                    onClick={() => downloadJSON(formattedJson, 'formatted.json')}
+                    onClick={() =>
+                      downloadJSON(formattedJson, "formatted.json")
+                    }
                     disabled={!formattedJson}
                     size="sm"
                     variant="outline"
@@ -479,12 +503,12 @@ export default function JSONFormatterTool() {
                 </span>
                 <div className="flex gap-2">
                   <Button
-                    onClick={() => copyToClipboard(minifiedJson, 'minified')}
+                    onClick={() => copyToClipboard(minifiedJson, "minified")}
                     disabled={!minifiedJson}
                     size="sm"
                     variant="outline"
                   >
-                    {copied === 'minified' ? (
+                    {copied === "minified" ? (
                       <CheckCircle className="h-4 w-4 mr-2 text-primary" />
                     ) : (
                       <Copy className="h-4 w-4 mr-2" />
@@ -492,7 +516,7 @@ export default function JSONFormatterTool() {
                     Copy
                   </Button>
                   <Button
-                    onClick={() => downloadJSON(minifiedJson, 'minified.json')}
+                    onClick={() => downloadJSON(minifiedJson, "minified.json")}
                     disabled={!minifiedJson}
                     size="sm"
                     variant="outline"
@@ -550,7 +574,9 @@ export default function JSONFormatterTool() {
                     <Badge variant="outline">{jsonStats.numbers} Numbers</Badge>
                   </div>
                   <div>
-                    <Badge variant="outline">{jsonStats.booleans} Booleans</Badge>
+                    <Badge variant="outline">
+                      {jsonStats.booleans} Booleans
+                    </Badge>
                   </div>
                   <div>
                     <Badge variant="outline">{jsonStats.nulls} Nulls</Badge>
@@ -559,10 +585,16 @@ export default function JSONFormatterTool() {
 
                 <div className="mt-4 text-center">
                   <p className="text-sm text-muted-foreground">
-                    Size: {formattedJson.length.toLocaleString()} chars (formatted) • {minifiedJson.length.toLocaleString()} chars (minified)
+                    Size: {formattedJson.length.toLocaleString()} chars
+                    (formatted) • {minifiedJson.length.toLocaleString()} chars
+                    (minified)
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Compression: {Math.round((1 - minifiedJson.length / formattedJson.length) * 100)}% size reduction
+                    Compression:{" "}
+                    {Math.round(
+                      (1 - minifiedJson.length / formattedJson.length) * 100,
+                    )}
+                    % size reduction
                   </p>
                 </div>
               </CardContent>
@@ -616,27 +648,41 @@ export default function JSONFormatterTool() {
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">What's the difference between formatted and minified JSON?</h4>
+              <h4 className="font-medium mb-2">
+                What's the difference between formatted and minified JSON?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Formatted JSON includes proper indentation and line breaks for readability, while minified JSON removes all unnecessary whitespace to reduce file size for production use.
+                Formatted JSON includes proper indentation and line breaks for
+                readability, while minified JSON removes all unnecessary
+                whitespace to reduce file size for production use.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">How does error detection work?</h4>
+              <h4 className="font-medium mb-2">
+                How does error detection work?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Our validator parses your JSON and provides detailed error messages with line and column numbers to help you quickly identify and fix syntax issues.
+                Our validator parses your JSON and provides detailed error
+                messages with line and column numbers to help you quickly
+                identify and fix syntax issues.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Is my JSON data safe?</h4>
               <p className="text-sm text-muted-foreground">
-                Yes, all JSON processing happens locally in your browser. Your data is never sent to our servers, ensuring complete privacy and security.
+                Yes, all JSON processing happens locally in your browser. Your
+                data is never sent to our servers, ensuring complete privacy and
+                security.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">What file formats are supported?</h4>
+              <h4 className="font-medium mb-2">
+                What file formats are supported?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                You can upload .json and .txt files. The tool will attempt to parse any text content as JSON and provide appropriate validation feedback.
+                You can upload .json and .txt files. The tool will attempt to
+                parse any text content as JSON and provide appropriate
+                validation feedback.
               </p>
             </div>
           </div>

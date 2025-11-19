@@ -1,18 +1,41 @@
-'use client';
+"use client";
 
-import { useState, useMemo } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { SearchIcon, ArrowRightIcon, TrendingUpIcon, ZapIcon, FilterIcon } from 'lucide-react';
-import Link from 'next/link';
-import toolsData from '@/constants/tools.json';
-import AuthComponent from '@/components/auth/AuthComponent';
+import { useState, useMemo } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  SearchIcon,
+  ArrowRightIcon,
+  TrendingUpIcon,
+  ZapIcon,
+  FilterIcon,
+} from "lucide-react";
+import Link from "next/link";
+import toolsData from "@/constants/tools.json";
+import AuthComponent from "@/components/auth/AuthComponent";
 
-export default function SearchPageServer({ initialTools, initialQuery, initialCategory, allTools }) {
+export default function SearchPageServer({
+  initialTools,
+  initialQuery,
+  initialCategory,
+  allTools,
+}) {
   const router = useRouter();
   const [query, setQuery] = useState(initialQuery);
   const [category, setCategory] = useState(initialCategory);
@@ -21,24 +44,29 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
 
   // Get categories for filter
   const categories = useMemo(() => {
-    const cats = Object.entries(toolsData.categories).map(([key, category]) => ({
-      value: key,
-      label: category.name,
-      count: category.tools.length
-    }));
-    return [{ value: 'all', label: 'All Categories', count: allTools.length }, ...cats];
+    const cats = Object.entries(toolsData.categories).map(
+      ([key, category]) => ({
+        value: key,
+        label: category.name,
+        count: category.tools.length,
+      }),
+    );
+    return [
+      { value: "all", label: "All Categories", count: allTools.length },
+      ...cats,
+    ];
   }, [allTools.length]);
 
   // Popular search terms
   const popularSearches = [
-    'image compressor',
-    'video converter',
-    'pdf merger',
-    'password generator',
-    'color picker',
-    'qr code',
-    'base64',
-    'text counter'
+    "image compressor",
+    "video converter",
+    "pdf merger",
+    "password generator",
+    "color picker",
+    "qr code",
+    "base64",
+    "text counter",
   ];
 
   // Filter tools based on search
@@ -49,15 +77,16 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
 
     if (searchQuery.trim()) {
       const searchTerm = searchQuery.toLowerCase();
-      filtered = allTools.filter(tool =>
-        tool.name.toLowerCase().includes(searchTerm) ||
-        tool.description.toLowerCase().includes(searchTerm) ||
-        tool.category.toLowerCase().includes(searchTerm)
+      filtered = allTools.filter(
+        (tool) =>
+          tool.name.toLowerCase().includes(searchTerm) ||
+          tool.description.toLowerCase().includes(searchTerm) ||
+          tool.category.toLowerCase().includes(searchTerm),
       );
     }
 
-    if (selectedCategory && selectedCategory !== 'all') {
-      filtered = filtered.filter(tool => tool.category === selectedCategory);
+    if (selectedCategory && selectedCategory !== "all") {
+      filtered = filtered.filter((tool) => tool.category === selectedCategory);
     }
 
     setResults(filtered);
@@ -65,11 +94,12 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
 
     // Update URL
     const params = new URLSearchParams();
-    if (searchQuery.trim()) params.set('q', searchQuery);
-    if (selectedCategory && selectedCategory !== 'all') params.set('category', selectedCategory);
+    if (searchQuery.trim()) params.set("q", searchQuery);
+    if (selectedCategory && selectedCategory !== "all")
+      params.set("category", selectedCategory);
 
     const queryString = params.toString();
-    const newUrl = queryString ? `/search?${queryString}` : '/search';
+    const newUrl = queryString ? `/search?${queryString}` : "/search";
     router.push(newUrl, { scroll: false });
   };
 
@@ -89,7 +119,9 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
   };
 
   const formatToolName = (name) => {
-    return name.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase());
+    return name
+      .replace(/([A-Z])/g, " $1")
+      .replace(/^./, (str) => str.toUpperCase());
   };
 
   return (
@@ -104,7 +136,9 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
               </div>
               <div>
                 <h1 className="text-2xl font-bold">30tools</h1>
-                <p className="text-sm text-muted-foreground">Free Online Toolkit</p>
+                <p className="text-sm text-muted-foreground">
+                  Free Online Toolkit
+                </p>
               </div>
             </Link>
             <div className="flex items-center space-x-2">
@@ -125,13 +159,16 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
               Find the Perfect Tool
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Search through our collection of {allTools.length}+ free online tools.
-              Everything you need for file processing and conversion.
+              Search through our collection of {allTools.length}+ free online
+              tools. Everything you need for file processing and conversion.
             </p>
           </div>
 
           {/* Search Form */}
-          <form onSubmit={handleSearch} className="flex flex-col md:flex-row gap-4 mb-6">
+          <form
+            onSubmit={handleSearch}
+            className="flex flex-col md:flex-row gap-4 mb-6"
+          >
             <div className="relative flex-1">
               <SearchIcon className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
               <Input
@@ -183,20 +220,26 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold">
-              {query || category !== 'all' ? (
+              {query || category !== "all" ? (
                 <>
-                  {loading ? 'Searching...' : `${results.length} tools found`}
-                  {query && <span className="text-muted-foreground ml-2">for "{query}"</span>}
+                  {loading ? "Searching..." : `${results.length} tools found`}
+                  {query && (
+                    <span className="text-muted-foreground ml-2">
+                      for "{query}"
+                    </span>
+                  )}
                 </>
               ) : (
-                'All Tools'
+                "All Tools"
               )}
             </h2>
 
             {results.length > 0 && (
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <TrendingUpIcon className="h-4 w-4" />
-                <span>{results.filter(tool => tool.popular).length} popular tools</span>
+                <span>
+                  {results.filter((tool) => tool.popular).length} popular tools
+                </span>
               </div>
             )}
           </div>
@@ -222,7 +265,9 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
                   <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                     <CardHeader>
                       <div className="flex items-start justify-between">
-                        <CardTitle className="text-lg group-hover:text-primary transition-colors">{formatToolName(tool.name)}</CardTitle>
+                        <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                          {formatToolName(tool.name)}
+                        </CardTitle>
                         {tool.popular && (
                           <Badge variant="secondary" className="ml-2">
                             <TrendingUpIcon className="h-3 w-3 mr-1" />
@@ -237,7 +282,7 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
                     <CardContent>
                       <div className="flex items-center justify-between">
                         <Badge variant="outline" className="capitalize">
-                          {tool.category.replace('-', ' ')}
+                          {tool.category.replace("-", " ")}
                         </Badge>
                         <div className="inline-flex items-center justify-center text-sm px-3 py-1 bg-transparent rounded-md group-hover:bg-primary/10 transition-colors">
                           Try it
@@ -256,7 +301,13 @@ export default function SearchPageServer({ initialTools, initialQuery, initialCa
               <p className="text-muted-foreground mb-4">
                 Try adjusting your search or browse all categories
               </p>
-              <Button onClick={() => { setQuery(''); setCategory('all'); searchTools('', 'all'); }}>
+              <Button
+                onClick={() => {
+                  setQuery("");
+                  setCategory("all");
+                  searchTools("", "all");
+                }}
+              >
                 Show All Tools
               </Button>
             </div>

@@ -1,8 +1,8 @@
-'use client';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Palette } from 'lucide-react';
-import AuthComponent from '@/components/auth/AuthComponent';
+"use client";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Palette } from "lucide-react";
+import AuthComponent from "@/components/auth/AuthComponent";
 
 export default function DesignToolsNavbar() {
   return (
@@ -13,8 +13,12 @@ export default function DesignToolsNavbar() {
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center group-hover:animate-bounce-cute">
               <Palette className="w-5 h-5 text-primary-foreground" />
             </div>
-            <span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">30tools</span>
-            <span className="text-sm text-muted-foreground font-medium">Design</span>
+            <span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              30tools
+            </span>
+            <span className="text-sm text-muted-foreground font-medium">
+              Design
+            </span>
           </Link>
           <div className="flex items-center space-x-2">
             <Link href="/search?">

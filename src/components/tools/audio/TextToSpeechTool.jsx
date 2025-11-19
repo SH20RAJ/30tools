@@ -1,157 +1,171 @@
-'use client'
+"use client";
 
-import { useState, useRef, useEffect } from 'react'
-import { Button } from '@/components/ui/button'
-import { Label } from '@/components/ui/label'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Textarea } from '@/components/ui/textarea'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
-import { Slider } from '@/components/ui/slider'
-import { Play, Pause, Square, Download, Volume2, Settings } from 'lucide-react'
-import { toast } from 'sonner'
+import { useState, useRef, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Slider } from "@/components/ui/slider";
+import { Play, Pause, Square, Download, Volume2, Settings } from "lucide-react";
+import { toast } from "sonner";
 
 export default function TextToSpeechTool() {
-  const [text, setText] = useState('')
-  const [selectedVoice, setSelectedVoice] = useState('')
-  const [rate, setRate] = useState([1])
-  const [pitch, setPitch] = useState([1])
-  const [volume, setVolume] = useState([1])
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [isPaused, setIsPaused] = useState(false)
-  const [voices, setVoices] = useState([])
-  const [audioBlob, setAudioBlob] = useState(null)
-  const speechRef = useRef(null)
-  const mediaRecorderRef = useRef(null)
-  const audioChunksRef = useRef([])
+  const [text, setText] = useState("");
+  const [selectedVoice, setSelectedVoice] = useState("");
+  const [rate, setRate] = useState([1]);
+  const [pitch, setPitch] = useState([1]);
+  const [volume, setVolume] = useState([1]);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const [voices, setVoices] = useState([]);
+  const [audioBlob, setAudioBlob] = useState(null);
+  const speechRef = useRef(null);
+  const mediaRecorderRef = useRef(null);
+  const audioChunksRef = useRef([]);
 
   // Initialize voices when component mounts
   useEffect(() => {
     const loadVoices = () => {
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-        const availableVoices = speechSynthesis.getVoices()
-        setVoices(availableVoices)
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        const availableVoices = speechSynthesis.getVoices();
+        setVoices(availableVoices);
         if (availableVoices.length > 0 && !selectedVoice) {
-          setSelectedVoice(availableVoices[0].name)
+          setSelectedVoice(availableVoices[0].name);
         }
       }
-    }
+    };
 
-    loadVoices()
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      speechSynthesis.addEventListener('voiceschanged', loadVoices)
+    loadVoices();
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      speechSynthesis.addEventListener("voiceschanged", loadVoices);
     }
 
     return () => {
-      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-        speechSynthesis.removeEventListener('voiceschanged', loadVoices)
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        speechSynthesis.removeEventListener("voiceschanged", loadVoices);
       }
-    }
-  }, [])
+    };
+  }, []);
 
   const speakText = () => {
     if (!text.trim()) {
-      toast.error("Please enter text to convert to speech")
-      return
+      toast.error("Please enter text to convert to speech");
+      return;
     }
 
-    if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-      toast.error("Speech synthesis is not supported in this browser")
-      return
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+      toast.error("Speech synthesis is not supported in this browser");
+      return;
     }
 
     if (speechSynthesis.speaking && !speechSynthesis.paused) {
-      speechSynthesis.pause()
-      setIsPaused(true)
-      setIsPlaying(false)
-      return
+      speechSynthesis.pause();
+      setIsPaused(true);
+      setIsPlaying(false);
+      return;
     }
 
     if (speechSynthesis.paused) {
-      speechSynthesis.resume()
-      setIsPaused(false)
-      setIsPlaying(true)
-      return
+      speechSynthesis.resume();
+      setIsPaused(false);
+      setIsPlaying(true);
+      return;
     }
 
     // Create new speech synthesis utterance
-    const utterance = new SpeechSynthesisUtterance(text)
-    
+    const utterance = new SpeechSynthesisUtterance(text);
+
     // Find selected voice
-    const voice = voices.find(v => v.name === selectedVoice)
+    const voice = voices.find((v) => v.name === selectedVoice);
     if (voice) {
-      utterance.voice = voice
+      utterance.voice = voice;
     }
-    
-    utterance.rate = rate[0]
-    utterance.pitch = pitch[0]
-    utterance.volume = volume[0]
+
+    utterance.rate = rate[0];
+    utterance.pitch = pitch[0];
+    utterance.volume = volume[0];
 
     utterance.onstart = () => {
-      setIsPlaying(true)
-      setIsPaused(false)
-    }
+      setIsPlaying(true);
+      setIsPaused(false);
+    };
 
     utterance.onend = () => {
-      setIsPlaying(false)
-      setIsPaused(false)
-    }
+      setIsPlaying(false);
+      setIsPaused(false);
+    };
 
     utterance.onerror = (event) => {
-      toast.error("An error occurred during speech synthesis")
-      setIsPlaying(false)
-      setIsPaused(false)
-    }
+      toast.error("An error occurred during speech synthesis");
+      setIsPlaying(false);
+      setIsPaused(false);
+    };
 
-    speechRef.current = utterance
-    speechSynthesis.speak(utterance)
-  }
+    speechRef.current = utterance;
+    speechSynthesis.speak(utterance);
+  };
 
   const stopSpeech = () => {
-    if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
-      speechSynthesis.cancel()
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      speechSynthesis.cancel();
     }
-    setIsPlaying(false)
-    setIsPaused(false)
-  }
+    setIsPlaying(false);
+    setIsPaused(false);
+  };
 
   const downloadAudio = async () => {
-    if (!('MediaRecorder' in window)) {
-      toast.error("Audio recording is not supported in your browser")
-      return
+    if (!("MediaRecorder" in window)) {
+      toast.error("Audio recording is not supported in your browser");
+      return;
     }
 
     if (!text.trim()) {
-      toast.error("Please enter text to convert to audio")
-      return
+      toast.error("Please enter text to convert to audio");
+      return;
     }
 
     try {
       // Create audio context for recording
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)()
-      const destination = audioContext.createMediaStreamDestination()
-      
+      const audioContext = new (window.AudioContext ||
+        window.webkitAudioContext)();
+      const destination = audioContext.createMediaStreamDestination();
+
       // We'll simulate audio generation since direct TTS recording has limitations
       // In a real implementation, you might use Web Audio API or server-side TTS
-      
-      toast.success("Note: Direct TTS audio download requires additional browser permissions. Using speech synthesis instead.")
-      
+
+      toast.success(
+        "Note: Direct TTS audio download requires additional browser permissions. Using speech synthesis instead.",
+      );
+
       // For now, just play the audio - in production you'd implement proper audio capture
-      speakText()
-      
+      speakText();
     } catch (error) {
-      toast.error("Could not generate downloadable audio file")
+      toast.error("Could not generate downloadable audio file");
     }
-  }
+  };
 
   const getVoicesByLanguage = () => {
     const grouped = voices.reduce((acc, voice) => {
-      const lang = voice.lang.split('-')[0]
-      if (!acc[lang]) acc[lang] = []
-      acc[lang].push(voice)
-      return acc
-    }, {})
-    return grouped
-  }
+      const lang = voice.lang.split("-")[0];
+      if (!acc[lang]) acc[lang] = [];
+      acc[lang].push(voice);
+      return acc;
+    }, {});
+    return grouped;
+  };
 
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-8">
@@ -161,8 +175,9 @@ export default function TextToSpeechTool() {
           <h1 className="text-3xl font-bold">Text to Speech</h1>
         </div>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Convert text to natural-sounding speech using your browser's built-in voice synthesis. 
-          Perfect for accessibility, learning, and content creation.
+          Convert text to natural-sounding speech using your browser's built-in
+          voice synthesis. Perfect for accessibility, learning, and content
+          creation.
         </p>
       </div>
 
@@ -192,7 +207,7 @@ export default function TextToSpeechTool() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-                <Button 
+                <Button
                   onClick={speakText}
                   disabled={!text.trim()}
                   variant={isPlaying ? "secondary" : "default"}
@@ -200,7 +215,7 @@ export default function TextToSpeechTool() {
                   {isPlaying ? (
                     <>
                       <Pause className="h-4 w-4 mr-2" />
-                      {isPaused ? 'Resume' : 'Pause'}
+                      {isPaused ? "Resume" : "Pause"}
                     </>
                   ) : (
                     <>
@@ -209,8 +224,8 @@ export default function TextToSpeechTool() {
                     </>
                   )}
                 </Button>
-                
-                <Button 
+
+                <Button
                   onClick={stopSpeech}
                   disabled={!isPlaying && !isPaused}
                   variant="outline"
@@ -219,7 +234,7 @@ export default function TextToSpeechTool() {
                   Stop
                 </Button>
 
-                <Button 
+                <Button
                   onClick={downloadAudio}
                   disabled={!text.trim()}
                   variant="outline"
@@ -251,18 +266,20 @@ export default function TextToSpeechTool() {
                     <SelectValue placeholder="Select a voice" />
                   </SelectTrigger>
                   <SelectContent>
-                    {Object.entries(getVoicesByLanguage()).map(([lang, langVoices]) => (
-                      <div key={lang}>
-                        <div className="px-2 py-1 text-sm font-semibold text-muted-foreground">
-                          {lang.toUpperCase()}
+                    {Object.entries(getVoicesByLanguage()).map(
+                      ([lang, langVoices]) => (
+                        <div key={lang}>
+                          <div className="px-2 py-1 text-sm font-semibold text-muted-foreground">
+                            {lang.toUpperCase()}
+                          </div>
+                          {langVoices.map((voice) => (
+                            <SelectItem key={voice.name} value={voice.name}>
+                              {voice.name} ({voice.lang})
+                            </SelectItem>
+                          ))}
                         </div>
-                        {langVoices.map((voice) => (
-                          <SelectItem key={voice.name} value={voice.name}>
-                            {voice.name} ({voice.lang})
-                          </SelectItem>
-                        ))}
-                      </div>
-                    ))}
+                      ),
+                    )}
                   </SelectContent>
                 </Select>
               </div>
@@ -327,19 +344,36 @@ export default function TextToSpeechTool() {
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p>
-              Text-to-Speech (TTS) technology converts written text into spoken words using synthetic speech. 
-              Our browser-based TTS tool uses the Web Speech API to provide natural-sounding voice synthesis 
-              without requiring any downloads or installations.
+              Text-to-Speech (TTS) technology converts written text into spoken
+              words using synthetic speech. Our browser-based TTS tool uses the
+              Web Speech API to provide natural-sounding voice synthesis without
+              requiring any downloads or installations.
             </p>
-            
+
             <h3>Key Features:</h3>
             <ul>
-              <li><strong>Multiple Voices:</strong> Choose from various built-in system voices</li>
-              <li><strong>Language Support:</strong> Support for multiple languages and accents</li>
-              <li><strong>Customizable Settings:</strong> Adjust rate, pitch, and volume</li>
-              <li><strong>Real-time Playback:</strong> Instant speech synthesis</li>
-              <li><strong>Pause & Resume:</strong> Full playback control</li>
-              <li><strong>Browser-based:</strong> No software installation required</li>
+              <li>
+                <strong>Multiple Voices:</strong> Choose from various built-in
+                system voices
+              </li>
+              <li>
+                <strong>Language Support:</strong> Support for multiple
+                languages and accents
+              </li>
+              <li>
+                <strong>Customizable Settings:</strong> Adjust rate, pitch, and
+                volume
+              </li>
+              <li>
+                <strong>Real-time Playback:</strong> Instant speech synthesis
+              </li>
+              <li>
+                <strong>Pause & Resume:</strong> Full playback control
+              </li>
+              <li>
+                <strong>Browser-based:</strong> No software installation
+                required
+              </li>
             </ul>
 
             <h3>Common Use Cases:</h3>
@@ -356,21 +390,33 @@ export default function TextToSpeechTool() {
 
             <h3>Voice Settings Explained:</h3>
             <ul>
-              <li><strong>Rate:</strong> Controls speech speed (0.1x to 3x normal speed)</li>
-              <li><strong>Pitch:</strong> Adjusts voice pitch from low to high</li>
-              <li><strong>Volume:</strong> Controls audio output level (0% to 100%)</li>
-              <li><strong>Voice:</strong> Selects different voice personalities and languages</li>
+              <li>
+                <strong>Rate:</strong> Controls speech speed (0.1x to 3x normal
+                speed)
+              </li>
+              <li>
+                <strong>Pitch:</strong> Adjusts voice pitch from low to high
+              </li>
+              <li>
+                <strong>Volume:</strong> Controls audio output level (0% to
+                100%)
+              </li>
+              <li>
+                <strong>Voice:</strong> Selects different voice personalities
+                and languages
+              </li>
             </ul>
 
             <h3>Browser Compatibility:</h3>
             <p>
-              This tool uses the Web Speech API, which is supported by most modern browsers including 
-              Chrome, Firefox, Safari, and Edge. Voice availability may vary depending on your 
-              operating system and browser version.
+              This tool uses the Web Speech API, which is supported by most
+              modern browsers including Chrome, Firefox, Safari, and Edge. Voice
+              availability may vary depending on your operating system and
+              browser version.
             </p>
           </CardContent>
         </Card>
       </div>
     </div>
-  )
+  );
 }

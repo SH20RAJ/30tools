@@ -1,139 +1,160 @@
-import Link from 'next/link'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import { Type, FileText, Hash, AlignLeft, Eye, Search, Shuffle, Key } from 'lucide-react'
+import Link from "next/link";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import {
+  Type,
+  FileText,
+  Hash,
+  AlignLeft,
+  Eye,
+  Search,
+  Shuffle,
+  Key,
+} from "lucide-react";
 
 export const metadata = {
-  title: 'Text Tools - Free Online Text Processing & Analysis',
-  description: "Professional text tools to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
-  keywords: 'text tools, text processing, text formatter, case converter, word counter, password generator, text analysis, string manipulation, text editor, free text tools',
+  title: "Text Tools - Free Online Text Processing & Analysis",
+  description:
+    "Professional text tools to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+  keywords:
+    "text tools, text processing, text formatter, case converter, word counter, password generator, text analysis, string manipulation, text editor, free text tools",
   openGraph: {
-    title: 'Free Text Tools - Text Processing & Analysis',
-    description: 'Professional text processing tools for formatting, analysis, and manipulation. Password generator, case converter, word counter, and more.',
-    type: 'website',
-    url: 'https://30tools.com/text-tools',
+    title: "Free Text Tools - Text Processing & Analysis",
+    description:
+      "Professional text processing tools for formatting, analysis, and manipulation. Password generator, case converter, word counter, and more.",
+    type: "website",
+    url: "https://30tools.com/text-tools",
     images: [
       {
-        url: 'https://30tools.com/og-image.jpg',
+        url: "https://30tools.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: 'Text Tools Collection'
+        alt: "Text Tools Collection",
       },
-    ]
+    ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Free Text Tools - Text Processing & Analysis',
-    description: 'Professional text processing tools for formatting, analysis, and manipulation.',
-    images: ['https://30tools.com/og-image.jpg']
+    card: "summary_large_image",
+    title: "Free Text Tools - Text Processing & Analysis",
+    description:
+      "Professional text processing tools for formatting, analysis, and manipulation.",
+    images: ["https://30tools.com/og-image.jpg"],
   },
   alternates: {
-    canonical: 'https://30tools.com/text-tools'
+    canonical: "https://30tools.com/text-tools",
   },
-}
+};
 
 const textTools = [
   {
-    name: 'Password Generator',
-    description: 'Generate secure passwords with customizable length and character sets',
-    href: '/password-generator',
+    name: "Password Generator",
+    description:
+      "Generate secure passwords with customizable length and character sets",
+    href: "/password-generator",
     icon: Key,
-    category: 'Security',
-    featured: true
+    category: "Security",
+    featured: true,
   },
   {
-    name: 'Text Formatter',
-    description: 'Format and clean text with various formatting options',
-    href: '/text-formatter', 
+    name: "Text Formatter",
+    description: "Format and clean text with various formatting options",
+    href: "/text-formatter",
     icon: AlignLeft,
-    category: 'Formatting'
+    category: "Formatting",
   },
   {
-    name: 'Case Converter',
-    description: 'Convert text between different cases (uppercase, lowercase, title case)',
-    href: '/case-converter',
+    name: "Case Converter",
+    description:
+      "Convert text between different cases (uppercase, lowercase, title case)",
+    href: "/case-converter",
     icon: Type,
-    category: 'Formatting'
+    category: "Formatting",
   },
   {
-    name: 'Word Counter',
-    description: 'Count words, characters, sentences, and paragraphs in text',
-    href: '/word-counter',
+    name: "Word Counter",
+    description: "Count words, characters, sentences, and paragraphs in text",
+    href: "/word-counter",
     icon: Hash,
-    category: 'Analysis'
+    category: "Analysis",
   },
   {
-    name: 'Text Diff',
-    description: 'Compare two texts and highlight differences',
-    href: '/text-diff',
+    name: "Text Diff",
+    description: "Compare two texts and highlight differences",
+    href: "/text-diff",
     icon: Eye,
-    category: 'Comparison'
+    category: "Comparison",
   },
   {
-    name: 'Lorem Ipsum Generator',
-    description: 'Generate placeholder text for design and development',
-    href: '/lorem-ipsum',
+    name: "Lorem Ipsum Generator",
+    description: "Generate placeholder text for design and development",
+    href: "/lorem-ipsum",
     icon: FileText,
-    category: 'Generation'
+    category: "Generation",
   },
   {
-    name: 'Text to Binary',
-    description: 'Convert text to binary and binary to text',
-    href: '/binary-converter',
+    name: "Text to Binary",
+    description: "Convert text to binary and binary to text",
+    href: "/binary-converter",
     icon: Hash,
-    category: 'Conversion',
-    featured: true
+    category: "Conversion",
+    featured: true,
   },
   {
-    name: 'Text Reverser',
-    description: 'Reverse text characters or words order',
-    href: '/text-reverser',
+    name: "Text Reverser",
+    description: "Reverse text characters or words order",
+    href: "/text-reverser",
     icon: Shuffle,
-    category: 'Manipulation'
+    category: "Manipulation",
   },
   {
-    name: 'Remove Duplicates',
-    description: 'Remove duplicate lines from text',
-    href: '/remove-duplicates',
+    name: "Remove Duplicates",
+    description: "Remove duplicate lines from text",
+    href: "/remove-duplicates",
     icon: FileText,
-    category: 'Cleaning'
+    category: "Cleaning",
   },
   {
-    name: 'Line Sorter',
-    description: 'Sort text lines alphabetically or numerically',
-    href: '/line-sorter',
+    name: "Line Sorter",
+    description: "Sort text lines alphabetically or numerically",
+    href: "/line-sorter",
     icon: AlignLeft,
-    category: 'Sorting'
+    category: "Sorting",
   },
   {
-    name: 'Text Encoder/Decoder',
-    description: 'Encode and decode text using various methods',
-    href: '/text-encoder',
+    name: "Text Encoder/Decoder",
+    description: "Encode and decode text using various methods",
+    href: "/text-encoder",
     icon: Hash,
-    category: 'Encoding'
+    category: "Encoding",
   },
   {
-    name: 'Regex Tester',
-    description: 'Test and validate regular expressions',
-    href: '/code-tools',
+    name: "Regex Tester",
+    description: "Test and validate regular expressions",
+    href: "/code-tools",
     icon: Search,
-    category: 'Validation'
+    category: "Validation",
   },
-]
+];
 
 const categories = [
-  { name: 'Security', count: 1, color: 'bg-destructive/20 text-destructive' },
-  { name: 'Formatting', count: 3, color: 'bg-muted text-foreground' },
-  { name: 'Analysis', count: 1, color: 'bg-muted text-foreground' },
-  { name: 'Conversion', count: 2, color: 'bg-muted text-foreground' },
-  { name: 'Generation', count: 1, color: 'bg-muted text-primary' },
-  { name: 'Manipulation', count: 2, color: 'bg-muted text-primary' },
-  { name: 'Other', count: 3, color: 'bg-gray-100 text-foreground' }
-]
+  { name: "Security", count: 1, color: "bg-destructive/20 text-destructive" },
+  { name: "Formatting", count: 3, color: "bg-muted text-foreground" },
+  { name: "Analysis", count: 1, color: "bg-muted text-foreground" },
+  { name: "Conversion", count: 2, color: "bg-muted text-foreground" },
+  { name: "Generation", count: 1, color: "bg-muted text-primary" },
+  { name: "Manipulation", count: 2, color: "bg-muted text-primary" },
+  { name: "Other", count: 3, color: "bg-gray-100 text-foreground" },
+];
 
 export default function TextToolsPage() {
-  const featuredTools = textTools.filter(tool => tool.featured)
-  const allTools = textTools
+  const featuredTools = textTools.filter((tool) => tool.featured);
+  const allTools = textTools;
 
   return (
     <div className="max-w-7xl mx-auto p-6 space-y-8">
@@ -144,8 +165,9 @@ export default function TextToolsPage() {
           <h1 className="text-4xl font-bold">Text Tools</h1>
         </div>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Professional text processing and analysis tools for formatting, manipulation, 
-          and content creation. All tools work directly in your browser.
+          Professional text processing and analysis tools for formatting,
+          manipulation, and content creation. All tools work directly in your
+          browser.
         </p>
       </div>
 
@@ -153,7 +175,9 @@ export default function TextToolsPage() {
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         <Card>
           <CardContent className="p-4 text-center">
-            <div className="text-2xl font-bold text-primary">{textTools.length}+</div>
+            <div className="text-2xl font-bold text-primary">
+              {textTools.length}+
+            </div>
             <div className="text-sm text-muted-foreground">Text Tools</div>
           </CardContent>
         </Card>
@@ -199,9 +223,12 @@ export default function TextToolsPage() {
           <h2 className="text-2xl font-bold mb-4">Featured Tools</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredTools.map((tool) => {
-              const IconComponent = tool.icon
+              const IconComponent = tool.icon;
               return (
-                <Card key={tool.name} className="hover:shadow-lg transition-shadow border-primary/20">
+                <Card
+                  key={tool.name}
+                  className="hover:shadow-lg transition-shadow border-primary/20"
+                >
                   <CardHeader>
                     <div className="flex items-center gap-3">
                       <div className="p-2 bg-primary/10 rounded-lg">
@@ -226,7 +253,7 @@ export default function TextToolsPage() {
                     </Link>
                   </CardContent>
                 </Card>
-              )
+              );
             })}
           </div>
         </div>
@@ -237,9 +264,12 @@ export default function TextToolsPage() {
         <h2 className="text-2xl font-bold mb-4">All Text Tools</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {allTools.map((tool) => {
-            const IconComponent = tool.icon
+            const IconComponent = tool.icon;
             return (
-              <Card key={tool.name} className="hover:shadow-lg transition-shadow">
+              <Card
+                key={tool.name}
+                className="hover:shadow-lg transition-shadow"
+              >
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     <div className="p-2 bg-muted rounded-lg">
@@ -264,7 +294,7 @@ export default function TextToolsPage() {
                   </Link>
                 </CardContent>
               </Card>
-            )
+            );
           })}
         </div>
       </div>
@@ -277,18 +307,35 @@ export default function TextToolsPage() {
           </CardHeader>
           <CardContent className="prose max-w-none">
             <p>
-              Text processing tools are essential utilities for anyone working with written content, 
-              from developers and content creators to students and professionals. Our comprehensive 
-              collection of text tools helps you format, analyze, manipulate, and convert text efficiently.
+              Text processing tools are essential utilities for anyone working
+              with written content, from developers and content creators to
+              students and professionals. Our comprehensive collection of text
+              tools helps you format, analyze, manipulate, and convert text
+              efficiently.
             </p>
-            
+
             <h3>Why Use Text Tools?</h3>
             <ul>
-              <li><strong>Productivity:</strong> Automate repetitive text tasks and save time</li>
-              <li><strong>Accuracy:</strong> Eliminate manual errors in text processing</li>
-              <li><strong>Convenience:</strong> Process text directly in your browser</li>
-              <li><strong>Versatility:</strong> Handle various text formats and requirements</li>
-              <li><strong>Privacy:</strong> All processing happens locally in your browser</li>
+              <li>
+                <strong>Productivity:</strong> Automate repetitive text tasks
+                and save time
+              </li>
+              <li>
+                <strong>Accuracy:</strong> Eliminate manual errors in text
+                processing
+              </li>
+              <li>
+                <strong>Convenience:</strong> Process text directly in your
+                browser
+              </li>
+              <li>
+                <strong>Versatility:</strong> Handle various text formats and
+                requirements
+              </li>
+              <li>
+                <strong>Privacy:</strong> All processing happens locally in your
+                browser
+              </li>
             </ul>
 
             <h3>Common Use Cases:</h3>
@@ -303,12 +350,30 @@ export default function TextToolsPage() {
 
             <h3>Tool Categories:</h3>
             <ul>
-              <li><strong>Security Tools:</strong> Password generators and validators</li>
-              <li><strong>Formatting Tools:</strong> Case converters and text formatters</li>
-              <li><strong>Analysis Tools:</strong> Word counters and text analyzers</li>
-              <li><strong>Conversion Tools:</strong> Encoding, decoding, and format conversion</li>
-              <li><strong>Generation Tools:</strong> Lorem ipsum and placeholder text</li>
-              <li><strong>Manipulation Tools:</strong> Text reversal, sorting, and cleaning</li>
+              <li>
+                <strong>Security Tools:</strong> Password generators and
+                validators
+              </li>
+              <li>
+                <strong>Formatting Tools:</strong> Case converters and text
+                formatters
+              </li>
+              <li>
+                <strong>Analysis Tools:</strong> Word counters and text
+                analyzers
+              </li>
+              <li>
+                <strong>Conversion Tools:</strong> Encoding, decoding, and
+                format conversion
+              </li>
+              <li>
+                <strong>Generation Tools:</strong> Lorem ipsum and placeholder
+                text
+              </li>
+              <li>
+                <strong>Manipulation Tools:</strong> Text reversal, sorting, and
+                cleaning
+              </li>
             </ul>
           </CardContent>
         </Card>
@@ -319,37 +384,38 @@ export default function TextToolsPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'CollectionPage',
-            name: 'Text Tools Collection',
-            description: 'Comprehensive collection of free text processing and analysis tools',
-            url: 'https://30tools.com/text-tools',
+            "@context": "https://schema.org",
+            "@type": "CollectionPage",
+            name: "Text Tools Collection",
+            description:
+              "Comprehensive collection of free text processing and analysis tools",
+            url: "https://30tools.com/text-tools",
             mainEntity: {
-              '@type': 'ItemList',
+              "@type": "ItemList",
               numberOfItems: textTools.length,
               itemListElement: textTools.map((tool, index) => ({
-                '@type': 'SoftwareApplication',
+                "@type": "SoftwareApplication",
                 position: index + 1,
                 name: tool.name,
                 description: tool.description,
                 url: `https://30tools.com${tool.href}`,
-                applicationCategory: 'UtilityApplication',
-                operatingSystem: 'Any',
+                applicationCategory: "UtilityApplication",
+                operatingSystem: "Any",
                 offers: {
-                  '@type': 'Offer',
-                  price: '0',
-                  priceCurrency: 'USD'
+                  "@type": "Offer",
+                  price: "0",
+                  priceCurrency: "USD",
                 },
-              }))
+              })),
             },
             provider: {
-              '@type': 'Organization',
-              name: '30tools',
-              url: 'https://30tools.com'
+              "@type": "Organization",
+              name: "30tools",
+              url: "https://30tools.com",
             },
-          })
+          }),
         }}
       />
     </div>
-  )
+  );
 }

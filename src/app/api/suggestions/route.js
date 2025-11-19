@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
 const suggestions = [
   "image compressor",
@@ -20,19 +20,19 @@ const suggestions = [
   "color picker",
   "json formatter",
   "css minifier",
-  "password generator"
+  "password generator",
 ];
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const query = searchParams.get('q')?.toLowerCase() || '';
+  const query = searchParams.get("q")?.toLowerCase() || "";
 
   if (!query.trim()) {
     return NextResponse.json([query, []]);
   }
 
   const filtered = suggestions
-    .filter(suggestion => suggestion.includes(query))
+    .filter((suggestion) => suggestion.includes(query))
     .slice(0, 8);
 
   // Return in OpenSearch suggestion format

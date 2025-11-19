@@ -1,36 +1,42 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Textarea } from '@/components/ui/textarea';
-import { Switch } from '@/components/ui/switch';
-import { Slider } from '@/components/ui/slider';
-import { 
-  SettingsIcon, 
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
+import { Switch } from "@/components/ui/switch";
+import { Slider } from "@/components/ui/slider";
+import {
+  SettingsIcon,
   PaletteIcon,
   CodeIcon,
   ZapIcon,
   ShieldIcon,
-  TrendingUpIcon
-} from 'lucide-react';
+  TrendingUpIcon,
+} from "lucide-react";
 
-export default function TeraboxAdvancedTools({ 
-  advancedSettings, 
+export default function TeraboxAdvancedTools({
+  advancedSettings,
   onSettingsChange,
   selectedPlayer,
-  selectedTheme 
+  selectedTheme,
 }) {
-  const [activeTab, setActiveTab] = useState('appearance');
+  const [activeTab, setActiveTab] = useState("appearance");
 
   const handleSettingChange = (key, value) => {
     onSettingsChange({
       ...advancedSettings,
-      [key]: value
+      [key]: value,
     });
   };
 
@@ -39,8 +45,8 @@ export default function TeraboxAdvancedTools({
       ...advancedSettings,
       [category]: {
         ...advancedSettings[category],
-        [key]: value
-      }
+        [key]: value,
+      },
     });
   };
 
@@ -76,13 +82,29 @@ export default function TeraboxAdvancedTools({
                     <Input
                       id="primary-color"
                       type="color"
-                      value={advancedSettings.appearance?.primaryColor || '#3b82f6'}
-                      onChange={(e) => handleNestedSettingChange('appearance', 'primaryColor', e.target.value)}
+                      value={
+                        advancedSettings.appearance?.primaryColor || "#3b82f6"
+                      }
+                      onChange={(e) =>
+                        handleNestedSettingChange(
+                          "appearance",
+                          "primaryColor",
+                          e.target.value,
+                        )
+                      }
                       className="w-16 h-10"
                     />
                     <Input
-                      value={advancedSettings.appearance?.primaryColor || '#3b82f6'}
-                      onChange={(e) => handleNestedSettingChange('appearance', 'primaryColor', e.target.value)}
+                      value={
+                        advancedSettings.appearance?.primaryColor || "#3b82f6"
+                      }
+                      onChange={(e) =>
+                        handleNestedSettingChange(
+                          "appearance",
+                          "primaryColor",
+                          e.target.value,
+                        )
+                      }
                       placeholder="#3b82f6"
                     />
                   </div>
@@ -93,13 +115,29 @@ export default function TeraboxAdvancedTools({
                     <Input
                       id="accent-color"
                       type="color"
-                      value={advancedSettings.appearance?.accentColor || '#10b981'}
-                      onChange={(e) => handleNestedSettingChange('appearance', 'accentColor', e.target.value)}
+                      value={
+                        advancedSettings.appearance?.accentColor || "#10b981"
+                      }
+                      onChange={(e) =>
+                        handleNestedSettingChange(
+                          "appearance",
+                          "accentColor",
+                          e.target.value,
+                        )
+                      }
                       className="w-16 h-10"
                     />
                     <Input
-                      value={advancedSettings.appearance?.accentColor || '#10b981'}
-                      onChange={(e) => handleNestedSettingChange('appearance', 'accentColor', e.target.value)}
+                      value={
+                        advancedSettings.appearance?.accentColor || "#10b981"
+                      }
+                      onChange={(e) =>
+                        handleNestedSettingChange(
+                          "appearance",
+                          "accentColor",
+                          e.target.value,
+                        )
+                      }
                       placeholder="#10b981"
                     />
                   </div>
@@ -108,10 +146,19 @@ export default function TeraboxAdvancedTools({
 
               {/* Border Radius */}
               <div className="space-y-2">
-                <Label>Border Radius: {advancedSettings.appearance?.borderRadius || 8}px</Label>
+                <Label>
+                  Border Radius:{" "}
+                  {advancedSettings.appearance?.borderRadius || 8}px
+                </Label>
                 <Slider
                   value={[advancedSettings.appearance?.borderRadius || 8]}
-                  onValueChange={(value) => handleNestedSettingChange('appearance', 'borderRadius', value[0])}
+                  onValueChange={(value) =>
+                    handleNestedSettingChange(
+                      "appearance",
+                      "borderRadius",
+                      value[0],
+                    )
+                  }
                   max={50}
                   min={0}
                   step={1}
@@ -121,10 +168,19 @@ export default function TeraboxAdvancedTools({
 
               {/* Shadow */}
               <div className="space-y-2">
-                <Label>Shadow Intensity: {advancedSettings.appearance?.shadowIntensity || 3}</Label>
+                <Label>
+                  Shadow Intensity:{" "}
+                  {advancedSettings.appearance?.shadowIntensity || 3}
+                </Label>
                 <Slider
                   value={[advancedSettings.appearance?.shadowIntensity || 3]}
-                  onValueChange={(value) => handleNestedSettingChange('appearance', 'shadowIntensity', value[0])}
+                  onValueChange={(value) =>
+                    handleNestedSettingChange(
+                      "appearance",
+                      "shadowIntensity",
+                      value[0],
+                    )
+                  }
                   max={10}
                   min={0}
                   step={1}
@@ -141,8 +197,14 @@ export default function TeraboxAdvancedTools({
 .video-player {
   /* Custom styles */
 }"
-                  value={advancedSettings.appearance?.customCSS || ''}
-                  onChange={(e) => handleNestedSettingChange('appearance', 'customCSS', e.target.value)}
+                  value={advancedSettings.appearance?.customCSS || ""}
+                  onChange={(e) =>
+                    handleNestedSettingChange(
+                      "appearance",
+                      "customCSS",
+                      e.target.value,
+                    )
+                  }
                   rows={6}
                 />
               </div>
@@ -156,8 +218,14 @@ export default function TeraboxAdvancedTools({
                     <Input
                       id="logo-url"
                       placeholder="https://example.com/logo.png"
-                      value={advancedSettings.appearance?.logoUrl || ''}
-                      onChange={(e) => handleNestedSettingChange('appearance', 'logoUrl', e.target.value)}
+                      value={advancedSettings.appearance?.logoUrl || ""}
+                      onChange={(e) =>
+                        handleNestedSettingChange(
+                          "appearance",
+                          "logoUrl",
+                          e.target.value,
+                        )
+                      }
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -165,7 +233,13 @@ export default function TeraboxAdvancedTools({
                     <Switch
                       id="show-logo"
                       checked={advancedSettings.appearance?.showLogo || false}
-                      onCheckedChange={(checked) => handleNestedSettingChange('appearance', 'showLogo', checked)}
+                      onCheckedChange={(checked) =>
+                        handleNestedSettingChange(
+                          "appearance",
+                          "showLogo",
+                          checked,
+                        )
+                      }
                     />
                   </div>
                 </div>
@@ -187,23 +261,45 @@ export default function TeraboxAdvancedTools({
                   <Switch
                     id="auto-quality"
                     checked={advancedSettings.behavior?.autoQuality || true}
-                    onCheckedChange={(checked) => handleNestedSettingChange('behavior', 'autoQuality', checked)}
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "behavior",
+                        "autoQuality",
+                        checked,
+                      )
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
                   <Label htmlFor="remember-position">Remember Position</Label>
                   <Switch
                     id="remember-position"
-                    checked={advancedSettings.behavior?.rememberPosition || false}
-                    onCheckedChange={(checked) => handleNestedSettingChange('behavior', 'rememberPosition', checked)}
+                    checked={
+                      advancedSettings.behavior?.rememberPosition || false
+                    }
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "behavior",
+                        "rememberPosition",
+                        checked,
+                      )
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
                   <Label htmlFor="keyboard-shortcuts">Keyboard Shortcuts</Label>
                   <Switch
                     id="keyboard-shortcuts"
-                    checked={advancedSettings.behavior?.keyboardShortcuts || true}
-                    onCheckedChange={(checked) => handleNestedSettingChange('behavior', 'keyboardShortcuts', checked)}
+                    checked={
+                      advancedSettings.behavior?.keyboardShortcuts || true
+                    }
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "behavior",
+                        "keyboardShortcuts",
+                        checked,
+                      )
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -211,17 +307,32 @@ export default function TeraboxAdvancedTools({
                   <Switch
                     id="click-to-play"
                     checked={advancedSettings.behavior?.clickToPlay || true}
-                    onCheckedChange={(checked) => handleNestedSettingChange('behavior', 'clickToPlay', checked)}
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "behavior",
+                        "clickToPlay",
+                        checked,
+                      )
+                    }
                   />
                 </div>
               </div>
 
               {/* Volume Settings */}
               <div className="space-y-2">
-                <Label>Default Volume: {advancedSettings.behavior?.defaultVolume || 80}%</Label>
+                <Label>
+                  Default Volume:{" "}
+                  {advancedSettings.behavior?.defaultVolume || 80}%
+                </Label>
                 <Slider
                   value={[advancedSettings.behavior?.defaultVolume || 80]}
-                  onValueChange={(value) => handleNestedSettingChange('behavior', 'defaultVolume', value[0])}
+                  onValueChange={(value) =>
+                    handleNestedSettingChange(
+                      "behavior",
+                      "defaultVolume",
+                      value[0],
+                    )
+                  }
                   max={100}
                   min={0}
                   step={5}
@@ -232,9 +343,15 @@ export default function TeraboxAdvancedTools({
               {/* Playback Speed */}
               <div className="space-y-2">
                 <Label>Default Playback Speed</Label>
-                <Select 
+                <Select
                   value={String(advancedSettings.behavior?.defaultSpeed || 1)}
-                  onValueChange={(value) => handleNestedSettingChange('behavior', 'defaultSpeed', parseFloat(value))}
+                  onValueChange={(value) =>
+                    handleNestedSettingChange(
+                      "behavior",
+                      "defaultSpeed",
+                      parseFloat(value),
+                    )
+                  }
                 >
                   <SelectTrigger>
                     <SelectValue />
@@ -252,10 +369,14 @@ export default function TeraboxAdvancedTools({
 
               {/* Seek Settings */}
               <div className="space-y-2">
-                <Label>Seek Step: {advancedSettings.behavior?.seekStep || 10} seconds</Label>
+                <Label>
+                  Seek Step: {advancedSettings.behavior?.seekStep || 10} seconds
+                </Label>
                 <Slider
                   value={[advancedSettings.behavior?.seekStep || 10]}
-                  onValueChange={(value) => handleNestedSettingChange('behavior', 'seekStep', value[0])}
+                  onValueChange={(value) =>
+                    handleNestedSettingChange("behavior", "seekStep", value[0])
+                  }
                   max={60}
                   min={5}
                   step={5}
@@ -275,9 +396,11 @@ export default function TeraboxAdvancedTools({
               {/* Preload Settings */}
               <div className="space-y-2">
                 <Label>Preload Strategy</Label>
-                <Select 
-                  value={advancedSettings.performance?.preload || 'metadata'}
-                  onValueChange={(value) => handleNestedSettingChange('performance', 'preload', value)}
+                <Select
+                  value={advancedSettings.performance?.preload || "metadata"}
+                  onValueChange={(value) =>
+                    handleNestedSettingChange("performance", "preload", value)
+                  }
                 >
                   <SelectTrigger>
                     <SelectValue />
@@ -292,10 +415,19 @@ export default function TeraboxAdvancedTools({
 
               {/* Buffer Settings */}
               <div className="space-y-2">
-                <Label>Buffer Size: {advancedSettings.performance?.bufferSize || 30} seconds</Label>
+                <Label>
+                  Buffer Size: {advancedSettings.performance?.bufferSize || 30}{" "}
+                  seconds
+                </Label>
                 <Slider
                   value={[advancedSettings.performance?.bufferSize || 30]}
-                  onValueChange={(value) => handleNestedSettingChange('performance', 'bufferSize', value[0])}
+                  onValueChange={(value) =>
+                    handleNestedSettingChange(
+                      "performance",
+                      "bufferSize",
+                      value[0],
+                    )
+                  }
                   max={120}
                   min={10}
                   step={10}
@@ -306,9 +438,17 @@ export default function TeraboxAdvancedTools({
               {/* Quality Settings */}
               <div className="space-y-2">
                 <Label>Preferred Quality</Label>
-                <Select 
-                  value={advancedSettings.performance?.preferredQuality || 'auto'}
-                  onValueChange={(value) => handleNestedSettingChange('performance', 'preferredQuality', value)}
+                <Select
+                  value={
+                    advancedSettings.performance?.preferredQuality || "auto"
+                  }
+                  onValueChange={(value) =>
+                    handleNestedSettingChange(
+                      "performance",
+                      "preferredQuality",
+                      value,
+                    )
+                  }
                 >
                   <SelectTrigger>
                     <SelectValue />
@@ -326,11 +466,21 @@ export default function TeraboxAdvancedTools({
               {/* Performance Toggles */}
               <div className="grid grid-cols-1 gap-4">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="hardware-acceleration">Hardware Acceleration</Label>
+                  <Label htmlFor="hardware-acceleration">
+                    Hardware Acceleration
+                  </Label>
                   <Switch
                     id="hardware-acceleration"
-                    checked={advancedSettings.performance?.hardwareAcceleration || true}
-                    onCheckedChange={(checked) => handleNestedSettingChange('performance', 'hardwareAcceleration', checked)}
+                    checked={
+                      advancedSettings.performance?.hardwareAcceleration || true
+                    }
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "performance",
+                        "hardwareAcceleration",
+                        checked,
+                      )
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -338,15 +488,29 @@ export default function TeraboxAdvancedTools({
                   <Switch
                     id="lazy-loading"
                     checked={advancedSettings.performance?.lazyLoading || false}
-                    onCheckedChange={(checked) => handleNestedSettingChange('performance', 'lazyLoading', checked)}
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "performance",
+                        "lazyLoading",
+                        checked,
+                      )
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
                   <Label htmlFor="adaptive-streaming">Adaptive Streaming</Label>
                   <Switch
                     id="adaptive-streaming"
-                    checked={advancedSettings.performance?.adaptiveStreaming || true}
-                    onCheckedChange={(checked) => handleNestedSettingChange('performance', 'adaptiveStreaming', checked)}
+                    checked={
+                      advancedSettings.performance?.adaptiveStreaming || true
+                    }
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "performance",
+                        "adaptiveStreaming",
+                        checked,
+                      )
+                    }
                   />
                 </div>
               </div>
@@ -362,14 +526,22 @@ export default function TeraboxAdvancedTools({
 
               {/* Domain Restrictions */}
               <div className="space-y-2">
-                <Label htmlFor="allowed-domains">Allowed Domains (one per line)</Label>
+                <Label htmlFor="allowed-domains">
+                  Allowed Domains (one per line)
+                </Label>
                 <Textarea
                   id="allowed-domains"
                   placeholder="example.com
 *.mydomain.com
 localhost"
-                  value={advancedSettings.security?.allowedDomains || ''}
-                  onChange={(e) => handleNestedSettingChange('security', 'allowedDomains', e.target.value)}
+                  value={advancedSettings.security?.allowedDomains || ""}
+                  onChange={(e) =>
+                    handleNestedSettingChange(
+                      "security",
+                      "allowedDomains",
+                      e.target.value,
+                    )
+                  }
                   rows={4}
                 />
               </div>
@@ -377,19 +549,37 @@ localhost"
               {/* Security Toggles */}
               <div className="grid grid-cols-1 gap-4">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="disable-right-click">Disable Right Click</Label>
+                  <Label htmlFor="disable-right-click">
+                    Disable Right Click
+                  </Label>
                   <Switch
                     id="disable-right-click"
-                    checked={advancedSettings.security?.disableRightClick || false}
-                    onCheckedChange={(checked) => handleNestedSettingChange('security', 'disableRightClick', checked)}
+                    checked={
+                      advancedSettings.security?.disableRightClick || false
+                    }
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "security",
+                        "disableRightClick",
+                        checked,
+                      )
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
                   <Label htmlFor="disable-download">Disable Download</Label>
                   <Switch
                     id="disable-download"
-                    checked={advancedSettings.security?.disableDownload || false}
-                    onCheckedChange={(checked) => handleNestedSettingChange('security', 'disableDownload', checked)}
+                    checked={
+                      advancedSettings.security?.disableDownload || false
+                    }
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "security",
+                        "disableDownload",
+                        checked,
+                      )
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -397,15 +587,29 @@ localhost"
                   <Switch
                     id="require-https"
                     checked={advancedSettings.security?.requireHttps || true}
-                    onCheckedChange={(checked) => handleNestedSettingChange('security', 'requireHttps', checked)}
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "security",
+                        "requireHttps",
+                        checked,
+                      )
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
                   <Label htmlFor="analytics-tracking">Analytics Tracking</Label>
                   <Switch
                     id="analytics-tracking"
-                    checked={advancedSettings.security?.analyticsTracking || false}
-                    onCheckedChange={(checked) => handleNestedSettingChange('security', 'analyticsTracking', checked)}
+                    checked={
+                      advancedSettings.security?.analyticsTracking || false
+                    }
+                    onCheckedChange={(checked) =>
+                      handleNestedSettingChange(
+                        "security",
+                        "analyticsTracking",
+                        checked,
+                      )
+                    }
                   />
                 </div>
               </div>
@@ -413,9 +617,15 @@ localhost"
               {/* Expiration Settings */}
               <div className="space-y-2">
                 <Label>Link Expiration</Label>
-                <Select 
-                  value={advancedSettings.security?.linkExpiration || 'never'}
-                  onValueChange={(value) => handleNestedSettingChange('security', 'linkExpiration', value)}
+                <Select
+                  value={advancedSettings.security?.linkExpiration || "never"}
+                  onValueChange={(value) =>
+                    handleNestedSettingChange(
+                      "security",
+                      "linkExpiration",
+                      value,
+                    )
+                  }
                 >
                   <SelectTrigger>
                     <SelectValue />
@@ -437,8 +647,14 @@ localhost"
                   id="password-protection"
                   type="password"
                   placeholder="Enter password to protect video"
-                  value={advancedSettings.security?.password || ''}
-                  onChange={(e) => handleNestedSettingChange('security', 'password', e.target.value)}
+                  value={advancedSettings.security?.password || ""}
+                  onChange={(e) =>
+                    handleNestedSettingChange(
+                      "security",
+                      "password",
+                      e.target.value,
+                    )
+                  }
                 />
               </div>
             </div>

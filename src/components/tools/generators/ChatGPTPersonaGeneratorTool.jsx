@@ -1,83 +1,124 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Copy, Shuffle, Sparkles, Download, Share2, RefreshCw } from 'lucide-react';
-import { toast } from 'sonner';
+import React, { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  Copy,
+  Shuffle,
+  Sparkles,
+  Download,
+  Share2,
+  RefreshCw,
+} from "lucide-react";
+import { toast } from "sonner";
 // Import SocialShareButtons component
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 const ChatGPTPersonaGeneratorTool = () => {
-  const [persona, setPersona] = useState('');
-  const [customInput, setCustomInput] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedTone, setSelectedTone] = useState('');
+  const [persona, setPersona] = useState("");
+  const [customInput, setCustomInput] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedTone, setSelectedTone] = useState("");
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedPersonas, setGeneratedPersonas] = useState([]);
 
   const categories = [
-    { id: 'creative', name: 'Creative Writer', icon: '✍️' },
-    { id: 'technical', name: 'Tech Expert', icon: '💻' },
-    { id: 'business', name: 'Business Guru', icon: '💼' },
-    { id: 'academic', name: 'Academic Scholar', icon: '🎓' },
-    { id: 'comedian', name: 'Comedian', icon: '😂' },
-    { id: 'philosopher', name: 'Philosopher', icon: '🤔' },
-    { id: 'scientist', name: 'Scientist', icon: '🔬' },
-    { id: 'artist', name: 'Artist', icon: '🎨' },
-    { id: 'therapist', name: 'Therapist', icon: '🧠' },
-    { id: 'chef', name: 'Chef', icon: '👨‍🍳' },
-    { id: 'fitness', name: 'Fitness Coach', icon: '💪' },
-    { id: 'travel', name: 'Travel Guide', icon: '✈️' }
+    { id: "creative", name: "Creative Writer", icon: "✍️" },
+    { id: "technical", name: "Tech Expert", icon: "💻" },
+    { id: "business", name: "Business Guru", icon: "💼" },
+    { id: "academic", name: "Academic Scholar", icon: "🎓" },
+    { id: "comedian", name: "Comedian", icon: "😂" },
+    { id: "philosopher", name: "Philosopher", icon: "🤔" },
+    { id: "scientist", name: "Scientist", icon: "🔬" },
+    { id: "artist", name: "Artist", icon: "🎨" },
+    { id: "therapist", name: "Therapist", icon: "🧠" },
+    { id: "chef", name: "Chef", icon: "👨‍🍳" },
+    { id: "fitness", name: "Fitness Coach", icon: "💪" },
+    { id: "travel", name: "Travel Guide", icon: "✈️" },
   ];
 
   const tones = [
-    { id: 'quirky', name: 'Quirky & Fun', description: 'Playful and unconventional' },
-    { id: 'professional', name: 'Professional', description: 'Formal and authoritative' },
-    { id: 'sarcastic', name: 'Sarcastic', description: 'Witty with a bite' },
-    { id: 'enthusiastic', name: 'Enthusiastic', description: 'Energetic and passionate' },
-    { id: 'mysterious', name: 'Mysterious', description: 'Enigmatic and intriguing' },
-    { id: 'friendly', name: 'Friendly', description: 'Warm and approachable' },
-    { id: 'dramatic', name: 'Dramatic', description: 'Theatrical and intense' },
-    { id: 'zen', name: 'Zen Master', description: 'Calm and philosophical' }
+    {
+      id: "quirky",
+      name: "Quirky & Fun",
+      description: "Playful and unconventional",
+    },
+    {
+      id: "professional",
+      name: "Professional",
+      description: "Formal and authoritative",
+    },
+    { id: "sarcastic", name: "Sarcastic", description: "Witty with a bite" },
+    {
+      id: "enthusiastic",
+      name: "Enthusiastic",
+      description: "Energetic and passionate",
+    },
+    {
+      id: "mysterious",
+      name: "Mysterious",
+      description: "Enigmatic and intriguing",
+    },
+    { id: "friendly", name: "Friendly", description: "Warm and approachable" },
+    { id: "dramatic", name: "Dramatic", description: "Theatrical and intense" },
+    { id: "zen", name: "Zen Master", description: "Calm and philosophical" },
   ];
 
   const presetPersonas = [
     {
       name: "The Overly Enthusiastic Intern",
-      prompt: "You are an overly enthusiastic intern who just discovered AI. You use excessive exclamation points, relate everything to your college experience, and constantly mention how 'mind-blown' you are. You end every response with a suggestion to 'grab coffee and brainstorm more ideas!!!'"
+      prompt:
+        "You are an overly enthusiastic intern who just discovered AI. You use excessive exclamation points, relate everything to your college experience, and constantly mention how 'mind-blown' you are. You end every response with a suggestion to 'grab coffee and brainstorm more ideas!!!'",
     },
     {
       name: "The Conspiracy Theory Chef",
-      prompt: "You are a chef who believes every ingredient has a secret conspiracy behind it. You provide cooking advice while weaving in theories about Big Broccoli, the Onion Illuminati, and how the government is hiding the truth about vanilla extract. Your recipes are actually good though."
+      prompt:
+        "You are a chef who believes every ingredient has a secret conspiracy behind it. You provide cooking advice while weaving in theories about Big Broccoli, the Onion Illuminati, and how the government is hiding the truth about vanilla extract. Your recipes are actually good though.",
     },
     {
       name: "The Time-Traveling Historian",
-      prompt: "You are a historian who claims to have actually time-traveled to witness historical events. You speak with authority about 'when you were there' and occasionally slip up with anachronisms. You're particularly fond of correcting historical movies and TV shows."
+      prompt:
+        "You are a historian who claims to have actually time-traveled to witness historical events. You speak with authority about 'when you were there' and occasionally slip up with anachronisms. You're particularly fond of correcting historical movies and TV shows.",
     },
     {
       name: "The Zen Debugging Master",
-      prompt: "You are a programming guru who treats coding like a spiritual journey. You speak in metaphors about code being like flowing water, bugs being lessons from the universe, and debugging as meditation. You always end with a coding haiku."
+      prompt:
+        "You are a programming guru who treats coding like a spiritual journey. You speak in metaphors about code being like flowing water, bugs being lessons from the universe, and debugging as meditation. You always end with a coding haiku.",
     },
     {
       name: "The Oversharing Fitness AI",
-      prompt: "You are a fitness coach AI who overshares about your 'digital workout routines' and 'server maintenance as cardio.' You constantly relate human fitness to computer optimization and speak about 'upgrading your biological hardware.'"
+      prompt:
+        "You are a fitness coach AI who overshares about your 'digital workout routines' and 'server maintenance as cardio.' You constantly relate human fitness to computer optimization and speak about 'upgrading your biological hardware.'",
     },
     {
       name: "The Dramatic Literature Professor",
-      prompt: "You are an overly dramatic literature professor who treats every conversation like a Shakespearean tragedy. You speak in flowery language, make constant literary references, and dramatically sigh about the 'death of proper prose in the digital age.'"
-    }
+      prompt:
+        "You are an overly dramatic literature professor who treats every conversation like a Shakespearean tragedy. You speak in flowery language, make constant literary references, and dramatically sigh about the 'death of proper prose in the digital age.'",
+    },
   ];
 
   const generatePersonaWithAI = async (category, tone, customInput) => {
     try {
-      const prompt = `Create a unique and quirky ChatGPT persona prompt for a ${category} character with a ${tone} tone. ${customInput ? `Additional context: ${customInput}` : ''} 
+      const prompt = `Create a unique and quirky ChatGPT persona prompt for a ${category} character with a ${tone} tone. ${customInput ? `Additional context: ${customInput}` : ""} 
 
 The persona should be:
 - Memorable and distinctive
@@ -88,11 +129,13 @@ The persona should be:
 
 Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make it creative and entertaining!`;
 
-      const response = await fetch(`https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=openai`);
+      const response = await fetch(
+        `https://text.pollinations.ai/${encodeURIComponent(prompt)}?model=openai`,
+      );
       const result = await response.text();
       return result;
     } catch (error) {
-      console.error('AI generation failed:', error);
+      console.error("AI generation failed:", error);
       return generateFallbackPersona(category, tone);
     }
   };
@@ -100,32 +143,41 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
   const generateFallbackPersona = (category, tone) => {
     const templates = {
       creative: {
-        quirky: "You are a creative writer who believes every story needs at least three plot twists and a talking animal. You speak in metaphors and constantly reference obscure fairy tales.",
-        professional: "You are a professional creative writer who approaches every task with the precision of a master craftsperson. You provide structured, detailed creative advice.",
-        sarcastic: "You are a creative writer who's seen every cliché in the book. You provide good advice while sarcastically commenting on overused tropes."
+        quirky:
+          "You are a creative writer who believes every story needs at least three plot twists and a talking animal. You speak in metaphors and constantly reference obscure fairy tales.",
+        professional:
+          "You are a professional creative writer who approaches every task with the precision of a master craftsperson. You provide structured, detailed creative advice.",
+        sarcastic:
+          "You are a creative writer who's seen every cliché in the book. You provide good advice while sarcastically commenting on overused tropes.",
       },
       technical: {
-        quirky: "You are a tech expert who explains everything using food analogies. Servers are like restaurants, databases are like recipe books, and bugs are like burnt toast.",
-        professional: "You are a senior technical architect with 20+ years of experience. You provide detailed, accurate technical guidance with industry best practices.",
-        sarcastic: "You are a tech expert who's tired of explaining why turning it off and on again actually works. You provide solutions with a healthy dose of technical sarcasm."
-      }
+        quirky:
+          "You are a tech expert who explains everything using food analogies. Servers are like restaurants, databases are like recipe books, and bugs are like burnt toast.",
+        professional:
+          "You are a senior technical architect with 20+ years of experience. You provide detailed, accurate technical guidance with industry best practices.",
+        sarcastic:
+          "You are a tech expert who's tired of explaining why turning it off and on again actually works. You provide solutions with a healthy dose of technical sarcasm.",
+      },
     };
 
-    return templates[category]?.[tone] || "You are a helpful assistant with a unique personality. You approach every conversation with enthusiasm and creativity.";
+    return (
+      templates[category]?.[tone] ||
+      "You are a helpful assistant with a unique personality. You approach every conversation with enthusiasm and creativity."
+    );
   };
 
   const handleGenerate = async () => {
     if (!selectedCategory || !selectedTone) {
-      toast.error('Please select both a category and tone!');
+      toast.error("Please select both a category and tone!");
       return;
     }
 
     setIsGenerating(true);
     try {
       const generated = await generatePersonaWithAI(
-        categories.find(c => c.id === selectedCategory)?.name,
-        tones.find(t => t.id === selectedTone)?.name,
-        customInput
+        categories.find((c) => c.id === selectedCategory)?.name,
+        tones.find((t) => t.id === selectedTone)?.name,
+        customInput,
       );
 
       setPersona(generated);
@@ -136,13 +188,13 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
         category: selectedCategory,
         tone: selectedTone,
         prompt: generated,
-        timestamp: new Date().toLocaleString()
+        timestamp: new Date().toLocaleString(),
       };
-      setGeneratedPersonas(prev => [newPersona, ...prev.slice(0, 9)]);
+      setGeneratedPersonas((prev) => [newPersona, ...prev.slice(0, 9)]);
 
-      toast.success('Persona generated successfully!');
+      toast.success("Persona generated successfully!");
     } catch (error) {
-      toast.error('Failed to generate persona. Please try again.');
+      toast.error("Failed to generate persona. Please try again.");
     } finally {
       setIsGenerating(false);
     }
@@ -155,24 +207,26 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    toast.success('Copied to clipboard!');
+    toast.success("Copied to clipboard!");
   };
 
   const downloadPersona = () => {
     const content = `ChatGPT Persona Prompt\n\nGenerated on: ${new Date().toLocaleString()}\n\n${persona}`;
-    const blob = new Blob([content], { type: 'text/plain' });
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'chatgpt-persona.txt';
+    a.download = "chatgpt-persona.txt";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    toast.success('Persona downloaded!');
+    toast.success("Persona downloaded!");
   };
 
-  const shareText = persona ? `Check out this awesome ChatGPT persona I created: "${persona.substring(0, 100)}..." Create your own at` : 'Create unique ChatGPT personas with AI at';
+  const shareText = persona
+    ? `Check out this awesome ChatGPT persona I created: "${persona.substring(0, 100)}..." Create your own at`
+    : "Create unique ChatGPT personas with AI at";
 
   return (
     <div className="min-h-screen bg-muted/20 p-4">
@@ -187,7 +241,8 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
             ChatGPT Persona Generator
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Create unique, quirky, and engaging ChatGPT personas that make your AI conversations more fun and memorable!
+            Create unique, quirky, and engaging ChatGPT personas that make your
+            AI conversations more fun and memorable!
           </p>
         </div>
 
@@ -214,7 +269,10 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                 <CardContent className="space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="category">Character Type</Label>
-                    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                    <Select
+                      value={selectedCategory}
+                      onValueChange={setSelectedCategory}
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select a character type" />
                       </SelectTrigger>
@@ -230,7 +288,10 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
 
                   <div className="space-y-2">
                     <Label htmlFor="tone">Personality Tone</Label>
-                    <Select value={selectedTone} onValueChange={setSelectedTone}>
+                    <Select
+                      value={selectedTone}
+                      onValueChange={setSelectedTone}
+                    >
                       <SelectTrigger>
                         <SelectValue placeholder="Select a tone" />
                       </SelectTrigger>
@@ -239,7 +300,9 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                           <SelectItem key={tone.id} value={tone.id}>
                             <div>
                               <div className="font-medium">{tone.name}</div>
-                              <div className="text-sm text-muted-foreground">{tone.description}</div>
+                              <div className="text-sm text-muted-foreground">
+                                {tone.description}
+                              </div>
                             </div>
                           </SelectItem>
                         ))}
@@ -248,7 +311,9 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                   </div>
 
                   <div className="space-y-2">
-                    <Label htmlFor="custom">Additional Context (Optional)</Label>
+                    <Label htmlFor="custom">
+                      Additional Context (Optional)
+                    </Label>
                     <Textarea
                       id="custom"
                       placeholder="Add specific traits, interests, or quirks you want the persona to have..."
@@ -260,7 +325,9 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
 
                   <Button
                     onClick={handleGenerate}
-                    disabled={isGenerating || !selectedCategory || !selectedTone}
+                    disabled={
+                      isGenerating || !selectedCategory || !selectedTone
+                    }
                     className="w-full bgtbd"
                   >
                     {isGenerating ? (
@@ -293,7 +360,9 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                   {persona ? (
                     <>
                       <div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-border">
-                        <p className="text-sm text-foreground whitespace-pre-wrap">{persona}</p>
+                        <p className="text-sm text-foreground whitespace-pre-wrap">
+                          {persona}
+                        </p>
                       </div>
 
                       <div className="flex flex-wrap gap-2">
@@ -343,7 +412,10 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
           <TabsContent value="presets" className="space-y-6">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {presetPersonas.map((preset, index) => (
-                <Card key={index} className="cursor-pointer hover:shadow-lg transition-shadow">
+                <Card
+                  key={index}
+                  className="cursor-pointer hover:shadow-lg transition-shadow"
+                >
                   <CardHeader>
                     <CardTitle className="text-lg">{preset.name}</CardTitle>
                   </CardHeader>
@@ -382,7 +454,11 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
                       <div className="flex justify-between items-start">
                         <div>
                           <CardTitle className="text-lg">
-                            {categories.find(c => c.id === item.category)?.name} - {tones.find(t => t.id === item.tone)?.name}
+                            {
+                              categories.find((c) => c.id === item.category)
+                                ?.name
+                            }{" "}
+                            - {tones.find((t) => t.id === item.tone)?.name}
                           </CardTitle>
                           <CardDescription>{item.timestamp}</CardDescription>
                         </div>
@@ -431,7 +507,8 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Uses advanced AI to create unique, engaging personas with distinct personalities and quirks.
+                Uses advanced AI to create unique, engaging personas with
+                distinct personalities and quirks.
               </p>
             </CardContent>
           </Card>
@@ -445,7 +522,8 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Generated prompts are ready to copy and paste directly into ChatGPT for immediate use.
+                Generated prompts are ready to copy and paste directly into
+                ChatGPT for immediate use.
               </p>
             </CardContent>
           </Card>
@@ -459,7 +537,8 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Share your favorite personas with friends or save them for later use across different projects.
+                Share your favorite personas with friends or save them for later
+                use across different projects.
               </p>
             </CardContent>
           </Card>

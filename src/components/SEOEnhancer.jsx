@@ -1,96 +1,95 @@
-'use client';
+"use client";
 
-import { useEffect } from 'react';
-import Script from 'next/script';
+import { useEffect } from "react";
+import Script from "next/script";
 
-export default function SEOEnhancer({ 
-  tool, 
-  category, 
-  schemaData, 
+export default function SEOEnhancer({
+  tool,
+  category,
+  schemaData,
   breadcrumbs,
   faqs,
-  relatedContent 
+  relatedContent,
 }) {
-  
   // Generate comprehensive schema markup
   const schemas = [];
-  
+
   if (schemaData?.organization) {
     schemas.push(schemaData.organization);
   }
-  
+
   if (schemaData?.tool) {
     schemas.push(schemaData.tool);
   }
-  
+
   if (breadcrumbs) {
     schemas.push({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
-      "itemListElement": breadcrumbs.map((crumb, index) => ({
+      itemListElement: breadcrumbs.map((crumb, index) => ({
         "@type": "ListItem",
-        "position": index + 1,
-        "name": crumb.name,
-        "item": `https://30tools.com${crumb.url}`
-      }))
+        position: index + 1,
+        name: crumb.name,
+        item: `https://30tools.com${crumb.url}`,
+      })),
     });
   }
-  
+
   if (faqs && faqs.length > 0) {
     schemas.push({
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": faqs.map(faq => ({
+      mainEntity: faqs.map((faq) => ({
         "@type": "Question",
-        "name": faq.question,
-        "acceptedAnswer": {
+        name: faq.question,
+        acceptedAnswer: {
           "@type": "Answer",
-          "text": faq.answer
-        }
-      }))
+          text: faq.answer,
+        },
+      })),
     });
   }
 
   // Enhanced performance monitoring
   useEffect(() => {
     // Core Web Vitals tracking
-    if (typeof window !== 'undefined' && 'PerformanceObserver' in window) {
+    if (typeof window !== "undefined" && "PerformanceObserver" in window) {
       // Track Largest Contentful Paint (LCP)
       const lcpObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          if (entry.entryType === 'largest-contentful-paint') {
+          if (entry.entryType === "largest-contentful-paint") {
             // Send LCP data to analytics
             if (window.gtag) {
-              window.gtag('event', 'web_vitals', {
-                name: 'LCP',
+              window.gtag("event", "web_vitals", {
+                name: "LCP",
                 value: Math.round(entry.startTime),
-                event_category: 'Core Web Vitals'
+                event_category: "Core Web Vitals",
               });
             }
           }
         }
       });
-      
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-      
+
+      lcpObserver.observe({ entryTypes: ["largest-contentful-paint"] });
+
       // Track First Input Delay (FID)
       const fidObserver = new PerformanceObserver((list) => {
         for (const entry of list.getEntries()) {
-          if (entry.entryType === 'first-input') {
+          if (entry.entryType === "first-input") {
             const fid = entry.processingStart - entry.startTime;
             if (window.gtag) {
-              window.gtag('event', 'web_vitals', {
-                name: 'FID',
+              window.gtag("event", "web_vitals", {
+                name: "FID",
                 value: Math.round(fid),
-                event_category: 'Core Web Vitals'
+                event_category: "Core Web Vitals",
               });
             }
           }
         }
       });
-      
-      fidObserver.observe({ entryTypes: ['first-input'] });
-      
+
+      fidObserver.observe({ entryTypes: ["first-input"] });
+
       // Track Cumulative Layout Shift (CLS)
       let clsValue = 0;
       const clsObserver = new PerformanceObserver((list) => {
@@ -99,18 +98,18 @@ export default function SEOEnhancer({
             clsValue += entry.value;
           }
         }
-        
+
         if (window.gtag) {
-          window.gtag('event', 'web_vitals', {
-            name: 'CLS',
+          window.gtag("event", "web_vitals", {
+            name: "CLS",
             value: Math.round(clsValue * 1000),
-            event_category: 'Core Web Vitals'
+            event_category: "Core Web Vitals",
           });
         }
       });
-      
-      clsObserver.observe({ entryTypes: ['layout-shift'] });
-      
+
+      clsObserver.observe({ entryTypes: ["layout-shift"] });
+
       // Cleanup observers
       return () => {
         lcpObserver.disconnect();
@@ -125,35 +124,38 @@ export default function SEOEnhancer({
     let startTime = Date.now();
     let scrollDepth = 0;
     let maxScrollDepth = 0;
-    
+
     const trackScrollDepth = () => {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      
-      scrollDepth = Math.round((scrollTop + windowHeight) / documentHeight * 100);
+
+      scrollDepth = Math.round(
+        ((scrollTop + windowHeight) / documentHeight) * 100,
+      );
       maxScrollDepth = Math.max(maxScrollDepth, scrollDepth);
     };
-    
+
     const trackEngagement = () => {
       const timeOnPage = Date.now() - startTime;
-      
+
       if (window.gtag) {
-        window.gtag('event', 'user_engagement', {
+        window.gtag("event", "user_engagement", {
           engagement_time_msec: timeOnPage,
           scroll_depth: maxScrollDepth,
           page_title: document.title,
-          tool_name: tool?.name || 'unknown'
+          tool_name: tool?.name || "unknown",
         });
       }
     };
-    
-    window.addEventListener('scroll', trackScrollDepth);
-    window.addEventListener('beforeunload', trackEngagement);
-    
+
+    window.addEventListener("scroll", trackScrollDepth);
+    window.addEventListener("beforeunload", trackEngagement);
+
     return () => {
-      window.removeEventListener('scroll', trackScrollDepth);
-      window.removeEventListener('beforeunload', trackEngagement);
+      window.removeEventListener("scroll", trackScrollDepth);
+      window.removeEventListener("beforeunload", trackEngagement);
     };
   }, [tool]);
 
@@ -166,42 +168,58 @@ export default function SEOEnhancer({
           id={`schema-${index}`}
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema)
+            __html: JSON.stringify(schema),
           }}
         />
       ))}
-      
+
       {/* Preconnect to critical domains */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="anonymous"
+      />
       <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-      
+
       {/* DNS prefetch for analytics */}
       <link rel="dns-prefetch" href="//www.google-analytics.com" />
       <link rel="dns-prefetch" href="//googletagmanager.com" />
-      
+
       {/* Critical CSS inlining hint */}
-      <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-      
+      <link
+        rel="preload"
+        href="/fonts/inter-var.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+
       {/* Enhanced Open Graph for better social sharing */}
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content="30tools" />
       <meta property="article:publisher" content="https://30tools.com" />
       <meta property="article:author" content="30tools" />
-      
+
       {/* Twitter Card enhancements */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@30tools" />
       <meta name="twitter:creator" content="@30tools" />
-      
+
       {/* Advanced robots directives */}
-      <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-      <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-      
+      <meta
+        name="robots"
+        content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      />
+      <meta
+        name="googlebot"
+        content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"
+      />
+
       {/* Hreflang for international SEO (future expansion) */}
       <link rel="alternate" hrefLang="en" href="https://30tools.com" />
       <link rel="alternate" hrefLang="x-default" href="https://30tools.com" />
-      
+
       {/* Advanced Google Analytics with enhanced ecommerce tracking */}
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
@@ -216,8 +234,8 @@ export default function SEOEnhancer({
           gtag('config', 'GA_MEASUREMENT_ID', {
             page_title: document.title,
             page_location: window.location.href,
-            content_group1: '${category || 'general'}',
-            content_group2: '${tool?.name || 'homepage'}',
+            content_group1: '${category || "general"}',
+            content_group2: '${tool?.name || "homepage"}',
             custom_map: {
               'custom_parameter_1': 'tool_usage',
               'custom_parameter_2': 'user_engagement'
@@ -228,12 +246,12 @@ export default function SEOEnhancer({
           gtag('event', 'page_view', {
             page_title: document.title,
             page_location: window.location.href,
-            tool_category: '${category || 'general'}',
-            tool_name: '${tool?.name || 'homepage'}'
+            tool_category: '${category || "general"}',
+            tool_name: '${tool?.name || "homepage"}'
           });
         `}
       </Script>
-      
+
       {/* Microsoft Clarity for user behavior analysis */}
       <Script id="microsoft-clarity" strategy="afterInteractive">
         {`
@@ -244,7 +262,7 @@ export default function SEOEnhancer({
           })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
         `}
       </Script>
-      
+
       {/* Hotjar for user experience optimization */}
       <Script id="hotjar" strategy="afterInteractive">
         {`

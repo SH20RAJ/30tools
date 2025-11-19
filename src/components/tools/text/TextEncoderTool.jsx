@@ -5,7 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Copy, ArrowUpDown, FileText, Code } from "lucide-react";
 import { toast } from "sonner";
@@ -23,60 +29,66 @@ export default function TextEncoderTool() {
     }
 
     let result = "";
-    
+
     try {
       switch (encodingType) {
-        case 'url':
+        case "url":
           result = encodeURIComponent(inputText);
           break;
-          
-        case 'base64':
+
+        case "base64":
           result = btoa(unescape(encodeURIComponent(inputText)));
           break;
-          
-        case 'html':
+
+        case "html":
           result = inputText
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#x27;')
-            .replace(/\//g, '&#x2F;');
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#x27;")
+            .replace(/\//g, "&#x2F;");
           break;
-          
-        case 'uri':
+
+        case "uri":
           result = encodeURI(inputText);
           break;
-          
-        case 'css':
+
+        case "css":
           result = inputText.replace(/[^\w\s-]/g, (char) => {
-            return '\\' + char.charCodeAt(0).toString(16) + ' ';
+            return "\\" + char.charCodeAt(0).toString(16) + " ";
           });
           break;
-          
-        case 'javascript':
-          result = inputText.replace(/[\\'"]/g, '\\$&').replace(/\n/g, '\\n').replace(/\r/g, '\\r').replace(/\t/g, '\\t');
+
+        case "javascript":
+          result = inputText
+            .replace(/[\\'"]/g, "\\$&")
+            .replace(/\n/g, "\\n")
+            .replace(/\r/g, "\\r")
+            .replace(/\t/g, "\\t");
           break;
-          
-        case 'hex':
+
+        case "hex":
           result = Array.from(inputText)
-            .map(char => char.charCodeAt(0).toString(16).padStart(2, '0'))
-            .join(' ');
+            .map((char) => char.charCodeAt(0).toString(16).padStart(2, "0"))
+            .join(" ");
           break;
-          
-        case 'unicode':
+
+        case "unicode":
           result = Array.from(inputText)
-            .map(char => '\\u' + char.charCodeAt(0).toString(16).padStart(4, '0'))
-            .join('');
+            .map(
+              (char) =>
+                "\\u" + char.charCodeAt(0).toString(16).padStart(4, "0"),
+            )
+            .join("");
           break;
-          
+
         default:
           result = inputText;
       }
-      
+
       setOutputText(result);
       toast.success("Text encoded successfully!");
-      
     } catch (error) {
       toast.error("Error encoding text: " + error.message);
     }
@@ -89,61 +101,65 @@ export default function TextEncoderTool() {
     }
 
     let result = "";
-    
+
     try {
       switch (encodingType) {
-        case 'url':
+        case "url":
           result = decodeURIComponent(inputText);
           break;
-          
-        case 'base64':
+
+        case "base64":
           result = decodeURIComponent(escape(atob(inputText)));
           break;
-          
-        case 'html':
+
+        case "html":
           result = inputText
-            .replace(/&amp;/g, '&')
-            .replace(/&lt;/g, '<')
-            .replace(/&gt;/g, '>')
+            .replace(/&amp;/g, "&")
+            .replace(/&lt;/g, "<")
+            .replace(/&gt;/g, ">")
             .replace(/&quot;/g, '"')
             .replace(/&#x27;/g, "'")
-            .replace(/&#x2F;/g, '/');
+            .replace(/&#x2F;/g, "/");
           break;
-          
-        case 'uri':
+
+        case "uri":
           result = decodeURI(inputText);
           break;
-          
-        case 'css':
+
+        case "css":
           result = inputText.replace(/\\([0-9a-fA-F]+)\s?/g, (match, code) => {
             return String.fromCharCode(parseInt(code, 16));
           });
           break;
-          
-        case 'javascript':
-          result = inputText.replace(/\\n/g, '\n').replace(/\\r/g, '\r').replace(/\\t/g, '\t').replace(/\\([\\'"])/g, '$1');
+
+        case "javascript":
+          result = inputText
+            .replace(/\\n/g, "\n")
+            .replace(/\\r/g, "\r")
+            .replace(/\\t/g, "\t")
+            .replace(/\\([\\'"])/g, "$1");
           break;
-          
-        case 'hex':
-          result = inputText.split(' ')
-            .filter(hex => hex.length > 0)
-            .map(hex => String.fromCharCode(parseInt(hex, 16)))
-            .join('');
+
+        case "hex":
+          result = inputText
+            .split(" ")
+            .filter((hex) => hex.length > 0)
+            .map((hex) => String.fromCharCode(parseInt(hex, 16)))
+            .join("");
           break;
-          
-        case 'unicode':
+
+        case "unicode":
           result = inputText.replace(/\\u([0-9a-fA-F]{4})/g, (match, code) => {
             return String.fromCharCode(parseInt(code, 16));
           });
           break;
-          
+
         default:
           result = inputText;
       }
-      
+
       setOutputText(result);
       toast.success("Text decoded successfully!");
-      
     } catch (error) {
       toast.error("Error decoding text: " + error.message);
     }
@@ -169,7 +185,7 @@ export default function TextEncoderTool() {
       toast.error("No output text to swap");
       return;
     }
-    
+
     setInputText(outputText);
     setOutputText("");
     toast.success("Texts swapped!");
@@ -183,18 +199,46 @@ export default function TextEncoderTool() {
     css: "body { background: url('image.jpg'); }",
     javascript: "var message = 'Hello \"World\"!';",
     hex: "Hello",
-    unicode: "Hello 世界"
+    unicode: "Hello 世界",
   };
 
   const encodingFormats = [
-    { value: "url", label: "URL Encoding", description: "Percent encoding for URLs" },
-    { value: "base64", label: "Base64", description: "Binary-safe text encoding" },
-    { value: "html", label: "HTML Entities", description: "HTML character entities" },
-    { value: "uri", label: "URI Encoding", description: "URI component encoding" },
+    {
+      value: "url",
+      label: "URL Encoding",
+      description: "Percent encoding for URLs",
+    },
+    {
+      value: "base64",
+      label: "Base64",
+      description: "Binary-safe text encoding",
+    },
+    {
+      value: "html",
+      label: "HTML Entities",
+      description: "HTML character entities",
+    },
+    {
+      value: "uri",
+      label: "URI Encoding",
+      description: "URI component encoding",
+    },
     { value: "css", label: "CSS Escape", description: "CSS string escaping" },
-    { value: "javascript", label: "JavaScript", description: "JavaScript string escaping" },
-    { value: "hex", label: "Hexadecimal", description: "Hexadecimal representation" },
-    { value: "unicode", label: "Unicode", description: "Unicode escape sequences" }
+    {
+      value: "javascript",
+      label: "JavaScript",
+      description: "JavaScript string escaping",
+    },
+    {
+      value: "hex",
+      label: "Hexadecimal",
+      description: "Hexadecimal representation",
+    },
+    {
+      value: "unicode",
+      label: "Unicode",
+      description: "Unicode escape sequences",
+    },
   ];
 
   const loadExample = () => {
@@ -225,7 +269,9 @@ export default function TextEncoderTool() {
                   <SelectItem key={format.value} value={format.value}>
                     <div className="flex flex-col">
                       <span>{format.label}</span>
-                      <span className="text-xs text-muted-foreground">{format.description}</span>
+                      <span className="text-xs text-muted-foreground">
+                        {format.description}
+                      </span>
                     </div>
                   </SelectItem>
                 ))}
@@ -256,28 +302,33 @@ export default function TextEncoderTool() {
               className="min-h-[120px] resize-y font-mono"
             />
             <div className="text-sm text-muted-foreground">
-              Characters: {inputText.length} | Bytes: {new TextEncoder().encode(inputText).length}
+              Characters: {inputText.length} | Bytes:{" "}
+              {new TextEncoder().encode(inputText).length}
             </div>
           </div>
 
           {/* Action Buttons */}
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="w-full"
+          >
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger value="encode">Encode</TabsTrigger>
               <TabsTrigger value="decode">Decode</TabsTrigger>
             </TabsList>
 
             <div className="mt-6 flex flex-wrap gap-3">
-              <Button 
-                onClick={activeTab === 'encode' ? encodeText : decodeText}
+              <Button
+                onClick={activeTab === "encode" ? encodeText : decodeText}
                 className="flex items-center gap-2"
                 disabled={!inputText.trim()}
               >
                 <Code className="h-4 w-4" />
-                {activeTab === 'encode' ? 'Encode Text' : 'Decode Text'}
+                {activeTab === "encode" ? "Encode Text" : "Decode Text"}
               </Button>
-              
-              <Button 
+
+              <Button
                 onClick={swapTexts}
                 variant="outline"
                 className="flex items-center gap-2"
@@ -286,8 +337,8 @@ export default function TextEncoderTool() {
                 <ArrowUpDown className="h-4 w-4" />
                 Swap
               </Button>
-              
-              <Button 
+
+              <Button
                 onClick={clearAll}
                 variant="outline"
                 className="flex items-center gap-2"
@@ -303,7 +354,7 @@ export default function TextEncoderTool() {
             <div className="space-y-2">
               <div className="flex items-center justify-between">
                 <Label className="text-base font-medium">
-                  {activeTab === 'encode' ? 'Encoded' : 'Decoded'} Text:
+                  {activeTab === "encode" ? "Encoded" : "Decoded"} Text:
                 </Label>
                 <Button
                   onClick={() => copyToClipboard(outputText)}
@@ -321,7 +372,8 @@ export default function TextEncoderTool() {
                 className="min-h-[120px] bg-muted font-mono"
               />
               <div className="text-sm text-muted-foreground">
-                Characters: {outputText.length} | Bytes: {new TextEncoder().encode(outputText).length}
+                Characters: {outputText.length} | Bytes:{" "}
+                {new TextEncoder().encode(outputText).length}
               </div>
             </div>
           )}
@@ -336,18 +388,26 @@ export default function TextEncoderTool() {
         <CardContent>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {encodingFormats.map((format) => (
-              <div 
-                key={format.value} 
+              <div
+                key={format.value}
                 className={`border rounded-lg p-4 cursor-pointer transition-all ${
-                  encodingType === format.value ? 'border-primary bg-primary/5' : ''
+                  encodingType === format.value
+                    ? "border-primary bg-primary/5"
+                    : ""
                 }`}
                 onClick={() => setEncodingType(format.value)}
               >
                 <h3 className="font-medium mb-2">{format.label}</h3>
-                <p className="text-sm text-muted-foreground mb-3">{format.description}</p>
+                <p className="text-sm text-muted-foreground mb-3">
+                  {format.description}
+                </p>
                 <div className="bg-muted p-2 rounded font-mono text-xs">
-                  <div><strong>Example:</strong></div>
-                  <div className="mt-1 break-all">{exampleTexts[format.value]}</div>
+                  <div>
+                    <strong>Example:</strong>
+                  </div>
+                  <div className="mt-1 break-all">
+                    {exampleTexts[format.value]}
+                  </div>
                 </div>
               </div>
             ))}
@@ -366,34 +426,56 @@ export default function TextEncoderTool() {
               <div className="border rounded-lg p-4">
                 <h3 className="font-medium mb-2 text-primary">URL Encoding:</h3>
                 <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
-                  <div><strong>Original:</strong> Hello World!</div>
-                  <div><strong>Encoded:</strong> Hello%20World%21</div>
+                  <div>
+                    <strong>Original:</strong> Hello World!
+                  </div>
+                  <div>
+                    <strong>Encoded:</strong> Hello%20World%21
+                  </div>
                 </div>
               </div>
-              
+
               <div className="border rounded-lg p-4">
-                <h3 className="font-medium mb-2 text-primary">Base64 Encoding:</h3>
+                <h3 className="font-medium mb-2 text-primary">
+                  Base64 Encoding:
+                </h3>
                 <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
-                  <div><strong>Original:</strong> Hello World!</div>
-                  <div><strong>Encoded:</strong> SGVsbG8gV29ybGQh</div>
+                  <div>
+                    <strong>Original:</strong> Hello World!
+                  </div>
+                  <div>
+                    <strong>Encoded:</strong> SGVsbG8gV29ybGQh
+                  </div>
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-4">
               <div className="border rounded-lg p-4">
-                <h3 className="font-medium mb-2 text-primary">HTML Entities:</h3>
+                <h3 className="font-medium mb-2 text-primary">
+                  HTML Entities:
+                </h3>
                 <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
-                  <div><strong>Original:</strong> &lt;script&gt;</div>
-                  <div><strong>Encoded:</strong> &amp;lt;script&amp;gt;</div>
+                  <div>
+                    <strong>Original:</strong> &lt;script&gt;
+                  </div>
+                  <div>
+                    <strong>Encoded:</strong> &amp;lt;script&amp;gt;
+                  </div>
                 </div>
               </div>
-              
+
               <div className="border rounded-lg p-4">
-                <h3 className="font-medium mb-2 text-primary">Unicode Escapes:</h3>
+                <h3 className="font-medium mb-2 text-primary">
+                  Unicode Escapes:
+                </h3>
                 <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
-                  <div><strong>Original:</strong> Hello 世界</div>
-                  <div><strong>Encoded:</strong> Hello \u4e16\u754c</div>
+                  <div>
+                    <strong>Original:</strong> Hello 世界
+                  </div>
+                  <div>
+                    <strong>Encoded:</strong> Hello \u4e16\u754c
+                  </div>
                 </div>
               </div>
             </div>

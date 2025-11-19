@@ -1,23 +1,24 @@
 // Developer Tools SEO Configuration and Metadata Templates
-import { generateToolMetadata } from './advanced-metadata';
+import { generateToolMetadata } from "./advanced-metadata";
 
 export const DEVELOPER_TOOLS_SEO = {
   category: {
     title: "Free Developer Tools Online - JSON, Base64, Hash, Regex | 30tools",
-    description: "Professional developer tools for JSON formatting, Base64 encoding, hash generation, regex testing, API testing & more. Free, secure, client-side processing. Perfect for developers.",
+    description:
+      "Professional developer tools for JSON formatting, Base64 encoding, hash generation, regex testing, API testing & more. Free, secure, client-side processing. Perfect for developers.",
     keywords: [
       "developer tools online",
       "free developer utilities",
       "json formatter online",
       "base64 encoder decoder",
-      "hash generator online", 
+      "hash generator online",
       "regex tester online",
       "api testing tools",
       "code formatter online",
       "developer productivity tools",
       "web developer tools",
       "programming utilities",
-      "coding tools online"
+      "coding tools online",
     ],
     longTailKeywords: [
       "free developer tools online no signup",
@@ -27,17 +28,19 @@ export const DEVELOPER_TOOLS_SEO = {
       "hash generator md5 sha256 online",
       "api testing tool for developers",
       "code formatter beautifier online",
-      "developer utilities collection free"
-    ]
+      "developer utilities collection free",
+    ],
   },
 
   tools: {
     "json-formatter": {
-      title: "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON | 30tools",
-      description: "Professional JSON formatter, validator & minifier. Format messy JSON, validate syntax errors, minify for production. Tree view, error detection, copy formatted code. Free developer tool.",
+      title:
+        "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON | 30tools",
+      description:
+        "Professional JSON formatter, validator & minifier. Format messy JSON, validate syntax errors, minify for production. Tree view, error detection, copy formatted code. Free developer tool.",
       keywords: [
         "json formatter",
-        "json validator", 
+        "json validator",
         "json beautifier",
         "json minifier",
         "json parser",
@@ -45,7 +48,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "format json online",
         "validate json online",
         "json pretty print",
-        "json editor online"
+        "json editor online",
       ],
       longTailKeywords: [
         "json formatter and validator online free",
@@ -55,7 +58,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "validate json format online free",
         "json pretty print formatter",
         "json parser and formatter online",
-        "json beautifier with tree view"
+        "json beautifier with tree view",
       ],
       features: [
         "Format & validate JSON instantly",
@@ -65,7 +68,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "Copy formatted code",
         "Supports large JSON files",
         "Syntax highlighting",
-        "No server upload required"
+        "No server upload required",
       ],
       useCases: [
         "API response formatting",
@@ -73,13 +76,15 @@ export const DEVELOPER_TOOLS_SEO = {
         "Debug JSON syntax errors",
         "Prepare JSON for production",
         "Learn JSON structure",
-        "Data transformation"
-      ]
+        "Data transformation",
+      ],
     },
 
     "base64-tool": {
-      title: "Free Base64 Encoder & Decoder Online - Text, Files, Images | 30tools",
-      description: "Encode text, files & images to Base64 or decode Base64 strings. Secure client-side processing, supports bulk operations. Perfect for developers & data encoding needs.",
+      title:
+        "Free Base64 Encoder & Decoder Online - Text, Files, Images | 30tools",
+      description:
+        "Encode text, files & images to Base64 or decode Base64 strings. Secure client-side processing, supports bulk operations. Perfect for developers & data encoding needs.",
       keywords: [
         "base64 encoder",
         "base64 decoder",
@@ -88,7 +93,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "base64 string encoder",
         "file to base64",
         "image to base64",
-        "base64 tools"
+        "base64 tools",
       ],
       longTailKeywords: [
         "base64 encode text online free",
@@ -98,17 +103,17 @@ export const DEVELOPER_TOOLS_SEO = {
         "base64 decoder for files",
         "bulk base64 encoding tool",
         "secure base64 converter online",
-        "base64 encoder decoder developer tool"
+        "base64 encoder decoder developer tool",
       ],
       features: [
         "Encode text to Base64",
-        "Decode Base64 to text", 
+        "Decode Base64 to text",
         "File to Base64 conversion",
         "Image to Base64 encoding",
         "Bulk processing support",
         "Copy to clipboard",
         "Format validation",
-        "Client-side processing"
+        "Client-side processing",
       ],
       useCases: [
         "Email attachment encoding",
@@ -116,22 +121,23 @@ export const DEVELOPER_TOOLS_SEO = {
         "API data transmission",
         "Configuration encoding",
         "Image embedding",
-        "Binary data handling"
-      ]
+        "Binary data handling",
+      ],
     },
 
     "hash-generator": {
       title: "Free Hash Generator Online - MD5, SHA1, SHA256, SHA512 | 30tools",
-      description: "Generate cryptographic hashes from text or files. Supports MD5, SHA1, SHA256, SHA512, CRC32. Secure client-side processing for password hashing & data integrity.",
+      description:
+        "Generate cryptographic hashes from text or files. Supports MD5, SHA1, SHA256, SHA512, CRC32. Secure client-side processing for password hashing & data integrity.",
       keywords: [
         "hash generator",
         "md5 generator",
-        "sha256 generator", 
+        "sha256 generator",
         "sha1 generator",
         "sha512 generator",
         "cryptographic hash",
         "password hash",
-        "checksum generator"
+        "checksum generator",
       ],
       longTailKeywords: [
         "md5 hash generator online free",
@@ -141,17 +147,17 @@ export const DEVELOPER_TOOLS_SEO = {
         "file checksum calculator online",
         "hash function generator multiple algorithms",
         "secure hash generator developer tool",
-        "text to hash converter online"
+        "text to hash converter online",
       ],
       features: [
         "Multiple hash algorithms",
-        "Text & file hashing", 
+        "Text & file hashing",
         "Secure client-side processing",
         "Compare hash values",
         "Copy hash outputs",
         "Uppercase/lowercase options",
         "Real-time generation",
-        "No data transmission"
+        "No data transmission",
       ],
       useCases: [
         "Password hashing",
@@ -159,13 +165,15 @@ export const DEVELOPER_TOOLS_SEO = {
         "File checksums",
         "Digital signatures",
         "Security applications",
-        "Database lookups"
-      ]
+        "Database lookups",
+      ],
     },
 
     "regex-tester": {
-      title: "Free Regex Tester & Pattern Validator Online - Test Regular Expressions | 30tools",
-      description: "Test & validate regular expressions with real-time matching. Supports JavaScript, Python, PHP regex flavors. Pattern explanation, match highlighting, test cases.",
+      title:
+        "Free Regex Tester & Pattern Validator Online - Test Regular Expressions | 30tools",
+      description:
+        "Test & validate regular expressions with real-time matching. Supports JavaScript, Python, PHP regex flavors. Pattern explanation, match highlighting, test cases.",
       keywords: [
         "regex tester",
         "regular expression tester",
@@ -174,7 +182,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "regex matcher",
         "regexp tester",
         "regex debugger",
-        "pattern validator"
+        "pattern validator",
       ],
       longTailKeywords: [
         "regex tester online free javascript",
@@ -184,7 +192,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "test regex patterns online",
         "regex debugger with explanations",
         "regular expression tester php",
-        "regex validator with test cases"
+        "regex validator with test cases",
       ],
       features: [
         "Real-time pattern matching",
@@ -194,7 +202,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "Test case management",
         "Capture group display",
         "Syntax error detection",
-        "Performance metrics"
+        "Performance metrics",
       ],
       useCases: [
         "Form validation patterns",
@@ -202,13 +210,14 @@ export const DEVELOPER_TOOLS_SEO = {
         "Text processing",
         "Log file parsing",
         "Input sanitization",
-        "Pattern debugging"
-      ]
+        "Pattern debugging",
+      ],
     },
 
     "api-tester": {
       title: "Free API Tester Online - Test REST APIs, HTTP Requests | 30tools",
-      description: "Test REST APIs with custom headers, parameters, authentication. Supports GET, POST, PUT, DELETE methods. Response formatting, status codes, developer-friendly interface.",
+      description:
+        "Test REST APIs with custom headers, parameters, authentication. Supports GET, POST, PUT, DELETE methods. Response formatting, status codes, developer-friendly interface.",
       keywords: [
         "api tester",
         "rest api tester",
@@ -217,7 +226,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "postman alternative",
         "api debugger",
         "rest client",
-        "http request tester"
+        "http request tester",
       ],
       longTailKeywords: [
         "free api tester online no signup",
@@ -227,7 +236,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "api endpoint tester online",
         "rest client web based",
         "api debugging tool online",
-        "http request response tester"
+        "http request response tester",
       ],
       features: [
         "All HTTP methods support",
@@ -237,7 +246,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "Status code display",
         "Request history",
         "Environment variables",
-        "Export/import requests"
+        "Export/import requests",
       ],
       useCases: [
         "API endpoint testing",
@@ -245,13 +254,15 @@ export const DEVELOPER_TOOLS_SEO = {
         "API documentation",
         "Integration testing",
         "Response validation",
-        "Authentication testing"
-      ]
+        "Authentication testing",
+      ],
     },
 
     "jwt-decoder": {
-      title: "Free JWT Decoder & Validator Online - JSON Web Token Parser | 30tools",
-      description: "Decode & validate JSON Web Tokens (JWT). View header, payload, signature. Verify token structure, expiration, claims. Essential JWT debugging tool for developers.",
+      title:
+        "Free JWT Decoder & Validator Online - JSON Web Token Parser | 30tools",
+      description:
+        "Decode & validate JSON Web Tokens (JWT). View header, payload, signature. Verify token structure, expiration, claims. Essential JWT debugging tool for developers.",
       keywords: [
         "jwt decoder",
         "json web token decoder",
@@ -260,7 +271,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "jwt debugger",
         "token decoder",
         "jwt analyzer",
-        "jwt verifier"
+        "jwt verifier",
       ],
       longTailKeywords: [
         "jwt decoder online free tool",
@@ -270,7 +281,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "jwt header payload decoder",
         "jwt expiration checker online",
         "jwt claims validator tool",
-        "jwt debugging tool developer"
+        "jwt debugging tool developer",
       ],
       features: [
         "Decode JWT tokens",
@@ -280,7 +291,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "Claims validation",
         "Token structure analysis",
         "Copy decoded data",
-        "Error detection"
+        "Error detection",
       ],
       useCases: [
         "Token debugging",
@@ -288,13 +299,15 @@ export const DEVELOPER_TOOLS_SEO = {
         "API security validation",
         "Claims verification",
         "Token expiration checks",
-        "Security auditing"
-      ]
+        "Security auditing",
+      ],
     },
 
     "url-encoder": {
-      title: "Free URL Encoder & Decoder Online - Encode URLs, Query Strings | 30tools", 
-      description: "Encode & decode URLs, query parameters, special characters. Perfect for web development, API calls, form data. Handles UTF-8, spaces, special characters safely.",
+      title:
+        "Free URL Encoder & Decoder Online - Encode URLs, Query Strings | 30tools",
+      description:
+        "Encode & decode URLs, query parameters, special characters. Perfect for web development, API calls, form data. Handles UTF-8, spaces, special characters safely.",
       keywords: [
         "url encoder",
         "url decoder",
@@ -303,7 +316,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "uri encoder",
         "query string encoder",
         "url escape",
-        "url parameter encoder"
+        "url parameter encoder",
       ],
       longTailKeywords: [
         "url encoder decoder online free",
@@ -313,7 +326,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "uri encode decode online",
         "url escape characters online",
         "web safe url encoder",
-        "url encoding for special characters"
+        "url encoding for special characters",
       ],
       features: [
         "URL encoding & decoding",
@@ -323,7 +336,7 @@ export const DEVELOPER_TOOLS_SEO = {
         "Bulk URL processing",
         "Copy encoded URLs",
         "Real-time conversion",
-        "Web-safe formatting"
+        "Web-safe formatting",
       ],
       useCases: [
         "API URL construction",
@@ -331,10 +344,10 @@ export const DEVELOPER_TOOLS_SEO = {
         "Query parameter handling",
         "Web scraping URLs",
         "Link sharing",
-        "SEO-friendly URLs"
-      ]
-    }
-  }
+        "SEO-friendly URLs",
+      ],
+    },
+  },
 };
 
 // SEO utility functions for developer tools
@@ -345,31 +358,31 @@ export const generateDeveloperToolMeta = (toolId) => {
   return {
     title: tool.title,
     description: tool.description,
-    keywords: tool.keywords.join(', '),
+    keywords: tool.keywords.join(", "),
     openGraph: {
       title: tool.title,
       description: tool.description,
       url: `https://30tools.com/${toolId}`,
-      siteName: '30tools',
+      siteName: "30tools",
       images: [
         {
           url: `/og-images/${toolId}.jpg`,
           width: 1200,
           height: 630,
-          alt: tool.title
-        }
+          alt: tool.title,
+        },
       ],
-      type: 'website'
+      type: "website",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: tool.title,
       description: tool.description,
       images: [`/og-images/${toolId}.jpg`],
-      creator: '@30tools'
+      creator: "@30tools",
     },
     alternates: {
-      canonical: `https://30tools.com/${toolId}`
+      canonical: `https://30tools.com/${toolId}`,
     },
     robots: {
       index: true,
@@ -377,12 +390,12 @@ export const generateDeveloperToolMeta = (toolId) => {
       googleBot: {
         index: true,
         follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
     },
-    category: 'Developer Tools'
+    category: "Developer Tools",
   };
 };
 

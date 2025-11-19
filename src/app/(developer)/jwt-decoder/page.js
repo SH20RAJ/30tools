@@ -1,47 +1,50 @@
 import JWTDecoder from "@/components/tools/developer/JWTDecoderTool";
 
 export const metadata = {
-  title: 'JWT Decoder - Decode JSON Web Tokens | 30tools',
-  description: "Professional jwt decoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-  keywords: 'jwt decoder, json web token, jwt parser, token decoder, jwt validator, jwt analyzer',
+  title: "JWT Decoder - Decode JSON Web Tokens | 30tools",
+  description:
+    "Professional jwt decoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+  keywords:
+    "jwt decoder, json web token, jwt parser, token decoder, jwt validator, jwt analyzer",
   openGraph: {
-    title: 'JWT Decoder - Decode JSON Web Tokens | 30tools',
-    description: 'Decode and verify JSON Web Tokens online.',
-    type: 'website',
+    title: "JWT Decoder - Decode JSON Web Tokens | 30tools",
+    description: "Decode and verify JSON Web Tokens online.",
+    type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Jwt Decoder - Free Developer Tool | Professional Coding",
-    description: "Professional jwt decoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+    description:
+      "Professional jwt decoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
     images: ["/og-images/jwt-decoder.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
 
   alternates: {
-    canonical: "https://30tools.com/jwt-decoder"
+    canonical: "https://30tools.com/jwt-decoder",
   },
 };
-
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Jwt Decoder",
-  "description": "Professional jwt decoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-  "url": "https://30tools.com/jwt-decoder",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "Jwt Decoder",
+  description:
+    "Professional jwt decoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+  url: "https://30tools.com/jwt-decoder",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "author": {
+  author: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 

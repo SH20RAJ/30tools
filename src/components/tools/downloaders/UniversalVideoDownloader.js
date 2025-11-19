@@ -1,12 +1,18 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent,CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Progress } from '@/components/ui/progress';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Progress } from "@/components/ui/progress";
 import {
   Download,
   Link as LinkIcon,
@@ -26,60 +32,66 @@ import {
   Star,
   Wrench,
   Scissors,
-  FileText
-} from 'lucide-react';
-import { fetchVideoData } from '@/lib/video-download-actions';
+  FileText,
+} from "lucide-react";
+import { fetchVideoData } from "@/lib/video-download-actions";
 
 export default function UniversalVideoDownloader() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [videoData, setVideoData] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [progress, setProgress] = useState(0);
 
   // Function to detect the platform from the URL
   const detectPlatform = (url) => {
-    if (url.includes('tiktok.com') || url.includes('vm.tiktok.com')) {
-      return 'TikTok';
-    } else if (url.includes('facebook.com') || url.includes('fb.watch')) {
-      return 'Facebook';
-    } else if (url.includes('instagram.com')) {
-      return 'Instagram';
-    } else if (url.includes('twitter.com') || url.includes('x.com') || url.includes('t.co')) {
-      return 'Twitter/X';
-    } else if (url.includes('vimeo.com')) {
-      return 'Vimeo';
-    } else if (url.includes('dailymotion.com')) {
-      return 'Dailymotion';
-    } else if (url.includes('reddit.com')) {
-      return 'Reddit';
-    } else if (url.includes('rumble.com')) {
-      return 'Rumble';
-    } else if (url.includes('youtube.com') || url.includes('youtu.be')) {
-      return 'YouTube';
-    } else if (url.includes('pinterest.com')) {
-      return 'Pinterest';
-    } else if (url.includes('snapchat.com')) {
-      return 'Snapchat';
+    if (url.includes("tiktok.com") || url.includes("vm.tiktok.com")) {
+      return "TikTok";
+    } else if (url.includes("facebook.com") || url.includes("fb.watch")) {
+      return "Facebook";
+    } else if (url.includes("instagram.com")) {
+      return "Instagram";
+    } else if (
+      url.includes("twitter.com") ||
+      url.includes("x.com") ||
+      url.includes("t.co")
+    ) {
+      return "Twitter/X";
+    } else if (url.includes("vimeo.com")) {
+      return "Vimeo";
+    } else if (url.includes("dailymotion.com")) {
+      return "Dailymotion";
+    } else if (url.includes("reddit.com")) {
+      return "Reddit";
+    } else if (url.includes("rumble.com")) {
+      return "Rumble";
+    } else if (url.includes("youtube.com") || url.includes("youtu.be")) {
+      return "YouTube";
+    } else if (url.includes("pinterest.com")) {
+      return "Pinterest";
+    } else if (url.includes("snapchat.com")) {
+      return "Snapchat";
     } else {
-      return 'Unknown';
+      return "Unknown";
     }
   };
 
   const handleDownload = async () => {
     if (!url.trim()) {
-      setError('Please enter a video URL');
+      setError("Please enter a video URL");
       return;
     }
 
     const platform = detectPlatform(url);
-    if (platform === 'Unknown') {
-      setError('Unsupported video platform. Please try TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, or Rumble.');
+    if (platform === "Unknown") {
+      setError(
+        "Unsupported video platform. Please try TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, or Rumble.",
+      );
       return;
     }
 
     setIsLoading(true);
-    setError('');
+    setError("");
     setVideoData(null);
     setProgress(0);
 
@@ -88,7 +100,10 @@ export default function UniversalVideoDownloader() {
       const result = await fetchVideoData(url);
       setVideoData(result);
     } catch (err) {
-      setError(err.message || `Failed to process the ${detectPlatform(url)} video. Please try again.`);
+      setError(
+        err.message ||
+          `Failed to process the ${detectPlatform(url)} video. Please try again.`,
+      );
     } finally {
       setIsLoading(false);
     }
@@ -96,9 +111,9 @@ export default function UniversalVideoDownloader() {
 
   const downloadContent = (quality) => {
     // Create a temporary link and trigger download
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = quality.url;
-    link.download = `${videoData.title || 'video'}.${quality.type === 'audio' ? 'mp3' : 'mp4'}`;
+    link.download = `${videoData.title || "video"}.${quality.type === "audio" ? "mp3" : "mp4"}`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -117,7 +132,10 @@ export default function UniversalVideoDownloader() {
           Universal Video Downloader
         </h1>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Download videos from TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, Rumble and more platforms. No watermark downloads, multiple quality options, no registration required.
+          Download videos from TikTok, Facebook, Instagram, Twitter/X, YouTube,
+          Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, Rumble and more
+          platforms. No watermark downloads, multiple quality options, no
+          registration required.
         </p>
       </div>
 
@@ -129,27 +147,33 @@ export default function UniversalVideoDownloader() {
               <Download className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-semibold mb-1">Multiple Platforms</h3>
-            <p className="text-sm text-muted-foreground">Support for 10+ social media platforms</p>
+            <p className="text-sm text-muted-foreground">
+              Support for 10+ social media platforms
+            </p>
           </CardContent>
         </Card>
-        
+
         <Card className="text-center">
           <CardContent className="p-4">
             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
               <MonitorIcon className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-semibold mb-1">No Watermark</h3>
-            <p className="text-sm text-muted-foreground">Download videos without watermarks</p>
+            <p className="text-sm text-muted-foreground">
+              Download videos without watermarks
+            </p>
           </CardContent>
         </Card>
-        
+
         <Card className="text-center">
           <CardContent className="p-4">
             <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
               <SmartphoneIcon className="h-6 w-6 text-primary" />
             </div>
             <h3 className="font-semibold mb-1">All Qualities</h3>
-            <p className="text-sm text-muted-foreground">Multiple quality options available</p>
+            <p className="text-sm text-muted-foreground">
+              Multiple quality options available
+            </p>
           </CardContent>
         </Card>
       </div>
@@ -230,19 +254,25 @@ export default function UniversalVideoDownloader() {
                       alt="Video thumbnail"
                       className="w-full md:w-48 h-28 object-cover rounded-lg"
                       onError={(e) => {
-                        e.target.src = '/placeholder-video-thumbnail.jpg';
+                        e.target.src = "/placeholder-video-thumbnail.jpg";
                       }}
                     />
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-medium text-lg truncate">{videoData.title}</h3>
+                      <h3 className="font-medium text-lg truncate">
+                        {videoData.title}
+                      </h3>
                       <div className="space-y-1 mt-2">
                         <div className="flex items-center gap-2 text-sm">
-                          <span className="text-muted-foreground">Duration:</span>
+                          <span className="text-muted-foreground">
+                            Duration:
+                          </span>
                           <span>{videoData.duration}</span>
                         </div>
                         {videoData.author && (
                           <div className="flex items-center gap-2 text-sm">
-                            <span className="text-muted-foreground">Author:</span>
+                            <span className="text-muted-foreground">
+                              Author:
+                            </span>
                             <span>{videoData.author}</span>
                           </div>
                         )}
@@ -262,16 +292,18 @@ export default function UniversalVideoDownloader() {
               <div className="space-y-3">
                 <h4 className="text-lg font-medium">Download Options:</h4>
                 {videoData.qualities.map((quality, index) => (
-                  <div 
-                    key={quality.id || index} 
+                  <div
+                    key={quality.id || index}
                     className="flex flex-col sm:flex-row sm:items-center justify-between p-3 border rounded-lg hover:bg-muted/50 transition-colors"
                   >
                     <div className="flex items-center gap-3 mb-2 sm:mb-0">
                       <div className="flex flex-col">
                         <span className="font-medium">{quality.quality}</span>
-                        <span className="text-sm text-muted-foreground">{quality.size}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {quality.size}
+                        </span>
                       </div>
-                      {quality.type === 'video' && platform === 'TikTok' && (
+                      {quality.type === "video" && platform === "TikTok" && (
                         <Badge variant="secondary">No Watermark</Badge>
                       )}
                     </div>
@@ -280,7 +312,7 @@ export default function UniversalVideoDownloader() {
                       variant="outline"
                       className="flex items-center gap-2 w-full sm:w-auto"
                     >
-                      {quality.type === 'audio' ? (
+                      {quality.type === "audio" ? (
                         <>
                           <Music className="h-4 w-4" />
                           Download Audio
@@ -302,8 +334,22 @@ export default function UniversalVideoDownloader() {
           <div className="pt-4 border-t">
             <h4 className="font-medium mb-2">Supported Platforms:</h4>
             <div className="flex flex-wrap gap-2">
-              {['TikTok', 'Facebook', 'Instagram', 'Twitter/X', 'YouTube', 'Vimeo', 'Dailymotion', 'Pinterest', 'Reddit', 'Snapchat', 'Rumble'].map((platform) => (
-                <Badge key={platform} variant="secondary">{platform}</Badge>
+              {[
+                "TikTok",
+                "Facebook",
+                "Instagram",
+                "Twitter/X",
+                "YouTube",
+                "Vimeo",
+                "Dailymotion",
+                "Pinterest",
+                "Reddit",
+                "Snapchat",
+                "Rumble",
+              ].map((platform) => (
+                <Badge key={platform} variant="secondary">
+                  {platform}
+                </Badge>
               ))}
             </div>
           </div>
@@ -317,7 +363,10 @@ export default function UniversalVideoDownloader() {
         </CardHeader>
         <CardContent>
           <ol className="list-decimal list-inside space-y-2">
-            <li>Copy the video URL from TikTok, Facebook, Instagram, Twitter/X, YouTube, or other supported platforms</li>
+            <li>
+              Copy the video URL from TikTok, Facebook, Instagram, Twitter/X,
+              YouTube, or other supported platforms
+            </li>
             <li>Paste the URL in the input field above</li>
             <li>Click the "Download" button</li>
             <li>Select your preferred quality and download the video</li>
@@ -336,31 +385,39 @@ export default function UniversalVideoDownloader() {
               <CheckCircle2 className="h-5 w-5 text-green-500" />
               No Registration Required
             </h4>
-            <p className="text-sm text-muted-foreground">Download videos without creating accounts or logging in</p>
+            <p className="text-sm text-muted-foreground">
+              Download videos without creating accounts or logging in
+            </p>
           </div>
-          
+
           <div className="space-y-2">
             <h4 className="font-medium flex items-center gap-2">
               <CheckCircle2 className="h-5 w-5 text-green-500" />
               Multiple Quality Options
             </h4>
-            <p className="text-sm text-muted-foreground">Choose from various resolutions and formats</p>
+            <p className="text-sm text-muted-foreground">
+              Choose from various resolutions and formats
+            </p>
           </div>
-          
+
           <div className="space-y-2">
             <h4 className="font-medium flex items-center gap-2">
               <CheckCircle2 className="h-5 w-5 text-green-500" />
               No Watermark Downloads
             </h4>
-            <p className="text-sm text-muted-foreground">Get clean videos without platform watermarks</p>
+            <p className="text-sm text-muted-foreground">
+              Get clean videos without platform watermarks
+            </p>
           </div>
-          
+
           <div className="space-y-2">
             <h4 className="font-medium flex items-center gap-2">
               <CheckCircle2 className="h-5 w-5 text-green-500" />
               Works on All Devices
             </h4>
-            <p className="text-sm text-muted-foreground">Use on desktop, tablet, or mobile devices</p>
+            <p className="text-sm text-muted-foreground">
+              Use on desktop, tablet, or mobile devices
+            </p>
           </div>
         </CardContent>
       </Card>
@@ -373,7 +430,8 @@ export default function UniversalVideoDownloader() {
             Complete Video Download Guide
           </CardTitle>
           <CardDescription>
-            Follow these detailed steps to download videos from any social media platform
+            Follow these detailed steps to download videos from any social media
+            platform
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -390,7 +448,9 @@ export default function UniversalVideoDownloader() {
               </ol>
             </div>
             <div>
-              <h4 className="font-semibold mb-3 text-lg">For Instagram Videos</h4>
+              <h4 className="font-semibold mb-3 text-lg">
+                For Instagram Videos
+              </h4>
               <ol className="list-decimal list-inside space-y-2 text-sm">
                 <li>Open Instagram app or website</li>
                 <li>Navigate to the video post</li>
@@ -404,7 +464,9 @@ export default function UniversalVideoDownloader() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div>
-              <h4 className="font-semibold mb-3 text-lg">For Facebook Videos</h4>
+              <h4 className="font-semibold mb-3 text-lg">
+                For Facebook Videos
+              </h4>
               <ol className="list-decimal list-inside space-y-2 text-sm">
                 <li>Go to the Facebook video</li>
                 <li>Click on the video to open it</li>
@@ -415,7 +477,9 @@ export default function UniversalVideoDownloader() {
               </ol>
             </div>
             <div>
-              <h4 className="font-semibold mb-3 text-lg">For Twitter/X Videos</h4>
+              <h4 className="font-semibold mb-3 text-lg">
+                For Twitter/X Videos
+              </h4>
               <ol className="list-decimal list-inside space-y-2 text-sm">
                 <li>Find the tweet with the video</li>
                 <li>Click the share button (three dots)</li>
@@ -444,56 +508,73 @@ export default function UniversalVideoDownloader() {
           <div className="space-y-3">
             <h4 className="font-semibold">What platforms are supported?</h4>
             <p className="text-sm text-muted-foreground">
-              We support TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, and Rumble. More platforms are added regularly.
+              We support TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo,
+              Dailymotion, Pinterest, Reddit, Snapchat, and Rumble. More
+              platforms are added regularly.
             </p>
           </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold">Are the downloads watermark-free?</h4>
             <p className="text-sm text-muted-foreground">
-              Yes! All downloads are completely watermark-free. You get the original video quality without any platform branding or watermarks.
+              Yes! All downloads are completely watermark-free. You get the
+              original video quality without any platform branding or
+              watermarks.
             </p>
           </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold">Is this service free?</h4>
             <p className="text-sm text-muted-foreground">
-              Absolutely free! No registration, no hidden fees, no premium features. Everything is completely free to use.
+              Absolutely free! No registration, no hidden fees, no premium
+              features. Everything is completely free to use.
             </p>
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-semibold">What video qualities are available?</h4>
+            <h4 className="font-semibold">
+              What video qualities are available?
+            </h4>
             <p className="text-sm text-muted-foreground">
-              We offer multiple quality options including HD (1080p), SD (720p), and lower resolutions. Choose the quality that best fits your needs.
+              We offer multiple quality options including HD (1080p), SD (720p),
+              and lower resolutions. Choose the quality that best fits your
+              needs.
             </p>
           </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold">Can I download private videos?</h4>
             <p className="text-sm text-muted-foreground">
-              No, we can only download publicly available videos. Private videos require authentication that we don't have access to.
+              No, we can only download publicly available videos. Private videos
+              require authentication that we don't have access to.
             </p>
           </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold">Is it safe to use?</h4>
             <p className="text-sm text-muted-foreground">
-              Yes, completely safe. All processing happens in your browser, and your videos never leave your device. No data is stored on our servers.
+              Yes, completely safe. All processing happens in your browser, and
+              your videos never leave your device. No data is stored on our
+              servers.
             </p>
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-semibold">Why does a video fail to download?</h4>
+            <h4 className="font-semibold">
+              Why does a video fail to download?
+            </h4>
             <p className="text-sm text-muted-foreground">
-              Videos might fail if they're private, deleted, or from unsupported platforms. Also, some videos may have copyright restrictions that prevent downloading.
+              Videos might fail if they're private, deleted, or from unsupported
+              platforms. Also, some videos may have copyright restrictions that
+              prevent downloading.
             </p>
           </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold">Can I download audio only?</h4>
             <p className="text-sm text-muted-foreground">
-              Yes! Many videos offer an "Audio Only" option that extracts just the audio track as an MP3 file.
+              Yes! Many videos offer an "Audio Only" option that extracts just
+              the audio track as an MP3 file.
             </p>
           </div>
         </CardContent>
@@ -506,9 +587,7 @@ export default function UniversalVideoDownloader() {
             <Star className="h-5 w-5" />
             What Users Say
           </CardTitle>
-          <CardDescription>
-            Real reviews from our users
-          </CardDescription>
+          <CardDescription>Real reviews from our users</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
@@ -517,30 +596,43 @@ export default function UniversalVideoDownloader() {
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
                   <span className="text-sm font-medium">Sarah Johnson</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  "This video downloader is amazing! I can finally save my favorite TikTok videos without watermarks. The quality is perfect and it's so easy to use."
+                  "This video downloader is amazing! I can finally save my
+                  favorite TikTok videos without watermarks. The quality is
+                  perfect and it's so easy to use."
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">November 15, 2024</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  November 15, 2024
+                </p>
               </div>
 
               <div className="border rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
                   <span className="text-sm font-medium">Mike Chen</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  "Works perfectly for Instagram Reels and Facebook videos. Much better than other downloaders I've tried. Fast and reliable!"
+                  "Works perfectly for Instagram Reels and Facebook videos. Much
+                  better than other downloaders I've tried. Fast and reliable!"
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">November 12, 2024</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  November 12, 2024
+                </p>
               </div>
             </div>
 
@@ -549,31 +641,45 @@ export default function UniversalVideoDownloader() {
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex">
                     {[...Array(4)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                     <Star className="h-4 w-4 text-gray-300" />
                   </div>
                   <span className="text-sm font-medium">Emily Davis</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  "Great tool for downloading Twitter videos. The interface is clean and it works on my phone too. Only wish it supported more formats."
+                  "Great tool for downloading Twitter videos. The interface is
+                  clean and it works on my phone too. Only wish it supported
+                  more formats."
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">November 10, 2024</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  November 10, 2024
+                </p>
               </div>
 
               <div className="border rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
                   <span className="text-sm font-medium">David Wilson</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  "Perfect for content creators! I can download videos for reference without worrying about watermarks. Highly recommended."
+                  "Perfect for content creators! I can download videos for
+                  reference without worrying about watermarks. Highly
+                  recommended."
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">November 8, 2024</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  November 8, 2024
+                </p>
               </div>
             </div>
           </div>
@@ -598,7 +704,9 @@ export default function UniversalVideoDownloader() {
                 <Scissors className="h-6 w-6 text-primary" />
               </div>
               <h4 className="font-medium mb-1">Video Trimmer</h4>
-              <p className="text-sm text-muted-foreground">Cut and trim videos online</p>
+              <p className="text-sm text-muted-foreground">
+                Cut and trim videos online
+              </p>
             </div>
 
             <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
@@ -606,7 +714,9 @@ export default function UniversalVideoDownloader() {
                 <Music className="h-6 w-6 text-primary" />
               </div>
               <h4 className="font-medium mb-1">Video to MP3</h4>
-              <p className="text-sm text-muted-foreground">Extract audio from videos</p>
+              <p className="text-sm text-muted-foreground">
+                Extract audio from videos
+              </p>
             </div>
 
             <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
@@ -614,7 +724,9 @@ export default function UniversalVideoDownloader() {
                 <FileText className="h-6 w-6 text-primary" />
               </div>
               <h4 className="font-medium mb-1">Video Compressor</h4>
-              <p className="text-sm text-muted-foreground">Reduce video file sizes</p>
+              <p className="text-sm text-muted-foreground">
+                Reduce video file sizes
+              </p>
             </div>
           </div>
         </CardContent>
@@ -629,40 +741,68 @@ export default function UniversalVideoDownloader() {
           <CardContent className="prose prose-sm max-w-none">
             <h3>Why Choose Our Video Downloader?</h3>
             <p>
-              Our universal video downloader stands out from the competition with its comprehensive platform support,
-              watermark-free downloads, and commitment to user privacy. Unlike many other downloaders that require
-              registration or have limited platform support, our tool works with all major social media platforms
-              and processes everything locally in your browser.
+              Our universal video downloader stands out from the competition
+              with its comprehensive platform support, watermark-free downloads,
+              and commitment to user privacy. Unlike many other downloaders that
+              require registration or have limited platform support, our tool
+              works with all major social media platforms and processes
+              everything locally in your browser.
             </p>
 
             <h3>Supported Video Platforms</h3>
             <p>
-              Download videos from TikTok, Instagram, Facebook, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest,
-              Reddit, Snapchat, and Rumble. Our tool automatically detects the platform and provides the best
-              available quality options for each video.
+              Download videos from TikTok, Instagram, Facebook, Twitter/X,
+              YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, and
+              Rumble. Our tool automatically detects the platform and provides
+              the best available quality options for each video.
             </p>
 
             <h3>Quality Options Explained</h3>
             <ul>
-              <li><strong>HD (1080p):</strong> Best quality for large screens and professional use</li>
-              <li><strong>SD (720p):</strong> Good balance of quality and file size</li>
-              <li><strong>Audio Only:</strong> Extract MP3 audio tracks from videos</li>
-              <li><strong>Mobile Optimized:</strong> Smaller file sizes for mobile devices</li>
+              <li>
+                <strong>HD (1080p):</strong> Best quality for large screens and
+                professional use
+              </li>
+              <li>
+                <strong>SD (720p):</strong> Good balance of quality and file
+                size
+              </li>
+              <li>
+                <strong>Audio Only:</strong> Extract MP3 audio tracks from
+                videos
+              </li>
+              <li>
+                <strong>Mobile Optimized:</strong> Smaller file sizes for mobile
+                devices
+              </li>
             </ul>
 
             <h3>Privacy and Security</h3>
             <p>
-              Your privacy is our top priority. All video processing happens directly in your web browser,
-              meaning your videos never leave your device. No data is stored on our servers, and we don't
-              track your usage or collect personal information.
+              Your privacy is our top priority. All video processing happens
+              directly in your web browser, meaning your videos never leave your
+              device. No data is stored on our servers, and we don't track your
+              usage or collect personal information.
             </p>
 
             <h3>Troubleshooting Common Issues</h3>
             <ul>
-              <li><strong>Video won't download:</strong> Check if the video is public and from a supported platform</li>
-              <li><strong>Poor quality:</strong> Try a different quality option or check the original video</li>
-              <li><strong>Slow downloads:</strong> This depends on your internet connection and video size</li>
-              <li><strong>Unsupported platform:</strong> We add new platforms regularly - check back soon</li>
+              <li>
+                <strong>Video won't download:</strong> Check if the video is
+                public and from a supported platform
+              </li>
+              <li>
+                <strong>Poor quality:</strong> Try a different quality option or
+                check the original video
+              </li>
+              <li>
+                <strong>Slow downloads:</strong> This depends on your internet
+                connection and video size
+              </li>
+              <li>
+                <strong>Unsupported platform:</strong> We add new platforms
+                regularly - check back soon
+              </li>
             </ul>
           </CardContent>
         </Card>

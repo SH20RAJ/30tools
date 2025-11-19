@@ -1,10 +1,16 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { RefreshCw } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { RefreshCw } from "lucide-react";
+import { toast } from "sonner";
 
 export default function FileConverter() {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -13,10 +19,10 @@ export default function FileConverter() {
     setIsProcessing(true);
     try {
       // Simulate processing
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast.success('Operation completed successfully!');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      toast.success("Operation completed successfully!");
     } catch (error) {
-      toast.error('Operation failed. Please try again.');
+      toast.error("Operation failed. Please try again.");
     } finally {
       setIsProcessing(false);
     }
@@ -27,7 +33,9 @@ export default function FileConverter() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">Universal File Converter</h1>
+            <h1 className="text-4xl font-bold mb-4">
+              Universal File Converter
+            </h1>
             <p className="text-lg text-muted-foreground">
               Convert files between various formats automatically
             </p>
@@ -40,7 +48,8 @@ export default function FileConverter() {
                 Universal File Converter
               </CardTitle>
               <CardDescription>
-                This tool is currently under development. More features coming soon!
+                This tool is currently under development. More features coming
+                soon!
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -51,7 +60,7 @@ export default function FileConverter() {
                   We're working hard to bring you this amazing tool. Stay tuned!
                 </p>
                 <Button onClick={handleProcess} disabled={isProcessing}>
-                  {isProcessing ? 'Processing...' : 'Try Demo'}
+                  {isProcessing ? "Processing..." : "Try Demo"}
                 </Button>
               </div>
             </CardContent>
@@ -63,8 +72,9 @@ export default function FileConverter() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground">
-                Convert files between various formats automatically. This tool will provide a user-friendly interface 
-                with advanced features to help you accomplish your tasks efficiently.
+                Convert files between various formats automatically. This tool
+                will provide a user-friendly interface with advanced features to
+                help you accomplish your tasks efficiently.
               </p>
             </CardContent>
           </Card>

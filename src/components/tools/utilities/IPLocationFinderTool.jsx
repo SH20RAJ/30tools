@@ -1,11 +1,17 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { MapPin, Globe, Wifi, Copy, Check, RefreshCw } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { MapPin, Globe, Wifi, Copy, Check, RefreshCw } from "lucide-react";
+import { toast } from "sonner";
 
 export default function IPLocationFinderTool() {
   const [ipInfo, setIpInfo] = useState(null);
@@ -16,9 +22,9 @@ export default function IPLocationFinderTool() {
     setLoading(true);
     try {
       // Using a free IP geolocation service
-      const response = await fetch('https://ipapi.co/json/');
+      const response = await fetch("https://ipapi.co/json/");
       const data = await response.json();
-      
+
       const ipData = {
         ip: data.ip,
         city: data.city,
@@ -33,14 +39,14 @@ export default function IPLocationFinderTool() {
         asn: data.asn,
         currency: data.currency,
         language: data.languages,
-        continent: data.continent_code
+        continent: data.continent_code,
       };
-      
+
       setIpInfo(ipData);
-      toast.success('IP location information retrieved!');
+      toast.success("IP location information retrieved!");
     } catch (error) {
-      toast.error('Failed to get IP location information');
-      console.error('Error:', error);
+      toast.error("Failed to get IP location information");
+      console.error("Error:", error);
     } finally {
       setLoading(false);
     }
@@ -50,10 +56,10 @@ export default function IPLocationFinderTool() {
     try {
       await navigator.clipboard.writeText(text);
       setCopied(true);
-      toast.success('Copied to clipboard!');
+      toast.success("Copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
     } catch (error) {
-      toast.error('Failed to copy');
+      toast.error("Failed to copy");
     }
   };
 
@@ -70,7 +76,8 @@ export default function IPLocationFinderTool() {
             What Is My IP Location
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Find your IP address location, ISP information, and detailed geolocation data instantly.
+            Find your IP address location, ISP information, and detailed
+            geolocation data instantly.
           </p>
         </div>
 
@@ -89,13 +96,17 @@ export default function IPLocationFinderTool() {
             {loading ? (
               <div className="text-center py-8">
                 <RefreshCw className="h-8 w-8 animate-spin mx-auto mb-4 text-primary" />
-                <p className="text-muted-foreground">Getting your IP location...</p>
+                <p className="text-muted-foreground">
+                  Getting your IP location...
+                </p>
               </div>
             ) : ipInfo ? (
               <div className="space-y-6">
                 {/* IP Address */}
                 <div className="text-center py-6 bg-background">
-                  <h2 className="text-2xl font-bold text-foreground mb-2">Your IP Address</h2>
+                  <h2 className="text-2xl font-bold text-foreground mb-2">
+                    Your IP Address
+                  </h2>
                   <div className="flex items-center justify-center gap-2">
                     <code className="text-3xl font-mono font-bold text-primary bg-white px-4 py-2 rounded-lg shadow-sm">
                       {ipInfo.ip}
@@ -105,7 +116,11 @@ export default function IPLocationFinderTool() {
                       variant="outline"
                       size="sm"
                     >
-                      {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                      {copied ? (
+                        <Check className="h-4 w-4" />
+                      ) : (
+                        <Copy className="h-4 w-4" />
+                      )}
                     </Button>
                   </div>
                 </div>
@@ -122,26 +137,28 @@ export default function IPLocationFinderTool() {
                     <CardContent className="space-y-3">
                       <div className="flex justify-between">
                         <span className="font-medium">City:</span>
-                        <span>{ipInfo.city || 'Unknown'}</span>
+                        <span>{ipInfo.city || "Unknown"}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Region:</span>
-                        <span>{ipInfo.region || 'Unknown'}</span>
+                        <span>{ipInfo.region || "Unknown"}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Country:</span>
                         <div className="flex items-center gap-2">
                           <span>{ipInfo.country}</span>
-                          <Badge variant="secondary">{ipInfo.countryCode}</Badge>
+                          <Badge variant="secondary">
+                            {ipInfo.countryCode}
+                          </Badge>
                         </div>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Postal Code:</span>
-                        <span>{ipInfo.postal || 'Unknown'}</span>
+                        <span>{ipInfo.postal || "Unknown"}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Continent:</span>
-                        <span>{ipInfo.continent || 'Unknown'}</span>
+                        <span>{ipInfo.continent || "Unknown"}</span>
                       </div>
                     </CardContent>
                   </Card>
@@ -157,24 +174,24 @@ export default function IPLocationFinderTool() {
                       <div className="flex justify-between">
                         <span className="font-medium">ISP:</span>
                         <span className="text-right max-w-[200px] break-words">
-                          {ipInfo.isp || 'Unknown'}
+                          {ipInfo.isp || "Unknown"}
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">ASN:</span>
-                        <span>{ipInfo.asn || 'Unknown'}</span>
+                        <span>{ipInfo.asn || "Unknown"}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Timezone:</span>
-                        <span>{ipInfo.timezone || 'Unknown'}</span>
+                        <span>{ipInfo.timezone || "Unknown"}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Currency:</span>
-                        <span>{ipInfo.currency || 'Unknown'}</span>
+                        <span>{ipInfo.currency || "Unknown"}</span>
                       </div>
                       <div className="flex justify-between">
                         <span className="font-medium">Languages:</span>
-                        <span>{ipInfo.language || 'Unknown'}</span>
+                        <span>{ipInfo.language || "Unknown"}</span>
                       </div>
                     </CardContent>
                   </Card>
@@ -206,7 +223,12 @@ export default function IPLocationFinderTool() {
                       </div>
                       <div className="mt-4">
                         <Button
-                          onClick={() => window.open(`https://www.google.com/maps?q=${ipInfo.latitude},${ipInfo.longitude}`, '_blank')}
+                          onClick={() =>
+                            window.open(
+                              `https://www.google.com/maps?q=${ipInfo.latitude},${ipInfo.longitude}`,
+                              "_blank",
+                            )
+                          }
                           variant="outline"
                           className="w-full"
                         >
@@ -227,10 +249,10 @@ export default function IPLocationFinderTool() {
               </div>
             ) : (
               <div className="text-center py-8">
-                <p className="text-muted-foreground mb-4">Click to get your IP location information</p>
-                <Button onClick={getIPLocation}>
-                  Get My IP Location
-                </Button>
+                <p className="text-muted-foreground mb-4">
+                  Click to get your IP location information
+                </p>
+                <Button onClick={getIPLocation}>Get My IP Location</Button>
               </div>
             )}
           </CardContent>

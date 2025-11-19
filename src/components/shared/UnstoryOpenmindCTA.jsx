@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { 
-  Heart, 
-  MessageCircle, 
-  Users, 
-  Shield, 
-  Sparkles, 
+import { useState, useEffect } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import {
+  Heart,
+  MessageCircle,
+  Users,
+  Shield,
+  Sparkles,
   ArrowRight,
   BookOpen,
   PenTool,
@@ -17,51 +17,51 @@ import {
   Star,
   Coffee,
   Moon,
-  Sun
-} from 'lucide-react';
-import InstagramEmbed from './InstagramEmbed';
+  Sun,
+} from "lucide-react";
+import InstagramEmbed from "./InstagramEmbed";
 
 const features = [
   {
     icon: Shield,
     title: "Safe Space",
-    description: "Share without judgment in our secure environment"
+    description: "Share without judgment in our secure environment",
   },
   {
     icon: Users,
     title: "Community Support",
-    description: "Connect with like-minded individuals on similar journeys"
+    description: "Connect with like-minded individuals on similar journeys",
   },
   {
     icon: Heart,
     title: "Authentic Stories",
-    description: "Real experiences, genuine connections, meaningful growth"
+    description: "Real experiences, genuine connections, meaningful growth",
   },
   {
     icon: BookOpen,
     title: "Personal Growth",
-    description: "Learn from others' experiences and share your wisdom"
-  }
+    description: "Learn from others' experiences and share your wisdom",
+  },
 ];
 
 const testimonials = [
   {
     text: "This platform changed how I view vulnerability. It's okay to not be okay.",
     author: "Anonymous Student",
-    emotion: "grateful"
+    emotion: "grateful",
   },
   {
     text: "Finally found a space where my story matters. Thank you for creating this.",
     author: "Community Member",
-    emotion: "hopeful"
-  }
+    emotion: "hopeful",
+  },
 ];
 
 const communityStats = [
   { label: "Active Members", value: "2.5K+", icon: Users },
   { label: "Stories Shared", value: "850+", icon: BookOpen },
   { label: "Support Given", value: "3.2K+", icon: Heart },
-  { label: "Growth Together", value: "∞", icon: Sparkles }
+  { label: "Growth Together", value: "∞", icon: Sparkles },
 ];
 
 export default function UnstoryOpenmindCTA() {
@@ -78,7 +78,7 @@ export default function UnstoryOpenmindCTA() {
 
   return (
     <div className="my-12 max-w-6xl mx-auto px-4">
-      <Card 
+      <Card
         className="relative overflow-hidden bg-muted/20 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30 border-0 shadow-2xl"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
@@ -88,7 +88,9 @@ export default function UnstoryOpenmindCTA() {
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-purple-200/20 dark:from-blue-700/10 dark:to-purple-700/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-200/20 to-purple-200/20 dark:from-pink-700/10 dark:to-purple-700/10 rounded-full blur-3xl" />
           {/* Floating Elements */}
-          <div className={`absolute transition-all duration-1000 ${isHovered ? 'translate-y-2 scale-110' : 'translate-y-0'}`}>
+          <div
+            className={`absolute transition-all duration-1000 ${isHovered ? "translate-y-2 scale-110" : "translate-y-0"}`}
+          >
             <Heart className="absolute top-20 left-20 w-6 h-6 text-pink-300/40 dark:text-primary/30" />
             <Star className="absolute top-32 right-32 w-4 h-4 text-yellow-300/40 dark:text-primary/30" />
             <Sparkles className="absolute bottom-24 left-32 w-5 h-5 text-purple-300/40 dark:text-primary/30" />
@@ -104,22 +106,25 @@ export default function UnstoryOpenmindCTA() {
                 <Heart className="w-8 h-8 text-white" />
               </div>
             </div>
-            
-            <Badge 
-              variant="secondary" 
+
+            <Badge
+              variant="secondary"
               className="mb-4 px-4 py-2 bg-background/50 dark:to-purple-900/50 text-primary dark:text-blue-300 border-0"
             >
               <Sparkles className="w-4 h-4 mr-2" />
               Find Your Calm & Share Your Story
             </Badge>
-            
+
             <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-muted/20 bg-clip-text text-transparent">
               Join Unstory Openmind
             </h2>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              A safe space for authentic conversations and personal growth. 
-              <span className="font-medium text-foreground"> Share your story, judgment-free.</span>
+              A safe space for authentic conversations and personal growth.
+              <span className="font-medium text-foreground">
+                {" "}
+                Share your story, judgment-free.
+              </span>
             </p>
           </div>
 
@@ -128,15 +133,19 @@ export default function UnstoryOpenmindCTA() {
             {features.map((feature, index) => {
               const IconComponent = feature.icon;
               return (
-                <div 
+                <div
                   key={index}
                   className="text-center p-6 rounded-2xl bg-white/50 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 hover:bg-white/70 dark:hover:bg-gray-800/50 transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 bg-background:scale-110 transition-transform duration-300">
                     <IconComponent className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="font-semibold text-foreground mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               );
             })}
@@ -147,10 +156,17 @@ export default function UnstoryOpenmindCTA() {
             {communityStats.map((stat, index) => {
               const IconComponent = stat.icon;
               return (
-                <div key={index} className="text-center p-4 rounded-xl bg-white/30 dark:bg-gray-800/20 backdrop-blur-sm">
+                <div
+                  key={index}
+                  className="text-center p-4 rounded-xl bg-white/30 dark:bg-gray-800/20 backdrop-blur-sm"
+                >
                   <IconComponent className="w-5 h-5 text-primary dark:text-primary mx-auto mb-1" />
-                  <div className="text-lg font-bold text-foreground">{stat.value}</div>
-                  <div className="text-xs text-muted-foreground">{stat.label}</div>
+                  <div className="text-lg font-bold text-foreground">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
               );
             })}
@@ -167,7 +183,7 @@ export default function UnstoryOpenmindCTA() {
                 — {testimonials[currentTestimonial].author}
               </cite>
             </div>
-            
+
             {/* Testimonial Indicators */}
             <div className="flex justify-center mt-4 space-x-2">
               {testimonials.map((_, index) => (
@@ -175,9 +191,9 @@ export default function UnstoryOpenmindCTA() {
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    index === currentTestimonial 
-                      ? 'bg-muted/500 w-6' 
-                      : 'bg-gray-300 dark:bg-gray-600'
+                    index === currentTestimonial
+                      ? "bg-muted/500 w-6"
+                      : "bg-gray-300 dark:bg-gray-600"
                   }`}
                 />
               ))}
@@ -192,14 +208,10 @@ export default function UnstoryOpenmindCTA() {
           {/* Call to Action */}
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                asChild
-                size="lg"
-                className="bg-background[200px] group"
-              >
-                <a 
-                  href="https://unstory.live" 
-                  target="_blank" 
+              <Button asChild size="lg" className="bg-background[200px] group">
+                <a
+                  href="https://unstory.live"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center"
                 >
@@ -208,7 +220,7 @@ export default function UnstoryOpenmindCTA() {
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
                 </a>
               </Button>
-              
+
               <Button
                 variant="outline"
                 size="lg"
@@ -219,9 +231,10 @@ export default function UnstoryOpenmindCTA() {
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </Button>
             </div>
-            
+
             <p className="text-sm text-muted-foreground mt-4 max-w-md mx-auto">
-              Join thousands sharing their authentic stories in a supportive community
+              Join thousands sharing their authentic stories in a supportive
+              community
             </p>
           </div>
 

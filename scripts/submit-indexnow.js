@@ -7,19 +7,19 @@
  * (Works with Node 18+ or Bun)
  */
 
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 // Use global fetch when available (Node 18+, Bun). Otherwise dynamically import node-fetch.
 
-const INDEXNOW_KEY = '634a2c77198a45429967eb9dc1252278';
-const SITE_HOST = '30tools.com';
+const INDEXNOW_KEY = "634a2c77198a45429967eb9dc1252278";
+const SITE_HOST = "30tools.com";
 const KEY_LOCATION = `https://${SITE_HOST}/${INDEXNOW_KEY}.txt`;
-const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
+const INDEXNOW_ENDPOINT = "https://api.indexnow.org/IndexNow";
 
 function readToolsJson() {
-  const file = path.resolve(process.cwd(), 'src/constants/tools.json');
-  if (!fs.existsSync(file)) throw new Error('tools.json not found: ' + file);
-  const raw = fs.readFileSync(file, 'utf8');
+  const file = path.resolve(process.cwd(), "src/constants/tools.json");
+  if (!fs.existsSync(file)) throw new Error("tools.json not found: " + file);
+  const raw = fs.readFileSync(file, "utf8");
   return JSON.parse(raw);
 }
 
@@ -27,16 +27,18 @@ function buildUrls(toolsData) {
   const urls = new Set();
   urls.add(`https://${SITE_HOST}/`);
   // important pages
-  ['about','search','more-tools','contact'].forEach(p => urls.add(`https://${SITE_HOST}/${p}`));
+  ["about", "search", "more-tools", "contact"].forEach((p) =>
+    urls.add(`https://${SITE_HOST}/${p}`),
+  );
 
   // From toolsData.categories
   for (const key of Object.keys(toolsData.categories)) {
     const category = toolsData.categories[key];
-    if (category.route && typeof category.route === 'string') {
+    if (category.route && typeof category.route === "string") {
       urls.add(`https://${SITE_HOST}${category.route}`);
     }
     if (Array.isArray(category.tools)) {
-      category.tools.forEach(tool => {
+      category.tools.forEach((tool) => {
         // include internal routes only
         if (tool.route && !tool.external) {
           urls.add(`https://${SITE_HOST}${tool.route}`);
@@ -53,21 +55,21 @@ async function submitBatch(urlList) {
     host: SITE_HOST,
     key: INDEXNOW_KEY,
     keyLocation: KEY_LOCATION,
-    urlList
+    urlList,
   };
 
   // ensure we have a fetch implementation
   let fetchFn = globalThis.fetch;
   if (!fetchFn) {
     // dynamic import so this script works without forcing node-fetch install in modern runtimes
-    const mod = await import('node-fetch');
+    const mod = await import("node-fetch");
     fetchFn = mod.default || mod;
   }
 
   const res = await fetchFn(INDEXNOW_ENDPOINT, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json; charset=utf-8'
+      "Content-Type": "application/json; charset=utf-8",
     },
     body: JSON.stringify(payload),
     // timeout not standard here; rely on environment
@@ -82,13 +84,14 @@ async function main() {
   try {
     const toolsData = readToolsJson();
     const urls = buildUrls(toolsData);
-    const isDry = process.argv.includes('--dry-run') || process.argv.includes('-n');
+    const isDry =
+      process.argv.includes("--dry-run") || process.argv.includes("-n");
     console.log(`Found ${urls.length} URLs to submit`);
 
     if (isDry) {
-      console.log('Dry run mode: printing URLs (no network requests)');
-      urls.forEach(u => console.log(u));
-      console.log('Dry run complete.');
+      console.log("Dry run mode: printing URLs (no network requests)");
+      urls.forEach((u) => console.log(u));
+      console.log("Dry run complete.");
       process.exit(0);
     }
 
@@ -96,7 +99,9 @@ async function main() {
     let submitted = 0;
     for (let i = 0; i < urls.length; i += batchSize) {
       const batch = urls.slice(i, i + batchSize);
-      console.log(`Submitting batch ${Math.floor(i / batchSize) + 1}: ${batch.length} URLs`);
+      console.log(
+        `Submitting batch ${Math.floor(i / batchSize) + 1}: ${batch.length} URLs`,
+      );
       const result = await submitBatch(batch);
       if (result.ok) {
         console.log(`✅ Batch submitted (status: ${result.status})`);
@@ -107,13 +112,15 @@ async function main() {
         // do not exit - continue to next batch
       }
       // small delay to be polite
-      await new Promise(r => setTimeout(r, 1000));
+      await new Promise((r) => setTimeout(r, 1000));
     }
 
-    console.log(`Done. Submitted ${submitted}/${urls.length} URLs (attempted).`);
+    console.log(
+      `Done. Submitted ${submitted}/${urls.length} URLs (attempted).`,
+    );
     process.exit(0);
   } catch (err) {
-    console.error('Error:', err);
+    console.error("Error:", err);
     process.exit(1);
   }
 }

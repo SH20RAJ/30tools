@@ -1,142 +1,156 @@
-'use client';
+"use client";
 
-import { useState, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  FileCode, 
-  Copy, 
-  Download, 
+import { useState, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  FileCode,
+  Copy,
+  Download,
   RefreshCw,
-  CheckCircle, 
+  CheckCircle,
   AlertCircle,
   Settings,
   Zap,
   Shield,
   Sparkles,
-  Eye
-} from 'lucide-react';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  Eye,
+} from "lucide-react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 // Simple code formatting functions without external dependencies
 const formatJavaScript = (code, options) => {
   try {
     // Basic JavaScript formatting
     let formatted = code
-      .replace(/;\s*}/g, ';\n}')
-      .replace(/{\s*/g, '{\n')
-      .replace(/}\s*/g, '\n}\n')
-      .replace(/,\s*/g, ',\n')
-      .replace(/;\s*/g, ';\n')
-      .replace(/\n\s*\n/g, '\n');
+      .replace(/;\s*}/g, ";\n}")
+      .replace(/{\s*/g, "{\n")
+      .replace(/}\s*/g, "\n}\n")
+      .replace(/,\s*/g, ",\n")
+      .replace(/;\s*/g, ";\n")
+      .replace(/\n\s*\n/g, "\n");
 
     // Add proper indentation
-    const lines = formatted.split('\n');
+    const lines = formatted.split("\n");
     let indentLevel = 0;
-    const indent = options.useTabs ? '\t' : ' '.repeat(options.tabWidth);
-    
-    const formattedLines = lines.map(line => {
+    const indent = options.useTabs ? "\t" : " ".repeat(options.tabWidth);
+
+    const formattedLines = lines.map((line) => {
       const trimmed = line.trim();
-      if (!trimmed) return '';
-      
+      if (!trimmed) return "";
+
       // Decrease indent for closing braces
-      if (trimmed.includes('}')) {
+      if (trimmed.includes("}")) {
         indentLevel = Math.max(0, indentLevel - 1);
       }
-      
+
       const indentedLine = indent.repeat(indentLevel) + trimmed;
-      
+
       // Increase indent for opening braces
-      if (trimmed.includes('{')) {
+      if (trimmed.includes("{")) {
         indentLevel++;
       }
-      
+
       return indentedLine;
     });
-    
-    return formattedLines.join('\n');
+
+    return formattedLines.join("\n");
   } catch (error) {
-    throw new Error('JavaScript formatting failed: ' + error.message);
+    throw new Error("JavaScript formatting failed: " + error.message);
   }
 };
 
 const formatCSS = (code, options) => {
   try {
     let formatted = code
-      .replace(/{\s*/g, ' {\n')
-      .replace(/}\s*/g, '\n}\n')
-      .replace(/;\s*/g, ';\n')
-      .replace(/,\s*/g, ',\n')
-      .replace(/\n\s*\n/g, '\n');
+      .replace(/{\s*/g, " {\n")
+      .replace(/}\s*/g, "\n}\n")
+      .replace(/;\s*/g, ";\n")
+      .replace(/,\s*/g, ",\n")
+      .replace(/\n\s*\n/g, "\n");
 
-    const lines = formatted.split('\n');
+    const lines = formatted.split("\n");
     let indentLevel = 0;
-    const indent = options.useTabs ? '\t' : ' '.repeat(options.tabWidth);
-    
-    const formattedLines = lines.map(line => {
+    const indent = options.useTabs ? "\t" : " ".repeat(options.tabWidth);
+
+    const formattedLines = lines.map((line) => {
       const trimmed = line.trim();
-      if (!trimmed) return '';
-      
-      if (trimmed.includes('}')) {
+      if (!trimmed) return "";
+
+      if (trimmed.includes("}")) {
         indentLevel = Math.max(0, indentLevel - 1);
       }
-      
+
       const indentedLine = indent.repeat(indentLevel) + trimmed;
-      
-      if (trimmed.includes('{')) {
+
+      if (trimmed.includes("{")) {
         indentLevel++;
       }
-      
+
       return indentedLine;
     });
-    
-    return formattedLines.join('\n');
+
+    return formattedLines.join("\n");
   } catch (error) {
-    throw new Error('CSS formatting failed: ' + error.message);
+    throw new Error("CSS formatting failed: " + error.message);
   }
 };
 
 const formatHTML = (code, options) => {
   try {
-    const indent = options.useTabs ? '\t' : ' '.repeat(options.tabWidth);
+    const indent = options.useTabs ? "\t" : " ".repeat(options.tabWidth);
     let formatted = code;
     let indentLevel = 0;
-    
+
     // Basic HTML formatting
-    formatted = formatted
-      .replace(/>\s*</g, '>\n<')
-      .replace(/^\s+|\s+$/g, '');
-    
-    const lines = formatted.split('\n');
-    const formattedLines = lines.map(line => {
+    formatted = formatted.replace(/>\s*</g, ">\n<").replace(/^\s+|\s+$/g, "");
+
+    const lines = formatted.split("\n");
+    const formattedLines = lines.map((line) => {
       const trimmed = line.trim();
-      if (!trimmed) return '';
-      
+      if (!trimmed) return "";
+
       // Check for closing tags
-      if (trimmed.startsWith('</')) {
+      if (trimmed.startsWith("</")) {
         indentLevel = Math.max(0, indentLevel - 1);
       }
-      
+
       const indentedLine = indent.repeat(indentLevel) + trimmed;
-      
+
       // Check for opening tags (but not self-closing)
-      if (trimmed.startsWith('<') && !trimmed.startsWith('</') && !trimmed.endsWith('/>')) {
+      if (
+        trimmed.startsWith("<") &&
+        !trimmed.startsWith("</") &&
+        !trimmed.endsWith("/>")
+      ) {
         indentLevel++;
       }
-      
+
       return indentedLine;
     });
-    
-    return formattedLines.join('\n');
+
+    return formattedLines.join("\n");
   } catch (error) {
-    throw new Error('HTML formatting failed: ' + error.message);
+    throw new Error("HTML formatting failed: " + error.message);
   }
 };
 
@@ -146,7 +160,7 @@ const formatTypeScript = (code, options) => {
 };
 
 export default function CodeFormatterTool() {
-  const [activeTab, setActiveTab] = useState('javascript');
+  const [activeTab, setActiveTab] = useState("javascript");
   const [inputCode, setInputCode] = useState({
     javascript: `// Unformatted JavaScript code
 const users=[{name:"John",age:30,email:"john@example.com"},{name:"Jane",age:25,email:"jane@example.com"}];
@@ -174,36 +188,36 @@ class UserManager{private users:User[]=[];
 constructor(initialUsers:User[]){this.users=initialUsers;}
 addUser(user:User):void{if(this.validateUser(user)){this.users.push({...user,isActive:true});}}
 private validateUser(user:User):boolean{return user.name.length>0&&user.age>0&&user.email.includes('@');}
-getActiveUsers():User[]{return this.users.filter(user=>user.isActive===true);}}`
+getActiveUsers():User[]{return this.users.filter(user=>user.isActive===true);}}`,
   });
-  
-  const [formattedCode, setFormattedCode] = useState('');
+
+  const [formattedCode, setFormattedCode] = useState("");
   const [isFormatting, setIsFormatting] = useState(false);
-  const [error, setError] = useState('');
-  
+  const [error, setError] = useState("");
+
   // Formatting options
   const [options, setOptions] = useState({
     tabWidth: 2,
     useTabs: false,
     semicolons: true,
     singleQuote: false,
-    trailingComma: 'es5',
+    trailingComma: "es5",
     bracketSpacing: true,
     bracketSameLine: false,
-    printWidth: 80
+    printWidth: 80,
   });
 
   const languages = [
-    { value: 'javascript', label: 'JavaScript', parser: 'babel' },
-    { value: 'typescript', label: 'TypeScript', parser: 'typescript' },
-    { value: 'css', label: 'CSS', parser: 'css' },
-    { value: 'html', label: 'HTML', parser: 'html' }
+    { value: "javascript", label: "JavaScript", parser: "babel" },
+    { value: "typescript", label: "TypeScript", parser: "typescript" },
+    { value: "css", label: "CSS", parser: "css" },
+    { value: "html", label: "HTML", parser: "html" },
   ];
 
   const trailingCommaOptions = [
-    { value: 'none', label: 'None' },
-    { value: 'es5', label: 'ES5' },
-    { value: 'all', label: 'All' }
+    { value: "none", label: "None" },
+    { value: "es5", label: "ES5" },
+    { value: "all", label: "All" },
   ];
 
   const sampleData = {
@@ -237,44 +251,43 @@ async function fetchUserData(userId) {
 </div>`,
     typescript: `// Sample TypeScript
 interface ApiResponse<T> { data: T; status: number; }
-class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fetch(url).then(r => r.json()); } }`
+class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fetch(url).then(r => r.json()); } }`,
   };
 
   const formatCode = useCallback(async () => {
     if (!inputCode[activeTab].trim()) {
-      setError('Please enter code to format.');
+      setError("Please enter code to format.");
       return;
     }
 
     setIsFormatting(true);
-    setError('');
+    setError("");
 
     try {
-      let formatted = '';
-      
+      let formatted = "";
+
       switch (activeTab) {
-        case 'javascript':
+        case "javascript":
           formatted = formatJavaScript(inputCode[activeTab], options);
           break;
-        case 'typescript':
+        case "typescript":
           formatted = formatTypeScript(inputCode[activeTab], options);
           break;
-        case 'css':
+        case "css":
           formatted = formatCSS(inputCode[activeTab], options);
           break;
-        case 'html':
+        case "html":
           formatted = formatHTML(inputCode[activeTab], options);
           break;
         default:
-          throw new Error('Unsupported language');
+          throw new Error("Unsupported language");
       }
 
       setFormattedCode(formatted);
-
     } catch (err) {
-      console.error('Formatting error:', err);
+      console.error("Formatting error:", err);
       setError(`Formatting error: ${err.message}`);
-      setFormattedCode('');
+      setFormattedCode("");
     }
 
     setIsFormatting(false);
@@ -283,19 +296,24 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
   const handleCopy = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
-      alert('Copied to clipboard!');
+      alert("Copied to clipboard!");
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
   const handleDownload = (content, filename) => {
-    const extension = activeTab === 'javascript' ? 'js' : 
-                    activeTab === 'typescript' ? 'ts' : 
-                    activeTab === 'css' ? 'css' : 'html';
-    const blob = new Blob([content], { type: 'text/plain' });
+    const extension =
+      activeTab === "javascript"
+        ? "js"
+        : activeTab === "typescript"
+          ? "ts"
+          : activeTab === "css"
+            ? "css"
+            : "html";
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = `${filename}.${extension}`;
     document.body.appendChild(link);
@@ -305,19 +323,19 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
   };
 
   const loadSample = () => {
-    setInputCode(prev => ({
+    setInputCode((prev) => ({
       ...prev,
-      [activeTab]: sampleData[activeTab]
+      [activeTab]: sampleData[activeTab],
     }));
   };
 
   const resetCode = () => {
-    setInputCode(prev => ({
+    setInputCode((prev) => ({
       ...prev,
-      [activeTab]: ''
+      [activeTab]: "",
     }));
-    setFormattedCode('');
-    setError('');
+    setFormattedCode("");
+    setError("");
   };
 
   return (
@@ -325,10 +343,11 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free Code Formatter Online</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Format and beautify JavaScript, TypeScript, CSS, and HTML code with Prettier. 
-          Professional code formatting with customizable style options.
+          Format and beautify JavaScript, TypeScript, CSS, and HTML code with
+          Prettier. Professional code formatting with customizable style
+          options.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Sparkles className="h-5 w-5 text-primary" />
@@ -366,7 +385,12 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
                 min="1"
                 max="8"
                 value={options.tabWidth}
-                onChange={(e) => setOptions(prev => ({ ...prev, tabWidth: parseInt(e.target.value) || 2 }))}
+                onChange={(e) =>
+                  setOptions((prev) => ({
+                    ...prev,
+                    tabWidth: parseInt(e.target.value) || 2,
+                  }))
+                }
                 className="mt-2"
               />
             </div>
@@ -379,16 +403,23 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
                 min="40"
                 max="200"
                 value={options.printWidth}
-                onChange={(e) => setOptions(prev => ({ ...prev, printWidth: parseInt(e.target.value) || 80 }))}
+                onChange={(e) =>
+                  setOptions((prev) => ({
+                    ...prev,
+                    printWidth: parseInt(e.target.value) || 80,
+                  }))
+                }
                 className="mt-2"
               />
             </div>
 
             <div>
               <Label htmlFor="trailing-comma">Trailing Comma</Label>
-              <Select 
-                value={options.trailingComma} 
-                onValueChange={(value) => setOptions(prev => ({ ...prev, trailingComma: value }))}
+              <Select
+                value={options.trailingComma}
+                onValueChange={(value) =>
+                  setOptions((prev) => ({ ...prev, trailingComma: value }))
+                }
               >
                 <SelectTrigger className="mt-2">
                   <SelectValue />
@@ -405,30 +436,42 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
 
             <div className="space-y-3 mt-2">
               <div className="flex items-center space-x-2">
-                <Checkbox 
+                <Checkbox
                   id="use-tabs"
                   checked={options.useTabs}
-                  onCheckedChange={(checked) => setOptions(prev => ({ ...prev, useTabs: checked }))}
+                  onCheckedChange={(checked) =>
+                    setOptions((prev) => ({ ...prev, useTabs: checked }))
+                  }
                 />
-                <Label htmlFor="use-tabs" className="text-sm">Use tabs</Label>
+                <Label htmlFor="use-tabs" className="text-sm">
+                  Use tabs
+                </Label>
               </div>
-              
+
               <div className="flex items-center space-x-2">
-                <Checkbox 
+                <Checkbox
                   id="semicolons"
                   checked={options.semicolons}
-                  onCheckedChange={(checked) => setOptions(prev => ({ ...prev, semicolons: checked }))}
+                  onCheckedChange={(checked) =>
+                    setOptions((prev) => ({ ...prev, semicolons: checked }))
+                  }
                 />
-                <Label htmlFor="semicolons" className="text-sm">Semicolons</Label>
+                <Label htmlFor="semicolons" className="text-sm">
+                  Semicolons
+                </Label>
               </div>
-              
+
               <div className="flex items-center space-x-2">
-                <Checkbox 
+                <Checkbox
                   id="single-quote"
                   checked={options.singleQuote}
-                  onCheckedChange={(checked) => setOptions(prev => ({ ...prev, singleQuote: checked }))}
+                  onCheckedChange={(checked) =>
+                    setOptions((prev) => ({ ...prev, singleQuote: checked }))
+                  }
                 />
-                <Label htmlFor="single-quote" className="text-sm">Single quotes</Label>
+                <Label htmlFor="single-quote" className="text-sm">
+                  Single quotes
+                </Label>
               </div>
             </div>
           </div>
@@ -447,10 +490,18 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="w-full"
+          >
             <TabsList className="grid w-full grid-cols-4 mb-4">
               {languages.map((lang) => (
-                <TabsTrigger key={lang.value} value={lang.value} className="flex items-center gap-2">
+                <TabsTrigger
+                  key={lang.value}
+                  value={lang.value}
+                  className="flex items-center gap-2"
+                >
                   <FileCode className="h-4 w-4" />
                   {lang.label}
                 </TabsTrigger>
@@ -458,7 +509,11 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
             </TabsList>
 
             {languages.map((lang) => (
-              <TabsContent key={lang.value} value={lang.value} className="space-y-4">
+              <TabsContent
+                key={lang.value}
+                value={lang.value}
+                className="space-y-4"
+              >
                 <div className="flex items-center justify-between">
                   <Label htmlFor={`${lang.value}-input`}>
                     {lang.label} Code
@@ -477,10 +532,12 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
                   id={`${lang.value}-input`}
                   placeholder={`Paste your ${lang.label} code here...`}
                   value={inputCode[lang.value]}
-                  onChange={(e) => setInputCode(prev => ({
-                    ...prev,
-                    [lang.value]: e.target.value
-                  }))}
+                  onChange={(e) =>
+                    setInputCode((prev) => ({
+                      ...prev,
+                      [lang.value]: e.target.value,
+                    }))
+                  }
                   className="min-h-[300px] font-mono text-sm"
                 />
               </TabsContent>
@@ -488,8 +545,8 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
           </Tabs>
 
           <div className="mt-4">
-            <Button 
-              onClick={formatCode} 
+            <Button
+              onClick={formatCode}
               disabled={isFormatting || !inputCode[activeTab].trim()}
               className="w-full"
               size="lg"
@@ -497,12 +554,16 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
               {isFormatting ? (
                 <>
                   <Sparkles className="h-4 w-4 mr-2 animate-pulse" />
-                  Formatting {languages.find(l => l.value === activeTab)?.label}...
+                  Formatting{" "}
+                  {languages.find((l) => l.value === activeTab)?.label}...
                 </>
               ) : (
                 <>
                   <Sparkles className="h-4 w-4 mr-2" />
-                  Format {languages.find(l => l.value === activeTab)?.label} Code
+                  Format {
+                    languages.find((l) => l.value === activeTab)?.label
+                  }{" "}
+                  Code
                 </>
               )}
             </Button>
@@ -528,17 +589,17 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
                 Formatted Code
               </span>
               <div className="flex gap-2">
-                <Button 
-                  onClick={() => handleCopy(formattedCode)} 
-                  variant="outline" 
+                <Button
+                  onClick={() => handleCopy(formattedCode)}
+                  variant="outline"
                   size="sm"
                 >
                   <Copy className="h-4 w-4 mr-2" />
                   Copy
                 </Button>
-                <Button 
-                  onClick={() => handleDownload(formattedCode, 'formatted')} 
-                  variant="outline" 
+                <Button
+                  onClick={() => handleDownload(formattedCode, "formatted")}
+                  variant="outline"
                   size="sm"
                 >
                   <Download className="h-4 w-4 mr-2" />
@@ -568,7 +629,8 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Uses the official Prettier library for industry-standard code formatting across multiple languages.
+              Uses the official Prettier library for industry-standard code
+              formatting across multiple languages.
             </p>
           </CardContent>
         </Card>
@@ -582,7 +644,8 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Configure tab width, quotes, semicolons, line length, and more to match your coding style.
+              Configure tab width, quotes, semicolons, line length, and more to
+              match your coding style.
             </p>
           </CardContent>
         </Card>
@@ -596,7 +659,8 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              All formatting happens locally in your browser. Your code never leaves your device.
+              All formatting happens locally in your browser. Your code never
+              leaves your device.
             </p>
           </CardContent>
         </Card>
@@ -641,27 +705,39 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">What formatting engine is used?</h4>
+              <h4 className="font-medium mb-2">
+                What formatting engine is used?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                We use Prettier, the industry-standard code formatter trusted by millions of developers worldwide.
+                We use Prettier, the industry-standard code formatter trusted by
+                millions of developers worldwide.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Can I save my formatting preferences?</h4>
+              <h4 className="font-medium mb-2">
+                Can I save my formatting preferences?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Currently, preferences are saved for your session. We're working on persistent settings for future updates.
+                Currently, preferences are saved for your session. We're working
+                on persistent settings for future updates.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">What languages are supported?</h4>
+              <h4 className="font-medium mb-2">
+                What languages are supported?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                JavaScript, TypeScript, CSS, and HTML are fully supported with their respective Prettier parsers.
+                JavaScript, TypeScript, CSS, and HTML are fully supported with
+                their respective Prettier parsers.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Does formatting change code functionality?</h4>
+              <h4 className="font-medium mb-2">
+                Does formatting change code functionality?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                No, Prettier only changes formatting and whitespace. Your code's functionality remains exactly the same.
+                No, Prettier only changes formatting and whitespace. Your code's
+                functionality remains exactly the same.
               </p>
             </div>
           </div>

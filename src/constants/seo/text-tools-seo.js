@@ -1,12 +1,14 @@
 // Text Tools SEO Configuration and Metadata Templates
 export const TEXT_TOOLS_SEO = {
   category: {
-    title: "Free Text Tools Online - Word Counter, Password Generator, Text Converter | 30tools",
-    description: "Professional text tools for writers, students & developers. Word counter, character counter, password generator, text formatter & more. Free, fast, no signup required.",
+    title:
+      "Free Text Tools Online - Word Counter, Password Generator, Text Converter | 30tools",
+    description:
+      "Professional text tools for writers, students & developers. Word counter, character counter, password generator, text formatter & more. Free, fast, no signup required.",
     keywords: [
       "text tools online",
       "word counter",
-      "character counter", 
+      "character counter",
       "password generator",
       "text formatter",
       "text converter",
@@ -16,7 +18,7 @@ export const TEXT_TOOLS_SEO = {
       "text processor",
       "text utilities",
       "word processing tools",
-      "text manipulation tools"
+      "text manipulation tools",
     ],
     longTailKeywords: [
       "free text tools online no signup",
@@ -26,14 +28,16 @@ export const TEXT_TOOLS_SEO = {
       "text formatter and cleaner",
       "online text editing tools",
       "professional writing tools free",
-      "student text analysis tools"
-    ]
+      "student text analysis tools",
+    ],
   },
 
   tools: {
     "word-counter": {
-      title: "Free Word Counter Online - Count Words & Characters Instantly | 30tools",
-      description: "Professional word counter with real-time counting. Count words, characters (with/without spaces), sentences, paragraphs. Perfect for essays, SEO content, social media. No limits.",
+      title:
+        "Free Word Counter Online - Count Words & Characters Instantly | 30tools",
+      description:
+        "Professional word counter with real-time counting. Count words, characters (with/without spaces), sentences, paragraphs. Perfect for essays, SEO content, social media. No limits.",
       keywords: [
         "word counter",
         "character counter",
@@ -44,7 +48,7 @@ export const TEXT_TOOLS_SEO = {
         "word count tool",
         "paragraph counter",
         "sentence counter",
-        "text analyzer"
+        "text analyzer",
       ],
       longTailKeywords: [
         "word counter for google docs",
@@ -54,17 +58,17 @@ export const TEXT_TOOLS_SEO = {
         "paragraph and sentence counter",
         "word count for essays online",
         "twitter character counter",
-        "word counter real time"
+        "word counter real time",
       ],
       features: [
         "Real-time counting as you type",
         "Words, characters, sentences, paragraphs",
-        "Character count with/without spaces", 
+        "Character count with/without spaces",
         "Reading time estimation",
         "Keyword density analysis",
         "Export statistics",
         "No character limit",
-        "Works offline"
+        "Works offline",
       ],
       useCases: [
         "Academic essay writing",
@@ -72,13 +76,15 @@ export const TEXT_TOOLS_SEO = {
         "Social media posts",
         "Blog article writing",
         "Resume and cover letters",
-        "Creative writing projects"
-      ]
+        "Creative writing projects",
+      ],
     },
 
     "character-counter": {
-      title: "Free Character Counter Online - Count Letters & Characters | 30tools",
-      description: "Instant character counter for social media, writing & SEO. Count characters with/without spaces, letters, numbers. Perfect for Twitter, Instagram, LinkedIn posts.",
+      title:
+        "Free Character Counter Online - Count Letters & Characters | 30tools",
+      description:
+        "Instant character counter for social media, writing & SEO. Count characters with/without spaces, letters, numbers. Perfect for Twitter, Instagram, LinkedIn posts.",
       keywords: [
         "character counter",
         "letter counter",
@@ -89,7 +95,7 @@ export const TEXT_TOOLS_SEO = {
         "text character counter",
         "social media character counter",
         "twitter character counter",
-        "instagram character counter"
+        "instagram character counter",
       ],
       longTailKeywords: [
         "character counter for twitter posts",
@@ -98,7 +104,7 @@ export const TEXT_TOOLS_SEO = {
         "character count for social media",
         "character counter with space count",
         "text character counter online free",
-        "character limit checker online"
+        "character limit checker online",
       ],
       features: [
         "Real-time character counting",
@@ -108,7 +114,7 @@ export const TEXT_TOOLS_SEO = {
         "Copy to clipboard",
         "No character limits",
         "Platform-specific limits",
-        "Instant results"
+        "Instant results",
       ],
       useCases: [
         "Twitter post optimization",
@@ -116,13 +122,15 @@ export const TEXT_TOOLS_SEO = {
         "LinkedIn post creation",
         "Meta descriptions for SEO",
         "Text message character limits",
-        "Form field validation"
-      ]
+        "Form field validation",
+      ],
     },
 
     "password-generator": {
-      title: "Free Secure Password Generator - Create Strong Passwords Online | 30tools",
-      description: "Generate ultra-secure passwords with customizable options. Include uppercase, lowercase, numbers, symbols. Perfect for online accounts, WiFi, database security.",
+      title:
+        "Free Secure Password Generator - Create Strong Passwords Online | 30tools",
+      description:
+        "Generate ultra-secure passwords with customizable options. Include uppercase, lowercase, numbers, symbols. Perfect for online accounts, WiFi, database security.",
       keywords: [
         "password generator",
         "secure password generator",
@@ -133,7 +141,7 @@ export const TEXT_TOOLS_SEO = {
         "secure password",
         "strong password",
         "password generator online",
-        "safe password generator"
+        "safe password generator",
       ],
       longTailKeywords: [
         "secure password generator online free",
@@ -142,7 +150,7 @@ export const TEXT_TOOLS_SEO = {
         "password generator for wifi router",
         "database password generator secure",
         "password generator with custom rules",
-        "unbreakable password generator"
+        "unbreakable password generator",
       ],
       features: [
         "Cryptographically secure generation",
@@ -152,7 +160,7 @@ export const TEXT_TOOLS_SEO = {
         "Password strength indicator",
         "Copy to clipboard",
         "No password storage",
-        "Bulk password generation"
+        "Bulk password generation",
       ],
       useCases: [
         "Online account security",
@@ -160,13 +168,15 @@ export const TEXT_TOOLS_SEO = {
         "Database access credentials",
         "Application API keys",
         "Temporary access codes",
-        "Corporate security policies"
-      ]
+        "Corporate security policies",
+      ],
     },
 
     "text-case-converter": {
-      title: "Free Text Case Converter - Upper, Lower, Title, Camel Case | 30tools",
-      description: "Convert text between different cases instantly. Uppercase, lowercase, title case, camel case, snake case. Perfect for coding, writing, data formatting.",
+      title:
+        "Free Text Case Converter - Upper, Lower, Title, Camel Case | 30tools",
+      description:
+        "Convert text between different cases instantly. Uppercase, lowercase, title case, camel case, snake case. Perfect for coding, writing, data formatting.",
       keywords: [
         "text case converter",
         "case converter",
@@ -177,7 +187,7 @@ export const TEXT_TOOLS_SEO = {
         "snake case converter",
         "text transformer",
         "case changer",
-        "text case changer"
+        "text case changer",
       ],
       longTailKeywords: [
         "text case converter online free",
@@ -186,7 +196,7 @@ export const TEXT_TOOLS_SEO = {
         "camel case converter for programming",
         "snake case converter for variables",
         "proper case converter online",
-        "text case formatting tool"
+        "text case formatting tool",
       ],
       features: [
         "Multiple case conversion types",
@@ -196,7 +206,7 @@ export const TEXT_TOOLS_SEO = {
         "Snake case and kebab case",
         "Bulk text processing",
         "Copy to clipboard",
-        "Preserve formatting options"
+        "Preserve formatting options",
       ],
       useCases: [
         "Programming variable naming",
@@ -204,13 +214,15 @@ export const TEXT_TOOLS_SEO = {
         "Data cleaning and preparation",
         "Social media content",
         "Email subject lines",
-        "URL and filename formatting"
-      ]
+        "URL and filename formatting",
+      ],
     },
 
     "lorem-ipsum-generator": {
-      title: "Free Lorem Ipsum Generator - Placeholder Text Generator | 30tools",
-      description: "Generate Lorem Ipsum placeholder text for design and development. Words, sentences, paragraphs. Classic Latin text for mockups, websites, print design.",
+      title:
+        "Free Lorem Ipsum Generator - Placeholder Text Generator | 30tools",
+      description:
+        "Generate Lorem Ipsum placeholder text for design and development. Words, sentences, paragraphs. Classic Latin text for mockups, websites, print design.",
       keywords: [
         "lorem ipsum generator",
         "placeholder text generator",
@@ -221,7 +233,7 @@ export const TEXT_TOOLS_SEO = {
         "placeholder text",
         "lorem generator",
         "text filler",
-        "design placeholder"
+        "design placeholder",
       ],
       longTailKeywords: [
         "lorem ipsum generator with word count",
@@ -230,7 +242,7 @@ export const TEXT_TOOLS_SEO = {
         "filler text generator for websites",
         "lorem ipsum generator paragraphs",
         "sample text generator for mockups",
-        "placeholder text generator online"
+        "placeholder text generator online",
       ],
       features: [
         "Classic Lorem Ipsum text",
@@ -240,7 +252,7 @@ export const TEXT_TOOLS_SEO = {
         "Copy to clipboard",
         "Various text lengths",
         "HTML paragraph format",
-        "Plain text output"
+        "Plain text output",
       ],
       useCases: [
         "Website mockups",
@@ -248,13 +260,14 @@ export const TEXT_TOOLS_SEO = {
         "Print layout design",
         "Development testing",
         "Content placeholders",
-        "Typography demonstrations"
-      ]
+        "Typography demonstrations",
+      ],
     },
 
     "text-diff": {
       title: "Free Text Diff Checker - Compare Text Files Online | 30tools",
-      description: "Compare two texts and find differences instantly. Side-by-side comparison with highlighted changes. Perfect for document comparison, code review, content editing.",
+      description:
+        "Compare two texts and find differences instantly. Side-by-side comparison with highlighted changes. Perfect for document comparison, code review, content editing.",
       keywords: [
         "text diff checker",
         "text compare",
@@ -265,7 +278,7 @@ export const TEXT_TOOLS_SEO = {
         "file compare",
         "document compare",
         "text diff",
-        "compare documents"
+        "compare documents",
       ],
       longTailKeywords: [
         "text diff checker online free",
@@ -274,7 +287,7 @@ export const TEXT_TOOLS_SEO = {
         "document comparison online",
         "side by side text comparison",
         "text file diff checker",
-        "compare text documents online"
+        "compare text documents online",
       ],
       features: [
         "Side-by-side comparison",
@@ -284,7 +297,7 @@ export const TEXT_TOOLS_SEO = {
         "Export comparison results",
         "Ignore whitespace options",
         "Case-sensitive comparison",
-        "Large file support"
+        "Large file support",
       ],
       useCases: [
         "Document revision tracking",
@@ -292,13 +305,14 @@ export const TEXT_TOOLS_SEO = {
         "Content editing and proofreading",
         "Version control comparison",
         "Legal document analysis",
-        "Translation comparison"
-      ]
+        "Translation comparison",
+      ],
     },
 
     "text-formatter": {
       title: "Free Text Formatter & Cleaner - Format Text Online | 30tools",
-      description: "Format and clean text with multiple options. Remove extra spaces, line breaks, special characters. Perfect for data cleaning, content preparation, text processing.",
+      description:
+        "Format and clean text with multiple options. Remove extra spaces, line breaks, special characters. Perfect for data cleaning, content preparation, text processing.",
       keywords: [
         "text formatter",
         "text cleaner",
@@ -309,7 +323,7 @@ export const TEXT_TOOLS_SEO = {
         "text organizer",
         "text beautifier",
         "text normalizer",
-        "text cleanup"
+        "text cleanup",
       ],
       longTailKeywords: [
         "text formatter online free",
@@ -318,17 +332,17 @@ export const TEXT_TOOLS_SEO = {
         "clean text special characters",
         "text formatter and organizer",
         "text cleanup tool online",
-        "format text for publishing"
+        "format text for publishing",
       ],
       features: [
         "Remove extra whitespace",
         "Clean line breaks",
-        "Remove special characters", 
+        "Remove special characters",
         "Normalize text formatting",
         "Trim whitespace",
         "Convert line endings",
         "Remove duplicate spaces",
-        "Bulk text processing"
+        "Bulk text processing",
       ],
       useCases: [
         "Data cleaning and preparation",
@@ -336,13 +350,15 @@ export const TEXT_TOOLS_SEO = {
         "Email list cleaning",
         "Code formatting preparation",
         "Social media content cleanup",
-        "Document preparation"
-      ]
+        "Document preparation",
+      ],
     },
 
     "duplicate-line-remover": {
-      title: "Free Duplicate Line Remover - Remove Duplicate Text Lines | 30tools",
-      description: "Remove duplicate lines from text and lists instantly. Keep unique lines, sort options, case-sensitive filtering. Perfect for data cleaning, list processing.",
+      title:
+        "Free Duplicate Line Remover - Remove Duplicate Text Lines | 30tools",
+      description:
+        "Remove duplicate lines from text and lists instantly. Keep unique lines, sort options, case-sensitive filtering. Perfect for data cleaning, list processing.",
       keywords: [
         "duplicate line remover",
         "remove duplicates",
@@ -353,7 +369,7 @@ export const TEXT_TOOLS_SEO = {
         "unique text",
         "remove duplicate text",
         "duplicate finder",
-        "text deduplicator"
+        "text deduplicator",
       ],
       longTailKeywords: [
         "remove duplicate lines from text",
@@ -362,7 +378,7 @@ export const TEXT_TOOLS_SEO = {
         "duplicate text finder and remover",
         "list duplicate remover online",
         "text deduplication tool free",
-        "remove duplicate entries from list"
+        "remove duplicate entries from list",
       ],
       features: [
         "Remove exact duplicate lines",
@@ -372,18 +388,18 @@ export const TEXT_TOOLS_SEO = {
         "Count duplicates removed",
         "Trim whitespace",
         "Large text file support",
-        "Export cleaned text"
+        "Export cleaned text",
       ],
       useCases: [
-        "Email list cleaning", 
+        "Email list cleaning",
         "Data deduplication",
         "URL list processing",
         "Keyword list cleaning",
         "Contact list management",
-        "Database cleanup preparation"
-      ]
-    }
-  }
+        "Database cleanup preparation",
+      ],
+    },
+  },
 };
 
 // SEO utility functions for text tools
@@ -394,31 +410,31 @@ export const generateTextToolMeta = (toolId) => {
   return {
     title: tool.title,
     description: tool.description,
-    keywords: tool.keywords.join(', '),
+    keywords: tool.keywords.join(", "),
     openGraph: {
       title: tool.title,
       description: tool.description,
       url: `https://30tools.com/${toolId}`,
-      siteName: '30tools',
+      siteName: "30tools",
       images: [
         {
           url: `/og-images/${toolId}.jpg`,
           width: 1200,
           height: 630,
-          alt: tool.title
-        }
+          alt: tool.title,
+        },
       ],
-      type: 'website'
+      type: "website",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: tool.title,
       description: tool.description,
       images: [`/og-images/${toolId}.jpg`],
-      creator: '@30tools'
+      creator: "@30tools",
     },
     alternates: {
-      canonical: `https://30tools.com/${toolId}`
+      canonical: `https://30tools.com/${toolId}`,
     },
     robots: {
       index: true,
@@ -426,12 +442,12 @@ export const generateTextToolMeta = (toolId) => {
       googleBot: {
         index: true,
         follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
     },
-    category: 'Text Tools'
+    category: "Text Tools",
   };
 };
 

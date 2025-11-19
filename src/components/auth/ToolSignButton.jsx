@@ -1,18 +1,18 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Star, Crown, Zap } from 'lucide-react';
-import { useToolAuth } from '@/hooks/useToolAuth';
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Star, Crown, Zap } from "lucide-react";
+import { useToolAuth } from "@/hooks/useToolAuth";
 
-export function ToolSignButton({ 
+export function ToolSignButton({
   children,
   className = "",
   variant = "default",
   size = "sm",
   premium = false,
   feature = "this feature",
-  ...props 
+  ...props
 }) {
   const { isAuthenticated, signInWithRedirect } = useToolAuth();
 
@@ -48,7 +48,9 @@ export function ToolSignButton({
           {children}
         </div>
       )}
-      <div className={`${children ? 'absolute inset-0' : ''} flex items-center justify-center ${children ? 'bg-background/80 backdrop-blur-sm' : ''}`}>
+      <div
+        className={`${children ? "absolute inset-0" : ""} flex items-center justify-center ${children ? "bg-background/80 backdrop-blur-sm" : ""}`}
+      >
         <div className="text-center space-y-2">
           {premium && (
             <Badge variant="secondary" className="mb-2">
@@ -72,7 +74,11 @@ export function ToolSignButton({
 }
 
 // For specific premium features
-export function PremiumToolButton({ children, feature = "premium features", ...props }) {
+export function PremiumToolButton({
+  children,
+  feature = "premium features",
+  ...props
+}) {
   return (
     <ToolSignButton premium feature={feature} {...props}>
       {children}

@@ -1,21 +1,33 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Switch } from '@/components/ui/switch';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { Code, Copy, Eye, Youtube, CheckCircle2, Settings } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Code, Copy, Eye, Youtube, CheckCircle2, Settings } from "lucide-react";
 
 export default function YouTubeEmbedGenerator() {
-  const [videoUrl, setVideoUrl] = useState('');
-  const [videoId, setVideoId] = useState('');
-  const [width, setWidth] = useState('560');
-  const [height, setHeight] = useState('315');
+  const [videoUrl, setVideoUrl] = useState("");
+  const [videoId, setVideoId] = useState("");
+  const [width, setWidth] = useState("560");
+  const [height, setHeight] = useState("315");
   const [responsive, setResponsive] = useState(true);
   const [autoplay, setAutoplay] = useState(false);
   const [mute, setMute] = useState(false);
@@ -23,25 +35,25 @@ export default function YouTubeEmbedGenerator() {
   const [controls, setControls] = useState(true);
   const [showInfo, setShowInfo] = useState(true);
   const [privacyMode, setPrivacyMode] = useState(true);
-  const [startTime, setStartTime] = useState('');
-  const [endTime, setEndTime] = useState('');
-  const [embedCode, setEmbedCode] = useState('');
+  const [startTime, setStartTime] = useState("");
+  const [endTime, setEndTime] = useState("");
+  const [embedCode, setEmbedCode] = useState("");
   const [copied, setCopied] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (videoUrl) {
       const id = extractVideoId(videoUrl);
       if (id) {
         setVideoId(id);
-        setError('');
+        setError("");
       } else {
-        setError('Invalid YouTube URL');
-        setVideoId('');
+        setError("Invalid YouTube URL");
+        setVideoId("");
       }
     } else {
-      setVideoId('');
-      setError('');
+      setVideoId("");
+      setError("");
     }
   }, [videoUrl]);
 
@@ -49,14 +61,27 @@ export default function YouTubeEmbedGenerator() {
     if (videoId) {
       generateEmbedCode();
     }
-  }, [videoId, width, height, responsive, autoplay, mute, loop, controls, showInfo, privacyMode, startTime, endTime]);
+  }, [
+    videoId,
+    width,
+    height,
+    responsive,
+    autoplay,
+    mute,
+    loop,
+    controls,
+    showInfo,
+    privacyMode,
+    startTime,
+    endTime,
+  ]);
 
   const extractVideoId = (url) => {
     const patterns = [
       /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
-      /youtube\.com\/watch\?.*v=([^&\n?#]+)/
+      /youtube\.com\/watch\?.*v=([^&\n?#]+)/,
     ];
-    
+
     for (const pattern of patterns) {
       const match = url.match(pattern);
       if (match) return match[1];
@@ -67,22 +92,22 @@ export default function YouTubeEmbedGenerator() {
   const generateEmbedCode = () => {
     if (!videoId) return;
 
-    const domain = privacyMode ? 'youtube-nocookie.com' : 'youtube.com';
+    const domain = privacyMode ? "youtube-nocookie.com" : "youtube.com";
     const params = new URLSearchParams();
-    
-    if (autoplay) params.append('autoplay', '1');
-    if (mute) params.append('mute', '1');
-    if (loop) params.append('loop', '1');
-    if (!controls) params.append('controls', '0');
-    if (!showInfo) params.append('showinfo', '0');
-    if (startTime) params.append('start', startTime);
-    if (endTime) params.append('end', endTime);
-    
+
+    if (autoplay) params.append("autoplay", "1");
+    if (mute) params.append("mute", "1");
+    if (loop) params.append("loop", "1");
+    if (!controls) params.append("controls", "0");
+    if (!showInfo) params.append("showinfo", "0");
+    if (startTime) params.append("start", startTime);
+    if (endTime) params.append("end", endTime);
+
     const paramString = params.toString();
-    const src = `https://www.${domain}/embed/${videoId}${paramString ? '?' + paramString : ''}`;
-    
-    let code = '';
-    
+    const src = `https://www.${domain}/embed/${videoId}${paramString ? "?" + paramString : ""}`;
+
+    let code = "";
+
     if (responsive) {
       code = `<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
   <iframe 
@@ -103,7 +128,7 @@ export default function YouTubeEmbedGenerator() {
   allowfullscreen>
 </iframe>`;
     }
-    
+
     setEmbedCode(code);
   };
 
@@ -113,12 +138,13 @@ export default function YouTubeEmbedGenerator() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error('Failed to copy embed code:', err);
+      console.error("Failed to copy embed code:", err);
     }
   };
 
-  const previewUrl = videoId ? 
-    `https://www.youtube${privacyMode ? '-nocookie' : ''}.com/embed/${videoId}` : '';
+  const previewUrl = videoId
+    ? `https://www.youtube${privacyMode ? "-nocookie" : ""}.com/embed/${videoId}`
+    : "";
 
   return (
     <div className="space-y-6">
@@ -142,9 +168,7 @@ export default function YouTubeEmbedGenerator() {
               onChange={(e) => setVideoUrl(e.target.value)}
               className="input-cute"
             />
-            {error && (
-              <p className="text-sm text-destructive">{error}</p>
-            )}
+            {error && <p className="text-sm text-destructive">{error}</p>}
             {videoId && (
               <Badge variant="secondary" className="text-xs">
                 Video ID: {videoId}
@@ -158,7 +182,7 @@ export default function YouTubeEmbedGenerator() {
                 <Settings className="w-4 h-4" />
                 Player Settings
               </h3>
-              
+
               <div className="flex items-center justify-between">
                 <Label htmlFor="responsive">Responsive Design</Label>
                 <Switch
@@ -213,20 +237,12 @@ export default function YouTubeEmbedGenerator() {
 
               <div className="flex items-center justify-between">
                 <Label htmlFor="mute">Mute</Label>
-                <Switch
-                  id="mute"
-                  checked={mute}
-                  onCheckedChange={setMute}
-                />
+                <Switch id="mute" checked={mute} onCheckedChange={setMute} />
               </div>
 
               <div className="flex items-center justify-between">
                 <Label htmlFor="loop">Loop</Label>
-                <Switch
-                  id="loop"
-                  checked={loop}
-                  onCheckedChange={setLoop}
-                />
+                <Switch id="loop" checked={loop} onCheckedChange={setLoop} />
               </div>
 
               <div className="flex items-center justify-between">
@@ -250,7 +266,7 @@ export default function YouTubeEmbedGenerator() {
 
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Timing Options</h3>
-              
+
               <div className="space-y-2">
                 <Label htmlFor="start-time">Start Time (seconds)</Label>
                 <Input
@@ -313,7 +329,7 @@ export default function YouTubeEmbedGenerator() {
                 ) : (
                   <Copy className="w-4 h-4 mr-1" />
                 )}
-                {copied ? 'Copied!' : 'Copy Code'}
+                {copied ? "Copied!" : "Copy Code"}
               </Button>
             </CardTitle>
             <CardDescription>

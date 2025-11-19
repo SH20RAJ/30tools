@@ -1,27 +1,33 @@
-'use client';
+"use client";
 
-import { useState, useMemo } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { 
-  Copy, 
-  Download, 
-  RotateCcw, 
+import { useState, useMemo } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import {
+  Copy,
+  Download,
+  RotateCcw,
   Filter,
   Check,
   Trash,
   ArrowUpDown,
   FileText,
   AlertTriangle,
-  Info
-} from 'lucide-react';
-import { toast } from 'sonner';
+  Info,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function DuplicateLineRemoverTool() {
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState("");
   const [caseSensitive, setCaseSensitive] = useState(false);
   const [sortOutput, setSortOutput] = useState(false);
   const [keepFirst, setKeepFirst] = useState(true);
@@ -36,27 +42,27 @@ export default function DuplicateLineRemoverTool() {
         uniqueLines: [],
         duplicateLines: [],
         removedCount: 0,
-        keptCount: 0
+        keptCount: 0,
       };
     }
 
     // Split into lines
-    const lines = inputText.split('\n');
+    const lines = inputText.split("\n");
     const originalCount = lines.length;
 
     // Filter empty lines if requested
-    let filteredLines = removeEmpty 
-      ? lines.filter(line => line.trim() !== '') 
+    let filteredLines = removeEmpty
+      ? lines.filter((line) => line.trim() !== "")
       : lines;
 
     // Track duplicates
     const seen = new Set();
     const duplicates = new Set();
     const unique = [];
-    
-    filteredLines.forEach(line => {
+
+    filteredLines.forEach((line) => {
       const processedLine = caseSensitive ? line : line.toLowerCase();
-      
+
       if (seen.has(processedLine)) {
         duplicates.add(line);
       } else {
@@ -82,44 +88,46 @@ export default function DuplicateLineRemoverTool() {
       duplicateLines: Array.from(duplicates),
       removedCount: originalCount - result.length,
       keptCount: result.length,
-      emptyRemoved: removeEmpty ? lines.filter(line => line.trim() === '').length : 0
+      emptyRemoved: removeEmpty
+        ? lines.filter((line) => line.trim() === "").length
+        : 0,
     };
   }, [inputText, caseSensitive, sortOutput, keepFirst, removeEmpty]);
 
-  const outputText = processedData.uniqueLines.join('\n');
+  const outputText = processedData.uniqueLines.join("\n");
 
   const copyToClipboard = async () => {
     try {
       await navigator.clipboard.writeText(outputText);
       setCopied(true);
-      toast.success('Text copied to clipboard!');
+      toast.success("Text copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
     } catch (error) {
-      toast.error('Failed to copy text to clipboard');
+      toast.error("Failed to copy text to clipboard");
     }
   };
 
   const downloadText = () => {
     try {
-      const blob = new Blob([outputText], { type: 'text/plain' });
+      const blob = new Blob([outputText], { type: "text/plain" });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = url;
-      a.download = 'deduplicated-text.txt';
+      a.download = "deduplicated-text.txt";
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
-      toast.success('File downloaded successfully!');
+      toast.success("File downloaded successfully!");
     } catch (error) {
-      toast.error('Failed to download file');
+      toast.error("Failed to download file");
     }
   };
 
   const clearAll = () => {
-    setInputText('');
+    setInputText("");
     setCopied(false);
-    toast.success('Text cleared!');
+    toast.success("Text cleared!");
   };
 
   const loadSampleText = () => {
@@ -136,7 +144,7 @@ kiwi
 banana
 apple`;
     setInputText(sample);
-    toast.success('Sample text loaded!');
+    toast.success("Sample text loaded!");
   };
 
   return (
@@ -153,7 +161,9 @@ apple`;
             Duplicate Line Remover
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Remove duplicate lines from text and lists. Clean your data by removing repeated entries with options for case sensitivity and sorting.
+            Remove duplicate lines from text and lists. Clean your data by
+            removing repeated entries with options for case sensitivity and
+            sorting.
           </p>
         </div>
 
@@ -177,7 +187,7 @@ apple`;
                   onChange={(e) => setInputText(e.target.value)}
                   className="min-h-[300px] font-mono text-sm"
                 />
-                
+
                 <div className="flex flex-wrap gap-2">
                   <Button onClick={loadSampleText} variant="outline" size="sm">
                     Load Sample
@@ -225,7 +235,7 @@ apple`;
                       Case sensitive comparison
                     </Label>
                   </div>
-                  
+
                   <div className="flex items-center space-x-2">
                     <input
                       type="checkbox"
@@ -238,7 +248,7 @@ apple`;
                       Sort output alphabetically
                     </Label>
                   </div>
-                  
+
                   <div className="flex items-center space-x-2">
                     <input
                       type="checkbox"
@@ -259,9 +269,18 @@ apple`;
                     Options Explained
                   </h4>
                   <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• <strong>Case sensitive:</strong> "Apple" and "apple" are different</li>
-                    <li>• <strong>Sort output:</strong> Arrange lines in alphabetical order</li>
-                    <li>• <strong>Remove empty:</strong> Delete blank lines from input</li>
+                    <li>
+                      • <strong>Case sensitive:</strong> "Apple" and "apple" are
+                      different
+                    </li>
+                    <li>
+                      • <strong>Sort output:</strong> Arrange lines in
+                      alphabetical order
+                    </li>
+                    <li>
+                      • <strong>Remove empty:</strong> Delete blank lines from
+                      input
+                    </li>
                   </ul>
                 </div>
               </CardContent>
@@ -278,13 +297,17 @@ apple`;
                     <span>Clean Output</span>
                   </span>
                   <div className="flex space-x-2">
-                    <Button onClick={copyToClipboard} size="sm" variant="outline">
+                    <Button
+                      onClick={copyToClipboard}
+                      size="sm"
+                      variant="outline"
+                    >
                       {copied ? (
                         <Check className="w-4 h-4 mr-2" />
                       ) : (
                         <Copy className="w-4 h-4 mr-2" />
                       )}
-                      {copied ? 'Copied!' : 'Copy'}
+                      {copied ? "Copied!" : "Copy"}
                     </Button>
                     <Button onClick={downloadText} size="sm" variant="outline">
                       <Download className="w-4 h-4 mr-2" />
@@ -339,29 +362,50 @@ apple`;
                 <CardContent>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Original lines:</span>
-                      <Badge variant="outline">{processedData.originalLines.length}</Badge>
+                      <span className="text-sm text-muted-foreground">
+                        Original lines:
+                      </span>
+                      <Badge variant="outline">
+                        {processedData.originalLines.length}
+                      </Badge>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Unique lines:</span>
+                      <span className="text-sm text-muted-foreground">
+                        Unique lines:
+                      </span>
                       <Badge variant="default">{processedData.keptCount}</Badge>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Duplicates removed:</span>
-                      <Badge variant="destructive">{processedData.removedCount}</Badge>
+                      <span className="text-sm text-muted-foreground">
+                        Duplicates removed:
+                      </span>
+                      <Badge variant="destructive">
+                        {processedData.removedCount}
+                      </Badge>
                     </div>
                     {processedData.emptyRemoved > 0 && (
                       <div className="flex justify-between items-center">
-                        <span className="text-sm text-muted-foreground">Empty lines removed:</span>
-                        <Badge variant="secondary">{processedData.emptyRemoved}</Badge>
+                        <span className="text-sm text-muted-foreground">
+                          Empty lines removed:
+                        </span>
+                        <Badge variant="secondary">
+                          {processedData.emptyRemoved}
+                        </Badge>
                       </div>
                     )}
                     <div className="flex justify-between items-center">
-                      <span className="text-sm text-muted-foreground">Reduction:</span>
+                      <span className="text-sm text-muted-foreground">
+                        Reduction:
+                      </span>
                       <Badge variant="outline">
-                        {processedData.originalLines.length > 0 
-                          ? Math.round((processedData.removedCount / processedData.originalLines.length) * 100)
-                          : 0}%
+                        {processedData.originalLines.length > 0
+                          ? Math.round(
+                              (processedData.removedCount /
+                                processedData.originalLines.length) *
+                                100,
+                            )
+                          : 0}
+                        %
                       </Badge>
                     </div>
                   </div>
@@ -384,14 +428,20 @@ apple`;
                 <CardContent>
                   <div className="max-h-40 overflow-y-auto bg-muted rounded-lg p-3">
                     <div className="space-y-1">
-                      {processedData.duplicateLines.slice(0, 10).map((line, index) => (
-                        <div key={index} className="text-sm font-mono text-muted-foreground">
-                          {line || '(empty line)'}
-                        </div>
-                      ))}
+                      {processedData.duplicateLines
+                        .slice(0, 10)
+                        .map((line, index) => (
+                          <div
+                            key={index}
+                            className="text-sm font-mono text-muted-foreground"
+                          >
+                            {line || "(empty line)"}
+                          </div>
+                        ))}
                       {processedData.duplicateLines.length > 10 && (
                         <div className="text-xs text-muted-foreground italic">
-                          ... and {processedData.duplicateLines.length - 10} more
+                          ... and {processedData.duplicateLines.length - 10}{" "}
+                          more
                         </div>
                       )}
                     </div>
@@ -417,28 +467,36 @@ apple`;
                   <Filter className="w-6 h-6 text-primary dark:text-primary" />
                 </div>
                 <h4 className="font-medium mb-2">Smart Detection</h4>
-                <p className="text-sm text-muted-foreground">Accurately identifies and removes duplicate lines</p>
+                <p className="text-sm text-muted-foreground">
+                  Accurately identifies and removes duplicate lines
+                </p>
               </div>
               <div className="text-center p-4">
                 <div className="w-12 h-12 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <ArrowUpDown className="w-6 h-6 text-primary dark:text-primary" />
                 </div>
                 <h4 className="font-medium mb-2">Flexible Options</h4>
-                <p className="text-sm text-muted-foreground">Case sensitivity, sorting, and empty line handling</p>
+                <p className="text-sm text-muted-foreground">
+                  Case sensitivity, sorting, and empty line handling
+                </p>
               </div>
               <div className="text-center p-4">
                 <div className="w-12 h-12 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <Copy className="w-6 h-6 text-primary dark:text-primary" />
                 </div>
                 <h4 className="font-medium mb-2">Easy Export</h4>
-                <p className="text-sm text-muted-foreground">Copy to clipboard or download as text file</p>
+                <p className="text-sm text-muted-foreground">
+                  Copy to clipboard or download as text file
+                </p>
               </div>
               <div className="text-center p-4">
                 <div className="w-12 h-12 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center mx-auto mb-3">
                   <AlertTriangle className="w-6 h-6 text-primary dark:text-primary" />
                 </div>
                 <h4 className="font-medium mb-2">Statistics</h4>
-                <p className="text-sm text-muted-foreground">Detailed stats on duplicates found and removed</p>
+                <p className="text-sm text-muted-foreground">
+                  Detailed stats on duplicates found and removed
+                </p>
               </div>
             </div>
           </CardContent>

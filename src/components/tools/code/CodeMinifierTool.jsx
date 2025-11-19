@@ -1,26 +1,32 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  Copy, 
-  Download, 
+import { useState, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  Copy,
+  Download,
   FileCode,
   Minimize2,
-  CheckCircle, 
-  AlertCircle, 
+  CheckCircle,
+  AlertCircle,
   Zap,
   Shield,
   BarChart3,
-  RefreshCw
-} from 'lucide-react';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  RefreshCw,
+} from "lucide-react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 // CDN libraries for minification
 const loadTerser = () => {
@@ -29,8 +35,9 @@ const loadTerser = () => {
       resolve(window.Terser);
       return;
     }
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/terser@5.19.2/dist/bundle.min.js';
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.jsdelivr.net/npm/terser@5.19.2/dist/bundle.min.js";
     script.onload = () => resolve(window.Terser);
     script.onerror = reject;
     document.head.appendChild(script);
@@ -43,8 +50,9 @@ const loadCleanCSS = () => {
       resolve(window.CleanCSS);
       return;
     }
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/clean-css@5.3.2/dist/clean-css.min.js';
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.jsdelivr.net/npm/clean-css@5.3.2/dist/clean-css.min.js";
     script.onload = () => resolve(window.CleanCSS);
     script.onerror = reject;
     document.head.appendChild(script);
@@ -52,7 +60,7 @@ const loadCleanCSS = () => {
 };
 
 export default function CodeMinifierTool() {
-  const [activeTab, setActiveTab] = useState('javascript');
+  const [activeTab, setActiveTab] = useState("javascript");
   const [inputCode, setInputCode] = useState({
     javascript: `// Sample JavaScript code
 function calculateSum(a, b) {
@@ -103,33 +111,34 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
         console.log('Page loaded successfully');
     </script>
 </body>
-</html>`
+</html>`,
   });
-  
-  const [minifiedCode, setMinifiedCode] = useState('');
+
+  const [minifiedCode, setMinifiedCode] = useState("");
   const [isMinifying, setIsMinifying] = useState(false);
   const [stats, setStats] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB'];
+    const sizes = ["Bytes", "KB", "MB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const calculateStats = (original, minified) => {
     const originalSize = new Blob([original]).size;
     const minifiedSize = new Blob([minified]).size;
     const reduction = originalSize - minifiedSize;
-    const reductionPercent = originalSize > 0 ? Math.round((reduction / originalSize) * 100) : 0;
-    
+    const reductionPercent =
+      originalSize > 0 ? Math.round((reduction / originalSize) * 100) : 0;
+
     return {
       originalSize: formatFileSize(originalSize),
       minifiedSize: formatFileSize(minifiedSize),
       reduction: formatFileSize(reduction),
-      reductionPercent
+      reductionPercent,
     };
   };
 
@@ -143,22 +152,22 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           drop_debugger: true,
           keep_classnames: false,
           keep_fnames: false,
-          keep_infinity: false
+          keep_infinity: false,
         },
         mangle: {
           toplevel: false,
           keep_classnames: false,
-          keep_fnames: false
+          keep_fnames: false,
         },
         format: {
-          comments: false
-        }
+          comments: false,
+        },
       });
-      
+
       if (result.error) {
         throw new Error(result.error);
       }
-      
+
       return result.code;
     } catch (error) {
       throw new Error(`JavaScript minification failed: ${error.message}`);
@@ -170,15 +179,15 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
       const CleanCSS = await loadCleanCSS();
       const cleanCSS = new CleanCSS({
         level: 2,
-        returnPromise: false
+        returnPromise: false,
       });
-      
+
       const result = cleanCSS.minify(code);
-      
+
       if (result.errors && result.errors.length > 0) {
-        throw new Error(result.errors.join(', '));
+        throw new Error(result.errors.join(", "));
       }
-      
+
       return result.styles;
     } catch (error) {
       throw new Error(`CSS minification failed: ${error.message}`);
@@ -187,43 +196,43 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
 
   const minifyHTML = (code) => {
     return code
-      .replace(/\s+/g, ' ')
-      .replace(/>\s+</g, '><')
-      .replace(/\s+>/g, '>')
-      .replace(/<\s+/g, '<')
-      .replace(/<!--[\s\S]*?-->/g, '')
-      .replace(/\s+$/, '')
-      .replace(/^\s+/, '')
+      .replace(/\s+/g, " ")
+      .replace(/>\s+</g, "><")
+      .replace(/\s+>/g, ">")
+      .replace(/<\s+/g, "<")
+      .replace(/<!--[\s\S]*?-->/g, "")
+      .replace(/\s+$/, "")
+      .replace(/^\s+/, "")
       .trim();
   };
 
   const handleMinify = async () => {
     const code = inputCode[activeTab];
     if (!code.trim()) {
-      setError('Please enter some code to minify.');
+      setError("Please enter some code to minify.");
       return;
     }
 
     setIsMinifying(true);
-    setError('');
-    setMinifiedCode('');
+    setError("");
+    setMinifiedCode("");
     setStats(null);
 
     try {
-      let result = '';
-      
+      let result = "";
+
       switch (activeTab) {
-        case 'javascript':
+        case "javascript":
           result = await minifyJavaScript(code);
           break;
-        case 'css':
+        case "css":
           result = await minifyCSS(code);
           break;
-        case 'html':
+        case "html":
           result = minifyHTML(code);
           break;
         default:
-          throw new Error('Unknown code type');
+          throw new Error("Unknown code type");
       }
 
       setMinifiedCode(result);
@@ -240,14 +249,14 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
       await navigator.clipboard.writeText(text);
       // Show success feedback (you could add a toast here)
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
   const handleDownload = (content, filename) => {
-    const blob = new Blob([content], { type: 'text/plain' });
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = filename;
     document.body.appendChild(link);
@@ -257,21 +266,25 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
   };
 
   const resetCode = () => {
-    setInputCode(prev => ({
+    setInputCode((prev) => ({
       ...prev,
-      [activeTab]: ''
+      [activeTab]: "",
     }));
-    setMinifiedCode('');
+    setMinifiedCode("");
     setStats(null);
-    setError('');
+    setError("");
   };
 
   const getFileExtension = () => {
     switch (activeTab) {
-      case 'javascript': return 'js';
-      case 'css': return 'css';
-      case 'html': return 'html';
-      default: return 'txt';
+      case "javascript":
+        return "js";
+      case "css":
+        return "css";
+      case "html":
+        return "html";
+      default:
+        return "txt";
     }
   };
 
@@ -280,10 +293,10 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free Code Minifier Online</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Minify JavaScript, CSS, and HTML code to reduce file sizes and improve website performance. 
-          Advanced compression with detailed statistics.
+          Minify JavaScript, CSS, and HTML code to reduce file sizes and improve
+          website performance. Advanced compression with detailed statistics.
         </p>
-        
+
         <div className="flex flex-wrap justify-center gap-4 mb-6">
           <div className="flex items-center gap-2">
             <Zap className="h-5 w-5 text-primary" />
@@ -312,9 +325,16 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="w-full"
+          >
             <TabsList className="grid w-full grid-cols-3">
-              <TabsTrigger value="javascript" className="flex items-center gap-2">
+              <TabsTrigger
+                value="javascript"
+                className="flex items-center gap-2"
+              >
                 <FileCode className="h-4 w-4" />
                 JavaScript
               </TabsTrigger>
@@ -328,7 +348,7 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
               </TabsTrigger>
             </TabsList>
 
-            {['javascript', 'css', 'html'].map((type) => (
+            {["javascript", "css", "html"].map((type) => (
               <TabsContent key={type} value={type} className="space-y-4">
                 <div>
                   <div className="flex items-center justify-between mb-2">
@@ -346,10 +366,12 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
                     id={`${type}-input`}
                     placeholder={`Paste your ${type.toUpperCase()} code here...`}
                     value={inputCode[type]}
-                    onChange={(e) => setInputCode(prev => ({
-                      ...prev,
-                      [type]: e.target.value
-                    }))}
+                    onChange={(e) =>
+                      setInputCode((prev) => ({
+                        ...prev,
+                        [type]: e.target.value,
+                      }))
+                    }
                     className="min-h-[300px] font-mono text-sm"
                   />
                 </div>
@@ -358,8 +380,8 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           </Tabs>
 
           <div className="mt-4">
-            <Button 
-              onClick={handleMinify} 
+            <Button
+              onClick={handleMinify}
               disabled={isMinifying || !inputCode[activeTab].trim()}
               className="w-full"
               size="lg"
@@ -367,12 +389,14 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
               {isMinifying ? (
                 <>
                   <Minimize2 className="h-4 w-4 mr-2 animate-pulse" />
-                  Minifying {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}...
+                  Minifying{" "}
+                  {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}...
                 </>
               ) : (
                 <>
                   <Minimize2 className="h-4 w-4 mr-2" />
-                  Minify {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Code
+                  Minify{" "}
+                  {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)} Code
                 </>
               )}
             </Button>
@@ -400,20 +424,36 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           <CardContent>
             <div className="grid gap-4 md:grid-cols-4">
               <div className="text-center p-4 bg-muted rounded-lg">
-                <div className="text-2xl font-bold text-primary">{stats.originalSize}</div>
-                <div className="text-sm text-muted-foreground">Original Size</div>
+                <div className="text-2xl font-bold text-primary">
+                  {stats.originalSize}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Original Size
+                </div>
               </div>
               <div className="text-center p-4 bg-muted rounded-lg">
-                <div className="text-2xl font-bold text-primary">{stats.minifiedSize}</div>
-                <div className="text-sm text-muted-foreground">Minified Size</div>
+                <div className="text-2xl font-bold text-primary">
+                  {stats.minifiedSize}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Minified Size
+                </div>
               </div>
               <div className="text-center p-4 bg-muted rounded-lg">
-                <div className="text-2xl font-bold text-primary">{stats.reduction}</div>
-                <div className="text-sm text-muted-foreground">Size Reduction</div>
+                <div className="text-2xl font-bold text-primary">
+                  {stats.reduction}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Size Reduction
+                </div>
               </div>
               <div className="text-center p-4 bg-muted rounded-lg">
-                <div className="text-2xl font-bold text-primary">{stats.reductionPercent}%</div>
-                <div className="text-sm text-muted-foreground">Compression Ratio</div>
+                <div className="text-2xl font-bold text-primary">
+                  {stats.reductionPercent}%
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Compression Ratio
+                </div>
               </div>
             </div>
           </CardContent>
@@ -430,17 +470,22 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
                 Minified Code
               </span>
               <div className="flex gap-2">
-                <Button 
-                  onClick={() => handleCopy(minifiedCode)} 
-                  variant="outline" 
+                <Button
+                  onClick={() => handleCopy(minifiedCode)}
+                  variant="outline"
                   size="sm"
                 >
                   <Copy className="h-4 w-4 mr-2" />
                   Copy
                 </Button>
-                <Button 
-                  onClick={() => handleDownload(minifiedCode, `minified.${getFileExtension()}`)} 
-                  variant="outline" 
+                <Button
+                  onClick={() =>
+                    handleDownload(
+                      minifiedCode,
+                      `minified.${getFileExtension()}`,
+                    )
+                  }
+                  variant="outline"
                   size="sm"
                 >
                   <Download className="h-4 w-4 mr-2" />
@@ -470,7 +515,8 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Uses industry-standard minification libraries: Terser for JavaScript and CleanCSS for stylesheets.
+              Uses industry-standard minification libraries: Terser for
+              JavaScript and CleanCSS for stylesheets.
             </p>
           </CardContent>
         </Card>
@@ -484,7 +530,8 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Get comprehensive statistics showing original size, minified size, and compression percentage.
+              Get comprehensive statistics showing original size, minified size,
+              and compression percentage.
             </p>
           </CardContent>
         </Card>
@@ -498,7 +545,8 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              All minification happens in your browser. Your code never leaves your device.
+              All minification happens in your browser. Your code never leaves
+              your device.
             </p>
           </CardContent>
         </Card>
@@ -543,27 +591,40 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">What minification libraries are used?</h4>
+              <h4 className="font-medium mb-2">
+                What minification libraries are used?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                We use Terser for JavaScript (industry standard), CleanCSS for CSS optimization, and custom algorithms for HTML compression.
+                We use Terser for JavaScript (industry standard), CleanCSS for
+                CSS optimization, and custom algorithms for HTML compression.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Is my code sent to your servers?</h4>
+              <h4 className="font-medium mb-2">
+                Is my code sent to your servers?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                No, all minification happens locally in your browser using client-side JavaScript. Your code never leaves your device.
+                No, all minification happens locally in your browser using
+                client-side JavaScript. Your code never leaves your device.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Can minified code break my application?</h4>
+              <h4 className="font-medium mb-2">
+                Can minified code break my application?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Minification preserves functionality while reducing size. However, always test minified code in your environment before production use.
+                Minification preserves functionality while reducing size.
+                However, always test minified code in your environment before
+                production use.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">What's the typical compression ratio?</h4>
+              <h4 className="font-medium mb-2">
+                What's the typical compression ratio?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                JavaScript typically compresses 20-40%, CSS 15-30%, and HTML 10-25%, depending on the original code structure and comments.
+                JavaScript typically compresses 20-40%, CSS 15-30%, and HTML
+                10-25%, depending on the original code structure and comments.
               </p>
             </div>
           </div>

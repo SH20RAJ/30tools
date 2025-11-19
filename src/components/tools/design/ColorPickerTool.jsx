@@ -1,55 +1,65 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  ArrowLeftIcon, 
-  PaletteIcon, 
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  ArrowLeftIcon,
+  PaletteIcon,
   CopyIcon,
   CheckCircleIcon,
   PipetteIcon,
   RefreshCwIcon,
   DownloadIcon,
   WandIcon,
-  HeartIcon
-} from 'lucide-react';
-import Link from 'next/link';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  HeartIcon,
+} from "lucide-react";
+import Link from "next/link";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function ColorPickerTool() {
-  const [selectedColor, setSelectedColor] = useState('#3B82F6');
+  const [selectedColor, setSelectedColor] = useState("#3B82F6");
   const [colorFormats, setColorFormats] = useState({});
-  const [copied, setCopied] = useState('');
+  const [copied, setCopied] = useState("");
   const [savedColors, setSavedColors] = useState([]);
   const [colorHarmony, setColorHarmony] = useState([]);
 
   // Color conversion functions
   const hexToRgb = (hex) => {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : null;
+    return result
+      ? {
+          r: parseInt(result[1], 16),
+          g: parseInt(result[2], 16),
+          b: parseInt(result[3], 16),
+        }
+      : null;
   };
 
   const hexToHsl = (hex) => {
     const rgb = hexToRgb(hex);
     if (!rgb) return null;
-    
+
     const r = rgb.r / 255;
     const g = rgb.g / 255;
     const b = rgb.b / 255;
 
     const max = Math.max(r, g, b);
     const min = Math.min(r, g, b);
-    let h, s, l = (max + min) / 2;
+    let h,
+      s,
+      l = (max + min) / 2;
 
     if (max === min) {
       h = s = 0;
@@ -57,10 +67,17 @@ export default function ColorPickerTool() {
       const d = max - min;
       s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
       switch (max) {
-        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-        case g: h = (b - r) / d + 2; break;
-        case b: h = (r - g) / d + 4; break;
-        default: h = 0;
+        case r:
+          h = (g - b) / d + (g < b ? 6 : 0);
+          break;
+        case g:
+          h = (b - r) / d + 2;
+          break;
+        case b:
+          h = (r - g) / d + 4;
+          break;
+        default:
+          h = 0;
       }
       h /= 6;
     }
@@ -68,7 +85,7 @@ export default function ColorPickerTool() {
     return {
       h: Math.round(h * 360),
       s: Math.round(s * 100),
-      l: Math.round(l * 100)
+      l: Math.round(l * 100),
     };
   };
 
@@ -89,7 +106,7 @@ export default function ColorPickerTool() {
       c: Math.round(c * 100),
       m: Math.round(m * 100),
       y: Math.round(y * 100),
-      k: Math.round(k * 100)
+      k: Math.round(k * 100),
     };
   };
 
@@ -103,47 +120,44 @@ export default function ColorPickerTool() {
     // Complementary
     const compHue = (baseHue + 180) % 360;
     harmonies.push({
-      name: 'Complementary',
-      colors: [
-        hex,
-        hslToHex(compHue, hsl.s, hsl.l)
-      ]
+      name: "Complementary",
+      colors: [hex, hslToHex(compHue, hsl.s, hsl.l)],
     });
 
     // Triadic
     const triad1 = (baseHue + 120) % 360;
     const triad2 = (baseHue + 240) % 360;
     harmonies.push({
-      name: 'Triadic',
+      name: "Triadic",
       colors: [
         hex,
         hslToHex(triad1, hsl.s, hsl.l),
-        hslToHex(triad2, hsl.s, hsl.l)
-      ]
+        hslToHex(triad2, hsl.s, hsl.l),
+      ],
     });
 
     // Analogous
     const analog1 = (baseHue + 30) % 360;
     const analog2 = (baseHue - 30 + 360) % 360;
     harmonies.push({
-      name: 'Analogous',
+      name: "Analogous",
       colors: [
         hslToHex(analog2, hsl.s, hsl.l),
         hex,
-        hslToHex(analog1, hsl.s, hsl.l)
-      ]
+        hslToHex(analog1, hsl.s, hsl.l),
+      ],
     });
 
     // Monochromatic
     harmonies.push({
-      name: 'Monochromatic',
+      name: "Monochromatic",
       colors: [
         hslToHex(baseHue, hsl.s, Math.max(10, hsl.l - 30)),
         hslToHex(baseHue, hsl.s, Math.max(10, hsl.l - 15)),
         hex,
         hslToHex(baseHue, hsl.s, Math.min(90, hsl.l + 15)),
-        hslToHex(baseHue, hsl.s, Math.min(90, hsl.l + 30))
-      ]
+        hslToHex(baseHue, hsl.s, Math.min(90, hsl.l + 30)),
+      ],
     });
 
     return harmonies;
@@ -154,32 +168,51 @@ export default function ColorPickerTool() {
     l /= 100;
 
     const c = (1 - Math.abs(2 * l - 1)) * s;
-    const x = c * (1 - Math.abs((h / 60) % 2 - 1));
+    const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
     const m = l - c / 2;
-    let r = 0, g = 0, b = 0;
+    let r = 0,
+      g = 0,
+      b = 0;
 
     if (0 <= h && h < 60) {
-      r = c; g = x; b = 0;
+      r = c;
+      g = x;
+      b = 0;
     } else if (60 <= h && h < 120) {
-      r = x; g = c; b = 0;
+      r = x;
+      g = c;
+      b = 0;
     } else if (120 <= h && h < 180) {
-      r = 0; g = c; b = x;
+      r = 0;
+      g = c;
+      b = x;
     } else if (180 <= h && h < 240) {
-      r = 0; g = x; b = c;
+      r = 0;
+      g = x;
+      b = c;
     } else if (240 <= h && h < 300) {
-      r = x; g = 0; b = c;
+      r = x;
+      g = 0;
+      b = c;
     } else if (300 <= h && h < 360) {
-      r = c; g = 0; b = x;
+      r = c;
+      g = 0;
+      b = x;
     }
 
     r = Math.round((r + m) * 255);
     g = Math.round((g + m) * 255);
     b = Math.round((b + m) * 255);
 
-    return "#" + [r, g, b].map(x => {
-      const hex = x.toString(16);
-      return hex.length === 1 ? "0" + hex : hex;
-    }).join("");
+    return (
+      "#" +
+      [r, g, b]
+        .map((x) => {
+          const hex = x.toString(16);
+          return hex.length === 1 ? "0" + hex : hex;
+        })
+        .join("")
+    );
   };
 
   useEffect(() => {
@@ -189,12 +222,12 @@ export default function ColorPickerTool() {
 
     setColorFormats({
       hex: selectedColor.toUpperCase(),
-      rgb: rgb ? `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` : '',
-      rgba: rgb ? `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 1)` : '',
-      hsl: hsl ? `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)` : '',
-      hsla: hsl ? `hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, 1)` : '',
-      cmyk: cmyk ? `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)` : '',
-      name: getColorName(selectedColor)
+      rgb: rgb ? `rgb(${rgb.r}, ${rgb.g}, ${rgb.b})` : "",
+      rgba: rgb ? `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 1)` : "",
+      hsl: hsl ? `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)` : "",
+      hsla: hsl ? `hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, 1)` : "",
+      cmyk: cmyk ? `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)` : "",
+      name: getColorName(selectedColor),
     });
 
     setColorHarmony(generateColorHarmony(selectedColor));
@@ -203,50 +236,79 @@ export default function ColorPickerTool() {
   const getColorName = (hex) => {
     // Simplified color name mapping
     const colorNames = {
-      '#FF0000': 'Red',
-      '#00FF00': 'Lime',
-      '#0000FF': 'Blue',
-      '#FFFF00': 'Yellow',
-      '#FF00FF': 'Magenta',
-      '#00FFFF': 'Cyan',
-      '#000000': 'Black',
-      '#FFFFFF': 'White',
-      '#808080': 'Gray',
-      '#800000': 'Maroon',
-      '#008000': 'Green',
-      '#000080': 'Navy'
+      "#FF0000": "Red",
+      "#00FF00": "Lime",
+      "#0000FF": "Blue",
+      "#FFFF00": "Yellow",
+      "#FF00FF": "Magenta",
+      "#00FFFF": "Cyan",
+      "#000000": "Black",
+      "#FFFFFF": "White",
+      "#808080": "Gray",
+      "#800000": "Maroon",
+      "#008000": "Green",
+      "#000080": "Navy",
     };
-    
-    return colorNames[hex.toUpperCase()] || 'Custom Color';
+
+    return colorNames[hex.toUpperCase()] || "Custom Color";
   };
 
   const copyToClipboard = (text, format) => {
     navigator.clipboard.writeText(text);
     setCopied(format);
-    setTimeout(() => setCopied(''), 2000);
+    setTimeout(() => setCopied(""), 2000);
   };
 
   const saveColor = () => {
     if (!savedColors.includes(selectedColor)) {
-      setSavedColors(prev => [...prev, selectedColor]);
+      setSavedColors((prev) => [...prev, selectedColor]);
     }
   };
 
   const removeColor = (color) => {
-    setSavedColors(prev => prev.filter(c => c !== color));
+    setSavedColors((prev) => prev.filter((c) => c !== color));
   };
 
   const generateRandomColor = () => {
-    const randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+    const randomColor =
+      "#" +
+      Math.floor(Math.random() * 16777215)
+        .toString(16)
+        .padStart(6, "0");
     setSelectedColor(randomColor);
   };
 
   const predefinedColors = [
-    '#FF0000', '#FF8000', '#FFFF00', '#80FF00', '#00FF00', '#00FF80',
-    '#00FFFF', '#0080FF', '#0000FF', '#8000FF', '#FF00FF', '#FF0080',
-    '#800000', '#804000', '#808000', '#408000', '#008000', '#008040',
-    '#008080', '#004080', '#000080', '#400080', '#800080', '#800040',
-    '#000000', '#404040', '#808080', '#C0C0C0', '#FFFFFF', '#FFE4E1'
+    "#FF0000",
+    "#FF8000",
+    "#FFFF00",
+    "#80FF00",
+    "#00FF00",
+    "#00FF80",
+    "#00FFFF",
+    "#0080FF",
+    "#0000FF",
+    "#8000FF",
+    "#FF00FF",
+    "#FF0080",
+    "#800000",
+    "#804000",
+    "#808000",
+    "#408000",
+    "#008000",
+    "#008040",
+    "#008080",
+    "#004080",
+    "#000080",
+    "#400080",
+    "#800080",
+    "#800040",
+    "#000000",
+    "#404040",
+    "#808080",
+    "#C0C0C0",
+    "#FFFFFF",
+    "#FFE4E1",
   ];
 
   return (
@@ -265,7 +327,10 @@ export default function ColorPickerTool() {
         </div>
         <div>
           <h1 className="text-3xl font-bold">Color Picker</h1>
-          <p className="text-muted-foreground">Pick colors and get values in all formats with color harmony suggestions</p>
+          <p className="text-muted-foreground">
+            Pick colors and get values in all formats with color harmony
+            suggestions
+          </p>
         </div>
       </div>
 
@@ -289,7 +354,7 @@ export default function ColorPickerTool() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center gap-4">
-                <div 
+                <div
                   className="w-32 h-32 rounded-lg border-2 border-border shadow-inner"
                   style={{ backgroundColor: selectedColor }}
                 />
@@ -310,7 +375,10 @@ export default function ColorPickerTool() {
                       id="hex-input"
                       value={selectedColor}
                       onChange={(e) => {
-                        if (/^#[0-9A-F]{6}$/i.test(e.target.value) || e.target.value === '#') {
+                        if (
+                          /^#[0-9A-F]{6}$/i.test(e.target.value) ||
+                          e.target.value === "#"
+                        ) {
                           setSelectedColor(e.target.value);
                         }
                       }}
@@ -322,11 +390,19 @@ export default function ColorPickerTool() {
               </div>
 
               <div className="flex gap-2">
-                <Button onClick={generateRandomColor} variant="outline" className="flex-1">
+                <Button
+                  onClick={generateRandomColor}
+                  variant="outline"
+                  className="flex-1"
+                >
                   <RefreshCwIcon className="h-4 w-4 mr-2" />
                   Random Color
                 </Button>
-                <Button onClick={saveColor} variant="outline" className="flex-1">
+                <Button
+                  onClick={saveColor}
+                  variant="outline"
+                  className="flex-1"
+                >
                   <HeartIcon className="h-4 w-4 mr-2" />
                   Save Color
                 </Button>
@@ -345,10 +421,17 @@ export default function ColorPickerTool() {
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {Object.entries(colorFormats).map(([format, value]) => (
-                  <div key={format} className="flex items-center justify-between p-3 border rounded-lg">
+                  <div
+                    key={format}
+                    className="flex items-center justify-between p-3 border rounded-lg"
+                  >
                     <div>
-                      <div className="font-medium text-sm uppercase">{format}</div>
-                      <div className="font-mono text-sm text-muted-foreground">{value}</div>
+                      <div className="font-medium text-sm uppercase">
+                        {format}
+                      </div>
+                      <div className="font-mono text-sm text-muted-foreground">
+                        {value}
+                      </div>
                     </div>
                     <Button
                       size="sm"
@@ -431,9 +514,7 @@ export default function ColorPickerTool() {
             <Card>
               <CardHeader>
                 <CardTitle>Saved Colors</CardTitle>
-                <CardDescription>
-                  Your saved color collection
-                </CardDescription>
+                <CardDescription>Your saved color collection</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-4 gap-2">
@@ -473,9 +554,11 @@ export default function ColorPickerTool() {
                     <div className="text-sm text-muted-foreground">
                       {(() => {
                         const rgb = hexToRgb(selectedColor);
-                        if (!rgb) return 'Unknown';
-                        const brightness = Math.round((rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000);
-                        return `${brightness}/255 (${brightness < 128 ? 'Dark' : 'Light'})`;
+                        if (!rgb) return "Unknown";
+                        const brightness = Math.round(
+                          (rgb.r * 299 + rgb.g * 587 + rgb.b * 114) / 1000,
+                        );
+                        return `${brightness}/255 (${brightness < 128 ? "Dark" : "Light"})`;
                       })()}
                     </div>
                   </div>
@@ -483,20 +566,20 @@ export default function ColorPickerTool() {
                     <div className="text-sm font-medium">Contrast</div>
                     <div className="text-sm text-muted-foreground">
                       <div className="flex gap-2 mt-1">
-                        <div 
+                        <div
                           className="px-2 py-1 rounded text-xs"
-                          style={{ 
+                          style={{
                             backgroundColor: selectedColor,
-                            color: '#000000'
+                            color: "#000000",
                           }}
                         >
                           Black Text
                         </div>
-                        <div 
+                        <div
                           className="px-2 py-1 rounded text-xs"
-                          style={{ 
+                          style={{
                             backgroundColor: selectedColor,
-                            color: '#FFFFFF'
+                            color: "#FFFFFF",
                           }}
                         >
                           White Text
@@ -522,7 +605,8 @@ export default function ColorPickerTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Get color values in HEX, RGB, HSL, CMYK, and more formats with one-click copying.
+              Get color values in HEX, RGB, HSL, CMYK, and more formats with
+              one-click copying.
             </p>
           </CardContent>
         </Card>
@@ -536,7 +620,8 @@ export default function ColorPickerTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Generate complementary, triadic, analogous, and monochromatic color schemes.
+              Generate complementary, triadic, analogous, and monochromatic
+              color schemes.
             </p>
           </CardContent>
         </Card>
@@ -550,7 +635,8 @@ export default function ColorPickerTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Save your favorite colors and build custom palettes for your projects.
+              Save your favorite colors and build custom palettes for your
+              projects.
             </p>
           </CardContent>
         </Card>

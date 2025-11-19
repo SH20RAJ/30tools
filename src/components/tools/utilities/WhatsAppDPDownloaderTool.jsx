@@ -1,30 +1,36 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Download, Copy, Check, Phone, AlertCircle } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Download, Copy, Check, Phone, AlertCircle } from "lucide-react";
+import { toast } from "sonner";
 
 export default function WhatsAppDPDownloaderTool() {
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [dpUrl, setDpUrl] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [dpUrl, setDpUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [copied, setCopied] = useState(false);
 
   const extractWhatsAppDP = async () => {
     if (!phoneNumber.trim()) {
-      toast.error('Please enter a phone number');
+      toast.error("Please enter a phone number");
       return;
     }
 
     // Clean phone number (remove spaces, hyphens, etc.)
-    const cleanNumber = phoneNumber.replace(/[^\d+]/g, '');
-    
-    if (!cleanNumber.startsWith('+')) {
-      toast.error('Please include country code (e.g., +1234567890)');
+    const cleanNumber = phoneNumber.replace(/[^\d+]/g, "");
+
+    if (!cleanNumber.startsWith("+")) {
+      toast.error("Please include country code (e.g., +1234567890)");
       return;
     }
 
@@ -34,9 +40,9 @@ export default function WhatsAppDPDownloaderTool() {
       // Note: This is a simplified version. In production, you'd need proper API integration
       const whatsappDPUrl = `https://web.whatsapp.com/pp?phone=${cleanNumber.substring(1)}&type=image`;
       setDpUrl(whatsappDPUrl);
-      toast.success('Profile picture URL generated!');
+      toast.success("Profile picture URL generated!");
     } catch (error) {
-      toast.error('Error generating profile picture URL');
+      toast.error("Error generating profile picture URL");
     } finally {
       setLoading(false);
     }
@@ -46,24 +52,24 @@ export default function WhatsAppDPDownloaderTool() {
     try {
       await navigator.clipboard.writeText(dpUrl);
       setCopied(true);
-      toast.success('URL copied to clipboard!');
+      toast.success("URL copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
     } catch (error) {
-      toast.error('Failed to copy URL');
+      toast.error("Failed to copy URL");
     }
   };
 
   const downloadImage = () => {
     if (!dpUrl) return;
-    
-    const link = document.createElement('a');
+
+    const link = document.createElement("a");
     link.href = dpUrl;
-    link.download = `whatsapp_dp_${phoneNumber.replace(/[^\d]/g, '')}.jpg`;
-    link.target = '_blank';
+    link.download = `whatsapp_dp_${phoneNumber.replace(/[^\d]/g, "")}.jpg`;
+    link.target = "_blank";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    toast.success('Download started!');
+    toast.success("Download started!");
   };
 
   return (
@@ -75,7 +81,8 @@ export default function WhatsAppDPDownloaderTool() {
             WhatsApp DP Downloader
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Download WhatsApp profile pictures in high quality. Enter a phone number with country code to get the profile picture URL.
+            Download WhatsApp profile pictures in high quality. Enter a phone
+            number with country code to get the profile picture URL.
           </p>
         </div>
 
@@ -87,7 +94,8 @@ export default function WhatsAppDPDownloaderTool() {
               WhatsApp DP Downloader
             </CardTitle>
             <CardDescription>
-              Enter a phone number with country code to download the WhatsApp profile picture
+              Enter a phone number with country code to download the WhatsApp
+              profile picture
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
@@ -105,13 +113,13 @@ export default function WhatsAppDPDownloaderTool() {
               </p>
             </div>
 
-            <Button 
+            <Button
               onClick={extractWhatsAppDP}
               disabled={loading || !phoneNumber.trim()}
               className="w-full"
               size="lg"
             >
-              {loading ? 'Generating...' : 'Get Profile Picture'}
+              {loading ? "Generating..." : "Get Profile Picture"}
             </Button>
 
             {dpUrl && (
@@ -119,12 +127,7 @@ export default function WhatsAppDPDownloaderTool() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <div className="flex-1">
                     <Label htmlFor="dpUrl">Profile Picture URL</Label>
-                    <Input
-                      id="dpUrl"
-                      value={dpUrl}
-                      readOnly
-                      className="mt-1"
-                    />
+                    <Input id="dpUrl" value={dpUrl} readOnly className="mt-1" />
                   </div>
                 </div>
 
@@ -135,8 +138,12 @@ export default function WhatsAppDPDownloaderTool() {
                     size="sm"
                     className="flex items-center gap-2"
                   >
-                    {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                    {copied ? 'Copied!' : 'Copy URL'}
+                    {copied ? (
+                      <Check className="h-4 w-4" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
+                    {copied ? "Copied!" : "Copy URL"}
                   </Button>
                   <Button
                     onClick={downloadImage}
@@ -149,11 +156,13 @@ export default function WhatsAppDPDownloaderTool() {
                 </div>
 
                 <div className="bg-gray-50 rounded-lg p-4">
-                  <img 
-                    src={dpUrl} 
+                  <img
+                    src={dpUrl}
                     alt="WhatsApp Profile Picture"
                     className="w-32 h-32 rounded-full object-cover mx-auto"
-                    onError={() => toast.error('Could not load profile picture')}
+                    onError={() =>
+                      toast.error("Could not load profile picture")
+                    }
                   />
                 </div>
               </div>
@@ -167,11 +176,20 @@ export default function WhatsAppDPDownloaderTool() {
             <div className="flex items-start gap-3">
               <AlertCircle className="h-5 w-5 text-primary mt-0.5" />
               <div>
-                <h3 className="font-semibold text-primary mb-2">Important Notes</h3>
+                <h3 className="font-semibold text-primary mb-2">
+                  Important Notes
+                </h3>
                 <ul className="text-sm text-primary space-y-1">
-                  <li>• Profile pictures may not be available for all numbers</li>
-                  <li>• Privacy settings affect visibility of profile pictures</li>
-                  <li>• Some profile pictures may be low resolution or default images</li>
+                  <li>
+                    • Profile pictures may not be available for all numbers
+                  </li>
+                  <li>
+                    • Privacy settings affect visibility of profile pictures
+                  </li>
+                  <li>
+                    • Some profile pictures may be low resolution or default
+                    images
+                  </li>
                   <li>• Respect privacy and use this tool responsibly</li>
                 </ul>
               </div>

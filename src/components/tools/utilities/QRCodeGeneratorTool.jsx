@@ -1,19 +1,31 @@
-'use client';
+"use client";
 
-import { useState, useEffect, useRef } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Separator } from '@/components/ui/separator';
-import { Slider } from '@/components/ui/slider';
-import { Switch } from '@/components/ui/switch';
-import { 
-  ArrowLeftIcon, 
-  DownloadIcon, 
+import { useState, useEffect, useRef } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Separator } from "@/components/ui/separator";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
+import {
+  ArrowLeftIcon,
+  DownloadIcon,
   QrCodeIcon,
   CopyIcon,
   RefreshCwIcon,
@@ -23,62 +35,63 @@ import {
   UserIcon,
   MailIcon,
   PhoneIcon,
-  MapPinIcon
-} from 'lucide-react';
-import Link from 'next/link';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  MapPinIcon,
+} from "lucide-react";
+import Link from "next/link";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function QRCodeGeneratorTool() {
-  const [qrType, setQrType] = useState('url');
-  const [qrData, setQrData] = useState('https://30tools.com');
+  const [qrType, setQrType] = useState("url");
+  const [qrData, setQrData] = useState("https://30tools.com");
   const [qrSize, setQrSize] = useState([256]);
-  const [foregroundColor, setForegroundColor] = useState('#000000');
-  const [backgroundColor, setBackgroundColor] = useState('#ffffff');
-  const [errorCorrectionLevel, setErrorCorrectionLevel] = useState('M');
+  const [foregroundColor, setForegroundColor] = useState("#000000");
+  const [backgroundColor, setBackgroundColor] = useState("#ffffff");
+  const [errorCorrectionLevel, setErrorCorrectionLevel] = useState("M");
   const [includeMargin, setIncludeMargin] = useState(true);
-  const [qrCodeSvg, setQrCodeSvg] = useState('');
+  const [qrCodeSvg, setQrCodeSvg] = useState("");
   const qrContainerRef = useRef(null);
   const canvasRef = useRef(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [qrCodeLibLoaded, setQrCodeLibLoaded] = useState(false);
 
   // WiFi specific fields
-  const [wifiSSID, setWifiSSID] = useState('');
-  const [wifiPassword, setWifiPassword] = useState('');
-  const [wifiSecurity, setWifiSecurity] = useState('WPA');
+  const [wifiSSID, setWifiSSID] = useState("");
+  const [wifiPassword, setWifiPassword] = useState("");
+  const [wifiSecurity, setWifiSecurity] = useState("WPA");
   const [wifiHidden, setWifiHidden] = useState(false);
 
   // Contact specific fields
-  const [contactName, setContactName] = useState('');
-  const [contactPhone, setContactPhone] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
-  const [contactOrg, setContactOrg] = useState('');
-  const [contactUrl, setContactUrl] = useState('');
+  const [contactName, setContactName] = useState("");
+  const [contactPhone, setContactPhone] = useState("");
+  const [contactEmail, setContactEmail] = useState("");
+  const [contactOrg, setContactOrg] = useState("");
+  const [contactUrl, setContactUrl] = useState("");
 
   // Email specific fields
-  const [emailTo, setEmailTo] = useState('');
-  const [emailSubject, setEmailSubject] = useState('');
-  const [emailBody, setEmailBody] = useState('');
+  const [emailTo, setEmailTo] = useState("");
+  const [emailSubject, setEmailSubject] = useState("");
+  const [emailBody, setEmailBody] = useState("");
 
   // SMS specific fields
-  const [smsNumber, setSmsNumber] = useState('');
-  const [smsMessage, setSmsMessage] = useState('');
+  const [smsNumber, setSmsNumber] = useState("");
+  const [smsMessage, setSmsMessage] = useState("");
 
   // Location specific fields
-  const [locationLat, setLocationLat] = useState('');
-  const [locationLng, setLocationLng] = useState('');
+  const [locationLat, setLocationLat] = useState("");
+  const [locationLng, setLocationLng] = useState("");
 
   // Load QRCode.js library from CDN
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js';
+    const script = document.createElement("script");
+    script.src =
+      "https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js";
     script.async = true;
     script.onload = () => {
       setQrCodeLibLoaded(true);
       generateQRCode(); // Generate initial QR code
     };
     script.onerror = () => {
-      console.error('Failed to load QRCode library');
+      console.error("Failed to load QRCode library");
       setQrCodeLibLoaded(false);
     };
     document.head.appendChild(script);
@@ -96,29 +109,29 @@ export default function QRCodeGeneratorTool() {
     }
 
     setIsGenerating(true);
-    
-    let dataToEncode = '';
-    
+
+    let dataToEncode = "";
+
     switch (qrType) {
-      case 'url':
+      case "url":
         dataToEncode = qrData;
         break;
-      case 'text':
+      case "text":
         dataToEncode = qrData;
         break;
-      case 'wifi':
-        dataToEncode = `WIFI:T:${wifiSecurity};S:${wifiSSID};P:${wifiPassword};H:${wifiHidden ? 'true' : 'false'};;`;
+      case "wifi":
+        dataToEncode = `WIFI:T:${wifiSecurity};S:${wifiSSID};P:${wifiPassword};H:${wifiHidden ? "true" : "false"};;`;
         break;
-      case 'contact':
+      case "contact":
         dataToEncode = `BEGIN:VCARD\nVERSION:3.0\nFN:${contactName}\nTEL:${contactPhone}\nEMAIL:${contactEmail}\nORG:${contactOrg}\nURL:${contactUrl}\nEND:VCARD`;
         break;
-      case 'email':
+      case "email":
         dataToEncode = `mailto:${emailTo}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
         break;
-      case 'sms':
+      case "sms":
         dataToEncode = `sms:${smsNumber}?body=${encodeURIComponent(smsMessage)}`;
         break;
-      case 'location':
+      case "location":
         dataToEncode = `geo:${locationLat},${locationLng}`;
         break;
       default:
@@ -128,7 +141,7 @@ export default function QRCodeGeneratorTool() {
     try {
       // Clear previous QR code
       if (qrContainerRef.current) {
-        qrContainerRef.current.innerHTML = '';
+        qrContainerRef.current.innerHTML = "";
       }
 
       // Generate QR code using QRCode.js
@@ -139,28 +152,27 @@ export default function QRCodeGeneratorTool() {
           margin: includeMargin ? 2 : 0,
           color: {
             dark: foregroundColor,
-            light: backgroundColor
+            light: backgroundColor,
           },
-          errorCorrectionLevel: errorCorrectionLevel
+          errorCorrectionLevel: errorCorrectionLevel,
         });
       }
 
       // Generate SVG version
       const svgString = await window.QRCode.toString(dataToEncode, {
-        type: 'svg',
+        type: "svg",
         width: qrSize[0],
         margin: includeMargin ? 2 : 0,
         color: {
           dark: foregroundColor,
-          light: backgroundColor
+          light: backgroundColor,
         },
-        errorCorrectionLevel: errorCorrectionLevel
+        errorCorrectionLevel: errorCorrectionLevel,
       });
-      
-      setQrCodeSvg(svgString);
 
+      setQrCodeSvg(svgString);
     } catch (error) {
-      console.error('Error generating QR code:', error);
+      console.error("Error generating QR code:", error);
     } finally {
       setIsGenerating(false);
     }
@@ -171,27 +183,47 @@ export default function QRCodeGeneratorTool() {
     if (qrCodeLibLoaded) {
       generateQRCode();
     }
-  }, [qrType, qrData, qrSize, foregroundColor, backgroundColor, errorCorrectionLevel, includeMargin, 
-      wifiSSID, wifiPassword, wifiSecurity, wifiHidden,
-      contactName, contactPhone, contactEmail, contactOrg, contactUrl,
-      emailTo, emailSubject, emailBody,
-      smsNumber, smsMessage,
-      locationLat, locationLng, qrCodeLibLoaded]);
+  }, [
+    qrType,
+    qrData,
+    qrSize,
+    foregroundColor,
+    backgroundColor,
+    errorCorrectionLevel,
+    includeMargin,
+    wifiSSID,
+    wifiPassword,
+    wifiSecurity,
+    wifiHidden,
+    contactName,
+    contactPhone,
+    contactEmail,
+    contactOrg,
+    contactUrl,
+    emailTo,
+    emailSubject,
+    emailBody,
+    smsNumber,
+    smsMessage,
+    locationLat,
+    locationLng,
+    qrCodeLibLoaded,
+  ]);
 
   const downloadPNG = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
-    const link = document.createElement('a');
+
+    const link = document.createElement("a");
     link.download = `qr-code-${qrType}.png`;
     link.href = canvas.toDataURL();
     link.click();
   };
 
   const downloadSVG = () => {
-    const blob = new Blob([qrCodeSvg], { type: 'image/svg+xml' });
+    const blob = new Blob([qrCodeSvg], { type: "image/svg+xml" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.download = `qr-code-${qrType}.svg`;
     link.href = url;
     link.click();
@@ -206,15 +238,15 @@ export default function QRCodeGeneratorTool() {
 
   const getPreviewData = () => {
     switch (qrType) {
-      case 'wifi':
+      case "wifi":
         return `WiFi: ${wifiSSID} (${wifiSecurity})`;
-      case 'contact':
+      case "contact":
         return `Contact: ${contactName}`;
-      case 'email':
+      case "email":
         return `Email: ${emailTo}`;
-      case 'sms':
+      case "sms":
         return `SMS: ${smsNumber}`;
-      case 'location':
+      case "location":
         return `Location: ${locationLat}, ${locationLng}`;
       default:
         return qrData;
@@ -223,7 +255,7 @@ export default function QRCodeGeneratorTool() {
 
   const renderInputFields = () => {
     switch (qrType) {
-      case 'url':
+      case "url":
         return (
           <div className="space-y-3">
             <Label>Website URL</Label>
@@ -234,8 +266,8 @@ export default function QRCodeGeneratorTool() {
             />
           </div>
         );
-        
-      case 'text':
+
+      case "text":
         return (
           <div className="space-y-3">
             <Label>Text Content</Label>
@@ -247,8 +279,8 @@ export default function QRCodeGeneratorTool() {
             />
           </div>
         );
-        
-      case 'wifi':
+
+      case "wifi":
         return (
           <div className="space-y-3">
             <div>
@@ -291,8 +323,8 @@ export default function QRCodeGeneratorTool() {
             </div>
           </div>
         );
-        
-      case 'contact':
+
+      case "contact":
         return (
           <div className="space-y-3">
             <div>
@@ -338,8 +370,8 @@ export default function QRCodeGeneratorTool() {
             </div>
           </div>
         );
-        
-      case 'email':
+
+      case "email":
         return (
           <div className="space-y-3">
             <div>
@@ -370,8 +402,8 @@ export default function QRCodeGeneratorTool() {
             </div>
           </div>
         );
-        
-      case 'sms':
+
+      case "sms":
         return (
           <div className="space-y-3">
             <div>
@@ -393,8 +425,8 @@ export default function QRCodeGeneratorTool() {
             </div>
           </div>
         );
-        
-      case 'location':
+
+      case "location":
         return (
           <div className="space-y-3">
             <div>
@@ -419,7 +451,7 @@ export default function QRCodeGeneratorTool() {
             </div>
           </div>
         );
-        
+
       default:
         return null;
     }
@@ -427,14 +459,22 @@ export default function QRCodeGeneratorTool() {
 
   const getTypeIcon = (type) => {
     switch (type) {
-      case 'url': return <LinkIcon className="h-4 w-4" />;
-      case 'text': return <QrCodeIcon className="h-4 w-4" />;
-      case 'wifi': return <WifiIcon className="h-4 w-4" />;
-      case 'contact': return <UserIcon className="h-4 w-4" />;
-      case 'email': return <MailIcon className="h-4 w-4" />;
-      case 'sms': return <PhoneIcon className="h-4 w-4" />;
-      case 'location': return <MapPinIcon className="h-4 w-4" />;
-      default: return <QrCodeIcon className="h-4 w-4" />;
+      case "url":
+        return <LinkIcon className="h-4 w-4" />;
+      case "text":
+        return <QrCodeIcon className="h-4 w-4" />;
+      case "wifi":
+        return <WifiIcon className="h-4 w-4" />;
+      case "contact":
+        return <UserIcon className="h-4 w-4" />;
+      case "email":
+        return <MailIcon className="h-4 w-4" />;
+      case "sms":
+        return <PhoneIcon className="h-4 w-4" />;
+      case "location":
+        return <MapPinIcon className="h-4 w-4" />;
+      default:
+        return <QrCodeIcon className="h-4 w-4" />;
     }
   };
 
@@ -449,17 +489,19 @@ export default function QRCodeGeneratorTool() {
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <QrCodeIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
               <h1 className="text-3xl font-bold">QR Code Generator</h1>
-              <p className="text-muted-foreground">Create custom QR codes for any purpose</p>
+              <p className="text-muted-foreground">
+                Create custom QR codes for any purpose
+              </p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant="secondary">Multiple Types</Badge>
             <Badge variant="secondary">Custom Colors</Badge>
@@ -541,7 +583,7 @@ export default function QRCodeGeneratorTool() {
                 {/* Appearance Settings */}
                 <div className="space-y-4">
                   <Label className="text-base font-medium">Appearance</Label>
-                  
+
                   <div className="space-y-3">
                     <Label className="text-sm">Size: {qrSize[0]}px</Label>
                     <Slider
@@ -557,7 +599,7 @@ export default function QRCodeGeneratorTool() {
                       <span>512px</span>
                     </div>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-3">
                     <div>
                       <Label className="text-sm">Foreground</Label>
@@ -575,7 +617,7 @@ export default function QRCodeGeneratorTool() {
                         />
                       </div>
                     </div>
-                    
+
                     <div>
                       <Label className="text-sm">Background</Label>
                       <div className="flex gap-2">
@@ -593,19 +635,24 @@ export default function QRCodeGeneratorTool() {
                       </div>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center justify-between">
-                    <Label htmlFor="margin" className="text-sm">Include Margin</Label>
+                    <Label htmlFor="margin" className="text-sm">
+                      Include Margin
+                    </Label>
                     <Switch
                       id="margin"
                       checked={includeMargin}
                       onCheckedChange={setIncludeMargin}
                     />
                   </div>
-                  
+
                   <div>
                     <Label className="text-sm">Error Correction</Label>
-                    <Select value={errorCorrectionLevel} onValueChange={setErrorCorrectionLevel}>
+                    <Select
+                      value={errorCorrectionLevel}
+                      onValueChange={setErrorCorrectionLevel}
+                    >
                       <SelectTrigger>
                         <SelectValue />
                       </SelectTrigger>
@@ -631,9 +678,7 @@ export default function QRCodeGeneratorTool() {
                   {getTypeIcon(qrType)}
                   QR Code Preview
                 </CardTitle>
-                <CardDescription>
-                  {getPreviewData()}
-                </CardDescription>
+                <CardDescription>{getPreviewData()}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex justify-center p-8 bg-muted/50 rounded-lg">
@@ -646,29 +691,41 @@ export default function QRCodeGeneratorTool() {
                     <canvas
                       ref={canvasRef}
                       className="border rounded-lg shadow-sm"
-                      style={{ maxWidth: '100%', height: 'auto' }}
+                      style={{ maxWidth: "100%", height: "auto" }}
                     />
                   )}
                 </div>
-                
+
                 {/* Download Options */}
                 <div className="flex flex-wrap gap-2 justify-center">
                   <Button onClick={downloadPNG} disabled={isGenerating}>
                     <DownloadIcon className="h-4 w-4 mr-2" />
                     Download PNG
                   </Button>
-                  
-                  <Button onClick={downloadSVG} variant="outline" disabled={isGenerating}>
+
+                  <Button
+                    onClick={downloadSVG}
+                    variant="outline"
+                    disabled={isGenerating}
+                  >
                     <ImageIcon className="h-4 w-4 mr-2" />
                     Download SVG
                   </Button>
-                  
-                  <Button onClick={copyToClipboard} variant="outline" disabled={isGenerating}>
+
+                  <Button
+                    onClick={copyToClipboard}
+                    variant="outline"
+                    disabled={isGenerating}
+                  >
                     <CopyIcon className="h-4 w-4 mr-2" />
                     Copy SVG
                   </Button>
-                  
-                  <Button onClick={generateQRCode} variant="ghost" disabled={isGenerating}>
+
+                  <Button
+                    onClick={generateQRCode}
+                    variant="ghost"
+                    disabled={isGenerating}
+                  >
                     <RefreshCwIcon className="h-4 w-4 mr-2" />
                     Regenerate
                   </Button>
@@ -690,8 +747,8 @@ export default function QRCodeGeneratorTool() {
                     variant="outline"
                     className="h-auto p-4 flex flex-col items-start gap-2"
                     onClick={() => {
-                      setQrType('url');
-                      setQrData('https://30tools.com');
+                      setQrType("url");
+                      setQrData("https://30tools.com");
                     }}
                   >
                     <div className="flex items-center gap-2">
@@ -702,15 +759,15 @@ export default function QRCodeGeneratorTool() {
                       Direct users to your website
                     </span>
                   </Button>
-                  
+
                   <Button
                     variant="outline"
                     className="h-auto p-4 flex flex-col items-start gap-2"
                     onClick={() => {
-                      setQrType('wifi');
-                      setWifiSSID('Guest_WiFi');
-                      setWifiPassword('password123');
-                      setWifiSecurity('WPA');
+                      setQrType("wifi");
+                      setWifiSSID("Guest_WiFi");
+                      setWifiPassword("password123");
+                      setWifiSecurity("WPA");
                     }}
                   >
                     <div className="flex items-center gap-2">
@@ -721,15 +778,15 @@ export default function QRCodeGeneratorTool() {
                       Share WiFi credentials easily
                     </span>
                   </Button>
-                  
+
                   <Button
                     variant="outline"
                     className="h-auto p-4 flex flex-col items-start gap-2"
                     onClick={() => {
-                      setQrType('contact');
-                      setContactName('John Doe');
-                      setContactPhone('+1 234 567 8900');
-                      setContactEmail('john@example.com');
+                      setQrType("contact");
+                      setContactName("John Doe");
+                      setContactPhone("+1 234 567 8900");
+                      setContactEmail("john@example.com");
                     }}
                   >
                     <div className="flex items-center gap-2">
@@ -740,14 +797,14 @@ export default function QRCodeGeneratorTool() {
                       Share your contact information
                     </span>
                   </Button>
-                  
+
                   <Button
                     variant="outline"
                     className="h-auto p-4 flex flex-col items-start gap-2"
                     onClick={() => {
-                      setQrType('location');
-                      setLocationLat('40.7128');
-                      setLocationLng('-74.0060');
+                      setQrType("location");
+                      setLocationLat("40.7128");
+                      setLocationLng("-74.0060");
                     }}
                   >
                     <div className="flex items-center gap-2">
@@ -794,28 +851,34 @@ export default function QRCodeGeneratorTool() {
               <div>
                 <h4 className="font-medium mb-1">Do QR codes expire?</h4>
                 <p className="text-sm text-muted-foreground">
-                  No, QR codes generated here never expire. They contain the data permanently.
+                  No, QR codes generated here never expire. They contain the
+                  data permanently.
                 </p>
               </div>
-              
+
               <div>
-                <h4 className="font-medium mb-1">What's the best size for printing?</h4>
+                <h4 className="font-medium mb-1">
+                  What's the best size for printing?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  For business cards, use 256px minimum. For posters, 512px or higher works best.
+                  For business cards, use 256px minimum. For posters, 512px or
+                  higher works best.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-medium mb-1">Can I use custom colors?</h4>
                 <p className="text-sm text-muted-foreground">
-                  Yes! Make sure there's enough contrast between foreground and background colors.
+                  Yes! Make sure there's enough contrast between foreground and
+                  background colors.
                 </p>
               </div>
-              
+
               <div>
                 <h4 className="font-medium mb-1">What's error correction?</h4>
                 <p className="text-sm text-muted-foreground">
-                  Higher levels make QR codes more readable even when partially damaged or obscured.
+                  Higher levels make QR codes more readable even when partially
+                  damaged or obscured.
                 </p>
               </div>
             </CardContent>

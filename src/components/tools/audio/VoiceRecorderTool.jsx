@@ -1,19 +1,31 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect, useCallback } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
-import { 
-  Mic, 
-  Square, 
-  Play, 
-  Pause, 
-  Download, 
+import { useState, useRef, useEffect, useCallback } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
+import {
+  Mic,
+  Square,
+  Play,
+  Pause,
+  Download,
   RotateCcw,
   Volume2,
   ArrowLeftIcon,
@@ -21,10 +33,10 @@ import {
   CheckIcon,
   Settings,
   Waves,
-  Timer
-} from 'lucide-react';
-import { toast } from 'sonner';
-import Link from 'next/link';
+  Timer,
+} from "lucide-react";
+import { toast } from "sonner";
+import Link from "next/link";
 
 export default function VoiceRecorder() {
   const [isRecording, setIsRecording] = useState(false);
@@ -32,11 +44,11 @@ export default function VoiceRecorder() {
   const [recordedBlob, setRecordedBlob] = useState(null);
   const [recordingTime, setRecordingTime] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [audioFormat, setAudioFormat] = useState('webm');
-  const [audioQuality, setAudioQuality] = useState('high');
+  const [audioFormat, setAudioFormat] = useState("webm");
+  const [audioQuality, setAudioQuality] = useState("high");
   const [microphoneLevel, setMicrophoneLevel] = useState(0);
   const [isProcessing, setIsProcessing] = useState(false);
-  
+
   const mediaRecorderRef = useRef(null);
   const audioRef = useRef(null);
   const chunksRef = useRef([]);
@@ -50,20 +62,21 @@ export default function VoiceRecorder() {
     const mins = Math.floor((seconds % 3600) / 60);
     const secs = seconds % 60;
     if (hrs > 0) {
-      return `${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      return `${hrs}:${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
     }
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   }, []);
 
   const updateMicrophoneLevel = useCallback(() => {
     if (!analyserRef.current) return;
-    
+
     const dataArray = new Uint8Array(analyserRef.current.frequencyBinCount);
     analyserRef.current.getByteFrequencyData(dataArray);
-    
-    const average = dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
+
+    const average =
+      dataArray.reduce((sum, value) => sum + value, 0) / dataArray.length;
     setMicrophoneLevel(Math.round((average / 255) * 100));
-    
+
     if (isRecording && !isPaused) {
       animationRef.current = requestAnimationFrame(updateMicrophoneLevel);
     }
@@ -72,34 +85,36 @@ export default function VoiceRecorder() {
   const startRecording = async () => {
     try {
       setIsProcessing(true);
-      
+
       const constraints = {
         audio: {
           echoCancellation: true,
           noiseSuppression: true,
           autoGainControl: true,
-          sampleRate: audioQuality === 'high' ? 48000 : 22050
-        }
+          sampleRate: audioQuality === "high" ? 48000 : 22050,
+        },
       };
-      
+
       const stream = await navigator.mediaDevices.getUserMedia(constraints);
       streamRef.current = stream;
-      
+
       // Set up audio analysis
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const audioContext = new (window.AudioContext ||
+        window.webkitAudioContext)();
       const source = audioContext.createMediaStreamSource(stream);
       const analyser = audioContext.createAnalyser();
       analyser.fftSize = 256;
       source.connect(analyser);
       analyserRef.current = analyser;
-      
+
       // Configure MediaRecorder
-      const mimeType = audioFormat === 'mp3' ? 'audio/webm' : `audio/${audioFormat}`;
+      const mimeType =
+        audioFormat === "mp3" ? "audio/webm" : `audio/${audioFormat}`;
       mediaRecorderRef.current = new MediaRecorder(stream, {
         mimeType: mimeType,
-        audioBitsPerSecond: audioQuality === 'high' ? 128000 : 64000
+        audioBitsPerSecond: audioQuality === "high" ? 128000 : 64000,
       });
-      
+
       chunksRef.current = [];
 
       mediaRecorderRef.current.ondataavailable = (e) => {
@@ -115,10 +130,10 @@ export default function VoiceRecorder() {
         if (audioRef.current) {
           audioRef.current.src = url;
         }
-        
+
         // Stop all tracks
         if (streamRef.current) {
-          streamRef.current.getTracks().forEach(track => track.stop());
+          streamRef.current.getTracks().forEach((track) => track.stop());
         }
       };
 
@@ -127,19 +142,19 @@ export default function VoiceRecorder() {
       setIsPaused(false);
       setRecordingTime(0);
       setRecordedBlob(null);
-      
+
       // Start timer
       timerRef.current = setInterval(() => {
-        setRecordingTime(prev => prev + 1);
+        setRecordingTime((prev) => prev + 1);
       }, 1000);
-      
+
       // Start microphone level monitoring
       updateMicrophoneLevel();
-      
-      toast.success('Recording started successfully!');
+
+      toast.success("Recording started successfully!");
     } catch (error) {
-      console.error('Error accessing microphone:', error);
-      toast.error('Failed to access microphone. Please check permissions.');
+      console.error("Error accessing microphone:", error);
+      toast.error("Failed to access microphone. Please check permissions.");
     } finally {
       setIsProcessing(false);
     }
@@ -151,10 +166,10 @@ export default function VoiceRecorder() {
         mediaRecorderRef.current.resume();
         setIsPaused(false);
         timerRef.current = setInterval(() => {
-          setRecordingTime(prev => prev + 1);
+          setRecordingTime((prev) => prev + 1);
         }, 1000);
         updateMicrophoneLevel();
-        toast.success('Recording resumed');
+        toast.success("Recording resumed");
       } else {
         mediaRecorderRef.current.pause();
         setIsPaused(true);
@@ -162,7 +177,7 @@ export default function VoiceRecorder() {
         if (animationRef.current) {
           cancelAnimationFrame(animationRef.current);
         }
-        toast.success('Recording paused');
+        toast.success("Recording paused");
       }
     }
   };
@@ -177,7 +192,7 @@ export default function VoiceRecorder() {
         cancelAnimationFrame(animationRef.current);
       }
       setMicrophoneLevel(0);
-      toast.success('Recording stopped successfully!');
+      toast.success("Recording stopped successfully!");
     }
   };
 
@@ -196,12 +211,12 @@ export default function VoiceRecorder() {
   const downloadRecording = () => {
     if (recordedBlob) {
       const url = URL.createObjectURL(recordedBlob);
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = url;
-      a.download = `voice-recording-${Date.now()}.${audioFormat === 'webm' ? 'webm' : audioFormat}`;
+      a.download = `voice-recording-${Date.now()}.${audioFormat === "webm" ? "webm" : audioFormat}`;
       a.click();
       URL.revokeObjectURL(url);
-      toast.success('Recording downloaded!');
+      toast.success("Recording downloaded!");
     }
   };
 
@@ -214,17 +229,17 @@ export default function VoiceRecorder() {
     setIsPlaying(false);
     setMicrophoneLevel(0);
     if (audioRef.current) {
-      audioRef.current.src = '';
+      audioRef.current.src = "";
     }
-    toast.success('Recording reset');
+    toast.success("Recording reset");
   };
 
   useEffect(() => {
     const audio = audioRef.current;
     if (audio) {
       const handleEnded = () => setIsPlaying(false);
-      audio.addEventListener('ended', handleEnded);
-      return () => audio.removeEventListener('ended', handleEnded);
+      audio.addEventListener("ended", handleEnded);
+      return () => audio.removeEventListener("ended", handleEnded);
     }
   }, [recordedBlob]);
 
@@ -237,7 +252,7 @@ export default function VoiceRecorder() {
         cancelAnimationFrame(animationRef.current);
       }
       if (streamRef.current) {
-        streamRef.current.getTracks().forEach(track => track.stop());
+        streamRef.current.getTracks().forEach((track) => track.stop());
       }
     };
   }, []);
@@ -247,11 +262,14 @@ export default function VoiceRecorder() {
       <div className="container mx-auto px-4 py-8 max-w-4xl">
         {/* Header */}
         <div className="mb-8">
-          <Link href="/audio-tools" className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6">
+          <Link
+            href="/audio-tools"
+            className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6"
+          >
             <ArrowLeftIcon className="mr-2 h-4 w-4" />
             Back to Audio Tools
           </Link>
-          
+
           <div className="space-y-4 mb-8">
             <div className="flex items-start gap-4">
               <div className="p-3 border rounded-lg bg-background">
@@ -262,7 +280,8 @@ export default function VoiceRecorder() {
                   Professional Voice Recorder
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-3xl">
-                  Record high-quality audio directly in your browser with professional features and real-time waveform visualization.
+                  Record high-quality audio directly in your browser with
+                  professional features and real-time waveform visualization.
                 </p>
               </div>
             </div>
@@ -290,7 +309,8 @@ export default function VoiceRecorder() {
           <Alert className="mb-8">
             <InfoIcon className="h-4 w-4" />
             <AlertDescription>
-              All recording happens locally in your browser. Your audio is never uploaded to our servers, ensuring complete privacy.
+              All recording happens locally in your browser. Your audio is never
+              uploaded to our servers, ensuring complete privacy.
             </AlertDescription>
           </Alert>
         </div>
@@ -311,7 +331,11 @@ export default function VoiceRecorder() {
               <CardContent className="space-y-6">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Audio Format</label>
-                  <Select value={audioFormat} onValueChange={setAudioFormat} disabled={isRecording}>
+                  <Select
+                    value={audioFormat}
+                    onValueChange={setAudioFormat}
+                    disabled={isRecording}
+                  >
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
@@ -324,7 +348,11 @@ export default function VoiceRecorder() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Audio Quality</label>
-                  <Select value={audioQuality} onValueChange={setAudioQuality} disabled={isRecording}>
+                  <Select
+                    value={audioQuality}
+                    onValueChange={setAudioQuality}
+                    disabled={isRecording}
+                  >
                     <SelectTrigger>
                       <SelectValue />
                     </SelectTrigger>
@@ -339,7 +367,9 @@ export default function VoiceRecorder() {
 
                 {/* Microphone Level */}
                 <div className="space-y-2">
-                  <label className="text-sm font-medium">Microphone Level</label>
+                  <label className="text-sm font-medium">
+                    Microphone Level
+                  </label>
                   <div className="space-y-2">
                     <Progress value={microphoneLevel} className="h-2" />
                     <div className="flex justify-between text-xs text-muted-foreground">
@@ -381,18 +411,24 @@ export default function VoiceRecorder() {
                   <div className="space-y-2">
                     {isRecording ? (
                       <div className="flex items-center justify-center gap-2">
-                        <div className={`w-3 h-3 rounded-full ${isPaused ? 'bg-muted/500' : 'bg-destructive/100 animate-pulse'}`} />
+                        <div
+                          className={`w-3 h-3 rounded-full ${isPaused ? "bg-muted/500" : "bg-destructive/100 animate-pulse"}`}
+                        />
                         <span className="font-medium">
-                          {isPaused ? 'Recording Paused' : 'Recording Active'}
+                          {isPaused ? "Recording Paused" : "Recording Active"}
                         </span>
                       </div>
                     ) : recordedBlob ? (
                       <div className="flex items-center justify-center gap-2">
                         <CheckIcon className="w-4 h-4 text-primary" />
-                        <span className="font-medium text-primary">Recording Complete</span>
+                        <span className="font-medium text-primary">
+                          Recording Complete
+                        </span>
                       </div>
                     ) : (
-                      <span className="text-muted-foreground">Ready to Record</span>
+                      <span className="text-muted-foreground">
+                        Ready to Record
+                      </span>
                     )}
                   </div>
 
@@ -415,7 +451,11 @@ export default function VoiceRecorder() {
                           variant="outline"
                           className="h-16 w-16 rounded-full"
                         >
-                          {isPaused ? <Play className="h-6 w-6" /> : <Pause className="h-6 w-6" />}
+                          {isPaused ? (
+                            <Play className="h-6 w-6" />
+                          ) : (
+                            <Pause className="h-6 w-6" />
+                          )}
                         </Button>
                         <Button
                           onClick={stopRecording}
@@ -439,13 +479,14 @@ export default function VoiceRecorder() {
                           variant="outline"
                           className="gap-2"
                         >
-                          {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-                          {isPlaying ? 'Pause' : 'Play'} Recording
+                          {isPlaying ? (
+                            <Pause className="h-4 w-4" />
+                          ) : (
+                            <Play className="h-4 w-4" />
+                          )}
+                          {isPlaying ? "Pause" : "Play"} Recording
                         </Button>
-                        <Button
-                          onClick={downloadRecording}
-                          className="gap-2"
-                        >
+                        <Button onClick={downloadRecording} className="gap-2">
                           <Download className="h-4 w-4" />
                           Download
                         </Button>
@@ -462,7 +503,7 @@ export default function VoiceRecorder() {
                   )}
 
                   {/* Hidden audio element for playback */}
-                  <audio ref={audioRef} style={{ display: 'none' }} />
+                  <audio ref={audioRef} style={{ display: "none" }} />
                 </div>
               </CardContent>
             </Card>
@@ -482,7 +523,8 @@ export default function VoiceRecorder() {
                       <h4 className="font-semibold">Microphone Tips</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      Position your microphone 6-8 inches from your mouth for optimal audio quality. Avoid background noise.
+                      Position your microphone 6-8 inches from your mouth for
+                      optimal audio quality. Avoid background noise.
                     </p>
                   </div>
                   <div className="space-y-2">
@@ -493,7 +535,8 @@ export default function VoiceRecorder() {
                       <h4 className="font-semibold">Browser Support</h4>
                     </div>
                     <p className="text-sm text-muted-foreground">
-                      Works best in Chrome, Firefox, Safari, and Edge. Requires microphone permissions to function.
+                      Works best in Chrome, Firefox, Safari, and Edge. Requires
+                      microphone permissions to function.
                     </p>
                   </div>
                 </div>
@@ -503,11 +546,24 @@ export default function VoiceRecorder() {
                 <div className="space-y-2">
                   <h4 className="font-semibold">Common Use Cases</h4>
                   <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• <strong>Voice Memos:</strong> Quick notes and reminders</li>
-                    <li>• <strong>Interviews:</strong> Record conversations and meetings</li>
-                    <li>• <strong>Podcasting:</strong> Create audio content for podcasts</li>
-                    <li>• <strong>Lectures:</strong> Record educational content</li>
-                    <li>• <strong>Music:</strong> Capture musical ideas and performances</li>
+                    <li>
+                      • <strong>Voice Memos:</strong> Quick notes and reminders
+                    </li>
+                    <li>
+                      • <strong>Interviews:</strong> Record conversations and
+                      meetings
+                    </li>
+                    <li>
+                      • <strong>Podcasting:</strong> Create audio content for
+                      podcasts
+                    </li>
+                    <li>
+                      • <strong>Lectures:</strong> Record educational content
+                    </li>
+                    <li>
+                      • <strong>Music:</strong> Capture musical ideas and
+                      performances
+                    </li>
                   </ul>
                 </div>
               </CardContent>

@@ -1,51 +1,57 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  ImageIcon, 
-  CopyIcon, 
+import { useState, useRef } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  ImageIcon,
+  CopyIcon,
   ArrowLeftIcon,
   UploadIcon,
   DownloadIcon,
-  RefreshCwIcon
-} from 'lucide-react';
-import Link from 'next/link';
+  RefreshCwIcon,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function Base64ImageTool() {
-  const [base64String, setBase64String] = useState('');
-  const [imagePreview, setImagePreview] = useState('');
+  const [base64String, setBase64String] = useState("");
+  const [imagePreview, setImagePreview] = useState("");
   const [fileInfo, setFileInfo] = useState(null);
-  const [mode, setMode] = useState('encode');
+  const [mode, setMode] = useState("encode");
   const fileInputRef = useRef(null);
 
   const handleFileUpload = (event) => {
     const file = event.target.files[0];
     if (!file) return;
 
-    if (!file.type.startsWith('image/')) {
-      alert('Please select an image file');
+    if (!file.type.startsWith("image/")) {
+      alert("Please select an image file");
       return;
     }
 
     const reader = new FileReader();
     reader.onload = (e) => {
       const result = e.target.result;
-      const base64 = result.split(',')[1]; // Remove data:image/jpeg;base64, prefix
+      const base64 = result.split(",")[1]; // Remove data:image/jpeg;base64, prefix
       const dataUrl = result; // Keep full data URL for preview
-      
+
       setBase64String(base64);
       setImagePreview(dataUrl);
       setFileInfo({
         name: file.name,
         size: file.size,
         type: file.type,
-        lastModified: new Date(file.lastModified).toLocaleString()
+        lastModified: new Date(file.lastModified).toLocaleString(),
       });
     };
     reader.readAsDataURL(file);
@@ -53,69 +59,69 @@ export default function Base64ImageTool() {
 
   const handleBase64Input = (value) => {
     setBase64String(value);
-    
+
     // Try to create preview from base64
     try {
       // Check if it already has data URL prefix
       let dataUrl = value;
-      if (!value.startsWith('data:')) {
+      if (!value.startsWith("data:")) {
         // Assume it's a JPEG if no prefix
         dataUrl = `data:image/jpeg;base64,${value}`;
       }
-      
+
       // Test if it's a valid image
       const img = new Image();
       img.onload = () => {
         setImagePreview(dataUrl);
       };
       img.onerror = () => {
-        setImagePreview('');
+        setImagePreview("");
       };
       img.src = dataUrl;
     } catch (error) {
-      setImagePreview('');
+      setImagePreview("");
     }
   };
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    alert('Copied to clipboard!');
+    alert("Copied to clipboard!");
   };
 
   const downloadBase64AsImage = () => {
     if (!base64String) return;
-    
+
     try {
-      const dataUrl = base64String.startsWith('data:') 
-        ? base64String 
+      const dataUrl = base64String.startsWith("data:")
+        ? base64String
         : `data:image/jpeg;base64,${base64String}`;
-      
-      const link = document.createElement('a');
+
+      const link = document.createElement("a");
       link.href = dataUrl;
-      link.download = 'image.jpg';
+      link.download = "image.jpg";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      alert('Error downloading image');
+      alert("Error downloading image");
     }
   };
 
   const clearAll = () => {
-    setBase64String('');
-    setImagePreview('');
+    setBase64String("");
+    setImagePreview("");
     setFileInfo(null);
     if (fileInputRef.current) {
-      fileInputRef.current.value = '';
+      fileInputRef.current.value = "";
     }
   };
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const sizes = ["Bytes", "KB", "MB", "GB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   return (
@@ -129,17 +135,19 @@ export default function Base64ImageTool() {
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <ImageIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
               <h1 className="text-3xl font-bold">Base64 Image Converter</h1>
-              <p className="text-muted-foreground">Convert images to Base64 and decode Base64 to images</p>
+              <p className="text-muted-foreground">
+                Convert images to Base64 and decode Base64 to images
+              </p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant="secondary">Image Encoding</Badge>
             <Badge variant="secondary">Base64 Decoding</Badge>
@@ -153,15 +161,15 @@ export default function Base64ImageTool() {
           <CardContent className="pt-6">
             <div className="flex items-center justify-center gap-4">
               <Button
-                variant={mode === 'encode' ? 'default' : 'outline'}
-                onClick={() => setMode('encode')}
+                variant={mode === "encode" ? "default" : "outline"}
+                onClick={() => setMode("encode")}
               >
                 <UploadIcon className="h-4 w-4 mr-2" />
                 Image to Base64
               </Button>
               <Button
-                variant={mode === 'decode' ? 'default' : 'outline'}
-                onClick={() => setMode('decode')}
+                variant={mode === "decode" ? "default" : "outline"}
+                onClick={() => setMode("decode")}
               >
                 <DownloadIcon className="h-4 w-4 mr-2" />
                 Base64 to Image
@@ -175,27 +183,28 @@ export default function Base64ImageTool() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
-                {mode === 'encode' ? 'Upload Image' : 'Base64 Input'}
+                {mode === "encode" ? "Upload Image" : "Base64 Input"}
                 <Button onClick={clearAll} variant="ghost" size="sm">
                   <RefreshCwIcon className="h-4 w-4" />
                 </Button>
               </CardTitle>
               <CardDescription>
-                {mode === 'encode' 
-                  ? 'Select an image file to convert to Base64'
-                  : 'Paste Base64 string to decode as image'
-                }
+                {mode === "encode"
+                  ? "Select an image file to convert to Base64"
+                  : "Paste Base64 string to decode as image"}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {mode === 'encode' ? (
+              {mode === "encode" ? (
                 <div className="space-y-4">
-                  <div 
+                  <div
                     className="border-2 border-dashed border-border rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
                     onClick={() => fileInputRef.current?.click()}
                   >
                     <UploadIcon className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-                    <p className="text-lg font-medium mb-2">Click to upload image</p>
+                    <p className="text-lg font-medium mb-2">
+                      Click to upload image
+                    </p>
                     <p className="text-sm text-muted-foreground">
                       Supports JPG, PNG, GIF, WebP files
                     </p>
@@ -207,13 +216,21 @@ export default function Base64ImageTool() {
                       className="hidden"
                     />
                   </div>
-                  
+
                   {fileInfo && (
                     <div className="text-sm space-y-1 bg-muted p-3 rounded">
-                      <div><strong>File:</strong> {fileInfo.name}</div>
-                      <div><strong>Size:</strong> {formatFileSize(fileInfo.size)}</div>
-                      <div><strong>Type:</strong> {fileInfo.type}</div>
-                      <div><strong>Modified:</strong> {fileInfo.lastModified}</div>
+                      <div>
+                        <strong>File:</strong> {fileInfo.name}
+                      </div>
+                      <div>
+                        <strong>Size:</strong> {formatFileSize(fileInfo.size)}
+                      </div>
+                      <div>
+                        <strong>Type:</strong> {fileInfo.type}
+                      </div>
+                      <div>
+                        <strong>Modified:</strong> {fileInfo.lastModified}
+                      </div>
                     </div>
                   )}
                 </div>
@@ -244,17 +261,16 @@ export default function Base64ImageTool() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                {mode === 'encode' ? 'Base64 Output' : 'Image Preview'}
+                {mode === "encode" ? "Base64 Output" : "Image Preview"}
               </CardTitle>
               <CardDescription>
-                {mode === 'encode' 
-                  ? 'Generated Base64 string'
-                  : 'Decoded image preview'
-                }
+                {mode === "encode"
+                  ? "Generated Base64 string"
+                  : "Decoded image preview"}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {mode === 'encode' ? (
+              {mode === "encode" ? (
                 <div className="space-y-4">
                   <Textarea
                     value={base64String}
@@ -272,7 +288,11 @@ export default function Base64ImageTool() {
                       Copy Base64
                     </Button>
                     <Button
-                      onClick={() => copyToClipboard(`data:image/jpeg;base64,${base64String}`)}
+                      onClick={() =>
+                        copyToClipboard(
+                          `data:image/jpeg;base64,${base64String}`,
+                        )
+                      }
                       variant="outline"
                       disabled={!base64String}
                     >
@@ -301,7 +321,7 @@ export default function Base64ImageTool() {
                       <p>Image preview will appear here</p>
                     </div>
                   )}
-                  
+
                   <div className="flex gap-2">
                     <Button
                       onClick={downloadBase64AsImage}
@@ -319,7 +339,7 @@ export default function Base64ImageTool() {
         </div>
 
         {/* Image Preview for Encode Mode */}
-        {mode === 'encode' && imagePreview && (
+        {mode === "encode" && imagePreview && (
           <Card className="mt-6">
             <CardHeader>
               <CardTitle>Image Preview</CardTitle>
@@ -346,7 +366,7 @@ export default function Base64ImageTool() {
                 <TabsTrigger value="benefits">Benefits</TabsTrigger>
                 <TabsTrigger value="limitations">Limitations</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="usage" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
@@ -369,7 +389,7 @@ export default function Base64ImageTool() {
                   </div>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="benefits" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
@@ -392,7 +412,7 @@ export default function Base64ImageTool() {
                   </div>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="limitations" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>

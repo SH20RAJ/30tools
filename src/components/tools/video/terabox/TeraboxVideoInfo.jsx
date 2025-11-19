@@ -1,50 +1,50 @@
-'use client';
+"use client";
 
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Label } from '@/components/ui/label';
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Label } from "@/components/ui/label";
 import {
   DownloadIcon,
   CheckCircleIcon,
   LoaderIcon,
   ShareIcon,
-  CopyIcon
-} from 'lucide-react';
-import { toast } from 'sonner';
+  CopyIcon,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function TeraboxVideoInfo({
   videoData,
   ogData,
   isLoadingVideo,
-  shareUrl
+  shareUrl,
 }) {
   const formatFileSize = (bytes) => {
-    if (!bytes || bytes === 0) return '0 Bytes';
+    if (!bytes || bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const downloadVideo = (url, filename) => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.rel = "nofollow noreferrer noopener";
-    link.download = filename || 'terabox-video';
-    link.target = '_blank';
+    link.download = filename || "terabox-video";
+    link.target = "_blank";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    toast.success('Download started!');
+    toast.success("Download started!");
   };
 
   const copyShareUrl = async () => {
     try {
       await navigator.clipboard.writeText(shareUrl);
-      toast.success('Share link copied to clipboard!');
+      toast.success("Share link copied to clipboard!");
     } catch (error) {
-      toast.error('Failed to copy share link');
+      toast.error("Failed to copy share link");
     }
   };
 
@@ -68,20 +68,22 @@ export default function TeraboxVideoInfo({
           {(videoData?.image || ogData?.image) && (
             <img
               src={videoData?.image || ogData?.image}
-              alt={videoData?.name || ogData?.title || 'Video thumbnail'}
+              alt={videoData?.name || ogData?.title || "Video thumbnail"}
               className="w-24 h-16 object-cover rounded border"
             />
           )}
           <div className="flex-1">
             <h3 className="font-semibold text-lg">
-              {videoData?.name || ogData?.title || 'Loading...'}
+              {videoData?.name || ogData?.title || "Loading..."}
             </h3>
             <div className="flex flex-wrap gap-2 mt-2">
               {videoData ? (
                 <>
                   <Badge variant="outline">{videoData.type}</Badge>
                   <Badge variant="outline">
-                    {videoData.size_formatted || videoData.file_size || formatFileSize(parseInt(videoData.size))}
+                    {videoData.size_formatted ||
+                      videoData.file_size ||
+                      formatFileSize(parseInt(videoData.size))}
                   </Badge>
                 </>
               ) : ogData ? (
@@ -102,7 +104,12 @@ export default function TeraboxVideoInfo({
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => downloadVideo(videoData.download_links.url_1, videoData.name)}
+                  onClick={() =>
+                    downloadVideo(
+                      videoData.download_links.url_1,
+                      videoData.name,
+                    )
+                  }
                 >
                   <DownloadIcon className="h-4 w-4 mr-2" />
                   Direct Download
@@ -112,7 +119,12 @@ export default function TeraboxVideoInfo({
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => downloadVideo(videoData.download_links.url_2, videoData.name)}
+                  onClick={() =>
+                    downloadVideo(
+                      videoData.download_links.url_2,
+                      videoData.name,
+                    )
+                  }
                 >
                   <DownloadIcon className="h-4 w-4 mr-2" />
                   Fast Download
@@ -122,7 +134,12 @@ export default function TeraboxVideoInfo({
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => downloadVideo(videoData.download_links.stream, videoData.name)}
+                  onClick={() =>
+                    downloadVideo(
+                      videoData.download_links.stream,
+                      videoData.name,
+                    )
+                  }
                 >
                   <DownloadIcon className="h-4 w-4 mr-2" />
                   Stream Download
@@ -130,7 +147,8 @@ export default function TeraboxVideoInfo({
               )}
             </div>
             <p className="text-xs text-muted-foreground">
-              Multiple download options available. Fast download is recommended for better speed.
+              Multiple download options available. Fast download is recommended
+              for better speed.
             </p>
           </div>
         )}
@@ -157,18 +175,14 @@ export default function TeraboxVideoInfo({
           <div className="space-y-2">
             <Label className="text-sm font-semibold">Share Video</Label>
             <div className="flex flex-wrap gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={copyShareUrl}
-              >
+              <Button variant="outline" size="sm" onClick={copyShareUrl}>
                 <CopyIcon className="h-4 w-4 mr-2" />
                 Copy Share Link
               </Button>
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => window.open(shareUrl, '_blank')}
+                onClick={() => window.open(shareUrl, "_blank")}
               >
                 <ShareIcon className="h-4 w-4 mr-2" />
                 Open Share Link

@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { 
-  Share2, 
-  Copy, 
-  ExternalLink, 
-  ArrowRight, 
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Share2,
+  Copy,
+  ExternalLink,
+  ArrowRight,
   Bookmark,
   Star,
   Users,
@@ -15,24 +15,19 @@ import {
   Globe,
   Smartphone,
   Monitor,
-  Tablet
-} from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
+  Tablet,
+} from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 // Social sharing component
-export function SocialShare({ 
-  url, 
-  title, 
-  description,
-  className = "" 
-}) {
+export function SocialShare({ url, title, description, className = "" }) {
   const [copied, setCopied] = useState(false);
 
   const shareData = {
     title,
     text: description,
-    url
+    url,
   };
 
   const handleShare = async () => {
@@ -40,7 +35,7 @@ export function SocialShare({
       try {
         await navigator.share(shareData);
       } catch (err) {
-        console.log('Error sharing:', err);
+        console.log("Error sharing:", err);
       }
     }
   };
@@ -51,39 +46,39 @@ export function SocialShare({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.log('Error copying:', err);
+      console.log("Error copying:", err);
     }
   };
 
   const shareLinks = [
     {
-      name: 'Twitter',
+      name: "Twitter",
       url: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}`,
-      color: 'bg-muted/500 hover:bg-primary'
+      color: "bg-muted/500 hover:bg-primary",
     },
     {
-      name: 'Facebook',
+      name: "Facebook",
       url: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
-      color: 'bg-primary hover:bg-primary/90'
+      color: "bg-primary hover:bg-primary/90",
     },
     {
-      name: 'LinkedIn',
+      name: "LinkedIn",
       url: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
-      color: 'bg-primary/90 hover:bg-primary'
+      color: "bg-primary/90 hover:bg-primary",
     },
     {
-      name: 'Reddit',
+      name: "Reddit",
       url: `https://www.reddit.com/submit?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}`,
-      color: 'bg-muted/500 hover:bg-primary'
-    }
+      color: "bg-muted/500 hover:bg-primary",
+    },
   ];
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
       <span className="text-sm font-medium text-muted-foreground">Share:</span>
-      
+
       {/* Native Share (mobile) */}
-      {typeof navigator !== 'undefined' && navigator.share && (
+      {typeof navigator !== "undefined" && navigator.share && (
         <Button
           variant="outline"
           size="sm"
@@ -118,12 +113,7 @@ export function SocialShare({
       </div>
 
       {/* Copy Link */}
-      <Button
-        variant="outline"
-        size="sm"
-        onClick={handleCopy}
-        className="p-2"
-      >
+      <Button variant="outline" size="sm" onClick={handleCopy} className="p-2">
         <Copy className="h-4 w-4" />
         {copied && <span className="ml-1 text-xs">Copied!</span>}
       </Button>
@@ -132,16 +122,16 @@ export function SocialShare({
 }
 
 // Related tools component
-export function RelatedTools({ 
-  currentTool, 
+export function RelatedTools({
+  currentTool,
   category,
   tools = [],
   title = "Related Tools",
-  showCategory = true
+  showCategory = true,
 }) {
   // Filter related tools (excluding current tool)
   const relatedTools = tools
-    .filter(tool => tool.id !== currentTool && tool.category === category)
+    .filter((tool) => tool.id !== currentTool && tool.category === category)
     .slice(0, 6);
 
   if (relatedTools.length === 0) {
@@ -189,14 +179,12 @@ export function RelatedTools({
 }
 
 // Popular tools showcase
-export function PopularTools({ 
+export function PopularTools({
   tools = [],
   title = "Most Popular Tools",
-  showStats = true 
+  showStats = true,
 }) {
-  const popularTools = tools
-    .filter(tool => tool.popular)
-    .slice(0, 8);
+  const popularTools = tools.filter((tool) => tool.popular).slice(0, 8);
 
   return (
     <section className="py-12 bg-muted/30">
@@ -210,7 +198,10 @@ export function PopularTools({
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {popularTools.map((tool, index) => (
-            <Card key={tool.id} className="group hover:shadow-lg transition-shadow">
+            <Card
+              key={tool.id}
+              className="group hover:shadow-lg transition-shadow"
+            >
               <CardHeader className="pb-3">
                 <div className="flex items-center justify-between">
                   <Badge variant="secondary" className="text-xs">
@@ -224,7 +215,7 @@ export function PopularTools({
                 <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                   {tool.description}
                 </p>
-                
+
                 {showStats && (
                   <div className="flex items-center gap-4 text-xs text-muted-foreground mb-4">
                     <div className="flex items-center gap-1">
@@ -233,7 +224,9 @@ export function PopularTools({
                     </div>
                     <div className="flex items-center gap-1">
                       <TrendingUp className="h-3 w-3" />
-                      <span>+{Math.floor(Math.random() * 20) + 5}% this week</span>
+                      <span>
+                        +{Math.floor(Math.random() * 20) + 5}% this week
+                      </span>
                     </div>
                   </div>
                 )}
@@ -256,10 +249,10 @@ export function PopularTools({
 // Device compatibility indicator
 export function DeviceCompatibility() {
   const devices = [
-    { name: 'Desktop', icon: Monitor, supported: true },
-    { name: 'Tablet', icon: Tablet, supported: true },
-    { name: 'Mobile', icon: Smartphone, supported: true },
-    { name: 'Web Browser', icon: Globe, supported: true }
+    { name: "Desktop", icon: Monitor, supported: true },
+    { name: "Tablet", icon: Tablet, supported: true },
+    { name: "Mobile", icon: Smartphone, supported: true },
+    { name: "Web Browser", icon: Globe, supported: true },
   ];
 
   return (
@@ -274,11 +267,15 @@ export function DeviceCompatibility() {
             return (
               <div key={device.name} className="text-center">
                 <div className="flex items-center justify-center mb-2">
-                  <Icon className={`h-8 w-8 ${device.supported ? 'text-primary' : 'text-muted-foreground'}`} />
+                  <Icon
+                    className={`h-8 w-8 ${device.supported ? "text-primary" : "text-muted-foreground"}`}
+                  />
                 </div>
                 <div className="text-sm font-medium">{device.name}</div>
-                <div className={`text-xs ${device.supported ? 'text-primary' : 'text-muted-foreground'}`}>
-                  {device.supported ? 'Supported' : 'Not Supported'}
+                <div
+                  className={`text-xs ${device.supported ? "text-primary" : "text-muted-foreground"}`}
+                >
+                  {device.supported ? "Supported" : "Not Supported"}
                 </div>
               </div>
             );
@@ -290,12 +287,12 @@ export function DeviceCompatibility() {
 }
 
 // Quick action buttons
-export function QuickActions({ 
+export function QuickActions({
   toolName,
   toolUrl,
   showBookmark = true,
   showShare = true,
-  className = ""
+  className = "",
 }) {
   const [bookmarked, setBookmarked] = useState(false);
 
@@ -311,10 +308,12 @@ export function QuickActions({
           variant="outline"
           size="sm"
           onClick={handleBookmark}
-          className={bookmarked ? 'bg-muted/50 border-border' : ''}
+          className={bookmarked ? "bg-muted/50 border-border" : ""}
         >
-          <Bookmark className={`h-4 w-4 mr-2 ${bookmarked ? 'fill-current text-primary' : ''}`} />
-          {bookmarked ? 'Bookmarked' : 'Bookmark'}
+          <Bookmark
+            className={`h-4 w-4 mr-2 ${bookmarked ? "fill-current text-primary" : ""}`}
+          />
+          {bookmarked ? "Bookmarked" : "Bookmark"}
         </Button>
       )}
 
@@ -330,10 +329,10 @@ export function QuickActions({
 }
 
 // Tool features showcase
-export function ToolFeatures({ 
+export function ToolFeatures({
   features = [],
   title = "Key Features",
-  variant = "list" // "list", "grid", "badges"
+  variant = "list", // "list", "grid", "badges"
 }) {
   if (!features || features.length === 0) {
     return null;
@@ -357,7 +356,10 @@ export function ToolFeatures({
   const renderGrid = () => (
     <div className="grid md:grid-cols-2 gap-4">
       {features.map((feature, index) => (
-        <div key={index} className="flex items-center gap-3 p-3 border rounded-lg">
+        <div
+          key={index}
+          className="flex items-center gap-3 p-3 border rounded-lg"
+        >
           <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
             <div className="w-3 h-3 bg-primary rounded-full" />
           </div>
@@ -383,9 +385,9 @@ export function ToolFeatures({
         <CardTitle className="text-lg">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        {variant === 'list' && renderList()}
-        {variant === 'grid' && renderGrid()}
-        {variant === 'badges' && renderBadges()}
+        {variant === "list" && renderList()}
+        {variant === "grid" && renderGrid()}
+        {variant === "badges" && renderBadges()}
       </CardContent>
     </Card>
   );

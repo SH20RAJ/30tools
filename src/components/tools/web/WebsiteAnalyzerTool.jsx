@@ -1,17 +1,23 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Progress } from '@/components/ui/progress';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  ArrowLeftIcon, 
-  GlobeIcon, 
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  ArrowLeftIcon,
+  GlobeIcon,
   ZapIcon,
   CheckCircleIcon,
   AlertTriangleIcon,
@@ -24,32 +30,34 @@ import {
   ImageIcon,
   CodeIcon,
   SearchIcon,
-  BarChart3Icon
-} from 'lucide-react';
-import Link from 'next/link';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  BarChart3Icon,
+} from "lucide-react";
+import Link from "next/link";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function WebsiteAnalyzerTool() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   const analyzeWebsite = async () => {
     if (!url) return;
-    
+
     setLoading(true);
-    setError('');
-    
+    setError("");
+
     try {
       // Validate URL
       const urlPattern = /^https?:\/\/.+/;
       if (!urlPattern.test(url)) {
-        throw new Error('Please enter a valid URL starting with http:// or https://');
+        throw new Error(
+          "Please enter a valid URL starting with http:// or https://",
+        );
       }
 
       // Simulate analysis (in real implementation, you'd call actual APIs)
-      await new Promise(resolve => setTimeout(resolve, 3000));
+      await new Promise((resolve) => setTimeout(resolve, 3000));
 
       // Mock results
       const mockResults = {
@@ -79,7 +87,7 @@ export default function WebsiteAnalyzerTool() {
           headingStructure: Math.random() > 0.2,
         },
         security: {
-          https: url.startsWith('https'),
+          https: url.startsWith("https"),
           hsts: Math.random() > 0.5,
           xss: Math.random() > 0.6,
           csrf: Math.random() > 0.5,
@@ -89,7 +97,7 @@ export default function WebsiteAnalyzerTool() {
           responsive: Math.random() > 0.2,
           viewport: Math.random() > 0.1,
           touchTargets: Math.random() > 0.3,
-        }
+        },
       };
 
       setResults(mockResults);
@@ -101,17 +109,17 @@ export default function WebsiteAnalyzerTool() {
   };
 
   const getScoreColor = (score) => {
-    if (score >= 90) return 'text-primary';
-    if (score >= 70) return 'text-primary';
-    return 'text-destructive';
+    if (score >= 90) return "text-primary";
+    if (score >= 70) return "text-primary";
+    return "text-destructive";
   };
 
   const getScoreGrade = (score) => {
-    if (score >= 90) return 'A';
-    if (score >= 80) return 'B';
-    if (score >= 70) return 'C';
-    if (score >= 60) return 'D';
-    return 'F';
+    if (score >= 90) return "A";
+    if (score >= 80) return "B";
+    if (score >= 70) return "C";
+    if (score >= 60) return "D";
+    return "F";
   };
 
   return (
@@ -130,7 +138,10 @@ export default function WebsiteAnalyzerTool() {
         </div>
         <div>
           <h1 className="text-3xl font-bold">Website Performance Analyzer</h1>
-          <p className="text-muted-foreground">Comprehensive analysis of your website's performance, SEO, and accessibility</p>
+          <p className="text-muted-foreground">
+            Comprehensive analysis of your website's performance, SEO, and
+            accessibility
+          </p>
         </div>
       </div>
 
@@ -166,8 +177,8 @@ export default function WebsiteAnalyzerTool() {
                 className="flex-1 input-cute"
                 disabled={loading}
               />
-              <Button 
-                onClick={analyzeWebsite} 
+              <Button
+                onClick={analyzeWebsite}
                 disabled={!url || loading}
                 className="btn-cute"
               >
@@ -206,7 +217,8 @@ export default function WebsiteAnalyzerTool() {
               <div>
                 <h3 className="text-lg font-medium">Analyzing Website...</h3>
                 <p className="text-muted-foreground">
-                  Running performance tests, SEO analysis, and accessibility checks
+                  Running performance tests, SEO analysis, and accessibility
+                  checks
                 </p>
               </div>
               <Progress value={33} className="w-full" />
@@ -222,13 +234,19 @@ export default function WebsiteAnalyzerTool() {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
             <Card className="text-center">
               <CardHeader className="pb-3">
-                <CardTitle className="text-sm font-medium">Performance</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Performance
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className={`text-3xl font-bold ${getScoreColor(results.performance.score)}`}>
+                <div
+                  className={`text-3xl font-bold ${getScoreColor(results.performance.score)}`}
+                >
                   {getScoreGrade(results.performance.score)}
                 </div>
-                <div className="text-sm text-muted-foreground">{results.performance.score}/100</div>
+                <div className="text-sm text-muted-foreground">
+                  {results.performance.score}/100
+                </div>
               </CardContent>
             </Card>
 
@@ -237,22 +255,32 @@ export default function WebsiteAnalyzerTool() {
                 <CardTitle className="text-sm font-medium">SEO</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className={`text-3xl font-bold ${getScoreColor(results.seo.score)}`}>
+                <div
+                  className={`text-3xl font-bold ${getScoreColor(results.seo.score)}`}
+                >
                   {getScoreGrade(results.seo.score)}
                 </div>
-                <div className="text-sm text-muted-foreground">{results.seo.score}/100</div>
+                <div className="text-sm text-muted-foreground">
+                  {results.seo.score}/100
+                </div>
               </CardContent>
             </Card>
 
             <Card className="text-center">
               <CardHeader className="pb-3">
-                <CardTitle className="text-sm font-medium">Accessibility</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Accessibility
+                </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className={`text-3xl font-bold ${getScoreColor(results.accessibility.score)}`}>
+                <div
+                  className={`text-3xl font-bold ${getScoreColor(results.accessibility.score)}`}
+                >
                   {getScoreGrade(results.accessibility.score)}
                 </div>
-                <div className="text-sm text-muted-foreground">{results.accessibility.score}/100</div>
+                <div className="text-sm text-muted-foreground">
+                  {results.accessibility.score}/100
+                </div>
               </CardContent>
             </Card>
 
@@ -262,10 +290,10 @@ export default function WebsiteAnalyzerTool() {
               </CardHeader>
               <CardContent>
                 <div className="text-3xl font-bold text-primary">
-                  {results.security.https ? 'A' : 'C'}
+                  {results.security.https ? "A" : "C"}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {results.security.https ? 'Secure' : 'Issues'}
+                  {results.security.https ? "Secure" : "Issues"}
                 </div>
               </CardContent>
             </Card>
@@ -275,10 +303,14 @@ export default function WebsiteAnalyzerTool() {
                 <CardTitle className="text-sm font-medium">Mobile</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className={`text-3xl font-bold ${getScoreColor(results.mobile.score)}`}>
+                <div
+                  className={`text-3xl font-bold ${getScoreColor(results.mobile.score)}`}
+                >
                   {getScoreGrade(results.mobile.score)}
                 </div>
-                <div className="text-sm text-muted-foreground">{results.mobile.score}/100</div>
+                <div className="text-sm text-muted-foreground">
+                  {results.mobile.score}/100
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -305,15 +337,21 @@ export default function WebsiteAnalyzerTool() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">First Contentful Paint</span>
-                        <span className="text-sm font-medium">{results.performance.fcp}s</span>
+                        <span className="text-sm font-medium">
+                          {results.performance.fcp}s
+                        </span>
                       </div>
                       <Progress value={(3 - results.performance.fcp) * 33} />
                     </div>
-                    
+
                     <div className="space-y-2">
                       <div className="flex justify-between">
-                        <span className="text-sm">Largest Contentful Paint</span>
-                        <span className="text-sm font-medium">{results.performance.lcp}s</span>
+                        <span className="text-sm">
+                          Largest Contentful Paint
+                        </span>
+                        <span className="text-sm font-medium">
+                          {results.performance.lcp}s
+                        </span>
                       </div>
                       <Progress value={(5 - results.performance.lcp) * 20} />
                     </div>
@@ -321,7 +359,9 @@ export default function WebsiteAnalyzerTool() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">Cumulative Layout Shift</span>
-                        <span className="text-sm font-medium">{results.performance.cls}</span>
+                        <span className="text-sm font-medium">
+                          {results.performance.cls}
+                        </span>
                       </div>
                       <Progress value={(0.2 - results.performance.cls) * 500} />
                     </div>
@@ -329,7 +369,9 @@ export default function WebsiteAnalyzerTool() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span className="text-sm">First Input Delay</span>
-                        <span className="text-sm font-medium">{results.performance.fid}ms</span>
+                        <span className="text-sm font-medium">
+                          {results.performance.fid}ms
+                        </span>
                       </div>
                       <Progress value={(150 - results.performance.fid) / 1.5} />
                     </div>
@@ -374,11 +416,15 @@ export default function WebsiteAnalyzerTool() {
                     </div>
                     <div className="flex items-center gap-3">
                       <CheckCircleIcon className="h-5 w-5 text-primary" />
-                      <span className="text-sm">{results.seo.images} images found</span>
+                      <span className="text-sm">
+                        {results.seo.images} images found
+                      </span>
                     </div>
                     <div className="flex items-center gap-3">
                       <CheckCircleIcon className="h-5 w-5 text-primary" />
-                      <span className="text-sm">{results.seo.links} internal links</span>
+                      <span className="text-sm">
+                        {results.seo.links} internal links
+                      </span>
                     </div>
                   </div>
                 </CardContent>
@@ -508,7 +554,9 @@ export default function WebsiteAnalyzerTool() {
                       ) : (
                         <AlertTriangleIcon className="h-5 w-5 text-primary" />
                       )}
-                      <span className="text-sm">Touch targets sized appropriately</span>
+                      <span className="text-sm">
+                        Touch targets sized appropriately
+                      </span>
                     </div>
                   </div>
                 </CardContent>

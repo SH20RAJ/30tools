@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -18,7 +18,10 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-open-sans)", ...require("tailwindcss/defaultTheme").fontFamily.sans],
+        sans: [
+          "var(--font-open-sans)",
+          ...require("tailwindcss/defaultTheme").fontFamily.sans,
+        ],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -69,7 +72,7 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        "gradient": {
+        gradient: {
           "0%, 100%": { backgroundPosition: "0% 50%" },
           "50%": { backgroundPosition: "100% 50%" },
         },
@@ -85,7 +88,7 @@ module.exports = {
           "0%, 100%": { transform: "translateX(0)" },
           "50%": { transform: "translateX(4px)" },
         },
-        "float": {
+        float: {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
         },
@@ -93,26 +96,26 @@ module.exports = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "gradient": "gradient 6s ease infinite",
+        gradient: "gradient 6s ease infinite",
         "fade-in": "fade-in 0.8s ease-out forwards",
         "fade-in-up": "fade-in-up 0.8s ease-out forwards",
         "bounce-x": "bounce-x 1s ease-in-out infinite",
-        "float": "float 3s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
       },
       animationDelay: {
-        "100": "100ms",
-        "200": "200ms",
-        "300": "300ms",
-        "400": "400ms",
-        "500": "500ms",
-        "600": "600ms",
-        "700": "700ms",
-        "800": "800ms",
-        "900": "900ms",
-        "1000": "1000ms",
-        "1200": "1200ms",
+        100: "100ms",
+        200: "200ms",
+        300: "300ms",
+        400: "400ms",
+        500: "500ms",
+        600: "600ms",
+        700: "700ms",
+        800: "800ms",
+        900: "900ms",
+        1000: "1000ms",
+        1200: "1200ms",
       },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

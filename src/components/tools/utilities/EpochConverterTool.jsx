@@ -1,24 +1,30 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  ClockIcon, 
-  CopyIcon, 
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  ClockIcon,
+  CopyIcon,
   ArrowLeftIcon,
   CalendarIcon,
-  RefreshCwIcon
-} from 'lucide-react';
-import Link from 'next/link';
+  RefreshCwIcon,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function EpochConverterTool() {
-  const [timestamp, setTimestamp] = useState('');
-  const [humanDate, setHumanDate] = useState('');
+  const [timestamp, setTimestamp] = useState("");
+  const [humanDate, setHumanDate] = useState("");
   const [currentTime, setCurrentTime] = useState(Date.now());
 
   // Update current time every second
@@ -41,7 +47,7 @@ export default function EpochConverterTool() {
       const date = new Date(parseInt(ts) * 1000);
       return date.toISOString().slice(0, 16);
     } catch (error) {
-      return '';
+      return "";
     }
   };
 
@@ -50,7 +56,7 @@ export default function EpochConverterTool() {
       const date = new Date(dateStr);
       return Math.floor(date.getTime() / 1000).toString();
     } catch (error) {
-      return '';
+      return "";
     }
   };
 
@@ -66,7 +72,7 @@ export default function EpochConverterTool() {
 
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
-    alert('Copied to clipboard!');
+    alert("Copied to clipboard!");
   };
 
   const setCurrentTimestamp = () => {
@@ -81,14 +87,14 @@ export default function EpochConverterTool() {
         iso: date.toISOString(),
         local: date.toLocaleString(),
         utc: date.toUTCString(),
-        relative: getRelativeTime(date)
+        relative: getRelativeTime(date),
       };
     } catch (error) {
       return {
-        iso: 'Invalid timestamp',
-        local: 'Invalid timestamp',
-        utc: 'Invalid timestamp',
-        relative: 'Invalid timestamp'
+        iso: "Invalid timestamp",
+        local: "Invalid timestamp",
+        utc: "Invalid timestamp",
+        relative: "Invalid timestamp",
       };
     }
   };
@@ -120,17 +126,19 @@ export default function EpochConverterTool() {
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <ClockIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
               <h1 className="text-3xl font-bold">Epoch Timestamp Converter</h1>
-              <p className="text-muted-foreground">Convert between Unix timestamps and human-readable dates</p>
+              <p className="text-muted-foreground">
+                Convert between Unix timestamps and human-readable dates
+              </p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant="secondary">Unix Timestamp</Badge>
             <Badge variant="secondary">Human Date</Badge>
@@ -182,7 +190,11 @@ export default function EpochConverterTool() {
                     placeholder="1640995200"
                     className="font-mono"
                   />
-                  <Button onClick={() => copyToClipboard(timestamp)} variant="outline" size="sm">
+                  <Button
+                    onClick={() => copyToClipboard(timestamp)}
+                    variant="outline"
+                    size="sm"
+                  >
                     <CopyIcon className="h-4 w-4" />
                   </Button>
                 </div>
@@ -199,7 +211,11 @@ export default function EpochConverterTool() {
                     onChange={(e) => handleHumanChange(e.target.value)}
                     className="font-mono"
                   />
-                  <Button onClick={() => copyToClipboard(humanDate)} variant="outline" size="sm">
+                  <Button
+                    onClick={() => copyToClipboard(humanDate)}
+                    variant="outline"
+                    size="sm"
+                  >
                     <CopyIcon className="h-4 w-4" />
                   </Button>
                 </div>
@@ -228,76 +244,112 @@ export default function EpochConverterTool() {
                   <TabsTrigger value="formats">Formats</TabsTrigger>
                   <TabsTrigger value="info">Info</TabsTrigger>
                 </TabsList>
-                
+
                 <TabsContent value="formats" className="space-y-4">
                   <div className="space-y-3">
                     <div>
-                      <Label className="text-xs text-muted-foreground">ISO 8601</Label>
+                      <Label className="text-xs text-muted-foreground">
+                        ISO 8601
+                      </Label>
                       <div className="flex gap-2">
                         <code className="flex-1 text-sm bg-muted p-2 rounded font-mono">
                           {formattedDates.iso}
                         </code>
-                        <Button onClick={() => copyToClipboard(formattedDates.iso)} variant="outline" size="sm">
+                        <Button
+                          onClick={() => copyToClipboard(formattedDates.iso)}
+                          variant="outline"
+                          size="sm"
+                        >
                           <CopyIcon className="h-4 w-4" />
                         </Button>
                       </div>
                     </div>
-                    
+
                     <div>
-                      <Label className="text-xs text-muted-foreground">Local Time</Label>
+                      <Label className="text-xs text-muted-foreground">
+                        Local Time
+                      </Label>
                       <div className="flex gap-2">
                         <code className="flex-1 text-sm bg-muted p-2 rounded font-mono">
                           {formattedDates.local}
                         </code>
-                        <Button onClick={() => copyToClipboard(formattedDates.local)} variant="outline" size="sm">
+                        <Button
+                          onClick={() => copyToClipboard(formattedDates.local)}
+                          variant="outline"
+                          size="sm"
+                        >
                           <CopyIcon className="h-4 w-4" />
                         </Button>
                       </div>
                     </div>
-                    
+
                     <div>
-                      <Label className="text-xs text-muted-foreground">UTC</Label>
+                      <Label className="text-xs text-muted-foreground">
+                        UTC
+                      </Label>
                       <div className="flex gap-2">
                         <code className="flex-1 text-sm bg-muted p-2 rounded font-mono">
                           {formattedDates.utc}
                         </code>
-                        <Button onClick={() => copyToClipboard(formattedDates.utc)} variant="outline" size="sm">
+                        <Button
+                          onClick={() => copyToClipboard(formattedDates.utc)}
+                          variant="outline"
+                          size="sm"
+                        >
                           <CopyIcon className="h-4 w-4" />
                         </Button>
                       </div>
                     </div>
-                    
+
                     <div>
-                      <Label className="text-xs text-muted-foreground">Relative</Label>
+                      <Label className="text-xs text-muted-foreground">
+                        Relative
+                      </Label>
                       <div className="flex gap-2">
                         <code className="flex-1 text-sm bg-muted p-2 rounded font-mono">
                           {formattedDates.relative}
                         </code>
-                        <Button onClick={() => copyToClipboard(formattedDates.relative)} variant="outline" size="sm">
+                        <Button
+                          onClick={() =>
+                            copyToClipboard(formattedDates.relative)
+                          }
+                          variant="outline"
+                          size="sm"
+                        >
                           <CopyIcon className="h-4 w-4" />
                         </Button>
                       </div>
                     </div>
                   </div>
                 </TabsContent>
-                
+
                 <TabsContent value="info" className="space-y-4">
                   <div className="text-sm space-y-3">
                     <div>
                       <div className="font-medium">Timestamp</div>
-                      <div className="text-muted-foreground">{timestamp} seconds since Jan 1, 1970</div>
+                      <div className="text-muted-foreground">
+                        {timestamp} seconds since Jan 1, 1970
+                      </div>
                     </div>
                     <div>
                       <div className="font-medium">Milliseconds</div>
-                      <div className="text-muted-foreground">{parseInt(timestamp) * 1000}</div>
+                      <div className="text-muted-foreground">
+                        {parseInt(timestamp) * 1000}
+                      </div>
                     </div>
                     <div>
                       <div className="font-medium">Days Since Epoch</div>
-                      <div className="text-muted-foreground">{Math.floor(parseInt(timestamp) / 86400)}</div>
+                      <div className="text-muted-foreground">
+                        {Math.floor(parseInt(timestamp) / 86400)}
+                      </div>
                     </div>
                     <div>
                       <div className="font-medium">Years Since Epoch</div>
-                      <div className="text-muted-foreground">{(parseInt(timestamp) / (365.25 * 24 * 3600)).toFixed(2)}</div>
+                      <div className="text-muted-foreground">
+                        {(parseInt(timestamp) / (365.25 * 24 * 3600)).toFixed(
+                          2,
+                        )}
+                      </div>
                     </div>
                   </div>
                 </TabsContent>
@@ -316,21 +368,21 @@ export default function EpochConverterTool() {
               <div>
                 <h4 className="font-medium mb-2">What is Unix Time?</h4>
                 <p className="text-muted-foreground">
-                  Unix timestamp represents the number of seconds that have elapsed since 
-                  January 1, 1970, 00:00:00 UTC (the Unix epoch).
+                  Unix timestamp represents the number of seconds that have
+                  elapsed since January 1, 1970, 00:00:00 UTC (the Unix epoch).
                 </p>
               </div>
               <div>
                 <h4 className="font-medium mb-2">Why Use Timestamps?</h4>
                 <p className="text-muted-foreground">
-                  Timestamps provide a universal way to represent time across different 
-                  systems, timezones, and programming languages.
+                  Timestamps provide a universal way to represent time across
+                  different systems, timezones, and programming languages.
                 </p>
               </div>
               <div>
                 <h4 className="font-medium mb-2">Common Use Cases</h4>
                 <p className="text-muted-foreground">
-                  Database storage, API responses, log files, cache expiration, 
+                  Database storage, API responses, log files, cache expiration,
                   and cross-system time synchronization.
                 </p>
               </div>

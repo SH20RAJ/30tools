@@ -49,10 +49,7 @@
         "image optimizer",
         "photo tools free"
       ],
-      "breadcrumb": [
-        "Home",
-        "Image Tools"
-      ],
+      "breadcrumb": ["Home", "Image Tools"],
       "tools": [
         {
           "id": "image-compressor",
@@ -109,12 +106,7 @@
             "Blog image optimization",
             "E-commerce product photos"
           ],
-          "fileFormats": [
-            "JPEG",
-            "PNG",
-            "WebP",
-            "GIF"
-          ],
+          "fileFormats": ["JPEG", "PNG", "WebP", "GIF"],
           "maxFileSize": "50MB per file",
           "processingTime": "2-10 seconds",
           "popular": true,
@@ -178,13 +170,7 @@
             "Profile pictures",
             "Product catalogs"
           ],
-          "fileFormats": [
-            "JPEG",
-            "PNG",
-            "WebP",
-            "GIF",
-            "BMP"
-          ],
+          "fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP"],
           "maxFileSize": "25MB per file",
           "processingTime": "1-5 seconds",
           "popular": true,
@@ -249,15 +235,7 @@
             "Print preparation",
             "Social media optimization"
           ],
-          "fileFormats": [
-            "JPEG",
-            "PNG",
-            "WebP",
-            "GIF",
-            "BMP",
-            "HEIC",
-            "TIFF"
-          ],
+          "fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP", "HEIC", "TIFF"],
           "maxFileSize": "50MB per file",
           "processingTime": "1-8 seconds",
           "popular": true,
@@ -321,12 +299,7 @@
             "Marketing materials",
             "Presentations"
           ],
-          "fileFormats": [
-            "JPEG",
-            "PNG",
-            "WebP",
-            "GIF"
-          ],
+          "fileFormats": ["JPEG", "PNG", "WebP", "GIF"],
           "maxFileSize": "25MB per file",
           "processingTime": "3-15 seconds",
           "popular": true,
@@ -390,13 +363,7 @@
             "Blog images",
             "Print materials"
           ],
-          "fileFormats": [
-            "JPEG",
-            "PNG",
-            "WebP",
-            "GIF",
-            "BMP"
-          ],
+          "fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP"],
           "maxFileSize": "25MB per file",
           "processingTime": "1-3 seconds",
           "popular": true,
@@ -426,10 +393,7 @@
         "pdf merger tool",
         "pdf utilities free"
       ],
-      "breadcrumb": [
-        "Home",
-        "PDF Tools"
-      ],
+      "breadcrumb": ["Home", "PDF Tools"],
       "tools": [
         {
           "id": "pdf-merger",
@@ -484,9 +448,7 @@
             "Invoice compilation",
             "Document archiving"
           ],
-          "fileFormats": [
-            "PDF"
-          ],
+          "fileFormats": ["PDF"],
           "maxFileSize": "Unlimited",
           "processingTime": "5-30 seconds",
           "popular": true,
@@ -550,9 +512,7 @@
             "Legal brief separation",
             "Academic paper sections"
           ],
-          "fileFormats": [
-            "PDF"
-          ],
+          "fileFormats": ["PDF"],
           "maxFileSize": "100MB",
           "processingTime": "3-15 seconds",
           "popular": true,
@@ -616,9 +576,7 @@
             "Web performance",
             "Archive creation"
           ],
-          "fileFormats": [
-            "PDF"
-          ],
+          "fileFormats": ["PDF"],
           "maxFileSize": "50MB",
           "processingTime": "2-15 seconds",
           "popular": true,
@@ -682,9 +640,7 @@
             "Personal documents",
             "Intellectual property"
           ],
-          "fileFormats": [
-            "PDF"
-          ],
+          "fileFormats": ["PDF"],
           "maxFileSize": "50MB",
           "processingTime": "2-8 seconds",
           "popular": true,
@@ -748,9 +704,7 @@
             "Access restrictions",
             "Document recovery"
           ],
-          "fileFormats": [
-            "PDF"
-          ],
+          "fileFormats": ["PDF"],
           "maxFileSize": "50MB",
           "processingTime": "1-5 seconds",
           "popular": true,
@@ -814,9 +768,7 @@
             "Document cleanup",
             "Professional formatting"
           ],
-          "fileFormats": [
-            "PDF"
-          ],
+          "fileFormats": ["PDF"],
           "maxFileSize": "50MB",
           "processingTime": "2-10 seconds",
           "popular": true,
@@ -880,9 +832,7 @@
             "Presentations",
             "Official documentation"
           ],
-          "fileFormats": [
-            "PDF"
-          ],
+          "fileFormats": ["PDF"],
           "maxFileSize": "50MB",
           "processingTime": "3-12 seconds",
           "popular": true,
@@ -946,14 +896,7 @@
             "Portfolio creation",
             "Report attachments"
           ],
-          "fileFormats": [
-            "JPG",
-            "JPEG",
-            "PNG",
-            "GIF",
-            "BMP",
-            "WebP"
-          ],
+          "fileFormats": ["JPG", "JPEG", "PNG", "GIF", "BMP", "WebP"],
           "maxFileSize": "10MB per image",
           "processingTime": "3-20 seconds",
           "popular": true,
@@ -1017,14 +960,7 @@
             "Marketing materials",
             "Brand guidelines"
           ],
-          "fileFormats": [
-            "PNG",
-            "JPG",
-            "JPEG",
-            "GIF",
-            "BMP",
-            "WebP"
-          ],
+          "fileFormats": ["PNG", "JPG", "JPEG", "GIF", "BMP", "WebP"],
           "maxFileSize": "10MB per image",
           "processingTime": "3-20 seconds",
           "popular": true,
@@ -1054,10 +990,7 @@
         "video format converter",
         "video trimmer online"
       ],
-      "breadcrumb": [
-        "Home",
-        "Video Tools"
-      ],
+      "breadcrumb": ["Home", "Video Tools"],
       "tools": [
         {
           "id": "video-compressor",
@@ -1112,13 +1045,7 @@
             "Storage saving",
             "Streaming preparation"
           ],
-          "fileFormats": [
-            "MP4",
-            "AVI",
-            "MOV",
-            "MKV",
-            "WebM"
-          ],
+          "fileFormats": ["MP4", "AVI", "MOV", "MKV", "WebM"],
           "maxFileSize": "500MB",
           "processingTime": "30-180 seconds",
           "popular": true,
@@ -1182,14 +1109,7 @@
             "Tutorials",
             "Memes creation"
           ],
-          "fileFormats": [
-            "MP4",
-            "AVI",
-            "MOV",
-            "MKV",
-            "WebM",
-            "GIF"
-          ],
+          "fileFormats": ["MP4", "AVI", "MOV", "MKV", "WebM", "GIF"],
           "maxFileSize": "200MB",
           "processingTime": "15-60 seconds",
           "popular": true,
@@ -1219,10 +1139,7 @@
         "audio trimmer tool",
         "sound editor online"
       ],
-      "breadcrumb": [
-        "Home",
-        "Audio Tools"
-      ],
+      "breadcrumb": ["Home", "Audio Tools"],
       "tools": [
         {
           "id": "audio-compressor",
@@ -1277,13 +1194,7 @@
             "Podcast distribution",
             "Music streaming"
           ],
-          "fileFormats": [
-            "MP3",
-            "WAV",
-            "FLAC",
-            "OGG",
-            "AAC"
-          ],
+          "fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC"],
           "maxFileSize": "100MB",
           "processingTime": "10-60 seconds",
           "popular": true,
@@ -1347,15 +1258,7 @@
             "Mobile device optimization",
             "Streaming platform prep"
           ],
-          "fileFormats": [
-            "MP3",
-            "WAV",
-            "FLAC",
-            "OGG",
-            "AAC",
-            "M4A",
-            "WMA"
-          ],
+          "fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC", "M4A", "WMA"],
           "maxFileSize": "200MB",
           "processingTime": "15-90 seconds",
           "popular": true,
@@ -1419,14 +1322,7 @@
             "Sound effect extraction",
             "Voice message editing"
           ],
-          "fileFormats": [
-            "MP3",
-            "WAV",
-            "FLAC",
-            "OGG",
-            "AAC",
-            "M4A"
-          ],
+          "fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC", "M4A"],
           "maxFileSize": "100MB",
           "processingTime": "5-30 seconds",
           "popular": true,
@@ -1456,10 +1352,7 @@
         "qr code generator",
         "lorem ipsum generator"
       ],
-      "breadcrumb": [
-        "Home",
-        "Text Tools"
-      ],
+      "breadcrumb": ["Home", "Text Tools"],
       "tools": [
         {
           "id": "word-counter",
@@ -1514,9 +1407,7 @@
             "SEO content",
             "Marketing copy"
           ],
-          "fileFormats": [
-            "Text"
-          ],
+          "fileFormats": ["Text"],
           "maxFileSize": "Unlimited",
           "processingTime": "Instant",
           "popular": true,
@@ -1580,9 +1471,7 @@
             "Personal security",
             "Team password creation"
           ],
-          "fileFormats": [
-            "Text"
-          ],
+          "fileFormats": ["Text"],
           "maxFileSize": "N/A",
           "processingTime": "Instant",
           "popular": true,
@@ -1646,10 +1535,7 @@
             "Template creation",
             "Print design"
           ],
-          "fileFormats": [
-            "Text",
-            "HTML"
-          ],
+          "fileFormats": ["Text", "HTML"],
           "maxFileSize": "N/A",
           "processingTime": "Instant",
           "popular": true,
@@ -1713,9 +1599,7 @@
             "Event registration",
             "Social media profiles"
           ],
-          "fileFormats": [
-            "PNG"
-          ],
+          "fileFormats": ["PNG"],
           "maxFileSize": "N/A",
           "processingTime": "Instant",
           "popular": true,
@@ -1780,9 +1664,7 @@
             "API endpoint naming",
             "File and folder naming"
           ],
-          "fileFormats": [
-            "Text"
-          ],
+          "fileFormats": ["Text"],
           "maxFileSize": "Unlimited",
           "processingTime": "Instant",
           "popular": true,
@@ -1812,10 +1694,7 @@
         "html validator free",
         "api tester online"
       ],
-      "breadcrumb": [
-        "Home",
-        "Developer Tools"
-      ],
+      "breadcrumb": ["Home", "Developer Tools"],
       "tools": [
         {
           "id": "json-formatter",
@@ -1870,9 +1749,7 @@
             "Format API documentation",
             "Validate webhook payloads"
           ],
-          "fileFormats": [
-            "JSON"
-          ],
+          "fileFormats": ["JSON"],
           "maxFileSize": "10MB",
           "processingTime": "Instant",
           "popular": true,
@@ -1936,10 +1813,7 @@
             "Software distribution",
             "Database security"
           ],
-          "fileFormats": [
-            "Any file type",
-            "Text"
-          ],
+          "fileFormats": ["Any file type", "Text"],
           "maxFileSize": "100MB",
           "processingTime": "1-5 seconds",
           "popular": true,
@@ -1969,10 +1843,7 @@
         "website seo tools",
         "search engine optimization"
       ],
-      "breadcrumb": [
-        "Home",
-        "SEO Tools"
-      ],
+      "breadcrumb": ["Home", "SEO Tools"],
       "tools": [
         {
           "id": "meta-tags-generator",
@@ -2027,9 +1898,7 @@
             "Landing page SEO",
             "Content marketing"
           ],
-          "fileFormats": [
-            "HTML"
-          ],
+          "fileFormats": ["HTML"],
           "maxFileSize": "N/A",
           "processingTime": "Instant",
           "popular": true,
@@ -2059,10 +1928,7 @@
         "productivity tools",
         "online calculators"
       ],
-      "breadcrumb": [
-        "Home",
-        "Utility Tools"
-      ],
+      "breadcrumb": ["Home", "Utility Tools"],
       "tools": [
         {
           "id": "zip-creator",
@@ -2117,10 +1983,7 @@
             "Backup creation",
             "Archive management"
           ],
-          "fileFormats": [
-            "Any file type",
-            "ZIP"
-          ],
+          "fileFormats": ["Any file type", "ZIP"],
           "maxFileSize": "500MB total",
           "processingTime": "5-60 seconds",
           "popular": true,
@@ -2184,9 +2047,7 @@
             "Construction projects",
             "International business"
           ],
-          "fileFormats": [
-            "Text"
-          ],
+          "fileFormats": ["Text"],
           "maxFileSize": "N/A",
           "processingTime": "Instant",
           "popular": true,
@@ -2250,9 +2111,7 @@
             "Financial planning",
             "Statistical analysis"
           ],
-          "fileFormats": [
-            "Text"
-          ],
+          "fileFormats": ["Text"],
           "maxFileSize": "N/A",
           "processingTime": "Instant",
           "popular": true,
@@ -2282,10 +2141,7 @@
         "css generator tools",
         "design utilities free"
       ],
-      "breadcrumb": [
-        "Home",
-        "Design Tools"
-      ],
+      "breadcrumb": ["Home", "Design Tools"],
       "tools": [
         {
           "id": "whiteboard",
@@ -2340,10 +2196,7 @@
             "Mind mapping",
             "Wireframe creation"
           ],
-          "fileFormats": [
-            "PNG",
-            "JPG"
-          ],
+          "fileFormats": ["PNG", "JPG"],
           "maxFileSize": "Unlimited",
           "processingTime": "Instant",
           "popular": true,
@@ -2373,10 +2226,7 @@
         "developer utilities",
         "online code tools"
       ],
-      "breadcrumb": [
-        "Home",
-        "Code Tools"
-      ],
+      "breadcrumb": ["Home", "Code Tools"],
       "tools": [
         {
           "id": "json-formatter",
@@ -2402,9 +2252,7 @@
             "minify and format json data online",
             "json validator for api testing"
           ],
-          "routes": [
-            "/json-formatter"
-          ],
+          "routes": ["/json-formatter"],
           "features": [
             "Format and beautify JSON",
             "Validate JSON syntax",
@@ -2419,9 +2267,7 @@
             "Debugging JSON",
             "Learning JSON syntax"
           ],
-          "fileFormats": [
-            "JSON"
-          ],
+          "fileFormats": ["JSON"],
           "maxFileSize": "2MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2455,9 +2301,7 @@
             "csv to json for api import",
             "csv to json for spreadsheet export"
           ],
-          "routes": [
-            "/csv-to-json"
-          ],
+          "routes": ["/csv-to-json"],
           "features": [
             "Paste or upload CSV",
             "Header row detection",
@@ -2471,10 +2315,7 @@
             "Spreadsheet conversion",
             "Data analysis"
           ],
-          "fileFormats": [
-            "CSV",
-            "JSON"
-          ],
+          "fileFormats": ["CSV", "JSON"],
           "maxFileSize": "2MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2509,9 +2350,7 @@
             "css minifier for web optimization",
             "html minifier for seo"
           ],
-          "routes": [
-            "/code-minifier"
-          ],
+          "routes": ["/code-minifier"],
           "features": [
             "Minify JS, CSS, HTML",
             "Copy/download minified code",
@@ -2524,11 +2363,7 @@
             "SEO improvement",
             "Faster load times"
           ],
-          "fileFormats": [
-            "JS",
-            "CSS",
-            "HTML"
-          ],
+          "fileFormats": ["JS", "CSS", "HTML"],
           "maxFileSize": "1MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2563,9 +2398,7 @@
             "prettier code formatter online free",
             "beautify code for collaboration"
           ],
-          "routes": [
-            "/code-formatter"
-          ],
+          "routes": ["/code-formatter"],
           "features": [
             "Format JS, CSS, HTML, JSON",
             "Copy/download formatted code",
@@ -2578,12 +2411,7 @@
             "Learning best practices",
             "Team collaboration"
           ],
-          "fileFormats": [
-            "JS",
-            "CSS",
-            "HTML",
-            "JSON"
-          ],
+          "fileFormats": ["JS", "CSS", "HTML", "JSON"],
           "maxFileSize": "1MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2618,9 +2446,7 @@
             "regex tester for javascript",
             "regex debug tool online"
           ],
-          "routes": [
-            "/regex-tester"
-          ],
+          "routes": ["/regex-tester"],
           "features": [
             "Test regex patterns",
             "Show matches and groups",
@@ -2633,9 +2459,7 @@
             "Learning regex",
             "Data validation"
           ],
-          "fileFormats": [
-            "Text"
-          ],
+          "fileFormats": ["Text"],
           "maxFileSize": "Unlimited",
           "processingTime": "Instant",
           "popular": true,
@@ -2669,9 +2493,7 @@
             "markdown to html for blogging",
             "markdown to html for documentation"
           ],
-          "routes": [
-            "/markdown-to-html"
-          ],
+          "routes": ["/markdown-to-html"],
           "features": [
             "Paste or upload Markdown",
             "Convert to HTML",
@@ -2684,10 +2506,7 @@
             "Web publishing",
             "Markdown preview"
           ],
-          "fileFormats": [
-            "Markdown",
-            "HTML"
-          ],
+          "fileFormats": ["Markdown", "HTML"],
           "maxFileSize": "1MB",
           "processingTime": "Instant",
           "popular": true,
@@ -2716,39 +2535,18 @@
     ],
     "competitorAnalysis": {
       "smallpdf": {
-        "strengths": [
-          "PDF focus",
-          "Clean UI",
-          "Premium features"
-        ],
-        "weaknesses": [
-          "Limited free features",
-          "Expensive premium"
-        ],
+        "strengths": ["PDF focus", "Clean UI", "Premium features"],
+        "weaknesses": ["Limited free features", "Expensive premium"],
         "monthlyTraffic": "45M"
       },
       "ilovepdf": {
-        "strengths": [
-          "PDF tools",
-          "Free features",
-          "Good SEO"
-        ],
-        "weaknesses": [
-          "PDF only",
-          "Ad heavy"
-        ],
+        "strengths": ["PDF tools", "Free features", "Good SEO"],
+        "weaknesses": ["PDF only", "Ad heavy"],
         "monthlyTraffic": "35M"
       },
       "convertio": {
-        "strengths": [
-          "Many formats",
-          "Good conversion",
-          "API"
-        ],
-        "weaknesses": [
-          "File size limits",
-          "Slow processing"
-        ],
+        "strengths": ["Many formats", "Good conversion", "API"],
+        "weaknesses": ["File size limits", "Slow processing"],
         "monthlyTraffic": "25M"
       }
     },

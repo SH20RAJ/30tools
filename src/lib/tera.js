@@ -30,7 +30,7 @@ export function extractTeraboxId(url) {
 
     return null;
   } catch (error) {
-    console.error('Error extracting Terabox ID:', error);
+    console.error("Error extracting Terabox ID:", error);
     return null;
   }
 }
@@ -44,28 +44,30 @@ export async function fetchTeraboxVideo(url) {
   try {
     // Extract video ID from URL
     const videoId = extractTeraboxId(url);
-    
+
     if (!videoId) {
-      throw new Error('Invalid Terabox URL or ID');
+      throw new Error("Invalid Terabox URL or ID");
     }
 
     // Fetch video data from API
     const apiUrl = `https://core.mdiskplay.com/box/terabox/${videoId}?aka=baka`;
-    
+
     const response = await fetch(apiUrl, {
       headers: {
-        'Accept': 'application/json',
+        Accept: "application/json",
       },
     });
 
     if (!response.ok) {
-      throw new Error(`API request failed: ${response.status} ${response.statusText}`);
+      throw new Error(
+        `API request failed: ${response.status} ${response.statusText}`,
+      );
     }
 
     const data = await response.json();
 
-    if (data.status !== 'success') {
-      throw new Error(data.message || 'Failed to fetch video');
+    if (data.status !== "success") {
+      throw new Error(data.message || "Failed to fetch video");
     }
 
     return {
@@ -74,7 +76,7 @@ export async function fetchTeraboxVideo(url) {
       download: data.download, // Direct MP4 download URL
     };
   } catch (error) {
-    console.error('Error fetching Terabox video:', error);
+    console.error("Error fetching Terabox video:", error);
     throw error;
   }
 }
@@ -90,24 +92,24 @@ export async function parseM3U8Playlist(m3u8Url) {
     const m3u8Content = await response.text();
 
     // Extract base URL from m3u8 URL
-    const baseUrl = m3u8Url.substring(0, m3u8Url.lastIndexOf('/') + 1);
+    const baseUrl = m3u8Url.substring(0, m3u8Url.lastIndexOf("/") + 1);
 
     // Parse M3U8 content and extract .ts segments
     const segments = [];
-    const lines = m3u8Content.split('\n');
+    const lines = m3u8Content.split("\n");
 
     for (const line of lines) {
       const trimmedLine = line.trim();
-      
+
       // Skip comments and empty lines
-      if (!trimmedLine || trimmedLine.startsWith('#')) {
+      if (!trimmedLine || trimmedLine.startsWith("#")) {
         continue;
       }
 
       // If it's a relative URL, make it absolute
-      if (trimmedLine.endsWith('.ts')) {
-        const segmentUrl = trimmedLine.startsWith('http') 
-          ? trimmedLine 
+      if (trimmedLine.endsWith(".ts")) {
+        const segmentUrl = trimmedLine.startsWith("http")
+          ? trimmedLine
           : baseUrl + trimmedLine;
         segments.push(segmentUrl);
       }
@@ -115,7 +117,7 @@ export async function parseM3U8Playlist(m3u8Url) {
 
     return segments;
   } catch (error) {
-    console.error('Error parsing M3U8 playlist:', error);
+    console.error("Error parsing M3U8 playlist:", error);
     throw error;
   }
 }
@@ -141,27 +143,32 @@ export function extractVideoHash(m3u8Url) {
     // Extract hash from the M3U8 URL by parsing the path
     // Looking for patterns in the URL that might contain the video hash
     const url = new URL(m3u8Url);
-    const pathParts = url.pathname.split('/');
-    
+    const pathParts = url.pathname.split("/");
+
     // Look for potential hash in the path (usually in the filename or parent directory)
     for (let i = pathParts.length - 1; i >= 0; i--) {
       const part = pathParts[i];
       // Look for a pattern that resembles a video hash (alphanumeric with hyphens)
-      if (part && part.length > 10 && /[a-zA-Z0-9-]/.test(part) && part.includes('-')) {
+      if (
+        part &&
+        part.length > 10 &&
+        /[a-zA-Z0-9-]/.test(part) &&
+        part.includes("-")
+      ) {
         return part;
       }
     }
-    
+
     // If no hash found in path, return a default or try to extract from query params
-    const hashParam = url.searchParams.get('hash');
+    const hashParam = url.searchParams.get("hash");
     if (hashParam) {
       return hashParam;
     }
-    
+
     // If no hash found in path or query params, return null
     return null;
   } catch (error) {
-    console.error('Error extracting video hash:', error);
+    console.error("Error extracting video hash:", error);
     return null;
- }
+  }
 }

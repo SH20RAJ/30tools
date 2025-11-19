@@ -1,18 +1,24 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Checkbox } from '@/components/ui/checkbox';
-import { 
-  ArrowLeftIcon, 
-  TestTubeIcon, 
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  ArrowLeftIcon,
+  TestTubeIcon,
   CopyIcon,
   CheckCircleIcon,
   AlertCircleIcon,
@@ -21,76 +27,82 @@ import {
   BookOpenIcon,
   ZapIcon,
   TargetIcon,
-  WandIcon
-} from 'lucide-react';
-import Link from 'next/link';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  WandIcon,
+} from "lucide-react";
+import Link from "next/link";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function RegexTesterTool() {
-  const [pattern, setPattern] = useState('');
-  const [testString, setTestString] = useState('');
+  const [pattern, setPattern] = useState("");
+  const [testString, setTestString] = useState("");
   const [flags, setFlags] = useState({
     global: true,
     ignoreCase: false,
     multiline: false,
     dotAll: false,
     unicode: false,
-    sticky: false
+    sticky: false,
   });
   const [matches, setMatches] = useState([]);
   const [isValid, setIsValid] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [copied, setCopied] = useState(false);
 
   const commonPatterns = [
     {
-      name: 'Email Address',
-      pattern: '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}',
-      description: 'Matches most email addresses',
-      testString: 'Contact me at john@example.com or support@mysite.org'
+      name: "Email Address",
+      pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}",
+      description: "Matches most email addresses",
+      testString: "Contact me at john@example.com or support@mysite.org",
     },
     {
-      name: 'Phone Number (US)',
-      pattern: '\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})',
-      description: 'US phone numbers in various formats',
-      testString: 'Call (555) 123-4567 or 555.123.4567 or 555 123 4567'
+      name: "Phone Number (US)",
+      pattern: "\\(?([0-9]{3})\\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})",
+      description: "US phone numbers in various formats",
+      testString: "Call (555) 123-4567 or 555.123.4567 or 555 123 4567",
     },
     {
-      name: 'URL/Website',
-      pattern: 'https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)',
-      description: 'HTTP and HTTPS URLs',
-      testString: 'Visit https://www.example.com or http://subdomain.site.org/path'
+      name: "URL/Website",
+      pattern:
+        "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()@:%_\\+.~#?&//=]*)",
+      description: "HTTP and HTTPS URLs",
+      testString:
+        "Visit https://www.example.com or http://subdomain.site.org/path",
     },
     {
-      name: 'IPv4 Address',
-      pattern: '\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b',
-      description: 'Valid IPv4 addresses',
-      testString: 'Server IPs: 192.168.1.1, 10.0.0.1, 172.16.0.1, 8.8.8.8'
+      name: "IPv4 Address",
+      pattern:
+        "\\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\b",
+      description: "Valid IPv4 addresses",
+      testString: "Server IPs: 192.168.1.1, 10.0.0.1, 172.16.0.1, 8.8.8.8",
     },
     {
-      name: 'Credit Card Number',
-      pattern: '\\b(?:\\d{4}[-\\s]?){3}\\d{4}\\b',
-      description: 'Credit card numbers with optional separators',
-      testString: '4532-1234-5678-9012 or 4532 1234 5678 9012 or 4532123456789012'
+      name: "Credit Card Number",
+      pattern: "\\b(?:\\d{4}[-\\s]?){3}\\d{4}\\b",
+      description: "Credit card numbers with optional separators",
+      testString:
+        "4532-1234-5678-9012 or 4532 1234 5678 9012 or 4532123456789012",
     },
     {
-      name: 'Date (MM/DD/YYYY)',
-      pattern: '\\b(0?[1-9]|1[0-2])\\/(0?[1-9]|[12][0-9]|3[01])\\/(19|20)\\d{2}\\b',
-      description: 'US date format MM/DD/YYYY',
-      testString: 'Important dates: 12/25/2023, 1/1/2024, 07/04/2024'
+      name: "Date (MM/DD/YYYY)",
+      pattern:
+        "\\b(0?[1-9]|1[0-2])\\/(0?[1-9]|[12][0-9]|3[01])\\/(19|20)\\d{2}\\b",
+      description: "US date format MM/DD/YYYY",
+      testString: "Important dates: 12/25/2023, 1/1/2024, 07/04/2024",
     },
     {
-      name: 'HTML Tags',
-      pattern: '<\\/?[a-z][a-z0-9]*[^<>]*>',
-      description: 'HTML opening and closing tags',
-      testString: '<div class="container"><p>Hello <strong>world</strong>!</p></div>'
+      name: "HTML Tags",
+      pattern: "<\\/?[a-z][a-z0-9]*[^<>]*>",
+      description: "HTML opening and closing tags",
+      testString:
+        '<div class="container"><p>Hello <strong>world</strong>!</p></div>',
     },
     {
-      name: 'Hexadecimal Color',
-      pattern: '#(?:[0-9a-fA-F]{3}){1,2}\\b',
-      description: '3 or 6 digit hex color codes',
-      testString: 'Colors: #fff, #000000, #ff5733, #3498db, #2ecc71'
-    }
+      name: "Hexadecimal Color",
+      pattern: "#(?:[0-9a-fA-F]{3}){1,2}\\b",
+      description: "3 or 6 digit hex color codes",
+      testString: "Colors: #fff, #000000, #ff5733, #3498db, #2ecc71",
+    },
   ];
 
   useEffect(() => {
@@ -101,7 +113,7 @@ export default function RegexTesterTool() {
     if (!pattern) {
       setMatches([]);
       setIsValid(null);
-      setError('');
+      setError("");
       return;
     }
 
@@ -110,20 +122,27 @@ export default function RegexTesterTool() {
         .filter(([_, enabled]) => enabled)
         .map(([flag, _]) => {
           switch (flag) {
-            case 'global': return 'g';
-            case 'ignoreCase': return 'i';
-            case 'multiline': return 'm';
-            case 'dotAll': return 's';
-            case 'unicode': return 'u';
-            case 'sticky': return 'y';
-            default: return '';
+            case "global":
+              return "g";
+            case "ignoreCase":
+              return "i";
+            case "multiline":
+              return "m";
+            case "dotAll":
+              return "s";
+            case "unicode":
+              return "u";
+            case "sticky":
+              return "y";
+            default:
+              return "";
           }
         })
-        .join('');
+        .join("");
 
       const regex = new RegExp(pattern, flagString);
       setIsValid(true);
-      setError('');
+      setError("");
 
       if (!testString) {
         setMatches([]);
@@ -139,9 +158,9 @@ export default function RegexTesterTool() {
             match: match[0],
             index: match.index,
             groups: match.slice(1),
-            input: testString
+            input: testString,
           });
-          
+
           // Prevent infinite loop on zero-length matches
           if (match.index === regex.lastIndex) {
             regex.lastIndex++;
@@ -154,7 +173,7 @@ export default function RegexTesterTool() {
             match: match[0],
             index: match.index,
             groups: match.slice(1),
-            input: testString
+            input: testString,
           });
         }
       }
@@ -191,8 +210,11 @@ export default function RegexTesterTool() {
       const before = highlighted.substring(0, start);
       const matchText = highlighted.substring(start, end);
       const after = highlighted.substring(end);
-      
-      highlighted = before + `<mark class="bg-muted px-1 rounded">${matchText}</mark>` + after;
+
+      highlighted =
+        before +
+        `<mark class="bg-muted px-1 rounded">${matchText}</mark>` +
+        after;
     });
 
     return highlighted;
@@ -203,31 +225,40 @@ export default function RegexTesterTool() {
       .filter(([_, enabled]) => enabled)
       .map(([flag, _]) => {
         switch (flag) {
-          case 'global': return 'g';
-          case 'ignoreCase': return 'i';
-          case 'multiline': return 'm';
-          case 'dotAll': return 's';
-          case 'unicode': return 'u';
-          case 'sticky': return 'y';
-          default: return '';
+          case "global":
+            return "g";
+          case "ignoreCase":
+            return "i";
+          case "multiline":
+            return "m";
+          case "dotAll":
+            return "s";
+          case "unicode":
+            return "u";
+          case "sticky":
+            return "y";
+          default:
+            return "";
         }
       })
-      .join('');
+      .join("");
 
     switch (language) {
-      case 'javascript':
+      case "javascript":
         return `const regex = /${pattern}/${flagString};
 const text = "${testString}";
 const matches = text.match(regex);
 console.log(matches);`;
 
-      case 'python':
+      case "python":
         const pythonFlags = [];
-        if (flags.ignoreCase) pythonFlags.push('re.IGNORECASE');
-        if (flags.multiline) pythonFlags.push('re.MULTILINE');
-        if (flags.dotAll) pythonFlags.push('re.DOTALL');
-        const flagsStr = pythonFlags.length ? `, ${pythonFlags.join(' | ')}` : '';
-        
+        if (flags.ignoreCase) pythonFlags.push("re.IGNORECASE");
+        if (flags.multiline) pythonFlags.push("re.MULTILINE");
+        if (flags.dotAll) pythonFlags.push("re.DOTALL");
+        const flagsStr = pythonFlags.length
+          ? `, ${pythonFlags.join(" | ")}`
+          : "";
+
         return `import re
 
 pattern = r"${pattern}"
@@ -235,13 +266,13 @@ text = "${testString}"
 matches = re.findall(pattern, text${flagsStr})
 print(matches)`;
 
-      case 'php':
+      case "php":
         const phpFlags = [];
-        if (flags.ignoreCase) phpFlags.push('i');
-        if (flags.multiline) phpFlags.push('m');
-        if (flags.dotAll) phpFlags.push('s');
-        const phpFlagStr = phpFlags.join('');
-        
+        if (flags.ignoreCase) phpFlags.push("i");
+        if (flags.multiline) phpFlags.push("m");
+        if (flags.dotAll) phpFlags.push("s");
+        const phpFlagStr = phpFlags.join("");
+
         return `<?php
 $pattern = '/${pattern}/${phpFlagStr}';
 $text = "${testString}";
@@ -250,7 +281,7 @@ print_r($matches[0]);
 ?>`;
 
       default:
-        return '';
+        return "";
     }
   };
 
@@ -270,7 +301,10 @@ print_r($matches[0]);
         </div>
         <div>
           <h1 className="text-3xl font-bold">Regex Tester</h1>
-          <p className="text-muted-foreground">Test and debug regular expressions with real-time matching and explanations</p>
+          <p className="text-muted-foreground">
+            Test and debug regular expressions with real-time matching and
+            explanations
+          </p>
         </div>
       </div>
 
@@ -313,16 +347,23 @@ print_r($matches[0]);
                       .filter(([_, enabled]) => enabled)
                       .map(([flag, _]) => {
                         switch (flag) {
-                          case 'global': return 'g';
-                          case 'ignoreCase': return 'i';
-                          case 'multiline': return 'm';
-                          case 'dotAll': return 's';
-                          case 'unicode': return 'u';
-                          case 'sticky': return 'y';
-                          default: return '';
+                          case "global":
+                            return "g";
+                          case "ignoreCase":
+                            return "i";
+                          case "multiline":
+                            return "m";
+                          case "dotAll":
+                            return "s";
+                          case "unicode":
+                            return "u";
+                          case "sticky":
+                            return "y";
+                          default:
+                            return "";
                         }
                       })
-                      .join('')}
+                      .join("")}
                   </span>
                 </div>
               </div>
@@ -336,14 +377,16 @@ print_r($matches[0]);
                       <Checkbox
                         id={flag}
                         checked={enabled}
-                        onCheckedChange={(checked) => 
-                          setFlags(prev => ({ ...prev, [flag]: checked }))
+                        onCheckedChange={(checked) =>
+                          setFlags((prev) => ({ ...prev, [flag]: checked }))
                         }
                       />
                       <Label htmlFor={flag} className="text-sm capitalize">
-                        {flag === 'ignoreCase' ? 'Ignore Case' : 
-                         flag === 'dotAll' ? 'Dot All' : 
-                         flag}
+                        {flag === "ignoreCase"
+                          ? "Ignore Case"
+                          : flag === "dotAll"
+                            ? "Dot All"
+                            : flag}
                       </Label>
                     </div>
                   ))}
@@ -364,7 +407,8 @@ print_r($matches[0]);
                 <Alert>
                   <CheckCircleIcon className="h-4 w-4" />
                   <AlertDescription>
-                    <strong>Valid Pattern:</strong> Found {matches.length} match{matches.length !== 1 ? 'es' : ''}
+                    <strong>Valid Pattern:</strong> Found {matches.length} match
+                    {matches.length !== 1 ? "es" : ""}
                   </AlertDescription>
                 </Alert>
               )}
@@ -405,10 +449,14 @@ print_r($matches[0]);
                 <div className="space-y-4">
                   {/* Highlighted Text */}
                   <div>
-                    <Label className="text-sm font-medium">Highlighted Matches</Label>
-                    <div 
+                    <Label className="text-sm font-medium">
+                      Highlighted Matches
+                    </Label>
+                    <div
                       className="p-3 bg-muted rounded-lg font-mono text-sm"
-                      dangerouslySetInnerHTML={{ __html: highlightMatches(testString) }}
+                      dangerouslySetInnerHTML={{
+                        __html: highlightMatches(testString),
+                      }}
                     />
                   </div>
 
@@ -419,19 +467,28 @@ print_r($matches[0]);
                       {matches.map((match, index) => (
                         <div key={index} className="p-3 border rounded-lg">
                           <div className="flex justify-between items-start mb-2">
-                            <span className="font-medium">Match {index + 1}</span>
-                            <Badge variant="outline">Position {match.index}</Badge>
+                            <span className="font-medium">
+                              Match {index + 1}
+                            </span>
+                            <Badge variant="outline">
+                              Position {match.index}
+                            </Badge>
                           </div>
                           <div className="font-mono text-sm bg-muted p-2 rounded">
                             "{match.match}"
                           </div>
                           {match.groups.length > 0 && (
                             <div className="mt-2">
-                              <div className="text-sm font-medium">Capture Groups:</div>
+                              <div className="text-sm font-medium">
+                                Capture Groups:
+                              </div>
                               <div className="space-y-1 mt-1">
                                 {match.groups.map((group, groupIndex) => (
                                   <div key={groupIndex} className="text-sm">
-                                    Group {groupIndex + 1}: <code className="bg-muted px-1 rounded">{group || '(empty)'}</code>
+                                    Group {groupIndex + 1}:{" "}
+                                    <code className="bg-muted px-1 rounded">
+                                      {group || "(empty)"}
+                                    </code>
                                   </div>
                                 ))}
                               </div>
@@ -501,7 +558,7 @@ print_r($matches[0]);
                     <TabsTrigger value="php">PHP</TabsTrigger>
                   </TabsList>
 
-                  {['javascript', 'python', 'php'].map(lang => (
+                  {["javascript", "python", "php"].map((lang) => (
                     <TabsContent key={lang} value={lang} className="space-y-2">
                       <div className="relative">
                         <pre className="bg-muted p-3 rounded-lg text-xs overflow-x-auto">
@@ -511,7 +568,9 @@ print_r($matches[0]);
                           size="sm"
                           variant="outline"
                           className="absolute top-2 right-2"
-                          onClick={() => copyToClipboard(generateCodeSnippet(lang))}
+                          onClick={() =>
+                            copyToClipboard(generateCodeSnippet(lang))
+                          }
                         >
                           {copied ? (
                             <CheckCircleIcon className="h-3 w-3" />
@@ -540,7 +599,8 @@ print_r($matches[0]);
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Test your regex patterns instantly as you type. See matches highlighted in real-time.
+              Test your regex patterns instantly as you type. See matches
+              highlighted in real-time.
             </p>
           </CardContent>
         </Card>
@@ -554,7 +614,8 @@ print_r($matches[0]);
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Access common regex patterns for emails, URLs, phone numbers, and more.
+              Access common regex patterns for emails, URLs, phone numbers, and
+              more.
             </p>
           </CardContent>
         </Card>
@@ -568,7 +629,8 @@ print_r($matches[0]);
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Generate ready-to-use code snippets in JavaScript, Python, and PHP.
+              Generate ready-to-use code snippets in JavaScript, Python, and
+              PHP.
             </p>
           </CardContent>
         </Card>

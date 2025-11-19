@@ -1,14 +1,20 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Textarea } from '@/components/ui/textarea';
+import { useState, useRef, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Link as LinkIcon,
   Copy,
@@ -26,17 +32,17 @@ import {
   ExternalLink,
   Zap,
   Shield,
-  Globe
-} from 'lucide-react';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  Globe,
+} from "lucide-react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function URLShortenerTool() {
   const [urls, setUrls] = useState([]);
-  const [currentUrl, setCurrentUrl] = useState('');
-  const [customAlias, setCustomAlias] = useState('');
+  const [currentUrl, setCurrentUrl] = useState("");
+  const [customAlias, setCustomAlias] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
-  const [copiedId, setCopiedId] = useState('');
-  const [bulkUrls, setBulkUrls] = useState('');
+  const [copiedId, setCopiedId] = useState("");
+  const [bulkUrls, setBulkUrls] = useState("");
 
   // URL validation
   const isValidUrl = (string) => {
@@ -49,21 +55,22 @@ export default function URLShortenerTool() {
   };
 
   const generateShortCode = () => {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result = '';
+    const chars =
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "";
     for (let i = 0; i < 6; i++) {
       result += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     return result;
   };
 
-  const shortenUrl = useCallback(async (originalUrl, alias = '') => {
+  const shortenUrl = useCallback(async (originalUrl, alias = "") => {
     if (!isValidUrl(originalUrl)) {
-      throw new Error('Invalid URL format');
+      throw new Error("Invalid URL format");
     }
 
     // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 800));
+    await new Promise((resolve) => setTimeout(resolve, 800));
 
     const shortCode = alias || generateShortCode();
     const shortUrl = `https://30t.me/${shortCode}`;
@@ -75,7 +82,7 @@ export default function URLShortenerTool() {
       shortCode,
       clicks: Math.floor(Math.random() * 1000),
       createdAt: new Date().toISOString(),
-      qrCode: `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="white"/><text x="50" y="50" text-anchor="middle" fill="black" font-size="8">QR Code</text></svg>`)}`
+      qrCode: `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="white"/><text x="50" y="50" text-anchor="middle" fill="black" font-size="8">QR Code</text></svg>`)}`,
     };
   }, []);
 
@@ -85,9 +92,9 @@ export default function URLShortenerTool() {
     setIsProcessing(true);
     try {
       const result = await shortenUrl(currentUrl, customAlias);
-      setUrls(prev => [result, ...prev]);
-      setCurrentUrl('');
-      setCustomAlias('');
+      setUrls((prev) => [result, ...prev]);
+      setCurrentUrl("");
+      setCustomAlias("");
     } catch (error) {
       alert(error.message);
     }
@@ -97,7 +104,7 @@ export default function URLShortenerTool() {
   const handleBulkShorten = async () => {
     if (!bulkUrls.trim()) return;
 
-    const urlList = bulkUrls.split('\n').filter(url => url.trim());
+    const urlList = bulkUrls.split("\n").filter((url) => url.trim());
     if (urlList.length === 0) return;
 
     setIsProcessing(true);
@@ -112,8 +119,8 @@ export default function URLShortenerTool() {
       }
     }
 
-    setUrls(prev => [...results, ...prev]);
-    setBulkUrls('');
+    setUrls((prev) => [...results, ...prev]);
+    setBulkUrls("");
     setIsProcessing(false);
   };
 
@@ -121,14 +128,14 @@ export default function URLShortenerTool() {
     try {
       await navigator.clipboard.writeText(text);
       setCopiedId(id);
-      setTimeout(() => setCopiedId(''), 2000);
+      setTimeout(() => setCopiedId(""), 2000);
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
   const downloadQRCode = (urlData) => {
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = urlData.qrCode;
     link.download = `qr-${urlData.shortCode}.svg`;
     document.body.appendChild(link);
@@ -137,7 +144,7 @@ export default function URLShortenerTool() {
   };
 
   const removeUrl = (id) => {
-    setUrls(prev => prev.filter(url => url.id !== id));
+    setUrls((prev) => prev.filter((url) => url.id !== id));
   };
 
   const clearAllUrls = () => {
@@ -146,21 +153,23 @@ export default function URLShortenerTool() {
 
   const exportUrls = () => {
     const csvContent = [
-      ['Original URL', 'Short URL', 'Short Code', 'Clicks', 'Created Date'],
-      ...urls.map(url => [
+      ["Original URL", "Short URL", "Short Code", "Clicks", "Created Date"],
+      ...urls.map((url) => [
         url.originalUrl,
         url.shortUrl,
         url.shortCode,
         url.clicks,
-        new Date(url.createdAt).toLocaleDateString()
-      ])
-    ].map(row => row.join(',')).join('\n');
+        new Date(url.createdAt).toLocaleDateString(),
+      ]),
+    ]
+      .map((row) => row.join(","))
+      .join("\n");
 
-    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const blob = new Blob([csvContent], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
-    link.download = `shortened-urls-${new Date().toISOString().split('T')[0]}.csv`;
+    link.download = `shortened-urls-${new Date().toISOString().split("T")[0]}.csv`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -174,8 +183,9 @@ export default function URLShortenerTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free URL Shortener</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Create short, trackable links instantly. Custom aliases, QR codes, and detailed analytics.
-          Perfect for social media, marketing campaigns, and link management.
+          Create short, trackable links instantly. Custom aliases, QR codes, and
+          detailed analytics. Perfect for social media, marketing campaigns, and
+          link management.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -245,7 +255,7 @@ export default function URLShortenerTool() {
                 disabled={!currentUrl.trim() || isProcessing}
                 className="w-full"
               >
-                {isProcessing ? 'Shortening...' : 'Shorten URL'}
+                {isProcessing ? "Shortening..." : "Shorten URL"}
               </Button>
             </CardContent>
           </Card>
@@ -275,7 +285,8 @@ export default function URLShortenerTool() {
                   className="text-base"
                 />
                 <p className="text-xs text-muted-foreground">
-                  {bulkUrls.split('\n').filter(url => url.trim()).length} URLs ready to shorten
+                  {bulkUrls.split("\n").filter((url) => url.trim()).length} URLs
+                  ready to shorten
                 </p>
               </div>
 
@@ -284,7 +295,7 @@ export default function URLShortenerTool() {
                 disabled={!bulkUrls.trim() || isProcessing}
                 className="w-full"
               >
-                {isProcessing ? 'Processing...' : 'Shorten All URLs'}
+                {isProcessing ? "Processing..." : "Shorten All URLs"}
               </Button>
             </CardContent>
           </Card>
@@ -306,12 +317,16 @@ export default function URLShortenerTool() {
                   <p className="text-sm text-muted-foreground">Total Links</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-2xl font-bold">{totalClicks.toLocaleString()}</p>
+                  <p className="text-2xl font-bold">
+                    {totalClicks.toLocaleString()}
+                  </p>
                   <p className="text-sm text-muted-foreground">Total Clicks</p>
                 </div>
                 <div className="text-center">
                   <p className="text-2xl font-bold">
-                    {urls.length > 0 ? Math.round(totalClicks / urls.length) : 0}
+                    {urls.length > 0
+                      ? Math.round(totalClicks / urls.length)
+                      : 0}
                   </p>
                   <p className="text-sm text-muted-foreground">Avg. Clicks</p>
                 </div>
@@ -345,7 +360,10 @@ export default function URLShortenerTool() {
           <CardContent>
             <div className="space-y-4">
               {urls.map((urlData) => (
-                <div key={urlData.id} className="border rounded-lg p-4 space-y-3">
+                <div
+                  key={urlData.id}
+                  className="border rounded-lg p-4 space-y-3"
+                >
                   <div className="flex items-start justify-between">
                     <div className="flex-1 min-w-0 space-y-2">
                       <div>
@@ -355,7 +373,9 @@ export default function URLShortenerTool() {
                             {urlData.shortUrl}
                           </code>
                           <Button
-                            onClick={() => copyToClipboard(urlData.shortUrl, urlData.id)}
+                            onClick={() =>
+                              copyToClipboard(urlData.shortUrl, urlData.id)
+                            }
                             size="sm"
                             variant="outline"
                           >
@@ -369,7 +389,9 @@ export default function URLShortenerTool() {
                       </div>
 
                       <div>
-                        <Label className="text-sm font-medium">Original URL</Label>
+                        <Label className="text-sm font-medium">
+                          Original URL
+                        </Label>
                         <p className="text-sm text-muted-foreground truncate mt-1">
                           {urlData.originalUrl}
                         </p>
@@ -393,14 +415,16 @@ export default function URLShortenerTool() {
                     </div>
                     <div className="flex items-center gap-1">
                       <Calendar className="h-4 w-4" />
-                      <span>{new Date(urlData.createdAt).toLocaleDateString()}</span>
+                      <span>
+                        {new Date(urlData.createdAt).toLocaleDateString()}
+                      </span>
                     </div>
                     <Badge variant="secondary">#{urlData.shortCode}</Badge>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
                     <Button
-                      onClick={() => window.open(urlData.shortUrl, '_blank')}
+                      onClick={() => window.open(urlData.shortUrl, "_blank")}
                       size="sm"
                       variant="outline"
                     >
@@ -416,7 +440,12 @@ export default function URLShortenerTool() {
                       QR Code
                     </Button>
                     <Button
-                      onClick={() => copyToClipboard(urlData.originalUrl, `orig-${urlData.id}`)}
+                      onClick={() =>
+                        copyToClipboard(
+                          urlData.originalUrl,
+                          `orig-${urlData.id}`,
+                        )
+                      }
                       size="sm"
                       variant="outline"
                     >
@@ -445,25 +474,29 @@ export default function URLShortenerTool() {
             <div>
               <h4 className="font-medium mb-2">Single URL Shortening</h4>
               <p className="text-sm text-muted-foreground">
-                Paste any long URL and optionally add a custom alias. Click "Shorten URL" to generate your short link instantly.
+                Paste any long URL and optionally add a custom alias. Click
+                "Shorten URL" to generate your short link instantly.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Bulk URL Shortening</h4>
               <p className="text-sm text-muted-foreground">
-                Process multiple URLs at once by pasting them in the bulk section, one URL per line. Perfect for marketing campaigns.
+                Process multiple URLs at once by pasting them in the bulk
+                section, one URL per line. Perfect for marketing campaigns.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Custom Aliases</h4>
               <p className="text-sm text-muted-foreground">
-                Create memorable short links with custom aliases like "30t.me/my-store" instead of random characters.
+                Create memorable short links with custom aliases like
+                "30t.me/my-store" instead of random characters.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Analytics & Tracking</h4>
               <p className="text-sm text-muted-foreground">
-                Track clicks, view creation dates, and export your data as CSV for detailed analysis of your shortened URLs.
+                Track clicks, view creation dates, and export your data as CSV
+                for detailed analysis of your shortened URLs.
               </p>
             </div>
           </div>
@@ -478,27 +511,35 @@ export default function URLShortenerTool() {
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">Are the shortened URLs permanent?</h4>
+              <h4 className="font-medium mb-2">
+                Are the shortened URLs permanent?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                Yes, once created, shortened URLs remain active indefinitely. However, this is a demo version - in production, URLs would be stored permanently.
+                Yes, once created, shortened URLs remain active indefinitely.
+                However, this is a demo version - in production, URLs would be
+                stored permanently.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Can I use custom domains?</h4>
               <p className="text-sm text-muted-foreground">
-                Currently, all shortened URLs use the 30t.me domain. Custom domain support is available in our premium plans.
+                Currently, all shortened URLs use the 30t.me domain. Custom
+                domain support is available in our premium plans.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Is there a limit on URLs?</h4>
               <p className="text-sm text-muted-foreground">
-                No, you can shorten unlimited URLs. For bulk operations, we recommend processing up to 100 URLs at a time for optimal performance.
+                No, you can shorten unlimited URLs. For bulk operations, we
+                recommend processing up to 100 URLs at a time for optimal
+                performance.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Do you track user data?</h4>
               <p className="text-sm text-muted-foreground">
-                We only track basic click analytics. No personal information is collected from users who click on shortened links.
+                We only track basic click analytics. No personal information is
+                collected from users who click on shortened links.
               </p>
             </div>
           </div>

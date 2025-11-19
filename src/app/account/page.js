@@ -1,6 +1,12 @@
 import { stackServerApp } from "../../stack";
 import { redirect } from "next/navigation";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -8,13 +14,14 @@ import {
   MailIcon,
   CalendarIcon,
   ShieldIcon,
-  ZapIcon
+  ZapIcon,
 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
   title: "Account - Free Online Tool | Professional Results",
-  description: "Professional account with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description:
+    "Professional account with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: [
     "account",
     "account online",
@@ -28,12 +35,13 @@ export const metadata = {
     "account utility",
     "online tool",
     "free utility",
-    "web application"
+    "web application",
   ].join(", "),
 
   openGraph: {
     title: "Account - Free Online Tool | Professional Results",
-    description: "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
     url: "https://30tools.com/account",
     siteName: "30tools",
     images: [
@@ -41,43 +49,45 @@ export const metadata = {
         url: "/og-images/account.jpg",
         width: 1200,
         height: 630,
-        alt: "Account - Free Online Tool | Professional Results"
+        alt: "Account - Free Online Tool | Professional Results",
       },
     ],
-    type: "website"
+    type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Account - Free Online Tool | Professional Results",
-    description: "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/account.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
 
   alternates: {
-    canonical: "https://30tools.com/account"
+    canonical: "https://30tools.com/account",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Account",
-  "description": "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
-  "url": "https://30tools.com/account",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "Account",
+  description:
+    "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
+  url: "https://30tools.com/account",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "author": {
+  author: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 
@@ -94,13 +104,13 @@ export default async function AccountPage() {
   const joinDate = new Date(user.createdAtMillis).toLocaleDateString("en-US", {
     year: "numeric",
     month: "long",
-    day: "numeric"
+    day: "numeric",
   });
 
   const initials = displayName
-    .split(' ')
-    .map(name => name[0])
-    .join('')
+    .split(" ")
+    .map((name) => name[0])
+    .join("")
     .toUpperCase()
     .slice(0, 2);
 
@@ -122,7 +132,9 @@ export default async function AccountPage() {
                   </div>
                   <div>
                     <h1 className="text-2xl font-bold">30tools</h1>
-                    <p className="text-sm text-muted-foreground">Account Settings</p>
+                    <p className="text-sm text-muted-foreground">
+                      Account Settings
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -241,15 +253,27 @@ export default async function AccountPage() {
                   <CardTitle className="text-sm">Quick Actions</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
-                  <Button variant="ghost" size="sm" className="w-full justify-start">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full justify-start"
+                  >
                     <MailIcon className="h-4 w-4 mr-2" />
                     Email Preferences
                   </Button>
-                  <Button variant="ghost" size="sm" className="w-full justify-start">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full justify-start"
+                  >
                     <ShieldIcon className="h-4 w-4 mr-2" />
                     Privacy Settings
                   </Button>
-                  <Button variant="ghost" size="sm" className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10">
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    className="w-full justify-start text-destructive hover:text-destructive hover:bg-destructive/10"
+                  >
                     Delete Account
                   </Button>
                 </CardContent>

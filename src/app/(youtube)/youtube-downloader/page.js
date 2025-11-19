@@ -1,9 +1,11 @@
-import YouTubeDownloader from '@/components/tools/youtube/YouTubeDownloader';
-import UnstoryOpenmindCTA from '@/components/shared/UnstoryOpenmindCTA';
+import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
+import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
 
 export const metadata = {
-  title: "YouTube Video Downloader - Download YouTube Videos Free Online HD MP4 MP3",
-  description: "Download YouTube videos in HD, 4K quality for free. Convert YouTube to MP4, MP3 with our fast, secure downloader. No software installation required.",
+  title:
+    "YouTube Video Downloader - Download YouTube Videos Free Online HD MP4 MP3",
+  description:
+    "Download YouTube videos in HD, 4K quality for free. Convert YouTube to MP4, MP3 with our fast, secure downloader. No software installation required.",
   keywords: [
     // Primary high-volume keywords
     "youtube downloader",
@@ -148,11 +150,12 @@ export const metadata = {
     "youtube video downloader with metadata conversion tools",
     "youtube video downloader with thumbnail conversion tools",
     "youtube video downloader with playlist conversion tools",
-    "youtube video downloader with channel conversion tools"
+    "youtube video downloader with channel conversion tools",
   ].join(", "),
   openGraph: {
     title: "Free YouTube Video Downloader - Download HD Videos & MP3 Online",
-    description: "⚡ Download YouTube videos in HD, 4K quality. Convert YouTube to MP4, MP3 instantly. Fast, secure, unlimited downloads. No software needed.",
+    description:
+      "⚡ Download YouTube videos in HD, 4K quality. Convert YouTube to MP4, MP3 instantly. Fast, secure, unlimited downloads. No software needed.",
     url: "https://30tools.com/youtube-downloader",
     siteName: "30tools",
     type: "website",
@@ -161,51 +164,54 @@ export const metadata = {
         url: "/og-images/youtube-downloader.jpg",
         width: 1200,
         height: 630,
-        alt: "Free YouTube Video Downloader - Download HD Videos Online"
+        alt: "Free YouTube Video Downloader - Download HD Videos Online",
       },
-    ]
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Free YouTube Downloader - Download Videos & Convert to MP3",
-    description: "⚡ Download YouTube videos in HD, 4K. Convert to MP3 instantly. Fast, secure & unlimited downloads.",
-    images: ["/og-images/youtube-downloader.jpg"]
+    description:
+      "⚡ Download YouTube videos in HD, 4K. Convert to MP3 instantly. Fast, secure & unlimited downloads.",
+    images: ["/og-images/youtube-downloader.jpg"],
   },
   alternates: {
-    canonical: "https://30tools.com/youtube-downloader"
+    canonical: "https://30tools.com/youtube-downloader",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Free YouTube Video Downloader",
-  "alternateName": "YouTube to MP4 MP3 Converter",
-  "description": "Free online tool to download YouTube videos and convert them to MP4, MP3 formats in HD, 4K quality. No software installation required.",
-  "url": "https://30tools.com/youtube-downloader",
-  "applicationCategory": ["MultimediaApplication", "UtilitiesApplication"],
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "browserRequirements": "Requires JavaScript. Works on Chrome, Firefox, Safari, Edge",
-  "softwareVersion": "2.0",
-  "datePublished": "2024-01-01",
-  "dateModified": new Date().toISOString().split('T')[0],
-  "offers": {
+  name: "Free YouTube Video Downloader",
+  alternateName: "YouTube to MP4 MP3 Converter",
+  description:
+    "Free online tool to download YouTube videos and convert them to MP4, MP3 formats in HD, 4K quality. No software installation required.",
+  url: "https://30tools.com/youtube-downloader",
+  applicationCategory: ["MultimediaApplication", "UtilitiesApplication"],
+  operatingSystem: "Any",
+  permissions: "browser",
+  browserRequirements:
+    "Requires JavaScript. Works on Chrome, Firefox, Safari, Edge",
+  softwareVersion: "2.0",
+  datePublished: "2024-01-01",
+  dateModified: new Date().toISOString().split("T")[0],
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
+    price: "0",
+    priceCurrency: "USD",
+    availability: "https://schema.org/InStock",
   },
-  "provider": {
+  provider: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
-  "audience": {
+  audience: {
     "@type": "Audience",
-    "audienceType": "Content creators, students, general users"
+    audienceType: "Content creators, students, general users",
   },
-  "featureList": [
+  featureList: [
     "Download YouTube videos in HD, 1080p, 4K quality",
     "Convert YouTube videos to MP4 format",
     "Extract high-quality audio as MP3 from YouTube videos",
@@ -215,41 +221,43 @@ const jsonLd = {
     "Works seamlessly on all devices and web browsers",
     "Unlimited downloads with no restrictions",
     "Private and secure - no data stored",
-    "Support for YouTube Shorts and regular videos"
+    "Support for YouTube Shorts and regular videos",
   ],
-  "aggregateRating": {
+  aggregateRating: {
     "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "50847",
-    "bestRating": "5",
-    "worstRating": "1"
+    ratingValue: "4.9",
+    ratingCount: "50847",
+    bestRating: "5",
+    worstRating: "1",
   },
-  "review": [
+  review: [
     {
       "@type": "Review",
-      "author": {
+      author: {
         "@type": "Person",
-        "name": "Sarah M."
+        name: "Sarah M.",
       },
-      "reviewRating": {
+      reviewRating: {
         "@type": "Rating",
-        "ratingValue": "5"
+        ratingValue: "5",
       },
-      "reviewBody": "Best YouTube downloader I've ever used! Super fast downloads and the quality is amazing. No annoying ads or popups. Highly recommended!"
+      reviewBody:
+        "Best YouTube downloader I've ever used! Super fast downloads and the quality is amazing. No annoying ads or popups. Highly recommended!",
     },
     {
       "@type": "Review",
-      "author": {
+      author: {
         "@type": "Person",
-        "name": "Michael R."
+        name: "Michael R.",
       },
-      "reviewRating": {
+      reviewRating: {
         "@type": "Rating",
-        "ratingValue": "5"
+        ratingValue: "5",
       },
-      "reviewBody": "I use this daily for my content creation. The 4K download quality is perfect and it works flawlessly on both my phone and laptop."
+      reviewBody:
+        "I use this daily for my content creation. The 4K download quality is perfect and it works flawlessly on both my phone and laptop.",
     },
-  ]
+  ],
 };
 
 export default function YouTubeDownloaderPage() {
@@ -266,13 +274,26 @@ export default function YouTubeDownloaderPage() {
               YouTube Video Downloader
             </h1>
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download YouTube videos and audio in high definition quality for free. Our advanced YouTube downloader supports HD, Full HD, and 4K video downloads with lightning-fast speed. Convert YouTube videos to MP4 or extract high-quality MP3 audio files instantly without any software installation. Perfect for offline viewing, content creation, and educational purposes.
+              Download YouTube videos and audio in high definition quality for
+              free. Our advanced YouTube downloader supports HD, Full HD, and 4K
+              video downloads with lightning-fast speed. Convert YouTube videos
+              to MP4 or extract high-quality MP3 audio files instantly without
+              any software installation. Perfect for offline viewing, content
+              creation, and educational purposes.
             </p>
             <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">✓ HD Quality Downloads</span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">✓ MP4 & MP3 Support</span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">✓ No Registration Required</span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">✓ Unlimited Downloads</span>
+              <span className="bg-primary/10 px-3 py-1 rounded-full">
+                ✓ HD Quality Downloads
+              </span>
+              <span className="bg-primary/10 px-3 py-1 rounded-full">
+                ✓ MP4 & MP3 Support
+              </span>
+              <span className="bg-primary/10 px-3 py-1 rounded-full">
+                ✓ No Registration Required
+              </span>
+              <span className="bg-primary/10 px-3 py-1 rounded-full">
+                ✓ Unlimited Downloads
+              </span>
             </div>
           </div>
 
@@ -282,62 +303,113 @@ export default function YouTubeDownloaderPage() {
 
           <div className="mt-12 space-y-8">
             <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">How to Download YouTube Videos Online Free</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                How to Download YouTube Videos Online Free
+              </h2>
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-red-500 font-bold">1</span>
                   </div>
                   <h3 className="font-medium mb-2">Copy YouTube URL</h3>
-                  <p className="text-sm text-muted-foreground">Copy the YouTube video link you want to download from your browser address bar</p>
+                  <p className="text-sm text-muted-foreground">
+                    Copy the YouTube video link you want to download from your
+                    browser address bar
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-red-500 font-bold">2</span>
                   </div>
                   <h3 className="font-medium mb-2">Paste & Select Quality</h3>
-                  <p className="text-sm text-muted-foreground">Paste the URL and choose your preferred video quality or audio format</p>
+                  <p className="text-sm text-muted-foreground">
+                    Paste the URL and choose your preferred video quality or
+                    audio format
+                  </p>
                 </div>
                 <div className="text-center">
                   <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
                     <span className="text-red-500 font-bold">3</span>
                   </div>
                   <h3 className="font-medium mb-2">Download Instantly</h3>
-                  <p className="text-sm text-muted-foreground">Click download and save your YouTube video or audio file to your device</p>
+                  <p className="text-sm text-muted-foreground">
+                    Click download and save your YouTube video or audio file to
+                    your device
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">Why Choose Our YouTube Video Downloader?</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                Why Choose Our YouTube Video Downloader?
+              </h2>
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2 text-red-600">🎥 High Quality Video Downloads</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Download YouTube videos in original quality including HD 720p, Full HD 1080p, and even 4K resolution when available. Our YouTube downloader preserves the original video quality for the best viewing experience.</p>
+                  <h3 className="font-medium mb-2 text-red-600">
+                    🎥 High Quality Video Downloads
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Download YouTube videos in original quality including HD
+                    720p, Full HD 1080p, and even 4K resolution when available.
+                    Our YouTube downloader preserves the original video quality
+                    for the best viewing experience.
+                  </p>
 
-                  <h3 className="font-medium mb-2 text-red-600">🎵 Convert YouTube to MP3 Audio</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Extract high-quality audio from YouTube videos and save as MP3 files. Perfect for downloading music, podcasts, lectures, and audiobooks from YouTube with crystal-clear sound quality up to 320kbps.</p>
+                  <h3 className="font-medium mb-2 text-red-600">
+                    🎵 Convert YouTube to MP3 Audio
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Extract high-quality audio from YouTube videos and save as
+                    MP3 files. Perfect for downloading music, podcasts,
+                    lectures, and audiobooks from YouTube with crystal-clear
+                    sound quality up to 320kbps.
+                  </p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2 text-red-600">⚡ Lightning Fast Download Speed</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Our optimized servers ensure super-fast YouTube video downloads. No waiting times, no slow downloads - get your YouTube videos downloaded in seconds, not minutes.</p>
+                  <h3 className="font-medium mb-2 text-red-600">
+                    ⚡ Lightning Fast Download Speed
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Our optimized servers ensure super-fast YouTube video
+                    downloads. No waiting times, no slow downloads - get your
+                    YouTube videos downloaded in seconds, not minutes.
+                  </p>
 
-                  <h3 className="font-medium mb-2 text-red-600">🔒 100% Safe and Secure</h3>
-                  <p className="text-sm text-muted-foreground mb-4">Your privacy is our priority. All YouTube downloads are processed securely without storing any personal data. No malware, no viruses, just clean and safe YouTube video downloads.</p>
+                  <h3 className="font-medium mb-2 text-red-600">
+                    🔒 100% Safe and Secure
+                  </h3>
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Your privacy is our priority. All YouTube downloads are
+                    processed securely without storing any personal data. No
+                    malware, no viruses, just clean and safe YouTube video
+                    downloads.
+                  </p>
                 </div>
               </div>
             </div>
 
             <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4 text-center">What Our Users Say</h2>
-              <p className="text-center text-muted-foreground mb-6">Join thousands of satisfied users who trust our YouTube downloader</p>
+              <h2 className="text-2xl font-semibold mb-4 text-center">
+                What Our Users Say
+              </h2>
+              <p className="text-center text-muted-foreground mb-6">
+                Join thousands of satisfied users who trust our YouTube
+                downloader
+              </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
-                    <span className="ml-2 text-sm text-muted-foreground">5.0</span>
+                    <span className="ml-2 text-sm text-muted-foreground">
+                      5.0
+                    </span>
                   </div>
-                  <p className="text-sm mb-3">"Best YouTube downloader I've ever used! Super fast downloads and the quality is amazing. No annoying ads or popups. Highly recommended!"</p>
+                  <p className="text-sm mb-3">
+                    "Best YouTube downloader I've ever used! Super fast
+                    downloads and the quality is amazing. No annoying ads or
+                    popups. Highly recommended!"
+                  </p>
                   <p className="text-xs font-medium">- Sarah M.</p>
                   <p className="text-xs text-muted-foreground">Verified User</p>
                 </div>
@@ -345,19 +417,33 @@ export default function YouTubeDownloaderPage() {
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
-                    <span className="ml-2 text-sm text-muted-foreground">5.0</span>
+                    <span className="ml-2 text-sm text-muted-foreground">
+                      5.0
+                    </span>
                   </div>
-                  <p className="text-sm mb-3">"I use this daily for my content creation. The 4K download quality is perfect and it works flawlessly on both my phone and laptop. Love it!"</p>
+                  <p className="text-sm mb-3">
+                    "I use this daily for my content creation. The 4K download
+                    quality is perfect and it works flawlessly on both my phone
+                    and laptop. Love it!"
+                  </p>
                   <p className="text-xs font-medium">- Michael R.</p>
-                  <p className="text-xs text-muted-foreground">Content Creator</p>
+                  <p className="text-xs text-muted-foreground">
+                    Content Creator
+                  </p>
                 </div>
 
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
-                    <span className="ml-2 text-sm text-muted-foreground">5.0</span>
+                    <span className="ml-2 text-sm text-muted-foreground">
+                      5.0
+                    </span>
                   </div>
-                  <p className="text-sm mb-3">"Finally found a YouTube downloader that actually works! No registration needed, no payment walls. Just paste and download. Simple and effective!"</p>
+                  <p className="text-sm mb-3">
+                    "Finally found a YouTube downloader that actually works! No
+                    registration needed, no payment walls. Just paste and
+                    download. Simple and effective!"
+                  </p>
                   <p className="text-xs font-medium">- Jessica L.</p>
                   <p className="text-xs text-muted-foreground">Student</p>
                 </div>
@@ -365,56 +451,106 @@ export default function YouTubeDownloaderPage() {
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
-                    <span className="ml-2 text-sm text-muted-foreground">5.0</span>
+                    <span className="ml-2 text-sm text-muted-foreground">
+                      5.0
+                    </span>
                   </div>
-                  <p className="text-sm mb-3">"The MP3 conversion feature is outstanding! Perfect for downloading my favorite music and podcasts. Audio quality is crystal clear at 320kbps."</p>
+                  <p className="text-sm mb-3">
+                    "The MP3 conversion feature is outstanding! Perfect for
+                    downloading my favorite music and podcasts. Audio quality is
+                    crystal clear at 320kbps."
+                  </p>
                   <p className="text-xs font-medium">- David K.</p>
-                  <p className="text-xs text-muted-foreground">Music Enthusiast</p>
+                  <p className="text-xs text-muted-foreground">
+                    Music Enthusiast
+                  </p>
                 </div>
 
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
-                    <span className="ml-2 text-sm text-muted-foreground">5.0</span>
+                    <span className="ml-2 text-sm text-muted-foreground">
+                      5.0
+                    </span>
                   </div>
-                  <p className="text-sm mb-3">"As a teacher, I download educational videos for my classroom. This tool is reliable, fast, and completely safe. My students love the offline lessons!"</p>
+                  <p className="text-sm mb-3">
+                    "As a teacher, I download educational videos for my
+                    classroom. This tool is reliable, fast, and completely safe.
+                    My students love the offline lessons!"
+                  </p>
                   <p className="text-xs font-medium">- Emily T.</p>
-                  <p className="text-xs text-muted-foreground">High School Teacher</p>
+                  <p className="text-xs text-muted-foreground">
+                    High School Teacher
+                  </p>
                 </div>
 
                 <div className="bg-background rounded-lg p-4 border">
                   <div className="flex items-center mb-2">
                     <div className="flex text-yellow-500 text-lg">★★★★★</div>
-                    <span className="ml-2 text-sm text-muted-foreground">5.0</span>
+                    <span className="ml-2 text-sm text-muted-foreground">
+                      5.0
+                    </span>
                   </div>
-                  <p className="text-sm mb-3">"Incredible tool! I've been using it for months to download workout videos. No buffering during my exercises anymore. Thank you for making this free!"</p>
+                  <p className="text-sm mb-3">
+                    "Incredible tool! I've been using it for months to download
+                    workout videos. No buffering during my exercises anymore.
+                    Thank you for making this free!"
+                  </p>
                   <p className="text-xs font-medium">- Alex P.</p>
                   <p className="text-xs text-muted-foreground">Fitness Coach</p>
                 </div>
               </div>
               <div className="mt-6 text-center">
-                <p className="text-sm text-muted-foreground">⭐ Rated 5.0 out of 5 stars by over 50,000+ users worldwide</p>
+                <p className="text-sm text-muted-foreground">
+                  ⭐ Rated 5.0 out of 5 stars by over 50,000+ users worldwide
+                </p>
               </div>
             </div>
 
             <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">Frequently Asked Questions</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                Frequently Asked Questions
+              </h2>
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-medium mb-2">Is it legal to download YouTube videos?</h3>
-                  <p className="text-sm text-muted-foreground">You can download YouTube videos for personal use, educational purposes, or content you own. Always respect copyright laws and YouTube's terms of service when downloading videos.</p>
+                  <h3 className="font-medium mb-2">
+                    Is it legal to download YouTube videos?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    You can download YouTube videos for personal use,
+                    educational purposes, or content you own. Always respect
+                    copyright laws and YouTube's terms of service when
+                    downloading videos.
+                  </p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">What video formats are supported?</h3>
-                  <p className="text-sm text-muted-foreground">Our YouTube downloader supports MP4 (video) and MP3 (audio) formats. MP4 files work on all devices and media players, while MP3 is perfect for audio-only content.</p>
+                  <h3 className="font-medium mb-2">
+                    What video formats are supported?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Our YouTube downloader supports MP4 (video) and MP3 (audio)
+                    formats. MP4 files work on all devices and media players,
+                    while MP3 is perfect for audio-only content.
+                  </p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">Can I download YouTube playlists?</h3>
-                  <p className="text-sm text-muted-foreground">Currently, you can download individual YouTube videos. For playlist downloads, you'll need to copy and paste each video URL separately.</p>
+                  <h3 className="font-medium mb-2">
+                    Can I download YouTube playlists?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Currently, you can download individual YouTube videos. For
+                    playlist downloads, you'll need to copy and paste each video
+                    URL separately.
+                  </p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">Is there a download limit?</h3>
-                  <p className="text-sm text-muted-foreground">No, there are no download limits! You can download as many YouTube videos as you want, completely free of charge.</p>
+                  <h3 className="font-medium mb-2">
+                    Is there a download limit?
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    No, there are no download limits! You can download as many
+                    YouTube videos as you want, completely free of charge.
+                  </p>
                 </div>
               </div>
             </div>

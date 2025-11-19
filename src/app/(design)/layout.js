@@ -1,11 +1,11 @@
-'use client';
-import { usePathname } from 'next/navigation';
-import DesignToolsNavbar from '@/components/navigation/DesignToolsNavbar';
-import DesignToolsFooter from '@/components/footers/DesignToolsFooter';
+"use client";
+import { usePathname } from "next/navigation";
+import DesignToolsNavbar from "@/components/navigation/DesignToolsNavbar";
+import DesignToolsFooter from "@/components/footers/DesignToolsFooter";
 
 export default function DesignToolsLayout({ children }) {
   const pathname = usePathname();
-  const isWhiteboard = pathname === '/whiteboard';
+  const isWhiteboard = pathname === "/whiteboard";
 
   // If it's the whiteboard page, render only the children without nav/footer
   if (isWhiteboard) {
@@ -16,9 +16,7 @@ export default function DesignToolsLayout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <DesignToolsNavbar />
-      <main className="flex-1">
-        {children}
-      </main>
+      <main className="flex-1">{children}</main>
       <DesignToolsFooter />
     </div>
   );

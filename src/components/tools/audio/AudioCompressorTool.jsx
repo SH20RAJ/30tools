@@ -1,14 +1,20 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Slider } from '@/components/ui/slider';
-import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
+import { useState, useRef, useCallback } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
+import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
 import {
   ArrowLeftIcon,
   UploadIcon,
@@ -19,9 +25,9 @@ import {
   FileIcon,
   AlertCircleIcon,
   CheckCircleIcon,
-  RefreshCwIcon
-} from 'lucide-react';
-import Link from 'next/link';
+  RefreshCwIcon,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function AudioCompressorTool() {
   const [files, setFiles] = useState([]);
@@ -32,15 +38,22 @@ export default function AudioCompressorTool() {
   const audioRef = useRef(null);
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
 
-  const supportedFormats = ['audio/mpeg', 'audio/wav', 'audio/flac', 'audio/ogg', 'audio/aac', 'audio/mp4'];
+  const supportedFormats = [
+    "audio/mpeg",
+    "audio/wav",
+    "audio/flac",
+    "audio/ogg",
+    "audio/aac",
+    "audio/mp4",
+  ];
   const maxFileSize = 100 * 1024 * 1024; // 100MB
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const sizes = ["Bytes", "KB", "MB", "GB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const calculateSavings = (originalSize, compressedSize) => {
@@ -50,7 +63,7 @@ export default function AudioCompressorTool() {
 
   const handleFileSelect = (event) => {
     const selectedFiles = Array.from(event.target.files);
-    const validFiles = selectedFiles.filter(file => {
+    const validFiles = selectedFiles.filter((file) => {
       if (!supportedFormats.includes(file.type)) {
         alert(`${file.name} is not a supported audio format.`);
         return false;
@@ -62,98 +75,111 @@ export default function AudioCompressorTool() {
       return true;
     });
 
-    const newFiles = validFiles.map(file => ({
+    const newFiles = validFiles.map((file) => ({
       id: Date.now() + Math.random(),
       file,
       originalSize: file.size,
       compressedSize: null,
       compressedBlob: null,
-      status: 'pending',
-      url: URL.createObjectURL(file)
+      status: "pending",
+      url: URL.createObjectURL(file),
     }));
 
-    setFiles(prev => [...prev, ...newFiles]);
+    setFiles((prev) => [...prev, ...newFiles]);
   };
 
-  const compressAudio = useCallback(async (fileData) => {
-    return new Promise((resolve) => {
-      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-      const reader = new FileReader();
+  const compressAudio = useCallback(
+    async (fileData) => {
+      return new Promise((resolve) => {
+        const audioContext = new (window.AudioContext ||
+          window.webkitAudioContext)();
+        const reader = new FileReader();
 
-      reader.onload = async (e) => {
-        try {
-          const arrayBuffer = e.target.result;
-          const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+        reader.onload = async (e) => {
+          try {
+            const arrayBuffer = e.target.result;
+            const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
 
-          // Simulate compression by adjusting quality
-          const qualityFactor = quality[0] / 100;
-          const compressionRatio = 1 - (qualityFactor * 0.5); // Simulate up to 50% compression
+            // Simulate compression by adjusting quality
+            const qualityFactor = quality[0] / 100;
+            const compressionRatio = 1 - qualityFactor * 0.5; // Simulate up to 50% compression
 
-          // Create a new audio buffer with adjusted parameters
-          const sampleRate = Math.floor(audioBuffer.sampleRate * qualityFactor);
-          const numberOfChannels = audioBuffer.numberOfChannels;
-          const length = audioBuffer.length;
+            // Create a new audio buffer with adjusted parameters
+            const sampleRate = Math.floor(
+              audioBuffer.sampleRate * qualityFactor,
+            );
+            const numberOfChannels = audioBuffer.numberOfChannels;
+            const length = audioBuffer.length;
 
-          // For demonstration, we'll create a compressed blob by encoding with lower quality
-          // In a real implementation, you'd use Web Audio API to re-encode
-          const compressedSize = Math.floor(fileData.originalSize * compressionRatio);
+            // For demonstration, we'll create a compressed blob by encoding with lower quality
+            // In a real implementation, you'd use Web Audio API to re-encode
+            const compressedSize = Math.floor(
+              fileData.originalSize * compressionRatio,
+            );
 
-          // Create a mock compressed blob (in reality, you'd need a proper audio encoder)
-          const mockCompressedBlob = new Blob([arrayBuffer.slice(0, compressedSize)], {
-            type: fileData.file.type
-          });
+            // Create a mock compressed blob (in reality, you'd need a proper audio encoder)
+            const mockCompressedBlob = new Blob(
+              [arrayBuffer.slice(0, compressedSize)],
+              {
+                type: fileData.file.type,
+              },
+            );
 
-          resolve({
-            compressedBlob: mockCompressedBlob,
-            compressedSize: compressedSize
-          });
-        } catch (error) {
-          console.error('Compression error:', error);
-          resolve({
-            compressedBlob: fileData.file,
-            compressedSize: fileData.originalSize
-          });
-        }
-      };
+            resolve({
+              compressedBlob: mockCompressedBlob,
+              compressedSize: compressedSize,
+            });
+          } catch (error) {
+            console.error("Compression error:", error);
+            resolve({
+              compressedBlob: fileData.file,
+              compressedSize: fileData.originalSize,
+            });
+          }
+        };
 
-      reader.readAsArrayBuffer(fileData.file);
-    });
-  }, [quality]);
+        reader.readAsArrayBuffer(fileData.file);
+      });
+    },
+    [quality],
+  );
 
   const handleCompress = async () => {
     setIsCompressing(true);
     setProgress(0);
 
-    const pendingFiles = files.filter(f => f.status === 'pending');
+    const pendingFiles = files.filter((f) => f.status === "pending");
 
     for (let i = 0; i < pendingFiles.length; i++) {
       const fileData = pendingFiles[i];
 
-      setFiles(prev => prev.map(f =>
-        f.id === fileData.id
-          ? { ...f, status: 'compressing' }
-          : f
-      ));
+      setFiles((prev) =>
+        prev.map((f) =>
+          f.id === fileData.id ? { ...f, status: "compressing" } : f,
+        ),
+      );
 
       try {
         const result = await compressAudio(fileData);
 
-        setFiles(prev => prev.map(f =>
-          f.id === fileData.id
-            ? {
-              ...f,
-              status: 'completed',
-              compressedBlob: result.compressedBlob,
-              compressedSize: result.compressedSize
-            }
-            : f
-        ));
+        setFiles((prev) =>
+          prev.map((f) =>
+            f.id === fileData.id
+              ? {
+                  ...f,
+                  status: "completed",
+                  compressedBlob: result.compressedBlob,
+                  compressedSize: result.compressedSize,
+                }
+              : f,
+          ),
+        );
       } catch (error) {
-        setFiles(prev => prev.map(f =>
-          f.id === fileData.id
-            ? { ...f, status: 'error' }
-            : f
-        ));
+        setFiles((prev) =>
+          prev.map((f) =>
+            f.id === fileData.id ? { ...f, status: "error" } : f,
+          ),
+        );
       }
 
       setProgress(((i + 1) / pendingFiles.length) * 100);
@@ -165,7 +191,7 @@ export default function AudioCompressorTool() {
   const downloadFile = (fileData) => {
     if (fileData.compressedBlob) {
       const url = URL.createObjectURL(fileData.compressedBlob);
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = url;
       a.download = `compressed_${fileData.file.name}`;
       document.body.appendChild(a);
@@ -176,23 +202,23 @@ export default function AudioCompressorTool() {
   };
 
   const downloadAll = () => {
-    files.filter(f => f.status === 'completed').forEach(downloadFile);
+    files.filter((f) => f.status === "completed").forEach(downloadFile);
   };
 
   const clearFiles = () => {
-    files.forEach(f => {
+    files.forEach((f) => {
       if (f.url) URL.revokeObjectURL(f.url);
     });
     setFiles([]);
   };
 
   const removeFile = (id) => {
-    setFiles(prev => {
-      const fileToRemove = prev.find(f => f.id === id);
+    setFiles((prev) => {
+      const fileToRemove = prev.find((f) => f.id === id);
       if (fileToRemove?.url) {
         URL.revokeObjectURL(fileToRemove.url);
       }
-      return prev.filter(f => f.id !== id);
+      return prev.filter((f) => f.id !== id);
     });
   };
 
@@ -211,13 +237,13 @@ export default function AudioCompressorTool() {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'pending':
+      case "pending":
         return <FileIcon className="h-4 w-4 text-muted-foreground" />;
-      case 'compressing':
+      case "compressing":
         return <RefreshCwIcon className="h-4 w-4 text-primary animate-spin" />;
-      case 'completed':
+      case "completed":
         return <CheckCircleIcon className="h-4 w-4 text-primary" />;
-      case 'error':
+      case "error":
         return <AlertCircleIcon className="h-4 w-4 text-destructive" />;
       default:
         return <FileIcon className="h-4 w-4 text-muted-foreground" />;
@@ -226,14 +252,26 @@ export default function AudioCompressorTool() {
 
   const getStatusBadge = (status) => {
     switch (status) {
-      case 'pending':
+      case "pending":
         return <Badge variant="outline">Pending</Badge>;
-      case 'compressing':
-        return <Badge variant="outline" className="text-primary">Compressing...</Badge>;
-      case 'completed':
-        return <Badge variant="outline" className="text-primary">Complete</Badge>;
-      case 'error':
-        return <Badge variant="outline" className="text-destructive">Error</Badge>;
+      case "compressing":
+        return (
+          <Badge variant="outline" className="text-primary">
+            Compressing...
+          </Badge>
+        );
+      case "completed":
+        return (
+          <Badge variant="outline" className="text-primary">
+            Complete
+          </Badge>
+        );
+      case "error":
+        return (
+          <Badge variant="outline" className="text-destructive">
+            Error
+          </Badge>
+        );
       default:
         return <Badge variant="outline">Unknown</Badge>;
     }
@@ -259,7 +297,9 @@ export default function AudioCompressorTool() {
             </div>
             <div>
               <h1 className="text-3xl font-bold">Audio Compressor</h1>
-              <p className="text-muted-foreground">Reduce audio file sizes while maintaining quality</p>
+              <p className="text-muted-foreground">
+                Reduce audio file sizes while maintaining quality
+              </p>
             </div>
           </div>
 
@@ -308,7 +348,9 @@ export default function AudioCompressorTool() {
 
                 {/* File Upload */}
                 <div className="space-y-3">
-                  <Label className="text-base font-medium">Upload Audio Files</Label>
+                  <Label className="text-base font-medium">
+                    Upload Audio Files
+                  </Label>
                   <Button
                     onClick={() => fileInputRef.current?.click()}
                     variant="outline"
@@ -340,13 +382,16 @@ export default function AudioCompressorTool() {
                     <div className="space-y-2">
                       <Button
                         onClick={handleCompress}
-                        disabled={isCompressing || files.every(f => f.status !== 'pending')}
+                        disabled={
+                          isCompressing ||
+                          files.every((f) => f.status !== "pending")
+                        }
                         className="w-full"
                       >
-                        {isCompressing ? 'Compressing...' : 'Compress Audio'}
+                        {isCompressing ? "Compressing..." : "Compress Audio"}
                       </Button>
 
-                      {files.some(f => f.status === 'completed') && (
+                      {files.some((f) => f.status === "completed") && (
                         <Button
                           onClick={downloadAll}
                           variant="outline"
@@ -388,7 +433,9 @@ export default function AudioCompressorTool() {
                 <div className="text-center space-y-4">
                   <MusicIcon className="h-12 w-12 text-muted-foreground mx-auto" />
                   <div>
-                    <h3 className="text-lg font-medium">No audio files uploaded</h3>
+                    <h3 className="text-lg font-medium">
+                      No audio files uploaded
+                    </h3>
                     <p className="text-muted-foreground">
                       Upload audio files to start compressing
                     </p>
@@ -408,14 +455,29 @@ export default function AudioCompressorTool() {
                         <div className="flex items-center gap-3 flex-1 min-w-0">
                           {getStatusIcon(fileData.status)}
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-medium truncate">{fileData.file.name}</h4>
+                            <h4 className="font-medium truncate">
+                              {fileData.file.name}
+                            </h4>
                             <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                              <span>Original: {formatFileSize(fileData.originalSize)}</span>
+                              <span>
+                                Original:{" "}
+                                {formatFileSize(fileData.originalSize)}
+                              </span>
                               {fileData.compressedSize && (
                                 <>
-                                  <span>Compressed: {formatFileSize(fileData.compressedSize)}</span>
-                                  <Badge variant="outline" className="text-primary">
-                                    {calculateSavings(fileData.originalSize, fileData.compressedSize)}% smaller
+                                  <span>
+                                    Compressed:{" "}
+                                    {formatFileSize(fileData.compressedSize)}
+                                  </span>
+                                  <Badge
+                                    variant="outline"
+                                    className="text-primary"
+                                  >
+                                    {calculateSavings(
+                                      fileData.originalSize,
+                                      fileData.compressedSize,
+                                    )}
+                                    % smaller
                                   </Badge>
                                 </>
                               )}
@@ -438,7 +500,7 @@ export default function AudioCompressorTool() {
                             )}
                           </Button>
 
-                          {fileData.status === 'completed' && (
+                          {fileData.status === "completed" && (
                             <Button
                               variant="outline"
                               size="sm"
@@ -493,30 +555,42 @@ export default function AudioCompressorTool() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h4 className="font-medium mb-1">What audio formats are supported?</h4>
+                <h4 className="font-medium mb-1">
+                  What audio formats are supported?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  We support MP3, WAV, FLAC, OGG, and AAC audio formats for compression.
+                  We support MP3, WAV, FLAC, OGG, and AAC audio formats for
+                  compression.
                 </p>
               </div>
 
               <div>
-                <h4 className="font-medium mb-1">How much can I compress audio files?</h4>
+                <h4 className="font-medium mb-1">
+                  How much can I compress audio files?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  Depending on the quality setting, you can reduce file sizes by 20-90% while maintaining good audio quality.
+                  Depending on the quality setting, you can reduce file sizes by
+                  20-90% while maintaining good audio quality.
                 </p>
               </div>
 
               <div>
-                <h4 className="font-medium mb-1">Are my audio files stored anywhere?</h4>
+                <h4 className="font-medium mb-1">
+                  Are my audio files stored anywhere?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  No, all audio processing happens in your browser. Your files never leave your device.
+                  No, all audio processing happens in your browser. Your files
+                  never leave your device.
                 </p>
               </div>
 
               <div>
-                <h4 className="font-medium mb-1">What quality setting should I use?</h4>
+                <h4 className="font-medium mb-1">
+                  What quality setting should I use?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  For music, use 70-90%. For speech/podcasts, 50-70% is usually sufficient. Higher values = better quality but larger files.
+                  For music, use 70-90%. For speech/podcasts, 50-70% is usually
+                  sufficient. Higher values = better quality but larger files.
                 </p>
               </div>
             </CardContent>

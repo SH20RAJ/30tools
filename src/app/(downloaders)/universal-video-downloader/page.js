@@ -1,8 +1,10 @@
-import UniversalVideoDownloader from '@/components/tools/downloaders/UniversalVideoDownloader';
+import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Universal Video Downloader - Download from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble",
-  description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more platforms. No watermark downloads, multiple quality options, and no registration required.",
+  title:
+    "Universal Video Downloader - Download from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble",
+  description:
+    "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more platforms. No watermark downloads, multiple quality options, and no registration required.",
   keywords: [
     "universal video downloader",
     "video downloader",
@@ -25,11 +27,12 @@ export const metadata = {
     "free video downloader",
     "no watermark video downloader",
     "multiple platform video downloader",
-    "universal social media downloader"
+    "universal social media downloader",
   ].join(", "),
   openGraph: {
     title: "Universal Video Downloader - Download Videos from Any Platform",
-    description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark, multiple quality options, no registration.",
+    description:
+      "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark, multiple quality options, no registration.",
     url: "https://30tools.com/universal-video-downloader",
     siteName: "30tools",
     images: [
@@ -37,15 +40,16 @@ export const metadata = {
         url: "/og-images/universal-video-downloader.jpg",
         width: 1200,
         height: 630,
-        alt: "Universal Video Downloader - Download from Multiple Platforms"
+        alt: "Universal Video Downloader - Download from Multiple Platforms",
       },
     ],
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Universal Video Downloader - All-in-One Video Downloader",
-    description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more platforms.",
+    description:
+      "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more platforms.",
     images: ["/og-images/universal-video-downloader.jpg"],
   },
 };

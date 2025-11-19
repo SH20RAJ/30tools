@@ -1,99 +1,158 @@
-'use client';
+"use client";
 
-import React, { useState, useCallback } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  Link, 
-  Download, 
-  CheckCircle2, 
-  XCircle, 
+import React, { useState, useCallback } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  Link,
+  Download,
+  CheckCircle2,
+  XCircle,
   Clock,
   Info,
   Search,
   AlertTriangle,
   Globe,
   ExternalLink,
-  Zap
-} from 'lucide-react';
+  Zap,
+} from "lucide-react";
 
 export default function BrokenLinkChecker() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [links, setLinks] = useState([]);
   const [isScanning, setIsScanning] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   // Simulate broken link checking
   const simulateLinkCheck = useCallback(async (linkUrl, isInternal) => {
-    await new Promise(resolve => setTimeout(resolve, 200 + Math.random() * 800));
-    
+    await new Promise((resolve) =>
+      setTimeout(resolve, 200 + Math.random() * 800),
+    );
+
     const scenarios = [
-      { status: 200, working: true, responseTime: Math.floor(Math.random() * 1000) + 100 },
-      { status: 404, working: false, responseTime: Math.floor(Math.random() * 2000) + 500, error: 'Not Found' },
-      { status: 301, working: true, responseTime: Math.floor(Math.random() * 1500) + 200, redirectTo: 'https://example.com/new-page' },
-      { status: 302, working: true, responseTime: Math.floor(Math.random() * 1500) + 200, redirectTo: 'https://example.com/temp-page' },
-      { status: 403, working: false, responseTime: Math.floor(Math.random() * 1000) + 300, error: 'Forbidden' },
-      { status: 500, working: false, responseTime: Math.floor(Math.random() * 3000) + 1000, error: 'Server Error' },
-      { status: 0, working: false, responseTime: 0, error: 'Connection Timeout' }
+      {
+        status: 200,
+        working: true,
+        responseTime: Math.floor(Math.random() * 1000) + 100,
+      },
+      {
+        status: 404,
+        working: false,
+        responseTime: Math.floor(Math.random() * 2000) + 500,
+        error: "Not Found",
+      },
+      {
+        status: 301,
+        working: true,
+        responseTime: Math.floor(Math.random() * 1500) + 200,
+        redirectTo: "https://example.com/new-page",
+      },
+      {
+        status: 302,
+        working: true,
+        responseTime: Math.floor(Math.random() * 1500) + 200,
+        redirectTo: "https://example.com/temp-page",
+      },
+      {
+        status: 403,
+        working: false,
+        responseTime: Math.floor(Math.random() * 1000) + 300,
+        error: "Forbidden",
+      },
+      {
+        status: 500,
+        working: false,
+        responseTime: Math.floor(Math.random() * 3000) + 1000,
+        error: "Server Error",
+      },
+      {
+        status: 0,
+        working: false,
+        responseTime: 0,
+        error: "Connection Timeout",
+      },
     ];
-    
+
     const result = scenarios[Math.floor(Math.random() * scenarios.length)];
-    
+
     return {
       url: linkUrl,
       isInternal,
       ...result,
-      anchorText: `Link to ${linkUrl.split('/').pop() || 'homepage'}`,
-      foundOn: Math.floor(Math.random() * 5) + 1
+      anchorText: `Link to ${linkUrl.split("/").pop() || "homepage"}`,
+      foundOn: Math.floor(Math.random() * 5) + 1,
     };
   }, []);
 
   const scanWebsite = async () => {
     if (!url.trim()) {
-      setError('Please enter a website URL');
+      setError("Please enter a website URL");
       return;
     }
 
     if (!url.match(/^https?:\/\/.+/)) {
-      setError('Please enter a valid URL starting with http:// or https://');
+      setError("Please enter a valid URL starting with http:// or https://");
       return;
     }
 
     setIsScanning(true);
-    setError('');
+    setError("");
     setProgress(0);
     setLinks([]);
 
     try {
       // Simulate finding links
       setProgress(10);
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
       const baseUrl = new URL(url).origin;
       const sampleLinks = [];
-      
+
       // Generate sample internal links
-      const internalPaths = ['', '/about', '/contact', '/services', '/blog', '/products', '/privacy', '/terms'];
+      const internalPaths = [
+        "",
+        "/about",
+        "/contact",
+        "/services",
+        "/blog",
+        "/products",
+        "/privacy",
+        "/terms",
+      ];
       for (let i = 0; i < 15; i++) {
-        const path = internalPaths[Math.floor(Math.random() * internalPaths.length)];
+        const path =
+          internalPaths[Math.floor(Math.random() * internalPaths.length)];
         sampleLinks.push(`${baseUrl}${path}`);
       }
-      
+
       // Generate sample external links
-      const externalDomains = ['google.com', 'facebook.com', 'twitter.com', 'linkedin.com', 'github.com'];
+      const externalDomains = [
+        "google.com",
+        "facebook.com",
+        "twitter.com",
+        "linkedin.com",
+        "github.com",
+      ];
       for (let i = 0; i < 10; i++) {
-        const domain = externalDomains[Math.floor(Math.random() * externalDomains.length)];
+        const domain =
+          externalDomains[Math.floor(Math.random() * externalDomains.length)];
         sampleLinks.push(`https://${domain}`);
       }
 
       setProgress(30);
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
       // Check each link
       const newLinks = [];
@@ -106,7 +165,7 @@ export default function BrokenLinkChecker() {
         setProgress(30 + ((i + 1) / sampleLinks.length) * 70);
       }
     } catch (err) {
-      setError('An error occurred while scanning the website');
+      setError("An error occurred while scanning the website");
     } finally {
       setIsScanning(false);
     }
@@ -116,23 +175,33 @@ export default function BrokenLinkChecker() {
     if (links.length === 0) return;
 
     const csvContent = [
-      ['URL', 'Status', 'Response Time (ms)', 'Type', 'Anchor Text', 'Found On Pages', 'Error/Redirect'].join(','),
-      ...links.map(l => [
-        `"${l.url}"`,
-        l.status,
-        l.responseTime,
-        l.isInternal ? 'Internal' : 'External',
-        `"${l.anchorText}"`,
-        l.foundOn,
-        `"${l.error || l.redirectTo || ''}"`
-      ].join(','))
-    ].join('\n');
+      [
+        "URL",
+        "Status",
+        "Response Time (ms)",
+        "Type",
+        "Anchor Text",
+        "Found On Pages",
+        "Error/Redirect",
+      ].join(","),
+      ...links.map((l) =>
+        [
+          `"${l.url}"`,
+          l.status,
+          l.responseTime,
+          l.isInternal ? "Internal" : "External",
+          `"${l.anchorText}"`,
+          l.foundOn,
+          `"${l.error || l.redirectTo || ""}"`,
+        ].join(","),
+      ),
+    ].join("\n");
 
-    const blob = new Blob([csvContent], { type: 'text/csv' });
+    const blob = new Blob([csvContent], { type: "text/csv" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = `broken-links-${new Date().toISOString().split('T')[0]}.csv`;
+    a.download = `broken-links-${new Date().toISOString().split("T")[0]}.csv`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -150,18 +219,18 @@ export default function BrokenLinkChecker() {
   };
 
   const getResponseTimeColor = (time) => {
-    if (time > 3000) return 'text-destructive';
-    if (time > 1000) return 'text-primary';
-    return 'text-primary';
+    if (time > 3000) return "text-destructive";
+    if (time > 1000) return "text-primary";
+    return "text-primary";
   };
 
   const stats = {
     total: links.length,
-    working: links.filter(l => l.working).length,
-    broken: links.filter(l => !l.working).length,
-    redirects: links.filter(l => l.status >= 300 && l.status < 400).length,
-    internal: links.filter(l => l.isInternal).length,
-    external: links.filter(l => !l.isInternal).length
+    working: links.filter((l) => l.working).length,
+    broken: links.filter((l) => !l.working).length,
+    redirects: links.filter((l) => l.status >= 300 && l.status < 400).length,
+    internal: links.filter((l) => l.isInternal).length,
+    external: links.filter((l) => !l.isInternal).length,
   };
 
   return (
@@ -171,9 +240,12 @@ export default function BrokenLinkChecker() {
         <div className="inline-flex items-center justify-center w-16 h-16 bg-destructive/20 rounded-full mb-4">
           <Link className="h-8 w-8 text-destructive" />
         </div>
-        <h1 className="text-4xl font-bold text-foreground">Broken Link Checker</h1>
+        <h1 className="text-4xl font-bold text-foreground">
+          Broken Link Checker
+        </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages.
+          Find broken links on any website. Check for 404 errors, redirect
+          chains, and link health across entire websites or specific pages.
         </p>
       </div>
 
@@ -186,11 +258,12 @@ export default function BrokenLinkChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Fix broken links to improve user experience and search engine rankings.
+              Fix broken links to improve user experience and search engine
+              rankings.
             </p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="text-center pb-3">
             <Globe className="h-8 w-8 text-primary mx-auto mb-2" />
@@ -198,11 +271,12 @@ export default function BrokenLinkChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Monitor website health by identifying and fixing broken internal and external links.
+              Monitor website health by identifying and fixing broken internal
+              and external links.
             </p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="text-center pb-3">
             <Zap className="h-8 w-8 text-primary mx-auto mb-2" />
@@ -210,7 +284,8 @@ export default function BrokenLinkChecker() {
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Quickly scan entire websites or specific pages for broken links and get detailed reports.
+              Quickly scan entire websites or specific pages for broken links
+              and get detailed reports.
             </p>
           </CardContent>
         </Card>
@@ -221,7 +296,8 @@ export default function BrokenLinkChecker() {
         <CardHeader>
           <CardTitle>Scan Website for Broken Links</CardTitle>
           <CardDescription>
-            Enter a website URL to scan for broken links. The tool will check both internal and external links.
+            Enter a website URL to scan for broken links. The tool will check
+            both internal and external links.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -244,8 +320,8 @@ export default function BrokenLinkChecker() {
           )}
 
           <div className="flex gap-4">
-            <Button 
-              onClick={scanWebsite} 
+            <Button
+              onClick={scanWebsite}
               disabled={isScanning}
               className="flex-1"
             >
@@ -261,7 +337,7 @@ export default function BrokenLinkChecker() {
                 </>
               )}
             </Button>
-            
+
             {links.length > 0 && (
               <Button onClick={exportResults} variant="outline">
                 <Download className="mr-2 h-4 w-4" />
@@ -287,37 +363,49 @@ export default function BrokenLinkChecker() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.total}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.total}
+              </div>
               <div className="text-sm text-muted-foreground">Total Links</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.working}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.working}
+              </div>
               <div className="text-sm text-muted-foreground">Working</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-destructive">{stats.broken}</div>
+              <div className="text-2xl font-bold text-destructive">
+                {stats.broken}
+              </div>
               <div className="text-sm text-muted-foreground">Broken</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.redirects}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.redirects}
+              </div>
               <div className="text-sm text-muted-foreground">Redirects</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.internal}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.internal}
+              </div>
               <div className="text-sm text-muted-foreground">Internal</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.external}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.external}
+              </div>
               <div className="text-sm text-muted-foreground">External</div>
             </CardContent>
           </Card>
@@ -356,20 +444,30 @@ export default function BrokenLinkChecker() {
                           ) : (
                             <ExternalLink className="h-4 w-4 text-muted-foreground" />
                           )}
-                          <a href={link.url} target="_blank" rel="noopener noreferrer" 
-                             className="text-primary hover:underline text-sm max-w-xs truncate">
+                          <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:underline text-sm max-w-xs truncate"
+                          >
                             {link.url}
                           </a>
                         </div>
                       </td>
-                      <td className="p-3">{getStatusBadge(link.status, link.working)}</td>
                       <td className="p-3">
-                        <Badge variant={link.isInternal ? 'default' : 'secondary'}>
-                          {link.isInternal ? 'Internal' : 'External'}
+                        {getStatusBadge(link.status, link.working)}
+                      </td>
+                      <td className="p-3">
+                        <Badge
+                          variant={link.isInternal ? "default" : "secondary"}
+                        >
+                          {link.isInternal ? "Internal" : "External"}
                         </Badge>
                       </td>
                       <td className="p-3">
-                        <span className={`text-sm ${getResponseTimeColor(link.responseTime)}`}>
+                        <span
+                          className={`text-sm ${getResponseTimeColor(link.responseTime)}`}
+                        >
                           {link.responseTime}ms
                         </span>
                       </td>

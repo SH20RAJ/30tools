@@ -21,7 +21,7 @@ export default function TextReverserTool() {
     }
 
     let result = "";
-    
+
     if (reverseType === "characters") {
       // Reverse all characters
       result = inputText.split("").reverse().join("");
@@ -57,7 +57,7 @@ export default function TextReverserTool() {
       toast.error("No reversed text to swap");
       return;
     }
-    
+
     setInputText(reversedText);
     setReversedText("");
     toast.success("Texts swapped!");
@@ -68,7 +68,7 @@ export default function TextReverserTool() {
     "The quick brown fox jumps over the lazy dog",
     "Lorem ipsum dolor sit amet",
     "JavaScript is awesome",
-    "Text reversal made easy"
+    "Text reversal made easy",
   ];
 
   const loadExample = (text) => {
@@ -90,8 +90,8 @@ export default function TextReverserTool() {
           {/* Reverse Type Selection */}
           <div className="space-y-3">
             <Label className="text-base font-medium">Reverse Type:</Label>
-            <RadioGroup 
-              value={reverseType} 
+            <RadioGroup
+              value={reverseType}
               onValueChange={setReverseType}
               className="flex flex-wrap gap-6"
             >
@@ -129,13 +129,14 @@ export default function TextReverserTool() {
               className="min-h-[120px] resize-y"
             />
             <div className="text-sm text-muted-foreground">
-              Characters: {inputText.length} | Words: {inputText.trim() ? inputText.trim().split(/\s+/).length : 0}
+              Characters: {inputText.length} | Words:{" "}
+              {inputText.trim() ? inputText.trim().split(/\s+/).length : 0}
             </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-3">
-            <Button 
+            <Button
               onClick={reverseText}
               className="flex items-center gap-2"
               disabled={!inputText.trim()}
@@ -143,8 +144,8 @@ export default function TextReverserTool() {
               <RotateCcw className="h-4 w-4" />
               Reverse Text
             </Button>
-            
-            <Button 
+
+            <Button
               onClick={swapTexts}
               variant="outline"
               className="flex items-center gap-2"
@@ -153,8 +154,8 @@ export default function TextReverserTool() {
               <ArrowUpDown className="h-4 w-4" />
               Swap Texts
             </Button>
-            
-            <Button 
+
+            <Button
               onClick={clearAll}
               variant="outline"
               className="flex items-center gap-2"
@@ -185,7 +186,10 @@ export default function TextReverserTool() {
                 className="min-h-[120px] bg-muted font-mono"
               />
               <div className="text-sm text-muted-foreground">
-                Characters: {reversedText.length} | Words: {reversedText.trim() ? reversedText.trim().split(/\s+/).length : 0}
+                Characters: {reversedText.length} | Words:{" "}
+                {reversedText.trim()
+                  ? reversedText.trim().split(/\s+/).length
+                  : 0}
               </div>
             </div>
           )}
@@ -221,34 +225,56 @@ export default function TextReverserTool() {
         <CardContent className="space-y-6">
           <div className="space-y-4">
             <div className="border rounded-lg p-4">
-              <h3 className="font-medium mb-2 text-primary">Character Reversal:</h3>
+              <h3 className="font-medium mb-2 text-primary">
+                Character Reversal:
+              </h3>
               <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
-                <div><strong>Input:</strong> "Hello World!"</div>
-                <div><strong>Output:</strong> "!dlroW olleH"</div>
+                <div>
+                  <strong>Input:</strong> "Hello World!"
+                </div>
+                <div>
+                  <strong>Output:</strong> "!dlroW olleH"
+                </div>
               </div>
             </div>
-            
+
             <div className="border rounded-lg p-4">
-              <h3 className="font-medium mb-2 text-primary">Word Order Reversal:</h3>
+              <h3 className="font-medium mb-2 text-primary">
+                Word Order Reversal:
+              </h3>
               <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
-                <div><strong>Input:</strong> "The quick brown fox"</div>
-                <div><strong>Output:</strong> "fox brown quick The"</div>
+                <div>
+                  <strong>Input:</strong> "The quick brown fox"
+                </div>
+                <div>
+                  <strong>Output:</strong> "fox brown quick The"
+                </div>
               </div>
             </div>
-            
+
             <div className="border rounded-lg p-4">
-              <h3 className="font-medium mb-2 text-primary">Line Order Reversal:</h3>
+              <h3 className="font-medium mb-2 text-primary">
+                Line Order Reversal:
+              </h3>
               <div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
-                <div><strong>Input:</strong></div>
+                <div>
+                  <strong>Input:</strong>
+                </div>
                 <div className="ml-4">
-                  First line<br/>
-                  Second line<br/>
+                  First line
+                  <br />
+                  Second line
+                  <br />
                   Third line
                 </div>
-                <div><strong>Output:</strong></div>
+                <div>
+                  <strong>Output:</strong>
+                </div>
                 <div className="ml-4">
-                  Third line<br/>
-                  Second line<br/>
+                  Third line
+                  <br />
+                  Second line
+                  <br />
                   First line
                 </div>
               </div>

@@ -1,36 +1,42 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Switch } from '@/components/ui/switch';
-import { Badge } from '@/components/ui/badge';
-import { 
-  CodeIcon, 
-  CopyIcon, 
-  EyeIcon,
-  MonitorIcon
-} from 'lucide-react';
-import { toast } from 'sonner';
-import CodeBlock from '@/components/ui/code-block';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Badge } from "@/components/ui/badge";
+import { CodeIcon, CopyIcon, EyeIcon, MonitorIcon } from "lucide-react";
+import { toast } from "sonner";
+import CodeBlock from "@/components/ui/code-block";
 
-export default function TeraboxEmbedTools({ videoData, shareUrl, selectedPlayer, selectedTheme }) {
+export default function TeraboxEmbedTools({
+  videoData,
+  shareUrl,
+  selectedPlayer,
+  selectedTheme,
+}) {
   const [embedSettings, setEmbedSettings] = useState({
-    width: '100%',
-    height: '400px',
+    width: "100%",
+    height: "400px",
     autoplay: false,
     controls: true,
     muted: false,
     loop: false,
     responsive: true,
     showTitle: true,
-    showDescription: false
+    showDescription: false,
   });
 
-  const [previewMode, setPreviewMode] = useState('iframe');
+  const [previewMode, setPreviewMode] = useState("iframe");
 
   if (!videoData || !shareUrl) return null;
 
@@ -39,7 +45,7 @@ export default function TeraboxEmbedTools({ videoData, shareUrl, selectedPlayer,
       await navigator.clipboard.writeText(text);
       toast.success(`${type} copied to clipboard!`);
     } catch (error) {
-      toast.error('Failed to copy to clipboard');
+      toast.error("Failed to copy to clipboard");
     }
   };
 
@@ -50,19 +56,19 @@ export default function TeraboxEmbedTools({ videoData, shareUrl, selectedPlayer,
       poster: videoData.thumbnail,
       player: selectedPlayer,
       theme: selectedTheme,
-      ...embedSettings
+      ...embedSettings,
     };
 
     const dataString = btoa(JSON.stringify(embedData));
-    
+
     return `<iframe 
   src="${window.location.origin}/embed/video?data=${dataString}" 
   width="${embedSettings.width}" 
   height="${embedSettings.height}"
-  style="border: none; border-radius: 8px; ${embedSettings.responsive ? 'max-width: 100%;' : ''}"
+  style="border: none; border-radius: 8px; ${embedSettings.responsive ? "max-width: 100%;" : ""}"
   allowfullscreen
   title="${videoData.name}"
-  ${embedSettings.autoplay ? 'allow="autoplay"' : ''}
+  ${embedSettings.autoplay ? 'allow="autoplay"' : ""}
 ></iframe>`;
   };
 
@@ -70,13 +76,13 @@ export default function TeraboxEmbedTools({ videoData, shareUrl, selectedPlayer,
     return `<video 
   width="${embedSettings.width}" 
   height="${embedSettings.height}"
-  ${embedSettings.controls ? 'controls' : ''}
-  ${embedSettings.autoplay ? 'autoplay' : ''}
-  ${embedSettings.muted ? 'muted' : ''}
-  ${embedSettings.loop ? 'loop' : ''}
+  ${embedSettings.controls ? "controls" : ""}
+  ${embedSettings.autoplay ? "autoplay" : ""}
+  ${embedSettings.muted ? "muted" : ""}
+  ${embedSettings.loop ? "loop" : ""}
   poster="${videoData.thumbnail}"
   preload="metadata"
-  style="border-radius: 8px; ${embedSettings.responsive ? 'max-width: 100%;' : ''}"
+  style="border-radius: 8px; ${embedSettings.responsive ? "max-width: 100%;" : ""}"
 >
   <source src="${videoData.stream_url}" type="video/mp4">
   Your browser does not support the video tag.
@@ -89,14 +95,14 @@ export default function TeraboxEmbedTools({ videoData, shareUrl, selectedPlayer,
 const TeraboxVideo = () => {
   return (
     <div style={{ width: '${embedSettings.width}', maxWidth: '100%' }}>
-      ${embedSettings.showTitle ? `<h3>${videoData.name}</h3>` : ''}
+      ${embedSettings.showTitle ? `<h3>${videoData.name}</h3>` : ""}
       <video 
         width="100%" 
         height="${embedSettings.height}"
-        ${embedSettings.controls ? 'controls' : ''}
-        ${embedSettings.autoplay ? 'autoplay' : ''}
-        ${embedSettings.muted ? 'muted' : ''}
-        ${embedSettings.loop ? 'loop' : ''}
+        ${embedSettings.controls ? "controls" : ""}
+        ${embedSettings.autoplay ? "autoplay" : ""}
+        ${embedSettings.muted ? "muted" : ""}
+        ${embedSettings.loop ? "loop" : ""}
         poster="${videoData.thumbnail}"
         preload="metadata"
         style={{ borderRadius: '8px' }}
@@ -104,7 +110,7 @@ const TeraboxVideo = () => {
         <source src="${videoData.stream_url}" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      ${embedSettings.showDescription ? `<p>Watch ${videoData.name} online</p>` : ''}
+      ${embedSettings.showDescription ? `<p>Watch ${videoData.name} online</p>` : ""}
     </div>
   );
 };
@@ -117,36 +123,46 @@ export default TeraboxVideo;`;
   };
 
   const handleSettingChange = (key, value) => {
-    setEmbedSettings(prev => ({
+    setEmbedSettings((prev) => ({
       ...prev,
-      [key]: value
+      [key]: value,
     }));
   };
 
-  const previewUrl = `${window.location.origin}/embed/video?data=${btoa(JSON.stringify({
-    videoUrl: videoData.stream_url,
-    title: videoData.name,
-    poster: videoData.thumbnail,
-    player: selectedPlayer,
-    theme: selectedTheme,
-    ...embedSettings
-  }))}`;
+  const previewUrl = `${window.location.origin}/embed/video?data=${btoa(
+    JSON.stringify({
+      videoUrl: videoData.stream_url,
+      title: videoData.name,
+      poster: videoData.thumbnail,
+      player: selectedPlayer,
+      theme: selectedTheme,
+      ...embedSettings,
+    }),
+  )}`;
 
   const getCurrentCode = () => {
     switch (previewMode) {
-      case 'iframe': return generateIframeCode();
-      case 'video': return generateDirectVideoCode();
-      case 'react': return generateReactCode();
-      case 'wordpress': return generateWordPressCode();
-      default: return generateIframeCode();
+      case "iframe":
+        return generateIframeCode();
+      case "video":
+        return generateDirectVideoCode();
+      case "react":
+        return generateReactCode();
+      case "wordpress":
+        return generateWordPressCode();
+      default:
+        return generateIframeCode();
     }
   };
 
   const getLanguage = () => {
     switch (previewMode) {
-      case 'react': return 'jsx';
-      case 'wordpress': return 'text';
-      default: return 'html';
+      case "react":
+        return "jsx";
+      case "wordpress":
+        return "text";
+      default:
+        return "html";
     }
   };
 
@@ -171,7 +187,9 @@ export default TeraboxVideo;`;
                   <Input
                     id="width"
                     value={embedSettings.width}
-                    onChange={(e) => handleSettingChange('width', e.target.value)}
+                    onChange={(e) =>
+                      handleSettingChange("width", e.target.value)
+                    }
                     placeholder="100%"
                   />
                 </div>
@@ -180,19 +198,23 @@ export default TeraboxVideo;`;
                   <Input
                     id="height"
                     value={embedSettings.height}
-                    onChange={(e) => handleSettingChange('height', e.target.value)}
+                    onChange={(e) =>
+                      handleSettingChange("height", e.target.value)
+                    }
                     placeholder="400px"
                   />
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="controls">Controls</Label>
                   <Switch
                     id="controls"
                     checked={embedSettings.controls}
-                    onCheckedChange={(checked) => handleSettingChange('controls', checked)}
+                    onCheckedChange={(checked) =>
+                      handleSettingChange("controls", checked)
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -200,7 +222,9 @@ export default TeraboxVideo;`;
                   <Switch
                     id="responsive"
                     checked={embedSettings.responsive}
-                    onCheckedChange={(checked) => handleSettingChange('responsive', checked)}
+                    onCheckedChange={(checked) =>
+                      handleSettingChange("responsive", checked)
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -208,7 +232,9 @@ export default TeraboxVideo;`;
                   <Switch
                     id="autoplay"
                     checked={embedSettings.autoplay}
-                    onCheckedChange={(checked) => handleSettingChange('autoplay', checked)}
+                    onCheckedChange={(checked) =>
+                      handleSettingChange("autoplay", checked)
+                    }
                   />
                 </div>
                 <div className="flex items-center justify-between">
@@ -216,7 +242,9 @@ export default TeraboxVideo;`;
                   <Switch
                     id="muted"
                     checked={embedSettings.muted}
-                    onCheckedChange={(checked) => handleSettingChange('muted', checked)}
+                    onCheckedChange={(checked) =>
+                      handleSettingChange("muted", checked)
+                    }
                   />
                 </div>
               </div>
@@ -245,16 +273,15 @@ export default TeraboxVideo;`;
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => copyToClipboard(getCurrentCode(), 'Embed code')}
+                  onClick={() =>
+                    copyToClipboard(getCurrentCode(), "Embed code")
+                  }
                 >
                   <CopyIcon className="h-4 w-4 mr-2" />
                   Copy Code
                 </Button>
               </div>
-              <CodeBlock 
-                code={getCurrentCode()} 
-                language={getLanguage()} 
-              />
+              <CodeBlock code={getCurrentCode()} language={getLanguage()} />
             </div>
           </div>
 
@@ -273,21 +300,21 @@ export default TeraboxVideo;`;
                   src={previewUrl}
                   width="100%"
                   height="200"
-                  style={{ 
-                    border: 'none', 
-                    borderRadius: '8px',
-                    maxWidth: embedSettings.responsive ? '100%' : 'none'
+                  style={{
+                    border: "none",
+                    borderRadius: "8px",
+                    maxWidth: embedSettings.responsive ? "100%" : "none",
                   }}
                   title="Embed Preview"
                   allowFullScreen
                 />
               </div>
-              
+
               <div className="text-center">
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={() => window.open(previewUrl, '_blank')}
+                  onClick={() => window.open(previewUrl, "_blank")}
                 >
                   <EyeIcon className="h-4 w-4 mr-2" />
                   Open Fullscreen Preview
@@ -301,15 +328,17 @@ export default TeraboxVideo;`;
                 </div>
                 <div className="flex justify-between">
                   <span>Dimensions:</span>
-                  <span>{embedSettings.width} x {embedSettings.height}</span>
+                  <span>
+                    {embedSettings.width} x {embedSettings.height}
+                  </span>
                 </div>
                 <div className="flex justify-between">
                   <span>Responsive:</span>
-                  <span>{embedSettings.responsive ? 'Yes' : 'No'}</span>
+                  <span>{embedSettings.responsive ? "Yes" : "No"}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Controls:</span>
-                  <span>{embedSettings.controls ? 'Enabled' : 'Disabled'}</span>
+                  <span>{embedSettings.controls ? "Enabled" : "Disabled"}</span>
                 </div>
               </div>
 
@@ -319,7 +348,9 @@ export default TeraboxVideo;`;
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => copyToClipboard(getCurrentCode(), 'Embed code')}
+                    onClick={() =>
+                      copyToClipboard(getCurrentCode(), "Embed code")
+                    }
                   >
                     <CopyIcon className="h-4 w-4 mr-1" />
                     Copy Code
@@ -327,7 +358,7 @@ export default TeraboxVideo;`;
                   <Button
                     variant="outline"
                     size="sm"
-                    onClick={() => copyToClipboard(previewUrl, 'Preview URL')}
+                    onClick={() => copyToClipboard(previewUrl, "Preview URL")}
                   >
                     <CopyIcon className="h-4 w-4 mr-1" />
                     Copy URL

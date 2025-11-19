@@ -1,8 +1,10 @@
 // Generator Tools SEO Configuration and Metadata Templates
 export const GENERATOR_TOOLS_SEO = {
   category: {
-    title: "Free AI Generators Online - Bio, Chat, Name, Content Generators | 30tools",
-    description: "Create viral content with AI-powered generators. Aesthetic bios, fake chats, startup names, memes & more. Free, fun, and social media ready. No signup required.",
+    title:
+      "Free AI Generators Online - Bio, Chat, Name, Content Generators | 30tools",
+    description:
+      "Create viral content with AI-powered generators. Aesthetic bios, fake chats, startup names, memes & more. Free, fun, and social media ready. No signup required.",
     keywords: [
       "ai generators online",
       "content generators free",
@@ -16,7 +18,7 @@ export const GENERATOR_TOOLS_SEO = {
       "fun generators",
       "instagram tools",
       "tiktok tools",
-      "creative content tools"
+      "creative content tools",
     ],
     longTailKeywords: [
       "free ai content generators online",
@@ -26,25 +28,27 @@ export const GENERATOR_TOOLS_SEO = {
       "creative content generators for social media",
       "viral content creation tools free",
       "instagram bio generator with emojis",
-      "business name generator creative"
-    ]
+      "business name generator creative",
+    ],
   },
 
   tools: {
     "aesthetic-bio-generator": {
-      title: "Free Aesthetic Bio Generator - Instagram, Twitter, TikTok Bios | 30tools",
-      description: "Generate aesthetic bios for Instagram, Twitter & TikTok with emojis, fonts & themes. 6 aesthetic styles, AI-powered suggestions. Perfect for influencers, Gen Z & viral profiles.",
+      title:
+        "Free Aesthetic Bio Generator - Instagram, Twitter, TikTok Bios | 30tools",
+      description:
+        "Generate aesthetic bios for Instagram, Twitter & TikTok with emojis, fonts & themes. 6 aesthetic styles, AI-powered suggestions. Perfect for influencers, Gen Z & viral profiles.",
       keywords: [
         "aesthetic bio generator",
         "instagram bio generator",
-        "twitter bio generator", 
+        "twitter bio generator",
         "tiktok bio generator",
         "social media bio",
         "cute bio generator",
         "aesthetic text generator",
         "bio ideas generator",
         "profile bio creator",
-        "emoji bio generator"
+        "emoji bio generator",
       ],
       longTailKeywords: [
         "aesthetic bio generator for instagram free",
@@ -54,7 +58,7 @@ export const GENERATOR_TOOLS_SEO = {
         "social media bio creator online",
         "instagram bio maker with fonts",
         "aesthetic profile bio generator",
-        "viral bio generator for social media"
+        "viral bio generator for social media",
       ],
       features: [
         "6 aesthetic themes (soft, dark, vintage, etc.)",
@@ -64,7 +68,7 @@ export const GENERATOR_TOOLS_SEO = {
         "Copy to clipboard",
         "Character count optimization",
         "Trending bio styles",
-        "Instant generation"
+        "Instant generation",
       ],
       useCases: [
         "Instagram influencer profiles",
@@ -72,13 +76,15 @@ export const GENERATOR_TOOLS_SEO = {
         "Twitter aesthetic accounts",
         "Social media branding",
         "Personal brand building",
-        "Gen Z profile optimization"
-      ]
+        "Gen Z profile optimization",
+      ],
     },
 
     "startup-name-generator": {
-      title: "Free AI Startup Name Generator - Creative Business Names | 30tools",
-      description: "Generate trendy startup names with AI. Perfect for indie hackers, entrepreneurs & YC applicants. Creative business names with domain suggestions. Tech, SaaS & startup focused.",
+      title:
+        "Free AI Startup Name Generator - Creative Business Names | 30tools",
+      description:
+        "Generate trendy startup names with AI. Perfect for indie hackers, entrepreneurs & YC applicants. Creative business names with domain suggestions. Tech, SaaS & startup focused.",
       keywords: [
         "startup name generator",
         "business name generator",
@@ -89,7 +95,7 @@ export const GENERATOR_TOOLS_SEO = {
         "company names",
         "domain name generator",
         "brand name generator",
-        "tech startup names"
+        "tech startup names",
       ],
       longTailKeywords: [
         "ai startup name generator free",
@@ -99,7 +105,7 @@ export const GENERATOR_TOOLS_SEO = {
         "indie hacker name generator",
         "saas startup name generator",
         "unicorn startup name ideas",
-        "business name generator with domain"
+        "business name generator with domain",
       ],
       features: [
         "AI-powered name generation",
@@ -109,7 +115,7 @@ export const GENERATOR_TOOLS_SEO = {
         "Save favorite names",
         "Tech & SaaS focused",
         "Startup-friendly styles",
-        "Brandable suggestions"
+        "Brandable suggestions",
       ],
       useCases: [
         "Tech startup naming",
@@ -117,13 +123,15 @@ export const GENERATOR_TOOLS_SEO = {
         "Indie hacker projects",
         "YC application prep",
         "Brand development",
-        "Product launch naming"
-      ]
+        "Product launch naming",
+      ],
     },
 
     "fake-chat-generator": {
-      title: "Free Fake Chat Generator - WhatsApp, Instagram, iMessage, Discord | 30tools",
-      description: "Create realistic fake chat screenshots for WhatsApp, Instagram DM, iMessage & Discord. Perfect for memes, pranks, social media content. Export as high-quality images.",
+      title:
+        "Free Fake Chat Generator - WhatsApp, Instagram, iMessage, Discord | 30tools",
+      description:
+        "Create realistic fake chat screenshots for WhatsApp, Instagram DM, iMessage & Discord. Perfect for memes, pranks, social media content. Export as high-quality images.",
       keywords: [
         "fake chat generator",
         "whatsapp fake chat",
@@ -134,7 +142,7 @@ export const GENERATOR_TOOLS_SEO = {
         "chat screenshot maker",
         "fake conversation generator",
         "meme chat generator",
-        "prank chat maker"
+        "prank chat maker",
       ],
       longTailKeywords: [
         "fake whatsapp chat generator realistic",
@@ -144,7 +152,7 @@ export const GENERATOR_TOOLS_SEO = {
         "fake text message generator online",
         "realistic chat generator for memes",
         "fake chat maker for pranks",
-        "social media chat generator"
+        "social media chat generator",
       ],
       features: [
         "4 chat platforms (WhatsApp, Instagram, iMessage, Discord)",
@@ -154,7 +162,7 @@ export const GENERATOR_TOOLS_SEO = {
         "Meme-ready templates",
         "Multiple conversation styles",
         "Instant screenshot generation",
-        "Social sharing ready"
+        "Social sharing ready",
       ],
       useCases: [
         "Social media memes",
@@ -162,13 +170,15 @@ export const GENERATOR_TOOLS_SEO = {
         "Comedy skits",
         "Educational examples",
         "Marketing materials",
-        "Creative storytelling"
-      ]
+        "Creative storytelling",
+      ],
     },
 
     "excuse-generator": {
-      title: "Free Excuse Generator - Funny, Creative Excuses for Any Situation | 30tools",
-      description: "Generate hilarious excuses for work, school, social events & more. AI-powered creative excuses with believability levels. Perfect for comedy, content creation & emergency situations.",
+      title:
+        "Free Excuse Generator - Funny, Creative Excuses for Any Situation | 30tools",
+      description:
+        "Generate hilarious excuses for work, school, social events & more. AI-powered creative excuses with believability levels. Perfect for comedy, content creation & emergency situations.",
       keywords: [
         "excuse generator",
         "funny excuses",
@@ -179,7 +189,7 @@ export const GENERATOR_TOOLS_SEO = {
         "social excuses",
         "believable excuses",
         "comedy generator",
-        "humor generator"
+        "humor generator",
       ],
       longTailKeywords: [
         "excuse generator for work funny",
@@ -188,7 +198,7 @@ export const GENERATOR_TOOLS_SEO = {
         "excuse generator for school",
         "social excuse generator believable",
         "work excuse generator realistic",
-        "funny excuses generator ai"
+        "funny excuses generator ai",
       ],
       features: [
         "Multiple excuse categories",
@@ -198,7 +208,7 @@ export const GENERATOR_TOOLS_SEO = {
         "Humor-focused content",
         "Situation-specific excuses",
         "Emergency excuse generator",
-        "Comedy content creation"
+        "Comedy content creation",
       ],
       useCases: [
         "Comedy content creation",
@@ -206,13 +216,14 @@ export const GENERATOR_TOOLS_SEO = {
         "Emergency situations",
         "Humor writing",
         "Entertainment content",
-        "Creative inspiration"
-      ]
+        "Creative inspiration",
+      ],
     },
 
     "ai-image-generator": {
       title: "Free AI Image Generator - Text to Image Online | 30tools",
-      description: "Generate stunning images from text prompts with AI. Free text-to-image generator, no signup required. Create artwork, designs, concepts & more instantly.",
+      description:
+        "Generate stunning images from text prompts with AI. Free text-to-image generator, no signup required. Create artwork, designs, concepts & more instantly.",
       keywords: [
         "ai image generator",
         "text to image",
@@ -223,7 +234,7 @@ export const GENERATOR_TOOLS_SEO = {
         "text to art",
         "image creation ai",
         "ai picture generator",
-        "free ai art"
+        "free ai art",
       ],
       longTailKeywords: [
         "free ai image generator online",
@@ -232,7 +243,7 @@ export const GENERATOR_TOOLS_SEO = {
         "ai art generator no signup",
         "create images with ai free",
         "text to image generator online",
-        "ai artwork generator free"
+        "ai artwork generator free",
       ],
       features: [
         "Text-to-image AI generation",
@@ -242,7 +253,7 @@ export const GENERATOR_TOOLS_SEO = {
         "Download images instantly",
         "Creative prompt suggestions",
         "Multiple art styles",
-        "Free unlimited use"
+        "Free unlimited use",
       ],
       useCases: [
         "Creative projects",
@@ -250,13 +261,14 @@ export const GENERATOR_TOOLS_SEO = {
         "Blog illustrations",
         "Concept visualization",
         "Art inspiration",
-        "Marketing materials"
-      ]
+        "Marketing materials",
+      ],
     },
 
     "ai-poetry-generator": {
       title: "Free AI Poetry Generator - Create Poems Online | 30tools",
-      description: "Generate beautiful poems with AI. Free poetry generator with custom themes, styles & emotions. Create haikus, sonnets, free verse & more. Perfect for writers & creatives.",
+      description:
+        "Generate beautiful poems with AI. Free poetry generator with custom themes, styles & emotions. Create haikus, sonnets, free verse & more. Perfect for writers & creatives.",
       keywords: [
         "ai poetry generator",
         "poem generator",
@@ -267,7 +279,7 @@ export const GENERATOR_TOOLS_SEO = {
         "verse generator",
         "haiku generator",
         "sonnet generator",
-        "creative writing ai"
+        "creative writing ai",
       ],
       longTailKeywords: [
         "free ai poetry generator online",
@@ -276,7 +288,7 @@ export const GENERATOR_TOOLS_SEO = {
         "poetry generator no signup",
         "create poems with ai free",
         "haiku generator ai powered",
-        "sonnet generator online"
+        "sonnet generator online",
       ],
       features: [
         "AI poem creation",
@@ -286,7 +298,7 @@ export const GENERATOR_TOOLS_SEO = {
         "Instant poem creation",
         "Copy & share poems",
         "Creative inspiration",
-        "Writer's block solution"
+        "Writer's block solution",
       ],
       useCases: [
         "Creative writing",
@@ -294,13 +306,14 @@ export const GENERATOR_TOOLS_SEO = {
         "Education projects",
         "Social media content",
         "Gift creation",
-        "Writing practice"
-      ]
+        "Writing practice",
+      ],
     },
 
     "ai-voice-generator": {
       title: "Free AI Voice Generator - Text to Speech Online | 30tools",
-      description: "Convert text to natural speech with AI voices. Free text-to-speech generator with multiple voices & languages. Download MP3 audio files instantly.",
+      description:
+        "Convert text to natural speech with AI voices. Free text-to-speech generator with multiple voices & languages. Download MP3 audio files instantly.",
       keywords: [
         "ai voice generator",
         "text to speech",
@@ -311,7 +324,7 @@ export const GENERATOR_TOOLS_SEO = {
         "tts generator",
         "speech ai",
         "voice maker",
-        "audio generator"
+        "audio generator",
       ],
       longTailKeywords: [
         "free ai voice generator online",
@@ -320,7 +333,7 @@ export const GENERATOR_TOOLS_SEO = {
         "ai speech generator no signup",
         "create voice with ai free",
         "text to mp3 converter ai",
-        "natural voice generator ai"
+        "natural voice generator ai",
       ],
       features: [
         "Text-to-speech AI",
@@ -330,7 +343,7 @@ export const GENERATOR_TOOLS_SEO = {
         "No signup required",
         "Multi-language support",
         "High-quality audio",
-        "Instant generation"
+        "Instant generation",
       ],
       useCases: [
         "Content creation",
@@ -338,10 +351,10 @@ export const GENERATOR_TOOLS_SEO = {
         "Educational materials",
         "Podcast intros",
         "Voice-overs",
-        "Audio content"
-      ]
-    }
-  }
+        "Audio content",
+      ],
+    },
+  },
 };
 
 // SEO utility functions for generator tools
@@ -352,31 +365,31 @@ export const generateGeneratorToolMeta = (toolId) => {
   return {
     title: tool.title,
     description: tool.description,
-    keywords: tool.keywords.join(', '),
+    keywords: tool.keywords.join(", "),
     openGraph: {
       title: tool.title,
       description: tool.description,
       url: `https://30tools.com/${toolId}`,
-      siteName: '30tools',
+      siteName: "30tools",
       images: [
         {
           url: `/og-images/${toolId}.jpg`,
           width: 1200,
           height: 630,
-          alt: tool.title
-        }
+          alt: tool.title,
+        },
       ],
-      type: 'website'
+      type: "website",
     },
     twitter: {
-      card: 'summary_large_image',
+      card: "summary_large_image",
       title: tool.title,
       description: tool.description,
       images: [`/og-images/${toolId}.jpg`],
-      creator: '@30tools'
+      creator: "@30tools",
     },
     alternates: {
-      canonical: `https://30tools.com/${toolId}`
+      canonical: `https://30tools.com/${toolId}`,
     },
     robots: {
       index: true,
@@ -384,12 +397,12 @@ export const generateGeneratorToolMeta = (toolId) => {
       googleBot: {
         index: true,
         follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
       },
     },
-    category: 'Generators'
+    category: "Generators",
   };
 };
 

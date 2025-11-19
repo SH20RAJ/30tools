@@ -19,7 +19,7 @@ export default function RemoveDuplicatesTool() {
     totalLines: 0,
     uniqueLines: 0,
     duplicatesRemoved: 0,
-    percentage: 0
+    percentage: 0,
   });
 
   const removeDuplicates = () => {
@@ -28,40 +28,41 @@ export default function RemoveDuplicatesTool() {
       return;
     }
 
-    const lines = inputText.split('\n');
+    const lines = inputText.split("\n");
     const totalLines = lines.length;
-    
+
     let processedLines = lines;
-    
+
     // Trim whitespace if option is enabled
     if (trimWhitespace) {
-      processedLines = processedLines.map(line => line.trim());
+      processedLines = processedLines.map((line) => line.trim());
     }
-    
+
     // Remove duplicates
     const uniqueLines = [];
     const seen = new Set();
-    
+
     for (const line of processedLines) {
       const compareValue = caseSensitive ? line : line.toLowerCase();
-      
+
       if (!seen.has(compareValue)) {
         seen.add(compareValue);
         uniqueLines.push(line);
       }
     }
-    
+
     const duplicatesRemoved = totalLines - uniqueLines.length;
-    const percentage = totalLines > 0 ? Math.round((duplicatesRemoved / totalLines) * 100) : 0;
-    
-    setOutputText(uniqueLines.join('\n'));
+    const percentage =
+      totalLines > 0 ? Math.round((duplicatesRemoved / totalLines) * 100) : 0;
+
+    setOutputText(uniqueLines.join("\n"));
     setStats({
       totalLines,
       uniqueLines: uniqueLines.length,
       duplicatesRemoved,
-      percentage
+      percentage,
     });
-    
+
     toast.success(`Removed ${duplicatesRemoved} duplicate lines!`);
   };
 
@@ -81,7 +82,7 @@ export default function RemoveDuplicatesTool() {
       totalLines: 0,
       uniqueLines: 0,
       duplicatesRemoved: 0,
-      percentage: 0
+      percentage: 0,
     });
     toast.success("Cleared all text");
   };
@@ -91,7 +92,7 @@ export default function RemoveDuplicatesTool() {
     "john@example.com\njane@example.com\njohn@example.com\nadmin@example.com\njane@example.com",
     "Product A\nProduct B\nProduct A\nProduct C\nProduct B\nProduct D",
     "Line 1\nLine 2\nLine 1\nLine 3\nLine 2\nLine 4",
-    "URL1\nURL2\nURL1\nURL3\nURL2\nURL4\nURL1"
+    "URL1\nURL2\nURL1\nURL3\nURL2\nURL4\nURL1",
   ];
 
   const loadExample = (text) => {
@@ -101,7 +102,7 @@ export default function RemoveDuplicatesTool() {
       totalLines: 0,
       uniqueLines: 0,
       duplicatesRemoved: 0,
-      percentage: 0
+      percentage: 0,
     });
   };
 
@@ -118,11 +119,13 @@ export default function RemoveDuplicatesTool() {
         <CardContent className="space-y-6">
           {/* Options */}
           <div className="space-y-4">
-            <Label className="text-base font-medium">Deduplication Options:</Label>
+            <Label className="text-base font-medium">
+              Deduplication Options:
+            </Label>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="flex items-center space-x-2">
-                <Checkbox 
-                  id="case-sensitive" 
+                <Checkbox
+                  id="case-sensitive"
                   checked={caseSensitive}
                   onCheckedChange={setCaseSensitive}
                 />
@@ -131,8 +134,8 @@ export default function RemoveDuplicatesTool() {
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox 
-                  id="trim-whitespace" 
+                <Checkbox
+                  id="trim-whitespace"
                   checked={trimWhitespace}
                   onCheckedChange={setTrimWhitespace}
                 />
@@ -141,8 +144,8 @@ export default function RemoveDuplicatesTool() {
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox 
-                  id="preserve-order" 
+                <Checkbox
+                  id="preserve-order"
                   checked={preserveOrder}
                   onCheckedChange={setPreserveOrder}
                 />
@@ -166,13 +169,13 @@ export default function RemoveDuplicatesTool() {
               className="min-h-[120px] resize-y"
             />
             <div className="text-sm text-muted-foreground">
-              Total Lines: {inputText ? inputText.split('\n').length : 0}
+              Total Lines: {inputText ? inputText.split("\n").length : 0}
             </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-3">
-            <Button 
+            <Button
               onClick={removeDuplicates}
               className="flex items-center gap-2"
               disabled={!inputText.trim()}
@@ -180,8 +183,8 @@ export default function RemoveDuplicatesTool() {
               <Trash2 className="h-4 w-4" />
               Remove Duplicates
             </Button>
-            
-            <Button 
+
+            <Button
               onClick={clearAll}
               variant="outline"
               className="flex items-center gap-2"
@@ -200,19 +203,29 @@ export default function RemoveDuplicatesTool() {
               </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">{stats.totalLines}</div>
+                  <div className="text-2xl font-bold text-primary">
+                    {stats.totalLines}
+                  </div>
                   <div className="text-muted-foreground">Total Lines</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">{stats.uniqueLines}</div>
+                  <div className="text-2xl font-bold text-primary">
+                    {stats.uniqueLines}
+                  </div>
                   <div className="text-muted-foreground">Unique Lines</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-destructive">{stats.duplicatesRemoved}</div>
-                  <div className="text-muted-foreground">Duplicates Removed</div>
+                  <div className="text-2xl font-bold text-destructive">
+                    {stats.duplicatesRemoved}
+                  </div>
+                  <div className="text-muted-foreground">
+                    Duplicates Removed
+                  </div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary">{stats.percentage}%</div>
+                  <div className="text-2xl font-bold text-primary">
+                    {stats.percentage}%
+                  </div>
                   <div className="text-muted-foreground">Reduction</div>
                 </div>
               </div>
@@ -223,7 +236,9 @@ export default function RemoveDuplicatesTool() {
           {outputText && (
             <div className="space-y-2">
               <div className="flex items-center justify-between">
-                <Label className="text-base font-medium">Deduplicated Text:</Label>
+                <Label className="text-base font-medium">
+                  Deduplicated Text:
+                </Label>
                 <Button
                   onClick={() => copyToClipboard(outputText)}
                   variant="outline"
@@ -240,7 +255,7 @@ export default function RemoveDuplicatesTool() {
                 className="min-h-[120px] bg-muted font-mono"
               />
               <div className="text-sm text-muted-foreground">
-                Unique Lines: {outputText ? outputText.split('\n').length : 0}
+                Unique Lines: {outputText ? outputText.split("\n").length : 0}
               </div>
             </div>
           )}
@@ -261,7 +276,9 @@ export default function RemoveDuplicatesTool() {
             >
               <div>
                 <div className="font-medium">Fruit List</div>
-                <div className="text-sm text-muted-foreground">apple, banana, apple, cherry...</div>
+                <div className="text-sm text-muted-foreground">
+                  apple, banana, apple, cherry...
+                </div>
               </div>
             </Button>
             <Button
@@ -271,7 +288,9 @@ export default function RemoveDuplicatesTool() {
             >
               <div>
                 <div className="font-medium">Email Addresses</div>
-                <div className="text-sm text-muted-foreground">john@example.com, jane@example.com...</div>
+                <div className="text-sm text-muted-foreground">
+                  john@example.com, jane@example.com...
+                </div>
               </div>
             </Button>
             <Button
@@ -281,7 +300,9 @@ export default function RemoveDuplicatesTool() {
             >
               <div>
                 <div className="font-medium">Product Names</div>
-                <div className="text-sm text-muted-foreground">Product A, Product B, Product A...</div>
+                <div className="text-sm text-muted-foreground">
+                  Product A, Product B, Product A...
+                </div>
               </div>
             </Button>
             <Button
@@ -291,7 +312,9 @@ export default function RemoveDuplicatesTool() {
             >
               <div>
                 <div className="font-medium">Text Lines</div>
-                <div className="text-sm text-muted-foreground">Line 1, Line 2, Line 1...</div>
+                <div className="text-sm text-muted-foreground">
+                  Line 1, Line 2, Line 1...
+                </div>
               </div>
             </Button>
           </div>
@@ -306,31 +329,86 @@ export default function RemoveDuplicatesTool() {
         <CardContent className="space-y-6">
           <div className="space-y-4">
             <div className="border rounded-lg p-4">
-              <h3 className="font-medium mb-2 text-primary">Case Sensitive Deduplication:</h3>
+              <h3 className="font-medium mb-2 text-primary">
+                Case Sensitive Deduplication:
+              </h3>
               <div className="bg-muted p-3 rounded font-mono text-sm space-y-2">
-                <div><strong>Input:</strong></div>
-                <div className="ml-4">Apple<br/>apple<br/>APPLE<br/>Banana<br/>apple</div>
-                <div><strong>Output:</strong></div>
-                <div className="ml-4">Apple<br/>apple<br/>APPLE<br/>Banana</div>
+                <div>
+                  <strong>Input:</strong>
+                </div>
+                <div className="ml-4">
+                  Apple
+                  <br />
+                  apple
+                  <br />
+                  APPLE
+                  <br />
+                  Banana
+                  <br />
+                  apple
+                </div>
+                <div>
+                  <strong>Output:</strong>
+                </div>
+                <div className="ml-4">
+                  Apple
+                  <br />
+                  apple
+                  <br />
+                  APPLE
+                  <br />
+                  Banana
+                </div>
               </div>
             </div>
-            
+
             <div className="border rounded-lg p-4">
-              <h3 className="font-medium mb-2 text-primary">Case Insensitive Deduplication:</h3>
+              <h3 className="font-medium mb-2 text-primary">
+                Case Insensitive Deduplication:
+              </h3>
               <div className="bg-muted p-3 rounded font-mono text-sm space-y-2">
-                <div><strong>Input:</strong></div>
-                <div className="ml-4">Apple<br/>apple<br/>APPLE<br/>Banana<br/>apple</div>
-                <div><strong>Output:</strong></div>
-                <div className="ml-4">Apple<br/>Banana</div>
+                <div>
+                  <strong>Input:</strong>
+                </div>
+                <div className="ml-4">
+                  Apple
+                  <br />
+                  apple
+                  <br />
+                  APPLE
+                  <br />
+                  Banana
+                  <br />
+                  apple
+                </div>
+                <div>
+                  <strong>Output:</strong>
+                </div>
+                <div className="ml-4">
+                  Apple
+                  <br />
+                  Banana
+                </div>
               </div>
             </div>
-            
+
             <div className="border rounded-lg p-4">
-              <h3 className="font-medium mb-2 text-primary">Whitespace Trimming:</h3>
+              <h3 className="font-medium mb-2 text-primary">
+                Whitespace Trimming:
+              </h3>
               <div className="bg-muted p-3 rounded font-mono text-sm space-y-2">
-                <div><strong>Input:</strong></div>
-                <div className="ml-4">"  Apple  "<br/>"Apple"<br/>" Apple"<br/>"  Apple"</div>
-                <div><strong>Output (with trimming):</strong></div>
+                <div>
+                  <strong>Input:</strong>
+                </div>
+                <div className="ml-4">
+                  " Apple "<br />
+                  "Apple"
+                  <br />" Apple"
+                  <br />" Apple"
+                </div>
+                <div>
+                  <strong>Output (with trimming):</strong>
+                </div>
                 <div className="ml-4">Apple</div>
               </div>
             </div>

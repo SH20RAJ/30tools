@@ -5,7 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Copy, ArrowUpDown, FileText, BarChart3 } from "lucide-react";
 import { toast } from "sonner";
@@ -25,18 +31,18 @@ export default function LineSorterTool() {
       return;
     }
 
-    let lines = inputText.split('\n');
-    
+    let lines = inputText.split("\n");
+
     // Remove empty lines if option is enabled
     if (removeEmpty) {
-      lines = lines.filter(line => line.trim() !== '');
+      lines = lines.filter((line) => line.trim() !== "");
     }
-    
+
     // Remove duplicates if option is enabled
     if (removeDuplicates) {
       const uniqueLines = [];
       const seen = new Set();
-      
+
       for (const line of lines) {
         const compareValue = caseSensitive ? line : line.toLowerCase();
         if (!seen.has(compareValue)) {
@@ -46,55 +52,60 @@ export default function LineSorterTool() {
       }
       lines = uniqueLines;
     }
-    
+
     // Sort lines based on selected method
     let sortedLines = [...lines];
-    
+
     switch (sortMethod) {
-      case 'alphabetical':
+      case "alphabetical":
         sortedLines.sort((a, b) => {
           const strA = caseSensitive ? a : a.toLowerCase();
           const strB = caseSensitive ? b : b.toLowerCase();
           return strA.localeCompare(strB);
         });
         break;
-        
-      case 'numerical':
+
+      case "numerical":
         sortedLines.sort((a, b) => {
           const numA = parseFloat(a) || 0;
           const numB = parseFloat(b) || 0;
           return numA - numB;
         });
         break;
-        
-      case 'length':
+
+      case "length":
         sortedLines.sort((a, b) => a.length - b.length);
         break;
-        
-      case 'natural':
+
+      case "natural":
         sortedLines.sort((a, b) => {
-          return a.localeCompare(b, undefined, { numeric: true, sensitivity: caseSensitive ? 'case' : 'base' });
+          return a.localeCompare(b, undefined, {
+            numeric: true,
+            sensitivity: caseSensitive ? "case" : "base",
+          });
         });
         break;
-        
-      case 'random':
+
+      case "random":
         for (let i = sortedLines.length - 1; i > 0; i--) {
           const j = Math.floor(Math.random() * (i + 1));
           [sortedLines[i], sortedLines[j]] = [sortedLines[j], sortedLines[i]];
         }
         break;
-        
+
       default:
         break;
     }
-    
+
     // Apply sort order
-    if (sortOrder === 'descending' && sortMethod !== 'random') {
+    if (sortOrder === "descending" && sortMethod !== "random") {
       sortedLines.reverse();
     }
-    
-    setOutputText(sortedLines.join('\n'));
-    toast.success(`Sorted ${sortedLines.length} lines ${sortOrder === 'ascending' ? 'ascending' : 'descending'}!`);
+
+    setOutputText(sortedLines.join("\n"));
+    toast.success(
+      `Sorted ${sortedLines.length} lines ${sortOrder === "ascending" ? "ascending" : "descending"}!`,
+    );
   };
 
   const copyToClipboard = async (text) => {
@@ -117,8 +128,8 @@ export default function LineSorterTool() {
       toast.error("No sorted text to reverse");
       return;
     }
-    
-    const reversed = outputText.split('\n').reverse().join('\n');
+
+    const reversed = outputText.split("\n").reverse().join("\n");
     setOutputText(reversed);
     toast.success("Lines reversed!");
   };
@@ -128,7 +139,7 @@ export default function LineSorterTool() {
     "100\n5\n25\n3\n50\n1",
     "Very long sentence here\nHi\nMedium length text\nShort\nA\nSomewhat longer text",
     "item10\nitem2\nitem1\nitem20\nitem3",
-    "John Smith\nJane Doe\nBob Johnson\nAlice Brown\nCharlie Wilson"
+    "John Smith\nJane Doe\nBob Johnson\nAlice Brown\nCharlie Wilson",
   ];
 
   const loadExample = (text) => {
@@ -138,21 +149,21 @@ export default function LineSorterTool() {
 
   const getInputStats = () => {
     if (!inputText) return { lines: 0, chars: 0, words: 0 };
-    const lines = inputText.split('\n');
+    const lines = inputText.split("\n");
     return {
       lines: lines.length,
       chars: inputText.length,
-      words: inputText.trim() ? inputText.trim().split(/\s+/).length : 0
+      words: inputText.trim() ? inputText.trim().split(/\s+/).length : 0,
     };
   };
 
   const getOutputStats = () => {
     if (!outputText) return { lines: 0, chars: 0, words: 0 };
-    const lines = outputText.split('\n');
+    const lines = outputText.split("\n");
     return {
       lines: lines.length,
       chars: outputText.length,
-      words: outputText.trim() ? outputText.trim().split(/\s+/).length : 0
+      words: outputText.trim() ? outputText.trim().split(/\s+/).length : 0,
     };
   };
 
@@ -179,7 +190,9 @@ export default function LineSorterTool() {
                   <SelectValue placeholder="Select sorting method" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="alphabetical">Alphabetical (A-Z)</SelectItem>
+                  <SelectItem value="alphabetical">
+                    Alphabetical (A-Z)
+                  </SelectItem>
                   <SelectItem value="numerical">Numerical (1-100)</SelectItem>
                   <SelectItem value="length">By Length</SelectItem>
                   <SelectItem value="natural">Natural Sort</SelectItem>
@@ -187,10 +200,14 @@ export default function LineSorterTool() {
                 </SelectContent>
               </Select>
             </div>
-            
+
             <div className="space-y-3">
               <Label className="text-base font-medium">Sort Order:</Label>
-              <Select value={sortOrder} onValueChange={setSortOrder} disabled={sortMethod === 'random'}>
+              <Select
+                value={sortOrder}
+                onValueChange={setSortOrder}
+                disabled={sortMethod === "random"}
+              >
                 <SelectTrigger>
                   <SelectValue placeholder="Select sort order" />
                 </SelectTrigger>
@@ -207,8 +224,8 @@ export default function LineSorterTool() {
             <Label className="text-base font-medium">Additional Options:</Label>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="flex items-center space-x-2">
-                <Checkbox 
-                  id="case-sensitive" 
+                <Checkbox
+                  id="case-sensitive"
                   checked={caseSensitive}
                   onCheckedChange={setCaseSensitive}
                 />
@@ -217,8 +234,8 @@ export default function LineSorterTool() {
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox 
-                  id="remove-empty" 
+                <Checkbox
+                  id="remove-empty"
                   checked={removeEmpty}
                   onCheckedChange={setRemoveEmpty}
                 />
@@ -227,8 +244,8 @@ export default function LineSorterTool() {
                 </Label>
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox 
-                  id="remove-duplicates" 
+                <Checkbox
+                  id="remove-duplicates"
                   checked={removeDuplicates}
                   onCheckedChange={setRemoveDuplicates}
                 />
@@ -252,13 +269,14 @@ export default function LineSorterTool() {
               className="min-h-[120px] resize-y"
             />
             <div className="text-sm text-muted-foreground">
-              Lines: {inputStats.lines} | Characters: {inputStats.chars} | Words: {inputStats.words}
+              Lines: {inputStats.lines} | Characters: {inputStats.chars} |
+              Words: {inputStats.words}
             </div>
           </div>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-3">
-            <Button 
+            <Button
               onClick={sortLines}
               className="flex items-center gap-2"
               disabled={!inputText.trim()}
@@ -266,8 +284,8 @@ export default function LineSorterTool() {
               <ArrowUpDown className="h-4 w-4" />
               Sort Lines
             </Button>
-            
-            <Button 
+
+            <Button
               onClick={reverseLines}
               variant="outline"
               className="flex items-center gap-2"
@@ -276,8 +294,8 @@ export default function LineSorterTool() {
               <ArrowUpDown className="h-4 w-4 rotate-180" />
               Reverse Order
             </Button>
-            
-            <Button 
+
+            <Button
               onClick={clearAll}
               variant="outline"
               className="flex items-center gap-2"
@@ -308,7 +326,8 @@ export default function LineSorterTool() {
                 className="min-h-[120px] bg-muted font-mono"
               />
               <div className="text-sm text-muted-foreground">
-                Lines: {outputStats.lines} | Characters: {outputStats.chars} | Words: {outputStats.words}
+                Lines: {outputStats.lines} | Characters: {outputStats.chars} |
+                Words: {outputStats.words}
               </div>
             </div>
           )}
@@ -329,7 +348,9 @@ export default function LineSorterTool() {
             >
               <div>
                 <div className="font-medium">Animals List</div>
-                <div className="text-sm text-muted-foreground">Zebra, Apple, Monkey, Banana...</div>
+                <div className="text-sm text-muted-foreground">
+                  Zebra, Apple, Monkey, Banana...
+                </div>
               </div>
             </Button>
             <Button
@@ -339,7 +360,9 @@ export default function LineSorterTool() {
             >
               <div>
                 <div className="font-medium">Numbers</div>
-                <div className="text-sm text-muted-foreground">100, 5, 25, 3, 50, 1</div>
+                <div className="text-sm text-muted-foreground">
+                  100, 5, 25, 3, 50, 1
+                </div>
               </div>
             </Button>
             <Button
@@ -349,7 +372,9 @@ export default function LineSorterTool() {
             >
               <div>
                 <div className="font-medium">Different Lengths</div>
-                <div className="text-sm text-muted-foreground">Various length text lines...</div>
+                <div className="text-sm text-muted-foreground">
+                  Various length text lines...
+                </div>
               </div>
             </Button>
             <Button
@@ -359,7 +384,9 @@ export default function LineSorterTool() {
             >
               <div>
                 <div className="font-medium">Natural Sort Test</div>
-                <div className="text-sm text-muted-foreground">item10, item2, item1, item20...</div>
+                <div className="text-sm text-muted-foreground">
+                  item10, item2, item1, item20...
+                </div>
               </div>
             </Button>
           </div>
@@ -375,36 +402,58 @@ export default function LineSorterTool() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="border rounded-lg p-4">
-                <h3 className="font-medium mb-2 text-primary">Alphabetical Sort (A-Z):</h3>
+                <h3 className="font-medium mb-2 text-primary">
+                  Alphabetical Sort (A-Z):
+                </h3>
                 <div className="bg-muted p-3 rounded font-mono text-sm space-y-2">
-                  <div><strong>Before:</strong> Zebra, Apple, Monkey</div>
-                  <div><strong>After:</strong> Apple, Monkey, Zebra</div>
+                  <div>
+                    <strong>Before:</strong> Zebra, Apple, Monkey
+                  </div>
+                  <div>
+                    <strong>After:</strong> Apple, Monkey, Zebra
+                  </div>
                 </div>
               </div>
-              
+
               <div className="border rounded-lg p-4">
-                <h3 className="font-medium mb-2 text-primary">Numerical Sort (1-100):</h3>
+                <h3 className="font-medium mb-2 text-primary">
+                  Numerical Sort (1-100):
+                </h3>
                 <div className="bg-muted p-3 rounded font-mono text-sm space-y-2">
-                  <div><strong>Before:</strong> 100, 5, 25, 3</div>
-                  <div><strong>After:</strong> 3, 5, 25, 100</div>
+                  <div>
+                    <strong>Before:</strong> 100, 5, 25, 3
+                  </div>
+                  <div>
+                    <strong>After:</strong> 3, 5, 25, 100
+                  </div>
                 </div>
               </div>
             </div>
-            
+
             <div className="space-y-4">
               <div className="border rounded-lg p-4">
-                <h3 className="font-medium mb-2 text-primary">Length Sort (Short to Long):</h3>
+                <h3 className="font-medium mb-2 text-primary">
+                  Length Sort (Short to Long):
+                </h3>
                 <div className="bg-muted p-3 rounded font-mono text-sm space-y-2">
-                  <div><strong>Before:</strong> Very long, Hi, Medium</div>
-                  <div><strong>After:</strong> Hi, Medium, Very long</div>
+                  <div>
+                    <strong>Before:</strong> Very long, Hi, Medium
+                  </div>
+                  <div>
+                    <strong>After:</strong> Hi, Medium, Very long
+                  </div>
                 </div>
               </div>
-              
+
               <div className="border rounded-lg p-4">
                 <h3 className="font-medium mb-2 text-primary">Natural Sort:</h3>
                 <div className="bg-muted p-3 rounded font-mono text-sm space-y-2">
-                  <div><strong>Before:</strong> item10, item2, item1</div>
-                  <div><strong>After:</strong> item1, item2, item10</div>
+                  <div>
+                    <strong>Before:</strong> item10, item2, item1
+                  </div>
+                  <div>
+                    <strong>After:</strong> item1, item2, item10
+                  </div>
                 </div>
               </div>
             </div>
@@ -431,7 +480,9 @@ export default function LineSorterTool() {
               </ul>
             </div>
             <div className="space-y-3">
-              <h3 className="font-medium text-primary">🔧 Advanced Features:</h3>
+              <h3 className="font-medium text-primary">
+                🔧 Advanced Features:
+              </h3>
               <ul className="space-y-1 text-sm text-muted-foreground">
                 <li>• Remove empty lines automatically</li>
                 <li>• Remove duplicate entries while sorting</li>

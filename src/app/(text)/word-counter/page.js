@@ -1,8 +1,9 @@
-import WordCounterTool from '@/components/tools/text/WordCounterTool';
+import WordCounterTool from "@/components/tools/text/WordCounterTool";
 
 export const metadata = {
   title: "Word Counter - Count Words & Characters Online Free | 30tools",
-  description: "Professional word counter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
+  description:
+    "Professional word counter to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords: [
     // Primary high-volume keywords
     "word counter",
@@ -43,14 +44,15 @@ export const metadata = {
     "word counter with reading time calculator estimate",
     "character limit checker for forms applications",
     "word counter for seo content optimization length",
-    "bulk text word counter multiple documents batch"
+    "bulk text word counter multiple documents batch",
   ].join(", "),
   alternates: {
-    canonical: "https://30tools.com/word-counter"
+    canonical: "https://30tools.com/word-counter",
   },
   openGraph: {
     title: "Free Word Counter Online - Count Words & Characters",
-    description: "Professional word counter tool for writers, students, and marketers. Count words, characters, sentences, and paragraphs in real-time. Free and accurate.",
+    description:
+      "Professional word counter tool for writers, students, and marketers. Count words, characters, sentences, and paragraphs in real-time. Free and accurate.",
     url: "https://30tools.com/word-counter",
     siteName: "30tools",
     images: [
@@ -58,18 +60,19 @@ export const metadata = {
         url: "/og-images/word-counter.jpg",
         width: 1200,
         height: 630,
-        alt: "Free Word Counter Tool - 30tools"
+        alt: "Free Word Counter Tool - 30tools",
       },
     ],
-    locale: 'en_US',
-    type: 'website'
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: "Free Word Counter Online - Count Words & Characters",
-    description: "Professional word counter tool for writers, students, and marketers. Count words, characters, sentences, and paragraphs in real-time.",
+    description:
+      "Professional word counter tool for writers, students, and marketers. Count words, characters, sentences, and paragraphs in real-time.",
     images: ["/og-images/word-counter.jpg"],
-    creator: '@30tools'
+    creator: "@30tools",
   },
   robots: {
     index: true,
@@ -77,9 +80,9 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
 };
@@ -88,22 +91,23 @@ export default function WordCounterPage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "name": "Word Counter - Free Online Text Analysis Tool",
-    "description": "Professional word counter tool to count words, characters, sentences, and paragraphs in real-time. Perfect for writers, students, and content creators.",
-    "url": "https://30tools.com/word-counter",
-    "applicationCategory": "WebApplication",
-    "operatingSystem": "Web Browser",
-    "offers": {
+    name: "Word Counter - Free Online Text Analysis Tool",
+    description:
+      "Professional word counter tool to count words, characters, sentences, and paragraphs in real-time. Perfect for writers, students, and content creators.",
+    url: "https://30tools.com/word-counter",
+    applicationCategory: "WebApplication",
+    operatingSystem: "Web Browser",
+    offers: {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
+      price: "0",
+      priceCurrency: "USD",
     },
-    "creator": {
+    creator: {
       "@type": "Organization",
-      "name": "30tools",
-      "url": "https://30tools.com"
+      name: "30tools",
+      url: "https://30tools.com",
     },
-    "featureList": [
+    featureList: [
       "Real-time word counting",
       "Character count with and without spaces",
       "Sentence and paragraph counting",
@@ -111,12 +115,12 @@ export default function WordCounterPage() {
       "Writing statistics",
       "Export text statistics",
       "Mobile-friendly interface",
-      "No file upload required"
+      "No file upload required",
     ],
-    "aggregateRating": {
+    aggregateRating: {
       "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "2847"
+      ratingValue: "4.9",
+      reviewCount: "2847",
     },
   };
 

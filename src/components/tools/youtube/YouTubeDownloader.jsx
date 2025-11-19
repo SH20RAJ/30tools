@@ -1,17 +1,43 @@
-'use client';
-import { useState, useEffect } from 'react';
-import Script from 'next/script';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent,CardDescription,  CardHeader, CardTitle } from '@/components/ui/card';
-import { Download, Video, Music, Loader2, Bookmark, BookmarkCheck, SmartphoneIcon, Plus, BookOpen, HelpCircle, Star, Wrench, Scissors, FileText, Globe, Shield, Play, Users, Zap } from 'lucide-react';
-import { toast } from 'sonner';
+"use client";
+import { useState, useEffect } from "react";
+import Script from "next/script";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Download,
+  Video,
+  Music,
+  Loader2,
+  Bookmark,
+  BookmarkCheck,
+  SmartphoneIcon,
+  Plus,
+  BookOpen,
+  HelpCircle,
+  Star,
+  Wrench,
+  Scissors,
+  FileText,
+  Globe,
+  Shield,
+  Play,
+  Users,
+  Zap,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function YouTubeDownloader() {
-  const [url, setUrl] = useState('');
+  const [url, setUrl] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [videoData, setVideoData] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showPWAButton, setShowPWAButton] = useState(false);
@@ -21,11 +47,13 @@ export default function YouTubeDownloader() {
 
   useEffect(() => {
     // Load bookmarked URLs
-    const savedBookmarks = JSON.parse(localStorage.getItem('bookmarked-youtube-urls') || '[]');
+    const savedBookmarks = JSON.parse(
+      localStorage.getItem("bookmarked-youtube-urls") || "[]",
+    );
     setBookmarkedUrls(savedBookmarks);
 
     // Check if URL is bookmarked
-    setIsBookmarked(savedBookmarks.some(item => item.url === url));
+    setIsBookmarked(savedBookmarks.some((item) => item.url === url));
 
     // PWA install prompt handling
     const handleBeforeInstallPrompt = (e) => {
@@ -35,11 +63,13 @@ export default function YouTubeDownloader() {
     };
 
     // Check if already installed
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+    const isStandalone = window.matchMedia(
+      "(display-mode: standalone)",
+    ).matches;
     const isPWA = window.navigator.standalone === true;
 
     if (!isStandalone && !isPWA) {
-      window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
 
       // For iOS, always show the PWA button
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -49,19 +79,22 @@ export default function YouTubeDownloader() {
     }
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt,
+      );
     };
   }, [url]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!url.trim()) {
-      setError('Please enter a YouTube URL');
+      setError("Please enter a YouTube URL");
       return;
     }
 
     setIsLoading(true);
-    setError('');
+    setError("");
     setVideoData(null);
 
     try {
@@ -70,13 +103,13 @@ export default function YouTubeDownloader() {
       const apiUrl = `https://ytdl.socialplug.io/api/video-info?url=${encoded}`;
       const res = await fetch(apiUrl, {
         headers: {
-          accept: 'application/json, text/plain, */*',
-          origin: 'https://www.socialplug.io',
+          accept: "application/json, text/plain, */*",
+          origin: "https://www.socialplug.io",
         },
       });
 
       if (!res.ok) {
-        const txt = await res.text().catch(() => '');
+        const txt = await res.text().catch(() => "");
         throw new Error(`API error: ${res.status} ${txt}`);
       }
 
@@ -84,9 +117,9 @@ export default function YouTubeDownloader() {
 
       // Helpers to format bytes and duration
       const formatBytes = (bytes) => {
-        if (!bytes || isNaN(bytes)) return '';
+        if (!bytes || isNaN(bytes)) return "";
         const b = Number(bytes);
-        const units = ['B', 'KB', 'MB', 'GB'];
+        const units = ["B", "KB", "MB", "GB"];
         let i = 0;
         let val = b;
         while (val >= 1024 && i < units.length - 1) {
@@ -100,21 +133,28 @@ export default function YouTubeDownloader() {
         const s = Number(secs) || 0;
         const m = Math.floor(s / 60);
         const r = s % 60;
-        return `${m}:${r.toString().padStart(2, '0')}`;
+        return `${m}:${r.toString().padStart(2, "0")}`;
       };
 
       // Normalize response to the shape used by the component
-      const title = data.title || 'YouTube Video';
-      const thumbnail = data.image || data.thumbnail || data.videoDetails?.thumbnail || null;
-      const duration = data.lengthSeconds ? formatDuration(data.lengthSeconds) : (data.duration || '');
+      const title = data.title || "YouTube Video";
+      const thumbnail =
+        data.image || data.thumbnail || data.videoDetails?.thumbnail || null;
+      const duration = data.lengthSeconds
+        ? formatDuration(data.lengthSeconds)
+        : data.duration || "";
 
       // video formats present at data.format_options.video.mp4 (array)
-      const rawVideoFormats = (data.format_options && data.format_options.video && data.format_options.video.mp4) || [];
+      const rawVideoFormats =
+        (data.format_options &&
+          data.format_options.video &&
+          data.format_options.video.mp4) ||
+        [];
       const videoFormats = rawVideoFormats.map((f) => ({
-        quality: f.quality || (f.mimeType ? f.mimeType.split('/')[1] : 'video'),
-        fileSize: formatBytes(parseInt(f.fileSize || f.filesize || '0', 10)),
-        downloadUrl: f.url || f.src || '#',
-        mimeType: f.mimeType || '',
+        quality: f.quality || (f.mimeType ? f.mimeType.split("/")[1] : "video"),
+        fileSize: formatBytes(parseInt(f.fileSize || f.filesize || "0", 10)),
+        downloadUrl: f.url || f.src || "#",
+        mimeType: f.mimeType || "",
         hasAudio: f.hasAudio || false,
       }));
 
@@ -124,31 +164,31 @@ export default function YouTubeDownloader() {
         // if audio lists exist, map similarly (not present in your example)
         const rawAudio = data.format_options.audio.mp3 || [];
         audioFormats = (rawAudio || []).map((f) => ({
-          quality: f.quality || f.bitrate || 'audio',
-          fileSize: formatBytes(parseInt(f.fileSize || f.filesize || '0', 10)),
-          downloadUrl: f.url || '#',
+          quality: f.quality || f.bitrate || "audio",
+          fileSize: formatBytes(parseInt(f.fileSize || f.filesize || "0", 10)),
+          downloadUrl: f.url || "#",
         }));
       }
 
       // pick largest video file size as overall fileSize display (fallback)
       // overall fileSize left blank — individual formats show sizes
-      const fileSize = '';
+      const fileSize = "";
 
       const normalized = {
         title,
         thumbnail,
         duration,
-        quality: videoFormats[videoFormats.length - 1]?.quality || '',
+        quality: videoFormats[videoFormats.length - 1]?.quality || "",
         fileSize,
         videoFormats,
         audioFormats,
-        downloadUrl: videoFormats[0]?.downloadUrl || '#',
+        downloadUrl: videoFormats[0]?.downloadUrl || "#",
         audioUrl: audioFormats[0]?.downloadUrl || null,
       };
 
       setVideoData(normalized);
     } catch {
-      setError('An error occurred while processing the video');
+      setError("An error occurred while processing the video");
     } finally {
       setIsLoading(false);
     }
@@ -156,46 +196,61 @@ export default function YouTubeDownloader() {
 
   const handleBookmark = () => {
     if (!url.trim()) {
-      toast.error('Please enter a YouTube URL to bookmark');
+      toast.error("Please enter a YouTube URL to bookmark");
       return;
     }
 
     try {
-      const currentBookmarks = JSON.parse(localStorage.getItem('bookmarked-youtube-urls') || '[]');
+      const currentBookmarks = JSON.parse(
+        localStorage.getItem("bookmarked-youtube-urls") || "[]",
+      );
 
       if (isBookmarked) {
         // Remove bookmark
-        const filteredUrls = currentBookmarks.filter(item => item.url !== url);
-        localStorage.setItem('bookmarked-youtube-urls', JSON.stringify(filteredUrls));
+        const filteredUrls = currentBookmarks.filter(
+          (item) => item.url !== url,
+        );
+        localStorage.setItem(
+          "bookmarked-youtube-urls",
+          JSON.stringify(filteredUrls),
+        );
         setBookmarkedUrls(filteredUrls);
         setIsBookmarked(false);
-        toast.success('Bookmark removed');
+        toast.success("Bookmark removed");
       } else {
         // Add bookmark
         const newBookmark = {
           url: url.trim(),
-          title: videoData?.title || 'YouTube Video',
+          title: videoData?.title || "YouTube Video",
           thumbnail: videoData?.thumbnail || null,
-          bookmarkedAt: new Date().toISOString()
+          bookmarkedAt: new Date().toISOString(),
         };
         const updatedBookmarks = [newBookmark, ...currentBookmarks];
 
         // Keep only last 50 bookmarks
         const limitedBookmarks = updatedBookmarks.slice(0, 50);
-        localStorage.setItem('bookmarked-youtube-urls', JSON.stringify(limitedBookmarks));
+        localStorage.setItem(
+          "bookmarked-youtube-urls",
+          JSON.stringify(limitedBookmarks),
+        );
         setBookmarkedUrls(limitedBookmarks);
         setIsBookmarked(true);
-        toast.success('Video bookmarked');
+        toast.success("Video bookmarked");
       }
     } catch (error) {
-      toast.error('Failed to save bookmark');
+      toast.error("Failed to save bookmark");
     }
   };
 
   const handleRemoveBookmark = (urlToRemove) => {
     try {
-      const filteredUrls = bookmarkedUrls.filter(item => item.url !== urlToRemove);
-      localStorage.setItem('bookmarked-youtube-urls', JSON.stringify(filteredUrls));
+      const filteredUrls = bookmarkedUrls.filter(
+        (item) => item.url !== urlToRemove,
+      );
+      localStorage.setItem(
+        "bookmarked-youtube-urls",
+        JSON.stringify(filteredUrls),
+      );
       setBookmarkedUrls(filteredUrls);
 
       // Update current URL bookmark status if it matches
@@ -203,15 +258,15 @@ export default function YouTubeDownloader() {
         setIsBookmarked(false);
       }
 
-      toast.success('Bookmark removed');
+      toast.success("Bookmark removed");
     } catch (error) {
-      toast.error('Failed to remove bookmark');
+      toast.error("Failed to remove bookmark");
     }
   };
 
   const handleLoadBookmarkedUrl = (bookmarkedUrl) => {
     setUrl(bookmarkedUrl);
-    setError('');
+    setError("");
     setVideoData(null);
   };
 
@@ -219,47 +274,47 @@ export default function YouTubeDownloader() {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     if (isIOS) {
-      toast.info('To install: Tap Share → Add to Home Screen → Add', {
-        duration: 5000
+      toast.info("To install: Tap Share → Add to Home Screen → Add", {
+        duration: 5000,
       });
     } else if (deferredPrompt) {
       try {
         deferredPrompt.prompt();
         const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === 'accepted') {
+        if (outcome === "accepted") {
           setDeferredPrompt(null);
           setShowPWAButton(false);
-          toast.success('App installed successfully!');
+          toast.success("App installed successfully!");
         }
       } catch (error) {
-        toast.error('Installation failed');
+        toast.error("Installation failed");
       }
     } else {
-      toast.info('Install option not available in this browser');
+      toast.info("Install option not available in this browser");
     }
   };
 
   const handleDownload = (downloadUrl, _filename, _format) => {
-    if (!downloadUrl || downloadUrl.startsWith('#')) {
-      setError('Download URL is not available for this format');
+    if (!downloadUrl || downloadUrl.startsWith("#")) {
+      setError("Download URL is not available for this format");
       return;
     }
 
     // For real download URLs, open in new tab (some urls block programmatic download)
     try {
       // Try to trigger download. Some CDN responses require navigation.
-      const link = document.createElement('a');
+      const link = document.createElement("a");
       link.href = downloadUrl;
-      link.target = '_blank';
+      link.target = "_blank";
       // Don't always set download attribute; let browser handle content-disposition
       // link.download = filename;
-      link.style.display = 'none';
+      link.style.display = "none";
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
     } catch (error) {
-      console.error('Download failed:', error);
-      setError('Download failed. Please try again.');
+      console.error("Download failed:", error);
+      setError("Download failed. Please try again.");
     }
   };
 
@@ -278,7 +333,7 @@ export default function YouTubeDownloader() {
                   value={url}
                   onChange={(e) => {
                     setUrl(e.target.value);
-                    setError('');
+                    setError("");
                   }}
                   className="h-14 text-lg pl-4 pr-20 border-2 border-border focus:border-border focus:ring-primary rounded-xl"
                   disabled={isLoading}
@@ -289,7 +344,9 @@ export default function YouTubeDownloader() {
                     variant="ghost"
                     onClick={handleBookmark}
                     className="absolute right-2 top-2 h-10 w-10 p-0"
-                    title={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
+                    title={
+                      isBookmarked ? "Remove bookmark" : "Bookmark this URL"
+                    }
                   >
                     {isBookmarked ? (
                       <BookmarkCheck className="w-5 h-5 text-primary" />
@@ -394,18 +451,31 @@ export default function YouTubeDownloader() {
                   </h3>
                   <div className="space-y-2">
                     {videoData.videoFormats?.map((format, index) => (
-                      <div key={index} className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow"
+                      >
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
                             <Video className="w-5 h-5 text-primary" />
                           </div>
                           <div>
-                            <div className="font-semibold text-foreground dark:text-gray-100">{format.quality} MP4</div>
-                            <div className="text-sm text-muted-foreground">{format.fileSize}</div>
+                            <div className="font-semibold text-foreground dark:text-gray-100">
+                              {format.quality} MP4
+                            </div>
+                            <div className="text-sm text-muted-foreground">
+                              {format.fileSize}
+                            </div>
                           </div>
                         </div>
                         <Button
-                          onClick={() => handleDownload(format.downloadUrl, `${videoData.title}.mp4`, 'video')}
+                          onClick={() =>
+                            handleDownload(
+                              format.downloadUrl,
+                              `${videoData.title}.mp4`,
+                              "video",
+                            )
+                          }
                           className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
                         >
                           <Download className="w-4 h-4 mr-2" />
@@ -413,25 +483,35 @@ export default function YouTubeDownloader() {
                         </Button>
                       </div>
                     )) || (
-                        <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow">
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
-                              <Video className="w-5 h-5 text-primary" />
+                      <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+                            <Video className="w-5 h-5 text-primary" />
+                          </div>
+                          <div>
+                            <div className="font-semibold text-foreground dark:text-gray-100">
+                              HD MP4
                             </div>
-                            <div>
-                              <div className="font-semibold text-foreground dark:text-gray-100">HD MP4</div>
-                              <div className="text-sm text-muted-foreground">{videoData.fileSize}</div>
+                            <div className="text-sm text-muted-foreground">
+                              {videoData.fileSize}
                             </div>
                           </div>
-                          <Button
-                            onClick={() => handleDownload(videoData.downloadUrl, `${videoData.title}.mp4`, 'video')}
-                            className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
-                          >
-                            <Download className="w-4 h-4 mr-2" />
-                            Download
-                          </Button>
                         </div>
-                      )}
+                        <Button
+                          onClick={() =>
+                            handleDownload(
+                              videoData.downloadUrl,
+                              `${videoData.title}.mp4`,
+                              "video",
+                            )
+                          }
+                          className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
+                        >
+                          <Download className="w-4 h-4 mr-2" />
+                          Download
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -443,18 +523,31 @@ export default function YouTubeDownloader() {
                   </h3>
                   <div className="space-y-2">
                     {videoData.audioFormats?.map((format, index) => (
-                      <div key={index} className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow">
+                      <div
+                        key={index}
+                        className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow"
+                      >
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
                             <Music className="w-5 h-5 text-primary" />
                           </div>
                           <div>
-                            <div className="font-semibold text-foreground dark:text-gray-100">{format.quality} MP3</div>
-                            <div className="text-sm text-muted-foreground">{format.fileSize}</div>
+                            <div className="font-semibold text-foreground dark:text-gray-100">
+                              {format.quality} MP3
+                            </div>
+                            <div className="text-sm text-muted-foreground">
+                              {format.fileSize}
+                            </div>
                           </div>
                         </div>
                         <Button
-                          onClick={() => handleDownload(format.downloadUrl, `${videoData.title}.mp3`, 'audio')}
+                          onClick={() =>
+                            handleDownload(
+                              format.downloadUrl,
+                              `${videoData.title}.mp3`,
+                              "audio",
+                            )
+                          }
                           className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
                         >
                           <Download className="w-4 h-4 mr-2" />
@@ -462,25 +555,39 @@ export default function YouTubeDownloader() {
                         </Button>
                       </div>
                     )) || (
-                        <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow">
-                          <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
-                              <Music className="w-5 h-5 text-primary" />
+                      <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow">
+                        <div className="flex items-center gap-3">
+                          <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+                            <Music className="w-5 h-5 text-primary" />
+                          </div>
+                          <div>
+                            <div className="font-semibold text-foreground dark:text-gray-100">
+                              High Quality MP3
                             </div>
-                            <div>
-                              <div className="font-semibold text-foreground dark:text-gray-100">High Quality MP3</div>
-                              <div className="text-sm text-muted-foreground">~{Math.round(parseInt(videoData.fileSize || '0') * 0.1)}MB</div>
+                            <div className="text-sm text-muted-foreground">
+                              ~
+                              {Math.round(
+                                parseInt(videoData.fileSize || "0") * 0.1,
+                              )}
+                              MB
                             </div>
                           </div>
-                          <Button
-                            onClick={() => handleDownload(videoData.audioUrl || videoData.downloadUrl, `${videoData.title}.mp3`, 'audio')}
-                            className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
-                          >
-                            <Download className="w-4 h-4 mr-2" />
-                            Download
-                          </Button>
                         </div>
-                      )}
+                        <Button
+                          onClick={() =>
+                            handleDownload(
+                              videoData.audioUrl || videoData.downloadUrl,
+                              `${videoData.title}.mp3`,
+                              "audio",
+                            )
+                          }
+                          className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
+                        >
+                          <Download className="w-4 h-4 mr-2" />
+                          Download
+                        </Button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -488,7 +595,8 @@ export default function YouTubeDownloader() {
               {/* Security Notice */}
               <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
                 <p className="text-sm text-muted-foreground dark:text-muted-foreground">
-                  🔒 Downloads are processed securely and privately. We don't store any of your content.
+                  🔒 Downloads are processed securely and privately. We don't
+                  store any of your content.
                 </p>
               </div>
             </div>
@@ -509,14 +617,17 @@ export default function YouTubeDownloader() {
                     onClick={() => setShowBookmarks(!showBookmarks)}
                     className="text-muted-foreground hover:text-foreground"
                   >
-                    {showBookmarks ? 'Hide' : 'Show'}
+                    {showBookmarks ? "Hide" : "Show"}
                   </Button>
                 </div>
 
                 {showBookmarks && (
                   <div className="space-y-3 max-h-64 overflow-y-auto">
                     {bookmarkedUrls.map((bookmark, index) => (
-                      <div key={index} className="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                      <div
+                        key={index}
+                        className="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                      >
                         {bookmark.thumbnail && (
                           <img
                             src={bookmark.thumbnail}
@@ -529,14 +640,18 @@ export default function YouTubeDownloader() {
                             {bookmark.title}
                           </h4>
                           <p className="text-xs text-muted-foreground truncate">
-                            {new Date(bookmark.bookmarkedAt).toLocaleDateString()}
+                            {new Date(
+                              bookmark.bookmarkedAt,
+                            ).toLocaleDateString()}
                           </p>
                         </div>
                         <div className="flex gap-2">
                           <Button
                             variant="outline"
                             size="sm"
-                            onClick={() => handleLoadBookmarkedUrl(bookmark.url)}
+                            onClick={() =>
+                              handleLoadBookmarkedUrl(bookmark.url)
+                            }
                             className="text-xs px-3 py-1"
                           >
                             Load
@@ -559,18 +674,21 @@ export default function YouTubeDownloader() {
           )}
         </CardContent>
       </Card>
-      
+
       {/* TeraBox Downloader Backlink for SEO */}
       <Card className="mt-8">
         <CardContent className="p-6">
           <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-foreground mb-2">Need to Download TeraBox Files?</h3>
+            <h3 className="text-lg font-semibold text-foreground mb-2">
+              Need to Download TeraBox Files?
+            </h3>
             <p className="text-muted-foreground mb-4">
-              Looking for a reliable way to download files from TeraBox? Check out our specialized TeraBox downloader tool.
+              Looking for a reliable way to download files from TeraBox? Check
+              out our specialized TeraBox downloader tool.
             </p>
-            <a 
-              href="https://terabox.beer/" 
-              target="_blank" 
+            <a
+              href="https://terabox.beer/"
+              target="_blank"
               rel="doopener doreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
             >
@@ -580,7 +698,7 @@ export default function YouTubeDownloader() {
           </div>
         </CardContent>
       </Card>
-      
+
       {/* How to Use Guide */}
       <Card className="mt-8">
         <CardHeader>
@@ -601,7 +719,8 @@ export default function YouTubeDownloader() {
               <div>
                 <h4 className="font-semibold">Find the YouTube Video</h4>
                 <p className="text-sm text-muted-foreground">
-                  Open YouTube and find the video you want to download. Make sure the video is available and not private.
+                  Open YouTube and find the video you want to download. Make
+                  sure the video is available and not private.
                 </p>
               </div>
             </div>
@@ -613,7 +732,8 @@ export default function YouTubeDownloader() {
               <div>
                 <h4 className="font-semibold">Copy the Video URL</h4>
                 <p className="text-sm text-muted-foreground">
-                  Click the share button below the video and copy the URL, or copy it directly from your browser's address bar.
+                  Click the share button below the video and copy the URL, or
+                  copy it directly from your browser's address bar.
                 </p>
               </div>
             </div>
@@ -625,7 +745,8 @@ export default function YouTubeDownloader() {
               <div>
                 <h4 className="font-semibold">Paste URL and Process</h4>
                 <p className="text-sm text-muted-foreground">
-                  Paste the YouTube URL in the input field above and click "Download Video" to process your request.
+                  Paste the YouTube URL in the input field above and click
+                  "Download Video" to process your request.
                 </p>
               </div>
             </div>
@@ -637,7 +758,8 @@ export default function YouTubeDownloader() {
               <div>
                 <h4 className="font-semibold">Choose Format and Download</h4>
                 <p className="text-sm text-muted-foreground">
-                  Select your preferred video quality or audio format and click download to save the file.
+                  Select your preferred video quality or audio format and click
+                  download to save the file.
                 </p>
               </div>
             </div>
@@ -649,7 +771,7 @@ export default function YouTubeDownloader() {
       <div className="my-6">
         <ins
           className="adsbygoogle"
-          style={{ display: 'block' }}
+          style={{ display: "block" }}
           data-ad-format="autorelaxed"
           data-ad-client="ca-pub-1828915420581549"
           data-ad-slot="9420953810"
@@ -676,7 +798,9 @@ export default function YouTubeDownloader() {
                 </div>
                 <div>
                   <h4 className="font-semibold">No Registration Required</h4>
-                  <p className="text-sm text-muted-foreground">Download videos instantly without creating an account</p>
+                  <p className="text-sm text-muted-foreground">
+                    Download videos instantly without creating an account
+                  </p>
                 </div>
               </div>
 
@@ -686,7 +810,9 @@ export default function YouTubeDownloader() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Multiple Formats</h4>
-                  <p className="text-sm text-muted-foreground">Download in MP4, MP3, and various quality options</p>
+                  <p className="text-sm text-muted-foreground">
+                    Download in MP4, MP3, and various quality options
+                  </p>
                 </div>
               </div>
 
@@ -696,7 +822,9 @@ export default function YouTubeDownloader() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Bookmark Videos</h4>
-                  <p className="text-sm text-muted-foreground">Save your favorite videos for quick access later</p>
+                  <p className="text-sm text-muted-foreground">
+                    Save your favorite videos for quick access later
+                  </p>
                 </div>
               </div>
             </div>
@@ -708,7 +836,9 @@ export default function YouTubeDownloader() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Fast Processing</h4>
-                  <p className="text-sm text-muted-foreground">Quick video processing with high-speed downloads</p>
+                  <p className="text-sm text-muted-foreground">
+                    Quick video processing with high-speed downloads
+                  </p>
                 </div>
               </div>
 
@@ -718,7 +848,9 @@ export default function YouTubeDownloader() {
                 </div>
                 <div>
                   <h4 className="font-semibold">All YouTube Content</h4>
-                  <p className="text-sm text-muted-foreground">Download videos, shorts, and music from YouTube</p>
+                  <p className="text-sm text-muted-foreground">
+                    Download videos, shorts, and music from YouTube
+                  </p>
                 </div>
               </div>
 
@@ -728,7 +860,9 @@ export default function YouTubeDownloader() {
                 </div>
                 <div>
                   <h4 className="font-semibold">Cross-Platform</h4>
-                  <p className="text-sm text-muted-foreground">Works on desktop, mobile, and as a PWA</p>
+                  <p className="text-sm text-muted-foreground">
+                    Works on desktop, mobile, and as a PWA
+                  </p>
                 </div>
               </div>
             </div>
@@ -749,49 +883,63 @@ export default function YouTubeDownloader() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-3">
-            <h4 className="font-semibold">Is it legal to download YouTube videos?</h4>
+            <h4 className="font-semibold">
+              Is it legal to download YouTube videos?
+            </h4>
             <p className="text-sm text-muted-foreground">
-              You can download videos for personal use only. Downloading copyrighted content for redistribution
-              or commercial use may violate YouTube's terms of service and copyright laws.
+              You can download videos for personal use only. Downloading
+              copyrighted content for redistribution or commercial use may
+              violate YouTube's terms of service and copyright laws.
             </p>
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-semibold">Why can't I download some YouTube videos?</h4>
+            <h4 className="font-semibold">
+              Why can't I download some YouTube videos?
+            </h4>
             <p className="text-sm text-muted-foreground">
-              Some videos may be private, age-restricted, or blocked in certain regions. Our tool only works with
-              public videos that are available on YouTube's platform.
+              Some videos may be private, age-restricted, or blocked in certain
+              regions. Our tool only works with public videos that are available
+              on YouTube's platform.
             </p>
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-semibold">Can I download YouTube videos on mobile?</h4>
+            <h4 className="font-semibold">
+              Can I download YouTube videos on mobile?
+            </h4>
             <p className="text-sm text-muted-foreground">
-              Yes! Our tool works perfectly on mobile devices. You can also install it as a PWA for a native app experience.
+              Yes! Our tool works perfectly on mobile devices. You can also
+              install it as a PWA for a native app experience.
             </p>
           </div>
 
           <div className="space-y-3">
-            <h4 className="font-semibold">What's the difference between video and audio downloads?</h4>
+            <h4 className="font-semibold">
+              What's the difference between video and audio downloads?
+            </h4>
             <p className="text-sm text-muted-foreground">
-              Video downloads include both video and audio in MP4 format. Audio downloads extract only the audio track
-              and save it as MP3, resulting in smaller file sizes.
+              Video downloads include both video and audio in MP4 format. Audio
+              downloads extract only the audio track and save it as MP3,
+              resulting in smaller file sizes.
             </p>
           </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold">How do I bookmark videos?</h4>
             <p className="text-sm text-muted-foreground">
-              After entering a YouTube URL, click the bookmark icon next to the input field. Your bookmarked videos
-              will be saved locally and can be accessed anytime.
+              After entering a YouTube URL, click the bookmark icon next to the
+              input field. Your bookmarked videos will be saved locally and can
+              be accessed anytime.
             </p>
           </div>
 
           <div className="space-y-3">
             <h4 className="font-semibold">Is there a download limit?</h4>
             <p className="text-sm text-muted-foreground">
-              We don't impose artificial limits, but please be respectful of content creators and YouTube's terms of service.
-              Use our tool responsibly for personal use only.
+              We don't impose artificial limits, but please be respectful of
+              content creators and YouTube's terms of service. Use our tool
+              responsibly for personal use only.
             </p>
           </div>
         </CardContent>
@@ -804,9 +952,7 @@ export default function YouTubeDownloader() {
             <Star className="h-5 w-5" />
             What Users Say About YouTube Downloader
           </CardTitle>
-          <CardDescription>
-            Reviews from our community of users
-          </CardDescription>
+          <CardDescription>Reviews from our community of users</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid md:grid-cols-2 gap-6">
@@ -815,32 +961,49 @@ export default function YouTubeDownloader() {
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
-                  <span className="text-sm font-medium">Alex Chen, Content Creator</span>
+                  <span className="text-sm font-medium">
+                    Alex Chen, Content Creator
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  "This YouTube downloader is incredible! The bookmarking feature is a lifesaver for saving videos I want to watch later.
-                  Fast downloads and no annoying ads. Perfect for content research."
+                  "This YouTube downloader is incredible! The bookmarking
+                  feature is a lifesaver for saving videos I want to watch
+                  later. Fast downloads and no annoying ads. Perfect for content
+                  research."
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">November 16, 2024</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  November 16, 2024
+                </p>
               </div>
 
               <div className="border rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
-                  <span className="text-sm font-medium">Maria Rodriguez, Student</span>
+                  <span className="text-sm font-medium">
+                    Maria Rodriguez, Student
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  "As a student, I use this tool daily for educational videos. The MP3 conversion is great for listening to lectures offline.
+                  "As a student, I use this tool daily for educational videos.
+                  The MP3 conversion is great for listening to lectures offline.
                   Much better than other downloaders I've tried."
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">November 14, 2024</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  November 14, 2024
+                </p>
               </div>
             </div>
 
@@ -849,33 +1012,49 @@ export default function YouTubeDownloader() {
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex">
                     {[...Array(4)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                     <Star className="h-4 w-4 text-gray-300" />
                   </div>
-                  <span className="text-sm font-medium">David Kim, Tech Enthusiast</span>
+                  <span className="text-sm font-medium">
+                    David Kim, Tech Enthusiast
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  "Great tool with excellent PWA support. The interface is clean and the download speeds are impressive.
-                  Would love to see batch download feature in the future."
+                  "Great tool with excellent PWA support. The interface is clean
+                  and the download speeds are impressive. Would love to see
+                  batch download feature in the future."
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">November 12, 2024</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  November 12, 2024
+                </p>
               </div>
 
               <div className="border rounded-lg p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <div className="flex">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
-                  <span className="text-sm font-medium">Sarah Johnson, Marketing Professional</span>
+                  <span className="text-sm font-medium">
+                    Sarah Johnson, Marketing Professional
+                  </span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  "Essential tool for my workflow. I download competitor videos for analysis and the bookmarking system helps me
-                  organize everything. Reliable and fast - exactly what I need."
+                  "Essential tool for my workflow. I download competitor videos
+                  for analysis and the bookmarking system helps me organize
+                  everything. Reliable and fast - exactly what I need."
                 </p>
-                <p className="text-xs text-muted-foreground mt-2">November 10, 2024</p>
+                <p className="text-xs text-muted-foreground mt-2">
+                  November 10, 2024
+                </p>
               </div>
             </div>
           </div>
@@ -900,7 +1079,9 @@ export default function YouTubeDownloader() {
                 <Scissors className="h-6 w-6 text-red-600" />
               </div>
               <h4 className="font-medium mb-1">TikTok Downloader</h4>
-              <p className="text-sm text-muted-foreground">Download TikTok videos and audio</p>
+              <p className="text-sm text-muted-foreground">
+                Download TikTok videos and audio
+              </p>
             </div>
 
             <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
@@ -908,7 +1089,9 @@ export default function YouTubeDownloader() {
                 <FileText className="h-6 w-6 text-blue-600" />
               </div>
               <h4 className="font-medium mb-1">Video Compressor</h4>
-              <p className="text-sm text-muted-foreground">Compress videos for smaller file sizes</p>
+              <p className="text-sm text-muted-foreground">
+                Compress videos for smaller file sizes
+              </p>
             </div>
 
             <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
@@ -916,7 +1099,9 @@ export default function YouTubeDownloader() {
                 <Play className="h-6 w-6 text-purple-600" />
               </div>
               <h4 className="font-medium mb-1">Video Converter</h4>
-              <p className="text-sm text-muted-foreground">Convert videos to different formats</p>
+              <p className="text-sm text-muted-foreground">
+                Convert videos to different formats
+              </p>
             </div>
           </div>
         </CardContent>
@@ -931,41 +1116,82 @@ export default function YouTubeDownloader() {
           <CardContent className="prose prose-sm max-w-none">
             <h3>Why Download YouTube Videos?</h3>
             <p>
-              YouTube is the world's largest video platform with billions of videos uploaded daily. Whether you're a content creator,
-              student, or simply want to save videos for offline viewing, having a reliable YouTube downloader is essential.
-              Our advanced tool provides high-quality downloads in multiple formats with fast processing speeds.
+              YouTube is the world's largest video platform with billions of
+              videos uploaded daily. Whether you're a content creator, student,
+              or simply want to save videos for offline viewing, having a
+              reliable YouTube downloader is essential. Our advanced tool
+              provides high-quality downloads in multiple formats with fast
+              processing speeds.
             </p>
 
             <h3>YouTube Download Best Practices</h3>
             <p>
-              When downloading YouTube videos, consider these important guidelines:
+              When downloading YouTube videos, consider these important
+              guidelines:
             </p>
             <ul>
-              <li><strong>Respect Copyright:</strong> Only download content for personal use and give credit to creators</li>
-              <li><strong>Check Video Availability:</strong> Ensure videos are public and not age-restricted</li>
-              <li><strong>Choose Appropriate Quality:</strong> Balance between file size and video quality</li>
-              <li><strong>Use Bookmarks Wisely:</strong> Save videos you want to download later</li>
-              <li><strong>Consider Audio Downloads:</strong> MP3 files are smaller and perfect for music/podcasts</li>
+              <li>
+                <strong>Respect Copyright:</strong> Only download content for
+                personal use and give credit to creators
+              </li>
+              <li>
+                <strong>Check Video Availability:</strong> Ensure videos are
+                public and not age-restricted
+              </li>
+              <li>
+                <strong>Choose Appropriate Quality:</strong> Balance between
+                file size and video quality
+              </li>
+              <li>
+                <strong>Use Bookmarks Wisely:</strong> Save videos you want to
+                download later
+              </li>
+              <li>
+                <strong>Consider Audio Downloads:</strong> MP3 files are smaller
+                and perfect for music/podcasts
+              </li>
             </ul>
 
             <h3>Understanding YouTube Video Formats</h3>
             <div className="bg-muted p-4 rounded-lg">
               <h4>YouTube Quality Options:</h4>
               <ul className="mt-2 space-y-1">
-                <li><strong>144p:</strong> Lowest quality, smallest file size (good for previews)</li>
-                <li><strong>240p:</strong> Basic quality for mobile viewing</li>
-                <li><strong>360p:</strong> Standard definition, good balance of quality and size</li>
-                <li><strong>480p:</strong> Enhanced quality for larger screens</li>
-                <li><strong>720p:</strong> High definition (HD), great for most uses</li>
-                <li><strong>1080p:</strong> Full HD, excellent quality for detailed content</li>
-                <li><strong>1440p:</strong> Quad HD, very high quality</li>
-                <li><strong>2160p (4K):</strong> Ultra HD, maximum quality available</li>
+                <li>
+                  <strong>144p:</strong> Lowest quality, smallest file size
+                  (good for previews)
+                </li>
+                <li>
+                  <strong>240p:</strong> Basic quality for mobile viewing
+                </li>
+                <li>
+                  <strong>360p:</strong> Standard definition, good balance of
+                  quality and size
+                </li>
+                <li>
+                  <strong>480p:</strong> Enhanced quality for larger screens
+                </li>
+                <li>
+                  <strong>720p:</strong> High definition (HD), great for most
+                  uses
+                </li>
+                <li>
+                  <strong>1080p:</strong> Full HD, excellent quality for
+                  detailed content
+                </li>
+                <li>
+                  <strong>1440p:</strong> Quad HD, very high quality
+                </li>
+                <li>
+                  <strong>2160p (4K):</strong> Ultra HD, maximum quality
+                  available
+                </li>
               </ul>
             </div>
 
             <h3>Tips for Content Creators</h3>
             <p>
-              If you're creating content on YouTube, downloading videos can help you:
+              If you're creating content on YouTube, downloading videos can help
+              you:
             </p>
             <ul>
               <li>Analyze competitor content and strategies</li>
@@ -976,19 +1202,30 @@ export default function YouTubeDownloader() {
             </ul>
 
             <h3>YouTube Download Troubleshooting</h3>
-            <p>
-              Common issues and their solutions:
-            </p>
+            <p>Common issues and their solutions:</p>
             <ul>
-              <li><strong>Video Not Available:</strong> Check if the video is private, deleted, or region-blocked</li>
-              <li><strong>Slow Downloads:</strong> Try a different quality option or check your internet connection</li>
-              <li><strong>Format Issues:</strong> Ensure your device supports the chosen video format</li>
-              <li><strong>Storage Space:</strong> High-quality videos require significant storage space</li>
+              <li>
+                <strong>Video Not Available:</strong> Check if the video is
+                private, deleted, or region-blocked
+              </li>
+              <li>
+                <strong>Slow Downloads:</strong> Try a different quality option
+                or check your internet connection
+              </li>
+              <li>
+                <strong>Format Issues:</strong> Ensure your device supports the
+                chosen video format
+              </li>
+              <li>
+                <strong>Storage Space:</strong> High-quality videos require
+                significant storage space
+              </li>
             </ul>
 
             <h3>Legal and Ethical Considerations</h3>
             <p>
-              While downloading YouTube videos for personal use is generally acceptable, always consider:
+              While downloading YouTube videos for personal use is generally
+              acceptable, always consider:
             </p>
             <ul>
               <li>YouTube's Terms of Service and community guidelines</li>
@@ -999,16 +1236,53 @@ export default function YouTubeDownloader() {
             </ul>
 
             <h3>Advanced Features for Power Users</h3>
-            <p>
-              Take advantage of our advanced features:
-            </p>
+            <p>Take advantage of our advanced features:</p>
             <ul>
-              <li><strong>PWA Installation:</strong> Install as a native app for better performance</li>
-              <li><strong>Bookmark System:</strong> Save and organize your favorite video URLs</li>
-              <li><strong>Batch Processing:</strong> Download multiple videos efficiently</li>
-              <li><strong>Format Selection:</strong> Choose the perfect format for your needs</li>
-              <li><strong>Offline Access:</strong> Access your bookmarked videos anytime</li>
+              <li>
+                <strong>PWA Installation:</strong> Install as a native app for
+                better performance
+              </li>
+              <li>
+                <strong>Bookmark System:</strong> Save and organize your
+                favorite video URLs
+              </li>
+              <li>
+                <strong>Batch Processing:</strong> Download multiple videos
+                efficiently
+              </li>
+              <li>
+                <strong>Format Selection:</strong> Choose the perfect format for
+                your needs
+              </li>
+              <li>
+                <strong>Offline Access:</strong> Access your bookmarked videos
+                anytime
+              </li>
             </ul>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Quick link to the new YouTube Embedder tool */}
+      <div className="mt-6">
+        <Card>
+          <CardContent>
+            <div className="flex items-center justify-between">
+              <div>
+                <h4 className="font-semibold">
+                  YouTube Custom Player Embedder
+                </h4>
+                <p className="text-sm text-muted-foreground">
+                  Generate custom iframe players using Plyr, Video.js,
+                  FluidPlayer and MediaElement.js.
+                </p>
+              </div>
+              <div>
+                <Link href="/youtube-embedder">
+                  <Button>Try Embedder</Button>
+                </Link>
+              </div>
+            </div>
           </CardContent>
         </Card>
       </div>

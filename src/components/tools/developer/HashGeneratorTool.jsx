@@ -1,13 +1,19 @@
-'use client';
+"use client";
 
-import { useState, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Textarea } from '@/components/ui/textarea';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useState, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Hash,
   Copy,
@@ -19,24 +25,56 @@ import {
   Zap,
   Lock,
   Eye,
-  EyeOff
-} from 'lucide-react';
+  EyeOff,
+} from "lucide-react";
 
 export default function HashGeneratorTool() {
-  const [inputText, setInputText] = useState('Hello World! This is a sample text for hash generation.');
+  const [inputText, setInputText] = useState(
+    "Hello World! This is a sample text for hash generation.",
+  );
   const [inputFile, setInputFile] = useState(null);
   const [hashes, setHashes] = useState({});
-  const [copiedHash, setCopiedHash] = useState('');
+  const [copiedHash, setCopiedHash] = useState("");
   const [showHashes, setShowHashes] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
 
   const hashAlgorithms = [
-    { id: 'md5', name: 'MD5', description: '128-bit hash (32 hex chars)', secure: false },
-    { id: 'sha1', name: 'SHA-1', description: '160-bit hash (40 hex chars)', secure: false },
-    { id: 'sha256', name: 'SHA-256', description: '256-bit hash (64 hex chars)', secure: true },
-    { id: 'sha512', name: 'SHA-512', description: '512-bit hash (128 hex chars)', secure: true },
-    { id: 'sha3-256', name: 'SHA3-256', description: '256-bit SHA-3 hash', secure: true },
-    { id: 'blake2b', name: 'BLAKE2b', description: 'Fast secure hash function', secure: true }
+    {
+      id: "md5",
+      name: "MD5",
+      description: "128-bit hash (32 hex chars)",
+      secure: false,
+    },
+    {
+      id: "sha1",
+      name: "SHA-1",
+      description: "160-bit hash (40 hex chars)",
+      secure: false,
+    },
+    {
+      id: "sha256",
+      name: "SHA-256",
+      description: "256-bit hash (64 hex chars)",
+      secure: true,
+    },
+    {
+      id: "sha512",
+      name: "SHA-512",
+      description: "512-bit hash (128 hex chars)",
+      secure: true,
+    },
+    {
+      id: "sha3-256",
+      name: "SHA3-256",
+      description: "256-bit SHA-3 hash",
+      secure: true,
+    },
+    {
+      id: "blake2b",
+      name: "BLAKE2b",
+      description: "Fast secure hash function",
+      secure: true,
+    },
   ];
 
   // Simple hash implementations (in production, use WebCrypto API or libraries)
@@ -46,25 +84,25 @@ export default function HashGeneratorTool() {
 
     for (let i = 0; i < str.length; i++) {
       const char = str.charCodeAt(i);
-      hash = ((hash << 5) - hash) + char;
+      hash = (hash << 5) - hash + char;
       hash = hash & hash; // Convert to 32bit integer
     }
 
     // Different algorithms return different length hashes
     const hashStr = Math.abs(hash).toString(16);
     switch (algorithm) {
-      case 'md5':
-        return hashStr.padStart(32, '0').slice(0, 32);
-      case 'sha1':
-        return hashStr.padStart(40, '0').slice(0, 40);
-      case 'sha256':
-        return hashStr.padStart(64, '0').slice(0, 64);
-      case 'sha512':
-        return hashStr.padStart(128, '0').slice(0, 128);
-      case 'sha3-256':
-        return hashStr.padStart(64, '0').slice(0, 64);
-      case 'blake2b':
-        return hashStr.padStart(64, '0').slice(0, 64);
+      case "md5":
+        return hashStr.padStart(32, "0").slice(0, 32);
+      case "sha1":
+        return hashStr.padStart(40, "0").slice(0, 40);
+      case "sha256":
+        return hashStr.padStart(64, "0").slice(0, 64);
+      case "sha512":
+        return hashStr.padStart(128, "0").slice(0, 128);
+      case "sha3-256":
+        return hashStr.padStart(64, "0").slice(0, 64);
+      case "blake2b":
+        return hashStr.padStart(64, "0").slice(0, 64);
       default:
         return hashStr;
     }
@@ -78,15 +116,22 @@ export default function HashGeneratorTool() {
 
       let algoName;
       switch (algorithm) {
-        case 'sha1': algoName = 'SHA-1'; break;
-        case 'sha256': algoName = 'SHA-256'; break;
-        case 'sha512': algoName = 'SHA-512'; break;
-        default: return simpleHash(data, algorithm);
+        case "sha1":
+          algoName = "SHA-1";
+          break;
+        case "sha256":
+          algoName = "SHA-256";
+          break;
+        case "sha512":
+          algoName = "SHA-512";
+          break;
+        default:
+          return simpleHash(data, algorithm);
       }
 
       const hashBuffer = await crypto.subtle.digest(algoName, dataBuffer);
       const hashArray = Array.from(new Uint8Array(hashBuffer));
-      return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+      return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
     } catch (error) {
       return simpleHash(data, algorithm);
     }
@@ -135,23 +180,23 @@ export default function HashGeneratorTool() {
     try {
       await navigator.clipboard.writeText(hash);
       setCopiedHash(algorithm);
-      setTimeout(() => setCopiedHash(''), 2000);
+      setTimeout(() => setCopiedHash(""), 2000);
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.error("Failed to copy:", err);
     }
   };
 
   const copyAllHashes = async () => {
     const hashText = hashAlgorithms
-      .map(algo => `${algo.name}: ${hashes[algo.id] || 'N/A'}`)
-      .join('\n');
+      .map((algo) => `${algo.name}: ${hashes[algo.id] || "N/A"}`)
+      .join("\n");
 
     try {
       await navigator.clipboard.writeText(hashText);
-      setCopiedHash('all');
-      setTimeout(() => setCopiedHash(''), 2000);
+      setCopiedHash("all");
+      setTimeout(() => setCopiedHash(""), 2000);
     } catch (err) {
-      console.error('Failed to copy all hashes:', err);
+      console.error("Failed to copy all hashes:", err);
     }
   };
 
@@ -159,14 +204,16 @@ export default function HashGeneratorTool() {
     const hashText = [
       `Hash Generation Results`,
       `Generated: ${new Date().toLocaleString()}`,
-      `Input: ${inputText.slice(0, 100)}${inputText.length > 100 ? '...' : ''}`,
-      '',
-      ...hashAlgorithms.map(algo => `${algo.name}: ${hashes[algo.id] || 'N/A'}`)
-    ].join('\n');
+      `Input: ${inputText.slice(0, 100)}${inputText.length > 100 ? "..." : ""}`,
+      "",
+      ...hashAlgorithms.map(
+        (algo) => `${algo.name}: ${hashes[algo.id] || "N/A"}`,
+      ),
+    ].join("\n");
 
-    const blob = new Blob([hashText], { type: 'text/plain' });
+    const blob = new Blob([hashText], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
     link.download = `hashes-${Date.now()}.txt`;
     document.body.appendChild(link);
@@ -176,18 +223,18 @@ export default function HashGeneratorTool() {
   };
 
   const clearInput = () => {
-    setInputText('');
+    setInputText("");
     setInputFile(null);
     setHashes({});
   };
 
   const loadSampleText = () => {
     const samples = [
-      'Hello World!',
-      'The quick brown fox jumps over the lazy dog',
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-      '30tools.com - Free Online Toolkit',
-      'Password123!@#'
+      "Hello World!",
+      "The quick brown fox jumps over the lazy dog",
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "30tools.com - Free Online Toolkit",
+      "Password123!@#",
     ];
     const randomSample = samples[Math.floor(Math.random() * samples.length)];
     setInputText(randomSample);
@@ -204,8 +251,9 @@ export default function HashGeneratorTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free Hash Generator</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Generate secure cryptographic hashes from text or files. Support for MD5, SHA-1, SHA-256,
-          SHA-512, and more. Perfect for data integrity verification and security applications.
+          Generate secure cryptographic hashes from text or files. Support for
+          MD5, SHA-1, SHA-256, SHA-512, and more. Perfect for data integrity
+          verification and security applications.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -284,7 +332,9 @@ export default function HashGeneratorTool() {
             <CardContent>
               <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
                 <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                <p className="text-lg font-medium mb-2">Drop a file here or click to browse</p>
+                <p className="text-lg font-medium mb-2">
+                  Drop a file here or click to browse
+                </p>
                 <p className="text-sm text-muted-foreground mb-4">
                   Any file type supported • File content will be hashed
                 </p>
@@ -294,7 +344,9 @@ export default function HashGeneratorTool() {
                   className="hidden"
                   id="file-input"
                 />
-                <Button onClick={() => document.getElementById('file-input')?.click()}>
+                <Button
+                  onClick={() => document.getElementById("file-input")?.click()}
+                >
                   Choose File
                 </Button>
               </div>
@@ -302,7 +354,9 @@ export default function HashGeneratorTool() {
               {inputFile && (
                 <div className="mt-4 p-3 bg-muted rounded">
                   <p className="text-sm font-medium">Selected File:</p>
-                  <p className="text-sm text-muted-foreground">{inputFile.name}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {inputFile.name}
+                  </p>
                   <p className="text-xs text-muted-foreground">
                     Size: {(inputFile.size / 1024).toFixed(2)} KB
                   </p>
@@ -328,7 +382,11 @@ export default function HashGeneratorTool() {
                   variant="outline"
                   size="sm"
                 >
-                  {showHashes ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                  {showHashes ? (
+                    <EyeOff className="h-4 w-4" />
+                  ) : (
+                    <Eye className="h-4 w-4" />
+                  )}
                 </Button>
                 <Button onClick={copyAllHashes} variant="outline" size="sm">
                   <Copy className="h-4 w-4 mr-2" />
@@ -348,8 +406,8 @@ export default function HashGeneratorTool() {
                   <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
                       <h3 className="font-medium">{algo.name}</h3>
-                      <Badge variant={algo.secure ? 'default' : 'secondary'}>
-                        {algo.secure ? 'Secure' : 'Legacy'}
+                      <Badge variant={algo.secure ? "default" : "secondary"}>
+                        {algo.secure ? "Secure" : "Legacy"}
                       </Badge>
                     </div>
                     <Button
@@ -371,7 +429,9 @@ export default function HashGeneratorTool() {
 
                   <div className="bg-muted rounded p-3">
                     <code className="text-sm font-mono break-all">
-                      {showHashes ? (hashes[algo.id] || 'Generating...') : '••••••••••••••••••••••••••••••••'}
+                      {showHashes
+                        ? hashes[algo.id] || "Generating..."
+                        : "••••••••••••••••••••••••••••••••"}
                     </code>
                   </div>
                 </div>
@@ -392,50 +452,64 @@ export default function HashGeneratorTool() {
         <CardContent>
           <div className="grid gap-6 md:grid-cols-2">
             <div>
-              <h4 className="font-medium mb-3">Secure Algorithms (Recommended)</h4>
+              <h4 className="font-medium mb-3">
+                Secure Algorithms (Recommended)
+              </h4>
               <div className="space-y-3">
                 <div>
                   <Badge className="mb-1">SHA-256</Badge>
                   <p className="text-sm text-muted-foreground">
-                    Most widely used secure hash. Perfect for passwords, data integrity, and blockchain.
+                    Most widely used secure hash. Perfect for passwords, data
+                    integrity, and blockchain.
                   </p>
                 </div>
                 <div>
                   <Badge className="mb-1">SHA-512</Badge>
                   <p className="text-sm text-muted-foreground">
-                    Higher security than SHA-256. Used for enhanced security applications.
+                    Higher security than SHA-256. Used for enhanced security
+                    applications.
                   </p>
                 </div>
                 <div>
                   <Badge className="mb-1">SHA3-256</Badge>
                   <p className="text-sm text-muted-foreground">
-                    Latest SHA-3 family. Alternative to SHA-2 with different internal structure.
+                    Latest SHA-3 family. Alternative to SHA-2 with different
+                    internal structure.
                   </p>
                 </div>
               </div>
             </div>
 
             <div>
-              <h4 className="font-medium mb-3">Legacy Algorithms (Not Recommended)</h4>
+              <h4 className="font-medium mb-3">
+                Legacy Algorithms (Not Recommended)
+              </h4>
               <div className="space-y-3">
                 <div>
-                  <Badge variant="secondary" className="mb-1">MD5</Badge>
+                  <Badge variant="secondary" className="mb-1">
+                    MD5
+                  </Badge>
                   <p className="text-sm text-muted-foreground">
-                    Fast but cryptographically broken. Only use for checksums, not security.
+                    Fast but cryptographically broken. Only use for checksums,
+                    not security.
                   </p>
                 </div>
                 <div>
-                  <Badge variant="secondary" className="mb-1">SHA-1</Badge>
+                  <Badge variant="secondary" className="mb-1">
+                    SHA-1
+                  </Badge>
                   <p className="text-sm text-muted-foreground">
-                    Deprecated for security use. Vulnerable to collision attacks.
+                    Deprecated for security use. Vulnerable to collision
+                    attacks.
                   </p>
                 </div>
               </div>
 
               <div className="mt-4 p-3 bg-muted/50 border border-border rounded">
                 <p className="text-sm text-primary">
-                  <strong>Security Note:</strong> Use SHA-256 or higher for password hashing,
-                  digital signatures, and security-critical applications.
+                  <strong>Security Note:</strong> Use SHA-256 or higher for
+                  password hashing, digital signatures, and security-critical
+                  applications.
                 </p>
               </div>
             </div>
@@ -482,27 +556,40 @@ export default function HashGeneratorTool() {
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">What is a cryptographic hash?</h4>
+              <h4 className="font-medium mb-2">
+                What is a cryptographic hash?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                A cryptographic hash is a mathematical function that converts input data into a fixed-size string of characters. The same input always produces the same hash, but even tiny changes create completely different results.
+                A cryptographic hash is a mathematical function that converts
+                input data into a fixed-size string of characters. The same
+                input always produces the same hash, but even tiny changes
+                create completely different results.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Which algorithm should I use?</h4>
+              <h4 className="font-medium mb-2">
+                Which algorithm should I use?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                For security applications, use SHA-256 or SHA-512. For simple checksums where security isn't critical, MD5 is faster. Avoid MD5 and SHA-1 for passwords or sensitive data.
+                For security applications, use SHA-256 or SHA-512. For simple
+                checksums where security isn't critical, MD5 is faster. Avoid
+                MD5 and SHA-1 for passwords or sensitive data.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Are my inputs secure?</h4>
               <p className="text-sm text-muted-foreground">
-                Yes, all hashing happens locally in your browser. Your input text or files are never sent to our servers, ensuring complete privacy.
+                Yes, all hashing happens locally in your browser. Your input
+                text or files are never sent to our servers, ensuring complete
+                privacy.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Can hashes be reversed?</h4>
               <p className="text-sm text-muted-foreground">
-                No, cryptographic hashes are one-way functions. You cannot reverse a hash to get the original input. However, weak passwords can be cracked using rainbow tables or brute force.
+                No, cryptographic hashes are one-way functions. You cannot
+                reverse a hash to get the original input. However, weak
+                passwords can be cracked using rainbow tables or brute force.
               </p>
             </div>
           </div>

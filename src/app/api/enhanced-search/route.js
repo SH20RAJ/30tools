@@ -1,11 +1,11 @@
 // Enhanced search API with advanced SEO integration
-import toolsData from '@/constants/tools.json';
+import toolsData from "@/constants/tools.json";
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const query = searchParams.get('q')?.toLowerCase() || '';
-  const category = searchParams.get('category') || 'all';
-  const limit = parseInt(searchParams.get('limit') || '20');
+  const query = searchParams.get("q")?.toLowerCase() || "";
+  const category = searchParams.get("category") || "all";
+  const limit = parseInt(searchParams.get("limit") || "20");
 
   try {
     let allTools = [];
@@ -13,12 +13,12 @@ export async function GET(request) {
     // Flatten all tools from tools directory
     Object.entries(toolsData.categories).forEach(([catKey, catData]) => {
       if (catData.tools) {
-        catData.tools.forEach(tool => {
+        catData.tools.forEach((tool) => {
           allTools.push({
             ...tool,
             categoryKey: catKey,
             categoryName: catData.name,
-            categorySlug: catData.slug
+            categorySlug: catData.slug,
           });
         });
       }
@@ -26,7 +26,7 @@ export async function GET(request) {
 
     // Advanced search scoring algorithm
     const searchResults = allTools
-      .map(tool => {
+      .map((tool) => {
         let score = 0;
         let matchedKeywords = [];
 
@@ -42,17 +42,17 @@ export async function GET(request) {
           // Name matching (high weight)
           if (tool.name.toLowerCase().includes(query)) {
             score += 90;
-            matchedKeywords.push('name');
+            matchedKeywords.push("name");
           }
 
           // Description matching (medium weight)
           if (tool.description.toLowerCase().includes(query)) {
             score += 70;
-            matchedKeywords.push('description');
+            matchedKeywords.push("description");
           }
 
           // Keywords matching (medium weight)
-          tool.keywords?.forEach(keyword => {
+          tool.keywords?.forEach((keyword) => {
             if (keyword.toLowerCase().includes(query)) {
               score += 60;
               matchedKeywords.push(keyword);
@@ -60,7 +60,7 @@ export async function GET(request) {
           });
 
           // Long-tail keywords matching (high weight for exact matches)
-          tool.longTailKeywords?.forEach(longTail => {
+          tool.longTailKeywords?.forEach((longTail) => {
             if (longTail.toLowerCase().includes(query)) {
               score += 80;
               matchedKeywords.push(longTail);
@@ -85,11 +85,11 @@ export async function GET(request) {
           ...tool,
           searchScore: score,
           matchedKeywords: [...new Set(matchedKeywords)],
-          searchQuery: query
+          searchQuery: query,
         };
       })
-      .filter(tool => {
-        if (category !== 'all' && tool.categoryKey !== category) {
+      .filter((tool) => {
+        if (category !== "all" && tool.categoryKey !== category) {
           return false;
         }
         if (query && tool.searchScore === 0) {
@@ -118,22 +118,25 @@ export async function GET(request) {
       total: searchResults.length,
       seoData: {
         title: generateSearchSEOTitle(query, category, searchResults.length),
-        description: generateSearchSEODescription(query, category, searchResults.length)
+        description: generateSearchSEODescription(
+          query,
+          category,
+          searchResults.length,
+        ),
       },
     });
-
   } catch (error) {
-    console.error('Search API error:', error);
+    console.error("Search API error:", error);
     return Response.json(
-      { error: 'Search failed', results: [], total: 0 },
-      { status: 500 }
+      { error: "Search failed", results: [], total: 0 },
+      { status: 500 },
     );
   }
 }
 
 function generateSearchSEOTitle(query, category, resultCount) {
   if (!query) {
-    return category === 'all'
+    return category === "all"
       ? "Free Online Tools - 30tools Toolkit"
       : `Free ${category.charAt(0).toUpperCase() + category.slice(1)} Tools Online | 30tools`;
   }
@@ -142,7 +145,7 @@ function generateSearchSEOTitle(query, category, resultCount) {
 
 function generateSearchSEODescription(query, category, resultCount) {
   if (!query) {
-    return category === 'all'
+    return category === "all"
       ? "Discover 100+ free online tools for images, PDFs, videos, audio, and text processing."
       : `Professional ${category} tools for free. Compress, convert, edit, and optimize files online.`;
   }

@@ -1,49 +1,59 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { Link, Copy, Check, Download, ExternalLink } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Link, Copy, Check, Download, ExternalLink } from "lucide-react";
+import { toast } from "sonner";
 
 export default function URLExtractorTool() {
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState("");
   const [extractedUrls, setExtractedUrls] = useState([]);
   const [copied, setCopied] = useState(false);
 
   const extractUrls = () => {
     if (!inputText.trim()) {
-      toast.error('Please enter some text');
+      toast.error("Please enter some text");
       return;
     }
 
     // URL regex pattern to match various URL formats
-    const urlRegex = /(https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/gi;
+    const urlRegex =
+      /(https?:\/\/[^\s]+|www\.[^\s]+|[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}(?:\/[^\s]*)?)/gi;
     const matches = inputText.match(urlRegex) || [];
-    
+
     // Process and normalize URLs
     const processedUrls = matches.map((url, index) => {
       let normalizedUrl = url.trim();
-      
+
       // Remove trailing punctuation
-      normalizedUrl = normalizedUrl.replace(/[.,;:!?)]+$/, '');
-      
+      normalizedUrl = normalizedUrl.replace(/[.,;:!?)]+$/, "");
+
       // Add protocol if missing
-      if (normalizedUrl.startsWith('www.')) {
-        normalizedUrl = 'https://' + normalizedUrl;
-      } else if (!normalizedUrl.startsWith('http://') && !normalizedUrl.startsWith('https://')) {
-        normalizedUrl = 'https://' + normalizedUrl;
+      if (normalizedUrl.startsWith("www.")) {
+        normalizedUrl = "https://" + normalizedUrl;
+      } else if (
+        !normalizedUrl.startsWith("http://") &&
+        !normalizedUrl.startsWith("https://")
+      ) {
+        normalizedUrl = "https://" + normalizedUrl;
       }
 
       // Extract domain for display
-      let domain = '';
+      let domain = "";
       try {
         const urlObj = new URL(normalizedUrl);
         domain = urlObj.hostname;
       } catch (e) {
-        domain = normalizedUrl.split('/')[0];
+        domain = normalizedUrl.split("/")[0];
       }
 
       return {
@@ -51,13 +61,14 @@ export default function URLExtractorTool() {
         original: url,
         normalized: normalizedUrl,
         domain: domain,
-        isValid: isValidUrl(normalizedUrl)
+        isValid: isValidUrl(normalizedUrl),
       };
     });
 
     // Remove duplicates
-    const uniqueUrls = processedUrls.filter((url, index, self) => 
-      index === self.findIndex((u) => u.normalized === url.normalized)
+    const uniqueUrls = processedUrls.filter(
+      (url, index, self) =>
+        index === self.findIndex((u) => u.normalized === url.normalized),
     );
 
     setExtractedUrls(uniqueUrls);
@@ -75,54 +86,57 @@ export default function URLExtractorTool() {
 
   const copyAllUrls = async () => {
     if (extractedUrls.length === 0) return;
-    
-    const urlList = extractedUrls.map(url => url.normalized).join('\n');
+
+    const urlList = extractedUrls.map((url) => url.normalized).join("\n");
     try {
       await navigator.clipboard.writeText(urlList);
       setCopied(true);
-      toast.success('All URLs copied to clipboard!');
+      toast.success("All URLs copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
     } catch (error) {
-      toast.error('Failed to copy URLs');
+      toast.error("Failed to copy URLs");
     }
   };
 
   const copyUrl = async (url) => {
     try {
       await navigator.clipboard.writeText(url);
-      toast.success('URL copied to clipboard!');
+      toast.success("URL copied to clipboard!");
     } catch (error) {
-      toast.error('Failed to copy URL');
+      toast.error("Failed to copy URL");
     }
   };
 
   const downloadUrls = () => {
     if (extractedUrls.length === 0) return;
-    
-    const urlList = extractedUrls.map((url, index) => 
-      `${index + 1}. ${url.normalized} (Domain: ${url.domain})`
-    ).join('\n');
-    
+
+    const urlList = extractedUrls
+      .map(
+        (url, index) =>
+          `${index + 1}. ${url.normalized} (Domain: ${url.domain})`,
+      )
+      .join("\n");
+
     const content = `Extracted URLs\n==============\n\n${urlList}\n\nTotal URLs found: ${extractedUrls.length}\nExtracted on: ${new Date().toLocaleString()}`;
-    
-    const blob = new Blob([content], { type: 'text/plain' });
+
+    const blob = new Blob([content], { type: "text/plain" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'extracted_urls.txt';
+    a.download = "extracted_urls.txt";
     a.click();
     URL.revokeObjectURL(url);
-    toast.success('URLs downloaded!');
+    toast.success("URLs downloaded!");
   };
 
   const openUrl = (url) => {
-    window.open(url, '_blank', 'noopener,noreferrer');
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const clearText = () => {
-    setInputText('');
+    setInputText("");
     setExtractedUrls([]);
-    toast.success('Text cleared!');
+    toast.success("Text cleared!");
   };
 
   const loadSampleText = () => {
@@ -134,20 +148,20 @@ Don't forget about youtube.com and wikipedia.org
 Email us at contact@example.com or visit our site at https://example.com/contact
 ftp://files.example.com/downloads/
 http://subdomain.example.org/path/to/resource?param=value#section`;
-    
+
     setInputText(sample);
-    toast.success('Sample text loaded!');
+    toast.success("Sample text loaded!");
   };
 
   const getStats = () => {
-    const validUrls = extractedUrls.filter(url => url.isValid).length;
-    const domains = [...new Set(extractedUrls.map(url => url.domain))];
-    
+    const validUrls = extractedUrls.filter((url) => url.isValid).length;
+    const domains = [...new Set(extractedUrls.map((url) => url.domain))];
+
     return {
       total: extractedUrls.length,
       valid: validUrls,
       invalid: extractedUrls.length - validUrls,
-      uniqueDomains: domains.length
+      uniqueDomains: domains.length,
     };
   };
 
@@ -162,7 +176,8 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
             URL/Link Extractor
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Extract all URLs and links from text, documents, or web content. Find and organize website links efficiently.
+            Extract all URLs and links from text, documents, or web content.
+            Find and organize website links efficiently.
           </p>
         </div>
 
@@ -185,9 +200,9 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
               rows={10}
               className="resize-y"
             />
-            
+
             <div className="flex flex-col sm:flex-row gap-2">
-              <Button 
+              <Button
                 onClick={extractUrls}
                 disabled={!inputText.trim()}
                 className="flex-1"
@@ -212,18 +227,14 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
               <CardTitle className="flex items-center justify-between">
                 Extraction Results
                 <div className="flex gap-2">
-                  <Button
-                    onClick={copyAllUrls}
-                    variant="outline"
-                    size="sm"
-                  >
-                    {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
+                  <Button onClick={copyAllUrls} variant="outline" size="sm">
+                    {copied ? (
+                      <Check className="h-4 w-4" />
+                    ) : (
+                      <Copy className="h-4 w-4" />
+                    )}
                   </Button>
-                  <Button
-                    onClick={downloadUrls}
-                    variant="outline"
-                    size="sm"
-                  >
+                  <Button onClick={downloadUrls} variant="outline" size="sm">
                     <Download className="h-4 w-4" />
                   </Button>
                 </div>
@@ -232,20 +243,36 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
             <CardContent>
               <div className="grid md:grid-cols-4 gap-4 mb-6">
                 <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl font-bold text-primary">{stats.total}</div>
-                  <div className="text-sm text-muted-foreground">Total URLs</div>
+                  <div className="text-2xl font-bold text-primary">
+                    {stats.total}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Total URLs
+                  </div>
                 </div>
                 <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl font-bold text-primary">{stats.valid}</div>
-                  <div className="text-sm text-muted-foreground">Valid URLs</div>
+                  <div className="text-2xl font-bold text-primary">
+                    {stats.valid}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Valid URLs
+                  </div>
                 </div>
                 <div className="text-center p-4 bg-destructive/10 rounded-lg">
-                  <div className="text-2xl font-bold text-destructive">{stats.invalid}</div>
-                  <div className="text-sm text-muted-foreground">Invalid URLs</div>
+                  <div className="text-2xl font-bold text-destructive">
+                    {stats.invalid}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Invalid URLs
+                  </div>
                 </div>
                 <div className="text-center p-4 bg-muted/50 rounded-lg">
-                  <div className="text-2xl font-bold text-primary">{stats.uniqueDomains}</div>
-                  <div className="text-sm text-muted-foreground">Unique Domains</div>
+                  <div className="text-2xl font-bold text-primary">
+                    {stats.uniqueDomains}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    Unique Domains
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -258,25 +285,28 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
             <CardHeader>
               <CardTitle>Extracted URLs ({extractedUrls.length})</CardTitle>
               <CardDescription>
-                Click on any URL to open it, or use the copy button to copy individual links
+                Click on any URL to open it, or use the copy button to copy
+                individual links
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 {extractedUrls.map((urlData) => (
-                  <div 
+                  <div
                     key={urlData.id}
                     className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50"
                   >
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2 mb-1">
-                        <Badge 
-                          variant={urlData.isValid ? 'default' : 'destructive'}
+                        <Badge
+                          variant={urlData.isValid ? "default" : "destructive"}
                           className="text-xs"
                         >
-                          {urlData.isValid ? 'Valid' : 'Invalid'}
+                          {urlData.isValid ? "Valid" : "Invalid"}
                         </Badge>
-                        <span className="text-sm text-muted-foreground">{urlData.domain}</span>
+                        <span className="text-sm text-muted-foreground">
+                          {urlData.domain}
+                        </span>
                       </div>
                       <div className="font-mono text-sm truncate">
                         {urlData.normalized}

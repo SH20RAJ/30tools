@@ -1,6 +1,12 @@
 import { stackServerApp } from "../../stack";
 import { redirect } from "next/navigation";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -10,13 +16,14 @@ import {
   HeartIcon,
   SettingsIcon,
   TrendingUpIcon,
-  ZapIcon
+  ZapIcon,
 } from "lucide-react";
 import Link from "next/link";
 
 export const metadata = {
   title: "Dashboard - Free Online Tool | Professional Results",
-  description: "Professional dashboard with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description:
+    "Professional dashboard with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
   keywords: [
     "dashboard",
     "dashboard online",
@@ -30,12 +37,13 @@ export const metadata = {
     "dashboard utility",
     "online tool",
     "free utility",
-    "web application"
+    "web application",
   ].join(", "),
 
   openGraph: {
     title: "Dashboard - Free Online Tool | Professional Results",
-    description: "Professional dashboard tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional dashboard tool. Free online processing with high-quality results. No registration required, instant results.",
     url: "https://30tools.com/dashboard",
     siteName: "30tools",
     images: [
@@ -43,22 +51,23 @@ export const metadata = {
         url: "/og-images/dashboard.jpg",
         width: 1200,
         height: 630,
-        alt: "Dashboard - Free Online Tool | Professional Results"
+        alt: "Dashboard - Free Online Tool | Professional Results",
       },
     ],
-    type: "website"
+    type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Dashboard - Free Online Tool | Professional Results",
-    description: "Professional dashboard tool. Free online processing with high-quality results. No registration required, instant results.",
+    description:
+      "Professional dashboard tool. Free online processing with high-quality results. No registration required, instant results.",
     images: ["/og-images/dashboard.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
 
   alternates: {
-    canonical: "https://30tools.com/dashboard"
+    canonical: "https://30tools.com/dashboard",
   },
 };
 
@@ -74,7 +83,6 @@ export default async function DashboardPage() {
 
   return (
     <>
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -108,7 +116,9 @@ export default async function DashboardPage() {
         <main className="container mx-auto px-4 py-8">
           {/* Welcome Section */}
           <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">Welcome back, {displayName}!</h1>
+            <h1 className="text-3xl font-bold mb-2">
+              Welcome back, {displayName}!
+            </h1>
             <p className="text-muted-foreground">
               Member since {joinDate} • Manage your tools and preferences
             </p>
@@ -118,7 +128,9 @@ export default async function DashboardPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Tools Used</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Tools Used
+                </CardTitle>
                 <TrendingUpIcon className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
@@ -144,13 +156,18 @@ export default async function DashboardPage() {
 
             <Card>
               <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                <CardTitle className="text-sm font-medium">Premium Status</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Premium Status
+                </CardTitle>
                 <CrownIcon className="h-4 w-4 text-muted-foreground" />
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">Free</div>
                 <p className="text-xs text-muted-foreground">
-                  <Link href="#upgrade" className="text-primary hover:underline">
+                  <Link
+                    href="#upgrade"
+                    className="text-primary hover:underline"
+                  >
                     Upgrade to Pro
                   </Link>
                 </p>
@@ -179,11 +196,15 @@ export default async function DashboardPage() {
                     </div>
                     <div>
                       <p className="font-medium">Image Compressor</p>
-                      <p className="text-sm text-muted-foreground">2 hours ago</p>
+                      <p className="text-sm text-muted-foreground">
+                        2 hours ago
+                      </p>
                     </div>
                   </div>
                   <Link href="/image-compressor">
-                    <Button variant="ghost" size="sm">Use</Button>
+                    <Button variant="ghost" size="sm">
+                      Use
+                    </Button>
                   </Link>
                 </div>
 
@@ -198,7 +219,9 @@ export default async function DashboardPage() {
                     </div>
                   </div>
                   <Link href="/pdf-merger">
-                    <Button variant="ghost" size="sm">Use</Button>
+                    <Button variant="ghost" size="sm">
+                      Use
+                    </Button>
                   </Link>
                 </div>
 
@@ -209,11 +232,15 @@ export default async function DashboardPage() {
                     </div>
                     <div>
                       <p className="font-medium">Color Picker</p>
-                      <p className="text-sm text-muted-foreground">2 days ago</p>
+                      <p className="text-sm text-muted-foreground">
+                        2 days ago
+                      </p>
                     </div>
                   </div>
                   <Link href="/color-picker">
-                    <Button variant="ghost" size="sm">Use</Button>
+                    <Button variant="ghost" size="sm">
+                      Use
+                    </Button>
                   </Link>
                 </div>
               </CardContent>

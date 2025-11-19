@@ -1,12 +1,15 @@
-import YouTubeTimestampGenerator from '@/components/tools/youtube/YouTubeTimestampGenerator';
+import YouTubeTimestampGenerator from "@/components/tools/youtube/YouTubeTimestampGenerator";
 
 export const metadata = {
   title: "Youtube Timestamp Generator - Free Tool | 30tools",
-  description: "Free youtube timestamp generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
-  keywords: "youtube timestamp generator, youtube chapters generator, video timestamps, youtube chapter maker, automatic timestamps, video chapter timestamps, youtube chapter creator, video bookmarks generator, timestamp maker youtube, chapter timestamps tool",
+  description:
+    "Free youtube timestamp generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  keywords:
+    "youtube timestamp generator, youtube chapters generator, video timestamps, youtube chapter maker, automatic timestamps, video chapter timestamps, youtube chapter creator, video bookmarks generator, timestamp maker youtube, chapter timestamps tool",
   openGraph: {
     title: "YouTube Timestamp Generator - Auto Create Chapter Timestamps",
-    description: "Generate professional YouTube chapter timestamps automatically. Perfect for creating video chapters, bookmarks, and navigation timestamps.",
+    description:
+      "Generate professional YouTube chapter timestamps automatically. Perfect for creating video chapters, bookmarks, and navigation timestamps.",
     url: "https://30tools.com/youtube-timestamp-generator",
     siteName: "30tools",
     images: [
@@ -14,46 +17,48 @@ export const metadata = {
         url: "/og-images/youtube-timestamp-generator.jpg",
         width: 1200,
         height: 630,
-        alt: "YouTube Timestamp Generator Tool"
+        alt: "YouTube Timestamp Generator Tool",
       },
     ],
-    type: "website"
+    type: "website",
   },
   alternates: {
-    canonical: "https://30tools.com/youtube-timestamp-generator"
+    canonical: "https://30tools.com/youtube-timestamp-generator",
   },
 
   twitter: {
     card: "summary_large_image",
     title: "Youtube Timestamp Generator - Free Online Tool | 30tools",
-    description: "Free youtube timestamp generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    description:
+      "Free youtube timestamp generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
     images: ["/og-images/youtube-timestamp-generator.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
 };
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "YouTube Timestamp Generator",
-  "description": "Professional tool to automatically generate YouTube chapter timestamps from video transcripts for better navigation and SEO",
-  "url": "https://30tools.com/youtube-timestamp-generator",
-  "applicationCategory": "Multimedia",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "YouTube Timestamp Generator",
+  description:
+    "Professional tool to automatically generate YouTube chapter timestamps from video transcripts for better navigation and SEO",
+  url: "https://30tools.com/youtube-timestamp-generator",
+  applicationCategory: "Multimedia",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "featureList": [
+  featureList: [
     "Automatic timestamp generation",
     "Chapter title extraction",
     "Multiple export formats",
     "Transcript-based analysis",
     "Professional formatting",
-    "Bulk processing support"
-  ]
+    "Bulk processing support",
+  ],
 };
 
 export default function YouTubeTimestampGeneratorPage() {
@@ -71,47 +76,85 @@ export default function YouTubeTimestampGeneratorPage() {
                 YouTube Timestamp Generator
               </h1>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Create professional YouTube chapter timestamps automatically from video transcripts. 
-                Generate perfect video navigation points, improve viewer engagement, and boost your video's 
-                search ranking with properly formatted timestamps and chapters.
+                Create professional YouTube chapter timestamps automatically
+                from video transcripts. Generate perfect video navigation
+                points, improve viewer engagement, and boost your video's search
+                ranking with properly formatted timestamps and chapters.
               </p>
             </div>
-            
+
             <YouTubeTimestampGenerator />
-            
+
             <div className="mt-12 prose prose-gray max-w-none">
-              <h2 className="text-2xl font-semibold mb-4">Professional YouTube Chapter Timestamp Generation</h2>
+              <h2 className="text-2xl font-semibold mb-4">
+                Professional YouTube Chapter Timestamp Generation
+              </h2>
               <p>
-                Transform your YouTube videos with our advanced timestamp generator that automatically creates 
-                chapter markers from video transcripts. This powerful tool helps content creators generate 
-                precise video timestamps, chapter titles, and navigation points that significantly improve 
-                viewer experience and video discoverability.
+                Transform your YouTube videos with our advanced timestamp
+                generator that automatically creates chapter markers from video
+                transcripts. This powerful tool helps content creators generate
+                precise video timestamps, chapter titles, and navigation points
+                that significantly improve viewer experience and video
+                discoverability.
               </p>
-              
-              <h3 className="text-xl font-semibold mt-6 mb-3">Advanced Timestamp Features</h3>
+
+              <h3 className="text-xl font-semibold mt-6 mb-3">
+                Advanced Timestamp Features
+              </h3>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Automatic Chapter Detection:</strong> Intelligently analyzes video transcripts to identify natural chapter breaks and topic transitions</li>
-                <li><strong>Smart Title Generation:</strong> Creates compelling chapter titles based on content analysis and keyword optimization</li>
-                <li><strong>Multiple Export Formats:</strong> Generate timestamps in YouTube description format, SRT files, or structured JSON data</li>
-                <li><strong>Precision Timing:</strong> Accurate timestamp placement ensuring perfect chapter alignment with video content</li>
-                <li><strong>SEO-Optimized Chapters:</strong> Chapter titles include relevant keywords for improved search visibility</li>
-                <li><strong>Bulk Processing:</strong> Handle multiple videos simultaneously for efficient workflow management</li>
+                <li>
+                  <strong>Automatic Chapter Detection:</strong> Intelligently
+                  analyzes video transcripts to identify natural chapter breaks
+                  and topic transitions
+                </li>
+                <li>
+                  <strong>Smart Title Generation:</strong> Creates compelling
+                  chapter titles based on content analysis and keyword
+                  optimization
+                </li>
+                <li>
+                  <strong>Multiple Export Formats:</strong> Generate timestamps
+                  in YouTube description format, SRT files, or structured JSON
+                  data
+                </li>
+                <li>
+                  <strong>Precision Timing:</strong> Accurate timestamp
+                  placement ensuring perfect chapter alignment with video
+                  content
+                </li>
+                <li>
+                  <strong>SEO-Optimized Chapters:</strong> Chapter titles
+                  include relevant keywords for improved search visibility
+                </li>
+                <li>
+                  <strong>Bulk Processing:</strong> Handle multiple videos
+                  simultaneously for efficient workflow management
+                </li>
               </ul>
-              
-              <h3 className="text-xl font-semibold mt-6 mb-3">Why YouTube Timestamps Boost Performance</h3>
+
+              <h3 className="text-xl font-semibold mt-6 mb-3">
+                Why YouTube Timestamps Boost Performance
+              </h3>
               <p>
-                YouTube chapter timestamps significantly improve video performance by enhancing user experience 
-                and search optimization. Videos with properly structured chapters receive higher engagement rates, 
-                longer watch times, and better search rankings. Our timestamp generator ensures your chapters 
-                meet YouTube's requirements while maximizing viewer retention and content discoverability.
+                YouTube chapter timestamps significantly improve video
+                performance by enhancing user experience and search
+                optimization. Videos with properly structured chapters receive
+                higher engagement rates, longer watch times, and better search
+                rankings. Our timestamp generator ensures your chapters meet
+                YouTube's requirements while maximizing viewer retention and
+                content discoverability.
               </p>
-              
-              <h3 className="text-xl font-semibold mt-6 mb-3">Professional Video Chapter Creation</h3>
+
+              <h3 className="text-xl font-semibold mt-6 mb-3">
+                Professional Video Chapter Creation
+              </h3>
               <p>
-                Whether you're creating educational content, tutorials, podcasts, or entertainment videos, 
-                our timestamp generator helps you create professional chapter structures that viewers love. 
-                The tool automatically identifies key moments, topic changes, and important segments, 
-                generating timestamps that make your content more navigable and engaging.
+                Whether you're creating educational content, tutorials,
+                podcasts, or entertainment videos, our timestamp generator helps
+                you create professional chapter structures that viewers love.
+                The tool automatically identifies key moments, topic changes,
+                and important segments, generating timestamps that make your
+                content more navigable and engaging.
               </p>
             </div>
           </div>

@@ -1,87 +1,111 @@
-'use client';
+"use client";
 
-import React, { useState, useCallback } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
-import { Progress } from '@/components/ui/progress';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  FileText, 
-  Download, 
-  Upload, 
-  XCircle, 
+import React, { useState, useCallback } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { Progress } from "@/components/ui/progress";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  FileText,
+  Download,
+  Upload,
+  XCircle,
   Clock,
   Info,
   Search,
   AlertTriangle,
   Zap,
-  Target
-} from 'lucide-react';
+  Target,
+} from "lucide-react";
 
 export default function XmlSitemapExtractor() {
-  const [sitemapUrl, setSitemapUrl] = useState('');
+  const [sitemapUrl, setSitemapUrl] = useState("");
   const [urls, setUrls] = useState([]);
   const [isExtracting, setIsExtracting] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [stats, setStats] = useState(null);
 
   // Simulate sitemap extraction (in real implementation, this would parse actual XML)
   const simulateSitemapExtraction = useCallback(async (sitemapUrl) => {
     setProgress(10);
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     // Simulate fetching sitemap
     setProgress(30);
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise((resolve) => setTimeout(resolve, 500));
 
     // Simulate parsing XML
     setProgress(60);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
     // Generate sample URLs
     const baseUrl = new URL(sitemapUrl).origin;
     const sampleUrls = [];
     const urlPatterns = [
-      '', '/about', '/contact', '/services', '/blog', '/products',
-      '/blog/post-1', '/blog/post-2', '/blog/post-3',
-      '/products/item-1', '/products/item-2', '/services/service-1'
+      "",
+      "/about",
+      "/contact",
+      "/services",
+      "/blog",
+      "/products",
+      "/blog/post-1",
+      "/blog/post-2",
+      "/blog/post-3",
+      "/products/item-1",
+      "/products/item-2",
+      "/services/service-1",
     ];
 
     // Generate more realistic URLs
     for (let i = 0; i < 50 + Math.floor(Math.random() * 200); i++) {
-      const pattern = urlPatterns[Math.floor(Math.random() * urlPatterns.length)];
-      const randomSuffix = Math.random() > 0.5 ? `-${Math.floor(Math.random() * 1000)}` : '';
-      
+      const pattern =
+        urlPatterns[Math.floor(Math.random() * urlPatterns.length)];
+      const randomSuffix =
+        Math.random() > 0.5 ? `-${Math.floor(Math.random() * 1000)}` : "";
+
       sampleUrls.push({
         url: `${baseUrl}${pattern}${randomSuffix}`,
-        lastModified: new Date(Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000),
-        changeFreq: ['daily', 'weekly', 'monthly', 'yearly'][Math.floor(Math.random() * 4)],
-        priority: (Math.random()).toFixed(1),
+        lastModified: new Date(
+          Date.now() - Math.random() * 365 * 24 * 60 * 60 * 1000,
+        ),
+        changeFreq: ["daily", "weekly", "monthly", "yearly"][
+          Math.floor(Math.random() * 4)
+        ],
+        priority: Math.random().toFixed(1),
         images: Math.floor(Math.random() * 5),
-        videos: Math.floor(Math.random() * 2)
+        videos: Math.floor(Math.random() * 2),
       });
     }
 
     setProgress(90);
-    await new Promise(resolve => setTimeout(resolve, 300));
+    await new Promise((resolve) => setTimeout(resolve, 300));
 
     const stats = {
       totalUrls: sampleUrls.length,
       lastModified: new Date(),
-      avgPriority: (sampleUrls.reduce((sum, url) => sum + parseFloat(url.priority), 0) / sampleUrls.length).toFixed(2),
+      avgPriority: (
+        sampleUrls.reduce((sum, url) => sum + parseFloat(url.priority), 0) /
+        sampleUrls.length
+      ).toFixed(2),
       changeFreqDistribution: {
-        daily: sampleUrls.filter(u => u.changeFreq === 'daily').length,
-        weekly: sampleUrls.filter(u => u.changeFreq === 'weekly').length,
-        monthly: sampleUrls.filter(u => u.changeFreq === 'monthly').length,
-        yearly: sampleUrls.filter(u => u.changeFreq === 'yearly').length
+        daily: sampleUrls.filter((u) => u.changeFreq === "daily").length,
+        weekly: sampleUrls.filter((u) => u.changeFreq === "weekly").length,
+        monthly: sampleUrls.filter((u) => u.changeFreq === "monthly").length,
+        yearly: sampleUrls.filter((u) => u.changeFreq === "yearly").length,
       },
       totalImages: sampleUrls.reduce((sum, url) => sum + url.images, 0),
-      totalVideos: sampleUrls.reduce((sum, url) => sum + url.videos, 0)
+      totalVideos: sampleUrls.reduce((sum, url) => sum + url.videos, 0),
     };
 
     setProgress(100);
@@ -90,17 +114,17 @@ export default function XmlSitemapExtractor() {
 
   const extractSitemap = async () => {
     if (!sitemapUrl.trim()) {
-      setError('Please enter a sitemap URL');
+      setError("Please enter a sitemap URL");
       return;
     }
 
     if (!sitemapUrl.match(/^https?:\/\/.+/)) {
-      setError('Please enter a valid URL starting with http:// or https://');
+      setError("Please enter a valid URL starting with http:// or https://");
       return;
     }
 
     setIsExtracting(true);
-    setError('');
+    setError("");
     setProgress(0);
     setUrls([]);
     setStats(null);
@@ -110,7 +134,9 @@ export default function XmlSitemapExtractor() {
       setUrls(result.urls);
       setStats(result.stats);
     } catch (err) {
-      setError('Failed to extract sitemap. Please check the URL and try again.');
+      setError(
+        "Failed to extract sitemap. Please check the URL and try again.",
+      );
     } finally {
       setIsExtracting(false);
     }
@@ -122,43 +148,56 @@ export default function XmlSitemapExtractor() {
     let content, filename, mimeType;
 
     switch (format) {
-      case 'csv':
+      case "csv":
         content = [
-          ['URL', 'Last Modified', 'Change Frequency', 'Priority', 'Images', 'Videos'].join(','),
-          ...urls.map(u => [
-            `"${u.url}"`,
-            u.lastModified.toISOString().split('T')[0],
-            u.changeFreq,
-            u.priority,
-            u.images,
-            u.videos
-          ].join(','))
-        ].join('\n');
-        filename = `sitemap-urls-${new Date().toISOString().split('T')[0]}.csv`;
-        mimeType = 'text/csv';
+          [
+            "URL",
+            "Last Modified",
+            "Change Frequency",
+            "Priority",
+            "Images",
+            "Videos",
+          ].join(","),
+          ...urls.map((u) =>
+            [
+              `"${u.url}"`,
+              u.lastModified.toISOString().split("T")[0],
+              u.changeFreq,
+              u.priority,
+              u.images,
+              u.videos,
+            ].join(","),
+          ),
+        ].join("\n");
+        filename = `sitemap-urls-${new Date().toISOString().split("T")[0]}.csv`;
+        mimeType = "text/csv";
         break;
 
-      case 'txt':
-        content = urls.map(u => u.url).join('\n');
-        filename = `sitemap-urls-${new Date().toISOString().split('T')[0]}.txt`;
-        mimeType = 'text/plain';
+      case "txt":
+        content = urls.map((u) => u.url).join("\n");
+        filename = `sitemap-urls-${new Date().toISOString().split("T")[0]}.txt`;
+        mimeType = "text/plain";
         break;
 
-      case 'xml':
+      case "xml":
         content = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls.map(u => `  <url>
+${urls
+  .map(
+    (u) => `  <url>
     <loc>${u.url}</loc>
-    <lastmod>${u.lastModified.toISOString().split('T')[0]}</lastmod>
+    <lastmod>${u.lastModified.toISOString().split("T")[0]}</lastmod>
     <changefreq>${u.changeFreq}</changefreq>
     <priority>${u.priority}</priority>
-  </url>`).join('\n')}
+  </url>`,
+  )
+  .join("\n")}
 </urlset>`;
-        filename = `sitemap-extracted-${new Date().toISOString().split('T')[0]}.xml`;
-        mimeType = 'application/xml';
+        filename = `sitemap-extracted-${new Date().toISOString().split("T")[0]}.xml`;
+        mimeType = "application/xml";
         break;
 
-      case 'html':
+      case "html":
         content = `<!DOCTYPE html>
 <html>
 <head>
@@ -181,19 +220,23 @@ ${urls.map(u => `  <url>
             <th>Images</th>
             <th>Videos</th>
         </tr>
-        ${urls.map(u => `<tr>
+        ${urls
+          .map(
+            (u) => `<tr>
             <td><a href="${u.url}" target="_blank">${u.url}</a></td>
             <td>${u.lastModified.toLocaleDateString()}</td>
             <td>${u.changeFreq}</td>
             <td>${u.priority}</td>
             <td>${u.images}</td>
             <td>${u.videos}</td>
-        </tr>`).join('\n')}
+        </tr>`,
+          )
+          .join("\n")}
     </table>
 </body>
 </html>`;
-        filename = `sitemap-urls-${new Date().toISOString().split('T')[0]}.html`;
-        mimeType = 'text/html';
+        filename = `sitemap-urls-${new Date().toISOString().split("T")[0]}.html`;
+        mimeType = "text/html";
         break;
 
       default:
@@ -202,7 +245,7 @@ ${urls.map(u => `  <url>
 
     const blob = new Blob([content], { type: mimeType });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = filename;
     document.body.appendChild(a);
@@ -213,19 +256,24 @@ ${urls.map(u => `  <url>
 
   const getPriorityColor = (priority) => {
     const p = parseFloat(priority);
-    if (p >= 0.8) return 'bg-muted/500';
-    if (p >= 0.5) return 'bg-muted/500';
-    if (p >= 0.3) return 'bg-muted/500';
-    return 'bg-gray-500';
+    if (p >= 0.8) return "bg-muted/500";
+    if (p >= 0.5) return "bg-muted/500";
+    if (p >= 0.3) return "bg-muted/500";
+    return "bg-gray-500";
   };
 
   const getChangeFreqColor = (freq) => {
     switch (freq) {
-      case 'daily': return 'bg-muted/500';
-      case 'weekly': return 'bg-muted/500';
-      case 'monthly': return 'bg-muted/500';
-      case 'yearly': return 'bg-gray-500';
-      default: return 'bg-gray-400';
+      case "daily":
+        return "bg-muted/500";
+      case "weekly":
+        return "bg-muted/500";
+      case "monthly":
+        return "bg-muted/500";
+      case "yearly":
+        return "bg-gray-500";
+      default:
+        return "bg-gray-400";
     }
   };
 
@@ -236,9 +284,12 @@ ${urls.map(u => `  <url>
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
           <FileText className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-foreground">XML Sitemap Extractor</h1>
+        <h1 className="text-4xl font-bold text-foreground">
+          XML Sitemap Extractor
+        </h1>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Extract all URLs from XML sitemaps and export them in various formats (CSV, TXT, XML, HTML, Excel). Analyze sitemap structure and URL data.
+          Extract all URLs from XML sitemaps and export them in various formats
+          (CSV, TXT, XML, HTML, Excel). Analyze sitemap structure and URL data.
         </p>
       </div>
 
@@ -251,11 +302,12 @@ ${urls.map(u => `  <url>
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Analyze competitor sitemaps to discover their content structure and identify new opportunities.
+              Analyze competitor sitemaps to discover their content structure
+              and identify new opportunities.
             </p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="text-center pb-3">
             <Target className="h-8 w-8 text-primary mx-auto mb-2" />
@@ -263,11 +315,12 @@ ${urls.map(u => `  <url>
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Extract URL lists for comprehensive content audits, indexation checks, and site structure analysis.
+              Extract URL lists for comprehensive content audits, indexation
+              checks, and site structure analysis.
             </p>
           </CardContent>
         </Card>
-        
+
         <Card>
           <CardHeader className="text-center pb-3">
             <Zap className="h-8 w-8 text-primary mx-auto mb-2" />
@@ -275,7 +328,8 @@ ${urls.map(u => `  <url>
           </CardHeader>
           <CardContent className="text-center">
             <p className="text-sm text-muted-foreground">
-              Export extracted URLs in CSV, TXT, XML, HTML formats for use in other SEO tools and analysis.
+              Export extracted URLs in CSV, TXT, XML, HTML formats for use in
+              other SEO tools and analysis.
             </p>
           </CardContent>
         </Card>
@@ -286,7 +340,8 @@ ${urls.map(u => `  <url>
         <CardHeader>
           <CardTitle>Extract URLs from XML Sitemap</CardTitle>
           <CardDescription>
-            Enter a sitemap URL to extract all URLs and their metadata. Supports sitemap index files and nested sitemaps.
+            Enter a sitemap URL to extract all URLs and their metadata. Supports
+            sitemap index files and nested sitemaps.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -300,7 +355,8 @@ ${urls.map(u => `  <url>
               disabled={isExtracting}
             />
             <p className="text-sm text-muted-foreground">
-              Enter the full URL of an XML sitemap (e.g., https://example.com/sitemap.xml)
+              Enter the full URL of an XML sitemap (e.g.,
+              https://example.com/sitemap.xml)
             </p>
           </div>
 
@@ -311,8 +367,8 @@ ${urls.map(u => `  <url>
             </Alert>
           )}
 
-          <Button 
-            onClick={extractSitemap} 
+          <Button
+            onClick={extractSitemap}
             disabled={isExtracting}
             className="w-full"
           >
@@ -346,25 +402,33 @@ ${urls.map(u => `  <url>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.totalUrls}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.totalUrls}
+              </div>
               <div className="text-sm text-muted-foreground">Total URLs</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.totalImages}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.totalImages}
+              </div>
               <div className="text-sm text-muted-foreground">Images</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.totalVideos}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.totalVideos}
+              </div>
               <div className="text-sm text-muted-foreground">Videos</div>
             </CardContent>
           </Card>
           <Card>
             <CardContent className="p-4 text-center">
-              <div className="text-2xl font-bold text-primary">{stats.avgPriority}</div>
+              <div className="text-2xl font-bold text-primary">
+                {stats.avgPriority}
+              </div>
               <div className="text-sm text-muted-foreground">Avg Priority</div>
             </CardContent>
           </Card>
@@ -382,19 +446,19 @@ ${urls.map(u => `  <url>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <Button onClick={() => exportUrls('csv')} variant="outline">
+              <Button onClick={() => exportUrls("csv")} variant="outline">
                 <Download className="mr-2 h-4 w-4" />
                 CSV
               </Button>
-              <Button onClick={() => exportUrls('txt')} variant="outline">
+              <Button onClick={() => exportUrls("txt")} variant="outline">
                 <Download className="mr-2 h-4 w-4" />
                 TXT
               </Button>
-              <Button onClick={() => exportUrls('xml')} variant="outline">
+              <Button onClick={() => exportUrls("xml")} variant="outline">
                 <Download className="mr-2 h-4 w-4" />
                 XML
               </Button>
-              <Button onClick={() => exportUrls('html')} variant="outline">
+              <Button onClick={() => exportUrls("html")} variant="outline">
                 <Download className="mr-2 h-4 w-4" />
                 HTML
               </Button>
@@ -415,14 +479,20 @@ ${urls.map(u => `  <url>
           <CardContent>
             <div className="space-y-4">
               <div>
-                <h4 className="font-semibold mb-2">Change Frequency Distribution</h4>
+                <h4 className="font-semibold mb-2">
+                  Change Frequency Distribution
+                </h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  {Object.entries(stats.changeFreqDistribution).map(([freq, count]) => (
-                    <div key={freq} className="text-center">
-                      <div className="text-lg font-bold">{count}</div>
-                      <div className="text-sm text-muted-foreground capitalize">{freq}</div>
-                    </div>
-                  ))}
+                  {Object.entries(stats.changeFreqDistribution).map(
+                    ([freq, count]) => (
+                      <div key={freq} className="text-center">
+                        <div className="text-lg font-bold">{count}</div>
+                        <div className="text-sm text-muted-foreground capitalize">
+                          {freq}
+                        </div>
+                      </div>
+                    ),
+                  )}
                 </div>
               </div>
             </div>
@@ -436,7 +506,8 @@ ${urls.map(u => `  <url>
           <CardHeader>
             <CardTitle>Extracted URLs</CardTitle>
             <CardDescription>
-              URLs extracted from the sitemap with metadata (showing first 50 results)
+              URLs extracted from the sitemap with metadata (showing first 50
+              results)
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -455,8 +526,12 @@ ${urls.map(u => `  <url>
                   {urls.slice(0, 50).map((url, index) => (
                     <tr key={index} className="border-b hover:bg-gray-50">
                       <td className="p-3">
-                        <a href={url.url} target="_blank" rel="noopener noreferrer" 
-                           className="text-primary hover:underline text-sm break-all">
+                        <a
+                          href={url.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:underline text-sm break-all"
+                        >
                           {url.url}
                         </a>
                       </td>
@@ -474,7 +549,9 @@ ${urls.map(u => `  <url>
                         </Badge>
                       </td>
                       <td className="p-3 text-sm">
-                        {url.images > 0 && <span className="mr-2">📷 {url.images}</span>}
+                        {url.images > 0 && (
+                          <span className="mr-2">📷 {url.images}</span>
+                        )}
                         {url.videos > 0 && <span>🎥 {url.videos}</span>}
                       </td>
                     </tr>

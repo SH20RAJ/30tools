@@ -1,17 +1,23 @@
-'use client';
+"use client";
 
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Progress } from '@/components/ui/progress';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  ArrowLeftIcon, 
-  ShieldIcon, 
+import { useState, useEffect } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  ArrowLeftIcon,
+  ShieldIcon,
   AlertTriangleIcon,
   CheckCircleIcon,
   EyeIcon,
@@ -22,18 +28,18 @@ import {
   LockIcon,
   UnlockIcon,
   ZapIcon,
-  TrendingUpIcon
-} from 'lucide-react';
-import Link from 'next/link';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  TrendingUpIcon,
+} from "lucide-react";
+import Link from "next/link";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function PasswordCheckerTool() {
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [strength, setStrength] = useState(0);
   const [feedback, setFeedback] = useState([]);
   const [isCompromised, setIsCompromised] = useState(false);
-  const [estimatedCrackTime, setEstimatedCrackTime] = useState('');
+  const [estimatedCrackTime, setEstimatedCrackTime] = useState("");
 
   const calculatePasswordStrength = (pwd) => {
     let score = 0;
@@ -42,67 +48,79 @@ export default function PasswordCheckerTool() {
     // Length check
     if (pwd.length >= 8) {
       score += 20;
-      checks.push({ type: 'success', message: 'Length is adequate (8+ characters)' });
+      checks.push({
+        type: "success",
+        message: "Length is adequate (8+ characters)",
+      });
     } else {
-      checks.push({ type: 'error', message: 'Password too short (minimum 8 characters)' });
+      checks.push({
+        type: "error",
+        message: "Password too short (minimum 8 characters)",
+      });
     }
 
     // Uppercase check
     if (/[A-Z]/.test(pwd)) {
       score += 15;
-      checks.push({ type: 'success', message: 'Contains uppercase letters' });
+      checks.push({ type: "success", message: "Contains uppercase letters" });
     } else {
-      checks.push({ type: 'error', message: 'Add uppercase letters (A-Z)' });
+      checks.push({ type: "error", message: "Add uppercase letters (A-Z)" });
     }
 
     // Lowercase check
     if (/[a-z]/.test(pwd)) {
       score += 15;
-      checks.push({ type: 'success', message: 'Contains lowercase letters' });
+      checks.push({ type: "success", message: "Contains lowercase letters" });
     } else {
-      checks.push({ type: 'error', message: 'Add lowercase letters (a-z)' });
+      checks.push({ type: "error", message: "Add lowercase letters (a-z)" });
     }
 
     // Numbers check
     if (/\d/.test(pwd)) {
       score += 15;
-      checks.push({ type: 'success', message: 'Contains numbers' });
+      checks.push({ type: "success", message: "Contains numbers" });
     } else {
-      checks.push({ type: 'error', message: 'Add numbers (0-9)' });
+      checks.push({ type: "error", message: "Add numbers (0-9)" });
     }
 
     // Special characters check
     if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pwd)) {
       score += 20;
-      checks.push({ type: 'success', message: 'Contains special characters' });
+      checks.push({ type: "success", message: "Contains special characters" });
     } else {
-      checks.push({ type: 'error', message: 'Add special characters (!@#$%^&*)' });
+      checks.push({
+        type: "error",
+        message: "Add special characters (!@#$%^&*)",
+      });
     }
 
     // Length bonus
     if (pwd.length >= 12) {
       score += 10;
-      checks.push({ type: 'success', message: 'Excellent length (12+ characters)' });
+      checks.push({
+        type: "success",
+        message: "Excellent length (12+ characters)",
+      });
     }
 
     // Repetition penalty
     if (/(.)\1{2,}/.test(pwd)) {
       score -= 10;
-      checks.push({ type: 'warning', message: 'Avoid repeating characters' });
+      checks.push({ type: "warning", message: "Avoid repeating characters" });
     }
 
     // Common patterns penalty
     if (/123|abc|qwe|password|admin/i.test(pwd)) {
       score -= 20;
-      checks.push({ type: 'error', message: 'Avoid common patterns or words' });
+      checks.push({ type: "error", message: "Avoid common patterns or words" });
     }
 
     return { score: Math.max(0, Math.min(100, score)), checks };
   };
 
   const calculateCrackTime = (pwd) => {
-    if (!pwd) return '';
-    
+    if (!pwd) return "";
+
     let charset = 0;
     if (/[a-z]/.test(pwd)) charset += 26;
     if (/[A-Z]/.test(pwd)) charset += 26;
@@ -112,12 +130,16 @@ export default function PasswordCheckerTool() {
     const combinations = Math.pow(charset, pwd.length);
     const secondsToCrack = combinations / (2 * 1000000000); // Assuming 1 billion guesses per second
 
-    if (secondsToCrack < 60) return 'Less than a minute';
-    if (secondsToCrack < 3600) return `${Math.ceil(secondsToCrack / 60)} minutes`;
-    if (secondsToCrack < 86400) return `${Math.ceil(secondsToCrack / 3600)} hours`;
-    if (secondsToCrack < 31536000) return `${Math.ceil(secondsToCrack / 86400)} days`;
-    if (secondsToCrack < 31536000000) return `${Math.ceil(secondsToCrack / 31536000)} years`;
-    return 'Centuries';
+    if (secondsToCrack < 60) return "Less than a minute";
+    if (secondsToCrack < 3600)
+      return `${Math.ceil(secondsToCrack / 60)} minutes`;
+    if (secondsToCrack < 86400)
+      return `${Math.ceil(secondsToCrack / 3600)} hours`;
+    if (secondsToCrack < 31536000)
+      return `${Math.ceil(secondsToCrack / 86400)} days`;
+    if (secondsToCrack < 31536000000)
+      return `${Math.ceil(secondsToCrack / 31536000)} years`;
+    return "Centuries";
   };
 
   useEffect(() => {
@@ -129,46 +151,51 @@ export default function PasswordCheckerTool() {
     } else {
       setStrength(0);
       setFeedback([]);
-      setEstimatedCrackTime('');
+      setEstimatedCrackTime("");
     }
   }, [password]);
 
   const getStrengthColor = () => {
-    if (strength < 30) return 'text-destructive bg-destructive/20';
-    if (strength < 60) return 'text-primary bg-muted';
-    if (strength < 80) return 'text-primary bg-muted';
-    return 'text-primary bg-muted';
+    if (strength < 30) return "text-destructive bg-destructive/20";
+    if (strength < 60) return "text-primary bg-muted";
+    if (strength < 80) return "text-primary bg-muted";
+    return "text-primary bg-muted";
   };
 
   const getStrengthText = () => {
-    if (strength < 30) return 'Weak';
-    if (strength < 60) return 'Fair';
-    if (strength < 80) return 'Strong';
-    return 'Very Strong';
+    if (strength < 30) return "Weak";
+    if (strength < 60) return "Fair";
+    if (strength < 80) return "Strong";
+    return "Very Strong";
   };
 
   const generateSecurePassword = () => {
-    const lowercase = 'abcdefghijklmnopqrstuvwxyz';
-    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const numbers = '0123456789';
-    const symbols = '!@#$%^&*()_+-=[]{}|;:,.<>?';
-    
+    const lowercase = "abcdefghijklmnopqrstuvwxyz";
+    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const numbers = "0123456789";
+    const symbols = "!@#$%^&*()_+-=[]{}|;:,.<>?";
+
     const allChars = lowercase + uppercase + numbers + symbols;
-    let password = '';
-    
+    let password = "";
+
     // Ensure at least one character from each category
     password += lowercase[Math.floor(Math.random() * lowercase.length)];
     password += uppercase[Math.floor(Math.random() * uppercase.length)];
     password += numbers[Math.floor(Math.random() * numbers.length)];
     password += symbols[Math.floor(Math.random() * symbols.length)];
-    
+
     // Fill the rest randomly
     for (let i = 4; i < 16; i++) {
       password += allChars[Math.floor(Math.random() * allChars.length)];
     }
-    
+
     // Shuffle the password
-    setPassword(password.split('').sort(() => Math.random() - 0.5).join(''));
+    setPassword(
+      password
+        .split("")
+        .sort(() => Math.random() - 0.5)
+        .join(""),
+    );
   };
 
   return (
@@ -187,7 +214,9 @@ export default function PasswordCheckerTool() {
         </div>
         <div>
           <h1 className="text-3xl font-bold">Password Strength Checker</h1>
-          <p className="text-muted-foreground">Check how secure your passwords are and get improvement tips</p>
+          <p className="text-muted-foreground">
+            Check how secure your passwords are and get improvement tips
+          </p>
         </div>
       </div>
 
@@ -213,7 +242,8 @@ export default function PasswordCheckerTool() {
                 Enter Password to Check
               </CardTitle>
               <CardDescription>
-                Your password is never sent to our servers - all analysis happens in your browser
+                Your password is never sent to our servers - all analysis
+                happens in your browser
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -222,7 +252,7 @@ export default function PasswordCheckerTool() {
                 <div className="relative">
                   <Input
                     id="password"
-                    type={showPassword ? 'text' : 'password'}
+                    type={showPassword ? "text" : "password"}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter your password..."
@@ -235,7 +265,11 @@ export default function PasswordCheckerTool() {
                     className="absolute right-0 top-0 h-full px-3"
                     onClick={() => setShowPassword(!showPassword)}
                   >
-                    {showPassword ? <EyeOffIcon className="h-4 w-4" /> : <EyeIcon className="h-4 w-4" />}
+                    {showPassword ? (
+                      <EyeOffIcon className="h-4 w-4" />
+                    ) : (
+                      <EyeIcon className="h-4 w-4" />
+                    )}
                   </Button>
                 </div>
               </div>
@@ -245,7 +279,9 @@ export default function PasswordCheckerTool() {
                   {/* Strength Meter */}
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <Label className="text-sm font-medium">Password Strength</Label>
+                      <Label className="text-sm font-medium">
+                        Password Strength
+                      </Label>
                       <Badge className={getStrengthColor()}>
                         {getStrengthText()} ({strength}%)
                       </Badge>
@@ -257,7 +293,8 @@ export default function PasswordCheckerTool() {
                   <Alert>
                     <TrendingUpIcon className="h-4 w-4" />
                     <AlertDescription>
-                      <strong>Estimated crack time:</strong> {estimatedCrackTime}
+                      <strong>Estimated crack time:</strong>{" "}
+                      {estimatedCrackTime}
                     </AlertDescription>
                   </Alert>
                 </div>
@@ -278,13 +315,13 @@ export default function PasswordCheckerTool() {
                 <div className="space-y-3">
                   {feedback.map((item, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      {item.type === 'success' && (
+                      {item.type === "success" && (
                         <CheckCircleIcon className="h-5 w-5 text-primary flex-shrink-0" />
                       )}
-                      {item.type === 'error' && (
+                      {item.type === "error" && (
                         <AlertTriangleIcon className="h-5 w-5 text-destructive flex-shrink-0" />
                       )}
-                      {item.type === 'warning' && (
+                      {item.type === "warning" && (
                         <AlertTriangleIcon className="h-5 w-5 text-primary flex-shrink-0" />
                       )}
                       <span className="text-sm">{item.message}</span>
@@ -318,7 +355,9 @@ export default function PasswordCheckerTool() {
                 <div className="space-y-4">
                   <div className="p-4 bg-muted rounded-lg">
                     <div className="flex items-center justify-between">
-                      <code className="text-lg font-mono break-all">{password}</code>
+                      <code className="text-lg font-mono break-all">
+                        {password}
+                      </code>
                       <Button
                         size="sm"
                         variant="outline"
@@ -331,7 +370,9 @@ export default function PasswordCheckerTool() {
 
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
-                      <Label className="text-sm font-medium">Password Strength</Label>
+                      <Label className="text-sm font-medium">
+                        Password Strength
+                      </Label>
                       <Badge className={getStrengthColor()}>
                         {getStrengthText()} ({strength}%)
                       </Badge>
@@ -363,7 +404,9 @@ export default function PasswordCheckerTool() {
               </ul>
             </div>
             <div>
-              <h4 className="font-medium mb-3 text-destructive">❌ Avoid This</h4>
+              <h4 className="font-medium mb-3 text-destructive">
+                ❌ Avoid This
+              </h4>
               <ul className="text-sm space-y-2 text-muted-foreground">
                 <li>• Common words or personal information</li>
                 <li>• Sequential patterns (123, abc)</li>

@@ -1,31 +1,36 @@
+"use client";
 
-'use client';
-
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Textarea } from '@/components/ui/textarea';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Loader2, CheckCircle2, XCircle, Send, Globe } from 'lucide-react';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Loader2, CheckCircle2, XCircle, Send, Globe } from "lucide-react";
 
 export default function IndexNowPage() {
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState(null);
-  const [customUrls, setCustomUrls] = useState('');
+  const [customUrls, setCustomUrls] = useState("");
 
   const submitAllUrls = async () => {
     setLoading(true);
     setResult(null);
 
     try {
-      const response = await fetch('/api/indexnow', {
-        method: 'POST',
+      const response = await fetch("/api/indexnow", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          action: 'submit-all'
-        })
+          action: "submit-all",
+        }),
       });
 
       const data = await response.json();
@@ -33,8 +38,8 @@ export default function IndexNowPage() {
     } catch (error) {
       setResult({
         success: false,
-        message: 'Failed to submit URLs',
-        error: error.message
+        message: "Failed to submit URLs",
+        error: error.message,
       });
     } finally {
       setLoading(false);
@@ -45,7 +50,7 @@ export default function IndexNowPage() {
     if (!customUrls.trim()) {
       setResult({
         success: false,
-        message: 'Please enter at least one URL'
+        message: "Please enter at least one URL",
       });
       return;
     }
@@ -55,16 +60,16 @@ export default function IndexNowPage() {
 
     try {
       const urls = customUrls
-        .split('\n')
-        .map(url => url.trim())
-        .filter(url => url.length > 0);
+        .split("\n")
+        .map((url) => url.trim())
+        .filter((url) => url.length > 0);
 
-      const response = await fetch('/api/indexnow', {
-        method: 'POST',
+      const response = await fetch("/api/indexnow", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ urls })
+        body: JSON.stringify({ urls }),
       });
 
       const data = await response.json();
@@ -72,8 +77,8 @@ export default function IndexNowPage() {
     } catch (error) {
       setResult({
         success: false,
-        message: 'Failed to submit URLs',
-        error: error.message
+        message: "Failed to submit URLs",
+        error: error.message,
       });
     } finally {
       setLoading(false);
@@ -99,7 +104,9 @@ export default function IndexNowPage() {
             <CardHeader>
               <CardTitle>Submit All Tool Pages</CardTitle>
               <CardDescription>
-                Submit all tool pages, category pages, and important pages to IndexNow. This will notify search engines about all your content.
+                Submit all tool pages, category pages, and important pages to
+                IndexNow. This will notify search engines about all your
+                content.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -166,17 +173,32 @@ https://30tools.com/pdf-merger"
 
           {/* Result */}
           {result && (
-            <Alert className={result.success ? 'border-border bg-muted/50 dark:bg-green-950' : 'border-border bg-destructive/10 dark:bg-red-950'}>
+            <Alert
+              className={
+                result.success
+                  ? "border-border bg-muted/50 dark:bg-green-950"
+                  : "border-border bg-destructive/10 dark:bg-red-950"
+              }
+            >
               <div className="flex items-start gap-2">
                 {result.success ? (
                   <CheckCircle2 className="h-5 w-5 text-primary dark:text-primary mt-0.5" />
                 ) : (
                   <XCircle className="h-5 w-5 text-destructive dark:text-destructive mt-0.5" />
                 )}
-                <AlertDescription className={result.success ? 'text-foreground dark:text-green-200' : 'text-destructive dark:text-red-200'}>
+                <AlertDescription
+                  className={
+                    result.success
+                      ? "text-foreground dark:text-green-200"
+                      : "text-destructive dark:text-red-200"
+                  }
+                >
                   <div className="font-semibold mb-1">{result.message}</div>
                   {result.count && (
-                    <div className="text-sm">Submitted {result.count} URL{result.count !== 1 ? 's' : ''}</div>
+                    <div className="text-sm">
+                      Submitted {result.count} URL
+                      {result.count !== 1 ? "s" : ""}
+                    </div>
                   )}
                   {result.error && (
                     <div className="text-sm mt-1">Error: {result.error}</div>
@@ -195,7 +217,9 @@ https://30tools.com/pdf-merger"
               <div>
                 <strong className="text-foreground">What is IndexNow?</strong>
                 <p className="mt-1">
-                  IndexNow is a protocol that allows website owners to instantly notify search engines when content is created, updated, or deleted.
+                  IndexNow is a protocol that allows website owners to instantly
+                  notify search engines when content is created, updated, or
+                  deleted.
                 </p>
               </div>
               <div>
@@ -211,7 +235,9 @@ https://30tools.com/pdf-merger"
                 </code>
               </div>
               <div>
-                <strong className="text-foreground">Supported Search Engines:</strong>
+                <strong className="text-foreground">
+                  Supported Search Engines:
+                </strong>
                 <ul className="list-disc list-inside mt-1 space-y-1">
                   <li>Microsoft Bing</li>
                   <li>Yandex</li>

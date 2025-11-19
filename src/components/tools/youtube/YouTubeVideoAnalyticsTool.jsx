@@ -1,10 +1,16 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { BarChart3 } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { BarChart3 } from "lucide-react";
+import { toast } from "sonner";
 
 export default function YouTubeVideoAnalyticsTool() {
   const [isProcessing, setIsProcessing] = useState(false);
@@ -13,10 +19,10 @@ export default function YouTubeVideoAnalyticsTool() {
     setIsProcessing(true);
     try {
       // Simulate processing
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast.success('Operation completed successfully!');
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+      toast.success("Operation completed successfully!");
     } catch (error) {
-      toast.error('Operation failed. Please try again.');
+      toast.error("Operation failed. Please try again.");
     } finally {
       setIsProcessing(false);
     }
@@ -40,7 +46,8 @@ export default function YouTubeVideoAnalyticsTool() {
                 YouTube Video Analytics
               </CardTitle>
               <CardDescription>
-                This tool is currently under development. More features coming soon!
+                This tool is currently under development. More features coming
+                soon!
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -48,14 +55,15 @@ export default function YouTubeVideoAnalyticsTool() {
                 <BarChart3 className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
                 <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
                 <p className="text-muted-foreground mb-4">
-                  Enter a YouTube video URL to get detailed analytics, view counts, engagement rates, and optimization tips.
+                  Enter a YouTube video URL to get detailed analytics, view
+                  counts, engagement rates, and optimization tips.
                 </p>
-                <Button 
-                  onClick={handleProcess} 
+                <Button
+                  onClick={handleProcess}
                   disabled={isProcessing}
                   className="bg-primary hover:bg-primary/90"
                 >
-                  {isProcessing ? 'Processing...' : 'Try Demo'}
+                  {isProcessing ? "Processing..." : "Try Demo"}
                 </Button>
               </div>
             </CardContent>

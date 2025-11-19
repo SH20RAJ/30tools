@@ -1,57 +1,76 @@
-'use client';
+"use client";
 
-import { useState, useRef } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Slider } from '@/components/ui/slider';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Badge } from '@/components/ui/badge';
-import { Switch } from '@/components/ui/switch';
-import { Image as ImageIcon, Download, Play, Settings, Youtube, Zap } from 'lucide-react';
-import { createGifFromYoutube } from '@/lib/youtube-actions';
+import { useState, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Slider } from "@/components/ui/slider";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { Switch } from "@/components/ui/switch";
+import {
+  Image as ImageIcon,
+  Download,
+  Play,
+  Settings,
+  Youtube,
+  Zap,
+} from "lucide-react";
+import { createGifFromYoutube } from "@/lib/youtube-actions";
 
 export default function YouTubeGifMaker() {
-  const [videoUrl, setVideoUrl] = useState('');
+  const [videoUrl, setVideoUrl] = useState("");
   const [startTime, setStartTime] = useState(0);
   const [endTime, setEndTime] = useState(5);
   const [width, setWidth] = useState(480);
   const [height, setHeight] = useState(270);
   const [frameRate, setFrameRate] = useState([15]);
-  const [quality, setQuality] = useState('medium');
+  const [quality, setQuality] = useState("medium");
   const [maintainAspectRatio, setMaintainAspectRatio] = useState(true);
   const [addSubtitles, setAddSubtitles] = useState(false);
   const [isCreating, setIsCreating] = useState(false);
-  const [gifUrl, setGifUrl] = useState('');
-  const [error, setError] = useState('');
-  const [previewUrl, setPreviewUrl] = useState('');
+  const [gifUrl, setGifUrl] = useState("");
+  const [error, setError] = useState("");
+  const [previewUrl, setPreviewUrl] = useState("");
   const downloadRef = useRef(null);
 
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
   };
 
   const handleCreateGif = async () => {
     if (!videoUrl) {
-      setError('Please enter a YouTube URL');
+      setError("Please enter a YouTube URL");
       return;
     }
 
     if (endTime <= startTime) {
-      setError('End time must be greater than start time');
+      setError("End time must be greater than start time");
       return;
     }
 
     if (endTime - startTime > 30) {
-      setError('GIF duration cannot exceed 30 seconds');
+      setError("GIF duration cannot exceed 30 seconds");
       return;
     }
 
     setIsCreating(true);
-    setError('');
+    setError("");
 
     try {
       const options = {
@@ -61,19 +80,19 @@ export default function YouTubeGifMaker() {
         height: maintainAspectRatio ? null : height,
         frameRate: frameRate[0],
         quality,
-        subtitles: addSubtitles
+        subtitles: addSubtitles,
       };
 
       const result = await createGifFromYoutube(videoUrl, options);
-      
+
       if (result.success) {
         setGifUrl(result.gifUrl);
         setPreviewUrl(result.previewUrl);
       } else {
-        setError(result.error || 'Failed to create GIF');
+        setError(result.error || "Failed to create GIF");
       }
     } catch (err) {
-      setError('An error occurred while creating the GIF');
+      setError("An error occurred while creating the GIF");
     } finally {
       setIsCreating(false);
     }
@@ -88,20 +107,20 @@ export default function YouTubeGifMaker() {
   };
 
   const qualityPresets = {
-    low: { description: 'Small file size, basic quality' },
-    medium: { description: 'Balanced quality and file size' },
-    high: { description: 'Best quality, larger file size' }
+    low: { description: "Small file size, basic quality" },
+    medium: { description: "Balanced quality and file size" },
+    high: { description: "Best quality, larger file size" },
   };
 
   const socialPresets = [
-    { name: 'Twitter', width: 480, height: 270, frameRate: 15 },
-    { name: 'Instagram', width: 480, height: 480, frameRate: 15 },
-    { name: 'Discord', width: 400, height: 225, frameRate: 20 },
-    { name: 'Custom', width: 480, height: 270, frameRate: 15 }
+    { name: "Twitter", width: 480, height: 270, frameRate: 15 },
+    { name: "Instagram", width: 480, height: 480, frameRate: 15 },
+    { name: "Discord", width: 400, height: 225, frameRate: 20 },
+    { name: "Custom", width: 480, height: 270, frameRate: 15 },
   ];
 
   const applySocialPreset = (preset) => {
-    if (preset.name !== 'Custom') {
+    if (preset.name !== "Custom") {
       setWidth(preset.width);
       setHeight(preset.height);
       setFrameRate([preset.frameRate]);
@@ -135,7 +154,7 @@ export default function YouTubeGifMaker() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <h3 className="text-lg font-semibold">Time Range</h3>
-              
+
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="start-time">Start Time (seconds)</Label>
@@ -161,11 +180,13 @@ export default function YouTubeGifMaker() {
                   />
                 </div>
               </div>
-              
+
               <div className="text-sm text-muted-foreground">
-                Duration: {formatTime(endTime - startTime)} 
+                Duration: {formatTime(endTime - startTime)}
                 {endTime - startTime > 30 && (
-                  <span className="text-destructive ml-2">(Max 30 seconds)</span>
+                  <span className="text-destructive ml-2">
+                    (Max 30 seconds)
+                  </span>
                 )}
               </div>
 
@@ -192,7 +213,7 @@ export default function YouTubeGifMaker() {
                 <Settings className="w-4 h-4" />
                 Quality Settings
               </h3>
-              
+
               <div className="flex items-center justify-between">
                 <Label htmlFor="aspect-ratio">Maintain Aspect Ratio</Label>
                 <Switch
@@ -312,10 +333,7 @@ export default function YouTubeGifMaker() {
                 <Youtube className="w-5 h-5 text-destructive" />
                 Your GIF is Ready!
               </span>
-              <Button
-                onClick={downloadGif}
-                className="btn-cute bg-background"
-              >
+              <Button onClick={downloadGif} className="btn-cute bg-background">
                 <Download className="w-4 h-4 mr-2" />
                 Download GIF
               </Button>
@@ -332,7 +350,7 @@ export default function YouTubeGifMaker() {
                     src={previewUrl}
                     alt="Generated GIF"
                     className="max-w-full h-auto"
-                    style={{ maxHeight: '400px' }}
+                    style={{ maxHeight: "400px" }}
                   />
                 ) : (
                   <div className="w-full h-48 flex items-center justify-center bg-muted">
@@ -343,7 +361,8 @@ export default function YouTubeGifMaker() {
             </div>
             <div className="mt-4 flex justify-center">
               <Badge variant="secondary">
-                Duration: {formatTime(endTime - startTime)} • {frameRate[0]} FPS • {quality} quality
+                Duration: {formatTime(endTime - startTime)} • {frameRate[0]} FPS
+                • {quality} quality
               </Badge>
             </div>
           </CardContent>
@@ -376,7 +395,7 @@ export default function YouTubeGifMaker() {
         </CardContent>
       </Card>
 
-      <a ref={downloadRef} style={{ display: 'none' }} />
+      <a ref={downloadRef} style={{ display: "none" }} />
     </div>
   );
 }

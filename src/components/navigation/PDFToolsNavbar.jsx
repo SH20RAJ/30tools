@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Menu, X, Sparkles } from 'lucide-react';
-import AuthComponent from '@/components/auth/AuthComponent';
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Sparkles } from "lucide-react";
+import AuthComponent from "@/components/auth/AuthComponent";
 
 export default function PDFToolsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const pdfTools = [
-    { name: 'PDF Merger', href: '/pdf-merger' },
-    { name: 'PDF Splitter', href: '/pdf-splitter' },
-    { name: 'PDF Compressor', href: '/pdf-compressor' },
-    { name: 'JPG to PDF', href: '/jpg-to-pdf' },
-    { name: 'PNG to PDF', href: '/png-to-pdf' },
+    { name: "PDF Merger", href: "/pdf-merger" },
+    { name: "PDF Splitter", href: "/pdf-splitter" },
+    { name: "PDF Compressor", href: "/pdf-compressor" },
+    { name: "JPG to PDF", href: "/jpg-to-pdf" },
+    { name: "PNG to PDF", href: "/png-to-pdf" },
   ];
 
   return (
@@ -29,7 +29,9 @@ export default function PDFToolsNavbar() {
             <span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
               30tools
             </span>
-            <span className="text-sm text-muted-foreground font-medium">PDF</span>
+            <span className="text-sm text-muted-foreground font-medium">
+              PDF
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -45,7 +47,7 @@ export default function PDFToolsNavbar() {
                 </Link>
               ))}
             </div>
-            
+
             <div className="flex items-center space-x-2">
               <Link href="/other-tools">
                 <Button variant="ghost" size="sm" className="btn-cute">
@@ -70,7 +72,11 @@ export default function PDFToolsNavbar() {
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-foreground"
             >
-              {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMenuOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </Button>
           </div>
         </div>

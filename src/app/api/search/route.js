@@ -1,16 +1,18 @@
-import { NextResponse } from 'next/server';
-import toolsData from '@/constants/tools.json';
+import { NextResponse } from "next/server";
+import toolsData from "@/constants/tools.json";
 
 const getAllTools = () => {
   const tools = [];
   Object.entries(toolsData.categories).forEach(([categoryKey, category]) => {
     if (category.tools) {
-      tools.push(...category.tools.map(tool => ({
-        ...tool,
-        categoryKey,
-        categoryName: category.name,
-        categorySlug: category.slug
-      })));
+      tools.push(
+        ...category.tools.map((tool) => ({
+          ...tool,
+          categoryKey,
+          categoryName: category.name,
+          categorySlug: category.slug,
+        })),
+      );
     }
   });
   return tools;
@@ -18,29 +20,29 @@ const getAllTools = () => {
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const query = searchParams.get('q')?.toLowerCase() || '';
-  const category = searchParams.get('category') || '';
+  const query = searchParams.get("q")?.toLowerCase() || "";
+  const category = searchParams.get("category") || "";
 
   let allTools = getAllTools();
 
   // Filter by category if specified
-  if (category && category !== 'all') {
-    allTools = allTools.filter(tool => tool.categoryKey === category);
+  if (category && category !== "all") {
+    allTools = allTools.filter((tool) => tool.categoryKey === category);
   }
 
   // If no query, return all tools
   if (!query) {
     return NextResponse.json({
-      query: '',
+      query: "",
       results: allTools,
       total: allTools.length,
-      categories: Object.keys(toolsData.categories)
+      categories: Object.keys(toolsData.categories),
     });
   }
 
   // Search logic with scoring
   const searchResults = allTools
-    .map(tool => {
+    .map((tool) => {
       let score = 0;
       const nameMatch = tool.name.toLowerCase().includes(query);
       const descMatch = tool.description.toLowerCase().includes(query);
@@ -59,13 +61,13 @@ export async function GET(request) {
 
       return { ...tool, score };
     })
-    .filter(tool => tool.score > 0)
+    .filter((tool) => tool.score > 0)
     .sort((a, b) => b.score - a.score);
 
   return NextResponse.json({
     query,
     results: searchResults,
     total: searchResults.length,
-    categories: Object.keys(toolsData.categories)
+    categories: Object.keys(toolsData.categories),
   });
 }

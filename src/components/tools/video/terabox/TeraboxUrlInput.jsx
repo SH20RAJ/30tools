@@ -1,22 +1,28 @@
-'use client';
+"use client";
 
-import { useState, useRef, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { LinkIcon, WandIcon, RefreshCwIcon, LoaderIcon } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState, useRef, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { LinkIcon, WandIcon, RefreshCwIcon, LoaderIcon } from "lucide-react";
+import { toast } from "sonner";
 
-export default function TeraboxUrlInput({ 
-  teraboxUrl, 
-  onUrlChange, 
-  onLoadVideo, 
-  isLoading 
+export default function TeraboxUrlInput({
+  teraboxUrl,
+  onUrlChange,
+  onLoadVideo,
+  isLoading,
 }) {
   const debounceRef = useRef(null);
 
-  const sampleUrl = 'https://teraboxshare.com/s/1Qx3vtX3rpRcI6poGaRe5wA';
+  const sampleUrl = "https://teraboxshare.com/s/1Qx3vtX3rpRcI6poGaRe5wA";
 
   const handleUrlChange = (value) => {
     onUrlChange(value);
@@ -27,7 +33,10 @@ export default function TeraboxUrlInput({
     }
 
     // Auto-load video when URL is pasted (support both teraboxapp.com and teraboxshare.com)
-    if (value && (value.includes('teraboxapp.com') || value.includes('teraboxshare.com'))) {
+    if (
+      value &&
+      (value.includes("teraboxapp.com") || value.includes("teraboxshare.com"))
+    ) {
       debounceRef.current = setTimeout(() => {
         onLoadVideo(value);
       }, 1000); // Wait 1 second after user stops typing
@@ -37,12 +46,12 @@ export default function TeraboxUrlInput({
   const loadSampleData = () => {
     onUrlChange(sampleUrl);
     onLoadVideo(sampleUrl);
-    toast.success('Sample video loaded!');
+    toast.success("Sample video loaded!");
   };
 
   const clearForm = () => {
-    onUrlChange('');
-    toast.success('Form cleared!');
+    onUrlChange("");
+    toast.success("Form cleared!");
   };
 
   return (
@@ -74,7 +83,7 @@ export default function TeraboxUrlInput({
             )}
           </div>
         </div>
-        
+
         <div className="flex gap-2">
           <Button
             variant="outline"
@@ -96,11 +105,14 @@ export default function TeraboxUrlInput({
           </Button>
         </div>
 
-        {teraboxUrl && !teraboxUrl.includes('teraboxapp.com') && !teraboxUrl.includes('teraboxshare.com') && (
-          <div className="text-sm text-primary dark:text-primary">
-            Please enter a valid Terabox URL (teraboxapp.com or teraboxshare.com)
-          </div>
-        )}
+        {teraboxUrl &&
+          !teraboxUrl.includes("teraboxapp.com") &&
+          !teraboxUrl.includes("teraboxshare.com") && (
+            <div className="text-sm text-primary dark:text-primary">
+              Please enter a valid Terabox URL (teraboxapp.com or
+              teraboxshare.com)
+            </div>
+          )}
       </CardContent>
     </Card>
   );

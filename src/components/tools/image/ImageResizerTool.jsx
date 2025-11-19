@@ -1,19 +1,31 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Switch } from '@/components/ui/switch';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Progress } from '@/components/ui/progress';
-import { Separator } from '@/components/ui/separator';
-import { 
-  ArrowLeftIcon, 
-  UploadIcon, 
-  DownloadIcon, 
+import { useState, useRef, useCallback } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Progress } from "@/components/ui/progress";
+import { Separator } from "@/components/ui/separator";
+import {
+  ArrowLeftIcon,
+  UploadIcon,
+  DownloadIcon,
   ImageIcon,
   LockIcon,
   UnlockIcon,
@@ -31,10 +43,10 @@ import {
   Shield,
   Play,
   Users,
-  Zap
-} from 'lucide-react';
-import Link from 'next/link';
-import SocialShareButtons from '@/components/shared/SocialShareButtons';
+  Zap,
+} from "lucide-react";
+import Link from "next/link";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function ImageResizerTool() {
   const [files, setFiles] = useState([]);
@@ -42,54 +54,80 @@ export default function ImageResizerTool() {
     width: 800,
     height: 600,
     maintainAspectRatio: true,
-    resizeMethod: 'pixels', // pixels, percentage
-    quality: 90
+    resizeMethod: "pixels", // pixels, percentage
+    quality: 90,
   });
   const [isProcessing, setIsProcessing] = useState(false);
   const [progress, setProgress] = useState(0);
   const fileInputRef = useRef(null);
 
-  const supportedFormats = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/bmp'];
+  const supportedFormats = [
+    "image/jpeg",
+    "image/png",
+    "image/webp",
+    "image/gif",
+    "image/bmp",
+  ];
   const maxFileSize = 50 * 1024 * 1024; // 50MB
 
   // Social media presets
   const presets = {
     instagram: {
-      square: { width: 1080, height: 1080, label: 'Instagram Square (1080×1080)' },
-      story: { width: 1080, height: 1920, label: 'Instagram Story (1080×1920)' },
-      portrait: { width: 1080, height: 1350, label: 'Instagram Portrait (1080×1350)' }
+      square: {
+        width: 1080,
+        height: 1080,
+        label: "Instagram Square (1080×1080)",
+      },
+      story: {
+        width: 1080,
+        height: 1920,
+        label: "Instagram Story (1080×1920)",
+      },
+      portrait: {
+        width: 1080,
+        height: 1350,
+        label: "Instagram Portrait (1080×1350)",
+      },
     },
     facebook: {
-      cover: { width: 1640, height: 859, label: 'Facebook Cover (1640×859)' },
-      post: { width: 1200, height: 630, label: 'Facebook Post (1200×630)' },
-      profile: { width: 400, height: 400, label: 'Facebook Profile (400×400)' }
+      cover: { width: 1640, height: 859, label: "Facebook Cover (1640×859)" },
+      post: { width: 1200, height: 630, label: "Facebook Post (1200×630)" },
+      profile: { width: 400, height: 400, label: "Facebook Profile (400×400)" },
     },
     twitter: {
-      header: { width: 1500, height: 500, label: 'Twitter Header (1500×500)' },
-      post: { width: 1200, height: 675, label: 'Twitter Post (1200×675)' },
-      profile: { width: 400, height: 400, label: 'Twitter Profile (400×400)' }
+      header: { width: 1500, height: 500, label: "Twitter Header (1500×500)" },
+      post: { width: 1200, height: 675, label: "Twitter Post (1200×675)" },
+      profile: { width: 400, height: 400, label: "Twitter Profile (400×400)" },
     },
     youtube: {
-      thumbnail: { width: 1280, height: 720, label: 'YouTube Thumbnail (1280×720)' },
-      channel: { width: 2560, height: 1440, label: 'YouTube Channel Art (2560×1440)' }
+      thumbnail: {
+        width: 1280,
+        height: 720,
+        label: "YouTube Thumbnail (1280×720)",
+      },
+      channel: {
+        width: 2560,
+        height: 1440,
+        label: "YouTube Channel Art (2560×1440)",
+      },
     },
     linkedin: {
-      cover: { width: 1584, height: 396, label: 'LinkedIn Cover (1584×396)' },
-      post: { width: 1200, height: 627, label: 'LinkedIn Post (1200×627)' }
-    }
+      cover: { width: 1584, height: 396, label: "LinkedIn Cover (1584×396)" },
+      post: { width: 1200, height: 627, label: "LinkedIn Post (1200×627)" },
+    },
   };
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const sizes = ["Bytes", "KB", "MB", "GB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const handleFileSelect = (event) => {
     const selectedFiles = Array.from(event.target.files);
-    const validFiles = selectedFiles.filter(file => {
+    const validFiles = selectedFiles.filter((file) => {
       if (!supportedFormats.includes(file.type)) {
         alert(`${file.name} is not a supported image format.`);
         return false;
@@ -102,10 +140,10 @@ export default function ImageResizerTool() {
     });
 
     // Create image objects for each file
-    validFiles.forEach(file => {
+    validFiles.forEach((file) => {
       const img = new Image();
       const url = URL.createObjectURL(file);
-      
+
       img.onload = () => {
         const newFile = {
           id: Date.now() + Math.random(),
@@ -115,13 +153,13 @@ export default function ImageResizerTool() {
           url,
           resizedBlob: null,
           resizedDimensions: null,
-          status: 'pending'
+          status: "pending",
         };
-        
-        setFiles(prev => [...prev, newFile]);
+
+        setFiles((prev) => [...prev, newFile]);
         URL.revokeObjectURL(url);
       };
-      
+
       img.src = url;
     });
   };
@@ -130,14 +168,14 @@ export default function ImageResizerTool() {
     let { width, height } = options;
     const { width: origWidth, height: origHeight } = original;
 
-    if (options.resizeMethod === 'percentage') {
+    if (options.resizeMethod === "percentage") {
       width = Math.round(origWidth * (width / 100));
       height = Math.round(origHeight * (height / 100));
     }
 
     if (options.maintainAspectRatio) {
       const aspectRatio = origWidth / origHeight;
-      
+
       if (width / height > aspectRatio) {
         width = Math.round(height * aspectRatio);
       } else {
@@ -148,76 +186,84 @@ export default function ImageResizerTool() {
     return { width: Math.max(1, width), height: Math.max(1, height) };
   };
 
-  const resizeImage = useCallback(async (fileData) => {
-    return new Promise((resolve) => {
-      const canvas = document.createElement('canvas');
-      const ctx = canvas.getContext('2d');
-      const img = new Image();
+  const resizeImage = useCallback(
+    async (fileData) => {
+      return new Promise((resolve) => {
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+        const img = new Image();
 
-      img.onload = () => {
-        const newDimensions = calculateNewDimensions(fileData.originalDimensions, resizeOptions);
-        
-        canvas.width = newDimensions.width;
-        canvas.height = newDimensions.height;
+        img.onload = () => {
+          const newDimensions = calculateNewDimensions(
+            fileData.originalDimensions,
+            resizeOptions,
+          );
 
-        // Use high-quality scaling
-        ctx.imageSmoothingEnabled = true;
-        ctx.imageSmoothingQuality = 'high';
+          canvas.width = newDimensions.width;
+          canvas.height = newDimensions.height;
 
-        // Draw the resized image
-        ctx.drawImage(img, 0, 0, newDimensions.width, newDimensions.height);
+          // Use high-quality scaling
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = "high";
 
-        // Convert to blob
-        canvas.toBlob(
-          (blob) => {
-            resolve({
-              resizedBlob: blob,
-              resizedDimensions: newDimensions
-            });
-          },
-          fileData.file.type,
-          resizeOptions.quality / 100
-        );
-      };
+          // Draw the resized image
+          ctx.drawImage(img, 0, 0, newDimensions.width, newDimensions.height);
 
-      img.src = fileData.url;
-    });
-  }, [resizeOptions]);
+          // Convert to blob
+          canvas.toBlob(
+            (blob) => {
+              resolve({
+                resizedBlob: blob,
+                resizedDimensions: newDimensions,
+              });
+            },
+            fileData.file.type,
+            resizeOptions.quality / 100,
+          );
+        };
+
+        img.src = fileData.url;
+      });
+    },
+    [resizeOptions],
+  );
 
   const handleResize = async () => {
     setIsProcessing(true);
     setProgress(0);
 
-    const pendingFiles = files.filter(f => f.status === 'pending');
+    const pendingFiles = files.filter((f) => f.status === "pending");
 
     for (let i = 0; i < pendingFiles.length; i++) {
       const fileData = pendingFiles[i];
 
-      setFiles(prev => prev.map(f => 
-        f.id === fileData.id 
-          ? { ...f, status: 'processing' }
-          : f
-      ));
+      setFiles((prev) =>
+        prev.map((f) =>
+          f.id === fileData.id ? { ...f, status: "processing" } : f,
+        ),
+      );
 
       try {
         const result = await resizeImage(fileData);
 
-        setFiles(prev => prev.map(f => 
-          f.id === fileData.id 
-            ? { 
-                ...f, 
-                status: 'completed',
-                resizedBlob: result.resizedBlob,
-                resizedDimensions: result.resizedDimensions
-              }
-            : f
-        ));
+        setFiles((prev) =>
+          prev.map((f) =>
+            f.id === fileData.id
+              ? {
+                  ...f,
+                  status: "completed",
+                  resizedBlob: result.resizedBlob,
+                  resizedDimensions: result.resizedDimensions,
+                }
+              : f,
+          ),
+        );
       } catch (error) {
-        setFiles(prev => prev.map(f => 
-          f.id === fileData.id 
-            ? { ...f, status: 'error' }
-            : f
-        ));
+        setFiles((prev) =>
+          prev.map((f) =>
+            f.id === fileData.id ? { ...f, status: "error" } : f,
+          ),
+        );
       }
 
       setProgress(((i + 1) / pendingFiles.length) * 100);
@@ -229,7 +275,7 @@ export default function ImageResizerTool() {
   const downloadFile = (fileData) => {
     if (fileData.resizedBlob) {
       const url = URL.createObjectURL(fileData.resizedBlob);
-      const a = document.createElement('a');
+      const a = document.createElement("a");
       a.href = url;
       a.download = `resized_${fileData.file.name}`;
       document.body.appendChild(a);
@@ -240,46 +286,48 @@ export default function ImageResizerTool() {
   };
 
   const downloadAll = () => {
-    files.filter(f => f.status === 'completed').forEach(downloadFile);
+    files.filter((f) => f.status === "completed").forEach(downloadFile);
   };
 
   const clearFiles = () => {
-    files.forEach(f => {
+    files.forEach((f) => {
       if (f.url) URL.revokeObjectURL(f.url);
     });
     setFiles([]);
   };
 
   const removeFile = (id) => {
-    setFiles(prev => {
-      const fileToRemove = prev.find(f => f.id === id);
+    setFiles((prev) => {
+      const fileToRemove = prev.find((f) => f.id === id);
       if (fileToRemove?.url) {
         URL.revokeObjectURL(fileToRemove.url);
       }
-      return prev.filter(f => f.id !== id);
+      return prev.filter((f) => f.id !== id);
     });
   };
 
   const applyPreset = (preset) => {
-    setResizeOptions(prev => ({
+    setResizeOptions((prev) => ({
       ...prev,
       width: preset.width,
       height: preset.height,
-      resizeMethod: 'pixels'
+      resizeMethod: "pixels",
     }));
   };
 
   const handleWidthChange = (value) => {
     const width = parseInt(value) || 0;
-    setResizeOptions(prev => {
+    setResizeOptions((prev) => {
       if (prev.maintainAspectRatio && files.length > 0) {
         const firstFile = files[0];
         if (firstFile?.originalDimensions) {
-          const aspectRatio = firstFile.originalDimensions.width / firstFile.originalDimensions.height;
+          const aspectRatio =
+            firstFile.originalDimensions.width /
+            firstFile.originalDimensions.height;
           return {
             ...prev,
             width,
-            height: Math.round(width / aspectRatio)
+            height: Math.round(width / aspectRatio),
           };
         }
       }
@@ -289,15 +337,17 @@ export default function ImageResizerTool() {
 
   const handleHeightChange = (value) => {
     const height = parseInt(value) || 0;
-    setResizeOptions(prev => {
+    setResizeOptions((prev) => {
       if (prev.maintainAspectRatio && files.length > 0) {
         const firstFile = files[0];
         if (firstFile?.originalDimensions) {
-          const aspectRatio = firstFile.originalDimensions.width / firstFile.originalDimensions.height;
+          const aspectRatio =
+            firstFile.originalDimensions.width /
+            firstFile.originalDimensions.height;
           return {
             ...prev,
             height,
-            width: Math.round(height * aspectRatio)
+            width: Math.round(height * aspectRatio),
           };
         }
       }
@@ -316,17 +366,19 @@ export default function ImageResizerTool() {
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <ImageIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
               <h1 className="text-3xl font-bold">Image Resizer</h1>
-              <p className="text-muted-foreground">Resize images for any purpose - web, social media, print</p>
+              <p className="text-muted-foreground">
+                Resize images for any purpose - web, social media, print
+              </p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant="secondary">Batch Processing</Badge>
             <Badge variant="secondary">Aspect Ratio Lock</Badge>
@@ -349,9 +401,14 @@ export default function ImageResizerTool() {
                 {/* Resize Method */}
                 <div className="space-y-3">
                   <Label className="text-base font-medium">Resize Method</Label>
-                  <Select 
-                    value={resizeOptions.resizeMethod} 
-                    onValueChange={(value) => setResizeOptions(prev => ({ ...prev, resizeMethod: value }))}
+                  <Select
+                    value={resizeOptions.resizeMethod}
+                    onValueChange={(value) =>
+                      setResizeOptions((prev) => ({
+                        ...prev,
+                        resizeMethod: value,
+                      }))
+                    }
                   >
                     <SelectTrigger>
                       <SelectValue />
@@ -370,7 +427,12 @@ export default function ImageResizerTool() {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => setResizeOptions(prev => ({ ...prev, maintainAspectRatio: !prev.maintainAspectRatio }))}
+                      onClick={() =>
+                        setResizeOptions((prev) => ({
+                          ...prev,
+                          maintainAspectRatio: !prev.maintainAspectRatio,
+                        }))
+                      }
                     >
                       {resizeOptions.maintainAspectRatio ? (
                         <LockIcon className="h-4 w-4" />
@@ -379,11 +441,14 @@ export default function ImageResizerTool() {
                       )}
                     </Button>
                   </div>
-                  
+
                   <div className="grid grid-cols-2 gap-2">
                     <div className="space-y-1">
                       <Label htmlFor="width" className="text-sm">
-                        Width {resizeOptions.resizeMethod === 'percentage' ? '(%)' : '(px)'}
+                        Width{" "}
+                        {resizeOptions.resizeMethod === "percentage"
+                          ? "(%)"
+                          : "(px)"}
                       </Label>
                       <Input
                         id="width"
@@ -395,7 +460,10 @@ export default function ImageResizerTool() {
                     </div>
                     <div className="space-y-1">
                       <Label htmlFor="height" className="text-sm">
-                        Height {resizeOptions.resizeMethod === 'percentage' ? '(%)' : '(px)'}
+                        Height{" "}
+                        {resizeOptions.resizeMethod === "percentage"
+                          ? "(%)"
+                          : "(px)"}
                       </Label>
                       <Input
                         id="height"
@@ -406,12 +474,17 @@ export default function ImageResizerTool() {
                       />
                     </div>
                   </div>
-                  
+
                   <div className="flex items-center space-x-2">
                     <Switch
                       id="aspect-ratio"
                       checked={resizeOptions.maintainAspectRatio}
-                      onCheckedChange={(checked) => setResizeOptions(prev => ({ ...prev, maintainAspectRatio: checked }))}
+                      onCheckedChange={(checked) =>
+                        setResizeOptions((prev) => ({
+                          ...prev,
+                          maintainAspectRatio: checked,
+                        }))
+                      }
                     />
                     <Label htmlFor="aspect-ratio" className="text-sm">
                       Lock aspect ratio
@@ -430,7 +503,12 @@ export default function ImageResizerTool() {
                     max="100"
                     step="5"
                     value={resizeOptions.quality}
-                    onChange={(e) => setResizeOptions(prev => ({ ...prev, quality: parseInt(e.target.value) }))}
+                    onChange={(e) =>
+                      setResizeOptions((prev) => ({
+                        ...prev,
+                        quality: parseInt(e.target.value),
+                      }))
+                    }
                     className="w-full"
                   />
                 </div>
@@ -466,17 +544,20 @@ export default function ImageResizerTool() {
                 {files.length > 0 && (
                   <>
                     <Separator />
-                    
+
                     <div className="space-y-2">
                       <Button
                         onClick={handleResize}
-                        disabled={isProcessing || files.every(f => f.status !== 'pending')}
+                        disabled={
+                          isProcessing ||
+                          files.every((f) => f.status !== "pending")
+                        }
                         className="w-full"
                       >
-                        {isProcessing ? 'Resizing...' : 'Resize Images'}
+                        {isProcessing ? "Resizing..." : "Resize Images"}
                       </Button>
-                      
-                      {files.some(f => f.status === 'completed') && (
+
+                      {files.some((f) => f.status === "completed") && (
                         <Button
                           onClick={downloadAll}
                           variant="outline"
@@ -486,7 +567,7 @@ export default function ImageResizerTool() {
                           Download All
                         </Button>
                       )}
-                      
+
                       <Button
                         onClick={clearFiles}
                         variant="ghost"
@@ -529,11 +610,21 @@ export default function ImageResizerTool() {
                   {Object.entries(presets).map(([platform, sizes]) => (
                     <div key={platform} className="space-y-2">
                       <h4 className="font-medium capitalize flex items-center gap-2">
-                        {platform === 'instagram' && <SmartphoneIcon className="h-4 w-4" />}
-                        {platform === 'facebook' && <MonitorIcon className="h-4 w-4" />}
-                        {platform === 'twitter' && <MonitorIcon className="h-4 w-4" />}
-                        {platform === 'youtube' && <TabletIcon className="h-4 w-4" />}
-                        {platform === 'linkedin' && <MonitorIcon className="h-4 w-4" />}
+                        {platform === "instagram" && (
+                          <SmartphoneIcon className="h-4 w-4" />
+                        )}
+                        {platform === "facebook" && (
+                          <MonitorIcon className="h-4 w-4" />
+                        )}
+                        {platform === "twitter" && (
+                          <MonitorIcon className="h-4 w-4" />
+                        )}
+                        {platform === "youtube" && (
+                          <TabletIcon className="h-4 w-4" />
+                        )}
+                        {platform === "linkedin" && (
+                          <MonitorIcon className="h-4 w-4" />
+                        )}
                         {platform}
                       </h4>
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
@@ -585,39 +676,52 @@ export default function ImageResizerTool() {
                               alt={fileData.file.name}
                               className="w-16 h-16 object-cover rounded border"
                             />
-                            {fileData.status === 'processing' && (
+                            {fileData.status === "processing" && (
                               <div className="absolute inset-0 bg-black/50 flex items-center justify-center rounded">
                                 <RefreshCwIcon className="h-4 w-4 text-white animate-spin" />
                               </div>
                             )}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <h4 className="font-medium truncate">{fileData.file.name}</h4>
+                            <h4 className="font-medium truncate">
+                              {fileData.file.name}
+                            </h4>
                             <div className="text-sm text-muted-foreground space-y-1">
                               <div>
-                                Original: {fileData.originalDimensions.width} × {fileData.originalDimensions.height} 
-                                ({formatFileSize(fileData.originalSize)})
+                                Original: {fileData.originalDimensions.width} ×{" "}
+                                {fileData.originalDimensions.height}(
+                                {formatFileSize(fileData.originalSize)})
                               </div>
                               {fileData.resizedDimensions && (
                                 <div>
-                                  Resized: {fileData.resizedDimensions.width} × {fileData.resizedDimensions.height}
-                                  ({formatFileSize(fileData.resizedBlob?.size || 0)})
+                                  Resized: {fileData.resizedDimensions.width} ×{" "}
+                                  {fileData.resizedDimensions.height}(
+                                  {formatFileSize(
+                                    fileData.resizedBlob?.size || 0,
+                                  )}
+                                  )
                                 </div>
                               )}
                             </div>
                           </div>
                         </div>
-                        
+
                         <div className="flex items-center gap-2">
-                          <Badge variant={
-                            fileData.status === 'completed' ? 'default' :
-                            fileData.status === 'processing' ? 'secondary' :
-                            fileData.status === 'error' ? 'destructive' : 'outline'
-                          }>
+                          <Badge
+                            variant={
+                              fileData.status === "completed"
+                                ? "default"
+                                : fileData.status === "processing"
+                                  ? "secondary"
+                                  : fileData.status === "error"
+                                    ? "destructive"
+                                    : "outline"
+                            }
+                          >
                             {fileData.status}
                           </Badge>
-                          
-                          {fileData.status === 'completed' && (
+
+                          {fileData.status === "completed" && (
                             <Button
                               variant="outline"
                               size="sm"
@@ -626,7 +730,7 @@ export default function ImageResizerTool() {
                               <DownloadIcon className="h-4 w-4" />
                             </Button>
                           )}
-                          
+
                           <Button
                             variant="ghost"
                             size="sm"
@@ -672,30 +776,42 @@ export default function ImageResizerTool() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h4 className="font-medium mb-1">Will resizing reduce image quality?</h4>
+                <h4 className="font-medium mb-1">
+                  Will resizing reduce image quality?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  Quality may be affected when significantly reducing size. Use the quality slider to control compression levels.
+                  Quality may be affected when significantly reducing size. Use
+                  the quality slider to control compression levels.
                 </p>
               </div>
-              
+
               <div>
-                <h4 className="font-medium mb-1">What does "maintain aspect ratio" do?</h4>
+                <h4 className="font-medium mb-1">
+                  What does "maintain aspect ratio" do?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  It prevents image distortion by automatically adjusting one dimension when you change the other.
+                  It prevents image distortion by automatically adjusting one
+                  dimension when you change the other.
                 </p>
               </div>
-              
+
               <div>
-                <h4 className="font-medium mb-1">Can I resize images for printing?</h4>
+                <h4 className="font-medium mb-1">
+                  Can I resize images for printing?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  Yes! Set dimensions based on your print size and desired DPI (e.g., 8×10 inches at 300 DPI = 2400×3000 pixels).
+                  Yes! Set dimensions based on your print size and desired DPI
+                  (e.g., 8×10 inches at 300 DPI = 2400×3000 pixels).
                 </p>
               </div>
-              
+
               <div>
-                <h4 className="font-medium mb-1">Is there a limit on file size?</h4>
+                <h4 className="font-medium mb-1">
+                  Is there a limit on file size?
+                </h4>
                 <p className="text-sm text-muted-foreground">
-                  Each image can be up to 50MB. You can resize unlimited images for free.
+                  Each image can be up to 50MB. You can resize unlimited images
+                  for free.
                 </p>
               </div>
             </CardContent>
@@ -722,7 +838,8 @@ export default function ImageResizerTool() {
                 <div>
                   <h4 className="font-semibold">Upload Your Images</h4>
                   <p className="text-sm text-muted-foreground">
-                    Click "Choose Images" to select one or multiple images. Supports JPEG, PNG, WebP, GIF, and BMP formats.
+                    Click "Choose Images" to select one or multiple images.
+                    Supports JPEG, PNG, WebP, GIF, and BMP formats.
                   </p>
                 </div>
               </div>
@@ -734,7 +851,8 @@ export default function ImageResizerTool() {
                 <div>
                   <h4 className="font-semibold">Choose Resize Method</h4>
                   <p className="text-sm text-muted-foreground">
-                    Select pixels for exact dimensions or percentage for relative resizing. Use presets for social media sizes.
+                    Select pixels for exact dimensions or percentage for
+                    relative resizing. Use presets for social media sizes.
                   </p>
                 </div>
               </div>
@@ -746,7 +864,8 @@ export default function ImageResizerTool() {
                 <div>
                   <h4 className="font-semibold">Set Dimensions</h4>
                   <p className="text-sm text-muted-foreground">
-                    Enter width and height. Lock aspect ratio to prevent distortion. Adjust quality for file size optimization.
+                    Enter width and height. Lock aspect ratio to prevent
+                    distortion. Adjust quality for file size optimization.
                   </p>
                 </div>
               </div>
@@ -758,7 +877,8 @@ export default function ImageResizerTool() {
                 <div>
                   <h4 className="font-semibold">Resize and Download</h4>
                   <p className="text-sm text-muted-foreground">
-                    Click "Resize Images" to process. Download individual files or use "Download All" for batch downloads.
+                    Click "Resize Images" to process. Download individual files
+                    or use "Download All" for batch downloads.
                   </p>
                 </div>
               </div>
@@ -783,7 +903,10 @@ export default function ImageResizerTool() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Privacy First</h4>
-                    <p className="text-sm text-muted-foreground">All processing happens in your browser. Images never leave your device.</p>
+                    <p className="text-sm text-muted-foreground">
+                      All processing happens in your browser. Images never leave
+                      your device.
+                    </p>
                   </div>
                 </div>
 
@@ -793,7 +916,9 @@ export default function ImageResizerTool() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Batch Processing</h4>
-                    <p className="text-sm text-muted-foreground">Resize multiple images at once with consistent settings.</p>
+                    <p className="text-sm text-muted-foreground">
+                      Resize multiple images at once with consistent settings.
+                    </p>
                   </div>
                 </div>
 
@@ -803,7 +928,10 @@ export default function ImageResizerTool() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Social Media Optimized</h4>
-                    <p className="text-sm text-muted-foreground">Built-in presets for Instagram, Facebook, Twitter, and more.</p>
+                    <p className="text-sm text-muted-foreground">
+                      Built-in presets for Instagram, Facebook, Twitter, and
+                      more.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -815,7 +943,10 @@ export default function ImageResizerTool() {
                   </div>
                   <div>
                     <h4 className="font-semibold">High-Quality Output</h4>
-                    <p className="text-sm text-muted-foreground">Advanced algorithms maintain image quality during resizing.</p>
+                    <p className="text-sm text-muted-foreground">
+                      Advanced algorithms maintain image quality during
+                      resizing.
+                    </p>
                   </div>
                 </div>
 
@@ -825,7 +956,9 @@ export default function ImageResizerTool() {
                   </div>
                   <div>
                     <h4 className="font-semibold">No Upload Limits</h4>
-                    <p className="text-sm text-muted-foreground">Resize unlimited images with no file count restrictions.</p>
+                    <p className="text-sm text-muted-foreground">
+                      Resize unlimited images with no file count restrictions.
+                    </p>
                   </div>
                 </div>
 
@@ -835,7 +968,9 @@ export default function ImageResizerTool() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Cross-Platform</h4>
-                    <p className="text-sm text-muted-foreground">Works on desktop, mobile, and all modern browsers.</p>
+                    <p className="text-sm text-muted-foreground">
+                      Works on desktop, mobile, and all modern browsers.
+                    </p>
                   </div>
                 </div>
               </div>
@@ -856,58 +991,79 @@ export default function ImageResizerTool() {
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-3">
-              <h4 className="font-semibold">What image formats are supported?</h4>
+              <h4 className="font-semibold">
+                What image formats are supported?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                We support JPEG, PNG, WebP, GIF, and BMP formats. Each format maintains its original characteristics during resizing.
+                We support JPEG, PNG, WebP, GIF, and BMP formats. Each format
+                maintains its original characteristics during resizing.
               </p>
             </div>
 
             <div className="space-y-3">
-              <h4 className="font-semibold">How does aspect ratio locking work?</h4>
+              <h4 className="font-semibold">
+                How does aspect ratio locking work?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                When locked, changing one dimension automatically adjusts the other to maintain the image's original proportions, preventing distortion.
+                When locked, changing one dimension automatically adjusts the
+                other to maintain the image's original proportions, preventing
+                distortion.
               </p>
             </div>
 
             <div className="space-y-3">
-              <h4 className="font-semibold">What's the best quality setting for web images?</h4>
+              <h4 className="font-semibold">
+                What's the best quality setting for web images?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                For web use, 80-90% quality provides excellent balance between file size and visual quality. Higher quality means larger files.
+                For web use, 80-90% quality provides excellent balance between
+                file size and visual quality. Higher quality means larger files.
               </p>
             </div>
 
             <div className="space-y-3">
               <h4 className="font-semibold">Can I resize images for print?</h4>
               <p className="text-sm text-muted-foreground">
-                Yes! For print, use 300 DPI. Calculate pixels: inches × 300 = pixels. Example: 8×10 inches = 2400×3000 pixels.
+                Yes! For print, use 300 DPI. Calculate pixels: inches × 300 =
+                pixels. Example: 8×10 inches = 2400×3000 pixels.
               </p>
             </div>
 
             <div className="space-y-3">
-              <h4 className="font-semibold">Why do my images look blurry after resizing?</h4>
+              <h4 className="font-semibold">
+                Why do my images look blurry after resizing?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                This happens when enlarging small images. Our tool uses high-quality algorithms, but you can't add detail that wasn't in the original.
+                This happens when enlarging small images. Our tool uses
+                high-quality algorithms, but you can't add detail that wasn't in
+                the original.
               </p>
             </div>
 
             <div className="space-y-3">
-              <h4 className="font-semibold">How many images can I resize at once?</h4>
+              <h4 className="font-semibold">
+                How many images can I resize at once?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                There's no limit! You can upload and resize as many images as you want in a single batch. Processing time depends on your device.
+                There's no limit! You can upload and resize as many images as
+                you want in a single batch. Processing time depends on your
+                device.
               </p>
             </div>
 
             <div className="space-y-3">
               <h4 className="font-semibold">Are my images secure?</h4>
               <p className="text-sm text-muted-foreground">
-                Absolutely! All processing happens locally in your browser. Your images never leave your device or get uploaded to any server.
+                Absolutely! All processing happens locally in your browser. Your
+                images never leave your device or get uploaded to any server.
               </p>
             </div>
 
             <div className="space-y-3">
               <h4 className="font-semibold">Can I use this tool offline?</h4>
               <p className="text-sm text-muted-foreground">
-                Yes, after the initial page load, the tool works completely offline. All image processing happens in your browser.
+                Yes, after the initial page load, the tool works completely
+                offline. All image processing happens in your browser.
               </p>
             </div>
           </CardContent>
@@ -931,32 +1087,50 @@ export default function ImageResizerTool() {
                   <div className="flex items-center gap-2 mb-2">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <Star
+                          key={i}
+                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                        />
                       ))}
                     </div>
-                    <span className="text-sm font-medium">Sarah Chen, Graphic Designer</span>
+                    <span className="text-sm font-medium">
+                      Sarah Chen, Graphic Designer
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    "The social media presets save me so much time! I use this tool daily for client work. The batch processing is a lifesaver
-                    when I have multiple images to resize for Instagram and Facebook posts."
+                    "The social media presets save me so much time! I use this
+                    tool daily for client work. The batch processing is a
+                    lifesaver when I have multiple images to resize for
+                    Instagram and Facebook posts."
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2">November 18, 2024</p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    November 18, 2024
+                  </p>
                 </div>
 
                 <div className="border rounded-lg p-4">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <Star
+                          key={i}
+                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                        />
                       ))}
                     </div>
-                    <span className="text-sm font-medium">Mike Johnson, Photographer</span>
+                    <span className="text-sm font-medium">
+                      Mike Johnson, Photographer
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    "Finally, an image resizer that maintains quality! The aspect ratio lock and quality controls are perfect for professional work.
-                    Much better than other free online tools I've tried."
+                    "Finally, an image resizer that maintains quality! The
+                    aspect ratio lock and quality controls are perfect for
+                    professional work. Much better than other free online tools
+                    I've tried."
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2">November 15, 2024</p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    November 15, 2024
+                  </p>
                 </div>
               </div>
 
@@ -965,33 +1139,51 @@ export default function ImageResizerTool() {
                   <div className="flex items-center gap-2 mb-2">
                     <div className="flex">
                       {[...Array(4)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <Star
+                          key={i}
+                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                        />
                       ))}
                       <Star className="h-4 w-4 text-gray-300" />
                     </div>
-                    <span className="text-sm font-medium">Emma Rodriguez, Social Media Manager</span>
+                    <span className="text-sm font-medium">
+                      Emma Rodriguez, Social Media Manager
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    "The presets for different platforms are incredibly useful. I can quickly resize images for Instagram stories, Facebook posts,
-                    and Twitter headers all in one place. The interface is intuitive and fast."
+                    "The presets for different platforms are incredibly useful.
+                    I can quickly resize images for Instagram stories, Facebook
+                    posts, and Twitter headers all in one place. The interface
+                    is intuitive and fast."
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2">November 12, 2024</p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    November 12, 2024
+                  </p>
                 </div>
 
                 <div className="border rounded-lg p-4">
                   <div className="flex items-center gap-2 mb-2">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                        <Star
+                          key={i}
+                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
+                        />
                       ))}
                     </div>
-                    <span className="text-sm font-medium">David Kim, Web Developer</span>
+                    <span className="text-sm font-medium">
+                      David Kim, Web Developer
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
-                    "Essential tool for web development. The percentage resizing and quality controls help me optimize images for different screen sizes.
-                    Privacy-focused approach is a big plus - no uploads to servers!"
+                    "Essential tool for web development. The percentage resizing
+                    and quality controls help me optimize images for different
+                    screen sizes. Privacy-focused approach is a big plus - no
+                    uploads to servers!"
                   </p>
-                  <p className="text-xs text-muted-foreground mt-2">November 10, 2024</p>
+                  <p className="text-xs text-muted-foreground mt-2">
+                    November 10, 2024
+                  </p>
                 </div>
               </div>
             </div>
@@ -1016,7 +1208,9 @@ export default function ImageResizerTool() {
                   <Scissors className="h-6 w-6 text-blue-600" />
                 </div>
                 <h4 className="font-medium mb-1">Image Cropper</h4>
-                <p className="text-sm text-muted-foreground">Crop images to perfect dimensions</p>
+                <p className="text-sm text-muted-foreground">
+                  Crop images to perfect dimensions
+                </p>
               </div>
 
               <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
@@ -1024,7 +1218,9 @@ export default function ImageResizerTool() {
                   <FileText className="h-6 w-6 text-green-600" />
                 </div>
                 <h4 className="font-medium mb-1">Image Compressor</h4>
-                <p className="text-sm text-muted-foreground">Reduce file sizes without quality loss</p>
+                <p className="text-sm text-muted-foreground">
+                  Reduce file sizes without quality loss
+                </p>
               </div>
 
               <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
@@ -1032,7 +1228,9 @@ export default function ImageResizerTool() {
                   <Play className="h-6 w-6 text-purple-600" />
                 </div>
                 <h4 className="font-medium mb-1">Image Converter</h4>
-                <p className="text-sm text-muted-foreground">Convert between different image formats</p>
+                <p className="text-sm text-muted-foreground">
+                  Convert between different image formats
+                </p>
               </div>
             </div>
           </CardContent>
@@ -1047,21 +1245,35 @@ export default function ImageResizerTool() {
             <CardContent className="prose prose-sm max-w-none">
               <h3>Mastering Image Resizing for Web and Print</h3>
               <p>
-                Image resizing is a fundamental skill for anyone working with digital content. Whether you're a web designer,
-                photographer, social media manager, or content creator, understanding how to resize images properly can make
-                or break your visual content strategy. Our advanced image resizer provides professional-grade tools with
-                intuitive controls and powerful features.
+                Image resizing is a fundamental skill for anyone working with
+                digital content. Whether you're a web designer, photographer,
+                social media manager, or content creator, understanding how to
+                resize images properly can make or break your visual content
+                strategy. Our advanced image resizer provides professional-grade
+                tools with intuitive controls and powerful features.
               </p>
 
               <h3>Understanding Image Resolution and Quality</h3>
               <p>
-                Before diving into resizing, it's important to understand the relationship between resolution, file size, and quality:
+                Before diving into resizing, it's important to understand the
+                relationship between resolution, file size, and quality:
               </p>
               <ul>
-                <li><strong>Pixels:</strong> The building blocks of digital images</li>
-                <li><strong>Resolution:</strong> Pixels per inch (PPI) or dots per inch (DPI)</li>
-                <li><strong>Compression:</strong> How image data is stored and reduced</li>
-                <li><strong>File Format:</strong> Different formats for different purposes</li>
+                <li>
+                  <strong>Pixels:</strong> The building blocks of digital images
+                </li>
+                <li>
+                  <strong>Resolution:</strong> Pixels per inch (PPI) or dots per
+                  inch (DPI)
+                </li>
+                <li>
+                  <strong>Compression:</strong> How image data is stored and
+                  reduced
+                </li>
+                <li>
+                  <strong>File Format:</strong> Different formats for different
+                  purposes
+                </li>
               </ul>
 
               <h3>Social Media Image Dimensions Guide</h3>
@@ -1088,15 +1300,28 @@ export default function ImageResizerTool() {
               </div>
 
               <h3>Best Practices for Image Resizing</h3>
-              <p>
-                Follow these guidelines to achieve optimal results:
-              </p>
+              <p>Follow these guidelines to achieve optimal results:</p>
               <ul>
-                <li><strong>Start with High Quality:</strong> Always begin with the highest quality source image</li>
-                <li><strong>Maintain Aspect Ratio:</strong> Use aspect ratio locking to prevent distortion</li>
-                <li><strong>Choose Appropriate Quality:</strong> Balance file size with visual quality</li>
-                <li><strong>Consider Your Medium:</strong> Web images need different optimization than print</li>
-                <li><strong>Test Across Devices:</strong> Check how images look on different screen sizes</li>
+                <li>
+                  <strong>Start with High Quality:</strong> Always begin with
+                  the highest quality source image
+                </li>
+                <li>
+                  <strong>Maintain Aspect Ratio:</strong> Use aspect ratio
+                  locking to prevent distortion
+                </li>
+                <li>
+                  <strong>Choose Appropriate Quality:</strong> Balance file size
+                  with visual quality
+                </li>
+                <li>
+                  <strong>Consider Your Medium:</strong> Web images need
+                  different optimization than print
+                </li>
+                <li>
+                  <strong>Test Across Devices:</strong> Check how images look on
+                  different screen sizes
+                </li>
               </ul>
 
               <h3>Advanced Resizing Techniques</h3>
@@ -1104,46 +1329,99 @@ export default function ImageResizerTool() {
                 Professional image resizing goes beyond basic dimension changes:
               </p>
               <ul>
-                <li><strong>Content-Aware Resizing:</strong> Intelligent algorithms that preserve important image elements</li>
-                <li><strong>Smart Cropping:</strong> Automatic cropping that focuses on the most important parts</li>
-                <li><strong>Batch Processing:</strong> Applying consistent resizing to multiple images</li>
-                <li><strong>Format Optimization:</strong> Choosing the right format for specific use cases</li>
+                <li>
+                  <strong>Content-Aware Resizing:</strong> Intelligent
+                  algorithms that preserve important image elements
+                </li>
+                <li>
+                  <strong>Smart Cropping:</strong> Automatic cropping that
+                  focuses on the most important parts
+                </li>
+                <li>
+                  <strong>Batch Processing:</strong> Applying consistent
+                  resizing to multiple images
+                </li>
+                <li>
+                  <strong>Format Optimization:</strong> Choosing the right
+                  format for specific use cases
+                </li>
               </ul>
 
               <h3>Common Image Resizing Mistakes to Avoid</h3>
               <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
-                <h4 className="text-red-800 font-semibold">Don't Make These Errors:</h4>
+                <h4 className="text-red-800 font-semibold">
+                  Don't Make These Errors:
+                </h4>
                 <ul className="text-sm text-red-700 mt-2 space-y-1">
-                  <li>• Enlarging small images significantly (causes pixelation)</li>
+                  <li>
+                    • Enlarging small images significantly (causes pixelation)
+                  </li>
                   <li>• Ignoring aspect ratio (leads to distortion)</li>
-                  <li>• Using wrong quality settings (too low = artifacts, too high = large files)</li>
-                  <li>• Not considering the target medium (web vs print requirements differ)</li>
-                  <li>• Forgetting to optimize file formats for specific platforms</li>
+                  <li>
+                    • Using wrong quality settings (too low = artifacts, too
+                    high = large files)
+                  </li>
+                  <li>
+                    • Not considering the target medium (web vs print
+                    requirements differ)
+                  </li>
+                  <li>
+                    • Forgetting to optimize file formats for specific platforms
+                  </li>
                 </ul>
               </div>
 
               <h3>Image Resizing for Different Industries</h3>
-              <p>
-                Different fields have unique image resizing requirements:
-              </p>
+              <p>Different fields have unique image resizing requirements:</p>
               <ul>
-                <li><strong>Web Design:</strong> Balance quality and loading speed, consider responsive design</li>
-                <li><strong>Photography:</strong> Preserve artistic intent while optimizing for display</li>
-                <li><strong>E-commerce:</strong> Product images need consistency and fast loading</li>
-                <li><strong>Social Media:</strong> Platform-specific dimensions and aspect ratios</li>
-                <li><strong>Print Media:</strong> High resolution (300 DPI) and proper color profiles</li>
+                <li>
+                  <strong>Web Design:</strong> Balance quality and loading
+                  speed, consider responsive design
+                </li>
+                <li>
+                  <strong>Photography:</strong> Preserve artistic intent while
+                  optimizing for display
+                </li>
+                <li>
+                  <strong>E-commerce:</strong> Product images need consistency
+                  and fast loading
+                </li>
+                <li>
+                  <strong>Social Media:</strong> Platform-specific dimensions
+                  and aspect ratios
+                </li>
+                <li>
+                  <strong>Print Media:</strong> High resolution (300 DPI) and
+                  proper color profiles
+                </li>
               </ul>
 
               <h3>Measuring Image Resizing Success</h3>
               <p>
-                Track these metrics to ensure your resizing strategy is effective:
+                Track these metrics to ensure your resizing strategy is
+                effective:
               </p>
               <ul>
-                <li><strong>Loading Speed:</strong> How quickly images load on different devices</li>
-                <li><strong>Visual Quality:</strong> Maintaining clarity and detail after resizing</li>
-                <li><strong>File Size Reduction:</strong> Optimizing storage and bandwidth usage</li>
-                <li><strong>User Experience:</strong> How images perform across different platforms</li>
-                <li><strong>Conversion Impact:</strong> How optimized images affect user engagement</li>
+                <li>
+                  <strong>Loading Speed:</strong> How quickly images load on
+                  different devices
+                </li>
+                <li>
+                  <strong>Visual Quality:</strong> Maintaining clarity and
+                  detail after resizing
+                </li>
+                <li>
+                  <strong>File Size Reduction:</strong> Optimizing storage and
+                  bandwidth usage
+                </li>
+                <li>
+                  <strong>User Experience:</strong> How images perform across
+                  different platforms
+                </li>
+                <li>
+                  <strong>Conversion Impact:</strong> How optimized images
+                  affect user engagement
+                </li>
               </ul>
             </CardContent>
           </Card>

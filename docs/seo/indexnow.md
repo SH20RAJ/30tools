@@ -1,28 +1,28 @@
-I'll implement IndexNow for your 30tools app with the provided API key. Let me create the necessary files and functionality: 
+I'll implement IndexNow for your 30tools app with the provided API key. Let me create the necessary files and functionality:
 
 Created [](file:///Users/shaswatraj/Desktop/earn/30tools/public/634a2c77198a45429967eb9dc1252278.txt)
 
-Now let me create a utility function for IndexNow submissions: 
+Now let me create a utility function for IndexNow submissions:
 
 Created [](file:///Users/shaswatraj/Desktop/earn/30tools/src/lib/indexnow.js)
 
-Now let me create an API route to handle IndexNow submissions server-side: 
+Now let me create an API route to handle IndexNow submissions server-side:
 
 Created [](file:///Users/shaswatraj/Desktop/earn/30tools/src/app/api/indexnow/route.js)
 
-Now let me create a simple admin page to manually trigger IndexNow submissions: 
+Now let me create a simple admin page to manually trigger IndexNow submissions:
 
 Created [](file:///Users/shaswatraj/Desktop/earn/30tools/src/app/%28utilities%29/indexnow/page.js)
 
-Let me fix the lint error: 
+Let me fix the lint error:
 
 Using "Replace String in File"
 
-
 ```
 
 ```
-Perfect! Now let me create a quick test to verify the implementation: 
+
+Perfect! Now let me create a quick test to verify the implementation:
 
 Ran terminal command: curl -I https://30tools.com/634a2c77198a45429967eb9dc1252278.txt 2>&1 | head -5
 
@@ -35,11 +35,13 @@ I've successfully implemented **IndexNow** for your 30tools platform with your A
 ### 📁 Files Created:
 
 #### 1. **API Key File** ✅
+
 - **Location:** 634a2c77198a45429967eb9dc1252278.txt
 - **Purpose:** Verification file required by IndexNow
 - **URL:** `https://30tools.com/634a2c77198a45429967eb9dc1252278.txt`
 
 #### 2. **IndexNow Utility Library** ✅
+
 - **Location:** indexnow.js
 - **Functions:**
   - `submitUrlToIndexNow(url)` - Submit single URL
@@ -49,6 +51,7 @@ I've successfully implemented **IndexNow** for your 30tools platform with your A
   - `notifyIndexNowOnUpdate(slug)` - Notify on content updates
 
 #### 3. **API Route** ✅
+
 - **Location:** route.js
 - **Endpoints:**
   - `POST /api/indexnow` - Submit URLs
@@ -59,6 +62,7 @@ I've successfully implemented **IndexNow** for your 30tools platform with your A
   - Batch processing (up to 10,000 URLs per request)
 
 #### 4. **Admin Interface** ✅
+
 - **Location:** page.js
 - **URL:** `https://30tools.com/indexnow`
 - **Features:**
@@ -71,11 +75,13 @@ I've successfully implemented **IndexNow** for your 30tools platform with your A
 ### 🎯 How to Use:
 
 #### **Option 1: Admin Interface (Easiest)**
+
 1. Visit `https://30tools.com/indexnow`
 2. Click **"Submit All URLs to IndexNow"** to index all your tools
 3. Or paste custom URLs and submit them individually
 
 #### **Option 2: API Call**
+
 ```bash
 # Submit all tools
 curl -X POST https://30tools.com/api/indexnow \
@@ -94,16 +100,18 @@ curl -X POST https://30tools.com/api/indexnow \
 ```
 
 #### **Option 3: Programmatic (In Code)**
+
 ```javascript
-import { submitUrlToIndexNow } from '@/lib/indexnow';
+import { submitUrlToIndexNow } from "@/lib/indexnow";
 
 // When a new tool is added or updated
-await submitUrlToIndexNow('https://30tools.com/new-tool');
+await submitUrlToIndexNow("https://30tools.com/new-tool");
 ```
 
 ### 🔧 What Gets Submitted:
 
 When you click "Submit All URLs", it will automatically submit:
+
 - ✅ Homepage
 - ✅ All tool pages from tools.json
 - ✅ Important pages (About, Search, More Tools, Contact)

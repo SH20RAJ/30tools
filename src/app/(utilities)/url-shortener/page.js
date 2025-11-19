@@ -1,12 +1,15 @@
-import URLShortenerTool from '@/components/tools/utilities/URLShortenerTool';
+import URLShortenerTool from "@/components/tools/utilities/URLShortenerTool";
 
 export const metadata = {
   title: "Free URL Shortener - Create Short Links with Analytics",
-  description: "Professional url shortener with instant results. Free online tool for students, professionals, and businesses worldwide.",
-  keywords: "url shortener, short link generator, custom url shortener, link shortener free, shorten url online, tiny url, short links with analytics, qr code generator",
+  description:
+    "Professional url shortener with instant results. Free online tool for students, professionals, and businesses worldwide.",
+  keywords:
+    "url shortener, short link generator, custom url shortener, link shortener free, shorten url online, tiny url, short links with analytics, qr code generator",
   openGraph: {
     title: "Free URL Shortener - Create Short Links with Analytics",
-    description: "Free URL shortener with custom aliases, QR codes, and click analytics. Create short, trackable links instantly.",
+    description:
+      "Free URL shortener with custom aliases, QR codes, and click analytics. Create short, trackable links instantly.",
     url: "https://30tools.com/url-shortener",
     siteName: "30tools",
     images: [
@@ -14,20 +17,21 @@ export const metadata = {
         url: "/og-images/url-shortener.jpg",
         width: 1200,
         height: 630,
-        alt: "Free URL Shortener Online"
+        alt: "Free URL Shortener Online",
       },
     ],
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Free URL Shortener - Create Short Links with Analytics",
-    description: "Free URL shortener with custom aliases, QR codes, and click analytics.",
+    description:
+      "Free URL shortener with custom aliases, QR codes, and click analytics.",
     images: ["/og-images/url-shortener.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
   alternates: {
-    canonical: "https://30tools.com/url-shortener"
+    canonical: "https://30tools.com/url-shortener",
   },
   robots: {
     index: true,
@@ -35,44 +39,44 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  category: 'Utility Tools',
+  category: "Utility Tools",
   other: {
-    'application-name': '30tools',
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'URL Shortener - 30tools',
-    'format-detection': 'telephone=no',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-    'theme-color': '#000000'
+    "application-name": "30tools",
+    "mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "default",
+    "apple-mobile-web-app-title": "URL Shortener - 30tools",
+    "format-detection": "telephone=no",
+    "msapplication-TileColor": "#000000",
+    "msapplication-config": "/browserconfig.xml",
+    "theme-color": "#000000",
   },
 };
-
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Url Shortener",
-  "description": "Professional url shortener tool. Free online processing with high-quality results. No registration required, instant results.",
-  "url": "https://30tools.com/url-shortener",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
+  name: "Url Shortener",
+  description:
+    "Professional url shortener tool. Free online processing with high-quality results. No registration required, instant results.",
+  url: "https://30tools.com/url-shortener",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
     "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+    price: "0",
+    priceCurrency: "USD",
   },
-  "author": {
+  author: {
     "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
+    name: "30tools",
+    url: "https://30tools.com",
   },
 };
 

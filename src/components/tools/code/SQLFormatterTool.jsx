@@ -1,144 +1,231 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Copy, Download, Code, Database } from 'lucide-react';
-import { toast } from 'sonner';
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Copy, Download, Code, Database } from "lucide-react";
+import { toast } from "sonner";
 
 export default function SQLFormatter() {
-  const [sqlInput, setSqlInput] = useState('');
-  const [formattedSql, setFormattedSql] = useState('');
-  const [sqlDialect, setSqlDialect] = useState('standard');
-  const [indentSize, setIndentSize] = useState('2');
-  const [keywordCase, setKeywordCase] = useState('upper');
+  const [sqlInput, setSqlInput] = useState("");
+  const [formattedSql, setFormattedSql] = useState("");
+  const [sqlDialect, setSqlDialect] = useState("standard");
+  const [indentSize, setIndentSize] = useState("2");
+  const [keywordCase, setKeywordCase] = useState("upper");
 
   const formatSQL = () => {
     if (!sqlInput.trim()) {
-      toast.error('Please enter some SQL to format');
+      toast.error("Please enter some SQL to format");
       return;
     }
 
     try {
       // Simple SQL formatter implementation
       let formatted = sqlInput;
-      
+
       // Remove extra whitespace
-      formatted = formatted.replace(/\s+/g, ' ').trim();
-      
+      formatted = formatted.replace(/\s+/g, " ").trim();
+
       // Define SQL keywords
       const keywords = [
-        'SELECT', 'FROM', 'WHERE', 'JOIN', 'INNER JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'FULL JOIN',
-        'GROUP BY', 'ORDER BY', 'HAVING', 'INSERT', 'UPDATE', 'DELETE', 'CREATE', 'ALTER', 'DROP',
-        'TABLE', 'INDEX', 'VIEW', 'PROCEDURE', 'FUNCTION', 'TRIGGER', 'DATABASE', 'SCHEMA',
-        'PRIMARY KEY', 'FOREIGN KEY', 'REFERENCES', 'CONSTRAINT', 'CHECK', 'DEFAULT', 'NULL',
-        'NOT NULL', 'UNIQUE', 'AUTO_INCREMENT', 'IF EXISTS', 'IF NOT EXISTS', 'CASE', 'WHEN',
-        'THEN', 'ELSE', 'END', 'AS', 'DISTINCT', 'ALL', 'UNION', 'INTERSECT', 'EXCEPT',
-        'IN', 'EXISTS', 'BETWEEN', 'LIKE', 'AND', 'OR', 'NOT', 'IS', 'COUNT', 'SUM', 'AVG',
-        'MIN', 'MAX', 'SUBSTRING', 'CONCAT', 'UPPER', 'LOWER', 'TRIM', 'LENGTH'
+        "SELECT",
+        "FROM",
+        "WHERE",
+        "JOIN",
+        "INNER JOIN",
+        "LEFT JOIN",
+        "RIGHT JOIN",
+        "FULL JOIN",
+        "GROUP BY",
+        "ORDER BY",
+        "HAVING",
+        "INSERT",
+        "UPDATE",
+        "DELETE",
+        "CREATE",
+        "ALTER",
+        "DROP",
+        "TABLE",
+        "INDEX",
+        "VIEW",
+        "PROCEDURE",
+        "FUNCTION",
+        "TRIGGER",
+        "DATABASE",
+        "SCHEMA",
+        "PRIMARY KEY",
+        "FOREIGN KEY",
+        "REFERENCES",
+        "CONSTRAINT",
+        "CHECK",
+        "DEFAULT",
+        "NULL",
+        "NOT NULL",
+        "UNIQUE",
+        "AUTO_INCREMENT",
+        "IF EXISTS",
+        "IF NOT EXISTS",
+        "CASE",
+        "WHEN",
+        "THEN",
+        "ELSE",
+        "END",
+        "AS",
+        "DISTINCT",
+        "ALL",
+        "UNION",
+        "INTERSECT",
+        "EXCEPT",
+        "IN",
+        "EXISTS",
+        "BETWEEN",
+        "LIKE",
+        "AND",
+        "OR",
+        "NOT",
+        "IS",
+        "COUNT",
+        "SUM",
+        "AVG",
+        "MIN",
+        "MAX",
+        "SUBSTRING",
+        "CONCAT",
+        "UPPER",
+        "LOWER",
+        "TRIM",
+        "LENGTH",
       ];
-      
+
       // Apply keyword casing
-      keywords.forEach(keyword => {
-        const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
-        const replacement = keywordCase === 'upper' ? keyword.toUpperCase() : keyword.toLowerCase();
+      keywords.forEach((keyword) => {
+        const regex = new RegExp(`\\b${keyword}\\b`, "gi");
+        const replacement =
+          keywordCase === "upper"
+            ? keyword.toUpperCase()
+            : keyword.toLowerCase();
         formatted = formatted.replace(regex, replacement);
       });
-      
+
       // Add line breaks and indentation
-      const indent = ' '.repeat(parseInt(indentSize));
-      
+      const indent = " ".repeat(parseInt(indentSize));
+
       // Major clauses on new lines
-      const majorClauses = ['SELECT', 'FROM', 'WHERE', 'GROUP BY', 'ORDER BY', 'HAVING', 'UNION'];
-      majorClauses.forEach(clause => {
-        const regex = new RegExp(`\\b${clause}\\b`, 'gi');
+      const majorClauses = [
+        "SELECT",
+        "FROM",
+        "WHERE",
+        "GROUP BY",
+        "ORDER BY",
+        "HAVING",
+        "UNION",
+      ];
+      majorClauses.forEach((clause) => {
+        const regex = new RegExp(`\\b${clause}\\b`, "gi");
         formatted = formatted.replace(regex, `\n${clause}`);
       });
-      
+
       // JOIN clauses with indentation
-      const joinTypes = ['JOIN', 'INNER JOIN', 'LEFT JOIN', 'RIGHT JOIN', 'FULL JOIN'];
-      joinTypes.forEach(join => {
-        const regex = new RegExp(`\\b${join}\\b`, 'gi');
+      const joinTypes = [
+        "JOIN",
+        "INNER JOIN",
+        "LEFT JOIN",
+        "RIGHT JOIN",
+        "FULL JOIN",
+      ];
+      joinTypes.forEach((join) => {
+        const regex = new RegExp(`\\b${join}\\b`, "gi");
         formatted = formatted.replace(regex, `\n${indent}${join}`);
       });
-      
+
       // Subqueries and parentheses
-      formatted = formatted.replace(/\(/g, '(\n' + indent);
-      formatted = formatted.replace(/\)/g, '\n)');
-      
+      formatted = formatted.replace(/\(/g, "(\n" + indent);
+      formatted = formatted.replace(/\)/g, "\n)");
+
       // Clean up extra newlines and trim
-      formatted = formatted.replace(/\n\s*\n/g, '\n').trim();
-      
+      formatted = formatted.replace(/\n\s*\n/g, "\n").trim();
+
       // Split into lines and apply proper indentation
-      const lines = formatted.split('\n');
+      const lines = formatted.split("\n");
       let indentLevel = 0;
-      const formattedLines = lines.map(line => {
+      const formattedLines = lines.map((line) => {
         const trimmedLine = line.trim();
-        if (!trimmedLine) return '';
-        
+        if (!trimmedLine) return "";
+
         // Decrease indent for closing parentheses
-        if (trimmedLine.startsWith(')')) {
+        if (trimmedLine.startsWith(")")) {
           indentLevel = Math.max(0, indentLevel - 1);
         }
-        
+
         const indentedLine = indent.repeat(indentLevel) + trimmedLine;
-        
+
         // Increase indent for opening parentheses
-        if (trimmedLine.includes('(') && !trimmedLine.includes(')')) {
+        if (trimmedLine.includes("(") && !trimmedLine.includes(")")) {
           indentLevel++;
         }
-        
+
         return indentedLine;
       });
-      
-      setFormattedSql(formattedLines.join('\n'));
-      toast.success('SQL formatted successfully!');
-      
+
+      setFormattedSql(formattedLines.join("\n"));
+      toast.success("SQL formatted successfully!");
     } catch (error) {
-      console.error('Error formatting SQL:', error);
-      toast.error('Failed to format SQL. Please check your syntax.');
+      console.error("Error formatting SQL:", error);
+      toast.error("Failed to format SQL. Please check your syntax.");
     }
   };
 
   const copyToClipboard = async () => {
     if (!formattedSql) {
-      toast.error('No formatted SQL to copy');
+      toast.error("No formatted SQL to copy");
       return;
     }
-    
+
     try {
       await navigator.clipboard.writeText(formattedSql);
-      toast.success('Formatted SQL copied to clipboard!');
+      toast.success("Formatted SQL copied to clipboard!");
     } catch (error) {
-      console.error('Failed to copy:', error);
-      toast.error('Failed to copy to clipboard');
+      console.error("Failed to copy:", error);
+      toast.error("Failed to copy to clipboard");
     }
   };
 
   const downloadSQL = () => {
     if (!formattedSql) {
-      toast.error('No formatted SQL to download');
+      toast.error("No formatted SQL to download");
       return;
     }
-    
-    const blob = new Blob([formattedSql], { type: 'text/sql' });
+
+    const blob = new Blob([formattedSql], { type: "text/sql" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
-    a.download = 'formatted_query.sql';
+    a.download = "formatted_query.sql";
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
-    toast.success('SQL file downloaded!');
+    toast.success("SQL file downloaded!");
   };
 
   const clearAll = () => {
-    setSqlInput('');
-    setFormattedSql('');
+    setSqlInput("");
+    setFormattedSql("");
   };
 
   const loadSample = () => {
@@ -153,7 +240,8 @@ export default function SQLFormatter() {
           <div className="text-center mb-8">
             <h1 className="text-4xl font-bold mb-4">SQL Formatter</h1>
             <p className="text-lg text-muted-foreground">
-              Format and beautify SQL queries with proper indentation and syntax highlighting
+              Format and beautify SQL queries with proper indentation and syntax
+              highlighting
             </p>
           </div>
 
@@ -210,7 +298,7 @@ export default function SQLFormatter() {
                         </SelectContent>
                       </Select>
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="indent">Indent Size</Label>
                       <Select value={indentSize} onValueChange={setIndentSize}>
@@ -224,10 +312,13 @@ export default function SQLFormatter() {
                         </SelectContent>
                       </Select>
                     </div>
-                    
+
                     <div>
                       <Label htmlFor="case">Keyword Case</Label>
-                      <Select value={keywordCase} onValueChange={setKeywordCase}>
+                      <Select
+                        value={keywordCase}
+                        onValueChange={setKeywordCase}
+                      >
                         <SelectTrigger>
                           <SelectValue />
                         </SelectTrigger>
@@ -238,8 +329,12 @@ export default function SQLFormatter() {
                       </Select>
                     </div>
                   </div>
-                  
-                  <Button onClick={formatSQL} className="w-full" disabled={!sqlInput.trim()}>
+
+                  <Button
+                    onClick={formatSQL}
+                    className="w-full"
+                    disabled={!sqlInput.trim()}
+                  >
                     <Code className="w-4 h-4 mr-2" />
                     Format SQL
                   </Button>
@@ -266,7 +361,11 @@ export default function SQLFormatter() {
                     />
                     {formattedSql && (
                       <div className="absolute top-2 right-2 space-x-2">
-                        <Button size="sm" variant="ghost" onClick={copyToClipboard}>
+                        <Button
+                          size="sm"
+                          variant="ghost"
+                          onClick={copyToClipboard}
+                        >
                           <Copy className="w-4 h-4" />
                         </Button>
                         <Button size="sm" variant="ghost" onClick={downloadSQL}>
@@ -289,19 +388,27 @@ export default function SQLFormatter() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
                 <div>
                   <h4 className="font-medium mb-2">Proper Indentation</h4>
-                  <p className="text-muted-foreground">Clean, readable formatting with consistent indentation</p>
+                  <p className="text-muted-foreground">
+                    Clean, readable formatting with consistent indentation
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-medium mb-2">Keyword Formatting</h4>
-                  <p className="text-muted-foreground">Uppercase or lowercase SQL keywords as preferred</p>
+                  <p className="text-muted-foreground">
+                    Uppercase or lowercase SQL keywords as preferred
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-medium mb-2">Multiple Dialects</h4>
-                  <p className="text-muted-foreground">Support for different SQL database systems</p>
+                  <p className="text-muted-foreground">
+                    Support for different SQL database systems
+                  </p>
                 </div>
                 <div>
                   <h4 className="font-medium mb-2">Download & Copy</h4>
-                  <p className="text-muted-foreground">Easy sharing and saving of formatted queries</p>
+                  <p className="text-muted-foreground">
+                    Easy sharing and saving of formatted queries
+                  </p>
                 </div>
               </div>
             </CardContent>

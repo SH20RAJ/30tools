@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
-import withPWA from 'next-pwa';
-
+import withPWA from "next-pwa";
 
 const nextConfig = {
   // TypeScript configuration
@@ -10,7 +9,7 @@ const nextConfig = {
 
   // Advanced image optimization
   images: {
-    formats: ['image/avif', 'image/webp'],
+    formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
@@ -18,13 +17,13 @@ const nextConfig = {
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'cdn.jsdelivr.net',
+        protocol: "https",
+        hostname: "cdn.jsdelivr.net",
       },
       {
-        protocol: 'https',
-        hostname: 'fonts.googleapis.com',
-      }
+        protocol: "https",
+        hostname: "fonts.googleapis.com",
+      },
     ],
   },
 
@@ -32,12 +31,12 @@ const nextConfig = {
   experimental: {
     optimizeCss: true,
     optimizePackageImports: [
-      'lucide-react',
-      '@radix-ui/react-icons',
-      'react-icons',
-      'framer-motion'
+      "lucide-react",
+      "@radix-ui/react-icons",
+      "react-icons",
+      "framer-motion",
     ],
-    webVitalsAttribution: ['CLS', 'LCP', 'FCP', 'FID', 'TTFB'],
+    webVitalsAttribution: ["CLS", "LCP", "FCP", "FID", "TTFB"],
     esmExternals: true,
   },
 
@@ -45,7 +44,7 @@ const nextConfig = {
   bundlePagesRouterDependencies: true,
 
   // Output configuration for Cloudflare deployment
-  output: 'standalone',
+  output: "standalone",
 
   // Compression and security
   compress: true,
@@ -59,78 +58,79 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        source: "/(.*)",
         headers: [
           {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on'
+            key: "X-DNS-Prefetch-Control",
+            value: "on",
           },
           {
-            key: 'X-XSS-Protection',
-            value: '1; mode=block'
+            key: "X-XSS-Protection",
+            value: "1; mode=block",
           },
           {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN'
+            key: "X-Frame-Options",
+            value: "SAMEORIGIN",
           },
           {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff'
+            key: "X-Content-Type-Options",
+            value: "nosniff",
           },
           {
-            key: 'Referrer-Policy',
-            value: 'origin-when-cross-origin'
+            key: "Referrer-Policy",
+            value: "origin-when-cross-origin",
           },
           {
-            key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
-          }
+            key: "Permissions-Policy",
+            value:
+              "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+          },
         ],
       },
       {
-        source: '/api/(.*)',
+        source: "/api/(.*)",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=3600, s-maxage=3600'
-          }
+            key: "Cache-Control",
+            value: "public, max-age=3600, s-maxage=3600",
+          },
         ],
       },
       {
-        source: '/_next/static/(.*)',
+        source: "/_next/static/(.*)",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable'
-          }
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
       },
       {
-        source: '/icons/(.*)',
+        source: "/icons/(.*)",
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable'
-          }
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
         ],
-      }
-    ]
+      },
+    ];
   },
 
   // Redirects for SEO
   async redirects() {
     return [
       {
-        source: '/tool/:slug',
-        destination: '/:slug',
+        source: "/tool/:slug",
+        destination: "/:slug",
         permanent: true,
       },
       {
-        source: '/tools/:slug',
-        destination: '/:slug',
+        source: "/tools/:slug",
+        destination: "/:slug",
         permanent: true,
-      }
-    ]
+      },
+    ];
   },
 
   // Turbopack configuration (empty to silence Next.js 16 warning)
@@ -149,7 +149,7 @@ const nextConfig = {
       config.watchOptions = {
         poll: 1000,
         aggregateTimeout: 300,
-      }
+      };
     }
 
     // Fix for Stack framework cookie dependency issue
@@ -157,10 +157,10 @@ const nextConfig = {
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
-        "cookie": false,
-        "crypto": false,
-        "stream": false,
-        "util": false
+        cookie: false,
+        crypto: false,
+        stream: false,
+        util: false,
       };
     }
 
@@ -169,17 +169,17 @@ const nextConfig = {
 };
 
 const pwaConfig = withPWA({
-  dest: 'public',
+  dest: "public",
   register: true,
   skipWaiting: true,
-  disable: process.env.NODE_ENV === 'development',
+  disable: process.env.NODE_ENV === "development",
   buildExcludes: [/middleware-manifest\.json$/],
   runtimeCaching: [
     {
       urlPattern: /^https?.*/,
-      handler: 'NetworkFirst',
+      handler: "NetworkFirst",
       options: {
-        cacheName: 'offlineCache',
+        cacheName: "offlineCache",
         expiration: {
           maxEntries: 200,
           maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
@@ -192,5 +192,5 @@ const pwaConfig = withPWA({
 export default pwaConfig(nextConfig);
 
 // added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
-import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare';
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 initOpenNextCloudflareForDev();

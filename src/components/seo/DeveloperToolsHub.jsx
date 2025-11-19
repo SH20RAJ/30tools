@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { 
-  Code2, 
-  Terminal, 
-  Braces, 
-  Hash, 
-  Key, 
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Code2,
+  Terminal,
+  Braces,
+  Hash,
+  Key,
   TestTube,
   Clock,
   Star,
@@ -26,53 +26,59 @@ import {
   Lightbulb,
   CheckCircle2,
   ArrowRight,
-  ExternalLink
-} from 'lucide-react';
-import Link from 'next/link';
+  ExternalLink,
+} from "lucide-react";
+import Link from "next/link";
 
 // Developer tool icons mapping
 const TOOL_ICONS = {
-  'json-formatter': Braces,
-  'base64-tool': Key,
-  'hash-generator': Hash,
-  'regex-tester': TestTube,
-  'api-tester': Terminal,
-  'jwt-decoder': Shield,
-  'url-encoder': ExternalLink,
-  'code-formatter': Code2
+  "json-formatter": Braces,
+  "base64-tool": Key,
+  "hash-generator": Hash,
+  "regex-tester": TestTube,
+  "api-tester": Terminal,
+  "jwt-decoder": Shield,
+  "url-encoder": ExternalLink,
+  "code-formatter": Code2,
 };
 
 // Tool statistics (would come from analytics in real app)
 const TOOL_STATS = {
-  'json-formatter': { users: '45K', usage: '+23%', rating: 4.9 },
-  'base64-tool': { users: '38K', usage: '+18%', rating: 4.8 },
-  'hash-generator': { users: '32K', usage: '+15%', rating: 4.7 },
-  'regex-tester': { users: '29K', usage: '+20%', rating: 4.8 },
-  'api-tester': { users: '41K', usage: '+25%', rating: 4.9 },
-  'jwt-decoder': { users: '35K', usage: '+22%', rating: 4.8 },
-  'url-encoder': { users: '28K', usage: '+12%', rating: 4.6 }
+  "json-formatter": { users: "45K", usage: "+23%", rating: 4.9 },
+  "base64-tool": { users: "38K", usage: "+18%", rating: 4.8 },
+  "hash-generator": { users: "32K", usage: "+15%", rating: 4.7 },
+  "regex-tester": { users: "29K", usage: "+20%", rating: 4.8 },
+  "api-tester": { users: "41K", usage: "+25%", rating: 4.9 },
+  "jwt-decoder": { users: "35K", usage: "+22%", rating: 4.8 },
+  "url-encoder": { users: "28K", usage: "+12%", rating: 4.6 },
 };
 
-export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [] }) {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
+export default function DeveloperToolsHub({
+  tools = [],
+  faqs = [],
+  tutorials = [],
+}) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
   const categories = [
-    { id: 'all', name: 'All Tools', icon: Code2 },
-    { id: 'formatter', name: 'Formatters', icon: Braces },
-    { id: 'encoder', name: 'Encoders', icon: Key },
-    { id: 'tester', name: 'Testers', icon: TestTube },
-    { id: 'generator', name: 'Generators', icon: Hash }
+    { id: "all", name: "All Tools", icon: Code2 },
+    { id: "formatter", name: "Formatters", icon: Braces },
+    { id: "encoder", name: "Encoders", icon: Key },
+    { id: "tester", name: "Testers", icon: TestTube },
+    { id: "generator", name: "Generators", icon: Hash },
   ];
 
-  const filteredTools = tools.filter(tool => {
-    const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         tool.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || tool.category === selectedCategory;
+  const filteredTools = tools.filter((tool) => {
+    const matchesSearch =
+      tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      tool.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesCategory =
+      selectedCategory === "all" || tool.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
-  const popularTools = tools.filter(tool => tool.popular).slice(0, 6);
+  const popularTools = tools.filter((tool) => tool.popular).slice(0, 6);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-muted/20 to-background">
@@ -83,30 +89,45 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
             <Code2 className="h-4 w-4" />
             Professional Developer Tools
           </div>
-          
+
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent">
             Free Developer Tools
           </h1>
-          
+
           <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Professional-grade developer utilities for JSON formatting, Base64 encoding, hash generation, 
-            regex testing, and more. All tools run client-side for maximum security and privacy.
+            Professional-grade developer utilities for JSON formatting, Base64
+            encoding, hash generation, regex testing, and more. All tools run
+            client-side for maximum security and privacy.
           </p>
 
           {/* Key Benefits */}
           <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-12">
             {[
-              { icon: Shield, title: 'Privacy First', desc: 'Client-side processing' },
-              { icon: Zap, title: 'Lightning Fast', desc: 'Instant results' },
-              { icon: Users, title: '100K+ Developers', desc: 'Trusted worldwide' },
-              { icon: CheckCircle2, title: 'Always Free', desc: 'No registration required' }
+              {
+                icon: Shield,
+                title: "Privacy First",
+                desc: "Client-side processing",
+              },
+              { icon: Zap, title: "Lightning Fast", desc: "Instant results" },
+              {
+                icon: Users,
+                title: "100K+ Developers",
+                desc: "Trusted worldwide",
+              },
+              {
+                icon: CheckCircle2,
+                title: "Always Free",
+                desc: "No registration required",
+              },
             ].map((benefit, index) => {
               const Icon = benefit.icon;
               return (
                 <div key={index} className="text-center">
                   <Icon className="h-8 w-8 mx-auto mb-2 text-primary" />
                   <h3 className="font-semibold mb-1">{benefit.title}</h3>
-                  <p className="text-sm text-muted-foreground">{benefit.desc}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {benefit.desc}
+                  </p>
                 </div>
               );
             })}
@@ -129,17 +150,28 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
       <section className="py-12 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">Most Popular Developer Tools</h2>
-            <p className="text-muted-foreground">The tools developers use most for daily coding tasks</p>
+            <h2 className="text-3xl font-bold mb-4">
+              Most Popular Developer Tools
+            </h2>
+            <p className="text-muted-foreground">
+              The tools developers use most for daily coding tasks
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {popularTools.map((tool, index) => {
               const Icon = TOOL_ICONS[tool.id] || Code2;
-              const stats = TOOL_STATS[tool.id] || { users: '0', usage: '0%', rating: 4.0 };
-              
+              const stats = TOOL_STATS[tool.id] || {
+                users: "0",
+                usage: "0%",
+                rating: 4.0,
+              };
+
               return (
-                <Card key={tool.id} className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                <Card
+                  key={tool.id}
+                  className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20"
+                >
                   <CardHeader className="pb-3">
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-2">
@@ -152,20 +184,22 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
                       </div>
                       <div className="flex items-center gap-1">
                         <Star className="h-4 w-4 text-primary fill-current" />
-                        <span className="text-sm font-medium">{stats.rating}</span>
+                        <span className="text-sm font-medium">
+                          {stats.rating}
+                        </span>
                       </div>
                     </div>
-                    
+
                     <CardTitle className="text-lg group-hover:text-primary transition-colors">
                       {tool.name}
                     </CardTitle>
                   </CardHeader>
-                  
+
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                       {tool.description}
                     </p>
-                    
+
                     <div className="flex items-center justify-between text-xs text-muted-foreground mb-4">
                       <div className="flex items-center gap-1">
                         <Users className="h-3 w-3" />
@@ -200,7 +234,9 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
               return (
                 <Button
                   key={category.id}
-                  variant={selectedCategory === category.id ? "default" : "outline"}
+                  variant={
+                    selectedCategory === category.id ? "default" : "outline"
+                  }
                   onClick={() => setSelectedCategory(category.id)}
                   className="flex items-center gap-2"
                 >
@@ -216,24 +252,29 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
             {filteredTools.map((tool) => {
               const Icon = TOOL_ICONS[tool.id] || Code2;
               const stats = TOOL_STATS[tool.id];
-              
+
               return (
-                <Card key={tool.id} className="group hover:shadow-lg transition-shadow">
+                <Card
+                  key={tool.id}
+                  className="group hover:shadow-lg transition-shadow"
+                >
                   <CardHeader className="pb-3">
                     <div className="flex items-center gap-2 mb-2">
                       <Icon className="h-5 w-5 text-primary" />
                       {tool.popular && (
-                        <Badge variant="secondary" className="text-xs">Popular</Badge>
+                        <Badge variant="secondary" className="text-xs">
+                          Popular
+                        </Badge>
                       )}
                     </div>
                     <CardTitle className="text-lg">{tool.name}</CardTitle>
                   </CardHeader>
-                  
+
                   <CardContent>
                     <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                       {tool.description}
                     </p>
-                    
+
                     {stats && (
                       <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
                         <span>{stats.users} users</span>
@@ -241,10 +282,13 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
                       </div>
                     )}
 
-                    <Button asChild className="w-full" size="sm" variant="outline">
-                      <Link href={tool.route}>
-                        Open Tool
-                      </Link>
+                    <Button
+                      asChild
+                      className="w-full"
+                      size="sm"
+                      variant="outline"
+                    >
+                      <Link href={tool.route}>Open Tool</Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -269,7 +313,9 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Developer Resources</h2>
-            <p className="text-muted-foreground">Tutorials, guides, and best practices</p>
+            <p className="text-muted-foreground">
+              Tutorials, guides, and best practices
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -283,7 +329,8 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Learn how to use our developer tools effectively with step-by-step tutorials.
+                  Learn how to use our developer tools effectively with
+                  step-by-step tutorials.
                 </p>
                 <Button variant="outline" size="sm">
                   View Guide
@@ -301,7 +348,8 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Security tips, performance optimization, and professional development workflows.
+                  Security tips, performance optimization, and professional
+                  development workflows.
                 </p>
                 <Button variant="outline" size="sm">
                   Learn More
@@ -319,7 +367,8 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground mb-4">
-                  Integrate our tools into your workflow with our developer APIs and webhooks.
+                  Integrate our tools into your workflow with our developer APIs
+                  and webhooks.
                 </p>
                 <Button variant="outline" size="sm">
                   View Docs
@@ -333,21 +382,27 @@ export default function DeveloperToolsHub({ tools = [], faqs = [], tutorials = [
       {/* Community Stats */}
       <section className="py-12 px-4 bg-gradient-to-r from-primary/5 to-accent/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold mb-8">Trusted by Developers Worldwide</h2>
-          
+          <h2 className="text-2xl font-bold mb-8">
+            Trusted by Developers Worldwide
+          </h2>
+
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { value: '100K+', label: 'Active Developers', icon: Users },
-              { value: '2M+', label: 'Tools Used Monthly', icon: Code2 },
-              { value: '50+', label: 'Countries', icon: TrendingUp },
-              { value: '99.9%', label: 'Uptime', icon: Clock }
+              { value: "100K+", label: "Active Developers", icon: Users },
+              { value: "2M+", label: "Tools Used Monthly", icon: Code2 },
+              { value: "50+", label: "Countries", icon: TrendingUp },
+              { value: "99.9%", label: "Uptime", icon: Clock },
             ].map((stat, index) => {
               const Icon = stat.icon;
               return (
                 <div key={index} className="text-center">
                   <Icon className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <div className="text-3xl font-bold text-foreground">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  <div className="text-3xl font-bold text-foreground">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
                 </div>
               );
             })}
@@ -374,9 +429,13 @@ export function DeveloperToolFeatures({ tool, features = [] }) {
             <div key={index} className="flex items-start gap-3">
               <div className="flex-shrink-0 w-2 h-2 bg-primary rounded-full mt-2" />
               <div>
-                <h4 className="font-medium text-sm">{feature.title || feature}</h4>
+                <h4 className="font-medium text-sm">
+                  {feature.title || feature}
+                </h4>
                 {feature.description && (
-                  <p className="text-xs text-muted-foreground mt-1">{feature.description}</p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {feature.description}
+                  </p>
                 )}
               </div>
             </div>
@@ -413,17 +472,19 @@ export function DeveloperToolExamples({ tool, examples = [] }) {
               </Button>
             ))}
           </div>
-          
+
           {examples[activeExample] && (
             <div className="space-y-3">
               <h4 className="font-medium">{examples[activeExample].title}</h4>
               <p className="text-sm text-muted-foreground">
                 {examples[activeExample].description}
               </p>
-              
+
               {examples[activeExample].input && (
                 <div>
-                  <label className="text-xs font-medium text-muted-foreground">Input:</label>
+                  <label className="text-xs font-medium text-muted-foreground">
+                    Input:
+                  </label>
                   <Textarea
                     value={examples[activeExample].input}
                     readOnly
@@ -432,10 +493,12 @@ export function DeveloperToolExamples({ tool, examples = [] }) {
                   />
                 </div>
               )}
-              
+
               {examples[activeExample].output && (
                 <div>
-                  <label className="text-xs font-medium text-muted-foreground">Output:</label>
+                  <label className="text-xs font-medium text-muted-foreground">
+                    Output:
+                  </label>
                   <Textarea
                     value={examples[activeExample].output}
                     readOnly

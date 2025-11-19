@@ -1,14 +1,20 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { Progress } from '@/components/ui/progress';
+import { useState, useRef, useCallback } from "react";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Progress } from "@/components/ui/progress";
 import {
   Upload,
   Download,
@@ -23,8 +29,8 @@ import {
   Wand2,
   Zap,
   Shield,
-  Layers
-} from 'lucide-react';
+  Layers,
+} from "lucide-react";
 
 export default function BackgroundRemoverTool() {
   const [files, setFiles] = useState([]);
@@ -33,15 +39,20 @@ export default function BackgroundRemoverTool() {
   const [showOriginal, setShowOriginal] = useState(false);
   const fileInputRef = useRef(null);
 
-  const supportedFormats = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+  const supportedFormats = [
+    "image/jpeg",
+    "image/jpg",
+    "image/png",
+    "image/webp",
+  ];
   const maxFileSize = 10 * 1024 * 1024; // 10MB
 
   const formatFileSize = (bytes) => {
-    if (bytes === 0) return '0 Bytes';
+    if (bytes === 0) return "0 Bytes";
     const k = 1024;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+    const sizes = ["Bytes", "KB", "MB", "GB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
-    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
   };
 
   const handleFileSelect = (event) => {
@@ -60,36 +71,40 @@ export default function BackgroundRemoverTool() {
   }, []);
 
   const processFiles = (fileList) => {
-    const validFiles = fileList.filter(file => {
+    const validFiles = fileList.filter((file) => {
       const isValidType = supportedFormats.includes(file.type);
       const isValidSize = file.size <= maxFileSize;
 
       if (!isValidType) {
-        alert(`${file.name} is not a supported image format. Please use JPG, PNG, or WebP.`);
+        alert(
+          `${file.name} is not a supported image format. Please use JPG, PNG, or WebP.`,
+        );
         return false;
       }
 
       if (!isValidSize) {
-        alert(`${file.name} is too large. Maximum size is ${formatFileSize(maxFileSize)}.`);
+        alert(
+          `${file.name} is too large. Maximum size is ${formatFileSize(maxFileSize)}.`,
+        );
         return false;
       }
 
       return true;
     });
 
-    const newFiles = validFiles.map(file => ({
+    const newFiles = validFiles.map((file) => ({
       id: Math.random().toString(36).substr(2, 9),
       file,
       name: file.name,
       size: file.size,
-      status: 'ready',
+      status: "ready",
       progress: 0,
       originalUrl: URL.createObjectURL(file),
       processedUrl: null,
-      processedBlob: null
+      processedBlob: null,
     }));
 
-    setFiles(prev => [...prev, ...newFiles]);
+    setFiles((prev) => [...prev, ...newFiles]);
   };
 
   // Simulate background removal (in real implementation, you'd use a service like remove.bg API or client-side ML)
@@ -97,8 +112,8 @@ export default function BackgroundRemoverTool() {
     return new Promise((resolve) => {
       const img = new Image();
       img.onload = () => {
-        const canvas = document.createElement('canvas');
-        const ctx = canvas.getContext('2d');
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
 
         canvas.width = img.width;
         canvas.height = img.height;
@@ -130,9 +145,9 @@ export default function BackgroundRemoverTool() {
           const processedUrl = URL.createObjectURL(blob);
           resolve({
             processedUrl,
-            processedBlob: blob
+            processedBlob: blob,
           });
-        }, 'image/png');
+        }, "image/png");
       };
 
       img.src = fileData.originalUrl;
@@ -147,36 +162,44 @@ export default function BackgroundRemoverTool() {
 
     for (let i = 0; i < files.length; i++) {
       const file = files[i];
-      if (file.status === 'completed') continue;
+      if (file.status === "completed") continue;
 
-      setFiles(prev => prev.map(f =>
-        f.id === file.id ? { ...f, status: 'processing', progress: 0 } : f
-      ));
+      setFiles((prev) =>
+        prev.map((f) =>
+          f.id === file.id ? { ...f, status: "processing", progress: 0 } : f,
+        ),
+      );
 
       try {
         // Simulate processing progress
         for (let p = 0; p <= 100; p += 10) {
-          await new Promise(resolve => setTimeout(resolve, 100));
-          setFiles(prev => prev.map(f =>
-            f.id === file.id ? { ...f, progress: p } : f
-          ));
+          await new Promise((resolve) => setTimeout(resolve, 100));
+          setFiles((prev) =>
+            prev.map((f) => (f.id === file.id ? { ...f, progress: p } : f)),
+          );
         }
 
         const result = await removeBackground(file);
 
-        setFiles(prev => prev.map(f =>
-          f.id === file.id ? {
-            ...f,
-            status: 'completed',
-            progress: 100,
-            processedUrl: result.processedUrl,
-            processedBlob: result.processedBlob
-          } : f
-        ));
+        setFiles((prev) =>
+          prev.map((f) =>
+            f.id === file.id
+              ? {
+                  ...f,
+                  status: "completed",
+                  progress: 100,
+                  processedUrl: result.processedUrl,
+                  processedBlob: result.processedBlob,
+                }
+              : f,
+          ),
+        );
       } catch (error) {
-        setFiles(prev => prev.map(f =>
-          f.id === file.id ? { ...f, status: 'error', progress: 0 } : f
-        ));
+        setFiles((prev) =>
+          prev.map((f) =>
+            f.id === file.id ? { ...f, status: "error", progress: 0 } : f,
+          ),
+        );
       }
 
       setProgress(((i + 1) / files.length) * 100);
@@ -188,31 +211,33 @@ export default function BackgroundRemoverTool() {
   const downloadFile = (fileData) => {
     if (!fileData.processedBlob) return;
 
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = fileData.processedUrl;
-    link.download = `no-bg-${fileData.name.replace(/\.[^/.]+$/, '')}.png`;
+    link.download = `no-bg-${fileData.name.replace(/\.[^/.]+$/, "")}.png`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
 
   const downloadAll = () => {
-    files.filter(f => f.status === 'completed').forEach(downloadFile);
+    files.filter((f) => f.status === "completed").forEach(downloadFile);
   };
 
   const removeFile = (id) => {
-    setFiles(prev => {
-      const fileToRemove = prev.find(f => f.id === id);
+    setFiles((prev) => {
+      const fileToRemove = prev.find((f) => f.id === id);
       if (fileToRemove) {
-        if (fileToRemove.originalUrl) URL.revokeObjectURL(fileToRemove.originalUrl);
-        if (fileToRemove.processedUrl) URL.revokeObjectURL(fileToRemove.processedUrl);
+        if (fileToRemove.originalUrl)
+          URL.revokeObjectURL(fileToRemove.originalUrl);
+        if (fileToRemove.processedUrl)
+          URL.revokeObjectURL(fileToRemove.processedUrl);
       }
-      return prev.filter(f => f.id !== id);
+      return prev.filter((f) => f.id !== id);
     });
   };
 
   const clearFiles = () => {
-    files.forEach(file => {
+    files.forEach((file) => {
       if (file.originalUrl) URL.revokeObjectURL(file.originalUrl);
       if (file.processedUrl) URL.revokeObjectURL(file.processedUrl);
     });
@@ -222,27 +247,32 @@ export default function BackgroundRemoverTool() {
 
   const getStatusIcon = (status) => {
     switch (status) {
-      case 'ready': return <ImageIcon className="h-4 w-4 text-primary" />;
-      case 'processing': return <Loader className="h-4 w-4 text-primary animate-spin" />;
-      case 'completed': return <CheckCircle className="h-4 w-4 text-primary" />;
-      case 'error': return <AlertCircle className="h-4 w-4 text-destructive" />;
-      default: return <ImageIcon className="h-4 w-4" />;
+      case "ready":
+        return <ImageIcon className="h-4 w-4 text-primary" />;
+      case "processing":
+        return <Loader className="h-4 w-4 text-primary animate-spin" />;
+      case "completed":
+        return <CheckCircle className="h-4 w-4 text-primary" />;
+      case "error":
+        return <AlertCircle className="h-4 w-4 text-destructive" />;
+      default:
+        return <ImageIcon className="h-4 w-4" />;
     }
   };
 
   const getStatusBadge = (status) => {
     const variants = {
-      ready: 'secondary',
-      processing: 'default',
-      completed: 'default',
-      error: 'destructive'
+      ready: "secondary",
+      processing: "default",
+      completed: "default",
+      error: "destructive",
     };
 
     const labels = {
-      ready: 'Ready',
-      processing: 'Processing...',
-      completed: 'Completed',
-      error: 'Error'
+      ready: "Ready",
+      processing: "Processing...",
+      completed: "Completed",
+      error: "Error",
     };
 
     return <Badge variant={variants[status]}>{labels[status]}</Badge>;
@@ -253,8 +283,9 @@ export default function BackgroundRemoverTool() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">Free Background Remover</h1>
         <p className="text-xl text-muted-foreground mb-6">
-          Remove backgrounds from images instantly. AI-powered background removal tool
-          for professional results. Perfect for product photos, portraits, and design projects.
+          Remove backgrounds from images instantly. AI-powered background
+          removal tool for professional results. Perfect for product photos,
+          portraits, and design projects.
         </p>
 
         <div className="flex flex-wrap justify-center gap-4 mb-6">
@@ -281,7 +312,8 @@ export default function BackgroundRemoverTool() {
             Upload Images
           </CardTitle>
           <CardDescription>
-            Support: JPG, PNG, WebP • Max size: {formatFileSize(maxFileSize)} per file • Batch processing available
+            Support: JPG, PNG, WebP • Max size: {formatFileSize(maxFileSize)}{" "}
+            per file • Batch processing available
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -291,9 +323,12 @@ export default function BackgroundRemoverTool() {
             onDragOver={handleDragOver}
           >
             <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <p className="text-lg font-medium mb-2">Drop images here or click to browse</p>
+            <p className="text-lg font-medium mb-2">
+              Drop images here or click to browse
+            </p>
             <p className="text-sm text-muted-foreground mb-4">
-              AI will automatically detect and remove backgrounds • All processing happens locally
+              AI will automatically detect and remove backgrounds • All
+              processing happens locally
             </p>
             <Input
               ref={fileInputRef}
@@ -315,8 +350,9 @@ export default function BackgroundRemoverTool() {
         <Alert className="mb-6">
           <AlertCircle className="h-4 w-4" />
           <AlertDescription>
-            <strong>Note:</strong> This is a demo version using simplified background removal.
-            In production, this would use advanced AI models for professional results.
+            <strong>Note:</strong> This is a demo version using simplified
+            background removal. In production, this would use advanced AI models
+            for professional results.
           </AlertDescription>
         </Alert>
       )}
@@ -341,9 +377,9 @@ export default function BackgroundRemoverTool() {
                   ) : (
                     <Eye className="h-4 w-4 mr-2" />
                   )}
-                  {showOriginal ? 'Hide Original' : 'Show Original'}
+                  {showOriginal ? "Hide Original" : "Show Original"}
                 </Button>
-                {files.some(f => f.status === 'completed') && (
+                {files.some((f) => f.status === "completed") && (
                   <Button onClick={downloadAll} size="sm">
                     <Download className="h-4 w-4 mr-2" />
                     Download All
@@ -372,7 +408,7 @@ export default function BackgroundRemoverTool() {
                       {getStatusBadge(file.status)}
                     </div>
                     <div className="flex items-center gap-2">
-                      {file.status === 'completed' && (
+                      {file.status === "completed" && (
                         <Button onClick={() => downloadFile(file)} size="sm">
                           <Download className="h-4 w-4" />
                         </Button>
@@ -387,7 +423,7 @@ export default function BackgroundRemoverTool() {
                     </div>
                   </div>
 
-                  {file.status === 'processing' && (
+                  {file.status === "processing" && (
                     <div className="mb-4">
                       <div className="flex justify-between text-sm mb-2">
                         <span>Processing...</span>
@@ -401,7 +437,9 @@ export default function BackgroundRemoverTool() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {showOriginal && (
                       <div>
-                        <Label className="text-sm font-medium mb-2 block">Original</Label>
+                        <Label className="text-sm font-medium mb-2 block">
+                          Original
+                        </Label>
                         <div className="relative border rounded overflow-hidden bg-gray-100">
                           <img
                             src={file.originalUrl}
@@ -413,7 +451,7 @@ export default function BackgroundRemoverTool() {
                     )}
 
                     {file.processedUrl && (
-                      <div className={showOriginal ? '' : 'md:col-span-2'}>
+                      <div className={showOriginal ? "" : "md:col-span-2"}>
                         <Label className="text-sm font-medium mb-2 block">
                           Background Removed
                         </Label>
@@ -435,7 +473,7 @@ export default function BackgroundRemoverTool() {
               <div className="mt-6">
                 <Button
                   onClick={handleRemoveBackground}
-                  disabled={files.every(f => f.status === 'completed')}
+                  disabled={files.every((f) => f.status === "completed")}
                   className="w-full"
                 >
                   <Scissors className="h-4 w-4 mr-2" />
@@ -468,7 +506,8 @@ export default function BackgroundRemoverTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Advanced AI algorithms automatically detect subjects and remove backgrounds with precision.
+              Advanced AI algorithms automatically detect subjects and remove
+              backgrounds with precision.
             </p>
           </CardContent>
         </Card>
@@ -482,7 +521,8 @@ export default function BackgroundRemoverTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              Process multiple images simultaneously to save time on large projects.
+              Process multiple images simultaneously to save time on large
+              projects.
             </p>
           </CardContent>
         </Card>
@@ -496,7 +536,8 @@ export default function BackgroundRemoverTool() {
           </CardHeader>
           <CardContent>
             <p className="text-sm text-muted-foreground">
-              All processing happens in your browser. Your images never leave your device.
+              All processing happens in your browser. Your images never leave
+              your device.
             </p>
           </CardContent>
         </Card>
@@ -539,33 +580,46 @@ export default function BackgroundRemoverTool() {
         <CardContent>
           <div className="space-y-4">
             <div>
-              <h4 className="font-medium mb-2">How accurate is the background removal?</h4>
+              <h4 className="font-medium mb-2">
+                How accurate is the background removal?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                This demo uses simplified algorithms. In production, our AI models achieve 95%+ accuracy for most images, with professional results for portraits, products, and objects.
+                This demo uses simplified algorithms. In production, our AI
+                models achieve 95%+ accuracy for most images, with professional
+                results for portraits, products, and objects.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">What image formats are supported?</h4>
+              <h4 className="font-medium mb-2">
+                What image formats are supported?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                We support JPG, PNG, and WebP formats for input. Output is always in PNG format to preserve transparency.
+                We support JPG, PNG, and WebP formats for input. Output is
+                always in PNG format to preserve transparency.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Is there a file size limit?</h4>
               <p className="text-sm text-muted-foreground">
-                Maximum file size is {formatFileSize(maxFileSize)} per image. You can process multiple images simultaneously.
+                Maximum file size is {formatFileSize(maxFileSize)} per image.
+                You can process multiple images simultaneously.
               </p>
             </div>
             <div>
-              <h4 className="font-medium mb-2">Are my images stored on your servers?</h4>
+              <h4 className="font-medium mb-2">
+                Are my images stored on your servers?
+              </h4>
               <p className="text-sm text-muted-foreground">
-                No, all processing happens locally in your browser. Your images are never uploaded to our servers, ensuring complete privacy.
+                No, all processing happens locally in your browser. Your images
+                are never uploaded to our servers, ensuring complete privacy.
               </p>
             </div>
             <div>
               <h4 className="font-medium mb-2">Can I edit the results?</h4>
               <p className="text-sm text-muted-foreground">
-                The tool provides automatic background removal. For fine-tuning and manual editing, you can download the PNG file and use image editing software.
+                The tool provides automatic background removal. For fine-tuning
+                and manual editing, you can download the PNG file and use image
+                editing software.
               </p>
             </div>
           </div>

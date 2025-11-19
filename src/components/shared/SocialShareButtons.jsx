@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import {
   Share2,
   Copy,
@@ -13,15 +13,15 @@ import {
   Linkedin,
   MessageCircle,
   Mail,
-  Heart
-} from 'lucide-react';
+  Heart,
+} from "lucide-react";
 
 const SocialShareButtons = ({
   toolName,
   toolDescription,
   toolUrl,
   category = "tool",
-  customMessage = null
+  customMessage = null,
 }) => {
   const [copied, setCopied] = useState(false);
 
@@ -35,27 +35,27 @@ const SocialShareButtons = ({
       linkedin: `Productivity boost: ${toolName} 📈 ${toolDescription} Great tool for professionals. Available free at ${toolUrl}`,
       whatsapp: `Hey! Found this amazing free tool: ${toolName} - ${toolDescription} Check it out: ${toolUrl}`,
       email: `Subject: Great Free Tool - ${toolName}\n\nHi!\n\nI found this amazing free tool that might interest you:\n\n${toolName}\n${toolDescription}\n\nYou can try it here: ${toolUrl}\n\nBest regards!`,
-      copy: `${toolName} - ${toolDescription} Try it free: ${toolUrl}`
+      copy: `${toolName} - ${toolDescription} Try it free: ${toolUrl}`,
     };
 
     return messages[platform] || messages.copy;
   };
 
   const shareUrls = {
-    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(generateShareText('twitter'))}`,
-    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(toolUrl)}&quote=${encodeURIComponent(generateShareText('facebook'))}`,
-    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(toolUrl)}&title=${encodeURIComponent(toolName)}&summary=${encodeURIComponent(generateShareText('linkedin'))}`,
-    whatsapp: `https://wa.me/?text=${encodeURIComponent(generateShareText('whatsapp'))}`,
-    email: `mailto:?${generateShareText('email').replace('Subject: ', 'subject=').replace('\n\n', '&body=').replace(/\n/g, '%0D%0A')}`
+    twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(generateShareText("twitter"))}`,
+    facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(toolUrl)}&quote=${encodeURIComponent(generateShareText("facebook"))}`,
+    linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(toolUrl)}&title=${encodeURIComponent(toolName)}&summary=${encodeURIComponent(generateShareText("linkedin"))}`,
+    whatsapp: `https://wa.me/?text=${encodeURIComponent(generateShareText("whatsapp"))}`,
+    email: `mailto:?${generateShareText("email").replace("Subject: ", "subject=").replace("\n\n", "&body=").replace(/\n/g, "%0D%0A")}`,
   };
 
   const handleShare = (platform) => {
-    if (platform === 'copy') {
-      navigator.clipboard.writeText(generateShareText('copy'));
+    if (platform === "copy") {
+      navigator.clipboard.writeText(generateShareText("copy"));
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } else {
-      window.open(shareUrls[platform], '_blank', 'width=600,height=400');
+      window.open(shareUrls[platform], "_blank", "width=600,height=400");
     }
   };
 
@@ -76,7 +76,7 @@ const SocialShareButtons = ({
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handleShare('twitter')}
+            onClick={() => handleShare("twitter")}
             className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-foreground"
           >
             <Twitter className="h-4 w-4 mr-2" />
@@ -86,7 +86,7 @@ const SocialShareButtons = ({
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handleShare('facebook')}
+            onClick={() => handleShare("facebook")}
             className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-primary"
           >
             <Facebook className="h-4 w-4 mr-2" />
@@ -96,7 +96,7 @@ const SocialShareButtons = ({
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handleShare('linkedin')}
+            onClick={() => handleShare("linkedin")}
             className="bg-muted/50 hover:bg-muted border-border text-foreground hover:text-primary"
           >
             <Linkedin className="h-4 w-4 mr-2" />
@@ -106,7 +106,7 @@ const SocialShareButtons = ({
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handleShare('whatsapp')}
+            onClick={() => handleShare("whatsapp")}
             className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-foreground"
           >
             <MessageCircle className="h-4 w-4 mr-2" />
@@ -119,7 +119,7 @@ const SocialShareButtons = ({
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handleShare('email')}
+            onClick={() => handleShare("email")}
             className="flex-1 bg-gray-50 hover:bg-gray-100 border-border"
           >
             <Mail className="h-4 w-4 mr-2" />
@@ -129,7 +129,7 @@ const SocialShareButtons = ({
           <Button
             variant="outline"
             size="sm"
-            onClick={() => handleShare('copy')}
+            onClick={() => handleShare("copy")}
             className="flex-1 bg-muted/50 hover:bg-muted border-border text-primary"
           >
             {copied ? (
@@ -137,7 +137,7 @@ const SocialShareButtons = ({
             ) : (
               <Copy className="h-4 w-4 mr-2" />
             )}
-            {copied ? 'Copied!' : 'Copy Link'}
+            {copied ? "Copied!" : "Copy Link"}
           </Button>
         </div>
 

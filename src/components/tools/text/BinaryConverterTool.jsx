@@ -1,78 +1,84 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
-import { Badge } from '@/components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  BinaryIcon, 
-  CopyIcon, 
+import { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  BinaryIcon,
+  CopyIcon,
   ArrowLeftIcon,
   RefreshCwIcon,
   ArrowRightIcon,
-  ArrowLeftRightIcon
-} from 'lucide-react';
-import Link from 'next/link';
+  ArrowLeftRightIcon,
+} from "lucide-react";
+import Link from "next/link";
 
 export default function BinaryConverterTool() {
-  const [text, setText] = useState('Hello World');
-  const [binary, setBinary] = useState('');
-  const [mode, setMode] = useState('text-to-binary');
+  const [text, setText] = useState("Hello World");
+  const [binary, setBinary] = useState("");
+  const [mode, setMode] = useState("text-to-binary");
 
   const textToBinary = (text) => {
     return text
-      .split('')
-      .map(char => char.charCodeAt(0).toString(2).padStart(8, '0'))
-      .join(' ');
+      .split("")
+      .map((char) => char.charCodeAt(0).toString(2).padStart(8, "0"))
+      .join(" ");
   };
 
   const binaryToText = (binary) => {
     try {
       return binary
-        .split(' ')
-        .filter(bin => bin.length === 8)
-        .map(bin => String.fromCharCode(parseInt(bin, 2)))
-        .join('');
+        .split(" ")
+        .filter((bin) => bin.length === 8)
+        .map((bin) => String.fromCharCode(parseInt(bin, 2)))
+        .join("");
     } catch (error) {
-      return 'Invalid binary format';
+      return "Invalid binary format";
     }
   };
 
   const handleTextChange = (newText) => {
     setText(newText);
-    if (mode === 'text-to-binary') {
+    if (mode === "text-to-binary") {
       setBinary(textToBinary(newText));
     }
   };
 
   const handleBinaryChange = (newBinary) => {
     setBinary(newBinary);
-    if (mode === 'binary-to-text') {
+    if (mode === "binary-to-text") {
       setText(binaryToText(newBinary));
     }
   };
 
   const switchMode = () => {
-    if (mode === 'text-to-binary') {
-      setMode('binary-to-text');
+    if (mode === "text-to-binary") {
+      setMode("binary-to-text");
       setText(binaryToText(binary));
     } else {
-      setMode('text-to-binary');
+      setMode("text-to-binary");
       setBinary(textToBinary(text));
     }
   };
 
   const copyToClipboard = (content) => {
     navigator.clipboard.writeText(content);
-    alert('Copied to clipboard!');
+    alert("Copied to clipboard!");
   };
 
   const clearAll = () => {
-    setText('');
-    setBinary('');
+    setText("");
+    setBinary("");
   };
 
   // Initialize binary on component mount
@@ -91,17 +97,19 @@ export default function BinaryConverterTool() {
               Back to Home
             </Button>
           </Link>
-          
+
           <div className="flex items-center gap-3 mb-4">
             <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
               <BinaryIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
               <h1 className="text-3xl font-bold">Text to Binary Converter</h1>
-              <p className="text-muted-foreground">Convert text to binary and binary to text instantly</p>
+              <p className="text-muted-foreground">
+                Convert text to binary and binary to text instantly
+              </p>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2 mb-4">
             <Badge variant="secondary">Text to Binary</Badge>
             <Badge variant="secondary">Binary to Text</Badge>
@@ -115,8 +123,8 @@ export default function BinaryConverterTool() {
           <CardContent className="pt-6">
             <div className="flex items-center justify-center gap-4">
               <Button
-                variant={mode === 'text-to-binary' ? 'default' : 'outline'}
-                onClick={() => setMode('text-to-binary')}
+                variant={mode === "text-to-binary" ? "default" : "outline"}
+                onClick={() => setMode("text-to-binary")}
               >
                 Text → Binary
               </Button>
@@ -124,8 +132,8 @@ export default function BinaryConverterTool() {
                 <ArrowLeftRightIcon className="h-4 w-4" />
               </Button>
               <Button
-                variant={mode === 'binary-to-text' ? 'default' : 'outline'}
-                onClick={() => setMode('binary-to-text')}
+                variant={mode === "binary-to-text" ? "default" : "outline"}
+                onClick={() => setMode("binary-to-text")}
               >
                 Binary → Text
               </Button>
@@ -138,20 +146,19 @@ export default function BinaryConverterTool() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center justify-between">
-                {mode === 'text-to-binary' ? 'Text Input' : 'Binary Input'}
+                {mode === "text-to-binary" ? "Text Input" : "Binary Input"}
                 <Button onClick={clearAll} variant="ghost" size="sm">
                   <RefreshCwIcon className="h-4 w-4" />
                 </Button>
               </CardTitle>
               <CardDescription>
-                {mode === 'text-to-binary' 
-                  ? 'Enter text to convert to binary'
-                  : 'Enter binary code (space-separated 8-bit groups)'
-                }
+                {mode === "text-to-binary"
+                  ? "Enter text to convert to binary"
+                  : "Enter binary code (space-separated 8-bit groups)"}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {mode === 'text-to-binary' ? (
+              {mode === "text-to-binary" ? (
                 <div className="space-y-4">
                   <Textarea
                     value={text}
@@ -192,7 +199,8 @@ export default function BinaryConverterTool() {
                     </Button>
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Binary groups: {binary.split(' ').filter(b => b.length === 8).length}
+                    Binary groups:{" "}
+                    {binary.split(" ").filter((b) => b.length === 8).length}
                   </div>
                 </div>
               )}
@@ -204,17 +212,16 @@ export default function BinaryConverterTool() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <ArrowRightIcon className="h-4 w-4" />
-                {mode === 'text-to-binary' ? 'Binary Output' : 'Text Output'}
+                {mode === "text-to-binary" ? "Binary Output" : "Text Output"}
               </CardTitle>
               <CardDescription>
-                {mode === 'text-to-binary' 
-                  ? 'Generated binary representation'
-                  : 'Decoded text from binary'
-                }
+                {mode === "text-to-binary"
+                  ? "Generated binary representation"
+                  : "Decoded text from binary"}
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {mode === 'text-to-binary' ? (
+              {mode === "text-to-binary" ? (
                 <div className="space-y-4">
                   <Textarea
                     value={binary}
@@ -231,7 +238,7 @@ export default function BinaryConverterTool() {
                     </Button>
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    Binary length: {binary.replace(/\s/g, '').length} bits
+                    Binary length: {binary.replace(/\s/g, "").length} bits
                   </div>
                 </div>
               ) : (
@@ -271,48 +278,64 @@ export default function BinaryConverterTool() {
                 <TabsTrigger value="examples">Examples</TabsTrigger>
                 <TabsTrigger value="uses">Use Cases</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="basics" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>
                     <h4 className="font-medium mb-2">What is Binary?</h4>
                     <p className="text-muted-foreground">
-                      Binary is a base-2 number system using only 0s and 1s. Each character is represented 
-                      by an 8-bit binary number (byte) corresponding to its ASCII or UTF-8 value.
+                      Binary is a base-2 number system using only 0s and 1s.
+                      Each character is represented by an 8-bit binary number
+                      (byte) corresponding to its ASCII or UTF-8 value.
                     </p>
                   </div>
                   <div>
                     <h4 className="font-medium mb-2">How it Works</h4>
                     <p className="text-muted-foreground">
-                      Each character gets converted to its decimal ASCII value, then to binary. 
-                      For example, 'A' = 65 in decimal = 01000001 in binary.
+                      Each character gets converted to its decimal ASCII value,
+                      then to binary. For example, 'A' = 65 in decimal =
+                      01000001 in binary.
                     </p>
                   </div>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="examples" className="space-y-4">
                 <div className="space-y-3">
                   <div className="border rounded-lg p-3">
                     <div className="font-mono text-sm">
                       <div>Text: "Hi"</div>
-                      <div className="text-muted-foreground">H = 72 = 01001000</div>
-                      <div className="text-muted-foreground">i = 105 = 01101001</div>
-                      <div className="text-primary">Binary: 01001000 01101001</div>
+                      <div className="text-muted-foreground">
+                        H = 72 = 01001000
+                      </div>
+                      <div className="text-muted-foreground">
+                        i = 105 = 01101001
+                      </div>
+                      <div className="text-primary">
+                        Binary: 01001000 01101001
+                      </div>
                     </div>
                   </div>
                   <div className="border rounded-lg p-3">
                     <div className="font-mono text-sm">
                       <div>Text: "123"</div>
-                      <div className="text-muted-foreground">1 = 49 = 00110001</div>
-                      <div className="text-muted-foreground">2 = 50 = 00110010</div>
-                      <div className="text-muted-foreground">3 = 51 = 00110011</div>
-                      <div className="text-primary">Binary: 00110001 00110010 00110011</div>
+                      <div className="text-muted-foreground">
+                        1 = 49 = 00110001
+                      </div>
+                      <div className="text-muted-foreground">
+                        2 = 50 = 00110010
+                      </div>
+                      <div className="text-muted-foreground">
+                        3 = 51 = 00110011
+                      </div>
+                      <div className="text-primary">
+                        Binary: 00110001 00110010 00110011
+                      </div>
                     </div>
                   </div>
                 </div>
               </TabsContent>
-              
+
               <TabsContent value="uses" className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
                   <div>

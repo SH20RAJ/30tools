@@ -1,41 +1,54 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { generateTikTokTags } from '@/lib/tag-actions';
-import { MusicIcon, CopyIcon, HashIcon, TrendingUpIcon, SearchIcon, LoaderIcon } from 'lucide-react';
-import { toast } from 'sonner';
+import { generateTikTokTags } from "@/lib/tag-actions";
+import {
+  MusicIcon,
+  CopyIcon,
+  HashIcon,
+  TrendingUpIcon,
+  SearchIcon,
+  LoaderIcon,
+} from "lucide-react";
+import { toast } from "sonner";
 
 export default function TikTokTagGeneratorClient() {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
   const [tags, setTags] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
 
   const handleGenerateTags = async () => {
     if (!query.trim()) {
-      toast.error('Please enter a topic or keyword');
+      toast.error("Please enter a topic or keyword");
       return;
     }
 
     setIsLoading(true);
     try {
       const result = await generateTikTokTags(query);
-      
+
       if (result.success) {
         setTags(result.data.tags || []);
         setSearchQuery(result.data.query || query);
-        toast.success('TikTok hashtags generated successfully!');
+        toast.success("TikTok hashtags generated successfully!");
       } else {
-        toast.error(result.error || 'Failed to generate hashtags');
+        toast.error(result.error || "Failed to generate hashtags");
       }
     } catch (error) {
-      toast.error('An error occurred while generating hashtags');
+      toast.error("An error occurred while generating hashtags");
     } finally {
       setIsLoading(false);
     }
@@ -43,19 +56,19 @@ export default function TikTokTagGeneratorClient() {
 
   const copyTag = (tag) => {
     navigator.clipboard.writeText(tag);
-    toast.success('Hashtag copied to clipboard!');
+    toast.success("Hashtag copied to clipboard!");
   };
 
   const copyAllTags = () => {
-    const allTags = tags.join(' ');
+    const allTags = tags.join(" ");
     navigator.clipboard.writeText(allTags);
-    toast.success('All hashtags copied to clipboard!');
+    toast.success("All hashtags copied to clipboard!");
   };
 
   const copyForCaption = () => {
-    const captionTags = tags.slice(0, 10).join(' '); // TikTok recommends 3-10 hashtags
+    const captionTags = tags.slice(0, 10).join(" "); // TikTok recommends 3-10 hashtags
     navigator.clipboard.writeText(captionTags);
-    toast.success('Hashtags copied for caption!');
+    toast.success("Hashtags copied for caption!");
   };
 
   return (
@@ -69,8 +82,9 @@ export default function TikTokTagGeneratorClient() {
           <h1 className="text-3xl font-bold">TikTok Hashtag Generator</h1>
         </div>
         <p className="text-muted-foreground max-w-2xl mx-auto">
-          Generate trending TikTok hashtags to boost your video's reach and engagement. 
-          Get relevant hashtags that help your content get discovered by more viewers.
+          Generate trending TikTok hashtags to boost your video's reach and
+          engagement. Get relevant hashtags that help your content get
+          discovered by more viewers.
         </p>
       </div>
 
@@ -82,7 +96,8 @@ export default function TikTokTagGeneratorClient() {
             Generate Hashtags
           </CardTitle>
           <CardDescription>
-            Enter your video topic, trend, or content theme to generate relevant TikTok hashtags
+            Enter your video topic, trend, or content theme to generate relevant
+            TikTok hashtags
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -93,12 +108,12 @@ export default function TikTokTagGeneratorClient() {
               placeholder="e.g., dance, comedy, cooking, diy, travel..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleGenerateTags()}
+              onKeyPress={(e) => e.key === "Enter" && handleGenerateTags()}
             />
           </div>
-          
-          <Button 
-            onClick={handleGenerateTags} 
+
+          <Button
+            onClick={handleGenerateTags}
             disabled={isLoading || !query.trim()}
             className="w-full"
           >
@@ -128,7 +143,8 @@ export default function TikTokTagGeneratorClient() {
                   Generated Hashtags
                 </CardTitle>
                 <CardDescription>
-                  {searchQuery && `Hashtags for: "${searchQuery}"`} • {tags.length} hashtags generated
+                  {searchQuery && `Hashtags for: "${searchQuery}"`} •{" "}
+                  {tags.length} hashtags generated
                 </CardDescription>
               </div>
               <div className="flex gap-2">
@@ -147,9 +163,9 @@ export default function TikTokTagGeneratorClient() {
             {/* Tags Display */}
             <div className="flex flex-wrap gap-2 mb-6">
               {tags.map((tag, index) => (
-                <Badge 
-                  key={index} 
-                  variant={index < 10 ? "default" : "secondary"} 
+                <Badge
+                  key={index}
+                  variant={index < 10 ? "default" : "secondary"}
                   className="cursor-pointer hover:bg-primary hover:text-primary-foreground transition-colors px-3 py-1"
                   onClick={() => copyTag(tag)}
                 >
@@ -162,10 +178,12 @@ export default function TikTokTagGeneratorClient() {
             {/* Top 10 for Caption */}
             <div className="space-y-4">
               <div>
-                <Label htmlFor="top-tags">Top 10 Hashtags (Recommended for captions)</Label>
+                <Label htmlFor="top-tags">
+                  Top 10 Hashtags (Recommended for captions)
+                </Label>
                 <Textarea
                   id="top-tags"
-                  value={tags.slice(0, 10).join(' ')}
+                  value={tags.slice(0, 10).join(" ")}
                   readOnly
                   className="min-h-[80px]"
                   onClick={(e) => e.target.select()}
@@ -176,7 +194,7 @@ export default function TikTokTagGeneratorClient() {
                 <Label htmlFor="all-tags">All Hashtags</Label>
                 <Textarea
                   id="all-tags"
-                  value={tags.join(' ')}
+                  value={tags.join(" ")}
                   readOnly
                   className="min-h-[120px]"
                   onClick={(e) => e.target.select()}

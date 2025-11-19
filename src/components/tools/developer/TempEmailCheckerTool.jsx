@@ -1,16 +1,16 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
-import { 
-  Shield, 
-  ShieldAlert, 
-  ShieldCheck, 
-  Search, 
-  AlertTriangle, 
+"use client";
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  Shield,
+  ShieldAlert,
+  ShieldCheck,
+  Search,
+  AlertTriangle,
   Info,
   Mail,
   ExternalLink,
@@ -19,16 +19,16 @@ import {
   Globe,
   Database,
   Github,
-  Lock
-} from 'lucide-react';
-import Link from 'next/link';
-import { checkTempEmail } from '@/lib/temp-email-actions';
+  Lock,
+} from "lucide-react";
+import Link from "next/link";
+import { checkTempEmail } from "@/lib/temp-email-actions";
 
 export default function TempEmailCheckerTool() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
   const [stats, setStats] = useState({ blocklist: 0, allowlist: 0 });
 
   useEffect(() => {
@@ -38,46 +38,53 @@ export default function TempEmailCheckerTool() {
 
   const loadStats = async () => {
     try {
-      const statsData = await fetch('/api/temp-email-stats').then(res => res.json());
+      const statsData = await fetch("/api/temp-email-stats").then((res) =>
+        res.json(),
+      );
       setStats(statsData);
     } catch (err) {
-      console.error('Failed to load stats:', err);
+      console.error("Failed to load stats:", err);
     }
   };
 
   const handleCheck = async () => {
     if (!input.trim()) {
-      setError('Please enter an email address or domain');
+      setError("Please enter an email address or domain");
       return;
     }
 
     setLoading(true);
-    setError('');
+    setError("");
     setResults(null);
 
     try {
       const result = await checkTempEmail(input.trim());
       setResults(result);
     } catch (err) {
-      setError('Failed to check email. Please try again.');
-      console.error('Check error:', err);
+      setError("Failed to check email. Please try again.");
+      console.error("Check error:", err);
     } finally {
       setLoading(false);
     }
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleCheck();
     }
   };
 
   const isEmail = (str) => {
-    return str.includes('@') && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
+    return str.includes("@") && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(str);
   };
 
   const isDomain = (str) => {
-    return !str.includes('@') && /^[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(str);
+    return (
+      !str.includes("@") &&
+      /^[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(\.[a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
+        str,
+      )
+    );
   };
 
   return (
@@ -94,17 +101,21 @@ export default function TempEmailCheckerTool() {
             Temporary Email Checker
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Detect disposable and temporary email addresses. Validate emails against comprehensive blocklist and allowlist databases.
+            Detect disposable and temporary email addresses. Validate emails
+            against comprehensive blocklist and allowlist databases.
           </p>
         </div>
 
         {/* SEO Content */}
         <div className="mb-8 text-center">
           <p className="text-sm text-muted-foreground">
-            Free temporary email checker to detect disposable email addresses and validate email domains.
+            Free temporary email checker to detect disposable email addresses
+            and validate email domains.
           </p>
           <p className="text-xs text-muted-foreground mt-2">
-            Keywords: temporary email checker, disposable email detector, temp mail checker, email validation, fake email detector, throwaway email checker
+            Keywords: temporary email checker, disposable email detector, temp
+            mail checker, email validation, fake email detector, throwaway email
+            checker
           </p>
         </div>
 
@@ -117,13 +128,17 @@ export default function TempEmailCheckerTool() {
                   <XCircle className="w-5 h-5 text-destructive dark:text-destructive" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Blocked Domains</p>
-                  <p className="text-2xl font-bold text-foreground">{stats.blocklist.toLocaleString()}</p>
+                  <p className="text-sm text-muted-foreground">
+                    Blocked Domains
+                  </p>
+                  <p className="text-2xl font-bold text-foreground">
+                    {stats.blocklist.toLocaleString()}
+                  </p>
                 </div>
               </div>
             </CardContent>
           </Card>
-          
+
           <Card className="card-cute">
             <CardContent className="p-6">
               <div className="flex items-center space-x-3">
@@ -131,8 +146,12 @@ export default function TempEmailCheckerTool() {
                   <CheckCircle className="w-5 h-5 text-primary dark:text-primary" />
                 </div>
                 <div>
-                  <p className="text-sm text-muted-foreground">Allowed Domains</p>
-                  <p className="text-2xl font-bold text-foreground">{stats.allowlist.toLocaleString()}</p>
+                  <p className="text-sm text-muted-foreground">
+                    Allowed Domains
+                  </p>
+                  <p className="text-2xl font-bold text-foreground">
+                    {stats.allowlist.toLocaleString()}
+                  </p>
                 </div>
               </div>
             </CardContent>
@@ -157,12 +176,12 @@ export default function TempEmailCheckerTool() {
                 onKeyPress={handleKeyPress}
                 className="flex-1"
               />
-              <Button 
-                onClick={handleCheck} 
+              <Button
+                onClick={handleCheck}
                 disabled={loading}
                 className="btn-cute"
               >
-                {loading ? 'Checking...' : 'Check'}
+                {loading ? "Checking..." : "Check"}
               </Button>
             </div>
 
@@ -175,7 +194,9 @@ export default function TempEmailCheckerTool() {
 
             {results && (
               <div className="space-y-4">
-                <Alert variant={results.isTemporary ? "destructive" : "default"}>
+                <Alert
+                  variant={results.isTemporary ? "destructive" : "default"}
+                >
                   <div className="flex items-center space-x-2">
                     {results.isTemporary ? (
                       <ShieldAlert className="h-4 w-4" />
@@ -184,8 +205,8 @@ export default function TempEmailCheckerTool() {
                     )}
                     <AlertDescription>
                       <strong>
-                        {results.isTemporary 
-                          ? "⚠️ Temporary/Disposable Email Detected" 
+                        {results.isTemporary
+                          ? "⚠️ Temporary/Disposable Email Detected"
                           : "✅ Valid Email Domain"}
                       </strong>
                     </AlertDescription>
@@ -203,17 +224,23 @@ export default function TempEmailCheckerTool() {
                         <div className="flex justify-between">
                           <span className="text-muted-foreground">Type:</span>
                           <Badge variant="outline">
-                            {results.inputType === 'email' ? 'Email Address' : 'Domain'}
+                            {results.inputType === "email"
+                              ? "Email Address"
+                              : "Domain"}
                           </Badge>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-muted-foreground">Domain:</span>
                           <span className="font-mono">{results.domain}</span>
                         </div>
-                        {results.inputType === 'email' && (
+                        {results.inputType === "email" && (
                           <div className="flex justify-between">
-                            <span className="text-muted-foreground">Local Part:</span>
-                            <span className="font-mono">{results.localPart}</span>
+                            <span className="text-muted-foreground">
+                              Local Part:
+                            </span>
+                            <span className="font-mono">
+                              {results.localPart}
+                            </span>
                           </div>
                         )}
                       </div>
@@ -228,20 +255,36 @@ export default function TempEmailCheckerTool() {
                       </h3>
                       <div className="space-y-2 text-sm">
                         <div className="flex justify-between">
-                          <span className="text-muted-foreground">In Blocklist:</span>
-                          <Badge variant={results.inBlocklist ? "destructive" : "secondary"}>
+                          <span className="text-muted-foreground">
+                            In Blocklist:
+                          </span>
+                          <Badge
+                            variant={
+                              results.inBlocklist ? "destructive" : "secondary"
+                            }
+                          >
                             {results.inBlocklist ? "Yes" : "No"}
                           </Badge>
                         </div>
                         <div className="flex justify-between">
-                          <span className="text-muted-foreground">In Allowlist:</span>
-                          <Badge variant={results.inAllowlist ? "default" : "secondary"}>
+                          <span className="text-muted-foreground">
+                            In Allowlist:
+                          </span>
+                          <Badge
+                            variant={
+                              results.inAllowlist ? "default" : "secondary"
+                            }
+                          >
                             {results.inAllowlist ? "Yes" : "No"}
                           </Badge>
                         </div>
                         <div className="flex justify-between">
                           <span className="text-muted-foreground">Status:</span>
-                          <Badge variant={results.isTemporary ? "destructive" : "default"}>
+                          <Badge
+                            variant={
+                              results.isTemporary ? "destructive" : "default"
+                            }
+                          >
                             {results.isTemporary ? "Temporary" : "Valid"}
                           </Badge>
                         </div>
@@ -286,7 +329,8 @@ export default function TempEmailCheckerTool() {
                   <span className="text-xs font-semibold text-primary">2</span>
                 </div>
                 <p className="text-sm text-muted-foreground">
-                  We check against comprehensive blocklist and allowlist databases
+                  We check against comprehensive blocklist and allowlist
+                  databases
                 </p>
               </div>
               <div className="flex items-start space-x-3">
@@ -310,16 +354,20 @@ export default function TempEmailCheckerTool() {
             <CardContent className="space-y-3">
               <div className="space-y-2">
                 <p className="text-sm text-muted-foreground">
-                  • <strong>Prevent Fraud:</strong> Block fake registrations and spam
+                  • <strong>Prevent Fraud:</strong> Block fake registrations and
+                  spam
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  • <strong>Improve Quality:</strong> Ensure real user engagement
+                  • <strong>Improve Quality:</strong> Ensure real user
+                  engagement
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  • <strong>Reduce Bounces:</strong> Maintain email deliverability
+                  • <strong>Reduce Bounces:</strong> Maintain email
+                  deliverability
                 </p>
                 <p className="text-sm text-muted-foreground">
-                  • <strong>Compliance:</strong> Meet business verification requirements
+                  • <strong>Compliance:</strong> Meet business verification
+                  requirements
                 </p>
               </div>
             </CardContent>
@@ -341,16 +389,17 @@ export default function TempEmailCheckerTool() {
               </div>
               <div className="flex-1">
                 <p className="text-sm text-muted-foreground mb-2">
-                  This tool uses data from the actively maintained{' '}
-                  <Link 
-                    href="https://github.com/disposable-email-domains/disposable-email-domains" 
-                    target="_blank" 
+                  This tool uses data from the actively maintained{" "}
+                  <Link
+                    href="https://github.com/disposable-email-domains/disposable-email-domains"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary hover:underline font-medium"
                   >
                     disposable-email-domains repository
-                  </Link>
-                  {' '}on GitHub. The database is regularly updated with new temporary email providers.
+                  </Link>{" "}
+                  on GitHub. The database is regularly updated with new
+                  temporary email providers.
                 </p>
                 <div className="flex flex-wrap gap-2 mt-3">
                   <Badge variant="outline" className="text-xs">
@@ -382,31 +431,37 @@ export default function TempEmailCheckerTool() {
                 <div className="p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
                   <div className="flex items-center space-x-3 mb-2">
                     <ShieldAlert className="w-5 h-5 text-destructive" />
-                    <span className="font-medium group-hover:text-primary">Email Breach Checker</span>
+                    <span className="font-medium group-hover:text-primary">
+                      Email Breach Checker
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Check if your email has been compromised in data breaches
                   </p>
                 </div>
               </Link>
-              
+
               <Link href="/password-breach-checker" className="group">
                 <div className="p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
                   <div className="flex items-center gap-3 mb-2">
                     <Shield className="w-5 h-5 text-primary" />
-                    <span className="font-medium group-hover:text-primary">Password Breach Checker</span>
+                    <span className="font-medium group-hover:text-primary">
+                      Password Breach Checker
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Verify if your password has been exposed in breaches
                   </p>
                 </div>
               </Link>
-              
+
               <Link href="/hash-generator" className="group">
                 <div className="p-4 border border-border rounded-lg hover:bg-accent/50 transition-colors">
                   <div className="flex items-center space-x-3 mb-2">
                     <Shield className="w-5 h-5 text-primary" />
-                    <span className="font-medium group-hover:text-primary">Hash Generator</span>
+                    <span className="font-medium group-hover:text-primary">
+                      Hash Generator
+                    </span>
                   </div>
                   <p className="text-sm text-muted-foreground">
                     Generate secure hashes for passwords and data

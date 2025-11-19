@@ -21,7 +21,7 @@ Unstory Openmind encourages users to post real stories, reflections, emotional e
 
 Unstory Openmind’s purpose is to build a meaningful online community where members can freely express themselves, seek advice, support others, and participate in uplifting conversations for personal and collective growth.[1]
 
-***
+---
 
 This document outlines what Unstory Openmind is, its feature set, values, and role in online community building.[1]
 

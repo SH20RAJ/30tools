@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { HomeIcon, SearchIcon, ArrowRightIcon } from "lucide-react";
 
 export default function NotFoundPage() {
@@ -10,10 +16,12 @@ export default function NotFoundPage() {
         {/* 404 Header */}
         <div className="space-y-4">
           <h1 className="text-6xl font-bold text-foreground">404</h1>
-          <h2 className="text-2xl font-semibold text-foreground">Page Not Found</h2>
+          <h2 className="text-2xl font-semibold text-foreground">
+            Page Not Found
+          </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Sorry, we couldn't find the page you're looking for. 
-            But don't worry, we have plenty of useful tools to explore!
+            Sorry, we couldn't find the page you're looking for. But don't
+            worry, we have plenty of useful tools to explore!
           </p>
         </div>
 
@@ -25,7 +33,7 @@ export default function NotFoundPage() {
               Go Home
             </Link>
           </Button>
-          
+
           <Button asChild variant="outline" size="lg">
             <Link href="/search">
               <SearchIcon className="w-4 h-4 mr-2" />
@@ -43,7 +51,9 @@ export default function NotFoundPage() {
             <Link href="/color-picker" className="block">
               <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base group-hover:text-primary transition-colors">Color Picker</CardTitle>
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">
+                    Color Picker
+                  </CardTitle>
                   <CardDescription className="text-sm group-hover:text-foreground transition-colors">
                     Pick and convert colors
                   </CardDescription>
@@ -60,7 +70,9 @@ export default function NotFoundPage() {
             <Link href="/password-generator" className="block">
               <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base group-hover:text-primary transition-colors">Password Generator</CardTitle>
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">
+                    Password Generator
+                  </CardTitle>
                   <CardDescription className="text-sm group-hover:text-foreground transition-colors">
                     Generate secure passwords
                   </CardDescription>
@@ -77,7 +89,9 @@ export default function NotFoundPage() {
             <Link href="/qr-code-generator" className="block">
               <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base group-hover:text-primary transition-colors">QR Code Generator</CardTitle>
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">
+                    QR Code Generator
+                  </CardTitle>
                   <CardDescription className="text-sm group-hover:text-foreground transition-colors">
                     Create QR codes instantly
                   </CardDescription>
@@ -94,7 +108,9 @@ export default function NotFoundPage() {
             <Link href="/base64-tool" className="block">
               <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base group-hover:text-primary transition-colors">Base64 Encoder</CardTitle>
+                  <CardTitle className="text-base group-hover:text-primary transition-colors">
+                    Base64 Encoder
+                  </CardTitle>
                   <CardDescription className="text-sm group-hover:text-foreground transition-colors">
                     Encode and decode Base64
                   </CardDescription>

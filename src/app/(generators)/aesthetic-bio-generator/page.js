@@ -1,4 +1,4 @@
-import AestheticBioGeneratorTool from '@/components/tools/generators/AestheticBioGeneratorTool';
+import AestheticBioGeneratorTool from "@/components/tools/generators/AestheticBioGeneratorTool";
 import {
   BreadcrumbsEnhanced,
   FAQSection,
@@ -6,18 +6,24 @@ import {
   RelatedTools,
   ToolFeatures,
   UserComments,
-  QuickActions
-} from '@/components/seo';
-import { GeneratorToolFeatures, GeneratorToolExamples } from '@/components/seo/GeneratorToolsHub';
-import { getGeneratorToolFAQs } from '@/constants/seo/generator-faqs';
+  QuickActions,
+} from "@/components/seo";
+import {
+  GeneratorToolFeatures,
+  GeneratorToolExamples,
+} from "@/components/seo/GeneratorToolsHub";
+import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
 
 export const metadata = {
   title: "Aesthetic Bio Generator - Free Online Tool | Professional Results",
-  description: "Free aesthetic bio generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
-  keywords: "aesthetic bio generator, instagram bio generator, twitter bio generator, tiktok bio generator, social media bio, cute bio generator, aesthetic text generator, bio ideas generator, profile bio creator, emoji bio generator, aesthetic bio generator for instagram free, cute bio generator with emojis, aesthetic twitter bio ideas generator, tiktok bio generator aesthetic themes, social media bio creator online, instagram bio maker with fonts, aesthetic profile bio generator, viral bio generator for social media",
+  description:
+    "Free aesthetic bio generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  keywords:
+    "aesthetic bio generator, instagram bio generator, twitter bio generator, tiktok bio generator, social media bio, cute bio generator, aesthetic text generator, bio ideas generator, profile bio creator, emoji bio generator, aesthetic bio generator for instagram free, cute bio generator with emojis, aesthetic twitter bio ideas generator, tiktok bio generator aesthetic themes, social media bio creator online, instagram bio maker with fonts, aesthetic profile bio generator, viral bio generator for social media",
   openGraph: {
     title: "Free Aesthetic Bio Generator - Instagram, Twitter, TikTok Bios",
-    description: "Generate aesthetic bios for Instagram, Twitter & TikTok with emojis, fonts & themes. Perfect for influencers and viral profiles.",
+    description:
+      "Generate aesthetic bios for Instagram, Twitter & TikTok with emojis, fonts & themes. Perfect for influencers and viral profiles.",
     url: "https://30tools.com/aesthetic-bio-generator",
     siteName: "30tools",
     images: [
@@ -25,21 +31,22 @@ export const metadata = {
         url: "/og-images/aesthetic-bio-generator.jpg",
         width: 1200,
         height: 630,
-        alt: "Aesthetic Bio Generator Tool - 30tools"
+        alt: "Aesthetic Bio Generator Tool - 30tools",
       },
     ],
-    locale: 'en_US',
-    type: 'website'
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: "Free Aesthetic Bio Generator - Instagram, Twitter, TikTok Bios",
-    description: "Generate aesthetic bios with emojis and themes for Instagram, Twitter, and TikTok. Perfect for viral profiles!",
+    description:
+      "Generate aesthetic bios with emojis and themes for Instagram, Twitter, and TikTok. Perfect for viral profiles!",
     images: ["/og-images/aesthetic-bio-generator.jpg"],
-    creator: '@30tools'
+    creator: "@30tools",
   },
   alternates: {
-    canonical: "https://30tools.com/aesthetic-bio-generator"
+    canonical: "https://30tools.com/aesthetic-bio-generator",
   },
   robots: {
     index: true,
@@ -47,72 +54,92 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-  category: 'Generators',
+  category: "Generators",
 };
 
 export default function AestheticBioGeneratorPage() {
   // Tool-specific data
   const toolData = {
-    id: 'aesthetic-bio-generator',
-    name: 'Aesthetic Bio Generator',
-    description: 'Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes',
-    category: 'generators',
-    route: '/aesthetic-bio-generator'
+    id: "aesthetic-bio-generator",
+    name: "Aesthetic Bio Generator",
+    description:
+      "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes",
+    category: "generators",
+    route: "/aesthetic-bio-generator",
   };
 
   // Breadcrumb navigation
   const breadcrumbs = [
-    { name: 'Generators', url: '/generators' },
-    { name: 'Aesthetic Bio Generator', url: '/aesthetic-bio-generator' }
+    { name: "Generators", url: "/generators" },
+    { name: "Aesthetic Bio Generator", url: "/aesthetic-bio-generator" },
   ];
 
   // Tool features
   const features = [
-    '6 aesthetic themes (soft, dark, vintage, etc.)',
-    'AI-powered bio suggestions',
-    'Platform-specific optimization',
-    'Emoji and symbol integration',
-    'Copy to clipboard',
-    'Character count optimization',
-    'Trending bio styles',
-    'Instant generation'
+    "6 aesthetic themes (soft, dark, vintage, etc.)",
+    "AI-powered bio suggestions",
+    "Platform-specific optimization",
+    "Emoji and symbol integration",
+    "Copy to clipboard",
+    "Character count optimization",
+    "Trending bio styles",
+    "Instant generation",
   ];
 
   // Usage examples
   const examples = [
     {
-      title: 'Soft Girl Aesthetic',
-      description: 'Perfect for Instagram influencers and lifestyle accounts',
-      input: 'coffee lover, sunset chaser',
-      output: '☁️ coffee lover ☁️\n🌸 sunset chaser 🌸\n✨ living my best life ✨'
+      title: "Soft Girl Aesthetic",
+      description: "Perfect for Instagram influencers and lifestyle accounts",
+      input: "coffee lover, sunset chaser",
+      output:
+        "☁️ coffee lover ☁️\n🌸 sunset chaser 🌸\n✨ living my best life ✨",
     },
     {
-      title: 'Dark Academia',
-      description: 'Sophisticated and intellectual vibes',
-      input: 'book lover, writer',
-      output: '📚 lost in stories\n🖋️ weaving words\n🌙 midnight musings'
+      title: "Dark Academia",
+      description: "Sophisticated and intellectual vibes",
+      input: "book lover, writer",
+      output: "📚 lost in stories\n🖋️ weaving words\n🌙 midnight musings",
     },
     {
-      title: 'Minimalist',
-      description: 'Clean and simple aesthetic',
-      input: 'photographer, traveler',
-      output: 'photographer.\ntraveler.\ndreamer.'
+      title: "Minimalist",
+      description: "Clean and simple aesthetic",
+      input: "photographer, traveler",
+      output: "photographer.\ntraveler.\ndreamer.",
     },
   ];
 
   // FAQ data
-  const faqs = getGeneratorToolFAQs('aesthetic-bio-generator');
+  const faqs = getGeneratorToolFAQs("aesthetic-bio-generator");
 
   // Related tools
   const relatedTools = [
-    { id: 'startup-name-generator', name: 'Startup Name Generator', description: 'Generate creative business names', route: '/startup-name-generator', category: 'generators' },
-    { id: 'fake-chat-generator', name: 'Fake Chat Generator', description: 'Create realistic chat screenshots', route: '/fake-chat-generator', category: 'generators' },
-    { id: 'ai-poetry-generator', name: 'AI Poetry Generator', description: 'Generate beautiful poems with AI', route: '/ai-poetry-generator', category: 'generators' }
+    {
+      id: "startup-name-generator",
+      name: "Startup Name Generator",
+      description: "Generate creative business names",
+      route: "/startup-name-generator",
+      category: "generators",
+    },
+    {
+      id: "fake-chat-generator",
+      name: "Fake Chat Generator",
+      description: "Create realistic chat screenshots",
+      route: "/fake-chat-generator",
+      category: "generators",
+    },
+    {
+      id: "ai-poetry-generator",
+      name: "AI Poetry Generator",
+      description: "Generate beautiful poems with AI",
+      route: "/ai-poetry-generator",
+      category: "generators",
+    },
   ];
 
   return (
@@ -130,8 +157,9 @@ export default function AestheticBioGeneratorPage() {
             Free Aesthetic Bio Generator - Instagram, Twitter, TikTok Bios
           </h1>
           <p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-            Generate aesthetic bios for Instagram, Twitter & TikTok with emojis, fonts & themes.
-            6 aesthetic styles, AI-powered suggestions. Perfect for influencers, Gen Z & viral profiles that stand out.
+            Generate aesthetic bios for Instagram, Twitter & TikTok with emojis,
+            fonts & themes. 6 aesthetic styles, AI-powered suggestions. Perfect
+            for influencers, Gen Z & viral profiles that stand out.
           </p>
 
           <QuickActions
@@ -201,31 +229,33 @@ export default function AestheticBioGeneratorPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
-            "name": "Aesthetic Bio Generator",
-            "description": "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes",
-            "url": "https://30tools.com/aesthetic-bio-generator",
-            "applicationCategory": "SocialNetworkingApplication",
-            "operatingSystem": "Web Browser",
-            "offers": {
+            name: "Aesthetic Bio Generator",
+            description:
+              "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes",
+            url: "https://30tools.com/aesthetic-bio-generator",
+            applicationCategory: "SocialNetworkingApplication",
+            operatingSystem: "Web Browser",
+            offers: {
               "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
+              price: "0",
+              priceCurrency: "USD",
             },
-            "creator": {
+            creator: {
               "@type": "Organization",
-              "name": "30tools",
-              "url": "https://30tools.com"
+              name: "30tools",
+              url: "https://30tools.com",
             },
-            "featureList": features,
-            "screenshot": "https://30tools.com/screenshots/aesthetic-bio-generator.jpg",
-            "aggregateRating": {
+            featureList: features,
+            screenshot:
+              "https://30tools.com/screenshots/aesthetic-bio-generator.jpg",
+            aggregateRating: {
               "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": "3247",
-              "bestRating": "5",
-              "worstRating": "1"
+              ratingValue: "4.9",
+              reviewCount: "3247",
+              bestRating: "5",
+              worstRating: "1",
             },
-          })
+          }),
         }}
       />
     </div>

@@ -1,21 +1,33 @@
-'use client';
+"use client";
 
-import { useState, useRef, useCallback, useEffect } from 'react';
+import { useState, useRef, useCallback, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Separator } from "@/components/ui/separator";
 import { Progress } from "@/components/ui/progress";
-import { 
-  analyzeComplexity, 
-  getAvailableModels, 
-  validateCode, 
-  getSupportedLanguages 
-} from '@/lib/complexity-actions';
+import {
+  analyzeComplexity,
+  getAvailableModels,
+  validateCode,
+  getSupportedLanguages,
+} from "@/lib/complexity-actions";
 import {
   CodeIcon,
   PlayIcon,
@@ -33,22 +45,22 @@ import {
   BrainIcon,
   TargetIcon,
   LayersIcon,
-  SparklesIcon
-} from 'lucide-react';
+  SparklesIcon,
+} from "lucide-react";
 
 export default function ComplexityAnalyzer() {
-  const [code, setCode] = useState('');
-  const [language, setLanguage] = useState('javascript');
-  const [model, setModel] = useState('qwen-coder');
+  const [code, setCode] = useState("");
+  const [language, setLanguage] = useState("javascript");
+  const [model, setModel] = useState("qwen-coder");
   const [analysis, setAnalysis] = useState(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [error, setError] = useState(null);
   const [validation, setValidation] = useState(null);
   const [availableModels, setAvailableModels] = useState([]);
   const [progress, setProgress] = useState(0);
-  
+
   const textareaRef = useRef(null);
-  
+
   const [supportedLanguages, setSupportedLanguages] = useState([]);
 
   // Load available models and supported languages on component mount
@@ -60,7 +72,7 @@ export default function ComplexityAnalyzer() {
         if (result.success) {
           setAvailableModels(result.models);
         } else {
-          console.warn('Using fallback models:', result.models);
+          console.warn("Using fallback models:", result.models);
           setAvailableModels(result.models);
         }
 
@@ -68,22 +80,34 @@ export default function ComplexityAnalyzer() {
         const languages = await getSupportedLanguages();
         setSupportedLanguages(languages);
       } catch (error) {
-        console.error('Failed to load data:', error);
+        console.error("Failed to load data:", error);
         // Use fallback data
         setAvailableModels([
-          { name: 'qwen-coder', description: 'Qwen 2.5 Coder 32B', tier: 'anonymous' },
-          { name: 'deepseek', description: 'DeepSeek V3.1', tier: 'seed' },
-          { name: 'openai', description: 'OpenAI GPT-5 Nano', tier: 'anonymous' }
+          {
+            name: "qwen-coder",
+            description: "Qwen 2.5 Coder 32B",
+            tier: "anonymous",
+          },
+          { name: "deepseek", description: "DeepSeek V3.1", tier: "seed" },
+          {
+            name: "openai",
+            description: "OpenAI GPT-5 Nano",
+            tier: "anonymous",
+          },
         ]);
         setSupportedLanguages([
-          { value: 'javascript', label: 'JavaScript', extensions: ['.js', '.mjs'] },
-          { value: 'python', label: 'Python', extensions: ['.py', '.pyw'] },
-          { value: 'java', label: 'Java', extensions: ['.java'] },
-          { value: 'cpp', label: 'C++', extensions: ['.cpp', '.cxx', '.cc'] }
+          {
+            value: "javascript",
+            label: "JavaScript",
+            extensions: [".js", ".mjs"],
+          },
+          { value: "python", label: "Python", extensions: [".py", ".pyw"] },
+          { value: "java", label: "Java", extensions: [".java"] },
+          { value: "cpp", label: "C++", extensions: [".cpp", ".cxx", ".cc"] },
         ]);
       }
     };
-    
+
     loadData();
   }, []);
 
@@ -97,7 +121,7 @@ export default function ComplexityAnalyzer() {
         setValidation(null);
       }
     };
-    
+
     validateAsync();
   }, [code, language]);
 
@@ -107,7 +131,7 @@ export default function ComplexityAnalyzer() {
     if (isAnalyzing) {
       setProgress(0);
       interval = setInterval(() => {
-        setProgress(prev => {
+        setProgress((prev) => {
           if (prev >= 90) return prev;
           return prev + Math.random() * 10;
         });
@@ -115,7 +139,7 @@ export default function ComplexityAnalyzer() {
     } else {
       setProgress(100);
     }
-    
+
     return () => {
       if (interval) clearInterval(interval);
     };
@@ -123,12 +147,12 @@ export default function ComplexityAnalyzer() {
 
   const handleAnalyze = useCallback(async () => {
     if (!code.trim()) {
-      setError('Please enter some code to analyze');
+      setError("Please enter some code to analyze");
       return;
     }
 
     if (validation && !validation.valid) {
-      setError(`Code validation failed: ${validation.issues.join(', ')}`);
+      setError(`Code validation failed: ${validation.issues.join(", ")}`);
       return;
     }
 
@@ -138,15 +162,15 @@ export default function ComplexityAnalyzer() {
 
     try {
       const result = await analyzeComplexity(code, language, model);
-      
+
       if (result.success) {
         setAnalysis(result.analysis);
         setProgress(100);
       } else {
-        setError(result.error || 'Analysis failed');
+        setError(result.error || "Analysis failed");
       }
     } catch (err) {
-      setError(err.message || 'An unexpected error occurred');
+      setError(err.message || "An unexpected error occurred");
     } finally {
       setIsAnalyzing(false);
     }
@@ -154,7 +178,7 @@ export default function ComplexityAnalyzer() {
 
   const handleCopyAnalysis = useCallback(() => {
     if (!analysis) return;
-    
+
     const formattedAnalysis = `
 # Complexity Analysis Results
 
@@ -174,10 +198,10 @@ export default function ComplexityAnalyzer() {
 ${analysis.algorithmType}
 
 ## Key Insights
-${analysis.keyInsights?.map(insight => `- ${insight}`).join('\n') || 'No insights available'}
+${analysis.keyInsights?.map((insight) => `- ${insight}`).join("\n") || "No insights available"}
 
 ## Optimization Suggestions
-${analysis.optimizations?.map(opt => `- ${opt}`).join('\n') || 'No optimizations suggested'}
+${analysis.optimizations?.map((opt) => `- ${opt}`).join("\n") || "No optimizations suggested"}
     `.trim();
 
     navigator.clipboard.writeText(formattedAnalysis);
@@ -185,11 +209,11 @@ ${analysis.optimizations?.map(opt => `- ${opt}`).join('\n') || 'No optimizations
 
   const handleDownloadAnalysis = useCallback(() => {
     if (!analysis) return;
-    
+
     const jsonData = JSON.stringify(analysis, null, 2);
-    const blob = new Blob([jsonData], { type: 'application/json' });
+    const blob = new Blob([jsonData], { type: "application/json" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = `complexity-analysis-${Date.now()}.json`;
     document.body.appendChild(a);
@@ -198,9 +222,10 @@ ${analysis.optimizations?.map(opt => `- ${opt}`).join('\n') || 'No optimizations
     URL.revokeObjectURL(url);
   }, [analysis]);
 
-  const loadSampleCode = useCallback((sampleLanguage = language) => {
-    const samples = {
-      javascript: `function bubbleSort(arr) {
+  const loadSampleCode = useCallback(
+    (sampleLanguage = language) => {
+      const samples = {
+        javascript: `function bubbleSort(arr) {
     const n = arr.length;
     for (let i = 0; i < n - 1; i++) {
         for (let j = 0; j < n - i - 1; j++) {
@@ -211,7 +236,7 @@ ${analysis.optimizations?.map(opt => `- ${opt}`).join('\n') || 'No optimizations
     }
     return arr;
 }`,
-      python: `def binary_search(arr, target):
+        python: `def binary_search(arr, target):
     left, right = 0, len(arr) - 1
     
     while left <= right:
@@ -224,7 +249,7 @@ ${analysis.optimizations?.map(opt => `- ${opt}`).join('\n') || 'No optimizations
             right = mid - 1
     
     return -1`,
-      java: `public class QuickSort {
+        java: `public class QuickSort {
     public static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
             int pi = partition(arr, low, high);
@@ -253,7 +278,7 @@ ${analysis.optimizations?.map(opt => `- ${opt}`).join('\n') || 'No optimizations
         arr[j] = temp;
     }
 }`,
-      cpp: `#include <vector>
+        cpp: `#include <vector>
 #include <algorithm>
 
 class Solution {
@@ -289,11 +314,13 @@ private:
         
         return result;
     }
-};`
-    };
+};`,
+      };
 
-    setCode(samples[sampleLanguage] || samples.javascript);
-  }, [language]);
+      setCode(samples[sampleLanguage] || samples.javascript);
+    },
+    [language],
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-blue-950/30 p-4">
@@ -309,8 +336,9 @@ private:
             </h1>
           </div>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Analyze the time and space complexity of your code using AI-powered analysis. 
-            Get detailed insights, optimization suggestions, and algorithm explanations.
+            Analyze the time and space complexity of your code using AI-powered
+            analysis. Get detailed insights, optimization suggestions, and
+            algorithm explanations.
           </p>
         </div>
 
@@ -330,7 +358,9 @@ private:
               {/* Language and Model Selection */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="text-sm font-medium mb-2 block">Programming Language</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    Programming Language
+                  </label>
                   <Select value={language} onValueChange={setLanguage}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select language" />
@@ -346,14 +376,19 @@ private:
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium mb-2 block">AI Model</label>
+                  <label className="text-sm font-medium mb-2 block">
+                    AI Model
+                  </label>
                   <Select value={model} onValueChange={setModel}>
                     <SelectTrigger>
                       <SelectValue placeholder="Select model" />
                     </SelectTrigger>
                     <SelectContent>
                       {availableModels.map((modelOption) => (
-                        <SelectItem key={modelOption.name} value={modelOption.name}>
+                        <SelectItem
+                          key={modelOption.name}
+                          value={modelOption.name}
+                        >
                           <div className="flex items-center">
                             <span>{modelOption.description}</span>
                             <Badge variant="outline" className="ml-2 text-xs">
@@ -369,31 +404,31 @@ private:
 
               {/* Sample Code Buttons */}
               <div className="flex flex-wrap gap-2">
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={() => loadSampleCode('javascript')}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => loadSampleCode("javascript")}
                 >
                   Load JS Sample
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={() => loadSampleCode('python')}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => loadSampleCode("python")}
                 >
                   Load Python Sample
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={() => loadSampleCode('java')}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => loadSampleCode("java")}
                 >
                   Load Java Sample
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  onClick={() => loadSampleCode('cpp')}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => loadSampleCode("cpp")}
                 >
                   Load C++ Sample
                 </Button>
@@ -401,7 +436,9 @@ private:
 
               {/* Code Input */}
               <div>
-                <label className="text-sm font-medium mb-2 block">Your Code</label>
+                <label className="text-sm font-medium mb-2 block">
+                  Your Code
+                </label>
                 <Textarea
                   ref={textareaRef}
                   value={code}
@@ -444,9 +481,13 @@ private:
 
               {/* Analyze Button */}
               <div className="flex gap-2">
-                <Button 
+                <Button
                   onClick={handleAnalyze}
-                  disabled={isAnalyzing || !code.trim() || (validation && !validation.valid)}
+                  disabled={
+                    isAnalyzing ||
+                    !code.trim() ||
+                    (validation && !validation.valid)
+                  }
                   className="flex-1"
                 >
                   {isAnalyzing ? (
@@ -461,10 +502,10 @@ private:
                     </>
                   )}
                 </Button>
-                
-                <Button 
-                  variant="outline" 
-                  onClick={() => setCode('')}
+
+                <Button
+                  variant="outline"
+                  onClick={() => setCode("")}
                   disabled={isAnalyzing}
                 >
                   Clear
@@ -494,11 +535,19 @@ private:
                 </span>
                 {analysis && (
                   <div className="flex gap-2">
-                    <Button variant="outline" size="sm" onClick={handleCopyAnalysis}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={handleCopyAnalysis}
+                    >
                       <CopyIcon className="w-4 h-4 mr-2" />
                       Copy
                     </Button>
-                    <Button variant="outline" size="sm" onClick={handleDownloadAnalysis}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={handleDownloadAnalysis}
+                    >
                       <DownloadIcon className="w-4 h-4 mr-2" />
                       Download
                     </Button>
@@ -523,9 +572,12 @@ private:
                   <div className="w-16 h-16 bg-background">
                     <SparklesIcon className="w-8 h-8 text-muted-foreground" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2">Ready to Analyze</h3>
+                  <h3 className="text-lg font-semibold mb-2">
+                    Ready to Analyze
+                  </h3>
                   <p className="text-muted-foreground mb-4">
-                    Enter your code and click "Analyze Complexity" to get started
+                    Enter your code and click "Analyze Complexity" to get
+                    started
                   </p>
                 </div>
               )}
@@ -544,29 +596,39 @@ private:
                     <div className="space-y-3">
                       <div className="flex items-center">
                         <ClockIcon className="w-5 h-5 mr-2 text-primary" />
-                        <h3 className="text-lg font-semibold">Time Complexity</h3>
+                        <h3 className="text-lg font-semibold">
+                          Time Complexity
+                        </h3>
                       </div>
                       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                         <div className="bg-muted/30 rounded-lg p-3 text-center">
-                          <div className="text-xs text-muted-foreground mb-1">Big O</div>
+                          <div className="text-xs text-muted-foreground mb-1">
+                            Big O
+                          </div>
                           <div className="font-mono font-semibold text-lg text-primary">
                             {analysis.timeComplexity.bigO}
                           </div>
                         </div>
                         <div className="bg-muted/30 rounded-lg p-3 text-center">
-                          <div className="text-xs text-muted-foreground mb-1">Best</div>
+                          <div className="text-xs text-muted-foreground mb-1">
+                            Best
+                          </div>
                           <div className="font-mono font-semibold">
                             {analysis.timeComplexity.bestCase}
                           </div>
                         </div>
                         <div className="bg-muted/30 rounded-lg p-3 text-center">
-                          <div className="text-xs text-muted-foreground mb-1">Average</div>
+                          <div className="text-xs text-muted-foreground mb-1">
+                            Average
+                          </div>
                           <div className="font-mono font-semibold">
                             {analysis.timeComplexity.averageCase}
                           </div>
                         </div>
                         <div className="bg-muted/30 rounded-lg p-3 text-center">
-                          <div className="text-xs text-muted-foreground mb-1">Worst</div>
+                          <div className="text-xs text-muted-foreground mb-1">
+                            Worst
+                          </div>
                           <div className="font-mono font-semibold">
                             {analysis.timeComplexity.worstCase}
                           </div>
@@ -583,17 +645,23 @@ private:
                     <div className="space-y-3">
                       <div className="flex items-center">
                         <DatabaseIcon className="w-5 h-5 mr-2 text-primary" />
-                        <h3 className="text-lg font-semibold">Space Complexity</h3>
+                        <h3 className="text-lg font-semibold">
+                          Space Complexity
+                        </h3>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <div className="bg-muted/30 rounded-lg p-3 text-center">
-                          <div className="text-xs text-muted-foreground mb-1">Big O</div>
+                          <div className="text-xs text-muted-foreground mb-1">
+                            Big O
+                          </div>
                           <div className="font-mono font-semibold text-lg text-primary">
                             {analysis.spaceComplexity.bigO}
                           </div>
                         </div>
                         <div className="bg-muted/30 rounded-lg p-3 text-center">
-                          <div className="text-xs text-muted-foreground mb-1">Auxiliary</div>
+                          <div className="text-xs text-muted-foreground mb-1">
+                            Auxiliary
+                          </div>
                           <div className="font-mono font-semibold">
                             {analysis.spaceComplexity.auxiliary}
                           </div>
@@ -609,25 +677,28 @@ private:
                     <div className="space-y-4">
                       <div className="flex items-center">
                         <LightbulbIcon className="w-5 h-5 mr-2 text-primary" />
-                        <h3 className="text-lg font-semibold">Algorithm Type</h3>
+                        <h3 className="text-lg font-semibold">
+                          Algorithm Type
+                        </h3>
                       </div>
                       <p className="text-muted-foreground bg-muted/30 rounded-lg p-3">
                         {analysis.algorithmType}
                       </p>
 
-                      {analysis.keyInsights && analysis.keyInsights.length > 0 && (
-                        <div className="space-y-3">
-                          <h4 className="font-semibold">Key Insights</h4>
-                          <ul className="space-y-2">
-                            {analysis.keyInsights.map((insight, index) => (
-                              <li key={index} className="flex items-start">
-                                <InfoIcon className="w-4 h-4 mr-2 mt-0.5 text-primary flex-shrink-0" />
-                                <span className="text-sm">{insight}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      )}
+                      {analysis.keyInsights &&
+                        analysis.keyInsights.length > 0 && (
+                          <div className="space-y-3">
+                            <h4 className="font-semibold">Key Insights</h4>
+                            <ul className="space-y-2">
+                              {analysis.keyInsights.map((insight, index) => (
+                                <li key={index} className="flex items-start">
+                                  <InfoIcon className="w-4 h-4 mr-2 mt-0.5 text-primary flex-shrink-0" />
+                                  <span className="text-sm">{insight}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
                     </div>
                   </TabsContent>
 
@@ -635,9 +706,12 @@ private:
                     <div className="space-y-4">
                       <div className="flex items-center">
                         <ZapIcon className="w-5 h-5 mr-2 text-primary" />
-                        <h3 className="text-lg font-semibold">Optimization Suggestions</h3>
+                        <h3 className="text-lg font-semibold">
+                          Optimization Suggestions
+                        </h3>
                       </div>
-                      {analysis.optimizations && analysis.optimizations.length > 0 ? (
+                      {analysis.optimizations &&
+                      analysis.optimizations.length > 0 ? (
                         <ul className="space-y-3">
                           {analysis.optimizations.map((optimization, index) => (
                             <li key={index} className="flex items-start">
@@ -659,12 +733,16 @@ private:
                       <div className="space-y-4">
                         <div className="flex items-center">
                           <LayersIcon className="w-5 h-5 mr-2 text-primary" />
-                          <h3 className="text-lg font-semibold">Detailed Analysis</h3>
+                          <h3 className="text-lg font-semibold">
+                            Detailed Analysis
+                          </h3>
                         </div>
-                        
+
                         {analysis.complexity_analysis.loops && (
                           <div className="bg-muted/30 rounded-lg p-4">
-                            <h4 className="font-semibold mb-2">Loop Analysis</h4>
+                            <h4 className="font-semibold mb-2">
+                              Loop Analysis
+                            </h4>
                             <p className="text-sm text-muted-foreground">
                               {analysis.complexity_analysis.loops}
                             </p>
@@ -673,7 +751,9 @@ private:
 
                         {analysis.complexity_analysis.recursion && (
                           <div className="bg-muted/30 rounded-lg p-4">
-                            <h4 className="font-semibold mb-2">Recursion Analysis</h4>
+                            <h4 className="font-semibold mb-2">
+                              Recursion Analysis
+                            </h4>
                             <p className="text-sm text-muted-foreground">
                               {analysis.complexity_analysis.recursion}
                             </p>
@@ -682,7 +762,9 @@ private:
 
                         {analysis.complexity_analysis.dataStructures && (
                           <div className="bg-muted/30 rounded-lg p-4">
-                            <h4 className="font-semibold mb-2">Data Structures Impact</h4>
+                            <h4 className="font-semibold mb-2">
+                              Data Structures Impact
+                            </h4>
                             <p className="text-sm text-muted-foreground">
                               {analysis.complexity_analysis.dataStructures}
                             </p>
