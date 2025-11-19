@@ -30,3 +30,4 @@ export {
   GeneratorToolFeatures,
   GeneratorToolExamples,
 } from "./GeneratorToolsHub";
+export { default as ToolSEOLayout } from "./ToolSEOLayout";

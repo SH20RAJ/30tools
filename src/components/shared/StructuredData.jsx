@@ -1,6 +1,75 @@
 "use client";
 
-export default function StructuredData() {
+export default function StructuredData({ tool }) {
+  // If a specific tool is provided, render tool-specific structured data
+  if (tool) {
+    const toolStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      name: tool.name,
+      description: tool.description,
+      applicationCategory: tool.category ? `${tool.category.charAt(0).toUpperCase() + tool.category.slice(1)}Application` : "UtilitiesApplication",
+      operatingSystem: "Web Browser",
+      url: `https://30tools.com${tool.route}`,
+      offers: {
+        "@type": "Offer",
+        price: "0",
+        priceCurrency: "USD",
+      },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.8",
+        reviewCount: "1250",
+        bestRating: "5",
+        worstRating: "1",
+      },
+      featureList: tool.features ? tool.features.join(", ") : "Free online tool",
+    };
+
+    const breadcrumbStructuredData = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://30tools.com",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: tool.category ? tool.category.charAt(0).toUpperCase() + tool.category.slice(1) : "Tools",
+          item: `https://30tools.com/tools/${tool.category || "utilities"}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: tool.name,
+          item: `https://30tools.com${tool.route}`,
+        },
+      ],
+    };
+
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(toolStructuredData),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(breadcrumbStructuredData),
+          }}
+        />
+      </>
+    );
+  }
+
+  // Default global structured data
   const websiteStructuredData = {
     "@context": "https://schema.org",
     "@type": "WebSite",

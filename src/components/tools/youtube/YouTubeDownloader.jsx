@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Script from "next/script";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -18,20 +19,46 @@ import {
   Bookmark,
   BookmarkCheck,
   SmartphoneIcon,
-  Plus,
   BookOpen,
-  HelpCircle,
-  Star,
-  Wrench,
-  Scissors,
-  FileText,
-  Globe,
-  Shield,
-  Play,
-  Users,
-  Zap,
 } from "lucide-react";
 import { toast } from "sonner";
+import { ToolSEOLayout } from "@/components/seo";
+
+const TOOL_FAQS = [
+  {
+    question: "Is it legal to download YouTube videos?",
+    answer: "You can download videos for personal use only. Downloading copyrighted content for redistribution or commercial use may violate YouTube's terms of service and copyright laws.",
+  },
+  {
+    question: "Why can't I download some YouTube videos?",
+    answer: "Some videos may be private, age-restricted, or blocked in certain regions. Our tool only works with public videos that are available on YouTube's platform.",
+  },
+  {
+    question: "Can I download YouTube videos on mobile?",
+    answer: "Yes! Our tool works perfectly on mobile devices. You can also install it as a PWA for a native app experience.",
+  },
+  {
+    question: "What's the difference between video and audio downloads?",
+    answer: "Video downloads include both video and audio in MP4 format. Audio downloads extract only the audio track and save it as MP3, resulting in smaller file sizes.",
+  },
+  {
+    question: "How do I bookmark videos?",
+    answer: "After entering a YouTube URL, click the bookmark icon next to the input field. Your bookmarked videos will be saved locally and can be accessed anytime.",
+  },
+  {
+    question: "Is there a download limit?",
+    answer: "We don't impose artificial limits, but please be respectful of content creators and YouTube's terms of service. Use our tool responsibly for personal use only.",
+  },
+];
+
+const TOOL_FEATURES = [
+  "No Registration Required",
+  "Multiple Formats (MP4, MP3)",
+  "Bookmark Videos",
+  "Fast Processing",
+  "All YouTube Content",
+  "Cross-Platform Support",
+];
 
 export default function YouTubeDownloader() {
   const [url, setUrl] = useState("");
@@ -237,7 +264,7 @@ export default function YouTubeDownloader() {
         setIsBookmarked(true);
         toast.success("Video bookmarked");
       }
-    } catch (error) {
+    } catch {
       toast.error("Failed to save bookmark");
     }
   };
@@ -259,7 +286,7 @@ export default function YouTubeDownloader() {
       }
 
       toast.success("Bookmark removed");
-    } catch (error) {
+    } catch {
       toast.error("Failed to remove bookmark");
     }
   };
@@ -286,7 +313,7 @@ export default function YouTubeDownloader() {
           setShowPWAButton(false);
           toast.success("App installed successfully!");
         }
-      } catch (error) {
+      } catch {
         toast.error("Installation failed");
       }
     } else {
@@ -319,10 +346,14 @@ export default function YouTubeDownloader() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
-      {/* Main Download Card */}
-      <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm dark:bg-gray-800/80">
-        <CardContent className="p-8">
+    <ToolSEOLayout 
+      toolId="youtube-downloader"
+      faqs={TOOL_FAQS}
+      features={TOOL_FEATURES}
+    >
+      <div className="space-y-8">
+        {/* Main Download Card */}
+        <div className="space-y-6">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* URL Input Section */}
             <div className="space-y-4">
@@ -407,7 +438,7 @@ export default function YouTubeDownloader() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-6">
                     {videoData.thumbnail && (
-                      <div className="flex-shrink-0">
+                      <div className="shrink-0">
                         <img
                           src={videoData.thumbnail}
                           alt="Video thumbnail"
@@ -672,620 +703,138 @@ export default function YouTubeDownloader() {
               </CardContent>
             </Card>
           )}
-        </CardContent>
-      </Card>
+        </div>
 
-      {/* TeraBox Downloader Backlink for SEO */}
-      <Card className="mt-8">
-        <CardContent className="p-6">
-          <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-6">
-            <h3 className="text-lg font-semibold text-foreground mb-2">
-              Need to Download TeraBox Files?
-            </h3>
-            <p className="text-muted-foreground mb-4">
-              Looking for a reliable way to download files from TeraBox? Check
-              out our specialized TeraBox downloader tool.
-            </p>
-            <a
-              href="https://terabox.beer/"
-              target="_blank"
-              rel="doopener doreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
-            >
-              <Download className="w-4 h-4" />
-              TeraBox Downloader
-            </a>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* How to Use Guide */}
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <BookOpen className="h-5 w-5" />
-            How to Download YouTube Videos
-          </CardTitle>
-          <CardDescription>
-            Step-by-step guide to download YouTube videos easily
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-sm font-semibold text-primary">1</span>
-              </div>
-              <div>
-                <h4 className="font-semibold">Find the YouTube Video</h4>
-                <p className="text-sm text-muted-foreground">
-                  Open YouTube and find the video you want to download. Make
-                  sure the video is available and not private.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-sm font-semibold text-primary">2</span>
-              </div>
-              <div>
-                <h4 className="font-semibold">Copy the Video URL</h4>
-                <p className="text-sm text-muted-foreground">
-                  Click the share button below the video and copy the URL, or
-                  copy it directly from your browser's address bar.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-sm font-semibold text-primary">3</span>
-              </div>
-              <div>
-                <h4 className="font-semibold">Paste URL and Process</h4>
-                <p className="text-sm text-muted-foreground">
-                  Paste the YouTube URL in the input field above and click
-                  "Download Video" to process your request.
-                </p>
-              </div>
-            </div>
-
-            <div className="flex gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                <span className="text-sm font-semibold text-primary">4</span>
-              </div>
-              <div>
-                <h4 className="font-semibold">Choose Format and Download</h4>
-                <p className="text-sm text-muted-foreground">
-                  Select your preferred video quality or audio format and click
-                  download to save the file.
-                </p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Ad Unit: Below main How to Use guide */}
-      <div className="my-6">
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-format="autorelaxed"
-          data-ad-client="ca-pub-1828915420581549"
-          data-ad-slot="9420953810"
-        />
-        <Script id="ads-init-1" strategy="lazyOnload">
-          {"(adsbygoogle = window.adsbygoogle || []).push({});"}
-        </Script>
-      </div>
-
-      {/* Features */}
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Zap className="h-5 w-5" />
-            YouTube Downloader Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                  <Shield className="h-4 w-4 text-green-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">No Registration Required</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Download videos instantly without creating an account
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Play className="h-4 w-4 text-blue-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Multiple Formats</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Download in MP4, MP3, and various quality options
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                  <Bookmark className="h-4 w-4 text-purple-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Bookmark Videos</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Save your favorite videos for quick access later
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                  <Zap className="h-4 w-4 text-orange-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Fast Processing</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Quick video processing with high-speed downloads
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                  <Users className="h-4 w-4 text-red-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">All YouTube Content</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Download videos, shorts, and music from YouTube
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
-                  <Globe className="h-4 w-4 text-teal-600" />
-                </div>
-                <div>
-                  <h4 className="font-semibold">Cross-Platform</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Works on desktop, mobile, and as a PWA
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* FAQ Section */}
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <HelpCircle className="h-5 w-5" />
-            YouTube Download FAQs
-          </CardTitle>
-          <CardDescription>
-            Common questions about downloading YouTube videos
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="space-y-3">
-            <h4 className="font-semibold">
-              Is it legal to download YouTube videos?
-            </h4>
-            <p className="text-sm text-muted-foreground">
-              You can download videos for personal use only. Downloading
-              copyrighted content for redistribution or commercial use may
-              violate YouTube's terms of service and copyright laws.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="font-semibold">
-              Why can't I download some YouTube videos?
-            </h4>
-            <p className="text-sm text-muted-foreground">
-              Some videos may be private, age-restricted, or blocked in certain
-              regions. Our tool only works with public videos that are available
-              on YouTube's platform.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="font-semibold">
-              Can I download YouTube videos on mobile?
-            </h4>
-            <p className="text-sm text-muted-foreground">
-              Yes! Our tool works perfectly on mobile devices. You can also
-              install it as a PWA for a native app experience.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="font-semibold">
-              What's the difference between video and audio downloads?
-            </h4>
-            <p className="text-sm text-muted-foreground">
-              Video downloads include both video and audio in MP4 format. Audio
-              downloads extract only the audio track and save it as MP3,
-              resulting in smaller file sizes.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="font-semibold">How do I bookmark videos?</h4>
-            <p className="text-sm text-muted-foreground">
-              After entering a YouTube URL, click the bookmark icon next to the
-              input field. Your bookmarked videos will be saved locally and can
-              be accessed anytime.
-            </p>
-          </div>
-
-          <div className="space-y-3">
-            <h4 className="font-semibold">Is there a download limit?</h4>
-            <p className="text-sm text-muted-foreground">
-              We don't impose artificial limits, but please be respectful of
-              content creators and YouTube's terms of service. Use our tool
-              responsibly for personal use only.
-            </p>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* User Reviews */}
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Star className="h-5 w-5" />
-            What Users Say About YouTube Downloader
-          </CardTitle>
-          <CardDescription>Reviews from our community of users</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="space-y-4">
-              <div className="border rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium">
-                    Alex Chen, Content Creator
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  "This YouTube downloader is incredible! The bookmarking
-                  feature is a lifesaver for saving videos I want to watch
-                  later. Fast downloads and no annoying ads. Perfect for content
-                  research."
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  November 16, 2024
-                </p>
-              </div>
-
-              <div className="border rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium">
-                    Maria Rodriguez, Student
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  "As a student, I use this tool daily for educational videos.
-                  The MP3 conversion is great for listening to lectures offline.
-                  Much better than other downloaders I've tried."
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  November 14, 2024
-                </p>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="border rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="flex">
-                    {[...Array(4)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
-                    <Star className="h-4 w-4 text-gray-300" />
-                  </div>
-                  <span className="text-sm font-medium">
-                    David Kim, Tech Enthusiast
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  "Great tool with excellent PWA support. The interface is clean
-                  and the download speeds are impressive. Would love to see
-                  batch download feature in the future."
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  November 12, 2024
-                </p>
-              </div>
-
-              <div className="border rounded-lg p-4">
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                      />
-                    ))}
-                  </div>
-                  <span className="text-sm font-medium">
-                    Sarah Johnson, Marketing Professional
-                  </span>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  "Essential tool for my workflow. I download competitor videos
-                  for analysis and the bookmarking system helps me organize
-                  everything. Reliable and fast - exactly what I need."
-                </p>
-                <p className="text-xs text-muted-foreground mt-2">
-                  November 10, 2024
-                </p>
-              </div>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Related Tools */}
-      <Card className="mt-6">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Wrench className="h-5 w-5" />
-            Related Video Tools
-          </CardTitle>
-          <CardDescription>
-            More tools for video content management
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-3 gap-4">
-            <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-              <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Scissors className="h-6 w-6 text-red-600" />
-              </div>
-              <h4 className="font-medium mb-1">TikTok Downloader</h4>
-              <p className="text-sm text-muted-foreground">
-                Download TikTok videos and audio
+        {/* TeraBox Downloader Backlink for SEO */}
+        <Card className="mt-8">
+          <CardContent className="p-6">
+            <div className="text-center bg-linear-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-6">
+              <h3 className="text-lg font-semibold text-foreground mb-2">
+                Need to Download TeraBox Files?
+              </h3>
+              <p className="text-muted-foreground mb-4">
+                Looking for a reliable way to download files from TeraBox? Check
+                out our specialized TeraBox downloader tool.
               </p>
+              <a
+                href="https://terabox.beer/"
+                target="_blank"
+                rel="doopener doreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+              >
+                <Download className="w-4 h-4" />
+                TeraBox Downloader
+              </a>
             </div>
+          </CardContent>
+        </Card>
 
-            <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <FileText className="h-6 w-6 text-blue-600" />
-              </div>
-              <h4 className="font-medium mb-1">Video Compressor</h4>
-              <p className="text-sm text-muted-foreground">
-                Compress videos for smaller file sizes
-              </p>
-            </div>
-
-            <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-              <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Play className="h-6 w-6 text-purple-600" />
-              </div>
-              <h4 className="font-medium mb-1">Video Converter</h4>
-              <p className="text-sm text-muted-foreground">
-                Convert videos to different formats
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* SEO Content Section */}
-      <div className="space-y-6 mt-6">
-        <Card>
+        {/* How to Use Guide */}
+        <Card className="mt-8">
           <CardHeader>
-            <CardTitle>The Complete Guide to YouTube Video Downloads</CardTitle>
+            <CardTitle className="flex items-center gap-2">
+              <BookOpen className="h-5 w-5" />
+              How to Download YouTube Videos
+            </CardTitle>
+            <CardDescription>
+              Step-by-step guide to download YouTube videos easily
+            </CardDescription>
           </CardHeader>
-          <CardContent className="prose prose-sm max-w-none">
-            <h3>Why Download YouTube Videos?</h3>
-            <p>
-              YouTube is the world's largest video platform with billions of
-              videos uploaded daily. Whether you're a content creator, student,
-              or simply want to save videos for offline viewing, having a
-              reliable YouTube downloader is essential. Our advanced tool
-              provides high-quality downloads in multiple formats with fast
-              processing speeds.
-            </p>
-
-            <h3>YouTube Download Best Practices</h3>
-            <p>
-              When downloading YouTube videos, consider these important
-              guidelines:
-            </p>
-            <ul>
-              <li>
-                <strong>Respect Copyright:</strong> Only download content for
-                personal use and give credit to creators
-              </li>
-              <li>
-                <strong>Check Video Availability:</strong> Ensure videos are
-                public and not age-restricted
-              </li>
-              <li>
-                <strong>Choose Appropriate Quality:</strong> Balance between
-                file size and video quality
-              </li>
-              <li>
-                <strong>Use Bookmarks Wisely:</strong> Save videos you want to
-                download later
-              </li>
-              <li>
-                <strong>Consider Audio Downloads:</strong> MP3 files are smaller
-                and perfect for music/podcasts
-              </li>
-            </ul>
-
-            <h3>Understanding YouTube Video Formats</h3>
-            <div className="bg-muted p-4 rounded-lg">
-              <h4>YouTube Quality Options:</h4>
-              <ul className="mt-2 space-y-1">
-                <li>
-                  <strong>144p:</strong> Lowest quality, smallest file size
-                  (good for previews)
-                </li>
-                <li>
-                  <strong>240p:</strong> Basic quality for mobile viewing
-                </li>
-                <li>
-                  <strong>360p:</strong> Standard definition, good balance of
-                  quality and size
-                </li>
-                <li>
-                  <strong>480p:</strong> Enhanced quality for larger screens
-                </li>
-                <li>
-                  <strong>720p:</strong> High definition (HD), great for most
-                  uses
-                </li>
-                <li>
-                  <strong>1080p:</strong> Full HD, excellent quality for
-                  detailed content
-                </li>
-                <li>
-                  <strong>1440p:</strong> Quad HD, very high quality
-                </li>
-                <li>
-                  <strong>2160p (4K):</strong> Ultra HD, maximum quality
-                  available
-                </li>
-              </ul>
-            </div>
-
-            <h3>Tips for Content Creators</h3>
-            <p>
-              If you're creating content on YouTube, downloading videos can help
-              you:
-            </p>
-            <ul>
-              <li>Analyze competitor content and strategies</li>
-              <li>Study trending formats and video styles</li>
-              <li>Save reference videos for your own content creation</li>
-              <li>Download background music and sound effects</li>
-              <li>Keep offline copies of important tutorials</li>
-            </ul>
-
-            <h3>YouTube Download Troubleshooting</h3>
-            <p>Common issues and their solutions:</p>
-            <ul>
-              <li>
-                <strong>Video Not Available:</strong> Check if the video is
-                private, deleted, or region-blocked
-              </li>
-              <li>
-                <strong>Slow Downloads:</strong> Try a different quality option
-                or check your internet connection
-              </li>
-              <li>
-                <strong>Format Issues:</strong> Ensure your device supports the
-                chosen video format
-              </li>
-              <li>
-                <strong>Storage Space:</strong> High-quality videos require
-                significant storage space
-              </li>
-            </ul>
-
-            <h3>Legal and Ethical Considerations</h3>
-            <p>
-              While downloading YouTube videos for personal use is generally
-              acceptable, always consider:
-            </p>
-            <ul>
-              <li>YouTube's Terms of Service and community guidelines</li>
-              <li>Copyright laws in your country</li>
-              <li>Fair use policies for educational purposes</li>
-              <li>Respect for content creators' intellectual property</li>
-              <li>Attribution requirements when sharing downloaded content</li>
-            </ul>
-
-            <h3>Advanced Features for Power Users</h3>
-            <p>Take advantage of our advanced features:</p>
-            <ul>
-              <li>
-                <strong>PWA Installation:</strong> Install as a native app for
-                better performance
-              </li>
-              <li>
-                <strong>Bookmark System:</strong> Save and organize your
-                favorite video URLs
-              </li>
-              <li>
-                <strong>Batch Processing:</strong> Download multiple videos
-                efficiently
-              </li>
-              <li>
-                <strong>Format Selection:</strong> Choose the perfect format for
-                your needs
-              </li>
-              <li>
-                <strong>Offline Access:</strong> Access your bookmarked videos
-                anytime
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Quick link to the new YouTube Embedder tool */}
-      <div className="mt-6">
-        <Card>
           <CardContent>
-            <div className="flex items-center justify-between">
-              <div>
-                <h4 className="font-semibold">
-                  YouTube Custom Player Embedder
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Generate custom iframe players using Plyr, Video.js,
-                  FluidPlayer and MediaElement.js.
-                </p>
+            <div className="space-y-4">
+              <div className="flex gap-4">
+                <div className="shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-semibold text-primary">1</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Find the YouTube Video</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Open YouTube and find the video you want to download. Make
+                    sure the video is available and not private.
+                  </p>
+                </div>
               </div>
-              <div>
-                <Link href="/youtube-embedder">
-                  <Button>Try Embedder</Button>
-                </Link>
+
+              <div className="flex gap-4">
+                <div className="shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-semibold text-primary">2</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Copy the Video URL</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Click the share button below the video and copy the URL, or
+                    copy it directly from your browser's address bar.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-semibold text-primary">3</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Paste URL and Process</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Paste the YouTube URL in the input field above and click
+                    "Download Video" to process your request.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                  <span className="text-sm font-semibold text-primary">4</span>
+                </div>
+                <div>
+                  <h4 className="font-semibold">Choose Format and Download</h4>
+                  <p className="text-sm text-muted-foreground">
+                    Select your preferred video quality or audio format and click
+                    download to save the file.
+                  </p>
+                </div>
               </div>
             </div>
           </CardContent>
         </Card>
+
+        {/* Ad Unit: Below main How to Use guide */}
+        <div className="my-6">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-format="autorelaxed"
+            data-ad-client="ca-pub-1828915420581549"
+            data-ad-slot="9420953810"
+          />
+          <Script id="ads-init-1" strategy="lazyOnload">
+            {"(adsbygoogle = window.adsbygoogle || []).push({});"}
+          </Script>
+        </div>
+
+        {/* Quick link to the new YouTube Embedder tool */}
+        <div className="mt-6">
+          <Card>
+            <CardContent>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="font-semibold">
+                    YouTube Custom Player Embedder
+                  </h4>
+                  <p className="text-sm text-muted-foreground">
+                    Generate custom iframe players using Plyr, Video.js,
+                    FluidPlayer and MediaElement.js.
+                  </p>
+                </div>
+                <div>
+                  <Link href="/youtube-embedder">
+                    <Button>Try Embedder</Button>
+                  </Link>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </div>
+    </ToolSEOLayout>
   );
 }
