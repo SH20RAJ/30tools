@@ -1,83 +1,120 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { AlignLeft } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { AlignLeft, RotateCcw, Copy, Check } from "lucide-react";
 import { toast } from "sonner";
+import { ToolSEOLayout } from "@/components/seo";
 
-export default function TextFormatter() {
-  const [isProcessing, setIsProcessing] = useState(false);
+const TOOL_FAQS = [
+  {
+    question: "What formatting options are available?",
+    answer: "You can convert text to uppercase, lowercase, capitalize words, remove extra spaces, remove empty lines, and more."
+  },
+  {
+    question: "Is my text secure?",
+    answer: "Yes, all formatting is done locally in your browser. No text is sent to any server."
+  },
+  {
+    question: "Is there a character limit?",
+    answer: "There is no strict limit, but very large texts might slow down your browser slightly."
+  }
+];
 
-  const handleProcess = async () => {
-    setIsProcessing(true);
-    try {
-      // Simulate processing
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success("Operation completed successfully!");
-    } catch (error) {
-      toast.error("Operation failed. Please try again.");
-    } finally {
-      setIsProcessing(false);
+const TOOL_FEATURES = [
+  "Case Conversion",
+  "Whitespace Removal",
+  "Line Operations",
+  "Instant Formatting",
+  "Copy to Clipboard",
+  "Privacy Focused"
+];
+
+export default function TextFormatterTool() {
+  const [text, setText] = useState("");
+  const [copied, setCopied] = useState(false);
+
+  const format = (type) => {
+    if (!text) return;
+    let newText = text;
+    switch (type) {
+      case "upper": newText = text.toUpperCase(); break;
+      case "lower": newText = text.toLowerCase(); break;
+      case "capitalize": 
+        newText = text.replace(/\b\w/g, l => l.toUpperCase()); 
+        break;
+      case "sentence":
+        newText = text.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g, c => c.toUpperCase());
+        break;
+      case "trim": newText = text.trim(); break;
+      case "spaces": newText = text.replace(/\s+/g, " "); break;
+      case "lines": newText = text.replace(/^\s*[\r\n]/gm, ""); break;
+      case "reverse": newText = text.split("").reverse().join(""); break;
+      default: break;
     }
+    setText(newText);
+    toast.success("Text formatted!");
+  };
+
+  const copyToClipboard = () => {
+    if (!text) return;
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+    toast.success("Copied to clipboard!");
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  const clear = () => {
+    setText("");
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">Text Formatter</h1>
-            <p className="text-lg text-muted-foreground">
-              Format and clean up text with various options
-            </p>
-          </div>
+    <ToolSEOLayout
+      toolId="text-formatter"
+      faqs={TOOL_FAQS}
+      features={TOOL_FEATURES}
+    >
+      <div className="space-y-8">
+        <Card className="border-0 shadow-xl bg-background/50 backdrop-blur-sm">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2">
+              <AlignLeft className="w-6 h-6" />
+              Text Formatter
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="flex flex-wrap gap-2 justify-center">
+              <Button variant="outline" onClick={() => format("upper")}>UPPERCASE</Button>
+              <Button variant="outline" onClick={() => format("lower")}>lowercase</Button>
+              <Button variant="outline" onClick={() => format("capitalize")}>Capitalize Words</Button>
+              <Button variant="outline" onClick={() => format("sentence")}>Sentence case</Button>
+              <Button variant="outline" onClick={() => format("spaces")}>Remove Extra Spaces</Button>
+              <Button variant="outline" onClick={() => format("lines")}>Remove Empty Lines</Button>
+              <Button variant="outline" onClick={() => format("reverse")}>Reverse Text</Button>
+            </div>
 
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <AlignLeft className="w-5 h-5" />
-                Text Formatter
-              </CardTitle>
-              <CardDescription>
-                This tool is currently under development. More features coming
-                soon!
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center py-12">
-                <AlignLeft className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-                <p className="text-muted-foreground mb-4">
-                  We're working hard to bring you this amazing tool. Stay tuned!
-                </p>
-                <Button onClick={handleProcess} disabled={isProcessing}>
-                  {isProcessing ? "Processing..." : "Try Demo"}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+            <Textarea
+              placeholder="Type or paste your text here..."
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+              className="h-64 font-mono text-sm"
+            />
 
-          <Card>
-            <CardHeader>
-              <CardTitle>What to Expect</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Format and clean up text with various options. This tool will
-                provide a user-friendly interface with advanced features to help
-                you accomplish your tasks efficiently.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
+            <div className="flex justify-center gap-4">
+              <Button onClick={copyToClipboard} className="w-32">
+                {copied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
+                {copied ? "Copied" : "Copy"}
+              </Button>
+              <Button variant="outline" onClick={clear}>
+                <RotateCcw className="w-4 h-4 mr-2" />
+                Clear
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       </div>
-    </div>
+    </ToolSEOLayout>
   );
 }

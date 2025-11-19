@@ -736,3 +736,70 @@ export async function downloadYouTubePack(videoUrl, selectedAssets) {
 export async function generateYouTubeIdeas(requestData) {
   return await generateYouTubeIdeasAI(requestData);
 }
+
+// Server action to get Channel Info (ID, Title, etc.) from URL
+export async function getChannelInfo(url) {
+  try {
+    if (!url) throw new Error("URL is required");
+
+    // Basic validation
+    if (!url.includes("youtube.com") && !url.includes("youtu.be")) {
+      throw new Error("Invalid YouTube URL");
+    }
+
+    const response = await fetch(url, {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch channel page");
+    }
+
+    const html = await response.text();
+
+    // Extract Channel ID
+    // Pattern 1: <meta itemprop="channelId" content="UC...">
+    const channelIdMatch = html.match(/itemprop="channelId" content="([^"]+)"/);
+    // Pattern 2: "externalId":"UC..."
+    const externalIdMatch = html.match(/"externalId":"([^"]+)"/);
+    
+    const channelId = channelIdMatch?.[1] || externalIdMatch?.[1];
+
+    if (!channelId) {
+      throw new Error("Could not find Channel ID");
+    }
+
+    // Extract Title
+    const titleMatch = html.match(/<meta property="og:title" content="([^"]+)"/);
+    const title = titleMatch?.[1] || "Unknown Channel";
+
+    // Extract Description
+    const descriptionMatch = html.match(/<meta property="og:description" content="([^"]+)"/);
+    const description = descriptionMatch?.[1] || "";
+
+    // Extract Thumbnail
+    const imageMatch = html.match(/<meta property="og:image" content="([^"]+)"/);
+    const thumbnail = imageMatch?.[1] || "";
+
+    return {
+      success: true,
+      data: {
+        channelId,
+        title,
+        description,
+        thumbnail,
+        url
+      }
+    };
+
+  } catch (error) {
+    console.error("Error fetching channel info:", error);
+    return {
+      success: false,
+      error: error.message || "Failed to process request"
+    };
+  }
+}
