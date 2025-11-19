@@ -3,7 +3,6 @@ import { getToolById } from '@/constants/tools-utils';
 import StructuredData from '@/components/shared/StructuredData';
 import {
   BreadcrumbsEnhanced,
-  SEOBooster,
   ToolFeatures,
   FAQSection,
   RelatedTools,
@@ -29,7 +28,6 @@ export default function ToolSEOLayout({ toolId, children, faqs, features, review
   return (
     <div className="tool-page-container">
       <StructuredData tool={mergedTool} />
-      <SEOBooster tool={mergedTool} />
       
       <div className="container mx-auto px-4 py-8">
         <BreadcrumbsEnhanced tool={mergedTool} />

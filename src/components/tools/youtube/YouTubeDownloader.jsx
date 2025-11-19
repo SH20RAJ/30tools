@@ -401,7 +401,7 @@ export default function YouTubeDownloader() {
                 ) : (
                   <>
                     <Download className="w-5 h-5 mr-3" />
-                    Download Video
+                    <span className="text-white">Download Video</span>
                   </>
                 )}
               </Button>
@@ -835,6 +835,7 @@ export default function YouTubeDownloader() {
           </Card>
         </div>
       </div>
+      <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2Fyoutube-downloader"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2Fyoutube-downloader&countColor=%23263759&style=flat-square" /></a>
     </ToolSEOLayout>
   );
 }
