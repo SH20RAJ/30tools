@@ -1,13 +1,11 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 import Script from 'next/script';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent,CardDescription,  CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Download, Video, Music, Loader2, Bookmark, BookmarkCheck, SmartphoneIcon, Plus, BookOpen, HelpCircle, Star, Wrench, Scissors, FileText, Globe, Shield, Play, Users, Zap } from 'lucide-react';
 import { toast } from 'sonner';
-// dialog removed — login flow not required
 
 export default function YouTubeDownloader() {
   const [url, setUrl] = useState('');
@@ -267,12 +265,6 @@ export default function YouTubeDownloader() {
 
   return (
     <div className="w-full max-w-4xl mx-auto">
-      {/* Google AdSense script (loaded once) */}
-      <Script
-        async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-        crossOrigin="anonymous"
-      />
       {/* Main Download Card */}
       <Card className="border-0 shadow-xl bg-white/80 backdrop-blur-sm dark:bg-gray-800/80">
         <CardContent className="p-8">
@@ -567,7 +559,28 @@ export default function YouTubeDownloader() {
           )}
         </CardContent>
       </Card>
-
+      
+      {/* TeraBox Downloader Backlink for SEO */}
+      <Card className="mt-8">
+        <CardContent className="p-6">
+          <div className="text-center bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-6">
+            <h3 className="text-lg font-semibold text-foreground mb-2">Need to Download TeraBox Files?</h3>
+            <p className="text-muted-foreground mb-4">
+              Looking for a reliable way to download files from TeraBox? Check out our specialized TeraBox downloader tool.
+            </p>
+            <a 
+              href="https://terabox.beer/" 
+              target="_blank" 
+              rel="doopener doreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+            >
+              <Download className="w-4 h-4" />
+              TeraBox Downloader
+            </a>
+          </div>
+        </CardContent>
+      </Card>
+      
       {/* How to Use Guide */}
       <Card className="mt-8">
         <CardHeader>
@@ -722,20 +735,6 @@ export default function YouTubeDownloader() {
           </div>
         </CardContent>
       </Card>
-
-      {/* Ad Unit: Below features */}
-      <div className="my-6">
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-format="autorelaxed"
-          data-ad-client="ca-pub-1828915420581549"
-          data-ad-slot="9420953810"
-        />
-        <Script id="ads-init-2" strategy="lazyOnload">
-          {"(adsbygoogle = window.adsbygoogle || []).push({});"}
-        </Script>
-      </div>
 
       {/* FAQ Section */}
       <Card className="mt-6">
@@ -1013,32 +1012,6 @@ export default function YouTubeDownloader() {
           </CardContent>
         </Card>
       </div>
-
-      {/* Ad Unit: Within the SEO Content section (before the detailed guide) */}
-      <div className="my-6">
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-format="autorelaxed"
-          data-ad-client="ca-pub-1828915420581549"
-          data-ad-slot="9420953810"
-        />
-        <Script id="ads-init-3" strategy="lazyOnload">
-          {"(adsbygoogle = window.adsbygoogle || []).push({});"}
-        </Script>
-      </div>
-    {/* Ad Unit: Before the end of the page (near the bottom) */}
-      <div className="my-6">
-        <ins
-          className="adsbygoogle"
-          style={{ display: 'block' }}
-          data-ad-format="autorelaxed"
-          data-ad-client="ca-pub-1828915420581549"
-          data-ad-slot="9420953810"
-        />
-        <Script id="ads-init-4" strategy="lazyOnload">
-          {"(adsbygoogle = window.adsbygoogle || []).push({});"}
-        </Script>
-      </div>
+    </div>
   );
 }
