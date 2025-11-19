@@ -1,12 +1,9 @@
-import { Metadata } from 'next';
 import { 
   BreadcrumbsEnhanced,
   FAQSection, 
   ReviewSnippets,
   SEOBooster,
-  SocialShare,
   RelatedTools,
-  ToolFeatures,
   UserComments,
   DeviceCompatibility,
   QuickActions
@@ -17,7 +14,7 @@ import { getDeveloperToolFAQs } from '@/constants/seo/developer-faqs';
 import JSONFormatterTool from '@/components/tools/developer/JSONFormatterTool';
 
 // Enhanced metadata for JSON Formatter
-export const metadata: Metadata = {
+export const metadata = {
   ...generateDeveloperToolMeta('json-formatter'),
   verification: {
     google: 'your-google-verification-code',

@@ -1,4 +1,3 @@
-import { Metadata } from 'next';
 import { 
   BreadcrumbsEnhanced,
   FAQSection,
@@ -14,7 +13,7 @@ import { generateToolMetadata } from '@/constants/seo/advanced-metadata';
 import { generateToolFAQs } from '@/constants/seo/enhanced-faqs';
 
 // Example: Image Compressor page with full SEO implementation
-export async function generateMetadata({ params }): Promise<Metadata> {
+export async function generateMetadata({ params: _params }) {
   return generateToolMetadata('image-compressor');
 }
 
