@@ -401,7 +401,7 @@ export default function YouTubeDownloader() {
                 ) : (
                   <>
                     <Download className="w-5 h-5 mr-3" />
-                    <span className="text-white">Download Video</span>
+                    <span className="text-white bg-amber-200">Download Video</span>
                   </>
                 )}
               </Button>

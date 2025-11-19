@@ -33,7 +33,7 @@ export default function ToolSEOLayout({ toolId, children, faqs, features, review
         <BreadcrumbsEnhanced tool={mergedTool} />
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
-          <div className="lg:col-span-8">
+          <div className="">
             {/* Main Tool Area */}
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8">
               {children}
@@ -52,10 +52,9 @@ export default function ToolSEOLayout({ toolId, children, faqs, features, review
             <UserComments tool={mergedTool} />
           </div>
           
-          <div className="lg:col-span-4 space-y-8">
-            {/* Sidebar */}
+          {/* <div className="lg:col-span-4 space-y-8">
             <RelatedTools currentToolId={mergedTool.id} category={mergedTool.category} />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
