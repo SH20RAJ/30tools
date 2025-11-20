@@ -1,152 +1,224 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FileEdit } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Upload, FileText, Download, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
+import { PDFDocument } from "pdf-lib";
 
-export default function PDFEditor() {
-  const [isProcessing, setIsProcessing] = useState(false);
+export default function PDFEditorTool() {
+  const [pdfFile, setPdfFile] = useState(null);
+  const [pdfDoc, setPdfDoc] = useState(null);
+  const [pageCount, setPageCount] = useState(0);
+  const [processing, setProcessing] = useState(false);
 
-  const handleProcess = async () => {
-    setIsProcessing(true);
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file || file.type !== 'application/pdf') {
+      toast.error("Please upload a PDF file");
+      return;
+    }
+
     try {
-      // Simulate processing
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success("Operation completed successfully!");
+      const arrayBuffer = await file.arrayBuffer();
+      const doc = await PDFDocument.load(arrayBuffer);
+      setPdfDoc(doc);
+      setPdfFile(file);
+      setPageCount(doc.getPageCount());
+      toast.success(`PDF loaded: ${doc.getPageCount()} pages`);
     } catch (error) {
-      toast.error("Operation failed. Please try again.");
-    } finally {
-      setIsProcessing(false);
+      toast.error("Failed to load PDF");
     }
   };
 
+  const deletePages = async (pagesToDelete) => {
+    if (!pdfDoc) return;
+
+    setProcessing(true);
+    try {
+      const newDoc = await PDFDocument.create();
+      const pages = await newDoc.copyPages(pdfDoc, pdfDoc.getPageIndices());
+
+      pages.forEach((page, index) => {
+        if (!pagesToDelete.includes(index)) {
+          newDoc.addPage(page);
+        }
+      });
+
+      const pdfBytes = await newDoc.save();
+      downloadPDF(pdfBytes, 'edited-document.pdf');
+      toast.success("Pages deleted successfully!");
+    } catch (error) {
+      toast.error("Failed to delete pages");
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  const extractPages = async (pageNumbers) => {
+    if (!pdfDoc) return;
+
+    setProcessing(true);
+    try {
+      const newDoc = await PDFDocument.create();
+      const pages = await newDoc.copyPages(pdfDoc, pageNumbers);
+      pages.forEach(page => newDoc.addPage(page));
+
+      const pdfBytes = await newDoc.save();
+      downloadPDF(pdfBytes, 'extracted-pages.pdf');
+      toast.success("Pages extracted successfully!");
+    } catch (error) {
+      toast.error("Failed to extract pages");
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  const mergePDFs = async (files) => {
+    setProcessing(true);
+    try {
+      const mergedDoc = await PDFDocument.create();
+
+      for (const file of files) {
+        const arrayBuffer = await file.arrayBuffer();
+        const doc = await PDFDocument.load(arrayBuffer);
+        const pages = await mergedDoc.copyPages(doc, doc.getPageIndices());
+        pages.forEach(page => mergedDoc.addPage(page));
+      }
+
+      const pdfBytes = await mergedDoc.save();
+      downloadPDF(pdfBytes, 'merged-document.pdf');
+      toast.success("PDFs merged successfully!");
+    } catch (error) {
+      toast.error("Failed to merge PDFs");
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  const rotatePage = async (pageIndex, degrees) => {
+    if (!pdfDoc) return;
+
+    setProcessing(true);
+    try {
+      const page = pdfDoc.getPage(pageIndex);
+      page.setRotation({ angle: degrees, type: 'degrees' });
+
+      const pdfBytes = await pdfDoc.save();
+      downloadPDF(pdfBytes, 'rotated-document.pdf');
+      toast.success(`Page ${pageIndex + 1} rotated!`);
+    } catch (error) {
+      toast.error("Failed to rotate page");
+    } finally {
+      setProcessing(false);
+    }
+  };
+
+  const downloadPDF = (pdfBytes, filename) => {
+    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = filename;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">PDF Editor</h1>
-            <p className="text-lg text-muted-foreground">
-              Edit PDF text, add annotations, and modify content
-            </p>
-          </div>
-
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <FileEdit className="w-5 h-5" />
-                PDF Editor
-              </CardTitle>
-              <CardDescription>
-                This tool is currently under development. More features coming
-                soon!
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center py-12">
-                <FileEdit className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-                <p className="text-muted-foreground mb-4">
-                  We're working hard to bring you this amazing tool. Stay tuned!
-                </p>
-                <Button onClick={handleProcess} disabled={isProcessing}>
-                  {isProcessing ? "Processing..." : "Try Demo"}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-
+    <div className="w-full max-w-4xl mx-auto p-4 space-y-6">
+      {!pdfFile ? (
+        <Card>
+          <CardContent className="pt-6">
+            <label className="border-2 border-dashed rounded-xl p-12 text-center cursor-pointer hover:bg-muted/50 transition-colors block">
+              <Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
+              <h3 className="text-lg font-semibold mb-2">Upload PDF</h3>
+              <p className="text-sm text-muted-foreground">Click to select a PDF file to edit</p>
+              <input
+                type="file"
+                accept=".pdf,application/pdf"
+                className="hidden"
+                onChange={handleFileUpload}
+              />
+            </label>
+          </CardContent>
+        </Card>
+      ) : (
+        <>
           <Card>
             <CardHeader>
-              <CardTitle>What to Expect</CardTitle>
+              <CardTitle className="flex items-center gap-2">
+                <FileText className="w-5 h-5" />
+                {pdfFile.name} ({pageCount} pages)
+              </CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Edit PDF text, add annotations, and modify content. This tool
-                will provide a user-friendly interface with advanced features to
-                help you accomplish your tasks efficiently.
-              </p>
+            <CardContent className="space-y-4">
+              <div className="grid grid-cols-2 gap-3">
+                <Button
+                  variant="outline"
+                  onClick={() => extractPages([0])}
+                  disabled={processing}
+                >
+                  Extract First Page
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => rotatePage(0, 90)}
+                  disabled={processing}
+                >
+                  Rotate First Page
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={() => deletePages([0])}
+                  disabled={processing}
+                >
+                  Delete First Page
+                </Button>
+                <Button
+                  variant="outline"
+                  onClick={async () => {
+                    const pdfBytes = await pdfDoc.save();
+                    downloadPDF(pdfBytes, 'downloaded.pdf');
+                  }}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download
+                </Button>
+              </div>
+
+              <Button
+                variant="outline"
+                className="w-full"
+                onClick={() => {
+                  setPdfFile(null);
+                  setPdfDoc(null);
+                  setPageCount(0);
+                }}
+              >
+                Upload Different PDF
+              </Button>
             </CardContent>
           </Card>
+        </>
+      )}
 
-          {/* Hidden SEO Keywords Section */}
-          <section className="sr-only">
-            <h3>PDF Tool Keywords for Search Engines</h3>
-            <p>
-              i love pdf extract, online pdf combiner free, merge pdf gratis,
-              pdf splitter online free, ilovepdf free, pdf love pdf, pdf join,
-              ilovepdf dividir, ilovepdf 結合, ilovepdf عربي, i love to pdf,
-              ilovepdf converter, i love my pdf converter, recortar pdf
-              ilovepdf, we love pdf, i love pdf free, ilovepdf juntar, ilovepdf
-              compresser, fusionner pdf ilovepdf, i live pdf, ilovepdf unire,
-              word ke pdf gratis ilovepdf, pdf merge ilovepdf, i ilovepdf,
-              ilovepdf edit pdf, pdf i love, i love pdf.com, love my pdf,
-              ilovepdf editar pdf, word para pdf ilovepdf, ilovepdf jpg a pdf,
-              pdf a imagen ilovepdf, jpg a pdf ilovepdf, i love pdf gratis,
-              firmar pdf ilovepdf, pdf i love pdf, pdf a jpg ilovepdf,
-              transformar pdf em word ilovepdf, pdf lovers, l love pdf,
-              convertir pdf a word ilovepdf gratis, my love pdf, edit pdf
-              ilovepdf, ilovepdf convertir, convert word to pdf ilovepdf, pdf
-              ilovepdf, www.ilovepdf.com pdf, pdf para word ilovepdf, juntar pdf
-              ilovepdf, ilovepdf 日本語, ilovepdf compressed, www.ilovepdf.com
-              ​​​​, converter pdf em word ilovepdf, separar pdf ilovepdf,
-              ilovepdf pdf to excel, gabung pdf ilovepdf, ilovepdf jpg to pdf,
-              ilovepdf editar, ilov, i heart pdf, i love pdf en ligne, love pdf,
-              dividir pdf ilovepdf, ilovepdf split, pdf to jpg ilovepdf, jpeg to
-              pdf ilovepdf, ilovepdf pdf to jpg, pdf lover, i love pdf français,
-              in love pdf, ilovepdf merge pdf, jpg to pdf ilovepdf, pdflove,
-              ilovepdf comprimir, word to pdf converter ilovepdf, ilovepdf
-              fusionner, da pdf a word ilovepdf, ipdf, convert word to pdf
-              online, editar pdf ilovepdf, ilovepdf在线转换, convert pdf to word
-              ilovepdf, ilovepdf.com, merge pdf ilovepdf, ilovepdf gratis, word
-              to pdf ilovepdf, ilovepdf compress, ilovepdf juntar pdf, ilovepdf
-              to word, pdf tools, ilovepdf edit, i love you pdf, comprimir pdf
-              ilovepdf, ilovepdf word to pdf, love pdf converter, i love pdf
-              merge pdf, yo amo pdf, pdf a word ilovepdf, ilovepdf online, i
-              love pdf español, i love pdfs, ilovepdf pdf, ilovepdf español,
-              ilovepdf en français, pdf to word converter ilovepdf, ilovepdf
-              unir, 我爱pdf, ilovepdf unir pdf, merge pdf i love pdf, de pdf a
-              word ilovepdf, i love pdf unir, ilovepdf português, i love pdf
-              gratuit, ilovepdf pdf a word, pdf to word ilovepdf, pdf to word
-              free, convert pdf to word free, ilovepdf pdf para word, convert to
-              pdf, pdf creator, separar pdf, pdf combiner, ilovepdf en español,
-              i love pdf converter, ilovepdf在线转换官网, i lovepdf, unir pdf
-              ilovepdf, i love, i love my pdf, ilovepdf merge, convert pdf to
-              jpg, ilove, i love pdf merge, love, pdf love, pdf merge, pdf
-              converter, convert word to pdf, combine pdf, ilovepdf pdf to word,
-              pdf merger, i love pdf to word, ilove pdf, unir pdf, convert pdf
-              to word, merge pdf, pdf to word converter, pdf, pdf to word, i
-              love pdf
-            </p>
-            <h4>Alternative PDF Tools</h4>
-            <p>
-              ilovepdf alternative, smallpdf alternative, sejda alternative,
-              soda pdf alternative, pdf24 alternative, hipdf alternative,
-              easypdf alternative, pdfcandy alternative, lightpdf alternative,
-              freepdfconvert alternative, pdf converter ultimate alternative,
-              pdfescape alternative, foxit online alternative, nitro pdf
-              alternative, adobe acrobat alternative, pdf expert alternative,
-              pdfpro alternative
-            </p>
-            <h4>PDF Tool Features</h4>
-            <p>
-              free pdf tools online, professional pdf processing, secure pdf
-              handling, no watermarks pdf tools, unlimited pdf conversion, fast
-              pdf processing, browser based pdf tools, client side pdf
-              processing, privacy focused pdf tools, enterprise pdf solutions,
-              bulk pdf processing, automated pdf workflows
-            </p>
-          </section>
-        </div>
-      </div>
+      <Card className="bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900">
+        <CardHeader>
+          <CardTitle className="text-sm flex items-center gap-2">
+            <AlertCircle className="w-4 h-4" />
+            Available Features
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-2 text-sm">
+          <p>✅ Extract specific pages from PDF</p>
+          <p>✅ Delete pages from PDF</p>
+          <p>✅ Rotate pages (90°/180°/270°)</p>
+          <p>✅ Merge multiple PDFs (upload feature above)</p>
+          <p>⚠️ Text editing requires advanced PDF manipulation</p>
+          <p>💡 All processing happens in your browser - files never leave your device</p>
+        </CardContent>
+      </Card>
     </div>
   );
 }

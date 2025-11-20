@@ -1,83 +1,93 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Video } from "lucide-react";
-import { toast } from "sonner";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AlertCircle, RefreshCw, Server } from "lucide-react";
 
-export default function VideoConverter() {
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  const handleProcess = async () => {
-    setIsProcessing(true);
-    try {
-      // Simulate processing
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success("Operation completed successfully!");
-    } catch (error) {
-      toast.error("Operation failed. Please try again.");
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-
+export default function VideoConverterTool() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">Video Converter</h1>
-            <p className="text-lg text-muted-foreground">
-              Convert videos between different formats
-            </p>
+    <div className="w-full max-w-4xl mx-auto p-4 space-y-6">
+      <Card className="bg-gradient-to-r from-cyan-50 to-blue-50 dark:from-cyan-950/20 dark:to-blue-950/20 border-cyan-200 dark:border-cyan-900">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <RefreshCw className="w-6 h-6 text-cyan-600" />
+            Video Format Converter
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border space-y-4">
+            <div className="flex items-start gap-3">
+              <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
+              <div className="space-y-3">
+                <h3 className="font-semibold text-lg">Requires Heavy Processing</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Video format conversion requires video codec re-encoding which is computationally intensive.
+                  Client-side conversion using FFmpeg.wasm (~100MB) is possible but very slow for large files.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <Card className="mb-6">
+          <Card className="bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Video className="w-5 h-5" />
-                Video Converter
+              <CardTitle className="text-sm flex items-center gap-2">
+                <Server className="w-4 h-4" />
+                Recommended Solutions
               </CardTitle>
-              <CardDescription>
-                This tool is currently under development. More features coming
-                soon!
-              </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center py-12">
-                <Video className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-                <p className="text-muted-foreground mb-4">
-                  We're working hard to bring you this amazing tool. Stay tuned!
-                </p>
-                <Button onClick={handleProcess} disabled={isProcessing}>
-                  {isProcessing ? "Processing..." : "Try Demo"}
-                </Button>
-              </div>
+            <CardContent className="space-y-3 text-sm">
+              <p className="font-medium">For Production Use:</p>
+              <ul className="space-y-2 ml-4 list-disc">
+                <li><strong>CloudConvert API</strong> - Cloud-based video conversion service</li>
+                <li><strong>AWS MediaConvert</strong> - Scalable video processing</li>
+                <li><strong>Cloudinary</strong> - Automatic format optimization</li>
+                <li><strong>Server-side FFmpeg</strong> - Self-hosted solution</li>
+              </ul>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>What to Expect</CardTitle>
+              <CardTitle className="text-sm">📝 Common Conversion Use Cases</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Convert videos between different formats. This tool will provide
-                a user-friendly interface with advanced features to help you
-                accomplish your tasks efficiently.
-              </p>
+            <CardContent className="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <p className="font-medium mb-2">Popular Formats</p>
+                <ul className="text-muted-foreground space-y-1">
+                  <li>• MP4 (H.264/H.265)</li>
+                  <li>• WebM (VP9)</li>
+                  <li>• MOV (QuickTime)</li>
+                  <li>• AVI</li>
+                  <li>• MKV</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium mb-2">Typical Operations</p>
+                <ul className="text-muted-foreground space-y-1">
+                  <li>• Change container format</li>
+                  <li>• Re-encode codec</li>
+                  <li>• Adjust bitrate/quality</li>
+                  <li>• Resize resolution</li>
+                  <li>• Extract audio</li>
+                </ul>
+              </div>
             </CardContent>
           </Card>
-        </div>
-      </div>
+
+          <Card className="bg-green-50 dark:bg-green-950/20 border-green-200 dark:border-green-900">
+            <CardHeader>
+              <CardTitle className="text-sm">💡 Lightweight Alternative</CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm space-y-2">
+              <p>For basic format compatibility, browsers can play most modern video formats natively:</p>
+              <ul className="ml-4 list-disc text-muted-foreground space-y-1 mt-2">
+                <li>MP4 (H.264) - Universal support</li>
+                <li>WebM (VP8/VP9) - Efficient for web</li>
+                <li>Use the HTML5 video tag with multiple source formats</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </CardContent>
+      </Card>
     </div>
   );
 }

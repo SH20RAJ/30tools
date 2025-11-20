@@ -1,83 +1,91 @@
 "use client";
 
-import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Film } from "lucide-react";
-import { toast } from "sonner";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AlertCircle, Video, Server } from "lucide-react";
 
-export default function VideoEditor() {
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  const handleProcess = async () => {
-    setIsProcessing(true);
-    try {
-      // Simulate processing
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success("Operation completed successfully!");
-    } catch (error) {
-      toast.error("Operation failed. Please try again.");
-    } finally {
-      setIsProcessing(false);
-    }
-  };
-
+export default function VideoEditorTool() {
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">Video Editor</h1>
-            <p className="text-lg text-muted-foreground">
-              Basic video editing - trim, cut, and merge videos
-            </p>
+    <div className="w-full max-w-4xl mx-auto p-4 space-y-6">
+      <Card className="bg-gradient-to-r from-indigo-50 to-purple-50 dark:from-indigo-950/20 dark:to-purple-950/20 border-indigo-200 dark:border-indigo-900">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            <Video className="w-6 h-6 text-indigo-600" />
+            Video Editor
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div className="bg-white dark:bg-gray-900 p-6 rounded-lg border space-y-4">
+            <div className="flex items-start gap-3">
+              <AlertCircle className="w-6 h-6 text-amber-600 flex-shrink-0 mt-0.5" />
+              <div className="space-y-3">
+                <h3 className="font-semibold text-lg">Server-Side Processing Recommended</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Advanced video editing (cutting, merging, effects, filters) requires significant processing power.
+                  While client-side libraries like FFmpeg.wasm exist, they're ~100MB in size and perform slowly in browsers.
+                </p>
+              </div>
+            </div>
           </div>
 
-          <Card className="mb-6">
+          <Card className="bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900">
             <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Film className="w-5 h-5" />
-                Video Editor
+              <CardTitle className="text-sm flex items-center gap-2">
+                <Server className="w-4 h-4" />
+                Recommended Approach
               </CardTitle>
-              <CardDescription>
-                This tool is currently under development. More features coming
-                soon!
-              </CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center py-12">
-                <Film className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-                <p className="text-muted-foreground mb-4">
-                  We're working hard to bring you this amazing tool. Stay tuned!
-                </p>
-                <Button onClick={handleProcess} disabled={isProcessing}>
-                  {isProcessing ? "Processing..." : "Try Demo"}
-                </Button>
-              </div>
+            <CardContent className="space-y-3 text-sm">
+              <p className="font-medium">For Production Video Editing:</p>
+              <ul className="space-y-2 ml-4 list-disc">
+                <li>Use server-side FFmpeg for processing</li>
+                <li>Implement cloud functions (AWS Lambda, Google Cloud Functions)</li>
+                <li>Use dedicated video processing services (Cloudinary, Mux, AWS MediaConvert)</li>
+                <li>Queue-based processing for large files</li>
+              </ul>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>What to Expect</CardTitle>
+              <CardTitle className="text-sm">✨ Alternative: Use Our Other Tools</CardTitle>
             </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Basic video editing - trim, cut, and merge videos. This tool
-                will provide a user-friendly interface with advanced features to
-                help you accomplish your tasks efficiently.
-              </p>
+            <CardContent className="text-sm space-y-2">
+              <p>For basic video operations, try these lightweight alternatives:</p>
+              <ul className="space-y-2 ml-4 list-disc text-muted-foreground">
+                <li><strong>Video Trimmer</strong> - Cut and trim video clips</li>
+                <li><strong>Screen Recorder</strong> - Record your screen directly</li>
+                <li><strong>YouTube Downloader</strong> - Download and convert videos</li>
+              </ul>
             </CardContent>
           </Card>
-        </div>
-      </div>
+
+          <Card className="bg-purple-50 dark:bg-purple-950/20 border-purple-200 dark:border-purple-900">
+            <CardHeader>
+              <CardTitle className="text-sm">🔧 What Full Video Editing Would Include</CardTitle>
+            </CardHeader>
+            <CardContent className="grid grid-cols-2 gap-3 text-sm">
+              <div>
+                <p className="font-medium mb-2">Basic Features</p>
+                <ul className="text-muted-foreground space-y-1">
+                  <li>• Cut & Trim</li>
+                  <li>• Merge Videos</li>
+                  <li>• Add Text Overlays</li>
+                  <li>• Audio Replacement</li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-medium mb-2">Advanced Features</p>
+                <ul className="text-muted-foreground space-y-1">
+                  <li>• Filters & Effects</li>
+                  <li>• Transitions</li>
+                  <li>• Color Correction</li>
+                  <li>• Format Conversion</li>
+                </ul>
+              </div>
+            </CardContent>
+          </Card>
+        </CardContent>
+      </Card>
     </div>
   );
 }
