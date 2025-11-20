@@ -1,83 +1,169 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Link } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
+import { Link2, Copy, ArrowDownUp } from "lucide-react";
 import { toast } from "sonner";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-export default function URLEncoder() {
-  const [isProcessing, setIsProcessing] = useState(false);
+export default function URLEncoderTool() {
+  const [input, setInput] = useState("");
+  const [output, setOutput] = useState("");
 
-  const handleProcess = async () => {
-    setIsProcessing(true);
+  const encode = () => {
     try {
-      // Simulate processing
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      toast.success("Operation completed successfully!");
+      const encoded = encodeURIComponent(input);
+      setOutput(encoded);
+      toast.success("URL encoded successfully!");
     } catch (error) {
-      toast.error("Operation failed. Please try again.");
-    } finally {
-      setIsProcessing(false);
+      toast.error("Failed to encode URL");
     }
   };
 
+  const decode = () => {
+    try {
+      const decoded = decodeURIComponent(input);
+      setOutput(decoded);
+      toast.success("URL decoded successfully!");
+    } catch (error) {
+      toast.error("Failed to decode URL - invalid format");
+    }
+  };
+
+  const copyOutput = () => {
+    navigator.clipboard.writeText(output);
+    toast.success("Copied to clipboard!");
+  };
+
+  const swap = () => {
+    const temp = input;
+    setInput(output);
+    setOutput(temp);
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">URL Encoder/Decoder</h1>
-            <p className="text-lg text-muted-foreground">
-              Encode and decode URLs and query parameters
-            </p>
+    <div className="w-full max-w-4xl mx-auto p-4 space-y-6">
+      <Tabs defaultValue="encode" className="w-full">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="encode">Encode</TabsTrigger>
+          <TabsTrigger value="decode">Decode</TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="encode" className="space-y-4 mt-6">
+          <div className="space-y-2">
+            <Label>Input (Plain Text)</Label>
+            <Textarea
+              placeholder="Enter text or URL to encode..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="min-h-[150px] font-mono text-sm"
+            />
           </div>
 
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Link className="w-5 h-5" />
-                URL Encoder/Decoder
-              </CardTitle>
-              <CardDescription>
-                This tool is currently under development. More features coming
-                soon!
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="text-center py-12">
-                <Link className="w-16 h-16 mx-auto mb-4 text-muted-foreground" />
-                <h3 className="text-xl font-semibold mb-2">Coming Soon</h3>
-                <p className="text-muted-foreground mb-4">
-                  We're working hard to bring you this amazing tool. Stay tuned!
-                </p>
-                <Button onClick={handleProcess} disabled={isProcessing}>
-                  {isProcessing ? "Processing..." : "Try Demo"}
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
+          <div className="flex gap-3">
+            <Button onClick={encode} className="flex-1">
+              <Link2 className="w-4 h-4 mr-2" />
+              Encode URL
+            </Button>
+            <Button variant="outline" onClick={() => { setInput(''); setOutput(''); }}>
+              Clear
+            </Button>
+            {output && (
+              <Button variant="outline" onClick={swap}>
+                <ArrowDownUp className="w-4 h-4" />
+              </Button>
+            )}
+          </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>What to Expect</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Encode and decode URLs and query parameters. This tool will
-                provide a user-friendly interface with advanced features to help
-                you accomplish your tasks efficiently.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
+          {output && (
+            <Card>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Encoded Output</CardTitle>
+                  <Button size="sm" variant="outline" onClick={copyOutput}>
+                    <Copy className="w-4 h-4 mr-2" />
+                    Copy
+                  </Button>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-muted p-4 rounded-lg">
+                  <p className="font-mono text-sm break-all">{output}</p>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+        </TabsContent>
+
+        <TabsContent value="decode" className="space-y-4 mt-6">
+          <div className="space-y-2">
+            <Label>Input (Encoded URL)</Label>
+            <Textarea
+              placeholder="Enter encoded URL to decode..."
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="min-h-[150px] font-mono text-sm"
+            />
+          </div>
+
+          <div className="flex gap-3">
+            <Button onClick={decode} className="flex-1">
+              <Link2 className="w-4 h-4 mr-2" />
+              Decode URL
+            </Button>
+            <Button variant="outline" onClick={() => { setInput(''); setOutput(''); }}>
+              Clear
+            </Button>
+            {output && (
+              <Button variant="outline" onClick={swap}>
+                <ArrowDownUp className="w-4 h-4" />
+              </Button>
+            )}
+          </div>
+
+          {output && (
+            <Card>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg">Decoded Output</CardTitle>
+                  <Button size="sm" variant="outline" onClick={copyOutput}>
+                    <Copy className="w-4 h-4 mr-2" />
+                    Copy
+                  </Button>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-muted p-4 rounded-lg">
+                  <p className="font-mono text-sm break-all">{output}</p>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+        </TabsContent>
+      </Tabs>
+
+      <Card className="bg-muted/50">
+        <CardHeader>
+          <CardTitle className="text-sm">Examples</CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-2 text-sm">
+          <div>
+            <p className="font-medium mb-1">Encode:</p>
+            <p className="text-muted-foreground font-mono text-xs">
+              Input: "Hello World!" → Output: "Hello%20World%21"
+            </p>
+          </div>
+          <div>
+            <p className="font-medium mb-1">Decode:</p>
+            <p className="text-muted-foreground font-mono text-xs">
+              Input: "Hello%20World%21" → Output: "Hello World!"
+            </p>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 }

@@ -1,4 +1,5 @@
 import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
+import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
 
 export const metadata = {
   title: "EXIF Reader - Extract Image Metadata Information | 30tools",
@@ -34,31 +35,15 @@ export const metadata = {
     description:
       "Read EXIF data from photos online. Extract camera settings, GPS location, timestamp, and other metadata from JPEG, TIFF, and RAW image files.",
   },
-  canonical: "https://30tools.com/exif-reader",
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Exif Reader",
-  description:
-    "Professional exif reader for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
-  url: "https://30tools.com/exif-reader",
-  applicationCategory: "UtilityApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  author: {
-    "@type": "Organization",
-    name: "30tools",
-    url: "https://30tools.com",
+  alternates: {
+    canonical: "https://30tools.com/exif-reader",
   },
 };
 
 export default function ExifReaderPage() {
-  return <ExifReaderTool />;
+  return (
+    <ToolSEOLayout toolId="exif-reader">
+      <ExifReaderTool />
+    </ToolSEOLayout>
+  );
 }

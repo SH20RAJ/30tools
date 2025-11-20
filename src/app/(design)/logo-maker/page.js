@@ -1,4 +1,5 @@
 import LogoMaker from "@/components/tools/design/LogoMakerTool";
+import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
 
 export const metadata = {
   title: "Logo Maker - Create Simple Logos Online | 30tools",
@@ -10,6 +11,14 @@ export const metadata = {
     title: "Logo Maker - Create Simple Logos Online | 30tools",
     description: "Create simple logos and brand graphics online.",
     type: "website",
+    images: [
+      {
+        url: "/og-images/logo-maker.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Logo Maker Preview",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -24,28 +33,10 @@ export const metadata = {
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Logo Maker",
-  description:
-    "Professional logo maker tool. Free online processing with high-quality results. No registration required, instant results.",
-  url: "https://30tools.com/logo-maker",
-  applicationCategory: "UtilityApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  author: {
-    "@type": "Organization",
-    name: "30tools",
-    url: "https://30tools.com",
-  },
-};
-
 export default function LogoMakerPage() {
-  return <LogoMaker />;
+  return (
+    <ToolSEOLayout toolId="logo-maker">
+      <LogoMaker />
+    </ToolSEOLayout>
+  );
 }
