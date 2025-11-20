@@ -1,18 +1,39 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Upload, Camera, MapPin, Calendar, Info, FileImage, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
-import EXIF from "exif-js";
 
 export default function ExifReaderTool() {
   const [image, setImage] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [exifData, setExifData] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [exifLoaded, setExifLoaded] = useState(false);
   const fileInputRef = useRef(null);
+
+  // Load EXIF library from CDN
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !window.EXIF) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/exif-js@2.3.0/exif.min.js';
+      script.async = true;
+      script.onload = () => setExifLoaded(true);
+      script.onerror = () => {
+        toast.error("Failed to load EXIF library");
+        setExifLoaded(false);
+      };
+      document.body.appendChild(script);
+
+      return () => {
+        document.body.removeChild(script);
+      };
+    } else if (window.EXIF) {
+      setExifLoaded(true);
+    }
+  }, []);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -22,15 +43,20 @@ export default function ExifReaderTool() {
   };
 
   const processFile = (file) => {
+    if (!exifLoaded || !window.EXIF) {
+      toast.error("EXIF library is still loading. Please try again in a moment.");
+      return;
+    }
+
     setLoading(true);
     const url = URL.createObjectURL(file);
     setImage(file);
     setPreviewUrl(url);
     setExifData(null);
 
-    // Read EXIF data
-    EXIF.getData(file, function () {
-      const allTags = EXIF.getAllTags(this);
+    // Read EXIF data using CDN-loaded library
+    window.EXIF.getData(file, function () {
+      const allTags = window.EXIF.getAllTags(this);
 
       // Format important tags
       const formattedData = {

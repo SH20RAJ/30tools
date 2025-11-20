@@ -1,17 +1,43 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Upload, FileText, Download, AlertCircle } from "lucide-react";
 import { toast } from "sonner";
-import { PDFDocument } from "pdf-lib";
 
 export default function PDFEditorTool() {
   const [pdfFile, setPdfFile] = useState(null);
   const [pdfDoc, setPdfDoc] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [processing, setProcessing] = useState(false);
+  const [pdfLibLoaded, setPdfLibLoaded] = useState(false);
+
+  // Load pdf-lib from CDN
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !window.PDFLib) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js';
+      script.async = true;
+      script.onload = () => {
+        setPdfLibLoaded(true);
+        toast.success("PDF library loaded");
+      };
+      script.onerror = () => {
+        toast.error("Failed to load PDF library");
+        setPdfLibLoaded(false);
+      };
+      document.body.appendChild(script);
+
+      return () => {
+        if (document.body.contains(script)) {
+          document.body.removeChild(script);
+        }
+      };
+    } else if (window.PDFLib) {
+      setPdfLibLoaded(true);
+    }
+  }, []);
 
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
@@ -20,9 +46,14 @@ export default function PDFEditorTool() {
       return;
     }
 
+    if (!pdfLibLoaded || !window.PDFLib) {
+      toast.error("PDF library is still loading. Please try again.");
+      return;
+    }
+
     try {
       const arrayBuffer = await file.arrayBuffer();
-      const doc = await PDFDocument.load(arrayBuffer);
+      const doc = await window.PDFLib.PDFDocument.load(arrayBuffer);
       setPdfDoc(doc);
       setPdfFile(file);
       setPageCount(doc.getPageCount());
@@ -33,11 +64,11 @@ export default function PDFEditorTool() {
   };
 
   const deletePages = async (pagesToDelete) => {
-    if (!pdfDoc) return;
+    if (!pdfDoc || !window.PDFLib) return;
 
     setProcessing(true);
     try {
-      const newDoc = await PDFDocument.create();
+      const newDoc = await window.PDFLib.PDFDocument.create();
       const pages = await newDoc.copyPages(pdfDoc, pdfDoc.getPageIndices());
 
       pages.forEach((page, index) => {
@@ -57,11 +88,11 @@ export default function PDFEditorTool() {
   };
 
   const extractPages = async (pageNumbers) => {
-    if (!pdfDoc) return;
+    if (!pdfDoc || !window.PDFLib) return;
 
     setProcessing(true);
     try {
-      const newDoc = await PDFDocument.create();
+      const newDoc = await window.PDFLib.PDFDocument.create();
       const pages = await newDoc.copyPages(pdfDoc, pageNumbers);
       pages.forEach(page => newDoc.addPage(page));
 
@@ -78,11 +109,11 @@ export default function PDFEditorTool() {
   const mergePDFs = async (files) => {
     setProcessing(true);
     try {
-      const mergedDoc = await PDFDocument.create();
+      const mergedDoc = await window.PDFLib.PDFDocument.create();
 
       for (const file of files) {
         const arrayBuffer = await file.arrayBuffer();
-        const doc = await PDFDocument.load(arrayBuffer);
+        const doc = await window.PDFLib.PDFDocument.load(arrayBuffer);
         const pages = await mergedDoc.copyPages(doc, doc.getPageIndices());
         pages.forEach(page => mergedDoc.addPage(page));
       }
@@ -98,12 +129,13 @@ export default function PDFEditorTool() {
   };
 
   const rotatePage = async (pageIndex, degrees) => {
-    if (!pdfDoc) return;
+    if (!pdfDoc || !window.PDFLib) return;
 
     setProcessing(true);
     try {
       const page = pdfDoc.getPage(pageIndex);
-      page.setRotation({ angle: degrees, type: 'degrees' });
+      const { degrees: currentRotation } = page.getRotation();
+      page.setRotation(window.PDFLib.degrees((currentRotation + degrees) % 360));
 
       const pdfBytes = await pdfDoc.save();
       downloadPDF(pdfBytes, 'rotated-document.pdf');

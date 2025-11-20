@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -27,11 +27,43 @@ export default function HTMLToPDFTool() {
 </body>
 </html>`);
   const [converting, setConverting] = useState(false);
+  const [jsPDFLoaded, setJsPDFLoaded] = useState(false);
   const previewRef = useRef(null);
+
+  // Load jsPDF from CDN
+  useEffect(() => {
+    if (typeof window !== 'undefined' && !window.jspdf) {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.2/dist/jspdf.umd.min.js';
+      script.async = true;
+      script.onload = () => {
+        setJsPDFLoaded(true);
+        toast.success("PDF library loaded");
+      };
+      script.onerror = () => {
+        toast.error("Failed to load PDF library");
+        setJsPDFLoaded(false);
+      };
+      document.body.appendChild(script);
+
+      return () => {
+        if (document.body.contains(script)) {
+          document.body.removeChild(script);
+        }
+      };
+    } else if (window.jspdf) {
+      setJsPDFLoaded(true);
+    }
+  }, []);
 
   const generatePDF = async () => {
     if (!htmlContent.trim()) {
       toast.error("Please enter some HTML");
+      return;
+    }
+
+    if (!jsPDFLoaded || !window.jspdf) {
+      toast.error("PDF library is still loading. Please try again.");
       return;
     }
 
@@ -61,8 +93,8 @@ export default function HTMLToPDFTool() {
         logging: false
       });
 
-      // Convert to PDF using jsPDF
-      const { jsPDF } = await import('jspdf');
+      // Convert to PDF using jsPDF from CDN
+      const { jsPDF } = window.jspdf;
       const pdf = new jsPDF('p', 'mm', 'a4');
       const imgData = canvas.toDataURL('image/png');
 

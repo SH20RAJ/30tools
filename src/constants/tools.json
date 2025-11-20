@@ -426,6 +426,35 @@
             "web app icon generator"
           ],
           "primaryKeyword": "icon generator"
+        },
+        {
+          "id": "exif-reader",
+          "name": "EXIF Reader",
+          "description": "Extract metadata and EXIF data from images including camera settings and GPS location",
+          "route": "/exif-reader",
+          "popular": true,
+          "category": "image",
+          "keywords": [
+            "exif reader",
+            "exif data",
+            "image metadata",
+            "camera settings",
+            "gps location"
+          ],
+          "longTailKeywords": [
+            "exif reader online free",
+            "extract exif data from photos",
+            "read image metadata online",
+            "camera exif information viewer"
+          ],
+          "primaryKeyword": "exif reader",
+          "features": [
+            "Camera settings extraction",
+            "GPS location data",
+            "Timestamp information",
+            "Image properties",
+            "Raw metadata view"
+          ]
         }
       ]
     },
@@ -1239,6 +1268,60 @@
             "Organized structure",
             "Research tool"
           ]
+        },
+        {
+          "id": "youtube-analytics",
+          "name": "YouTube Video Analytics",
+          "description": "Analyze YouTube video performance and engagement metrics",
+          "route": "/youtube-analytics",
+          "popular": true,
+          "category": "youtube",
+          "keywords": [
+            "youtube analytics",
+            "youtube stats",
+            "video analytics",
+            "youtube metrics"
+          ],
+          "longTailKeywords": [
+            "youtube video analytics tool",
+            "analyze youtube video performance",
+            "youtube engagement metrics"
+          ],
+          "primaryKeyword": "youtube analytics",
+          "features": [
+            "View counts",
+            "Engagement metrics",
+            "Video details",
+            "Channel info",
+            "Performance tracking"
+          ]
+        },
+        {
+          "id": "youtube-trends",
+          "name": "YouTube Trends Analyzer",
+          "description": "Analyze trending videos and popular topics on YouTube",
+          "route": "/youtube-trends",
+          "popular": true,
+          "category": "youtube",
+          "keywords": [
+            "youtube trends",
+            "trending videos",
+            "youtube analytics",
+            "viral videos"
+          ],
+          "longTailKeywords": [
+            "youtube trends analyzer tool",
+            "analyze trending youtube videos",
+            "youtube viral content finder"
+          ],
+          "primaryKeyword": "youtube trends analyzer",
+          "features": [
+            "Trending videos",
+            "Popular topics",
+            "Category analysis",
+            "Regional trends",
+            "Best upload times"
+          ]
         }
       ]
     },
@@ -1806,6 +1889,33 @@
             "Preserve text structure",
             "Handle tables and lists",
             "Download as text file"
+          ]
+        },
+        {
+          "id": "email-extractor",
+          "name": "Email Extractor",
+          "description": "Extract email addresses from text and documents automatically",
+          "route": "/email-extractor",
+          "popular": true,
+          "category": "text",
+          "keywords": [
+            "email extractor",
+            "email finder",
+            "extract emails",
+            "email harvester"
+          ],
+          "longTailKeywords": [
+            "email extractor from text online",
+            "extract email addresses from document",
+            "find emails in text free"
+          ],
+          "primaryKeyword": "email extractor",
+          "features": [
+            "Extract from text",
+            "Remove duplicates",
+            "Copy all emails",
+            "Download as file",
+            "Bulk extraction"
           ]
         }
       ]
@@ -3918,6 +4028,86 @@
             "Live current time",
             "Relative time display",
             "Milliseconds support"
+          ]
+        },
+        {
+          "id": "whatsapp-link-generator",
+          "name": "WhatsApp Link Generator",
+          "description": "Create WhatsApp click-to-chat links with custom messages",
+          "route": "/whatsapp-link-generator",
+          "popular": true,
+          "category": "utilities",
+          "keywords": [
+            "whatsapp link",
+            "wa.me generator",
+            "whatsapp chat link",
+            "whatsapp link creator"
+          ],
+          "longTailKeywords": [
+            "whatsapp link generator with message",
+            "create wa.me link online",
+            "whatsapp direct chat link maker"
+          ],
+          "primaryKeyword": "whatsapp link generator",
+          "features": [
+            "Pre-filled messages",
+            "Phone validation",
+            "Direct chat links",
+            "QR code ready",
+            "Business friendly"
+          ]
+        },
+        {
+          "id": "paypal-link-generator",
+          "name": "PayPal Link Generator",
+          "description": "Generate PayPal payment links for donations and payments",
+          "route": "/paypal-link-generator",
+          "popular": false,
+          "category": "utilities",
+          "keywords": [
+            "paypal link",
+            "paypal payment link",
+            "paypal generator",
+            "payment link creator"
+          ],
+          "longTailKeywords": [
+            "paypal payment link generator free",
+            "create paypal donation link",
+            "paypal.me link generator"
+          ],
+          "primaryKeyword": "paypal link generator",
+          "features": [
+            "Set amounts",
+            "Currency selection",
+            "Item descriptions",
+            "Instant links",
+            "No account needed"
+          ]
+        },
+        {
+          "id": "whatsapp-checker",
+          "name": "WhatsApp Checker",
+          "description": "Check if a phone number is active on WhatsApp",
+          "route": "/whatsapp-checker",
+          "popular": false,
+          "category": "utilities",
+          "keywords": [
+            "whatsapp checker",
+            "whatsapp number check",
+            "verify whatsapp number"
+          ],
+          "longTailKeywords": [
+            "whatsapp number checker online free",
+            "check if number uses whatsapp",
+            "verify whatsapp account exists"
+          ],
+          "primaryKeyword": "whatsapp checker",
+          "features": [
+            "Number verification",
+            "No contact saving",
+            "Direct wa.me links",
+            "Bulk checking",
+            "Privacy focused"
           ]
         }
       ]
