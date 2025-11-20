@@ -33,7 +33,7 @@ export default function ToolSEOLayout({ toolId, children, faqs, features, review
         <BreadcrumbsEnhanced tool={mergedTool} />
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
-          <div className="">
+          <div className="lg:col-span-12">
             {/* Main Tool Area */}
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8">
               {children}
