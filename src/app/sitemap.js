@@ -21,6 +21,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/calculators`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/about`,
       lastModified: new Date("2025-06-15"),
       changeFrequency: "monthly",
@@ -73,14 +79,16 @@ export default function sitemap() {
       image: 0.95, // High demand category
       pdf: 0.92, // Very popular
       video: 0.9, // High value
-      text: 0.88, // Commonly used
-      seo: 0.85, // Professional tools
-      developer: 0.83, // Technical audience
-      utilities: 0.8, // General tools
-      audio: 0.78, // Specialized
-      converter: 0.85, // High utility
-      design: 0.82, // Creative tools
-      legal: 0.75, // Niche category
+      text: 0.9, // Commonly used
+      seo: 0.9, // Professional tools
+      developer: 0.9, // Technical audience
+      utilities: 0.9, // General tools
+      audio: 0.9, // Specialized
+      converter: 0.9, // High utility
+      design: 0.9, // Creative tools
+      legal: 0.9, // Niche category
+      calculators: 0.9, // Niche category
+      
     };
 
     priority = Math.min(0.95, categoryPriorities[tool.category] || 0.8);
