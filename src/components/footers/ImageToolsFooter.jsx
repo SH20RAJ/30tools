@@ -119,7 +119,25 @@ export default function ImageToolsFooter() {
           <p className="flex items-center text-sm text-muted-foreground">
             Made with{" "}
             <HeartIcon className="h-4 w-4 mx-1 text-destructive fill-current" />{" "}
-            for the web
+            for the web. Powered by{" "}
+            <a
+              href="https://sopkit.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              SopKit
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://strivio.world"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Strivio
+            </a>
+            .
           </p>
         </div>
       </div>

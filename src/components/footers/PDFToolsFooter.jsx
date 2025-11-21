@@ -130,7 +130,25 @@ export default function PDFToolsFooter() {
             <p className="text-sm text-muted-foreground">
               © 2025 30tools. Made with{" "}
               <Heart className="w-4 h-4 inline text-destructive animate-pulse" />{" "}
-              for everyone.
+              for everyone. Powered by{" "}
+              <a
+                href="https://sopkit.github.io"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                SopKit
+              </a>{" "}
+              and{" "}
+              <a
+                href="https://strivio.world"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline"
+              >
+                Strivio
+              </a>
+              .
             </p>
             <p className="text-sm text-muted-foreground mt-2 md:mt-0">
               Free • Secure • No Registration Required
