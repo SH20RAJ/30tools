@@ -2,8 +2,8 @@
   "metadata": {
     "version": "10.0",
     "lastUpdated": "2025-11-23",
-    "totalTools": 171,
-    "totalCategories": 14
+    "totalTools": 167,
+    "totalCategories": 13
   },
   "categories": {
     "generators": {
@@ -18,29 +18,7 @@
           "description": "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes",
           "route": "/aesthetic-bio-generator",
           "popular": true,
-          "category": "generators",
-          "keywords": [
-            "aesthetic bio generator",
-            "instagram bio",
-            "twitter bio",
-            "tiktok bio",
-            "social media bio"
-          ],
-          "longTailKeywords": [
-            "aesthetic bio generator for instagram",
-            "cute bio generator with emojis",
-            "aesthetic twitter bio ideas",
-            "tiktok bio generator aesthetic",
-            "social media bio creator"
-          ],
-          "primaryKeyword": "aesthetic bio generator",
-          "features": [
-            "6 aesthetic themes",
-            "AI-powered suggestions",
-            "Platform optimization",
-            "Emoji integration",
-            "Copy to clipboard"
-          ]
+          "category": "generators"
         },
         {
           "id": "startup-name-generator",
@@ -48,28 +26,7 @@
           "description": "Generate trendy startup names with AI. Perfect for indie hackers and entrepreneurs",
           "route": "/startup-name-generator",
           "popular": true,
-          "category": "generators",
-          "keywords": [
-            "startup name generator",
-            "business name generator",
-            "company name ideas",
-            "startup names"
-          ],
-          "longTailKeywords": [
-            "ai startup name generator free",
-            "tech startup name ideas",
-            "creative business name generator",
-            "startup company name generator",
-            "indie hacker name generator"
-          ],
-          "primaryKeyword": "startup name generator",
-          "features": [
-            "AI-powered names",
-            "Industry-specific",
-            "Domain suggestions",
-            "Trending patterns",
-            "Save favorites"
-          ]
+          "category": "generators"
         },
         {
           "id": "fake-chat-generator",
@@ -77,28 +34,7 @@
           "description": "Create realistic fake chat screenshots for WhatsApp, Instagram DM, iMessage, and Discord",
           "route": "/fake-chat-generator",
           "popular": true,
-          "category": "generators",
-          "keywords": [
-            "fake chat generator",
-            "whatsapp fake chat",
-            "instagram dm generator",
-            "imessage generator"
-          ],
-          "longTailKeywords": [
-            "fake whatsapp chat generator",
-            "fake instagram dm creator",
-            "imessage fake conversation",
-            "discord fake chat maker",
-            "fake text message generator"
-          ],
-          "primaryKeyword": "fake chat generator",
-          "features": [
-            "4 chat platforms",
-            "Realistic design",
-            "Export as image",
-            "Custom messages",
-            "Meme ready"
-          ]
+          "category": "generators"
         },
         {
           "id": "excuse-generator",
@@ -106,28 +42,7 @@
           "description": "Generate creative excuses for work, school, social events, and family situations",
           "route": "/excuse-generator",
           "popular": true,
-          "category": "generators",
-          "keywords": [
-            "excuse generator",
-            "funny excuses",
-            "creative excuses",
-            "excuse maker"
-          ],
-          "longTailKeywords": [
-            "excuse generator for work",
-            "funny excuse generator",
-            "creative excuse maker",
-            "excuse generator for school",
-            "social excuse generator"
-          ],
-          "primaryKeyword": "excuse generator",
-          "features": [
-            "Multiple categories",
-            "Believability levels",
-            "AI-powered creativity",
-            "Share to social",
-            "Humor-focused"
-          ]
+          "category": "generators"
         },
         {
           "id": "ai-image-generator",
@@ -135,29 +50,7 @@
           "description": "Generate stunning images from text prompts using free AI. Enter your idea, get a unique image instantly.",
           "route": "/ai-image-generator",
           "popular": true,
-          "category": "generators",
-          "keywords": [
-            "ai image generator",
-            "text to image",
-            "image ai",
-            "generate image",
-            "ai art"
-          ],
-          "longTailKeywords": [
-            "free ai image generator online",
-            "text to image ai generator",
-            "generate images from prompts",
-            "ai art generator no signup",
-            "create images with ai free"
-          ],
-          "primaryKeyword": "ai image generator",
-          "features": [
-            "Text-to-image AI",
-            "No signup required",
-            "Fast generation",
-            "Download image",
-            "Shareable results"
-          ]
+          "category": "generators"
         },
         {
           "id": "ai-poetry-generator",
@@ -165,29 +58,7 @@
           "description": "Create original poems on any topic with AI. Enter a theme or mood and get a unique poem instantly.",
           "route": "/ai-poetry-generator",
           "popular": true,
-          "category": "generators",
-          "keywords": [
-            "ai poetry generator",
-            "poem generator",
-            "ai poem",
-            "generate poem",
-            "poetry ai"
-          ],
-          "longTailKeywords": [
-            "free ai poetry generator online",
-            "generate poems with ai",
-            "ai poem writer",
-            "poetry generator no signup",
-            "create poems with ai free"
-          ],
-          "primaryKeyword": "ai poetry generator",
-          "features": [
-            "AI poem creation",
-            "Custom themes",
-            "Instant results",
-            "Copy & share",
-            "Minimal UI"
-          ]
+          "category": "generators"
         },
         {
           "id": "ai-voice-generator",
@@ -195,29 +66,7 @@
           "description": "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
           "route": "/ai-voice-generator",
           "popular": true,
-          "category": "generators",
-          "keywords": [
-            "ai voice generator",
-            "text to speech",
-            "ai audio",
-            "generate voice",
-            "speech ai"
-          ],
-          "longTailKeywords": [
-            "free ai voice generator online",
-            "text to speech ai generator",
-            "generate audio from text",
-            "ai speech generator no signup",
-            "create voice with ai free"
-          ],
-          "primaryKeyword": "ai voice generator",
-          "features": [
-            "Text-to-speech AI",
-            "Multiple voices",
-            "Download MP3",
-            "No signup required",
-            "Minimal UI"
-          ]
+          "category": "generators"
         }
       ]
     },
@@ -233,28 +82,7 @@
           "description": "Compress images to reduce file size while maintaining quality",
           "route": "/image-compressor",
           "popular": true,
-          "category": "image",
-          "keywords": [
-            "image compressor",
-            "compress image",
-            "image optimizer",
-            "reduce image size"
-          ],
-          "longTailKeywords": [
-            "compress image without losing quality",
-            "bulk image compressor online free",
-            "jpeg png compressor online",
-            "image compressor for web upload",
-            "compress images for email attachment"
-          ],
-          "primaryKeyword": "image compressor",
-          "features": [
-            "Up to 90% size reduction",
-            "Batch compression",
-            "Quality control",
-            "Multiple formats",
-            "No watermark"
-          ]
+          "category": "image"
         },
         {
           "id": "image-converter",
@@ -305,28 +133,7 @@
           "description": "Convert images to Base64 strings and decode Base64 to images",
           "route": "/base64-image",
           "popular": true,
-          "category": "image",
-          "keywords": [
-            "base64 image",
-            "image to base64",
-            "base64 to image",
-            "base64 encoder"
-          ],
-          "longTailKeywords": [
-            "image to base64 converter online",
-            "base64 image encoder decoder",
-            "convert image to base64 string",
-            "base64 to image converter free",
-            "online base64 image tool"
-          ],
-          "primaryKeyword": "base64 image converter",
-          "features": [
-            "Image upload",
-            "Base64 encoding/decoding",
-            "Image preview",
-            "Download converted images",
-            "Multiple image formats"
-          ]
+          "category": "image"
         },
         {
           "id": "image-cropper",
@@ -366,22 +173,7 @@
           "description": "Create professional logos with text, fonts, and custom colors",
           "route": "/logo-generator",
           "popular": true,
-          "category": "image",
-          "keywords": [
-            "logo maker",
-            "free logo generator",
-            "logo creator",
-            "business logo",
-            "brand logo"
-          ],
-          "longTailKeywords": [
-            "free logo generator no watermark",
-            "simple logo maker online",
-            "business logo creator free",
-            "text based logo generator",
-            "professional logo design tool"
-          ],
-          "primaryKeyword": "logo generator"
+          "category": "image"
         },
         {
           "id": "favicon-generator",
@@ -389,21 +181,7 @@
           "description": "Generate favicons from text, images, or emojis for websites",
           "route": "/favicon-generator",
           "popular": true,
-          "category": "image",
-          "keywords": [
-            "favicon maker",
-            "website icon",
-            "ico generator",
-            "app icon"
-          ],
-          "longTailKeywords": [
-            "favicon generator from text online",
-            "emoji favicon generator",
-            "favicon generator all sizes",
-            "website favicon creator free",
-            "ico file generator online"
-          ],
-          "primaryKeyword": "favicon generator"
+          "category": "image"
         },
         {
           "id": "icon-generator",
@@ -411,21 +189,7 @@
           "description": "Generate app icons for iOS, Android, and web applications",
           "route": "/icon-generator",
           "popular": true,
-          "category": "image",
-          "keywords": [
-            "app icon",
-            "ios icon",
-            "android icon",
-            "web icon"
-          ],
-          "longTailKeywords": [
-            "app icon generator all sizes",
-            "social media icon generator",
-            "ios app icon creator",
-            "android icon maker free",
-            "web app icon generator"
-          ],
-          "primaryKeyword": "icon generator"
+          "category": "image"
         },
         {
           "id": "exif-reader",
@@ -433,28 +197,7 @@
           "description": "Extract metadata and EXIF data from images including camera settings and GPS location",
           "route": "/exif-reader",
           "popular": true,
-          "category": "image",
-          "keywords": [
-            "exif reader",
-            "exif data",
-            "image metadata",
-            "camera settings",
-            "gps location"
-          ],
-          "longTailKeywords": [
-            "exif reader online free",
-            "extract exif data from photos",
-            "read image metadata online",
-            "camera exif information viewer"
-          ],
-          "primaryKeyword": "exif reader",
-          "features": [
-            "Camera settings extraction",
-            "GPS location data",
-            "Timestamp information",
-            "Image properties",
-            "Raw metadata view"
-          ]
+          "category": "image"
         }
       ]
     },
@@ -470,28 +213,7 @@
           "description": "Merge multiple PDF files into one document",
           "route": "/pdf-merger",
           "popular": true,
-          "category": "pdf",
-          "keywords": [
-            "merge pdf",
-            "combine pdf",
-            "pdf joiner",
-            "pdf merger online"
-          ],
-          "longTailKeywords": [
-            "merge pdf files online free no watermark",
-            "combine multiple pdf into one online",
-            "pdf merger with bookmark preservation",
-            "bulk pdf merger free tool",
-            "merge pdf files without losing quality"
-          ],
-          "primaryKeyword": "pdf merger",
-          "features": [
-            "Drag & drop interface",
-            "Merge unlimited files",
-            "Preserve bookmarks",
-            "No file size limits",
-            "Batch processing"
-          ]
+          "category": "pdf"
         },
         {
           "id": "pdf-splitter",
@@ -588,28 +310,7 @@
           "description": "Convert PDF pages to high-quality JPG, PNG images",
           "route": "/pdf-to-image",
           "popular": true,
-          "category": "pdf",
-          "keywords": [
-            "pdf to image",
-            "pdf to jpg",
-            "convert pdf to png",
-            "pdf converter"
-          ],
-          "longTailKeywords": [
-            "pdf to jpg converter high quality",
-            "convert pdf pages to png",
-            "pdf to image converter online free",
-            "extract images from pdf online",
-            "pdf pages to pictures converter"
-          ],
-          "primaryKeyword": "pdf to image converter",
-          "features": [
-            "High quality conversion",
-            "Multiple formats",
-            "Batch processing",
-            "Custom DPI",
-            "All pages or selection"
-          ]
+          "category": "pdf"
         },
         {
           "id": "excel-to-pdf",
@@ -617,28 +318,7 @@
           "description": "Convert Excel spreadsheets to PDF format with formatting",
           "route": "/excel-to-pdf",
           "popular": true,
-          "category": "pdf",
-          "keywords": [
-            "excel to pdf",
-            "xlsx to pdf",
-            "spreadsheet to pdf",
-            "convert excel"
-          ],
-          "longTailKeywords": [
-            "convert xlsx to pdf online",
-            "excel spreadsheet to pdf",
-            "xlsx to pdf converter free",
-            "excel workbook to pdf",
-            "preserve excel formatting in pdf"
-          ],
-          "primaryKeyword": "excel to pdf converter",
-          "features": [
-            "Preserve formatting",
-            "Multiple sheets",
-            "Chart support",
-            "Custom page size",
-            "Password protection"
-          ]
+          "category": "pdf"
         },
         {
           "id": "powerpoint-to-pdf",
@@ -646,28 +326,7 @@
           "description": "Convert PowerPoint presentations to PDF format",
           "route": "/powerpoint-to-pdf",
           "popular": true,
-          "category": "pdf",
-          "keywords": [
-            "powerpoint to pdf",
-            "pptx to pdf",
-            "presentation to pdf",
-            "convert ppt"
-          ],
-          "longTailKeywords": [
-            "pptx to pdf converter online",
-            "presentation to pdf free",
-            "powerpoint slides to pdf",
-            "convert ppt to pdf online",
-            "pptx pdf converter no watermark"
-          ],
-          "primaryKeyword": "powerpoint to pdf converter",
-          "features": [
-            "Slide transitions preserved",
-            "Speaker notes",
-            "Custom quality",
-            "Batch conversion",
-            "Layout optimization"
-          ]
+          "category": "pdf"
         },
         {
           "id": "image-to-pdf",
@@ -675,28 +334,7 @@
           "description": "Convert multiple images to a single PDF document",
           "route": "/image-to-pdf",
           "popular": true,
-          "category": "pdf",
-          "keywords": [
-            "image to pdf",
-            "jpg to pdf",
-            "convert images to pdf",
-            "photos to pdf"
-          ],
-          "longTailKeywords": [
-            "convert multiple images to pdf",
-            "jpg to pdf converter online",
-            "merge images into pdf",
-            "photos to pdf online free",
-            "combine pictures into pdf"
-          ],
-          "primaryKeyword": "image to pdf converter",
-          "features": [
-            "Multiple image formats",
-            "Custom page layouts",
-            "Compression options",
-            "Drag & drop ordering",
-            "Auto-resize images"
-          ]
+          "category": "pdf"
         }
       ]
     },
@@ -712,28 +350,7 @@
           "description": "Compress video files to reduce size",
           "route": "/video-compressor",
           "popular": true,
-          "category": "video",
-          "keywords": [
-            "compress video",
-            "reduce video size",
-            "video optimizer",
-            "video compressor online"
-          ],
-          "longTailKeywords": [
-            "compress video for whatsapp online free",
-            "reduce video size without losing quality",
-            "video compressor for email attachment",
-            "compress video online no watermark",
-            "bulk video compressor free"
-          ],
-          "primaryKeyword": "video compressor",
-          "features": [
-            "Reduce file size by 80%",
-            "Multiple format support",
-            "Batch compression",
-            "No watermark",
-            "Quality presets"
-          ]
+          "category": "video"
         },
         {
           "id": "video-to-gif",
@@ -782,28 +399,7 @@
           "description": "Convert videos and audio files to MP3 format",
           "route": "/mp3-converter",
           "popular": true,
-          "category": "video",
-          "keywords": [
-            "mp3 converter",
-            "video to mp3",
-            "audio converter",
-            "convert to mp3"
-          ],
-          "longTailKeywords": [
-            "convert video to mp3 online free",
-            "youtube to mp3 converter",
-            "mp4 to mp3 converter online",
-            "video to audio converter",
-            "extract audio from video free"
-          ],
-          "primaryKeyword": "mp3 converter",
-          "features": [
-            "High quality conversion",
-            "Multiple input formats",
-            "Fast processing",
-            "No file limits",
-            "Batch conversion"
-          ]
+          "category": "video"
         },
         {
           "id": "youtube-thumbnail-generator",
@@ -819,25 +415,7 @@
           "description": "Resize videos for TikTok with perfect aspect ratio",
           "route": "/tiktok-video-resizer",
           "popular": true,
-          "category": "video",
-          "keywords": [
-            "tiktok resizer",
-            "resize video for tiktok",
-            "tiktok video size",
-            "video aspect ratio"
-          ],
-          "longTailKeywords": [
-            "resize video for tiktok online free",
-            "convert video to 9:16",
-            "tiktok video format converter"
-          ],
-          "primaryKeyword": "tiktok video resizer",
-          "features": [
-            "9:16 Aspect Ratio",
-            "No Watermark",
-            "Fast Processing",
-            "MP4 Support"
-          ]
+          "category": "video"
         },
         {
           "id": "video-player",
@@ -845,30 +423,7 @@
           "description": "Create customizable video players with multiple themes and libraries",
           "route": "/video-player",
           "popular": true,
-          "category": "video",
-          "keywords": [
-            "video player generator",
-            "custom video player",
-            "embed video player",
-            "html5 video player"
-          ],
-          "longTailKeywords": [
-            "create custom video player online",
-            "video player embed code generator",
-            "responsive video player generator",
-            "video player with custom themes",
-            "plyr video player generator",
-            "video.js player generator",
-            "fluid player generator"
-          ],
-          "primaryKeyword": "video player generator",
-          "features": [
-            "Multiple player libraries",
-            "Custom themes",
-            "Embed codes",
-            "Fullscreen support",
-            "Share links"
-          ]
+          "category": "video"
         },
         {
           "id": "terabox-downloader",
@@ -876,33 +431,7 @@
           "description": "Download Terabox videos with direct links and embed custom video players",
           "route": "/terabox-downloader",
           "popular": true,
-          "category": "video",
-          "keywords": [
-            "terabox downloader",
-            "download terabox videos",
-            "terabox video player",
-            "terabox online downloader"
-          ],
-          "longTailKeywords": [
-            "terabox video downloader free",
-            "how to download videos from terabox",
-            "terabox downloader without login",
-            "download terabox movies free",
-            "terabox direct download link",
-            "terabox video downloader no limit",
-            "embed terabox videos website",
-            "terabox player generator",
-            "terabox video streaming online",
-            "download large files from terabox"
-          ],
-          "primaryKeyword": "terabox video downloader",
-          "features": [
-            "Free downloads",
-            "Multiple mirrors",
-            "Custom players",
-            "Direct links",
-            "No limits"
-          ]
+          "category": "video"
         }
       ]
     },
@@ -918,28 +447,7 @@
           "description": "Download YouTube video thumbnails in HD, FHD, and 4K quality",
           "route": "/youtube-thumbnail-downloader",
           "popular": true,
-          "category": "youtube",
-          "keywords": [
-            "youtube thumbnail",
-            "download thumbnail",
-            "youtube image",
-            "video thumbnail"
-          ],
-          "longTailKeywords": [
-            "download youtube thumbnail hd",
-            "youtube thumbnail downloader online free",
-            "get youtube video thumbnail image",
-            "youtube thumbnail extractor",
-            "download youtube thumbnail 4k quality"
-          ],
-          "primaryKeyword": "youtube thumbnail downloader",
-          "features": [
-            "HD/FHD/4K quality",
-            "Bulk download",
-            "All formats",
-            "No watermark",
-            "Fast downloads"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-downloader",
@@ -947,37 +455,7 @@
           "description": "Download YouTube videos and audio in multiple formats and qualities",
           "route": "/youtube-downloader",
           "popular": true,
-          "category": "youtube",
-          "keywords": [
-            "youtube downloader",
-            "youtube video downloader",
-            "download youtube video",
-            "youtube to mp3",
-            "youtube to mp4",
-            "video downloader",
-            "save from net",
-            "descargar videos de youtube",
-            "baixar vídeo do youtube"
-          ],
-          "longTailKeywords": [
-            "download youtube video online free",
-            "youtube to mp3 converter high quality",
-            "youtube video downloader 1080p",
-            "download youtube audio only",
-            "youtube downloader no software needed",
-            "youtube video downloader for pc",
-            "free youtube video downloader online",
-            "youtube video downloader hd",
-            "youtube video downloader app"
-          ],
-          "primaryKeyword": "youtube video downloader",
-          "features": [
-            "Multiple formats",
-            "HD quality",
-            "Audio extraction",
-            "Batch download",
-            "No registration"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-tag-generator",
@@ -985,28 +463,7 @@
           "description": "Generate optimized YouTube tags to boost video SEO and discoverability",
           "route": "/youtube-tag-generator",
           "popular": true,
-          "category": "youtube",
-          "keywords": [
-            "youtube tags",
-            "video tags",
-            "youtube seo",
-            "tag generator"
-          ],
-          "longTailKeywords": [
-            "youtube tag generator for more views",
-            "best youtube tags for viral videos",
-            "youtube hashtag generator free",
-            "video tag optimizer for youtube",
-            "youtube tag research tool"
-          ],
-          "primaryKeyword": "youtube tag generator",
-          "features": [
-            "SEO optimized",
-            "Trending tags",
-            "Bulk generation",
-            "Competitor analysis",
-            "Category specific"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-transcript-downloader",
@@ -1014,28 +471,7 @@
           "description": "Download YouTube video transcripts and subtitles in multiple formats",
           "route": "/youtube-transcript-downloader",
           "popular": true,
-          "category": "youtube",
-          "keywords": [
-            "youtube transcript",
-            "youtube subtitles",
-            "download captions",
-            "youtube srt"
-          ],
-          "longTailKeywords": [
-            "download youtube transcript free",
-            "youtube subtitle downloader srt",
-            "extract text from youtube video",
-            "youtube caption downloader",
-            "convert youtube to text transcript"
-          ],
-          "primaryKeyword": "youtube transcript downloader",
-          "features": [
-            "Multiple languages",
-            "SRT/VTT formats",
-            "Auto-generated captions",
-            "Timestamped",
-            "Bulk processing"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-shorts-downloader",
@@ -1043,28 +479,7 @@
           "description": "Download YouTube Shorts videos in high quality for offline viewing",
           "route": "/youtube-shorts-downloader",
           "popular": true,
-          "category": "youtube",
-          "keywords": [
-            "youtube shorts",
-            "download shorts",
-            "shorts downloader",
-            "youtube short video"
-          ],
-          "longTailKeywords": [
-            "download youtube shorts video free",
-            "youtube shorts downloader online",
-            "save youtube shorts to phone",
-            "youtube shorts video downloader hd",
-            "download vertical videos from youtube"
-          ],
-          "primaryKeyword": "youtube shorts downloader",
-          "features": [
-            "HD quality",
-            "Fast downloads",
-            "Mobile optimized",
-            "Batch download",
-            "No watermark"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-timestamp-generator",
@@ -1072,28 +487,7 @@
           "description": "Automatically generate chapter timestamps for YouTube videos",
           "route": "/youtube-timestamp-generator",
           "popular": false,
-          "category": "youtube",
-          "keywords": [
-            "youtube timestamps",
-            "video chapters",
-            "youtube chapters",
-            "timestamp generator"
-          ],
-          "longTailKeywords": [
-            "youtube timestamp generator free",
-            "create youtube video chapters",
-            "automatic timestamp generator",
-            "youtube chapter maker",
-            "video timestamp tool"
-          ],
-          "primaryKeyword": "youtube timestamp generator",
-          "features": [
-            "Auto generation",
-            "Custom chapters",
-            "Copy-paste format",
-            "Time optimization",
-            "SEO benefits"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-embed-generator",
@@ -1101,28 +495,7 @@
           "description": "Generate customized YouTube embed codes with advanced options",
           "route": "/youtube-embed-generator",
           "popular": false,
-          "category": "youtube",
-          "keywords": [
-            "youtube embed",
-            "embed code",
-            "youtube iframe",
-            "embed generator"
-          ],
-          "longTailKeywords": [
-            "youtube embed code generator custom",
-            "responsive youtube embed code",
-            "youtube iframe generator",
-            "embed youtube video in website",
-            "custom youtube player embed"
-          ],
-          "primaryKeyword": "youtube embed code generator",
-          "features": [
-            "Custom dimensions",
-            "Responsive design",
-            "Privacy options",
-            "Autoplay control",
-            "No related videos"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-gif-maker",
@@ -1130,28 +503,7 @@
           "description": "Create animated GIFs from YouTube video clips",
           "route": "/youtube-gif-maker",
           "popular": false,
-          "category": "youtube",
-          "keywords": [
-            "youtube to gif",
-            "gif maker",
-            "video to gif",
-            "youtube gif"
-          ],
-          "longTailKeywords": [
-            "create gif from youtube video",
-            "youtube to gif converter online",
-            "make gif from youtube clip",
-            "youtube video gif maker free",
-            "convert youtube to animated gif"
-          ],
-          "primaryKeyword": "youtube to gif converter",
-          "features": [
-            "Custom duration",
-            "Quality control",
-            "Size optimization",
-            "Frame rate control",
-            "Easy sharing"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-script-generator",
@@ -1159,28 +511,7 @@
           "description": "Generate engaging YouTube video scripts with AI assistance",
           "route": "/youtube-script-generator",
           "popular": false,
-          "category": "youtube",
-          "keywords": [
-            "youtube script",
-            "ai script",
-            "video script",
-            "script generator"
-          ],
-          "longTailKeywords": [
-            "ai youtube script generator free",
-            "youtube video script writer",
-            "automatic script generator for youtube",
-            "ai video script creator",
-            "youtube content script maker"
-          ],
-          "primaryKeyword": "youtube script generator",
-          "features": [
-            "AI powered",
-            "Multiple styles",
-            "SEO optimized",
-            "Hook generation",
-            "Call-to-action suggestions"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-comment-responder",
@@ -1188,28 +519,7 @@
           "description": "Generate smart replies for YouTube comments with different tones",
           "route": "/youtube-comment-responder",
           "popular": false,
-          "category": "youtube",
-          "keywords": [
-            "youtube comments",
-            "comment reply",
-            "ai response",
-            "comment manager"
-          ],
-          "longTailKeywords": [
-            "ai youtube comment responder",
-            "automatic comment reply generator",
-            "youtube comment management tool",
-            "smart comment replies youtube",
-            "ai comment response generator"
-          ],
-          "primaryKeyword": "youtube comment responder",
-          "features": [
-            "Multiple tones",
-            "Context aware",
-            "Bulk responses",
-            "Engagement boost",
-            "Time saving"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-idea-generator",
@@ -1217,28 +527,7 @@
           "description": "Generate viral video ideas based on your channel niche",
           "route": "/youtube-idea-generator",
           "popular": false,
-          "category": "youtube",
-          "keywords": [
-            "youtube ideas",
-            "video ideas",
-            "content ideas",
-            "youtube inspiration"
-          ],
-          "longTailKeywords": [
-            "youtube video idea generator",
-            "viral youtube content ideas",
-            "youtube channel content planner",
-            "youtube video topic generator",
-            "creative youtube video ideas"
-          ],
-          "primaryKeyword": "youtube video idea generator",
-          "features": [
-            "Niche specific",
-            "Trending topics",
-            "Title suggestions",
-            "Thumbnail ideas",
-            "Series concepts"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-pack-downloader",
@@ -1246,28 +535,7 @@
           "description": "Download all YouTube video assets: title, description, tags, transcript, and thumbnail",
           "route": "/youtube-pack-downloader",
           "popular": false,
-          "category": "youtube",
-          "keywords": [
-            "youtube pack",
-            "youtube assets",
-            "video assets",
-            "youtube data"
-          ],
-          "longTailKeywords": [
-            "download youtube video assets bundle",
-            "youtube video pack downloader",
-            "extract all youtube video data",
-            "youtube video information downloader",
-            "youtube content pack extractor"
-          ],
-          "primaryKeyword": "youtube pack downloader",
-          "features": [
-            "Complete package",
-            "One-click download",
-            "Multiple formats",
-            "Organized structure",
-            "Research tool"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-analytics",
@@ -1275,26 +543,7 @@
           "description": "Analyze YouTube video performance and engagement metrics",
           "route": "/youtube-analytics",
           "popular": true,
-          "category": "youtube",
-          "keywords": [
-            "youtube analytics",
-            "youtube stats",
-            "video analytics",
-            "youtube metrics"
-          ],
-          "longTailKeywords": [
-            "youtube video analytics tool",
-            "analyze youtube video performance",
-            "youtube engagement metrics"
-          ],
-          "primaryKeyword": "youtube analytics",
-          "features": [
-            "View counts",
-            "Engagement metrics",
-            "Video details",
-            "Channel info",
-            "Performance tracking"
-          ]
+          "category": "youtube"
         },
         {
           "id": "youtube-trends",
@@ -1302,26 +551,7 @@
           "description": "Analyze trending videos and popular topics on YouTube",
           "route": "/youtube-trends",
           "popular": true,
-          "category": "youtube",
-          "keywords": [
-            "youtube trends",
-            "trending videos",
-            "youtube analytics",
-            "viral videos"
-          ],
-          "longTailKeywords": [
-            "youtube trends analyzer tool",
-            "analyze trending youtube videos",
-            "youtube viral content finder"
-          ],
-          "primaryKeyword": "youtube trends analyzer",
-          "features": [
-            "Trending videos",
-            "Popular topics",
-            "Category analysis",
-            "Regional trends",
-            "Best upload times"
-          ]
+          "category": "youtube"
         }
       ]
     },
@@ -1337,25 +567,7 @@
           "description": "Compress audio files to reduce size",
           "route": "/audio-compressor",
           "popular": true,
-          "category": "audio",
-          "keywords": [
-            "audio compressor",
-            "compress mp3",
-            "reduce audio size",
-            "shrink audio"
-          ],
-          "longTailKeywords": [
-            "compress mp3 online free",
-            "reduce audio file size without losing quality",
-            "audio size reducer"
-          ],
-          "primaryKeyword": "audio compressor",
-          "features": [
-            "Reduce MP3 Size",
-            "Batch Compression",
-            "High Quality",
-            "Multiple Formats"
-          ]
+          "category": "audio"
         },
         {
           "id": "audio-converter",
@@ -1363,25 +575,7 @@
           "description": "Convert audio between formats (MP3, WAV, FLAC)",
           "route": "/audio-converter",
           "popular": true,
-          "category": "audio",
-          "keywords": [
-            "audio converter",
-            "mp3 converter",
-            "wav converter",
-            "convert audio"
-          ],
-          "longTailKeywords": [
-            "convert audio to mp3 online",
-            "wav to mp3 converter free",
-            "audio format converter"
-          ],
-          "primaryKeyword": "audio converter",
-          "features": [
-            "Support All Formats",
-            "Batch Conversion",
-            "High Quality Output",
-            "Fast Processing"
-          ]
+          "category": "audio"
         },
         {
           "id": "audio-editor",
@@ -1390,25 +584,7 @@
           "route": "/audio-editor",
           "popular": true,
           "premium": true,
-          "category": "audio",
-          "keywords": [
-            "audio editor",
-            "edit mp3",
-            "cut audio",
-            "trim audio"
-          ],
-          "longTailKeywords": [
-            "online audio editor free",
-            "cut mp3 online",
-            "trim audio file online"
-          ],
-          "primaryKeyword": "audio editor",
-          "features": [
-            "Trim & Cut",
-            "Fade In/Out",
-            "Volume Control",
-            "Mix Audio"
-          ]
+          "category": "audio"
         },
         {
           "id": "audio-trimmer",
@@ -1416,28 +592,7 @@
           "description": "Trim and cut audio clips to specific lengths",
           "route": "/audio-trimmer",
           "popular": true,
-          "category": "audio",
-          "keywords": [
-            "audio trimmer",
-            "cut audio",
-            "trim audio",
-            "audio cutter"
-          ],
-          "longTailKeywords": [
-            "cut audio online free",
-            "trim mp3 file online",
-            "audio clipper tool",
-            "cut audio track online",
-            "trim audio file free"
-          ],
-          "primaryKeyword": "audio trimmer",
-          "features": [
-            "Precise trimming",
-            "Waveform visualization",
-            "Multiple formats",
-            "Fade in/out",
-            "Loop creation"
-          ]
+          "category": "audio"
         },
         {
           "id": "voice-recorder",
@@ -1445,28 +600,7 @@
           "description": "Record voice and audio directly in your browser",
           "route": "/voice-recorder",
           "popular": true,
-          "category": "audio",
-          "keywords": [
-            "voice recorder",
-            "online recorder",
-            "audio recorder",
-            "microphone recorder"
-          ],
-          "longTailKeywords": [
-            "online voice recorder free",
-            "record audio from browser",
-            "web voice recorder",
-            "browser audio recorder",
-            "microphone recorder online"
-          ],
-          "primaryKeyword": "voice recorder",
-          "features": [
-            "High quality recording",
-            "Real-time monitoring",
-            "Download options",
-            "No time limits",
-            "Background noise reduction"
-          ]
+          "category": "audio"
         },
         {
           "id": "text-to-speech",
@@ -1474,28 +608,7 @@
           "description": "Convert text to natural sounding speech audio",
           "route": "/text-to-speech",
           "popular": true,
-          "category": "audio",
-          "keywords": [
-            "text to speech",
-            "tts",
-            "voice generator",
-            "speech synthesizer"
-          ],
-          "longTailKeywords": [
-            "text to speech online free natural",
-            "convert text to mp3 online",
-            "natural voice generator",
-            "ai text to speech free",
-            "text to audio converter"
-          ],
-          "primaryKeyword": "text to speech",
-          "features": [
-            "Natural voices",
-            "Multiple languages",
-            "Speed control",
-            "Download MP3",
-            "SSML support"
-          ]
+          "category": "audio"
         }
       ]
     },
@@ -1511,28 +624,7 @@
           "description": "Count words, characters, paragraphs in text",
           "route": "/word-counter",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "word counter",
-            "character counter",
-            "text counter",
-            "word count"
-          ],
-          "longTailKeywords": [
-            "word counter for google docs",
-            "academic word counter with citations",
-            "word counter online free no limit",
-            "character counter with spaces",
-            "paragraph and sentence counter"
-          ],
-          "primaryKeyword": "word counter",
-          "features": [
-            "Real-time counting",
-            "Words, characters, paragraphs",
-            "Reading time estimate",
-            "Keyword density",
-            "Export stats"
-          ]
+          "category": "text"
         },
         {
           "id": "character-counter",
@@ -1540,25 +632,7 @@
           "description": "Count characters and letters in text",
           "route": "/character-counter",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "character counter",
-            "word counter",
-            "letter count",
-            "text length"
-          ],
-          "longTailKeywords": [
-            "online character counter with spaces",
-            "word count tool free",
-            "check text length online"
-          ],
-          "primaryKeyword": "character counter",
-          "features": [
-            "Real-time Count",
-            "Word Count",
-            "Character Count",
-            "Line Count"
-          ]
+          "category": "text"
         },
         {
           "id": "text-case-converter",
@@ -1566,25 +640,7 @@
           "description": "Convert text between different cases (upper, lower, title)",
           "route": "/text-case-converter",
           "popular": false,
-          "category": "text",
-          "keywords": [
-            "case converter",
-            "text converter",
-            "uppercase to lowercase",
-            "capitalization tool"
-          ],
-          "longTailKeywords": [
-            "convert text to uppercase online",
-            "sentence case converter",
-            "title case generator"
-          ],
-          "primaryKeyword": "text case converter",
-          "features": [
-            "Upper/Lower Case",
-            "Title Case",
-            "Sentence Case",
-            "Instant Conversion"
-          ]
+          "category": "text"
         },
         {
           "id": "password-generator",
@@ -1592,25 +648,7 @@
           "description": "Generate secure random passwords with custom options",
           "route": "/password-generator",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "password generator",
-            "secure password",
-            "random password",
-            "strong password"
-          ],
-          "longTailKeywords": [
-            "strong password generator online",
-            "random password creator",
-            "secure password maker"
-          ],
-          "primaryKeyword": "password generator",
-          "features": [
-            "Custom Length",
-            "Include Symbols",
-            "Exclude Ambiguous",
-            "Copy to Clipboard"
-          ]
+          "category": "text"
         },
         {
           "id": "password-generator2",
@@ -1618,25 +656,7 @@
           "description": "Advanced password generator with more customization options",
           "route": "/password-generator2",
           "popular": false,
-          "category": "text",
-          "keywords": [
-            "advanced password generator",
-            "secure password",
-            "random password",
-            "strong password"
-          ],
-          "longTailKeywords": [
-            "strong password generator online",
-            "random password creator",
-            "secure password maker"
-          ],
-          "primaryKeyword": "password generator",
-          "features": [
-            "Custom Length",
-            "Include Symbols",
-            "Exclude Ambiguous",
-            "Copy to Clipboard"
-          ]
+          "category": "text"
         },
         {
           "id": "password-strength-checker",
@@ -1644,25 +664,7 @@
           "description": "Check the strength and security of your passwords",
           "route": "/password-strength-checker",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "password strength",
-            "check password",
-            "password security",
-            "test password"
-          ],
-          "longTailKeywords": [
-            "check password strength online",
-            "how strong is my password",
-            "password security tester"
-          ],
-          "primaryKeyword": "password strength checker",
-          "features": [
-            "Instant Analysis",
-            "Security Tips",
-            "Crack Time Estimate",
-            "Offline Check"
-          ]
+          "category": "text"
         },
         {
           "id": "lorem-ipsum-generator",
@@ -1670,25 +672,7 @@
           "description": "Generate placeholder text for design and development",
           "route": "/lorem-ipsum-generator",
           "popular": false,
-          "category": "text",
-          "keywords": [
-            "lorem ipsum",
-            "dummy text",
-            "placeholder text",
-            "text generator"
-          ],
-          "longTailKeywords": [
-            "lorem ipsum generator html",
-            "dummy text generator for design",
-            "placeholder text creator"
-          ],
-          "primaryKeyword": "lorem ipsum generator",
-          "features": [
-            "Paragraphs/Words",
-            "HTML Tags",
-            "Copy to Clipboard",
-            "Multiple Variations"
-          ]
+          "category": "text"
         },
         {
           "id": "text-diff",
@@ -1696,25 +680,7 @@
           "description": "Compare two texts and find differences",
           "route": "/text-diff",
           "popular": false,
-          "category": "text",
-          "keywords": [
-            "diff checker",
-            "text compare",
-            "compare text",
-            "difference checker"
-          ],
-          "longTailKeywords": [
-            "compare two text files online",
-            "find differences between two texts",
-            "online diff tool"
-          ],
-          "primaryKeyword": "text diff checker",
-          "features": [
-            "Side-by-Side View",
-            "Highlight Differences",
-            "Ignore Whitespace",
-            "Merge Mode"
-          ]
+          "category": "text"
         },
         {
           "id": "text-formatter",
@@ -1722,25 +688,7 @@
           "description": "Format and clean up text with various options",
           "route": "/text-formatter",
           "popular": false,
-          "category": "text",
-          "keywords": [
-            "text formatter",
-            "format text",
-            "clean text",
-            "beautify text"
-          ],
-          "longTailKeywords": [
-            "online text formatter free",
-            "remove extra spaces from text",
-            "clean up text formatting"
-          ],
-          "primaryKeyword": "text formatter",
-          "features": [
-            "Remove Spaces",
-            "Fix Punctuation",
-            "Capitalization",
-            "HTML Stripping"
-          ]
+          "category": "text"
         },
         {
           "id": "duplicate-line-remover",
@@ -1748,28 +696,7 @@
           "description": "Remove duplicate lines from text and lists",
           "route": "/duplicate-line-remover",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "duplicate remover",
-            "remove duplicates",
-            "unique lines",
-            "text cleaner"
-          ],
-          "longTailKeywords": [
-            "remove duplicate lines from text",
-            "text duplicate finder",
-            "unique lines extractor",
-            "duplicate text remover online",
-            "clean duplicate entries"
-          ],
-          "primaryKeyword": "duplicate line remover",
-          "features": [
-            "Case sensitivity options",
-            "Sort results",
-            "Statistics",
-            "Keep first/last occurrence",
-            "Blank line handling"
-          ]
+          "category": "text"
         },
         {
           "id": "typing-speed-test",
@@ -1777,29 +704,7 @@
           "description": "Test your typing speed and accuracy with real-time WPM calculation",
           "route": "/typing-speed-test",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "typing speed test",
-            "typing test",
-            "wpm test",
-            "typing speed checker",
-            "keyboard test"
-          ],
-          "longTailKeywords": [
-            "typing speed test online free",
-            "wpm typing test with accuracy",
-            "typing speed checker words per minute",
-            "keyboard typing speed test",
-            "typing test 1 minute free"
-          ],
-          "primaryKeyword": "typing speed test",
-          "features": [
-            "Real-time WPM calculation",
-            "Accuracy tracking",
-            "Multiple test durations",
-            "Progress statistics",
-            "Custom text options"
-          ]
+          "category": "text"
         },
         {
           "id": "binary-converter",
@@ -1807,28 +712,7 @@
           "description": "Convert text to binary and binary to text with UTF-8 support",
           "route": "/binary-converter",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "binary converter",
-            "text to binary",
-            "binary to text",
-            "ascii converter"
-          ],
-          "longTailKeywords": [
-            "text to binary converter online",
-            "binary to text decoder free",
-            "ascii binary converter tool",
-            "binary code converter online",
-            "text binary encoder decoder"
-          ],
-          "primaryKeyword": "binary converter",
-          "features": [
-            "Bidirectional conversion",
-            "UTF-8 encoding",
-            "Copy to clipboard",
-            "Binary format validation",
-            "Educational examples"
-          ]
+          "category": "text"
         },
         {
           "id": "chatgpt-text-converter",
@@ -1836,30 +720,7 @@
           "description": "Convert ChatGPT markdown text to clean, normal text. Remove formatting like bold, italic, headers, lists, and blockquotes. Perfect for markdown-to-text conversion",
           "route": "/chatgpt-text-converter",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "chatgpt text converter",
-            "markdown to text",
-            "remove markdown formatting",
-            "clean ai text",
-            "chatgpt markdown converter"
-          ],
-          "longTailKeywords": [
-            "chatgpt text to normal text converter",
-            "remove markdown formatting from ai text",
-            "clean chatgpt response text",
-            "convert ai markdown to plain text",
-            "chatgpt text cleaner online free"
-          ],
-          "primaryKeyword": "chatgpt text converter",
-          "features": [
-            "Remove markdown formatting",
-            "Convert bold and italic text",
-            "Clean headers and lists",
-            "Convert blockquotes to plain text",
-            "Preserve text structure",
-            "Instant conversion"
-          ]
+          "category": "text"
         },
         {
           "id": "markdown-to-text",
@@ -1867,29 +728,7 @@
           "description": "Convert Markdown to plain text instantly. Remove all markdown formatting and get clean, readable text",
           "route": "/markdown-to-text",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "markdown to text",
-            "md to text converter",
-            "markdown converter",
-            "remove markdown formatting",
-            "plain text converter"
-          ],
-          "longTailKeywords": [
-            "markdown to plain text converter online",
-            "convert md file to text",
-            "remove markdown formatting online",
-            "markdown to text converter free",
-            "md to txt converter online"
-          ],
-          "primaryKeyword": "markdown to text converter",
-          "features": [
-            "Convert Markdown to plain text",
-            "Remove all formatting",
-            "Preserve text structure",
-            "Handle tables and lists",
-            "Download as text file"
-          ]
+          "category": "text"
         },
         {
           "id": "email-extractor",
@@ -1897,26 +736,7 @@
           "description": "Extract email addresses from text and documents automatically",
           "route": "/email-extractor",
           "popular": true,
-          "category": "text",
-          "keywords": [
-            "email extractor",
-            "email finder",
-            "extract emails",
-            "email harvester"
-          ],
-          "longTailKeywords": [
-            "email extractor from text online",
-            "extract email addresses from document",
-            "find emails in text free"
-          ],
-          "primaryKeyword": "email extractor",
-          "features": [
-            "Extract from text",
-            "Remove duplicates",
-            "Copy all emails",
-            "Download as file",
-            "Bulk extraction"
-          ]
+          "category": "text"
         }
       ]
     },
@@ -1932,25 +752,7 @@
           "description": "Convert files between various formats automatically",
           "route": "/file-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "file converter",
-            "convert files",
-            "universal converter",
-            "format changer"
-          ],
-          "longTailKeywords": [
-            "convert any file format online",
-            "universal file converter free",
-            "change file type online"
-          ],
-          "primaryKeyword": "file converter",
-          "features": [
-            "Support 100+ Formats",
-            "Batch Conversion",
-            "Secure Processing",
-            "Cloud Integration"
-          ]
+          "category": "converter"
         },
         {
           "id": "document-converter",
@@ -1958,25 +760,7 @@
           "description": "Convert between document formats (DOC, DOCX, PDF, TXT)",
           "route": "/document-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "document converter",
-            "convert docs",
-            "word to pdf",
-            "pdf to word"
-          ],
-          "longTailKeywords": [
-            "convert document formats online",
-            "doc to pdf converter free",
-            "office document converter"
-          ],
-          "primaryKeyword": "document converter",
-          "features": [
-            "Word/Excel/PPT",
-            "PDF Support",
-            "Preserve Formatting",
-            "OCR Support"
-          ]
+          "category": "converter"
         },
         {
           "id": "epub-converter",
@@ -1984,25 +768,7 @@
           "description": "Convert documents to EPUB format for e-readers",
           "route": "/epub-converter",
           "popular": false,
-          "category": "converter",
-          "keywords": [
-            "epub converter",
-            "ebook converter",
-            "pdf to epub",
-            "epub to pdf"
-          ],
-          "longTailKeywords": [
-            "convert pdf to epub online",
-            "epub to mobi converter",
-            "ebook format converter"
-          ],
-          "primaryKeyword": "epub converter",
-          "features": [
-            "EPUB/MOBI/PDF",
-            "Metadata Editor",
-            "Cover Art",
-            "Batch Processing"
-          ]
+          "category": "converter"
         },
         {
           "id": "html-to-pdf",
@@ -2010,25 +776,7 @@
           "description": "Convert HTML pages and content to PDF",
           "route": "/html-to-pdf",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "html to pdf",
-            "webpage to pdf",
-            "convert html",
-            "save as pdf"
-          ],
-          "longTailKeywords": [
-            "convert webpage to pdf online",
-            "html file to pdf converter",
-            "save website as pdf"
-          ],
-          "primaryKeyword": "html to pdf",
-          "features": [
-            "URL to PDF",
-            "Raw HTML Support",
-            "Custom Page Size",
-            "Preserve CSS"
-          ]
+          "category": "converter"
         },
         {
           "id": "csv-to-json-converter",
@@ -2036,28 +784,7 @@
           "description": "Convert CSV files to JSON format with customization options",
           "route": "/csv-to-json-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "csv to json",
-            "convert csv",
-            "csv converter",
-            "json converter"
-          ],
-          "longTailKeywords": [
-            "convert csv file to json online",
-            "csv to json array converter",
-            "csv to json online free",
-            "csv data to json format",
-            "excel csv to json converter"
-          ],
-          "primaryKeyword": "csv to json converter",
-          "features": [
-            "Custom delimiters",
-            "Header row options",
-            "Nested JSON",
-            "Array formatting",
-            "Large file support"
-          ]
+          "category": "converter"
         },
         {
           "id": "xml-to-json-converter",
@@ -2065,28 +792,7 @@
           "description": "Convert XML files to JSON format with structure preservation",
           "route": "/xml-to-json-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "xml to json",
-            "convert xml",
-            "xml converter",
-            "xml parser"
-          ],
-          "longTailKeywords": [
-            "xml to json converter online",
-            "convert xml file to json",
-            "xml to json online free",
-            "xml parser to json",
-            "xml data converter"
-          ],
-          "primaryKeyword": "xml to json converter",
-          "features": [
-            "Attribute handling",
-            "Namespace support",
-            "Structure preservation",
-            "Pretty formatting",
-            "Validation"
-          ]
+          "category": "converter"
         },
         {
           "id": "video-to-mp3-converter",
@@ -2094,29 +800,7 @@
           "description": "Convert video files to MP3 audio format online for free with high quality output",
           "route": "/video-to-mp3-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "video to mp3 converter",
-            "convert video to mp3",
-            "video to audio converter",
-            "mp4 to mp3 converter",
-            "extract audio from video"
-          ],
-          "longTailKeywords": [
-            "video to mp3 converter online free",
-            "convert video to mp3 high quality",
-            "video to mp3 converter 320kbps",
-            "bulk video to mp3 converter",
-            "video to mp3 converter no watermark"
-          ],
-          "primaryKeyword": "video to mp3 converter",
-          "features": [
-            "All Video Formats",
-            "High Quality Audio",
-            "Fast Conversion",
-            "Batch Processing",
-            "No Software Needed"
-          ]
+          "category": "converter"
         },
         {
           "id": "mp4-to-mp3",
@@ -2124,29 +808,7 @@
           "description": "Convert MP4 video files to MP3 audio format with 320kbps quality for free",
           "route": "/mp4-to-mp3",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "mp4 to mp3 converter",
-            "convert mp4 to mp3",
-            "mp4 to mp3 online",
-            "mp4 audio extractor",
-            "mp4 to mp3 free"
-          ],
-          "longTailKeywords": [
-            "mp4 to mp3 converter online free",
-            "convert mp4 to mp3 high quality",
-            "mp4 to mp3 converter 320kbps",
-            "bulk mp4 to mp3 converter",
-            "mp4 to mp3 converter no watermark"
-          ],
-          "primaryKeyword": "mp4 to mp3 converter",
-          "features": [
-            "MP4 Specialist",
-            "320kbps Quality",
-            "Fast Processing",
-            "Batch Conversion",
-            "Secure Processing"
-          ]
+          "category": "converter"
         },
         {
           "id": "avi-to-mp4-converter",
@@ -2154,29 +816,7 @@
           "description": "Convert AVI video files to MP4 format online for free with high quality output",
           "route": "/avi-to-mp4-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "avi to mp4 converter",
-            "convert avi to mp4",
-            "avi to mp4 online",
-            "avi converter",
-            "avi to mp4 free"
-          ],
-          "longTailKeywords": [
-            "avi to mp4 converter online free",
-            "convert avi to mp4 high quality",
-            "avi to mp4 converter no watermark",
-            "bulk avi to mp4 converter",
-            "avi to mp4 converter for pc mobile"
-          ],
-          "primaryKeyword": "avi to mp4 converter",
-          "features": [
-            "AVI Specialist",
-            "HD Quality Output",
-            "Fast Conversion",
-            "Batch Processing",
-            "Cross-Platform"
-          ]
+          "category": "converter"
         },
         {
           "id": "mov-to-mp4-converter",
@@ -2184,29 +824,7 @@
           "description": "Convert MOV video files to MP4 format online for free with quality preservation",
           "route": "/mov-to-mp4-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "mov to mp4 converter",
-            "convert mov to mp4",
-            "mov to mp4 online",
-            "mov converter",
-            "mov to mp4 free"
-          ],
-          "longTailKeywords": [
-            "mov to mp4 converter online free",
-            "convert mov to mp4 high quality",
-            "mov to mp4 converter no watermark",
-            "bulk mov to mp4 converter",
-            "mov to mp4 converter for pc mobile"
-          ],
-          "primaryKeyword": "mov to mp4 converter",
-          "features": [
-            "MOV Specialist",
-            "Quality Preservation",
-            "Fast Processing",
-            "Batch Conversion",
-            "Universal Compatibility"
-          ]
+          "category": "converter"
         },
         {
           "id": "webm-to-mp4-converter",
@@ -2214,29 +832,7 @@
           "description": "Convert WebM video files to MP4 format online for free with high compatibility",
           "route": "/webm-to-mp4-converter",
           "popular": false,
-          "category": "converter",
-          "keywords": [
-            "webm to mp4 converter",
-            "convert webm to mp4",
-            "webm to mp4 online",
-            "webm converter",
-            "webm to mp4 free"
-          ],
-          "longTailKeywords": [
-            "webm to mp4 converter online free",
-            "convert webm to mp4 high quality",
-            "webm to mp4 converter no watermark",
-            "bulk webm to mp4 converter",
-            "webm to mp4 converter for pc mobile"
-          ],
-          "primaryKeyword": "webm to mp4 converter",
-          "features": [
-            "WebM Specialist",
-            "High Compatibility",
-            "Fast Conversion",
-            "Quality Retention",
-            "Browser Optimized"
-          ]
+          "category": "converter"
         },
         {
           "id": "mkv-to-mp4-converter",
@@ -2244,29 +840,7 @@
           "description": "Convert MKV video files to MP4 format online for free with subtitle support",
           "route": "/mkv-to-mp4-converter",
           "popular": false,
-          "category": "converter",
-          "keywords": [
-            "mkv to mp4 converter",
-            "convert mkv to mp4",
-            "mkv to mp4 online",
-            "mkv converter",
-            "mkv to mp4 free"
-          ],
-          "longTailKeywords": [
-            "mkv to mp4 converter online free",
-            "convert mkv to mp4 high quality",
-            "mkv to mp4 converter with subtitles",
-            "bulk mkv to mp4 converter",
-            "mkv to mp4 converter for pc mobile"
-          ],
-          "primaryKeyword": "mkv to mp4 converter",
-          "features": [
-            "MKV Specialist",
-            "Subtitle Support",
-            "High Quality",
-            "Fast Processing",
-            "Multiple Tracks"
-          ]
+          "category": "converter"
         },
         {
           "id": "flv-to-mp4-converter",
@@ -2274,29 +848,7 @@
           "description": "Convert FLV video files to MP4 format online for free with modern compatibility",
           "route": "/flv-to-mp4-converter",
           "popular": false,
-          "category": "converter",
-          "keywords": [
-            "flv to mp4 converter",
-            "convert flv to mp4",
-            "flv to mp4 online",
-            "flv converter",
-            "flv to mp4 free"
-          ],
-          "longTailKeywords": [
-            "flv to mp4 converter online free",
-            "convert flv to mp4 high quality",
-            "flv to mp4 converter no watermark",
-            "bulk flv to mp4 converter",
-            "flv to mp4 converter for pc mobile"
-          ],
-          "primaryKeyword": "flv to mp4 converter",
-          "features": [
-            "FLV Specialist",
-            "Modern Compatibility",
-            "Quality Enhancement",
-            "Fast Conversion",
-            "Legacy Support"
-          ]
+          "category": "converter"
         },
         {
           "id": "wav-to-mp3-converter",
@@ -2304,29 +856,7 @@
           "description": "Convert WAV audio files to MP3 format online for free with quality options",
           "route": "/wav-to-mp3-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "wav to mp3 converter",
-            "convert wav to mp3",
-            "wav to mp3 online",
-            "wav converter",
-            "wav to mp3 free"
-          ],
-          "longTailKeywords": [
-            "wav to mp3 converter online free",
-            "convert wav to mp3 high quality",
-            "wav to mp3 converter 320kbps",
-            "bulk wav to mp3 converter",
-            "wav to mp3 converter no watermark"
-          ],
-          "primaryKeyword": "wav to mp3 converter",
-          "features": [
-            "WAV Specialist",
-            "Quality Options",
-            "Fast Processing",
-            "Batch Conversion",
-            "Size Optimization"
-          ]
+          "category": "converter"
         },
         {
           "id": "m4a-to-mp3-converter",
@@ -2334,29 +864,7 @@
           "description": "Convert M4A audio files to MP3 format online for free with high compatibility",
           "route": "/m4a-to-mp3-converter",
           "popular": true,
-          "category": "converter",
-          "keywords": [
-            "m4a to mp3 converter",
-            "convert m4a to mp3",
-            "m4a to mp3 online",
-            "m4a converter",
-            "m4a to mp3 free"
-          ],
-          "longTailKeywords": [
-            "m4a to mp3 converter online free",
-            "convert m4a to mp3 high quality",
-            "m4a to mp3 converter 320kbps",
-            "bulk m4a to mp3 converter",
-            "m4a to mp3 converter for pc mobile"
-          ],
-          "primaryKeyword": "m4a to mp3 converter",
-          "features": [
-            "M4A Specialist",
-            "High Compatibility",
-            "Quality Preservation",
-            "Fast Conversion",
-            "Universal Support"
-          ]
+          "category": "converter"
         },
         {
           "id": "ogg-to-mp3-converter",
@@ -2364,29 +872,7 @@
           "description": "Convert OGG audio files to MP3 format online for free with quality retention",
           "route": "/ogg-to-mp3-converter",
           "popular": false,
-          "category": "converter",
-          "keywords": [
-            "ogg to mp3 converter",
-            "convert ogg to mp3",
-            "ogg to mp3 online",
-            "ogg converter",
-            "ogg to mp3 free"
-          ],
-          "longTailKeywords": [
-            "ogg to mp3 converter online free",
-            "convert ogg to mp3 high quality",
-            "ogg to mp3 converter no watermark",
-            "bulk ogg to mp3 converter",
-            "ogg to mp3 converter for pc mobile"
-          ],
-          "primaryKeyword": "ogg to mp3 converter",
-          "features": [
-            "OGG Specialist",
-            "Quality Retention",
-            "Fast Processing",
-            "Open Source Support",
-            "Cross-Platform"
-          ]
+          "category": "converter"
         }
       ]
     },
@@ -2402,28 +888,7 @@
           "description": "Format, validate, and beautify JSON data",
           "route": "/json-formatter",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "json formatter",
-            "json validator",
-            "json beautifier",
-            "json minifier"
-          ],
-          "longTailKeywords": [
-            "json formatter and validator online",
-            "json minifier and beautifier",
-            "json pretty print online free",
-            "validate json format online",
-            "json syntax checker free"
-          ],
-          "primaryKeyword": "json formatter",
-          "features": [
-            "Format & validate JSON",
-            "Minify JSON",
-            "Error detection",
-            "Tree view",
-            "Copy formatted code"
-          ]
+          "category": "developer"
         },
         {
           "id": "hash-generator",
@@ -2431,25 +896,7 @@
           "description": "Generate MD5, SHA1, SHA256 hashes from text",
           "route": "/hash-generator",
           "popular": false,
-          "category": "developer",
-          "keywords": [
-            "hash generator",
-            "md5 generator",
-            "sha256 generator",
-            "encrypt text"
-          ],
-          "longTailKeywords": [
-            "online hash generator md5 sha",
-            "generate hash from text",
-            "password hash creator"
-          ],
-          "primaryKeyword": "hash generator",
-          "features": [
-            "MD5/SHA1/SHA256",
-            "Real-time Generation",
-            "Multiple Algorithms",
-            "Copy to Clipboard"
-          ]
+          "category": "developer"
         },
         {
           "id": "hash-generator2",
@@ -2457,25 +904,7 @@
           "description": "Generate various hash types with advanced options",
           "route": "/hash-generator2",
           "popular": false,
-          "category": "developer",
-          "keywords": [
-            "advanced hash generator",
-            "md5 generator",
-            "sha256 generator",
-            "encrypt text"
-          ],
-          "longTailKeywords": [
-            "online hash generator md5 sha",
-            "generate hash from text",
-            "password hash creator"
-          ],
-          "primaryKeyword": "hash generator",
-          "features": [
-            "MD5/SHA1/SHA256",
-            "Real-time Generation",
-            "Multiple Algorithms",
-            "Copy to Clipboard"
-          ]
+          "category": "developer"
         },
         {
           "id": "base64-tool",
@@ -2483,28 +912,7 @@
           "description": "Encode and decode Base64 strings and files",
           "route": "/base64-tool",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "base64 encoder",
-            "base64 decoder",
-            "base64 converter",
-            "encode decode base64"
-          ],
-          "longTailKeywords": [
-            "base64 encode image online",
-            "base64 decode to text",
-            "file to base64 converter",
-            "base64 string encoder",
-            "decode base64 to file"
-          ],
-          "primaryKeyword": "base64 encoder decoder",
-          "features": [
-            "Text & file encoding",
-            "Image to base64",
-            "Bulk processing",
-            "Copy to clipboard",
-            "Format validation"
-          ]
+          "category": "developer"
         },
         {
           "id": "javascript-minifier",
@@ -2512,28 +920,7 @@
           "description": "Minify JavaScript code to reduce file size and improve performance",
           "route": "/javascript-minifier",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "javascript minifier",
-            "js minifier",
-            "minify javascript",
-            "compress js"
-          ],
-          "longTailKeywords": [
-            "js minifier and obfuscator",
-            "javascript compressor online",
-            "minify js online free",
-            "javascript optimizer tool",
-            "compress javascript for production"
-          ],
-          "primaryKeyword": "javascript minifier",
-          "features": [
-            "Variable renaming",
-            "Dead code removal",
-            "Source map generation",
-            "ES6+ support",
-            "Compression statistics"
-          ]
+          "category": "developer"
         },
         {
           "id": "regex-tester",
@@ -2541,28 +928,7 @@
           "description": "Test and validate regular expressions with real-time matching",
           "route": "/regex-tester",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "regex tester",
-            "regular expression",
-            "regex validator",
-            "pattern tester"
-          ],
-          "longTailKeywords": [
-            "regular expression tester online",
-            "regex pattern validator",
-            "test regex patterns",
-            "regex debugger online",
-            "regular expression matcher"
-          ],
-          "primaryKeyword": "regex tester",
-          "features": [
-            "Real-time matching",
-            "Pattern explanation",
-            "Test data generator",
-            "Common regex library",
-            "Match highlighting"
-          ]
+          "category": "developer"
         },
         {
           "id": "sql-formatter",
@@ -2570,28 +936,7 @@
           "description": "Format and beautify SQL queries with syntax highlighting",
           "route": "/sql-formatter",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "sql formatter",
-            "sql beautifier",
-            "format sql query",
-            "sql validator"
-          ],
-          "longTailKeywords": [
-            "sql query formatter online",
-            "sql beautifier and validator",
-            "format sql code online",
-            "sql syntax formatter",
-            "pretty print sql queries"
-          ],
-          "primaryKeyword": "sql formatter",
-          "features": [
-            "Multiple SQL dialects",
-            "Syntax highlighting",
-            "Query validation",
-            "Minify option",
-            "Custom formatting rules"
-          ]
+          "category": "developer"
         },
         {
           "id": "regex-tester2",
@@ -2599,25 +944,7 @@
           "description": "Test and validate regular expressions with advanced features",
           "route": "/regex-tester2",
           "popular": false,
-          "category": "developer",
-          "keywords": [
-            "regex tester",
-            "regular expression",
-            "test regex",
-            "regex debugger"
-          ],
-          "longTailKeywords": [
-            "online regex tester and debugger",
-            "test regular expressions javascript",
-            "regex match highlighter"
-          ],
-          "primaryKeyword": "regex tester",
-          "features": [
-            "Real-time Matching",
-            "Explanation",
-            "Quick Reference",
-            "Save Patterns"
-          ]
+          "category": "developer"
         },
         {
           "id": "api-tester",
@@ -2625,25 +952,7 @@
           "description": "Test REST APIs and HTTP requests",
           "route": "/api-tester",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "api tester",
-            "rest client",
-            "http request",
-            "test api"
-          ],
-          "longTailKeywords": [
-            "online rest api tester",
-            "send http requests online",
-            "debug api endpoints"
-          ],
-          "primaryKeyword": "api tester",
-          "features": [
-            "GET/POST/PUT/DELETE",
-            "Headers & Body",
-            "Response Viewer",
-            "Save Requests"
-          ]
+          "category": "developer"
         },
         {
           "id": "jwt-decoder",
@@ -2651,25 +960,7 @@
           "description": "Decode and verify JSON Web Tokens",
           "route": "/jwt-decoder",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "jwt decoder",
-            "decode token",
-            "jwt debugger",
-            "inspect jwt"
-          ],
-          "longTailKeywords": [
-            "decode jwt token online",
-            "json web token debugger",
-            "verify jwt signature"
-          ],
-          "primaryKeyword": "jwt decoder",
-          "features": [
-            "Decode Header/Payload",
-            "Verify Signature",
-            "Human Readable",
-            "Secure Processing"
-          ]
+          "category": "developer"
         },
         {
           "id": "url-encoder",
@@ -2677,28 +968,7 @@
           "description": "Encode and decode URLs and query parameters",
           "route": "/url-encoder",
           "popular": false,
-          "category": "developer",
-          "keywords": [
-            "url encoder",
-            "url decoder",
-            "percent encoding",
-            "url escape"
-          ],
-          "longTailKeywords": [
-            "url encode special characters",
-            "decode url parameters online",
-            "percent encoding decoder",
-            "url escape characters tool",
-            "query parameter encoder"
-          ],
-          "primaryKeyword": "url encoder decoder",
-          "features": [
-            "Encode & decode URLs",
-            "Query parameter support",
-            "Batch processing",
-            "Copy results",
-            "Special characters"
-          ]
+          "category": "developer"
         },
         {
           "id": "css-minifier",
@@ -2706,28 +976,7 @@
           "description": "Minify CSS code to reduce file size and improve loading speed",
           "route": "/css-minifier",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "css minifier",
-            "css compressor",
-            "minify css",
-            "css optimizer"
-          ],
-          "longTailKeywords": [
-            "css minifier with source map",
-            "css compressor online free",
-            "minify css online tool",
-            "compress css for production",
-            "css file size reducer"
-          ],
-          "primaryKeyword": "css minifier",
-          "features": [
-            "Reduce CSS size",
-            "Remove comments",
-            "Optimize properties",
-            "Source map support",
-            "Compression stats"
-          ]
+          "category": "developer"
         },
         {
           "id": "html-validator",
@@ -2735,28 +984,7 @@
           "description": "Validate HTML markup and check for errors and warnings",
           "route": "/html-validator",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "html validator",
-            "html checker",
-            "markup validator",
-            "html5 validator"
-          ],
-          "longTailKeywords": [
-            "html5 validator with error fixing",
-            "html markup validator online",
-            "w3c html validator free",
-            "html syntax checker tool",
-            "validate html code online"
-          ],
-          "primaryKeyword": "html validator",
-          "features": [
-            "W3C compliance",
-            "Error detection",
-            "Line-by-line validation",
-            "HTML5 support",
-            "Accessibility checks"
-          ]
+          "category": "developer"
         },
         {
           "id": "password-breach-checker",
@@ -2764,34 +992,7 @@
           "description": "Check if your password has been compromised in data breaches using k-anonymity for maximum privacy",
           "route": "/password-breach-checker",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "password breach checker",
-            "email breach check",
-            "data breach checker",
-            "password security",
-            "compromised password",
-            "haveibeenpwned",
-            "security check"
-          ],
-          "longTailKeywords": [
-            "check if password is compromised free",
-            "email data breach checker online",
-            "haveibeenpwned password checker",
-            "check if email is breached",
-            "password security breach checker",
-            "compromised password lookup tool",
-            "data breach email checker free"
-          ],
-          "primaryKeyword": "password breach checker",
-          "features": [
-            "Password security check",
-            "K-anonymity privacy",
-            "Client-side hashing",
-            "Real-time results",
-            "No data storage",
-            "HaveIBeenPwned integration"
-          ]
+          "category": "developer"
         },
         {
           "id": "email-breach-checker",
@@ -2799,33 +1000,7 @@
           "description": "Check if your email has been compromised in data breaches using HaveIBeenPwned database",
           "route": "/email-breach-checker",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "email breach checker",
-            "data breach checker",
-            "email security",
-            "compromised email",
-            "haveibeenpwned",
-            "email breach check"
-          ],
-          "longTailKeywords": [
-            "email data breach checker online",
-            "check if email is breached",
-            "data breach email checker free",
-            "email security breach lookup",
-            "compromised email checker",
-            "haveibeenpwned email checker",
-            "email breach detection tool"
-          ],
-          "primaryKeyword": "email breach checker",
-          "features": [
-            "Email breach checking",
-            "Detailed breach info",
-            "HaveIBeenPwned integration",
-            "Privacy focused",
-            "Real-time results",
-            "Breach history"
-          ]
+          "category": "developer"
         },
         {
           "id": "temp-email-checker",
@@ -2833,32 +1008,7 @@
           "description": "Detect disposable and temporary email addresses using comprehensive blocklist and allowlist databases",
           "route": "/temp-email-checker",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "temporary email checker",
-            "disposable email detector",
-            "temp mail checker",
-            "email validation",
-            "fake email detector",
-            "throwaway email checker"
-          ],
-          "longTailKeywords": [
-            "temporary email address checker online",
-            "disposable email domain detector",
-            "temp mail validation tool free",
-            "fake email address checker",
-            "throwaway email detector online",
-            "email domain validation tool"
-          ],
-          "primaryKeyword": "temporary email checker",
-          "features": [
-            "Disposable email detection",
-            "Domain validation",
-            "Comprehensive database",
-            "Real-time checking",
-            "Email and domain support",
-            "Open source data"
-          ]
+          "category": "developer"
         },
         {
           "id": "complexity-analyzer",
@@ -2866,37 +1016,7 @@
           "description": "Analyze the time and space complexity of your code using AI-powered analysis. Get Big O notation, optimization suggestions, and algorithm insights.",
           "route": "/complexity-analyzer",
           "popular": true,
-          "category": "developer",
-          "keywords": [
-            "time complexity analyzer",
-            "space complexity",
-            "big o notation",
-            "algorithm analysis",
-            "code complexity",
-            "performance analysis",
-            "ai code analyzer",
-            "algorithm optimization",
-            "computational complexity",
-            "code efficiency"
-          ],
-          "longTailKeywords": [
-            "time complexity analyzer online free",
-            "big o notation calculator ai",
-            "code performance analysis tool",
-            "algorithm complexity checker",
-            "space complexity calculator",
-            "ai powered complexity analyzer",
-            "code optimization suggestions tool"
-          ],
-          "primaryKeyword": "time complexity analyzer",
-          "features": [
-            "AI-powered analysis",
-            "Big O notation results",
-            "Multiple programming languages",
-            "Optimization suggestions",
-            "Algorithm type detection",
-            "Detailed explanations"
-          ]
+          "category": "developer"
         }
       ]
     },
@@ -2912,25 +1032,7 @@
           "description": "Format and beautify HTML, CSS, JavaScript code",
           "route": "/code-formatter",
           "popular": true,
-          "category": "code",
-          "keywords": [
-            "code formatter",
-            "beautify code",
-            "format code",
-            "prettier online"
-          ],
-          "longTailKeywords": [
-            "online code formatter for javascript",
-            "html css js beautifier",
-            "clean up code formatting"
-          ],
-          "primaryKeyword": "code formatter",
-          "features": [
-            "Multi-language",
-            "Custom Indentation",
-            "Minify Option",
-            "Syntax Highlighting"
-          ]
+          "category": "code"
         },
         {
           "id": "code-minifier",
@@ -2938,25 +1040,7 @@
           "description": "Minify CSS, JavaScript, HTML code for production",
           "route": "/code-minifier",
           "popular": false,
-          "category": "code",
-          "keywords": [
-            "code minifier",
-            "minify js",
-            "minify css",
-            "compress code"
-          ],
-          "longTailKeywords": [
-            "minify javascript online",
-            "css minifier free",
-            "reduce code size"
-          ],
-          "primaryKeyword": "code minifier",
-          "features": [
-            "JS/CSS/HTML",
-            "High Compression",
-            "Preserve Functionality",
-            "Source Maps"
-          ]
+          "category": "code"
         },
         {
           "id": "csv-to-json",
@@ -2964,25 +1048,7 @@
           "description": "Convert CSV data to JSON format easily",
           "route": "/csv-to-json",
           "popular": false,
-          "category": "code",
-          "keywords": [
-            "csv to json",
-            "convert csv",
-            "csv parser",
-            "json converter"
-          ],
-          "longTailKeywords": [
-            "convert csv file to json online",
-            "csv to json converter free",
-            "parse csv data"
-          ],
-          "primaryKeyword": "csv to json",
-          "features": [
-            "Upload or Paste",
-            "Custom Delimiter",
-            "Download JSON",
-            "Table Preview"
-          ]
+          "category": "code"
         },
         {
           "id": "markdown-to-html",
@@ -2990,25 +1056,7 @@
           "description": "Convert Markdown text to HTML format",
           "route": "/markdown-to-html",
           "popular": false,
-          "category": "code",
-          "keywords": [
-            "markdown to html",
-            "convert markdown",
-            "md to html",
-            "markdown editor"
-          ],
-          "longTailKeywords": [
-            "convert markdown to html online",
-            "markdown previewer",
-            "md file converter"
-          ],
-          "primaryKeyword": "markdown to html",
-          "features": [
-            "Live Preview",
-            "GitHub Flavored",
-            "Copy HTML",
-            "Export File"
-          ]
+          "category": "code"
         },
         {
           "id": "xml-formatter",
@@ -3016,25 +1064,7 @@
           "description": "Format and validate XML documents",
           "route": "/xml-formatter",
           "popular": false,
-          "category": "code",
-          "keywords": [
-            "xml formatter",
-            "beautify xml",
-            "xml viewer",
-            "format xml"
-          ],
-          "longTailKeywords": [
-            "online xml formatter and validator",
-            "xml beautifier free",
-            "pretty print xml"
-          ],
-          "primaryKeyword": "xml formatter",
-          "features": [
-            "Tree View",
-            "Minify/Beautify",
-            "Validation",
-            "XPath Search"
-          ]
+          "category": "code"
         }
       ]
     },
@@ -3052,28 +1082,7 @@
           "popular": true,
           "premium": true,
           "external": true,
-          "category": "design",
-          "keywords": [
-            "design tools",
-            "design resources",
-            "design inspiration",
-            "design directory"
-          ],
-          "longTailKeywords": [
-            "professional design tools directory",
-            "curated design resources collection",
-            "design inspiration gallery",
-            "design tools database",
-            "free design resources directory"
-          ],
-          "primaryKeyword": "design tools directory",
-          "features": [
-            "1600+ curated tools",
-            "18 categories",
-            "Free & premium resources",
-            "Regularly updated",
-            "Professional grade"
-          ]
+          "category": "design"
         },
         {
           "id": "color-picker",
@@ -3081,25 +1090,7 @@
           "description": "Pick colors and get values in all formats with harmony suggestions",
           "route": "/color-picker",
           "popular": true,
-          "category": "design",
-          "keywords": [
-            "color picker",
-            "hex code",
-            "rgb color",
-            "color selector"
-          ],
-          "longTailKeywords": [
-            "online color picker from image",
-            "get hex code from color",
-            "web color picker"
-          ],
-          "primaryKeyword": "color picker",
-          "features": [
-            "HEX/RGB/HSL",
-            "Eye Dropper",
-            "Color History",
-            "Palette Generation"
-          ]
+          "category": "design"
         },
         {
           "id": "color-palette-generator",
@@ -3107,25 +1098,7 @@
           "description": "Generate beautiful color palettes and schemes",
           "route": "/color-palette-generator",
           "popular": true,
-          "category": "design",
-          "keywords": [
-            "color palette",
-            "scheme generator",
-            "color combinations",
-            "design colors"
-          ],
-          "longTailKeywords": [
-            "generate color palette from image",
-            "website color scheme generator",
-            "random color palette"
-          ],
-          "primaryKeyword": "color palette generator",
-          "features": [
-            "AI Generation",
-            "Extract from Image",
-            "Export CSS",
-            "Save Palettes"
-          ]
+          "category": "design"
         },
         {
           "id": "css-gradient-generator",
@@ -3133,25 +1106,7 @@
           "description": "Create beautiful CSS gradients with live preview",
           "route": "/css-gradient-generator",
           "popular": true,
-          "category": "design",
-          "keywords": [
-            "gradient generator",
-            "css gradient",
-            "background gradient",
-            "color gradient"
-          ],
-          "longTailKeywords": [
-            "css linear gradient generator",
-            "background gradient maker",
-            "css3 gradient tool"
-          ],
-          "primaryKeyword": "css gradient generator",
-          "features": [
-            "Linear/Radial",
-            "Multi-stop",
-            "CSS Output",
-            "Presets"
-          ]
+          "category": "design"
         },
         {
           "id": "logo-maker",
@@ -3159,25 +1114,7 @@
           "description": "Create simple logos and brand graphics",
           "route": "/logo-maker",
           "popular": true,
-          "category": "design",
-          "keywords": [
-            "logo maker",
-            "create logo",
-            "logo generator",
-            "design logo"
-          ],
-          "longTailKeywords": [
-            "free logo maker online",
-            "design logo for business",
-            "custom logo generator"
-          ],
-          "primaryKeyword": "logo maker",
-          "features": [
-            "Templates",
-            "Icon Library",
-            "Custom Text",
-            "High Res Download"
-          ]
+          "category": "design"
         },
         {
           "id": "css-box-shadow",
@@ -3185,25 +1122,7 @@
           "description": "Generate CSS box-shadow effects visually",
           "route": "/css-box-shadow",
           "popular": false,
-          "category": "design",
-          "keywords": [
-            "box shadow",
-            "css shadow",
-            "shadow generator",
-            "css effects"
-          ],
-          "longTailKeywords": [
-            "css box shadow generator",
-            "create drop shadow css",
-            "css shadow maker"
-          ],
-          "primaryKeyword": "css box shadow generator",
-          "features": [
-            "Interactive Preview",
-            "Multiple Shadows",
-            "CSS Code",
-            "Inset Support"
-          ]
+          "category": "design"
         },
         {
           "id": "gradient-generator",
@@ -3211,28 +1130,7 @@
           "description": "Create beautiful CSS gradients with live preview",
           "route": "/gradient-generator",
           "popular": true,
-          "category": "design",
-          "keywords": [
-            "gradient generator",
-            "css gradient",
-            "color gradient",
-            "gradient maker"
-          ],
-          "longTailKeywords": [
-            "css gradient generator with preview",
-            "radial gradient generator online",
-            "linear gradient maker free",
-            "gradient color picker tool",
-            "css background gradient generator"
-          ],
-          "primaryKeyword": "gradient generator",
-          "features": [
-            "Linear & radial gradients",
-            "CSS code export",
-            "Color picker",
-            "Preset gradients",
-            "Live preview"
-          ]
+          "category": "design"
         },
         {
           "id": "whiteboard",
@@ -3240,33 +1138,7 @@
           "description": "Free unlimited online whiteboard for drawing, sketching, brainstorming and collaboration",
           "route": "/whiteboard",
           "popular": true,
-          "category": "design",
-          "keywords": [
-            "online whiteboard",
-            "free whiteboard",
-            "drawing board",
-            "sketch pad",
-            "digital whiteboard",
-            "collaborative whiteboard"
-          ],
-          "longTailKeywords": [
-            "free online whiteboard unlimited",
-            "digital whiteboard for brainstorming",
-            "online drawing board free",
-            "collaborative whiteboard tool",
-            "sketch pad online free",
-            "whiteboard app no registration",
-            "online whiteboard with export"
-          ],
-          "primaryKeyword": "online whiteboard",
-          "features": [
-            "Unlimited drawing space",
-            "Multiple drawing tools",
-            "Color palette",
-            "Export PNG/JPG",
-            "Undo/Redo",
-            "No registration required"
-          ]
+          "category": "design"
         },
         {
           "id": "font-previewer",
@@ -3274,28 +1146,7 @@
           "description": "Preview and compare Google Fonts with custom text",
           "route": "/font-previewer",
           "popular": true,
-          "category": "design",
-          "keywords": [
-            "font previewer",
-            "google fonts",
-            "font tester",
-            "typography tool"
-          ],
-          "longTailKeywords": [
-            "google fonts preview generator",
-            "font pairing generator online",
-            "web font preview tool",
-            "font combination tester",
-            "typography preview generator"
-          ],
-          "primaryKeyword": "font previewer",
-          "features": [
-            "1000+ Google Fonts",
-            "Font pairing suggestions",
-            "Custom text preview",
-            "Font download links",
-            "Typography guidelines"
-          ]
+          "category": "design"
         },
         {
           "id": "color-converter",
@@ -3303,28 +1154,7 @@
           "description": "Convert colors between HEX, RGB, HSL and other formats",
           "route": "/color-converter",
           "popular": true,
-          "category": "design",
-          "keywords": [
-            "color converter",
-            "hex to rgb",
-            "rgb to hsl",
-            "color format converter"
-          ],
-          "longTailKeywords": [
-            "hex to rgb converter online",
-            "rgb to hsl color converter",
-            "css color format converter",
-            "hex color code converter",
-            "color space converter free"
-          ],
-          "primaryKeyword": "color converter",
-          "features": [
-            "Multiple color formats",
-            "Live color preview",
-            "Copy color values",
-            "Random color generator",
-            "Color format guide"
-          ]
+          "category": "design"
         }
       ]
     },
@@ -3340,29 +1170,7 @@
           "description": "Download Facebook videos, reels, and stories in HD quality without software installation",
           "route": "/facebook-video-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "facebook video downloader",
-            "download facebook video",
-            "facebook downloader",
-            "fb video downloader",
-            "facebook video download"
-          ],
-          "longTailKeywords": [
-            "facebook video downloader online free",
-            "download facebook video without software",
-            "facebook video downloader hd quality",
-            "save facebook video to phone",
-            "facebook private video downloader"
-          ],
-          "primaryKeyword": "facebook video downloader",
-          "features": [
-            "Videos, Reels & Stories",
-            "HD Quality Downloads",
-            "No Login Required",
-            "Fast Processing",
-            "Unlimited Downloads"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "facebook-story-downloader",
@@ -3370,29 +1178,7 @@
           "description": "Download Facebook stories and highlights anonymously without notifications",
           "route": "/facebook-story-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "facebook story downloader",
-            "download facebook story",
-            "facebook story saver",
-            "fb story downloader",
-            "save facebook story"
-          ],
-          "longTailKeywords": [
-            "facebook story downloader online free",
-            "download facebook story without them knowing",
-            "facebook story downloader anonymous",
-            "save facebook stories to phone",
-            "facebook story downloader hd quality"
-          ],
-          "primaryKeyword": "facebook story downloader",
-          "features": [
-            "Anonymous Viewing",
-            "Stories & Highlights",
-            "Photos & Videos",
-            "No Notification",
-            "Privacy Protected"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "instagram-video-downloader",
@@ -3400,37 +1186,7 @@
           "description": "Save Instagram videos, reels, stories, and IGTV content in high quality for free",
           "route": "/instagram-video-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "instagram video downloader",
-            "download instagram video",
-            "instagram downloader",
-            "instagram reels downloader",
-            "instagram story downloader",
-            "download instagram reels",
-            "instagram video download",
-            "save instagram video",
-            "instagram story saver",
-            "ig video downloader"
-          ],
-          "longTailKeywords": [
-            "instagram video downloader online free",
-            "download instagram video without app",
-            "instagram reels downloader hd quality",
-            "save instagram videos to phone",
-            "instagram private video downloader",
-            "download instagram video by link",
-            "instagram video downloader app",
-            "instagram video downloader chrome"
-          ],
-          "primaryKeyword": "instagram video downloader",
-          "features": [
-            "Reels & Stories",
-            "IGTV Support",
-            "HD Downloads",
-            "Anonymous Access",
-            "All Content Types"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "instagram-story-downloader",
@@ -3438,29 +1194,7 @@
           "description": "Download Instagram stories and highlights anonymously without notifications",
           "route": "/instagram-story-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "instagram story downloader",
-            "download instagram story",
-            "instagram story saver",
-            "ig story downloader",
-            "save instagram story"
-          ],
-          "longTailKeywords": [
-            "instagram story downloader online free",
-            "download instagram story without them knowing",
-            "instagram story downloader anonymous",
-            "save instagram stories to phone",
-            "instagram story downloader hd quality"
-          ],
-          "primaryKeyword": "instagram story downloader",
-          "features": [
-            "Anonymous Viewing",
-            "Stories & Highlights",
-            "Photos & Videos",
-            "No Notification",
-            "Privacy Protected"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "instagram-dp-downloader",
@@ -3468,29 +1202,7 @@
           "description": "Download Instagram profile pictures in full size HD quality for free",
           "route": "/instagram-dp-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "instagram dp downloader",
-            "download instagram profile picture",
-            "instagram profile picture downloader",
-            "ig dp downloader",
-            "instagram dp download"
-          ],
-          "longTailKeywords": [
-            "instagram dp downloader online free",
-            "download instagram profile picture hd",
-            "instagram profile picture viewer full size",
-            "save instagram dp to phone",
-            "instagram profile picture downloader anonymous"
-          ],
-          "primaryKeyword": "instagram dp downloader",
-          "features": [
-            "Full Size HD",
-            "Profile Pictures",
-            "Anonymous Access",
-            "Instant Download",
-            "No Login Required"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "instagram-reel-downloader",
@@ -3498,29 +1210,7 @@
           "description": "Download Instagram Reels without watermark in HD quality with audio extraction",
           "route": "/instagram-reel-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "instagram reel downloader",
-            "download instagram reel",
-            "instagram reels downloader",
-            "ig reel downloader",
-            "save instagram reel"
-          ],
-          "longTailKeywords": [
-            "instagram reel downloader online free",
-            "download instagram reel without watermark",
-            "instagram reel downloader hd quality",
-            "save instagram reels to phone",
-            "instagram reel downloader for pc mobile"
-          ],
-          "primaryKeyword": "instagram reel downloader",
-          "features": [
-            "No Watermark",
-            "HD Quality",
-            "Audio Extraction",
-            "Fast Processing",
-            "Mobile Optimized"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "twitter-video-downloader",
@@ -3528,29 +1218,7 @@
           "description": "Download Twitter and X platform videos and GIFs in high quality for free",
           "route": "/twitter-video-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "twitter video downloader",
-            "download twitter video",
-            "twitter downloader",
-            "x video downloader",
-            "download x video"
-          ],
-          "longTailKeywords": [
-            "twitter video downloader online free",
-            "download twitter video without app",
-            "twitter video downloader hd quality",
-            "save twitter videos to phone",
-            "twitter video downloader for pc mobile"
-          ],
-          "primaryKeyword": "twitter video downloader",
-          "features": [
-            "Videos & GIFs",
-            "X Platform Support",
-            "HD Quality",
-            "Fast Downloads",
-            "No Login Required"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "tiktok-video-downloader",
@@ -3558,36 +1226,7 @@
           "description": "Download TikTok videos without watermark in HD quality with audio extraction",
           "route": "/tiktok-video-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "tiktok video downloader",
-            "download tiktok video",
-            "tiktok downloader",
-            "tiktok video download",
-            "download tiktok",
-            "tiktok downloader without watermark",
-            "save tiktok video",
-            "tiktok video saver",
-            "tiktok no watermark"
-          ],
-          "longTailKeywords": [
-            "tiktok video downloader online free",
-            "download tiktok video without app",
-            "tiktok video downloader hd quality",
-            "save tiktok videos to phone",
-            "tiktok video downloader no watermark",
-            "download tiktok video without watermark online",
-            "tiktok video downloader app",
-            "tiktok video downloader chrome"
-          ],
-          "primaryKeyword": "tiktok video downloader",
-          "features": [
-            "No Watermark",
-            "HD Quality",
-            "Audio Extraction",
-            "Mobile Optimized",
-            "Fast Processing"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "tiktok-audio-downloader",
@@ -3595,29 +1234,7 @@
           "description": "Download TikTok audio and music as MP3 files for free with high quality output",
           "route": "/tiktok-audio-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "tiktok audio downloader",
-            "tiktok mp3 downloader",
-            "download tiktok audio",
-            "tiktok music downloader",
-            "tiktok sound downloader"
-          ],
-          "longTailKeywords": [
-            "tiktok audio downloader online free",
-            "download tiktok music mp3 high quality",
-            "extract audio from tiktok video",
-            "tiktok sound effect downloader",
-            "tiktok audio converter mp3 320kbps"
-          ],
-          "primaryKeyword": "tiktok audio downloader",
-          "features": [
-            "High Quality MP3",
-            "No Watermark",
-            "Trending Sounds",
-            "320kbps Output",
-            "Fast Extraction"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "tiktok-mp3-converter",
@@ -3625,29 +1242,7 @@
           "description": "Convert TikTok videos to MP3 audio files with 320kbps quality for free",
           "route": "/tiktok-mp3-converter",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "tiktok mp3 converter",
-            "tiktok to mp3",
-            "convert tiktok to mp3",
-            "tiktok mp3 downloader",
-            "tiktok audio converter"
-          ],
-          "longTailKeywords": [
-            "tiktok to mp3 converter online free",
-            "convert tiktok video to mp3 high quality",
-            "tiktok to mp3 320kbps converter",
-            "tiktok mp3 converter no watermark",
-            "bulk tiktok to mp3 converter"
-          ],
-          "primaryKeyword": "tiktok to mp3 converter",
-          "features": [
-            "320kbps Quality",
-            "Fast Conversion",
-            "Batch Processing",
-            "No Software Needed",
-            "Multiple Formats"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "pinterest-video-downloader",
@@ -3655,29 +1250,7 @@
           "description": "Download Pinterest videos, GIFs, and idea pins in high quality for inspiration",
           "route": "/pinterest-video-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "pinterest video downloader",
-            "download pinterest video",
-            "pinterest downloader",
-            "pinterest video download",
-            "save pinterest video"
-          ],
-          "longTailKeywords": [
-            "pinterest video downloader online free",
-            "download pinterest video without app",
-            "pinterest video downloader hd quality",
-            "save pinterest videos to phone",
-            "pinterest video downloader for pc mobile"
-          ],
-          "primaryKeyword": "pinterest video downloader",
-          "features": [
-            "Videos & GIFs",
-            "Idea Pins",
-            "Creative Content",
-            "HD Downloads",
-            "Fast Processing"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "snapchat-video-downloader",
@@ -3685,29 +1258,7 @@
           "description": "Download Snapchat videos and stories in HD quality for free without app installation",
           "route": "/snapchat-video-downloader",
           "popular": false,
-          "category": "downloaders",
-          "keywords": [
-            "snapchat video downloader",
-            "download snapchat video",
-            "snapchat downloader",
-            "snapchat story downloader",
-            "save snapchat video"
-          ],
-          "longTailKeywords": [
-            "snapchat video downloader online free",
-            "download snapchat video without app",
-            "snapchat video downloader hd quality",
-            "save snapchat videos to phone",
-            "snapchat video downloader for pc mobile"
-          ],
-          "primaryKeyword": "snapchat video downloader",
-          "features": [
-            "Videos & Stories",
-            "HD Quality",
-            "Anonymous Access",
-            "No Login Required",
-            "Fast Processing"
-          ]
+          "category": "downloaders"
         },
         {
           "id": "universal-video-downloader",
@@ -3715,40 +1266,7 @@
           "description": "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark downloads, multiple quality options, no registration required.",
           "route": "/universal-video-downloader",
           "popular": true,
-          "category": "downloaders",
-          "keywords": [
-            "universal video downloader",
-            "video downloader",
-            "tiktok downloader",
-            "facebook video downloader",
-            "instagram video downloader",
-            "twitter video downloader",
-            "vimeo downloader",
-            "dailymotion downloader",
-            "reddit video downloader",
-            "rumble downloader"
-          ],
-          "longTailKeywords": [
-            "universal video downloader free",
-            "download videos from multiple platforms",
-            "tiktok instagram facebook video downloader",
-            "no watermark video downloader",
-            "multi platform video downloader",
-            "social media video downloader free",
-            "download tiktok facebook instagram videos",
-            "all in one video downloader"
-          ],
-          "primaryKeyword": "universal video downloader",
-          "features": [
-            "Multiple platform support",
-            "No watermark downloads",
-            "Multiple quality options",
-            "Fast processing",
-            "No registration required",
-            "Works on all devices",
-            "HD quality downloads",
-            "Audio extraction"
-          ]
+          "category": "downloaders"
         }
       ]
     },
@@ -3764,25 +1282,7 @@
           "description": "Convert between different units of measurement",
           "route": "/unit-converter",
           "popular": true,
-          "category": "utilities",
-          "keywords": [
-            "unit converter",
-            "convert units",
-            "measurement converter",
-            "metric converter"
-          ],
-          "longTailKeywords": [
-            "online unit converter all in one",
-            "convert metric to imperial",
-            "measurement conversion tool"
-          ],
-          "primaryKeyword": "unit converter",
-          "features": [
-            "Length/Weight/Temp",
-            "Currency Support",
-            "Scientific Units",
-            "Instant Calculation"
-          ]
+          "category": "utilities"
         },
         {
           "id": "zip-creator",
@@ -3790,25 +1290,7 @@
           "description": "Create ZIP archives from multiple files",
           "route": "/zip-creator",
           "popular": false,
-          "category": "utilities",
-          "keywords": [
-            "zip creator",
-            "create zip",
-            "compress files",
-            "archive maker"
-          ],
-          "longTailKeywords": [
-            "create zip file online",
-            "compress multiple files to zip",
-            "online archive creator"
-          ],
-          "primaryKeyword": "zip creator",
-          "features": [
-            "Multiple Files",
-            "Compression Level",
-            "Password Protection",
-            "Fast Processing"
-          ]
+          "category": "utilities"
         },
         {
           "id": "url-shortener",
@@ -3816,25 +1298,7 @@
           "description": "Shorten long URLs for easier sharing",
           "route": "/url-shortener",
           "popular": false,
-          "category": "utilities",
-          "keywords": [
-            "url shortener",
-            "shorten link",
-            "link shrinker",
-            "short url"
-          ],
-          "longTailKeywords": [
-            "free url shortener custom alias",
-            "shorten long links",
-            "link shortener with analytics"
-          ],
-          "primaryKeyword": "url shortener",
-          "features": [
-            "Custom Alias",
-            "QR Code",
-            "Click Analytics",
-            "No Expiration"
-          ]
+          "category": "utilities"
         },
         {
           "id": "timestamp-converter",
@@ -3842,25 +1306,7 @@
           "description": "Convert between Unix timestamps and readable dates",
           "route": "/timestamp-converter",
           "popular": false,
-          "category": "utilities",
-          "keywords": [
-            "timestamp converter",
-            "unix time",
-            "epoch converter",
-            "date to timestamp"
-          ],
-          "longTailKeywords": [
-            "unix timestamp converter",
-            "convert date to epoch",
-            "human readable time"
-          ],
-          "primaryKeyword": "timestamp converter",
-          "features": [
-            "Unix/Epoch",
-            "ISO 8601",
-            "Timezone Support",
-            "Current Time"
-          ]
+          "category": "utilities"
         },
         {
           "id": "random-generator",
@@ -3868,25 +1314,7 @@
           "description": "Generate random numbers, strings, and data",
           "route": "/random-generator",
           "popular": false,
-          "category": "utilities",
-          "keywords": [
-            "random generator",
-            "random number",
-            "random picker",
-            "randomizer"
-          ],
-          "longTailKeywords": [
-            "random number generator",
-            "random name picker",
-            "list randomizer"
-          ],
-          "primaryKeyword": "random generator",
-          "features": [
-            "Numbers",
-            "Names/Lists",
-            "Passwords",
-            "Dice/Coin"
-          ]
+          "category": "utilities"
         },
         {
           "id": "currency-converter",
@@ -3894,28 +1322,7 @@
           "description": "Convert currencies with real-time exchange rates",
           "route": "/currency-converter",
           "popular": true,
-          "category": "utilities",
-          "keywords": [
-            "currency converter",
-            "exchange rate",
-            "money converter",
-            "forex converter"
-          ],
-          "longTailKeywords": [
-            "real time currency converter",
-            "historical currency rates",
-            "live exchange rate calculator",
-            "currency conversion calculator",
-            "foreign exchange converter"
-          ],
-          "primaryKeyword": "currency converter",
-          "features": [
-            "170+ currencies",
-            "Real-time rates",
-            "Historical data",
-            "Rate charts",
-            "Favorites list"
-          ]
+          "category": "utilities"
         },
         {
           "id": "timezone-converter",
@@ -3923,28 +1330,7 @@
           "description": "Convert time between different time zones worldwide",
           "route": "/timezone-converter",
           "popular": true,
-          "category": "utilities",
-          "keywords": [
-            "timezone converter",
-            "time zone",
-            "world clock",
-            "time converter"
-          ],
-          "longTailKeywords": [
-            "world time zone converter",
-            "meeting time zone calculator",
-            "convert time zones online",
-            "global time converter",
-            "timezone difference calculator"
-          ],
-          "primaryKeyword": "timezone converter",
-          "features": [
-            "500+ time zones",
-            "Daylight saving time",
-            "Meeting planner",
-            "World clock",
-            "UTC conversion"
-          ]
+          "category": "utilities"
         },
         {
           "id": "epoch-converter",
@@ -3952,28 +1338,7 @@
           "description": "Convert Unix timestamps to human-readable dates and vice versa",
           "route": "/epoch-converter",
           "popular": true,
-          "category": "utilities",
-          "keywords": [
-            "epoch converter",
-            "unix timestamp",
-            "timestamp converter",
-            "epoch time"
-          ],
-          "longTailKeywords": [
-            "unix timestamp to date converter",
-            "epoch time converter online",
-            "timestamp to human date",
-            "unix time calculator",
-            "epoch seconds converter"
-          ],
-          "primaryKeyword": "epoch converter",
-          "features": [
-            "Unix timestamp conversion",
-            "Multiple date formats",
-            "Live current time",
-            "Relative time display",
-            "Milliseconds support"
-          ]
+          "category": "utilities"
         },
         {
           "id": "whatsapp-link-generator",
@@ -3981,26 +1346,7 @@
           "description": "Create WhatsApp click-to-chat links with custom messages",
           "route": "/whatsapp-link-generator",
           "popular": true,
-          "category": "utilities",
-          "keywords": [
-            "whatsapp link",
-            "wa.me generator",
-            "whatsapp chat link",
-            "whatsapp link creator"
-          ],
-          "longTailKeywords": [
-            "whatsapp link generator with message",
-            "create wa.me link online",
-            "whatsapp direct chat link maker"
-          ],
-          "primaryKeyword": "whatsapp link generator",
-          "features": [
-            "Pre-filled messages",
-            "Phone validation",
-            "Direct chat links",
-            "QR code ready",
-            "Business friendly"
-          ]
+          "category": "utilities"
         },
         {
           "id": "paypal-link-generator",
@@ -4008,26 +1354,7 @@
           "description": "Generate PayPal payment links for donations and payments",
           "route": "/paypal-link-generator",
           "popular": false,
-          "category": "utilities",
-          "keywords": [
-            "paypal link",
-            "paypal payment link",
-            "paypal generator",
-            "payment link creator"
-          ],
-          "longTailKeywords": [
-            "paypal payment link generator free",
-            "create paypal donation link",
-            "paypal.me link generator"
-          ],
-          "primaryKeyword": "paypal link generator",
-          "features": [
-            "Set amounts",
-            "Currency selection",
-            "Item descriptions",
-            "Instant links",
-            "No account needed"
-          ]
+          "category": "utilities"
         },
         {
           "id": "whatsapp-checker",
@@ -4035,25 +1362,7 @@
           "description": "Check if a phone number is active on WhatsApp",
           "route": "/whatsapp-checker",
           "popular": false,
-          "category": "utilities",
-          "keywords": [
-            "whatsapp checker",
-            "whatsapp number check",
-            "verify whatsapp number"
-          ],
-          "longTailKeywords": [
-            "whatsapp number checker online free",
-            "check if number uses whatsapp",
-            "verify whatsapp account exists"
-          ],
-          "primaryKeyword": "whatsapp checker",
-          "features": [
-            "Number verification",
-            "No contact saving",
-            "Direct wa.me links",
-            "Bulk checking",
-            "Privacy focused"
-          ]
+          "category": "utilities"
         }
       ]
     },
@@ -4069,37 +1378,7 @@
           "description": "Check Google rankings for multiple keywords at once. Track keyword positions for any domain across different locations and devices.",
           "route": "/bulk-keyword-rank-checker",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "keyword rank checker",
-            "bulk rank checker",
-            "google rank tracker",
-            "keyword position checker",
-            "serp checker",
-            "rank tracking tool",
-            "keyword ranking tool",
-            "google ranking checker"
-          ],
-          "longTailKeywords": [
-            "free bulk keyword rank checker tool",
-            "check google rankings for multiple keywords",
-            "bulk keyword position tracker online",
-            "google serp position checker free",
-            "track keyword rankings in bulk",
-            "multiple keyword rank checker google",
-            "free google ranking checker tool"
-          ],
-          "primaryKeyword": "bulk keyword rank checker",
-          "features": [
-            "Check up to 500 keywords at once",
-            "Google search results tracking",
-            "Multiple location support",
-            "Desktop and mobile rankings",
-            "Export results to CSV/Excel",
-            "Historical ranking data",
-            "Competitor comparison",
-            "SERP features detection"
-          ]
+          "category": "seo"
         },
         {
           "id": "bulk-google-index-checker",
@@ -4107,37 +1386,7 @@
           "description": "Check if multiple URLs are indexed by Google. Verify indexation status for entire websites or URL lists in bulk.",
           "route": "/bulk-google-index-checker",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "google index checker",
-            "bulk index checker",
-            "url index checker",
-            "google indexation tool",
-            "check if page indexed",
-            "google index status",
-            "indexed pages checker",
-            "google crawl checker"
-          ],
-          "longTailKeywords": [
-            "bulk google index checker free",
-            "check if urls are indexed by google",
-            "google indexation status checker",
-            "bulk url index verification tool",
-            "check multiple pages google index",
-            "google search console alternative",
-            "verify google indexation bulk"
-          ],
-          "primaryKeyword": "bulk google index checker",
-          "features": [
-            "Check up to 1000 URLs at once",
-            "Real-time Google index verification",
-            "Export results to CSV/Excel",
-            "Index status indicators",
-            "Bulk URL upload",
-            "Sitemap URL extraction",
-            "De-indexation detection",
-            "Crawl error identification"
-          ]
+          "category": "seo"
         },
         {
           "id": "title-rewrite-checker",
@@ -4145,37 +1394,7 @@
           "description": "Check if Google rewrites your page titles in search results. Compare your original titles with what Google displays in SERPs.",
           "route": "/title-rewrite-checker",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "title rewrite checker",
-            "google title rewrite",
-            "serp title checker",
-            "google title change",
-            "title tag rewrite",
-            "google title modification",
-            "serp snippet preview",
-            "title optimization tool"
-          ],
-          "longTailKeywords": [
-            "google title rewrite checker free",
-            "check if google rewrites page titles",
-            "serp title vs actual title checker",
-            "google title tag modification tool",
-            "title rewrite detection tool",
-            "compare serp titles with meta titles",
-            "google search result title checker"
-          ],
-          "primaryKeyword": "title rewrite checker",
-          "features": [
-            "Compare original vs SERP titles",
-            "Bulk title rewrite detection",
-            "SERP snippet preview",
-            "Title optimization suggestions",
-            "Character count analysis",
-            "Export comparison reports",
-            "Multiple search engine support",
-            "Title performance scoring"
-          ]
+          "category": "seo"
         },
         {
           "id": "xml-sitemap-extractor",
@@ -4183,37 +1402,7 @@
           "description": "Extract all URLs from XML sitemaps and export them in various formats (CSV, TXT, XML, HTML, Excel). Analyze sitemap structure and URL data.",
           "route": "/xml-sitemap-extractor",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "sitemap extractor",
-            "xml sitemap parser",
-            "sitemap url extractor",
-            "sitemap analyzer",
-            "xml parser tool",
-            "sitemap crawler",
-            "url list extractor",
-            "sitemap reader"
-          ],
-          "longTailKeywords": [
-            "extract urls from xml sitemap",
-            "xml sitemap url extractor free",
-            "parse xml sitemap online tool",
-            "sitemap url list generator",
-            "extract sitemap urls to csv",
-            "xml sitemap parser and analyzer",
-            "bulk url extraction from sitemap"
-          ],
-          "primaryKeyword": "xml sitemap extractor",
-          "features": [
-            "Extract URLs from any XML sitemap",
-            "Export to CSV, TXT, XML, HTML, Excel",
-            "Sitemap index file support",
-            "URL metadata extraction",
-            "Last modified date analysis",
-            "Priority and changefreq data",
-            "Nested sitemap processing",
-            "URL validation and filtering"
-          ]
+          "category": "seo"
         },
         {
           "id": "sitemap-generator",
@@ -4221,37 +1410,7 @@
           "description": "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata.",
           "route": "/sitemap-generator",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "sitemap generator",
-            "xml sitemap generator",
-            "website sitemap creator",
-            "sitemap builder",
-            "auto sitemap generator",
-            "sitemap maker",
-            "xml sitemap tool",
-            "website crawler"
-          ],
-          "longTailKeywords": [
-            "free xml sitemap generator online",
-            "generate sitemap for website automatically",
-            "website sitemap creator tool",
-            "auto generate xml sitemap from url",
-            "create sitemap for google search console",
-            "sitemap generator for seo",
-            "website xml sitemap builder"
-          ],
-          "primaryKeyword": "xml sitemap generator",
-          "features": [
-            "Automatic website crawling",
-            "XML sitemap generation",
-            "Custom crawl depth settings",
-            "URL filtering options",
-            "Priority and changefreq settings",
-            "Google/Bing sitemap format",
-            "Image and video sitemaps",
-            "Sitemap validation"
-          ]
+          "category": "seo"
         },
         {
           "id": "url-extractor",
@@ -4259,37 +1418,7 @@
           "description": "Extract all URLs from any webpage, text, or document. Find internal links, external links, images, and resources from any content.",
           "route": "/url-extractor",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "url extractor",
-            "link extractor",
-            "webpage url finder",
-            "extract links from text",
-            "url parser tool",
-            "link harvester",
-            "url scraper",
-            "link finder tool"
-          ],
-          "longTailKeywords": [
-            "extract urls from webpage online",
-            "find all links on website",
-            "url extractor from text free",
-            "extract links from html code",
-            "webpage link extractor tool",
-            "bulk url extraction from website",
-            "link finder and extractor online"
-          ],
-          "primaryKeyword": "url extractor",
-          "features": [
-            "Extract URLs from webpages",
-            "Text and HTML URL extraction",
-            "Internal vs external link classification",
-            "Export to multiple formats",
-            "Duplicate URL removal",
-            "URL validation",
-            "Broken link detection",
-            "Anchor text analysis"
-          ]
+          "category": "seo"
         },
         {
           "id": "broken-link-checker",
@@ -4297,37 +1426,7 @@
           "description": "Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages.",
           "route": "/broken-link-checker",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "broken link checker",
-            "dead link finder",
-            "404 error checker",
-            "link validator",
-            "website link checker",
-            "broken url finder",
-            "link health checker",
-            "dead link detector"
-          ],
-          "longTailKeywords": [
-            "free broken link checker online",
-            "find broken links on website",
-            "check for dead links website",
-            "404 error link checker tool",
-            "website broken link detector",
-            "bulk broken link checker free",
-            "find 404 errors on website"
-          ],
-          "primaryKeyword": "broken link checker",
-          "features": [
-            "Full website link scanning",
-            "404 and error detection",
-            "Redirect chain analysis",
-            "Response time monitoring",
-            "Export broken link reports",
-            "Internal and external link checks",
-            "Bulk URL testing",
-            "Link fixing suggestions"
-          ]
+          "category": "seo"
         },
         {
           "id": "duplicate-content-finder",
@@ -4335,37 +1434,7 @@
           "description": "Detect duplicate content across your website or compare content with other sites. Find plagiarized content and improve SEO.",
           "route": "/duplicate-content-finder",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "duplicate content checker",
-            "plagiarism checker",
-            "content duplication finder",
-            "duplicate content detector",
-            "content similarity checker",
-            "seo duplicate content",
-            "copied content finder",
-            "content uniqueness checker"
-          ],
-          "longTailKeywords": [
-            "free duplicate content checker seo",
-            "find duplicate content on website",
-            "check for plagiarized content online",
-            "duplicate content detection tool",
-            "website content duplication finder",
-            "seo duplicate content checker",
-            "content similarity analysis tool"
-          ],
-          "primaryKeyword": "duplicate content checker",
-          "features": [
-            "Website duplicate content scanning",
-            "Cross-site content comparison",
-            "Similarity percentage analysis",
-            "Internal duplication detection",
-            "Content uniqueness scoring",
-            "Plagiarism detection",
-            "Export duplicate reports",
-            "Content optimization suggestions"
-          ]
+          "category": "seo"
         },
         {
           "id": "meta-tag-analyzer",
@@ -4373,37 +1442,7 @@
           "description": "Analyze and audit meta tags across your website. Check title tags, meta descriptions, Open Graph tags, and other SEO metadata.",
           "route": "/meta-tag-analyzer",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "meta tag analyzer",
-            "meta tag checker",
-            "seo meta audit",
-            "title tag analyzer",
-            "meta description checker",
-            "meta tag validator",
-            "seo tag analyzer",
-            "website meta checker"
-          ],
-          "longTailKeywords": [
-            "meta tag analyzer and checker free",
-            "analyze meta tags for seo",
-            "check meta tags on website",
-            "meta tag audit tool online",
-            "website meta description analyzer",
-            "seo meta tag optimization tool",
-            "bulk meta tag checker"
-          ],
-          "primaryKeyword": "meta tag analyzer",
-          "features": [
-            "Complete meta tag analysis",
-            "Title tag length checking",
-            "Meta description optimization",
-            "Open Graph tag validation",
-            "Twitter Card analysis",
-            "Bulk page scanning",
-            "SEO recommendations",
-            "Export audit reports"
-          ]
+          "category": "seo"
         },
         {
           "id": "page-speed-test",
@@ -4411,37 +1450,7 @@
           "description": "Test website page speed and performance. Get detailed insights on Core Web Vitals, loading times, and optimization suggestions.",
           "route": "/page-speed-test",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "page speed test",
-            "website speed test",
-            "core web vitals",
-            "site speed checker",
-            "performance test",
-            "loading speed test",
-            "google pagespeed",
-            "website performance"
-          ],
-          "longTailKeywords": [
-            "free page speed test tool",
-            "website loading speed checker",
-            "core web vitals test online",
-            "google page speed insights alternative",
-            "website performance analyzer",
-            "site speed optimization tool",
-            "page load time checker"
-          ],
-          "primaryKeyword": "page speed test",
-          "features": [
-            "Core Web Vitals analysis",
-            "Mobile and desktop testing",
-            "Detailed performance metrics",
-            "Optimization recommendations",
-            "Global test locations",
-            "Historical performance data",
-            "Competitor comparison",
-            "Export performance reports"
-          ]
+          "category": "seo"
         },
         {
           "id": "seo-audit-tool",
@@ -4449,37 +1458,7 @@
           "description": "Comprehensive SEO audit tool that analyzes technical SEO, on-page optimization, content quality, and provides actionable recommendations.",
           "route": "/seo-audit-tool",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "seo audit tool",
-            "website seo audit",
-            "seo analyzer",
-            "seo checker",
-            "website seo checker",
-            "seo analysis tool",
-            "seo report tool",
-            "seo scanner"
-          ],
-          "longTailKeywords": [
-            "free seo audit tool online",
-            "complete website seo analysis",
-            "seo audit checker free",
-            "website seo audit report",
-            "comprehensive seo analyzer",
-            "on page seo audit tool",
-            "technical seo audit free"
-          ],
-          "primaryKeyword": "seo audit tool",
-          "features": [
-            "Complete technical SEO audit",
-            "On-page optimization analysis",
-            "Content quality assessment",
-            "Mobile-friendliness check",
-            "Site structure analysis",
-            "Internal linking audit",
-            "Schema markup validation",
-            "Actionable recommendations"
-          ]
+          "category": "seo"
         },
         {
           "id": "backlink-checker",
@@ -4487,37 +1466,7 @@
           "description": "Check backlinks for any website. Analyze link profile, domain authority, anchor text distribution, and competitor backlinks.",
           "route": "/backlink-checker",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "backlink checker",
-            "link profile analyzer",
-            "backlink analysis",
-            "domain authority checker",
-            "link building tool",
-            "backlink monitor",
-            "link checker tool",
-            "website backlinks"
-          ],
-          "longTailKeywords": [
-            "free backlink checker tool",
-            "check website backlinks online",
-            "backlink analysis tool free",
-            "domain backlink checker",
-            "competitor backlink analysis",
-            "link profile checker free",
-            "website link analysis tool"
-          ],
-          "primaryKeyword": "backlink checker",
-          "features": [
-            "Comprehensive backlink analysis",
-            "Domain authority metrics",
-            "Anchor text analysis",
-            "Referring domains count",
-            "Link quality assessment",
-            "Competitor comparison",
-            "Export backlink data",
-            "New/lost links tracking"
-          ]
+          "category": "seo"
         },
         {
           "id": "competitor-analysis-tool",
@@ -4525,37 +1474,7 @@
           "description": "Analyze competitor SEO strategies. Compare keywords, backlinks, content gaps, and identify opportunities to outrank competitors.",
           "route": "/competitor-analysis-tool",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "competitor analysis",
-            "seo competitor research",
-            "competitor keyword analysis",
-            "competitive analysis tool",
-            "competitor seo audit",
-            "market analysis seo",
-            "competitor research tool",
-            "seo competition analysis"
-          ],
-          "longTailKeywords": [
-            "free seo competitor analysis tool",
-            "competitor keyword research free",
-            "analyze competitor seo strategy",
-            "competitor backlink analysis",
-            "seo competitive intelligence",
-            "competitor content analysis seo",
-            "compare competitor seo metrics"
-          ],
-          "primaryKeyword": "seo competitor analysis",
-          "features": [
-            "Competitor keyword analysis",
-            "Backlink profile comparison",
-            "Content gap identification",
-            "SERP position analysis",
-            "Traffic estimation",
-            "Social media presence",
-            "Technical SEO comparison",
-            "Opportunity identification"
-          ]
+          "category": "seo"
         },
         {
           "id": "keyword-research-tool",
@@ -4563,37 +1482,7 @@
           "description": "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO.",
           "route": "/keyword-research-tool",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "keyword research tool",
-            "keyword planner",
-            "keyword finder",
-            "seo keyword tool",
-            "keyword generator",
-            "keyword analysis",
-            "keyword difficulty checker",
-            "long tail keywords"
-          ],
-          "longTailKeywords": [
-            "free keyword research tool online",
-            "keyword research for seo free",
-            "keyword planner alternative free",
-            "long tail keyword generator",
-            "keyword difficulty checker free",
-            "seo keyword analysis tool",
-            "keyword search volume checker"
-          ],
-          "primaryKeyword": "keyword research tool",
-          "features": [
-            "Search volume data",
-            "Keyword difficulty scoring",
-            "CPC and competition data",
-            "Related keyword suggestions",
-            "Long-tail keyword generation",
-            "Seasonal trend analysis",
-            "Export keyword lists",
-            "SERP analysis integration"
-          ]
+          "category": "seo"
         },
         {
           "id": "bing-keyword-research",
@@ -4601,31 +1490,7 @@
           "description": "Research keywords specifically for Bing search engine. Get search volumes, difficulty scores, and related keyword suggestions for Bing SEO.",
           "route": "/bing-keyword-research",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "bing keyword research",
-            "bing seo",
-            "bing keywords",
-            "bing keyword tool",
-            "bing keyword planner"
-          ],
-          "longTailKeywords": [
-            "bing keyword research tool free",
-            "bing keyword planner alternative",
-            "bing seo keyword research",
-            "bing keyword suggestions",
-            "bing keyword difficulty checker"
-          ],
-          "primaryKeyword": "bing keyword research",
-          "features": [
-            "Bing-specific search volumes",
-            "Keyword difficulty scores",
-            "CPC and competition data",
-            "Related keyword suggestions",
-            "Long-tail keyword generation",
-            "Export keyword lists",
-            "Bing SERP analysis"
-          ]
+          "category": "seo"
         },
         {
           "id": "google-keyword-research",
@@ -4633,31 +1498,7 @@
           "description": "Research keywords specifically for Google search engine. Get search volumes, difficulty scores, and related keyword suggestions for Google SEO.",
           "route": "/google-keyword-research",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "google keyword research",
-            "google keywords",
-            "google keyword tool",
-            "google keyword planner",
-            "google seo"
-          ],
-          "longTailKeywords": [
-            "google keyword research tool free",
-            "google keyword planner alternative",
-            "google seo keyword research",
-            "google keyword suggestions",
-            "google keyword difficulty checker"
-          ],
-          "primaryKeyword": "google keyword research",
-          "features": [
-            "Google-specific search volumes",
-            "Keyword difficulty scores",
-            "CPC and competition data",
-            "Related keyword suggestions",
-            "Long-tail keyword generation",
-            "Export keyword lists",
-            "Google SERP analysis"
-          ]
+          "category": "seo"
         },
         {
           "id": "rank-tracking-tool",
@@ -4665,37 +1506,7 @@
           "description": "Track keyword rankings over time. Monitor SERP positions for multiple keywords and domains with detailed reporting and alerts.",
           "route": "/rank-tracking-tool",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "rank tracker",
-            "keyword rank tracking",
-            "serp tracker",
-            "ranking monitor",
-            "keyword position tracker",
-            "seo rank tracker",
-            "google rank tracker",
-            "ranking tool"
-          ],
-          "longTailKeywords": [
-            "free keyword rank tracking tool",
-            "google ranking tracker free",
-            "keyword position monitoring",
-            "serp rank tracker online",
-            "daily keyword rank tracker",
-            "keyword ranking software free",
-            "track google rankings daily"
-          ],
-          "primaryKeyword": "keyword rank tracker",
-          "features": [
-            "Daily rank tracking",
-            "Multiple search engines",
-            "Local and global tracking",
-            "Historical data analysis",
-            "Ranking alerts",
-            "Competitor tracking",
-            "Mobile and desktop rankings",
-            "Detailed reports and charts"
-          ]
+          "category": "seo"
         },
         {
           "id": "mobile-seo-checker",
@@ -4703,37 +1514,7 @@
           "description": "Test mobile SEO performance and mobile-friendliness. Check Core Web Vitals, mobile usability, and mobile search optimization.",
           "route": "/mobile-seo-checker",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "mobile seo checker",
-            "mobile friendly test",
-            "mobile usability test",
-            "mobile optimization",
-            "responsive design test",
-            "mobile page speed",
-            "mobile search optimization",
-            "mobile seo audit"
-          ],
-          "longTailKeywords": [
-            "mobile seo checker free online",
-            "test website mobile friendliness",
-            "mobile usability checker google",
-            "mobile page speed test tool",
-            "mobile seo optimization tool",
-            "responsive website checker",
-            "mobile search ranking factors"
-          ],
-          "primaryKeyword": "mobile seo checker",
-          "features": [
-            "Mobile-friendliness testing",
-            "Mobile page speed analysis",
-            "Core Web Vitals for mobile",
-            "Touch elements sizing",
-            "Viewport configuration check",
-            "Mobile usability scoring",
-            "AMP validation",
-            "Mobile SERP preview"
-          ]
+          "category": "seo"
         },
         {
           "id": "local-seo-tool",
@@ -4741,37 +1522,7 @@
           "description": "Optimize for local search with local SEO tools. Check Google My Business optimization, local citations, and local search rankings.",
           "route": "/local-seo-tool",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "local seo tool",
-            "local seo checker",
-            "google my business optimizer",
-            "local search optimization",
-            "local citation checker",
-            "local ranking tracker",
-            "local seo audit",
-            "local search tool"
-          ],
-          "longTailKeywords": [
-            "local seo optimization tool free",
-            "google my business seo checker",
-            "local search ranking tool",
-            "local citation builder free",
-            "local seo audit tool",
-            "local keyword rank tracker",
-            "local business seo analyzer"
-          ],
-          "primaryKeyword": "local seo tool",
-          "features": [
-            "Google My Business audit",
-            "Local citation analysis",
-            "Local keyword tracking",
-            "NAP consistency check",
-            "Local competitor analysis",
-            "Review management insights",
-            "Local search visibility",
-            "Schema markup for local"
-          ]
+          "category": "seo"
         },
         {
           "id": "serp-snippet-optimizer",
@@ -4779,37 +1530,7 @@
           "description": "Optimize title tags and meta descriptions for better click-through rates. Preview how your pages will appear in search results.",
           "route": "/serp-snippet-optimizer",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "serp snippet optimizer",
-            "meta description optimizer",
-            "title tag optimizer",
-            "serp preview tool",
-            "snippet preview",
-            "search result preview",
-            "ctr optimization",
-            "serp simulator"
-          ],
-          "longTailKeywords": [
-            "serp snippet preview tool free",
-            "google search result preview",
-            "meta description preview tool",
-            "title tag length checker",
-            "serp snippet generator",
-            "search result simulator",
-            "optimize serp snippets"
-          ],
-          "primaryKeyword": "serp snippet optimizer",
-          "features": [
-            "Live SERP preview",
-            "Character count optimization",
-            "CTR improvement suggestions",
-            "A/B testing templates",
-            "Rich snippets preview",
-            "Mobile SERP simulation",
-            "Competitor snippet analysis",
-            "Best practices guidance"
-          ]
+          "category": "seo"
         },
         {
           "id": "structured-data-tester",
@@ -4817,37 +1538,7 @@
           "description": "Test and validate structured data markup. Check schema.org implementation and preview rich snippets in search results.",
           "route": "/structured-data-tester",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "structured data tester",
-            "schema markup validator",
-            "rich snippets tester",
-            "json-ld validator",
-            "microdata tester",
-            "structured data validator",
-            "schema tester",
-            "rich snippets validator"
-          ],
-          "longTailKeywords": [
-            "google structured data testing tool",
-            "schema markup validator free",
-            "rich snippets testing tool",
-            "json-ld structured data tester",
-            "validate schema markup online",
-            "structured data markup tester",
-            "google rich results tester"
-          ],
-          "primaryKeyword": "structured data tester",
-          "features": [
-            "Schema markup validation",
-            "Rich snippets preview",
-            "JSON-LD testing",
-            "Microdata validation",
-            "Error detection and fixing",
-            "Multiple schema types",
-            "Google guidelines compliance",
-            "Rich results eligibility"
-          ]
+          "category": "seo"
         },
         {
           "id": "image-seo-analyzer",
@@ -4855,37 +1546,7 @@
           "description": "Optimize images for SEO. Check alt text, file sizes, formats, and image optimization opportunities across your website.",
           "route": "/image-seo-analyzer",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "image seo analyzer",
-            "image optimization seo",
-            "alt text checker",
-            "image seo audit",
-            "image search optimization",
-            "image seo tool",
-            "visual search optimization",
-            "image alt tag checker"
-          ],
-          "longTailKeywords": [
-            "image seo optimization tool",
-            "alt text analyzer for seo",
-            "image search ranking tool",
-            "optimize images for google",
-            "image seo best practices",
-            "visual search optimization tool",
-            "image alt attribute checker"
-          ],
-          "primaryKeyword": "image seo analyzer",
-          "features": [
-            "Alt text analysis",
-            "Image size optimization",
-            "Format recommendations",
-            "Lazy loading detection",
-            "Image sitemap generation",
-            "Visual search optimization",
-            "Compression analysis",
-            "Image SEO scoring"
-          ]
+          "category": "seo"
         },
         {
           "id": "robots-txt-generator",
@@ -4893,28 +1554,7 @@
           "description": "Generate robots.txt files for website crawling control",
           "route": "/robots-txt-generator",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "robots txt generator",
-            "robots.txt",
-            "website crawling",
-            "seo robots"
-          ],
-          "longTailKeywords": [
-            "robots txt generator for wordpress",
-            "robots txt validator and tester",
-            "create robots txt file online",
-            "robots.txt generator free",
-            "website robots txt maker"
-          ],
-          "primaryKeyword": "robots txt generator",
-          "features": [
-            "Syntax validation",
-            "Common templates",
-            "Crawling rules",
-            "Sitemap integration",
-            "Testing tool"
-          ]
+          "category": "seo"
         },
         {
           "id": "schema-generator",
@@ -4922,28 +1562,7 @@
           "description": "Generate JSON-LD schema markup for rich snippets",
           "route": "/schema-generator",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "schema markup",
-            "json-ld",
-            "structured data",
-            "rich snippets"
-          ],
-          "longTailKeywords": [
-            "json-ld schema generator free",
-            "local business schema generator",
-            "product schema markup generator",
-            "article schema generator",
-            "structured data markup tool"
-          ],
-          "primaryKeyword": "schema markup generator",
-          "features": [
-            "Multiple schema types",
-            "Validation",
-            "Preview snippets",
-            "Google testing",
-            "Export options"
-          ]
+          "category": "seo"
         },
         {
           "id": "ssl-checker",
@@ -4951,28 +1570,7 @@
           "description": "Check SSL certificate status, expiry, and security details",
           "route": "/ssl-checker",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "ssl checker",
-            "ssl certificate",
-            "website security",
-            "ssl validator"
-          ],
-          "longTailKeywords": [
-            "ssl certificate expiry checker",
-            "ssl chain validator online",
-            "website ssl security check",
-            "ssl certificate analyzer",
-            "free ssl certificate tester"
-          ],
-          "primaryKeyword": "ssl certificate checker",
-          "features": [
-            "Certificate details",
-            "Expiry monitoring",
-            "Chain validation",
-            "Security rating",
-            "Mobile compatibility"
-          ]
+          "category": "seo"
         },
         {
           "id": "meta-tags-generator",
@@ -4980,25 +1578,7 @@
           "description": "Generate HTML meta tags for SEO optimization",
           "route": "/meta-tags-generator",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "meta tags",
-            "seo tags",
-            "generate meta",
-            "seo generator"
-          ],
-          "longTailKeywords": [
-            "meta tags generator for website",
-            "seo meta description generator",
-            "open graph tag generator"
-          ],
-          "primaryKeyword": "meta tags generator",
-          "features": [
-            "Title/Description",
-            "Open Graph",
-            "Twitter Cards",
-            "Live Preview"
-          ]
+          "category": "seo"
         },
         {
           "id": "qr-code-generator",
@@ -5006,28 +1586,7 @@
           "description": "Generate QR codes for text, URLs, WiFi, and more",
           "route": "/qr-code-generator",
           "popular": true,
-          "category": "seo",
-          "keywords": [
-            "qr code",
-            "qr generator",
-            "qr code maker",
-            "qr creator"
-          ],
-          "longTailKeywords": [
-            "free qr code generator no sign up",
-            "qr code generator for wifi password",
-            "bulk qr code generator excel",
-            "custom qr code generator with logo",
-            "vcard qr code generator free"
-          ],
-          "primaryKeyword": "qr code generator",
-          "features": [
-            "Text, URL, WiFi QR codes",
-            "Custom colors",
-            "High resolution",
-            "Bulk generation",
-            "Logo embedding"
-          ]
+          "category": "seo"
         },
         {
           "id": "keyword-density",
@@ -5035,149 +1594,7 @@
           "description": "Check keyword density and frequency in text",
           "route": "/keyword-density",
           "popular": false,
-          "category": "seo",
-          "keywords": [
-            "keyword density",
-            "seo checker",
-            "word frequency",
-            "content analysis"
-          ],
-          "longTailKeywords": [
-            "keyword density checker online",
-            "check keyword frequency in text",
-            "seo content analyzer"
-          ],
-          "primaryKeyword": "keyword density checker",
-          "features": [
-            "1/2/3 Word Phrases",
-            "Percentage Calc",
-            "Stop Words Filter",
-            "Top Keywords"
-          ]
-        }
-      ]
-    },
-    "social": {
-      "name": "Social Media Tools",
-      "slug": "social-media-tools",
-      "icon": "ShareIcon",
-      "description": "Create and optimize content for social media platforms",
-      "tools": [
-        {
-          "id": "instagram-story-maker",
-          "name": "Instagram Story Maker",
-          "description": "Create stunning Instagram stories with templates and effects",
-          "route": "/instagram-story-maker",
-          "popular": true,
-          "category": "social",
-          "keywords": [
-            "instagram story",
-            "story maker",
-            "social media content",
-            "story template"
-          ],
-          "longTailKeywords": [
-            "resize image for instagram story",
-            "instagram story template generator",
-            "create instagram story online free",
-            "instagram story size optimizer",
-            "story maker with text and effects"
-          ],
-          "primaryKeyword": "instagram story maker",
-          "features": [
-            "Templates",
-            "Text overlay",
-            "Perfect sizing",
-            "Effects",
-            "Export HD"
-          ]
-        },
-        {
-          "id": "youtube-thumbnail-creator",
-          "name": "YouTube Thumbnail Creator",
-          "description": "Design eye-catching YouTube thumbnails that boost click-through rates",
-          "route": "/youtube-thumbnail-creator",
-          "popular": true,
-          "category": "social",
-          "keywords": [
-            "youtube thumbnail",
-            "thumbnail maker",
-            "youtube thumbnail design",
-            "video thumbnail"
-          ],
-          "longTailKeywords": [
-            "youtube thumbnail maker free",
-            "youtube thumbnail size optimizer",
-            "custom youtube thumbnail creator",
-            "youtube thumbnail design tool",
-            "video thumbnail generator online"
-          ],
-          "primaryKeyword": "youtube thumbnail creator",
-          "features": [
-            "Professional templates",
-            "1280x720 sizing",
-            "Custom fonts",
-            "Graphics library",
-            "Click-through optimization"
-          ]
-        },
-        {
-          "id": "whatsapp-link-generator",
-          "name": "WhatsApp Link Generator",
-          "description": "Generate WhatsApp click-to-chat links for business and personal use",
-          "route": "/whatsapp-link-generator",
-          "popular": true,
-          "category": "social",
-          "keywords": [
-            "whatsapp link",
-            "whatsapp chat",
-            "click to chat",
-            "whatsapp business"
-          ],
-          "longTailKeywords": [
-            "whatsapp click to chat generator",
-            "whatsapp business link creator",
-            "generate whatsapp chat link",
-            "whatsapp direct message link",
-            "custom whatsapp link maker"
-          ],
-          "primaryKeyword": "whatsapp link generator",
-          "features": [
-            "Custom messages",
-            "QR code generation",
-            "Multiple formats",
-            "No phone save required",
-            "Business integration"
-          ]
-        },
-        {
-          "id": "social-media-post-resizer",
-          "name": "Social Media Post Resizer",
-          "description": "Resize images for all social media platforms with perfect dimensions",
-          "route": "/social-media-post-resizer",
-          "popular": true,
-          "category": "social",
-          "keywords": [
-            "social media resize",
-            "post resizer",
-            "social media dimensions",
-            "image resize"
-          ],
-          "longTailKeywords": [
-            "resize image for all social media",
-            "social media image size generator",
-            "facebook instagram twitter resize",
-            "social media post optimizer",
-            "bulk social media resizer"
-          ],
-          "primaryKeyword": "social media resizer",
-          "features": [
-            "All platform sizes",
-            "Batch processing",
-            "Smart cropping",
-            "Quality preservation",
-            "Multiple exports"
-          ]
+          "category": "seo"
         }
       ]
     }

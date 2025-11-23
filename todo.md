@@ -3,3 +3,6 @@ Focus on The ui ux like youtube-downloader tool and make it more user friendly  
 
 copy each tools available on  https://mate.tools/
 copy = https://www.w3era.com/
+
+where possible use the jsdelivr cdns instead of bun install in the tools
+

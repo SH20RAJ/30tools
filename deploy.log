@@ -1,0 +1,449 @@
+$ rm -rf .next && mkdir -p .next/standalone/.next/static && touch .next/standalone/.next/static/css
+$ next build --webpack && opennextjs-cloudflare build --skipBuild && opennextjs-cloudflare deploy
+   ▲ Next.js 16.0.1 (webpack)
+   - Environments: .env.local
+   - Experiments (use with caution):
+     ✓ optimizeCss
+     · optimizePackageImports
+     · webVitalsAttribution
+
+Using vars defined in .dev.vars
+   Creating an optimized production build ...
+> [PWA] Compile server
+> [PWA] Compile server
+> [PWA] Compile client (static)
+> [PWA] Auto register service worker with: /Users/shaswatraj/Desktop/earn/30tools/node_modules/next-pwa/register.js
+> [PWA] Service worker: /Users/shaswatraj/Desktop/earn/30tools/public/sw.js
+> [PWA]   url: /sw.js
+> [PWA]   scope: /
+ ✓ Compiled successfully in 2.4min
+   Skipping validation of types
+   Collecting page data ...
+   Generating static pages (0/220) ...
+   Generating static pages (55/220) 
+   Generating static pages (110/220) 
+   Generating static pages (165/220) 
+ ✓ Generating static pages (220/220) in 7.3s
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /account
+├ ○ /aesthetic-bio-generator
+├ ○ /ai-image-generator
+├ ○ /ai-poetry-generator
+├ ○ /ai-video-summarizer
+├ ○ /ai-voice-generator
+├ ○ /all-downloaders
+├ ○ /api-docs
+├ ○ /api-tester
+├ ƒ /api/enhanced-search
+├ ƒ /api/indexnow
+├ ƒ /api/parse-youtube
+├ ƒ /api/search
+├ ƒ /api/search/suggestions
+├ ƒ /api/suggestions
+├ ƒ /api/temp-email-stats
+├ ƒ /api/twitter-download
+├ ƒ /api/video-downloader
+├ ƒ /api/video-proxy
+├ ○ /audio-compressor
+├ ○ /audio-converter
+├ ○ /audio-editor
+├ ○ /audio-tools
+├ ○ /audio-trimmer
+├ ○ /background-remover
+├ ○ /base64-image
+├ ○ /base64-tool
+├ ○ /binary-converter
+├ ○ /bing-keyword-research
+├ ○ /broken-link-checker
+├ ○ /bulk-google-index-checker
+├ ○ /bulk-keyword-rank-checker
+├ ○ /character-counter
+├ ○ /chatgpt-persona-generator
+├ ○ /chatgpt-text-converter
+├ ○ /code-formatter
+├ ○ /code-minifier
+├ ○ /color-converter
+├ ○ /color-palette-generator
+├ ○ /color-picker
+├ ○ /complexity-analyzer
+├ ○ /contact
+├ ○ /css-box-shadow
+├ ○ /css-gradient-generator
+├ ○ /csv-to-json
+├ ○ /dailymotion-downloader
+├ ƒ /dashboard
+├ ○ /document-converter
+├ ○ /downloaders
+├ ○ /duplicate-line-remover
+├ ○ /email-breach-checker
+├ ○ /email-extractor
+├ ○ /embed/[player]/[videoId]
+├ ○ /embed/video
+├ ○ /emoji-copy
+├ ƒ /enhanced-sitemap.xml
+├ ○ /epoch-converter
+├ ○ /epub-converter
+├ ○ /excuse-generator
+├ ○ /exif-reader
+├ ○ /facebook-downloader
+├ ○ /facebook-story-downloader
+├ ○ /facebook-video-downloader
+├ ○ /faceless-video-generator
+├ ○ /fake-chat-generator
+├ ○ /favicon-generator
+├ ƒ /feed.xml
+├ ○ /file-converter
+├ ○ /free-image-compressor
+├ ○ /google-keyword-research
+├ ƒ /handler/[...stack]
+├ ○ /hash-generator
+├ ○ /hash-generator2
+├ ○ /help
+├ ○ /html-to-pdf
+├ ○ /image-compressor
+├ ○ /image-converter
+├ ○ /image-cropper
+├ ○ /image-editor
+├ ○ /image-resizer
+├ ○ /image-tools
+├ ○ /indexnow
+├ ○ /instagram-downloader
+├ ○ /instagram-dp-downloader
+├ ○ /instagram-reel-downloader
+├ ○ /instagram-story-downloader
+├ ○ /instagram-video-downloader
+├ ○ /internet-speed-test
+├ ○ /ip-location-finder
+├ ○ /jpg-to-pdf
+├ ○ /json-formatter
+├ ○ /jwt-decoder
+├ ○ /keyword-density
+├ ○ /landing
+├ ○ /line-sorter
+├ ○ /logo-generator
+├ ○ /logo-maker
+├ ○ /lorem-ipsum-generator
+├ ○ /mailto-link-generator
+├ ○ /markdown-to-html
+├ ○ /markdown-to-text
+├ ○ /mcp-server
+├ ○ /meta-tags-generator
+├ ○ /more-tools
+├ ○ /mp4-to-mp3
+├ ○ /mp4-to-mp3-converter
+├ ○ /notes
+├ ○ /other-tools
+├ ○ /our-tools
+├ ○ /password-breach-checker
+├ ○ /password-generator
+├ ○ /password-generator2
+├ ○ /password-strength-checker
+├ ○ /paypal-link-generator
+├ ○ /pdf-add-page-numbers
+├ ○ /pdf-compressor
+├ ○ /pdf-editor
+├ ○ /pdf-merger
+├ ○ /pdf-protect
+├ ○ /pdf-rotate
+├ ○ /pdf-splitter
+├ ○ /pdf-to-word
+├ ○ /pdf-tools
+├ ○ /pdf-unlocker
+├ ○ /phone-validator
+├ ○ /photo-enhancer
+├ ○ /pinterest-video-downloader
+├ ○ /png-to-pdf
+├ ○ /privacy
+├ ○ /productivity-roast-generator
+├ ○ /qr-code-generator
+├ ○ /qr-generator
+├ ○ /random-generator
+├ ○ /reddit-downloader
+├ ○ /regex-tester
+├ ○ /regex-tester2
+├ ○ /remove-duplicates
+├ ○ /robots-txt-generator
+├ ○ /rumble-downloader
+├ ○ /schema-generator
+├ ○ /screen-recorder
+├ ƒ /search
+├ ○ /sitemap-generator
+├ ○ /sitemap.xml
+├ ○ /snapchat-video-downloader
+├ ○ /sql-formatter
+├ ○ /ssl-checker
+├ ○ /startup-name-generator
+├ ○ /tech-bro-quote-generator
+├ ○ /temp-email-checker
+├ ○ /terabox-downloader
+├ ○ /terabox-video-player
+├ ○ /terms
+├ ○ /text-case-converter
+├ ○ /text-diff
+├ ○ /text-encoder
+├ ○ /text-formatter
+├ ○ /text-reverser
+├ ○ /text-to-speech
+├ ○ /text-tools
+├ ○ /tiktok-audio-downloader
+├ ○ /tiktok-downloader
+├ ○ /tiktok-mp3-converter
+├ ○ /tiktok-tag-generator
+├ ○ /tiktok-video-downloader
+├ ○ /tiktok-video-downloader-2
+├ ○ /timestamp-converter
+├ ○ /title-rewrite-checker
+├ ○ /twitter-downloader
+├ ○ /twitter-video-downloader
+├ ○ /typing-speed-test
+├ ○ /unit-converter
+├ ○ /universal-video-downloader
+├ ○ /url-encoder
+├ ○ /url-extractor
+├ ○ /url-shortener
+├ ○ /user-agent-parser
+├ ○ /video-compressor
+├ ○ /video-converter
+├ ○ /video-editor
+├ ○ /video-player
+├ ○ /video-player-embed
+├ ○ /video-to-gif
+├ ○ /video-to-mp3-converter
+├ ○ /video-tools
+├ ○ /video-trimmer
+├ ○ /video-watermark-remover
+├ ○ /vimeo-downloader
+├ ○ /voice-recorder
+├ ○ /website-analyzer
+├ ○ /whatsapp-checker
+├ ○ /whatsapp-dp-downloader
+├ ○ /whiteboard
+├ ○ /word-counter
+├ ○ /word-to-pdf
+├ ○ /xml-formatter
+├ ○ /xml-sitemap-extractor
+├ ○ /youtube-analytics
+├ ○ /youtube-channel-id-finder
+├ ○ /youtube-comment-generator
+├ ○ /youtube-comment-responder
+├ ○ /youtube-downloader
+├ ○ /youtube-embed-generator
+├ ○ /youtube-embedder
+├ ○ /youtube-gif-maker
+├ ○ /youtube-idea-generator
+├ ○ /youtube-pack-downloader
+├ ○ /youtube-script-generator
+├ ○ /youtube-shorts-downloader
+├ ○ /youtube-subtitles-downloader
+├ ○ /youtube-summary-generator
+├ ○ /youtube-tag-generator
+├ ○ /youtube-thumbnail-downloader
+├ ○ /youtube-timestamp-generator
+├ ○ /youtube-transcript-downloader
+├ ○ /youtube-trends
+├ ○ /youtube-video-downloader
+└ ○ /zip-creator
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+┌─────────────────────────────┐
+│ OpenNext — Cloudflare build │
+└─────────────────────────────┘
+
+App directory: /Users/shaswatraj/Desktop/earn/30tools
+Next.js version : 16.0.1
+@opennextjs/cloudflare version: 1.11.0
+@opennextjs/aws version: 3.8.5
+WARN Skipping Next.js build
+
+┌──────────────────────────────┐
+│ OpenNext — Generating bundle │
+└──────────────────────────────┘
+
+Bundling middleware function...
+Bundling static assets...
+Bundling cache assets...
+Building server function: default...
+Applying code patches: 3.077s
+# copyPackageTemplateFiles
+[35m⚙️ Bundling the OpenNext server...
+[0m
+▲ [WARNING] This case clause will never be evaluated because it duplicates an earlier case clause [duplicate-case]
+
+    .open-next/server-functions/default/.next/server/chunks/6860.js:1:147683:
+      1 │ ...2:return ex(a,2662,2671,!0,d);case 22:return ev(a,1,10999,et,3,d...
+        ╵                                  ~~~~
+
+  The earlier case clause is here:
+
+    .open-next/server-functions/default/.next/server/chunks/6860.js:1:147647:
+      1 │ ...1:return ex(a,2790,2799,!0,d);case 22:return ex(a,2662,2671,!0,d...
+        ╵                                  ~~~~
+
+[35mWorker saved in `.open-next/worker.js` 🚀
+[0m
+OpenNext build complete.
+
+┌──────────────────────────────┐
+│ OpenNext — Cloudflare deploy │
+└──────────────────────────────┘
+
+Using vars defined in .dev.vars
+Incremental cache does not need populating
+Tag cache does not need populating
+
+ ⛅️ wrangler 4.45.4 (update available 4.50.0)
+─────────────────────────────────────────────
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "options" in object literal[0m [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:600:107916:
+[37m      600 │ ...data:{...i2,placement:f2}}},[32moptions[37m:[c2,e2]},_2&&{name:"shift"...
+          ╵                                [32m~~~~~~~[0m
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:600:107629:
+[37m      600 │ ...,middleware:[{name:"offset",[32moptions[37m:h2=c2={mainAxis:X2+as2,ali...
+          ╵                                [32m~~~~~~~[0m
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "options" in object literal[0m [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:600:109392:
+[37m      600 │ ...nabled:{[q2]:e3,[o2]:h3}}}},[32moptions[37m:[r2,A2]},_2&&{name:"flip",...
+          ╵                                [32m~~~~~~~[0m
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:600:107951:
+[37m      600 │ ...:[c2,e2]},_2&&{name:"shift",[32moptions[37m:B2=r2={mainAxis:!0,crossAx...
+          ╵                                [32m~~~~~~~[0m
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "options" in object literal[0m [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:600:111333:
+[37m      600 │ ...t:{placement:c4}}}return{}},[32moptions[37m:[C2,J2]},{name:"size",opti...
+          ╵                                [32m~~~~~~~[0m
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:600:109426:
+[37m      600 │ ...s:[r2,A2]},_2&&{name:"flip",[32moptions[37m:K2=C2={...aL2},async fn(a6...
+          ╵                                [32m~~~~~~~[0m
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "options" in object literal[0m [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:600:112698:
+[37m      600 │ ...ight?{reset:{rects:!0}}:{}},[32moptions[37m:[L2,N2]},ao2&&{name:"arrow...
+          ╵                                [32m~~~~~~~[0m
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:600:111363:
+[37m      600 │ ...tions:[C2,J2]},{name:"size",[32moptions[37m:O2=L2={...aL2,apply:({elem...
+          ╵                                [32m~~~~~~~[0m
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "options" in object literal[0m [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:600:112992:
+[37m      600 │ ...:b3,padding:c3}).fn(a6):{}},[32moptions[37m:[P2,Q2]},a_({arrowWidth:ar...
+          ╵                                [32m~~~~~~~[0m
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:600:112734:
+[37m      600 │ ...[L2,N2]},ao2&&{name:"arrow",[32moptions[37m:R2=P2={element:ao2,padding...
+          ╵                                [32m~~~~~~~[0m
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mDuplicate key "options" in object literal[0m [duplicate-object-key]
+
+    .open-next/server-functions/default/handler.mjs:600:113496:
+[37m      600 │ ...:G(c4)}}}default:return{}}},[32moptions[37m:[S2,T2]}]}),[aS2,aV2]=a0(a...
+          ╵                                [32m~~~~~~~[0m
+
+  The original key "options" is here:
+
+    .open-next/server-functions/default/handler.mjs:600:113064:
+[37m      600 │ ...ght:as2}),ad2&&{name:"hide",[32moptions[37m:U2=S2={strategy:"reference...
+          ╵                                [32m~~~~~~~[0m
+
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mThis case clause will never be evaluated because it duplicates an earlier case clause[0m [duplicate-case]
+
+    .open-next/server-functions/default/handler.mjs:3969:199783:
+[37m      3969 │ ...urn ex(a10,2662,2671,!0,d10);[32mcase[37m 22:return ev(a10,1,10999,et...
+           ╵                                 [32m~~~~[0m
+
+  The earlier case clause is here:
+
+    .open-next/server-functions/default/handler.mjs:3969:199743:
+[37m      3969 │ ...urn ex(a10,2790,2799,!0,d10);[32mcase[37m 22:return ex(a10,2662,2671,...
+           ╵                                 [32m~~~~[0m
+
+
+🌀 Building list of assets...
+✨ Read 686 files from the assets directory /Users/shaswatraj/Desktop/earn/30tools/.open-next/assets
+🌀 Starting asset upload...
+🌀 Found 35 new or modified static assets to upload. Proceeding with upload...
++ /BUILD_ID
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/chunks/app/(youtube)/youtube-channel-id-finder/page-dbf01de3435a5e9e.js
++ /_next/static/chunks/app/(seo)/youtube-tag-generator/page-3a379e28a094ee7e.js
++ /_next/static/chunks/app/(developer)/password-breach-checker/page-18c5c48bdd11173d.js
++ /_next/static/chunks/app/(youtube)/youtube-script-generator/page-15cc06e75a4231d6.js
++ /_next/static/chunks/app/(youtube)/youtube-thumbnail-downloader/page-68866149a45c7999.js
++ /_next/static/chunks/app/(youtube)/youtube-summary-generator/page-f3ba2e494f64ba7c.js
++ /_next/static/chunks/234-f9b2ba3a6c3950a4.js
++ /_next/static/chunks/app/(video)/terabox-downloader/page-88c90fdfec7c2f48.js
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/chunks/app/downloaders/page-3f9da3f23fb2d54f.js
++ /_next/static/chunks/cb7ae6fb-51458f4a2fc72a6e.js
++ /_next/static/chunks/app/(seo)/tiktok-tag-generator/page-41526d488be7cd8d.js
++ /_next/static/chunks/app/(developer)/email-breach-checker/page-dbfe5f0b72e11020.js
++ /_next/static/chunks/app/(youtube)/youtube-idea-generator/page-2974198698855b06.js
++ /_next/static/chunks/app/(youtube)/youtube-transcript-downloader/page-6926095871777d62.js
++ /_next/static/chunks/app/(developer)/complexity-analyzer/page-153aaf9b3373e50c.js
++ /sw.js
++ /_next/static/chunks/9675-b85c4e2702770021.js
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/chunks/app/(downloaders)/vimeo-downloader/page-48a54c029f160628.js
++ /_next/static/1t58XLwnH2G3IcjVkA8Mn/_buildManifest.js
++ /_next/static/chunks/app/(youtube)/youtube-timestamp-generator/page-9504219941622c2a.js
++ /_next/static/chunks/app/(youtube)/youtube-pack-downloader/page-6f74adc9666373a5.js
++ /_next/static/chunks/app/(youtube)/youtube-comment-responder/page-01d3937570abdb75.js
++ /_next/static/chunks/app/(youtube)/youtube-gif-maker/page-7de2b42015d46e80.js
++ /_next/static/chunks/app/(youtube)/youtube-subtitles-downloader/page-68db615499588936.js
++ /_next/static/chunks/3501-3a773f66b54e5076.js
++ /_next/static/chunks/6745-aac53761d69e5a74.js
+Uploaded 11 of 35 assets
+Uploaded 23 of 35 assets
+Uploaded 35 of 35 assets
+✨ Success! Uploaded 35 files (394 already uploaded) (8.66 sec)
+
+Total Upload: 57115.75 KiB / gzip: 7452.18 KiB
+Your Worker has access to the following bindings:
+Binding            Resource      
+env.ASSETS         Assets        
+
+Uploaded 30tools (143.95 sec)
+Deployed 30tools triggers (3.02 sec)
+  https://30tools.shraj.workers.dev
+Current Version ID: 84ec3696-8ab2-47f7-aeb0-575d130e361a

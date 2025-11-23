@@ -13,7 +13,7 @@ import {
   Image as ImageIcon,
   Undo,
   Redo,
-  Compare,
+  GitCompare,
   Sun,
   Contrast,
   Droplets,
@@ -273,7 +273,7 @@ export default function PhotoEnhancerTool() {
                 onTouchStart={() => setShowCompare(true)}
                 onTouchEnd={() => setShowCompare(false)}
               >
-                <Compare className="w-4 h-4 mr-2" />
+                <GitCompare className="w-4 h-4 mr-2" />
                 Hold to Compare
               </Button>
 
