@@ -1,0 +1,517 @@
+{
+    "metadata": {
+        "version": "1.0",
+        "lastUpdated": "2025-11-24",
+        "totalGames": 28
+    },
+    "categories": {
+        "puzzle": {
+            "name": "Puzzle Games",
+            "icon": "🧩",
+            "description": "Brain teasers and logic games"
+        },
+        "arcade": {
+            "name": "Arcade Games",
+            "icon": "🎮",
+            "description": "Fast-paced action games"
+        },
+        "card": {
+            "name": "Card Games",
+            "icon": "🃏",
+            "description": "Classic card games"
+        },
+        "sports": {
+            "name": "Sports Games",
+            "icon": "⚽",
+            "description": "Sports and racing games"
+        },
+        "action": {
+            "name": "Action Games",
+            "icon": "⚔️",
+            "description": "Action-packed adventures"
+        },
+        "classic": {
+            "name": "Classic Games",
+            "icon": "👾",
+            "description": "Retro and classic games"
+        }
+    },
+    "games": [
+        {
+            "id": "bubble-shooter",
+            "name": "Bubble Shooter",
+            "description": "Classic bubble shooter game - match 3 or more bubbles of the same color to pop them and clear the board. Aim carefully and create combos for higher scores!",
+            "category": "puzzle",
+            "iframe": "https://html5games.com/Game/BubbleShooter/iframe",
+            "tags": [
+                "puzzle",
+                "casual",
+                "match-3",
+                "bubbles"
+            ],
+            "rating": 4.7,
+            "plays": "15M+",
+            "featured": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "2048",
+            "name": "2048",
+            "description": "Slide numbered tiles on a grid to combine them and create a tile with the number 2048. Keep combining tiles to achieve the highest score possible!",
+            "category": "puzzle",
+            "iframe": "https://html5games.com/Game/2048/iframe",
+            "tags": [
+                "puzzle",
+                "numbers",
+                "strategy",
+                "brain"
+            ],
+            "rating": 4.8,
+            "plays": "20M+",
+            "featured": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "mahjong-connect",
+            "name": "Mahjong Connect",
+            "description": "Connect matching Mahjong tiles with a path that has no more than two 90 degree angles. Clear all tiles to win in this relaxing puzzle game.",
+            "category": "puzzle",
+            "iframe": "https://html5games.com/Game/MahjongConnect/iframe",
+            "tags": [
+                "puzzle",
+                "mahjong",
+                "matching",
+                "relaxing"
+            ],
+            "rating": 4.6,
+            "plays": "12M+",
+            "featured": false,
+            "difficulty": "medium"
+        },
+        {
+            "id": "sudoku",
+            "name": "Sudoku",
+            "description": "Fill the 9x9 grid with numbers so that each column, row, and 3x3 section contains all digits from 1 to 9. A classic brain teaser!",
+            "category": "puzzle",
+            "iframe": "https://html5games.com/Game/Sudoku/iframe",
+            "tags": [
+                "puzzle",
+                "numbers",
+                "logic",
+                "brain"
+            ],
+            "rating": 4.5,
+            "plays": "18M+",
+            "featured": false,
+            "difficulty": "hard"
+        },
+        {
+            "id": "jewel-crush",
+            "name": "Jewel Crush",
+            "description": "Match 3 or more jewels of the same type to crush them and score points. Create special combos and power-ups for massive scores!",
+            "category": "puzzle",
+            "iframe": "https://html5games.com/Game/JewelCrush/iframe",
+            "tags": [
+                "puzzle",
+                "match-3",
+                "jewels",
+                "casual"
+            ],
+            "rating": 4.6,
+            "plays": "14M+",
+            "featured": false,
+            "difficulty": "easy"
+        },
+        {
+            "id": "solitaire-klondike",
+            "name": "Solitaire Klondike",
+            "description": "The classic Solitaire card game. Stack cards in alternating colors and build foundations from Ace to King. Can you clear the deck?",
+            "category": "card",
+            "iframe": "https://html5games.com/Game/SolitaireKlondike/iframe",
+            "tags": [
+                "card",
+                "solitaire",
+                "classic",
+                "patience"
+            ],
+            "rating": 4.7,
+            "plays": "25M+",
+            "featured": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "spider-solitaire",
+            "name": "Spider Solitaire",
+            "description": "Arrange cards in descending order to clear the board. Choose from 1, 2, or 4 suits for varying difficulty levels in this challenging solitaire variant.",
+            "category": "card",
+            "iframe": "https://html5games.com/Game/SpiderSolitaire/iframe",
+            "tags": [
+                "card",
+                "solitaire",
+                "spider",
+                "strategy"
+            ],
+            "rating": 4.6,
+            "plays": "16M+",
+            "featured": false,
+            "difficulty": "hard"
+        },
+        {
+            "id": "freecell",
+            "name": "FreeCell",
+            "description": "Move all cards to the foundation piles using the four free cells strategically. Almost every FreeCell game can be won with the right strategy!",
+            "category": "card",
+            "iframe": "https://html5games.com/Game/FreeCell/iframe",
+            "tags": [
+                "card",
+                "solitaire",
+                "freecell",
+                "strategy"
+            ],
+            "rating": 4.5,
+            "plays": "10M+",
+            "featured": false,
+            "difficulty": "medium"
+        },
+        {
+            "id": "moto-x3m",
+            "name": "Moto X3M",
+            "description": "Race your motorbike through challenging obstacle courses. Perform stunts, avoid traps, and reach the finish line as fast as possible!",
+            "category": "sports",
+            "iframe": "https://html5games.com/Game/MotoX3M/iframe",
+            "tags": [
+                "racing",
+                "motorcycle",
+                "stunts",
+                "action"
+            ],
+            "rating": 4.9,
+            "plays": "30M+",
+            "featured": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "table-tennis",
+            "name": "Table Tennis World Tour",
+            "description": "Compete in the ultimate table tennis championship! Master your serves, spins, and smashes to become the world champion.",
+            "category": "sports",
+            "iframe": "https://html5games.com/Game/TableTennis/iframe",
+            "tags": [
+                "sports",
+                "ping-pong",
+                "tournament",
+                "skill"
+            ],
+            "rating": 4.4,
+            "plays": "8M+",
+            "featured": false,
+            "difficulty": "medium"
+        },
+        {
+            "id": "archery-world-tour",
+            "name": "Archery World Tour",
+            "description": "Test your archery skills in various locations around the world. Aim for the bullseye and compete for the highest score!",
+            "category": "sports",
+            "iframe": "https://html5games.com/Game/ArcheryWorldTour/iframe",
+            "tags": [
+                "sports",
+                "archery",
+                "precision",
+                "skill"
+            ],
+            "rating": 4.5,
+            "plays": "9M+",
+            "featured": false,
+            "difficulty": "medium"
+        },
+        {
+            "id": "om-nom-run",
+            "name": "Om Nom Run",
+            "description": "Help Om Nom run, jump, and dash through the city! Collect coins, avoid obstacles, and unlock new characters in this endless runner.",
+            "category": "arcade",
+            "iframe": "https://html5games.com/Game/OmNomRun/iframe",
+            "tags": [
+                "arcade",
+                "runner",
+                "endless",
+                "cute"
+            ],
+            "rating": 4.7,
+            "plays": "22M+",
+            "featured": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "cannon-balls-3d",
+            "name": "Cannon Balls 3D",
+            "description": "Aim and shoot cannon balls to destroy towers and structures. Use physics to your advantage and complete all levels!",
+            "category": "arcade",
+            "iframe": "https://html5games.com/Game/CannonBalls3D/iframe",
+            "tags": [
+                "arcade",
+                "physics",
+                "destruction",
+                "3d"
+            ],
+            "rating": 4.6,
+            "plays": "11M+",
+            "featured": false,
+            "difficulty": "easy"
+        },
+        {
+            "id": "stack-ball",
+            "name": "Stack Ball",
+            "description": "Smash through colorful platforms as the ball bounces down. Avoid black platforms and create combos for bonus points!",
+            "category": "arcade",
+            "iframe": "https://html5games.com/Game/StackBall/iframe",
+            "tags": [
+                "arcade",
+                "smash",
+                "casual",
+                "addictive"
+            ],
+            "rating": 4.5,
+            "plays": "13M+",
+            "featured": false,
+            "difficulty": "easy"
+        },
+        {
+            "id": "tetris",
+            "name": "Tetris",
+            "description": "The legendary puzzle game! Rotate and place falling blocks to create complete lines. How high can you score?",
+            "category": "classic",
+            "iframe": "https://html5games.com/Game/Tetris/iframe",
+            "tags": [
+                "classic",
+                "puzzle",
+                "tetris",
+                "retro"
+            ],
+            "rating": 4.9,
+            "plays": "50M+",
+            "featured": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "pac-man",
+            "name": "Pac-Man",
+            "description": "Navigate the maze, eat all the dots, and avoid the ghosts! Grab power pellets to turn the tables on your pursuers.",
+            "category": "classic",
+            "iframe": "https://html5games.com/Game/PacMan/iframe",
+            "tags": [
+                "classic",
+                "arcade",
+                "maze",
+                "retro"
+            ],
+            "rating": 4.8,
+            "plays": "40M+",
+            "featured": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "snake",
+            "name": "Snake",
+            "description": "Control the snake to eat food and grow longer. Avoid hitting walls and your own tail in this classic arcade game!",
+            "category": "classic",
+            "iframe": "https://html5games.com/Game/Snake/iframe",
+            "tags": [
+                "classic",
+                "snake",
+                "retro",
+                "simple"
+            ],
+            "rating": 4.6,
+            "plays": "35M+",
+            "featured": false,
+            "difficulty": "easy"
+        },
+        {
+            "id": "stickman-hook",
+            "name": "Stickman Hook",
+            "description": "Swing through levels like a spider! Tap to hook and make incredible jumps. Avoid obstacles and reach the finish line.",
+            "category": "action",
+            "iframe": "https://html5games.com/Game/StickmanHook/iframe",
+            "tags": [
+                "action",
+                "stickman",
+                "swing",
+                "skill"
+            ],
+            "rating": 4.7,
+            "plays": "19M+",
+            "featured": false,
+            "difficulty": "medium"
+        },
+        {
+            "id": "tower-defense",
+            "name": "Tower Defense",
+            "description": "Build towers to defend your base from waves of enemies. Upgrade your defenses and use strategy to survive!",
+            "category": "action",
+            "iframe": "https://html5games.com/Game/TowerDefense/iframe",
+            "tags": [
+                "action",
+                "strategy",
+                "defense",
+                "tower"
+            ],
+            "rating": 4.6,
+            "plays": "14M+",
+            "featured": false,
+            "difficulty": "hard"
+        },
+        {
+            "id": "fruit-ninja",
+            "name": "Fruit Ninja",
+            "description": "Slice fruits with your finger! Avoid bombs and create combos for higher scores in this addictive slicing game.",
+            "category": "arcade",
+            "iframe": "https://html5games.com/Game/FruitNinja/iframe",
+            "tags": [
+                "arcade",
+                "fruit",
+                "slice",
+                "casual"
+            ],
+            "rating": 4.7,
+            "plays": "28M+",
+            "featured": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "chess",
+            "name": "Chess",
+            "description": "Play the timeless game of chess against the computer or a friend. Master strategies and checkmate your opponent!",
+            "category": "card",
+            "iframe": "https://html5games.com/Game/Chess/iframe",
+            "tags": [
+                "board",
+                "chess",
+                "strategy",
+                "classic"
+            ],
+            "rating": 4.8,
+            "plays": "17M+",
+            "featured": false,
+            "difficulty": "hard"
+        },
+        {
+            "id": "checkers",
+            "name": "Checkers",
+            "description": "Classic checkers game. Jump over your opponent's pieces and king your checkers to dominate the board!",
+            "category": "card",
+            "iframe": "https://html5games.com/Game/Checkers/iframe",
+            "tags": [
+                "board",
+                "checkers",
+                "strategy",
+                "classic"
+            ],
+            "rating": 4.5,
+            "plays": "12M+",
+            "featured": false,
+            "difficulty": "medium"
+        },
+        {
+            "id": "cut-the-rope",
+            "name": "Cut the Rope",
+            "description": "Feed candy to Om Nom by cutting ropes in the right order. Collect stars and solve physics puzzles!",
+            "category": "puzzle",
+            "iframe": "https://html5games.com/Game/CutTheRope/iframe",
+            "tags": [
+                "puzzle",
+                "physics",
+                "cute",
+                "strategy"
+            ],
+            "rating": 4.8,
+            "plays": "26M+",
+            "featured": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "crossy-road",
+            "name": "Crossy Road",
+            "description": "Why did the chicken cross the road? Help characters cross busy roads, rivers, and train tracks in this endless hopper!",
+            "category": "arcade",
+            "iframe": "https://html5games.com/Game/CrossyRoad/iframe",
+            "tags": [
+                "arcade",
+                "endless",
+                "casual",
+                "cute"
+            ],
+            "rating": 4.6,
+            "plays": "21M+",
+            "featured": false,
+            "difficulty": "easy"
+        },
+        {
+            "id": "geometry-dash",
+            "name": "Geometry Dash",
+            "description": "Jump and fly through danger in this rhythm-based action platformer! Perfect timing is key to success.",
+            "category": "action",
+            "iframe": "https://html5games.com/Game/GeometryDash/iframe",
+            "tags": [
+                "action",
+                "rhythm",
+                "platformer",
+                "challenging"
+            ],
+            "rating": 4.7,
+            "plays": "24M+",
+            "featured": false,
+            "difficulty": "hard"
+        },
+        {
+            "id": "angry-birds",
+            "name": "Angry Birds",
+            "description": "Launch birds at pig fortresses to retrieve stolen eggs! Use physics and strategy to destroy all the pigs.",
+            "category": "arcade",
+            "iframe": "https://html5games.com/Game/AngryBirds/iframe",
+            "tags": [
+                "arcade",
+                "physics",
+                "birds",
+                "strategy"
+            ],
+            "rating": 4.8,
+            "plays": "45M+",
+            "featured": true,
+            "difficulty": "medium"
+        },
+        {
+            "id": "subway-surfers",
+            "name": "Subway Surfers",
+            "description": "Dash through subway tracks, dodge trains, and collect coins in this endless runner. Unlock new characters and hoverboards!",
+            "category": "arcade",
+            "iframe": "https://html5games.com/Game/SubwaySurfers/iframe",
+            "tags": [
+                "arcade",
+                "runner",
+                "endless",
+                "popular"
+            ],
+            "rating": 4.9,
+            "plays": "60M+",
+            "featured": true,
+            "difficulty": "easy"
+        },
+        {
+            "id": "flappy-bird",
+            "name": "Flappy Bird",
+            "description": "Tap to flap and navigate through pipes. Simple controls, challenging gameplay. How far can you fly?",
+            "category": "arcade",
+            "iframe": "https://html5games.com/Game/FlappyBird/iframe",
+            "tags": [
+                "arcade",
+                "casual",
+                "challenging",
+                "retro"
+            ],
+            "rating": 4.4,
+            "plays": "38M+",
+            "featured": false,
+            "difficulty": "hard"
+        }
+    ]
+}
