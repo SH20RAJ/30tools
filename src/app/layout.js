@@ -263,7 +263,7 @@ export default function RootLayout({ children }) {
         <body className={`${openSans.variable} font-sans antialiased`}>
           <StackTheme>
             <ThemeProvider>
-              <StructuredData />
+              <StructuredData includeFAQ={false} />
               {children}
               <PWAInstallPrompt />
               <Toaster />

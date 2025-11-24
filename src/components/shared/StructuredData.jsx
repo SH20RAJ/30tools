@@ -1,6 +1,6 @@
 "use client";
 
-export default function StructuredData({ tool }) {
+export default function StructuredData({ tool, includeFAQ = true }) {
   // If a specific tool is provided, render tool-specific structured data
   if (tool) {
     const toolStructuredData = {
@@ -374,10 +374,12 @@ export default function StructuredData({ tool }) {
           __html: JSON.stringify(toolsCollectionStructuredData),
         }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
-      />
+      {includeFAQ && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+        />
+      )}
     </>
   );
 }

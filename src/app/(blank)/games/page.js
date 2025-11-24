@@ -5,12 +5,6 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import gamesData from "@/constants/games.json";
 
-export const metadata = {
-    title: "Free HTML5 Games - Play 28+ Games Online | 30Games",
-    description: "Play 28+ free HTML5 games online! Puzzle, arcade, action, sports, and classic games. No downloads required. Play instantly in your browser!",
-    keywords: ["free online games", "HTML5 games", "browser games", "play games online", "puzzle games", "arcade games", "action games"],
-};
-
 export default function GamesPage() {
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedCategory, setSelectedCategory] = useState("all");
