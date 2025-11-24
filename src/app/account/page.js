@@ -154,7 +154,7 @@ export default async function AccountPage() {
         <main className="container mx-auto px-4 py-8 max-w-4xl">
           {/* Profile Section */}
           <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">Account Settings</h1>
+            <h2 className="text-3xl font-bold mb-2">Account Settings</h2>
             <p className="text-muted-foreground">
               Manage your account information and preferences
             </p>

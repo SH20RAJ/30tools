@@ -257,14 +257,14 @@ export default function LandingPage() {
               </div>
 
               {/* Main heading with enhanced animations */}
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
+              <h2 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight">
                 <span className="block bg-muted/20 dark:from-white dark:via-blue-100 dark:to-white bg-clip-text text-transparent animate-fade-in-up">
                   Your Ultimate
                 </span>
                 <span className="block bg-muted/20 bg-clip-text text-transparent animate-fade-in-up delay-200 bg-300% animate-gradient">
                   Online Toolkit
                 </span>
-              </h1>
+              </h2>
 
               {/* Enhanced subheading */}
               <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up delay-400">

@@ -130,10 +130,10 @@ export default function LandingPage() {
               </div>
 
               {/* Main heading */}
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
                 <span className="block text-foreground">Your Ultimate</span>
                 <span className="block text-primary">Online Toolkit</span>
-              </h1>
+              </h2>
 
               {/* Subheading */}
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
