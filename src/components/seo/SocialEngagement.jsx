@@ -34,7 +34,7 @@ export function SocialShare({ url, title, description, className = "" }) {
     if (navigator.share) {
       try {
         await navigator.share(shareData);
-      } catch (err) {
+      } catch (_err) {
         console.log("Error sharing:", err);
       }
     }
@@ -45,7 +45,7 @@ export function SocialShare({ url, title, description, className = "" }) {
       await navigator.clipboard.writeText(url);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.log("Error copying:", err);
     }
   };

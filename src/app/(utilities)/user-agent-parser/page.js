@@ -35,7 +35,7 @@ export const metadata = {
   canonical: "https://30tools.com/user-agent-parser",
 };
 
-const jsonLd = {
+const _jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "User Agent Parser",

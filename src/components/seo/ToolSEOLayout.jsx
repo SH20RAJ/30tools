@@ -1,7 +1,7 @@
-import React from 'react';
 import { getToolById } from '@/constants/tools-utils';
 import StructuredData from '@/components/shared/StructuredData';
 import {
+
   BreadcrumbsEnhanced,
   ToolFeatures,
   FAQSection,

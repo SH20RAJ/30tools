@@ -42,7 +42,7 @@ export default function YouTubeTranscriptDownloader() {
           result.error || "Failed to extract transcript from YouTube video",
         );
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while extracting the transcript");
     } finally {
       setIsLoading(false);

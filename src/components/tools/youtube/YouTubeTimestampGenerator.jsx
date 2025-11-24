@@ -47,7 +47,7 @@ export default function YouTubeTimestampGenerator() {
       } else {
         setError(result.error || "Failed to generate timestamps");
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while generating timestamps");
     } finally {
       setIsGenerating(false);
@@ -61,7 +61,7 @@ export default function YouTubeTimestampGenerator() {
       );
       setCopiedIndex(index);
       setTimeout(() => setCopiedIndex(null), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy timestamp:", err);
     }
   };
@@ -75,7 +75,7 @@ export default function YouTubeTimestampGenerator() {
       await navigator.clipboard.writeText(formattedTimestamps);
       setCopiedIndex("all");
       setTimeout(() => setCopiedIndex(null), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy all timestamps:", err);
     }
   };

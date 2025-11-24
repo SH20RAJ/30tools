@@ -158,7 +158,7 @@ export default function PhoneValidatorTool() {
       toast.success(
         result.isValid ? "Phone number is valid!" : "Phone number is invalid!",
       );
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to validate phone number");
     } finally {
       setLoading(false);

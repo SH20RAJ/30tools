@@ -41,7 +41,7 @@ export default function WhatsAppDPDownloaderTool() {
       const whatsappDPUrl = `https://web.whatsapp.com/pp?phone=${cleanNumber.substring(1)}&type=image`;
       setDpUrl(whatsappDPUrl);
       toast.success("Profile picture URL generated!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Error generating profile picture URL");
     } finally {
       setLoading(false);
@@ -54,7 +54,7 @@ export default function WhatsAppDPDownloaderTool() {
       setCopied(true);
       toast.success("URL copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy URL");
     }
   };

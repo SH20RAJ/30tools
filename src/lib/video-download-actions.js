@@ -128,7 +128,7 @@ export async function fetchVideoData(url) {
       ...processedData,
       platform: platform,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Video download API error:", error);
     throw new Error(`Failed to process the video. ${error.message}`);
   }

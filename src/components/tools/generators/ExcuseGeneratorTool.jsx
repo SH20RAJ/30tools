@@ -251,7 +251,7 @@ Style: ${believabilityLevel === "low" ? "Absurd and funny" : believabilityLevel 
       }
 
       return cleanExcuse || generateTemplateExcuse(category, situation);
-    } catch (error) {
+    } catch (_error) {
       console.error("AI generation failed:", error);
       return generateTemplateExcuse(category, situation);
     }
@@ -314,7 +314,7 @@ Style: ${believabilityLevel === "low" ? "Absurd and funny" : believabilityLevel 
 
       setGeneratedExcuse(excuse);
       setExcuseHistory((prev) => [excuse, ...prev.slice(0, 4)]);
-    } catch (error) {
+    } catch (_error) {
       console.error("Generation failed:", error);
       const fallbackExcuse = generateTemplateExcuse(
         selectedCategory,

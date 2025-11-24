@@ -29,7 +29,7 @@ async function fetchDomainList(url) {
       .map((line) => line.trim())
       .filter((line) => line && !line.startsWith("#"))
       .map((domain) => domain.toLowerCase());
-  } catch (error) {
+  } catch (_error) {
     console.error("Error fetching domain list:", error);
     return [];
   }
@@ -60,7 +60,7 @@ async function loadDomainLists() {
     cacheTimestamp = now;
 
     return { blocklist, allowlist };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error loading domain lists:", error);
     // Return empty arrays if fetch fails
     return { blocklist: [], allowlist: [] };
@@ -121,7 +121,7 @@ export async function checkTempEmail(input) {
       recommendation,
       timestamp: new Date().toISOString(),
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error checking temp email:", error);
     return {
       success: false,
@@ -138,7 +138,7 @@ export async function getTempEmailStats() {
       allowlist: allowlist.length,
       lastUpdated: new Date().toISOString(),
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error getting stats:", error);
     return {
       blocklist: 0,

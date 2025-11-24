@@ -32,7 +32,6 @@ import {
   RefreshCwIcon,
 } from "lucide-react";
 import AuthComponent from "@/components/auth/AuthComponent";
-import InstagramEmbed from "@/components/shared/InstagramEmbed";
 import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
 
 export default function LandingPage() {

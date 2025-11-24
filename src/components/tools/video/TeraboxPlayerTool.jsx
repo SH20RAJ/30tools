@@ -168,7 +168,7 @@ export default function TeraboxPlayerTool() {
       const currentUrl = new URL(window.location);
       currentUrl.searchParams.set("url", url);
       setShareUrl(currentUrl.toString());
-    } catch (error) {
+    } catch (_error) {
       setError(error.message);
     } finally {
       setIsLoading(false);

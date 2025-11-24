@@ -129,7 +129,7 @@ export default function AudioCompressorTool() {
               compressedBlob: mockCompressedBlob,
               compressedSize: compressedSize,
             });
-          } catch (error) {
+          } catch (_error) {
             console.error("Compression error:", error);
             resolve({
               compressedBlob: fileData.file,
@@ -174,7 +174,7 @@ export default function AudioCompressorTool() {
               : f,
           ),
         );
-      } catch (error) {
+      } catch (_error) {
         setFiles((prev) =>
           prev.map((f) =>
             f.id === fileData.id ? { ...f, status: "error" } : f,

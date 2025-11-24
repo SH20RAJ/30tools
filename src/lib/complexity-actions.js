@@ -145,7 +145,7 @@ ${code}
         analysisTimestamp: new Date().toISOString(),
       },
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Error in analyzeComplexity:", error);
     return {
       success: false,
@@ -203,7 +203,7 @@ export async function getAvailableModels() {
         reasoning: model.reasoning || false,
       })),
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Error fetching models:", error);
     return {
       success: false,

@@ -179,7 +179,7 @@ export default function RegexTesterTool() {
       }
 
       setMatches(foundMatches);
-    } catch (err) {
+    } catch (_err) {
       setIsValid(false);
       setError(err.message);
       setMatches([]);

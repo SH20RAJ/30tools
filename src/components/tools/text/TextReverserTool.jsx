@@ -41,7 +41,7 @@ export default function TextReverserTool() {
     try {
       await navigator.clipboard.writeText(text);
       toast.success("Copied to clipboard!");
-    } catch (err) {
+    } catch (_err) {
       toast.error("Failed to copy text");
     }
   };

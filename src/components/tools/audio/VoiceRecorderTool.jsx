@@ -152,7 +152,7 @@ export default function VoiceRecorder() {
       updateMicrophoneLevel();
 
       toast.success("Recording started successfully!");
-    } catch (error) {
+    } catch (_error) {
       console.error("Error accessing microphone:", error);
       toast.error("Failed to access microphone. Please check permissions.");
     } finally {

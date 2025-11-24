@@ -101,7 +101,7 @@ export default function WebsiteAnalyzerTool() {
       };
 
       setResults(mockResults);
-    } catch (err) {
+    } catch (_err) {
       setError(err.message);
     } finally {
       setLoading(false);

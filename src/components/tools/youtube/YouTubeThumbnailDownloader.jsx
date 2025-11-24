@@ -156,7 +156,7 @@ export default function YouTubeThumbnailDownloader() {
       } else {
         throw new Error(thumbnailResult.error);
       }
-    } catch (error) {
+    } catch (_error) {
       setError(error.message);
       toast.error(error.message);
     } finally {

@@ -151,7 +151,7 @@ export default function MarkdownToTextTool() {
       await navigator.clipboard.writeText(outputText);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy text: ", err);
     }
   };

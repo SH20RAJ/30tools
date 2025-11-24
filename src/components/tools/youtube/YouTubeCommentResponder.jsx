@@ -113,7 +113,7 @@ export default function YouTubeCommentResponder() {
       } else {
         setError(result.error || "Failed to generate responses");
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while generating responses");
     } finally {
       setIsGenerating(false);
@@ -125,8 +125,8 @@ export default function YouTubeCommentResponder() {
       await navigator.clipboard.writeText(response);
       setCopiedIndex(index);
       setTimeout(() => setCopiedIndex(null), 2000);
-    } catch (err) {
-      console.error("Failed to copy response:", err);
+    } catch (_err) {
+      console.error("Failed to copy response:", _err);
     }
   };
 

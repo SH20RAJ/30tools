@@ -127,7 +127,7 @@ export default function BulkKeywordRankChecker() {
           setProgress(((i + 1) / keywordList.length) * 100);
         }
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while checking rankings");
     } finally {
       setIsChecking(false);

@@ -35,7 +35,7 @@ export const metadata = {
   canonical: "https://30tools.com/ip-location-finder",
 };
 
-const jsonLd = {
+const _jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Ip Location Finder",

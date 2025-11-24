@@ -277,7 +277,7 @@ export default function ColorPaletteGeneratorTool() {
       await navigator.clipboard.writeText(color);
       setCopiedIndex(index);
       setTimeout(() => setCopiedIndex(-1), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };
@@ -286,7 +286,7 @@ export default function ColorPaletteGeneratorTool() {
     const colorString = colors.join(", ");
     try {
       await navigator.clipboard.writeText(colorString);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy all colors:", err);
     }
   };

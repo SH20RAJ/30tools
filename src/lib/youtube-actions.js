@@ -37,7 +37,7 @@ export async function extractYouTubeVideoId(url) {
     return {
       error: "Invalid YouTube URL. Please check the URL and try again.",
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error extracting video ID:", error);
     return { error: "Failed to process the YouTube URL" };
   }
@@ -73,7 +73,7 @@ export async function getYouTubeVideoMetadata(videoId) {
       channelUrl: data.author_url || "",
       videoId: videoId,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error fetching video metadata:", error);
     return {
       error:
@@ -128,7 +128,7 @@ export async function generateThumbnailUrls(videoId) {
       thumbnails: thumbnails,
       videoId: videoId,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error generating thumbnail URLs:", error);
     return { error: "Failed to generate thumbnail URLs" };
   }
@@ -142,7 +142,7 @@ export async function validateThumbnailExists(url) {
       exists: response.ok,
       url: url,
     };
-  } catch (error) {
+  } catch (_error) {
     return {
       exists: false,
       url: url,
@@ -215,7 +215,7 @@ export async function downloadYouTubeVideo(url) {
       success: true,
       data: videoData,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error processing YouTube video download:", error);
     return {
       success: false,
@@ -261,7 +261,7 @@ export async function downloadYouTubeShorts(url) {
       success: true,
       data: shortsData,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error processing YouTube Shorts download:", error);
     return {
       success: false,
@@ -331,7 +331,7 @@ export async function downloadYouTubeTranscriptTactiq(url, langCode = "en") {
       success: true,
       data: processedTranscript,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error downloading transcript:", error);
     return {
       error: error.message.includes("API request failed")
@@ -509,7 +509,7 @@ export async function generateTimestamps(videoUrl, transcript) {
       timestamps: mockTimestamps,
       videoId,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error generating timestamps:", error);
     return { error: "Failed to generate timestamps" };
   }
@@ -555,7 +555,7 @@ export async function createGifFromYoutube(videoUrl, options) {
         dimensions: { width, height },
       },
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error creating GIF:", error);
     return { error: "Failed to create GIF from YouTube video" };
   }
@@ -572,7 +572,7 @@ export async function generateYouTubeScript(scriptData) {
 
     // Use AI service for script generation
     return await generateYouTubeScriptAI(scriptData);
-  } catch (error) {
+  } catch (_error) {
     console.error("Error generating script:", error);
     return { error: "Failed to generate script" };
   }
@@ -589,7 +589,7 @@ export async function generateCommentResponse(requestData) {
 
     // Use AI service for comment response generation
     return await generateCommentResponseAI(requestData);
-  } catch (error) {
+  } catch (_error) {
     console.error("Error generating comment response:", error);
     return { error: "Failed to generate comment responses" };
   }
@@ -726,7 +726,7 @@ export async function downloadYouTubePack(videoUrl, selectedAssets) {
       videoId,
       assetCount: Object.values(selectedAssets).filter(Boolean).length,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error downloading YouTube pack:", error);
     return { error: "Failed to download YouTube video pack" };
   }
@@ -795,7 +795,7 @@ export async function getChannelInfo(url) {
       }
     };
 
-  } catch (error) {
+  } catch (_error) {
     console.error("Error fetching channel info:", error);
     return {
       success: false,

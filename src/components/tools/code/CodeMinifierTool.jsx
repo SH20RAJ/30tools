@@ -169,7 +169,7 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
       }
 
       return result.code;
-    } catch (error) {
+    } catch (_error) {
       throw new Error(`JavaScript minification failed: ${error.message}`);
     }
   };
@@ -189,7 +189,7 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
       }
 
       return result.styles;
-    } catch (error) {
+    } catch (_error) {
       throw new Error(`CSS minification failed: ${error.message}`);
     }
   };
@@ -237,7 +237,7 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
 
       setMinifiedCode(result);
       setStats(calculateStats(code, result));
-    } catch (err) {
+    } catch (_err) {
       setError(err.message);
     }
 
@@ -248,7 +248,7 @@ const sum = numbers.reduce((acc, num) => acc + num, 0);`,
     try {
       await navigator.clipboard.writeText(text);
       // Show success feedback (you could add a toast here)
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };

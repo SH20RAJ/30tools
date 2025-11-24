@@ -73,7 +73,7 @@ export async function checkEmailBreaches(email) {
       },
       email: email,
     };
-  } catch (err) {
+  } catch (_err) {
     console.error("Email breach check error:", err);
     return {
       success: false,
@@ -128,7 +128,7 @@ export async function checkPasswordBreaches(passwordHash) {
         isCompromised: false,
       },
     };
-  } catch (err) {
+  } catch (_err) {
     return {
       success: false,
       error: "Unable to check password. Please try again.",

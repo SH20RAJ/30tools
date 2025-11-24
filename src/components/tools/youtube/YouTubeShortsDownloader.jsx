@@ -220,7 +220,7 @@ export default function YouTubeShortsDownloader() {
         setIsBookmarked(true);
         toast.success("YouTube Shorts bookmarked");
       }
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to save bookmark");
     }
   };
@@ -242,7 +242,7 @@ export default function YouTubeShortsDownloader() {
       }
 
       toast.success("Bookmark removed");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to remove bookmark");
     }
   };
@@ -269,7 +269,7 @@ export default function YouTubeShortsDownloader() {
           setShowPWAButton(false);
           toast.success("App installed successfully!");
         }
-      } catch (error) {
+      } catch (_error) {
         toast.error("Installation failed");
       }
     } else {
@@ -295,7 +295,7 @@ export default function YouTubeShortsDownloader() {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    } catch (error) {
+    } catch (_error) {
       console.error("Download failed:", error);
       setError("Download failed. Please try again.");
     }

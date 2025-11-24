@@ -89,7 +89,7 @@ export default function TextEncoderTool() {
 
       setOutputText(result);
       toast.success("Text encoded successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Error encoding text: " + error.message);
     }
   };
@@ -160,7 +160,7 @@ export default function TextEncoderTool() {
 
       setOutputText(result);
       toast.success("Text decoded successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Error decoding text: " + error.message);
     }
   };
@@ -169,7 +169,7 @@ export default function TextEncoderTool() {
     try {
       await navigator.clipboard.writeText(text);
       toast.success("Copied to clipboard!");
-    } catch (err) {
+    } catch (_err) {
       toast.error("Failed to copy text");
     }
   };

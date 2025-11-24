@@ -137,7 +137,7 @@ export default function YouTubeEmbedGenerator() {
       await navigator.clipboard.writeText(embedCode);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy embed code:", err);
     }
   };

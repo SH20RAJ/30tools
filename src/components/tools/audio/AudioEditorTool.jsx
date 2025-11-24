@@ -287,7 +287,7 @@ export default function AudioEditor() {
           .connect(nodes.destination)
           .connect(ctx.destination);
       }
-    } catch (error) {
+    } catch (_error) {
       console.error("Error connecting audio nodes:", error);
     }
   };
@@ -334,7 +334,7 @@ export default function AudioEditor() {
           }
 
           toast.success(`Loaded ${file.name}`);
-        } catch (error) {
+        } catch (_error) {
           console.error("Error loading audio file:", error);
           toast.error(`Failed to load ${file.name}`);
         }
@@ -380,7 +380,7 @@ export default function AudioEditor() {
       wavesurferRef.current.on("finish", () => {
         setIsPlaying(false);
       });
-    } catch (error) {
+    } catch (_error) {
       console.error("Error initializing WaveSurfer:", error);
       toast.error("Failed to initialize waveform display");
     }
@@ -460,7 +460,7 @@ export default function AudioEditor() {
       mediaRecorderRef.current.start();
       setIsRecording(true);
       toast.success("Recording started");
-    } catch (error) {
+    } catch (_error) {
       console.error("Error starting recording:", error);
       toast.error("Failed to start recording");
     }
@@ -515,7 +515,7 @@ export default function AudioEditor() {
       }
 
       toast.success("Effects applied successfully!");
-    } catch (error) {
+    } catch (_error) {
       console.error("Error applying effects:", error);
       toast.error("Failed to apply effects");
     }
@@ -608,7 +608,7 @@ export default function AudioEditor() {
       URL.revokeObjectURL(url);
 
       toast.success(`Audio exported as ${exportFormat.toUpperCase()}!`);
-    } catch (error) {
+    } catch (_error) {
       console.error("Error exporting audio:", error);
       toast.error("Failed to export audio");
     }

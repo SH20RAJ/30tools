@@ -45,7 +45,7 @@ export async function fetchTeraboxOGData(url) {
       type: typeMatch?.[1] || "video",
       url: url,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error fetching OG data:", error);
     return {
       title: "Terabox Video",
@@ -191,7 +191,7 @@ export async function fetchTeraboxVideoDataMdiskplay(url) {
       success: true,
       data: transformedData,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Error fetching video data from mdiskplay:", error);
     return {
       error:
@@ -286,7 +286,7 @@ export async function fetchTeraboxVideoData(
       success: true,
       data: transformedData,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Error fetching video data:", error);
     return {
       error:

@@ -170,7 +170,7 @@ END:VCARD`;
 
       const dataUrl = canvas.toDataURL("image/png");
       setQrCodeDataUrl(dataUrl);
-    } catch (error) {
+    } catch (_error) {
       console.error("Error generating QR code:", error);
     }
     setIsGenerating(false);
@@ -231,7 +231,7 @@ END:VCARD`;
       ]);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy image: ", err);
     }
   };

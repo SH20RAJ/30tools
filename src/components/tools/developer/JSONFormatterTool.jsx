@@ -63,7 +63,7 @@ export default function JSONFormatterTool() {
         setErrors([]);
 
         return { isValid: true, formatted, minified };
-      } catch (error) {
+      } catch (_error) {
         setIsValid(false);
         setFormattedJson("");
         setMinifiedJson("");
@@ -151,7 +151,7 @@ export default function JSONFormatterTool() {
       await navigator.clipboard.writeText(text);
       setCopied(type);
       setTimeout(() => setCopied(""), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };

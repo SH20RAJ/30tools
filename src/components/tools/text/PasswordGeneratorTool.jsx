@@ -118,7 +118,7 @@ export default function PasswordGeneratorTool() {
       await navigator.clipboard.writeText(text);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy password: ", err);
     }
   };

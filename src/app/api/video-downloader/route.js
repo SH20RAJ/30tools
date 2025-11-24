@@ -89,7 +89,7 @@ export async function POST(request) {
     const videoData = parseVideoResponse(result, url);
 
     return NextResponse.json({ success: true, data: videoData });
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in video downloader API:", error);
     return NextResponse.json(
       { error: "Internal server error" },

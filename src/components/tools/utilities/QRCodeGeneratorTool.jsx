@@ -171,7 +171,7 @@ export default function QRCodeGeneratorTool() {
       });
 
       setQrCodeSvg(svgString);
-    } catch (error) {
+    } catch (_error) {
       console.error("Error generating QR code:", error);
     } finally {
       setIsGenerating(false);

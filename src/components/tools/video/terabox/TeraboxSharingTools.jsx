@@ -28,7 +28,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
     try {
       await navigator.clipboard.writeText(text);
       toast.success(`${type} copied to clipboard!`);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy to clipboard");
     }
   };

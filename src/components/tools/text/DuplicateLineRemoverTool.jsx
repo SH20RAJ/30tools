@@ -102,7 +102,7 @@ export default function DuplicateLineRemoverTool() {
       setCopied(true);
       toast.success("Text copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy text to clipboard");
     }
   };
@@ -119,7 +119,7 @@ export default function DuplicateLineRemoverTool() {
       document.body.removeChild(a);
       URL.revokeObjectURL(url);
       toast.success("File downloaded successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to download file");
     }
   };

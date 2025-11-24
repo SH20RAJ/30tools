@@ -157,7 +157,7 @@ export default function FaviconGeneratorTool() {
       };
 
       img.src = imagePreview;
-    } catch (error) {
+    } catch (_error) {
       console.error("Error generating favicons:", error);
       setIsGenerating(false);
       alert("Error generating favicons. Please try again.");
@@ -237,7 +237,7 @@ export default function FaviconGeneratorTool() {
   const copyToClipboard = async (text) => {
     try {
       await navigator.clipboard.writeText(text);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy to clipboard:", err);
     }
   };

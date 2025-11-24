@@ -184,7 +184,7 @@ export default function SQLFormatter() {
 
       setFormattedSql(formattedLines.join("\n"));
       toast.success("SQL formatted successfully!");
-    } catch (error) {
+    } catch (_error) {
       console.error("Error formatting SQL:", error);
       toast.error("Failed to format SQL. Please check your syntax.");
     }
@@ -199,7 +199,7 @@ export default function SQLFormatter() {
     try {
       await navigator.clipboard.writeText(formattedSql);
       toast.success("Formatted SQL copied to clipboard!");
-    } catch (error) {
+    } catch (_error) {
       console.error("Failed to copy:", error);
       toast.error("Failed to copy to clipboard");
     }

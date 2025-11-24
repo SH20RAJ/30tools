@@ -155,7 +155,7 @@ export default function FakeChatGeneratorTool() {
       link.download = `fake-chat-${platform}-${Date.now()}.png`;
       link.href = canvas.toDataURL();
       link.click();
-    } catch (error) {
+    } catch (_error) {
       console.error("Export failed:", error);
     }
 

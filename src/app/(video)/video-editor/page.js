@@ -26,7 +26,7 @@ export const metadata = {
   },
 };
 
-const jsonLd = {
+const _jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Video Editor",

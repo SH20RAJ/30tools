@@ -60,7 +60,7 @@ export default function InternetSpeedTestTool() {
       });
 
       toast.success("Speed test completed!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Speed test failed");
     } finally {
       setIsTestRunning(false);

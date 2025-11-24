@@ -130,7 +130,7 @@ export default function YouTubeIdeaGenerator() {
       } else {
         setError(result.error || "Failed to generate video ideas");
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while generating ideas");
     } finally {
       setIsGenerating(false);
@@ -144,7 +144,7 @@ export default function YouTubeIdeaGenerator() {
       await navigator.clipboard.writeText(formattedIdea);
       setCopiedIndex(index);
       setTimeout(() => setCopiedIndex(null), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy idea:", err);
     }
   };

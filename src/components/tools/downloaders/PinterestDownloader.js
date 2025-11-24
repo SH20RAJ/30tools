@@ -48,7 +48,7 @@ export default function PinterestDownloader() {
           { quality: "SD 480p", size: "8.9 MB", url: "#" },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the Pinterest content. Please try again.");
     } finally {
       setIsLoading(false);

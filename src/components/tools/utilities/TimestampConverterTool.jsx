@@ -41,7 +41,7 @@ export default function TimestampConverterTool() {
 
       setResultHuman(date.toISOString());
       toast.success("Converted to human-readable date!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Conversion failed");
     }
   };
@@ -57,7 +57,7 @@ export default function TimestampConverterTool() {
 
       setResultTimestamp(Math.floor(date.getTime() / 1000).toString());
       toast.success("Converted to Unix timestamp!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Conversion failed");
     }
   };

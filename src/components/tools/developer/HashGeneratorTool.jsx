@@ -132,7 +132,7 @@ export default function HashGeneratorTool() {
       const hashBuffer = await crypto.subtle.digest(algoName, dataBuffer);
       const hashArray = Array.from(new Uint8Array(hashBuffer));
       return hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
-    } catch (error) {
+    } catch (_error) {
       return simpleHash(data, algorithm);
     }
   };
@@ -145,7 +145,7 @@ export default function HashGeneratorTool() {
       try {
         const hash = await generateCryptoHash(text, algo.id);
         newHashes[algo.id] = hash;
-      } catch (error) {
+      } catch (_error) {
         newHashes[algo.id] = simpleHash(text, algo.id);
       }
     }
@@ -181,7 +181,7 @@ export default function HashGeneratorTool() {
       await navigator.clipboard.writeText(hash);
       setCopiedHash(algorithm);
       setTimeout(() => setCopiedHash(""), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };
@@ -195,7 +195,7 @@ export default function HashGeneratorTool() {
       await navigator.clipboard.writeText(hashText);
       setCopiedHash("all");
       setTimeout(() => setCopiedHash(""), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy all hashes:", err);
     }
   };

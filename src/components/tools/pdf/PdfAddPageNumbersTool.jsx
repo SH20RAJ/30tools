@@ -193,7 +193,7 @@ export default function PdfAddPageNumbersTool() {
         blob: numberedBlob,
         size: pdfFile.size + 2048, // Slightly larger due to page numbers
       });
-    } catch (error) {
+    } catch (_error) {
       console.error("Error adding page numbers:", error);
       alert("Error adding page numbers. Please try again.");
     }

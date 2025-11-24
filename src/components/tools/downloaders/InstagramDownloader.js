@@ -47,7 +47,7 @@ export default function InstagramDownloader() {
           { quality: "Mobile 360p", size: "3.5 MB", url: "#" },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the Instagram content. Please try again.");
     } finally {
       setIsLoading(false);

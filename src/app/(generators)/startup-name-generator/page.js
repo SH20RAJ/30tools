@@ -4,7 +4,6 @@ import {
   FAQSection,
   ReviewSnippets,
   RelatedTools,
-  ToolFeatures,
   UserComments,
   QuickActions,
 } from "@/components/seo";

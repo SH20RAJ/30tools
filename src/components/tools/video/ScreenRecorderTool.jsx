@@ -54,7 +54,7 @@ export default function ScreenRecorderTool() {
       }, 1000);
 
       toast.success("Recording started!");
-    } catch (error) {
+    } catch (_error) {
       console.error(error);
       toast.error("Failed to start recording. Please grant screen permissions.");
     }

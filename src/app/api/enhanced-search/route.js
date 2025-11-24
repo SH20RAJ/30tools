@@ -125,7 +125,7 @@ export async function GET(request) {
         ),
       },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error("Search API error:", error);
     return Response.json(
       { error: "Search failed", results: [], total: 0 },

@@ -121,7 +121,7 @@ export default function TikTokDownloaderTool() {
       setVideoData(sampleData);
 
       toast.success("TikTok video processed successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to process TikTok video. Please try again.");
     } finally {
       setIsProcessing(false);
@@ -142,7 +142,7 @@ export default function TikTokDownloaderTool() {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Download failed. Please try again.");
     }
   };
@@ -153,7 +153,7 @@ export default function TikTokDownloaderTool() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
       toast.success("Copied to clipboard!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy to clipboard");
     }
   };

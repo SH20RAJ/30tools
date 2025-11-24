@@ -263,7 +263,7 @@ export default function LoremIpsumGeneratorTool() {
       await navigator.clipboard.writeText(generatedText);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy text: ", err);
     }
   };

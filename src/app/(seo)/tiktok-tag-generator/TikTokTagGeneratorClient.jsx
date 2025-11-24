@@ -47,7 +47,7 @@ export default function TikTokTagGeneratorClient() {
       } else {
         toast.error(result.error || "Failed to generate hashtags");
       }
-    } catch (error) {
+    } catch (_error) {
       toast.error("An error occurred while generating hashtags");
     } finally {
       setIsLoading(false);

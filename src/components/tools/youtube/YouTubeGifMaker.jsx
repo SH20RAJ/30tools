@@ -91,7 +91,7 @@ export default function YouTubeGifMaker() {
       } else {
         setError(result.error || "Failed to create GIF");
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while creating the GIF");
     } finally {
       setIsCreating(false);

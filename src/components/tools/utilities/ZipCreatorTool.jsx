@@ -178,7 +178,7 @@ export default function ZipCreatorTool() {
           100
         ).toFixed(1),
       });
-    } catch (error) {
+    } catch (_error) {
       console.error("ZIP creation failed:", error);
     } finally {
       setIsCreating(false);

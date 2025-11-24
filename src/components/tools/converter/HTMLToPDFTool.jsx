@@ -108,7 +108,7 @@ export default function HTMLToPDFTool() {
       document.body.removeChild(iframe);
 
       toast.success("PDF generated successfully!");
-    } catch (error) {
+    } catch (_error) {
       console.error(error);
       toast.error("Failed to generate PDF");
     } finally {

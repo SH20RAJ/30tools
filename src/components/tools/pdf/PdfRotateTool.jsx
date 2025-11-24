@@ -178,7 +178,7 @@ export default function PdfRotateTool() {
         blob: rotatedBlob,
         size: pdfFile.size,
       });
-    } catch (error) {
+    } catch (_error) {
       console.error("Error rotating PDF:", error);
       alert("Error rotating PDF. Please try again.");
     }

@@ -95,7 +95,7 @@ export default function SEOBooster({
           fidObserver.disconnect();
           clsObserver.disconnect();
         };
-      } catch (error) {
+      } catch (_error) {
         console.log("Performance monitoring not supported");
       }
     }

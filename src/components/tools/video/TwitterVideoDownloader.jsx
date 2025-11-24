@@ -57,7 +57,7 @@ const TwitterVideoDownloader = () => {
       }));
 
       setDownloadOptions(options);
-    } catch (err) {
+    } catch (_err) {
       setError("Error downloading video. Please try again.");
       console.error("Download error:", err);
     } finally {

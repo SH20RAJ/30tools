@@ -99,7 +99,7 @@ export default function TextCaseConverterTool() {
       await navigator.clipboard.writeText(text);
       setCopiedCase(caseType);
       setTimeout(() => setCopiedCase(""), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy text: ", err);
     }
   };

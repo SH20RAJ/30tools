@@ -1,5 +1,4 @@
 // Developer Tools SEO Configuration and Metadata Templates
-import { generateToolMetadata } from "./advanced-metadata";
 
 export const DEVELOPER_TOOLS_SEO = {
   category: {

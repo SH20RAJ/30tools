@@ -56,7 +56,7 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
     try {
       const researchResults = await performKeywordResearch(keyword, searchType);
       setResults(researchResults);
-    } catch (err) {
+    } catch (_err) {
       setError(err.message || "An error occurred while researching keywords");
     } finally {
       setIsResearching(false);

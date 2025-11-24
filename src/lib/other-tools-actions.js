@@ -59,7 +59,7 @@ export async function getOtherTools() {
         categories: Object.keys(groupedOtherTools),
       },
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error fetching other tools:", error);
     return {
       success: false,
@@ -99,7 +99,7 @@ export async function getToolsByCategory(category) {
         totalCount: tools.length,
       },
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error fetching tools by category:", error);
     return {
       success: false,
@@ -131,7 +131,7 @@ export async function getAllCategories() {
         totalCategories: categories.length,
       },
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error fetching categories:", error);
     return {
       success: false,

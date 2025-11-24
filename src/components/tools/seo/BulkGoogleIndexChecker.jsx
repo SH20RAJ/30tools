@@ -119,7 +119,7 @@ export default function BulkGoogleIndexChecker() {
         setResults([...newResults]);
         setProgress(((i + 1) / urlList.length) * 100);
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while checking indexation status");
     } finally {
       setIsChecking(false);

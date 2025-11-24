@@ -153,7 +153,7 @@ export default function PdfUnlockerTool() {
         password: password,
         success: true,
       });
-    } catch (err) {
+    } catch (_err) {
       setError(err.message);
       setUnlockedFile(null);
       setUnlockStats(null);

@@ -136,7 +136,7 @@ export default function YouTubePackDownloader() {
       } else {
         setError(result.error || "Failed to process YouTube video");
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while processing the video");
     } finally {
       setIsLoading(false);

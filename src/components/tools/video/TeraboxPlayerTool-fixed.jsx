@@ -197,7 +197,7 @@ export default function TeraboxPlayerTool() {
       setShareUrl(`${baseUrl}/video-player-embed?data=${shareData}`);
 
       toast.success("Terabox video player generated successfully!");
-    } catch (error) {
+    } catch (_error) {
       setError(error.message);
       toast.error(error.message);
     } finally {
@@ -233,7 +233,7 @@ export default function TeraboxPlayerTool() {
     try {
       await navigator.clipboard.writeText(text);
       toast.success(`${type} copied to clipboard!`);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy to clipboard");
     }
   };

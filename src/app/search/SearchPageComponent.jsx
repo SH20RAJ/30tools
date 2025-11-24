@@ -57,7 +57,7 @@ export default function SearchPageComponent() {
 
       setResults(data.results || []);
       setTotal(data.total || 0);
-    } catch (error) {
+    } catch (_error) {
       console.error("Search failed:", error);
       setResults([]);
       setTotal(0);

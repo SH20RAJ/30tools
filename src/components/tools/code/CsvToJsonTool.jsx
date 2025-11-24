@@ -268,7 +268,7 @@ Bob Johnson,35,Chicago`,
         columns: headers.length,
         totalCells: dataRows.length * headers.length,
       });
-    } catch (err) {
+    } catch (_err) {
       setError(`Conversion error: ${err.message}`);
       setJsonOutput("");
       setStats(null);
@@ -288,7 +288,7 @@ Bob Johnson,35,Chicago`,
     try {
       await navigator.clipboard.writeText(text);
       alert("Copied to clipboard!");
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };

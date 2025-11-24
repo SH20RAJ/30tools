@@ -47,7 +47,7 @@ export default function YouTubeTagGeneratorClient() {
       } else {
         toast.error(result.error || "Failed to generate tags");
       }
-    } catch (error) {
+    } catch (_error) {
       toast.error("An error occurred while generating tags");
     } finally {
       setIsLoading(false);

@@ -46,7 +46,7 @@ export default function EpochConverterTool() {
     try {
       const date = new Date(parseInt(ts) * 1000);
       return date.toISOString().slice(0, 16);
-    } catch (error) {
+    } catch (_error) {
       return "";
     }
   };
@@ -55,7 +55,7 @@ export default function EpochConverterTool() {
     try {
       const date = new Date(dateStr);
       return Math.floor(date.getTime() / 1000).toString();
-    } catch (error) {
+    } catch (_error) {
       return "";
     }
   };
@@ -89,7 +89,7 @@ export default function EpochConverterTool() {
         utc: date.toUTCString(),
         relative: getRelativeTime(date),
       };
-    } catch (error) {
+    } catch (_error) {
       return {
         iso: "Invalid timestamp",
         local: "Invalid timestamp",

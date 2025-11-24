@@ -88,7 +88,7 @@ export default function NotesTool() {
     try {
       await navigator.clipboard.writeText(content);
       toast.success("Copied to clipboard");
-    } catch (err) {
+    } catch (_err) {
       toast.error("Failed to copy to clipboard");
     }
   };

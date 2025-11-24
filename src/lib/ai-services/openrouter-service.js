@@ -65,7 +65,7 @@ async function createOpenRouterCompletion(messages, options = {}) {
       usage: data.usage,
       model: data.model,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("OpenRouter API Error:", error);
     return {
       success: false,

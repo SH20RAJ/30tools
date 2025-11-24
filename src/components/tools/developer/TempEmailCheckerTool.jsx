@@ -42,7 +42,7 @@ export default function TempEmailCheckerTool() {
         res.json(),
       );
       setStats(statsData);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to load stats:", err);
     }
   };
@@ -60,7 +60,7 @@ export default function TempEmailCheckerTool() {
     try {
       const result = await checkTempEmail(input.trim());
       setResults(result);
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to check email. Please try again.");
       console.error("Check error:", err);
     } finally {

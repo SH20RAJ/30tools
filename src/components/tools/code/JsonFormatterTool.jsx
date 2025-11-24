@@ -211,7 +211,7 @@ export default function JsonFormatterTool() {
       const statistics = calculateStats(jsonInput, formatted, minified);
       const analysis = analyzeJson(jsonInput);
       setStats({ ...statistics, analysis });
-    } catch (err) {
+    } catch (_err) {
       setIsValid(false);
       setError(`Invalid JSON: ${err.message}`);
       setFormattedJson("");
@@ -225,7 +225,7 @@ export default function JsonFormatterTool() {
       await navigator.clipboard.writeText(text);
       // In a real app, you'd show a toast notification here
       alert("Copied to clipboard!");
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };

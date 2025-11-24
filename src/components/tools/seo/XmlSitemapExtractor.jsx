@@ -133,7 +133,7 @@ export default function XmlSitemapExtractor() {
       const result = await simulateSitemapExtraction(sitemapUrl);
       setUrls(result.urls);
       setStats(result.stats);
-    } catch (err) {
+    } catch (_err) {
       setError(
         "Failed to extract sitemap. Please check the URL and try again.",
       );

@@ -258,7 +258,7 @@ export default function ImageCropper() {
       const croppedDataUrl = cropCanvas.toDataURL("image/png");
       setCroppedImage(croppedDataUrl);
       toast.success("Image cropped successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to crop image. Please try again.");
     } finally {
       setIsProcessing(false);

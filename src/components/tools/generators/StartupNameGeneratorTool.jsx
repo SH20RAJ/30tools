@@ -206,7 +206,7 @@ export default function StartupNameGeneratorTool() {
         .split("\n")
         .filter((name) => name.trim())
         .slice(0, 10);
-    } catch (error) {
+    } catch (_error) {
       console.error("AI generation failed:", error);
       return [];
     }
@@ -288,7 +288,7 @@ export default function StartupNameGeneratorTool() {
       // Remove duplicates and limit to 12
       const uniqueNames = [...new Set(names)].slice(0, 12);
       setGeneratedNames(uniqueNames);
-    } catch (error) {
+    } catch (_error) {
       console.error("Generation failed:", error);
       const fallbackNames = generateAlgorithmicNames(
         selectedIndustry,

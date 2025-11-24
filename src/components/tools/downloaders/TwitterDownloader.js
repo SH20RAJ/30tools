@@ -51,7 +51,7 @@ export default function TwitterDownloader() {
           { quality: "Mobile 360p", size: "5.2 MB", url: "#" },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the Twitter/X video. Please try again.");
     } finally {
       setIsLoading(false);

@@ -55,7 +55,7 @@ export default function TikTokMP3Converter() {
         outputSize: fileSizeMap[selectedQuality],
         downloadUrl: "#",
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to convert TikTok to MP3. Please try again.");
     } finally {
       setIsLoading(false);

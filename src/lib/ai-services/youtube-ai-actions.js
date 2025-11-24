@@ -55,7 +55,7 @@ Make the script conversational, engaging, and optimized for YouTube's algorithm.
         "Failed to generate YouTube script",
       );
     }
-  } catch (error) {
+  } catch (_error) {
     return await handleAIError(error, "YouTube script generation failed");
   }
 }
@@ -124,7 +124,7 @@ Provide exactly 4 distinct response options, each on a new line, without numberi
         "Failed to generate comment responses",
       );
     }
-  } catch (error) {
+  } catch (_error) {
     return await handleAIError(error, "Comment response generation failed");
   }
 }
@@ -195,7 +195,7 @@ Focus on current trends, evergreen appeal, and high engagement potential. Make t
         "Failed to generate video ideas",
       );
     }
-  } catch (error) {
+  } catch (_error) {
     return await handleAIError(error, "Video idea generation failed");
   }
 }
@@ -251,7 +251,7 @@ Format as: TIME - TITLE - DESCRIPTION`;
     } else {
       return await handleAIError(result.error, "Failed to generate timestamps");
     }
-  } catch (error) {
+  } catch (_error) {
     return await handleAIError(error, "Timestamp generation failed");
   }
 }
@@ -316,7 +316,7 @@ Provide only the tags, no explanations or additional text:`;
         "Failed to generate YouTube tags",
       );
     }
-  } catch (error) {
+  } catch (_error) {
     return await handleAIError(error, "YouTube tag generation failed");
   }
 }

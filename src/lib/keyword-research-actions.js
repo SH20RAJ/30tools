@@ -52,7 +52,7 @@ export async function performKeywordResearch(keyword, searchEngine = "bing") {
 
     // If API returns unexpected format, return empty array
     return [];
-  } catch (error) {
+  } catch (_error) {
     console.error("Keyword research API error:", error);
     throw new Error(
       "Failed to perform keyword research. Please try again later.",
@@ -82,7 +82,7 @@ export async function getToolSEOContent(toolName, category) {
     };
 
     return content;
-  } catch (error) {
+  } catch (_error) {
     console.error("SEO content generation error:", error);
     return getFallbackSEOContent(toolName, category);
   }

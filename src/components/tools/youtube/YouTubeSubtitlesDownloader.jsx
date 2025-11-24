@@ -75,7 +75,7 @@ export default function YouTubeSubtitlesDownloader() {
         );
         toast.error(result.error || "Failed to download subtitles");
       }
-    } catch (err) {
+    } catch (_err) {
       console.error("❌ Error downloading subtitles:", err);
       setError("An error occurred while downloading the subtitles");
       toast.error("An error occurred while downloading the subtitles");

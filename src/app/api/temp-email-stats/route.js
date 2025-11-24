@@ -9,7 +9,7 @@ export async function GET() {
         "Cache-Control": "public, max-age=3600", // Cache for 1 hour
       },
     });
-  } catch (error) {
+  } catch (_error) {
     console.error("Error in temp-email-stats API:", error);
     return Response.json({ error: "Failed to fetch stats" }, { status: 500 });
   }

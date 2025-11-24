@@ -56,7 +56,7 @@ export default function Base64Tool() {
         const decoded = decodeURIComponent(escape(atob(text)));
         setOutput(decoded);
       }
-    } catch (err) {
+    } catch (_err) {
       setError(`Invalid Base64 input: ${err.message}`);
       setOutput("");
     }

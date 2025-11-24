@@ -139,7 +139,7 @@ export default function PdfProtectTool() {
         blob: protectedBlob,
         size: pdfFile.size + 1024, // Slightly larger due to encryption
       });
-    } catch (error) {
+    } catch (_error) {
       console.error("Error protecting PDF:", error);
       alert("Error protecting PDF. Please try again.");
     }

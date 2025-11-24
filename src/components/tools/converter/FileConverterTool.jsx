@@ -21,7 +21,7 @@ export default function FileConverter() {
       // Simulate processing
       await new Promise((resolve) => setTimeout(resolve, 1000));
       toast.success("Operation completed successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Operation failed. Please try again.");
     } finally {
       setIsProcessing(false);

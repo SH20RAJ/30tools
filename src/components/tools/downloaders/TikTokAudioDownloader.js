@@ -64,7 +64,7 @@ export default function TikTokAudioDownloader() {
           },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the TikTok audio. Please try again.");
     } finally {
       setIsLoading(false);

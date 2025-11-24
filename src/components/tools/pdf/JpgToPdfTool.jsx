@@ -202,7 +202,7 @@ export default function JpgToPdfTool() {
         size: estimatedSize,
         pageCount: images.length,
       });
-    } catch (error) {
+    } catch (_error) {
       console.error("Error converting to PDF:", error);
       alert("Error converting images to PDF. Please try again.");
     }

@@ -79,7 +79,7 @@ export default function ComplexityAnalyzer() {
         // Load supported languages
         const languages = await getSupportedLanguages();
         setSupportedLanguages(languages);
-      } catch (error) {
+      } catch (_error) {
         console.error("Failed to load data:", error);
         // Use fallback data
         setAvailableModels([
@@ -169,7 +169,7 @@ export default function ComplexityAnalyzer() {
       } else {
         setError(result.error || "Analysis failed");
       }
-    } catch (err) {
+    } catch (_err) {
       setError(err.message || "An unexpected error occurred");
     } finally {
       setIsAnalyzing(false);

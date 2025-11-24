@@ -50,7 +50,7 @@ export async function POST(request) {
     const html = await response.text();
 
     return NextResponse.json({ html });
-  } catch (error) {
+  } catch (_error) {
     console.error("Twitter video download error:", error);
     return NextResponse.json(
       { error: "Failed to download video information" },

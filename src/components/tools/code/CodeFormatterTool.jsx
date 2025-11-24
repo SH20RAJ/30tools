@@ -74,7 +74,7 @@ const formatJavaScript = (code, options) => {
     });
 
     return formattedLines.join("\n");
-  } catch (error) {
+  } catch (_error) {
     throw new Error("JavaScript formatting failed: " + error.message);
   }
 };
@@ -110,7 +110,7 @@ const formatCSS = (code, options) => {
     });
 
     return formattedLines.join("\n");
-  } catch (error) {
+  } catch (_error) {
     throw new Error("CSS formatting failed: " + error.message);
   }
 };
@@ -149,7 +149,7 @@ const formatHTML = (code, options) => {
     });
 
     return formattedLines.join("\n");
-  } catch (error) {
+  } catch (_error) {
     throw new Error("HTML formatting failed: " + error.message);
   }
 };
@@ -232,7 +232,7 @@ async function fetchUserData(userId) {
         const response = await fetch(\`/api/users/\${userId}\`);
         if (!response.ok) throw new Error('Failed to fetch');
         return await response.json();
-    } catch (error) {
+    } catch (_error) {
         console.error('Error:', error);
         return null;
     }
@@ -284,7 +284,7 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
       }
 
       setFormattedCode(formatted);
-    } catch (err) {
+    } catch (_err) {
       console.error("Formatting error:", err);
       setError(`Formatting error: ${err.message}`);
       setFormattedCode("");
@@ -297,7 +297,7 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
     try {
       await navigator.clipboard.writeText(text);
       alert("Copied to clipboard!");
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };

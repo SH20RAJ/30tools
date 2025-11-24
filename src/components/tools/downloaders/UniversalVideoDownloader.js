@@ -23,10 +23,7 @@ import {
   Monitor as MonitorIcon,
   Smartphone as SmartphoneIcon,
   Play,
-  ExternalLink,
   CheckCircle2,
-  Pause,
-  AlertTriangle,
   BookOpen,
   HelpCircle,
   Star,
@@ -99,7 +96,7 @@ export default function UniversalVideoDownloader() {
       // Use server action instead of direct fetch
       const result = await fetchVideoData(url);
       setVideoData(result);
-    } catch (err) {
+    } catch (_err) {
       setError(
         err.message ||
           `Failed to process the ${detectPlatform(url)} video. Please try again.`,

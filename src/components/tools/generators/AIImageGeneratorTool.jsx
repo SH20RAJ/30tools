@@ -350,7 +350,7 @@ export default function AIImageGeneratorTool() {
       window.URL.revokeObjectURL(url);
       document.body.removeChild(a);
       toast.success("Image downloaded");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Download failed");
     }
   };

@@ -298,7 +298,7 @@ export default function TextCaseConverterTool() {
     try {
       await navigator.clipboard.writeText(text);
       alert("Copied to clipboard!");
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };

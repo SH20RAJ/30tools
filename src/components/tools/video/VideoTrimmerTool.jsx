@@ -85,7 +85,7 @@ export default function VideoTrimmerTool() {
         videoRef.current.pause();
       }, (endTime - startTime) * 1000);
 
-    } catch (error) {
+    } catch (_error) {
       console.error(error);
       toast.error("Trimming failed. This feature requires a modern browser.");
       setTrimming(false);

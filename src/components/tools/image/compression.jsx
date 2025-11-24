@@ -210,7 +210,7 @@ export default function ImageCompressionTool() {
                 : f,
             ),
           );
-        } catch (error) {
+        } catch (_error) {
           setFiles((prev) =>
             prev.map((f, index) =>
               index === i ? { ...f, status: "error", progress: 0 } : f,

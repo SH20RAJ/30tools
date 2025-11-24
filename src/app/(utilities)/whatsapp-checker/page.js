@@ -35,7 +35,7 @@ export const metadata = {
   canonical: "https://30tools.com/whatsapp-checker",
 };
 
-const jsonLd = {
+const _jsonLd = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "Whatsapp Checker",

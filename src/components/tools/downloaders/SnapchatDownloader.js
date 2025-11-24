@@ -48,7 +48,7 @@ export default function SnapchatDownloader() {
           { quality: "Mobile 360p", size: "4.2 MB", url: "#" },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the Snapchat content. Please try again.");
     } finally {
       setIsLoading(false);

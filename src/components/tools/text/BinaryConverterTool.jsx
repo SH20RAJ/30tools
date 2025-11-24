@@ -42,7 +42,7 @@ export default function BinaryConverterTool() {
         .filter((bin) => bin.length === 8)
         .map((bin) => String.fromCharCode(parseInt(bin, 2)))
         .join("");
-    } catch (error) {
+    } catch (_error) {
       return "Invalid binary format";
     }
   };

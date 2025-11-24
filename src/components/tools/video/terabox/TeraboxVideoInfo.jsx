@@ -43,7 +43,7 @@ export default function TeraboxVideoInfo({
     try {
       await navigator.clipboard.writeText(shareUrl);
       toast.success("Share link copied to clipboard!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy share link");
     }
   };

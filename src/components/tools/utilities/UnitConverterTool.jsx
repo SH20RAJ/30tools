@@ -394,7 +394,7 @@ export default function UnitConverterTool() {
   const copyResult = async () => {
     try {
       await navigator.clipboard.writeText(toValue);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };

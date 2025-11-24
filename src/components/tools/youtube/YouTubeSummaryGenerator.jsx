@@ -144,7 +144,7 @@ export default function YouTubeSummaryGenerator() {
         setError(result.error || "Failed to generate video summary");
         toast.error(result.error || "Failed to generate summary");
       }
-    } catch (err) {
+    } catch (_err) {
       console.error("❌ Error generating summary:", err);
       setError("An error occurred while generating the summary");
       toast.error("An error occurred while generating the summary");

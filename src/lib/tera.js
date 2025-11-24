@@ -29,7 +29,7 @@ export function extractTeraboxId(url) {
     }
 
     return null;
-  } catch (error) {
+  } catch (_error) {
     console.error("Error extracting Terabox ID:", error);
     return null;
   }
@@ -75,7 +75,7 @@ export async function fetchTeraboxVideo(url) {
       source: data.source, // M3U8 playlist URL
       download: data.download, // Direct MP4 download URL
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error fetching Terabox video:", error);
     throw error;
   }
@@ -116,7 +116,7 @@ export async function parseM3U8Playlist(m3u8Url) {
     }
 
     return segments;
-  } catch (error) {
+  } catch (_error) {
     console.error("Error parsing M3U8 playlist:", error);
     throw error;
   }
@@ -167,7 +167,7 @@ export function extractVideoHash(m3u8Url) {
 
     // If no hash found in path or query params, return null
     return null;
-  } catch (error) {
+  } catch (_error) {
     console.error("Error extracting video hash:", error);
     return null;
   }

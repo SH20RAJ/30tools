@@ -64,7 +64,7 @@ export default function XMLFormatterTool() {
       setIsValid(true);
       setError("");
       toast.success("XML formatted successfully!");
-    } catch (err) {
+    } catch (_err) {
       setIsValid(false);
       setError(err.message);
       setOutput("");
@@ -88,7 +88,7 @@ export default function XMLFormatterTool() {
       setIsValid(true);
       setError("");
       toast.success("XML minified successfully!");
-    } catch (err) {
+    } catch (_err) {
       toast.error("Minification failed");
     }
   };

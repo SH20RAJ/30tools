@@ -76,7 +76,7 @@ export default function SSLChecker() {
 
       setSslData(mockSslData);
       toast.success("SSL check completed!");
-    } catch (err) {
+    } catch (_err) {
       setError(
         "Failed to check SSL certificate. Please verify the URL and try again.",
       );

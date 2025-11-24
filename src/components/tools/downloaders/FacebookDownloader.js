@@ -48,7 +48,7 @@ export default function FacebookDownloader() {
           { quality: "Mobile 360p", size: "4.1 MB", url: "#" },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the Facebook video. Please try again.");
     } finally {
       setIsLoading(false);

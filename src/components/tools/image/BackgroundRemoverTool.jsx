@@ -194,7 +194,7 @@ export default function BackgroundRemoverTool() {
               : f,
           ),
         );
-      } catch (error) {
+      } catch (_error) {
         setFiles((prev) =>
           prev.map((f) =>
             f.id === file.id ? { ...f, status: "error", progress: 0 } : f,

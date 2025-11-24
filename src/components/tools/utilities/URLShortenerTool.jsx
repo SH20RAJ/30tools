@@ -95,7 +95,7 @@ export default function URLShortenerTool() {
       setUrls((prev) => [result, ...prev]);
       setCurrentUrl("");
       setCustomAlias("");
-    } catch (error) {
+    } catch (_error) {
       alert(error.message);
     }
     setIsProcessing(false);
@@ -114,7 +114,7 @@ export default function URLShortenerTool() {
       try {
         const result = await shortenUrl(url.trim());
         results.push(result);
-      } catch (error) {
+      } catch (_error) {
         console.error(`Failed to shorten ${url}:`, error);
       }
     }
@@ -129,7 +129,7 @@ export default function URLShortenerTool() {
       await navigator.clipboard.writeText(text);
       setCopiedId(id);
       setTimeout(() => setCopiedId(""), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy:", err);
     }
   };

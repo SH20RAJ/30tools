@@ -57,5 +57,13 @@ const jsonLd = {
 };
 
 export default function PasswordGeneratorPage() {
-  return <PasswordGeneratorTool />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <PasswordGeneratorTool />
+    </>
+  );
 }

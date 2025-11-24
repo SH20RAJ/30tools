@@ -9,10 +9,8 @@ import {
   QuickActions,
 } from "@/components/seo";
 import {
-  DeveloperToolFeatures,
   DeveloperToolExamples,
 } from "@/components/seo/DeveloperToolsHub";
-import { generateDeveloperToolMeta } from "@/constants/seo/developer-tools-seo";
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 
 export const metadata = {

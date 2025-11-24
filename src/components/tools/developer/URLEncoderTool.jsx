@@ -18,7 +18,7 @@ export default function URLEncoderTool() {
       const encoded = encodeURIComponent(input);
       setOutput(encoded);
       toast.success("URL encoded successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to encode URL");
     }
   };
@@ -28,7 +28,7 @@ export default function URLEncoderTool() {
       const decoded = decodeURIComponent(input);
       setOutput(decoded);
       toast.success("URL decoded successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to decode URL - invalid format");
     }
   };

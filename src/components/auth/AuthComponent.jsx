@@ -24,7 +24,7 @@ export default function AuthComponent() {
         setIsSignedIn(true);
         setUser(userData);
       }
-    } catch (error) {
+    } catch (_error) {
       setIsSignedIn(false);
       setUser(null);
     }
@@ -34,7 +34,7 @@ export default function AuthComponent() {
     try {
       // Redirect to StackAuth sign-in
       window.location.href = "/api/auth/signin";
-    } catch (error) {
+    } catch (_error) {
       console.error("Sign in failed:", error);
     }
   };
@@ -44,7 +44,7 @@ export default function AuthComponent() {
       await fetch("/api/auth/signout", { method: "POST" });
       setIsSignedIn(false);
       setUser(null);
-    } catch (error) {
+    } catch (_error) {
       console.error("Sign out failed:", error);
     }
   };

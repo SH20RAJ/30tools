@@ -454,7 +454,7 @@ export default function SchemaGenerator() {
             text: q.answer,
           },
         }));
-      } catch (error) {
+      } catch (_error) {
         toast.error("Invalid JSON format for questions");
         return;
       }

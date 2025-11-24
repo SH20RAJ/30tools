@@ -339,7 +339,7 @@ export default function YouTubeDownloader() {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    } catch (error) {
+    } catch (_error) {
       console.error("Download failed:", error);
       setError("Download failed. Please try again.");
     }

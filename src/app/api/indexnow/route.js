@@ -110,7 +110,7 @@ export async function POST(request) {
         { status: 400 },
       );
     }
-  } catch (error) {
+  } catch (_error) {
     console.error("IndexNow API Error:", error);
     return NextResponse.json(
       {

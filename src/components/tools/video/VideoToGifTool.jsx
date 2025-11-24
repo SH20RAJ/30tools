@@ -184,7 +184,7 @@ export default function VideoToGifTool() {
           filename: file.name.replace(/\.[^/.]+$/, ".gif"),
         });
       }, "image/png");
-    } catch (error) {
+    } catch (_error) {
       console.error("Conversion failed:", error);
     } finally {
       setIsConverting(false);

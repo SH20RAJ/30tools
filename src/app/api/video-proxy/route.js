@@ -67,7 +67,7 @@ export async function GET(request) {
       status,
       headers,
     });
-  } catch (error) {
+  } catch (_error) {
     console.error("Video proxy error:", error);
     return new Response("Failed to proxy video stream", { status: 500 });
   }

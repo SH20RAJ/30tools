@@ -36,7 +36,7 @@ export async function extractYouTubeVideoId(url) {
     return {
       error: "Invalid YouTube URL. Please check the URL and try again.",
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Error extracting video ID:", error);
     return { error: "Failed to process the YouTube URL" };
   }
@@ -76,7 +76,7 @@ export async function getYouTubeVideoMetadata(videoId) {
       channelUrl: data.author_url || "",
       videoId: videoId,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Error fetching video metadata:", error);
     return {
       error:
@@ -118,7 +118,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
       if (subtitleData) {
         console.log("✅ Tactiq API successful");
       }
-    } catch (error) {
+    } catch (_error) {
       console.log("❌ Tactiq API failed:", error.message);
     }
 
@@ -130,7 +130,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
         if (subtitleData) {
           console.log("✅ YouTube Transcript API successful");
         }
-      } catch (error) {
+      } catch (_error) {
         console.log("❌ YouTube Transcript API failed:", error.message);
       }
     }
@@ -143,7 +143,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
         if (subtitleData) {
           console.log("✅ Direct YouTube API successful");
         }
-      } catch (error) {
+      } catch (_error) {
         console.log("❌ Direct YouTube API failed:", error.message);
       }
     }
@@ -177,7 +177,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
       success: true,
       data: processedData,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ Error downloading subtitles:", error);
     return {
       error:

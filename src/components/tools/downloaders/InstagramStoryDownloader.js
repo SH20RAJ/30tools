@@ -71,7 +71,7 @@ export default function InstagramStoryDownloader() {
           },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError(
         "Failed to load Instagram stories. Please check the username and try again.",
       );

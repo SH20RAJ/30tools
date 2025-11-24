@@ -158,7 +158,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
         .replace(/^\d+\.\s*/, ""); // Remove numbering
 
       return cleanRoast || generateTemplateRoast();
-    } catch (error) {
+    } catch (_error) {
       console.error("AI generation failed:", error);
       return generateTemplateRoast();
     }
@@ -213,7 +213,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
         },
         ...prev.slice(0, 4),
       ]);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to generate roast. Please try again.");
     } finally {
       setIsGenerating(false);
@@ -224,7 +224,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
     try {
       await navigator.clipboard.writeText(roast);
       toast.success("Roast copied to clipboard! 🔥");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy to clipboard");
     }
   };

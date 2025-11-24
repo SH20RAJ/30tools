@@ -133,7 +133,7 @@ export default function AudioTrimmer() {
           type: "audio/wav",
         }),
       );
-    } catch (error) {
+    } catch (_error) {
       console.error("Error trimming audio:", error);
       toast.error(
         "Failed to trim audio. This is a demo with limited functionality.",

@@ -61,7 +61,7 @@ export default function JWTDecoder() {
       setIsValid(true);
 
       toast.success("JWT decoded successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Invalid JWT token format");
       setHeader("");
       setPayload("");
@@ -76,7 +76,7 @@ export default function JWTDecoder() {
       setCopied(type);
       toast.success(`${type} copied to clipboard!`);
       setTimeout(() => setCopied(""), 2000);
-    } catch (err) {
+    } catch (_err) {
       toast.error("Failed to copy to clipboard");
     }
   };

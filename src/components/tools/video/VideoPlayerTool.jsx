@@ -101,7 +101,7 @@ export default function VideoPlayerTool() {
         }
 
         toast.success("Configuration loaded from share link!");
-      } catch (error) {
+      } catch (_error) {
         toast.error("Invalid share link data");
       }
     }
@@ -426,7 +426,7 @@ export default function VideoPlayerTool() {
     try {
       await navigator.clipboard.writeText(text);
       toast.success(`${type} copied to clipboard!`);
-    } catch (err) {
+    } catch (_err) {
       toast.error("Failed to copy to clipboard");
     }
   };

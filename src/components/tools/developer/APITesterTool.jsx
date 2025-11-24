@@ -87,7 +87,7 @@ export default function APITester() {
       }
 
       toast.success(`Request completed (${res.status})`);
-    } catch (error) {
+    } catch (_error) {
       setStatus({
         code: 0,
         statusText: "Network Error",
@@ -107,7 +107,7 @@ export default function APITester() {
       setCopied(true);
       toast.success("Response copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       toast.error("Failed to copy response");
     }
   };

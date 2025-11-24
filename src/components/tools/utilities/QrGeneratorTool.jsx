@@ -44,7 +44,7 @@ export default function QrGeneratorTool() {
       setQrCodeUrl(url);
 
       toast.success("Your QR code has been generated successfully");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to generate QR code. Please try again.");
     } finally {
       setIsGenerating(false);
@@ -67,7 +67,7 @@ export default function QrGeneratorTool() {
       window.URL.revokeObjectURL(url);
 
       toast.success("QR code image is being downloaded");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to download QR code. Please try again.");
     }
   };
@@ -78,7 +78,7 @@ export default function QrGeneratorTool() {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
       toast.success("QR code URL copied successfully");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy URL to clipboard");
     }
   };
@@ -91,7 +91,7 @@ export default function QrGeneratorTool() {
           text: `QR Code for: ${text}`,
           url: qrCodeUrl,
         });
-      } catch (error) {
+      } catch (_error) {
         // Fallback to copy to clipboard
         copyToClipboard();
       }

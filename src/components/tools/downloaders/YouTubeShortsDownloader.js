@@ -68,7 +68,7 @@ export default function YouTubeShortsDownloader() {
           },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the YouTube Shorts video. Please try again.");
     } finally {
       setIsLoading(false);

@@ -93,7 +93,7 @@ export default function URLExtractorTool() {
       setCopied(true);
       toast.success("All URLs copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy URLs");
     }
   };
@@ -102,7 +102,7 @@ export default function URLExtractorTool() {
     try {
       await navigator.clipboard.writeText(url);
       toast.success("URL copied to clipboard!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy URL");
     }
   };

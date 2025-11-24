@@ -78,7 +78,7 @@ export default function Base64ImageTool() {
         setImagePreview("");
       };
       img.src = dataUrl;
-    } catch (error) {
+    } catch (_error) {
       setImagePreview("");
     }
   };
@@ -102,7 +102,7 @@ export default function Base64ImageTool() {
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-    } catch (error) {
+    } catch (_error) {
       alert("Error downloading image");
     }
   };

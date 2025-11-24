@@ -152,7 +152,7 @@ export default function TextToSpeechTool() {
 
       // For now, just play the audio - in production you'd implement proper audio capture
       speakText();
-    } catch (error) {
+    } catch (_error) {
       toast.error("Could not generate downloadable audio file");
     }
   };

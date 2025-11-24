@@ -166,7 +166,7 @@ export default function FacelessVideoGeneratorTool() {
       setGeneratedVideo(videoData);
       setCurrentStep("Complete!");
       toast.success("Faceless video generated successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to generate video. Please try again.");
     } finally {
       setIsGenerating(false);

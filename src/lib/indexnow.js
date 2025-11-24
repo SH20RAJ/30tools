@@ -32,7 +32,7 @@ export async function submitUrlToIndexNow(url) {
       );
       return false;
     }
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ IndexNow: Error submitting URL:", error);
     return false;
   }
@@ -69,7 +69,7 @@ export async function submitMultipleUrlsToIndexNow(urls) {
       );
       return false;
     }
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ IndexNow: Error submitting URLs:", error);
     return false;
   }
@@ -122,7 +122,7 @@ export async function submitAllToolsToIndexNow(toolsData) {
     }
 
     return true;
-  } catch (error) {
+  } catch (_error) {
     console.error("❌ IndexNow: Error submitting all tools:", error);
     return false;
   }

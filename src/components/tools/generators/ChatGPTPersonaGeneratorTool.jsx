@@ -134,7 +134,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
       );
       const result = await response.text();
       return result;
-    } catch (error) {
+    } catch (_error) {
       console.error("AI generation failed:", error);
       return generateFallbackPersona(category, tone);
     }
@@ -193,7 +193,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
       setGeneratedPersonas((prev) => [newPersona, ...prev.slice(0, 9)]);
 
       toast.success("Persona generated successfully!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to generate persona. Please try again.");
     } finally {
       setIsGenerating(false);

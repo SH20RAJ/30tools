@@ -49,7 +49,7 @@ export default function TeraboxVideoPlayer() {
     try {
       const data = await fetchTeraboxVideo(url);
       setVideoData(data);
-    } catch (err) {
+    } catch (_err) {
       setError(err.message || "Failed to load video");
     } finally {
       setIsLoading(false);

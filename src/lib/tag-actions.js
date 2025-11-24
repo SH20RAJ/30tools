@@ -27,7 +27,7 @@ export async function generateTikTokTags(query) {
       success: true,
       data: data,
     };
-  } catch (error) {
+  } catch (_error) {
     console.error("Error generating TikTok tags:", error);
     return {
       success: false,

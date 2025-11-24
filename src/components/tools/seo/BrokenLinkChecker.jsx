@@ -164,7 +164,7 @@ export default function BrokenLinkChecker() {
         setLinks([...newLinks]);
         setProgress(30 + ((i + 1) / sampleLinks.length) * 70);
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while scanning the website");
     } finally {
       setIsScanning(false);

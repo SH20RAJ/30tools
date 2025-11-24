@@ -27,7 +27,7 @@ export default function VideoPlayerEmbedClean() {
       setTimeout(() => {
         initializePlayer(decodedData);
       }, 100);
-    } catch (err) {
+    } catch (_err) {
       setError("Invalid video data");
       setLoading(false);
     }

@@ -44,7 +44,7 @@ export default function IPLocationFinderTool() {
 
       setIpInfo(ipData);
       toast.success("IP location information retrieved!");
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to get IP location information");
       console.error("Error:", error);
     } finally {
@@ -58,7 +58,7 @@ export default function IPLocationFinderTool() {
       setCopied(true);
       toast.success("Copied to clipboard!");
       setTimeout(() => setCopied(false), 2000);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Failed to copy");
     }
   };

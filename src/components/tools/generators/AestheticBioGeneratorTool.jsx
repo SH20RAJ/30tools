@@ -142,7 +142,7 @@ export default function AestheticBioGeneratorTool() {
         .slice(0, 3);
 
       return `${randomEmojis[0]} ${aiText.trim()} ${randomEmojis[1]}`;
-    } catch (error) {
+    } catch (_error) {
       console.error("AI generation failed:", error);
       return generateTemplateBio(theme, inputs);
     }
@@ -181,7 +181,7 @@ export default function AestheticBioGeneratorTool() {
       }
 
       setGeneratedBio(bio);
-    } catch (error) {
+    } catch (_error) {
       console.error("Generation failed:", error);
       setGeneratedBio(generateTemplateBio(selectedTheme, userInputs));
     }

@@ -71,7 +71,7 @@ export default function FacebookStoryDownloader() {
           },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError(
         "Failed to load Facebook stories. Please check the username and try again.",
       );

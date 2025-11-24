@@ -81,7 +81,7 @@ export default function TikTokDownloader() {
           },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the TikTok video. Please try again.");
     } finally {
       setIsLoading(false);

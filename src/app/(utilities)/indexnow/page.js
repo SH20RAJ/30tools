@@ -35,7 +35,7 @@ export default function IndexNowPage() {
 
       const data = await response.json();
       setResult(data);
-    } catch (error) {
+    } catch (_error) {
       setResult({
         success: false,
         message: "Failed to submit URLs",
@@ -74,7 +74,7 @@ export default function IndexNowPage() {
 
       const data = await response.json();
       setResult(data);
-    } catch (error) {
+    } catch (_error) {
       setResult({
         success: false,
         message: "Failed to submit URLs",

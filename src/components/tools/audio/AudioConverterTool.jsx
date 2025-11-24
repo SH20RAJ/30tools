@@ -278,7 +278,7 @@ export default function AudioConverterTool() {
       }
 
       setConvertedFiles(results);
-    } catch (error) {
+    } catch (_error) {
       console.error("Conversion failed:", error);
     } finally {
       setIsConverting(false);

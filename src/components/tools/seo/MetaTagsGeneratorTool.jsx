@@ -222,7 +222,7 @@ export default function MetaTagsGeneratorTool() {
       await navigator.clipboard.writeText(generateMetaTags);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
+    } catch (_err) {
       console.error("Failed to copy meta tags: ", err);
     }
   };

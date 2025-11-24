@@ -52,7 +52,7 @@ export default function InstagramDPDownloader() {
           { quality: "Medium Quality", size: "320 KB", url: "#" },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError(
         "Failed to load profile picture. Please check the username and try again.",
       );

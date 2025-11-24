@@ -277,7 +277,7 @@ export default function RandomGenerator() {
 
       setResults(newResults);
       toast.success(`Generated ${newResults.length} ${activeTab}!`);
-    } catch (error) {
+    } catch (_error) {
       toast.error("Generation failed. Please try again.");
     } finally {
       setIsGenerating(false);

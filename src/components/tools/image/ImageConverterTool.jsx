@@ -293,7 +293,7 @@ export default function ImageConverterTool() {
               : f,
           ),
         );
-      } catch (error) {
+      } catch (_error) {
         console.error("Conversion failed:", error);
         setFiles((prev) =>
           prev.map((f) =>

@@ -70,7 +70,7 @@ export default function InstagramReelDownloader() {
           },
         ],
       });
-    } catch (err) {
+    } catch (_err) {
       setError("Failed to process the Instagram Reel. Please try again.");
     } finally {
       setIsLoading(false);
