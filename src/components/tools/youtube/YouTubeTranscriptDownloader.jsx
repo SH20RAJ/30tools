@@ -382,3 +382,51 @@ export default function YouTubeTranscriptDownloader() {
     </div>
   );
 }
+
+/**
+ * Format time in seconds to SRT/VTT timestamp format
+ */
+function formatTime(seconds) {
+  const hours = Math.floor(seconds / 3600);
+  const minutes = Math.floor((seconds % 3600) / 60);
+  const secs = Math.floor(seconds % 60);
+  const ms = Math.floor((seconds % 1) * 1000);
+
+  return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")},${String(ms).padStart(3, "0")}`;
+}
+
+/**
+ * Format transcript data to SRT format
+ */
+function formatSRT(transcriptData) {
+  if (!transcriptData.segments || transcriptData.segments.length === 0) {
+    return transcriptData.text || "";
+  }
+
+  return transcriptData.segments
+    .map((segment, index) => {
+      const startTime = formatTime(segment.start);
+      const endTime = formatTime(segment.start + (segment.duration || 3));
+      return `${index + 1}\n${startTime} --> ${endTime}\n${segment.text}\n`;
+    })
+    .join("\n");
+}
+
+/**
+ * Format transcript data to VTT format
+ */
+function formatVTT(transcriptData) {
+  if (!transcriptData.segments || transcriptData.segments.length === 0) {
+    return `WEBVTT\n\n${transcriptData.text || ""}`;
+  }
+
+  const vttContent = transcriptData.segments
+    .map((segment, index) => {
+      const startTime = formatTime(segment.start).replace(",", ".");
+      const endTime = formatTime(segment.start + (segment.duration || 3)).replace(",", ".");
+      return `${index + 1}\n${startTime} --> ${endTime}\n${segment.text}\n`;
+    })
+    .join("\n");
+
+  return `WEBVTT\n\n${vttContent}`;
+}
