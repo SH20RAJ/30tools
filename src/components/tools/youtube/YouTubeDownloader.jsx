@@ -346,7 +346,7 @@ export default function YouTubeDownloader() {
   };
 
   return (
-    <ToolSEOLayout 
+    <ToolSEOLayout
       toolId="youtube-downloader"
       faqs={TOOL_FAQS}
       features={TOOL_FEATURES}
@@ -484,7 +484,7 @@ export default function YouTubeDownloader() {
                     {videoData.videoFormats?.map((format, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow"
+                        className="flex items-center justify-between p-4 bg-card rounded-xl border border-border hover:shadow-md transition-shadow"
                       >
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
@@ -514,35 +514,35 @@ export default function YouTubeDownloader() {
                         </Button>
                       </div>
                     )) || (
-                      <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
-                            <Video className="w-5 h-5 text-primary" />
-                          </div>
-                          <div>
-                            <div className="font-semibold text-foreground dark:text-gray-100">
-                              HD MP4
+                        <div className="flex items-center justify-between p-4 bg-card rounded-xl border border-border hover:shadow-md transition-shadow">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+                              <Video className="w-5 h-5 text-primary" />
                             </div>
-                            <div className="text-sm text-muted-foreground">
-                              {videoData.fileSize}
+                            <div>
+                              <div className="font-semibold text-foreground dark:text-gray-100">
+                                HD MP4
+                              </div>
+                              <div className="text-sm text-muted-foreground">
+                                {videoData.fileSize}
+                              </div>
                             </div>
                           </div>
+                          <Button
+                            onClick={() =>
+                              handleDownload(
+                                videoData.downloadUrl,
+                                `${videoData.title}.mp4`,
+                                "video",
+                              )
+                            }
+                            className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
+                          >
+                            <Download className="w-4 h-4 mr-2" />
+                            Download
+                          </Button>
                         </div>
-                        <Button
-                          onClick={() =>
-                            handleDownload(
-                              videoData.downloadUrl,
-                              `${videoData.title}.mp4`,
-                              "video",
-                            )
-                          }
-                          className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
-                        >
-                          <Download className="w-4 h-4 mr-2" />
-                          Download
-                        </Button>
-                      </div>
-                    )}
+                      )}
                   </div>
                 </div>
 
@@ -556,7 +556,7 @@ export default function YouTubeDownloader() {
                     {videoData.audioFormats?.map((format, index) => (
                       <div
                         key={index}
-                        className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow"
+                        className="flex items-center justify-between p-4 bg-card rounded-xl border border-border hover:shadow-md transition-shadow"
                       >
                         <div className="flex items-center gap-3">
                           <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
@@ -586,45 +586,45 @@ export default function YouTubeDownloader() {
                         </Button>
                       </div>
                     )) || (
-                      <div className="flex items-center justify-between p-4 bg-white dark:bg-gray-800 rounded-xl border border-border dark:border-gray-700 hover:shadow-md transition-shadow">
-                        <div className="flex items-center gap-3">
-                          <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
-                            <Music className="w-5 h-5 text-primary" />
-                          </div>
-                          <div>
-                            <div className="font-semibold text-foreground dark:text-gray-100">
-                              High Quality MP3
+                        <div className="flex items-center justify-between p-4 bg-card rounded-xl border border-border hover:shadow-md transition-shadow">
+                          <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+                              <Music className="w-5 h-5 text-primary" />
                             </div>
-                            <div className="text-sm text-muted-foreground">
-                              ~
-                              {Math.round(
-                                parseInt(videoData.fileSize || "0") * 0.1,
-                              )}
-                              MB
+                            <div>
+                              <div className="font-semibold text-foreground dark:text-gray-100">
+                                High Quality MP3
+                              </div>
+                              <div className="text-sm text-muted-foreground">
+                                ~
+                                {Math.round(
+                                  parseInt(videoData.fileSize || "0") * 0.1,
+                                )}
+                                MB
+                              </div>
                             </div>
                           </div>
+                          <Button
+                            onClick={() =>
+                              handleDownload(
+                                videoData.audioUrl || videoData.downloadUrl,
+                                `${videoData.title}.mp3`,
+                                "audio",
+                              )
+                            }
+                            className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
+                          >
+                            <Download className="w-4 h-4 mr-2" />
+                            Download
+                          </Button>
                         </div>
-                        <Button
-                          onClick={() =>
-                            handleDownload(
-                              videoData.audioUrl || videoData.downloadUrl,
-                              `${videoData.title}.mp3`,
-                              "audio",
-                            )
-                          }
-                          className="bg-muted/500 hover:bg-primary text-white px-6 py-2 rounded-lg font-medium"
-                        >
-                          <Download className="w-4 h-4 mr-2" />
-                          Download
-                        </Button>
-                      </div>
-                    )}
+                      )}
                   </div>
                 </div>
               </div>
 
               {/* Security Notice */}
-              <div className="text-center p-4 bg-gray-50 dark:bg-gray-800/50 rounded-xl">
+              <div className="text-center p-4 bg-muted rounded-xl">
                 <p className="text-sm text-muted-foreground dark:text-muted-foreground">
                   🔒 Downloads are processed securely and privately. We don't
                   store any of your content.
@@ -657,7 +657,7 @@ export default function YouTubeDownloader() {
                     {bookmarkedUrls.map((bookmark, index) => (
                       <div
                         key={index}
-                        className="flex items-center gap-4 p-3 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+                        className="flex items-center gap-4 p-3 bg-muted rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
                       >
                         {bookmark.thumbnail && (
                           <img
