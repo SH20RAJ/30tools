@@ -22,43 +22,8 @@ import {
   BookOpen,
 } from "lucide-react";
 import { toast } from "sonner";
-import { ToolSEOLayout } from "@/components/seo";
 
-const TOOL_FAQS = [
-  {
-    question: "Is it legal to download YouTube videos?",
-    answer: "You can download videos for personal use only. Downloading copyrighted content for redistribution or commercial use may violate YouTube's terms of service and copyright laws.",
-  },
-  {
-    question: "Why can't I download some YouTube videos?",
-    answer: "Some videos may be private, age-restricted, or blocked in certain regions. Our tool only works with public videos that are available on YouTube's platform.",
-  },
-  {
-    question: "Can I download YouTube videos on mobile?",
-    answer: "Yes! Our tool works perfectly on mobile devices. You can also install it as a PWA for a native app experience.",
-  },
-  {
-    question: "What's the difference between video and audio downloads?",
-    answer: "Video downloads include both video and audio in MP4 format. Audio downloads extract only the audio track and save it as MP3, resulting in smaller file sizes.",
-  },
-  {
-    question: "How do I bookmark videos?",
-    answer: "After entering a YouTube URL, click the bookmark icon next to the input field. Your bookmarked videos will be saved locally and can be accessed anytime.",
-  },
-  {
-    question: "Is there a download limit?",
-    answer: "We don't impose artificial limits, but please be respectful of content creators and YouTube's terms of service. Use our tool responsibly for personal use only.",
-  },
-];
 
-const TOOL_FEATURES = [
-  "No Registration Required",
-  "Multiple Formats (MP4, MP3)",
-  "Bookmark Videos",
-  "Fast Processing",
-  "All YouTube Content",
-  "Cross-Platform Support",
-];
 
 export default function YouTubeDownloader() {
   const [url, setUrl] = useState("");
@@ -346,11 +311,7 @@ export default function YouTubeDownloader() {
   };
 
   return (
-    <ToolSEOLayout
-      toolId="youtube-downloader"
-      faqs={TOOL_FAQS}
-      features={TOOL_FEATURES}
-    >
+    <>
       <div className="space-y-8">
         {/* Main Download Card */}
         <div className="space-y-6">
@@ -399,10 +360,10 @@ export default function YouTubeDownloader() {
                     Processing...
                   </>
                 ) : (
-                  <>
+                  <Button className="w-full h-14 text-lg font-semibold ">
                     <Download className="w-5 h-5 mr-3" />
-                    <span className="text-primary-foreground bg-primary">Download Video</span>
-                  </>
+                    <span>Download Video</span>
+                  </Button>
                 )}
               </Button>
             </div>
@@ -705,29 +666,6 @@ export default function YouTubeDownloader() {
           )}
         </div>
 
-        {/* TeraBox Downloader Backlink for SEO */}
-        <Card className="mt-8">
-          <CardContent className="p-6">
-            <div className="text-center bg-muted/50 rounded-xl p-6">
-              <h3 className="text-lg font-semibold text-foreground mb-2">
-                Need to Download TeraBox Files?
-              </h3>
-              <p className="text-muted-foreground mb-4">
-                Looking for a reliable way to download files from TeraBox? Check
-                out our specialized TeraBox downloader tool.
-              </p>
-              <a
-                href="https://terabox.beer/"
-                target="_blank"
-                rel="doopener doreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium transition-colors"
-              >
-                <Download className="w-4 h-4" />
-                TeraBox Downloader
-              </a>
-            </div>
-          </CardContent>
-        </Card>
 
         {/* How to Use Guide */}
         <Card className="mt-8">
@@ -836,6 +774,6 @@ export default function YouTubeDownloader() {
         </div>
       </div>
       <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2Fyoutube-downloader"><img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2Fyoutube-downloader&countColor=%23263759&style=flat-square" /></a>
-    </ToolSEOLayout>
+    </>
   );
 }

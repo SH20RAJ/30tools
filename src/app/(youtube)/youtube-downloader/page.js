@@ -1,5 +1,5 @@
 import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
-import CTAButton from "./CTAButton";
+
 
 export const metadata = {
   title: "YouTube Video Downloader - Download YouTube Videos Free Online HD MP4 MP3",
@@ -257,224 +257,20 @@ export default function YouTubeDownloaderPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.breadcrumb) }}
       />
 
-      {/* Hero Section with Gradient Background */}
-      <div className="relative overflow-hidden bg-background">
-        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25 dark:[mask-image:linear-gradient(0deg,rgba(255,255,255,0.1),rgba(255,255,255,0.5))]" />
-
-        <div className="container relative mx-auto px-4 py-12 md:py-20">
-          {/* Breadcrumb Navigation */}
-          <nav aria-label="Breadcrumb" className="mb-8">
-            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary transition-colors">Home</a></li>
-              <li>→</li>
-              <li><a href="/#youtube-tools" className="hover:text-primary transition-colors">YouTube Tools</a></li>
-              <li>→</li>
-              <li className="text-foreground font-medium">YouTube Downloader</li>
-            </ol>
-          </nav>
-
-          <div className="max-w-5xl mx-auto text-center mb-12">
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 animate-fade-in">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              #1 Free YouTube Downloader
-            </div>
-
-            {/* Main Heading */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-foreground leading-tight">
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground leading-tight">
               YouTube Video Downloader
             </h1>
-
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-              Download YouTube videos in <span className="font-semibold text-foreground">HD, 4K quality</span> or convert to <span className="font-semibold text-foreground">MP3 audio</span> instantly. Fast, secure, and completely free - no registration required.
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Download YouTube videos in HD quality or convert to MP3 instantly. Fast, free, and secure.
             </p>
-
-            {/* Feature Pills */}
-            <div className="flex flex-wrap justify-center gap-3 mb-10">
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card text-card-foreground border border-border shadow-sm">
-                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-sm font-medium">HD/4K Quality</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card text-card-foreground border border-border shadow-sm">
-                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-sm font-medium">MP4 & MP3</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card text-card-foreground border border-border shadow-sm">
-                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-sm font-medium">Unlimited Downloads</span>
-              </div>
-              <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-card text-card-foreground border border-border shadow-sm">
-                <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span className="text-sm font-medium">100% Secure</span>
-              </div>
-            </div>
           </div>
 
-          {/* Main Tool */}
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 p-6 md:p-8 backdrop-blur-sm">
-              <YouTubeDownloader />
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8">
+            <YouTubeDownloader />
           </div>
-
-          {/* Trust Indicators */}
-          <div className="max-w-4xl mx-auto mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-            <div className="p-4">
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">50M+</div>
-              <div className="text-sm text-muted-foreground">Downloads</div>
-            </div>
-            <div className="p-4">
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">4.9★</div>
-              <div className="text-sm text-muted-foreground">User Rating</div>
-            </div>
-            <div className="p-4">
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">100%</div>
-              <div className="text-sm text-muted-foreground">Free</div>
-            </div>
-            <div className="p-4">
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">24/7</div>
-              <div className="text-sm text-muted-foreground">Available</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* How It Works Section */}
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">How to Download YouTube Videos</h2>
-            <p className="text-lg text-muted-foreground">Simple 3-step process to download any YouTube video</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="relative group">
-              <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10" />
-              <div className="relative bg-card rounded-2xl p-8 border border-border hover:border-red-300 dark:hover:border-red-700 transition-all">
-                <div className="w-16 h-16 bg-primary text-primary-foreground">
-                  1
-                </div>
-                <h3 className="text-xl font-bold mb-3">Copy YouTube URL</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Copy the link of the YouTube video you want to download from your browser's address bar or the share button.
-                </p>
-              </div>
-            </div>
-
-            <div className="relative group">
-              <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10" />
-              <div className="relative bg-card rounded-2xl p-8 border border-border hover:border-orange-300 dark:hover:border-orange-700 transition-all">
-                <div className="w-16 h-16 bg-primary text-primary-foreground">
-                  2
-                </div>
-                <h3 className="text-xl font-bold mb-3">Paste & Select Format</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Paste the URL into the input field above and choose your preferred quality (MP4) or audio format (MP3).
-                </p>
-              </div>
-            </div>
-
-            <div className="relative group">
-              <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10" />
-              <div className="relative bg-card rounded-2xl p-8 border border-border hover:border-purple-300 dark:hover:border-purple-700 transition-all">
-                <div className="w-16 h-16 bg-primary text-primary-foreground">
-                  3
-                </div>
-                <h3 className="text-xl font-bold mb-3">Download Instantly</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Click the download button and save your video or audio file directly to your device. It's that simple!
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-     
-
-      {/* FAQ Section */}
-      <div className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-muted-foreground">Everything you need to know about our YouTube downloader</p>
-          </div>
-
-          <div className="space-y-4">
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-lg font-bold mb-3 flex items-start gap-3">
-                <span className="text-primary flex-shrink-0">Q:</span>
-                <span>Is it legal to download YouTube videos?</span>
-              </h3>
-              <p className="text-muted-foreground leading-relaxed ml-8">
-                You can download YouTube videos for personal use, educational purposes, or content you own. Always respect copyright laws and YouTube's terms of service when downloading videos.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-lg font-bold mb-3 flex items-start gap-3">
-                <span className="text-primary flex-shrink-0">Q:</span>
-                <span>What video formats are supported?</span>
-              </h3>
-              <p className="text-muted-foreground leading-relaxed ml-8">
-                Our YouTube downloader supports MP4 (video) and MP3 (audio) formats. MP4 files work on all devices and media players, while MP3 is perfect for audio-only content.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-lg font-bold mb-3 flex items-start gap-3">
-                <span className="text-primary flex-shrink-0">Q:</span>
-                <span>Can I download YouTube playlists?</span>
-              </h3>
-              <p className="text-muted-foreground leading-relaxed ml-8">
-                Currently, you can download individual YouTube videos. For playlist downloads, you'll need to copy and paste each video URL separately.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-lg font-bold mb-3 flex items-start gap-3">
-                <span className="text-primary flex-shrink-0">Q:</span>
-                <span>Is there a download limit?</span>
-              </h3>
-              <p className="text-muted-foreground leading-relaxed ml-8">
-                No, there are no download limits! You can download as many YouTube videos as you want, completely free of charge.
-              </p>
-            </div>
-
-            <div className="bg-card rounded-xl p-6 border border-border">
-              <h3 className="text-lg font-bold mb-3 flex items-start gap-3">
-                <span className="text-primary flex-shrink-0">Q:</span>
-                <span>Does this work on mobile phones?</span>
-              </h3>
-              <p className="text-muted-foreground leading-relaxed ml-8">
-                Yes, our YouTube downloader is fully responsive and works perfectly on all devices including Android, iPhone (iOS), tablets, and desktop computers.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* CTA Section */}
-      <div className="bg-primary py-16">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
-            Ready to Download YouTube Videos?
-          </h2>
-          <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-            Start downloading your favorite YouTube videos in HD quality right now. It's fast, free, and secure!
-          </p>
-          <CTAButton />
         </div>
       </div>
     </>
