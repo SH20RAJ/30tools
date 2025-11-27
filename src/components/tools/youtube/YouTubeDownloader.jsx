@@ -401,7 +401,7 @@ export default function YouTubeDownloader() {
                 ) : (
                   <>
                     <Download className="w-5 h-5 mr-3" />
-                    <span className="text-white bg-amber-200">Download Video</span>
+                    <span className="text-primary-foreground bg-primary">Download Video</span>
                   </>
                 )}
               </Button>
@@ -434,7 +434,7 @@ export default function YouTubeDownloader() {
           {videoData && (
             <div className="mt-8 space-y-6">
               {/* Video Info Card */}
-              <Card className="border-0 shadow-lg bg-background/20 dark:to-indigo-950/20">
+              <Card className="border-0 shadow-lg bg-card">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-6">
                     {videoData.thumbnail && (
@@ -708,7 +708,7 @@ export default function YouTubeDownloader() {
         {/* TeraBox Downloader Backlink for SEO */}
         <Card className="mt-8">
           <CardContent className="p-6">
-            <div className="text-center bg-linear-to-r from-blue-50 to-indigo-50 dark:from-blue-950/20 dark:to-indigo-950/20 rounded-xl p-6">
+            <div className="text-center bg-muted/50 rounded-xl p-6">
               <h3 className="text-lg font-semibold text-foreground mb-2">
                 Need to Download TeraBox Files?
               </h3>
@@ -720,7 +720,7 @@ export default function YouTubeDownloader() {
                 href="https://terabox.beer/"
                 target="_blank"
                 rel="doopener doreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary/90 text-primary-foreground rounded-lg font-medium transition-colors"
               >
                 <Download className="w-4 h-4" />
                 TeraBox Downloader

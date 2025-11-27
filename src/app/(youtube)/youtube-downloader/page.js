@@ -288,7 +288,7 @@ export default function YouTubeDownloaderPage() {
               YouTube Video Downloader
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
               Download YouTube videos in <span className="font-semibold text-foreground">HD, 4K quality</span> or convert to <span className="font-semibold text-foreground">MP3 audio</span> instantly. Fast, secure, and completely free - no registration required.
             </p>
 
@@ -401,103 +401,7 @@ export default function YouTubeDownloaderPage() {
         </div>
       </div>
 
-      {/* Features Section */}
-      <div className="bg-slate-50 dark:bg-slate-900/50 py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Our YouTube Downloader?</h2>
-              <p className="text-lg text-muted-foreground">The most powerful and user-friendly YouTube downloader</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🎥</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">High Quality Video Downloads</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      Download YouTube videos in original quality including HD 720p, Full HD 1080p, and even 4K resolution when available. Our downloader preserves the original video quality for the best viewing experience.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🎵</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">Convert YouTube to MP3</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      Extract high-quality audio from YouTube videos and save as MP3 files. Perfect for downloading music, podcasts, lectures, and audiobooks with crystal-clear sound quality up to 320kbps.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">⚡</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">Lightning Fast Downloads</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      Our optimized servers ensure super-fast YouTube video downloads. No waiting times, no slow downloads - get your YouTube videos downloaded in seconds, not minutes.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">🔒</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">100% Safe and Secure</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      Your privacy is our priority. All YouTube downloads are processed securely without storing any personal data. No malware, no viruses, just clean and safe downloads.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">📱</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">Works on All Devices</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      Download YouTube videos on any device - desktop, laptop, tablet, or smartphone. Compatible with Windows, Mac, Linux, Android, and iOS devices.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-card rounded-xl p-6 border border-border hover:shadow-lg transition-shadow">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                    <span className="text-2xl">∞</span>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold mb-2">Unlimited Downloads</h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      No download limits, no restrictions. Download as many YouTube videos as you want, completely free of charge. No registration or subscription required.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       {/* FAQ Section */}
       <div className="container mx-auto px-4 py-16 md:py-24">
