@@ -148,10 +148,10 @@ export default function YouTubeEmbedGenerator() {
 
   return (
     <div className="space-y-6">
-      <Card className="card-cute">
+      <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
-            <Code className="w-5 h-5 text-destructive" />
+            <Code className="w-5 h-5 text-primary" />
             YouTube Embed Generator
           </CardTitle>
           <CardDescription>
@@ -166,7 +166,6 @@ export default function YouTubeEmbedGenerator() {
               placeholder="https://www.youtube.com/watch?v=..."
               value={videoUrl}
               onChange={(e) => setVideoUrl(e.target.value)}
-              className="input-cute"
             />
             {error && <p className="text-sm text-destructive">{error}</p>}
             {videoId && (
@@ -201,7 +200,6 @@ export default function YouTubeEmbedGenerator() {
                       type="number"
                       value={width}
                       onChange={(e) => setWidth(e.target.value)}
-                      className="input-cute"
                     />
                   </div>
                   <div className="space-y-2">
@@ -211,7 +209,6 @@ export default function YouTubeEmbedGenerator() {
                       type="number"
                       value={height}
                       onChange={(e) => setHeight(e.target.value)}
-                      className="input-cute"
                     />
                   </div>
                 </div>
@@ -275,7 +272,6 @@ export default function YouTubeEmbedGenerator() {
                   placeholder="0"
                   value={startTime}
                   onChange={(e) => setStartTime(e.target.value)}
-                  className="input-cute"
                 />
               </div>
 
@@ -287,7 +283,6 @@ export default function YouTubeEmbedGenerator() {
                   placeholder="Leave empty for full video"
                   value={endTime}
                   onChange={(e) => setEndTime(e.target.value)}
-                  className="input-cute"
                 />
               </div>
 
@@ -311,21 +306,20 @@ export default function YouTubeEmbedGenerator() {
       </Card>
 
       {embedCode && (
-        <Card className="card-cute">
+        <Card>
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
-                <Youtube className="w-5 h-5 text-destructive" />
+                <Youtube className="w-5 h-5 text-primary" />
                 Generated Embed Code
               </span>
               <Button
                 variant="outline"
                 size="sm"
                 onClick={copyEmbedCode}
-                className="btn-cute"
               >
                 {copied ? (
-                  <CheckCircle2 className="w-4 h-4 mr-1 text-primary" />
+                  <CheckCircle2 className="w-4 h-4 mr-1 text-green-500" />
                 ) : (
                   <Copy className="w-4 h-4 mr-1" />
                 )}
@@ -340,13 +334,13 @@ export default function YouTubeEmbedGenerator() {
             <Textarea
               value={embedCode}
               readOnly
-              className="font-mono text-sm min-h-[120px] input-cute"
+              className="font-mono text-sm min-h-[120px] bg-muted"
             />
           </CardContent>
         </Card>
       )}
 
-      <Card className="card-cute">
+      <Card>
         <CardHeader>
           <CardTitle>Embedding Best Practices</CardTitle>
         </CardHeader>
