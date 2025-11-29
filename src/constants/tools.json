@@ -1,8 +1,8 @@
 {
   "metadata": {
     "version": "10.0",
-    "lastUpdated": "2025-11-24",
-    "totalTools": 168,
+    "lastUpdated": "2025-11-28",
+    "totalTools": 169,
     "totalCategories": 13
   },
   "categories": {
@@ -470,6 +470,14 @@
           "name": "YouTube Transcript/Subtitle Downloader",
           "description": "Download YouTube video transcripts and subtitles in multiple formats",
           "route": "/youtube-transcript-downloader",
+          "popular": true,
+          "category": "youtube"
+        },
+        {
+          "id": "youtube-subtitle-downloader",
+          "name": "YouTube Subtitle Downloader",
+          "description": "Download YouTube subtitles in SRT, VTT and TXT formats. Extract captions and subtitles from any YouTube video in 100+ languages. Get dual subtitles for language learning",
+          "route": "/youtube-subtitle-downloader",
           "popular": true,
           "category": "youtube"
         },
