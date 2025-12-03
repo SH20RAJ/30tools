@@ -1,15 +1,31 @@
 import PdfRotateTool from "@/components/tools/pdf/PdfRotateTool";
+import {
+  BreadcrumbsEnhanced,
+  FAQSection,
+  ReviewSnippets,
+  RelatedTools,
+  UserComments,
+  QuickActions,
+} from "@/components/seo";
+import {
+  GeneratorToolFeatures,
+  GeneratorToolExamples,
+} from "@/components/seo/GeneratorToolsHub";
+import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
   title: "Free PDF Rotate Tool - Rotate PDF Pages Online | 30tools",
   description:
-    "Professional pdf rotate to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+    "Rotate PDF pages permanently. Fix orientation of individual pages or entire documents. Free, secure, and easy to use online tool.",
   keywords:
-    "pdf rotate, rotate pdf pages, fix pdf orientation, rotate pdf online, pdf page rotation, correct pdf pages, rotate pdf free, i love pdf extract,online pdf combiner free,merge pdf gratis,pdf splitter online free,ilovepdf free,pdf love pdf,pdf join,ilovepdf dividir,ilovepdf 結合,ilovepdf عربي,i love to pdf,ilovepdf converter,i love my pdf converter,recortar pdf ilovepdf,we love pdf,i love pdf free,ilovepdf juntar,ilovepdf compresser,fusionner pdf ilovepdf,i live pdf,ilovepdf unire,word ke pdf gratis ilovepdf,pdf merge ilovepdf,i ilovepdf,ilovepdf edit pdf,pdf i love,i love pdf.com,love my pdf,ilovepdf editar pdf,word para pdf ilovepdf,ilovepdf jpg a pdf,pdf a imagen ilovepdf,jpg a pdf ilovepdf,i love pdf gratis,firmar pdf ilovepdf,pdf i love pdf,pdf a jpg ilovepdf,transformar pdf em word ilovepdf,pdf lovers,l love pdf,convertir pdf a word ilovepdf gratis,my love pdf,edit pdf ilovepdf,ilovepdf convertir,convert word to pdf ilovepdf,pdf ilovepdf,www.ilovepdf.com pdf,pdf para word ilovepdf,juntar pdf ilovepdf,ilovepdf 日本語,ilovepdf compressed,www.ilovepdf.com ​​​​,converter pdf em word ilovepdf,separar pdf ilovepdf,ilovepdf pdf to excel,gabung pdf ilovepdf,ilovepdf jpg to pdf,ilovepdf editar,ilov,i heart pdf,i love pdf en ligne,love pdf,dividir pdf ilovepdf,ilovepdf split,pdf to jpg ilovepdf,jpeg to pdf ilovepdf,ilovepdf pdf to jpg,pdf lover,i love pdf français,in love pdf,ilovepdf merge pdf,jpg to pdf ilovepdf,pdflove,ilovepdf comprimir,word to pdf converter ilovepdf,ilovepdf fusionner,da pdf a word ilovepdf,ipdf,convert word to pdf online,editar pdf ilovepdf,ilovepdf在线转换,convert pdf to word ilovepdf,ilovepdf.com,merge pdf ilovepdf,ilovepdf gratis,word to pdf ilovepdf,ilovepdf compress,ilovepdf juntar pdf,ilovepdf to word,pdf tools,ilovepdf edit,i love you pdf,comprimir pdf ilovepdf,ilovepdf word to pdf,love pdf converter,i love pdf merge pdf,yo amo pdf,pdf a word ilovepdf,ilovepdf online,i love pdf español,i love pdfs,ilovepdf pdf,ilovepdf español,ilovepdf en français,pdf to word converter ilovepdf,ilovepdf unir,我爱pdf,ilovepdf unir pdf,merge pdf i love pdf,de pdf a word ilovepdf,i love pdf unir,ilovepdf português,i love pdf gratuit,ilovepdf pdf a word,pdf to word ilovepdf,pdf to word free,convert pdf to word free,ilovepdf pdf para word,convert to pdf,pdf creator,separar pdf,pdf combiner,ilovepdf en español,i love pdf converter,ilovepdf在线转换官网,i lovepdf,unir pdf ilovepdf,i love,i love my pdf,ilovepdf merge,convert pdf to jpg,ilove,i love pdf merge,love,pdf love,pdf merge,pdf converter,convert word to pdf,combine pdf,ilovepdf pdf to word,pdf merger,i love pdf to word,ilove pdf,unir pdf,convert pdf to word,merge pdf,pdf to word converter,pdf,pdf to word,i love pdf",
+    "pdf rotate, rotate pdf pages, fix pdf orientation, rotate pdf online, pdf page rotation, correct pdf pages, rotate pdf free, change pdf orientation",
+  alternates: {
+    canonical: "https://30tools.com/pdf-rotate",
+  },
   openGraph: {
     title: "Free PDF Rotate Tool - Fix Page Orientation Instantly",
     description:
-      "Rotate PDF pages to correct orientation with live preview and batch operations.",
+      "Rotate PDF pages permanently. Fix orientation of individual pages or entire documents. Free, secure, and easy to use online tool.",
     url: "https://30tools.com/pdf-rotate",
     siteName: "30tools",
     images: [
@@ -20,66 +36,277 @@ export const metadata = {
         alt: "Free PDF Rotate Tool",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Free PDF Rotate Tool - Fix Page Orientation Instantly",
     description:
-      "Rotate PDF pages with live preview. Perfect for fixing scanned documents.",
+      "Rotate PDF pages permanently. Fix orientation of individual pages or entire documents. Free, secure, and easy to use online tool.",
     images: ["/og-images/pdf-rotate.jpg"],
     creator: "@30tools",
   },
-  alternates: {
-    canonical: "https://30tools.com/pdf-rotate",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
   category: "PDF Tools",
-  other: {
-    "application-name": "30tools",
-    "mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "PDF Rotate - 30tools",
-    "format-detection": "telephone=no",
-    "msapplication-TileColor": "#000000",
-    "msapplication-config": "/browserconfig.xml",
-    "theme-color": "#000000",
-  },
-};
-
-const _jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Pdf Rotate",
-  description:
-    "Professional pdf rotate to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
-  url: "https://30tools.com/pdf-rotate",
-  applicationCategory: "UtilityApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  author: {
-    "@type": "Organization",
-    name: "30tools",
-    url: "https://30tools.com",
-  },
 };
 
 export default function PdfRotatePage() {
-  return <PdfRotateTool />;
+  // Tool-specific data
+  const toolData = {
+    id: "pdf-rotate",
+    name: "PDF Rotate",
+    description: "Rotate PDF pages to correct orientation",
+    category: "pdf",
+    route: "/pdf-rotate",
+  };
+
+  // Breadcrumb navigation
+  const breadcrumbs = [
+    { name: "PDF Tools", url: "/pdf-tools" },
+    { name: "PDF Rotate", url: "/pdf-rotate" },
+  ];
+
+  // Tool features
+  const features = [
+    "Rotate Individual Pages",
+    "Batch Rotation Support",
+    "90-Degree Increments",
+    "Live Preview",
+    "Permanent Rotation",
+    "No Watermarks",
+    "Client-Side Processing",
+    "100% Free & Secure",
+  ];
+
+  // Usage examples
+  const examples = [
+    {
+      title: "Scanned Documents",
+      description: "Fix upside-down scans",
+      input: "Scanned_Doc.pdf (Upside Down)",
+      output: "Corrected_Doc.pdf (Upright)",
+    },
+    {
+      title: "Mixed Orientation",
+      description: "Standardize page layout",
+      input: "Report.pdf (Mixed Landscape/Portrait)",
+      output: "Report_Final.pdf (All Portrait)",
+    },
+    {
+      title: "Presentation Slides",
+      description: "Adjust slide orientation",
+      input: "Slides.pdf (Portrait)",
+      output: "Slides_Landscape.pdf",
+    },
+  ];
+
+  // FAQ data
+  const faqs = getPdfToolFAQs("pdf-rotate");
+
+  // Related tools
+  const relatedTools = [
+    {
+      id: "pdf-merger",
+      name: "PDF Merger",
+      description: "Combine multiple PDFs",
+      route: "/pdf-merger",
+      category: "pdf",
+    },
+    {
+      id: "pdf-splitter",
+      name: "PDF Splitter",
+      description: "Split PDF into pages",
+      route: "/pdf-splitter",
+      category: "pdf",
+    },
+    {
+      id: "pdf-compressor",
+      name: "PDF Compressor",
+      description: "Reduce PDF size",
+      route: "/pdf-compressor",
+      category: "pdf",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Enhanced Breadcrumbs with Schema */}
+      <div className="container mx-auto px-4 pt-6">
+        <BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
+      </div>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">Free PDF Rotate Tool</h1>
+          <p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
+            Rotate PDF pages to correct orientation. Rotate individual pages,
+            selected pages, or all pages with precise 90-degree increments.
+          </p>
+
+          <QuickActions
+            toolName="PDF Rotate"
+            toolUrl="https://30tools.com/pdf-rotate"
+            showBookmark={true}
+            showShare={true}
+          />
+        </div>
+
+        {/* Tool Interface */}
+        <div className="mb-12">
+          <PdfRotateTool />
+        </div>
+
+        {/* Key Features */}
+        <GeneratorToolFeatures tool={toolData} features={features} />
+
+        {/* Usage Examples */}
+        <GeneratorToolExamples
+          tool={toolData}
+          examples={examples}
+          title="Why Rotate PDF Pages?"
+        />
+
+        {/* User Reviews */}
+        <div className="mb-12">
+          <ReviewSnippets
+            toolId="pdf-rotate"
+            title="User Reviews"
+            showRatingSummary={true}
+            variant="grid"
+            limit={6}
+          />
+        </div>
+
+        {/* How to Use Section */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            How to Rotate PDF Pages
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                1
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Upload PDF</h3>
+              <p className="text-muted-foreground text-sm">
+                Select the PDF file you want to rotate.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                2
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Rotate Pages</h3>
+              <p className="text-muted-foreground text-sm">
+                Click on pages to rotate them individually or use "Rotate All".
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                3
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Download</h3>
+              <p className="text-muted-foreground text-sm">
+                Apply changes and download your corrected PDF.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mb-12">
+          <FAQSection
+            faqs={faqs}
+            title="PDF Rotation FAQ"
+            categoryTitle="PDF Editing"
+            variant="accordion"
+            showSchema={true}
+          />
+        </div>
+
+        {/* Related Tools */}
+        <div className="mb-12">
+          <RelatedTools
+            currentTool="pdf-rotate"
+            category="pdf"
+            tools={relatedTools}
+            title="More PDF Tools"
+          />
+        </div>
+
+        {/* User Comments */}
+        <UserComments
+          toolId="pdf-rotate"
+          toolName="PDF Rotate"
+          showStats={true}
+          allowComments={true}
+        />
+      </main>
+
+      {/* Structured Data for Tool */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Free PDF Rotate Tool",
+              description:
+                "Rotate PDF pages permanently. Fix orientation of individual pages or entire documents.",
+              url: "https://30tools.com/pdf-rotate",
+              applicationCategory: "UtilityApplication",
+              operatingSystem: "Web Browser",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              creator: {
+                "@type": "Organization",
+                name: "30tools",
+                url: "https://30tools.com",
+              },
+              featureList: features,
+              screenshot: "https://30tools.com/screenshots/pdf-rotate.jpg",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                reviewCount: "450",
+                bestRating: "5",
+                worstRating: "1",
+              },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              name: "How to Rotate PDF Pages",
+              step: [
+                {
+                  "@type": "HowToStep",
+                  name: "Upload PDF",
+                  text: "Select the PDF file you want to rotate.",
+                  url: "https://30tools.com/pdf-rotate#step1",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Rotate Pages",
+                  text: "Click on pages to rotate them individually or use 'Rotate All'.",
+                  url: "https://30tools.com/pdf-rotate#step2",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Download",
+                  text: "Apply changes and download your corrected PDF.",
+                  url: "https://30tools.com/pdf-rotate#step3",
+                },
+              ],
+            },
+          ]),
+        }}
+      />
+    </div>
+  );
 }

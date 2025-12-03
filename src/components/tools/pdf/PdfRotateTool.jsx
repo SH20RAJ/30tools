@@ -10,7 +10,6 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
 import {
   Upload,
@@ -18,14 +17,9 @@ import {
   RotateCw,
   RotateCcw,
   CheckCircle,
-  AlertCircle,
   Loader,
   FileText,
-  Zap,
-  Shield,
   Undo2,
-  Redo2,
-  Eye,
 } from "lucide-react";
 
 export default function PdfRotateTool() {
@@ -178,7 +172,7 @@ export default function PdfRotateTool() {
         blob: rotatedBlob,
         size: pdfFile.size,
       });
-    } catch (_error) {
+    } catch (error) {
       console.error("Error rotating PDF:", error);
       alert("Error rotating PDF. Please try again.");
     }
@@ -216,30 +210,7 @@ export default function PdfRotateTool() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free PDF Rotate Tool</h1>
-        <p className="text-xl text-muted-foreground mb-6">
-          Rotate PDF pages to correct orientation. Rotate individual pages,
-          selected pages, or all pages with precise 90-degree increments.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <div className="flex items-center gap-2">
-            <Zap className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Instant Rotation</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Secure Processing</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Eye className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Live Preview</span>
-          </div>
-        </div>
-      </div>
-
+    <div className="max-w-6xl mx-auto">
       {/* Upload Section */}
       <Card className="mb-6">
         <CardHeader>
@@ -259,8 +230,7 @@ export default function PdfRotateTool() {
               Drop PDF file here or click to browse
             </p>
             <p className="text-sm text-muted-foreground mb-4">
-              Perfect for fixing scanned documents or correcting page
-              orientation
+              Perfect for fixing scanned documents or correcting page orientation
             </p>
             <input
               ref={fileInputRef}
@@ -379,11 +349,10 @@ export default function PdfRotateTool() {
                 (pageNumber) => (
                   <div key={pageNumber} className="relative">
                     <div
-                      className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
-                        selectedPages.has(pageNumber)
+                      className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${selectedPages.has(pageNumber)
                           ? "border-primary bg-primary/10"
                           : "border-muted-foreground/25 hover:border-primary/50"
-                      }`}
+                        }`}
                       onClick={() => togglePageSelection(pageNumber)}
                     >
                       {/* Page Preview Simulation */}
@@ -520,133 +489,6 @@ export default function PdfRotateTool() {
           </CardContent>
         </Card>
       )}
-
-      {/* Features Grid */}
-      <div className="grid gap-6 md:grid-cols-3 mb-8">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Eye className="h-5 w-5" />
-              Live Preview
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              See exactly how your pages will look with real-time rotation
-              preview before applying changes.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Zap className="h-5 w-5" />
-              Batch Operations
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Rotate all pages at once, selected pages, or individual pages with
-              precise control.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Shield className="h-5 w-5" />
-              Privacy First
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              All rotation processing happens locally in your browser. Your
-              files never leave your device.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Use Cases */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle>Perfect For</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <h4 className="font-medium mb-3">Document Correction</h4>
-              <ul className="text-sm space-y-2 text-muted-foreground">
-                <li>• Fix scanned documents orientation</li>
-                <li>• Correct upside-down pages</li>
-                <li>• Align mixed orientation pages</li>
-                <li>• Prepare documents for printing</li>
-                <li>• Standardize page orientation</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Professional Use</h4>
-              <ul className="text-sm space-y-2 text-muted-foreground">
-                <li>• Prepare presentations</li>
-                <li>• Format reports correctly</li>
-                <li>• Fix mobile-scanned documents</li>
-                <li>• Organize multi-page files</li>
-                <li>• Correct batch scanning errors</li>
-              </ul>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* FAQ */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-medium mb-2">
-                Can I rotate pages in different directions?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Yes! You can rotate each page individually or select multiple
-                pages and rotate them together. Each page can have its own
-                rotation.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                What rotation angles are supported?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We support 90-degree increments: 0°, 90°, 180°, and 270°. This
-                covers all common rotation needs.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Does rotation affect image quality?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                No, rotation is a lossless operation. The content quality
-                remains exactly the same, only the orientation changes.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Can I undo rotations before applying?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Yes, you can rotate pages multiple times, reset individual
-                pages, or reset all pages before applying the final rotations.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

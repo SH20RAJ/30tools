@@ -21,8 +21,6 @@ import {
   Video,
   Download,
   Trash2,
-  Play,
-  Pause,
   CheckCircle,
   AlertCircle,
   Loader,
@@ -32,6 +30,7 @@ import {
   Zap,
   Gauge,
 } from "lucide-react";
+import { toast } from "sonner";
 
 export default function VideoCompressorTool() {
   const [files, setFiles] = useState([]);
@@ -87,12 +86,12 @@ export default function VideoCompressorTool() {
       const isValidSize = file.size <= maxFileSize;
 
       if (!isValidType) {
-        alert(`${file.name} is not a supported video format`);
+        toast.error(`${file.name} is not a supported video format`);
         return false;
       }
 
       if (!isValidSize) {
-        alert(
+        toast.error(
           `${file.name} is too large. Maximum size is ${formatFileSize(maxFileSize)}`,
         );
         return false;
@@ -169,12 +168,12 @@ export default function VideoCompressorTool() {
           prev.map((f) =>
             f.id === file.id
               ? {
-                  ...f,
-                  status: "compressed",
-                  progress: 100,
-                  compressedSize: result.size,
-                  compressedBlob: result.blob,
-                }
+                ...f,
+                status: "compressed",
+                progress: 100,
+                compressedSize: result.size,
+                compressedBlob: result.blob,
+              }
               : f,
           ),
         );
@@ -184,12 +183,14 @@ export default function VideoCompressorTool() {
             f.id === file.id ? { ...f, status: "error", progress: 0 } : f,
           ),
         );
+        toast.error(`Failed to compress ${file.name}`);
       }
 
       setProgress(((i + 1) / files.length) * 100);
     }
 
     setIsCompressing(false);
+    toast.success("Compression completed!");
   };
 
   const downloadFile = (fileData) => {
@@ -207,6 +208,7 @@ export default function VideoCompressorTool() {
 
   const downloadAll = () => {
     files.filter((f) => f.status === "compressed").forEach(downloadFile);
+    toast.success("Downloading all files...");
   };
 
   const removeFile = (id) => {
@@ -234,7 +236,7 @@ export default function VideoCompressorTool() {
       case "compressing":
         return <Loader className="h-4 w-4 text-primary animate-spin" />;
       case "compressed":
-        return <CheckCircle className="h-4 w-4 text-primary" />;
+        return <CheckCircle className="h-4 w-4 text-green-500" />;
       case "error":
         return <AlertCircle className="h-4 w-4 text-destructive" />;
       default:
@@ -246,7 +248,7 @@ export default function VideoCompressorTool() {
     const variants = {
       ready: "secondary",
       compressing: "default",
-      compressed: "default",
+      compressed: "success", // Changed to success if available, or default
       error: "destructive",
     };
 
@@ -257,7 +259,14 @@ export default function VideoCompressorTool() {
       error: "Error",
     };
 
-    return <Badge variant={variants[status]}>{labels[status]}</Badge>;
+    return (
+      <Badge
+        variant={variants[status] === "success" ? "default" : variants[status]}
+        className={status === "compressed" ? "bg-green-500 hover:bg-green-600" : ""}
+      >
+        {labels[status]}
+      </Badge>
+    );
   };
 
   const totalOriginalSize = files.reduce((sum, file) => sum + file.size, 0);
@@ -268,28 +277,19 @@ export default function VideoCompressorTool() {
   const totalSavings = calculateSavings(totalOriginalSize, totalCompressedSize);
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free Video Compressor</h1>
-        <p className="text-xl text-muted-foreground mb-6">
-          Compress videos online for free. Reduce file size by up to 80% while
-          maintaining quality. Perfect for WhatsApp, social media, and web
-          optimization.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <div className="flex items-center gap-2">
-            <Smartphone className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Mobile Optimized</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Zap className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Fast Processing</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Monitor className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">No Watermarks</span>
-          </div>
+    <div className="w-full max-w-4xl mx-auto space-y-6">
+      <div className="flex flex-wrap justify-center gap-4 mb-6">
+        <div className="flex items-center gap-2 bg-muted/50 px-3 py-1 rounded-full">
+          <Smartphone className="h-4 w-4 text-primary" />
+          <span className="text-xs font-medium">Mobile Optimized</span>
+        </div>
+        <div className="flex items-center gap-2 bg-muted/50 px-3 py-1 rounded-full">
+          <Zap className="h-4 w-4 text-primary" />
+          <span className="text-xs font-medium">Fast Processing</span>
+        </div>
+        <div className="flex items-center gap-2 bg-muted/50 px-3 py-1 rounded-full">
+          <Monitor className="h-4 w-4 text-primary" />
+          <span className="text-xs font-medium">No Watermarks</span>
         </div>
       </div>
 
@@ -313,7 +313,10 @@ export default function VideoCompressorTool() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
+              <div
+                className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center cursor-pointer hover:bg-muted/50 transition-colors"
+                onClick={() => fileInputRef.current?.click()}
+              >
                 <Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
                 <p className="text-lg font-medium mb-2">
                   Drop video files here or click to browse
@@ -329,9 +332,7 @@ export default function VideoCompressorTool() {
                   onChange={handleFileSelect}
                   className="hidden"
                 />
-                <Button onClick={() => fileInputRef.current?.click()}>
-                  Choose Files
-                </Button>
+                <Button variant="outline">Choose Files</Button>
               </div>
             </CardContent>
           </Card>
@@ -364,7 +365,7 @@ export default function VideoCompressorTool() {
                   {files.map((file) => (
                     <div
                       key={file.id}
-                      className="flex items-center justify-between p-4 border rounded-lg"
+                      className="flex items-center justify-between p-4 border rounded-lg bg-card"
                     >
                       <div className="flex items-center gap-3 flex-1">
                         {getStatusIcon(file.status)}
@@ -378,7 +379,7 @@ export default function VideoCompressorTool() {
                                   Compressed:{" "}
                                   {formatFileSize(file.compressedSize)}
                                 </span>
-                                <span className="text-primary font-medium">
+                                <span className="text-green-600 font-medium">
                                   -
                                   {calculateSavings(
                                     file.size,
@@ -403,10 +404,10 @@ export default function VideoCompressorTool() {
                         )}
                         <Button
                           onClick={() => removeFile(file.id)}
-                          variant="outline"
+                          variant="ghost"
                           size="sm"
                         >
-                          <Trash2 className="h-4 w-4" />
+                          <Trash2 className="h-4 w-4 text-destructive" />
                         </Button>
                       </div>
                     </div>
@@ -422,6 +423,7 @@ export default function VideoCompressorTool() {
                         files.every((f) => f.status === "compressed")
                       }
                       className="flex-1"
+                      size="lg"
                     >
                       {isCompressing ? (
                         <>
@@ -459,7 +461,7 @@ export default function VideoCompressorTool() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="text-center">
+                  <div className="text-center p-4 bg-muted/30 rounded-lg">
                     <p className="text-2xl font-bold">
                       {formatFileSize(totalOriginalSize)}
                     </p>
@@ -467,7 +469,7 @@ export default function VideoCompressorTool() {
                       Original Size
                     </p>
                   </div>
-                  <div className="text-center">
+                  <div className="text-center p-4 bg-muted/30 rounded-lg">
                     <p className="text-2xl font-bold">
                       {formatFileSize(totalCompressedSize)}
                     </p>
@@ -475,11 +477,13 @@ export default function VideoCompressorTool() {
                       Compressed Size
                     </p>
                   </div>
-                  <div className="text-center">
-                    <p className="text-2xl font-bold text-primary">
+                  <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-100 dark:border-green-900">
+                    <p className="text-2xl font-bold text-green-600 dark:text-green-400">
                       {totalSavings}%
                     </p>
-                    <p className="text-sm text-muted-foreground">Space Saved</p>
+                    <p className="text-sm text-green-700 dark:text-green-500">
+                      Space Saved
+                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -505,7 +509,10 @@ export default function VideoCompressorTool() {
                   {Object.entries(compressionPresets).map(([key, preset]) => (
                     <Card
                       key={key}
-                      className="cursor-pointer hover:bg-accent transition-colors"
+                      className={`cursor-pointer transition-colors ${compressionLevel[0] === preset.quality
+                          ? "border-primary bg-primary/5"
+                          : "hover:bg-accent"
+                        }`}
                       onClick={() => setCompressionLevel([preset.quality])}
                     >
                       <CardContent className="p-4 text-center">
@@ -538,8 +545,8 @@ export default function VideoCompressorTool() {
                     className="w-full"
                   />
                   <div className="flex justify-between text-xs text-muted-foreground mt-2">
-                    <span>Smaller file</span>
-                    <span>Better quality</span>
+                    <span>Smaller file (Low Quality)</span>
+                    <span>Larger file (High Quality)</span>
                   </div>
                 </div>
               </div>
@@ -549,7 +556,7 @@ export default function VideoCompressorTool() {
                 <Label className="text-base font-medium mb-4 block">
                   Output Format
                 </Label>
-                <div className="flex gap-2">
+                <div className="flex gap-2 flex-wrap">
                   {["mp4", "webm", "avi"].map((format) => (
                     <Button
                       key={format}
@@ -605,203 +612,6 @@ export default function VideoCompressorTool() {
           </Card>
         </TabsContent>
       </Tabs>
-
-      {/* FAQ Section */}
-      <Card className="mt-8">
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-medium mb-2">
-                How much can I compress my videos?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                You can typically reduce video file sizes by 50-80% while
-                maintaining good quality. The exact savings depend on the
-                original video quality, format, and compression settings.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                What video formats are supported?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We support MP4, AVI, MOV, WMV, FLV, WebM, and MKV formats.
-                Output is available in MP4, WebM, and AVI formats.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Is there a file size limit?</h4>
-              <p className="text-sm text-muted-foreground">
-                Maximum file size is {formatFileSize(maxFileSize)} per video.
-                You can process multiple videos simultaneously.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Are my videos stored on your servers?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                No, all video processing happens locally in your browser. Your
-                videos are never uploaded to our servers, ensuring complete
-                privacy.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* SEO Content Section with Long-tail Keywords */}
-      <div className="mt-16 space-y-12">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">
-            Complete Video Compression Guide
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Learn how to compress videos for WhatsApp, reduce file sizes without
-            quality loss, and optimize videos for different platforms.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">
-                Compress Video for WhatsApp Online Free
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                WhatsApp has a 16MB limit for video sharing. Our compressor
-                automatically optimizes videos for WhatsApp while maintaining
-                quality. Perfect for sharing family videos, business content,
-                and social moments without the frustration of file size
-                restrictions.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">
-                Reduce Video Size Without Losing Quality
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Advanced compression algorithms preserve video quality while
-                significantly reducing file sizes. Choose from web, mobile, and
-                custom quality presets to achieve the perfect balance between
-                file size and visual quality for your specific needs.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">
-                Video Compressor for Email Attachment
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Email providers typically limit attachments to 25MB. Compress
-                large videos to fit email size restrictions while maintaining
-                playback quality. Ideal for business presentations, tutorials,
-                and personal videos that need to be shared via email.
-              </p>
-            </CardContent>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-lg">
-                Bulk Video Compressor Free
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground">
-                Process multiple videos simultaneously with batch compression.
-                Upload entire folders and compress them all with consistent
-                settings. Perfect for content creators, video editors, and
-                businesses managing large video libraries.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Platform-specific optimization guide */}
-        <div className="bg-muted/30 rounded-lg p-8">
-          <h3 className="text-2xl font-bold mb-6 text-center">
-            Platform-Specific Video Optimization
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📱</span>
-              </div>
-              <h4 className="font-semibold mb-2">WhatsApp</h4>
-              <p className="text-xs text-muted-foreground">
-                16MB limit, mobile-optimized compression
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📧</span>
-              </div>
-              <h4 className="font-semibold mb-2">Email</h4>
-              <p className="text-xs text-muted-foreground">
-                25MB limit, universal format support
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">🌐</span>
-              </div>
-              <h4 className="font-semibold mb-2">Web</h4>
-              <p className="text-xs text-muted-foreground">
-                Fast loading, SEO-optimized videos
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl">📱</span>
-              </div>
-              <h4 className="font-semibold mb-2">Social Media</h4>
-              <p className="text-xs text-muted-foreground">
-                Platform-specific aspect ratios and sizes
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Technical benefits */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="text-center p-6 bg-muted/20 rounded-lg">
-            <h4 className="font-semibold mb-2">🚀 Faster Uploads</h4>
-            <p className="text-sm text-muted-foreground">
-              Smaller files upload 5x faster to social media, cloud storage, and
-              video platforms
-            </p>
-          </div>
-          <div className="text-center p-6 bg-muted/20 rounded-lg">
-            <h4 className="font-semibold mb-2">💾 Storage Savings</h4>
-            <p className="text-sm text-muted-foreground">
-              Save up to 80% storage space on devices and cloud services without
-              quality compromise
-            </p>
-          </div>
-          <div className="text-center p-6 bg-muted/20 rounded-lg">
-            <h4 className="font-semibold mb-2">📶 Better Streaming</h4>
-            <p className="text-sm text-muted-foreground">
-              Optimized videos stream smoothly on slower internet connections
-              and mobile data
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

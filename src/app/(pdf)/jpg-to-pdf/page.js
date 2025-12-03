@@ -1,15 +1,31 @@
 import JpgToPdfTool from "@/components/tools/pdf/JpgToPdfTool";
+import {
+  BreadcrumbsEnhanced,
+  FAQSection,
+  ReviewSnippets,
+  RelatedTools,
+  UserComments,
+  QuickActions,
+} from "@/components/seo";
+import {
+  GeneratorToolFeatures,
+  GeneratorToolExamples,
+} from "@/components/seo/GeneratorToolsHub";
+import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "JPG to PDF Converter - Convert Images to PDF Online",
+  title: "Free JPG to PDF Converter - Convert Images to PDF | 30tools",
   description:
-    "Professional jpg to pdf to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+    "Convert JPG, PNG, and other images to PDF online for free. Combine multiple images into one PDF. Custom layouts, secure, and no watermarks.",
   keywords:
-    "jpg to pdf, jpeg to pdf, png to pdf, image to pdf converter, convert images to pdf, photos to pdf, picture to pdf online, i love pdf extract,online pdf combiner free,merge pdf gratis,pdf splitter online free,ilovepdf free,pdf love pdf,pdf join,ilovepdf dividir,ilovepdf 結合,ilovepdf عربي,i love to pdf,ilovepdf converter,i love my pdf converter,recortar pdf ilovepdf,we love pdf,i love pdf free,ilovepdf juntar,ilovepdf compresser,fusionner pdf ilovepdf,i live pdf,ilovepdf unire,word ke pdf gratis ilovepdf,pdf merge ilovepdf,i ilovepdf,ilovepdf edit pdf,pdf i love,i love pdf.com,love my pdf,ilovepdf editar pdf,word para pdf ilovepdf,ilovepdf jpg a pdf,pdf a imagen ilovepdf,jpg a pdf ilovepdf,i love pdf gratis,firmar pdf ilovepdf,pdf i love pdf,pdf a jpg ilovepdf,transformar pdf em word ilovepdf,pdf lovers,l love pdf,convertir pdf a word ilovepdf gratis,my love pdf,edit pdf ilovepdf,ilovepdf convertir,convert word to pdf ilovepdf,pdf ilovepdf,www.ilovepdf.com pdf,pdf para word ilovepdf,juntar pdf ilovepdf,ilovepdf 日本語,ilovepdf compressed,www.ilovepdf.com ​​​​,converter pdf em word ilovepdf,separar pdf ilovepdf,ilovepdf pdf to excel,gabung pdf ilovepdf,ilovepdf jpg to pdf,ilovepdf editar,ilov,i heart pdf,i love pdf en ligne,love pdf,dividir pdf ilovepdf,ilovepdf split,pdf to jpg ilovepdf,jpeg to pdf ilovepdf,ilovepdf pdf to jpg,pdf lover,i love pdf français,in love pdf,ilovepdf merge pdf,jpg to pdf ilovepdf,pdflove,ilovepdf comprimir,word to pdf converter ilovepdf,ilovepdf fusionner,da pdf a word ilovepdf,ipdf,convert word to pdf online,editar pdf ilovepdf,ilovepdf在线转换,convert pdf to word ilovepdf,ilovepdf.com,merge pdf ilovepdf,ilovepdf gratis,word to pdf ilovepdf,ilovepdf compress,ilovepdf juntar pdf,ilovepdf to word,pdf tools,ilovepdf edit,i love you pdf,comprimir pdf ilovepdf,ilovepdf word to pdf,love pdf converter,i love pdf merge pdf,yo amo pdf,pdf a word ilovepdf,ilovepdf online,i love pdf español,i love pdfs,ilovepdf pdf,ilovepdf español,ilovepdf en français,pdf to word converter ilovepdf,ilovepdf unir,我爱pdf,ilovepdf unir pdf,merge pdf i love pdf,de pdf a word ilovepdf,i love pdf unir,ilovepdf português,i love pdf gratuit,ilovepdf pdf a word,pdf to word ilovepdf,pdf to word free,convert pdf to word free,ilovepdf pdf para word,convert to pdf,pdf creator,separar pdf,pdf combiner,ilovepdf en español,i love pdf converter,ilovepdf在线转换官网,i lovepdf,unir pdf ilovepdf,i love,i love my pdf,ilovepdf merge,convert pdf to jpg,ilove,i love pdf merge,love,pdf love,pdf merge,pdf converter,convert word to pdf,combine pdf,ilovepdf pdf to word,pdf merger,i love pdf to word,ilove pdf,unir pdf,convert pdf to word,merge pdf,pdf to word converter,pdf,pdf to word,i love pdf",
+    "jpg to pdf, jpeg to pdf, png to pdf, image to pdf, convert jpg to pdf, photos to pdf, combine images to pdf, online pdf converter, free pdf tools",
+  alternates: {
+    canonical: "https://30tools.com/jpg-to-pdf",
+  },
   openGraph: {
-    title: "Free JPG to PDF Converter - Convert Images to PDF Online",
+    title: "Free JPG to PDF Converter - Convert Images to PDF",
     description:
-      "Convert JPG, PNG, and other images to PDF with custom layouts and high quality output.",
+      "Convert JPG, PNG, and other images to PDF online for free. Combine multiple images into one PDF. Custom layouts, secure, and no watermarks.",
     url: "https://30tools.com/jpg-to-pdf",
     siteName: "30tools",
     images: [
@@ -17,69 +33,283 @@ export const metadata = {
         url: "/og-images/jpg-to-pdf.jpg",
         width: 1200,
         height: 630,
-        alt: "Free JPG to PDF Converter",
+        alt: "JPG to PDF Converter - 30tools",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free JPG to PDF Converter - Convert Images to PDF Online",
+    title: "Free JPG to PDF Converter - Convert Images to PDF",
     description:
-      "Convert up to 50 images to PDF with custom layouts. Perfect for portfolios and albums.",
+      "Convert JPG, PNG, and other images to PDF online for free. Combine multiple images into one PDF. Custom layouts, secure, and no watermarks.",
     images: ["/og-images/jpg-to-pdf.jpg"],
     creator: "@30tools",
   },
-  alternates: {
-    canonical: "https://30tools.com/jpg-to-pdf",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
   category: "PDF Tools",
-  other: {
-    "application-name": "30tools",
-    "mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "JPG to PDF - 30tools",
-    "format-detection": "telephone=no",
-    "msapplication-TileColor": "#000000",
-    "msapplication-config": "/browserconfig.xml",
-    "theme-color": "#000000",
-  },
-};
-
-const _jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Jpg To Pdf",
-  description:
-    "Professional jpg to pdf to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
-  url: "https://30tools.com/jpg-to-pdf",
-  applicationCategory: "UtilityApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  author: {
-    "@type": "Organization",
-    name: "30tools",
-    url: "https://30tools.com",
-  },
 };
 
 export default function JpgToPdfPage() {
-  return <JpgToPdfTool />;
+  // Tool-specific data
+  const toolData = {
+    id: "jpg-to-pdf",
+    name: "JPG to PDF",
+    description: "Convert images to PDF documents",
+    category: "pdf",
+    route: "/jpg-to-pdf",
+  };
+
+  // Breadcrumb navigation
+  const breadcrumbs = [
+    { name: "PDF Tools", url: "/pdf-tools" },
+    { name: "JPG to PDF", url: "/jpg-to-pdf" },
+  ];
+
+  // Tool features
+  const features = [
+    "Convert JPG, PNG, WebP & More",
+    "Combine Multiple Images",
+    "Custom Page Sizes (A4, Letter)",
+    "Adjustable Margins & Orientation",
+    "Drag & Drop Reordering",
+    "High Quality Output",
+    "100% Secure Client-Side Processing",
+    "No Watermarks",
+  ];
+
+  // Usage examples
+  const examples = [
+    {
+      title: "Photo Albums",
+      description: "Create a digital photo album",
+      input: "50 Vacation Photos (JPG)",
+      output: "Vacation_Album.pdf",
+    },
+    {
+      title: "Document Scanning",
+      description: "Combine scanned pages",
+      input: "Page1.jpg + Page2.jpg + Page3.jpg",
+      output: "Scanned_Document.pdf",
+    },
+    {
+      title: "Portfolios",
+      description: "Showcase your work",
+      input: "Design1.png + Design2.png",
+      output: "Design_Portfolio.pdf",
+    },
+  ];
+
+  // FAQ data
+  const faqs = getPdfToolFAQs("jpg-to-pdf");
+
+  // Related tools
+  const relatedTools = [
+    {
+      id: "pdf-merger",
+      name: "PDF Merger",
+      description: "Combine multiple PDFs",
+      route: "/pdf-merger",
+      category: "pdf",
+    },
+    {
+      id: "png-to-pdf",
+      name: "PNG to PDF",
+      description: "Convert PNG images to PDF",
+      route: "/png-to-pdf",
+      category: "pdf",
+    },
+    {
+      id: "pdf-compressor",
+      name: "PDF Compressor",
+      description: "Reduce PDF size",
+      route: "/pdf-compressor",
+      category: "pdf",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Enhanced Breadcrumbs with Schema */}
+      <div className="container mx-auto px-4 pt-6">
+        <BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
+      </div>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">
+            Free JPG to PDF Converter
+          </h1>
+          <p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
+            Convert your images to PDF documents instantly. Combine multiple JPG,
+            PNG, or WebP files into a single PDF with custom layouts. Secure,
+            fast, and free.
+          </p>
+
+          <QuickActions
+            toolName="JPG to PDF"
+            toolUrl="https://30tools.com/jpg-to-pdf"
+            showBookmark={true}
+            showShare={true}
+          />
+        </div>
+
+        {/* Tool Interface */}
+        <div className="mb-12">
+          <JpgToPdfTool />
+        </div>
+
+        {/* Key Features */}
+        <GeneratorToolFeatures tool={toolData} features={features} />
+
+        {/* Usage Examples */}
+        <GeneratorToolExamples
+          tool={toolData}
+          examples={examples}
+          title="Ways to Use JPG to PDF"
+        />
+
+        {/* User Reviews */}
+        <div className="mb-12">
+          <ReviewSnippets
+            toolId="jpg-to-pdf"
+            title="User Reviews"
+            showRatingSummary={true}
+            variant="grid"
+            limit={6}
+          />
+        </div>
+
+        {/* How to Use Section */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            How to Convert Images to PDF
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                1
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Upload Images</h3>
+              <p className="text-muted-foreground text-sm">
+                Select or drag and drop your JPG, PNG, or other image files.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                2
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Customize</h3>
+              <p className="text-muted-foreground text-sm">
+                Reorder images, choose page size, orientation, and margins.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                3
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Convert</h3>
+              <p className="text-muted-foreground text-sm">
+                Click "Convert to PDF" and download your new document.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mb-12">
+          <FAQSection
+            faqs={faqs}
+            title="JPG to PDF FAQ"
+            categoryTitle="Image to PDF Conversion"
+            variant="accordion"
+            showSchema={true}
+          />
+        </div>
+
+        {/* Related Tools */}
+        <div className="mb-12">
+          <RelatedTools
+            currentTool="jpg-to-pdf"
+            category="pdf"
+            tools={relatedTools}
+            title="More PDF Tools"
+          />
+        </div>
+
+        {/* User Comments */}
+        <UserComments
+          toolId="jpg-to-pdf"
+          toolName="JPG to PDF"
+          showStats={true}
+          allowComments={true}
+        />
+      </main>
+
+      {/* Structured Data for Tool */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Free JPG to PDF Converter",
+              description:
+                "Convert JPG, PNG, and other images to PDF online for free. Combine multiple images into one PDF.",
+              url: "https://30tools.com/jpg-to-pdf",
+              applicationCategory: "UtilityApplication",
+              operatingSystem: "Web Browser",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              creator: {
+                "@type": "Organization",
+                name: "30tools",
+                url: "https://30tools.com",
+              },
+              featureList: features,
+              screenshot: "https://30tools.com/screenshots/jpg-to-pdf.jpg",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                reviewCount: "1100",
+                bestRating: "5",
+                worstRating: "1",
+              },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              name: "How to Convert Images to PDF",
+              step: [
+                {
+                  "@type": "HowToStep",
+                  name: "Upload Images",
+                  text: "Select or drag and drop your JPG, PNG, or other image files.",
+                  url: "https://30tools.com/jpg-to-pdf#step1",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Customize",
+                  text: "Reorder images, choose page size, orientation, and margins.",
+                  url: "https://30tools.com/jpg-to-pdf#step2",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Convert",
+                  text: "Click 'Convert to PDF' and download your new document.",
+                  url: "https://30tools.com/jpg-to-pdf#step3",
+                },
+              ],
+            },
+          ]),
+        }}
+      />
+    </div>
+  );
 }

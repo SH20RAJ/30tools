@@ -257,6 +257,293 @@ export const IMAGE_TOOLS_FAQS = {
         "We support JPG, PNG, and WebP formats. Enhanced images can be downloaded in high-quality JPG or PNG format.",
     },
   ],
+
+  // Base64 Image Converter specific FAQs
+  "base64-image": [
+    {
+      question: "What is Base64 image encoding?",
+      answer:
+        "Base64 encoding converts binary image data into a text string. This allows you to embed images directly into HTML, CSS, or JSON files without needing a separate image file.",
+    },
+    {
+      question: "Why should I use Base64 images?",
+      answer:
+        "Using Base64 images can reduce the number of HTTP requests your website makes, potentially speeding up page load times for small icons or logos. It's also useful for storing images in databases.",
+    },
+    {
+      question: "Does converting to Base64 increase file size?",
+      answer:
+        "Yes, Base64 encoded images are typically about 33% larger than the original binary file. It is recommended to use Base64 mainly for small images like icons or placeholders.",
+    },
+    {
+      question: "Can I convert Base64 back to an image?",
+      answer:
+        "Yes! Our tool works both ways. You can paste a Base64 string to decode it back into a viewable and downloadable image file.",
+    },
+    {
+      question: "What image formats are supported?",
+      answer:
+        "We support encoding and decoding for all common web image formats including JPG, PNG, GIF, WebP, and SVG.",
+    },
+    {
+      question: "Is it safe to convert my private images?",
+      answer:
+        "Absolutely. The conversion happens entirely in your browser using JavaScript. Your images are never uploaded to our servers.",
+    },
+    {
+      question: "How do I use the Base64 string in HTML?",
+      answer:
+        "You can use it in an img tag like this: <img src='data:image/png;base64,...' />. Our tool provides ready-to-copy HTML and CSS snippets.",
+    },
+  ],
+
+  // Image Cropper specific FAQs
+  "image-cropper": [
+    {
+      question: "How do I crop an image online?",
+      answer:
+        "Simply upload your photo, drag the crop handles to select the area you want to keep, and click 'Crop'. You can also choose from preset aspect ratios.",
+    },
+    {
+      question: "Can I crop to specific social media sizes?",
+      answer:
+        "Yes! We offer preset aspect ratios for popular platforms like Instagram (1:1, 4:5), YouTube (16:9), Facebook, and Twitter.",
+    },
+    {
+      question: "Does cropping reduce image quality?",
+      answer:
+        "No, our tool performs lossless cropping whenever possible. The cropped area retains the original quality of your uploaded image.",
+    },
+    {
+      question: "Can I crop images into circles?",
+      answer:
+        "Yes, you can use the circular crop option to create perfect round profile pictures for social media.",
+    },
+    {
+      question: "Is the image cropper free?",
+      answer:
+        "Yes, our online image cropper is completely free to use. There are no limits on the number of images you can process.",
+    },
+    {
+      question: "What file formats do you accept?",
+      answer:
+        "We support all major image formats including JPG, PNG, WebP, and GIF. You can save your cropped image as JPG or PNG.",
+    },
+    {
+      question: "Can I rotate the image before cropping?",
+      answer:
+        "Yes, you can rotate your image 90 degrees clockwise or counter-clockwise to get the perfect orientation before cropping.",
+    },
+    {
+      question: "Is my data secure?",
+      answer:
+        "Absolutely. All cropping happens locally in your browser. Your photos are never uploaded to any server.",
+    },
+  ],
+
+  // Instagram Story Resizer specific FAQs
+  "instagram-story-resizer": [
+    {
+      question: "What is the perfect size for an Instagram Story?",
+      answer:
+        "The ideal dimension for an Instagram Story is 1080 pixels wide by 1920 pixels tall, which is an aspect ratio of 9:16.",
+    },
+    {
+      question: "How do I resize my photo for Instagram Story?",
+      answer:
+        "Upload your photo, and our tool will automatically set the crop frame to the 9:16 aspect ratio. Adjust the frame to fit your subject and download.",
+    },
+    {
+      question: "Will my image be blurry on Instagram?",
+      answer:
+        "Our tool exports images at the exact resolution Instagram recommends (1080x1920), ensuring your stories look crisp and high-quality.",
+    },
+    {
+      question: "Can I resize landscape photos for Stories?",
+      answer:
+        "Yes! You can crop a vertical 9:16 section from a landscape photo, or add a background blur to fit the whole image without cropping.",
+    },
+    {
+      question: "Is this tool free?",
+      answer:
+        "Yes, resizing images for Instagram Stories is completely free and unlimited.",
+    },
+    {
+      question: "Does it work for Instagram Reels covers?",
+      answer:
+        "Yes, the 9:16 aspect ratio is also perfect for Instagram Reels covers and TikTok videos.",
+    },
+  ],
+
+  // Social Media Resizer specific FAQs
+  "social-media-resizer": [
+    {
+      question: "Which social media platforms are supported?",
+      answer:
+        "We have presets for all major platforms including Instagram (Post, Story), Facebook (Cover, Post), Twitter (Header, Post), LinkedIn, and YouTube.",
+    },
+    {
+      question: "How do I resize for multiple platforms?",
+      answer:
+        "Simply upload your image, select a preset (e.g., Instagram Post), download it, and then select another preset (e.g., Facebook Cover) to resize the same image again.",
+    },
+    {
+      question: "Are the dimensions up to date?",
+      answer:
+        "Yes, we regularly update our presets to match the latest recommended image sizes for all social media platforms.",
+    },
+    {
+      question: "Can I create custom sizes?",
+      answer:
+        "Absolutely. If you don't see a preset you need, you can enter custom width and height dimensions manually.",
+    },
+    {
+      question: "Is it free to use?",
+      answer:
+        "Yes, our social media image resizer is 100% free. You can resize as many images as you need.",
+    },
+    {
+      question: "Does it support profile pictures?",
+      answer:
+        "Yes, we have specific presets for profile pictures and even a circular crop tool to preview how it will look.",
+    },
+  ],
+
+  // Photo Collage Maker specific FAQs
+  "photo-collage-maker": [
+    {
+      question: "How many photos can I include in a collage?",
+      answer:
+        "You can combine up to 9 photos in a single collage. We offer various grid layouts depending on the number of photos you select.",
+    },
+    {
+      question: "Can I adjust the border and spacing?",
+      answer:
+        "Yes, you can customize the border thickness, color, and spacing between images to create the perfect look.",
+    },
+    {
+      question: "Is it free to make collages?",
+      answer:
+        "Yes, our photo collage maker is completely free. Create and download as many collages as you want without watermarks.",
+    },
+    {
+      question: "What layouts are available?",
+      answer:
+        "We support classic grids, side-by-side comparisons, and vertical stacks. The layout options update automatically based on your photo count.",
+    },
+    {
+      question: "Can I rearrange photos in the collage?",
+      answer:
+        "Yes, simply drag and drop photos within the grid to swap their positions.",
+    },
+    {
+      question: "What is the output quality?",
+      answer:
+        "We export collages in high-resolution PNG format, suitable for sharing on social media or printing.",
+    },
+  ],
+
+  // Assuming 'logo-generator' FAQs would be here if they existed in the original document
+  // The instruction implies insertion after a block ending with "Can I save my design?"
+  // Since that block is not in the provided content, I will insert the new FAQs
+  // after the last existing block, which is "photo-collage-maker".
+
+  // Favicon Generator specific FAQs
+  "favicon-generator": [
+    {
+      question: "What is a favicon?",
+      answer:
+        "A favicon (short for 'favorite icon') is a small icon associated with a website that appears in the browser tab, bookmarks, and history.",
+    },
+    {
+      question: "How do I create a favicon?",
+      answer:
+        "You can create a favicon by uploading an image, choosing an emoji, or entering text/initials. Our tool will generate the necessary files for you.",
+    },
+    {
+      question: "What file formats do I get?",
+      answer:
+        "We provide the standard .ico file which contains multiple sizes (16x16, 32x32, 48x48) as well as high-resolution PNG versions.",
+    },
+    {
+      question: "Can I convert a photo to a favicon?",
+      answer:
+        "Yes! Simply upload your photo, crop it to a square if needed, and we'll convert it into a crisp favicon.ico file.",
+    },
+    {
+      question: "Is it free?",
+      answer:
+        "Yes, our favicon generator is 100% free to use for both personal and commercial websites.",
+    },
+    {
+      question: "Do you support transparent backgrounds?",
+      answer:
+        "Yes, if you upload a transparent PNG or use our text/emoji generator with a transparent background setting, your favicon will be transparent.",
+    },
+  ],
+
+  // Icon Generator specific FAQs
+  "icon-generator": [
+    {
+      question: "What is the best size for an app icon?",
+      answer:
+        "For both iOS and Android, it's best to start with a high-resolution 1024x1024 pixel image. Our tool generates this master file for you.",
+    },
+    {
+      question: "Can I create icons for both iOS and Android?",
+      answer:
+        "Yes! The icons generated are compatible with Apple's App Store and Google Play Store requirements.",
+    },
+    {
+      question: "Can I add gradient backgrounds?",
+      answer:
+        "Absolutely. You can choose from our preset gradients or create your own custom gradient background to make your icon pop.",
+    },
+    {
+      question: "Do I need to round the corners myself?",
+      answer:
+        "For iOS, you should upload a square icon as the system applies the rounding. For Android, you might want to apply rounding yourself. Our tool lets you toggle this preview.",
+    },
+    {
+      question: "Is this tool free for commercial apps?",
+      answer:
+        "Yes, you can use the icons generated here for any commercial application without attribution.",
+    },
+    {
+      question: "Can I use emojis as app icons?",
+      answer:
+        "Yes, emojis make great, simple app icons. You can select any emoji and style it with a custom background.",
+    },
+  ],
+
+  // EXIF Reader specific FAQs
+  "exif-reader": [
+    {
+      question: "What is EXIF data?",
+      answer:
+        "EXIF (Exchangeable Image File Format) data is metadata embedded in image files that contains information about the camera settings, date, time, and location where the photo was taken.",
+    },
+    {
+      question: "Is my photo uploaded to a server?",
+      answer:
+        "No, all processing happens locally in your browser. Your photos are never uploaded to our servers, ensuring your privacy.",
+    },
+    {
+      question: "Can I see the GPS location?",
+      answer:
+        "Yes, if your photo contains GPS coordinates, our tool will display the location on a map link.",
+    },
+    {
+      question: "What image formats are supported?",
+      answer:
+        "We support all major image formats including JPEG, PNG, TIFF, WEBP, and HEIC (if supported by your browser).",
+    },
+    {
+      question: "Can I edit or remove the metadata?",
+      answer:
+        "Currently, this tool is designed for viewing metadata. To remove metadata, you can use our image compression or conversion tools which often strip this data for privacy.",
+    },
+  ],
 };
 
 // Helper function to get FAQs for a specific image tool
@@ -285,5 +572,30 @@ export const searchImageFAQs = (query) => {
       faq.answer.toLowerCase().includes(query.toLowerCase())
   );
 };
+
+export const IMAGE_COMPRESSOR_FAQS = IMAGE_TOOLS_FAQS["image-compressor"];
+
+export const WH_QUESTIONS_CONTENT = [
+  {
+    question: "What is image compression?",
+    answer:
+      "Image compression is the process of encoding digital images using fewer bits than the original representation. This reduces the file size of the image, making it faster to upload and download, and taking up less storage space.",
+  },
+  {
+    question: "Why should I compress my images?",
+    answer:
+      "Compressing images is crucial for website performance. Smaller images load faster, improving user experience and SEO rankings. It also saves bandwidth and storage space on your devices and servers.",
+  },
+  {
+    question: "What is the difference between lossy and lossless compression?",
+    answer:
+      "Lossy compression reduces file size by permanently removing some data, which may slightly affect image quality but offers significant size reduction (e.g., JPEG). Lossless compression reduces file size without losing any quality but offers less size reduction (e.g., PNG).",
+  },
+  {
+    question: "Which image format compresses best?",
+    answer:
+      "WebP generally offers the best compression-to-quality ratio for the web, often being 25-35% smaller than comparable JPEG or PNG images. However, JPEG is still excellent for photographs, and PNG is best for images with transparency or text.",
+  },
+];
 
 export default IMAGE_TOOLS_FAQS;

@@ -23,7 +23,6 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
 import {
-  ArrowLeftIcon,
   UploadIcon,
   DownloadIcon,
   ImageIcon,
@@ -33,20 +32,7 @@ import {
   SmartphoneIcon,
   TabletIcon,
   RefreshCwIcon,
-  BookOpen,
-  HelpCircle,
-  Star,
-  Wrench,
-  Scissors,
-  FileText,
-  Globe,
-  Shield,
-  Play,
-  Users,
-  Zap,
 } from "lucide-react";
-import Link from "next/link";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function ImageResizerTool() {
   const [files, setFiles] = useState([]);
@@ -250,11 +236,11 @@ export default function ImageResizerTool() {
           prev.map((f) =>
             f.id === fileData.id
               ? {
-                  ...f,
-                  status: "completed",
-                  resizedBlob: result.resizedBlob,
-                  resizedDimensions: result.resizedDimensions,
-                }
+                ...f,
+                status: "completed",
+                resizedBlob: result.resizedBlob,
+                resizedDimensions: result.resizedDimensions,
+              }
               : f,
           ),
         );
@@ -356,1086 +342,366 @@ export default function ImageResizerTool() {
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="mb-4">
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
+    <div className="w-full max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
+        {/* Settings Panel */}
+        <div className="lg:col-span-1">
+          <Card>
+            <CardHeader>
+              <CardTitle>Resize Settings</CardTitle>
+              <CardDescription>
+                Configure image dimensions and options
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              {/* Resize Method */}
+              <div className="space-y-3">
+                <Label className="text-base font-medium">Resize Method</Label>
+                <Select
+                  value={resizeOptions.resizeMethod}
+                  onValueChange={(value) =>
+                    setResizeOptions((prev) => ({
+                      ...prev,
+                      resizeMethod: value,
+                    }))
+                  }
+                >
+                  <SelectTrigger>
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="pixels">Pixels</SelectItem>
+                    <SelectItem value="percentage">Percentage</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
 
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-              <ImageIcon className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold">Image Resizer</h1>
-              <p className="text-muted-foreground">
-                Resize images for any purpose - web, social media, print
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-4">
-            <Badge variant="secondary">Batch Processing</Badge>
-            <Badge variant="secondary">Aspect Ratio Lock</Badge>
-            <Badge variant="secondary">Social Media Presets</Badge>
-            <Badge variant="secondary">Free Forever</Badge>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
-          {/* Settings Panel */}
-          <div className="lg:col-span-1">
-            <Card>
-              <CardHeader>
-                <CardTitle>Resize Settings</CardTitle>
-                <CardDescription>
-                  Configure image dimensions and options
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Resize Method */}
-                <div className="space-y-3">
-                  <Label className="text-base font-medium">Resize Method</Label>
-                  <Select
-                    value={resizeOptions.resizeMethod}
-                    onValueChange={(value) =>
+              {/* Dimensions */}
+              <div className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <Label className="text-base font-medium">Dimensions</Label>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() =>
                       setResizeOptions((prev) => ({
                         ...prev,
-                        resizeMethod: value,
+                        maintainAspectRatio: !prev.maintainAspectRatio,
                       }))
                     }
                   >
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="pixels">Pixels</SelectItem>
-                      <SelectItem value="percentage">Percentage</SelectItem>
-                    </SelectContent>
-                  </Select>
+                    {resizeOptions.maintainAspectRatio ? (
+                      <LockIcon className="h-4 w-4" />
+                    ) : (
+                      <UnlockIcon className="h-4 w-4" />
+                    )}
+                  </Button>
                 </div>
 
-                {/* Dimensions */}
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <Label className="text-base font-medium">Dimensions</Label>
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="space-y-1">
+                    <Label htmlFor="width" className="text-sm">
+                      Width{" "}
+                      {resizeOptions.resizeMethod === "percentage"
+                        ? "(%)"
+                        : "(px)"}
+                    </Label>
+                    <Input
+                      id="width"
+                      type="number"
+                      min="1"
+                      value={resizeOptions.width}
+                      onChange={(e) => handleWidthChange(e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-1">
+                    <Label htmlFor="height" className="text-sm">
+                      Height{" "}
+                      {resizeOptions.resizeMethod === "percentage"
+                        ? "(%)"
+                        : "(px)"}
+                    </Label>
+                    <Input
+                      id="height"
+                      type="number"
+                      min="1"
+                      value={resizeOptions.height}
+                      onChange={(e) => handleHeightChange(e.target.value)}
+                    />
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-2">
+                  <Switch
+                    id="aspect-ratio"
+                    checked={resizeOptions.maintainAspectRatio}
+                    onCheckedChange={(checked) =>
+                      setResizeOptions((prev) => ({
+                        ...prev,
+                        maintainAspectRatio: checked,
+                      }))
+                    }
+                  />
+                  <Label htmlFor="aspect-ratio" className="text-sm">
+                    Lock aspect ratio
+                  </Label>
+                </div>
+              </div>
+
+              {/* Quality */}
+              <div className="space-y-3">
+                <Label className="text-base font-medium">
+                  Quality: {resizeOptions.quality}%
+                </Label>
+                <Input
+                  type="range"
+                  min="10"
+                  max="100"
+                  step="5"
+                  value={resizeOptions.quality}
+                  onChange={(e) =>
+                    setResizeOptions((prev) => ({
+                      ...prev,
+                      quality: parseInt(e.target.value),
+                    }))
+                  }
+                  className="w-full"
+                />
+              </div>
+
+              <Separator />
+
+              {/* File Upload */}
+              <div className="space-y-3">
+                <Label className="text-base font-medium">Upload Images</Label>
+                <Button
+                  onClick={() => fileInputRef.current?.click()}
+                  variant="outline"
+                  className="w-full"
+                >
+                  <UploadIcon className="h-4 w-4 mr-2" />
+                  Choose Images
+                </Button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  onChange={handleFileSelect}
+                  className="hidden"
+                />
+                <div className="text-xs text-muted-foreground">
+                  Supports: JPEG, PNG, WebP, GIF, BMP
+                  <br />
+                  Max size: 50MB per file
+                </div>
+              </div>
+
+              {files.length > 0 && (
+                <>
+                  <Separator />
+
+                  <div className="space-y-2">
                     <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() =>
-                        setResizeOptions((prev) => ({
-                          ...prev,
-                          maintainAspectRatio: !prev.maintainAspectRatio,
-                        }))
+                      onClick={handleResize}
+                      disabled={
+                        isProcessing ||
+                        files.every((f) => f.status !== "pending")
                       }
+                      className="w-full"
                     >
-                      {resizeOptions.maintainAspectRatio ? (
-                        <LockIcon className="h-4 w-4" />
-                      ) : (
-                        <UnlockIcon className="h-4 w-4" />
-                      )}
+                      {isProcessing ? "Resizing..." : "Resize Images"}
+                    </Button>
+
+                    {files.some((f) => f.status === "completed") && (
+                      <Button
+                        onClick={downloadAll}
+                        variant="outline"
+                        className="w-full"
+                      >
+                        <DownloadIcon className="h-4 w-4 mr-2" />
+                        Download All
+                      </Button>
+                    )}
+
+                    <Button
+                      onClick={clearFiles}
+                      variant="ghost"
+                      className="w-full"
+                    >
+                      Clear All Files
                     </Button>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-2">
-                    <div className="space-y-1">
-                      <Label htmlFor="width" className="text-sm">
-                        Width{" "}
-                        {resizeOptions.resizeMethod === "percentage"
-                          ? "(%)"
-                          : "(px)"}
-                      </Label>
-                      <Input
-                        id="width"
-                        type="number"
-                        min="1"
-                        value={resizeOptions.width}
-                        onChange={(e) => handleWidthChange(e.target.value)}
-                      />
-                    </div>
-                    <div className="space-y-1">
-                      <Label htmlFor="height" className="text-sm">
-                        Height{" "}
-                        {resizeOptions.resizeMethod === "percentage"
-                          ? "(%)"
-                          : "(px)"}
-                      </Label>
-                      <Input
-                        id="height"
-                        type="number"
-                        min="1"
-                        value={resizeOptions.height}
-                        onChange={(e) => handleHeightChange(e.target.value)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex items-center space-x-2">
-                    <Switch
-                      id="aspect-ratio"
-                      checked={resizeOptions.maintainAspectRatio}
-                      onCheckedChange={(checked) =>
-                        setResizeOptions((prev) => ({
-                          ...prev,
-                          maintainAspectRatio: checked,
-                        }))
-                      }
-                    />
-                    <Label htmlFor="aspect-ratio" className="text-sm">
-                      Lock aspect ratio
-                    </Label>
-                  </div>
-                </div>
-
-                {/* Quality */}
-                <div className="space-y-3">
-                  <Label className="text-base font-medium">
-                    Quality: {resizeOptions.quality}%
-                  </Label>
-                  <Input
-                    type="range"
-                    min="10"
-                    max="100"
-                    step="5"
-                    value={resizeOptions.quality}
-                    onChange={(e) =>
-                      setResizeOptions((prev) => ({
-                        ...prev,
-                        quality: parseInt(e.target.value),
-                      }))
-                    }
-                    className="w-full"
-                  />
-                </div>
-
-                <Separator />
-
-                {/* File Upload */}
-                <div className="space-y-3">
-                  <Label className="text-base font-medium">Upload Images</Label>
-                  <Button
-                    onClick={() => fileInputRef.current?.click()}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    <UploadIcon className="h-4 w-4 mr-2" />
-                    Choose Images
-                  </Button>
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    multiple
-                    accept="image/*"
-                    onChange={handleFileSelect}
-                    className="hidden"
-                  />
-                  <div className="text-xs text-muted-foreground">
-                    Supports: JPEG, PNG, WebP, GIF, BMP
-                    <br />
-                    Max size: 50MB per file
-                  </div>
-                </div>
-
-                {files.length > 0 && (
-                  <>
-                    <Separator />
-
+                  {isProcessing && (
                     <div className="space-y-2">
-                      <Button
-                        onClick={handleResize}
-                        disabled={
-                          isProcessing ||
-                          files.every((f) => f.status !== "pending")
-                        }
-                        className="w-full"
-                      >
-                        {isProcessing ? "Resizing..." : "Resize Images"}
-                      </Button>
-
-                      {files.some((f) => f.status === "completed") && (
-                        <Button
-                          onClick={downloadAll}
-                          variant="outline"
-                          className="w-full"
-                        >
-                          <DownloadIcon className="h-4 w-4 mr-2" />
-                          Download All
-                        </Button>
-                      )}
-
-                      <Button
-                        onClick={clearFiles}
-                        variant="ghost"
-                        className="w-full"
-                      >
-                        Clear All Files
-                      </Button>
-                    </div>
-
-                    {isProcessing && (
-                      <div className="space-y-2">
-                        <Label className="text-sm">Progress</Label>
-                        <Progress value={progress} className="w-full" />
-                        <div className="text-xs text-muted-foreground text-center">
-                          {Math.round(progress)}%
-                        </div>
-                      </div>
-                    )}
-                  </>
-                )}
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Main Content Area */}
-          <div className="lg:col-span-3 space-y-6">
-            {/* Social Media Presets */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MonitorIcon className="h-5 w-5" />
-                  Quick Presets
-                </CardTitle>
-                <CardDescription>
-                  Popular social media and web sizes
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {Object.entries(presets).map(([platform, sizes]) => (
-                    <div key={platform} className="space-y-2">
-                      <h4 className="font-medium capitalize flex items-center gap-2">
-                        {platform === "instagram" && (
-                          <SmartphoneIcon className="h-4 w-4" />
-                        )}
-                        {platform === "facebook" && (
-                          <MonitorIcon className="h-4 w-4" />
-                        )}
-                        {platform === "twitter" && (
-                          <MonitorIcon className="h-4 w-4" />
-                        )}
-                        {platform === "youtube" && (
-                          <TabletIcon className="h-4 w-4" />
-                        )}
-                        {platform === "linkedin" && (
-                          <MonitorIcon className="h-4 w-4" />
-                        )}
-                        {platform}
-                      </h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
-                        {Object.values(sizes).map((preset, index) => (
-                          <Button
-                            key={index}
-                            variant="outline"
-                            size="sm"
-                            onClick={() => applyPreset(preset)}
-                            className="text-xs h-auto py-2 px-3"
-                          >
-                            {preset.label}
-                          </Button>
-                        ))}
+                      <Label className="text-sm">Progress</Label>
+                      <Progress value={progress} className="w-full" />
+                      <div className="text-xs text-muted-foreground text-center">
+                        {Math.round(progress)}%
                       </div>
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+                  )}
+                </>
+              )}
+            </CardContent>
+          </Card>
+        </div>
 
-            {/* File List */}
-            {files.length === 0 ? (
-              <Card className="h-64 flex items-center justify-center border-dashed border-2">
-                <div className="text-center space-y-4">
-                  <ImageIcon className="h-12 w-12 text-muted-foreground mx-auto" />
-                  <div>
-                    <h3 className="text-lg font-medium">No images uploaded</h3>
-                    <p className="text-muted-foreground">
-                      Upload images to start resizing
-                    </p>
-                  </div>
-                  <Button onClick={() => fileInputRef.current?.click()}>
-                    <UploadIcon className="h-4 w-4 mr-2" />
-                    Upload Images
-                  </Button>
-                </div>
-              </Card>
-            ) : (
+        {/* Main Content Area */}
+        <div className="lg:col-span-3 space-y-6">
+          {/* Social Media Presets */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <MonitorIcon className="h-5 w-5" />
+                Quick Presets
+              </CardTitle>
+              <CardDescription>
+                Popular social media and web sizes
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
               <div className="space-y-4">
-                {files.map((fileData) => (
-                  <Card key={fileData.id}>
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 flex-1 min-w-0">
-                          <div className="relative">
-                            <img
-                              src={fileData.url}
-                              alt={fileData.file.name}
-                              className="w-16 h-16 object-cover rounded border"
-                            />
-                            {fileData.status === "processing" && (
-                              <div className="absolute inset-0 bg-black/50 flex items-center justify-center rounded">
-                                <RefreshCwIcon className="h-4 w-4 text-white animate-spin" />
+                {Object.entries(presets).map(([platform, sizes]) => (
+                  <div key={platform} className="space-y-2">
+                    <h4 className="font-medium capitalize flex items-center gap-2">
+                      {platform === "instagram" && (
+                        <SmartphoneIcon className="h-4 w-4" />
+                      )}
+                      {platform === "facebook" && (
+                        <MonitorIcon className="h-4 w-4" />
+                      )}
+                      {platform === "twitter" && (
+                        <MonitorIcon className="h-4 w-4" />
+                      )}
+                      {platform === "youtube" && (
+                        <TabletIcon className="h-4 w-4" />
+                      )}
+                      {platform === "linkedin" && (
+                        <MonitorIcon className="h-4 w-4" />
+                      )}
+                      {platform}
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
+                      {Object.values(sizes).map((preset, index) => (
+                        <Button
+                          key={index}
+                          variant="outline"
+                          size="sm"
+                          onClick={() => applyPreset(preset)}
+                          className="text-xs h-auto py-2 px-3"
+                        >
+                          {preset.label}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* File List */}
+          {files.length === 0 ? (
+            <Card className="h-64 flex items-center justify-center border-dashed border-2">
+              <div className="text-center space-y-4">
+                <ImageIcon className="h-12 w-12 text-muted-foreground mx-auto" />
+                <div>
+                  <h3 className="text-lg font-medium">No images uploaded</h3>
+                  <p className="text-muted-foreground">
+                    Upload images to start resizing
+                  </p>
+                </div>
+                <Button onClick={() => fileInputRef.current?.click()}>
+                  <UploadIcon className="h-4 w-4 mr-2" />
+                  Upload Images
+                </Button>
+              </div>
+            </Card>
+          ) : (
+            <div className="space-y-4">
+              {files.map((fileData) => (
+                <Card key={fileData.id}>
+                  <CardContent className="p-4">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-3 flex-1 min-w-0">
+                        <div className="relative">
+                          <img
+                            src={fileData.url}
+                            alt={fileData.file.name}
+                            className="w-16 h-16 object-cover rounded border"
+                          />
+                          {fileData.status === "processing" && (
+                            <div className="absolute inset-0 bg-black/50 flex items-center justify-center rounded">
+                              <RefreshCwIcon className="h-4 w-4 text-white animate-spin" />
+                            </div>
+                          )}
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <h4 className="font-medium truncate">
+                            {fileData.file.name}
+                          </h4>
+                          <div className="text-sm text-muted-foreground space-y-1">
+                            <div>
+                              Original: {fileData.originalDimensions.width} ×{" "}
+                              {fileData.originalDimensions.height}(
+                              {formatFileSize(fileData.originalSize)})
+                            </div>
+                            {fileData.resizedDimensions && (
+                              <div>
+                                Resized: {fileData.resizedDimensions.width} ×{" "}
+                                {fileData.resizedDimensions.height}(
+                                {formatFileSize(
+                                  fileData.resizedBlob?.size || 0,
+                                )}
+                                )
                               </div>
                             )}
                           </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-medium truncate">
-                              {fileData.file.name}
-                            </h4>
-                            <div className="text-sm text-muted-foreground space-y-1">
-                              <div>
-                                Original: {fileData.originalDimensions.width} ×{" "}
-                                {fileData.originalDimensions.height}(
-                                {formatFileSize(fileData.originalSize)})
-                              </div>
-                              {fileData.resizedDimensions && (
-                                <div>
-                                  Resized: {fileData.resizedDimensions.width} ×{" "}
-                                  {fileData.resizedDimensions.height}(
-                                  {formatFileSize(
-                                    fileData.resizedBlob?.size || 0,
-                                  )}
-                                  )
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex items-center gap-2">
-                          <Badge
-                            variant={
-                              fileData.status === "completed"
-                                ? "default"
-                                : fileData.status === "processing"
-                                  ? "secondary"
-                                  : fileData.status === "error"
-                                    ? "destructive"
-                                    : "outline"
-                            }
-                          >
-                            {fileData.status}
-                          </Badge>
-
-                          {fileData.status === "completed" && (
-                            <Button
-                              variant="outline"
-                              size="sm"
-                              onClick={() => downloadFile(fileData)}
-                            >
-                              <DownloadIcon className="h-4 w-4" />
-                            </Button>
-                          )}
-
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => removeFile(fileData.id)}
-                          >
-                            ×
-                          </Button>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            )}
-          </div>
+
+                      <div className="flex items-center gap-2">
+                        <Badge
+                          variant={
+                            fileData.status === "completed"
+                              ? "default"
+                              : fileData.status === "processing"
+                                ? "secondary"
+                                : fileData.status === "error"
+                                  ? "destructive"
+                                  : "outline"
+                          }
+                        >
+                          {fileData.status}
+                        </Badge>
+
+                        {fileData.status === "completed" && (
+                          <Button
+                            variant="outline"
+                            size="sm"
+                            onClick={() => downloadFile(fileData)}
+                          >
+                            <DownloadIcon className="h-4 w-4" />
+                          </Button>
+                        )}
+
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => removeFile(fileData.id)}
+                        >
+                          ×
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          )}
         </div>
-
-        {/* Features & FAQ */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
-          {/* Features */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Features</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm">
-                <li>✅ Custom width and height dimensions</li>
-                <li>✅ Maintain aspect ratio automatically</li>
-                <li>✅ Social media preset sizes</li>
-                <li>✅ Batch resize multiple images</li>
-                <li>✅ Quality control (10-100%)</li>
-                <li>✅ Percentage or pixel-based resizing</li>
-                <li>✅ Support for JPEG, PNG, WebP, GIF, BMP</li>
-                <li>✅ No file upload limits</li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          {/* FAQ */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <h4 className="font-medium mb-1">
-                  Will resizing reduce image quality?
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Quality may be affected when significantly reducing size. Use
-                  the quality slider to control compression levels.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-medium mb-1">
-                  What does "maintain aspect ratio" do?
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  It prevents image distortion by automatically adjusting one
-                  dimension when you change the other.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-medium mb-1">
-                  Can I resize images for printing?
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Yes! Set dimensions based on your print size and desired DPI
-                  (e.g., 8×10 inches at 300 DPI = 2400×3000 pixels).
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-medium mb-1">
-                  Is there a limit on file size?
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Each image can be up to 50MB. You can resize unlimited images
-                  for free.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* How to Use Guide */}
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <BookOpen className="h-5 w-5" />
-              How to Resize Images
-            </CardTitle>
-            <CardDescription>
-              Step-by-step guide to resize your images perfectly
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-4">
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold text-primary">1</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Upload Your Images</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Click "Choose Images" to select one or multiple images.
-                    Supports JPEG, PNG, WebP, GIF, and BMP formats.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold text-primary">2</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Choose Resize Method</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Select pixels for exact dimensions or percentage for
-                    relative resizing. Use presets for social media sizes.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold text-primary">3</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Set Dimensions</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Enter width and height. Lock aspect ratio to prevent
-                    distortion. Adjust quality for file size optimization.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                  <span className="text-sm font-semibold text-primary">4</span>
-                </div>
-                <div>
-                  <h4 className="font-semibold">Resize and Download</h4>
-                  <p className="text-sm text-muted-foreground">
-                    Click "Resize Images" to process. Download individual files
-                    or use "Download All" for batch downloads.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Advanced Features */}
-        <Card className="mt-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Zap className="h-5 w-5" />
-              Advanced Image Resizing Features
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center">
-                    <Shield className="h-4 w-4 text-green-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Privacy First</h4>
-                    <p className="text-sm text-muted-foreground">
-                      All processing happens in your browser. Images never leave
-                      your device.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Play className="h-4 w-4 text-blue-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Batch Processing</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Resize multiple images at once with consistent settings.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center">
-                    <MonitorIcon className="h-4 w-4 text-purple-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Social Media Optimized</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Built-in presets for Instagram, Facebook, Twitter, and
-                      more.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
-                    <Zap className="h-4 w-4 text-orange-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">High-Quality Output</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Advanced algorithms maintain image quality during
-                      resizing.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                    <Users className="h-4 w-4 text-red-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">No Upload Limits</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Resize unlimited images with no file count restrictions.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center">
-                    <Globe className="h-4 w-4 text-teal-600" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Cross-Platform</h4>
-                    <p className="text-sm text-muted-foreground">
-                      Works on desktop, mobile, and all modern browsers.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Comprehensive FAQ Section */}
-        <Card className="mt-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <HelpCircle className="h-5 w-5" />
-              Image Resizing FAQs
-            </CardTitle>
-            <CardDescription>
-              Everything you need to know about resizing images
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-3">
-              <h4 className="font-semibold">
-                What image formats are supported?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We support JPEG, PNG, WebP, GIF, and BMP formats. Each format
-                maintains its original characteristics during resizing.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="font-semibold">
-                How does aspect ratio locking work?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                When locked, changing one dimension automatically adjusts the
-                other to maintain the image's original proportions, preventing
-                distortion.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="font-semibold">
-                What's the best quality setting for web images?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                For web use, 80-90% quality provides excellent balance between
-                file size and visual quality. Higher quality means larger files.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="font-semibold">Can I resize images for print?</h4>
-              <p className="text-sm text-muted-foreground">
-                Yes! For print, use 300 DPI. Calculate pixels: inches × 300 =
-                pixels. Example: 8×10 inches = 2400×3000 pixels.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="font-semibold">
-                Why do my images look blurry after resizing?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                This happens when enlarging small images. Our tool uses
-                high-quality algorithms, but you can't add detail that wasn't in
-                the original.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="font-semibold">
-                How many images can I resize at once?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                There's no limit! You can upload and resize as many images as
-                you want in a single batch. Processing time depends on your
-                device.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="font-semibold">Are my images secure?</h4>
-              <p className="text-sm text-muted-foreground">
-                Absolutely! All processing happens locally in your browser. Your
-                images never leave your device or get uploaded to any server.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h4 className="font-semibold">Can I use this tool offline?</h4>
-              <p className="text-sm text-muted-foreground">
-                Yes, after the initial page load, the tool works completely
-                offline. All image processing happens in your browser.
-              </p>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* User Reviews */}
-        <Card className="mt-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Star className="h-5 w-5" />
-              What Users Say About Image Resizer
-            </CardTitle>
-            <CardDescription>
-              Reviews from photographers, designers, and content creators
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-              <div className="space-y-4">
-                <div className="border rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm font-medium">
-                      Sarah Chen, Graphic Designer
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    "The social media presets save me so much time! I use this
-                    tool daily for client work. The batch processing is a
-                    lifesaver when I have multiple images to resize for
-                    Instagram and Facebook posts."
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-2">
-                    November 18, 2024
-                  </p>
-                </div>
-
-                <div className="border rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm font-medium">
-                      Mike Johnson, Photographer
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    "Finally, an image resizer that maintains quality! The
-                    aspect ratio lock and quality controls are perfect for
-                    professional work. Much better than other free online tools
-                    I've tried."
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-2">
-                    November 15, 2024
-                  </p>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                <div className="border rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex">
-                      {[...Array(4)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                      <Star className="h-4 w-4 text-gray-300" />
-                    </div>
-                    <span className="text-sm font-medium">
-                      Emma Rodriguez, Social Media Manager
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    "The presets for different platforms are incredibly useful.
-                    I can quickly resize images for Instagram stories, Facebook
-                    posts, and Twitter headers all in one place. The interface
-                    is intuitive and fast."
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-2">
-                    November 12, 2024
-                  </p>
-                </div>
-
-                <div className="border rounded-lg p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star
-                          key={i}
-                          className="h-4 w-4 fill-yellow-400 text-yellow-400"
-                        />
-                      ))}
-                    </div>
-                    <span className="text-sm font-medium">
-                      David Kim, Web Developer
-                    </span>
-                  </div>
-                  <p className="text-sm text-muted-foreground">
-                    "Essential tool for web development. The percentage resizing
-                    and quality controls help me optimize images for different
-                    screen sizes. Privacy-focused approach is a big plus - no
-                    uploads to servers!"
-                  </p>
-                  <p className="text-xs text-muted-foreground mt-2">
-                    November 10, 2024
-                  </p>
-                </div>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Related Tools */}
-        <Card className="mt-6">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Wrench className="h-5 w-5" />
-              Related Image Tools
-            </CardTitle>
-            <CardDescription>
-              More tools for image editing and optimization
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
-              <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Scissors className="h-6 w-6 text-blue-600" />
-                </div>
-                <h4 className="font-medium mb-1">Image Cropper</h4>
-                <p className="text-sm text-muted-foreground">
-                  Crop images to perfect dimensions
-                </p>
-              </div>
-
-              <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <FileText className="h-6 w-6 text-green-600" />
-                </div>
-                <h4 className="font-medium mb-1">Image Compressor</h4>
-                <p className="text-sm text-muted-foreground">
-                  Reduce file sizes without quality loss
-                </p>
-              </div>
-
-              <div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Play className="h-6 w-6 text-purple-600" />
-                </div>
-                <h4 className="font-medium mb-1">Image Converter</h4>
-                <p className="text-sm text-muted-foreground">
-                  Convert between different image formats
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* SEO Content Section */}
-        <div className="space-y-6 mt-8">
-          <Card>
-            <CardHeader>
-              <CardTitle>The Complete Guide to Image Resizing</CardTitle>
-            </CardHeader>
-            <CardContent className="prose prose-sm max-w-none">
-              <h3>Mastering Image Resizing for Web and Print</h3>
-              <p>
-                Image resizing is a fundamental skill for anyone working with
-                digital content. Whether you're a web designer, photographer,
-                social media manager, or content creator, understanding how to
-                resize images properly can make or break your visual content
-                strategy. Our advanced image resizer provides professional-grade
-                tools with intuitive controls and powerful features.
-              </p>
-
-              <h3>Understanding Image Resolution and Quality</h3>
-              <p>
-                Before diving into resizing, it's important to understand the
-                relationship between resolution, file size, and quality:
-              </p>
-              <ul>
-                <li>
-                  <strong>Pixels:</strong> The building blocks of digital images
-                </li>
-                <li>
-                  <strong>Resolution:</strong> Pixels per inch (PPI) or dots per
-                  inch (DPI)
-                </li>
-                <li>
-                  <strong>Compression:</strong> How image data is stored and
-                  reduced
-                </li>
-                <li>
-                  <strong>File Format:</strong> Different formats for different
-                  purposes
-                </li>
-              </ul>
-
-              <h3>Social Media Image Dimensions Guide</h3>
-              <div className="bg-muted p-4 rounded-lg">
-                <h4>Optimal Sizes for Major Platforms:</h4>
-                <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mt-3">
-                  <div>
-                    <h5 className="font-semibold">Instagram:</h5>
-                    <ul className="text-sm space-y-1">
-                      <li>• Posts: 1080×1080px (square)</li>
-                      <li>• Stories: 1080×1920px (portrait)</li>
-                      <li>• Reels: 1080×1920px (portrait)</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold">Facebook:</h5>
-                    <ul className="text-sm space-y-1">
-                      <li>• Posts: 1200×630px (landscape)</li>
-                      <li>• Cover: 1640×859px (landscape)</li>
-                      <li>• Profile: 400×400px (square)</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <h3>Best Practices for Image Resizing</h3>
-              <p>Follow these guidelines to achieve optimal results:</p>
-              <ul>
-                <li>
-                  <strong>Start with High Quality:</strong> Always begin with
-                  the highest quality source image
-                </li>
-                <li>
-                  <strong>Maintain Aspect Ratio:</strong> Use aspect ratio
-                  locking to prevent distortion
-                </li>
-                <li>
-                  <strong>Choose Appropriate Quality:</strong> Balance file size
-                  with visual quality
-                </li>
-                <li>
-                  <strong>Consider Your Medium:</strong> Web images need
-                  different optimization than print
-                </li>
-                <li>
-                  <strong>Test Across Devices:</strong> Check how images look on
-                  different screen sizes
-                </li>
-              </ul>
-
-              <h3>Advanced Resizing Techniques</h3>
-              <p>
-                Professional image resizing goes beyond basic dimension changes:
-              </p>
-              <ul>
-                <li>
-                  <strong>Content-Aware Resizing:</strong> Intelligent
-                  algorithms that preserve important image elements
-                </li>
-                <li>
-                  <strong>Smart Cropping:</strong> Automatic cropping that
-                  focuses on the most important parts
-                </li>
-                <li>
-                  <strong>Batch Processing:</strong> Applying consistent
-                  resizing to multiple images
-                </li>
-                <li>
-                  <strong>Format Optimization:</strong> Choosing the right
-                  format for specific use cases
-                </li>
-              </ul>
-
-              <h3>Common Image Resizing Mistakes to Avoid</h3>
-              <div className="bg-red-50 border border-red-200 p-4 rounded-lg">
-                <h4 className="text-red-800 font-semibold">
-                  Don't Make These Errors:
-                </h4>
-                <ul className="text-sm text-red-700 mt-2 space-y-1">
-                  <li>
-                    • Enlarging small images significantly (causes pixelation)
-                  </li>
-                  <li>• Ignoring aspect ratio (leads to distortion)</li>
-                  <li>
-                    • Using wrong quality settings (too low = artifacts, too
-                    high = large files)
-                  </li>
-                  <li>
-                    • Not considering the target medium (web vs print
-                    requirements differ)
-                  </li>
-                  <li>
-                    • Forgetting to optimize file formats for specific platforms
-                  </li>
-                </ul>
-              </div>
-
-              <h3>Image Resizing for Different Industries</h3>
-              <p>Different fields have unique image resizing requirements:</p>
-              <ul>
-                <li>
-                  <strong>Web Design:</strong> Balance quality and loading
-                  speed, consider responsive design
-                </li>
-                <li>
-                  <strong>Photography:</strong> Preserve artistic intent while
-                  optimizing for display
-                </li>
-                <li>
-                  <strong>E-commerce:</strong> Product images need consistency
-                  and fast loading
-                </li>
-                <li>
-                  <strong>Social Media:</strong> Platform-specific dimensions
-                  and aspect ratios
-                </li>
-                <li>
-                  <strong>Print Media:</strong> High resolution (300 DPI) and
-                  proper color profiles
-                </li>
-              </ul>
-
-              <h3>Measuring Image Resizing Success</h3>
-              <p>
-                Track these metrics to ensure your resizing strategy is
-                effective:
-              </p>
-              <ul>
-                <li>
-                  <strong>Loading Speed:</strong> How quickly images load on
-                  different devices
-                </li>
-                <li>
-                  <strong>Visual Quality:</strong> Maintaining clarity and
-                  detail after resizing
-                </li>
-                <li>
-                  <strong>File Size Reduction:</strong> Optimizing storage and
-                  bandwidth usage
-                </li>
-                <li>
-                  <strong>User Experience:</strong> How images perform across
-                  different platforms
-                </li>
-                <li>
-                  <strong>Conversion Impact:</strong> How optimized images
-                  affect user engagement
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-
-      {/* Social Share */}
-      <div className="mt-8">
-        <SocialShareButtons
-          toolName="Image Resizer"
-          toolDescription="Free online image resizer tool. Resize images for social media, web, and print with batch processing and quality control"
-          toolUrl="https://30tools.com/image-resizer"
-          category="image editing"
-        />
       </div>
     </div>
   );

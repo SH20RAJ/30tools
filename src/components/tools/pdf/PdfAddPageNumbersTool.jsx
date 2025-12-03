@@ -20,18 +20,14 @@ import {
 } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
 import {
   Upload,
   Download,
   Hash,
   CheckCircle,
-  AlertCircle,
   Loader,
   FileText,
-  Zap,
-  Shield,
   Settings,
   Type,
   Eye,
@@ -193,7 +189,7 @@ export default function PdfAddPageNumbersTool() {
         blob: numberedBlob,
         size: pdfFile.size + 2048, // Slightly larger due to page numbers
       });
-    } catch (_error) {
+    } catch (error) {
       console.error("Error adding page numbers:", error);
       alert("Error adding page numbers. Please try again.");
     }
@@ -234,31 +230,7 @@ export default function PdfAddPageNumbersTool() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free PDF Page Number Tool</h1>
-        <p className="text-xl text-muted-foreground mb-6">
-          Add customizable page numbers to your PDF documents. Choose position,
-          format, styling, and advanced options for professional document
-          numbering.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <div className="flex items-center gap-2">
-            <Settings className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Full Customization</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Zap className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Instant Processing</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Eye className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Live Preview</span>
-          </div>
-        </div>
-      </div>
-
+    <div className="max-w-6xl mx-auto">
       {/* Upload Section */}
       <Card className="mb-6">
         <CardHeader>
@@ -622,133 +594,6 @@ export default function PdfAddPageNumbersTool() {
           </CardContent>
         </Card>
       )}
-
-      {/* Features Grid */}
-      <div className="grid gap-6 md:grid-cols-3 mb-8">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Settings className="h-5 w-5" />
-              Complete Control
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Customize position, format, styling, margins, and skip options for
-              perfect page numbering.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Type className="h-5 w-5" />
-              Multiple Formats
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Support for numbers, Roman numerals, letters, and custom "Page X
-              of Y" formats.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Shield className="h-5 w-5" />
-              Professional Quality
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              High-quality page number rendering that integrates seamlessly with
-              your document.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Use Cases */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle>Perfect For</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div>
-              <h4 className="font-medium mb-3">Business Documents</h4>
-              <ul className="text-sm space-y-2 text-muted-foreground">
-                <li>• Annual reports and presentations</li>
-                <li>• Contract documents</li>
-                <li>• Policy manuals</li>
-                <li>• Training materials</li>
-                <li>• Proposals and RFPs</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-3">Academic & Publishing</h4>
-              <ul className="text-sm space-y-2 text-muted-foreground">
-                <li>• Research papers and theses</li>
-                <li>• Books and manuscripts</li>
-                <li>• Course materials</li>
-                <li>• Academic journals</li>
-                <li>• Reference documents</li>
-              </ul>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* FAQ */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-medium mb-2">
-                Can I skip the first page for cover pages?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Yes! Use the "Skip first page" option to exclude cover pages
-                from numbering. The numbering will start from page 2.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                What number formats are supported?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We support Arabic numbers (1,2,3), Roman numerals (I,II,III or
-                i,ii,iii), letters (A,B,C or a,b,c), and "Page X of Y" format.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Can I customize the appearance?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Absolutely! You can adjust font size, color, position, margins,
-                and add custom prefixes/suffixes like "Page " or ".".
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Will this work with existing page numbers?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                This tool adds new page numbers to your PDF. If your document
-                already has page numbers, you may want to remove them first or
-                adjust positioning to avoid overlap.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

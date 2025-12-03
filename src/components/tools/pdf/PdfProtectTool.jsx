@@ -172,31 +172,7 @@ export default function PdfProtectTool() {
   const passwordStrength = getPasswordStrength(password);
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free PDF Password Protector</h1>
-        <p className="text-xl text-muted-foreground mb-6">
-          Add password protection to your PDF files with customizable
-          permissions. Secure your documents with military-grade encryption in
-          seconds.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">256-bit Encryption</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Zap className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Instant Protection</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Settings className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Custom Permissions</span>
-          </div>
-        </div>
-      </div>
-
+    <div className="max-w-4xl mx-auto">
       {/* Upload Section */}
       <Card className="mb-6">
         <CardHeader>
@@ -300,15 +276,14 @@ export default function PdfProtectTool() {
                     </div>
                     <div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
                       <div
-                        className={`h-1.5 rounded-full transition-all ${
-                          passwordStrength.score <= 2
+                        className={`h-1.5 rounded-full transition-all ${passwordStrength.score <= 2
                             ? "bg-destructive/100"
                             : passwordStrength.score <= 3
                               ? "bg-muted/500"
                               : passwordStrength.score <= 4
                                 ? "bg-muted/500"
                                 : "bg-muted/500"
-                        }`}
+                          }`}
                         style={{
                           width: `${(passwordStrength.score / 5) * 100}%`,
                         }}
@@ -564,103 +539,6 @@ export default function PdfProtectTool() {
           </CardContent>
         </Card>
       )}
-
-      {/* Features Grid */}
-      <div className="grid gap-6 md:grid-cols-3 mb-8">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Shield className="h-5 w-5" />
-              Military-Grade Security
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              256-bit AES encryption ensures your PDFs are protected with the
-              same security used by governments.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Settings className="h-5 w-5" />
-              Granular Permissions
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Control exactly what users can do - printing, copying, editing,
-              annotations, and more.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Zap className="h-5 w-5" />
-              Instant Processing
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Fast local encryption means your files are protected in seconds,
-              not minutes.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* FAQ */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-medium mb-2">
-                How secure is the password protection?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We use 256-bit AES encryption, the same standard used by banks
-                and governments. This is virtually unbreakable with current
-                technology.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Can I remove the password later?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Yes, use our PDF Unlocker tool to remove passwords from
-                protected PDFs if you have the original password.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Do permissions really prevent unauthorized actions?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                Permissions provide good protection against casual users, but
-                determined users with specialized tools may bypass them. The
-                password encryption is the primary security layer.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Are my files stored on your servers?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                No, all encryption happens locally in your browser. Your
-                original and protected files never leave your device.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

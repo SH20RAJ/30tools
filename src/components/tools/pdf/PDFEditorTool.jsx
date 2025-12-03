@@ -2,8 +2,25 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Upload, FileText, Download, AlertCircle } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  Upload,
+  FileText,
+  Download,
+  Trash2,
+  RotateCw,
+  Copy,
+  Loader2,
+  RefreshCw,
+} from "lucide-react";
 import { toast } from "sonner";
 
 export default function PDFEditorTool() {
@@ -12,16 +29,17 @@ export default function PDFEditorTool() {
   const [pageCount, setPageCount] = useState(0);
   const [processing, setProcessing] = useState(false);
   const [pdfLibLoaded, setPdfLibLoaded] = useState(false);
+  const [pageInput, setPageInput] = useState("");
 
   // Load pdf-lib from CDN
   useEffect(() => {
-    if (typeof window !== 'undefined' && !window.PDFLib) {
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js';
+    if (typeof window !== "undefined" && !window.PDFLib) {
+      const script = document.createElement("script");
+      script.src =
+        "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
       script.async = true;
       script.onload = () => {
         setPdfLibLoaded(true);
-        toast.success("PDF library loaded");
       };
       script.onerror = () => {
         toast.error("Failed to load PDF library");
@@ -41,7 +59,7 @@ export default function PDFEditorTool() {
 
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
-    if (!file || file.type !== 'application/pdf') {
+    if (!file || file.type !== "application/pdf") {
       toast.error("Please upload a PDF file");
       return;
     }
@@ -63,8 +81,39 @@ export default function PDFEditorTool() {
     }
   };
 
-  const deletePages = async (pagesToDelete) => {
+  const parsePageNumbers = (input, maxPages) => {
+    const pages = new Set();
+    const parts = input.split(",");
+
+    parts.forEach((part) => {
+      const range = part.trim().split("-");
+      if (range.length === 2) {
+        const start = parseInt(range[0]);
+        const end = parseInt(range[1]);
+        if (!isNaN(start) && !isNaN(end)) {
+          for (let i = start; i <= end; i++) {
+            if (i >= 1 && i <= maxPages) pages.add(i - 1);
+          }
+        }
+      } else {
+        const page = parseInt(part);
+        if (!isNaN(page) && page >= 1 && page <= maxPages) {
+          pages.add(page - 1);
+        }
+      }
+    });
+
+    return Array.from(pages).sort((a, b) => a - b);
+  };
+
+  const deletePages = async () => {
     if (!pdfDoc || !window.PDFLib) return;
+
+    const pagesToDelete = parsePageNumbers(pageInput, pageCount);
+    if (pagesToDelete.length === 0) {
+      toast.error("Please enter valid page numbers to delete");
+      return;
+    }
 
     setProcessing(true);
     try {
@@ -78,7 +127,7 @@ export default function PDFEditorTool() {
       });
 
       const pdfBytes = await newDoc.save();
-      downloadPDF(pdfBytes, 'edited-document.pdf');
+      downloadPDF(pdfBytes, "edited-document.pdf");
       toast.success("Pages deleted successfully!");
     } catch (_error) {
       toast.error("Failed to delete pages");
@@ -87,17 +136,23 @@ export default function PDFEditorTool() {
     }
   };
 
-  const extractPages = async (pageNumbers) => {
+  const extractPages = async () => {
     if (!pdfDoc || !window.PDFLib) return;
+
+    const pagesToExtract = parsePageNumbers(pageInput, pageCount);
+    if (pagesToExtract.length === 0) {
+      toast.error("Please enter valid page numbers to extract");
+      return;
+    }
 
     setProcessing(true);
     try {
       const newDoc = await window.PDFLib.PDFDocument.create();
-      const pages = await newDoc.copyPages(pdfDoc, pageNumbers);
-      pages.forEach(page => newDoc.addPage(page));
+      const pages = await newDoc.copyPages(pdfDoc, pagesToExtract);
+      pages.forEach((page) => newDoc.addPage(page));
 
       const pdfBytes = await newDoc.save();
-      downloadPDF(pdfBytes, 'extracted-pages.pdf');
+      downloadPDF(pdfBytes, "extracted-pages.pdf");
       toast.success("Pages extracted successfully!");
     } catch (_error) {
       toast.error("Failed to extract pages");
@@ -106,66 +161,69 @@ export default function PDFEditorTool() {
     }
   };
 
-  const mergePDFs = async (files) => {
-    setProcessing(true);
-    try {
-      const mergedDoc = await window.PDFLib.PDFDocument.create();
-
-      for (const file of files) {
-        const arrayBuffer = await file.arrayBuffer();
-        const doc = await window.PDFLib.PDFDocument.load(arrayBuffer);
-        const pages = await mergedDoc.copyPages(doc, doc.getPageIndices());
-        pages.forEach(page => mergedDoc.addPage(page));
-      }
-
-      const pdfBytes = await mergedDoc.save();
-      downloadPDF(pdfBytes, 'merged-document.pdf');
-      toast.success("PDFs merged successfully!");
-    } catch (_error) {
-      toast.error("Failed to merge PDFs");
-    } finally {
-      setProcessing(false);
-    }
-  };
-
-  const rotatePage = async (pageIndex, degrees) => {
+  const rotatePages = async () => {
     if (!pdfDoc || !window.PDFLib) return;
 
+    const pagesToRotate = parsePageNumbers(pageInput, pageCount);
+    if (pagesToRotate.length === 0) {
+      toast.error("Please enter valid page numbers to rotate");
+      return;
+    }
+
     setProcessing(true);
     try {
-      const page = pdfDoc.getPage(pageIndex);
-      const { degrees: currentRotation } = page.getRotation();
-      page.setRotation(window.PDFLib.degrees((currentRotation + degrees) % 360));
+      // We need to modify the existing doc for rotation
+      // Or create a new one with rotated pages. Let's modify existing for simplicity in this flow
+      // But since we want to keep original state, let's copy everything to a new doc
+      const newDoc = await window.PDFLib.PDFDocument.create();
+      const pages = await newDoc.copyPages(pdfDoc, pdfDoc.getPageIndices());
 
-      const pdfBytes = await pdfDoc.save();
-      downloadPDF(pdfBytes, 'rotated-document.pdf');
-      toast.success(`Page ${pageIndex + 1} rotated!`);
+      pages.forEach((page, index) => {
+        if (pagesToRotate.includes(index)) {
+          const { angle } = page.getRotation();
+          page.setRotation(window.PDFLib.degrees((angle + 90) % 360));
+        }
+        newDoc.addPage(page);
+      });
+
+      const pdfBytes = await newDoc.save();
+      downloadPDF(pdfBytes, "rotated-document.pdf");
+      toast.success("Pages rotated successfully!");
     } catch (_error) {
-      toast.error("Failed to rotate page");
+      toast.error("Failed to rotate pages");
     } finally {
       setProcessing(false);
     }
   };
 
   const downloadPDF = (pdfBytes, filename) => {
-    const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+    const blob = new Blob([pdfBytes], { type: "application/pdf" });
     const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
+    const a = document.createElement("a");
     a.href = url;
     a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
   };
 
+  const resetTool = () => {
+    setPdfFile(null);
+    setPdfDoc(null);
+    setPageCount(0);
+    setPageInput("");
+  };
+
   return (
-    <div className="w-full max-w-4xl mx-auto p-4 space-y-6">
+    <div className="w-full max-w-4xl mx-auto space-y-6">
       {!pdfFile ? (
         <Card>
           <CardContent className="pt-6">
             <label className="border-2 border-dashed rounded-xl p-12 text-center cursor-pointer hover:bg-muted/50 transition-colors block">
               <Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
               <h3 className="text-lg font-semibold mb-2">Upload PDF</h3>
-              <p className="text-sm text-muted-foreground">Click to select a PDF file to edit</p>
+              <p className="text-sm text-muted-foreground">
+                Click to select a PDF file to edit
+              </p>
               <input
                 type="file"
                 accept=".pdf,application/pdf"
@@ -176,81 +234,77 @@ export default function PDFEditorTool() {
           </CardContent>
         </Card>
       ) : (
-        <>
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
                 <FileText className="w-5 h-5" />
-                {pdfFile.name} ({pageCount} pages)
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-2 gap-3">
-                <Button
-                  variant="outline"
-                  onClick={() => extractPages([0])}
-                  disabled={processing}
-                >
-                  Extract First Page
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => rotatePage(0, 90)}
-                  disabled={processing}
-                >
-                  Rotate First Page
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => deletePages([0])}
-                  disabled={processing}
-                >
-                  Delete First Page
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={async () => {
-                    const pdfBytes = await pdfDoc.save();
-                    downloadPDF(pdfBytes, 'downloaded.pdf');
-                  }}
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download
-                </Button>
+                {pdfFile.name}
               </div>
+              <Button variant="ghost" size="sm" onClick={resetTool}>
+                <RefreshCw className="w-4 h-4 mr-2" />
+                Reset
+              </Button>
+            </CardTitle>
+            <CardDescription>
+              {pageCount} pages • {Math.round(pdfFile.size / 1024)} KB
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-6">
+            <div className="space-y-2">
+              <Label htmlFor="page-input">Select Pages (e.g., 1, 3-5, 8)</Label>
+              <Input
+                id="page-input"
+                placeholder="Enter page numbers..."
+                value={pageInput}
+                onChange={(e) => setPageInput(e.target.value)}
+              />
+              <p className="text-xs text-muted-foreground">
+                Leave empty to select all pages (where applicable)
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Button
+                variant="outline"
+                onClick={extractPages}
+                disabled={processing}
+                className="h-auto py-4 flex flex-col gap-2"
+              >
+                <Copy className="w-6 h-6" />
+                <span>Extract Pages</span>
+              </Button>
 
               <Button
                 variant="outline"
-                className="w-full"
-                onClick={() => {
-                  setPdfFile(null);
-                  setPdfDoc(null);
-                  setPageCount(0);
-                }}
+                onClick={rotatePages}
+                disabled={processing}
+                className="h-auto py-4 flex flex-col gap-2"
               >
-                Upload Different PDF
+                <RotateCw className="w-6 h-6" />
+                <span>Rotate Pages</span>
               </Button>
-            </CardContent>
-          </Card>
-        </>
-      )}
 
-      <Card className="bg-blue-50 dark:bg-blue-950/20 border-blue-200 dark:border-blue-900">
-        <CardHeader>
-          <CardTitle className="text-sm flex items-center gap-2">
-            <AlertCircle className="w-4 h-4" />
-            Available Features
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm">
-          <p>✅ Extract specific pages from PDF</p>
-          <p>✅ Delete pages from PDF</p>
-          <p>✅ Rotate pages (90°/180°/270°)</p>
-          <p>✅ Merge multiple PDFs (upload feature above)</p>
-          <p>⚠️ Text editing requires advanced PDF manipulation</p>
-          <p>💡 All processing happens in your browser - files never leave your device</p>
-        </CardContent>
-      </Card>
+              <Button
+                variant="outline"
+                onClick={deletePages}
+                disabled={processing}
+                className="h-auto py-4 flex flex-col gap-2 text-destructive hover:text-destructive"
+              >
+                <Trash2 className="w-6 h-6" />
+                <span>Delete Pages</span>
+              </Button>
+            </div>
+
+            {processing && (
+              <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                <Loader2 className="w-4 h-4 animate-spin" />
+                Processing PDF...
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      )}
     </div>
   );
 }

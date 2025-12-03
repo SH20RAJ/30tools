@@ -12,7 +12,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
 import {
@@ -26,9 +25,6 @@ import {
   Loader,
   Image as ImageIcon,
   Scissors,
-  Wand2,
-  Zap,
-  Shield,
   Layers,
 } from "lucide-react";
 
@@ -185,12 +181,12 @@ export default function BackgroundRemoverTool() {
           prev.map((f) =>
             f.id === file.id
               ? {
-                  ...f,
-                  status: "completed",
-                  progress: 100,
-                  processedUrl: result.processedUrl,
-                  processedBlob: result.processedBlob,
-                }
+                ...f,
+                status: "completed",
+                progress: 100,
+                processedUrl: result.processedUrl,
+                processedBlob: result.processedBlob,
+              }
               : f,
           ),
         );
@@ -279,31 +275,7 @@ export default function BackgroundRemoverTool() {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free Background Remover</h1>
-        <p className="text-xl text-muted-foreground mb-6">
-          Remove backgrounds from images instantly. AI-powered background
-          removal tool for professional results. Perfect for product photos,
-          portraits, and design projects.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <div className="flex items-center gap-2">
-            <Wand2 className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">AI-Powered</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Zap className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Instant Results</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">No Watermarks</span>
-          </div>
-        </div>
-      </div>
-
+    <div className="w-full max-w-6xl mx-auto">
       {/* Upload Section */}
       <Card className="mb-6">
         <CardHeader>
@@ -494,137 +466,6 @@ export default function BackgroundRemoverTool() {
           </CardContent>
         </Card>
       )}
-
-      {/* Features Section */}
-      <div className="grid gap-6 md:grid-cols-3 mb-8">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Wand2 className="h-5 w-5" />
-              AI-Powered
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Advanced AI algorithms automatically detect subjects and remove
-              backgrounds with precision.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Zap className="h-5 w-5" />
-              Batch Processing
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              Process multiple images simultaneously to save time on large
-              projects.
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-lg">
-              <Shield className="h-5 w-5" />
-              Privacy First
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-muted-foreground">
-              All processing happens in your browser. Your images never leave
-              your device.
-            </p>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Use Cases */}
-      <Card className="mb-8">
-        <CardHeader>
-          <CardTitle>Perfect For</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid gap-4 md:grid-cols-2">
-            <div>
-              <h4 className="font-medium mb-2">E-commerce & Product Photos</h4>
-              <ul className="text-sm space-y-1 text-muted-foreground">
-                <li>• Clean product images for online stores</li>
-                <li>• Professional catalog photography</li>
-                <li>• Marketplace listings optimization</li>
-                <li>• Social media product showcases</li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Creative & Professional</h4>
-              <ul className="text-sm space-y-1 text-muted-foreground">
-                <li>• Portrait photography editing</li>
-                <li>• Graphic design projects</li>
-                <li>• Marketing materials creation</li>
-                <li>• Profile picture enhancement</li>
-              </ul>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* FAQ Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Frequently Asked Questions</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="space-y-4">
-            <div>
-              <h4 className="font-medium mb-2">
-                How accurate is the background removal?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                This demo uses simplified algorithms. In production, our AI
-                models achieve 95%+ accuracy for most images, with professional
-                results for portraits, products, and objects.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                What image formats are supported?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                We support JPG, PNG, and WebP formats for input. Output is
-                always in PNG format to preserve transparency.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Is there a file size limit?</h4>
-              <p className="text-sm text-muted-foreground">
-                Maximum file size is {formatFileSize(maxFileSize)} per image.
-                You can process multiple images simultaneously.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">
-                Are my images stored on your servers?
-              </h4>
-              <p className="text-sm text-muted-foreground">
-                No, all processing happens locally in your browser. Your images
-                are never uploaded to our servers, ensuring complete privacy.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-medium mb-2">Can I edit the results?</h4>
-              <p className="text-sm text-muted-foreground">
-                The tool provides automatic background removal. For fine-tuning
-                and manual editing, you can download the PNG file and use image
-                editing software.
-              </p>
-            </div>
-          </div>
-        </CardContent>
-      </Card>
     </div>
   );
 }

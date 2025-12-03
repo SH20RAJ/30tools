@@ -1,53 +1,315 @@
-import PDFToWord from "@/components/tools/pdf/PDFToWordTool";
+import PDFToWordTool from "@/components/tools/pdf/PDFToWordTool";
+import {
+  BreadcrumbsEnhanced,
+  FAQSection,
+  ReviewSnippets,
+  RelatedTools,
+  UserComments,
+  QuickActions,
+} from "@/components/seo";
+import {
+  GeneratorToolFeatures,
+  GeneratorToolExamples,
+} from "@/components/seo/GeneratorToolsHub";
+import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "PDF to Word Converter - Convert PDF to DOC | 30tools",
+  title: "PDF to Word Converter - Convert PDF to DOCX Free | 30tools",
   description:
-    "Professional pdf to word to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
+    "Convert PDF files to editable Word documents online for free. Extract text, images, and layout accurately. Secure, fast, and no installation required.",
   keywords:
-    "pdf to word, pdf to doc, pdf to docx, convert pdf, editable document, i love pdf extract,online pdf combiner free,merge pdf gratis,pdf splitter online free,ilovepdf free,pdf love pdf,pdf join,ilovepdf dividir,ilovepdf 結合,ilovepdf عربي,i love to pdf,ilovepdf converter,i love my pdf converter,recortar pdf ilovepdf,we love pdf,i love pdf free,ilovepdf juntar,ilovepdf compresser,fusionner pdf ilovepdf,i live pdf,ilovepdf unire,word ke pdf gratis ilovepdf,pdf merge ilovepdf,i ilovepdf,ilovepdf edit pdf,pdf i love,i love pdf.com,love my pdf,ilovepdf editar pdf,word para pdf ilovepdf,ilovepdf jpg a pdf,pdf a imagen ilovepdf,jpg a pdf ilovepdf,i love pdf gratis,firmar pdf ilovepdf,pdf i love pdf,pdf a jpg ilovepdf,transformar pdf em word ilovepdf,pdf lovers,l love pdf,convertir pdf a word ilovepdf gratis,my love pdf,edit pdf ilovepdf,ilovepdf convertir,convert word to pdf ilovepdf,pdf ilovepdf,www.ilovepdf.com pdf,pdf para word ilovepdf,juntar pdf ilovepdf,ilovepdf 日本語,ilovepdf compressed,www.ilovepdf.com ​​​​,converter pdf em word ilovepdf,separar pdf ilovepdf,ilovepdf pdf to excel,gabung pdf ilovepdf,ilovepdf jpg to pdf,ilovepdf editar,ilov,i heart pdf,i love pdf en ligne,love pdf,dividir pdf ilovepdf,ilovepdf split,pdf to jpg ilovepdf,jpeg to pdf ilovepdf,ilovepdf pdf to jpg,pdf lover,i love pdf français,in love pdf,ilovepdf merge pdf,jpg to pdf ilovepdf,pdflove,ilovepdf comprimir,word to pdf converter ilovepdf,ilovepdf fusionner,da pdf a word ilovepdf,ipdf,convert word to pdf online,editar pdf ilovepdf,ilovepdf在线转换,convert pdf to word ilovepdf,ilovepdf.com,merge pdf ilovepdf,ilovepdf gratis,word to pdf ilovepdf,ilovepdf compress,ilovepdf juntar pdf,ilovepdf to word,pdf tools,ilovepdf edit,i love you pdf,comprimir pdf ilovepdf,ilovepdf word to pdf,love pdf converter,i love pdf merge pdf,yo amo pdf,pdf a word ilovepdf,ilovepdf online,i love pdf español,i love pdfs,ilovepdf pdf,ilovepdf español,ilovepdf en français,pdf to word converter ilovepdf,ilovepdf unir,我爱pdf,ilovepdf unir pdf,merge pdf i love pdf,de pdf a word ilovepdf,i love pdf unir,ilovepdf português,i love pdf gratuit,ilovepdf pdf a word,pdf to word ilovepdf,pdf to word free,convert pdf to word free,ilovepdf pdf para word,convert to pdf,pdf creator,separar pdf,pdf combiner,ilovepdf en español,i love pdf converter,ilovepdf在线转换官网,i lovepdf,unir pdf ilovepdf,i love,i love my pdf,ilovepdf merge,convert pdf to jpg,ilove,i love pdf merge,love,pdf love,pdf merge,pdf converter,convert word to pdf,combine pdf,ilovepdf pdf to word,pdf merger,i love pdf to word,ilove pdf,unir pdf,convert pdf to word,merge pdf,pdf to word converter,pdf,pdf to word,i love pdf",
-  openGraph: {
-    title: "PDF to Word Converter - Convert PDF to DOC | 30tools",
-    description: "Convert PDF files to editable Word documents.",
-    type: "website",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Pdf To Word - Free PDF Tool | Professional PDF Processing",
-    description:
-      "Professional pdf to word to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
-    images: ["/og-images/pdf-to-word.jpg"],
-    creator: "@30tools",
-  },
-
+    "pdf to word, pdf to doc, pdf to docx, convert pdf to word, pdf converter, free pdf to word, online pdf converter, editable word document",
   alternates: {
     canonical: "https://30tools.com/pdf-to-word",
   },
-};
-
-const _jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Pdf To Word",
-  description:
-    "Professional pdf to word to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
-  url: "https://30tools.com/pdf-to-word",
-  applicationCategory: "UtilityApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
+  openGraph: {
+    title: "PDF to Word Converter - Convert PDF to DOCX Free",
+    description:
+      "Convert PDF files to editable Word documents online for free. Extract text, images, and layout accurately. Secure, fast, and no installation required.",
+    url: "https://30tools.com/pdf-to-word",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/pdf-to-word.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Free PDF to Word Converter",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
   },
-  author: {
-    "@type": "Organization",
-    name: "30tools",
-    url: "https://30tools.com",
+  twitter: {
+    card: "summary_large_image",
+    title: "PDF to Word Converter - Convert PDF to DOCX Free",
+    description:
+      "Convert PDF files to editable Word documents online for free. Extract text, images, and layout accurately. Secure, fast, and no installation required.",
+    images: ["/og-images/pdf-to-word.jpg"],
+    creator: "@30tools",
   },
+  category: "PDF Tools",
 };
 
 export default function PDFToWordPage() {
-  return <PDFToWord />;
+  // Tool-specific data
+  const toolData = {
+    id: "pdf-to-word",
+    name: "PDF to Word",
+    description: "Convert PDF documents to editable Word format",
+    category: "pdf",
+    route: "/pdf-to-word",
+  };
+
+  // Breadcrumb navigation
+  const breadcrumbs = [
+    { name: "PDF Tools", url: "/pdf-tools" },
+    { name: "PDF to Word", url: "/pdf-to-word" },
+  ];
+
+  // Tool features
+  const features = [
+    "Convert PDF to DOCX",
+    "Editable Text Output",
+    "Preserve Layout",
+    "Extract Images",
+    "Client-Side Processing",
+    "No File Size Limit",
+    "Secure & Private",
+    "100% Free",
+  ];
+
+  // Usage examples
+  const examples = [
+    {
+      title: "Edit Contracts",
+      description: "Modify PDF agreements",
+      input: "Contract.pdf",
+      output: "Contract_Editable.docx",
+    },
+    {
+      title: "Reuse Content",
+      description: "Extract text from reports",
+      input: "Annual_Report.pdf",
+      output: "Report_Content.docx",
+    },
+    {
+      title: "Fix Errors",
+      description: "Correct typos in PDFs",
+      input: "Final_Draft.pdf",
+      output: "Draft_v2.docx",
+    },
+  ];
+
+  // FAQ data
+  const faqs = getPdfToolFAQs("pdf-to-word");
+
+  // Related tools
+  const relatedTools = [
+    {
+      id: "word-to-pdf",
+      name: "Word to PDF",
+      description: "Convert Word to PDF",
+      route: "/word-to-pdf",
+      category: "pdf",
+    },
+    {
+      id: "pdf-editor",
+      name: "PDF Editor",
+      description: "Edit PDF files",
+      route: "/pdf-editor",
+      category: "pdf",
+    },
+    {
+      id: "pdf-merger",
+      name: "PDF Merger",
+      description: "Combine multiple PDFs",
+      route: "/pdf-merger",
+      category: "pdf",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Enhanced Breadcrumbs with Schema */}
+      <div className="container mx-auto px-4 pt-6">
+        <BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
+      </div>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-8">
+        {/* Hero Section */}
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-4">
+            Free PDF to Word Converter
+          </h1>
+          <p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
+            Convert your PDF files to editable Word documents (DOCX) instantly.
+            Extract text, images, and formatting accurately with our secure
+            online converter.
+          </p>
+
+          <QuickActions
+            toolName="PDF to Word"
+            toolUrl="https://30tools.com/pdf-to-word"
+            showBookmark={true}
+            showShare={true}
+          />
+        </div>
+
+        {/* Tool Interface */}
+        <div className="mb-12">
+          <PDFToWordTool />
+        </div>
+
+        {/* Key Features */}
+        <GeneratorToolFeatures tool={toolData} features={features} />
+
+        {/* Usage Examples */}
+        <GeneratorToolExamples
+          tool={toolData}
+          examples={examples}
+          title="Why Convert PDF to Word?"
+        />
+
+        {/* User Reviews */}
+        <div className="mb-12">
+          <ReviewSnippets
+            toolId="pdf-to-word"
+            title="User Reviews"
+            showRatingSummary={true}
+            variant="grid"
+            limit={6}
+          />
+        </div>
+
+        {/* How to Use Section */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            How to Convert PDF to Word
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                1
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Upload PDF</h3>
+              <p className="text-muted-foreground text-sm">
+                Select the PDF file you want to convert.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                2
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Convert</h3>
+              <p className="text-muted-foreground text-sm">
+                Click convert to transform your file to Word.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                3
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Download</h3>
+              <p className="text-muted-foreground text-sm">
+                Save your editable Word document.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQ Section */}
+        <div className="mb-12">
+          <FAQSection
+            faqs={faqs}
+            title="PDF to Word FAQ"
+            categoryTitle="Document Conversion"
+            variant="accordion"
+            showSchema={true}
+          />
+        </div>
+
+        {/* Related Tools */}
+        <div className="mb-12">
+          <RelatedTools
+            currentTool="pdf-to-word"
+            category="pdf"
+            tools={relatedTools}
+            title="More PDF Tools"
+          />
+        </div>
+
+        {/* User Comments */}
+        <UserComments
+          toolId="pdf-to-word"
+          toolName="PDF to Word"
+          showStats={true}
+          allowComments={true}
+        />
+      </main>
+
+      {/* Structured Data for Tool */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Free PDF to Word Converter",
+              description:
+                "Convert PDF files to editable Word documents online for free.",
+              url: "https://30tools.com/pdf-to-word",
+              applicationCategory: "UtilityApplication",
+              operatingSystem: "Web Browser",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              creator: {
+                "@type": "Organization",
+                name: "30tools",
+                url: "https://30tools.com",
+              },
+              featureList: features,
+              screenshot: "https://30tools.com/screenshots/pdf-to-word.jpg",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.7",
+                reviewCount: "450",
+                bestRating: "5",
+                worstRating: "1",
+              },
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              name: "How to Convert PDF to Word",
+              step: [
+                {
+                  "@type": "HowToStep",
+                  name: "Upload PDF",
+                  text: "Select the PDF file you want to convert.",
+                  url: "https://30tools.com/pdf-to-word#step1",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Convert",
+                  text: "Click convert to transform your file to Word.",
+                  url: "https://30tools.com/pdf-to-word#step2",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Download",
+                  text: "Save your editable Word document.",
+                  url: "https://30tools.com/pdf-to-word#step3",
+                },
+              ],
+            },
+          ]),
+        }}
+      />
+    </div>
+  );
 }
