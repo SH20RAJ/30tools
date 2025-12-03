@@ -1,4 +1,10 @@
 import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const metadata = {
   title: "YouTube Video Downloader - 30tools",
@@ -274,50 +280,58 @@ export default function YouTubeDownloaderPage() {
 
             <div className="bg-card rounded-lg p-6 border">
               <h2 className="text-2xl font-semibold mb-4">
-                Frequently Asked Questions
+                Troubleshooting Common Issues
               </h2>
-              <div className="space-y-4">
+              <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-medium mb-2">
-                    Is it legal to download YouTube videos?
+                  <h3 className="font-medium mb-2 flex items-center gap-2">
+                    <span className="text-destructive">⚠️</span> Download not starting?
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can download YouTube videos for personal use,
-                    educational purposes, or content you own. Always respect
-                    copyright laws and YouTube's terms of service when
-                    downloading videos.
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Check your internet connection and ensure the YouTube URL is correct. If the video is private or age-restricted, it may not be downloadable.
                   </p>
                 </div>
                 <div>
-                  <h3 className="font-medium mb-2">
-                    What video formats are supported?
+                  <h3 className="font-medium mb-2 flex items-center gap-2">
+                    <span className="text-destructive">🔇</span> No audio in video?
                   </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our YouTube downloader supports MP4 (video) and MP3 (audio)
-                    formats. MP4 files work on all devices and media players,
-                    while MP3 is perfect for audio-only content.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download YouTube playlists?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Currently, you can download individual YouTube videos. For
-                    playlist downloads, you'll need to copy and paste each video
-                    URL separately.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is there a download limit?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No, there are no download limits! You can download as many
-                    YouTube videos as you want, completely free of charge.
+                  <p className="text-sm text-muted-foreground mb-4">
+                    Some high-quality video streams (1080p+) do not have audio. Try downloading the 720p version or download the audio separately as MP3.
                   </p>
                 </div>
               </div>
+            </div>
+
+            <div className="bg-card rounded-lg p-6 border">
+              <h2 className="text-2xl font-semibold mb-4">
+                Frequently Asked Questions
+              </h2>
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>Is it legal to download YouTube videos?</AccordionTrigger>
+                  <AccordionContent>
+                    You can download YouTube videos for personal use, educational purposes, or content you own. Always respect copyright laws and YouTube's terms of service when downloading videos.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>What video formats are supported?</AccordionTrigger>
+                  <AccordionContent>
+                    Our YouTube downloader supports MP4 (video) and MP3 (audio) formats. MP4 files work on all devices and media players, while MP3 is perfect for audio-only content.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>Can I download YouTube playlists?</AccordionTrigger>
+                  <AccordionContent>
+                    Currently, you can download individual YouTube videos. For playlist downloads, you'll need to copy and paste each video URL separately.
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-4">
+                  <AccordionTrigger>Is there a download limit?</AccordionTrigger>
+                  <AccordionContent>
+                    No, there are no download limits! You can download as many YouTube videos as you want, completely free of charge.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
 
             <div className="bg-card rounded-lg p-6 border">
