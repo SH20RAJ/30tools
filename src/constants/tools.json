@@ -1,9 +1,9 @@
 {
   "metadata": {
-    "version": "10.0",
-    "lastUpdated": "2025-11-28",
-    "totalTools": 169,
-    "totalCategories": 13
+    "version": "11.0",
+    "lastUpdated": "2025-12-01",
+    "totalTools": 170,
+    "totalCategories": 14
   },
   "categories": {
     "generators": {
@@ -462,6 +462,14 @@
           "name": "YouTube Tag Generator",
           "description": "Generate optimized YouTube tags to boost video SEO and discoverability",
           "route": "/youtube-tag-generator",
+          "popular": true,
+          "category": "youtube"
+        },
+        {
+          "id": "youtube-tag-extractor",
+          "name": "YouTube Tag Extractor",
+          "description": "Extract tags and keywords from any YouTube video. Analyze competitor tags and improve your SEO strategy",
+          "route": "/youtube-tag-extractor",
           "popular": true,
           "category": "youtube"
         },
