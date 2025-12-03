@@ -191,6 +191,45 @@ export default function AestheticBioGeneratorPage() {
           />
         </div>
 
+        {/* How to Use Section */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            How to Create an Aesthetic Bio
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                1
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Enter Your Text</h3>
+              <p className="text-muted-foreground text-sm">
+                Type your current bio, keywords, or a short description of
+                yourself into the input box.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                2
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Choose Style</h3>
+              <p className="text-muted-foreground text-sm">
+                Select from our curated aesthetic themes like Soft Girl, Dark
+                Academia, or Minimalist.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                3
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Copy & Paste</h3>
+              <p className="text-muted-foreground text-sm">
+                Click to copy your favorite bio design and paste it directly to
+                Instagram, TikTok, or Twitter.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* FAQ Section */}
         <div className="mb-12">
           <FAQSection
@@ -225,36 +264,63 @@ export default function AestheticBioGeneratorPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "Aesthetic Bio Generator",
-            description:
-              "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes",
-            url: "https://30tools.com/aesthetic-bio-generator",
-            applicationCategory: "SocialNetworkingApplication",
-            operatingSystem: "Web Browser",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD",
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Aesthetic Bio Generator",
+              description:
+                "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes",
+              url: "https://30tools.com/aesthetic-bio-generator",
+              applicationCategory: "SocialNetworkingApplication",
+              operatingSystem: "Web Browser",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              creator: {
+                "@type": "Organization",
+                name: "30tools",
+                url: "https://30tools.com",
+              },
+              featureList: features,
+              screenshot:
+                "https://30tools.com/screenshots/aesthetic-bio-generator.jpg",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.9",
+                reviewCount: "3247",
+                bestRating: "5",
+                worstRating: "1",
+              },
             },
-            creator: {
-              "@type": "Organization",
-              name: "30tools",
-              url: "https://30tools.com",
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              name: "How to Generate an Aesthetic Bio",
+              step: [
+                {
+                  "@type": "HowToStep",
+                  name: "Enter your bio text",
+                  text: "Type your current bio or keywords into the input field.",
+                  url: "https://30tools.com/aesthetic-bio-generator#step1",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Select a theme",
+                  text: "Choose from various aesthetic themes like Soft, Dark, or Vintage.",
+                  url: "https://30tools.com/aesthetic-bio-generator#step2",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Generate and Copy",
+                  text: "Click generate and copy your favorite aesthetic bio to your clipboard.",
+                  url: "https://30tools.com/aesthetic-bio-generator#step3",
+                },
+              ],
             },
-            featureList: features,
-            screenshot:
-              "https://30tools.com/screenshots/aesthetic-bio-generator.jpg",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "3247",
-              bestRating: "5",
-              worstRating: "1",
-            },
-          }),
+          ]),
         }}
       />
     </div>

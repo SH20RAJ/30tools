@@ -253,6 +253,94 @@ export const GENERATOR_TOOLS_FAQS = {
         "Currently, voices use optimized natural speech patterns. Advanced controls for speed, tone, and emphasis may be added in future updates.",
     },
   ],
+
+  // Excuse Generator specific FAQs
+  "excuse-generator": [
+    {
+      question: "What kind of excuses can I generate?",
+      answer:
+        "You can generate excuses for various categories including Work, School, Social Events, Family Gatherings, and more. Each category has specific scenarios tailored to it.",
+    },
+    {
+      question: "Are the excuses believable?",
+      answer:
+        "We offer different believability levels ranging from 'Highly Plausible' to 'Ridiculous'. Choose the level that fits your situation and how much risk you want to take!",
+    },
+    {
+      question: "Can I use these excuses for real situations?",
+      answer:
+        "While our excuses are designed to sound realistic (or funny), we recommend using them responsibly. We are not responsible for any consequences of using these excuses!",
+    },
+    {
+      question: "How does the AI create excuses?",
+      answer:
+        "Our AI analyzes common social situations and successful excuse patterns to generate responses that sound natural and convincing for the selected context.",
+    },
+    {
+      question: "Can I edit the generated excuses?",
+      answer:
+        "Absolutely! Use the generated excuse as a base and tweak the details to fit your specific situation perfectly. Adding personal details makes them more convincing.",
+    },
+    {
+      question: "Is there a limit to how many excuses I can make?",
+      answer:
+        "No limits! Generate as many excuses as you need until you find the perfect one. It's completely free and unlimited.",
+    },
+    {
+      question: "Do you save the excuses I generate?",
+      answer:
+        "No, we don't store any of your generated excuses or personal data. All generation happens in your browser for privacy.",
+    },
+    {
+      question: "Can I share excuses directly?",
+      answer:
+        "Yes, you can easily copy the excuse to your clipboard or share it directly to messaging apps if you're on a mobile device.",
+    },
+  ],
+
+  // AI Poetry Generator specific FAQs
+  "ai-poetry-generator": [
+    {
+      question: "How does the AI write poems?",
+      answer:
+        "Our AI has been trained on thousands of classic and modern poems to understand rhyme schemes, meter, and poetic structures. It uses this knowledge to create original poetry based on your inputs.",
+    },
+    {
+      question: "What types of poems can I generate?",
+      answer:
+        "You can generate various poetic forms including Haiku, Sonnet, Free Verse, Limerick, Acrostic, and Rhyming Couplets. Simply select your preferred style before generating.",
+    },
+    {
+      question: "Are the generated poems unique?",
+      answer:
+        "Yes! Every poem is generated from scratch based on your specific topic and mood. You won't get the same poem twice, ensuring your content is original.",
+    },
+    {
+      question: "Can I use these poems for special occasions?",
+      answer:
+        "Absolutely! Our generator is perfect for writing poems for birthdays, anniversaries, weddings, Valentine's Day, or just to express your feelings to someone special.",
+    },
+    {
+      question: "Do I own the copyright to the poems?",
+      answer:
+        "Yes, you own the rights to any poem you generate with our tool. You can publish them, use them in greeting cards, or share them on social media without restrictions.",
+    },
+    {
+      question: "Can I specify the mood of the poem?",
+      answer:
+        "Yes, you can choose from various moods like Romantic, Sad, Funny, Inspirational, or Mysterious to ensure the tone matches your intent perfectly.",
+    },
+    {
+      question: "Is there a limit to poem length?",
+      answer:
+        "You can choose between Short, Medium, and Long options. The AI will adjust the stanza count and complexity based on your selection.",
+    },
+    {
+      question: "Can I edit the poems after generation?",
+      answer:
+        "Of course! We encourage you to use the generated poem as a draft and tweak lines or words to add your personal touch and make it perfect.",
+    },
+  ],
 };
 
 // Helper function to get FAQs for a specific generator tool

@@ -189,6 +189,45 @@ export default function StartupNameGeneratorPage() {
           />
         </div>
 
+        {/* How to Use Section */}
+        <div className="mb-12 max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            How to Generate a Startup Name
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                1
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Enter Keywords</h3>
+              <p className="text-muted-foreground text-sm">
+                Enter keywords related to your business idea, product, or core
+                values into the input field.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                2
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Choose Industry</h3>
+              <p className="text-muted-foreground text-sm">
+                Select your industry (e.g., Tech, SaaS, Finance) to help the AI
+                understand your niche.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-xl border text-center relative">
+              <div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                3
+              </div>
+              <h3 className="font-semibold text-lg mb-2">Generate & Pick</h3>
+              <p className="text-muted-foreground text-sm">
+                Click generate to get instant name ideas. Save your favorites
+                and check domain availability.
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* FAQ Section */}
         <div className="mb-12">
           <FAQSection
@@ -223,36 +262,63 @@ export default function StartupNameGeneratorPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "AI Startup Name Generator",
-            description:
-              "Generate trendy startup names with AI. Perfect for indie hackers and entrepreneurs",
-            url: "https://30tools.com/startup-name-generator",
-            applicationCategory: "BusinessApplication",
-            operatingSystem: "Web Browser",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD",
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "AI Startup Name Generator",
+              description:
+                "Generate trendy startup names with AI. Perfect for indie hackers and entrepreneurs",
+              url: "https://30tools.com/startup-name-generator",
+              applicationCategory: "BusinessApplication",
+              operatingSystem: "Web Browser",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              creator: {
+                "@type": "Organization",
+                name: "30tools",
+                url: "https://30tools.com",
+              },
+              featureList: features,
+              screenshot:
+                "https://30tools.com/screenshots/startup-name-generator.jpg",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.8",
+                reviewCount: "2156",
+                bestRating: "5",
+                worstRating: "1",
+              },
             },
-            creator: {
-              "@type": "Organization",
-              name: "30tools",
-              url: "https://30tools.com",
+            {
+              "@context": "https://schema.org",
+              "@type": "HowTo",
+              name: "How to Generate a Startup Name",
+              step: [
+                {
+                  "@type": "HowToStep",
+                  name: "Enter keywords",
+                  text: "Enter keywords related to your business, industry, or product.",
+                  url: "https://30tools.com/startup-name-generator#step1",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Select industry",
+                  text: "Choose your industry (e.g., Tech, SaaS, Fintech) for targeted results.",
+                  url: "https://30tools.com/startup-name-generator#step2",
+                },
+                {
+                  "@type": "HowToStep",
+                  name: "Generate names",
+                  text: "Click generate to see a list of creative, AI-powered startup names.",
+                  url: "https://30tools.com/startup-name-generator#step3",
+                },
+              ],
             },
-            featureList: features,
-            screenshot:
-              "https://30tools.com/screenshots/startup-name-generator.jpg",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.8",
-              reviewCount: "2156",
-              bestRating: "5",
-              worstRating: "1",
-            },
-          }),
+          ]),
         }}
       />
     </div>
