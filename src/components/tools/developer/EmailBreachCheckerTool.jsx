@@ -80,9 +80,9 @@ export default function EmailBreachCheckerTool() {
       <div className="max-w-4xl mx-auto">
         {/* SEO Content - Hidden but accessible to search engines */}
         <div className="sr-only">
-          <h1>
+          <div>
             Email Breach Checker - Check if Your Email is Compromised | 30tools
-          </h1>
+          </div>
           <p>
             Free email breach checker to see if your email has been compromised
             in data breaches. Check against billions of breached accounts using
@@ -183,11 +183,10 @@ export default function EmailBreachCheckerTool() {
                   <div className="space-y-4">
                     {/* Email Results Summary */}
                     <div
-                      className={`flex items-center gap-3 p-4 rounded-lg border-2 ${
-                        results.breaches.length > 0
+                      className={`flex items-center gap-3 p-4 rounded-lg border-2 ${results.breaches.length > 0
                           ? "bg-destructive/10 border-destructive/50"
                           : "bg-muted/50 border-border"
-                      }`}
+                        }`}
                     >
                       {results.breaches.length > 0 ? (
                         <ShieldAlert className="w-8 h-8 text-destructive" />
@@ -196,22 +195,20 @@ export default function EmailBreachCheckerTool() {
                       )}
                       <div>
                         <h3
-                          className={`font-semibold ${
-                            results.breaches.length > 0
+                          className={`font-semibold ${results.breaches.length > 0
                               ? "text-destructive"
                               : "text-foreground"
-                          }`}
+                            }`}
                         >
                           {results.breaches.length > 0
                             ? `Found in ${results.breaches.length} breach${results.breaches.length > 1 ? "es" : ""}`
                             : "No breaches found"}
                         </h3>
                         <p
-                          className={`text-sm ${
-                            results.breaches.length > 0
+                          className={`text-sm ${results.breaches.length > 0
                               ? "text-destructive"
                               : "text-primary"
-                          }`}
+                            }`}
                         >
                           Email: {results.email}
                         </p>

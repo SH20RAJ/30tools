@@ -135,7 +135,7 @@ export default function SearchPageServer({
                 <ZapIcon className="h-6 w-6 text-primary-foreground" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold">30tools</h1>
+                <div className="text-2xl font-bold">30tools</div>
                 <p className="text-sm text-muted-foreground">
                   Free Online Toolkit
                 </p>

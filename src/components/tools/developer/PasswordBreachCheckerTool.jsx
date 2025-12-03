@@ -89,10 +89,10 @@ export default function PasswordBreachCheckerTool() {
       <div className="max-w-4xl mx-auto">
         {/* SEO Content - Hidden but accessible to search engines */}
         <div className="sr-only">
-          <h1>
+          <div>
             Password Breach Checker - Check if Your Email/Password is
             Compromised | 30tools
-          </h1>
+          </div>
           <p>
             Free password breach checker to see if your email or password has
             been compromised in data breaches. Check against billions of
@@ -219,11 +219,10 @@ export default function PasswordBreachCheckerTool() {
                   <div className="space-y-4">
                     {/* Password Results */}
                     <div
-                      className={`flex items-center gap-3 p-4 rounded-lg border-2 ${
-                        results.isCompromised
+                      className={`flex items-center gap-3 p-4 rounded-lg border-2 ${results.isCompromised
                           ? "bg-destructive/10 border-destructive/50"
                           : "bg-muted/50 border-border"
-                      }`}
+                        }`}
                     >
                       {results.isCompromised ? (
                         <ShieldAlert className="w-8 h-8 text-destructive" />
@@ -232,22 +231,20 @@ export default function PasswordBreachCheckerTool() {
                       )}
                       <div>
                         <h3
-                          className={`font-semibold ${
-                            results.isCompromised
+                          className={`font-semibold ${results.isCompromised
                               ? "text-destructive"
                               : "text-foreground"
-                          }`}
+                            }`}
                         >
                           {results.isCompromised
                             ? "Password Compromised!"
                             : "Password Looks Safe"}
                         </h3>
                         <p
-                          className={`text-sm ${
-                            results.isCompromised
+                          className={`text-sm ${results.isCompromised
                               ? "text-destructive"
                               : "text-primary"
-                          }`}
+                            }`}
                         >
                           {results.isCompromised
                             ? `Found in ${formatNumber(results.count)} breach${results.count > 1 ? "es" : ""}`
