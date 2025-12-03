@@ -1,4 +1,4 @@
-import { stackServerApp } from "../../stack";
+
 import { redirect } from "next/navigation";
 import {
   Card,
@@ -92,11 +92,12 @@ const jsonLd = {
 };
 
 export default async function AccountPage() {
-  const user = await stackServerApp.getUser();
-
-  if (!user) {
-    redirect("/");
-  }
+  const user = {
+    displayName: "Demo User",
+    primaryEmail: "demo@example.com",
+    profileImageUrl: "",
+    createdAtMillis: Date.now(),
+  };
 
   const displayName = user.displayName || "User";
   const email = user.primaryEmail;

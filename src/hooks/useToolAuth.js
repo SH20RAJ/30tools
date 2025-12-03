@@ -1,38 +1,19 @@
 "use client";
 
-import { useUser } from "@stackframe/stack";
-import { useRouter, usePathname } from "next/navigation";
 import { useCallback } from "react";
 
 export function useToolAuth() {
-  const user = useUser();
-  const router = useRouter();
-  const pathname = usePathname();
+  // Mock user object
+  const user = null;
 
-  const requireAuth = useCallback(
-    (toolPath = null) => {
-      if (!user) {
-        // If no specific tool path provided, use current pathname
-        const redirectTo = toolPath || pathname;
-        router.push(
-          `/handler/signin?after_auth_return_to=${encodeURIComponent(redirectTo)}`,
-        );
-        return false;
-      }
-      return true;
-    },
-    [user, router, pathname],
-  );
+  const requireAuth = useCallback(() => {
+    return true;
+  }, []);
 
-  const signInWithRedirect = useCallback(
-    (toolPath = null) => {
-      const redirectTo = toolPath || pathname;
-      router.push(
-        `/handler/signin?after_auth_return_to=${encodeURIComponent(redirectTo)}`,
-      );
-    },
-    [router, pathname],
-  );
+  const signInWithRedirect = useCallback(() => {
+    // No-op or redirect to a custom sign-in page if one existed
+    console.log("Sign in requested (Stack Auth removed)");
+  }, []);
 
   return {
     user,

@@ -123,7 +123,7 @@ import {
   SettingsIcon,
   RefreshCwIcon,
 } from "lucide-react";
-import { UserButton } from "@stackframe/stack";
+
 
 export default function LandingPage() {
   const iconMap = {
@@ -157,7 +157,7 @@ export default function LandingPage() {
     .slice(0, 6); // Show first 6 premium tools
 
   // get session from stack
-  const session = 1; // Replace with actual session retrieval logic
+  const session = null; // Stack Auth removed
 
   const quickSearchTags = [
     "image compressor",
@@ -213,9 +213,9 @@ export default function LandingPage() {
                 <Button variant="outline">About</Button>
               </Link>
               {session ? (
-                <UserButton />
+                <div />
               ) : (
-                <Link href="/handler/sign-in">
+                <Link href="#">
                   <Button variant="secondary">Sign In</Button>
                 </Link>
               )}

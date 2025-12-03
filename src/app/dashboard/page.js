@@ -1,4 +1,4 @@
-import { stackServerApp } from "../../stack";
+
 import { redirect } from "next/navigation";
 import {
   Card,
@@ -71,12 +71,35 @@ export const metadata = {
   },
 };
 
-export default async function DashboardPage() {
-  const user = await stackServerApp.getUser();
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Dashboard",
+  description:
+    "Professional dashboard tool. Free online processing with high-quality results. No registration required, instant results.",
+  url: "https://30tools.com/dashboard",
+  applicationCategory: "UtilityApplication",
+  operatingSystem: "Any",
+  permissions: "browser",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  author: {
+    "@type": "Organization",
+    name: "30tools",
+    url: "https://30tools.com",
+  },
+};
 
-  if (!user) {
-    redirect("/");
-  }
+
+export default async function DashboardPage() {
+  const user = {
+    displayName: "Demo User",
+    primaryEmail: "demo@example.com",
+    createdAtMillis: Date.now(),
+  };
 
   const displayName = user.displayName || user.primaryEmail || "User";
   const joinDate = new Date(user.createdAtMillis).toLocaleDateString();
