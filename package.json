@@ -84,6 +84,7 @@
     "@types/node": "^24.9.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
+    "baseline-browser-mapping": "^2.9.0",
     "critters": "^0.0.25",
     "dotenv": "^17.0.1",
     "eslint": "^8.57.1",
