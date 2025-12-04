@@ -232,9 +232,9 @@ export default function AestheticBioGeneratorTool() {
               <SparklesIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-background">
+              <h2 className="text-3xl font-bold bg-background">
                 Aesthetic Bio Generator
-              </h1>
+              </h2>
               <p className="text-muted-foreground">
                 Create viral social media bios with emojis and aesthetic themes
               </p>

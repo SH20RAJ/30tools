@@ -241,28 +241,7 @@ export default function JpgToPdfTool() {
 
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
-      <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free JPG to PDF Converter</h1>
-        <p className="text-xl text-muted-foreground mb-6">
-          Convert JPG, JPEG, PNG, and other images to PDF documents. Combine
-          multiple images into a single PDF with custom layouts and settings.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4 mb-6">
-          <div className="flex items-center gap-2">
-            <Zap className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Batch Processing</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Settings className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">Custom Layouts</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Shield className="h-5 w-5 text-primary" />
-            <span className="text-sm font-medium">High Quality</span>
-          </div>
-        </div>
-      </div>
+      {/* Header moved to page.js for SEO */}
 
       {/* Upload Section */}
       <Card className="mb-6">
