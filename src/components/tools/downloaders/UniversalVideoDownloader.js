@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -30,6 +31,7 @@ import {
   Wrench,
   Scissors,
   FileText,
+  ChevronRight,
 } from "lucide-react";
 import { fetchVideoData } from "@/lib/video-download-actions";
 
@@ -99,7 +101,7 @@ export default function UniversalVideoDownloader() {
     } catch (_err) {
       setError(
         err.message ||
-          `Failed to process the ${detectPlatform(url)} video. Please try again.`,
+        `Failed to process the ${detectPlatform(url)} video. Please try again.`,
       );
     } finally {
       setIsLoading(false);
@@ -120,6 +122,27 @@ export default function UniversalVideoDownloader() {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      {/* Breadcrumb Navigation */}
+      <nav
+        className="flex items-center space-x-2 text-sm text-muted-foreground pt-4"
+        aria-label="Breadcrumb"
+      >
+        <Link href="/" className="hover:text-foreground transition-colors">
+          Home
+        </Link>
+        <ChevronRight className="h-4 w-4" />
+        <Link
+          href="/search?category=downloaders"
+          className="hover:text-foreground transition-colors"
+        >
+          Downloaders
+        </Link>
+        <ChevronRight className="h-4 w-4" />
+        <span className="text-foreground font-medium">
+          Universal Video Downloader
+        </span>
+      </nav>
+
       {/* Header */}
       <div className="text-center space-y-4">
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full">
@@ -133,6 +156,9 @@ export default function UniversalVideoDownloader() {
           Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, Rumble and more
           platforms. No watermark downloads, multiple quality options, no
           registration required.
+        </p>
+        <p className="text-xs text-muted-foreground">
+          Last updated: December 4, 2024
         </p>
       </div>
 
