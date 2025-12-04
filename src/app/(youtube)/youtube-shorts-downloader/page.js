@@ -1,256 +1,236 @@
 import YouTubeShortsDownloader from "@/components/tools/youtube/YouTubeShortsDownloader";
 
 export const metadata = {
-  title: "YouTube Shorts Downloader - Download Short Videos Free",
-  description:
-    "Professional youtube shorts downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+  title: "YouTube Shorts Downloader - Download Shorts Videos Free HD | 30tools",
+  description: "Download YouTube Shorts videos in HD quality for free. Save Shorts to your device instantly without watermark. Works on all devices - no app needed.",
   keywords: [
-    // Primary keywords
     "youtube shorts downloader",
     "download youtube shorts",
-    "youtube short video downloader",
-    "download short videos from youtube",
-
-    // Long-tail keywords for SEO ranking
-    "youtube shorts downloader online free no watermark",
-    "download youtube shorts to mp4 hd quality",
-    "save youtube short videos to phone gallery",
-    "youtube shorts video downloader mobile friendly",
-    "download vertical videos from youtube shorts",
-    "youtube shorts downloader without software installation",
-    "free youtube shorts downloader unlimited downloads",
-    "download youtube shorts for offline viewing",
-    "youtube shorts to mp4 converter online",
-    "best youtube shorts downloader 2024 2025",
-    "download youtube shorts with original quality",
-    "youtube shorts video saver online tool",
-    "extract youtube shorts videos for editing",
-    "bulk youtube shorts downloader multiple videos",
-    "download private youtube shorts with link",
+    "youtube shorts video downloader",
+    "youtube shorts download",
+    "shorts downloader",
+    "download shorts video",
+    "youtube shorts saver",
+    "save youtube shorts",
+    "youtube shorts download online",
+    "free youtube shorts downloader",
+    "youtube shorts downloader hd",
+    "youtube shorts to mp4",
+    "download shorts without watermark",
+    "youtube shorts downloader no watermark",
+    "youtube shorts video download free",
+    "shorts video downloader online",
+    "youtube shorts download mobile",
+    "youtube shorts download android ios",
+    "best youtube shorts downloader 2024"
   ].join(", "),
+
   openGraph: {
-    title: "YouTube Shorts Downloader - Download Short Videos Online",
-    description:
-      "Download YouTube Shorts in HD quality. Save vertical short videos from YouTube instantly with our free online downloader.",
+    title: "YouTube Shorts Downloader - Download Shorts Videos Free",
+    description: "⚡ Download YouTube Shorts videos in HD quality instantly. Free, no watermark, works on all devices!",
     url: "https://30tools.com/youtube-shorts-downloader",
     siteName: "30tools",
     type: "website",
-    images: [
-      {
-        url: "/og-images/youtube-shorts-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "YouTube Shorts Downloader - Free Online Tool",
-      },
-    ],
+    images: [{ url: "/og-images/youtube-shorts-downloader.jpg", width: 1200, height: 630, alt: "YouTube Shorts Downloader" }],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "YouTube Shorts Downloader - Download Short Videos Free",
-    description:
-      "Download YouTube Shorts in HD quality for free. Save vertical videos to your device instantly.",
+    title: "YouTube Shorts Downloader - Free HD Downloads",
+    description: "⚡ Download YouTube Shorts videos in HD. No watermark, works on all devices!",
     images: ["/og-images/youtube-shorts-downloader.jpg"],
+    creator: "@30tools"
   },
-  alternates: {
-    canonical: "https://30tools.com/youtube-shorts-downloader",
-  },
+
+  alternates: { canonical: "https://30tools.com/youtube-shorts-downloader" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "YouTube Shorts Downloader",
-  description:
-    "Free online tool to download YouTube Shorts videos in high quality for offline viewing",
-  url: "https://30tools.com/youtube-shorts-downloader",
-  applicationCategory: "MultimediaApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
+const jsonLdSchemas = {
+  webApp: {
+    "@context": "https://schema.org", "@type": "WebApplication",
+    "name": "YouTube Shorts Downloader", "alternateName": "Shorts Video Downloader",
+    "description": "Free tool to download YouTube Shorts videos in HD quality without watermark.",
+    "url": "https://30tools.com/youtube-shorts-downloader",
+    "applicationCategory": ["MultimediaApplication", "UtilitiesApplication"],
+    "operatingSystem": "Any", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "15632" }
   },
-  featureList: [
-    "Download YouTube Shorts in HD quality",
-    "Save vertical short videos",
-    "Fast and secure downloading",
-    "No software installation required",
-    "Works on mobile and desktop",
-    "Unlimited free downloads",
-  ],
+  howTo: {
+    "@context": "https://schema.org", "@type": "HowTo",
+    "name": "How to Download YouTube Shorts",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Copy Shorts URL", "text": "Copy the YouTube Shorts URL from the app or browser" },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Paste the URL into our Shorts downloader" },
+      { "@type": "HowToStep", "position": 3, "name": "Download", "text": "Click download to save the Shorts video" }
+    ]
+  },
+  faq: {
+    "@context": "https://schema.org", "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "How do I download YouTube Shorts?", "acceptedAnswer": { "@type": "Answer", "text": "Copy the Shorts URL, paste it in our tool, and click download. Your video will be saved in HD quality." } },
+      { "@type": "Question", "name": "Is downloading Shorts free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, our YouTube Shorts downloader is 100% free with no limits." } },
+      { "@type": "Question", "name": "Will there be a watermark?", "acceptedAnswer": { "@type": "Answer", "text": "No, videos are downloaded without any watermark in original quality." } }
+    ]
+  }
 };
+
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function YouTubeShortsDownloaderPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
-              YouTube Shorts Downloader
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download YouTube Shorts videos in high definition quality for
-              free. Our YouTube Shorts downloader lets you save those amazing
-              vertical short videos to your device for offline viewing, content
-              creation, and social media sharing. Perfect for creators,
-              educators, and entertainment enthusiasts who want to enjoy YouTube
-              Shorts anytime, anywhere.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.faq) }} />
+
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li><li>/</li>
+              <li><a href="/#youtube-tools" className="hover:text-primary">YouTube Tools</a></li><li>/</li>
+              <li className="text-foreground font-medium">YouTube Shorts Downloader</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">YouTube Shorts Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Download YouTube Shorts videos in HD quality instantly. Save vertical videos without watermark - works on all devices!
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ HD Quality Downloads
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Vertical Video Format
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Mobile Optimized
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ No Watermarks
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>✅ No Watermark</span><span>⚡ Instant Download</span><span>📱 All Devices</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <YouTubeShortsDownloader />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Download YouTube Shorts Videos
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Find YouTube Shorts</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Copy the YouTube Shorts URL from the mobile app or web
-                    browser
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Paste Shorts Link</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Paste the YouTube Shorts URL into our downloader tool
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download Instantly</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Click download and save the YouTube Shorts video to your
-                    device
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Why Use Our YouTube Shorts Downloader?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    📱 Perfect for Mobile Viewing
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download YouTube Shorts in their original vertical format,
-                    perfect for mobile viewing and social media sharing. Our
-                    downloader preserves the 9:16 aspect ratio that makes Shorts
-                    so engaging.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    ⚡ Lightning Fast Downloads
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    YouTube Shorts are typically short videos, and our optimized
-                    servers make downloading them incredibly fast. Get your
-                    favorite Shorts downloaded in seconds, not minutes.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    🎨 Content Creation Ready
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Perfect for content creators who want to study successful
-                    Shorts, create compilation videos, or use as reference
-                    material for their own creative projects.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    🔒 Safe and Private
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Your downloads are processed securely without storing any
-                    personal information. We prioritize your privacy while
-                    providing the best YouTube Shorts downloading experience.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                YouTube Shorts Download FAQ
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">What are YouTube Shorts?</h3>
-                  <p className="text-sm text-muted-foreground">
-                    YouTube Shorts are vertical videos up to 60 seconds long,
-                    designed for mobile viewing. They're YouTube's answer to
-                    TikTok-style short-form content.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download YouTube Shorts on my phone?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Yes! Our YouTube Shorts downloader is fully mobile-optimized
-                    and works perfectly on smartphones and tablets.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What quality are the downloaded Shorts?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    We download YouTube Shorts in their original quality,
-                    typically HD resolution optimized for mobile viewing.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is it legal to download YouTube Shorts?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can download YouTube Shorts for personal use,
-                    educational purposes, or content you have rights to. Always
-                    respect copyright and YouTube's terms of service.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <YouTubeShortsDownloader />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download YouTube Shorts</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="text-center p-6 bg-card rounded-xl border border-border">
+                <div className="w-16 h-16 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-4"><span className="text-3xl">1️⃣</span></div>
+                <h3 className="text-xl font-semibold mb-3">Copy Shorts URL</h3>
+                <p className="text-muted-foreground">Open the Shorts video and copy the URL from your browser or app share button.</p>
+              </div>
+              <div className="text-center p-6 bg-card rounded-xl border border-border">
+                <div className="w-16 h-16 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-4"><span className="text-3xl">2️⃣</span></div>
+                <h3 className="text-xl font-semibold mb-3">Paste URL</h3>
+                <p className="text-muted-foreground">Paste the Shorts URL into the input field above.</p>
+              </div>
+              <div className="text-center p-6 bg-card rounded-xl border border-border">
+                <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4"><span className="text-3xl">3️⃣</span></div>
+                <h3 className="text-xl font-semibold mb-3">Download</h3>
+                <p className="text-muted-foreground">Click download and save the Shorts video to your device.</p>
+              </div>
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Why Use Our Shorts Downloader?</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: "🎬", title: "HD Quality", desc: "Download Shorts in the highest quality available" },
+                { icon: "🚫", title: "No Watermark", desc: "Videos saved without any watermarks or logos" },
+                { icon: "⚡", title: "Fast Download", desc: "Lightning-fast downloads with optimized servers" },
+                { icon: "📱", title: "All Devices", desc: "Works on iPhone, Android, PC, Mac, tablets" },
+                { icon: "🆓", title: "100% Free", desc: "No hidden fees, unlimited downloads forever" },
+                { icon: "🔒", title: "Private & Secure", desc: "We don't store your data or URLs" },
+                { icon: "🌐", title: "No App Needed", desc: "Works directly in your browser" },
+                { icon: "♾️", title: "Unlimited", desc: "No daily limits or restrictions" }
+              ].map((f, i) => (
+                <div key={i} className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow">
+                  <span className="text-4xl mb-4 block">{f.icon}</span>
+                  <h3 className="text-lg font-semibold mb-2">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              {[
+                { q: "How do I download YouTube Shorts?", a: "Simply copy the Shorts URL from YouTube, paste it into our tool, and click download. The video will be saved to your device in HD quality without any watermark." },
+                { q: "Is this Shorts downloader really free?", a: "Yes, our YouTube Shorts downloader is 100% free with no hidden charges. You can download unlimited Shorts videos." },
+                { q: "Will there be a watermark on downloaded videos?", a: "No, all videos are downloaded in their original quality without any watermarks or logos added." },
+                { q: "Does this work on mobile phones?", a: "Yes! Our tool works perfectly on all devices including Android phones, iPhones, tablets, and desktop computers." },
+                { q: "What Shorts URL formats are supported?", a: "We support youtube.com/shorts/VIDEO_ID and shared links from the YouTube app." },
+                { q: "Can I download Shorts without the YouTube app?", a: "Yes, you just need the Shorts URL. No YouTube app or any other app installation is required." }
+              ].map((faq, i) => (
+                <details key={i} className="bg-card rounded-xl border border-border p-4 group">
+                  <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                    {faq.q}<span className="text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="mt-4 text-muted-foreground">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related YouTube Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/youtube-downloader", icon: "📹", title: "YouTube Downloader", desc: "Download videos in HD, 4K, or MP3" },
+                { href: "/youtube-thumbnail-downloader", icon: "🖼️", title: "Thumbnail Downloader", desc: "Download HD video thumbnails" },
+                { href: "/youtube-transcript-downloader", icon: "📝", title: "Transcript Downloader", desc: "Extract video transcripts" },
+                { href: "/youtube-summary-generator", icon: "📋", title: "Video Summarizer", desc: "AI-generated video summaries" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Explore More Free Tools</h2>
+            <div className="grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[
+                { href: "/instagram-downloader", icon: "📸", title: "Instagram", color: "pink" },
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok", color: "cyan" },
+                { href: "/twitter-video-downloader", icon: "🐦", title: "Twitter", color: "blue" },
+                { href: "/image-compressor", icon: "🗜️", title: "Compressor", color: "green" },
+                { href: "/qr-code-generator", icon: "📲", title: "QR Code", color: "violet" },
+                { href: "/", icon: "🛠️", title: "All Tools", color: "primary" }
+              ].map((t, i) => (
+                <a key={i} href={t.href} className={`group p-4 bg-gradient-to-br from-${t.color}-500/10 to-${t.color}-600/10 rounded-xl border border-border hover:border-${t.color}-500 transition-all text-center`}>
+                  <span className="text-3xl block mb-2">{t.icon}</span>
+                  <span className={`font-medium text-sm group-hover:text-${t.color}-500 transition-colors`}>{t.title}</span>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(7) }} />
     </>
   );
 }

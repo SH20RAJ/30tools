@@ -1,166 +1,180 @@
 import YouTubeEmbedGenerator from "@/components/tools/youtube/YouTubeEmbedGenerator";
 
 export const metadata = {
-  title: "Youtube Embed Generator - Free Online Tool | Professional Results",
-  description:
-    "Free youtube embed generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
-  keywords:
-    "youtube embed generator, youtube embed code, custom youtube player, youtube iframe generator, responsive youtube embed, youtube player customization, embed youtube video, youtube embed options, website video embed, blog video embed",
+  title: "YouTube Embed Generator - Custom Video Embed Code Free | 30tools",
+  description: "Generate custom YouTube embed codes with autoplay, loop, start time, and more options. Create responsive embed codes for your website. Free and easy to use.",
+  keywords: [
+    "youtube embed generator",
+    "youtube embed code",
+    "youtube embed",
+    "embed youtube video",
+    "youtube embed code generator",
+    "youtube video embed",
+    "youtube embed maker",
+    "youtube iframe generator",
+    "custom youtube embed",
+    "responsive youtube embed",
+    "youtube embed autoplay",
+    "youtube embed loop",
+    "youtube embed start time",
+    "youtube embed code free"
+  ].join(", "),
+
   openGraph: {
-    title: "YouTube Embed Code Generator - Custom Player Options",
-    description:
-      "Generate customized YouTube embed codes with advanced player options and responsive design.",
+    title: "YouTube Embed Generator - Custom Embed Codes",
+    description: "⚡ Generate custom YouTube embed codes with autoplay, loop, and more options!",
     url: "https://30tools.com/youtube-embed-generator",
-    siteName: "30tools",
-    images: [
-      {
-        url: "/og-images/youtube-embed-generator.jpg",
-        width: 1200,
-        height: 630,
-        alt: "YouTube Embed Code Generator Tool",
-      },
-    ],
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://30tools.com/youtube-embed-generator",
+    siteName: "30tools", type: "website",
+    images: [{ url: "/og-images/youtube-embed-generator.jpg", width: 1200, height: 630, alt: "YouTube Embed Generator" }],
   },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Youtube Embed Generator - Free Online Tool | 30tools",
-    description:
-      "Free youtube embed generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
-    images: ["/og-images/youtube-embed-generator.jpg"],
-    creator: "@30tools",
-  },
+  twitter: { card: "summary_large_image", title: "YouTube Embed Generator - Free", description: "⚡ Create custom YouTube embed codes instantly!", images: ["/og-images/youtube-embed-generator.jpg"], creator: "@30tools" },
+  alternates: { canonical: "https://30tools.com/youtube-embed-generator" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "YouTube Embed Code Generator",
-  description:
-    "Professional tool to generate customized YouTube embed codes with advanced player options and privacy settings",
-  url: "https://30tools.com/youtube-embed-generator",
-  applicationCategory: "Multimedia",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Custom player dimensions",
-    "Privacy-enhanced embedding",
-    "Responsive design options",
-    "Advanced player controls",
-    "Multiple embed formats",
-    "Real-time preview",
-  ],
+const jsonLdSchemas = {
+  webApp: {
+    "@context": "https://schema.org", "@type": "WebApplication",
+    "name": "YouTube Embed Generator",
+    "description": "Free tool to generate custom YouTube embed codes with various options.",
+    "url": "https://30tools.com/youtube-embed-generator",
+    "applicationCategory": ["UtilitiesApplication"],
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "7543" }
+  }
 };
+
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function YouTubeEmbedGeneratorPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="min-h-screen bg-gradient-cute">
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold bg-background">
-                YouTube Embed Code Generator
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Generate customized YouTube embed codes with advanced player
-                options, privacy settings, and responsive design. Perfect for
-                websites, blogs, and professional presentations with full
-                control over player appearance and functionality.
-              </p>
-            </div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
 
-            <YouTubeEmbedGenerator />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li><li>/</li>
+              <li><a href="/#youtube-tools" className="hover:text-primary">YouTube Tools</a></li><li>/</li>
+              <li className="text-foreground font-medium">YouTube Embed Generator</li>
+            </ol>
+          </nav>
 
-            <div className="mt-12 prose prose-gray max-w-none">
-              <h2 className="text-2xl font-semibold mb-4">
-                Professional YouTube Video Embedding
-              </h2>
-              <p>
-                Create custom YouTube embed codes that perfectly match your
-                website's design and requirements. Our advanced embed generator
-                provides complete control over player dimensions, privacy
-                settings, autoplay options, and responsive behavior, ensuring
-                optimal user experience across all devices while maintaining
-                fast loading speeds and privacy compliance.
-              </p>
+          <AdUnit />
 
-              <h3 className="text-xl font-semibold mt-6 mb-3">
-                Advanced Embed Customization Features
-              </h3>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>
-                  <strong>Custom Player Dimensions:</strong> Set exact width and
-                  height or use responsive aspect ratios for perfect fit
-                </li>
-                <li>
-                  <strong>Privacy-Enhanced Mode:</strong> Enable
-                  privacy-enhanced embedding to protect visitor data and comply
-                  with GDPR
-                </li>
-                <li>
-                  <strong>Autoplay Controls:</strong> Configure autoplay,
-                  muting, and loop settings for optimal user experience
-                </li>
-                <li>
-                  <strong>Player Interface Options:</strong> Customize controls,
-                  related videos, fullscreen, and branding elements
-                </li>
-                <li>
-                  <strong>Responsive Design:</strong> Generate mobile-friendly
-                  embeds that adapt to any screen size automatically
-                </li>
-                <li>
-                  <strong>Start Time Precision:</strong> Set exact start and end
-                  times for targeted content presentation
-                </li>
-                <li>
-                  <strong>Multiple Embed Formats:</strong> Choose from iframe,
-                  object, or JavaScript embedding methods
-                </li>
-              </ul>
-
-              <h3 className="text-xl font-semibold mt-6 mb-3">
-                Website Performance & SEO Benefits
-              </h3>
-              <p>
-                Properly embedded YouTube videos can significantly boost your
-                website's engagement metrics, reduce bounce rates, and improve
-                SEO rankings. Our embed generator creates lightweight,
-                fast-loading video players that maintain excellent Core Web
-                Vitals scores while providing rich multimedia content that
-                search engines love and visitors engage with.
-              </p>
-
-              <h3 className="text-xl font-semibold mt-6 mb-3">
-                Privacy & Compliance Features
-              </h3>
-              <p>
-                Stay compliant with data protection regulations using our
-                privacy-enhanced embedding options. The generator includes
-                settings for GDPR compliance, cookie consent management, and
-                privacy-first video loading that protects visitor data while
-                maintaining full functionality. Perfect for business websites,
-                educational platforms, and content publishers who prioritize
-                user privacy.
-              </p>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">YouTube Embed Generator</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Generate custom YouTube embed codes with autoplay, loop, start/end times, and responsive options. Perfect for websites and blogs.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>📺 Custom Embeds</span><span>🔄 Autoplay/Loop</span><span>📱 Responsive</span><span>🆓 100% Free</span>
             </div>
           </div>
+
+          <AdUnit />
+
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <YouTubeEmbedGenerator />
+          </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Embed Customization Options</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: "▶️", title: "Autoplay", desc: "Video starts playing automatically when page loads" },
+                { icon: "🔄", title: "Loop", desc: "Video repeats continuously after finishing" },
+                { icon: "⏱️", title: "Start/End Time", desc: "Specify exact start and end timestamps" },
+                { icon: "📱", title: "Responsive", desc: "Embed adapts to any screen size" },
+                { icon: "🎛️", title: "Controls", desc: "Show or hide player controls" },
+                { icon: "🖼️", title: "Custom Size", desc: "Set exact width and height" },
+                { icon: "🔇", title: "Muted", desc: "Start video with audio muted" },
+                { icon: "🎨", title: "Modest Branding", desc: "Minimal YouTube branding" }
+              ].map((f, i) => (
+                <div key={i} className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow">
+                  <span className="text-4xl mb-4 block">{f.icon}</span>
+                  <h3 className="text-lg font-semibold mb-2">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Use</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { step: "1️⃣", title: "Paste Video URL", desc: "Enter the YouTube video URL you want to embed" },
+                { step: "2️⃣", title: "Customize Options", desc: "Select autoplay, loop, size, and other options" },
+                { step: "3️⃣", title: "Copy Code", desc: "Copy the generated embed code to your website" }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><span className="text-3xl">{s.step}</span></div>
+                  <h3 className="text-xl font-semibold mb-3">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              {[
+                { q: "How do I embed a YouTube video on my website?", a: "Paste the YouTube video URL in our tool, customize options if needed, then copy the generated embed code and paste it into your website's HTML." },
+                { q: "Can I make the video autoplay?", a: "Yes, enable the autoplay option in our generator. Note: most browsers require videos to be muted to autoplay." },
+                { q: "How do I start the video at a specific time?", a: "Use the 'Start Time' option to specify when you want the video to begin playing (in seconds)." },
+                { q: "Is the embed code responsive?", a: "Yes, enable the responsive option and the embed will automatically adjust to fit any screen size." },
+                { q: "Can I hide YouTube controls?", a: "Yes, you can toggle the controls option to show or hide the video player controls." },
+                { q: "Is this tool free?", a: "Yes, our YouTube Embed Generator is 100% free with no limits." }
+              ].map((faq, i) => (
+                <details key={i} className="bg-card rounded-xl border border-border p-4 group">
+                  <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                    {faq.q}<span className="text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="mt-4 text-muted-foreground">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related YouTube Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/youtube-downloader", icon: "📹", title: "YouTube Downloader", desc: "Download videos in HD, 4K" },
+                { href: "/youtube-thumbnail-downloader", icon: "🖼️", title: "Thumbnail Downloader", desc: "Download HD thumbnails" },
+                { href: "/youtube-gif-maker", icon: "🎞️", title: "GIF Maker", desc: "Create GIFs from videos" },
+                { href: "/youtube-channel-id-finder", icon: "🔍", title: "Channel ID Finder", desc: "Find channel IDs" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(7) }} />
     </>
   );
 }

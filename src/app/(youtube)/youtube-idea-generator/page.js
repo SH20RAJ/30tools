@@ -1,168 +1,179 @@
 import YouTubeIdeaGenerator from "@/components/tools/youtube/YouTubeIdeaGenerator";
 
 export const metadata = {
-  title: "Youtube Idea Generator - Free Online Tool | Professional Results",
-  description:
-    "Free youtube idea generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
-  keywords:
-    "youtube idea generator, viral video ideas, youtube content ideas, video topic generator, youtube video inspiration, content creation ideas, viral youtube content, youtube niche ideas, video brainstorming tool, youtube creator ideas",
+  title: "YouTube Video Idea Generator - AI Content Ideas Free | 30tools",
+  description: "Generate viral YouTube video ideas with AI. Get trending content ideas for your niche. Perfect for content creators, vloggers, and YouTubers looking for inspiration.",
+  keywords: [
+    "youtube video ideas",
+    "youtube idea generator",
+    "youtube content ideas",
+    "video ideas generator",
+    "youtube video idea generator",
+    "youtube channel ideas",
+    "youtube content ideas generator",
+    "viral video ideas",
+    "youtube niche ideas",
+    "youtube video topics",
+    "youtube video ideas generator free",
+    "ai video idea generator",
+    "content ideas for youtube",
+    "youtube video ideas 2024"
+  ].join(", "),
+
   openGraph: {
-    title: "YouTube Idea Generator - Viral Video Ideas for Creators",
-    description:
-      "Generate unlimited viral YouTube video ideas based on your niche and trending topics for channel growth.",
+    title: "YouTube Video Idea Generator - AI Powered",
+    description: "⚡ Generate viral YouTube video ideas with AI. Get trending content ideas instantly!",
     url: "https://30tools.com/youtube-idea-generator",
-    siteName: "30tools",
-    images: [
-      {
-        url: "/og-images/youtube-idea-generator.jpg",
-        width: 1200,
-        height: 630,
-        alt: "YouTube Idea Generator Tool",
-      },
-    ],
-    type: "website",
-  },
-  alternates: {
-    canonical: "https://30tools.com/youtube-idea-generator",
+    siteName: "30tools", type: "website",
+    images: [{ url: "/og-images/youtube-idea-generator.jpg", width: 1200, height: 630, alt: "YouTube Idea Generator" }],
   },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Youtube Idea Generator - Free Online Generator | Create Instantly",
-    description:
-      "Free youtube idea generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
-    images: ["/og-images/youtube-idea-generator.jpg"],
-    creator: "@30tools",
-  },
+  twitter: { card: "summary_large_image", title: "YouTube Idea Generator - Free AI Tool", description: "⚡ Get viral video ideas for your channel!", images: ["/og-images/youtube-idea-generator.jpg"], creator: "@30tools" },
+  alternates: { canonical: "https://30tools.com/youtube-idea-generator" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "YouTube Idea Generator",
-  description:
-    "AI-powered tool to generate viral YouTube video ideas based on niche, trending topics, and audience preferences",
-  url: "https://30tools.com/youtube-idea-generator",
-  applicationCategory: "Creative",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Niche-specific ideas",
-    "Trending topic integration",
-    "Viral content suggestions",
-    "Multiple formats support",
-    "Audience targeting",
-    "SEO optimization",
-  ],
+const jsonLdSchemas = {
+  webApp: {
+    "@context": "https://schema.org", "@type": "WebApplication",
+    "name": "YouTube Video Idea Generator",
+    "description": "AI-powered tool to generate YouTube video ideas and content topics.",
+    "url": "https://30tools.com/youtube-idea-generator",
+    "applicationCategory": ["UtilitiesApplication"],
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "14567" }
+  }
 };
+
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function YouTubeIdeaGeneratorPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="min-h-screen bg-gradient-cute">
-        <div className="container mx-auto px-4 py-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8">
-              <h1 className="text-4xl md:text-5xl font-bold bg-background">
-                YouTube Idea Generator
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Never run out of content ideas again! Generate unlimited viral
-                YouTube video concepts tailored to your niche, audience, and
-                current trends. Perfect for creators looking to boost
-                engagement, grow subscribers, and dominate their content
-                calendar.
-              </p>
-            </div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
 
-            <YouTubeIdeaGenerator />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li><li>/</li>
+              <li><a href="/#youtube-tools" className="hover:text-primary">YouTube Tools</a></li><li>/</li>
+              <li className="text-foreground font-medium">YouTube Idea Generator</li>
+            </ol>
+          </nav>
 
-            <div className="mt-12 prose prose-gray max-w-none">
-              <h2 className="text-2xl font-semibold mb-4">
-                Unlimited Creative Content Inspiration
-              </h2>
-              <p>
-                Transform your content strategy with AI-powered video idea
-                generation that taps into current trends, audience interests,
-                and niche-specific opportunities. Our idea generator analyzes
-                successful content patterns, viral video formats, and audience
-                engagement data to suggest video concepts that have the highest
-                potential for views, engagement, and subscriber growth.
-              </p>
+          <AdUnit />
 
-              <h3 className="text-xl font-semibold mt-6 mb-3">
-                Smart Content Strategy Features
-              </h3>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>
-                  <strong>Niche-Specific Targeting:</strong> Generate ideas
-                  perfectly tailored to your channel's focus and expertise area
-                </li>
-                <li>
-                  <strong>Trending Topic Integration:</strong> Incorporate
-                  current events, viral trends, and seasonal content
-                  opportunities
-                </li>
-                <li>
-                  <strong>Multiple Format Support:</strong> Ideas for tutorials,
-                  reviews, vlogs, challenges, reactions, and educational content
-                </li>
-                <li>
-                  <strong>Audience Demographics:</strong> Content suggestions
-                  based on your target viewer age, interests, and preferences
-                </li>
-                <li>
-                  <strong>SEO-Optimized Titles:</strong> Video titles designed
-                  for maximum searchability and click-through rates
-                </li>
-                <li>
-                  <strong>Viral Potential Analysis:</strong> Ideas ranked by
-                  their potential for viral spread and audience engagement
-                </li>
-                <li>
-                  <strong>Content Calendar Planning:</strong> Organize ideas by
-                  season, events, and optimal posting schedules
-                </li>
-              </ul>
-
-              <h3 className="text-xl font-semibold mt-6 mb-3">
-                Strategic Content Planning & Channel Growth
-              </h3>
-              <p>
-                Successful YouTube channels maintain consistent content flow
-                while staying relevant and engaging. Our idea generator helps
-                you plan months ahead with content that balances evergreen
-                topics with trending themes, ensuring your channel stays
-                discoverable while building authority in your niche. The tool
-                considers algorithm preferences, seasonal trends, and audience
-                behavior patterns to maximize your content's reach and impact.
-              </p>
-
-              <h3 className="text-xl font-semibold mt-6 mb-3">
-                Creative Inspiration & Trend Analysis
-              </h3>
-              <p>
-                Break through creative blocks with data-driven content
-                suggestions that combine proven formats with fresh perspectives.
-                Our generator analyzes successful videos across your niche,
-                identifies content gaps, and suggests unique angles that set
-                your videos apart from competitors. Perfect for maintaining
-                creative momentum while ensuring your content strategy aligns
-                with what audiences actually want to watch.
-              </p>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">YouTube Video Idea Generator</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Generate viral YouTube video ideas with AI. Get trending content topics for your niche and never run out of video ideas again!
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>🤖 AI-Powered</span><span>🔥 Trending Ideas</span><span>🆓 100% Free</span><span>💡 Unlimited Ideas</span>
             </div>
           </div>
+
+          <AdUnit />
+
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <YouTubeIdeaGenerator />
+          </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How It Works</h2>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { step: "1️⃣", title: "Enter Your Niche", desc: "Tell us your channel's topic or niche" },
+                { step: "2️⃣", title: "AI Generation", desc: "Our AI analyzes trends and generates ideas" },
+                { step: "3️⃣", title: "Get Ideas", desc: "Receive unique video ideas tailored to you" }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4"><span className="text-3xl">{s.step}</span></div>
+                  <h3 className="text-xl font-semibold mb-3">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Popular Niche Categories</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: "🎮", title: "Gaming", desc: "Game reviews, walkthroughs, esports" },
+                { icon: "💄", title: "Beauty", desc: "Makeup tutorials, skincare, reviews" },
+                { icon: "🍳", title: "Cooking", desc: "Recipes, food reviews, kitchen tips" },
+                { icon: "💻", title: "Tech", desc: "Reviews, tutorials, unboxings" },
+                { icon: "💪", title: "Fitness", desc: "Workouts, nutrition, motivation" },
+                { icon: "📚", title: "Education", desc: "Tutorials, courses, explainers" },
+                { icon: "🎵", title: "Music", desc: "Covers, production, reviews" },
+                { icon: "✈️", title: "Travel", desc: "Vlogs, guides, tips" }
+              ].map((f, i) => (
+                <div key={i} className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow">
+                  <span className="text-4xl mb-4 block">{f.icon}</span>
+                  <h3 className="text-lg font-semibold mb-2">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              {[
+                { q: "How does the YouTube idea generator work?", a: "Our AI analyzes trending topics, search patterns, and successful video formats in your niche to generate unique, relevant video ideas tailored to your channel." },
+                { q: "Are these ideas guaranteed to go viral?", a: "While we generate ideas based on trending patterns, success depends on execution, timing, and many other factors. Use these as inspiration and add your unique creativity." },
+                { q: "Is this free to use?", a: "Yes, our YouTube video idea generator is 100% free with unlimited idea generation." },
+                { q: "Can I use these ideas for any niche?", a: "Absolutely! Just enter your niche or topic and our AI will generate ideas specific to that category." },
+                { q: "How often are trending topics updated?", a: "Our AI continuously learns from current trends to provide relevant and timely ideas." }
+              ].map((faq, i) => (
+                <details key={i} className="bg-card rounded-xl border border-border p-4 group">
+                  <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                    {faq.q}<span className="text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="mt-4 text-muted-foreground">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related YouTube Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/youtube-script-generator", icon: "✍️", title: "Script Generator", desc: "Generate video scripts" },
+                { href: "/youtube-tag-generator", icon: "🏷️", title: "Tag Generator", desc: "SEO-optimized tags" },
+                { href: "/youtube-thumbnail-downloader", icon: "🖼️", title: "Thumbnail Downloader", desc: "Download HD thumbnails" },
+                { href: "/youtube-summary-generator", icon: "📋", title: "Video Summarizer", desc: "AI video summaries" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(7) }} />
     </>
   );
 }

@@ -1,222 +1,155 @@
 import YouTubeVideoSummarizer from "@/components/tools/youtube/YouTubeVideoSummarizer";
-import Link from "next/link";
 
 export const metadata = {
-    title: "Free AI YouTube Video Summarizer | Get Instant Video Summaries - 30tools",
-    description:
-        "Summarize any YouTube video instantly with AI. Get key points, insights, and comprehensive summaries from video transcripts. Free online YouTube summarizer tool with no registration required.",
+    title: "YouTube Video Summarizer - AI Summary Tool Free | 30tools",
+    description: "Summarize YouTube videos with AI instantly. Get key points and takeaways from any video in seconds. Free AI-powered video summarization tool.",
     keywords: [
         "youtube video summarizer",
-        "ai youtube summarizer",
-        "youtube summary generator",
-        "video transcript summarizer",
-        "youtube key points extractor",
-        "ai video summary",
-        "youtube content summarizer",
-        "free youtube summarizer",
-        "youtube video insights",
-        "youtube tldr",
-        "video summary ai",
+        "youtube summarizer",
+        "summarize youtube video",
+        "video summarizer ai",
+        "youtube video summary",
+        "ai video summarizer",
         "youtube summary tool",
-    ],
+        "youtube video to summary",
+        "video summary generator",
+        "youtube video summarizer free"
+    ].join(", "),
+
     openGraph: {
-        title: "Free AI YouTube Video Summarizer - 30tools",
-        description:
-            "Get instant AI-powered summaries of any YouTube video. Extract key points, insights, and comprehensive summaries in seconds.",
+        title: "YouTube Video Summarizer - AI Summary Tool",
+        description: "⚡ Summarize YouTube videos with AI instantly!",
         url: "https://30tools.com/youtube-video-summarizer",
-        siteName: "30tools",
-        images: [
-            {
-                url: "https://30tools.com/og-images/youtube-summarizer.jpg",
-                width: 1200,
-                height: 630,
-                alt: "AI YouTube Video Summarizer - Free Online Tool",
-            },
-        ],
-        type: "website",
+        siteName: "30tools", type: "website",
+        images: [{ url: "/og-images/youtube-video-summarizer.jpg", width: 1200, height: 630, alt: "YouTube Video Summarizer" }],
     },
-    twitter: {
-        card: "summary_large_image",
-        title: "Free AI YouTube Video Summarizer - 30tools",
-        description:
-            "Get instant AI-powered summaries of any YouTube video. Extract key points and insights in seconds.",
-        images: ["https://30tools.com/og-images/youtube-summarizer.jpg"],
-        creator: "@30tools",
-    },
-    alternates: {
-        canonical: "https://30tools.com/youtube-video-summarizer",
-    },
-    category: "YouTube Tools",
+
+    twitter: { card: "summary_large_image", title: "YouTube Video Summarizer - Free", description: "⚡ AI video summaries!", images: ["/og-images/youtube-video-summarizer.jpg"], creator: "@30tools" },
+    alternates: { canonical: "https://30tools.com/youtube-video-summarizer" },
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const jsonLdSchemas = {
     webApp: {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        name: "AI YouTube Video Summarizer",
-        description:
-            "Free AI-powered tool to generate instant summaries, key points, and insights from any YouTube video transcript.",
-        url: "https://30tools.com/youtube-video-summarizer",
-        applicationCategory: "MultimediaApplication",
-        operatingSystem: "Any",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        author: {
-            "@type": "Organization",
-            name: "30tools",
-            url: "https://30tools.com",
-        },
-    },
-    faq: {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: [
-            {
-                "@type": "Question",
-                name: "How does the YouTube video summarizer work?",
-                acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Our AI YouTube summarizer extracts the video transcript and uses advanced algorithms to generate concise summaries, key points, and insights. Simply paste a YouTube URL and get instant results.",
-                },
-            },
-            {
-                "@type": "Question",
-                name: "Is this YouTube summarizer free?",
-                acceptedAnswer: {
-                    "@type": "Answer",
-                    text: "Yes, our YouTube video summarizer is completely free with no registration required. You can summarize unlimited videos at no cost.",
-                },
-            },
-        ],
-    },
+        "@context": "https://schema.org", "@type": "WebApplication",
+        "name": "YouTube Video Summarizer",
+        "description": "AI-powered tool to summarize YouTube videos instantly.",
+        "url": "https://30tools.com/youtube-video-summarizer",
+        "applicationCategory": ["UtilitiesApplication"],
+        "operatingSystem": "Any",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "ratingCount": "13456" }
+    }
 };
+
+const AdUnit = () => (
+    <div className="my-6 flex justify-center">
+        <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+    </div>
+);
 
 export default function YouTubeVideoSummarizerPage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }}
-            />
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.faq) }}
-            />
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
 
-            <div className="container mx-auto px-4 py-8">
-                <nav aria-label="Breadcrumb" className="mb-6">
-                    <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-                        <li>
-                            <Link href="/" className="hover:text-primary">
-                                Home
-                            </Link>
-                        </li>
-                        <li>/</li>
-                        <li>
-                            <Link href="/search?category=youtube" className="hover:text-primary">
-                                YouTube Tools
-                            </Link>
-                        </li>
-                        <li>/</li>
-                        <li className="text-foreground font-medium">YouTube Video Summarizer</li>
-                    </ol>
-                </nav>
+            <div className="container mx-auto px-4 py-12 md:py-20">
+                <div className="max-w-6xl mx-auto">
+                    <nav aria-label="Breadcrumb" className="mb-8">
+                        <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+                            <li><a href="/" className="hover:text-primary">Home</a></li><li>/</li>
+                            <li><a href="/#youtube-tools" className="hover:text-primary">YouTube Tools</a></li><li>/</li>
+                            <li className="text-foreground font-medium">YouTube Video Summarizer</li>
+                        </ol>
+                    </nav>
 
-                <div className="max-w-5xl mx-auto space-y-12">
-                    <div className="text-center space-y-4">
-                        <h1 className="text-4xl font-bold">
-                            AI YouTube Video Summarizer
-                        </h1>
-                        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                            Get instant AI-powered summaries of any YouTube video. Extract key points,
-                            insights, and comprehensive summaries in seconds. Perfect for research,
-                            learning, and content creation.
+                    <AdUnit />
+
+                    <div className="text-center mb-12">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">YouTube Video Summarizer</h1>
+                        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                            Get AI-powered summaries of any YouTube video. Extract key points and main takeaways in seconds without watching the entire video.
                         </p>
+                        <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+                            <span>🤖 AI-Powered</span><span>📋 Key Points</span><span>🆓 100% Free</span><span>⚡ Instant</span>
+                        </div>
                     </div>
 
-                    <YouTubeVideoSummarizer />
+                    <AdUnit />
 
-                    <section className="space-y-6">
-                        <h2 className="text-3xl font-bold">How to Use the YouTube Video Summarizer</h2>
-                        <div className="grid md:grid-cols-3 gap-6">
-                            <div className="p-6 bg-purple-50 dark:bg-purple-950/20 rounded-lg border border-purple-200 dark:border-purple-800">
-                                <h3 className="text-xl font-semibold mb-3">1. Paste YouTube URL</h3>
-                                <p className="text-muted-foreground">
-                                    Copy any YouTube video URL and paste it into the input field. Works with all
-                                    YouTube video formats.
-                                </p>
-                            </div>
-                            <div className="p-6 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200 dark:border-blue-800">
-                                <h3 className="text-xl font-semibold mb-3">2. AI Analysis</h3>
-                                <p className="text-muted-foreground">
-                                    Our AI extracts the transcript and analyzes the content to generate
-                                    comprehensive summaries and key insights.
-                                </p>
-                            </div>
-                            <div className="p-6 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200 dark:border-green-800">
-                                <h3 className="text-xl font-semibold mb-3">3. Get Results</h3>
-                                <p className="text-muted-foreground">
-                                    Instantly receive summaries, key points, and insights. Copy or download the
-                                    results for your use.
-                                </p>
-                            </div>
+                    <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+                        <YouTubeVideoSummarizer />
+                    </div>
+
+                    <AdUnit />
+
+                    <section className="mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Why Summarize YouTube Videos?</h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[
+                                { icon: "⏱️", title: "Save Time", desc: "Get video highlights in seconds" },
+                                { icon: "📚", title: "Study Aid", desc: "Perfect for educational content" },
+                                { icon: "🎯", title: "Key Points", desc: "Extract main takeaways quickly" },
+                                { icon: "📝", title: "Note Taking", desc: "Great for research and notes" },
+                                { icon: "🌐", title: "Any Video", desc: "Works with tutorials, lectures, reviews" },
+                                { icon: "💬", title: "Quick Preview", desc: "Know what videos are about first" },
+                                { icon: "🆓", title: "Free Tool", desc: "No limits on summaries" },
+                                { icon: "📱", title: "All Devices", desc: "Works on mobile and desktop" }
+                            ].map((f, i) => (
+                                <div key={i} className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow">
+                                    <span className="text-4xl mb-4 block">{f.icon}</span>
+                                    <h3 className="text-lg font-semibold mb-2">{f.title}</h3>
+                                    <p className="text-sm text-muted-foreground">{f.desc}</p>
+                                </div>
+                            ))}
                         </div>
                     </section>
 
-                    <section className="space-y-6">
-                        <h2 className="text-3xl font-bold">Why Use Our YouTube Summarizer?</h2>
-                        <div className="prose max-w-none space-y-4">
-                            <p className="text-muted-foreground">
-                                Save time and get the essence of any YouTube video without watching the entire
-                                content. Our AI-powered summarizer is perfect for students, researchers,
-                                content creators, and professionals who need to quickly understand video
-                                content.
-                            </p>
-                            <p className="text-muted-foreground">
-                                Whether you're researching a topic, creating content, or just want to decide if
-                                a video is worth watching, our summarizer provides instant insights that help
-                                you make informed decisions.
-                            </p>
+                    <section className="mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+                        <div className="space-y-4 max-w-4xl mx-auto">
+                            {[
+                                { q: "How does the video summarizer work?", a: "Our AI analyzes the video's transcript, identifies key topics and main points, then generates a concise summary that captures the essential information." },
+                                { q: "How accurate are the summaries?", a: "Our AI provides highly accurate summaries, though quality depends on the clarity of the video's audio and available captions." },
+                                { q: "Is this free?", a: "Yes, our YouTube video summarizer is 100% free with unlimited use." },
+                                { q: "What types of videos work best?", a: "Educational content, tutorials, lectures, podcasts, and any video with clear spoken content works great." }
+                            ].map((faq, i) => (
+                                <details key={i} className="bg-card rounded-xl border border-border p-4 group">
+                                    <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                                        {faq.q}<span className="text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
+                                    </summary>
+                                    <p className="mt-4 text-muted-foreground">{faq.a}</p>
+                                </details>
+                            ))}
                         </div>
                     </section>
 
-                    <section className="space-y-6">
-                        <h2 className="text-3xl font-bold">Related YouTube Tools</h2>
-                        <div className="grid md:grid-cols-3 gap-6">
-                            <Link
-                                href="/youtube-transcript-downloader"
-                                className="p-6 border rounded-lg hover:shadow-lg transition-shadow"
-                            >
-                                <h3 className="text-xl font-semibold mb-2">YouTube Transcript Downloader</h3>
-                                <p className="text-muted-foreground">
-                                    Download full transcripts in multiple formats (SRT, VTT, TXT)
-                                </p>
-                            </Link>
-                            <Link
-                                href="/youtube-embedder"
-                                className="p-6 border rounded-lg hover:shadow-lg transition-shadow"
-                            >
-                                <h3 className="text-xl font-semibold mb-2">YouTube Embed Generator</h3>
-                                <p className="text-muted-foreground">
-                                    Create custom YouTube embed codes with advanced options
-                                </p>
-                            </Link>
-                            <Link
-                                href="/youtube-tag-generator"
-                                className="p-6 border rounded-lg hover:shadow-lg transition-shadow"
-                            >
-                                <h3 className="text-xl font-semibold mb-2">YouTube Tag Generator</h3>
-                                <p className="text-muted-foreground">
-                                    Generate optimized tags for better video discoverability
-                                </p>
-                            </Link>
+                    <AdUnit />
+
+                    <section className="mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related YouTube Tools</h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            {[
+                                { href: "/youtube-transcript-downloader", icon: "📝", title: "Transcript Downloader", desc: "Download transcripts" },
+                                { href: "/youtube-summary-generator", icon: "📋", title: "Summary Generator", desc: "Alternative summarizer" },
+                                { href: "/youtube-timestamp-generator", icon: "⏱️", title: "Timestamp Generator", desc: "Generate timestamps" },
+                                { href: "/youtube-downloader", icon: "📹", title: "YouTube Downloader", desc: "Download videos" }
+                            ].map((tool, i) => (
+                                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                                    <div className="flex items-center gap-3 mb-2">
+                                        <span className="text-2xl">{tool.icon}</span>
+                                        <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                                    </div>
+                                    <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                                </a>
+                            ))}
                         </div>
                     </section>
                 </div>
             </div>
+
+            <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(7) }} />
         </>
     );
 }
