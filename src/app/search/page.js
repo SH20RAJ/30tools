@@ -2,7 +2,7 @@ import { getAllTools } from "@/constants/tools-utils";
 import SearchPageServer from "./SearchPageServer";
 
 export const metadata = {
-  title: "Search Tools - Find the Perfect Online Tool | 30tools",
+  title: "Search Tools | 30tools",
   description:
     "Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more. Fast, free, and easy to use.",
   keywords:

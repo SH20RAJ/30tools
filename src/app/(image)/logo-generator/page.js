@@ -14,7 +14,7 @@ import {
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-    title: "Free Logo Generator - Create Professional Logos Online | 30tools",
+    title: "Logo Generator - AI Powered | 30tools",
     description:
         "Create professional logos for your business or brand in seconds. Free online logo maker with customizable icons, fonts, and colors. Download high-quality PNGs.",
     keywords:

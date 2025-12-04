@@ -1,7 +1,7 @@
 import CSSGradientTool from "@/components/tools/design/CSSGradientTool";
 
 export const metadata = {
-  title: "Css Gradient Generator - Free Online Tool | Professional Results",
+  title: "CSS Gradient Generator | Free | 30tools",
   description:
     "Free css gradient generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords:

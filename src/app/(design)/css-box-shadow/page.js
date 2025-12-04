@@ -1,7 +1,7 @@
 import CSSBoxShadow from "@/components/tools/design/CSSBoxShadowTool";
 
 export const metadata = {
-  title: "CSS Box Shadow Generator - Create CSS Shadows | 30tools",
+  title: "CSS Box Shadow Generator | 30tools",
   description:
     "Professional css box shadow with instant results. Free online tool for students, professionals, and businesses worldwide.",
   keywords:

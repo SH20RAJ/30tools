@@ -130,6 +130,15 @@ export default function WordCounterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <div className="container mx-auto px-4 py-8 text-center">
+        <h1 className="text-4xl font-bold mb-4">
+          Word Counter - Count Words & Characters
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          Professional word counter tool for writers, students, and marketers.
+          Count words, characters, sentences, and paragraphs in real-time.
+        </p>
+      </div>
       <WordCounterTool />
     </>
   );

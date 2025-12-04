@@ -81,5 +81,16 @@ const _jsonLd = {
 };
 
 export default function RegexTesterPage() {
-  return <RegexTesterTool />;
+  <div className="min-h-screen bg-background py-8">
+    <div className="container mx-auto px-4 text-center mb-8">
+      <h1 className="text-4xl font-bold mb-4">
+        Free Regex Tester - Test Regular Expressions Online
+      </h1>
+      <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        Test and debug regular expressions instantly. See all matches, groups,
+        and errors in real time.
+      </p>
+    </div>
+    <RegexTesterTool />
+  </div>
 }

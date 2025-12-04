@@ -57,16 +57,16 @@ export default function WordCounterTool() {
     // Sentence count (split by sentence-ending punctuation)
     const sentences = trimmedText
       ? trimmedText
-          .split(/[.!?]+/)
-          .filter((sentence) => sentence.trim().length > 0)
+        .split(/[.!?]+/)
+        .filter((sentence) => sentence.trim().length > 0)
       : [];
     const sentenceCount = sentences.length;
 
     // Paragraph count (split by double line breaks)
     const paragraphs = trimmedText
       ? trimmedText
-          .split(/\n\s*\n/)
-          .filter((paragraph) => paragraph.trim().length > 0)
+        .split(/\n\s*\n/)
+        .filter((paragraph) => paragraph.trim().length > 0)
       : [];
     const paragraphCount = paragraphs.length;
 
@@ -230,34 +230,7 @@ Generated on: ${new Date().toLocaleString()}
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl py-8">
-        {/* Header */}
-        <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="mb-4">
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
-
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-              <TypeIcon className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold">Word Counter</h1>
-              <p className="text-muted-foreground">
-                Count words, characters, sentences, and more
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-4">
-            <Badge variant="secondary">Real-time Analysis</Badge>
-            <Badge variant="secondary">Reading Time</Badge>
-            <Badge variant="secondary">Writing Statistics</Badge>
-            <Badge variant="secondary">Free Forever</Badge>
-          </div>
-        </div>
+        {/* Header - Moved to page.js for SEO */}
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Text Input Area */}

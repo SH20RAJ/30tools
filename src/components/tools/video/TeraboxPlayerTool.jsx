@@ -180,16 +180,7 @@ export default function TeraboxPlayerTool() {
   return (
     <div className="min-h-screen bg-background py-12">
       <div className="container mx-auto px-4 max-w-6xl">
-        {/* Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold mb-4">
-            Terabox Video Player & Downloader
-          </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Paste a Terabox URL to instantly play and download videos.
-            Auto-loading with shareable links.
-          </p>
-        </div>
+        {/* Header - Moved to page.js for SEO */}
 
         {/* Announcement Banner */}
         <div className="mb-8">

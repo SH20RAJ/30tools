@@ -3,7 +3,7 @@ import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVi
 export const metadata = {
   metadataBase: new URL("https://30tools.com"),
   title:
-    "Free Universal Video Downloader - Download from 10+ Platforms | No Watermark | 30tools",
+    "Universal Video Downloader | 30tools",
   description:
     "Download videos from TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, and more. Free, fast, no watermark, HD quality. No registration required. Try now!",
   keywords: [

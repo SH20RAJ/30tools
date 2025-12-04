@@ -14,7 +14,7 @@ import {
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-  title: "Free Image Compressor - Compress JPEG, PNG, WebP Online | 30tools",
+  title: "Image Compressor - JPEG, PNG | 30tools",
   description:
     "Compress images online for free. Reduce file size of JPG, PNG, and WebP images by up to 80% without losing quality. Bulk compression supported.",
   keywords:

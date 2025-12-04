@@ -14,7 +14,7 @@ import {
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-    title: "Free Favicon Generator - Create Website Icons Online | 30tools",
+    title: "Favicon Generator - Free | 30tools",
     description:
         "Create custom favicons for your website in seconds. Convert text, emojis, or images to high-quality favicons. Download in standard sizes.",
     keywords:

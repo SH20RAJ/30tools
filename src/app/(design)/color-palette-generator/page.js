@@ -1,7 +1,7 @@
 import ColorPaletteGeneratorTool from "@/components/tools/design/ColorPaletteGeneratorTool";
 
 export const metadata = {
-  title: "Color Palette Generator - Create Beautiful Color Schemes",
+  title: "Color Palette Generator | 30tools",
   description:
     "Free color palette generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords:

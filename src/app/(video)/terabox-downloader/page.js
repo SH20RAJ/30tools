@@ -103,6 +103,15 @@ export default function TeraboxDownloaderPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <div className="container mx-auto px-4 py-8 text-center">
+        <h1 className="text-4xl font-bold mb-4">
+          Terabox Video Downloader & Player
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          Paste a Terabox URL to instantly play and download videos. Auto-loading
+          with shareable links.
+        </p>
+      </div>
       <TeraboxPlayerTool />
     </>
   );

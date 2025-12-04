@@ -2,7 +2,7 @@ import KeywordResearchTool from "@/components/tools/seo/KeywordResearchTool";
 
 export const metadata = {
   title:
-    "Google Keyword Research Tool - Free Google SEO Keyword Research | 30tools",
+    "Google Keyword Research Tool | 30tools",
   description:
     "Free Google keyword research tool to find valuable keywords for your SEO strategy. Discover Google-specific search volumes, difficulty scores, and related keyword suggestions.",
   keywords:
