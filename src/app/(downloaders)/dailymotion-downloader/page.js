@@ -1,297 +1,111 @@
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Dailymotion Video Downloader - Download Dailymotion Videos Free",
-  description:
-    "Download Dailymotion videos in HD quality for free. Save Dailymotion videos with our fast, secure Dailymotion downloader. No software installation required.",
+  title: "Dailymotion Video Downloader - Save Dailymotion Videos | 30tools",
+  description: "Download Dailymotion videos in HD quality (1080p, 4K). Save Dailymotion videos to MP4 format for free. Online Dailymotion downloader.",
   keywords: [
-    // Primary keywords
-    "dailymotion downloader",
+    "dailymotion video downloader",
     "download dailymotion video",
-    "dailymotion video downloader online",
-    "dailymotion video download",
-    "dailymotion video saver",
-
-    // Long-tail keywords for SEO ranking
-    "download dailymotion video online free without software",
-    "dailymotion video downloader high quality hd 1080p",
-    "save dailymotion videos to phone pc laptop",
-    "dailymotion downloader no registration required",
-    "free dailymotion video downloader for mobile desktop",
-    "download dailymotion videos fast secure safe",
-    "dailymotion video downloader supports all formats",
-    "download dailymotion videos mp4 format",
-    "dailymotion video extractor online tool",
-    "download dailymotion videos without watermark",
-    "dailymotion media downloader all videos",
-    "dailymotion video saver high quality",
-    "save dailymotion content offline viewing",
-    "dailymotion video downloader unlimited downloads",
-    "download dailymotion videos high resolution",
-    "dailymotion hd video download",
-    "dailymotion video download no app",
-    "save dailymotion videos offline",
-    "dailymotion video downloader free online",
-    "download dailymotion videos fast",
+    "save dailymotion video",
+    "dailymotion downloader online",
+    "dailymotion to mp4",
+    "download dailymotion hd",
+    "dailymotion video saver"
   ].join(", "),
   openGraph: {
-    title: "Free Dailymotion Video Downloader - Download HD Videos Online",
-    description:
-      "Download Dailymotion videos in HD quality. Save Dailymotion content with our fast and secure downloader.",
+    title: "Dailymotion Video Downloader - Free HD Download",
+    description: "⚡ Download Dailymotion videos in HD quality!",
     url: "https://30tools.com/dailymotion-downloader",
     siteName: "30tools",
     type: "website",
-    images: [
-      {
-        url: "/og-images/dailymotion-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Dailymotion Video Downloader - Free Online Tool",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dailymotion Video Downloader - Download Videos Free",
-    description:
-      "Download Dailymotion videos in HD quality for free. Save Dailymotion content instantly.",
-    images: ["/og-images/dailymotion-downloader.jpg"],
-  },
-  alternates: {
-    canonical: "https://30tools.com/dailymotion-downloader",
-  },
+  alternates: { canonical: "https://30tools.com/dailymotion-downloader" },
+  robots: { index: true, follow: true }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Dailymotion Video Downloader",
-  description:
-    "Free online tool to download Dailymotion videos in high quality",
-  url: "https://30tools.com/dailymotion-downloader",
-  applicationCategory: "MultimediaApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Download Dailymotion videos in HD quality",
-    "Fast and secure downloading",
-    "No software installation required",
-    "Works on all devices and browsers",
-  ],
-};
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function DailymotionDownloaderPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-              Dailymotion Video Downloader
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download Dailymotion videos in high definition quality for free.
-              Our advanced Dailymotion downloader supports all video content
-              with lightning-fast speed. Save Dailymotion videos instantly
-              without any software installation. Perfect for offline viewing,
-              content creation, and sharing Dailymotion content.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li>/</li>
+              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li>/</li>
+              <li className="text-foreground font-medium">Dailymotion Downloader</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Dailymotion Video Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Download Dailymotion videos in high quality (HD, 4K). Save your favorite videos from Dailymotion to watch offline.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ HD Quality Downloads
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ All Dailymotion Content
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ No Registration Required
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Unlimited Downloads
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>🎥 Save Videos</span><span>📺 HD Quality</span><span>⚡ Fast Speed</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <UniversalVideoDownloader />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Download Dailymotion Videos Online Free
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Copy Dailymotion URL</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Copy the Dailymotion video link you want to download from
-                    your browser address bar
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Paste & Select Quality</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Paste the URL and choose your preferred video quality (HD
-                    when available)
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-red-500 font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download Instantly</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Click download and save your Dailymotion video to your
-                    device
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Why Choose Our Dailymotion Video Downloader?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-red-600">
-                    🎥 High Quality Dailymotion Downloads
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download Dailymotion videos in original quality including HD
-                    720p and Full HD 1080p when available. Our Dailymotion
-                    downloader preserves the original video quality for the best
-                    viewing experience.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-red-600">
-                    🎯 Support for All Dailymotion Content
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Works with every Dailymotion video including user uploads,
-                    professional content, and videos from all categories.
-                    Download content from creators worldwide.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-red-600">
-                    ⚡ Lightning Fast Download Speed
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Our optimized servers ensure super-fast Dailymotion video
-                    downloads. No waiting times, no slow downloads - get your
-                    Dailymotion videos downloaded in seconds, not minutes.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-red-600">
-                    🔒 100% Safe and Secure
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Your privacy is our priority. All Dailymotion downloads are
-                    processed securely without storing any personal data. No
-                    malware, no viruses, just clean and safe Dailymotion video
-                    downloads.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Dailymotion Video Quality Options
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">📺</div>
-                  <h3 className="font-medium mb-2">SD 480p</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Standard Definition quality for basic viewing needs and
-                    smallest file sizes
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">📺</div>
-                  <h3 className="font-medium mb-2">HD 720p</h3>
-                  <p className="text-sm text-muted-foreground">
-                    High Definition quality perfect for most content and
-                    balanced file sizes
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">🎬</div>
-                  <h3 className="font-medium mb-2">Full HD 1080p</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Full High Definition for crystal clear video quality when
-                    available
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Frequently Asked Questions
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is it legal to download Dailymotion videos?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can download Dailymotion videos for personal use,
-                    educational purposes, or content you own. Always respect
-                    copyright laws and Dailymotion's terms of service when
-                    downloading videos.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What video formats are supported?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our Dailymotion downloader supports MP4 format, which is
-                    compatible with all devices and media players. Downloads
-                    preserve the original video quality.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download HD Dailymotion videos?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Yes! If the original Dailymotion video is available in HD,
-                    our downloader will offer HD download options to preserve
-                    the highest quality available.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is there a download limit?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No, there are no download limits! You can download as many
-                    Dailymotion videos as you want, completely free of charge.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <UniversalVideoDownloader />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download Dailymotion Videos</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Copy Link", desc: "Go to Dailymotion, find the video, and copy its URL." },
+                { step: "2", title: "Paste URL", desc: "Paste the link into the downloader box above." },
+                { step: "3", title: "Download", desc: "Click download and save the video in your preferred quality." }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/vimeo-downloader", icon: "📺", title: "Vimeo Downloader", desc: "Download Vimeo videos" },
+                { href: "/youtube-downloader", icon: "📹", title: "YouTube Downloader", desc: "Download YT videos" },
+                { href: "/facebook-downloader", icon: "📘", title: "Facebook Downloader", desc: "Download FB videos" },
+                { href: "/universal-video-downloader", icon: "🌐", title: "Universal Downloader", desc: "Download from any site" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }

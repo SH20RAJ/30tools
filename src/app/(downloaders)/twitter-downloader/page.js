@@ -1,305 +1,111 @@
-import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
+import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader";
 
 export const metadata = {
-  title: "Twitter Video Downloader - Download X Videos Free Online",
-  description:
-    "Download Twitter (X) videos in HD quality for free. Save X videos, GIFs, and images with our fast, secure Twitter downloader. No app required.",
+  title: "Twitter Video Downloader - Download X Videos Free | 30tools",
+  description: "Download Twitter (X) videos and GIFs in HD quality. Save videos from Twitter to MP4 format. Free online Twitter video downloader.",
   keywords: [
-    // Primary keywords
-    "twitter downloader",
-    "download twitter video",
-    "twitter video downloader online",
+    "twitter video downloader",
     "x video downloader",
-    "x twitter downloader",
-
-    // Long-tail keywords for SEO ranking
-    "download twitter video online free without software",
-    "twitter video downloader high quality hd 1080p",
-    "save twitter videos to phone pc laptop",
-    "twitter downloader no registration required",
-    "free twitter video downloader for mobile desktop",
-    "download twitter videos fast secure safe",
-    "twitter video downloader supports all formats",
-    "download twitter videos mp4 format",
-    "twitter video extractor online tool",
-    "download twitter videos without watermark",
-    "twitter media downloader all tweets",
-    "twitter video saver high quality",
-    "save twitter content offline viewing",
-    "twitter video downloader unlimited downloads",
-    "download twitter videos high resolution",
-    "x video downloader free",
+    "download twitter video",
+    "save twitter video",
     "twitter gif downloader",
-    "download twitter images photos",
-    "twitter video download no app",
-    "save twitter videos offline",
+    "twitter media downloader",
+    "download x videos"
   ].join(", "),
   openGraph: {
-    title: "Free Twitter Video Downloader - Download X Videos Online",
-    description:
-      "Download Twitter (X) videos, GIFs, and images in HD quality. Save Twitter content with our fast and secure downloader.",
+    title: "Twitter Video Downloader - Save X Videos & GIFs",
+    description: "⚡ Download Twitter (X) videos in HD quality!",
     url: "https://30tools.com/twitter-downloader",
     siteName: "30tools",
     type: "website",
-    images: [
-      {
-        url: "/og-images/twitter-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Twitter Video Downloader - Free Online Tool",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Twitter Video Downloader - Download X Videos Free",
-    description:
-      "Download Twitter (X) videos in HD quality for free. Save Twitter content instantly.",
-    images: ["/og-images/twitter-downloader.jpg"],
-  },
-  alternates: {
-    canonical: "https://30tools.com/twitter-downloader",
-  },
+  alternates: { canonical: "https://30tools.com/twitter-downloader" },
+  robots: { index: true, follow: true }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Twitter Video Downloader",
-  description:
-    "Free online tool to download Twitter (X) videos, GIFs, and images in high quality",
-  url: "https://30tools.com/twitter-downloader",
-  applicationCategory: "MultimediaApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Download Twitter videos in HD quality",
-    "Save Twitter GIFs and animated content",
-    "Download Twitter images and photos",
-    "Support for all Twitter content",
-    "Fast and secure downloading",
-    "No software installation required",
-    "Works on all devices and browsers",
-  ],
-};
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function TwitterDownloaderPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-blue-500 to-sky-500 bg-clip-text text-transparent">
-              Twitter Video Downloader
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download Twitter (X) videos, GIFs, and images in high definition
-              quality for free. Our advanced Twitter downloader supports all
-              Twitter content types with lightning-fast speed. Save Twitter
-              videos, animated GIFs, and images instantly without any software
-              installation. Perfect for content creators, researchers, and
-              anyone who wants to preserve Twitter content offline.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li>/</li>
+              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li>/</li>
+              <li className="text-foreground font-medium">Twitter Downloader</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Twitter Video Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Download videos and GIFs from Twitter (X) in high quality. Save content from tweets directly to your device.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ All Twitter Content
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ HD Quality Downloads
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ No Registration Required
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Unlimited Downloads
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>🐦 Save Tweets</span><span>🎥 HD Videos</span><span>🎞️ GIFs</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <UniversalVideoDownloader />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Download Twitter Videos Online Free
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-blue-500 font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Copy Twitter URL</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Copy the Twitter post link containing the video, GIF, or
-                    image you want to download
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-blue-500 font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Paste & Analyze</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Paste the Twitter URL and let our tool analyze the content
-                    and available formats
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-blue-500 font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download Instantly</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Choose your preferred format and download your Twitter
-                    content instantly
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Why Choose Our Twitter Video Downloader?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-blue-600">
-                    🐦 All Twitter Content Types
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download Twitter videos, GIFs, images, and all media content
-                    from tweets. Our Twitter downloader supports every type of
-                    content shared on the platform.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-blue-600">
-                    🎯 High Quality Preservation
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download Twitter content in original quality. Videos up to
-                    1080p HD, GIFs in full resolution, and images without
-                    compression.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-blue-600">
-                    ⚡ Lightning Fast Download Speed
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Our optimized servers ensure super-fast Twitter content
-                    downloads. No waiting times, no slow downloads - get your
-                    Twitter content downloaded in seconds.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-blue-600">
-                    🔒 100% Safe and Secure
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Your privacy is our priority. All Twitter downloads are
-                    processed securely without storing any personal data. No
-                    malware, no viruses, just clean Twitter content.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Twitter Content Types We Support
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">🎬</div>
-                  <h3 className="font-medium mb-2">Twitter Videos</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Download HD Twitter videos from tweets and threads
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">🎭</div>
-                  <h3 className="font-medium mb-2">Twitter GIFs</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Save animated GIFs and short video clips from tweets
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">📸</div>
-                  <h3 className="font-medium mb-2">Twitter Images</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Download high-quality images and photos from tweets
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Frequently Asked Questions
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is it legal to download Twitter videos?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can download Twitter content for personal use,
-                    educational purposes, or content you own. Always respect
-                    copyright laws and Twitter's terms of service when
-                    downloading content.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What Twitter content can I download?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our Twitter downloader supports videos, GIFs, images, and
-                    other media content from public tweets. Works with all types
-                    of Twitter content.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download content from private Twitter accounts?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No, our tool only works with public Twitter content. Private
-                    tweets require authentication that our tool doesn't support.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is there a download limit?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No, there are no download limits! You can download as much
-                    Twitter content as you want, completely free of charge.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What formats are supported?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    We support MP4 for videos, GIF for animations, and JPG/PNG
-                    for images. Downloads preserve original quality when
-                    possible.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <TwitterDownloader />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download Twitter Videos</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Copy Link", desc: "Find the tweet with the video or GIF and copy its link." },
+                { step: "2", title: "Paste URL", desc: "Paste the tweet link into the downloader above." },
+                { step: "3", title: "Download", desc: "Choose quality and download the video to your device." }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/facebook-downloader", icon: "📘", title: "Facebook Downloader", desc: "Download FB videos" },
+                { href: "/instagram-downloader", icon: "📸", title: "Instagram Downloader", desc: "Download IG videos" },
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download TikToks" },
+                { href: "/reddit-downloader", icon: "🤖", title: "Reddit Downloader", desc: "Download Reddit videos" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }

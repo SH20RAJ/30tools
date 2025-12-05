@@ -1,288 +1,111 @@
 import TikTokAudioDownloader from "@/components/tools/downloaders/TikTokAudioDownloader";
 
 export const metadata = {
-  title: "Tiktok Audio Downloader - Free Online Tool | Professional Results",
-  description:
-    "Professional tiktok audio downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+  title: "TikTok Audio Downloader - Download TikTok MP3 Free | 30tools",
+  description: "Download TikTok audio and sounds in MP3 format. Convert TikTok videos to MP3 music. Free TikTok sound downloader tool.",
   keywords: [
-    // Primary TikTok audio keywords from CSV data
     "tiktok audio downloader",
     "tiktok mp3 downloader",
-    "download tiktok audio",
+    "download tiktok sound",
+    "convert tiktok to mp3",
     "tiktok music downloader",
-    "tiktok sound downloader",
-    "extract audio from tiktok",
-    "tiktok to mp3",
     "save tiktok audio",
-    "tiktok audio converter",
-    "tiktok music extractor",
-
-    // Long-tail SEO keywords
-    "tiktok audio downloader online free",
-    "download tiktok music mp3 high quality",
-    "extract audio from tiktok video",
-    "tiktok sound effect downloader",
-    "tiktok audio converter mp3 320kbps",
-    "download tiktok background music",
-    "tiktok audio downloader no watermark",
-    "save tiktok sounds to phone",
-    "tiktok music downloader for pc mobile",
-    "free tiktok audio extractor online",
-
-    // International keywords
-    "descargar audio de tiktok",
-    "baixar audio do tiktok",
-    "télécharger audio tiktok",
-    "تحميل صوت تيك توك",
-    "scaricare audio da tiktok",
-    "tải audio tiktok",
-
-    // Feature specific
-    "tiktok audio without video",
-    "tiktok music only download",
-    "tiktok sound effects mp3",
-    "trending tiktok audio downloader",
-    "viral tiktok sounds downloader",
+    "tiktok sound saver"
   ].join(", "),
   openGraph: {
-    title: "TikTok Audio Downloader - Download TikTok MP3 Music Free",
-    description:
-      "Download TikTok audio and music as MP3 files. Extract high-quality audio from TikTok videos without watermark.",
+    title: "TikTok Audio Downloader - Save TikTok Sounds as MP3",
+    description: "⚡ Download TikTok audio and music in MP3 format!",
     url: "https://30tools.com/tiktok-audio-downloader",
     siteName: "30tools",
     type: "website",
-    images: [
-      {
-        url: "/og-images/tiktok-audio-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "TikTok Audio Downloader - Free Online Tool",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "TikTok Audio Downloader - Download TikTok MP3 Free",
-    description:
-      "Download TikTok audio and music as MP3 files. Free TikTok audio downloader tool.",
-    images: ["/og-images/tiktok-audio-downloader.jpg"],
-  },
-  alternates: {
-    canonical: "https://30tools.com/tiktok-audio-downloader",
-  },
+  alternates: { canonical: "https://30tools.com/tiktok-audio-downloader" },
+  robots: { index: true, follow: true }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "TikTok Audio Downloader",
-  description:
-    "Free online tool to download TikTok audio and music as MP3 files in high quality",
-  url: "https://30tools.com/tiktok-audio-downloader",
-  applicationCategory: "MultimediaApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Download TikTok audio as MP3",
-    "High quality audio extraction",
-    "No watermark audio",
-    "Fast processing speed",
-    "No app installation required",
-    "Works on all devices",
-    "Unlimited free downloads",
-    "Privacy protected",
-  ],
-};
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function TikTokAudioDownloaderPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-black to-pink-500 bg-clip-text text-transparent">
-              TikTok Audio Downloader
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download TikTok audio and music as high-quality MP3 files for
-              free. Our advanced TikTok audio downloader extracts crystal-clear
-              audio from TikTok videos without any watermark. Perfect for
-              downloading trending music, sound effects, and viral audio clips.
-              Save TikTok sounds to your device instantly without any app
-              installation.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li>/</li>
+              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li>/</li>
+              <li className="text-foreground font-medium">TikTok Audio Downloader</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">TikTok Audio Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Extract and download audio from TikTok videos. Save trending TikTok sounds and music as MP3 files to your device.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ High Quality MP3
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ No Watermark
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Trending Sounds
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Unlimited Downloads
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>🎵 Extract Audio</span><span>🎧 MP3 Format</span><span>🎼 Trending Sounds</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <TikTokAudioDownloader />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Download TikTok Audio as MP3
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Copy TikTok URL</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Copy the TikTok video link containing the audio you want to
-                    download
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Extract Audio</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our tool will extract the audio from the TikTok video
-                    automatically
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download MP3</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Download the TikTok audio as high-quality MP3 file to your
-                    device
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                TikTok Audio Downloader Features
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    🎵 High Quality Audio
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Extract TikTok audio in high quality MP3 format up to
-                    320kbps. Get crystal-clear sound quality perfect for music,
-                    sound effects, and audio clips.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    🎶 Trending Music & Sounds
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download trending TikTok music, viral sounds, and popular
-                    audio clips. Perfect for content creators, DJs, and music
-                    enthusiasts looking for the latest trends.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    ⚡ Lightning Fast Processing
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Our advanced servers extract TikTok audio in seconds. No
-                    waiting times, no slow processing - get your TikTok audio
-                    files instantly.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    📱 Mobile Optimized
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Specially designed for mobile users. Download TikTok audio
-                    directly to your phone music library with optimized
-                    performance for iOS and Android devices.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                TikTok Audio Downloader FAQ
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download TikTok audio without the video?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Yes! Our tool extracts only the audio from TikTok videos,
-                    giving you clean MP3 files without any video content.
-                    Perfect for music and sound collections.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What audio quality can I download?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    We provide high-quality MP3 downloads up to 320kbps,
-                    ensuring crystal-clear audio that matches the original
-                    TikTok video sound quality.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download copyrighted music from TikTok?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Please respect copyright laws when downloading TikTok audio.
-                    Only download content you have permission to use or that is
-                    royalty-free.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Does the audio have any watermarks?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No! Our TikTok audio downloader extracts clean audio without
-                    any watermarks, giving you pure sound files perfect for any
-                    use.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I use downloaded TikTok audio in my videos?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can use downloaded TikTok audio for personal projects,
-                    but always check copyright restrictions before using in
-                    commercial content or public distribution.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <TikTokAudioDownloader />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download TikTok Sounds</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Copy Link", desc: "Find the TikTok video with the sound you want and copy its link." },
+                { step: "2", title: "Paste URL", desc: "Paste the link into the audio downloader above." },
+                { step: "3", title: "Download MP3", desc: "Click download to save the audio as an MP3 file." }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download Videos" },
+                { href: "/soundcloud-downloader", icon: "☁️", title: "SoundCloud Downloader", desc: "Download Music" },
+                { href: "/spotify-downloader", icon: "🎧", title: "Spotify Downloader", desc: "Download Songs" },
+                { href: "/youtube-downloader", icon: "📹", title: "YouTube Downloader", desc: "Download Videos" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }

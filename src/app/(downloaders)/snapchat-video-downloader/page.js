@@ -1,288 +1,111 @@
 import SnapchatDownloader from "@/components/tools/downloaders/SnapchatDownloader";
 
 export const metadata = {
-  title: "Snapchat Video Downloader - Free Online Tool | 30tools",
-  description:
-    "Free snapchat video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  title: "Snapchat Video Downloader - Save Snapchat Stories Free | 30tools",
+  description: "Download Snapchat videos and stories anonymously. Save Snaps and Spotlight videos in high quality. Free Snapchat video downloader tool.",
   keywords: [
-    // Primary Snapchat keywords
     "snapchat video downloader",
-    "download snapchat video",
-    "snapchat downloader",
-    "snapchat story downloader",
-    "save snapchat video",
-    "snapchat video saver",
     "download snapchat stories",
-    "snapchat content downloader",
-    "snapchat media downloader",
-    "snapchat video download",
-
-    // Long-tail SEO keywords
-    "snapchat video downloader online free",
-    "download snapchat video without app",
-    "snapchat video downloader hd quality",
-    "save snapchat videos to phone",
-    "snapchat video downloader for pc mobile",
-    "free snapchat video downloader no login",
-    "snapchat story video downloader",
-    "bulk snapchat video downloader",
-    "snapchat video downloader without notification",
-    "anonymous snapchat video downloader",
-
-    // International keywords
-    "descargar videos de snapchat",
-    "baixar video do snapchat",
-    "télécharger vidéo snapchat",
-    "تحميل فيديو من سناب شات",
-    "scaricare video da snapchat",
-    "tải video snapchat",
-
-    // Feature specific
-    "snapchat video without watermark",
     "snapchat story saver",
-    "snapchat highlight downloader",
-    "snapchat memory downloader",
-    "snapchat video quality hd",
+    "save snapchat video",
+    "snapchat spotlight downloader",
+    "anonymous snapchat viewer",
+    "download snaps"
   ].join(", "),
   openGraph: {
-    title:
-      "Snapchat Video Downloader - Download Snapchat Videos & Stories Free",
-    description:
-      "Download Snapchat videos and stories in HD quality. Free, fast, and secure Snapchat downloader without app installation.",
+    title: "Snapchat Video Downloader - Save Stories & Spotlight",
+    description: "⚡ Download Snapchat videos and stories anonymously!",
     url: "https://30tools.com/snapchat-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [
-      {
-        url: "/og-images/snapchat-video-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Snapchat Video Downloader - Free Online Tool",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Snapchat Video Downloader - Download Videos & Stories Free",
-    description:
-      "Download Snapchat videos and stories in HD quality. Free Snapchat downloader tool.",
-    images: ["/og-images/snapchat-video-downloader.jpg"],
-  },
-  alternates: {
-    canonical: "https://30tools.com/snapchat-video-downloader",
-  },
+  alternates: { canonical: "https://30tools.com/snapchat-video-downloader" },
+  robots: { index: true, follow: true }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Snapchat Video Downloader",
-  description:
-    "Free online tool to download Snapchat videos and stories in high quality without software installation",
-  url: "https://30tools.com/snapchat-video-downloader",
-  applicationCategory: "MultimediaApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Download Snapchat videos in HD",
-    "Save Snapchat stories",
-    "Fast processing speed",
-    "No software installation required",
-    "Works on all devices",
-    "Unlimited free downloads",
-    "Privacy protected downloads",
-    "Anonymous access",
-  ],
-};
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function SnapchatVideoDownloaderPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
-              Snapchat Video Downloader
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download Snapchat videos and stories in high definition quality
-              for free. Our advanced Snapchat downloader supports all video
-              content with lightning-fast speed. Save Snapchat videos to your
-              device instantly without any app installation. Perfect for content
-              archiving, sharing, and personal collection from the ephemeral
-              world of Snapchat.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li>/</li>
+              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li>/</li>
+              <li className="text-foreground font-medium">Snapchat Video Downloader</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Snapchat Video Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Download Snapchat videos, Stories, and Spotlight content. Save Snaps anonymously to your device in high quality.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Videos & Stories
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ HD Quality
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Anonymous Access
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ No Login Required
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>👻 Save Snaps</span><span>🌟 Spotlight</span><span>🕵️ Anonymous</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <SnapchatDownloader />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Download Snapchat Videos & Stories
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Copy Snapchat URL</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Copy the Snapchat video or story link you want to download
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Paste & Process</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Paste the Snapchat URL and our tool will analyze the content
-                    automatically
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download Content</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Select quality and download the Snapchat video or story to
-                    your device
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Snapchat Video Downloader Features
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    📱 All Snapchat Content
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download all types of Snapchat content including regular
-                    videos, stories, highlights, and memories. Perfect for
-                    saving ephemeral content before it disappears.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    ⚡ Lightning Fast Processing
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Our optimized servers process Snapchat content in seconds.
-                    No waiting times, no slow downloads - get your Snapchat
-                    videos instantly.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    🔐 Anonymous & Safe
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    No Snapchat login required. We don't access your Snapchat
-                    account or store any personal information. All downloads are
-                    processed anonymously and securely.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    📱 Mobile Optimized
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Specially designed for mobile users. Download Snapchat
-                    videos directly to your phone gallery with optimized
-                    performance for all devices.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Snapchat Video Downloader FAQ
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download private Snapchat content?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can only download Snapchat content that is publicly
-                    available or shared with you. Private content requires
-                    proper access permissions.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Will the user know I downloaded their Snapchat?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our downloader works anonymously for public content.
-                    However, always respect privacy and only download content
-                    you have permission to save.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What video quality is available?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    We provide the best available quality from Snapchat,
-                    typically including HD options and mobile-optimized formats
-                    depending on the original content quality.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download Snapchat stories?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Yes! Our tool supports downloading Snapchat stories,
-                    highlights, and other story-based content that is publicly
-                    accessible.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is there a download limit?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No limits! Download as many Snapchat videos as you want,
-                    completely free. Perfect for building your content
-                    collection.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <SnapchatDownloader />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download Snaps</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Copy Link", desc: "Open Snapchat and copy the link of the Story or Spotlight video." },
+                { step: "2", title: "Paste URL", desc: "Paste the link into the downloader tool above." },
+                { step: "3", title: "Download", desc: "Click download to save the video to your gallery." }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download TikToks" },
+                { href: "/instagram-story-downloader", icon: "📖", title: "IG Story Downloader", desc: "Download IG stories" },
+                { href: "/facebook-story-downloader", icon: "📘", title: "FB Story Downloader", desc: "Download FB stories" },
+                { href: "/youtube-shorts-downloader", icon: "📹", title: "Shorts Downloader", desc: "Download Shorts" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }

@@ -1,305 +1,111 @@
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Reddit Video Downloader - Download Reddit Videos Free Online",
-  description:
-    "Download Reddit videos in HD quality for free. Save Reddit videos, GIFs, and images with our fast, secure Reddit downloader. No software installation required.",
+  title: "Reddit Video Downloader - Download Reddit Videos with Audio | 30tools",
+  description: "Download Reddit videos with audio in HD quality. Save Reddit videos and GIFs to MP4. Free online Reddit video downloader tool.",
   keywords: [
-    // Primary keywords
-    "reddit downloader",
+    "reddit video downloader",
     "download reddit video",
-    "reddit video downloader online",
+    "reddit video saver",
+    "save reddit video with audio",
     "reddit gif downloader",
-    "reddit image downloader",
-
-    // Long-tail keywords for SEO ranking
-    "download reddit video online free without software",
-    "reddit video downloader high quality hd 1080p",
-    "save reddit videos to phone pc laptop",
-    "reddit downloader no registration required",
-    "free reddit video downloader for mobile desktop",
-    "download reddit videos fast secure safe",
-    "reddit video downloader supports all formats",
-    "download reddit gifs animated images",
-    "reddit video downloader unlimited downloads",
-    "save reddit content offline viewing",
-    "reddit video extractor online tool",
-    "download reddit videos without watermark",
-    "reddit media downloader all subreddits",
-    "reddit video saver high quality",
-    "download reddit videos mp4 format",
+    "reddit to mp4",
+    "download reddit clips"
   ].join(", "),
   openGraph: {
-    title: "Free Reddit Video Downloader - Download HD Videos Online",
-    description:
-      "Download Reddit videos, GIFs, and images in HD quality. Save Reddit content with our fast and secure downloader.",
+    title: "Reddit Video Downloader - Save Videos with Audio",
+    description: "⚡ Download Reddit videos with sound in HD!",
     url: "https://30tools.com/reddit-downloader",
     siteName: "30tools",
     type: "website",
-    images: [
-      {
-        url: "/og-images/reddit-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Reddit Video Downloader - Free Online Tool",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Reddit Video Downloader - Download Videos Free",
-    description:
-      "Download Reddit videos in HD quality for free. Save Reddit content instantly.",
-    images: ["/og-images/reddit-downloader.jpg"],
-  },
-  alternates: {
-    canonical: "https://30tools.com/reddit-downloader",
-  },
+  alternates: { canonical: "https://30tools.com/reddit-downloader" },
+  robots: { index: true, follow: true }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Reddit Video Downloader",
-  description:
-    "Free online tool to download Reddit videos, GIFs, and images in high quality",
-  url: "https://30tools.com/reddit-downloader",
-  applicationCategory: "MultimediaApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Download Reddit videos in HD quality",
-    "Save Reddit GIFs and animated content",
-    "Download Reddit images and photos",
-    "Support for all Reddit subreddits",
-    "Fast and secure downloading",
-    "No software installation required",
-    "Works on all devices and browsers",
-  ],
-};
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function RedditDownloaderPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-              Reddit Video Downloader
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download Reddit videos, GIFs, and images in high definition
-              quality for free. Our advanced Reddit downloader supports all
-              Reddit subreddits and content types with lightning-fast speed.
-              Save Reddit videos, animated GIFs, and images instantly without
-              any software installation. Perfect for offline viewing, content
-              creation, and sharing Reddit content.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li>/</li>
+              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li>/</li>
+              <li className="text-foreground font-medium">Reddit Downloader</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Reddit Video Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Download Reddit videos with audio in high quality. Save videos and GIFs from Reddit posts directly to your device.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ HD Quality Downloads
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ All Reddit Content
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ No Registration Required
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Unlimited Downloads
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>🤖 Save Videos</span><span>🔊 With Audio</span><span>🎞️ GIFs</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <UniversalVideoDownloader />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Download Reddit Videos Online Free
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Copy Reddit URL</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Copy the Reddit post link containing the video, GIF, or
-                    image you want to download
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Paste & Analyze</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Paste the Reddit URL and let our tool analyze the content
-                    and available formats
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-500 font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download Instantly</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Choose your preferred format and download your Reddit
-                    content instantly
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Why Choose Our Reddit Video Downloader?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-orange-600">
-                    🎥 Download All Reddit Content Types
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download Reddit videos, GIFs, images, and animated content
-                    from any subreddit. Our Reddit downloader supports all
-                    popular formats including MP4, GIF, JPG, PNG, and more.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-orange-600">
-                    🎯 Support for All Subreddits
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Works with every Reddit subreddit including r/videos,
-                    r/gifs, r/funny, r/memes, and millions of other communities.
-                    No restrictions on content type or subreddit.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-orange-600">
-                    ⚡ Lightning Fast Download Speed
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Our optimized servers ensure super-fast Reddit content
-                    downloads. Get your favorite Reddit videos and GIFs
-                    downloaded in seconds, not minutes.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-orange-600">
-                    🔒 100% Safe and Secure
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Your privacy is our priority. All Reddit downloads are
-                    processed securely without storing any personal data. No
-                    malware, no viruses, just clean and safe Reddit content
-                    downloads.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Reddit Content Types We Support
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">🎬</div>
-                  <h3 className="font-medium mb-2">Reddit Videos</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Download HD Reddit videos from r/videos,
-                    r/educationalvideos, and other video subreddits
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">🎭</div>
-                  <h3 className="font-medium mb-2">Reddit GIFs</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Save animated GIFs from r/gifs, r/reactiongifs, and
-                    GIF-heavy subreddits
-                  </p>
-                </div>
-                <div className="text-center p-4 bg-background rounded-lg border">
-                  <div className="text-3xl mb-2">📸</div>
-                  <h3 className="font-medium mb-2">Reddit Images</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Download high-quality images from r/photography,
-                    r/EarthPorn, and image subreddits
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Frequently Asked Questions
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is it legal to download Reddit videos?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can download Reddit content for personal use,
-                    educational purposes, or content you own. Always respect
-                    copyright laws and Reddit's terms of service when
-                    downloading content.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What Reddit content can I download?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our Reddit downloader supports videos, GIFs, images, and
-                    other media content from any public Reddit post. Works with
-                    all subreddits and content types.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download content from private subreddits?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No, our tool only works with public Reddit content. Private
-                    subreddit content requires authentication that our tool
-                    doesn't support.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is there a download limit?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No, there are no download limits! You can download as much
-                    Reddit content as you want, completely free of charge.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What formats are supported?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    We support all common formats including MP4 for videos, GIF
-                    for animations, and JPG/PNG for images. Downloads preserve
-                    original quality when possible.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <UniversalVideoDownloader />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download Reddit Videos</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Copy Link", desc: "Open the Reddit post and copy the share link." },
+                { step: "2", title: "Paste URL", desc: "Paste the link into the Reddit downloader above." },
+                { step: "3", title: "Download", desc: "Save the video with audio to your device." }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/twitter-downloader", icon: "🐦", title: "Twitter Downloader", desc: "Download Tweets" },
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download TikToks" },
+                { href: "/instagram-downloader", icon: "📸", title: "Instagram Downloader", desc: "Download IG videos" },
+                { href: "/universal-video-downloader", icon: "🌐", title: "Universal Downloader", desc: "Download from any site" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }

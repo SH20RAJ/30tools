@@ -1,235 +1,111 @@
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  metadataBase: new URL("https://30tools.com"),
-  title:
-    "Universal Video Downloader | 30tools",
-  description:
-    "Download videos from TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, and more. Free, fast, no watermark, HD quality. No registration required. Try now!",
+  title: "Universal Video Downloader - Download from Any Site | 30tools",
+  description: "Download videos from any website for free. Universal video downloader supports 50+ sites including Vimeo, Dailymotion, Twitter, and more.",
   keywords: [
     "universal video downloader",
-    "video downloader",
-    "download videos online",
-    "tiktok downloader",
-    "facebook video downloader",
-    "instagram video downloader",
-    "twitter video downloader",
-    "youtube downloader",
-    "vimeo downloader",
-    "dailymotion downloader",
-    "reddit video downloader",
-    "rumble downloader",
-    "download tiktok video without watermark",
-    "instagram video download no watermark",
-    "facebook video download",
-    "twitter video download",
-    "free video downloader",
-    "no watermark video downloader",
-    "hd video downloader",
+    "download video from any site",
+    "all video downloader",
     "online video downloader",
-    "social media downloader",
-    "multi-platform video downloader",
+    "any site video downloader",
+    "free video downloader",
+    "save video from website"
   ].join(", "),
-  authors: [{ name: "30tools" }],
-  creator: "30tools",
-  publisher: "30tools",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: "https://30tools.com/universal-video-downloader",
-  },
   openGraph: {
-    title:
-      "Universal Video Downloader - Download Videos from 10+ Platforms Free",
-    description:
-      "Download videos from TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, and more. No watermark, HD quality, multiple formats. 100% free!",
+    title: "Universal Video Downloader - Download from Any Site",
+    description: "⚡ Download videos from 50+ websites for free!",
     url: "https://30tools.com/universal-video-downloader",
     siteName: "30tools",
-    locale: "en_US",
     type: "website",
-    images: [
-      {
-        url: "/og-images/universal-video-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Universal Video Downloader - Download from Multiple Platforms Without Watermark",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Universal Video Downloader - All-in-One Free Tool | 30tools",
-    description:
-      "Download videos from TikTok, Facebook, Instagram, Twitter/X, YouTube, and 10+ platforms. No watermark, HD quality, 100% free!",
-    images: ["/og-images/universal-video-downloader.jpg"],
-    creator: "@30tools",
-  },
-  other: {
-    "format-detection": "telephone=no",
-  },
+  alternates: { canonical: "https://30tools.com/universal-video-downloader" },
+  robots: { index: true, follow: true }
 };
 
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
+
 export default function UniversalVideoDownloaderPage() {
-  // Structured Data - SoftwareApplication Schema
-  const softwareSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Universal Video Downloader",
-    applicationCategory: "MultimediaApplication",
-    operatingSystem: "Web Browser, Windows, macOS, Linux, iOS, Android",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.7",
-      ratingCount: "1847",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    description:
-      "Download videos from TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, Rumble and more platforms. No watermark downloads, multiple quality options, no registration required.",
-    featureList: [
-      "Download from 10+ social media platforms",
-      "No watermark downloads",
-      "Multiple quality options (HD, SD, Audio)",
-      "No registration required",
-      "Works on all devices",
-      "Free to use",
-      "Fast downloads",
-      "Privacy-focused",
-    ],
-    screenshot: "https://30tools.com/og-images/universal-video-downloader.jpg",
-    softwareVersion: "2.0",
-    author: {
-      "@type": "Organization",
-      name: "30tools",
-      url: "https://30tools.com",
-    },
-    datePublished: "2024-01-15",
-    dateModified: "2024-12-04",
-  };
-
-  // FAQ Schema
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "What platforms are supported?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "We support TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, and Rumble. More platforms are added regularly.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Are the downloads watermark-free?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes! All downloads are completely watermark-free. You get the original video quality without any platform branding or watermarks.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Is this service free?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Absolutely free! No registration, no hidden fees, no premium features. Everything is completely free to use.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "What video qualities are available?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "We offer multiple quality options including HD (1080p), SD (720p), and lower resolutions. You can also download audio-only in MP3 format.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I download private videos?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "No, we can only download publicly available videos. Private videos require authentication that we don't have access to.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Is it safe to use?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes, completely safe. All processing happens in your browser, and your videos never leave your device. No data is stored on our servers.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "Can I download audio only?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Yes! Many videos offer an 'Audio Only' option that extracts just the audio track as an MP3 file.",
-        },
-      },
-    ],
-  };
-
-  // Breadcrumb Schema
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://30tools.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Downloaders",
-        item: "https://30tools.com/search?category=downloaders",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Universal Video Downloader",
-        item: "https://30tools.com/universal-video-downloader",
-      },
-    ],
-  };
-
   return (
     <>
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li>/</li>
+              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li>/</li>
+              <li className="text-foreground font-medium">Universal Video Downloader</li>
+            </ol>
+          </nav>
 
-      <div className="min-h-screen bg-background">
-        <UniversalVideoDownloader />
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Universal Video Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Download videos from almost any website. Supports Vimeo, Dailymotion, Twitter, Reddit, Rumble, and 50+ other platforms.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>🌐 50+ Sites</span><span>📺 HD Quality</span><span>⚡ Fast & Free</span><span>📱 All Devices</span>
+            </div>
+          </div>
+
+          <AdUnit />
+
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <UniversalVideoDownloader />
+          </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download Any Video</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Copy Link", desc: "Copy the URL of the video you want to download from any site." },
+                { step: "2", title: "Paste URL", desc: "Paste the link into the universal downloader above." },
+                { step: "3", title: "Download", desc: "Our tool will detect the video and let you save it." }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/youtube-downloader", icon: "📹", title: "YouTube Downloader", desc: "Download YT videos" },
+                { href: "/facebook-downloader", icon: "📘", title: "Facebook Downloader", desc: "Download FB videos" },
+                { href: "/instagram-downloader", icon: "📸", title: "Instagram Downloader", desc: "Download IG videos" },
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download TikToks" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }

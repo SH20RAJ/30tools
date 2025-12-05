@@ -1,288 +1,111 @@
 import InstagramDPDownloader from "@/components/tools/downloaders/InstagramDPDownloader";
 
 export const metadata = {
-  title: "Instagram Dp Downloader - Free Online Tool | Professional Results",
-  description:
-    "Professional instagram dp downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+  title: "Instagram DP Downloader - View & Download Profile Pictures | 30tools",
+  description: "View and download Instagram profile pictures in full HD size. Zoom into IG DPs and save them. Free Instagram profile picture viewer and downloader.",
   keywords: [
-    // Primary Instagram DP keywords
     "instagram dp downloader",
-    "download instagram profile picture",
     "instagram profile picture downloader",
-    "ig dp downloader",
-    "instagram dp download",
-    "save instagram profile picture",
-    "instagram profile photo downloader",
-    "instagram avatar downloader",
-    "instagram pp downloader",
-    "instagram profile pic saver",
-
-    // Long-tail SEO keywords
-    "instagram dp downloader online free",
-    "download instagram profile picture hd",
-    "instagram profile picture viewer full size",
-    "save instagram dp to phone",
-    "instagram profile picture downloader anonymous",
-    "instagram dp downloader for pc mobile",
-    "free instagram profile picture downloader",
-    "instagram profile photo full resolution",
-    "bulk instagram dp downloader",
-    "instagram profile picture zoom and download",
-
-    // International keywords
-    "descargar foto de perfil instagram",
-    "baixar foto do perfil instagram",
-    "télécharger photo profil instagram",
-    "تحميل صورة الملف الشخصي انستقرام",
-    "scaricare foto profilo instagram",
-    "tải ảnh đại diện instagram",
-
-    // Feature specific
-    "instagram profile picture full size",
-    "instagram dp hd quality",
-    "instagram profile picture viewer",
-    "instagram avatar full resolution",
-    "instagram profile photo zoom",
+    "insta dp viewer",
+    "download instagram dp",
+    "instagram profile photo viewer",
+    "full size instagram dp",
+    "ig dp saver"
   ].join(", "),
   openGraph: {
-    title: "Instagram DP Downloader - Download Profile Pictures HD Free",
-    description:
-      "Download Instagram profile pictures in full size HD quality. Free, fast, and secure Instagram DP downloader.",
+    title: "Instagram DP Downloader - View Full Size Profile Pics",
+    description: "⚡ View and download Instagram profile pictures in HD!",
     url: "https://30tools.com/instagram-dp-downloader",
     siteName: "30tools",
     type: "website",
-    images: [
-      {
-        url: "/og-images/instagram-dp-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Instagram DP Downloader - Free Online Tool",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Instagram DP Downloader - Download Profile Pictures HD",
-    description:
-      "Download Instagram profile pictures in full size HD quality. Free Instagram DP downloader.",
-    images: ["/og-images/instagram-dp-downloader.jpg"],
-  },
-  alternates: {
-    canonical: "https://30tools.com/instagram-dp-downloader",
-  },
+  alternates: { canonical: "https://30tools.com/instagram-dp-downloader" },
+  robots: { index: true, follow: true }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Instagram DP Downloader",
-  description:
-    "Free online tool to download Instagram profile pictures in full size HD quality",
-  url: "https://30tools.com/instagram-dp-downloader",
-  applicationCategory: "MultimediaApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Download Instagram profile pictures",
-    "Full size HD quality downloads",
-    "Anonymous profile picture viewing",
-    "No login required",
-    "Works on all devices",
-    "Fast processing speed",
-    "Unlimited free downloads",
-    "Privacy protected",
-  ],
-};
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function InstagramDPDownloaderPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
-              Instagram DP Downloader
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download Instagram profile pictures (DP) in full size HD quality
-              for free. Our advanced Instagram DP downloader allows you to view
-              and save Instagram profile photos in their original resolution.
-              Access profile pictures anonymously without any login requirement.
-              Perfect for saving contact photos, profile research, and personal
-              collection.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li>/</li>
+              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li>/</li>
+              <li className="text-foreground font-medium">Instagram DP Downloader</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Instagram DP Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              View and download Instagram profile pictures in full HD resolution. See profile photos of any public or private account in large size.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Full Size HD
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Anonymous Access
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ No Login Required
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Instant Download
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>🔍 View Full Size</span><span>💾 Download HD</span><span>👤 Any Account</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <InstagramDPDownloader />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Download Instagram Profile Pictures
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Enter Username</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Enter the Instagram username whose profile picture you want
-                    to download
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">View Full Size</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Our tool will fetch and display the profile picture in full
-                    resolution
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download HD Image</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Click download to save the Instagram profile picture to your
-                    device
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Instagram DP Downloader Features
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    🖼️ Full Resolution Quality
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download Instagram profile pictures in their original full
-                    size and highest quality. Get crystal clear images without
-                    any compression or quality loss.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    👤 Anonymous Viewing
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    View and download Instagram profile pictures completely
-                    anonymously. The profile owner will never know you accessed
-                    or downloaded their profile photo.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    ⚡ Instant Access
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Get instant access to any public Instagram profile picture.
-                    Our tool fetches profile photos in seconds without any
-                    waiting time or processing delays.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    📱 Mobile Friendly
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Perfectly optimized for mobile devices. Download Instagram
-                    profile pictures directly to your phone gallery with just a
-                    few taps on any device.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Instagram DP Downloader FAQ
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download profile pictures from private accounts?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can only download profile pictures from public Instagram
-                    accounts. Private account profile pictures are not
-                    accessible through our downloader.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What quality will the downloaded profile picture be?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Profile pictures are downloaded in their original full
-                    resolution as uploaded to Instagram, typically in high
-                    quality suitable for contact photos and personal use.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Do I need to log into Instagram?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No Instagram login required! Our tool works completely
-                    anonymously without needing any Instagram account access or
-                    personal information.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download multiple profile pictures at once?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Currently, you can download one profile picture at a time.
-                    Simply enter different usernames to download multiple
-                    profile pictures sequentially.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is it legal to download Instagram profile pictures?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can download public profile pictures for personal use.
-                    Always respect copyright and privacy laws, and use
-                    downloaded images responsibly.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <InstagramDPDownloader />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download Instagram DP</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Enter Username", desc: "Type the Instagram username or paste the profile link." },
+                { step: "2", title: "Search", desc: "Click search to find the user and fetch their profile picture." },
+                { step: "3", title: "Download", desc: "View the DP in full size and click download to save it." }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/instagram-downloader", icon: "📸", title: "Instagram Downloader", desc: "Download all content" },
+                { href: "/instagram-story-downloader", icon: "📖", title: "Story Downloader", desc: "Download stories" },
+                { href: "/facebook-downloader", icon: "📘", title: "Facebook Downloader", desc: "Download FB videos" },
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download TikToks" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }

@@ -1,290 +1,111 @@
 import PinterestDownloader from "@/components/tools/downloaders/PinterestDownloader";
 
 export const metadata = {
-  title: "Pinterest Video Downloader - Free Online Tool | 30tools",
-  description:
-    "Free pinterest video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  title: "Pinterest Video Downloader - Download Pinterest Videos & GIFs | 30tools",
+  description: "Download Pinterest videos, GIFs, and images in high quality. Save Pinterest content to your device for free. Best Pinterest downloader tool.",
   keywords: [
-    // Primary Pinterest keywords
     "pinterest video downloader",
     "download pinterest video",
-    "pinterest downloader",
-    "pinterest video download",
-    "save pinterest video",
     "pinterest gif downloader",
-    "download pinterest",
-    "pinterest video saver",
-    "pinterest mp4 downloader",
-    "pinterest pin downloader",
-
-    // Long-tail SEO keywords
-    "pinterest video downloader online free",
-    "download pinterest video without app",
-    "pinterest video downloader hd quality",
-    "save pinterest videos to phone",
-    "pinterest video downloader for pc mobile",
-    "free pinterest video downloader no login",
-    "pinterest video converter mp4 download",
-    "bulk pinterest video downloader",
-    "pinterest idea pin video downloader",
-    "pinterest story pin downloader",
-
-    // International keywords
-    "descargar videos de pinterest",
-    "baixar video do pinterest",
-    "télécharger vidéo pinterest",
-    "تحميل فيديو من بينتيريست",
-    "scaricare video da pinterest",
-    "tải video pinterest",
-
-    // Feature specific
-    "pinterest video without watermark",
-    "pinterest gif to mp4",
-    "pinterest video quality hd",
-    "pinterest board video downloader",
-    "pinterest recipe video downloader",
+    "save pinterest video",
+    "pinterest image downloader",
+    "pinterest downloader online",
+    "pinterest saver"
   ].join(", "),
   openGraph: {
-    title: "Pinterest Video Downloader - Download Pinterest Videos & GIFs Free",
-    description:
-      "Download Pinterest videos and GIFs in HD quality. Free, fast, and secure Pinterest downloader without app installation.",
+    title: "Pinterest Video Downloader - Save Videos & GIFs",
+    description: "⚡ Download Pinterest videos and GIFs in HD!",
     url: "https://30tools.com/pinterest-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [
-      {
-        url: "/og-images/pinterest-video-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Pinterest Video Downloader - Free Online Tool",
-      },
-    ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Pinterest Video Downloader - Download Videos & GIFs Free",
-    description:
-      "Download Pinterest videos and GIFs in HD quality. Free Pinterest downloader tool.",
-    images: ["/og-images/pinterest-video-downloader.jpg"],
-  },
-  alternates: {
-    canonical: "https://30tools.com/pinterest-video-downloader",
-  },
+  alternates: { canonical: "https://30tools.com/pinterest-video-downloader" },
+  robots: { index: true, follow: true }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Pinterest Video Downloader",
-  description:
-    "Free online tool to download Pinterest videos and GIFs in high quality without software installation",
-  url: "https://30tools.com/pinterest-video-downloader",
-  applicationCategory: "MultimediaApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Download Pinterest videos in HD",
-    "Save Pinterest GIFs and animations",
-    "Download idea pins and story pins",
-    "Fast processing speed",
-    "No software installation required",
-    "Works on all devices",
-    "Unlimited free downloads",
-    "Privacy protected downloads",
-  ],
-};
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function PinterestVideoDownloaderPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
-              Pinterest Video Downloader
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Download Pinterest videos and GIFs in high definition quality for
-              free. Our advanced Pinterest downloader supports all video content
-              including idea pins, story pins, and animated GIFs with
-              lightning-fast speed. Save Pinterest videos to your device
-              instantly without any software installation. Perfect for
-              inspiration collection, DIY projects, and creative work.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li>/</li>
+              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li>/</li>
+              <li className="text-foreground font-medium">Pinterest Video Downloader</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Pinterest Video Downloader</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Download videos, GIFs, and images from Pinterest in high quality. Save creative ideas and inspiration directly to your device.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Videos & GIFs
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Idea Pins
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ HD Quality
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ No Login Required
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>📌 Save Pins</span><span>🎥 Videos & GIFs</span><span>🖼️ Images</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <PinterestDownloader />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Download Pinterest Videos & GIFs
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-destructive font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Copy Pinterest URL</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Copy the Pinterest pin link containing the video or GIF you
-                    want to download
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-destructive font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Paste & Analyze</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Paste the Pinterest URL and our tool will analyze the pin
-                    content automatically
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-destructive/100/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-destructive font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download Content</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Select quality and download the Pinterest video or GIF to
-                    your device
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Pinterest Downloader Features
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-destructive">
-                    📌 All Pinterest Content
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Download all types of Pinterest video content including
-                    regular video pins, idea pins, story pins, and animated
-                    GIFs. Perfect for saving DIY tutorials, recipes, and
-                    creative inspiration.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-destructive">
-                    🎨 Creative Content Focus
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Specially designed for creative professionals, DIY
-                    enthusiasts, and content creators. Save Pinterest videos for
-                    offline inspiration, project references, and creative
-                    collections.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-destructive">
-                    ⚡ Lightning Fast
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Our optimized servers process Pinterest content instantly.
-                    Download Pinterest videos and GIFs in seconds without any
-                    waiting time or processing delays.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-destructive">
-                    🔐 Safe & Secure
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    No Pinterest login required. We don't access your Pinterest
-                    account or store any personal information. All downloads are
-                    processed securely and privately.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Pinterest Video Downloader FAQ
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download Pinterest idea pins?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Yes! Our downloader supports Pinterest idea pins, story
-                    pins, and all video content types. You can download
-                    multi-page idea pins and story sequences.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What about Pinterest GIFs and animations?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Absolutely! Download Pinterest GIFs and save them as MP4
-                    videos or animated GIF files. Perfect for saving animated
-                    tutorials and creative content.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Can I download from private Pinterest boards?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    You can only download content from public Pinterest pins or
-                    private boards you have access to. The pin must be visible
-                    to you on Pinterest.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    What video quality is available?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    We provide the best available quality from Pinterest,
-                    typically including HD options and mobile-optimized formats
-                    depending on the original pin quality.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">
-                    Is there a download limit?
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    No limits! Download as many Pinterest videos and GIFs as you
-                    want, completely free. Perfect for building your inspiration
-                    collection.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <PinterestDownloader />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download Pinterest Videos</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                { step: "1", title: "Copy Link", desc: "Find the Pinterest pin you want to save and copy its link." },
+                { step: "2", title: "Paste URL", desc: "Paste the link into the downloader box above." },
+                { step: "3", title: "Download", desc: "Click download and save the video or image." }
+              ].map((s, i) => (
+                <div key={i} className="text-center p-6 bg-card rounded-xl border border-border">
+                  <div className="w-12 h-12 bg-primary/10 text-primary rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">{s.step}</div>
+                  <h3 className="text-xl font-semibold mb-2">{s.title}</h3>
+                  <p className="text-muted-foreground">{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/instagram-downloader", icon: "📸", title: "Instagram Downloader", desc: "Download IG content" },
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download TikToks" },
+                { href: "/twitter-downloader", icon: "🐦", title: "Twitter Downloader", desc: "Download Tweets" },
+                { href: "/facebook-downloader", icon: "📘", title: "Facebook Downloader", desc: "Download FB videos" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }
