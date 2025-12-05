@@ -1,130 +1,48 @@
 import AiTechnicalSeoFixerTool from "@/components/tools/seo/AiTechnicalSeoFixerTool";
 
 export const metadata = {
-    title: "AI Technical SEO Fixer - Instant Code & Error Solutions | 30tools",
-    description:
-        "Instantly fix technical SEO errors with AI. Generate corrected code for Schema, robots.txt, .htaccess, and meta tags. Solve GSC errors in seconds.",
-    keywords: [
-        "technical seo fixer",
-        "ai seo code generator",
-        "fix google search console errors",
-        "schema markup fixer",
-        "robots.txt generator ai",
-        "technical seo audit tool",
-        "seo code debugger",
-    ].join(", "),
-    openGraph: {
-        title: "AI Technical SEO Fixer - Instant Code & Error Solutions",
-        description:
-            "Instantly fix technical SEO errors with AI. Generate corrected code for Schema, robots.txt, .htaccess, and meta tags.",
-        url: "https://30tools.com/ai-technical-seo-fixer",
-        siteName: "30tools",
-        type: "website",
-        images: [
-            {
-                url: "/og-images/ai-technical-seo-fixer.jpg",
-                width: 1200,
-                height: 630,
-                alt: "AI Technical SEO Fixer Tool",
-            },
-        ],
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: "AI Technical SEO Fixer - Free SEO Tool",
-        description: "Instantly fix technical SEO errors with AI.",
-        images: ["/og-images/ai-technical-seo-fixer.jpg"],
-    },
-    alternates: {
-        canonical: "https://30tools.com/ai-technical-seo-fixer",
-    },
+    title: "AI Technical SEO Fixer - Fix SEO Issues Free | 30tools",
+    description: "Find and fix technical SEO issues with AI. Analyze robots.txt, sitemaps, structured data, and more. Free AI-powered technical SEO tool.",
+    keywords: ["technical seo fixer", "ai technical seo", "seo audit tool", "technical seo checker", "fix seo issues", "technical seo analyzer"].join(", "),
+    openGraph: { title: "AI Technical SEO Fixer", description: "⚡ Fix technical SEO issues with AI!", url: "https://30tools.com/ai-technical-seo-fixer", siteName: "30tools", type: "website" },
+    alternates: { canonical: "https://30tools.com/ai-technical-seo-fixer" },
+    robots: { index: true, follow: true }
 };
 
-const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: "AI Technical SEO Fixer",
-    description:
-        "Free AI-powered tool to instantly diagnose and fix technical SEO issues and generate optimized code.",
-    url: "https://30tools.com/ai-technical-seo-fixer",
-    applicationCategory: "DeveloperApplication",
-    operatingSystem: "Any",
-    permissions: "browser",
-    offers: {
-        "@type": "Offer",
-        price: "0",
-        priceCurrency: "USD",
-    },
-    featureList: [
-        "Code Generation",
-        "Error Debugging",
-        "Schema Validation",
-        "Robots.txt Optimization",
-        "Meta Tag Fixing",
-    ],
-};
+const AdUnit = () => (<div className="my-6 flex justify-center"><ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins></div>);
 
-export default function AiTechnicalSeoFixerPage() {
+export default function AITechnicalSEOFixerPage() {
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <div className="container mx-auto px-4 py-8">
-                <div className="max-w-4xl mx-auto text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-500">
-                        AI Technical SEO Fixer
-                    </h1>
-                    <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-                        Don't let technical errors hold back your rankings. Paste any SEO
-                        issue, error message, or broken code, and our AI will instantly
-                        generate the correct fix with an explanation.
-                    </p>
-                    <div className="flex flex-wrap justify-center gap-3 text-sm text-muted-foreground">
-                        <span className="bg-primary/10 px-4 py-1.5 rounded-full font-medium text-primary">
-                            🔧 Instant Fixes
-                        </span>
-                        <span className="bg-primary/10 px-4 py-1.5 rounded-full font-medium text-primary">
-                            💻 Code Generation
-                        </span>
-                        <span className="bg-primary/10 px-4 py-1.5 rounded-full font-medium text-primary">
-                            🚀 GSC Error Solver
-                        </span>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+            <div className="container mx-auto px-4 py-12 md:py-20">
+                <div className="max-w-6xl mx-auto">
+                    <nav aria-label="Breadcrumb" className="mb-8"><ol className="flex items-center space-x-2 text-sm text-muted-foreground"><li><a href="/" className="hover:text-primary">Home</a></li><li>/</li><li><a href="/#seo-tools" className="hover:text-primary">SEO Tools</a></li><li>/</li><li className="text-foreground font-medium">AI Technical SEO Fixer</li></ol></nav>
+                    <AdUnit />
+                    <div className="text-center mb-12">
+                        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">AI Technical SEO Fixer</h1>
+                        <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">Find and fix technical SEO issues with AI assistance. Analyze crawlability, indexation, structured data, and site performance.</p>
+                        <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground"><span>🤖 AI Analysis</span><span>🔧 Fix Issues</span><span>📊 Full Audit</span><span>🆓 100% Free</span></div>
                     </div>
-                </div>
-
-                <AiTechnicalSeoFixerTool />
-
-                <div className="mt-20 space-y-12 max-w-4xl mx-auto">
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-card p-8 rounded-xl border shadow-sm">
-                            <h2 className="text-2xl font-bold mb-4">
-                                What Can It Fix?
-                            </h2>
-                            <ul className="space-y-2 text-muted-foreground">
-                                <li>• Invalid Schema Markup (JSON-LD)</li>
-                                <li>• Broken robots.txt files</li>
-                                <li>• Incorrect Canonical tags</li>
-                                <li>• Hreflang tag errors</li>
-                                <li>• .htaccess redirects</li>
-                                <li>• Meta tag issues</li>
-                            </ul>
+                    <AdUnit />
+                    <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16"><AiTechnicalSeoFixerTool /></div>
+                    <AdUnit />
+                    <section className="mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">What We Check</h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {[{ icon: "🤖", title: "Robots.txt", desc: "Crawl directives" }, { icon: "🗺️", title: "Sitemaps", desc: "Sitemap validation" }, { icon: "📋", title: "Schema", desc: "Structured data" }, { icon: "⚡", title: "Speed", desc: "Page performance" }, { icon: "📱", title: "Mobile", desc: "Mobile usability" }, { icon: "🔒", title: "SSL", desc: "Security status" }, { icon: "🔗", title: "Links", desc: "Internal linking" }, { icon: "🏷️", title: "Meta", desc: "Meta tag issues" }].map((f, i) => (<div key={i} className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow"><span className="text-4xl mb-4 block">{f.icon}</span><h3 className="text-lg font-semibold mb-2">{f.title}</h3><p className="text-sm text-muted-foreground">{f.desc}</p></div>))}
                         </div>
-                        <div className="bg-card p-8 rounded-xl border shadow-sm">
-                            <h2 className="text-2xl font-bold mb-4">
-                                For Developers & SEOs
-                            </h2>
-                            <p className="text-muted-foreground leading-relaxed">
-                                Whether you're a developer needing a quick snippet or an SEO
-                                professional troubleshooting a client site, this tool acts as your
-                                instant technical assistant. It not only fixes the code but
-                                explains *why* it was broken.
-                            </p>
+                    </section>
+                    <AdUnit />
+                    <section className="mb-16">
+                        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related SEO Tools</h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            {[{ href: "/website-analyzer", icon: "🔍", title: "Site Analyzer", desc: "Full analysis" }, { href: "/ssl-checker", icon: "🔒", title: "SSL Checker", desc: "Check SSL" }, { href: "/robots-txt-generator", icon: "🤖", title: "Robots.txt", desc: "Generate robots.txt" }, { href: "/schema-generator", icon: "📋", title: "Schema", desc: "Structured data" }].map((tool, i) => (<a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all"><div className="flex items-center gap-3 mb-2"><span className="text-2xl">{tool.icon}</span><h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3></div><p className="text-sm text-muted-foreground">{tool.desc}</p></a>))}
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
+            <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
         </>
     );
 }

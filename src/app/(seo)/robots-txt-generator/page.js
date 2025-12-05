@@ -1,313 +1,141 @@
 import RobotsTxtGenerator from "@/components/tools/seo/RobotsTxtGenerator";
 
 export const metadata = {
-  title: "Robots.txt Generator - Free SEO Robots File Creator | 30tools",
-  description:
-    "Free robots txt generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  title: "Robots.txt Generator - Free Robots File Creator | 30tools",
+  description: "Generate robots.txt files for your website. Control search engine crawlers with our free robots.txt generator. Easy to use with common presets.",
   keywords: [
-    // Primary keywords
+    "robots.txt generator",
     "robots txt generator",
-    "robots.txt",
     "robots file generator",
-    "seo robots txt",
-    "robots txt creator",
-
-    // Long-tail keywords for SEO ranking
-    "robots txt generator wordpress",
-    "robots txt validator and tester",
-    "create robots txt file online",
-    "robots txt sitemap generator",
-    "robots txt file creator free",
-    "generate robots txt for website",
-    "seo robots txt optimization",
-    "robots txt disallow generator",
-    "custom robots txt generator",
-    "robots txt best practices",
-    "robots txt allow disallow",
-    "website crawling optimization",
+    "create robots.txt",
+    "robots.txt creator",
+    "robots.txt maker",
+    "robots.txt generator free",
+    "seo robots.txt",
+    "robots.txt tool"
   ].join(", "),
+
   openGraph: {
-    title: "Free Robots.txt Generator - SEO Robots File Creator",
-    description:
-      "Generate optimized robots.txt files for better search engine crawling. Create robots.txt with custom rules, sitemaps, and crawl directives.",
+    title: "Robots.txt Generator - Free Robots File Creator",
+    description: "⚡ Generate robots.txt files easily. Control search engine crawlers!",
     url: "https://30tools.com/robots-txt-generator",
-    siteName: "30tools",
-    type: "website",
-    images: [
-      {
-        url: "/og-images/robots-txt-generator.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Robots.txt Generator - SEO Tool",
-      },
-    ],
+    siteName: "30tools", type: "website",
+    images: [{ url: "/og-images/robots-txt-generator.jpg", width: 1200, height: 630, alt: "Robots.txt Generator" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Robots.txt Generator - Free SEO Tool",
-    description:
-      "Generate optimized robots.txt files for better search engine crawling and indexing. Free online robots.txt creator.",
-    images: ["/og-images/robots-txt-generator.jpg"],
-  },
-  alternates: {
-    canonical: "https://30tools.com/robots-txt-generator",
-  },
+
+  twitter: { card: "summary_large_image", title: "Robots.txt Generator - Free", description: "⚡ Create robots.txt files easily!", images: ["/og-images/robots-txt-generator.jpg"], creator: "@30tools" },
+  alternates: { canonical: "https://30tools.com/robots-txt-generator" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  name: "Robots.txt Generator",
-  description:
-    "Free online tool to generate robots.txt files for websites to control search engine crawling and improve SEO",
-  url: "https://30tools.com/robots-txt-generator",
-  applicationCategory: "SEOApplication",
-  operatingSystem: "Any",
-  permissions: "browser",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
-  },
-  featureList: [
-    "Custom user-agent rules",
-    "Allow/Disallow directives",
-    "Sitemap URL inclusion",
-    "Crawl-delay settings",
-    "Multiple user agents",
-    "Comment annotations",
-    "Syntax validation",
-    "SEO best practices",
-  ],
-};
+const AdUnit = () => (
+  <div className="my-6 flex justify-center">
+    <ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins>
+  </div>
+);
 
 export default function RobotsTxtGeneratorPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <div className="container mx-auto px-4 py-8">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-8">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-background">
-              Robots.txt Generator
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
-              Generate SEO-optimized robots.txt files to control search engine
-              crawling of your website. Create custom robots.txt with user-agent
-              rules, allow/disallow directives, sitemap URLs, and crawl delays.
-              Our free robots.txt generator helps improve your website's SEO and
-              search engine indexing efficiency.
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+
+      <div className="container mx-auto px-4 py-12 md:py-20">
+        <div className="max-w-6xl mx-auto">
+          <nav aria-label="Breadcrumb" className="mb-8">
+            <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+              <li><a href="/" className="hover:text-primary">Home</a></li><li>/</li>
+              <li><a href="/#seo-tools" className="hover:text-primary">SEO Tools</a></li><li>/</li>
+              <li className="text-foreground font-medium">Robots.txt Generator</li>
+            </ol>
+          </nav>
+
+          <AdUnit />
+
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Robots.txt Generator</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              Create robots.txt files to control how search engine crawlers access your website. Free tool with common presets and custom rules.
             </p>
-            <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ SEO Optimized
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Custom Rules
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Sitemap Integration
-              </span>
-              <span className="bg-primary/10 px-3 py-1 rounded-full">
-                ✓ Syntax Validation
-              </span>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span>🤖 Control Crawlers</span><span>🚫 Block Paths</span><span>✅ Allow Paths</span><span>🆓 100% Free</span>
             </div>
           </div>
 
-          <RobotsTxtGenerator />
+          <AdUnit />
 
-          <div className="mt-12 space-y-8">
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                How to Use Robots.txt Generator
-              </h2>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">1</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Configure Rules</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Set user-agent rules, allow/disallow paths, and crawl delays
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">2</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Add Sitemaps</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Include your XML sitemap URLs for better indexing
-                  </p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-muted/500/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-primary font-bold">3</span>
-                  </div>
-                  <h3 className="font-medium mb-2">Download & Upload</h3>
-                  <p className="text-sm text-muted-foreground">
-                    Download the robots.txt file and upload it to your website
-                    root
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                What is Robots.txt?
-              </h2>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    🤖 Search Engine Instructions
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Robots.txt is a file that tells search engines which pages
-                    or sections of your website they should or shouldn't crawl
-                    and index.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    📁 Website Root Location
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    The robots.txt file must be placed in the root directory of
-                    your website (e.g., https://yoursite.com/robots.txt) to be
-                    effective.
-                  </p>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2 text-primary">
-                    🎯 Crawl Control
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Use robots.txt to block access to private areas, prevent
-                    duplicate content issues, and optimize your crawl budget for
-                    important pages.
-                  </p>
-
-                  <h3 className="font-medium mb-2 text-primary">
-                    🗺️ Sitemap Declaration
-                  </h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Include your XML sitemap URLs in robots.txt to help search
-                    engines discover and index your content more efficiently.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Robots.txt Best Practices
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <h3 className="font-medium mb-2">Essential Directives</h3>
-                  <ul className="text-sm text-muted-foreground space-y-1 ml-4">
-                    <li>
-                      • <strong>User-agent:</strong> Specify which crawlers the
-                      rules apply to (* for all)
-                    </li>
-                    <li>
-                      • <strong>Disallow:</strong> Block access to specific
-                      paths or pages
-                    </li>
-                    <li>
-                      • <strong>Allow:</strong> Explicitly allow access to paths
-                      within disallowed directories
-                    </li>
-                    <li>
-                      • <strong>Sitemap:</strong> Include URLs to your XML
-                      sitemaps
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">Common Use Cases</h3>
-                  <ul className="text-sm text-muted-foreground space-y-1 ml-4">
-                    <li>
-                      • Block admin panels: <code>Disallow: /admin/</code>
-                    </li>
-                    <li>
-                      • Prevent private directories:{" "}
-                      <code>Disallow: /private/</code>
-                    </li>
-                    <li>
-                      • Block duplicate content: <code>Disallow: /*?</code> (URL
-                      parameters)
-                    </li>
-                    <li>
-                      • Control crawl speed: <code>Crawl-delay: 1</code>
-                    </li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="font-medium mb-2">Important Notes</h3>
-                  <ul className="text-sm text-muted-foreground space-y-1 ml-4">
-                    <li>
-                      • Robots.txt is a public file - don't list sensitive URLs
-                    </li>
-                    <li>
-                      • It's a directive, not a guarantee - bots can ignore it
-                    </li>
-                    <li>
-                      • Test your robots.txt file regularly for syntax errors
-                    </li>
-                    <li>
-                      • Use Google Search Console to test robots.txt
-                      effectiveness
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-lg p-6 border">
-              <h2 className="text-2xl font-semibold mb-4">
-                Example Robots.txt Files
-              </h2>
-              <div className="space-y-6">
-                <div>
-                  <h3 className="font-medium mb-2">Basic E-commerce Site</h3>
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                    <pre className="text-sm text-foreground dark:text-gray-200">
-                      {`User-agent: *
-Disallow: /admin/
-Disallow: /cart/
-Disallow: /checkout/
-Disallow: /*?*
-Allow: /
-
-Sitemap: https://yoursite.com/sitemap.xml`}
-                    </pre>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="font-medium mb-2">Blog/Content Site</h3>
-                  <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4">
-                    <pre className="text-sm text-foreground dark:text-gray-200">
-                      {`User-agent: *
-Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /cgi-bin/
-Allow: /wp-content/uploads/
-
-Sitemap: https://yoursite.com/sitemap.xml
-Sitemap: https://yoursite.com/sitemap-images.xml`}
-                    </pre>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+            <RobotsTxtGenerator />
           </div>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Common Robots.txt Directives</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { icon: "✅", title: "Allow", desc: "Permit crawlers to access specific paths" },
+                { icon: "🚫", title: "Disallow", desc: "Block crawlers from specific paths" },
+                { icon: "🗺️", title: "Sitemap", desc: "Point to your XML sitemap location" },
+                { icon: "⏱️", title: "Crawl-delay", desc: "Set delay between crawler requests" },
+                { icon: "🤖", title: "User-agent", desc: "Target specific crawlers/bots" },
+                { icon: "🔒", title: "Private Areas", desc: "Block admin and login pages" },
+                { icon: "📁", title: "Media Folders", desc: "Control access to media files" },
+                { icon: "🔍", title: "Search Pages", desc: "Block internal search results" }
+              ].map((f, i) => (
+                <div key={i} className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow">
+                  <span className="text-4xl mb-4 block">{f.icon}</span>
+                  <h3 className="text-lg font-semibold mb-2">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <div className="space-y-4 max-w-4xl mx-auto">
+              {[
+                { q: "What is robots.txt?", a: "Robots.txt is a text file that tells search engine crawlers which pages or sections of your website they can or cannot access." },
+                { q: "Where should I put robots.txt?", a: "The robots.txt file must be placed in the root directory of your website (e.g., https://example.com/robots.txt)." },
+                { q: "Can robots.txt block all crawlers?", a: "Yes, you can use 'User-agent: * Disallow: /' to block all crawlers from your entire site, but this is rarely recommended." },
+                { q: "Is robots.txt mandatory?", a: "No, but it's highly recommended for SEO. It helps search engines crawl your site more efficiently." },
+                { q: "Does robots.txt guarantee privacy?", a: "No, robots.txt is a suggestion, not a security measure. Some bots may ignore it. Use proper authentication for truly private content." }
+              ].map((faq, i) => (
+                <details key={i} className="bg-card rounded-xl border border-border p-4 group">
+                  <summary className="font-semibold cursor-pointer list-none flex justify-between items-center">
+                    {faq.q}<span className="text-muted-foreground group-open:rotate-180 transition-transform">▼</span>
+                  </summary>
+                  <p className="mt-4 text-muted-foreground">{faq.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+
+          <AdUnit />
+
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related SEO Tools</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { href: "/sitemap-generator", icon: "🗺️", title: "Sitemap Generator", desc: "Create XML sitemaps" },
+                { href: "/meta-tags-generator", icon: "🏷️", title: "Meta Tags Generator", desc: "Create SEO meta tags" },
+                { href: "/schema-generator", icon: "📋", title: "Schema Generator", desc: "Create structured data" },
+                { href: "/ssl-checker", icon: "🔒", title: "SSL Checker", desc: "Check SSL certificates" }
+              ].map((tool, i) => (
+                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                  <div className="flex items-center gap-3 mb-2">
+                    <span className="text-2xl">{tool.icon}</span>
+                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
+                  </div>
+                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
+                </a>
+              ))}
+            </div>
+          </section>
         </div>
       </div>
+
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
   );
 }
