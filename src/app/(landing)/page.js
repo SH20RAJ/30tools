@@ -30,6 +30,8 @@ import {
   TypeIcon,
   SettingsIcon,
   RefreshCwIcon,
+  Heart,
+  Sparkles,
 } from "lucide-react";
 import AuthComponent from "@/components/auth/AuthComponent";
 import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
@@ -341,6 +343,75 @@ export default function LandingPage() {
                   No subscriptions, no hidden fees. All tools are completely
                   free forever.
                 </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Support Us Section - Keep 30tools Free */}
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50 dark:from-rose-950/40 dark:via-pink-950/40 dark:to-orange-950/40 border border-rose-200/50 dark:border-rose-800/30 p-8 md:p-12">
+                {/* Decorative elements */}
+                <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-rose-200/40 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+                <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-orange-200/40 to-transparent rounded-full blur-2xl translate-y-1/2 -translate-x-1/2" />
+                <div className="absolute top-1/2 left-1/2 w-32 h-32 bg-gradient-to-r from-pink-200/20 to-transparent rounded-full blur-2xl -translate-x-1/2 -translate-y-1/2" />
+
+                <div className="relative z-10 text-center">
+                  <div className="flex items-center justify-center gap-3 mb-4">
+                    <Heart className="w-8 h-8 text-rose-500 animate-pulse" />
+                    <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-orange-600 bg-clip-text text-transparent">
+                      Help Keep 30tools Free Forever
+                    </h2>
+                    <Sparkles className="w-8 h-8 text-orange-500" />
+                  </div>
+
+                  <p className="text-lg text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed">
+                    💝 We serve <span className="font-bold text-foreground">millions of students, creators, teachers, and families</span> every month — completely free.
+                    Your small contribution keeps our servers running and helps us build more amazing tools.
+                  </p>
+
+                  <p className="text-base text-foreground/80 mb-8 max-w-lg mx-auto">
+                    🌟 <span className="font-semibold">Be a hero today!</span> Even a small donation means the world to us and everyone who depends on these tools.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+                    {/* Primary: Cashfree - Works for India & International */}
+                    <a
+                      href="https://payments.cashfree.com/forms/30tools"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white font-bold text-lg rounded-2xl shadow-xl hover:shadow-rose-500/30 transition-all duration-300 hover:scale-105"
+                    >
+                      <Heart className="w-5 h-5 group-hover:animate-bounce" />
+                      <span>Support Us ❤️</span>
+                      <span className="absolute -top-3 -right-3 px-3 py-1 text-xs font-bold bg-green-500 text-white rounded-full shadow-lg">
+                        ⭐ Recommended
+                      </span>
+                    </a>
+
+                    {/* Secondary: PayPal for International */}
+                    <a
+                      href="https://www.paypal.com/ncp/payment/HUKEAE7KXYYCA"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-blue-300 dark:border-blue-700 text-blue-600 dark:text-blue-400 font-semibold rounded-xl hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-all duration-300 hover:scale-105 shadow-md"
+                    >
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z" />
+                      </svg>
+                      <span>PayPal</span>
+                    </a>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground opacity-80">
+                    🙏 Even ₹10 or $1 makes a huge difference. Thank you for your kindness! 💖
+                  </p>
+                  <p className="text-sm text-muted-foreground opacity-80">
+                    <Link href="https://payments.cashfree.com/forms/buy-candy" target="_blank">Buy Candy</Link> for the developer 😅
+                  </p>
+                </div>
               </div>
             </div>
           </div>
