@@ -26,8 +26,3 @@ Allow: /pdf-merger
 Allow: /base64-tool
 Allow: /video-compressor
 Allow: /audio-converter
-
-
-
-# Host
-Host: https://30tools.com

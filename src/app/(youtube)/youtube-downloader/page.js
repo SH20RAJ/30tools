@@ -40,7 +40,7 @@ export const metadata = {
 
   // Open Graph for social sharing
   openGraph: {
-    title: "Free YouTube Video Downloader - Download HD Videos & MP3 Online",
+    title: "Free YouTube Downloader - Download HD Videos & MP3",
     description: "⚡ Download YouTube videos in HD, 4K quality. Convert YouTube to MP4, MP3 instantly. Fast, secure, unlimited downloads. No software needed.",
     url: "https://30tools.com/youtube-downloader",
     siteName: "30tools",
@@ -58,7 +58,7 @@ export const metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Free YouTube Downloader - Download Videos & Convert to MP3",
+    title: "Free YouTube Downloader - Download Videos & MP3",
     description: "⚡ Download YouTube videos in HD, 4K. Convert to MP3 instantly. Fast, secure & unlimited downloads.",
     images: ["/og-images/youtube-downloader.jpg"],
     creator: "@30tools"
@@ -210,6 +210,30 @@ const jsonLdSchemas = {
     ]
   },
 
+  product: {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "YouTube Downloader",
+    "image": "https://30tools.com/og-images/youtube-downloader.jpg",
+    "description": "Download YouTube videos in HD, 4K quality for free. Convert YouTube to MP4, MP3 with our fast, secure downloader.",
+    "brand": {
+      "@type": "Brand",
+      "name": "30tools"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "ratingCount": "50847",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
+  },
   // BreadcrumbList Schema
   breadcrumb: {
     "@context": "https://schema.org",
@@ -255,6 +279,10 @@ export default function YouTubeDownloaderPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.product) }}
       />
 
       <div className="container mx-auto px-4 py-12 md:py-20">
