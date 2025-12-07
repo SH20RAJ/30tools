@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CalendarIcon, ArrowLeftIcon, ExternalLinkIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import BlogContent from "@/components/BlogContent";
 
 async function getArticle(username, slug) {
     try {
@@ -134,10 +135,7 @@ export default async function BlogPostPage({ params }) {
                 )}
             </header>
 
-            <div
-                className="prose prose-lg dark:prose-invert max-w-none prose-img:rounded-xl prose-a:text-primary hover:prose-a:text-primary/80"
-                dangerouslySetInnerHTML={{ __html: article.body_html }}
-            />
+            <BlogContent html={article.body_html} />
 
             <Separator className="my-12" />
 
