@@ -38,7 +38,7 @@ export default function BlogContent({ html }) {
             />
             <div
                 ref={contentRef}
-                className="prose prose-lg dark:prose-invert max-w-none
+                className={`prose prose-lg dark:prose-invert max-w-none
                     prose-headings:font-bold prose-headings:tracking-tight
                     prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
                     prose-p:text-muted-foreground prose-p:leading-relaxed
@@ -52,10 +52,11 @@ export default function BlogContent({ html }) {
                     prose-li:text-muted-foreground prose-li:marker:text-primary
                     prose-img:rounded-xl prose-img:shadow-md
                     prose-hr:border-border
-                    prose-table:overflow-x-auto prose-th:bg-muted prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2 prose-td:border-border"
+                    prose-table:overflow-x-auto prose-th:bg-muted prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2 prose-td:border-border`}
                 dangerouslySetInnerHTML={{ __html: html }}
             />
-            <style jsx global>{`
+            {/* Using standard style tag for client-side styling */}
+            <style jsx>{`
                 .prose pre code {
                     background: transparent !important;
                     padding: 1rem !important;

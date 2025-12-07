@@ -1,107 +1,112 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { CalendarIcon, UserIcon, ArrowRightIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import BlogList from "@/components/blog/BlogList";
 
 export const metadata = {
-    title: "Blog - 30tools",
-    description: "Read the latest articles and tutorials on web development, SEO, and productivity tools.",
+    title: "Blog - Web Development Articles & Tutorials | 30tools",
+    description: "Read the latest articles and tutorials on web development, JavaScript, React, Next.js, SEO, and productivity tools. Stay updated with industry trends and best practices.",
+    keywords: "web development blog, javascript tutorials, react articles, nextjs guides, seo tips, programming tutorials, developer resources",
+    openGraph: {
+        title: "Blog - Web Development Articles & Tutorials | 30tools",
+        description: "Read the latest articles and tutorials on web development, JavaScript, React, Next.js, SEO, and productivity tools.",
+        type: "website",
+        url: "https://30tools.com/blogs",
+        images: [
+            {
+                url: "/og-images/blog.jpg",
+                width: 1200,
+                height: 630,
+                alt: "30tools Blog - Web Development Articles",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Blog - Web Development Articles & Tutorials | 30tools",
+        description: "Read the latest articles and tutorials on web development, JavaScript, React, Next.js, SEO, and productivity tools.",
+        images: ["/og-images/blog.jpg"],
+    },
+    alternates: {
+        canonical: "https://30tools.com/blogs",
+    },
 };
 
-async function getArticles() {
-    try {
-        const res = await fetch("https://dev.to/api/articles?tag=webdev&top=7&per_page=30", {
-            next: { revalidate: 3600 }, // Revalidate every hour
-        });
+// JSON-LD structured data for the blog listing page
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    name: "30tools Blog",
+    description: "Read the latest articles and tutorials on web development, JavaScript, React, Next.js, SEO, and productivity tools.",
+    url: "https://30tools.com/blogs",
+    publisher: {
+        "@type": "Organization",
+        name: "30tools",
+        url: "https://30tools.com",
+        logo: {
+            "@type": "ImageObject",
+            url: "https://30tools.com/logo.png",
+        },
+    },
+    blogPost: {
+        "@type": "ItemList",
+        itemListElement: [],
+    },
+};
 
-        if (!res.ok) {
-            throw new Error("Failed to fetch articles");
-        }
-
-        return res.json();
-    } catch (error) {
-        console.error("Error fetching articles:", error);
-        return [];
-    }
-}
-
-export default async function BlogPage() {
-    const articles = await getArticles();
-
+export default function BlogPage() {
     return (
-        <div className="container mx-auto px-4 py-12">
-            <div className="text-center mb-12">
-                <h1 className="text-4xl font-bold mb-4">Latest Articles</h1>
-                <p className="text-muted-foreground max-w-2xl mx-auto">
-                    Explore our collection of articles about web development, tools, and productivity.
-                </p>
-            </div>
+        <>
+            {/* JSON-LD Structured Data */}
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {articles.map((article) => (
-                    <Link
-                        key={article.id}
-                        href={`/blogs/${article.user.username}/${article.slug}`}
-                        className="block h-full"
-                    >
-                        <Card className="h-full hover:shadow-lg transition-shadow duration-300 flex flex-col overflow-hidden group">
-                            {article.cover_image && (
-                                <div className="relative w-full h-48 overflow-hidden">
-                                    <img
-                                        src={article.cover_image}
-                                        alt={article.title}
-                                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    />
-                                </div>
-                            )}
-                            <CardHeader>
-                                <div className="flex flex-wrap gap-2 mb-2">
-                                    {article.tag_list.slice(0, 3).map((tag) => (
-                                        <Badge key={tag} variant="secondary" className="text-xs">
-                                            #{tag}
-                                        </Badge>
-                                    ))}
-                                </div>
-                                <CardTitle className="line-clamp-2 group-hover:text-primary transition-colors">
-                                    {article.title}
-                                </CardTitle>
-                            </CardHeader>
-                            <CardContent className="flex-grow">
-                                <p className="text-muted-foreground line-clamp-3 text-sm">
-                                    {article.description}
-                                </p>
-                            </CardContent>
-                            <CardFooter className="border-t pt-4 text-sm text-muted-foreground flex justify-between items-center">
-                                <div className="flex items-center gap-2">
-                                    {article.user.profile_image_90 && (
-                                        <img
-                                            src={article.user.profile_image_90}
-                                            alt={article.user.name}
-                                            width={24}
-                                            height={24}
-                                            className="rounded-full"
-                                        />
-                                    )}
-                                    <span className="truncate max-w-[100px]">{article.user.name}</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                    <CalendarIcon className="h-3 w-3" />
-                                    <span>{new Date(article.published_at).toLocaleDateString()}</span>
-                                </div>
-                            </CardFooter>
-                        </Card>
-                    </Link>
-                ))}
-            </div>
-
-            {articles.length === 0 && (
-                <div className="text-center py-12">
-                    <p className="text-muted-foreground">No articles found. Please try again later.</p>
+            <div className="container mx-auto px-4 py-12">
+                {/* SEO-friendly header with static content */}
+                <div className="text-center mb-12">
+                    <h1 className="text-4xl font-bold mb-4">Latest Articles</h1>
+                    <p className="text-muted-foreground max-w-2xl mx-auto">
+                        Explore our collection of articles about web development, JavaScript, React,
+                        Next.js, and productivity tools. Stay updated with the latest trends and best practices.
+                    </p>
                 </div>
-            )}
-        </div>
+
+                {/* Client-side blog list with pagination */}
+                <BlogList />
+
+                {/* SEO-friendly static content */}
+                <section className="mt-16 border-t pt-12">
+                    <h2 className="text-2xl font-bold mb-6 text-center">Why Read Our Blog?</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <div className="text-center">
+                            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span className="text-2xl">📚</span>
+                            </div>
+                            <h3 className="font-semibold mb-2">Expert Tutorials</h3>
+                            <p className="text-sm text-muted-foreground">
+                                Learn from detailed tutorials written by experienced developers.
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span className="text-2xl">🚀</span>
+                            </div>
+                            <h3 className="font-semibold mb-2">Latest Trends</h3>
+                            <p className="text-sm text-muted-foreground">
+                                Stay updated with the newest technologies and frameworks.
+                            </p>
+                        </div>
+                        <div className="text-center">
+                            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
+                                <span className="text-2xl">💡</span>
+                            </div>
+                            <h3 className="font-semibold mb-2">Practical Tips</h3>
+                            <p className="text-sm text-muted-foreground">
+                                Get actionable advice you can apply to your projects today.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </>
     );
 }
