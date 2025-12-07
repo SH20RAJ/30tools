@@ -11,11 +11,15 @@ async function getArticle(username, slug) {
     try {
         const res = await fetch(`https://dev.to/api/articles/${username}/${slug}`, {
             next: { revalidate: 3600 },
+            headers: {
+                "User-Agent": "Mozilla/5.0 (compatible; 30tools/1.0; +https://30tools.com)",
+            },
         });
 
         if (!res.ok) {
+            console.error(`Fetch failed for ${username}/${slug}: ${res.status} ${res.statusText}`);
             if (res.status === 404) return null;
-            throw new Error("Failed to fetch article");
+            throw new Error(`Failed to fetch article: ${res.status}`);
         }
 
         return res.json();
