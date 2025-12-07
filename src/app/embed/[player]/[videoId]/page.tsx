@@ -1,8 +1,8 @@
 import EmbedPlayer from "@/components/embed/EmbedPlayer";
 import { notFound } from "next/navigation";
 
-export default function Embed({ params }) {
-  const { player, videoId } = params;
+export default async function Embed({ params }) {
+  const { player, videoId } = await params;
   if (!videoId) return notFound();
 
   // allowed player engines

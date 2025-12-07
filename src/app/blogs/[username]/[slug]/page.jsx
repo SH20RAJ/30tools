@@ -25,7 +25,7 @@ async function getArticle(username, slug) {
 }
 
 export async function generateMetadata({ params }) {
-    const { username, slug } = params;
+    const { username, slug } = await params;
     const article = await getArticle(username, slug);
 
     if (!article) {
@@ -64,7 +64,7 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPostPage({ params }) {
-    const { username, slug } = params;
+    const { username, slug } = await params;
     const article = await getArticle(username, slug);
 
     if (!article) {
@@ -98,7 +98,7 @@ export default async function BlogPostPage({ params }) {
                 <div className="flex items-center justify-center gap-4 text-muted-foreground mb-8">
                     <div className="flex items-center gap-2">
                         {article.user.profile_image_90 && (
-                            <Image
+                            <img
                                 src={article.user.profile_image_90}
                                 alt={article.user.name}
                                 width={32}
@@ -125,12 +125,10 @@ export default async function BlogPostPage({ params }) {
 
                 {article.cover_image && (
                     <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-lg">
-                        <Image
+                        <img
                             src={article.cover_image}
                             alt={article.title}
-                            fill
                             className="object-cover"
-                            priority
                         />
                     </div>
                 )}
