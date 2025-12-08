@@ -385,6 +385,15 @@ export default function YouTubeDownloader() {
               </div>
             )}
 
+            {/* Terabox Downloader Promo */}
+            <div className="text-center">
+              <Link href="/terabox-downloader">
+                <Button variant="outline" className="w-full border-primary/20 hover:border-primary hover:bg-primary/5">
+                  🚀 Try our New Terabox Downloader
+                </Button>
+              </Link>
+            </div>
+
             {/* Donate Section - Keep This Service Free */}
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-rose-50 via-pink-50 to-orange-50 dark:from-rose-950/30 dark:via-pink-950/30 dark:to-orange-950/30 border border-rose-200/50 dark:border-rose-800/30 p-6">
               {/* Decorative elements */}
