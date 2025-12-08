@@ -563,10 +563,18 @@ export default function LandingPage() {
                 </li>
                 <li>
                   <Link
-                    href="/blogs"
+                    href="/blog"
                     className="text-muted-foreground hover:text-foreground"
                   >
                     Blog
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/blogs"
+                    className="text-muted-foreground hover:text-foreground"
+                  >
+                    Blogs
                   </Link>
                 </li>
                 <li>

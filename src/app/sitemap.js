@@ -62,6 +62,12 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.7,
     },
+    {
+      url: `${BASE_URL}/blog`,
+      lastModified: currentDate,
+      changeFrequency: "daily",
+      priority: 0.8,
+    },
   ];
 
   // Tool pages with intelligent priority calculation
@@ -88,7 +94,7 @@ export default function sitemap() {
       design: 0.9, // Creative tools
       legal: 0.9, // Niche category
       calculators: 0.9, // Niche category
-      
+
     };
 
     priority = Math.min(0.95, categoryPriorities[tool.category] || 0.8);
