@@ -389,7 +389,7 @@ export default function YouTubeDownloader() {
             <div className="text-center">
               <Link href="/terabox-downloader">
                 <Button variant="outline" className="w-full border-primary/20 hover:border-primary hover:bg-primary/5">
-                  🚀 Try our New Terabox Downloader
+                  🚀 Try our New Terabox Player + Downloader
                 </Button>
               </Link>
             </div>
