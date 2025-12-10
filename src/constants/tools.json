@@ -1248,7 +1248,15 @@
           "id": "tiktok-video-downloader",
           "name": "TikTok Video Downloader",
           "description": "Download TikTok videos without watermark in HD quality with audio extraction",
-          "route": "/tiktok-video-downloader",
+          "route": "/tiktok-downloader",
+          "popular": true,
+          "category": "downloaders"
+        },
+        {
+          "id": "instagram-downloader",
+          "name": "Instagram Downloader",
+          "description": "Download Instagram videos, reels, stories, and photos in high quality",
+          "route": "/instagram-downloader",
           "popular": true,
           "category": "downloaders"
         },

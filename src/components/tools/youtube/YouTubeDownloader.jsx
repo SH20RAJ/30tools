@@ -469,7 +469,7 @@ export default function YouTubeDownloader() {
                       <div className="shrink-0">
                         <img
                           src={videoData.thumbnail}
-                          alt="Video thumbnail"
+                          alt={`Thumbnail for ${videoData.title}`}
                           className="w-40 h-28 object-cover rounded-xl shadow-lg"
                         />
                       </div>
@@ -690,7 +690,7 @@ export default function YouTubeDownloader() {
                         {bookmark.thumbnail && (
                           <img
                             src={bookmark.thumbnail}
-                            alt="Thumbnail"
+                            alt={`Bookmark: ${bookmark.title}`}
                             className="w-16 h-12 object-cover rounded-lg"
                           />
                         )}

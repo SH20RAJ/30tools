@@ -1,8 +1,24 @@
 import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  CheckCircle2,
+  Download,
+  FileAudio,
+  FileVideo,
+  Globe,
+  MonitorSmartphone,
+  ShieldCheck,
+  Zap,
+} from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
-  title: "YouTube Video Downloader - Download YouTube Videos Free Online HD MP4 MP3",
+  title: "YouTube Video Downloader - Download YouTube Videos Free",
   description: "Download YouTube videos in HD, 4K quality for free. Convert YouTube to MP4, MP3 with our fast, secure downloader. No software installation required.",
   keywords: [
     // Primary high-volume keywords
@@ -40,7 +56,7 @@ export const metadata = {
 
   // Open Graph for social sharing
   openGraph: {
-    title: "Free YouTube Downloader - Download HD Videos & MP3",
+    title: "Free YouTube Video Downloader - Download HD Videos & MP3 Online",
     description: "⚡ Download YouTube videos in HD, 4K quality. Convert YouTube to MP4, MP3 instantly. Fast, secure, unlimited downloads. No software needed.",
     url: "https://30tools.com/youtube-downloader",
     siteName: "30tools",
@@ -58,7 +74,7 @@ export const metadata = {
   // Twitter Card
   twitter: {
     card: "summary_large_image",
-    title: "Free YouTube Downloader - Download Videos & MP3",
+    title: "Free YouTube Downloader - Download Videos & Convert to MP3",
     description: "⚡ Download YouTube videos in HD, 4K. Convert to MP3 instantly. Fast, secure & unlimited downloads.",
     images: ["/og-images/youtube-downloader.jpg"],
     creator: "@30tools"
@@ -210,30 +226,6 @@ const jsonLdSchemas = {
     ]
   },
 
-  product: {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "YouTube Downloader",
-    "image": "https://30tools.com/og-images/youtube-downloader.jpg",
-    "description": "Download YouTube videos in HD, 4K quality for free. Convert YouTube to MP4, MP3 with our fast, secure downloader.",
-    "brand": {
-      "@type": "Brand",
-      "name": "30tools"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
-    },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "50847",
-      "bestRating": "5",
-      "worstRating": "1"
-    }
-  },
   // BreadcrumbList Schema
   breadcrumb: {
     "@context": "https://schema.org",
@@ -261,6 +253,47 @@ const jsonLdSchemas = {
 };
 
 export default function YouTubeDownloaderPage() {
+  const features = [
+    {
+      icon: <Zap className="w-6 h-6 text-yellow-500" />,
+      title: "Fast & Easy",
+      description: "Download videos in seconds. Just paste the URL and click download.",
+    },
+    {
+      icon: <ShieldCheck className="w-6 h-6 text-green-500" />,
+      title: "100% Secure",
+      description: "No malware, no ads, no trackers. Your security is our priority.",
+    },
+    {
+      icon: <MonitorSmartphone className="w-6 h-6 text-blue-500" />,
+      title: "All Devices",
+      description: "Works perfectly on PC, Mac, iPhone, Android, and Tablets.",
+    },
+    {
+      icon: <CheckCircle2 className="w-6 h-6 text-purple-500" />,
+      title: "High Quality",
+      description: "Support for HD 1080p, 2K, and 4K video downloads.",
+    },
+  ];
+
+  const howToSteps = [
+    {
+      title: "Copy URL",
+      description: "Copy the YouTube video URL from the address bar or share button.",
+      icon: "📋",
+    },
+    {
+      title: "Paste Link",
+      description: "Paste the link into the input field above.",
+      icon: "🔗",
+    },
+    {
+      title: "Download",
+      description: "Choose your format (MP4/MP3) and click Download.",
+      icon: "⬇️",
+    },
+  ];
+
   return (
     <>
       {/* Inject all structured data schemas */}
@@ -280,25 +313,136 @@ export default function YouTubeDownloaderPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.breadcrumb) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.product) }}
-      />
 
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground leading-tight">
-              YouTube Video Downloader
+      <div className="container mx-auto px-4 py-12 md:py-20 lg:py-24">
+        <div className="max-w-4xl mx-auto space-y-16">
+
+          {/* Hero Section */}
+          <section className="text-center space-y-6">
+            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
+              YouTube Video <span className="text-primary">Downloader</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Download YouTube videos in HD quality or convert to MP3 instantly. Fast, free, and secure.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              Download YouTube videos in HD quality or convert to MP3 instantly. Fast, free, and secure tool for all your downloading needs.
             </p>
-          </div>
+          </section>
 
-          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8">
-            <YouTubeDownloader />
-          </div>
+          {/* Main Tool */}
+          <section className="bg-card rounded-3xl shadow-2xl border border-border/50 p-6 md:p-10 relative overflow-hidden backdrop-blur-sm">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
+            <div className="relative z-10">
+              <YouTubeDownloader />
+            </div>
+          </section>
+
+          {/* Features Grid */}
+          <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div key={index} className="flex gap-4 p-6 bg-card rounded-2xl border border-border/50 hover:border-primary/50 transition-colors shadow-sm">
+                <div className="shrink-0 bg-primary/10 p-3 rounded-xl h-fit">
+                  {feature.icon}
+                </div>
+                <div>
+                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                </div>
+              </div>
+            ))}
+          </section>
+
+          {/* How To Section */}
+          <section className="bg-muted/30 rounded-3xl p-8 md:p-12 border border-border/50">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              How to Download YouTube Videos?
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {howToSteps.map((step, index) => (
+                <div key={index} className="text-center group">
+                  <div className="w-20 h-20 bg-background rounded-full mx-auto flex items-center justify-center text-4xl shadow-md mb-6 border-2 border-primary/20 group-hover:border-primary/50 transition-colors">
+                    {step.icon}
+                  </div>
+                  <h3 className="font-bold text-xl mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground">{step.description}</p>
+                </div>
+              ))}
+            </div>
+            {/* Visual Step with Image placeholder integration could go here if requested, but sticking to text/icons for speed */}
+          </section>
+
+          {/* Supported Formats */}
+          <section className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold mb-4">Supported Formats</h2>
+              <p className="text-muted-foreground">We support high-quality conversions for all needs</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="bg-card p-6 rounded-2xl border border-border">
+                <div className="flex items-center gap-3 mb-4">
+                  <FileVideo className="text-blue-500 w-6 h-6" />
+                  <h3 className="font-semibold text-lg">Video Formats</h3>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between p-2 hover:bg-muted rounded-lg transition-colors"><span>MP4 4K (2160p)</span><span className="text-green-500 font-medium">Ultra HD</span></div>
+                  <div className="flex justify-between p-2 hover:bg-muted rounded-lg transition-colors"><span>MP4 1080p</span><span className="text-blue-500 font-medium">Full HD</span></div>
+                  <div className="flex justify-between p-2 hover:bg-muted rounded-lg transition-colors"><span>MP4 720p</span><span className="text-blue-400 font-medium">HD</span></div>
+                  <div className="flex justify-between p-2 hover:bg-muted rounded-lg transition-colors"><span>WEBM</span><span className="text-muted-foreground">Web Ready</span></div>
+                </div>
+              </div>
+              <div className="bg-card p-6 rounded-2xl border border-border">
+                <div className="flex items-center gap-3 mb-4">
+                  <FileAudio className="text-purple-500 w-6 h-6" />
+                  <h3 className="font-semibold text-lg">Audio Formats</h3>
+                </div>
+                <div className="space-y-2">
+                  <div className="flex justify-between p-2 hover:bg-muted rounded-lg transition-colors"><span>MP3 320kbps</span><span className="text-purple-500 font-medium">Best Quality</span></div>
+                  <div className="flex justify-between p-2 hover:bg-muted rounded-lg transition-colors"><span>MP3 256kbps</span><span className="text-purple-400 font-medium">High</span></div>
+                  <div className="flex justify-between p-2 hover:bg-muted rounded-lg transition-colors"><span>MP3 128kbps</span><span className="text-muted-foreground">Standard</span></div>
+                  <div className="flex justify-between p-2 hover:bg-muted rounded-lg transition-colors"><span>M4A</span><span className="text-muted-foreground">AAC</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* FAQ Section */}
+          <section className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+              <p className="text-muted-foreground">Common questions about our YouTube Downloader</p>
+            </div>
+
+            <Accordion type="single" collapsible className="w-full">
+              {jsonLdSchemas.faq.mainEntity.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-base md:text-lg font-medium text-left">
+                    {faq.name}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground text-base leading-relaxed">
+                    {faq.acceptedAnswer.text}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </section>
+
+          {/* Footer / Links */}
+          <section className="text-center py-8 border-t border-border">
+            <p className="text-muted-foreground mb-4">
+              Explore more free tools:
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/terabox-downloader" className="px-4 py-2 rounded-full bg-muted hover:bg-accent text-sm font-medium transition-colors">
+                Terabox Downloader
+              </Link>
+              <Link href="/instagram-downloader" className="px-4 py-2 rounded-full bg-muted hover:bg-accent text-sm font-medium transition-colors">
+                Instagram Downloader
+              </Link>
+              <Link href="/tiktok-downloader" className="px-4 py-2 rounded-full bg-muted hover:bg-accent text-sm font-medium transition-colors">
+                TikTok Downloader
+              </Link>
+            </div>
+          </section>
+
         </div>
       </div>
     </>

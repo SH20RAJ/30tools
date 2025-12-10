@@ -111,7 +111,7 @@ export default function InstagramDownloader() {
                   <div className="flex gap-4">
                     <img
                       src={videoData.thumbnail}
-                      alt="Content thumbnail"
+                      alt={`Thumbnail for ${videoData.title}`}
                       className="w-24 h-16 object-cover rounded"
                     />
                     <div className="flex-1">
