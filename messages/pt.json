@@ -1,0 +1,16 @@
+{
+    "HomePage": {
+        "title": "Ferramentas online gratuitas para todos",
+        "description": "30tools fornece ferramentas online gratuitas para desenvolvedores, designers e criadores de conteúdo."
+    },
+    "Navigation": {
+        "home": "Início",
+        "tools": "Ferramentas",
+        "blog": "Blog"
+    },
+    "Common": {
+        "loading": "Carregando...",
+        "error": "Algo deu errado",
+        "tryAgain": "Tentar novamente"
+    }
+}

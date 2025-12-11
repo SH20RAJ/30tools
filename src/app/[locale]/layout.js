@@ -1,4 +1,11 @@
 import { Open_Sans } from "next/font/google";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 import PWAInstallPrompt from "@/components/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
@@ -172,9 +179,12 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children, params }) {
+  const { locale } = await params;
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <head>
         <meta name="theme-color" content="#000000" />
         <meta
@@ -273,27 +283,29 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${openSans.variable} font-sans antialiased`}>
-        <ThemeProvider>
-          <StructuredData includeFAQ={false} />
-          {children}
-          <PWAInstallPrompt />
-          <Toaster />
-          <a
-            className="sr-only"
-            href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
-          >
-            <img
-              src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
-              alt="Visitor badge"
-            />
-          </a>
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
+            <StructuredData includeFAQ={false} />
+            {children}
+            <PWAInstallPrompt />
+            <Toaster />
+            <a
+              className="sr-only"
+              href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
+            >
+              <img
+                src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
+                alt="Visitor badge"
+              />
+            </a>
+          </ThemeProvider>
+        </NextIntlClientProvider>
 
         <script
           defer
           src="https://assets.onedollarstats.com/stonks.js"
         ></script>
       </body>
-    </html >
+    </html>
   );
 }

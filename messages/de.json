@@ -1,0 +1,16 @@
+{
+    "HomePage": {
+        "title": "Kostenlose Online-Tools für alle",
+        "description": "30tools bietet kostenlose Online-Tools für Entwickler, Designer und Content-Ersteller."
+    },
+    "Navigation": {
+        "home": "Startseite",
+        "tools": "Tools",
+        "blog": "Blog"
+    },
+    "Common": {
+        "loading": "Laden...",
+        "error": "Etwas ist schief gelaufen",
+        "tryAgain": "Erneut versuchen"
+    }
+}

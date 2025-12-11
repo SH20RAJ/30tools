@@ -1,0 +1,16 @@
+{
+    "HomePage": {
+        "title": "Free Online Tools for Everyone",
+        "description": "30tools provides free online tools for developers, designers, and content creators."
+    },
+    "Navigation": {
+        "home": "Home",
+        "tools": "Tools",
+        "blog": "Blog"
+    },
+    "Common": {
+        "loading": "Loading...",
+        "error": "Something went wrong",
+        "tryAgain": "Try again"
+    }
+}

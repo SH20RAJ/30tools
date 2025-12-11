@@ -1,0 +1,16 @@
+{
+    "HomePage": {
+        "title": "Outils en ligne gratuits pour tous",
+        "description": "30tools propose des outils en ligne gratuits pour les développeurs, les designers et les créateurs de contenu."
+    },
+    "Navigation": {
+        "home": "Accueil",
+        "tools": "Outils",
+        "blog": "Blog"
+    },
+    "Common": {
+        "loading": "Chargement...",
+        "error": "Une erreur est survenue",
+        "tryAgain": "Réessayer"
+    }
+}
