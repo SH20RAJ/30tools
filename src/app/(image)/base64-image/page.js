@@ -84,7 +84,7 @@ export default function Base64ImagePage() {
       title: "Embed in HTML",
       description: "Use images without external files",
       input: "Upload 'icon.png'",
-      output: "<img src='data:image/png;base64...' />",
+      output: "<img src='data:image/png;base64...' alt='Base64 Image' />",
     },
     {
       title: "CSS Backgrounds",

@@ -293,7 +293,7 @@ export const IMAGE_TOOLS_FAQS = {
     {
       question: "How do I use the Base64 string in HTML?",
       answer:
-        "You can use it in an img tag like this: <img src='data:image/png;base64,...' />. Our tool provides ready-to-copy HTML and CSS snippets.",
+        "You can use it in an img tag like this: <img src='data:image/png;base64,...' alt='Description' />. Our tool provides ready-to-copy HTML and CSS snippets.",
     },
   ],
 

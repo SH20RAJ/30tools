@@ -19,7 +19,7 @@ export const metadata = {
     siteName: "30tools",
     type: "website",
   },
-  alternates: { canonical: "https://30tools.com/tiktok-downloader" },
+  alternates: { canonical: "https://30tools.com/tiktok-video-downloader-2" },
   robots: { index: true, follow: true }
 };
 

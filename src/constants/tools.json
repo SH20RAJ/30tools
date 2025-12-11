@@ -1253,6 +1253,14 @@
           "category": "downloaders"
         },
         {
+          "id": "tiktok-video-downloader-2",
+          "name": "TikTok Video Downloader 2",
+          "description": "Download TikTok videos without watermark online. Save TikTok videos in HD MP4 format.",
+          "route": "/tiktok-video-downloader-2",
+          "popular": true,
+          "category": "downloaders"
+        },
+        {
           "id": "instagram-downloader",
           "name": "Instagram Downloader",
           "description": "Download Instagram videos, reels, stories, and photos in high quality",

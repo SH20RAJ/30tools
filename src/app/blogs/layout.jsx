@@ -16,7 +16,7 @@ export default function BlogLayout({ children }) {
                                 <ZapIcon className="h-6 w-6 text-primary-foreground" />
                             </div>
                             <div>
-                                <h1 className="text-xl font-bold">30tools</h1>
+                                <span className="text-xl font-bold">30tools</span>
                                 <p className="text-xs text-muted-foreground">Blog</p>
                             </div>
                         </Link>

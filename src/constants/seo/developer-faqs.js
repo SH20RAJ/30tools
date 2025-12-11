@@ -118,7 +118,7 @@ export const DEVELOPER_TOOLS_FAQS = {
     {
       question: "Can I use encoded data directly in web pages?",
       answer:
-        "Yes! Base64 encoded images can be used as data URIs in HTML/CSS. For example: `<img src='data:image/png;base64,YOUR_ENCODED_DATA'>`",
+        "Yes! Base64 encoded images can be used as data URIs in HTML/CSS. For example: `<img src='data:image/png;base64,YOUR_ENCODED_DATA' alt='Description'>`",
     },
   ],
 
