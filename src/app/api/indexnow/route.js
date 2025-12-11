@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import sitemap from "../../sitemap";
 
-export async function GET() {
+async function handleIndexNowSubmission() {
   try {
     // 1. Get all URLs from sitemap
     const sitemapData = await sitemap();
@@ -22,8 +22,7 @@ export async function GET() {
       urlList: urlList,
     };
 
-    // 3. Submit to IndexNow (Bing endpoint covers Yandex too usually, or we can send to both)
-    // Sending to api.indexnow.org distributes it.
+    // 3. Submit to IndexNow
     const response = await fetch("https://api.indexnow.org/indexnow", {
       method: "POST",
       headers: {
@@ -53,4 +52,12 @@ export async function GET() {
       { status: 500 }
     );
   }
+}
+
+export async function GET() {
+  return handleIndexNowSubmission();
+}
+
+export async function POST() {
+  return handleIndexNowSubmission();
 }
