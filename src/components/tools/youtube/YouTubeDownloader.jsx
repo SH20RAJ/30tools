@@ -339,6 +339,44 @@ export default function YouTubeDownloader() {
         </form>
       </div>
 
+      {/* Donation Section - Compact & Impactful */}
+      <div className="relative mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/20 dark:to-orange-950/20 border border-rose-100 dark:border-rose-900/50 p-4 sm:p-5">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-center sm:text-left">
+            <div className="hidden sm:flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400">
+              <Heart className="h-5 w-5 fill-current" />
+            </div>
+            <div>
+              <h3 className="font-bold text-base sm:text-lg text-rose-950 dark:text-rose-100">
+                Help Keep This Tool Free
+              </h3>
+              <p className="text-sm text-rose-800/80 dark:text-rose-200/70">
+                Your support keeps our servers running for everyone.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <a
+              href="https://payments.cashfree.com/forms/30tools"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white text-sm font-bold rounded-lg shadow-sm transition-all hover:scale-105"
+            >
+              <Heart className="w-4 h-4" />
+              <span>Donate</span>
+            </a>
+            <a
+              href="https://www.paypal.com/ncp/payment/HUKEAE7KXYYCA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 bg-white dark:bg-black border border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 hover:bg-rose-50 dark:hover:bg-rose-900/20 text-sm font-semibold rounded-lg transition-all"
+            >
+              <span>PayPal</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* Error Message */}
       {error && (
         <div className="mb-8 p-4 bg-destructive/10 text-destructive rounded-xl flex items-center gap-3">
@@ -471,69 +509,43 @@ export default function YouTubeDownloader() {
 
           </div>
 
-          {/* Clean Donate/Support Section */}
-          <div className="bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/50 rounded-2xl p-6 text-center">
-            <h4 className="font-bold text-amber-800 dark:text-amber-200 mb-2 flex items-center justify-center gap-2">
-              <Heart className="w-4 h-4 fill-current" /> Support 30Tools
-            </h4>
-            <p className="text-sm text-amber-700 dark:text-amber-300 mb-4 max-w-md mx-auto">
-              We keep this tool free and without annoying ads. If you found it useful, consider a small donation to keep our servers running.
-            </p>
-            <div className="flex justify-center gap-3">
-              <a
-                href="https://payments.cashfree.com/forms/30tools"
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2 bg-amber-500 hover:bg-amber-600 text-white text-sm font-medium rounded-lg transition-colors inline-flex items-center gap-2"
-              >
-                Donate via Cashfree
-              </a>
-              <a
-                href="https://www.paypal.com/ncp/payment/HUKEAE7KXYYCA"
-                target="_blank"
-                rel="noreferrer"
-                className="px-4 py-2 bg-white dark:bg-black border border-amber-200 dark:border-amber-800 text-amber-700 dark:text-amber-300 hover:bg-amber-50 dark:hover:bg-amber-900/30 text-sm font-medium rounded-lg transition-colors inline-flex items-center gap-2"
-              >
-                PayPal
-              </a>
-            </div>
-          </div>
-
         </div>
       )}
 
       {/* Bookmarks Section */}
-      {bookmarkedUrls.length > 0 && !videoData && (
-        <div className="mt-12">
-          <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold">Your Bookmarks</h3>
-            <Button variant="ghost" size="sm" onClick={() => setShowBookmarks(!showBookmarks)}>
-              {showBookmarks ? "Hide" : "Show"}
-            </Button>
-          </div>
-
-          {showBookmarks && (
-            <div className="grid gap-3">
-              {bookmarkedUrls.map((bookmark, idx) => (
-                <div key={idx} className="flex items-center gap-4 p-3 bg-card border border-border rounded-xl group hover:border-primary/50 transition-all">
-                  {bookmark.thumbnail && (
-                    <img src={bookmark.thumbnail} alt="" className="w-16 h-10 object-cover rounded shadow-sm" />
-                  )}
-                  <div className="flex-1 min-w-0">
-                    <div className="font-medium truncate text-sm">{bookmark.title}</div>
-                    <div className="text-xs text-muted-foreground">{new Date(bookmark.bookmarkedAt).toLocaleDateString()}</div>
-                  </div>
-                  <div className="flex gap-2">
-                    <Button size="sm" variant="ghost" onClick={() => handleLoadBookmarkedUrl(bookmark.url)}>Load</Button>
-                    <Button size="sm" variant="ghost" className="text-destructive hover:text-destructive" onClick={() => handleRemoveBookmark(bookmark.url)}><X className="w-4 h-4" /></Button>
-                  </div>
-                </div>
-              ))}
+      {
+        bookmarkedUrls.length > 0 && !videoData && (
+          <div className="mt-12">
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-lg font-semibold">Your Bookmarks</h3>
+              <Button variant="ghost" size="sm" onClick={() => setShowBookmarks(!showBookmarks)}>
+                {showBookmarks ? "Hide" : "Show"}
+              </Button>
             </div>
-          )}
-        </div>
-      )}
 
-    </div>
+            {showBookmarks && (
+              <div className="grid gap-3">
+                {bookmarkedUrls.map((bookmark, idx) => (
+                  <div key={idx} className="flex items-center gap-4 p-3 bg-card border border-border rounded-xl group hover:border-primary/50 transition-all">
+                    {bookmark.thumbnail && (
+                      <img src={bookmark.thumbnail} alt="" className="w-16 h-10 object-cover rounded shadow-sm" />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <div className="font-medium truncate text-sm">{bookmark.title}</div>
+                      <div className="text-xs text-muted-foreground">{new Date(bookmark.bookmarkedAt).toLocaleDateString()}</div>
+                    </div>
+                    <div className="flex gap-2">
+                      <Button size="sm" variant="ghost" onClick={() => handleLoadBookmarkedUrl(bookmark.url)}>Load</Button>
+                      <Button size="sm" variant="ghost" className="text-destructive hover:text-destructive" onClick={() => handleRemoveBookmark(bookmark.url)}><X className="w-4 h-4" /></Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )
+      }
+
+    </div >
   );
 }
