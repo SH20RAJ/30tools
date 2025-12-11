@@ -1,0 +1,16 @@
+{
+    "HomePage": {
+        "title": "适合所有人的免费在线工具",
+        "description": "30tools 为开发者、设计师和内容创作者提供免费的在线工具。"
+    },
+    "Navigation": {
+        "home": "首页",
+        "tools": "工具",
+        "blog": "博客"
+    },
+    "Common": {
+        "loading": "加载中...",
+        "error": "出错了",
+        "tryAgain": "重试"
+    }
+}

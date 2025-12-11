@@ -1,4 +1,5 @@
 import TikTokDownloader from "@/components/tools/downloaders/TikTokDownloader";
+import ToolChain from "@/components/seo/ToolChain";
 
 export const metadata = {
   title: "TikTok Video Downloader - Download TikToks Free | 30tools",
@@ -65,25 +66,14 @@ export default function TikTokVideoDownloader2Page() {
 
           <AdUnit />
 
-          <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { href: "/tiktok-audio-downloader", icon: "🎵", title: "TikTok Audio", desc: "Download MP3" },
-                { href: "/instagram-reel-downloader", icon: "🎞️", title: "Reels Downloader", desc: "Download Reels" },
-                { href: "/youtube-shorts-downloader", icon: "📹", title: "Shorts Downloader", desc: "Download Shorts" },
-                { href: "/snapchat-video-downloader", icon: "👻", title: "Snapchat Downloader", desc: "Download Snaps" }
-              ].map((tool, i) => (
-                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className="text-2xl">{tool.icon}</span>
-                    <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
-                  </div>
-                  <p className="text-sm text-muted-foreground">{tool.desc}</p>
-                </a>
-              ))}
-            </div>
-          </section>
+          <ToolChain
+            suggestions={[
+              { id: 'tiktok-audio', title: 'TikTok Audio', desc: 'Extract MP3 from TikTok', href: '/tiktok-audio-downloader' },
+              { id: 'video-trimmer', title: 'Video Trimmer', desc: 'Cut/Trim this video', href: '/video-trimmer' },
+              { id: 'insta-reels', title: 'Instagram Reels', desc: 'Download from Instagram', href: '/instagram-reel-downloader' },
+              { id: 'snapchat', title: 'Snapchat Saver', desc: 'Download Stories/Snaps', href: '/snapchat-video-downloader' }
+            ]}
+          />
         </div>
       </div>
       <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />

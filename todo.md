@@ -13,15 +13,5 @@ where possible use the jsdelivr cdns instead of bun install in the tools
 replace whole shadcn and custom ui with clean and minimum ui library rizzui with all components from rizzui and typography and ui ux design principles used there.... @rizzui.txt  see it for docs 
 
 ---
-ADD internationalizarion
-
+add more language support in next-intl to get more traffic 
 ---
-
-Add multiple pages url for same tool, using tools.json , like add a field in tools.json containing array of slugs for same tool like youtube-downloader tool has multiple pages url for same tool - youtube-downloader, youtube-downloader-4k, youtube-downloader-free, youtube-downloader-for-android and other also add all the urls to sitemap and make sure to add all seo tactics you know
-do it for all tools to get maximum traffic and decide the slug for each tool that works best for seo and traffic after researching and testing
-
----
-
-
-
-

@@ -41,12 +41,12 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-export default function ImageConverterTool() {
+export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
   const [files, setFiles] = useState([]);
   const [isConverting, setIsConverting] = useState(false);
   const [progress, setProgress] = useState(0);
   const [conversionSettings, setConversionSettings] = useState({
-    outputFormat: "png",
+    outputFormat: defaultOutputFormat,
     quality: [90],
     maintainAspectRatio: true,
     preserveExif: false,
@@ -429,8 +429,8 @@ export default function ImageConverterTool() {
         <CardContent>
           <div
             className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${dragActive
-                ? "border-primary bg-primary/5"
-                : "border-muted-foreground/25 hover:border-primary/50"
+              ? "border-primary bg-primary/5"
+              : "border-muted-foreground/25 hover:border-primary/50"
               }`}
             onDrop={handleDrop}
             onDragOver={handleDragOver}

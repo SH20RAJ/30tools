@@ -1,0 +1,16 @@
+{
+    "HomePage": {
+        "title": "Alat Online Gratis untuk Semua",
+        "description": "30tools menyediakan alat online gratis untuk pengembang, desainer, dan pembuat konten."
+    },
+    "Navigation": {
+        "home": "Beranda",
+        "tools": "Alat",
+        "blog": "Blog"
+    },
+    "Common": {
+        "loading": "Memuat...",
+        "error": "Ada yang salah",
+        "tryAgain": "Coba lagi"
+    }
+}
