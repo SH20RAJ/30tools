@@ -71,7 +71,7 @@ export default function sitemap() {
   ];
 
   // Tool pages with intelligent priority calculation
-  const toolPages = allTools.map((tool) => {
+  const toolPages = allTools.flatMap((tool) => {
     // Calculate priority based on popularity and category importance
     let priority = 0.8; // Base priority for tools
 
@@ -109,12 +109,22 @@ export default function sitemap() {
       changeFrequency = "monthly";
     }
 
-    return {
+    const mainEntry = {
       url: tool.external ? tool.route : `${BASE_URL}${tool.route}`,
       lastModified: currentDate,
       changeFrequency,
       priority: Math.round(priority * 100) / 100, // Round to 2 decimal places
     };
+
+    // Add entries for extra slugs if they exist
+    const extraEntries = (tool.extraSlugs || []).map(slug => ({
+      url: `${BASE_URL}/${slug}`, // slugs in filtered list don't have leading slash usually, but verify middleware logic
+      lastModified: currentDate,
+      changeFrequency,
+      priority: Math.round((priority - 0.05) * 100) / 100, // Slightly lower priority for variants
+    }));
+
+    return [mainEntry, ...extraEntries];
   });
 
   // Category landing pages (future expansion)

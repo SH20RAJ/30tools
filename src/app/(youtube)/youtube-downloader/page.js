@@ -15,49 +15,85 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
-export const metadata = {
-  title: "YouTube Video Downloader - 30Tools",
-  description: "Download YouTube videos in MP4 and MP3 formats securely and freely. High-speed, high-quality downloads without any software installation.",
-  keywords: [
-    "youtube downloader",
-    "youtube to mp4",
-    "youtube to mp3",
-    "download youtube video",
-    "free youtube downloader",
-    "online video downloader",
-    "1080p video downloader",
-    "4k video downloader",
-    "youtube converter"
-  ].join(", "),
+// dynamic metadata generation
+export async function generateMetadata({ searchParams }) {
+  const params = await searchParams; // Next.js 15+ await searchParams
+  const slug = params?.slug;
 
-  openGraph: {
-    title: "YouTube Video Downloader | 30Tools",
-    description: "Fast, free, and secure YouTube Downloader. Convert videos to MP4 or MP3 in seconds.",
-    url: "https://30tools.com/youtube-downloader",
-    siteName: "30tools",
-    type: "website",
-    images: [
-      {
-        url: "/og-images/youtube-downloader.jpg",
-        width: 1200,
-        height: 630,
-        alt: "YouTube Video Downloader - 30Tools",
+  // Default Metadata
+  const defaultTitle = "YouTube Video Downloader - 30Tools";
+  const defaultDesc = "Download YouTube videos in MP4 and MP3 formats securely and freely. High-speed, high-quality downloads without any software installation.";
+
+  if (!slug) {
+    return {
+      title: defaultTitle,
+      description: defaultDesc,
+      alternates: {
+        canonical: "https://30tools.com/youtube-downloader",
       },
-    ],
-  },
+      openGraph: {
+        title: "YouTube Video Downloader | 30Tools",
+        description: defaultDesc,
+        url: "https://30tools.com/youtube-downloader",
+        siteName: "30tools",
+        type: "website",
+        images: [
+          {
+            url: "/og-images/youtube-downloader.jpg",
+            width: 1200,
+            height: 630,
+            alt: "YouTube Video Downloader - 30Tools",
+          },
+        ],
+      },
+    };
+  }
 
-  twitter: {
-    card: "summary_large_image",
-    title: "YouTube Video Downloader | 30Tools",
-    description: "Download YouTube videos easily in HD/4K quality. Free and secure.",
-    images: ["/og-images/youtube-downloader.jpg"],
-    creator: "@30tools"
-  },
+  // Dynamic Metadata based on slug
+  // e.g. youtube-downloader-4k -> "Youtube Downloader 4k"
+  const readableSlug = slug
+    .split("-")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 
-  alternates: {
-    canonical: "https://30tools.com/youtube-downloader",
-  },
-};
+  const title = `${readableSlug} - Free Online Tool | 30Tools`;
+  const description = `Best free ${readableSlug}. Download YouTube videos in HD and 4K quality instantly. Fast, secure, and no installation required.`;
+
+  return {
+    title: title,
+    description: description,
+    alternates: {
+      canonical: `https://30tools.com/${slug}`,
+    },
+    openGraph: {
+      title: title,
+      description: description,
+      url: `https://30tools.com/${slug}`,
+      siteName: "30tools",
+      type: "website",
+      images: [
+        {
+          url: "/og-images/youtube-downloader.jpg",
+          width: 1200,
+          height: 630,
+          alt: `${readableSlug} - 30Tools`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: description,
+      images: ["/og-images/youtube-downloader.jpg"],
+      creator: "@30tools"
+    },
+  };
+}
+
+export const viewport = {
+  themeColor: 'black',
+}
+
 
 const jsonLdSchemas = {
   webApp: {

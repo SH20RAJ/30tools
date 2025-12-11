@@ -454,6 +454,18 @@
           "name": "YouTube Video/Audio Downloader",
           "description": "Download YouTube videos and audio in multiple formats and qualities",
           "route": "/youtube-downloader",
+          "extraSlugs": [
+            "youtube-downloader-4k",
+            "youtube-downloader-free",
+            "youtube-video-downloader-online",
+            "youtube-to-mp4-converter",
+            "youtube-to-mp3-high-quality",
+            "download-youtube-videos-1080p",
+            "youtube-downloader-android",
+            "youtube-downloader-iphone",
+            "fast-youtube-downloader",
+            "secure-youtube-downloader"
+          ],
           "popular": true,
           "category": "youtube"
         },
