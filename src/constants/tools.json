@@ -17,6 +17,14 @@
           "name": "Aesthetic Bio Generator",
           "description": "Generate aesthetic bios for Instagram, Twitter, and TikTok with emojis and themes",
           "route": "/aesthetic-bio-generator",
+          "extraSlugs": [
+            "instagram-bio-generator",
+            "aesthetic-instagram-bio",
+            "tiktok-bio-generator",
+            "twitter-bio-maker",
+            "copy-paste-aesthetic-bio",
+            "stylish-bio-generator"
+          ],
           "popular": true,
           "category": "generators"
         },
@@ -25,6 +33,13 @@
           "name": "Startup Name Generator",
           "description": "Generate trendy startup names with AI. Perfect for indie hackers and entrepreneurs",
           "route": "/startup-name-generator",
+          "extraSlugs": [
+            "business-name-generator",
+            "company-name-ideas",
+            "brand-name-generator",
+            "creative-business-names",
+            "ai-business-name-generator"
+          ],
           "popular": true,
           "category": "generators"
         },
@@ -33,6 +48,13 @@
           "name": "Fake Chat Generator",
           "description": "Create realistic fake chat screenshots for WhatsApp, Instagram DM, iMessage, and Discord",
           "route": "/fake-chat-generator",
+          "extraSlugs": [
+            "fake-whatsapp-chat-generator",
+            "fake-instagram-dm-generator",
+            "fake-imessage-generator",
+            "fake-text-message-maker",
+            "fake-discord-chat-generator"
+          ],
           "popular": true,
           "category": "generators"
         },
@@ -41,6 +63,13 @@
           "name": "Excuse Generator",
           "description": "Generate creative excuses for work, school, social events, and family situations",
           "route": "/excuse-generator",
+          "extraSlugs": [
+            "random-excuse-generator",
+            "good-excuses-for-work",
+            "late-for-work-excuses",
+            "excuses-for-missing-school",
+            "best-excuse-generator"
+          ],
           "popular": true,
           "category": "generators"
         },
@@ -49,6 +78,13 @@
           "name": "AI Image Generator",
           "description": "Generate stunning images from text prompts using free AI. Enter your idea, get a unique image instantly.",
           "route": "/ai-image-generator",
+          "extraSlugs": [
+            "text-to-image-ai",
+            "free-ai-art-generator",
+            "ai-picture-generator",
+            "generate-images-from-text",
+            "ai-photo-generator-free"
+          ],
           "popular": true,
           "category": "generators"
         },
@@ -57,6 +93,13 @@
           "name": "AI Poetry Generator",
           "description": "Create original poems on any topic with AI. Enter a theme or mood and get a unique poem instantly.",
           "route": "/ai-poetry-generator",
+          "extraSlugs": [
+            "poem-generator-ai",
+            "rhyme-generator",
+            "haiku-generator",
+            "love-poem-generator",
+            "free-poetry-maker"
+          ],
           "popular": true,
           "category": "generators"
         },
@@ -65,6 +108,13 @@
           "name": "AI Voice Generator",
           "description": "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
           "route": "/ai-voice-generator",
+          "extraSlugs": [
+            "text-to-speech-ai",
+            "ai-voice-changer",
+            "realistic-voice-generator",
+            "free-ai-voice-over",
+            "celebrity-voice-generator"
+          ],
           "popular": true,
           "category": "generators"
         }
@@ -81,6 +131,13 @@
           "name": "Image Compressor",
           "description": "Compress images to reduce file size while maintaining quality",
           "route": "/image-compressor",
+          "extraSlugs": [
+            "compress-image-online",
+            "reduce-image-size",
+            "shrink-image-file-size",
+            "compress-jpeg-png",
+            "optimize-images-for-web"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -89,6 +146,13 @@
           "name": "Image Converter",
           "description": "Convert images between different formats (JPEG, PNG, WebP)",
           "route": "/image-converter",
+          "extraSlugs": [
+            "convert-image-to-jpg",
+            "convert-png-to-jpg",
+            "webp-converter",
+            "image-format-changer",
+            "heic-to-jpg-converter"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -97,6 +161,13 @@
           "name": "Image Resizer",
           "description": "Resize images with custom dimensions and aspect ratios",
           "route": "/image-resizer",
+          "extraSlugs": [
+            "resize-image-online",
+            "change-image-dimensions",
+            "photo-resizer-free",
+            "resize-picture-pixels",
+            "scale-image"
+          ],
           "popular": false,
           "category": "image"
         },
@@ -105,6 +176,13 @@
           "name": "Background Remover",
           "description": "Remove image backgrounds automatically with AI",
           "route": "/background-remover",
+          "extraSlugs": [
+            "remove-bg-online",
+            "transparent-background-maker",
+            "delete-image-background",
+            "remove-background-from-image-free",
+            "picture-background-eraser"
+          ],
           "popular": true,
           "premium": true,
           "category": "image"
@@ -114,6 +192,13 @@
           "name": "Image Editor",
           "description": "Professional image editing with filters, effects, and advanced tools",
           "route": "/image-editor",
+          "extraSlugs": [
+            "online-photo-editor",
+            "edit-pictures-free",
+            "add-text-to-image",
+            "photo-filter-editor",
+            "crop-and-edit-photos"
+          ],
           "popular": true,
           "premium": true,
           "category": "image"
@@ -123,6 +208,13 @@
           "name": "Photo Enhancer",
           "description": "Enhance photo quality with AI-powered image enhancement",
           "route": "/photo-enhancer",
+          "extraSlugs": [
+            "enhance-image-quality",
+            "fix-blurry-photos",
+            "ai-photo-enhancer",
+            "improve-picture-resolution",
+            "upscale-image-online"
+          ],
           "popular": true,
           "premium": true,
           "category": "image"
@@ -132,6 +224,13 @@
           "name": "Base64 Image Converter",
           "description": "Convert images to Base64 strings and decode Base64 to images",
           "route": "/base64-image",
+          "extraSlugs": [
+            "image-to-base64",
+            "base64-to-image",
+            "convert-picture-to-string",
+            "encode-image-base64",
+            "decode-base64-image"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -140,6 +239,13 @@
           "name": "Image Cropper",
           "description": "Crop images to specific dimensions or aspect ratios",
           "route": "/image-cropper",
+          "extraSlugs": [
+            "crop-image-online",
+            "cut-photo",
+            "circular-image-crop",
+            "square-photo-cropper",
+            "free-picture-cropper"
+          ],
           "popular": false,
           "category": "image"
         },
@@ -148,6 +254,13 @@
           "name": "Instagram Story Resizer",
           "description": "Resize images for Instagram stories with perfect dimensions",
           "route": "/instagram-story-resizer",
+          "extraSlugs": [
+            "resize-for-instagram-story",
+            "insta-story-size-converter",
+            "instagram-story-dimensions-fix",
+            "fit-photo-to-instagram-story",
+            "ig-story-image-resizer"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -156,6 +269,13 @@
           "name": "Social Media Resizer",
           "description": "Resize images for all social media platforms",
           "route": "/social-media-resizer",
+          "extraSlugs": [
+            "resize-image-for-social-media",
+            "social-media-post-size",
+            "facebook-cover-resizer",
+            "twitter-header-size-maker",
+            "linkedin-banner-resizer"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -164,6 +284,13 @@
           "name": "Photo Collage Maker",
           "description": "Create stunning photo collages with multiple images",
           "route": "/photo-collage-maker",
+          "extraSlugs": [
+            "online-collage-maker",
+            "free-photo-grid-maker",
+            "combine-photos-online",
+            "picture-collage-creator",
+            "aesthetic-collage-maker"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -172,6 +299,13 @@
           "name": "Logo Generator",
           "description": "Create professional logos with text, fonts, and custom colors",
           "route": "/logo-generator",
+          "extraSlugs": [
+            "free-logo-maker",
+            "business-logo-creator",
+            "online-logo-design",
+            "brand-logo-generator",
+            "company-logo-maker-free"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -180,6 +314,13 @@
           "name": "Favicon Generator",
           "description": "Generate favicons from text, images, or emojis for websites",
           "route": "/favicon-generator",
+          "extraSlugs": [
+            "create-favicon-online",
+            "website-icon-generator",
+            "favicon-maker-from-image",
+            "ico-file-generator",
+            "convert-png-to-favicon"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -188,6 +329,13 @@
           "name": "Icon Generator",
           "description": "Generate app icons for iOS, Android, and web applications",
           "route": "/icon-generator",
+          "extraSlugs": [
+            "app-icon-generator",
+            "android-icon-maker",
+            "ios-app-icon-creator",
+            "generate-icons-for-apps",
+            "web-app-icon-generator"
+          ],
           "popular": true,
           "category": "image"
         },
@@ -196,6 +344,13 @@
           "name": "EXIF Reader",
           "description": "Extract metadata and EXIF data from images including camera settings and GPS location",
           "route": "/exif-reader",
+          "extraSlugs": [
+            "view-image-metadata",
+            "photo-exif-viewer",
+            "check-image-location",
+            "read-exif-data-online",
+            "camera-metadata-viewer"
+          ],
           "popular": true,
           "category": "image"
         }
@@ -212,6 +367,13 @@
           "name": "PDF Merger",
           "description": "Merge multiple PDF files into one document",
           "route": "/pdf-merger",
+          "extraSlugs": [
+            "combine-pdf-files",
+            "merge-pdf-online",
+            "pdf-combiner-free",
+            "join-pdf-documents",
+            "merge-multiple-pdf"
+          ],
           "popular": true,
           "category": "pdf"
         },
@@ -220,6 +382,13 @@
           "name": "PDF Splitter",
           "description": "Split PDF files into separate pages or ranges",
           "route": "/pdf-splitter",
+          "extraSlugs": [
+            "split-pdf-pages",
+            "extract-pdf-pages",
+            "separate-pdf-files",
+            "cut-pdf-pages",
+            "pdf-page-separator"
+          ],
           "popular": true,
           "category": "pdf"
         },
@@ -228,6 +397,13 @@
           "name": "PDF Compressor",
           "description": "Compress PDF files to reduce size",
           "route": "/pdf-compressor",
+          "extraSlugs": [
+            "compress-pdf-online",
+            "reduce-pdf-size",
+            "shrink-pdf-file",
+            "pdf-size-reducer",
+            "optimize-pdf-for-web"
+          ],
           "popular": true,
           "category": "pdf"
         },
@@ -236,6 +412,13 @@
           "name": "JPG to PDF",
           "description": "Convert JPG images to PDF documents",
           "route": "/jpg-to-pdf",
+          "extraSlugs": [
+            "convert-jpg-to-pdf",
+            "image-to-pdf-converter",
+            "jpeg-to-pdf-online",
+            "combine-jpg-to-pdf",
+            "make-pdf-from-images"
+          ],
           "popular": false,
           "category": "pdf"
         },
@@ -244,6 +427,13 @@
           "name": "PNG to PDF",
           "description": "Convert PNG images to PDF with transparency support",
           "route": "/png-to-pdf",
+          "extraSlugs": [
+            "convert-png-to-pdf",
+            "png-images-to-pdf",
+            "turn-png-into-pdf",
+            "combine-png-to-pdf",
+            "pdf-from-png"
+          ],
           "popular": false,
           "category": "pdf"
         },
@@ -252,6 +442,13 @@
           "name": "PDF Password Protect",
           "description": "Add password protection to PDF files",
           "route": "/pdf-protect",
+          "extraSlugs": [
+            "encrypt-pdf",
+            "password-protect-pdf",
+            "lock-pdf-file",
+            "secure-pdf-document",
+            "add-password-to-pdf"
+          ],
           "popular": false,
           "category": "pdf"
         },
@@ -260,6 +457,13 @@
           "name": "PDF Unlocker",
           "description": "Remove password protection from PDF files",
           "route": "/pdf-unlocker",
+          "extraSlugs": [
+            "unlock-pdf-online",
+            "remove-pdf-password",
+            "decrypt-pdf-file",
+            "pdf-password-remover",
+            "open-protected-pdf"
+          ],
           "popular": false,
           "category": "pdf"
         },
@@ -268,6 +472,13 @@
           "name": "PDF Rotate",
           "description": "Rotate PDF pages in any direction",
           "route": "/pdf-rotate",
+          "extraSlugs": [
+            "rotate-pdf-pages",
+            "change-pdf-orientation",
+            "flip-pdf-pages",
+            "rotate-pdf-online",
+            "save-rotated-pdf"
+          ],
           "popular": false,
           "category": "pdf"
         },
@@ -276,6 +487,13 @@
           "name": "PDF Page Numbers",
           "description": "Add page numbers to PDF documents",
           "route": "/pdf-add-page-numbers",
+          "extraSlugs": [
+            "number-pdf-pages",
+            "add-page-numbers-to-pdf-online",
+            "paginate-pdf",
+            "insert-page-numbers-in-pdf",
+            "pdf-pagination-tool"
+          ],
           "popular": false,
           "category": "pdf"
         },
@@ -284,6 +502,13 @@
           "name": "PDF Editor",
           "description": "Professional PDF editing - add text, annotations, and modify content",
           "route": "/pdf-editor",
+          "extraSlugs": [
+            "edit-pdf-online-free",
+            "modify-pdf-content",
+            "pdf-text-editor",
+            "add-text-to-pdf",
+            "annotate-pdf-online"
+          ],
           "popular": true,
           "premium": true,
           "category": "pdf"
@@ -293,6 +518,13 @@
           "name": "Word to PDF",
           "description": "Convert Word documents to PDF format",
           "route": "/word-to-pdf",
+          "extraSlugs": [
+            "convert-doc-to-pdf",
+            "docx-to-pdf-converter",
+            "save-word-as-pdf",
+            "word-document-to-pdf",
+            "microsoft-word-to-pdf"
+          ],
           "popular": true,
           "category": "pdf"
         },
@@ -301,6 +533,13 @@
           "name": "PDF to Word",
           "description": "Convert PDF files to editable Word documents",
           "route": "/pdf-to-word",
+          "extraSlugs": [
+            "convert-pdf-to-doc",
+            "pdf-to-docx-converter",
+            "editable-pdf-to-word",
+            "pdf-to-text-converter",
+            "extract-text-from-pdf"
+          ],
           "popular": true,
           "category": "pdf"
         },
@@ -309,6 +548,13 @@
           "name": "PDF to Image",
           "description": "Convert PDF pages to high-quality JPG, PNG images",
           "route": "/pdf-to-image",
+          "extraSlugs": [
+            "convert-pdf-to-jpg",
+            "pdf-to-png-converter",
+            "save-pdf-as-image",
+            "pdf-pages-to-jpg",
+            "export-pdf-to-image"
+          ],
           "popular": true,
           "category": "pdf"
         },
@@ -317,6 +563,13 @@
           "name": "Excel to PDF",
           "description": "Convert Excel spreadsheets to PDF format with formatting",
           "route": "/excel-to-pdf",
+          "extraSlugs": [
+            "convert-xls-to-pdf",
+            "xlsx-to-pdf-converter",
+            "save-excel-as-pdf",
+            "spreadsheet-to-pdf",
+            "excel-sheet-to-pdf"
+          ],
           "popular": true,
           "category": "pdf"
         },
@@ -325,6 +578,13 @@
           "name": "PowerPoint to PDF",
           "description": "Convert PowerPoint presentations to PDF format",
           "route": "/powerpoint-to-pdf",
+          "extraSlugs": [
+            "convert-ppt-to-pdf",
+            "pptx-to-pdf-converter",
+            "save-powerpoint-as-pdf",
+            "slides-to-pdf",
+            "presentation-to-pdf"
+          ],
           "popular": true,
           "category": "pdf"
         },
@@ -333,6 +593,13 @@
           "name": "Image to PDF",
           "description": "Convert multiple images to a single PDF document",
           "route": "/image-to-pdf",
+          "extraSlugs": [
+            "convert-images-to-pdf",
+            "photos-to-pdf-converter",
+            "make-pdf-from-photos",
+            "combine-images-to-pdf",
+            "jpg-png-to-pdf"
+          ],
           "popular": true,
           "category": "pdf"
         }
@@ -349,6 +616,13 @@
           "name": "Video Compressor",
           "description": "Compress video files to reduce size",
           "route": "/video-compressor",
+          "extraSlugs": [
+            "compress-video-online",
+            "reduce-video-size",
+            "shrink-mp4-file",
+            "video-size-reducer",
+            "compress-video-for-whatsapp"
+          ],
           "popular": true,
           "category": "video"
         },
@@ -357,6 +631,13 @@
           "name": "Video to GIF",
           "description": "Convert videos to animated GIFs",
           "route": "/video-to-gif",
+          "extraSlugs": [
+            "convert-mp4-to-gif",
+            "video-to-gif-converter",
+            "make-gif-from-video",
+            "create-gif-online",
+            "mov-to-gif"
+          ],
           "popular": true,
           "category": "video"
         },
@@ -365,6 +646,13 @@
           "name": "Video Converter",
           "description": "Convert videos between different formats (MP4, AVI, MOV)",
           "route": "/video-converter",
+          "extraSlugs": [
+            "convert-video-format",
+            "change-video-type",
+            "mp4-converter-online",
+            "mov-to-mp4",
+            "avi-to-mp4-converter"
+          ],
           "popular": true,
           "category": "video"
         },
@@ -373,6 +661,13 @@
           "name": "Video Editor",
           "description": "Professional video editing - trim, cut, and merge videos",
           "route": "/video-editor",
+          "extraSlugs": [
+            "edit-video-online",
+            "free-video-editor",
+            "cut-and-merge-video",
+            "add-audio-to-video",
+            "simple-video-maker"
+          ],
           "popular": true,
           "premium": true,
           "category": "video"
@@ -382,6 +677,13 @@
           "name": "Video Trimmer",
           "description": "Trim and cut video clips to specific lengths",
           "route": "/video-trimmer",
+          "extraSlugs": [
+            "trim-video-online",
+            "cut-video-length",
+            "shorten-video-clip",
+            "video-cutter-online",
+            "split-video-file"
+          ],
           "popular": false,
           "category": "video"
         },
@@ -390,6 +692,13 @@
           "name": "Screen Recorder",
           "description": "Record your screen and save as video file",
           "route": "/screen-recorder",
+          "extraSlugs": [
+            "record-screen-online",
+            "free-screen-recorder",
+            "screen-capture-video",
+            "record-browser-tab",
+            "online-screen-capture"
+          ],
           "popular": true,
           "category": "video"
         },
@@ -398,6 +707,13 @@
           "name": "MP3 Converter",
           "description": "Convert videos and audio files to MP3 format",
           "route": "/mp3-converter",
+          "extraSlugs": [
+            "video-to-mp3-online",
+            "extract-audio-from-video",
+            "convert-mp4-to-mp3",
+            "free-mp3-extractor",
+            "audio-converter-mp3"
+          ],
           "popular": true,
           "category": "video"
         },
@@ -406,6 +722,13 @@
           "name": "YouTube Thumbnail Generator",
           "description": "Create eye-catching YouTube thumbnails with templates",
           "route": "/youtube-thumbnail-generator",
+          "extraSlugs": [
+            "create-youtube-thumbnail",
+            "yt-thumbnail-maker",
+            "online-thumbnail-creator",
+            "free-thumbnail-design",
+            "youtube-cover-maker"
+          ],
           "popular": true,
           "category": "video"
         },
@@ -414,6 +737,13 @@
           "name": "TikTok Video Resizer",
           "description": "Resize videos for TikTok with perfect aspect ratio",
           "route": "/tiktok-video-resizer",
+          "extraSlugs": [
+            "resize-video-for-tiktok",
+            "tiktok-aspect-ratio-converter",
+            "fit-video-to-tiktok",
+            "tiktok-video-dimensions",
+            "convert-landscape-to-portrait-video"
+          ],
           "popular": true,
           "category": "video"
         },
@@ -422,6 +752,13 @@
           "name": "Video Player Generator",
           "description": "Create customizable video players with multiple themes and libraries",
           "route": "/video-player",
+          "extraSlugs": [
+            "html5-video-player-generator",
+            "custom-video-player-maker",
+            "embed-video-player",
+            "online-video-player-creator",
+            "responsive-video-player"
+          ],
           "popular": true,
           "category": "video"
         },
@@ -430,6 +767,13 @@
           "name": "Terabox Video Downloader",
           "description": "Download Terabox videos with direct links and embed custom video players",
           "route": "/terabox-downloader",
+          "extraSlugs": [
+            "terabox-link-downloader",
+            "download-terabox-file",
+            "terabox-video-saver",
+            "terabox-direct-download",
+            "terabox-player-online"
+          ],
           "popular": true,
           "category": "video"
         }
@@ -602,6 +946,13 @@
           "name": "Audio Compressor",
           "description": "Compress audio files to reduce size",
           "route": "/audio-compressor",
+          "extraSlugs": [
+            "compress-mp3-online",
+            "reduce-audio-file-size",
+            "shrink-mp3-size",
+            "optimize-audio-files",
+            "audio-size-reducer"
+          ],
           "popular": true,
           "category": "audio"
         },
@@ -610,6 +961,13 @@
           "name": "Audio Converter",
           "description": "Convert audio between formats (MP3, WAV, FLAC)",
           "route": "/audio-converter",
+          "extraSlugs": [
+            "convert-audio-format",
+            "mp3-converter-online",
+            "wav-to-mp3-converter",
+            "m4a-to-mp3-online",
+            "change-audio-format"
+          ],
           "popular": true,
           "category": "audio"
         },
@@ -618,6 +976,13 @@
           "name": "Audio Editor",
           "description": "Professional audio editing with real-time effects and multi-track support",
           "route": "/audio-editor",
+          "extraSlugs": [
+            "edit-audio-online",
+            "free-audio-editor",
+            "modify-mp3-file",
+            "audio-cutter-merger",
+            "sound-editor-online"
+          ],
           "popular": true,
           "premium": true,
           "category": "audio"
@@ -627,6 +992,13 @@
           "name": "Audio Trimmer",
           "description": "Trim and cut audio clips to specific lengths",
           "route": "/audio-trimmer",
+          "extraSlugs": [
+            "trim-audio-online",
+            "cut-mp3-file",
+            "audio-cutter-online",
+            "shorten-audio-clip",
+            "split-audio-file"
+          ],
           "popular": true,
           "category": "audio"
         },
@@ -635,6 +1007,13 @@
           "name": "Voice Recorder",
           "description": "Record voice and audio directly in your browser",
           "route": "/voice-recorder",
+          "extraSlugs": [
+            "record-voice-online",
+            "online-microphone-recorder",
+            "audio-recorder-online",
+            "microphone-test-recorder",
+            "record-mp3-online"
+          ],
           "popular": true,
           "category": "audio"
         },
@@ -643,6 +1022,13 @@
           "name": "Text to Speech",
           "description": "Convert text to natural sounding speech audio",
           "route": "/text-to-speech",
+          "extraSlugs": [
+            "convert-text-to-audio",
+            "read-text-aloud",
+            "online-tts-reader",
+            "ai-voice-reader",
+            "listen-to-text"
+          ],
           "popular": true,
           "category": "audio"
         }
@@ -659,6 +1045,13 @@
           "name": "Word Counter",
           "description": "Count words, characters, paragraphs in text",
           "route": "/word-counter",
+          "extraSlugs": [
+            "count-words-online",
+            "character-count-tool",
+            "check-word-count",
+            "essay-word-counter",
+            "calculate-text-length"
+          ],
           "popular": true,
           "category": "text"
         },
@@ -667,6 +1060,13 @@
           "name": "Character Counter",
           "description": "Count characters and letters in text",
           "route": "/character-counter",
+          "extraSlugs": [
+            "count-characters-online",
+            "letter-counter",
+            "text-length-checker",
+            "tweet-character-count",
+            "meta-description-length-check"
+          ],
           "popular": true,
           "category": "text"
         },
@@ -675,6 +1075,13 @@
           "name": "Text Case Converter",
           "description": "Convert text between different cases (upper, lower, title)",
           "route": "/text-case-converter",
+          "extraSlugs": [
+            "convert-text-case",
+            "uppercase-to-lowercase",
+            "capitalize-text-online",
+            "title-case-converter",
+            "sentence-case-tool"
+          ],
           "popular": false,
           "category": "text"
         },
@@ -683,6 +1090,13 @@
           "name": "Password Generator",
           "description": "Generate secure random passwords with custom options",
           "route": "/password-generator",
+          "extraSlugs": [
+            "generate-secure-password",
+            "random-password-maker",
+            "strong-password-generator",
+            "create-strong-password",
+            "secure-pass-generator"
+          ],
           "popular": true,
           "category": "text"
         },
@@ -691,6 +1105,13 @@
           "name": "Advanced Password Generator",
           "description": "Advanced password generator with more customization options",
           "route": "/password-generator2",
+          "extraSlugs": [
+            "advanced-password-generator",
+            "custom-password-maker",
+            "secure-password-creator",
+            "configurable-password-tool",
+            "random-string-generator-secure"
+          ],
           "popular": false,
           "category": "text"
         },
@@ -699,6 +1120,13 @@
           "name": "Password Strength Checker",
           "description": "Check the strength and security of your passwords",
           "route": "/password-strength-checker",
+          "extraSlugs": [
+            "check-password-security",
+            "how-strong-is-my-password",
+            "password-tester-online",
+            "test-password-strength",
+            "password-safety-checker"
+          ],
           "popular": true,
           "category": "text"
         },
@@ -707,6 +1135,13 @@
           "name": "Lorem Ipsum Generator",
           "description": "Generate placeholder text for design and development",
           "route": "/lorem-ipsum-generator",
+          "extraSlugs": [
+            "dummy-text-generator",
+            "filler-text-maker",
+            "generate-placeholder-text",
+            "lorem-ipsum-text-copy",
+            "random-text-generator"
+          ],
           "popular": false,
           "category": "text"
         },
@@ -715,6 +1150,13 @@
           "name": "Text Diff Checker",
           "description": "Compare two texts and find differences",
           "route": "/text-diff",
+          "extraSlugs": [
+            "compare-text-online",
+            "find-text-differences",
+            "diff-checker-online",
+            "text-comparison-tool",
+            "check-diff-online"
+          ],
           "popular": false,
           "category": "text"
         },
@@ -723,6 +1165,13 @@
           "name": "Text Formatter",
           "description": "Format and clean up text with various options",
           "route": "/text-formatter",
+          "extraSlugs": [
+            "format-text-online",
+            "beautify-text",
+            "text-cleaner-tool",
+            "remove-extra-spaces",
+            "fix-text-spacing"
+          ],
           "popular": false,
           "category": "text"
         },
@@ -731,6 +1180,13 @@
           "name": "Duplicate Line Remover",
           "description": "Remove duplicate lines from text and lists",
           "route": "/duplicate-line-remover",
+          "extraSlugs": [
+            "remove-duplicate-lines",
+            "delete-duplicate-text",
+            "clean-duplicates-list",
+            "unique-lines-filter",
+            "deduplicate-text-online"
+          ],
           "popular": true,
           "category": "text"
         },
@@ -739,6 +1195,13 @@
           "name": "Typing Speed Test",
           "description": "Test your typing speed and accuracy with real-time WPM calculation",
           "route": "/typing-speed-test",
+          "extraSlugs": [
+            "check-wpm-online",
+            "typing-racer-test",
+            "how-fast-can-i-type",
+            "keyboard-speed-test",
+            "words-per-minute-test"
+          ],
           "popular": true,
           "category": "text"
         },
@@ -747,7 +1210,14 @@
           "name": "Binary Converter",
           "description": "Convert text to binary and binary to text with UTF-8 support",
           "route": "/binary-converter",
-          "popular": true,
+          "extraSlugs": [
+            "text-to-binary-converter",
+            "binary-to-text-online",
+            "convert-string-to-binary",
+            "binary-code-translator",
+            "ascii-to-binary"
+          ],
+          "popular": false,
           "category": "text"
         },
         {
@@ -755,6 +1225,13 @@
           "name": "ChatGPT Text Converter",
           "description": "Convert ChatGPT markdown text to clean, normal text. Remove formatting like bold, italic, headers, lists, and blockquotes. Perfect for markdown-to-text conversion",
           "route": "/chatgpt-text-converter",
+          "extraSlugs": [
+            "humanize-chatgpt-text",
+            "ai-text-rewriter",
+            "bypass-ai-detection",
+            "make-ai-text-human",
+            "rewrite-gpt-content"
+          ],
           "popular": true,
           "category": "text"
         },
@@ -763,7 +1240,14 @@
           "name": "Markdown to Text Converter",
           "description": "Convert Markdown to plain text instantly. Remove all markdown formatting and get clean, readable text",
           "route": "/markdown-to-text",
-          "popular": true,
+          "extraSlugs": [
+            "convert-markdown-to-plain-text",
+            "remove-markdown-formatting",
+            "strip-markdown-syntax",
+            "clean-markdown-text",
+            "md-to-txt-converter"
+          ],
+          "popular": false,
           "category": "text"
         },
         {
@@ -771,6 +1255,13 @@
           "name": "Email Extractor",
           "description": "Extract email addresses from text and documents automatically",
           "route": "/email-extractor",
+          "extraSlugs": [
+            "find-emails-in-text",
+            "extract-email-addresses",
+            "email-scraper-tool",
+            "get-emails-from-string",
+            "filter-emails-from-text"
+          ],
           "popular": true,
           "category": "text"
         }
@@ -803,6 +1294,13 @@
           "name": "EPUB Converter",
           "description": "Convert documents to EPUB format for e-readers",
           "route": "/epub-converter",
+          "extraSlugs": [
+            "convert-to-epub-online",
+            "pdf-to-epub-converter",
+            "word-to-epub",
+            "ebook-format-converter",
+            "create-epub-from-pdf"
+          ],
           "popular": false,
           "category": "converter"
         },
@@ -811,6 +1309,13 @@
           "name": "HTML to PDF",
           "description": "Convert HTML pages and content to PDF",
           "route": "/html-to-pdf",
+          "extraSlugs": [
+            "convert-html-to-pdf",
+            "save-webpage-as-pdf",
+            "url-to-pdf-converter",
+            "print-html-to-pdf",
+            "web-to-pdf-online"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -819,6 +1324,13 @@
           "name": "CSV to JSON Converter",
           "description": "Convert CSV files to JSON format with customization options",
           "route": "/csv-to-json-converter",
+          "extraSlugs": [
+            "convert-csv-to-json",
+            "csv-file-to-json",
+            "json-converter-from-csv",
+            "csv-data-to-json",
+            "online-csv-json-tool"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -827,6 +1339,13 @@
           "name": "XML to JSON Converter",
           "description": "Convert XML files to JSON format with structure preservation",
           "route": "/xml-to-json-converter",
+          "extraSlugs": [
+            "convert-xml-to-json",
+            "xml-file-to-json",
+            "xml-data-converter",
+            "parse-xml-to-json",
+            "online-xml-converter"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -835,6 +1354,13 @@
           "name": "Video to MP3 Converter",
           "description": "Convert video files to MP3 audio format online for free with high quality output",
           "route": "/video-to-mp3-converter",
+          "extraSlugs": [
+            "extract-mp3-from-video",
+            "convert-video-file-to-mp3",
+            "movie-to-mp3-converter",
+            "video-audio-extractor",
+            "mp4-audio-ripper"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -843,6 +1369,13 @@
           "name": "MP4 to MP3 Converter",
           "description": "Convert MP4 video files to MP3 audio format with 320kbps quality for free",
           "route": "/mp4-to-mp3",
+          "extraSlugs": [
+            "convert-mp4-video-to-mp3",
+            "mp4-file-to-audio",
+            "extract-sound-from-mp4",
+            "mp4-audio-converter",
+            "music-from-mp4"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -851,6 +1384,13 @@
           "name": "AVI to MP4 Converter",
           "description": "Convert AVI video files to MP4 format online for free with high quality output",
           "route": "/avi-to-mp4-converter",
+          "extraSlugs": [
+            "convert-avi-to-mp4",
+            "avi-video-converter",
+            "change-avi-to-mp4",
+            "avi-file-to-mp4-online",
+            "play-avi-as-mp4"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -859,6 +1399,13 @@
           "name": "MOV to MP4 Converter",
           "description": "Convert MOV video files to MP4 format online for free with quality preservation",
           "route": "/mov-to-mp4-converter",
+          "extraSlugs": [
+            "convert-mov-to-mp4",
+            "mov-video-converter",
+            "change-mov-to-mp4",
+            "mov-file-to-mp4-online",
+            "quicktime-to-mp4"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -867,6 +1414,13 @@
           "name": "WebM to MP4 Converter",
           "description": "Convert WebM video files to MP4 format online for free with high compatibility",
           "route": "/webm-to-mp4-converter",
+          "extraSlugs": [
+            "convert-webm-to-mp4",
+            "webm-video-converter",
+            "change-webm-to-mp4",
+            "webm-file-to-mp4-online",
+            "play-webm-as-mp4"
+          ],
           "popular": false,
           "category": "converter"
         },
@@ -875,6 +1429,13 @@
           "name": "MKV to MP4 Converter",
           "description": "Convert MKV video files to MP4 format online for free with subtitle support",
           "route": "/mkv-to-mp4-converter",
+          "extraSlugs": [
+            "convert-mkv-to-mp4",
+            "mkv-video-converter",
+            "change-mkv-to-mp4",
+            "mkv-file-to-mp4-online",
+            "play-mkv-as-mp4"
+          ],
           "popular": false,
           "category": "converter"
         },
@@ -883,6 +1444,13 @@
           "name": "FLV to MP4 Converter",
           "description": "Convert FLV video files to MP4 format online for free with modern compatibility",
           "route": "/flv-to-mp4-converter",
+          "extraSlugs": [
+            "convert-flv-to-mp4",
+            "flv-video-converter",
+            "change-flv-to-mp4",
+            "flv-file-to-mp4-online",
+            "play-flv-as-mp4"
+          ],
           "popular": false,
           "category": "converter"
         },
@@ -891,6 +1459,13 @@
           "name": "WAV to MP3 Converter",
           "description": "Convert WAV audio files to MP3 format online for free with quality options",
           "route": "/wav-to-mp3-converter",
+          "extraSlugs": [
+            "convert-wav-to-mp3",
+            "wav-audio-converter",
+            "change-wav-to-mp3",
+            "wav-file-to-mp3-online",
+            "compress-wav-to-mp3"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -899,6 +1474,13 @@
           "name": "M4A to MP3 Converter",
           "description": "Convert M4A audio files to MP3 format online for free with high compatibility",
           "route": "/m4a-to-mp3-converter",
+          "extraSlugs": [
+            "convert-m4a-to-mp3",
+            "m4a-audio-converter",
+            "change-m4a-to-mp3",
+            "m4a-file-to-mp3-online",
+            "iphone-audio-to-mp3"
+          ],
           "popular": true,
           "category": "converter"
         },
@@ -907,6 +1489,13 @@
           "name": "OGG to MP3 Converter",
           "description": "Convert OGG audio files to MP3 format online for free with quality retention",
           "route": "/ogg-to-mp3-converter",
+          "extraSlugs": [
+            "convert-ogg-to-mp3",
+            "ogg-audio-converter",
+            "change-ogg-to-mp3",
+            "ogg-file-to-mp3-online",
+            "compress-ogg-to-mp3"
+          ],
           "popular": false,
           "category": "converter"
         }
@@ -923,6 +1512,13 @@
           "name": "JSON Formatter",
           "description": "Format, validate, and beautify JSON data",
           "route": "/json-formatter",
+          "extraSlugs": [
+            "prettify-json-online",
+            "json-beautifier",
+            "validate-json-code",
+            "json-viewer-online",
+            "format-json-file"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -931,6 +1527,13 @@
           "name": "Hash Generator",
           "description": "Generate MD5, SHA1, SHA256 hashes from text",
           "route": "/hash-generator",
+          "extraSlugs": [
+            "md5-hash-generator",
+            "sha256-hash-calculator",
+            "generate-hash-online",
+            "encrypt-text-online",
+            "hash-string-message"
+          ],
           "popular": false,
           "category": "developer"
         },
@@ -939,6 +1542,13 @@
           "name": "Advanced Hash Generator",
           "description": "Generate various hash types with advanced options",
           "route": "/hash-generator2",
+          "extraSlugs": [
+            "advanced-hash-calculator",
+            "multi-algorithm-hashing",
+            "secure-hash-generator",
+            "file-checksum-calculator",
+            "generate-sha512-hash"
+          ],
           "popular": false,
           "category": "developer"
         },
@@ -947,6 +1557,13 @@
           "name": "Base64 Encoder/Decoder",
           "description": "Encode and decode Base64 strings and files",
           "route": "/base64-tool",
+          "extraSlugs": [
+            "encode-base64-online",
+            "decode-base64-string",
+            "base64-encoder-decoder",
+            "text-fo-base64",
+            "base64-to-text"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -955,6 +1572,13 @@
           "name": "JavaScript Minifier",
           "description": "Minify JavaScript code to reduce file size and improve performance",
           "route": "/javascript-minifier",
+          "extraSlugs": [
+            "minify-js-online",
+            "compress-javascript-code",
+            "js-compressor-minifier",
+            "reduce-js-file-size",
+            "obfuscate-javascript"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -963,6 +1587,13 @@
           "name": "Regex Tester",
           "description": "Test and validate regular expressions with real-time matching",
           "route": "/regex-tester",
+          "extraSlugs": [
+            "test-regex-online",
+            "regular-expression-validator",
+            "debug-regex-pattern",
+            "regex-match-tester",
+            "check-regex-online"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -971,6 +1602,13 @@
           "name": "SQL Formatter",
           "description": "Format and beautify SQL queries with syntax highlighting",
           "route": "/sql-formatter",
+          "extraSlugs": [
+            "beautify-sql-query",
+            "format-sql-online",
+            "sql-prettifier",
+            "validate-sql-syntax",
+            "sql-code-formatter"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -979,6 +1617,13 @@
           "name": "Advanced Regex Tester",
           "description": "Test and validate regular expressions with advanced features",
           "route": "/regex-tester2",
+          "extraSlugs": [
+            "advanced-regex-tool",
+            "regex-replace-tester",
+            "regex-flags-tester",
+            "complex-regex-validator",
+            "regex-cheatsheet-tool"
+          ],
           "popular": false,
           "category": "developer"
         },
@@ -987,6 +1632,13 @@
           "name": "API Tester",
           "description": "Test REST APIs and HTTP requests",
           "route": "/api-tester",
+          "extraSlugs": [
+            "test-rest-api-online",
+            "send-http-request",
+            "api-endpoint-tester",
+            "postman-alternative-online",
+            "debug-api-requests"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -995,6 +1647,13 @@
           "name": "JWT Decoder",
           "description": "Decode and verify JSON Web Tokens",
           "route": "/jwt-decoder",
+          "extraSlugs": [
+            "decode-jwt-online",
+            "json-web-token-decoder",
+            "jwt-parser",
+            "read-jwt-content",
+            "verify-jwt-signature-free"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -1003,6 +1662,13 @@
           "name": "URL Encoder/Decoder",
           "description": "Encode and decode URLs and query parameters",
           "route": "/url-encoder",
+          "extraSlugs": [
+            "encode-url-online",
+            "url-decoder-tool",
+            "percent-encoding-tool",
+            "escape-url-characters",
+            "url-string-converter"
+          ],
           "popular": false,
           "category": "developer"
         },
@@ -1011,6 +1677,13 @@
           "name": "CSS Minifier",
           "description": "Minify CSS code to reduce file size and improve loading speed",
           "route": "/css-minifier",
+          "extraSlugs": [
+            "compress-css-online",
+            "minify-css-file",
+            "css-optimizer-online",
+            "reduce-css-size",
+            "stylesheet-minifier"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -1019,6 +1692,13 @@
           "name": "HTML Validator",
           "description": "Validate HTML markup and check for errors and warnings",
           "route": "/html-validator",
+          "extraSlugs": [
+            "validate-html-code",
+            "check-html-syntax",
+            "html-error-checker",
+            "w3c-html-validation-alternative",
+            "check-html-markup"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -1027,6 +1707,13 @@
           "name": "Password Breach Checker",
           "description": "Check if your password has been compromised in data breaches using k-anonymity for maximum privacy",
           "route": "/password-breach-checker",
+          "extraSlugs": [
+            "check-pwned-password",
+            "password-leak-check",
+            "have-i-been-pwned-password",
+            "verify-password-safety",
+            "data-breach-password-search"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -1035,6 +1722,13 @@
           "name": "Email Breach Checker",
           "description": "Check if your email has been compromised in data breaches using HaveIBeenPwned database",
           "route": "/email-breach-checker",
+          "extraSlugs": [
+            "check-email-hack",
+            "email-leak-check",
+            "have-i-been-pwned-check",
+            "data-breach-email-search",
+            "compromised-email-checker"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -1043,6 +1737,13 @@
           "name": "Temporary Email Checker",
           "description": "Detect disposable and temporary email addresses using comprehensive blocklist and allowlist databases",
           "route": "/temp-email-checker",
+          "extraSlugs": [
+            "detect-fake-email",
+            "disposable-email-detector",
+            "identify-temp-mail",
+            "verify-email-domain-validity",
+            "check-throwaway-email"
+          ],
           "popular": true,
           "category": "developer"
         },
@@ -1051,6 +1752,13 @@
           "name": "Time & Space Complexity Analyzer",
           "description": "Analyze the time and space complexity of your code using AI-powered analysis. Get Big O notation, optimization suggestions, and algorithm insights.",
           "route": "/complexity-analyzer",
+          "extraSlugs": [
+            "calculate-text-complexity",
+            "readability-score-checker",
+            "check-code-complexity",
+            "flesch-kincaid-calculator",
+            "text-analysis-tool"
+          ],
           "popular": true,
           "category": "developer"
         }
@@ -1067,6 +1775,13 @@
           "name": "Code Formatter",
           "description": "Format and beautify HTML, CSS, JavaScript code",
           "route": "/code-formatter",
+          "extraSlugs": [
+            "beautify-code-online",
+            "format-html-css-js",
+            "clean-code-indentation",
+            "source-code-formatter",
+            "code-prettifier"
+          ],
           "popular": true,
           "category": "code"
         },
@@ -1075,6 +1790,13 @@
           "name": "Code Minifier",
           "description": "Minify CSS, JavaScript, HTML code for production",
           "route": "/code-minifier",
+          "extraSlugs": [
+            "minify-code-online",
+            "compress-html-css-js",
+            "reduce-code-size",
+            "code-optimization-tool",
+            "web-code-compressor"
+          ],
           "popular": false,
           "category": "code"
         },
@@ -1083,6 +1805,13 @@
           "name": "CSV to JSON Converter",
           "description": "Convert CSV data to JSON format easily",
           "route": "/csv-to-json",
+          "extraSlugs": [
+            "convert-csv-to-json-code",
+            "csv-json-parser",
+            "transform-csv-data",
+            "csv-to-object-converter",
+            "comma-separated-to-json"
+          ],
           "popular": false,
           "category": "code"
         },
@@ -1091,6 +1820,13 @@
           "name": "Markdown to HTML",
           "description": "Convert Markdown text to HTML format",
           "route": "/markdown-to-html",
+          "extraSlugs": [
+            "convert-md-to-html",
+            "markdown-parser-online",
+            "render-markdown-html",
+            "readme-to-html",
+            "md-html-converter"
+          ],
           "popular": false,
           "category": "code"
         },
@@ -1099,6 +1835,13 @@
           "name": "XML Formatter",
           "description": "Format and validate XML documents",
           "route": "/xml-formatter",
+          "extraSlugs": [
+            "beautify-xml-online",
+            "xml-pretty-print",
+            "format-xml-file",
+            "xml-indenter",
+            "validate-xml-format"
+          ],
           "popular": false,
           "category": "code"
         }
@@ -1125,6 +1868,13 @@
           "name": "Color Picker",
           "description": "Pick colors and get values in all formats with harmony suggestions",
           "route": "/color-picker",
+          "extraSlugs": [
+            "online-color-picker",
+            "find-color-code",
+            "image-color-picker-tool",
+            "hex-color-finder",
+            "rgb-color-selector"
+          ],
           "popular": true,
           "category": "design"
         },
@@ -1133,6 +1883,13 @@
           "name": "Color Palette Generator",
           "description": "Generate beautiful color palettes and schemes",
           "route": "/color-palette-generator",
+          "extraSlugs": [
+            "create-color-scheme",
+            "color-wheel-generator",
+            "brand-colors-generator",
+            "website-color-palette",
+            "random-color-schemes"
+          ],
           "popular": true,
           "category": "design"
         },
@@ -1141,6 +1898,13 @@
           "name": "CSS Gradient Generator",
           "description": "Create beautiful CSS gradients with live preview",
           "route": "/css-gradient-generator",
+          "extraSlugs": [
+            "make-css-gradients",
+            "css3-gradient-maker",
+            "linear-gradient-generator",
+            "background-gradient-tool",
+            "web-gradient-creator"
+          ],
           "popular": true,
           "category": "design"
         },
@@ -1149,6 +1913,13 @@
           "name": "Logo Maker",
           "description": "Create simple logos and brand graphics",
           "route": "/logo-maker",
+          "extraSlugs": [
+            "design-logo-free",
+            "simple-logo-creator",
+            "business-logo-designer",
+            "custom-logo-maker",
+            "brand-identity-maker"
+          ],
           "popular": true,
           "category": "design"
         },
@@ -1157,6 +1928,13 @@
           "name": "CSS Box Shadow Generator",
           "description": "Generate CSS box-shadow effects visually",
           "route": "/css-box-shadow",
+          "extraSlugs": [
+            "generate-box-shadow",
+            "css-shadow-maker",
+            "box-shadow-generator-online",
+            "css3-shadow-tool",
+            "visual-shadow-generator"
+          ],
           "popular": false,
           "category": "design"
         },
@@ -1165,6 +1943,13 @@
           "name": "Gradient Generator",
           "description": "Create beautiful CSS gradients with live preview",
           "route": "/gradient-generator",
+          "extraSlugs": [
+            "css-gradient-maker",
+            "gradient-color-generator",
+            "background-gradient-creator",
+            "css3-gradient-tool",
+            "web-gradient-generator"
+          ],
           "popular": true,
           "category": "design"
         },
@@ -1173,6 +1958,13 @@
           "name": "Online Whiteboard",
           "description": "Free unlimited online whiteboard for drawing, sketching, brainstorming and collaboration",
           "route": "/whiteboard",
+          "extraSlugs": [
+            "online-whiteboard-free",
+            "collaborative-whiteboard",
+            "sketch-board-online",
+            "drawing-board-online",
+            "virtual-whiteboard"
+          ],
           "popular": true,
           "category": "design"
         },
@@ -1181,6 +1973,13 @@
           "name": "Font Previewer",
           "description": "Preview and compare Google Fonts with custom text",
           "route": "/font-previewer",
+          "extraSlugs": [
+            "test-google-fonts",
+            "preview-fonts-online",
+            "font-tester-tool",
+            "compare-google-fonts",
+            "typography-preview-tool"
+          ],
           "popular": true,
           "category": "design"
         },
@@ -1189,6 +1988,13 @@
           "name": "Color Converter",
           "description": "Convert colors between HEX, RGB, HSL and other formats",
           "route": "/color-converter",
+          "extraSlugs": [
+            "convert-hex-to-rgb",
+            "rgb-to-hsl-converter",
+            "color-code-converter",
+            "hex-rgb-hsl-tool",
+            "color-format-changer"
+          ],
           "popular": true,
           "category": "design"
         }
@@ -1205,6 +2011,13 @@
           "name": "Facebook Video Downloader",
           "description": "Download Facebook videos, reels, and stories in HD quality without software installation",
           "route": "/facebook-video-downloader",
+          "extraSlugs": [
+            "fb-video-downloader",
+            "facebook-video-saver",
+            "download-facebook-videos-hd",
+            "save-facebook-video",
+            "fb-clip-downloader"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1213,6 +2026,13 @@
           "name": "Facebook Story Downloader",
           "description": "Download Facebook stories and highlights anonymously without notifications",
           "route": "/facebook-story-downloader",
+          "extraSlugs": [
+            "fb-story-saver",
+            "download-story-facebook",
+            "save-fb-stories-anonymous",
+            "facebook-story-viewer-download",
+            "fb-highlights-downloader"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1221,6 +2041,13 @@
           "name": "Instagram Video Downloader",
           "description": "Save Instagram videos, reels, stories, and IGTV content in high quality for free",
           "route": "/instagram-video-downloader",
+          "extraSlugs": [
+            "insta-video-saver",
+            "download-instagram-videos-online",
+            "ig-video-downloader",
+            "save-instagram-clips",
+            "instagram-downloader-mp4"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1229,6 +2056,13 @@
           "name": "Instagram Story Downloader",
           "description": "Download Instagram stories and highlights anonymously without notifications",
           "route": "/instagram-story-downloader",
+          "extraSlugs": [
+            "insta-story-saver",
+            "download-ig-stories",
+            "save-instagram-story-anonymous",
+            "instagram-story-viewer-download",
+            "ig-highlights-saver"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1237,6 +2071,13 @@
           "name": "Instagram DP Downloader",
           "description": "Download Instagram profile pictures in full size HD quality for free",
           "route": "/instagram-dp-downloader",
+          "extraSlugs": [
+            "insta-dp-viewer",
+            "instagram-profile-pic-downloader",
+            "download-full-size-dp",
+            "ig-profile-picture-viewer",
+            "save-insta-pfp"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1245,6 +2086,13 @@
           "name": "Instagram Reel Downloader",
           "description": "Download Instagram Reels without watermark in HD quality with audio extraction",
           "route": "/instagram-reel-downloader",
+          "extraSlugs": [
+            "download-instagram-reels",
+            "insta-reels-saver",
+            "save-reels-video",
+            "ig-reels-downloader-hd",
+            "instagram-reels-to-mp4"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1253,6 +2101,13 @@
           "name": "Twitter/X Video Downloader",
           "description": "Download Twitter and X platform videos and GIFs in high quality for free",
           "route": "/twitter-video-downloader",
+          "extraSlugs": [
+            "x-video-downloader",
+            "save-twitter-videos",
+            "download-twitter-clips",
+            "twitter-media-saver",
+            "twitter-gif-downloader"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1261,6 +2116,13 @@
           "name": "TikTok Video Downloader",
           "description": "Download TikTok videos without watermark in HD quality with audio extraction",
           "route": "/tiktok-downloader",
+          "extraSlugs": [
+            "tiktok-saver-no-watermark",
+            "download-tiktok-video",
+            "save-tiktok-mp4",
+            "musically-downloader",
+            "tt-video-downloader"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1269,6 +2131,13 @@
           "name": "TikTok Video Downloader 2",
           "description": "Download TikTok videos without watermark online. Save TikTok videos in HD MP4 format.",
           "route": "/tiktok-video-downloader-2",
+          "extraSlugs": [
+            "fast-tiktok-downloader",
+            "tiktok-downloader-hd",
+            "save-tiktok-video-online",
+            "tiktok-video-saver-free",
+            "no-watermark-tiktok"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1277,6 +2146,13 @@
           "name": "Instagram Downloader",
           "description": "Download Instagram videos, reels, stories, and photos in high quality",
           "route": "/instagram-downloader",
+          "extraSlugs": [
+            "download-from-instagram",
+            "instagram-tool-downloader",
+            "save-ig-content",
+            "instagram-media-saver",
+            "ig-downloader-all"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1285,6 +2161,13 @@
           "name": "TikTok Audio Downloader",
           "description": "Download TikTok audio and music as MP3 files for free with high quality output",
           "route": "/tiktok-audio-downloader",
+          "extraSlugs": [
+            "download-tiktok-sound",
+            "tiktok-mp3-saver",
+            "extract-tiktok-audio",
+            "save-tiktok-music",
+            "tiktok-sound-downloader-mp3"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1293,6 +2176,13 @@
           "name": "TikTok to MP3 Converter",
           "description": "Convert TikTok videos to MP3 audio files with 320kbps quality for free",
           "route": "/tiktok-mp3-converter",
+          "extraSlugs": [
+            "convert-tiktok-to-mp3",
+            "tiktok-video-to-audio",
+            "tiktok-music-converter",
+            "tiktok-to-mp3-online",
+            "mp3-from-tiktok"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1301,6 +2191,13 @@
           "name": "Pinterest Video Downloader",
           "description": "Download Pinterest videos, GIFs, and idea pins in high quality for inspiration",
           "route": "/pinterest-video-downloader",
+          "extraSlugs": [
+            "download-pinterest-videos",
+            "save-pinterest-video",
+            "pinterest-media-downloader",
+            "pinterest-clip-saver",
+            "pinterest-video-download-hd"
+          ],
           "popular": true,
           "category": "downloaders"
         },
@@ -1309,6 +2206,13 @@
           "name": "Snapchat Video Downloader",
           "description": "Download Snapchat videos and stories in HD quality for free without app installation",
           "route": "/snapchat-video-downloader",
+          "extraSlugs": [
+            "save-snapchat-videos",
+            "download-snapchat-stories",
+            "snap-video-downloader",
+            "snapchat-saver-online",
+            "save-snaps-to-gallery"
+          ],
           "popular": false,
           "category": "downloaders"
         },
@@ -1317,6 +2221,13 @@
           "name": "Universal Video Downloader",
           "description": "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark downloads, multiple quality options, no registration required.",
           "route": "/universal-video-downloader",
+          "extraSlugs": [
+            "all-in-one-video-downloader",
+            "download-videos-from-any-site",
+            "any-video-downloader",
+            "social-media-downloader",
+            "video-grabber-online"
+          ],
           "popular": true,
           "category": "downloaders"
         }
@@ -1333,6 +2244,13 @@
           "name": "Unit Converter",
           "description": "Convert between different units of measurement",
           "route": "/unit-converter",
+          "extraSlugs": [
+            "convert-units-online",
+            "measurement-converter",
+            "all-in-one-unit-converter",
+            "weight-length-temp-converter",
+            "metric-imperial-converter"
+          ],
           "popular": true,
           "category": "utilities"
         },
@@ -1341,6 +2259,13 @@
           "name": "ZIP File Creator",
           "description": "Create ZIP archives from multiple files",
           "route": "/zip-creator",
+          "extraSlugs": [
+            "create-zip-file-online",
+            "compress-files-to-zip",
+            "make-archive-online",
+            "zip-files-free",
+            "folder-to-zip-converter"
+          ],
           "popular": false,
           "category": "utilities"
         },
@@ -1349,6 +2274,13 @@
           "name": "URL Shortener",
           "description": "Shorten long URLs for easier sharing",
           "route": "/url-shortener",
+          "extraSlugs": [
+            "shorten-link-free",
+            "make-url-shorter",
+            "link-shortener-custom",
+            "reduce-link-length",
+            "create-short-link"
+          ],
           "popular": false,
           "category": "utilities"
         },
@@ -1357,6 +2289,13 @@
           "name": "Timestamp Converter",
           "description": "Convert between Unix timestamps and readable dates",
           "route": "/timestamp-converter",
+          "extraSlugs": [
+            "unix-timestamp-to-date",
+            "convert-time-to-timestamp",
+            "human-readable-time",
+            "date-to-epoch",
+            "timestamp-translator"
+          ],
           "popular": false,
           "category": "utilities"
         },
@@ -1365,6 +2304,13 @@
           "name": "Random Generator",
           "description": "Generate random numbers, strings, and data",
           "route": "/random-generator",
+          "extraSlugs": [
+            "generate-random-stuff",
+            "random-number-picker",
+            "random-string-maker",
+            "randomness-generator",
+            "lucky-number-generator"
+          ],
           "popular": false,
           "category": "utilities"
         },
@@ -1373,6 +2319,13 @@
           "name": "Currency Converter",
           "description": "Convert currencies with real-time exchange rates",
           "route": "/currency-converter",
+          "extraSlugs": [
+            "convert-money-online",
+            "exchange-rate-calculator",
+            "currency-calculator-live",
+            "usd-to-eur-converter",
+            "foreign-exchange-tool"
+          ],
           "popular": true,
           "category": "utilities"
         },
@@ -1381,6 +2334,13 @@
           "name": "Time Zone Converter",
           "description": "Convert time between different time zones worldwide",
           "route": "/timezone-converter",
+          "extraSlugs": [
+            "world-clock-converter",
+            "check-time-difference",
+            "time-zone-map",
+            "meeting-planner-time-zone",
+            "convert-time-across-zones"
+          ],
           "popular": true,
           "category": "utilities"
         },
@@ -1389,6 +2349,13 @@
           "name": "Epoch Timestamp Converter",
           "description": "Convert Unix timestamps to human-readable dates and vice versa",
           "route": "/epoch-converter",
+          "extraSlugs": [
+            "convert-epoch-time",
+            "unix-time-converter",
+            "epoch-to-datetime",
+            "current-epoch-time",
+            "timestamp-decoder"
+          ],
           "popular": true,
           "category": "utilities"
         },
@@ -1397,6 +2364,13 @@
           "name": "WhatsApp Link Generator",
           "description": "Create WhatsApp click-to-chat links with custom messages",
           "route": "/whatsapp-link-generator",
+          "extraSlugs": [
+            "create-wa-link",
+            "whatsapp-chat-link",
+            "wa-me-link-generator",
+            "click-to-chat-whatsapp",
+            "whatsapp-direct-message-link"
+          ],
           "popular": true,
           "category": "utilities"
         },
@@ -1405,6 +2379,13 @@
           "name": "PayPal Link Generator",
           "description": "Generate PayPal payment links for donations and payments",
           "route": "/paypal-link-generator",
+          "extraSlugs": [
+            "create-paypal-me-link",
+            "generate-payment-url",
+            "paypal-donation-link",
+            "direct-paypal-link",
+            "custom-payment-link-generator"
+          ],
           "popular": false,
           "category": "utilities"
         },
@@ -1413,6 +2394,13 @@
           "name": "WhatsApp Checker",
           "description": "Check if a phone number is active on WhatsApp",
           "route": "/whatsapp-checker",
+          "extraSlugs": [
+            "check-whatsapp-number",
+            "verify-whatsapp-account",
+            "is-on-whatsapp",
+            "whatsapp-status-checker",
+            "wa-number-validator"
+          ],
           "popular": false,
           "category": "utilities"
         }
@@ -1429,6 +2417,13 @@
           "name": "Free Bulk Keyword Rank Checker",
           "description": "Check Google rankings for multiple keywords at once. Track keyword positions for any domain across different locations and devices.",
           "route": "/bulk-keyword-rank-checker",
+          "extraSlugs": [
+            "rank-checker-bulk",
+            "keyword-position-checker",
+            "serp-tracker-bulk",
+            "check-multiple-keywords",
+            "google-rank-checker-bulk"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1437,6 +2432,13 @@
           "name": "Bulk Google Index Checker",
           "description": "Check if multiple URLs are indexed by Google. Verify indexation status for entire websites or URL lists in bulk.",
           "route": "/bulk-google-index-checker",
+          "extraSlugs": [
+            "google-index-status",
+            "check-url-indexation",
+            "bulk-url-indexer",
+            "google-search-console-tool",
+            "website-index-checker"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1445,6 +2447,13 @@
           "name": "Title Rewrite Checker",
           "description": "Check if Google rewrites your page titles in search results. Compare your original titles with what Google displays in SERPs.",
           "route": "/title-rewrite-checker",
+          "extraSlugs": [
+            "google-title-rewrites",
+            "serp-title-checker",
+            "seo-title-analyzer",
+            "page-title-optimization",
+            "google-snippet-preview"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1453,6 +2462,13 @@
           "name": "XML Sitemap Extractor",
           "description": "Extract all URLs from XML sitemaps and export them in various formats (CSV, TXT, XML, HTML, Excel). Analyze sitemap structure and URL data.",
           "route": "/xml-sitemap-extractor",
+          "extraSlugs": [
+            "sitemap-url-downloader",
+            "extract-urls-from-sitemap",
+            "sitemap-parser",
+            "xml-sitemap-analyzer",
+            "get-urls-from-sitemap"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1461,6 +2477,13 @@
           "name": "Advanced Sitemap Generator",
           "description": "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata.",
           "route": "/sitemap-generator",
+          "extraSlugs": [
+            "create-xml-sitemap",
+            "generate-sitemap-online",
+            "website-map-maker",
+            "xml-sitemap-builder",
+            "google-sitemap-generator"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1469,6 +2492,13 @@
           "name": "URL Extractor Tool",
           "description": "Extract all URLs from any webpage, text, or document. Find internal links, external links, images, and resources from any content.",
           "route": "/url-extractor",
+          "extraSlugs": [
+            "extract-links-from-text",
+            "get-all-urls-from-page",
+            "link-scraper-online",
+            "website-url-finder",
+            "extract-hyperlinks"
+          ],
           "popular": false,
           "category": "seo"
         },
@@ -1477,6 +2507,13 @@
           "name": "Broken Link Checker",
           "description": "Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages.",
           "route": "/broken-link-checker",
+          "extraSlugs": [
+            "find-404-errors",
+            "dead-link-finder",
+            "website-link-validator",
+            "check-website-errors",
+            "broken-link-scanner"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1485,6 +2522,13 @@
           "name": "Duplicate Content Finder",
           "description": "Detect duplicate content across your website or compare content with other sites. Find plagiarized content and improve SEO.",
           "route": "/duplicate-content-finder",
+          "extraSlugs": [
+            "plagiarism-checker-seo",
+            "content-duplication-tool",
+            "find-copied-content",
+            "website-content-analyzer",
+            "duplicate-page-detector"
+          ],
           "popular": false,
           "category": "seo"
         },
@@ -1493,6 +2537,13 @@
           "name": "Meta Tag Analyzer",
           "description": "Analyze and audit meta tags across your website. Check title tags, meta descriptions, Open Graph tags, and other SEO metadata.",
           "route": "/meta-tag-analyzer",
+          "extraSlugs": [
+            "analyze-meta-tags",
+            "seo-meta-checker",
+            "meta-description-test",
+            "title-tag-checker",
+            "website-meta-audit"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1501,6 +2552,13 @@
           "name": "Page Speed Test Tool",
           "description": "Test website page speed and performance. Get detailed insights on Core Web Vitals, loading times, and optimization suggestions.",
           "route": "/page-speed-test",
+          "extraSlugs": [
+            "check-website-speed",
+            "website-performance-test",
+            "load-time-checker",
+            "speed-test-google",
+            "core-web-vitals-check"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1509,6 +2567,13 @@
           "name": "Complete SEO Audit Tool",
           "description": "Comprehensive SEO audit tool that analyzes technical SEO, on-page optimization, content quality, and provides actionable recommendations.",
           "route": "/seo-audit-tool",
+          "extraSlugs": [
+            "website-seo-audit",
+            "seo-score-checker",
+            "site-health-check",
+            "on-page-seo-checker",
+            "technical-seo-audit"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1517,6 +2582,13 @@
           "name": "Free Backlink Checker",
           "description": "Check backlinks for any website. Analyze link profile, domain authority, anchor text distribution, and competitor backlinks.",
           "route": "/backlink-checker",
+          "extraSlugs": [
+            "check-backlinks-free",
+            "inbound-link-checker",
+            "website-backlink-analysis",
+            "link-profile-checker",
+            "find-backlinks-url"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1525,6 +2597,13 @@
           "name": "SEO Competitor Analysis",
           "description": "Analyze competitor SEO strategies. Compare keywords, backlinks, content gaps, and identify opportunities to outrank competitors.",
           "route": "/competitor-analysis-tool",
+          "extraSlugs": [
+            "seo-competitor-checker",
+            "website-comparison-tool",
+            "competitor-keyword-spy",
+            "analyze-competitor-site",
+            "seo-competition-analysis"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1533,6 +2612,13 @@
           "name": "Advanced Keyword Research",
           "description": "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO.",
           "route": "/keyword-research-tool",
+          "extraSlugs": [
+            "find-keywords-online",
+            "free-keyword-finder",
+            "seo-keyword-generator",
+            "long-tail-keyword-tool",
+            "search-volume-checker"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1541,6 +2627,13 @@
           "name": "Bing Keyword Research",
           "description": "Research keywords specifically for Bing search engine. Get search volumes, difficulty scores, and related keyword suggestions for Bing SEO.",
           "route": "/bing-keyword-research",
+          "extraSlugs": [
+            "bing-keyword-tool",
+            "bing-search-volume",
+            "keyword-ideas-bing",
+            "bing-seo-keywords",
+            "find-bing-keywords"
+          ],
           "popular": false,
           "category": "seo"
         },
@@ -1549,6 +2642,13 @@
           "name": "Google Keyword Research",
           "description": "Research keywords specifically for Google search engine. Get search volumes, difficulty scores, and related keyword suggestions for Google SEO.",
           "route": "/google-keyword-research",
+          "extraSlugs": [
+            "google-keyword-planner-free",
+            "keyword-tool-google",
+            "google-search-volume-checker",
+            "find-google-keywords",
+            "seo-keywords-google"
+          ],
           "popular": false,
           "category": "seo"
         },
@@ -1557,6 +2657,13 @@
           "name": "Keyword Rank Tracker",
           "description": "Track keyword rankings over time. Monitor SERP positions for multiple keywords and domains with detailed reporting and alerts.",
           "route": "/rank-tracking-tool",
+          "extraSlugs": [
+            "google-rank-checker",
+            "serp-tracker-pro",
+            "keyword-monitoring-tool",
+            "search-ranking-monitor",
+            "seo-position-tracker"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1565,6 +2672,13 @@
           "name": "Mobile SEO Checker",
           "description": "Test mobile SEO performance and mobile-friendliness. Check Core Web Vitals, mobile usability, and mobile search optimization.",
           "route": "/mobile-seo-checker",
+          "extraSlugs": [
+            "mobile-friendly-test",
+            "responsive-design-checker",
+            "mobile-optimization-tool",
+            "google-mobile-test",
+            "smartphone-view-simulator"
+          ],
           "popular": false,
           "category": "seo"
         },
@@ -1573,6 +2687,13 @@
           "name": "Local SEO Optimizer",
           "description": "Optimize for local search with local SEO tools. Check Google My Business optimization, local citations, and local search rankings.",
           "route": "/local-seo-tool",
+          "extraSlugs": [
+            "gmb-optimization-tool",
+            "local-search-ranking",
+            "check-local-listings",
+            "google-maps-seo",
+            "local-business-seo"
+          ],
           "popular": false,
           "category": "seo"
         },
@@ -1581,6 +2702,13 @@
           "name": "SERP Snippet Optimizer",
           "description": "Optimize title tags and meta descriptions for better click-through rates. Preview how your pages will appear in search results.",
           "route": "/serp-snippet-optimizer",
+          "extraSlugs": [
+            "google-pixel-width-checker",
+            "meta-length-checker",
+            "serp-preview-tool",
+            "snippet-optimization",
+            "title-tag-preview"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1589,6 +2717,13 @@
           "name": "Structured Data Tester",
           "description": "Test and validate structured data markup. Check schema.org implementation and preview rich snippets in search results.",
           "route": "/structured-data-tester",
+          "extraSlugs": [
+            "validate-schema-markup",
+            "test-structured-data",
+            "json-ld-validator",
+            "rich-results-test",
+            "schema-checker-online"
+          ],
           "popular": false,
           "category": "seo"
         },
@@ -1597,6 +2732,13 @@
           "name": "Image SEO Analyzer",
           "description": "Optimize images for SEO. Check alt text, file sizes, formats, and image optimization opportunities across your website.",
           "route": "/image-seo-analyzer",
+          "extraSlugs": [
+            "alt-text-checker",
+            "image-optimization-test",
+            "check-image-seo",
+            "find-missing-alt-tags",
+            "image-size-analyzer"
+          ],
           "popular": false,
           "category": "seo"
         },
@@ -1605,6 +2747,13 @@
           "name": "Robots.txt Generator",
           "description": "Generate robots.txt files for website crawling control",
           "route": "/robots-txt-generator",
+          "extraSlugs": [
+            "create-robots-txt",
+            "robots-file-maker",
+            "allow-disallow-generator",
+            "crawl-control-tool",
+            "robots-txt-builder"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1613,6 +2762,13 @@
           "name": "Schema Markup Generator",
           "description": "Generate JSON-LD schema markup for rich snippets",
           "route": "/schema-generator",
+          "extraSlugs": [
+            "schema-creator-online",
+            "json-ld-generator",
+            "rich-snippets-maker",
+            "google-structured-data-helper",
+            "schema-markup-builder"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1621,6 +2777,13 @@
           "name": "SSL Certificate Checker",
           "description": "Check SSL certificate status, expiry, and security details",
           "route": "/ssl-checker",
+          "extraSlugs": [
+            "check-ssl-certificate",
+            "verify-ssl-installation",
+            "https-checker",
+            "ssl-expiry-date",
+            "security-certificate-check"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1629,6 +2792,13 @@
           "name": "Meta Tags Generator",
           "description": "Generate HTML meta tags for SEO optimization",
           "route": "/meta-tags-generator",
+          "extraSlugs": [
+            "generate-meta-tags",
+            "free-meta-tag-generator",
+            "create-seo-tags",
+            "meta-header-generator",
+            "html-head-tags-maker"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1637,6 +2807,13 @@
           "name": "QR Code Generator",
           "description": "Generate QR codes for text, URLs, WiFi, and more",
           "route": "/qr-code-generator",
+          "extraSlugs": [
+            "create-qr-code-free",
+            "qr-code-maker-online",
+            "generate-qr-image",
+            "custom-qr-generator",
+            "url-to-qr-code"
+          ],
           "popular": true,
           "category": "seo"
         },
@@ -1645,6 +2822,13 @@
           "name": "Keyword Density Checker",
           "description": "Check keyword density and frequency in text",
           "route": "/keyword-density",
+          "extraSlugs": [
+            "check-keyword-frequency",
+            "keyword-counter-tool",
+            "seo-text-analyzer",
+            "keyword-percentage-calculator",
+            "content-density-check"
+          ],
           "popular": false,
           "category": "seo"
         }
