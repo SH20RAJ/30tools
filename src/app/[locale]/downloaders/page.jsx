@@ -1,15 +1,23 @@
-"use client";
-
 import DownloaderToolsNavbar from "@/components/navigation/DownloaderToolsNavbar";
 import DownloaderToolsFooter from "@/components/footers/DownloaderToolsFooter";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
-import { useEffect } from "react";
+
+export const metadata = {
+  title: "Universal Video Downloader - TikTok, Facebook, Instagram | 30tools",
+  description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, and more for free. All-in-one online video downloader with no watermarks.",
+  alternates: {
+    canonical: "https://30tools.com/downloaders",
+  },
+  openGraph: {
+    title: "Universal All-in-One Video Downloader",
+    description: "Download videos from multiple platforms including TikTok, Instagram, and Facebook easily and for free.",
+    url: "https://30tools.com/downloaders",
+    siteName: "30tools",
+    type: "website",
+  },
+};
 
 export default function DownloadersPage() {
-  useEffect(() => {
-    // Any client-side initialization can go here
-  }, []);
-
   return (
     <div className="min-h-screen flex-col">
       <DownloaderToolsNavbar />

@@ -7,6 +7,9 @@ export const metadata = {
     title: '3 Methods to Convert YouTube Videos to High-Quality 320kbps MP3 | 30Tools',
     description: 'Want crystal clear audio? Discover 3 effective methods to convert YouTube videos to 320kbps MP3 for the best listening experience.',
     keywords: ['320kbps MP3', 'YouTube to MP3 high quality', 'audio converter', 'lossless audio', '30Tools'],
+    alternates: {
+        canonical: 'https://30tools.com/blog/convert-youtube-videos-high-quality-320kbps-mp3',
+    },
 };
 
 export default function HighQualityAudioGuide() {
@@ -70,7 +73,7 @@ export default function HighQualityAudioGuide() {
                         <li><strong>No Ads:</strong> Clean interface.</li>
                     </ul>
                     <Link href="/youtube-downloader">
-                        <Button>Try 30Tools for Free</Button>
+                        <Button variant="default" size="lg" className="font-bold">Try 30Tools for Free</Button>
                     </Link>
                 </div>
 

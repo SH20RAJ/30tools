@@ -7,6 +7,9 @@ export const metadata = {
     title: '6 Best Free YouTube to MP3 Converters You Should Try in 2025 | 30Tools',
     description: 'Looking for the best YouTube to MP3 converter? We ranked the top 6 free tools for speed, safety, and audio quality. See who took the #1 spot.',
     keywords: ['best YouTube to MP3 converter', 'free mp3 converter', '30Tools', 'Y2Mate alternative', 'safe video converter'],
+    alternates: {
+        canonical: 'https://30tools.com/blog/best-free-youtube-to-mp3-converters-2025',
+    },
 };
 
 export default function BestConvertersReview() {

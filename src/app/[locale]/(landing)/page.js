@@ -36,6 +36,22 @@ import {
 import AuthComponent from "@/components/auth/AuthComponent";
 import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
 
+export const metadata = {
+  title: "30tools - Free Online Tools for Everyone",
+  description: "Your ultimate free online toolkit. Image compressor, video converter, PDF tools, and more. Privacy-focused, fast, and no signup required.",
+  alternates: {
+    canonical: "https://30tools.com",
+  },
+  openGraph: {
+    title: "30tools - Free Online Toolkit",
+    description: "Fast, free, and privacy-focused tools for all your creative and professional needs.",
+    url: "https://30tools.com",
+    siteName: "30tools",
+    type: "website",
+  },
+};
+
+
 export default function LandingPage() {
   const iconMap = {
     ImageIcon,

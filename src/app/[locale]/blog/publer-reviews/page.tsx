@@ -7,6 +7,9 @@ export const metadata = {
     title: 'Publer Reviews: A Comprehensive User Guide | 30Tools',
     description: 'Is Publer the best social media management tool in 2025? Read our in-depth review covering features, pricing, and how it compares to the competition.',
     keywords: ['Publer review', 'social media management', 'scheduler', 'instagram automation', '30Tools'],
+    alternates: {
+        canonical: 'https://30tools.com/blog/publer-reviews',
+    },
 };
 
 export default function PublerReview() {
@@ -89,7 +92,7 @@ export default function PublerReview() {
                         <li>Convert formats effortlessly.</li>
                     </ul>
                     <Link href="/youtube-downloader">
-                        <Button variant="outline" className="font-bold">Check out 30Tools</Button>
+                        <Button variant="outline" size="lg" className="font-bold">Check out 30Tools</Button>
                     </Link>
                 </div>
 

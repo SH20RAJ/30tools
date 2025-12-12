@@ -4,6 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 export const metadata = {
     title: 'Blog - 30Tools',
     description: 'Explore our latest articles, guides, and reviews on productivity tools, converters, and more.',
+    alternates: {
+        canonical: 'https://30tools.com/blog',
+    },
 };
 
 const blogs = [
