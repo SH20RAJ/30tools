@@ -5,8 +5,8 @@ function RSSFeed() {
   const currentDate = new Date().toISOString();
   const allTools = getAllTools();
 
-  // Get latest tools (last 20 added/updated)
-  const latestTools = allTools.slice(0, 20);
+  // Get all tools
+  const latestTools = allTools;
 
   const rssItems = latestTools
     .map(

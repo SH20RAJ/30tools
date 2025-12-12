@@ -776,6 +776,21 @@
           ],
           "popular": true,
           "category": "video"
+        },
+        {
+          "id": "twitter-downloader",
+          "name": "Twitter Video Downloader",
+          "description": "Download videos and GIFs from Twitter in high quality",
+          "route": "/twitter-downloader",
+          "extraSlugs": [
+            "twitter-video-saver",
+            "twitter-gif-downloader",
+            "download-twitter-video",
+            "x-video-downloader",
+            "save-twitter-video"
+          ],
+          "popular": true,
+          "category": "video"
         }
       ]
     },
@@ -809,6 +824,21 @@
             "youtube-downloader-iphone",
             "fast-youtube-downloader",
             "secure-youtube-downloader"
+          ],
+          "popular": true,
+          "category": "youtube"
+        },
+        {
+          "id": "youtube-subtitles-downloader",
+          "name": "YouTube Subtitles Downloader",
+          "description": "Download subtitles and transcripts from any YouTube video",
+          "route": "/youtube-subtitles-downloader",
+          "extraSlugs": [
+            "download-youtube-transcript",
+            "youtube-caption-downloader",
+            "extract-youtube-subtitles",
+            "save-youtube-captions",
+            "youtube-srt-downloader"
           ],
           "popular": true,
           "category": "youtube"
