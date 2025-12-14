@@ -5,7 +5,6 @@ const YouTubeDownloader = dynamic(
   () => import("@/components/tools/youtube/YouTubeDownloader"),
   {
     loading: () => <ToolSkeleton />,
-    ssr: false // Client-side only for tool interactive parts strictly
   }
 );
 import {
@@ -224,7 +223,7 @@ export default function YouTubeDownloaderPage() {
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
-            YouTube <span className="text-primary">Downloader</span>
+            YouTube <span className="text-primary">Downloader</span> <span className="text-primary text-2xl align-top ml-1">[UPDATED]</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             The simplest way to download YouTube videos and audio. Fast, free, and no ads.

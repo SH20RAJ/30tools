@@ -75,6 +75,9 @@ export default function YouTubeDownloader() {
     };
   }, [url]);
 
+  /* New Proxy API Integration */
+  const [downloadingFormat, setDownloadingFormat] = useState(null); // Track which button is processing
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!url.trim()) {
@@ -87,217 +90,115 @@ export default function YouTubeDownloader() {
     setVideoData(null);
 
     try {
-      // Use the public API to fetch video info
-      const encoded = encodeURIComponent(url.trim());
-      const apiUrl = `https://ytdl.socialplug.io/api/video-info?url=${encoded}`;
-      const res = await fetch(apiUrl, {
-        headers: {
-          accept: "application/json, text/plain, */*",
-          origin: "https://www.socialplug.io",
-        },
+      // 1. Fetch Video Details via internal Proxy
+      const res = await fetch("/api/proxy/ytdown", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: url.trim() }),
       });
 
       if (!res.ok) {
-        const txt = await res.text().catch(() => "");
-        throw new Error(`API error: ${res.status} ${txt}`);
+        throw new Error("Failed to fetch video details");
       }
 
       const data = await res.json();
 
-      // Helpers to format bytes and duration
-      const formatBytes = (bytes) => {
-        if (!bytes || isNaN(bytes)) return "";
-        const b = Number(bytes);
-        const units = ["B", "KB", "MB", "GB"];
-        let i = 0;
-        let val = b;
-        while (val >= 1024 && i < units.length - 1) {
-          val /= 1024;
-          i++;
-        }
-        return `${Math.round(val * 10) / 10}${units[i]}`;
-      };
-
-      const formatDuration = (secs) => {
-        const s = Number(secs) || 0;
-        const m = Math.floor(s / 60);
-        const r = s % 60;
-        return `${m}:${r.toString().padStart(2, "0")}`;
-      };
-
-      // Normalize response to the shape used by the component
-      const title = data.title || "YouTube Video";
-      const thumbnail =
-        data.image || data.thumbnail || data.videoDetails?.thumbnail || null;
-      const duration = data.lengthSeconds
-        ? formatDuration(data.lengthSeconds)
-        : data.duration || "";
-
-      // video formats present at data.format_options.video.mp4 (array)
-      const rawVideoFormats =
-        (data.format_options &&
-          data.format_options.video &&
-          data.format_options.video.mp4) ||
-        [];
-      const videoFormats = rawVideoFormats.map((f) => ({
-        quality: f.quality || (f.mimeType ? f.mimeType.split("/")[1] : "video"),
-        fileSize: formatBytes(parseInt(f.fileSize || f.filesize || "0", 10)),
-        downloadUrl: f.url || f.src || "#",
-        mimeType: f.mimeType || "",
-        hasAudio: f.hasAudio || false,
-      }));
-
-      // audio formats (if any) — API example returns audio.mp3 === false
-      let audioFormats = [];
-      if (data.format_options && data.format_options.audio) {
-        const rawAudio = data.format_options.audio.mp3 || [];
-        audioFormats = (rawAudio || []).map((f) => ({
-          quality: f.quality || f.bitrate || "audio",
-          fileSize: formatBytes(parseInt(f.fileSize || f.filesize || "0", 10)),
-          downloadUrl: f.url || "#",
-        }));
+      if (!data.api || !data.api.id) {
+        throw new Error("Invalid video URL or API error");
       }
 
-      const fileSize = "";
+      const apiData = data.api;
 
-      const normalized = {
+      // Normalize data
+      const title = apiData.title || "YouTube Video";
+      const thumbnail = apiData.imagePreviewUrl || null;
+      // Duration isn't strictly provided as string/seconds in top level except in mediaItems, we can iterate or default
+      const duration = apiData.mediaItems?.[0]?.mediaDuration || "";
+
+      // Group formats
+      const videoFormats = [];
+      const audioFormats = [];
+
+      (apiData.mediaItems || []).forEach(item => {
+        const isAudio = item.type === "Audio";
+        const formatObj = {
+          quality: item.mediaQuality || (isAudio ? "Audio" : "Video"),
+          fileSize: item.mediaFileSize || "",
+          // We store the mediaUrl as the specific ID needed for step 2
+          downloadUrl: item.mediaUrl,
+          hasAudio: true, // simplified assumption or checked via item.mediaTask
+          originalExtension: item.mediaExtension
+        };
+
+        if (isAudio) {
+          audioFormats.push(formatObj);
+        } else {
+          videoFormats.push(formatObj);
+        }
+      });
+
+      setVideoData({
         title,
         thumbnail,
         duration,
-        quality: videoFormats[videoFormats.length - 1]?.quality || "",
-        fileSize,
         videoFormats,
-        audioFormats,
-        downloadUrl: videoFormats[0]?.downloadUrl || "#",
-        audioUrl: audioFormats[0]?.downloadUrl || null,
-      };
+        audioFormats
+      });
 
-      setVideoData(normalized);
-    } catch {
+    } catch (err) {
+      console.error(err);
       setError("An error occurred. Please check the URL and try again.");
     } finally {
       setIsLoading(false);
     }
   };
 
-  const handleBookmark = () => {
-    if (!url.trim()) {
-      toast.error("Please enter a YouTube URL to bookmark");
-      return;
-    }
+
+  const handleProcessDownload = async (mediaUrl, filename) => {
+    if (!mediaUrl) return;
+
+    // Set loading state for this specific action if needed, or global
+    // Using a simple toast or state to show processing
+    const toastId = toast.loading("Processing download link...");
 
     try {
-      const currentBookmarks = JSON.parse(
-        localStorage.getItem("bookmarked-youtube-urls") || "[]",
-      );
-
-      if (isBookmarked) {
-        // Remove bookmark
-        const filteredUrls = currentBookmarks.filter(
-          (item) => item.url !== url,
-        );
-        localStorage.setItem(
-          "bookmarked-youtube-urls",
-          JSON.stringify(filteredUrls),
-        );
-        setBookmarkedUrls(filteredUrls);
-        setIsBookmarked(false);
-        toast.success("Bookmark removed");
-      } else {
-        // Add bookmark
-        const newBookmark = {
-          url: url.trim(),
-          title: videoData?.title || "YouTube Video",
-          thumbnail: videoData?.thumbnail || null,
-          bookmarkedAt: new Date().toISOString(),
-        };
-        const updatedBookmarks = [newBookmark, ...currentBookmarks];
-
-        // Keep only last 50 bookmarks
-        const limitedBookmarks = updatedBookmarks.slice(0, 50);
-        localStorage.setItem(
-          "bookmarked-youtube-urls",
-          JSON.stringify(limitedBookmarks),
-        );
-        setBookmarkedUrls(limitedBookmarks);
-        setIsBookmarked(true);
-        toast.success("Saved to bookmarks");
-      }
-    } catch {
-      toast.error("Failed to save bookmark");
-    }
-  };
-
-  const handleRemoveBookmark = (urlToRemove) => {
-    try {
-      const filteredUrls = bookmarkedUrls.filter(
-        (item) => item.url !== urlToRemove,
-      );
-      localStorage.setItem(
-        "bookmarked-youtube-urls",
-        JSON.stringify(filteredUrls),
-      );
-      setBookmarkedUrls(filteredUrls);
-
-      // Update current URL bookmark status if it matches
-      if (url === urlToRemove) {
-        setIsBookmarked(false);
-      }
-
-      toast.success("Bookmark removed");
-    } catch {
-      toast.error("Failed to remove bookmark");
-    }
-  };
-
-  const handleLoadBookmarkedUrl = (bookmarkedUrl) => {
-    setUrl(bookmarkedUrl);
-    setError("");
-    setVideoData(null);
-  };
-
-  const handlePWAInstall = async () => {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
-    if (isIOS) {
-      toast.info("To install: Tap Share → Add to Home Screen", {
-        duration: 4000,
+      // 2. Fetch specific download link via same proxy
+      const res = await fetch("/api/proxy/ytdown", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: mediaUrl }),
       });
-    } else if (deferredPrompt) {
-      try {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === "accepted") {
-          setDeferredPrompt(null);
-          setShowPWAButton(false);
-          toast.success("App installed successfully!");
-        }
-      } catch {
-        toast.error("Installation failed");
+
+      if (!res.ok) throw new Error("Failed to get download link");
+
+      const data = await res.json();
+
+      if (data.api && data.api.fileUrl) {
+        toast.dismiss(toastId);
+        toast.success("Download starting...");
+
+        // Trigger download
+        const link = document.createElement("a");
+        link.href = data.api.fileUrl;
+        link.target = "_blank"; // Or _self if strictly attachment
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        throw new Error("Download link not found");
       }
-    } else {
-      toast.info("Install option not available");
+
+    } catch (err) {
+      console.error(err);
+      toast.dismiss(toastId);
+      toast.error("Failed to generate download link. Try again.");
     }
   };
 
-  const handleDownload = (downloadUrl, _filename, _format) => {
-    if (!downloadUrl || downloadUrl.startsWith("#")) {
-      setError("Download URL unavailable");
-      return;
-    }
-
-    try {
-      const link = document.createElement("a");
-      link.href = downloadUrl;
-      link.target = "_blank";
-      link.style.display = "none";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (_error) {
-      console.error("Download failed:", error);
-      setError("Download failed. Please try again.");
-    }
+  // Wrapper for existing UI calls
+  const handleDownload = (downloadUrl) => {
+    handleProcessDownload(downloadUrl);
   };
 
   return (
