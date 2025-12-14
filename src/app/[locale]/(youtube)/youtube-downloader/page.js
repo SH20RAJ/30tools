@@ -1,4 +1,13 @@
-import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
+import dynamic from "next/dynamic";
+import ToolSkeleton from "@/components/tools/youtube/ToolSkeleton";
+
+const YouTubeDownloader = dynamic(
+  () => import("@/components/tools/youtube/YouTubeDownloader"),
+  {
+    loading: () => <ToolSkeleton />,
+    ssr: false // Client-side only for tool interactive parts strictly
+  }
+);
 import {
   Accordion,
   AccordionContent,
@@ -46,6 +55,17 @@ export async function generateMetadata({ searchParams }) {
           },
         ],
       },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      },
     };
   }
 
@@ -79,6 +99,18 @@ export async function generateMetadata({ searchParams }) {
           alt: `${readableSlug} - 30Tools`,
         },
       ],
+    },
+
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
     twitter: {
       card: "summary_large_image",

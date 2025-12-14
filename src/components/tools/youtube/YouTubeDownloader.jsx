@@ -411,6 +411,7 @@ export default function YouTubeDownloader() {
                   <img
                     src={videoData.thumbnail}
                     alt={videoData.title}
+                    loading="lazy"
                     className="w-full md:w-64 aspect-video object-cover rounded-xl shadow-sm"
                   />
                 </div>
@@ -528,7 +529,7 @@ export default function YouTubeDownloader() {
                 {bookmarkedUrls.map((bookmark, idx) => (
                   <div key={idx} className="flex items-center gap-4 p-3 bg-card border border-border rounded-xl group hover:border-primary/50 transition-all">
                     {bookmark.thumbnail && (
-                      <img src={bookmark.thumbnail} alt="" className="w-16 h-10 object-cover rounded shadow-sm" />
+                      <img src={bookmark.thumbnail} alt="" loading="lazy" className="w-16 h-10 object-cover rounded shadow-sm" />
                     )}
                     <div className="flex-1 min-w-0">
                       <div className="font-medium truncate text-sm">{bookmark.title}</div>

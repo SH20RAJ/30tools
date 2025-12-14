@@ -8,6 +8,7 @@ export function generateStaticParams() {
 }
 
 import PWAInstallPrompt from "@/components/PWAInstallPrompt";
+import SocialRedirect from "@/components/shared/SocialRedirect";
 import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "sonner";
@@ -288,6 +289,7 @@ export default async function RootLayout({ children, params }) {
             <StructuredData includeFAQ={false} />
             {children}
             <PWAInstallPrompt />
+            <SocialRedirect />
             <Toaster />
             <a
               className="sr-only"
