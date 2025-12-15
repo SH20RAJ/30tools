@@ -29,7 +29,7 @@ export async function generateMetadata({ searchParams }) {
   const slug = params?.slug;
 
   // Default Metadata
-  const defaultTitle = "YouTube Video Downloader - 30Tools";
+  const defaultTitle = "[New] YouTube Video Downloader - 30Tools";
   const defaultDesc = "Download YouTube videos in MP4 and MP3 formats securely and freely. High-speed, high-quality downloads without any software installation.";
 
   if (!slug) {

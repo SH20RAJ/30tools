@@ -198,7 +198,7 @@ export default function YouTubeDownloader() {
 
   /* Restored Helper Functions */
 
-  const handleBookmark = () => {
+  const toggleBookmark = () => {
     if (!url.trim()) {
       toast.error("Please enter a YouTube URL to bookmark");
       return;
@@ -246,7 +246,7 @@ export default function YouTubeDownloader() {
     }
   };
 
-  const handleRemoveBookmark = (urlToRemove) => {
+  const removeBookmark = (urlToRemove) => {
     try {
       const filteredUrls = bookmarkedUrls.filter(
         (item) => item.url !== urlToRemove,
@@ -268,7 +268,7 @@ export default function YouTubeDownloader() {
     }
   };
 
-  const handleLoadBookmarkedUrl = (bookmarkedUrl) => {
+  const loadBookmarkedUrl = (bookmarkedUrl) => {
     setUrl(bookmarkedUrl);
     setError("");
     setVideoData(null);
@@ -323,7 +323,7 @@ export default function YouTubeDownloader() {
             {url.trim() && (
               <button
                 type="button"
-                onClick={handleBookmark}
+                onClick={toggleBookmark}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors p-2"
                 title={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
               >
@@ -538,8 +538,8 @@ export default function YouTubeDownloader() {
                       <div className="text-xs text-muted-foreground">{new Date(bookmark.bookmarkedAt).toLocaleDateString()}</div>
                     </div>
                     <div className="flex gap-2">
-                      <Button size="sm" variant="ghost" onClick={() => handleLoadBookmarkedUrl(bookmark.url)}>Load</Button>
-                      <Button size="sm" variant="ghost" className="text-destructive hover:text-destructive" onClick={() => handleRemoveBookmark(bookmark.url)}><X className="w-4 h-4" /></Button>
+                      <Button size="sm" variant="ghost" onClick={() => loadBookmarkedUrl(bookmark.url)}>Load</Button>
+                      <Button size="sm" variant="ghost" className="text-destructive hover:text-destructive" onClick={() => removeBookmark(bookmark.url)}><X className="w-4 h-4" /></Button>
                     </div>
                   </div>
                 ))}
