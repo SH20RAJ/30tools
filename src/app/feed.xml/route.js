@@ -2,7 +2,7 @@ import { getAllTools } from "@/constants/tools-utils";
 
 function RSSFeed() {
   const baseUrl = "https://30tools.com";
-  const currentDate = new Date().toISOString();
+  const currentDate = new Date().toUTCString();
   const allTools = getAllTools();
 
   // Get all tools
@@ -30,33 +30,33 @@ function RSSFeed() {
     {
       title: "Y2Mate YouTube to MP3 Converter – Features & Top Alternative",
       description: "A comprehensive review of Y2Mate and its best alternatives for converting YouTube videos to MP3.",
-      link: `${baseUrl} / blog / y2mate - youtube - to - mp3 - converter`,
-      pubDate: "2025-01-15T12:00:00Z",
+      link: `${baseUrl}/blog/y2mate-youtube-to-mp3-converter`,
+      pubDate: new Date("2025-01-15T12:00:00Z").toUTCString(),
       category: "Review"
     },
     {
       title: "3 Methods to Convert YouTube Videos to High-Quality 320kbps MP3",
       description: "Learn how to extract high-fidelity audio from YouTube videos with these simple methods.",
-      link: `${baseUrl} / blog / convert - youtube - videos - high - quality - 320kbps - mp3`,
-      pubDate: "2025-01-14T12:00:00Z",
+      link: `${baseUrl}/blog/convert-youtube-videos-high-quality-320kbps-mp3`,
+      pubDate: new Date("2025-01-14T12:00:00Z").toUTCString(),
       category: "Guide"
     },
     {
       title: "Publer Reviews: A Comprehensive User Guide",
       description: "In-depth analysis of Publer social media management tool, its features, and pricing.",
-      link: `${baseUrl} / blog / publer - reviews`,
-      pubDate: "2025-01-13T12:00:00Z",
+      link: `${baseUrl}/blog/publer-reviews`,
+      pubDate: new Date("2025-01-13T12:00:00Z").toUTCString(),
       category: "Review"
     },
     {
       title: "6 Best Free YouTube to MP3 Converters You Should Try in 2025",
       description: "Our top picks for the best free YouTube to MP3 converters available this year.",
-      link: `${baseUrl} / blog / best - free - youtube - to - mp3 - converters - 2025`,
-      pubDate: "2025-01-12T12:00:00Z",
+      link: `${baseUrl}/blog/best-free-youtube-to-mp3-converters-2025`,
+      pubDate: new Date("2025-01-12T12:00:00Z").toUTCString(),
       category: "Listicle"
     }
   ].map(post => `
-    < item >
+    <item>
       <title><![CDATA[${post.title}]]></title>
       <description><![CDATA[${post.description}]]></description>
       <link>${post.link}</link>
@@ -64,10 +64,10 @@ function RSSFeed() {
       <pubDate>${post.pubDate}</pubDate>
       <category><![CDATA[${post.category}]]></category>
       <author><![CDATA[30tools Team]]></author>
-    </item >
+    </item>
     `).join("");
 
-  const rssFeed = `<? xml version = "1.0" encoding = "UTF-8" ?>
+  const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0"
       xmlns:content="http://purl.org/rss/1.0/modules/content/"
       xmlns:wfw="http://wellformedweb.org/CommentAPI/"
@@ -118,6 +118,7 @@ function RSSFeed() {
     headers: {
       "Content-Type": "application/rss+xml; charset=utf-8",
       "Cache-Control": "public, max-age=3600, s-maxage=3600",
+      "X-Content-Type-Options": "nosniff",
     },
   });
 }

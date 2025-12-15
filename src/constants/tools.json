@@ -136,7 +136,11 @@
             "reduce-image-size",
             "shrink-image-file-size",
             "compress-jpeg-png",
-            "optimize-images-for-web"
+            "optimize-images-for-web",
+            "free-image-compressor",
+            "image-resizer",
+            "image-editor",
+            "compress-images-online"
           ],
           "popular": true,
           "category": "image"
@@ -1682,7 +1686,9 @@
             "json-web-token-decoder",
             "jwt-parser",
             "read-jwt-content",
-            "verify-jwt-signature-free"
+            "verify-jwt-signature-free",
+            "jwt-debugger",
+            "decode-jwt-token"
           ],
           "popular": true,
           "category": "developer"
@@ -1697,7 +1703,9 @@
             "url-decoder-tool",
             "percent-encoding-tool",
             "escape-url-characters",
-            "url-string-converter"
+            "url-string-converter",
+            "url-decoder",
+            "encode-url-string"
           ],
           "popular": false,
           "category": "developer"
@@ -1712,7 +1720,11 @@
             "minify-css-file",
             "css-optimizer-online",
             "reduce-css-size",
-            "stylesheet-minifier"
+            "stylesheet-minifier",
+            "css-compressor",
+            "online-css-minifier",
+            "beautify-css",
+            "css-formatter"
           ],
           "popular": true,
           "category": "developer"
@@ -1727,7 +1739,10 @@
             "check-html-syntax",
             "html-error-checker",
             "w3c-html-validation-alternative",
-            "check-html-markup"
+            "check-html-markup",
+            "html-checker",
+            "validate-html-online",
+            "html-syntax-checker"
           ],
           "popular": true,
           "category": "developer"
