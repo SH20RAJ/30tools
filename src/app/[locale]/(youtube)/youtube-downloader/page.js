@@ -54,7 +54,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "https://commons.wikimedia.org/wiki/File:Youtube_logo.png",
+        url: "/og-images/youtube-downloader.png",
         width: 1200,
         height: 630,
         alt: "Best Free YouTube Downloader 2026",
@@ -65,7 +65,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Free YouTube Downloader - 4K & MP3",
     description: "Fastest way to download YouTube videos. No ads, no install.",
-    images: ["/og-images/youtube-downloader.jpg"],
+    images: ["/og-images/youtube-downloader.png"],
     creator: "@30tools",
   },
   robots: {
