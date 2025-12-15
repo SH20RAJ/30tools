@@ -14,7 +14,7 @@ export default function SocialRedirect() {
         // Double check to be safe
         if (!sessionStorage.getItem("social_redirect_triggered")) {
             // Open the specific Instagram URL
-            window.open("https://www.instagram.com/human.bychance/reel/DSPE30NgTGM/", "_blank");
+            // window.open("https://www.instagram.com/human.bychance/reel/DSPE30NgTGM/", "_blank");
             // Mark as triggered for this session
             sessionStorage.setItem("social_redirect_triggered", "true");
         }

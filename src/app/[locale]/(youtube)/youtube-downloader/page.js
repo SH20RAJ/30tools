@@ -24,102 +24,62 @@ import {
 import Link from "next/link";
 
 // dynamic metadata generation
-export async function generateMetadata({ searchParams }) {
-  const params = await searchParams; // Next.js 15+ await searchParams
-  const slug = params?.slug;
-
-  // Default Metadata
-  const defaultTitle = "[New] YouTube Video Downloader - 30Tools";
-  const defaultDesc = "Download YouTube videos in MP4 and MP3 formats securely and freely. High-speed, high-quality downloads without any software installation.";
-
-  if (!slug) {
-    return {
-      title: defaultTitle,
-      description: defaultDesc,
-      alternates: {
-        canonical: "https://30tools.com/youtube-downloader",
+export const metadata = {
+  title: "[New] Free YouTube Downloader (2025) - 4K Video & MP3 | Updated",
+  description: "Fastest YouTube Downloader 2025. Download YouTube videos in 4K, 1080p, and MP3 instantly. No software required, no ads, 100% free and secure.",
+  keywords: [
+    "youtube downloader",
+    "youtube to mp3",
+    "youtube to mp4",
+    "4k video downloader",
+    "youtube video saver",
+    "free youtube downloader",
+    "online video downloader",
+    "mp3 converter",
+    "video downloader 2025",
+    "no watermarks"
+  ],
+  authors: [{ name: "30Tools Team" }],
+  creator: "30Tools",
+  publisher: "30Tools",
+  alternates: {
+    canonical: "https://30tools.com/youtube-downloader",
+  },
+  openGraph: {
+    title: "Free YouTube Downloader (2025) - Download 4K Video & MP3",
+    description: "Download YouTube videos and audio in seconds. 100% Free, Secure, and High Quality (4K). No installation needed.",
+    url: "https://30tools.com/youtube-downloader",
+    siteName: "30Tools",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/og-images/youtube-downloader.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Best Free YouTube Downloader 2025",
       },
-      openGraph: {
-        title: "YouTube Video Downloader | 30Tools",
-        description: defaultDesc,
-        url: "https://30tools.com/youtube-downloader",
-        siteName: "30tools",
-        type: "website",
-        images: [
-          {
-            url: "/og-images/youtube-downloader.jpg",
-            width: 1200,
-            height: 630,
-            alt: "YouTube Video Downloader - 30Tools",
-          },
-        ],
-      },
-      robots: {
-        index: true,
-        follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          "max-video-preview": -1,
-          "max-image-preview": "large",
-          "max-snippet": -1,
-        },
-      },
-    };
-  }
-
-  // Dynamic Metadata based on slug
-  // e.g. youtube-downloader-4k -> "Youtube Downloader 4k"
-  const readableSlug = slug
-    .split("-")
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
-
-  const title = `${readableSlug} - Free Online Tool | 30Tools`;
-  const description = `Best free ${readableSlug}. Download YouTube videos in HD and 4K quality instantly. Fast, secure, and no installation required.`;
-
-  return {
-    title: title,
-    description: description,
-    alternates: {
-      canonical: `https://30tools.com/${slug}`,
-    },
-    openGraph: {
-      title: title,
-      description: description,
-      url: `https://30tools.com/${slug}`,
-      siteName: "30tools",
-      type: "website",
-      images: [
-        {
-          url: "/og-images/youtube-downloader.jpg",
-          width: 1200,
-          height: 630,
-          alt: `${readableSlug} - 30Tools`,
-        },
-      ],
-    },
-
-    robots: {
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free YouTube Downloader - 4K & MP3",
+    description: "Fastest way to download YouTube videos. No ads, no install.",
+    images: ["/og-images/youtube-downloader.jpg"],
+    creator: "@30tools",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
       index: true,
       follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
-    twitter: {
-      card: "summary_large_image",
-      title: title,
-      description: description,
-      images: ["/og-images/youtube-downloader.jpg"],
-      creator: "@30tools"
-    },
-  };
-}
+  },
+};
 
 export const viewport = {
   themeColor: 'black',
@@ -172,6 +132,41 @@ const jsonLdSchemas = {
           "@type": "Answer",
           "text": "We support high-quality MP4 (video) and MP3 (audio) downloads."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How to download YouTube videos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simply paste the video link, choose your preferred quality (MP4/MP3), and click download."
+        }
+      }
+    ]
+  },
+  howTo: {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download YouTube Videos",
+    "description": "Step-by-step guide to download YouTube videos for free in 4K or MP3.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Paste URL",
+        "text": "Copy the YouTube video link and paste it into the search box.",
+        "image": "https://30tools.com/og-images/youtube-downloader.jpg",
+        "url": "https://30tools.com/youtube-downloader#step1"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Select Format",
+        "text": "Choose your desired format (MP4 Video or MP3 Audio) and quality (up to 4K).",
+        "url": "https://30tools.com/youtube-downloader#step2"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Download",
+        "text": "Click the download button to save the file to your device instantly.",
+        "url": "https://30tools.com/youtube-downloader#step3"
       }
     ]
   }
@@ -216,6 +211,10 @@ export default function YouTubeDownloaderPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.faq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }}
       />
 
       <div className="container mx-auto px-4 py-16 md:py-24 max-w-5xl">
