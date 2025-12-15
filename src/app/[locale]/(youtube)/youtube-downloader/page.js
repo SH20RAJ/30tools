@@ -25,7 +25,7 @@ import Link from "next/link";
 
 // dynamic metadata generation
 export const metadata = {
-  title: "[New] Free YouTube Downloader (2026) - 4K Video & MP3 | Updated",
+  title: "Free YouTube Downloader (2026) - 4K Video & MP3 | Updated",
   description: "Fastest YouTube Downloader 2026. Download YouTube videos in 4K, 1080p, and MP3 instantly. No software required, no ads, 100% free and secure.",
   keywords: [
     "youtube downloader",
@@ -54,7 +54,7 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/og-images/youtube-downloader.jpg",
+        url: "https://commons.wikimedia.org/wiki/File:Youtube_logo.png",
         width: 1200,
         height: 630,
         alt: "Best Free YouTube Downloader 2026",
@@ -227,6 +227,18 @@ export default function YouTubeDownloaderPage() {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             The simplest way to download YouTube videos and audio. Fast, free, and no ads.
           </p>
+
+          <div className="flex justify-center mt-6">
+            <a
+              href="https://apify.com/express_kingfisher/youtube-video-audio-downloader"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 hover:bg-muted border border-border/50 text-sm transition-colors group"
+            >
+              <span className="text-muted-foreground">Looking for a Developer API?</span>
+              <span className="font-medium text-primary group-hover:underline decoration-primary/50 underline-offset-4">Check out Universal YouTube Downloader on Apify →</span>
+            </a>
+          </div>
         </div>
 
         {/* Main Tool */}

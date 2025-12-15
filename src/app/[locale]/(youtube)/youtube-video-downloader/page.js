@@ -110,6 +110,18 @@ export default function YouTubeDownloaderPage() {
             </div>
           </div>
 
+          <div className="flex justify-center mb-8">
+            <a
+              href="https://apify.com/express_kingfisher/youtube-video-audio-downloader"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 hover:bg-muted border border-border/50 text-sm transition-colors group"
+            >
+              <span className="text-muted-foreground">Looking for a Developer API?</span>
+              <span className="font-medium text-primary group-hover:underline decoration-primary/50 underline-offset-4">Check out Universal YouTube Downloader on Apify →</span>
+            </a>
+          </div>
+
           <YouTubeDownloader />
 
           {/* Ad Unit 1 */}
