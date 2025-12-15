@@ -196,8 +196,109 @@ export default function YouTubeDownloader() {
     }
   };
 
-  // Wrapper for existing UI calls
-  const handleDownload = (downloadUrl) => {
+  /* Restored Helper Functions */
+
+  const handleBookmark = () => {
+    if (!url.trim()) {
+      toast.error("Please enter a YouTube URL to bookmark");
+      return;
+    }
+
+    try {
+      const currentBookmarks = JSON.parse(
+        localStorage.getItem("bookmarked-youtube-urls") || "[]",
+      );
+
+      if (isBookmarked) {
+        // Remove bookmark
+        const filteredUrls = currentBookmarks.filter(
+          (item) => item.url !== url,
+        );
+        localStorage.setItem(
+          "bookmarked-youtube-urls",
+          JSON.stringify(filteredUrls),
+        );
+        setBookmarkedUrls(filteredUrls);
+        setIsBookmarked(false);
+        toast.success("Bookmark removed");
+      } else {
+        // Add bookmark
+        const newBookmark = {
+          url: url.trim(),
+          title: videoData?.title || "YouTube Video",
+          thumbnail: videoData?.thumbnail || null,
+          bookmarkedAt: new Date().toISOString(),
+        };
+        const updatedBookmarks = [newBookmark, ...currentBookmarks];
+
+        // Keep only last 50 bookmarks
+        const limitedBookmarks = updatedBookmarks.slice(0, 50);
+        localStorage.setItem(
+          "bookmarked-youtube-urls",
+          JSON.stringify(limitedBookmarks),
+        );
+        setBookmarkedUrls(limitedBookmarks);
+        setIsBookmarked(true);
+        toast.success("Saved to bookmarks");
+      }
+    } catch {
+      toast.error("Failed to save bookmark");
+    }
+  };
+
+  const handleRemoveBookmark = (urlToRemove) => {
+    try {
+      const filteredUrls = bookmarkedUrls.filter(
+        (item) => item.url !== urlToRemove,
+      );
+      localStorage.setItem(
+        "bookmarked-youtube-urls",
+        JSON.stringify(filteredUrls),
+      );
+      setBookmarkedUrls(filteredUrls);
+
+      // Update current URL bookmark status if it matches
+      if (url === urlToRemove) {
+        setIsBookmarked(false);
+      }
+
+      toast.success("Bookmark removed");
+    } catch {
+      toast.error("Failed to remove bookmark");
+    }
+  };
+
+  const handleLoadBookmarkedUrl = (bookmarkedUrl) => {
+    setUrl(bookmarkedUrl);
+    setError("");
+    setVideoData(null);
+  };
+
+  const handlePWAInstall = async () => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+      toast.info("To install: Tap Share → Add to Home Screen", {
+        duration: 4000,
+      });
+    } else if (deferredPrompt) {
+      try {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === "accepted") {
+          setDeferredPrompt(null);
+          setShowPWAButton(false);
+          toast.success("App installed successfully!");
+        }
+      } catch {
+        toast.error("Installation failed");
+      }
+    } else {
+      toast.info("Install option not available");
+    }
+  };
+
+  const handleDownload = (downloadUrl, _filename, _format) => {
     handleProcessDownload(downloadUrl);
   };
 

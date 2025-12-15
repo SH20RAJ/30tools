@@ -23,10 +23,9 @@ export default function YouTubeToolsNavbar() {
     { name: "Pack Downloader", href: "/youtube-pack-downloader" },
   ];
 
-  // Pick 2 random tools
-  const shuffled = [...youtubeTools].sort(() => 0.5 - Math.random());
-  const mainTools = shuffled.slice(0, 2);
-  const moreTools = shuffled.slice(2);
+  // Pick highlighted tools (fixed to prevent hydration mismatch)
+  const mainTools = youtubeTools.slice(1, 3); // Downloader & Shorts
+  const moreTools = [youtubeTools[0], ...youtubeTools.slice(3)];
 
   return (
     <nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
