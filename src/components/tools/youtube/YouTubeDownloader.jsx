@@ -34,6 +34,30 @@ export default function YouTubeDownloader() {
   const [bookmarkedUrls, setBookmarkedUrls] = useState([]);
   const [showBookmarks, setShowBookmarks] = useState(false);
 
+  const handlePWAInstall = async () => {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+    if (isIOS) {
+      toast.info("To install: Tap Share → Add to Home Screen", {
+        duration: 4000,
+      });
+    } else if (deferredPrompt) {
+      try {
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        if (outcome === "accepted") {
+          setDeferredPrompt(null);
+          setShowPWAButton(false);
+          toast.success("App installed successfully!");
+        }
+      } catch {
+        toast.error("Installation failed");
+      }
+    } else {
+      toast.info("Install option not available");
+    }
+  };
+
   useEffect(() => {
     // Load bookmarked URLs
     const savedBookmarks = JSON.parse(
@@ -274,29 +298,7 @@ export default function YouTubeDownloader() {
     setVideoData(null);
   };
 
-  const handlePWAInstall = async () => {
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-    if (isIOS) {
-      toast.info("To install: Tap Share → Add to Home Screen", {
-        duration: 4000,
-      });
-    } else if (deferredPrompt) {
-      try {
-        deferredPrompt.prompt();
-        const { outcome } = await deferredPrompt.userChoice;
-        if (outcome === "accepted") {
-          setDeferredPrompt(null);
-          setShowPWAButton(false);
-          toast.success("App installed successfully!");
-        }
-      } catch {
-        toast.error("Installation failed");
-      }
-    } else {
-      toast.info("Install option not available");
-    }
-  };
 
   const handleDownload = (downloadUrl, _filename, _format) => {
     handleProcessDownload(downloadUrl);
@@ -350,10 +352,10 @@ export default function YouTubeDownloader() {
             </div>
             <div>
               <h3 className="font-bold text-base sm:text-lg text-rose-950 dark:text-rose-100">
-                Help Keep This Tool Free
+                Your Heart Keeps This Tool Beating for Everyone
               </h3>
               <p className="text-sm text-rose-800/80 dark:text-rose-200/70">
-                Your support keeps our servers running for everyone.
+                Every small act of kindness ensures this essential resource remains free and accessible, for you and countless others who rely on it.
               </p>
             </div>
           </div>

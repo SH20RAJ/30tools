@@ -226,6 +226,7 @@ export default function YouTubeDownloaderPage() {
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             The simplest way to download YouTube videos and audio. Fast, free, and no ads.
+            Download YouTube videos and audio in high definition quality for free. Our advanced YouTube downloader supports HD, Full HD, and 4K video downloads with lightning-fast speed. Convert YouTube videos to MP4 or extract high-quality MP3 audio files instantly without any software installation. Perfect for offline viewing, content creation, and educational purposes.
           </p>
 
           <div className="flex justify-center mt-6">
