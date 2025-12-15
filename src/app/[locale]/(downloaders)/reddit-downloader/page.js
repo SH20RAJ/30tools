@@ -1,26 +1,40 @@
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Reddit Video Downloader - Download Reddit Videos with Audio | 30tools",
-  description: "Download Reddit videos with audio in HD quality. Save Reddit videos and GIFs to MP4. Free online Reddit video downloader tool.",
+  title: "Reddit Video Downloader (2026) - Save with Audio | 30Tools",
+  description: "Download Reddit videos with audio in HD (Updated 2026). Save Reddit clips & GIFs to MP4. Free, fast & no watermarks.",
   keywords: [
-    "reddit video downloader",
-    "download reddit video",
-    "reddit video saver",
-    "save reddit video with audio",
-    "reddit gif downloader",
-    "reddit to mp4",
-    "download reddit clips"
+    "reddit video downloader 2026",
+    "download reddit video with sound",
+    "reddit video saver hd",
+    "save reddit gifs mp4",
+    "reddit clip downloader",
+    "reddit to mp4 converter",
+    "updated 2026",
+    "download reddit video audio"
   ].join(", "),
   openGraph: {
-    title: "Reddit Video Downloader - Save Videos with Audio",
-    description: "⚡ Download Reddit videos with sound in HD!",
+    title: "Reddit Video Downloader (2026) - Save Videos with Audio",
+    description: "⚡ Download Reddit videos with sound in HD quality! Free & unlimited tool (Updated 2026).",
     url: "https://30tools.com/reddit-downloader",
     siteName: "30tools",
     type: "website",
+    images: [{
+      url: "/og-images/reddit-downloader.jpg", // Assuming image exists or will differ
+      width: 1200,
+      height: 630,
+      alt: "Reddit Video Downloader 2026"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Reddit Video Downloader (2026) - Free Tool",
+    description: "⚡ Save Reddit videos with audio in HD. Updated 2026!",
+    images: ["/og-images/reddit-downloader.jpg"],
+    creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/reddit-downloader" },
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (

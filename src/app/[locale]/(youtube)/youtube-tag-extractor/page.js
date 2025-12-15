@@ -1,32 +1,37 @@
 import YouTubeTagExtractor from "@/components/tools/youtube/YouTubeTagExtractor";
 
 export const metadata = {
-  title: "YouTube Tag Extractor - Extract Video Tags Free | 30tools",
-  description: "Extract tags from any YouTube video for free. See what tags successful videos use for SEO. Analyze competitor tags and improve your video optimization.",
+  title: "YouTube Tag Extractor (2026) - View Video Tags Free | 30Tools",
+  description: "Extract hidden tags from any YouTube video (Updated 2026). Analyze competitor SEO keywords, boost your rankings. Free, instant & no signup.",
   keywords: [
-    "youtube tag extractor",
+    "youtube tag extractor 2026",
     "extract youtube tags",
-    "youtube tags extractor",
-    "youtube video tags",
-    "get youtube tags",
+    "youtube video tags viewer",
+    "competitor tag analysis",
+    "youtube seo tool free",
+    "get youtube video tags",
     "youtube tag finder",
-    "youtube tag viewer",
-    "youtube tags checker",
-    "youtube tag extractor free",
-    "extract tags from youtube video",
-    "youtube tag analyzer",
-    "youtube video tag extractor"
+    "updated 2026",
+    "hidden youtube tags",
+    "video optimization tools"
   ].join(", "),
 
   openGraph: {
-    title: "YouTube Tag Extractor - Extract Video Tags",
-    description: "⚡ Extract tags from any YouTube video to analyze competitor SEO!",
+    title: "YouTube Tag Extractor (2026) - View Video Tags Free",
+    description: "⚡ Extract hidden tags from any YouTube video instantly! Analyze competitor SEO & improve rankings. (Updated 2026)",
     url: "https://30tools.com/youtube-tag-extractor",
-    siteName: "30tools", type: "website",
-    images: [{ url: "/og-images/youtube-tag-extractor.jpg", width: 1200, height: 630, alt: "YouTube Tag Extractor" }],
+    siteName: "30tools",
+    type: "website",
+    images: [{ url: "/og-images/youtube-tag-extractor.jpg", width: 1200, height: 630, alt: "YouTube Tag Extractor 2026" }],
   },
 
-  twitter: { card: "summary_large_image", title: "YouTube Tag Extractor - Free", description: "⚡ See what tags successful videos use!", images: ["/og-images/youtube-tag-extractor.jpg"], creator: "@30tools" },
+  twitter: {
+    card: "summary_large_image",
+    title: "YouTube Tag Extractor (2026) - Free SEO Tool",
+    description: "⚡ See what tags successful videos use! Updated 2026.",
+    images: ["/og-images/youtube-tag-extractor.jpg"],
+    creator: "@30tools"
+  },
   alternates: { canonical: "https://30tools.com/youtube-tag-extractor" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };

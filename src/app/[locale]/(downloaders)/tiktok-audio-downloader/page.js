@@ -1,26 +1,41 @@
 import TikTokAudioDownloader from "@/components/tools/downloaders/TikTokAudioDownloader";
 
 export const metadata = {
-  title: "TikTok Audio Downloader - Download TikTok MP3 Free | 30tools",
-  description: "Download TikTok audio and sounds in MP3 format. Convert TikTok videos to MP3 music. Free TikTok sound downloader tool.",
+  title: "TikTok Audio Downloader (2026) - MP3 Songs Free | 30Tools",
+  description: "Download TikTok audio & songs in MP3 (Updated 2026). Extract sound from TikTok videos instant & free. High quality 320kbps support.",
   keywords: [
-    "tiktok audio downloader",
+    "tiktok audio downloader 2026",
     "tiktok mp3 downloader",
-    "download tiktok sound",
-    "convert tiktok to mp3",
-    "tiktok music downloader",
-    "save tiktok audio",
-    "tiktok sound saver"
+    "download tiktok sound only",
+    "convert tiktok video to mp3",
+    "tiktok music extractor capability",
+    "save tiktok audio hd",
+    "tiktok sound saver free",
+    "updated 2026",
+    "tiktok mp3 converter online"
   ].join(", "),
   openGraph: {
-    title: "TikTok Audio Downloader - Save TikTok Sounds as MP3",
-    description: "⚡ Download TikTok audio and music in MP3 format!",
+    title: "TikTok Audio Downloader (2026) - Save TikTok Sounds as MP3",
+    description: "⚡ Download TikTok audio & music in MP3 format instantly! Free quality converter (Updated 2026).",
     url: "https://30tools.com/tiktok-audio-downloader",
     siteName: "30tools",
     type: "website",
+    images: [{
+      url: "/og-images/tiktok-audio-downloader.jpg", // Assuming image exists or will differ
+      width: 1200,
+      height: 630,
+      alt: "TikTok Audio Downloader 2026"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TikTok Audio Downloader (2026) - Free MP3",
+    description: "⚡ Extract & Save TikTok sounds in MP3. Updated 2026!",
+    images: ["/og-images/tiktok-audio-downloader.jpg"],
+    creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/tiktok-audio-downloader" },
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (

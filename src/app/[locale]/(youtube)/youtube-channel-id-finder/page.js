@@ -1,33 +1,37 @@
 import YouTubeChannelIDFinder from "@/components/tools/youtube/YouTubeChannelIDFinderTool";
 
 export const metadata = {
-  title: "YouTube Channel ID Finder - Get Any Channel ID Free | 30tools",
-  description: "Find any YouTube channel ID instantly. Extract channel IDs from usernames, URLs, or handles. Free tool for developers, marketers, and content creators.",
+  title: "YouTube Channel ID Finder (2026) - Get Any Channel ID Free | 30Tools",
+  description: "Find any YouTube channel ID instantly (Updated 2026). Extract channel IDs from usernames, URLs, or handles. Free tool for marketers & creators.",
   keywords: [
-    "youtube channel id finder",
+    "youtube channel id finder 2026",
     "find youtube channel id",
-    "youtube channel id",
-    "get youtube channel id",
-    "youtube channel id lookup",
     "youtube channel id extractor",
-    "find channel id youtube",
-    "youtube channel id from url",
-    "youtube channel id from username",
-    "youtube channel id finder free",
-    "how to find youtube channel id",
-    "youtube channel id search",
-    "youtube channel id tool"
+    "get youtube channel id",
+    "youtube handle to id",
+    "updated 2026",
+    "youtube channel user id",
+    "find channel id from url",
+    "youtube id lookup free",
+    "channel id finder tool"
   ].join(", "),
 
   openGraph: {
-    title: "YouTube Channel ID Finder - Get Any Channel ID",
-    description: "⚡ Find any YouTube channel ID instantly from URL, username, or handle!",
+    title: "YouTube Channel ID Finder (2026) - Get Any Channel ID Free",
+    description: "⚡ Find any YouTube channel ID instantly from URL, username, or handle! (Updated 2026)",
     url: "https://30tools.com/youtube-channel-id-finder",
-    siteName: "30tools", type: "website",
-    images: [{ url: "/og-images/youtube-channel-id-finder.jpg", width: 1200, height: 630, alt: "YouTube Channel ID Finder" }],
+    siteName: "30tools",
+    type: "website",
+    images: [{ url: "/og-images/youtube-channel-id-finder.jpg", width: 1200, height: 630, alt: "YouTube Channel ID Finder 2026" }],
   },
 
-  twitter: { card: "summary_large_image", title: "YouTube Channel ID Finder - Free", description: "⚡ Find YouTube channel IDs instantly!", images: ["/og-images/youtube-channel-id-finder.jpg"], creator: "@30tools" },
+  twitter: {
+    card: "summary_large_image",
+    title: "YouTube Channel ID Finder (2026) - Free Tool",
+    description: "⚡ Find YouTube channel IDs instantly! Updated 2026.",
+    images: ["/og-images/youtube-channel-id-finder.jpg"],
+    creator: "@30tools"
+  },
   alternates: { canonical: "https://30tools.com/youtube-channel-id-finder" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };

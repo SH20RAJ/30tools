@@ -1,43 +1,34 @@
 import YouTubeShortsDownloader from "@/components/tools/youtube/YouTubeShortsDownloader";
 
 export const metadata = {
-  title: "YouTube Shorts Downloader - Download Shorts Videos Free HD | 30tools",
-  description: "Download YouTube Shorts videos in HD quality for free. Save Shorts to your device instantly without watermark. Works on all devices - no app needed.",
+  title: "YouTube Shorts Downloader (2026) - Free, HD & No Watermark | 30Tools",
+  description: "Download YouTube Shorts videos in HD & 4K quality for free. Updated 2026. Save Shorts without watermark instantly. No app or signup needed.",
   keywords: [
-    "youtube shorts downloader",
-    "download youtube shorts",
+    "youtube shorts downloader 2026",
+    "download youtube shorts free",
     "youtube shorts video downloader",
-    "youtube shorts download",
-    "shorts downloader",
-    "download shorts video",
-    "youtube shorts saver",
+    "no watermark shorts downloader",
     "save youtube shorts",
-    "youtube shorts download online",
-    "free youtube shorts downloader",
-    "youtube shorts downloader hd",
     "youtube shorts to mp4",
-    "download shorts without watermark",
-    "youtube shorts downloader no watermark",
-    "youtube shorts video download free",
-    "shorts video downloader online",
-    "youtube shorts download mobile",
-    "youtube shorts download android ios",
-    "best youtube shorts downloader 2024"
+    "free shorts downloader",
+    "hd shorts downloader",
+    "updated 2026",
+    "online video downloader"
   ].join(", "),
 
   openGraph: {
-    title: "YouTube Shorts Downloader - Download Shorts Videos Free",
-    description: "⚡ Download YouTube Shorts videos in HD quality instantly. Free, no watermark, works on all devices!",
+    title: "YouTube Shorts Downloader (2026) - Free, HD & No Watermark",
+    description: "⚡ Download YouTube Shorts videos in HD quality instantly (2026 Updated). Free, no watermark, works on all devices!",
     url: "https://30tools.com/youtube-shorts-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{ url: "/og-images/youtube-shorts-downloader.jpg", width: 1200, height: 630, alt: "YouTube Shorts Downloader" }],
+    images: [{ url: "/og-images/youtube-shorts-downloader.jpg", width: 1200, height: 630, alt: "Free YouTube Shorts Downloader 2026" }],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "YouTube Shorts Downloader - Free HD Downloads",
-    description: "⚡ Download YouTube Shorts videos in HD. No watermark, works on all devices!",
+    title: "YouTube Shorts Downloader (2026) - Free HD Downloads",
+    description: "⚡ Download YouTube Shorts videos in HD. No watermark, updated 2026!",
     images: ["/og-images/youtube-shorts-downloader.jpg"],
     creator: "@30tools"
   },

@@ -1,36 +1,30 @@
 import YouTubeTranscriptDownloader from "@/components/tools/youtube/YouTubeTranscriptDownloader";
 
 export const metadata = {
-  title: "YouTube Transcript Downloader - Free Video Transcript Extractor | 30tools",
-  description: "Download YouTube video transcripts and captions for free. Extract full text transcripts from any YouTube video instantly. Perfect for research, study, and content creation.",
+  title: "YouTube Transcript Downloader (2026) - Free, Fast & Text Export | 30Tools",
+  description: "Extract YouTube video transcripts and captions for free. Updated 2026. Copy text instantly or download as file. No login required.",
   keywords: [
-    "youtube transcript downloader",
+    "youtube transcript downloader 2026",
     "download youtube transcript",
     "youtube transcript extractor",
-    "youtube video transcript",
-    "get youtube transcript",
+    "extract youtube transcript",
+    "youtube to text",
+    "free transcript extractor",
     "youtube captions download",
-    "youtube transcript copy",
-    "youtube transcript text",
-    "youtube video to text",
-    "youtube transcript download online",
-    "free youtube transcript downloader",
-    "youtube transcript generator",
-    "youtube subtitle extractor",
-    "youtube cc download",
-    "youtube transcript download free",
-    "extract transcript from youtube"
+    "video to text converter",
+    "updated 2026",
+    "online transcript tool"
   ].join(", "),
 
   openGraph: {
-    title: "YouTube Transcript Downloader - Extract Video Transcripts Free",
-    description: "⚡ Download YouTube video transcripts instantly. Free online tool to extract full text from any video!",
+    title: "YouTube Transcript Downloader (2026) - Extract Video Transcripts Free",
+    description: "⚡ Download YouTube video transcripts instantly (2026 Updated). Free online tool to extract full text from any video!",
     url: "https://30tools.com/youtube-transcript-downloader",
     siteName: "30tools", type: "website",
-    images: [{ url: "/og-images/youtube-transcript-downloader.jpg", width: 1200, height: 630, alt: "YouTube Transcript Downloader" }],
+    images: [{ url: "/og-images/youtube-transcript-downloader.jpg", width: 1200, height: 630, alt: "YouTube Transcript Downloader 2026" }],
   },
 
-  twitter: { card: "summary_large_image", title: "YouTube Transcript Downloader - Free", description: "⚡ Extract YouTube video transcripts instantly!", images: ["/og-images/youtube-transcript-downloader.jpg"], creator: "@30tools" },
+  twitter: { card: "summary_large_image", title: "YouTube Transcript Downloader (2026) - Free", description: "⚡ Extract YouTube video transcripts instantly! Updated 2026.", images: ["/og-images/youtube-transcript-downloader.jpg"], creator: "@30tools" },
   alternates: { canonical: "https://30tools.com/youtube-transcript-downloader" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };

@@ -1,34 +1,23 @@
 import FacebookDownloader from "@/components/tools/downloaders/FacebookDownloader";
 
 export const metadata = {
-  title: "Facebook Video Downloader - Download FB Videos HD Free Online | 30tools",
-  description: "Download Facebook videos in HD, Full HD (1080p), and 4K quality for free. Fast FB video downloader online - no registration, no watermark. Save FB Reels, Stories & Posts.",
+  title: "Facebook Video Downloader (2026) - Free, HD & 4K | 30Tools",
+  description: "Download Facebook videos in HD, Full HD 1080p & 4K (Updated 2026). Save FB Reels, Stories, and private videos for free. No watermark, no login.",
   keywords: [
-    // Primary high-volume keywords (Bing exact-match optimized)
-    "facebook video downloader",
+    "facebook video downloader 2026",
     "fb video downloader",
     "download facebook video",
-    "facebook downloader",
-    "save facebook video",
-    "fb downloader online",
-    "facebook video saver",
-    "download fb video online",
-
-    // Long-tail keywords for better Bing ranking
-    "facebook video downloader online free no watermark",
-    "download facebook video hd 1080p 4k quality",
-    "fb video downloader without login registration",
-    "save facebook reels videos stories to phone",
-    "facebook video download mp4 format free",
-    "how to download facebook videos on android iphone",
-    "best facebook video downloader 2024 free",
-    "facebook private video downloader online",
-    "download facebook live video after ended",
-    "fb reel downloader without watermark free"
+    "facebook downloader hd",
+    "save facebook video pc",
+    "facebook reels downloader",
+    "facebook story saver",
+    "download fb video 1080p",
+    "updated 2026",
+    "facebook video download online"
   ].join(", "),
   openGraph: {
-    title: "Facebook Video Downloader - Download FB Videos HD Free",
-    description: "⚡ Download Facebook videos, Reels & Stories in HD quality. Free online FB downloader - no registration required!",
+    title: "Facebook Video Downloader (2026) - Free HD & 4K Tool",
+    description: "⚡ Download Facebook videos, Reels & Stories in HD/4K quality. Free online FB downloader - no registration required! (Updated 2026)",
     url: "https://30tools.com/facebook-downloader",
     siteName: "30tools",
     type: "website",
@@ -36,13 +25,13 @@ export const metadata = {
       url: "/og-images/facebook-downloader.jpg",
       width: 1200,
       height: 630,
-      alt: "Facebook Video Downloader - Download FB Videos Free Online"
+      alt: "Facebook Video Downloader 2026 - Free HD/4K"
     }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Facebook Video Downloader - Download FB Videos HD Free",
-    description: "⚡ Download Facebook videos in HD. Save Reels, Stories & Posts. Fast, free & secure!",
+    title: "Facebook Video Downloader (2026) - Free HD & 4K",
+    description: "⚡ Download Facebook videos in HD. Save Reels, Stories & Posts. Updated 2026!",
     images: ["/og-images/facebook-downloader.jpg"],
     creator: "@30tools"
   },

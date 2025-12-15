@@ -3,14 +3,26 @@ import DownloaderToolsFooter from "@/components/footers/DownloaderToolsFooter";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Universal Video Downloader - TikTok, Facebook, Instagram | 30tools",
-  description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, and more for free. All-in-one online video downloader with no watermarks.",
+  title: "Universal Video Downloader (2026) - All-in-One Free Tool | 30Tools",
+  description: "Download videos from TikTok, Instagram, Facebook, X (Twitter) & more. Updated 2026. Free, no watermark, all-in-one downloader.",
+  keywords: [
+    "universal video downloader",
+    "all in one video downloader",
+    "download video from link",
+    "tiktok downloader 2026",
+    "instagram video saver",
+    "facebook video downloader",
+    "twitter video download",
+    "free video downloader online",
+    "updated 2026",
+    "no watermark downloader"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/downloaders",
   },
   openGraph: {
-    title: "Universal All-in-One Video Downloader",
-    description: "Download videos from multiple platforms including TikTok, Instagram, and Facebook easily and for free.",
+    title: "Universal Video Downloader (2026) - All-in-One Free Tool",
+    description: "⚡ Download videos from TikTok, Instagram, Facebook & more instantly (2026 Updated). All-in-one free tool, no watermark!",
     url: "https://30tools.com/downloaders",
     siteName: "30tools",
     type: "website",

@@ -1,26 +1,41 @@
 import PinterestDownloader from "@/components/tools/downloaders/PinterestDownloader";
 
 export const metadata = {
-  title: "Pinterest Video Downloader - Download Pinterest Videos & GIFs | 30tools",
-  description: "Download Pinterest videos, GIFs, and images in high quality. Save Pinterest content to your device for free. Best Pinterest downloader tool.",
+  title: "Pinterest Video Downloader (2026) - Save Pins Application | 30Tools",
+  description: "Download Pinterest videos, GIFs & Images in HD (Updated 2026). Save Pins to your phone or PC. Free, fast & no watermarks.",
   keywords: [
-    "pinterest video downloader",
+    "pinterest video downloader 2026",
     "download pinterest video",
-    "pinterest gif downloader",
-    "save pinterest video",
-    "pinterest image downloader",
-    "pinterest downloader online",
-    "pinterest saver"
+    "save pinterest gif",
+    "pinterest image downloader hd",
+    "download pins free",
+    "pinterest saver online",
+    "pinterest to mp4",
+    "updated 2026",
+    "pinterest media downloader"
   ].join(", "),
   openGraph: {
-    title: "Pinterest Video Downloader - Save Videos & GIFs",
-    description: "⚡ Download Pinterest videos and GIFs in HD!",
+    title: "Pinterest Video Downloader (2026) - Save Videos & GIFs",
+    description: "⚡ Download Pinterest videos, GIFs & Images in HD quality! Free & unlimited tool (Updated 2026).",
     url: "https://30tools.com/pinterest-video-downloader",
     siteName: "30tools",
     type: "website",
+    images: [{
+      url: "/og-images/pinterest-downloader.jpg", // Assuming image exists or will differ
+      width: 1200,
+      height: 630,
+      alt: "Pinterest Video Downloader 2026"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pinterest Video Downloader (2026) - Free Pin Saver",
+    description: "⚡ Save Pinterest videos & GIFs in HD. Updated 2026!",
+    images: ["/og-images/pinterest-downloader.jpg"], // Consistency
+    creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/pinterest-video-downloader" },
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (

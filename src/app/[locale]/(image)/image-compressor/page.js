@@ -14,18 +14,26 @@ import {
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-  title: "Image Compressor - JPEG, PNG | 30tools",
-  description:
-    "Compress images online for free. Reduce file size of JPG, PNG, and WebP images by up to 80% without losing quality. Bulk compression supported.",
-  keywords:
-    "image compressor, compress image online, reduce image size, free photo compressor, jpg compressor, png compressor, webp compressor, bulk image compressor, optimize images",
+  title: "Image Compressor (2026) - Reduce Size Online Free | 30Tools",
+  description: "Compress images online up to 90% (Updated 2026). Best JPEG, PNG, WebP optimizer. Reduce image size without losing quality. Free & bulk support.",
+  keywords: [
+    "image compressor 2026",
+    "compress image online free",
+    "reduce image size kb",
+    "jpeg compressor",
+    "png optimizer tool",
+    "webp compressor",
+    "bulk image compressor",
+    "updated 2026",
+    "photo size reducer online",
+    "compress image to 20kb"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/image-compressor",
   },
   openGraph: {
-    title: "Free Image Compressor - Compress JPEG, PNG, WebP Online",
-    description:
-      "Compress images online for free. Reduce file size of JPG, PNG, and WebP images by up to 80% without losing quality.",
+    title: "Image Compressor (2026) - Reduce File Size upto 90%",
+    description: "⚡ Compress images (JPEG, PNG, WebP) online without quality loss! Free & unlimited tool (Updated 2026).",
     url: "https://30tools.com/image-compressor",
     siteName: "30tools",
     images: [
@@ -33,7 +41,7 @@ export const metadata = {
         url: "/og-images/image-compressor.jpg",
         width: 1200,
         height: 630,
-        alt: "Image Compressor - 30tools",
+        alt: "Image Compressor 2026 - Free Optimizer",
       },
     ],
     locale: "en_US",
@@ -41,9 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Image Compressor - Compress JPEG, PNG, WebP Online",
-    description:
-      "Compress images online for free. Reduce file size of JPG, PNG, and WebP images by up to 80% without losing quality.",
+    title: "Image Compressor (2026) - Free Online Tool",
+    description: "⚡ Reduce image size up to 90% without quality loss. Updated 2026!",
     images: ["/og-images/image-compressor.jpg"],
     creator: "@30tools",
   },

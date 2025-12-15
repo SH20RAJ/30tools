@@ -1,38 +1,23 @@
 import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader";
 
 export const metadata = {
-  title: "Twitter Video Downloader - Download X Videos & GIFs Free HD | 30tools",
-  description: "Download Twitter (X) videos and GIFs in HD quality for free. Save videos from tweets to MP4 format. Fast, secure X video downloader - no registration required.",
+  title: "Twitter Video Downloader (2026) - Free X Video Saver | 30Tools",
+  description: "Download Twitter (X) videos & GIFs in HD MP4 (Updated 2026). Save X videos to camera roll iphone/android. Free, fast & no login.",
   keywords: [
-    // Primary high-volume keywords (Bing exact-match)
-    "twitter video downloader",
-    "x video downloader",
+    "twitter video downloader 2026",
     "download twitter video",
-    "twitter downloader",
-    "x downloader",
-    "save twitter video",
+    "x video downloader",
+    "save twitter video mp4",
     "twitter gif downloader",
-    "twitter media downloader",
-    "download x videos",
-    "twitter video saver",
-
-    // Long-tail keywords for Bing ranking
-    "twitter video downloader online free hd mp4",
-    "download twitter video without login registration",
-    "x video downloader high quality 1080p",
-    "save twitter gif to phone android iphone",
-    "twitter video download mp4 free online tool",
-    "how to download twitter videos on mobile",
-    "best twitter video downloader 2024 free",
-    "twitter live video downloader recording save",
-    "x platform video downloader tool free",
-    "download videos from x formerly twitter",
-    "twdownload ssstwitter alternative free tool",
-    "twitter spaces audio downloader mp3"
+    "twitter video saver hd",
+    "download tweets from x",
+    "twitter to mp4 converter",
+    "updated 2026",
+    "x video saver online"
   ].join(", "),
   openGraph: {
-    title: "Twitter Video Downloader - Download X Videos & GIFs Free",
-    description: "⚡ Download Twitter (X) videos and GIFs in HD quality. Save tweets to MP4 instantly. Free & unlimited!",
+    title: "Twitter Video Downloader (2026) - Free X Video Saver",
+    description: "⚡ Download Twitter/X videos & GIFs in HD quality instantly! Free & unlimited tool (Updated 2026).",
     url: "https://30tools.com/twitter-downloader",
     siteName: "30tools",
     type: "website",
@@ -40,13 +25,13 @@ export const metadata = {
       url: "/og-images/twitter-downloader.jpg",
       width: 1200,
       height: 630,
-      alt: "Twitter Video Downloader - Download X Videos Free"
+      alt: "Twitter Video Downloader 2026 - Free HD"
     }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Twitter Video Downloader - Download X Videos Free",
-    description: "⚡ Download Twitter/X videos & GIFs in HD. Fast, free & unlimited!",
+    title: "Twitter Video Downloader (2026) - Free X Saver",
+    description: "⚡ Download Twitter (X) videos & GIFs in HD. Updated 2026!",
     images: ["/og-images/twitter-downloader.jpg"],
     creator: "@30tools"
   },

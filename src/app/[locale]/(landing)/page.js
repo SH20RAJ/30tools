@@ -37,14 +37,14 @@ import AuthComponent from "@/components/auth/AuthComponent";
 import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
 
 export const metadata = {
-  title: "30tools - Free Online Tools for Everyone",
-  description: "Your ultimate free online toolkit. Image compressor, video converter, PDF tools, and more. Privacy-focused, fast, and no signup required.",
+  title: "30Tools (2026) - 100% Free Online Tools & Converters",
+  description: "The #1 Free Online Toolkit for 2026. Image compressor, video downloader, PDF tools, and more. No signup, no watermarks, unlimited use.",
   alternates: {
     canonical: "https://30tools.com",
   },
   openGraph: {
-    title: "30tools - Free Online Toolkit",
-    description: "Fast, free, and privacy-focused tools for all your creative and professional needs.",
+    title: "30Tools (2026) - 100% Free Online Toolkit",
+    description: "Fast, free, and privacy-focused tools for all your creative and professional needs. Updated for 2026.",
     url: "https://30tools.com",
     siteName: "30tools",
     type: "website",

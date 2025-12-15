@@ -7,58 +7,43 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata = {
-  title: "YouTube Video Downloader - 30tools",
-  description:
-    "Free youtube video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  title: "YouTube Video Downloader (2026) - Free HD & 4K | 30Tools",
+  description: "Download YouTube videos in HD, 1080p, 4K & 8K (Updated 2026). Save YouTube videos to MP4/MP3. fast, free & strictly no watermarks.",
   keywords: [
-    // Primary keywords
-    "youtube downloader",
-    "download youtube video",
-    "youtube to mp4",
-    "youtube to mp3",
-    "youtube video downloader online",
-
-    // Long-tail keywords for SEO ranking
-    "download youtube video online free without software",
-    "youtube video downloader high quality 1080p 4k",
-    "convert youtube to mp3 320kbps high quality",
-    "youtube downloader no registration required",
-    "free youtube video downloader for pc mobile",
-    "download youtube videos fast secure safe",
-    "youtube to mp4 converter online free unlimited",
-    "extract audio from youtube video free",
-    "bulk youtube video downloader multiple videos",
-    "youtube downloader supports all formats",
-    "download private youtube videos with link",
-    "youtube playlist downloader all videos once",
-    "youtube shorts video downloader vertical",
-    "download youtube thumbnail along with video",
+    "youtube video downloader 2026",
+    "download youtube video hd",
+    "youtube to mp4 4k",
+    "youtube video saver free",
+    "download youtube video 1080p",
+    "youtube video downloader online 2026",
+    "save youtube video to gallery",
+    "updated 2026",
+    "youtube 4k downloader"
   ].join(", "),
   openGraph: {
-    title: "Free YouTube Video Downloader - Download HD Videos Online",
-    description:
-      "Download YouTube videos in HD, Full HD, and 4K quality. Convert YouTube to MP4, MP3 with our fast and secure downloader.",
-    url: "https://30tools.com/youtube-downloader",
+    title: "YouTube Video Downloader (2026) - Free HD & 4K Tool",
+    description: "⚡ Download YouTube videos in HD, 4K & 8K quality! Free & unlimited tool (Updated 2026).",
+    url: "https://30tools.com/youtube-video-downloader",
     siteName: "30tools",
     type: "website",
     images: [
       {
-        url: "/og-images/youtube-downloader.jpg",
+        url: "/og-images/youtube-downloader.jpg", // Kept same image as it's relevant
         width: 1200,
         height: 630,
-        alt: "YouTube Video Downloader - Free Online Tool",
+        alt: "YouTube Video Downloader 2026"
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "YouTube Video Downloader - Download Videos Free",
-    description:
-      "Download YouTube videos in HD quality for free. Convert YouTube to MP4, MP3 instantly.",
+    title: "YouTube Video Downloader (2026) - Free HD Tool",
+    description: "⚡ Download YouTube videos in HD/4K. Updated 2026!",
     images: ["/og-images/youtube-downloader.jpg"],
+    creator: "@30tools"
   },
   alternates: {
-    canonical: "https://30tools.com/youtube-downloader",
+    canonical: "https://30tools.com/youtube-video-downloader",
   },
 };
 

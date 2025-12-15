@@ -25,8 +25,8 @@ import Link from "next/link";
 
 // dynamic metadata generation
 export const metadata = {
-  title: "[New] Free YouTube Downloader (2025) - 4K Video & MP3 | Updated",
-  description: "Fastest YouTube Downloader 2025. Download YouTube videos in 4K, 1080p, and MP3 instantly. No software required, no ads, 100% free and secure.",
+  title: "[New] Free YouTube Downloader (2026) - 4K Video & MP3 | Updated",
+  description: "Fastest YouTube Downloader 2026. Download YouTube videos in 4K, 1080p, and MP3 instantly. No software required, no ads, 100% free and secure.",
   keywords: [
     "youtube downloader",
     "youtube to mp3",
@@ -36,7 +36,7 @@ export const metadata = {
     "free youtube downloader",
     "online video downloader",
     "mp3 converter",
-    "video downloader 2025",
+    "video downloader 2026",
     "no watermarks"
   ],
   authors: [{ name: "30Tools Team" }],
@@ -46,7 +46,7 @@ export const metadata = {
     canonical: "https://30tools.com/youtube-downloader",
   },
   openGraph: {
-    title: "Free YouTube Downloader (2025) - Download 4K Video & MP3",
+    title: "Free YouTube Downloader (2026) - Download 4K Video & MP3",
     description: "Download YouTube videos and audio in seconds. 100% Free, Secure, and High Quality (4K). No installation needed.",
     url: "https://30tools.com/youtube-downloader",
     siteName: "30Tools",
@@ -57,7 +57,7 @@ export const metadata = {
         url: "/og-images/youtube-downloader.jpg",
         width: 1200,
         height: 630,
-        alt: "Best Free YouTube Downloader 2025",
+        alt: "Best Free YouTube Downloader 2026",
       },
     ],
   },

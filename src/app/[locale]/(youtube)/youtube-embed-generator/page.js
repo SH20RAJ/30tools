@@ -1,34 +1,37 @@
 import YouTubeEmbedGenerator from "@/components/tools/youtube/YouTubeEmbedGenerator";
 
 export const metadata = {
-  title: "YouTube Embed Generator - Custom Video Embed Code Free | 30tools",
-  description: "Generate custom YouTube embed codes with autoplay, loop, start time, and more options. Create responsive embed codes for your website. Free and easy to use.",
+  title: "YouTube Embed Generator (2026) - Custom Embed Code Free | 30Tools",
+  description: "Generate custom YouTube embed codes including Shorts (Updated 2026). Options for start time, loop, autoplay, responsive & more. Free tool.",
   keywords: [
-    "youtube embed generator",
-    "youtube embed code",
-    "youtube embed",
-    "embed youtube video",
-    "youtube embed code generator",
-    "youtube video embed",
-    "youtube embed maker",
-    "youtube iframe generator",
+    "youtube embed generator 2026",
+    "youtube embed code builder",
     "custom youtube embed",
+    "youtube iframe generator",
     "responsive youtube embed",
-    "youtube embed autoplay",
-    "youtube embed loop",
-    "youtube embed start time",
-    "youtube embed code free"
+    "youtube loop embed code",
+    "autoplay youtube embed",
+    "youtube shorts embed generator",
+    "updated 2026",
+    "youtube embed start time"
   ].join(", "),
 
   openGraph: {
-    title: "YouTube Embed Generator - Custom Embed Codes",
-    description: "⚡ Generate custom YouTube embed codes with autoplay, loop, and more options!",
+    title: "YouTube Embed Generator (2026) - Custom Embed Codes",
+    description: "⚡ Generate custom YouTube embed codes with autoplay, loop, and more options! (Updated 2026)",
     url: "https://30tools.com/youtube-embed-generator",
-    siteName: "30tools", type: "website",
-    images: [{ url: "/og-images/youtube-embed-generator.jpg", width: 1200, height: 630, alt: "YouTube Embed Generator" }],
+    siteName: "30tools",
+    type: "website",
+    images: [{ url: "/og-images/youtube-embed-generator.jpg", width: 1200, height: 630, alt: "YouTube Embed Generator 2026" }],
   },
 
-  twitter: { card: "summary_large_image", title: "YouTube Embed Generator - Free", description: "⚡ Create custom YouTube embed codes instantly!", images: ["/og-images/youtube-embed-generator.jpg"], creator: "@30tools" },
+  twitter: {
+    card: "summary_large_image",
+    title: "YouTube Embed Generator (2026) - Free Tool",
+    description: "⚡ Create custom YouTube embed codes instantly! Updated 2026.",
+    images: ["/og-images/youtube-embed-generator.jpg"],
+    creator: "@30tools"
+  },
   alternates: { canonical: "https://30tools.com/youtube-embed-generator" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };

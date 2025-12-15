@@ -19,47 +19,37 @@ import {
 import Link from "next/link";
 
 export const metadata = {
-  title: "Instagram Downloader - Download IG Videos, Photos, Reels & Stories Free | 30tools",
-  description: "Download Instagram videos, photos, Reels, Stories & IGTV in HD quality. Free online IG downloader - save Instagram content without watermark. Works on all devices.",
+  title: "Instagram Downloader (2026) - Save Video, Reels, Story & Photo | 30Tools",
+  description: "Download Instagram Videos, Reels, Stories & Photos in HD 1080p. Updated 2026. Anonymous, Free, No Watermark. Works on iPhone/Android.",
   keywords: [
-    "instagram downloader",
+    "instagram downloader 2026",
     "instagram video downloader",
-    "download instagram video",
-    "instagram reels downloader",
-    "instagram story downloader",
-    "ig downloader",
+    "download instagram reels",
+    "story saver for instagram",
+    "download instagram photo",
+    "ig downloader free",
     "save instagram video",
-    "instagram photo downloader",
-    "instagram saver",
-    "download instagram reels without watermark free",
-    "instagram video downloader online hd quality",
-    "save instagram stories anonymous without login",
-    "instagram photo downloader high resolution",
-    "download instagram igtv videos free online",
-    "how to download instagram videos on iphone android",
-    "best instagram downloader 2024 free tool",
-    "instagram carousel photo downloader all images",
-    "download instagram reel audio mp3 free",
-    "instagram private video downloader with access",
-    "save instagram posts to camera roll free",
-    "ig reels video saver no watermark hd"
+    "instagram to mp4",
+    "no watermark",
+    "updated 2026",
+    "anonymous story viewer"
   ].join(", "),
   openGraph: {
-    title: "Instagram Downloader - Save IG Videos, Reels & Stories Free",
-    description: "⚡ Download Instagram content in HD quality. Save Reels, Stories, IGTV & photos without watermark. Free & fast!",
+    title: "Instagram Downloader (2026) - Save Reels & Stories Free",
+    description: "⚡ Download Instagram Reels, Stories & Videos in HD. Free, fast & no watermark! (Updated 2026)",
     url: "https://30tools.com/instagram-downloader",
     type: "website",
     images: [{
       url: "/og-images/instagram-downloader.jpg",
       width: 1200,
       height: 630,
-      alt: "Instagram Downloader - Download IG Videos & Reels Free"
+      alt: "Best Instagram Downloader 2026"
     }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Instagram Downloader - Save IG Videos & Reels Free",
-    description: "⚡ Download Instagram Reels, Stories & Videos in HD. Free, fast & no watermark!",
+    title: "Instagram Downloader (2026) - Free & No Watermark",
+    description: "⚡ Download Instagram Reels, Stories & Videos in HD. Updated 2026!",
     images: ["/og-images/instagram-downloader.jpg"],
     creator: "@30tools"
   },

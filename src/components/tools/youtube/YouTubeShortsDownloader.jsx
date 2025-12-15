@@ -80,98 +80,61 @@ export default function YouTubeShortsDownloader() {
     setShortsData(null);
 
     try {
-      // Use the same public API as YouTube downloader
-      const encoded = encodeURIComponent(url.trim());
-      const apiUrl = `https://ytdl.socialplug.io/api/video-info?url=${encoded}`;
-      const res = await fetch(apiUrl, {
-        headers: {
-          accept: "application/json, text/plain, */*",
-          origin: "https://www.socialplug.io",
-        },
+      // 1. Fetch Video Details via internal Proxy
+      const res = await fetch("/api/proxy/ytdown", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: url.trim() }),
       });
 
       if (!res.ok) {
-        const txt = await res.text().catch(() => "");
-        throw new Error(`API error: ${res.status} ${txt}`);
+        throw new Error("Failed to fetch video details");
       }
 
       const data = await res.json();
 
-      // Helpers to format bytes and duration
-      const formatBytes = (bytes) => {
-        if (!bytes || isNaN(bytes)) return "";
-        const b = Number(bytes);
-        const units = ["B", "KB", "MB", "GB"];
-        let i = 0;
-        let val = b;
-        while (val >= 1024 && i < units.length - 1) {
-          val /= 1024;
-          i++;
-        }
-        return `${Math.round(val * 10) / 10}${units[i]}`;
-      };
-
-      const formatDuration = (secs) => {
-        const s = Number(secs) || 0;
-        const m = Math.floor(s / 60);
-        const r = s % 60;
-        return `${m}:${r.toString().padStart(2, "0")}`;
-      };
-
-      // Normalize response for shorts
-      const title = data.title || "YouTube Shorts Video";
-      const thumbnail =
-        data.image || data.thumbnail || data.videoDetails?.thumbnail || null;
-      const duration = data.lengthSeconds
-        ? formatDuration(data.lengthSeconds)
-        : data.duration || "<60s";
-
-      // video formats present at data.format_options.video.mp4 (array)
-      const rawVideoFormats =
-        (data.format_options &&
-          data.format_options.video &&
-          data.format_options.video.mp4) ||
-        [];
-      const videoFormats = rawVideoFormats.map((f) => ({
-        quality: f.quality || (f.mimeType ? f.mimeType.split("/")[1] : "video"),
-        fileSize: formatBytes(parseInt(f.fileSize || f.filesize || "0", 10)),
-        downloadUrl: f.url || f.src || "#",
-        mimeType: f.mimeType || "",
-        hasAudio: f.hasAudio || false,
-      }));
-
-      // audio formats (if any)
-      let audioFormats = [];
-      if (data.format_options && data.format_options.audio) {
-        const rawAudio = data.format_options.audio.mp3 || [];
-        audioFormats = (rawAudio || []).map((f) => ({
-          quality: f.quality || f.bitrate || "audio",
-          fileSize: formatBytes(parseInt(f.fileSize || f.filesize || "0", 10)),
-          downloadUrl: f.url || "#",
-        }));
+      if (!data.api || !data.api.id) {
+        throw new Error("Invalid video URL or API error");
       }
 
-      // pick the best quality for shorts display
-      const bestVideoFormat =
-        videoFormats[videoFormats.length - 1] || videoFormats[0];
-      const bestAudioFormat = audioFormats[0];
+      const apiData = data.api;
 
-      const normalized = {
+      // Normalize data
+      const title = apiData.title || "YouTube Shorts Video";
+      const thumbnail = apiData.imagePreviewUrl || null;
+      const duration = apiData.mediaItems?.[0]?.mediaDuration || "";
+
+      // Group formats
+      const videoFormats = [];
+      const audioFormats = [];
+
+      (apiData.mediaItems || []).forEach((item) => {
+        const isAudio = item.type === "Audio";
+        const formatObj = {
+          quality: item.mediaQuality || (isAudio ? "Audio" : "Video"),
+          fileSize: item.mediaFileSize || "",
+          downloadUrl: item.mediaUrl, // ID for step 2
+          hasAudio: true,
+          originalExtension: item.mediaExtension,
+        };
+
+        if (isAudio) {
+          audioFormats.push(formatObj);
+        } else {
+          videoFormats.push(formatObj);
+        }
+      });
+
+      setShortsData({
         title,
         thumbnail,
         duration,
-        quality: bestVideoFormat?.quality || "HD Vertical",
-        fileSize: bestVideoFormat?.fileSize || "~8MB",
-        description: "YouTube Shorts video content...",
-        downloadUrl: bestVideoFormat?.downloadUrl || "#",
-        audioUrl: bestAudioFormat?.downloadUrl || null,
         videoFormats,
         audioFormats,
-      };
-
-      setShortsData(normalized);
+        description: "YouTube Shorts video content...", // Placeholder
+      });
     } catch {
-      setError("An error occurred while processing the YouTube Shorts video");
+      setError("An error occurred. Please check the URL and try again.");
     } finally {
       setIsLoading(false);
     }
@@ -277,27 +240,43 @@ export default function YouTubeShortsDownloader() {
     }
   };
 
-  const handleDownload = (downloadUrl, filename, _format) => {
-    if (!downloadUrl || downloadUrl.startsWith("#")) {
-      setError("Download URL is not available for this format");
-      return;
-    }
+  const handleDownload = async (downloadUrl, filename, formatType) => {
+    if (!downloadUrl) return;
 
-    // For real download URLs, open in new tab (some urls block programmatic download)
+    // Show a toast to indicate processing
+    const toastId = toast.loading("Generating download link...");
+
     try {
-      // Try to trigger download. Some CDN responses require navigation.
-      const link = document.createElement("a");
-      link.href = downloadUrl;
-      link.target = "_blank";
-      // Don't always set download attribute; let browser handle content-disposition
-      // link.download = filename;
-      link.style.display = "none";
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    } catch (_error) {
-      console.error("Download failed:", error);
-      setError("Download failed. Please try again.");
+      // 2. Fetch specific download link via same proxy
+      const res = await fetch("/api/proxy/ytdown", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url: downloadUrl }),
+      });
+
+      if (!res.ok) throw new Error("Failed to get download link");
+
+      const data = await res.json();
+
+      if (data.api && data.api.fileUrl) {
+        toast.dismiss(toastId);
+        toast.success("Download starting...");
+
+        // Trigger download
+        const link = document.createElement("a");
+        link.href = data.api.fileUrl;
+        link.target = "_blank";
+        link.style.display = "none";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      } else {
+        throw new Error("Download link not found");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.dismiss(toastId);
+      toast.error("Failed to generate download link. Please try again.");
     }
   };
 
@@ -403,29 +382,25 @@ export default function YouTubeShortsDownloader() {
                       {shortsData.title}
                     </h3>
                     <div className="flex flex-wrap gap-2 mb-3">
-                      <Badge
-                        variant="outline"
-                        className="text-primary border-border"
-                      >
-                        Duration: {shortsData.duration}
-                      </Badge>
+                      {shortsData.duration && (
+                        <Badge
+                          variant="outline"
+                          className="text-primary border-border"
+                        >
+                          Duration: {shortsData.duration}
+                        </Badge>
+                      )}
+
                       <Badge
                         variant="outline"
                         className="text-primary border-border"
                       >
                         Format: Vertical Video
                       </Badge>
-                      <Badge
-                        variant="outline"
-                        className="text-primary border-border"
-                      >
-                        Size: {shortsData.fileSize}
-                      </Badge>
                     </div>
                     <p className="text-sm text-muted-foreground">
                       {shortsData.description &&
                         shortsData.description.slice(0, 150)}
-                      ...
                     </p>
                   </div>
                 </div>
@@ -441,59 +416,39 @@ export default function YouTubeShortsDownloader() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
-                    {shortsData.videoFormats?.map((format, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg"
-                      >
-                        <div>
-                          <div className="font-medium">
-                            {format.quality} MP4 (Vertical)
-                          </div>
-                          <div className="text-sm text-muted-foreground">
-                            {format.fileSize} • 9:16 aspect ratio
-                          </div>
-                        </div>
-                        <Button
-                          onClick={() =>
-                            handleDownload(
-                              format.downloadUrl,
-                              `${shortsData.title}_shorts.mp4`,
-                              "video",
-                            )
-                          }
-                          size="sm"
-                          className="bg-muted/500 hover:bg-primary"
+                    {shortsData.videoFormats?.length > 0 ? (
+                      shortsData.videoFormats.map((format, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg"
                         >
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </Button>
-                      </div>
-                    )) || (
-                      <div className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg">
-                        <div>
-                          <div className="font-medium">
-                            HD Vertical Video (MP4)
+                          <div>
+                            <div className="font-medium">
+                              {format.quality} MP4 (Vertical)
+                            </div>
+                            <div className="text-sm text-muted-foreground">
+                              {format.fileSize || "Unknown Size"} • 9:16
+                            </div>
                           </div>
-                          <div className="text-sm text-muted-foreground">
-                            {shortsData.quality} • {shortsData.fileSize} • 9:16
-                            aspect ratio
-                          </div>
+                          <Button
+                            onClick={() =>
+                              handleDownload(
+                                format.downloadUrl,
+                                `${shortsData.title}_shorts.mp4`,
+                                "video",
+                              )
+                            }
+                            size="sm"
+                            className="bg-muted/500 hover:bg-primary"
+                          >
+                            <Download className="w-4 h-4 mr-1" />
+                            Download
+                          </Button>
                         </div>
-                        <Button
-                          onClick={() =>
-                            handleDownload(
-                              shortsData.downloadUrl,
-                              `${shortsData.title}_shorts.mp4`,
-                              "video",
-                            )
-                          }
-                          size="sm"
-                          className="bg-muted/500 hover:bg-primary"
-                        >
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </Button>
+                      ))
+                    ) : (
+                      <div className="p-4 text-center text-muted-foreground">
+                        No video formats found.
                       </div>
                     )}
                   </CardContent>
@@ -508,51 +463,24 @@ export default function YouTubeShortsDownloader() {
                     </CardTitle>
                   </CardHeader>
                   <CardContent className="p-4 space-y-3">
-                    {shortsData.audioFormats?.map((format, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg"
-                      >
-                        <div>
-                          <div className="font-medium">
-                            {format.quality} MP3
-                          </div>
-                          <div className="text-sm text-muted-foreground">
-                            {format.fileSize}
-                          </div>
-                        </div>
-                        <Button
-                          onClick={() =>
-                            handleDownload(
-                              format.downloadUrl,
-                              `${shortsData.title}_audio.mp3`,
-                              "audio",
-                            )
-                          }
-                          size="sm"
-                          className="bg-muted/500 hover:bg-primary"
+                    {shortsData.audioFormats?.length > 0 ? (
+                      shortsData.audioFormats.map((format, index) => (
+                        <div
+                          key={index}
+                          className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg"
                         >
-                          <Download className="w-4 h-4 mr-1" />
-                          Download
-                        </Button>
-                      </div>
-                    )) ||
-                      (shortsData.audioUrl && (
-                        <div className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg">
                           <div>
-                            <div className="font-medium">High Quality MP3</div>
+                            <div className="font-medium">
+                              {format.quality} MP3
+                            </div>
                             <div className="text-sm text-muted-foreground">
-                              ~
-                              {Math.round(
-                                parseInt(shortsData.fileSize || "0") * 0.1,
-                              )}
-                              MB
+                              {format.fileSize || "Unknown Size"}
                             </div>
                           </div>
                           <Button
                             onClick={() =>
                               handleDownload(
-                                shortsData.audioUrl,
+                                format.downloadUrl,
                                 `${shortsData.title}_audio.mp3`,
                                 "audio",
                               )
@@ -561,10 +489,15 @@ export default function YouTubeShortsDownloader() {
                             className="bg-muted/500 hover:bg-primary"
                           >
                             <Download className="w-4 h-4 mr-1" />
-                            Audio
+                            Download
                           </Button>
                         </div>
-                      ))}
+                      ))
+                    ) : (
+                      <div className="p-4 text-center text-muted-foreground">
+                        No audio formats found.
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               </div>

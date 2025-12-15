@@ -1,26 +1,41 @@
 import InstagramStoryDownloader from "@/components/tools/downloaders/InstagramStoryDownloader";
 
 export const metadata = {
-  title: "Instagram Story Downloader - Save IG Stories Free | 30tools",
-  description: "Download Instagram stories anonymously. Save IG stories, highlights, and videos before they disappear. Free Instagram story saver.",
+  title: "Instagram Story Downloader (2026) - Save Stories Anonymous | 30Tools",
+  description: "Download Instagram Stories & Highlights anonymously (Updated 2026). Save IG stories to MP4/JPG without login. Free & Private.",
   keywords: [
-    "instagram story downloader",
-    "download instagram stories",
+    "instagram story downloader 2026",
+    "download instagram stories anonymous",
     "ig story saver",
-    "save instagram story",
     "instagram highlight downloader",
-    "anonymous story viewer",
-    "story saver for instagram"
+    "save instagram story to gallery",
+    "watch instagram stories anonymous",
+    "story saver for instagram",
+    "updated 2026",
+    "instagram story viewer"
   ].join(", "),
   openGraph: {
-    title: "Instagram Story Downloader - Save Stories Anonymously",
-    description: "⚡ Download Instagram stories and highlights!",
+    title: "Instagram Story Downloader (2026) - Save Stories Anonymously",
+    description: "⚡ Download Instagram stories & highlights anonymously in HD! No login required (Updated 2026).",
     url: "https://30tools.com/instagram-story-downloader",
     siteName: "30tools",
     type: "website",
+    images: [{
+      url: "/og-images/instagram-story-downloader.jpg", // Assuming image exists or will differ
+      width: 1200,
+      height: 630,
+      alt: "Instagram Story Downloader 2026"
+    }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Instagram Story Downloader (2026) - Anonymous Saver",
+    description: "⚡ Save Instagram stories & highlights anonymously. Updated 2026!",
+    images: ["/og-images/instagram-story-downloader.jpg"],
+    creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/instagram-story-downloader" },
-  robots: { index: true, follow: true }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (

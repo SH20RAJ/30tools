@@ -1,42 +1,24 @@
 import YouTubeThumbnailDownloader from "@/components/tools/youtube/YouTubeThumbnailDownloader";
 
 export const metadata = {
-  title: "YouTube Thumbnail Downloader - Free HD, 4K Thumbnail Grabber | 30tools",
-  description: "Download YouTube thumbnails in HD, Full HD, 4K quality for free. Save video thumbnails instantly from any YouTube video. No software needed, works on all devices.",
+  title: "YouTube Thumbnail Downloader (2026) - Free HD, 4K Images | 30Tools",
+  description: "Download YouTube thumbnails in HD, Full HD, and 4K quality for free. Updated for 2026. Save video images instantly. No software needed.",
   keywords: [
-    // Primary keywords
-    "youtube thumbnail downloader",
-    "download youtube thumbnail",
+    "youtube thumbnail downloader 2026",
+    "download youtube thumbnail free",
     "youtube thumbnail grabber",
-    "youtube thumbnail saver",
-    "get youtube thumbnail",
-    "youtube video thumbnail download",
-    "youtube thumbnail download online",
-    "free youtube thumbnail downloader",
-
-    // Long-tail keywords
-    "download youtube thumbnail hd quality",
-    "youtube thumbnail downloader 4k",
-    "youtube thumbnail download high resolution",
-    "youtube thumbnail grabber online free",
-    "save youtube video thumbnail image",
-    "youtube thumbnail image downloader",
-    "youtube thumbnail extractor online",
-    "get youtube video thumbnail free",
-    "download youtube thumbnail without software",
-    "youtube thumbnail download 1080p full hd",
-    "youtube video thumbnail saver online",
-    "youtube thumbnail download all sizes",
-    "youtube shorts thumbnail downloader",
-    "youtube thumbnail download maxresdefault",
-    "best youtube thumbnail downloader 2024",
-    "youtube thumbnail download mobile android ios",
-    "youtube thumbnail download chrome firefox safari"
+    "4k thumbnail downloader",
+    "hd thumbnail saver",
+    "youtube image extractor",
+    "no watermark",
+    "updated 2026",
+    "fast youtube thumbnail",
+    "online thumbnail downloader"
   ].join(", "),
 
   openGraph: {
-    title: "YouTube Thumbnail Downloader - Download HD, 4K Thumbnails Free",
-    description: "⚡ Download YouTube thumbnails in HD, Full HD, 4K quality instantly. Free online thumbnail grabber - no software needed!",
+    title: "YouTube Thumbnail Downloader (2026) - Free HD & 4K",
+    description: "⚡ Download YouTube thumbnails in HD, 4K quality instantly (2026 Updated). Free online tool - no software needed!",
     url: "https://30tools.com/youtube-thumbnail-downloader",
     siteName: "30tools",
     type: "website",
@@ -45,15 +27,15 @@ export const metadata = {
         url: "/og-images/youtube-thumbnail-downloader.jpg",
         width: 1200,
         height: 630,
-        alt: "YouTube Thumbnail Downloader - Download HD, 4K Thumbnails Free",
+        alt: "Best Free YouTube Thumbnail Downloader 2026",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "YouTube Thumbnail Downloader - Free HD & 4K Thumbnails",
-    description: "⚡ Download YouTube thumbnails in HD, 4K quality. Free, fast & works on all devices!",
+    title: "YouTube Thumbnail Downloader (2026) - Free HD & 4K",
+    description: "⚡ Download YouTube thumbnails in HD, 4K quality. Free, fast & 2026 ready!",
     images: ["/og-images/youtube-thumbnail-downloader.jpg"],
     creator: "@30tools"
   },

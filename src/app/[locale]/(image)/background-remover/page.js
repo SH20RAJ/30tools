@@ -14,18 +14,26 @@ import {
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-  title: "Free Background Remover - Remove BG from Images Online | 30tools",
-  description:
-    "Remove image backgrounds automatically in seconds with AI. Download transparent PNGs or add white backgrounds. Perfect for product photos & portraits.",
-  keywords:
-    "background remover, remove background, transparent background, remove bg, delete background, ai background remover, free background eraser, product photography tool, transparent png maker",
+  title: "Free Background Remover (2026) - AI Remove BG Online | 30Tools",
+  description: "Remove image backgrounds automatically in seconds with AI (Updated 2026). Download transparent PNGs & high quality cutouts. Free, unlimited & secure.",
+  keywords: [
+    "background remover 2026",
+    "remove background ai free",
+    "transparent background maker",
+    "remove bg online 2026",
+    "delete background from image",
+    "ai background eraser",
+    "transparent png generator",
+    "remove photo background hd",
+    "updated 2026",
+    "free background remover no signup"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/background-remover",
   },
   openGraph: {
-    title: "Free Background Remover - Remove BG from Images Online",
-    description:
-      "Remove image backgrounds automatically in seconds with AI. Download transparent PNGs or add white backgrounds.",
+    title: "Free Background Remover (2026) - AI Remove BG Tool",
+    description: "⚡ Remove image backgrounds automatically in seconds with AI! Free & unlimited tool (Updated 2026).",
     url: "https://30tools.com/background-remover",
     siteName: "30tools",
     images: [
@@ -33,7 +41,7 @@ export const metadata = {
         url: "/og-images/background-remover.jpg",
         width: 1200,
         height: 630,
-        alt: "Free Background Remover Tool - 30tools",
+        alt: "Free Background Remover 2026 - AI Tool",
       },
     ],
     locale: "en_US",
@@ -41,9 +49,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Background Remover - Remove BG from Images Online",
-    description:
-      "Remove image backgrounds automatically in seconds with AI. Download transparent PNGs or add white backgrounds.",
+    title: "Free Background Remover (2026) - AI Tool",
+    description: "⚡ Remove image backgrounds automatically in seconds. Updated 2026!",
     images: ["/og-images/background-remover.jpg"],
     creator: "@30tools",
   },
