@@ -14,18 +14,25 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Merger - Combine PDF Files Online | 30tools",
-  description:
-    "Merge PDF files online for free. Combine multiple PDF documents into one file with professional results. No watermarks, unlimited files, and 100% secure.",
-  keywords:
-    "pdf merger, merge pdf, combine pdf, join pdf, pdf combiner, merge pdf files free, online pdf merger, pdf joiner, merge pdf documents, free pdf tools",
+  title: "Free PDF Merger (2026) - Combine PDFs Online | 30Tools",
+  description: "Merge PDF files online for free (Updated 2026). Combine multiple PDFs into one document. Secure, private & no watermarks. Drag & drop interface.",
+  keywords: [
+    "pdf merger 2026",
+    "merge pdf files free",
+    "combine pdf online secure",
+    "join pdf documents",
+    "pdf combiner tool",
+    "merge pdf no watermark",
+    "online pdf merger free",
+    "updated 2026",
+    "combine pdf pages"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/pdf-merger",
   },
   openGraph: {
-    title: "Free PDF Merger - Combine PDF Files Online",
-    description:
-      "Merge PDF files online for free. Combine multiple PDF documents into one file with professional results.",
+    title: "Free PDF Merger (2026) - Combine PDF Files Securely",
+    description: "⚡ Merge multiple PDF files into one for free! Secure, private & no watermarks (Updated 2026).",
     url: "https://30tools.com/pdf-merger",
     siteName: "30tools",
     images: [
@@ -33,7 +40,7 @@ export const metadata = {
         url: "/og-images/pdf-merger.jpg",
         width: 1200,
         height: 630,
-        alt: "PDF Merger - 30tools",
+        alt: "Free PDF Merger 2026 - Secure Tool",
       },
     ],
     locale: "en_US",
@@ -41,9 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free PDF Merger - Combine PDF Files Online",
-    description:
-      "Merge PDF files online for free. Combine multiple PDF documents into one file with professional results.",
+    title: "Free PDF Merger (2026) - Secure Online Tool",
+    description: "⚡ Combine PDF files securely online. Updated 2026!",
     images: ["/og-images/pdf-merger.jpg"],
     creator: "@30tools",
   },

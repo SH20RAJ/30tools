@@ -1,21 +1,37 @@
 import APITester from "@/components/tools/developer/APITesterTool";
 
 export const metadata = {
-  title: "API Tester - Test REST APIs and HTTP Requests | 30tools",
-  description:
-    "Professional api tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-  keywords:
-    "api tester, rest api tester, http requests, api testing, postman alternative, api client",
+  title: "API Tester (2026) - Online REST Client | 30Tools",
+  description: "Test REST APIs & HTTP requests online free (Updated 2026). Send GET, POST, PUT, DELETE requests. Lightweight Postman alternative.",
+  keywords: [
+    "api tester online",
+    "rest api client free",
+    "http request tool",
+    "send api requests online",
+    "postman alternative web",
+    "curl online tester",
+    "updated 2026",
+    "debug api endpoint"
+  ].join(", "),
   openGraph: {
-    title: "API Tester - Test REST APIs and HTTP Requests | 30tools",
-    description: "Test REST APIs and HTTP requests online.",
+    title: "API Tester (2026) - Free Online REST Client",
+    description: "⚡ Test API endpoints instantly! Send HTTP requests (GET, POST) directly from browser (Updated 2026).",
+    url: "https://30tools.com/api-tester",
+    siteName: "30tools",
     type: "website",
+    images: [
+      {
+        url: "/og-images/api-tester.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Free API Tester 2026",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Api Tester - Free Developer Tool | Professional Coding",
-    description:
-      "Professional api tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+    title: "API Tester (2026) - Free REST Client",
+    description: "⚡ Test APIs instantly in your browser. Updated 2026!",
     images: ["/og-images/api-tester.jpg"],
     creator: "@30tools",
   },

@@ -1,24 +1,48 @@
 import CodeMinifier from "@/components/tools/developer/CodeMinifier";
 
-export async function generateMetadata() {
-    const title = "CSS Minifier - Compress CSS Online";
-    const description = "Free online CSS minifier. Reduce CSS file size by removing whitespace and comments to boost page speed.";
-
-    return {
-        title,
-        description,
-        alternates: {
-            canonical: "https://30tools.com/css-minifier",
-        },
-        openGraph: {
-            title,
-            description,
-            url: "https://30tools.com/css-minifier",
-            siteName: "30tools",
-            type: "website",
-        },
-    };
-}
+export const metadata = {
+    title: "CSS Minifier (2026) - Compress CSS Online | 30Tools",
+    description: "Minify CSS files online for free (Updated 2026). Compress stylesheets to reduce file size & improve website speed. Instant & restore feature.",
+    keywords: [
+        "css minifier 2026",
+        "compress css online",
+        "minify css file",
+        "css optimizer tool",
+        "reduce css size",
+        "stylesheet compressor",
+        "updated 2026",
+        "web performance tools"
+    ].join(", "),
+    alternates: {
+        canonical: "https://30tools.com/css-minifier",
+    },
+    openGraph: {
+        title: "CSS Minifier (2026) - Free CSS Compressor",
+        description: "⚡ Minify CSS code instantly! Reduce file size & boost page load speed (Updated 2026).",
+        url: "https://30tools.com/css-minifier",
+        siteName: "30tools",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/css-minifier.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Free CSS Minifier 2026",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "CSS Minifier (2026) - Compress Code Free",
+        description: "⚡ Minify & Optimize CSS instantly. Updated 2026!",
+        images: ["/og-images/css-minifier.jpg"],
+        creator: "@30tools",
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+};
 
 export default function CssMinifierPage() {
     return (

@@ -1,40 +1,25 @@
 import LoremIpsumGeneratorTool from "@/components/tools/text/LoremIpsumGeneratorTool";
 
 export const metadata = {
-  title: "Lorem Ipsum Generator - Free Online Generator | Create Instantly",
-  description:
-    "Free lorem ipsum generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  title: "Lorem Ipsum Generator (2026) - Dummy Text Tool | 30Tools",
+  description: "Generate Lorem Ipsum placeholder text instantly (Updated 2026). Copy & paste dummy text for web design. Customizable paragraphs, words & lists.",
   keywords: [
-    // Primary keywords
-    "lorem ipsum generator",
-    "placeholder text generator",
-    "dummy text generator",
-    "lorem ipsum text",
-    "fake text generator",
-
-    // Long-tail keywords for SEO ranking
-    "lorem ipsum generator online free unlimited",
-    "placeholder text generator custom length",
-    "dummy text generator for web design",
-    "lorem ipsum generator paragraphs words sentences",
-    "fake text generator for mockups prototypes",
-    "lorem ipsum generator no ads clean",
-    "placeholder text generator for graphic design",
-    "dummy content generator for websites",
-    "lorem ipsum generator with custom word count",
-    "text placeholder generator for developers",
-    "lorem ipsum generator copy paste ready",
-    "placeholder text generator for print design",
-    "dummy text generator multiple paragraphs",
-    "lorem ipsum generator for content testing",
+    "lorem ipsum generator 2026",
+    "dummy text generator free",
+    "placeholder text online",
+    "fake text generator for design",
+    "lipsum generator",
+    "random text generator",
+    "dummy content creator",
+    "updated 2026",
+    "copy paste lorem ipsum"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/lorem-ipsum-generator",
   },
   openGraph: {
-    title: "Lorem Ipsum Generator - Free Placeholder Text",
-    description:
-      "Generate Lorem Ipsum placeholder text instantly. Perfect for web design, graphic design, and typesetting projects.",
+    title: "Lorem Ipsum Generator (2026) - Free Dummy Text",
+    description: "⚡ Generate Lorem Ipsum placeholder text instantly! Perfect for Web & Graphic Design (Updated 2026).",
     url: "https://30tools.com/lorem-ipsum-generator",
     siteName: "30tools",
     images: [
@@ -42,7 +27,7 @@ export const metadata = {
         url: "/og-images/lorem-ipsum-generator.jpg",
         width: 1200,
         height: 630,
-        alt: "Lorem Ipsum Generator Tool - 30tools",
+        alt: "Free Lorem Ipsum Generator 2026",
       },
     ],
     locale: "en_US",
@@ -50,9 +35,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lorem Ipsum Generator - Free Placeholder Text",
-    description:
-      "Generate Lorem Ipsum placeholder text instantly. Perfect for design and development projects.",
+    title: "Lorem Ipsum Generator (2026) - Free Tool",
+    description: "⚡ Generate Lorem Ipsum dummy text instantly. Updated 2026!",
     images: ["/og-images/lorem-ipsum-generator.jpg"],
     creator: "@30tools",
   },

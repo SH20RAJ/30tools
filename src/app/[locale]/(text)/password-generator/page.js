@@ -1,58 +1,25 @@
 import PasswordGeneratorTool from "@/components/tools/text/PasswordGeneratorTool";
 
 export const metadata = {
-  title: "Password Generator - Free Online Generator | Create Instantly",
-  description:
-    "Generate Process instantly with our free password generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+  title: "Password Generator (2026) - Strong & Secure Passwords | 30Tools",
+  description: "Generate 100% secure, random passwords instantly (Updated 2026). Create strong passwords with custom length & characters. Client-side only - totally private.",
   keywords: [
-    // Primary high-volume keywords from research
-    "password generator",
-    "random password generator",
-    "password generator 12 characters",
-    "password generator free",
-    "strong password generator",
-    "generate password",
-    "password generator 15 characters",
-    "lastpass password generator",
-    "norton password generator",
-    "password generator 8 characters",
-    "secure password generator",
-    "password generator lastpass",
-    "bitwarden password generator",
-    "generate strong password",
-    "free password generator",
-    "generate secure password",
-    "google password generator",
-    "password generator random",
-    "passwords generator",
-    "strong random password generator",
-    "generate random password",
-    "generate a password",
-    "last pass password generator",
-
-    // Long-tail keywords for SEO ranking
-    "password generator online free no registration unlimited",
-    "random password generator strong secure custom length",
-    "password generator 12 characters symbols numbers uppercase",
-    "strong password generator with special characters",
-    "secure password generator for websites accounts business",
-    "password generator free no ads clean interface",
-    "random password generator copy paste clipboard ready",
-    "password generator tool cybersecurity best practices",
-    "strong password generator bulk multiple passwords",
-    "secure password generator privacy protected local",
-    "password generator with character type options",
-    "random password generator instant generation one click",
-    "password generator for personal business professional use",
-    "strong password generator meets security requirements",
+    "password generator 2026",
+    "strong password generator free",
+    "secure password maker",
+    "random password creator",
+    "generate secure password online",
+    "password generator 32 characters",
+    "complex password generator",
+    "updated 2026",
+    "offline password generator"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/password-generator",
   },
   openGraph: {
-    title: "Free Password Generator - Create Strong Secure Passwords",
-    description:
-      "Generate strong, secure passwords instantly. Customize length, include special characters, numbers, and symbols for maximum security.",
+    title: "Password Generator (2026) - Create Strong Passwords",
+    description: "⚡ Generate impossible-to-hack passwords instantly! Secure, private & client-side only (Updated 2026).",
     url: "https://30tools.com/password-generator",
     siteName: "30tools",
     images: [
@@ -60,7 +27,7 @@ export const metadata = {
         url: "/og-images/password-generator.jpg",
         width: 1200,
         height: 630,
-        alt: "Free Password Generator Tool - 30tools",
+        alt: "Free Password Generator 2026 - Secure Tool",
       },
     ],
     locale: "en_US",
@@ -68,9 +35,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Password Generator - Create Strong Secure Passwords",
-    description:
-      "Generate strong, secure passwords instantly. Customize length and character types for maximum security.",
+    title: "Password Generator (2026) - Secure Tool",
+    description: "⚡ Create strong, secure passwords instantly. Updated 2026!",
     images: ["/og-images/password-generator.jpg"],
     creator: "@30tools",
   },

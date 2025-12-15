@@ -1,53 +1,22 @@
 import VideoToMP3Converter from "@/components/tools/converter/VideoToMP3Converter";
 
 export const metadata = {
-  title: "Video To Mp3 Converter - Free Online Tool | 30tools",
-  description:
-    "Free video to mp3 converter tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  title: "Video to MP3 Converter (2026) - Free Audio Extractor | 30Tools",
+  description: "Convert any video to MP3 online (Updated 2026). Supports MP4, AVI, MOV, MKV to Audio. Extract high quality 320kbps sound free.",
   keywords: [
-    // Primary video to MP3 keywords
-    "video to mp3 converter",
-    "convert video to mp3",
-    "video to audio converter",
-    "mp4 to mp3 converter",
-    "extract audio from video",
-    "video to mp3 online",
-    "free video to mp3 converter",
-    "video audio extractor",
-    "convert video to audio",
-    "video mp3 converter",
-
-    // Long-tail SEO keywords
-    "video to mp3 converter online free",
-    "convert video to mp3 high quality",
-    "video to mp3 converter 320kbps",
-    "bulk video to mp3 converter",
-    "video to mp3 converter no watermark",
-    "convert mp4 to mp3 online free",
-    "video to audio converter online",
-    "extract audio from video free",
-    "video to mp3 converter for pc mobile",
-    "fast video to mp3 converter",
-
-    // International keywords
-    "convertir video a mp3",
-    "converter video para mp3",
-    "convertir vidéo en mp3",
-    "تحويل فيديو الى mp3",
-    "convertire video in mp3",
-    "chuyển đổi video sang mp3",
-
-    // Format specific
-    "mp4 to mp3 converter online",
+    "video to mp3 converter 2026",
+    "convert video to audio free",
+    "extract audio from video online",
+    "mp4 to mp3 high quality",
     "avi to mp3 converter",
-    "mov to mp3 converter",
-    "mkv to mp3 converter",
-    "webm to mp3 converter",
+    "mov to mp3 extraction",
+    "video sound ripper",
+    "updated 2026",
+    "universal audio converter"
   ].join(", "),
   openGraph: {
-    title: "Video to MP3 Converter - Convert Video to Audio Online Free",
-    description:
-      "Convert video files to MP3 audio format. Extract high-quality audio from MP4, AVI, MOV videos online.",
+    title: "Video to MP3 Converter (2026) - Extract Audio from Any Video",
+    description: "⚡ Convert Video (MP4, AVI, MOV) to MP3 Audio instantly! High quality 320kbps extraction (Updated 2026).",
     url: "https://30tools.com/video-to-mp3-converter",
     siteName: "30tools",
     type: "website",
@@ -56,15 +25,14 @@ export const metadata = {
         url: "/og-images/video-to-mp3-converter.jpg",
         width: 1200,
         height: 630,
-        alt: "Video to MP3 Converter - Free Online Tool",
+        alt: "Free Video to MP3 Converter 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Video to MP3 Converter - Convert Video to Audio Free",
-    description:
-      "Convert video files to MP3 audio format. Free video to MP3 converter tool.",
+    title: "Video to MP3 Converter (2026) - Free Tool",
+    description: "⚡ Convert any video file to MP3 audio instantly. Updated 2026!",
     images: ["/og-images/video-to-mp3-converter.jpg"],
   },
   alternates: {

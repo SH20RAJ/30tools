@@ -14,18 +14,25 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Compressor - Reduce PDF File Size Online | 30tools",
-  description:
-    "Compress PDF files online for free. Reduce file size while maintaining quality. Secure, fast, and no watermarks.",
-  keywords:
-    "pdf compressor, compress pdf, reduce pdf size, pdf optimizer, shrink pdf, online pdf compressor, free pdf compression, pdf size reducer",
+  title: "Free PDF Compressor (2026) - Reduce Size Online | 30Tools",
+  description: "Compress PDF documents online for free (Updated 2026). Reduce PDF size by up to 80% without quality loss. Secure, private & no watermarks.",
+  keywords: [
+    "pdf compressor 2026",
+    "compress pdf online free",
+    "reduce pdf size without losing quality",
+    "pdf size reducer online",
+    "shrink pdf file size free",
+    "online pdf optimizer",
+    "compress large pdf",
+    "updated 2026",
+    "pdf compression tool"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/pdf-compressor",
   },
   openGraph: {
-    title: "Free PDF Compressor - Reduce PDF File Size Online",
-    description:
-      "Compress PDF files online for free. Reduce file size while maintaining quality. Secure, fast, and no watermarks.",
+    title: "Free PDF Compressor (2026) - Reduce PDF Size Online",
+    description: "⚡ Compress PDF documents online for free! Reduce size by 80% with no quality loss (Updated 2026).",
     url: "https://30tools.com/pdf-compressor",
     siteName: "30tools",
     images: [
@@ -33,7 +40,7 @@ export const metadata = {
         url: "/og-images/pdf-compressor.jpg",
         width: 1200,
         height: 630,
-        alt: "PDF Compressor - 30tools",
+        alt: "Free PDF Compressor 2026 - Secure Tool",
       },
     ],
     locale: "en_US",
@@ -41,9 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free PDF Compressor - Reduce PDF File Size Online",
-    description:
-      "Compress PDF files online for free. Reduce file size while maintaining quality. Secure, fast, and no watermarks.",
+    title: "Free PDF Compressor (2026) - Secure Online Tool",
+    description: "⚡ Reduce PDF size online free. Updated 2026!",
     images: ["/og-images/pdf-compressor.jpg"],
     creator: "@30tools",
   },

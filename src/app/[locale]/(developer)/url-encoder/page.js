@@ -1,26 +1,40 @@
 import URLEncoder from "@/components/tools/developer/URLEncoderTool";
 
 export const metadata = {
-  title: "URL Encoder/Decoder - Encode and Decode URLs | 30tools",
-  description:
-    "Professional url encoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-  keywords:
-    "url encoder, url decoder, percent encoding, query parameters, url encoding, uri encoding",
+  title: "URL Encoder/Decoder (2026) - Online Tool | 30Tools",
+  description: "Encode & Decode URLs online instantly (Updated 2026). Convert text to percent-encoding for query parameters. Free tool for developers.",
+  keywords: [
+    "url encoder online",
+    "url decoder 2026",
+    "percent encoding tool",
+    "encode url string",
+    "decode uri component",
+    "query parameter encoder",
+    "updated 2026",
+    "web developer tools"
+  ].join(", "),
   openGraph: {
-    title: "URL Encoder/Decoder - Encode and Decode URLs | 30tools",
-    description: "Encode and decode URLs and query parameters.",
+    title: "URL Encoder/Decoder (2026) - Free Online Tool",
+    description: "⚡ Encode & Decode URLs content instantly! Handle query parameters & special characters (Updated 2026).",
+    url: "https://30tools.com/url-encoder",
+    siteName: "30tools",
     type: "website",
+    images: [
+      {
+        url: "/og-images/url-encoder.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Free URL Encoder 2026",
+      },
+    ],
   },
-
   twitter: {
     card: "summary_large_image",
-    title: "Url Encoder - Free Developer Tool | Professional Coding",
-    description:
-      "Professional url encoder for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+    title: "URL Encoder/Decoder (2026) - Free Tool",
+    description: "⚡ Encode and Decode URLs instantly. Updated 2026!",
     images: ["/og-images/url-encoder.jpg"],
     creator: "@30tools",
   },
-
   alternates: {
     canonical: "https://30tools.com/url-encoder",
   },

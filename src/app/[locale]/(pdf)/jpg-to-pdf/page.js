@@ -14,18 +14,25 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free JPG to PDF Converter - Convert Images to PDF | 30tools",
-  description:
-    "Convert JPG, PNG, and other images to PDF online for free. Combine multiple images into one PDF. Custom layouts, secure, and no watermarks.",
-  keywords:
-    "jpg to pdf, jpeg to pdf, png to pdf, image to pdf, convert jpg to pdf, photos to pdf, combine images to pdf, online pdf converter, free pdf tools",
+  title: "JPG to PDF Converter (2026) - Images to PDF Free | 30Tools",
+  description: "Convert JPG to PDF online for free (Updated 2026). Combine multiple images into one PDF document. Fast, secure & no limit. High quality output.",
+  keywords: [
+    "jpg to pdf converter 2026",
+    "convert image to pdf free",
+    "combine photos to pdf",
+    "jpeg to pdf online",
+    "png to pdf converter",
+    "image to pdf high quality",
+    "photos to pdf maker",
+    "updated 2026",
+    "create pdf from images"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/jpg-to-pdf",
   },
   openGraph: {
-    title: "Free JPG to PDF Converter - Convert Images to PDF",
-    description:
-      "Convert JPG, PNG, and other images to PDF online for free. Combine multiple images into one PDF. Custom layouts, secure, and no watermarks.",
+    title: "JPG to PDF Converter (2026) - Free Image to PDF Tool",
+    description: "⚡ Convert Images (JPG, PNG) to PDF online! Combine photos into one document free (Updated 2026).",
     url: "https://30tools.com/jpg-to-pdf",
     siteName: "30tools",
     images: [
@@ -33,7 +40,7 @@ export const metadata = {
         url: "/og-images/jpg-to-pdf.jpg",
         width: 1200,
         height: 630,
-        alt: "JPG to PDF Converter - 30tools",
+        alt: "JPG to PDF Converter 2026 - Free Tool",
       },
     ],
     locale: "en_US",
@@ -41,9 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free JPG to PDF Converter - Convert Images to PDF",
-    description:
-      "Convert JPG, PNG, and other images to PDF online for free. Combine multiple images into one PDF. Custom layouts, secure, and no watermarks.",
+    title: "JPG to PDF Converter (2026) - Free Tool",
+    description: "⚡ Convert JPG/PNG images to PDF online. Updated 2026!",
     images: ["/og-images/jpg-to-pdf.jpg"],
     creator: "@30tools",
   },

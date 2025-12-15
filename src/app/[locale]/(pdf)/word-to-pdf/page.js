@@ -14,18 +14,25 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Word to PDF Converter - Convert DOC/DOCX to PDF Free | 30tools",
-  description:
-    "Convert Word documents to PDF online for free. Supports DOC and DOCX formats. Preserves formatting, fonts, and images. Secure and fast.",
-  keywords:
-    "word to pdf, doc to pdf, docx to pdf, convert word to pdf, word to pdf converter, free word to pdf, online pdf converter, microsoft word to pdf",
+  title: "Word to PDF Converter (2026) - DOC/DOCX to PDF | 30Tools",
+  description: "Convert Word documents to PDF online for free (Updated 2026). Supports DOC & DOCX files. Preserves formatting, fonts & layout. Secure & Private.",
+  keywords: [
+    "word to pdf converter 2026",
+    "convert docx to pdf free",
+    "doc to pdf secure online",
+    "microsoft word to pdf",
+    "save word as pdf online",
+    "word document to pdf",
+    "free pdf processing",
+    "updated 2026",
+    "no watermarks"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/word-to-pdf",
   },
   openGraph: {
-    title: "Word to PDF Converter - Convert DOC/DOCX to PDF Free",
-    description:
-      "Convert Word documents to PDF online for free. Supports DOC and DOCX formats. Preserves formatting, fonts, and images. Secure and fast.",
+    title: "Word to PDF Converter (2026) - Free DOCX to PDF",
+    description: "⚡ Convert Word documents (DOC, DOCX) to PDF online! Preserves exact formatting (Updated 2026).",
     url: "https://30tools.com/word-to-pdf",
     siteName: "30tools",
     images: [
@@ -33,7 +40,7 @@ export const metadata = {
         url: "/og-images/word-to-pdf.jpg",
         width: 1200,
         height: 630,
-        alt: "Free Word to PDF Converter",
+        alt: "Word to PDF Converter 2026 - Free Tool",
       },
     ],
     locale: "en_US",
@@ -41,9 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Word to PDF Converter - Convert DOC/DOCX to PDF Free",
-    description:
-      "Convert Word documents to PDF online for free. Supports DOC and DOCX formats. Preserves formatting, fonts, and images. Secure and fast.",
+    title: "Word to PDF Converter (2026) - Free Tool",
+    description: "⚡ Convert DOC/DOCX to PDF online. formatting preserved. Updated 2026!",
     images: ["/og-images/word-to-pdf.jpg"],
     creator: "@30tools",
   },

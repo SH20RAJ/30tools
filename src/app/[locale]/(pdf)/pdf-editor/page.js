@@ -14,18 +14,25 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Editor - Edit, Rotate, and Manage PDF Pages | 30tools",
-  description:
-    "Edit PDF files online for free. Extract pages, delete pages, rotate pages, and manage your PDF documents securely in your browser.",
-  keywords:
-    "pdf editor, edit pdf online, delete pdf pages, extract pdf pages, rotate pdf pages, manage pdf, free pdf editor, modify pdf",
+  title: "Free PDF Editor (2026) - Edit Pages Online | 30Tools",
+  description: "Edit PDF documents online free (Updated 2026). Extract, delete, rotate, and reorder pages securely. No installation & no watermarks.",
+  keywords: [
+    "pdf editor 2026",
+    "edit pdf online free",
+    "delete pdf pages online",
+    "extract pages from pdf",
+    "rotate pdf pages permanent",
+    "manage pdf documents",
+    "free pdf organizer",
+    "updated 2026",
+    "modify pdf online"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/pdf-editor",
   },
   openGraph: {
-    title: "Free PDF Editor - Edit, Rotate, and Manage PDF Pages",
-    description:
-      "Edit PDF files online for free. Extract pages, delete pages, rotate pages, and manage your PDF documents securely in your browser.",
+    title: "Free PDF Editor (2026) - Edit & Manage Pages",
+    description: "⚡ Edit PDF files online: Extract, Delete, Rotate or Reorder pages! Free & Secure (Updated 2026).",
     url: "https://30tools.com/pdf-editor",
     siteName: "30tools",
     images: [
@@ -33,7 +40,7 @@ export const metadata = {
         url: "/og-images/pdf-editor.jpg",
         width: 1200,
         height: 630,
-        alt: "Free PDF Editor Tool",
+        alt: "Free PDF Editor 2026 - Online Tool",
       },
     ],
     locale: "en_US",
@@ -41,9 +48,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free PDF Editor - Edit, Rotate, and Manage PDF Pages",
-    description:
-      "Edit PDF files online for free. Extract pages, delete pages, rotate pages, and manage your PDF documents securely in your browser.",
+    title: "Free PDF Editor (2026) - Edit Pages Online",
+    description: "⚡ Edit, Rotate & Manage PDF pages online. Updated 2026!",
     images: ["/og-images/pdf-editor.jpg"],
     creator: "@30tools",
   },

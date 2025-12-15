@@ -1,58 +1,25 @@
 import TextCaseConverterTool from "@/components/tools/text/TextCaseConverterTool";
 
 export const metadata = {
-  title: "Text Case Converter - Free Online Converter | Instant Conversion",
-  description:
-    "Convert Process instantly with our free text case converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+  title: "Text Case Converter (2026) - Upper, Lower & Title Case | 30Tools",
+  description: "Convert text case online instantly (Updated 2026). Change to UPPERCASE, lowercase, Title Case, Sentence case & more. Free text transformer tool.",
   keywords: [
-    // Primary high-volume keywords
-    "text case converter",
-    "uppercase converter",
-    "lowercase converter",
-    "title case converter",
-    "sentence case converter",
-    "case converter",
-    "text converter",
-    "camel case converter",
-    "pascal case converter",
-    "snake case converter",
-    "kebab case converter",
-    "text case changer",
-    "case changer",
-    "text formatter",
-    "uppercase lowercase converter",
+    "text case converter 2026",
+    "uppercase to lowercase online",
     "title case generator",
-    "text case tool",
-    "case conversion tool",
-    "text transformation tool",
-    "alternating case converter",
-    "inverse case converter",
-    "text case online",
-    "case converter online",
-
-    // Long-tail keywords for SEO ranking
-    "text case converter online free no registration",
-    "uppercase lowercase converter bulk text processing",
-    "title case converter for headlines articles proper",
-    "sentence case converter proper capitalization grammar",
-    "text case changer multiple formats programming",
-    "camel case converter programming variables functions",
-    "pascal case converter coding standards classes",
-    "snake case converter underscore format python",
-    "kebab case converter dash separated css urls",
-    "alternating case converter spongebob mocking text",
-    "inverse case converter flip capitalization toggle",
-    "text formatter case conversion bulk processing",
-    "case converter for social media posts content",
-    "text case converter copy paste clipboard ready",
+    "sentence case converter",
+    "all caps converter",
+    "capitalize text online",
+    "camelcase converter",
+    "snake_case generator",
+    "updated 2026"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/text-case-converter",
   },
   openGraph: {
-    title: "Free Text Case Converter - UPPERCASE, lowercase, Title Case",
-    description:
-      "Convert text case instantly: UPPERCASE, lowercase, Title Case, camelCase, snake_case. Perfect for coding, writing, and text formatting.",
+    title: "Text Case Converter (2026) - UPPERCASE & lowercase Tool",
+    description: "⚡ Convert text case instantly: UPPERCASE, lowercase, Title Case & more! Free online tool (Updated 2026).",
     url: "https://30tools.com/text-case-converter",
     siteName: "30tools",
     images: [
@@ -60,7 +27,7 @@ export const metadata = {
         url: "/og-images/text-case-converter.jpg",
         width: 1200,
         height: 630,
-        alt: "Text Case Converter Tool - 30tools",
+        alt: "Text Case Converter 2026 - Free Tool",
       },
     ],
     locale: "en_US",
@@ -68,9 +35,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Text Case Converter - Transform Text Case",
-    description:
-      "Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case instantly. Free online tool.",
+    title: "Text Case Converter (2026) - Free Tool",
+    description: "⚡ Convert text to UPPERCASE, lowercase, Title Case instantly. Updated 2026!",
     images: ["/og-images/text-case-converter.jpg"],
     creator: "@30tools",
   },

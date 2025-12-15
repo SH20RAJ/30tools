@@ -14,34 +14,38 @@ import {
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 
 export const metadata = {
-  title: "Json Formatter - Free Developer Tool | Professional Coding",
-  description:
-    "Professional json formatter for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-  keywords:
-    "json formatter, json validator, json beautifier, json minifier, json parser, json syntax checker, format json online, validate json online, json pretty print, json editor online, json formatter and validator online free, json minifier and beautifier tool, json syntax checker with error detection, format json online no signup required, validate json format online free, json pretty print formatter, json parser and formatter online, json beautifier with tree view",
+  title: "JSON Formatter (2026) - Validator & Beautifier | 30Tools",
+  description: "Format, validate & minify JSON online (Updated 2026). Free JSON beautifier with error detection. Secure client-side processing for developers.",
+  keywords: [
+    "json formatter 2026",
+    "json validator online",
+    "json beautifier free",
+    "json minifier tool",
+    "format json code",
+    "json syntax checker",
+    "json pretty print",
+    "updated 2026",
+    "json parser online"
+  ].join(", "),
   openGraph: {
-    title:
-      "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON",
-    description:
-      "Professional JSON formatter, validator & minifier for developers. Format messy JSON, validate syntax errors, minify for production.",
+    title: "JSON Formatter (2026) - Free Validator & Beautifier",
+    description: "⚡ Format, Validate & Minify JSON instantly! Error detection & Tree view included (Updated 2026).",
     url: "https://30tools.com/json-formatter",
     siteName: "30tools",
+    type: "website",
     images: [
       {
         url: "/og-images/json-formatter.jpg",
         width: 1200,
         height: 630,
-        alt: "Free JSON Formatter & Validator Online",
+        alt: "Free JSON Formatter 2026",
       },
     ],
-    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Free JSON Formatter & Validator Online - Format, Minify, Validate JSON",
-    description:
-      "Professional JSON formatter, validator & minifier for developers. Perfect for API testing and development.",
+    title: "JSON Formatter (2026) - Free Developer Tool",
+    description: "⚡ Format and Validate JSON instantly. Updated 2026!",
     images: ["/og-images/json-formatter.jpg"],
     creator: "@30tools",
   },
@@ -60,17 +64,6 @@ export const metadata = {
     },
   },
   category: "Developer Tools",
-  other: {
-    "application-name": "30tools",
-    "mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "JSON Formatter - 30tools",
-    "format-detection": "telephone=no",
-    "msapplication-TileColor": "#000000",
-    "msapplication-config": "/browserconfig.xml",
-    "theme-color": "#000000",
-  },
 };
 
 export default function JSONFormatterPage() {

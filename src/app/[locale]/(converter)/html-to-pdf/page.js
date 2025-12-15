@@ -1,21 +1,37 @@
 import HTMLToPDF from "@/components/tools/converter/HTMLToPDFTool";
 
 export const metadata = {
-  title: "HTML to PDF Converter - Convert Web Pages to PDF | 30tools",
-  description:
-    "Convert Process instantly with our free html to pdf. High-quality conversion with privacy protection. No registration required, unlimited use.",
-  keywords:
-    "html to pdf, web page to pdf, convert html, webpage converter, pdf generator, i love pdf extract,online pdf combiner free,merge pdf gratis,pdf splitter online free,ilovepdf free,pdf love pdf,pdf join,ilovepdf dividir,ilovepdf 結合,ilovepdf عربي,i love to pdf,ilovepdf converter,i love my pdf converter,recortar pdf ilovepdf,we love pdf,i love pdf free,ilovepdf juntar,ilovepdf compresser,fusionner pdf ilovepdf,i live pdf,ilovepdf unire,word ke pdf gratis ilovepdf,pdf merge ilovepdf,i ilovepdf,ilovepdf edit pdf,pdf i love,i love pdf.com,love my pdf,ilovepdf editar pdf,word para pdf ilovepdf,ilovepdf jpg a pdf,pdf a imagen ilovepdf,jpg a pdf ilovepdf,i love pdf gratis,firmar pdf ilovepdf,pdf i love pdf,pdf a jpg ilovepdf,transformar pdf em word ilovepdf,pdf lovers,l love pdf,convertir pdf a word ilovepdf gratis,my love pdf,edit pdf ilovepdf,ilovepdf convertir,convert word to pdf ilovepdf,pdf ilovepdf,www.ilovepdf.com pdf,pdf para word ilovepdf,juntar pdf ilovepdf,ilovepdf 日本語,ilovepdf compressed,www.ilovepdf.com ​​​​,converter pdf em word ilovepdf,separar pdf ilovepdf,ilovepdf pdf to excel,gabung pdf ilovepdf,ilovepdf jpg to pdf,ilovepdf editar,ilov,i heart pdf,i love pdf en ligne,love pdf,dividir pdf ilovepdf,ilovepdf split,pdf to jpg ilovepdf,jpeg to pdf ilovepdf,ilovepdf pdf to jpg,pdf lover,i love pdf français,in love pdf,ilovepdf merge pdf,jpg to pdf ilovepdf,pdflove,ilovepdf comprimir,word to pdf converter ilovepdf,ilovepdf fusionner,da pdf a word ilovepdf,ipdf,convert word to pdf online,editar pdf ilovepdf,ilovepdf在线转换,convert pdf to word ilovepdf,ilovepdf.com,merge pdf ilovepdf,ilovepdf gratis,word to pdf ilovepdf,ilovepdf compress,ilovepdf juntar pdf,ilovepdf to word,pdf tools,ilovepdf edit,i love you pdf,comprimir pdf ilovepdf,ilovepdf word to pdf,love pdf converter,i love pdf merge pdf,yo amo pdf,pdf a word ilovepdf,ilovepdf online,i love pdf español,i love pdfs,ilovepdf pdf,ilovepdf español,ilovepdf en français,pdf to word converter ilovepdf,ilovepdf unir,我爱pdf,ilovepdf unir pdf,merge pdf i love pdf,de pdf a word ilovepdf,i love pdf unir,ilovepdf português,i love pdf gratuit,ilovepdf pdf a word,pdf to word ilovepdf,pdf to word free,convert pdf to word free,ilovepdf pdf para word,convert to pdf,pdf creator,separar pdf,pdf combiner,ilovepdf en español,i love pdf converter,ilovepdf在线转换官网,i lovepdf,unir pdf ilovepdf,i love,i love my pdf,ilovepdf merge,convert pdf to jpg,ilove,i love pdf merge,love,pdf love,pdf merge,pdf converter,convert word to pdf,combine pdf,ilovepdf pdf to word,pdf merger,i love pdf to word,ilove pdf,unir pdf,convert pdf to word,merge pdf,pdf to word converter,pdf,pdf to word,i love pdf",
+  title: "HTML to PDF Converter (2026) - Save Webpage as PDF | 30Tools",
+  description: "Convert webpages & HTML to PDF online (Updated 2026). Save any website as PDF document. Capture full page screenshots. Fast & Free API.",
+  keywords: [
+    "html to pdf converter 2026",
+    "webpage to pdf online",
+    "save website as pdf",
+    "url to pdf converter",
+    "html string to pdf",
+    "updated 2026",
+    "developer pdf tool",
+    "convert html file to pdf"
+  ].join(", "),
   openGraph: {
-    title: "HTML to PDF Converter - Convert Web Pages to PDF | 30tools",
-    description: "Convert HTML pages and content to PDF format.",
+    title: "HTML to PDF Converter (2026) - Free Webpage Saver",
+    description: "⚡ Convert any URL or HTML to PDF instantly! Save full webpages as PDF documents (Updated 2026).",
+    url: "https://30tools.com/html-to-pdf",
+    siteName: "30tools",
     type: "website",
+    images: [
+      {
+        url: "/og-images/html-to-pdf.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Free HTML to PDF Converter 2026",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Html To Pdf - Free Online Converter | Instant Conversion",
-    description:
-      "Convert Process instantly with our free html to pdf. High-quality conversion with privacy protection. No registration required, unlimited use.",
+    title: "HTML to PDF Converter (2026) - Save Webpages",
+    description: "⚡ Convert HTML & URLs to PDF instantly. Updated 2026!",
     images: ["/og-images/html-to-pdf.jpg"],
     creator: "@30tools",
   },

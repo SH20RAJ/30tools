@@ -1,53 +1,22 @@
 import MP4ToMP3Converter from "@/components/tools/converter/MP4ToMP3Converter";
 
 export const metadata = {
-  title: "Mp4 To Mp3 Converter - Free Online Converter | Instant Conversion",
-  description:
-    "Convert Process instantly with our free mp4 to mp3 converter. High-quality conversion with privacy protection. No registration required, unlimited use.",
+  title: "MP4 to MP3 Converter (2026) - Extract Audio Free | 30Tools",
+  description: "Convert MP4 to MP3 online free (Updated 2026). Extract high quality audio (320kbps) from video. Fast, secure & unlimited. No watermarks.",
   keywords: [
-    // Primary MP4 to MP3 keywords
-    "mp4 to mp3 converter",
-    "convert mp4 to mp3",
-    "mp4 to mp3 online",
-    "mp4 audio extractor",
-    "mp4 to mp3 free",
-    "extract audio from mp4",
-    "mp4 to mp3 converter online",
-    "free mp4 to mp3 converter",
-    "mp4 video to mp3 audio",
-    "mp4 mp3 converter",
-
-    // Long-tail SEO keywords
-    "mp4 to mp3 converter online free",
-    "convert mp4 to mp3 high quality",
-    "mp4 to mp3 converter 320kbps",
-    "bulk mp4 to mp3 converter",
-    "mp4 to mp3 converter no watermark",
-    "fast mp4 to mp3 converter",
-    "mp4 to mp3 converter for pc mobile",
-    "extract audio from mp4 video",
-    "mp4 to mp3 converter without software",
-    "professional mp4 to mp3 converter",
-
-    // International keywords
-    "convertir mp4 a mp3",
-    "converter mp4 para mp3",
-    "convertir mp4 en mp3",
-    "تحويل mp4 الى mp3",
-    "convertire mp4 in mp3",
-    "chuyển đổi mp4 sang mp3",
-
-    // Quality specific
-    "mp4 to mp3 320kbps",
+    "mp4 to mp3 converter 2026",
+    "convert mp4 to mp3 free",
+    "audio extractor from video",
+    "mp4 audio ripper",
+    "video to audio converter 320kbps",
     "mp4 to mp3 high quality",
-    "mp4 to mp3 lossless",
-    "mp4 to mp3 hd audio",
-    "mp4 to mp3 stereo",
+    "updated 2026",
+    "extract sound from mp4",
+    "online mp4 converter"
   ].join(", "),
   openGraph: {
-    title: "MP4 to MP3 Converter - Convert MP4 Video to MP3 Audio Free",
-    description:
-      "Convert MP4 video files to MP3 audio format. Extract high-quality audio from MP4 videos online.",
+    title: "MP4 to MP3 Converter (2026) - Free Audio Extractor",
+    description: "⚡ Convert MP4 video to MP3 audio instantly! High quality 320kbps extraction. Free & Unlimited (Updated 2026).",
     url: "https://30tools.com/mp4-to-mp3",
     siteName: "30tools",
     type: "website",
@@ -56,15 +25,14 @@ export const metadata = {
         url: "/og-images/mp4-to-mp3-converter.jpg",
         width: 1200,
         height: 630,
-        alt: "MP4 to MP3 Converter - Free Online Tool",
+        alt: "Free MP4 to MP3 Converter 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "MP4 to MP3 Converter - Convert MP4 to Audio Free",
-    description:
-      "Convert MP4 video files to MP3 audio format. Free MP4 to MP3 converter tool.",
+    title: "MP4 to MP3 Converter (2026) - Free Tool",
+    description: "⚡ Convert MP4 to high quality MP3 audio. Updated 2026!",
     images: ["/og-images/mp4-to-mp3-converter.jpg"],
   },
   alternates: {

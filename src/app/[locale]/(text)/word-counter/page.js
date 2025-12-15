@@ -1,38 +1,24 @@
 import WordCounterTool from "@/components/tools/text/WordCounterTool";
 
 export const metadata = {
-  title: "Word Counter - Free Online Word & Character Counter | 30tools",
-  description: "Count words, characters, sentences, and paragraphs instantly. Free word counter tool with reading time estimate. Perfect for essays, blog posts, SEO content & social media.",
+  title: "Word Counter (2026) - Count Words & Characters | 30Tools",
+  description: "Free online word counter (Updated 2026). Count words, characters, sentences & paragraphs in real-time. Check limits for Twitter, Instagram & Essays.",
   keywords: [
-    // Primary high-volume keywords (Bing exact-match)
-    "word counter",
-    "character counter",
-    "word count",
-    "character count",
-    "online word counter",
-    "word counter online",
-    "text counter",
-    "count words",
-    "letter counter",
-    "word count tool",
-
-    // Long-tail keywords for Bing ranking
-    "word counter online free unlimited no sign up",
-    "character counter with spaces without spaces",
-    "word count for essay assignment homework paper",
-    "paragraph counter sentence counter online free",
-    "reading time calculator word count estimate",
-    "twitter character counter 280 limit checker",
-    "instagram caption character limit counter",
-    "seo word count tool content length checker",
-    "word frequency counter text analyzer tool",
-    "copy paste word counter real time counting",
-    "microsoft word character count alternative",
-    "google docs word count tool online free"
+    "word counter 2026",
+    "character count online",
+    "word count tool free",
+    "sentence counter",
+    "paragraph counter",
+    "twitter character limit checker",
+    "instagram caption length",
+    "essay word count checker",
+    "real time word counter",
+    "updated 2026",
+    "text analyzer free"
   ].join(", "),
   openGraph: {
-    title: "Free Word Counter - Count Words & Characters Online",
-    description: "📝 Count words, characters, sentences & paragraphs instantly. Reading time estimate included. Free & unlimited!",
+    title: "Word Counter (2026) - Free Real-Time Tool",
+    description: "⚡ Count words & characters instantly! Perfect for Essays, Twitter & SEO (Updated 2026).",
     url: "https://30tools.com/word-counter",
     siteName: "30tools",
     type: "website",
@@ -40,13 +26,13 @@ export const metadata = {
       url: "/og-images/word-counter.jpg",
       width: 1200,
       height: 630,
-      alt: "Word Counter - Free Online Word & Character Counter"
+      alt: "Free Word Counter 2026 - Online Tool"
     }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Word Counter - Count Words & Characters Free",
-    description: "📝 Count words, characters, sentences & paragraphs. Free online tool with reading time estimate!",
+    title: "Word Counter (2026) - Free Online Tool",
+    description: "⚡ Count words, characters & sentences in real-time. Updated 2026!",
     images: ["/og-images/word-counter.jpg"],
     creator: "@30tools"
   },
