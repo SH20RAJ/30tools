@@ -795,6 +795,36 @@
           ],
           "popular": true,
           "category": "video"
+        },
+        {
+          "id": "facebook-downloader",
+          "name": "Facebook Video Downloader",
+          "description": "Download Facebook videos, Reels, and Stories in HD/4K quality",
+          "route": "/facebook-downloader",
+          "extraSlugs": [
+            "fb-video-saver",
+            "facebook-reels-downloader",
+            "download-fb-video",
+            "facebook-story-saver",
+            "save-facebook-video"
+          ],
+          "popular": true,
+          "category": "video"
+        },
+        {
+          "id": "reddit-downloader",
+          "name": "Reddit Video Downloader",
+          "description": "Download Reddit videos with audio in HD quality",
+          "route": "/reddit-downloader",
+          "extraSlugs": [
+            "reddit-video-saver",
+            "save-reddit-video",
+            "download-reddit-video",
+            "reddit-mp4-downloader",
+            "reddit-media-saver"
+          ],
+          "popular": true,
+          "category": "video"
         }
       ]
     },

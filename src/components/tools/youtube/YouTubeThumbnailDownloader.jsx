@@ -219,9 +219,9 @@ export default function YouTubeThumbnailDownloader() {
       <div className="space-y-8">
         {/* Title and Description */}
         <div className="text-center space-y-4">
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground">
             YouTube Thumbnail Extractor
-          </h1>
+          </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Download YouTube Thumbnails in All Sizes. Extract high-quality
             thumbnails from any YouTube video in seconds!

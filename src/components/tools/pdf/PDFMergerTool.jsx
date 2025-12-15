@@ -209,9 +209,9 @@ export default function PDFMergerTool() {
               <FileTextIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">
+              <h2 className="text-3xl font-bold">
                 PDF Merger - Free Online PDF Combiner
-              </h1>
+              </h2>
               <p className="text-muted-foreground">
                 Merge PDF files free, combine multiple PDF documents into one
                 file, join PDFs online

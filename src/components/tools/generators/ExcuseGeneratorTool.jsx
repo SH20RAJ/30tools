@@ -347,7 +347,7 @@ Style: ${believabilityLevel === "low" ? "Absurd and funny" : believabilityLevel 
     const believabilityLevels = Object.keys(BELIEVABILITY_LEVELS);
     const randomBelievability =
       believabilityLevels[
-        Math.floor(Math.random() * believabilityLevels.length)
+      Math.floor(Math.random() * believabilityLevels.length)
       ];
 
     setSelectedCategory(randomCategory);
@@ -374,9 +374,9 @@ Style: ${believabilityLevel === "low" ? "Absurd and funny" : believabilityLevel 
               <SmileIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-background">
+              <h2 className="text-3xl font-bold bg-background">
                 Excuse Generator
-              </h1>
+              </h2>
               <p className="text-muted-foreground">
                 Generate creative excuses for any situation (use responsibly!
                 😅)

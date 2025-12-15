@@ -174,9 +174,9 @@ export default function YouTubeTagExtractor() {
             <div className="text-center space-y-3">
                 <div className="flex items-center justify-center gap-2">
                     <Tags className="h-10 w-10 text-red-600 dark:text-red-400" />
-                    <h1 className="text-4xl font-bold text-foreground dark:text-white">
+                    <h2 className="text-4xl font-bold text-foreground dark:text-white">
                         YouTube Tag Extractor
-                    </h1>
+                    </h2>
                 </div>
                 <div className="inline-block">
                     <Badge variant="secondary" className="text-sm px-4 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">

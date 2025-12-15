@@ -193,9 +193,9 @@ export default function YouTubeSummaryGenerator() {
     <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-foreground dark:text-white">
+        <h2 className="text-3xl font-bold text-foreground dark:text-white">
           AI YouTube Summary Generator
-        </h1>
+        </h2>
         <p className="text-muted-foreground dark:text-gray-300">
           Generate intelligent summaries of YouTube videos using AI. Extract key
           insights, topics, and takeaways.
@@ -552,14 +552,13 @@ Generated: ${new Date(summaryData.generatedAt).toLocaleString()}
 SUMMARY:
 ${summaryData.summary}
 
-${
-  summaryData.keywords && summaryData.keywords.length > 0
-    ? `
+${summaryData.keywords && summaryData.keywords.length > 0
+                              ? `
 KEYWORDS:
 ${summaryData.keywords.join(", ")}
 `
-    : ""
-}
+                              : ""
+                            }
 
 ORIGINAL TRANSCRIPT:
 ${summaryData.originalTranscript}`;

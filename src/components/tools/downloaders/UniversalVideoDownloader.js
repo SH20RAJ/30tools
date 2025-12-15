@@ -148,9 +148,9 @@ export default function UniversalVideoDownloader() {
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full">
           <Play className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-3xl md:text-4xl font-bold text-foreground">
+        <h2 className="text-3xl md:text-4xl font-bold text-foreground">
           Universal Video Downloader
-        </h1>
+        </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Download videos from TikTok, Facebook, Instagram, Twitter/X, YouTube,
           Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, Rumble and more

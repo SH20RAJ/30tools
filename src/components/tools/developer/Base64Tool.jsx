@@ -155,7 +155,7 @@ export default function Base64Tool() {
           <CodeIcon className="h-6 w-6 text-primary" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold">Base64 Encoder/Decoder</h1>
+          <h2 className="text-3xl font-bold">Base64 Encoder/Decoder</h2>
           <p className="text-muted-foreground">
             Encode and decode text and files to/from Base64 format
           </p>

@@ -156,9 +156,9 @@ export default function YouTubeSubtitlesDownloader() {
     <div className="w-full max-w-6xl mx-auto p-6 space-y-6">
       {/* Header */}
       <div className="text-center space-y-2">
-        <h1 className="text-3xl font-bold text-foreground dark:text-white">
+        <h2 className="text-3xl font-bold text-foreground dark:text-white">
           YouTube Subtitles Downloader
-        </h1>
+        </h2>
         <p className="text-muted-foreground dark:text-gray-300">
           Download and convert YouTube video subtitles to multiple formats (TXT,
           SRT, VTT, JSON, CSV)
