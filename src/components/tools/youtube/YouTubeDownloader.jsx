@@ -402,7 +402,7 @@ export default function YouTubeDownloader() {
                 Your Heart Keeps This Tool Beating for Everyone
               </h3>
               <p className="text-sm text-rose-800/80 dark:text-rose-200/70">
-                Every small act of kindness ensures this essential resource remains free and accessible, for you and countless others who rely on it.
+                Every small act of kindness ensures this essential resource remains free and accessible. Even Rs. 11 or $5 can help.
               </p>
             </div>
           </div>
