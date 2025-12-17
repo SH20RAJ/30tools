@@ -289,7 +289,7 @@ export default async function RootLayout({ children, params }) {
             <StructuredData includeFAQ={false} />
             {children}
             <PWAInstallPrompt />
-            <SocialRedirect />
+            {/* <SocialRedirect /> */}
             <Toaster />
             <a
               className="sr-only"

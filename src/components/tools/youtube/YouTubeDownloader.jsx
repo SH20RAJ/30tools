@@ -1,13 +1,7 @@
 "use client";
-import { useState, useEffect } from "react";
-import Script from "next/script";
-import Link from "next/link";
+import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {
-  Card,
-  CardContent,
-} from "@/components/ui/card";
 import {
   Download,
   Video,
@@ -34,7 +28,8 @@ export default function YouTubeDownloader() {
   const [bookmarkedUrls, setBookmarkedUrls] = useState([]);
   const [showBookmarks, setShowBookmarks] = useState(false);
 
-  const handlePWAInstall = async () => {
+  /* Renamed to fix reference error */
+  const executePWAInstall = useCallback(async () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     if (isIOS) {
@@ -56,7 +51,7 @@ export default function YouTubeDownloader() {
     } else {
       toast.info("Install option not available");
     }
-  };
+  }, [deferredPrompt]);
 
   useEffect(() => {
     // Load bookmarked URLs
@@ -148,6 +143,7 @@ export default function YouTubeDownloader() {
         const formatObj = {
           quality: item.mediaQuality || (isAudio ? "Audio" : "Video"),
           fileSize: item.mediaFileSize || "",
+
           // We store the mediaUrl as the specific ID needed for step 2
           downloadUrl: item.mediaUrl,
           hasAudio: true, // simplified assumption or checked via item.mediaTask
@@ -178,51 +174,102 @@ export default function YouTubeDownloader() {
   };
 
 
+
+
+  /* Restored Helper Functions */
+
   const handleProcessDownload = async (mediaUrl, filename) => {
     if (!mediaUrl) return;
 
-    // Set loading state for this specific action if needed, or global
-    // Using a simple toast or state to show processing
+    // Set loading state (the button that called this)
+    setDownloadingFormat(mediaUrl);
     const toastId = toast.loading("Processing download link...");
 
     try {
       // 2. Fetch specific download link via same proxy
-      const res = await fetch("/api/proxy/ytdown", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url: mediaUrl }),
-      });
+      // We might need to poll if the status is "In Processing..."
+      let attempts = 0;
+      const maxAttempts = 30; // 30 * 2s = 60s timeout aprox
+      let processing = true;
 
-      if (!res.ok) throw new Error("Failed to get download link");
+      while (processing && attempts < maxAttempts) {
+        attempts++;
+        const res = await fetch("/api/proxy/ytdown", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url: mediaUrl }),
+        });
 
-      const data = await res.json();
+        if (!res.ok) throw new Error("Failed to get download link");
 
-      if (data.api && data.api.fileUrl) {
-        toast.dismiss(toastId);
-        toast.success("Download starting...");
+        const data = await res.json();
 
-        // Trigger download
-        const link = document.createElement("a");
-        link.href = data.api.fileUrl;
-        link.target = "_blank"; // Or _self if strictly attachment
-        link.style.display = "none";
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-      } else {
-        throw new Error("Download link not found");
+        // Check structure based on user report:
+        // { api: { percent: "0%" or "Completed", fileUrl: "In Processing..." or "https://..." } }
+
+        if (data.api) {
+          const { percent, fileUrl } = data.api;
+
+          if (fileUrl === "In Processing..." || percent !== "Completed") {
+            // Still processing
+            toast.loading(`Processing... ${percent || ""}`, { id: toastId });
+            // Wait 2 seconds before retry
+            await new Promise(r => setTimeout(r, 2000));
+          } else if (fileUrl && fileUrl.startsWith("http")) {
+            // Completed
+            processing = false;
+            toast.dismiss(toastId);
+            toast.success("Download starting...");
+
+            // Trigger download
+            const link = document.createElement("a");
+            link.href = fileUrl;
+            link.target = "_blank";
+            link.style.display = "none";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            return; // Success exit
+          } else {
+            // Unexpected state?
+            // If percent is "Completed" but fileUrl is weird, might be done or error
+            if (percent === "Completed" && fileUrl) {
+              // assume success if URL exists
+              processing = false;
+              toast.dismiss(toastId);
+              toast.success("Download starting...");
+              const link = document.createElement("a");
+              link.href = fileUrl;
+              link.target = "_blank";
+              link.style.display = "none";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+              return;
+            }
+            // Otherwise continue?
+            await new Promise(r => setTimeout(r, 2000));
+          }
+        } else {
+          throw new Error("Invalid response from server");
+        }
+      }
+
+      if (processing) {
+        throw new Error("Download verification timed out.");
       }
 
     } catch (err) {
       console.error(err);
       toast.dismiss(toastId);
       toast.error("Failed to generate download link. Try again.");
+    } finally {
+      // Clear loading state
+      setDownloadingFormat(null);
     }
   };
 
-  /* Restored Helper Functions */
-
-  const toggleBookmark = () => {
+  const handleBookmark = () => {
     if (!url.trim()) {
       toast.error("Please enter a YouTube URL to bookmark");
       return;
@@ -325,7 +372,7 @@ export default function YouTubeDownloader() {
             {url.trim() && (
               <button
                 type="button"
-                onClick={toggleBookmark}
+                onClick={handleBookmark}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors p-2"
                 title={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
               >
@@ -393,7 +440,7 @@ export default function YouTubeDownloader() {
       {showPWAButton && (
         <div className="flex justify-center mb-8">
           <Button
-            onClick={handlePWAInstall}
+            onClick={executePWAInstall}
             variant="outline"
             className="gap-2 rounded-full border-primary/20 hover:bg-primary/5 text-primary"
           >
@@ -457,10 +504,15 @@ export default function YouTubeDownloader() {
                     <Button
                       size="sm"
                       onClick={() => handleDownload(format.downloadUrl)}
+                      disabled={downloadingFormat !== null}
                       className="rounded-lg gap-2"
                     >
-                      <Download className="w-4 h-4" />
-                      Get Video
+                      {downloadingFormat === format.downloadUrl ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <Download className="w-4 h-4" />
+                      )}
+                      {downloadingFormat === format.downloadUrl ? "Processing" : "Get Video"}
                     </Button>
                   </div>
                 ))}
@@ -485,10 +537,15 @@ export default function YouTubeDownloader() {
                         size="sm"
                         variant="secondary"
                         onClick={() => handleDownload(format.downloadUrl)}
+                        disabled={downloadingFormat !== null}
                         className="rounded-lg gap-2"
                       >
-                        <Download className="w-4 h-4" />
-                        Get Audio
+                        {downloadingFormat === format.downloadUrl ? (
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <Download className="w-4 h-4" />
+                        )}
+                        {downloadingFormat === format.downloadUrl ? "Processing" : "Get Audio"}
                       </Button>
                     </div>
                   ))
@@ -502,10 +559,15 @@ export default function YouTubeDownloader() {
                       size="sm"
                       variant="secondary"
                       onClick={() => handleDownload(videoData.audioUrl || videoData.downloadUrl)}
+                      disabled={downloadingFormat !== null}
                       className="rounded-lg gap-2"
                     >
-                      <Download className="w-4 h-4" />
-                      Get Audio
+                      {downloadingFormat === (videoData.audioUrl || videoData.downloadUrl) ? (
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                      ) : (
+                        <Download className="w-4 h-4" />
+                      )}
+                      {downloadingFormat === (videoData.audioUrl || videoData.downloadUrl) ? "Processing" : "Get Audio"}
                     </Button>
                   </div>
                 )}

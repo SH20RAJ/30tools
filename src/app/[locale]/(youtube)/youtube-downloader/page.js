@@ -364,6 +364,11 @@ export default function YouTubeDownloaderPage() {
                 TikTok Downloader
               </span>
             </Link>
+            <a href="https://unstory.live/" target="_blank" rel="noopener noreferrer">
+              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-colors border border-transparent hover:border-border cursor-pointer">
+                Unstory
+              </span>
+            </a>
           </div>
         </div>
 
