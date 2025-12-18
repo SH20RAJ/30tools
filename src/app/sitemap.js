@@ -138,7 +138,7 @@ export default function sitemap() {
     "utilities",
     "audio",
   ].map((category) => ({
-    url: `${BASE_URL}/tools/${category}`,
+    url: `${BASE_URL}/${category}-tools`,
     lastModified: currentDate,
     changeFrequency: "weekly",
     priority: 0.85,

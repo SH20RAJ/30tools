@@ -185,11 +185,7 @@ const pwaConfig = withPWA({
   ],
 });
 
-import createNextIntlPlugin from 'next-intl/plugin';
-
-const withNextIntl = createNextIntlPlugin();
-
-export default pwaConfig(withNextIntl(nextConfig));
+export default pwaConfig(nextConfig);
 
 // added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";

@@ -1,12 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
-import createMiddleware from 'next-intl/middleware';
-import { routing } from './i18n/routing';
 import toolsData from "./constants/tools.json";
 
-// Initialize next-intl middleware
-const handleI18nRouting = createMiddleware(routing);
-
-// Slug Logic (ported from legacy middleware)
+// Slug Logic
 const slugMap = new Map<string, string>();
 try {
     // @ts-ignore
@@ -29,41 +24,22 @@ try {
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // Helper to extract locale and inner path
-    let pathToCheck = pathname;
-    let localePrefix = '';
-
-    // Check if path starts with a supported locale
-    const locales = routing.locales;
-    for (const locale of locales) {
-        if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
-            localePrefix = `/${locale}`;
-            pathToCheck = pathname.replace(`/${locale}`, '') || '/';
-            break;
-        }
-    }
-
     // Check for "extra slugs" (legacy custom routes)
-    if (slugMap.has(pathToCheck)) {
-        const canonicalRoute = slugMap.get(pathToCheck);
+    if (slugMap.has(pathname)) {
+        const canonicalRoute = slugMap.get(pathname);
 
         // Construct new URL with canonical route
         const newUrl = request.nextUrl.clone();
-
-        // Preserve locale prefix if present
-        newUrl.pathname = `${localePrefix}${canonicalRoute}`;
+        newUrl.pathname = canonicalRoute!;
 
         // Pass original slug as query param
-        const originalSlug = pathToCheck.startsWith("/") ? pathToCheck.slice(1) : pathToCheck;
+        const originalSlug = pathname.startsWith("/") ? pathname.slice(1) : pathname;
         newUrl.searchParams.set("slug", originalSlug);
 
-        // Pass the REWRITTEN request to next-intl
-        // next-intl will see the canonical path (e.g., /tool/tiktok) and handle mapping to [locale]
-        return handleI18nRouting(new NextRequest(newUrl, request));
+        return NextResponse.rewrite(newUrl);
     }
 
-    // Standard handling
-    return handleI18nRouting(request);
+    return NextResponse.next();
 }
 
 export const config = {

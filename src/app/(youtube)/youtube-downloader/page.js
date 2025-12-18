@@ -25,7 +25,7 @@ import Link from "next/link";
 
 // dynamic metadata generation
 export const metadata = {
-  title: "Free YouTube Downloader (2026) - 4K Video & MP3 | Updated",
+  title: "Free YouTube Downloader (2026) - 4K Video & MP3 | 30tools",
   description: "Fastest YouTube Downloader 2026. Download YouTube videos in 4K, 1080p, and MP3 instantly. No software required, no ads, 100% free and secure.",
   keywords: [
     "youtube downloader",

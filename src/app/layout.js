@@ -1,11 +1,4 @@
 import { Open_Sans } from "next/font/google";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { routing } from '@/i18n/routing';
-
-export function generateStaticParams() {
-  return routing.locales.map((locale) => ({ locale }));
-}
 
 import PWAInstallPrompt from "@/components/PWAInstallPrompt";
 import SocialRedirect from "@/components/shared/SocialRedirect";
@@ -180,12 +173,9 @@ export const metadata = {
   },
 };
 
-export default async function RootLayout({ children, params }) {
-  const { locale } = await params;
-  const messages = await getMessages();
-
+export default async function RootLayout({ children }) {
   return (
-    <html lang={locale}>
+    <html lang="en">
       <head>
         <meta name="theme-color" content="#000000" />
         <meta
@@ -284,24 +274,22 @@ export default async function RootLayout({ children, params }) {
         />
       </head>
       <body className={`${openSans.variable} font-sans antialiased`}>
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <StructuredData includeFAQ={false} />
-            {children}
-            <PWAInstallPrompt />
-            {/* <SocialRedirect /> */}
-            <Toaster />
-            <a
-              className="sr-only"
-              href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
-            >
-              <img
-                src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
-                alt="Visitor badge"
-              />
-            </a>
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <StructuredData includeFAQ={false} />
+          {children}
+          <PWAInstallPrompt />
+          {/* <SocialRedirect /> */}
+          <Toaster />
+          <a
+            className="sr-only"
+            href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
+          >
+            <img
+              src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
+              alt="Visitor badge"
+            />
+          </a>
+        </ThemeProvider>
 
         <script
           defer
