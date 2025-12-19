@@ -22,23 +22,15 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 
 // dynamic metadata generation
 export const metadata = {
-  title: "Free YouTube Downloader (2026) - 4K Video & MP3 | 30tools",
-  description: "Fastest YouTube Downloader 2026. Download YouTube videos in 4K, 1080p, and MP3 instantly. No software required, no ads, 100% free and secure.",
+  title: "YouTube Video Downloader - 100% Free Online YT Downloader (2026)",
+  description: "The best free YouTube downloader for computer and mobile. Download YouTube videos online in 4K, 1080p, and MP3 instantly. No software required, no ads, 100% free and secure YT video downloader.",
   keywords: [
-    "youtube downloader",
-    "youtube to mp3",
-    "youtube to mp4",
-    "4k video downloader",
-    "youtube video saver",
-    "free youtube downloader",
-    "online video downloader",
-    "mp3 converter",
-    "video downloader 2026",
-    "no watermarks"
-  ],
+    "clipto ai youtube downloader", "free youtube downloader for computer", "best youtube downloader", "savenet youtube downloader", "download youtube free", "free online youtube downloader", "youtube downloader pc", "savefrom.net youtube downloader", "telecharger video youtube en ligne", "download video from youtube free", "video youtube downloader", "youtube downloader app", "gen youtube downloader", "youtube downloader online free", "free youtube download", "free youtube downloader online", "ymate youtube downloader", "savefrom youtube downloader", "downloader youtube video", "youtube downloader free online", "youtube视频解析", "youtube link downloader", "youtube video download free", "download youtube video online", "youtube download online", "youtube downloader hd", "youtubedownloader", "you tube downloader", "free download youtube", "download youtube video free", "descargar de youtube", "youtube online downloader", "youtube video download online", "ssyoutube.com downloader", "youtube free downloader", "youtube free download", "download yt video", "download youtube videos online", "descargador de videos de youtube", "download youtube videos free", "yt video download", "bajar videos de youtube", "ytdownloader", "youtube videos downloader", "online youtube downloader", "downloader youtube", "youtube download free", "youtube downloader video", "油管视频下载", "yt download", "video download", "video downloader free", "télécharger vidéo youtube", "free youtube video downloader", "youtube download video", "video downloader youtube", "free video downloader", "download video from youtube", "descargar video youtube", "descargar videos", "youtube downloader for pc", "download video", "youtube downloader free download", "ssyoutube", "free youtube downloader", "descargar videos de youtube gratis", "download from youtube", "telecharger video youtube", "youtube video downloader free", "скачать видео с ютуба", "youtube downloader online", "save from youtube", "youtube downloader free", "youtube video downloader online", "savefrom youtube", "descargar video de youtube", "youtube视频下载", "download youtube video", "youtube下载", "yt downloader", "yt video downloader", "youtube video download", "descargar videos youtube", "save from net", "download youtube videos", "download video youtube", "savefrom", "savefrom.net", "download youtube", "descargar videos de youtube", "video downloader", "youtube converter", "youtube download", "youtube video downloader", "youtube downloader", "youtube", "video downloader youtube free", "turboscribe youtube video downloader free", "savefrom net youtube video downloader free", "youtube videos downloader free", "youtube free downloader online", "video downloader from youtube", "video downloader free for youtube", "download youtube video for free", "youtube hd downloader", "online youtube video downloader free", "youtube download online free", "snapsave youtube", "free youtube video downloader online", "free video downloader youtube", "download video youtube free", "youtubedownload", "you tube video download", "free download youtube video", "sss youtube", "youtube free video downloader", "youtube video downloader free online", "socialplug yt downloader", "youtube video downloader hd", "online video downloader youtube", "youtube video free download", "download youtube videos for free", "downloader video youtube", "free downloading videos from youtube", "ss downloader", "download youtube videos online free", "save from network youtube downloader"
+  ].join(", "),
   authors: [{ name: "30Tools Team" }],
   creator: "30Tools",
   publisher: "30Tools",
@@ -46,8 +38,8 @@ export const metadata = {
     canonical: "https://30tools.com/youtube-downloader",
   },
   openGraph: {
-    title: "Free YouTube Downloader (2026) - Download 4K Video & MP3",
-    description: "Download YouTube videos and audio in seconds. 100% Free, Secure, and High Quality (4K). No installation needed.",
+    title: "Best Free YouTube Video Downloader (2026) - 4K & MP3",
+    description: "Download YouTube videos and audio in high definition. Fast, secure, and 100% free YouTube downloader online. No installation needed.",
     url: "https://30tools.com/youtube-downloader",
     siteName: "30Tools",
     locale: "en_US",
@@ -57,27 +49,16 @@ export const metadata = {
         url: "/og-images/youtube-downloader.png",
         width: 1200,
         height: 630,
-        alt: "Best Free YouTube Downloader 2026",
+        alt: "Free Online YouTube Video Downloader 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free YouTube Downloader - 4K & MP3",
-    description: "Fastest way to download YouTube videos. No ads, no install.",
+    title: "Free YouTube Downloader Online - Download YT Videos",
+    description: "Lightning-fast YT video downloader. No software, no ads, no install.",
     images: ["/og-images/youtube-downloader.png"],
     creator: "@30tools",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
   },
 };
 
@@ -90,7 +71,9 @@ const jsonLdSchemas = {
   webApp: {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "YouTube Video Downloader",
+    "name": "YouTube Video Downloader - 30Tools",
+    "description": "Best free online YouTube downloader for downloading videos in HD/4K and converting to MP3.",
+    "url": "https://30tools.com/youtube-downloader",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Any",
     "offers": {
@@ -99,10 +82,11 @@ const jsonLdSchemas = {
       "priceCurrency": "USD"
     },
     "featureList": [
-      "Download YouTube videos in HD/4K",
-      "Convert to MP3 audio",
-      "No software installation needed",
-      "Mobile friendly"
+      "Download YouTube videos free online",
+      "Fastest YT video downloader",
+      "YouTube downloader for PC and computer",
+      "Convert YouTube to MP3 high quality",
+      "No registration required"
     ]
   },
   faq: {
@@ -111,34 +95,34 @@ const jsonLdSchemas = {
     "mainEntity": [
       {
         "@type": "Question",
-        "name": "Is this YouTube Downloader free?",
+        "name": "What is the best YouTube downloader for computer in 2026?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, our tool is 100% free to use with no hidden charges."
+          "text": "30Tools is the best free YouTube downloader for computer and PC, providing high-speed 4K video downloads and MP3 conversion directly in your browser without software installation."
         }
       },
       {
         "@type": "Question",
-        "name": "Do I need to install software?",
+        "name": "Is this free online YouTube downloader safe to use?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No, our downloader works entirely in your browser. No software installation is required."
+          "text": "Yes, our YouTube downloader online free is 100% secure. We do not store your data or download history, and there's no need to install any apps or software."
         }
       },
       {
         "@type": "Question",
-        "name": "What formats are supported?",
+        "name": "How can I download YouTube videos for free?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We support high-quality MP4 (video) and MP3 (audio) downloads."
+          "text": "Simply paste the YouTube link into our youtube link downloader, select your preferred quality (MP4 or MP3), and click download to save the video for free."
         }
       },
       {
         "@type": "Question",
-        "name": "How to download YouTube videos?",
+        "name": "Can I download YouTube videos in HD and 4K?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Simply paste the video link, choose your preferred quality (MP4/MP3), and click download."
+          "text": "Absolutely! Our youtube downloader hd supports downloads in 1080p, 2K, and 4K resolution, as well as crystal clear 320kbps MP3 audio."
         }
       }
     ]
@@ -146,26 +130,25 @@ const jsonLdSchemas = {
   howTo: {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Download YouTube Videos",
-    "description": "Step-by-step guide to download YouTube videos for free in 4K or MP3.",
+    "name": "How to Download YouTube Videos for Free",
+    "description": "A quick guide to using our free online youtube downloader to save videos and audio.",
     "step": [
       {
         "@type": "HowToStep",
-        "name": "Paste URL",
-        "text": "Copy the YouTube video link and paste it into the search box.",
-        "image": "https://30tools.com/og-images/youtube-downloader.jpg",
+        "name": "Copy and Paste YouTube Link",
+        "text": "Copy the URL of the you tube video you want to download and paste it into our youtube downloader video box.",
         "url": "https://30tools.com/youtube-downloader#step1"
       },
       {
         "@type": "HowToStep",
-        "name": "Select Format",
-        "text": "Choose your desired format (MP4 Video or MP3 Audio) and quality (up to 4K).",
+        "name": "Choose Video Download Format",
+        "text": "Select your desired quality from the online youtube downloader options (e.g., 4K, 1080p MP4 or 320kbps MP3).",
         "url": "https://30tools.com/youtube-downloader#step2"
       },
       {
         "@type": "HowToStep",
-        "name": "Download",
-        "text": "Click the download button to save the file to your device instantly.",
+        "name": "Start YouTube Video Download",
+        "text": "Click the download button to finish the youtube free download process and save the file to your device.",
         "url": "https://30tools.com/youtube-downloader#step3"
       }
     ]
@@ -176,30 +159,30 @@ export default function YouTubeDownloaderPage() {
   const features = [
     {
       icon: <Zap className="w-5 h-5 text-amber-500" />,
-      title: "Lightning Fast",
-      description: "Get your videos in seconds with our optimized downloader engine.",
+      title: "Fastest YT Downloader",
+      description: "Experience the fastest way to download YouTube videos with our optimized yt downloader engine.",
     },
     {
       icon: <ShieldCheck className="w-5 h-5 text-emerald-500" />,
-      title: "Secure & Private",
-      description: "We don't store your history. Downloads are processed securely.",
+      title: "Secure Video Download",
+      description: "Our free video downloader is safe and secure. No ads, no malware, and total privacy for your you tube downloader sessions.",
     },
     {
       icon: <MonitorSmartphone className="w-5 h-5 text-blue-500" />,
-      title: "Cross-Platform",
-      description: "Works flawlessly on Windows, Mac, iOS, and Android devices.",
+      title: "YouTube Downloader for PC & Mobile",
+      description: "Whether you need a youtube downloader for pc or a youtube downloader app for mobile, our tool works on all devices.",
     },
     {
       icon: <CheckCircle2 className="w-5 h-5 text-violet-500" />,
-      title: "Best Quality",
-      description: "Download in crystal clear 1080p, 2K, and 4K resolutions.",
+      title: "Best YouTube Downloader HD",
+      description: "The best youtube downloader for 4K video and high-quality MP3 audio extraction instantly.",
     },
   ];
 
   const steps = [
-    { title: "Paste URL", desc: "Copy & paste the YouTube link above." },
-    { title: "Select Format", desc: "Choose Video (MP4) or Audio (MP3)." },
-    { title: "Download", desc: "Click download and save your file." },
+    { title: "YouTube Link Downloader", desc: "Paste your you tube link into the downloader youtube box above." },
+    { title: "Select Video Format", desc: "Choose from MP4, MP3, or HD format options." },
+    { title: "Download YouTube Free", desc: "Save your youtube video download free to your device instantly." },
   ];
 
   return (
@@ -221,12 +204,11 @@ export default function YouTubeDownloaderPage() {
 
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-foreground">
-            YouTube <span className="text-primary">Downloader</span> <span className="text-primary text-2xl align-top ml-1">[UPDATED]</span>
+          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
+            Best <span className="text-primary">YouTube Video Downloader</span> - Free Online Download
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            The simplest way to download YouTube videos and audio. Fast, free, and no ads.
-            Download YouTube videos and audio in high definition quality for free. Our advanced YouTube downloader supports HD, Full HD, and 4K video downloads with lightning-fast speed. Convert YouTube videos to MP4 or extract high-quality MP3 audio files instantly without any software installation. Perfect for offline viewing, content creation, and educational purposes.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Welcome to the <strong>best youtube downloader</strong> online! Our <strong>free online youtube downloader</strong> is the fastest solution to <strong>download youtube video online</strong> for free. Whether you are using a <strong>youtube downloader for computer</strong> or looking for a <strong>youtube downloader pc</strong> version, our web-based <strong>yt video downloader</strong> works seamlessly on all browsers. 30Tools provides a reliable <strong>youtube converter</strong> to extract high-quality audio or save full-length films in 4K.
           </p>
 
           <div className="flex justify-center mt-6">
@@ -237,7 +219,7 @@ export default function YouTubeDownloaderPage() {
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 hover:bg-muted border border-border/50 text-sm transition-colors group"
             >
               <span className="text-muted-foreground">Looking for a Developer API?</span>
-              <span className="font-medium text-primary group-hover:underline decoration-primary/50 underline-offset-4">Check out Universal YouTube Downloader on Apify →</span>
+              <span className="font-medium text-primary group-hover:underline decoration-primary/50 underline-offset-4">Check out our Universal YouTube Downloader API →</span>
             </a>
           </div>
         </div>
@@ -246,6 +228,32 @@ export default function YouTubeDownloaderPage() {
         <div className="mb-20">
           <YouTubeDownloader />
         </div>
+
+        {/* SEO Text Section 1 */}
+        <section className="mb-20 prose prose-slate dark:prose-invert max-w-none px-4">
+          <h2 className="text-3xl font-bold mb-6">How to Download Video from YouTube Free</h2>
+          <p>
+            Using our <strong>online youtube downloader</strong> is child's play. If you've been searching for <strong>how to download youtube videos</strong>, you've come to the right place. Our <strong>youtubedownloader</strong> is designed for speed and quality. Just paste the URL into our <strong>youtube link downloader</strong> and enjoy <strong>youtube free download</strong> privileges on every video. We support <strong>youtube downloader hd</strong> formats to ensure you get the best visual experience.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 mt-10 not-prose">
+            <div className="bg-card p-6 rounded-2xl border border-border/50">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary">
+                <Zap className="w-5 h-5" /> Gen YouTube Downloader
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Our <strong>gen youtube downloader</strong> technology ensures that you can <strong>download yt video</strong> content without any restrictions. It's the most powerful <strong>yt video download</strong> tool available in 2026.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-2xl border border-border/50">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary">
+                <ShieldCheck className="w-5 h-5" /> SaveFrom YouTube
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Alternative to <strong>savefrom</strong> and <strong>savefrom.net</strong>, our site offers even better speeds for <strong>youtube videos downloader</strong> services. Safe, private, and 100% free.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
@@ -262,7 +270,7 @@ export default function YouTubeDownloaderPage() {
 
         {/* How To */}
         <section className="bg-muted/30 rounded-3xl p-8 md:p-12 mb-20 border border-border/50">
-          <h2 className="text-2xl font-bold text-center mb-10">How It Works</h2>
+          <h2 className="text-2xl font-bold text-center mb-10">Free Online YouTube Downloader Guide</h2>
           <div className="flex flex-col md:flex-row justify-between items-center gap-8 relative">
             {/* Connecting Line (Desktop) */}
             <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-border -z-10 -translate-y-1/2" />
@@ -273,9 +281,30 @@ export default function YouTubeDownloaderPage() {
                   {i + 1}
                 </div>
                 <h3 className="font-semibold text-lg mb-1">{s.title}</h3>
-                <p className="text-sm text-muted-foreground">{s.desc}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Multi-language Support text for Global SEO */}
+        <section className="mb-20 text-center bg-primary/5 py-10 rounded-3xl border border-primary/10">
+          <h2 className="text-2xl font-bold mb-6">Global Online Video Downloader</h2>
+          <p className="text-sm text-muted-foreground max-w-3xl mx-auto px-4 leading-relaxed mb-6">
+            Notre service gratuit vous permet de <strong>télécharger vidéo youtube</strong> ou <strong>télécharger vidéo youtube en ligne</strong> très rapidement. 
+            Si deseas <strong>descargar video youtube</strong> o <strong>descargar de youtube</strong> gratis, utiliza nuestro <strong>descargador de videos de youtube</strong> profesional. 
+            Nós também suportamos quem deseja <strong>baixar videos de youtube</strong> em alta definição. 
+            Для тех, кто хочет <strong>скачать видео с ютуба</strong>, наш сервис работает безупречно. 
+            支持 <strong>youtube视频下载</strong> 和 <strong>youtube视频解析</strong>，轻松 <strong>youtube下载</strong> 各种 <strong>油管视频下载</strong> 内容。
+          </p>
+          <div className="flex flex-wrap justify-center gap-2 px-4 opacity-70">
+            <Badge variant="outline">ssyoutube</Badge>
+            <Badge variant="outline">ytdownloader</Badge>
+            <Badge variant="outline">savefrom</Badge>
+            <Badge variant="outline">snapsave youtube</Badge>
+            <Badge variant="outline">clipto ai youtube downloader</Badge>
+            <Badge variant="outline">ymate youtube downloader</Badge>
+            <Badge variant="outline">savenet youtube downloader</Badge>
           </div>
         </section>
 
@@ -286,20 +315,20 @@ export default function YouTubeDownloaderPage() {
               <div className="p-2 bg-blue-500/10 rounded-lg text-blue-500">
                 <FileVideo className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold">Video Formats</h3>
+              <h3 className="text-xl font-bold">YouTube Downloader Video Formats</h3>
             </div>
             <ul className="space-y-3">
               <li className="flex justify-between items-center text-sm">
-                <span className="font-medium">MP4 4K Ultra HD</span>
-                <span className="text-muted-foreground">Highest Quality</span>
+                <span className="font-medium">MP4 4K Ultra HD Downloader</span>
+                <span className="text-muted-foreground text-xs uppercase bg-green-500/10 text-green-600 px-2 py-0.5 rounded">Best Quality</span>
               </li>
               <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                <span className="font-medium">MP4 1080p Full HD</span>
-                <span className="text-muted-foreground">Standard</span>
+                <span className="font-medium">Free Download YouTube 1080p</span>
+                <span className="text-muted-foreground">Standard HD</span>
               </li>
               <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                <span className="font-medium">MP4 720p HD</span>
-                <span className="text-muted-foreground">Data Saver</span>
+                <span className="font-medium">YouTube Downloader PC 720p</span>
+                <span className="text-muted-foreground">Optimized</span>
               </li>
             </ul>
           </div>
@@ -309,19 +338,19 @@ export default function YouTubeDownloaderPage() {
               <div className="p-2 bg-purple-500/10 rounded-lg text-purple-500">
                 <FileAudio className="w-6 h-6" />
               </div>
-              <h3 className="text-xl font-bold">Audio Formats</h3>
+              <h3 className="text-xl font-bold">YouTube Converter to MP3</h3>
             </div>
             <ul className="space-y-3">
               <li className="flex justify-between items-center text-sm">
-                <span className="font-medium">MP3 320kbps</span>
-                <span className="text-muted-foreground">Crystal Clear</span>
+                <span className="font-medium">High Bitrate 320kbps MP3</span>
+                <span className="text-muted-foreground text-xs uppercase bg-purple-500/10 text-purple-600 px-2 py-0.5 rounded">HQ Audio</span>
               </li>
               <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                <span className="font-medium">MP3 256kbps</span>
-                <span className="text-muted-foreground">High Quality</span>
+                <span className="font-medium">Best YouTube Downloader Audio</span>
+                <span className="text-muted-foreground">256kbps</span>
               </li>
               <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                <span className="font-medium">MP3 128kbps</span>
+                <span className="font-medium">Fast YT Video Downloader MP3</span>
                 <span className="text-muted-foreground">Standard</span>
               </li>
             </ul>
@@ -330,14 +359,15 @@ export default function YouTubeDownloaderPage() {
 
         {/* FAQ */}
         <section className="max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl font-bold text-center mb-8">Common Questions</h2>
+          <h2 className="text-3xl font-bold text-center mb-4">Best YouTube Downloader FAQ</h2>
+          <p className="text-center text-muted-foreground mb-10">Common questions about downloading from youtube for free.</p>
           <Accordion type="single" collapsible className="w-full">
             {jsonLdSchemas.faq.mainEntity.map((faq, i) => (
               <AccordionItem key={i} value={`item-${i}`} className="border-b-border/50">
-                <AccordionTrigger className="text-left font-medium hover:no-underline hover:text-primary">
+                <AccordionTrigger className="text-left font-medium hover:no-underline hover:text-primary leading-relaxed py-4">
                   {faq.name}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed">
+                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
                   {faq.acceptedAnswer.text}
                 </AccordionContent>
               </AccordionItem>
@@ -345,30 +375,35 @@ export default function YouTubeDownloaderPage() {
           </Accordion>
         </section>
 
+        {/* Final SEO Text Paragraphs */}
+        <section className="mb-20 prose prose-slate dark:prose-invert max-w-none border-t border-border/50 pt-16">
+          <p>
+            In conclusion, if you are looking for a <strong>youtube downloader free download</strong> platform that works without any installation, 30Tools is the <strong>best youtube downloader</strong> for your needs. We cover <strong>youtube video download free</strong>, <strong>download youtube video online</strong>, and even offer <strong>youtube downloader app</strong> style functionality through our mobile-responsive web interface. Save your favorite <strong>you tube</strong> videos with the most trusted <strong>online youtube downloader</strong> on the web.
+          </p>
+          <p>
+            Experience the power of a professional <strong>video downloader youtube</strong> and <strong>yt download</strong> service. Our technology is as fast as <strong>turboscribe youtube video downloader free</strong> and as easy to use as <strong>snapsave youtube</strong>. Don't settle for less when you can have the <strong>best online video downloader youtube</strong> suite for free.
+          </p>
+        </section>
+
         {/* Related Tools */}
         <div className="text-center py-10 border-t border-border/50">
-          <p className="text-sm font-medium text-muted-foreground mb-6 uppercase tracking-wider">Other Tools You Might Like</p>
+          <p className="text-sm font-bold text-muted-foreground mb-6 uppercase tracking-widest text-primary/80">Other Powerful Free Online Tools</p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/terabox-downloader">
-              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-colors border border-transparent hover:border-border cursor-pointer">
+              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
                 Terabox Downloader
               </span>
             </Link>
             <Link href="/instagram-downloader">
-              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-colors border border-transparent hover:border-border cursor-pointer">
+              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
                 Instagram Downloader
               </span>
             </Link>
             <Link href="/tiktok-downloader">
-              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-colors border border-transparent hover:border-border cursor-pointer">
+              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
                 TikTok Downloader
               </span>
             </Link>
-            <a href="https://unstory.live/" target="_blank" rel="noopener noreferrer">
-              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-colors border border-transparent hover:border-border cursor-pointer">
-                Unstory
-              </span>
-            </a>
           </div>
         </div>
 

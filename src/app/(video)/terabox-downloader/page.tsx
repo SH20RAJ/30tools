@@ -14,104 +14,176 @@ import {
     Share2,
     ShieldCheck,
     Zap,
+    Monitor,
+    Smartphone,
+    Server,
+    Cloud,
 } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+
+const researchedKeywords = [
+    "zoyya talent terabox", "tera box video player", "tera downloader online", "terabox downloader online free",
+    "terabox video downloader online free", "terabox viewer", "terabox link player", "iteraplay",
+    "terabox video player online", "tera box pc", "tera box video download", "terabox file downloader",
+    "terabox for pc download", "terabox player online", "terabox link opener", "terabox video downloader online",
+    "terabox online video player", "teradownloader", "tera box web", "terabox link", "terabo",
+    "terabox video download", "tera box download", "terabox link downloader", "terabox online",
+    "terabox online player", "terbox", "mdiskplay", "terabox downloader online", "tera downloader",
+    "mdisk player", "terabox player", "tera box download for pc", "terabox video player", "tarabox",
+    "terabox web", "terabox app", "terabox download", "terabox downloader", "terabox for pc",
+    "terabox login", "tera box", "terabox", "terabook", "terabox fullpack", "pikpak desi",
+    "terabox fullpack pacar", "terabox lite", "tela box", "terabix", "tera box mod apk",
+    "terabox descargar", "tebox", "terabox premium crack pc", "descargar terabox", "terab",
+    "tetrabox", "free online storage", "terabyte storage", "terrabox storage", "terebox", "dubox",
+    "terabox.com", "terabox iniciar sesión", "terra box", "terabox apk", "download terabox",
+    "teabox", "terabox pc", "terabox video downloader", "terabox para pc", "torah box",
+    "cloud storage free", "terrabox", "ultrabox", "almacenamiento en la nube", "tera", "storage"
+];
 
 export const metadata: Metadata = {
-    title: "Terabox Downloader | Download & Watch Terabox Videos Online",
-    description:
-        "Free Terabox downloader and player. Watch and download videos from Terabox links instantly without registration. Support for full screen and high quality.",
-    keywords: [
-        "terabox downloader",
-        "terabox video downloader",
-        "download terabox videos",
-        "terabox link downloader",
-        "terabox to mp4",
-        "save terabox video",
-        "online terabox viewer",
-        "terabox direct download",
-        "watch terabox without app",
-        "terabox player online"
-    ].join(", "),
-    openGraph: {
-        title: "Terabox Downloader | Free Online Video Player",
-        description:
-            "The best free tool to download and watch Terabox videos online. Simply paste your link and enjoy instant playback.",
-        type: "website",
-        url: "https://30tools.com/terabox-downloader",
-        images: [{ url: "/og-images/terabox-downloader.jpg", alt: "Terabox Downloader" }],
-    },
+    title: "Terabox Downloader Online Free - Best Tera Box Video Player (2026)",
+    description: "The best free terabox downloader and terabox video player online. Watch and download videos from tera box links instantly. Support for mdisk player, iteraplay, and terabox for pc download.",
+    keywords: researchedKeywords.join(", "),
+    authors: [{ name: "30Tools Team" }],
+    creator: "30Tools",
+    publisher: "30Tools",
     alternates: {
-        canonical: "/terabox-downloader",
+        canonical: "https://30tools.com/terabox-downloader",
+    },
+    openGraph: {
+        title: "Terabox Video Downloader Online Free - Tera Box Player Online",
+        description: "Download and play Terabox videos online for free. Fastest tera downloader online with support for terabox for pc download and terabox app.",
+        url: "https://30tools.com/terabox-downloader",
+        siteName: "30Tools",
+        locale: "en_US",
+        type: "website",
+        images: [
+            {
+                url: "/og-images/terabox-downloader.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Terabox Downloader Online Free 2026",
+            },
+        ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Terabox Link Downloader - Best Tera Box Web Downloader",
+        description: "Lightning-fast terabox downloader online free. No software, no ads, works on tera box pc and mobile.",
+        images: ["/og-images/terabox-downloader.jpg"],
+        creator: "@30tools",
     },
 };
 
-export default function TeraboxDownloaderPage() {
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        name: "Terabox Downloader",
-        applicationCategory: "MultimediaApplication",
-        operatingSystem: "Any",
-        offers: {
-            "@type": "Offer",
-            price: "0",
-            priceCurrency: "USD",
-        },
-        description: "Download and watch Terabox videos directly in your browser without any app.",
-        featureList: "Video Playback, Fullscreen Support, Instant Loading, No Ads",
-        aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: "4.8",
-            ratingCount: "2145"
-        }
-    };
+export const viewport = {
+    themeColor: 'black',
+}
 
-    const howToSchema = {
-        "@context": "https://schema.org",
-        "@type": "HowTo",
-        name: "How to Watch and Download Terabox Videos",
-        step: [
-            {
-                "@type": "HowToStep",
-                position: 1,
-                name: "Copy Link",
-                text: "Copy the Terabox share link of the video you want to watch or download."
+export default function TeraboxDownloaderPage() {
+    const jsonLdSchemas = {
+        webApp: {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Terabox Downloader Online Free - 30Tools",
+            "description": "Best free online terabox downloader for downloading videos from tera box links and mdiskplay.",
+            "url": "https://30tools.com/terabox-downloader",
+            "applicationCategory": "MultimediaApplication",
+            "operatingSystem": "Any",
+            "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
             },
-            {
-                "@type": "HowToStep",
-                position: 2,
-                name: "Paste URL",
-                text: "Paste the link into the Terabox Downloader input field on this page."
-            },
-            {
-                "@type": "HowToStep",
-                position: 3,
-                name: "Watch or Download",
-                text: "Click the 'Watch' button to play the video instantly, or use the download option."
-            }
-        ]
+            "featureList": [
+                "Terabox video downloader online free",
+                "Fastest tera downloader",
+                "Terabox player online",
+                "Terabox for pc download support",
+                "No registration required"
+            ]
+        },
+        faq: {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": "What is the best terabox downloader online free in 2026?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "30Tools is the best terabox downloader online free and tera box video player, providing high-speed terabox video download and mdisk player support directly in your browser."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Can I use terabox for pc and mobile without the app?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes, our terabox link opener and terabox viewer allow you to watch terabox online and play terabox videos online without installing the terabox app or terbox software."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "How to use the terabox link downloader?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Simply paste the terabox link into our terabox file downloader, click play or download to use the tera downloader online features for free."
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": "Does it support mdisk player and iteraplay?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Absolutely! Our terabox video downloader online also supports mdiskplay and iteraplay links, acting as a universal tera box web tool."
+                    }
+                }
+            ]
+        },
+        howTo: {
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            "name": "How to Download Terabox Videos Online",
+            "step": [
+                {
+                    "@type": "HowToStep",
+                    "name": "Copy Terabox Link",
+                    "text": "Copy the share link from your terabox app or tera box web dashboard."
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Paste in Terabox Link Player",
+                    "text": "Paste the link into our tera downloader online input box above."
+                },
+                {
+                    "@type": "HowToStep",
+                    "name": "Play or Download",
+                    "text": "Click the play button to watch in terabox video player online or click download for tera box video download."
+                }
+            ]
+        }
     };
 
     const features = [
         {
-            icon: <Play className="w-6 h-6 text-blue-500" />,
-            title: "Instant Playback",
-            description: "Watch Terabox videos immediately without waiting for download times.",
+            icon: <Zap className="w-5 h-5 text-amber-500" />,
+            title: "Fastest Tera Downloader",
+            description: "Experience the fastest terabox downloader online with our optimized terabox video downloader engine.",
         },
         {
-            icon: <Download className="w-6 h-6 text-green-500" />,
-            title: "Fast Downloads",
-            description: "Get direct download links for your files at high speed.",
+            icon: <ShieldCheck className="w-5 h-5 text-emerald-500" />,
+            title: "Secure Terabox Viewer",
+            description: "Our tera box video player is safe and secure. No ads, no malware, and 100% free online storage access.",
         },
         {
-            icon: <ShieldCheck className="w-6 h-6 text-purple-500" />,
-            title: "No App Needed",
-            description: "Access your content directly in the browser. No installation required.",
+            icon: <Monitor className="w-5 h-5 text-blue-500" />,
+            title: "Tera Box PC & Mobile",
+            description: "Works perfectly on tera box pc, terabox for pc download, and mobile browsers without the terabox app.",
         },
         {
-            icon: <Zap className="w-6 h-6 text-yellow-500" />,
-            title: "100% Free",
-            description: "Unlimited usage for all users. No hidden fees or subscriptions.",
+            icon: <Play className="w-5 h-5 text-violet-500" />,
+            title: "Best Terabox Video Player",
+            description: "The best terabox online player for watching terabox video player online content instantly.",
         },
     ];
 
@@ -132,403 +204,282 @@ export default function TeraboxDownloaderPage() {
         }
     ];
 
-    const faqs = [
-        {
-            question: "Is it legal to download videos from TeraBox?",
-            answer: "Downloading videos for personal usage is generally considered legal. However, redistributing copyrighted content without permission is illegal. Please respect intellectual property rights."
-        },
-        {
-            question: "Do I need to install any software?",
-            answer: "No! Our TeraBox player and downloader works entirely in your browser. You can watch and download videos without installing the Terabox app or any other software."
-        },
-        {
-            question: "Is there a limit on video size or duration?",
-            answer: "No, we do not impose restrictions on the video size or duration. You can play and download videos of any length or file size supported by TeraBox."
-        },
-        {
-            question: "Why is my video not downloading?",
-            answer: "If a video fails to download, it might be due to a broken link, a deleted file on TeraBox, or correct server issues. Please check the URL and try again. Ensure your internet connection is stable."
-        },
-        {
-            question: "Is my data safe?",
-            answer: "Yes, your privacy is our priority. We do not store your file history, personal data, or the videos you watch/download. The tool acts as a secure bridge."
-        },
-        {
-            question: "What keywords help my TeraBox video rank on Google?",
-            answer: "To improve ranking, use descriptive titles, relevant tags (like 'TeraBox downloader', 'free video player'), and clear descriptions. Ensure your content is accessible and high-quality."
-        },
-        {
-            question: "How does the TeraBox player work on different devices?",
-            answer: "Our player is fully responsive. On mobile, it offers touch-friendly controls. On tablets and desktops, it scales to provide a full-screen experience. It works in Chrome, Safari, Firefox, and Edge."
-        },
-        {
-            question: "Is the TeraBox downloader free to use?",
-            answer: "Yes, our service is 100% free. You can watch and download as many videos as you like without any payment, subscription, or hidden fees."
-        },
-        {
-            question: "Which TeraBox domains are supported by our TeraBox player?",
-            answer: "We support all major TeraBox domains including terabox.com, teraboxapp.com, 1024tera.com, and others associated with the service."
-        }
-    ];
-
-    const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        mainEntity: faqs.map(f => ({
-            "@type": "Question",
-            name: f.question,
-            acceptedAnswer: {
-                "@type": "Answer",
-                text: f.answer
-            }
-        }))
-    };
-
     return (
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }}
             />
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.faq) }}
             />
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }}
             />
 
-            <div className="container mx-auto px-4 py-12 md:py-20 lg:py-24">
-                <div className="max-w-4xl mx-auto space-y-16">
+            <div className="container mx-auto px-4 py-16 md:py-24 max-w-5xl">
 
-                    {/* Hero Section */}
-                    <section className="text-center space-y-6">
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
-                            Terabox Video <span className="text-primary bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500">Downloader & Player</span>
-                        </h1>
-                        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                            Watch and download Terabox videos instantly. No app installation required. Fast, free, and secure.
-                        </p>
-                    </section>
+                {/* Header Section */}
+                <div className="text-center space-y-4 mb-12">
+                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
+                        Best <span className="text-primary">Terabox Downloader</span> Online Free - Tera Box Player
+                    </h1>
+                    <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                        Welcome to the ultimate <strong>terabox downloader online free</strong> and <strong>tera box video player</strong>.
+                        Our <strong>terabox video downloader online free</strong> is the fastest solution to <strong>tera box video download</strong>
+                        and <strong>watch terabox online</strong>. Whether you need a <strong>terabox for pc download</strong> or a
+                        <strong>terabox online player</strong>, our <strong>terabox viewer</strong> works seamlessly as a
+                        <strong>terabox link opener</strong> on all devices.
+                    </p>
 
-                    {/* Main Tool */}
-                    <section className="bg-card/50 backdrop-blur-sm rounded-3xl p-4 md:p-8">
-                        <SimpleTeraboxPlayer />
-                    </section>
-
-                    {/* Latest Articles */}
-                    <section>
-                        <div className="flex items-center justify-between mb-8">
-                            <h2 className="text-2xl font-bold">Latest Articles</h2>
-                            <Link href="/blog" className="text-primary hover:underline font-medium">
-                                View All Articles
-                            </Link>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {articles.map((article, index) => (
-                                <Link key={index} href={article.link} className="block group">
-                                    <div className="bg-card border border-border/50 rounded-2xl p-6 h-full hover:border-primary/50 transition-colors shadow-sm">
-                                        <div className="flex items-center gap-2 mb-3 text-sm text-muted-foreground">
-                                            <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium text-xs">
-                                                {article.type}
-                                            </span>
-                                            <span>•</span>
-                                            <span>{article.readTime}</span>
-                                        </div>
-                                        <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                                            {article.title}
-                                        </h3>
-                                        <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                                            {article.description}
-                                        </p>
-                                        <span className="text-sm font-medium text-primary group-hover:underline">
-                                            Read More →
-                                        </span>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* Features Grid */}
-                    <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {features.map((feature, index) => (
-                            <div key={index} className="flex gap-4 p-6 bg-card rounded-2xl border border-border/50 hover:border-primary/50 transition-colors shadow-sm">
-                                <div className="shrink-0 bg-primary/10 p-3 rounded-xl h-fit">
-                                    {feature.icon}
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                                    <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </section>
-
-                    {/* Content Section: How to Use */}
-                    <section className="space-y-8 prose prose-gray dark:prose-invert max-w-none">
-                        <div>
-                            <h2 className="text-3xl font-bold mb-4">How to Use the TeraBox Player</h2>
-                            <p className="text-muted-foreground text-lg leading-relaxed">
-                                Tired of complicated TeraBox video downloaders? I've been there too! That's exactly why I created this TeraBox player - to make your life easier. No more jumping through hoops, no more confusing steps. Just paste your link and watch instantly on any device you have. For direct downloads, visit our TeraBox downloader tool.
-                            </p>
-                        </div>
-
-                        <div className="bg-muted/30 rounded-3xl p-8 border border-border/50">
-                            <h3 className="text-2xl font-bold mb-6">What makes our TeraBox link opener different?</h3>
-                            <ul className="space-y-4">
-                                <li className="flex gap-3">
-                                    <span className="text-2xl">🎥</span>
-                                    <div>
-                                        <span className="font-bold">Works as an online TeraBox video player</span>
-                                        <p className="text-muted-foreground">No downloads needed, stream directly in browser.</p>
-                                    </div>
-                                </li>
-                                <li className="flex gap-3">
-                                    <span className="text-2xl">📱</span>
-                                    <div>
-                                        <span className="font-bold">Universal Compatibility</span>
-                                        <p className="text-muted-foreground">I use it on my phone, laptop, tablet - works everywhere.</p>
-                                    </div>
-                                </li>
-                                <li className="flex gap-3">
-                                    <span className="text-2xl">⚡</span>
-                                    <div>
-                                        <span className="font-bold">Super Fast</span>
-                                        <p className="text-muted-foreground">Usually loads in 2-3 seconds.</p>
-                                    </div>
-                                </li>
-                                <li className="flex gap-3">
-                                    <span className="text-2xl">🔒</span>
-                                    <div>
-                                        <span className="font-bold">No payment required</span>
-                                        <p className="text-muted-foreground">Just paste and watch. 100% free.</p>
-                                    </div>
-                                </li>
-                                <li className="flex gap-3">
-                                    <span className="text-2xl">💯</span>
-                                    <div>
-                                        <span className="font-bold">No Limits</span>
-                                        <p className="text-muted-foreground">You can play TeraBox videos online without any restrictions.</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                                Look, I know how frustrating it is when you just want to watch a video. That's why our TeraBox video streaming works differently - no software mess, no app installations. Just use our TeraBox downloader and you're good to go. My free TeraBox player lets you watch TeraBox videos without app installations, and honestly, it's way better than the official app. Need to download videos for offline viewing? Check out our dedicated TeraBox downloader page for easy video downloads.
-                            </p>
-                        </div>
-                    </section>
-
-                    {/* How It Works Steps */}
-                    <section className="bg-muted/30 rounded-3xl p-8 md:p-12 border border-border/50">
-                        <h2 className="text-3xl font-bold text-center mb-12">
-                            Here's how it works (super simple!)
-                        </h2>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            <div className="text-center">
-                                <div className="w-16 h-16 bg-background rounded-full mx-auto flex items-center justify-center text-3xl shadow-md mb-6 border-2 border-primary/20">
-                                    📋
-                                </div>
-                                <h3 className="font-bold text-xl mb-3">1. Copy Link</h3>
-                                <p className="text-muted-foreground">Go to TeraBox and find your video. Copy the link from the address bar or hit the share button.</p>
-                            </div>
-                            <div className="text-center">
-                                <div className="w-16 h-16 bg-background rounded-full mx-auto flex items-center justify-center text-3xl shadow-md mb-6 border-2 border-primary/20">
-                                    🔗
-                                </div>
-                                <h3 className="font-bold text-xl mb-3">2. Paste & Play</h3>
-                                <p className="text-muted-foreground">Come back here and paste it into our TeraBox player. Click "Play" and boom - you're watching!</p>
-                            </div>
-                            <div className="text-center">
-                                <div className="w-16 h-16 bg-background rounded-full mx-auto flex items-center justify-center text-3xl shadow-md mb-6 border-2 border-primary/20">
-                                    ⬇️
-                                </div>
-                                <h3 className="font-bold text-xl mb-3">3. Stream or Download</h3>
-                                <p className="text-muted-foreground">Our online TeraBox video downloader does all the heavy lifting. Stream instantly or download for later.</p>
-                            </div>
-                        </div>
-                        <p className="text-center mt-8 text-muted-foreground">
-                            If it's being slow, try the TeraBox link opener option. Our free online TeraBox video player has multiple servers for TeraBox video streaming, so one will definitely work.
-                        </p>
-                    </section>
-
-                    {/* Personal & Features Section */}
-                    <section className="space-y-8">
-                        <div>
-                            <h2 className="text-3xl font-bold mb-4">Why I built this TeraBox Player</h2>
-                            <h3 className="text-xl font-medium text-muted-foreground mb-4 opacity-90">(and why you'll love it)</h3>
-                            <div className="grid gap-6 md:grid-cols-2 mb-6">
-                                <div className="bg-card p-6 rounded-2xl border border-border/50">
-                                    <h4 className="flex items-center gap-2 font-bold text-lg mb-2">
-                                        🚀 Actually fast
-                                    </h4>
-                                    <p className="text-muted-foreground">Most downloaders are slow as hell. Our TeraBox link opener and TeraBox downloader process links in 2-3 seconds. No joke.</p>
-                                </div>
-                                <div className="bg-card p-6 rounded-2xl border border-border/50">
-                                    <h4 className="flex items-center gap-2 font-bold text-lg mb-2">
-                                        🎥 Stream or download
-                                    </h4>
-                                    <p className="text-muted-foreground">Your choice! Play TeraBox videos online instantly or download for offline viewing. Our TeraBox video downloader and TeraBox link player handle both perfectly.</p>
-                                </div>
-                            </div>
-                            <p className="text-muted-foreground text-lg leading-relaxed">
-                                Here's the thing - I got tired of ads on TeraBox download sites. You know, the ones that force you to register, show 10 ads, and then don't even work half the time. So I built this to watch TeraBox videos without app installations and download without any limits. Our TeraBox downloader online service is different.
-                            </p>
-                            <p className="text-muted-foreground text-lg leading-relaxed mt-4">
-                                Unlike other sites that lock features behind logins, our online TeraBox video player let you play TeraBox videos online right away. No personal info required, no credit card required. Want to preview a video before downloading? Use our free TeraBox player to check it out first. Need to save it for later? Our TeraBox link player downloads without buffering or ads.
-                            </p>
-                        </div>
-                    </section>
-
-                    {/* Comparison Section */}
-                    <section className="bg-primary/5 rounded-3xl p-8 md:p-12">
-                        <h2 className="text-3xl font-bold mb-8">What makes this TeraBox Video Downloader different?</h2>
-                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-                            {[
-                                { title: "Actually fast", desc: "Most sites take forever. This processes your links in 2-3 seconds, max." },
-                                { title: "No payment needed", desc: "Just paste your link and go. No email, no password." },
-                                { title: "Works everywhere", desc: "I use it on my phone walking to work, on my laptop at home, on my tablet in bed." },
-                                { title: "Private stuff", desc: "I don't store your videos or spy on what you're downloading. Not my business." }
-                            ].map((item, i) => (
-                                <div key={i} className="bg-background/80 backdrop-blur p-5 rounded-xl text-center shadow-sm">
-                                    <h3 className="font-bold mb-2">{item.title}</h3>
-                                    <p className="text-sm text-muted-foreground">{item.desc}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* Technical Specs */}
-                    <section>
-                        <h2 className="text-2xl font-bold mb-6">The boring technical stuff (if you care)</h2>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {[
-                                { label: "Video Quality", val: "Up to 4K", sub: "(if the original is 4K)" },
-                                { label: "Speed", val: "2-3 seconds", sub: "per link" },
-                                { label: "File Types", val: "MP4, WebM, AVI, MKV", sub: "Universal support" },
-                                { label: "Uptime", val: "99.9%", sub: "(rarely goes down)" },
-                            ].map((spec, i) => (
-                                <div key={i} className="bg-card border border-border/50 p-4 rounded-xl text-center">
-                                    <div className="text-sm text-muted-foreground mb-1">{spec.label}</div>
-                                    <div className="font-bold text-lg text-primary">{spec.val}</div>
-                                    <div className="text-xs text-muted-foreground/70">{spec.sub}</div>
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-
-                    {/* Advanced Tech & Stand Out */}
-                    <section className="space-y-12">
-                        <div>
-                            <h2 className="text-3xl font-bold mb-6">Advanced TeraBox Player Technology</h2>
-                            <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                                Experience the power of our cutting-edge TeraBox player technology that revolutionizes how you access and download TeraBox content. Our TeraBox link opener utilizes advanced algorithms to ensure seamless connectivity with TeraBox servers, providing you with the fastest and most reliable TeraBox video streaming experience available.
-                            </p>
-                            <div className="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <h3 className="font-bold text-xl mb-3">Key Technical Features:</h3>
-                                    <ul className="space-y-2 text-muted-foreground">
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
-                                            <span><strong>Smart Link Processing:</strong> 99.9% accuracy in detection</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
-                                            <span><strong>Multi-Server Technology:</strong> Ensures uninterrupted streaming</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <CheckCircle2 className="w-5 h-5 text-primary mt-0.5" />
-                                            <span><strong>Adaptive Quality:</strong> Adjusts to your internet speed</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h3 className="font-bold text-xl mb-3">Why Our Downloader Stands Out:</h3>
-                                    <ul className="space-y-2 text-muted-foreground">
-                                        <li className="flex items-start gap-2">
-                                            <Zap className="w-5 h-5 text-yellow-500 mt-0.5" />
-                                            <span><strong>Lightning-Fast:</strong> Processes links 3x faster</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <ShieldCheck className="w-5 h-5 text-green-500 mt-0.5" />
-                                            <span><strong>99.9% Uptime:</strong> Consistent access to content</span>
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <Share2 className="w-5 h-5 text-blue-500 mt-0.5" />
-                                            <span><strong>Universal Compatibility:</strong> Works on all devices</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* Work on Everything */}
-                    <section className="bg-card rounded-3xl p-8 border border-border/50">
-                        <div className="text-center max-w-2xl mx-auto mb-10">
-                            <h2 className="text-3xl font-bold mb-4">Works on everything description (seriously)</h2>
-                            <p className="text-muted-foreground">I test this TeraBox player on every device I own. Phone, tablet, laptop, desktop - it all works.</p>
-                        </div>
-                        <div className="grid md:grid-cols-3 gap-8 text-center">
-                            <div>
-                                <div className="text-4xl mb-4">📱</div>
-                                <h3 className="font-bold text-lg mb-2">On your phone</h3>
-                                <p className="text-muted-foreground text-sm">Perfect for watching on the go. Big buttons and touch-friendly controls.</p>
-                            </div>
-                            <div>
-                                <div className="text-4xl mb-4">💻</div>
-                                <h3 className="font-bold text-lg mb-2">On computers</h3>
-                                <p className="text-muted-foreground text-sm">Full power here. Super fast on good internet connection.</p>
-                            </div>
-                            <div>
-                                <div className="text-4xl mb-4">🖥️</div>
-                                <h3 className="font-bold text-lg mb-2">On tablets</h3>
-                                <p className="text-muted-foreground text-sm">Great for watching in bed. Looks amazing on bigger screens.</p>
-                            </div>
-                        </div>
-                    </section>
-
-                    {/* FAQ Section */}
-                    <section className="space-y-8">
-                        <div className="text-center">
-                            <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
-                            <p className="text-muted-foreground">Common questions about our Terabox Downloader</p>
-                        </div>
-
-                        <Accordion type="single" collapsible className="w-full">
-                            {faqs.map((faq, index) => (
-                                <AccordionItem key={index} value={`item-${index}`}>
-                                    <AccordionTrigger className="text-base md:text-lg font-medium text-left">
-                                        {faq.question}
-                                    </AccordionTrigger>
-                                    <AccordionContent className="text-muted-foreground text-base leading-relaxed">
-                                        {faq.answer}
-                                    </AccordionContent>
-                                </AccordionItem>
-                            ))}
-                        </Accordion>
-                    </section>
-
-                    {/* Footer / Links */}
-                    <section className="text-center py-8 border-t border-border">
-                        <p className="text-muted-foreground mb-4">
-                            Explore more tools:
-                        </p>
-                        <div className="flex flex-wrap justify-center gap-4">
-                            <Link href="/youtube-downloader" className="px-4 py-2 rounded-full bg-muted hover:bg-accent text-sm font-medium transition-colors">
-                                YouTube Downloader
-                            </Link>
-                            <Link href="/instagram-downloader" className="px-4 py-2 rounded-full bg-muted hover:bg-accent text-sm font-medium transition-colors">
-                                Instagram Downloader
-                            </Link>
-                        </div>
-                    </section>
-
+                    <div className="flex justify-center mt-6">
+                        <Badge variant="secondary" className="px-4 py-1.5 text-sm font-medium">
+                            Supported: Terabox, Mdisk Player, iTeraPlay, Pikpak Desi
+                        </Badge>
+                    </div>
                 </div>
+
+                {/* Main Tool */}
+                <div className="mb-20">
+                    <SimpleTeraboxPlayer />
+                </div>
+
+                {/* Latest Articles */}
+                <section className="mb-20">
+                    <div className="flex items-center justify-between mb-8">
+                        <h2 className="text-2xl font-bold">Latest Terabox Guides</h2>
+                        <Link href="/blog" className="text-primary hover:underline font-medium">
+                            View All
+                        </Link>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {articles.map((article, index) => (
+                            <Link key={index} href={article.link} className="block group">
+                                <div className="bg-card border border-border/50 rounded-2xl p-6 h-full hover:border-primary/50 transition-colors shadow-sm">
+                                    <div className="flex items-center gap-2 mb-3 text-sm text-muted-foreground">
+                                        <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium text-xs">
+                                            {article.type}
+                                        </span>
+                                        <span>•</span>
+                                        <span>{article.readTime}</span>
+                                    </div>
+                                    <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                                        {article.title}
+                                    </h3>
+                                    <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                                        {article.description}
+                                    </p>
+                                    <span className="text-sm font-medium text-primary group-hover:underline">
+                                        Read More →
+                                    </span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
+
+                {/* SEO Text Section 1 */}
+                <section className="mb-20 prose prose-slate dark:prose-invert max-w-none px-4 text-sm md:text-base">
+                    <h2 className="text-3xl font-bold mb-6">How to use Tera Downloader Online</h2>
+                    <p>
+                        Using our <strong>terabox link downloader</strong> is extremely simple. If you have been searching for
+                        <strong>terabox video download</strong> or <strong>terabox file downloader</strong>, you are at the right place.
+                        Just paste your <strong>terabox link</strong> into the <strong>terabox link player</strong> and our
+                        <strong>tera downloader</strong> will process it instantly. Our <strong>terabox online video player</strong>
+                        supports <strong>mdiskplay</strong> and <strong>iteraplay</strong> for a premium <strong>terabox viewer</strong> experience.
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-8 mt-10 not-prose">
+                        <div className="bg-card p-6 rounded-2xl border border-border/50">
+                            <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary">
+                                <Cloud className="w-5 h-5" /> Free Online Storage
+                            </h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                                Access your <strong>terabox online</strong> files and <strong>terabyte storage</strong> content without
+                                limits. Our <strong>terabox.com</strong> bridge provides <strong>cloud storage free</strong> features
+                                and works as a <strong>terabox para pc</strong> solution.
+                            </p>
+                        </div>
+                        <div className="bg-card p-6 rounded-2xl border border-border/50">
+                            <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary">
+                                <Server className="w-5 h-5" /> Tera Box Web
+                            </h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed">
+                                Our <strong>tera box web</strong> platform is an alternative to <strong>terbox</strong> and
+                                <strong>tebox</strong>. It uses <strong>terabix</strong> technology for <strong>teradownloader</strong>
+                                speed. Perfect for <strong>terabox descargar</strong> and <strong>descargar terabox</strong> activities.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Features Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+                    {features.map((f, i) => (
+                        <div key={i} className="bg-card/50 hover:bg-card p-6 rounded-2xl border border-border/50 transition-all duration-200">
+                            <div className="bg-background w-10 h-10 rounded-xl flex items-center justify-center shadow-sm mb-4 border border-border/50">
+                                {f.icon}
+                            </div>
+                            <h3 className="font-bold text-lg mb-2">{f.title}</h3>
+                            <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Deep Content Section */}
+                <section className="bg-muted/30 rounded-3xl p-8 md:p-12 mb-20 border border-border/50 space-y-8">
+                    <div className="max-w-3xl mx-auto text-center">
+                        <h2 className="text-3xl font-bold mb-4">Mastering Terabox Video Player Online</h2>
+                        <p className="text-muted-foreground leading-relaxed">
+                            Whether you are looking for <strong>zoyya talent terabox</strong>, <strong>terabox fullpack</strong>,
+                            or <strong>terabox fullpack pacar</strong>, our <strong>terabox link player</strong> handles all
+                            <strong>tera box video player</strong> needs. Enjoy <strong>terabox lite</strong> and <strong>tela box</strong>
+                            compatibility with <strong>terabox premium crack pc</strong> speed features.
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-6">
+                        <div className="text-center p-4">
+                            <div className="text-3xl mb-2">📥</div>
+                            <h4 className="font-bold mb-1">Tera Box Download</h4>
+                            <p className="text-xs text-muted-foreground">Best <strong>tera box download for pc</strong> and mobile.</p>
+                        </div>
+                        <div className="text-center p-4">
+                            <div className="text-3xl mb-2">🎬</div>
+                            <h4 className="font-bold mb-1">Terabox Video Download</h4>
+                            <p className="text-xs text-muted-foreground">Fast <strong>terabox video downloader online</strong>.</p>
+                        </div>
+                        <div className="text-center p-4">
+                            <div className="text-3xl mb-2">🧬</div>
+                            <h4 className="font-bold mb-1">Terabox Link Downloader</h4>
+                            <p className="text-xs text-muted-foreground">The ultimate <strong>terabox link opener</strong>.</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Language & Global SEO Text */}
+                <section className="mb-20 text-center bg-primary/5 py-10 rounded-3xl border border-primary/10 px-4">
+                    <h2 className="text-2xl font-bold mb-6">Global Tera Box Player Online</h2>
+                    <p className="text-sm text-muted-foreground max-w-4xl mx-auto leading-relaxed mb-6">
+                        Utilice nuestro <strong>descargar terabox</strong> o <strong>terabox para pc</strong> profesional.
+                        Nós suportamos <strong>terab</strong> e <strong>tetrabox</strong> para brasileiros.
+                        Use <strong>terabox iniciar sesión</strong> and <strong>terabox login</strong> features safely.
+                        We also support <strong>almacenamiento en la nube</strong> and <strong>cloud storage free</strong> access
+                        for users around the world. Access <strong>tera downloader</strong> and <strong>terabox apk</strong>
+                        features without <strong>terabox mod apk</strong> risks. Support for <strong>terabook</strong> and
+                        <strong>torah box</strong> links is also included.
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-2 opacity-70">
+                        {researchedKeywords.slice(0, 20).map(kw => (
+                            <Badge key={kw} variant="outline" className="text-[10px] sm:text-xs">{kw}</Badge>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Technical & Storage Section */}
+                <div className="grid md:grid-cols-2 gap-8 mb-20">
+                    <div className="bg-card p-8 rounded-3xl border border-border/50">
+                        <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
+                            <Smartphone className="w-6 h-6 text-blue-500" /> Tera Box Video Download
+                        </h3>
+                        <ul className="space-y-3">
+                            <li className="flex justify-between items-center text-sm">
+                                <span className="font-medium">Terabox for PC Download</span>
+                                <span className="text-muted-foreground text-xs uppercase bg-green-500/10 text-green-600 px-2 py-0.5 rounded">High Speed</span>
+                            </li>
+                            <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+                                <span className="font-medium">Terabox Online Player</span>
+                                <span className="text-muted-foreground">No Buffering</span>
+                            </li>
+                            <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+                                <span className="font-medium">Tera Box Web Downloader</span>
+                                <span className="text-muted-foreground">Stable</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-card p-8 rounded-3xl border border-border/50">
+                        <h3 className="text-xl font-bold mb-6 flex items-center gap-3">
+                            <Server className="w-6 h-6 text-purple-500" /> Mdisk Player & Tera
+                        </h3>
+                        <ul className="space-y-3">
+                            <li className="flex justify-between items-center text-sm">
+                                <span className="font-medium">Mdisk Player Support</span>
+                                <span className="text-muted-foreground text-xs uppercase bg-purple-500/10 text-purple-600 px-2 py-0.5 rounded">Universal</span>
+                            </li>
+                            <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+                                <span className="font-medium">Iteraplay Streaming</span>
+                                <span className="text-muted-foreground">HD Quality</span>
+                            </li>
+                            <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+                                <span className="font-medium">Tera Downloader Online</span>
+                                <span className="text-muted-foreground">Free</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                {/* FAQ Section */}
+                <section className="max-w-3xl mx-auto mb-20">
+                    <h2 className="text-3xl font-bold text-center mb-4">Tera Box Video Downloader FAQ</h2>
+                    <p className="text-center text-muted-foreground mb-10">Common questions about <strong>terabox download</strong> and <strong>terabox video player</strong>.</p>
+                    <Accordion type="single" collapsible className="w-full">
+                        {jsonLdSchemas.faq.mainEntity.map((faq, i) => (
+                            <AccordionItem key={i} value={`item-${i}`} className="border-b-border/50">
+                                <AccordionTrigger className="text-left font-medium hover:no-underline hover:text-primary leading-relaxed py-4">
+                                    {faq.name}
+                                </AccordionTrigger>
+                                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
+                                    {faq.acceptedAnswer.text}
+                                </AccordionContent>
+                            </AccordionItem>
+                        ))}
+                    </Accordion>
+                </section>
+
+                {/* Final SEO Text Paragraphs - Including all missing keywords */}
+                <section className="mb-20 prose prose-slate dark:prose-invert max-w-none border-t border-border/50 pt-16 text-sm md:text-base px-4">
+                    <p>
+                        In conclusion, our <strong>terabox downloader online</strong> platform is the most comprehensive tool for
+                        <strong>tera downloader</strong> and <strong>terabox player</strong> needs. We offer <strong>terabox for pc</strong>,
+                        <strong>terabox app</strong>, and <strong>tera box pc</strong> support. Whether you use <strong>tarabox</strong>,
+                        <strong>terbox</strong>, <strong>tebox</strong>, or <strong>terab</strong>, our site ensures a smooth
+                        <strong>terabox video player online</strong> experience. Save your favorito <strong>terabox online</strong>
+                        videos with <strong>mdiskplay</strong> and <strong>iteraplay</strong> integration.
+                    </p>
+                    <p>
+                        Don't forget that we also provide <strong>free online storage</strong> insights, <strong>terabyte storage</strong> tips,
+                        and <strong>terrabox storage</strong> solutions. Use our <strong>terabox video downloader</strong> to bypass
+                        <strong>terabox mod apk</strong> limitations and experience <strong>ultrabox</strong> level speeds.
+                        Access <strong>almacenamiento en la nube</strong> for free and enjoy <strong>tera box video download</strong>
+                        without limits. Our <strong>terabox downloader online free</strong> is also compatible with <strong>dubox</strong>,
+                        <strong>terebox</strong>, and <strong>tera</strong> links. Experience <strong>zoyya talent terabox</strong> and
+                        <strong>pikpak desi</strong> content like never before.
+                    </p>
+                </section>
+
+                {/* Related Tools / Keyword Cloud */}
+                <div className="text-center py-10 border-t border-border/50">
+                    <p className="text-sm font-bold text-muted-foreground mb-6 uppercase tracking-widest text-primary/80">Search & Explore Keywords</p>
+                    <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 max-w-4xl mx-auto px-4 opacity-50">
+                        {researchedKeywords.map(kw => (
+                            <span key={kw} className="text-[9px] sm:text-[11px] text-muted-foreground hover:text-primary transition-colors cursor-default whitespace-nowrap">
+                                {kw} <span className="opacity-30">|</span>
+                            </span>
+                        ))}
+                    </div>
+                </div>
+
+                <div className="text-center py-6">
+                    <Link href="/">
+                        <span className="text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer flex items-center justify-center gap-1">
+                            ← <span>Back to All Tools</span>
+                        </span>
+                    </Link>
+                </div>
+
             </div>
         </>
     );
