@@ -177,10 +177,9 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="theme-color" content="#000000" />
         <meta
           name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+          content="width=device-width, initial-scale=1, maximum-scale=5"
         />
 
         {/* Enhanced SEO Meta Tags */}
@@ -228,12 +227,7 @@ export default async function RootLayout({ children }) {
         />
 
         {/* Preconnect for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
+
 
         <Script
           async
@@ -287,6 +281,8 @@ export default async function RootLayout({ children }) {
             <img
               src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
               alt="Visitor badge"
+              width="200"
+              height="20"
             />
           </a>
         </ThemeProvider>

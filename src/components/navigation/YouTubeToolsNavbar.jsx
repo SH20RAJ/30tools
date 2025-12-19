@@ -93,6 +93,7 @@ export default function YouTubeToolsNavbar() {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? (
                 <X className="w-5 h-5" />

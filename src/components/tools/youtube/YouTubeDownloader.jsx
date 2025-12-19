@@ -375,6 +375,7 @@ export default function YouTubeDownloader() {
                 onClick={handleBookmark}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors p-2"
                 title={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
+                aria-label={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
               >
                 {isBookmarked ? <BookmarkCheck className="w-5 h-5 text-primary" /> : <Bookmark className="w-5 h-5" />}
               </button>
@@ -398,9 +399,9 @@ export default function YouTubeDownloader() {
               <Heart className="h-5 w-5 fill-current" />
             </div>
             <div>
-              <h3 className="font-bold text-base sm:text-lg text-rose-950 dark:text-rose-100">
+              <h2 className="font-bold text-base sm:text-lg text-rose-950 dark:text-rose-100">
                 Your Heart Keeps This Tool Beating for Everyone
-              </h3>
+              </h2>
               <p className="text-sm text-rose-800/80 dark:text-rose-200/70">
                 Every small act of kindness ensures this essential resource remains free and accessible. Even Rs. 11 or $5 can help.
               </p>
