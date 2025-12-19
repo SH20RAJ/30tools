@@ -4,8 +4,10 @@ export const metadata = {
   title: "TikTok to MP3 Converter - Free TikTok MP3 Downloader | 30Tools",
   description: "Convert TikTok to MP3 online for free. Extract high-quality music and sounds from any TikTok video instantly. Simple, fast, and no registration required.",
   keywords: [
-    "tiktok to mp3 converter", "convert tiktok to mp3", "tiktok mp3 downloader", "tiktok audio extractor",
-    "tiktok sound converter", "tiktok music converter", "save tiktok sounds mp3", "download musically to mp3"
+    "tiktok audio downloader 2026", "tiktok mp3 downloader", "save tiktok music", "extract audio from tiktok",
+    "tiktok sound downloader free", "tiktok to mp3 converter", "download tiktok songs", "tik audio saver",
+    "musicallydown mp3", "ssstik mp3", "snaptik audio", "save tt sounds", "mp3 converter tiktok",
+    "tiktok song downloader", "tiktok ringtone downloader", "download tiktok sound mp3", "tiktok music saver"
   ].join(", "),
   openGraph: {
     title: "TikTok Audio Downloader (2026) - Save TikTok Sounds as MP3",

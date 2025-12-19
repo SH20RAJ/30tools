@@ -8,7 +8,10 @@ export const metadata = {
     "twitter gif downloader", "twitter video saver hd", "download tweets from x", "twitter to mp4 converter",
     "rip twitter video", "save tweet vid", "x video download", "twitter downloader online",
     "تحميل فيديو تويتر", "descargar videos de twitter", "baixar videos do twitter", "télécharger vidéo twitter",
-    "twitter mp4 downloader", "x video saver free", "best twitter downloader", "ssstwitter alternative"
+    "twitter mp4 downloader", "x video saver free", "best twitter downloader", "ssstwitter alternative",
+    "twitter to mp3", "twitter video converter", "x video converter", "download x video mp4",
+    "twitter video download free", "save video from x", "twitter media downloader", "x media downloader",
+    "twitter link downloader", "x link downloader", "twitter video saver online"
   ].join(", "),
   openGraph: {
     title: "Twitter Video Downloader (2026) - Free X Video Saver",
@@ -320,11 +323,11 @@ export default function TwitterDownloaderPage() {
                 Looking for the best <strong>Twitter video downloader</strong> to save your favorite clips from X? 30Tools provides a seamless way to <strong>download twitter videos</strong> and GIFs in high definition. Our tool is designed to be the fastest <strong>X video downloader</strong> online, allowing you to bypass restrictions and save content directly to your device.
               </p>
               <p>
-                Whether you need to <strong>save twitter videos</strong> for offline viewing, or you're looking for an <strong>ssstwitter alternative</strong> that actually works, our platform is the solution. We support all types of tweet media, including long-form videos from X Premium (Twitter Blue) and trending viral clips.
+                Whether you need to <strong>save twitter videos</strong> for offline viewing, or you're looking for an <strong>ssstwitter alternative</strong> that actually works, our platform is the solution. We support all types of tweet media, including long-form videos from X Premium (Twitter Blue) and trending viral clips. Our <strong>twitter media downloader</strong> is built for speed and reliability.
               </p>
               <h3>How to Download from Twitter (X) in 2026</h3>
               <p>
-                The process is simple: just copy the tweet link and paste it into our <strong>twitter to mp4 converter</strong>. Within seconds, you'll have access to multiple download options. You can <strong>descargar videos de twitter</strong> (Spanish), <strong>baixar videos do twitter</strong> (Portuguese), or <strong>تحميل فيديو تويتر</strong> (Arabic) using our multi-language friendly interface.
+                The process is simple: just copy the tweet link and paste it into our <strong>twitter to mp4 converter</strong> or <strong>x video converter</strong>. Within seconds, you'll have access to multiple download options. You can <strong>descargar videos de twitter</strong> (Spanish), <strong>baixar videos do twitter</strong> (Portuguese), or <strong>تحميل فيديو تويتر</strong> (Arabic) using our multi-language friendly interface. Our <strong>twitter link downloader</strong> supports all public tweet formats.
               </p>
               <p>
                 Our <strong>twitter gif downloader</strong> ensures that even the funniest animations are saved as high-quality MP4 files, making them easy to share or re-post. We are committed to being the most reliable <strong>x video download</strong> service on the web.
