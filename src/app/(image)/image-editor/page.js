@@ -17,8 +17,11 @@ export const metadata = {
   title: "Free Online Image Editor - Edit Photos Instantly | 30tools",
   description:
     "Edit photos online for free. Crop, resize, add text, apply filters, and adjust colors. Professional photo editing tools in your browser.",
-  keywords:
-    "online image editor, photo editor, free photo editor, edit photos online, add text to image, crop image, image filters, picture editor, web based photo editor",
+  keywords: [
+    "online image editor", "photo editor", "free photo editor", "edit photos online", "add text to image",
+    "crop image", "image filters", "picture editor", "web based photo editor", "remove background",
+    "make picture transparent", "erase background image", "cut out background", "photo background remover"
+  ].join(", "),
   alternates: {
     canonical: "https://30tools.com/image-editor",
   },
@@ -296,7 +299,7 @@ export default function ImageEditorPage() {
                 {
                   "@type": "HowToStep",
                   name: "Edit & Enhance",
-                  text: "Use the toolbar to crop, filter, add text, or adjust colors.",
+                  text: "Use the toolbar to crop, filter, add text, adjust colors, or remove background.",
                   url: "https://30tools.com/image-editor#step2",
                 },
                 {
