@@ -14,18 +14,12 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Merger (2026) - Combine PDFs Online | 30Tools",
-  description: "Merge PDF files online for free (Updated 2026). Combine multiple PDFs into one document. Secure, private & no watermarks. Drag & drop interface.",
+  title: "Free PDF Merger Online (2026) - Combine & Join PDFs | 30Tools",
+  description: "Best free online pdf merger to combine multiple PDF files into one document instantly. join pdf documents securely with no watermarks or registration required.",
   keywords: [
-    "pdf merger 2026",
-    "merge pdf files free",
-    "combine pdf online secure",
-    "join pdf documents",
-    "pdf combiner tool",
-    "merge pdf no watermark",
-    "online pdf merger free",
-    "updated 2026",
-    "combine pdf pages"
+    "pdf merger 2026", "merge pdf files free", "combine pdf online secure", "join pdf documents",
+    "pdf combiner tool", "merge pdf no watermark", "online pdf merger free", "join pdfs",
+    "smallpdf merge", "ilovepdf merge", "pdf to go", "soda pdf merge", "pdf maker", "pdf joiner"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/pdf-merger",

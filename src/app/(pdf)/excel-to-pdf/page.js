@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-    title: "Excel to PDF Converter - Convert XLS/XLSX to PDF Free | 30tools",
+    title: "Excel to PDF Converter Online (2026) - XLS/XLSX to PDF | 30Tools",
     description:
-        "Convert Excel spreadsheets to PDF online for free. Supports XLS and XLSX formats. Preserves formatting, tables, and formulas. Secure and fast.",
+        "Best free online excel to pdf converter. transform XLS and XLSX spreadsheets into professional PDF documents while preserving formatting and tables instantly.",
     keywords:
-        "excel to pdf, xls to pdf, xlsx to pdf, convert excel to pdf, excel converter, free excel to pdf, online pdf converter, spreadsheet to pdf",
+        "excel to pdf 2026, xls to pdf, xlsx to pdf, convert excel to pdf, excel converter, free excel to pdf, online pdf converter, spreadsheet to pdf, best excel to pdf",
     alternates: {
         canonical: "https://30tools.com/excel-to-pdf",
     },

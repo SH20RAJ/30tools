@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PNG to PDF Converter - Convert PNG Images to PDF | 30tools",
+  title: "Free PNG to PDF Converter Online (2026) - Images to PDF | 30Tools",
   description:
-    "Convert PNG images to PDF online for free. Support for transparency, custom layouts, and high quality. Secure and no watermarks.",
+    "Best free online png to pdf converter. convert PNG images to PDF while preserving transparency and high quality. combine multiple pngs into one pdf safely.",
   keywords:
-    "png to pdf, convert png to pdf, png images to pdf, transparency to pdf, png pdf converter, image to pdf, combine png to pdf, free pdf tools",
+    "png to pdf 2026, convert png to pdf, png images to pdf, transparency to pdf, png pdf converter, image to pdf, combine png to pdf, free pdf tools, best png to pdf",
   alternates: {
     canonical: "https://30tools.com/png-to-pdf",
   },

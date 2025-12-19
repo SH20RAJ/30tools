@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "PDF to Word Converter - Convert PDF to DOCX Free | 30tools",
+  title: "PDF to Word Converter Online (2026) - PDF to DOCX Free | 30Tools",
   description:
-    "Convert PDF files to editable Word documents online for free. Extract text, images, and layout accurately. Secure, fast, and no installation required.",
+    "Best free online pdf to word converter. transform PDF files to editable DOCX documents with high accuracy. convert pdf to word free without registration.",
   keywords:
-    "pdf to word, pdf to doc, pdf to docx, convert pdf to word, pdf converter, free pdf to word, online pdf converter, editable word document",
+    "pdf to word 2026, pdf to doc, pdf to docx, convert pdf to word, pdf converter, free pdf to word, online pdf converter, editable word document, best pdf to word",
   alternates: {
     canonical: "https://30tools.com/pdf-to-word",
   },

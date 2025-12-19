@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-    title: "PowerPoint to PDF Converter - Convert PPT/PPTX to PDF | 30tools",
+    title: "PowerPoint to PDF Converter Online (2026) - PPT/PPTX to PDF | 30Tools",
     description:
-        "Convert PowerPoint presentations to PDF online for free. Supports PPT and PPTX formats. Preserves slides, layout, and fonts. Secure and fast.",
+        "Best free online powerpoint to pdf converter. transform PPT and PPTX presentations into professional PDF documents while preserving slides and layout accurately.",
     keywords:
-        "powerpoint to pdf, ppt to pdf, pptx to pdf, convert powerpoint to pdf, powerpoint converter, free ppt to pdf, online pdf converter, presentation to pdf",
+        "powerpoint to pdf 2026, ppt to pdf, pptx to pdf, convert powerpoint to pdf, powerpoint converter, free ppt to pdf, online pdf converter, presentation to pdf, best ppt to pdf",
     alternates: {
         canonical: "https://30tools.com/powerpoint-to-pdf",
     },

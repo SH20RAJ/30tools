@@ -14,18 +14,12 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "JPG to PDF Converter (2026) - Images to PDF Free | 30Tools",
-  description: "Convert JPG to PDF online for free (Updated 2026). Combine multiple images into one PDF document. Fast, secure & no limit. High quality output.",
+  title: "JPG to PDF Converter Online (2026) - Images to PDF Free | 30Tools",
+  description: "Best free online jpg to pdf converter to combine multiple images into one PDF document. convert image to pdf free (Updated 2026) with high quality output.",
   keywords: [
-    "jpg to pdf converter 2026",
-    "convert image to pdf free",
-    "combine photos to pdf",
-    "jpeg to pdf online",
-    "png to pdf converter",
-    "image to pdf high quality",
-    "photos to pdf maker",
-    "updated 2026",
-    "create pdf from images"
+    "jpg to pdf converter 2026", "convert image to pdf free", "combine photos to pdf",
+    "jpeg to pdf online", "png to pdf converter", "image to pdf high quality",
+    "photos to pdf maker", "smallpdf jpg to pdf", "ilovepdf jpg to pdf", "best image to pdf"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/jpg-to-pdf",

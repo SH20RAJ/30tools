@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Rotate Tool - Rotate PDF Pages Online | 30tools",
+  title: "Free Online PDF Rotate Tool (2026) - Fix PDF Orientation | 30Tools",
   description:
-    "Rotate PDF pages permanently. Fix orientation of individual pages or entire documents. Free, secure, and easy to use online tool.",
+    "Best free online pdf rotate tool to fix page orientation permanently. rotate individual PDF pages or entire documents instantly and securely.",
   keywords:
-    "pdf rotate, rotate pdf pages, fix pdf orientation, rotate pdf online, pdf page rotation, correct pdf pages, rotate pdf free, change pdf orientation",
+    "pdf rotate 2026, rotate pdf pages, fix pdf orientation, rotate pdf online, pdf page rotation, correct pdf pages, rotate pdf free, change pdf orientation, best pdf rotate",
   alternates: {
     canonical: "https://30tools.com/pdf-rotate",
   },

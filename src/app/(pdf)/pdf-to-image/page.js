@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-    title: "PDF to Image Converter - Convert PDF to JPG/PNG Free | 30tools",
+    title: "PDF to Image Converter Online (2026) - PDF to JPG/PNG | 30Tools",
     description:
-        "Convert PDF pages to high-quality JPG or PNG images online for free. Extract images from PDF securely. Fast, easy, and no installation required.",
+        "Best free online pdf to image converter. extract pages from PDF as high-quality JPG or PNG images instantly. secure pdf to picture conversion online.",
     keywords:
-        "pdf to image, pdf to jpg, pdf to png, convert pdf to image, pdf to picture, free pdf to image, online pdf converter, extract pdf pages as images",
+        "pdf to image 2026, pdf to jpg, pdf to png, convert pdf to image, pdf to picture, free pdf to image, online pdf converter, extract pdf pages as images, pdf to image converter",
     alternates: {
         canonical: "https://30tools.com/pdf-to-image",
     },

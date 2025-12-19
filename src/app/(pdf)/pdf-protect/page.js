@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Password Protector - Encrypt & Secure PDF Files | 30tools",
+  title: "Free PDF Password Protector (2026) - Secure & Encrypt PDF | 30Tools",
   description:
-    "Secure your PDF files with strong AES encryption. Add passwords, restrict printing and copying, and protect your sensitive documents online for free.",
+    "Best free online pdf protector to secure your PDF files with strong AES encryption. add passwords and restrict printing or copying instantly and safely.",
   keywords:
-    "pdf password protect, encrypt pdf, secure pdf, add password to pdf, pdf security, protect pdf online, pdf encryption, free pdf tools",
+    "pdf password protect 2026, encrypt pdf, secure pdf, add password to pdf, pdf security, protect pdf online, pdf encryption, free pdf tools, smallpdf protect, ilovepdf protect",
   alternates: {
     canonical: "https://30tools.com/pdf-protect",
   },

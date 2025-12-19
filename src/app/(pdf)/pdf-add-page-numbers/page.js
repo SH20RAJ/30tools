@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Add Page Numbers to PDF - Free Online Tool | 30tools",
+  title: "Add Page Numbers to PDF Online (2026) - PDF Numbering | 30Tools",
   description:
-    "Add page numbers to PDF documents online for free. Customize position, format, font, and style. Professional numbering for reports and legal documents.",
+    "Best free online tool to add page numbers to PDF documents. customize numbering position, format, font, and style for professional reports and files.",
   keywords:
-    "add page numbers to pdf, pdf page numbering, number pdf pages, pdf page numbers online, add page numbers pdf free, custom pdf numbering, bates numbering pdf",
+    "add page numbers to pdf 2026, pdf page numbering, number pdf pages, pdf page numbers online, add page numbers pdf free, custom pdf numbering, bates numbering pdf, professional pdf numbering",
   alternates: {
     canonical: "https://30tools.com/pdf-add-page-numbers",
   },

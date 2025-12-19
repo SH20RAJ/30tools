@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-    title: "Image to PDF Converter - Convert JPG/PNG to PDF Free | 30tools",
+    title: "Image to PDF Converter Online (2026) - Photos to PDF | 30Tools",
     description:
-        "Convert images to PDF online for free. Combine multiple JPG, PNG, BMP, and GIF images into a single PDF document. Secure, fast, and easy.",
+        "Best free online image to pdf converter. combine multiple JPG, PNG, BMP, and GIF images into a professional PDF document instantly and safely.",
     keywords:
-        "image to pdf, jpg to pdf, png to pdf, convert image to pdf, combine images to pdf, free image to pdf, online pdf converter, picture to pdf",
+        "image to pdf 2026, jpg to pdf, png to pdf, convert image to pdf, combine images to pdf, free image to pdf, online pdf converter, picture to pdf, best image to pdf",
     alternates: {
         canonical: "https://30tools.com/image-to-pdf",
     },

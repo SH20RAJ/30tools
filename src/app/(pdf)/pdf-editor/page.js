@@ -14,18 +14,12 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Editor (2026) - Edit Pages Online | 30Tools",
-  description: "Edit PDF documents online free (Updated 2026). Extract, delete, rotate, and reorder pages securely. No installation & no watermarks.",
+  title: "Free Online PDF Editor (2026) - Manage & Edit PDF Pages | 30Tools",
+  description: "Best free online pdf editor to extract, delete, rotate, and reorder PDF pages instantly. manage your documents securely without watermarks or installation.",
   keywords: [
-    "pdf editor 2026",
-    "edit pdf online free",
-    "delete pdf pages online",
-    "extract pages from pdf",
-    "rotate pdf pages permanent",
-    "manage pdf documents",
-    "free pdf organizer",
-    "updated 2026",
-    "modify pdf online"
+    "pdf editor 2026", "edit pdf online free", "delete pdf pages online", "extract pages from pdf",
+    "rotate pdf pages permanent", "manage pdf documents", "free pdf organizer", "best pdf editor",
+    "smallpdf editor", "ilovepdf editor", "pdf to go editor", "soda pdf editor"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/pdf-editor",

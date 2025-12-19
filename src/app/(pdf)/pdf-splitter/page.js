@@ -14,11 +14,11 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Splitter - Split PDF into Separate Files Online | 30tools",
+  title: "Free Online PDF Splitter (2026) - Extract & Divide PDF | 30Tools",
   description:
-    "Split PDF files online for free. Extract pages, separate documents, or split by range. Fast, secure, and no watermarks.",
+    "Best free online pdf splitter to extract pages from PDF or divide large files into multiple documents. split pdf by range or extract individual pages safely.",
   keywords:
-    "pdf splitter, split pdf, extract pdf pages, separate pdf, divide pdf, pdf cutter, split pdf online free, pdf page extractor, free pdf tools",
+    "pdf splitter 2026, split pdf, extract pdf pages, separate pdf, divide pdf, pdf cutter, split pdf online free, pdf page extractor, free pdf tools, smallpdf split, ilovepdf split",
   alternates: {
     canonical: "https://30tools.com/pdf-splitter",
   },

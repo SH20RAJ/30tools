@@ -14,18 +14,12 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Word to PDF Converter (2026) - DOC/DOCX to PDF | 30Tools",
-  description: "Convert Word documents to PDF online for free (Updated 2026). Supports DOC & DOCX files. Preserves formatting, fonts & layout. Secure & Private.",
+  title: "Word to PDF Converter Online (2026) - DOC/DOCX to PDF | 30Tools",
+  description: "Best free online word to pdf converter. transform Word documents (DOC, DOCX) to professional PDF files instantly. convert docx to pdf free online.",
   keywords: [
-    "word to pdf converter 2026",
-    "convert docx to pdf free",
-    "doc to pdf secure online",
-    "microsoft word to pdf",
-    "save word as pdf online",
-    "word document to pdf",
-    "free pdf processing",
-    "updated 2026",
-    "no watermarks"
+    "word to pdf converter 2026", "convert docx to pdf free", "doc to pdf secure online",
+    "microsoft word to pdf", "save word as pdf online", "word document to pdf",
+    "free word to pdf", "convert word to pdf free", "best word to pdf"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/word-to-pdf",
