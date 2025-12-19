@@ -4,13 +4,10 @@ export const metadata = {
   title: "Instagram DP Downloader - View & Download Profile Pictures | 30tools",
   description: "View and download Instagram profile pictures in full HD size. Zoom into IG DPs and save them. Free Instagram profile picture viewer and downloader.",
   keywords: [
-    "instagram dp downloader",
-    "instagram profile picture downloader",
-    "insta dp viewer",
-    "download instagram dp",
-    "instagram profile photo viewer",
-    "full size instagram dp",
-    "ig dp saver"
+    "instagram dp downloader", "instagram profile picture downloader", "insta dp viewer",
+    "download instagram dp", "instagram profile photo viewer", "full size instagram dp",
+    "ig dp saver", "zoom instagram profile picture", "view ig profile pic hd",
+    "instagram pfp downloader", "instazoom alternative"
   ].join(", "),
   openGraph: {
     title: "Instagram DP Downloader - View Full Size Profile Pics",
@@ -48,12 +45,12 @@ export default function InstagramDPDownloaderPage() {
           <AdUnit />
 
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Instagram DP Downloader</h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              View and download Instagram profile pictures in full HD resolution. See profile photos of any public or private account in large size.
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Instagram DP Downloader (HD)</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              Fastest <strong>instagram profile picture downloader</strong>. View and download Instagram profile photos in full HD resolution. See any <strong>ig dp viewer</strong> content in large size for public or private accounts safely.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>🔍 View Full Size</span><span>💾 Download HD</span><span>👤 Any Account</span><span>🆓 100% Free</span>
+              <span>🔍 <strong>View Full Size IG DP</strong></span><span>💾 <strong>Download HD PFP</strong></span><span>👤 Any Account</span><span>🆓 100% Free</span>
             </div>
           </div>
 

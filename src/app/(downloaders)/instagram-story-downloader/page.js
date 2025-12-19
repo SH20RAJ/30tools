@@ -4,15 +4,11 @@ export const metadata = {
   title: "Instagram Story Downloader (2026) - Save Stories Anonymous | 30Tools",
   description: "Download Instagram Stories & Highlights anonymously (Updated 2026). Save IG stories to MP4/JPG without login. Free & Private.",
   keywords: [
-    "instagram story downloader 2026",
-    "download instagram stories anonymous",
-    "ig story saver",
-    "instagram highlight downloader",
-    "save instagram story to gallery",
-    "watch instagram stories anonymous",
-    "story saver for instagram",
-    "updated 2026",
-    "instagram story viewer"
+    "instagram story downloader 2026", "anonymous instagram viewer", "insta story viewer",
+    "ig story saver", "instagram highlight downloader", "save instagram story to gallery",
+    "watch instagram stories anonymous", "story saver for instagram", "insta stories viewer",
+    "insta story download", "picuki", "instagram history viewer", "story downloader ig",
+    "insta anonymous", "watch ig stories without account"
   ].join(", "),
   openGraph: {
     title: "Instagram Story Downloader (2026) - Save Stories Anonymously",
@@ -63,12 +59,12 @@ export default function InstagramStoryDownloaderPage() {
           <AdUnit />
 
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Instagram Story Downloader</h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download Instagram Stories and Highlights anonymously. Save photos and videos from stories directly to your device.
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Instagram Story Downloader & Viewer</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              Powerful <strong>anonymous instagram viewer</strong> and <strong>insta story viewer</strong>. Download Instagram Stories and Highlights anonymously without login. Save photos and videos from stories directly to your device with our <strong>insta story download</strong> tool.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>📖 Save Stories</span><span>⭐ Highlights</span><span>🕵️ Anonymous</span><span>🆓 100% Free</span>
+              <span>📖 <strong>Save Stories</strong></span><span>⭐ <strong>Highlights Downloader</strong></span><span>🕵️ <strong>Anonymous Story Viewer</strong></span><span>🆓 100% Free</span>
             </div>
           </div>
 

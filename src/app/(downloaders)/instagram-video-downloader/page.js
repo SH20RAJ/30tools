@@ -212,22 +212,44 @@ export default function InstagramVideoDownloaderPage() {
             <div className="p-4 bg-muted/20 rounded-xl border border-border">
               <p className="text-2xl mb-2">🇹🇷</p>
               <p className="font-bold"><strong>Instagram Video Indir</strong></p>
-              <p className="text-xs text-muted-foreground text-center">Hızlı ve Güvenli</p>
+              <p className="text-xs text-muted-foreground text-center">Hızlı <strong>instagram giriş</strong> ve indir</p>
             </div>
             <div className="p-4 bg-muted/20 rounded-xl border border-border">
               <p className="text-2xl mb-2">🇪🇸</p>
               <p className="font-bold"><strong>Descargar Video Instagram</strong></p>
-              <p className="text-xs text-muted-foreground text-center">Gratis Online</p>
+              <p className="text-xs text-muted-foreground text-center"><strong>Instagram iniciar sesión</strong> gratis</p>
             </div>
             <div className="p-4 bg-muted/20 rounded-xl border border-border">
               <p className="text-2xl mb-2">🇧🇷</p>
               <p className="font-bold"><strong>Baixar Video Instagram</strong></p>
-              <p className="text-xs text-muted-foreground text-center">Alta Qualidade</p>
+              <p className="text-xs text-muted-foreground text-center"><strong>Instagram entrar</strong> agora</p>
             </div>
             <div className="p-4 bg-muted/20 rounded-xl border border-border">
               <p className="text-2xl mb-2">🇫🇷</p>
-              <p className="font-bold"><strong>Telecharger Video</strong></p>
-              <p className="text-xs text-muted-foreground text-center">Simple et Rapide</p>
+              <p className="font-bold"><strong>Telecharger Video Instagram</strong></p>
+              <p className="text-xs text-muted-foreground text-center"><strong>Instagram connexion</strong> rapide</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-6">
+            <div className="p-4 bg-muted/20 rounded-xl border border-border">
+              <p className="text-2xl mb-2">🇷🇺</p>
+              <p className="font-bold"><strong>Инстаграм</strong></p>
+              <p className="text-xs text-muted-foreground text-center"><strong>инстаграм вход</strong> без пароля</p>
+            </div>
+            <div className="p-4 bg-muted/20 rounded-xl border border-border">
+              <p className="text-2xl mb-2">🇸🇦</p>
+              <p className="font-bold"><strong>انستقرام</strong></p>
+              <p className="text-xs text-muted-foreground text-center"><strong>انستا</strong> تحميل مباشر</p>
+            </div>
+            <div className="p-4 bg-muted/20 rounded-xl border border-border">
+              <p className="text-2xl mb-2">🇮🇷</p>
+              <p className="font-bold"><strong>اینستاگرام</strong></p>
+              <p className="text-xs text-muted-foreground text-center">دانلود راحت و سریع</p>
+            </div>
+            <div className="p-4 bg-muted/20 rounded-xl border border-border">
+              <p className="text-2xl mb-2">🇯🇵</p>
+              <p className="font-bold"><strong>インスタグラム</strong></p>
+              <p className="text-xs text-muted-foreground text-center"><strong>インスタ</strong> 保存ツール</p>
             </div>
           </div>
         </section>

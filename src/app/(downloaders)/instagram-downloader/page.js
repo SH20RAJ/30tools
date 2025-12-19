@@ -22,17 +22,10 @@ export const metadata = {
   title: "Instagram Downloader (2026) - Save Video, Reels, Story & Photo | 30Tools",
   description: "Download Instagram Videos, Reels, Stories & Photos in HD 1080p. Updated 2026. Anonymous, Free, No Watermark. Works on iPhone/Android.",
   keywords: [
-    "instagram downloader 2026",
-    "instagram video downloader",
-    "download instagram reels",
-    "story saver for instagram",
-    "download instagram photo",
-    "ig downloader free",
-    "save instagram video",
-    "instagram to mp4",
-    "no watermark",
-    "updated 2026",
-    "anonymous story viewer"
+    "instagram downloader 2026", "instagram login", "ig login", "انستا", "instagram.com login",
+    "instagram entrar", "instagram login account", "ig downloader free", "save instagram video",
+    "instagram to mp4", "instagram story viewer", "no watermark", "anonymous story viewer",
+    "instagram app download", "insta login", "isnta", "ins", "inst"
   ].join(", "),
   openGraph: {
     title: "Instagram Downloader (2026) - Save Reels & Stories Free",
@@ -228,10 +221,10 @@ export default function InstagramDownloaderPage() {
           {/* Hero */}
           <section className="text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
-              Instagram <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Downloader</span>
+              Instagram <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Downloader</span> (2026)
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Download Instagram Videos, Reels, Stories, and Photos in HD. Fast, free, and no watermark.
+              Fastest <strong>instagram login</strong> alternative for <strong>instagram downloader</strong> tasks. Download Instagram Videos, Reels, Stories, and Photos in HD. Free, secure, and no watermark. Best <strong>ig login</strong> and <strong>ansta</strong> downloader.
             </p>
           </section>
 
