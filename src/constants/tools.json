@@ -117,6 +117,36 @@
           ],
           "popular": true,
           "category": "generators"
+        },
+        {
+          "id": "instagram-font-generator",
+          "name": "Instagram Font Generator",
+          "description": "Generate stylish and aesthetic fonts for your Instagram bio, captions, and comments",
+          "route": "/instagram-font-generator",
+          "extraSlugs": [
+            "insta-fonts",
+            "aesthetic-fonts-for-instagram",
+            "stylish-text-generator",
+            "cool-bio-fonts",
+            "instagram-fancy-text"
+          ],
+          "popular": true,
+          "category": "generators"
+        },
+        {
+          "id": "instagram-hashtag-generator",
+          "name": "Instagram Hashtag Generator",
+          "description": "Find top and trending hashtags for Instagram to increase your reach and engagement",
+          "route": "/instagram-hashtag-generator",
+          "extraSlugs": [
+            "trending-instagram-hashtags",
+            "insta-hashtag-finder",
+            "best-hashtags-for-reels",
+            "grow-on-instagram",
+            "viral-hashtag-generator"
+          ],
+          "popular": true,
+          "category": "generators"
         }
       ]
     },
@@ -2218,6 +2248,23 @@
           "category": "downloaders"
         },
         {
+          "id": "instagram-story-viewer",
+          "name": "Instagram Story Viewer",
+          "description": "View and watch Instagram stories anonymously without an account. 100% private and free.",
+          "route": "/instagram-story-viewer",
+          "extraSlugs": [
+            "instagram-anonymous-story-viewer",
+            "piknu",
+            "instastoryviewer",
+            "view-stories-anonymously",
+            "instagram-viewer-story",
+            "insta-story-viewer",
+            "watch-instagram-stories"
+          ],
+          "popular": true,
+          "category": "downloaders"
+        },
+        {
           "id": "instagram-downloader",
           "name": "Instagram Downloader",
           "description": "Download Instagram videos, reels, stories, and photos in high quality",
@@ -2303,6 +2350,51 @@
             "any-video-downloader",
             "social-media-downloader",
             "video-grabber-online"
+          ],
+          "popular": true,
+          "category": "downloaders"
+        },
+        {
+          "id": "instagram-anonymous-story-viewer",
+          "name": "Anonymous Instagram Story Viewer",
+          "description": "Watch Instagram stories anonymously without an account or login",
+          "route": "/instagram-anonymous-story-viewer",
+          "extraSlugs": [
+            "insta-viewer",
+            "insta-anonymous",
+            "watch-ig-stories-private",
+            "story-viewer-without-account",
+            "anonymous-ig-viewer"
+          ],
+          "popular": true,
+          "category": "downloaders"
+        },
+        {
+          "id": "instagram-profile-picture-viewer",
+          "name": "Instagram Profile Picture Viewer",
+          "description": "View and zoom Instagram profile pictures in full HD size for any account",
+          "route": "/instagram-profile-picture-viewer",
+          "extraSlugs": [
+            "ig-dp-viewer",
+            "instagram-profile-photo-hd",
+            "instazoom-alternative",
+            "view-full-size-ig-dp",
+            "profile-pic-viewer-instagram"
+          ],
+          "popular": true,
+          "category": "downloaders"
+        },
+        {
+          "id": "instagram-photo-downloader",
+          "name": "Instagram Photo Downloader",
+          "description": "Download Instagram photos, carousels, and single images in high quality",
+          "route": "/instagram-photo-downloader",
+          "extraSlugs": [
+            "save-instagram-photos",
+            "ig-image-downloader",
+            "download-insta-carousel",
+            "instagram-picture-saver",
+            "ig-photo-download-hd"
           ],
           "popular": true,
           "category": "downloaders"
