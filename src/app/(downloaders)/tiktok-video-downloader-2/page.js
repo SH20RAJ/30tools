@@ -2,16 +2,11 @@ import TikTokDownloader from "@/components/tools/downloaders/TikTokDownloader";
 import ToolChain from "@/components/seo/ToolChain";
 
 export const metadata = {
-  title: "TikTok Video Downloader - Download TikToks Free | 30tools",
-  description: "Download TikTok videos without watermark online. Save TikTok videos in HD MP4 format. Fast and free TikTok video downloader.",
+  title: "TikTok HD Downloader - Download TikTok Video Free (2026) | 30Tools",
+  description: "Download TikTok videos without watermark in HD quality instantly. Fast and free tiktok video saver (Updated 2026). High quality MP4 downloads.",
   keywords: [
-    "tiktok video downloader",
-    "download tiktok",
-    "tiktok downloader online",
-    "save tiktok",
-    "tiktok video saver",
-    "download tiktok hd",
-    "tiktok no watermark downloader"
+    "tiktok hd downloader 2026", "tiktok video downloader no watermark", "save tiktok videos free",
+    "download tiktok mp4 hd", "tiktok saver online", "ssstiktok alternative", "snaptik free"
   ].join(", "),
   openGraph: {
     title: "TikTok Video Downloader - Free Online Tool",

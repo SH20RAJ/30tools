@@ -1,19 +1,14 @@
 import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader";
 
 export const metadata = {
-  title: "Twitter Video Downloader (2026) - Free X Video Saver | 30Tools",
-  description: "Download Twitter (X) videos & GIFs in HD MP4 (Updated 2026). Save X videos to camera roll iphone/android. Free, fast & no login.",
+  title: "Twitter Video Downloader - Free X Video Saver (2026) | 30Tools",
+  description: "Fastest Twitter video downloader! Save X videos & GIFs in HD quality (Updated 2026). Free, fast & no login. Download Twitter to MP4 instantly on any device.",
   keywords: [
-    "twitter video downloader 2026",
-    "download twitter video",
-    "x video downloader",
-    "save twitter video mp4",
-    "twitter gif downloader",
-    "twitter video saver hd",
-    "download tweets from x",
-    "twitter to mp4 converter",
-    "updated 2026",
-    "x video saver online"
+    "twitter video downloader 2026", "download twitter video", "x video downloader", "save twitter video mp4",
+    "twitter gif downloader", "twitter video saver hd", "download tweets from x", "twitter to mp4 converter",
+    "rip twitter video", "save tweet vid", "x video download", "twitter downloader online",
+    "تحميل فيديو تويتر", "descargar videos de twitter", "baixar videos do twitter", "télécharger vidéo twitter",
+    "twitter mp4 downloader", "x video saver free", "best twitter downloader", "ssstwitter alternative"
   ].join(", "),
   openGraph: {
     title: "Twitter Video Downloader (2026) - Free X Video Saver",
@@ -269,16 +264,16 @@ export default function TwitterDownloaderPage() {
           {/* Hero */}
           <header className="text-center mb-10">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-foreground leading-tight">
-              Twitter Video Downloader
+              Twitter Video Downloader - Save X Videos Online
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-6 max-w-3xl mx-auto">
-              Download Twitter (X) videos and GIFs in HD quality for free. Save video content from tweets instantly. Works with both twitter.com and x.com links.
+              Fast, free, and secure <strong>Twitter video downloader</strong>. Download videos from X in HD quality instantly. No login, no app required. Save Twitter to MP4 with one click.
             </p>
             <div className="flex flex-wrap justify-center gap-3 text-sm">
-              <span className="bg-sky-500/10 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">🐦 Twitter & X</span>
-              <span className="bg-sky-500/10 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">🎥 HD Videos</span>
-              <span className="bg-sky-500/10 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">🎞️ GIFs</span>
-              <span className="bg-sky-500/10 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">🆓 100% Free</span>
+              <span className="bg-sky-500/10 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">🐦 Download Twitter Video</span>
+              <span className="bg-sky-500/10 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">🎥 X Video Downloader</span>
+              <span className="bg-sky-500/10 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">🎞️ Save Twitter GIF</span>
+              <span className="bg-sky-500/10 text-sky-600 dark:text-sky-400 px-3 py-1 rounded-full border border-sky-500/20">🆓 SSSTwitter Alternative</span>
             </div>
           </header>
 
@@ -319,19 +314,23 @@ export default function TwitterDownloaderPage() {
 
           {/* SEO Content */}
           <section className="mb-12 bg-card rounded-xl border border-border p-6 md:p-8">
-            <h2 className="text-2xl font-bold mb-4">Free Twitter & X Video Downloader Online</h2>
-            <div className="prose prose-sm max-w-none text-muted-foreground space-y-4">
+            <h2 className="text-2xl font-bold mb-4">Twitter Video Downloader: Save X Videos & GIFs Free</h2>
+            <div className="prose prose-sm max-w-none text-muted-foreground space-y-4 text-base leading-relaxed">
               <p>
-                Looking for a reliable <strong>Twitter video downloader</strong>? Our free online tool lets you download videos and GIFs from Twitter (now X) in HD quality. Whether you want to save a viral tweet, a news clip, or a funny GIF, our tool makes it simple.
+                Looking for the best <strong>Twitter video downloader</strong> to save your favorite clips from X? 30Tools provides a seamless way to <strong>download twitter videos</strong> and GIFs in high definition. Our tool is designed to be the fastest <strong>X video downloader</strong> online, allowing you to bypass restrictions and save content directly to your device.
               </p>
               <p>
-                <strong>Download Twitter videos to MP4</strong> format that works on all devices. Simply copy the tweet URL, paste it into our downloader, and save the video directly to your phone or computer. No registration, no login, no app installation required.
+                Whether you need to <strong>save twitter videos</strong> for offline viewing, or you're looking for an <strong>ssstwitter alternative</strong> that actually works, our platform is the solution. We support all types of tweet media, including long-form videos from X Premium (Twitter Blue) and trending viral clips.
+              </p>
+              <h3>How to Download from Twitter (X) in 2026</h3>
+              <p>
+                The process is simple: just copy the tweet link and paste it into our <strong>twitter to mp4 converter</strong>. Within seconds, you'll have access to multiple download options. You can <strong>descargar videos de twitter</strong> (Spanish), <strong>baixar videos do twitter</strong> (Portuguese), or <strong>تحميل فيديو تويتر</strong> (Arabic) using our multi-language friendly interface.
               </p>
               <p>
-                Our tool is fully compatible with <strong>X (formerly Twitter)</strong>. Whether you copy a link from twitter.com or x.com, we can extract and download the video content. We support regular videos, GIFs, and even longer video content from Twitter Blue/X Premium users.
+                Our <strong>twitter gif downloader</strong> ensures that even the funniest animations are saved as high-quality MP4 files, making them easy to share or re-post. We are committed to being the most reliable <strong>x video download</strong> service on the web.
               </p>
-              <p>
-                Better than twdownload, ssstwitter, and other alternatives - our Twitter downloader is faster, more reliable, and always free. Used by millions of users worldwide to save their favorite Twitter content.
+              <p className="text-sm border-l-4 border-primary pl-4 italic">
+                Note: We are not affiliated with Twitter or X Inc. Please respect the copyright of the creators when downloading and using video content.
               </p>
             </div>
           </section>

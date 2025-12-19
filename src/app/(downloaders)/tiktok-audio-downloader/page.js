@@ -1,18 +1,11 @@
 import TikTokAudioDownloader from "@/components/tools/downloaders/TikTokAudioDownloader";
 
 export const metadata = {
-  title: "TikTok Audio Downloader (2026) - MP3 Songs Free | 30Tools",
-  description: "Download TikTok audio & songs in MP3 (Updated 2026). Extract sound from TikTok videos instant & free. High quality 320kbps support.",
+  title: "TikTok to MP3 Converter - Free TikTok MP3 Downloader | 30Tools",
+  description: "Convert TikTok to MP3 online for free. Extract high-quality music and sounds from any TikTok video instantly. Simple, fast, and no registration required.",
   keywords: [
-    "tiktok audio downloader 2026",
-    "tiktok mp3 downloader",
-    "download tiktok sound only",
-    "convert tiktok video to mp3",
-    "tiktok music extractor capability",
-    "save tiktok audio hd",
-    "tiktok sound saver free",
-    "updated 2026",
-    "tiktok mp3 converter online"
+    "tiktok to mp3 converter", "convert tiktok to mp3", "tiktok mp3 downloader", "tiktok audio extractor",
+    "tiktok sound converter", "tiktok music converter", "save tiktok sounds mp3", "download musically to mp3"
   ].join(", "),
   openGraph: {
     title: "TikTok Audio Downloader (2026) - Save TikTok Sounds as MP3",
@@ -120,7 +113,7 @@ export default function TikTokAudioDownloaderPage() {
           </section>
         </div>
       </div>
-      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
+      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({}); `.repeat(5) }} />
     </>
   );
 }

@@ -1,11 +1,11 @@
 import TikTokDownloaderTool from "@/components/tools/video/TikTokDownloaderTool";
 
 export const metadata = {
-  title: "TikTok Video Downloader - Download Without Watermark",
+  title: "Save TikTok Video - TikTok Video Downloader HD (2026) | 30Tools",
   description:
-    "Free TikTok video downloader. Download TikTok videos without watermarks in HD quality. Fast, safe, and no registration required.",
+    "Best free online tiktok video downloader. save tiktok videos without watermark in HD quality instantly. fast, safe, and unlimited tiktok saver (Updated 2026).",
   keywords:
-    "tiktok downloader, download tiktok video, tiktok without watermark, tiktok video saver, tiktok mp4 download, save tiktok video",
+    "tiktok video downloader 2026, save tiktok video, download tiktok videos, tiktok mp4 download, save tiktoks hd, tiktok video saver no watermark, musically down, sss tiktok, snaptik",
   openGraph: {
     title: "TikTok Video Downloader - No Watermark Downloads",
     description:

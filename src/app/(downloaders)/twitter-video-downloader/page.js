@@ -1,16 +1,12 @@
 import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader";
 
 export const metadata = {
-  title: "Twitter Video Saver - Save X Videos Online | 30tools",
-  description: "Save videos from Twitter (X) easily. Online Twitter video downloader for mobile and PC. Download Twitter videos in MP4 format.",
+  title: "Save X Videos - Twitter Video Downloader Online (2026) | 30Tools",
+  description:
+    "Best free online twitter video downloader to save X videos and GIFs in HD quality. fast, secure, and no registration required (Updated 2026).",
   keywords: [
-    "twitter video saver",
-    "save twitter video",
-    "download x video",
-    "twitter downloader mp4",
-    "twitter video download online",
-    "x video saver",
-    "tweet video downloader"
+    "save x videos", "twitter video downloader 2026", "download twitter videos online", "x video saver",
+    "save twitter clips hd", "twitter to mp4 free", "rip x video", "save tweet media"
   ].join(", "),
   openGraph: {
     title: "Twitter Video Saver - Download X Videos",
