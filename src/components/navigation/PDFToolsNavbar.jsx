@@ -71,6 +71,7 @@ export default function PDFToolsNavbar() {
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-foreground"
+              aria-label="Toggle Menu"
             >
               {isMenuOpen ? (
                 <X className="w-5 h-5" />

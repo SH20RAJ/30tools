@@ -56,7 +56,8 @@
     @apply border-border;
   }
 
-  html, body {
+  html,
+  body {
     @apply bg-background text-foreground;
     overflow-x: hidden;
     width: 100%;
@@ -97,7 +98,7 @@
   --sidebar-accent-foreground: oklch(0.2101 0.0318 264.6645);
   --sidebar-border: oklch(0.9276 0.0058 264.5313);
   --sidebar-ring: oklch(0.6716 0.1368 48.5130);
-  --font-sans: Geist Mono, ui-monospace, monospace;
+  --font-sans: var(--font-open-sans), system-ui, sans-serif;
   --font-serif: serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.75rem;
@@ -152,7 +153,7 @@
   --sidebar-accent-foreground: oklch(0.8109 0 0);
   --sidebar-border: oklch(0.2520 0 0);
   --sidebar-ring: oklch(0.7214 0.1337 49.9802);
-  --font-sans: Geist Mono, ui-monospace, monospace;
+  --font-sans: var(--font-open-sans), system-ui, sans-serif;
   --font-serif: serif;
   --font-mono: JetBrains Mono, monospace;
   --radius: 0.75rem;
@@ -234,4 +235,63 @@
 
 body {
   letter-spacing: var(--tracking-normal);
+}
+
+/* Custom Scrollbar for better UX */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Smooth selection color */
+::selection {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+}
+
+/* Premium Card & Button Effects */
+.card-premium {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card-premium:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.btn-premium {
+  transition: filter 0.2s ease;
+}
+
+.btn-premium:hover {
+  filter: brightness(1.1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: fadeIn 0.5s ease-out forwards;
 }

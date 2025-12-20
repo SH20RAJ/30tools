@@ -64,6 +64,7 @@ export default function VideoToolsNavbar() {
               variant="ghost"
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle Menu"
             >
               {isMenuOpen ? (
                 <X className="w-5 h-5" />

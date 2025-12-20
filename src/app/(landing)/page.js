@@ -93,7 +93,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="border-b">
+      <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-md">
         <div className="container mx-auto px-4 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
@@ -204,14 +204,14 @@ export default function LandingPage() {
                 <Link href="/search">
                   <Button
                     size="lg"
-                    className="min-w-[180px] bg-primary hover:bg-primary/90"
+                    className="btn-premium min-w-[180px] bg-primary hover:bg-primary/90"
                   >
                     <SearchIcon className="mr-2 h-4 w-4" />
                     Explore All Tools
                   </Button>
                 </Link>
                 <Link href="/image-compressor">
-                  <Button variant="outline" size="lg" className="min-w-[180px]">
+                  <Button variant="outline" size="lg" className="btn-premium min-w-[180px]">
                     <ImageIcon className="mr-2 h-4 w-4" />
                     Try Image Tools
                   </Button>
@@ -254,7 +254,7 @@ export default function LandingPage() {
                   key={category.key}
                   href={`/search?category=${category.key}`}
                 >
-                  <Card className="hover:shadow-lg transition-shadow cursor-pointer group h-full">
+                  <Card className="card-premium cursor-pointer group h-full">
                     <CardHeader>
                       <div className="flex items-center space-x-3">
                         <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
@@ -628,7 +628,7 @@ export default function LandingPage() {
             </p>
           </div>
           <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F">
-            <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" alt="Visitor Counter Badge" />
+            <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" alt="Visitor Counter Badge" width="200" height="20" />
           </a>
         </div>
       </footer>

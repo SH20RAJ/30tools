@@ -262,7 +262,7 @@ export default function SearchPageServer({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {results.map((tool) => (
                 <Link key={tool.id} href={tool.route} className="block">
-                  <Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
+                  <Card className="card-premium cursor-pointer group h-full">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <CardTitle className="text-lg group-hover:text-primary transition-colors">

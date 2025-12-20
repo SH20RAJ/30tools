@@ -365,7 +365,7 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
       </div>
 
       {/* Format Options */}
-      <Card className="mb-6">
+      <Card className="card-premium mb-6">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <Settings className="h-5 w-5" />
@@ -479,7 +479,7 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
       </Card>
 
       {/* Code Input */}
-      <Card className="mb-6">
+      <Card className="card-premium mb-6">
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FileCode className="h-5 w-5" />
@@ -581,7 +581,7 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
 
       {/* Formatted Output */}
       {formattedCode && (
-        <Card className="mb-6">
+        <Card className="card-premium mb-6">
           <CardHeader>
             <CardTitle className="flex items-center justify-between">
               <span className="flex items-center gap-2">
@@ -698,7 +698,7 @@ class ApiClient { async get<T>(url: string): Promise<ApiResponse<T>> { return fe
       </Card>
 
       {/* FAQ */}
-      <Card>
+      <Card className="card-premium">
         <CardHeader>
           <CardTitle>Frequently Asked Questions</CardTitle>
         </CardHeader>
