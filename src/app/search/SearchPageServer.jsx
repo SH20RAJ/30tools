@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import toolsData from "@/constants/tools.json";
-import AuthComponent from "@/components/auth/AuthComponent";
+
 
 export default function SearchPageServer({
   initialTools,
@@ -145,7 +145,7 @@ export default function SearchPageServer({
               <Link href="/about">
                 <Button variant="outline">About</Button>
               </Link>
-              <AuthComponent />
+
             </div>
           </div>
         </div>

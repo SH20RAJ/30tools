@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "lucide-react";
-import AuthComponent from "@/components/auth/AuthComponent";
+
 
 export default function GeneratorToolsNavbar() {
   return (
@@ -39,7 +39,7 @@ export default function GeneratorToolsNavbar() {
                 All Tools
               </Button>
             </Link>
-            <AuthComponent />
+
           </div>
         </div>
       </div>

@@ -148,7 +148,7 @@ export default function FacebookDownloaderPage() {
 
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground leading-tight">
+          <h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground leading-tight break-words">
             Facebook <span className="text-primary">Video Downloader</span> HD
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { RefreshCw } from "lucide-react";
-import AuthComponent from "@/components/auth/AuthComponent";
+
 
 export default function ConverterToolsNavbar() {
   return (
@@ -37,7 +37,7 @@ export default function ConverterToolsNavbar() {
                 All Tools
               </Button>
             </Link>
-            <AuthComponent />
+
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ import {
   Heart,
   Sparkles,
 } from "lucide-react";
-import AuthComponent from "@/components/auth/AuthComponent";
+
 import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
 
 export const metadata = {
@@ -119,7 +119,7 @@ export default function LandingPage() {
               <Link href="/about">
                 <Button variant="outline">About</Button>
               </Link>
-              <AuthComponent />
+
             </div>
           </div>
         </div>

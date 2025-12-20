@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Settings } from "lucide-react";
-import AuthComponent from "@/components/auth/AuthComponent";
+
 
 export default function UtilityToolsNavbar() {
   return (
@@ -31,7 +31,7 @@ export default function UtilityToolsNavbar() {
                 All Tools
               </Button>
             </Link>
-            <AuthComponent />
+
           </div>
         </div>
       </div>

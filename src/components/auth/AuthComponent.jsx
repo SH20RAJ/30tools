@@ -7,6 +7,7 @@ import { LogIn, LogOut, Settings } from "lucide-react";
 import Link from "next/link";
 
 export default function AuthComponent() {
+  return <></>
   const [isSignedIn, setIsSignedIn] = useState(false);
   const [user, setUser] = useState(null);
 

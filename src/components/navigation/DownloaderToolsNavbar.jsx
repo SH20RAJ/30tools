@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
-import AuthComponent from "@/components/auth/AuthComponent";
 
 export default function DownloaderToolsNavbar() {
   return (
@@ -39,7 +38,6 @@ export default function DownloaderToolsNavbar() {
                 All Tools
               </Button>
             </Link>
-            <AuthComponent />
           </div>
         </div>
       </div>

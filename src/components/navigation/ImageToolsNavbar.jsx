@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ImageIcon, HomeIcon, MenuIcon } from "lucide-react";
-import AuthComponent from "@/components/auth/AuthComponent";
+
 
 export default function ImageToolsNavbar() {
   const imageTools = [
@@ -53,12 +53,12 @@ export default function ImageToolsNavbar() {
                 </Link>
               ))}
             </div>
-            <AuthComponent />
+
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center space-x-2">
-            <AuthComponent />
+
             <Button variant="ghost" size="sm">
               <MenuIcon className="h-5 w-5" />
             </Button>

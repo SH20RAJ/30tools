@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { ZapIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
-import AuthComponent from "@/components/auth/AuthComponent";
+
 
 export default function BlogLayout({ children }) {
     return (
@@ -36,7 +36,7 @@ export default function BlogLayout({ children }) {
                                     <SearchIcon className="h-5 w-5" />
                                 </Button>
                             </Link>
-                            <AuthComponent />
+
                         </div>
                     </div>
                 </div>

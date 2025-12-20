@@ -3,7 +3,6 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Youtube, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import AuthComponent from "@/components/auth/AuthComponent";
 
 export default function YouTubeToolsNavbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -83,12 +82,12 @@ export default function YouTubeToolsNavbar() {
                   All Tools
                 </Button>
               </Link>
-              <AuthComponent />
+
             </div>
           </div>
 
           <div className="md:hidden flex items-center space-x-2">
-            <AuthComponent />
+
             <Button
               variant="ghost"
               size="sm"

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Headphones } from "lucide-react";
-import AuthComponent from "@/components/auth/AuthComponent";
+
 
 export default function AudioToolsNavbar() {
   return (
@@ -37,7 +37,7 @@ export default function AudioToolsNavbar() {
                 All Tools
               </Button>
             </Link>
-            <AuthComponent />
+
           </div>
         </div>
       </div>
