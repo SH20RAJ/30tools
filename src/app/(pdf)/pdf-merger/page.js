@@ -12,6 +12,7 @@ import {
   GeneratorToolExamples,
 } from "@/components/seo/GeneratorToolsHub";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
+import { FileText, Briefcase, Calculator, ShieldCheck } from "lucide-react";
 
 export const metadata = {
   title: "Free PDF Merger Online (2026) - Combine & Join PDFs | 30Tools",
@@ -170,6 +171,79 @@ export default function PDFMergerPage() {
           examples={examples}
           title="Why Merge PDFs?"
         />
+
+        {/* Financial Document Management Section (High CPC) */}
+        <section className="mb-12 bg-gradient-to-br from-amber-50 to-transparent dark:from-amber-950/20 p-8 md:p-12 rounded-3xl border border-amber-100 dark:border-amber-900/50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Financial Document <span className="text-primary">Management</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6">
+                <div className="flex gap-4 items-start">
+                  <div className="p-3 bg-background rounded-xl shadow-sm">
+                    <Calculator className="w-6 h-6 text-amber-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Tax Preparation & Audits</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Simplify your tax season by merging receipts, invoices, and <strong>tax preparation software</strong> exports into a single file. Essential for organized <strong>audit defense</strong>.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <div className="p-3 bg-background rounded-xl shadow-sm">
+                    <Briefcase className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Loan Applications</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Banks require consolidated <strong>loan application documentation</strong>. Merge your bank statements, ID proofs, and <strong>business contracts</strong> into of professional packet.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4 items-start">
+                  <div className="p-3 bg-background rounded-xl shadow-sm">
+                    <ShieldCheck className="w-6 h-6 text-green-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg">Insurance Claims</h3>
+                    <p className="text-sm text-muted-foreground">
+                      Accelerate <strong>insurance claim processing</strong>. Combine photos, reports, and policy docs to ensure faster payouts and better <strong>risk management</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-background p-6 rounded-2xl shadow-sm border border-border/50">
+                <h4 className="font-bold mb-4 border-b border-border/50 pb-2">Business Efficiency Stats</h4>
+                <div className="space-y-4">
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-sm">
+                      <span>Paperless Savings</span>
+                      <span className="font-bold text-green-600">30%</span>
+                    </div>
+                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                      <div className="h-full bg-green-500 w-[30%]"></div>
+                    </div>
+                  </div>
+                  <div className="space-y-1">
+                    <div className="flex justify-between text-sm">
+                      <span>Audit Speed</span>
+                      <span className="font-bold text-blue-600">50% Faster</span>
+                    </div>
+                    <div className="h-2 bg-muted rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-500 w-[50%]"></div>
+                    </div>
+                  </div>
+                </div>
+                <p className="mt-6 text-xs text-muted-foreground">
+                  *Effective <strong>digital invoicing</strong> and document handling creates a true <strong>paperless office</strong> environment.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* User Reviews */}
         <div className="mb-12">

@@ -20,6 +20,7 @@ import {
   MonitorSmartphone,
   ShieldCheck,
   Zap,
+  TrendingUp,
 } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -255,6 +256,55 @@ export default function YouTubeDownloaderPage() {
           </div>
         </section>
 
+        {/* Finance & Monetization Section (High CPC) */}
+        <section className="mb-20 bg-gradient-to-br from-primary/5 to-transparent p-8 md:p-12 rounded-3xl border border-primary/10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              YouTube Monetization & <span className="text-primary">Creator Finance</span> Guide
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="prose prose-slate dark:prose-invert max-w-none">
+                <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                  <TrendingUp className="w-5 h-5 text-green-500" />
+                  Passive Income Streams
+                </h3>
+                <p className="text-sm text-muted-foreground mb-6">
+                  Top creators use our tool to analyze successful content. By saving videos for fair-use commentary or compilation research, you can build a library of high-performing ideas. Leveraging <strong>affiliate marketing</strong> and <strong>digital asset management</strong> strategies allows you to diversify your <strong>revenue streams</strong> beyond just AdSense.
+                </p>
+                <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-blue-500" />
+                  Content Rights & Fair Use
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  Understanding <strong>content rights</strong> is crucial for any <strong>online business</strong>. When you <strong>download youtube videos</strong> for educational purposes, ensure you add transformative value to avoid copyright strikes, protecting your channel's <strong>long-term monetization</strong> potential.
+                </p>
+              </div>
+              <div className="bg-card p-6 rounded-2xl shadow-sm border border-border/50">
+                <h4 className="font-bold mb-4">Creator Economy Stats (2025)</h4>
+                <ul className="space-y-4">
+                  <li className="flex justify-between items-center text-sm">
+                    <span className="text-muted-foreground">Digital Ad Spend</span>
+                    <span className="font-semibold text-green-600">$450B+</span>
+                  </li>
+                  <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+                    <span className="text-muted-foreground">Affiliate Payouts</span>
+                    <span className="font-semibold text-green-600">$17B+</span>
+                  </li>
+                  <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+                    <span className="text-muted-foreground">Influencer Market</span>
+                    <span className="font-semibold text-green-600">$21B+</span>
+                  </li>
+                </ul>
+                <div className="mt-6 pt-6 border-t border-border/50">
+                  <p className="text-xs text-muted-foreground italic">
+                    *Maximize your <strong>ROI</strong> by using professional tools to streamline your workflow.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Features */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {features.map((f, i) => (
@@ -291,10 +341,10 @@ export default function YouTubeDownloaderPage() {
         <section className="mb-20 text-center bg-primary/5 py-10 rounded-3xl border border-primary/10">
           <h2 className="text-2xl font-bold mb-6">Global Online Video Downloader</h2>
           <p className="text-sm text-muted-foreground max-w-3xl mx-auto px-4 leading-relaxed mb-6">
-            Notre service gratuit vous permet de <strong>télécharger vidéo youtube</strong> ou <strong>télécharger vidéo youtube en ligne</strong> très rapidement. 
-            Si deseas <strong>descargar video youtube</strong> o <strong>descargar de youtube</strong> gratis, utiliza nuestro <strong>descargador de videos de youtube</strong> profesional. 
-            Nós também suportamos quem deseja <strong>baixar videos de youtube</strong> em alta definição. 
-            Для тех, кто хочет <strong>скачать видео с ютуба</strong>, наш сервис работает безупречно. 
+            Notre service gratuit vous permet de <strong>télécharger vidéo youtube</strong> ou <strong>télécharger vidéo youtube en ligne</strong> très rapidement.
+            Si deseas <strong>descargar video youtube</strong> o <strong>descargar de youtube</strong> gratis, utiliza nuestro <strong>descargador de videos de youtube</strong> profesional.
+            Nós também suportamos quem deseja <strong>baixar videos de youtube</strong> em alta definição.
+            Для тех, кто хочет <strong>скачать видео с ютуба</strong>, наш сервис работает безупречно.
             支持 <strong>youtube视频下载</strong> 和 <strong>youtube视频解析</strong>，轻松 <strong>youtube下载</strong> 各种 <strong>油管视频下载</strong> 内容。
           </p>
           <div className="flex flex-wrap justify-center gap-2 px-4 opacity-70">
