@@ -99,6 +99,7 @@ export default function YouTubeDownloader() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("YouTubeDownloader: handleSubmit v2 triggered");
     if (!url.trim()) {
       setError("Please enter a YouTube URL");
       return;
@@ -109,7 +110,6 @@ export default function YouTubeDownloader() {
     setVideoData(null);
 
     try {
-      // 1. Fetch Video Details via internal Proxy
       const res = await fetch("/api/proxy/ytdown", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -122,40 +122,49 @@ export default function YouTubeDownloader() {
 
       const data = await res.json();
 
-      if (!data.api || !data.api.id) {
-        throw new Error("Invalid video URL or API error");
-      }
+      // Normalize data from ytdl.socialplug.io
+      const title = data.title || "YouTube Video";
+      const thumbnail = data.image || data.thumbnail || null;
+      const duration = data.duration || data.lengthSeconds || "";
+      // lengthSeconds might be distinct from formatted duration string, but valid for display
 
-      const apiData = data.api;
+      // Formats are nested in data.format_options.video / .audio
+      const videoOpts = data.format_options?.video || {};
+      const audioOpts = data.format_options?.audio || {};
 
-      // Normalize data
-      const title = apiData.title || "YouTube Video";
-      const thumbnail = apiData.imagePreviewUrl || null;
-      // Duration isn't strictly provided as string/seconds in top level except in mediaItems, we can iterate or default
-      const duration = apiData.mediaItems?.[0]?.mediaDuration || "";
-
-      // Group formats
+      // Helper to flatten formats
+      // The API returns arrays like "mp4": [...], "webm": [...] inside the video object
       const videoFormats = [];
-      const audioFormats = [];
-
-      (apiData.mediaItems || []).forEach(item => {
-        const isAudio = item.type === "Audio";
-        const formatObj = {
-          quality: item.mediaQuality || (isAudio ? "Audio" : "Video"),
-          fileSize: item.mediaFileSize || "",
-
-          // We store the mediaUrl as the specific ID needed for step 2
-          downloadUrl: item.mediaUrl,
-          hasAudio: true, // simplified assumption or checked via item.mediaTask
-          originalExtension: item.mediaExtension
-        };
-
-        if (isAudio) {
-          audioFormats.push(formatObj);
-        } else {
-          videoFormats.push(formatObj);
+      Object.entries(videoOpts).forEach(([ext, formats]) => {
+        if (Array.isArray(formats)) {
+          formats.forEach(f => {
+            videoFormats.push({
+              quality: f.quality,
+              fileSize: f.fileSize,
+              downloadUrl: f.url || f.src,
+              hasAudio: f.hasAudio,
+              originalExtension: ext
+            });
+          });
         }
       });
+
+      const audioFormats = [];
+      Object.entries(audioOpts).forEach(([ext, formats]) => {
+        if (Array.isArray(formats)) {
+          formats.forEach(f => {
+            audioFormats.push({
+              quality: "Audio", // API often just lists them without specific quality label for audio sometimes
+              fileSize: f.fileSize,
+              downloadUrl: f.url || f.src,
+              hasAudio: true,
+              originalExtension: ext
+            });
+          });
+        }
+        // Fallback if audio is just a boolean false or empty
+      });
+
 
       setVideoData({
         title,
@@ -178,95 +187,19 @@ export default function YouTubeDownloader() {
 
   /* Restored Helper Functions */
 
-  const handleProcessDownload = async (mediaUrl, filename) => {
+  const handleProcessDownload = (mediaUrl) => {
     if (!mediaUrl) return;
 
-    // Set loading state (the button that called this)
-    setDownloadingFormat(mediaUrl);
-    const toastId = toast.loading("Processing download link...");
+    // Direct open since it's a direct link
+    const link = document.createElement("a");
+    link.href = mediaUrl;
+    link.target = "_blank";
+    link.style.display = "none";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
-    try {
-      // 2. Fetch specific download link via same proxy
-      // We might need to poll if the status is "In Processing..."
-      let attempts = 0;
-      const maxAttempts = 30; // 30 * 2s = 60s timeout aprox
-      let processing = true;
-
-      while (processing && attempts < maxAttempts) {
-        attempts++;
-        const res = await fetch("/api/proxy/ytdown", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ url: mediaUrl }),
-        });
-
-        if (!res.ok) throw new Error("Failed to get download link");
-
-        const data = await res.json();
-
-        // Check structure based on user report:
-        // { api: { percent: "0%" or "Completed", fileUrl: "In Processing..." or "https://..." } }
-
-        if (data.api) {
-          const { percent, fileUrl } = data.api;
-
-          if (fileUrl === "In Processing..." || percent !== "Completed") {
-            // Still processing
-            toast.loading(`Processing... ${percent || ""}`, { id: toastId });
-            // Wait 2 seconds before retry
-            await new Promise(r => setTimeout(r, 2000));
-          } else if (fileUrl && fileUrl.startsWith("http")) {
-            // Completed
-            processing = false;
-            toast.dismiss(toastId);
-            toast.success("Download starting...");
-
-            // Trigger download
-            const link = document.createElement("a");
-            link.href = fileUrl;
-            link.target = "_blank";
-            link.style.display = "none";
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            return; // Success exit
-          } else {
-            // Unexpected state?
-            // If percent is "Completed" but fileUrl is weird, might be done or error
-            if (percent === "Completed" && fileUrl) {
-              // assume success if URL exists
-              processing = false;
-              toast.dismiss(toastId);
-              toast.success("Download starting...");
-              const link = document.createElement("a");
-              link.href = fileUrl;
-              link.target = "_blank";
-              link.style.display = "none";
-              document.body.appendChild(link);
-              link.click();
-              document.body.removeChild(link);
-              return;
-            }
-            // Otherwise continue?
-            await new Promise(r => setTimeout(r, 2000));
-          }
-        } else {
-          throw new Error("Invalid response from server");
-        }
-      }
-
-      if (processing) {
-        throw new Error("Download verification timed out.");
-      }
-
-    } catch (err) {
-      console.error(err);
-      toast.dismiss(toastId);
-      toast.error("Failed to generate download link. Try again.");
-    } finally {
-      // Clear loading state
-      setDownloadingFormat(null);
-    }
+    toast.success("Download started!");
   };
 
   const handleBookmark = () => {
