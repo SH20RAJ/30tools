@@ -7,13 +7,9 @@ import {
   Video,
   Music,
   Loader2,
-  Bookmark,
-  BookmarkCheck,
-  SmartphoneIcon,
-  Heart,
-  X,
   Volume2,
   VolumeX,
+  Heart,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -24,11 +20,8 @@ export default function YouTubeDownloader() {
   const [isLoading, setIsLoading] = useState(false);
   const [videoData, setVideoData] = useState(null);
   const [error, setError] = useState("");
-  const [isBookmarked, setIsBookmarked] = useState(false);
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showPWAButton, setShowPWAButton] = useState(false);
-  const [bookmarkedUrls, setBookmarkedUrls] = useState([]);
-  const [showBookmarks, setShowBookmarks] = useState(false);
 
   /* Renamed to fix reference error */
   const executePWAInstall = useCallback(async () => {
@@ -56,15 +49,6 @@ export default function YouTubeDownloader() {
   }, [deferredPrompt]);
 
   useEffect(() => {
-    // Load bookmarked URLs
-    const savedBookmarks = JSON.parse(
-      localStorage.getItem("bookmarked-youtube-urls") || "[]",
-    );
-    setBookmarkedUrls(savedBookmarks);
-
-    // Check if URL is bookmarked
-    setIsBookmarked(savedBookmarks.some((item) => item.url === url));
-
     // PWA install prompt handling
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault();
@@ -111,12 +95,10 @@ export default function YouTubeDownloader() {
     setVideoData(null);
 
     try {
-      const res = await fetch("https://downr.org/.netlify/functions/video-info", {
+      const res = await fetch("/api/proxy/ytdown?action=info", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Origin": "https://downr.org",
-          "Referer": "https://downr.org/"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify({ url: url.trim() }),
       });
@@ -209,12 +191,10 @@ export default function YouTubeDownloader() {
         videoQuality: format.type === "video" ? format.quality : undefined
       };
 
-      const res = await fetch("https://downr.org/.netlify/functions/youtube-download", {
+      const res = await fetch("/api/proxy/ytdown?action=download", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "Origin": "https://downr.org",
-          "Referer": "https://downr.org/"
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(payload),
       });
@@ -255,17 +235,7 @@ export default function YouTubeDownloader() {
               className="h-14 text-lg pl-4 pr-12 border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 rounded-xl"
               disabled={isLoading}
             />
-            {url.trim() && (
-              <button
-                type="button"
-                onClick={handleBookmark}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-primary transition-colors p-2"
-                title={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
-                aria-label={isBookmarked ? "Remove bookmark" : "Bookmark this URL"}
-              >
-                {isBookmarked ? <BookmarkCheck className="w-5 h-5 text-primary" /> : <Bookmark className="w-5 h-5" />}
-              </button>
-            )}
+
           </div>
           <Button
             type="submit"
@@ -453,39 +423,7 @@ export default function YouTubeDownloader() {
         </div>
       )}
 
-      {/* Bookmarks Section */}
-      {
-        bookmarkedUrls.length > 0 && !videoData && (
-          <div className="mt-12">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-lg font-semibold">Your Bookmarks</h3>
-              <Button variant="ghost" size="sm" onClick={() => setShowBookmarks(!showBookmarks)}>
-                {showBookmarks ? "Hide" : "Show"}
-              </Button>
-            </div>
 
-            {showBookmarks && (
-              <div className="grid gap-3">
-                {bookmarkedUrls.map((bookmark, idx) => (
-                  <div key={idx} className="flex items-center gap-4 p-3 bg-card border border-border rounded-xl group hover:border-primary/50 transition-all">
-                    {bookmark.thumbnail && (
-                      <img src={bookmark.thumbnail} alt="" loading="lazy" className="w-16 h-10 object-cover rounded shadow-sm" />
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <div className="font-medium truncate text-sm">{bookmark.title}</div>
-                      <div className="text-xs text-muted-foreground">{new Date(bookmark.bookmarkedAt).toLocaleDateString()}</div>
-                    </div>
-                    <div className="flex gap-2">
-                      <Button size="sm" variant="ghost" onClick={() => loadBookmarkedUrl(bookmark.url)}>Load</Button>
-                      <Button size="sm" variant="ghost" className="text-destructive hover:text-destructive" onClick={() => removeBookmark(bookmark.url)}><X className="w-4 h-4" /></Button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )
-      }
 
     </div >
   );

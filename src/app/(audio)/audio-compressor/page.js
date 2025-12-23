@@ -5,7 +5,6 @@ import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
 export default function AudioCompressorPage() {
   return (
     <ToolSEOLayout toolId="AUDIO_COMPRESSOR">
-      <AudioCompressorTool />
     </ToolSEOLayout>
   );
 }
