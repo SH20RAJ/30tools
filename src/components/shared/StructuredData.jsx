@@ -26,6 +26,34 @@ export default function StructuredData({ tool, includeFAQ = true }) {
       featureList: tool.features ? tool.features.join(", ") : "Free online tool",
     };
 
+    // FAQ Schema
+    const faqData = tool.faqs ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: tool.faqs.map(faq => ({
+        "@type": "Question",
+        name: faq.question || faq.name,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer || faq.acceptedAnswer?.text
+        }
+      }))
+    } : null;
+
+    // HowTo Schema
+    const howToData = tool.howTo ? {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      name: tool.howTo.name || `How to use ${tool.name}`,
+      step: tool.howTo.steps ? tool.howTo.steps.map((step, index) => ({
+        "@type": "HowToStep",
+        position: index + 1,
+        name: step.name || step.title,
+        text: step.text || step.desc,
+        url: step.url
+      })) : []
+    } : null;
+
     const breadcrumbStructuredData = {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -65,6 +93,22 @@ export default function StructuredData({ tool, includeFAQ = true }) {
             __html: JSON.stringify(breadcrumbStructuredData),
           }}
         />
+        {faqData && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(faqData),
+            }}
+          />
+        )}
+        {howToData && (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify(howToData),
+            }}
+          />
+        )}
       </>
     );
   }

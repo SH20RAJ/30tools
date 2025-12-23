@@ -1,18 +1,6 @@
 import dynamic from "next/dynamic";
 import ToolSkeleton from "@/components/tools/youtube/ToolSkeleton";
-
-const YouTubeDownloader = dynamic(
-  () => import("@/components/tools/youtube/YouTubeDownloader"),
-  {
-    loading: () => <ToolSkeleton />,
-  }
-);
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
 import {
   CheckCircle2,
   FileAudio,
@@ -24,6 +12,13 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+
+const YouTubeDownloader = dynamic(
+  () => import("@/components/tools/youtube/YouTubeDownloader"),
+  {
+    loading: () => <ToolSkeleton />,
+  }
+);
 
 // dynamic metadata generation
 export const metadata = {
@@ -67,97 +62,55 @@ export const viewport = {
   themeColor: 'black',
 }
 
-
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "YouTube Video Downloader - 30Tools",
-    "description": "Best free online YouTube downloader for downloading videos in HD/4K and converting to MP3.",
-    "url": "https://30tools.com/youtube-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD"
-    },
-    "featureList": [
-      "Download YouTube videos free online",
-      "Fastest YT video downloader",
-      "YouTube downloader for PC and computer",
-      "Convert YouTube to MP3 high quality",
-      "No registration required"
-    ]
-  },
-  faq: {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is the best YouTube downloader for computer in 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "30Tools is the best free YouTube downloader for computer and PC, providing high-speed 4K video downloads and MP3 conversion directly in your browser without software installation."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is this free online YouTube downloader safe to use?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our YouTube downloader online free is 100% secure. We do not store your data or download history, and there's no need to install any apps or software."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I download YouTube videos for free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Simply paste the YouTube link into our youtube link downloader, select your preferred quality (MP4 or MP3), and click download to save the video for free."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I download YouTube videos in HD and 4K?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely! Our youtube downloader hd supports downloads in 1080p, 2K, and 4K resolution, as well as crystal clear 320kbps MP3 audio."
-        }
-      }
-    ]
-  },
-  howTo: {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Download YouTube Videos for Free",
-    "description": "A quick guide to using our free online youtube downloader to save videos and audio.",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Copy and Paste YouTube Link",
-        "text": "Copy the URL of the you tube video you want to download and paste it into our youtube downloader video box.",
-        "url": "https://30tools.com/youtube-downloader#step1"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Choose Video Download Format",
-        "text": "Select your desired quality from the online youtube downloader options (e.g., 4K, 1080p MP4 or 320kbps MP3).",
-        "url": "https://30tools.com/youtube-downloader#step2"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Start YouTube Video Download",
-        "text": "Click the download button to finish the youtube free download process and save the file to your device.",
-        "url": "https://30tools.com/youtube-downloader#step3"
-      }
-    ]
-  }
-};
-
 export default function YouTubeDownloaderPage() {
   const features = [
+    "Fastest YT downloader engine",
+    "Secure video download without ads",
+    "YouTube downloader for PC & Mobile",
+    "Support for 4K video and high-quality MP3"
+  ];
+
+  const faqs = [
+    {
+      question: "What is the best YouTube downloader for computer in 2026?",
+      answer: "30Tools is the best free YouTube downloader for computer and PC, providing high-speed 4K video downloads and MP3 conversion directly in your browser without software installation."
+    },
+    {
+      question: "Is this free online YouTube downloader safe to use?",
+      answer: "Yes, our YouTube downloader online free is 100% secure. We do not store your data or download history, and there's no need to install any apps or software."
+    },
+    {
+      question: "How can I download YouTube videos for free?",
+      answer: "Simply paste the YouTube link into our youtube link downloader, select your preferred quality (MP4 or MP3), and click download to save the video for free."
+    },
+    {
+      question: "Can I download YouTube videos in HD and 4K?",
+      answer: "Absolutely! Our youtube downloader hd supports downloads in 1080p, 2K, and 4K resolution, as well as crystal clear 320kbps MP3 audio."
+    }
+  ];
+
+  const howTo = {
+    name: "How to Download YouTube Videos for Free",
+    steps: [
+      {
+        name: "Copy and Paste YouTube Link",
+        text: "Copy the URL of the you tube video you want to download and paste it into our youtube downloader video box.",
+        url: "https://30tools.com/youtube-downloader#step1"
+      },
+      {
+        name: "Choose Video Download Format",
+        text: "Select your desired quality from the online youtube downloader options (e.g., 4K, 1080p MP4 or 320kbps MP3).",
+        url: "https://30tools.com/youtube-downloader#step2"
+      },
+      {
+        name: "Start YouTube Video Download",
+        text: "Click the download button to finish the youtube free download process and save the file to your device.",
+        url: "https://30tools.com/youtube-downloader#step3"
+      }
+    ]
+  };
+
+  const featureCards = [
     {
       icon: <Zap className="w-5 h-5 text-amber-500" />,
       title: "Fastest YT Downloader",
@@ -187,277 +140,234 @@ export default function YouTubeDownloaderPage() {
   ];
 
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.faq) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }}
-      />
+    <ToolSEOLayout
+      toolId="youtube-downloader"
+      faqs={faqs}
+      features={features}
+      howTo={howTo}
+      titleOverride={<>Best <span className="text-primary">YouTube Video Downloader</span> - Free Online Download</>}
+    >
+      <div className="text-center space-y-4 mb-4">
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          Welcome to the <strong>best youtube downloader</strong> online! Our <strong>free online youtube downloader</strong> is the fastest solution to <strong>download youtube video online</strong> for free. Whether you are using a <strong>youtube downloader for computer</strong> or looking for a <strong>youtube downloader pc</strong> version, our web-based <strong>yt video downloader</strong> works seamlessly on all browsers. 30Tools provides a reliable <strong>youtube converter</strong> to extract high-quality audio or save full-length films in 4K.
+        </p>
 
-      <div className="container mx-auto px-4 py-16 md:py-24 max-w-5xl">
+        <div className="flex justify-center mt-6">
+          <a
+            href="https://apify.com/express_kingfisher/youtube-video-audio-downloader"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 hover:bg-muted border border-border/50 text-sm transition-colors group"
+          >
+            <span className="text-muted-foreground">Looking for a Developer API?</span>
+            <span className="font-medium text-primary group-hover:underline decoration-primary/50 underline-offset-4">Check out our Universal YouTube Downloader API →</span>
+          </a>
+        </div>
+      </div>
 
-        {/* Header */}
-        <div className="text-center space-y-4 mb-12">
-          <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-            Best <span className="text-primary">YouTube Video Downloader</span> - Free Online Download
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Welcome to the <strong>best youtube downloader</strong> online! Our <strong>free online youtube downloader</strong> is the fastest solution to <strong>download youtube video online</strong> for free. Whether you are using a <strong>youtube downloader for computer</strong> or looking for a <strong>youtube downloader pc</strong> version, our web-based <strong>yt video downloader</strong> works seamlessly on all browsers. 30Tools provides a reliable <strong>youtube converter</strong> to extract high-quality audio or save full-length films in 4K.
-          </p>
+      {/* Main Tool */}
+      <div className="mb-20">
+        <YouTubeDownloader />
+      </div>
 
-          <div className="flex justify-center mt-6">
-            <a
-              href="https://apify.com/express_kingfisher/youtube-video-audio-downloader"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 hover:bg-muted border border-border/50 text-sm transition-colors group"
-            >
-              <span className="text-muted-foreground">Looking for a Developer API?</span>
-              <span className="font-medium text-primary group-hover:underline decoration-primary/50 underline-offset-4">Check out our Universal YouTube Downloader API →</span>
-            </a>
+      {/* SEO Text Section 1 */}
+      <section className="mb-20 prose prose-slate dark:prose-invert max-w-none px-4">
+        <h2 className="text-3xl font-bold mb-6">How to Download Video from YouTube Free</h2>
+        <p>
+          Using our <strong>online youtube downloader</strong> is child's play. If you've been searching for <strong>how to download youtube videos</strong>, you've come to the right place. Our <strong>youtubedownloader</strong> is designed for speed and quality. Just paste the URL into our <strong>youtube link downloader</strong> and enjoy <strong>youtube free download</strong> privileges on every video. We support <strong>youtube downloader hd</strong> formats to ensure you get the best visual experience.
+        </p>
+        <div className="grid md:grid-cols-2 gap-8 mt-10 not-prose">
+          <div className="bg-card p-6 rounded-2xl border border-border/50">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary">
+              <Zap className="w-5 h-5" /> Gen YouTube Downloader
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Our <strong>gen youtube downloader</strong> technology ensures that you can <strong>download yt video</strong> content without any restrictions. It's the most powerful <strong>yt video download</strong> tool available in 2026.
+            </p>
+          </div>
+          <div className="bg-card p-6 rounded-2xl border border-border/50">
+            <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary">
+              <ShieldCheck className="w-5 h-5" /> SaveFrom YouTube
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Alternative to <strong>savefrom</strong> and <strong>savefrom.net</strong>, our site offers even better speeds for <strong>youtube videos downloader</strong> services. Safe, private, and 100% free.
+            </p>
           </div>
         </div>
+      </section>
 
-        {/* Main Tool */}
-        <div className="mb-20">
-          <YouTubeDownloader />
+      {/* Finance & Monetization Section (High CPC) */}
+      <section className="mb-20 bg-gradient-to-br from-primary/5 to-transparent p-8 md:p-12 rounded-3xl border border-primary/10">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold mb-8 text-center">
+            YouTube Monetization & <span className="text-primary">Creator Finance</span> Guide
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="prose prose-slate dark:prose-invert max-w-none">
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <TrendingUp className="w-5 h-5 text-green-500" />
+                Passive Income Streams
+              </h3>
+              <p className="text-sm text-muted-foreground mb-6">
+                Top creators use our tool to analyze successful content. By saving videos for fair-use commentary or compilation research, you can build a library of high-performing ideas. Leveraging <strong>affiliate marketing</strong> and <strong>digital asset management</strong> strategies allows you to diversify your <strong>revenue streams</strong> beyond just AdSense.
+              </p>
+              <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-blue-500" />
+                Content Rights & Fair Use
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Understanding <strong>content rights</strong> is crucial for any <strong>online business</strong>. When you <strong>download youtube videos</strong> for educational purposes, ensure you add transformative value to avoid copyright strikes, protecting your channel's <strong>long-term monetization</strong> potential.
+              </p>
+            </div>
+            <div className="bg-card p-6 rounded-2xl shadow-sm border border-border/50">
+              <h4 className="font-bold mb-4">Creator Economy Stats (2025)</h4>
+              <ul className="space-y-4">
+                <li className="flex justify-between items-center text-sm">
+                  <span className="text-muted-foreground">Digital Ad Spend</span>
+                  <span className="font-semibold text-green-600">$450B+</span>
+                </li>
+                <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+                  <span className="text-muted-foreground">Affiliate Payouts</span>
+                  <span className="font-semibold text-green-600">$17B+</span>
+                </li>
+                <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+                  <span className="text-muted-foreground">Influencer Market</span>
+                  <span className="font-semibold text-green-600">$21B+</span>
+                </li>
+              </ul>
+              <div className="mt-6 pt-6 border-t border-border/50">
+                <p className="text-xs text-muted-foreground italic">
+                  *Maximize your <strong>ROI</strong> by using professional tools to streamline your workflow.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
 
-        {/* SEO Text Section 1 */}
-        <section className="mb-20 prose prose-slate dark:prose-invert max-w-none px-4">
-          <h2 className="text-3xl font-bold mb-6">How to Download Video from YouTube Free</h2>
-          <p>
-            Using our <strong>online youtube downloader</strong> is child's play. If you've been searching for <strong>how to download youtube videos</strong>, you've come to the right place. Our <strong>youtubedownloader</strong> is designed for speed and quality. Just paste the URL into our <strong>youtube link downloader</strong> and enjoy <strong>youtube free download</strong> privileges on every video. We support <strong>youtube downloader hd</strong> formats to ensure you get the best visual experience.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8 mt-10 not-prose">
-            <div className="bg-card p-6 rounded-2xl border border-border/50">
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary">
-                <Zap className="w-5 h-5" /> Gen YouTube Downloader
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Our <strong>gen youtube downloader</strong> technology ensures that you can <strong>download yt video</strong> content without any restrictions. It's the most powerful <strong>yt video download</strong> tool available in 2026.
-              </p>
+      {/* Features Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        {featureCards.map((f, i) => (
+          <div key={i} className="bg-card/50 hover:bg-card p-6 rounded-2xl border border-border/50 transition-all duration-200">
+            <div className="bg-background w-10 h-10 rounded-xl flex items-center justify-center shadow-sm mb-4 border border-border/50">
+              {f.icon}
             </div>
-            <div className="bg-card p-6 rounded-2xl border border-border/50">
-              <h3 className="text-xl font-bold mb-4 flex items-center gap-2 text-primary">
-                <ShieldCheck className="w-5 h-5" /> SaveFrom YouTube
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Alternative to <strong>savefrom</strong> and <strong>savefrom.net</strong>, our site offers even better speeds for <strong>youtube videos downloader</strong> services. Safe, private, and 100% free.
-              </p>
-            </div>
+            <h3 className="font-bold text-lg mb-2">{f.title}</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
           </div>
-        </section>
+        ))}
+      </div>
 
-        {/* Finance & Monetization Section (High CPC) */}
-        <section className="mb-20 bg-gradient-to-br from-primary/5 to-transparent p-8 md:p-12 rounded-3xl border border-primary/10">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              YouTube Monetization & <span className="text-primary">Creator Finance</span> Guide
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8 items-start">
-              <div className="prose prose-slate dark:prose-invert max-w-none">
-                <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-green-500" />
-                  Passive Income Streams
-                </h3>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Top creators use our tool to analyze successful content. By saving videos for fair-use commentary or compilation research, you can build a library of high-performing ideas. Leveraging <strong>affiliate marketing</strong> and <strong>digital asset management</strong> strategies allows you to diversify your <strong>revenue streams</strong> beyond just AdSense.
-                </p>
-                <h3 className="text-xl font-semibold mb-3 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-blue-500" />
-                  Content Rights & Fair Use
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  Understanding <strong>content rights</strong> is crucial for any <strong>online business</strong>. When you <strong>download youtube videos</strong> for educational purposes, ensure you add transformative value to avoid copyright strikes, protecting your channel's <strong>long-term monetization</strong> potential.
-                </p>
-              </div>
-              <div className="bg-card p-6 rounded-2xl shadow-sm border border-border/50">
-                <h4 className="font-bold mb-4">Creator Economy Stats (2025)</h4>
-                <ul className="space-y-4">
-                  <li className="flex justify-between items-center text-sm">
-                    <span className="text-muted-foreground">Digital Ad Spend</span>
-                    <span className="font-semibold text-green-600">$450B+</span>
-                  </li>
-                  <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                    <span className="text-muted-foreground">Affiliate Payouts</span>
-                    <span className="font-semibold text-green-600">$17B+</span>
-                  </li>
-                  <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                    <span className="text-muted-foreground">Influencer Market</span>
-                    <span className="font-semibold text-green-600">$21B+</span>
-                  </li>
-                </ul>
-                <div className="mt-6 pt-6 border-t border-border/50">
-                  <p className="text-xs text-muted-foreground italic">
-                    *Maximize your <strong>ROI</strong> by using professional tools to streamline your workflow.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* How To Steps */}
+      <section className="bg-muted/30 rounded-3xl p-8 md:p-12 mb-20 border border-border/50">
+        <h2 className="text-2xl font-bold text-center mb-10">Free Online YouTube Downloader Guide</h2>
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 relative">
+          {/* Connecting Line (Desktop) */}
+          <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-border -z-10 -translate-y-1/2" />
 
-        {/* Features */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
-          {features.map((f, i) => (
-            <div key={i} className="bg-card/50 hover:bg-card p-6 rounded-2xl border border-border/50 transition-all duration-200">
-              <div className="bg-background w-10 h-10 rounded-xl flex items-center justify-center shadow-sm mb-4 border border-border/50">
-                {f.icon}
+          {steps.map((s, i) => (
+            <div key={i} className="flex flex-col items-center text-center bg-background p-6 rounded-2xl border border-border/50 shadow-sm w-full md:w-1/3 z-10">
+              <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mb-4">
+                {i + 1}
               </div>
-              <h3 className="font-bold text-lg mb-2">{f.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{f.description}</p>
+              <h3 className="font-semibold text-lg mb-1">{s.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
             </div>
           ))}
         </div>
+      </section>
 
-        {/* How To */}
-        <section className="bg-muted/30 rounded-3xl p-8 md:p-12 mb-20 border border-border/50">
-          <h2 className="text-2xl font-bold text-center mb-10">Free Online YouTube Downloader Guide</h2>
-          <div className="flex flex-col md:flex-row justify-between items-center gap-8 relative">
-            {/* Connecting Line (Desktop) */}
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-border -z-10 -translate-y-1/2" />
+      {/* Multi-language Support text for Global SEO */}
+      <section className="mb-20 text-center bg-primary/5 py-10 rounded-3xl border border-primary/10">
+        <h2 className="text-2xl font-bold mb-6">Global Online Video Downloader</h2>
+        <p className="text-sm text-muted-foreground max-w-3xl mx-auto px-4 leading-relaxed mb-6">
+          Notre service gratuit vous permet de <strong>télécharger vidéo youtube</strong> ou <strong>télécharger vidéo youtube en ligne</strong> très rapidement.
+          Si deseas <strong>descargar video youtube</strong> o <strong>descargar de youtube</strong> gratis, utiliza nuestro <strong>descargador de videos de youtube</strong> profesional.
+          Nós também suportamos quem deseja <strong>baixar videos de youtube</strong> em alta definição.
+          Для тех, кто хочет <strong>скачать видео с ютуба</strong>, наш сервис работает безупречно.
+          支持 <strong>youtube视频下载</strong> 和 <strong>youtube视频解析</strong>，轻松 <strong>youtube下载</strong> 各种 <strong>油管视频下载</strong> 内容。
+        </p>
+        <div className="flex flex-wrap justify-center gap-2 px-4 opacity-70">
+          <Badge variant="outline">ssyoutube</Badge>
+          <Badge variant="outline">ytdownloader</Badge>
+          <Badge variant="outline">savefrom</Badge>
+          <Badge variant="outline">snapsave youtube</Badge>
+          <Badge variant="outline">clipto ai youtube downloader</Badge>
+          <Badge variant="outline">ymate youtube downloader</Badge>
+          <Badge variant="outline">savenet youtube downloader</Badge>
+        </div>
+      </section>
 
-            {steps.map((s, i) => (
-              <div key={i} className="flex flex-col items-center text-center bg-background p-6 rounded-2xl border border-border/50 shadow-sm w-full md:w-1/3 z-10">
-                <div className="w-8 h-8 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold mb-4">
-                  {i + 1}
-                </div>
-                <h3 className="font-semibold text-lg mb-1">{s.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Multi-language Support text for Global SEO */}
-        <section className="mb-20 text-center bg-primary/5 py-10 rounded-3xl border border-primary/10">
-          <h2 className="text-2xl font-bold mb-6">Global Online Video Downloader</h2>
-          <p className="text-sm text-muted-foreground max-w-3xl mx-auto px-4 leading-relaxed mb-6">
-            Notre service gratuit vous permet de <strong>télécharger vidéo youtube</strong> ou <strong>télécharger vidéo youtube en ligne</strong> très rapidement.
-            Si deseas <strong>descargar video youtube</strong> o <strong>descargar de youtube</strong> gratis, utiliza nuestro <strong>descargador de videos de youtube</strong> profesional.
-            Nós também suportamos quem deseja <strong>baixar videos de youtube</strong> em alta definição.
-            Для тех, кто хочет <strong>скачать видео с ютуба</strong>, наш сервис работает безупречно.
-            支持 <strong>youtube视频下载</strong> 和 <strong>youtube视频解析</strong>，轻松 <strong>youtube下载</strong> 各种 <strong>油管视频下载</strong> 内容。
-          </p>
-          <div className="flex flex-wrap justify-center gap-2 px-4 opacity-70">
-            <Badge variant="outline">ssyoutube</Badge>
-            <Badge variant="outline">ytdownloader</Badge>
-            <Badge variant="outline">savefrom</Badge>
-            <Badge variant="outline">snapsave youtube</Badge>
-            <Badge variant="outline">clipto ai youtube downloader</Badge>
-            <Badge variant="outline">ymate youtube downloader</Badge>
-            <Badge variant="outline">savenet youtube downloader</Badge>
-          </div>
-        </section>
-
-        {/* Formats Info */}
-        <div className="grid md:grid-cols-2 gap-8 mb-20">
-          <div className="bg-card p-8 rounded-3xl border border-border/50">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-blue-500/10 rounded-lg text-blue-500">
-                <FileVideo className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold">YouTube Downloader Video Formats</h3>
+      {/* Formats Info */}
+      <div className="grid md:grid-cols-2 gap-8 mb-20">
+        <div className="bg-card p-8 rounded-3xl border border-border/50">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-blue-500/10 rounded-lg text-blue-500">
+              <FileVideo className="w-6 h-6" />
             </div>
-            <ul className="space-y-3">
-              <li className="flex justify-between items-center text-sm">
-                <span className="font-medium">MP4 4K Ultra HD Downloader</span>
-                <span className="text-muted-foreground text-xs uppercase bg-green-500/10 text-green-600 px-2 py-0.5 rounded">Best Quality</span>
-              </li>
-              <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                <span className="font-medium">Free Download YouTube 1080p</span>
-                <span className="text-muted-foreground">Standard HD</span>
-              </li>
-              <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                <span className="font-medium">YouTube Downloader PC 720p</span>
-                <span className="text-muted-foreground">Optimized</span>
-              </li>
-            </ul>
+            <h3 className="text-xl font-bold">YouTube Downloader Video Formats</h3>
           </div>
-
-          <div className="bg-card p-8 rounded-3xl border border-border/50">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 bg-purple-500/10 rounded-lg text-purple-500">
-                <FileAudio className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-bold">YouTube Converter to MP3</h3>
-            </div>
-            <ul className="space-y-3">
-              <li className="flex justify-between items-center text-sm">
-                <span className="font-medium">High Bitrate 320kbps MP3</span>
-                <span className="text-muted-foreground text-xs uppercase bg-purple-500/10 text-purple-600 px-2 py-0.5 rounded">HQ Audio</span>
-              </li>
-              <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                <span className="font-medium">Best YouTube Downloader Audio</span>
-                <span className="text-muted-foreground">256kbps</span>
-              </li>
-              <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
-                <span className="font-medium">Fast YT Video Downloader MP3</span>
-                <span className="text-muted-foreground">Standard</span>
-              </li>
-            </ul>
-          </div>
+          <ul className="space-y-3">
+            <li className="flex justify-between items-center text-sm">
+              <span className="font-medium">MP4 4K Ultra HD Downloader</span>
+              <span className="text-muted-foreground text-xs uppercase bg-green-500/10 text-green-600 px-2 py-0.5 rounded">Best Quality</span>
+            </li>
+            <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+              <span className="font-medium">Free Download YouTube 1080p</span>
+              <span className="text-muted-foreground">Standard HD</span>
+            </li>
+            <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+              <span className="font-medium">YouTube Downloader PC 720p</span>
+              <span className="text-muted-foreground">Optimized</span>
+            </li>
+          </ul>
         </div>
 
-        {/* FAQ */}
-        <section className="max-w-3xl mx-auto mb-20">
-          <h2 className="text-3xl font-bold text-center mb-4">Best YouTube Downloader FAQ</h2>
-          <p className="text-center text-muted-foreground mb-10">Common questions about downloading from youtube for free.</p>
-          <Accordion type="single" collapsible className="w-full">
-            {jsonLdSchemas.faq.mainEntity.map((faq, i) => (
-              <AccordionItem key={i} value={`item-${i}`} className="border-b-border/50">
-                <AccordionTrigger className="text-left font-medium hover:no-underline hover:text-primary leading-relaxed py-4">
-                  {faq.name}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground leading-relaxed pb-6">
-                  {faq.acceptedAnswer.text}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </section>
-
-        {/* Final SEO Text Paragraphs */}
-        <section className="mb-20 prose prose-slate dark:prose-invert max-w-none border-t border-border/50 pt-16">
-          <p>
-            In conclusion, if you are looking for a <strong>youtube downloader free download</strong> platform that works without any installation, 30Tools is the <strong>best youtube downloader</strong> for your needs. We cover <strong>youtube video download free</strong>, <strong>download youtube video online</strong>, and even offer <strong>youtube downloader app</strong> style functionality through our mobile-responsive web interface. Save your favorite <strong>you tube</strong> videos with the most trusted <strong>online youtube downloader</strong> on the web.
-          </p>
-          <p>
-            Experience the power of a professional <strong>video downloader youtube</strong> and <strong>yt download</strong> service. Our technology is as fast as <strong>turboscribe youtube video downloader free</strong> and as easy to use as <strong>snapsave youtube</strong>. Don't settle for less when you can have the <strong>best online video downloader youtube</strong> suite for free.
-          </p>
-        </section>
-
-        {/* Related Tools */}
-        <div className="text-center py-10 border-t border-border/50">
-          <p className="text-sm font-bold text-muted-foreground mb-6 uppercase tracking-widest text-primary/80">Other Powerful Free Online Tools</p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/terabox-downloader">
-              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
-                Terabox Downloader
-              </span>
-            </Link>
-            <Link href="/instagram-downloader">
-              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
-                Instagram Downloader
-              </span>
-            </Link>
-            <Link href="/tiktok-downloader">
-              <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
-                TikTok Downloader
-              </span>
-            </Link>
+        <div className="bg-card p-8 rounded-3xl border border-border/50">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="p-2 bg-purple-500/10 rounded-lg text-purple-500">
+              <FileAudio className="w-6 h-6" />
+            </div>
+            <h3 className="text-xl font-bold">YouTube Converter to MP3</h3>
           </div>
+          <ul className="space-y-3">
+            <li className="flex justify-between items-center text-sm">
+              <span className="font-medium">High Bitrate 320kbps MP3</span>
+              <span className="text-muted-foreground text-xs uppercase bg-purple-500/10 text-purple-600 px-2 py-0.5 rounded">HQ Audio</span>
+            </li>
+            <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+              <span className="font-medium">Best YouTube Downloader Audio</span>
+              <span className="text-muted-foreground">256kbps</span>
+            </li>
+            <li className="flex justify-between items-center text-sm border-t border-border/50 pt-3">
+              <span className="font-medium">Fast YT Video Downloader MP3</span>
+              <span className="text-muted-foreground">Standard</span>
+            </li>
+          </ul>
         </div>
-
       </div>
-    </>
+
+      {/* Related Tools */}
+      <div className="text-center py-10 border-t border-border/50">
+        <p className="text-sm font-bold text-muted-foreground mb-6 uppercase tracking-widest text-primary/80">Other Powerful Free Online Tools</p>
+        <div className="flex flex-wrap justify-center gap-3">
+          <Link href="/terabox-downloader">
+            <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
+              Terabox Downloader
+            </span>
+          </Link>
+          <Link href="/instagram-downloader">
+            <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
+              Instagram Downloader
+            </span>
+          </Link>
+          <Link href="/tiktok-downloader">
+            <span className="px-5 py-2.5 rounded-full bg-muted/50 hover:bg-muted text-sm font-medium transition-all border border-transparent hover:border-primary/20 cursor-pointer hover:shadow-sm">
+              TikTok Downloader
+            </span>
+          </Link>
+        </div>
+      </div>
+    </ToolSEOLayout>
   );
 }

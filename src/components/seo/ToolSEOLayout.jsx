@@ -28,30 +28,31 @@ export default function ToolSEOLayout({ toolId, children, faqs, features, review
   return (
     <div className="tool-page-container">
       <StructuredData tool={mergedTool} />
-      
+
       <div className="container mx-auto px-4 py-8">
         <BreadcrumbsEnhanced tool={mergedTool} />
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
           <div className="lg:col-span-12">
             {/* Main Tool Area */}
             <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8">
+              <h1 className="text-3xl font-bold mb-6">{mergedTool.name}</h1>
               {children}
             </div>
 
             {/* Tool Features */}
             <ToolFeatures tool={mergedTool} />
-            
+
             {/* Reviews/Trust */}
             <ReviewSnippets tool={mergedTool} />
-            
+
             {/* FAQs */}
             <FAQSection faqs={mergedTool.faqs} title={`${mergedTool.name} FAQs`} />
-            
+
             {/* Comments */}
             <UserComments tool={mergedTool} />
           </div>
-          
+
           {/* <div className="lg:col-span-4 space-y-8">
             <RelatedTools currentToolId={mergedTool.id} category={mergedTool.category} />
           </div> */}

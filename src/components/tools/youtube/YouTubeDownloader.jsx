@@ -11,7 +11,9 @@ import {
   BookmarkCheck,
   SmartphoneIcon,
   Heart,
-  X
+  X,
+  Volume2,
+  VolumeX,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -94,12 +96,11 @@ export default function YouTubeDownloader() {
     };
   }, [url]);
 
-  /* New Proxy API Integration */
-  const [downloadingFormat, setDownloadingFormat] = useState(null); // Track which button is processing
+  /* New Direct API Integration (V3) */
+  const [downloadingFormat, setDownloadingFormat] = useState(null); // Track which button is processing (using quality string)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("YouTubeDownloader: handleSubmit v2 triggered");
     if (!url.trim()) {
       setError("Please enter a YouTube URL");
       return;
@@ -110,9 +111,13 @@ export default function YouTubeDownloader() {
     setVideoData(null);
 
     try {
-      const res = await fetch("/api/proxy/ytdown", {
+      const res = await fetch("https://downr.org/.netlify/functions/video-info", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "Origin": "https://downr.org",
+          "Referer": "https://downr.org/"
+        },
         body: JSON.stringify({ url: url.trim() }),
       });
 
@@ -122,56 +127,42 @@ export default function YouTubeDownloader() {
 
       const data = await res.json();
 
-      // Normalize data from ytdl.socialplug.io
+      // Normalize data from downr.org/video-info
       const title = data.title || "YouTube Video";
-      const thumbnail = data.image || data.thumbnail || null;
-      const duration = data.duration || data.lengthSeconds || "";
-      // lengthSeconds might be distinct from formatted duration string, but valid for display
+      const thumbnail = data.thumbnail || null;
+      // Duration comes as number of seconds
+      const durationSeconds = data.duration || 0;
+      const duration = new Date(durationSeconds * 1000).toISOString().substring(11, 19).replace(/^0(?:0:0?)?/, '');
 
-      // Formats are nested in data.format_options.video / .audio
-      const videoOpts = data.format_options?.video || {};
-      const audioOpts = data.format_options?.audio || {};
+      // Parse medias array
+      const medias = data.medias || [];
 
-      // Helper to flatten formats
-      // The API returns arrays like "mp4": [...], "webm": [...] inside the video object
-      const videoFormats = [];
-      Object.entries(videoOpts).forEach(([ext, formats]) => {
-        if (Array.isArray(formats)) {
-          formats.forEach(f => {
-            videoFormats.push({
-              quality: f.quality,
-              fileSize: f.fileSize,
-              downloadUrl: f.url || f.src,
-              hasAudio: f.hasAudio,
-              originalExtension: ext
-            });
-          });
-        }
-      });
+      const videoFormats = medias.filter(m => m.type === "video").map(f => ({
+        quality: f.quality,
+        fileSize: f.fileSize ? formatBytes(f.fileSize) : "Unknown",
+        extension: f.extension,
+        type: "video"
+      }));
 
-      const audioFormats = [];
-      Object.entries(audioOpts).forEach(([ext, formats]) => {
-        if (Array.isArray(formats)) {
-          formats.forEach(f => {
-            audioFormats.push({
-              quality: "Audio", // API often just lists them without specific quality label for audio sometimes
-              fileSize: f.fileSize,
-              downloadUrl: f.url || f.src,
-              hasAudio: true,
-              originalExtension: ext
-            });
-          });
-        }
-        // Fallback if audio is just a boolean false or empty
-      });
+      const audioFormats = medias.filter(m => m.type === "audio").map(f => ({
+        quality: "Audio",
+        fileSize: f.fileSize ? formatBytes(f.fileSize) : "Unknown",
+        extension: f.extension,
+        type: "audio"
+      }));
 
+      // Fallback if no specific formats found
+      if (videoFormats.length === 0 && Boolean(data.title)) {
+        // Should hopefully not happen with valid V3 response
+      }
 
       setVideoData({
         title,
         thumbnail,
         duration,
         videoFormats,
-        audioFormats
+        audioFormats,
+        originalUrl: url.trim()
       });
 
     } catch (err) {
@@ -182,15 +173,18 @@ export default function YouTubeDownloader() {
     }
   };
 
-
-
-
-  /* Restored Helper Functions */
+  // Helper to format bytes
+  const formatBytes = (bytes, decimals = 2) => {
+    if (!+bytes) return '0 Bytes';
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+  }
 
   const handleProcessDownload = (mediaUrl) => {
     if (!mediaUrl) return;
-
-    // Direct open since it's a direct link
     const link = document.createElement("a");
     link.href = mediaUrl;
     link.target = "_blank";
@@ -198,90 +192,49 @@ export default function YouTubeDownloader() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-
     toast.success("Download started!");
   };
 
-  const handleBookmark = () => {
-    if (!url.trim()) {
-      toast.error("Please enter a YouTube URL to bookmark");
-      return;
-    }
+  const handleDownload = async (format) => {
+    if (!videoData?.originalUrl) return;
+
+    // Unique identifier for loading state
+    const loadingId = format.type === 'video' ? format.quality : 'audio-' + format.extension;
+    setDownloadingFormat(loadingId);
 
     try {
-      const currentBookmarks = JSON.parse(
-        localStorage.getItem("bookmarked-youtube-urls") || "[]",
-      );
+      const payload = {
+        url: videoData.originalUrl,
+        downloadMode: format.type === "audio" ? "audio" : "video",
+        videoQuality: format.type === "video" ? format.quality : undefined
+      };
 
-      if (isBookmarked) {
-        // Remove bookmark
-        const filteredUrls = currentBookmarks.filter(
-          (item) => item.url !== url,
-        );
-        localStorage.setItem(
-          "bookmarked-youtube-urls",
-          JSON.stringify(filteredUrls),
-        );
-        setBookmarkedUrls(filteredUrls);
-        setIsBookmarked(false);
-        toast.success("Bookmark removed");
+      const res = await fetch("https://downr.org/.netlify/functions/youtube-download", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Origin": "https://downr.org",
+          "Referer": "https://downr.org/"
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) throw new Error("Download failed to initiate");
+
+      const data = await res.json();
+
+      if (data.url) {
+        handleProcessDownload(data.url);
       } else {
-        // Add bookmark
-        const newBookmark = {
-          url: url.trim(),
-          title: videoData?.title || "YouTube Video",
-          thumbnail: videoData?.thumbnail || null,
-          bookmarkedAt: new Date().toISOString(),
-        };
-        const updatedBookmarks = [newBookmark, ...currentBookmarks];
-
-        // Keep only last 50 bookmarks
-        const limitedBookmarks = updatedBookmarks.slice(0, 50);
-        localStorage.setItem(
-          "bookmarked-youtube-urls",
-          JSON.stringify(limitedBookmarks),
-        );
-        setBookmarkedUrls(limitedBookmarks);
-        setIsBookmarked(true);
-        toast.success("Saved to bookmarks");
-      }
-    } catch {
-      toast.error("Failed to save bookmark");
-    }
-  };
-
-  const removeBookmark = (urlToRemove) => {
-    try {
-      const filteredUrls = bookmarkedUrls.filter(
-        (item) => item.url !== urlToRemove,
-      );
-      localStorage.setItem(
-        "bookmarked-youtube-urls",
-        JSON.stringify(filteredUrls),
-      );
-      setBookmarkedUrls(filteredUrls);
-
-      // Update current URL bookmark status if it matches
-      if (url === urlToRemove) {
-        setIsBookmarked(false);
+        throw new Error("No download URL returned");
       }
 
-      toast.success("Bookmark removed");
-    } catch {
-      toast.error("Failed to remove bookmark");
+    } catch (err) {
+      console.error(err);
+      toast.error("Failed to start download. Please try again.");
+    } finally {
+      setDownloadingFormat(null);
     }
-  };
-
-  const loadBookmarkedUrl = (bookmarkedUrl) => {
-    setUrl(bookmarkedUrl);
-    setError("");
-    setVideoData(null);
-  };
-
-
-
-  const handleDownload = (downloadUrl, _filename, _format) => {
-    handleProcessDownload(downloadUrl);
   };
 
   return (
@@ -429,27 +382,33 @@ export default function YouTubeDownloader() {
                 <h3 className="font-semibold text-foreground">Video Download</h3>
               </div>
               <div className="space-y-3">
-                {videoData.videoFormats?.slice(0, 4).map((format, idx) => (
-                  <div key={idx} className="flex items-center justify-between p-3 bg-muted/40 hover:bg-muted rounded-xl transition-colors border border-transparent hover:border-border/50">
-                    <div>
-                      <div className="font-medium text-foreground">{format.quality}</div>
-                      {format.fileSize && <div className="text-xs text-muted-foreground">{format.fileSize}</div>}
+                {videoData.videoFormats?.length > 0 ? (
+                  videoData.videoFormats.map((format, idx) => (
+                    <div key={idx} className="flex items-center justify-between p-3 bg-muted/40 hover:bg-muted rounded-xl transition-colors border border-transparent hover:border-border/50">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="font-medium text-foreground">{format.quality}</span>
+                        </div>
+                        {format.fileSize && <div className="text-xs text-muted-foreground">{format.fileSize}</div>}
+                      </div>
+                      <Button
+                        size="sm"
+                        onClick={() => handleDownload(format)}
+                        disabled={downloadingFormat !== null}
+                        className="rounded-lg gap-2"
+                      >
+                        {downloadingFormat === format.quality ? (
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                        ) : (
+                          <Download className="w-4 h-4" />
+                        )}
+                        {downloadingFormat === format.quality ? "Processing" : "Get Video"}
+                      </Button>
                     </div>
-                    <Button
-                      size="sm"
-                      onClick={() => handleDownload(format.downloadUrl)}
-                      disabled={downloadingFormat !== null}
-                      className="rounded-lg gap-2"
-                    >
-                      {downloadingFormat === format.downloadUrl ? (
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                      ) : (
-                        <Download className="w-4 h-4" />
-                      )}
-                      {downloadingFormat === format.downloadUrl ? "Processing" : "Get Video"}
-                    </Button>
-                  </div>
-                ))}
+                  ))
+                ) : (
+                  <div className="text-sm text-muted-foreground p-3">No video formats available.</div>
+                )}
               </div>
             </div>
 
@@ -461,49 +420,30 @@ export default function YouTubeDownloader() {
               </div>
               <div className="space-y-3">
                 {videoData.audioFormats?.length > 0 ? (
-                  videoData.audioFormats.slice(0, 3).map((format, idx) => (
+                  videoData.audioFormats.map((format, idx) => (
                     <div key={idx} className="flex items-center justify-between p-3 bg-muted/40 hover:bg-muted rounded-xl transition-colors border border-transparent hover:border-border/50">
                       <div>
-                        <div className="font-medium text-foreground">{format.quality} MP3</div>
+                        <div className="font-medium text-foreground">{format.quality} ({format.extension})</div>
                         {format.fileSize && <div className="text-xs text-muted-foreground">{format.fileSize}</div>}
                       </div>
                       <Button
                         size="sm"
                         variant="secondary"
-                        onClick={() => handleDownload(format.downloadUrl)}
+                        onClick={() => handleDownload(format)}
                         disabled={downloadingFormat !== null}
                         className="rounded-lg gap-2"
                       >
-                        {downloadingFormat === format.downloadUrl ? (
+                        {downloadingFormat === ('audio-' + format.extension) ? (
                           <Loader2 className="w-4 h-4 animate-spin" />
                         ) : (
                           <Download className="w-4 h-4" />
                         )}
-                        {downloadingFormat === format.downloadUrl ? "Processing" : "Get Audio"}
+                        {downloadingFormat === ('audio-' + format.extension) ? "Processing" : "Get Audio"}
                       </Button>
                     </div>
                   ))
                 ) : (
-                  <div className="flex items-center justify-between p-3 bg-muted/40 hover:bg-muted rounded-xl transition-colors">
-                    <div>
-                      <div className="font-medium text-foreground">MP3 Audio</div>
-                      <div className="text-xs text-muted-foreground">High Quality</div>
-                    </div>
-                    <Button
-                      size="sm"
-                      variant="secondary"
-                      onClick={() => handleDownload(videoData.audioUrl || videoData.downloadUrl)}
-                      disabled={downloadingFormat !== null}
-                      className="rounded-lg gap-2"
-                    >
-                      {downloadingFormat === (videoData.audioUrl || videoData.downloadUrl) ? (
-                        <Loader2 className="w-4 h-4 animate-spin" />
-                      ) : (
-                        <Download className="w-4 h-4" />
-                      )}
-                      {downloadingFormat === (videoData.audioUrl || videoData.downloadUrl) ? "Processing" : "Get Audio"}
-                    </Button>
-                  </div>
+                  <div className="text-sm text-muted-foreground p-3">No audio formats available.</div>
                 )}
               </div>
             </div>

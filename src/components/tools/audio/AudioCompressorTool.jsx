@@ -166,11 +166,11 @@ export default function AudioCompressorTool() {
           prev.map((f) =>
             f.id === fileData.id
               ? {
-                  ...f,
-                  status: "completed",
-                  compressedBlob: result.compressedBlob,
-                  compressedSize: result.compressedSize,
-                }
+                ...f,
+                status: "completed",
+                compressedBlob: result.compressedBlob,
+                compressedSize: result.compressedSize,
+              }
               : f,
           ),
         );
@@ -281,322 +281,229 @@ export default function AudioCompressorTool() {
     <div className="min-h-screen bg-background">
       <audio ref={audioRef} onEnded={() => setCurrentlyPlaying(null)} />
 
-      <div className="container mx-auto px-4 py-8 max-w-6xl">
-        {/* Header */}
-        <div className="mb-8">
-          <Link href="/">
-            <Button variant="ghost" className="mb-4">
-              <ArrowLeftIcon className="h-4 w-4 mr-2" />
-              Back to Home
-            </Button>
-          </Link>
+      <div className="gap-6">
 
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
-              <MusicIcon className="h-6 w-6 text-primary" />
-            </div>
-            <div>
-              <h1 className="text-3xl font-bold">Audio Compressor</h1>
-              <p className="text-muted-foreground">
-                Reduce audio file sizes while maintaining quality
-              </p>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-2 mb-4">
-            <Badge variant="secondary">MP3, WAV, FLAC</Badge>
-            <Badge variant="secondary">Batch Processing</Badge>
-            <Badge variant="secondary">Quality Control</Badge>
-            <Badge variant="secondary">Free Forever</Badge>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
-          {/* Settings Panel */}
-          <div className="lg:col-span-1">
-            <Card>
-              <CardHeader>
-                <CardTitle>Compression Settings</CardTitle>
-                <CardDescription>
-                  Adjust quality and compression options
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {/* Quality Slider */}
-                <div className="space-y-3">
-                  <Label className="text-base font-medium">
-                    Audio Quality: {quality[0]}%
-                  </Label>
-                  <Slider
-                    value={quality}
-                    onValueChange={setQuality}
-                    min={10}
-                    max={100}
-                    step={5}
-                    className="w-full"
-                  />
-                  <div className="flex justify-between text-xs text-muted-foreground">
-                    <span>High Compression</span>
-                    <span>High Quality</span>
+        <div className="w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            {/* Settings Panel */}
+            <div className="lg:col-span-1">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Compression Settings</CardTitle>
+                  <CardDescription>
+                    Adjust quality and compression options
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-6">
+                  {/* Quality Slider */}
+                  <div className="space-y-3">
+                    <Label className="text-base font-medium">
+                      Audio Quality: {quality[0]}%
+                    </Label>
+                    <Slider
+                      value={quality}
+                      onValueChange={setQuality}
+                      min={10}
+                      max={100}
+                      step={5}
+                      className="w-full"
+                    />
+                    <div className="flex justify-between text-xs text-muted-foreground">
+                      <span>High Compression</span>
+                      <span>High Quality</span>
+                    </div>
+                    <div className="text-xs text-muted-foreground">
+                      Lower quality = smaller file size
+                    </div>
                   </div>
-                  <div className="text-xs text-muted-foreground">
-                    Lower quality = smaller file size
+
+                  <Separator />
+
+                  {/* File Upload */}
+                  <div className="space-y-3">
+                    <Label className="text-base font-medium">
+                      Upload Audio Files
+                    </Label>
+                    <Button
+                      onClick={() => fileInputRef.current?.click()}
+                      variant="outline"
+                      className="w-full"
+                    >
+                      <UploadIcon className="h-4 w-4 mr-2" />
+                      Choose Files
+                    </Button>
+                    <input
+                      ref={fileInputRef}
+                      type="file"
+                      multiple
+                      accept="audio/*"
+                      onChange={handleFileSelect}
+                      className="hidden"
+                    />
+                    <div className="text-xs text-muted-foreground">
+                      Supports: MP3, WAV, FLAC, OGG, AAC
+                      <br />
+                      Max size: 100MB per file
+                    </div>
                   </div>
-                </div>
 
-                <Separator />
+                  {files.length > 0 && (
+                    <>
+                      <Separator />
 
-                {/* File Upload */}
-                <div className="space-y-3">
-                  <Label className="text-base font-medium">
-                    Upload Audio Files
-                  </Label>
-                  <Button
-                    onClick={() => fileInputRef.current?.click()}
-                    variant="outline"
-                    className="w-full"
-                  >
-                    <UploadIcon className="h-4 w-4 mr-2" />
-                    Choose Files
-                  </Button>
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    multiple
-                    accept="audio/*"
-                    onChange={handleFileSelect}
-                    className="hidden"
-                  />
-                  <div className="text-xs text-muted-foreground">
-                    Supports: MP3, WAV, FLAC, OGG, AAC
-                    <br />
-                    Max size: 100MB per file
-                  </div>
-                </div>
-
-                {files.length > 0 && (
-                  <>
-                    <Separator />
-
-                    {/* Action Buttons */}
-                    <div className="space-y-2">
-                      <Button
-                        onClick={handleCompress}
-                        disabled={
-                          isCompressing ||
-                          files.every((f) => f.status !== "pending")
-                        }
-                        className="w-full"
-                      >
-                        {isCompressing ? "Compressing..." : "Compress Audio"}
-                      </Button>
-
-                      {files.some((f) => f.status === "completed") && (
+                      {/* Action Buttons */}
+                      <div className="space-y-2">
                         <Button
-                          onClick={downloadAll}
-                          variant="outline"
+                          onClick={handleCompress}
+                          disabled={
+                            isCompressing ||
+                            files.every((f) => f.status !== "pending")
+                          }
                           className="w-full"
                         >
-                          <DownloadIcon className="h-4 w-4 mr-2" />
-                          Download All
+                          {isCompressing ? "Compressing..." : "Compress Audio"}
                         </Button>
-                      )}
 
-                      <Button
-                        onClick={clearFiles}
-                        variant="ghost"
-                        className="w-full"
-                      >
-                        Clear All Files
-                      </Button>
-                    </div>
+                        {files.some((f) => f.status === "completed") && (
+                          <Button
+                            onClick={downloadAll}
+                            variant="outline"
+                            className="w-full"
+                          >
+                            <DownloadIcon className="h-4 w-4 mr-2" />
+                            Download All
+                          </Button>
+                        )}
 
-                    {isCompressing && (
-                      <div className="space-y-2">
-                        <Label className="text-sm">Progress</Label>
-                        <Progress value={progress} className="w-full" />
-                        <div className="text-xs text-muted-foreground text-center">
-                          {Math.round(progress)}%
-                        </div>
+                        <Button
+                          onClick={clearFiles}
+                          variant="ghost"
+                          className="w-full"
+                        >
+                          Clear All Files
+                        </Button>
                       </div>
-                    )}
-                  </>
-                )}
-              </CardContent>
-            </Card>
-          </div>
 
-          {/* File List */}
-          <div className="lg:col-span-3">
-            {files.length === 0 ? (
-              <Card className="h-64 flex items-center justify-center border-dashed border-2">
-                <div className="text-center space-y-4">
-                  <MusicIcon className="h-12 w-12 text-muted-foreground mx-auto" />
-                  <div>
-                    <h3 className="text-lg font-medium">
-                      No audio files uploaded
-                    </h3>
-                    <p className="text-muted-foreground">
-                      Upload audio files to start compressing
-                    </p>
-                  </div>
-                  <Button onClick={() => fileInputRef.current?.click()}>
-                    <UploadIcon className="h-4 w-4 mr-2" />
-                    Upload Audio Files
-                  </Button>
-                </div>
-              </Card>
-            ) : (
-              <div className="space-y-4">
-                {files.map((fileData) => (
-                  <Card key={fileData.id}>
-                    <CardContent className="p-4">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-3 flex-1 min-w-0">
-                          {getStatusIcon(fileData.status)}
-                          <div className="flex-1 min-w-0">
-                            <h4 className="font-medium truncate">
-                              {fileData.file.name}
-                            </h4>
-                            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                              <span>
-                                Original:{" "}
-                                {formatFileSize(fileData.originalSize)}
-                              </span>
-                              {fileData.compressedSize && (
-                                <>
-                                  <span>
-                                    Compressed:{" "}
-                                    {formatFileSize(fileData.compressedSize)}
-                                  </span>
-                                  <Badge
-                                    variant="outline"
-                                    className="text-primary"
-                                  >
-                                    {calculateSavings(
-                                      fileData.originalSize,
-                                      fileData.compressedSize,
-                                    )}
-                                    % smaller
-                                  </Badge>
-                                </>
-                              )}
-                            </div>
+                      {isCompressing && (
+                        <div className="space-y-2">
+                          <Label className="text-sm">Progress</Label>
+                          <Progress value={progress} className="w-full" />
+                          <div className="text-xs text-muted-foreground text-center">
+                            {Math.round(progress)}%
                           </div>
                         </div>
+                      )}
+                    </>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
 
-                        <div className="flex items-center gap-2">
-                          {getStatusBadge(fileData.status)}
+            {/* File List */}
+            <div className="lg:col-span-3">
+              {files.length === 0 ? (
+                <Card className="h-64 flex items-center justify-center border-dashed border-2">
+                  <div className="text-center space-y-4">
+                    <MusicIcon className="h-12 w-12 text-muted-foreground mx-auto" />
+                    <div>
+                      <h3 className="text-lg font-medium">
+                        No audio files uploaded
+                      </h3>
+                      <p className="text-muted-foreground">
+                        Upload audio files to start compressing
+                      </p>
+                    </div>
+                    <Button onClick={() => fileInputRef.current?.click()}>
+                      <UploadIcon className="h-4 w-4 mr-2" />
+                      Upload Audio Files
+                    </Button>
+                  </div>
+                </Card>
+              ) : (
+                <div className="space-y-4">
+                  {files.map((fileData) => (
+                    <Card key={fileData.id}>
+                      <CardContent className="p-4">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3 flex-1 min-w-0">
+                            {getStatusIcon(fileData.status)}
+                            <div className="flex-1 min-w-0">
+                              <h4 className="font-medium truncate">
+                                {fileData.file.name}
+                              </h4>
+                              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                                <span>
+                                  Original:{" "}
+                                  {formatFileSize(fileData.originalSize)}
+                                </span>
+                                {fileData.compressedSize && (
+                                  <>
+                                    <span>
+                                      Compressed:{" "}
+                                      {formatFileSize(fileData.compressedSize)}
+                                    </span>
+                                    <Badge
+                                      variant="outline"
+                                      className="text-primary"
+                                    >
+                                      {calculateSavings(
+                                        fileData.originalSize,
+                                        fileData.compressedSize,
+                                      )}
+                                      % smaller
+                                    </Badge>
+                                  </>
+                                )}
+                              </div>
+                            </div>
+                          </div>
 
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => playAudio(fileData)}
-                          >
-                            {currentlyPlaying === fileData.id ? (
-                              <PauseIcon className="h-4 w-4" />
-                            ) : (
-                              <PlayIcon className="h-4 w-4" />
-                            )}
-                          </Button>
+                          <div className="flex items-center gap-2">
+                            {getStatusBadge(fileData.status)}
 
-                          {fileData.status === "completed" && (
                             <Button
-                              variant="outline"
+                              variant="ghost"
                               size="sm"
-                              onClick={() => downloadFile(fileData)}
+                              onClick={() => playAudio(fileData)}
                             >
-                              <DownloadIcon className="h-4 w-4" />
+                              {currentlyPlaying === fileData.id ? (
+                                <PauseIcon className="h-4 w-4" />
+                              ) : (
+                                <PlayIcon className="h-4 w-4" />
+                              )}
                             </Button>
-                          )}
 
-                          <Button
-                            variant="ghost"
-                            size="sm"
-                            onClick={() => removeFile(fileData.id)}
-                          >
-                            ×
-                          </Button>
+                            {fileData.status === "completed" && (
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() => downloadFile(fileData)}
+                              >
+                                <DownloadIcon className="h-4 w-4" />
+                              </Button>
+                            )}
+
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={() => removeFile(fileData.id)}
+                            >
+                              ×
+                            </Button>
+                          </div>
                         </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            )}
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
-        {/* Features & FAQ */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Features */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Features</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-2 text-sm">
-                <li>✅ Support for MP3, WAV, FLAC, OGG, AAC formats</li>
-                <li>✅ Adjustable quality settings (10-100%)</li>
-                <li>✅ Batch processing multiple files</li>
-                <li>✅ Real-time audio preview</li>
-                <li>✅ No file size limits (up to 100MB per file)</li>
-                <li>✅ Client-side processing for privacy</li>
-                <li>✅ Download individual or all files</li>
-                <li>✅ Mobile-friendly interface</li>
-              </ul>
-            </CardContent>
-          </Card>
 
-          {/* FAQ */}
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently Asked Questions</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <div>
-                <h4 className="font-medium mb-1">
-                  What audio formats are supported?
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  We support MP3, WAV, FLAC, OGG, and AAC audio formats for
-                  compression.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-medium mb-1">
-                  How much can I compress audio files?
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  Depending on the quality setting, you can reduce file sizes by
-                  20-90% while maintaining good audio quality.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-medium mb-1">
-                  Are my audio files stored anywhere?
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  No, all audio processing happens in your browser. Your files
-                  never leave your device.
-                </p>
-              </div>
-
-              <div>
-                <h4 className="font-medium mb-1">
-                  What quality setting should I use?
-                </h4>
-                <p className="text-sm text-muted-foreground">
-                  For music, use 70-90%. For speech/podcasts, 50-70% is usually
-                  sufficient. Higher values = better quality but larger files.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
       </div>
+
     </div>
   );
 }
