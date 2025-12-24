@@ -10,7 +10,7 @@ import {
   ReviewSnippets
 } from '@/components/seo';
 
-export default function ToolSEOLayout({ toolId, children, faqs, features, reviews }) {
+export default function ToolSEOLayout({ toolId, children, faqs, features, reviews, howTo }) {
   const tool = getToolById(toolId);
 
   if (!tool) {
