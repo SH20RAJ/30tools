@@ -22,7 +22,8 @@ export default function ToolSEOLayout({ toolId, children, faqs, features, review
     ...tool,
     faqs: faqs || tool.faqs,
     features: features || tool.features,
-    reviews: reviews || tool.reviews
+    reviews: reviews || tool.reviews,
+    howTo: howTo || tool.howTo
   };
 
   return (
