@@ -25,7 +25,7 @@ export default function YouTubeShortsDownloader() {
       return;
     }
 
-    if (!url.includes("youtube.com/shorts") && !url.includes("youtu.be")) {
+    if (!url.includes("youtube.com/shorts") && !url.includes("youtu.be") && !url.includes("youtube.com/watch")) {
       setError("Please enter a valid YouTube Shorts URL");
       return;
     }
@@ -35,40 +35,42 @@ export default function YouTubeShortsDownloader() {
     setShortsData(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch video information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find video. Please check the URL and try again.");
+      }
 
       setShortsData({
-        title: "Amazing YouTube Shorts Video",
-        thumbnail: "/placeholder-shorts-thumbnail.jpg",
-        duration: "0:45",
-        channel: "Creator Channel",
-        views: "2.1M",
-        likes: "85K",
-        uploadDate: "2 days ago",
-        description: "Check out this amazing short video! #shorts #viral",
-        qualities: [
-          {
-            quality: "HD 720p (Vertical)",
-            size: "15.2 MB",
-            url: "#",
-            type: "video",
-          },
-          {
-            quality: "SD 480p (Vertical)",
-            size: "8.7 MB",
-            url: "#",
-            type: "video",
-          },
-          { quality: "Mobile 360p", size: "4.1 MB", url: "#", type: "video" },
-          {
-            quality: "Audio Only (MP3)",
-            size: "2.1 MB",
-            url: "#",
-            type: "audio",
-          },
-        ],
+        title: data.title || "YouTube Shorts",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        channel: data.author || "Unknown Channel",
+        views: "N/A",
+        likes: "N/A",
+        uploadDate: "N/A",
+        description: data.title || "YouTube Shorts",
+        qualities: data.medias.map(m => ({
+          quality: m.quality,
+          size: m.size || "Unknown",
+          url: m.url,
+          type: m.type
+        }))
       });
-    } catch (_err) {
+    } catch (err) {
+      console.error(err);
       setError("Failed to process the YouTube Shorts video. Please try again.");
     } finally {
       setIsLoading(false);
@@ -76,9 +78,7 @@ export default function YouTubeShortsDownloader() {
   };
 
   const downloadContent = (quality) => {
-    console.log(
-      `Downloading YouTube Shorts ${quality.type} in ${quality.quality}`,
-    );
+    window.open(quality.url, '_blank');
   };
 
   return (

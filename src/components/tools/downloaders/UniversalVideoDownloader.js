@@ -81,13 +81,8 @@ export default function UniversalVideoDownloader() {
       return;
     }
 
-    const platform = detectPlatform(url);
-    if (platform === "Unknown") {
-      setError(
-        "Unsupported video platform. Please try TikTok, Facebook, Instagram, Twitter/X, YouTube, Vimeo, Dailymotion, Pinterest, Reddit, Snapchat, or Rumble.",
-      );
-      return;
-    }
+    // We allow the API to handle platform detection, but we can still keep a hint if needed.
+    // simpler to just try and let the API fail if invalid.
 
     setIsLoading(true);
     setError("");
@@ -95,13 +90,46 @@ export default function UniversalVideoDownloader() {
     setProgress(0);
 
     try {
-      // Use server action instead of direct fetch
-      const result = await fetchVideoData(url);
-      setVideoData(result);
-    } catch (_err) {
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch video information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find video. Please check the URL and try again.");
+      }
+
+      // Map API response to component state structure
+      setVideoData({
+        platform: data.source || "Unknown",
+        title: data.title || "Video",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        author: data.author,
+        music: "", // API doesn't seem to return music explicitly in the example, can leave empty
+        qualities: data.medias.map(m => ({
+          id: m.id || Math.random().toString(),
+          quality: m.quality,
+          size: m.size || "Unknown", // API might not always return size
+          type: m.type === "audio" ? "audio" : "video",
+          url: m.url
+        }))
+      });
+
+    } catch (err) {
+      console.error(err);
       setError(
         err.message ||
-        `Failed to process the ${detectPlatform(url)} video. Please try again.`,
+        `Failed to process the video. Please try again.`
       );
     } finally {
       setIsLoading(false);

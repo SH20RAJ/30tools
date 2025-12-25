@@ -52,36 +52,40 @@ export default function TikTokDownloader() {
     setVideoData(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch video information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find video. Please check the URL and try again.");
+      }
 
       setVideoData({
-        title: "TikTok Video",
-        thumbnail: "/placeholder-video-thumbnail.jpg",
-        duration: "0:30",
-        author: "@tiktoker",
-        music: "Trending Sound",
-        qualities: [
-          {
-            quality: "HD No Watermark",
-            size: "8.2 MB",
-            url: "#",
-            type: "video",
-          },
-          {
-            quality: "SD No Watermark",
-            size: "4.8 MB",
-            url: "#",
-            type: "video",
-          },
-          {
-            quality: "Audio Only (MP3)",
-            size: "1.2 MB",
-            url: "#",
-            type: "audio",
-          },
-        ],
+        title: data.title || "TikTok Video",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        author: data.author || "Unknown",
+        music: data.music || "",
+        qualities: data.medias.map(m => ({
+          quality: m.quality,
+          size: m.size || "Unknown",
+          url: m.url,
+          type: m.type
+        }))
       });
-    } catch (_err) {
+
+    } catch (err) {
+      console.error(err);
       setError("Failed to process the TikTok video. Please try again.");
     } finally {
       setIsLoading(false);
@@ -89,7 +93,7 @@ export default function TikTokDownloader() {
   };
 
   const downloadContent = (quality) => {
-    console.log(`Downloading TikTok ${quality.type} in ${quality.quality}`);
+    window.open(quality.url, '_blank');
   };
 
   return (

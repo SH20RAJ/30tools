@@ -36,26 +36,39 @@ export default function TikTokMP3Converter() {
     setConversionData(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2500));
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
 
-      const fileSizeMap = {
-        128: "1.2 MB",
-        192: "1.8 MB",
-        256: "2.4 MB",
-        320: "3.0 MB",
-      };
+      if (!response.ok) {
+        throw new Error("Failed to fetch information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find video. Please check the URL and try again.");
+      }
+
+      // Find audio track
+      const audioTrack = data.medias.find(m => m.type === 'audio' || m.quality.toLowerCase().includes('audio')) || data.medias[0];
 
       setConversionData({
-        title: "TikTok Audio - Trending Sound",
-        thumbnail: "/placeholder-tiktok-audio.jpg",
-        duration: "0:30",
-        author: "@tiktoker",
-        music: "Original Sound - Viral Audio",
-        outputQuality: selectedQuality + "kbps",
-        outputSize: fileSizeMap[selectedQuality],
-        downloadUrl: "#",
+        title: data.title || "TikTok Audio",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        author: data.author || "@tiktoker",
+        music: data.music || "Original Sound",
+        outputQuality: "128kbps", // Placeholder or infer
+        outputSize: audioTrack.size || "Unknown",
+        downloadUrl: audioTrack.url,
       });
-    } catch (_err) {
+    } catch (err) {
+      console.error(err);
       setError("Failed to convert TikTok to MP3. Please try again.");
     } finally {
       setIsLoading(false);
@@ -63,7 +76,9 @@ export default function TikTokMP3Converter() {
   };
 
   const downloadMP3 = () => {
-    console.log(`Downloading TikTok MP3 at ${selectedQuality}kbps quality`);
+    if (conversionData && conversionData.downloadUrl) {
+      window.open(conversionData.downloadUrl, '_blank');
+    }
   };
 
   const qualityOptions = [

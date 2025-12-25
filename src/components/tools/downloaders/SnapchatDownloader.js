@@ -34,21 +34,40 @@ export default function SnapchatDownloader() {
     setSnapData(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch video information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find content. Please check the URL and try again.");
+      }
 
       setSnapData({
-        title: "Snapchat Content",
-        thumbnail: "/placeholder-snap-thumbnail.jpg",
-        duration: "0:15",
-        author: "@snapuser",
-        type: "video",
-        qualities: [
-          { quality: "HD 720p", size: "12.5 MB", url: "#" },
-          { quality: "SD 480p", size: "7.8 MB", url: "#" },
-          { quality: "Mobile 360p", size: "4.2 MB", url: "#" },
-        ],
+        title: data.title || "Snapchat Content",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        author: data.author || "@snapuser",
+        type: data.source || "video",
+        qualities: data.medias.map(m => ({
+          quality: m.quality,
+          size: m.size || "Unknown",
+          url: m.url,
+          type: m.type
+        }))
       });
-    } catch (_err) {
+
+    } catch (err) {
+      console.error(err);
       setError("Failed to process the Snapchat content. Please try again.");
     } finally {
       setIsLoading(false);
@@ -56,7 +75,7 @@ export default function SnapchatDownloader() {
   };
 
   const downloadContent = (quality) => {
-    console.log(`Downloading Snapchat content in ${quality.quality}`);
+    window.open(quality.url, '_blank');
   };
 
   return (

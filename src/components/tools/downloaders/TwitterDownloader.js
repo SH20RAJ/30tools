@@ -38,20 +38,39 @@ export default function TwitterDownloader() {
     setVideoData(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch video information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find video. Please check the URL and try again.");
+      }
 
       setVideoData({
-        title: "Twitter/X Video",
-        thumbnail: "/placeholder-video-thumbnail.jpg",
-        duration: "1:15",
-        author: "@username",
-        qualities: [
-          { quality: "HD 720p", size: "18.5 MB", url: "#" },
-          { quality: "SD 480p", size: "9.8 MB", url: "#" },
-          { quality: "Mobile 360p", size: "5.2 MB", url: "#" },
-        ],
+        title: data.title || "Twitter/X Video",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        author: data.author || "@username",
+        qualities: data.medias.map(m => ({
+          quality: m.quality,
+          size: m.size || "Unknown",
+          url: m.url,
+          type: m.type
+        }))
       });
-    } catch (_err) {
+
+    } catch (err) {
+      console.error(err);
       setError("Failed to process the Twitter/X video. Please try again.");
     } finally {
       setIsLoading(false);
@@ -59,7 +78,7 @@ export default function TwitterDownloader() {
   };
 
   const downloadVideo = (quality) => {
-    console.log(`Downloading Twitter video in ${quality.quality}`);
+    window.open(quality.url, '_blank');
   };
 
   return (

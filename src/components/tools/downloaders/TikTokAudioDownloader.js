@@ -35,36 +35,43 @@ export default function TikTokAudioDownloader() {
     setAudioData(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch audio information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find audio. Please check the URL and try again.");
+      }
+
+      // Filter for audio or show all if specifically audio request
+      const audioOptions = data.medias.filter(m => m.type === 'audio' || m.quality.toLowerCase().includes('audio'));
+      const optionsToUse = audioOptions.length > 0 ? audioOptions : data.medias;
 
       setAudioData({
-        title: "TikTok Audio Track",
-        thumbnail: "/placeholder-audio-thumbnail.jpg",
-        duration: "0:28",
-        author: "@tiktoker",
-        music: "Trending Sound - Original Audio",
-        audioQualities: [
-          {
-            quality: "High Quality (320kbps)",
-            size: "2.1 MB",
-            url: "#",
-            bitrate: "320kbps",
-          },
-          {
-            quality: "Standard Quality (192kbps)",
-            size: "1.3 MB",
-            url: "#",
-            bitrate: "192kbps",
-          },
-          {
-            quality: "Basic Quality (128kbps)",
-            size: "0.9 MB",
-            url: "#",
-            bitrate: "128kbps",
-          },
-        ],
+        title: data.title || "TikTok Audio Track",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        author: data.author || "@tiktoker",
+        music: data.music || "Original Sound",
+        audioQualities: optionsToUse.map(m => ({
+          quality: m.quality,
+          size: m.size || "Unknown",
+          url: m.url,
+          bitrate: "128kbps" // Default or infer
+        }))
       });
-    } catch (_err) {
+    } catch (err) {
+      console.error(err);
       setError("Failed to process the TikTok audio. Please try again.");
     } finally {
       setIsLoading(false);
@@ -72,7 +79,7 @@ export default function TikTokAudioDownloader() {
   };
 
   const downloadAudio = (quality) => {
-    console.log(`Downloading TikTok audio in ${quality.quality}`);
+    window.open(quality.url, '_blank');
   };
 
   return (

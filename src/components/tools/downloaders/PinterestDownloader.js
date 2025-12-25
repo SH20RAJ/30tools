@@ -34,21 +34,39 @@ export default function PinterestDownloader() {
     setVideoData(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch video information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find video. Please check the URL and try again.");
+      }
 
       setVideoData({
-        title: "Pinterest Video Pin",
-        thumbnail: "/placeholder-video-thumbnail.jpg",
-        duration: "1:45",
-        description: "Creative DIY Tutorial",
-        board: "DIY Projects",
-        qualities: [
-          { quality: "Original Quality", size: "22.1 MB", url: "#" },
-          { quality: "HD 720p", size: "14.5 MB", url: "#" },
-          { quality: "SD 480p", size: "8.9 MB", url: "#" },
-        ],
+        title: data.title || "Pinterest Video Pin",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        description: data.description || "Pinterest Content",
+        board: data.board || "Pinterest",
+        qualities: data.medias.map(m => ({
+          quality: m.quality,
+          size: m.size || "Unknown",
+          url: m.url,
+          type: m.type
+        }))
       });
-    } catch (_err) {
+    } catch (err) {
+      console.error(err);
       setError("Failed to process the Pinterest content. Please try again.");
     } finally {
       setIsLoading(false);
@@ -56,7 +74,7 @@ export default function PinterestDownloader() {
   };
 
   const downloadVideo = (quality) => {
-    console.log(`Downloading Pinterest content in ${quality.quality}`);
+    window.open(quality.url, '_blank');
   };
 
   return (

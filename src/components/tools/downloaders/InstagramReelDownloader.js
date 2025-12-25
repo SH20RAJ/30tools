@@ -38,39 +38,42 @@ export default function InstagramReelDownloader() {
     setReelData(null);
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      const response = await fetch("/api/proxy/universal", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch reel information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error || !data.medias) {
+        throw new Error("Could not find reel. Please check the URL and try again.");
+      }
 
       setReelData({
-        title: "Instagram Reel",
-        thumbnail: "/placeholder-reel-thumbnail.jpg",
-        duration: "0:28",
-        author: "@creator_username",
-        caption: "Amazing reel content! #trending #viral",
-        likes: "12.5K",
-        views: "89.2K",
-        music: "Trending Audio Track",
-        qualities: [
-          {
-            quality: "HD No Watermark",
-            size: "9.8 MB",
-            url: "#",
-            type: "video",
-          },
-          {
-            quality: "SD No Watermark",
-            size: "5.2 MB",
-            url: "#",
-            type: "video",
-          },
-          {
-            quality: "Audio Only (MP3)",
-            size: "1.8 MB",
-            url: "#",
-            type: "audio",
-          },
-        ],
+        title: data.title || "Instagram Reel",
+        thumbnail: data.thumbnail,
+        duration: data.duration ? `${(data.duration / 1000).toFixed(0)}s` : "",
+        author: data.author || "@creator_username",
+        caption: data.title || "Instagram Reel",
+        likes: "N/A", // API might not return likes
+        views: "N/A", // API might not return views
+        music: data.music || "",
+        qualities: data.medias.map(m => ({
+          quality: m.quality,
+          size: m.size || "Unknown",
+          url: m.url,
+          type: m.type
+        }))
       });
-    } catch (_err) {
+    } catch (err) {
+      console.error(err);
       setError("Failed to process the Instagram Reel. Please try again.");
     } finally {
       setIsLoading(false);
@@ -78,9 +81,7 @@ export default function InstagramReelDownloader() {
   };
 
   const downloadContent = (quality) => {
-    console.log(
-      `Downloading Instagram Reel ${quality.type} in ${quality.quality}`,
-    );
+    window.open(quality.url, '_blank');
   };
 
   return (
