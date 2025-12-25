@@ -10,7 +10,11 @@ import {
   Loader2,
   AlertCircle,
   CheckCircle,
+  Video,
+  FileVideo,
+  Image as ImageIcon
 } from "lucide-react";
+import Image from "next/image";
 
 export default function FacebookDownloader() {
   const [url, setUrl] = useState("");
@@ -24,7 +28,7 @@ export default function FacebookDownloader() {
       return;
     }
 
-    if (!url.includes("facebook.com") && !url.includes("fb.watch")) {
+    if (!url.includes("facebook.com") && !url.includes("fb.watch") && !url.includes("fb.gg")) {
       setError("Please enter a valid Facebook video URL");
       return;
     }
@@ -34,132 +38,158 @@ export default function FacebookDownloader() {
     setVideoData(null);
 
     try {
-      // Simulate API call - replace with actual implementation
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      // Mock video data - replace with actual API response
-      setVideoData({
-        title: "Sample Facebook Video",
-        thumbnail: "/placeholder-video-thumbnail.jpg",
-        duration: "2:30",
-        qualities: [
-          { quality: "HD 720p", size: "15.2 MB", url: "#" },
-          { quality: "SD 480p", size: "8.7 MB", url: "#" },
-          { quality: "Mobile 360p", size: "4.1 MB", url: "#" },
-        ],
+      const response = await fetch("/api/proxy/facebook", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url: url }),
       });
-    } catch (_err) {
-      setError("Failed to process the Facebook video. Please try again.");
+
+      if (!response.ok) {
+        throw new Error("Failed to fetch video information");
+      }
+
+      const data = await response.json();
+
+      if (!data || data.error) {
+        throw new Error("Could not find video. Make sure the link is public and correct.");
+      }
+
+      setVideoData(data);
+
+    } catch (err) {
+      console.error(err);
+      setError("Failed to process the Facebook video. Please make sure the link is public and try again.");
     } finally {
       setIsLoading(false);
     }
   };
 
-  const downloadVideo = (quality) => {
-    // Implement actual download logic here
-    console.log(`Downloading video in ${quality.quality}`);
+  const handleDownloadFile = async (mediaUrl, filename) => {
+    try {
+      const response = await fetch(mediaUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      window.URL.revokeObjectURL(url);
+    } catch (e) {
+      // Fallback to opening in new tab if direct download fails (CORS etc)
+      window.open(mediaUrl, '_blank');
+    }
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <Link className="h-5 w-5" />
+    <div className="w-full max-w-3xl mx-auto">
+      <Card className="border-0 shadow-lg bg-background/50 backdrop-blur-sm">
+        <CardHeader className="text-center pb-2">
+          <CardTitle className="flex items-center justify-center gap-2 text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
+            <Link className="h-6 w-6 text-blue-500" />
             Facebook Video Downloader
           </CardTitle>
         </CardHeader>
-        <CardContent className="space-y-4">
-          <div className="flex gap-2">
+        <CardContent className="space-y-6 p-6">
+          <div className="flex flex-col sm:flex-row gap-3">
             <Input
               type="url"
-              placeholder="Paste Facebook video URL here..."
+              placeholder="Paste Facebook video URL here (e.g., https://www.facebook.com/...)"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
-              className="flex-1"
+              className="flex-1 h-12 text-lg shadow-inner bg-background"
             />
             <Button
               onClick={handleDownload}
               disabled={isLoading}
-              className="bg-primary hover:bg-primary/90"
+              className="h-12 px-8 text-lg bg-blue-600 hover:bg-blue-700 shadow-md transition-all hover:scale-105"
             >
               {isLoading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
+                <Loader2 className="h-5 w-5 animate-spin" />
               ) : (
-                <Download className="h-4 w-4" />
+                <Download className="h-5 w-5 mr-2" />
               )}
-              {isLoading ? "Processing..." : "Download"}
+              {isLoading ? "Fetching..." : "Download"}
             </Button>
           </div>
 
           {error && (
-            <div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
-              <AlertCircle className="h-4 w-4" />
-              <span className="text-sm">{error}</span>
+            <div className="flex items-center gap-2 p-4 bg-destructive/10 border border-destructive/20 rounded-xl text-destructive animate-in fade-in slide-in-from-top-2">
+              <AlertCircle className="h-5 w-5" />
+              <span className="font-medium">{error}</span>
             </div>
           )}
 
           {videoData && (
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
-                <CheckCircle className="h-4 w-4" />
-                <span className="text-sm">Video processed successfully!</span>
+            <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4">
+              <div className="flex items-center gap-2 p-3 bg-green-500/10 border border-green-500/20 rounded-lg text-green-600 dark:text-green-400">
+                <CheckCircle className="h-5 w-5" />
+                <span className="font-medium">Video processed successfully!</span>
               </div>
 
-              <Card>
-                <CardContent className="p-4">
-                  <div className="flex gap-4">
+              <div className="bg-card border rounded-xl overflow-hidden shadow-sm">
+                <div className="md:flex">
+                  <div className="md:w-1/3 relative group">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
-                      src={videoData.thumbnail}
-                      alt="Video thumbnail"
-                      className="w-24 h-16 object-cover rounded"
+                      src={videoData.thumbnail || "/placeholder-image.jpg"}
+                      alt={videoData.title || "Video thumbnail"}
+                      className="w-full h-full object-cover min-h-[200px]"
                     />
-                    <div className="flex-1">
-                      <h3 className="font-medium text-sm mb-1">
-                        {videoData.title}
-                      </h3>
-                      <p className="text-xs text-muted-foreground">
-                        Duration: {videoData.duration}
-                      </p>
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Video className="w-12 h-12 text-white" />
                     </div>
                   </div>
-
-                  <div className="mt-4 space-y-2">
-                    <h4 className="text-sm font-medium">Choose Quality:</h4>
-                    {videoData.qualities.map((quality, index) => (
-                      <div
-                        key={index}
-                        className="flex items-center justify-between p-2 border rounded"
-                      >
-                        <div>
-                          <span className="text-sm font-medium">
-                            {quality.quality}
+                  <div className="p-6 md:w-2/3 flex flex-col justify-between">
+                    <div>
+                      <h3 className="font-bold text-xl mb-2 line-clamp-2" title={videoData.title}>
+                        {videoData.title || "Facebook Video"}
+                      </h3>
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        <span className="text-xs font-medium px-2 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-md">
+                          {videoData.source}
+                        </span>
+                        {videoData.duration > 0 && (
+                          <span className="text-xs font-medium px-2 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-md">
+                            Duration: {(videoData.duration / 1000).toFixed(0)}s
                           </span>
-                          <span className="text-xs text-muted-foreground ml-2">
-                            ({quality.size})
-                          </span>
-                        </div>
-                        <Button
-                          size="sm"
-                          onClick={() => downloadVideo(quality)}
-                          className="bg-primary hover:bg-primary/90"
-                        >
-                          <Download className="h-3 w-3 mr-1" />
-                          Download
-                        </Button>
+                        )}
                       </div>
-                    ))}
+                    </div>
+
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">Download Options</h4>
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        {videoData.medias && videoData.medias.map((media, index) => (
+                          <Button
+                            key={index}
+                            variant={media.quality === 'HD' ? 'default' : 'secondary'}
+                            className="w-full justify-between group"
+                            onClick={() => window.open(media.url, '_blank')}
+                          >
+                            <span className="flex items-center gap-2">
+                              <FileVideo className="w-4 h-4" />
+                              {media.quality} ({media.extension})
+                            </span>
+                            <Download className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+                          </Button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
+
+              <div className="text-center">
+                <p className="text-sm text-muted-foreground/60 italic">
+                  Clicking download will open the video in a new tab. Long press or right click to "Save Video As".
+                </p>
+              </div>
             </div>
           )}
-
-          <div className="text-xs text-muted-foreground">
-            <p>• Supports Facebook videos, reels, and stories</p>
-            <p>• No registration required</p>
-            <p>• Fast and secure downloads</p>
-          </div>
         </CardContent>
       </Card>
     </div>
