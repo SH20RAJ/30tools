@@ -182,6 +182,25 @@ export default async function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
 
+        {/* Ezoic Privacy & Header Scripts */}
+        <Script
+          src="https://cmp.gatekeeperconsent.com/min.js"
+          strategy="beforeInteractive"
+          data-cfasync="false"
+        />
+        <Script
+          src="https://the.gatekeeperconsent.com/cmp.min.js"
+          strategy="beforeInteractive"
+          data-cfasync="false"
+        />
+        <Script
+          src="//www.ezojs.com/ezoic/sa.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script id="ezoic-init" strategy="beforeInteractive">
+          {`window.ezstandalone = window.ezstandalone || {}; ezstandalone.cmd = ezstandalone.cmd || [];`}
+        </Script>
+
         {/* Enhanced SEO Meta Tags */}
         <meta name="application-name" content="30tools" />
         <meta name="apple-mobile-web-app-title" content="30tools" />
