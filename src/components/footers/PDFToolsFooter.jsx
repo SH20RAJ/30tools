@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Heart, Github, Twitter } from "lucide-react";
+import FooterPartners from "@/components/shared/FooterPartners";
+
 
 export default function PDFToolsFooter() {
   const pdfTools = [
@@ -127,29 +129,13 @@ export default function PDFToolsFooter() {
 
         <div className="mt-12 pt-8 border-t border-border">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-sm text-muted-foreground">
-              © 2025 30tools. Made with{" "}
-              <Heart className="w-4 h-4 inline text-destructive animate-pulse" />{" "}
-              for everyone. Powered by{" "}
-              <a
-                href="https://sopkit.github.io"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                SopKit
-              </a>{" "}
-              and{" "}
-              <a
-                href="https://strivio.world"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
-                Strivio
-              </a>
-              .
-            </p>
+            <div className="text-sm text-muted-foreground">
+              <p className="mb-2">© 2025 30tools. Made with{" "}
+                <Heart className="w-4 h-4 inline text-destructive animate-pulse" />{" "}
+                for everyone.</p>
+              <FooterPartners />
+            </div>
+
             <p className="text-sm text-muted-foreground mt-2 md:mt-0">
               Free • Secure • No Registration Required
             </p>

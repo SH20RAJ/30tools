@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Heart, Youtube } from "lucide-react";
+import FooterPartners from "@/components/shared/FooterPartners";
+
 
 export default function YouTubeToolsFooter() {
   return (
@@ -15,11 +17,13 @@ export default function YouTubeToolsFooter() {
             </div>
             <span className="text-xl font-semibold bg-background">30tools</span>
           </Link>
-          <p className="text-sm text-muted-foreground">
-            © 2025 30tools. Made with{" "}
-            <Heart className="w-4 h-4 inline text-destructive animate-pulse" />{" "}
-            for YouTube creators worldwide.
-          </p>
+          <div className="text-sm text-muted-foreground text-center md:text-right">
+            <p className="mb-2">© 2025 30tools. Made with{" "}
+              <Heart className="w-4 h-4 inline text-destructive animate-pulse" />{" "}
+              for YouTube creators worldwide.</p>
+            <FooterPartners />
+          </div>
+
         </div>
       </div>
     </footer>

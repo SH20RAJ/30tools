@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ZapIcon, TwitterIcon, GithubIcon, HeartIcon } from "lucide-react";
+import FooterPartners from "@/components/shared/FooterPartners";
+
 
 export default function BlogFooter() {
     return (
@@ -113,9 +115,13 @@ export default function BlogFooter() {
                     <p className="text-sm text-muted-foreground">
                         © {new Date().getFullYear()} 30tools.com - All rights reserved
                     </p>
-                    <p className="flex items-center text-sm text-muted-foreground">
-                        Made with <HeartIcon className="h-4 w-4 mx-1 text-destructive fill-current" /> for the web.
-                    </p>
+                    <div className="flex flex-col items-center md:items-end text-sm text-muted-foreground">
+                        <p className="mb-2 flex items-center">
+                            Made with <HeartIcon className="h-4 w-4 mx-1 text-destructive fill-current" /> for the web.
+                        </p>
+                        <FooterPartners />
+                    </div>
+
                 </div>
             </div>
         </footer>

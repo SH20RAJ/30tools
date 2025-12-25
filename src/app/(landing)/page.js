@@ -34,6 +34,9 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import FooterPartners from "@/components/shared/FooterPartners";
+
+
 import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
 
 export const metadata = {
@@ -622,11 +625,13 @@ export default function LandingPage() {
           </div>
 
           <div className="border-t mt-8 pt-8 text-center text-sm text-muted-foreground">
-            <p>
+            <p className="mb-4">
               &copy; 2025 30tools.com - All rights reserved. Made with ❤️ for
               the web.
             </p>
+            <FooterPartners />
           </div>
+
           <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F">
             <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" alt="Visitor Counter Badge" width="200" height="20" />
           </a>

@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { Heart, Play } from "lucide-react";
+import FooterPartners from "@/components/shared/FooterPartners";
+
 
 export default function VideoToolsFooter() {
   return (
@@ -71,11 +73,13 @@ export default function VideoToolsFooter() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center">
-          <p className="text-sm text-muted-foreground">
-            © 2025 30tools. Made with{" "}
-            <Heart className="w-4 h-4 inline text-destructive animate-pulse" />{" "}
-            for everyone.
-          </p>
+          <div className="text-sm text-muted-foreground text-center">
+            <p className="mb-2">© 2025 30tools. Made with{" "}
+              <Heart className="w-4 h-4 inline text-destructive animate-pulse" />{" "}
+              for everyone.</p>
+            <FooterPartners />
+          </div>
+
         </div>
       </div>
     </footer>

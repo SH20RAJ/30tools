@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ImageIcon, TwitterIcon, GithubIcon, HeartIcon } from "lucide-react";
+import FooterPartners from "@/components/shared/FooterPartners";
+
 
 export default function ImageToolsFooter() {
   const imageTools = [
@@ -116,29 +118,15 @@ export default function ImageToolsFooter() {
           <p className="text-sm text-muted-foreground">
             © 2025 30tools.com - All rights reserved
           </p>
-          <p className="flex items-center text-sm text-muted-foreground">
-            Made with{" "}
-            <HeartIcon className="h-4 w-4 mx-1 text-destructive fill-current" />{" "}
-            for the web. Powered by{" "}
-            <a
-              href="https://sopkit.github.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              SopKit
-            </a>{" "}
-            and{" "}
-            <a
-              href="https://strivio.world"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline"
-            >
-              Strivio
-            </a>
-            .
-          </p>
+          <div className="flex items-center text-sm text-muted-foreground">
+            <div className="text-right">
+              <p className="mb-2">Made with{" "}
+                <HeartIcon className="h-4 w-4 mx-1 text-destructive fill-current inline" />{" "}
+                for the web.</p>
+              <FooterPartners />
+            </div>
+          </div>
+
         </div>
       </div>
     </footer>
