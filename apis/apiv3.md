@@ -1,4 +1,4 @@
-shaswatraj@Sh 30tools % curl 'https://downr.org/.netlify/functions/video-info' \
+curl 'https://downr.org/.netlify/functions/video-info' \
   -H 'accept: */*' \
   -H 'accept-language: en-GB,en;q=0.6' \
   -H 'content-type: application/json' \
