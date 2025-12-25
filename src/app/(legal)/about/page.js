@@ -357,8 +357,8 @@ export default function AboutPage() {
                   <Link href="/contact">
                     <Button>Contact Us</Button>
                   </Link>
-                  <Link href="mailto:hello@30tools.com">
-                    <Button variant="outline">Email: hello@30tools.com</Button>
+                  <Link href="mailto:mail@30tools.com">
+                    <Button variant="outline">Email: mail@30tools.com</Button>
                   </Link>
                 </div>
               </CardContent>

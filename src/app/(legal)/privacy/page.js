@@ -136,7 +136,7 @@ export default function PrivacyPolicyPage() {
                 <li>Improve website performance and user experience</li>
                 <li>Understand which tools are most popular</li>
                 <li>Fix technical issues and optimize loading times</li>
-                <li>Display relevant advertisements through Google AdSense</li>
+                <li>Display relevant advertisements through Google AdSense and Ezoic</li>
               </ul>
             </section>
 
@@ -184,10 +184,10 @@ export default function PrivacyPolicyPage() {
                 Google may use this data according to their privacy policy.
               </p>
 
-              <h3 className="text-xl font-medium mb-2">Google AdSense</h3>
+              <h3 className="text-xl font-medium mb-2">Google AdSense / Ezoic</h3>
               <p className="mb-4">
-                We display advertisements through Google AdSense. Google may use
-                cookies to show relevant ads based on your browsing history.
+                We display advertisements through Google AdSense and Ezoic. These partners may use
+                cookies or web beacons to show relevant ads based on your browsing history and to optimize ad performance. Ezoic's privacy policy can be found <a href="https://www.ezoic.com/privacy-policy/" target="_blank" rel="noopener noreferrer" className="text-primary underline">here</a>.
               </p>
 
               <h3 className="text-xl font-medium mb-2">Cloudflare</h3>
