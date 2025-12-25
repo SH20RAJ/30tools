@@ -285,6 +285,28 @@ export default async function RootLayout({ children }) {
             `,
           }}
         />
+        <Script id="ezoic-rewarded-ads" strategy="afterInteractive">
+          {`
+            window.ezRewardedAds = window.ezRewardedAds || {};
+            window.ezRewardedAds.cmd = window.ezRewardedAds.cmd || [];
+
+            // Example: Request a rewarded ad with overlay
+            window.ezRewardedAds.cmd.push(function () {
+                window.ezRewardedAds.requestWithOverlay(function (result) {
+                    if (result.status) {
+                        console.log("Ad loaded successfully");
+                        if (result.reward) {
+                            // User completed the ad and earned reward
+                            console.log("User earned reward!");
+                            // Add your reward logic here
+                        }
+                    } else {
+                        console.log("Ad failed to load:", result.msg);
+                    }
+                });
+            });
+          `}
+        </Script>
       </head>
       <body className={`${openSans.variable} font-sans antialiased`}>
         <ThemeProvider>
