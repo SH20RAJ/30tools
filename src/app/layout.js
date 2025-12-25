@@ -307,6 +307,16 @@ export default async function RootLayout({ children }) {
             });
           `}
         </Script>
+        <Script id="open-video-player-init" strategy="afterInteractive" data-ezscrex="false" data-cfasync="false">
+          {`(window.openVideoPlayers = window.openVideoPlayers || []).push({target: document.currentScript});`}
+        </Script>
+        <Script
+          src="https://open.video/video.js"
+          strategy="afterInteractive"
+          async
+          data-ezscrex="false"
+          data-cfasync="false"
+        />
       </head>
       <body className={`${openSans.variable} font-sans antialiased`}>
         <ThemeProvider>
