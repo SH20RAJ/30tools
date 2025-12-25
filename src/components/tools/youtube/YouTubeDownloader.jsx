@@ -7,13 +7,13 @@ import {
   Video,
   Music,
   Loader2,
-  Volume2,
-  VolumeX,
   Heart,
+  Smartphone,
+  Check,
+  X,
+  ArrowRight
 } from "lucide-react";
 import { toast } from "sonner";
-
-
 
 export default function YouTubeDownloader() {
   const [url, setUrl] = useState("");
@@ -22,15 +22,13 @@ export default function YouTubeDownloader() {
   const [error, setError] = useState("");
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showPWAButton, setShowPWAButton] = useState(false);
+  const [downloadingFormat, setDownloadingFormat] = useState(null);
 
-  /* Renamed to fix reference error */
+  /* PWA Install Logic */
   const executePWAInstall = useCallback(async () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-
     if (isIOS) {
-      toast.info("To install: Tap Share → Add to Home Screen", {
-        duration: 4000,
-      });
+      toast.info("To install: Tap Share → Add to Home Screen", { duration: 4000 });
     } else if (deferredPrompt) {
       try {
         deferredPrompt.prompt();
@@ -49,39 +47,23 @@ export default function YouTubeDownloader() {
   }, [deferredPrompt]);
 
   useEffect(() => {
-    // PWA install prompt handling
     const handleBeforeInstallPrompt = (e) => {
       e.preventDefault();
       setDeferredPrompt(e);
       setShowPWAButton(true);
     };
 
-    // Check if already installed
-    const isStandalone = window.matchMedia(
-      "(display-mode: standalone)",
-    ).matches;
+    const isStandalone = window.matchMedia("(display-mode: standalone)").matches;
     const isPWA = window.navigator.standalone === true;
 
     if (!isStandalone && !isPWA) {
       window.addEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
-
-      // For iOS, always show the PWA button
       const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-      if (isIOS) {
-        setShowPWAButton(true);
-      }
+      if (isIOS) setShowPWAButton(true);
     }
 
-    return () => {
-      window.removeEventListener(
-        "beforeinstallprompt",
-        handleBeforeInstallPrompt,
-      );
-    };
-  }, [url]);
-
-  /* New Direct API Integration (V3) */
-  const [downloadingFormat, setDownloadingFormat] = useState(null); // Track which button is processing (using quality string)
+    return () => window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -97,46 +79,42 @@ export default function YouTubeDownloader() {
     try {
       const res = await fetch("/api/proxy/ytdown?action=info", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: url.trim() }),
       });
 
-      if (!res.ok) {
-        throw new Error("Failed to fetch video details");
-      }
+      if (!res.ok) throw new Error("Failed to fetch video details");
 
       const data = await res.json();
-
-      // Normalize data from downr.org/video-info
       const title = data.title || "YouTube Video";
       const thumbnail = data.thumbnail || null;
-      // Duration comes as number of seconds
       const durationSeconds = data.duration || 0;
       const duration = new Date(durationSeconds * 1000).toISOString().substring(11, 19).replace(/^0(?:0:0?)?/, '');
-
-      // Parse medias array
       const medias = data.medias || [];
 
-      const videoFormats = medias.filter(m => m.type === "video").map(f => ({
-        quality: f.quality,
-        fileSize: f.fileSize ? formatBytes(f.fileSize) : "Unknown",
-        extension: f.extension,
-        type: "video"
-      }));
+      // Deduplicate video formats based on quality
+      const uniqueVideoQualities = new Set();
+      const videoFormats = medias
+        .filter(m => m.type === "video")
+        .filter(m => {
+          if (uniqueVideoQualities.has(m.quality)) return false;
+          uniqueVideoQualities.add(m.quality);
+          return true;
+        })
+        .map(f => ({
+          quality: f.quality,
+          fileSize: f.fileSize ? formatBytes(f.fileSize) : "Unknown",
+          extension: f.extension,
+          type: "video"
+        }))
+        .sort((a, b) => parseInt(b.quality) - parseInt(a.quality)); // Sort by quality high to low
 
       const audioFormats = medias.filter(m => m.type === "audio").map(f => ({
-        quality: "Audio",
+        quality: "Audio (MP3)",
         fileSize: f.fileSize ? formatBytes(f.fileSize) : "Unknown",
         extension: f.extension,
         type: "audio"
       }));
-
-      // Fallback if no specific formats found
-      if (videoFormats.length === 0 && Boolean(data.title)) {
-        // Should hopefully not happen with valid V3 response
-      }
 
       setVideoData({
         title,
@@ -149,13 +127,12 @@ export default function YouTubeDownloader() {
 
     } catch (err) {
       console.error(err);
-      setError("An error occurred. Please check the URL and try again.");
+      setError("Could not find video. Please check the link and try again.");
     } finally {
       setIsLoading(false);
     }
   };
 
-  // Helper to format bytes
   const formatBytes = (bytes, decimals = 2) => {
     if (!+bytes) return '0 Bytes';
     const k = 1024;
@@ -180,7 +157,6 @@ export default function YouTubeDownloader() {
   const handleDownload = async (format) => {
     if (!videoData?.originalUrl) return;
 
-    // Unique identifier for loading state
     const loadingId = format.type === 'video' ? format.quality : 'audio-' + format.extension;
     setDownloadingFormat(loadingId);
 
@@ -193,238 +169,196 @@ export default function YouTubeDownloader() {
 
       const res = await fetch("/api/proxy/ytdown?action=download", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error("Download failed to initiate");
-
+      if (!res.ok) throw new Error("Download failed");
       const data = await res.json();
-
-      if (data.url) {
-        handleProcessDownload(data.url);
-      } else {
-        throw new Error("No download URL returned");
-      }
+      if (data.url) handleProcessDownload(data.url);
+      else throw new Error("No download URL returned");
 
     } catch (err) {
       console.error(err);
-      toast.error("Failed to start download. Please try again.");
+      toast.error("Download failed. Please try again.");
     } finally {
       setDownloadingFormat(null);
     }
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto">
+    <div className="w-full max-w-4xl mx-auto px-4">
 
       {/* Input Section */}
-      <div className="bg-card rounded-2xl shadow-sm border border-border p-2 mb-8">
-        <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-2">
-          <div className="relative flex-1">
+      <div className="relative z-10 mx-auto max-w-3xl">
+        <form onSubmit={handleSubmit} className="relative group">
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-2xl opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 blur"></div>
+          <div className="relative bg-background rounded-2xl p-2 shadow-xl ring-1 ring-border flex flex-col md:flex-row items-center gap-2">
             <Input
               type="url"
-              placeholder="Paste YouTube Link here..."
+              placeholder="Paste YouTube link here..."
               value={url}
               onChange={(e) => {
                 setUrl(e.target.value);
                 setError("");
               }}
-              className="h-14 text-lg pl-4 pr-12 border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 rounded-xl"
+              className="h-14 border-0 bg-transparent text-lg md:text-xl px-4 focus-visible:ring-0 focus-visible:ring-offset-0 placeholder:text-muted-foreground/60 w-full"
               disabled={isLoading}
             />
-
-          </div>
-          <Button
-            type="submit"
-            disabled={isLoading || !url.trim()}
-            className="h-14 px-8 text-lg font-semibold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground shadow-sm transition-all md:w-auto w-full"
-          >
-            {isLoading ? <Loader2 className="w-5 h-5 animate-spin" /> : "Start"}
-          </Button>
-        </form>
-      </div>
-
-      {/* Donation Section - Compact & Impactful */}
-      <div className="relative mb-8 overflow-hidden rounded-xl bg-gradient-to-r from-rose-50 to-orange-50 dark:from-rose-950/20 dark:to-orange-950/20 border border-rose-100 dark:border-rose-900/50 p-4 sm:p-5">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3 text-center sm:text-left">
-            <div className="hidden sm:flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-100 dark:bg-rose-900/50 text-rose-600 dark:text-rose-400">
-              <Heart className="h-5 w-5 fill-current" />
-            </div>
-            <div>
-              <h2 className="font-bold text-base sm:text-lg text-rose-950 dark:text-rose-100">
-                Your Heart Keeps This Tool Beating for Everyone
-              </h2>
-              <p className="text-sm text-rose-800/80 dark:text-rose-200/70">
-                Every small act of kindness ensures this essential resource remains free and accessible. Even Rs. 11 or $5 can help.
-              </p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 w-full sm:w-auto">
-            <a
-              href="https://payments.cashfree.com/forms/30tools"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-rose-500 to-orange-500 hover:from-rose-600 hover:to-orange-600 text-white text-sm font-bold rounded-lg shadow-sm transition-all hover:scale-105"
+            <Button
+              type="submit"
+              disabled={isLoading || !url.trim()}
+              size="lg"
+              className="h-14 px-8 w-full md:w-auto text-lg font-semibold rounded-xl bg-primary hover:bg-primary/90 shadow-lg transition-all"
             >
-              <Heart className="w-4 h-4" />
-              <span>Donate</span>
-            </a>
-            <a
-              href="https://www.paypal.com/ncp/payment/HUKEAE7KXYYCA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2 bg-white dark:bg-black border border-rose-200 dark:border-rose-800 text-rose-700 dark:text-rose-300 hover:bg-rose-50 dark:hover:bg-rose-900/20 text-sm font-semibold rounded-lg transition-all"
-            >
-              <span>PayPal</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* Error Message */}
-      {error && (
-        <div className="mb-8 p-4 bg-destructive/10 text-destructive rounded-xl flex items-center gap-3">
-          <X className="w-5 h-5" />
-          <p className="font-medium">{error}</p>
-        </div>
-      )}
-
-      {/* PWA Install Button (Mobile/Supported) */}
-      {showPWAButton && (
-        <div className="flex justify-center mb-8">
-          <Button
-            onClick={executePWAInstall}
-            variant="outline"
-            className="gap-2 rounded-full border-primary/20 hover:bg-primary/5 text-primary"
-          >
-            <SmartphoneIcon className="w-4 h-4" />
-            Install App for Easier Access
-          </Button>
-        </div>
-      )}
-
-      {/* Video Results */}
-      {videoData && (
-        <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-
-          {/* Video Preview Card */}
-          <div className="bg-card rounded-2xl border border-border overflow-hidden shadow-sm">
-            <div className="p-6 flex flex-col md:flex-row gap-6">
-              {videoData.thumbnail && (
-                <div className="shrink-0">
-                  <img
-                    src={videoData.thumbnail}
-                    alt={videoData.title}
-                    loading="lazy"
-                    className="w-full md:w-64 aspect-video object-cover rounded-xl shadow-sm"
-                  />
+              {isLoading ? (
+                <div className="flex items-center gap-2">
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  <span>Fetching...</span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <span>Start</span>
+                  <ArrowRight className="w-5 h-5" />
                 </div>
               )}
-              <div className="flex-1 min-w-0 py-1">
-                <h3 className="font-bold text-lg md:text-xl text-foreground line-clamp-2 mb-3">
+            </Button>
+          </div>
+        </form>
+
+        {/* Minimal Error */}
+        {error && (
+          <div className="mt-4 p-4 bg-destructive/5 border border-destructive/10 text-destructive rounded-xl flex items-center justify-center gap-2 animate-in slide-in-from-top-2">
+            <X className="w-5 h-5" />
+            <p className="font-medium text-center">{error}</p>
+          </div>
+        )}
+      </div>
+
+      {/* Results Area */}
+      {videoData && (
+        <div className="mt-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
+          <div className="bg-card/50 backdrop-blur-sm rounded-3xl border border-border/50 overflow-hidden shadow-2xl">
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0">
+
+              {/* Preview Side */}
+              <div className="lg:col-span-2 relative group overflow-hidden">
+                {videoData.thumbnail && (
+                  <>
+                    <img
+                      src={videoData.thumbnail}
+                      alt={videoData.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                    {videoData.duration && (
+                      <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur text-white px-3 py-1 rounded-full text-sm font-medium">
+                        {videoData.duration}
+                      </div>
+                    )}
+                  </>
+                )}
+              </div>
+
+              {/* Action Side */}
+              <div className="lg:col-span-3 p-6 md:p-8 flex flex-col justify-center">
+                <h3 className="text-2xl font-bold mb-6 line-clamp-2 leading-tight">
                   {videoData.title}
                 </h3>
-                <div className="flex flex-wrap gap-2 text-sm text-muted-foreground">
-                  {videoData.duration && (
-                    <span className="bg-muted px-2.5 py-1 rounded-md font-medium">
-                      {videoData.duration}
-                    </span>
-                  )}
-                  <span className="bg-muted px-2.5 py-1 rounded-md font-medium uppercase">
-                    MP4 / MP3
-                  </span>
+
+                <div className="space-y-6">
+                  {/* Video Options */}
+                  <div className="space-y-3">
+                    <h4 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                      <Video className="w-4 h-4" /> Video
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {videoData.videoFormats?.length > 0 ? videoData.videoFormats.map((format, idx) => (
+                        <Button
+                          key={idx}
+                          variant={downloadingFormat === format.quality ? "secondary" : "outline"}
+                          onClick={() => handleDownload(format)}
+                          disabled={downloadingFormat !== null}
+                          className="h-12 px-4 rounded-xl border-border/50 hover:bg-primary/5 hover:border-primary/50 transition-all group"
+                        >
+                          <div className="text-left mr-3">
+                            <div className="font-bold">{format.quality}</div>
+                            <div className="text-[10px] text-muted-foreground font-normal">{format.fileSize}</div>
+                          </div>
+                          {downloadingFormat === format.quality ? (
+                            <Loader2 className="w-5 h-5 animate-spin text-primary" />
+                          ) : (
+                            <Download className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                          )}
+                        </Button>
+                      )) : <p className="text-sm text-muted-foreground">No video formats.</p>}
+                    </div>
+                  </div>
+
+                  <div className="w-full h-px bg-border/50" />
+
+                  {/* Audio Options */}
+                  <div className="space-y-3">
+                    <h4 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                      <Music className="w-4 h-4" /> Audio
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {videoData.audioFormats?.length > 0 ? videoData.audioFormats.map((format, idx) => (
+                        <Button
+                          key={idx}
+                          variant="secondary"
+                          onClick={() => handleDownload(format)}
+                          disabled={downloadingFormat !== null}
+                          className="h-12 px-4 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-700 dark:text-purple-300 border-transparent transition-all group"
+                        >
+                          <div className="text-left mr-3">
+                            <div className="font-bold">MP3</div>
+                            <div className="text-[10px] opacity-70 font-normal">{format.fileSize}</div>
+                          </div>
+                          {downloadingFormat === ('audio-' + format.extension) ? (
+                            <Loader2 className="w-5 h-5 animate-spin" />
+                          ) : (
+                            <Download className="w-5 h-5" />
+                          )}
+                        </Button>
+                      )) : <p className="text-sm text-muted-foreground">No audio formats.</p>}
+                    </div>
+                  </div>
                 </div>
+
               </div>
             </div>
           </div>
-
-          {/* Download Options Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {/* Video Downloads */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 pb-2 border-b border-border">
-                <Video className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold text-foreground">Video Download</h3>
-              </div>
-              <div className="space-y-3">
-                {videoData.videoFormats?.length > 0 ? (
-                  videoData.videoFormats.map((format, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-3 bg-muted/40 hover:bg-muted rounded-xl transition-colors border border-transparent hover:border-border/50">
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium text-foreground">{format.quality}</span>
-                        </div>
-                        {format.fileSize && <div className="text-xs text-muted-foreground">{format.fileSize}</div>}
-                      </div>
-                      <Button
-                        size="sm"
-                        onClick={() => handleDownload(format)}
-                        disabled={downloadingFormat !== null}
-                        className="rounded-lg gap-2"
-                      >
-                        {downloadingFormat === format.quality ? (
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                        ) : (
-                          <Download className="w-4 h-4" />
-                        )}
-                        {downloadingFormat === format.quality ? "Processing" : "Get Video"}
-                      </Button>
-                    </div>
-                  ))
-                ) : (
-                  <div className="text-sm text-muted-foreground p-3">No video formats available.</div>
-                )}
-              </div>
-            </div>
-
-            {/* Audio Downloads */}
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 pb-2 border-b border-border">
-                <Music className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold text-foreground">Audio Download</h3>
-              </div>
-              <div className="space-y-3">
-                {videoData.audioFormats?.length > 0 ? (
-                  videoData.audioFormats.map((format, idx) => (
-                    <div key={idx} className="flex items-center justify-between p-3 bg-muted/40 hover:bg-muted rounded-xl transition-colors border border-transparent hover:border-border/50">
-                      <div>
-                        <div className="font-medium text-foreground">{format.quality} ({format.extension})</div>
-                        {format.fileSize && <div className="text-xs text-muted-foreground">{format.fileSize}</div>}
-                      </div>
-                      <Button
-                        size="sm"
-                        variant="secondary"
-                        onClick={() => handleDownload(format)}
-                        disabled={downloadingFormat !== null}
-                        className="rounded-lg gap-2"
-                      >
-                        {downloadingFormat === ('audio-' + format.extension) ? (
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                        ) : (
-                          <Download className="w-4 h-4" />
-                        )}
-                        {downloadingFormat === ('audio-' + format.extension) ? "Processing" : "Get Audio"}
-                      </Button>
-                    </div>
-                  ))
-                ) : (
-                  <div className="text-sm text-muted-foreground p-3">No audio formats available.</div>
-                )}
-              </div>
-            </div>
-
-          </div>
-
         </div>
       )}
 
+      {/* Minimal Donation Prompt */}
+      <div className="mt-12 flex justify-center">
+        <a
+          href="https://payments.cashfree.com/forms/30tools"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-rose-50 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 text-sm font-medium hover:bg-rose-100 dark:hover:bg-rose-950/50 transition-colors"
+        >
+          <Heart className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
+          <span>Support this free tool with a donation</span>
+        </a>
+      </div>
 
-
-    </div >
+      {/* PWA Install Button */}
+      {showPWAButton && (
+        <div className="mt-4 flex justify-center">
+          <Button
+            onClick={executePWAInstall}
+            variant="ghost"
+            size="sm"
+            className="text-muted-foreground hover:text-foreground"
+          >
+            <Smartphone className="w-4 h-4 mr-2" />
+            Install App
+          </Button>
+        </div>
+      )}
+    </div>
   );
 }
