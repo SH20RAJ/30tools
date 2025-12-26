@@ -97,7 +97,7 @@ export default function YouTubeDownloader() {
       // Process Video Formats
       const videoFormats = medias
         .filter(m => m.ext === 'mp4' || m.ext === 'webm') // Filter generic video containers
-        .filter(m => !m.is_pl) // Filter out playlists if flagged
+        // .filter(m => !m.is_pl) // ALLOW PLAYLISTS/STREAMS as per API
         .map(f => ({
           quality: f.quality, // e.g., "1080p"
           fileSize: f.size ? f.size : (f.fileSize ? formatBytes(f.fileSize) : "Unknown"), // API might return "size" string directly or we format
@@ -196,8 +196,8 @@ export default function YouTubeDownloader() {
       {/* Input Section */}
       <div className="relative z-10 mx-auto max-w-3xl">
         <form onSubmit={handleSubmit} className="relative group">
-          <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-purple-600 rounded-2xl opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200 blur"></div>
-          <div className="relative bg-background rounded-2xl p-2 shadow-xl ring-1 ring-border flex flex-col md:flex-row items-center gap-2">
+          {/* Removed colorful gradient overlay */}
+          <div className="relative bg-background rounded-2xl p-2 shadow-sm border border-border flex flex-col md:flex-row items-center gap-2">
             <Input
               type="url"
               placeholder="Paste YouTube link here..."
@@ -213,7 +213,7 @@ export default function YouTubeDownloader() {
               type="submit"
               disabled={isLoading || !url.trim()}
               size="lg"
-              className="h-14 px-8 w-full md:w-auto text-lg font-semibold rounded-xl bg-primary hover:bg-primary/90 shadow-lg transition-all"
+              className="h-14 px-8 w-full md:w-auto text-lg font-medium rounded-xl bg-foreground text-background hover:bg-foreground/90 shadow-sm transition-all"
             >
               {isLoading ? (
                 <div className="flex items-center gap-2">
@@ -223,7 +223,7 @@ export default function YouTubeDownloader() {
               ) : (
                 <div className="flex items-center gap-2">
                   <span>Start</span>
-                  <ArrowRight className="w-5 h-5" />
+                  {/* Removed icon to keep it minimal */}
                 </div>
               )}
             </Button>
@@ -242,21 +242,20 @@ export default function YouTubeDownloader() {
       {/* Results Area */}
       {videoData && (
         <div className="mt-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
-          <div className="bg-card/50 backdrop-blur-sm rounded-3xl border border-border/50 overflow-hidden shadow-2xl">
+          <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0">
 
               {/* Preview Side */}
-              <div className="lg:col-span-2 relative group overflow-hidden">
+              <div className="lg:col-span-2 relative group overflow-hidden bg-muted/50">
                 {videoData.thumbnail && (
                   <>
                     <img
                       src={videoData.thumbnail}
                       alt={videoData.title}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                     {videoData.duration && (
-                      <div className="absolute bottom-4 right-4 bg-black/80 backdrop-blur text-white px-3 py-1 rounded-full text-sm font-medium">
+                      <div className="absolute bottom-4 right-4 bg-black/70 backdrop-blur text-white px-2 py-0.5 rounded text-xs font-medium">
                         {videoData.duration}
                       </div>
                     )}
@@ -266,15 +265,15 @@ export default function YouTubeDownloader() {
 
               {/* Action Side */}
               <div className="lg:col-span-3 p-6 md:p-8 flex flex-col justify-center">
-                <h3 className="text-2xl font-bold mb-6 line-clamp-2 leading-tight">
+                <h3 className="text-xl font-semibold mb-6 line-clamp-2 leading-tight">
                   {videoData.title}
                 </h3>
 
                 <div className="space-y-6">
                   {/* Video Options */}
                   <div className="space-y-3">
-                    <h4 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                      <Video className="w-4 h-4" /> Video
+                    <h4 className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      Video
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {videoData.videoFormats?.length > 0 ? videoData.videoFormats.map((format, idx) => (
@@ -283,25 +282,19 @@ export default function YouTubeDownloader() {
                           variant={downloadingFormat === format.quality ? "secondary" : "outline"}
                           onClick={() => handleDownload(format)}
                           disabled={downloadingFormat !== null}
-                          className="h-12 px-4 rounded-xl border-border/50 hover:bg-primary/5 hover:border-primary/50 transition-all group"
+                          className="h-10 px-4 rounded-lg border-border hover:bg-muted transition-all group"
                         >
                           <div className="text-left mr-3">
-                            <div className="font-bold flex items-center gap-2">
+                            <div className="font-medium flex items-center gap-2 text-sm">
                               {format.quality}
                               {format.hdr === 'HDR' && <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">HDR</span>}
                             </div>
-                            <div className="text-[10px] text-muted-foreground font-normal flex flex-col">
-                              <span>{format.fileSize !== "Unknown" ? format.fileSize : ""}</span>
-                              <span className="opacity-70">
-                                {format.resolution} • {format.fps}fps
-                                {format.vcodec && format.vcodec !== 'none' && <span className="hidden sm:inline"> • {format.vcodec.split('.')[0]}</span>}
-                              </span>
-                            </div>
+                            {/* Hidden tech details for fuller minimal look, or restore if needed */}
                           </div>
                           {downloadingFormat === format.quality ? (
-                            <Loader2 className="w-5 h-5 animate-spin text-primary" />
+                            <Loader2 className="w-4 h-4 animate-spin" />
                           ) : (
-                            <Download className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                            <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                           )}
                         </Button>
                       )) : <p className="text-sm text-muted-foreground">No video formats.</p>}
@@ -312,26 +305,25 @@ export default function YouTubeDownloader() {
 
                   {/* Audio Options */}
                   <div className="space-y-3">
-                    <h4 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                      <Music className="w-4 h-4" /> Audio
+                    <h4 className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                      Audio
                     </h4>
                     <div className="flex flex-wrap gap-2">
                       {videoData.audioFormats?.length > 0 ? videoData.audioFormats.map((format, idx) => (
                         <Button
                           key={idx}
-                          variant="secondary"
+                          variant="outline"
                           onClick={() => handleDownload(format)}
                           disabled={downloadingFormat !== null}
-                          className="h-12 px-4 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-700 dark:text-purple-300 border-transparent transition-all group"
+                          className="h-10 px-4 rounded-lg border-border hover:bg-muted transition-all group"
                         >
                           <div className="text-left mr-3">
-                            <div className="font-bold">MP3</div>
-                            <div className="text-[10px] opacity-70 font-normal">{format.fileSize}</div>
+                            <div className="font-medium text-sm">MP3</div>
                           </div>
                           {downloadingFormat === ('audio-' + format.extension) ? (
-                            <Loader2 className="w-5 h-5 animate-spin" />
+                            <Loader2 className="w-4 h-4 animate-spin" />
                           ) : (
-                            <Download className="w-5 h-5" />
+                            <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                           )}
                         </Button>
                       )) : <p className="text-sm text-muted-foreground">No audio formats.</p>}
@@ -351,9 +343,9 @@ export default function YouTubeDownloader() {
           href="https://payments.cashfree.com/forms/30tools"
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-rose-50 dark:bg-rose-950/30 text-rose-600 dark:text-rose-400 text-sm font-medium hover:bg-rose-100 dark:hover:bg-rose-950/50 transition-colors"
+          className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-muted text-muted-foreground text-sm font-medium hover:bg-muted/80 transition-colors"
         >
-          <Heart className="w-4 h-4 fill-current group-hover:scale-110 transition-transform" />
+          <Heart className="w-4 h-4 group-hover:scale-110 transition-transform" />
           <span>Support this free tool with a donation</span>
         </a>
       </div>

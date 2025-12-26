@@ -1,7 +1,4 @@
-shaswatraj@Sh 30tools % 
- *  History restored 
-
-shaswatraj@Sh 30tools % curl 'https://s6.youtube4kdownloader.com/ajax/getLinks.php?video=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4jCVJz9Py64&rand=PRjAUkuGn4Pg2Xe' \
+curl 'https://s6.youtube4kdownloader.com/ajax/getLinks.php?video=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D4jCVJz9Py64&rand=PRjAUkuGn4Pg2Xe' \
   -H 'Accept: */*' \
   -H 'Accept-Language: en-GB,en;q=0.5' \
   -H 'Connection: keep-alive' \

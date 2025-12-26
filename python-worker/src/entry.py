@@ -1,4 +1,8 @@
 from js import Response
+import numpy as np
 
 async def on_fetch(request, env):
-    return Response.new("Hello World from Python Worker!")
+    # Demonstrate package usage
+    arr = np.array([1, 2, 3, 4, 5])
+    mean = np.mean(arr)
+    return Response.new(f"Hello from Python Worker! Numpy Mean: {mean}")

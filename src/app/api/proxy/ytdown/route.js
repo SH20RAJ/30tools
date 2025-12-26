@@ -13,7 +13,7 @@ export async function POST(req) {
         // Generate a random string for the 'rand' parameter
         const rand = Math.random().toString(36).substring(2, 15);
         const encodedVideoUrl = encodeURIComponent(videoUrl);
-        const targetUrl = `https://s6.youtube4kdownloader.com/ajax/getLinks.php?video=${encodedVideoUrl}&rand=${rand}`;
+        const targetUrl = `https://s6.youtube4kdownloader.com/ajax/getLinks.php?video=${encodedVideoUrl}&rand=PRjAUkuGn4Pg2Xe`;
 
         const response = await fetch(targetUrl, {
             method: "GET",

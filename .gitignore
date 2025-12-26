@@ -12,6 +12,8 @@ fix/
 # next.js
 /.next/
 /out/
+python_modules
+.venv
 
 # production
 /build
