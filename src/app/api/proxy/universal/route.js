@@ -11,7 +11,7 @@ export async function POST(req) {
                 "accept": "*/*",
                 "accept-language": "en-GB,en;q=0.6",
                 "content-type": "application/json",
-                "cookie": "sess=eyJpcCI6IjExNS4yNDAuOTAuMTMwIiwiZXhwIjoxNzY2NjQxMTg2MzA1fQ==.447e25ce465f25f4cdb742d2c9ca325324a18bc6813baa7394cac559e6ce9f0f",
+                "cookie": "sess=eyJpcCI6IjEzOS4xNjcuMTg4LjIxOSIsImV4cCI6MTc2Njc0NDk5NTE4Mn0=.0c1ab35cac28be20c7c5b88c91168de10513bb3f851917b85752c446ea887aaa",
                 "origin": "https://downr.org",
                 "priority": "u=1, i",
                 "referer": "https://downr.org/",

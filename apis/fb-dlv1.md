@@ -2,7 +2,7 @@ curl 'https://downr.org/.netlify/functions/download' \
   -H 'accept: */*' \
   -H 'accept-language: en-GB,en;q=0.6' \
   -H 'content-type: application/json' \
-  -b 'sess=eyJpcCI6IjExNS4yNDAuOTAuMTMwIiwiZXhwIjoxNzY2NjQxMTg2MzA1fQ==.447e25ce465f25f4cdb742d2c9ca325324a18bc6813baa7394cac559e6ce9f0f' \
+  -b 'sess=eyJpcCI6IjEzOS4xNjcuMTg4LjIxOSIsImV4cCI6MTc2Njc0NDk5NTE4Mn0=.0c1ab35cac28be20c7c5b88c91168de10513bb3f851917b85752c446ea887aaa' \
   -H 'origin: https://downr.org' \
   -H 'priority: u=1, i' \
   -H 'referer: https://downr.org/' \
