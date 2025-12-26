@@ -96,49 +96,47 @@ export default function YouTubeDownloader() {
 
       // Process Video Formats
       const videoFormats = medias
-        .filter(m => m.ext === 'mp4' || m.ext === 'webm') // Filter generic video containers
-        // .filter(m => !m.is_pl) // ALLOW PLAYLISTS/STREAMS as per API
+        .filter(m => (m.ext === 'mp4' || m.ext === 'webm') && m.url) // Only allow if URL exists
         .map(f => ({
           quality: f.quality, // e.g., "1080p"
-          fileSize: f.size ? f.size : (f.fileSize ? formatBytes(f.fileSize) : "Unknown"), // API might return "size" string directly or we format
+          fileSize: f.size ? formatBytes(f.size) : (f.fileSize ? formatBytes(f.fileSize) : "Unknown"),
           extension: f.ext,
           type: "video",
           url: f.url,
 
           // Rich Metadata
-          resolution: f.resolution, // e.g. "1920x1080"
-          fps: f.fps, // e.g. 30
-          vcodec: f.vcodec, // e.g. "avc1.640028"
-          hdr: f.hdr, // e.g. "SDR"
+          resolution: f.resolution,
+          fps: f.fps,
+          vcodec: f.vcodec,
+          hdr: f.hdr,
         }))
-        // Filter out formats with bad/missing data if necessary, or keep all
         .sort((a, b) => {
-          // Sort by resolution height if possible
           const getResHeight = (resStr) => {
             if (!resStr) return 0;
             const parts = resStr.split('x');
             return parts.length === 2 ? parseInt(parts[1]) : 0;
           };
-          return getResHeight(b.resolution) - getResHeight(a.resolution);
+          // Fallback sort by quality string if resolution is missing (e.g. "1080P" -> 1080)
+          const getQualityInt = (q) => parseInt(q) || 0;
+
+          return (getResHeight(b.resolution) || getQualityInt(b.quality)) - (getResHeight(a.resolution) || getQualityInt(a.quality));
         });
 
       // Process Audio Formats
-      // The new API might bundle audio in the same 'av' list or direct audio might be distinct.
-      // Based on the sample, 'av' contains video. We'll check for audio-only or extract audio.
-      // If no explicit audio types found in 'av' with ext='mp3', we assume this API is video-focused or we rely on extracting audio from video if needed.
-      // However, for now, let's look for 'mp3' or 'm4a' in the same list.
       const audioFormats = medias
-        .filter(m => m.ext === 'mp3' || m.ext === 'm4a' || m.quality === 'Audio')
+        .filter(m => (m.ext === 'mp3' || m.ext === 'm4a' || m.quality === 'Audio' || m.type === 'audio') && m.url) // Only allow if URL exists
         .map(f => ({
           quality: f.quality || "Audio",
-          fileSize: f.size || "Unknown",
+          fileSize: f.size ? formatBytes(f.size) : "Unknown",
           extension: f.ext,
           type: "audio",
           url: f.url
         }));
 
-      // If no audio formats found from API, we might mock one or just show none.
-      // The sample didn't explicitly show mp3, but typical behavior implies it might exist. 
+      // If no formats found (e.g. API returns data but no direct links), show error
+      if (videoFormats.length === 0 && audioFormats.length === 0) {
+        throw new Error("No downloadable links found for this video. Use our other tools or try again later.");
+      }
 
       setVideoData({
         title,
