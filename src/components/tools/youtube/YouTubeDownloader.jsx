@@ -77,7 +77,7 @@ export default function YouTubeDownloader() {
     setVideoData(null);
 
     try {
-      const res = await fetch("/api/proxy/ytdown?action=info", {
+      const res = await fetch("/api/proxy/ytdown", { // removed ?action=info
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: url.trim() }),
@@ -86,35 +86,59 @@ export default function YouTubeDownloader() {
       if (!res.ok) throw new Error("Failed to fetch video details");
 
       const data = await res.json();
+      if (data.error) throw new Error(data.error);
+
       const title = data.title || "YouTube Video";
       const thumbnail = data.thumbnail || null;
       const durationSeconds = data.duration || 0;
       const duration = new Date(durationSeconds * 1000).toISOString().substring(11, 19).replace(/^0(?:0:0?)?/, '');
       const medias = data.medias || [];
 
-      // Deduplicate video formats based on quality
-      const uniqueVideoQualities = new Set();
+      // Process Video Formats
       const videoFormats = medias
-        .filter(m => m.type === "video")
-        .filter(m => {
-          if (uniqueVideoQualities.has(m.quality)) return false;
-          uniqueVideoQualities.add(m.quality);
-          return true;
-        })
+        .filter(m => m.ext === 'mp4' || m.ext === 'webm') // Filter generic video containers
+        .filter(m => !m.is_pl) // Filter out playlists if flagged
         .map(f => ({
-          quality: f.quality,
-          fileSize: f.fileSize ? formatBytes(f.fileSize) : "Unknown",
-          extension: f.extension,
-          type: "video"
-        }))
-        .sort((a, b) => parseInt(b.quality) - parseInt(a.quality)); // Sort by quality high to low
+          quality: f.quality, // e.g., "1080p"
+          fileSize: f.size ? f.size : (f.fileSize ? formatBytes(f.fileSize) : "Unknown"), // API might return "size" string directly or we format
+          extension: f.ext,
+          type: "video",
+          url: f.url,
 
-      const audioFormats = medias.filter(m => m.type === "audio").map(f => ({
-        quality: "Audio (MP3)",
-        fileSize: f.fileSize ? formatBytes(f.fileSize) : "Unknown",
-        extension: f.extension,
-        type: "audio"
-      }));
+          // Rich Metadata
+          resolution: f.resolution, // e.g. "1920x1080"
+          fps: f.fps, // e.g. 30
+          vcodec: f.vcodec, // e.g. "avc1.640028"
+          hdr: f.hdr, // e.g. "SDR"
+        }))
+        // Filter out formats with bad/missing data if necessary, or keep all
+        .sort((a, b) => {
+          // Sort by resolution height if possible
+          const getResHeight = (resStr) => {
+            if (!resStr) return 0;
+            const parts = resStr.split('x');
+            return parts.length === 2 ? parseInt(parts[1]) : 0;
+          };
+          return getResHeight(b.resolution) - getResHeight(a.resolution);
+        });
+
+      // Process Audio Formats
+      // The new API might bundle audio in the same 'av' list or direct audio might be distinct.
+      // Based on the sample, 'av' contains video. We'll check for audio-only or extract audio.
+      // If no explicit audio types found in 'av' with ext='mp3', we assume this API is video-focused or we rely on extracting audio from video if needed.
+      // However, for now, let's look for 'mp3' or 'm4a' in the same list.
+      const audioFormats = medias
+        .filter(m => m.ext === 'mp3' || m.ext === 'm4a' || m.quality === 'Audio')
+        .map(f => ({
+          quality: f.quality || "Audio",
+          fileSize: f.size || "Unknown",
+          extension: f.ext,
+          type: "audio",
+          url: f.url
+        }));
+
+      // If no audio formats found from API, we might mock one or just show none.
+      // The sample didn't explicitly show mp3, but typical behavior implies it might exist. 
 
       setVideoData({
         title,
@@ -147,6 +171,7 @@ export default function YouTubeDownloader() {
     const link = document.createElement("a");
     link.href = mediaUrl;
     link.target = "_blank";
+    link.download = ""; // Hint to download
     link.style.display = "none";
     document.body.appendChild(link);
     link.click();
@@ -155,35 +180,14 @@ export default function YouTubeDownloader() {
   };
 
   const handleDownload = async (format) => {
-    if (!videoData?.originalUrl) return;
-
-    const loadingId = format.type === 'video' ? format.quality : 'audio-' + format.extension;
-    setDownloadingFormat(loadingId);
-
-    try {
-      const payload = {
-        url: videoData.originalUrl,
-        downloadMode: format.type === "audio" ? "audio" : "video",
-        videoQuality: format.type === "video" ? format.quality : undefined
-      };
-
-      const res = await fetch("/api/proxy/ytdown?action=download", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) throw new Error("Download failed");
-      const data = await res.json();
-      if (data.url) handleProcessDownload(data.url);
-      else throw new Error("No download URL returned");
-
-    } catch (err) {
-      console.error(err);
-      toast.error("Download failed. Please try again.");
-    } finally {
-      setDownloadingFormat(null);
+    // If we have a direct URL from the new API, use it.
+    if (format.url) {
+      handleProcessDownload(format.url);
+      return;
     }
+
+    // Fallback logic (legacy) removed as new API provides URLs.
+    toast.error("Download link not available for this format.");
   };
 
   return (
@@ -282,8 +286,17 @@ export default function YouTubeDownloader() {
                           className="h-12 px-4 rounded-xl border-border/50 hover:bg-primary/5 hover:border-primary/50 transition-all group"
                         >
                           <div className="text-left mr-3">
-                            <div className="font-bold">{format.quality}</div>
-                            <div className="text-[10px] text-muted-foreground font-normal">{format.fileSize}</div>
+                            <div className="font-bold flex items-center gap-2">
+                              {format.quality}
+                              {format.hdr === 'HDR' && <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">HDR</span>}
+                            </div>
+                            <div className="text-[10px] text-muted-foreground font-normal flex flex-col">
+                              <span>{format.fileSize !== "Unknown" ? format.fileSize : ""}</span>
+                              <span className="opacity-70">
+                                {format.resolution} • {format.fps}fps
+                                {format.vcodec && format.vcodec !== 'none' && <span className="hidden sm:inline"> • {format.vcodec.split('.')[0]}</span>}
+                              </span>
+                            </div>
                           </div>
                           {downloadingFormat === format.quality ? (
                             <Loader2 className="w-5 h-5 animate-spin text-primary" />
