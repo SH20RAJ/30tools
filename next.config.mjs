@@ -127,6 +127,11 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/youtube-video-downloader",
+        destination: "/youtube-downloader",
+        permanent: true,
+      },
+      {
         source: "/ads.txt",
         destination: "https://srv.adstxtmanager.com/19390/30tools.com",
         permanent: true,
