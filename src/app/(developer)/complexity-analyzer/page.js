@@ -43,7 +43,6 @@ export const metadata = {
     type: "website",
     images: [
       {
-        url: "/og-images/complexity-analyzer.jpg", // Assuming jpg based on pattern, though original meta had png. Standardizing on jpg or png if file exists. Sticking to pattern but being mindful. The original had og-complexity-analyzer.png. I'll stick to that IF I knew it exists, but I'll update to standard og-images pattern if I can. I'll stick to original path to be safe unless I want to standardize everything. Original: /og-complexity-analyzer.png. Let's try to assume /og-images pattern to be consistent or keep original. I'll keep original for safety or use new standard? I'll use new standard /og-images/complexity-analyzer.jpg but wait, if image doesn't exist it's bad. I'll revert to original one just to be safe OR I'll assume usage of dynamic generation/standard path. Actually, I won't change image path blindly. I'll stick to what was there or a safe bet. Original was /og-complexity-analyzer.png. I'll use that.
         url: "/og-complexity-analyzer.png",
         width: 1200,
         height: 630,
