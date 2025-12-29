@@ -119,6 +119,7 @@ async function pollStatus(processUrl, chatId, messageId) {
                                     video: api.fileUrl,
                                     caption: `✅ **${api.fileName}**\nSize: ${api.fileSize}${poweredBy}`,
                                     parse_mode: 'Markdown',
+                                    disable_web_page_preview: true,
                                     reply_markup: {
                                         inline_keyboard: [[{ text: "🎬 Download Another", callback_data: "home" }]]
                                     }
@@ -131,6 +132,7 @@ async function pollStatus(processUrl, chatId, messageId) {
                                     title: api.fileName,
                                     caption: `✅ **${api.fileName}**\nSize: ${api.fileSize}${poweredBy}`,
                                     parse_mode: 'Markdown',
+                                    disable_web_page_preview: true,
                                     reply_markup: {
                                         inline_keyboard: [[{ text: "🎵 Download Another", callback_data: "home" }]]
                                     }
@@ -142,6 +144,7 @@ async function pollStatus(processUrl, chatId, messageId) {
                                     document: api.fileUrl,
                                     caption: `✅ **${api.fileName}**\nSize: ${api.fileSize}${poweredBy}`,
                                     parse_mode: 'Markdown',
+                                    disable_web_page_preview: true,
                                     reply_markup: {
                                         inline_keyboard: [[{ text: "🔄 Download Another", callback_data: "home" }]]
                                     }
@@ -158,6 +161,7 @@ async function pollStatus(processUrl, chatId, messageId) {
                             chat_id: chatId,
                             text: `✅ **Ready!**\n\nTitle: ${api.fileName}\nSize: ${api.fileSize}\n\n[Download Now](${api.fileUrl})${poweredBy}`,
                             parse_mode: 'Markdown',
+                            disable_web_page_preview: true,
                             reply_markup: {
                                 inline_keyboard: [[{ text: "🔄 Download Another", callback_data: "home" }]]
                             }
@@ -207,6 +211,7 @@ export async function POST(req) {
                     chat_id: chatId,
                     text: "👋 **Welcome to 30Tools Video Downloader Bot!**\n\nSend me any YouTube link or directly share from YouTube App to telegram->bot to get started.\n\n📢 **Join @sopbots** for updates and feedback.\n\nPowered by https://30tools.com/youtube-downloader",
                     parse_mode: 'Markdown',
+                    disable_web_page_preview: true,
                     reply_markup: {
                         inline_keyboard: [[{ text: "📢 Join @sopbots", url: "https://t.me/sopbots" }]]
                     }
@@ -214,7 +219,7 @@ export async function POST(req) {
                 return NextResponse.json({ ok: true });
             }
 
-            const ytRegex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+            const ytRegex = /(?:https?:\/\/)?(?:www\.|m\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=|shorts\/|live\/)|youtu\.be\/)([a-zA-Z0-9_-]{11})/i;
             const match = text.match(ytRegex);
 
             if (match) {
@@ -270,6 +275,7 @@ export async function POST(req) {
                     photo: info.imagePreviewUrl,
                     caption: `🎥 **${info.title}**\n\nSelect a format to download:\n\nPowered by https://30tools.com/youtube-downloader\nFeedback: @sopbots`,
                     parse_mode: 'Markdown',
+                    disable_web_page_preview: true,
                     reply_markup: { inline_keyboard: keyboard }
                 });
             }
