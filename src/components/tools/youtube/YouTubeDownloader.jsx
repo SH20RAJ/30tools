@@ -153,8 +153,13 @@ export default function YouTubeDownloader() {
       });
 
     } catch (err) {
-      console.error(err);
-      setError("Could not find video. Please check the link and try again.");
+      console.error("Fetch error:", err);
+      // If we see a specific error like Invalid time value, we know it's our parsing
+      if (err.message.includes("Invalid time value")) {
+        setError("Error parsing video duration. Please try again.");
+      } else {
+        setError("Could not find video. Please check the link and try again.");
+      }
     } finally {
       setIsLoading(false);
     }
@@ -188,7 +193,13 @@ export default function YouTubeDownloader() {
       return;
     }
 
-    setDownloadingFormat(format.quality);
+    // If already READY (processed), just download directly
+    if (processingPercent === "READY" && downloadingFormat === format.url) {
+      handleProcessDownload(format.finalUrl);
+      return;
+    }
+
+    setDownloadingFormat(format.url);
     setProcessingPercent("0%");
 
     const pollStatus = async () => {
@@ -207,9 +218,13 @@ export default function YouTubeDownloader() {
         if (api) {
           if (api.percent === "Completed") {
             if (api.fileUrl && api.fileUrl !== "In Processing...") {
+              setProcessingPercent("READY");
+              // Store the final URL in the format object for direct access
+              format.finalUrl = api.fileUrl;
+
+              // Try automatic download (might be blocked)
               handleProcessDownload(api.fileUrl);
-              setDownloadingFormat(null);
-              setProcessingPercent(null);
+              toast.success("Ready! If download didn't start, click again.");
             } else {
               throw new Error("File URL not found after completion");
             }
@@ -322,22 +337,23 @@ export default function YouTubeDownloader() {
                       {videoData.videoFormats?.length > 0 ? videoData.videoFormats.map((format, idx) => (
                         <Button
                           key={idx}
-                          variant={downloadingFormat === format.quality ? "secondary" : "outline"}
+                          variant={downloadingFormat === format.url ? (processingPercent === "READY" ? "default" : "secondary") : "outline"}
                           onClick={() => handleDownload(format)}
-                          disabled={downloadingFormat !== null}
-                          className="h-10 px-4 rounded-lg border-border hover:bg-muted transition-all group"
+                          disabled={downloadingFormat !== null && downloadingFormat !== format.url}
+                          className={`h-10 px-4 rounded-lg border-border transition-all group ${processingPercent === "READY" && downloadingFormat === format.url ? 'bg-green-600 hover:bg-green-700 text-white animate-pulse' : ''}`}
                         >
                           <div className="text-left mr-3">
                             <div className="font-medium flex items-center gap-2 text-sm">
                               {format.quality}
                               {format.hdr === 'HDR' && <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">HDR</span>}
                             </div>
-                            {/* Hidden tech details for fuller minimal look, or restore if needed */}
                           </div>
-                          {downloadingFormat === format.quality ? (
+                          {downloadingFormat === format.url ? (
                             <div className="flex items-center gap-2">
-                              <Loader2 className="w-4 h-4 animate-spin" />
-                              <span className="text-[10px] font-bold min-w-[2.5rem]">{processingPercent}</span>
+                              {processingPercent !== "READY" && <Loader2 className="w-4 h-4 animate-spin" />}
+                              <span className="text-[10px] font-bold min-w-[2.5rem]">
+                                {processingPercent === "READY" ? "READY" : processingPercent}
+                              </span>
                             </div>
                           ) : (
                             <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
@@ -358,18 +374,20 @@ export default function YouTubeDownloader() {
                       {videoData.audioFormats?.length > 0 ? videoData.audioFormats.map((format, idx) => (
                         <Button
                           key={idx}
-                          variant="outline"
+                          variant={downloadingFormat === format.url ? (processingPercent === "READY" ? "default" : "secondary") : "outline"}
                           onClick={() => handleDownload(format)}
-                          disabled={downloadingFormat !== null}
-                          className="h-10 px-4 rounded-lg border-border hover:bg-muted transition-all group"
+                          disabled={downloadingFormat !== null && downloadingFormat !== format.url}
+                          className={`h-10 px-4 rounded-lg border-border transition-all group ${processingPercent === "READY" && downloadingFormat === format.url ? 'bg-green-600 hover:bg-green-700 text-white animate-pulse' : ''}`}
                         >
                           <div className="text-left mr-3">
                             <div className="font-medium text-sm">MP3</div>
                           </div>
-                          {downloadingFormat === format.quality ? (
+                          {downloadingFormat === format.url ? (
                             <div className="flex items-center gap-2">
-                              <Loader2 className="w-4 h-4 animate-spin" />
-                              <span className="text-[10px] font-bold min-w-[2.5rem]">{processingPercent}</span>
+                              {processingPercent !== "READY" && <Loader2 className="w-4 h-4 animate-spin" />}
+                              <span className="text-[10px] font-bold min-w-[2.5rem]">
+                                {processingPercent === "READY" ? "READY" : processingPercent}
+                              </span>
                             </div>
                           ) : (
                             <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
