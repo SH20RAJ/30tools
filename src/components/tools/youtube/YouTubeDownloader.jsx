@@ -23,6 +23,7 @@ export default function YouTubeDownloader() {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
   const [showPWAButton, setShowPWAButton] = useState(false);
   const [downloadingFormat, setDownloadingFormat] = useState(null);
+  const [processingPercent, setProcessingPercent] = useState(null);
 
   /* PWA Install Logic */
   const executePWAInstall = useCallback(async () => {
@@ -188,6 +189,7 @@ export default function YouTubeDownloader() {
     }
 
     setDownloadingFormat(format.quality);
+    setProcessingPercent("0%");
 
     const pollStatus = async () => {
       try {
@@ -207,13 +209,12 @@ export default function YouTubeDownloader() {
             if (api.fileUrl && api.fileUrl !== "In Processing...") {
               handleProcessDownload(api.fileUrl);
               setDownloadingFormat(null);
+              setProcessingPercent(null);
             } else {
               throw new Error("File URL not found after completion");
             }
           } else if (api.fileUrl === "In Processing...") {
-            // Show percentage in button or toast if desired. 
-            // For now, we'll just wait and retry.
-            // (Optional) toast.loading(`Processing: ${api.percent}`, { id: 'yt-dl-progress' });
+            setProcessingPercent(api.percent || "0%");
             setTimeout(pollStatus, 3000);
           } else if (api.status === "Error") {
             throw new Error(api.message || "Upstream processing error");
@@ -225,6 +226,7 @@ export default function YouTubeDownloader() {
         console.error(err);
         toast.error("Download processing failed. Please try again.");
         setDownloadingFormat(null);
+        setProcessingPercent(null);
       }
     };
 
@@ -333,7 +335,10 @@ export default function YouTubeDownloader() {
                             {/* Hidden tech details for fuller minimal look, or restore if needed */}
                           </div>
                           {downloadingFormat === format.quality ? (
-                            <Loader2 className="w-4 h-4 animate-spin" />
+                            <div className="flex items-center gap-2">
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                              <span className="text-[10px] font-bold min-w-[2.5rem]">{processingPercent}</span>
+                            </div>
                           ) : (
                             <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                           )}
@@ -361,8 +366,11 @@ export default function YouTubeDownloader() {
                           <div className="text-left mr-3">
                             <div className="font-medium text-sm">MP3</div>
                           </div>
-                          {downloadingFormat === ('audio-' + format.extension) ? (
-                            <Loader2 className="w-4 h-4 animate-spin" />
+                          {downloadingFormat === format.quality ? (
+                            <div className="flex items-center gap-2">
+                              <Loader2 className="w-4 h-4 animate-spin" />
+                              <span className="text-[10px] font-bold min-w-[2.5rem]">{processingPercent}</span>
+                            </div>
                           ) : (
                             <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
                           )}
