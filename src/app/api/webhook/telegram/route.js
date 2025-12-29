@@ -61,15 +61,69 @@ async function pollStatus(processUrl, chatId, messageId) {
             const api = data.api;
 
             if (api) {
-                if (api.percent === "Completed") {
-                    await telegram('editMessageText', {
+                const poweredBy = "\n\nPowered by https://30tools.com/youtube-downloader";
+                const isAudio = api.fileName && (api.fileName.toLowerCase().endsWith('.mp3') || api.fileName.toLowerCase().endsWith('.m4a'));
+                const isVideo = api.fileName && api.fileName.toLowerCase().endsWith('.mp4');
+
+                // Cleanup status message
+                await telegram('deleteMessage', { chat_id: chatId, message_id: messageId });
+
+                let sent = false;
+                // Attempt to send as file if under ~45MB (Telegram limit is 50MB, but being safe)
+                const sizeInMb = parseFloat(api.fileSize) || 0;
+                if (sizeInMb > 0 && sizeInMb < 45) {
+                    try {
+                        if (isVideo) {
+                            const sendRes = await telegram('sendVideo', {
+                                chat_id: chatId,
+                                video: api.fileUrl,
+                                caption: `✅ **${api.fileName}**\nSize: ${api.fileSize}${poweredBy}`,
+                                parse_mode: 'Markdown',
+                                reply_markup: {
+                                    inline_keyboard: [[{ text: "🎬 Download Another", callback_data: "home" }]]
+                                }
+                            });
+                            if ((await sendRes.json()).ok) sent = true;
+                        } else if (isAudio) {
+                            const sendRes = await telegram('sendAudio', {
+                                chat_id: chatId,
+                                audio: api.fileUrl,
+                                title: api.fileName,
+                                caption: `✅ **${api.fileName}**\nSize: ${api.fileSize}${poweredBy}`,
+                                parse_mode: 'Markdown',
+                                reply_markup: {
+                                    inline_keyboard: [[{ text: "🎵 Download Another", callback_data: "home" }]]
+                                }
+                            });
+                            if ((await sendRes.json()).ok) sent = true;
+                        } else {
+                            const sendRes = await telegram('sendDocument', {
+                                chat_id: chatId,
+                                document: api.fileUrl,
+                                caption: `✅ **${api.fileName}**\nSize: ${api.fileSize}${poweredBy}`,
+                                parse_mode: 'Markdown',
+                                reply_markup: {
+                                    inline_keyboard: [[{ text: "🔄 Download Another", callback_data: "home" }]]
+                                }
+                            });
+                            if ((await sendRes.json()).ok) sent = true;
+                        }
+                    } catch (e) {
+                        console.error("File Send Error:", e);
+                    }
+                }
+
+                if (!sent) {
+                    await telegram('sendMessage', {
                         chat_id: chatId,
-                        message_id: messageId,
-                        text: `✅ **Ready!**\n\nTitle: ${api.fileName}\nSize: ${api.fileSize}\n\n[Download Now](${api.fileUrl})`,
-                        parse_mode: 'Markdown'
+                        text: `✅ **Ready!**\n\nTitle: ${api.fileName}\nSize: ${api.fileSize}\n\n[Download Now](${api.fileUrl})${poweredBy}`,
+                        parse_mode: 'Markdown',
+                        reply_markup: {
+                            inline_keyboard: [[{ text: "🔄 Download Another", callback_data: "home" }]]
+                        }
                     });
-                    return;
-                } else {
+                }
+                else {
                     // Update progress
                     await telegram('editMessageText', {
                         chat_id: chatId,
@@ -108,7 +162,7 @@ export async function POST(req) {
             if (text === "/start") {
                 await telegram('sendMessage', {
                     chat_id: chatId,
-                    text: "👋 **Welcome to 30Tools Video Downloader Bot!**\n\nSend me any YouTube link to get started.",
+                    text: "👋 **Welcome to 30Tools Video Downloader Bot!**\n\nSend me any YouTube link to get started.\n\nPowered by https://30tools.com/youtube-downloader",
                     parse_mode: 'Markdown'
                 });
                 return NextResponse.json({ ok: true });
@@ -161,7 +215,7 @@ export async function POST(req) {
                 await telegram('sendPhoto', {
                     chat_id: chatId,
                     photo: info.imagePreviewUrl,
-                    caption: `🎥 **${info.title}**\n\nSelect a format to download:`,
+                    caption: `🎥 **${info.title}**\n\nSelect a format to download:\n\nPowered by https://30tools.com/youtube-downloader`,
                     parse_mode: 'Markdown',
                     reply_markup: { inline_keyboard: keyboard }
                 });
@@ -192,6 +246,12 @@ export async function POST(req) {
             } else if (data.startsWith('st:')) {
                 const processUrl = data.slice(3);
                 await pollStatus(processUrl, chatId, cq.message.message_id);
+            } else if (data === 'home') {
+                await telegram('sendMessage', {
+                    chat_id: chatId,
+                    text: "👋 **Welcome back!**\n\nReady for another one? Send me a YouTube link.",
+                    parse_mode: 'Markdown'
+                });
             }
         }
 
