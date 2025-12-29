@@ -90,8 +90,12 @@ export default function YouTubeDownloader() {
 
       const title = data.title || "YouTube Video";
       const thumbnail = data.thumbnail || null;
-      const durationSeconds = data.duration || 0;
-      const duration = new Date(durationSeconds * 1000).toISOString().substring(11, 19).replace(/^0(?:0:0?)?/, '');
+
+      let duration = data.duration || "00:00";
+      // Only process if it's a number (legacy API). New API returns string "MM:SS"
+      if (typeof duration === 'number' && !isNaN(duration)) {
+        duration = new Date(duration * 1000).toISOString().substring(11, 19).replace(/^0(?:0:0?)?/, '');
+      }
       const medias = data.medias || [];
 
       // Process Video Formats
@@ -99,7 +103,7 @@ export default function YouTubeDownloader() {
         .filter(m => (m.ext === 'mp4' || m.ext === 'webm') && m.url) // Only allow if URL exists
         .map(f => ({
           quality: f.quality, // e.g., "1080p"
-          fileSize: f.size ? formatBytes(f.size) : (f.fileSize ? formatBytes(f.fileSize) : "Unknown"),
+          fileSize: typeof f.size === 'string' ? f.size : (f.size ? formatBytes(f.size) : "Unknown"),
           extension: f.ext,
           type: "video",
           url: f.url,
@@ -124,10 +128,10 @@ export default function YouTubeDownloader() {
 
       // Process Audio Formats
       const audioFormats = medias
-        .filter(m => (m.ext === 'mp3' || m.ext === 'm4a' || m.quality === 'Audio' || m.type === 'audio') && m.url) // Only allow if URL exists
+        .filter(m => (m.type === 'audio' || m.ext === 'mp3' || m.ext === 'm4a') && m.url)
         .map(f => ({
           quality: f.quality || "Audio",
-          fileSize: f.size ? formatBytes(f.size) : "Unknown",
+          fileSize: typeof f.size === 'string' ? f.size : (f.size ? formatBytes(f.size) : "Unknown"),
           extension: f.ext,
           type: "audio",
           url: f.url
