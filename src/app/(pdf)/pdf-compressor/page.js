@@ -1,4 +1,5 @@
 import PdfCompressorTool from "@/components/tools/pdf/PdfCompressorTool";
+import { AuthorBio } from "@/components/seo";
 
 const researchedKeywords = [
   "compress file online free", "pdf compressor gratis", "how to make pdf file size smaller", "compress free pdf",
@@ -35,8 +36,8 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "Free PDF Compressor Online (2026) - Reduce PDF Size | 30Tools",
-  description: "Best free online pdf compressor to reduce pdf size online without quality loss. Smallpdf and ilovepdf alternative for fast, secure pdf compression. Shrink pdf files now.",
+  title: "How to Reduce PDF Size Online (2026) - Free PDF Compressor | 30Tools",
+  description: "Want to know how to shrink PDF files without losing quality? Our free 2026 updated PDF compressor reduces size instantly for email & web. Secure, fast, no sign-up.",
   keywords: researchedKeywords.join(", "),
 
   openGraph: {
@@ -338,6 +339,8 @@ export default function PdfCompressorPage() {
             ))}
           </div>
         </section>
+
+        <AuthorBio author="30Tools Document Engineering Team" />
 
         <div className="mt-12 text-center">
           <a href="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-6 py-2 rounded-full border border-border hover:bg-muted">← Back to 30Tools Home</a>

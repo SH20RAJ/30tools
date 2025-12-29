@@ -23,6 +23,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
+import { AuthorBio } from "@/components/seo";
 
 // dynamic metadata generation
 export const metadata = {
@@ -414,6 +415,8 @@ export default function YouTubeDownloaderPage() {
             </a>
           </div>
         </section>
+
+        <AuthorBio author="30Tools Media Engineering Team" />
 
         {/* Better Footer / Related Links */}
         <div className="mt-20 text-center border-t border-border/50 pt-16 pb-8">

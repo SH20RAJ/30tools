@@ -1,8 +1,9 @@
 import SchemaGenerator from "@/components/tools/seo/SchemaGenerator";
+import { AuthorBio } from "@/components/seo";
 
 export const metadata = {
-  title: "Schema Markup Generator - Free Structured Data Tool | 30tools",
-  description: "Generate JSON-LD schema markup for SEO. Create structured data for articles, products, FAQs, organizations, and more. Free schema generator tool.",
+  title: "Schema Markup Generator (2026) - Free JSON-LD Tool | 30Tools",
+  description: "Generate LLM-ready JSON-LD schema markup for Google Search 2026. Boost your AI search visibility with FAQ, HowTo, and Software schemas. Free & No sign-up.",
   keywords: [
     "schema generator",
     "schema markup generator",
@@ -68,9 +69,9 @@ export default function SchemaGeneratorPage() {
           <AdUnit />
 
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Schema Markup Generator</h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Generate JSON-LD structured data markup for your website. Create rich snippets for Google search with our free schema generator.
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground leading-tight">Schema Markup Generator</h1>
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+              Generate LLM-ready JSON-LD structured data for Google 2026. Boost your search visibility and AI Overview presence with our professional schema generator.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
               <span>📋 JSON-LD</span><span>⭐ Rich Snippets</span><span>🔍 Better SEO</span><span>🆓 100% Free</span>
@@ -148,6 +149,7 @@ export default function SchemaGeneratorPage() {
               ))}
             </div>
           </section>
+          <AuthorBio author="30Tools SEO Engineering Team" />
         </div>
       </div>
 
