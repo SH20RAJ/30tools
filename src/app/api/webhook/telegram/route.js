@@ -294,9 +294,11 @@ export async function POST(req) {
                 const [_, domain, videoId, mediaId, quality] = data.split(':');
                 const processUrl = `https://${domain}.ytcontent.com/v3/${quality === 'mp3' ? 'audio' : 'video'}Process/${videoId}/${mediaId}/${quality}`;
 
+                const bar = getProgressBar("0%");
                 const msg = await telegram('sendMessage', {
                     chat_id: chatId,
-                    text: "🚀 **Starting processing...**"
+                    text: `⏳ **Starting processing...**\n\n\`${bar}\`\n\nPlease wait while we prepare your file...`,
+                    parse_mode: 'Markdown'
                 });
                 const msgData = await msg.json();
 
