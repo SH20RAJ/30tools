@@ -412,13 +412,13 @@ export default function YouTubeDownloader() {
       {/* Minimal Donation Prompt */}
       <div className="mt-12 flex justify-center">
         <a
-          href="https://paypal"
+          href="https://t.me/sopbots_ytdlbot"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-muted text-muted-foreground text-sm font-medium hover:bg-muted/80 transition-colors"
         >
-          <Heart className="w-4 h-4 group-hover:scale-110 transition-transform" />
-          <span>Support this free tool with a donation</span>
+          <Send className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+          <span>Try our Telegram Bot for faster downloads</span>
         </a>
       </div>
 
