@@ -162,7 +162,7 @@ export async function POST(req) {
             if (text === "/start") {
                 await telegram('sendMessage', {
                     chat_id: chatId,
-                    text: "👋 **Welcome to 30Tools Video Downloader Bot!**\n\nSend me any YouTube link to get started.\n\nPowered by https://30tools.com/youtube-downloader",
+                    text: "👋 **Welcome to 30Tools Video Downloader Bot!**\n\nSend me any YouTube link or directly share from YouTube App to telegram->bot to get started.\n\nPowered by https://30tools.com/youtube-downloader",
                     parse_mode: 'Markdown'
                 });
                 return NextResponse.json({ ok: true });
