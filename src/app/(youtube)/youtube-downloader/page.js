@@ -199,7 +199,7 @@ export default function YouTubeDownloaderPage() {
         {/* Header */}
         <div className="text-center space-y-4 mb-12">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground leading-tight">
-            Top <span className="text-primary">YouTube Video Downloader</span> - Fast & Free
+            Top <span className="text-primary">YouTube Video/Audio Downloader</span> - Fast & Free
           </h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Searching for the <strong>best youtube downloader</strong> to save your favorite content? Look no further. Our <strong>online youtube downloader</strong> allows you to <strong>download youtube video online</strong> for free without limits. Whether you need a <strong>youtube downloader for computer</strong> or a mobile solution, our platform is optimized for every <strong>yt downloader</strong> need.
