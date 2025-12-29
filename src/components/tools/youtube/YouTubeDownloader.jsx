@@ -178,14 +178,53 @@ export default function YouTubeDownloader() {
   };
 
   const handleDownload = async (format) => {
-    // If we have a direct URL from the new API, use it.
-    if (format.url) {
-      handleProcessDownload(format.url);
+    if (!format.url) {
+      toast.error("Download link not available for this format.");
       return;
     }
 
-    // Fallback logic (legacy) removed as new API provides URLs.
-    toast.error("Download link not available for this format.");
+    setDownloadingFormat(format.quality);
+
+    const pollStatus = async () => {
+      try {
+        const res = await fetch("/api/proxy/ytdown", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ url: format.url }),
+        });
+
+        if (!res.ok) throw new Error("Status check failed");
+
+        const data = await res.json();
+        const api = data.api;
+
+        if (api) {
+          if (api.percent === "Completed") {
+            if (api.fileUrl && api.fileUrl !== "In Processing...") {
+              handleProcessDownload(api.fileUrl);
+              setDownloadingFormat(null);
+            } else {
+              throw new Error("File URL not found after completion");
+            }
+          } else if (api.fileUrl === "In Processing...") {
+            // Show percentage in button or toast if desired. 
+            // For now, we'll just wait and retry.
+            // (Optional) toast.loading(`Processing: ${api.percent}`, { id: 'yt-dl-progress' });
+            setTimeout(pollStatus, 3000);
+          } else if (api.status === "Error") {
+            throw new Error(api.message || "Upstream processing error");
+          }
+        } else {
+          throw new Error("Invalid status response");
+        }
+      } catch (err) {
+        console.error(err);
+        toast.error("Download processing failed. Please try again.");
+        setDownloadingFormat(null);
+      }
+    };
+
+    pollStatus();
   };
 
   return (
