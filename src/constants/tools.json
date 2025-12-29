@@ -1027,6 +1027,36 @@
           "route": "/youtube-trends",
           "popular": true,
           "category": "youtube"
+        },
+        {
+          "id": "youtube-money-calculator",
+          "name": "YouTube Money Calculator",
+          "description": "Calculate estimated YouTube earnings based on views and RPM",
+          "route": "/youtube-money-calculator",
+          "extraSlugs": [
+            "youtube-income-calculator",
+            "estimate-youtube-revenue",
+            "youtuber-earnings-calculator",
+            "youtube-pay-calculator",
+            "money-calculator-for-youtube"
+          ],
+          "popular": true,
+          "category": "youtube"
+        },
+        {
+          "id": "cpm-calculator",
+          "name": "CPM Calculator",
+          "description": "Calculate Cost Per Mille (CPM), cost, and impressions for advertising",
+          "route": "/cpm-calculator",
+          "extraSlugs": [
+            "cost-per-mille-calculator",
+            "advertising-cost-calculator",
+            "marketing-cpm-tool",
+            "ad-campaign-calculator",
+            "calculate-cpm-cost"
+          ],
+          "popular": true,
+          "category": "youtube"
         }
       ]
     },
@@ -2042,6 +2072,21 @@
             "visual-shadow-generator"
           ],
           "popular": false,
+          "category": "design"
+        },
+        {
+          "id": "glassmorphism-generator",
+          "name": "Glassmorphism Generator",
+          "description": "Create beautiful frosted-glass CSS effects quickly",
+          "route": "/glassmorphism-generator",
+          "extraSlugs": [
+            "css-glass-effect",
+            "frosted-glass-generator",
+            "glassmorphism-css-maker",
+            "backdrop-blur-generator",
+            "glass-ui-tool"
+          ],
+          "popular": true,
           "category": "design"
         },
         {
