@@ -11,7 +11,8 @@ import {
   Smartphone,
   Check,
   X,
-  ArrowRight
+  ArrowRight,
+  Send
 } from "lucide-react";
 import { toast } from "sonner";
 
