@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 import withPWA from "next-pwa";
+import { toolRedirects } from "./scripts/redirects.js";
 
 const nextConfig = {
   // TypeScript configuration
@@ -116,6 +117,7 @@ const nextConfig = {
   // Redirects for SEO
   async redirects() {
     return [
+      ...toolRedirects,
       {
         source: "/tool/:slug",
         destination: "/:slug",
