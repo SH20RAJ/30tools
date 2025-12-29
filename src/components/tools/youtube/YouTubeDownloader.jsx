@@ -93,9 +93,14 @@ export default function YouTubeDownloader() {
       const thumbnail = data.thumbnail || null;
 
       let duration = data.duration || "00:00";
-      // Only process if it's a number (legacy API). New API returns string "MM:SS"
-      if (typeof duration === 'number' && !isNaN(duration)) {
-        duration = new Date(duration * 1000).toISOString().substring(11, 19).replace(/^0(?:0:0?)?/, '');
+      // Safe duration formatting
+      if (typeof duration === 'number' && Number.isFinite(duration) && duration > 0) {
+        try {
+          duration = new Date(duration * 1000).toISOString().substring(11, 19).replace(/^0(?:0:0?)?/, '');
+        } catch (e) {
+          console.warn("Duration parsing failed", e);
+          duration = "00:00";
+        }
       }
       const medias = data.medias || [];
 
@@ -222,9 +227,9 @@ export default function YouTubeDownloader() {
               // Store the final URL in the format object for direct access
               format.finalUrl = api.fileUrl;
 
-              // Try automatic download (might be blocked)
+              // Try automatic download (might be blocked by browser since it's in a callback)
               handleProcessDownload(api.fileUrl);
-              toast.success("Ready! If download didn't start, click again.");
+              toast.success("Ready! Your download should start automatically.");
             } else {
               throw new Error("File URL not found after completion");
             }
@@ -407,7 +412,7 @@ export default function YouTubeDownloader() {
       {/* Minimal Donation Prompt */}
       <div className="mt-12 flex justify-center">
         <a
-          href="https://payments.cashfree.com/forms/30tools"
+          href="https://paypal"
           target="_blank"
           rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-muted text-muted-foreground text-sm font-medium hover:bg-muted/80 transition-colors"
