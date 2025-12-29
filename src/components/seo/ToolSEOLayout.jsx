@@ -7,7 +7,8 @@ import {
   FAQSection,
   RelatedTools,
   UserComments,
-  ReviewSnippets
+  ReviewSnippets,
+  AuthorBio
 } from '@/components/seo';
 
 export default function ToolSEOLayout({ toolId, children, faqs, features, reviews, howTo }) {
@@ -52,6 +53,9 @@ export default function ToolSEOLayout({ toolId, children, faqs, features, review
 
             {/* Comments */}
             <UserComments tool={mergedTool} />
+
+            {/* E-E-A-T Author Bio */}
+            <AuthorBio author={mergedTool.author} />
           </div>
 
           {/* <div className="lg:col-span-4 space-y-8">

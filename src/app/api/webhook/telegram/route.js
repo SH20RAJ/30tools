@@ -30,6 +30,37 @@ async function telegram(method, body) {
     });
 }
 
+const REQUIRED_CHANNEL = "-1002023867798"; // @sopbots
+
+async function checkMembership(userId) {
+    try {
+        const res = await telegram('getChatMember', {
+            chat_id: REQUIRED_CHANNEL,
+            user_id: userId
+        });
+        const data = await res.json();
+        if (!data.ok) return false;
+        const status = data.result.status;
+        return ['creator', 'administrator', 'member'].includes(status);
+    } catch (e) {
+        console.error("Membership Check Error:", e);
+        return false;
+    }
+}
+
+async function sendJoinMessage(chatId) {
+    await telegram('sendMessage', {
+        chat_id: chatId,
+        text: "🚨 **Wait! You're not in our channel yet.**\n\nPlease join our channel **@sopbots** to get the latest updates, give feedback, and unlock all features of this bot.\n\nAfter joining, send the link again!",
+        parse_mode: 'Markdown',
+        reply_markup: {
+            inline_keyboard: [
+                [{ text: "📢 Join @sopbots", url: "https://t.me/sopbots" }]
+            ]
+        }
+    });
+}
+
 async function fetchVideoInfo(url) {
     try {
         // Cooldown check
@@ -61,7 +92,7 @@ async function pollStatus(processUrl, chatId, messageId) {
             const api = data.api;
 
             if (api) {
-                const poweredBy = "\n\nPowered by https://30tools.com/youtube-downloader";
+                const poweredBy = "\n\nPowered by https://30tools.com/youtube-downloader\nFeedback: @sopbots";
                 const isAudio = api.fileName && (api.fileName.toLowerCase().endsWith('.mp3') || api.fileName.toLowerCase().endsWith('.m4a'));
                 const isVideo = api.fileName && api.fileName.toLowerCase().endsWith('.mp4');
 
@@ -162,8 +193,11 @@ export async function POST(req) {
             if (text === "/start") {
                 await telegram('sendMessage', {
                     chat_id: chatId,
-                    text: "👋 **Welcome to 30Tools Video Downloader Bot!**\n\nSend me any YouTube link or directly share from YouTube App to telegram->bot to get started.\n\nPowered by https://30tools.com/youtube-downloader",
-                    parse_mode: 'Markdown'
+                    text: "👋 **Welcome to 30Tools Video Downloader Bot!**\n\nSend me any YouTube link or directly share from YouTube App to telegram->bot to get started.\n\n📢 **Join @sopbots** for updates and feedback.\n\nPowered by https://30tools.com/youtube-downloader",
+                    parse_mode: 'Markdown',
+                    reply_markup: {
+                        inline_keyboard: [[{ text: "📢 Join @sopbots", url: "https://t.me/sopbots" }]]
+                    }
                 });
                 return NextResponse.json({ ok: true });
             }
@@ -172,6 +206,13 @@ export async function POST(req) {
             const match = text.match(ytRegex);
 
             if (match) {
+                // Check membership before processing
+                const isMember = await checkMembership(update.message.from.id);
+                if (!isMember) {
+                    await sendJoinMessage(chatId);
+                    return NextResponse.json({ ok: true });
+                }
+
                 const videoId = match[1];
                 const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
@@ -215,7 +256,7 @@ export async function POST(req) {
                 await telegram('sendPhoto', {
                     chat_id: chatId,
                     photo: info.imagePreviewUrl,
-                    caption: `🎥 **${info.title}**\n\nSelect a format to download:\n\nPowered by https://30tools.com/youtube-downloader`,
+                    caption: `🎥 **${info.title}**\n\nSelect a format to download:\n\nPowered by https://30tools.com/youtube-downloader\nFeedback: @sopbots`,
                     parse_mode: 'Markdown',
                     reply_markup: { inline_keyboard: keyboard }
                 });
@@ -231,6 +272,13 @@ export async function POST(req) {
             await telegram('answerCallbackQuery', { callback_query_id: cq.id });
 
             if (data.startsWith('dl:')) {
+                // Check membership before starting processing
+                const isMember = await checkMembership(cq.from.id);
+                if (!isMember) {
+                    await sendJoinMessage(chatId);
+                    return NextResponse.json({ ok: true });
+                }
+
                 const [_, domain, videoId, mediaId, quality] = data.split(':');
                 const processUrl = `https://${domain}.ytcontent.com/v3/${quality === 'mp3' ? 'audio' : 'video'}Process/${videoId}/${mediaId}/${quality}`;
 

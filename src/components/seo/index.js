@@ -31,3 +31,4 @@ export {
   GeneratorToolExamples,
 } from "./GeneratorToolsHub";
 export { default as ToolSEOLayout } from "./ToolSEOLayout";
+export { default as AuthorBio } from "./AuthorBio";
