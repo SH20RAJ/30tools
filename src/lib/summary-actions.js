@@ -91,7 +91,7 @@ export async function generateYouTubeSummary(url, options = {}) {
         metadata: subtitleData.metadata,
       },
     };
-  } catch (_error) {
+  } catch (error) {
     console.error("❌ Error in generateYouTubeSummary:", error);
     return {
       error: "Failed to generate video summary. Please try again later.",
@@ -173,7 +173,7 @@ Please provide a well-structured summary that captures the essence and value of 
         if (keywordResult.success) {
           keywords = keywordResult.keywords;
         }
-      } catch (_error) {
+      } catch (error) {
         console.log("⚠️ Keyword extraction failed:", error.message);
       }
     }
@@ -184,7 +184,7 @@ Please provide a well-structured summary that captures the essence and value of 
       keywords: keywords,
       aiModel: result.model,
     };
-  } catch (_error) {
+  } catch (error) {
     console.error("❌ Error in generateAISummary:", error);
     return { success: false, error: "Failed to generate AI summary" };
   }
@@ -245,7 +245,7 @@ Format: ["keyword1", "keyword2", "keyword3", ...]`;
       .slice(0, 15);
 
     return { success: true, keywords: keywords };
-  } catch (_error) {
+  } catch (error) {
     console.error("❌ Error extracting keywords:", error);
     return { success: false, error: "Failed to extract keywords" };
   }
