@@ -7,7 +7,10 @@
   "name": "30tools",
   "main": ".open-next/worker.js",
   "compatibility_date": "2024-12-01",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
   "assets": {
     "binding": "ASSETS",
     "directory": ".open-next/assets",
@@ -30,7 +33,9 @@
    * Environment Variables
    * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
    */
-  // "vars": { "MY_VARIABLE": "production_value" },
+  "vars": {
+    "TELEGRAM_BOT_TOKEN": "8561187524:AAGZhfo0fPYeKvnjWrauM1ph4DInqmp7cCw"
+  },
   /**
    * Note: Use secrets to store sensitive data.
    * https://developers.cloudflare.com/workers/configuration/secrets/
