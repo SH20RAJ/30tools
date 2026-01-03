@@ -340,32 +340,59 @@ export default function YouTubeDownloader() {
                       Video
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {videoData.videoFormats?.length > 0 ? videoData.videoFormats.map((format, idx) => (
-                        <Button
-                          key={idx}
-                          variant={downloadingFormat === format.url ? (processingPercent === "READY" ? "default" : "secondary") : "outline"}
-                          onClick={() => handleDownload(format)}
-                          disabled={downloadingFormat !== null && downloadingFormat !== format.url}
-                          className={`h-10 px-4 rounded-lg border-border transition-all group ${processingPercent === "READY" && downloadingFormat === format.url ? 'bg-green-600 hover:bg-green-700 text-white animate-pulse' : ''}`}
-                        >
-                          <div className="text-left mr-3">
-                            <div className="font-medium flex items-center gap-2 text-sm">
-                              {format.quality}
-                              {format.hdr === 'HDR' && <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">HDR</span>}
+                      {videoData.videoFormats?.length > 0 ? videoData.videoFormats.map((format, idx) => {
+                        const isReady = downloadingFormat === format.url && processingPercent === "READY";
+
+                        if (isReady) {
+                          return (
+                            <a
+                              key={idx}
+                              href={format.finalUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="h-10 px-4 rounded-lg border-border transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+                            >
+                              <div className="text-left mr-3">
+                                <div className="font-medium flex items-center gap-2 text-sm">
+                                  {format.quality}
+                                  {format.hdr === 'HDR' && <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">HDR</span>}
+                                </div>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <Check className="w-4 h-4" />
+                                <span className="text-[10px] font-bold min-w-[2.5rem]">LINK</span>
+                              </div>
+                            </a>
+                          );
+                        }
+
+                        return (
+                          <Button
+                            key={idx}
+                            variant={downloadingFormat === format.url ? "secondary" : "outline"}
+                            onClick={() => handleDownload(format)}
+                            disabled={downloadingFormat !== null && downloadingFormat !== format.url}
+                            className="h-10 px-4 rounded-lg border-border transition-all group"
+                          >
+                            <div className="text-left mr-3">
+                              <div className="font-medium flex items-center gap-2 text-sm">
+                                {format.quality}
+                                {format.hdr === 'HDR' && <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">HDR</span>}
+                              </div>
                             </div>
-                          </div>
-                          {downloadingFormat === format.url ? (
-                            <div className="flex items-center gap-2">
-                              {processingPercent !== "READY" && <Loader2 className="w-4 h-4 animate-spin" />}
-                              <span className="text-[10px] font-bold min-w-[2.5rem]">
-                                {processingPercent === "READY" ? "READY" : processingPercent}
-                              </span>
-                            </div>
-                          ) : (
-                            <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-                          )}
-                        </Button>
-                      )) : <p className="text-sm text-muted-foreground">No video formats.</p>}
+                            {downloadingFormat === format.url ? (
+                              <div className="flex items-center gap-2">
+                                {processingPercent !== "READY" && <Loader2 className="w-4 h-4 animate-spin" />}
+                                <span className="text-[10px] font-bold min-w-[2.5rem]">
+                                  {processingPercent}
+                                </span>
+                              </div>
+                            ) : (
+                              <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                            )}
+                          </Button>
+                        )
+                      }) : <p className="text-sm text-muted-foreground">No video formats.</p>}
                     </div>
                   </div>
 
@@ -377,29 +404,53 @@ export default function YouTubeDownloader() {
                       Audio
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {videoData.audioFormats?.length > 0 ? videoData.audioFormats.map((format, idx) => (
-                        <Button
-                          key={idx}
-                          variant={downloadingFormat === format.url ? (processingPercent === "READY" ? "default" : "secondary") : "outline"}
-                          onClick={() => handleDownload(format)}
-                          disabled={downloadingFormat !== null && downloadingFormat !== format.url}
-                          className={`h-10 px-4 rounded-lg border-border transition-all group ${processingPercent === "READY" && downloadingFormat === format.url ? 'bg-green-600 hover:bg-green-700 text-white animate-pulse' : ''}`}
-                        >
-                          <div className="text-left mr-3">
-                            <div className="font-medium text-sm">MP3</div>
-                          </div>
-                          {downloadingFormat === format.url ? (
-                            <div className="flex items-center gap-2">
-                              {processingPercent !== "READY" && <Loader2 className="w-4 h-4 animate-spin" />}
-                              <span className="text-[10px] font-bold min-w-[2.5rem]">
-                                {processingPercent === "READY" ? "READY" : processingPercent}
-                              </span>
+                      {videoData.audioFormats?.length > 0 ? videoData.audioFormats.map((format, idx) => {
+                        const isReady = downloadingFormat === format.url && processingPercent === "READY";
+
+                        if (isReady) {
+                          return (
+                            <a
+                              key={idx}
+                              href={format.finalUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="h-10 px-4 rounded-lg border-border transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+                            >
+                              <div className="text-left mr-3">
+                                <div className="font-medium text-sm">MP3</div>
+                              </div>
+                              <div className="flex items-center gap-2">
+                                <Check className="w-4 h-4" />
+                                <span className="text-[10px] font-bold min-w-[2.5rem]">LINK</span>
+                              </div>
+                            </a>
+                          );
+                        }
+
+                        return (
+                          <Button
+                            key={idx}
+                            variant={downloadingFormat === format.url ? "secondary" : "outline"}
+                            onClick={() => handleDownload(format)}
+                            disabled={downloadingFormat !== null && downloadingFormat !== format.url}
+                            className="h-10 px-4 rounded-lg border-border transition-all group"
+                          >
+                            <div className="text-left mr-3">
+                              <div className="font-medium text-sm">MP3</div>
                             </div>
-                          ) : (
-                            <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-                          )}
-                        </Button>
-                      )) : <p className="text-sm text-muted-foreground">No audio formats.</p>}
+                            {downloadingFormat === format.url ? (
+                              <div className="flex items-center gap-2">
+                                {processingPercent !== "READY" && <Loader2 className="w-4 h-4 animate-spin" />}
+                                <span className="text-[10px] font-bold min-w-[2.5rem]">
+                                  {processingPercent}
+                                </span>
+                              </div>
+                            ) : (
+                              <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                            )}
+                          </Button>
+                        )
+                      }) : <p className="text-sm text-muted-foreground">No audio formats.</p>}
                     </div>
                   </div>
                 </div>
