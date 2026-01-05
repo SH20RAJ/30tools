@@ -804,6 +804,14 @@
           "route": "/internet-speed-test",
           "popular": true,
           "category": "utilities"
+        },
+        {
+          "id": "indexnow-submitter",
+          "name": "IndexNow Submitter",
+          "description": "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
+          "route": "/indexnow",
+          "popular": false,
+          "category": "utilities"
         }
       ]
     },

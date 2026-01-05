@@ -40,17 +40,27 @@ import FooterPartners from "@/components/shared/FooterPartners";
 import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
 
 export const metadata = {
-  title: "30Tools (2026) - 100% Free Online Tools & Converters",
+  title: {
+    absolute: "30Tools (2026) - Free Online Tools & Converters",
+  },
   description: "The #1 Free Online Toolkit for 2026. Image compressor, video downloader, PDF tools, and more. No signup, no watermarks, unlimited use.",
   alternates: {
     canonical: "https://30tools.com",
   },
   openGraph: {
-    title: "30Tools (2026) - 100% Free Online Toolkit",
+    title: "30Tools (2026) - Free Online Tools & Converters",
     description: "Fast, free, and privacy-focused tools for all your creative and professional needs. Updated for 2026.",
     url: "https://30tools.com",
     siteName: "30tools",
     type: "website",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "30Tools - Free Online Toolkit"
+      }
+    ]
   },
 };
 
