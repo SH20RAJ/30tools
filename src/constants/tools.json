@@ -957,6 +957,34 @@
           "category": "seo"
         },
         {
+          "id": "visual-sitemap",
+          "name": "Visual Sitemap Generator",
+          "description": "Visualize your website's sitemap structure instantly. Enter your XML sitemap URL to generate a dynamic tree view of your site hierarchy.",
+          "route": "/visual-sitemap",
+          "extraSlugs": [
+            "sitemap-visualizer",
+            "xml-sitemap-viewer",
+            "site-structure-visualizer",
+            "visual-site-map-generator"
+          ],
+          "popular": true,
+          "category": "seo"
+        },
+        {
+          "id": "seotoolkit",
+          "name": "SEO Toolkit",
+          "description": "All-in-one SEO audit and analysis tool. 27+ checks.",
+          "route": "/seotoolkit",
+          "extraSlugs": [
+            "seo-audit-free",
+            "website-analyzer",
+            "free-seo-check",
+            "site-audit-tool"
+          ],
+          "popular": true,
+          "category": "seo"
+        },
+        {
           "id": "schema-generator",
           "name": "Schema Markup Generator",
           "description": "Generate JSON-LD schema markup for rich snippets",
