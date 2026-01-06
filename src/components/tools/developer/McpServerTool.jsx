@@ -420,7 +420,7 @@ if __name__ == "__main__":
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Server className="h-8 w-8 text-primary" />
-          <h1 className="text-3xl font-bold">MCP Server Generator</h1>
+          <h2 className="text-3xl font-bold">MCP Server Generator</h2>
         </div>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Generate ready-to-use Model Context Protocol (MCP) servers for Claude

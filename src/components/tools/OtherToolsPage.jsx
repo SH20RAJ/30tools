@@ -86,9 +86,9 @@ export default function OtherToolsPage({ categories, otherTools }) {
               <Grid3X3 className="w-8 h-8 text-primary-foreground" />
             </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
             Discover Other Tools
-          </h1>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
             Explore our comprehensive collection of specialized online tools and
             utilities beyond the main categories. From advanced converters to

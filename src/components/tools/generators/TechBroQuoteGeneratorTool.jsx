@@ -260,9 +260,9 @@ const TechBroQuoteGeneratorTool = () => {
               <TrendingUpIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-background">
+              <h2 className="text-3xl font-bold bg-background">
                 Tech Bro Quote Generator
-              </h1>
+              </h2>
               <p className="text-muted-foreground">
                 Generate satirical startup quotes and tech bro buzzwords
               </p>

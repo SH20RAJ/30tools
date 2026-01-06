@@ -249,7 +249,7 @@ export default function CSSGradientTool() {
           <PaletteIcon className="h-6 w-6 text-primary" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold">CSS Gradient Generator</h1>
+          <h2 className="text-3xl font-bold">CSS Gradient Generator</h2>
           <p className="text-muted-foreground">
             Create beautiful CSS gradients with live preview and export options
           </p>
@@ -512,7 +512,7 @@ export default function CSSGradientTool() {
                 <h4 className="font-medium">HTML + CSS</h4>
                 <pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
                   <code>{`<div class="gradient-bg">
-  <h1>Beautiful Gradient Background</h1>
+  <h2>Beautiful Gradient Background</h2>
 </div>
 
 <style>

@@ -144,9 +144,9 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
           <Globe className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-foreground">
+        <h2 className="text-4xl font-bold text-foreground">
           {searchType === "bing" ? "Bing" : "Google"} Keyword Research Tool
-        </h1>
+        </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Research {searchType === "bing" ? "Bing" : "Google"} keywords and
           discover related terms with search volumes, difficulty scores, and

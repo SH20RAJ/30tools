@@ -202,7 +202,7 @@ export default function HashGeneratorTool() {
           <HashIcon className="h-6 w-6 text-primary" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold">Hash Generator</h1>
+          <h2 className="text-3xl font-bold">Hash Generator</h2>
           <p className="text-muted-foreground">
             Generate MD5, SHA-1, SHA-256, SHA-512, and SHA-3 hashes from text or
             files

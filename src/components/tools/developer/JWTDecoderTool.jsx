@@ -108,7 +108,7 @@ export default function JWTDecoder() {
               <Key className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">JWT Decoder</h1>
+              <h2 className="text-3xl font-bold">JWT Decoder</h2>
               <p className="text-muted-foreground">
                 Decode and analyze JSON Web Tokens
               </p>

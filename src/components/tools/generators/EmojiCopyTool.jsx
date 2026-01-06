@@ -1375,9 +1375,9 @@ function EmojiCopyTool() {
               <SmileIcon className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold bg-background">
+              <h2 className="text-3xl font-bold bg-background">
                 Emoji Copy Tool
-              </h1>
+              </h2>
               <p className="text-muted-foreground">
                 Find, copy, and paste emojis easily for your messages and
                 content

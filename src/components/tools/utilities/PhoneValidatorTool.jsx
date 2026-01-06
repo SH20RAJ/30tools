@@ -186,9 +186,9 @@ export default function PhoneValidatorTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl font-bold text-foreground mb-4">
             Phone Number Validator
-          </h1>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Validate phone numbers from any country. Check format, carrier
             information, and get detailed analysis.

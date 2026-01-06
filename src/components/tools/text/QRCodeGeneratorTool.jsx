@@ -302,7 +302,7 @@ END:VCARD`;
               <QrCodeIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">QR Code Generator</h1>
+              <h2 className="text-3xl font-bold">QR Code Generator</h2>
               <p className="text-muted-foreground">
                 Create custom QR codes for websites, WiFi, contacts, and more
               </p>

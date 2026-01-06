@@ -314,9 +314,9 @@ export default function LogoGeneratorTool() {
               <Palette className="w-8 h-8 text-white" />
             </div>
           </div>
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl font-bold text-foreground mb-4">
             Free Logo Generator
-          </h1>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Create professional logos instantly with our free logo generator.
             Choose from text-based designs, custom fonts, colors, and effects.

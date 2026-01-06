@@ -394,9 +394,9 @@ export default function AIImageGeneratorTool() {
                 <Sparkles className="h-6 w-6" />
               </div>
               <div className="space-y-2">
-                <h1 className="text-4xl font-bold tracking-tight">
+                <h2 className="text-4xl font-bold tracking-tight">
                   AI Image Generator
-                </h1>
+                </h2>
                 <p className="text-xl text-muted-foreground max-w-3xl">
                   Create stunning AI-generated images from text prompts
                   instantly. Transform your ideas into beautiful, unique artwork

@@ -225,7 +225,7 @@ export default function PdfSplitterTool() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free PDF Splitter Online</h1>
+        <h2 className="text-4xl font-bold mb-4">Free PDF Splitter Online</h2>
         <p className="text-xl text-muted-foreground mb-6">
           Split PDF files into separate documents by pages, ranges, or
           intervals. Extract specific pages or divide large PDFs into smaller

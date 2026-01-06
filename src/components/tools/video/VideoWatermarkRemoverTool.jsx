@@ -204,7 +204,7 @@ export default function VideoWatermarkRemoverTool() {
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center gap-2 mb-4">
           <Wand2 className="h-8 w-8 text-primary" />
-          <h1 className="text-3xl font-bold">Video Watermark Remover</h1>
+          <h2 className="text-3xl font-bold">Video Watermark Remover</h2>
         </div>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
           Remove watermarks from videos using advanced AI technology. Clean your

@@ -11,6 +11,18 @@ export const metadata = {
 
 const blogs = [
     {
+        slug: 'make-your-own-custom-terabox-telegram-bot',
+        title: 'How to Make Your Own Custom Terabox Telegram Bot (2025 Guide)',
+        description: 'Step-by-step tutorial to create a powerful Telegram bot that can download and stream Terabox files directly.',
+        date: '2025-01-20',
+    },
+    {
+        slug: 'make-your-own-terabox-video-player',
+        title: 'How to Make Your Own Terabox Video Player Website',
+        description: 'Create a custom video player website for Terabox links without ads or timeouts.',
+        date: '2025-01-19',
+    },
+    {
         slug: 'y2mate-youtube-to-mp3-converter',
         title: 'Y2Mate YouTube to MP3 Converter – Features & Top Alternative',
         description: 'A comprehensive review of Y2Mate and its best alternatives for converting YouTube videos to MP3.',

@@ -238,7 +238,7 @@ export default function SQLFormatter() {
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
-            <h1 className="text-4xl font-bold mb-4">SQL Formatter</h1>
+            <h2 className="text-4xl font-bold mb-4">SQL Formatter</h2>
             <p className="text-lg text-muted-foreground">
               Format and beautify SQL queries with proper indentation and syntax
               highlighting

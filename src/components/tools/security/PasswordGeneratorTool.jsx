@@ -224,7 +224,7 @@ export default function PasswordGeneratorTool() {
           <ShieldIcon className="h-6 w-6 text-primary" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold">Password Generator</h1>
+          <h2 className="text-3xl font-bold">Password Generator</h2>
           <p className="text-muted-foreground">
             Generate secure, random passwords with customizable options
           </p>

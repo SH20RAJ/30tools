@@ -180,7 +180,7 @@ export default function PdfCompressorTool() {
               <MinimizeIcon className="h-6 w-6 text-primary" />
             </div>
             <div>
-              <h1 className="text-3xl font-bold">PDF Compressor</h1>
+              <h2 className="text-3xl font-bold">PDF Compressor</h2>
               <p className="text-muted-foreground">
                 Reduce PDF file size while maintaining quality
               </p>

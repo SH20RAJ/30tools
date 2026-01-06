@@ -213,7 +213,7 @@ export default function PasswordCheckerTool() {
           <ShieldIcon className="h-6 w-6 text-primary" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold">Password Strength Checker</h1>
+          <h2 className="text-3xl font-bold">Password Strength Checker</h2>
           <p className="text-muted-foreground">
             Check how secure your passwords are and get improvement tips
           </p>

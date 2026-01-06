@@ -137,7 +137,7 @@ export default function WebsiteAnalyzerTool() {
           <BarChart3Icon className="h-6 w-6 text-primary" />
         </div>
         <div>
-          <h1 className="text-3xl font-bold">Website Performance Analyzer</h1>
+          <h2 className="text-3xl font-bold">Website Performance Analyzer</h2>
           <p className="text-muted-foreground">
             Comprehensive analysis of your website's performance, SEO, and
             accessibility

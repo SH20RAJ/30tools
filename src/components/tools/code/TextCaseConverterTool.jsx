@@ -339,7 +339,7 @@ export default function TextCaseConverterTool() {
   return (
     <div className="container mx-auto px-4 py-8 max-w-6xl">
       <div className="text-center mb-8">
-        <h1 className="text-4xl font-bold mb-4">Free Text Case Converter</h1>
+        <h2 className="text-4xl font-bold mb-4">Free Text Case Converter</h2>
         <p className="text-xl text-muted-foreground mb-6">
           Convert text to different cases instantly: lowercase, UPPERCASE, Title
           Case, camelCase, snake_case, kebab-case, and more. Perfect for

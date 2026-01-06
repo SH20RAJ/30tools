@@ -208,9 +208,9 @@ export default function BulkKeywordRankChecker() {
         <div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
           <Search className="h-8 w-8 text-primary" />
         </div>
-        <h1 className="text-4xl font-bold text-foreground">
+        <h2 className="text-4xl font-bold text-foreground">
           Free Bulk Keyword Rank Checker
-        </h1>
+        </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Check Google rankings for multiple keywords at once. Track keyword
           positions for any domain across different locations and devices.

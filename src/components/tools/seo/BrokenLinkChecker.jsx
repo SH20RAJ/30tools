@@ -240,9 +240,9 @@ export default function BrokenLinkChecker() {
         <div className="inline-flex items-center justify-center w-16 h-16 bg-destructive/20 rounded-full mb-4">
           <Link className="h-8 w-8 text-destructive" />
         </div>
-        <h1 className="text-4xl font-bold text-foreground">
+        <h2 className="text-4xl font-bold text-foreground">
           Broken Link Checker
-        </h1>
+        </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
           Find broken links on any website. Check for 404 errors, redirect
           chains, and link health across entire websites or specific pages.

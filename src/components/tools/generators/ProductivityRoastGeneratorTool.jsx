@@ -245,9 +245,9 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
               <Flame className="h-8 w-8 text-white" />
             </div>
             <div>
-              <h1 className="text-4xl font-bold bg-background">
+              <h2 className="text-4xl font-bold bg-background">
                 Productivity Roast Generator
-              </h1>
+              </h2>
               <p className="text-muted-foreground mt-2">
                 Get the honest feedback about your work habits you need to hear!
                 🔥

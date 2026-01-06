@@ -81,9 +81,9 @@ export default function InternetSpeedTestTool() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl font-bold text-foreground mb-4">
             Internet Speed Test
-          </h1>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Test your internet connection speed. Check download speed, upload
             speed, and ping latency.

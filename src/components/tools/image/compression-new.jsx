@@ -209,7 +209,7 @@ export default function ImageCompressionTool() {
       <header className="border-b">
         <div className="container mx-auto px-4 py-6">
           <div className="text-center">
-            <h1 className="text-3xl font-bold mb-2">Free Image Compressor</h1>
+            <h2 className="text-3xl font-bold mb-2">Free Image Compressor</h2>
             <p className="text-muted-foreground">
               Compress images without losing quality. Support for JPEG, PNG,
               WebP formats.

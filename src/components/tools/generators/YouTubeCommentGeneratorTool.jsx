@@ -273,9 +273,9 @@ Make it feel genuine but entertaining!`;
             <Play className="w-4 h-4" />
             Viral Comment Generator
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold bg-muted/20 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold bg-muted/20 bg-clip-text text-transparent">
             YouTube Comment Generator
-          </h1>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Create dramatic, funny, and viral YouTube comments that capture the
             essence of internet culture!

@@ -105,7 +105,7 @@ export default function QrGeneratorTool() {
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center gap-2 mb-4">
           <QrCode className="h-8 w-8 text-primary" />
-          <h1 className="text-3xl font-bold">QR Code Generator</h1>
+          <h2 className="text-3xl font-bold">QR Code Generator</h2>
         </div>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Generate high-quality QR codes instantly for URLs, text, contact

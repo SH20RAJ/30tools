@@ -237,9 +237,9 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
             <Sparkles className="w-4 h-4" />
             AI-Powered Persona Generator
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold bg-muted/20 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-6xl font-bold bg-muted/20 bg-clip-text text-transparent">
             ChatGPT Persona Generator
-          </h1>
+          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Create unique, quirky, and engaging ChatGPT personas that make your
             AI conversations more fun and memorable!
