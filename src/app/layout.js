@@ -336,6 +336,8 @@ export default async function RootLayout({ children }) {
               height="20"
             />
           </a>
+          {/* Ezoic Accreditation Badge */}
+          <div id="ezoic-accreditation-container" className="flex justify-center py-4"></div>
         </ThemeProvider>
 
         <script
