@@ -52,7 +52,7 @@ export default function BlogPost() {
                 </p>
                 <ol>
                     <li>Log in to Terabox.com on your desktop browser.</li>
-                    <li>Open Developer Tools (F12) > Application > Cookies.</li>
+                    <li>Open Developer Tools (F12) &gt; Application &gt; Cookies.</li>
                     <li>Find the cookie named <code>ndus</code> and copy its value.</li>
                 </ol>
 
