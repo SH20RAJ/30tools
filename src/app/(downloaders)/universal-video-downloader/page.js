@@ -38,7 +38,9 @@ const researchedKeywords = [
   "descargar videos youtube", "save from net", "tiktok video downloader", "download youtube videos",
   "download video youtube", "savefrom", "savefrom.net", "download youtube", "facebook video downloader",
   "descargar videos de youtube", "instagram video downloader", "youtube download", "downloader",
-  "youtube video downloader", "youtube downloader", "youtube"
+  "youtube video downloader", "youtube downloader", "youtube",
+  "m3u8 downloader", "stream video downloader", "blob video downloader", "save video from any site",
+  "extract audio from video online", "mp4 converter online", "webm downloader", "mkv video downloader"
 ];
 
 export const metadata = {
@@ -286,6 +288,37 @@ export default function UniversalVideoDownloaderPage() {
                 Use our <strong>video downloader for pc</strong> or on any mobile browser. 30Tools works everywhere without
                 needing to search for <strong>freemake video downloader</strong> keys.
               </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Format Support Deep Dive */}
+        <section className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 mb-20">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold">Universal Format Support</h2>
+            <p className="text-muted-foreground">We don't just download MP4s. We handle complex streaming formats too.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-background p-6 rounded-xl shadow-sm border text-center">
+              <h3 className="font-bold mb-2">🎥 MP4 & WebM</h3>
+              <p className="text-xs text-muted-foreground">Standard high-compatibility video formats for all devices.</p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm border text-center">
+              <h3 className="font-bold mb-2">📡 M3U8 Streams</h3>
+              <p className="text-xs text-muted-foreground">Download live stream segments and merge them into a single file.</p>
+            </div>
+            <div className="bg-background p-6 rounded-xl shadow-sm border text-center">
+              <h3 className="font-bold mb-2">🎵 MP3 Audio</h3>
+              <p className="text-xs text-muted-foreground">Extract just the sound track from any video url.</p>
+            </div>
+          </div>
+          <div className="mt-8 text-center text-sm">
+            <p className="mb-2 font-medium">Looking for specific platform optimizers?</p>
+            <div className="flex flex-wrap justify-center gap-4 text-blue-600 dark:text-blue-400">
+              <a href="/instagram-reel-downloader" className="hover:underline">Reels</a>
+              <a href="/snapchat-video-downloader" className="hover:underline">Snapchat</a>
+              <a href="/pinterest-video-downloader" className="hover:underline">Pinterest</a>
+              <a href="/reddit-downloader" className="hover:underline">Reddit</a>
             </div>
           </div>
         </section>

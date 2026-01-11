@@ -15,7 +15,8 @@ import {
   Smartphone,
   Video,
   Zap,
-  UserCheck
+  UserCheck,
+  Image as ImageIcon
 } from "lucide-react";
 import { AuthorBio } from "@/components/seo";
 import Link from "next/link";
@@ -30,7 +31,8 @@ export const metadata = {
     "تحميل فيديوهات تيك توك", "بتنزيل فيديو تيك توك", "baixar videos tiktok", "descargar de tiktok",
     "télécharger vidéo tiktok", "tiktok视频下载", "tiktok converter", "douyin downloader",
     "tik tok download video without watermark", "tiktok link download", "save tiktok video no watermark",
-    "tiktok downloader sss", "snaptik tiktok downloader", "tiktok video downloader free"
+    "tiktok downloader sss", "snaptik tiktok downloader", "tiktok video downloader free",
+    "tiktok sound downloader", "tiktok mp3 download", "extract audio from tiktok", "tiktok slideshow downloader", "save tiktok photos"
   ].join(", "),
   openGraph: {
     title: "TikTok Downloader (2026) - No Watermark HD Video Download",
@@ -295,6 +297,29 @@ export default function TikTokDownloaderPage() {
               <h3 className="font-bold text-foreground mb-4">International Support - تحميل فيديو تيك توك</h3>
               <p className="text-xs italic leading-relaxed">
                 Our global users search for us as: <strong>descargar videos de tiktok sin marca de agua</strong> (Spanish), <strong>baixar video tiktok sem marca d'agua</strong> (Portuguese), <strong>télécharger vidéo tiktok sans filigrane</strong> (French), <strong>tiktok视频下载</strong> (Chinese), and <strong>تحميل فيديوهات تيك توك</strong> (Arabic). We support <strong>tik tok download video without watermark</strong> queries in all languages to help you <strong>save tiktok video</strong> content anywhere in the world.
+              </p>
+            </div>
+          </section>
+
+          {/* Sound & Slideshows Section */}
+          <section className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-cyan-50 dark:bg-cyan-950/20 p-8 rounded-3xl border border-cyan-100 dark:border-cyan-900/50">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <Music className="w-5 h-5 text-cyan-600" /> MP3 Sound Downloader
+              </h3>
+              <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                Love that trending song/sound? Our tool automatically extracts the audio from any TikTok video.
+                Simply paste the link and choose the "Download MP3" option to save the <strong>tiktok sound</strong>.
+              </p>
+            </div>
+            <div className="bg-pink-50 dark:bg-pink-950/20 p-8 rounded-3xl border border-pink-100 dark:border-pink-900/50">
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <ImageIcon className="w-5 h-5 text-pink-600" /> Slideshow Saver
+              </h3>
+              <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                TikTok photo slideshows are popular. We detect them!
+                Our tool lets you save every single photo from a <strong>tiktok slideshow</strong> without a watermark,
+                just like our <a href="/instagram-downloader" className="underline font-medium hover:text-pink-600">Instagram Photo Downloader</a>.
               </p>
             </div>
           </section>

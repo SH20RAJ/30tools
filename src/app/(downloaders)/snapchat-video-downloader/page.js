@@ -10,7 +10,11 @@ export const metadata = {
     "save snapchat video",
     "snapchat spotlight downloader",
     "anonymous snapchat viewer",
-    "download snaps"
+    "download snaps",
+    "save snapchat memories",
+    "snapchat video saver app",
+    "download public snaps",
+    "save snapchat spotlight video"
   ].join(", "),
   openGraph: {
     title: "Snapchat Video Downloader - Save Stories & Spotlight",
@@ -29,10 +33,42 @@ const AdUnit = () => (
   </div>
 );
 
+const jsonLdSchemas = {
+  webApp: {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Snapchat Video Downloader",
+    "alternateName": ["Snap Saver", "Spotlight Downloader"],
+    "description": "Free online tool to download Snapchat videos, Stories, and Spotlight content anonymously.",
+    "url": "https://30tools.com/snapchat-video-downloader",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "Download Snapchat Stories",
+      "Save Spotlight Videos",
+      "Anonymous Viewing",
+      "No Watermark"
+    ]
+  },
+  howTo: {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download Snapchat Videos",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Copy Link", "text": "Open Snapchat, tap share on the Story/Spotlight, and copy link." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Paste the link into the Snap Saver tool." },
+      { "@type": "HowToStep", "position": 3, "name": "Download", "text": "Save the snap locally." }
+    ]
+  }
+};
+
 export default function SnapchatVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -62,6 +98,32 @@ export default function SnapchatVideoDownloaderPage() {
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <SnapchatDownloader />
           </div>
+
+          {/* Anonymous & Spotlight Deep Dive */}
+          <section className="bg-yellow-50 dark:bg-yellow-950/20 p-8 rounded-2xl border border-yellow-100 dark:border-yellow-900/50 mb-16">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-4 text-yellow-700 dark:text-yellow-400">Spotlight & Anonymous Saving</h2>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Looking for a <strong>snapchat spotlight downloader</strong>? We support public Spotlight videos and Stories.
+                  Save content as an <strong>anonymous snapchat viewer</strong> without notifying the user.
+                  Great for archiving memories.
+                </p>
+                <div className="flex gap-4 text-sm font-medium">
+                  <a href="/instagram-story-downloader" className="hover:text-yellow-600 transition-colors">
+                    Instagram Story Saver
+                  </a>
+                  <span>•</span>
+                  <a href="/tiktok-downloader" className="hover:text-yellow-600 transition-colors">
+                    TikTok Saver
+                  </a>
+                </div>
+              </div>
+              <div className="shrink-0 bg-background p-4 rounded-xl shadow-sm border">
+                <span className="text-4xl">👻</span>
+              </div>
+            </div>
+          </section>
 
           <AdUnit />
 

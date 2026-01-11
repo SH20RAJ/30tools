@@ -1,22 +1,67 @@
 import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader";
 
 export const metadata = {
-  title: "Save X Videos - Twitter Video Downloader Online (2026) | 30Tools",
-  description:
-    "Best free online twitter video downloader to save X videos and GIFs in HD quality. fast, secure, and no registration required (Updated 2026).",
+  title: "Twitter Video Downloader (2026) - Save X Videos & GIFs | 30Tools",
+  description: "Best free online twitter video downloader to save X videos, GIFs, and media in HD 1080p. Fast, secure, and works on iPhone/Android. (Updated 2026)",
   keywords: [
     "save x videos", "twitter video downloader 2026", "download twitter videos online", "x video saver",
-    "save twitter clips hd", "twitter to mp4 free", "rip x video", "save tweet media"
+    "save twitter clips hd", "twitter to mp4 free", "rip x video", "save tweet media",
+    "download twitter gif", "save x gif", "twitter video downloader iphone", "tweet media saver",
+    "x.com video downloader", "twitter news video download", "twitter meme downloader"
   ].join(", "),
   openGraph: {
-    title: "Twitter Video Saver - Download X Videos",
-    description: "⚡ Save Twitter (X) videos instantly!",
+    title: "Twitter Video Downloader - Save X Videos & GIFs Free",
+    description: "⚡ Save Twitter (X) videos and GIFs instantly in HD quality. No registration needed!",
     url: "https://30tools.com/twitter-video-downloader",
-    siteName: "30tools",
     type: "website",
+    images: [{
+      url: "/og-images/twitter-downloader.jpg",
+      width: 1200,
+      height: 630,
+      alt: "Twitter Video Downloader 2026"
+    }],
+    siteName: "30tools"
   },
-  alternates: { canonical: "https://30tools.com/twitter-downloader" },
+  twitter: {
+    card: "summary_large_image",
+    title: "Save X Videos - Twitter Downloader",
+    description: "Download videos and GIFs from Twitter (X) in seconds.",
+    images: ["/og-images/twitter-downloader.jpg"],
+    creator: "@30tools"
+  },
+  alternates: { canonical: "https://30tools.com/twitter-video-downloader" },
   robots: { index: true, follow: true }
+};
+
+const jsonLdSchemas = {
+  webApp: {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Twitter Video Downloader",
+    "alternateName": ["X Video Downloader", "Twitter GIF Saver", "Tweet Media Downloader"],
+    "description": "Free online tool to download videos and GIFs from Twitter (X) in HD quality.",
+    "url": "https://30tools.com/twitter-video-downloader",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "Download Twitter videos in HD",
+      "Save Twitter GIFs as MP4",
+      "Works on X.com links",
+      "No registration required",
+      "Mobile friendly (iOS/Android)"
+    ]
+  },
+  howTo: {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download Twitter (X) Videos",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Copy Link", "text": "Click the Share icon on the tweet and select 'Copy Link'." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Paste the link into the input box above." },
+      { "@type": "HowToStep", "position": 3, "name": "Download", "text": "Click Download and choose your preferred video quality." }
+    ]
+  }
 };
 
 const AdUnit = () => (
@@ -29,6 +74,8 @@ export default function TwitterVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -58,6 +105,48 @@ export default function TwitterVideoDownloaderPage() {
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <TwitterDownloader />
           </div>
+
+          {/* Deep Dive: GIFs & News */}
+          <section className="grid md:grid-cols-2 gap-8 mb-20">
+            <div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
+              <h3 className="text-xl font-bold mb-4">Save Twitter GIFs</h3>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                Twitter converts GIFs to video format. Our tool helps you <strong>download twitter gif</strong> content as MP4 files,
+                compatible with WhatsApp, Telegram, and Discord. Perfect for meme collectors!
+              </p>
+              <span className="text-xs bg-slate-200 dark:bg-slate-800 px-2 py-1 rounded">GIF Support</span>
+            </div>
+            <div className="bg-blue-50 dark:bg-blue-900/20 p-8 rounded-2xl border border-blue-100 dark:border-blue-900/50">
+              <h3 className="text-xl font-bold mb-4">Journalism & News Clips</h3>
+              <p className="text-muted-foreground mb-4 leading-relaxed">
+                X (Twitter) is the home of breaking news. Journalists and researchers use our <strong>x video downloader</strong> to archive
+                important footage for offline reference. Fast, reliable, and high definition.
+              </p>
+              <span className="text-xs bg-blue-200 dark:bg-blue-800 px-2 py-1 rounded">HD Archive</span>
+            </div>
+          </section>
+
+          {/* How To Section */}
+          <section className="mb-20 text-center">
+            <h2 className="text-3xl font-bold mb-12">How to Save X Videos?</h2>
+            <div className="flex flex-wrap justify-center gap-8">
+              <div className="w-full md:w-64 p-6 bg-card rounded-xl border">
+                <div className="text-4xl mb-4">🔗</div>
+                <h3 className="font-bold mb-2">1. Copy Link</h3>
+                <p className="text-sm text-muted-foreground">Tap "Share" on the tweet and copy the link.</p>
+              </div>
+              <div className="w-full md:w-64 p-6 bg-card rounded-xl border">
+                <div className="text-4xl mb-4">📋</div>
+                <h3 className="font-bold mb-2">2. Paste URL</h3>
+                <p className="text-sm text-muted-foreground">Paste it in the box above.</p>
+              </div>
+              <div className="w-full md:w-64 p-6 bg-card rounded-xl border">
+                <div className="text-4xl mb-4">⬇️</div>
+                <h3 className="font-bold mb-2">3. Download</h3>
+                <p className="text-sm text-muted-foreground">Save as MP4 in HD quality.</p>
+              </div>
+            </div>
+          </section>
 
           <AdUnit />
 

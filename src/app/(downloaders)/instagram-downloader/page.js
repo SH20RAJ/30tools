@@ -25,7 +25,9 @@ export const metadata = {
     "instagram downloader 2026", "instagram login", "ig login", "انستا", "instagram.com login",
     "instagram entrar", "instagram login account", "ig downloader free", "save instagram video",
     "instagram to mp4", "instagram story viewer", "no watermark", "anonymous story viewer",
-    "instagram app download", "insta login", "isnta", "ins", "inst"
+    "instagram app download", "insta login", "isnta", "ins", "inst",
+    "instagram reels audio download", "download private instagram photos", "ig story saver anonymous",
+    "save instagram highlights", "instagram profile picture downloader full size", "download instagram carousel"
   ].join(", "),
   openGraph: {
     title: "Instagram Downloader (2026) - Save Reels & Stories Free",
@@ -259,6 +261,47 @@ export default function InstagramDownloaderPage() {
                   <p className="text-muted-foreground">{step.text}</p>
                 </div>
               ))}
+            </div>
+          </section>
+
+          {/* Anonymous Viewing Section */}
+          <section className="bg-gradient-to-br from-pink-50 to-purple-50 dark:from-pink-950/20 dark:to-purple-950/20 rounded-3xl p-8 md:p-12 border border-pink-100 dark:border-pink-900/50">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Anonymous Story Viewer & Saver
+              </h2>
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold">Watch Without Traces</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Want to view an <strong>instagram story viewer</strong> without appearing in their pending list?
+                    Our tool acts as a shield. Just paste the profile URL or username, and browse their stories <strong>anonymous</strong>ly.
+                  </p>
+                  <div className="flex gap-2">
+                    <span className="bg-background/80 px-3 py-1 rounded-full text-xs font-bold border">👻 100% Anonymous</span>
+                    <span className="bg-background/80 px-3 py-1 rounded-full text-xs font-bold border">🚫 No Login</span>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <h3 className="text-xl font-bold">Cross-Platform Saving</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Managing social media for a brand? Save high-quality assets from Instagram to repost elsewhere.
+                    We also support:
+                  </p>
+                  <ul className="space-y-2">
+                    <li>
+                      <a href="/facebook-video-downloader" className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                        📘 Facebook Video Downloader
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/tiktok-downloader" className="flex items-center gap-2 text-pink-600 dark:text-pink-400 font-medium hover:underline">
+                        🎵 TikTok No Watermark
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </section>
 

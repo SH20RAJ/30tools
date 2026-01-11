@@ -12,7 +12,10 @@ export const metadata = {
     "pinterest saver online",
     "pinterest to mp4",
     "updated 2026",
-    "pinterest media downloader"
+    "pinterest media downloader",
+    "save pinterest ideas",
+    "pinterest photo saver",
+    "download pinterest story"
   ].join(", "),
   openGraph: {
     title: "Pinterest Video Downloader (2026) - Save Videos & GIFs",
@@ -44,10 +47,42 @@ const AdUnit = () => (
   </div>
 );
 
+const jsonLdSchemas = {
+  webApp: {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Pinterest Video Downloader",
+    "alternateName": ["Pin Saver", "Pinterest Image Downloader"],
+    "description": "Free online tool to download videos, GIFs and Images from Pinterest in HD.",
+    "url": "https://30tools.com/pinterest-video-downloader",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "featureList": [
+      "Download Pinterest Videos",
+      "Save Pinterest GIFs",
+      "Download HD Images",
+      "No registration required"
+    ]
+  },
+  howTo: {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download from Pinterest",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Copy Link", "text": "Open the Pin and copy its link." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Paste the link into the 30Tools Pinterest Downloader." },
+      { "@type": "HowToStep", "position": 3, "name": "Download", "text": "Choose to save the Video, GIF, or Image." }
+    ]
+  }
+};
+
 export default function PinterestVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -77,6 +112,32 @@ export default function PinterestVideoDownloaderPage() {
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <PinterestDownloader />
           </div>
+
+          {/* Creative Assets Deep Dive */}
+          <section className="bg-red-50 dark:bg-red-950/20 p-8 rounded-2xl border border-red-100 dark:border-red-900/50 mb-16">
+            <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-8 items-center">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-4 text-red-700 dark:text-red-400">Save Inspiration High-Res</h2>
+                <p className="text-muted-foreground mb-4 leading-relaxed">
+                  Pinterest is the home of aesthetic videos and mood boards. Our tool ensures you get the
+                  <strong>pinterest image downloader hd</strong> experience. No more pixelated screenshots.
+                  Perfect for designers and content creators.
+                </p>
+                <div className="flex gap-4 text-sm font-medium">
+                  <a href="/instagram-downloader" className="hover:text-red-600 transition-colors">
+                    Need Instagram Inspo?
+                  </a>
+                  <span>•</span>
+                  <a href="/twitter-video-downloader" className="hover:text-red-600 transition-colors">
+                    Save Twitter Art
+                  </a>
+                </div>
+              </div>
+              <div className="shrink-0 bg-background p-4 rounded-xl shadow-sm border">
+                <span className="text-4xl">🎨</span>
+              </div>
+            </div>
+          </section>
 
           <AdUnit />
 
