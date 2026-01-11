@@ -259,8 +259,11 @@ export default function PdfUnlockerPage() {
               <p className="flex items-center gap-3 font-semibold">🔑 <strong>Forgot PDF Password?</strong></p>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 If you have a <strong>password unlocker</strong> requirement for your old documents, our
-                <strong>pdf unlocker online</strong> system can help you recover access to <strong>unprotected</strong>
-                versions of your files instantly.
+                <strong>pdf unlocker online</strong> system can help you recover access. Once unlocked, you can use our{" "}
+                <a href="/pdf-editor" className="text-primary hover:underline font-medium">
+                  PDF Editor
+                </a>{" "}
+                to modify content that was previously restricted.
               </p>
             </div>
             <div className="space-y-4">

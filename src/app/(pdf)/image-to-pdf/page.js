@@ -7,6 +7,7 @@ import {
     UserComments,
     QuickActions,
 } from "@/components/seo";
+import { Camera, FileText, FolderArchive, Share2 } from "lucide-react";
 import {
     GeneratorToolFeatures,
     GeneratorToolExamples,
@@ -18,7 +19,7 @@ export const metadata = {
     description:
         "Best free online image to pdf converter. combine multiple JPG, PNG, BMP, and GIF images into a professional PDF document instantly and safely.",
     keywords:
-        "image to pdf 2026, jpg to pdf, png to pdf, convert image to pdf, combine images to pdf, free image to pdf, online pdf converter, picture to pdf, best image to pdf",
+        "image to pdf 2026, jpg to pdf, png to pdf, convert image to pdf, combine images to pdf, free image to pdf, online pdf converter, picture to pdf, best image to pdf, convert jpg to pdf online free, turn photos into pdf, make pdf from images, jpg to pdf converter free no watermark, create pdf from pictures, photo to pdf converter",
     alternates: {
         canonical: "https://30tools.com/image-to-pdf",
     },
@@ -170,6 +171,71 @@ export default function ImageToPDFPage() {
                     examples={examples}
                     title="Why Convert Image to PDF?"
                 />
+
+                {/* Professional Use Cases Section (SEO & Internal Linking) */}
+                <section className="mb-12 bg-gradient-to-br from-indigo-50 to-transparent dark:from-indigo-950/20 p-8 md:p-12 rounded-3xl border border-indigo-100 dark:border-indigo-900/50">
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl font-bold mb-8 text-center">
+                            Professional <span className="text-primary">Use Cases</span>
+                        </h2>
+                        <div className="grid md:grid-cols-2 gap-8 items-center">
+                            <div className="space-y-6">
+                                <div className="flex gap-4 items-start">
+                                    <div className="p-3 bg-background rounded-xl shadow-sm">
+                                        <Camera className="w-6 h-6 text-indigo-600" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-lg">Digital Portfolios</h3>
+                                        <p className="text-sm text-muted-foreground">
+                                            Photographers and designers, looking for <strong>how to make a pdf portfolio</strong>?
+                                            Combine your best shots into a single file. Afterward, use our{" "}
+                                            <a href="/pdf-compressor" className="text-primary hover:underline font-medium">
+                                                PDF Compressor
+                                            </a>{" "}
+                                            to ensure it's small enough to email to clients without losing quality.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-4 items-start">
+                                    <div className="p-3 bg-background rounded-xl shadow-sm">
+                                        <FileText className="w-6 h-6 text-rose-600" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-lg">Expense Management</h3>
+                                        <p className="text-sm text-muted-foreground">
+                                            Turn chaos into order by converting receipt photos to PDF.
+                                            Need to submit a monthly report? Use our{" "}
+                                            <a href="/pdf-merger" className="text-primary hover:underline font-medium">
+                                                PDF Merger
+                                            </a>{" "}
+                                            to join all your daily receipt PDFs into one comprehensive document for reimbursement.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="bg-background p-6 rounded-2xl shadow-sm border border-border/50">
+                                <h4 className="font-bold mb-4 border-b border-border/50 pb-2">Why Go Digital?</h4>
+                                <div className="space-y-4">
+                                    <div className="flex items-center gap-3">
+                                        <FolderArchive className="w-5 h-5 text-amber-500" />
+                                        <div className="text-sm">
+                                            <p className="font-bold">Archival Safe</p>
+                                            <p className="text-xs text-muted-foreground">PDFs don't degrade like physical thermal receipts.</p>
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <Share2 className="w-5 h-5 text-blue-500" />
+                                        <div className="text-sm">
+                                            <p className="font-bold">Easy Sharing</p>
+                                            <p className="text-xs text-muted-foreground">Share an entire album as one link or file.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
                 {/* User Reviews */}
                 <div className="mb-12">

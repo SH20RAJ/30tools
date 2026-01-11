@@ -182,7 +182,11 @@ export default function PdfCompressorPage() {
               </p>
               <p>
                 As an <strong>adobe acrobat compress pdf</strong> alternative, 30Tools provides a
-                <strong>free compress pdf online</strong> experience. Scale your documents with our
+                <strong>free compress pdf online</strong> experience. If your file is still too large after compression, try our{" "}
+                <a href="/pdf-splitter" className="text-primary hover:underline font-medium">
+                  PDF Splitter
+                </a>{" "}
+                to break it into smaller chunks. Scale your documents with our
                 <strong>pdf size reducer free</strong> tool and enjoy <strong>extreme compress pdf</strong> capabilities.
               </p>
             </div>

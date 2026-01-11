@@ -207,9 +207,13 @@ export default function PDFMergerPage() {
                     <ShieldCheck className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg">Insurance Claims</h3>
+                    <h3 className="font-bold text-lg">Secure & Protect</h3>
                     <p className="text-sm text-muted-foreground">
-                      Accelerate <strong>insurance claim processing</strong>. Combine photos, reports, and policy docs to ensure faster payouts and better <strong>risk management</strong>.
+                      After you <strong>combine pdf documents</strong> containing sensitive data like insurance claims or bank statements, use our{" "}
+                      <a href="/pdf-protect" className="text-primary hover:underline font-medium">
+                        PDF Protect Tool
+                      </a>{" "}
+                      to encrypt the final merged file with a password for <strong>bank-grade security</strong>.
                     </p>
                   </div>
                 </div>

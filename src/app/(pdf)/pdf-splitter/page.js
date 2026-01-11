@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Best free online pdf splitter to extract pages from PDF or divide large files into multiple documents. split pdf by range or extract individual pages safely.",
   keywords:
-    "pdf splitter 2026, split pdf, extract pdf pages, separate pdf, divide pdf, pdf cutter, split pdf online free, pdf page extractor, free pdf tools, smallpdf split, ilovepdf split",
+    "pdf splitter 2026, split pdf, extract pdf pages, separate pdf, divide pdf, pdf cutter, split pdf online free, pdf page extractor, free pdf tools, cut pdf into pages, break pdf apart, separate pdf files, extract multiple pages from pdf, split pdf by size, divide large pdf",
   alternates: {
     canonical: "https://30tools.com/pdf-splitter",
   },
@@ -170,6 +170,58 @@ export default function PdfSplitterPage() {
           examples={examples}
           title="Ways to Split PDFs"
         />
+
+        {/* Segmented Distribution Section (SEO & Internal Linking) */}
+        <section className="mb-12 bg-gradient-to-br from-orange-50 to-transparent dark:from-orange-950/20 p-8 md:p-12 rounded-3xl border border-orange-100 dark:border-orange-900/50">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-8 text-center">
+              Segmented <span className="text-primary">Distribution</span>
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Publishing & eBooks</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Authors can tease their new book by extracting just the first chapter as a free sample.
+                    Want to combine chapters from different drafts? Use our{" "}
+                    <a href="/pdf-merger" className="text-primary hover:underline font-medium">
+                      PDF Merger
+                    </a>{" "}
+                    after extracting the best parts.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-bold text-lg mb-2">Invoice Processing</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Received a single PDF with 50 invoices? Split them into individual files for easier accounting.
+                    If the original file is too heavy to email, try our{" "}
+                    <a href="/pdf-compressor" className="text-primary hover:underline font-medium">
+                      PDF Compressor
+                    </a>{" "}
+                    before splitting.
+                  </p>
+                </div>
+              </div>
+              <div className="bg-card p-6 rounded-2xl shadow-sm border border-border/50">
+                <h4 className="font-bold mb-4 border-b border-border/50 pb-2">Splitting Modes</h4>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex justify-between">
+                    <span>Extract Pages</span>
+                    <span className="font-bold text-orange-600">Specific Selection</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Split by Range</span>
+                    <span className="font-bold text-orange-600">e.g., 1-5, 6-10</span>
+                  </li>
+                  <li className="flex justify-between">
+                    <span>Burst Extraction</span>
+                    <span className="font-bold text-orange-600">All Pages</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* User Reviews */}
         <div className="mb-12">

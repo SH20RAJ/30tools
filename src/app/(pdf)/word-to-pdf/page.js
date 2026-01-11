@@ -18,9 +18,7 @@ export const metadata = {
   title: "Word to PDF Converter Online (2026) - DOC/DOCX to PDF | 30Tools",
   description: "Best free online word to pdf converter. transform Word documents (DOC, DOCX) to professional PDF files instantly. convert docx to pdf free online.",
   keywords: [
-    "word to pdf converter 2026", "convert docx to pdf free", "doc to pdf secure online",
-    "microsoft word to pdf", "save word as pdf online", "word document to pdf",
-    "free word to pdf", "convert word to pdf free", "best word to pdf"
+    "word to pdf converter 2026, convert docx to pdf free, doc to pdf secure online, microsoft word to pdf, save word as pdf online, word document to pdf, free word to pdf, convert word to pdf free, best word to pdf, word to pdf high quality, docx to pdf converter online, change word to pdf, word to pdf no watermark, convert doc to pdf free online",
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/word-to-pdf",
@@ -207,6 +205,11 @@ export default function WordToPDFPage() {
                 </h3>
                 <p className="text-sm text-muted-foreground">
                   PDF is the only format universally accepted for digital signatures in court. Ensure your <strong>business contracts</strong> are legally sound by sharing them in a locked format.
+                  Need to make last-minute changes before converting? Use our{" "}
+                  <a href="/pdf-editor" className="text-primary hover:underline font-medium">
+                    PDF Editor
+                  </a>{" "}
+                  for quick text adjustments.
                 </p>
               </div>
             </div>
