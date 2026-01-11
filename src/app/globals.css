@@ -295,3 +295,11 @@ body {
 .animate-in {
   animation: fadeIn 0.5s ease-out forwards;
 }
+
+/* Background Patterns */
+.bg-dot-pattern {
+  background-image: radial-gradient(var(--muted-foreground) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: center;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+}
