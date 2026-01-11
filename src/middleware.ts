@@ -35,15 +35,6 @@ try {
                 if (tool.route) {
                     validRoutes.add(tool.route);
                 }
-
-                if (tool.extraSlugs && tool.route) {
-                    tool.extraSlugs.forEach((slug: string) => {
-                        const cleanSlug = slug.startsWith("/") ? slug : `/${slug}`;
-                        slugMap.set(cleanSlug, tool.route);
-                        // Extra slugs are also valid entry points (they get rewritten, but valid)
-                        validRoutes.add(cleanSlug);
-                    });
-                }
             });
         }
     });
@@ -75,22 +66,7 @@ function isValidRoute(pathname: string): boolean {
 export default function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
 
-    // 1. Check for "extra slugs" (legacy custom routes) -> Rewrite
-    if (slugMap.has(pathname)) {
-        const canonicalRoute = slugMap.get(pathname);
-
-        // Construct new URL with canonical route
-        const newUrl = request.nextUrl.clone();
-        newUrl.pathname = canonicalRoute!;
-
-        // Pass original slug as query param
-        const originalSlug = pathname.startsWith("/") ? pathname.slice(1) : pathname;
-        newUrl.searchParams.set("slug", originalSlug);
-
-        return NextResponse.rewrite(newUrl);
-    }
-
-    // 2. Check if route is valid in this application
+    // 1. Check if route is valid in this application
     if (isValidRoute(pathname)) {
         return NextResponse.next();
     }
