@@ -291,9 +291,9 @@ export default function YouTubeShortsDownloaderPage() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { href: "/youtube-downloader", title: "YouTube Downloader", desc: "4K Video & MP3" },
-              { href: "/youtube-thumbnail-downloader", title: "HD Thumbnail Grabber", desc: "Get Video Images" },
-              { href: "/youtube-transcript-downloader", title: "Transcript Bot", desc: "Extract captions" },
-              { href: "/youtube-summary-generator", title: "AI Summarizer", desc: "Quick summaries" }
+              { href: "/youtube-script-generator", title: "Script Generator", desc: "AI Content Ideas" },
+              { href: "/youtube-video-summarizer", title: "Video Summarizer", desc: "AI Summaries" },
+              { href: "/tiktok-downloader", title: "TikTok Downloader", desc: "No Watermark" }
             ].map((t, i) => (
               <a key={i} href={t.href} className="p-5 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-lg transition-all text-center group">
                 <h3 className="font-bold mb-1 group-hover:text-primary transition-colors text-sm md:text-base">{t.title}</h3>

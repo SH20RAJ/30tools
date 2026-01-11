@@ -154,10 +154,10 @@ export default function YouTubeScriptGeneratorPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related YouTube Tools</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { href: "/youtube-idea-generator", icon: "💡", title: "Idea Generator", desc: "Get video ideas" },
-                { href: "/youtube-tag-generator", icon: "🏷️", title: "Tag Generator", desc: "SEO-optimized tags" },
-                { href: "/youtube-thumbnail-downloader", icon: "🖼️", title: "Thumbnail Downloader", desc: "Download HD thumbnails" },
-                { href: "/youtube-timestamp-generator", icon: "⏱️", title: "Timestamp Generator", desc: "Generate timestamps" }
+                { href: "/youtube-downloader", icon: "📹", title: "Video Downloader", desc: "Save videos" },
+                { href: "/youtube-shorts-downloader", icon: "📱", title: "Shorts Downloader", desc: "Save Shorts" },
+                { href: "/youtube-video-summarizer", icon: "📝", title: "Video Summarizer", desc: "Summarize videos" },
+                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Save TikToks" }
               ].map((tool, i) => (
                 <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
                   <div className="flex items-center gap-3 mb-2">

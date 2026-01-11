@@ -460,7 +460,25 @@ export default function TeraboxDownloaderPage() {
                     </p>
                 </section>
 
-                {/* Related Tools / Keyword Cloud */}
+                {/* Related Tools Grid */}
+                <section className="mb-20 pt-10 border-t border-border/50">
+                    <h2 className="text-2xl font-bold text-center mb-8">More Video Tools</h2>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        {[
+                            { href: "/youtube-downloader", title: "YouTube Downloader", desc: "Save YouTube Videos" },
+                            { href: "/tiktok-downloader", title: "TikTok Downloader", desc: "No Watermark" },
+                            { href: "/instagram-downloader", title: "Instagram Downloader", desc: "Reels & Stories" },
+                            { href: "/facebook-video-downloader", title: "Facebook Downloader", desc: "HD Video Saver" }
+                        ].map((t, i) => (
+                            <Link key={i} href={t.href} className="group p-5 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-lg transition-all text-center block">
+                                <h3 className="font-bold mb-1 group-hover:text-primary transition-colors text-sm md:text-base">{t.title}</h3>
+                                <p className="text-[10px] md:text-xs text-muted-foreground">{t.desc}</p>
+                            </Link>
+                        ))}
+                    </div>
+                </section>
+
+                {/* Related Keyword Cloud */}
                 <div className="text-center py-10 border-t border-border/50">
                     <p className="text-sm font-bold text-muted-foreground mb-6 uppercase tracking-widest text-primary/80">Search & Explore Keywords</p>
                     <div className="flex flex-wrap justify-center gap-x-2 gap-y-1 max-w-4xl mx-auto px-4 opacity-50">

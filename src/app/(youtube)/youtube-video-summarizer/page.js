@@ -13,7 +13,13 @@ export const metadata = {
         "youtube summary tool",
         "youtube video to summary",
         "video summary generator",
-        "youtube video summarizer free"
+        "youtube video summarizer free",
+        "chatgpt for youtube",
+        "summarize video content",
+        "extract key points from youtube video",
+        "youtube transcript summary",
+        "tl;dw youtube",
+        "quick video summary"
     ].join(", "),
 
     openGraph: {
@@ -131,10 +137,10 @@ export default function YouTubeVideoSummarizerPage() {
                         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related YouTube Tools</h2>
                         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
                             {[
-                                { href: "/youtube-transcript-downloader", icon: "📝", title: "Transcript Downloader", desc: "Download transcripts" },
-                                { href: "/youtube-summary-generator", icon: "📋", title: "Summary Generator", desc: "Alternative summarizer" },
-                                { href: "/youtube-timestamp-generator", icon: "⏱️", title: "Timestamp Generator", desc: "Generate timestamps" },
-                                { href: "/youtube-downloader", icon: "📹", title: "YouTube Downloader", desc: "Download videos" }
+                                { href: "/youtube-downloader", icon: "📹", title: "Video Downloader", desc: "Save videos" },
+                                { href: "/youtube-shorts-downloader", icon: "📱", title: "Shorts Downloader", desc: "Save Shorts" },
+                                { href: "/youtube-script-generator", icon: "✍️", title: "Script Generator", desc: "Create scripts" },
+                                { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Save TikToks" }
                             ].map((tool, i) => (
                                 <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
                                     <div className="flex items-center gap-3 mb-2">
