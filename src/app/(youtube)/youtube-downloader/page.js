@@ -1,173 +1,46 @@
 import YouTubeDownloader from '@/components/tools/youtube/YouTubeDownloader';
 
 export const metadata = {
-  title: "YouTube Video Downloader - Download YouTube Videos Free Online HD MP4 MP3",
-  description: "Download YouTube videos in HD, 4K quality for free. Convert YouTube to MP4, MP3 with our fast, secure downloader. No software installation required.",
+  title: "YouTube Video Downloader - Download YouTube Videos Free Online HD MP4",
+  description: "Download YouTube videos in HD, 1080p, 4K quality for free. Fast online YouTube to MP4 & MP3 converter. No software needed. Works on mobile & PC.",
   keywords: [
-    // Primary high-volume keywords
     "youtube downloader",
     "download youtube video",
     "youtube to mp4",
-    "youtube to mp3",
     "youtube video downloader online",
     "free youtube downloader",
-    "youtube downloader online free",
-    "download youtube videos",
-    "youtube converter",
-    "youtube mp3 downloader",
-
-    // Long-tail keywords for better ranking
-    "download youtube video online free without software",
-    "youtube video downloader high quality 1080p 4k",
-    "convert youtube to mp3 320kbps high quality",
-    "youtube downloader no registration required",
-    "free youtube video downloader for pc mobile android ios",
-    "download youtube videos fast secure safe",
-    "youtube to mp4 converter online free unlimited",
-    "extract audio from youtube video mp3 converter",
-    "bulk youtube video downloader multiple videos",
-    "youtube downloader supports all formats resolutions",
-    "download private youtube videos with link url",
-    "youtube playlist downloader all videos at once",
-    "youtube shorts video downloader vertical format",
-    "download youtube thumbnail image along with video",
-    "best youtube downloader 2024 free online tool",
-    "youtube downloader without watermark logo",
-    "download youtube video original quality no compression",
-    "youtube music downloader mp3 high quality",
-    "youtube video downloader chrome firefox safari",
-    "download youtube live stream videos recordings",
-
-    // Additional keywords from research
-    "all youtube video downloader",
-    "best downloader for youtube videos",
-    "best youtube video downloader",
-    "best youtube video downloader for iphone",
-    "best youtube video downloader for android",
-    "best youtube video downloader for pc",
-    "best youtube video downloader app",
-    "best youtube video downloader online",
-    "best youtube video downloader 2025",
-    "best youtube video downloader free",
-    "best youtube video downloader no ads",
-    "best youtube video downloader fast",
-    "best youtube video downloader hd",
-    "best youtube video downloader unlimited",
-    "youtube video downloader comparison",
-    "youtube video downloader reviews",
-    "youtube video downloader ratings",
-    "top youtube video downloaders",
-    "top 10 youtube video downloaders",
-    "top 5 youtube video downloaders",
-    "most popular youtube video downloader",
-    "highest rated youtube video downloader",
-    "youtube video downloader with audio",
-    "youtube video downloader with subtitles",
-    "youtube video downloader with playlist support",
-    "youtube video downloader with batch download",
-    "youtube video downloader with proxy support",
-    "youtube video downloader with resume support",
-    "youtube video downloader with speed control",
-    "youtube video downloader with format selection",
-    "youtube video downloader with quality selection",
-    "youtube video downloader with thumbnail download",
-    "youtube video downloader with metadata",
-    "youtube video downloader with tags",
-    "youtube video downloader with description",
-    "youtube video downloader with comments",
-    "youtube video downloader with statistics",
-    "youtube video downloader with analytics",
-    "youtube video downloader with engagement metrics",
-    "youtube video downloader with view count",
-    "youtube video downloader with like count",
-    "youtube video downloader with subscriber count",
-    "youtube video downloader with upload date",
-    "youtube video downloader with duration",
-    "youtube video downloader with file size",
-    "youtube video downloader with bitrate",
-    "youtube video downloader with codec",
-    "youtube video downloader with container",
-    "youtube video downloader with resolution",
-    "youtube video downloader with frame rate",
-    "youtube video downloader with aspect ratio",
-    "youtube video downloader with audio channels",
-    "youtube video downloader with sample rate",
-    "youtube video downloader with language",
-    "youtube video downloader with subtitles",
-    "youtube video downloader with closed captions",
-    "youtube video downloader with multiple audio tracks",
-    "youtube video downloader with multiple subtitle tracks",
-    "youtube video downloader with chapter markers",
-    "youtube video downloader with metadata extraction",
-    "youtube video downloader with thumbnail extraction",
-    "youtube video downloader with playlist extraction",
-    "youtube video downloader with channel extraction",
-    "youtube video downloader with video extraction",
-    "youtube video downloader with audio extraction",
-    "youtube video downloader with video conversion",
-    "youtube video downloader with audio conversion",
-    "youtube video downloader with format conversion",
-    "youtube video downloader with quality conversion",
-    "youtube video downloader with resolution conversion",
-    "youtube video downloader with bitrate conversion",
-    "youtube video downloader with codec conversion",
-    "youtube video downloader with container conversion",
-    "youtube video downloader with frame rate conversion",
-    "youtube video downloader with aspect ratio conversion",
-    "youtube video downloader with audio channels conversion",
-    "youtube video downloader with sample rate conversion",
-    "youtube video downloader with language conversion",
-    "youtube video downloader with subtitles conversion",
-    "youtube video downloader with closed captions conversion",
-    "youtube video downloader with multiple audio tracks conversion",
-    "youtube video downloader with multiple subtitle tracks conversion",
-    "youtube video downloader with chapter markers conversion",
-    "youtube video downloader with metadata conversion",
-    "youtube video downloader with thumbnail conversion",
-    "youtube video downloader with playlist conversion",
-    "youtube video downloader with channel conversion",
-    "youtube video downloader with video conversion tools",
-    "youtube video downloader with audio conversion tools",
-    "youtube video downloader with format conversion tools",
-    "youtube video downloader with quality conversion tools",
-    "youtube video downloader with resolution conversion tools",
-    "youtube video downloader with bitrate conversion tools",
-    "youtube video downloader with codec conversion tools",
-    "youtube video downloader with container conversion tools",
-    "youtube video downloader with frame rate conversion tools",
-    "youtube video downloader with aspect ratio conversion tools",
-    "youtube video downloader with audio channels conversion tools",
-    "youtube video downloader with sample rate conversion tools",
-    "youtube video downloader with language conversion tools",
-    "youtube video downloader with subtitles conversion tools",
-    "youtube video downloader with closed captions conversion tools",
-    "youtube video downloader with multiple audio tracks conversion tools",
-    "youtube video downloader with multiple subtitle tracks conversion tools",
-    "youtube video downloader with chapter markers conversion tools",
-    "youtube video downloader with metadata conversion tools",
-    "youtube video downloader with thumbnail conversion tools",
-    "youtube video downloader with playlist conversion tools",
-    "youtube video downloader with channel conversion tools"
+    "youtube video saver",
+    "download youtube videos 4k",
+    "save youtube video",
+    "video downloader for youtube",
+    "youtube clip downloader",
+    "youtube mp4 converter",
+    "youtube to mp3 high quality",
+    "download youtube audio",
+    "youtube downloader iphone",
+    "youtube downloader android",
+    "youtube downloader mac",
+    "youtube downloader pc"
   ].join(", "),
   openGraph: {
-    title: "Free YouTube Video Downloader - Download HD Videos & MP3 Online",
-    description: "⚡ Download YouTube videos in HD, 4K quality. Convert YouTube to MP4, MP3 instantly. Fast, secure, unlimited downloads. No software needed.",
+    title: "YouTube Video Downloader | Free & Fast HD Download",
+    description: "Download YouTube videos and shorts in 1080p, 4K, and 8K. Convert to MP4 or MP3 instantly. No registration, no ads, 100% free.",
     url: "https://30tools.com/youtube-downloader",
     siteName: "30tools",
     type: "website",
     images: [
       {
-        url: "/og-images/youtube-downloader.jpg",
+        url: "/og-images/youtube-downloader.jpg", // Ensure this image exists or is updated
         width: 1200,
         height: 630,
-        alt: "Free YouTube Video Downloader - Download HD Videos Online"
+        alt: "Free YouTube Video Downloader"
       },
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free YouTube Downloader - Download Videos & Convert to MP3",
-    description: "⚡ Download YouTube videos in HD, 4K. Convert to MP3 instantly. Fast, secure & unlimited downloads.",
+    title: "Best YouTube Video Downloader 2024",
+    description: "Save YouTube videos in seconds. HD, 4K support. Mp3 conversion. Try it now for free!",
     images: ["/og-images/youtube-downloader.jpg"]
   },
   alternates: {
@@ -177,77 +50,84 @@ export const metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Free YouTube Video Downloader",
-  "alternateName": "YouTube to MP4 MP3 Converter",
-  "description": "Free online tool to download YouTube videos and convert them to MP4, MP3 formats in HD, 4K quality. No software installation required.",
-  "url": "https://30tools.com/youtube-downloader",
-  "applicationCategory": ["MultimediaApplication", "UtilitiesApplication"],
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "browserRequirements": "Requires JavaScript. Works on Chrome, Firefox, Safari, Edge",
-  "softwareVersion": "2.0",
-  "datePublished": "2024-01-01",
-  "dateModified": new Date().toISOString().split('T')[0],
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD",
-    "availability": "https://schema.org/InStock"
-  },
-  "provider": {
-    "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
-  },
-  "audience": {
-    "@type": "Audience",
-    "audienceType": "Content creators, students, general users"
-  },
-  "featureList": [
-    "Download YouTube videos in HD, 1080p, 4K quality",
-    "Convert YouTube videos to MP4 format",
-    "Extract high-quality audio as MP3 from YouTube videos",
-    "Support for multiple video resolutions and qualities",
-    "Lightning-fast download speeds with secure processing",
-    "No software installation or registration required",
-    "Works seamlessly on all devices and web browsers",
-    "Unlimited downloads with no restrictions",
-    "Private and secure - no data stored",
-    "Support for YouTube Shorts and regular videos"
-  ],
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.9",
-    "ratingCount": "50847",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "review": [
+  "@graph": [
     {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Sarah M."
+      "@type": "WebApplication",
+      "name": "Free YouTube Video Downloader",
+      "alternateName": "YouTube Downloader",
+      "url": "https://30tools.com/youtube-downloader",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "reviewBody": "Best YouTube downloader I've ever used! Super fast downloads and the quality is amazing. No annoying ads or popups. Highly recommended!"
+      "featureList": [
+        "Download YouTube videos in 720p, 1080p, 4K",
+        "Convert YouTube to MP3",
+        "No registration required",
+        "Unlimited downloads"
+      ]
     },
     {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Michael R."
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5"
-      },
-      "reviewBody": "I use this daily for my content creation. The 4K download quality is perfect and it works flawlessly on both my phone and laptop."
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I download YouTube videos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "1. Copy the URL of the YouTube video.\n2. Paste it into the search box above.\n3. Click 'Start', choose your format (MP4/MP3) and quality, then click Download."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is this YouTube Downloader free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, our tool is 100% free to use. You can download as many videos as you like without any cost or limitations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I download YouTube Shorts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! Our downloader fully supports YouTube Shorts. Just paste the Shorts link and download it like any other video."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it is completely safe. We do not require any software installation, registration, or personal data. All downloads are processed directly in your browser."
+          }
+        }
+      ]
     },
+    {
+      "@type": "HowTo",
+      "name": "How to Download a YouTube Video",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Copy URL",
+          "text": "Go to YouTube, open the video you want to save, and copy its link from the address bar."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Paste Link",
+          "text": "Paste the copied link into the input field on the 30tools YouTube Downloader page."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Download",
+          "text": "Click the Start button, select your desired quality (e.g., 1080p) and format, and the download will begin instantly."
+        }
+      ]
+    }
   ]
 };
 
