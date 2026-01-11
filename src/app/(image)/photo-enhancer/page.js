@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Enhance photo quality instantly with AI. Fix blurry images, upscale resolution, reduce noise, and correct colors automatically. Free online tool.",
   keywords:
-    "photo enhancer, ai image enhancer, fix blurry photos, upscale image, increase resolution, noise reduction, sharpen image, improve photo quality, free photo enhancer",
+    "photo enhancer, ai image enhancer, fix blurry photos, upscale image, increase resolution, noise reduction, sharpen image, improve photo quality, free photo enhancer, enhance photo resolution online free, unblur image online, restore old photos online, face restoration ai",
   alternates: {
     canonical: "https://30tools.com/photo-enhancer",
   },

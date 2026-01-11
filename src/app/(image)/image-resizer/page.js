@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Resize images online for free. Change dimensions, maintain aspect ratio, batch resize. Perfect for social media, web, and print.",
   keywords:
-    "image resizer, resize image online, photo resizer, resize photo, image dimensions, resize pictures online, batch image resize, social media image sizes, instagram photo resizer, youtube thumbnail resizer",
+    "image resizer, resize image online, photo resizer, resize photo, image dimensions, resize pictures online, batch image resize, social media image sizes, instagram photo resizer, youtube thumbnail resizer, resize image for passport, reduce photo dimensions, online pixel resizer, dpi changer, change aspect ratio",
   alternates: {
     canonical: "https://30tools.com/image-resizer",
   },

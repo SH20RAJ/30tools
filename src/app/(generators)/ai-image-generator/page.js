@@ -128,25 +128,25 @@ export default function AIImageGeneratorPage() {
   // Related tools
   const relatedTools = [
     {
-      id: "aesthetic-bio-generator",
-      name: "Aesthetic Bio Generator",
-      description: "Create viral social media bios",
-      route: "/aesthetic-bio-generator",
+      id: "ai-voice-generator",
+      name: "AI Voice Generator",
+      description: "Convert text to speech",
+      route: "/ai-voice-generator",
       category: "generators",
     },
     {
-      id: "startup-name-generator",
-      name: "Startup Name Generator",
-      description: "Generate creative business names",
-      route: "/startup-name-generator",
-      category: "generators",
+      id: "logo-generator",
+      name: "Logo Generator",
+      description: "Create professional logos",
+      route: "/logo-generator",
+      category: "image",
     },
     {
-      id: "ai-poetry-generator",
-      name: "AI Poetry Generator",
-      description: "Generate beautiful poems with AI",
-      route: "/ai-poetry-generator",
-      category: "generators",
+      id: "photo-enhancer",
+      name: "Photo Enhancer",
+      description: "Enhance image quality",
+      route: "/photo-enhancer",
+      category: "image",
     },
   ];
 

@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Read EXIF data from photos online. Extract camera settings, GPS location, timestamp, and other metadata from JPEG, TIFF, and RAW image files. 100% free and secure.",
   keywords:
-    "exif reader, view exif data, image metadata viewer, photo metadata reader, check photo location, camera settings viewer, online exif tool, free metadata extractor",
+    "exif reader, view exif data, image metadata viewer, photo metadata reader, check photo location, camera settings viewer, online exif tool, free metadata extractor, view shutter count, check image edit history, photo gps viewer",
   alternates: {
     canonical: "https://30tools.com/exif-reader",
   },

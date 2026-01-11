@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Best free online pdf to word converter. transform PDF files to editable DOCX documents with high accuracy. convert pdf to word free without registration.",
   keywords:
-    "pdf to word 2026, pdf to doc, pdf to docx, convert pdf to word, pdf converter, free pdf to word, online pdf converter, editable word document, best pdf to word, pdf to ms word, convert scanned pdf to word, pdf text extractor, change pdf to word doc",
+    "pdf to word 2026, pdf to doc, pdf to docx, convert pdf to word, pdf converter, free pdf to word, online pdf converter, editable word document, best pdf to word, pdf to ms word, convert scanned pdf to word, pdf text extractor, change pdf to word doc, pdf to word ocr free, convert large pdf to word, pdf to editable text",
   alternates: {
     canonical: "https://30tools.com/pdf-to-word",
   },

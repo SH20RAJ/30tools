@@ -20,7 +20,8 @@ export const metadata = {
   keywords: [
     "pdf merger 2026", "merge pdf files free", "combine pdf online secure", "join pdf documents",
     "pdf combiner tool", "merge pdf no watermark", "online pdf merger free", "join pdfs",
-    "smallpdf merge", "ilovepdf merge", "pdf to go", "soda pdf merge", "pdf maker", "pdf joiner"
+    "smallpdf merge", "ilovepdf merge", "pdf to go", "soda pdf merge", "pdf maker", "pdf joiner",
+    "combine pdf reports", "merge different pdf size", "binder pdf", "merge pdf pages order"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/pdf-merger",

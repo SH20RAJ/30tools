@@ -18,7 +18,7 @@ export const metadata = {
     description:
         "Create custom favicons for your website in seconds. Convert text, emojis, or images to high-quality favicons. Download in standard sizes.",
     keywords:
-        "favicon generator, create favicon, favicon maker, website icon creator, emoji to favicon, text to favicon, image to favicon, free favicon tool",
+        "favicon generator, create favicon, favicon maker, website icon creator, emoji to favicon, text to favicon, image to favicon, free favicon tool, favicon.ico generator, app icon generator",
     alternates: {
         canonical: "https://30tools.com/favicon-generator",
     },
@@ -113,10 +113,10 @@ export default function FaviconGeneratorPage() {
             category: "image",
         },
         {
-            id: "icon-generator",
-            name: "Icon Generator",
-            description: "Create app icons",
-            route: "/icon-generator",
+            id: "image-resizer",
+            name: "Image Resizer",
+            description: "Resize for social media",
+            route: "/image-resizer",
             category: "image",
         },
         {

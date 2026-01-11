@@ -2,15 +2,15 @@ import AudioToolsNavbar from "@/components/navigation/AudioToolsNavbar";
 import AudioToolsFooter from "@/components/footers/AudioToolsFooter";
 
 export const metadata = {
-  title: "Audio Tools - Free Online Audio Processing | 30tools",
+  title: "Audio Tools - Free AI Text to Speech & Audio Processing | 30Tools",
   description:
-    "Professional audio tools for compression and format conversion. Free online audio processing with high quality output.",
+    "Free online audio tools: AI Text to Speech converter, audio compression, and format conversion. Generate natural voiceovers instantly.",
   keywords:
-    "audio tools, audio compressor, audio converter, free audio tools online",
+    "audio tools, text to speech, tts, ai voice generator, audio compressor, audio converter, free audio tools",
   openGraph: {
-    title: "Audio Tools - Free Online Audio Processing",
+    title: "Audio Tools - Free AI Text to Speech & Audio Processing",
     description:
-      "Professional audio tools for compression and format conversion.",
+      "Generate natural voiceovers and process audio files for free.",
     url: "https://30tools.com/audio-tools",
     siteName: "30tools",
     images: [
@@ -25,9 +25,26 @@ export const metadata = {
   },
 };
 
+const jsonLdSchemas = {
+  collectionPage: {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Online Audio Tools",
+    "description": "Collection of free audio utilities including Text to Speech.",
+    "url": "https://30tools.com/audio-tools",
+    "mainEntity": {
+      "@type": "ItemList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "url": "https://30tools.com/text-to-speech", "name": "Text to Speech" }
+      ]
+    }
+  }
+};
+
 export default function AudioToolsLayout({ children }) {
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.collectionPage) }} />
       <AudioToolsNavbar />
       <main className="flex-1">{children}</main>
       <AudioToolsFooter />

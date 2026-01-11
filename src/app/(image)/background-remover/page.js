@@ -25,7 +25,8 @@ export const metadata = {
     "remover bg", "remove background free", "quitar fondo de imagen online", "free background remover",
     "image background remover", "background remover online", "hintergrund entfernen", "png maker",
     "background eraser", "adobe background remover", "video background remover", "erase background",
-    "supprimer arrière plan", "bgremove", "ازالة خلفية الصورة", "retirar fundo de imagen online"
+    "supprimer arrière plan", "bgremove", "azala khalfiyat alsoura", "retirar fundo de imagen online",
+    "remove background from logo", "transparent signature maker", "make logo transparent", "product photo background remover"
   ].join(", "),
   alternates: {
     canonical: "https://30tools.com/background-remover",

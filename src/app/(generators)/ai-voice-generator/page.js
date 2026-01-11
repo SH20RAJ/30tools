@@ -104,25 +104,25 @@ export default function AIVoiceGeneratorPage() {
   // Related tools
   const relatedTools = [
     {
-      id: "ai-poetry-generator",
-      name: "AI Poetry Generator",
-      description: "Generate beautiful poems with AI",
-      route: "/ai-poetry-generator",
+      id: "ai-image-generator",
+      name: "AI Image Generator",
+      description: "Create AI art from text",
+      route: "/ai-image-generator",
       category: "generators",
     },
     {
-      id: "fake-chat-generator",
-      name: "Fake Chat Generator",
-      description: "Create realistic chat screenshots",
-      route: "/fake-chat-generator",
-      category: "generators",
+      id: "text-to-speech",
+      name: "Text to Speech (Pro)",
+      description: "Advanced TTS Tool",
+      route: "/text-to-speech",
+      category: "audio",
     },
     {
-      id: "excuse-generator",
-      name: "Excuse Generator",
-      description: "Generate creative funny excuses",
-      route: "/excuse-generator",
-      category: "generators",
+      id: "youtube-video-summarizer",
+      name: "Video Summarizer",
+      description: "Summarize YouTube videos",
+      route: "/youtube-video-summarizer",
+      category: "youtube",
     },
   ];
 

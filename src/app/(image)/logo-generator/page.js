@@ -18,7 +18,7 @@ export const metadata = {
     description:
         "Create professional logos for your business or brand in seconds. Free online logo maker with customizable icons, fonts, and colors. Download high-quality PNGs.",
     keywords:
-        "logo generator, free logo maker, online logo creator, business logo design, brand logo maker, company logo creator, custom logo design, free branding tool",
+        "logo generator, free logo maker, online logo creator, business logo design, brand logo maker, company logo creator, custom logo design, free branding tool, twitch logo maker, youtube channel logo creator, gaming logo maker, esign logo free",
     alternates: {
         canonical: "https://30tools.com/logo-generator",
     },

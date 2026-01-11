@@ -18,7 +18,7 @@ export const metadata = {
   description:
     "Convert images online for free. Support for JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert photos with quality control and resizing options.",
   keywords:
-    "image converter, convert image online, jpg to png, png to jpg, heic to jpg, webp converter, image format converter, free photo converter, bulk image converter",
+    "image converter, convert image online, jpg to png, png to jpg, heic to jpg, webp converter, image format converter, free photo converter, bulk image converter, convert pictures to pdf, change photo format, bmp to jpg, tiff converter, raw to jpeg, svg converter",
   alternates: {
     canonical: "https://30tools.com/image-converter",
   },
