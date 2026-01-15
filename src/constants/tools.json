@@ -397,6 +397,326 @@
           "category": "developer"
         },
         {
+          "id": "openai-api-key-tester",
+          "name": "OpenAI API Key Tester",
+          "description": "Test your OpenAI API key with the models endpoint.",
+          "route": "/api-key-tester/openai",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "anthropic-api-key-tester",
+          "name": "Anthropic Claude API Key Tester",
+          "description": "Test your Anthropic Claude API key with the messages endpoint.",
+          "route": "/api-key-tester/anthropic",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "google-gemini-api-key-tester",
+          "name": "Google Gemini API Key Tester",
+          "description": "Test your Google Gemini API key with the generateContent endpoint.",
+          "route": "/api-key-tester/google-gemini",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "groq-api-key-tester",
+          "name": "Groq API Key Tester",
+          "description": "Test your Groq API key with the chat completions endpoint.",
+          "route": "/api-key-tester/groq",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "deepseek-api-key-tester",
+          "name": "DeepSeek API Key Tester",
+          "description": "Test your DeepSeek API key with the chat completions endpoint.",
+          "route": "/api-key-tester/deepseek",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "cohere-api-key-tester",
+          "name": "Cohere API Key Tester",
+          "description": "Test your Cohere API key with the generate endpoint.",
+          "route": "/api-key-tester/cohere",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "hubspot-api-key-tester",
+          "name": "HubSpot API Key Tester",
+          "description": "Test your HubSpot API key with the contacts endpoint.",
+          "route": "/api-key-tester/hubspot",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "attio-api-key-tester",
+          "name": "Attio API Key Tester",
+          "description": "Test your Attio API key with the records endpoint.",
+          "route": "/api-key-tester/attio",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "pipedrive-api-key-tester",
+          "name": "Pipedrive API Key Tester",
+          "description": "Test your Pipedrive API token with the deals endpoint.",
+          "route": "/api-key-tester/pipedrive",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "zendesk-api-key-tester",
+          "name": "Zendesk API Key Tester",
+          "description": "Test your Zendesk API token with the tickets endpoint.",
+          "route": "/api-key-tester/zendesk",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "intercom-api-key-tester",
+          "name": "Intercom API Key Tester",
+          "description": "Test your Intercom access token with the me endpoint.",
+          "route": "/api-key-tester/intercom",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "freshdesk-api-key-tester",
+          "name": "Freshdesk API Key Tester",
+          "description": "Test your Freshdesk API key with the tickets endpoint.",
+          "route": "/api-key-tester/freshdesk",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "clearbit-api-key-tester",
+          "name": "Clearbit API Key Tester",
+          "description": "Test your Clearbit API key with the company enrichment endpoint.",
+          "route": "/api-key-tester/clearbit",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "zoominfo-api-key-tester",
+          "name": "ZoomInfo API Key Tester",
+          "description": "Test your ZoomInfo API key with the contacts endpoint.",
+          "route": "/api-key-tester/zoominfo",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "people-data-labs-api-key-tester",
+          "name": "People Data Labs API Key Tester",
+          "description": "Test your People Data Labs API key with the person enrichment endpoint.",
+          "route": "/api-key-tester/people-data-labs",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "fullcontact-api-key-tester",
+          "name": "FullContact API Key Tester",
+          "description": "Test your FullContact API key with the person enrichment endpoint.",
+          "route": "/api-key-tester/fullcontact",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "pipl-api-key-tester",
+          "name": "Pipl API Key Tester",
+          "description": "Test your Pipl API key with the search endpoint.",
+          "route": "/api-key-tester/pipl",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "demandbase-api-key-tester",
+          "name": "Demandbase API Key Tester",
+          "description": "Test your Demandbase API key with the accounts endpoint.",
+          "route": "/api-key-tester/demandbase",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "enrich-api-key-tester",
+          "name": "Enrich API Key Tester",
+          "description": "Test your Enrich API key with the person enrichment endpoint.",
+          "route": "/api-key-tester/enrich",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "datanyze-api-key-tester",
+          "name": "Datanyze API Key Tester",
+          "description": "Test your Datanyze API key with the companies endpoint.",
+          "route": "/api-key-tester/datanyze",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "lusha-api-key-tester",
+          "name": "Lusha API Key Tester",
+          "description": "Test your Lusha API key with the contacts endpoint.",
+          "route": "/api-key-tester/lusha",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "data-axle-api-key-tester",
+          "name": "Data Axle API Key Tester",
+          "description": "Test your Data Axle API key with the business lookup endpoint.",
+          "route": "/api-key-tester/data-axle",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "coresignal-api-key-tester",
+          "name": "Coresignal API Key Tester",
+          "description": "Test your Coresignal API key with the companies endpoint.",
+          "route": "/api-key-tester/coresignal",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "snov-io-api-key-tester",
+          "name": "Snov.io API Key Tester",
+          "description": "Test your Snov.io API key with the leads endpoint.",
+          "route": "/api-key-tester/snov-io",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "leadgenius-api-key-tester",
+          "name": "LeadGenius API Key Tester",
+          "description": "Test your LeadGenius API key with the companies endpoint.",
+          "route": "/api-key-tester/leadgenius",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "mattermark-api-key-tester",
+          "name": "Mattermark API Key Tester",
+          "description": "Test your Mattermark API key with the companies endpoint.",
+          "route": "/api-key-tester/mattermark",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "crunchbase-api-key-tester",
+          "name": "Crunchbase API Key Tester",
+          "description": "Test your Crunchbase API key with the organizations endpoint.",
+          "route": "/api-key-tester/crunchbase",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "hg-insights-api-key-tester",
+          "name": "HG Insights API Key Tester",
+          "description": "Test your HG Insights API key with the companies endpoint.",
+          "route": "/api-key-tester/hg-insights",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "leadspace-api-key-tester",
+          "name": "Leadspace API Key Tester",
+          "description": "Test your Leadspace API key with the contacts endpoint.",
+          "route": "/api-key-tester/leadspace",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "melissa-api-key-tester",
+          "name": "Melissa API Key Tester",
+          "description": "Test your Melissa API key with the address verification endpoint.",
+          "route": "/api-key-tester/melissa",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "sendgrid-api-key-tester",
+          "name": "SendGrid API Key Tester",
+          "description": "Test your SendGrid API key with the mail send endpoint.",
+          "route": "/api-key-tester/sendgrid",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "twilio-api-key-tester",
+          "name": "Twilio API Key Tester",
+          "description": "Test your Twilio Account SID and Auth Token with the messages endpoint.",
+          "route": "/api-key-tester/twilio",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "resend-api-key-tester",
+          "name": "Resend API Key Tester",
+          "description": "Test your Resend API key with the emails endpoint.",
+          "route": "/api-key-tester/resend",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "mailgun-api-key-tester",
+          "name": "Mailgun API Key Tester",
+          "description": "Test your Mailgun API key with the messages endpoint.",
+          "route": "/api-key-tester/mailgun",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "brevo-api-key-tester",
+          "name": "Brevo API Key Tester",
+          "description": "Test your Brevo (Sendinblue) API key with the send email endpoint.",
+          "route": "/api-key-tester/brevo",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "postmark-api-key-tester",
+          "name": "Postmark API Key Tester",
+          "description": "Test your Postmark Server Token with the email sending endpoint.",
+          "route": "/api-key-tester/postmark",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "sparkpost-api-key-tester",
+          "name": "SparkPost API Key Tester",
+          "description": "Test your SparkPost API key with the transmissions endpoint.",
+          "route": "/api-key-tester/sparkpost",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "amazon-ses-api-key-tester",
+          "name": "Amazon SES API Key Tester",
+          "description": "Test your Amazon SES credentials with the send email endpoint.",
+          "route": "/api-key-tester/amazon-ses",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "loops-api-key-tester",
+          "name": "Loops API Key Tester",
+          "description": "Test your Loops API key with the contacts endpoint.",
+          "route": "/api-key-tester/loops",
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "stripe-api-key-tester",
+          "name": "Stripe API Key Tester",
+          "description": "Test your Stripe API key with the charges endpoint.",
+          "route": "/api-key-tester/stripe",
+          "popular": false,
+          "category": "developer"
+        },
+        {
           "id": "json-formatter",
           "name": "JSON Formatter",
           "description": "Format, validate, and beautify JSON data",
