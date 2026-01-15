@@ -155,6 +155,14 @@
           "route": "/exif-reader",
           "popular": true,
           "category": "image"
+        },
+        {
+          "id": "og-image-generator",
+          "name": "OG Image Generator",
+          "description": "Create beautiful Open Graph images for your website for free. Customize templates, backgrounds, and text.",
+          "route": "/og-image-generator",
+          "popular": true,
+          "category": "image"
         }
       ]
     },
@@ -371,6 +379,7 @@
           "popular": true,
           "category": "audio"
         }
+
       ]
     },
     "developer": {
@@ -379,6 +388,14 @@
       "icon": "CodeIcon",
       "description": "Format JSON, generate hashes, and developer utilities",
       "tools": [
+        {
+          "id": "api-key-tester",
+          "name": "API Key Tester",
+          "description": "Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
+          "route": "/api-key-tester",
+          "popular": true,
+          "category": "developer"
+        },
         {
           "id": "json-formatter",
           "name": "JSON Formatter",
