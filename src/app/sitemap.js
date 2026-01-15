@@ -144,7 +144,29 @@ export default function sitemap() {
     priority: 0.85,
   }));
 
-  return [...staticPages, ...toolPages, ...categoryPages].sort(
+  // Blog posts from src/app/(content)/blog
+  let blogPages = [];
+  try {
+      const fs = require('fs');
+      const path = require('path');
+      const blogsDirectory = path.join(process.cwd(), 'src/app/(content)/blog');
+      const blogFolders = fs.readdirSync(blogsDirectory).filter(file => {
+          // Filter out files, keep directories (potential blog slugs)
+          // Also avoid Next.js page files if they are at the root of blog dir (page.tsx handled by staticPages)
+          return fs.statSync(path.join(blogsDirectory, file)).isDirectory();
+      });
+
+      blogPages = blogFolders.map(slug => ({
+          url: `${BASE_URL}/blog/${slug}`,
+          lastModified: currentDate,
+          changeFrequency: 'monthly',
+          priority: 0.7,
+      }));
+  } catch (error) {
+      console.warn("Could not read blog directory for sitemap:", error);
+  }
+
+  return [...staticPages, ...toolPages, ...categoryPages, ...blogPages].sort(
     (a, b) => b.priority - a.priority,
   ); // Sort by priority for better crawling
 }

@@ -1,13 +1,20 @@
 import { NextResponse } from "next/server";
 import sitemap from "../../sitemap";
 
-async function handleIndexNowSubmission() {
+async function handleIndexNowSubmission(specificUrls = null) {
   try {
-    // 1. Get all URLs from sitemap
-    const sitemapData = await sitemap();
-    const urlList = sitemapData
-      .map((entry) => entry.url)
-      .filter((url) => url.startsWith("https://30tools.com")); // Safety filter
+    let urlList = [];
+
+    if (specificUrls && Array.isArray(specificUrls) && specificUrls.length > 0) {
+      // Use provided URLs
+      urlList = specificUrls.filter(url => url.startsWith("https://30tools.com"));
+    } else {
+      // Fallback: Get all URLs from sitemap
+      const sitemapData = await sitemap();
+      urlList = sitemapData
+        .map((entry) => entry.url)
+        .filter((url) => url.startsWith("https://30tools.com")); // Safety filter
+    }
 
     if (urlList.length === 0) {
       return NextResponse.json({ error: "No URLs found to index" }, { status: 404 });
@@ -58,6 +65,12 @@ export async function GET() {
   return handleIndexNowSubmission();
 }
 
-export async function POST() {
-  return handleIndexNowSubmission();
+export async function POST(request) {
+  try {
+    const body = await request.json();
+    return handleIndexNowSubmission(body.urls);
+  } catch (error) {
+    // If parsing fails or no body, fall back to full sitemap (or handle error)
+    return handleIndexNowSubmission();
+  }
 }

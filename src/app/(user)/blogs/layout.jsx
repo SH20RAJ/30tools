@@ -1,6 +1,6 @@
 import BlogFooter from "@/components/footers/BlogFooter";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { ZapIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 

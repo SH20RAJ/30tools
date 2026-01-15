@@ -1,9 +1,9 @@
 import { Open_Sans } from "next/font/google";
 
-import PWAInstallPrompt from "@/components/PWAInstallPrompt";
-import SocialRedirect from "@/components/shared/SocialRedirect";
+import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
+import IndexNowAutoSubmit from "@/components/shared/IndexNowAutoSubmit";
 import StructuredData from "@/components/shared/StructuredData";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/components/shared/theme-provider";
 import { Toaster } from "sonner";
 import "./globals.css";
 import Script from "next/script";
@@ -323,6 +323,7 @@ export default async function RootLayout({ children }) {
           <StructuredData includeFAQ={false} />
           {children}
           <PWAInstallPrompt />
+          <IndexNowAutoSubmit />
           {/* <SocialRedirect /> */}
           <Toaster />
           <a

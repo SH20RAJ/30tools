@@ -1,7 +1,7 @@
 import { Inter } from "next/font/google";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
