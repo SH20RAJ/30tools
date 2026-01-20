@@ -1,8 +1,8 @@
 
-import React from 'react';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+
 
 export const metadata = {
     title: "How to Make Your Own Custom Terabox Telegram Bot (2025 Guide) - 30Tools",

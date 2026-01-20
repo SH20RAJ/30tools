@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ZapIcon, TwitterIcon, GithubIcon, HeartIcon } from "lucide-react";
 import FooterPartners from "@/components/shared/FooterPartners";
+
 
 
 export default function BlogFooter() {

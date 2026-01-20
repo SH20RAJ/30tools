@@ -183,21 +183,22 @@ export default async function RootLayout({ children }) {
         />
 
         {/* Ezoic Privacy & Header Scripts */}
+        {/* Ezoic Privacy & Header Scripts */}
         <Script
           src="https://cmp.gatekeeperconsent.com/min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           data-cfasync="false"
         />
         <Script
           src="https://the.gatekeeperconsent.com/cmp.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           data-cfasync="false"
         />
         <Script
           src="//www.ezojs.com/ezoic/sa.min.js"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
-        <Script id="ezoic-init" strategy="beforeInteractive">
+        <Script id="ezoic-init" strategy="afterInteractive">
           {`window.ezstandalone = window.ezstandalone || {}; ezstandalone.cmd = ezstandalone.cmd || [];`}
         </Script>
 
@@ -251,11 +252,11 @@ export default async function RootLayout({ children }) {
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         <Script
           id="google-analytics"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -269,12 +270,12 @@ export default async function RootLayout({ children }) {
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
           crossOrigin="anonymous"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
         {/* Clarity Tracking Code */}
         <Script
           id="clarity-tracking"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,l,a,r,i,t,y){
@@ -324,7 +325,6 @@ export default async function RootLayout({ children }) {
           {children}
           <PWAInstallPrompt />
           <IndexNowAutoSubmit />
-          {/* <SocialRedirect /> */}
           <Toaster />
           <a
             className="sr-only"
@@ -335,6 +335,7 @@ export default async function RootLayout({ children }) {
               alt="Visitor badge"
               width="200"
               height="20"
+              loading="lazy"
             />
           </a>
           {/* Ezoic Accreditation Badge */}

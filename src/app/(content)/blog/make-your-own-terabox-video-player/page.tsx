@@ -1,8 +1,8 @@
 
-import React from 'react';
 import Link from 'next/link';
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
+
 
 export const metadata = {
     title: "How to Make Your Own Terabox Video Player Website - 30Tools",

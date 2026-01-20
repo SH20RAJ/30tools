@@ -1,7 +1,7 @@
-import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2, Globe2, Layers, ShieldCheck, Zap } from "lucide-react";
+
 
 export const metadata = {
     title: "About 30Tools - Free Online Tools for Everyone",
