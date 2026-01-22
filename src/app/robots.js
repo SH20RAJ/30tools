@@ -29,7 +29,7 @@ export default function robots() {
         crawlDelay: 1,
       },
     ],
-    sitemap: [`${baseUrl}/sitemap.xml`, `${baseUrl}/enhanced-sitemap.xml`],
+    sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,
   };
 }

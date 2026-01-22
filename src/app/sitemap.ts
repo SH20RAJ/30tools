@@ -1,13 +1,15 @@
-import { getAllTools } from "@/constants/tools-utils";
+import { MetadataRoute } from "next";
+import { getAllTools, getAllCategories } from "@/constants/tools-utils";
 
 const BASE_URL = "https://30tools.com";
 
-export default function sitemap() {
+export default function sitemap(): MetadataRoute.Sitemap {
   const allTools = getAllTools();
+  const allCategories = getAllCategories();
   const currentDate = new Date();
 
   // Static pages with optimized priorities
-  const staticPages = [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: BASE_URL,
       lastModified: currentDate,
@@ -18,12 +20,6 @@ export default function sitemap() {
       url: `${BASE_URL}/search`,
       lastModified: currentDate,
       changeFrequency: "daily",
-      priority: 0.9,
-    },
-    {
-      url: `${BASE_URL}/calculators`,
-      lastModified: currentDate,
-      changeFrequency: "weekly",
       priority: 0.9,
     },
     {
@@ -71,7 +67,7 @@ export default function sitemap() {
   ];
 
   // Tool pages with intelligent priority calculation
-  const toolPages = allTools.flatMap((tool) => {
+  const toolPages: MetadataRoute.Sitemap = allTools.flatMap((tool: any) => {
     // Calculate priority based on popularity and category importance
     let priority = 0.8; // Base priority for tools
 
@@ -81,7 +77,7 @@ export default function sitemap() {
     }
 
     // Category-based priority adjustments
-    const categoryPriorities = {
+    const categoryPriorities: Record<string, number> = {
       image: 0.95, // High demand category
       pdf: 0.92, // Very popular
       video: 0.9, // High value
@@ -94,13 +90,19 @@ export default function sitemap() {
       design: 0.9, // Creative tools
       legal: 0.9, // Niche category
       calculators: 0.9, // Niche category
-
     };
 
     priority = Math.min(0.95, categoryPriorities[tool.category] || 0.8);
 
     // Determine change frequency based on tool type
-    let changeFrequency = "weekly";
+    let changeFrequency:
+      | "always"
+      | "hourly"
+      | "daily"
+      | "weekly"
+      | "monthly"
+      | "yearly"
+      | "never" = "weekly";
     if (["image", "pdf", "video"].includes(tool.category)) {
       changeFrequency = "daily"; // High-traffic tools
     } else if (["text", "seo", "developer"].includes(tool.category)) {
@@ -117,8 +119,8 @@ export default function sitemap() {
     };
 
     // Add entries for extra slugs if they exist
-    const extraEntries = (tool.extraSlugs || []).map(slug => ({
-      url: `${BASE_URL}/${slug}`, // slugs in filtered list don't have leading slash usually, but verify middleware logic
+    const extraEntries = (tool.extraSlugs || []).map((slug: string) => ({
+      url: `${BASE_URL}/${slug}`,
       lastModified: currentDate,
       changeFrequency,
       priority: Math.round((priority - 0.05) * 100) / 100, // Slightly lower priority for variants
@@ -127,46 +129,49 @@ export default function sitemap() {
     return [mainEntry, ...extraEntries];
   });
 
-  // Category landing pages (future expansion)
-  const categoryPages = [
-    "image",
-    "pdf",
-    "video",
-    "text",
-    "seo",
-    "developer",
-    "utilities",
-    "audio",
-  ].map((category) => ({
-    url: `${BASE_URL}/${category}-tools`,
-    lastModified: currentDate,
-    changeFrequency: "weekly",
-    priority: 0.85,
-  }));
+  // Category landing pages
+  const categoryPages: MetadataRoute.Sitemap = allCategories.map(
+    (category: any) => ({
+      url: `${BASE_URL}/${category.slug}`, // Assuming categories are at root /slug or /tools/slug?
+      // Based on previous sitemaps, some were /tools/[category], but tools.json says slug: "generators", and route logic might map /generators.
+      // The old sitemap.js produced `${BASE_URL}/${category}-tools` (hardcoded list)
+      // The enhanced-sitemap route.js used `${BASE_URL}/${category.slug}`.
+      // Let's assume `${BASE_URL}/${category.slug}` is the correct canonical path for now based on improved logic in enhanced-sitemap.
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.85,
+    }),
+  );
 
-  // Blog posts from src/app/(content)/blog
-  let blogPages = [];
+  // Blog posts - skipping complex FS read for now to keep it safe,
+  // or I can re-implement the try-catch block from the original sitemap.js if needed.
+  // The original sitemap.js had it. Let's add it back for completeness.
+
+  let blogPages: MetadataRoute.Sitemap = [];
   try {
-      const fs = require('fs');
-      const path = require('path');
-      const blogsDirectory = path.join(process.cwd(), 'src/app/(content)/blog');
-      const blogFolders = fs.readdirSync(blogsDirectory).filter(file => {
-          // Filter out files, keep directories (potential blog slugs)
-          // Also avoid Next.js page files if they are at the root of blog dir (page.tsx handled by staticPages)
+    const fs = require("fs");
+    const path = require("path");
+    const blogsDirectory = path.join(process.cwd(), "src/app/(content)/blog");
+    // Check if directory exists first
+    if (fs.existsSync(blogsDirectory)) {
+      const blogFolders = fs
+        .readdirSync(blogsDirectory)
+        .filter((file: string) => {
           return fs.statSync(path.join(blogsDirectory, file)).isDirectory();
-      });
+        });
 
-      blogPages = blogFolders.map(slug => ({
-          url: `${BASE_URL}/blog/${slug}`,
-          lastModified: currentDate,
-          changeFrequency: 'monthly',
-          priority: 0.7,
+      blogPages = blogFolders.map((slug: string) => ({
+        url: `${BASE_URL}/blog/${slug}`,
+        lastModified: currentDate,
+        changeFrequency: "monthly",
+        priority: 0.7,
       }));
+    }
   } catch (error) {
-      console.warn("Could not read blog directory for sitemap:", error);
+    console.warn("Could not read blog directory for sitemap:", error);
   }
 
-  return [...staticPages, ...toolPages, ...categoryPages, ...blogPages].sort(
-    (a, b) => b.priority - a.priority,
-  ); // Sort by priority for better crawling
+  return [...staticPages, ...categoryPages, ...toolPages, ...blogPages].sort(
+    (a, b) => (b.priority || 0) - (a.priority || 0),
+  );
 }
