@@ -1,9 +1,10 @@
 import YouTubeDownloader from '@/components/tools/youtube/YouTubeDownloader';
 import ScrollToTopButton from '@/components/tools/youtube/ScrollToTopButton';
+import RelatedTools from '@/components/shared/RelatedTools';
 
 export const metadata = {
   title: "YouTube Video Downloader - Download YouTube Videos Free Online HD MP4",
-  description: "Download YouTube videos in HD, 1080p, 4K quality for free. Fast online YouTube to MP4 & MP3 converter. No software needed. Works on mobile & PC.",
+  description: "Download YouTube videos in HD, 1080p, 4K quality for free. Fast online YouTube to MP4 & MP3 converter. No software or registration needed. Safe & Secure.",
   keywords: [
     "youtube downloader 2026",
     "download youtube video 1080p",
@@ -21,7 +22,10 @@ export const metadata = {
     "youtube downloader iphone shortcut",
     "youtube downloader android apk",
     "youtube downloader mac safari",
-    "youtube downloader pc chrome"
+    "youtube downloader pc chrome",
+    "best youtube downloader",
+    "youtube video data saver",
+    "fastest youtube downloader"
   ].join(", "),
   openGraph: {
     title: "YouTube Video Downloader | Free & Fast HD Download",
@@ -128,6 +132,29 @@ const jsonLd = {
           "text": "Click the Start button, select your desired quality (e.g., 1080p) and format, and the download will begin instantly."
         }
       ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://30tools.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "YouTube Tools",
+          "item": "https://30tools.com/youtube-tools"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "YouTube Downloader",
+          "item": "https://30tools.com/youtube-downloader"
+        }
+      ]
     }
   ]
 };
@@ -148,6 +175,7 @@ export default function YouTubeDownloaderPage() {
             <p className="text-xl text-muted-foreground mb-6 leading-relaxed">
               Download YouTube videos and audio in high definition quality for free. Our advanced YouTube downloader supports HD, Full HD, and 4K video downloads with lightning-fast speed. Convert YouTube videos to MP4 or extract high-quality MP3 audio files instantly without any software installation. Perfect for offline viewing, content creation, and educational purposes.
             </p>
+            <p className="text-sm text-muted-foreground mb-4">Last Updated: January 2026</p>
             <div className="flex flex-wrap justify-center gap-2 text-sm text-muted-foreground">
               <span className="bg-primary/10 px-3 py-1 rounded-full">✓ HD Quality Downloads</span>
               <span className="bg-primary/10 px-3 py-1 rounded-full">✓ MP4 & MP3 Support</span>
@@ -266,6 +294,12 @@ export default function YouTubeDownloaderPage() {
                   <p className="text-muted-foreground">If the original video was uploaded in 4K or 8K, our tool will provide those high-resolution options. Just look for the "2160p (4K)"  or "4320p (8K)" label in the download results.</p>
                 </div>
               </div>
+            </div>
+
+            {/* Related Tools */}
+            <div className="space-y-8 mt-16">
+              <h2 className="text-3xl font-bold text-center">More YouTube Tools</h2>
+              <RelatedTools currentToolId="youtube-downloader" categorySlug="youtube" />
             </div>
 
             {/* Final CTA */}
