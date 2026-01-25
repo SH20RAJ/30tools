@@ -81,7 +81,7 @@ export default function YouTubeShortsDownloader() {
 
     try {
       // 1. Fetch Video Details via internal Proxy
-      const res = await fetch("/api/proxy/ytdown", {
+      const res = await fetch("/api/proxy/v1-secure-yt-x9z", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: url.trim() }),
@@ -248,7 +248,7 @@ export default function YouTubeShortsDownloader() {
 
     try {
       // 2. Fetch specific download link via same proxy
-      const res = await fetch("/api/proxy/ytdown", {
+      const res = await fetch("/api/proxy/v1-secure-yt-x9z", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: downloadUrl }),

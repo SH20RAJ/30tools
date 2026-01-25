@@ -12,7 +12,7 @@ import {
   Check,
   X,
   ArrowRight,
-  Send
+  Send,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -30,7 +30,9 @@ export default function YouTubeDownloader() {
   const executePWAInstall = useCallback(async () => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     if (isIOS) {
-      toast.info("To install: Tap Share → Add to Home Screen", { duration: 4000 });
+      toast.info("To install: Tap Share → Add to Home Screen", {
+        duration: 4000,
+      });
     } else if (deferredPrompt) {
       try {
         deferredPrompt.prompt();
@@ -55,7 +57,9 @@ export default function YouTubeDownloader() {
       setShowPWAButton(true);
     };
 
-    const isStandalone = window.matchMedia("(display-mode: standalone)").matches;
+    const isStandalone = window.matchMedia(
+      "(display-mode: standalone)",
+    ).matches;
     const isPWA = window.navigator.standalone === true;
 
     if (!isStandalone && !isPWA) {
@@ -64,7 +68,11 @@ export default function YouTubeDownloader() {
       if (isIOS) setShowPWAButton(true);
     }
 
-    return () => window.removeEventListener("beforeinstallprompt", handleBeforeInstallPrompt);
+    return () =>
+      window.removeEventListener(
+        "beforeinstallprompt",
+        handleBeforeInstallPrompt,
+      );
   }, []);
 
   const handleSubmit = async (e) => {
@@ -79,7 +87,8 @@ export default function YouTubeDownloader() {
     setVideoData(null);
 
     try {
-      const res = await fetch("/api/proxy/ytdown", { // removed ?action=info
+      const res = await fetch("/api/proxy/v1-secure-yt-x9z", {
+        // removed ?action=info
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url: url.trim() }),
@@ -95,9 +104,16 @@ export default function YouTubeDownloader() {
 
       let duration = data.duration || "00:00";
       // Safe duration formatting
-      if (typeof duration === 'number' && Number.isFinite(duration) && duration > 0) {
+      if (
+        typeof duration === "number" &&
+        Number.isFinite(duration) &&
+        duration > 0
+      ) {
         try {
-          duration = new Date(duration * 1000).toISOString().substring(11, 19).replace(/^0(?:0:0?)?/, '');
+          duration = new Date(duration * 1000)
+            .toISOString()
+            .substring(11, 19)
+            .replace(/^0(?:0:0?)?/, "");
         } catch (e) {
           console.warn("Duration parsing failed", e);
           duration = "00:00";
@@ -107,10 +123,15 @@ export default function YouTubeDownloader() {
 
       // Process Video Formats
       const videoFormats = medias
-        .filter(m => (m.ext === 'mp4' || m.ext === 'webm') && m.url) // Only allow if URL exists
-        .map(f => ({
+        .filter((m) => (m.ext === "mp4" || m.ext === "webm") && m.url) // Only allow if URL exists
+        .map((f) => ({
           quality: f.quality, // e.g., "1080p"
-          fileSize: typeof f.size === 'string' ? f.size : (f.size ? formatBytes(f.size) : "Unknown"),
+          fileSize:
+            typeof f.size === "string"
+              ? f.size
+              : f.size
+                ? formatBytes(f.size)
+                : "Unknown",
           extension: f.ext,
           type: "video",
           url: f.url,
@@ -124,29 +145,42 @@ export default function YouTubeDownloader() {
         .sort((a, b) => {
           const getResHeight = (resStr) => {
             if (!resStr) return 0;
-            const parts = resStr.split('x');
+            const parts = resStr.split("x");
             return parts.length === 2 ? parseInt(parts[1]) : 0;
           };
           // Fallback sort by quality string if resolution is missing (e.g. "1080P" -> 1080)
           const getQualityInt = (q) => parseInt(q) || 0;
 
-          return (getResHeight(b.resolution) || getQualityInt(b.quality)) - (getResHeight(a.resolution) || getQualityInt(a.quality));
+          return (
+            (getResHeight(b.resolution) || getQualityInt(b.quality)) -
+            (getResHeight(a.resolution) || getQualityInt(a.quality))
+          );
         });
 
       // Process Audio Formats
       const audioFormats = medias
-        .filter(m => (m.type === 'audio' || m.ext === 'mp3' || m.ext === 'm4a') && m.url)
-        .map(f => ({
+        .filter(
+          (m) =>
+            (m.type === "audio" || m.ext === "mp3" || m.ext === "m4a") && m.url,
+        )
+        .map((f) => ({
           quality: f.quality || "Audio",
-          fileSize: typeof f.size === 'string' ? f.size : (f.size ? formatBytes(f.size) : "Unknown"),
+          fileSize:
+            typeof f.size === "string"
+              ? f.size
+              : f.size
+                ? formatBytes(f.size)
+                : "Unknown",
           extension: f.ext,
           type: "audio",
-          url: f.url
+          url: f.url,
         }));
 
       // If no formats found (e.g. API returns data but no direct links), show error
       if (videoFormats.length === 0 && audioFormats.length === 0) {
-        throw new Error("No downloadable links found for this video. Use our other tools or try again later.");
+        throw new Error(
+          "No downloadable links found for this video. Use our other tools or try again later.",
+        );
       }
 
       setVideoData({
@@ -155,9 +189,8 @@ export default function YouTubeDownloader() {
         duration,
         videoFormats,
         audioFormats,
-        originalUrl: url.trim()
+        originalUrl: url.trim(),
       });
-
     } catch (err) {
       console.error("Fetch error:", err);
       // If we see a specific error like Invalid time value, we know it's our parsing
@@ -172,13 +205,13 @@ export default function YouTubeDownloader() {
   };
 
   const formatBytes = (bytes, decimals = 2) => {
-    if (!+bytes) return '0 Bytes';
+    if (!+bytes) return "0 Bytes";
     const k = 1024;
     const dm = decimals < 0 ? 0 : decimals;
-    const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+    const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
-  }
+  };
 
   const handleProcessDownload = (mediaUrl) => {
     if (!mediaUrl) return;
@@ -210,7 +243,7 @@ export default function YouTubeDownloader() {
 
     const pollStatus = async () => {
       try {
-        const res = await fetch("/api/proxy/ytdown", {
+        const res = await fetch("/api/proxy/v1-secure-yt-x9z", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ url: format.url }),
@@ -256,7 +289,6 @@ export default function YouTubeDownloader() {
 
   return (
     <div className="w-full max-w-4xl mx-auto px-4">
-
       {/* Input Section */}
       <div className="relative z-10 mx-auto max-w-3xl">
         <form onSubmit={handleSubmit} className="relative group">
@@ -308,7 +340,6 @@ export default function YouTubeDownloader() {
         <div className="mt-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
           <div className="bg-card rounded-3xl border border-border overflow-hidden shadow-sm">
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0">
-
               {/* Preview Side */}
               <div className="lg:col-span-2 relative group overflow-hidden bg-muted/50">
                 {videoData.thumbnail && (
@@ -340,59 +371,86 @@ export default function YouTubeDownloader() {
                       Video
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {videoData.videoFormats?.length > 0 ? videoData.videoFormats.map((format, idx) => {
-                        const isReady = downloadingFormat === format.url && processingPercent === "READY";
+                      {videoData.videoFormats?.length > 0 ? (
+                        videoData.videoFormats.map((format, idx) => {
+                          const isReady =
+                            downloadingFormat === format.url &&
+                            processingPercent === "READY";
 
-                        if (isReady) {
+                          if (isReady) {
+                            return (
+                              <a
+                                key={idx}
+                                href={format.finalUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="h-10 px-4 rounded-lg border-border transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+                              >
+                                <div className="text-left mr-3">
+                                  <div className="font-medium flex items-center gap-2 text-sm">
+                                    {format.quality}
+                                    {format.hdr === "HDR" && (
+                                      <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">
+                                        HDR
+                                      </span>
+                                    )}
+                                  </div>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <Check className="w-4 h-4" />
+                                  <span className="text-[10px] font-bold min-w-[2.5rem]">
+                                    LINK
+                                  </span>
+                                </div>
+                              </a>
+                            );
+                          }
+
                           return (
-                            <a
+                            <Button
                               key={idx}
-                              href={format.finalUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="h-10 px-4 rounded-lg border-border transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+                              variant={
+                                downloadingFormat === format.url
+                                  ? "secondary"
+                                  : "outline"
+                              }
+                              onClick={() => handleDownload(format)}
+                              disabled={
+                                downloadingFormat !== null &&
+                                downloadingFormat !== format.url
+                              }
+                              className="h-10 px-4 rounded-lg border-border transition-all group"
                             >
                               <div className="text-left mr-3">
                                 <div className="font-medium flex items-center gap-2 text-sm">
                                   {format.quality}
-                                  {format.hdr === 'HDR' && <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">HDR</span>}
+                                  {format.hdr === "HDR" && (
+                                    <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">
+                                      HDR
+                                    </span>
+                                  )}
                                 </div>
                               </div>
-                              <div className="flex items-center gap-2">
-                                <Check className="w-4 h-4" />
-                                <span className="text-[10px] font-bold min-w-[2.5rem]">LINK</span>
-                              </div>
-                            </a>
+                              {downloadingFormat === format.url ? (
+                                <div className="flex items-center gap-2">
+                                  {processingPercent !== "READY" && (
+                                    <Loader2 className="w-4 h-4 animate-spin" />
+                                  )}
+                                  <span className="text-[10px] font-bold min-w-[2.5rem]">
+                                    {processingPercent}
+                                  </span>
+                                </div>
+                              ) : (
+                                <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                              )}
+                            </Button>
                           );
-                        }
-
-                        return (
-                          <Button
-                            key={idx}
-                            variant={downloadingFormat === format.url ? "secondary" : "outline"}
-                            onClick={() => handleDownload(format)}
-                            disabled={downloadingFormat !== null && downloadingFormat !== format.url}
-                            className="h-10 px-4 rounded-lg border-border transition-all group"
-                          >
-                            <div className="text-left mr-3">
-                              <div className="font-medium flex items-center gap-2 text-sm">
-                                {format.quality}
-                                {format.hdr === 'HDR' && <span className="text-[9px] px-1 py-0.5 bg-yellow-500/20 text-yellow-600 rounded">HDR</span>}
-                              </div>
-                            </div>
-                            {downloadingFormat === format.url ? (
-                              <div className="flex items-center gap-2">
-                                {processingPercent !== "READY" && <Loader2 className="w-4 h-4 animate-spin" />}
-                                <span className="text-[10px] font-bold min-w-[2.5rem]">
-                                  {processingPercent}
-                                </span>
-                              </div>
-                            ) : (
-                              <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-                            )}
-                          </Button>
-                        )
-                      }) : <p className="text-sm text-muted-foreground">No video formats.</p>}
+                        })
+                      ) : (
+                        <p className="text-sm text-muted-foreground">
+                          No video formats.
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -404,57 +462,75 @@ export default function YouTubeDownloader() {
                       Audio
                     </h4>
                     <div className="flex flex-wrap gap-2">
-                      {videoData.audioFormats?.length > 0 ? videoData.audioFormats.map((format, idx) => {
-                        const isReady = downloadingFormat === format.url && processingPercent === "READY";
+                      {videoData.audioFormats?.length > 0 ? (
+                        videoData.audioFormats.map((format, idx) => {
+                          const isReady =
+                            downloadingFormat === format.url &&
+                            processingPercent === "READY";
 
-                        if (isReady) {
+                          if (isReady) {
+                            return (
+                              <a
+                                key={idx}
+                                href={format.finalUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="h-10 px-4 rounded-lg border-border transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+                              >
+                                <div className="text-left mr-3">
+                                  <div className="font-medium text-sm">MP3</div>
+                                </div>
+                                <div className="flex items-center gap-2">
+                                  <Check className="w-4 h-4" />
+                                  <span className="text-[10px] font-bold min-w-[2.5rem]">
+                                    LINK
+                                  </span>
+                                </div>
+                              </a>
+                            );
+                          }
+
                           return (
-                            <a
+                            <Button
                               key={idx}
-                              href={format.finalUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="h-10 px-4 rounded-lg border-border transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+                              variant={
+                                downloadingFormat === format.url
+                                  ? "secondary"
+                                  : "outline"
+                              }
+                              onClick={() => handleDownload(format)}
+                              disabled={
+                                downloadingFormat !== null &&
+                                downloadingFormat !== format.url
+                              }
+                              className="h-10 px-4 rounded-lg border-border transition-all group"
                             >
                               <div className="text-left mr-3">
                                 <div className="font-medium text-sm">MP3</div>
                               </div>
-                              <div className="flex items-center gap-2">
-                                <Check className="w-4 h-4" />
-                                <span className="text-[10px] font-bold min-w-[2.5rem]">LINK</span>
-                              </div>
-                            </a>
+                              {downloadingFormat === format.url ? (
+                                <div className="flex items-center gap-2">
+                                  {processingPercent !== "READY" && (
+                                    <Loader2 className="w-4 h-4 animate-spin" />
+                                  )}
+                                  <span className="text-[10px] font-bold min-w-[2.5rem]">
+                                    {processingPercent}
+                                  </span>
+                                </div>
+                              ) : (
+                                <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                              )}
+                            </Button>
                           );
-                        }
-
-                        return (
-                          <Button
-                            key={idx}
-                            variant={downloadingFormat === format.url ? "secondary" : "outline"}
-                            onClick={() => handleDownload(format)}
-                            disabled={downloadingFormat !== null && downloadingFormat !== format.url}
-                            className="h-10 px-4 rounded-lg border-border transition-all group"
-                          >
-                            <div className="text-left mr-3">
-                              <div className="font-medium text-sm">MP3</div>
-                            </div>
-                            {downloadingFormat === format.url ? (
-                              <div className="flex items-center gap-2">
-                                {processingPercent !== "READY" && <Loader2 className="w-4 h-4 animate-spin" />}
-                                <span className="text-[10px] font-bold min-w-[2.5rem]">
-                                  {processingPercent}
-                                </span>
-                              </div>
-                            ) : (
-                              <Download className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
-                            )}
-                          </Button>
-                        )
-                      }) : <p className="text-sm text-muted-foreground">No audio formats.</p>}
+                        })
+                      ) : (
+                        <p className="text-sm text-muted-foreground">
+                          No audio formats.
+                        </p>
+                      )}
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
