@@ -193,13 +193,7 @@ export default async function RootLayout({ children }) {
           strategy="afterInteractive"
           data-cfasync="false"
         />
-        <Script
-          src="//www.ezojs.com/ezoic/sa.min.js"
-          strategy="afterInteractive"
-        />
-        <Script id="ezoic-init" strategy="afterInteractive">
-          {`window.ezstandalone = window.ezstandalone || {}; ezstandalone.cmd = ezstandalone.cmd || [];`}
-        </Script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
 
         {/* Enhanced SEO Meta Tags */}
         <meta name="application-name" content="30tools" />
