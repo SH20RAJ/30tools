@@ -248,7 +248,7 @@ export default async function RootLayout({ children }) {
         {/* Preconnect for performance */}
 
 
-        <Script
+        <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
           strategy="lazyOnload"
