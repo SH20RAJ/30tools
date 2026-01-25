@@ -181,18 +181,7 @@ export default async function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
 
-        {/* Ezoic Privacy & Header Scripts */}
-        {/* Ezoic Privacy & Header Scripts */}
-        <Script
-          src="https://cmp.gatekeeperconsent.com/min.js"
-          strategy="afterInteractive"
-          data-cfasync="false"
-        />
-        <Script
-          src="https://the.gatekeeperconsent.com/cmp.min.js"
-          strategy="afterInteractive"
-          data-cfasync="false"
-        />
+
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
 
         {/* Enhanced SEO Meta Tags */}
@@ -278,38 +267,6 @@ export default async function RootLayout({ children }) {
               })(window, document, "clarity", "script", "uh6y61lx9p");
             `,
           }}
-        />
-        <Script id="ezoic-rewarded-ads" strategy="afterInteractive">
-          {`
-            window.ezRewardedAds = window.ezRewardedAds || {};
-            window.ezRewardedAds.cmd = window.ezRewardedAds.cmd || [];
-
-            // Example: Request a rewarded ad with overlay
-            window.ezRewardedAds.cmd.push(function () {
-                window.ezRewardedAds.requestWithOverlay(function (result) {
-                    if (result.status) {
-                        console.log("Ad loaded successfully");
-                        if (result.reward) {
-                            // User completed the ad and earned reward
-                            console.log("User earned reward!");
-                            // Add your reward logic here
-                        }
-                    } else {
-                        console.log("Ad failed to load:", result.msg);
-                    }
-                });
-            });
-          `}
-        </Script>
-        <Script id="open-video-player-init" strategy="afterInteractive" data-ezscrex="false" data-cfasync="false">
-          {`(window.openVideoPlayers = window.openVideoPlayers || []).push({target: document.currentScript});`}
-        </Script>
-        <Script
-          src="https://open.video/video.js"
-          strategy="afterInteractive"
-          async
-          data-ezscrex="false"
-          data-cfasync="false"
         />
       </head>
       <body className={`${openSans.variable} font-sans antialiased`}>
