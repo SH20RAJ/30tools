@@ -5,6 +5,21 @@ export async function POST(req) {
         const body = await req.json();
         const url = body.url;
 
+
+        // Validate request origin
+        const origin = req.headers.get('origin') || req.headers.get('referer');
+        const allowedHosts = ['30tools.com', 'www.30tools.com', 'localhost:3000'];
+        
+        let isAllowed = false;
+        if (origin) {
+            isAllowed = allowedHosts.some(host => origin.includes(host));
+        }
+
+        // Block if origin is missing or not allowed (skip in development if needed, but safer to enforce)
+        if (!isAllowed && process.env.NODE_ENV === 'production') {
+             return NextResponse.json({ error: 'Unauthorized origin' }, { status: 403 });
+        }
+
         if (!url) {
             return NextResponse.json({ error: 'URL is required' }, { status: 400 });
         }
