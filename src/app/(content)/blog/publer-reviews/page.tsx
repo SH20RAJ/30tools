@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Share2, Calendar, BarChart, RefreshCw } from 'lucide-react';
 
 export const metadata = {
-    title: 'Publer Reviews: A Comprehensive User Guide | 30Tools',
+    title: { absolute: 'Publer Reviews: Comprehensive User Guide | 30Tools' },
     description: 'Is Publer the best social media management tool in 2025? Read our in-depth review covering features, pricing, and how it compares to the competition.',
     keywords: ['Publer review', 'social media management', 'scheduler', 'instagram automation', '30Tools'],
     alternates: {

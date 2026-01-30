@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Text Tools - Free Online Text Processing & Analysis",
+  title: { absolute: "Text Tools: Free Online Processing & Analysis | 30Tools" },
   description:
     "Professional text tools to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
   keywords:

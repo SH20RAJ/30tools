@@ -2,7 +2,7 @@ import { getAllCategories, getOtherTools } from "@/lib/other-tools-actions";
 import OtherToolsPage from "@/components/tools/OtherToolsPage";
 
 export const metadata = {
-  title: "Other Tools - Discover More Free Online Utilities | 30tools",
+  title: { absolute: "Other Tools: Free Online Utilities | 30Tools" },
   description:
     "Professional other tools tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [

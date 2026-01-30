@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2, AlertTriangle, Zap } from 'lucide-react';
 
 export const metadata = {
-    title: 'Y2Mate YouTube to MP3 Converter – Features & Top Alternative | 30Tools',
+    title: { absolute: 'Y2Mate Features & Top Alternative | 30Tools' },
     description: 'Looking for a Y2Mate alternative? Explore the features of Y2Mate and discover why 30Tools is the best safe and free YouTube to MP3 converter in 2025.',
     keywords: ['Y2Mate', 'YouTube to MP3', 'video converter', 'audio extractor', '30Tools', 'safe converter'],
     alternates: {

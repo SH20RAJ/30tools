@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowLeft, Headphones, Monitor, Globe, Star } from 'lucide-react';
 
 export const metadata = {
-    title: '3 Methods to Convert YouTube Videos to High-Quality 320kbps MP3 | 30Tools',
+    title: { absolute: 'Convert YouTube to High-Quality 320kbps MP3 | 30Tools' },
     description: 'Want crystal clear audio? Discover 3 effective methods to convert YouTube videos to 320kbps MP3 for the best listening experience.',
     keywords: ['320kbps MP3', 'YouTube to MP3 high quality', 'audio converter', 'lossless audio', '30Tools'],
     alternates: {

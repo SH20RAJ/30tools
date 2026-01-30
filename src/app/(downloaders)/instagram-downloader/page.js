@@ -19,34 +19,57 @@ import {
 import Link from "next/link";
 
 export const metadata = {
-  title: "Instagram Downloader (2026) - Save Video, Reels, Story & Photo | 30Tools",
-  description: "Download Instagram Videos, Reels, Stories & Photos in HD 1080p. Updated 2026. Anonymous, Free, No Watermark. Works on iPhone/Android.",
+  title: { absolute: "Instagram Downloader (2026) - No Watermark | 30Tools" },
+  description:
+    "Download Instagram Videos, Reels, Stories & Photos in HD 1080p. Updated 2026. Anonymous, Free, No Watermark. Works on iPhone/Android.",
   keywords: [
-    "instagram downloader 2026", "instagram login", "ig login", "انستا", "instagram.com login",
-    "instagram entrar", "instagram login account", "ig downloader free", "save instagram video",
-    "instagram to mp4", "instagram story viewer", "no watermark", "anonymous story viewer",
-    "instagram app download", "insta login", "isnta", "ins", "inst",
-    "instagram reels audio download", "download private instagram photos", "ig story saver anonymous",
-    "save instagram highlights", "instagram profile picture downloader full size", "download instagram carousel"
+    "instagram downloader 2026",
+    "instagram login",
+    "ig login",
+    "انستا",
+    "instagram.com login",
+    "instagram entrar",
+    "instagram login account",
+    "ig downloader free",
+    "save instagram video",
+    "instagram to mp4",
+    "instagram story viewer",
+    "no watermark",
+    "anonymous story viewer",
+    "instagram app download",
+    "insta login",
+    "isnta",
+    "ins",
+    "inst",
+    "instagram reels audio download",
+    "download private instagram photos",
+    "ig story saver anonymous",
+    "save instagram highlights",
+    "instagram profile picture downloader full size",
+    "download instagram carousel",
   ].join(", "),
   openGraph: {
     title: "Instagram Downloader (2026) - Save Reels & Stories Free",
-    description: "⚡ Download Instagram Reels, Stories & Videos in HD. Free, fast & no watermark! (Updated 2026)",
+    description:
+      "⚡ Download Instagram Reels, Stories & Videos in HD. Free, fast & no watermark! (Updated 2026)",
     url: "https://30tools.com/instagram-downloader",
     type: "website",
-    images: [{
-      url: "/og-images/instagram-downloader.jpg",
-      width: 1200,
-      height: 630,
-      alt: "Best Instagram Downloader 2026"
-    }]
+    images: [
+      {
+        url: "/og-images/instagram-downloader.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Best Instagram Downloader 2026",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Instagram Downloader (2026) - Free & No Watermark",
-    description: "⚡ Download Instagram Reels, Stories & Videos in HD. Updated 2026!",
+    description:
+      "⚡ Download Instagram Reels, Stories & Videos in HD. Updated 2026!",
     images: ["/og-images/instagram-downloader.jpg"],
-    creator: "@30tools"
+    creator: "@30tools",
   },
   alternates: { canonical: "https://30tools.com/instagram-downloader" },
 };
@@ -56,20 +79,27 @@ const jsonLdSchemas = {
   webApp: {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Instagram Downloader",
-    "alternateName": ["IG Downloader", "Instagram Video Downloader", "Instagram Saver", "IG Video Saver"],
-    "description": "Free online tool to download Instagram videos, photos, Reels, Stories, and IGTV content in HD quality without watermark.",
-    "url": "https://30tools.com/instagram-downloader",
-    "applicationCategory": ["MultimediaApplication", "UtilitiesApplication"],
-    "operatingSystem": "Any",
-    "browserRequirements": "Requires JavaScript. Works on Chrome, Firefox, Safari, Edge",
-    "offers": {
+    name: "Instagram Downloader",
+    alternateName: [
+      "IG Downloader",
+      "Instagram Video Downloader",
+      "Instagram Saver",
+      "IG Video Saver",
+    ],
+    description:
+      "Free online tool to download Instagram videos, photos, Reels, Stories, and IGTV content in HD quality without watermark.",
+    url: "https://30tools.com/instagram-downloader",
+    applicationCategory: ["MultimediaApplication", "UtilitiesApplication"],
+    operatingSystem: "Any",
+    browserRequirements:
+      "Requires JavaScript. Works on Chrome, Firefox, Safari, Edge",
+    offers: {
       "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "availability": "https://schema.org/InStock"
+      price: "0",
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
     },
-    "featureList": [
+    featureList: [
       "Download Instagram Reels without watermark",
       "Save Instagram Stories anonymously",
       "Download Instagram videos in HD quality",
@@ -79,72 +109,91 @@ const jsonLdSchemas = {
       "No registration or login required",
       "Works on all devices and browsers",
       "Fast and secure processing",
-      "Unlimited free downloads"
-    ]
+      "Unlimited free downloads",
+    ],
   },
   howTo: {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Download Instagram Videos, Reels & Stories",
-    "description": "Complete guide to downloading Instagram content including videos, Reels, Stories, and photos using our free online tool.",
-    "totalTime": "PT1M",
-    "step": [
+    name: "How to Download Instagram Videos, Reels & Stories",
+    description:
+      "Complete guide to downloading Instagram content including videos, Reels, Stories, and photos using our free online tool.",
+    totalTime: "PT1M",
+    step: [
       {
         "@type": "HowToStep",
-        "position": 1,
-        "name": "Copy Instagram Link",
-        "text": "Open Instagram app or website, find the content you want to download, tap the three dots menu and select 'Copy Link' or 'Copy share URL'."
+        position: 1,
+        name: "Copy Instagram Link",
+        text: "Open Instagram app or website, find the content you want to download, tap the three dots menu and select 'Copy Link' or 'Copy share URL'.",
       },
       {
         "@type": "HowToStep",
-        "position": 2,
-        "name": "Paste URL in Downloader",
-        "text": "Paste the copied Instagram link into the input field above. Our tool automatically detects whether it's a video, photo, Reel, or Story."
+        position: 2,
+        name: "Paste URL in Downloader",
+        text: "Paste the copied Instagram link into the input field above. Our tool automatically detects whether it's a video, photo, Reel, or Story.",
       },
       {
         "@type": "HowToStep",
-        "position": 3,
-        "name": "Download Content",
-        "text": "Click the Download button to fetch the content. For videos, choose quality options if available. Save to your device instantly."
-      }
-    ]
+        position: 3,
+        name: "Download Content",
+        text: "Click the Download button to fetch the content. For videos, choose quality options if available. Save to your device instantly.",
+      },
+    ],
   },
   faq: {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
+    mainEntity: [
       {
         "@type": "Question",
-        "name": "Can I download Instagram Reels without watermark?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes! Our Instagram downloader saves Reels in their original quality without any watermarks. You get the exact video as it was uploaded to Instagram." }
+        name: "Can I download Instagram Reels without watermark?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! Our Instagram downloader saves Reels in their original quality without any watermarks. You get the exact video as it was uploaded to Instagram.",
+        },
       },
       {
         "@type": "Question",
-        "name": "How do I download Instagram Stories anonymously?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Simply paste the Instagram Story link or the profile URL into our downloader. You can view and download Stories without the account owner knowing, as long as the profile is public." }
+        name: "How do I download Instagram Stories anonymously?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Simply paste the Instagram Story link or the profile URL into our downloader. You can view and download Stories without the account owner knowing, as long as the profile is public.",
+        },
       },
       {
         "@type": "Question",
-        "name": "Can I download all photos from an Instagram carousel?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes! When you paste a carousel post link, our tool detects all images and videos in the carousel and lets you download each one individually or all at once." }
+        name: "Can I download all photos from an Instagram carousel?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes! When you paste a carousel post link, our tool detects all images and videos in the carousel and lets you download each one individually or all at once.",
+        },
       },
       {
         "@type": "Question",
-        "name": "Is it free to download Instagram content?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Absolutely! Our Instagram downloader is 100% free with no hidden charges. Download unlimited videos, photos, Reels, and Stories without any subscription or payment." }
+        name: "Is it free to download Instagram content?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Absolutely! Our Instagram downloader is 100% free with no hidden charges. Download unlimited videos, photos, Reels, and Stories without any subscription or payment.",
+        },
       },
       {
         "@type": "Question",
-        "name": "Does this work on iPhone and Android?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes, our downloader works on all devices including iPhone, iPad, Android phones and tablets, Windows PC, Mac, and any device with a modern web browser." }
+        name: "Does this work on iPhone and Android?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, our downloader works on all devices including iPhone, iPad, Android phones and tablets, Windows PC, Mac, and any device with a modern web browser.",
+        },
       },
       {
         "@type": "Question",
-        "name": "Can I download from private Instagram accounts?",
-        "acceptedAnswer": { "@type": "Answer", "text": "You can only download content from private accounts if you follow that account and are logged in. Public account content can be downloaded by anyone." }
-      }
-    ]
-  }
+        name: "Can I download from private Instagram accounts?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can only download content from private accounts if you follow that account and are logged in. Public account content can be downloaded by anyone.",
+        },
+      },
+    ],
+  },
 };
 
 export default function InstagramDownloaderPage() {
@@ -162,7 +211,8 @@ export default function InstagramDownloaderPage() {
     {
       icon: <Zap className="w-6 h-6 text-yellow-500" />,
       title: "Story Saver",
-      description: "Download Instagram Stories anonymously before they disappear.",
+      description:
+        "Download Instagram Stories anonymously before they disappear.",
     },
     {
       icon: <Smartphone className="w-6 h-6 text-blue-500" />,
@@ -195,38 +245,58 @@ export default function InstagramDownloaderPage() {
   const faqs = [
     {
       q: "Can I download Instagram Reels without watermark?",
-      a: "Yes! Our Instagram downloader saves Reels in their original quality without any watermarks."
+      a: "Yes! Our Instagram downloader saves Reels in their original quality without any watermarks.",
     },
     {
       q: "How do I download Instagram Stories anonymously?",
-      a: "Simply paste the Instagram Story link. You can view and download Stories without the account owner knowing."
+      a: "Simply paste the Instagram Story link. You can view and download Stories without the account owner knowing.",
     },
     {
       q: "Is it free to download Instagram content?",
-      a: "Absolutely! Our Instagram downloader is 100% free with no hidden charges."
+      a: "Absolutely! Our Instagram downloader is 100% free with no hidden charges.",
     },
     {
       q: "Does this work on iPhone and Android?",
-      a: "Yes, our downloader works on all devices including iPhone, iPad, Android phones and tablets."
-    }
+      a: "Yes, our downloader works on all devices including iPhone, iPad, Android phones and tablets.",
+    },
   ];
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.faq) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdSchemas.webApp),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdSchemas.howTo),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.faq) }}
+      />
 
       <div className="container mx-auto px-4 py-12 md:py-20 lg:py-24">
         <div className="max-w-4xl mx-auto space-y-16">
-
           {/* Hero */}
           <section className="text-center space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
-              Instagram <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">Downloader</span> (2026)
+              Instagram{" "}
+              <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+                Downloader
+              </span>{" "}
+              (2026)
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Fastest <strong>instagram login</strong> alternative for <strong>instagram downloader</strong> tasks. Download Instagram Videos, Reels, Stories, and Photos in HD. Free, secure, and no watermark. Best <strong>ig login</strong> and <strong>ansta</strong> downloader.
+              Fastest <strong>instagram login</strong> alternative for{" "}
+              <strong>instagram downloader</strong> tasks. Download Instagram
+              Videos, Reels, Stories, and Photos in HD. Free, secure, and no
+              watermark. Best <strong>ig login</strong> and{" "}
+              <strong>ansta</strong> downloader.
             </p>
           </section>
 
@@ -238,11 +308,20 @@ export default function InstagramDownloaderPage() {
           {/* Features */}
           <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {features.map((feature, i) => (
-              <div key={i} className="flex gap-4 p-6 bg-card rounded-2xl border border-border/50 hover:border-primary/50 transition-colors shadow-sm">
-                <div className="shrink-0 bg-primary/10 p-3 rounded-xl h-fit">{feature.icon}</div>
+              <div
+                key={i}
+                className="flex gap-4 p-6 bg-card rounded-2xl border border-border/50 hover:border-primary/50 transition-colors shadow-sm"
+              >
+                <div className="shrink-0 bg-primary/10 p-3 rounded-xl h-fit">
+                  {feature.icon}
+                </div>
                 <div>
-                  <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="font-semibold text-lg mb-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               </div>
             ))}
@@ -250,7 +329,9 @@ export default function InstagramDownloaderPage() {
 
           {/* How To */}
           <section className="bg-muted/30 rounded-3xl p-8 md:p-12 border border-border/50">
-            <h2 className="text-3xl font-bold text-center mb-12">How to Download?</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">
+              How to Download?
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {howToSteps.map((step, i) => (
                 <div key={i} className="text-center">
@@ -274,28 +355,40 @@ export default function InstagramDownloaderPage() {
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold">Watch Without Traces</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Want to view an <strong>instagram story viewer</strong> without appearing in their pending list?
-                    Our tool acts as a shield. Just paste the profile URL or username, and browse their stories <strong>anonymous</strong>ly.
+                    Want to view an <strong>instagram story viewer</strong>{" "}
+                    without appearing in their pending list? Our tool acts as a
+                    shield. Just paste the profile URL or username, and browse
+                    their stories <strong>anonymous</strong>ly.
                   </p>
                   <div className="flex gap-2">
-                    <span className="bg-background/80 px-3 py-1 rounded-full text-xs font-bold border">👻 100% Anonymous</span>
-                    <span className="bg-background/80 px-3 py-1 rounded-full text-xs font-bold border">🚫 No Login</span>
+                    <span className="bg-background/80 px-3 py-1 rounded-full text-xs font-bold border">
+                      👻 100% Anonymous
+                    </span>
+                    <span className="bg-background/80 px-3 py-1 rounded-full text-xs font-bold border">
+                      🚫 No Login
+                    </span>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <h3 className="text-xl font-bold">Cross-Platform Saving</h3>
                   <p className="text-muted-foreground leading-relaxed">
-                    Managing social media for a brand? Save high-quality assets from Instagram to repost elsewhere.
-                    We also support:
+                    Managing social media for a brand? Save high-quality assets
+                    from Instagram to repost elsewhere. We also support:
                   </p>
                   <ul className="space-y-2">
                     <li>
-                      <a href="/facebook-video-downloader" className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:underline">
+                      <a
+                        href="/facebook-video-downloader"
+                        className="flex items-center gap-2 text-blue-600 dark:text-blue-400 font-medium hover:underline"
+                      >
                         📘 Facebook Video Downloader
                       </a>
                     </li>
                     <li>
-                      <a href="/tiktok-downloader" className="flex items-center gap-2 text-pink-600 dark:text-pink-400 font-medium hover:underline">
+                      <a
+                        href="/tiktok-downloader"
+                        className="flex items-center gap-2 text-pink-600 dark:text-pink-400 font-medium hover:underline"
+                      >
                         🎵 TikTok No Watermark
                       </a>
                     </li>
@@ -308,7 +401,9 @@ export default function InstagramDownloaderPage() {
           {/* FAQ */}
           <section className="space-y-8">
             <div className="text-center">
-              <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+              <h2 className="text-3xl font-bold mb-4">
+                Frequently Asked Questions
+              </h2>
             </div>
             <Accordion type="single" collapsible className="w-full">
               {faqs.map((faq, i) => (
@@ -327,12 +422,21 @@ export default function InstagramDownloaderPage() {
           {/* Footer Links */}
           <section className="text-center py-8 border-t border-border">
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <Link href="/tiktok-downloader" className="hover:text-primary transition-colors">TikTok Downloader</Link>
+              <Link
+                href="/tiktok-downloader"
+                className="hover:text-primary transition-colors"
+              >
+                TikTok Downloader
+              </Link>
               <span>•</span>
-              <Link href="/youtube-downloader" className="hover:text-primary transition-colors">YouTube Downloader</Link>
+              <Link
+                href="/youtube-downloader"
+                className="hover:text-primary transition-colors"
+              >
+                YouTube Downloader
+              </Link>
             </div>
           </section>
-
         </div>
       </div>
     </>

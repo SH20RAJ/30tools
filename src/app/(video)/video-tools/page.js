@@ -19,7 +19,7 @@ import {
 } from "lucide-react";
 
 export const metadata = {
-  title: "Video Tools - Free Online Video Editor & Converter | 30tools",
+  title: { absolute: "Video Tools: Free Online Editor & Converter | 30Tools" },
   description:
     "Professional video tools tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
   keywords:
