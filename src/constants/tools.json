@@ -2,8 +2,8 @@
   "metadata": {
     "version": "11.0",
     "lastUpdated": "2025-12-29",
-    "totalTools": 50,
-    "totalCategories": 10
+    "totalTools": 91,
+    "totalCategories": 11
   },
   "categories": {
     "generators": {
@@ -379,7 +379,6 @@
           "popular": true,
           "category": "audio"
         }
-
       ]
     },
     "developer": {
@@ -1009,6 +1008,342 @@
           "route": "/schema-generator",
           "popular": true,
           "category": "seo"
+        }
+      ]
+    },
+    "others": {
+      "name": "Other Tools",
+      "slug": "other-tools",
+      "icon": "Grid",
+      "description": "Various useful tools",
+      "tools": [
+        {
+          "id": "audio-joiner",
+          "name": "Audio Joiner",
+          "description": "Audio Joiner - Coming Soon",
+          "route": "/audio-joiner",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "video-watermark-remover",
+          "name": "Video Watermark Remover",
+          "description": "Video Watermark Remover - Coming Soon",
+          "route": "/video-watermark-remover",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "audio-splitter",
+          "name": "Audio Splitter",
+          "description": "Audio Splitter - Coming Soon",
+          "route": "/audio-splitter",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "video-background-remover",
+          "name": "Video Background Remover",
+          "description": "Video Background Remover - Coming Soon",
+          "route": "/video-background-remover",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "youtube-summary-generator",
+          "name": "Youtube Summary Generator",
+          "description": "Youtube Summary Generator - Coming Soon",
+          "route": "/youtube-summary-generator",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "video-joiner",
+          "name": "Video Joiner",
+          "description": "Video Joiner - Coming Soon",
+          "route": "/video-joiner",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "image-to-icon",
+          "name": "Image To Icon",
+          "description": "Image To Icon - Coming Soon",
+          "route": "/image-to-icon",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "developer-tools",
+          "name": "Developer Tools",
+          "description": "Developer Tools - Coming Soon",
+          "route": "/developer-tools",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "audio-normalizer",
+          "name": "Audio Normalizer",
+          "description": "Audio Normalizer - Coming Soon",
+          "route": "/audio-normalizer",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "audio-player",
+          "name": "Audio Player",
+          "description": "Audio Player - Coming Soon",
+          "route": "/audio-player",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "faceless-video-generator",
+          "name": "Faceless Video Generator",
+          "description": "Faceless Video Generator - Coming Soon",
+          "route": "/faceless-video-generator",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "video-resizer",
+          "name": "Video Resizer",
+          "description": "Video Resizer - Coming Soon",
+          "route": "/video-resizer",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "zoom-recorder",
+          "name": "Zoom Recorder",
+          "description": "Zoom Recorder - Coming Soon",
+          "route": "/zoom-recorder",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "video-to-audio",
+          "name": "Video To Audio",
+          "description": "Video To Audio - Coming Soon",
+          "route": "/video-to-audio",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "generators",
+          "name": "Generators",
+          "description": "Generators - Coming Soon",
+          "route": "/generators",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "pdf-protector",
+          "name": "Pdf Protector",
+          "description": "Pdf Protector - Coming Soon",
+          "route": "/pdf-protector",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "instagram-reel-maker",
+          "name": "Instagram Reel Maker",
+          "description": "Instagram Reel Maker - Coming Soon",
+          "route": "/instagram-reel-maker",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "code-tools",
+          "name": "Code Tools",
+          "description": "Code Tools - Coming Soon",
+          "route": "/code-tools",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "remove-duplicates",
+          "name": "Remove Duplicates",
+          "description": "Remove Duplicates - Coming Soon",
+          "route": "/remove-duplicates",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "images-to-pdf",
+          "name": "Images To Pdf",
+          "description": "Images To Pdf - Coming Soon",
+          "route": "/images-to-pdf",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "audio-spectrum",
+          "name": "Audio Spectrum",
+          "description": "Audio Spectrum - Coming Soon",
+          "route": "/audio-spectrum",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "course-video-maker",
+          "name": "Course Video Maker",
+          "description": "Course Video Maker - Coming Soon",
+          "route": "/course-video-maker",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "video-sales-letter",
+          "name": "Video Sales Letter",
+          "description": "Video Sales Letter - Coming Soon",
+          "route": "/video-sales-letter",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "batch-image-processor",
+          "name": "Batch Image Processor",
+          "description": "Batch Image Processor - Coming Soon",
+          "route": "/batch-image-processor",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "pdf-reader",
+          "name": "Pdf Reader",
+          "description": "Pdf Reader - Coming Soon",
+          "route": "/pdf-reader",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "audio-equalizer",
+          "name": "Audio Equalizer",
+          "description": "Audio Equalizer - Coming Soon",
+          "route": "/audio-equalizer",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "text-encoder",
+          "name": "Text Encoder",
+          "description": "Text Encoder - Coming Soon",
+          "route": "/text-encoder",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "ai-video-summarizer",
+          "name": "Ai Video Summarizer",
+          "description": "Ai Video Summarizer - Coming Soon",
+          "route": "/ai-video-summarizer",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "video-splitter",
+          "name": "Video Splitter",
+          "description": "Video Splitter - Coming Soon",
+          "route": "/video-splitter",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "video-rotator",
+          "name": "Video Rotator",
+          "description": "Video Rotator - Coming Soon",
+          "route": "/video-rotator",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "youtube-shorts-creator",
+          "name": "Youtube Shorts Creator",
+          "description": "Youtube Shorts Creator - Coming Soon",
+          "route": "/youtube-shorts-creator",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "watermark-remover",
+          "name": "Watermark Remover",
+          "description": "Watermark Remover - Coming Soon",
+          "route": "/watermark-remover",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "all-downloaders",
+          "name": "All Downloaders",
+          "description": "All Downloaders - Coming Soon",
+          "route": "/all-downloaders",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "website-analyzer",
+          "name": "Website Analyzer",
+          "description": "Website Analyzer - Coming Soon",
+          "route": "/website-analyzer",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "text-reverser",
+          "name": "Text Reverser",
+          "description": "Text Reverser - Coming Soon",
+          "route": "/text-reverser",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "line-sorter",
+          "name": "Line Sorter",
+          "description": "Line Sorter - Coming Soon",
+          "route": "/line-sorter",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "meme-video-generator",
+          "name": "Meme Video Generator",
+          "description": "Meme Video Generator - Coming Soon",
+          "route": "/meme-video-generator",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "case-converter",
+          "name": "Case Converter",
+          "description": "Case Converter - Coming Soon",
+          "route": "/case-converter",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "pdf-to-images",
+          "name": "Pdf To Images",
+          "description": "Pdf To Images - Coming Soon",
+          "route": "/pdf-to-images",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "podcast-video-creator",
+          "name": "Podcast Video Creator",
+          "description": "Podcast Video Creator - Coming Soon",
+          "route": "/podcast-video-creator",
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "image-optimizer",
+          "name": "Image Optimizer",
+          "description": "Image Optimizer - Coming Soon",
+          "route": "/image-optimizer",
+          "popular": false,
+          "category": "others"
         }
       ]
     }
