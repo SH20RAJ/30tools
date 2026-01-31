@@ -200,5 +200,7 @@ export default function BacklinkCheckerPage() {
                 />
             </div>
         </div>
-    );
+    
+        </>
+);
 }

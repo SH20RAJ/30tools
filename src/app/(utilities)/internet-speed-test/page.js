@@ -205,5 +205,7 @@ export default function InternetSpeedTestPage() {
         />
       </div>
     </div>
-  );
+  
+        </>
+);
 }

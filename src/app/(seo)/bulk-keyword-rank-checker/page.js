@@ -80,5 +80,7 @@ export default function BulkKeywordRankCheckerPage() {
       </div>
       <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
-  );
+  
+        </>
+);
 }

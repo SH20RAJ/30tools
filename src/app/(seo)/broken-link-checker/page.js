@@ -86,5 +86,7 @@ export default function BrokenLinkCheckerPage() {
       </div>
       <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
-  );
+  
+        </>
+);
 }

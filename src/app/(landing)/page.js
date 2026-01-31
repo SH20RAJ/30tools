@@ -62,7 +62,6 @@ export const metadata = {
       }
     ]
   },
-,
   twitter: {
     card: "summary_large_image",
     title: "(landing) - Free Online Tool | Professional Results",
@@ -151,7 +150,7 @@ export default function LandingPage() {
                 <div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
               </div>
               <div>
-                <h1 className="text-xl font-bold tracking-tight">30tools</h1>
+                <div className="text-xl font-bold tracking-tight">30tools</div>
                 <p className="text-xs text-muted-foreground font-medium">Free Online Toolkit</p>
               </div>
             </div>
@@ -472,5 +471,7 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
-  );
+  
+        </>
+);
 }

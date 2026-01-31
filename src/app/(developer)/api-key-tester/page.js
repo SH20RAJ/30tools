@@ -19,7 +19,6 @@ export const metadata = {
     "Securely test your API keys for OpenAI, Stripe, SendGrid, and 30+ other services. Check if your API keys are valid directly in your browser or via terminal.",
   keywords:
     "api key tester, test openai api key, test stripe api key, api key validator, check api key, developer tools",
-,
   openGraph: {
     title: "Api Key Tester - Free Developer Tool | Professional Coding",
     description: "Professional api key tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
@@ -157,5 +156,7 @@ export default function ApiKeyTesterHub() {
         </div>
       </main>
     </div>
-  );
+  
+        </>
+);
 }

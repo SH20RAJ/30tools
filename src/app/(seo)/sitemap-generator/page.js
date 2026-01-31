@@ -164,5 +164,7 @@ export default function SitemapGeneratorPage() {
 
       <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
     </>
-  );
+  
+        </>
+);
 }

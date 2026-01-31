@@ -1,65 +1,8 @@
+"use client";
 
 import IndexnowTool from '@/components/tools/general/IndexnowTool';
 
-export const metadata = {
-  title: "Indexnow - Free Online Tool | Professional Results",
-  description: "Professional indexnow tool. Free online processing with high-quality results. No registration required, instant results.",
-  keywords: [
-    "indexnow",
-    "indexnow online",
-    "free indexnow",
-    "indexnow tool",
-    "online indexnow free"
-  ].join(", "),
-  openGraph: {
-    title: "Indexnow - Free Online Tool | Professional Results",
-    description: "Professional indexnow tool. Free online processing with high-quality results. No registration required, instant results.",
-    url: "https://30tools.com/indexnow",
-    siteName: "30tools",
-    images: [
-      {
-        url: "/og-images/indexnow.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Indexnow - Free Online Tool | Professional Results"
-      }
-    ],
-    type: "website"
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Indexnow - Free Online Tool | Professional Results",
-    description: "Professional indexnow tool. Free online processing with high-quality results. No registration required, instant results.",
-    images: ["/og-images/indexnow.jpg"],
-    creator: "@30tools"
-  },
-  alternates: {
-    canonical: "https://30tools.com/indexnow"
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  category: 'General Tools',
-  other: {
-    'application-name': '30tools',
-    'mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-capable': 'yes',
-    'apple-mobile-web-app-status-bar-style': 'default',
-    'apple-mobile-web-app-title': 'Indexnow - 30tools',
-    'format-detection': 'telephone=no',
-    'msapplication-TileColor': '#000000',
-    'msapplication-config': '/browserconfig.xml',
-    'theme-color': '#000000'
-  }
-};
+// Metadata removed from client component
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -81,7 +24,6 @@ const jsonLd = {
     "url": "https://30tools.com"
   }
 };
-"use client";
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";

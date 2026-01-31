@@ -216,5 +216,7 @@ export default function URLShortenerPage() {
         />
       </div>
     </div>
-  );
+  
+        </>
+);
 }

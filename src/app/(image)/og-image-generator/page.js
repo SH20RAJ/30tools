@@ -10,7 +10,6 @@ export const metadata = {
     "Create professional Open Graph (OG) images for your website, blog, or social media. Customizable templates, instant preview, and free download.",
   keywords:
     "og image generator, open graph image creator, social media image generator, blog post image generator, free og image tool",
-,
   openGraph: {
     title: "Og Image Generator - Free Online Generator | Create Instantly",
     description: "Generate Process instantly with our free og image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
@@ -141,5 +140,7 @@ export default function OgImageGeneratorPage() {
         </div>
       </main>
     </div>
-  );
+  
+        </>
+);
 }

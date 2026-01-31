@@ -201,5 +201,7 @@ export default function KeywordResearchToolPage() {
                 />
             </div>
         </div>
-    );
+    
+        </>
+);
 }
