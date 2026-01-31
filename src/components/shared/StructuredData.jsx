@@ -1,4 +1,4 @@
-"use client";
+
 
 export default function StructuredData({ tool, includeFAQ = true }) {
   // If a specific tool is provided, render tool-specific structured data
