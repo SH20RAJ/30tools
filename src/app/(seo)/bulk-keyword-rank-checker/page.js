@@ -2,18 +2,54 @@ import BulkKeywordRankChecker from "@/components/tools/seo/BulkKeywordRankChecke
 
 export const metadata = {
   title: "Bulk Keyword Rank Checker - Check SEO Rankings Free | 30tools",
-  description: "Check your keyword rankings in Google. Bulk check multiple keywords at once. Free SEO rank checker tool.",
+  description: "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
   keywords: ["keyword rank checker", "bulk rank checker", "google ranking checker", "seo rank checker", "keyword position checker", "serp checker"].join(", "),
   openGraph: { title: "Bulk Keyword Rank Checker", description: "⚡ Check your keyword rankings!", url: "https://30tools.com/bulk-keyword-rank-checker", siteName: "30tools", type: "website" },
   alternates: { canonical: "https://30tools.com/bulk-keyword-rank-checker" },
   robots: { index: true, follow: true }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Bulk Keyword Rank Checker - Free SEO Tool | Boost Your Rankings",
+    description: "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+    images: ["/og-images/bulk-keyword-rank-checker.jpg"],
+    creator: "@30tools"
+  }
 };
 
 const AdUnit = () => (<div className="my-6 flex justify-center"><ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins></div>);
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bulk Keyword Rank Checker",
+  "description": "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+  "url": "https://30tools.com/bulk-keyword-rank-checker",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function BulkKeywordRankCheckerPage() {
   return (
-    <>
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">

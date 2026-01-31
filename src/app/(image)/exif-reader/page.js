@@ -15,8 +15,7 @@ import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
   title: "Free EXIF Reader - View Image Metadata Online | 30tools",
-  description:
-    "Read EXIF data from photos online. Extract camera settings, GPS location, timestamp, and other metadata from JPEG, TIFF, and RAW image files. 100% free and secure.",
+  description: "Professional exif reader for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
   keywords:
     "exif reader, view exif data, image metadata viewer, photo metadata reader, check photo location, camera settings viewer, online exif tool, free metadata extractor, view shutter count, check image edit history, photo gps viewer",
   alternates: {

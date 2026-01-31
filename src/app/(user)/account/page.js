@@ -20,8 +20,7 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Account - Free Online Tool | Professional Results",
-  description:
-    "Professional account with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description: "Professional account tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     "account",
     "account online",

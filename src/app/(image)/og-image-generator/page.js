@@ -10,6 +10,56 @@ export const metadata = {
     "Create professional Open Graph (OG) images for your website, blog, or social media. Customizable templates, instant preview, and free download.",
   keywords:
     "og image generator, open graph image creator, social media image generator, blog post image generator, free og image tool",
+,
+  openGraph: {
+    title: "Og Image Generator - Free Online Generator | Create Instantly",
+    description: "Generate Process instantly with our free og image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+    url: "https://30tools.com/og-image-generator",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/og-image-generator.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Og Image Generator - Free Online Generator | Create Instantly"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Og Image Generator - Free Online Generator | Create Instantly",
+    description: "Generate Process instantly with our free og image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+    images: ["/og-images/og-image-generator.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/og-image-generator"
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Og Image Generator",
+  "description": "Generate Process instantly with our free og image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+  "url": "https://30tools.com/og-image-generator",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function OgImageGeneratorPage() {
@@ -42,7 +92,13 @@ export default function OgImageGeneratorPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 pt-6">
         <BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
       </div>

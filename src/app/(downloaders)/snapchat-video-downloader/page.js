@@ -25,6 +25,14 @@ export const metadata = {
   },
   alternates: { canonical: "https://30tools.com/snapchat-video-downloader" },
   robots: { index: true, follow: true }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Snapchat Video Downloader - Free Online Tool | 30tools",
+    description: "Free snapchat video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    images: ["/og-images/snapchat-video-downloader.jpg"],
+    creator: "@30tools"
+  }
 };
 
 const AdUnit = () => (

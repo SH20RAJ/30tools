@@ -20,6 +20,14 @@ export const metadata = {
   },
   alternates: { canonical: "https://30tools.com/instagram-reel-downloader" },
   robots: { index: true, follow: true }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Instagram Reel Downloader - Free Online Tool | 30tools",
+    description: "Professional instagram reel downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/instagram-reel-downloader.jpg"],
+    creator: "@30tools"
+  }
 };
 
 const AdUnit = () => (

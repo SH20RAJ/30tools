@@ -33,9 +33,37 @@ const AdUnit = () => (
   </div>
 );
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Sitemap Generator",
+  "description": "Generate Process instantly with our free sitemap generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
+  "url": "https://30tools.com/sitemap-generator",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function SitemapGeneratorPage() {
   return (
-    <>
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
 
       <div className="container mx-auto px-4 py-12 md:py-20">

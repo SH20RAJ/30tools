@@ -38,6 +38,28 @@ export const metadata = {
     },
 };
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Seo Audit Tool",
+  "description": "Professional seo audit tool for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+  "url": "https://30tools.com/seo-audit-tool",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function SeoAuditToolPage() {
     const toolData = {
         id: "seo-audit-tool",
@@ -119,7 +141,13 @@ export default function SeoAuditToolPage() {
     ];
 
     return (
-        <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
             <div className="container mx-auto px-4 py-16 md:py-24 max-w-6xl">
                 <div className="text-center space-y-4 mb-12">
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">

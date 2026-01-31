@@ -15,9 +15,8 @@ import {
 import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
 
 export const metadata = {
-  title: "AI Image Generator - Free Text to Image Creator (2026 Update) | 30Tools",
-  description:
-    "How to generate AI images for free? Our 2026 updated text-to-image generator creates stunning art, photorealistic photos, and illustrations from simple prompts. No sign-up, unlimited use.",
+  title: "Ai Image Generator - Free Online Generator | Create Instantly",
+  description: "Generate Process instantly with our free ai image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords: [
     // Primary keywords
     "ai image generator",

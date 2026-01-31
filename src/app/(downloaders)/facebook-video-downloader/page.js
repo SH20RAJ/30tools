@@ -41,7 +41,7 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "Facebook Video Downloader Online - Download FB Videos Free | 30Tools",
+  title: "Facebook Video Downloader - Free Online Tool | 30tools",
   description: "Best free online facebook video downloader to save HD videos from Facebook. Download FB reels, stories, and videos from links instantly. No login needed.",
   keywords: researchedKeywords.join(", "),
 

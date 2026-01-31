@@ -11,7 +11,7 @@ import {
 } from "@/components/seo/GeneratorToolsHub";
 
 export const metadata = {
-  title: "Internet Speed Test (2026) - Free Upload & Download Speed | 30Tools",
+  title: "Internet Speed Test - Free Online Tool | Professional Results",
   description:
     "Test your internet speed instantly. Check wifi download speed, upload speed, ping, and jitter. Accurate, free, and mobile-friendly speed test tool.",
   keywords: [
@@ -42,6 +42,28 @@ export const metadata = {
     images: ["/og-images/internet-speed-test.jpg"],
   },
   canonical: "https://30tools.com/internet-speed-test",
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Internet Speed Test",
+  "description": "Professional internet speed test tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/internet-speed-test",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function InternetSpeedTestPage() {
@@ -125,7 +147,13 @@ export default function InternetSpeedTestPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12 md:py-20 max-w-5xl">
         <div className="text-center space-y-4 mb-12">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">

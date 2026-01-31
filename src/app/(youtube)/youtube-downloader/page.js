@@ -3,7 +3,7 @@ import ScrollToTopButton from '@/components/tools/youtube/ScrollToTopButton';
 import RelatedTools from '@/components/shared/RelatedTools';
 
 export const metadata = {
-  title: "YouTube Video Downloader - Download YouTube Videos Free Online HD MP4",
+  title: "Youtube Downloader - Free Online Tool | Professional Results",
   description: "Download YouTube videos in HD, 1080p, 4K quality for free. Fast online YouTube to MP4 & MP3 converter. No software or registration needed. Safe & Secure.",
   keywords: [
     "youtube downloader",

@@ -19,6 +19,56 @@ export const metadata = {
     "Securely test your API keys for OpenAI, Stripe, SendGrid, and 30+ other services. Check if your API keys are valid directly in your browser or via terminal.",
   keywords:
     "api key tester, test openai api key, test stripe api key, api key validator, check api key, developer tools",
+,
+  openGraph: {
+    title: "Api Key Tester - Free Developer Tool | Professional Coding",
+    description: "Professional api key tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+    url: "https://30tools.com/api-key-tester",
+    siteName: "30tools",
+    images: [
+      {
+        url: "/og-images/api-key-tester.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Api Key Tester - Free Developer Tool | Professional Coding"
+      }
+    ],
+    type: "website"
+  }
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "Api Key Tester - Free Developer Tool | Professional Coding",
+    description: "Professional api key tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+    images: ["/og-images/api-key-tester.jpg"],
+    creator: "@30tools"
+  }
+,
+  alternates: {
+    canonical: "https://30tools.com/api-key-tester"
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Api Key Tester",
+  "description": "Professional api key tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
+  "url": "https://30tools.com/api-key-tester",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function ApiKeyTesterHub() {
@@ -35,7 +85,13 @@ export default function ApiKeyTesterHub() {
   }, {});
 
   return (
-    <div className="min-h-screen bg-background">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 pt-6">
         <BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
       </div>

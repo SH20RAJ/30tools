@@ -11,9 +11,8 @@ import {
 } from "@/components/seo/GeneratorToolsHub";
 
 export const metadata = {
-    title: "UTM Builder (2026) - Free Google Analytics URL Generator | 30Tools",
-    description:
-        "Create custom campaign URLs with our free UTM Builder. Easily add UTM parameters for Google Analytics tracking. Support for Source, Medium, Campaign, Term, and Content tags.",
+    title: "Utm Builder - Free Online Tool | Professional Results",
+    description: "Professional utm builder tool. Free online processing with high-quality results. No registration required, instant results.",
     keywords: [
         "utm builder",
         "campaign url builder",

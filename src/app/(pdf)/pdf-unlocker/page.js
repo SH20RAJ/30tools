@@ -38,7 +38,7 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "Unlock PDF Online (2026) - Remove Passwords & Restrictions | 30Tools",
+  title: "Pdf Unlocker - Free PDF Tool | Professional PDF Processing",
   description: "Free PDF unlocker to remove passwords and restrictions instantly. Unlock PDF for editing, printing, and copying. Secure decrypt pdf tool with no server uploads.",
   keywords: researchedKeywords.join(", "),
 

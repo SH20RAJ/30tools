@@ -44,8 +44,8 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "Universal Video Downloader (2026) - Download from Any Website | 30Tools",
-  description: "Best free universal video downloader to download videos from any website online. Support for YouTube, Vimeo, Terabox, Threads, and 100+ sites. Fast web video downloader tool.",
+  title: "Universal Video Downloader - Free Online Tool | 30tools",
+  description: "Free universal video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
   keywords: researchedKeywords.join(", "),
 
   openGraph: {

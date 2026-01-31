@@ -15,8 +15,7 @@ import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
 
 export const metadata = {
   title: "AI Voice Generator - Free Text to Speech Tool | 30tools",
-  description:
-    "Convert text to natural-sounding speech instantly with our free AI voice generator. Multiple voices, accents & languages. Download MP3 audio for videos & podcasts.",
+  description: "Generate Process instantly with our free ai voice generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
   keywords:
     "ai voice generator, text to speech, ai audio, generate voice, speech ai, free ai voice generator, tts online, text to audio converter, realistic ai voices, voice cloning free, narrator voice generator, youtube voiceover generator",
   canonical: "https://30tools.com/ai-voice-generator",

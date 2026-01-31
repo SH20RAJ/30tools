@@ -2,7 +2,7 @@ import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVi
 
 export const metadata = {
   title: "Reddit Video Downloader (2026) - Save with Audio | 30Tools",
-  description: "Download Reddit videos with audio in HD (Updated 2026). Save Reddit clips & GIFs to MP4. Free, fast & no watermarks.",
+  description: "Professional reddit downloader tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     "reddit video downloader 2026",
     "download reddit video with sound",

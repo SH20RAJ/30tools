@@ -62,6 +62,36 @@ export const metadata = {
       }
     ]
   },
+,
+  twitter: {
+    card: "summary_large_image",
+    title: "(landing) - Free Online Tool | Professional Results",
+    description: "Professional (landing) tool. Free online processing with high-quality results. No registration required, instant results.",
+    images: ["/og-images/(landing).jpg"],
+    creator: "@30tools"
+  }
+};
+
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "(landing)",
+  "description": "Professional (landing) tool. Free online processing with high-quality results. No registration required, instant results.",
+  "url": "https://30tools.com/(landing)",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
 };
 
 export default function LandingPage() {
@@ -104,7 +134,13 @@ export default function LandingPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-background selection:bg-primary/20">
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <div className="min-h-screen bg-background selection:bg-primary/20">
       {/* Header */}
       <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
         <div className="container mx-auto px-4 py-4">

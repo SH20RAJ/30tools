@@ -20,8 +20,7 @@ import {
 
 export const metadata = {
   title: "Audio Tools - Free Online Audio Editor & Converter | 30tools",
-  description:
-    "Professional audio tools with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description: "Professional audio tools tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords:
     "audio tools, audio converter, voice recorder, audio editor, audio trimmer, text to speech, mp3 converter, audio compressor, free audio tools",
   openGraph: {

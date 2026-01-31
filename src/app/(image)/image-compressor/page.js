@@ -47,7 +47,7 @@ const researchedKeywords = [
 
 export const metadata = {
   title: "Image Compressor (2026) - Reduce Photo Size Online Free | 30Tools",
-  description: "Best free image compressor online to reduce image size without losing quality. Support for bulk compression of JPEG, PNG, and WebP. Works like optimizilla & iloveimg.",
+  description: "Professional image compressor for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
   keywords: researchedKeywords.join(", "),
 
   openGraph: {

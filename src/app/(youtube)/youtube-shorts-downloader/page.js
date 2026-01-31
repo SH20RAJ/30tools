@@ -24,8 +24,8 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "YouTube Shorts Downloader (2026) - Free, HD & No Watermark | 30Tools",
-  description: "Download YouTube Shorts videos in HD & 4K quality for free. Updated 2026. Best yt shorts downloader and shorts video download tool. Save Shorts without watermark instantly.",
+  title: "Youtube Shorts Downloader - Free Online Tool | 30tools",
+  description: "Professional youtube shorts downloader tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: researchedKeywords.join(", "),
 
   openGraph: {

@@ -36,8 +36,8 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "How to Reduce PDF Size Online (2026) - Free PDF Compressor | 30Tools",
-  description: "Want to know how to shrink PDF files without losing quality? Our free 2026 updated PDF compressor reduces size instantly for email & web. Secure, fast, no sign-up.",
+  title: "Pdf Compressor - Free PDF Tool | Professional PDF Processing",
+  description: "Professional pdf compressor to Process PDF files online. Free, secure & unlimited PDF processing. No email required, instant results.",
   keywords: researchedKeywords.join(", "),
 
   openGraph: {

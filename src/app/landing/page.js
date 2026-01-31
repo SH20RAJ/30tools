@@ -1,7 +1,6 @@
 export const metadata = {
   title: "Landing - Free Online Tool | Professional Results",
-  description:
-    "Professional landing with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description: "Access our complete suite of 140+ free online tools. From image compressors and video converters to PDF editors and developer utilities. No registration required, privacy-focused, and fast.",
   keywords: [
     "landing",
     "landing online",

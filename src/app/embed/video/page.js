@@ -3,8 +3,7 @@ import EmbedVideoPlayer from "./EmbedVideoPlayer";
 
 export const metadata = {
   title: "Video - Free Online Tool | Professional Results",
-  description:
-    "Professional video with instant results. Free online tool for students, professionals, and businesses worldwide. Used by millions worldwide for reliable, fast results.",
+  description: "Professional video tool. Free online processing with high-quality results. No registration required, instant results.",
   keywords: [
     "video",
     "video online",

@@ -14,7 +14,7 @@ import {
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Password Protector (2026) - Secure & Encrypt PDF | 30Tools",
+  title: "Pdf Protect - Free PDF Tool | Professional PDF Processing",
   description:
     "Best free online pdf protector to secure your PDF files with strong AES encryption. add passwords and restrict printing or copying instantly and safely.",
   keywords:

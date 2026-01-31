@@ -12,8 +12,7 @@ import {
 
 export const metadata = {
     title: "Strong Password Generator (2026) - Secure & Random | 30Tools",
-    description:
-        "Generate strong, random passwords instantly. Protect your accounts with our free online password creator. Customizable length, symbols, and numbers. 100% Client-side secure.",
+    description: "Generate Process instantly with our free password generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
     keywords: [
         "password generator",
         "strong password generator",

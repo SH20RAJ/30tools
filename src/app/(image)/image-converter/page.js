@@ -14,7 +14,7 @@ import {
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-  title: "Free Image Converter - Convert JPG, PNG, WebP, HEIC Online | 30tools",
+  title: "Image Converter - Free Online Converter | Instant Conversion",
   description:
     "Convert images online for free. Support for JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert photos with quality control and resizing options.",
   keywords:

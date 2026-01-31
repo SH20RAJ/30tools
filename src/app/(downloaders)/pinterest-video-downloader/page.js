@@ -1,7 +1,7 @@
 import PinterestDownloader from "@/components/tools/downloaders/PinterestDownloader";
 
 export const metadata = {
-  title: "Pinterest Video Downloader (2026) - Save Pins Application | 30Tools",
+  title: "Pinterest Video Downloader - Free Online Tool | 30tools",
   description: "Download Pinterest videos, GIFs & Images in HD (Updated 2026). Save Pins to your phone or PC. Free, fast & no watermarks.",
   keywords: [
     "pinterest video downloader 2026",

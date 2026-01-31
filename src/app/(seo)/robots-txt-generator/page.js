@@ -34,9 +34,37 @@ const AdUnit = () => (
   </div>
 );
 
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Robots Txt Generator",
+  "description": "Free robots txt generator tool with professional results. No registration required, instant processing, secure & unlimited use.",
+  "url": "https://30tools.com/robots-txt-generator",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "permissions": "browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "30tools",
+    "url": "https://30tools.com"
+  }
+};
+
 export default function RobotsTxtGeneratorPage() {
   return (
-    <>
+        <>
+            
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+            />
+            <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
 
       <div className="container mx-auto px-4 py-12 md:py-20">
