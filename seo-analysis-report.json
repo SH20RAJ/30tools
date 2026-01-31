@@ -2,34 +2,22 @@
   "summary": {
     "totalPages": 71,
     "pagesWithIssues": 39,
-    "totalIssues": 57,
+    "totalIssues": 52,
     "successRate": "45.1"
   },
   "issueBreakdown": {
-    "Missing title": 3,
+    "Missing title": 2,
     "Title length": 2,
-    "Missing description": 3,
+    "Missing description": 2,
     "Description length": 3,
-    "Missing keywords": 5,
-    "Keywords count": 31,
-    "Missing OpenGraph": 3,
-    "Missing Twitter Card": 5,
-    "Missing canonical": 2,
+    "Missing keywords": 4,
+    "Keywords count": 32,
+    "Missing OpenGraph": 2,
+    "Missing Twitter Card": 4,
+    "Missing canonical": 1,
     "Missing structured data": 0
   },
   "priorityPages": [
-    {
-      "path": "src/app/(utilities)/indexnow/page.js",
-      "issueCount": 6,
-      "issues": [
-        "❌ Missing title",
-        "❌ Missing description",
-        "❌ Missing keywords",
-        "❌ Missing OpenGraph tags",
-        "❌ Missing Twitter Card",
-        "❌ Missing canonical URL"
-      ]
-    },
     {
       "path": "src/app/(developer)/api-key-tester/[slug]/page.js",
       "issueCount": 5,
@@ -626,17 +614,12 @@
     },
     {
       "path": "src/app/(utilities)/indexnow/page.js",
-      "title": "",
-      "titleLength": 0,
-      "description": "",
-      "descriptionLength": 0,
+      "title": "IndexNow Integration - Submit URLs Instantly | 30tools",
+      "titleLength": 54,
+      "description": "Submit URLs to search engines (Bing, Yandex, etc.) instantly using IndexNow. Boost your SEO with real-time indexing. Free online tool.",
+      "descriptionLength": 134,
       "issues": [
-        "❌ Missing title",
-        "❌ Missing description",
-        "❌ Missing keywords",
-        "❌ Missing OpenGraph tags",
-        "❌ Missing Twitter Card",
-        "❌ Missing canonical URL"
+        "⚠️ Only 7 keywords (recommended: 15-25)"
       ],
       "hasIssues": true
     },

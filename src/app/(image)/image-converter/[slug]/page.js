@@ -1,31 +1,4 @@
 
-// Dynamic import removed
-
-// Static metadata removed in favor of generateMetadata
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "[slug]",
-  "description": "Convert Process instantly with our free [slug]. High-quality conversion with privacy protection. No registration required, unlimited use.",
-  "url": "https://30tools.com/[slug]",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
-  }
-};
-
-// src/app/[locale]/(image)/image-converter/[slug]/page.js
-
 import { notFound } from 'next/navigation';
 import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import { BreadcrumbsEnhanced, QuickActions } from "@/components/seo";
@@ -53,6 +26,11 @@ export async function generateMetadata({ params: { slug } }) {
         description: `Free online ${conversion.title} converter. Convert your ${conversion.from} images to ${conversion.to.toUpperCase()} instantly. No limits, secure, and fast.`,
         alternates: {
             canonical: `https://30tools.com/image-converter/${slug}`
+        },
+        openGraph: {
+            title: `Convert ${conversion.title} Online Free`,
+            description: `Free online ${conversion.title} converter.`,
+            type: 'website'
         }
     };
 }

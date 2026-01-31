@@ -1,35 +1,9 @@
 
-// Dynamic import removed
-
-// Static metadata removed in favor of generateMetadata
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "[slug]",
-  "description": "Professional [slug] for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-  "url": "https://30tools.com/[slug]",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
-  }
-};
-
 import { notFound } from "next/navigation";
 import { API_KEY_TOOLS } from "@/data/api-key-tools";
 import ApiKeyTester from "@/components/tools/developer/ApiKeyTester/ApiKeyTester";
 import { BreadcrumbsEnhanced, RelatedTools } from "@/components/seo";
 import { Badge } from "@/components/ui/badge";
-
 
 export async function generateStaticParams() {
   return API_KEY_TOOLS.map((tool) => ({
@@ -50,6 +24,11 @@ export async function generateMetadata({ params }) {
     title: `Test ${tool.name} API Key | API Key Tester`,
     description: `Securely test your ${tool.name} API key online. ${tool.description}. Free developer tool to validate ${tool.name} credentials.`,
     keywords: `${tool.name} api key tester, test ${tool.name} key, validate ${tool.name} api key, ${tool.name} credentials check`,
+    openGraph: {
+        title: `Test ${tool.name} API Key`,
+        description: tool.description,
+        type: 'website',
+    }
   };
 }
 
@@ -66,7 +45,6 @@ export default function ApiKeyToolPage({ params }) {
     { name: tool.name, url: `/api-key-tester/${tool.id}` },
   ];
 
-  // Get related tools (same category, excluding current)
   const relatedTools = API_KEY_TOOLS.filter(
     (t) => t.category === tool.category && t.id !== tool.id
   )
@@ -102,7 +80,7 @@ export default function ApiKeyToolPage({ params }) {
           <div className="mt-16 max-w-4xl mx-auto">
              <RelatedTools
                 currentTool={tool.id}
-                category="developer-tools" // Generic category for the component logic
+                category="developer-tools"
                 tools={relatedTools}
                 title={`More ${tool.category} Tools`}
              />
