@@ -1,6 +1,6 @@
 
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
 
-export default function LoremRedirect() {
-  redirect("/lorem-ipsum-generator");
+export default function LoremIpsumRedirect() {
+  redirect('/lorem-ipsum-generator');
 }
