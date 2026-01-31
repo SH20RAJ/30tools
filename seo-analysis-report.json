@@ -1,23 +1,47 @@
 {
   "summary": {
     "totalPages": 71,
-    "pagesWithIssues": 36,
-    "totalIssues": 36,
-    "successRate": "49.3"
+    "pagesWithIssues": 39,
+    "totalIssues": 57,
+    "successRate": "45.1"
   },
   "issueBreakdown": {
-    "Missing title": 0,
-    "Title length": 0,
-    "Missing description": 0,
+    "Missing title": 3,
+    "Title length": 2,
+    "Missing description": 3,
     "Description length": 3,
-    "Missing keywords": 3,
-    "Keywords count": 30,
-    "Missing OpenGraph": 0,
-    "Missing Twitter Card": 0,
-    "Missing canonical": 0,
+    "Missing keywords": 5,
+    "Keywords count": 31,
+    "Missing OpenGraph": 3,
+    "Missing Twitter Card": 5,
+    "Missing canonical": 2,
     "Missing structured data": 0
   },
-  "priorityPages": [],
+  "priorityPages": [
+    {
+      "path": "src/app/(utilities)/indexnow/page.js",
+      "issueCount": 6,
+      "issues": [
+        "❌ Missing title",
+        "❌ Missing description",
+        "❌ Missing keywords",
+        "❌ Missing OpenGraph tags",
+        "❌ Missing Twitter Card",
+        "❌ Missing canonical URL"
+      ]
+    },
+    {
+      "path": "src/app/(developer)/api-key-tester/[slug]/page.js",
+      "issueCount": 5,
+      "issues": [
+        "⚠️ Title length 14 chars (optimal: 30-65)",
+        "⚠️ Only 0 keywords (recommended: 15-25)",
+        "❌ Missing OpenGraph tags",
+        "❌ Missing Twitter Card",
+        "❌ Missing canonical URL"
+      ]
+    }
+  ],
   "allPages": [
     {
       "path": "src/app/(audio)/audio-tools/page.js",
@@ -43,12 +67,18 @@
     },
     {
       "path": "src/app/(developer)/api-key-tester/[slug]/page.js",
-      "title": "[slug] - Free Developer Tool | Professional Coding",
-      "titleLength": 50,
-      "description": "Professional [slug] for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-      "descriptionLength": 127,
-      "issues": [],
-      "hasIssues": false
+      "title": "Tool Not Found",
+      "titleLength": 14,
+      "description": "Securely test your ${tool.name} API key online. ${tool.description}. Free developer tool to validate ${tool.name} credentials.",
+      "descriptionLength": 126,
+      "issues": [
+        "⚠️ Title length 14 chars (optimal: 30-65)",
+        "⚠️ Only 0 keywords (recommended: 15-25)",
+        "❌ Missing OpenGraph tags",
+        "❌ Missing Twitter Card",
+        "❌ Missing canonical URL"
+      ],
+      "hasIssues": true
     },
     {
       "path": "src/app/(developer)/api-key-tester/page.js",
@@ -248,12 +278,17 @@
     },
     {
       "path": "src/app/(image)/image-converter/[slug]/page.js",
-      "title": "[slug] - Free Online Converter | Instant Conversion",
-      "titleLength": 51,
-      "description": "Convert Process instantly with our free [slug]. High-quality conversion with privacy protection. No registration required, unlimited use.",
-      "descriptionLength": 137,
-      "issues": [],
-      "hasIssues": false
+      "title": "PNG to JPG",
+      "titleLength": 10,
+      "description": "Free online ${conversion.title} converter. Convert your ${conversion.from} images to ${conversion.to.toUpperCase()} instantly. No limits, secure, and fast.",
+      "descriptionLength": 155,
+      "issues": [
+        "⚠️ Title length 10 chars (optimal: 30-65)",
+        "❌ Missing keywords",
+        "❌ Missing OpenGraph tags",
+        "❌ Missing Twitter Card"
+      ],
+      "hasIssues": true
     },
     {
       "path": "src/app/(image)/image-converter/page.js",
@@ -489,21 +524,31 @@
     },
     {
       "path": "src/app/(seo)/meta-tag-analyzer/page.js",
-      "title": "Meta Tag Analyzer - Free SEO Tool | Boost Your Rankings",
-      "titleLength": 55,
-      "description": "Professional meta tag analyzer for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-      "descriptionLength": 135,
-      "issues": [],
-      "hasIssues": false
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "issues": [
+        "❌ Missing title",
+        "❌ Missing description",
+        "❌ Missing keywords",
+        "❌ Missing Twitter Card"
+      ],
+      "hasIssues": true
     },
     {
       "path": "src/app/(seo)/page-speed-test/page.js",
-      "title": "Page Speed Test - Free SEO Tool | Boost Your Rankings",
-      "titleLength": 53,
-      "description": "Professional page speed test for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-      "descriptionLength": 133,
-      "issues": [],
-      "hasIssues": false
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "issues": [
+        "❌ Missing title",
+        "❌ Missing description",
+        "❌ Missing keywords",
+        "❌ Missing Twitter Card"
+      ],
+      "hasIssues": true
     },
     {
       "path": "src/app/(seo)/robots-txt-generator/page.js",
@@ -547,21 +592,17 @@
       "titleLength": 49,
       "description": "Generate a visual tree map of your website from your XML sitemap. Analyze your site structure, hierarchy, and navigation flow instantly.",
       "descriptionLength": 136,
-      "issues": [
-        "❌ Missing keywords"
-      ],
-      "hasIssues": true
+      "issues": [],
+      "hasIssues": false
     },
     {
       "path": "src/app/(seotoolkit)/seotoolkit/page.js",
       "title": "SEO Toolkit - All-in-One SEO Analysis Tool",
       "titleLength": 42,
-      "description": "Professional seotoolkit tool. Free online processing with high-quality results. No registration required, instant results.",
+      "description": "Professional SEO toolkit with 27+ analysis tools. Free online site audit, keyword tracking, backlink monitoring, and more.",
       "descriptionLength": 122,
-      "issues": [
-        "❌ Missing keywords"
-      ],
-      "hasIssues": true
+      "issues": [],
+      "hasIssues": false
     },
     {
       "path": "src/app/(user)/account/page.js",
@@ -585,12 +626,19 @@
     },
     {
       "path": "src/app/(utilities)/indexnow/page.js",
-      "title": "Indexnow - Free Online Tool | Professional Results",
-      "titleLength": 50,
-      "description": "Professional indexnow tool. Free online processing with high-quality results. No registration required, instant results.",
-      "descriptionLength": 120,
-      "issues": [],
-      "hasIssues": false
+      "title": "",
+      "titleLength": 0,
+      "description": "",
+      "descriptionLength": 0,
+      "issues": [
+        "❌ Missing title",
+        "❌ Missing description",
+        "❌ Missing keywords",
+        "❌ Missing OpenGraph tags",
+        "❌ Missing Twitter Card",
+        "❌ Missing canonical URL"
+      ],
+      "hasIssues": true
     },
     {
       "path": "src/app/(utilities)/internet-speed-test/page.js",
@@ -723,10 +771,10 @@
       "path": "src/app/landing/page.js",
       "title": "Landing - Free Online Tool | Professional Results",
       "titleLength": 49,
-      "description": "Professional landing tool. Free online processing with high-quality results. No registration required, instant results.",
-      "descriptionLength": 119,
+      "description": "Access our complete suite of 140+ free online tools. From image compressors and video converters to PDF editors and developer utilities. No registration required, privacy-focused, and fast.",
+      "descriptionLength": 189,
       "issues": [
-        "⚠️ Description length 119 chars (optimal: 120-160)"
+        "⚠️ Description length 189 chars (optimal: 120-160)"
       ],
       "hasIssues": true
     }
