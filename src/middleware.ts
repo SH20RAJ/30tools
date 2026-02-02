@@ -71,10 +71,8 @@ export default function middleware(request: NextRequest) {
         return NextResponse.next();
     }
 
-    // 3. Redirect unknown routes to tools.30tools.com
-    // Use 301 (Moved Permanently) as requested for SEO
-    const toolsDomain = "http://tools.30tools.com";
-    return NextResponse.redirect(`${toolsDomain}${pathname}`, { status: 301 });
+    // 3. Allow standard 404 handling for unknown routes
+    return NextResponse.next();
 }
 
 export const config = {
