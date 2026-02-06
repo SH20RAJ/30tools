@@ -1337,14 +1337,7 @@
           "popular": false,
           "category": "others"
         },
-        {
-          "id": "text-reverser",
-          "name": "Text Reverser",
-          "description": "Text Reverser - Coming Soon",
-          "route": "/text-reverser",
-          "popular": false,
-          "category": "others"
-        },
+
 
         {
           "id": "meme-video-generator",

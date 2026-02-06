@@ -5,6 +5,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { generateBreadcrumbSchema } from "@/constants/seo/advanced-metadata";
 
+/**
+ * @typedef {Object} Breadcrumb
+ * @property {string} name
+ * @property {string} url
+ * @property {boolean} [isLast]
+ */
+
+/**
+ * @param {Object} props
+ * @param {Breadcrumb[]} [props.customBreadcrumbs]
+ */
 export default function BreadcrumbsEnhanced({ customBreadcrumbs = [] }) {
   const pathname = usePathname();
 
