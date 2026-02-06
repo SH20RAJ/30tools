@@ -1345,14 +1345,7 @@
           "popular": false,
           "category": "others"
         },
-        {
-          "id": "line-sorter",
-          "name": "Line Sorter",
-          "description": "Line Sorter - Coming Soon",
-          "route": "/line-sorter",
-          "popular": false,
-          "category": "others"
-        },
+
         {
           "id": "meme-video-generator",
           "name": "Meme Video Generator",
@@ -1361,22 +1354,8 @@
           "popular": false,
           "category": "others"
         },
-        {
-          "id": "case-converter",
-          "name": "Case Converter",
-          "description": "Case Converter - Coming Soon",
-          "route": "/case-converter",
-          "popular": false,
-          "category": "others"
-        },
-        {
-          "id": "pdf-to-images",
-          "name": "Pdf To Images",
-          "description": "Pdf To Images - Coming Soon",
-          "route": "/pdf-to-images",
-          "popular": false,
-          "category": "others"
-        },
+
+
         {
           "id": "podcast-video-creator",
           "name": "Podcast Video Creator",
