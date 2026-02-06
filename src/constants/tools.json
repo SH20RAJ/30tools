@@ -73,14 +73,6 @@
           "route": "/ai-voice-generator",
           "popular": true,
           "category": "generators"
-        },
-        {
-          "id": "lorem-ipsum-generator",
-          "name": "Lorem Ipsum Generator",
-          "description": "Generate custom Lorem Ipsum text for your designs.",
-          "route": "/lorem-ipsum-generator",
-          "popular": false,
-          "category": "generators"
         }
       ]
     },
@@ -163,6 +155,62 @@
           "route": "/og-image-generator",
           "popular": true,
           "category": "image"
+        }
+      ]
+    },
+    "text": {
+      "name": "Text Tools",
+      "slug": "text-tools",
+      "icon": "TypeIcon",
+      "description": "Format, convert, and manipulate text content",
+      "tools": [
+        {
+          "id": "case-converter",
+          "name": "Case Converter",
+          "description": "Convert text between upper case, lower case, title case, and more",
+          "route": "/case-converter",
+          "popular": true,
+          "category": "text"
+        },
+        {
+            "id": "text-reverser",
+            "name": "Text Reverser",
+            "description": "Reverse text, words, or lines instantly",
+            "route": "/text-reverser",
+            "popular": false,
+            "category": "text"
+        },
+        {
+            "id": "remove-duplicates",
+            "name": "Remove Duplicates",
+            "description": "Remove duplicate lines from text lists",
+            "route": "/remove-duplicates",
+            "popular": true,
+            "category": "text"
+        },
+        {
+            "id": "line-sorter",
+            "name": "Line Sorter",
+            "description": "Sort lists alphabetically or by length",
+            "route": "/line-sorter",
+            "popular": false,
+            "category": "text"
+        },
+         {
+            "id": "text-encoder",
+            "name": "Text Encoder",
+            "description": "Encode and decode text (URL, Base64)",
+            "route": "/text-encoder",
+            "popular": false,
+            "category": "text"
+        },
+         {
+          "id": "lorem-ipsum-generator",
+          "name": "Lorem Ipsum Generator",
+          "description": "Generate custom Lorem Ipsum text for your designs.",
+          "route": "/lorem-ipsum",
+          "popular": false,
+          "category": "text"
         }
       ]
     },
