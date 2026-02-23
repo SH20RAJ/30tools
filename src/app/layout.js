@@ -1,6 +1,6 @@
 import { Open_Sans } from "next/font/google";
 
-import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
+// import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { Toaster } from "sonner";
@@ -281,7 +281,7 @@ export default async function RootLayout({ children }) {
         <ThemeProvider>
           <StructuredData includeFAQ={false} />
           {children}
-          <PWAInstallPrompt />
+          {/* <PWAInstallPrompt /> */}
           <Toaster />
           <a
             className="sr-only"
