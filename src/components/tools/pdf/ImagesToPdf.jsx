@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { FileImage, Download, Loader2, X, MoveUp, MoveDown } from "lucide-react";
 import { PDFDocument } from "pdf-lib";
 import { toast } from "sonner";
+import Image from "next/image";
 
 export default function ImagesToPdf() {
   const [images, setImages] = useState([]); // Array of { file, preview }
@@ -125,13 +126,15 @@ export default function ImagesToPdf() {
           </div>
         </div>
 
-        {images.length > 0 && (
+         {images.length > 0 && (
           <div className="space-y-4">
              <Label className="text-base font-medium">2. Organize Images ({images.length})</Label>
              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                {images.map((img, index) => (
                  <div key={img.id} className="relative group border rounded-lg p-2 bg-background">
-                    <img src={img.preview} alt="preview" className="w-full h-32 object-cover rounded" />
+                    <div className="relative w-full h-32 rounded overflow-hidden">
+                       <Image src={img.preview} alt="preview" fill className="object-cover" />
+                    </div>
                     <button 
                         onClick={() => removeImage(img.id)}
                         className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"

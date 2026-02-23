@@ -37,8 +37,8 @@ export default function ToolSEOLayout({ toolId, children, faqs, features, review
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
           <div className="lg:col-span-12">
             {/* Main Tool Area */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm p-6 mb-8">
-              <h1 className="text-3xl font-bold mb-6">{mergedTool.name}</h1>
+            <div className="mb-12">
+              <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-foreground">{mergedTool.name}</h1>
               {children}
             </div>
 

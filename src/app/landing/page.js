@@ -100,6 +100,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import Link from "next/link";
+import Image from "next/image";
 import toolsData from "@/constants/tools.json";
 import {
   ImageIcon,
@@ -1023,7 +1024,7 @@ export default function LandingPage() {
             </p>
           </div>
           <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F">
-            <img src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" />
+            <Image src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" width={100} height={20} alt="Visitor Badge" />
           </a>
         </div>
       </footer>

@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Loader2, Download, AlertCircle, CheckCircle2 } from 'lucide-react';
+import Image from "next/image";
 
 const FacebookStoryDownloader = () => {
   const [url, setUrl] = useState('');
@@ -93,7 +94,7 @@ const FacebookStoryDownloader = () => {
                 
                 {/* Visual placeholder for the video thumbnail */}
                 <div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/10 my-2">
-                    <img src={result.thumbnail} alt="Thumbnail" className="w-full h-full object-cover opacity-80" />
+                    <Image src={result.thumbnail} alt="Thumbnail" fill className="object-cover opacity-80" />
                 </div>
 
                 <Button className="w-full sm:w-auto min-w-[200px]" size="lg">

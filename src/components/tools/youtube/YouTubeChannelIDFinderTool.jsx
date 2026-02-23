@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Search, Loader2, Copy, Check, User, Info } from "lucide-react";
 import { toast } from "sonner";
+import Image from "next/image";
 import { ToolSEOLayout } from "@/components/seo";
 import { getChannelInfo } from "@/lib/youtube-actions";
 
@@ -115,9 +116,11 @@ export default function YouTubeChannelIDFinderTool() {
             <CardContent className="p-6">
               <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
                 {result.thumbnail && (
-                  <img 
+                  <Image 
                     src={result.thumbnail} 
                     alt={result.title} 
+                    width={128}
+                    height={128}
                     className="w-32 h-32 rounded-full border-4 border-background shadow-md"
                   />
                 )}
