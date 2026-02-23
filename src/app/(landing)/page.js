@@ -1,11 +1,4 @@
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import Link from "next/link";
@@ -20,7 +13,6 @@ import {
   ZapIcon,
   ShieldCheckIcon,
   UsersIcon,
-  TrendingUpIcon,
   StarIcon,
   SearchIcon,
   PaletteIcon,
@@ -177,12 +169,8 @@ export default function LandingPage() {
       </header>
 
       <main>
-        {/* Modern Hero Section */}
-        <section className="relative pt-20 pb-32 overflow-hidden bg-dot-pattern">
-             {/* Background Gradients */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-primary/20 blur-[130px] rounded-full pointer-events-none opacity-50 dark:opacity-20" />
-            <div className="absolute bottom-0 right-0 w-[800px] h-[500px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none opacity-30 dark:opacity-10" />
-
+        {/* Modern Minimal Hero Section */}
+        <section className="relative pt-20 pb-32 overflow-hidden bg-background">
           <div className="container mx-auto px-4 relative z-10 text-center">
              
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 backdrop-blur-sm border border-secondary transition-transform hover:scale-105 mb-8">
@@ -193,11 +181,9 @@ export default function LandingPage() {
                 <span className="text-sm font-medium text-muted-foreground">Updated for 2026: New Tools Added</span>
             </div>
 
-            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70 pb-2">
+            <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-foreground pb-2">
               All Your Tools. <br className="hidden sm:block" />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-500 to-purple-600 animate-gradient-x">
-                One Platform.
-              </span>
+              One Platform.
             </h1>
 
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -207,7 +193,6 @@ export default function LandingPage() {
 
             {/* Search Bar Hero CTA */}
             <div className="max-w-xl mx-auto mb-12 relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200" />
                 <div className="relative">
                      <Link href="/search" className="block">
                         <div className="flex items-center h-14 md:h-16 px-6 bg-background rounded-xl border shadow-sm group-hover:shadow-md transition-all cursor-text">
@@ -361,23 +346,18 @@ export default function LandingPage() {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto relative">
                 
-              <div className="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-[#0F172A] to-[#1E293B] border border-white/10 shadow-2xl p-10 md:p-16 text-center text-white">
-                
-                {/* Glow Effects */}
-                <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-indigo-500/20 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
-                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-rose-500/20 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2" />
-
+              <div className="relative overflow-hidden rounded-[2.5rem] bg-card border border-border shadow-md p-10 md:p-16 text-center text-foreground">
                 <div className="relative z-10">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-indigo-200 mb-6">
                     <Heart className="w-4 h-4 fill-rose-500 text-rose-500" />
                     <span>Community Supported</span>
                   </div>
 
-                  <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-white/70">
+                  <h2 className="text-3xl md:text-5xl font-bold mb-6 text-foreground">
                     Keep the internet free.
                   </h2>
                   
-                  <p className="text-lg md:text-xl text-indigo-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+                  <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
                      30tools serves millions of students and creators for free. No ads, no paywalls. 
                      Your support keeps our servers running and the code flowing.
                   </p>
@@ -387,13 +367,13 @@ export default function LandingPage() {
                       href="https://payments.cashfree.com/forms/30tools"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group relative inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-400 hover:to-purple-500 text-white font-bold text-lg rounded-2xl shadow-xl shadow-indigo-500/25 transition-all duration-300 hover:scale-105"
+                      className="group relative inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground font-bold text-lg rounded-2xl shadow-sm transition-all duration-300 hover:scale-105"
                     >
                       <span>Donate to Support</span>
                       <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                     </a>
                   </div>
-                   <p className="mt-8 text-sm text-indigo-300/60">
+                   <p className="mt-8 text-sm text-muted-foreground">
                     Every donation goes directly to server costs and coffee ☕️
                   </p>
                 </div>

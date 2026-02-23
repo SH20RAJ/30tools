@@ -76,6 +76,15 @@ export const metadata = {
   },
   metadataBase: new URL("https://30tools.com"),
   alternates: {
+    canonical: "/",
+    languages: {
+      "en-US": "/en-US",
+      "en-GB": "/en-GB",
+      "es-ES": "/es-ES",
+      "fr-FR": "/fr-FR",
+      "de-DE": "/de-DE",
+      "ja-JP": "/ja-JP"
+    },
     types: {
       "application/rss+xml": [{ url: "/feed.xml", title: "30tools RSS Feed" }],
     },
@@ -137,6 +146,13 @@ export const metadata = {
     },
   },
   manifest: "/manifest.json",
+  // Added basic GEO metadata for better local relevance
+  other: {
+    "geo.region": "US-CA", // Example region, assuming globally relevant but anchored somewhere for SEO hints
+    "geo.placename": "San Francisco",
+    "geo.position": "37.7749;-122.4194",
+    "ICBM": "37.7749, -122.4194",
+  },
   icons: {
     icon: [
       { url: "/icons/icon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -161,15 +177,7 @@ export const metadata = {
     capable: true,
     statusBarStyle: "default",
     title: "30tools",
-  },
-  other: {
-    "mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default",
-    "apple-mobile-web-app-title": "30tools",
-    "msapplication-TileColor": "#000000",
-    "msapplication-config": "/browserconfig.xml",
-  },
+  }
 };
 
 export default async function RootLayout({ children }) {
