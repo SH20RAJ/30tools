@@ -101,8 +101,6 @@ function RSSFeed() {
           <url>${baseUrl}/icons/icon-192x192.png</url>
           <title>30tools</title>
           <link>${baseUrl}</link>
-          <width>144</width>
-          <height>144</height>
         </image>
         <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
         ${blogPosts}

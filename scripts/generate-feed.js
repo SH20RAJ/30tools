@@ -65,8 +65,6 @@ function generateRSSFeed() {
       <url>${BASE_URL}/icons/icon-512x512.png</url>
       <title>30tools</title>
       <link>${BASE_URL}</link>
-      <width>144</width>
-      <height>144</height>
       <description>30tools - Free Online Toolkit</description>
     </image>
     ${rssItems}

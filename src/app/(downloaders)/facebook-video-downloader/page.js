@@ -1,68 +1,39 @@
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
+import Link from 'next/link';
 
 const researchedKeywords = [
-  "download facebook video downloader", "free facebook video downloader online", "facebookvideo downloader",
-  "free downloadable facebook videos", "facebook video downloader app", "snap save facebook",
-  "facebook video downloader online free", "free download facebook video", "facebook link video downloader",
-  "downloader video facebook", "download facebook video free", "private facebook video downloader",
-  "fb downloader free", "facebook save video", "snaptik facebook", "facebook video downloader online - download facebook videos",
-  "download facebook videos online free", "facebook download videos", "facebook download online",
-  "snapface", "video download facebook", "facebook.com video downloader", "facebook online video downloader",
-  "fbdownloader online", "facebook photo downloader", "facebook downloader free", "save video facebook",
-  "facebook video download free", "facebook download video online", "تنزيل فيديو من فيسبوك",
-  "télécharger video facebook", "download facebook video online getfbvideo.pro", "save video from facebook",
-  "video downloader facebook", "facebook online downloader", "fd downloader", "facebook converter",
-  "facebook link downloader", "telecharger video facebook en ligne", "video facebook download",
-  "fbdown net download", "free facebook video downloader", "facebook videos downloader",
-  "fdownloader", "download videos from facebook", "تحميل فيديو من فيسبوك", "fb video link downloader",
-  "how to download video from facebook", "تحميل فيديو فيسبوك", "how to download facebook videos",
-  "getfvid", "download from facebook video", "fdown net", "download facebook reel", "fbdown net",
-  "ফেসবুক ভিডিও ডাউনলোড", "save facebook", "fb downloader video", "online facebook video downloader",
-  "facebookdownloader", "facebook video downloader hd", "how to download facebook video",
-  "facebook video downloader for pc", "fsave", "fbdown.net", "fb reels download", "download reels facebook",
-  "facebook videos download", "how to download videos from facebook", "snap facebook", "تحميل فيديو من الفيس بوك",
-  "facebook视频下载", "facebook story download", "baixar video facebook", "fb reels downloader",
-  "facebook story downloader", "download facebook video online", "facebook private video downloader",
-  "baixar video do facebook", "fb reel downloader", "facebook video download online",
-  "fb video download online", "save facebook video", "download facebook reels", "fbdownloader video",
-  "descargar videos de facebook gratis", "facebook reels downloader", "fb video downloader online",
-  "baixar videos do facebook", "fdown.net video downloader", "sss facebook", "facebook reel download",
-  "savefrom facebook", "télécharger vidéo facebook", "bajar videos de facebook", "baixar vídeo facebook",
-  "bajar video de facebook", "facebook downloader online", "save from facebook", "baixar vídeo do facebook",
-  "fb download video", "download facebook videos", "descargar videos facebook", "download fb video",
-  "facebook reel downloader", "download from facebook", "snapsave facebook", "snap save",
-  "download video from facebook", "descargar video facebook", "facebook video downloader free",
-  "facebook reels download", "telecharger video facebook", "fdown.net download", "fdown.net",
-  "facebook video", "download video fb", "fdown", "fb download", "fbdownloader", "facebook video downloader online",
-  "download video facebook", "fbdown", "fb video download", "facebook downloader video", "facebook download video",
-  "descargar video de facebook", "fb downloader", "fb video downloader", "download facebook video", "snapsave",
-  "descargar videos de facebook", "facebook video download", "facebook downloader", "facebook download", "downloader", "download", "facebook",
-  "facebook private video downloader", "fb private video download", "save private facebook video", "download facebook reel audio", "facebook story saver anonymous", "facebook 4k video downloader", "download high quality facebook video", "facebook to mp4 1080p"
+  "facebook video downloader", "download facebook video", "free facebook video downloader",
+  "fb video downloader", "facebook reels downloader", "facebook story downloader",
+  "download facebook reels", "download facebook video online", "facebook video to mp4",
+  "facebook video downloader hd", "private facebook video downloader", "download fb video without watermark",
+  "download video from facebook", "facebook live video download", "save facebook video",
+  "best facebook downloader", "fbdown online", "download fb reels", "facebook image saver",
+  "fast facebook downloader 2026", "facebook downloader phone", "fdown alternative"
 ];
 
 export const metadata = {
-  title: "Facebook Video Downloader - Free Online Tool | 30tools",
-  description: "Download Facebook videos for free in high quality....",
+  title: "Facebook Video Downloader - Save FB Reels & Stories HD | 30tools",
+  description: "Download Facebook videos, Reels, and Stories in HD for free. No login required. Save private FB videos and FB live streams instantly to MP4.",
   keywords: researchedKeywords.join(", "),
 
   openGraph: {
-    title: "Facebook Video Downloader - Download FB Videos Online Free",
-    description: "⚡ Fast & Free facebook download video service. Support for HD, 4K, and Private videos. Save from Facebook links instantly!",
+    title: "Facebook Video Downloader (2026) - Free HD MP4 Saver",
+    description: "⚡ Fast & Free Facebook video downloader. Save HD, 4K, Reels, and Stories without watermarks.",
     url: "https://30tools.com/facebook-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{ url: "/og-images/facebook-video-downloader.jpg", width: 1200, height: 630, alt: "Facebook Video Downloader Online" }],
+    images: [{ url: "/og-images/facebook-video-downloader.jpg", width: 1200, height: 630, alt: "Facebook Video Downloader" }],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Facebook Video Downloader - Save FB HD Videos",
-    description: "⚡ The ultimate online facebook downloader. Fast, free, and works for all FB videos!",
+    title: "Facebook Video Downloader HD (2026)",
+    description: "⚡ The ultimate online Facebook downloader. Fast, free, and works for all FB Reels, Stories, and HD Videos!",
     images: ["/og-images/facebook-video-downloader.jpg"],
     creator: "@30tools"
   },
 
-  alternates: { canonical: "https://30tools.com/facebook-downloader" },
+  alternates: { canonical: "https://30tools.com/facebook-video-downloader" },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
@@ -71,23 +42,29 @@ const jsonLdSchemas = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Facebook Video Downloader Online",
-    "alternateName": ["FB Video Downloader", "FDownloader", "Getfvid", "FBDown"],
-    "description": "Powerful online tool to download facebook videos in MP4 HD quality for free.",
+    "alternateName": ["FB Video Saver", "Facebook Reels Downloader", "FDownloader"],
+    "description": "Powerful online tool to download Facebook videos, Reels, and Stories in HD quality for free.",
     "url": "https://30tools.com/facebook-video-downloader",
     "applicationCategory": ["MultimediaApplication", "UtilitiesApplication"],
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "14158" }
+    "featureList": [
+      "Download Facebook Videos in HD/4K",
+      "Save Facebook Reels and Stories",
+      "Private Facebook video downloader support",
+      "No login required",
+      "100% Free"
+    ]
   },
   howTo: {
     "@context": "https://schema.org",
     "@type": "HowTo",
-    "name": "How to Download Facebook Videos Online",
-    "description": "Step-by-step guide to download video facebook online with 30Tools.",
+    "name": "How to Download Facebook Videos and Reels Online",
+    "description": "Step-by-step guide to downloading FB media with 30tools.",
     "step": [
-      { "@type": "HowToStep", "position": 1, "name": "Copy FB URL", "text": "Copy the video link from Facebook." },
-      { "@type": "HowToStep", "position": 2, "name": "Paste Link", "text": "Paste it into our facebook online video downloader box." },
-      { "@type": "HowToStep", "position": 3, "name": "Download HD", "text": "Choose quality and save the facebook download video." }
+      { "@type": "HowToStep", "position": 1, "name": "Copy the FB Link", "text": "Open the Facebook app or website, find the video or Reel, tap the 'Share' arrow, and select 'Copy Link'." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste into Downloader", "text": "Go to the 30tools Facebook Video Downloader and paste the copied URL into the central search box." },
+      { "@type": "HowToStep", "position": 3, "name": "Save as MP4", "text": "Click Download, select your preferred resolution (SD, HD, 1080p), and the video will save to your device." }
     ]
   }
 };
@@ -108,8 +85,8 @@ export default function FacebookVideoDownloaderPage() {
       <div className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <li><a href="/" className="hover:text-primary transition-colors">Home</a></li><li>/</li>
-            <li><a href="/all-downloaders" className="hover:text-primary transition-colors">Downloaders</a></li><li>/</li>
+            <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li><li>/</li>
+            <li><Link href="/all-downloaders" className="hover:text-primary transition-colors">Downloaders</Link></li><li>/</li>
             <li className="text-foreground font-medium">Facebook Video Downloader</li>
           </ol>
         </nav>
@@ -122,15 +99,12 @@ export default function FacebookVideoDownloaderPage() {
             Download <span className="text-primary">Facebook Videos</span> Online
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-            Get your favorite content with the most reliable <strong>facebook online video downloader</strong>.
-            Download <strong>facebook videos online free</strong> in HD, Full HD, and 4K. Whether you use
-            <strong>fb downloader</strong> or <strong>fbdown</strong>, 30Tools provides the fastest
-            <strong>facebook download video</strong> experience on any browser. Safe, secure, and no login required!
+            Get your favorite content with our highly reliable <strong>Facebook Video Downloader</strong>. Download Facebook videos, Reels, and Stories in HD, Full HD, and 4K directly to your phone or PC. No app installation or login required.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm font-medium">
-            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">⚡ <strong>FB Video Download</strong></span>
-            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">🆓 <strong>Download Facebook Video Free</strong></span>
-            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">🎬 <strong>Facebook Reels Download</strong></span>
+            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">⚡ <strong>Supports FB Reels</strong></span>
+            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">🆓 <strong>100% Free</strong></span>
+            <span className="bg-primary/10 text-primary px-3 py-1 rounded-full border border-primary/20">🎬 <strong>HD MP4 Downloads</strong></span>
           </div>
         </div>
 
@@ -138,37 +112,31 @@ export default function FacebookVideoDownloaderPage() {
 
         {/* Tool Component */}
         <div className="bg-card rounded-2xl shadow-2xl border border-border p-6 md:p-10 mb-20">
-          <UniversalVideoDownloader />
+          <UniversalVideoDownloader title="Facebook Video Downloader" />
         </div>
 
         <AdUnit />
 
         {/* Content Section */}
         <section className="mb-20 prose prose-slate dark:prose-invert max-w-none">
-          <h2 className="text-3xl font-bold mb-8 text-center md:text-left">How to Use Facebook Video Downloader Online Free</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center md:text-left">Use the Best Free Facebook Video Downloader</h2>
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div className="space-y-4">
-              <p>
-                To <strong>download facebook videos online</strong>, simply follow these steps. First, copy the
-                <strong>facebook link video downloader</strong> URL from your Facebook app. Paste it into the
-                <strong>downloader video facebook</strong> input above and hit the download button.
-                Our <strong>fbdownloader online</strong> will fetch all available qualities for you.
+              <p className="text-muted-foreground">
+                Downloading videos from Facebook used to be a hassle. With the 30tools <strong>FB video downloader</strong>, saving your favorite clips, hilarious reels, and memorable stories is just one click away. We pull the raw MP4 file directly from Facebook's servers, allowing you to bypass restrictive app-only viewing and save files locally.
               </p>
-              <p>
-                From <strong>private facebook video downloader</strong> features to saving <strong>fb reels</strong>,
-                our <strong>facebook downloader free</strong> service handles it all. No need to look for
-                <strong>facebook video downloader app</strong> downloads - 30Tools is a lightweight,
-                high-speed web alternate.
+              <p className="text-muted-foreground">
+                Whether you need a <strong>private Facebook video downloader</strong> solution or simply want to archive public <strong>FB Reels</strong> offline, our fast, secure, web-based tool handles it all. Forget downloading bulky, suspicious apps. 30tools works effortlessly on iPhones, Android devices, Mac, and Windows.
               </p>
             </div>
             <div className="bg-muted/30 p-8 rounded-2xl border border-border">
-              <h3 className="text-xl font-bold mb-4">Popular Search Alternatives:</h3>
+              <h3 className="text-xl font-bold mb-4">Core Features:</h3>
               <ul className="space-y-2 text-sm font-semibold marker:text-primary">
-                <li>🔹 <strong>Facebook Story Downloader</strong></li>
-                <li>🔹 <strong>Facebook Reel Downloader</strong></li>
-                <li>🔹 <strong>FB Downloader Video</strong></li>
-                <li>🔹 <strong>FSave</strong> & <strong>FDown</strong></li>
-                <li>🔹 <strong>Getfvid</strong> Alternative</li>
+                <li>🔹 <strong>Facebook Story Downloader Support</strong></li>
+                <li>🔹 <strong>Facebook Reels Extractor</strong></li>
+                <li>🔹 <strong>Save Live Videos (Post-Broadcast)</strong></li>
+                <li>🔹 <strong>No Watermarks on Output</strong></li>
+                <li>🔹 <strong>Supports 1080p and 4K Resolution</strong></li>
               </ul>
             </div>
           </div>
@@ -178,34 +146,19 @@ export default function FacebookVideoDownloaderPage() {
         <section className="mb-20 bg-blue-50 dark:bg-blue-950/20 p-8 md:p-12 rounded-3xl border border-blue-100 dark:border-blue-900/50">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              Special Features: <span className="text-primary">Reels & Private Videos</span>
+              Special Features: <span className="text-primary">Reels & Mobile Support</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-xl font-bold mb-4">Download Facebook Reels</h3>
                 <p className="text-muted-foreground mb-4">
-                  Short-form content is king. Our tool is optimized to <strong>download reels facebook</strong> in full HD.
-                  Just paste the reel link. If you also enjoy short videos on other platforms, check out our:
+                  Short-form content is the best way to share quick laughs and tips. Our tool is optimized to download Facebook Reels in full HD. Just paste the reel link the exact same way you would a normal video.
                 </p>
-                <ul className="space-y-2">
-                  <li>
-                    <a href="/instagram-downloader" className="flex items-center gap-2 text-primary font-medium hover:underline">
-                      📸 Instagram Reels Downloader
-                    </a>
-                  </li>
-                  <li>
-                    <a href="/tiktok-downloader" className="flex items-center gap-2 text-primary font-medium hover:underline">
-                      🎵 TikTok Video Downloader
-                    </a>
-                  </li>
-                </ul>
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-4">Private Video Support</h3>
+                <h3 className="text-xl font-bold mb-4">Mobile Device Friendly</h3>
                 <p className="text-muted-foreground">
-                  Trying to save a video from a private group? Most tools fail, but our <strong>facebook private video downloader</strong> logic
-                  can handle complex permissions where you have access.
-                  (Note: Respect user privacy and copyright always).
+                  Need to download FB videos straight to your iPhone's camera roll or Android gallery? Our browser tool does exactly that. No need to install third-party sketchy apps from the App Store.
                 </p>
               </div>
             </div>
@@ -214,27 +167,54 @@ export default function FacebookVideoDownloaderPage() {
 
         {/* How-To Grid */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-center mb-12">Capture Facebook Videos in HD Quality</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">How to Save Facebook Videos in 3 Steps</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-8 bg-card rounded-2xl border border-border hover:shadow-lg transition-all">
               <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">1</div>
-              <h3 className="text-xl font-bold mb-4">Paste URL</h3>
-              <p className="text-muted-foreground">Input the <strong>facebook video download free</strong> link.</p>
+              <h3 className="text-xl font-bold mb-4">Copy Link</h3>
+              <p className="text-muted-foreground">Find the video or Reel on FB, tap the 'Share' arrow, and click "Copy Link".</p>
             </div>
             <div className="text-center p-8 bg-card rounded-2xl border border-border hover:shadow-lg transition-all">
               <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">2</div>
-              <h3 className="text-xl font-bold mb-4">Pick Quality</h3>
-              <p className="text-muted-foreground">Select <strong>facebook video downloader hd</strong> or SD.</p>
+              <h3 className="text-xl font-bold mb-4">Paste URL</h3>
+              <p className="text-muted-foreground">Return here to 30tools and paste the link into the search box at the top of the page.</p>
             </div>
             <div className="text-center p-8 bg-card rounded-2xl border border-border hover:shadow-lg transition-all">
               <div className="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-6">3</div>
-              <h3 className="text-xl font-bold mb-4">Save Video</h3>
-              <p className="text-muted-foreground">Enjoy your <strong>save video facebook</strong> content!</p>
+              <h3 className="text-xl font-bold mb-4">Download MP4</h3>
+              <p className="text-muted-foreground">Select your desired resolution (e.g. 1080p HD) and save the video directly to your device.</p>
             </div>
           </div>
         </section>
 
         <AdUnit />
+
+        {/* FAQs Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-6">
+            <div className="bg-card border border-border rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-2">Is it really free to download Facebook videos?</h3>
+              <p className="text-muted-foreground">Yes! Our Facebook video downloader is completely 100% free. There are no limits on the number of times you can download, and we never ask for your credit card or to create an account.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-2">Can I download Reels and Stories?</h3>
+              <p className="text-muted-foreground">Absolutely. As long as you have the URL link to the Facebook Reel or Story (and it is public), our tool can fetch the raw MP4 file for you to save.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-2">Are the downloaded videos high quality?</h3>
+              <p className="text-muted-foreground">Yes. We extract all available resolutions provided by Facebook, ranging from standard definition (SD) all the way up to Full HD (1080p) and 4K when the original uploader provides it.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-2">Do you keep a copy of the videos I download?</h3>
+              <p className="text-muted-foreground">No. 30tools operates strictly as an intermediary fetcher. We do not host, store, or log any of the videos you download. Your downloads are entirely private.</p>
+            </div>
+            <div className="bg-card border border-border rounded-xl p-6">
+              <h3 className="text-lg font-bold mb-2">Is it legal to download videos from Facebook?</h3>
+              <p className="text-muted-foreground">Downloading videos for personal, offline viewing is generally acceptable. However, downloading and redistributing copyrighted material without the creator's explicit permission is a violation of copyright law. Always respect intellectual property.</p>
+            </div>
+          </div>
+        </section>
 
         {/* Keyword Cloud */}
         <div className="bg-muted/30 rounded-3xl p-8 mb-20 text-center border border-border/50">
@@ -255,15 +235,15 @@ export default function FacebookVideoDownloaderPage() {
           <h2 className="text-2xl font-bold mb-8 text-center">More Popular Downloaders</h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { href: "/instagram-video-downloader", title: "Instagram Downloader", icon: "📸" },
-              { href: "/tiktok-downloader", title: "TikTok Downloader", icon: "🎵" },
-              { href: "/youtube-downloader", title: "YouTube Downloader", icon: "📹" },
-              { href: "/facebook-downloader", title: "Main FB Tool", icon: "📘" }
+              { href: "/instagram-videos-downloader", title: "Instagram Downloader", icon: "📸" },
+              { href: "/tiktok-videos-downloader", title: "TikTok Downloader", icon: "🎵" },
+              { href: "/youtube-video-downloader", title: "YouTube Downloader", icon: "📹" },
+              { href: "/pinterest-video-downloader", title: "Pinterest Downloader", icon: "📌" }
             ].map((t, i) => (
-              <a key={i} href={t.href} className="p-6 bg-card rounded-2xl border border-border hover:border-primary transition-all text-center group">
+              <Link key={i} href={t.href} className="p-6 bg-card rounded-2xl border border-border hover:border-primary transition-all text-center group">
                 <span className="text-3xl mb-3 block">{t.icon}</span>
                 <h3 className="font-bold group-hover:text-primary transition-colors text-sm">{t.title}</h3>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
