@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
@@ -87,9 +88,9 @@ export default function RedditDownloaderPage() {
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Reddit Downloader</li>
             </ol>
@@ -123,13 +124,13 @@ export default function RedditDownloaderPage() {
                   We also convert silent GIFs into shareable MP4s.
                 </p>
                 <div className="flex gap-4 text-sm font-medium">
-                  <a href="/tiktok-downloader" className="hover:text-orange-600 transition-colors">
+                  <Link href="/tiktok-downloader" className="hover:text-orange-600 transition-colors">
                     Saving TikTok Trends?
-                  </a>
+                  </Link>
                   <span>•</span>
-                  <a href="/twitter-video-downloader" className="hover:text-orange-600 transition-colors">
+                  <Link href="/twitter-video-downloader" className="hover:text-orange-600 transition-colors">
                     Download Twitter News
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="shrink-0 bg-background p-4 rounded-xl shadow-sm border">
@@ -168,13 +169,13 @@ export default function RedditDownloaderPage() {
                 { href: "/instagram-downloader", icon: "📸", title: "Instagram Downloader", desc: "Download IG videos" },
                 { href: "/universal-video-downloader", icon: "🌐", title: "Universal Downloader", desc: "Download from any site" }
               ].map((tool, i) => (
-                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                <Link key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-2xl">{tool.icon}</span>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">{tool.desc}</p>
-                </a>
+                </Link>
               ))}
             </div>
           </section>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import TextToSpeechTool from "@/components/tools/audio/TextToSpeechTool";
 
 export const metadata = {
@@ -47,14 +48,14 @@ export default function TextToSpeechPage() {
             <h3 className="text-xl font-bold mb-4">🎙️ For Content Creators</h3>
             <p className="text-muted-foreground mb-4">
               Turn your scripts into voiceovers instantly. Perfect for YouTube videos, TikToks, and podcasts.
-              Pair this with our <a href="/youtube-script-generator" className="text-primary hover:underline">AI Script Generator</a> for a complete workflow.
+              Pair this with our <Link href="/youtube-script-generator" className="text-primary hover:underline">AI Script Generator</Link> for a complete workflow.
             </p>
           </div>
           <div className="bg-card p-6 rounded-2xl border border-border">
             <h3 className="text-xl font-bold mb-4">📚 For Students & Research</h3>
             <p className="text-muted-foreground mb-4">
               Listen to articles, papers, and study notes. Increase your productivity by listening while you multitask.
-              Need to summarize content first? Try our <a href="/youtube-video-summarizer" className="text-primary hover:underline">Video Summarizer</a>.
+              Need to summarize content first? Try our <Link href="/youtube-video-summarizer" className="text-primary hover:underline">Video Summarizer</Link>.
             </p>
           </div>
         </div>

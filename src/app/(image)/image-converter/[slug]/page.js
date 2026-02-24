@@ -1,7 +1,7 @@
 
 import { notFound } from 'next/navigation';
 import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
-import { BreadcrumbsEnhanced, QuickActions } from "@/components/seo";
+import { BreadcrumbsEnhanced } from "@/components/seo";
 
 // Valid conversions
 const CONVERSIONS = {

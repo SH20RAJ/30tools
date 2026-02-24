@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ImageToPDFTool from "@/components/tools/pdf/ImageToPDFTool";
 import {
     BreadcrumbsEnhanced,
@@ -189,9 +190,9 @@ export default function ImageToPDFPage() {
                                         <p className="text-sm text-muted-foreground">
                                             Photographers and designers, looking for <strong>how to make a pdf portfolio</strong>?
                                             Combine your best shots into a single file. Afterward, use our{" "}
-                                            <a href="/pdf-compressor" className="text-primary hover:underline font-medium">
+                                            <Link href="/pdf-compressor" className="text-primary hover:underline font-medium">
                                                 PDF Compressor
-                                            </a>{" "}
+                                            </Link>{" "}
                                             to ensure it's small enough to email to clients without losing quality.
                                         </p>
                                     </div>
@@ -205,9 +206,9 @@ export default function ImageToPDFPage() {
                                         <p className="text-sm text-muted-foreground">
                                             Turn chaos into order by converting receipt photos to PDF.
                                             Need to submit a monthly report? Use our{" "}
-                                            <a href="/pdf-merger" className="text-primary hover:underline font-medium">
+                                            <Link href="/pdf-merger" className="text-primary hover:underline font-medium">
                                                 PDF Merger
-                                            </a>{" "}
+                                            </Link>{" "}
                                             to join all your daily receipt PDFs into one comprehensive document for reimbursement.
                                         </p>
                                     </div>

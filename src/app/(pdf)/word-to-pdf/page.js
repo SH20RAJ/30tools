@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import WordToPDFTool from "@/components/tools/pdf/WordToPDFTool";
 import {
   BreadcrumbsEnhanced,
@@ -206,9 +207,9 @@ export default function WordToPDFPage() {
                 <p className="text-sm text-muted-foreground">
                   PDF is the only format universally accepted for digital signatures in court. Ensure your <strong>business contracts</strong> are legally sound by sharing them in a locked format.
                   Need to make last-minute changes before converting? Use our{" "}
-                  <a href="/pdf-editor" className="text-primary hover:underline font-medium">
+                  <Link href="/pdf-editor" className="text-primary hover:underline font-medium">
                     PDF Editor
-                  </a>{" "}
+                  </Link>{" "}
                   for quick text adjustments.
                 </p>
               </div>

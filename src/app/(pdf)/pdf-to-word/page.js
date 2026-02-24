@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PDFToWordTool from "@/components/tools/pdf/PDFToWordTool";
 import {
   BreadcrumbsEnhanced,
@@ -184,9 +185,9 @@ export default function PDFToWordPage() {
                   <p className="text-sm text-muted-foreground">
                     Don't retype entire contracts. Convert standard lease agreements to Word to edit specific clauses.
                     Once confirmed, use our{" "}
-                    <a href="/word-to-pdf" className="text-primary hover:underline font-medium">
+                    <Link href="/word-to-pdf" className="text-primary hover:underline font-medium">
                       Word to PDF
-                    </a>{" "}
+                    </Link>{" "}
                     tool to lock it back down.
                   </p>
                 </div>
@@ -195,9 +196,9 @@ export default function PDFToWordPage() {
                   <p className="text-sm text-muted-foreground">
                     Extract heavy text from journal articles for your literature review.
                     Need to combine multiple research papers first? Try our{" "}
-                    <a href="/pdf-merger" className="text-primary hover:underline font-medium">
+                    <Link href="/pdf-merger" className="text-primary hover:underline font-medium">
                       PDF Merger
-                    </a>{" "}
+                    </Link>{" "}
                     before converting.
                   </p>
                 </div>

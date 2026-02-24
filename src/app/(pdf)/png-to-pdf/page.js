@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import ImagesToPdf from "@/components/tools/pdf/ImagesToPdf";
 
 export const metadata = {
@@ -28,9 +29,9 @@ export default function PngToPdfPage() {
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/pdf-tools" className="hover:text-primary">PDF Tools</a></li>
+              <li><Link href="/pdf-tools" className="hover:text-primary">PDF Tools</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">PNG to PDF</li>
             </ol>

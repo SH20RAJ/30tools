@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PdfProtectTool from "@/components/tools/pdf/PdfProtectTool";
 import {
   BreadcrumbsEnhanced,
@@ -197,9 +198,9 @@ export default function PdfProtectPage() {
                   <p className="text-sm text-muted-foreground">
                     Ensure <strong>GDPR & HIPAA compliance</strong> by encrypting employee contracts and patient data before sharing.
                     Accidentally locked the wrong file? Use our{" "}
-                    <a href="/pdf-unlocker" className="text-primary hover:underline font-medium">
+                    <Link href="/pdf-unlocker" className="text-primary hover:underline font-medium">
                       PDF Unlocker
-                    </a>{" "}
+                    </Link>{" "}
                     if you have the password but want to remove it permanently.
                   </p>
                 </div>

@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Chingari Video Downloader - Free Online Tool | 30tools",
-  description: "Save your favorite Chingari videos to your device....",
+  title: "Chingari Video Downloader - Save Chingari Videos Free | 30tools",
+  description: "Download Chingari videos without watermark for free. Save short videos from India's homegrown app as MP4. No login required. Works on Android and iPhone.",
   keywords: [
-    "chingari video downloader 2026",
-    "download chingari video video",
-    "save chingari video media",
-    "free online chingari video downloader",
-    "download videos free"
+    "chingari video downloader", "download chingari video", "chingari video saver",
+    "chingari to mp4", "chingari downloader", "save chingari video free",
+    "chingari without watermark", "chingari indian short video download"
   ].join(", "),
   openGraph: {
-    title: "Chingari Video Downloader (2026) - Free Downloader",
-    description: "⚡ Save your favorite Chingari videos to your device.",
+    title: "Chingari Video Downloader - Save Indian Short Videos Free",
+    description: "⚡ Download Chingari videos without watermark. India's homegrown TikTok alternative downloader.",
     url: "https://30tools.com/chingari-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Chingari Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Chingari Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Chingari Video Downloader (2026)",
-    description: "⚡ Save your favorite Chingari videos to your device.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    description: "⚡ Save Chingari videos without watermark. Free, instant.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/chingari-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,73 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Chingari Video Downloader",
-    "alternateName": ["30tools Chingari Video Downloader", "Free Downloader"],
-    "description": "Save your favorite Chingari videos to your device.",
-    "url": "https://30tools.com/chingari-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "Chingari Video Downloader",
+  "description": "Free online tool to download Chingari short videos without watermark.",
+  "url": "https://30tools.com/chingari-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
 export default function ChingariVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Chingari Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Chingari Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save your favorite Chingari videos to your device.
+              Download Chingari short videos without watermarks — India's homegrown TikTok alternative. Save viral Chingari content as clean MP4 files for free.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🇮🇳 Made in India</span><span>🚫 No Watermark</span><span>📹 HD MP4</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="Chingari Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Chingari Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Chingari Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save your favorite Chingari videos to your device. Access your favorite Chingari media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">About Chingari</h2>
+            <p className="text-muted-foreground mb-8">Chingari is India's indigenous short-video app with millions of users sharing content in Hindi, Bhojpuri, and regional languages. The platform gained massive popularity as a TikTok alternative after the India ban. Our <strong>Chingari Video Downloader</strong> lets you save any public Chingari video as a clean, watermark-free MP4 file.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Made in India</h3>
+                <p className="text-muted-foreground m-0">Support and enjoy India's homegrown short-video creators. Save the best Chingari content for offline enjoyment.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Hindi & Regional</h3>
+                <p className="text-muted-foreground m-0">Download dance videos, comedy skits, and talent showcases in Hindi, Bhojpuri, Marathi, and other languages.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">No Watermark</h3>
+                <p className="text-muted-foreground m-0">Bypass the Chingari watermark by fetching the source video stream directly. Get a clean file every time.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Chingari with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Chingari video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Chingari link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Chingari Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Chingari Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I share a Chingari video link?</h3>
+                <p className="text-muted-foreground">Open Chingari app, tap the Share icon on a video, then "Copy Link". Paste that link in the 30tools downloader and click Download.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Chingari account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Is this the best Chingari downloader?</h3>
+                <p className="text-muted-foreground">30tools is one of the fastest online downloaders for Chingari with no ads, no registration, no watermarks, and instant processing — making it one of the best Chingari downloader tools available.</p>
               </div>
             </div>
           </section>

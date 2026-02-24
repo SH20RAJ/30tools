@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Bitchute Video Downloader - Free Online Tool | 30tools",
-  description: "Download your favorite Bitchute videos in one click....",
+  title: "BitChute Video Downloader - Save BitChute Videos Free | 30tools",
+  description: "Download BitChute videos to MP4 for free. Save alternative media and podcasts from BitChute without restrictions. No login required. Works on all devices.",
   keywords: [
-    "bitchute video downloader 2026",
-    "download bitchute video video",
-    "save bitchute video media",
-    "free online bitchute video downloader",
-    "download videos free"
+    "bitchute video downloader", "download bitchute video", "bitchute to mp4", "save bitchute video",
+    "bitchute downloader free", "bitchute video saver", "how to download bitchute videos",
+    "bitchute alternative media download", "download from bitchute"
   ].join(", "),
   openGraph: {
-    title: "Bitchute Video Downloader (2026) - Free Downloader",
-    description: "⚡ Download your favorite Bitchute videos in one click.",
+    title: "BitChute Video Downloader - Save Videos Free",
+    description: "⚡ Download BitChute videos as MP4 for free. No censorship, no login required.",
     url: "https://30tools.com/bitchute-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Bitchute Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "BitChute Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bitchute Video Downloader (2026)",
-    description: "⚡ Download your favorite Bitchute videos in one click.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "BitChute Video Downloader (2026)",
+    description: "⚡ Save BitChute videos offline as MP4. Free, no login required.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/bitchute-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,73 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Bitchute Video Downloader",
-    "alternateName": ["30tools Bitchute Video Downloader", "Free Downloader"],
-    "description": "Download your favorite Bitchute videos in one click.",
-    "url": "https://30tools.com/bitchute-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "BitChute Video Downloader",
+  "description": "Free online tool to download BitChute videos as MP4 files for offline viewing.",
+  "url": "https://30tools.com/bitchute-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
 export default function BitchuteVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Bitchute Video Downloader</li>
+              <li className="text-foreground font-medium">BitChute Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Bitchute Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">BitChute Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download your favorite Bitchute videos in one click.
+              Download BitChute videos and alternative media content as MP4 for free. Save news, podcasts, and independent creator videos from BitChute offline. No login necessary.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>📰 Alt Media</span><span>🎙️ Podcasts</span><span>📹 MP4</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Bitchute Video Downloader" />
+            <UniversalVideoDownloader title="BitChute Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Bitchute Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Bitchute Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Download your favorite Bitchute videos in one click. Access your favorite Bitchute media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Save BitChute Alternative Media Offline</h2>
+            <p className="text-muted-foreground mb-8">BitChute is a peer-to-peer video hosting platform popular with independent creators, journalists, and alternative media outlets. Our <strong>BitChute Video Downloader</strong> lets you save any public BitChute video as an MP4 file for offline access without needing a BitChute account.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Independent Media</h3>
+                <p className="text-muted-foreground m-0">Download news analysis, political commentary, and opinion content from independent creators who host on BitChute.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Archive Before Removal</h3>
+                <p className="text-muted-foreground m-0">BitChute content can be removed. Download and preserve important video content before it disappears from the platform.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">No Account Needed</h3>
+                <p className="text-muted-foreground m-0">Download BitChute videos without creating a BitChute account or logging in. Paste the URL and download instantly.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Bitchute with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Bitchute video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Bitchute link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">BitChute Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Bitchute Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I get the BitChute video URL?</h3>
+                <p className="text-muted-foreground">Open BitChute, navigate to the video you want. Copy the URL from your browser's address bar (e.g. bitchute.com/video/xxxxxxx). Paste it into 30tools and click Download.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Bitchute account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Are BitChute downloads fast?</h3>
+                <p className="text-muted-foreground">BitChute uses peer-to-peer hosting which can vary in speed. Our downloader fetches directly from BitChute's servers. Speed depends on the file size and server availability for that specific video.</p>
               </div>
             </div>
           </section>

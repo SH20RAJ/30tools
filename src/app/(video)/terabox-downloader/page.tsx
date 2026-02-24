@@ -14,7 +14,6 @@ import {
     Play,
     Server,
     Cloud,
-    Smartphone,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import ToolLayout from "@/components/shared/ToolLayout";

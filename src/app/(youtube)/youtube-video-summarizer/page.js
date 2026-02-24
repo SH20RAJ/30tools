@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import YouTubeVideoSummarizer from "@/components/tools/youtube/YouTubeVideoSummarizer";
 
 export const metadata = {
@@ -64,8 +65,8 @@ export default function YouTubeVideoSummarizerPage() {
                 <div className="max-w-6xl mx-auto">
                     <nav aria-label="Breadcrumb" className="mb-8">
                         <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-                            <li><a href="/" className="hover:text-primary">Home</a></li><li>/</li>
-                            <li><a href="/#youtube-tools" className="hover:text-primary">YouTube Tools</a></li><li>/</li>
+                            <li><Link href="/" className="hover:text-primary">Home</Link></li><li>/</li>
+                            <li><Link href="/#youtube-tools" className="hover:text-primary">YouTube Tools</Link></li><li>/</li>
                             <li className="text-foreground font-medium">YouTube Video Summarizer</li>
                         </ol>
                     </nav>
@@ -142,13 +143,13 @@ export default function YouTubeVideoSummarizerPage() {
                                 { href: "/youtube-script-generator", icon: "✍️", title: "Script Generator", desc: "Create scripts" },
                                 { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Save TikToks" }
                             ].map((tool, i) => (
-                                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                                <Link key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
                                     <div className="flex items-center gap-3 mb-2">
                                         <span className="text-2xl">{tool.icon}</span>
                                         <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
                                     </div>
                                     <p className="text-sm text-muted-foreground">{tool.desc}</p>
-                                </a>
+                                </Link>
                             ))}
                         </div>
                     </section>

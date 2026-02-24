@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Espn Video Downloader - Free Online Tool | 30tools",
-  description: "Save your favorite Espn sports videos to your device....",
+  title: "ESPN Video Downloader - Save Sports Highlights Free | 30tools",
+  description: "Download ESPN sports highlight videos, clips, and replays for free. Save NFL, NBA, MLB, and other ESPN highlights as MP4 for offline viewing.",
   keywords: [
-    "espn video downloader 2026",
-    "download espn video video",
-    "save espn video media",
-    "free online espn video downloader",
-    "download videos free"
+    "espn video downloader", "download espn highlights", "espn clip download", "save espn video",
+    "espn to mp4", "espn sports video download", "download espn replay",
+    "how to download espn videos", "espn highlight saver", "nfl highlight download"
   ].join(", "),
   openGraph: {
-    title: "Espn Video Downloader (2026) - Free Downloader",
-    description: "⚡ Save your favorite Espn sports videos to your device.",
+    title: "ESPN Video Downloader - Save Sports Highlights Free",
+    description: "⚡ Download ESPN sports highlights and replays as MP4 for free. Instant offline viewing.",
     url: "https://30tools.com/espn-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Espn Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "ESPN Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Espn Video Downloader (2026)",
-    description: "⚡ Save your favorite Espn sports videos to your device.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "ESPN Video Downloader (2026) - Sports Highlights",
+    description: "⚡ Save ESPN sports highlights offline as MP4. NFL, NBA, MLB — all sports.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/espn-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,74 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Espn Video Downloader",
-    "alternateName": ["30tools Espn Video Downloader", "Free Downloader"],
-    "description": "Save your favorite Espn sports videos to your device.",
-    "url": "https://30tools.com/espn-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "ESPN Video Downloader",
+  "description": "Free online tool to download ESPN sports highlight videos and clips as MP4.",
+  "url": "https://30tools.com/espn-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download ESPN highlights as MP4", "Save NFL, NBA, MLB clips", "No ESPN+ subscription needed", "Works on all devices"]
 };
 
 export default function EspnVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Espn Video Downloader</li>
+              <li className="text-foreground font-medium">ESPN Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Espn Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">ESPN Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save your favorite Espn sports videos to your device.
+              Save ESPN sports highlights, replays, and top plays as MP4 for free. Download NFL touchdowns, NBA dunks, MLB home runs, and more for offline viewing without an ESPN+ subscription.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🏈 NFL</span><span>🏀 NBA</span><span>⚾ MLB</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Espn Video Downloader" />
+            <UniversalVideoDownloader title="ESPN Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Espn Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Espn Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save your favorite Espn sports videos to your device. Access your favorite Espn media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Save Your Favourite Sports Moments Forever</h2>
+            <p className="text-muted-foreground mb-8">ESPN publishes thousands of sports highlight clips — game-winning shots, record-breaking plays, and iconic sports moments. Our <strong>ESPN Video Downloader</strong> lets you save publicly available ESPN clips directly to your device so you can relive those moments anytime, anywhere.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">All Major Sports</h3>
+                <p className="text-muted-foreground m-0">Download highlights from NFL, NBA, MLB, NHL, MLS, College Football, March Madness, and more — all from ESPN's video library.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Top Plays Archive</h3>
+                <p className="text-muted-foreground m-0">Save ESPN Top 10 Plays of the Day, SportsCenter highlights, and iconic moments from your favorite athletes to your personal archive.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Offline Viewing</h3>
+                <p className="text-muted-foreground m-0">Download and watch sports highlights without an internet connection. Perfect for commuters, travellers, or areas with poor connectivity.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Espn with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Espn video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Espn link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">ESPN Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Espn Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download full ESPN game replays?</h3>
+                <p className="text-muted-foreground">Full game replays on ESPN require an ESPN+ subscription and are protected by DRM. Our tool works for publicly available clips and highlight reels shared on espn.com without a subscription requirement.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Espn account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">How do I get the ESPN video URL?</h3>
+                <p className="text-muted-foreground">Find the highlight clip on espn.com, click the share icon, copy the link, and paste it into the 30tools ESPN Downloader to download the video.</p>
               </div>
             </div>
           </section>

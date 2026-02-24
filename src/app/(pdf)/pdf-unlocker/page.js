@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PdfUnlockerTool from "@/components/tools/pdf/PdfUnlockerTool";
 
 const researchedKeywords = [
@@ -136,8 +137,8 @@ export default function PdfUnlockerPage() {
       <div className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <li><a href="/" className="hover:text-primary transition-colors">Home</a></li><li>/</li>
-            <li><a href="/pdf-tools" className="hover:text-primary transition-colors">PDF Tools</a></li><li>/</li>
+            <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li><li>/</li>
+            <li><Link href="/pdf-tools" className="hover:text-primary transition-colors">PDF Tools</Link></li><li>/</li>
             <li className="text-foreground font-medium">PDF Unlocker</li>
           </ol>
         </nav>
@@ -260,9 +261,9 @@ export default function PdfUnlockerPage() {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 If you have a <strong>password unlocker</strong> requirement for your old documents, our
                 <strong>pdf unlocker online</strong> system can help you recover access. Once unlocked, you can use our{" "}
-                <a href="/pdf-editor" className="text-primary hover:underline font-medium">
+                <Link href="/pdf-editor" className="text-primary hover:underline font-medium">
                   PDF Editor
-                </a>{" "}
+                </Link>{" "}
                 to modify content that was previously restricted.
               </p>
             </div>
@@ -339,16 +340,16 @@ export default function PdfUnlockerPage() {
               { href: "/pdf-to-word", title: "PDF to Word", icon: "📄" },
               { href: "/pdf-merger", title: "PDF Merger", icon: "🔗" }
             ].map((t, i) => (
-              <a key={i} href={t.href} className="p-6 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-xl transition-all text-center group">
+              <Link key={i} href={t.href} className="p-6 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-xl transition-all text-center group">
                 <span className="text-3xl mb-3 block">{t.icon}</span>
                 <h3 className="font-bold group-hover:text-primary transition-colors text-sm">{t.title}</h3>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
 
         <div className="mt-12 text-center">
-          <a href="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-6 py-2 rounded-full border border-border hover:bg-muted">← Back to 30Tools Home</a>
+          <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-6 py-2 rounded-full border border-border hover:bg-muted">← Back to 30Tools Home</Link>
         </div>
       </div>
 

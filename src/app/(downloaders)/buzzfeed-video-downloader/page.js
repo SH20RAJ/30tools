@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Buzzfeed Video Downloader - Free Online Tool | 30tools",
-  description: "Download any Buzzfeed video to your device instantly....",
+  title: "Buzzfeed Video Downloader - Save Buzzfeed Videos Free | 30tools",
+  description: "Download Buzzfeed videos, quizzes videos, and tasty cooking clips for free. Save any Buzzfeed video as MP4 without login. Works on all devices instantly.",
   keywords: [
-    "buzzfeed video downloader 2026",
-    "download buzzfeed video video",
-    "save buzzfeed video media",
-    "free online buzzfeed video downloader",
-    "download videos free"
+    "buzzfeed video downloader", "download buzzfeed video", "save buzzfeed video",
+    "tasty video downloader", "buzzfeed to mp4", "buzzfeed downloader free",
+    "how to download buzzfeed videos", "tasty recipe video download", "buzzfeed video saver"
   ].join(", "),
   openGraph: {
-    title: "Buzzfeed Video Downloader (2026) - Free Downloader",
-    description: "⚡ Download any Buzzfeed video to your device instantly.",
+    title: "Buzzfeed Video Downloader - Save Tasty & Buzzfeed Videos",
+    description: "⚡ Download Buzzfeed and Tasty cooking videos as MP4 for free. Instant, no login.",
     url: "https://30tools.com/buzzfeed-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Buzzfeed Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Buzzfeed Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Buzzfeed Video Downloader (2026)",
-    description: "⚡ Download any Buzzfeed video to your device instantly.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    description: "⚡ Save Buzzfeed & Tasty videos offline as MP4. Free, instant.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/buzzfeed-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,74 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Buzzfeed Video Downloader",
-    "alternateName": ["30tools Buzzfeed Video Downloader", "Free Downloader"],
-    "description": "Download any Buzzfeed video to your device instantly.",
-    "url": "https://30tools.com/buzzfeed-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "Buzzfeed Video Downloader",
+  "alternateName": ["Tasty Video Downloader", "Save Buzzfeed Videos"],
+  "description": "Free online tool to download Buzzfeed and Tasty videos as MP4 files.",
+  "url": "https://30tools.com/buzzfeed-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
 export default function BuzzfeedVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Buzzfeed Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Buzzfeed Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download any Buzzfeed video to your device instantly.
+              Save Buzzfeed and Tasty cooking videos as MP4 for free. Download recipe videos, fun quizzes, and entertainment clips from Buzzfeed for offline viewing.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🍕 Tasty Recipes</span><span>😂 Entertainment</span><span>📹 MP4</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="Buzzfeed Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Buzzfeed Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Buzzfeed Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Download any Buzzfeed video to your device instantly. Access your favorite Buzzfeed media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Save Tasty Recipes and Buzzfeed Hits Offline</h2>
+            <p className="text-muted-foreground mb-8">Buzzfeed produces some of the internet's best viral content — from Tasty recipe videos to heartwarming stories, celebrity content, and entertainment news. Our <strong>Buzzfeed Video Downloader</strong> lets you save any public Buzzfeed video for offline reference, especially those quick Tasty recipe clips you want cooking step-by-step.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Tasty Cooking Videos</h3>
+                <p className="text-muted-foreground m-0">Save Tasty recipe videos to your device so you can follow along in the kitchen without needing an internet connection or the Tasty app.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Viral Entertainment</h3>
+                <p className="text-muted-foreground m-0">Download Buzzfeed viral videos — try not to laugh challenges, weird tests, and entertainment clips — to share with friends offline.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Keep It Forever</h3>
+                <p className="text-muted-foreground m-0">Buzzfeed occasionally removes older content. Download your favourite Buzzfeed videos to keep them permanently in your personal collection.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Buzzfeed with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Buzzfeed video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Buzzfeed link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Buzzfeed Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Buzzfeed Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download a Buzzfeed video?</h3>
+                <p className="text-muted-foreground">On Buzzfeed.com, find the video you want. Copy the article/post URL. Paste it into the 30tools downloader and click Download. Our tool identifies and extracts the video file for download.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Buzzfeed account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download Tasty full recipes from Buzzfeed?</h3>
+                <p className="text-muted-foreground">Yes. Tasty recipe videos on Buzzfeed are public and downloadable using our tool. Paste the Tasty recipe page URL and download the full cooking video as MP4.</p>
               </div>
             </div>
           </section>

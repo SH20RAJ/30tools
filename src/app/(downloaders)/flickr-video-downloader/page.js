@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Flickr Video Downloader - Free Online Tool | 30tools",
-  description: "Save Flickr videos to your device in high quality....",
+  title: "Flickr Video Downloader - Save Flickr Videos & Photos Free | 30tools",
+  description: "Download Flickr videos and photos in original quality for free. Save Flickr media to your device for offline viewing or sharing. No login required.",
   keywords: [
-    "flickr video downloader 2026",
-    "download flickr video video",
-    "save flickr video media",
-    "free online flickr video downloader",
-    "download videos free"
+    "flickr video downloader", "download flickr video", "flickr photo downloader", "save flickr media",
+    "flickr to mp4", "flickr downloader free", "flickr image downloader",
+    "how to download flickr videos", "flickr video saver", "download flickr photos original quality"
   ].join(", "),
   openGraph: {
-    title: "Flickr Video Downloader (2026) - Free Downloader",
-    description: "⚡ Save Flickr videos to your device in high quality.",
+    title: "Flickr Video Downloader - Save Flickr Media Free",
+    description: "⚡ Download Flickr videos and photos in original quality. Free, no login required.",
     url: "https://30tools.com/flickr-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Flickr Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Flickr Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Flickr Video Downloader (2026)",
-    description: "⚡ Save Flickr videos to your device in high quality.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "Flickr Video Downloader (2026) - Free",
+    description: "⚡ Save Flickr videos and photos offline. Original quality, no login.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/flickr-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,73 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Flickr Video Downloader",
-    "alternateName": ["30tools Flickr Video Downloader", "Free Downloader"],
-    "description": "Save Flickr videos to your device in high quality.",
-    "url": "https://30tools.com/flickr-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "Flickr Video Downloader",
+  "description": "Free online tool to download Flickr videos and photos in original quality.",
+  "url": "https://30tools.com/flickr-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
 export default function FlickrVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Flickr Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Flickr Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save Flickr videos to your device in high quality.
+              Save Flickr videos and photos in their original high resolution quality for free. Download any public Flickr media instantly — perfect for photographers and creators.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>📸 Photos & Videos</span><span>🔭 Original Quality</span><span>🚫 No Login</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="Flickr Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Flickr Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Flickr Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save Flickr videos to your device in high quality. Access your favorite Flickr media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Download Professional Flickr Photography</h2>
+            <p className="text-muted-foreground mb-8">Flickr is home to over 15 billion photos from professional photographers and enthusiasts worldwide. Many images are licensed under Creative Commons for free use. Our <strong>Flickr Video Downloader</strong> lets you save Flickr videos and high-resolution photos easily.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Professional Photography</h3>
+                <p className="text-muted-foreground m-0">Flickr hosts stunning professional photography across nature, architecture, street photography, and more. Save your favorites in full resolution.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Creative Commons</h3>
+                <p className="text-muted-foreground m-0">Millions of Flickr photos are available under Creative Commons licenses for free commercial and personal use. Always verify the license before reuse.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Original Resolution</h3>
+                <p className="text-muted-foreground m-0">Download Flickr photos and videos in their original uploaded resolution — no compression, no cropping. Full quality every time.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Flickr with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Flickr video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Flickr link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Flickr Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Flickr Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download photos from Flickr for free?</h3>
+                <p className="text-muted-foreground">Yes. Public Flickr photos can be downloaded using our tool. Always check the Creative Commons license or copyright information before using downloaded Flickr images commercially. Some rights-reserved photos may only be downloaded for personal use.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Flickr account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download an entire Flickr album?</h3>
+                <p className="text-muted-foreground">Paste the Flickr album URL and our tool will list all available media in the collection. Select individual files or bulk download the entire album.</p>
               </div>
             </div>
           </section>

@@ -9,13 +9,10 @@ import {
   CheckCircle2,
   Copy,
   Download,
-  Film,
   Globe,
   Music,
   Smartphone,
   Video,
-  Zap,
-  UserCheck,
   Image as ImageIcon
 } from "lucide-react";
 import { AuthorBio } from "@/components/seo";
@@ -319,7 +316,7 @@ export default function TikTokDownloaderPage() {
               <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                 TikTok photo slideshows are popular. We detect them!
                 Our tool lets you save every single photo from a <strong>tiktok slideshow</strong> without a watermark,
-                just like our <a href="/instagram-downloader" className="underline font-medium hover:text-pink-600">Instagram Photo Downloader</a>.
+                just like our <Link href="/instagram-downloader" className="underline font-medium hover:text-pink-600">Instagram Photo Downloader</Link>.
               </p>
             </div>
           </section>

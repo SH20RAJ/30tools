@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 const researchedKeywords = [
@@ -142,8 +143,8 @@ export default function UniversalVideoDownloaderPage() {
       <div className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <li><a href="/" className="hover:text-primary transition-colors">Home</a></li><li>/</li>
-            <li><a href="/all-downloaders" className="hover:text-primary transition-colors">Downloaders</a></li><li>/</li>
+            <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li><li>/</li>
+            <li><Link href="/all-downloaders" className="hover:text-primary transition-colors">Downloaders</Link></li><li>/</li>
             <li className="text-foreground font-medium">Universal Video Downloader</li>
           </ol>
         </nav>
@@ -315,10 +316,10 @@ export default function UniversalVideoDownloaderPage() {
           <div className="mt-8 text-center text-sm">
             <p className="mb-2 font-medium">Looking for specific platform optimizers?</p>
             <div className="flex flex-wrap justify-center gap-4 text-blue-600 dark:text-blue-400">
-              <a href="/instagram-reel-downloader" className="hover:underline">Reels</a>
-              <a href="/snapchat-video-downloader" className="hover:underline">Snapchat</a>
-              <a href="/pinterest-video-downloader" className="hover:underline">Pinterest</a>
-              <a href="/reddit-downloader" className="hover:underline">Reddit</a>
+              <Link href="/instagram-reel-downloader" className="hover:underline">Reels</Link>
+              <Link href="/snapchat-video-downloader" className="hover:underline">Snapchat</Link>
+              <Link href="/pinterest-video-downloader" className="hover:underline">Pinterest</Link>
+              <Link href="/reddit-downloader" className="hover:underline">Reddit</Link>
             </div>
           </div>
         </section>
@@ -371,16 +372,16 @@ export default function UniversalVideoDownloaderPage() {
               { href: "/instagram-downloader", title: "Instagram Downloader", icon: "📸" },
               { href: "/tiktok-downloader", title: "TikTok Downloader", icon: "🎵" }
             ].map((t, i) => (
-              <a key={i} href={t.href} className="p-6 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-xl transition-all text-center group">
+              <Link key={i} href={t.href} className="p-6 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-xl transition-all text-center group">
                 <span className="text-3xl mb-3 block">{t.icon}</span>
                 <h3 className="font-bold group-hover:text-primary transition-colors text-sm">{t.title}</h3>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
 
         <div className="mt-12 text-center">
-          <a href="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-6 py-2 rounded-full border border-border hover:bg-muted">← View All 30Tools</a>
+          <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors px-6 py-2 rounded-full border border-border hover:bg-muted">← View All 30Tools</Link>
         </div>
       </div>
 

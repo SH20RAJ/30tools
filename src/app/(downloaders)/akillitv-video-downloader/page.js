@@ -1,37 +1,30 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "AkilliTv Video Downloader - Free Online Tool | 30tools",
-  description: "Download AkilliTv videos easily with our free online downloader....",
+  title: "AkilliTV Video Downloader - Save AkilliTV Videos Free | 30tools",
+  description: "Download Turkish AkilliTV videos and live stream recordings for free. Save AkilliTV content as MP4 without login. Works on all devices.",
   keywords: [
-    "akillitv video downloader 2026",
-    "download akillitv video video",
-    "save akillitv video media",
-    "free online akillitv video downloader",
-    "download videos free"
+    "akillitv video downloader", "download akillitv video", "akillitv downloader", "turkish video downloader",
+    "save akillitv video", "akillitv to mp4", "akillitv download free"
   ].join(", "),
   openGraph: {
-    title: "AkilliTv Video Downloader (2026) - Free Downloader",
-    description: "⚡ Download AkilliTv videos easily with our free online downloader.",
+    title: "AkilliTV Video Downloader - Save Turkish Videos Free",
+    description: "⚡ Download AkilliTV Turkish videos as MP4 for free. No login required.",
     url: "https://30tools.com/akillitv-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "AkilliTv Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "AkilliTV Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "AkilliTv Video Downloader (2026)",
-    description: "⚡ Download AkilliTv videos easily with our free online downloader.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "AkilliTV Video Downloader (2026)",
+    description: "⚡ Save AkilliTV videos offline for free. MP4, instant download.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/akillitv-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +33,60 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "AkilliTv Video Downloader",
-    "alternateName": ["30tools AkilliTv Video Downloader", "Free Downloader"],
-    "description": "Download AkilliTv videos easily with our free online downloader.",
-    "url": "https://30tools.com/akillitv-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "AkilliTV Video Downloader",
+  "description": "Free online tool to download AkilliTV Turkish videos as MP4.",
+  "url": "https://30tools.com/akillitv-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
-export default function AkilliTvVideoDownloaderPage() {
+export default function AkillItvVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">AkilliTv Video Downloader</li>
+              <li className="text-foreground font-medium">AkilliTV Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">AkilliTv Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">AkilliTV Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download AkilliTv videos easily with our free online downloader.
+              Download AkilliTV Turkish videos and live content recordings as MP4 for free. No registration, no watermarks. Works on any browser or device.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🇹🇷 Turkish Content</span><span>📺 Live Shows</span><span>📹 MP4</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="AkilliTv Video Downloader" />
+            <UniversalVideoDownloader title="AkilliTV Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our AkilliTv Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our AkilliTv Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Download AkilliTv videos easily with our free online downloader. Access your favorite AkilliTv media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Save Turkish AkilliTV Content Offline</h2>
+            <p className="text-muted-foreground mb-8">AkilliTV provides access to Turkey's major TV channels online. Our <strong>AkilliTV Video Downloader</strong> lets you save clips and show segments from AkilliTV as MP4 for offline enjoyment. Perfect for Turkish drama fans and expats wanting to archive content.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
-              </div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Turkish TV Archive</h3><p className="text-muted-foreground m-0">Download episodes and clips from Turkish TV channels broadcast on AkilliTV before they're removed from the platform.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Expat Friendly</h3><p className="text-muted-foreground m-0">Turkish expats worldwide can save AkilliTV content to stay connected with homeland entertainment without relying on streaming availability.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">No Account</h3><p className="text-muted-foreground m-0">Download without registering for an AkilliTV account. Just paste the content URL and get your MP4 instantly.</p></div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from AkilliTv with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the AkilliTv video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied AkilliTv link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">AkilliTV FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this AkilliTv Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a AkilliTv account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download videos from AkilliTV?</h3>
+                <p className="text-muted-foreground">Copy the AkilliTV video URL from your browser. Paste it into the 30tools downloader and click Download. The video will be saved as an MP4 file.</p>
               </div>
             </div>
           </section>

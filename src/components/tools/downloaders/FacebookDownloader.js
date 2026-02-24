@@ -11,10 +11,8 @@ import {
   AlertCircle,
   CheckCircle,
   Video,
-  FileVideo,
-  Image as ImageIcon
+  FileVideo
 } from "lucide-react";
-import Image from "next/image";
 
 export default function FacebookDownloader() {
   const [url, setUrl] = useState("");

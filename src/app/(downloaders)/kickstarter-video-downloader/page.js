@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Kickstarter Video Downloader - Free Online Tool | 30tools",
-  description: "Save Kickstarter project videos to your device easily....",
+  title: "Kickstarter Video Downloader - Save Campaign Videos Free | 30tools",
+  description: "Download Kickstarter campaign pitch videos, product demos, and updates for free. Save any Kickstarter video as MP4 without login. Works on all devices.",
   keywords: [
-    "kickstarter video downloader 2026",
-    "download kickstarter video video",
-    "save kickstarter video media",
-    "free online kickstarter video downloader",
-    "download videos free"
+    "kickstarter video downloader", "download kickstarter video", "kickstarter to mp4",
+    "save kickstarter campaign video", "kickstarter video saver", "kickstarter downloader free",
+    "how to download kickstarter videos", "kickstarter product demo download"
   ].join(", "),
   openGraph: {
-    title: "Kickstarter Video Downloader (2026) - Free Downloader",
-    description: "⚡ Save Kickstarter project videos to your device easily.",
+    title: "Kickstarter Video Downloader - Save Campaign Videos Free",
+    description: "⚡ Download Kickstarter campaign pitch videos as MP4 for free. Instant, no login.",
     url: "https://30tools.com/kickstarter-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Kickstarter Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Kickstarter Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Kickstarter Video Downloader (2026)",
-    description: "⚡ Save Kickstarter project videos to your device easily.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    description: "⚡ Save Kickstarter campaign pitch videos offline. Free, no login.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/kickstarter-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,74 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Kickstarter Video Downloader",
-    "alternateName": ["30tools Kickstarter Video Downloader", "Free Downloader"],
-    "description": "Save Kickstarter project videos to your device easily.",
-    "url": "https://30tools.com/kickstarter-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "Kickstarter Video Downloader",
+  "description": "Free online tool to download Kickstarter campaign pitch videos and product demos as MP4.",
+  "url": "https://30tools.com/kickstarter-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download Kickstarter campaign videos", "Save product demo videos", "No login required", "HD MP4 quality"]
 };
 
 export default function KickstarterVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Kickstarter Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Kickstarter Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save Kickstarter project videos to your device easily.
+              Download Kickstarter campaign pitch videos, product demos, and backer updates as MP4 for free. Save crowdfunding videos for offline review. No login required.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🚀 Campaign Pitches</span><span>🛠️ Product Demos</span><span>📹 HD MP4</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="Kickstarter Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Kickstarter Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Kickstarter Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save Kickstarter project videos to your device easily. Access your favorite Kickstarter media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Why Download Kickstarter Videos?</h2>
+            <p className="text-muted-foreground mb-8">Kickstarter has funded over 200,000 creative projects. Campaign pitch videos are often beautifully produced product demos and brand stories — valuable for inspiration, market research, investor presentations, and competitive analysis. Our <strong>Kickstarter Video Downloader</strong> makes saving these videos effortless.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Market Research</h3>
+                <p className="text-muted-foreground m-0">Save competitor or industry Kickstarter campaign videos for offline analysis, competitive research, and product positioning studies.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Investor Decks</h3>
+                <p className="text-muted-foreground m-0">Download inspiring Kickstarter pitch videos to showcase to your own investors or use as examples in entrepreneurship presentations.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Product Inspiration</h3>
+                <p className="text-muted-foreground m-0">Save innovative product demo videos from successful Kickstarter campaigns as design inspiration for your own product development.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Kickstarter with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Kickstarter video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Kickstarter link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Kickstarter Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Kickstarter Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download a Kickstarter campaign video?</h3>
+                <p className="text-muted-foreground">Navigate to the Kickstarter campaign page. Copy the page URL (e.g. kickstarter.com/projects/...). Paste it into the 30tools Kickstarter Downloader and click Download. Our tool extracts the embedded campaign video.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Kickstarter account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download backer-only Kickstarter updates?</h3>
+                <p className="text-muted-foreground">Backer-only updates require authentication. Our tool works for publicly accessible campaign videos and public project updates shared openly with non-backers.</p>
               </div>
             </div>
           </section>

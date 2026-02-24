@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PdfToImageTool from "@/components/tools/pdf/PdfToImageTool";
 import {
     BreadcrumbsEnhanced,
@@ -201,9 +202,9 @@ export default function PdfToImagePage() {
                                     <p className="text-sm text-muted-foreground">
                                         PDF flyers don't work on Instagram. Convert your promo materials to high-quality JPGs instantly.
                                         Need to do the reverse? Use our{" "}
-                                        <a href="/image-to-pdf" className="text-primary hover:underline font-medium">
+                                        <Link href="/image-to-pdf" className="text-primary hover:underline font-medium">
                                             Image to PDF
-                                        </a>{" "}
+                                        </Link>{" "}
                                         tool to create a lookbook from your best posts.
                                     </p>
                                 </div>
@@ -212,9 +213,9 @@ export default function PdfToImagePage() {
                                     <p className="text-sm text-muted-foreground">
                                         Extract vector logos or diagrams from PDF manuals as PNGs for transparency support.
                                         Once you have your images, you can create a new compilation with our{" "}
-                                        <a href="/jpg-to-pdf" className="text-primary hover:underline font-medium">
+                                        <Link href="/jpg-to-pdf" className="text-primary hover:underline font-medium">
                                             JPG to PDF
-                                        </a>{" "}
+                                        </Link>{" "}
                                         converter.
                                     </p>
                                 </div>

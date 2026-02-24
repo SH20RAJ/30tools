@@ -33,7 +33,6 @@ import {
   FileText,
   ChevronRight,
 } from "lucide-react";
-import { fetchVideoData } from "@/lib/video-download-actions";
 
 export default function UniversalVideoDownloader() {
   const [url, setUrl] = useState("");

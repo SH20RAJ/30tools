@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Mashable Video Downloader - Free Online Tool | 30tools",
-  description: "Download Mashable videos online with our free tool....",
+  title: "Mashable Video Downloader - Save Mashable Videos Free | 30tools",
+  description: "Download Mashable tech, science, and entertainment videos for free. Save Mashable web explainers and tech news clips as MP4. No login required. All devices.",
   keywords: [
-    "mashable video downloader 2026",
-    "download mashable video video",
-    "save mashable video media",
-    "free online mashable video downloader",
-    "download videos free"
+    "mashable video downloader", "download mashable video", "save mashable video",
+    "mashable to mp4", "mashable tech video download", "mashable downloader free",
+    "how to download mashable videos", "mashable clip saver"
   ].join(", "),
   openGraph: {
-    title: "Mashable Video Downloader (2026) - Free Downloader",
-    description: "⚡ Download Mashable videos online with our free tool.",
+    title: "Mashable Video Downloader - Save Tech Videos Free",
+    description: "⚡ Download Mashable tech, science, and entertainment videos as MP4. Free, instant.",
     url: "https://30tools.com/mashable-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Mashable Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Mashable Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Mashable Video Downloader (2026)",
-    description: "⚡ Download Mashable videos online with our free tool.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    description: "⚡ Save Mashable videos offline as MP4. Free, no login.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/mashable-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,60 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Mashable Video Downloader",
-    "alternateName": ["30tools Mashable Video Downloader", "Free Downloader"],
-    "description": "Download Mashable videos online with our free tool.",
-    "url": "https://30tools.com/mashable-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "Mashable Video Downloader",
+  "description": "Free online tool to download Mashable tech, science, and entertainment videos as MP4.",
+  "url": "https://30tools.com/mashable-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
 export default function MashableVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Mashable Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Mashable Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download Mashable videos online with our free tool.
+              Download Mashable tech explainers, science news, and entertainment videos as MP4 for free. Save Mashable's engaging web content for offline viewing or reference.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>💻 Tech Videos</span><span>🔬 Science</span><span>📹 MP4</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="Mashable Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Mashable Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Mashable Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Download Mashable videos online with our free tool. Access your favorite Mashable media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Save Mashable Tech & Science Content Offline</h2>
+            <p className="text-muted-foreground mb-8">Mashable is a leading digital media brand covering technology, science, entertainment, and culture. Their video content ranges from product reviews and tech explainers to science news and viral internet stories. Our <strong>Mashable Video Downloader</strong> lets you save those videos for offline viewing, presentations, or research.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
-              </div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Tech Explainers</h3><p className="text-muted-foreground m-0">Save Mashable's in-depth technology explainer videos about AI, gadgets, apps, and internet culture for offline learning.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Science News</h3><p className="text-muted-foreground m-0">Download Mashable science and space explainer videos for educational use, school projects, or personal curiosity.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Viral Content</h3><p className="text-muted-foreground m-0">Archive Mashable's viral videos and internet culture commentary for research, media studies, or entertainment.</p></div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Mashable with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Mashable video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Mashable link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Mashable FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Mashable Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Mashable account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download a Mashable video?</h3>
+                <p className="text-muted-foreground">Go to the Mashable article or video page. Copy the URL from your browser. Paste it into the 30tools downloader and click Download to save the video as MP4.</p>
               </div>
             </div>
           </section>

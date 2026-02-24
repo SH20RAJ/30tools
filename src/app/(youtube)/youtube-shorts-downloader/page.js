@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import YouTubeShortsDownloader from "@/components/tools/youtube/YouTubeShortsDownloader";
 
 const researchedKeywords = [
@@ -122,8 +123,8 @@ export default function YouTubeShortsDownloaderPage() {
       <div className="container mx-auto px-4 py-12 md:py-20 max-w-6xl">
         <nav aria-label="Breadcrumb" className="mb-8">
           <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-            <li><a href="/" className="hover:text-primary transition-colors">Home</a></li><li>/</li>
-            <li><a href="/#youtube-tools" className="hover:text-primary transition-colors">YouTube Tools</a></li><li>/</li>
+            <li><Link href="/" className="hover:text-primary transition-colors">Home</Link></li><li>/</li>
+            <li><Link href="/#youtube-tools" className="hover:text-primary transition-colors">YouTube Tools</Link></li><li>/</li>
             <li className="text-foreground font-medium">YouTube Shorts Downloader</li>
           </ol>
         </nav>
@@ -295,16 +296,16 @@ export default function YouTubeShortsDownloaderPage() {
               { href: "/youtube-video-summarizer", title: "Video Summarizer", desc: "AI Summaries" },
               { href: "/tiktok-downloader", title: "TikTok Downloader", desc: "No Watermark" }
             ].map((t, i) => (
-              <a key={i} href={t.href} className="p-5 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-lg transition-all text-center group">
+              <Link key={i} href={t.href} className="p-5 bg-card rounded-2xl border border-border hover:border-primary hover:shadow-lg transition-all text-center group">
                 <h3 className="font-bold mb-1 group-hover:text-primary transition-colors text-sm md:text-base">{t.title}</h3>
                 <p className="text-[10px] md:text-xs text-muted-foreground">{t.desc}</p>
-              </a>
+              </Link>
             ))}
           </div>
         </section>
 
         <div className="mt-12 text-center">
-          <a href="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">← Back to All Tools</a>
+          <Link href="/" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">← Back to All Tools</Link>
         </div>
       </div>
 

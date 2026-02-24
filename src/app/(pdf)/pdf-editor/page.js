@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import PDFEditorTool from "@/components/tools/pdf/PDFEditorTool";
 import {
   BreadcrumbsEnhanced,
@@ -180,9 +181,9 @@ export default function PDFEditorPage() {
                   <p className="text-sm text-muted-foreground">
                     Finalizing your dissertation? Remove accidental blank pages or reorder your chapters for a perfect submission.
                     If your file is too large for the portal, use our{" "}
-                    <a href="/pdf-compressor" className="text-primary hover:underline font-medium">
+                    <Link href="/pdf-compressor" className="text-primary hover:underline font-medium">
                       PDF Compressor
-                    </a>{" "}
+                    </Link>{" "}
                     after editing.
                   </p>
                 </div>
@@ -191,9 +192,9 @@ export default function PDFEditorPage() {
                   <p className="text-sm text-muted-foreground">
                     Extract only the relevant case files from a massive 1000-page scan.
                     Need to isolate specific evidence? You can also use our{" "}
-                    <a href="/pdf-splitter" className="text-primary hover:underline font-medium">
+                    <Link href="/pdf-splitter" className="text-primary hover:underline font-medium">
                       PDF Splitter
-                    </a>{" "}
+                    </Link>{" "}
                     for more granular control.
                   </p>
                 </div>

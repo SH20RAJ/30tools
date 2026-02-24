@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import BrokenLinkChecker from "@/components/tools/seo/BrokenLinkChecker";
 
 export const metadata = {
@@ -53,7 +54,7 @@ export default function BrokenLinkCheckerPage() {
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
-          <nav aria-label="Breadcrumb" className="mb-8"><ol className="flex items-center space-x-2 text-sm text-muted-foreground"><li><a href="/" className="hover:text-primary">Home</a></li><li>/</li><li><a href="/#seo-tools" className="hover:text-primary">SEO Tools</a></li><li>/</li><li className="text-foreground font-medium">Broken Link Checker</li></ol></nav>
+          <nav aria-label="Breadcrumb" className="mb-8"><ol className="flex items-center space-x-2 text-sm text-muted-foreground"><li><Link href="/" className="hover:text-primary">Home</Link></li><li>/</li><li><Link href="/#seo-tools" className="hover:text-primary">SEO Tools</Link></li><li>/</li><li className="text-foreground font-medium">Broken Link Checker</li></ol></nav>
           <AdUnit />
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Broken Link Checker</h1>
@@ -79,7 +80,7 @@ export default function BrokenLinkCheckerPage() {
           <section className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related SEO Tools</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[{ href: "/website-analyzer", icon: "🔍", title: "Website Analyzer", desc: "Full analysis" }, { href: "/ssl-checker", icon: "🔒", title: "SSL Checker", desc: "Check SSL" }, { href: "/sitemap-generator", icon: "🗺️", title: "Sitemap Generator", desc: "Create sitemaps" }, { href: "/robots-txt-generator", icon: "🤖", title: "Robots.txt", desc: "Control crawlers" }].map((tool, i) => (<a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all"><div className="flex items-center gap-3 mb-2"><span className="text-2xl">{tool.icon}</span><h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3></div><p className="text-sm text-muted-foreground">{tool.desc}</p></a>))}
+              {[{ href: "/website-analyzer", icon: "🔍", title: "Website Analyzer", desc: "Full analysis" }, { href: "/ssl-checker", icon: "🔒", title: "SSL Checker", desc: "Check SSL" }, { href: "/sitemap-generator", icon: "🗺️", title: "Sitemap Generator", desc: "Create sitemaps" }, { href: "/robots-txt-generator", icon: "🤖", title: "Robots.txt", desc: "Control crawlers" }].map((tool, i) => (<Link key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all"><div className="flex items-center gap-3 mb-2"><span className="text-2xl">{tool.icon}</span><h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3></div><p className="text-sm text-muted-foreground">{tool.desc}</p></Link>))}
             </div>
           </section>
         </div>

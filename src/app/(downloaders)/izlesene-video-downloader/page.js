@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Izlesene Video Downloader - Free Online Tool | 30tools",
-  description: "The ultimate tool for downloading videos from Izlesene....",
+  title: "İzlesene Video Downloader - Save Turkish Videos Free | 30tools",
+  description: "Download İzlesene (izlesene.com) videos for free. Save Turkish video content from Turkey's YouTube as MP4. No login required, works on all devices.",
   keywords: [
-    "izlesene video downloader 2026",
-    "download izlesene video video",
-    "save izlesene video media",
-    "free online izlesene video downloader",
-    "download videos free"
+    "izlesene video downloader", "izlesene downloader", "download izlesene video",
+    "izlesene to mp4", "save izlesene video", "turkish youtube downloader",
+    "izlesene video saver", "how to download from izlesene"
   ].join(", "),
   openGraph: {
-    title: "Izlesene Video Downloader (2026) - Free Downloader",
-    description: "⚡ The ultimate tool for downloading videos from Izlesene.",
+    title: "İzlesene Video Downloader - Turkish YouTube Downloader",
+    description: "⚡ Download İzlesene videos as MP4 for free. Turkey's YouTube, no login required.",
     url: "https://30tools.com/izlesene-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Izlesene Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "İzlesene Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Izlesene Video Downloader (2026)",
-    description: "⚡ The ultimate tool for downloading videos from Izlesene.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "İzlesene Video Downloader (2026)",
+    description: "⚡ Save İzlesene Turkish videos offline as MP4. Free, instant.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/izlesene-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,60 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Izlesene Video Downloader",
-    "alternateName": ["30tools Izlesene Video Downloader", "Free Downloader"],
-    "description": "The ultimate tool for downloading videos from Izlesene.",
-    "url": "https://30tools.com/izlesene-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "İzlesene Video Downloader",
+  "description": "Free online tool to download İzlesene.com Turkish videos as MP4 files.",
+  "url": "https://30tools.com/izlesene-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
 export default function IzleseneVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Izlesene Video Downloader</li>
+              <li className="text-foreground font-medium">İzlesene Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Izlesene Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">İzlesene Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              The ultimate tool for downloading videos from Izlesene.
+              Download videos from İzlesene.com — Turkey's leading video platform — as MP4 for free. Save Turkish comedy, music, and entertainment videos instantly.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🇹🇷 Turkish Videos</span><span>🎬 Comedy & Music</span><span>📹 MP4</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Izlesene Video Downloader" />
+            <UniversalVideoDownloader title="İzlesene Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Izlesene Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Izlesene Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. The ultimate tool for downloading videos from Izlesene. Access your favorite Izlesene media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Turkey's Largest Video Platform Downloader</h2>
+            <p className="text-muted-foreground mb-8">İzlesene.com is one of Turkey's largest homegrown video-sharing platforms, often called "Turkey's YouTube." It hosts millions of videos — Turkish comedians, music clips, sports highlights, TV show excerpts, and more. Our <strong>İzlesene Video Downloader</strong> saves any public İzlesene video as an MP4 instantly.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
-              </div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Turkish Comedy</h3><p className="text-muted-foreground m-0">Download the funniest Turkish stand-up comedy clips, prank videos, and viral humor from İzlesene's massive library.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Music & Concerts</h3><p className="text-muted-foreground m-0">Save live concert performances, Turkish pop music videos, and folk music clips from İzlesene for offline listening.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">TV Excerpts</h3><p className="text-muted-foreground m-0">Download TV show highlights and news clips uploaded from Turkish broadcast channels to İzlesene.com.</p></div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Izlesene with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Izlesene video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Izlesene link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">İzlesene FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Izlesene Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Izlesene account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">How to download from İzlesene?</h3>
+                <p className="text-muted-foreground">Copy the İzlesene video URL (e.g. izlesene.com/video/...). Paste it into the 30tools downloader and click Download. The MP4 saves to your device.</p>
               </div>
             </div>
           </section>

@@ -1,37 +1,30 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Febspot Video Downloader - Free Online Tool | 30tools",
-  description: "Download Febspot videos easily with our online downloader....",
+  title: "FEBspot Video Downloader - Save FEBspot Videos Free | 30tools",
+  description: "Download FEBspot videos for free. Save any FEBspot content as MP4 offline. No login required. Fast, free, and works on all devices instantly.",
   keywords: [
-    "febspot video downloader 2026",
-    "download febspot video video",
-    "save febspot video media",
-    "free online febspot video downloader",
-    "download videos free"
+    "febspot video downloader", "download febspot video", "febspot downloader",
+    "save febspot video", "febspot to mp4", "febspot download free"
   ].join(", "),
   openGraph: {
-    title: "Febspot Video Downloader (2026) - Free Downloader",
-    description: "⚡ Download Febspot videos easily with our online downloader.",
+    title: "FEBspot Video Downloader - Save Videos Free",
+    description: "⚡ Download FEBspot videos as MP4 for free. Instant, no login, no watermarks.",
     url: "https://30tools.com/febspot-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Febspot Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "FEBspot Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Febspot Video Downloader (2026)",
-    description: "⚡ Download Febspot videos easily with our online downloader.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "FEBspot Video Downloader (2026)",
+    description: "⚡ Save FEBspot videos offline as MP4. Free and instant.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/febspot-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +33,64 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Febspot Video Downloader",
-    "alternateName": ["30tools Febspot Video Downloader", "Free Downloader"],
-    "description": "Download Febspot videos easily with our online downloader.",
-    "url": "https://30tools.com/febspot-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "FEBspot Video Downloader",
+  "description": "Free online tool to download FEBspot videos as MP4 files.",
+  "url": "https://30tools.com/febspot-video-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
 export default function FebspotVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Febspot Video Downloader</li>
+              <li className="text-foreground font-medium">FEBspot Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Febspot Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">FEBspot Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download Febspot videos easily with our online downloader.
+              Download FEBspot videos as MP4 for free. Save any public FEBspot video to your device offline — no login, no watermarks, instant download.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>⚡ Instant</span><span>📹 MP4</span><span>🚫 No Watermark</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Febspot Video Downloader" />
+            <UniversalVideoDownloader title="FEBspot Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Febspot Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Febspot Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Download Febspot videos easily with our online downloader. Access your favorite Febspot media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">How to Download FEBspot Videos</h2>
+            <p className="text-muted-foreground mb-8">FEBspot hosts video content accessible to users worldwide. Our <strong>FEBspot Video Downloader</strong> makes it easy to save any publicly available FEBspot video directly to your device for offline viewing.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
-              </div>
-              <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
-              </div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Step 1: Copy URL</h3><p className="text-muted-foreground m-0">Open FEBspot and find the video you want. Copy the video URL from your browser's address bar.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Step 2: Paste URL</h3><p className="text-muted-foreground m-0">Paste the FEBspot video URL into the 30tools input box above and click the Download button.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Step 3: Download</h3><p className="text-muted-foreground m-0">Select your preferred quality and click Download. The MP4 file saves directly to your device.</p></div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Febspot with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Febspot video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Febspot link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">FEBspot Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Febspot Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">Is the FEBspot Video Downloader free?</h3>
+                <p className="text-muted-foreground">Yes, 30tools FEBspot Video Downloader is completely free to use. No account, no subscription, and no hidden charges.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Febspot account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Does this work on mobile?</h3>
+                <p className="text-muted-foreground">Yes. Open 30tools in your mobile browser (Chrome on Android or Safari on iPhone), paste the FEBspot URL, and download the video directly to your device.</p>
               </div>
             </div>
           </section>

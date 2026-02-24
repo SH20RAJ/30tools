@@ -6,12 +6,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  ShieldCheck,
   Lock,
   FileJson,
   Eye,
-  Key,
-  CheckCircle2
+  Key
 } from "lucide-react";
 
 export const metadata = {

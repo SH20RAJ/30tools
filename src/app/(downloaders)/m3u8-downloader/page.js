@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "M3U8 Downloader - Free Online Tool | 30tools",
-  description: "Download m3u8 playlists and convert them to high-quality MP4 videos....",
+  title: "M3U8 Downloader - Download HLS Streams as MP4 Free | 30tools",
+  description: "Download M3U8 HLS streams and convert to MP4 for free. Save any M3U8 playlist stream as an offline video file. No software required. Works in your browser.",
   keywords: [
-    "m3u8 downloader 2026",
-    "download m3u8 video",
-    "save m3u8 media",
-    "free online m3u8 downloader",
-    "download videos free"
+    "m3u8 downloader", "download m3u8 stream", "m3u8 to mp4", "hls stream downloader",
+    "save m3u8 as mp4", "m3u8 video downloader", "hls to mp4 converter",
+    "how to download m3u8 streams", "m3u8 playlist downloader"
   ].join(", "),
   openGraph: {
-    title: "M3U8 Downloader (2026) - Free Downloader",
-    description: "⚡ Download m3u8 playlists and convert them to high-quality MP4 videos.",
+    title: "M3U8 Downloader - Convert HLS Streams to MP4 Free",
+    description: "⚡ Download and convert M3U8 HLS streams to MP4 online. No software, no login.",
     url: "https://30tools.com/m3u8-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "M3U8 Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "M3U8 HLS Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "M3U8 Downloader (2026)",
-    description: "⚡ Download m3u8 playlists and convert them to high-quality MP4 videos.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "M3U8 Downloader (2026) - HLS to MP4 Free",
+    description: "⚡ Convert M3U8 HLS streams to MP4 online. Free, no software needed.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/m3u8-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -42,126 +36,89 @@ const AdUnit = () => (
 
 const jsonLdSchemas = {
   webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "M3U8 Downloader",
-    "alternateName": ["30tools M3U8 Downloader", "Free Downloader"],
-    "description": "Download m3u8 playlists and convert them to high-quality MP4 videos.",
+    "@context": "https://schema.org", "@type": "WebApplication",
+    "name": "M3U8 HLS Downloader",
+    "alternateName": ["M3U8 to MP4 Converter", "HLS Stream Downloader"],
+    "description": "Free online tool to download and convert M3U8 (HLS) streams to MP4. No software installation required.",
     "url": "https://30tools.com/m3u8-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
+    "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
+    "featureList": ["Download M3U8 HLS streams", "Convert to MP4 format", "No software required", "Works in browser"]
+  },
+  howTo: {
+    "@context": "https://schema.org", "@type": "HowTo",
+    "name": "How to Download an M3U8 HLS Stream as MP4",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Get M3U8 URL", "text": "Right-click the video player on any website, open browser DevTools Network tab, filter for .m3u8, and copy the M3U8 playlist URL." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Paste the M3U8 stream URL into the 30tools M3U8 Downloader." },
+      { "@type": "HowToStep", "position": 3, "name": "Convert and Download", "text": "Click Download. Our tool fetches all HLS segments and merges them into a single MP4 file for download." }
     ]
   }
 };
 
-export default function MUDownloaderPage() {
+export default function M3u8DownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">M3U8 Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">M3U8 Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">M3U8 / HLS Stream Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download m3u8 playlists and convert them to high-quality MP4 videos.
+              Download M3U8 HLS (HTTP Live Streaming) streams and save them as MP4 files online for free. No FFmpeg installation, no software. Works directly in your browser.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>📡 HLS Streams</span><span>🔄 M3U8 to MP4</span><span>💻 Browser-Based</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="M3U8 Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our M3U8 Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our M3U8 Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Download m3u8 playlists and convert them to high-quality MP4 videos. Access your favorite M3U8 media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">What is M3U8 and Why Download It?</h2>
+            <p className="text-muted-foreground mb-8">M3U8 is a UTF-8 encoded text file format used for HLS (HTTP Live Streaming) — the most common video streaming standard used by platforms like Apple TV, Twitch, and thousands of video websites. An M3U8 file is a playlist pointing to video segment files (.ts). Our <strong>M3U8 Downloader</strong> fetches all segments and assembles them into a single playable MP4 without needing any video software like FFmpeg or VLC.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">No Software Needed</h3>
+                <p className="text-muted-foreground m-0">Our online M3U8 downloader works entirely in your browser. No FFmpeg, VLC, or other video software installation needed.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Auto Segment Merge</h3>
+                <p className="text-muted-foreground m-0">Our tool automatically fetches all .ts video segments from the M3U8 playlist and merges them into a single continuous MP4 file.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Universal Format</h3>
+                <p className="text-muted-foreground m-0">Works with M3U8 streams from any website or platform. If you have the .m3u8 URL, our tool can download it.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from M3U8 with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the M3U8 video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied M3U8 link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">M3U8 Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this M3U8 Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I find the M3U8 URL on a webpage?</h3>
+                <p className="text-muted-foreground">Open your browser DevTools (F12 or Cmd+Shift+I). Go to the Network tab. Play the video. Filter the network requests by "m3u8". The M3U8 playlist URL will appear in the request list — copy it and paste into our downloader.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a M3U8 account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download encrypted M3U8 streams?</h3>
+                <p className="text-muted-foreground">M3U8 streams encrypted with AES-128 require the decryption key, which our tool fetches automatically if it is referenced in the playlist. DRM-protected streams using Widevine or FairPlay cannot be downloaded.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">What is the difference between M3U8 and MP4?</h3>
+                <p className="text-muted-foreground">M3U8 is a playlist format splitting the video into many small .ts segments for streaming. MP4 is a single complete video file for offline playback. Our downloader converts the segmented M3U8 stream into a single MP4 file you can store and play anywhere.</p>
               </div>
             </div>
           </section>

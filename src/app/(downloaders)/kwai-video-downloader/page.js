@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Kwai Video Downloader - Free Online Tool | 30tools",
-  description: "Save your favorite Kwai videos to your device easily....",
+  title: "Kwai Video Downloader - Save Kwai Videos No Watermark | 30tools",
+  description: "Download Kwai videos without watermark for free. Save Kwai short videos as MP4 to your device. No login needed. Works on Android, iPhone, and PC instantly.",
   keywords: [
-    "kwai video downloader 2026",
-    "download kwai video video",
-    "save kwai video media",
-    "free online kwai video downloader",
-    "download videos free"
+    "kwai video downloader", "download kwai video no watermark", "kwai downloader", "save kwai video",
+    "kwai to mp4", "kwai video download free", "kwai video saver", "kwai without watermark",
+    "how to download kwai videos", "kwai short video download"
   ].join(", "),
   openGraph: {
-    title: "Kwai Video Downloader (2026) - Free Downloader",
-    description: "⚡ Save your favorite Kwai videos to your device easily.",
+    title: "Kwai Video Downloader - Save Videos Without Watermark",
+    description: "⚡ Download Kwai short videos without watermark in HD. Free, no login required.",
     url: "https://30tools.com/kwai-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Kwai Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Kwai Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kwai Video Downloader (2026)",
-    description: "⚡ Save your favorite Kwai videos to your device easily.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "Kwai Video Downloader (2026) - No Watermark Free",
+    description: "⚡ Save Kwai videos without watermark as HD MP4. Free, instant.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/kwai-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,77 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Kwai Video Downloader",
-    "alternateName": ["30tools Kwai Video Downloader", "Free Downloader"],
-    "description": "Save your favorite Kwai videos to your device easily.",
-    "url": "https://30tools.com/kwai-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Kwai Video Downloader",
+  "alternateName": ["Kwai to MP4", "Save Kwai No Watermark"],
+  "description": "Free online tool to download Kwai short videos without watermark as MP4.",
+  "url": "https://30tools.com/kwai-video-downloader",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download Kwai videos without watermark", "HD MP4 quality", "No account required"]
 };
 
 export default function KwaiVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Kwai Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Kwai Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save your favorite Kwai videos to your device easily.
+              Download Kwai short videos without the Kwai watermark. Save trending Kwai content as clean HD MP4 files — free, no login required. Works on all devices.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🚫 No Watermark</span><span>📱 Short Videos</span><span>📹 HD MP4</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="Kwai Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Kwai Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Kwai Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save your favorite Kwai videos to your device easily. Access your favorite Kwai media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">About Kwai Video Downloader</h2>
+            <p className="text-muted-foreground mb-8">Kwai is a global short-video platform popular in Brazil, Southeast Asia, and the Middle East — similar to TikTok. Like TikTok, Kwai adds a watermark to downloaded videos. Our <strong>Kwai Video Downloader</strong> fetches the original video stream without the watermark so you get clean, shareable MP4 files.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">No Watermark</h3>
+                <p className="text-muted-foreground m-0">Get the clean original video without the Kwai logo overlay. Perfect for downloading and resharing on other platforms.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Trending Content</h3>
+                <p className="text-muted-foreground m-0">Save viral Kwai challenges, dances, comedy, and tutorials at the peak of their trend for sharing across platforms.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">All Regions</h3>
+                <p className="text-muted-foreground m-0">Works with Kwai videos from Brazil, Indonesia, the Gulf, India, and all other regions where Kwai is active.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Kwai with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Kwai video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Kwai link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Kwai Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Kwai Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I get the Kwai video link?</h3>
+                <p className="text-muted-foreground">Open the Kwai app, find the video you want, tap Share → Copy Link. Then paste that link into the 30tools Kwai Downloader.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Kwai account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Does this remove the Kwai watermark?</h3>
+                <p className="text-muted-foreground">Yes. Our tool fetches the original video stream from Kwai's servers, which doesn't contain the watermark added by the Kwai app's share function.</p>
               </div>
             </div>
           </section>

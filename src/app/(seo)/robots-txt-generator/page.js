@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import RobotsTxtGenerator from "@/components/tools/seo/RobotsTxtGenerator";
 
 export const metadata = {
@@ -71,8 +72,8 @@ export default function RobotsTxtGeneratorPage() {
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li><li>/</li>
-              <li><a href="/#seo-tools" className="hover:text-primary">SEO Tools</a></li><li>/</li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li><li>/</li>
+              <li><Link href="/#seo-tools" className="hover:text-primary">SEO Tools</Link></li><li>/</li>
               <li className="text-foreground font-medium">Robots.txt Generator</li>
             </ol>
           </nav>
@@ -150,13 +151,13 @@ export default function RobotsTxtGeneratorPage() {
                 { href: "/schema-generator", icon: "📋", title: "Schema Generator", desc: "Create structured data" },
                 { href: "/ssl-checker", icon: "🔒", title: "SSL Checker", desc: "Check SSL certificates" }
               ].map((tool, i) => (
-                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                <Link key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-2xl">{tool.icon}</span>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">{tool.desc}</p>
-                </a>
+                </Link>
               ))}
             </div>
           </section>

@@ -2,32 +2,26 @@ import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Pinterest Image Downloader - Save High-Quality Pins Free | 30tools",
-  description: "Download Pinterest images in full HD quality. The fastest free online Pinterest image saver. Download pictures from Pinterest to gallery on mobile & PC.",
+  title: "Pinterest Image Downloader - Save Pinterest Photos Free | 30tools",
+  description: "Download Pinterest images and photos in original HD quality for free. Save any Pinterest picture to your device without watermarks. No login required.",
   keywords: [
-    "pinterest image downloader", "download pinterest photos", "save pinterest images", "how to download pinterest images",
-    "free pinterest image downloader", "online pinterest image downloader", "pinterest image saver",
-    "download images from pinterest on pc", "high quality pinterest download", "pinterest picture saver",
-    "save pin to gallery", "download pinterest images in bulk concept"
+    "pinterest image downloader", "download pinterest images", "save pinterest photo",
+    "pinterest photo downloader", "pinterest picture downloader", "download pinterest photos free",
+    "how to download pinterest images", "save pinterest picture hd", "pinterest image saver"
   ].join(", "),
   openGraph: {
-    title: "Pinterest Image Downloader - Save High Quality Pins",
-    description: "⚡ Free online tool to download full-resolution images from Pinterest instantly. No registration required.",
+    title: "Pinterest Image Downloader - Save Photos in HD Free",
+    description: "⚡ Download Pinterest images and photos in original HD quality. Free, no login.",
     url: "https://30tools.com/pinterest-image-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Pinterest Image Downloader"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Pinterest Image Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pinterest Image Downloader (2026)",
-    description: "⚡ Free online tool to download full-resolution images from Pinterest instantly.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "Pinterest Image Downloader (2026) - HD Free",
+    description: "⚡ Save Pinterest images in original quality. Free, instant, no login.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/pinterest-image-downloader" },
@@ -40,57 +34,21 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Pinterest Image Downloader",
-    "alternateName": ["Pinterest Picture Saver", "Save Pinterest Images HD"],
-    "description": "Free online tool to download high-resolution images from Pinterest instantly. No registration or software required.",
-    "url": "https://30tools.com/pinterest-image-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download ultra HD Pinterest images",
-      "No registration required",
-      "Mobile-friendly interface",
-      "Fast processing speed"
-    ]
-  },
-  howTo: {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Download Pinterest Images",
-    "step": [
-      {
-        "@type": "HowToStep",
-        "position": 1,
-        "name": "Copy Pin Link",
-        "text": "Open Pinterest, find the image you like, tap the Share icon, and choose 'Copy Link'."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 2,
-        "name": "Paste Link",
-        "text": "Go to the 30tools Pinterest Image Downloader and paste the URL into the search box."
-      },
-      {
-        "@type": "HowToStep",
-        "position": 3,
-        "name": "Save Image",
-        "text": "Click Download, select the highest available resolution, and save the JPG/PNG to your device."
-      }
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org", "@type": "WebApplication",
+  "name": "Pinterest Image Downloader",
+  "alternateName": ["Pinterest Photo Saver", "Download Pinterest HD Images"],
+  "description": "Free online tool to download Pinterest images and photos in original HD quality.",
+  "url": "https://30tools.com/pinterest-image-downloader",
+  "applicationCategory": "MultimediaApplication", "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
 };
 
 export default function PinterestImageDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
@@ -102,91 +60,39 @@ export default function PinterestImageDownloaderPage() {
               <li className="text-foreground font-medium">Pinterest Image Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Pinterest Image Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Extract and grab the original, full-resolution images from Pinterest pins. Stop taking low-quality screenshots.
+              Download Pinterest images and photos in original HD resolution for free. Save inspiration boards, mood board images, and aesthetic visuals from Pinterest without watermarks.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>🖼️ Ultra HD Quality</span><span>🚀 Instant Grabs</span><span>📱 iOS & Android Ready</span><span>🆓 100% Free</span>
+              <span>📌 Mood Boards</span><span>🖼️ Original HD</span><span>🚫 No Watermark</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="Pinterest Image Downloader" />
           </div>
-
-          {/* SEO Content: Deep Dive */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why Use a Pinterest Picture Downloader?</h2>
-            <p className="text-muted-foreground mb-8">
-              While Pinterest is the internet's premier visual discovery engine, saving those high-quality images locally for mood boards, wallpapers, or offline reference can be frustrating. Screenshots degrade quality, and "Save Image As" often grabs a compressed thumbnail. Our <strong>Pinterest Image Saver</strong> acts as a direct bridge, fetching the original, uncompressed source image file linked to the Pin.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-8 text-left">
-              <div className="p-8 bg-card rounded-2xl border border-border">
-                <h3 className="text-xl font-bold mb-4 mt-0">Retain Full Resolution</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  The Pinterest app aggressively compresses images to save bandwidth on mobile feeds. By using a Pinterest image downloader tool, you bypass this client-side compression and securely download the <span className="font-semibold text-foreground">highest resolution version</span> uploaded by the original creator.
-                </p>
-              </div>
-              <div className="p-8 bg-red-50 dark:bg-red-950/20 rounded-2xl border border-red-100 dark:border-red-900/50">
-                <h3 className="text-xl font-bold mb-4 mt-0">Better than Screenshots</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  Screenshots capture the Pinterest UI elements, battery icons, and suffer from screen-resolution limits. Our tool extracts exactly what you want—just the pristine image. Perfect for designers, tattoo artists, interior decorators, and researchers building physical mood boards.
-                </p>
-              </div>
+            <h2 className="text-3xl font-bold mb-6">Build Your Visual Inspiration Library from Pinterest</h2>
+            <p className="text-muted-foreground mb-8">Pinterest hosts over 240 billion pins — the best curation of design inspiration, fashion aesthetics, interior decor, art, photography, and more. Our <strong>Pinterest Image Downloader</strong> lets you swiftly save pins in their original high-resolution quality without the Pinterest watermark.</p>
+            <div className="grid md:grid-cols-3 gap-8 text-left">
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Original Resolution</h3><p className="text-muted-foreground m-0">Pinterest usually compresses images in the feed. Our tool fetches the highest resolution original image — perfect for professional use and printing.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Design Mood Boards</h3><p className="text-muted-foreground m-0">Save design references, color palettes, UI inspiration, and brand aesthetic images from Pinterest for your offline mood boards and design briefs.</p></div>
+              <div className="p-6 bg-card rounded-xl border border-border"><h3 className="text-xl font-bold mb-3 mt-0">Photography Reference</h3><p className="text-muted-foreground m-0">Download stunning photographic compositions, lighting setups, and portrait references from Pinterest to recreate in your own photography sessions.</p></div>
             </div>
           </section>
-
-          {/* How to Download Steps */}
-          <section className="mb-16 text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-10">How to Save Pinterest Images to Camera Roll or PC</h2>
-            <div className="flex flex-wrap justify-center gap-8">
-              <div className="w-full md:w-64 bg-card rounded-2xl p-8 border border-border flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy Pin Link</h3>
-                <p className="text-muted-foreground text-sm">Open the Pinterest app, tap the '⋯' (three dots) icon on the picture you love, and select "Copy Link".</p>
-              </div>
-              <div className="w-full md:w-64 bg-card rounded-2xl p-8 border border-border flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste in 30tools</h3>
-                <p className="text-muted-foreground text-sm">Open our Pinterest Image Saver on your browser, paste the URL into the search box, and wait a second.</p>
-              </div>
-              <div className="w-full md:w-64 bg-card rounded-2xl p-8 border border-border flex flex-col items-center">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download HD Image</h3>
-                <p className="text-muted-foreground text-sm">Click the Download HD button. On mobile, long-press the generated image and select "Save to Photos".</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Pinterest Downloader FAQs</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Pinterest Image Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Can I download multiple Pinterest images at once?</h3>
-                <p className="text-muted-foreground">Currently, our tool processes one Pin URL at a time to ensure the highest quality extraction and server stability. For bulk Pinterest board downloading, you may need a dedicated desktop software extension, but for single high-res grabs, 30tools is optimal.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download a Pinterest image?</h3>
+                <p className="text-muted-foreground">Click on a Pinterest pin to open it. Copy the URL from your browser's address bar (e.g. pinterest.com/pin/...). Paste it into 30tools and the original image is available for download.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Why can't I just save images directly from Pinterest?</h3>
-                <p className="text-muted-foreground">While Pinterest has a "Download image" option on the desktop web version, it's often buried or yields a compressed version. On the mobile app, it's increasingly difficult to save images directly to your camera roll without using third-party helper tools.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is it legal to download images from Pinterest?</h3>
-                <p className="text-muted-foreground">Downloading images for personal, offline inspiration (like a private mood board) is universally accepted. However, you do not own the copyright. Using downloaded Pinterest images for commercial purposes, republishing them on your blog, or selling them without the creator's explicit permission is a copyright violation.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Can I download Pinterest Videos with this tool?</h3>
-                <p className="text-muted-foreground">This specific tool is optimized for extracting static images (JPG, PNG). If you need to grab video content from a Pin, please use our dedicated <Link href="/pinterest-video-downloader" className="text-primary hover:underline">Pinterest Video Downloader</Link>.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download Pinterest images for commercial use?</h3>
+                <p className="text-muted-foreground">Pinterest images have varying copyright status. Always check the original source of the image and the copyright license before using downloaded Pinterest images commercially. Many are protected by copyright.</p>
               </div>
             </div>
           </section>

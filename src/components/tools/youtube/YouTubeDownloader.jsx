@@ -379,7 +379,7 @@ export default function YouTubeDownloader() {
 
                           if (isReady) {
                             return (
-                              <a
+                              <Link
                                 key={idx}
                                 href={format.finalUrl}
                                 target="_blank"
@@ -470,7 +470,7 @@ export default function YouTubeDownloader() {
 
                           if (isReady) {
                             return (
-                              <a
+                              <Link
                                 key={idx}
                                 href={format.finalUrl}
                                 target="_blank"

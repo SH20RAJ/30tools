@@ -6,10 +6,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import {
-  CheckCircle2,
   Copy,
   Download,
-  Film,
   Globe,
   Image as ImageIcon,
   Smartphone,
