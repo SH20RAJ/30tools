@@ -208,7 +208,3 @@ export default function TwitterVideoDownloaderPage() {
     </>
   );
 }
-      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
-    </>
-  );
-}
