@@ -1,38 +1,32 @@
+import Link from 'next/link';
 import SnapchatDownloader from "@/components/tools/downloaders/SnapchatDownloader";
 
 export const metadata = {
-  title: "Snapchat Video Downloader - Save Snapchat Stories Free | 30tools",
-  description: "Save your favorite Snapchat videos to your device easily....",
+  title: "Snapchat Video Downloader - Save Snaps & Spotlight Free | 30tools",
+  description: "Download Snapchat videos, stories, and Spotlight clips anonymously for free. No watermarks, no login needed. Works on iPhone, Android, and PC.",
   keywords: [
-    "snapchat video downloader",
-    "download snapchat stories",
-    "snapchat story saver",
-    "save snapchat video",
-    "snapchat spotlight downloader",
-    "anonymous snapchat viewer",
-    "download snaps",
-    "save snapchat memories",
-    "snapchat video saver app",
-    "download public snaps",
-    "save snapchat spotlight video"
+    "snapchat video downloader", "download snapchat stories", "snapchat story saver",
+    "save snapchat video", "snapchat spotlight downloader", "anonymous snapchat viewer",
+    "download snaps", "save snapchat memories", "snapchat video saver",
+    "download public snaps", "save snapchat spotlight video", "snapchat to mp4"
   ].join(", "),
   openGraph: {
-    title: "Snapchat Video Downloader - Save Stories & Spotlight",
-    description: "⚡ Download Snapchat videos and stories anonymously!",
+    title: "Snapchat Video Downloader - Save Stories & Spotlight No Watermark",
+    description: "⚡ Download Snapchat stories and Spotlight videos anonymously. No watermark, no login needed!",
     url: "https://30tools.com/snapchat-video-downloader",
     siteName: "30tools",
     type: "website",
+    images: [{ url: "/og-images/snapchat-video-downloader.jpg", width: 1200, height: 630, alt: "Snapchat Video Downloader" }]
   },
-  alternates: { canonical: "https://30tools.com/snapchat-video-downloader" },
-  robots: { index: true, follow: true }
-,
   twitter: {
     card: "summary_large_image",
-    title: "Snapchat Video Downloader - Free Online Tool | 30tools",
-    description: "Free snapchat video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
+    title: "Snapchat Video Downloader (2026) - Save Spotlight",
+    description: "⚡ Save Snapchat videos & stories anonymously. No watermark, free, and instant.",
     images: ["/og-images/snapchat-video-downloader.jpg"],
     creator: "@30tools"
-  }
+  },
+  alternates: { canonical: "https://30tools.com/snapchat-video-downloader" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -81,9 +75,9 @@ export default function SnapchatVideoDownloaderPage() {
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Snapchat Video Downloader</li>
             </ol>
@@ -118,13 +112,13 @@ export default function SnapchatVideoDownloaderPage() {
                   Great for archiving memories.
                 </p>
                 <div className="flex gap-4 text-sm font-medium">
-                  <a href="/instagram-story-downloader" className="hover:text-yellow-600 transition-colors">
+                  <Link href="/instagram-story-downloader" className="hover:text-yellow-600 transition-colors">
                     Instagram Story Saver
-                  </a>
+                  </Link>
                   <span>•</span>
-                  <a href="/tiktok-downloader" className="hover:text-yellow-600 transition-colors">
+                  <Link href="/tiktok-downloader" className="hover:text-yellow-600 transition-colors">
                     TikTok Saver
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="shrink-0 bg-background p-4 rounded-xl shadow-sm border">
@@ -161,21 +155,44 @@ export default function SnapchatVideoDownloaderPage() {
                 { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download TikToks" },
                 { href: "/instagram-story-downloader", icon: "📖", title: "IG Story Downloader", desc: "Download IG stories" },
                 { href: "/facebook-story-downloader", icon: "📘", title: "FB Story Downloader", desc: "Download FB stories" },
-                { href: "/youtube-shorts-downloader", icon: "📹", title: "Shorts Downloader", desc: "Download Shorts" }
+                { href: "/facebook-video-downloader", icon: "📹", title: "Facebook Downloader", desc: "Download FB videos" }
               ].map((tool, i) => (
-                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                <Link key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-2xl">{tool.icon}</span>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">{tool.desc}</p>
-                </a>
+                </Link>
               ))}
+            </div>
+          </section>
+
+          {/* FAQs */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-10">Snapchat Video Downloader FAQs</h2>
+            <div className="max-w-3xl mx-auto space-y-6">
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Can I download Snapchat stories anonymously?</h3>
+                <p className="text-muted-foreground">Yes! Our Snapchat viewer tool accesses public profiles without logging into Snapchat, meaning the original poster will not receive a notification that you viewed or saved their content.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">What types of Snapchat content can I download?</h3>
+                <p className="text-muted-foreground">Our tool supports public Snapchat Stories and Spotlight videos shared publicly. Content from private profiles or direct messages cannot be downloaded.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Does this add a watermark to downloaded Snaps?</h3>
+                <p className="text-muted-foreground">No. We extract the original video file directly from Snapchat's servers. The downloaded snapshot or video will not have any 30tools watermark added to it.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Is this Snapchat downloader safe to use?</h3>
+                <p className="text-muted-foreground">Yes. Our tool is a web-based service that doesn't require you to enter your Snapchat login credentials, install extensions, or download any software. Your account is never at risk.</p>
+              </div>
             </div>
           </section>
         </div>
       </div>
-      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
+
     </>
   );
 }

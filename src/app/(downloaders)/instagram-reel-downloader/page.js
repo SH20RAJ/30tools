@@ -1,33 +1,33 @@
+import Link from 'next/link';
 import InstagramReelDownloader from "@/components/tools/downloaders/InstagramReelDownloader";
 
 export const metadata = {
-  title: "Instagram Reel Downloader - Download IG Reels Free | 30tools",
-  description: "Download Instagram Reels videos in high quality (MP4). Save IG Reels to your gallery with audio. Free online Instagram Reels downloader.",
+  title: "Instagram Reel Downloader - Save IG Reels without Watermark | 30tools",
+  description: "Free Instagram Reel downloader. Download Instagram Reels in HD 1080p with original audio. No watermark, no login needed. Works on iPhone and Android.",
   keywords: [
     "instagram reel downloader", "insta reel download", "download instagram reels",
     "ig reels downloader", "save instagram reels", "reels video downloader",
     "instagram reels saver", "download reels with audio", "insta reels download",
-    "instagram reel download", "reels downloader", "ig reels saver",
-    "save reels to mp4", "instagram audio downloader", "download reels high quality",
-    "reels to gallery", "instagram video saver free"
+    "instagram reel download without watermark", "reels downloader", "ig reels saver",
+    "save reels to mp4", "download reels high quality", "reels to gallery", "instagram video saver free"
   ].join(", "),
   openGraph: {
-    title: "Instagram Reel Downloader - Save Reels with Audio",
-    description: "⚡ Download Instagram Reels videos in HD!",
+    title: "Instagram Reel Downloader - Save Reels with Audio, No Watermark",
+    description: "⚡ Download Instagram Reels in HD 1080p with original audio. No watermark, no login needed!",
     url: "https://30tools.com/instagram-reel-downloader",
     siteName: "30tools",
     type: "website",
+    images: [{ url: "/og-images/instagram-reel-downloader.jpg", width: 1200, height: 630, alt: "Instagram Reel Downloader" }]
   },
-  alternates: { canonical: "https://30tools.com/instagram-reel-downloader" },
-  robots: { index: true, follow: true }
-,
   twitter: {
     card: "summary_large_image",
-    title: "Instagram Reel Downloader - Free Online Tool | 30tools",
-    description: "Professional instagram reel downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+    title: "Instagram Reel Downloader (2026) - No Watermark",
+    description: "⚡ Save IG Reels offline in HD with audio. No watermark added, completely free.",
     images: ["/og-images/instagram-reel-downloader.jpg"],
     creator: "@30tools"
-  }
+  },
+  alternates: { canonical: "https://30tools.com/instagram-reel-downloader" },
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -76,9 +76,9 @@ export default function InstagramReelDownloaderPage() {
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Instagram Reel Downloader</li>
             </ol>
@@ -115,9 +115,9 @@ export default function InstagramReelDownloaderPage() {
                     Unlike screen recording, our <strong>instagram reel downloader</strong> gets the direct video file.
                     This means you get crystal clear audio, perfect for reusing trending sounds on TikTok.
                   </p>
-                  <a href="/tiktok-downloader" className="text-sm font-bold text-pink-600 hover:underline">
+                  <Link href="/tiktok-downloader" className="text-sm font-bold text-pink-600 hover:underline">
                     Need a TikTok Downloader? →
-                  </a>
+                  </Link>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-4">Full HD 1080p Quality</h3>
@@ -151,6 +151,29 @@ export default function InstagramReelDownloaderPage() {
 
           <AdUnit />
 
+          {/* FAQs */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-10">Instagram Reel Downloader FAQs</h2>
+            <div className="max-w-3xl mx-auto space-y-6">
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Can I download Instagram Reels without watermark?</h3>
+                <p className="text-muted-foreground">Yes! 30tools downloads the direct MP4 source file from Instagram's servers, which contains no watermarks. The resulting file is the clean, original video.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Does this save the original audio from the Reel?</h3>
+                <p className="text-muted-foreground">Absolutely. Unlike screen recording, our extractor downloads the actual video file which includes the original soundtrack at full quality.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Can I download Reels on iPhone?</h3>
+                <p className="text-muted-foreground">Yes. Open our tool in Safari, paste the Reel link, and tap Download. When the video plays, long-press it and select "Save to Photos" to add it to your iOS camera roll.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Do I need to log into Instagram?</h3>
+                <p className="text-muted-foreground">No login is required. Our tool works with any public Reel or post link. Simply copy the URL and paste it here.</p>
+              </div>
+            </div>
+          </section>
+
           <section className="mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related Tools</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -158,21 +181,21 @@ export default function InstagramReelDownloaderPage() {
                 { href: "/instagram-downloader", icon: "📸", title: "Instagram Downloader", desc: "Download all content" },
                 { href: "/instagram-story-downloader", icon: "📖", title: "Story Downloader", desc: "Download stories" },
                 { href: "/tiktok-downloader", icon: "🎵", title: "TikTok Downloader", desc: "Download TikToks" },
-                { href: "/youtube-shorts-downloader", icon: "📹", title: "Shorts Downloader", desc: "Download Shorts" }
+                { href: "/facebook-video-downloader", icon: "📹", title: "Facebook Downloader", desc: "Download FB videos" }
               ].map((tool, i) => (
-                <a key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
+                <Link key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="text-2xl">{tool.icon}</span>
                     <h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">{tool.desc}</p>
-                </a>
+                </Link>
               ))}
             </div>
           </section>
         </div>
       </div>
-      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
+
     </>
   );
 }

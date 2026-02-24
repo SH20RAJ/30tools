@@ -1,37 +1,32 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Instagram Story Downloader - Free Online Tool | 30tools",
-  description: "Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no i...",
+  title: "Instagram Story Downloader - Save IG Stories Free | 30tools",
+  description: "Download Instagram Stories anonymously without notifying the account. Free IG story saver for photos and videos. Works on iPhone, Android, and PC.",
   keywords: [
-    "instagram story downloader 2026",
-    "download instagram story video",
-    "save instagram story media",
-    "free online instagram story downloader",
-    "download videos free"
+    "instagram story downloader", "download instagram story", "save instagram story", "ig story saver",
+    "instagram story viewer", "anonymous instagram story viewer", "insta story download",
+    "how to download instagram story", "instagram story saver online", "save ig story to camera roll",
+    "instagram story downloader without watermark"
   ].join(", "),
   openGraph: {
-    title: "Instagram Story Downloader (2026) - Free Downloader",
-    description: "⚡ Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required.",
+    title: "Instagram Story Downloader - View & Save IG Stories Anonymously",
+    description: "⚡ Download Instagram stories and highlights without anyone knowing. Free online IG story saver.",
     url: "https://30tools.com/instagram-story-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Instagram Story Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Instagram Story Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Instagram Story Downloader (2026)",
-    description: "⚡ Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required.",
+    title: "Instagram Story Downloader (2026) - Save Anonymously",
+    description: "⚡ Save Instagram stories without them knowing. Free online IG story downloader.",
     images: ["/og-images/universal-downloader.jpg"], 
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/instagram-story-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -45,16 +40,27 @@ const jsonLdSchemas = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Instagram Story Downloader",
-    "alternateName": ["30tools Instagram Story Downloader", "Free Downloader"],
-    "description": "Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required.",
+    "alternateName": ["IG Story Saver", "Anonymous Instagram Story Viewer"],
+    "description": "Free online tool to download Instagram Stories and Highlights anonymously.",
     "url": "https://30tools.com/instagram-story-downloader",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
+      "Download Instagram Stories without being seen",
+      "Save Story videos and photos",
+      "Download Instagram Highlights",
+      "Works on iOS and Android"
+    ]
+  },
+  howTo: {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download Instagram Stories",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Get the Profile URL", "text": "Open Instagram and go to the profile of the account whose story you want to save. Copy the profile URL from the address bar." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Navigate to the 30tools Instagram Story Downloader and paste the Instagram profile URL." },
+      { "@type": "HowToStep", "position": 3, "name": "Download", "text": "Select the story item you want to save and click Download to save it to your device." }
     ]
   }
 };
@@ -64,13 +70,14 @@ export default function InstagramStoryDownloaderPage() {
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Instagram Story Downloader</li>
             </ol>
@@ -81,10 +88,10 @@ export default function InstagramStoryDownloaderPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Instagram Story Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required.
+              Save Instagram Stories anonymously before they disappear in 24 hours. Download story photos and videos to your camera roll instantly.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>👁️ Anonymous</span><span>📸 Photos & Videos</span><span>⏳ Before They Expire</span><span>🆓 100% Free</span>
             </div>
           </div>
 
@@ -96,27 +103,27 @@ export default function InstagramStoryDownloaderPage() {
 
           {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Instagram Story Downloader</h2>
+            <h2 className="text-3xl font-bold mb-6">Why Use Our Instagram Story Saver?</h2>
             <p className="text-muted-foreground mb-8">
-              Why choose our Instagram Story Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. Access your favorite Instagram media instantly on any device.
+              Instagram Stories disappear after 24 hours. If you want to <strong>save an Instagram story</strong> before it vanishes — whether it's a friend's memories, a brand announcement, or your own stories — our tool extracts the full-resolution video or photo without leaving a "seen" timestamp on the account.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
+                <h3 className="text-xl font-bold mb-3 mt-0">100% Anonymous</h3>
                 <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
+                  View and download stories without appearing in the viewer list. The other user will not know you viewed or saved their story.
                 </p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
+                <h3 className="text-xl font-bold mb-3 mt-0">Photos & Videos</h3>
                 <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
+                  Download both story videos and story images in their original quality. Works for regular stories and story highlight archives.
                 </p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
+                <h3 className="text-xl font-bold mb-3 mt-0">All Devices</h3>
                 <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
+                  Works on iPhone (Safari), Android (Chrome), and desktop PCs. Our web-based tool requires no software installation.
                 </p>
               </div>
             </div>
@@ -125,22 +132,22 @@ export default function InstagramStoryDownloaderPage() {
         
           {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Instagram with 30tools</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Save Instagram Stories Before They Expire</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Instagram video or image you want to download. Click Share and select "Copy Link".</p>
+                <h3 className="text-xl font-bold mb-4">Copy Profile URL</h3>
+                <p className="text-muted-foreground">Go to the Instagram profile whose story you want to save. Copy the profile URL from the address bar or share button.</p>
               </div>
               <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Instagram link into the input box at the top of this page.</p>
+                <h3 className="text-xl font-bold mb-4">Paste URL</h3>
+                <p className="text-muted-foreground">Return to 30tools and paste the copied Instagram profile link into the input box above.</p>
               </div>
               <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
+                <h3 className="text-xl font-bold mb-4">Download Story</h3>
+                <p className="text-muted-foreground">Browse the available stories and click the Download button on the ones you want to save to your gallery.</p>
               </div>
             </div>
           </section>
@@ -149,19 +156,23 @@ export default function InstagramStoryDownloaderPage() {
 
           {/* FAQs */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Instagram Story Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Instagram Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">Will the user know I viewed/downloaded their story?</h3>
+                <p className="text-muted-foreground">No. Our tool accesses public story data without you directly viewing the story on Instagram. The account owner will not see your name in their story viewers list when you use 30tools to save their story.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Instagram account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download Instagram Highlights?</h3>
+                <p className="text-muted-foreground">Yes! Instagram Highlights are archived stories pinned to a profile. Our Story Downloader supports both active (24-hour) stories and archived Highlight clips.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download stories from private Instagram accounts?</h3>
+                <p className="text-muted-foreground">No. Our tool can only access content from public Instagram profiles. Stories from private accounts are not accessible without logging into Instagram directly.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">How do I save an Instagram story on iPhone?</h3>
+                <p className="text-muted-foreground">Open 30tools in Safari, paste the Instagram profile URL, select the story item you want to save, then tap and hold the preview image and choose "Save to Photos".</p>
               </div>
             </div>
           </section>

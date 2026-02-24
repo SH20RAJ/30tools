@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Vimeo Video Downloader - Free Online Tool | 30tools",
-  description: "Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device....",
+  title: "Vimeo Video Downloader - Save HD Vimeo Videos Free | 30tools",
+  description: "Download Vimeo videos in HD MP4, 1080p, and 4K for free. The best online Vimeo downloader. No account needed, works on all devices.",
   keywords: [
-    "vimeo video downloader 2026",
-    "download vimeo video video",
-    "save vimeo video media",
-    "free online vimeo video downloader",
-    "download videos free"
+    "vimeo video downloader", "download vimeo videos", "free vimeo downloader", "save vimeo video",
+    "vimeo to mp4", "vimeo video download", "how to download vimeo videos", "vimeo downloader online",
+    "vimeo hd downloader", "vimeo 1080p download", "download private vimeo video", "vimeo video saver"
   ].join(", "),
   openGraph: {
-    title: "Vimeo Video Downloader (2026) - Free Downloader",
-    description: "⚡ Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device.",
+    title: "Vimeo Video Downloader - Save HD Videos Free",
+    description: "⚡ Download Vimeo videos in HD, 1080p, or 4K instantly. Free, no account needed, works online!",
     url: "https://30tools.com/vimeo-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Vimeo Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Vimeo Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Vimeo Video Downloader (2026)",
-    description: "⚡ Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device.",
+    description: "⚡ Download Vimeo videos in HD MP4 for free. No login, no software.",
     images: ["/og-images/universal-downloader.jpg"], 
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/vimeo-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -45,16 +39,27 @@ const jsonLdSchemas = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Vimeo Video Downloader",
-    "alternateName": ["30tools Vimeo Video Downloader", "Free Downloader"],
-    "description": "Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device.",
+    "alternateName": ["Vimeo to MP4 Converter", "Save Vimeo Video HD"],
+    "description": "Free online tool to download Vimeo videos in HD, 1080p, and 4K format.",
     "url": "https://30tools.com/vimeo-video-downloader",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
+      "Download Vimeo videos in HD 1080p and 4K",
+      "No account required",
+      "Free to use",
+      "Works on all devices"
+    ]
+  },
+  howTo: {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download Vimeo Videos",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Copy Vimeo URL", "text": "Open the Vimeo video you want to download. Copy the URL from the browser address bar." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Paste the Vimeo link into the 30tools Vimeo Downloader text box." },
+      { "@type": "HowToStep", "position": 3, "name": "Download MP4", "text": "Select your preferred quality (HD/1080p/4K if available) and click Download to save the MP4 file." }
     ]
   }
 };
@@ -64,13 +69,14 @@ export default function VimeoVideoDownloaderPage() {
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Vimeo Video Downloader</li>
             </ol>
@@ -81,10 +87,10 @@ export default function VimeoVideoDownloaderPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Vimeo Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device.
+              Download Vimeo videos in HD, 1080p, or 4K format. The fastest free Vimeo to MP4 converter online — no login, no software, no watermarks.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🎥 4K & HD</span><span>🔒 No Watermarks</span><span>📱 All Devices</span><span>🆓 100% Free</span>
             </div>
           </div>
 
@@ -96,27 +102,27 @@ export default function VimeoVideoDownloaderPage() {
 
           {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Vimeo Video Downloader</h2>
+            <h2 className="text-3xl font-bold mb-6">Why Vimeo Creators Need a Downloader</h2>
             <p className="text-muted-foreground mb-8">
-              Why choose our Vimeo Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device. Access your favorite Vimeo media instantly on any device.
+              Vimeo is the platform of choice for filmmakers, artists, and creative professionals. Unlike YouTube, Vimeo focuses on quality over quantity, often hosting films, showreels, and portfolio work in pristine 4K. But Vimeo's download options are locked behind the paid Pro plan for many videos. Our <strong>Vimeo Video Downloader</strong> breaks that barrier.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
+                <h3 className="text-xl font-bold mb-3 mt-0">HD & 4K Quality</h3>
                 <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
+                  Extract the highest resolution available — 720p, 1080p, or 4K depending on the video. Perfect for offline playback on your 4K monitor or TV.
                 </p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
+                <h3 className="text-xl font-bold mb-3 mt-0">No Vimeo Account</h3>
                 <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
+                  You don't need a Vimeo Pro subscription or even a free account. Simply paste the URL of any public Vimeo video.
                 </p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
+                <h3 className="text-xl font-bold mb-3 mt-0">Works Offline</h3>
                 <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
+                  Download your favorite Vimeo films for offline viewing on planes, in remote areas, or on devices without internet access.
                 </p>
               </div>
             </div>
@@ -149,19 +155,23 @@ export default function VimeoVideoDownloaderPage() {
 
           {/* FAQs */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Vimeo Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Vimeo Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download private Vimeo videos?</h3>
+                <p className="text-muted-foreground">Our tool can only download public Vimeo videos. Private videos and videos with password protection require authentication and cannot be accessed by third-party extractors.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Vimeo account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">What formats can I download Vimeo videos in?</h3>
+                <p className="text-muted-foreground">Vimeo videos are downloaded as MP4 files. Depending on the original upload, you may see multiple quality options such as 360p, 720p, 1080p HD, or 2160p 4K.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Is this different from Vimeo's own download feature?</h3>
+                <p className="text-muted-foreground">Yes. Vimeo only allows downloads if the video creator explicitly enables the download option, and it's often restricted to paid Vimeo members. Our tool makes downloading simpler for any public video.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Do I need to pay or create an account?</h3>
+                <p className="text-muted-foreground">No. 30tools is completely free and does not require you to register or log in. Just paste the Vimeo URL and click Download.</p>
               </div>
             </div>
           </section>
