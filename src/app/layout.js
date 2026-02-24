@@ -242,11 +242,9 @@ export default async function RootLayout({ children }) {
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
-          strategy="lazyOnload"
         />
-        <Script
+        <script
           id="google-analytics"
-          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
@@ -256,11 +254,10 @@ export default async function RootLayout({ children }) {
             `,
           }}
         />
-        <Script
+        <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
           crossOrigin="anonymous"
-          strategy="lazyOnload"
         />
         {/* Clarity Tracking Code */}
         <Script
