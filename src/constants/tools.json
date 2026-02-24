@@ -173,38 +173,38 @@
           "category": "text"
         },
         {
-            "id": "text-reverser",
-            "name": "Text Reverser",
-            "description": "Reverse text, words, or lines instantly",
-            "route": "/text-reverser",
-            "popular": false,
-            "category": "text"
+          "id": "text-reverser",
+          "name": "Text Reverser",
+          "description": "Reverse text, words, or lines instantly",
+          "route": "/text-reverser",
+          "popular": false,
+          "category": "text"
         },
         {
-            "id": "remove-duplicates",
-            "name": "Remove Duplicates",
-            "description": "Remove duplicate lines from text lists",
-            "route": "/remove-duplicates",
-            "popular": true,
-            "category": "text"
+          "id": "remove-duplicates",
+          "name": "Remove Duplicates",
+          "description": "Remove duplicate lines from text lists",
+          "route": "/remove-duplicates",
+          "popular": true,
+          "category": "text"
         },
         {
-            "id": "line-sorter",
-            "name": "Line Sorter",
-            "description": "Sort lists alphabetically or by length",
-            "route": "/line-sorter",
-            "popular": false,
-            "category": "text"
+          "id": "line-sorter",
+          "name": "Line Sorter",
+          "description": "Sort lists alphabetically or by length",
+          "route": "/line-sorter",
+          "popular": false,
+          "category": "text"
         },
-         {
-            "id": "text-encoder",
-            "name": "Text Encoder",
-            "description": "Encode and decode text (URL, Base64)",
-            "route": "/text-encoder",
-            "popular": false,
-            "category": "text"
+        {
+          "id": "text-encoder",
+          "name": "Text Encoder",
+          "description": "Encode and decode text (URL, Base64)",
+          "route": "/text-encoder",
+          "popular": false,
+          "category": "text"
         },
-         {
+        {
           "id": "lorem-ipsum-generator",
           "name": "Lorem Ipsum Generator",
           "description": "Generate custom Lorem Ipsum text for your designs.",
@@ -344,6 +344,22 @@
           "name": "Image to PDF",
           "description": "Convert multiple images to a single PDF document",
           "route": "/image-to-pdf",
+          "popular": true,
+          "category": "pdf"
+        },
+        {
+          "id": "png-to-pdf",
+          "name": "PNG to PDF",
+          "description": "Convert PNG images to PDF documents quickly and easily. Free online tool.",
+          "route": "/png-to-pdf",
+          "popular": true,
+          "category": "pdf"
+        },
+        {
+          "id": "jpg-to-pdf",
+          "name": "JPG to PDF",
+          "description": "Convert JPG/JPEG images to PDF documents quickly and easily. Free online tool.",
+          "route": "/jpg-to-pdf",
           "popular": true,
           "category": "pdf"
         }
@@ -884,7 +900,7 @@
         {
           "id": "pinterest-video-downloader",
           "name": "Pinterest Video Downloader",
-          "description": "Download Pinterest videos, GIFs, and idea pins in high quality for inspiration",
+          "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
           "route": "/pinterest-video-downloader",
           "popular": true,
           "category": "downloaders"
@@ -903,6 +919,422 @@
           "description": "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark downloads, multiple quality options, no registration required.",
           "route": "/universal-video-downloader",
           "popular": true,
+          "category": "downloaders"
+        },
+        {
+          "id": "tiktok-videos-downloader",
+          "name": "Tiktok Videos Downloader",
+          "description": "Download TikTok videos without watermark—free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips.",
+          "route": "/tiktok-videos-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "instagram-videos-downloader",
+          "name": "Instagram Videos Downloader",
+          "description": "Download Instagram Videos, Reels, Photos, IGTV and Carousel. Save your favorite content with our easy-to-use tool. Start downloading now!",
+          "route": "/instagram-videos-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "youtube-thumbnail-downloader",
+          "name": "YouTube Thumbnail Downloader",
+          "description": "YouTube Thumbnail Downloader is a tool to download thumbnails from YouTube videos for various purposes such as design and promotion.",
+          "route": "/youtube-thumbnail-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "pinterest-gif-downloader",
+          "name": "Pinterest Gif Downloader",
+          "description": "Free online tool to download high-quality GIFs from Pinterest instantly. No registration required.",
+          "route": "/pinterest-gif-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "pinterest-image-downloader",
+          "name": "Pinterest Image Downloader",
+          "description": "Free online tool to download high-resolution images from Pinterest instantly. No registration or software required.",
+          "route": "/pinterest-image-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "online-video-downloader",
+          "name": "Online Video Downloader",
+          "description": "Download any video as an MP4 in just a few clicks. Paste the video URL into the input box, then hit Download Video. Your file will be saved to your computer, ready to watch anytime—no internet needed. Keep adding new links to quickly download more videos and enjoy them offline whenever you want.",
+          "route": "/online-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "reddit-video-downloader",
+          "name": "Reddit Video Downloader",
+          "description": "Download Reddit Videos & GIFs in HD Free.",
+          "route": "/reddit-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "youtube-video-downloader",
+          "name": "YouTube Video Downloader",
+          "description": "Download YouTube videos quickly in multiple formats and resolutions—free, fast, secure, no signup, and fully browser-based.",
+          "route": "/youtube-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "instagram-story-downloader",
+          "name": "Instagram Story Downloader",
+          "description": "Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required.",
+          "route": "/instagram-story-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "instagram-image-downloader",
+          "name": "Instagram Image Downloader",
+          "description": "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required.",
+          "route": "/instagram-image-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "linkedin-video-downloader",
+          "name": "Linkedin Video Downloader",
+          "description": "Download LinkedIn videos in high quality—free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps—just fast processing and a clean, simple interface that helps you save videos quickly.",
+          "route": "/linkedin-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "vimeo-video-downloader",
+          "name": "Vimeo Video Downloader",
+          "description": "Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device.",
+          "route": "/vimeo-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "m3u8-downloader",
+          "name": "M3U8 Downloader",
+          "description": "Download m3u8 playlists and convert them to high-quality MP4 videos.",
+          "route": "/m3u8-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "dailymotion-video-downloader",
+          "name": "Dailymotion Video Downloader",
+          "description": "Free online Dailymotion downloader to save videos as MP4 in HD. Fast, secure, no signup required.",
+          "route": "/dailymotion-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "akillitv-video-downloader",
+          "name": "AkilliTv Video Downloader",
+          "description": "Download AkilliTv videos easily with our free online downloader.",
+          "route": "/akillitv-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "bandcamp-video-downloader",
+          "name": "Bandcamp Video Downloader",
+          "description": "The easiest way to download Bandcamp videos online.",
+          "route": "/bandcamp-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "bilibili-video-downloader",
+          "name": "Bilibili Video Downloader",
+          "description": "Download Bilibili videos online with ease.",
+          "route": "/bilibili-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "bitchute-video-downloader",
+          "name": "Bitchute Video Downloader",
+          "description": "Download your favorite Bitchute videos in one click.",
+          "route": "/bitchute-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "blogger-video-downloader",
+          "name": "Blogger Video Downloader",
+          "description": "Easily download videos from any Blogger post.",
+          "route": "/blogger-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "blutv-video-downloader",
+          "name": "BluTv Video Downloader",
+          "description": "The ultimate tool for downloading videos from BluTv.",
+          "route": "/blutv-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "buzzfeed-video-downloader",
+          "name": "Buzzfeed Video Downloader",
+          "description": "Download any Buzzfeed video to your device instantly.",
+          "route": "/buzzfeed-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "capcut-video-downloader",
+          "name": "Capcut Video Downloader",
+          "description": "Download Capcut videos and templates easily.",
+          "route": "/capcut-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "chingari-video-downloader",
+          "name": "Chingari Video Downloader",
+          "description": "Save your favorite Chingari videos to your device.",
+          "route": "/chingari-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "douyin-video-downloader",
+          "name": "Douyin Video Downloader",
+          "description": "Save Douyin videos directly to your device easily.",
+          "route": "/douyin-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "espn-video-downloader",
+          "name": "Espn Video Downloader",
+          "description": "Save your favorite Espn sports videos to your device.",
+          "route": "/espn-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "febspot-video-downloader",
+          "name": "Febspot Video Downloader",
+          "description": "Download Febspot videos easily with our online downloader.",
+          "route": "/febspot-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "flickr-video-downloader",
+          "name": "Flickr Video Downloader",
+          "description": "Save Flickr videos to your device in high quality.",
+          "route": "/flickr-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "gaana-video-downloader",
+          "name": "Gaana Video Downloader",
+          "description": "Download Gaana videos online with our free tool.",
+          "route": "/gaana-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "ifunny-video-downloader",
+          "name": "Ifunny Video Downloader",
+          "description": "Save your favorite Ifunny videos to your device easily.",
+          "route": "/ifunny-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "imdb-video-downloader",
+          "name": "Imdb Video Downloader",
+          "description": "Save Imdb videos and trailers to your device.",
+          "route": "/imdb-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "imgur-video-downloader",
+          "name": "Imgur Video Downloader",
+          "description": "Save your favorite Imgur videos to your device easily.",
+          "route": "/imgur-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "izlesene-video-downloader",
+          "name": "Izlesene Video Downloader",
+          "description": "The ultimate tool for downloading videos from Izlesene.",
+          "route": "/izlesene-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "kickstarter-video-downloader",
+          "name": "Kickstarter Video Downloader",
+          "description": "Save Kickstarter project videos to your device easily.",
+          "route": "/kickstarter-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "kwai-video-downloader",
+          "name": "Kwai Video Downloader",
+          "description": "Save your favorite Kwai videos to your device easily.",
+          "route": "/kwai-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "likee-video-downloader",
+          "name": "Likee Video Downloader",
+          "description": "Save your favorite Likee videos to your device easily.",
+          "route": "/likee-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "mashable-video-downloader",
+          "name": "Mashable Video Downloader",
+          "description": "Download Mashable videos online with our free tool.",
+          "route": "/mashable-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "mixcloud-video-downloader",
+          "name": "Mixcloud Video Downloader",
+          "description": "The easiest way to download Mixcloud videos and audio online.",
+          "route": "/mixcloud-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "mxtakatak-video-downloader",
+          "name": "MxTakatak Video Downloader",
+          "description": "Save your favorite MxTakatak videos to your device.",
+          "route": "/mxtakatak-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "ninegag-video-downloader",
+          "name": "NineGag Video Downloader",
+          "description": "Save your favorite NineGag videos to your device easily.",
+          "route": "/ninegag-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "odnoklassniki-video-downloader",
+          "name": "Odnoklassniki Video Downloader",
+          "description": "Save Odnoklassniki videos directly to your device easily.",
+          "route": "/odnoklassniki-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "soundcloud-video-downloader",
+          "name": "Soundcloud Video Downloader",
+          "description": "The easiest way to download Soundcloud content online.",
+          "route": "/soundcloud-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "periscope-video-downloader",
+          "name": "Periscope Video Downloader",
+          "description": "Download Periscope videos and live streams easily.",
+          "route": "/periscope-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "puhutv-video-downloader",
+          "name": "PuhuTv Video Downloader",
+          "description": "Download PuhuTv videos online with our free tool.",
+          "route": "/puhutv-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "rumble-video-downloader",
+          "name": "Rumble Video Downloader",
+          "description": "The ultimate tool for downloading videos from Rumble.",
+          "route": "/rumble-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "streamable-video-downloader",
+          "name": "Streamable Video Downloader",
+          "description": "Download Streamable videos online with our free tool.",
+          "route": "/streamable-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "ted-video-downloader",
+          "name": "Ted Video Downloader",
+          "description": "Save Ted talk videos directly to your device easily.",
+          "route": "/ted-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "telegram-video-downloader",
+          "name": "Telegram Video Downloader",
+          "description": "The ultimate tool for downloading videos from Telegram.",
+          "route": "/telegram-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "sharechat-video-downloader",
+          "name": "ShareChat Video Downloader",
+          "description": "Save your favorite ShareChat videos to your device easily.",
+          "route": "/sharechat-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "threads-video-downloader",
+          "name": "Threads Video Downloader",
+          "description": "Save your favorite Threads videos to your device easily.",
+          "route": "/threads-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "tumblr-video-downloader",
+          "name": "Tumblr Video Downloader",
+          "description": "Download Tumblr videos online with our free tool.",
+          "route": "/tumblr-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "twitch-video-downloader",
+          "name": "Twitch Video Downloader",
+          "description": "Download Twitch videos and clips easily.",
+          "route": "/twitch-video-downloader",
+          "popular": false,
+          "category": "downloaders"
+        },
+        {
+          "id": "vkontakte-video-downloader",
+          "name": "Vkontakte Video Downloader",
+          "description": "Save Vkontakte videos directly to your device easily.",
+          "route": "/vkontakte-video-downloader",
+          "popular": false,
           "category": "downloaders"
         }
       ]
@@ -1337,8 +1769,6 @@
           "popular": false,
           "category": "others"
         },
-
-
         {
           "id": "meme-video-generator",
           "name": "Meme Video Generator",
@@ -1347,8 +1777,6 @@
           "popular": false,
           "category": "others"
         },
-
-
         {
           "id": "podcast-video-creator",
           "name": "Podcast Video Creator",
