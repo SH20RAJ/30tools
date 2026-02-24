@@ -189,8 +189,14 @@ export default async function RootLayout({ children }) {
           content="width=device-width, initial-scale=1, maximum-scale=5"
         />
 
+        {/* Preconnect for performance */}
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.clarity.ms" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
 
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous"></script>
+        <meta httpEquiv="Content-Language" content="en" />
 
         {/* Enhanced SEO Meta Tags */}
         <meta name="application-name" content="30tools" />
@@ -236,7 +242,6 @@ export default async function RootLayout({ children }) {
           href="/feed.xml"
         />
 
-        {/* Preconnect for performance */}
 
 
         <script

@@ -171,7 +171,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
     console.warn("Could not read blog directory for sitemap:", error);
   }
 
-  return [...staticPages, ...categoryPages, ...toolPages, ...blogPages].sort(
+  // Downloader pages - high priority revenue generators
+  const downloaderSlugs = [
+    "akillitv-video-downloader", "bandcamp-video-downloader", "bilibili-video-downloader",
+    "bitchute-video-downloader", "blogger-video-downloader", "blutv-video-downloader",
+    "buzzfeed-video-downloader", "capcut-video-downloader", "chingari-video-downloader",
+    "dailymotion-video-downloader", "douyin-video-downloader", "espn-video-downloader",
+    "facebook-story-downloader", "facebook-video-downloader", "febspot-video-downloader",
+    "flickr-video-downloader", "gaana-video-downloader", "ifunny-video-downloader",
+    "imdb-video-downloader", "imgur-video-downloader", "instagram-downloader",
+    "instagram-image-downloader", "instagram-reel-downloader", "instagram-story-downloader",
+    "instagram-videos-downloader", "izlesene-video-downloader", "kickstarter-video-downloader",
+    "kwai-video-downloader", "likee-video-downloader", "linkedin-video-downloader",
+    "m3u8-downloader", "mashable-video-downloader", "mixcloud-video-downloader",
+    "mxtakatak-video-downloader", "ninegag-video-downloader", "odnoklassniki-video-downloader",
+    "online-video-downloader", "periscope-video-downloader", "pinterest-gif-downloader",
+    "pinterest-image-downloader", "pinterest-video-downloader", "puhutv-video-downloader",
+    "reddit-downloader", "reddit-video-downloader", "rumble-video-downloader",
+    "sharechat-video-downloader", "snapchat-video-downloader", "soundcloud-video-downloader",
+    "streamable-video-downloader", "ted-video-downloader", "telegram-video-downloader",
+    "threads-video-downloader", "tumblr-video-downloader", "twitch-video-downloader",
+    "vkontakte-video-downloader", "youtube-thumbnail-downloader",
+  ];
+
+  const downloaderPages: MetadataRoute.Sitemap = [
+    {
+      url: `${BASE_URL}/all-downloaders`,
+      lastModified: currentDate,
+      changeFrequency: "daily",
+      priority: 0.95,
+    },
+    ...downloaderSlugs.map((slug) => ({
+      url: `${BASE_URL}/${slug}`,
+      lastModified: currentDate,
+      changeFrequency: "daily" as const,
+      priority: 0.95,
+    })),
+  ];
+
+  return [...staticPages, ...categoryPages, ...toolPages, ...downloaderPages, ...blogPages].sort(
     (a, b) => (b.priority || 0) - (a.priority || 0),
   );
 }
