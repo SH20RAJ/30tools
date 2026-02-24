@@ -11,6 +11,36 @@ export const metadata = {
 
 const blogs = [
     {
+        slug: 'how-to-download-tiktok-videos-without-watermark',
+        title: 'How to Download TikTok Videos Without Watermark (2026 Guide)',
+        description: 'Save TikTok videos in HD without the watermark. Step-by-step guide for Android, iPhone, and PC.',
+        date: '2026-02-25',
+    },
+    {
+        slug: 'how-to-download-instagram-reels',
+        title: 'How to Download Instagram Reels in HD (2026)',
+        description: 'Download Instagram Reels without watermark in original quality. No app needed.',
+        date: '2026-02-25',
+    },
+    {
+        slug: 'download-reddit-videos-with-sound',
+        title: 'How to Download Reddit Videos with Sound (Solved)',
+        description: 'Reddit videos download without audio? Here\'s why and how to fix it with automatic audio merging.',
+        date: '2026-02-25',
+    },
+    {
+        slug: 'download-videos-from-any-website',
+        title: 'How to Download Videos from Any Website (2026 Guide)',
+        description: '3 methods to download videos from any website. Works with 1000+ sites. No software needed.',
+        date: '2026-02-25',
+    },
+    {
+        slug: 'is-downloading-videos-legal-copyright-guide',
+        title: 'Is Downloading Videos Legal? Copyright Guide (2026)',
+        description: 'A plain-English guide to copyright law, fair use, and safe video downloading practices.',
+        date: '2026-02-25',
+    },
+    {
         slug: 'make-your-own-custom-terabox-telegram-bot',
         title: 'How to Make Your Own Custom Terabox Telegram Bot (2025 Guide)',
         description: 'Step-by-step tutorial to create a powerful Telegram bot that can download and stream Terabox files directly.',

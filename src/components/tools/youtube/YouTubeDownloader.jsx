@@ -402,7 +402,7 @@ export default function YouTubeDownloader() {
                                     LINK
                                   </span>
                                 </div>
-                              </a>
+                              </Link>
                             );
                           }
 
@@ -486,7 +486,7 @@ export default function YouTubeDownloader() {
                                     LINK
                                   </span>
                                 </div>
-                              </a>
+                              </Link>
                             );
                           }
 
