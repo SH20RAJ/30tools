@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Gaana Video Downloader - Free Online Tool | 30tools",
-  description: "Download Gaana videos online with our free tool....",
+  title: "Gaana Song Downloader - Save Gaana Music Free | 30tools",
+  description: "Download Gaana songs and music to MP3 for free. Save any Gaana track offline without a Gaana Plus subscription. Works on Android, iPhone, and PC.",
   keywords: [
-    "gaana video downloader 2026",
-    "download gaana video video",
-    "save gaana video media",
-    "free online gaana video downloader",
-    "download videos free"
+    "gaana downloader", "gaana song download", "gaana to mp3", "download gaana music free",
+    "gaana music downloader", "save gaana songs", "gaana offline download free",
+    "how to download gaana songs", "gaana song saver", "gaana download without subscription"
   ].join(", "),
   openGraph: {
-    title: "Gaana Video Downloader (2026) - Free Downloader",
-    description: "⚡ Download Gaana videos online with our free tool.",
+    title: "Gaana Downloader - Save Songs to MP3 Free",
+    description: "⚡ Download Gaana songs as MP3 for free. No Gaana Plus subscription required.",
     url: "https://30tools.com/gaana-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Gaana Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Gaana Song Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Gaana Video Downloader (2026)",
-    description: "⚡ Download Gaana videos online with our free tool.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "Gaana Downloader (2026) - Free MP3",
+    description: "⚡ Save Gaana music offline as MP3. No login, no subscription needed.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/gaana-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,81 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Gaana Video Downloader",
-    "alternateName": ["30tools Gaana Video Downloader", "Free Downloader"],
-    "description": "Download Gaana videos online with our free tool.",
-    "url": "https://30tools.com/gaana-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Gaana Song Downloader",
+  "alternateName": ["Gaana to MP3", "Gaana Music Saver"],
+  "description": "Free online Gaana to MP3 downloader. Save Bollywood, Punjabi, and regional songs from Gaana.",
+  "url": "https://30tools.com/gaana-video-downloader",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download Gaana songs as MP3", "Save Bollywood and Punjabi music", "No subscription required", "Works on all devices"]
 };
 
-export default function GaanaVideoDownloaderPage() {
+export default function GaanaDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Gaana Video Downloader</li>
+              <li className="text-foreground font-medium">Gaana Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Gaana Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Gaana Song Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download Gaana videos online with our free tool.
+              Download Gaana songs — Bollywood hits, Punjabi tracks, regional music — as MP3 for free. No Gaana Plus subscription needed. Works offline on all devices.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🎵 Bollywood & More</span><span>🎧 MP3 Audio</span><span>🚫 No Subscription</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Gaana Video Downloader" />
+            <UniversalVideoDownloader title="Gaana Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Gaana Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Gaana Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Download Gaana videos online with our free tool. Access your favorite Gaana media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Save Your Favourite Gaana Tracks Offline</h2>
+            <p className="text-muted-foreground mb-8">Gaana is India's top music streaming app with over 200 million users. While Gaana Plus allows offline listening in the app, it requires a paid subscription. Our <strong>Gaana Song Downloader</strong> lets you download any publicly available Gaana track as an MP3 file — completely free, no subscription needed.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Bollywood & Punjabi</h3>
+                <p className="text-muted-foreground m-0">Save the newest Bollywood chart-toppers, Punjabi bangers, and classic Hindi film songs from Gaana directly to your device.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Regional Music</h3>
+                <p className="text-muted-foreground m-0">Download Tamil, Telugu, Kannada, Malayalam, Marathi, and other regional language songs from Gaana's vast collection.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">No Subscription</h3>
+                <p className="text-muted-foreground m-0">Skip the Gaana Plus payment. 30tools lets you download any public Gaana song for free as a high-quality MP3.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Gaana with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Gaana video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Gaana link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Gaana Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Gaana Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I get the Gaana song URL?</h3>
+                <p className="text-muted-foreground">Open Gaana.com in a browser, find the song you want. Click the ⋯ menu next to the track and choose "Share". Copy the link and paste it into the 30tools downloader.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Gaana account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download Gaana playlists?</h3>
+                <p className="text-muted-foreground">Paste the Gaana playlist URL and our tool will fetch all available tracks for individual download. Entire playlist bulk download may be processed track by track.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">What audio quality is the download?</h3>
+                <p className="text-muted-foreground">Gaana streams at 128kbps MP3 for free users. Our download captures the publicly available stream quality.</p>
               </div>
             </div>
           </section>

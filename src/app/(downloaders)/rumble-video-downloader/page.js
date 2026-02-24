@@ -1,37 +1,32 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Rumble Video Downloader - Free Online Tool | 30tools",
-  description: "The ultimate tool for downloading videos from Rumble....",
+  title: "Rumble Video Downloader - Save Rumble Videos HD Free | 30tools",
+  description: "Download Rumble videos in 4K, HD 1080p, and MP4 for free. The best online Rumble video downloader. Save Rumble clips offline. No login or software needed.",
   keywords: [
-    "rumble video downloader 2026",
-    "download rumble video video",
-    "save rumble video media",
-    "free online rumble video downloader",
-    "download videos free"
+    "rumble video downloader", "download rumble videos", "rumble to mp4", "save rumble video",
+    "rumble video download free", "rumble hd download", "rumble 4k downloader",
+    "how to download rumble videos", "rumble clip downloader", "rumble video saver",
+    "rumble downloader online", "save rumble clips offline", "rumble video grabber"
   ].join(", "),
   openGraph: {
-    title: "Rumble Video Downloader (2026) - Free Downloader",
-    description: "⚡ The ultimate tool for downloading videos from Rumble.",
+    title: "Rumble Video Downloader - Save Videos in 4K & HD Free",
+    description: "⚡ Download Rumble videos in 4K, 1080p HD, or MP4 for free. No login, instant, no watermarks.",
     url: "https://30tools.com/rumble-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Rumble Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Rumble Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rumble Video Downloader (2026)",
-    description: "⚡ The ultimate tool for downloading videos from Rumble.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "Rumble Video Downloader (2026) - 4K & HD Free",
+    description: "⚡ Save Rumble videos offline in HD MP4. Fast, free, no account needed.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/rumble-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -45,16 +40,27 @@ const jsonLdSchemas = {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Rumble Video Downloader",
-    "alternateName": ["30tools Rumble Video Downloader", "Free Downloader"],
-    "description": "The ultimate tool for downloading videos from Rumble.",
+    "alternateName": ["Rumble to MP4", "Save Rumble HD", "Rumble Clip Saver"],
+    "description": "Free online tool to download Rumble videos in 4K, HD 1080p as MP4 files without login.",
     "url": "https://30tools.com/rumble-video-downloader",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
+      "Download Rumble in 4K and HD 1080p",
+      "Save Rumble clips as MP4",
+      "No account required",
+      "Works on all devices"
+    ]
+  },
+  howTo: {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download Rumble Videos",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Copy Rumble URL", "text": "Go to Rumble.com and open the video you want. Copy the video URL from the address bar." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Paste the URL into the 30tools Rumble Video Downloader input box." },
+      { "@type": "HowToStep", "position": 3, "name": "Download HD MP4", "text": "Choose your preferred quality (4K, 1080p, 720p) and click Download to save the MP4 file." }
     ]
   }
 };
@@ -64,13 +70,14 @@ export default function RumbleVideoDownloaderPage() {
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Rumble Video Downloader</li>
             </ol>
@@ -81,10 +88,10 @@ export default function RumbleVideoDownloaderPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Rumble Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              The ultimate tool for downloading videos from Rumble.
+              Save Rumble videos offline in 4K, 1080p HD, or standard quality for free. No login, no software — just paste the Rumble link and download the MP4 instantly.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🎬 4K & 1080p</span><span>📹 MP4 Format</span><span>🚫 No Login</span><span>🆓 100% Free</span>
             </div>
           </div>
 
@@ -94,74 +101,68 @@ export default function RumbleVideoDownloaderPage() {
             <UniversalVideoDownloader title="Rumble Video Downloader" />
           </div>
 
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Rumble Video Downloader</h2>
+            <h2 className="text-3xl font-bold mb-6">Why Save Rumble Videos Offline?</h2>
             <p className="text-muted-foreground mb-8">
-              Why choose our Rumble Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. The ultimate tool for downloading videos from Rumble. Access your favorite Rumble media instantly on any device.
+              Rumble is one of the fastest-growing video platforms, hosting news, political commentary, entertainment, and sports content. Unlike YouTube, Rumble doesn't offer a native download option. Our <strong>Rumble Video Downloader</strong> lets you save any public Rumble video as an MP4 file — perfect for sharing, archiving, or offline viewing.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">News & Commentary</h3>
+                <p className="text-muted-foreground m-0">Save breaking news clips, political analysis, and exclusive interviews hosted on Rumble before they are removed or edited.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">4K Quality Support</h3>
+                <p className="text-muted-foreground m-0">Rumble streams at up to 4K resolution. Our downloader captures the highest quality stream available for the video you're saving.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Clips for Sharing</h3>
+                <p className="text-muted-foreground m-0">Download Rumble clips to share across messaging apps, emails, or archive them in your personal video library.</p>
               </div>
             </div>
           </section>
 
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Rumble with 30tools</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download Rumble Videos</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Rumble video or image you want to download. Click Share and select "Copy Link".</p>
+                <h3 className="text-xl font-bold mb-4">Copy Rumble URL</h3>
+                <p className="text-muted-foreground text-sm">Open rumble.com and navigate to the video you want. Copy the full URL from your browser's address bar.</p>
               </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Rumble link into the input box at the top of this page.</p>
+                <h3 className="text-xl font-bold mb-4">Paste into 30tools</h3>
+                <p className="text-muted-foreground text-sm">Paste the URL into the Rumble Downloader input box above and press Download. Available qualities will appear instantly.</p>
               </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
+                <h3 className="text-xl font-bold mb-4">Select Quality & Save</h3>
+                <p className="text-muted-foreground text-sm">Choose 4K, 1080p, 720p, or 360p. Click the download link to save the MP4 file to your device.</p>
               </div>
             </div>
           </section>
 
           <AdUnit />
 
-          {/* FAQs */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Rumble Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Rumble Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download Rumble videos in 4K?</h3>
+                <p className="text-muted-foreground">Yes, if the video was uploaded in 4K resolution. Our tool automatically detects and provides all available quality options including 4K (2160p), 1080p, 720p, and 360p where available.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Rumble account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Does this work with all Rumble videos?</h3>
+                <p className="text-muted-foreground">It works with all publicly available Rumble videos. If a video is subscription-only or geo-restricted, it may not be downloadable via our tool.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Is there a file size limit for Rumble downloads?</h3>
+                <p className="text-muted-foreground">There is no file size restriction on our end. However, very long videos in high quality (e.g., 4K livestream recordings) may take longer to download depending on your internet speed.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Do I need to install any software or browser extension?</h3>
+                <p className="text-muted-foreground">No. 30tools is entirely web-based. Just visit the page in any browser on any device and paste your Rumble URL. No extensions, no apps, no downloads of any software.</p>
               </div>
             </div>
           </section>

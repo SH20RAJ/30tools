@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Imgur Video Downloader - Free Online Tool | 30tools",
-  description: "Save your favorite Imgur videos to your device easily....",
+  title: "Imgur Video Downloader - Save Imgur Videos & GIFs Free | 30tools",
+  description: "Download Imgur videos, GIFs, and gifv files to your device for free. Save any Imgur post as MP4 without watermarks. No login required, works on all devices.",
   keywords: [
-    "imgur video downloader 2026",
-    "download imgur video video",
-    "save imgur video media",
-    "free online imgur video downloader",
-    "download videos free"
+    "imgur video downloader", "download imgur video", "imgur gif downloader", "save imgur video",
+    "imgur to mp4", "imgur gifv download", "imgur video saver", "how to save imgur gif",
+    "download imgur post", "imgur video download free", "imgur gif to mp4"
   ].join(", "),
   openGraph: {
-    title: "Imgur Video Downloader (2026) - Free Downloader",
-    description: "⚡ Save your favorite Imgur videos to your device easily.",
+    title: "Imgur Video Downloader - Save Videos & GIFs Free",
+    description: "⚡ Download Imgur videos, GIFs, and gifv files as MP4 for free. Instant, no login.",
     url: "https://30tools.com/imgur-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Imgur Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Imgur Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Imgur Video Downloader (2026)",
-    description: "⚡ Save your favorite Imgur videos to your device easily.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "Imgur Video Downloader (2026) - Free",
+    description: "⚡ Save Imgur GIFs and videos as MP4 files instantly. Free, no account needed.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/imgur-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,81 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Imgur Video Downloader",
-    "alternateName": ["30tools Imgur Video Downloader", "Free Downloader"],
-    "description": "Save your favorite Imgur videos to your device easily.",
-    "url": "https://30tools.com/imgur-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Imgur Video Downloader",
+  "alternateName": ["Imgur to MP4", "Imgur GIF Saver"],
+  "description": "Free tool to download Imgur videos, GIFs, and gifv files as MP4 without login.",
+  "url": "https://30tools.com/imgur-video-downloader",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download Imgur videos as MP4", "Convert Imgur gifv to MP4", "Save Imgur GIFs", "No account needed"]
 };
 
 export default function ImgurVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
               <li className="text-foreground font-medium">Imgur Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Imgur Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save your favorite Imgur videos to your device easily.
+              Save Imgur videos, animated GIFs, and gifv posts as MP4 files for free. No account needed, no watermarks added. Works instantly on any browser or device.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🎬 GIF & gifv</span><span>📹 MP4 Output</span><span>🚫 No Login</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
             <UniversalVideoDownloader title="Imgur Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Imgur Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Imgur Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save your favorite Imgur videos to your device easily. Access your favorite Imgur media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Save Imgur GIFs and Videos Offline</h2>
+            <p className="text-muted-foreground mb-8">Imgur hosts billions of viral images, animated GIFs, and video clips shared across Reddit, social media, and chats. Imgur's "gifv" format plays like a video in browsers but is difficult to save directly. Our <strong>Imgur Video Downloader</strong> converts any Imgur gifv or video post into a downloadable MP4 file.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">gifv to MP4</h3>
+                <p className="text-muted-foreground m-0">Imgur gifv files are HTML5 video loops. Our tool downloads them as proper MP4 files compatible with every media player and device.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Viral Content Archive</h3>
+                <p className="text-muted-foreground m-0">Save viral memes, funny clips, and trending Imgur posts before they get removed. Build your own collection of viral internet moments.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Original Quality</h3>
+                <p className="text-muted-foreground m-0">Downloads are served directly from Imgur's CDN. No re-encoding, no quality loss — you get the original file quality.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Imgur with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Imgur video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Imgur link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Imgur Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Imgur Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download an Imgur gifv?</h3>
+                <p className="text-muted-foreground">Copy the Imgur post URL (e.g. imgur.com/gallery/xxxxxx or i.imgur.com/xxxxxx.gifv). Paste it into 30tools and click Download. The gifv will download as a standard MP4 file.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Imgur account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Can I save Imgur GIFs as actual GIF files?</h3>
+                <p className="text-muted-foreground">Imgur stopped supporting raw GIF uploads due to file size. Most Imgur animated content is served as MP4 or gifv. Our tool downloads them as MP4, which you can convert to GIF using a converter tool if needed.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download Imgur albums?</h3>
+                <p className="text-muted-foreground">Paste the Imgur album URL and our tool will attempt to fetch all media items in the album for download. Individual items within the album are presented for selection.</p>
               </div>
             </div>
           </section>

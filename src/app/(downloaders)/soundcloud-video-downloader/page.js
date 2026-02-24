@@ -1,37 +1,32 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Soundcloud Video Downloader - Free Online Tool | 30tools",
-  description: "The easiest way to download Soundcloud content online....",
+  title: "SoundCloud Downloader - Save Tracks to MP3 Free | 30tools",
+  description: "Download SoundCloud tracks as MP3 for free. The fastest online SoundCloud to MP3 converter. Save any SoundCloud song offline with one click. No login required.",
   keywords: [
-    "soundcloud video downloader 2026",
-    "download soundcloud video video",
-    "save soundcloud video media",
-    "free online soundcloud video downloader",
-    "download videos free"
+    "soundcloud downloader", "soundcloud to mp3", "download soundcloud music", "soundcloud mp3 downloader",
+    "save soundcloud tracks", "soundcloud song downloader", "soundcloud music download free",
+    "soundcloud offline download", "soundcloud to mp3 converter online", "download soundcloud playlist",
+    "soundcloud track saver", "free soundcloud downloader"
   ].join(", "),
   openGraph: {
-    title: "Soundcloud Video Downloader (2026) - Free Downloader",
-    description: "⚡ The easiest way to download Soundcloud content online.",
+    title: "SoundCloud Downloader - Save Songs to MP3 Free",
+    description: "⚡ Convert and download any SoundCloud track to MP3 instantly. Free, no login, no app needed.",
     url: "https://30tools.com/soundcloud-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Soundcloud Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "SoundCloud Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Soundcloud Video Downloader (2026)",
-    description: "⚡ The easiest way to download Soundcloud content online.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "SoundCloud Downloader (2026) - Save to MP3 Free",
+    description: "⚡ Download any SoundCloud track to MP3. Free online converter, no registration.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/soundcloud-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -44,124 +39,130 @@ const jsonLdSchemas = {
   webApp: {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    "name": "Soundcloud Video Downloader",
-    "alternateName": ["30tools Soundcloud Video Downloader", "Free Downloader"],
-    "description": "The easiest way to download Soundcloud content online.",
+    "name": "SoundCloud Downloader",
+    "alternateName": ["SoundCloud to MP3", "SoundCloud Track Saver"],
+    "description": "Free online SoundCloud to MP3 converter. Download any public SoundCloud track for offline listening.",
     "url": "https://30tools.com/soundcloud-video-downloader",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "Any",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
     "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
+      "Download SoundCloud tracks as MP3",
+      "Download SoundCloud playlists",
+      "No account required",
+      "High quality audio output"
+    ]
+  },
+  howTo: {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download SoundCloud Music",
+    "step": [
+      { "@type": "HowToStep", "position": 1, "name": "Copy Track URL", "text": "Open SoundCloud and find the track you want to download. Copy the URL from the browser address bar or the share button." },
+      { "@type": "HowToStep", "position": 2, "name": "Paste URL", "text": "Paste the SoundCloud track URL into the 30tools SoundCloud Downloader input box." },
+      { "@type": "HowToStep", "position": 3, "name": "Download MP3", "text": "Click the Download button to save the track as an MP3 audio file to your device." }
     ]
   }
 };
 
-export default function SoundcloudVideoDownloaderPage() {
+export default function SoundcloudDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.howTo) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Soundcloud Video Downloader</li>
+              <li className="text-foreground font-medium">SoundCloud Downloader</li>
             </ol>
           </nav>
 
           <AdUnit />
 
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Soundcloud Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">SoundCloud Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              The easiest way to download Soundcloud content online.
+              Download any SoundCloud track to MP3 for free. The simplest online SoundCloud to MP3 converter — paste a link, click download, done. Works on all devices.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🎵 MP3 Audio</span><span>🎧 High Quality</span><span>📋 Playlists Too</span><span>🆓 100% Free</span>
             </div>
           </div>
 
           <AdUnit />
 
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Soundcloud Video Downloader" />
+            <UniversalVideoDownloader title="SoundCloud Downloader" />
           </div>
 
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Soundcloud Video Downloader</h2>
+            <h2 className="text-3xl font-bold mb-6">Why Download SoundCloud Music?</h2>
             <p className="text-muted-foreground mb-8">
-              Why choose our Soundcloud Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. The easiest way to download Soundcloud content online. Access your favorite Soundcloud media instantly on any device.
+              SoundCloud hosts over 400 million tracks from independent artists, DJs, podcasters, and major labels. While SoundCloud Go+ offers offline downloads, it's a paid subscription. Our free <strong>SoundCloud Downloader</strong> lets you save any public track or playlist as a high-quality MP3 — no subscription needed, no app required.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Discover & Keep Indie Music</h3>
+                <p className="text-muted-foreground m-0">SoundCloud is home to unsigned artists you won't find on Spotify. Download their tracks to support and save their work before it disappears.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">DJ Sets & Remixes</h3>
+                <p className="text-muted-foreground m-0">Save DJ mixes, bootleg remixes, and exclusive sets that exist only on SoundCloud. Perfect for long road trips and workouts with no internet.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Podcast Episodes</h3>
+                <p className="text-muted-foreground m-0">Many podcasters host their episodes on SoundCloud. Download single episodes or entire series as MP3 files to listen offline at your own pace.</p>
               </div>
             </div>
           </section>
 
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Soundcloud with 30tools</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download SoundCloud Tracks</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Soundcloud video or image you want to download. Click Share and select "Copy Link".</p>
+                <h3 className="text-xl font-bold mb-4">Copy Track Link</h3>
+                <p className="text-muted-foreground text-sm">Open SoundCloud and find the track you want. Click the Share button (⋯ menu) and copy the link.</p>
               </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Soundcloud link into the input box at the top of this page.</p>
+                <h3 className="text-xl font-bold mb-4">Paste Link</h3>
+                <p className="text-muted-foreground text-sm">Paste the SoundCloud URL into the downloader box above. Works with individual tracks, albums, and playlists.</p>
               </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
+                <h3 className="text-xl font-bold mb-4">Save as MP3</h3>
+                <p className="text-muted-foreground text-sm">Click Download. The MP3 file will be saved directly to your phone's storage or computer downloads folder.</p>
               </div>
             </div>
           </section>
 
           <AdUnit />
 
-          {/* FAQs */}
           <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">SoundCloud Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Soundcloud Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download SoundCloud music for free?</h3>
+                <p className="text-muted-foreground">Copy the SoundCloud track URL, paste it into the 30tools SoundCloud Downloader, and click the Download button. The MP3 file downloads directly to your device — it's completely free and no login is required.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Soundcloud account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download SoundCloud playlists?</h3>
+                <p className="text-muted-foreground">Yes! Copy the SoundCloud playlist URL and paste it into the downloader. Our tool supports both individual tracks and full playlist URLs. Tracks in the playlist will be available for download individually.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">What audio quality is the downloaded MP3?</h3>
+                <p className="text-muted-foreground">The quality depends on what the artist uploaded to SoundCloud. Most tracks are available at 128kbps. SoundCloud Go tracks (artist-enabled downloads) may be available at 320kbps in some cases.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Can I download tracks that are set to private on SoundCloud?</h3>
+                <p className="text-muted-foreground">No. Our tool can only download public SoundCloud tracks. Private tracks require authentication and are not accessible to third-party downloaders.</p>
               </div>
             </div>
           </section>

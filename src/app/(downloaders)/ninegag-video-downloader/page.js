@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "NineGag Video Downloader - Free Online Tool | 30tools",
-  description: "Save your favorite NineGag videos to your device easily....",
+  title: "9GAG Video Downloader - Save 9GAG Videos & GIFs Free | 30tools",
+  description: "Download 9GAG videos and GIFs for free. Save funny 9GAG posts as MP4 or GIF files to your device. No login required. Works on Android, iPhone, and PC.",
   keywords: [
-    "ninegag video downloader 2026",
-    "download ninegag video video",
-    "save ninegag video media",
-    "free online ninegag video downloader",
-    "download videos free"
+    "9gag video downloader", "download 9gag video", "9gag gif downloader", "save 9gag video",
+    "9gag to mp4", "9gag video saver", "download 9gag post", "9gag gif saver",
+    "how to download 9gag videos", "9gag funny video download", "free 9gag downloader"
   ].join(", "),
   openGraph: {
-    title: "NineGag Video Downloader (2026) - Free Downloader",
-    description: "⚡ Save your favorite NineGag videos to your device easily.",
+    title: "9GAG Video Downloader - Save Funny Videos & GIFs Free",
+    description: "⚡ Download 9GAG videos and GIFs as MP4 for free. No login, instant, all devices.",
     url: "https://30tools.com/ninegag-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "NineGag Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "9GAG Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "NineGag Video Downloader (2026)",
-    description: "⚡ Save your favorite NineGag videos to your device easily.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "9GAG Video Downloader (2026) - Free",
+    description: "⚡ Save 9GAG videos and GIFs offline. Fast and free, no login needed.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/ninegag-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,81 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "NineGag Video Downloader",
-    "alternateName": ["30tools NineGag Video Downloader", "Free Downloader"],
-    "description": "Save your favorite NineGag videos to your device easily.",
-    "url": "https://30tools.com/ninegag-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "9GAG Video Downloader",
+  "alternateName": ["9GAG to MP4", "9GAG GIF Saver"],
+  "description": "Free online tool to download 9GAG videos and GIFs as MP4 or GIF files.",
+  "url": "https://30tools.com/ninegag-video-downloader",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download 9GAG videos as MP4", "Save 9GAG GIFs", "No account required"]
 };
 
-export default function NineGagVideoDownloaderPage() {
+export default function NinegagVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">NineGag Video Downloader</li>
+              <li className="text-foreground font-medium">9GAG Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">NineGag Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">9GAG Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save your favorite NineGag videos to your device easily.
+              Save your favourite 9GAG memes, GIFs, and video posts directly to your device for free. No login, no watermarks. Works on Android, iPhone, and desktop.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>😂 Memes & GIFs</span><span>📹 MP4 Videos</span><span>🚫 No Login</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="NineGag Video Downloader" />
+            <UniversalVideoDownloader title="9GAG Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our NineGag Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our NineGag Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save your favorite NineGag videos to your device easily. Access your favorite NineGag media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Why Save 9GAG Videos?</h2>
+            <p className="text-muted-foreground mb-8">9GAG is one of the world's most popular meme platforms, hosting millions of funny videos, GIFs, and images. 9GAG doesn't offer a built-in download button. Our <strong>9GAG Video Downloader</strong> lets you save any public 9GAG post as an MP4 or GIF to share with friends offline.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Share the Funny</h3>
+                <p className="text-muted-foreground m-0">Save 9GAG memes and viral videos to share in group chats on WhatsApp, Telegram, and Discord — no internet needed when sharing.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">GIF & Video Support</h3>
+                <p className="text-muted-foreground m-0">Download 9GAG animated GIFs and short funny videos in their original MP4 or GIF format for perfect quality.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Build your Meme Library</h3>
+                <p className="text-muted-foreground m-0">Create your own offline meme collection from 9GAG's trending posts to use as reaction GIFs in chats.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from NineGag with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the NineGag video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied NineGag link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">9GAG Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this NineGag Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I get the 9GAG post URL?</h3>
+                <p className="text-muted-foreground">Open 9GAG and find the video or GIF. Tap the Share icon and copy the post link (e.g. 9gag.com/gag/aXXXXXX). Paste it into the downloader above.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a NineGag account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Will the downloaded 9GAG video have a watermark?</h3>
+                <p className="text-muted-foreground">No. Our tool downloads the original file from 9GAG's servers. No watermarks are added by 30tools.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download GIFs from 9GAG as GIF format?</h3>
+                <p className="text-muted-foreground">9GAG serves most animated content as MP4 for efficiency. You may download the MP4 and convert it to GIF using a converter if needed.</p>
               </div>
             </div>
           </section>

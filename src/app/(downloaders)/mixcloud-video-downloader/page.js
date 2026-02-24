@@ -1,37 +1,32 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Mixcloud Video Downloader - Free Online Tool | 30tools",
-  description: "The easiest way to download Mixcloud videos and audio online....",
+  title: "Mixcloud Downloader - Save Mixes and Shows to MP3 Free | 30tools",
+  description: "Download Mixcloud mixes, DJ sets, and radio shows as MP3 for free. The best online Mixcloud to MP3 converter. Save any Mixcloud show for offline listening.",
   keywords: [
-    "mixcloud video downloader 2026",
-    "download mixcloud video video",
-    "save mixcloud video media",
-    "free online mixcloud video downloader",
-    "download videos free"
+    "mixcloud downloader", "mixcloud to mp3", "download mixcloud mixes", "save mixcloud show",
+    "mixcloud dj set download", "free mixcloud downloader", "mixcloud radio download",
+    "how to download from mixcloud", "mixcloud offline download", "mixcloud mp3 converter",
+    "download mixcloud podcast", "mixcloud track saver"
   ].join(", "),
   openGraph: {
-    title: "Mixcloud Video Downloader (2026) - Free Downloader",
-    description: "⚡ The easiest way to download Mixcloud videos and audio online.",
+    title: "Mixcloud Downloader - Save DJ Mixes to MP3 Free",
+    description: "⚡ Download Mixcloud DJ mixes and radio shows to MP3 for free. No login required.",
     url: "https://30tools.com/mixcloud-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Mixcloud Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Mixcloud Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mixcloud Video Downloader (2026)",
-    description: "⚡ The easiest way to download Mixcloud videos and audio online.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "Mixcloud Downloader (2026) - Save Mixes to MP3",
+    description: "⚡ Save Mixcloud DJ sets and radio shows offline as MP3. Free, no subscription needed.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/mixcloud-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +35,83 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Mixcloud Video Downloader",
-    "alternateName": ["30tools Mixcloud Video Downloader", "Free Downloader"],
-    "description": "The easiest way to download Mixcloud videos and audio online.",
-    "url": "https://30tools.com/mixcloud-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Mixcloud Downloader",
+  "alternateName": ["Mixcloud to MP3", "Save Mixcloud Mix"],
+  "description": "Free online Mixcloud to MP3 converter. Download DJ mixes, radio shows, and podcasts from Mixcloud.",
+  "url": "https://30tools.com/mixcloud-video-downloader",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download Mixcloud mixes as MP3", "Save DJ sets offline", "No Mixcloud Select subscription required", "Works on all devices"]
 };
 
-export default function MixcloudVideoDownloaderPage() {
+export default function MixcloudDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Mixcloud Video Downloader</li>
+              <li className="text-foreground font-medium">Mixcloud Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Mixcloud Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Mixcloud Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              The easiest way to download Mixcloud videos and audio online.
+              Save Mixcloud DJ sets, radio shows, and podcast mixes as MP3 for free. No Mixcloud Select subscription required. Works on all devices, no login needed.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🎧 DJ Mixes</span><span>📻 Radio Shows</span><span>🎵 MP3 Audio</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Mixcloud Video Downloader" />
+            <UniversalVideoDownloader title="Mixcloud Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Mixcloud Video Downloader</h2>
+            <h2 className="text-3xl font-bold mb-6">Why Download Mixcloud Mixes?</h2>
             <p className="text-muted-foreground mb-8">
-              Why choose our Mixcloud Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. The easiest way to download Mixcloud videos and audio online. Access your favorite Mixcloud media instantly on any device.
+              Mixcloud hosts millions of DJ sets, radio shows, and long-form music mixes. Mixcloud's paid "Select" plan is needed for offline downloads inside the app. Our free <strong>Mixcloud Downloader</strong> lets you save any publicly available mix directly as an MP3 — perfect for gym sessions, long drives, or DJing.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">DJ Sets & Festivals</h3>
+                <p className="text-muted-foreground m-0">Save high-energy festival sets, club mixes, and exclusive DJ performances from your favourite artists for offline listening.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Radio Shows</h3>
+                <p className="text-muted-foreground m-0">Download BBC Radio, NTS Radio, and independent radio show episodes from Mixcloud to catch up on the go without using data.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">No Subscription Needed</h3>
+                <p className="text-muted-foreground m-0">30tools is completely free. No Mixcloud Select, no credit card, no account creation. Just paste, download, enjoy.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Mixcloud with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Mixcloud video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Mixcloud link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Mixcloud Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Mixcloud Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I download a Mixcloud mix?</h3>
+                <p className="text-muted-foreground">Open the Mixcloud show page, copy the URL (e.g. mixcloud.com/username/show-name), paste it into 30tools, and click Download. The MP3 will save directly to your device.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Mixcloud account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download full DJ sets from Mixcloud?</h3>
+                <p className="text-muted-foreground">Yes. Full-length Mixcloud shows — even multi-hour DJ sets — can be downloaded as a single MP3 file using our tool.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">What bitrate is the Mixcloud MP3 download?</h3>
+                <p className="text-muted-foreground">Mixcloud streams at 128kbps AAC format publicly. Most downloads will be in 128kbps. Higher quality is only available to Mixcloud Select members through Mixcloud's app.</p>
               </div>
             </div>
           </section>

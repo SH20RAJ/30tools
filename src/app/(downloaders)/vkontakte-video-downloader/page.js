@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Vkontakte Video Downloader - Free Online Tool | 30tools",
-  description: "Save Vkontakte videos directly to your device easily....",
+  title: "VK Video Downloader - Save VKontakte Videos HD Free | 30tools",
+  description: "Download VK (VKontakte) videos in HD for free. The best online VK video downloader. Save VK videos as MP4. Works on all devices without login.",
   keywords: [
-    "vkontakte video downloader 2026",
-    "download vkontakte video video",
-    "save vkontakte video media",
-    "free online vkontakte video downloader",
-    "download videos free"
+    "vk video downloader", "vkontakte video downloader", "download vk video", "save vk video",
+    "vk to mp4", "vk video download free", "vkontakte downloader", "vk video saver",
+    "how to download vk videos", "vk download without login", "download vkontakte hd"
   ].join(", "),
   openGraph: {
-    title: "Vkontakte Video Downloader (2026) - Free Downloader",
-    description: "⚡ Save Vkontakte videos directly to your device easily.",
+    title: "VK Video Downloader - Save VKontakte Videos HD Free",
+    description: "⚡ Download VK (VKontakte) videos in HD MP4 for free. No login required.",
     url: "https://30tools.com/vkontakte-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Vkontakte Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "VK Video Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vkontakte Video Downloader (2026)",
-    description: "⚡ Save Vkontakte videos directly to your device easily.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "VK Video Downloader (2026) - HD MP4 Free",
+    description: "⚡ Save VKontakte videos offline in HD. No login, no watermarks, completely free.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/vkontakte-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,77 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Vkontakte Video Downloader",
-    "alternateName": ["30tools Vkontakte Video Downloader", "Free Downloader"],
-    "description": "Save Vkontakte videos directly to your device easily.",
-    "url": "https://30tools.com/vkontakte-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "VK Video Downloader",
+  "alternateName": ["VKontakte Downloader", "VK to MP4"],
+  "description": "Free online tool to download VK (VKontakte) videos in HD quality as MP4 without login.",
+  "url": "https://30tools.com/vkontakte-video-downloader",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download VK videos as HD MP4", "No VK account required", "No watermarks", "Works on all devices"]
 };
 
 export default function VkontakteVideoDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Vkontakte Video Downloader</li>
+              <li className="text-foreground font-medium">VK Video Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Vkontakte Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">VK Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save Vkontakte videos directly to your device easily.
+              Download VKontakte (VK) videos in HD MP4 for free. Save movies, music clips, and media from Europe's largest social network. No VK account required.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🇷🇺 VKontakte</span><span>📹 HD MP4</span><span>🚫 No Login</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Vkontakte Video Downloader" />
+            <UniversalVideoDownloader title="VK Video Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Vkontakte Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Vkontakte Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save Vkontakte videos directly to your device easily. Access your favorite Vkontakte media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Download VK Videos Without an Account</h2>
+            <p className="text-muted-foreground mb-8">VKontakte (VK) is the largest social network in Russia and Eastern Europe with over 100 million active users. VK hosts a massive library of movies, music videos, TV shows, and user-generated content. Our <strong>VK Video Downloader</strong> lets you save any public VK video as an HD MP4 without needing a VK account.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Movies & Series</h3>
+                <p className="text-muted-foreground m-0">VK hosts full movies and TV series. Download public video content to watch offline in HD quality.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Music Videos</h3>
+                <p className="text-muted-foreground m-0">Save Russian and international music videos from VK's vast community-uploaded music video library.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">No VK Account</h3>
+                <p className="text-muted-foreground m-0">Our tool accesses public VK video links without requiring a VKontakte login or profile registration.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Vkontakte with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Vkontakte video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Vkontakte link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">VK Video Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Vkontakte Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">How do I get the VK video URL?</h3>
+                <p className="text-muted-foreground">Open VK.com, navigate to the video, right-click and select "Copy video URL" or copy the address bar URL. Paste it into the 30tools downloader and click Download.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Vkontakte account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
-              </div>
-              <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download VK videos without a Russian SIM card or VPN?</h3>
+                <p className="text-muted-foreground">Yes. Our tool is server-side and operates independently of your location or Roskomnadzor restrictions. You can access and download any public VK video from anywhere in the world.</p>
               </div>
             </div>
           </section>

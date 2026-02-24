@@ -1,37 +1,31 @@
+import Link from 'next/link';
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Bandcamp Video Downloader - Free Online Tool | 30tools",
-  description: "The easiest way to download Bandcamp videos online....",
+  title: "Bandcamp Downloader - Save Bandcamp Music Free | 30tools",
+  description: "Download Bandcamp tracks and albums to MP3 for free. Save independent artists' music from Bandcamp without buying. Works on any device, no login required.",
   keywords: [
-    "bandcamp video downloader 2026",
-    "download bandcamp video video",
-    "save bandcamp video media",
-    "free online bandcamp video downloader",
-    "download videos free"
+    "bandcamp downloader", "bandcamp to mp3", "download bandcamp music free", "save bandcamp track",
+    "bandcamp album download", "bandcamp music saver", "how to download bandcamp songs",
+    "bandcamp free download", "bandcamp song downloader", "bandcamp mp3 download"
   ].join(", "),
   openGraph: {
-    title: "Bandcamp Video Downloader (2026) - Free Downloader",
-    description: "⚡ The easiest way to download Bandcamp videos online.",
+    title: "Bandcamp Downloader - Save Indie Music to MP3 Free",
+    description: "⚡ Download Bandcamp tracks and albums as MP3. Support indie artists, save music offline.",
     url: "https://30tools.com/bandcamp-video-downloader",
     siteName: "30tools",
     type: "website",
-    images: [{
-      url: "/og-images/universal-downloader.jpg", 
-      width: 1200,
-      height: 630,
-      alt: "Bandcamp Video Downloader 2026"
-    }]
+    images: [{ url: "/og-images/universal-downloader.jpg", width: 1200, height: 630, alt: "Bandcamp Downloader" }]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Bandcamp Video Downloader (2026)",
-    description: "⚡ The easiest way to download Bandcamp videos online.",
-    images: ["/og-images/universal-downloader.jpg"], 
+    title: "Bandcamp Downloader (2026) - Save Music Free",
+    description: "⚡ Download Bandcamp music as MP3. Works for free & paid tracks offered by artists.",
+    images: ["/og-images/universal-downloader.jpg"],
     creator: "@30tools"
   },
   alternates: { canonical: "https://30tools.com/bandcamp-video-downloader" },
-  robots: { index: true, follow: true, googleBot: { index: true, follow: true } }
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } }
 };
 
 const AdUnit = () => (
@@ -40,128 +34,81 @@ const AdUnit = () => (
   </div>
 );
 
-const jsonLdSchemas = {
-  webApp: {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Bandcamp Video Downloader",
-    "alternateName": ["30tools Bandcamp Video Downloader", "Free Downloader"],
-    "description": "The easiest way to download Bandcamp videos online.",
-    "url": "https://30tools.com/bandcamp-video-downloader",
-    "applicationCategory": "MultimediaApplication",
-    "operatingSystem": "Any",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-    "featureList": [
-      "Download high quality videos",
-      "No registration required",
-      "Free to use"
-    ]
-  }
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Bandcamp Downloader",
+  "alternateName": ["Bandcamp to MP3", "Save Bandcamp Music"],
+  "description": "Free downloader for Bandcamp tracks and albums. Download indie and independent artist music from Bandcamp as MP3.",
+  "url": "https://30tools.com/bandcamp-video-downloader",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "featureList": ["Download Bandcamp tracks as MP3", "Save Bandcamp albums", "No account required", "Works on all devices"]
 };
 
-export default function BandcampVideoDownloaderPage() {
+export default function BandcampDownloaderPage() {
   return (
     <>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSchemas.webApp) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div className="container mx-auto px-4 py-12 md:py-20">
         <div className="max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-              <li><a href="/" className="hover:text-primary">Home</a></li>
+              <li><Link href="/" className="hover:text-primary">Home</Link></li>
               <li>/</li>
-              <li><a href="/all-downloaders" className="hover:text-primary">Downloaders</a></li>
+              <li><Link href="/all-downloaders" className="hover:text-primary">Downloaders</Link></li>
               <li>/</li>
-              <li className="text-foreground font-medium">Bandcamp Video Downloader</li>
+              <li className="text-foreground font-medium">Bandcamp Downloader</li>
             </ol>
           </nav>
-
           <AdUnit />
-
           <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Bandcamp Video Downloader</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Bandcamp Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              The easiest way to download Bandcamp videos online.
+              Save Bandcamp tracks and albums as MP3 files for free. Download indie music, metal, jazz, and electronic from independent artists. No login required.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              <span>⚡ Fast</span><span>🎥 HD Quality</span><span>🆓 100% Free</span>
+              <span>🎸 Indie Music</span><span>🎵 MP3 Audio</span><span>💿 Full Albums</span><span>🆓 100% Free</span>
             </div>
           </div>
-
           <AdUnit />
-
           <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-            <UniversalVideoDownloader title="Bandcamp Video Downloader" />
+            <UniversalVideoDownloader title="Bandcamp Downloader" />
           </div>
-
-          {/* SEO Content: Why Use Us */}
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-            <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Bandcamp Video Downloader</h2>
-            <p className="text-muted-foreground mb-8">
-              Why choose our Bandcamp Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. The easiest way to download Bandcamp videos online. Access your favorite Bandcamp media instantly on any device.
-            </p>
+            <h2 className="text-3xl font-bold mb-6">Discover and Save Indie Music from Bandcamp</h2>
+            <p className="text-muted-foreground mb-8">Bandcamp is home to over 700,000 independent artists across every genre. Many artists offer "Name Your Price" downloads, but streaming is the default. Our <strong>Bandcamp Downloader</strong> gives you direct access to the audio stream so you can save music for offline listening.</p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">High Quality Downloads</h3>
-                <p className="text-muted-foreground m-0">
-                  Save media in the best available resolution. Enjoy crisp, clear content offline.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Indie & Underground</h3>
+                <p className="text-muted-foreground m-0">Save albums and tracks from independent artists across metal, folk, jazz, electronic, and hundreds of other genres not found on mainstream platforms.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">Easy for All Devices</h3>
-                <p className="text-muted-foreground m-0">
-                  Works across all devices including mobile phones, PCs, and tablets. Compatible with Android and iOS.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Rare & Exclusive</h3>
+                <p className="text-muted-foreground m-0">Bandcamp hosts exclusive releases, limited editions, and albums unavailable on Spotify or Apple Music. Save them before they sell out or are taken down.</p>
               </div>
               <div className="p-6 bg-card rounded-xl border border-border">
-                <h3 className="text-xl font-bold mb-3 mt-0">100% Free</h3>
-                <p className="text-muted-foreground m-0">
-                  Unlimited downloads at zero cost. We only display a few ads to support development.
-                </p>
+                <h3 className="text-xl font-bold mb-3 mt-0">Offline Listening</h3>
+                <p className="text-muted-foreground m-0">Add Bandcamp discoveries to your personal music library for offline listening — no subscription, no data usage during playback.</p>
               </div>
             </div>
           </section>
-
-        
-          {/* How to Download Steps */}
           <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Bandcamp with 30tools</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
-                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
-                <p className="text-muted-foreground">Find the Bandcamp video or image you want to download. Click Share and select "Copy Link".</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
-                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
-                <p className="text-muted-foreground">Return to 30tools and paste the copied Bandcamp link into the input box at the top of this page.</p>
-              </div>
-              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
-                <h3 className="text-xl font-bold mb-4">Download Media</h3>
-                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
-              </div>
-            </div>
-          </section>
-
-          <AdUnit />
-
-          {/* FAQs */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <h2 className="text-3xl font-bold text-center mb-10">Bandcamp Downloader FAQs</h2>
             <div className="max-w-3xl mx-auto space-y-6">
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Is this Bandcamp Downloader completely free to use?</h3>
-                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+                <h3 className="text-lg font-bold mb-2">Can I download any Bandcamp track?</h3>
+                <p className="text-muted-foreground">Our tool downloads the publicly available stream of Bandcamp tracks. "Name Your Price" tracks that require a purchase cannot be downloaded via our tool without completing the artist's purchase process.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Do I need a Bandcamp account to download?</h3>
-                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+                <h3 className="text-lg font-bold mb-2">Should I support artists by buying on Bandcamp?</h3>
+                <p className="text-muted-foreground">Absolutely! Bandcamp is one of the artist-friendliest platforms, with ~80% of revenue going directly to the artist. If you love a track or album you discovered, consider buying it on Bandcamp to support the creator.</p>
               </div>
               <div className="bg-card border border-border rounded-xl p-6">
-                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
-                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+                <h3 className="text-lg font-bold mb-2">What audio quality is the Bandcamp download?</h3>
+                <p className="text-muted-foreground">Bandcamp streams at 128kbps MP3 publicly. Paid downloads from Bandcamp directly range from 128kbps up to lossless FLAC quality. Our tool captures the publicly streamed quality.</p>
               </div>
             </div>
           </section>
