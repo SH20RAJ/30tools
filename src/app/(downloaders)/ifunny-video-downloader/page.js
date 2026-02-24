@@ -2,7 +2,7 @@ import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVi
 
 export const metadata = {
   title: "Ifunny Video Downloader - Free Online Tool | 30tools",
-  description: "Save your favorite Ifunny videos to your device easily.",
+  description: "Save your favorite Ifunny videos to your device easily....",
   keywords: [
     "ifunny video downloader 2026",
     "download ifunny video video",
@@ -98,7 +98,7 @@ export default function IfunnyVideoDownloaderPage() {
           <section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
             <h2 className="text-3xl font-bold mb-6">Why You Should Use Our Ifunny Video Downloader</h2>
             <p className="text-muted-foreground mb-8">
-              Our free tool makes it easy to download content in high quality. Whether you're using a phone, tablet, or PC, you can save your favorite videos quickly and easily. No software installation is required, just copy the link and start downloading directly from your browser.
+              Why choose our Ifunny Video Downloader? 30tools offers an ad-free, secure, and lightning-fast downloading experience. Save your favorite Ifunny videos to your device easily. Access your favorite Ifunny media instantly on any device.
             </p>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div className="p-6 bg-card rounded-xl border border-border">
@@ -122,6 +122,49 @@ export default function IfunnyVideoDownloaderPage() {
             </div>
           </section>
 
+        
+          {/* How to Download Steps */}
+          <section className="mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">How to Download from Ifunny with 30tools</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">1</div>
+                <h3 className="text-xl font-bold mb-4">Copy the URL</h3>
+                <p className="text-muted-foreground">Find the Ifunny video or image you want to download. Click Share and select "Copy Link".</p>
+              </div>
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">2</div>
+                <h3 className="text-xl font-bold mb-4">Paste the URL</h3>
+                <p className="text-muted-foreground">Return to 30tools and paste the copied Ifunny link into the input box at the top of this page.</p>
+              </div>
+              <div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center relative overflow-hidden">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">3</div>
+                <h3 className="text-xl font-bold mb-4">Download Media</h3>
+                <p className="text-muted-foreground">Click the "Download" button. Choose your preferred format and quality to save the file directly to your device.</p>
+              </div>
+            </div>
+          </section>
+
+          <AdUnit />
+
+          {/* FAQs */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+            <div className="max-w-3xl mx-auto space-y-6">
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Is this Ifunny Downloader completely free to use?</h3>
+                <p className="text-muted-foreground">Yes! Our downloader is 100% free with absolutely no hidden costs, subscriptions, or installation requirements.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Do I need a Ifunny account to download?</h3>
+                <p className="text-muted-foreground">No account is necessary. As long as the post is public, you can download it using just the link.</p>
+              </div>
+              <div className="bg-card border border-border rounded-xl p-6">
+                <h3 className="text-lg font-bold mb-2">Are my downloads anonymous?</h3>
+                <p className="text-muted-foreground">Absolutely. We do not track your download history or save any files you download on our servers.</p>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </>

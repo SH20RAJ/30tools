@@ -2,7 +2,7 @@ import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader"
 
 export const metadata = {
   title: "Twitter Video Downloader (2026) - Save X Videos & GIFs | 30Tools",
-  description: "Best free online twitter video downloader to save X videos, GIFs, and media in HD 1080p. Fast, secure, and works on iPhone/Android. (Updated 2026)",
+  description: "The ultimate tool for downloading videos from Twitter....",
   keywords: [
     "save x videos", "twitter video downloader 2026", "download twitter videos online", "x video saver",
     "save twitter clips hd", "twitter to mp4 free", "rip x video", "save tweet media",
@@ -93,7 +93,7 @@ export default function TwitterVideoDownloaderPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Twitter Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Save videos from Twitter (X) to your device. Download tweets with videos and GIFs in high quality MP4 format.
+              The ultimate tool for downloading videos from Twitter.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
               <span>🐦 Save Tweets</span><span>🎥 MP4 Format</span><span>⚡ Fast & Free</span><span>📱 Mobile Friendly</span>

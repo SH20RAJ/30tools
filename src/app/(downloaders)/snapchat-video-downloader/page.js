@@ -2,7 +2,7 @@ import SnapchatDownloader from "@/components/tools/downloaders/SnapchatDownloade
 
 export const metadata = {
   title: "Snapchat Video Downloader - Save Snapchat Stories Free | 30tools",
-  description: "Download Snapchat videos and stories anonymously. Save Snaps and Spotlight videos in high quality. Free Snapchat video downloader tool.",
+  description: "Save your favorite Snapchat videos to your device easily....",
   keywords: [
     "snapchat video downloader",
     "download snapchat stories",
@@ -94,7 +94,7 @@ export default function SnapchatVideoDownloaderPage() {
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Snapchat Video Downloader</h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download Snapchat videos, Stories, and Spotlight content. Save Snaps anonymously to your device in high quality.
+              Save your favorite Snapchat videos to your device easily.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
               <span>👻 Save Snaps</span><span>🌟 Spotlight</span><span>🕵️ Anonymous</span><span>🆓 100% Free</span>

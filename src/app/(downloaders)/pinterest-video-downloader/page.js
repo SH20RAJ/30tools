@@ -1,9 +1,9 @@
 import PinterestDownloader from "@/components/tools/downloaders/PinterestDownloader";
+import Link from 'next/link';
 
 export const metadata = {
   title: "Pinterest Video Downloader - Free Online Tool | 30tools",
-  description:
-    "Download Pinterest videos, GIFs & Images in HD (Updated 2026). Save Pins to your phone or PC. Free, fast & no watermarks.",
+  description: "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available....",
   keywords: [
     "pinterest video downloader 2026",
     "download pinterest video",
@@ -138,15 +138,15 @@ export default function PinterestVideoDownloaderPage() {
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center space-x-2 text-sm text-muted-foreground">
               <li>
-                <a href="/" className="hover:text-primary">
+                <Link href="/" className="hover:text-primary">
                   Home
-                </a>
+                </Link>
               </li>
               <li>/</li>
               <li>
-                <a href="/all-downloaders" className="hover:text-primary">
+                <Link href="/all-downloaders" className="hover:text-primary">
                   Downloaders
-                </a>
+                </Link>
               </li>
               <li>/</li>
               <li className="text-foreground font-medium">
@@ -162,8 +162,7 @@ export default function PinterestVideoDownloaderPage() {
               Pinterest Video Downloader
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Download videos, GIFs, and images from Pinterest in high quality.
-              Save creative ideas and inspiration directly to your device.
+              Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
               <span>📌 Save Pins</span>
