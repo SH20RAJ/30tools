@@ -1,2583 +1,2583 @@
 {
-  "metadata": {
-    "version": "2.1",
-    "lastUpdated": "2025-06-15",
-    "totalTools": 116,
-    "totalCategories": 8,
-    "seoOptimized": true
-  },
-  "seoConfig": {
-    "primaryDomain": "30tools.com",
-    "brandName": "30tools",
-    "tagline": "Free Online Toolkit",
-    "primaryKeywords": [
-      "free online tools",
-      "image tools online",
-      "pdf tools free",
-      "video converter online",
-      "text tools free",
-      "file converter",
-      "online toolkit"
-    ],
-    "globalSchemaMarkup": {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "30tools - Free Online Toolkit",
-      "url": "https://30tools.com",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://30tools.com/search?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-  },
-  "categories": {
-    "image": {
-      "name": "Image Tools",
-      "slug": "image-tools",
-      "description": "Professional image processing tools for compression, conversion, editing, and optimization. Free online image tools with no watermarks.",
-      "icon": "ImageIcon",
-      "seoTitle": "Free Image Tools Online - Compress, Convert, Edit Images | 30tools",
-      "seoDescription": "Professional image tools: compress images, convert formats (JPEG, PNG, WebP), resize photos, remove backgrounds, and edit images online. Free, fast, and secure.",
-      "keywords": [
-        "image tools online",
-        "compress image free",
-        "image converter",
-        "photo editor online",
-        "resize image online",
-        "background remover",
-        "image optimizer",
-        "photo tools free"
-      ],
-      "breadcrumb": ["Home", "Image Tools"],
-      "tools": [
-        {
-          "id": "image-compressor",
-          "name": "Image Compressor",
-          "shortName": "Compress",
-          "description": "Compress JPEG, PNG, WebP images without losing quality. Reduce file size by up to 90% while maintaining visual quality.",
-          "longDescription": "Our advanced image compressor uses intelligent algorithms to reduce file sizes by up to 90% while preserving image quality. Perfect for web optimization, email attachments, and storage savings. Supports batch processing of up to 50 images simultaneously.",
-          "category": "image",
-          "subcategory": "compression",
-          "primaryKeyword": "image compressor",
-          "keywords": [
-            "compress image online",
-            "image compressor free",
-            "reduce image size",
-            "optimize image online",
-            "compress jpeg png",
-            "image optimizer tool",
-            "photo compressor online",
-            "compress images without losing quality"
-          ],
-          "longTailKeywords": [
-            "free online image compressor no watermark",
-            "compress images for web without quality loss",
-            "bulk image compression tool online free",
-            "compress jpeg png webp files online",
-            "reduce image file size for email",
-            "optimize images for website speed",
-            "batch compress multiple images free"
-          ],
-          "routes": [
-            "/image-compressor",
-            "/compress-images-online",
-            "/free-image-compressor",
-            "/image-optimizer",
-            "/image-minimizer",
-            "/reduce-image-size",
-            "/optimize-images-online"
-          ],
-          "features": [
-            "Batch compression up to 50 images",
-            "Quality control slider (10-100%)",
-            "Supports JPEG, PNG, WebP, GIF",
-            "No file size limits",
-            "No watermarks added",
-            "Client-side processing",
-            "Instant download",
-            "Mobile optimized"
-          ],
-          "useCases": [
-            "Website optimization",
-            "Email attachments",
-            "Social media posting",
-            "Storage space saving",
-            "Blog image optimization",
-            "E-commerce product photos"
-          ],
-          "fileFormats": ["JPEG", "PNG", "WebP", "GIF"],
-          "maxFileSize": "50MB per file",
-          "processingTime": "2-10 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 165000,
-          "difficulty": "Low",
-          "cpc": "$1.20",
-          "intent": "High"
-        },
-        {
-          "id": "image-resizer",
-          "name": "Image Resizer",
-          "shortName": "Resize",
-          "description": "Resize images to custom dimensions or preset sizes. Maintain aspect ratio or stretch to exact dimensions.",
-          "longDescription": "Professional image resizing tool with custom dimensions, preset sizes, and aspect ratio control. Perfect for social media, websites, and print. Supports batch resizing and maintains image quality.",
-          "category": "image",
-          "subcategory": "editing",
-          "primaryKeyword": "image resizer",
-          "keywords": [
-            "resize image online",
-            "image resizer free",
-            "photo resizer",
-            "change image size",
-            "resize pictures online",
-            "image dimension changer",
-            "photo size editor",
-            "scale image online"
-          ],
-          "longTailKeywords": [
-            "resize image to specific size online free",
-            "batch resize multiple images same size",
-            "resize image for social media post",
-            "resize photo for passport size online",
-            "change image dimensions without losing quality",
-            "resize image to custom width height",
-            "bulk image resizer online tool free"
-          ],
-          "routes": [
-            "/image-resizer",
-            "/resize-image-online",
-            "/photo-resizer",
-            "/change-image-size",
-            "/resize-pictures-online"
-          ],
-          "features": [
-            "Custom width and height",
-            "Preset social media sizes",
-            "Maintain aspect ratio option",
-            "Batch resize multiple images",
-            "Quality preservation",
-            "Percentage-based scaling",
-            "Preview before download",
-            "Undo/redo functionality"
-          ],
-          "useCases": [
-            "Social media posts",
-            "Website thumbnails",
-            "Email signatures",
-            "Print materials",
-            "Profile pictures",
-            "Product catalogs"
-          ],
-          "fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP"],
-          "maxFileSize": "25MB per file",
-          "processingTime": "1-5 seconds",
-          "popular": true,
-          "trending": false,
-          "completed": false,
-          "monthlySearches": 89000,
-          "difficulty": "Medium",
-          "cpc": "$0.85",
-          "intent": "High"
-        },
-        {
-          "id": "image-converter",
-          "name": "Image Format Converter",
-          "shortName": "Convert",
-          "description": "Convert between image formats: JPEG, PNG, WebP, GIF, BMP. Batch conversion with quality control.",
-          "longDescription": "Convert images between all popular formats with advanced quality control. Supports batch conversion, modern WebP format, and maintains metadata when needed.",
-          "category": "image",
-          "subcategory": "conversion",
-          "primaryKeyword": "image converter",
-          "keywords": [
-            "jpeg to png converter",
-            "png to jpeg converter",
-            "webp converter online",
-            "image format converter",
-            "convert image format",
-            "photo format changer",
-            "gif to png converter",
-            "heic to jpg converter"
-          ],
-          "longTailKeywords": [
-            "convert jpeg to png online free no watermark",
-            "batch convert png to jpeg online",
-            "convert heic to jpg online free bulk",
-            "webp to png converter online tool",
-            "convert gif to jpeg without losing quality",
-            "bulk image format converter online free",
-            "convert bmp to png online tool"
-          ],
-          "routes": [
-            "/image-converter",
-            "/jpeg-to-png-converter",
-            "/png-to-jpeg-converter",
-            "/webp-converter",
-            "/heic-to-jpg-converter",
-            "/convert-image-format"
-          ],
-          "features": [
-            "All popular formats supported",
-            "Batch conversion",
-            "Quality control",
-            "Metadata preservation option",
-            "Modern WebP support",
-            "HEIC iPhone format support",
-            "Animated GIF support",
-            "Transparency preservation"
-          ],
-          "useCases": [
-            "Web optimization (WebP)",
-            "Compatibility conversion",
-            "iPhone photo conversion",
-            "Legacy format support",
-            "Print preparation",
-            "Social media optimization"
-          ],
-          "fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP", "HEIC", "TIFF"],
-          "maxFileSize": "50MB per file",
-          "processingTime": "1-8 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 125000,
-          "difficulty": "Medium",
-          "cpc": "$1.10",
-          "intent": "High"
-        },
-        {
-          "id": "background-remover",
-          "name": "Background Remover",
-          "shortName": "Remove BG",
-          "description": "Remove image backgrounds automatically with AI. Create transparent PNG images for e-commerce, social media, and professional use.",
-          "longDescription": "AI-powered background removal tool that automatically detects and removes backgrounds from images. Create professional transparent PNGs perfect for product photography, profile pictures, and graphic design.",
-          "category": "image",
-          "subcategory": "editing",
-          "primaryKeyword": "background remover",
-          "keywords": [
-            "remove background from image",
-            "background eraser online",
-            "transparent background maker",
-            "cut out image background",
-            "photo background removal",
-            "ai background remover",
-            "remove image background free",
-            "background remover tool"
-          ],
-          "longTailKeywords": [
-            "remove background from image free online",
-            "ai background remover no watermark",
-            "bulk background removal tool online",
-            "remove background from product photos",
-            "automatic background eraser online",
-            "create transparent png from jpg",
-            "professional background removal service"
-          ],
-          "routes": [
-            "/background-remover",
-            "/remove-background",
-            "/transparent-background",
-            "/background-eraser",
-            "/cut-out-image"
-          ],
-          "features": [
-            "AI-powered detection",
-            "Automatic background removal",
-            "Transparent PNG output",
-            "Batch processing",
-            "Edge refinement",
-            "Preview before download",
-            "No watermarks",
-            "High-quality results"
-          ],
-          "useCases": [
-            "E-commerce product photos",
-            "Profile pictures",
-            "Social media posts",
-            "Graphic design projects",
-            "Marketing materials",
-            "Presentations"
-          ],
-          "fileFormats": ["JPEG", "PNG", "WebP", "GIF"],
-          "maxFileSize": "25MB per file",
-          "processingTime": "3-15 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": false,
-          "monthlySearches": 350000,
-          "difficulty": "High",
-          "cpc": "$2.45",
-          "intent": "High"
-        },
-        {
-          "id": "image-cropper",
-          "name": "Image Cropper",
-          "shortName": "Crop",
-          "description": "Crop images online with custom aspect ratios and preset sizes. Perfect for social media, profile pictures, and thumbnails.",
-          "longDescription": "Professional image cropper with custom aspect ratios, preset social media sizes, and manual selection tools. Create perfectly sized images for any platform or use case.",
-          "category": "image",
-          "subcategory": "editing",
-          "primaryKeyword": "image cropper",
-          "keywords": [
-            "crop image online",
-            "photo cropper free",
-            "image crop tool",
-            "resize and crop image",
-            "crop photo online",
-            "image cropping tool",
-            "crop picture online",
-            "photo crop editor"
-          ],
-          "longTailKeywords": [
-            "crop image to specific size online",
-            "crop photos for social media",
-            "square image cropper online free",
-            "crop image with aspect ratio",
-            "batch crop multiple images",
-            "crop image for instagram post",
-            "professional photo cropping tool"
-          ],
-          "routes": [
-            "/image-cropper",
-            "/crop-image-online",
-            "/photo-cropper",
-            "/crop-photos",
-            "/image-crop-tool"
-          ],
-          "features": [
-            "Custom aspect ratios",
-            "Social media presets",
-            "Manual selection tool",
-            "Batch cropping",
-            "Preview mode",
-            "Zoom and pan",
-            "Grid overlay",
-            "Undo/redo functionality"
-          ],
-          "useCases": [
-            "Social media posts",
-            "Profile pictures",
-            "Website thumbnails",
-            "Product photography",
-            "Blog images",
-            "Print materials"
-          ],
-          "fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP"],
-          "maxFileSize": "25MB per file",
-          "processingTime": "1-3 seconds",
-          "popular": true,
-          "trending": false,
-          "completed": false,
-          "monthlySearches": 180000,
-          "difficulty": "Low",
-          "cpc": "$0.95",
-          "intent": "High"
-        }
-      ]
-    },
-    "pdf": {
-      "name": "PDF Tools",
-      "slug": "pdf-tools",
-      "description": "Complete PDF toolkit for merging, splitting, compressing, and converting PDF files. Professional PDF tools for business and personal use.",
-      "icon": "FileTextIcon",
-      "seoTitle": "Free PDF Tools Online - Merge, Split, Compress PDFs | 30tools",
-      "seoDescription": "Professional PDF tools: merge PDFs, split documents, compress files, convert to/from images, and edit PDFs online. Free, secure, and no watermarks.",
-      "keywords": [
-        "pdf tools online",
-        "merge pdf free",
-        "split pdf online",
-        "compress pdf free",
-        "pdf converter",
-        "pdf editor online",
-        "pdf merger tool",
-        "pdf utilities free"
-      ],
-      "breadcrumb": ["Home", "PDF Tools"],
-      "tools": [
-        {
-          "id": "pdf-merger",
-          "name": "PDF Merger",
-          "shortName": "Merge",
-          "description": "Merge multiple PDF files into one document. Drag and drop to reorder pages. No file size limits.",
-          "longDescription": "Combine multiple PDF files into a single document with our professional PDF merger. Drag and drop interface, custom page ordering, and bookmark preservation. Perfect for business documents, reports, and presentations.",
-          "category": "pdf",
-          "subcategory": "manipulation",
-          "primaryKeyword": "pdf merger",
-          "keywords": [
-            "merge pdf online",
-            "combine pdf files",
-            "pdf merger free",
-            "join pdf documents",
-            "merge multiple pdfs",
-            "pdf combiner tool",
-            "concatenate pdf files",
-            "pdf joiner online"
-          ],
-          "longTailKeywords": [
-            "merge pdf files online free no watermark",
-            "combine multiple pdf documents into one",
-            "merge pdf preserving bookmarks and links",
-            "join pdf files with drag and drop",
-            "combine large pdf files online free",
-            "merge password protected pdf files",
-            "bulk pdf merger tool online"
-          ],
-          "routes": [
-            "/pdf-merger",
-            "/merge-pdf-online",
-            "/combine-pdf-files",
-            "/join-pdf-documents",
-            "/pdf-combiner"
-          ],
-          "features": [
-            "Unlimited PDF files",
-            "Drag and drop reordering",
-            "Bookmark preservation",
-            "Password-protected PDF support",
-            "Custom page selection",
-            "Batch processing",
-            "No file size limits",
-            "Instant download"
-          ],
-          "useCases": [
-            "Business reports",
-            "Academic papers",
-            "Legal documents",
-            "Presentation materials",
-            "Invoice compilation",
-            "Document archiving"
-          ],
-          "fileFormats": ["PDF"],
-          "maxFileSize": "Unlimited",
-          "processingTime": "5-30 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 201000,
-          "difficulty": "Low",
-          "cpc": "$1.45",
-          "intent": "High"
-        },
-        {
-          "id": "pdf-splitter",
-          "name": "PDF Splitter",
-          "shortName": "Split",
-          "description": "Split PDF into separate files by pages, ranges, or bookmarks. Extract specific pages from large documents.",
-          "longDescription": "Split large PDF documents into smaller files with precision control. Split by page ranges, individual pages, or bookmarks. Perfect for extracting chapters, sections, or specific content.",
-          "category": "pdf",
-          "subcategory": "manipulation",
-          "primaryKeyword": "pdf splitter",
-          "keywords": [
-            "split pdf online",
-            "pdf splitter free",
-            "separate pdf pages",
-            "extract pdf pages",
-            "pdf page extractor",
-            "divide pdf document",
-            "pdf separator tool",
-            "break pdf into pages"
-          ],
-          "longTailKeywords": [
-            "split pdf into separate files online free",
-            "extract specific pages from pdf online",
-            "split large pdf document into chapters",
-            "separate pdf by page range online",
-            "split pdf by bookmarks online tool",
-            "extract odd even pages from pdf",
-            "split password protected pdf online"
-          ],
-          "routes": [
-            "/pdf-splitter",
-            "/split-pdf-online",
-            "/separate-pdf-pages",
-            "/extract-pdf-pages",
-            "/pdf-page-extractor"
-          ],
-          "features": [
-            "Split by page ranges",
-            "Extract individual pages",
-            "Split by bookmarks",
-            "Custom page selection",
-            "Bulk processing",
-            "Password PDF support",
-            "Preview before split",
-            "Zip download option"
-          ],
-          "useCases": [
-            "Extract book chapters",
-            "Separate report sections",
-            "Individual page extraction",
-            "Document organization",
-            "Legal brief separation",
-            "Academic paper sections"
-          ],
-          "fileFormats": ["PDF"],
-          "maxFileSize": "100MB",
-          "processingTime": "3-15 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 156000,
-          "difficulty": "Medium",
-          "cpc": "$1.25",
-          "intent": "High"
-        },
-        {
-          "id": "pdf-compressor",
-          "name": "PDF Compressor",
-          "shortName": "Compress",
-          "description": "Compress PDF files to reduce size without losing quality. Perfect for email attachments and web uploads.",
-          "longDescription": "Advanced PDF compression tool that reduces file sizes significantly while preserving document quality. Perfect for sharing via email, uploading to websites, or saving storage space.",
-          "category": "pdf",
-          "subcategory": "compression",
-          "primaryKeyword": "pdf compressor",
-          "keywords": [
-            "compress pdf online",
-            "pdf compressor free",
-            "reduce pdf size",
-            "pdf optimizer",
-            "compress pdf without losing quality",
-            "pdf size reducer",
-            "optimize pdf online",
-            "pdf file compressor"
-          ],
-          "longTailKeywords": [
-            "compress pdf file online free no watermark",
-            "reduce pdf size for email attachment",
-            "compress large pdf files online",
-            "pdf compressor without quality loss",
-            "optimize pdf for web upload",
-            "batch pdf compression tool",
-            "compress pdf to specific size"
-          ],
-          "routes": [
-            "/pdf-compressor",
-            "/compress-pdf-online",
-            "/reduce-pdf-size",
-            "/pdf-optimizer",
-            "/optimize-pdf-online"
-          ],
-          "features": [
-            "High compression ratio",
-            "Quality preservation",
-            "Batch processing",
-            "No file size limits",
-            "Instant download",
-            "Secure processing",
-            "Multiple compression levels",
-            "Preview before download"
-          ],
-          "useCases": [
-            "Email attachments",
-            "Website uploads",
-            "Storage optimization",
-            "Document sharing",
-            "Web performance",
-            "Archive creation"
-          ],
-          "fileFormats": ["PDF"],
-          "maxFileSize": "50MB",
-          "processingTime": "2-15 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 189000,
-          "difficulty": "Low",
-          "cpc": "$1.35",
-          "intent": "High"
-        },
-        {
-          "id": "pdf-protect",
-          "name": "PDF Password Protector",
-          "shortName": "Protect",
-          "description": "Add password protection to PDF files with custom permissions. Secure your documents with 256-bit encryption.",
-          "longDescription": "Professional PDF protection tool with 256-bit encryption and granular permissions. Control printing, copying, editing, and more with military-grade security.",
-          "category": "pdf",
-          "subcategory": "security",
-          "primaryKeyword": "pdf password protect",
-          "keywords": [
-            "add password to pdf",
-            "pdf security",
-            "protect pdf online",
-            "pdf encryption",
-            "secure pdf",
-            "password protect pdf free",
-            "pdf protection tool",
-            "encrypt pdf online"
-          ],
-          "longTailKeywords": [
-            "add password protection to pdf online free",
-            "pdf password protector with permissions",
-            "encrypt pdf with 256 bit encryption",
-            "secure pdf documents online",
-            "pdf protection with custom permissions",
-            "password protect pdf without software",
-            "professional pdf security tool"
-          ],
-          "routes": [
-            "/pdf-protect",
-            "/pdf-password-protect",
-            "/add-password-to-pdf",
-            "/secure-pdf-online",
-            "/pdf-encryption"
-          ],
-          "features": [
-            "256-bit AES encryption",
-            "Custom permissions control",
-            "Password strength analysis",
-            "Granular access controls",
-            "Printing restrictions",
-            "Copy protection",
-            "Edit prevention",
-            "Instant encryption"
-          ],
-          "useCases": [
-            "Confidential documents",
-            "Business reports",
-            "Legal contracts",
-            "Financial statements",
-            "Personal documents",
-            "Intellectual property"
-          ],
-          "fileFormats": ["PDF"],
-          "maxFileSize": "50MB",
-          "processingTime": "2-8 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 145000,
-          "difficulty": "Medium",
-          "cpc": "$1.55",
-          "intent": "High"
-        },
-        {
-          "id": "pdf-unlocker",
-          "name": "PDF Password Unlocker",
-          "shortName": "Unlock",
-          "description": "Remove password protection from PDF files. Unlock restricted PDFs to enable printing, copying, and editing.",
-          "longDescription": "Professional PDF unlocker tool that removes password restrictions and enables full access to your documents. Perfect for unlocking your own protected files.",
-          "category": "pdf",
-          "subcategory": "security",
-          "primaryKeyword": "pdf unlocker",
-          "keywords": [
-            "unlock pdf",
-            "remove pdf password",
-            "pdf password remover",
-            "unlock pdf online",
-            "pdf unlocker free",
-            "remove pdf restrictions",
-            "pdf password breaker",
-            "decrypt pdf online"
-          ],
-          "longTailKeywords": [
-            "remove password from pdf online free",
-            "unlock password protected pdf",
-            "pdf password remover tool",
-            "remove restrictions from pdf",
-            "unlock pdf for printing and copying",
-            "pdf decrypt tool online",
-            "remove owner password from pdf"
-          ],
-          "routes": [
-            "/pdf-unlocker",
-            "/unlock-pdf-online",
-            "/remove-pdf-password",
-            "/pdf-password-remover",
-            "/decrypt-pdf"
-          ],
-          "features": [
-            "Password removal",
-            "Restriction removal",
-            "Permission unlocking",
-            "Instant processing",
-            "Secure handling",
-            "No software required",
-            "Batch processing",
-            "Privacy protection"
-          ],
-          "useCases": [
-            "Unlock own documents",
-            "Enable printing",
-            "Allow text copying",
-            "Remove editing blocks",
-            "Access restrictions",
-            "Document recovery"
-          ],
-          "fileFormats": ["PDF"],
-          "maxFileSize": "50MB",
-          "processingTime": "1-5 seconds",
-          "popular": true,
-          "trending": false,
-          "completed": true,
-          "monthlySearches": 178000,
-          "difficulty": "Medium",
-          "cpc": "$1.45",
-          "intent": "High"
-        },
-        {
-          "id": "pdf-rotate",
-          "name": "PDF Rotate Tool",
-          "shortName": "Rotate",
-          "description": "Rotate PDF pages to correct orientation. Fix upside-down pages and align mixed orientations with live preview.",
-          "longDescription": "Professional PDF rotation tool with live preview and batch operations. Perfect for fixing scanned documents, correcting orientations, and preparing files for printing.",
-          "category": "pdf",
-          "subcategory": "editing",
-          "primaryKeyword": "pdf rotate",
-          "keywords": [
-            "rotate pdf pages",
-            "fix pdf orientation",
-            "rotate pdf online",
-            "pdf page rotation",
-            "correct pdf pages",
-            "rotate pdf free",
-            "pdf orientation fix",
-            "turn pdf pages"
-          ],
-          "longTailKeywords": [
-            "rotate pdf pages online free",
-            "fix upside down pdf pages",
-            "correct pdf page orientation",
-            "rotate individual pdf pages",
-            "batch rotate pdf pages",
-            "pdf rotation tool with preview",
-            "fix scanned document orientation"
-          ],
-          "routes": [
-            "/pdf-rotate",
-            "/rotate-pdf-pages",
-            "/fix-pdf-orientation",
-            "/pdf-page-rotation",
-            "/correct-pdf-pages"
-          ],
-          "features": [
-            "Live page preview",
-            "Individual page rotation",
-            "Batch operations",
-            "90-degree increments",
-            "Selective rotation",
-            "Undo/redo support",
-            "Page reordering",
-            "Instant processing"
-          ],
-          "useCases": [
-            "Fix scanned documents",
-            "Correct page orientation",
-            "Prepare for printing",
-            "Align mixed pages",
-            "Document cleanup",
-            "Professional formatting"
-          ],
-          "fileFormats": ["PDF"],
-          "maxFileSize": "50MB",
-          "processingTime": "2-10 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 134000,
-          "difficulty": "Low",
-          "cpc": "$1.20",
-          "intent": "High"
-        },
-        {
-          "id": "pdf-add-page-numbers",
-          "name": "PDF Add Page Numbers",
-          "shortName": "Number Pages",
-          "description": "Add customizable page numbers to PDF documents. Choose position, format, styling, and advanced options.",
-          "longDescription": "Professional page numbering tool for PDF documents with full customization options. Perfect for reports, books, presentations, and official documents requiring professional numbering.",
-          "category": "pdf",
-          "subcategory": "editing",
-          "primaryKeyword": "add page numbers to pdf",
-          "keywords": [
-            "pdf page numbering",
-            "number pdf pages",
-            "pdf page numbers online",
-            "add page numbers pdf free",
-            "pdf numbering tool",
-            "page number generator",
-            "pdf pagination",
-            "number pages pdf"
-          ],
-          "longTailKeywords": [
-            "add page numbers to pdf online free",
-            "pdf page numbering with custom format",
-            "professional pdf page numbering",
-            "add page numbers with custom position",
-            "pdf numbering tool with preview",
-            "batch add page numbers to pdf",
-            "custom pdf page number styles"
-          ],
-          "routes": [
-            "/pdf-add-page-numbers",
-            "/pdf-page-numbering",
-            "/number-pdf-pages",
-            "/add-page-numbers-online",
-            "/pdf-pagination"
-          ],
-          "features": [
-            "Custom positioning",
-            "Multiple number formats",
-            "Font customization",
-            "Color selection",
-            "Margin control",
-            "Skip pages option",
-            "Live preview",
-            "Professional styling"
-          ],
-          "useCases": [
-            "Business reports",
-            "Academic papers",
-            "Books and manuscripts",
-            "Legal documents",
-            "Presentations",
-            "Official documentation"
-          ],
-          "fileFormats": ["PDF"],
-          "maxFileSize": "50MB",
-          "processingTime": "3-12 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 89000,
-          "difficulty": "Medium",
-          "cpc": "$1.30",
-          "intent": "High"
-        },
-        {
-          "id": "jpg-to-pdf",
-          "name": "JPG to PDF Converter",
-          "shortName": "JPG2PDF",
-          "description": "Convert JPG, JPEG, PNG, and other images to PDF documents. Combine multiple images into a single PDF with custom layouts.",
-          "longDescription": "Professional image to PDF converter supporting batch processing with custom page layouts, compression settings, and professional formatting options.",
-          "category": "pdf",
-          "subcategory": "conversion",
-          "primaryKeyword": "jpg to pdf",
-          "keywords": [
-            "jpeg to pdf",
-            "png to pdf",
-            "image to pdf converter",
-            "convert images to pdf",
-            "photos to pdf",
-            "picture to pdf online",
-            "batch image to pdf",
-            "jpg pdf converter"
-          ],
-          "longTailKeywords": [
-            "convert jpg to pdf online free",
-            "batch convert images to pdf",
-            "jpg to pdf with custom layout",
-            "convert multiple images to single pdf",
-            "photo album to pdf converter",
-            "image to pdf with compression",
-            "professional image to pdf tool"
-          ],
-          "routes": [
-            "/jpg-to-pdf",
-            "/jpeg-to-pdf",
-            "/image-to-pdf",
-            "/photos-to-pdf",
-            "/convert-images-to-pdf"
-          ],
-          "features": [
-            "Batch processing up to 50 images",
-            "Custom page sizes",
-            "Layout options",
-            "Image compression",
-            "Quality control",
-            "Drag and drop reordering",
-            "Professional layouts",
-            "Multiple format support"
-          ],
-          "useCases": [
-            "Photo albums",
-            "Product catalogs",
-            "Presentation handouts",
-            "Documentation",
-            "Portfolio creation",
-            "Report attachments"
-          ],
-          "fileFormats": ["JPG", "JPEG", "PNG", "GIF", "BMP", "WebP"],
-          "maxFileSize": "10MB per image",
-          "processingTime": "3-20 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 234000,
-          "difficulty": "Low",
-          "cpc": "$1.25",
-          "intent": "High"
-        },
-        {
-          "id": "png-to-pdf",
-          "name": "PNG to PDF Converter",
-          "shortName": "PNG2PDF",
-          "description": "Convert PNG images to PDF documents with transparency support. Perfect for graphics, logos, and designs.",
-          "longDescription": "Specialized PNG to PDF converter with full transparency support and professional layout options. Perfect for converting graphics, logos, and designs that require transparent backgrounds.",
-          "category": "pdf",
-          "subcategory": "conversion",
-          "primaryKeyword": "png to pdf",
-          "keywords": [
-            "convert png to pdf",
-            "png images to pdf",
-            "transparency to pdf",
-            "png pdf converter online",
-            "batch png to pdf",
-            "png to pdf with transparency",
-            "graphics to pdf",
-            "logo to pdf converter"
-          ],
-          "longTailKeywords": [
-            "convert png to pdf online free",
-            "png to pdf with transparency support",
-            "batch convert png images to pdf",
-            "png graphics to pdf converter",
-            "logo png to pdf conversion",
-            "transparent png to pdf tool",
-            "professional png to pdf converter"
-          ],
-          "routes": [
-            "/png-to-pdf",
-            "/convert-png-to-pdf",
-            "/png-images-to-pdf",
-            "/graphics-to-pdf",
-            "/transparent-png-to-pdf"
-          ],
-          "features": [
-            "Transparency preservation",
-            "Batch processing",
-            "Professional layouts",
-            "Custom page sizes",
-            "Quality optimization",
-            "Background options",
-            "Layout customization",
-            "High-quality output"
-          ],
-          "useCases": [
-            "Logo documentation",
-            "Graphic portfolios",
-            "Design presentations",
-            "Transparent graphics",
-            "Marketing materials",
-            "Brand guidelines"
-          ],
-          "fileFormats": ["PNG", "JPG", "JPEG", "GIF", "BMP", "WebP"],
-          "maxFileSize": "10MB per image",
-          "processingTime": "3-20 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 156000,
-          "difficulty": "Low",
-          "cpc": "$1.20",
-          "intent": "High"
-        }
-      ]
-    },
-    "video": {
-      "name": "Video Tools",
-      "slug": "video-tools",
-      "description": "Professional video processing tools for compression, conversion, editing, and optimization. Create GIFs, trim videos, and convert formats.",
-      "icon": "VideoIcon",
-      "seoTitle": "Free Video Tools Online - Compress, Convert, Edit Videos | 30tools",
-      "seoDescription": "Professional video tools: compress videos, convert formats (MP4, AVI, MOV), create GIFs, trim clips, and edit videos online. Free and fast processing.",
-      "keywords": [
-        "video tools online",
-        "compress video free",
-        "video converter online",
-        "video to gif converter",
-        "video editor online",
-        "video compressor free",
-        "video format converter",
-        "video trimmer online"
-      ],
-      "breadcrumb": ["Home", "Video Tools"],
-      "tools": [
-        {
-          "id": "video-compressor",
-          "name": "Video Compressor",
-          "shortName": "Compress",
-          "description": "Compress video files to reduce size by up to 80% while maintaining quality. Support for MP4, AVI, MOV formats.",
-          "longDescription": "Advanced video compression tool that reduces file sizes significantly while preserving visual quality. Perfect for sharing on social media, email, or saving storage space.",
-          "category": "video",
-          "subcategory": "compression",
-          "primaryKeyword": "video compressor",
-          "keywords": [
-            "compress video online",
-            "video compressor free",
-            "reduce video size",
-            "video file compressor",
-            "compress mp4 online",
-            "video size reducer",
-            "shrink video file",
-            "optimize video online"
-          ],
-          "longTailKeywords": [
-            "compress video file online free no watermark",
-            "reduce video size for email attachment",
-            "compress large video files for whatsapp",
-            "video compressor online free without losing quality",
-            "compress mp4 video for web upload",
-            "reduce video file size for instagram",
-            "compress video to specific size online"
-          ],
-          "routes": [
-            "/video-compressor",
-            "/compress-video-online",
-            "/reduce-video-size",
-            "/video-size-reducer",
-            "/optimize-video-online"
-          ],
-          "features": [
-            "Up to 80% size reduction",
-            "Quality presets",
-            "Custom compression settings",
-            "Batch processing",
-            "Format preservation",
-            "Preview before download",
-            "No watermarks",
-            "Fast processing"
-          ],
-          "useCases": [
-            "Social media uploads",
-            "Email attachments",
-            "WhatsApp sharing",
-            "Website optimization",
-            "Storage saving",
-            "Streaming preparation"
-          ],
-          "fileFormats": ["MP4", "AVI", "MOV", "MKV", "WebM"],
-          "maxFileSize": "500MB",
-          "processingTime": "30-180 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": false,
-          "monthlySearches": 187000,
-          "difficulty": "Medium",
-          "cpc": "$1.35",
-          "intent": "High"
-        },
-        {
-          "id": "video-to-gif",
-          "name": "Video to GIF Converter",
-          "shortName": "GIF",
-          "description": "Convert video files to animated GIFs online. Trim videos, adjust frame rate, and create high-quality GIFs for social media.",
-          "longDescription": "Professional video to GIF converter with advanced options for trimming, frame rate adjustment, and quality optimization. Perfect for creating animated GIFs for social media, websites, and presentations.",
-          "category": "video",
-          "subcategory": "conversion",
-          "primaryKeyword": "video to gif converter",
-          "keywords": [
-            "convert video to gif",
-            "video to gif online",
-            "make gif from video",
-            "gif creator from video",
-            "video gif converter",
-            "animated gif maker",
-            "mp4 to gif converter",
-            "create gif online"
-          ],
-          "longTailKeywords": [
-            "convert mp4 video to gif online free",
-            "make animated gif from video clip",
-            "video to gif converter with frame control",
-            "convert long video to gif online",
-            "create high quality gif from video",
-            "trim video and convert to gif",
-            "batch video to gif converter online"
-          ],
-          "routes": [
-            "/video-to-gif",
-            "/convert-video-to-gif",
-            "/gif-creator",
-            "/animated-gif-maker",
-            "/mp4-to-gif"
-          ],
-          "features": [
-            "Custom time range selection",
-            "Frame rate adjustment",
-            "GIF quality control",
-            "Size optimization",
-            "Preview before conversion",
-            "Batch processing",
-            "Multiple video formats",
-            "No watermarks"
-          ],
-          "useCases": [
-            "Social media posts",
-            "Website animations",
-            "Email attachments",
-            "Presentations",
-            "Tutorials",
-            "Memes creation"
-          ],
-          "fileFormats": ["MP4", "AVI", "MOV", "MKV", "WebM", "GIF"],
-          "maxFileSize": "200MB",
-          "processingTime": "15-60 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": false,
-          "monthlySearches": 245000,
-          "difficulty": "Medium",
-          "cpc": "$1.25",
-          "intent": "High"
-        }
-      ]
-    },
-    "audio": {
-      "name": "Audio Tools",
-      "slug": "audio-tools",
-      "description": "Professional audio processing tools for conversion, compression, editing, and optimization. Convert formats, trim audio, and enhance quality.",
-      "icon": "MusicIcon",
-      "seoTitle": "Free Audio Tools Online - Convert, Compress, Edit Audio | 30tools",
-      "seoDescription": "Professional audio tools: convert audio formats (MP3, WAV, FLAC), compress files, trim audio clips, and edit sound online. Free and high quality.",
-      "keywords": [
-        "audio tools online",
-        "audio converter free",
-        "convert audio format",
-        "audio compressor online",
-        "audio editor free",
-        "mp3 converter online",
-        "audio trimmer tool",
-        "sound editor online"
-      ],
-      "breadcrumb": ["Home", "Audio Tools"],
-      "tools": [
-        {
-          "id": "audio-compressor",
-          "name": "Audio Compressor",
-          "shortName": "Compress",
-          "description": "Compress audio files to reduce size by up to 90% while maintaining quality. Support for MP3, WAV, FLAC formats.",
-          "longDescription": "Advanced audio compression tool that reduces file sizes significantly while preserving audio quality. Perfect for sharing on social media, email, or saving storage space.",
-          "category": "audio",
-          "subcategory": "compression",
-          "primaryKeyword": "audio compressor",
-          "keywords": [
-            "compress audio online",
-            "audio compressor free",
-            "reduce audio size",
-            "audio file compressor",
-            "compress mp3 online",
-            "audio size reducer",
-            "shrink audio file",
-            "optimize audio online"
-          ],
-          "longTailKeywords": [
-            "compress audio file online free no watermark",
-            "reduce audio size for email attachment",
-            "compress large audio files for whatsapp",
-            "audio compressor online free without losing quality",
-            "compress mp3 audio for web upload",
-            "reduce audio file size for sharing",
-            "compress audio to specific size online"
-          ],
-          "routes": [
-            "/audio-compressor",
-            "/compress-audio-online",
-            "/reduce-audio-size",
-            "/audio-size-reducer",
-            "/optimize-audio-online"
-          ],
-          "features": [
-            "Up to 90% size reduction",
-            "Quality presets",
-            "Custom compression settings",
-            "Batch processing",
-            "Format preservation",
-            "Preview before download",
-            "No watermarks",
-            "Fast processing"
-          ],
-          "useCases": [
-            "Email attachments",
-            "WhatsApp sharing",
-            "Website optimization",
-            "Storage saving",
-            "Podcast distribution",
-            "Music streaming"
-          ],
-          "fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC"],
-          "maxFileSize": "100MB",
-          "processingTime": "10-60 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 89000,
-          "difficulty": "Medium",
-          "cpc": "$1.15",
-          "intent": "High"
-        },
-        {
-          "id": "audio-format-converter",
-          "name": "Audio Format Converter",
-          "shortName": "Convert",
-          "description": "Convert audio between formats: MP3, WAV, FLAC, OGG, AAC, M4A. High-quality conversion with metadata preservation.",
-          "longDescription": "Professional audio format converter supporting all popular formats. Convert between MP3, WAV, FLAC, OGG, AAC, and M4A with quality control and metadata preservation.",
-          "category": "audio",
-          "subcategory": "conversion",
-          "primaryKeyword": "audio converter",
-          "keywords": [
-            "mp3 converter online",
-            "wav to mp3 converter",
-            "flac to mp3 converter",
-            "audio format converter",
-            "convert audio online",
-            "m4a to mp3 converter",
-            "ogg converter online",
-            "audio file converter"
-          ],
-          "longTailKeywords": [
-            "convert wav to mp3 online free",
-            "flac to mp3 converter high quality",
-            "batch audio converter online free",
-            "convert m4a to mp3 without quality loss",
-            "audio format converter with metadata",
-            "convert ogg to mp3 online tool",
-            "free audio converter no file size limit"
-          ],
-          "routes": [
-            "/audio-converter",
-            "/mp3-converter",
-            "/wav-to-mp3",
-            "/flac-converter",
-            "/audio-format-converter"
-          ],
-          "features": [
-            "Multiple format support",
-            "Batch conversion",
-            "Quality control",
-            "Metadata preservation",
-            "Custom bitrate settings",
-            "Sample rate adjustment",
-            "No file size limits",
-            "Fast processing"
-          ],
-          "useCases": [
-            "Music format conversion",
-            "Podcast preparation",
-            "Audio file compatibility",
-            "Digital audio workstation",
-            "Mobile device optimization",
-            "Streaming platform prep"
-          ],
-          "fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC", "M4A", "WMA"],
-          "maxFileSize": "200MB",
-          "processingTime": "15-90 seconds",
-          "popular": true,
-          "trending": true,
-          "completed": false,
-          "monthlySearches": 290000,
-          "difficulty": "Medium",
-          "cpc": "$1.45",
-          "intent": "High"
-        },
-        {
-          "id": "audio-trimmer",
-          "name": "Audio Trimmer",
-          "shortName": "Trim",
-          "description": "Trim and cut audio files online. Extract specific portions from audio tracks with precision timing controls.",
-          "longDescription": "Professional audio trimmer for cutting and extracting specific portions from audio files. Perfect for creating ringtones, podcast clips, and music samples.",
-          "category": "audio",
-          "subcategory": "editing",
-          "primaryKeyword": "audio trimmer",
-          "keywords": [
-            "cut audio online",
-            "trim mp3 online",
-            "audio cutter free",
-            "split audio file",
-            "extract audio clip",
-            "audio editor online",
-            "crop audio file",
-            "audio splitter tool"
-          ],
-          "longTailKeywords": [
-            "trim audio file online free no upload",
-            "cut mp3 file to specific length",
-            "extract audio clip from song",
-            "trim audio for ringtone maker",
-            "cut audio with precise timing",
-            "split long audio file online",
-            "audio trimmer with waveform view"
-          ],
-          "routes": [
-            "/audio-trimmer",
-            "/cut-audio-online",
-            "/trim-mp3",
-            "/audio-cutter",
-            "/extract-audio-clip"
-          ],
-          "features": [
-            "Precise timing controls",
-            "Waveform visualization",
-            "Fade in/out effects",
-            "Multiple selection support",
-            "Real-time preview",
-            "Batch trimming",
-            "No quality loss",
-            "Easy drag controls"
-          ],
-          "useCases": [
-            "Ringtone creation",
-            "Podcast editing",
-            "Music sampling",
-            "Audio clips for videos",
-            "Sound effect extraction",
-            "Voice message editing"
-          ],
-          "fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC", "M4A"],
-          "maxFileSize": "100MB",
-          "processingTime": "5-30 seconds",
-          "popular": true,
-          "trending": false,
-          "completed": false,
-          "monthlySearches": 150000,
-          "difficulty": "Medium",
-          "cpc": "$1.10",
-          "intent": "High"
-        }
-      ]
-    },
-    "text": {
-      "name": "Text Tools",
-      "slug": "text-tools",
-      "description": "Comprehensive text processing tools for counting, formatting, converting, and analyzing text. Essential utilities for writers and developers.",
-      "icon": "TypeIcon",
-      "seoTitle": "Free Text Tools Online - Word Counter, Case Converter, Text Editor | 30tools",
-      "seoDescription": "Professional text tools: count words and characters, convert text case, generate passwords, create QR codes, and format text online. Free utilities.",
-      "keywords": [
-        "text tools online",
-        "word counter free",
-        "character counter",
-        "text case converter",
-        "password generator",
-        "text formatter online",
-        "qr code generator",
-        "lorem ipsum generator"
-      ],
-      "breadcrumb": ["Home", "Text Tools"],
-      "tools": [
-        {
-          "id": "word-counter",
-          "name": "Word Counter",
-          "shortName": "Count",
-          "description": "Count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, and content creation.",
-          "longDescription": "Professional word counter tool with real-time analysis. Count words, characters (with/without spaces), sentences, paragraphs, and get reading time estimates. Essential for writers, students, and content creators.",
-          "category": "text",
-          "subcategory": "analysis",
-          "primaryKeyword": "word counter",
-          "keywords": [
-            "word counter online",
-            "character counter free",
-            "word count tool",
-            "count words online",
-            "text counter",
-            "sentence counter",
-            "paragraph counter",
-            "writing tools"
-          ],
-          "longTailKeywords": [
-            "free word counter online no registration",
-            "word and character counter for essays",
-            "count words characters sentences paragraphs",
-            "real time word counter for writing",
-            "academic word counter with reading time",
-            "professional text analysis tool free",
-            "word counter for social media posts"
-          ],
-          "routes": [
-            "/word-counter",
-            "/character-counter",
-            "/text-counter",
-            "/count-words-online",
-            "/word-count-tool"
-          ],
-          "features": [
-            "Real-time counting",
-            "Words, characters, sentences, paragraphs",
-            "Reading time estimation",
-            "Speaking time calculation",
-            "Most common words analysis",
-            "Writing statistics",
-            "Export reports",
-            "Mobile-friendly"
-          ],
-          "useCases": [
-            "Essay writing",
-            "Social media posts",
-            "Academic papers",
-            "Blog articles",
-            "SEO content",
-            "Marketing copy"
-          ],
-          "fileFormats": ["Text"],
-          "maxFileSize": "Unlimited",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 245000,
-          "difficulty": "Low",
-          "cpc": "$0.95",
-          "intent": "High"
-        },
-        {
-          "id": "password-generator",
-          "name": "Password Generator",
-          "shortName": "Generate",
-          "description": "Generate strong, secure passwords with customizable length and character sets. Perfect for online security.",
-          "longDescription": "Create cryptographically secure passwords with full customization. Choose length, character types, and advanced options to generate passwords that protect your accounts.",
-          "category": "text",
-          "subcategory": "security",
-          "primaryKeyword": "password generator",
-          "keywords": [
-            "secure password generator",
-            "strong password generator",
-            "random password generator",
-            "password creator online",
-            "password maker free",
-            "generate password online",
-            "password tool secure",
-            "create strong password"
-          ],
-          "longTailKeywords": [
-            "free secure password generator online",
-            "strong password generator no storage",
-            "cryptographically secure password creator",
-            "custom length password generator free",
-            "password generator with special characters",
-            "bulk password generator for accounts",
-            "password strength checker generator"
-          ],
-          "routes": [
-            "/password-generator",
-            "/secure-password-generator",
-            "/strong-password-creator",
-            "/random-password-maker",
-            "/generate-password-online"
-          ],
-          "features": [
-            "Customizable length (4-128 chars)",
-            "Multiple character sets",
-            "Password strength analysis",
-            "Generate multiple passwords",
-            "Exclude similar characters",
-            "No storage or logging",
-            "Copy to clipboard",
-            "Cryptographically secure"
-          ],
-          "useCases": [
-            "Account security",
-            "Website registration",
-            "Password manager",
-            "Business accounts",
-            "Personal security",
-            "Team password creation"
-          ],
-          "fileFormats": ["Text"],
-          "maxFileSize": "N/A",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 198000,
-          "difficulty": "Low",
-          "cpc": "$1.35",
-          "intent": "High"
-        },
-        {
-          "id": "lorem-ipsum-generator",
-          "name": "Lorem Ipsum Generator",
-          "shortName": "Lorem",
-          "description": "Generate Lorem Ipsum placeholder text instantly. Create dummy text for web design, graphic design, and typesetting.",
-          "longDescription": "Classic Lorem Ipsum generator with full customization. Generate paragraphs, sentences, or words with options for HTML formatting and custom length.",
-          "category": "text",
-          "subcategory": "content",
-          "primaryKeyword": "lorem ipsum generator",
-          "keywords": [
-            "placeholder text generator",
-            "dummy text generator",
-            "lorem ipsum text",
-            "fake text generator",
-            "lipsum generator",
-            "filler text generator",
-            "design placeholder text",
-            "lorem generator"
-          ],
-          "longTailKeywords": [
-            "free lorem ipsum generator online",
-            "lorem ipsum placeholder text creator",
-            "dummy text generator for web design",
-            "lorem ipsum with html paragraph tags",
-            "custom length lorem ipsum generator",
-            "lorem ipsum filler text for design",
-            "placeholder content generator free"
-          ],
-          "routes": [
-            "/lorem-ipsum-generator",
-            "/placeholder-text-generator",
-            "/dummy-text-generator",
-            "/lipsum-generator",
-            "/lorem-generator"
-          ],
-          "features": [
-            "Generate paragraphs, sentences, words",
-            "Customizable text length",
-            "HTML paragraph formatting",
-            "Start with 'Lorem ipsum' option",
-            "Copy to clipboard",
-            "Download as TXT/HTML",
-            "Classic Lorem Ipsum text",
-            "Real-time generation"
-          ],
-          "useCases": [
-            "Web design mockups",
-            "Graphic design layouts",
-            "Typography testing",
-            "Content planning",
-            "Template creation",
-            "Print design"
-          ],
-          "fileFormats": ["Text", "HTML"],
-          "maxFileSize": "N/A",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": false,
-          "completed": true,
-          "monthlySearches": 156000,
-          "difficulty": "Low",
-          "cpc": "$0.65",
-          "intent": "Medium"
-        },
-        {
-          "id": "qr-code-generator",
-          "name": "QR Code Generator",
-          "shortName": "QR Code",
-          "description": "Generate QR codes for URLs, WiFi, contacts, SMS, and email. Customizable colors and high-resolution output.",
-          "longDescription": "Professional QR code generator supporting multiple data types including websites, WiFi credentials, contact information, text messages, and emails. Customize colors, size, and error correction levels.",
-          "category": "text",
-          "subcategory": "generator",
-          "primaryKeyword": "qr code generator",
-          "keywords": [
-            "qr code generator free",
-            "create qr code online",
-            "qr code maker",
-            "wifi qr code generator",
-            "qr generator online",
-            "custom qr code generator",
-            "qr code creator free",
-            "generate qr code"
-          ],
-          "longTailKeywords": [
-            "free qr code generator online no registration",
-            "qr code generator for wifi password sharing",
-            "create custom qr code with logo free",
-            "qr code generator for business cards",
-            "bulk qr code generator for urls",
-            "high resolution qr code generator free",
-            "qr code generator with custom colors"
-          ],
-          "routes": [
-            "/qr-code-generator",
-            "/create-qr-code-online",
-            "/qr-generator",
-            "/wifi-qr-code-generator",
-            "/qr-code-maker"
-          ],
-          "features": [
-            "Multiple QR code types (URL, WiFi, vCard, SMS, Email)",
-            "High-resolution output up to 800×800px",
-            "Custom foreground and background colors",
-            "Adjustable error correction levels",
-            "Real-time preview and generation",
-            "Download as PNG image",
-            "Copy to clipboard functionality",
-            "Mobile-friendly interface"
-          ],
-          "useCases": [
-            "Website URL sharing",
-            "WiFi password sharing",
-            "Business card contact info",
-            "Marketing campaigns",
-            "Event registration",
-            "Social media profiles"
-          ],
-          "fileFormats": ["PNG"],
-          "maxFileSize": "N/A",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 368000,
-          "difficulty": "Medium",
-          "cpc": "$1.25",
-          "intent": "High"
-        },
-        {
-          "id": "text-case-converter",
-          "name": "Text Case Converter",
-          "shortName": "Case Convert",
-          "description": "Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case and 16 other formats.",
-          "longDescription": "Professional text case converter supporting 16 different formats including UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, kebab-case, and more. Perfect for developers, writers, and content creators.",
-          "category": "text",
-          "subcategory": "formatting",
-          "primaryKeyword": "text case converter",
-          "keywords": [
-            "uppercase converter",
-            "lowercase converter",
-            "title case converter",
-            "camelcase converter",
-            "snake case converter",
-            "text transformer online",
-            "case converter tool",
-            "text formatting tool"
-          ],
-          "longTailKeywords": [
-            "convert text to uppercase online free",
-            "camelcase to snake case converter",
-            "title case converter for headlines",
-            "text case converter for developers",
-            "uppercase lowercase converter tool",
-            "kebab case converter online free",
-            "bulk text case conversion tool"
-          ],
-          "routes": [
-            "/text-case-converter",
-            "/uppercase-converter",
-            "/lowercase-converter",
-            "/title-case-converter",
-            "/camelcase-converter",
-            "/snake-case-converter"
-          ],
-          "features": [
-            "16 different case conversion types",
-            "Real-time text transformation",
-            "Copy to clipboard functionality",
-            "Download converted text as file",
-            "Text statistics display",
-            "No character limits",
-            "Mobile-friendly interface",
-            "Privacy-first processing"
-          ],
-          "useCases": [
-            "Programming variable naming",
-            "Content writing and editing",
-            "Database field formatting",
-            "CSS class naming",
-            "API endpoint naming",
-            "File and folder naming"
-          ],
-          "fileFormats": ["Text"],
-          "maxFileSize": "Unlimited",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 284000,
-          "difficulty": "Low",
-          "cpc": "$0.95",
-          "intent": "High"
-        }
-      ]
-    },
-    "developer": {
-      "name": "Developer Tools",
-      "slug": "developer-tools",
-      "description": "Essential developer utilities for JSON formatting, code minification, URL encoding, hash generation, and API testing.",
-      "icon": "CodeIcon",
-      "seoTitle": "Free Developer Tools Online - JSON Formatter, Code Minifier | 30tools",
-      "seoDescription": "Professional developer tools: format JSON, minify CSS/JS, encode URLs, generate hashes, validate HTML, and test APIs online. Free coding utilities.",
-      "keywords": [
-        "developer tools online",
-        "json formatter free",
-        "css minifier online",
-        "javascript minifier",
-        "url encoder decoder",
-        "hash generator tool",
-        "html validator free",
-        "api tester online"
-      ],
-      "breadcrumb": ["Home", "Developer Tools"],
-      "tools": [
-        {
-          "id": "json-formatter",
-          "name": "JSON Formatter & Validator",
-          "shortName": "JSON",
-          "description": "Format, validate, and minify JSON data online. Syntax highlighting, error detection, and tree view for complex JSON structures.",
-          "longDescription": "Professional JSON formatter with syntax highlighting, validation, minification, and tree view. Essential tool for developers working with APIs, configuration files, and JSON data processing.",
-          "category": "developer",
-          "subcategory": "data-formatting",
-          "primaryKeyword": "json formatter",
-          "keywords": [
-            "json validator online",
-            "json beautifier free",
-            "json minifier tool",
-            "format json online",
-            "validate json syntax",
-            "json parser online",
-            "json editor free",
-            "json pretty print"
-          ],
-          "longTailKeywords": [
-            "free json formatter validator online no signup",
-            "json syntax validator with error detection",
-            "beautify json online with syntax highlighting",
-            "minify json data for api responses",
-            "format large json files online free",
-            "json tree view explorer online tool",
-            "validate json schema online free"
-          ],
-          "routes": [
-            "/json-formatter",
-            "/json-validator",
-            "/json-beautifier",
-            "/format-json-online",
-            "/validate-json-syntax"
-          ],
-          "features": [
-            "JSON syntax validation",
-            "Pretty print formatting",
-            "JSON minification",
-            "Syntax highlighting",
-            "Error detection with line numbers",
-            "Tree view for complex JSON",
-            "Copy formatted output",
-            "Download as JSON file"
-          ],
-          "useCases": [
-            "API response formatting",
-            "Configuration file validation",
-            "Debug JSON syntax errors",
-            "Minify JSON for production",
-            "Format API documentation",
-            "Validate webhook payloads"
-          ],
-          "fileFormats": ["JSON"],
-          "maxFileSize": "10MB",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 380000,
-          "difficulty": "Low",
-          "cpc": "$1.95",
-          "intent": "High"
-        },
-        {
-          "id": "hash-generator",
-          "name": "Hash Generator",
-          "shortName": "Hash",
-          "description": "Generate MD5, SHA1, SHA256, SHA512 hashes for text and files. Secure hash calculator for data integrity verification.",
-          "longDescription": "Professional hash generator supporting multiple algorithms including MD5, SHA1, SHA256, and SHA512. Essential for data integrity verification, password hashing, and security applications.",
-          "category": "developer",
-          "subcategory": "security",
-          "primaryKeyword": "hash generator",
-          "keywords": [
-            "md5 hash generator",
-            "sha256 generator online",
-            "sha1 hash calculator",
-            "sha512 hash tool",
-            "file hash generator",
-            "checksum calculator",
-            "hash function online",
-            "crypto hash generator"
-          ],
-          "longTailKeywords": [
-            "free md5 hash generator online no upload",
-            "sha256 hash calculator for file integrity",
-            "generate password hash online secure",
-            "bulk hash generator for multiple files",
-            "compare file hashes online tool",
-            "verify file integrity with hash",
-            "secure hash generator for developers"
-          ],
-          "routes": [
-            "/hash-generator",
-            "/md5-generator",
-            "/sha256-generator",
-            "/checksum-calculator",
-            "/file-hash-generator"
-          ],
-          "features": [
-            "Multiple hash algorithms",
-            "Text and file hashing",
-            "Batch hash generation",
-            "Hash comparison tool",
-            "Copy hash results",
-            "Secure client-side processing",
-            "No file upload required",
-            "Real-time hash calculation"
-          ],
-          "useCases": [
-            "File integrity verification",
-            "Password security",
-            "Data validation",
-            "Digital forensics",
-            "Software distribution",
-            "Database security"
-          ],
-          "fileFormats": ["Any file type", "Text"],
-          "maxFileSize": "100MB",
-          "processingTime": "1-5 seconds",
-          "popular": true,
-          "trending": false,
-          "completed": true,
-          "monthlySearches": 190000,
-          "difficulty": "Medium",
-          "cpc": "$2.15",
-          "intent": "High"
-        }
-      ]
-    },
-    "seo": {
-      "name": "SEO Tools",
-      "slug": "seo-tools",
-      "description": "Professional SEO tools for meta tags, Open Graph, schema markup, sitemaps, and website optimization. Boost your search rankings.",
-      "icon": "SearchIcon",
-      "seoTitle": "Free SEO Tools Online - Meta Tags, Open Graph, Schema | 30tools",
-      "seoDescription": "Professional SEO tools: generate meta tags, Open Graph tags, schema markup, sitemaps, and optimize your website for search engines. Free SEO utilities.",
-      "keywords": [
-        "seo tools online",
-        "meta tags generator",
-        "open graph generator",
-        "schema markup generator",
-        "sitemap generator",
-        "seo optimizer free",
-        "website seo tools",
-        "search engine optimization"
-      ],
-      "breadcrumb": ["Home", "SEO Tools"],
-      "tools": [
-        {
-          "id": "meta-tags-generator",
-          "name": "Meta Tags Generator",
-          "shortName": "Meta Tags",
-          "description": "Generate SEO-optimized meta tags for your website. Create title tags, meta descriptions, Open Graph tags, and Twitter Cards.",
-          "longDescription": "Create perfect meta tags for SEO and social media sharing. Generate title tags, meta descriptions, Open Graph tags, and Twitter Cards with real-time character counting and preview.",
-          "category": "seo",
-          "subcategory": "meta-optimization",
-          "primaryKeyword": "meta tags generator",
-          "keywords": [
-            "seo meta tags",
-            "meta tag creator",
-            "html meta tags generator",
-            "open graph generator",
-            "twitter card generator",
-            "meta description generator",
-            "title tag generator",
-            "seo tags generator"
-          ],
-          "longTailKeywords": [
-            "free meta tags generator online no registration",
-            "seo meta tags generator with character count",
-            "open graph meta tags generator for social media",
-            "twitter card meta tags generator free",
-            "html meta tags creator for website seo",
-            "meta description generator with preview",
-            "complete meta tags generator for wordpress"
-          ],
-          "routes": [
-            "/meta-tags-generator",
-            "/seo-meta-generator",
-            "/html-meta-creator",
-            "/open-graph-generator",
-            "/twitter-card-generator"
-          ],
-          "features": [
-            "SEO title tag generation",
-            "Meta description optimization",
-            "Open Graph tags for social media",
-            "Twitter Card meta tags",
-            "Real-time character counting",
-            "Search result preview",
-            "Social media preview",
-            "Copy and download HTML code"
-          ],
-          "useCases": [
-            "Website SEO optimization",
-            "Social media sharing",
-            "Blog post optimization",
-            "E-commerce product pages",
-            "Landing page SEO",
-            "Content marketing"
-          ],
-          "fileFormats": ["HTML"],
-          "maxFileSize": "N/A",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 78000,
-          "difficulty": "Low",
-          "cpc": "$1.85",
-          "intent": "High"
-        }
-      ]
-    },
-    "utilities": {
-      "name": "File & Utility Tools",
-      "slug": "utility-tools",
-      "description": "Essential file processing and utility tools for compression, encryption, conversion, and calculation. Boost your productivity with these handy utilities.",
-      "icon": "FolderIcon",
-      "seoTitle": "Free File & Utility Tools Online - ZIP, Hash, Unit Converter | 30tools",
-      "seoDescription": "Professional utility tools: create ZIP files, generate hashes, convert units, calculate percentages, and process files online. Free productivity tools.",
-      "keywords": [
-        "file tools online",
-        "zip creator free",
-        "hash generator tool",
-        "unit converter online",
-        "percentage calculator",
-        "file utilities free",
-        "productivity tools",
-        "online calculators"
-      ],
-      "breadcrumb": ["Home", "Utility Tools"],
-      "tools": [
-        {
-          "id": "zip-creator",
-          "name": "ZIP File Creator",
-          "shortName": "ZIP",
-          "description": "Create ZIP files online by compressing multiple files and folders. Reduce file sizes and organize your files efficiently.",
-          "longDescription": "Professional ZIP file creator for compressing multiple files and folders into a single archive. Perfect for file organization, email attachments, and storage optimization.",
-          "category": "utilities",
-          "subcategory": "compression",
-          "primaryKeyword": "zip creator",
-          "keywords": [
-            "create zip file online",
-            "zip file maker",
-            "compress files to zip",
-            "online zip creator",
-            "zip archive creator",
-            "file compression tool",
-            "make zip file",
-            "zip files online"
-          ],
-          "longTailKeywords": [
-            "create zip file from multiple files",
-            "compress folder to zip online",
-            "make zip archive for email",
-            "batch compress files to zip",
-            "create password protected zip",
-            "zip multiple files together",
-            "online zip file generator"
-          ],
-          "routes": [
-            "/zip-creator",
-            "/create-zip-file",
-            "/zip-maker",
-            "/compress-to-zip",
-            "/zip-archive-creator"
-          ],
-          "features": [
-            "Multiple file support",
-            "Folder compression",
-            "Password protection",
-            "Compression level control",
-            "Batch processing",
-            "Drag and drop interface",
-            "No file size limits",
-            "Fast compression"
-          ],
-          "useCases": [
-            "Email attachments",
-            "File organization",
-            "Storage optimization",
-            "File sharing",
-            "Backup creation",
-            "Archive management"
-          ],
-          "fileFormats": ["Any file type", "ZIP"],
-          "maxFileSize": "500MB total",
-          "processingTime": "5-60 seconds",
-          "popular": true,
-          "trending": false,
-          "completed": false,
-          "monthlySearches": 220000,
-          "difficulty": "Medium",
-          "cpc": "$1.25",
-          "intent": "High"
-        },
-        {
-          "id": "unit-converter",
-          "name": "Unit Converter",
-          "shortName": "Convert",
-          "description": "Convert between units of length, weight, temperature, volume, area, and more. Comprehensive unit conversion calculator.",
-          "longDescription": "Professional unit converter supporting length, weight, temperature, volume, area, speed, and energy conversions. Essential tool for students, engineers, and professionals.",
-          "category": "utilities",
-          "subcategory": "calculation",
-          "primaryKeyword": "unit converter",
-          "keywords": [
-            "length converter online",
-            "weight converter kg to lbs",
-            "temperature converter celsius",
-            "volume converter liters",
-            "area converter square meters",
-            "speed converter mph kmh",
-            "metric converter online",
-            "unit conversion calculator"
-          ],
-          "longTailKeywords": [
-            "convert feet to meters online",
-            "celsius to fahrenheit converter",
-            "kg to pounds converter calculator",
-            "liters to gallons conversion tool",
-            "square feet to square meters",
-            "miles per hour to kilometers",
-            "comprehensive unit converter tool"
-          ],
-          "routes": [
-            "/unit-converter",
-            "/convert-units",
-            "/metric-converter",
-            "/length-converter",
-            "/weight-converter"
-          ],
-          "features": [
-            "20+ unit categories",
-            "Instant conversion",
-            "Precision results",
-            "Historical conversions",
-            "Favorites system",
-            "Reverse conversion",
-            "Copy results",
-            "Mobile optimized"
-          ],
-          "useCases": [
-            "Engineering calculations",
-            "Cooking measurements",
-            "Travel planning",
-            "Academic work",
-            "Construction projects",
-            "International business"
-          ],
-          "fileFormats": ["Text"],
-          "maxFileSize": "N/A",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": false,
-          "monthlySearches": 380000,
-          "difficulty": "Low",
-          "cpc": "$0.75",
-          "intent": "High"
-        },
-        {
-          "id": "percentage-calculator",
-          "name": "Percentage Calculator",
-          "shortName": "Percent",
-          "description": "Calculate percentages, percentage increase/decrease, and find what percent one number is of another. Comprehensive percentage tool.",
-          "longDescription": "Professional percentage calculator for all types of percentage calculations including increase/decrease, discounts, tips, and percentage relationships.",
-          "category": "utilities",
-          "subcategory": "calculation",
-          "primaryKeyword": "percentage calculator",
-          "keywords": [
-            "calculate percentage online",
-            "percentage increase calculator",
-            "percentage decrease calculator",
-            "percent of number calculator",
-            "discount percentage calculator",
-            "tip percentage calculator",
-            "percentage change calculator",
-            "percent calculator online"
-          ],
-          "longTailKeywords": [
-            "calculate percentage increase between two numbers",
-            "find what percent one number is of another",
-            "percentage discount calculator for shopping",
-            "calculate tip percentage for restaurant",
-            "percentage change calculator for business",
-            "find percentage of total amount",
-            "calculate grade percentage from marks"
-          ],
-          "routes": [
-            "/percentage-calculator",
-            "/calculate-percentage",
-            "/percent-calculator",
-            "/percentage-tool",
-            "/percent-change"
-          ],
-          "features": [
-            "Multiple calculation types",
-            "Percentage increase/decrease",
-            "Discount calculations",
-            "Tip calculator",
-            "Grade percentage",
-            "Step-by-step solutions",
-            "Copy results",
-            "History tracking"
-          ],
-          "useCases": [
-            "Shopping discounts",
-            "Restaurant tips",
-            "Grade calculations",
-            "Business analytics",
-            "Financial planning",
-            "Statistical analysis"
-          ],
-          "fileFormats": ["Text"],
-          "maxFileSize": "N/A",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": false,
-          "monthlySearches": 340000,
-          "difficulty": "Low",
-          "cpc": "$0.85",
-          "intent": "High"
-        }
-      ]
-    },
-    "design": {
-      "name": "Design Tools",
-      "slug": "design-tools",
-      "description": "Creative design utilities for color palettes, gradients, fonts, icons, and CSS generators. Perfect for designers and developers.",
-      "icon": "PaletteIcon",
-      "seoTitle": "Free Design Tools Online - Color Palette, Gradient Generator | 30tools",
-      "seoDescription": "Professional design tools: generate color palettes, create CSS gradients, preview fonts, make icons, and design elements online. Free creative utilities.",
-      "keywords": [
-        "design tools online",
-        "color palette generator",
-        "gradient generator css",
-        "font preview tool",
-        "icon generator free",
-        "logo maker online",
-        "css generator tools",
-        "design utilities free"
-      ],
-      "breadcrumb": ["Home", "Design Tools"],
-      "tools": [
-        {
-          "id": "whiteboard",
-          "name": "Online Whiteboard",
-          "shortName": "Whiteboard",
-          "description": "Free unlimited online whiteboard for drawing, sketching, brainstorming and collaboration. No registration required.",
-          "longDescription": "Professional online whiteboard with unlimited drawing space, multiple tools, and export capabilities. Perfect for brainstorming, education, design sketching, and collaboration. Features pen, eraser, shapes, colors, and undo/redo functionality.",
-          "category": "design",
-          "subcategory": "drawing",
-          "primaryKeyword": "online whiteboard",
-          "keywords": [
-            "online whiteboard",
-            "free whiteboard",
-            "drawing board",
-            "sketch pad",
-            "digital whiteboard",
-            "collaborative whiteboard",
-            "whiteboard online free",
-            "drawing tool online"
-          ],
-          "longTailKeywords": [
-            "free online whiteboard unlimited",
-            "digital whiteboard for brainstorming",
-            "online drawing board free",
-            "collaborative whiteboard tool",
-            "sketch pad online free",
-            "whiteboard app no registration",
-            "online whiteboard with export"
-          ],
-          "routes": [
-            "/whiteboard",
-            "/online-whiteboard",
-            "/free-whiteboard",
-            "/drawing-board",
-            "/sketch-pad"
-          ],
-          "features": [
-            "Unlimited drawing space",
-            "Multiple drawing tools",
-            "Color palette & custom colors",
-            "Export PNG/JPG",
-            "Undo/Redo functionality",
-            "No registration required",
-            "Shapes and lines",
-            "Adjustable brush sizes"
-          ],
-          "useCases": [
-            "Brainstorming sessions",
-            "Educational explanations",
-            "Design sketching",
-            "Meeting notes",
-            "Mind mapping",
-            "Wireframe creation"
-          ],
-          "fileFormats": ["PNG", "JPG"],
-          "maxFileSize": "Unlimited",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 95000,
-          "difficulty": "Low",
-          "cpc": "$0.90",
-          "intent": "High"
-        }
-      ]
-    },
-    "code": {
-      "name": "Code Tools",
-      "slug": "code-tools",
-      "description": "Essential code utilities for formatting, minifying, converting, and analyzing code and data. Fast, privacy-first, and developer-friendly.",
-      "icon": "CodeIcon",
-      "seoTitle": "Free Code Tools Online - Format, Minify, Convert Code | 30tools",
-      "seoDescription": "Professional code tools: format JSON, minify CSS/JS/HTML, convert CSV to JSON, test regex, and convert Markdown to HTML online. Free, fast, and secure.",
-      "keywords": [
-        "code tools online",
-        "json formatter",
-        "code minifier",
-        "csv to json converter",
-        "regex tester",
-        "markdown to html",
-        "developer utilities",
-        "online code tools"
-      ],
-      "breadcrumb": ["Home", "Code Tools"],
-      "tools": [
-        {
-          "id": "json-formatter",
-          "name": "JSON Formatter & Validator",
-          "shortName": "JSON Format",
-          "description": "Format, validate, and minify JSON data. Instantly beautify or compress JSON for readability or compactness.",
-          "longDescription": "Advanced JSON formatter and validator with error highlighting, minification, and statistics. Perfect for developers, API testing, and data analysis.",
-          "category": "code",
-          "subcategory": "formatting",
-          "primaryKeyword": "json formatter",
-          "keywords": [
-            "json formatter",
-            "json validator",
-            "json beautifier",
-            "json minifier",
-            "format json online",
-            "validate json",
-            "json tool free"
-          ],
-          "longTailKeywords": [
-            "free online json formatter and validator",
-            "json beautifier with error highlighting",
-            "minify and format json data online",
-            "json validator for api testing"
-          ],
-          "routes": ["/json-formatter"],
-          "features": [
-            "Format and beautify JSON",
-            "Validate JSON syntax",
-            "Minify JSON",
-            "Copy/download result",
-            "Error highlighting",
-            "JSON statistics"
-          ],
-          "useCases": [
-            "API development",
-            "Data analysis",
-            "Debugging JSON",
-            "Learning JSON syntax"
-          ],
-          "fileFormats": ["JSON"],
-          "maxFileSize": "2MB",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 120000,
-          "difficulty": "Low",
-          "cpc": "$1.10",
-          "intent": "High"
-        },
-        {
-          "id": "csv-to-json",
-          "name": "CSV to JSON Converter",
-          "shortName": "CSV2JSON",
-          "description": "Convert CSV data to JSON format instantly. Paste your CSV, click convert, and copy or download the result.",
-          "longDescription": "Fast CSV to JSON converter with header detection, error handling, and instant download. Perfect for data migration, API work, and spreadsheet conversion.",
-          "category": "code",
-          "subcategory": "conversion",
-          "primaryKeyword": "csv to json",
-          "keywords": [
-            "csv to json",
-            "convert csv to json",
-            "csv json converter",
-            "csv online tool",
-            "csv parser",
-            "csv to json free"
-          ],
-          "longTailKeywords": [
-            "free csv to json converter online",
-            "convert csv data to json instantly",
-            "csv to json for api import",
-            "csv to json for spreadsheet export"
-          ],
-          "routes": ["/csv-to-json"],
-          "features": [
-            "Paste or upload CSV",
-            "Header row detection",
-            "Error handling",
-            "Copy/download JSON",
-            "Privacy-first processing"
-          ],
-          "useCases": [
-            "Data migration",
-            "API import/export",
-            "Spreadsheet conversion",
-            "Data analysis"
-          ],
-          "fileFormats": ["CSV", "JSON"],
-          "maxFileSize": "2MB",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 90000,
-          "difficulty": "Low",
-          "cpc": "$0.95",
-          "intent": "High"
-        },
-        {
-          "id": "code-minifier",
-          "name": "Code Minifier (JS, CSS, HTML)",
-          "shortName": "Minify",
-          "description": "Minify JavaScript, CSS, and HTML code for faster websites. Remove whitespace, comments, and reduce file size.",
-          "longDescription": "Online code minifier for JavaScript, CSS, and HTML. Instantly compress code for web optimization and faster load times. Uses Terser, clean-css, and html-minifier via CDN.",
-          "category": "code",
-          "subcategory": "optimization",
-          "primaryKeyword": "code minifier",
-          "keywords": [
-            "js minifier",
-            "css minifier",
-            "html minifier",
-            "minify code online",
-            "compress javascript",
-            "minify css",
-            "minify html"
-          ],
-          "longTailKeywords": [
-            "free online js css html minifier",
-            "minify javascript for production",
-            "css minifier for web optimization",
-            "html minifier for seo"
-          ],
-          "routes": ["/code-minifier"],
-          "features": [
-            "Minify JS, CSS, HTML",
-            "Copy/download minified code",
-            "Privacy-first processing",
-            "No file size limits"
-          ],
-          "useCases": [
-            "Web optimization",
-            "Production deployment",
-            "SEO improvement",
-            "Faster load times"
-          ],
-          "fileFormats": ["JS", "CSS", "HTML"],
-          "maxFileSize": "1MB",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 80000,
-          "difficulty": "Low",
-          "cpc": "$0.85",
-          "intent": "High"
-        },
-        {
-          "id": "code-formatter",
-          "name": "Code Formatter (Prettier-like)",
-          "shortName": "Format",
-          "description": "Format JavaScript, CSS, HTML, and JSON code for readability. Uses Prettier via CDN for instant formatting.",
-          "longDescription": "Online code formatter for JS, CSS, HTML, and JSON. Beautify code for readability, collaboration, and debugging. Uses Prettier from CDN for fast, privacy-first formatting.",
-          "category": "code",
-          "subcategory": "formatting",
-          "primaryKeyword": "code formatter",
-          "keywords": [
-            "code formatter",
-            "prettier online",
-            "format js css html",
-            "beautify code",
-            "format javascript",
-            "format css",
-            "format html"
-          ],
-          "longTailKeywords": [
-            "free online code formatter prettier",
-            "format js css html for readability",
-            "prettier code formatter online free",
-            "beautify code for collaboration"
-          ],
-          "routes": ["/code-formatter"],
-          "features": [
-            "Format JS, CSS, HTML, JSON",
-            "Copy/download formatted code",
-            "Prettier via CDN",
-            "Privacy-first processing"
-          ],
-          "useCases": [
-            "Code review",
-            "Debugging",
-            "Learning best practices",
-            "Team collaboration"
-          ],
-          "fileFormats": ["JS", "CSS", "HTML", "JSON"],
-          "maxFileSize": "1MB",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 70000,
-          "difficulty": "Low",
-          "cpc": "$0.90",
-          "intent": "High"
-        },
-        {
-          "id": "regex-tester",
-          "name": "Regex Tester",
-          "shortName": "Regex",
-          "description": "Test and debug regular expressions instantly. See all matches, groups, and errors in real time.",
-          "longDescription": "Online regex tester for JavaScript regular expressions. Instantly see matches, groups, and errors. Perfect for learning, debugging, and pattern design.",
-          "category": "code",
-          "subcategory": "testing",
-          "primaryKeyword": "regex tester",
-          "keywords": [
-            "regex tester",
-            "regular expression tester",
-            "regex online",
-            "test regex",
-            "regex tool",
-            "regex match",
-            "regex debug"
-          ],
-          "longTailKeywords": [
-            "free online regex tester",
-            "test regular expressions instantly",
-            "regex tester for javascript",
-            "regex debug tool online"
-          ],
-          "routes": ["/regex-tester"],
-          "features": [
-            "Test regex patterns",
-            "Show matches and groups",
-            "Error highlighting",
-            "Privacy-first processing"
-          ],
-          "useCases": [
-            "Pattern design",
-            "Debugging regex",
-            "Learning regex",
-            "Data validation"
-          ],
-          "fileFormats": ["Text"],
-          "maxFileSize": "Unlimited",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 60000,
-          "difficulty": "Low",
-          "cpc": "$0.80",
-          "intent": "High"
-        },
-        {
-          "id": "markdown-to-html",
-          "name": "Markdown to HTML Converter",
-          "shortName": "MD2HTML",
-          "description": "Convert Markdown text to HTML instantly. Paste your Markdown, click convert, and copy or download the result.",
-          "longDescription": "Fast Markdown to HTML converter using marked.js from CDN. Perfect for documentation, blogging, and web publishing.",
-          "category": "code",
-          "subcategory": "conversion",
-          "primaryKeyword": "markdown to html",
-          "keywords": [
-            "markdown to html",
-            "convert markdown to html",
-            "markdown html converter",
-            "markdown online tool",
-            "markdown parser",
-            "markdown to html free"
-          ],
-          "longTailKeywords": [
-            "free markdown to html converter online",
-            "convert markdown text to html instantly",
-            "markdown to html for blogging",
-            "markdown to html for documentation"
-          ],
-          "routes": ["/markdown-to-html"],
-          "features": [
-            "Paste or upload Markdown",
-            "Convert to HTML",
-            "Copy/download HTML",
-            "Privacy-first processing"
-          ],
-          "useCases": [
-            "Documentation",
-            "Blogging",
-            "Web publishing",
-            "Markdown preview"
-          ],
-          "fileFormats": ["Markdown", "HTML"],
-          "maxFileSize": "1MB",
-          "processingTime": "Instant",
-          "popular": true,
-          "trending": true,
-          "completed": true,
-          "monthlySearches": 50000,
-          "difficulty": "Low",
-          "cpc": "$0.75",
-          "intent": "High"
-        }
-      ]
-    }
-  },
-  "seoData": {
-    "globalKeywords": [
-      "free online tools",
-      "30tools",
-      "online toolkit",
-      "free utilities",
-      "web tools",
-      "file converter",
-      "online tools free",
-      "internet tools",
-      "web utilities",
-      "online software"
-    ],
-    "competitorAnalysis": {
-      "smallpdf": {
-        "strengths": ["PDF focus", "Clean UI", "Premium features"],
-        "weaknesses": ["Limited free features", "Expensive premium"],
-        "monthlyTraffic": "45M"
-      },
-      "ilovepdf": {
-        "strengths": ["PDF tools", "Free features", "Good SEO"],
-        "weaknesses": ["PDF only", "Ad heavy"],
-        "monthlyTraffic": "35M"
-      },
-      "convertio": {
-        "strengths": ["Many formats", "Good conversion", "API"],
-        "weaknesses": ["File size limits", "Slow processing"],
-        "monthlyTraffic": "25M"
-      }
-    },
-    "targetAudience": {
-      "primary": {
-        "demographic": "Professionals and students",
-        "ageRange": "25-45",
-        "needs": "Quick file processing",
-        "painPoints": "Expensive software, Complex tools"
-      },
-      "secondary": {
-        "demographic": "Content creators",
-        "ageRange": "18-35",
-        "needs": "Social media optimization",
-        "painPoints": "File size limits, Watermarks"
-      }
-    },
-    "contentStrategy": {
-      "blogTopics": [
-        "How to compress images without losing quality",
-        "Best image formats for web (JPEG vs PNG vs WebP)",
-        "PDF merge vs split: When to use each",
-        "Video compression guide for social media",
-        "File format conversion best practices"
-      ],
-      "landingPageOptimization": {
-        "heroSection": "Clear value proposition",
-        "featuresSection": "Highlight key benefits",
-        "socialProof": "User testimonials and stats",
-        "ctaPlacement": "Multiple strategic CTAs"
-      }
-    }
-  }
+	"metadata": {
+		"version": "2.1",
+		"lastUpdated": "2025-06-15",
+		"totalTools": 116,
+		"totalCategories": 8,
+		"seoOptimized": true
+	},
+	"seoConfig": {
+		"primaryDomain": "30tools.com",
+		"brandName": "30tools",
+		"tagline": "Free Online Toolkit",
+		"primaryKeywords": [
+			"free online tools",
+			"image tools online",
+			"pdf tools free",
+			"video converter online",
+			"text tools free",
+			"file converter",
+			"online toolkit"
+		],
+		"globalSchemaMarkup": {
+			"@context": "https://schema.org",
+			"@type": "WebSite",
+			"name": "30tools - Free Online Toolkit",
+			"url": "https://30tools.com",
+			"potentialAction": {
+				"@type": "SearchAction",
+				"target": "https://30tools.com/search?q={search_term_string}",
+				"query-input": "required name=search_term_string"
+			}
+		}
+	},
+	"categories": {
+		"image": {
+			"name": "Image Tools",
+			"slug": "image-tools",
+			"description": "Professional image processing tools for compression, conversion, editing, and optimization. Free online image tools with no watermarks.",
+			"icon": "ImageIcon",
+			"seoTitle": "Free Image Tools Online - Compress, Convert, Edit Images | 30tools",
+			"seoDescription": "Professional image tools: compress images, convert formats (JPEG, PNG, WebP), resize photos, remove backgrounds, and edit images online. Free, fast, and secure.",
+			"keywords": [
+				"image tools online",
+				"compress image free",
+				"image converter",
+				"photo editor online",
+				"resize image online",
+				"background remover",
+				"image optimizer",
+				"photo tools free"
+			],
+			"breadcrumb": ["Home", "Image Tools"],
+			"tools": [
+				{
+					"id": "image-compressor",
+					"name": "Image Compressor",
+					"shortName": "Compress",
+					"description": "Compress JPEG, PNG, WebP images without losing quality. Reduce file size by up to 90% while maintaining visual quality.",
+					"longDescription": "Our advanced image compressor uses intelligent algorithms to reduce file sizes by up to 90% while preserving image quality. Perfect for web optimization, email attachments, and storage savings. Supports batch processing of up to 50 images simultaneously.",
+					"category": "image",
+					"subcategory": "compression",
+					"primaryKeyword": "image compressor",
+					"keywords": [
+						"compress image online",
+						"image compressor free",
+						"reduce image size",
+						"optimize image online",
+						"compress jpeg png",
+						"image optimizer tool",
+						"photo compressor online",
+						"compress images without losing quality"
+					],
+					"longTailKeywords": [
+						"free online image compressor no watermark",
+						"compress images for web without quality loss",
+						"bulk image compression tool online free",
+						"compress jpeg png webp files online",
+						"reduce image file size for email",
+						"optimize images for website speed",
+						"batch compress multiple images free"
+					],
+					"routes": [
+						"/image-compressor",
+						"/compress-images-online",
+						"/free-image-compressor",
+						"/image-optimizer",
+						"/image-minimizer",
+						"/reduce-image-size",
+						"/optimize-images-online"
+					],
+					"features": [
+						"Batch compression up to 50 images",
+						"Quality control slider (10-100%)",
+						"Supports JPEG, PNG, WebP, GIF",
+						"No file size limits",
+						"No watermarks added",
+						"Client-side processing",
+						"Instant download",
+						"Mobile optimized"
+					],
+					"useCases": [
+						"Website optimization",
+						"Email attachments",
+						"Social media posting",
+						"Storage space saving",
+						"Blog image optimization",
+						"E-commerce product photos"
+					],
+					"fileFormats": ["JPEG", "PNG", "WebP", "GIF"],
+					"maxFileSize": "50MB per file",
+					"processingTime": "2-10 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 165000,
+					"difficulty": "Low",
+					"cpc": "$1.20",
+					"intent": "High"
+				},
+				{
+					"id": "image-resizer",
+					"name": "Image Resizer",
+					"shortName": "Resize",
+					"description": "Resize images to custom dimensions or preset sizes. Maintain aspect ratio or stretch to exact dimensions.",
+					"longDescription": "Professional image resizing tool with custom dimensions, preset sizes, and aspect ratio control. Perfect for social media, websites, and print. Supports batch resizing and maintains image quality.",
+					"category": "image",
+					"subcategory": "editing",
+					"primaryKeyword": "image resizer",
+					"keywords": [
+						"resize image online",
+						"image resizer free",
+						"photo resizer",
+						"change image size",
+						"resize pictures online",
+						"image dimension changer",
+						"photo size editor",
+						"scale image online"
+					],
+					"longTailKeywords": [
+						"resize image to specific size online free",
+						"batch resize multiple images same size",
+						"resize image for social media post",
+						"resize photo for passport size online",
+						"change image dimensions without losing quality",
+						"resize image to custom width height",
+						"bulk image resizer online tool free"
+					],
+					"routes": [
+						"/image-resizer",
+						"/resize-image-online",
+						"/photo-resizer",
+						"/change-image-size",
+						"/resize-pictures-online"
+					],
+					"features": [
+						"Custom width and height",
+						"Preset social media sizes",
+						"Maintain aspect ratio option",
+						"Batch resize multiple images",
+						"Quality preservation",
+						"Percentage-based scaling",
+						"Preview before download",
+						"Undo/redo functionality"
+					],
+					"useCases": [
+						"Social media posts",
+						"Website thumbnails",
+						"Email signatures",
+						"Print materials",
+						"Profile pictures",
+						"Product catalogs"
+					],
+					"fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP"],
+					"maxFileSize": "25MB per file",
+					"processingTime": "1-5 seconds",
+					"popular": true,
+					"trending": false,
+					"completed": false,
+					"monthlySearches": 89000,
+					"difficulty": "Medium",
+					"cpc": "$0.85",
+					"intent": "High"
+				},
+				{
+					"id": "image-converter",
+					"name": "Image Format Converter",
+					"shortName": "Convert",
+					"description": "Convert between image formats: JPEG, PNG, WebP, GIF, BMP. Batch conversion with quality control.",
+					"longDescription": "Convert images between all popular formats with advanced quality control. Supports batch conversion, modern WebP format, and maintains metadata when needed.",
+					"category": "image",
+					"subcategory": "conversion",
+					"primaryKeyword": "image converter",
+					"keywords": [
+						"jpeg to png converter",
+						"png to jpeg converter",
+						"webp converter online",
+						"image format converter",
+						"convert image format",
+						"photo format changer",
+						"gif to png converter",
+						"heic to jpg converter"
+					],
+					"longTailKeywords": [
+						"convert jpeg to png online free no watermark",
+						"batch convert png to jpeg online",
+						"convert heic to jpg online free bulk",
+						"webp to png converter online tool",
+						"convert gif to jpeg without losing quality",
+						"bulk image format converter online free",
+						"convert bmp to png online tool"
+					],
+					"routes": [
+						"/image-converter",
+						"/jpeg-to-png-converter",
+						"/png-to-jpeg-converter",
+						"/webp-converter",
+						"/heic-to-jpg-converter",
+						"/convert-image-format"
+					],
+					"features": [
+						"All popular formats supported",
+						"Batch conversion",
+						"Quality control",
+						"Metadata preservation option",
+						"Modern WebP support",
+						"HEIC iPhone format support",
+						"Animated GIF support",
+						"Transparency preservation"
+					],
+					"useCases": [
+						"Web optimization (WebP)",
+						"Compatibility conversion",
+						"iPhone photo conversion",
+						"Legacy format support",
+						"Print preparation",
+						"Social media optimization"
+					],
+					"fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP", "HEIC", "TIFF"],
+					"maxFileSize": "50MB per file",
+					"processingTime": "1-8 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 125000,
+					"difficulty": "Medium",
+					"cpc": "$1.10",
+					"intent": "High"
+				},
+				{
+					"id": "background-remover",
+					"name": "Background Remover",
+					"shortName": "Remove BG",
+					"description": "Remove image backgrounds automatically with AI. Create transparent PNG images for e-commerce, social media, and professional use.",
+					"longDescription": "AI-powered background removal tool that automatically detects and removes backgrounds from images. Create professional transparent PNGs perfect for product photography, profile pictures, and graphic design.",
+					"category": "image",
+					"subcategory": "editing",
+					"primaryKeyword": "background remover",
+					"keywords": [
+						"remove background from image",
+						"background eraser online",
+						"transparent background maker",
+						"cut out image background",
+						"photo background removal",
+						"ai background remover",
+						"remove image background free",
+						"background remover tool"
+					],
+					"longTailKeywords": [
+						"remove background from image free online",
+						"ai background remover no watermark",
+						"bulk background removal tool online",
+						"remove background from product photos",
+						"automatic background eraser online",
+						"create transparent png from jpg",
+						"professional background removal service"
+					],
+					"routes": [
+						"/background-remover",
+						"/remove-background",
+						"/transparent-background",
+						"/background-eraser",
+						"/cut-out-image"
+					],
+					"features": [
+						"AI-powered detection",
+						"Automatic background removal",
+						"Transparent PNG output",
+						"Batch processing",
+						"Edge refinement",
+						"Preview before download",
+						"No watermarks",
+						"High-quality results"
+					],
+					"useCases": [
+						"E-commerce product photos",
+						"Profile pictures",
+						"Social media posts",
+						"Graphic design projects",
+						"Marketing materials",
+						"Presentations"
+					],
+					"fileFormats": ["JPEG", "PNG", "WebP", "GIF"],
+					"maxFileSize": "25MB per file",
+					"processingTime": "3-15 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": false,
+					"monthlySearches": 350000,
+					"difficulty": "High",
+					"cpc": "$2.45",
+					"intent": "High"
+				},
+				{
+					"id": "image-cropper",
+					"name": "Image Cropper",
+					"shortName": "Crop",
+					"description": "Crop images online with custom aspect ratios and preset sizes. Perfect for social media, profile pictures, and thumbnails.",
+					"longDescription": "Professional image cropper with custom aspect ratios, preset social media sizes, and manual selection tools. Create perfectly sized images for any platform or use case.",
+					"category": "image",
+					"subcategory": "editing",
+					"primaryKeyword": "image cropper",
+					"keywords": [
+						"crop image online",
+						"photo cropper free",
+						"image crop tool",
+						"resize and crop image",
+						"crop photo online",
+						"image cropping tool",
+						"crop picture online",
+						"photo crop editor"
+					],
+					"longTailKeywords": [
+						"crop image to specific size online",
+						"crop photos for social media",
+						"square image cropper online free",
+						"crop image with aspect ratio",
+						"batch crop multiple images",
+						"crop image for instagram post",
+						"professional photo cropping tool"
+					],
+					"routes": [
+						"/image-cropper",
+						"/crop-image-online",
+						"/photo-cropper",
+						"/crop-photos",
+						"/image-crop-tool"
+					],
+					"features": [
+						"Custom aspect ratios",
+						"Social media presets",
+						"Manual selection tool",
+						"Batch cropping",
+						"Preview mode",
+						"Zoom and pan",
+						"Grid overlay",
+						"Undo/redo functionality"
+					],
+					"useCases": [
+						"Social media posts",
+						"Profile pictures",
+						"Website thumbnails",
+						"Product photography",
+						"Blog images",
+						"Print materials"
+					],
+					"fileFormats": ["JPEG", "PNG", "WebP", "GIF", "BMP"],
+					"maxFileSize": "25MB per file",
+					"processingTime": "1-3 seconds",
+					"popular": true,
+					"trending": false,
+					"completed": false,
+					"monthlySearches": 180000,
+					"difficulty": "Low",
+					"cpc": "$0.95",
+					"intent": "High"
+				}
+			]
+		},
+		"pdf": {
+			"name": "PDF Tools",
+			"slug": "pdf-tools",
+			"description": "Complete PDF toolkit for merging, splitting, compressing, and converting PDF files. Professional PDF tools for business and personal use.",
+			"icon": "FileTextIcon",
+			"seoTitle": "Free PDF Tools Online - Merge, Split, Compress PDFs | 30tools",
+			"seoDescription": "Professional PDF tools: merge PDFs, split documents, compress files, convert to/from images, and edit PDFs online. Free, secure, and no watermarks.",
+			"keywords": [
+				"pdf tools online",
+				"merge pdf free",
+				"split pdf online",
+				"compress pdf free",
+				"pdf converter",
+				"pdf editor online",
+				"pdf merger tool",
+				"pdf utilities free"
+			],
+			"breadcrumb": ["Home", "PDF Tools"],
+			"tools": [
+				{
+					"id": "pdf-merger",
+					"name": "PDF Merger",
+					"shortName": "Merge",
+					"description": "Merge multiple PDF files into one document. Drag and drop to reorder pages. No file size limits.",
+					"longDescription": "Combine multiple PDF files into a single document with our professional PDF merger. Drag and drop interface, custom page ordering, and bookmark preservation. Perfect for business documents, reports, and presentations.",
+					"category": "pdf",
+					"subcategory": "manipulation",
+					"primaryKeyword": "pdf merger",
+					"keywords": [
+						"merge pdf online",
+						"combine pdf files",
+						"pdf merger free",
+						"join pdf documents",
+						"merge multiple pdfs",
+						"pdf combiner tool",
+						"concatenate pdf files",
+						"pdf joiner online"
+					],
+					"longTailKeywords": [
+						"merge pdf files online free no watermark",
+						"combine multiple pdf documents into one",
+						"merge pdf preserving bookmarks and links",
+						"join pdf files with drag and drop",
+						"combine large pdf files online free",
+						"merge password protected pdf files",
+						"bulk pdf merger tool online"
+					],
+					"routes": [
+						"/pdf-merger",
+						"/merge-pdf-online",
+						"/combine-pdf-files",
+						"/join-pdf-documents",
+						"/pdf-combiner"
+					],
+					"features": [
+						"Unlimited PDF files",
+						"Drag and drop reordering",
+						"Bookmark preservation",
+						"Password-protected PDF support",
+						"Custom page selection",
+						"Batch processing",
+						"No file size limits",
+						"Instant download"
+					],
+					"useCases": [
+						"Business reports",
+						"Academic papers",
+						"Legal documents",
+						"Presentation materials",
+						"Invoice compilation",
+						"Document archiving"
+					],
+					"fileFormats": ["PDF"],
+					"maxFileSize": "Unlimited",
+					"processingTime": "5-30 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 201000,
+					"difficulty": "Low",
+					"cpc": "$1.45",
+					"intent": "High"
+				},
+				{
+					"id": "pdf-splitter",
+					"name": "PDF Splitter",
+					"shortName": "Split",
+					"description": "Split PDF into separate files by pages, ranges, or bookmarks. Extract specific pages from large documents.",
+					"longDescription": "Split large PDF documents into smaller files with precision control. Split by page ranges, individual pages, or bookmarks. Perfect for extracting chapters, sections, or specific content.",
+					"category": "pdf",
+					"subcategory": "manipulation",
+					"primaryKeyword": "pdf splitter",
+					"keywords": [
+						"split pdf online",
+						"pdf splitter free",
+						"separate pdf pages",
+						"extract pdf pages",
+						"pdf page extractor",
+						"divide pdf document",
+						"pdf separator tool",
+						"break pdf into pages"
+					],
+					"longTailKeywords": [
+						"split pdf into separate files online free",
+						"extract specific pages from pdf online",
+						"split large pdf document into chapters",
+						"separate pdf by page range online",
+						"split pdf by bookmarks online tool",
+						"extract odd even pages from pdf",
+						"split password protected pdf online"
+					],
+					"routes": [
+						"/pdf-splitter",
+						"/split-pdf-online",
+						"/separate-pdf-pages",
+						"/extract-pdf-pages",
+						"/pdf-page-extractor"
+					],
+					"features": [
+						"Split by page ranges",
+						"Extract individual pages",
+						"Split by bookmarks",
+						"Custom page selection",
+						"Bulk processing",
+						"Password PDF support",
+						"Preview before split",
+						"Zip download option"
+					],
+					"useCases": [
+						"Extract book chapters",
+						"Separate report sections",
+						"Individual page extraction",
+						"Document organization",
+						"Legal brief separation",
+						"Academic paper sections"
+					],
+					"fileFormats": ["PDF"],
+					"maxFileSize": "100MB",
+					"processingTime": "3-15 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 156000,
+					"difficulty": "Medium",
+					"cpc": "$1.25",
+					"intent": "High"
+				},
+				{
+					"id": "pdf-compressor",
+					"name": "PDF Compressor",
+					"shortName": "Compress",
+					"description": "Compress PDF files to reduce size without losing quality. Perfect for email attachments and web uploads.",
+					"longDescription": "Advanced PDF compression tool that reduces file sizes significantly while preserving document quality. Perfect for sharing via email, uploading to websites, or saving storage space.",
+					"category": "pdf",
+					"subcategory": "compression",
+					"primaryKeyword": "pdf compressor",
+					"keywords": [
+						"compress pdf online",
+						"pdf compressor free",
+						"reduce pdf size",
+						"pdf optimizer",
+						"compress pdf without losing quality",
+						"pdf size reducer",
+						"optimize pdf online",
+						"pdf file compressor"
+					],
+					"longTailKeywords": [
+						"compress pdf file online free no watermark",
+						"reduce pdf size for email attachment",
+						"compress large pdf files online",
+						"pdf compressor without quality loss",
+						"optimize pdf for web upload",
+						"batch pdf compression tool",
+						"compress pdf to specific size"
+					],
+					"routes": [
+						"/pdf-compressor",
+						"/compress-pdf-online",
+						"/reduce-pdf-size",
+						"/pdf-optimizer",
+						"/optimize-pdf-online"
+					],
+					"features": [
+						"High compression ratio",
+						"Quality preservation",
+						"Batch processing",
+						"No file size limits",
+						"Instant download",
+						"Secure processing",
+						"Multiple compression levels",
+						"Preview before download"
+					],
+					"useCases": [
+						"Email attachments",
+						"Website uploads",
+						"Storage optimization",
+						"Document sharing",
+						"Web performance",
+						"Archive creation"
+					],
+					"fileFormats": ["PDF"],
+					"maxFileSize": "50MB",
+					"processingTime": "2-15 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 189000,
+					"difficulty": "Low",
+					"cpc": "$1.35",
+					"intent": "High"
+				},
+				{
+					"id": "pdf-protect",
+					"name": "PDF Password Protector",
+					"shortName": "Protect",
+					"description": "Add password protection to PDF files with custom permissions. Secure your documents with 256-bit encryption.",
+					"longDescription": "Professional PDF protection tool with 256-bit encryption and granular permissions. Control printing, copying, editing, and more with military-grade security.",
+					"category": "pdf",
+					"subcategory": "security",
+					"primaryKeyword": "pdf password protect",
+					"keywords": [
+						"add password to pdf",
+						"pdf security",
+						"protect pdf online",
+						"pdf encryption",
+						"secure pdf",
+						"password protect pdf free",
+						"pdf protection tool",
+						"encrypt pdf online"
+					],
+					"longTailKeywords": [
+						"add password protection to pdf online free",
+						"pdf password protector with permissions",
+						"encrypt pdf with 256 bit encryption",
+						"secure pdf documents online",
+						"pdf protection with custom permissions",
+						"password protect pdf without software",
+						"professional pdf security tool"
+					],
+					"routes": [
+						"/pdf-protect",
+						"/pdf-password-protect",
+						"/add-password-to-pdf",
+						"/secure-pdf-online",
+						"/pdf-encryption"
+					],
+					"features": [
+						"256-bit AES encryption",
+						"Custom permissions control",
+						"Password strength analysis",
+						"Granular access controls",
+						"Printing restrictions",
+						"Copy protection",
+						"Edit prevention",
+						"Instant encryption"
+					],
+					"useCases": [
+						"Confidential documents",
+						"Business reports",
+						"Legal contracts",
+						"Financial statements",
+						"Personal documents",
+						"Intellectual property"
+					],
+					"fileFormats": ["PDF"],
+					"maxFileSize": "50MB",
+					"processingTime": "2-8 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 145000,
+					"difficulty": "Medium",
+					"cpc": "$1.55",
+					"intent": "High"
+				},
+				{
+					"id": "pdf-unlocker",
+					"name": "PDF Password Unlocker",
+					"shortName": "Unlock",
+					"description": "Remove password protection from PDF files. Unlock restricted PDFs to enable printing, copying, and editing.",
+					"longDescription": "Professional PDF unlocker tool that removes password restrictions and enables full access to your documents. Perfect for unlocking your own protected files.",
+					"category": "pdf",
+					"subcategory": "security",
+					"primaryKeyword": "pdf unlocker",
+					"keywords": [
+						"unlock pdf",
+						"remove pdf password",
+						"pdf password remover",
+						"unlock pdf online",
+						"pdf unlocker free",
+						"remove pdf restrictions",
+						"pdf password breaker",
+						"decrypt pdf online"
+					],
+					"longTailKeywords": [
+						"remove password from pdf online free",
+						"unlock password protected pdf",
+						"pdf password remover tool",
+						"remove restrictions from pdf",
+						"unlock pdf for printing and copying",
+						"pdf decrypt tool online",
+						"remove owner password from pdf"
+					],
+					"routes": [
+						"/pdf-unlocker",
+						"/unlock-pdf-online",
+						"/remove-pdf-password",
+						"/pdf-password-remover",
+						"/decrypt-pdf"
+					],
+					"features": [
+						"Password removal",
+						"Restriction removal",
+						"Permission unlocking",
+						"Instant processing",
+						"Secure handling",
+						"No software required",
+						"Batch processing",
+						"Privacy protection"
+					],
+					"useCases": [
+						"Unlock own documents",
+						"Enable printing",
+						"Allow text copying",
+						"Remove editing blocks",
+						"Access restrictions",
+						"Document recovery"
+					],
+					"fileFormats": ["PDF"],
+					"maxFileSize": "50MB",
+					"processingTime": "1-5 seconds",
+					"popular": true,
+					"trending": false,
+					"completed": true,
+					"monthlySearches": 178000,
+					"difficulty": "Medium",
+					"cpc": "$1.45",
+					"intent": "High"
+				},
+				{
+					"id": "pdf-rotate",
+					"name": "PDF Rotate Tool",
+					"shortName": "Rotate",
+					"description": "Rotate PDF pages to correct orientation. Fix upside-down pages and align mixed orientations with live preview.",
+					"longDescription": "Professional PDF rotation tool with live preview and batch operations. Perfect for fixing scanned documents, correcting orientations, and preparing files for printing.",
+					"category": "pdf",
+					"subcategory": "editing",
+					"primaryKeyword": "pdf rotate",
+					"keywords": [
+						"rotate pdf pages",
+						"fix pdf orientation",
+						"rotate pdf online",
+						"pdf page rotation",
+						"correct pdf pages",
+						"rotate pdf free",
+						"pdf orientation fix",
+						"turn pdf pages"
+					],
+					"longTailKeywords": [
+						"rotate pdf pages online free",
+						"fix upside down pdf pages",
+						"correct pdf page orientation",
+						"rotate individual pdf pages",
+						"batch rotate pdf pages",
+						"pdf rotation tool with preview",
+						"fix scanned document orientation"
+					],
+					"routes": [
+						"/pdf-rotate",
+						"/rotate-pdf-pages",
+						"/fix-pdf-orientation",
+						"/pdf-page-rotation",
+						"/correct-pdf-pages"
+					],
+					"features": [
+						"Live page preview",
+						"Individual page rotation",
+						"Batch operations",
+						"90-degree increments",
+						"Selective rotation",
+						"Undo/redo support",
+						"Page reordering",
+						"Instant processing"
+					],
+					"useCases": [
+						"Fix scanned documents",
+						"Correct page orientation",
+						"Prepare for printing",
+						"Align mixed pages",
+						"Document cleanup",
+						"Professional formatting"
+					],
+					"fileFormats": ["PDF"],
+					"maxFileSize": "50MB",
+					"processingTime": "2-10 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 134000,
+					"difficulty": "Low",
+					"cpc": "$1.20",
+					"intent": "High"
+				},
+				{
+					"id": "pdf-add-page-numbers",
+					"name": "PDF Add Page Numbers",
+					"shortName": "Number Pages",
+					"description": "Add customizable page numbers to PDF documents. Choose position, format, styling, and advanced options.",
+					"longDescription": "Professional page numbering tool for PDF documents with full customization options. Perfect for reports, books, presentations, and official documents requiring professional numbering.",
+					"category": "pdf",
+					"subcategory": "editing",
+					"primaryKeyword": "add page numbers to pdf",
+					"keywords": [
+						"pdf page numbering",
+						"number pdf pages",
+						"pdf page numbers online",
+						"add page numbers pdf free",
+						"pdf numbering tool",
+						"page number generator",
+						"pdf pagination",
+						"number pages pdf"
+					],
+					"longTailKeywords": [
+						"add page numbers to pdf online free",
+						"pdf page numbering with custom format",
+						"professional pdf page numbering",
+						"add page numbers with custom position",
+						"pdf numbering tool with preview",
+						"batch add page numbers to pdf",
+						"custom pdf page number styles"
+					],
+					"routes": [
+						"/pdf-add-page-numbers",
+						"/pdf-page-numbering",
+						"/number-pdf-pages",
+						"/add-page-numbers-online",
+						"/pdf-pagination"
+					],
+					"features": [
+						"Custom positioning",
+						"Multiple number formats",
+						"Font customization",
+						"Color selection",
+						"Margin control",
+						"Skip pages option",
+						"Live preview",
+						"Professional styling"
+					],
+					"useCases": [
+						"Business reports",
+						"Academic papers",
+						"Books and manuscripts",
+						"Legal documents",
+						"Presentations",
+						"Official documentation"
+					],
+					"fileFormats": ["PDF"],
+					"maxFileSize": "50MB",
+					"processingTime": "3-12 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 89000,
+					"difficulty": "Medium",
+					"cpc": "$1.30",
+					"intent": "High"
+				},
+				{
+					"id": "jpg-to-pdf",
+					"name": "JPG to PDF Converter",
+					"shortName": "JPG2PDF",
+					"description": "Convert JPG, JPEG, PNG, and other images to PDF documents. Combine multiple images into a single PDF with custom layouts.",
+					"longDescription": "Professional image to PDF converter supporting batch processing with custom page layouts, compression settings, and professional formatting options.",
+					"category": "pdf",
+					"subcategory": "conversion",
+					"primaryKeyword": "jpg to pdf",
+					"keywords": [
+						"jpeg to pdf",
+						"png to pdf",
+						"image to pdf converter",
+						"convert images to pdf",
+						"photos to pdf",
+						"picture to pdf online",
+						"batch image to pdf",
+						"jpg pdf converter"
+					],
+					"longTailKeywords": [
+						"convert jpg to pdf online free",
+						"batch convert images to pdf",
+						"jpg to pdf with custom layout",
+						"convert multiple images to single pdf",
+						"photo album to pdf converter",
+						"image to pdf with compression",
+						"professional image to pdf tool"
+					],
+					"routes": [
+						"/jpg-to-pdf",
+						"/jpeg-to-pdf",
+						"/image-to-pdf",
+						"/photos-to-pdf",
+						"/convert-images-to-pdf"
+					],
+					"features": [
+						"Batch processing up to 50 images",
+						"Custom page sizes",
+						"Layout options",
+						"Image compression",
+						"Quality control",
+						"Drag and drop reordering",
+						"Professional layouts",
+						"Multiple format support"
+					],
+					"useCases": [
+						"Photo albums",
+						"Product catalogs",
+						"Presentation handouts",
+						"Documentation",
+						"Portfolio creation",
+						"Report attachments"
+					],
+					"fileFormats": ["JPG", "JPEG", "PNG", "GIF", "BMP", "WebP"],
+					"maxFileSize": "10MB per image",
+					"processingTime": "3-20 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 234000,
+					"difficulty": "Low",
+					"cpc": "$1.25",
+					"intent": "High"
+				},
+				{
+					"id": "png-to-pdf",
+					"name": "PNG to PDF Converter",
+					"shortName": "PNG2PDF",
+					"description": "Convert PNG images to PDF documents with transparency support. Perfect for graphics, logos, and designs.",
+					"longDescription": "Specialized PNG to PDF converter with full transparency support and professional layout options. Perfect for converting graphics, logos, and designs that require transparent backgrounds.",
+					"category": "pdf",
+					"subcategory": "conversion",
+					"primaryKeyword": "png to pdf",
+					"keywords": [
+						"convert png to pdf",
+						"png images to pdf",
+						"transparency to pdf",
+						"png pdf converter online",
+						"batch png to pdf",
+						"png to pdf with transparency",
+						"graphics to pdf",
+						"logo to pdf converter"
+					],
+					"longTailKeywords": [
+						"convert png to pdf online free",
+						"png to pdf with transparency support",
+						"batch convert png images to pdf",
+						"png graphics to pdf converter",
+						"logo png to pdf conversion",
+						"transparent png to pdf tool",
+						"professional png to pdf converter"
+					],
+					"routes": [
+						"/png-to-pdf",
+						"/convert-png-to-pdf",
+						"/png-images-to-pdf",
+						"/graphics-to-pdf",
+						"/transparent-png-to-pdf"
+					],
+					"features": [
+						"Transparency preservation",
+						"Batch processing",
+						"Professional layouts",
+						"Custom page sizes",
+						"Quality optimization",
+						"Background options",
+						"Layout customization",
+						"High-quality output"
+					],
+					"useCases": [
+						"Logo documentation",
+						"Graphic portfolios",
+						"Design presentations",
+						"Transparent graphics",
+						"Marketing materials",
+						"Brand guidelines"
+					],
+					"fileFormats": ["PNG", "JPG", "JPEG", "GIF", "BMP", "WebP"],
+					"maxFileSize": "10MB per image",
+					"processingTime": "3-20 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 156000,
+					"difficulty": "Low",
+					"cpc": "$1.20",
+					"intent": "High"
+				}
+			]
+		},
+		"video": {
+			"name": "Video Tools",
+			"slug": "video-tools",
+			"description": "Professional video processing tools for compression, conversion, editing, and optimization. Create GIFs, trim videos, and convert formats.",
+			"icon": "VideoIcon",
+			"seoTitle": "Free Video Tools Online - Compress, Convert, Edit Videos | 30tools",
+			"seoDescription": "Professional video tools: compress videos, convert formats (MP4, AVI, MOV), create GIFs, trim clips, and edit videos online. Free and fast processing.",
+			"keywords": [
+				"video tools online",
+				"compress video free",
+				"video converter online",
+				"video to gif converter",
+				"video editor online",
+				"video compressor free",
+				"video format converter",
+				"video trimmer online"
+			],
+			"breadcrumb": ["Home", "Video Tools"],
+			"tools": [
+				{
+					"id": "video-compressor",
+					"name": "Video Compressor",
+					"shortName": "Compress",
+					"description": "Compress video files to reduce size by up to 80% while maintaining quality. Support for MP4, AVI, MOV formats.",
+					"longDescription": "Advanced video compression tool that reduces file sizes significantly while preserving visual quality. Perfect for sharing on social media, email, or saving storage space.",
+					"category": "video",
+					"subcategory": "compression",
+					"primaryKeyword": "video compressor",
+					"keywords": [
+						"compress video online",
+						"video compressor free",
+						"reduce video size",
+						"video file compressor",
+						"compress mp4 online",
+						"video size reducer",
+						"shrink video file",
+						"optimize video online"
+					],
+					"longTailKeywords": [
+						"compress video file online free no watermark",
+						"reduce video size for email attachment",
+						"compress large video files for whatsapp",
+						"video compressor online free without losing quality",
+						"compress mp4 video for web upload",
+						"reduce video file size for instagram",
+						"compress video to specific size online"
+					],
+					"routes": [
+						"/video-compressor",
+						"/compress-video-online",
+						"/reduce-video-size",
+						"/video-size-reducer",
+						"/optimize-video-online"
+					],
+					"features": [
+						"Up to 80% size reduction",
+						"Quality presets",
+						"Custom compression settings",
+						"Batch processing",
+						"Format preservation",
+						"Preview before download",
+						"No watermarks",
+						"Fast processing"
+					],
+					"useCases": [
+						"Social media uploads",
+						"Email attachments",
+						"WhatsApp sharing",
+						"Website optimization",
+						"Storage saving",
+						"Streaming preparation"
+					],
+					"fileFormats": ["MP4", "AVI", "MOV", "MKV", "WebM"],
+					"maxFileSize": "500MB",
+					"processingTime": "30-180 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": false,
+					"monthlySearches": 187000,
+					"difficulty": "Medium",
+					"cpc": "$1.35",
+					"intent": "High"
+				},
+				{
+					"id": "video-to-gif",
+					"name": "Video to GIF Converter",
+					"shortName": "GIF",
+					"description": "Convert video files to animated GIFs online. Trim videos, adjust frame rate, and create high-quality GIFs for social media.",
+					"longDescription": "Professional video to GIF converter with advanced options for trimming, frame rate adjustment, and quality optimization. Perfect for creating animated GIFs for social media, websites, and presentations.",
+					"category": "video",
+					"subcategory": "conversion",
+					"primaryKeyword": "video to gif converter",
+					"keywords": [
+						"convert video to gif",
+						"video to gif online",
+						"make gif from video",
+						"gif creator from video",
+						"video gif converter",
+						"animated gif maker",
+						"mp4 to gif converter",
+						"create gif online"
+					],
+					"longTailKeywords": [
+						"convert mp4 video to gif online free",
+						"make animated gif from video clip",
+						"video to gif converter with frame control",
+						"convert long video to gif online",
+						"create high quality gif from video",
+						"trim video and convert to gif",
+						"batch video to gif converter online"
+					],
+					"routes": [
+						"/video-to-gif",
+						"/convert-video-to-gif",
+						"/gif-creator",
+						"/animated-gif-maker",
+						"/mp4-to-gif"
+					],
+					"features": [
+						"Custom time range selection",
+						"Frame rate adjustment",
+						"GIF quality control",
+						"Size optimization",
+						"Preview before conversion",
+						"Batch processing",
+						"Multiple video formats",
+						"No watermarks"
+					],
+					"useCases": [
+						"Social media posts",
+						"Website animations",
+						"Email attachments",
+						"Presentations",
+						"Tutorials",
+						"Memes creation"
+					],
+					"fileFormats": ["MP4", "AVI", "MOV", "MKV", "WebM", "GIF"],
+					"maxFileSize": "200MB",
+					"processingTime": "15-60 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": false,
+					"monthlySearches": 245000,
+					"difficulty": "Medium",
+					"cpc": "$1.25",
+					"intent": "High"
+				}
+			]
+		},
+		"audio": {
+			"name": "Audio Tools",
+			"slug": "audio-tools",
+			"description": "Professional audio processing tools for conversion, compression, editing, and optimization. Convert formats, trim audio, and enhance quality.",
+			"icon": "MusicIcon",
+			"seoTitle": "Free Audio Tools Online - Convert, Compress, Edit Audio | 30tools",
+			"seoDescription": "Professional audio tools: convert audio formats (MP3, WAV, FLAC), compress files, trim audio clips, and edit sound online. Free and high quality.",
+			"keywords": [
+				"audio tools online",
+				"audio converter free",
+				"convert audio format",
+				"audio compressor online",
+				"audio editor free",
+				"mp3 converter online",
+				"audio trimmer tool",
+				"sound editor online"
+			],
+			"breadcrumb": ["Home", "Audio Tools"],
+			"tools": [
+				{
+					"id": "audio-compressor",
+					"name": "Audio Compressor",
+					"shortName": "Compress",
+					"description": "Compress audio files to reduce size by up to 90% while maintaining quality. Support for MP3, WAV, FLAC formats.",
+					"longDescription": "Advanced audio compression tool that reduces file sizes significantly while preserving audio quality. Perfect for sharing on social media, email, or saving storage space.",
+					"category": "audio",
+					"subcategory": "compression",
+					"primaryKeyword": "audio compressor",
+					"keywords": [
+						"compress audio online",
+						"audio compressor free",
+						"reduce audio size",
+						"audio file compressor",
+						"compress mp3 online",
+						"audio size reducer",
+						"shrink audio file",
+						"optimize audio online"
+					],
+					"longTailKeywords": [
+						"compress audio file online free no watermark",
+						"reduce audio size for email attachment",
+						"compress large audio files for whatsapp",
+						"audio compressor online free without losing quality",
+						"compress mp3 audio for web upload",
+						"reduce audio file size for sharing",
+						"compress audio to specific size online"
+					],
+					"routes": [
+						"/audio-compressor",
+						"/compress-audio-online",
+						"/reduce-audio-size",
+						"/audio-size-reducer",
+						"/optimize-audio-online"
+					],
+					"features": [
+						"Up to 90% size reduction",
+						"Quality presets",
+						"Custom compression settings",
+						"Batch processing",
+						"Format preservation",
+						"Preview before download",
+						"No watermarks",
+						"Fast processing"
+					],
+					"useCases": [
+						"Email attachments",
+						"WhatsApp sharing",
+						"Website optimization",
+						"Storage saving",
+						"Podcast distribution",
+						"Music streaming"
+					],
+					"fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC"],
+					"maxFileSize": "100MB",
+					"processingTime": "10-60 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 89000,
+					"difficulty": "Medium",
+					"cpc": "$1.15",
+					"intent": "High"
+				},
+				{
+					"id": "audio-format-converter",
+					"name": "Audio Format Converter",
+					"shortName": "Convert",
+					"description": "Convert audio between formats: MP3, WAV, FLAC, OGG, AAC, M4A. High-quality conversion with metadata preservation.",
+					"longDescription": "Professional audio format converter supporting all popular formats. Convert between MP3, WAV, FLAC, OGG, AAC, and M4A with quality control and metadata preservation.",
+					"category": "audio",
+					"subcategory": "conversion",
+					"primaryKeyword": "audio converter",
+					"keywords": [
+						"mp3 converter online",
+						"wav to mp3 converter",
+						"flac to mp3 converter",
+						"audio format converter",
+						"convert audio online",
+						"m4a to mp3 converter",
+						"ogg converter online",
+						"audio file converter"
+					],
+					"longTailKeywords": [
+						"convert wav to mp3 online free",
+						"flac to mp3 converter high quality",
+						"batch audio converter online free",
+						"convert m4a to mp3 without quality loss",
+						"audio format converter with metadata",
+						"convert ogg to mp3 online tool",
+						"free audio converter no file size limit"
+					],
+					"routes": [
+						"/audio-converter",
+						"/mp3-converter",
+						"/wav-to-mp3",
+						"/flac-converter",
+						"/audio-format-converter"
+					],
+					"features": [
+						"Multiple format support",
+						"Batch conversion",
+						"Quality control",
+						"Metadata preservation",
+						"Custom bitrate settings",
+						"Sample rate adjustment",
+						"No file size limits",
+						"Fast processing"
+					],
+					"useCases": [
+						"Music format conversion",
+						"Podcast preparation",
+						"Audio file compatibility",
+						"Digital audio workstation",
+						"Mobile device optimization",
+						"Streaming platform prep"
+					],
+					"fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC", "M4A", "WMA"],
+					"maxFileSize": "200MB",
+					"processingTime": "15-90 seconds",
+					"popular": true,
+					"trending": true,
+					"completed": false,
+					"monthlySearches": 290000,
+					"difficulty": "Medium",
+					"cpc": "$1.45",
+					"intent": "High"
+				},
+				{
+					"id": "audio-trimmer",
+					"name": "Audio Trimmer",
+					"shortName": "Trim",
+					"description": "Trim and cut audio files online. Extract specific portions from audio tracks with precision timing controls.",
+					"longDescription": "Professional audio trimmer for cutting and extracting specific portions from audio files. Perfect for creating ringtones, podcast clips, and music samples.",
+					"category": "audio",
+					"subcategory": "editing",
+					"primaryKeyword": "audio trimmer",
+					"keywords": [
+						"cut audio online",
+						"trim mp3 online",
+						"audio cutter free",
+						"split audio file",
+						"extract audio clip",
+						"audio editor online",
+						"crop audio file",
+						"audio splitter tool"
+					],
+					"longTailKeywords": [
+						"trim audio file online free no upload",
+						"cut mp3 file to specific length",
+						"extract audio clip from song",
+						"trim audio for ringtone maker",
+						"cut audio with precise timing",
+						"split long audio file online",
+						"audio trimmer with waveform view"
+					],
+					"routes": [
+						"/audio-trimmer",
+						"/cut-audio-online",
+						"/trim-mp3",
+						"/audio-cutter",
+						"/extract-audio-clip"
+					],
+					"features": [
+						"Precise timing controls",
+						"Waveform visualization",
+						"Fade in/out effects",
+						"Multiple selection support",
+						"Real-time preview",
+						"Batch trimming",
+						"No quality loss",
+						"Easy drag controls"
+					],
+					"useCases": [
+						"Ringtone creation",
+						"Podcast editing",
+						"Music sampling",
+						"Audio clips for videos",
+						"Sound effect extraction",
+						"Voice message editing"
+					],
+					"fileFormats": ["MP3", "WAV", "FLAC", "OGG", "AAC", "M4A"],
+					"maxFileSize": "100MB",
+					"processingTime": "5-30 seconds",
+					"popular": true,
+					"trending": false,
+					"completed": false,
+					"monthlySearches": 150000,
+					"difficulty": "Medium",
+					"cpc": "$1.10",
+					"intent": "High"
+				}
+			]
+		},
+		"text": {
+			"name": "Text Tools",
+			"slug": "text-tools",
+			"description": "Comprehensive text processing tools for counting, formatting, converting, and analyzing text. Essential utilities for writers and developers.",
+			"icon": "TypeIcon",
+			"seoTitle": "Free Text Tools Online - Word Counter, Case Converter, Text Editor | 30tools",
+			"seoDescription": "Professional text tools: count words and characters, convert text case, generate passwords, create QR codes, and format text online. Free utilities.",
+			"keywords": [
+				"text tools online",
+				"word counter free",
+				"character counter",
+				"text case converter",
+				"password generator",
+				"text formatter online",
+				"qr code generator",
+				"lorem ipsum generator"
+			],
+			"breadcrumb": ["Home", "Text Tools"],
+			"tools": [
+				{
+					"id": "word-counter",
+					"name": "Word Counter",
+					"shortName": "Count",
+					"description": "Count words, characters, sentences, and paragraphs in real-time. Perfect for essays, articles, and content creation.",
+					"longDescription": "Professional word counter tool with real-time analysis. Count words, characters (with/without spaces), sentences, paragraphs, and get reading time estimates. Essential for writers, students, and content creators.",
+					"category": "text",
+					"subcategory": "analysis",
+					"primaryKeyword": "word counter",
+					"keywords": [
+						"word counter online",
+						"character counter free",
+						"word count tool",
+						"count words online",
+						"text counter",
+						"sentence counter",
+						"paragraph counter",
+						"writing tools"
+					],
+					"longTailKeywords": [
+						"free word counter online no registration",
+						"word and character counter for essays",
+						"count words characters sentences paragraphs",
+						"real time word counter for writing",
+						"academic word counter with reading time",
+						"professional text analysis tool free",
+						"word counter for social media posts"
+					],
+					"routes": [
+						"/word-counter",
+						"/character-counter",
+						"/text-counter",
+						"/count-words-online",
+						"/word-count-tool"
+					],
+					"features": [
+						"Real-time counting",
+						"Words, characters, sentences, paragraphs",
+						"Reading time estimation",
+						"Speaking time calculation",
+						"Most common words analysis",
+						"Writing statistics",
+						"Export reports",
+						"Mobile-friendly"
+					],
+					"useCases": [
+						"Essay writing",
+						"Social media posts",
+						"Academic papers",
+						"Blog articles",
+						"SEO content",
+						"Marketing copy"
+					],
+					"fileFormats": ["Text"],
+					"maxFileSize": "Unlimited",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 245000,
+					"difficulty": "Low",
+					"cpc": "$0.95",
+					"intent": "High"
+				},
+				{
+					"id": "password-generator",
+					"name": "Password Generator",
+					"shortName": "Generate",
+					"description": "Generate strong, secure passwords with customizable length and character sets. Perfect for online security.",
+					"longDescription": "Create cryptographically secure passwords with full customization. Choose length, character types, and advanced options to generate passwords that protect your accounts.",
+					"category": "text",
+					"subcategory": "security",
+					"primaryKeyword": "password generator",
+					"keywords": [
+						"secure password generator",
+						"strong password generator",
+						"random password generator",
+						"password creator online",
+						"password maker free",
+						"generate password online",
+						"password tool secure",
+						"create strong password"
+					],
+					"longTailKeywords": [
+						"free secure password generator online",
+						"strong password generator no storage",
+						"cryptographically secure password creator",
+						"custom length password generator free",
+						"password generator with special characters",
+						"bulk password generator for accounts",
+						"password strength checker generator"
+					],
+					"routes": [
+						"/password-generator",
+						"/secure-password-generator",
+						"/strong-password-creator",
+						"/random-password-maker",
+						"/generate-password-online"
+					],
+					"features": [
+						"Customizable length (4-128 chars)",
+						"Multiple character sets",
+						"Password strength analysis",
+						"Generate multiple passwords",
+						"Exclude similar characters",
+						"No storage or logging",
+						"Copy to clipboard",
+						"Cryptographically secure"
+					],
+					"useCases": [
+						"Account security",
+						"Website registration",
+						"Password manager",
+						"Business accounts",
+						"Personal security",
+						"Team password creation"
+					],
+					"fileFormats": ["Text"],
+					"maxFileSize": "N/A",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 198000,
+					"difficulty": "Low",
+					"cpc": "$1.35",
+					"intent": "High"
+				},
+				{
+					"id": "lorem-ipsum-generator",
+					"name": "Lorem Ipsum Generator",
+					"shortName": "Lorem",
+					"description": "Generate Lorem Ipsum placeholder text instantly. Create dummy text for web design, graphic design, and typesetting.",
+					"longDescription": "Classic Lorem Ipsum generator with full customization. Generate paragraphs, sentences, or words with options for HTML formatting and custom length.",
+					"category": "text",
+					"subcategory": "content",
+					"primaryKeyword": "lorem ipsum generator",
+					"keywords": [
+						"placeholder text generator",
+						"dummy text generator",
+						"lorem ipsum text",
+						"fake text generator",
+						"lipsum generator",
+						"filler text generator",
+						"design placeholder text",
+						"lorem generator"
+					],
+					"longTailKeywords": [
+						"free lorem ipsum generator online",
+						"lorem ipsum placeholder text creator",
+						"dummy text generator for web design",
+						"lorem ipsum with html paragraph tags",
+						"custom length lorem ipsum generator",
+						"lorem ipsum filler text for design",
+						"placeholder content generator free"
+					],
+					"routes": [
+						"/lorem-ipsum-generator",
+						"/placeholder-text-generator",
+						"/dummy-text-generator",
+						"/lipsum-generator",
+						"/lorem-generator"
+					],
+					"features": [
+						"Generate paragraphs, sentences, words",
+						"Customizable text length",
+						"HTML paragraph formatting",
+						"Start with 'Lorem ipsum' option",
+						"Copy to clipboard",
+						"Download as TXT/HTML",
+						"Classic Lorem Ipsum text",
+						"Real-time generation"
+					],
+					"useCases": [
+						"Web design mockups",
+						"Graphic design layouts",
+						"Typography testing",
+						"Content planning",
+						"Template creation",
+						"Print design"
+					],
+					"fileFormats": ["Text", "HTML"],
+					"maxFileSize": "N/A",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": false,
+					"completed": true,
+					"monthlySearches": 156000,
+					"difficulty": "Low",
+					"cpc": "$0.65",
+					"intent": "Medium"
+				},
+				{
+					"id": "qr-code-generator",
+					"name": "QR Code Generator",
+					"shortName": "QR Code",
+					"description": "Generate QR codes for URLs, WiFi, contacts, SMS, and email. Customizable colors and high-resolution output.",
+					"longDescription": "Professional QR code generator supporting multiple data types including websites, WiFi credentials, contact information, text messages, and emails. Customize colors, size, and error correction levels.",
+					"category": "text",
+					"subcategory": "generator",
+					"primaryKeyword": "qr code generator",
+					"keywords": [
+						"qr code generator free",
+						"create qr code online",
+						"qr code maker",
+						"wifi qr code generator",
+						"qr generator online",
+						"custom qr code generator",
+						"qr code creator free",
+						"generate qr code"
+					],
+					"longTailKeywords": [
+						"free qr code generator online no registration",
+						"qr code generator for wifi password sharing",
+						"create custom qr code with logo free",
+						"qr code generator for business cards",
+						"bulk qr code generator for urls",
+						"high resolution qr code generator free",
+						"qr code generator with custom colors"
+					],
+					"routes": [
+						"/qr-code-generator",
+						"/create-qr-code-online",
+						"/qr-generator",
+						"/wifi-qr-code-generator",
+						"/qr-code-maker"
+					],
+					"features": [
+						"Multiple QR code types (URL, WiFi, vCard, SMS, Email)",
+						"High-resolution output up to 800×800px",
+						"Custom foreground and background colors",
+						"Adjustable error correction levels",
+						"Real-time preview and generation",
+						"Download as PNG image",
+						"Copy to clipboard functionality",
+						"Mobile-friendly interface"
+					],
+					"useCases": [
+						"Website URL sharing",
+						"WiFi password sharing",
+						"Business card contact info",
+						"Marketing campaigns",
+						"Event registration",
+						"Social media profiles"
+					],
+					"fileFormats": ["PNG"],
+					"maxFileSize": "N/A",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 368000,
+					"difficulty": "Medium",
+					"cpc": "$1.25",
+					"intent": "High"
+				},
+				{
+					"id": "text-case-converter",
+					"name": "Text Case Converter",
+					"shortName": "Case Convert",
+					"description": "Convert text to UPPERCASE, lowercase, Title Case, camelCase, snake_case, kebab-case and 16 other formats.",
+					"longDescription": "Professional text case converter supporting 16 different formats including UPPERCASE, lowercase, Title Case, camelCase, PascalCase, snake_case, kebab-case, and more. Perfect for developers, writers, and content creators.",
+					"category": "text",
+					"subcategory": "formatting",
+					"primaryKeyword": "text case converter",
+					"keywords": [
+						"uppercase converter",
+						"lowercase converter",
+						"title case converter",
+						"camelcase converter",
+						"snake case converter",
+						"text transformer online",
+						"case converter tool",
+						"text formatting tool"
+					],
+					"longTailKeywords": [
+						"convert text to uppercase online free",
+						"camelcase to snake case converter",
+						"title case converter for headlines",
+						"text case converter for developers",
+						"uppercase lowercase converter tool",
+						"kebab case converter online free",
+						"bulk text case conversion tool"
+					],
+					"routes": [
+						"/text-case-converter",
+						"/uppercase-converter",
+						"/lowercase-converter",
+						"/title-case-converter",
+						"/camelcase-converter",
+						"/snake-case-converter"
+					],
+					"features": [
+						"16 different case conversion types",
+						"Real-time text transformation",
+						"Copy to clipboard functionality",
+						"Download converted text as file",
+						"Text statistics display",
+						"No character limits",
+						"Mobile-friendly interface",
+						"Privacy-first processing"
+					],
+					"useCases": [
+						"Programming variable naming",
+						"Content writing and editing",
+						"Database field formatting",
+						"CSS class naming",
+						"API endpoint naming",
+						"File and folder naming"
+					],
+					"fileFormats": ["Text"],
+					"maxFileSize": "Unlimited",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 284000,
+					"difficulty": "Low",
+					"cpc": "$0.95",
+					"intent": "High"
+				}
+			]
+		},
+		"developer": {
+			"name": "Developer Tools",
+			"slug": "developer-tools",
+			"description": "Essential developer utilities for JSON formatting, code minification, URL encoding, hash generation, and API testing.",
+			"icon": "CodeIcon",
+			"seoTitle": "Free Developer Tools Online - JSON Formatter, Code Minifier | 30tools",
+			"seoDescription": "Professional developer tools: format JSON, minify CSS/JS, encode URLs, generate hashes, validate HTML, and test APIs online. Free coding utilities.",
+			"keywords": [
+				"developer tools online",
+				"json formatter free",
+				"css minifier online",
+				"javascript minifier",
+				"url encoder decoder",
+				"hash generator tool",
+				"html validator free",
+				"api tester online"
+			],
+			"breadcrumb": ["Home", "Developer Tools"],
+			"tools": [
+				{
+					"id": "json-formatter",
+					"name": "JSON Formatter & Validator",
+					"shortName": "JSON",
+					"description": "Format, validate, and minify JSON data online. Syntax highlighting, error detection, and tree view for complex JSON structures.",
+					"longDescription": "Professional JSON formatter with syntax highlighting, validation, minification, and tree view. Essential tool for developers working with APIs, configuration files, and JSON data processing.",
+					"category": "developer",
+					"subcategory": "data-formatting",
+					"primaryKeyword": "json formatter",
+					"keywords": [
+						"json validator online",
+						"json beautifier free",
+						"json minifier tool",
+						"format json online",
+						"validate json syntax",
+						"json parser online",
+						"json editor free",
+						"json pretty print"
+					],
+					"longTailKeywords": [
+						"free json formatter validator online no signup",
+						"json syntax validator with error detection",
+						"beautify json online with syntax highlighting",
+						"minify json data for api responses",
+						"format large json files online free",
+						"json tree view explorer online tool",
+						"validate json schema online free"
+					],
+					"routes": [
+						"/json-formatter",
+						"/json-validator",
+						"/json-beautifier",
+						"/format-json-online",
+						"/validate-json-syntax"
+					],
+					"features": [
+						"JSON syntax validation",
+						"Pretty print formatting",
+						"JSON minification",
+						"Syntax highlighting",
+						"Error detection with line numbers",
+						"Tree view for complex JSON",
+						"Copy formatted output",
+						"Download as JSON file"
+					],
+					"useCases": [
+						"API response formatting",
+						"Configuration file validation",
+						"Debug JSON syntax errors",
+						"Minify JSON for production",
+						"Format API documentation",
+						"Validate webhook payloads"
+					],
+					"fileFormats": ["JSON"],
+					"maxFileSize": "10MB",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 380000,
+					"difficulty": "Low",
+					"cpc": "$1.95",
+					"intent": "High"
+				},
+				{
+					"id": "hash-generator",
+					"name": "Hash Generator",
+					"shortName": "Hash",
+					"description": "Generate MD5, SHA1, SHA256, SHA512 hashes for text and files. Secure hash calculator for data integrity verification.",
+					"longDescription": "Professional hash generator supporting multiple algorithms including MD5, SHA1, SHA256, and SHA512. Essential for data integrity verification, password hashing, and security applications.",
+					"category": "developer",
+					"subcategory": "security",
+					"primaryKeyword": "hash generator",
+					"keywords": [
+						"md5 hash generator",
+						"sha256 generator online",
+						"sha1 hash calculator",
+						"sha512 hash tool",
+						"file hash generator",
+						"checksum calculator",
+						"hash function online",
+						"crypto hash generator"
+					],
+					"longTailKeywords": [
+						"free md5 hash generator online no upload",
+						"sha256 hash calculator for file integrity",
+						"generate password hash online secure",
+						"bulk hash generator for multiple files",
+						"compare file hashes online tool",
+						"verify file integrity with hash",
+						"secure hash generator for developers"
+					],
+					"routes": [
+						"/hash-generator",
+						"/md5-generator",
+						"/sha256-generator",
+						"/checksum-calculator",
+						"/file-hash-generator"
+					],
+					"features": [
+						"Multiple hash algorithms",
+						"Text and file hashing",
+						"Batch hash generation",
+						"Hash comparison tool",
+						"Copy hash results",
+						"Secure client-side processing",
+						"No file upload required",
+						"Real-time hash calculation"
+					],
+					"useCases": [
+						"File integrity verification",
+						"Password security",
+						"Data validation",
+						"Digital forensics",
+						"Software distribution",
+						"Database security"
+					],
+					"fileFormats": ["Any file type", "Text"],
+					"maxFileSize": "100MB",
+					"processingTime": "1-5 seconds",
+					"popular": true,
+					"trending": false,
+					"completed": true,
+					"monthlySearches": 190000,
+					"difficulty": "Medium",
+					"cpc": "$2.15",
+					"intent": "High"
+				}
+			]
+		},
+		"seo": {
+			"name": "SEO Tools",
+			"slug": "seo-tools",
+			"description": "Professional SEO tools for meta tags, Open Graph, schema markup, sitemaps, and website optimization. Boost your search rankings.",
+			"icon": "SearchIcon",
+			"seoTitle": "Free SEO Tools Online - Meta Tags, Open Graph, Schema | 30tools",
+			"seoDescription": "Professional SEO tools: generate meta tags, Open Graph tags, schema markup, sitemaps, and optimize your website for search engines. Free SEO utilities.",
+			"keywords": [
+				"seo tools online",
+				"meta tags generator",
+				"open graph generator",
+				"schema markup generator",
+				"sitemap generator",
+				"seo optimizer free",
+				"website seo tools",
+				"search engine optimization"
+			],
+			"breadcrumb": ["Home", "SEO Tools"],
+			"tools": [
+				{
+					"id": "meta-tags-generator",
+					"name": "Meta Tags Generator",
+					"shortName": "Meta Tags",
+					"description": "Generate SEO-optimized meta tags for your website. Create title tags, meta descriptions, Open Graph tags, and Twitter Cards.",
+					"longDescription": "Create perfect meta tags for SEO and social media sharing. Generate title tags, meta descriptions, Open Graph tags, and Twitter Cards with real-time character counting and preview.",
+					"category": "seo",
+					"subcategory": "meta-optimization",
+					"primaryKeyword": "meta tags generator",
+					"keywords": [
+						"seo meta tags",
+						"meta tag creator",
+						"html meta tags generator",
+						"open graph generator",
+						"twitter card generator",
+						"meta description generator",
+						"title tag generator",
+						"seo tags generator"
+					],
+					"longTailKeywords": [
+						"free meta tags generator online no registration",
+						"seo meta tags generator with character count",
+						"open graph meta tags generator for social media",
+						"twitter card meta tags generator free",
+						"html meta tags creator for website seo",
+						"meta description generator with preview",
+						"complete meta tags generator for wordpress"
+					],
+					"routes": [
+						"/meta-tags-generator",
+						"/seo-meta-generator",
+						"/html-meta-creator",
+						"/open-graph-generator",
+						"/twitter-card-generator"
+					],
+					"features": [
+						"SEO title tag generation",
+						"Meta description optimization",
+						"Open Graph tags for social media",
+						"Twitter Card meta tags",
+						"Real-time character counting",
+						"Search result preview",
+						"Social media preview",
+						"Copy and download HTML code"
+					],
+					"useCases": [
+						"Website SEO optimization",
+						"Social media sharing",
+						"Blog post optimization",
+						"E-commerce product pages",
+						"Landing page SEO",
+						"Content marketing"
+					],
+					"fileFormats": ["HTML"],
+					"maxFileSize": "N/A",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 78000,
+					"difficulty": "Low",
+					"cpc": "$1.85",
+					"intent": "High"
+				}
+			]
+		},
+		"utilities": {
+			"name": "File & Utility Tools",
+			"slug": "utility-tools",
+			"description": "Essential file processing and utility tools for compression, encryption, conversion, and calculation. Boost your productivity with these handy utilities.",
+			"icon": "FolderIcon",
+			"seoTitle": "Free File & Utility Tools Online - ZIP, Hash, Unit Converter | 30tools",
+			"seoDescription": "Professional utility tools: create ZIP files, generate hashes, convert units, calculate percentages, and process files online. Free productivity tools.",
+			"keywords": [
+				"file tools online",
+				"zip creator free",
+				"hash generator tool",
+				"unit converter online",
+				"percentage calculator",
+				"file utilities free",
+				"productivity tools",
+				"online calculators"
+			],
+			"breadcrumb": ["Home", "Utility Tools"],
+			"tools": [
+				{
+					"id": "zip-creator",
+					"name": "ZIP File Creator",
+					"shortName": "ZIP",
+					"description": "Create ZIP files online by compressing multiple files and folders. Reduce file sizes and organize your files efficiently.",
+					"longDescription": "Professional ZIP file creator for compressing multiple files and folders into a single archive. Perfect for file organization, email attachments, and storage optimization.",
+					"category": "utilities",
+					"subcategory": "compression",
+					"primaryKeyword": "zip creator",
+					"keywords": [
+						"create zip file online",
+						"zip file maker",
+						"compress files to zip",
+						"online zip creator",
+						"zip archive creator",
+						"file compression tool",
+						"make zip file",
+						"zip files online"
+					],
+					"longTailKeywords": [
+						"create zip file from multiple files",
+						"compress folder to zip online",
+						"make zip archive for email",
+						"batch compress files to zip",
+						"create password protected zip",
+						"zip multiple files together",
+						"online zip file generator"
+					],
+					"routes": [
+						"/zip-creator",
+						"/create-zip-file",
+						"/zip-maker",
+						"/compress-to-zip",
+						"/zip-archive-creator"
+					],
+					"features": [
+						"Multiple file support",
+						"Folder compression",
+						"Password protection",
+						"Compression level control",
+						"Batch processing",
+						"Drag and drop interface",
+						"No file size limits",
+						"Fast compression"
+					],
+					"useCases": [
+						"Email attachments",
+						"File organization",
+						"Storage optimization",
+						"File sharing",
+						"Backup creation",
+						"Archive management"
+					],
+					"fileFormats": ["Any file type", "ZIP"],
+					"maxFileSize": "500MB total",
+					"processingTime": "5-60 seconds",
+					"popular": true,
+					"trending": false,
+					"completed": false,
+					"monthlySearches": 220000,
+					"difficulty": "Medium",
+					"cpc": "$1.25",
+					"intent": "High"
+				},
+				{
+					"id": "unit-converter",
+					"name": "Unit Converter",
+					"shortName": "Convert",
+					"description": "Convert between units of length, weight, temperature, volume, area, and more. Comprehensive unit conversion calculator.",
+					"longDescription": "Professional unit converter supporting length, weight, temperature, volume, area, speed, and energy conversions. Essential tool for students, engineers, and professionals.",
+					"category": "utilities",
+					"subcategory": "calculation",
+					"primaryKeyword": "unit converter",
+					"keywords": [
+						"length converter online",
+						"weight converter kg to lbs",
+						"temperature converter celsius",
+						"volume converter liters",
+						"area converter square meters",
+						"speed converter mph kmh",
+						"metric converter online",
+						"unit conversion calculator"
+					],
+					"longTailKeywords": [
+						"convert feet to meters online",
+						"celsius to fahrenheit converter",
+						"kg to pounds converter calculator",
+						"liters to gallons conversion tool",
+						"square feet to square meters",
+						"miles per hour to kilometers",
+						"comprehensive unit converter tool"
+					],
+					"routes": [
+						"/unit-converter",
+						"/convert-units",
+						"/metric-converter",
+						"/length-converter",
+						"/weight-converter"
+					],
+					"features": [
+						"20+ unit categories",
+						"Instant conversion",
+						"Precision results",
+						"Historical conversions",
+						"Favorites system",
+						"Reverse conversion",
+						"Copy results",
+						"Mobile optimized"
+					],
+					"useCases": [
+						"Engineering calculations",
+						"Cooking measurements",
+						"Travel planning",
+						"Academic work",
+						"Construction projects",
+						"International business"
+					],
+					"fileFormats": ["Text"],
+					"maxFileSize": "N/A",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": false,
+					"monthlySearches": 380000,
+					"difficulty": "Low",
+					"cpc": "$0.75",
+					"intent": "High"
+				},
+				{
+					"id": "percentage-calculator",
+					"name": "Percentage Calculator",
+					"shortName": "Percent",
+					"description": "Calculate percentages, percentage increase/decrease, and find what percent one number is of another. Comprehensive percentage tool.",
+					"longDescription": "Professional percentage calculator for all types of percentage calculations including increase/decrease, discounts, tips, and percentage relationships.",
+					"category": "utilities",
+					"subcategory": "calculation",
+					"primaryKeyword": "percentage calculator",
+					"keywords": [
+						"calculate percentage online",
+						"percentage increase calculator",
+						"percentage decrease calculator",
+						"percent of number calculator",
+						"discount percentage calculator",
+						"tip percentage calculator",
+						"percentage change calculator",
+						"percent calculator online"
+					],
+					"longTailKeywords": [
+						"calculate percentage increase between two numbers",
+						"find what percent one number is of another",
+						"percentage discount calculator for shopping",
+						"calculate tip percentage for restaurant",
+						"percentage change calculator for business",
+						"find percentage of total amount",
+						"calculate grade percentage from marks"
+					],
+					"routes": [
+						"/percentage-calculator",
+						"/calculate-percentage",
+						"/percent-calculator",
+						"/percentage-tool",
+						"/percent-change"
+					],
+					"features": [
+						"Multiple calculation types",
+						"Percentage increase/decrease",
+						"Discount calculations",
+						"Tip calculator",
+						"Grade percentage",
+						"Step-by-step solutions",
+						"Copy results",
+						"History tracking"
+					],
+					"useCases": [
+						"Shopping discounts",
+						"Restaurant tips",
+						"Grade calculations",
+						"Business analytics",
+						"Financial planning",
+						"Statistical analysis"
+					],
+					"fileFormats": ["Text"],
+					"maxFileSize": "N/A",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": false,
+					"monthlySearches": 340000,
+					"difficulty": "Low",
+					"cpc": "$0.85",
+					"intent": "High"
+				}
+			]
+		},
+		"design": {
+			"name": "Design Tools",
+			"slug": "design-tools",
+			"description": "Creative design utilities for color palettes, gradients, fonts, icons, and CSS generators. Perfect for designers and developers.",
+			"icon": "PaletteIcon",
+			"seoTitle": "Free Design Tools Online - Color Palette, Gradient Generator | 30tools",
+			"seoDescription": "Professional design tools: generate color palettes, create CSS gradients, preview fonts, make icons, and design elements online. Free creative utilities.",
+			"keywords": [
+				"design tools online",
+				"color palette generator",
+				"gradient generator css",
+				"font preview tool",
+				"icon generator free",
+				"logo maker online",
+				"css generator tools",
+				"design utilities free"
+			],
+			"breadcrumb": ["Home", "Design Tools"],
+			"tools": [
+				{
+					"id": "whiteboard",
+					"name": "Online Whiteboard",
+					"shortName": "Whiteboard",
+					"description": "Free unlimited online whiteboard for drawing, sketching, brainstorming and collaboration. No registration required.",
+					"longDescription": "Professional online whiteboard with unlimited drawing space, multiple tools, and export capabilities. Perfect for brainstorming, education, design sketching, and collaboration. Features pen, eraser, shapes, colors, and undo/redo functionality.",
+					"category": "design",
+					"subcategory": "drawing",
+					"primaryKeyword": "online whiteboard",
+					"keywords": [
+						"online whiteboard",
+						"free whiteboard",
+						"drawing board",
+						"sketch pad",
+						"digital whiteboard",
+						"collaborative whiteboard",
+						"whiteboard online free",
+						"drawing tool online"
+					],
+					"longTailKeywords": [
+						"free online whiteboard unlimited",
+						"digital whiteboard for brainstorming",
+						"online drawing board free",
+						"collaborative whiteboard tool",
+						"sketch pad online free",
+						"whiteboard app no registration",
+						"online whiteboard with export"
+					],
+					"routes": [
+						"/whiteboard",
+						"/online-whiteboard",
+						"/free-whiteboard",
+						"/drawing-board",
+						"/sketch-pad"
+					],
+					"features": [
+						"Unlimited drawing space",
+						"Multiple drawing tools",
+						"Color palette & custom colors",
+						"Export PNG/JPG",
+						"Undo/Redo functionality",
+						"No registration required",
+						"Shapes and lines",
+						"Adjustable brush sizes"
+					],
+					"useCases": [
+						"Brainstorming sessions",
+						"Educational explanations",
+						"Design sketching",
+						"Meeting notes",
+						"Mind mapping",
+						"Wireframe creation"
+					],
+					"fileFormats": ["PNG", "JPG"],
+					"maxFileSize": "Unlimited",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 95000,
+					"difficulty": "Low",
+					"cpc": "$0.90",
+					"intent": "High"
+				}
+			]
+		},
+		"code": {
+			"name": "Code Tools",
+			"slug": "code-tools",
+			"description": "Essential code utilities for formatting, minifying, converting, and analyzing code and data. Fast, privacy-first, and developer-friendly.",
+			"icon": "CodeIcon",
+			"seoTitle": "Free Code Tools Online - Format, Minify, Convert Code | 30tools",
+			"seoDescription": "Professional code tools: format JSON, minify CSS/JS/HTML, convert CSV to JSON, test regex, and convert Markdown to HTML online. Free, fast, and secure.",
+			"keywords": [
+				"code tools online",
+				"json formatter",
+				"code minifier",
+				"csv to json converter",
+				"regex tester",
+				"markdown to html",
+				"developer utilities",
+				"online code tools"
+			],
+			"breadcrumb": ["Home", "Code Tools"],
+			"tools": [
+				{
+					"id": "json-formatter",
+					"name": "JSON Formatter & Validator",
+					"shortName": "JSON Format",
+					"description": "Format, validate, and minify JSON data. Instantly beautify or compress JSON for readability or compactness.",
+					"longDescription": "Advanced JSON formatter and validator with error highlighting, minification, and statistics. Perfect for developers, API testing, and data analysis.",
+					"category": "code",
+					"subcategory": "formatting",
+					"primaryKeyword": "json formatter",
+					"keywords": [
+						"json formatter",
+						"json validator",
+						"json beautifier",
+						"json minifier",
+						"format json online",
+						"validate json",
+						"json tool free"
+					],
+					"longTailKeywords": [
+						"free online json formatter and validator",
+						"json beautifier with error highlighting",
+						"minify and format json data online",
+						"json validator for api testing"
+					],
+					"routes": ["/json-formatter"],
+					"features": [
+						"Format and beautify JSON",
+						"Validate JSON syntax",
+						"Minify JSON",
+						"Copy/download result",
+						"Error highlighting",
+						"JSON statistics"
+					],
+					"useCases": [
+						"API development",
+						"Data analysis",
+						"Debugging JSON",
+						"Learning JSON syntax"
+					],
+					"fileFormats": ["JSON"],
+					"maxFileSize": "2MB",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 120000,
+					"difficulty": "Low",
+					"cpc": "$1.10",
+					"intent": "High"
+				},
+				{
+					"id": "csv-to-json",
+					"name": "CSV to JSON Converter",
+					"shortName": "CSV2JSON",
+					"description": "Convert CSV data to JSON format instantly. Paste your CSV, click convert, and copy or download the result.",
+					"longDescription": "Fast CSV to JSON converter with header detection, error handling, and instant download. Perfect for data migration, API work, and spreadsheet conversion.",
+					"category": "code",
+					"subcategory": "conversion",
+					"primaryKeyword": "csv to json",
+					"keywords": [
+						"csv to json",
+						"convert csv to json",
+						"csv json converter",
+						"csv online tool",
+						"csv parser",
+						"csv to json free"
+					],
+					"longTailKeywords": [
+						"free csv to json converter online",
+						"convert csv data to json instantly",
+						"csv to json for api import",
+						"csv to json for spreadsheet export"
+					],
+					"routes": ["/csv-to-json"],
+					"features": [
+						"Paste or upload CSV",
+						"Header row detection",
+						"Error handling",
+						"Copy/download JSON",
+						"Privacy-first processing"
+					],
+					"useCases": [
+						"Data migration",
+						"API import/export",
+						"Spreadsheet conversion",
+						"Data analysis"
+					],
+					"fileFormats": ["CSV", "JSON"],
+					"maxFileSize": "2MB",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 90000,
+					"difficulty": "Low",
+					"cpc": "$0.95",
+					"intent": "High"
+				},
+				{
+					"id": "code-minifier",
+					"name": "Code Minifier (JS, CSS, HTML)",
+					"shortName": "Minify",
+					"description": "Minify JavaScript, CSS, and HTML code for faster websites. Remove whitespace, comments, and reduce file size.",
+					"longDescription": "Online code minifier for JavaScript, CSS, and HTML. Instantly compress code for web optimization and faster load times. Uses Terser, clean-css, and html-minifier via CDN.",
+					"category": "code",
+					"subcategory": "optimization",
+					"primaryKeyword": "code minifier",
+					"keywords": [
+						"js minifier",
+						"css minifier",
+						"html minifier",
+						"minify code online",
+						"compress javascript",
+						"minify css",
+						"minify html"
+					],
+					"longTailKeywords": [
+						"free online js css html minifier",
+						"minify javascript for production",
+						"css minifier for web optimization",
+						"html minifier for seo"
+					],
+					"routes": ["/code-minifier"],
+					"features": [
+						"Minify JS, CSS, HTML",
+						"Copy/download minified code",
+						"Privacy-first processing",
+						"No file size limits"
+					],
+					"useCases": [
+						"Web optimization",
+						"Production deployment",
+						"SEO improvement",
+						"Faster load times"
+					],
+					"fileFormats": ["JS", "CSS", "HTML"],
+					"maxFileSize": "1MB",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 80000,
+					"difficulty": "Low",
+					"cpc": "$0.85",
+					"intent": "High"
+				},
+				{
+					"id": "code-formatter",
+					"name": "Code Formatter (Prettier-like)",
+					"shortName": "Format",
+					"description": "Format JavaScript, CSS, HTML, and JSON code for readability. Uses Prettier via CDN for instant formatting.",
+					"longDescription": "Online code formatter for JS, CSS, HTML, and JSON. Beautify code for readability, collaboration, and debugging. Uses Prettier from CDN for fast, privacy-first formatting.",
+					"category": "code",
+					"subcategory": "formatting",
+					"primaryKeyword": "code formatter",
+					"keywords": [
+						"code formatter",
+						"prettier online",
+						"format js css html",
+						"beautify code",
+						"format javascript",
+						"format css",
+						"format html"
+					],
+					"longTailKeywords": [
+						"free online code formatter prettier",
+						"format js css html for readability",
+						"prettier code formatter online free",
+						"beautify code for collaboration"
+					],
+					"routes": ["/code-formatter"],
+					"features": [
+						"Format JS, CSS, HTML, JSON",
+						"Copy/download formatted code",
+						"Prettier via CDN",
+						"Privacy-first processing"
+					],
+					"useCases": [
+						"Code review",
+						"Debugging",
+						"Learning best practices",
+						"Team collaboration"
+					],
+					"fileFormats": ["JS", "CSS", "HTML", "JSON"],
+					"maxFileSize": "1MB",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 70000,
+					"difficulty": "Low",
+					"cpc": "$0.90",
+					"intent": "High"
+				},
+				{
+					"id": "regex-tester",
+					"name": "Regex Tester",
+					"shortName": "Regex",
+					"description": "Test and debug regular expressions instantly. See all matches, groups, and errors in real time.",
+					"longDescription": "Online regex tester for JavaScript regular expressions. Instantly see matches, groups, and errors. Perfect for learning, debugging, and pattern design.",
+					"category": "code",
+					"subcategory": "testing",
+					"primaryKeyword": "regex tester",
+					"keywords": [
+						"regex tester",
+						"regular expression tester",
+						"regex online",
+						"test regex",
+						"regex tool",
+						"regex match",
+						"regex debug"
+					],
+					"longTailKeywords": [
+						"free online regex tester",
+						"test regular expressions instantly",
+						"regex tester for javascript",
+						"regex debug tool online"
+					],
+					"routes": ["/regex-tester"],
+					"features": [
+						"Test regex patterns",
+						"Show matches and groups",
+						"Error highlighting",
+						"Privacy-first processing"
+					],
+					"useCases": [
+						"Pattern design",
+						"Debugging regex",
+						"Learning regex",
+						"Data validation"
+					],
+					"fileFormats": ["Text"],
+					"maxFileSize": "Unlimited",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 60000,
+					"difficulty": "Low",
+					"cpc": "$0.80",
+					"intent": "High"
+				},
+				{
+					"id": "markdown-to-html",
+					"name": "Markdown to HTML Converter",
+					"shortName": "MD2HTML",
+					"description": "Convert Markdown text to HTML instantly. Paste your Markdown, click convert, and copy or download the result.",
+					"longDescription": "Fast Markdown to HTML converter using marked.js from CDN. Perfect for documentation, blogging, and web publishing.",
+					"category": "code",
+					"subcategory": "conversion",
+					"primaryKeyword": "markdown to html",
+					"keywords": [
+						"markdown to html",
+						"convert markdown to html",
+						"markdown html converter",
+						"markdown online tool",
+						"markdown parser",
+						"markdown to html free"
+					],
+					"longTailKeywords": [
+						"free markdown to html converter online",
+						"convert markdown text to html instantly",
+						"markdown to html for blogging",
+						"markdown to html for documentation"
+					],
+					"routes": ["/markdown-to-html"],
+					"features": [
+						"Paste or upload Markdown",
+						"Convert to HTML",
+						"Copy/download HTML",
+						"Privacy-first processing"
+					],
+					"useCases": [
+						"Documentation",
+						"Blogging",
+						"Web publishing",
+						"Markdown preview"
+					],
+					"fileFormats": ["Markdown", "HTML"],
+					"maxFileSize": "1MB",
+					"processingTime": "Instant",
+					"popular": true,
+					"trending": true,
+					"completed": true,
+					"monthlySearches": 50000,
+					"difficulty": "Low",
+					"cpc": "$0.75",
+					"intent": "High"
+				}
+			]
+		}
+	},
+	"seoData": {
+		"globalKeywords": [
+			"free online tools",
+			"30tools",
+			"online toolkit",
+			"free utilities",
+			"web tools",
+			"file converter",
+			"online tools free",
+			"internet tools",
+			"web utilities",
+			"online software"
+		],
+		"competitorAnalysis": {
+			"smallpdf": {
+				"strengths": ["PDF focus", "Clean UI", "Premium features"],
+				"weaknesses": ["Limited free features", "Expensive premium"],
+				"monthlyTraffic": "45M"
+			},
+			"ilovepdf": {
+				"strengths": ["PDF tools", "Free features", "Good SEO"],
+				"weaknesses": ["PDF only", "Ad heavy"],
+				"monthlyTraffic": "35M"
+			},
+			"convertio": {
+				"strengths": ["Many formats", "Good conversion", "API"],
+				"weaknesses": ["File size limits", "Slow processing"],
+				"monthlyTraffic": "25M"
+			}
+		},
+		"targetAudience": {
+			"primary": {
+				"demographic": "Professionals and students",
+				"ageRange": "25-45",
+				"needs": "Quick file processing",
+				"painPoints": "Expensive software, Complex tools"
+			},
+			"secondary": {
+				"demographic": "Content creators",
+				"ageRange": "18-35",
+				"needs": "Social media optimization",
+				"painPoints": "File size limits, Watermarks"
+			}
+		},
+		"contentStrategy": {
+			"blogTopics": [
+				"How to compress images without losing quality",
+				"Best image formats for web (JPEG vs PNG vs WebP)",
+				"PDF merge vs split: When to use each",
+				"Video compression guide for social media",
+				"File format conversion best practices"
+			],
+			"landingPageOptimization": {
+				"heroSection": "Clear value proposition",
+				"featuresSection": "Highlight key benefits",
+				"socialProof": "User testimonials and stats",
+				"ctaPlacement": "Multiple strategic CTAs"
+			}
+		}
+	}
 }

@@ -1,108 +1,108 @@
 import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 import {
-  BreadcrumbsEnhanced,
-  FAQSection,
-  ReviewSnippets,
-  RelatedTools,
-  ToolFeatures,
-  UserComments,
-  QuickActions,
+	BreadcrumbsEnhanced,
+	FAQSection,
+	ReviewSnippets,
+	RelatedTools,
+	ToolFeatures,
+	UserComments,
+	QuickActions,
 } from "@/components/seo";
-import {
-  DeveloperToolExamples,
-} from "@/components/seo/DeveloperToolsHub";
+import { DeveloperToolExamples } from "@/components/seo/DeveloperToolsHub";
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 
 export const metadata = {
-  title: "JSON Formatter (2026) - Validator & Beautifier | 30Tools",
-  description: "Format, validate & minify JSON online (Updated 2026). Free JSON beautifier with error detection. Secure client-side processing for developers.",
-  keywords: [
-    "json formatter 2026",
-    "json validator online",
-    "json beautifier free",
-    "json minifier tool",
-    "format json code",
-    "json syntax checker",
-    "json pretty print",
-    "updated 2026",
-    "json parser online"
-  ].join(", "),
-  openGraph: {
-    title: "JSON Formatter (2026) - Free Validator & Beautifier",
-    description: "⚡ Format, Validate & Minify JSON instantly! Error detection & Tree view included (Updated 2026).",
-    url: "https://30tools.com/json-formatter",
-    siteName: "30tools",
-    type: "website",
-    images: [
-      {
-        url: "/og-images/json-formatter.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Free JSON Formatter 2026",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "JSON Formatter (2026) - Free Developer Tool",
-    description: "⚡ Format and Validate JSON instantly. Updated 2026!",
-    images: ["/og-images/json-formatter.jpg"],
-    creator: "@30tools",
-  },
-  alternates: {
-    canonical: "https://30tools.com/json-formatter",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  category: "Developer Tools",
+	title: "JSON Formatter (2026) - Validator & Beautifier | 30Tools",
+	description:
+		"Format, validate & minify JSON online (Updated 2026). Free JSON beautifier with error detection. Secure client-side processing for developers.",
+	keywords: [
+		"json formatter 2026",
+		"json validator online",
+		"json beautifier free",
+		"json minifier tool",
+		"format json code",
+		"json syntax checker",
+		"json pretty print",
+		"updated 2026",
+		"json parser online",
+	].join(", "),
+	openGraph: {
+		title: "JSON Formatter (2026) - Free Validator & Beautifier",
+		description:
+			"⚡ Format, Validate & Minify JSON instantly! Error detection & Tree view included (Updated 2026).",
+		url: "https://30tools.com/json-formatter",
+		siteName: "30tools",
+		type: "website",
+		images: [
+			{
+				url: "/og-images/json-formatter.jpg",
+				width: 1200,
+				height: 630,
+				alt: "Free JSON Formatter 2026",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "JSON Formatter (2026) - Free Developer Tool",
+		description: "⚡ Format and Validate JSON instantly. Updated 2026!",
+		images: ["/og-images/json-formatter.jpg"],
+		creator: "@30tools",
+	},
+	alternates: {
+		canonical: "https://30tools.com/json-formatter",
+	},
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
+	category: "Developer Tools",
 };
 
 export default function JSONFormatterPage() {
-  // Tool-specific data
-  const toolData = {
-    id: "json-formatter",
-    name: "JSON Formatter & Validator",
-    description:
-      "Format, validate, and beautify JSON data with error detection",
-    category: "developer-tools",
-    route: "/json-formatter",
-  };
+	// Tool-specific data
+	const toolData = {
+		id: "json-formatter",
+		name: "JSON Formatter & Validator",
+		description:
+			"Format, validate, and beautify JSON data with error detection",
+		category: "developer-tools",
+		route: "/json-formatter",
+	};
 
-  // Breadcrumb navigation
-  const breadcrumbs = [
-    { name: "Developer Tools", url: "/developer-tools" },
-    { name: "JSON Formatter", url: "/json-formatter" },
-  ];
+	// Breadcrumb navigation
+	const breadcrumbs = [
+		{ name: "Developer Tools", url: "/developer-tools" },
+		{ name: "JSON Formatter", url: "/json-formatter" },
+	];
 
-  // Tool features
-  const features = [
-    "Format & validate JSON instantly",
-    "Minify JSON for production use",
-    "Real-time error detection",
-    "Tree view for complex JSON",
-    "Copy formatted code",
-    "Supports large JSON files",
-    "Syntax highlighting",
-    "Client-side processing",
-  ];
+	// Tool features
+	const features = [
+		"Format & validate JSON instantly",
+		"Minify JSON for production use",
+		"Real-time error detection",
+		"Tree view for complex JSON",
+		"Copy formatted code",
+		"Supports large JSON files",
+		"Syntax highlighting",
+		"Client-side processing",
+	];
 
-  // Usage examples
-  const examples = [
-    {
-      title: "Format API Response",
-      description:
-        "Clean up messy JSON from API responses for better readability",
-      input: '{"users":[{"id":1,"name":"John","email":"john@example.com"}]}',
-      output: `{
+	// Usage examples
+	const examples = [
+		{
+			title: "Format API Response",
+			description:
+				"Clean up messy JSON from API responses for better readability",
+			input: '{"users":[{"id":1,"name":"John","email":"john@example.com"}]}',
+			output: `{
   "users": [
     {
       "id": 1,
@@ -111,172 +111,172 @@ export default function JSONFormatterPage() {
     },
   ]
 }`,
-    },
-    {
-      title: "Validate Configuration",
-      description:
-        "Check configuration files for syntax errors before deployment",
-      input: '{"database":{"host":"localhost","port":5432}}',
-      output: `{
+		},
+		{
+			title: "Validate Configuration",
+			description:
+				"Check configuration files for syntax errors before deployment",
+			input: '{"database":{"host":"localhost","port":5432}}',
+			output: `{
   "database": {
     "host": "localhost",
     "port": 5432
   },
 }`,
-    },
-  ];
+		},
+	];
 
-  // FAQ data
-  const faqs = getDeveloperToolFAQs("json-formatter");
+	// FAQ data
+	const faqs = getDeveloperToolFAQs("json-formatter");
 
-  // Related tools
-  const relatedTools = [
-    {
-      id: "xml-formatter",
-      name: "XML Formatter",
-      description: "Format and validate XML documents",
-      route: "/xml-formatter",
-      category: "developer-tools",
-    },
-    {
-      id: "base64-tool",
-      name: "Base64 Encoder",
-      description: "Encode and decode Base64 strings",
-      route: "/base64-tool",
-      category: "developer-tools",
-    },
-    {
-      id: "api-tester",
-      name: "API Tester",
-      description: "Test REST APIs with custom headers",
-      route: "/api-tester",
-      category: "developer-tools",
-    },
-  ];
+	// Related tools
+	const relatedTools = [
+		{
+			id: "xml-formatter",
+			name: "XML Formatter",
+			description: "Format and validate XML documents",
+			route: "/xml-formatter",
+			category: "developer-tools",
+		},
+		{
+			id: "base64-tool",
+			name: "Base64 Encoder",
+			description: "Encode and decode Base64 strings",
+			route: "/base64-tool",
+			category: "developer-tools",
+		},
+		{
+			id: "api-tester",
+			name: "API Tester",
+			description: "Test REST APIs with custom headers",
+			route: "/api-tester",
+			category: "developer-tools",
+		},
+	];
 
-  return (
-    <div className="min-h-screen bg-background">
-      {/* Enhanced Breadcrumbs with Schema */}
-      <div className="container mx-auto px-4 pt-6">
-        <BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
-      </div>
+	return (
+		<div className="min-h-screen bg-background">
+			{/* Enhanced Breadcrumbs with Schema */}
+			<div className="container mx-auto px-4 pt-6">
+				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
+			</div>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        {/* Hero Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4">
-            Free JSON Formatter & Validator Online - Format, Minify, Validate
-            JSON
-          </h1>
-          <p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-            Professional JSON formatter, validator & minifier for developers.
-            Format messy JSON, validate syntax errors, minify for production.
-            Tree view, error detection, copy formatted code. Completely free
-            with client-side processing.
-          </p>
+			{/* Main Content */}
+			<main className="container mx-auto px-4 py-8">
+				{/* Hero Section */}
+				<div className="text-center mb-12">
+					<h1 className="text-4xl font-bold mb-4">
+						Free JSON Formatter & Validator Online - Format, Minify, Validate
+						JSON
+					</h1>
+					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
+						Professional JSON formatter, validator & minifier for developers.
+						Format messy JSON, validate syntax errors, minify for production.
+						Tree view, error detection, copy formatted code. Completely free
+						with client-side processing.
+					</p>
 
-          <QuickActions
-            toolName="JSON Formatter"
-            toolUrl="https://30tools.com/json-formatter"
-            showBookmark={true}
-            showShare={true}
-          />
-        </div>
+					<QuickActions
+						toolName="JSON Formatter"
+						toolUrl="https://30tools.com/json-formatter"
+						showBookmark={true}
+						showShare={true}
+					/>
+				</div>
 
-        {/* Tool Interface */}
-        <div className="mb-12">
-          <JSONFormatterTool />
-        </div>
+				{/* Tool Interface */}
+				<div className="mb-12">
+					<JSONFormatterTool />
+				</div>
 
-        {/* Key Features */}
-        <div className="mb-12">
-          <ToolFeatures
-            features={features}
-            title="Why Choose Our JSON Formatter?"
-            variant="grid"
-          />
-        </div>
+				{/* Key Features */}
+				<div className="mb-12">
+					<ToolFeatures
+						features={features}
+						title="Why Choose Our JSON Formatter?"
+						variant="grid"
+					/>
+				</div>
 
-        {/* Usage Examples */}
-        <DeveloperToolExamples tool={toolData} examples={examples} />
+				{/* Usage Examples */}
+				<DeveloperToolExamples tool={toolData} examples={examples} />
 
-        {/* User Reviews */}
-        <div className="mb-12">
-          <ReviewSnippets
-            toolId="json-formatter"
-            title="What Developers Say About Our JSON Formatter"
-            showRatingSummary={true}
-            variant="grid"
-            limit={6}
-          />
-        </div>
+				{/* User Reviews */}
+				<div className="mb-12">
+					<ReviewSnippets
+						toolId="json-formatter"
+						title="What Developers Say About Our JSON Formatter"
+						showRatingSummary={true}
+						variant="grid"
+						limit={6}
+					/>
+				</div>
 
-        {/* FAQ Section */}
-        <div className="mb-12">
-          <FAQSection
-            faqs={faqs}
-            title="JSON Formatter FAQ"
-            categoryTitle="JSON Formatting & Validation"
-            variant="accordion"
-            showSchema={true}
-          />
-        </div>
+				{/* FAQ Section */}
+				<div className="mb-12">
+					<FAQSection
+						faqs={faqs}
+						title="JSON Formatter FAQ"
+						categoryTitle="JSON Formatting & Validation"
+						variant="accordion"
+						showSchema={true}
+					/>
+				</div>
 
-        {/* Related Tools */}
-        <div className="mb-12">
-          <RelatedTools
-            currentTool="json-formatter"
-            category="developer-tools"
-            tools={relatedTools}
-            title="More Developer Tools"
-          />
-        </div>
+				{/* Related Tools */}
+				<div className="mb-12">
+					<RelatedTools
+						currentTool="json-formatter"
+						category="developer-tools"
+						tools={relatedTools}
+						title="More Developer Tools"
+					/>
+				</div>
 
-        {/* User Comments */}
-        <UserComments
-          toolId="json-formatter"
-          toolName="JSON Formatter"
-          showStats={true}
-          allowComments={true}
-        />
-      </main>
+				{/* User Comments */}
+				<UserComments
+					toolId="json-formatter"
+					toolName="JSON Formatter"
+					showStats={true}
+					allowComments={true}
+				/>
+			</main>
 
-      {/* Structured Data for Tool */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "SoftwareApplication",
-            name: "JSON Formatter & Validator",
-            description:
-              "Professional JSON formatter, validator and minifier for developers",
-            url: "https://30tools.com/json-formatter",
-            applicationCategory: "DeveloperApplication",
-            operatingSystem: "Web Browser",
-            offers: {
-              "@type": "Offer",
-              price: "0",
-              priceCurrency: "USD",
-            },
-            creator: {
-              "@type": "Organization",
-              name: "30tools",
-              url: "https://30tools.com",
-            },
-            featureList: features,
-            screenshot: "https://30tools.com/screenshots/json-formatter.jpg",
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: "4.9",
-              reviewCount: "2847",
-              bestRating: "5",
-              worstRating: "1",
-            },
-          }),
-        }}
-      />
-    </div>
-  );
+			{/* Structured Data for Tool */}
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "SoftwareApplication",
+						name: "JSON Formatter & Validator",
+						description:
+							"Professional JSON formatter, validator and minifier for developers",
+						url: "https://30tools.com/json-formatter",
+						applicationCategory: "DeveloperApplication",
+						operatingSystem: "Web Browser",
+						offers: {
+							"@type": "Offer",
+							price: "0",
+							priceCurrency: "USD",
+						},
+						creator: {
+							"@type": "Organization",
+							name: "30tools",
+							url: "https://30tools.com",
+						},
+						featureList: features,
+						screenshot: "https://30tools.com/screenshots/json-formatter.jpg",
+						aggregateRating: {
+							"@type": "AggregateRating",
+							ratingValue: "4.9",
+							reviewCount: "2847",
+							bestRating: "5",
+							worstRating: "1",
+						},
+					}),
+				}}
+			/>
+		</div>
+	);
 }

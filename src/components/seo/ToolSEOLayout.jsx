@@ -1,68 +1,78 @@
-import { getToolById } from '@/constants/tools-utils';
-import StructuredData from '@/components/shared/StructuredData';
+import { getToolById } from "@/constants/tools-utils";
+import StructuredData from "@/components/shared/StructuredData";
 import {
+	BreadcrumbsEnhanced,
+	ToolFeatures,
+	FAQSection,
+	UserComments,
+	ReviewSnippets,
+	AuthorBio,
+} from "@/components/seo";
 
-  BreadcrumbsEnhanced,
-  ToolFeatures,
-  FAQSection,
-  RelatedTools,
-  UserComments,
-  ReviewSnippets,
-  AuthorBio
-} from '@/components/seo';
+export default function ToolSEOLayout({
+	toolId,
+	children,
+	faqs,
+	features,
+	reviews,
+	howTo,
+}) {
+	const tool = getToolById(toolId);
 
-export default function ToolSEOLayout({ toolId, children, faqs, features, reviews, howTo }) {
-  const tool = getToolById(toolId);
+	if (!tool) {
+		return <>{children}</>;
+	}
 
-  if (!tool) {
-    return <>{children}</>;
-  }
+	// Merge props with tool data, preferring props if provided
+	const mergedTool = {
+		...tool,
+		faqs: faqs || tool.faqs,
+		features: features || tool.features,
+		reviews: reviews || tool.reviews,
+		howTo: howTo || tool.howTo,
+	};
 
-  // Merge props with tool data, preferring props if provided
-  const mergedTool = {
-    ...tool,
-    faqs: faqs || tool.faqs,
-    features: features || tool.features,
-    reviews: reviews || tool.reviews,
-    howTo: howTo || tool.howTo
-  };
+	return (
+		<div className="tool-page-container">
+			<StructuredData tool={mergedTool} />
 
-  return (
-    <div className="tool-page-container">
-      <StructuredData tool={mergedTool} />
+			<div className="container mx-auto px-4 py-8">
+				<BreadcrumbsEnhanced tool={mergedTool} />
 
-      <div className="container mx-auto px-4 py-8">
-        <BreadcrumbsEnhanced tool={mergedTool} />
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
+					<div className="lg:col-span-12">
+						{/* Main Tool Area */}
+						<div className="mb-12">
+							<h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-foreground">
+								{mergedTool.name}
+							</h1>
+							{children}
+						</div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
-          <div className="lg:col-span-12">
-            {/* Main Tool Area */}
-            <div className="mb-12">
-              <h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-foreground">{mergedTool.name}</h1>
-              {children}
-            </div>
+						{/* Tool Features */}
+						<ToolFeatures tool={mergedTool} />
 
-            {/* Tool Features */}
-            <ToolFeatures tool={mergedTool} />
+						{/* Reviews/Trust */}
+						<ReviewSnippets tool={mergedTool} />
 
-            {/* Reviews/Trust */}
-            <ReviewSnippets tool={mergedTool} />
+						{/* FAQs */}
+						<FAQSection
+							faqs={mergedTool.faqs}
+							title={`${mergedTool.name} FAQs`}
+						/>
 
-            {/* FAQs */}
-            <FAQSection faqs={mergedTool.faqs} title={`${mergedTool.name} FAQs`} />
+						{/* Comments */}
+						<UserComments tool={mergedTool} />
 
-            {/* Comments */}
-            <UserComments tool={mergedTool} />
+						{/* E-E-A-T Author Bio */}
+						<AuthorBio author={mergedTool.author} />
+					</div>
 
-            {/* E-E-A-T Author Bio */}
-            <AuthorBio author={mergedTool.author} />
-          </div>
-
-          {/* <div className="lg:col-span-4 space-y-8">
+					{/* <div className="lg:col-span-4 space-y-8">
             <RelatedTools currentToolId={mergedTool.id} category={mergedTool.category} />
           </div> */}
-        </div>
-      </div>
-    </div>
-  );
+				</div>
+			</div>
+		</div>
+	);
 }

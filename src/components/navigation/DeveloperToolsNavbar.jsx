@@ -4,13 +4,9 @@ import { Code } from "lucide-react";
 import ToolCategoryNavbar from "./ToolCategoryNavbar";
 
 export default function DeveloperToolsNavbar() {
-  const tools = []; 
+	const tools = [];
 
-  return (
-    <ToolCategoryNavbar 
-      title="Developer" 
-      tools={tools} 
-      categoryIcon={Code}
-    />
-  );
+	return (
+		<ToolCategoryNavbar title="Developer" tools={tools} categoryIcon={Code} />
+	);
 }

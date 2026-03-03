@@ -1,83 +1,214 @@
-import Link from 'next/link';
+import Link from "next/link";
 import BulkKeywordRankChecker from "@/components/tools/seo/BulkKeywordRankChecker";
 
 export const metadata = {
-  title: "Bulk Keyword Rank Checker - Check SEO Rankings Free | 30tools",
-  description: "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-  keywords: ["keyword rank checker", "bulk rank checker", "google ranking checker", "seo rank checker", "keyword position checker", "serp checker"].join(", "),
-  openGraph: { title: "Bulk Keyword Rank Checker", description: "⚡ Check your keyword rankings!", url: "https://30tools.com/bulk-keyword-rank-checker", siteName: "30tools", type: "website" },
-  alternates: { canonical: "https://30tools.com/bulk-keyword-rank-checker" },
-  robots: { index: true, follow: true }
-,
-  twitter: {
-    card: "summary_large_image",
-    title: "Bulk Keyword Rank Checker - Free SEO Tool | Boost Your Rankings",
-    description: "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-    images: ["/og-images/bulk-keyword-rank-checker.jpg"],
-    creator: "@30tools"
-  }
+	title: "Bulk Keyword Rank Checker - Check SEO Rankings Free | 30tools",
+	description:
+		"Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+	keywords: [
+		"keyword rank checker",
+		"bulk rank checker",
+		"google ranking checker",
+		"seo rank checker",
+		"keyword position checker",
+		"serp checker",
+	].join(", "),
+	openGraph: {
+		title: "Bulk Keyword Rank Checker",
+		description: "⚡ Check your keyword rankings!",
+		url: "https://30tools.com/bulk-keyword-rank-checker",
+		siteName: "30tools",
+		type: "website",
+	},
+	alternates: { canonical: "https://30tools.com/bulk-keyword-rank-checker" },
+	robots: { index: true, follow: true },
+	twitter: {
+		card: "summary_large_image",
+		title: "Bulk Keyword Rank Checker - Free SEO Tool | Boost Your Rankings",
+		description:
+			"Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+		images: ["/og-images/bulk-keyword-rank-checker.jpg"],
+		creator: "@30tools",
+	},
 };
 
-const AdUnit = () => (<div className="my-6 flex justify-center"><ins className="adsbygoogle" style={{ display: 'block' }} data-ad-format="autorelaxed" data-ad-client="ca-pub-1828915420581549" data-ad-slot="4669751596"></ins></div>);
-
+const AdUnit = () => (
+	<div className="my-6 flex justify-center">
+		<ins
+			className="adsbygoogle"
+			style={{ display: "block" }}
+			data-ad-format="autorelaxed"
+			data-ad-client="ca-pub-1828915420581549"
+			data-ad-slot="4669751596"
+		></ins>
+	</div>
+);
 
 const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "Bulk Keyword Rank Checker",
-  "description": "Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-  "url": "https://30tools.com/bulk-keyword-rank-checker",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "Any",
-  "permissions": "browser",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "author": {
-    "@type": "Organization",
-    "name": "30tools",
-    "url": "https://30tools.com"
-  }
+	"@context": "https://schema.org",
+	"@type": "WebApplication",
+	name: "Bulk Keyword Rank Checker",
+	description:
+		"Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
+	url: "https://30tools.com/bulk-keyword-rank-checker",
+	applicationCategory: "UtilityApplication",
+	operatingSystem: "Any",
+	permissions: "browser",
+	offers: {
+		"@type": "Offer",
+		price: "0",
+		priceCurrency: "USD",
+	},
+	author: {
+		"@type": "Organization",
+		name: "30tools",
+		url: "https://30tools.com",
+	},
 };
 
 export default function BulkKeywordRankCheckerPage() {
-  return (
-        <>
-            
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
-            <>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549" crossOrigin="anonymous" />
-      <div className="container mx-auto px-4 py-12 md:py-20">
-        <div className="max-w-6xl mx-auto">
-          <nav aria-label="Breadcrumb" className="mb-8"><ol className="flex items-center space-x-2 text-sm text-muted-foreground"><li><Link href="/" className="hover:text-primary">Home</Link></li><li>/</li><li><Link href="/#seo-tools" className="hover:text-primary">SEO Tools</Link></li><li>/</li><li className="text-foreground font-medium">Bulk Keyword Rank Checker</li></ol></nav>
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">Bulk Keyword Rank Checker</h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">Check your website's keyword rankings in Google search results. Track multiple keywords and monitor your SEO progress.</p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground"><span>📈 Track Rankings</span><span>🔢 Bulk Check</span><span>📊 Position Data</span><span>🆓 100% Free</span></div>
-          </div>
-          <div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16"><BulkKeywordRankChecker /></div>
-          <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Why Track Keyword Rankings?</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {[{ icon: "📈", title: "Track Progress", desc: "Monitor SEO improvements" }, { icon: "🎯", title: "Competition", desc: "See how you compare" }, { icon: "🔍", title: "Opportunities", desc: "Find underperforming pages" }, { icon: "📊", title: "ROI", desc: "Measure SEO success" }].map((f, i) => (<div key={i} className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow"><span className="text-4xl mb-4 block">{f.icon}</span><h3 className="text-lg font-semibold mb-2">{f.title}</h3><p className="text-sm text-muted-foreground">{f.desc}</p></div>))}
-            </div>
-          </section>
-          <section className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Related SEO Tools</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[{ href: "/google-keyword-research", icon: "🔍", title: "Keyword Research", desc: "Find keywords" }, { href: "/bulk-google-index-checker", icon: "📋", title: "Index Checker", desc: "Check indexing" }, { href: "/keyword-density", icon: "📊", title: "Keyword Density", desc: "Analyze usage" }, { href: "/website-analyzer", icon: "🔍", title: "Site Analyzer", desc: "Full analysis" }].map((tool, i) => (<Link key={i} href={tool.href} className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all"><div className="flex items-center gap-3 mb-2"><span className="text-2xl">{tool.icon}</span><h3 className="font-semibold group-hover:text-primary transition-colors">{tool.title}</h3></div><p className="text-sm text-muted-foreground">{tool.desc}</p></Link>))}
-            </div>
-          </section>
-        </div>
-      </div>
-      <script dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(5) }} />
-    </>
-  
-        </>
-);
+	return (
+		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+			/>
+			<>
+				<script
+					async
+					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
+					crossOrigin="anonymous"
+				/>
+				<div className="container mx-auto px-4 py-12 md:py-20">
+					<div className="max-w-6xl mx-auto">
+						<nav aria-label="Breadcrumb" className="mb-8">
+							<ol className="flex items-center space-x-2 text-sm text-muted-foreground">
+								<li>
+									<Link href="/" className="hover:text-primary">
+										Home
+									</Link>
+								</li>
+								<li>/</li>
+								<li>
+									<Link href="/#seo-tools" className="hover:text-primary">
+										SEO Tools
+									</Link>
+								</li>
+								<li>/</li>
+								<li className="text-foreground font-medium">
+									Bulk Keyword Rank Checker
+								</li>
+							</ol>
+						</nav>
+						<div className="text-center mb-12">
+							<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
+								Bulk Keyword Rank Checker
+							</h1>
+							<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+								Check your website's keyword rankings in Google search results.
+								Track multiple keywords and monitor your SEO progress.
+							</p>
+							<div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+								<span>📈 Track Rankings</span>
+								<span>🔢 Bulk Check</span>
+								<span>📊 Position Data</span>
+								<span>🆓 100% Free</span>
+							</div>
+						</div>
+						<div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
+							<BulkKeywordRankChecker />
+						</div>
+						<section className="mb-16">
+							<h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
+								Why Track Keyword Rankings?
+							</h2>
+							<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+								{[
+									{
+										icon: "📈",
+										title: "Track Progress",
+										desc: "Monitor SEO improvements",
+									},
+									{
+										icon: "🎯",
+										title: "Competition",
+										desc: "See how you compare",
+									},
+									{
+										icon: "🔍",
+										title: "Opportunities",
+										desc: "Find underperforming pages",
+									},
+									{ icon: "📊", title: "ROI", desc: "Measure SEO success" },
+								].map((f, i) => (
+									<div
+										key={i}
+										className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow"
+									>
+										<span className="text-4xl mb-4 block">{f.icon}</span>
+										<h3 className="text-lg font-semibold mb-2">{f.title}</h3>
+										<p className="text-sm text-muted-foreground">{f.desc}</p>
+									</div>
+								))}
+							</div>
+						</section>
+						<section className="mb-16">
+							<h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+								Related SEO Tools
+							</h2>
+							<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+								{[
+									{
+										href: "/google-keyword-research",
+										icon: "🔍",
+										title: "Keyword Research",
+										desc: "Find keywords",
+									},
+									{
+										href: "/bulk-google-index-checker",
+										icon: "📋",
+										title: "Index Checker",
+										desc: "Check indexing",
+									},
+									{
+										href: "/keyword-density",
+										icon: "📊",
+										title: "Keyword Density",
+										desc: "Analyze usage",
+									},
+									{
+										href: "/website-analyzer",
+										icon: "🔍",
+										title: "Site Analyzer",
+										desc: "Full analysis",
+									},
+								].map((tool, i) => (
+									<Link
+										key={i}
+										href={tool.href}
+										className="group p-5 bg-card rounded-xl border border-border hover:border-primary hover:shadow-lg transition-all"
+									>
+										<div className="flex items-center gap-3 mb-2">
+											<span className="text-2xl">{tool.icon}</span>
+											<h3 className="font-semibold group-hover:text-primary transition-colors">
+												{tool.title}
+											</h3>
+										</div>
+										<p className="text-sm text-muted-foreground">{tool.desc}</p>
+									</Link>
+								))}
+							</div>
+						</section>
+					</div>
+				</div>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `(adsbygoogle = window.adsbygoogle || []).push({});`.repeat(
+							5,
+						),
+					}}
+				/>
+			</>
+		</>
+	);
 }

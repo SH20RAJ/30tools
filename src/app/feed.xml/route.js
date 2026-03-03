@@ -1,16 +1,16 @@
 import { getAllTools } from "@/constants/tools-utils";
 
 function RSSFeed() {
-  const baseUrl = "https://30tools.com";
-  const currentDate = new Date().toUTCString();
-  const allTools = getAllTools();
+	const baseUrl = "https://30tools.com";
+	const currentDate = new Date().toUTCString();
+	const allTools = getAllTools();
 
-  // Get all tools
-  const latestTools = allTools;
+	// Get all tools
+	const latestTools = allTools;
 
-  const rssItems = latestTools
-    .map(
-      (tool) => `
+	const rssItems = latestTools
+		.map(
+			(tool) => `
     <item>
       <title><![CDATA[${tool.name} - Free Online Tool]]></title>
       <description><![CDATA[${tool.description}. Use our free ${tool.name} tool online. No registration required, fast and secure processing.]]></description>
@@ -21,46 +21,46 @@ function RSSFeed() {
       <author><![CDATA[30tools Team]]></author>
     </item>
   `,
-    )
-    .join("");
+		)
+		.join("");
 
-  // Manually added blog posts for RSS
-  const blogPosts = [
-    {
-      title: "Y2Mate YouTube to MP3 Converter – Features & Top Alternative",
-      description:
-        "A comprehensive review of Y2Mate and its best alternatives for converting YouTube videos to MP3.",
-      link: `${baseUrl}/blog/y2mate-youtube-to-mp3-converter`,
-      pubDate: new Date("2025-01-15T12:00:00Z").toUTCString(),
-      category: "Review",
-    },
-    {
-      title: "3 Methods to Convert YouTube Videos to High-Quality 320kbps MP3",
-      description:
-        "Learn how to extract high-fidelity audio from YouTube videos with these simple methods.",
-      link: `${baseUrl}/blog/convert-youtube-videos-high-quality-320kbps-mp3`,
-      pubDate: new Date("2025-01-14T12:00:00Z").toUTCString(),
-      category: "Guide",
-    },
-    {
-      title: "Publer Reviews: A Comprehensive User Guide",
-      description:
-        "In-depth analysis of Publer social media management tool, its features, and pricing.",
-      link: `${baseUrl}/blog/publer-reviews`,
-      pubDate: new Date("2025-01-13T12:00:00Z").toUTCString(),
-      category: "Review",
-    },
-    {
-      title: "6 Best Free YouTube to MP3 Converters You Should Try in 2025",
-      description:
-        "Our top picks for the best free YouTube to MP3 converters available this year.",
-      link: `${baseUrl}/blog/best-free-youtube-to-mp3-converters-2025`,
-      pubDate: new Date("2025-01-12T12:00:00Z").toUTCString(),
-      category: "Listicle",
-    },
-  ]
-    .map(
-      (post) => `
+	// Manually added blog posts for RSS
+	const blogPosts = [
+		{
+			title: "Y2Mate YouTube to MP3 Converter – Features & Top Alternative",
+			description:
+				"A comprehensive review of Y2Mate and its best alternatives for converting YouTube videos to MP3.",
+			link: `${baseUrl}/blog/y2mate-youtube-to-mp3-converter`,
+			pubDate: new Date("2025-01-15T12:00:00Z").toUTCString(),
+			category: "Review",
+		},
+		{
+			title: "3 Methods to Convert YouTube Videos to High-Quality 320kbps MP3",
+			description:
+				"Learn how to extract high-fidelity audio from YouTube videos with these simple methods.",
+			link: `${baseUrl}/blog/convert-youtube-videos-high-quality-320kbps-mp3`,
+			pubDate: new Date("2025-01-14T12:00:00Z").toUTCString(),
+			category: "Guide",
+		},
+		{
+			title: "Publer Reviews: A Comprehensive User Guide",
+			description:
+				"In-depth analysis of Publer social media management tool, its features, and pricing.",
+			link: `${baseUrl}/blog/publer-reviews`,
+			pubDate: new Date("2025-01-13T12:00:00Z").toUTCString(),
+			category: "Review",
+		},
+		{
+			title: "6 Best Free YouTube to MP3 Converters You Should Try in 2025",
+			description:
+				"Our top picks for the best free YouTube to MP3 converters available this year.",
+			link: `${baseUrl}/blog/best-free-youtube-to-mp3-converters-2025`,
+			pubDate: new Date("2025-01-12T12:00:00Z").toUTCString(),
+			category: "Listicle",
+		},
+	]
+		.map(
+			(post) => `
     <item>
       <title><![CDATA[${post.title}]]></title>
       <description><![CDATA[${post.description}]]></description>
@@ -71,10 +71,10 @@ function RSSFeed() {
       <author><![CDATA[30tools Team]]></author>
     </item>
     `,
-    )
-    .join("");
+		)
+		.join("");
 
-  const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
+	const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0"
       xmlns:content="http://purl.org/rss/1.0/modules/content/"
       xmlns:wfw="http://wellformedweb.org/CommentAPI/"
@@ -119,15 +119,15 @@ function RSSFeed() {
       </channel>
     </rss>`;
 
-  return new Response(rssFeed, {
-    headers: {
-      "Content-Type": "application/rss+xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, s-maxage=3600",
-      "X-Content-Type-Options": "nosniff",
-    },
-  });
+	return new Response(rssFeed, {
+		headers: {
+			"Content-Type": "application/rss+xml; charset=utf-8",
+			"Cache-Control": "public, max-age=3600, s-maxage=3600",
+			"X-Content-Type-Options": "nosniff",
+		},
+	});
 }
 
 export async function GET() {
-  return RSSFeed();
+	return RSSFeed();
 }

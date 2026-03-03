@@ -4,109 +4,109 @@
 /* @import './css/brutal.css'; */
 
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222.2 84% 4.9%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96%;
-    --accent-foreground: 222.2 84% 4.9%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
-  }
+	:root {
+		--background: 0 0% 100%;
+		--foreground: 222.2 84% 4.9%;
+		--card: 0 0% 100%;
+		--card-foreground: 222.2 84% 4.9%;
+		--popover: 0 0% 100%;
+		--popover-foreground: 222.2 84% 4.9%;
+		--primary: 221.2 83.2% 53.3%;
+		--primary-foreground: 210 40% 98%;
+		--secondary: 210 40% 96%;
+		--secondary-foreground: 222.2 84% 4.9%;
+		--muted: 210 40% 96%;
+		--muted-foreground: 215.4 16.3% 46.9%;
+		--accent: 210 40% 96%;
+		--accent-foreground: 222.2 84% 4.9%;
+		--destructive: 0 84.2% 60.2%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 214.3 31.8% 91.4%;
+		--input: 214.3 31.8% 91.4%;
+		--ring: 221.2 83.2% 53.3%;
+		--radius: 0.5rem;
+	}
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 222.2 84% 4.9%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
-  }
+	.dark {
+		--background: 222.2 84% 4.9%;
+		--foreground: 210 40% 98%;
+		--card: 222.2 84% 4.9%;
+		--card-foreground: 210 40% 98%;
+		--popover: 222.2 84% 4.9%;
+		--popover-foreground: 210 40% 98%;
+		--primary: 217.2 91.2% 59.8%;
+		--primary-foreground: 222.2 84% 4.9%;
+		--secondary: 217.2 32.6% 17.5%;
+		--secondary-foreground: 210 40% 98%;
+		--muted: 217.2 32.6% 17.5%;
+		--muted-foreground: 215 20.2% 65.1%;
+		--accent: 217.2 32.6% 17.5%;
+		--accent-foreground: 210 40% 98%;
+		--destructive: 0 62.8% 30.6%;
+		--destructive-foreground: 210 40% 98%;
+		--border: 217.2 32.6% 17.5%;
+		--input: 217.2 32.6% 17.5%;
+		--ring: 224.3 76.3% 94.1%;
+	}
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
+	* {
+		@apply border-border;
+	}
 
-  html,
-  body {
-    @apply bg-background text-foreground;
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-  }
+	html,
+	body {
+		@apply bg-background text-foreground;
+		overflow-x: hidden;
+		width: 100%;
+		position: relative;
+	}
 }
 
 :root {
-  --background: oklch(1 0 0); /* White */
-  --foreground: oklch(0.145 0 0); /* Near Black */
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.145 0 0); /* Minimalist primary is usually black */
-  --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.97 0 0); /* Light Gray */
-  --secondary-foreground: oklch(0.145 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.55 0 0); /* Gray for text */
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.145 0 0);
-  --destructive: oklch(0.6 0.15 25); /* Muted Red */
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0.145 0 0);
-  --radius: 0.5rem; /* Slightly smaller border radius for sharper look */
+	--background: oklch(1 0 0); /* White */
+	--foreground: oklch(0.145 0 0); /* Near Black */
+	--card: oklch(1 0 0);
+	--card-foreground: oklch(0.145 0 0);
+	--popover: oklch(1 0 0);
+	--popover-foreground: oklch(0.145 0 0);
+	--primary: oklch(0.145 0 0); /* Minimalist primary is usually black */
+	--primary-foreground: oklch(1 0 0);
+	--secondary: oklch(0.97 0 0); /* Light Gray */
+	--secondary-foreground: oklch(0.145 0 0);
+	--muted: oklch(0.97 0 0);
+	--muted-foreground: oklch(0.55 0 0); /* Gray for text */
+	--accent: oklch(0.97 0 0);
+	--accent-foreground: oklch(0.145 0 0);
+	--destructive: oklch(0.6 0.15 25); /* Muted Red */
+	--destructive-foreground: oklch(1 0 0);
+	--border: oklch(0.9 0 0);
+	--input: oklch(0.9 0 0);
+	--ring: oklch(0.145 0 0);
+	--radius: 0.5rem; /* Slightly smaller border radius for sharper look */
 }
 
 .dark {
-  --background: oklch(0.145 0 0); /* Near Black */
-  --foreground: oklch(0.97 0 0); /* Off White */
-  --card: oklch(0.18 0 0); /* Slightly lighter black */
-  --card-foreground: oklch(0.97 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.97 0 0);
-  --primary: oklch(0.97 0 0); /* White primary on dark mode */
-  --primary-foreground: oklch(0.145 0 0);
-  --secondary: oklch(0.22 0 0); /* Dark gray */
-  --secondary-foreground: oklch(0.97 0 0);
-  --muted: oklch(0.22 0 0);
-  --muted-foreground: oklch(0.65 0 0);
-  --accent: oklch(0.22 0 0);
-  --accent-foreground: oklch(0.97 0 0);
-  --destructive: oklch(0.6 0.15 25);
-  --destructive-foreground: oklch(1 0 0);
-  --border: oklch(0.26 0 0); /* Gray border */
-  --input: oklch(0.26 0 0);
-  --ring: oklch(0.97 0 0);
+	--background: oklch(0.145 0 0); /* Near Black */
+	--foreground: oklch(0.97 0 0); /* Off White */
+	--card: oklch(0.18 0 0); /* Slightly lighter black */
+	--card-foreground: oklch(0.97 0 0);
+	--popover: oklch(0.145 0 0);
+	--popover-foreground: oklch(0.97 0 0);
+	--primary: oklch(0.97 0 0); /* White primary on dark mode */
+	--primary-foreground: oklch(0.145 0 0);
+	--secondary: oklch(0.22 0 0); /* Dark gray */
+	--secondary-foreground: oklch(0.97 0 0);
+	--muted: oklch(0.22 0 0);
+	--muted-foreground: oklch(0.65 0 0);
+	--accent: oklch(0.22 0 0);
+	--accent-foreground: oklch(0.97 0 0);
+	--destructive: oklch(0.6 0.15 25);
+	--destructive-foreground: oklch(1 0 0);
+	--border: oklch(0.26 0 0); /* Gray border */
+	--input: oklch(0.26 0 0);
+	--ring: oklch(0.97 0 0);
 }
 
 @theme inline {
@@ -170,75 +170,76 @@
 }
 
 body {
-  letter-spacing: var(--tracking-normal);
+	letter-spacing: var(--tracking-normal);
 }
 
 /* Custom Scrollbar for better UX */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+	width: 8px;
+	height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+	background: var(--background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 10px;
+	background: var(--border);
+	border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--muted-foreground);
+	background: var(--muted-foreground);
 }
 
 /* Smooth selection color */
 ::selection {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
+	background-color: var(--primary);
+	color: var(--primary-foreground);
 }
 
 /* Premium Card & Button Effects */
 .card-premium {
-  transition:
-    transform 0.2s ease-in-out,
-    box-shadow 0.2s ease-in-out;
+	transition:
+		transform 0.2s ease-in-out,
+		box-shadow 0.2s ease-in-out;
 }
 
 .card-premium:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
+	transform: translateY(-4px);
+	box-shadow: var(--shadow-xl);
 }
 
 .btn-premium {
-  transition: filter 0.2s ease;
+	transition: filter 0.2s ease;
 }
 
 .btn-premium:hover {
-  filter: brightness(1.1);
+	filter: brightness(1.1);
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 .animate-in {
-  animation: fadeIn 0.5s ease-out forwards;
+	animation: fadeIn 0.5s ease-out forwards;
 }
 
 /* Minimal Pattern (if really needed, else just clear background) */
 .bg-subtle-grid {
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
-  mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-  opacity: 0.5;
+	background-size: 40px 40px;
+	background-image:
+		linear-gradient(to right, var(--border) 1px, transparent 1px),
+		linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+	mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
+	opacity: 0.5;
 }

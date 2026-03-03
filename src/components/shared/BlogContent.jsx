@@ -4,41 +4,41 @@ import { useEffect, useRef } from "react";
 import Script from "next/script";
 
 export default function BlogContent({ html }) {
-    const contentRef = useRef(null);
+	const contentRef = useRef(null);
 
-    useEffect(() => {
-        // Apply syntax highlighting after content is rendered
-        if (typeof window !== "undefined" && window.hljs && contentRef.current) {
-            contentRef.current.querySelectorAll("pre code").forEach((block) => {
-                window.hljs.highlightElement(block);
-            });
-        }
-    }, [html]);
+	useEffect(() => {
+		// Apply syntax highlighting after content is rendered
+		if (typeof window !== "undefined" && window.hljs && contentRef.current) {
+			contentRef.current.querySelectorAll("pre code").forEach((block) => {
+				window.hljs.highlightElement(block);
+			});
+		}
+	}, [html]);
 
-    const handleHighlightLoad = () => {
-        if (contentRef.current) {
-            contentRef.current.querySelectorAll("pre code").forEach((block) => {
-                window.hljs.highlightElement(block);
-            });
-        }
-    };
+	const handleHighlightLoad = () => {
+		if (contentRef.current) {
+			contentRef.current.querySelectorAll("pre code").forEach((block) => {
+				window.hljs.highlightElement(block);
+			});
+		}
+	};
 
-    return (
-        <>
-            {/* Highlight.js CSS - GitHub Dark theme */}
-            <link
-                rel="stylesheet"
-                href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css"
-            />
-            {/* Highlight.js Script */}
-            <Script
-                src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"
-                strategy="afterInteractive"
-                onLoad={handleHighlightLoad}
-            />
-            <div
-                ref={contentRef}
-                className={`prose prose-lg dark:prose-invert max-w-none
+	return (
+		<>
+			{/* Highlight.js CSS - GitHub Dark theme */}
+			<link
+				rel="stylesheet"
+				href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/styles/github-dark.min.css"
+			/>
+			{/* Highlight.js Script */}
+			<Script
+				src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"
+				strategy="afterInteractive"
+				onLoad={handleHighlightLoad}
+			/>
+			<div
+				ref={contentRef}
+				className={`prose prose-lg dark:prose-invert max-w-none
                     prose-headings:font-bold prose-headings:tracking-tight
                     prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl
                     prose-p:text-muted-foreground prose-p:leading-relaxed
@@ -53,10 +53,10 @@ export default function BlogContent({ html }) {
                     prose-img:rounded-xl prose-img:shadow-md
                     prose-hr:border-border
                     prose-table:overflow-x-auto prose-th:bg-muted prose-th:px-4 prose-th:py-2 prose-td:px-4 prose-td:py-2 prose-td:border-border`}
-                dangerouslySetInnerHTML={{ __html: html }}
-            />
-            {/* Using standard style tag for client-side styling */}
-            <style jsx>{`
+				dangerouslySetInnerHTML={{ __html: html }}
+			/>
+			{/* Using standard style tag for client-side styling */}
+			<style jsx>{`
                 .prose pre code {
                     background: transparent !important;
                     padding: 1rem !important;
@@ -74,6 +74,6 @@ export default function BlogContent({ html }) {
                     background: transparent !important;
                 }
             `}</style>
-        </>
-    );
+		</>
+	);
 }
