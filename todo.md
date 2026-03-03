@@ -1,5 +1,7 @@
 https://mate.tools/sitemap.xml
 copy = https://www.w3era.com/
+copy https://topai.tools/
+clone https://1000.tools/
 
 where possible use the jsdelivr cdns instead of bun install in the tools
 

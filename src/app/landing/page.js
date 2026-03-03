@@ -1023,9 +1023,6 @@ export default function LandingPage() {
               the web.
             </p>
           </div>
-          <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F">
-            <Image src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" width={100} height={20} alt="Visitor Badge" />
-          </a>
         </div>
       </footer>
     </div>

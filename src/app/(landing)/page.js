@@ -444,9 +444,6 @@ export default function LandingPage() {
             <p>&copy; 2026 30tools.com. All rights reserved.</p>
             <div className="flex items-center gap-6">
                 <FooterPartners />
-              <a href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F">
-                  <Image src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square" alt="Visitor Counter" width={100} height={20} className="opacity-80 hover:opacity-100 transition-opacity" />
-              </a>
             </div>
           </div>
         </div>
