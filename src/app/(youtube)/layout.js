@@ -1,5 +1,5 @@
-import YouTubeToolsNavbar from "@/components/navigation/YouTubeToolsNavbar";
 import YouTubeToolsFooter from "@/components/footers/YouTubeToolsFooter";
+import YouTubeToolsNavbar from "@/components/navigation/YouTubeToolsNavbar";
 
 export const metadata = {
 	title:

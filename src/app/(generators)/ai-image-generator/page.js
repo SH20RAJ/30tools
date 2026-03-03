@@ -1,17 +1,17 @@
-import AIImageGeneratorTool from "@/components/tools/generators/AIImageGeneratorTool";
 import {
+	AuthorBio,
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
-	AuthorBio,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import AIImageGeneratorTool from "@/components/tools/generators/AIImageGeneratorTool";
 import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
 
 export const metadata = {

@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import {
 	ArrowLeft,
 	CheckCircle2,
@@ -8,6 +6,8 @@ import {
 	ShieldCheck,
 	Zap,
 } from "lucide-react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export const metadata = {
 	title: "About 30Tools - Free Online Tools for Everyone",

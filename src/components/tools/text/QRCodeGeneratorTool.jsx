@@ -1,6 +1,22 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import {
+	ArrowLeftIcon,
+	CopyIcon,
+	DownloadIcon,
+	LinkIcon,
+	MailIcon,
+	MessageSquareIcon,
+	PhoneIcon,
+	QrCodeIcon,
+	RefreshCwIcon,
+	UserIcon,
+	WifiIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,11 +24,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import {
 	Select,
 	SelectContent,
@@ -22,20 +35,7 @@ import {
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
-import {
-	ArrowLeftIcon,
-	DownloadIcon,
-	QrCodeIcon,
-	WifiIcon,
-	PhoneIcon,
-	MailIcon,
-	UserIcon,
-	LinkIcon,
-	MessageSquareIcon,
-	RefreshCwIcon,
-	CopyIcon,
-} from "lucide-react";
-import Link from "next/link";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function QRCodeGeneratorTool() {
 	const [qrType, setQrType] = useState("url");

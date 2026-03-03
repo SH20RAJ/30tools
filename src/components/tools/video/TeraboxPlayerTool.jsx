@@ -1,23 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { AlertCircleIcon, LoaderIcon, PlayIcon } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { LoaderIcon, AlertCircleIcon, PlayIcon } from "lucide-react";
 import {
 	fetchTeraboxOGData,
 	fetchTeraboxVideoData,
 } from "@/lib/terabox-actions";
-
-// Import modular components
-import TeraboxUrlInput from "./terabox/TeraboxUrlInput";
-import TeraboxVideoPlayer from "./terabox/TeraboxVideoPlayer";
-import TeraboxVideoInfo from "./terabox/TeraboxVideoInfo";
-import TeraboxSharingTools from "./terabox/TeraboxSharingTools";
+import TeraboxAdvancedTools from "./terabox/TeraboxAdvancedTools";
 import TeraboxEmbedTools from "./terabox/TeraboxEmbedTools";
 import TeraboxPlayerSelector from "./terabox/TeraboxPlayerSelector";
-import TeraboxAdvancedTools from "./terabox/TeraboxAdvancedTools";
+import TeraboxSharingTools from "./terabox/TeraboxSharingTools";
+// Import modular components
+import TeraboxUrlInput from "./terabox/TeraboxUrlInput";
+import TeraboxVideoInfo from "./terabox/TeraboxVideoInfo";
+import TeraboxVideoPlayer from "./terabox/TeraboxVideoPlayer";
 
 export default function TeraboxPlayerTool() {
 	const router = useRouter();

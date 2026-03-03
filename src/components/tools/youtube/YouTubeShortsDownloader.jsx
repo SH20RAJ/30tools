@@ -1,19 +1,19 @@
 "use client";
-import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-	Download,
-	Smartphone,
-	Loader2,
-	Play,
 	Bookmark,
 	BookmarkCheck,
+	Download,
+	Loader2,
+	Play,
+	Smartphone,
 	SmartphoneIcon,
 } from "lucide-react";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 export default function YouTubeShortsDownloader() {
 	const [url, setUrl] = useState("");

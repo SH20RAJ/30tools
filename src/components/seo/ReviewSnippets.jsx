@@ -1,17 +1,17 @@
 "use client";
 
 import {
+	Award,
+	Heart,
+	Quote,
 	Star,
 	StarHalf,
-	Quote,
-	User,
 	ThumbsUp,
-	Heart,
-	Award,
+	User,
 } from "lucide-react";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
 // Review snippet data - In a real app, this would come from your database/API
 const SAMPLE_REVIEWS = {

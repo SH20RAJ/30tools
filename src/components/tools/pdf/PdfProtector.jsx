@@ -1,13 +1,13 @@
 "use client";
 
+import { Download, FileText, Loader2, Lock } from "lucide-react";
+import { PDFDocument } from "pdf-lib";
 import { useState } from "react";
+import { toast } from "sonner"; // Assuming sonner is available
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card } from "@/components/ui/card";
-import { Lock, FileText, Download, Loader2 } from "lucide-react";
-import { PDFDocument } from "pdf-lib";
-import { toast } from "sonner"; // Assuming sonner is available
 
 export default function PdfProtector() {
 	const [file, setFile] = useState(null);

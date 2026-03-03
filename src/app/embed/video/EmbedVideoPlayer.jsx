@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function EmbedVideoPlayer() {
 	const searchParams = useSearchParams();

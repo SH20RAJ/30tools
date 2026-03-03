@@ -1,5 +1,5 @@
+import { Github, Heart, Twitter } from "lucide-react";
 import Link from "next/link";
-import { Heart, Github, Twitter } from "lucide-react";
 import FooterPartners from "@/components/shared/FooterPartners";
 
 export default function PDFToolsFooter() {

@@ -1,5 +1,12 @@
 "use client";
 
+import {
+	PaletteIcon,
+	SettingsIcon,
+	ShieldIcon,
+	TrendingUpIcon,
+	ZapIcon,
+} from "lucide-react";
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -11,17 +18,10 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@/components/ui/switch";
-import { Slider } from "@/components/ui/slider";
-import {
-	SettingsIcon,
-	PaletteIcon,
-	ZapIcon,
-	ShieldIcon,
-	TrendingUpIcon,
-} from "lucide-react";
 
 export default function TeraboxAdvancedTools({
 	advancedSettings,

@@ -1,21 +1,21 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
 import {
-	Upload,
-	Download,
-	RotateCcw,
-	Wand2,
-	GitCompare,
-	Sun,
 	Contrast,
+	Download,
 	Droplets,
 	Eye,
+	GitCompare,
+	RotateCcw,
+	Sun,
+	Upload,
+	Wand2,
 } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+import { Slider } from "@/components/ui/slider";
 
 export default function PhotoEnhancerTool() {
 	const [image, setImage] = useState(null);

@@ -1,17 +1,17 @@
-import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
+import Script from "next/script";
 import {
 	BreadcrumbsEnhanced,
+	QuickActions,
 	RelatedTools,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
-// @ts-ignore
+// @ts-expect-error
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
 import { generateToolMetadata, getToolData } from "@/lib/seo-helper";
-import Script from "next/script";
 
 export async function generateMetadata() {
 	return generateToolMetadata("image-compressor", "image");

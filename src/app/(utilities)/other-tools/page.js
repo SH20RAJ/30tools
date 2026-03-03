@@ -1,5 +1,5 @@
-import { getAllCategories, getOtherTools } from "@/lib/other-tools-actions";
 import OtherToolsPage from "@/components/tools/OtherToolsPage";
+import { getAllCategories, getOtherTools } from "@/lib/other-tools-actions";
 
 export const metadata = {
 	title: { absolute: "Other Tools: Free Online Utilities | 30Tools" },

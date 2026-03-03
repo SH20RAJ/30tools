@@ -1,16 +1,16 @@
-import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverTool";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {

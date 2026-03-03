@@ -1,5 +1,5 @@
+import { Download, Heart } from "lucide-react";
 import Link from "next/link";
-import { Heart, Download } from "lucide-react";
 import FooterPartners from "@/components/shared/FooterPartners";
 
 export default function DownloaderToolsFooter() {

@@ -1,3 +1,4 @@
+import { ArrowRightIcon, HomeIcon, SearchIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -7,7 +8,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { HomeIcon, SearchIcon, ArrowRightIcon } from "lucide-react";
 
 export default function NotFoundPage() {
 	return (

@@ -1,6 +1,21 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import {
+	AlertCircleIcon,
+	CheckCircleIcon,
+	DownloadIcon,
+	InfoIcon,
+	KeyIcon,
+	LockIcon,
+	RefreshCwIcon,
+	ShieldIcon,
+	UnlockIcon,
+	UploadIcon,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,24 +23,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import {
-	UploadIcon,
-	DownloadIcon,
-	RefreshCwIcon,
-	UnlockIcon,
-	InfoIcon,
-	AlertCircleIcon,
-	CheckCircleIcon,
-	KeyIcon,
-	ShieldIcon,
-	LockIcon,
-} from "lucide-react";
 
 export default function PdfUnlockerTool() {
 	const [selectedFile, setSelectedFile] = useState(null);
@@ -155,7 +155,7 @@ export default function PdfUnlockerTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const downloadUnlockedFile = () => {

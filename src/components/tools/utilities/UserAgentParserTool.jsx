@@ -1,6 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Check, Copy, Monitor, RefreshCw, Smartphone } from "lucide-react";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,12 +12,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Monitor, Smartphone, Copy, Check, RefreshCw } from "lucide-react";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function UserAgentParserTool() {
 	const [userAgent, setUserAgent] = useState("");

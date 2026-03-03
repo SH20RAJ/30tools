@@ -1,10 +1,16 @@
 "use client";
 
+import {
+	AlertCircle,
+	BarChart3,
+	BookOpen,
+	CheckCircle2,
+	Lightbulb,
+	Loader2,
+} from "lucide-react";
 import { useState } from "react";
-import { analyzeContent } from "@/lib/ai-seo-actions";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Input } from "@/components/ui/input";
 import {
 	Card,
 	CardContent,
@@ -12,15 +18,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-	Loader2,
-	CheckCircle2,
-	AlertCircle,
-	BarChart3,
-	BookOpen,
-	Lightbulb,
-} from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { analyzeContent } from "@/lib/ai-seo-actions";
 
 export default function AiContentOptimizerTool() {
 	const [content, setContent] = useState("");

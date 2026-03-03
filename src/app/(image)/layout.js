@@ -1,5 +1,5 @@
-import ImageToolsNavbar from "@/components/navigation/ImageToolsNavbar";
 import ImageToolsFooter from "@/components/footers/ImageToolsFooter";
+import ImageToolsNavbar from "@/components/navigation/ImageToolsNavbar";
 import {
 	OPEN_GRAPH_DEFAULTS,
 	TWITTER_DEFAULTS,

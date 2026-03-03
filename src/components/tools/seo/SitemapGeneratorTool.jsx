@@ -1,6 +1,18 @@
 "use client";
 
+import {
+	ArrowLeftIcon,
+	CalendarIcon,
+	DownloadIcon,
+	LinkIcon,
+	MapIcon,
+	PlusIcon,
+	XIcon,
+} from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,21 +20,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import {
-	MapIcon,
-	DownloadIcon,
-	PlusIcon,
-	XIcon,
-	ArrowLeftIcon,
-	LinkIcon,
-	CalendarIcon,
-} from "lucide-react";
-import Link from "next/link";
 
 export default function SitemapGeneratorTool() {
 	const [urls, setUrls] = useState([

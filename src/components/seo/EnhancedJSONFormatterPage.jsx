@@ -1,20 +1,20 @@
 import {
 	BreadcrumbsEnhanced,
+	DeviceCompatibility,
 	FAQSection,
+	QuickActions,
+	RelatedTools,
 	ReviewSnippets,
 	SEOBooster,
-	RelatedTools,
 	UserComments,
-	DeviceCompatibility,
-	QuickActions,
 } from "@/components/seo";
 import {
-	DeveloperToolFeatures,
 	DeveloperToolExamples,
+	DeveloperToolFeatures,
 } from "@/components/seo/DeveloperToolsHub";
-import { generateDeveloperToolMeta } from "@/constants/seo/developer-tools-seo";
-import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
+import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
+import { generateDeveloperToolMeta } from "@/constants/seo/developer-tools-seo";
 
 // Enhanced metadata for JSON Formatter
 export const metadata = {

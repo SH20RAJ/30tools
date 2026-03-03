@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Heart, Youtube } from "lucide-react";
+import Link from "next/link";
 import FooterPartners from "@/components/shared/FooterPartners";
 
 export default function YouTubeToolsFooter() {

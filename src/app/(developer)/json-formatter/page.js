@@ -1,14 +1,14 @@
-import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
+	QuickActions,
 	RelatedTools,
+	ReviewSnippets,
 	ToolFeatures,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import { DeveloperToolExamples } from "@/components/seo/DeveloperToolsHub";
+import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 
 export const metadata = {

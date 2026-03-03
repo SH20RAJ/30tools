@@ -1,3 +1,4 @@
+import { Eye, FileJson, Key, Lock } from "lucide-react";
 import JWTDecoder from "@/components/tools/developer/JWTDecoderTool";
 import {
 	Accordion,
@@ -5,7 +6,6 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Lock, FileJson, Eye, Key } from "lucide-react";
 
 export const metadata = {
 	title: "JWT Decoder (2026) - Decode JSON Web Tokens Online | 30Tools",

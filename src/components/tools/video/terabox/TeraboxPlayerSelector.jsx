@@ -1,5 +1,7 @@
 "use client";
 
+import { ExternalLinkIcon, MonitorIcon, PlayIcon } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -10,8 +12,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { PlayIcon, ExternalLinkIcon, MonitorIcon } from "lucide-react";
 
 export default function TeraboxPlayerSelector({
 	selectedPlayer,

@@ -2,9 +2,9 @@ import Link from "next/link";
 import {
 	Card,
 	CardContent,
+	CardDescription,
 	CardHeader,
 	CardTitle,
-	CardDescription,
 } from "@/components/ui/card";
 
 export const metadata = {

@@ -1,17 +1,17 @@
 import Link from "next/link";
-import PDFToWordTool from "@/components/tools/pdf/PDFToWordTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import PDFToWordTool from "@/components/tools/pdf/PDFToWordTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {

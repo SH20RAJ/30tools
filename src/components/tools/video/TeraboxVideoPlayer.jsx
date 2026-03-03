@@ -1,18 +1,18 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-	Download,
-	Play,
-	Loader2,
-	AlertCircle,
-	Link as LinkIcon,
-} from "lucide-react";
-import { fetchTeraboxVideo } from "@/lib/tera";
 import Hls from "hls.js";
+import {
+	AlertCircle,
+	Download,
+	Link as LinkIcon,
+	Loader2,
+	Play,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { fetchTeraboxVideo } from "@/lib/tera";
 
 export default function TeraboxVideoPlayer() {
 	const [url, setUrl] = useState("");

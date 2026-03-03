@@ -1,9 +1,9 @@
 "use client";
 
+import { CheckIcon, CopyIcon } from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { CopyIcon, CheckIcon } from "lucide-react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 
 const CodeBlock = ({ code, language = "html", className = "" }) => {
 	const [copied, setCopied] = useState(false);

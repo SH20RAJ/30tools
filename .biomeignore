@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.open-next/
+dist/
+out/
+public/
+*.min.js
+*.generated.*
+wrangler.json
+package.json
+package-lock.json
+bun.lockb

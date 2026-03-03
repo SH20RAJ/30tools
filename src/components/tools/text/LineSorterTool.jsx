@@ -1,9 +1,11 @@
 "use client";
 
+import { ArrowUpDown, Copy, FileText } from "lucide-react";
 import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import {
 	Select,
@@ -12,9 +14,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Copy, ArrowUpDown, FileText } from "lucide-react";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function LineSorterTool() {
 	const [inputText, setInputText] = useState("");
@@ -54,7 +54,7 @@ export default function LineSorterTool() {
 		}
 
 		// Sort lines based on selected method
-		let sortedLines = [...lines];
+		const sortedLines = [...lines];
 
 		switch (sortMethod) {
 			case "alphabetical":

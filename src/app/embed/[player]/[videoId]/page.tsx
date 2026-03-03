@@ -1,5 +1,5 @@
-import EmbedPlayer from "@/components/embed/EmbedPlayer";
 import { notFound } from "next/navigation";
+import EmbedPlayer from "@/components/embed/EmbedPlayer";
 
 export default async function Embed({ params }) {
 	const { player, videoId } = await params;

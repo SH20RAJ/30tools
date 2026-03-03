@@ -1,18 +1,18 @@
 "use client";
 
+import { AlertCircle, CheckCircle2, Download, Loader2 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
 	Card,
 	CardContent,
+	CardDescription,
 	CardHeader,
 	CardTitle,
-	CardDescription,
 } from "@/components/ui/card";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { Loader2, Download, AlertCircle, CheckCircle2 } from "lucide-react";
-import Image from "next/image";
+import { Input } from "@/components/ui/input";
 
 const FacebookStoryDownloader = () => {
 	const [url, setUrl] = useState("");

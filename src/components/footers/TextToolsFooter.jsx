@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Heart, Type } from "lucide-react";
+import Link from "next/link";
 
 export default function TextToolsFooter() {
 	return (

@@ -1,6 +1,21 @@
 "use client";
 
-import { useState, useRef } from "react";
+import {
+	AlertCircle,
+	CheckCircle,
+	Download,
+	Eye,
+	EyeOff,
+	FileText,
+	Key,
+	Loader,
+	Lock,
+	Settings,
+	Upload,
+} from "lucide-react";
+import { useRef, useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,25 +24,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
-import {
-	Upload,
-	Download,
-	Lock,
-	Eye,
-	EyeOff,
-	CheckCircle,
-	AlertCircle,
-	Loader,
-	FileText,
-	Key,
-	Settings,
-} from "lucide-react";
 
 export default function PdfProtectTool() {
 	const [pdfFile, setPdfFile] = useState(null);
@@ -56,7 +56,7 @@ export default function PdfProtectTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const generateStrongPassword = () => {

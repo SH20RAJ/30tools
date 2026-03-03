@@ -90,6 +90,31 @@ const _jsonLd = {
 		url: "https://30tools.com",
 	},
 };
+
+import {
+	ArrowRightIcon,
+	BracesIcon,
+	CodeIcon,
+	FileIcon,
+	FileTextIcon,
+	ImageIcon,
+	MusicIcon,
+	PaletteIcon,
+	PenToolIcon,
+	RefreshCwIcon,
+	SearchIcon,
+	SettingsIcon,
+	ShieldCheckIcon,
+	StarIcon,
+	TrendingUpIcon,
+	TypeIcon,
+	UsersIcon,
+	VideoIcon,
+	ZapIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -98,31 +123,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
-import Link from "next/link";
 import toolsData from "@/constants/tools.json";
-import {
-	ImageIcon,
-	VideoIcon,
-	MusicIcon,
-	FileTextIcon,
-	FileIcon,
-	ArrowRightIcon,
-	ZapIcon,
-	ShieldCheckIcon,
-	UsersIcon,
-	TrendingUpIcon,
-	StarIcon,
-	SearchIcon,
-	PaletteIcon,
-	PenToolIcon,
-	CodeIcon,
-	BracesIcon,
-	TypeIcon,
-	SettingsIcon,
-	RefreshCwIcon,
-} from "lucide-react";
 
 export default function LandingPage() {
 	const iconMap = {

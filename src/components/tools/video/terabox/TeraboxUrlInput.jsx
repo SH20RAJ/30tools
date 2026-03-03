@@ -1,6 +1,8 @@
 "use client";
 
+import { LinkIcon, LoaderIcon, RefreshCwIcon, WandIcon } from "lucide-react";
 import { useRef } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,10 +11,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { LinkIcon, WandIcon, RefreshCwIcon, LoaderIcon } from "lucide-react";
-import { toast } from "sonner";
+import { Label } from "@/components/ui/label";
 
 export default function TeraboxUrlInput({
 	teraboxUrl,

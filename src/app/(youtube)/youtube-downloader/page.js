@@ -1,6 +1,6 @@
-import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
-import ScrollToTopButton from "@/components/tools/youtube/ScrollToTopButton";
 import RelatedTools from "@/components/shared/RelatedTools";
+import ScrollToTopButton from "@/components/tools/youtube/ScrollToTopButton";
+import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
 
 export const metadata = {
 	title: "Youtube Downloader - Free Online Tool | Professional Results",

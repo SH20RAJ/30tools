@@ -1,9 +1,18 @@
 "use client";
 
-import { useState, useRef } from "react";
+import {
+	Brain,
+	Check,
+	Clock,
+	Copy,
+	Download,
+	FileText,
+	Upload,
+} from "lucide-react";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import {
 	Card,
 	CardContent,
@@ -11,7 +20,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Progress } from "@/components/ui/progress";
 import {
 	Select,
 	SelectContent,
@@ -19,18 +30,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
-import {
-	Upload,
-	Download,
-	Copy,
-	Check,
-	Clock,
-	Brain,
-	FileText,
-} from "lucide-react";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function AiVideoSummarizerTool() {
 	const [videoFile, setVideoFile] = useState(null);

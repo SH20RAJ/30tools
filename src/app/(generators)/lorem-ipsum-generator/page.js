@@ -1,14 +1,14 @@
-import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGeneratorTool";
 import {
 	FAQSection,
+	QuickActions,
 	RelatedTools,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGeneratorTool";
 
 export const metadata = {
 	title: "Lorem Ipsum Generator (2026) - Free Placeholder Text | 30Tools",

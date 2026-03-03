@@ -1,6 +1,6 @@
 import Link from "next/link";
-import SchemaGenerator from "@/components/tools/seo/SchemaGenerator";
 import { AuthorBio } from "@/components/seo";
+import SchemaGenerator from "@/components/tools/seo/SchemaGenerator";
 
 export const metadata = {
 	title: "Schema Markup Generator (2026) - Free JSON-LD Tool | 30Tools",

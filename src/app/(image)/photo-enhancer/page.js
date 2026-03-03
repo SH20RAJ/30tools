@@ -1,16 +1,16 @@
-import PhotoEnhancerTool from "@/components/tools/image/PhotoEnhancerTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import PhotoEnhancerTool from "@/components/tools/image/PhotoEnhancerTool";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {

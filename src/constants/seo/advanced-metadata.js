@@ -1,5 +1,5 @@
 // Advanced SEO metadata templates with long-tail keywords and optimization
-import { getAllTools, getAllCategories } from "@/constants/tools-utils";
+import { getAllCategories, getAllTools } from "@/constants/tools-utils";
 
 // Global SEO constants
 export const GLOBAL_SEO = {

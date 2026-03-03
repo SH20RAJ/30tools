@@ -1,5 +1,5 @@
-import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 import Link from "next/link";
+import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 const researchedKeywords = [
 	"facebook video downloader",

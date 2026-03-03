@@ -1,5 +1,6 @@
 "use client";
 
+import { Lock, Star, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -8,7 +9,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Lock, Star, Zap } from "lucide-react";
 import { useToolAuth } from "@/hooks/useToolAuth";
 
 export function ToolAuthGuard({

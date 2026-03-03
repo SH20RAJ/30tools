@@ -1,20 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Card } from "@/components/ui/card";
 import {
-	FileText,
 	Download,
+	FileText,
 	Loader2,
-	X,
-	MoveUp,
 	MoveDown,
+	MoveUp,
 	Plus,
+	X,
 } from "lucide-react";
 import { PDFDocument } from "pdf-lib";
+import { useState } from "react";
 import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 
 export default function PdfMerger() {
 	const [files, setFiles] = useState([]); // Array of { file, name, id }

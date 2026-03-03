@@ -1,19 +1,19 @@
+import { FileSignature, Scale, ShieldAlert } from "lucide-react";
 import Link from "next/link";
-import WordToPDFTool from "@/components/tools/pdf/WordToPDFTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import WordToPDFTool from "@/components/tools/pdf/WordToPDFTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
-import { Scale, FileSignature, ShieldAlert } from "lucide-react";
 
 export const metadata = {
 	title: "Word to PDF Converter Online (2026) - DOC/DOCX to PDF | 30Tools",

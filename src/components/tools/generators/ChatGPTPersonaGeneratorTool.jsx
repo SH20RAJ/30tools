@@ -1,6 +1,18 @@
 "use client";
 
+import {
+	Copy,
+	Download,
+	RefreshCw,
+	Share2,
+	Shuffle,
+	Sparkles,
+} from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
+// Import SocialShareButtons component
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,10 +20,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
 	Select,
 	SelectContent,
@@ -19,17 +28,8 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import {
-	Copy,
-	Shuffle,
-	Sparkles,
-	Download,
-	Share2,
-	RefreshCw,
-} from "lucide-react";
-import { toast } from "sonner";
-// Import SocialShareButtons component
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
 
 const ChatGPTPersonaGeneratorTool = () => {
 	const [persona, setPersona] = useState("");

@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+	AlertCircle,
+	CheckCircle2,
 	Download,
 	Link,
 	Loader2,
-	AlertCircle,
-	CheckCircle2,
 } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 export default function TwitterDownloader() {
 	const [url, setUrl] = useState("");

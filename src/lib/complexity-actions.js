@@ -246,7 +246,7 @@ export async function validateCode(code, language) {
 		case "javascript":
 		case "js":
 		case "typescript":
-		case "ts":
+		case "ts": {
 			// Check for basic JavaScript syntax
 			const braceCount =
 				(code.match(/\{/g) || []).length - (code.match(/\}/g) || []).length;
@@ -254,9 +254,10 @@ export async function validateCode(code, language) {
 				issues.push("Unmatched braces detected");
 			}
 			break;
+		}
 
 		case "python":
-		case "py":
+		case "py": {
 			// Check for basic Python syntax - validate indentation consistency
 			const lines = code.split("\n");
 			let indentLevel = 0;
@@ -271,6 +272,7 @@ export async function validateCode(code, language) {
 				issues.push("Code has deep nesting which may cause indentation issues");
 			}
 			break;
+		}
 
 		case "java":
 			if (!code.includes("class") && !code.includes("interface")) {

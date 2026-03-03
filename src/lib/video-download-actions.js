@@ -60,7 +60,7 @@ export async function fetchVideoData(url) {
 		const platform = detectPlatform(url);
 
 		// Process the response from savevideo.me API
-		let processedData = {
+		const processedData = {
 			title: data.title || `${platform} Video`,
 			thumbnail: data.thumbnail || "/placeholder-video-thumbnail.jpg",
 			duration: data.duration || "0:30",

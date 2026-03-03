@@ -1,6 +1,6 @@
 import Link from "next/link";
-import FAQSchema from "@/components/shared/FAQSchema";
 import BreadcrumbSchema from "@/components/shared/BreadcrumbSchema";
+import FAQSchema from "@/components/shared/FAQSchema";
 
 export const metadata = {
 	title: "Free Video Downloader - Download Videos from 50+ Sites | 30tools",

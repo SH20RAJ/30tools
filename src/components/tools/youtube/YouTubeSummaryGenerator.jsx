@@ -1,10 +1,24 @@
 "use client";
 
+import {
+	BookOpen,
+	Brain,
+	Clock,
+	Copy,
+	Download,
+	Eye,
+	FileText,
+	Hash,
+	Loader2,
+	VideoIcon,
+	Zap,
+} from "lucide-react";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
 	Select,
 	SelectContent,
@@ -14,23 +28,9 @@ import {
 } from "@/components/ui/select";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
-	VideoIcon,
-	Loader2,
-	Copy,
-	Clock,
-	BookOpen,
-	Zap,
-	Brain,
-	Download,
-	FileText,
-	Hash,
-	Eye,
-} from "lucide-react";
-import { toast } from "sonner";
-import {
-	generateYouTubeSummary,
-	generateQuickSummary,
 	generateDetailedSummary,
+	generateQuickSummary,
+	generateYouTubeSummary,
 } from "@/lib/summary-actions";
 
 export default function YouTubeSummaryGenerator() {

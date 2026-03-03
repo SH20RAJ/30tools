@@ -1,6 +1,9 @@
 "use client";
 
+import { Check, Copy, ExternalLink, Link, Mail } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,12 +11,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Copy, Check, Mail, Link, ExternalLink } from "lucide-react";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function MailtoLinkGeneratorTool() {
 	const [formData, setFormData] = useState({

@@ -1,6 +1,19 @@
 "use client";
 
+import {
+	Clock,
+	Coffee,
+	Copy,
+	Flame,
+	RefreshCw,
+	Share2,
+	Sparkles,
+} from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,11 +21,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { Switch } from "@/components/ui/switch";
 import {
 	Select,
 	SelectContent,
@@ -20,17 +29,8 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import {
-	Copy,
-	Flame,
-	Share2,
-	RefreshCw,
-	Coffee,
-	Clock,
-	Sparkles,
-} from "lucide-react";
-import { toast } from "sonner";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Switch } from "@/components/ui/switch";
+import { Textarea } from "@/components/ui/textarea";
 
 const ProductivityRoastGeneratorTool = () => {
 	const [roast, setRoast] = useState("");
@@ -146,7 +146,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
 			const aiRoast = await response.text();
 
 			// Clean up the response
-			let cleanRoast = aiRoast
+			const cleanRoast = aiRoast
 				.trim()
 				.replace(/^["']|["']$/g, "") // Remove quotes
 				.replace(/^Roast:\s*/i, "") // Remove "Roast:" prefix

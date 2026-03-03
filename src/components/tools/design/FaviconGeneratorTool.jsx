@@ -1,6 +1,20 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import {
+	ArrowLeftIcon,
+	CheckCircleIcon,
+	CodeIcon,
+	DownloadIcon,
+	MonitorIcon,
+	SmartphoneIcon,
+	StarIcon,
+	TabletIcon,
+	UploadIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useCallback, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,23 +22,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
-import {
-	ArrowLeftIcon,
-	UploadIcon,
-	DownloadIcon,
-	CodeIcon,
-	CheckCircleIcon,
-	StarIcon,
-	SmartphoneIcon,
-	MonitorIcon,
-	TabletIcon,
-} from "lucide-react";
-import Link from "next/link";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function FaviconGeneratorTool() {
 	const [selectedImage, setSelectedImage] = useState(null);

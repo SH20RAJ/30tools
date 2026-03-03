@@ -1,6 +1,6 @@
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
 	title: "Step-by-Step Guide to Cancel Your Netflix Membership - 30Tools",

@@ -1,8 +1,8 @@
 "use client";
+import { ChevronDown, Menu, X, Youtube } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Youtube, Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function YouTubeToolsNavbar() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);

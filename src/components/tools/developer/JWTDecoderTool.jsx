@@ -1,6 +1,18 @@
 "use client";
 
+import {
+	AlertTriangleIcon,
+	ArrowLeftIcon,
+	CheckCircleIcon,
+	CopyIcon,
+	Key,
+	RefreshCwIcon,
+} from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,20 +20,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-	ArrowLeftIcon,
-	CopyIcon,
-	RefreshCwIcon,
-	Key,
-	CheckCircleIcon,
-	AlertTriangleIcon,
-} from "lucide-react";
-import Link from "next/link";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function JWTDecoder() {
 	const [jwtToken, setJwtToken] = useState("");

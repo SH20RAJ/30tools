@@ -1,6 +1,5 @@
+import { BreadcrumbsEnhanced, FAQSection } from "@/components/seo";
 import OgImageGenerator from "@/components/tools/image/OgImageGenerator/OgImageGenerator";
-import { BreadcrumbsEnhanced } from "@/components/seo";
-import { FAQSection } from "@/components/seo";
 
 export const metadata = {
 	title: "Free Open Graph Image Generator | Create OG Images Online",

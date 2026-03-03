@@ -1,5 +1,5 @@
-import toolsData from "./tools.json";
 import seoConfig from "./seo-config.json";
+import toolsData from "./tools.json";
 
 /**
  * Get all tools as a flat array

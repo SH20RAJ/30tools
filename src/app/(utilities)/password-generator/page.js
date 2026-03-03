@@ -1,14 +1,14 @@
-import PasswordGeneratorTool from "@/components/tools/utilities/PasswordGeneratorTool";
 import {
 	FAQSection,
+	QuickActions,
 	RelatedTools,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import PasswordGeneratorTool from "@/components/tools/utilities/PasswordGeneratorTool";
 
 export const metadata = {
 	title: "Strong Password Generator (2026) - Secure & Random | 30Tools",

@@ -1,6 +1,8 @@
 "use client";
 
+import { CheckCircle2, Loader2, Send, XCircle } from "lucide-react";
 import { useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -10,8 +12,6 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Loader2, CheckCircle2, XCircle, Send } from "lucide-react";
 
 export default function IndexNowClient() {
 	const [loading, setLoading] = useState(false);

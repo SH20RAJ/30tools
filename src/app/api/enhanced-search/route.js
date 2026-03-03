@@ -8,7 +8,7 @@ export async function GET(request) {
 	const limit = parseInt(searchParams.get("limit") || "20");
 
 	try {
-		let allTools = [];
+		const allTools = [];
 
 		// Flatten all tools from tools directory
 		Object.entries(toolsData.categories).forEach(([catKey, catData]) => {
@@ -28,7 +28,7 @@ export async function GET(request) {
 		const searchResults = allTools
 			.map((tool) => {
 				let score = 0;
-				let matchedKeywords = [];
+				const matchedKeywords = [];
 
 				if (!query) {
 					score = tool.popular ? 100 : tool.trending ? 80 : 50;

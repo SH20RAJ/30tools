@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Heart, Play } from "lucide-react";
+import Link from "next/link";
 import FooterPartners from "@/components/shared/FooterPartners";
 
 export default function VideoToolsFooter() {

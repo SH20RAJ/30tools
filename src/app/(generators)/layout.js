@@ -1,5 +1,5 @@
-import GeneratorToolsNavbar from "@/components/navigation/GeneratorToolsNavbar";
 import GeneratorToolsFooter from "@/components/footers/GeneratorToolsFooter";
+import GeneratorToolsNavbar from "@/components/navigation/GeneratorToolsNavbar";
 
 export const metadata = {
 	title: "AI Generator Tools - Free AI Content Creation Suite | 30Tools",

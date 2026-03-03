@@ -1,25 +1,24 @@
 "use client";
 
+import {
+	CheckCircle2,
+	Code2,
+	Copy,
+	ExternalLink,
+	Play,
+	Share2,
+	Sparkles,
+} from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
 	Card,
 	CardContent,
+	CardDescription,
 	CardHeader,
 	CardTitle,
-	CardDescription,
 } from "@/components/ui/card";
-import {
-	Play,
-	Share2,
-	Code2,
-	ExternalLink,
-	Copy,
-	CheckCircle2,
-	Sparkles,
-} from "lucide-react";
-import { toast } from "sonner";
 import {
 	Dialog,
 	DialogContent,
@@ -27,6 +26,7 @@ import {
 	DialogTitle,
 	DialogTrigger,
 } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
 
 export function SimpleTeraboxPlayer() {
 	const [url, setUrl] = useState("");

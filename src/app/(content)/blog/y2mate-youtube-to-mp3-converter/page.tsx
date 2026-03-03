@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { AlertTriangle, ArrowLeft, CheckCircle2, Zap } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, CheckCircle2, AlertTriangle, Zap } from "lucide-react";
 
 export const metadata = {
 	title: { absolute: "Y2Mate Features & Top Alternative | 30Tools" },

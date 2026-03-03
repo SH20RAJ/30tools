@@ -1,16 +1,16 @@
-import { SimpleTeraboxPlayer } from "@/components/tools/video/SimpleTeraboxPlayer";
-import { Metadata } from "next";
+import { Cloud, Monitor, Play, Server, ShieldCheck, Zap } from "lucide-react";
+import type { Metadata } from "next";
 import Link from "next/link";
+import { generatePageMetadata } from "@/components/shared/PageMeta";
+import ToolLayout from "@/components/shared/ToolLayout";
+import { SimpleTeraboxPlayer } from "@/components/tools/video/SimpleTeraboxPlayer";
 import {
 	Accordion,
 	AccordionContent,
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
-import { ShieldCheck, Zap, Monitor, Play, Server, Cloud } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
-import ToolLayout from "@/components/shared/ToolLayout";
-import { generatePageMetadata } from "@/components/shared/PageMeta";
 import jsonLdSchemas from "./schemas";
 
 // --- Metadata ---

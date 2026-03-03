@@ -1,6 +1,10 @@
 "use client";
 
+import { AlertCircle, Check, Globe, MapPin, Phone, X } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,12 +12,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Phone, Check, X, Globe, MapPin, AlertCircle } from "lucide-react";
-import { toast } from "sonner";
 
 export default function PhoneValidatorTool() {
 	const [phoneNumber, setPhoneNumber] = useState("");

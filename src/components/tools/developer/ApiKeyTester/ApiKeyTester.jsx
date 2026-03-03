@@ -1,6 +1,20 @@
 "use client";
 
+import {
+	AlertCircle,
+	Check,
+	Copy,
+	ExternalLink,
+	Eye,
+	EyeOff,
+	Loader2,
+	Play,
+	Terminal,
+} from "lucide-react";
 import { useState } from "react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -9,21 +23,7 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import {
-	Copy,
-	Check,
-	Eye,
-	EyeOff,
-	Play,
-	Terminal,
-	AlertCircle,
-	Loader2,
-	ExternalLink,
-} from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 export default function ApiKeyTester({ tool }) {
 	const [apiKey, setApiKey] = useState("");
@@ -68,7 +68,7 @@ export default function ApiKeyTester({ tool }) {
 
 		try {
 			// Build options
-			let url =
+			const url =
 				typeof tool.endpoint === "function"
 					? tool.endpoint(apiKey)
 					: tool.endpoint;

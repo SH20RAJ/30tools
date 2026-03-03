@@ -1,3 +1,15 @@
+import {
+	CheckCircle2,
+	Copy,
+	Download,
+	Globe,
+	Image as ImageIcon,
+	Music,
+	Smartphone,
+	Video,
+} from "lucide-react";
+import Link from "next/link";
+import { AuthorBio } from "@/components/seo";
 import TikTokDownloader from "@/components/tools/downloaders/TikTokDownloader";
 import {
 	Accordion,
@@ -5,18 +17,6 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
-import {
-	CheckCircle2,
-	Copy,
-	Download,
-	Globe,
-	Music,
-	Smartphone,
-	Video,
-	Image as ImageIcon,
-} from "lucide-react";
-import { AuthorBio } from "@/components/seo";
-import Link from "next/link";
 
 export const metadata = {
 	title: "How to Download TikTok Videos Without Watermark (2026) | 30Tools",

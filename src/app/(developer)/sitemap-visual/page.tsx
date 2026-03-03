@@ -1,6 +1,6 @@
-import { getAllCategories, getToolsByCategory } from "@/constants/tools-utils";
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { getAllCategories, getToolsByCategory } from "@/constants/tools-utils";
 
 export const metadata = {
 	title: "Visual Sitemap | 30Tools",

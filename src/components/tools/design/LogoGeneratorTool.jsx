@@ -1,6 +1,20 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import {
+	Check,
+	Copy,
+	Download,
+	Image,
+	Palette,
+	RefreshCw,
+	Sparkles,
+	Type,
+	Zap,
+} from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,10 +22,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import {
 	Select,
 	SelectContent,
@@ -19,19 +31,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
-import {
-	Palette,
-	Download,
-	Type,
-	RefreshCw,
-	Zap,
-	Sparkles,
-	Copy,
-	Check,
-	Image,
-} from "lucide-react";
-import { toast } from "sonner";
+import { Slider } from "@/components/ui/slider";
 
 const fonts = [
 	{ name: "Inter", value: "Inter, sans-serif", category: "Modern" },

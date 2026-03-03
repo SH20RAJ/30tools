@@ -1,14 +1,14 @@
-import Base64Tool from "@/components/tools/developer/Base64Tool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
+	QuickActions,
 	RelatedTools,
+	ReviewSnippets,
 	ToolFeatures,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import { DeveloperToolExamples } from "@/components/seo/DeveloperToolsHub";
+import Base64Tool from "@/components/tools/developer/Base64Tool";
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 
 export const metadata = {

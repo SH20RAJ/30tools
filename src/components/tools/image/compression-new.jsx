@@ -1,6 +1,23 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import {
+	CheckIcon,
+	DownloadIcon,
+	FileIcon,
+	ReplaceAll,
+	ShieldCheckIcon,
+	UploadIcon,
+	XIcon,
+	ZapIcon,
+} from "lucide-react";
+import { useCallback, useState } from "react";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,31 +26,14 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/ui/accordion";
 import {
 	IMAGE_COMPRESSOR_FAQS,
 	WH_QUESTIONS_CONTENT,
 } from "@/constants/seo/image-faqs";
-import {
-	UploadIcon,
-	DownloadIcon,
-	ZapIcon,
-	ShieldCheckIcon,
-	FileIcon,
-	ReplaceAll,
-	XIcon,
-	CheckIcon,
-} from "lucide-react";
 
 export default function ImageCompressionTool() {
 	const [files, setFiles] = useState([]);
@@ -93,7 +93,7 @@ export default function ImageCompressionTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const compressImage = async (fileItem) => {

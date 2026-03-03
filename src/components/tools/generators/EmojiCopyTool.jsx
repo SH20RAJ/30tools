@@ -1,6 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { ArrowLeftIcon, ClockIcon, SearchIcon, SmileIcon } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,13 +13,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowLeftIcon, SearchIcon, ClockIcon, SmileIcon } from "lucide-react";
-import Link from "next/link";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 // Simplified emoji categories with basic emojis only
 const EMOJI_CATEGORIES = {

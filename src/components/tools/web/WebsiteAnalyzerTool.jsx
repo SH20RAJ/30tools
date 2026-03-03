@@ -1,6 +1,24 @@
 "use client";
 
+import {
+	AlertTriangleIcon,
+	ArrowLeftIcon,
+	BarChart3Icon,
+	CheckCircleIcon,
+	ClockIcon,
+	GlobeIcon,
+	SearchIcon,
+	ShieldIcon,
+	SmartphoneIcon,
+	XCircleIcon,
+	ZapIcon,
+} from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,28 +26,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-	ArrowLeftIcon,
-	GlobeIcon,
-	ZapIcon,
-	CheckCircleIcon,
-	AlertTriangleIcon,
-	XCircleIcon,
-	SmartphoneIcon,
-	ClockIcon,
-	ShieldIcon,
-	SearchIcon,
-	BarChart3Icon,
-} from "lucide-react";
-import Link from "next/link";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function WebsiteAnalyzerTool() {
 	const [url, setUrl] = useState("");

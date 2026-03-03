@@ -1,5 +1,5 @@
+import { ArrowLeft, Download, Globe, Smartphone, Zap } from "lucide-react";
 import Link from "next/link";
-import { ArrowLeft, Download, Smartphone, Globe, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {

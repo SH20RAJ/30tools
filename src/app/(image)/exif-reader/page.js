@@ -1,16 +1,16 @@
-import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {

@@ -1,10 +1,17 @@
 "use client";
 
+import {
+	CheckCircle2,
+	Copy,
+	Download,
+	PenTool,
+	Sparkles,
+	Wand2,
+	Youtube,
+} from "lucide-react";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import {
 	Card,
 	CardContent,
@@ -12,6 +19,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
 	Select,
 	SelectContent,
@@ -19,17 +28,8 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
 import { Slider } from "@/components/ui/slider";
-import {
-	PenTool,
-	Copy,
-	Download,
-	Sparkles,
-	Youtube,
-	CheckCircle2,
-	Wand2,
-} from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 import { generateYouTubeScript } from "@/lib/youtube-actions";
 
 export default function YouTubeScriptGenerator() {

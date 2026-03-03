@@ -1,19 +1,19 @@
 "use client";
 
+import {
+	CopyIcon,
+	ExternalLinkIcon,
+	MailIcon,
+	QrCodeIcon,
+	ShareIcon,
+} from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-	ShareIcon,
-	CopyIcon,
-	ExternalLinkIcon,
-	MailIcon,
-	QrCodeIcon,
-} from "lucide-react";
-import { toast } from "sonner";
 
 export default function TeraboxSharingTools({ shareUrl, videoData }) {
 	const [qrCodeUrl, setQrCodeUrl] = useState("");

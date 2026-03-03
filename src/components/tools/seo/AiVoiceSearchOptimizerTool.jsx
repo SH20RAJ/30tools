@@ -1,9 +1,16 @@
 "use client";
 
+import {
+	Check,
+	Copy,
+	Loader2,
+	MessageSquare,
+	Mic,
+	Smartphone,
+} from "lucide-react";
 import { useState } from "react";
-import { optimizeForVoiceSearch } from "@/lib/ai-seo-actions";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
 	Card,
 	CardContent,
@@ -11,15 +18,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-	Loader2,
-	Mic,
-	MessageSquare,
-	Copy,
-	Check,
-	Smartphone,
-} from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { optimizeForVoiceSearch } from "@/lib/ai-seo-actions";
 
 export default function AiVoiceSearchOptimizerTool() {
 	const [topic, setTopic] = useState("");

@@ -1,11 +1,11 @@
+import { ArrowLeftIcon, CalendarIcon, ExternalLinkIcon } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import RelatedArticles from "@/components/blog/RelatedArticles";
+import BlogContent from "@/components/shared/BlogContent";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CalendarIcon, ArrowLeftIcon, ExternalLinkIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import BlogContent from "@/components/shared/BlogContent";
-import RelatedArticles from "@/components/blog/RelatedArticles";
 
 async function getArticle(username, slug) {
 	try {

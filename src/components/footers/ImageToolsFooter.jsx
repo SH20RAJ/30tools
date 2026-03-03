@@ -1,8 +1,8 @@
+import { GithubIcon, HeartIcon, ImageIcon, TwitterIcon } from "lucide-react";
 import Link from "next/link";
+import FooterPartners from "@/components/shared/FooterPartners";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { ImageIcon, TwitterIcon, GithubIcon, HeartIcon } from "lucide-react";
-import FooterPartners from "@/components/shared/FooterPartners";
 
 export default function ImageToolsFooter() {
 	const imageTools = [

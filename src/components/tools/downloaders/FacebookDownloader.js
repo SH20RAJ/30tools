@@ -1,18 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-	Download,
-	Link,
-	Loader2,
 	AlertCircle,
 	CheckCircle,
-	Video,
+	Download,
 	FileVideo,
+	Link,
+	Loader2,
+	Video,
 } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 export default function FacebookDownloader() {
 	const [url, setUrl] = useState("");

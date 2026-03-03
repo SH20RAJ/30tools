@@ -1,5 +1,5 @@
-import { MetadataRoute } from "next";
-import { getAllTools, getAllCategories } from "@/constants/tools-utils";
+import type { MetadataRoute } from "next";
+import { getAllCategories, getAllTools } from "@/constants/tools-utils";
 
 const BASE_URL = "https://30tools.com";
 

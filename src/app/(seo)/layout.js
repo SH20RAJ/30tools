@@ -1,5 +1,5 @@
-import SEOToolsNavbar from "@/components/navigation/SEOToolsNavbar";
 import SEOToolsFooter from "@/components/footers/SEOToolsFooter";
+import SEOToolsNavbar from "@/components/navigation/SEOToolsNavbar";
 
 export const metadata = {
 	title: "SEO Tools - Free Online SEO Audit, Keywords & Backlinks | 30Tools",

@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import Script from "next/script";
+import { useEffect, useRef } from "react";
 
 export default function BlogContent({ html }) {
 	const contentRef = useRef(null);

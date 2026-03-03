@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+	AlertCircle,
+	Camera,
+	CheckCircle,
 	Download,
 	Loader2,
-	AlertCircle,
-	CheckCircle,
-	Camera,
 } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 export default function SnapchatDownloader() {
 	const [url, setUrl] = useState("");

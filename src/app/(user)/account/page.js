@@ -1,20 +1,20 @@
 import {
+	CalendarIcon,
+	MailIcon,
+	ShieldIcon,
+	UserIcon,
+	ZapIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
+import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-	UserIcon,
-	MailIcon,
-	CalendarIcon,
-	ShieldIcon,
-	ZapIcon,
-} from "lucide-react";
-import Link from "next/link";
 
 export const metadata = {
 	title: "Account - Free Online Tool | Professional Results",

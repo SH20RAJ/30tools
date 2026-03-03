@@ -1,10 +1,10 @@
 "use client";
 
+import { AlertCircle, CheckCircle, Download, Eye, Loader2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, Loader2, AlertCircle, CheckCircle, Eye } from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 export default function FacebookStoryDownloader() {
 	const [username, setUsername] = useState("");

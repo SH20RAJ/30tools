@@ -1,6 +1,23 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import {
+	AlertCircle,
+	BarChart3,
+	CheckCircle,
+	Copy,
+	Download,
+	FileCode,
+	FileJson,
+	Maximize2,
+	Minimize2,
+	RefreshCw,
+	Search,
+	Shield,
+} from "lucide-react";
+import { useCallback, useState } from "react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,27 +26,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Input } from "@/components/ui/input";
-import {
-	FileCode,
-	CheckCircle,
-	AlertCircle,
-	Copy,
-	Download,
-	RefreshCw,
-	Shield,
-	BarChart3,
-	FileJson,
-	Search,
-	Minimize2,
-	Maximize2,
-} from "lucide-react";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function JsonFormatterTool() {
 	const [jsonInput, setJsonInput] = useState("");
@@ -105,7 +105,7 @@ export default function JsonFormatterTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const calculateStats = (original, formatted, minified) => {
@@ -133,7 +133,7 @@ export default function JsonFormatterTool() {
 			const parsed = JSON.parse(jsonString);
 
 			const countProperties = (obj, depth = 0) => {
-				let count = {
+				const count = {
 					objects: 0,
 					arrays: 0,
 					strings: 0,

@@ -1,4 +1,15 @@
+import {
+	Archive,
+	Crop,
+	Download,
+	Eye,
+	FileImage,
+	Image,
+	Palette,
+	Scissors,
+} from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import {
 	Card,
 	CardContent,
@@ -6,17 +17,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-	Image,
-	Archive,
-	FileImage,
-	Crop,
-	Palette,
-	Eye,
-	Scissors,
-	Download,
-} from "lucide-react";
 
 export const metadata = {
 	title: "Image Tools - Free Online Image Processing & Editing",

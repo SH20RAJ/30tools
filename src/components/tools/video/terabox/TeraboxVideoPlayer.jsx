@@ -1,14 +1,14 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import {
-	PlayIcon,
-	ExternalLinkIcon,
 	AlertCircleIcon,
+	ExternalLinkIcon,
 	InfoIcon,
+	PlayIcon,
 } from "lucide-react";
 import Script from "next/script";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export default function TeraboxVideoPlayer({ videoData }) {
 	const videoRef = useRef(null);

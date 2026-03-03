@@ -1,6 +1,6 @@
+import { ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
 import toolsData from "@/constants/tools.json";
-import { ArrowRight, Star } from "lucide-react";
 
 interface RelatedToolsProps {
 	currentToolId: string;
@@ -23,7 +23,7 @@ export default function RelatedTools({
 	// 2. Same category first
 	// 3. Fallback to popular tools
 
-	let related = allTools.filter((t) => t.id !== currentToolId);
+	const related = allTools.filter((t) => t.id !== currentToolId);
 
 	if (categorySlug) {
 		// Sort by same category

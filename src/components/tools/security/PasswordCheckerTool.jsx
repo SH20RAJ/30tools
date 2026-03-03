@@ -1,6 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import {
+	AlertTriangleIcon,
+	ArrowLeftIcon,
+	CheckCircleIcon,
+	CopyIcon,
+	EyeIcon,
+	EyeOffIcon,
+	KeyIcon,
+	RefreshCwIcon,
+	ShieldIcon,
+	TrendingUpIcon,
+	ZapIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,28 +26,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-	ArrowLeftIcon,
-	ShieldIcon,
-	AlertTriangleIcon,
-	CheckCircleIcon,
-	EyeIcon,
-	EyeOffIcon,
-	CopyIcon,
-	RefreshCwIcon,
-	KeyIcon,
-	ZapIcon,
-	TrendingUpIcon,
-} from "lucide-react";
-import Link from "next/link";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function PasswordCheckerTool() {
 	const [password, setPassword] = useState("");
@@ -82,7 +82,7 @@ export default function PasswordCheckerTool() {
 		}
 
 		// Special characters check
-		if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pwd)) {
+		if (/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(pwd)) {
 			score += 20;
 			checks.push({ type: "success", message: "Contains special characters" });
 		} else {
@@ -123,9 +123,9 @@ export default function PasswordCheckerTool() {
 		if (/[a-z]/.test(pwd)) charset += 26;
 		if (/[A-Z]/.test(pwd)) charset += 26;
 		if (/\d/.test(pwd)) charset += 10;
-		if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pwd)) charset += 32;
+		if (/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(pwd)) charset += 32;
 
-		const combinations = Math.pow(charset, pwd.length);
+		const combinations = charset ** pwd.length;
 		const secondsToCrack = combinations / (2 * 1000000000); // Assuming 1 billion guesses per second
 
 		if (secondsToCrack < 60) return "Less than a minute";

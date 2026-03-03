@@ -1,35 +1,34 @@
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
-import Link from "next/link";
-import toolsData from "@/constants/tools.json";
 import {
-	ImageIcon,
-	VideoIcon,
-	MusicIcon,
-	FileTextIcon,
-	FileIcon,
 	ArrowRightIcon,
-	ZapIcon,
-	ShieldCheckIcon,
-	UsersIcon,
-	StarIcon,
-	SearchIcon,
+	BracesIcon,
+	CodeIcon,
+	DownloadIcon,
+	FileIcon,
+	FileTextIcon,
+	Heart,
+	ImageIcon,
+	LayoutGridIcon,
+	MusicIcon,
 	PaletteIcon,
 	PenToolIcon,
-	CodeIcon,
-	BracesIcon,
-	TypeIcon,
-	SettingsIcon,
 	RefreshCwIcon,
-	Heart,
+	SearchIcon,
+	SettingsIcon,
+	ShieldCheckIcon,
 	Sparkles,
-	DownloadIcon,
-	LayoutGridIcon,
+	StarIcon,
+	TypeIcon,
+	UsersIcon,
+	VideoIcon,
+	ZapIcon,
 } from "lucide-react";
-
+import Link from "next/link";
 import FooterPartners from "@/components/shared/FooterPartners";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 import UnstoryOpenmindCTA from "@/components/shared/UnstoryOpenmindCTA";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import toolsData from "@/constants/tools.json";
 
 export const metadata = {
 	title: {

@@ -1,27 +1,27 @@
 "use client";
 
+import {
+	CheckCircle2,
+	Copy,
+	Download,
+	FileText,
+	Lightbulb,
+	List,
+	Loader2,
+	Sparkles,
+} from "lucide-react";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
 	Card,
 	CardContent,
+	CardDescription,
 	CardHeader,
 	CardTitle,
-	CardDescription,
 } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
-import {
-	Sparkles,
-	Loader2,
-	Copy,
-	Download,
-	CheckCircle2,
-	FileText,
-	List,
-	Lightbulb,
-} from "lucide-react";
 
 export default function YouTubeVideoSummarizer() {
 	const [url, setUrl] = useState("");
@@ -33,8 +33,8 @@ export default function YouTubeVideoSummarizer() {
 
 	const extractVideoId = (url) => {
 		const patterns = [
-			/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^\&\n?#]+)/,
-			/youtube\.com\/watch\?.*v=([^\&\n?#]+)/,
+			/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
+			/youtube\.com\/watch\?.*v=([^&\n?#]+)/,
 		];
 
 		for (const pattern of patterns) {

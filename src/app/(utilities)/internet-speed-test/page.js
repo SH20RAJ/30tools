@@ -1,14 +1,14 @@
-import InternetSpeedTestTool from "@/components/tools/utilities/InternetSpeedTestTool";
 import {
 	FAQSection,
+	QuickActions,
 	RelatedTools,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import InternetSpeedTestTool from "@/components/tools/utilities/InternetSpeedTestTool";
 
 export const metadata = {
 	title: "Internet Speed Test - Free Online Tool | Professional Results",

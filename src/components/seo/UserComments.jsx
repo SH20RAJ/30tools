@@ -1,21 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import {
+	ChevronDown,
+	Flag,
+	Heart,
+	MessageCircle,
 	MessageSquare,
 	Reply,
-	Heart,
 	Share2,
-	Flag,
-	ChevronDown,
 	TrendingUp,
-	MessageCircle,
 } from "lucide-react";
+import { useState } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
 
 // Sample comments data - in a real app, this would come from your database
 const SAMPLE_COMMENTS = [

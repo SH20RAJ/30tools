@@ -1,5 +1,5 @@
-import IndexNowClient from "@/components/tools/general/IndexNowClient";
 import { Globe } from "lucide-react";
+import IndexNowClient from "@/components/tools/general/IndexNowClient";
 
 export const metadata = {
 	title: "IndexNow Integration - Submit URLs Instantly | 30tools",

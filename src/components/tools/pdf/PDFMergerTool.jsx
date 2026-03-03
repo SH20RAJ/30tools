@@ -1,6 +1,19 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import {
+	ArrowLeftIcon,
+	CheckCircleIcon,
+	DownloadIcon,
+	FileTextIcon,
+	GripVerticalIcon,
+	RefreshCwIcon,
+	TrashIcon,
+	UploadIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useCallback, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,21 +21,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
-import {
-	ArrowLeftIcon,
-	UploadIcon,
-	DownloadIcon,
-	FileTextIcon,
-	TrashIcon,
-	GripVerticalIcon,
-	CheckCircleIcon,
-	RefreshCwIcon,
-} from "lucide-react";
-import Link from "next/link";
 
 export default function PDFMergerTool() {
 	const [files, setFiles] = useState([]);
@@ -91,7 +91,7 @@ export default function PDFMergerTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const removeFile = (id) => {

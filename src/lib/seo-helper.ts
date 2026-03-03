@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import toolsData from "@/constants/tools.json";
 
 type ToolCategory = keyof typeof toolsData.categories;

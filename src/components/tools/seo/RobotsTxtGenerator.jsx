@@ -1,9 +1,18 @@
 "use client";
+import {
+	Copy,
+	Download,
+	FileText,
+	Plus,
+	Bot as Robot,
+	Trash2,
+} from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
 	Select,
 	SelectContent,
@@ -11,16 +20,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
-import {
-	Copy,
-	Download,
-	Plus,
-	Trash2,
-	Bot as Robot,
-	FileText,
-} from "lucide-react";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function RobotsTxtGenerator() {
 	const [rules, setRules] = useState([

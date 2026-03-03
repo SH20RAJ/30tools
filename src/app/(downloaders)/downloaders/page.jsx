@@ -1,5 +1,5 @@
-import DownloaderToolsNavbar from "@/components/navigation/DownloaderToolsNavbar";
 import DownloaderToolsFooter from "@/components/footers/DownloaderToolsFooter";
+import DownloaderToolsNavbar from "@/components/navigation/DownloaderToolsNavbar";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {

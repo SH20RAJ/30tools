@@ -1,5 +1,5 @@
-import VideoToolsNavbar from "@/components/navigation/VideoToolsNavbar";
 import VideoToolsFooter from "@/components/footers/VideoToolsFooter";
+import VideoToolsNavbar from "@/components/navigation/VideoToolsNavbar";
 
 export const metadata = {
 	title: "Video Tools - Terabox Player, Downloader & Converters | 30Tools",

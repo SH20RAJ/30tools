@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import toolsData from "./constants/tools.json";
 
 // Slug Logic & Valid Routes
@@ -27,7 +27,7 @@ categories.forEach((category) => {
 });
 
 try {
-	// @ts-ignore
+	// @ts-expect-error
 	Object.values(toolsData.categories).forEach((category: any) => {
 		if (category.tools) {
 			category.tools.forEach((tool: any) => {

@@ -1,14 +1,14 @@
 "use client";
 
 import {
-	TrendingUp,
 	BarChart,
-	Link as LinkIcon,
-	FileSearch,
-	Target,
-	Zap,
-	Globe,
 	CheckCircle2,
+	FileSearch,
+	Globe,
+	Link as LinkIcon,
+	Target,
+	TrendingUp,
+	Zap,
 } from "lucide-react";
 import ToolCategoryNavbar from "./ToolCategoryNavbar";
 

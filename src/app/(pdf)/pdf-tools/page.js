@@ -1,4 +1,15 @@
+import {
+	Archive,
+	Combine,
+	Edit,
+	FileImage,
+	FileText,
+	Lock,
+	Split,
+	Unlock,
+} from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import {
 	Card,
 	CardContent,
@@ -6,17 +17,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-	FileText,
-	Combine,
-	Split,
-	Lock,
-	Unlock,
-	Archive,
-	FileImage,
-	Edit,
-} from "lucide-react";
 
 export const metadata = {
 	title: "PDF Tools - Free Online PDF Editor & Converter | 30tools",

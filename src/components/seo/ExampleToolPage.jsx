@@ -1,13 +1,13 @@
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
+	RelatedTools,
 	ReviewSnippets,
 	SEOBooster,
 	SocialShare,
-	RelatedTools,
 	ToolFeatures,
-	UserComments,
 	TrustIndicators,
+	UserComments,
 } from "@/components/seo";
 import { generateToolMetadata } from "@/constants/seo/advanced-metadata";
 import { generateToolFAQs } from "@/constants/seo/enhanced-faqs";

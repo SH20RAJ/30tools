@@ -1,9 +1,16 @@
 "use client";
 
+import {
+	AlertTriangle,
+	Check,
+	Code2,
+	Copy,
+	FileCode,
+	Loader2,
+	Wrench,
+} from "lucide-react";
 import { useState } from "react";
-import { fixTechnicalSeo } from "@/lib/ai-seo-actions";
 import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import {
 	Card,
 	CardContent,
@@ -11,15 +18,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import {
-	Loader2,
-	Wrench,
-	Code2,
-	FileCode,
-	Copy,
-	Check,
-	AlertTriangle,
-} from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+import { fixTechnicalSeo } from "@/lib/ai-seo-actions";
 
 export default function AiTechnicalSeoFixerTool() {
 	const [issue, setIssue] = useState("");

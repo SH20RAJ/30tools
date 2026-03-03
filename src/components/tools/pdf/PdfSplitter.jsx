@@ -1,13 +1,13 @@
 "use client";
 
+import { Download, FileText, Loader2, Scissors } from "lucide-react";
+import { PDFDocument } from "pdf-lib";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card } from "@/components/ui/card";
-import { FileText, Download, Loader2, Scissors } from "lucide-react";
-import { PDFDocument } from "pdf-lib";
-import { toast } from "sonner";
 
 export default function PdfSplitter() {
 	const [file, setFile] = useState(null);

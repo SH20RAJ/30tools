@@ -1,12 +1,12 @@
 "use client";
 
+import { Globe, Search } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
-import { Globe, Search } from "lucide-react";
-import { toast } from "sonner";
 
 /**
  * Generic SEO Analyzer Component

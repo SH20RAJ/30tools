@@ -1,12 +1,19 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import {
+	ArrowLeftIcon,
+	ArrowRightIcon,
+	FilterIcon,
+	SearchIcon,
+	StarIcon,
+} from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 import {
 	Select,
 	SelectContent,
@@ -15,13 +22,6 @@ import {
 	SelectValue,
 } from "@/components/ui/select";
 import { Skeleton } from "@/components/ui/skeleton";
-import {
-	SearchIcon,
-	FilterIcon,
-	ArrowLeftIcon,
-	ArrowRightIcon,
-	StarIcon,
-} from "lucide-react";
 import toolsData from "@/constants/tools.json";
 
 export default function SearchPageComponent() {

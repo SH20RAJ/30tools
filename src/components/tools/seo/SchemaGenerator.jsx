@@ -1,9 +1,21 @@
 "use client";
+import {
+	Building2,
+	Calendar,
+	Code,
+	Copy,
+	Download,
+	FileText,
+	HelpCircle,
+	Package,
+	Star,
+} from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
 	Select,
 	SelectContent,
@@ -11,19 +23,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Label } from "@/components/ui/label";
-import {
-	Copy,
-	Download,
-	Code,
-	Building2,
-	Package,
-	FileText,
-	Star,
-	Calendar,
-	HelpCircle,
-} from "lucide-react";
-import { toast } from "sonner";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function SchemaGenerator() {
 	const [schemaType, setSchemaType] = useState("LocalBusiness");
@@ -308,7 +308,7 @@ export default function SchemaGenerator() {
 			return;
 		}
 
-		let schema = {
+		const schema = {
 			"@context": "https://schema.org",
 			"@type": schemaType,
 		};

@@ -1,6 +1,21 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import {
+	AlertCircleIcon,
+	ArrowRightIcon,
+	CheckCircleIcon,
+	DownloadIcon,
+	FolderIcon,
+	ImageIcon,
+	RefreshCwIcon,
+	SettingsIcon,
+	TrashIcon,
+	UploadIcon,
+	ZapIcon,
+} from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,8 +23,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import {
 	Select,
@@ -18,24 +32,10 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
-import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-	UploadIcon,
-	DownloadIcon,
-	ImageIcon,
-	RefreshCwIcon,
-	TrashIcon,
-	SettingsIcon,
-	CheckCircleIcon,
-	AlertCircleIcon,
-	ArrowRightIcon,
-	ZapIcon,
-	FolderIcon,
-} from "lucide-react";
 
 export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 	const [files, setFiles] = useState([]);
@@ -110,7 +110,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const getFormatIcon = (mimeType) => {

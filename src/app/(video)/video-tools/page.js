@@ -1,4 +1,15 @@
+import {
+	Archive,
+	Download,
+	Edit,
+	FileVideo,
+	Film,
+	Monitor,
+	Scissors,
+	Video,
+} from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import {
 	Card,
 	CardContent,
@@ -6,17 +17,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-	Video,
-	Film,
-	Scissors,
-	Archive,
-	FileVideo,
-	Monitor,
-	Download,
-	Edit,
-} from "lucide-react";
 
 export const metadata = {
 	title: { absolute: "Video Tools: Free Online Editor & Converter | 30Tools" },

@@ -1,19 +1,19 @@
 "use client";
 
+import { Check, Copy, Info, Loader2, Search, User } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+import { toast } from "sonner";
+import { ToolSEOLayout } from "@/components/seo";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
 	Card,
 	CardContent,
+	CardDescription,
 	CardHeader,
 	CardTitle,
-	CardDescription,
 } from "@/components/ui/card";
-import { Search, Loader2, Copy, Check, User, Info } from "lucide-react";
-import { toast } from "sonner";
-import Image from "next/image";
-import { ToolSEOLayout } from "@/components/seo";
+import { Input } from "@/components/ui/input";
 import { getChannelInfo } from "@/lib/youtube-actions";
 
 const TOOL_FAQS = [

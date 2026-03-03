@@ -1,6 +1,6 @@
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
 	title: "3 Methods to Help You Extract Audio from Video - 30Tools",

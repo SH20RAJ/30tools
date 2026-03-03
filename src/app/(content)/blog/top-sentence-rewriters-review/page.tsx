@@ -1,6 +1,6 @@
+import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
 	title: "Top 4 Sentence Rewriters: A Comprehensive Review - 30Tools",

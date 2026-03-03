@@ -1,11 +1,11 @@
-import Link from "next/link";
 import {
-	ArrowLeft,
-	Shield,
 	AlertTriangle,
-	Scale,
+	ArrowLeft,
 	CheckCircle,
+	Scale,
+	Shield,
 } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
 	title: "Is Downloading Videos Legal? Copyright Guide (2026) | 30tools",

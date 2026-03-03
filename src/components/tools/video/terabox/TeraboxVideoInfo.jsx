@@ -1,17 +1,17 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Label } from "@/components/ui/label";
 import {
-	DownloadIcon,
 	CheckCircleIcon,
+	CopyIcon,
+	DownloadIcon,
 	LoaderIcon,
 	ShareIcon,
-	CopyIcon,
 } from "lucide-react";
 import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "@/components/ui/label";
 
 export default function TeraboxVideoInfo({
 	videoData,
@@ -24,7 +24,7 @@ export default function TeraboxVideoInfo({
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const downloadVideo = (url, filename) => {

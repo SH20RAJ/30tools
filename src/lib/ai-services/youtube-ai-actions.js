@@ -362,7 +362,7 @@ function parseTimestamps(content) {
 		const timeMatch = line.match(/(\d{1,2}:\d{2})/);
 		if (timeMatch) {
 			const time = timeMatch[1];
-			const rest = line.replace(timeMatch[0], "").replace(/^[\s\-]+/, "");
+			const rest = line.replace(timeMatch[0], "").replace(/^[\s-]+/, "");
 			const parts = rest.split(" - ");
 
 			timestamps.push({

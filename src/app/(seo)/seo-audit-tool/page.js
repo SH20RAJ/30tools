@@ -1,14 +1,14 @@
-import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
 import {
 	FAQSection,
+	QuickActions,
 	RelatedTools,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
 
 export const metadata = {
 	title: "Free SEO Audit Tool (2026) - Website Health Check | 30Tools",

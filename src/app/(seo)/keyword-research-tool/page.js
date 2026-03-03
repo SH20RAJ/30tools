@@ -1,14 +1,14 @@
-import KeywordTool from "@/components/tools/seo/KeywordTool";
 import {
 	FAQSection,
+	QuickActions,
 	RelatedTools,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import KeywordTool from "@/components/tools/seo/KeywordTool";
 
 export const metadata = {
 	title: "Keyword Research Tool - Free SEO Tool | Boost Your Rankings",

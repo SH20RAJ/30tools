@@ -1,6 +1,22 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import {
+	AlertCircle,
+	CheckCircle2,
+	Download,
+	FileText,
+	Loader,
+	Package,
+	Scissors,
+	Shield,
+	Split,
+	Target,
+	Upload,
+	Zap,
+} from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -11,24 +27,8 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
-import {
-	Upload,
-	Download,
-	Scissors,
-	CheckCircle2,
-	AlertCircle,
-	Loader,
-	FileText,
-	Split,
-	Zap,
-	Shield,
-	Target,
-	Package,
-} from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function PdfSplitterTool() {
 	const [pdfFile, setPdfFile] = useState(null);
@@ -49,7 +49,7 @@ export default function PdfSplitterTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const handleFileSelect = async (event) => {
@@ -86,7 +86,7 @@ export default function PdfSplitterTool() {
 			let splitCount = 0;
 
 			switch (splitMethod) {
-				case "range":
+				case "range": {
 					// Parse ranges like "1-5, 6-10"
 					const ranges = pageRanges.split(",").map((r) => r.trim());
 					splitCount = ranges.length;
@@ -105,8 +105,9 @@ export default function PdfSplitterTool() {
 						});
 					}
 					break;
+				}
 
-				case "individual":
+				case "individual": {
 					// Parse individual pages like "1, 3, 5, 7"
 					const pages = individualPages
 						.split(",")
@@ -128,6 +129,7 @@ export default function PdfSplitterTool() {
 						});
 					}
 					break;
+				}
 
 				case "interval":
 					// Split every N pages

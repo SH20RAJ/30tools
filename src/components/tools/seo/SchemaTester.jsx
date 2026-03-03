@@ -1,10 +1,10 @@
 "use client";
 
+import { CheckCircle, Code, Play, XCircle } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle, XCircle, Code, Play } from "lucide-react";
 
 export default function SchemaTester() {
 	const [json, setJson] = useState(`{

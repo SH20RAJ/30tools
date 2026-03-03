@@ -1,11 +1,35 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import html2canvas from "html2canvas";
+import {
+	Anchor,
+	Briefcase,
+	Camera,
+	Cloud,
+	Code,
+	Coffee,
+	Download,
+	Droplet,
+	Feather,
+	Flame,
+	Globe,
+	Heart,
+	Key,
+	Lock,
+	Moon,
+	Music,
+	Rocket,
+	Smile,
+	Star,
+	Sun,
+	Zap,
+} from "lucide-react";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import {
 	Select,
 	SelectContent,
@@ -13,31 +37,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import {
-	Download,
-	Rocket,
-	Zap,
-	Star,
-	Heart,
-	Globe,
-	Briefcase,
-	Coffee,
-	Code,
-	Music,
-	Camera,
-	Smile,
-	Sun,
-	Moon,
-	Cloud,
-	Droplet,
-	Flame,
-	Anchor,
-	Feather,
-	Key,
-	Lock,
-} from "lucide-react";
-import { toast } from "sonner";
-import html2canvas from "html2canvas";
+import { Slider } from "@/components/ui/slider";
 
 const FONTS = [
 	{ id: "inter", label: "Inter (Modern)", family: "Inter, sans-serif" },

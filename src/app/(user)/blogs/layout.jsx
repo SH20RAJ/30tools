@@ -1,8 +1,8 @@
-import BlogFooter from "@/components/footers/BlogFooter";
-import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
-import { ZapIcon, SearchIcon } from "lucide-react";
+import { SearchIcon, ZapIcon } from "lucide-react";
 import Link from "next/link";
+import BlogFooter from "@/components/footers/BlogFooter";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { Button } from "@/components/ui/button";
 
 export default function BlogLayout({ children }) {
 	return (

@@ -1,6 +1,24 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import {
+	AlertTriangleIcon,
+	ArrowLeftIcon,
+	CheckCircleIcon,
+	CheckIcon,
+	CopyIcon,
+	EyeIcon,
+	EyeOffIcon,
+	KeyIcon,
+	RefreshCwIcon,
+	ShieldIcon,
+	XIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,28 +26,10 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Slider } from "@/components/ui/slider";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import {
-	ArrowLeftIcon,
-	ShieldIcon,
-	CopyIcon,
-	CheckCircleIcon,
-	RefreshCwIcon,
-	EyeIcon,
-	EyeOffIcon,
-	KeyIcon,
-	AlertTriangleIcon,
-	CheckIcon,
-	XIcon,
-} from "lucide-react";
-import Link from "next/link";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function PasswordGeneratorTool() {
 	const [password, setPassword] = useState("");
@@ -147,7 +147,7 @@ export default function PasswordGeneratorTool() {
 
 	const calculateStrength = (pwd) => {
 		let score = 0;
-		let feedback = [];
+		const feedback = [];
 
 		// Length scoring
 		if (pwd.length >= 12) score += 25;

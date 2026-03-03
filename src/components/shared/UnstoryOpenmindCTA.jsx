@@ -1,22 +1,22 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
-	Heart,
-	MessageCircle,
-	Users,
-	Shield,
-	Sparkles,
 	ArrowRight,
 	BookOpen,
-	PenTool,
-	Globe,
-	Star,
 	Coffee,
+	Globe,
+	Heart,
+	MessageCircle,
+	PenTool,
+	Shield,
+	Sparkles,
+	Star,
+	Users,
 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 import InstagramEmbed from "./InstagramEmbed";
 
 const features = [

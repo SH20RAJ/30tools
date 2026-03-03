@@ -1,9 +1,29 @@
 "use client";
 
-import { useState } from "react";
+import {
+	AlertCircle,
+	BookOpen,
+	CheckCircle2,
+	ChevronRight,
+	Download,
+	FileText,
+	HelpCircle,
+	Link as LinkIcon,
+	Loader2,
+	Monitor as MonitorIcon,
+	Music,
+	Play,
+	Scissors,
+	Search,
+	Smartphone as SmartphoneIcon,
+	Star,
+	Wrench,
+} from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
 	Card,
 	CardContent,
@@ -11,28 +31,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Input } from "@/components/ui/input";
 import { Progress } from "@/components/ui/progress";
-import {
-	Download,
-	Link as LinkIcon,
-	Loader2,
-	AlertCircle,
-	Music,
-	Search,
-	Monitor as MonitorIcon,
-	Smartphone as SmartphoneIcon,
-	Play,
-	CheckCircle2,
-	BookOpen,
-	HelpCircle,
-	Star,
-	Wrench,
-	Scissors,
-	FileText,
-	ChevronRight,
-} from "lucide-react";
 
 export default function UniversalVideoDownloader() {
 	const [url, setUrl] = useState("");

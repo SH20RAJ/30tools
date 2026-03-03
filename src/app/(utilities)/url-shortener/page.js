@@ -1,14 +1,14 @@
-import URLShortenerTool from "@/components/tools/utilities/URLShortenerTool";
 import {
 	FAQSection,
+	QuickActions,
 	RelatedTools,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import URLShortenerTool from "@/components/tools/utilities/URLShortenerTool";
 
 export const metadata = {
 	title: "Free URL Shortener (2026) - Custom Links & Analytics | 30Tools",

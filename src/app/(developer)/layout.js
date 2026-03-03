@@ -1,5 +1,5 @@
-import DeveloperToolsNavbar from "@/components/navigation/DeveloperToolsNavbar";
 import DeveloperToolsFooter from "@/components/footers/DeveloperToolsFooter";
+import DeveloperToolsNavbar from "@/components/navigation/DeveloperToolsNavbar";
 
 export const metadata = {
 	title:

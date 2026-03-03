@@ -1,19 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-	TrendingUp,
-	Globe,
-	Zap,
-	Shield,
-	CheckCircle2,
 	Award,
-	Target,
 	BarChart3,
+	CheckCircle2,
 	Gauge,
+	Globe,
+	Shield,
+	Target,
+	TrendingUp,
+	Zap,
 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // Advanced SEO Component with Core Web Vitals and technical SEO features
 export default function SEOBooster({

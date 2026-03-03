@@ -1,10 +1,10 @@
 "use client";
 
+import { Check, Copy, Download, FileCode, Play, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileCode, Play, Copy, Check, Sparkles, Download } from "lucide-react";
-import { toast } from "sonner";
 
 /**
  * Code Minifier Component

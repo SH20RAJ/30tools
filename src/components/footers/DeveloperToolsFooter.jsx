@@ -1,5 +1,5 @@
+import { Code, Heart } from "lucide-react";
 import Link from "next/link";
-import { Heart, Code } from "lucide-react";
 import FooterPartners from "@/components/shared/FooterPartners";
 
 export default function DeveloperToolsFooter() {

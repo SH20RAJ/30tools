@@ -1,6 +1,19 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import {
+	DownloadIcon,
+	ImageIcon,
+	LockIcon,
+	MonitorIcon,
+	RefreshCwIcon,
+	SmartphoneIcon,
+	TabletIcon,
+	UnlockIcon,
+	UploadIcon,
+} from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,11 +21,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+import { Progress } from "@/components/ui/progress";
 import {
 	Select,
 	SelectContent,
@@ -20,19 +31,8 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Progress } from "@/components/ui/progress";
 import { Separator } from "@/components/ui/separator";
-import {
-	UploadIcon,
-	DownloadIcon,
-	ImageIcon,
-	LockIcon,
-	UnlockIcon,
-	MonitorIcon,
-	SmartphoneIcon,
-	TabletIcon,
-	RefreshCwIcon,
-} from "lucide-react";
+import { Switch } from "@/components/ui/switch";
 
 export default function ImageResizerTool() {
 	const [files, setFiles] = useState([]);
@@ -108,7 +108,7 @@ export default function ImageResizerTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const handleFileSelect = (event) => {

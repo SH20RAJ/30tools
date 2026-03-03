@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { ArrowLeft, Check, Trophy, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Trophy, Check, X } from "lucide-react";
 
 export const metadata = {
 	title: { absolute: "6 Best Free YouTube to MP3 Converters 2025 | 30Tools" },

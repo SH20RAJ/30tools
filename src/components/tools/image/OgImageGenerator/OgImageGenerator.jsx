@@ -1,13 +1,13 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { Download, Image as ImageIcon, Upload } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
 import { Slider } from "@/components/ui/slider";
-import { Download, Upload, Image as ImageIcon } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 
 const TEMPLATES = {
 	simple: {
@@ -141,7 +141,7 @@ export default function OgImageGenerator() {
 		ctx.textBaseline = "middle";
 
 		const x = layout === "center" ? canvas.width / 2 : 100;
-		let y = canvas.height / 2;
+		const y = canvas.height / 2;
 
 		// Logo
 		if (logoUrl) {
@@ -176,7 +176,7 @@ export default function OgImageGenerator() {
 		const words = text.split(" ");
 		let line = "";
 		let testLine = "";
-		let lineArray = [];
+		const lineArray = [];
 
 		for (let n = 0; n < words.length; n++) {
 			testLine = line + words[n] + " ";
@@ -193,7 +193,7 @@ export default function OgImageGenerator() {
 
 		// Center vertically based on number of lines
 		const totalBlockHeight = lineArray.length * lineHeight;
-		let startY = y - totalBlockHeight / 2; // Actually we want it relative to the y passed
+		const startY = y - totalBlockHeight / 2; // Actually we want it relative to the y passed
 
 		for (let k = 0; k < lineArray.length; k++) {
 			ctx.fillText(lineArray[k], x, y + k * lineHeight);

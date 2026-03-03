@@ -1,20 +1,20 @@
 "use client";
 
+import {
+	CheckCircle2,
+	Copy,
+	Facebook,
+	Heart,
+	Linkedin,
+	Mail,
+	MessageCircle,
+	Share2,
+	Twitter,
+} from "lucide-react";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-	Share2,
-	Copy,
-	CheckCircle2,
-	Twitter,
-	Facebook,
-	Linkedin,
-	MessageCircle,
-	Mail,
-	Heart,
-} from "lucide-react";
 
 const SocialShareButtons = ({
 	toolName,

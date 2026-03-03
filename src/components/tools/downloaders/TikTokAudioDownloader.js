@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-	Download,
-	Loader2,
 	AlertCircle,
 	CheckCircle,
-	Music,
+	Download,
 	Headphones,
+	Loader2,
+	Music,
 } from "lucide-react";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 export default function TikTokAudioDownloader() {
 	const [url, setUrl] = useState("");

@@ -1,6 +1,15 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import {
+	CheckIcon,
+	DownloadIcon,
+	FileIcon,
+	ReplaceAll,
+	UploadIcon,
+	XIcon,
+} from "lucide-react";
+import { useCallback, useState } from "react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,18 +18,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
-import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
-import {
-	UploadIcon,
-	DownloadIcon,
-	FileIcon,
-	ReplaceAll,
-	XIcon,
-	CheckIcon,
-} from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+import { Slider } from "@/components/ui/slider";
 
 export default function ImageCompressorTool() {
 	const [files, setFiles] = useState([]);
@@ -80,7 +80,7 @@ export default function ImageCompressorTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const compressImage = async (fileItem) => {

@@ -1,6 +1,9 @@
 "use client";
 
+import { Clock, Download, Play, RefreshCw, Upload, Wifi } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,10 +11,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Wifi, Download, Upload, Clock, Play, RefreshCw } from "lucide-react";
-import { toast } from "sonner";
 
 export default function InternetSpeedTestTool() {
 	const [isTestRunning, setIsTestRunning] = useState(false);

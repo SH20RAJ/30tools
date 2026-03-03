@@ -1,5 +1,5 @@
-import UtilityToolsNavbar from "@/components/navigation/UtilityToolsNavbar";
 import UtilityToolsFooter from "@/components/footers/UtilityToolsFooter";
+import UtilityToolsNavbar from "@/components/navigation/UtilityToolsNavbar";
 
 export const metadata = {
 	title: "Utility Tools - Free Online Internet Speed & Link Tools | 30Tools",

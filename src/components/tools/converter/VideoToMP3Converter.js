@@ -1,16 +1,16 @@
 "use client";
 
+import {
+	AlertCircle,
+	CheckCircle2,
+	Download,
+	Loader2,
+	Music,
+	Upload,
+} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-	Upload,
-	Download,
-	Loader2,
-	AlertCircle,
-	CheckCircle2,
-	Music,
-} from "lucide-react";
 
 export default function VideoToMP3Converter() {
 	const [file, setFile] = useState(null);

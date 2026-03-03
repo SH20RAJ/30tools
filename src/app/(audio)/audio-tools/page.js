@@ -1,4 +1,15 @@
+import {
+	BarChart3,
+	Edit,
+	FileAudio,
+	Headphones,
+	Mic,
+	Scissors,
+	Settings,
+	Volume2,
+} from "lucide-react";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import {
 	Card,
 	CardContent,
@@ -6,17 +17,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import {
-	Volume2,
-	Mic,
-	FileAudio,
-	Scissors,
-	Edit,
-	BarChart3,
-	Settings,
-	Headphones,
-} from "lucide-react";
 
 export const metadata = {
 	title: "Audio Tools - Free Online Audio Editor & Converter | 30tools",

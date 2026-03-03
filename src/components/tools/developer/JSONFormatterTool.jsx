@@ -1,6 +1,24 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import {
+	AlertCircle,
+	CheckCircle,
+	Code,
+	Copy,
+	Download,
+	FileJson,
+	Maximize2,
+	Minimize2,
+	RotateCcw,
+	Search,
+	Settings,
+	Shield,
+	Upload,
+	Zap,
+} from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,26 +27,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import {
-	Code,
-	Copy,
-	Download,
-	Upload,
-	CheckCircle,
-	AlertCircle,
-	Minimize2,
-	Maximize2,
-	FileJson,
-	Zap,
-	Shield,
-	Search,
-	RotateCcw,
-	Settings,
-} from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function JSONFormatterTool() {
 	const [jsonInput, setJsonInput] = useState(

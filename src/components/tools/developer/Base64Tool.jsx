@@ -1,6 +1,26 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import {
+	AlertCircleIcon,
+	ArrowLeftIcon,
+	ArrowRightIcon,
+	CheckCircleIcon,
+	CodeIcon,
+	CopyIcon,
+	ArrowLeftIcon as DecodeIcon,
+	DownloadIcon,
+	FileIcon,
+	RefreshCwIcon,
+	ShieldIcon,
+	UploadIcon,
+	ZapIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useCallback, useState } from "react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,29 +28,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-	ArrowLeftIcon,
-	CodeIcon,
-	CopyIcon,
-	CheckCircleIcon,
-	AlertCircleIcon,
-	RefreshCwIcon,
-	UploadIcon,
-	DownloadIcon,
-	FileIcon,
-	ArrowRightIcon,
-	ArrowLeftIcon as DecodeIcon,
-	ZapIcon,
-	ShieldIcon,
-} from "lucide-react";
-import Link from "next/link";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Base64Tool() {
 	const [input, setInput] = useState("");

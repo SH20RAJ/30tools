@@ -1,20 +1,20 @@
 "use client";
 
+import { Copy, FileText, RefreshCw } from "lucide-react";
 import React, { useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { Slider } from "@/components/ui/slider";
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
 	Card,
 	CardContent,
+	CardDescription,
 	CardHeader,
 	CardTitle,
-	CardDescription,
 } from "@/components/ui/card";
-import { Copy, RefreshCw, FileText } from "lucide-react";
-import { toast } from "sonner";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Slider } from "@/components/ui/slider";
 import { Textarea } from "@/components/ui/textarea";
 
 export default function LoremIpsumGeneratorTool() {
@@ -96,7 +96,7 @@ export default function LoremIpsumGeneratorTool() {
 	];
 
 	const generate = () => {
-		let result = [];
+		const result = [];
 
 		if (type === "words") {
 			for (let i = 0; i < count; i++) {
@@ -114,15 +114,15 @@ export default function LoremIpsumGeneratorTool() {
 		const numSentences =
 			type === "sentences" ? count : count * sentencesPerPara;
 
-		let sentences = [];
+		const sentences = [];
 		for (let i = 0; i < numSentences; i++) {
-			let sentenceLength = Math.floor(Math.random() * 10) + 5;
-			let sentenceWords = [];
+			const sentenceLength = Math.floor(Math.random() * 10) + 5;
+			const sentenceWords = [];
 			for (let j = 0; j < sentenceLength; j++) {
-				let word = loremWords[Math.floor(Math.random() * loremWords.length)];
+				const word = loremWords[Math.floor(Math.random() * loremWords.length)];
 				sentenceWords.push(word);
 			}
-			let sentenceStr = capitalize(sentenceWords.join(" ")) + ".";
+			const sentenceStr = capitalize(sentenceWords.join(" ")) + ".";
 			sentences.push(sentenceStr);
 		}
 
@@ -135,7 +135,7 @@ export default function LoremIpsumGeneratorTool() {
 			setGeneratedText(text);
 		} else {
 			// Paragraphs
-			let paras = [];
+			const paras = [];
 			for (let i = 0; i < sentences.length; i += sentencesPerPara) {
 				paras.push(sentences.slice(i, i + sentencesPerPara).join(" "));
 			}

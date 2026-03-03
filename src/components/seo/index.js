@@ -1,34 +1,35 @@
 // Export all SEO components for easy importing
+
+export { default as AuthorBio } from "./AuthorBio";
 export {
 	default as BreadcrumbsEnhanced,
 	RichBreadcrumbs,
 } from "./BreadcrumbsEnhanced";
 export {
+	DeveloperToolExamples,
+	DeveloperToolFeatures,
+	default as DeveloperToolsHub,
+} from "./DeveloperToolsHub";
+export {
 	default as FAQSection,
-	SearchableFAQ,
 	ImageToolsFAQ,
 	PDFToolsFAQ,
+	SearchableFAQ,
 } from "./FAQSection";
+export {
+	default as GeneratorToolsHub,
+	GeneratorToolExamples,
+	GeneratorToolFeatures,
+} from "./GeneratorToolsHub";
 export { default as ReviewSnippets, TrustIndicators } from "./ReviewSnippets";
 export { default as SEOBooster, PageAnalytics } from "./SEOBooster";
 export {
-	SocialShare,
-	RelatedTools,
-	PopularTools,
 	DeviceCompatibility,
+	PopularTools,
 	QuickActions,
+	RelatedTools,
+	SocialShare,
 	ToolFeatures,
 } from "./SocialEngagement";
-export { default as UserComments, CommentsWidget } from "./UserComments";
-export {
-	default as DeveloperToolsHub,
-	DeveloperToolFeatures,
-	DeveloperToolExamples,
-} from "./DeveloperToolsHub";
-export {
-	default as GeneratorToolsHub,
-	GeneratorToolFeatures,
-	GeneratorToolExamples,
-} from "./GeneratorToolsHub";
 export { default as ToolSEOLayout } from "./ToolSEOLayout";
-export { default as AuthorBio } from "./AuthorBio";
+export { CommentsWidget, default as UserComments } from "./UserComments";

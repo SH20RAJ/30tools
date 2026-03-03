@@ -1,13 +1,13 @@
-import { getToolById } from "@/constants/tools-utils";
-import StructuredData from "@/components/shared/StructuredData";
 import {
-	BreadcrumbsEnhanced,
-	ToolFeatures,
-	FAQSection,
-	UserComments,
-	ReviewSnippets,
 	AuthorBio,
+	BreadcrumbsEnhanced,
+	FAQSection,
+	ReviewSnippets,
+	ToolFeatures,
+	UserComments,
 } from "@/components/seo";
+import StructuredData from "@/components/shared/StructuredData";
+import { getToolById } from "@/constants/tools-utils";
 
 export default function ToolSEOLayout({
 	toolId,

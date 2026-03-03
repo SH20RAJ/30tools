@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import {
 	ChevronDown,
 	ChevronUp,
-	MessageCircle,
 	HelpCircle,
+	MessageCircle,
 } from "lucide-react";
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
 	Collapsible,

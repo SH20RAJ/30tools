@@ -47,7 +47,7 @@ export async function GET(request) {
 
 		// Get the appropriate transcript format
 		const transcripts = transcriptData.transcripts;
-		let selectedTranscript =
+		const selectedTranscript =
 			transcripts.en_auto || transcripts.en || Object.values(transcripts)[0];
 
 		// Use custom format if available (longer segments), otherwise use default

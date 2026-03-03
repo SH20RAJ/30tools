@@ -1,22 +1,22 @@
 import {
+	CrownIcon,
+	HeartIcon,
+	HistoryIcon,
+	SettingsIcon,
+	TrendingUpIcon,
+	UserIcon,
+	ZapIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-	UserIcon,
-	CrownIcon,
-	HistoryIcon,
-	HeartIcon,
-	SettingsIcon,
-	TrendingUpIcon,
-	ZapIcon,
-} from "lucide-react";
-import Link from "next/link";
 
 export const metadata = {
 	title: "Dashboard - Free Online Tool | Professional Results",

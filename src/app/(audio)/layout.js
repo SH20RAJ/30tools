@@ -1,5 +1,5 @@
-import AudioToolsNavbar from "@/components/navigation/AudioToolsNavbar";
 import AudioToolsFooter from "@/components/footers/AudioToolsFooter";
+import AudioToolsNavbar from "@/components/navigation/AudioToolsNavbar";
 
 export const metadata = {
 	title: "Audio Tools - Free AI Text to Speech & Audio Processing | 30Tools",

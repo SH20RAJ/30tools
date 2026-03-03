@@ -1,9 +1,9 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { Check, Download, Loader2, Send, Smartphone, X } from "lucide-react";
+import { useCallback, useEffect, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Download, Loader2, Smartphone, Check, X, Send } from "lucide-react";
-import { toast } from "sonner";
 
 export default function YouTubeDownloader() {
 	const [url, setUrl] = useState("");
@@ -199,7 +199,7 @@ export default function YouTubeDownloader() {
 		const dm = decimals < 0 ? 0 : decimals;
 		const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+		return `${parseFloat((bytes / k ** i).toFixed(dm))} ${sizes[i]}`;
 	};
 
 	const handleProcessDownload = (mediaUrl) => {

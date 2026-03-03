@@ -1,16 +1,16 @@
 "use client";
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import {
+	CopyIcon,
+	DownloadIcon,
 	RefreshCwIcon,
 	Volume2Icon,
-	DownloadIcon,
-	CopyIcon,
 } from "lucide-react";
+import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
 export default function AIVoiceGeneratorTool() {
 	const [text, setText] = useState("");

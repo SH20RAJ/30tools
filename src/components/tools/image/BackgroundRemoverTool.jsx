@@ -1,6 +1,21 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import {
+	AlertCircle,
+	CheckCircle,
+	Download,
+	Eye,
+	EyeOff,
+	Image as ImageIcon,
+	Layers,
+	Loader,
+	Scissors,
+	Trash2,
+	Upload,
+} from "lucide-react";
+import { useCallback, useRef, useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -11,22 +26,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Progress } from "@/components/ui/progress";
-import {
-	Upload,
-	Download,
-	Trash2,
-	Eye,
-	EyeOff,
-	CheckCircle,
-	AlertCircle,
-	Loader,
-	Image as ImageIcon,
-	Scissors,
-	Layers,
-} from "lucide-react";
 
 export default function BackgroundRemoverTool() {
 	const [files, setFiles] = useState([]);
@@ -48,7 +48,7 @@ export default function BackgroundRemoverTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const handleFileSelect = (event) => {

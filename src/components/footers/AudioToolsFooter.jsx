@@ -1,5 +1,5 @@
+import { Headphones, Heart } from "lucide-react";
 import Link from "next/link";
-import { Heart, Headphones } from "lucide-react";
 import FooterPartners from "@/components/shared/FooterPartners";
 
 export default function AudioToolsFooter() {

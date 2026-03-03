@@ -1,6 +1,22 @@
 "use client";
 
-import { useState, useRef } from "react";
+import {
+	AlertCircleIcon,
+	CheckCircleIcon,
+	CopyIcon,
+	DownloadIcon,
+	ExternalLinkIcon,
+	LinkIcon,
+	LoaderIcon,
+	MonitorIcon,
+	PlayIcon,
+	RefreshCwIcon,
+	SettingsIcon,
+	WandIcon,
+} from "lucide-react";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,8 +25,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
+import CodeBlock from "@/components/ui/code-block";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
 	Select,
 	SelectContent,
@@ -18,24 +35,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-	PlayIcon,
-	CopyIcon,
-	DownloadIcon,
-	SettingsIcon,
-	ExternalLinkIcon,
-	MonitorIcon,
-	LinkIcon,
-	WandIcon,
-	RefreshCwIcon,
-	LoaderIcon,
-	AlertCircleIcon,
-	CheckCircleIcon,
-} from "lucide-react";
-import { toast } from "sonner";
-import CodeBlock from "@/components/ui/code-block";
 import {
 	fetchTeraboxOGData,
 	fetchTeraboxVideoData,
@@ -263,7 +263,7 @@ export default function TeraboxPlayerTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	return (

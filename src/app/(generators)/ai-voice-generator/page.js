@@ -1,16 +1,16 @@
-import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGeneratorTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGeneratorTool";
 import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
 
 export const metadata = {

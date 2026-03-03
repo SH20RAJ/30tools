@@ -1,9 +1,8 @@
 import { Open_Sans } from "next/font/google";
-
+import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
-import { Toaster } from "sonner";
 import "./globals.css";
 import Script from "next/script";
 

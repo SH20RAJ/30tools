@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import Script from "next/script";
+import { useEffect } from "react";
 
 export default function SEOEnhancer({
 	tool,
@@ -121,7 +121,7 @@ export default function SEOEnhancer({
 
 	// User engagement tracking for SEO signals
 	useEffect(() => {
-		let startTime = Date.now();
+		const startTime = Date.now();
 		let scrollDepth = 0;
 		let maxScrollDepth = 0;
 

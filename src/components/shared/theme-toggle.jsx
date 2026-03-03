@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { MonitorIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { SunIcon, MoonIcon, MonitorIcon } from "lucide-react";
 import {
 	DropdownMenu,
 	DropdownMenuContent,

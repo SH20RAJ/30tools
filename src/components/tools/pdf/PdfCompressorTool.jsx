@@ -1,6 +1,18 @@
 "use client";
 
-import { useState, useRef } from "react";
+import {
+	ArrowLeftIcon,
+	CheckCircleIcon,
+	DownloadIcon,
+	FileIcon,
+	MinimizeIcon,
+	RefreshCwIcon,
+	UploadIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useRef, useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,20 +20,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import {
-	FileIcon,
-	UploadIcon,
-	ArrowLeftIcon,
-	DownloadIcon,
-	RefreshCwIcon,
-	MinimizeIcon,
-	CheckCircleIcon,
-} from "lucide-react";
-import Link from "next/link";
 
 export default function PdfCompressorTool() {
 	const [selectedFile, setSelectedFile] = useState(null);
@@ -123,7 +123,7 @@ export default function PdfCompressorTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
 	};
 
 	const downloadCompressedFile = () => {

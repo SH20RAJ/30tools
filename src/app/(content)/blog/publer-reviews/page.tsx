@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { ArrowLeft, BarChart, Calendar, RefreshCw, Share2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Share2, Calendar, BarChart, RefreshCw } from "lucide-react";
 
 export const metadata = {
 	title: { absolute: "Publer Reviews: Comprehensive User Guide | 30Tools" },

@@ -1,16 +1,16 @@
-import FaviconGeneratorTool from "@/components/tools/image/FaviconGeneratorTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import FaviconGeneratorTool from "@/components/tools/image/FaviconGeneratorTool";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {

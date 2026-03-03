@@ -1,7 +1,7 @@
-import Link from "next/link";
+import { ArrowLeft, Globe, Headphones, Monitor, Star } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Headphones, Monitor, Globe, Star } from "lucide-react";
 
 export const metadata = {
 	title: { absolute: "Convert YouTube to High-Quality 320kbps MP3 | 30Tools" },

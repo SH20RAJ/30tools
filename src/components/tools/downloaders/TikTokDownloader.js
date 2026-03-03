@@ -1,34 +1,34 @@
 "use client";
 
+import {
+	AlertCircle,
+	BookOpen,
+	CheckCircle,
+	Download,
+	FileText,
+	Globe,
+	HelpCircle,
+	Link,
+	Loader2,
+	Music,
+	Play,
+	Scissors,
+	Shield,
+	Star,
+	Users,
+	Wrench,
+	Zap,
+} from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import {
 	Card,
 	CardContent,
-	CardHeader,
 	CardDescription,
+	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import {
-	Download,
-	Link,
-	Loader2,
-	AlertCircle,
-	CheckCircle,
-	Music,
-	BookOpen,
-	HelpCircle,
-	Star,
-	Wrench,
-	Scissors,
-	FileText,
-	Globe,
-	Shield,
-	Play,
-	Users,
-	Zap,
-} from "lucide-react";
+import { Input } from "@/components/ui/input";
 
 export default function TikTokDownloader() {
 	const [url, setUrl] = useState("");

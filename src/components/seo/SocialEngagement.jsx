@@ -1,24 +1,24 @@
 "use client";
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
-	Share2,
-	Copy,
-	ExternalLink,
 	ArrowRight,
 	Bookmark,
-	Star,
-	Users,
-	TrendingUp,
+	Copy,
+	ExternalLink,
 	Globe,
-	Smartphone,
 	Monitor,
+	Share2,
+	Smartphone,
+	Star,
 	Tablet,
+	TrendingUp,
+	Users,
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 // Social sharing component
 export function SocialShare({ url, title, description, className = "" }) {

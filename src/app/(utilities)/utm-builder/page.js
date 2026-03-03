@@ -1,14 +1,14 @@
-import UTMBuilderTool from "@/components/tools/utilities/UTMBuilderTool";
 import {
 	FAQSection,
+	QuickActions,
 	RelatedTools,
 	UserComments,
-	QuickActions,
 } from "@/components/seo";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import UTMBuilderTool from "@/components/tools/utilities/UTMBuilderTool";
 
 export const metadata = {
 	title: "Utm Builder - Free Online Tool | Professional Results",

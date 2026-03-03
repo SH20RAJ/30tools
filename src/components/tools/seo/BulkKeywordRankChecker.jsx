@@ -1,6 +1,22 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import {
+	Clock,
+	Download,
+	Info,
+	MapPin,
+	Minus,
+	Monitor,
+	Search,
+	Smartphone,
+	TrendingDown,
+	TrendingUp,
+	XCircle,
+} from "lucide-react";
+import { useCallback, useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,26 +24,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import {
-	Search,
-	Download,
-	TrendingUp,
-	TrendingDown,
-	Minus,
-	MapPin,
-	Smartphone,
-	Monitor,
-	XCircle,
-	Clock,
-	Info,
-} from "lucide-react";
 import {
 	Select,
 	SelectContent,
@@ -35,6 +34,7 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function BulkKeywordRankChecker() {
 	const [domain, setDomain] = useState("");

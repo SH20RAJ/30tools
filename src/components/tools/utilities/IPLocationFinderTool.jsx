@@ -1,6 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Check, Copy, Globe, MapPin, RefreshCw, Wifi } from "lucide-react";
+import { useEffect, useState } from "react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,10 +12,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { MapPin, Globe, Wifi, Copy, Check, RefreshCw } from "lucide-react";
-import { toast } from "sonner";
 
 export default function IPLocationFinderTool() {
 	const [ipInfo, setIpInfo] = useState(null);

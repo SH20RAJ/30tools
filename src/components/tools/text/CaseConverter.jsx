@@ -1,9 +1,9 @@
 "use client";
 
+import { Copy, Trash2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Copy, Trash2 } from "lucide-react";
 
 export default function CaseConverter() {
 	const [text, setText] = useState("");
@@ -21,17 +21,13 @@ export default function CaseConverter() {
 				newText = text
 					.toLowerCase()
 					.split(" ")
-					.map(function (word) {
-						return word.charAt(0).toUpperCase() + word.slice(1);
-					})
+					.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 					.join(" ");
 				break;
 			case "sentence":
 				newText = text
 					.toLowerCase()
-					.replace(/(^\s*\w|[.!?]\s*\w)/g, function (c) {
-						return c.toUpperCase();
-					});
+					.replace(/(^\s*\w|[.!?]\s*\w)/g, (c) => c.toUpperCase());
 				break;
 			case "alternating":
 				newText = text

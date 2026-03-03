@@ -1,18 +1,18 @@
+import { Camera, FileText, FolderArchive, Share2 } from "lucide-react";
 import Link from "next/link";
-import ImageToPDFTool from "@/components/tools/pdf/ImageToPDFTool";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
-	RelatedTools,
-	UserComments,
 	QuickActions,
+	RelatedTools,
+	ReviewSnippets,
+	UserComments,
 } from "@/components/seo";
-import { Camera, FileText, FolderArchive, Share2 } from "lucide-react";
 import {
-	GeneratorToolFeatures,
 	GeneratorToolExamples,
+	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
+import ImageToPDFTool from "@/components/tools/pdf/ImageToPDFTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {

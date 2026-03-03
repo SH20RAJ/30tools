@@ -1,5 +1,5 @@
+import { Braces, Heart } from "lucide-react";
 import Link from "next/link";
-import { Heart, Braces } from "lucide-react";
 import FooterPartners from "@/components/shared/FooterPartners";
 
 export default function CodeToolsFooter() {

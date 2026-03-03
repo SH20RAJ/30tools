@@ -1,6 +1,16 @@
 "use client";
 
-import { useState, useRef } from "react";
+import {
+	AlertCircle,
+	CheckCircle,
+	Download,
+	FileText,
+	FileType,
+	RefreshCw,
+	Upload,
+} from "lucide-react";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -10,16 +20,6 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import {
-	Upload,
-	FileText,
-	Download,
-	AlertCircle,
-	CheckCircle,
-	RefreshCw,
-	FileType,
-} from "lucide-react";
-import { toast } from "sonner";
 
 export default function PDFToWordTool() {
 	const [file, setFile] = useState(null);

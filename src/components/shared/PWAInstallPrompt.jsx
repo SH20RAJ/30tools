@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { DownloadIcon, SmartphoneIcon, XIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -9,7 +10,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { DownloadIcon, XIcon, SmartphoneIcon } from "lucide-react";
 
 export default function PWAInstallPrompt() {
 	const [deferredPrompt, setDeferredPrompt] = useState(null);

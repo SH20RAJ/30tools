@@ -1,5 +1,3 @@
-"use strict";
-
 /* eslint-disable */
 // @ts-nocheck
 
@@ -31,7 +29,7 @@ function md5(t) {
 		}
 		return n;
 	}
-	const i = (function (t) {
+	const i = ((t) => {
 		const n = [];
 		for (let r = 0; r < 8 * t.length; r += 8)
 			n[r >> 5] |= (255 & t.charCodeAt(r / 8)) << (r % 32);
@@ -173,9 +171,7 @@ export async function decryptSecureCookie(t) {
 					w = new TextDecoder().decode(d);
 				console.log("Decrypted successfully with offset:", t);
 				return JSON.parse(w);
-			} catch (t) {
-				continue;
-			}
+			} catch (t) {}
 		console.error("Decryption failed after trying all time offsets.");
 		return JSON.parse(atob(t));
 	} catch (n) {

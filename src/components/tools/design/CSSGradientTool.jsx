@@ -1,6 +1,19 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import {
+	ArrowLeftIcon,
+	CheckCircleIcon,
+	CodeIcon,
+	CopyIcon,
+	EyeIcon,
+	PaletteIcon,
+	RefreshCwIcon,
+} from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,11 +21,8 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import {
 	Select,
 	SelectContent,
@@ -20,18 +30,8 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
+import { Slider } from "@/components/ui/slider";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-	ArrowLeftIcon,
-	PaletteIcon,
-	CopyIcon,
-	CheckCircleIcon,
-	RefreshCwIcon,
-	EyeIcon,
-	CodeIcon,
-} from "lucide-react";
-import Link from "next/link";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
 
 export default function CSSGradientTool() {
 	const [gradientType, setGradientType] = useState("linear");
@@ -203,7 +203,7 @@ export default function CSSGradientTool() {
 			case "scss":
 				content = `$gradient: ${css.replace("background: ", "").replace(";", "")};\n\n.gradient {\n  background: $gradient;\n}`;
 				break;
-			case "svg":
+			case "svg": {
 				const svgColors = colors
 					.map(
 						(c, i) =>
@@ -219,6 +219,7 @@ export default function CSSGradientTool() {
   <rect width="400" height="200" fill="url(#gradient)" />
 </svg>`;
 				break;
+			}
 		}
 
 		const blob = new Blob([content], { type: "text/plain" });

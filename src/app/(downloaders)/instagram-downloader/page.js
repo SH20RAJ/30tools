@@ -1,10 +1,3 @@
-import InstagramDownloader from "@/components/tools/downloaders/InstagramDownloader";
-import {
-	Accordion,
-	AccordionContent,
-	AccordionItem,
-	AccordionTrigger,
-} from "@/components/ui/accordion";
 import {
 	Copy,
 	Download,
@@ -15,6 +8,13 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
+import InstagramDownloader from "@/components/tools/downloaders/InstagramDownloader";
+import {
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const metadata = {
 	title: { absolute: "Instagram Downloader (2026) - No Watermark | 30Tools" },

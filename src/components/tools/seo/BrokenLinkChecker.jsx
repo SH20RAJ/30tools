@@ -1,6 +1,22 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import {
+	AlertTriangle,
+	CheckCircle2,
+	Clock,
+	Download,
+	ExternalLink,
+	Globe,
+	Info,
+	Link,
+	Search,
+	XCircle,
+	Zap,
+} from "lucide-react";
+import { useCallback, useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,25 +24,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import {
-	Link,
-	Download,
-	CheckCircle2,
-	XCircle,
-	Clock,
-	Info,
-	Search,
-	AlertTriangle,
-	Globe,
-	ExternalLink,
-	Zap,
-} from "lucide-react";
 
 export default function BrokenLinkChecker() {
 	const [url, setUrl] = useState("");

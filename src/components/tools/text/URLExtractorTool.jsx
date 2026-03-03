@@ -1,6 +1,10 @@
 "use client";
 
+import { Check, Copy, Download, ExternalLink, Link } from "lucide-react";
 import { useState } from "react";
+import { toast } from "sonner";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
@@ -8,11 +12,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { Link, Copy, Check, Download, ExternalLink } from "lucide-react";
-import { toast } from "sonner";
 
 export default function URLExtractorTool() {
 	const [inputText, setInputText] = useState("");

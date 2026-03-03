@@ -1,5 +1,5 @@
-import PDFToolsNavbar from "@/components/navigation/PDFToolsNavbar";
 import PDFToolsFooter from "@/components/footers/PDFToolsFooter";
+import PDFToolsNavbar from "@/components/navigation/PDFToolsNavbar";
 
 export const metadata = {
 	title: "PDF Tools - Free Online PDF Processing | 30tools",
