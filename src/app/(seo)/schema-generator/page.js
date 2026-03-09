@@ -1,50 +1,13 @@
 import Link from "next/link";
 import { AuthorBio } from "@/components/seo";
 import SchemaGenerator from "@/components/tools/seo/SchemaGenerator";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Schema Markup Generator (2026) - Free JSON-LD Tool | 30Tools",
+export const metadata = generateToolMetadata("schema-generator", "seo", {
+	title: "Schema Markup Generator | Free JSON-LD Tool | 30Tools",
 	description:
-		"Generate LLM-ready JSON-LD schema markup for Google Search 2026. Boost your AI search visibility with FAQ, HowTo, and Software schemas. Free & No sign-up.",
-	keywords: [
-		"schema generator",
-		"schema markup generator",
-		"structured data generator",
-		"json-ld generator",
-		"schema.org generator",
-		"rich snippets generator",
-		"schema markup tool",
-		"structured data tool",
-		"faq schema generator",
-		"product schema generator",
-		"article schema generator",
-	].join(", "),
-
-	openGraph: {
-		title: "Schema Markup Generator - Structured Data Tool",
-		description:
-			"⚡ Generate JSON-LD schema markup for SEO. Rich snippets made easy!",
-		url: "https://30tools.com/schema-generator",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/schema-generator.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Schema Generator",
-			},
-		],
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "Schema Generator - Free",
-		description: "⚡ Create structured data easily!",
-		images: ["/og-images/schema-generator.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/schema-generator" },
+		"Generate JSON-LD structured data for FAQ, HowTo, software, and other rich result types without writing schema by hand.",
+	image: "/og-images/schema-generator.jpg",
 	robots: {
 		index: true,
 		follow: true,
@@ -56,24 +19,17 @@ export const metadata = {
 			"max-snippet": -1,
 		},
 	},
-};
+});
 
 const jsonLdSchemas = {
-	webApp: {
-		"@context": "https://schema.org",
-		"@type": "WebApplication",
+	webApp: generateToolJsonLd("schema-generator", "seo", {
 		name: "Schema Markup Generator",
-		description: "Free tool to generate JSON-LD structured data for SEO.",
-		url: "https://30tools.com/schema-generator",
-		applicationCategory: ["UtilitiesApplication"],
-		operatingSystem: "Any",
-		offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-		aggregateRating: {
-			"@type": "AggregateRating",
-			ratingValue: "4.9",
-			ratingCount: "15432",
+		description:
+			"Generate JSON-LD structured data for FAQ, HowTo, software, and other rich result types without writing schema by hand.",
+		extra: {
+			applicationCategory: "BusinessApplication",
 		},
-	},
+	}),
 };
 
 const AdUnit = () => (
@@ -130,9 +86,8 @@ export default function SchemaGeneratorPage() {
 							Schema Markup Generator
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-							Generate LLM-ready JSON-LD structured data for Google 2026. Boost
-							your search visibility and AI Overview presence with our
-							professional schema generator.
+							Generate JSON-LD structured data for rich results, search features,
+							and cleaner machine-readable markup without writing schema by hand.
 						</p>
 						<div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
 							<span>📋 JSON-LD</span>

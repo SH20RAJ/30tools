@@ -248,9 +248,9 @@ export default function VideoToolsPage() {
 					<h1 className="text-4xl font-bold">Video Tools</h1>
 				</div>
 				<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-					Professional video processing tools for editing, converting,
-					compressing, and optimizing videos. Support for all major video
-					formats with high-quality output.
+					Free video tools for editing, converting, compressing, and trimming
+					videos online. Support for popular formats with browser-based
+					processing.
 				</p>
 			</div>
 
@@ -593,7 +593,7 @@ export default function VideoToolsPage() {
 						"@type": "CollectionPage",
 						name: "Video Tools Collection",
 						description:
-							"Professional video tools for editing, converting, compressing, and processing videos",
+								"Free video tools for editing, converting, compressing, and trimming videos online",
 						url: "https://30tools.com/video-tools",
 						mainEntity: {
 							"@type": "ItemList",

@@ -140,9 +140,8 @@ export default function ImageToolsPage() {
 					<h1 className="text-4xl font-bold">Image Tools</h1>
 				</div>
 				<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-					Professional image processing tools for compression, conversion,
-					editing, and optimization. All processing happens locally in your
-					browser for maximum privacy and security.
+					Free image tools for compression, conversion, resizing, and editing.
+					All processing happens locally in your browser for privacy and speed.
 				</p>
 			</div>
 
@@ -391,7 +390,7 @@ export default function ImageToolsPage() {
 						"@type": "CollectionPage",
 						name: "Image Tools Collection",
 						description:
-							"Professional image processing tools for compression, conversion, editing, and optimization",
+								"Free image tools for compression, conversion, resizing, and editing",
 						url: "https://30tools.com/image-tools",
 						mainEntity: {
 							"@type": "ItemList",

@@ -139,9 +139,8 @@ export default function TextToolsPage() {
 					<h1 className="text-4xl font-bold">Text Tools</h1>
 				</div>
 				<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-					Professional text processing and analysis tools for formatting,
-					manipulation, and content creation. All tools work directly in your
-					browser.
+					Free text tools for formatting, cleaning, converting, and analyzing
+					content directly in your browser.
 				</p>
 			</div>
 

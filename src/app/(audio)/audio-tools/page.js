@@ -139,9 +139,9 @@ export default function AudioToolsPage() {
 					<h1 className="text-4xl font-bold">Audio Tools</h1>
 				</div>
 				<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-					Professional audio processing tools for recording, editing,
-					converting, and enhancing audio files. Support for all major audio
-					formats with studio-quality results.
+					Free audio tools for recording, editing, converting, and enhancing
+					audio files in your browser. Support for popular formats with fast,
+					simple workflows.
 				</p>
 			</div>
 
@@ -444,7 +444,7 @@ export default function AudioToolsPage() {
 						"@type": "CollectionPage",
 						name: "Audio Tools Collection",
 						description:
-							"Professional audio tools for recording, editing, converting, and processing audio files",
+								"Free audio tools for recording, editing, converting, and enhancing audio files",
 						url: "https://30tools.com/audio-tools",
 						mainEntity: {
 							"@type": "ItemList",
