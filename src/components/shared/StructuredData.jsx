@@ -1,34 +1,47 @@
+import { getAllCategories, getAllTools } from "@/constants/tools-utils";
+
+const BASE_URL = "https://30tools.com";
+const allCategories = getAllCategories();
+const allTools = getAllTools();
+const TOOL_COUNT = allTools.length;
+const CATEGORY_COUNT = allCategories.length;
+const categoryLookup = Object.fromEntries(
+	allCategories.map((category) => [
+		category.key,
+		{ name: category.name, slug: category.slug },
+	]),
+);
+
 export default function StructuredData({ tool, includeFAQ = true }) {
-	// If a specific tool is provided, render tool-specific structured data
 	if (tool) {
+		const categoryDetails =
+			categoryLookup[tool.category] || categoryLookup[tool.categoryKey] || null;
+		const toolUrl = `${BASE_URL}${tool.route}`;
+		const toolCategoryName = categoryDetails?.name || tool.categoryName || "Utilities";
+		const toolCategoryUrl = `${BASE_URL}/${categoryDetails?.slug || tool.category || "utilities"}`;
+
 		const toolStructuredData = {
 			"@context": "https://schema.org",
 			"@type": "SoftwareApplication",
 			name: tool.name,
 			description: tool.description,
-			applicationCategory: tool.category
-				? `${tool.category.charAt(0).toUpperCase() + tool.category.slice(1)}Application`
-				: "UtilitiesApplication",
+			applicationCategory: toolCategoryName,
 			operatingSystem: "Web Browser",
-			url: `https://30tools.com${tool.route}`,
+			url: toolUrl,
+			isAccessibleForFree: true,
 			offers: {
 				"@type": "Offer",
 				price: "0",
 				priceCurrency: "USD",
 			},
-			aggregateRating: {
-				"@type": "AggregateRating",
-				ratingValue: "4.8",
-				reviewCount: "1250",
-				bestRating: "5",
-				worstRating: "1",
+			provider: {
+				"@type": "Organization",
+				name: "30tools",
+				url: BASE_URL,
 			},
-			featureList: tool.features
-				? tool.features.join(", ")
-				: "Free online tool",
+			featureList: tool.features ? tool.features.join(", ") : "Free online tool",
 		};
 
-		// FAQ Schema
 		const faqData = tool.faqs
 			? {
 					"@context": "https://schema.org",
@@ -44,7 +57,6 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 				}
 			: null;
 
-		// HowTo Schema
 		const howToData = tool.howTo
 			? {
 					"@context": "https://schema.org",
@@ -70,21 +82,19 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 					"@type": "ListItem",
 					position: 1,
 					name: "Home",
-					item: "https://30tools.com",
+					item: BASE_URL,
 				},
 				{
 					"@type": "ListItem",
 					position: 2,
-					name: tool.category
-						? tool.category.charAt(0).toUpperCase() + tool.category.slice(1)
-						: "Tools",
-					item: `https://30tools.com/tools/${tool.category || "utilities"}`,
+					name: toolCategoryName,
+					item: toolCategoryUrl,
 				},
 				{
 					"@type": "ListItem",
 					position: 3,
 					name: tool.name,
-					item: `https://30tools.com${tool.route}`,
+					item: toolUrl,
 				},
 			],
 		};
@@ -123,30 +133,28 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 		);
 	}
 
-	// Default global structured data
 	const websiteStructuredData = {
 		"@context": "https://schema.org",
 		"@type": "WebSite",
 		name: "30tools",
 		alternateName: "30tools - Free Online Toolkit",
-		url: "https://30tools.com",
-		description:
-			"Fast, free, and privacy-focused tools for image, video, audio, PDF, and text processing. No sign-up required.",
+		url: BASE_URL,
+		description: `Fast, free, and privacy-focused tools for image, video, audio, PDF, SEO, and developer workflows. Explore ${TOOL_COUNT}+ tools with no sign-up required.`,
 		potentialAction: {
 			"@type": "SearchAction",
 			target: {
 				"@type": "EntryPoint",
-				urlTemplate: "https://30tools.com/search?q={search_term_string}",
+				urlTemplate: `${BASE_URL}/search?q={search_term_string}`,
 			},
 			"query-input": "required name=search_term_string",
 		},
 		publisher: {
 			"@type": "Organization",
 			name: "30tools",
-			url: "https://30tools.com",
+			url: BASE_URL,
 			logo: {
 				"@type": "ImageObject",
-				url: "https://30tools.com/icons/icon-512x512.png",
+				url: `${BASE_URL}/icons/icon-512x512.png`,
 				width: 512,
 				height: 512,
 			},
@@ -157,23 +165,14 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 		"@context": "https://schema.org",
 		"@type": "Organization",
 		name: "30tools",
-		url: "https://30tools.com",
-		logo: "https://30tools.com/icons/icon-512x512.png",
-		description:
-			"Free online toolkit with 135+ tools for image, video, audio, PDF, and text processing",
+		url: BASE_URL,
+		logo: `${BASE_URL}/icons/icon-512x512.png`,
+		description: `Free online toolkit with ${TOOL_COUNT}+ tools for image, video, audio, PDF, SEO, and developer workflows.`,
 		foundingDate: "2024",
 		contactPoint: {
 			"@type": "ContactPoint",
 			contactType: "customer support",
-			url: "https://30tools.com/contact",
-		},
-		sameAs: ["https://twitter.com/30tools", "https://github.com/30tools"],
-		aggregateRating: {
-			"@type": "AggregateRating",
-			ratingValue: "4.8",
-			reviewCount: "15000",
-			bestRating: "5",
-			worstRating: "1",
+			url: `${BASE_URL}/contact`,
 		},
 	};
 
@@ -185,13 +184,13 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 				"@type": "ListItem",
 				position: 1,
 				name: "Home",
-				item: "https://30tools.com",
+				item: BASE_URL,
 			},
 			{
 				"@type": "ListItem",
 				position: 2,
 				name: "Tools",
-				item: "https://30tools.com/#tools",
+				item: `${BASE_URL}/search`,
 			},
 		],
 	};
@@ -199,135 +198,22 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 	const toolsCollectionStructuredData = {
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
-		name: "Free Online Tools Collection - 135+ Professional Tools",
-		description:
-			"Comprehensive collection of 135+ free online tools for image processing, PDF editing, video conversion, text manipulation, developer utilities, and more.",
-		url: "https://30tools.com",
+		name: `Free Online Tools Collection - ${TOOL_COUNT}+ Professional Tools`,
+		description: `Comprehensive collection of ${TOOL_COUNT}+ free online tools for image processing, PDF editing, video conversion, text manipulation, SEO, and developer utilities.`,
+		url: BASE_URL,
 		mainEntity: {
 			"@type": "ItemList",
-			numberOfItems: 135,
-			itemListElement: [
-				{
-					"@type": "SoftwareApplication",
-					position: 1,
-					name: "Image Compressor",
-					url: "https://30tools.com/image-compressor",
-					description:
-						"Compress images up to 80% without quality loss. Supports JPEG, PNG, WebP batch processing.",
-					applicationCategory: "MultimediaApplication",
-					operatingSystem: "Web Browser",
-					offers: {
-						"@type": "Offer",
-						price: "0",
-						priceCurrency: "USD",
-					},
-					aggregateRating: {
-						"@type": "AggregateRating",
-						ratingValue: "4.9",
-						reviewCount: "2847",
-					},
+			numberOfItems: CATEGORY_COUNT,
+			itemListElement: allCategories.map((category, index) => ({
+				"@type": "ListItem",
+				position: index + 1,
+				item: {
+					"@type": "CollectionPage",
+					name: category.name,
+					url: `${BASE_URL}/${category.slug}`,
+					description: category.description,
 				},
-				{
-					"@type": "SoftwareApplication",
-					position: 2,
-					name: "PDF Merger",
-					url: "https://30tools.com/pdf-merger",
-					description:
-						"Merge multiple PDF files into one document. Preserves bookmarks and maintains quality.",
-					applicationCategory: "OfficeApplication",
-					operatingSystem: "Web Browser",
-					offers: {
-						"@type": "Offer",
-						price: "0",
-						priceCurrency: "USD",
-					},
-					aggregateRating: {
-						"@type": "AggregateRating",
-						ratingValue: "4.8",
-						reviewCount: "1923",
-					},
-				},
-				{
-					"@type": "SoftwareApplication",
-					position: 3,
-					name: "Password Generator",
-					url: "https://30tools.com/password-generator",
-					description:
-						"Generate secure passwords with customizable length and character sets. Cryptographically secure.",
-					applicationCategory: "SecurityApplication",
-					operatingSystem: "Web Browser",
-					offers: {
-						"@type": "Offer",
-						price: "0",
-						priceCurrency: "USD",
-					},
-					aggregateRating: {
-						"@type": "AggregateRating",
-						ratingValue: "4.9",
-						reviewCount: "3156",
-					},
-				},
-				{
-					"@type": "SoftwareApplication",
-					position: 4,
-					name: "QR Code Generator",
-					url: "https://30tools.com/qr-code-generator",
-					description:
-						"Create custom QR codes for URLs, text, WiFi, vCards. High resolution download with customization.",
-					applicationCategory: "UtilitiesApplication",
-					operatingSystem: "Web Browser",
-					offers: {
-						"@type": "Offer",
-						price: "0",
-						priceCurrency: "USD",
-					},
-					aggregateRating: {
-						"@type": "AggregateRating",
-						ratingValue: "4.7",
-						reviewCount: "2634",
-					},
-				},
-				{
-					"@type": "SoftwareApplication",
-					position: 5,
-					name: "Video Compressor",
-					url: "https://30tools.com/video-compressor",
-					description:
-						"Compress videos for web, social media, and storage. Maintains quality with significant size reduction.",
-					applicationCategory: "MultimediaApplication",
-					operatingSystem: "Web Browser",
-					offers: {
-						"@type": "Offer",
-						price: "0",
-						priceCurrency: "USD",
-					},
-					aggregateRating: {
-						"@type": "AggregateRating",
-						ratingValue: "4.6",
-						reviewCount: "1789",
-					},
-				},
-				{
-					"@type": "SoftwareApplication",
-					position: 6,
-					name: "Base64 Encoder/Decoder",
-					url: "https://30tools.com/base64-tool",
-					description:
-						"Encode and decode Base64 strings with support for files and text. Developer-friendly interface.",
-					applicationCategory: "DeveloperApplication",
-					operatingSystem: "Web Browser",
-					offers: {
-						"@type": "Offer",
-						price: "0",
-						priceCurrency: "USD",
-					},
-					aggregateRating: {
-						"@type": "AggregateRating",
-						ratingValue: "4.8",
-						reviewCount: "1456",
-					},
-				},
-			],
+			})),
 		},
 	};
 
@@ -340,7 +226,7 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 				name: "Are the tools on 30tools really free?",
 				acceptedAnswer: {
 					"@type": "Answer",
-					text: "Yes, all tools on 30tools are completely free to use. No registration, subscription, or payment required. No watermarks are added to your processed files.",
+					text: "Yes, all tools on 30tools are free to use. Most tools run directly in the browser and do not require registration.",
 				},
 			},
 			{
@@ -348,7 +234,7 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 				name: "Do I need to create an account to use the tools?",
 				acceptedAnswer: {
 					"@type": "Answer",
-					text: "No account creation is required. All tools work directly in your browser without any sign-up process. Simply visit the tool page and start using it immediately.",
+					text: "No account creation is required for the core tool experience. You can open a tool page and start using it immediately.",
 				},
 			},
 			{
@@ -356,7 +242,7 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 				name: "Are my files safe when using 30tools?",
 				acceptedAnswer: {
 					"@type": "Answer",
-					text: "Yes, your privacy is our priority. Most tools process files directly in your browser without uploading to our servers. Your files never leave your device, ensuring complete privacy and security.",
+					text: "Privacy is a core focus. Many tools process files directly in the browser, which reduces the need to upload personal files to a server.",
 				},
 			},
 			{
@@ -364,39 +250,7 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 				name: "What types of tools are available on 30tools?",
 				acceptedAnswer: {
 					"@type": "Answer",
-					text: "We offer 135+ tools across multiple categories: image processing (compression, conversion, editing), video tools (compression, conversion, trimming), PDF tools (merge, split, compress), text tools (word counter, case converter), developer tools (JSON formatter, Base64 encoder), SEO tools, and many more utilities.",
-				},
-			},
-			{
-				"@type": "Question",
-				name: "Can I use 30tools on mobile devices?",
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: "Absolutely! All our tools are fully responsive and work perfectly on smartphones and tablets. The interface adapts to your screen size for optimal usability on any device.",
-				},
-			},
-			{
-				"@type": "Question",
-				name: "Is there a file size limit for uploads?",
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: "File size limits vary by tool type: images up to 50MB, PDFs up to 100MB, videos up to 500MB. These limits accommodate most common use cases while ensuring optimal performance.",
-				},
-			},
-			{
-				"@type": "Question",
-				name: "Can I process multiple files at once?",
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: "Yes! Many of our tools support batch processing. You can upload and process multiple files simultaneously, saving time and increasing productivity.",
-				},
-			},
-			{
-				"@type": "Question",
-				name: "Do the tools work offline?",
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: "Many tools work offline once the page is loaded since processing happens in your browser. However, some features may require an internet connection for optimal functionality.",
+					text: `30tools offers ${TOOL_COUNT}+ tools across ${CATEGORY_COUNT} categories, including image processing, PDF workflows, video tools, text tools, audio tools, SEO utilities, and developer tools.`,
 				},
 			},
 		],

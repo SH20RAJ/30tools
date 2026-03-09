@@ -3,7 +3,9 @@ import { getAllTools } from "@/constants/tools-utils";
 function RSSFeed() {
 	const baseUrl = "https://30tools.com";
 	const currentDate = new Date().toUTCString();
+  const currentYear = new Date().getFullYear();
 	const allTools = getAllTools();
+  const toolCount = allTools.length;
 
 	// Get all tools
 	const latestTools = allTools;
@@ -93,7 +95,7 @@ function RSSFeed() {
         <generator>30tools RSS Generator</generator>
         <webMaster>contact@30tools.com (30tools Team)</webMaster>
         <managingEditor>contact@30tools.com (30tools Team)</managingEditor>
-        <copyright>Copyright © 2025 30tools. All rights reserved.</copyright>
+        <copyright>Copyright © ${currentYear} 30tools. All rights reserved.</copyright>
         <category><![CDATA[Technology]]></category>
         <category><![CDATA[Online Tools]]></category>
         <category><![CDATA[Web Applications]]></category>
@@ -108,8 +110,8 @@ function RSSFeed() {
 
         <!-- Featured Content -->
         <item>
-          <title><![CDATA[135+ Free Online Tools - Complete Toolkit for Everyone]]></title>
-          <description><![CDATA[Discover our comprehensive collection of 135+ free online tools. From image compression to PDF editing, video conversion to SEO analysis - everything you need in one place.]]></description>
+          <title><![CDATA[${toolCount}+ Free Online Tools - Complete Toolkit for Everyone]]></title>
+          <description><![CDATA[Discover our comprehensive collection of ${toolCount}+ free online tools. From image compression to PDF editing, video conversion to SEO analysis and developer workflows - everything you need in one place.]]></description>
           <link>${baseUrl}</link>
           <guid isPermaLink="true">${baseUrl}</guid>
           <pubDate>${currentDate}</pubDate>

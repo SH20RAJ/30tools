@@ -3,6 +3,7 @@ import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
+import { getAllTools } from "@/constants/tools-utils";
 import "./globals.css";
 import Script from "next/script";
 
@@ -12,14 +13,35 @@ const openSans = Open_Sans({
 	weight: ["300", "400", "500", "600", "700"],
 });
 
+const SITE_URL = "https://30tools.com";
+const TOOL_COUNT = getAllTools().length;
+const DEFAULT_DESCRIPTION = `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, and more. No registration required. Privacy-focused, fast, and secure.`;
+
+const siteVerification = {
+	...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+		? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+		: {}),
+	...(process.env.NEXT_PUBLIC_YANDEX_VERIFICATION
+		? { yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION }
+		: {}),
+	...(process.env.NEXT_PUBLIC_YAHOO_VERIFICATION
+		? { yahoo: process.env.NEXT_PUBLIC_YAHOO_VERIFICATION }
+		: {}),
+	...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+		? {
+				other: {
+					"msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
+				},
+			}
+		: {}),
+};
+
 export const metadata = {
 	title: {
-		default:
-			"30tools - 135+ Free Online Tools | Image, PDF, Video, SEO & Developer Tools",
+		default: `30tools - ${TOOL_COUNT}+ Free Online Tools | Image, PDF, Video, SEO & Developer Tools`,
 		template: "%s | 30tools - Free Online Toolkit",
 	},
-	description:
-		"Professional online toolkit with 135+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities & more. No registration required. Privacy-focused, fast & secure.",
+	description: DEFAULT_DESCRIPTION,
 	keywords: [
 		// Primary keywords
 		"free online tools",
@@ -73,17 +95,9 @@ export const metadata = {
 		address: false,
 		telephone: false,
 	},
-	metadataBase: new URL("https://30tools.com"),
+	metadataBase: new URL(SITE_URL),
 	alternates: {
 		canonical: "/",
-		languages: {
-			"en-US": "/en-US",
-			"en-GB": "/en-GB",
-			"es-ES": "/es-ES",
-			"fr-FR": "/fr-FR",
-			"de-DE": "/de-DE",
-			"ja-JP": "/ja-JP",
-		},
 		types: {
 			"application/rss+xml": [{ url: "/feed.xml", title: "30tools RSS Feed" }],
 		},
@@ -91,18 +105,16 @@ export const metadata = {
 	openGraph: {
 		type: "website",
 		locale: "en_US",
-		url: "https://30tools.com",
-		siteName: "30tools - Free Online Toolkit",
-		title:
-			"30tools - 135+ Free Online Tools | Professional Toolkit for Everyone",
-		description:
-			"Professional online toolkit with 135+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities & more. No registration required.",
+		url: SITE_URL,
+		siteName: "30tools",
+		title: `30tools - ${TOOL_COUNT}+ Free Online Tools | Professional Toolkit for Everyone`,
+		description: DEFAULT_DESCRIPTION,
 		images: [
 			{
 				url: "/og-image.jpg",
 				width: 1200,
 				height: 630,
-				alt: "30tools - Professional Free Online Toolkit with 135+ Tools",
+				alt: `30tools - Professional Free Online Toolkit with ${TOOL_COUNT}+ Tools`,
 				type: "image/jpeg",
 			},
 			{
@@ -118,9 +130,8 @@ export const metadata = {
 		card: "summary_large_image",
 		site: "@30tools",
 		creator: "@30tools",
-		title: "30tools - 135+ Free Online Tools | Professional Toolkit",
-		description:
-			"Professional online toolkit with 135+ free tools. Image compression, PDF editing, video conversion, SEO analysis & more. No registration required.",
+		title: `30tools - ${TOOL_COUNT}+ Free Online Tools | Professional Toolkit`,
+		description: DEFAULT_DESCRIPTION,
 		images: ["/og-image.jpg"],
 	},
 	robots: {
@@ -136,22 +147,10 @@ export const metadata = {
 			"max-snippet": -1,
 		},
 	},
-	verification: {
-		google: "your-google-search-console-verification-code",
-		yandex: "your-yandex-verification-code",
-		yahoo: "your-yahoo-verification-code",
-		other: {
-			"msvalidate.01": "your-bing-verification-code",
-		},
-	},
+	...(Object.keys(siteVerification).length > 0
+		? { verification: siteVerification }
+		: {}),
 	manifest: "/manifest.json",
-	// Added basic GEO metadata for better local relevance
-	other: {
-		"geo.region": "US-CA", // Example region, assuming globally relevant but anchored somewhere for SEO hints
-		"geo.placename": "San Francisco",
-		"geo.position": "37.7749;-122.4194",
-		ICBM: "37.7749, -122.4194",
-	},
 	icons: {
 		icon: [
 			{ url: "/icons/icon-32x32.png", sizes: "32x32", type: "image/png" },
@@ -244,6 +243,7 @@ export default async function RootLayout({ children }) {
 					title="30tools Search"
 					href="/opensearch.xml"
 				/>
+				<link rel="alternate" type="text/plain" title="30tools LLM Index" href="/llms.txt" />
 
 				{/* Alternate */}
 				<link

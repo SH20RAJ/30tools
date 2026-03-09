@@ -3,6 +3,43 @@ import { getAllCategories, getAllTools } from "@/constants/tools-utils";
 
 const BASE_URL = "https://30tools.com";
 
+function normalizeSiteUrl(pathOrUrl: string | undefined) {
+	if (!pathOrUrl) return null;
+
+	try {
+		const normalizedUrl = new URL(pathOrUrl, BASE_URL);
+		return normalizedUrl.origin === BASE_URL ? normalizedUrl.toString() : null;
+	} catch {
+		return null;
+	}
+}
+
+function dedupeEntries(entries: MetadataRoute.Sitemap) {
+	const uniqueEntries = new Map<string, MetadataRoute.Sitemap[number]>();
+
+	for (const entry of entries) {
+		if (!entry?.url) continue;
+
+		const existingEntry = uniqueEntries.get(entry.url);
+		if (!existingEntry) {
+			uniqueEntries.set(entry.url, entry);
+			continue;
+		}
+
+		uniqueEntries.set(entry.url, {
+			...existingEntry,
+			lastModified:
+				new Date(entry.lastModified || 0) > new Date(existingEntry.lastModified || 0)
+					? entry.lastModified
+					: existingEntry.lastModified,
+			priority: Math.max(entry.priority || 0, existingEntry.priority || 0),
+			changeFrequency: existingEntry.changeFrequency || entry.changeFrequency,
+		});
+	}
+
+	return Array.from(uniqueEntries.values());
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
 	const allTools = getAllTools();
 	const allCategories = getAllCategories();
@@ -35,12 +72,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.7,
 		},
 		{
-			url: `${BASE_URL}/help`,
-			lastModified: currentDate,
-			changeFrequency: "weekly",
-			priority: 0.8,
-		},
-		{
 			url: `${BASE_URL}/privacy`,
 			lastModified: new Date("2025-06-15"),
 			changeFrequency: "monthly",
@@ -53,12 +84,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.6,
 		},
 		{
-			url: `${BASE_URL}/api-docs`,
-			lastModified: new Date("2025-06-15"),
-			changeFrequency: "weekly",
-			priority: 0.7,
-		},
-		{
 			url: `${BASE_URL}/blog`,
 			lastModified: currentDate,
 			changeFrequency: "daily",
@@ -68,14 +93,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	// Tool pages with intelligent priority calculation
 	const toolPages: MetadataRoute.Sitemap = allTools.flatMap((tool: any) => {
-		// Calculate priority based on popularity and category importance
-		let priority = 0.8; // Base priority for tools
-
-		// Boost popular tools
-		if (tool.popular === true) {
-			priority += 0.1;
-		}
-
 		// Category-based priority adjustments
 		const categoryPriorities: Record<string, number> = {
 			image: 0.95, // High demand category
@@ -92,7 +109,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			calculators: 0.9, // Niche category
 		};
 
-		priority = Math.min(0.95, categoryPriorities[tool.category] || 0.8);
+		const priority = Math.min(
+			0.98,
+			(categoryPriorities[tool.category] || 0.8) + (tool.popular === true ? 0.03 : 0),
+		);
 
 		// Determine change frequency based on tool type
 		let changeFrequency:
@@ -111,20 +131,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			changeFrequency = "monthly";
 		}
 
+		const mainEntryUrl = normalizeSiteUrl(
+			tool.external ? tool.route : `${BASE_URL}${tool.route}`,
+		);
+
+		if (!mainEntryUrl) {
+			return [];
+		}
+
 		const mainEntry = {
-			url: tool.external ? tool.route : `${BASE_URL}${tool.route}`,
+			url: mainEntryUrl,
 			lastModified: currentDate,
 			changeFrequency,
 			priority: Math.round(priority * 100) / 100, // Round to 2 decimal places
 		};
 
 		// Add entries for extra slugs if they exist
-		const extraEntries = (tool.extraSlugs || []).map((slug: string) => ({
-			url: `${BASE_URL}/${slug}`,
-			lastModified: currentDate,
-			changeFrequency,
-			priority: Math.round((priority - 0.05) * 100) / 100, // Slightly lower priority for variants
-		}));
+		const extraEntries = (tool.extraSlugs || [])
+			.map((slug: string) => {
+				const url = normalizeSiteUrl(`${BASE_URL}/${slug}`);
+				if (!url) return null;
+
+				return {
+					url,
+					lastModified: currentDate,
+					changeFrequency,
+					priority: Math.round((priority - 0.05) * 100) / 100,
+				};
+			})
+			.filter(Boolean) as MetadataRoute.Sitemap;
 
 		return [mainEntry, ...extraEntries];
 	});
@@ -246,11 +281,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		})),
 	];
 
-	return [
+	return dedupeEntries([
 		...staticPages,
 		...categoryPages,
 		...toolPages,
 		...downloaderPages,
 		...blogPages,
-	].sort((a, b) => (b.priority || 0) - (a.priority || 0));
+	]).sort((a, b) => (b.priority || 0) - (a.priority || 0));
 }

@@ -30,19 +30,28 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import toolsData from "@/constants/tools.json";
 
+const TOOL_COUNT = Object.values(toolsData.categories || {}).reduce(
+	(total, category) => total + (category.tools?.length || 0),
+	0,
+);
+
+const CATEGORY_COUNT = Object.keys(toolsData.categories || {}).length;
+
 export const metadata = {
 	title: {
-		absolute: "30Tools (2026) - Free Online Tools & Converters",
+		absolute: `30tools - ${TOOL_COUNT}+ Free Online Tools & Converters`,
 	},
 	description:
-		"The #1 Free Online Toolkit for 2026. Image compressor, video downloader, PDF tools, and more. No signup, no watermarks, unlimited use.",
+		`Browse ${TOOL_COUNT}+ free online tools across ${CATEGORY_COUNT} categories. Compress images, edit PDFs, download videos, optimize SEO, and use developer utilities with no signup required.`,
+	keywords:
+		"free online tools, image compressor, pdf tools, video downloader, seo tools, developer tools, online converters, 30tools",
 	alternates: {
 		canonical: "https://30tools.com",
 	},
 	openGraph: {
-		title: "30Tools (2026) - Free Online Tools & Converters",
+		title: `30tools - ${TOOL_COUNT}+ Free Online Tools & Converters`,
 		description:
-			"Fast, free, and privacy-focused tools for all your creative and professional needs. Updated for 2026.",
+			`Fast, free, and privacy-focused tools for image, PDF, video, SEO, and developer workflows. Explore ${TOOL_COUNT}+ tools in one place.`,
 		url: "https://30tools.com",
 		siteName: "30tools",
 		type: "website",
@@ -57,33 +66,37 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "(landing) - Free Online Tool | Professional Results",
+		title: `30tools - ${TOOL_COUNT}+ Free Online Tools`,
 		description:
-			"Professional (landing) tool. Free online processing with high-quality results. No registration required, instant results.",
-		images: ["/og-images/(landing).jpg"],
+			`Free online toolkit with ${TOOL_COUNT}+ tools for image, PDF, video, SEO, and developer tasks.`,
+		images: ["/og-image.jpg"],
 		creator: "@30tools",
 	},
 };
 
 const jsonLd = {
 	"@context": "https://schema.org",
-	"@type": "WebApplication",
-	name: "(landing)",
+	"@type": "CollectionPage",
+	name: `30tools - ${TOOL_COUNT}+ Free Online Tools`,
 	description:
-		"Professional (landing) tool. Free online processing with high-quality results. No registration required, instant results.",
-	url: "https://30tools.com/(landing)",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
+		`Browse ${TOOL_COUNT}+ free online tools across ${CATEGORY_COUNT} categories, including image, PDF, video, SEO, and developer tools.`,
+	url: "https://30tools.com",
+	isPartOf: {
+		"@type": "WebSite",
 		name: "30tools",
 		url: "https://30tools.com",
+	},
+	mainEntity: {
+		"@type": "ItemList",
+		numberOfItems: CATEGORY_COUNT,
+		itemListElement: Object.values(toolsData.categories || {})
+			.slice(0, 8)
+			.map((category, index) => ({
+				"@type": "ListItem",
+				position: index + 1,
+				name: category.name,
+				url: `https://30tools.com/${category.slug}`,
+			})),
 	},
 };
 
@@ -134,6 +147,13 @@ export default function LandingPage() {
 		"pdf merger",
 		"password generator",
 		"utm builder",
+	];
+
+	const homepageStats = [
+		{ label: "Tools Available", value: `${TOOL_COUNT}+`, icon: LayoutGridIcon },
+		{ label: "Categories", value: `${CATEGORY_COUNT}`, icon: FileIcon },
+		{ label: "Access Model", value: "Free", icon: UsersIcon },
+		{ label: "Processing", value: "Browser-based", icon: StarIcon },
 	];
 
 	return (
@@ -233,7 +253,7 @@ export default function LandingPage() {
 										<div className="flex items-center h-14 md:h-16 px-6 bg-background rounded-xl border shadow-sm group-hover:shadow-md transition-all cursor-text">
 											<SearchIcon className="h-5 w-5 text-muted-foreground mr-3 group-hover:text-primary transition-colors" />
 											<span className="text-muted-foreground text-lg text-left flex-1">
-												Search 140+ tools...
+												Search {TOOL_COUNT}+ tools...
 											</span>
 											<div className="hidden md:flex items-center gap-1.5 p-1.5 bg-muted rounded text-xs font-medium text-muted-foreground">
 												<span className="px-1.5">⌘</span>
@@ -263,16 +283,7 @@ export default function LandingPage() {
 
 							{/* Stats */}
 							<div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-12 mt-16 max-w-4xl mx-auto border-t border-border/40 pt-12">
-								{[
-									{ label: "Active Users", value: "2M+", icon: UsersIcon },
-									{ label: "Files Processed", value: "50M+", icon: FileIcon },
-									{
-										label: "Tools Available",
-										value: "150+",
-										icon: LayoutGridIcon,
-									},
-									{ label: "User Rating", value: "4.9/5", icon: StarIcon },
-								].map((stat, i) => (
+								{homepageStats.map((stat, i) => (
 									<div
 										key={i}
 										className="flex flex-col items-center gap-1 group"

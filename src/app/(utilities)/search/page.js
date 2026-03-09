@@ -1,23 +1,25 @@
 import { getAllTools } from "@/constants/tools-utils";
 import SearchPageServer from "./SearchPageServer";
 
+const TOOL_COUNT = getAllTools().length;
+
 export const metadata = {
-	title: "Search - Free Online Tool | Professional Results",
+	title: `Search ${TOOL_COUNT}+ Free Online Tools | 30tools`,
 	description:
-		"Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more. Fast, free, and easy to use.",
+		`Search ${TOOL_COUNT}+ free online tools. Find image compressors, video converters, PDF tools, SEO tools, developer utilities, and more. Fast, free, and easy to use.`,
 	keywords:
-		"search tools, online tools, image compressor, video converter, pdf tools, text tools, search free tools, file converter, online utilities",
+		"search tools, online tools, image compressor, video converter, pdf tools, seo tools, developer tools, search free tools, file converter, online utilities",
 	openGraph: {
-		title: "Search Tools - Find the Perfect Online Tool | 30tools",
+		title: `Search ${TOOL_COUNT}+ Tools | 30tools`,
 		description:
-			"Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more.",
+			`Search ${TOOL_COUNT}+ free online tools. Find image compressors, video converters, PDF tools, SEO tools, and more.`,
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Search Tools - Find the Perfect Online Tool | 30tools",
+		title: `Search ${TOOL_COUNT}+ Tools | 30tools`,
 		description:
-			"Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more.",
+			`Search ${TOOL_COUNT}+ free online tools. Find image compressors, video converters, PDF tools, SEO tools, and more.`,
 	},
 
 	alternates: {
@@ -62,9 +64,9 @@ export default async function SearchPage({ searchParams }) {
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "WebPage",
-		name: "Search Tools - Find the Perfect Online Tool | 30tools",
+		name: `Search ${TOOL_COUNT}+ Free Online Tools | 30tools`,
 		description:
-			"Search through our collection of 50+ free online tools. Find image compressors, video converters, PDF tools, text tools, and more. Fast, free, and easy to use.",
+			`Search ${TOOL_COUNT}+ free online tools. Find image compressors, video converters, PDF tools, SEO tools, developer utilities, and more.`,
 		url: "https://30tools.com/search",
 		potentialAction: {
 			"@type": "SearchAction",

@@ -2,11 +2,11 @@
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/"
                        xmlns:moz="http://www.mozilla.org/2006/browser/search/">
   <ShortName>30tools</ShortName>
-  <Description>Search 30+ free online tools for image compression, video conversion, PDF editing, and more</Description>
+  <Description>Search 194+ free online tools for image compression, PDF editing, video workflows, SEO, developer utilities, and more</Description>
   <InputEncoding>UTF-8</InputEncoding>
   <Image width="16" height="16" type="image/x-icon">https://30tools.com/favicon.ico</Image>
   <Image width="32" height="32" type="image/png">https://30tools.com/icons/icon-32x32.png</Image>
-  <Image width="64" height="64" type="image/png">https://30tools.com/icons/icon-64x64.png</Image>
+  <Image width="96" height="96" type="image/png">https://30tools.com/icons/icon-96x96.png</Image>
   <Url type="text/html" template="https://30tools.com/search?q={searchTerms}"/>
   <Url type="application/x-suggestions+json" template="https://30tools.com/api/search/suggestions?q={searchTerms}"/>
   <moz:SearchForm>https://30tools.com/search</moz:SearchForm>
@@ -15,7 +15,7 @@
   <Query role="example" searchTerms="pdf merger" />
   <Developer>30tools Team</Developer>
   <Contact>support@30tools.com</Contact>
-  <Tags>free online tools image compressor video converter pdf tools password generator qr code color picker base64 encoder text tools file converter utilities web tools</Tags>
+  <Tags>free online tools image compressor pdf tools video downloader seo tools developer tools password generator qr code base64 encoder text tools file converter utilities web tools</Tags>
   <Language>en-us</Language>
   <OutputEncoding>UTF-8</OutputEncoding>
   <AdultContent>false</AdultContent>
