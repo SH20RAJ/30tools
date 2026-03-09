@@ -9,73 +9,20 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Free Backlink Checker (2026) - Analyze Inbound Links | 30Tools",
+export const metadata = generateToolMetadata("backlink-checker", "seo", {
+	title: "Backlink Checker | Free Inbound Link Analysis Tool | 30Tools",
 	description:
-		"Instantly check backlinks for any website. Analyze domain authority, anchor text, and link quality. Free competitor backlink analysis tool.",
-	keywords: [
-		"backlink checker",
-		"free backlink analysis",
-		"check inbound links",
-		"competitor link checker",
-		"domain authority checker",
-		"free ahrefs alternative",
-		"seo link analysis",
-		"check my backlinks",
-		"find bad backlinks",
-		"link building tool",
-	].join(", "),
-	alternates: {
-		canonical: "https://30tools.com/backlink-checker",
-	},
-	openGraph: {
-		title: "Free Backlink Checker (2026) - SEO Tool",
-		description:
-			"Check backlinks pointing to any domain. Analyze your off-page SEO and link building progress.",
-		url: "https://30tools.com/backlink-checker",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/backlink-checker.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Backlink Checker Tool",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Backlink Checker (2026)",
-		description:
-			"Check backlinks pointing to any domain. Analyze your off-page SEO and link building progress.",
-		images: ["/og-images/backlink-checker.jpg"],
-		creator: "@30tools",
-	},
-};
+		"Check backlinks for any website, review referring domains, and analyze link quality for SEO research.",
+	image: "/og-images/backlink-checker.jpg",
+});
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
+const jsonLd = generateToolJsonLd("backlink-checker", "seo", {
 	name: "Backlink Checker",
 	description:
-		"Professional backlink checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-	url: "https://30tools.com/backlink-checker",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
-};
+		"Check backlinks for any website, review referring domains, and analyze link quality for SEO research.",
+});
 
 export default function BacklinkCheckerPage() {
 	const toolData = {

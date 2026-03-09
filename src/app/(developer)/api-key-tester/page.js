@@ -9,63 +9,21 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { API_KEY_TOOLS } from "@/data/api-key-tools";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "API Key Tester - Test OpenAI, Stripe, & More Keys Online",
+export const metadata = generateToolMetadata("api-key-tester", "developer", {
+	title: "API Key Tester | Test OpenAI, Stripe & More Keys Online | 30Tools",
 	description:
-		"Securely test your API keys for OpenAI, Stripe, SendGrid, and 30+ other services. Check if your API keys are valid directly in your browser or via terminal.",
-	keywords:
-		"api key tester, test openai api key, test stripe api key, api key validator, check api key, developer tools",
-	openGraph: {
-		title: "Api Key Tester - Free Developer Tool | Professional Coding",
-		description:
-			"Professional api key tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-		url: "https://30tools.com/api-key-tester",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/api-key-tester.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Api Key Tester - Free Developer Tool | Professional Coding",
-			},
-		],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Api Key Tester - Free Developer Tool | Professional Coding",
-		description:
-			"Professional api key tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-		images: ["/og-images/api-key-tester.jpg"],
-		creator: "@30tools",
-	},
-	alternates: {
-		canonical: "https://30tools.com/api-key-tester",
-	},
-};
+		"Securely test API keys for OpenAI, Stripe, SendGrid, and 30+ other services directly in your browser or terminal.",
+	image: "/og-images/api-key-tester.jpg",
+});
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
-	name: "Api Key Tester",
+const jsonLd = generateToolJsonLd("api-key-tester", "developer", {
+	name: "API Key Tester",
 	description:
-		"Professional api key tester for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-	url: "https://30tools.com/api-key-tester",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
-};
+		"Securely test API keys for OpenAI, Stripe, SendGrid, and 30+ other services directly in your browser or terminal.",
+	applicationCategory: "DeveloperApplication",
+});
 
 export default function ApiKeyTesterHub() {
 	const breadcrumbs = [

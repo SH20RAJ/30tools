@@ -9,69 +9,24 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import InternetSpeedTestTool from "@/components/tools/utilities/InternetSpeedTestTool";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Internet Speed Test - Free Online Tool | Professional Results",
-	description:
-		"Test your internet speed instantly. Check wifi download speed, upload speed, ping, and jitter. Accurate, free, and mobile-friendly speed test tool.",
-	keywords: [
-		"internet speed test",
-		"wifi speed test",
-		"check internet speed",
-		"broadband speed test",
-		"ping test online",
-		"upload speed check",
-		"download speed test",
-		"network speed test",
-		"5g speed test",
-		"fiber speed test",
-	].join(", "),
-	openGraph: {
-		title: "Internet Speed Test (2026) - Check Connection Speed",
+export const metadata = generateToolMetadata(
+	"internet-speed-test",
+	"utilities",
+	{
+		title: "Internet Speed Test | Check Download, Upload & Ping | 30Tools",
 		description:
-			"Test your internet speed for free. Check download speed, upload speed, and ping latency with our accurate internet speed test tool.",
-		type: "website",
-		url: "https://30tools.com/internet-speed-test",
-		images: [
-			{
-				url: "/og-images/internet-speed-test.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Internet Speed Test",
-			},
-		],
+			"Measure download speed, upload speed, ping, and jitter with a free browser-based internet speed test.",
+		image: "/og-images/internet-speed-test.jpg",
 	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Internet Speed Test (2026) - Free Connection Check",
-		description:
-			"Test your internet speed for free. Check download speed, upload speed, and ping latency.",
-		images: ["/og-images/internet-speed-test.jpg"],
-	},
-	canonical: "https://30tools.com/internet-speed-test",
-};
+);
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
+const jsonLd = generateToolJsonLd("internet-speed-test", "utilities", {
 	name: "Internet Speed Test",
 	description:
-		"Professional internet speed test tool. Free online processing with high-quality results. No registration required, instant results.",
-	url: "https://30tools.com/internet-speed-test",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
-};
+		"Measure download speed, upload speed, ping, and jitter with a free browser-based internet speed test.",
+});
 
 export default function InternetSpeedTestPage() {
 	const toolData = {

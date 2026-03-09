@@ -17,41 +17,13 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { generateCategoryMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: {
-		absolute: "Text Tools: Free Online Processing & Analysis | 30Tools",
-	},
+export const metadata = generateCategoryMetadata("text", {
+	title: "Text Tools | Free Online Text Utilities & Converters | 30Tools",
 	description:
-		"Professional text tools to Process text instantly. Free online text tool with advanced features. Perfect for writers, students & professionals.",
-	keywords:
-		"text tools, text processing, text formatter, case converter, word counter, password generator, text analysis, string manipulation, text editor, free text tools",
-	openGraph: {
-		title: "Free Text Tools - Text Processing & Analysis",
-		description:
-			"Professional text processing tools for formatting, analysis, and manipulation. Password generator, case converter, word counter, and more.",
-		type: "website",
-		url: "https://30tools.com/text-tools",
-		images: [
-			{
-				url: "https://30tools.com/og-image.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Text Tools Collection",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Text Tools - Text Processing & Analysis",
-		description:
-			"Professional text processing tools for formatting, analysis, and manipulation.",
-		images: ["https://30tools.com/og-image.jpg"],
-	},
-	alternates: {
-		canonical: "https://30tools.com/text-tools",
-	},
-};
+		"Free text tools for formatting, cleaning, converting, and analyzing text online. Fast, browser-based, and easy to use.",
+});
 
 const textTools = [
 	{

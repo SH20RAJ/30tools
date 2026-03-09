@@ -1,37 +1,14 @@
 import Link from "next/link";
 import BrokenLinkChecker from "@/components/tools/seo/BrokenLinkChecker";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Broken Link Checker - Find Dead Links Free | 30tools",
+export const metadata = generateToolMetadata("broken-link-checker", "seo", {
+	title: "Broken Link Checker | Find 404s & Dead Links Free | 30Tools",
 	description:
-		"Find broken links on your website for free. Check for 404 errors and dead links that hurt SEO. Free broken link checker tool.",
-	keywords: [
-		"broken link checker",
-		"dead link checker",
-		"find broken links",
-		"404 checker",
-		"link checker",
-		"broken link finder",
-		"seo link checker",
-	].join(", "),
-	openGraph: {
-		title: "Broken Link Checker - Free",
-		description: "⚡ Find and fix broken links!",
-		url: "https://30tools.com/broken-link-checker",
-		siteName: "30tools",
-		type: "website",
-	},
-	alternates: { canonical: "https://30tools.com/broken-link-checker" },
+		"Scan a page or site for broken links, 404 errors, and redirect issues that can hurt SEO and user experience.",
+	image: "/og-images/broken-link-checker.jpg",
 	robots: { index: true, follow: true },
-	twitter: {
-		card: "summary_large_image",
-		title: "Broken Link Checker - Free SEO Tool | Boost Your Rankings",
-		description:
-			"Professional broken link checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-		images: ["/og-images/broken-link-checker.jpg"],
-		creator: "@30tools",
-	},
-};
+});
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">
@@ -45,27 +22,11 @@ const AdUnit = () => (
 	</div>
 );
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
+const jsonLd = generateToolJsonLd("broken-link-checker", "seo", {
 	name: "Broken Link Checker",
 	description:
-		"Professional broken link checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-	url: "https://30tools.com/broken-link-checker",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
-};
+		"Scan a page or site for broken links, 404 errors, and redirect issues that can hurt SEO and user experience.",
+});
 
 export default function BrokenLinkCheckerPage() {
 	return (

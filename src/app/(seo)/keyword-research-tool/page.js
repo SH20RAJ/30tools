@@ -9,73 +9,20 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import KeywordTool from "@/components/tools/seo/KeywordTool";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Keyword Research Tool - Free SEO Tool | Boost Your Rankings",
+export const metadata = generateToolMetadata("keyword-research-tool", "seo", {
+	title: "Keyword Research Tool | Free SEO Keyword Finder | 30Tools",
 	description:
-		"Discover profitable SEO keywords with our free research tool. Get search volume, difficulty, and CPC data. Best free alternative to Ahrefs & SEMrush.",
-	keywords: [
-		"keyword research tool",
-		"free keyword finder",
-		"seo keyword generator",
-		"google keyword planner alternative",
-		"keyword difficulty checker",
-		"long tail keyword generator",
-		"find high cpc keywords",
-		"keyword search volume checker",
-		"free seo tools 2026",
-		"keyword analysis online",
-	].join(", "),
-	alternates: {
-		canonical: "https://30tools.com/keyword-research-tool",
-	},
-	openGraph: {
-		title: "Free Keyword Research Tool (2026) - Find SEO Gems",
-		description:
-			"Discover profitable SEO keywords with our free research tool. Get search volume, difficulty, and CPC data.",
-		url: "https://30tools.com/keyword-research-tool",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/keyword-research-tool.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Keyword Research Tool",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Keyword Research Tool (2026)",
-		description:
-			"Discover profitable SEO keywords with our free research tool.",
-		images: ["/og-images/keyword-research-tool.jpg"],
-		creator: "@30tools",
-	},
-};
+		"Find keyword ideas, search intent opportunities, and SEO topics to support content planning and organic growth.",
+	image: "/og-images/keyword-research-tool.jpg",
+});
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
+const jsonLd = generateToolJsonLd("keyword-research-tool", "seo", {
 	name: "Keyword Research Tool",
 	description:
-		"Professional keyword research tool for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-	url: "https://30tools.com/keyword-research-tool",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
-};
+		"Find keyword ideas, search intent opportunities, and SEO topics to support content planning and organic growth.",
+});
 
 export default function KeywordResearchToolPage() {
 	const toolData = {

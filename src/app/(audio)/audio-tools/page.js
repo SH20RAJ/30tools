@@ -17,39 +17,13 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { generateCategoryMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Audio Tools - Free Online Audio Editor & Converter | 30tools",
+export const metadata = generateCategoryMetadata("audio", {
+	title: "Audio Tools | Free Online Audio Editor & Converter | 30Tools",
 	description:
-		"Professional audio tools tool. Free online processing with high-quality results. No registration required, instant results.",
-	keywords:
-		"audio tools, audio converter, voice recorder, audio editor, audio trimmer, text to speech, mp3 converter, audio compressor, free audio tools",
-	openGraph: {
-		title: "Free Audio Tools - Audio Editor & Converter",
-		description:
-			"Professional audio tools for editing, converting, recording, and processing audio files. Process audio securely in your browser.",
-		type: "website",
-		url: "https://30tools.com/audio-tools",
-		images: [
-			{
-				url: "https://30tools.com/og-image.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Audio Tools Collection",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Audio Tools - Audio Editor & Converter",
-		description:
-			"Professional audio tools for editing, converting, recording, and processing audio files.",
-		images: ["https://30tools.com/og-image.jpg"],
-	},
-	alternates: {
-		canonical: "https://30tools.com/audio-tools",
-	},
-};
+		"Free audio tools for converting, trimming, recording, and enhancing audio files online. Fast, browser-based, and easy to use.",
+});
 
 const audioTools = [
 	{

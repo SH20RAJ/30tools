@@ -17,39 +17,13 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { generateCategoryMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Image Tools - Free Online Image Processing & Editing",
+export const metadata = generateCategoryMetadata("image", {
+	title: "Image Tools | Free Online Image Processing & Editing | 30Tools",
 	description:
-		"Professional image tools for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
-	keywords:
-		"image tools, image compressor, image converter, photo editor, image resizer, image cropper, webp converter, png to jpg, image optimization, free image tools",
-	openGraph: {
-		title: "Free Image Tools - Image Processing & Editing",
-		description:
-			"Professional image processing tools for compression, conversion, editing, and optimization. Process images securely in your browser.",
-		type: "website",
-		url: "https://30tools.com/image-tools",
-		images: [
-			{
-				url: "https://30tools.com/og-image.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Image Tools Collection",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Image Tools - Image Processing & Editing",
-		description:
-			"Professional image processing tools for compression, conversion, editing, and optimization.",
-		images: ["https://30tools.com/og-image.jpg"],
-	},
-	alternates: {
-		canonical: "https://30tools.com/image-tools",
-	},
-};
+		"Free image tools for compressing, converting, resizing, and editing images online. Fast, browser-based, and easy to use.",
+});
 
 const imageTools = [
 	{

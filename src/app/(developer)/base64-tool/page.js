@@ -10,40 +10,13 @@ import {
 import { DeveloperToolExamples } from "@/components/seo/DeveloperToolsHub";
 import Base64Tool from "@/components/tools/developer/Base64Tool";
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
+import { generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Base64 Tool - Free Developer Tool | Professional Coding",
+export const metadata = generateToolMetadata("base64-tool", "developer", {
+	title: "Base64 Encoder & Decoder | Free Developer Tool | 30Tools",
 	description:
-		"Professional base64 tool for developers. Process with advanced features. Free coding tool for programmers, students & professionals.",
-	keywords:
-		"base64 encoder, base64 decoder, base64 converter, encode decode base64, base64 string encoder, file to base64, image to base64, base64 tools, base64 encode text online free, base64 decode string to text, file to base64 converter online, image to base64 encoder tool, base64 decoder for files, bulk base64 encoding tool, secure base64 converter online, base64 encoder decoder developer tool",
-	openGraph: {
-		title: "Free Base64 Encoder & Decoder Online - Text, Files, Images",
-		description:
-			"Encode text, files & images to Base64 or decode Base64 strings. Secure client-side processing for developers.",
-		url: "https://30tools.com/base64-tool",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/base64-tool.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Base64 Encoder/Decoder Tool",
-			},
-		],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Base64 Encoder & Decoder Online",
-		description:
-			"Encode text, files & images to Base64 or decode Base64 strings. Perfect for developers.",
-		images: ["/og-images/base64-tool.jpg"],
-		creator: "@30tools",
-	},
-	alternates: {
-		canonical: "https://30tools.com/base64-tool",
-	},
+		"Encode and decode Base64 strings, files, and images online with secure browser-based processing.",
+	image: "/og-images/base64-tool.jpg",
 	robots: {
 		index: true,
 		follow: true,
@@ -55,8 +28,7 @@ export const metadata = {
 			"max-snippet": -1,
 		},
 	},
-	category: "Developer Tools",
-};
+});
 
 export default function Base64Page() {
 	// Tool-specific data
@@ -248,13 +220,6 @@ export default function Base64Page() {
 						},
 						featureList: features,
 						screenshot: "https://30tools.com/screenshots/base64-tool.jpg",
-						aggregateRating: {
-							"@type": "AggregateRating",
-							ratingValue: "4.8",
-							reviewCount: "1923",
-							bestRating: "5",
-							worstRating: "1",
-						},
 					}),
 				}}
 			/>

@@ -1,36 +1,18 @@
 import Link from "next/link";
 import BulkKeywordRankChecker from "@/components/tools/seo/BulkKeywordRankChecker";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Bulk Keyword Rank Checker - Check SEO Rankings Free | 30tools",
-	description:
-		"Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-	keywords: [
-		"keyword rank checker",
-		"bulk rank checker",
-		"google ranking checker",
-		"seo rank checker",
-		"keyword position checker",
-		"serp checker",
-	].join(", "),
-	openGraph: {
-		title: "Bulk Keyword Rank Checker",
-		description: "⚡ Check your keyword rankings!",
-		url: "https://30tools.com/bulk-keyword-rank-checker",
-		siteName: "30tools",
-		type: "website",
-	},
-	alternates: { canonical: "https://30tools.com/bulk-keyword-rank-checker" },
-	robots: { index: true, follow: true },
-	twitter: {
-		card: "summary_large_image",
-		title: "Bulk Keyword Rank Checker - Free SEO Tool | Boost Your Rankings",
+export const metadata = generateToolMetadata(
+	"bulk-keyword-rank-checker",
+	"seo",
+	{
+		title: "Bulk Keyword Rank Checker | Free Google Position Checker | 30Tools",
 		description:
-			"Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-		images: ["/og-images/bulk-keyword-rank-checker.jpg"],
-		creator: "@30tools",
+			"Track rankings for multiple keywords, monitor position changes, and review visibility across your target terms.",
+		image: "/og-images/bulk-keyword-rank-checker.jpg",
+		robots: { index: true, follow: true },
 	},
-};
+);
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">
@@ -44,27 +26,11 @@ const AdUnit = () => (
 	</div>
 );
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
+const jsonLd = generateToolJsonLd("bulk-keyword-rank-checker", "seo", {
 	name: "Bulk Keyword Rank Checker",
 	description:
-		"Professional bulk keyword rank checker for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-	url: "https://30tools.com/bulk-keyword-rank-checker",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
-};
+		"Track rankings for multiple keywords, monitor position changes, and review visibility across your target terms.",
+});
 
 export default function BulkKeywordRankCheckerPage() {
 	return (

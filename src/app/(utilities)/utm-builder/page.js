@@ -9,39 +9,13 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import UTMBuilderTool from "@/components/tools/utilities/UTMBuilderTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Utm Builder - Free Online Tool | Professional Results",
+export const metadata = generateToolMetadata("utm-builder", "utilities", {
+	title: "UTM Builder | Free Campaign URL Generator | 30Tools",
 	description:
-		"Professional utm builder tool. Free online processing with high-quality results. No registration required, instant results.",
-	keywords: [
-		"utm builder",
-		"campaign url builder",
-		"google analytics url builder",
-		"utm code generator",
-		"link tagging tool",
-		"marketing campaign tracking",
-		"utm parameters",
-		"ga4 url builder",
-		"free utm generator",
-		"trackable link creator",
-	].join(", "),
-	openGraph: {
-		title: "UTM Builder - Free Campaign URL Generator",
-		description:
-			"Easily build campaign URLs with UTM parameters for Google Analytics tracking.",
-		url: "https://30tools.com/utm-builder",
-		siteName: "30tools",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "UTM Builder - Google Analytics Campaign Tool",
-		description:
-			"Generate trackable URLs for your marketing campaigns instantly.",
-	},
-	canonical: "https://30tools.com/utm-builder",
-};
+		"Build tagged campaign URLs with UTM parameters for Google Analytics and marketing attribution.",
+});
 
 export default function UTMBuilderPage() {
 	const toolData = {

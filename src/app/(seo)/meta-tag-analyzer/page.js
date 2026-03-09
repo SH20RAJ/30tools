@@ -1,79 +1,18 @@
 import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Meta Tag Analyzer - Free SEO Tool | Boost Your Rankings",
+export const metadata = generateToolMetadata("meta-tag-analyzer", "seo", {
+	title: "Meta Tag Analyzer | Free Meta Title & Description Checker | 30Tools",
 	description:
-		"Professional meta tag analyzer for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-	keywords: [
-		"meta tag analyzer",
-		"meta tag analyzer online",
-		"free meta tag analyzer",
-		"meta tag analyzer tool",
-		"online meta tag analyzer free",
-		"seo tool",
-		"online seo tool",
-		"free seo tool",
-		"seo analyzer",
-		"seo checker",
-		"search engine optimization",
-		"seo audit",
-		"professional seo tool",
-		"website optimization",
-		"ranking tool",
-		"seo analysis",
-		"seo insights",
-		"search optimization",
-	].join(", "),
-	openGraph: {
-		title: "Meta Tag Analyzer - Free SEO Tool | Boost Your Rankings",
-		description:
-			"Professional meta tag analyzer for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-		url: "https://30tools.com/meta-tag-analyzer",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/meta-tag-analyzer.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Meta Tag Analyzer - Free SEO Tool | Boost Your Rankings",
-			},
-		],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Meta Tag Analyzer - Free SEO Tool | Boost Your Rankings",
-		description:
-			"Professional meta tag analyzer for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-		images: ["/og-images/meta-tag-analyzer.jpg"],
-		creator: "@30tools",
-	},
-	alternates: {
-		canonical: "https://30tools.com/meta-tag-analyzer",
-	},
-};
+		"Analyze title tags, meta descriptions, Open Graph tags, and other on-page metadata for SEO issues.",
+	image: "/og-images/meta-tag-analyzer.jpg",
+});
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
+const jsonLd = generateToolJsonLd("meta-tag-analyzer", "seo", {
 	name: "Meta Tag Analyzer",
 	description:
-		"Professional meta tag analyzer for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-	url: "https://30tools.com/meta-tag-analyzer",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
-};
+		"Analyze title tags, meta descriptions, Open Graph tags, and other on-page metadata for SEO issues.",
+});
 
 export default function MetaTagAnalyzerPage() {
 	return (

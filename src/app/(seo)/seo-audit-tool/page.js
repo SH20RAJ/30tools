@@ -9,73 +9,20 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
+import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: "Free SEO Audit Tool (2026) - Website Health Check | 30Tools",
+export const metadata = generateToolMetadata("seo-audit-tool", "seo", {
+	title: "SEO Audit Tool | Free Website SEO Checker | 30Tools",
 	description:
-		"Perform a complete SEO audit of your website for free. Identify technical issues, on-page SEO errors, and get actionable improvements instantly.",
-	keywords: [
-		"seo audit tool",
-		"free website analysis",
-		"on page seo checker",
-		"technical seo audit",
-		"website health check",
-		"seo score checker",
-		"google seo audit",
-		"site audit online",
-		"check website ranking",
-		"broken link finder",
-	].join(", "),
-	alternates: {
-		canonical: "https://30tools.com/seo-audit-tool",
-	},
-	openGraph: {
-		title: "Free SEO Audit Tool (2026) - Website Health Check",
-		description:
-			"Perform a complete SEO audit of your website. Identify technical issues and get actionable improvements.",
-		url: "https://30tools.com/seo-audit-tool",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/seo-audit-tool.jpg",
-				width: 1200,
-				height: 630,
-				alt: "SEO Audit Tool",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free SEO Audit Tool (2026)",
-		description:
-			"Perform a complete SEO audit of your website. Identify technical issues and get actionable improvements.",
-		images: ["/og-images/seo-audit-tool.jpg"],
-		creator: "@30tools",
-	},
-};
+		"Run a full SEO audit to uncover technical, on-page, and performance issues that affect search visibility.",
+	image: "/og-images/seo-audit-tool.jpg",
+});
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
-	name: "Seo Audit Tool",
+const jsonLd = generateToolJsonLd("seo-audit-tool", "seo", {
+	name: "SEO Audit Tool",
 	description:
-		"Professional seo audit tool for Process. Free SEO analysis and optimization tool. Improve search rankings with data-driven insights.",
-	url: "https://30tools.com/seo-audit-tool",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "browser",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
-};
+		"Run a full SEO audit to uncover technical, on-page, and performance issues that affect search visibility.",
+});
 
 export default function SeoAuditToolPage() {
 	const toolData = {

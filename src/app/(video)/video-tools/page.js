@@ -17,39 +17,13 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { generateCategoryMetadata } from "@/lib/seo-helper";
 
-export const metadata = {
-	title: { absolute: "Video Tools: Free Online Editor & Converter | 30Tools" },
+export const metadata = generateCategoryMetadata("video", {
+	title: "Video Tools | Free Online Video Editor & Converter | 30Tools",
 	description:
-		"Professional video tools tool. Process videos online for free with high quality output. No watermarks, no registration required. Fast & secure processing.",
-	keywords:
-		"video tools, video converter, video compressor, video editor, video trimmer, screen recorder, video to gif, mp4 converter, free video tools",
-	openGraph: {
-		title: "Free Video Tools - Video Editor & Converter",
-		description:
-			"Professional video tools for editing, converting, compressing, and processing videos. Process videos securely in your browser.",
-		type: "website",
-		url: "https://30tools.com/video-tools",
-		images: [
-			{
-				url: "https://30tools.com/og-image.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Video Tools Collection",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Video Tools - Video Editor & Converter",
-		description:
-			"Professional video tools for editing, converting, compressing, and processing videos.",
-		images: ["https://30tools.com/og-image.jpg"],
-	},
-	alternates: {
-		canonical: "https://30tools.com/video-tools",
-	},
-};
+		"Free video tools for editing, converting, trimming, and compressing videos online. Fast, browser-based, and easy to use.",
+});
 
 const videoTools = [
 	{
