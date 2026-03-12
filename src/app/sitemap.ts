@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllTools } from "@/constants/tools-utils";
+import { blogs } from "@/constants/blog-data";
 
 const BASE_URL = "https://30tools.com";
 
@@ -178,33 +179,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		}),
 	);
 
-	// Blog posts - skipping complex FS read for now to keep it safe,
-	// or I can re-implement the try-catch block from the original sitemap.js if needed.
-	// The original sitemap.js had it. Let's add it back for completeness.
-
-	let blogPages: MetadataRoute.Sitemap = [];
-	try {
-		const fs = require("fs");
-		const path = require("path");
-		const blogsDirectory = path.join(process.cwd(), "src/app/(content)/blog");
-		// Check if directory exists first
-		if (fs.existsSync(blogsDirectory)) {
-			const blogFolders = fs
-				.readdirSync(blogsDirectory)
-				.filter((file: string) => {
-					return fs.statSync(path.join(blogsDirectory, file)).isDirectory();
-				});
-
-			blogPages = blogFolders.map((slug: string) => ({
-				url: `${BASE_URL}/blog/${slug}`,
-				lastModified: currentDate,
-				changeFrequency: "monthly",
-				priority: 0.7,
-			}));
-		}
-	} catch (error) {
-		console.warn("Could not read blog directory for sitemap:", error);
-	}
+	// Blog posts
+	const blogPages: MetadataRoute.Sitemap = blogs.map((blog) => ({
+		url: `${BASE_URL}/blog/${blog.slug}`,
+		lastModified: new Date(blog.date || currentDate),
+		changeFrequency: "monthly",
+		priority: 0.7,
+	}));
 
 	// Downloader pages - high priority revenue generators
 	const downloaderSlugs = [
