@@ -11,7 +11,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }) {
-	const tool = API_KEY_TOOLS.find((t) => t.id === params.slug);
+	const resolvedParams = await params;
+	const tool = API_KEY_TOOLS.find((t) => t.id === resolvedParams.slug);
 
 	if (!tool) {
 		return {
@@ -31,8 +32,9 @@ export async function generateMetadata({ params }) {
 	};
 }
 
-export default function ApiKeyToolPage({ params }) {
-	const tool = API_KEY_TOOLS.find((t) => t.id === params.slug);
+export default async function ApiKeyToolPage({ params }) {
+	const resolvedParams = await params;
+	const tool = API_KEY_TOOLS.find((t) => t.id === resolvedParams.slug);
 
 	if (!tool) {
 		notFound();
@@ -75,7 +77,7 @@ export default function ApiKeyToolPage({ params }) {
 					</p>
 				</div>
 
-				<ApiKeyTester tool={tool} />
+				<ApiKeyTester toolId={tool.id} />
 
 				{relatedTools.length > 0 && (
 					<div className="mt-16 max-w-4xl mx-auto">

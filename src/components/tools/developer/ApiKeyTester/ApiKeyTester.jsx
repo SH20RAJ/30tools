@@ -24,8 +24,10 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { API_KEY_TOOLS } from "@/data/api-key-tools";
 
-export default function ApiKeyTester({ tool }) {
+export default function ApiKeyTester({ toolId }) {
+	const tool = API_KEY_TOOLS.find((t) => t.id === toolId);
 	const [apiKey, setApiKey] = useState("");
 	const [showKey, setShowKey] = useState(false);
 	const [inputs, setInputs] = useState({});

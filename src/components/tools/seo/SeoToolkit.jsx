@@ -320,10 +320,10 @@ export default function SeoToolkit() {
 				<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-sm font-medium mb-8">
 					<Zap className="w-3 h-3" /> 27 Free Checks included
 				</div>
-				<h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-foreground">
+				<h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-foreground">
 					SEO fixes <span className="text-orange-500">you can</span> apply{" "}
 					<span className="text-orange-500">today</span>
-				</h2>
+				</h1>
 				<p className="text-lg text-muted-foreground mb-10 max-w-2xl mx-auto">
 					Paste your URL and get a prioritized checklist of high-impact SEO
 					issues in seconds.{" "}

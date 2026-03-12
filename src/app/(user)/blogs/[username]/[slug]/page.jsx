@@ -47,8 +47,14 @@ export async function generateMetadata({ params }) {
 		};
 	}
 
+	const baseTitle = `${article.title} | 30tools Blog`;
+	const maxTitleLength = 70;
+	const title = baseTitle.length > maxTitleLength 
+		? `${baseTitle.substring(0, maxTitleLength - 3)}...` 
+		: baseTitle;
+
 	return {
-		title: `${article.title} | 30tools Blog`,
+		title: title,
 		description: article.description,
 		keywords: article.tags?.join(", "),
 		authors: [{ name: article.user?.name }],
