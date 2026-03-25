@@ -113,7 +113,7 @@ const imageTools = [
 		name: "Image Optimizer",
 		description:
 			"Optimize images for web with perfect balance of size and quality",
-		href: "/image-optimizer",
+		href: "/image-compressor",
 		icon: Archive,
 		category: "Optimization",
 	},

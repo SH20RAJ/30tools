@@ -1784,14 +1784,6 @@
           "route": "/podcast-video-creator",
           "popular": false,
           "category": "others"
-        },
-        {
-          "id": "image-optimizer",
-          "name": "Image Optimizer",
-          "description": "Image Optimizer - Coming Soon",
-          "route": "/image-optimizer",
-          "popular": false,
-          "category": "others"
         }
       ]
     }

@@ -12,15 +12,15 @@ export default function ImageToolsNavbar() {
 			icon: ImageIcon,
 		},
 		{
-			name: "Free Image Compressor",
-			href: "/free-image-compressor",
+			name: "Image Converter",
+			href: "/image-converter",
 			popular: true,
 			icon: ImageIcon,
 		},
-		{ name: "Image Optimizer", href: "/image-optimizer", icon: ImageIcon },
+		{ name: "Image Resizer", href: "/image-resizer", icon: ImageIcon },
 		{
-			name: "Compress Images Online",
-			href: "/compress-images-online",
+			name: "Background Remover",
+			href: "/background-remover",
 			icon: ImageIcon,
 		},
 	];

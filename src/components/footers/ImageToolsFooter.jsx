@@ -7,9 +7,9 @@ import { Separator } from "@/components/ui/separator";
 export default function ImageToolsFooter() {
 	const imageTools = [
 		{ name: "Image Compressor", href: "/image-compressor" },
-		{ name: "Free Image Compressor", href: "/free-image-compressor" },
-		{ name: "Image Optimizer", href: "/image-optimizer" },
-		{ name: "Compress Images Online", href: "/compress-images-online" },
+		{ name: "Image Converter", href: "/image-converter" },
+		{ name: "Image Resizer", href: "/image-resizer" },
+		{ name: "Background Remover", href: "/background-remover" },
 	];
 
 	const relatedTools = [

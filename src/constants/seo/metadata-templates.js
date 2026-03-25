@@ -93,7 +93,7 @@ export const SEO_TEMPLATES = {
 			"Professional free image compressor. Compress multiple images at once without watermarks. Supports JPEG, PNG, WebP. Save 80% file size instantly.",
 		keywords:
 			"free image compressor, compress images online free, no watermark image compressor, bulk image compression, online image optimizer",
-		canonical: "/free-image-compressor",
+		canonical: "/image-compressor",
 	},
 	IMAGE_OPTIMIZER: {
 		title: "Image Optimizer - Compress & Optimize Images for Web | 30tools",
@@ -101,7 +101,7 @@ export const SEO_TEMPLATES = {
 			"Optimize images for web and social media. Advanced image compression with quality control. Perfect for websites, blogs, and online stores.",
 		keywords:
 			"image optimizer, optimize images for web, image compression for websites, web image optimizer, social media image optimizer",
-		canonical: "/image-optimizer",
+		canonical: "/image-compressor",
 	},
 	PDF_MERGER: {
 		title: "Free PDF Merger - Combine Multiple PDFs Online | 30tools",
