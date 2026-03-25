@@ -24,8 +24,6 @@ export default function ImageToolsFooter() {
 		{ name: "Contact", href: "/contact" },
 		{ name: "Privacy Policy", href: "/privacy" },
 		{ name: "Terms of Service", href: "/terms" },
-		{ name: "Help & FAQ", href: "/help" },
-		{ name: "API Documentation", href: "/api-docs" },
 	];
 
 	return (

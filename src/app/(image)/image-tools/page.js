@@ -1,6 +1,5 @@
 import {
 	Archive,
-	Crop,
 	Download,
 	Eye,
 	FileImage,
@@ -50,13 +49,6 @@ const imageTools = [
 		href: "/image-resizer",
 		icon: Scissors,
 		category: "Editing",
-	},
-	{
-		name: "Image Cropper",
-		description: "Crop images to specific dimensions or aspect ratios",
-		href: "/image-cropper",
-		icon: Crop,
-		category: "Editing",
 		featured: true,
 	},
 	{
@@ -75,25 +67,11 @@ const imageTools = [
 		category: "Editing",
 	},
 	{
-		name: "Image Editor",
-		description: "Full-featured image editor with filters, effects, and tools",
-		href: "/image-editor",
-		icon: Palette,
-		category: "Editing",
-	},
-	{
 		name: "Watermark Remover",
 		description: "Remove watermarks from images while preserving quality",
 		href: "/watermark-remover",
 		icon: Eye,
 		category: "Editing",
-	},
-	{
-		name: "Base64 Image Converter",
-		description: "Convert images to Base64 encoding and vice versa",
-		href: "/base64-image",
-		icon: FileImage,
-		category: "Conversion",
 	},
 	{
 		name: "Image to Icon",
@@ -110,12 +88,25 @@ const imageTools = [
 		category: "Batch",
 	},
 	{
-		name: "Image Optimizer",
-		description:
-			"Optimize images for web with perfect balance of size and quality",
-		href: "/image-compressor",
-		icon: Archive,
-		category: "Optimization",
+		name: "OG Image Generator",
+		description: "Create Open Graph images for social media previews",
+		href: "/og-image-generator",
+		icon: Palette,
+		category: "Conversion",
+	},
+	{
+		name: "Logo Generator",
+		description: "Create professional logos for your brand instantly",
+		href: "/logo-generator",
+		icon: Palette,
+		category: "Editing",
+	},
+	{
+		name: "Favicon Generator",
+		description: "Create favicons for your website from text, emoji, or image",
+		href: "/favicon-generator",
+		icon: FileImage,
+		category: "Conversion",
 	},
 ];
 
