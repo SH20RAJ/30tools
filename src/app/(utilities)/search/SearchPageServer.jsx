@@ -125,40 +125,32 @@ export default function SearchPageServer({
 
 	return (
 		<div className="min-h-screen bg-background">
-			{/* Header */}
-			<header className="border-b">
-				<div className="container mx-auto px-4 py-6">
-					<div className="flex items-center justify-between">
-						<Link href="/" className="flex items-center space-x-3">
-							<div className="flex items-center justify-center w-10 h-10 bg-primary rounded-lg">
-								<ZapIcon className="h-6 w-6 text-primary-foreground" />
-							</div>
-							<div>
-								<div className="text-2xl font-bold">30tools</div>
-								<p className="text-sm text-muted-foreground">
-									Free Online Toolkit
-								</p>
-							</div>
-						</Link>
-						<div className="flex items-center space-x-2">
-							<Link href="/about">
-								<Button variant="outline">About</Button>
-							</Link>
-						</div>
-					</div>
-				</div>
-			</header>
-
 			<main className="container mx-auto px-4 py-8">
 				{/* Search Section */}
 				<div className="max-w-4xl mx-auto mb-12">
 					<div className="text-center mb-8">
 						<h1 className="text-3xl md:text-4xl font-bold mb-4">
-							Find the Perfect Tool
+							{query ? (
+								<>
+									Results for <span className="text-primary">"{query}"</span>
+								</>
+							) : category !== "all" ? (
+								<>
+									<span className="text-primary capitalize">
+										{category.replace("-", " ")}
+									</span>{" "}
+									Tools
+								</>
+							) : (
+								"Find the Perfect Tool"
+							)}
 						</h1>
 						<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-							Search through our collection of {allTools.length}+ free online
-							tools. Everything you need for file processing and conversion.
+							{query
+								? `Showing search results for "${query}". Explore our free online tools.`
+								: category !== "all"
+									? `Discover our collection of free ${category.replace("-", " ")} tools for your daily tasks.`
+									: `Search through our collection of ${allTools.length}+ free online tools. Everything you need for file processing and conversion.`}
 						</p>
 					</div>
 

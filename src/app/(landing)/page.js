@@ -39,19 +39,19 @@ const CATEGORY_COUNT = Object.keys(toolsData.categories || {}).length;
 
 export const metadata = {
 	title: {
-		absolute: `30tools - ${TOOL_COUNT}+ Free Online Tools & Converters`,
+		absolute: `30tools - ${TOOL_COUNT}+ Free Online Tools | No Signup Required`,
 	},
 	description:
-		`Browse ${TOOL_COUNT}+ free online tools across ${CATEGORY_COUNT} categories. Compress images, edit PDFs, download videos, optimize SEO, and use developer utilities with no signup required.`,
+		`Efficiently process files with ${TOOL_COUNT}+ free online tools. Image compressor, PDF editor, video downloader, SEO audit, and developer utilities. Fast, secure, and 100% free.`,
 	keywords:
-		"free online tools, image compressor, pdf tools, video downloader, seo tools, developer tools, online converters, 30tools",
+		"free online tools, image compressor, pdf merger, youtube downloader, seo toolkit, developer utils, unit converter, base64 encoder, qr code generator, 30tools",
 	alternates: {
 		canonical: "https://30tools.com",
 	},
 	openGraph: {
-		title: `30tools - ${TOOL_COUNT}+ Free Online Tools & Converters`,
+		title: `30tools - ${TOOL_COUNT}+ High-Quality Online Tools`,
 		description:
-			`Fast, free, and privacy-focused tools for image, PDF, video, SEO, and developer workflows. Explore ${TOOL_COUNT}+ tools in one place.`,
+			`Access ${TOOL_COUNT}+ professional-grade tools for free. Fast browser-based processing for images, PDFs, videos, and dev tasks.`,
 		url: "https://30tools.com",
 		siteName: "30tools",
 		type: "website",
@@ -66,9 +66,9 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: `30tools - ${TOOL_COUNT}+ Free Online Tools`,
+		title: `30tools - All-in-One Free Online Toolkit`,
 		description:
-			`Free online toolkit with ${TOOL_COUNT}+ tools for image, PDF, video, SEO, and developer tasks.`,
+			`${TOOL_COUNT}+ free tools for designers, developers, and creators. No signup, no ads.`,
 		images: ["/og-image.jpg"],
 		creator: "@30tools",
 	},
@@ -164,12 +164,12 @@ export default function LandingPage() {
 			/>
 			<div className="min-h-screen bg-background selection:bg-primary/20">
 				{/* Header */}
-				<header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60">
+				<header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl supports-backdrop-filter:bg-background/60">
 					<div className="container mx-auto px-4 py-4">
 						<div className="flex items-center justify-between">
 							<div className="flex items-center space-x-3 group cursor-pointer">
-								<div className="relative flex items-center justify-center w-10 h-10 bg-gradient-to-br from-primary to-blue-600 rounded-xl shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300">
-									<ZapIcon className="h-6 w-6 text-white" />
+								<div className="relative flex items-center justify-center w-10 h-10 bg-linear-to-br from-primary to-blue-600 rounded-xl shadow-lg shadow-primary/20 group-hover:shadow-primary/40 transition-all duration-300">
+									<ZapIcon className="h-6 w-6 text-white" aria-hidden="true" />
 									<div className="absolute inset-0 bg-white/20 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity" />
 								</div>
 								<div>
@@ -213,7 +213,7 @@ export default function LandingPage() {
 										Get Started
 									</Button>
 									<Button size="icon" variant="ghost" className="sm:hidden">
-										<SearchIcon className="h-5 w-5" />
+										<SearchIcon className="h-5 w-5" aria-hidden="true" />
 									</Button>
 								</Link>
 							</div>
@@ -251,7 +251,10 @@ export default function LandingPage() {
 								<div className="relative">
 									<Link href="/search" className="block">
 										<div className="flex items-center h-14 md:h-16 px-6 bg-background rounded-xl border shadow-sm group-hover:shadow-md transition-all cursor-text">
-											<SearchIcon className="h-5 w-5 text-muted-foreground mr-3 group-hover:text-primary transition-colors" />
+											<SearchIcon
+												className="h-5 w-5 text-muted-foreground mr-3 group-hover:text-primary transition-colors"
+												aria-hidden="true"
+											/>
 											<span className="text-muted-foreground text-lg text-left flex-1">
 												Search {TOOL_COUNT}+ tools...
 											</span>
@@ -335,13 +338,16 @@ export default function LandingPage() {
 											href={`/search?category=${category.key}`}
 											className={`group relative overflow-hidden rounded-3xl border bg-background hover:shadow-2xl hover:shadow-primary/5 transition-all duration-300 ${isFeatured ? "md:col-span-2 lg:col-span-2 aspect-[1.5/1]" : "aspect-square"}`}
 										>
-											<div className="absolute inset-0 bg-gradient-to-br from-transparent to-muted/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+											<div className="absolute inset-0 bg-linear-to-br from-transparent to-muted/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
 											<div className="relative h-full p-8 flex flex-col">
 												<div
 													className={`mb-auto inline-flex p-3 rounded-2xl bg-secondary/50 w-fit group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300`}
 												>
-													<category.icon className="h-6 w-6" />
+													<category.icon
+														className="h-6 w-6"
+														aria-hidden="true"
+													/>
 												</div>
 
 												<div className="mt-6">
@@ -372,7 +378,10 @@ export default function LandingPage() {
 												</div>
 
 												{/* Decorative background icon */}
-												<category.icon className="absolute -bottom-8 -right-8 h-48 w-48 text-muted/20 -rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500 ease-in-out pointer-events-none" />
+												<category.icon
+													className="absolute -bottom-8 -right-8 h-48 w-48 text-muted/20 -rotate-12 group-hover:rotate-0 group-hover:scale-110 transition-all duration-500 ease-in-out pointer-events-none"
+													aria-hidden="true"
+												/>
 											</div>
 										</Link>
 									);
@@ -429,8 +438,8 @@ export default function LandingPage() {
 					</section>
 
 					{/* Donation / Support Section */}
-					<section className="py-24 bg-gradient-to-b from-muted/30 to-background overflow-hidden relative">
-						<div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+					<section className="py-24 bg-linear-to-b from-muted/30 to-background overflow-hidden relative">
+						<div className="absolute top-0 inset-x-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
 
 						<div className="container mx-auto px-4">
 							<div className="max-w-4xl mx-auto relative">
