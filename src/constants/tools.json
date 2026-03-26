@@ -211,6 +211,22 @@
           "route": "/lorem-ipsum",
           "popular": false,
           "category": "text"
+        },
+        {
+          "id": "markdown-to-text",
+          "name": "AI-to-Text Converter (Markdown Stripper)",
+          "description": "Wanna share things copied from ChatGPT, Grok, Claude or any AI tool? Convert Markdown into a clean, readable text format instantly. Perfect for cleaning up AI-generated content.",
+          "route": "/markdown-to-text",
+          "popular": true,
+          "category": "text",
+          "features": [
+            "Convert AI Markdown from ChatGPT, Claude, Grok & more",
+            "Strip all Markdown formatting for clean sharing",
+            "Perfect for emails, documents, and social media",
+            "Real-time instant conversion",
+            "Copy to clipboard with one click",
+            "100% Private: All processing happens in your browser"
+          ]
         }
       ]
     },
