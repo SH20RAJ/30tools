@@ -162,7 +162,7 @@ export default function LandingPage() {
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
-			<div className="min-h-screen bg-background selection:bg-primary/20">
+			<div className="min-h-screen selection:bg-primary/20 animate-in">
 				{/* Header */}
 				<header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur-xl supports-backdrop-filter:bg-background/60">
 					<div className="container mx-auto px-4 py-4">
@@ -223,21 +223,23 @@ export default function LandingPage() {
 
 				<main>
 					{/* Modern Minimal Hero Section */}
-					<section className="relative pt-20 pb-32 overflow-hidden bg-background">
+					<section className="relative pt-20 pb-32 overflow-hidden">
 						<div className="container mx-auto px-4 relative z-10 text-center">
-							<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/80 backdrop-blur-sm border border-secondary transition-transform hover:scale-105 mb-8">
+							<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px] -z-10 opacity-50 dark:opacity-20 animate-pulse"></div>
+							
+							<div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 backdrop-blur-md transition-all hover:bg-primary/10 mb-8 animate-in slide-in-from-top-4 duration-1000">
 								<span className="relative flex h-2 w-2">
-									<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-									<span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+									<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+									<span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
 								</span>
-								<span className="text-sm font-medium text-muted-foreground">
+								<span className="text-sm font-semibold text-primary">
 									Updated for 2026: New Tools Added
 								</span>
 							</div>
 
-							<h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 text-foreground pb-2">
+							<h1 className="text-5xl md:text-8xl font-black tracking-tight mb-8 bg-clip-text text-transparent bg-linear-to-r from-foreground via-foreground/90 to-foreground/70 dark:from-white dark:via-white/90 dark:to-white/70 animate-in fade-in slide-in-from-bottom-4 duration-1000">
 								All Your Tools. <br className="hidden sm:block" />
-								One Platform.
+								<span className="text-primary bg-clip-text text-transparent bg-linear-to-r from-primary to-blue-500">One Platform.</span>
 							</h1>
 
 							<p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -247,19 +249,21 @@ export default function LandingPage() {
 							</p>
 
 							{/* Search Bar Hero CTA */}
-							<div className="max-w-xl mx-auto mb-12 relative group">
+							<div className="max-w-2xl mx-auto mb-12 relative group animate-in zoom-in-95 duration-700">
+								<div className="absolute -inset-1 bg-linear-to-r from-primary/20 to-blue-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
 								<div className="relative">
 									<Link href="/search" className="block">
-										<div className="flex items-center h-14 md:h-16 px-6 bg-background rounded-xl border shadow-sm group-hover:shadow-md transition-all cursor-text">
+										<div className="flex items-center h-16 md:h-18 px-8 bg-card/50 backdrop-blur-xl rounded-2xl border border-border/50 shadow-2xl group-hover:border-primary/50 transition-all cursor-text overflow-hidden">
+											<div className="absolute left-0 top-0 w-1 h-full bg-primary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
 											<SearchIcon
-												className="h-5 w-5 text-muted-foreground mr-3 group-hover:text-primary transition-colors"
+												className="h-6 w-6 text-muted-foreground mr-4 group-hover:text-primary transition-colors"
 												aria-hidden="true"
 											/>
-											<span className="text-muted-foreground text-lg text-left flex-1">
+											<span className="text-muted-foreground text-xl text-left flex-1 font-medium">
 												Search {TOOL_COUNT}+ tools...
 											</span>
-											<div className="hidden md:flex items-center gap-1.5 p-1.5 bg-muted rounded text-xs font-medium text-muted-foreground">
-												<span className="px-1.5">⌘</span>
+											<div className="hidden md:flex items-center gap-2 p-2 bg-muted/50 rounded-lg text-xs font-bold text-muted-foreground border border-border/50">
+												<span className="px-1">⌘</span>
 												<span>K</span>
 											</div>
 										</div>

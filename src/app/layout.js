@@ -253,12 +253,9 @@ export default async function RootLayout({ children }) {
 					href="/feed.xml"
 				/>
 
-				<script
-					async
-					src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
-				/>
-				<script
+				<Script
 					id="google-analytics"
+					strategy="afterInteractive"
 					dangerouslySetInnerHTML={{
 						__html: `
               window.dataLayer = window.dataLayer || [];
