@@ -288,7 +288,7 @@ export default async function RootLayout({ children }) {
 					}}
 				/>
 			</head>
-			<body className={`${openSans.variable} ds-page font-sans antialiased`}>
+			<body className={`${openSans.variable} font-sans antialiased`}>
 				<ThemeProvider>
 					<StructuredData includeFAQ={false} />
 					{children}
