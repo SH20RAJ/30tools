@@ -1,19 +1,8 @@
-import { TranslationServiceClient } from '@google-cloud/translate';
 
 class TranslateEngine {
     constructor() {
-        this.apiKey = process.env.GOOGLE_CLOUD_TRANSLATE_API_KEY;
+        this.apiKey = process.env.GOOGLE_CLOUD_TRANSLATE_API_KEY || process.env.NEXT_PUBLIC_GOOGLE_TRANSLATE_API_KEY;
         this.cache = {}; // Initializing early for memory-only worker environment
-        
-        if (this.apiKey) {
-            try {
-                this.client = new TranslationServiceClient({
-                    apiKey: this.apiKey
-                });
-            } catch (e) {
-                console.error('[TranslateEngine] Failed to initialize client:', e);
-            }
-        }
     }
 
     async translate(text, targetLang) {
@@ -24,22 +13,36 @@ class TranslateEngine {
             return this.cache[cacheKey];
         }
 
-        if (!this.client) return text;
+        if (!this.apiKey) {
+            // Optional: Log once per session if key is missing
+            return text;
+        }
 
         try {
-            const request = {
-                parent: `projects/${process.env.GOOGLE_CLOUD_PROJECT_ID || '30tools-project'}/locations/global`,
-                contents: [text],
-                mimeType: 'text/plain',
-                sourceLanguageCode: 'en',
-                targetLanguageCode: targetLang,
-            };
+            const url = `https://translation.googleapis.com/language/translate/v2?key=${this.apiKey}`;
+            const response = await fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    q: text,
+                    target: targetLang,
+                    source: 'en',
+                    format: 'text'
+                })
+            });
 
-            const [response] = await this.client.translateText(request);
-            const translatedText = response.translations[0].translatedText;
+            if (!response.ok) {
+                const errorData = await response.json();
+                console.error(`[TranslateEngine] API error:`, errorData);
+                return text;
+            }
+
+            const data = await response.json();
+            const translatedText = data.data.translations[0].translatedText;
             
             this.cache[cacheKey] = translatedText;
-            
             return translatedText;
         } catch (error) {
             console.error(`[TranslateEngine] Translation error for ${targetLang}:`, error);
@@ -49,7 +52,12 @@ class TranslateEngine {
 
     // Bulk translation for pre-generation
     async translateMany(texts, targetLang) {
+        if (!texts || texts.length === 0) return {};
+        
         const results = {};
+        // Google Translate v2 supports multiple 'q' parameters in a single request
+        // but for simplicity and to match the previous interface, we'll iterate
+        // or we could optimize this for bulk.
         for (const text of texts) {
             results[text] = await this.translate(text, targetLang);
         }

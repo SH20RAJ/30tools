@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import toolsData from "@/constants/tools.json";
-import translateEngine from "@/lib/translate";
 
 type ToolCategory = keyof typeof toolsData.categories;
 
@@ -58,39 +57,10 @@ function resolveImageUrl(image?: string) {
 	return `${SITE_URL}${image.startsWith("/") ? image : `/${image}`}`;
 }
 
-async function buildToolTitle(tool: Tool, category: ToolCategory, lang: string, overrideTitle?: string) {
-	if (overrideTitle) return await translateEngine.translate(overrideTitle, lang);
-	
-	const toolName = await translateEngine.translate(tool.name, lang);
-	const suffix = await translateEngine.translate(CATEGORY_TITLE_SUFFIX[category] ?? "Free Online Tool", lang);
-	return `${toolName} | ${suffix} | ${SITE_NAME}`;
-}
-
-async function buildToolDescription(
-	tool: Tool,
-	category: ToolCategory,
-	lang: string,
-	overrideDescription?: string,
-) {
-	if (overrideDescription) return truncateText(ensureSentence(await translateEngine.translate(overrideDescription, lang)));
-
-	const trustSuffixByCategory: Partial<Record<ToolCategory, string>> = {
-		audio: "Free online with simple browser-based controls.",
-		developer: "Fast, secure, and easy to use in your browser.",
-		image: "Free online and easy to use in your browser.",
-		pdf: "Free online with secure browser-based processing.",
-		seo: "Review issues, improve pages, and act on clear recommendations.",
-		text: "Free online with fast browser-based processing.",
-		utilities: "Free online, fast, and easy to use.",
-		video: "Free online with fast browser-based processing.",
-	};
-
-	const baseDesc = await translateEngine.translate(tool.description, lang);
-	const suffix = await translateEngine.translate(trustSuffixByCategory[category] ?? "Free online and easy to use.", lang);
-
-	return truncateText(`${ensureSentence(baseDesc)} ${suffix}`);
-}
-
+/**
+ * Generates SEO metadata for a specific tool.
+ * This function is synchronous to be compatible with static metadata exports.
+ */
 export function generateToolMetadata(
 	toolId: string,
 	category: ToolCategory,
