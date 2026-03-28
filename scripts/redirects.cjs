@@ -1,1 +1,1 @@
-export const toolRedirects = [];
+module.exports.toolRedirects = [];
