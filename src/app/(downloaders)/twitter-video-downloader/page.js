@@ -122,7 +122,9 @@ const AdUnit = () => (
 	</div>
 );
 
-export default function TwitterVideoDownloaderPage() {
+export default async function TwitterVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

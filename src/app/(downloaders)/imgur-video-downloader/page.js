@@ -87,7 +87,9 @@ const jsonLd = {
 	],
 };
 
-export default function ImgurVideoDownloaderPage() {
+export default async function ImgurVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

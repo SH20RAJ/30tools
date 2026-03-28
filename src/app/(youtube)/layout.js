@@ -1,5 +1,5 @@
-import YouTubeToolsFooter from "@/components/footers/YouTubeToolsFooter";
-import YouTubeToolsNavbar from "@/components/navigation/YouTubeToolsNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title:
@@ -68,16 +68,16 @@ const jsonLdSchemas = {
 
 export default function YouTubeLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background">
+		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<YouTubeToolsNavbar />
+			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<YouTubeToolsFooter />
+			<GoogleFooter />
 		</div>
 	);
 }

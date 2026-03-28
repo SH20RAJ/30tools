@@ -50,7 +50,9 @@ export const metadata = {
 	category: "Image Tools",
 };
 
-export default function LogoGeneratorPage() {
+export default async function LogoGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "logo-generator",

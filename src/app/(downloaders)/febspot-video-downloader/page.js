@@ -73,7 +73,9 @@ const jsonLd = {
 	offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 
-export default function FebspotVideoDownloaderPage() {
+export default async function FebspotVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

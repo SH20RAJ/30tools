@@ -76,7 +76,9 @@ const jsonLd = {
 	offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 
-export default function MashableVideoDownloaderPage() {
+export default async function MashableVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

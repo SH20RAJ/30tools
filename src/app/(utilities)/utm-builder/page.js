@@ -17,7 +17,9 @@ export const metadata = generateToolMetadata("utm-builder", "utilities", {
 		"Build tagged campaign URLs with UTM parameters for Google Analytics and marketing attribution.",
 });
 
-export default function UTMBuilderPage() {
+export default async function UTMBuilderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = {
 		id: "utm-builder",
 		name: "UTM Builder",

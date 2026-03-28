@@ -88,7 +88,9 @@ const jsonLd = {
 	],
 };
 
-export default function MixcloudDownloaderPage() {
+export default async function MixcloudDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

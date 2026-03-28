@@ -194,7 +194,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function InstagramDownloaderPage() {
+export default async function InstagramDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const features = [
 		{
 			icon: <Video className="w-6 h-6 text-pink-500" />,

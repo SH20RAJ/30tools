@@ -24,7 +24,9 @@ const jsonLd = generateToolJsonLd("seo-audit-tool", "seo", {
 		"Run a full SEO audit to uncover technical, on-page, and performance issues that affect search visibility.",
 });
 
-export default function SeoAuditToolPage() {
+export default async function SeoAuditToolPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = {
 		id: "seo-audit-tool",
 		name: "SEO Audit Tool",

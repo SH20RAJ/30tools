@@ -89,7 +89,9 @@ const AdUnit = () => (
 	</div>
 );
 
-export default function YouTubeScriptGeneratorPage() {
+export default async function YouTubeScriptGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

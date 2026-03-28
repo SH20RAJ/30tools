@@ -78,7 +78,9 @@ const jsonLd = {
 	offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 
-export default function PeriscopeVideoDownloaderPage() {
+export default async function PeriscopeVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

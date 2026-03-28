@@ -14,7 +14,9 @@ const jsonLd = generateToolJsonLd("meta-tag-analyzer", "seo", {
 		"Analyze title tags, meta descriptions, Open Graph tags, and other on-page metadata for SEO issues.",
 });
 
-export default function MetaTagAnalyzerPage() {
+export default async function MetaTagAnalyzerPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-16 md:py-24">
 			<script

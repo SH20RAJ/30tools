@@ -75,7 +75,9 @@ const jsonLd = {
 	offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 
-export default function AkillItvVideoDownloaderPage() {
+export default async function AkillItvVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

@@ -85,7 +85,9 @@ const jsonLd = {
 	],
 };
 
-export default function EspnVideoDownloaderPage() {
+export default async function EspnVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

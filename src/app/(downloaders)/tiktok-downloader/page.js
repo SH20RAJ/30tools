@@ -200,7 +200,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function TikTokDownloaderPage() {
+export default async function TikTokDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const features = [
 		{
 			icon: <CheckCircle2 className="w-6 h-6 text-cyan-500" />,

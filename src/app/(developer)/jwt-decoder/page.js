@@ -138,7 +138,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function JWTDecoderPage() {
+export default async function JWTDecoderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const features = [
 		{
 			icon: <Eye className="w-5 h-5 text-amber-500" />,

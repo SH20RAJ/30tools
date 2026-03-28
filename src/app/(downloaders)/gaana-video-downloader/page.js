@@ -86,7 +86,9 @@ const jsonLd = {
 	],
 };
 
-export default function GaanaDownloaderPage() {
+export default async function GaanaDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

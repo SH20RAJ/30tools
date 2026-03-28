@@ -79,7 +79,9 @@ const jsonLd = {
 	offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
 };
 
-export default function OdnoklassnikiVideoDownloaderPage() {
+export default async function OdnoklassnikiVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

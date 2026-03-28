@@ -114,7 +114,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function YouTubeThumbnailDownloaderPage() {
+export default async function YouTubeThumbnailDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

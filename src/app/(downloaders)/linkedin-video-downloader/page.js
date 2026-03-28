@@ -86,7 +86,9 @@ const jsonLd = {
 	],
 };
 
-export default function LinkedinVideoDownloaderPage() {
+export default async function LinkedinVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

@@ -117,7 +117,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function OnlineVideoDownloaderPage() {
+export default async function OnlineVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

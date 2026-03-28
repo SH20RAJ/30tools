@@ -1,5 +1,5 @@
-import GeneratorToolsFooter from "@/components/footers/GeneratorToolsFooter";
-import GeneratorToolsNavbar from "@/components/navigation/GeneratorToolsNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title: "AI Generator Tools - Free AI Content Creation Suite | 30Tools",
@@ -55,16 +55,16 @@ const jsonLdSchemas = {
 
 export default function GeneratorsLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background">
+		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<GeneratorToolsNavbar />
+			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<GeneratorToolsFooter />
+			<GoogleFooter />
 		</div>
 	);
 }

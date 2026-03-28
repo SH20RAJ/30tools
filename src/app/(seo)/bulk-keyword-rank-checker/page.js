@@ -32,7 +32,9 @@ const jsonLd = generateToolJsonLd("bulk-keyword-rank-checker", "seo", {
 		"Track rankings for multiple keywords, monitor position changes, and review visibility across your target terms.",
 });
 
-export default function BulkKeywordRankCheckerPage() {
+export default async function BulkKeywordRankCheckerPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

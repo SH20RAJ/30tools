@@ -18,7 +18,9 @@ export const metadata = {
 
 import { blogs } from "@/constants/blog-data";
 
-export default function BlogListing() {
+export default async function BlogListing({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-12 max-w-6xl">
 			<div className="text-center mb-16">

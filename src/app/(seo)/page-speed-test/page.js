@@ -14,7 +14,9 @@ const jsonLd = generateToolJsonLd("page-speed-test", "seo", {
 		"Test page speed, Core Web Vitals, and load performance to find issues that can hurt SEO and user experience.",
 });
 
-export default function PageSpeedTestPage() {
+export default async function PageSpeedTestPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-16 md:py-24">
 			<script

@@ -24,7 +24,9 @@ const jsonLd = generateToolJsonLd("keyword-research-tool", "seo", {
 		"Find keyword ideas, search intent opportunities, and SEO topics to support content planning and organic growth.",
 });
 
-export default function KeywordResearchToolPage() {
+export default async function KeywordResearchToolPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = {
 		id: "keyword-research-tool",
 		name: "Keyword Research Tool",

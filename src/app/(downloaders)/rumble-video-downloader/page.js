@@ -116,7 +116,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function RumbleVideoDownloaderPage() {
+export default async function RumbleVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

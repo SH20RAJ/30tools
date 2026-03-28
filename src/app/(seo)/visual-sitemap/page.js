@@ -15,7 +15,9 @@ const jsonLd = generateToolJsonLd("visual-sitemap", "seo", {
 		"Turn an XML sitemap into a visual tree so you can review site structure, hierarchy, and internal navigation more clearly.",
 });
 
-export default function VisualSitemapPage() {
+export default async function VisualSitemapPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const tool = toolsData.categories.seo.tools.find(
 		(t) => t.id === "visual-sitemap",
 	);

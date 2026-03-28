@@ -126,7 +126,9 @@ const categories = [
 	{ name: "Playback", count: 1, color: "bg-gray-100 text-foreground" },
 ];
 
-export default function AudioToolsPage() {
+export default async function AudioToolsPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const featuredTools = audioTools.filter((tool) => tool.featured);
 	const allTools = audioTools;
 

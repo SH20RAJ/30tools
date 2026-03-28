@@ -92,7 +92,9 @@ export const metadata = {
 	category: "Image Tools",
 };
 
-export default function BackgroundRemoverPage() {
+export default async function BackgroundRemoverPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "background-remover",

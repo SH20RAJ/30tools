@@ -30,7 +30,9 @@ export const metadata = generateToolMetadata("base64-tool", "developer", {
 	},
 });
 
-export default function Base64Page() {
+export default async function Base64Page({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "base64-tool",

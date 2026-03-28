@@ -91,7 +91,9 @@ const AdUnit = () => (
 	</div>
 );
 
-export default function YouTubeVideoSummarizerPage() {
+export default async function YouTubeVideoSummarizerPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

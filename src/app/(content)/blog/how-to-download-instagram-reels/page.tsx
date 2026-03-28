@@ -30,7 +30,9 @@ export const metadata = {
 	},
 };
 
-export default function InstagramReelsGuide() {
+export default async function InstagramReelsGuide({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<article className="container mx-auto px-4 py-12 max-w-4xl">
 			<Link

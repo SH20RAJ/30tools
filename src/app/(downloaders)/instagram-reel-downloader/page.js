@@ -120,7 +120,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function InstagramReelDownloaderPage() {
+export default async function InstagramReelDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

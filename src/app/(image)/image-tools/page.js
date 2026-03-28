@@ -118,7 +118,9 @@ const categories = [
 	{ name: "Batch", count: 1, color: "bg-destructive/20 text-destructive" },
 ];
 
-export default function ImageToolsPage() {
+export default async function ImageToolsPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const featuredTools = imageTools.filter((tool) => tool.featured);
 	const allTools = imageTools;
 

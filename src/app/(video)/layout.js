@@ -1,5 +1,5 @@
-import VideoToolsFooter from "@/components/footers/VideoToolsFooter";
-import VideoToolsNavbar from "@/components/navigation/VideoToolsNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title: "Video Tools - Terabox Player, Downloader & Converters | 30Tools",
@@ -49,16 +49,16 @@ const jsonLdSchemas = {
 
 export default function VideoToolsLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background">
+		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<VideoToolsNavbar />
+			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<VideoToolsFooter />
+			<GoogleFooter />
 		</div>
 	);
 }

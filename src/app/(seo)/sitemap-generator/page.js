@@ -70,7 +70,9 @@ const jsonLd = {
 	},
 };
 
-export default function SitemapGeneratorPage() {
+export default async function SitemapGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

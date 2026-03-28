@@ -85,7 +85,9 @@ const jsonLd = {
 	],
 };
 
-export default function ImdbVideoDownloaderPage() {
+export default async function ImdbVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

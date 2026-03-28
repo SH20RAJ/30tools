@@ -280,7 +280,9 @@ const AdUnit = () => (
 	</div>
 );
 
-export default function UniversalVideoDownloaderPage() {
+export default async function UniversalVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

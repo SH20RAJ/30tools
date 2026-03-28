@@ -293,7 +293,9 @@ const AdUnit = () => (
 	</div>
 );
 
-export default function PdfUnlockerPage() {
+export default async function PdfUnlockerPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

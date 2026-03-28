@@ -24,7 +24,9 @@ const jsonLd = generateToolJsonLd("backlink-checker", "seo", {
 		"Check backlinks for any website, review referring domains, and analyze link quality for SEO research.",
 });
 
-export default function BacklinkCheckerPage() {
+export default async function BacklinkCheckerPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = {
 		id: "backlink-checker",
 		name: "Backlink Checker",

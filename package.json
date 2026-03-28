@@ -19,6 +19,7 @@
     "generate-feed": "node scripts/generate-feed.js"
   },
   "dependencies": {
+    "@google-cloud/translate": "^9.3.0",
     "@opennextjs/cloudflare": "^1.11.0",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",

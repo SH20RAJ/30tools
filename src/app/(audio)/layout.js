@@ -1,5 +1,5 @@
-import AudioToolsFooter from "@/components/footers/AudioToolsFooter";
-import AudioToolsNavbar from "@/components/navigation/AudioToolsNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title: "Audio Tools - Free AI Text to Speech & Audio Processing | 30Tools",
@@ -48,16 +48,16 @@ const jsonLdSchemas = {
 
 export default function AudioToolsLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background">
+		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<AudioToolsNavbar />
+			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<AudioToolsFooter />
+			<GoogleFooter />
 		</div>
 	);
 }

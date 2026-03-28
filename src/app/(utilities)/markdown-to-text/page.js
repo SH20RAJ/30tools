@@ -23,7 +23,9 @@ export const metadata = {
 	},
 };
 
-export default function MarkdownToTextPage() {
+export default async function MarkdownToTextPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",

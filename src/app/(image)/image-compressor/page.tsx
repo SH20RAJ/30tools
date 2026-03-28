@@ -13,11 +13,15 @@ import {
 import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
 import { generateToolMetadata, getToolData } from "@/lib/seo-helper";
 
-export async function generateMetadata() {
-	return generateToolMetadata("image-compressor", "image");
+export async function generateMetadata({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
+	return generateToolMetadata("image-compressor", "image", lang);
 }
 
-export default function ImageCompressorPage() {
+export default async function ImageCompressorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = getToolData("image-compressor", "image");
 
 	if (!toolData) return <div>Tool not found</div>;

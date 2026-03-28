@@ -86,7 +86,9 @@ const jsonLd = {
 	],
 };
 
-export default function BandcampDownloaderPage() {
+export default async function BandcampDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

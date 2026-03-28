@@ -31,7 +31,9 @@ const textToSpeechJsonLd = generateToolJsonLd("text-to-speech", "audio", {
 	},
 });
 
-export default function TextToSpeechPage() {
+export default async function TextToSpeechPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<TextToSpeechTool />

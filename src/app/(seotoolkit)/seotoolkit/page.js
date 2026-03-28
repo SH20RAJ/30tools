@@ -14,6 +14,8 @@ const jsonLd = generateToolJsonLd("seotoolkit", "seo", {
 		"Run multiple SEO checks in one place, including audits, keyword research, backlinks, metadata, and performance analysis.",
 });
 
-export default function SeoToolkitPage() {
+export default async function SeoToolkitPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return <SeoToolkit />;
 }

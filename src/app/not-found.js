@@ -9,7 +9,9 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
-export default function NotFoundPage() {
+export default async function NotFoundPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-16 max-w-4xl">
 			<div className="text-center space-y-8">

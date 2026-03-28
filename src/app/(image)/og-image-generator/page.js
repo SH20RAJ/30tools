@@ -58,7 +58,9 @@ const jsonLd = {
 	},
 };
 
-export default function OgImageGeneratorPage() {
+export default async function OgImageGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const breadcrumbs = [
 		{ name: "Image Tools", url: "/image-tools" },
 		{ name: "OG Image Generator", url: "/og-image-generator" },

@@ -86,7 +86,9 @@ const jsonLd = {
 	],
 };
 
-export default function ShareChatVideoDownloaderPage() {
+export default async function ShareChatVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

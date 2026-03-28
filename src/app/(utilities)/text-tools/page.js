@@ -126,7 +126,9 @@ const categories = [
 	{ name: "Other", count: 3, color: "bg-gray-100 text-foreground" },
 ];
 
-export default function TextToolsPage() {
+export default async function TextToolsPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const featuredTools = textTools.filter((tool) => tool.featured);
 	const allTools = textTools;
 

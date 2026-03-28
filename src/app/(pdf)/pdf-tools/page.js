@@ -124,7 +124,9 @@ const categories = [
 	{ name: "Viewing", count: 1, color: "bg-gray-100 text-foreground" },
 ];
 
-export default function PdfToolsPage() {
+export default async function PdfToolsPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const featuredTools = pdfTools.filter((tool) => tool.featured);
 	const allTools = pdfTools;
 

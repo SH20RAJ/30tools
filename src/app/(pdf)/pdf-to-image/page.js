@@ -51,7 +51,9 @@ export const metadata = {
 	category: "PDF Tools",
 };
 
-export default function PdfToImagePage() {
+export default async function PdfToImagePage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "pdf-to-image",

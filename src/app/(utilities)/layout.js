@@ -1,5 +1,5 @@
-import UtilityToolsFooter from "@/components/footers/UtilityToolsFooter";
-import UtilityToolsNavbar from "@/components/navigation/UtilityToolsNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title: "Utility Tools - Free Online Internet Speed & Link Tools | 30Tools",
@@ -61,16 +61,16 @@ const jsonLdSchemas = {
 
 export default function UtilityToolsLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background">
+		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<UtilityToolsNavbar />
+			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<UtilityToolsFooter />
+			<GoogleFooter />
 		</div>
 	);
 }

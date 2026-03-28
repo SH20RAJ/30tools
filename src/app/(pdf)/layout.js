@@ -1,5 +1,5 @@
-import PDFToolsFooter from "@/components/footers/PDFToolsFooter";
-import PDFToolsNavbar from "@/components/navigation/PDFToolsNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title: "PDF Tools - Free Online PDF Processing | 30tools",
@@ -27,10 +27,10 @@ export const metadata = {
 
 export default function PDFToolsLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background">
-			<PDFToolsNavbar />
+		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
+			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<PDFToolsFooter />
+			<GoogleFooter />
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{

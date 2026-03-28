@@ -66,7 +66,9 @@ export const metadata = {
 	category: "Developer Tools",
 };
 
-export default function JSONFormatterPage() {
+export default async function JSONFormatterPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "json-formatter",

@@ -112,7 +112,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function DailymotionVideoDownloaderPage() {
+export default async function DailymotionVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

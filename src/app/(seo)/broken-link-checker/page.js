@@ -28,7 +28,9 @@ const jsonLd = generateToolJsonLd("broken-link-checker", "seo", {
 		"Scan a page or site for broken links, 404 errors, and redirect issues that can hurt SEO and user experience.",
 });
 
-export default function BrokenLinkCheckerPage() {
+export default async function BrokenLinkCheckerPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

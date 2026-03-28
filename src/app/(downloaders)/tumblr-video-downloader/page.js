@@ -112,7 +112,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function TumblrVideoDownloaderPage() {
+export default async function TumblrVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

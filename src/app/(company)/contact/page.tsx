@@ -9,7 +9,9 @@ export const metadata: Metadata = {
 		"Get in touch with the 30Tools team. We'd love to hear your feedback, suggestions, or questions.",
 };
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-12 md:py-20 max-w-4xl">
 			<h1 className="text-4xl font-bold mb-6 text-center">Contact Us</h1>

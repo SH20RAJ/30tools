@@ -28,7 +28,9 @@ const jsonLd = generateToolJsonLd("internet-speed-test", "utilities", {
 		"Measure download speed, upload speed, ping, and jitter with a free browser-based internet speed test.",
 });
 
-export default function InternetSpeedTestPage() {
+export default async function InternetSpeedTestPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = {
 		id: "internet-speed-test",
 		name: "Internet Speed Test",

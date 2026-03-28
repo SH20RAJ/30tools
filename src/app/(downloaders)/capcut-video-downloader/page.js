@@ -85,7 +85,9 @@ const jsonLd = {
 	],
 };
 
-export default function CapcutVideoDownloaderPage() {
+export default async function CapcutVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

@@ -42,7 +42,9 @@ export const metadata = {
 	canonical: "https://30tools.com/lorem-ipsum-generator",
 };
 
-export default function LoremIpsumGeneratorPage() {
+export default async function LoremIpsumGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = {
 		id: "lorem-ipsum-generator",
 		name: "Lorem Ipsum Generator",

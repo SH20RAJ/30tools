@@ -51,7 +51,9 @@ const jsonLd = {
 	},
 };
 
-export default function IndexNowPage() {
+export default async function IndexNowPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="min-h-screen bg-background py-12">
 			<script

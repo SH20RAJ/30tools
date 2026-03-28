@@ -125,7 +125,9 @@ import {
 } from "@/components/ui/card";
 import toolsData from "@/constants/tools.json";
 
-export default function LandingPage() {
+export default async function LandingPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const iconMap = {
 		ImageIcon,
 		VideoIcon,

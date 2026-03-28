@@ -85,7 +85,9 @@ const jsonLd = {
 	],
 };
 
-export default function LikeeVideoDownloaderPage() {
+export default async function LikeeVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

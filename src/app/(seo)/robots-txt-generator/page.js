@@ -89,7 +89,9 @@ const jsonLd = {
 	},
 };
 
-export default function RobotsTxtGeneratorPage() {
+export default async function RobotsTxtGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

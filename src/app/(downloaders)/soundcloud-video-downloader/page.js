@@ -115,7 +115,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function SoundcloudDownloaderPage() {
+export default async function SoundcloudDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

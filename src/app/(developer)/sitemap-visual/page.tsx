@@ -8,7 +8,9 @@ export const metadata = {
 		"Browse all 135+ free online tools available on 30Tools. Find image converters, PDF tools, video downloaders, and more.",
 };
 
-export default function VisualSitemapPage() {
+export default async function VisualSitemapPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const categories = getAllCategories();
 
 	return (

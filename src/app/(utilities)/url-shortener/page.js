@@ -24,7 +24,9 @@ const jsonLd = generateToolJsonLd("url-shortener", "utilities", {
 		"Create short, trackable links with custom aliases, QR codes, and simple click analytics for campaigns and sharing.",
 });
 
-export default function URLShortenerPage() {
+export default async function URLShortenerPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = {
 		id: "url-shortener",
 		name: "URL Shortener",

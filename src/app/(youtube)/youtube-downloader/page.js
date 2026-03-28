@@ -897,7 +897,9 @@ const jsonLd = {
 	],
 };
 
-export default function YouTubeDownloaderPage() {
+export default async function YouTubeDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

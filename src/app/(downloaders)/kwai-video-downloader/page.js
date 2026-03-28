@@ -85,7 +85,9 @@ const jsonLd = {
 	],
 };
 
-export default function KwaiVideoDownloaderPage() {
+export default async function KwaiVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

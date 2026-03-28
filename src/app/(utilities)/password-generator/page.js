@@ -42,7 +42,9 @@ export const metadata = {
 	canonical: "https://30tools.com/password-generator",
 };
 
-export default function PasswordGeneratorPage() {
+export default async function PasswordGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const toolData = {
 		id: "password-generator",
 		name: "Password Generator",

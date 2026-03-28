@@ -86,7 +86,9 @@ const jsonLd = {
 	],
 };
 
-export default function StreamableVideoDownloaderPage() {
+export default async function StreamableVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

@@ -72,7 +72,9 @@ export const metadata = {
 	category: "Generators",
 };
 
-export default function AIImageGeneratorPage() {
+export default async function AIImageGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "ai-image-generator",

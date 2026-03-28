@@ -5,7 +5,9 @@ export const metadata: Metadata = {
 	description: "Learn how we collect, use, and protect your data at 30Tools.",
 };
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-12 md:py-20 max-w-4xl prose dark:prose-invert">
 			<h1 className="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>

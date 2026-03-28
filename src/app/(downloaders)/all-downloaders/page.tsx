@@ -397,7 +397,9 @@ const AdUnit = () => (
 	</div>
 );
 
-export default function AllDownloadersPage() {
+export default async function AllDownloadersPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

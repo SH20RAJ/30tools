@@ -234,7 +234,9 @@ const categories = [
 	{ name: "Entertainment", count: 1, color: "bg-muted text-primary" },
 ];
 
-export default function VideoToolsPage() {
+export default async function VideoToolsPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	const featuredTools = videoTools.filter((tool) => tool.featured);
 	const trendingTools = videoTools.filter((tool) => tool.trending);
 	const allTools = videoTools;

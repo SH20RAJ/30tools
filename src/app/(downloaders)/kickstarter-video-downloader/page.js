@@ -83,7 +83,9 @@ const jsonLd = {
 	],
 };
 
-export default function KickstarterVideoDownloaderPage() {
+export default async function KickstarterVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

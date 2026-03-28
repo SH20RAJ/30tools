@@ -48,7 +48,9 @@ export const metadata = {
 	category: "Generators",
 };
 
-export default function AIVoiceGeneratorPage() {
+export default async function AIVoiceGeneratorPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "ai-voice-generator",

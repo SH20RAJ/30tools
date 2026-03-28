@@ -6,7 +6,9 @@ export const metadata: Metadata = {
 		"Read our Terms of Service to understand the rules and regulations for using 30Tools.",
 };
 
-export default function TermsPage() {
+export default async function TermsPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-12 md:py-20 max-w-4xl prose dark:prose-invert">
 			<h1 className="text-4xl font-bold mb-6 text-center">Terms of Service</h1>

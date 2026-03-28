@@ -7,6 +7,8 @@ export const metadata: Metadata = {
 		"Free online Instagram Reel Maker. Fast, secure, and easy to use with no registration required.",
 };
 
-export default function ToolPage() {
+export default async function ToolPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return <ComingSoon toolName="Instagram Reel Maker" />;
 }

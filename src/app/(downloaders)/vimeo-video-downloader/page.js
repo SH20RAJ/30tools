@@ -115,7 +115,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function VimeoVideoDownloaderPage() {
+export default async function VimeoVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

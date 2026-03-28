@@ -20,7 +20,9 @@ export const metadata = {
 	},
 };
 
-export default function HighQualityAudioGuide() {
+export default async function HighQualityAudioGuide({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<article className="container mx-auto px-4 py-12 max-w-4xl">
 			<Link

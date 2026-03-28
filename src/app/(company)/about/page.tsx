@@ -15,7 +15,9 @@ export const metadata = {
 		"Learn about 30Tools, your go-to destination for free, high-quality online tools. We provide image, PDF, video, and developer tools to simplify your workflow.",
 };
 
-export default function AboutPage() {
+export default async function AboutPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-16 max-w-5xl">
 			{/* Back Button */}

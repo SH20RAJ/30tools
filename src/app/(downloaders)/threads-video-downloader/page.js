@@ -86,7 +86,9 @@ const jsonLd = {
 	],
 };
 
-export default function ThreadsVideoDownloaderPage() {
+export default async function ThreadsVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

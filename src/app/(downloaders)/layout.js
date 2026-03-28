@@ -1,5 +1,5 @@
-import DownloaderToolsFooter from "@/components/footers/DownloaderToolsFooter";
-import DownloaderToolsNavbar from "@/components/navigation/DownloaderToolsNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title:
@@ -68,16 +68,16 @@ const jsonLdSchemas = {
 
 export default function DownloadersLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background">
+		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<DownloaderToolsNavbar />
+			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<DownloaderToolsFooter />
+			<GoogleFooter />
 		</div>
 	);
 }

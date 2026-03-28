@@ -8,7 +8,9 @@ export const metadata = {
 		"Step-by-step guide on how to strip audio tracks from video files easily using online tools and software.",
 };
 
-export default function BlogPost() {
+export default async function BlogPost({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
 			<div className="mb-8">

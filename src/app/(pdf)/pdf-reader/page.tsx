@@ -14,7 +14,9 @@ export const metadata: Metadata = {
 	],
 };
 
-export default function ToolPage() {
+export default async function ToolPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-12 min-h-screen flex flex-col">
 			<div className="max-w-4xl mx-auto text-center mb-8">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import toolsData from "@/constants/tools.json";
+import translateEngine from "@/lib/translate";
 
 type ToolCategory = keyof typeof toolsData.categories;
 
@@ -24,16 +25,6 @@ interface MetadataOverrides {
 	robots?: Metadata["robots"];
 }
 
-interface ToolJsonLdOverrides {
-	name?: string;
-	description?: string;
-	applicationCategory?: string;
-	featureList?: string[];
-	screenshot?: string;
-	about?: Record<string, unknown>;
-	extra?: Record<string, unknown>;
-}
-
 const CATEGORY_TITLE_SUFFIX: Partial<Record<ToolCategory, string>> = {
 	audio: "Free Audio Tool",
 	developer: "Free Developer Tool",
@@ -45,17 +36,6 @@ const CATEGORY_TITLE_SUFFIX: Partial<Record<ToolCategory, string>> = {
 	text: "Free Text Tool",
 	utilities: "Free Online Tool",
 	video: "Free Video Tool",
-};
-
-const CATEGORY_KEYWORDS: Partial<Record<ToolCategory, string[]>> = {
-	audio: ["audio converter", "audio editor", "browser audio tools"],
-	developer: ["developer tools", "browser-based developer utilities"],
-	image: ["image tools", "image converter", "image editor"],
-	pdf: ["pdf tools", "pdf converter", "pdf editor"],
-	seo: ["seo tool", "website optimization", "technical seo"],
-	text: ["text tools", "text converter", "text utility"],
-	utilities: ["online utility", "browser-based tool", "free online tool"],
-	video: ["video tools", "video converter", "video editor"],
 };
 
 function ensureSentence(text: string) {
@@ -78,30 +58,21 @@ function resolveImageUrl(image?: string) {
 	return `${SITE_URL}${image.startsWith("/") ? image : `/${image}`}`;
 }
 
-function normalizeToolName(toolId: string, name: string) {
-	if (/^(free|advanced|complete)\s+/i.test(name)) {
-		return toolId
-			.split("-")
-			.map((segment) => segment.charAt(0).toUpperCase() + segment.slice(1))
-			.join(" ");
-	}
-
-	return name;
-}
-
-function buildToolTitle(tool: Tool, category: ToolCategory, overrideTitle?: string) {
-	if (overrideTitle) return overrideTitle;
-	const toolName = normalizeToolName(tool.id, tool.name);
-	const suffix = CATEGORY_TITLE_SUFFIX[category] ?? "Free Online Tool";
+async function buildToolTitle(tool: Tool, category: ToolCategory, lang: string, overrideTitle?: string) {
+	if (overrideTitle) return await translateEngine.translate(overrideTitle, lang);
+	
+	const toolName = await translateEngine.translate(tool.name, lang);
+	const suffix = await translateEngine.translate(CATEGORY_TITLE_SUFFIX[category] ?? "Free Online Tool", lang);
 	return `${toolName} | ${suffix} | ${SITE_NAME}`;
 }
 
-function buildToolDescription(
+async function buildToolDescription(
 	tool: Tool,
 	category: ToolCategory,
+	lang: string,
 	overrideDescription?: string,
 ) {
-	if (overrideDescription) return truncateText(ensureSentence(overrideDescription));
+	if (overrideDescription) return truncateText(ensureSentence(await translateEngine.translate(overrideDescription, lang)));
 
 	const trustSuffixByCategory: Partial<Record<ToolCategory, string>> = {
 		audio: "Free online with simple browser-based controls.",
@@ -114,50 +85,18 @@ function buildToolDescription(
 		video: "Free online with fast browser-based processing.",
 	};
 
-	return truncateText(
-		`${ensureSentence(tool.description)} ${trustSuffixByCategory[category] ?? "Free online and easy to use."}`,
-	);
+	const baseDesc = await translateEngine.translate(tool.description, lang);
+	const suffix = await translateEngine.translate(trustSuffixByCategory[category] ?? "Free online and easy to use.", lang);
+
+	return truncateText(`${ensureSentence(baseDesc)} ${suffix}`);
 }
 
-function buildToolKeywords(tool: Tool, category: ToolCategory, keywords?: Metadata["keywords"]) {
-	if (keywords) return keywords;
-
-	const baseName = normalizeToolName(tool.id, tool.name)
-		.toLowerCase()
-		.replace(/[\/()]/g, " ")
-		.replace(/\s+/g, " ")
-		.trim();
-
-	return Array.from(
-		new Set([
-			baseName,
-			`${baseName} online`,
-			`free ${baseName}`,
-			...(CATEGORY_KEYWORDS[category] ?? []),
-		]),
-	);
-}
-
-function getApplicationCategory(category: ToolCategory) {
-	const categoryMap: Partial<Record<ToolCategory, string>> = {
-		audio: "MultimediaApplication",
-		developer: "DeveloperApplication",
-		image: "MultimediaApplication",
-		pdf: "BusinessApplication",
-		seo: "BusinessApplication",
-		text: "UtilityApplication",
-		utilities: "UtilityApplication",
-		video: "MultimediaApplication",
-	};
-
-	return categoryMap[category] ?? "UtilityApplication";
-}
-
-export function generateToolMetadata(
+export async function generateToolMetadata(
 	toolId: string,
 	category: ToolCategory,
+	lang: string = "en",
 	overrides: MetadataOverrides = {},
-): Metadata {
+): Promise<Metadata> {
 	const categoryData = toolsData.categories[category];
 	const tool = categoryData?.tools.find((t: Tool) => t.id === toolId);
 
@@ -168,31 +107,40 @@ export function generateToolMetadata(
 		};
 	}
 
-	const title = buildToolTitle(tool, category, overrides.title);
-	const description = buildToolDescription(tool, category, overrides.description);
-	const url = `${SITE_URL}${tool.route}`;
+	const title = await buildToolTitle(tool, category, lang, overrides.title);
+	const description = await buildToolDescription(tool, category, lang, overrides.description);
+	const url = `${SITE_URL}${tool.route}${lang !== 'en' ? `?lang=${lang}` : ''}`;
 	const image = resolveImageUrl(overrides.image);
-	const keywords = buildToolKeywords(tool, category, overrides.keywords);
 
 	return {
 		title: { absolute: title },
 		description,
-		keywords,
-		alternates: { canonical: url },
-		robots: overrides.robots,
+		alternates: { 
+			canonical: url,
+			languages: {
+				en: `${SITE_URL}${tool.route}?lang=en`,
+				es: `${SITE_URL}${tool.route}?lang=es`,
+				fr: `${SITE_URL}${tool.route}?lang=fr`,
+				de: `${SITE_URL}${tool.route}?lang=de`,
+				hi: `${SITE_URL}${tool.route}?lang=hi`,
+				it: `${SITE_URL}${tool.route}?lang=it`,
+				pt: `${SITE_URL}${tool.route}?lang=pt`,
+				ja: `${SITE_URL}${tool.route}?lang=ja`,
+				zh: `${SITE_URL}${tool.route}?lang=zh`,
+				ko: `${SITE_URL}${tool.route}?lang=ko`,
+				ru: `${SITE_URL}${tool.route}?lang=ru`,
+				ar: `${SITE_URL}${tool.route}?lang=ar`,
+				tr: `${SITE_URL}${tool.route}?lang=tr`,
+				vi: `${SITE_URL}${tool.route}?lang=vi`,
+				id: `${SITE_URL}${tool.route}?lang=id`,
+			}
+		},
 		openGraph: {
 			title,
 			description,
 			url,
 			siteName: SITE_NAME,
-			images: [
-				{
-					url: image,
-					width: 1200,
-					height: 630,
-					alt: title,
-				},
-			],
+			images: [{ url: image }],
 			type: "website",
 		},
 		twitter: {
@@ -200,112 +148,7 @@ export function generateToolMetadata(
 			title,
 			description,
 			images: [image],
-			creator: "@30tools",
 		},
-	};
-}
-
-export function generateCategoryMetadata(
-	category: ToolCategory,
-	overrides: MetadataOverrides = {},
-): Metadata {
-	const categoryData = toolsData.categories[category];
-
-	if (!categoryData) {
-		return {
-			title: "Category Not Found | 30Tools",
-			description: "The requested tool category could not be found.",
-		};
-	}
-
-	const url = `${SITE_URL}/${categoryData.slug}`;
-	const image = resolveImageUrl(overrides.image);
-	const toolCount = categoryData.tools.length;
-	const title =
-		overrides.title ?? `${categoryData.name} | Free Online ${categoryData.name} | ${SITE_NAME}`;
-	const description = truncateText(
-		ensureSentence(
-			overrides.description ??
-				`${toolCount}+ free ${categoryData.name.toLowerCase()} from 30Tools. ${categoryData.description}`,
-		),
-	);
-	const keywords =
-		overrides.keywords ??
-		Array.from(
-			new Set([
-				categoryData.name.toLowerCase(),
-				`${categoryData.name.toLowerCase()} online`,
-				...categoryData.tools.slice(0, 6).map((tool: Tool) => tool.name.toLowerCase()),
-			]),
-		);
-
-	return {
-		title: { absolute: title },
-		description,
-		keywords,
-		alternates: { canonical: url },
-		robots: overrides.robots,
-		openGraph: {
-			title,
-			description,
-			url,
-			siteName: SITE_NAME,
-			images: [
-				{
-					url: image,
-					width: 1200,
-					height: 630,
-					alt: title,
-				},
-			],
-			type: "website",
-		},
-		twitter: {
-			card: "summary_large_image",
-			title,
-			description,
-			images: [image],
-			creator: "@30tools",
-		},
-	};
-}
-
-export function generateToolJsonLd(
-	toolId: string,
-	category: ToolCategory,
-	overrides: ToolJsonLdOverrides = {},
-) {
-	const tool = getToolData(toolId, category);
-
-	if (!tool) return null;
-
-	const description = buildToolDescription(tool, category, overrides.description);
-
-	return {
-		"@context": "https://schema.org",
-		"@type": "WebApplication",
-		name: overrides.name ?? normalizeToolName(tool.id, tool.name),
-		description,
-		url: `${SITE_URL}${tool.route}`,
-		applicationCategory:
-			overrides.applicationCategory ?? getApplicationCategory(category),
-		operatingSystem: "Any",
-		browserRequirements: "Requires JavaScript",
-		isAccessibleForFree: true,
-		offers: {
-			"@type": "Offer",
-			price: "0",
-			priceCurrency: "USD",
-		},
-		provider: {
-			"@type": "Organization",
-			name: "30tools",
-			url: SITE_URL,
-		},
-		...(overrides.featureList ? { featureList: overrides.featureList } : {}),
-		...(overrides.screenshot ? { screenshot: overrides.screenshot } : {}),
-		...(overrides.about ? { about: overrides.about } : {}),
-		...(overrides.extra ?? {}),
 	};
 }
 

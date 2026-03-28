@@ -87,7 +87,9 @@ const jsonLd = {
 	],
 };
 
-export default function VkontakteVideoDownloaderPage() {
+export default async function VkontakteVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

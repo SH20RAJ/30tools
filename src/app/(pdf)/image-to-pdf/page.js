@@ -52,7 +52,9 @@ export const metadata = {
 	category: "PDF Tools",
 };
 
-export default function ImageToPDFPage() {
+export default async function ImageToPDFPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "image-to-pdf",

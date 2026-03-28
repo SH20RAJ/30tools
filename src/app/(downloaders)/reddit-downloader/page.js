@@ -114,7 +114,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function RedditDownloaderPage() {
+export default async function RedditDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

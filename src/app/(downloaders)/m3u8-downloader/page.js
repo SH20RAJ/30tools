@@ -112,7 +112,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function M3u8DownloaderPage() {
+export default async function M3u8DownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

@@ -88,7 +88,9 @@ const jsonLd = {
 	],
 };
 
-export default function TelegramVideoDownloaderPage() {
+export default async function TelegramVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

@@ -114,7 +114,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function InstagramStoryDownloaderPage() {
+export default async function InstagramStoryDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

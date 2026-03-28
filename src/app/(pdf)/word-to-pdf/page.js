@@ -53,7 +53,9 @@ export const metadata = {
 	category: "PDF Tools",
 };
 
-export default function WordToPDFPage() {
+export default async function WordToPDFPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
 		id: "word-to-pdf",

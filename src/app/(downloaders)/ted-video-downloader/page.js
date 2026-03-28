@@ -116,7 +116,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function TedVideoDownloaderPage() {
+export default async function TedVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

@@ -86,7 +86,9 @@ const jsonLd = {
 	],
 };
 
-export default function NinegagVideoDownloaderPage() {
+export default async function NinegagVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

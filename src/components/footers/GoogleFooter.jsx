@@ -65,10 +65,42 @@ export function GoogleFooter() {
 						<Link href="/terms" className="hover:text-[#3c4043] dark:hover:text-foreground transition-colors">Terms</Link>
 					</div>
 					
-					<div className="flex items-center gap-4">
-						<div className="flex items-center gap-2 text-xs text-muted-foreground border rounded-full px-3 py-1 bg-background hover:bg-secondary cursor-pointer transition-colors">
-							<GlobeIcon className="h-3 w-3" />
-							<span>Language: English</span>
+					<div className="flex items-center gap-4 relative group">
+						<div className="flex items-center gap-2 text-xs text-muted-foreground border rounded-full px-4 py-2 bg-background hover:bg-secondary cursor-pointer transition-all duration-200">
+							<GlobeIcon className="h-4 w-4 text-blue-500" />
+							<span className="font-medium">Change Language</span>
+						</div>
+						
+						{/* Language Selection Popover (Simple version for MVP) */}
+						<div className="absolute bottom-full right-0 mb-2 w-64 bg-background border border-border rounded-2xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-4">
+							<div className="grid grid-cols-2 gap-1 text-[11px]">
+								{[
+									{ name: "English", code: "en" },
+									{ name: "Español", code: "es" },
+									{ name: "Français", code: "fr" },
+									{ name: "Deutsch", code: "de" },
+									{ name: "हिन्दी", code: "hi" },
+									{ name: "Indonesian", code: "id" },
+									{ name: "Italiano", code: "it" },
+									{ name: "日本語", code: "ja" },
+									{ name: "한국어", code: "ko" },
+									{ name: "Português", code: "pt" },
+									{ name: "Русский", code: "ru" },
+									{ name: "Türkçe", code: "tr" },
+									{ name: "Tiếng Việt", code: "vi" },
+									{ name: "中文", code: "zh" },
+									{ name: "Polski", code: "pl" }
+								].map((lang) => (
+									<Link 
+										key={lang.code} 
+										href={`?lang=${lang.code}`}
+										className="px-3 py-1.5 hover:bg-secondary rounded-lg transition-colors flex items-center justify-between"
+									>
+										<span>{lang.name}</span>
+										<span className="text-[9px] uppercase opacity-50 font-bold">{lang.code}</span>
+									</Link>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>

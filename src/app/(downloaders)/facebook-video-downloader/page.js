@@ -136,7 +136,9 @@ const AdUnit = () => (
 	</div>
 );
 
-export default function FacebookVideoDownloaderPage() {
+export default async function FacebookVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script

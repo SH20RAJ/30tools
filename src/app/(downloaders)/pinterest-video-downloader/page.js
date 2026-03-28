@@ -112,7 +112,9 @@ const jsonLdSchemas = {
 	},
 };
 
-export default function PinterestVideoDownloaderPage() {
+export default async function PinterestVideoDownloaderPage({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
 	return (
 		<>
 			<script
