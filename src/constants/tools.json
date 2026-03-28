@@ -17,6 +17,7 @@
           "name": "AI Image Generator",
           "description": "Create stunning, high-resolution AI art from text prompts. Our free online AI image generator uses advanced models to transform your ideas into photorealistic photos, digital art, and illustrations instantly. No signup required.",
           "route": "/ai-image-generator",
+          "extraSlugs": ["text-to-image", "ai-art-generator", "prompt-to-image"],
           "popular": true,
           "category": "generators",
           "features": [
