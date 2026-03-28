@@ -8,12 +8,9 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import MuiLink from "@mui/material/Link";
 import Divider from "@mui/material/Divider";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
 import { GoogleLogo } from "@/components/shared/GoogleLogo";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
-import LanguageIcon from "@mui/icons-material/Language";
 import { LanguageSelector } from "@/components/shared/LanguageSelector";
 
 const footerColumns = [
@@ -71,6 +68,7 @@ export function GoogleFooter() {
         borderTop: "1px solid",
         borderColor: "divider",
         mt: "auto",
+        background: "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,1) 100%)",
       }}
     >
       <Container maxWidth="xl" sx={{ py: 6 }}>

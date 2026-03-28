@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useTheme } from "next-themes";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -14,13 +13,10 @@ import Avatar from "@mui/material/Avatar";
 import SearchIcon from "@mui/icons-material/Search";
 import AppsIcon from "@mui/icons-material/Apps";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { GoogleLogo } from "@/components/shared/GoogleLogo";
 
 export function GoogleNavbar() {
   const router = useRouter();
-  const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -34,8 +30,6 @@ export function GoogleNavbar() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [router]);
-
-  const isDark = resolvedTheme === "dark";
 
   return (
     <AppBar position="sticky" elevation={0}>
@@ -63,6 +57,7 @@ export function GoogleNavbar() {
             cursor: "text",
             textDecoration: "none",
             transition: "all 0.15s",
+            boxShadow: "0 1px 2px rgba(0,0,0,0.03)",
             "&:hover": { borderColor: "text.disabled", bgcolor: "action.selected" },
           }}
         >
@@ -140,38 +135,23 @@ export function GoogleNavbar() {
           }}
         />
 
-        {/* Theme Toggle */}
-        {mounted && (
-          <Tooltip title={isDark ? "Switch to Light" : "Switch to Dark"}>
-            <IconButton
-              size="small"
-              onClick={() => setTheme(isDark ? "light" : "dark")}
-              sx={{ borderRadius: "50%" }}
-            >
-              {isDark ? (
-                <LightModeIcon fontSize="small" sx={{ color: "text.secondary" }} />
-              ) : (
-                <DarkModeIcon fontSize="small" sx={{ color: "text.secondary" }} />
-              )}
-            </IconButton>
-          </Tooltip>
-        )}
-
         {/* Avatar badge */}
-        <Avatar
-          sx={{
-            width: 32,
-            height: 32,
-            bgcolor: "primary.main",
-            fontSize: 11,
-            fontWeight: 700,
-            ml: 0.5,
-            border: "2px solid",
-            borderColor: "primary.light",
-          }}
-        >
-          30
-        </Avatar>
+        {mounted && (
+          <Avatar
+            sx={{
+              width: 32,
+              height: 32,
+              bgcolor: "primary.main",
+              fontSize: 11,
+              fontWeight: 700,
+              ml: 0.5,
+              border: "2px solid",
+              borderColor: "primary.light",
+            }}
+          >
+            30
+          </Avatar>
+        )}
       </Toolbar>
     </AppBar>
   );
