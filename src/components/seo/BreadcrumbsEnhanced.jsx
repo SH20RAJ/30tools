@@ -2,7 +2,7 @@
 
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { generateBreadcrumbSchema } from "@/constants/seo/advanced-metadata";
 
 /**
@@ -15,18 +15,25 @@ import { generateBreadcrumbSchema } from "@/constants/seo/advanced-metadata";
 /**
  * @param {Object} props
  * @param {Breadcrumb[]} [props.customBreadcrumbs]
+ * @param {string} [props.homeText="Home"]
  */
-export default function BreadcrumbsEnhanced({ customBreadcrumbs = [] }) {
+export default function BreadcrumbsEnhanced({ customBreadcrumbs = [], homeText = "Home" }) {
 	const pathname = usePathname();
+	const searchParams = useSearchParams();
+	const lang = searchParams.get("lang") || "en";
+	const queryString = lang !== "en" ? `?lang=${lang}` : "";
 
 	// Generate breadcrumbs from URL path if custom ones aren't provided
 	const generateBreadcrumbs = () => {
 		if (customBreadcrumbs.length > 0) {
-			return [{ name: "Home", url: "/" }, ...customBreadcrumbs];
+			return [{ name: homeText, url: `/${queryString}` }, ...customBreadcrumbs.map(cb => ({
+				...cb,
+				url: `${cb.url}${queryString}`
+			}))];
 		}
 
 		const pathSegments = pathname.split("/").filter(Boolean);
-		const breadcrumbs = [{ name: "Home", url: "/" }];
+		const breadcrumbs = [{ name: homeText, url: `/${queryString}` }];
 
 		let currentPath = "";
 
@@ -41,7 +48,7 @@ export default function BreadcrumbsEnhanced({ customBreadcrumbs = [] }) {
 
 			breadcrumbs.push({
 				name,
-				url: currentPath,
+				url: `${currentPath}${queryString}`,
 				isLast: index === pathSegments.length - 1,
 			});
 		});

@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 import withPWA from "next-pwa";
-import { toolRedirects } from "./scripts/redirects.js";
+import { toolRedirects } from "./scripts/redirects.cjs";
 
 const nextConfig = {
   // TypeScript configuration
@@ -140,7 +140,7 @@ const nextConfig = {
   async rewrites() {
     try {
       const { default: toolRewrites } = await import("./src/constants/tool-rewrites.json", {
-        assert: { type: "json" },
+        with: { type: "json" },
       });
       return toolRewrites || [];
     } catch (e) {
