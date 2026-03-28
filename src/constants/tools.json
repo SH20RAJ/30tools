@@ -88,6 +88,7 @@
           "name": "Image Compressor",
           "description": "Compress images to reduce file size while maintaining quality",
           "route": "/image-compressor",
+          "extraSlugs": ["compress-jpg", "compress-png", "optimize-images"],
           "popular": true,
           "category": "image"
         },
@@ -258,6 +259,7 @@
           "name": "PDF Compressor",
           "description": "Reduce PDF file size online free without losing quality. Our 2026 updated PDF size reducer uses advanced browser-side compression to safely shrink documents for email and web uploads. 100% private and secure.",
           "route": "/pdf-compressor",
+          "extraSlugs": ["shrink-pdf", "reduce-pdf-size", "pdf-size-reducer"],
           "popular": true,
           "category": "pdf",
           "features": [
@@ -417,6 +419,7 @@
           "name": "YouTube Video/Audio Downloader",
           "description": "Download YouTube videos and audio in multiple formats and qualities",
           "route": "/youtube-downloader",
+          "extraSlugs": ["download-yt-video", "yt-to-mp4", "youtube-to-mp4-converter"],
           "popular": true,
           "category": "youtube"
         },
