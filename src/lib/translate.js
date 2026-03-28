@@ -1,6 +1,6 @@
-const { TranslationServiceClient } = require('@google-cloud/translate');
-const fs = require('fs');
-const path = require('path');
+import { TranslationServiceClient } from '@google-cloud/translate';
+import fs from 'fs';
+import path from 'path';
 
 // Cache configuration
 const CACHE_PATH = path.join(process.cwd(), 'src/constants/translations.json');
@@ -81,4 +81,4 @@ class TranslateEngine {
 }
 
 const engine = new TranslateEngine();
-module.exports = engine;
+export default engine;

@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+import defaultTheme from 'tailwindcss/defaultTheme.js';
+import tailwindcssAnimate from 'tailwindcss-animate';
+
+export default {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,jsx}",
@@ -20,7 +23,7 @@ module.exports = {
       fontFamily: {
         sans: [
           "var(--font-open-sans)",
-          ...require("tailwindcss/defaultTheme").fontFamily.sans,
+          ...defaultTheme.fontFamily.sans,
         ],
       },
       colors: {
@@ -97,5 +100,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [tailwindcssAnimate],
 };
