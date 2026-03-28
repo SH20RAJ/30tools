@@ -1,4 +1,5 @@
-import { Open_Sans } from "next/font/google";
+import Image from "next/image";
+// ... (imports remain)
 import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
@@ -36,9 +37,8 @@ const siteVerification = {
 		: {}),
 };
 
-export async function generateMetadata({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+export async function generateMetadata() {
+	const lang = "en";
 	
 	const languages = {
 		en: "/?lang=en",
@@ -213,18 +213,15 @@ export default async function RootLayout({ children }) {
 					{children}
 					{/* <PWAInstallPrompt /> */}
 					<Toaster />
-					<a
-						className="sr-only"
-						href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
-					>
-						<img
+					<div className="sr-only">
+						<Image
 							src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
 							alt="Visitor badge"
-							width="200"
-							height="20"
-							loading="lazy"
+							width={200}
+							height={20}
+							unoptimized
 						/>
-					</a>
+					</div>
 				</ThemeProvider>
 
 				<script

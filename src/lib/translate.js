@@ -1,40 +1,18 @@
 import { TranslationServiceClient } from '@google-cloud/translate';
-import fs from 'fs';
-import path from 'path';
-
-// Cache configuration
-const CACHE_PATH = path.join(process.cwd(), 'src/constants/translations.json');
 
 class TranslateEngine {
     constructor() {
         this.apiKey = process.env.GOOGLE_CLOUD_TRANSLATE_API_KEY;
-        this.cache = this.loadCache();
+        this.cache = {}; // Initializing early for memory-only worker environment
         
         if (this.apiKey) {
-            this.client = new TranslationServiceClient({
-                apiKey: this.apiKey
-            });
-        } else {
-            console.warn('[TranslateEngine] No GOOGLE_CLOUD_TRANSLATE_API_KEY found. Falling back to default strings.');
-        }
-    }
-
-    loadCache() {
-        try {
-            if (fs.existsSync(CACHE_PATH)) {
-                return JSON.parse(fs.readFileSync(CACHE_PATH, 'utf8'));
+            try {
+                this.client = new TranslationServiceClient({
+                    apiKey: this.apiKey
+                });
+            } catch (e) {
+                console.error('[TranslateEngine] Failed to initialize client:', e);
             }
-        } catch (e) {
-            console.error('[TranslateEngine] Failed to load cache:', e);
-        }
-        return {};
-    }
-
-    saveCache() {
-        try {
-            fs.writeFileSync(CACHE_PATH, JSON.stringify(this.cache, null, 2));
-        } catch (e) {
-            console.error('[TranslateEngine] Failed to save cache:', e);
         }
     }
 
@@ -61,7 +39,6 @@ class TranslateEngine {
             const translatedText = response.translations[0].translatedText;
             
             this.cache[cacheKey] = translatedText;
-            this.saveCache();
             
             return translatedText;
         } catch (error) {
