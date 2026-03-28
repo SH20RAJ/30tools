@@ -3,6 +3,8 @@ import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
+import MuiThemeRegistry from "@/components/shared/MuiThemeRegistry";
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { getAllTools } from "@/constants/tools-utils";
 import "./globals.css";
 import Script from "next/script";
@@ -289,24 +291,28 @@ export default async function RootLayout({ children }) {
 				/>
 			</head>
 			<body className={`${openSans.variable} ds-page font-sans antialiased`}>
-				<ThemeProvider>
-					<StructuredData includeFAQ={false} />
-					{children}
-					{/* <PWAInstallPrompt /> */}
-					<Toaster />
-					<a
-						className="sr-only"
-						href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
-					>
-						<img
-							src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
-							alt="Visitor badge"
-							width="200"
-							height="20"
-							loading="lazy"
-						/>
-					</a>
-				</ThemeProvider>
+				<AppRouterCacheProvider options={{ enableCssLayer: true }}>
+					<ThemeProvider>
+						<MuiThemeRegistry>
+							<StructuredData includeFAQ={false} />
+							{children}
+							{/* <PWAInstallPrompt /> */}
+							<Toaster />
+							<a
+								className="sr-only"
+								href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
+							>
+								<img
+									src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
+									alt="Visitor badge"
+									width="200"
+									height="20"
+									loading="lazy"
+								/>
+							</a>
+						</MuiThemeRegistry>
+					</ThemeProvider>
+				</AppRouterCacheProvider>
 
 				<script
 					defer
