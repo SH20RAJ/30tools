@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { GoogleLogo } from "@/components/shared/GoogleLogo";
 import { ThemeToggle } from "@/components/shared/theme-provider";
 import { 
@@ -13,6 +14,19 @@ import {
 import { Button } from "@/components/ui/button";
 
 export function GoogleNavbar() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        router.push('/search');
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [router]);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-md supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between gap-4">
@@ -22,14 +36,17 @@ export function GoogleNavbar() {
         </div>
 
         {/* Minimal Search Bar (Google Style) */}
-        <div className="hidden md:flex flex-1 max-w-2xl px-4 py-2 bg-secondary/50 hover:bg-secondary/80 border border-transparent hover:border-border rounded-full items-center transition-all cursor-text group">
+        <Link 
+          href="/search"
+          className="hidden md:flex flex-1 max-w-2xl px-4 py-2 bg-secondary/50 hover:bg-secondary/80 border border-transparent hover:border-border rounded-full items-center transition-all cursor-text group"
+        >
           <SearchIcon className="h-4 w-4 text-muted-foreground mr-3 group-hover:text-primary" />
           <span className="text-muted-foreground text-sm flex-1">Search tools...</span>
           <div className="flex items-center gap-1.5 px-1.5 py-0.5 border border-border/50 rounded text-[10px] font-bold text-muted-foreground/60">
             <span>⌘</span>
             <span>K</span>
           </div>
-        </div>
+        </Link>
 
         {/* Actions */}
         <div className="flex items-center gap-1 sm:gap-2">
