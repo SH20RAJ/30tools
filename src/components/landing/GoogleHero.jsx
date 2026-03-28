@@ -2,79 +2,193 @@
 
 import React from "react";
 import Link from "next/link";
-import { SearchIcon, ImageIcon, FileTextIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Chip from "@mui/material/Chip";
+import InputBase from "@mui/material/InputBase";
+import Paper from "@mui/material/Paper";
+import SearchIcon from "@mui/icons-material/Search";
+import ImageSearchIcon from "@mui/icons-material/ImageSearch";
+import ArticleIcon from "@mui/icons-material/Article";
+
+// Google brand colors for the logo lettering
+const LOGO_COLORS = ["#4285F4", "#EA4335", "#FBBC05", "#4285F4", "#34A853", "#EA4335", "#FBBC05"];
+const LOGO_TEXT = "30tools";
 
 export function GoogleHero({ toolCount, quickSearchTags = [] }) {
   return (
-    <section className="relative pt-24 pb-20">
-      <div className="container mx-auto px-4 text-center">
-        {/* Animated Big Logo */}
-        <div className="mb-8 animate-in fade-in duration-1000">
-          <h1 className="text-5xl md:text-8xl font-medium tracking-tight mb-4 select-none">
-            <span className="text-[#4285F4]">3</span>
-            <span className="text-[#EA4335]">0</span>
-            <span className="text-[#FBBC05]">t</span>
-            <span className="text-[#4285F4]">o</span>
-            <span className="text-[#34A853]">o</span>
-            <span className="text-[#EA4335]">l</span>
-            <span className="text-[#FBBC05]">s</span>
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto font-normal">
-            Every tool you need, right in your browser. <br className="hidden sm:block" />
-            Simple. Secure. Searchable.
-          </p>
-        </div>
-
-        {/* Centered Pill Search (Google Style) */}
-        <div className="max-w-xl mx-auto mb-10 relative animate-in zoom-in-95 duration-700">
-          <Link href="/search" className="block outline-none">
-            <div className="flex items-center h-14 px-6 bg-background rounded-full border border-border shadow-sm hover:shadow-md transition-shadow cursor-text group focus-within:ring-4 focus-within:ring-primary/5">
-              <SearchIcon
-                className="h-5 w-5 text-muted-foreground mr-4 group-hover:text-primary transition-colors"
-                aria-hidden="true"
-              />
-              <span className="text-muted-foreground text-lg text-left flex-1 font-normal opacity-70">
-                Search {toolCount}+ tools...
-              </span>
-              <div className="flex items-center gap-3">
-                <ImageIcon className="h-5 w-5 text-muted-foreground/40 hover:text-primary transition-colors cursor-pointer" title="Search by Image" />
-                <FileTextIcon className="h-5 w-5 text-muted-foreground/40 hover:text-primary transition-colors cursor-pointer" title="Search by Document" />
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        {/* Quick Action Buttons (Google Style) */}
-        <div className="flex flex-wrap justify-center gap-3 mt-6">
-          <Link href="/search">
-            <Button variant="secondary" className="rounded-md px-6 bg-[#f8f9fa] hover:bg-[#f1f3f4] border border-transparent hover:border-[#dadce0] text-[#3c4043] dark:bg-muted/20 dark:text-foreground font-normal transition-all shadow-none h-10">
-              30tools Search
-            </Button>
-          </Link>
-          <Link href="/search?lucky=true">
-            <Button variant="secondary" className="rounded-md px-6 bg-[#f8f9fa] hover:bg-[#f1f3f4] border border-transparent hover:border-[#dadce0] text-[#3c4043] dark:bg-muted/20 dark:text-foreground font-normal transition-all shadow-none h-10">
-              I'm Feeling Lucky
-            </Button>
-          </Link>
-        </div>
-
-        {/* Simple Try Badges */}
-        <div className="flex flex-wrap justify-center gap-2 mt-12 opacity-80">
-          <span className="text-sm text-muted-foreground mr-2 py-1">Try:</span>
-          {quickSearchTags.slice(0, 5).map((tag) => (
-            <Link key={tag} href={`/search?q=${encodeURIComponent(tag)}`}>
-              <Badge
-                variant="outline"
-                className="px-4 py-1.5 rounded-full text-sm font-normal border-border bg-background hover:bg-secondary hover:text-primary transition-all cursor-pointer shadow-none"
+    <Box
+      component="section"
+      sx={{
+        position: "relative",
+        pt: { xs: 8, md: 12 },
+        pb: { xs: 8, md: 10 },
+        textAlign: "center",
+      }}
+    >
+      <Container maxWidth="md">
+        {/* Animated Multicolor Logo */}
+        <Box sx={{ mb: 4, animation: "fadeIn 0.8s ease-out" }}>
+          <Typography
+            variant="h1"
+            component="h1"
+            sx={{
+              fontSize: { xs: "3.5rem", md: "7rem" },
+              fontWeight: 400,
+              letterSpacing: "-0.02em",
+              lineHeight: 1.1,
+              mb: 2,
+              userSelect: "none",
+            }}
+          >
+            {LOGO_TEXT.split("").map((char, i) => (
+              <Box
+                key={i}
+                component="span"
+                sx={{ color: LOGO_COLORS[i] }}
               >
-                {tag}
-              </Badge>
-            </Link>
-          ))}
-        </div>
-      </div>
-    </section>
+                {char}
+              </Box>
+            ))}
+          </Typography>
+          <Typography
+            variant="h6"
+            component="p"
+            sx={{
+              color: "text.secondary",
+              fontWeight: 400,
+              maxWidth: 480,
+              mx: "auto",
+              lineHeight: 1.6,
+            }}
+          >
+            Every tool you need, right in your browser.{" "}
+            <Box component="br" sx={{ display: { xs: "none", sm: "block" } }} />
+            Simple. Secure. Searchable.
+          </Typography>
+        </Box>
+
+        {/* Google-style Search Pill */}
+        <Box
+          sx={{
+            maxWidth: 580,
+            mx: "auto",
+            mb: 3,
+            animation: "fadeIn 0.7s ease-out",
+          }}
+        >
+          <Paper
+            component={Link}
+            href="/search"
+            elevation={1}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              height: 56,
+              px: 3,
+              borderRadius: 100,
+              border: "1px solid",
+              borderColor: "divider",
+              textDecoration: "none",
+              cursor: "text",
+              transition: "box-shadow 0.15s",
+              boxShadow: "0 1px 3px rgba(0,0,0,0.08)",
+              "&:hover": { boxShadow: "0 2px 8px rgba(0,0,0,0.12)" },
+            }}
+          >
+            <SearchIcon sx={{ color: "text.secondary", mr: 2, flexShrink: 0 }} />
+            <InputBase
+              placeholder={`Search ${toolCount}+ tools…`}
+              inputProps={{ "aria-label": "search tools", tabIndex: -1 }}
+              sx={{ flex: 1, pointerEvents: "none", fontSize: 17, color: "text.secondary" }}
+            />
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+              <ImageSearchIcon
+                sx={{ color: "text.disabled", fontSize: 22, flexShrink: 0 }}
+                titleAccess="Search by Image"
+              />
+              <ArticleIcon
+                sx={{ color: "text.disabled", fontSize: 22, flexShrink: 0 }}
+                titleAccess="Search by Document"
+              />
+            </Box>
+          </Paper>
+        </Box>
+
+        {/* Quick Action Buttons */}
+        <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 1.5, mb: 6 }}>
+          <Button
+            variant="outlined"
+            component={Link}
+            href="/search"
+            sx={{
+              borderRadius: 2,
+              px: 3,
+              borderColor: "divider",
+              color: "text.primary",
+              bgcolor: "background.default",
+              fontWeight: 400,
+              "&:hover": { bgcolor: "action.hover", borderColor: "divider" },
+            }}
+          >
+            30tools Search
+          </Button>
+          <Button
+            variant="outlined"
+            component={Link}
+            href="/search?lucky=true"
+            sx={{
+              borderRadius: 2,
+              px: 3,
+              borderColor: "divider",
+              color: "text.primary",
+              bgcolor: "background.default",
+              fontWeight: 400,
+              "&:hover": { bgcolor: "action.hover", borderColor: "divider" },
+            }}
+          >
+            {"I'm Feeling Lucky"}
+          </Button>
+        </Box>
+
+        {/* Quick Search Tag Chips */}
+        {quickSearchTags.length > 0 && (
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: 1,
+              opacity: 0.85,
+            }}
+          >
+            <Typography variant="body2" sx={{ color: "text.secondary", mr: 0.5 }}>
+              Try:
+            </Typography>
+            {quickSearchTags.slice(0, 5).map((tag) => (
+              <Chip
+                key={tag}
+                label={tag}
+                component={Link}
+                href={`/search?q=${encodeURIComponent(tag)}`}
+                variant="outlined"
+                size="small"
+                clickable
+                sx={{
+                  borderRadius: 100,
+                  fontSize: 13,
+                  fontWeight: 400,
+                  borderColor: "divider",
+                  "&:hover": { bgcolor: "action.hover", color: "primary.main" },
+                }}
+              />
+            ))}
+          </Box>
+        )}
+      </Container>
+    </Box>
   );
 }
