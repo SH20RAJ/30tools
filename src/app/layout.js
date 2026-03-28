@@ -1,5 +1,4 @@
 import { Open_Sans } from "next/font/google";
-import Image from "next/image";
 import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
@@ -37,68 +36,147 @@ const siteVerification = {
 		: {}),
 };
 
-export async function generateMetadata() {
-	const lang = "en";
-	
-	const languages = {
-		en: "/?lang=en",
-		es: "/?lang=es",
-		fr: "/?lang=fr",
-		de: "/?lang=de",
-		it: "/?lang=it",
-		pt: "/?lang=pt",
-		hi: "/?lang=hi",
-		ja: "/?lang=ja",
-		zh: "/?lang=zh",
-		ko: "/?lang=ko",
-		ru: "/?lang=ru",
-		ar: "/?lang=ar",
-		tr: "/?lang=tr",
-		vi: "/?lang=vi",
-		id: "/?lang=id",
-		th: "/?lang=th",
-		nl: "/?lang=nl",
-		pl: "/?lang=pl",
-		"x-default": "/",
-	};
+export const metadata = {
+	title: {
+		default: `30tools - ${TOOL_COUNT}+ Free Online Tools | Image, PDF, Video, SEO & Developer Tools`,
+		template: "%s | 30tools - Free Online Toolkit",
+	},
+	description: DEFAULT_DESCRIPTION,
+	keywords: [
+		// Primary keywords
+		"free online tools",
+		"image compressor",
+		"pdf tools",
+		"video converter",
+		"seo tools",
+		"developer tools",
 
-	return {
-		title: {
-			default: `30tools - ${TOOL_COUNT}+ Free Online Tools | Image, PDF, Video, SEO & Developer Tools`,
-			template: "%s | 30tools - Free Online Toolkit",
+		// Long-tail keywords
+		"compress images online free",
+		"pdf merger free online",
+		"video to gif converter",
+		"password generator secure",
+		"qr code generator free",
+		"color picker tool",
+		"base64 encoder decoder",
+		"text case converter",
+		"url shortener free",
+		"json formatter online",
+
+		// Semantic keywords
+		"online utilities",
+		"web tools",
+		"digital toolkit",
+		"file converter",
+		"image editor online",
+		"document tools",
+		"media converter",
+		"text tools",
+		"productivity tools",
+		"browser tools",
+
+		// Technical keywords
+		"no registration tools",
+		"privacy focused tools",
+		"client side processing",
+		"secure online tools",
+		"professional web tools",
+		"instant online tools",
+	].join(", "),
+	authors: [{ name: "30tools Team", url: "https://30tools.com" }],
+	creator: "30tools",
+	publisher: "30tools",
+	category: "Technology",
+	classification: "Online Tools and Utilities",
+	applicationName: "30tools",
+	referrer: "origin-when-cross-origin",
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
+	metadataBase: new URL(SITE_URL),
+	alternates: {
+		canonical: "/",
+		types: {
+			"application/rss+xml": [{ url: "/feed.xml", title: "30tools RSS Feed" }],
 		},
+	},
+	openGraph: {
+		type: "website",
+		locale: "en_US",
+		url: SITE_URL,
+		siteName: "30tools",
+		title: `30tools - ${TOOL_COUNT}+ Free Online Tools | Professional Toolkit for Everyone`,
 		description: DEFAULT_DESCRIPTION,
-		keywords: [
-			"free online tools", "image compressor", "pdf tools", "video converter", "seo tools", "developer tools"
-		].join(", "),
-		authors: [{ name: "30tools Team", url: "https://30tools.com" }],
-		creator: "30tools",
-		publisher: "30tools",
-		category: "Technology",
-		metadataBase: new URL(SITE_URL),
-		alternates: {
-			canonical: `/?lang=${lang}`,
-			languages,
+		images: [
+			{
+				url: "/og-image.jpg",
+				width: 1200,
+				height: 630,
+				alt: `30tools - Professional Free Online Toolkit with ${TOOL_COUNT}+ Tools`,
+				type: "image/jpeg",
+			},
+			{
+				url: "/og-image.png",
+				width: 1200,
+				height: 630,
+				alt: "30tools - Free Online Tools for Professionals",
+				type: "image/png",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		site: "@30tools",
+		creator: "@30tools",
+		title: `30tools - ${TOOL_COUNT}+ Free Online Tools | Professional Toolkit`,
+		description: DEFAULT_DESCRIPTION,
+		images: ["/og-image.jpg"],
+	},
+	robots: {
+		index: true,
+		follow: true,
+		nocache: false,
+		googleBot: {
+			index: true,
+			follow: true,
+			noimageindex: false,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
 		},
-		openGraph: {
-			type: "website",
-			locale: lang === 'en' ? "en_US" : lang,
-			url: SITE_URL,
-			siteName: "30tools",
-			images: [{ url: "/og-image.jpg", width: 1200, height: 630 }],
-		},
-		twitter: {
-			card: "summary_large_image",
-			site: "@30tools",
-		},
-		robots: { index: true, follow: true },
-		verification: siteVerification,
-		manifest: "/manifest.json",
-		icons: {
-			icon: [{ url: "/icons/icon-32x32.png", sizes: "32x32", type: "image/png" }],
-		},
-	};
-}
+	},
+	...(Object.keys(siteVerification).length > 0
+		? { verification: siteVerification }
+		: {}),
+	manifest: "/manifest.json",
+	icons: {
+		icon: [
+			{ url: "/icons/icon-32x32.png", sizes: "32x32", type: "image/png" },
+			{ url: "/icons/icon-192x192.png", sizes: "192x192", type: "image/png" },
+		],
+		apple: [
+			{
+				url: "/icons/apple-touch-icon.png",
+				sizes: "180x180",
+				type: "image/png",
+			},
+		],
+		other: [
+			{
+				rel: "mask-icon",
+				url: "/icons/safari-pinned-tab.svg",
+				color: "#000000",
+			},
+		],
+	},
+	appleWebApp: {
+		capable: true,
+		statusBarStyle: "default",
+		title: "30tools",
+	},
+};
 
 export default async function RootLayout({ children }) {
 	return (
@@ -175,9 +253,12 @@ export default async function RootLayout({ children }) {
 					href="/feed.xml"
 				/>
 
-				<Script
+				<script
+					async
+					src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
+				/>
+				<script
 					id="google-analytics"
-					strategy="afterInteractive"
 					dangerouslySetInnerHTML={{
 						__html: `
               window.dataLayer = window.dataLayer || [];
@@ -207,21 +288,24 @@ export default async function RootLayout({ children }) {
 					}}
 				/>
 			</head>
-			<body className={`${openSans.variable} font-sans antialiased`}>
+			<body className={`${openSans.variable} ds-page font-sans antialiased`}>
 				<ThemeProvider>
 					<StructuredData includeFAQ={false} />
 					{children}
 					{/* <PWAInstallPrompt /> */}
 					<Toaster />
-					<div className="sr-only">
-						<Image
+					<a
+						className="sr-only"
+						href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
+					>
+						<img
 							src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
 							alt="Visitor badge"
-							width={200}
-							height={20}
-							unoptimized
+							width="200"
+							height="20"
+							loading="lazy"
 						/>
-					</div>
+					</a>
 				</ThemeProvider>
 
 				<script
