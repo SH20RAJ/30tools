@@ -1,5 +1,5 @@
+import { Open_Sans } from "next/font/google";
 import Image from "next/image";
-// ... (imports remain)
 import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
