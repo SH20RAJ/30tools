@@ -41,73 +41,71 @@ function dedupeEntries(entries: MetadataRoute.Sitemap) {
 	return Array.from(uniqueEntries.values());
 }
 
+const LANGUAGES = [
+	"en",
+	"es",
+	"fr",
+	"de",
+	"it",
+	"pt",
+	"hi",
+	"ja",
+	"zh",
+	"ko",
+	"ru",
+	"ar",
+	"tr",
+	"vi",
+	"id",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
 	const allTools = getAllTools();
 	const allCategories = getAllCategories();
 	const currentDate = new Date();
 
 	// Static pages with optimized priorities
-	const staticPages: MetadataRoute.Sitemap = [
-		{
-			url: BASE_URL,
-			lastModified: currentDate,
-			changeFrequency: "daily",
-			priority: 1.0,
-		},
-		{
-			url: `${BASE_URL}/search`,
-			lastModified: currentDate,
-			changeFrequency: "daily",
-			priority: 0.9,
-		},
-		{
-			url: `${BASE_URL}/about`,
-			lastModified: new Date("2025-06-15"),
-			changeFrequency: "monthly",
-			priority: 0.8,
-		},
-		{
-			url: `${BASE_URL}/contact`,
-			lastModified: new Date("2025-06-15"),
-			changeFrequency: "monthly",
-			priority: 0.7,
-		},
-		{
-			url: `${BASE_URL}/privacy`,
-			lastModified: new Date("2025-06-15"),
-			changeFrequency: "monthly",
-			priority: 0.6,
-		},
-		{
-			url: `${BASE_URL}/terms`,
-			lastModified: new Date("2025-06-15"),
-			changeFrequency: "monthly",
-			priority: 0.6,
-		},
-		{
-			url: `${BASE_URL}/blog`,
-			lastModified: currentDate,
-			changeFrequency: "daily",
-			priority: 0.8,
-		},
+	const staticPagesSlugs = [
+		"",
+		"/search",
+		"/about",
+		"/contact",
+		"/privacy",
+		"/terms",
+		"/blog",
 	];
+
+	const staticPages: MetadataRoute.Sitemap = staticPagesSlugs.flatMap((slug) => {
+		const baseEntry = {
+			url: `${BASE_URL}${slug}`,
+			lastModified: currentDate,
+			changeFrequency: "daily" as const,
+			priority: slug === "" ? 1.0 : 0.8,
+		};
+
+		return LANGUAGES.map((lang) => ({
+			...baseEntry,
+			url: `${BASE_URL}${slug}${slug.includes("?") ? "&" : "?"}lang=${lang}`,
+			priority: Math.max(0.1, (baseEntry.priority || 0) - 0.1),
+		}));
+	});
 
 	// Tool pages with intelligent priority calculation
 	const toolPages: MetadataRoute.Sitemap = allTools.flatMap((tool: any) => {
 		// Category-based priority adjustments
 		const categoryPriorities: Record<string, number> = {
-			image: 0.95, // High demand category
-			pdf: 0.92, // Very popular
-			video: 0.9, // High value
-			text: 0.9, // Commonly used
-			seo: 0.9, // Professional tools
-			developer: 0.9, // Technical audience
-			utilities: 0.9, // General tools
-			audio: 0.9, // Specialized
-			converter: 0.9, // High utility
-			design: 0.9, // Creative tools
-			legal: 0.9, // Niche category
-			calculators: 0.9, // Niche category
+			image: 0.95,
+			pdf: 0.92,
+			video: 0.9,
+			text: 0.9,
+			seo: 0.9,
+			developer: 0.9,
+			utilities: 0.9,
+			audio: 0.9,
+			converter: 0.9,
+			design: 0.9,
+			legal: 0.9,
+			calculators: 0.9,
 		};
 
 		const priority = Math.min(
@@ -115,7 +113,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			(categoryPriorities[tool.category] || 0.8) + (tool.popular === true ? 0.03 : 0),
 		);
 
-		// Determine change frequency based on tool type
 		let changeFrequency:
 			| "always"
 			| "hourly"
@@ -125,7 +122,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			| "yearly"
 			| "never" = "weekly";
 		if (["image", "pdf", "video"].includes(tool.category)) {
-			changeFrequency = "daily"; // High-traffic tools
+			changeFrequency = "daily";
 		} else if (["text", "seo", "developer"].includes(tool.category)) {
 			changeFrequency = "weekly";
 		} else {
@@ -136,58 +133,56 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			tool.external ? tool.route : `${BASE_URL}${tool.route}`,
 		);
 
-		if (!mainEntryUrl) {
-			return [];
-		}
+		if (!mainEntryUrl) return [];
 
-		const mainEntry = {
-			url: mainEntryUrl,
+		const entries = LANGUAGES.map((lang) => ({
+			url: `${mainEntryUrl}${mainEntryUrl.includes("?") ? "&" : "?"}lang=${lang}`,
 			lastModified: currentDate,
 			changeFrequency,
-			priority: Math.round(priority * 100) / 100, // Round to 2 decimal places
-		};
+			priority: Math.round(priority * 100) / 100,
+		}));
 
 		// Add entries for extra slugs if they exist
-		const extraEntries = (tool.extraSlugs || [])
-			.map((slug: string) => {
-				const url = normalizeSiteUrl(`${BASE_URL}/${slug}`);
-				if (!url) return null;
+		const extraEntries = (tool.extraSlugs || []).flatMap((slug: string) => {
+			const url = normalizeSiteUrl(`${BASE_URL}/${slug}`);
+			if (!url) return [];
 
-				return {
-					url,
-					lastModified: currentDate,
-					changeFrequency,
-					priority: Math.round((priority - 0.05) * 100) / 100,
-				};
-			})
-			.filter(Boolean) as MetadataRoute.Sitemap;
+			return LANGUAGES.map((lang) => ({
+				url: `${url}${url.includes("?") ? "&" : "?"}lang=${lang}`,
+				lastModified: currentDate,
+				changeFrequency,
+				priority: Math.round((priority - 0.05) * 100) / 100,
+			}));
+		});
 
-		return [mainEntry, ...extraEntries];
+		return [...entries, ...extraEntries];
 	});
 
 	// Category landing pages
-	const categoryPages: MetadataRoute.Sitemap = allCategories.map(
-		(category: any) => ({
-			url: `${BASE_URL}/${category.slug}`, // Assuming categories are at root /slug or /tools/slug?
-			// Based on previous sitemaps, some were /tools/[category], but tools.json says slug: "generators", and route logic might map /generators.
-			// The old sitemap.js produced `${BASE_URL}/${category}-tools` (hardcoded list)
-			// The enhanced-sitemap route.js used `${BASE_URL}/${category.slug}`.
-			// Let's assume `${BASE_URL}/${category.slug}` is the correct canonical path for now based on improved logic in enhanced-sitemap.
-			lastModified: currentDate,
-			changeFrequency: "weekly",
-			priority: 0.85,
-		}),
+	const categoryPages: MetadataRoute.Sitemap = allCategories.flatMap(
+		(category: any) => {
+			const baseUrl = `${BASE_URL}/${category.slug}`;
+			return LANGUAGES.map((lang) => ({
+				url: `${baseUrl}?lang=${lang}`,
+				lastModified: currentDate,
+				changeFrequency: "weekly" as const,
+				priority: 0.85,
+			}));
+		},
 	);
 
 	// Blog posts
-	const blogPages: MetadataRoute.Sitemap = blogs.map((blog) => ({
-		url: `${BASE_URL}/blog/${blog.slug}`,
-		lastModified: new Date(blog.date || currentDate),
-		changeFrequency: "monthly",
-		priority: 0.7,
-	}));
+	const blogPages: MetadataRoute.Sitemap = blogs.flatMap((blog) => {
+		const baseUrl = `${BASE_URL}/blog/${blog.slug}`;
+		return LANGUAGES.map((lang) => ({
+			url: `${baseUrl}?lang=${lang}`,
+			lastModified: new Date(blog.date || currentDate),
+			changeFrequency: "monthly" as const,
+			priority: 0.7,
+		}));
+	});
 
-	// Downloader pages - high priority revenue generators
+	// Downloader pages
 	const downloaderSlugs = [
 		"akillitv-video-downloader",
 		"bandcamp-video-downloader",
@@ -248,18 +243,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	];
 
 	const downloaderPages: MetadataRoute.Sitemap = [
-		{
-			url: `${BASE_URL}/all-downloaders`,
-			lastModified: currentDate,
-			changeFrequency: "daily",
-			priority: 0.95,
-		},
-		...downloaderSlugs.map((slug) => ({
-			url: `${BASE_URL}/${slug}`,
+		...LANGUAGES.map((lang) => ({
+			url: `${BASE_URL}/all-downloaders?lang=${lang}`,
 			lastModified: currentDate,
 			changeFrequency: "daily" as const,
 			priority: 0.95,
 		})),
+		...downloaderSlugs.flatMap((slug) =>
+			LANGUAGES.map((lang) => ({
+				url: `${BASE_URL}/${slug}?lang=${lang}`,
+				lastModified: currentDate,
+				changeFrequency: "daily" as const,
+				priority: 0.95,
+			})),
+		),
 	];
 
 	return dedupeEntries([
@@ -270,3 +267,4 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		...blogPages,
 	]).sort((a, b) => (b.priority || 0) - (a.priority || 0));
 }
+
