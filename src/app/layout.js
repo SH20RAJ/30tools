@@ -2,6 +2,7 @@ import { Open_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
+import ToolSeoStructuredData from "@/components/shared/ToolSeoStructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import MuiThemeRegistry from "@/components/shared/MuiThemeRegistry";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
@@ -292,9 +293,10 @@ export default async function RootLayout({ children }) {
 			</head>
 			<body className={`${openSans.variable} ds-page font-sans antialiased`}>
 				<AppRouterCacheProvider options={{ enableCssLayer: true }}>
-					<ThemeProvider>
+					<ThemeProvider defaultTheme="light" enableSystem={false} forcedTheme="light">
 						<MuiThemeRegistry>
 							<StructuredData includeFAQ={false} />
+							<ToolSeoStructuredData />
 							{children}
 							{/* <PWAInstallPrompt /> */}
 							<Toaster />

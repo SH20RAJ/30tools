@@ -35,8 +35,23 @@ export async function generateMetadata({ searchParams }) {
   return {
     title: { absolute: title },
     description,
+    keywords: [
+      "free online tools",
+      "image pdf video tools",
+      "seo tools",
+      "developer utilities",
+      "privacy-first online toolkit",
+    ].join(", "),
     alternates: {
       canonical: `https://30tools.com${lang !== "en" ? `?lang=${lang}` : ""}`,
+    },
+    openGraph: {
+      title,
+      description,
+      url: `https://30tools.com${lang !== "en" ? `?lang=${lang}` : ""}`,
+      siteName: "30tools",
+      type: "website",
+      images: [{ url: "https://30tools.com/og-image.jpg", width: 1200, height: 630, alt: title }],
     },
   };
 }
@@ -235,6 +250,7 @@ export default async function LandingPage({ searchParams }) {
 
         <Box
           component="section"
+          aria-label="Tool categories"
           sx={{
             pb: { xs: 10, md: 14 },
             borderTop: "1px solid",
