@@ -91,12 +91,12 @@ async function buildToolDescription(
 	return truncateText(`${ensureSentence(baseDesc)} ${suffix}`);
 }
 
-export async function generateToolMetadata(
+export function generateToolMetadata(
 	toolId: string,
 	category: ToolCategory,
 	lang: string = "en",
 	overrides: MetadataOverrides = {},
-): Promise<Metadata> {
+): Metadata {
 	const categoryData = toolsData.categories[category];
 	const tool = categoryData?.tools.find((t: Tool) => t.id === toolId);
 
@@ -107,8 +107,8 @@ export async function generateToolMetadata(
 		};
 	}
 
-	const title = await buildToolTitle(tool, category, lang, overrides.title);
-	const description = await buildToolDescription(tool, category, lang, overrides.description);
+	const title = overrides.title || `${tool.name} | ${CATEGORY_TITLE_SUFFIX[category] ?? "Free Online Tool"} | ${SITE_NAME}`;
+	const description = truncateText(ensureSentence(overrides.description || tool.description));
 	const url = `${SITE_URL}${tool.route}${lang !== 'en' ? `?lang=${lang}` : ''}`;
 	const image = resolveImageUrl(overrides.image);
 
@@ -155,4 +155,70 @@ export async function generateToolMetadata(
 export function getToolData(toolId: string, category: ToolCategory) {
 	const categoryData = toolsData.categories[category];
 	return categoryData?.tools.find((t: Tool) => t.id === toolId);
+}
+
+export function generateCategoryMetadata(
+	category: string,
+	overrides: MetadataOverrides = {},
+): Metadata {
+	const categoryData = (toolsData.categories as any)[category];
+	const title = overrides.title || `${categoryData?.name || category} Tools | 30Tools`;
+	const description = overrides.description || categoryData?.description || `Free online ${category} tools.`;
+
+	return {
+		title,
+		description,
+		keywords: overrides.keywords,
+		alternates: {
+			canonical: `${SITE_URL}/${categoryData?.slug || category}`,
+		},
+		openGraph: {
+			title,
+			description,
+			url: `${SITE_URL}/${categoryData?.slug || category}`,
+			siteName: SITE_NAME,
+			type: "website",
+		},
+		twitter: {
+			card: "summary_large_image",
+			title,
+			description,
+		},
+		robots: overrides.robots || { index: true, follow: true },
+	};
+}
+
+export function generateToolJsonLd(
+	toolId: string,
+	category: string,
+	overrides: any = {},
+) {
+	const categoryData = (toolsData.categories as any)[category];
+	const tool = categoryData?.tools.find((t: any) => t.id === toolId);
+
+	if (!tool) return {};
+
+	const toolUrl = `${SITE_URL}${tool.route}`;
+
+	return {
+		"@context": "https://schema.org",
+		"@type": "WebApplication",
+		name: overrides.name || tool.name,
+		description: overrides.description || tool.description,
+		applicationCategory: overrides.applicationCategory || category,
+		operatingSystem: "Web Browser",
+		url: toolUrl,
+		isAccessibleForFree: true,
+		offers: {
+			"@type": "Offer",
+			price: "0",
+			priceCurrency: "USD",
+		},
+		provider: {
+			"@type": "Organization",
+			name: "30tools",
+			url: SITE_URL,
+		},
+		...overrides,
+	};
 }

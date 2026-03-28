@@ -1,6 +1,4 @@
-export default async function robots({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+export default function robots() {
 	const baseUrl = "https://30tools.com";
 
 	return {
