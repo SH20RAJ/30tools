@@ -1,0 +1,50 @@
+[
+  {
+    "source": "/text-to-image",
+    "destination": "/ai-image-generator"
+  },
+  {
+    "source": "/ai-art-generator",
+    "destination": "/ai-image-generator"
+  },
+  {
+    "source": "/prompt-to-image",
+    "destination": "/ai-image-generator"
+  },
+  {
+    "source": "/compress-jpg",
+    "destination": "/image-compressor"
+  },
+  {
+    "source": "/compress-png",
+    "destination": "/image-compressor"
+  },
+  {
+    "source": "/optimize-images",
+    "destination": "/image-compressor"
+  },
+  {
+    "source": "/shrink-pdf",
+    "destination": "/pdf-compressor"
+  },
+  {
+    "source": "/reduce-pdf-size",
+    "destination": "/pdf-compressor"
+  },
+  {
+    "source": "/pdf-size-reducer",
+    "destination": "/pdf-compressor"
+  },
+  {
+    "source": "/download-yt-video",
+    "destination": "/youtube-downloader"
+  },
+  {
+    "source": "/yt-to-mp4",
+    "destination": "/youtube-downloader"
+  },
+  {
+    "source": "/youtube-to-mp4-converter",
+    "destination": "/youtube-downloader"
+  }
+]

@@ -79,27 +79,27 @@
 
 @layer base {
   :root {
-		/* Restore Premium Light Palette */
-    --background: 36 33% 98%;
+		/* Google Product Light Palette (Material 3) */
+    --background: 0 0% 100%;
     --foreground: 220 20% 12%;
     --card: 0 0% 100%;
     --card-foreground: 220 20% 12%;
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 12%;
-    --primary: 212 86% 45%;
+    --primary: 212 86% 45%; /* #1a73e8 */
     --primary-foreground: 0 0% 100%;
-    --secondary: 210 26% 95%;
+    --secondary: 210 26% 96%; /* #f1f3f4 */
     --secondary-foreground: 220 18% 18%;
-    --muted: 210 22% 95%;
+    --muted: 210 22% 96%;
     --muted-foreground: 215 11% 42%;
-    --accent: 42 68% 94%;
+    --accent: 210 26% 96%;
     --accent-foreground: 220 20% 14%;
     --destructive: 0 72% 52%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 16% 88%;
-    --input: 220 16% 88%;
+    --border: 220 16% 94%; /* #e8eaed */
+    --input: 220 16% 94%;
     --ring: 212 86% 45%;
-    --radius: 0.8rem;
+    --radius: 0.75rem; /* 12px for M3 */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -108,26 +108,26 @@
   }
 
   .dark {
-		/* Restore Premium Dark Palette */
-    --background: 220 22% 8%;
+		/* Google Product Dark Palette (Material 3) */
+    --background: 220 10% 8%; /* #202124 variant */
     --foreground: 210 28% 96%;
-    --card: 220 20% 11%;
+    --card: 220 15% 12%;
     --card-foreground: 210 28% 96%;
-    --popover: 220 22% 10%;
+    --popover: 220 15% 12%;
     --popover-foreground: 210 28% 96%;
-    --primary: 206 92% 70%;
+    --primary: 212 86% 65%;
     --primary-foreground: 220 30% 12%;
-    --secondary: 220 18% 16%;
+    --secondary: 220 15% 16%;
     --secondary-foreground: 210 28% 96%;
-    --muted: 220 18% 15%;
+    --muted: 220 15% 14%;
     --muted-foreground: 214 14% 70%;
-    --accent: 220 20% 18%;
+    --accent: 220 15% 18%;
     --accent-foreground: 210 28% 96%;
     --destructive: 0 70% 56%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 17% 24%;
-    --input: 220 17% 24%;
-    --ring: 206 92% 70%;
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 212 86% 65%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -141,11 +141,8 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground min-h-screen;
-		background: 
-			radial-gradient(circle at 100% 0%, hsl(212 90% 54% / 0.08), transparent 30%),
-      radial-gradient(circle at 0% 100%, hsl(42 85% 62% / 0.1), transparent 34%),
-      hsl(var(--background));
+    @apply bg-background text-foreground min-h-screen font-sans;
+		background-color: hsl(var(--background));
   }
 }
 

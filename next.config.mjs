@@ -133,12 +133,20 @@ const nextConfig = {
         destination: "/youtube-downloader",
         permanent: true,
       },
-      // {
-      //   source: "/ads.txt",
-      //   destination: "https://srv.adstxtmanager.com/19390/30tools.com",
-      //   permanent: true,
-      // },
     ];
+  },
+
+  // Rewrites for programmatic SEO (keyword variants)
+  async rewrites() {
+    try {
+      const { default: toolRewrites } = await import("./src/constants/tool-rewrites.json", {
+        assert: { type: "json" },
+      });
+      return toolRewrites || [];
+    } catch (e) {
+      console.error("Failed to load tool rewrites:", e);
+      return [];
+    }
   },
 
   // Turbopack configuration (empty to silence Next.js 16 warning)

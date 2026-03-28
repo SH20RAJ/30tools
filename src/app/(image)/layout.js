@@ -1,5 +1,5 @@
-import ImageToolsFooter from "@/components/footers/ImageToolsFooter";
-import ImageToolsNavbar from "@/components/navigation/ImageToolsNavbar";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
 import {
 	OPEN_GRAPH_DEFAULTS,
 	TWITTER_DEFAULTS,
@@ -90,16 +90,16 @@ const jsonLdSchemas = {
 
 export default function ImageToolsLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background">
+		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<ImageToolsNavbar />
+			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<ImageToolsFooter />
+			<GoogleFooter />
 		</div>
 	);
 }
