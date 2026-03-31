@@ -3,15 +3,16 @@ import TextToSpeechTool from "@/components/tools/audio/TextToSpeechTool";
 import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
 export const metadata = generateToolMetadata("text-to-speech", "audio", {
-	title: "Text to Speech | Free Online TTS Converter | 30Tools",
+	title: "AI Voice Generator for YouTube & Shorts | Free Text to Speech Online",
 	description:
-		"Convert text to natural-sounding speech with multiple voices, language support, and adjustable playback settings.",
+		"Create realistic voiceovers for YouTube and Shorts with our free AI voice generator. Make text to speech sound human with professional online TTS tools.",
+	keywords: "ai voice generator for youtube, text to speech for shorts, realistic tts online free, make text to speech sound human, professional voiceover generator, text to speech with no watermark",
 });
 
 const textToSpeechJsonLd = generateToolJsonLd("text-to-speech", "audio", {
-	name: "Text to Speech Converter",
+	name: "Free AI Voice Generator & TTS Converter",
 	description:
-		"Convert text to natural-sounding speech with multiple voices, language support, and adjustable playback settings.",
+		"Professional-grade text to speech tool to generate human-like voiceovers for YouTube, TikTok, and social media videos.",
 	applicationCategory: "MultimediaApplication",
 	featureList: [
 		"Multiple voice options",
@@ -33,7 +34,7 @@ const textToSpeechJsonLd = generateToolJsonLd("text-to-speech", "audio", {
 
 export default async function TextToSpeechPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	// Dynamic context for future expansion
 	return (
 		<>
 			<TextToSpeechTool />
@@ -41,7 +42,7 @@ export default async function TextToSpeechPage({ searchParams }) {
 			{/* Content Section */}
 			<section className="container mx-auto px-4 py-16 max-w-4xl">
 				<h2 className="text-3xl font-bold text-center mb-12">
-					Professional Text to Speech Solutions
+					Realistic AI Voice Generator for Professional Content
 				</h2>
 
 				<div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -110,16 +111,17 @@ export default async function TextToSpeechPage({ searchParams }) {
 				<div className="space-y-4 max-w-2xl mx-auto">
 					<details className="bg-card p-4 rounded-xl border cursor-pointer">
 						<summary className="font-semibold">
-							Is this text to speech tool really free?
+							How to use AI voice generator for YouTube videos?
 						</summary>
 						<p className="mt-2 text-muted-foreground text-sm">
-							Yes, our TTS tool is completely free to use with no hidden costs
-							or limits.
+							Simply paste your script into our tool, select a natural-sounding
+							voice, and preview. It's the perfect way to create professional 
+							voiceovers for YouTube and Shorts without hiring a voice actor.
 						</p>
 					</details>
 					<details className="bg-card p-4 rounded-xl border cursor-pointer">
 						<summary className="font-semibold">
-							Can I use the audio for YouTube videos?
+							Is this text to speech tool really free for commercial use?
 						</summary>
 						<p className="mt-2 text-muted-foreground text-sm">
 							Absolutely! The generated audio is royalty-free and safe for

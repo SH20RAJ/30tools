@@ -173,12 +173,12 @@ export default function TextToSpeechTool() {
 			<div className="text-center space-y-4">
 				<div className="flex items-center justify-center gap-2 mb-4">
 					<Volume2 className="h-8 w-8 text-primary" />
-					<h1 className="text-3xl font-bold">Text to Speech</h1>
+					<h1 className="text-3xl font-bold">AI Voice Generator & Text to Speech</h1>
 				</div>
 				<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-					Convert text to natural-sounding speech using your browser's built-in
-					voice synthesis. Perfect for accessibility, learning, and content
-					creation.
+					Create realistic voiceovers for YouTube, TikTok, and Instagram Shorts. 
+					Our free AI voice generator converts text to natural-sounding speech 
+					instantly with zero watermark.
 				</p>
 			</div>
 
@@ -345,10 +345,10 @@ export default function TextToSpeechTool() {
 					</CardHeader>
 					<CardContent className="prose max-w-none">
 						<p>
-							Text-to-Speech (TTS) technology converts written text into spoken
-							words using synthetic speech. Our browser-based TTS tool uses the
-							Web Speech API to provide natural-sounding voice synthesis without
-							requiring any downloads or installations.
+							Our free <strong>AI Voice Generator</strong> is designed for content creators who need 
+							realistic text-to-speech for YouTube videos, podcast narration, and e-learning. 
+							Using advanced browser synthesis, you can make text to speech sound human 
+							without expensive subscriptions.
 						</p>
 
 						<h3>Key Features:</h3>
@@ -377,16 +377,13 @@ export default function TextToSpeechTool() {
 							</li>
 						</ul>
 
-						<h3>Common Use Cases:</h3>
+						<h3>Popular Use Cases:</h3>
 						<ul>
-							<li>Accessibility for visually impaired users</li>
-							<li>Language learning and pronunciation practice</li>
-							<li>Content creation for podcasts and videos</li>
-							<li>Proofreading by listening to text</li>
-							<li>Creating audio versions of written content</li>
-							<li>Assistive technology for reading difficulties</li>
-							<li>Voice-over generation for presentations</li>
-							<li>Audio feedback for applications</li>
+							<li><strong>YouTube Voiceovers:</strong> Create narration for your videos effortlessly.</li>
+							<li><strong>TikTok & Shorts:</strong> Generate engaging audio for short-form content.</li>
+							<li><strong>E-Learning:</strong> Convert educational text into clear spoken audio.</li>
+							<li><strong>Accessibility:</strong> Better reading experience for visually impaired users.</li>
+							<li><strong>Podcast Intro:</strong> Quick and professional voice clips for your show.</li>
 						</ul>
 
 						<h3>Voice Settings Explained:</h3>

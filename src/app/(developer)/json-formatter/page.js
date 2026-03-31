@@ -12,19 +12,18 @@ import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 
 export const metadata = {
-	title: "JSON Formatter (2026) - Validator & Beautifier | 30Tools",
+	title: "Format Large JSON Files Online | Pretty Print JSON Free & Secure",
 	description:
-		"Format, validate & minify JSON online (Updated 2026). Free JSON beautifier with error detection. Secure client-side processing for developers.",
+		"Format large JSON files online instantly. Professional JSON validator with syntax highlighting & error detection. Pretty print JSON for free with secure client-side processing.",
 	keywords: [
-		"json formatter 2026",
-		"json validator online",
-		"json beautifier free",
-		"json minifier tool",
-		"format json code",
-		"json syntax checker",
-		"json pretty print",
-		"updated 2026",
-		"json parser online",
+		"format large json files online",
+		"pretty print json free",
+		"json validator with syntax highlighting",
+		"beautify json code safely",
+		"json formatter for developers",
+		"online json prettifier",
+		"json syntax checker online",
+		"format messy json data",
 	].join(", "),
 	openGraph: {
 		title: "JSON Formatter (2026) - Free Validator & Beautifier",
@@ -167,15 +166,13 @@ export default async function JSONFormatterPage({ searchParams }) {
 			<main className="container mx-auto px-4 py-8">
 				{/* Hero Section */}
 				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Free JSON Formatter & Validator Online - Format, Minify, Validate
-						JSON
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Professional JSON formatter, validator & minifier for developers.
-						Format messy JSON, validate syntax errors, minify for production.
-						Tree view, error detection, copy formatted code. Completely free
-						with client-side processing.
+					<h2 className="text-4xl font-bold mb-4">
+						Format Large JSON Files & Pretty Print
+					</h2>
+					<p className="text-xl text-muted-foreground mb-6">
+						The fastest way to format large JSON files online. Our free tool provides 
+						pretty print JSON with syntax highlighting and instant error detection. 
+						Secure and 100% private.
 					</p>
 
 					<QuickActions
