@@ -36,7 +36,6 @@ const nextConfig = {
       "@mui/icons-material",
     ],
     webVitalsAttribution: ["CLS", "LCP", "FCP", "FID", "TTFB"],
-    esmExternals: "loose",
   },
 
   // Bundle dependencies for pages router

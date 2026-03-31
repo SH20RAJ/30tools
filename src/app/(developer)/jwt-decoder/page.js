@@ -8,20 +8,17 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata = {
-	title: "JWT Decoder (2026) - Decode JSON Web Tokens Online | 30Tools",
+	title: "Decode JWT Without Secret Online | JWT Token Decoder & Debugger",
 	description:
-		"Best Free JWT Decoder 2026. Decode details from JSON Web Tokens (JWT) instantly + Header & Payload inspection. No secret key required. 100% Client-side.",
+		"Decode JWT without secret online instantly. Best free JWT token decoder for 2026. Inspect Header, Payload, and Signature structure securely in your browser.",
 	keywords: [
-		"jwt decoder",
-		"json web token decoder",
-		"decode jwt online",
-		"jwt parser",
-		"jwt inspector",
-		"debug jwt",
-		"jwt viewer",
-		"token debugger",
-		"developer tools",
-		"secure token decoder",
+		"decode jwt without secret online",
+		"jwt token decoder",
+		"jwt debugger online",
+		"check jwt payload free",
+		"json web token inspector",
+		"jwt viewer for developers",
+		"token debugger tool",
 	],
 	authors: [{ name: "30Tools Team" }],
 	creator: "30Tools",
@@ -139,8 +136,7 @@ const jsonLdSchemas = {
 };
 
 export default async function JWTDecoderPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _params = await searchParams;
 	const features = [
 		{
 			icon: <Eye className="w-5 h-5 text-amber-500" />,
@@ -196,11 +192,11 @@ export default async function JWTDecoderPage({ searchParams }) {
 			<div className="container mx-auto px-4 py-16 md:py-24 max-w-5xl">
 				<div className="text-center space-y-4 mb-12">
 					<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-						JWT <span className="text-primary">Decoder</span>
+						Decode <span className="text-primary">JWT</span> Without Secret
 					</h1>
 					<p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-						Decode, debug, and inspect JSON Web Tokens instantly. The secure way
-						to check token claims without a backend.
+						The fastest JWT token decoder and debugger. Inspect your JSON Web 
+						Tokens instantly and securely without sending data to a server.
 					</p>
 				</div>
 

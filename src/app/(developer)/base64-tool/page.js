@@ -13,10 +13,19 @@ import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 import { generateToolMetadata } from "@/lib/seo-helper";
 
 export const metadata = generateToolMetadata("base64-tool", "developer", {
-	title: "Base64 Encoder & Decoder | Free Developer Tool | 30Tools",
+	title: "Convert Base64 to PDF Online Free | Base64 Encoder & Decoder",
 	description:
-		"Encode and decode Base64 strings, files, and images online with secure browser-based processing.",
+		"Convert Base64 to PDF online for free. Support for Base64 to Image, Text to Base64, and file encoding. Secure browser-based processing for developers & designers.",
 	image: "/og-images/base64-tool.jpg",
+	keywords: [
+		"convert base64 to pdf online free",
+		"base64 to image converter online",
+		"base64 encoder decoder",
+		"text to base64 tool",
+		"decode base64 to file",
+		"online base64 transformer",
+		"base64 string to pdf",
+	],
 	robots: {
 		index: true,
 		follow: true,
@@ -31,8 +40,7 @@ export const metadata = generateToolMetadata("base64-tool", "developer", {
 });
 
 export default async function Base64Page({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _params = await searchParams;
 	// Tool-specific data
 	const toolData = {
 		id: "base64-tool",
@@ -123,7 +131,7 @@ export default async function Base64Page({ searchParams }) {
 				{/* Hero Section */}
 				<div className="text-center mb-12">
 					<h1 className="text-4xl font-bold mb-4">
-						Free Base64 Encoder & Decoder Online - Text, Files, Images
+						Convert Base64 to PDF Online Free & Base64 Encoder/Decoder
 					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
 						Encode text, files & images to Base64 or decode Base64 strings.
