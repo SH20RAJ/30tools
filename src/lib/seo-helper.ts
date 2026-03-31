@@ -14,6 +14,8 @@ interface Tool {
 	route: string;
 	category: string;
 	faqs?: { question: string; answer: string }[];
+	extraSlugs?: string[];
+	external?: boolean;
 }
 
 interface MetadataOverrides {
@@ -57,18 +59,26 @@ function resolveImageUrl(image?: string) {
 	return `${SITE_URL}${image.startsWith("/") ? image : `/${image}`}`;
 }
 
+function slugToTitle(slug: string) {
+	return slug
+		.split("-")
+		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+		.join(" ");
+}
+
 /**
  * Generates SEO metadata for a specific tool.
- * This function is synchronous to be compatible with static metadata exports.
+ * Includes support for extra slugs (search variants).
  */
 export function generateToolMetadata(
 	toolId: string,
 	category: ToolCategory,
 	lang: string = "en",
 	overrides: MetadataOverrides = {},
+	currentSlug?: string,
 ): Metadata {
 	const categoryData = toolsData.categories[category];
-	const tool = categoryData?.tools.find((t: Tool) => t.id === toolId);
+	const tool = categoryData?.tools.find((t: any) => t.id === toolId) as Tool | undefined;
 
 	if (!tool) {
 		return {
@@ -77,9 +87,22 @@ export function generateToolMetadata(
 		};
 	}
 
-	const title = overrides.title || `${tool.name} | ${CATEGORY_TITLE_SUFFIX[category] ?? "Free Online Tool"} | ${SITE_NAME}`;
+	// Use extra slug as base for title if available
+	let baseTitle = tool.name;
+	if (currentSlug && tool.extraSlugs?.includes(currentSlug)) {
+		baseTitle = slugToTitle(currentSlug);
+	}
+
+	const title = overrides.title || `${baseTitle} | ${CATEGORY_TITLE_SUFFIX[category] ?? "Free Online Tool"} | ${SITE_NAME}`;
 	const description = truncateText(ensureSentence(overrides.description || tool.description));
-	const url = `${SITE_URL}${tool.route}${lang !== 'en' ? `?lang=${lang}` : ''}`;
+	
+	// Handle canonical for extra slugs
+	const baseUrl = tool.external ? tool.route : `${SITE_URL}${tool.route}`;
+	const currentUrl = currentSlug && tool.extraSlugs?.includes(currentSlug) 
+		? `${SITE_URL}/${currentSlug}`
+		: baseUrl;
+	
+	const url = `${currentUrl}${lang !== 'en' ? `?lang=${lang}` : ''}`;
 	const image = resolveImageUrl(overrides.image);
 
 	return {

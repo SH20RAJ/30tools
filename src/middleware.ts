@@ -27,13 +27,18 @@ categories.forEach((category) => {
 });
 
 try {
-	// @ts-expect-error
 	Object.values(toolsData.categories).forEach((category: any) => {
 		if (category.tools) {
 			category.tools.forEach((tool: any) => {
 				// Add main tool route
 				if (tool.route) {
 					validRoutes.add(tool.route);
+				}
+				// Add extra slugs for SEO
+				if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
+					tool.extraSlugs.forEach((slug: string) => {
+						validRoutes.add(`/${slug}`);
+					});
 				}
 			});
 		}

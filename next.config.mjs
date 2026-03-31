@@ -139,12 +139,43 @@ const nextConfig = {
   // Rewrites for programmatic SEO (keyword variants)
   async rewrites() {
     try {
-      const { default: toolRewrites } = await import("./src/constants/tool-rewrites.json", {
-        with: { type: "json" },
+      const fs = (await import("node:fs")).default;
+      const path = (await import("node:path")).default;
+      const toolsPath = path.resolve("./src/constants/tools.json");
+      const toolsData = JSON.parse(fs.readFileSync(toolsPath, "utf-8"));
+      
+      const toolRewrites = [];
+      
+      // Iterate through all tools and their extra slugs
+      Object.values(toolsData.categories).forEach((category) => {
+        if (category.tools) {
+          category.tools.forEach((tool) => {
+            if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
+              tool.extraSlugs.forEach((slug) => {
+                toolRewrites.push({
+                  source: `/${slug}`,
+                  destination: `${tool.route}?variant=${slug}`,
+                });
+              });
+            }
+          });
+        }
       });
-      return toolRewrites || [];
+
+      // Also include existing manual rewrites from tool-rewrites.json if it exists
+      try {
+        const manualRewritesPath = path.resolve("./src/constants/tool-rewrites.json");
+        if (fs.existsSync(manualRewritesPath)) {
+          const manualRewrites = JSON.parse(fs.readFileSync(manualRewritesPath, "utf-8"));
+          toolRewrites.push(...manualRewrites);
+        }
+      } catch (e) {
+        console.error("Failed to load manual rewrites:", e);
+      }
+
+      return toolRewrites;
     } catch (e) {
-      console.error("Failed to load tool rewrites:", e);
+      console.error("Failed to generate automated tool rewrites:", e);
       return [];
     }
   },
