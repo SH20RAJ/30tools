@@ -18,7 +18,9 @@ export const metadata: Metadata = {
 	],
 };
 
-export default async function ToolPage({ searchParams }) {
+export default async function LineSorterPage({
+	searchParams,
+}: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
 	const _params = await searchParams;
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-12">
