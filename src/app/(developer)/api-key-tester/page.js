@@ -12,10 +12,19 @@ import { API_KEY_TOOLS } from "@/data/api-key-tools";
 import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
 export const metadata = generateToolMetadata("api-key-tester", "developer", {
-	title: "API Key Tester | Test OpenAI, Stripe & More Keys Online | 30Tools",
+	title: "Test API Key Online Safely | OpenAI, Stripe & 30+ Services",
 	description:
-		"Securely test API keys for OpenAI, Stripe, SendGrid, and 30+ other services directly in your browser or terminal.",
+		"Securely test API keys online for free. Support for OpenAI, Stripe, Anthropic, and 30+ other services. 100% client-side validation to ensure your keys stay private.",
 	image: "/og-images/api-key-tester.jpg",
+	keywords: [
+		"test api key online safely",
+		"openai api key tester free",
+		"validate api keys online",
+		"check if api key is valid",
+		"stripe api key tester online",
+		"anthropic api key validator",
+		"secure api tester tool",
+	],
 });
 
 const jsonLd = generateToolJsonLd("api-key-tester", "developer", {
@@ -56,11 +65,11 @@ export default function ApiKeyTesterHub() {
 							Developer Utilities
 						</Badge>
 						<h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-							API Key Tester
+							Test API Keys Online Safely
 						</h1>
 						<p className="text-xl text-muted-foreground">
-							Instantly verify your API keys for over 30+ popular services.
-							Secure, client-side testing for supported APIs.
+							Instantly verify your API keys for OpenAI, Stripe, and 30+ popular
+							services. Secure, 100% client-side validation for developers.
 						</p>
 					</div>
 
