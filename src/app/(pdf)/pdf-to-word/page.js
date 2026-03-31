@@ -14,59 +14,32 @@ import {
 import PDFToWordTool from "@/components/tools/pdf/PDFToWordTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
-export const metadata = {
-	title: "PDF to Word Converter Online (2026) - PDF to DOCX Free | 30Tools",
-	description:
-		"Best free online pdf to word converter. transform PDF files to editable DOCX documents with high accuracy. convert pdf to word free without registration.",
-	keywords:
-		"pdf to word 2026, pdf to doc, pdf to docx, convert pdf to word, pdf converter, free pdf to word, online pdf converter, editable word document, best pdf to word, pdf to ms word, convert scanned pdf to word, pdf text extractor, change pdf to word doc, pdf to word ocr free, convert large pdf to word, pdf to editable text",
-	alternates: {
-		canonical: "https://30tools.com/pdf-to-word",
-	},
-	openGraph: {
-		title: "PDF to Word Converter - Convert PDF to DOCX Free",
-		description:
-			"Convert PDF files to editable Word documents online for free. Extract text, images, and layout accurately. Secure, fast, and no installation required.",
-		url: "https://30tools.com/pdf-to-word",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/pdf-to-word.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free PDF to Word Converter",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "PDF to Word Converter - Convert PDF to DOCX Free",
-		description:
-			"Convert PDF files to editable Word documents online for free. Extract text, images, and layout accurately. Secure, fast, and no installation required.",
-		images: ["/og-images/pdf-to-word.jpg"],
-		creator: "@30tools",
-	},
-	category: "PDF Tools",
-};
+import { generateToolMetadata, getToolData } from "@/lib/seo-helper";
+
+export async function generateMetadata({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
+	const variant = params.variant;
+	return generateToolMetadata("pdf-to-word", "pdf", lang, {}, variant);
+}
 
 export default async function PDFToWordPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
-	// Tool-specific data
-	const toolData = {
-		id: "pdf-to-word",
-		name: "PDF to Word",
-		description: "Convert PDF documents to editable Word format",
-		category: "pdf",
-		route: "/pdf-to-word",
-	};
+	const variant = params.variant;
+	const toolData = getToolData("pdf-to-word", "pdf");
+
+	if (!toolData) return <div>Tool not found</div>;
+
+	// Dynamic Title based on variant
+	const displayTitle = variant 
+		? variant.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+		: "PDF to Word";
 
 	// Breadcrumb navigation
 	const breadcrumbs = [
 		{ name: "PDF Tools", url: "/pdf-tools" },
-		{ name: "PDF to Word", url: "/pdf-to-word" },
+		{ name: displayTitle, url: variant ? `/${variant}` : "/pdf-to-word" },
 	];
 
 	// Tool features
@@ -143,7 +116,7 @@ export default async function PDFToWordPage({ searchParams }) {
 				{/* Hero Section */}
 				<div className="text-center mb-12">
 					<h1 className="text-4xl font-bold mb-4">
-						Free PDF to Word Converter
+						Free {displayTitle} Converter
 					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
 						Convert your PDF files to editable Word documents (DOCX) instantly.
@@ -152,8 +125,8 @@ export default async function PDFToWordPage({ searchParams }) {
 					</p>
 
 					<QuickActions
-						toolName="PDF to Word"
-						toolUrl="https://30tools.com/pdf-to-word"
+						toolName={displayTitle}
+						toolUrl={variant ? `https://30tools.com/${variant}` : "https://30tools.com/pdf-to-word"}
 						showBookmark={true}
 						showShare={true}
 					/>

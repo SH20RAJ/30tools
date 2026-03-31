@@ -13,18 +13,25 @@ import {
 import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
 import { generateToolMetadata, getToolData } from "@/lib/seo-helper";
 
-export async function generateMetadata({ searchParams }) {
+export async function generateMetadata({ searchParams }: { searchParams: Promise<{ lang?: string; variant?: string }> }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
-	return generateToolMetadata("image-compressor", "image", lang);
+	const variant = params.variant;
+	return generateToolMetadata("image-compressor", "image", lang, {}, variant);
 }
 
-export default async function ImageCompressorPage({ searchParams }) {
+export default async function ImageCompressorPage({ searchParams }: { searchParams: Promise<{ lang?: string; variant?: string }> }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
+	const variant = params.variant;
 	const toolData = getToolData("image-compressor", "image");
 
 	if (!toolData) return <div>Tool not found</div>;
+
+	// Dynamic Title based on variant
+	const displayTitle = variant 
+		? variant.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+		: "Image Compressor";
 
 	const features = [
 		"Bulk Image Compressor (Pack processing)",
@@ -62,11 +69,10 @@ export default async function ImageCompressorPage({ searchParams }) {
 
 			<div className="min-h-screen bg-background">
 				<div className="container mx-auto px-4 pt-6">
-					{/* @ts-ignore */}
 					<BreadcrumbsEnhanced
 						customBreadcrumbs={[
 							{ name: "Image Tools", url: "/image-tools" },
-							{ name: "Image Compressor", url: "/image-compressor" },
+							{ name: displayTitle, url: variant ? `/${variant}` : "/image-compressor" },
 						]}
 					/>
 				</div>
@@ -75,18 +81,18 @@ export default async function ImageCompressorPage({ searchParams }) {
 					{/* Hero Section */}
 					<div className="text-center mb-12">
 						<h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground leading-tight">
-							Free Online <span className="text-primary">Image Compressor</span>
+							Free Online <span className="text-primary">{displayTitle}</span>
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
 							Welcome to the best <strong>image compressor free online</strong>{" "}
-							utility. Our <strong>image compression tool</strong>
+							utility. Our <strong>{displayTitle} tool</strong>
 							allows you to <strong>compress images online</strong> up to 90%
 							while maintaining high clarity.
 						</p>
 
 						<QuickActions
-							toolName="Image Compressor"
-							toolUrl="https://30tools.com/image-compressor"
+							toolName={displayTitle}
+							toolUrl={variant ? `https://30tools.com/${variant}` : "https://30tools.com/image-compressor"}
 							showBookmark={true}
 							showShare={true}
 						/>

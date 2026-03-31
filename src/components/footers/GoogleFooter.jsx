@@ -2,12 +2,14 @@
 
 import React from "react";
 import Link from "next/link";
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import MuiLink from "@mui/material/Link";
-import Divider from "@mui/material/Divider";
+import {
+  Box,
+  Container,
+  Grid2 as Grid,
+  Typography,
+  Link as MuiLink,
+  Divider
+} from "@mui/material";
 import { GoogleLogo } from "@/components/shared/GoogleLogo";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";

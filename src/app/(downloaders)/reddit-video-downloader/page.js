@@ -1,59 +1,14 @@
 import Link from "next/link";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title:
-		"Reddit Video Downloader - Save Reddit Videos with Sound Free | 30tools",
-	description:
-		"Download Reddit videos with audio/sound for free. Save any Reddit post video as MP4 with sound included. No login required. Works on Android, iPhone, and PC.",
-	keywords: [
-		"reddit video downloader",
-		"download reddit video with sound",
-		"reddit video saver",
-		"save reddit video",
-		"reddit to mp4 with audio",
-		"reddit video download free",
-		"how to download reddit videos with sound",
-		"reddit gif downloader",
-		"reddit video grabber",
-	].join(", "),
-	openGraph: {
-		title: "Reddit Video Downloader - Save Videos with Sound Free",
-		description:
-			"⚡ Download Reddit videos with audio/sound as MP4. Free, no login required.",
-		url: "https://30tools.com/reddit-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Reddit Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Reddit Video Downloader (2026) - With Sound",
-		description:
-			"⚡ Save Reddit videos with audio as MP4 for free. No login needed.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/reddit-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+import { generateToolMetadata, getToolData } from "@/lib/seo-helper";
+
+export async function generateMetadata({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
+	const variant = params.variant;
+	return generateToolMetadata("reddit-video-downloader", "downloaders", lang, {}, variant);
+}
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">
@@ -116,6 +71,15 @@ const jsonLdSchemas = {
 export default async function RedditVideoDownloaderPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
+	const variant = params.variant;
+	const toolData = getToolData("reddit-video-downloader", "downloaders");
+
+	if (!toolData) return <div>Tool not found</div>;
+
+	// Dynamic Title based on variant
+	const displayTitle = variant 
+		? variant.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+		: "Reddit Video Downloader";
 	return (
 		<>
 			<script
@@ -152,14 +116,14 @@ export default async function RedditVideoDownloaderPage({ searchParams }) {
 							</li>
 							<li>/</li>
 							<li className="text-foreground font-medium">
-								Reddit Video Downloader
+								{displayTitle}
 							</li>
 						</ol>
 					</nav>
 					<AdUnit />
 					<div className="text-center mb-12">
 						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							Reddit Video Downloader
+							{displayTitle}
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
 							Download Reddit videos with sound as MP4 for free. Reddit
