@@ -5,7 +5,7 @@ import Link from "next/link";
 import {
   Box,
   Container,
-  Grid2 as Grid,
+  Grid,
   Typography,
   Link as MuiLink,
   Divider

@@ -2,19 +2,18 @@ import Link from "next/link";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-	title: "YouTube Video Downloader - Fast, Free MP4 & MP3 Converter | 30tools",
+	title: "YouTube Video Downloader 4K Free | Download YouTube Videos Online",
 	description:
-		"Download YouTube videos quickly in multiple formats and resolutions (MP4, MP3). Free, fast, secure YouTube downloader with no signup required.",
+		"Download YouTube videos 4K for free online. Best YouTube to MP4 converter in 2026. Fast, secure, and supports YouTube Shorts and high-quality MP3 extraction.",
 	keywords: [
-		"youtube video downloader",
-		"download youtube videos",
-		"free youtube downloader",
-		"online youtube video downloader",
-		"youtube to mp4 converter",
-		"youtube to mp3 converter",
-		"watch youtube videos offline",
-		"download youtube shorts",
-	].join(", "),
+		"youtube video downloader 4k free",
+		"download youtube videos online",
+		"youtube to mp4 4k",
+		"best free youtube downloader",
+		"youtube shorts downloader online",
+		"youtube mp3 converter high quality",
+		"free online video downloader for youtube",
+	],
 	openGraph: {
 		title: "YouTube Video Downloader (2026) - Free MP4 Converter",
 		description:
@@ -117,8 +116,7 @@ const jsonLdSchemas = {
 };
 
 export default async function YouTubeVideoDownloaderPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _params = await searchParams;
 	return (
 		<>
 			<script
@@ -164,7 +162,7 @@ export default async function YouTubeVideoDownloaderPage({ searchParams }) {
 
 					<div className="text-center mb-12">
 						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							YouTube Video Downloader
+							YouTube Video Downloader 4K
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
 							Download YouTube videos and Shorts quickly in HD MP4 or convert to

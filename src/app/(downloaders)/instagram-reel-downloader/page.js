@@ -2,28 +2,18 @@ import Link from "next/link";
 import InstagramReelDownloader from "@/components/tools/downloaders/InstagramReelDownloader";
 
 export const metadata = {
-	title:
-		"Instagram Reel Downloader - Save IG Reels without Watermark | 30tools",
+	title: "Instagram Reel Downloader Free Online | Save IG Reels with Audio",
 	description:
-		"Free Instagram Reel downloader. Download Instagram Reels in HD 1080p with original audio. No watermark, no login needed. Works on iPhone and Android.",
+		"Download Instagram Reels free online. High-quality Instagram reels downloader with audio. No watermark, no login required. Save IG reels to your device easily.",
 	keywords: [
-		"instagram reel downloader",
-		"insta reel download",
-		"download instagram reels",
-		"ig reels downloader",
-		"save instagram reels",
-		"reels video downloader",
-		"instagram reels saver",
-		"download reels with audio",
-		"insta reels download",
-		"instagram reel download without watermark",
-		"reels downloader",
-		"ig reels saver",
-		"save reels to mp4",
-		"download reels high quality",
-		"reels to gallery",
-		"instagram video saver free",
-	].join(", "),
+		"instagram reel downloader free online",
+		"download instagram reels with audio",
+		"high quality instagram reels downloader",
+		"ig reels saver free",
+		"insta reel download without watermark",
+		"save instagram reels to gallery",
+		"online reels video downloader 2026",
+	],
 	openGraph: {
 		title: "Instagram Reel Downloader - Save Reels with Audio, No Watermark",
 		description:
@@ -121,8 +111,7 @@ const jsonLdSchemas = {
 };
 
 export default async function InstagramReelDownloaderPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _params = await searchParams;
 	return (
 		<>
 			<script
@@ -168,7 +157,7 @@ export default async function InstagramReelDownloaderPage({ searchParams }) {
 
 					<div className="text-center mb-12">
 						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							Instagram Reel Downloader (2026)
+							Instagram Reel Downloader Free
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
 							Professional <strong>insta reel download</strong> tool to save

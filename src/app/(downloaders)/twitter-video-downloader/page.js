@@ -2,25 +2,18 @@ import Link from "next/link";
 import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader";
 
 export const metadata = {
-	title: "Twitter Video Downloader (2026) - Save X Videos & GIFs | 30Tools",
+	title: "Twitter Video Downloader Free Online | X Video Downloader HD",
 	description:
-		"Download videos and GIFs from Twitter (X) in HD MP4 for free. Fast online Twitter video downloader, no app installation or registration needed.",
+		"Download Twitter (X) videos free online in HD quality. Best X video downloader 2026. Save Twitter videos and GIFs to MP4 instantly. No login or app needed.",
 	keywords: [
-		"twitter video downloader",
-		"download twitter videos",
-		"x video downloader",
-		"save twitter videos",
-		"twitter to mp4",
-		"twitter video saver",
-		"how to download twitter videos",
-		"free twitter video downloader",
-		"online twitter video downloader",
-		"download twitter gifs",
-		"twitter video downloader app",
-		"high-quality twitter video download",
+		"twitter video downloader free online",
+		"x video downloader hd",
 		"download twitter videos without watermark",
-		"best twitter video downloader",
-	].join(", "),
+		"save x videos online",
+		"twitter gif downloader mp4",
+		"free online twitter video saver",
+		"best x.com downloader 2026",
+	],
 	openGraph: {
 		title: "Twitter Video Downloader - Save X Videos & GIFs Free",
 		description:
@@ -123,8 +116,7 @@ const AdUnit = () => (
 );
 
 export default async function TwitterVideoDownloaderPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _params = await searchParams;
 	return (
 		<>
 			<script
@@ -170,7 +162,7 @@ export default async function TwitterVideoDownloaderPage({ searchParams }) {
 
 					<div className="text-center mb-12">
 						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							Twitter Video Downloader
+							Twitter Video Downloader Free
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
 							Download videos and GIFs from Twitter (X) directly to your PC or

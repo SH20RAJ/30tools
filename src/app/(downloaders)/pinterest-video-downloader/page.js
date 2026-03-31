@@ -2,20 +2,18 @@ import Link from "next/link";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-	title: "Pinterest Video Downloader - Save Pinterest Videos Free | 30tools",
+	title: "Pinterest Video Downloader Free Online | Save Pinterest Videos",
 	description:
-		"Download Pinterest videos and video pins as MP4 for free. Save any Pinterest video to your device without watermarks. No login required. Works on all devices.",
+		"Download Pinterest videos free online. Best tool to save Pinterest videos and video pins to your gallery instantly. No watermark, no login required. MP4 format.",
 	keywords: [
-		"pinterest video downloader",
-		"download pinterest video",
-		"save pinterest video",
-		"pinterest to mp4",
-		"pinterest video saver",
-		"pinterest video download free",
-		"how to download pinterest videos",
-		"pinterest pin video download",
-		"pinterest video grabber",
-	].join(", "),
+		"pinterest video downloader free online",
+		"save pinterest videos to gallery",
+		"download pinterest video pin free",
+		"best pinterest video saver",
+		"pinterest to mp4 and 4k",
+		"online pinterest video grabber",
+		"save diy and craft videos from pinterest",
+	],
 	openGraph: {
 		title: "Pinterest Video Downloader - Save Video Pins Free",
 		description:
@@ -113,8 +111,7 @@ const jsonLdSchemas = {
 };
 
 export default async function PinterestVideoDownloaderPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _params = await searchParams;
 	return (
 		<>
 			<script
@@ -158,7 +155,7 @@ export default async function PinterestVideoDownloaderPage({ searchParams }) {
 					<AdUnit />
 					<div className="text-center mb-12">
 						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							Pinterest Video Downloader
+							Pinterest Video Downloader Free
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
 							Save Pinterest video pins as MP4 files for free. Download DIY

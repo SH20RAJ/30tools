@@ -19,45 +19,18 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata = {
-	title: "How to Download TikTok Videos Without Watermark (2026) | 30Tools",
+	title: "TikTok Downloader Without Watermark Free | Download TikTok Videos",
 	description:
-		"Professional tiktok downloader tool. Free online processing with high-quality results. No registration required, instant results.",
+		"Download TikTok videos without watermark for free online. Safely save TikToks to MP4 in HD quality using the best TikTok downloader of 2026. No login required.",
 	keywords: [
-		"tiktok downloader 2026",
-		"snaptik",
-		"ssstik",
-		"ssstiktok",
-		"download tiktok without watermark",
-		"musicallydown",
-		"savetik",
-		"tiktokio",
-		"tikmate",
-		"save tt",
-		"tiktok no watermark",
-		"tiktok video downloader hd",
-		"download tiktoks",
-		"tiktok download videos",
-		"tt downloader",
-		"تحميل فيديوهات تيك توك",
-		"بتنزيل فيديو تيك توك",
-		"baixar videos tiktok",
-		"descargar de tiktok",
-		"télécharger vidéo tiktok",
-		"tiktok视频下载",
-		"tiktok converter",
-		"douyin downloader",
-		"tik tok download video without watermark",
-		"tiktok link download",
+		"tiktok downloader without watermark free",
+		"download tiktok videos online",
+		"tiktok mp4 downloader free",
 		"save tiktok video no watermark",
-		"tiktok downloader sss",
-		"snaptik tiktok downloader",
-		"tiktok video downloader free",
-		"tiktok sound downloader",
-		"tiktok mp3 download",
-		"extract audio from tiktok",
-		"tiktok slideshow downloader",
-		"save tiktok photos",
-	].join(", "),
+		"snaptik alternative free",
+		"ssstik tiktok downloader online",
+		"best tiktok saver 2026",
+	],
 	openGraph: {
 		title: "TikTok Downloader (2026) - No Watermark HD Video Download",
 		description:
@@ -201,8 +174,7 @@ const jsonLdSchemas = {
 };
 
 export default async function TikTokDownloaderPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _params = await searchParams;
 	const features = [
 		{
 			icon: <CheckCircle2 className="w-6 h-6 text-cyan-500" />,
@@ -293,7 +265,7 @@ export default async function TikTokDownloaderPage({ searchParams }) {
 						<h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-[1.1]">
 							TikTok{" "}
 							<span className="bg-gradient-to-r from-cyan-500 to-pink-500 bg-clip-text text-transparent">
-								Video Downloader
+								Downloader No Watermark
 							</span>
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
