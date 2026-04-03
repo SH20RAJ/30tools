@@ -54,10 +54,7 @@ export function TrustSection() {
               display: "flex",
               alignItems: "center",
               gap: 1,
-              transition: "transform 0.2s",
-              "&:hover": {
-                transform: "scale(1.05)",
-              },
+              transition: "none",
             }}
           >
             {logo.name}

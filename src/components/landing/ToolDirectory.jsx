@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -53,7 +55,7 @@ export function ToolDirectory({ categories = [], lang = "en" }) {
               fontSize: { xs: "1.75rem", md: "2.25rem" },
               textDecoration: "underline",
               textUnderlineOffset: "8px",
-              textDecorationColor: (theme) => theme.palette.primary.main,
+              textDecorationColor: "primary.main",
             }}
           >
             {category.name}
@@ -75,10 +77,8 @@ export function ToolDirectory({ categories = [], lang = "en" }) {
                     bgcolor: "background.paper",
                     textDecoration: "none",
                     boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
-                    transition: "all 0.2s",
+                    transition: "none",
                     "&:hover": {
-                      transform: "translateY(-4px)",
-                      boxShadow: "0 8px 24px rgba(0,0,0,0.08)",
                       borderColor: "primary.main",
                       "& .tool-icon": { color: "primary.main" },
                     },
@@ -94,7 +94,7 @@ export function ToolDirectory({ categories = [], lang = "en" }) {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      transition: "color 0.2s",
+                      transition: "none",
                     }}
                   >
                     {(() => {
