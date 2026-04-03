@@ -1,6 +1,5 @@
 import MarkdownToText from "@/components/tools/text/MarkdownToText";
 import { getAllTools } from "@/constants/tools-utils";
-import toolsData from "@/constants/tools.json";
 import Link from "next/link";
 import { ChevronRight, TypeIcon } from "lucide-react";
 
