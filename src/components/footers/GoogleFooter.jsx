@@ -8,40 +8,15 @@ import {
   Grid,
   Typography,
   Link as MuiLink,
-  Divider
+  Divider,
+  Stack
 } from "@mui/material";
 import { GoogleLogo } from "@/components/shared/GoogleLogo";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import TwitterIcon from "@mui/icons-material/Twitter";
+import FacebookIcon from "@mui/icons-material/Facebook";
 import { LanguageSelector } from "@/components/shared/LanguageSelector";
-
-const footerColumns = [
-  {
-    heading: "Product",
-    links: [
-      { label: "Browse Tools", href: "/search" },
-      { label: "Blog", href: "/blog" },
-      { label: "About Us", href: "/about" },
-      { label: "Changelog", href: "/changelog" },
-    ],
-  },
-  {
-    heading: "Support",
-    links: [
-      { label: "Contact", href: "/contact" },
-      { label: "FAQ", href: "/faq" },
-      { label: "Donate", href: "https://payments.cashfree.com/forms/30tools", external: true, highlight: true },
-    ],
-  },
-  {
-    heading: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "/privacy" },
-      { label: "Terms of Service", href: "/terms" },
-      { label: "Cookie Policy", href: "/cookie-policy" },
-    ],
-  },
-];
+import toolsData from "@/constants/tools.json";
 
 const languages = [
   { name: "English", code: "en" },
@@ -62,6 +37,31 @@ const languages = [
 ];
 
 export function GoogleFooter() {
+  const categories = Object.entries(toolsData.categories || {}).map(([key, cat]) => ({
+    label: cat.name,
+    href: `/search?category=${key}`
+  }));
+
+  const youtubeTools = [
+    { label: "YouTube Tag Extractor", href: "/youtube-tag-extractor" },
+    { label: "YouTube Tag Generator", href: "/youtube-tag-generator" },
+    { label: "YouTube Hashtag Extractor", href: "/youtube-hashtag-extractor" },
+    { label: "YouTube Hashtag Generator", href: "/youtube-hashtag-generator" },
+    { label: "YouTube Title Extractor", href: "/youtube-title-extractor" },
+    { label: "YouTube Title Generator", href: "/youtube-title-generator" },
+    { label: "YouTube Video Statistics", href: "/youtube-video-statistics" },
+  ];
+
+  const trendingTools = [
+    { label: "Text Repeater", href: "/text-repeater" },
+    { label: "Decimal to HEX", href: "/decimal-to-hex" },
+    { label: "Domain to IP", href: "/domain-to-ip" },
+    { label: "Word to Number", href: "/word-to-number" },
+    { label: "JSON Validator", href: "/json-validator" },
+    { label: "Credit Card Validator", href: "/credit-card-validator" },
+    { label: "Case Converter", href: "/case-converter" },
+  ];
+
   return (
     <Box
       component="footer"
@@ -70,101 +70,101 @@ export function GoogleFooter() {
         borderTop: "1px solid",
         borderColor: "divider",
         mt: "auto",
-        background: "linear-gradient(180deg, rgba(255,255,255,0.96) 0%, rgba(255,255,255,1) 100%)",
+        pt: 10,
+        pb: 6,
       }}
     >
-      <Container maxWidth="xl" sx={{ py: 6 }}>
-        <Grid container spacing={4}>
-          {/* Brand col */}
-          <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-            <Box sx={{ mb: 2 }}>
+      <Container maxWidth="xl">
+        <Grid container spacing={6}>
+          {/* Left Column: Brand & Company */}
+          <Grid item xs={12} md={3}>
+            <Box sx={{ mb: 3 }}>
               <GoogleLogo />
             </Box>
-            <Typography variant="body2" sx={{ color: "text.secondary", maxWidth: 300, lineHeight: 1.7, mb: 2 }}>
-              Free, fast, and private online tools for everyone.
-              Built with privacy by design — your data stays in your browser.
+            <Typography variant="body2" sx={{ color: "text.secondary", mb: 4, lineHeight: 1.8 }}>
+              30Tools provides over 200 free tools for SEO experts, developers, students, and writers.
+              Everything you need to process files, optimize content, and streamline your workflow — all for free.
             </Typography>
-            <Box sx={{ display: "flex", gap: 1 }}>
-              <MuiLink
-                href="https://github.com/sh20raj/30tools"
-                target="_blank"
-                rel="noreferrer"
-                sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}
-                aria-label="GitHub"
-              >
-                <GitHubIcon fontSize="small" />
-              </MuiLink>
-              <MuiLink
-                href="https://twitter.com/sh20raj"
-                target="_blank"
-                rel="noreferrer"
-                sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}
-                aria-label="Twitter"
-              >
-                <TwitterIcon fontSize="small" />
-              </MuiLink>
-            </Box>
+            
+            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 2 }}>Company</Typography>
+            <Stack spacing={1} component="ul" sx={{ listStyle: "none", p: 0, m: 0, mb: 4 }}>
+              <li><MuiLink component={Link} href="/about" variant="body2" color="text.secondary" underline="hover">About Us</MuiLink></li>
+              <li><MuiLink component={Link} href="/privacy" variant="body2" color="text.secondary" underline="hover">Privacy Policy</MuiLink></li>
+              <li><MuiLink component={Link} href="/terms" variant="body2" color="text.secondary" underline="hover">Terms of Service</MuiLink></li>
+              <li><MuiLink component={Link} href="/contact" variant="body2" color="text.secondary" underline="hover">Contact Us</MuiLink></li>
+            </Stack>
+
+            <Stack direction="row" spacing={2}>
+              <MuiLink href="#" sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}><FacebookIcon /></MuiLink>
+              <MuiLink href="#" sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}><TwitterIcon /></MuiLink>
+              <MuiLink href="#" sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}><GitHubIcon /></MuiLink>
+            </Stack>
           </Grid>
 
-          {/* Link columns */}
-          {footerColumns.map((col) => (
-            <Grid key={col.heading} size={{ xs: 6, sm: 4, lg: 2 }}>
-              <Typography
-                variant="overline"
-                sx={{ fontWeight: 700, color: "text.primary", display: "block", mb: 1.5 }}
-              >
-                {col.heading}
-              </Typography>
-              <Box component="ul" sx={{ listStyle: "none", p: 0, m: 0, display: "flex", flexDirection: "column", gap: 1 }}>
-                {col.links.map((link) => (
-                  <li key={link.href}>
-                    <MuiLink
-                      component={link.external ? "a" : Link}
-                      href={link.href}
-                      {...(link.external ? { target: "_blank", rel: "noreferrer" } : {})}
-                      underline="hover"
-                      variant="body2"
-                      sx={{
-                        color: link.highlight ? "primary.main" : "text.secondary",
-                        fontWeight: link.highlight ? 500 : 400,
-                        "&:hover": { color: "primary.main" },
-                      }}
-                    >
-                      {link.label}
-                    </MuiLink>
-                  </li>
-                ))}
-              </Box>
-            </Grid>
-          ))}
+          {/* Middle 1: Categories */}
+          <Grid item xs={12} sm={6} md={2.5}>
+            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 3 }}>Tools Category</Typography>
+            <Stack spacing={1.5} component="ul" sx={{ listStyle: "none", p: 0, m: 0 }}>
+              {categories.slice(0, 12).map((item) => (
+                <li key={item.label}>
+                  <MuiLink component={Link} href={item.href} variant="body2" color="text.secondary" underline="hover" sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box component="span" sx={{ mr: 1 }}>•</Box> {item.label}
+                  </MuiLink>
+                </li>
+              ))}
+            </Stack>
+
+            <Typography variant="subtitle2" sx={{ fontWeight: 700, mt: 5, mb: 3 }}>Blog</Typography>
+            <Stack spacing={1.5} component="ul" sx={{ listStyle: "none", p: 0, m: 0 }}>
+              <li><MuiLink component={Link} href="/blog" variant="body2" color="text.secondary" underline="hover" sx={{ display: 'flex', alignItems: 'center' }}><Box component="span" sx={{ mr: 1 }}>•</Box> Best Software</MuiLink></li>
+              <li><MuiLink component={Link} href="/blog/seo" variant="body2" color="text.secondary" underline="hover" sx={{ display: 'flex', alignItems: 'center' }}><Box component="span" sx={{ mr: 1 }}>•</Box> SEO</MuiLink></li>
+              <li><MuiLink component={Link} href="/blog/web" variant="body2" color="text.secondary" underline="hover" sx={{ display: 'flex', alignItems: 'center' }}><Box component="span" sx={{ mr: 1 }}>•</Box> Web</MuiLink></li>
+            </Stack>
+          </Grid>
+
+          {/* Middle 2: YouTube Tools */}
+          <Grid item xs={12} sm={6} md={3}>
+            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 3 }}>Our YouTube Tools</Typography>
+            <Stack spacing={1.5} component="ul" sx={{ listStyle: "none", p: 0, m: 0 }}>
+              {youtubeTools.map((item) => (
+                <li key={item.label}>
+                  <MuiLink component={Link} href={item.href} variant="body2" color="text.secondary" underline="hover" sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box component="span" sx={{ mr: 1 }}>•</Box> {item.label}
+                  </MuiLink>
+                </li>
+              ))}
+            </Stack>
+          </Grid>
+
+          {/* Right: Trending Tools */}
+          <Grid item xs={12} sm={6} md={3.5}>
+            <Typography variant="subtitle2" sx={{ fontWeight: 700, mb: 3 }}>Other Trending Tools</Typography>
+            <Stack spacing={1.5} component="ul" sx={{ listStyle: "none", p: 0, m: 0 }}>
+              {trendingTools.map((item) => (
+                <li key={item.label}>
+                  <MuiLink component={Link} href={item.href} variant="body2" color="text.secondary" underline="hover" sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Box component="span" sx={{ mr: 1 }}>•</Box> {item.label}
+                  </MuiLink>
+                </li>
+              ))}
+            </Stack>
+          </Grid>
         </Grid>
 
-        <Divider sx={{ my: 4 }} />
+        <Divider sx={{ my: 6 }} />
 
-        {/* Bottom bar */}
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: { xs: "column", md: "row" },
-            justifyContent: "space-between",
-            alignItems: { xs: "flex-start", md: "center" },
-            gap: 2,
-          }}
-        >
-          <Box sx={{ display: "flex", flexWrap: "wrap", gap: 3, alignItems: "center" }}>
-            <Typography variant="caption" sx={{ color: "text.secondary" }}>
-              © 2026 30tools.com
-            </Typography>
-            <MuiLink component={Link} href="/privacy" underline="hover" variant="caption" sx={{ color: "text.secondary" }}>
-              Privacy
-            </MuiLink>
-            <MuiLink component={Link} href="/terms" underline="hover" variant="caption" sx={{ color: "text.secondary" }}>
-              Terms
-            </MuiLink>
+        <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" }, justifyContent: "space-between", alignItems: "center", gap: 3 }}>
+          <Typography variant="caption" sx={{ color: "text.secondary" }}>
+            © 2026 30tools.com — All rights reserved.
+          </Typography>
+          
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+            <LanguageSelector languages={languages} />
+            <Stack direction="row" spacing={3}>
+              <MuiLink component={Link} href="/privacy" variant="caption" color="text.secondary" underline="hover">Privacy</MuiLink>
+              <MuiLink component={Link} href="/terms" variant="caption" color="text.secondary" underline="hover">Terms</MuiLink>
+            </Stack>
           </Box>
-
-          {/* Language Selector */}
-          <LanguageSelector languages={languages} />
         </Box>
       </Container>
     </Box>
