@@ -1,5 +1,6 @@
 "use client";
 
+import { HelpCircle, Info, Lightbulb } from "lucide-react";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import ToolLayout from "@/components/shared/ToolLayout";
@@ -23,7 +24,6 @@ export default function ToolPlaceholderPage({
 	const [toolData, setToolData] = useState<any>(null);
 
 	useEffect(() => {
-		// Fetch tool data client-side from tools.json
 		const tool = getToolById(toolId);
 		if (tool) {
 			setToolData(tool);
@@ -31,7 +31,66 @@ export default function ToolPlaceholderPage({
 	}, [toolId]);
 
 	const baseUrl = "https://30tools.com";
-	const toolUrl = `${baseUrl}${toolId !== "search" ? `/${toolId}` : "/search"}`;
+	const toolUrl = `${baseUrl}/${toolId}`;
+
+	// JSON-LD: WebApplication
+	const softwareAppJsonLd = {
+		"@context": "https://schema.org",
+		"@type": "WebApplication",
+		name: title,
+		description: description,
+		url: toolUrl,
+		applicationCategory: "UtilityApplication",
+		operatingSystem: "Any",
+		offers: {
+			"@type": "Offer",
+			price: "0",
+			priceCurrency: "USD",
+		},
+		author: {
+			"@type": "Organization",
+			name: "30tools",
+			url: baseUrl,
+		},
+	};
+
+	// JSON-LD: FAQ
+	const buildFaqJsonLd = () => {
+		if (!toolData?.faqs?.length) return null;
+		return {
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			mainEntity: toolData.faqs.map((faq: any) => ({
+				"@type": "Question",
+				name: faq.question,
+				acceptedAnswer: {
+					"@type": "Answer",
+					text: faq.answer,
+				},
+			})),
+		};
+	};
+
+	// JSON-LD: HowTo
+	const buildHowToJsonLd = () => {
+		if (!toolData?.howTo?.steps?.length) return null;
+		return {
+			"@context": "https://schema.org",
+			"@type": "HowTo",
+			name: toolData.howTo.name || `How to use ${title}`,
+			description: description,
+			step: toolData.howTo.steps.map((step: any, index: number) => ({
+				"@type": "HowToStep",
+				name: step.name,
+				text: step.text,
+				url: step.url || `${toolUrl}#step${index + 1}`,
+				position: index + 1,
+			})),
+		};
+	};
+
+	const faqJsonLd = buildFaqJsonLd();
+	const howToJsonLd = buildHowToJsonLd();
 
 	return (
 		<ToolLayout
@@ -40,171 +99,142 @@ export default function ToolPlaceholderPage({
 			description={description}
 			category={{ name: categoryName, slug: categorySlug }}
 		>
-			{/* JSON-LD Structured Data: WebApplication */}
+			{/* Structured Data */}
 			<Script
 				id={`software-app-${toolId}`}
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "WebApplication",
-						name: title,
-						description: description,
-						url: toolUrl,
-						applicationCategory: "UtilityApplication",
-						operatingSystem: "Any",
-						offers: {
-							"@type": "Offer",
-							price: "0",
-							priceCurrency: "USD",
-						},
-						author: {
-							"@type": "Organization",
-							name: "30tools",
-							url: baseUrl,
-						},
-					}),
-				}}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareAppJsonLd) }}
 				strategy="afterInteractive"
 			/>
+			{faqJsonLd && (
+				<Script
+					id={`faq-${toolId}`}
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+					strategy="afterInteractive"
+				/>
+			)}
+			{howToJsonLd && (
+				<Script
+					id={`howto-${toolId}`}
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+					strategy="afterInteractive"
+				/>
+			)}
 
-			{/* JSON-LD Structured Data: FAQPage (if available) */}
-			{toolData?.faqs &&
-				Array.isArray(toolData.faqs) &&
-				toolData.faqs.length > 0 && (
-					<Script
-						id={`faq-${toolId}`}
-						type="application/ld+json"
-						dangerouslySetInnerHTML={{
-							__html: JSON.stringify({
-								"@context": "https://schema.org",
-								"@type": "FAQPage",
-								mainEntity: toolData.faqs.map((faq: any) => ({
-									"@type": "Question",
-									name: faq.question,
-									acceptedAnswer: {
-										"@type": "Answer",
-										text: faq.answer,
-									},
-								})),
-							}),
-						}}
-						strategy="afterInteractive"
-					/>
-				)}
-
-			{/* JSON-LD Structured Data: HowTo (if available) */}
-			{toolData?.howTo &&
-				toolData.howTo.steps &&
-				toolData.howTo.steps.length > 0 && (
-					<Script
-						id={`howto-${toolId}`}
-						type="application/ld+json"
-						dangerouslySetInnerHTML={{
-							__html: JSON.stringify({
-								"@context": "https://schema.org",
-								"@type": "HowTo",
-								name: toolData.howTo.name || `How to use ${title}`,
-								description: description,
-								step: toolData.howTo.steps.map((step: any, index: number) => ({
-									"@type": "HowToStep",
-									name: step.name,
-									text: step.text,
-									url: step.url || `${toolUrl}#step${index + 1}`,
-									position: index + 1,
-								})),
-							}),
-						}}
-						strategy="afterInteractive"
-					/>
-				)}
-
-			<div className="rounded-2xl border border-border bg-card p-6 md:p-8 space-y-8">
-				{/* Main Description */}
-				<section className="space-y-4">
-					<p className="text-base text-muted-foreground leading-relaxed">
+			{/* Clean, Minimal Content */}
+			<div className="max-w-3xl mx-auto space-y-8">
+				{/* Hero Description */}
+				<section className="text-center space-y-4">
+					<p className="text-lg text-muted-foreground leading-relaxed">
 						{description}
 					</p>
-					<p className="text-sm text-muted-foreground">
-						100% free, no registration required. All processing happens securely
-						in your browser.
-					</p>
+					<div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-sm">
+						<span className="text-primary font-medium">100% Free</span>
+						<span className="text-muted-foreground">•</span>
+						<span className="text-muted-foreground">No registration</span>
+						<span className="text-muted-foreground">•</span>
+						<span className="text-muted-foreground">Browser-based</span>
+					</div>
 				</section>
 
-				{/* Features Section */}
-				{toolData?.features &&
-					Array.isArray(toolData.features) &&
-					toolData.features.length > 0 && (
-						<section className="space-y-4">
-							<h2 className="text-2xl font-bold">Key Features</h2>
-							<ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-								{toolData.features.map((feature: string, idx: number) => (
-									<li key={idx} className="flex items-start gap-3">
-										<span className="text-primary mt-1">✓</span>
-										<span className="text-sm text-muted-foreground">
-											{feature}
-										</span>
-									</li>
-								))}
-							</ul>
-						</section>
-					)}
-
-				{/* HowTo Section */}
-				{toolData?.howTo &&
-					toolData.howTo.steps &&
-					toolData.howTo.steps.length > 0 && (
-						<section className="space-y-4" id="how-to">
-							<h2 className="text-2xl font-bold">How to Use This Tool</h2>
-							<div className="space-y-4">
-								{toolData.howTo.steps.map((step: any, idx: number) => (
-									<div key={idx} className="flex gap-4">
-										<div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary">
-											{idx + 1}
-										</div>
-										<div className="space-y-1">
-											<h3 className="font-semibold">{step.name}</h3>
-											<p className="text-sm text-muted-foreground">
-												{step.text}
-											</p>
-										</div>
+				{/* Features Grid */}
+				{toolData?.features?.length > 0 && (
+					<section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+						{toolData.features
+							.slice(0, 6)
+							.map((feature: string, idx: number) => (
+								<div
+									key={idx}
+									className="flex items-start gap-3 p-4 rounded-xl border border-border bg-card"
+								>
+									<div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center">
+										<svg
+											className="w-3 h-3 text-primary"
+											fill="currentColor"
+											viewBox="0 0 20 20"
+										>
+											<path
+												fillRule="evenodd"
+												d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+												clipRule="evenodd"
+											/>
+										</svg>
 									</div>
-								))}
-							</div>
-						</section>
-					)}
+									<span className="text-sm text-foreground">{feature}</span>
+								</div>
+							))}
+					</section>
+				)}
 
-				{/* FAQ Section */}
-				{toolData?.faqs &&
-					Array.isArray(toolData.faqs) &&
-					toolData.faqs.length > 0 && (
-						<section className="space-y-4" id="faq">
-							<h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
-							<div className="space-y-4">
-								{toolData.faqs.map((faq: any, idx: number) => (
-									<div
-										key={idx}
-										className="border-b border-border pb-4 last:border-0"
-									>
-										<h3 className="font-semibold mb-2">{faq.question}</h3>
-										<p className="text-sm text-muted-foreground">
-											{faq.answer}
+				{/* How To - Simple Steps */}
+				{toolData?.howTo?.steps?.length > 0 && (
+					<section className="space-y-4">
+						<div className="flex items-center gap-2 mb-4">
+							<Lightbulb className="w-5 h-5 text-primary" />
+							<h2 className="text-xl font-semibold">How to Use</h2>
+						</div>
+						<div className="space-y-3">
+							{toolData.howTo.steps.map((step: any, idx: number) => (
+								<div key={idx} className="flex gap-4">
+									<div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-xs font-bold text-primary-foreground">
+										{idx + 1}
+									</div>
+									<div className="space-y-1">
+										<h3 className="font-medium text-base">{step.name}</h3>
+										<p className="text-sm text-muted-foreground leading-relaxed">
+											{step.text}
 										</p>
 									</div>
-								))}
-							</div>
-						</section>
-					)}
-
-				{/* Fallback message if no data */}
-				{!toolData && (
-					<div className="text-sm text-muted-foreground bg-muted/50 p-4 rounded-lg">
-						<p>
-							This tool is being prepared with SEO-ready metadata and rich
-							content. Full functionality will be added soon.
-						</p>
-					</div>
+								</div>
+							))}
+						</div>
+					</section>
 				)}
+
+				{/* FAQ - Accordion Style */}
+				{toolData?.faqs?.length > 0 && (
+					<section className="space-y-4">
+						<div className="flex items-center gap-2 mb-4">
+							<HelpCircle className="w-5 h-5 text-primary" />
+							<h2 className="text-xl font-semibold">FAQ</h2>
+						</div>
+						<div className="space-y-3">
+							{toolData.faqs.map((faq: any, idx: number) => (
+								<div
+									key={idx}
+									className="rounded-lg border border-border bg-card p-4"
+								>
+									<h3 className="font-medium text-base mb-2">{faq.question}</h3>
+									<p className="text-sm text-muted-foreground leading-relaxed">
+										{faq.answer}
+									</p>
+								</div>
+							))}
+						</div>
+					</section>
+				)}
+
+				{/* Info Box */}
+				<section className="bg-muted/50 rounded-xl p-6 border border-border">
+					<div className="flex items-start gap-4">
+						<Info className="w-5 h-5 text-primary mt-0.5" />
+						<div className="space-y-2">
+							<h3 className="font-semibold">About This Tool</h3>
+							<p className="text-sm text-muted-foreground leading-relaxed">
+								This tool is part of 30tools' collection of free online
+								utilities. All processing is done securely in your browser. No
+								data is uploaded to our servers.
+							</p>
+							{toolData && (
+								<p className="text-xs text-muted-foreground mt-2">
+									Tool ID: {toolId} • Category: {categoryName}
+								</p>
+							)}
+						</div>
+					</div>
+				</section>
 			</div>
 		</ToolLayout>
 	);
