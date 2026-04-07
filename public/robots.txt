@@ -18,11 +18,11 @@ Allow: /youtube-summary-generator
 
 # Important pages
 Allow: /search
-Allow: /color-picker
+Allow: /color-converter
 Allow: /password-generator
 Allow: /qr-code-generator
 Allow: /image-compressor
 Allow: /pdf-merger
-Allow: /base64-tool
-Allow: /video-compressor
+Allow: /base64-encode
+
 Allow: /audio-converter

@@ -340,11 +340,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://30tools.com/base64-tool</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
   <url>
     <loc>https://30tools.com/batch-image-processor</loc>
     <changefreq>weekly</changefreq>

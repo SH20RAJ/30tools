@@ -201,7 +201,7 @@ export default async function LandingPage({ searchParams }) {
 									Search
 								</Button>
 							</Link>
-							<Link href="/more-tools">
+							<Link href="/other-tools">
 								<Button variant="ghost" className="hidden sm:flex">
 									More Tools
 								</Button>
@@ -832,7 +832,7 @@ export default async function LandingPage({ searchParams }) {
 						</div>
 
 						<div className="text-center">
-							<Link href="/more-tools">
+							<Link href="/other-tools">
 								<Button size="lg" className="bg-background">
 									<ZapIcon className="mr-2 h-5 w-5" />
 									View All 9 Platforms
@@ -971,7 +971,7 @@ export default async function LandingPage({ searchParams }) {
 								</li>
 								<li>
 									<Link
-										href="/more-tools"
+										href="/other-tools"
 										className="text-muted-foreground hover:text-foreground"
 									>
 										More Platforms

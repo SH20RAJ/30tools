@@ -33,7 +33,7 @@ RSS: https://30tools.com/feed.xml
 - [YouTube Shorts Downloader](https://30tools.com/youtube-shorts-downloader)
 - [Universal Video Downloader](https://30tools.com/universal-video-downloader)
 - [Password Generator](https://30tools.com/password-generator)
-- [Base64 Tool](https://30tools.com/base64-tool)
+- [Base64 Encode](https://30tools.com/base64-encode)
 - [JSON Formatter](https://30tools.com/json-formatter)
 - [Text to Speech](https://30tools.com/text-to-speech)
 - [SEO Audit Tool](https://30tools.com/seo-audit-tool)

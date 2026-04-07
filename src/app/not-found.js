@@ -51,7 +51,7 @@ export default async function NotFoundPage({ searchParams }) {
 						Popular Tools
 					</h3>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-						<Link href="/color-picker" className="block">
+						<Link href="/color-converter" className="block">
 							<Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
 								<CardHeader className="pb-3">
 									<CardTitle className="text-base group-hover:text-primary transition-colors">
@@ -108,7 +108,7 @@ export default async function NotFoundPage({ searchParams }) {
 							</Card>
 						</Link>
 
-						<Link href="/base64-tool" className="block">
+						<Link href="/base64-encode" className="block">
 							<Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
 								<CardHeader className="pb-3">
 									<CardTitle className="text-base group-hover:text-primary transition-colors">
