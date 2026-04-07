@@ -2,7 +2,7 @@
 
 import { HelpCircle, Info, Lightbulb } from "lucide-react";
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/shared/ToolLayout";
 import { getToolById } from "@/constants/tools-utils";
 
@@ -33,29 +33,32 @@ export default function ToolPlaceholderPage({
 	const baseUrl = "https://30tools.com";
 	const toolUrl = `${baseUrl}/${toolId}`;
 
-	// JSON-LD: WebApplication
-	const softwareAppJsonLd = {
-		"@context": "https://schema.org",
-		"@type": "WebApplication",
-		name: title,
-		description: description,
-		url: toolUrl,
-		applicationCategory: "UtilityApplication",
-		operatingSystem: "Any",
-		offers: {
-			"@type": "Offer",
-			price: "0",
-			priceCurrency: "USD",
-		},
-		author: {
-			"@type": "Organization",
-			name: "30tools",
-			url: baseUrl,
-		},
-	};
+	// JSON-LD: WebApplication (memoized)
+	const softwareAppJsonLd = useMemo(
+		() => ({
+			"@context": "https://schema.org",
+			"@type": "WebApplication",
+			name: title,
+			description: description,
+			url: toolUrl,
+			applicationCategory: "UtilityApplication",
+			operatingSystem: "Any",
+			offers: {
+				"@type": "Offer",
+				price: "0",
+				priceCurrency: "USD",
+			},
+			author: {
+				"@type": "Organization",
+				name: "30tools",
+				url: baseUrl,
+			},
+		}),
+		[title, description, toolUrl],
+	);
 
-	// JSON-LD: FAQ
-	const buildFaqJsonLd = () => {
+	// JSON-LD: FAQ (memoized)
+	const faqJsonLd = useMemo(() => {
 		if (!toolData?.faqs?.length) return null;
 		return {
 			"@context": "https://schema.org",
@@ -69,10 +72,10 @@ export default function ToolPlaceholderPage({
 				},
 			})),
 		};
-	};
+	}, [toolData?.faqs]);
 
-	// JSON-LD: HowTo
-	const buildHowToJsonLd = () => {
+	// JSON-LD: HowTo (memoized)
+	const howToJsonLd = useMemo(() => {
 		if (!toolData?.howTo?.steps?.length) return null;
 		return {
 			"@context": "https://schema.org",
@@ -87,10 +90,7 @@ export default function ToolPlaceholderPage({
 				position: index + 1,
 			})),
 		};
-	};
-
-	const faqJsonLd = buildFaqJsonLd();
-	const howToJsonLd = buildHowToJsonLd();
+	}, [toolData?.howTo?.steps, title, description, toolUrl]);
 
 	return (
 		<ToolLayout
