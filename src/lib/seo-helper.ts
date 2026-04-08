@@ -16,6 +16,9 @@ interface Tool {
 	faqs?: { question: string; answer: string }[];
 	extraSlugs?: string[];
 	external?: boolean;
+	seoTitle?: string;
+	seoDescription?: string;
+	keywords?: string[];
 }
 
 interface MetadataOverrides {
@@ -64,6 +67,74 @@ function slugToTitle(slug: string) {
 		.split("-")
 		.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
 		.join(" ");
+}
+
+function generateKeywords(tool: Tool, category: ToolCategory): string[] {
+	const keywords: string[] = [];
+	const categoryName = toolsData.categories[category]?.name || category;
+	const categoryLower = category.toLowerCase();
+
+	// Add base keywords
+	keywords.push(
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		SITE_URL.replace("https://", ""),
+	);
+
+	// Add category-specific keywords
+	keywords.push(
+		`${categoryLower} tools`,
+		`free ${categoryLower} tools`,
+		`online ${categoryLower} tools`,
+		`best ${categoryLower} tools`,
+		`top ${categoryLower} tools`,
+	);
+
+	// Add tool name variations
+	const toolName = tool.name.toLowerCase();
+	keywords.push(
+		toolName,
+		`${toolName} free`,
+		`${toolName} online`,
+		`${toolName} tool`,
+	);
+
+	// Add tool slug variations as keywords
+	if (tool.route) {
+		const routeParts = tool.route.replace(/^\//, "").split("/").filter(Boolean);
+		routeParts.forEach((part) => {
+			if (part.length > 3) {
+				keywords.push(part);
+			}
+		});
+	}
+
+	// Add branded keywords
+	keywords.push("30tools", "30 tools");
+
+	// Add generic quality keywords
+	keywords.push(
+		"secure",
+		"fast",
+		"easy",
+		"no registration",
+		"no signup",
+		"instant",
+		"professional",
+	);
+
+	// If tool has extraSlugs, include them as keywords
+	if (tool.extraSlugs) {
+		tool.extraSlugs.forEach((slug) => {
+			const slugKeywords = slug.split("-").filter((w) => w.length > 3);
+			keywords.push(...slugKeywords);
+		});
+	}
+
+	// Deduplicate and clean
+	return Array.from(new Set(keywords)).filter((k) => k.length > 2);
 }
 
 /**
@@ -119,9 +190,17 @@ export function generateToolMetadata(
 	const url = `${currentUrl}${lang !== "en" ? `?lang=${lang}` : ""}`;
 	const image = resolveImageUrl(overrides.image);
 
+	// Generate keywords: use tool.keywords if available, or generate from name/description/category
+	const toolKeywords = tool.keywords || [];
+	const generatedKeywords = generateKeywords(tool, category);
+	const allKeywords = [...toolKeywords, ...generatedKeywords];
+	// Deduplicate and limit to 30 keywords max
+	const uniqueKeywords = Array.from(new Set(allKeywords)).slice(0, 30);
+
 	return {
 		title: { absolute: title },
 		description,
+		keywords: uniqueKeywords,
 		alternates: {
 			canonical: url,
 			languages: {

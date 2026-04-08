@@ -20,14 +20,46 @@ export async function generateMetadata({ params }) {
 		};
 	}
 
+	const title = `Test ${tool.name} API Key | API Key Tester`;
+	const description = `Securely test your ${tool.name} API key online. ${tool.description}. Free developer tool to validate ${tool.name} credentials.`;
+	const url = `https://30tools.com/api-key-tester/${tool.id}`;
+
 	return {
-		title: `Test ${tool.name} API Key | API Key Tester`,
-		description: `Securely test your ${tool.name} API key online. ${tool.description}. Free developer tool to validate ${tool.name} credentials.`,
-		keywords: `${tool.name} api key tester, test ${tool.name} key, validate ${tool.name} api key, ${tool.name} credentials check`,
+		title,
+		description,
+		keywords: [
+			"api key tester",
+			"test api key",
+			"validate api key",
+			"free api tester",
+			"developer tools",
+			tool.name,
+			`${tool.name} api`,
+			`${tool.name} api key`,
+			"api key validator",
+			"online api testing",
+			"secure api test",
+			"30tools",
+			"free online tools",
+			"developer utilities",
+			"api testing tool",
+		],
+		alternates: {
+			canonical: url,
+		},
 		openGraph: {
-			title: `Test ${tool.name} API Key`,
-			description: tool.description,
+			title,
+			description,
+			url,
+			siteName: "30tools",
+			images: [{ url: "/og-image.jpg" }],
 			type: "website",
+		},
+		twitter: {
+			card: "summary_large_image",
+			title,
+			description,
+			images: ["/og-image.jpg"],
 		},
 	};
 }
