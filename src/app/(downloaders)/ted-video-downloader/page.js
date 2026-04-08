@@ -1,62 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "TED Talk Video Downloader - Save TED Videos Free | 30tools",
-	description:
-		"Download TED Talk videos and TED-Ed animations for free. Save inspiring TED talks as MP4 offline. No login required. Works on Android, iPhone, and PC.",
-	keywords: [
-		"ted talk downloader",
-		"download ted talks",
-		"ted video downloader",
-		"save ted talk",
-		"ted talk download free",
-		"ted talk mp4 download",
-		"how to download ted talks",
-		"ted ed downloader",
-		"save ted video offline",
-		"ted talk saver",
-		"download ted talk videos",
-		"ted talk offline viewing",
-		"free ted talk downloader",
-	].join(", "),
-	openGraph: {
-		title: "TED Talk Video Downloader - Save Inspiring Talks Free",
-		description:
-			"⚡ Download TED Talks and TED-Ed videos for free offline viewing. No login required.",
-		url: "https://30tools.com/ted-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "TED Talk Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "TED Talk Downloader (2026) - Save Free",
-		description:
-			"⚡ Download TED Talks offline for free. Just paste the TED.com URL and download.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/ted-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("ted-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

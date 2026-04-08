@@ -11,44 +11,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import LogoGeneratorTool from "@/components/tools/image/LogoGeneratorTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = {
-	title: "Logo Generator - AI Powered | 30tools",
-	description:
-		"Create professional logos for your business or brand in seconds. Free online logo maker with customizable icons, fonts, and colors. Download high-quality PNGs.",
-	keywords:
-		"logo generator, free logo maker, online logo creator, business logo design, brand logo maker, company logo creator, custom logo design, free branding tool, twitch logo maker, youtube channel logo creator, gaming logo maker, esign logo free",
-	alternates: {
-		canonical: "https://30tools.com/logo-generator",
-	},
-	openGraph: {
-		title: "Free Logo Generator - Create Professional Logos Online",
-		description:
-			"Create professional logos for your business or brand in seconds. Free online logo maker with customizable icons, fonts, and colors.",
-		url: "https://30tools.com/logo-generator",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/logo-generator.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Logo Generator - 30tools",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Logo Generator - Create Professional Logos Online",
-		description:
-			"Create professional logos for your business or brand in seconds. Free online logo maker with customizable icons, fonts, and colors.",
-		images: ["/og-images/logo-generator.jpg"],
-		creator: "@30tools",
-	},
-	category: "Image Tools",
-};
+export const metadata = generateToolMetadata("logo-generator", "image");
 
 export default async function LogoGeneratorPage({ searchParams }) {
 	const params = await searchParams;

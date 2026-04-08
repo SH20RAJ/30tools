@@ -1,56 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "TikTok Video Downloader No Watermark - Free HD Saver | 30tools",
-	description:
-		"Download TikTok videos without watermark in HD MP4. Fast, free online TikTok video downloader. Save clean, high-quality TikTok clips directly to your device.",
-	keywords: [
-		"tiktok video downloader no watermark",
-		"download tiktok video free",
-		"save tiktok mp4 hd",
-		"tiktok saver without watermark",
-		"download tiktok audio",
-		"tiktok downloader 2026",
-		"free online tiktok video downloader",
-	].join(", "),
-	openGraph: {
-		title: "TikTok Video Downloader Without Watermark (2026)",
-		description:
-			"⚡ Download TikTok videos without watermark in HD MP4. Fast, free online TikTok video downloader.",
-		url: "https://30tools.com/tiktok-videos-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "TikTok Video Downloader No Watermark",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "TikTok Video Downloader No Watermark (2026)",
-		description:
-			"⚡ Download TikTok videos without watermark in HD MP4. Fast, free online tool.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/tiktok-videos-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("tiktok-videos-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

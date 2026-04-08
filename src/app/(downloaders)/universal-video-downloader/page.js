@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 const researchedKeywords = [
@@ -140,51 +141,7 @@ const researchedKeywords = [
 	"mkv video downloader",
 ];
 
-export const metadata = {
-	title: "Universal Video Downloader - Free Online Tool | 30tools",
-	description:
-		"Free universal video downloader tool with professional results. No registration required, instant processing, secure & unlimited use.",
-	keywords: researchedKeywords.join(", "),
-
-	openGraph: {
-		title: "Universal Video Downloader (2026) - Download from Any Site",
-		description:
-			"⚡ Fast & Free web video downloader. Download any video from website using our url video downloader. Supports YouTube, FB, IG, and more!",
-		url: "https://30tools.com/universal-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-video-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Universal Video Downloader 2026",
-			},
-		],
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "Universal Video Downloader (2026) - Download Any Video",
-		description:
-			"⚡ The ultimate website video downloader. Free, fast, and works for any video from link!",
-		images: ["/og-images/universal-video-downloader.jpg"],
-		creator: "@30tools",
-	},
-
-	alternates: { canonical: "https://30tools.com/universal-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("universal-video-downloader", "downloaders");
 
 const jsonLdSchemas = {
 	webApp: {

@@ -10,37 +10,8 @@ import {
 } from "@/components/seo/GeneratorToolsHub";
 import PasswordGeneratorTool from "@/components/tools/utilities/PasswordGeneratorTool";
 
-export const metadata = {
-	title: "Strong Password Generator (2026) - Secure & Random | 30Tools",
-	description:
-		"Generate Process instantly with our free password generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
-	keywords: [
-		"password generator",
-		"strong password generator",
-		"random password maker",
-		"secure password creator",
-		"generate random password",
-		"online password generator",
-		"wifi password generator",
-		"password strength checker",
-		"client-side password tool",
-	].join(", "),
-	openGraph: {
-		title: "Strong Password Generator - Secure & Random",
-		description:
-			"Generate strong, random passwords instantly. Protect your accounts with our free online password creator.",
-		url: "https://30tools.com/password-generator",
-		siteName: "30tools",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Strong Password Generator - Secure & Random",
-		description:
-			"Generate strong, random passwords instantly to protect your accounts.",
-	},
-	canonical: "https://30tools.com/password-generator",
-};
+import { generateToolMetadata } from "@/lib/seo-helper";
+export const metadata = generateToolMetadata("password-generator", "utilities");
 
 export default async function PasswordGeneratorPage({ searchParams }) {
 	const params = await searchParams;

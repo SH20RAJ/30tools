@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Buzzfeed Video Downloader - Save Buzzfeed Videos Free | 30tools",
-	description:
-		"Download Buzzfeed videos, quizzes videos, and tasty cooking clips for free. Save any Buzzfeed video as MP4 without login. Works on all devices instantly.",
-	keywords: [
-		"buzzfeed video downloader",
-		"download buzzfeed video",
-		"save buzzfeed video",
-		"tasty video downloader",
-		"buzzfeed to mp4",
-		"buzzfeed downloader free",
-		"how to download buzzfeed videos",
-		"tasty recipe video download",
-		"buzzfeed video saver",
-	].join(", "),
-	openGraph: {
-		title: "Buzzfeed Video Downloader - Save Tasty & Buzzfeed Videos",
-		description:
-			"⚡ Download Buzzfeed and Tasty cooking videos as MP4 for free. Instant, no login.",
-		url: "https://30tools.com/buzzfeed-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Buzzfeed Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Buzzfeed Video Downloader (2026)",
-		description:
-			"⚡ Save Buzzfeed & Tasty videos offline as MP4. Free, instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/buzzfeed-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("buzzfeed-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

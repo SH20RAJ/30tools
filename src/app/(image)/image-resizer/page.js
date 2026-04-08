@@ -11,44 +11,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = {
-	title: "Free Image Resizer Online - Resize Photos & Images | 30tools",
-	description:
-		"Resize images online for free. Change dimensions, maintain aspect ratio, batch resize. Perfect for social media, web, and print.",
-	keywords:
-		"image resizer, resize image online, photo resizer, resize photo, image dimensions, resize pictures online, batch image resize, social media image sizes, instagram photo resizer, youtube thumbnail resizer, resize image for passport, reduce photo dimensions, online pixel resizer, dpi changer, change aspect ratio",
-	alternates: {
-		canonical: "https://30tools.com/image-resizer",
-	},
-	openGraph: {
-		title: "Free Image Resizer Online - Resize Photos & Images",
-		description:
-			"Resize images online for free. Change dimensions, maintain aspect ratio, batch resize. Perfect for social media, web, and print.",
-		url: "https://30tools.com/image-resizer",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/image-resizer.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free Image Resizer Tool - 30tools",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Image Resizer Online - Resize Photos & Images",
-		description:
-			"Resize images online for free. Change dimensions, maintain aspect ratio, batch resize.",
-		images: ["/og-images/image-resizer.jpg"],
-		creator: "@30tools",
-	},
-	category: "Image Tools",
-};
+export const metadata = generateToolMetadata("image-resizer", "image");
 
 export default async function ImageResizerPage({ searchParams }) {
 	const params = await searchParams;

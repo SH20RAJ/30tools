@@ -1,60 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "9GAG Video Downloader - Save 9GAG Videos & GIFs Free | 30tools",
-	description:
-		"Download 9GAG videos and GIFs for free. Save funny 9GAG posts as MP4 or GIF files to your device. No login required. Works on Android, iPhone, and PC.",
-	keywords: [
-		"9gag video downloader",
-		"download 9gag video",
-		"9gag gif downloader",
-		"save 9gag video",
-		"9gag to mp4",
-		"9gag video saver",
-		"download 9gag post",
-		"9gag gif saver",
-		"how to download 9gag videos",
-		"9gag funny video download",
-		"free 9gag downloader",
-	].join(", "),
-	openGraph: {
-		title: "9GAG Video Downloader - Save Funny Videos & GIFs Free",
-		description:
-			"⚡ Download 9GAG videos and GIFs as MP4 for free. No login, instant, all devices.",
-		url: "https://30tools.com/ninegag-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "9GAG Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "9GAG Video Downloader (2026) - Free",
-		description:
-			"⚡ Save 9GAG videos and GIFs offline. Fast and free, no login needed.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/ninegag-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("ninegag-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

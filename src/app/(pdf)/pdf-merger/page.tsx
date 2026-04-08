@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfMerger from "@/components/tools/pdf/PdfMerger";
 
-export const metadata: Metadata = {
-	title: { absolute: "PDF Merger - Combine PDF Files Online | 30Tools" },
-	description:
-		"Merge multiple PDF files into one document instantly. Free online PDF combiner. No file upload required, 100% secure.",
-	keywords: [
-		"pdf merger",
-		"combine pdf",
-		"merge pdf files",
-		"pdf joiner",
-		"pdf combiner",
-	],
-};
+export const metadata = generateToolMetadata("pdf-merger", "pdf");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfCompressor from "@/components/tools/pdf/PdfCompressor";
 
-export const metadata: Metadata = {
-	title: { absolute: "PDF Compressor - Reduce File Size Online | 30Tools" },
-	description:
-		"Reduce PDF file size online for free without losing quality. Optimize documents for email and web sharing securely in your browser.",
-	keywords: [
-		"pdf compressor",
-		"compress pdf",
-		"reduce pdf size",
-		"shrink pdf",
-		"optimize pdf",
-	],
-};
+export const metadata = generateToolMetadata("pdf-compressor", "pdf");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

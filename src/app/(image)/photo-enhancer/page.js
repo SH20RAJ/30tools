@@ -11,44 +11,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import PhotoEnhancerTool from "@/components/tools/image/PhotoEnhancerTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = {
-	title: "Free AI Photo Enhancer - Improve Image Quality Online | 30tools",
-	description:
-		"Enhance photo quality instantly with AI. Fix blurry images, upscale resolution, reduce noise, and correct colors automatically. Free online tool.",
-	keywords:
-		"photo enhancer, ai image enhancer, fix blurry photos, upscale image, increase resolution, noise reduction, sharpen image, improve photo quality, free photo enhancer, enhance photo resolution online free, unblur image online, restore old photos online, face restoration ai",
-	alternates: {
-		canonical: "https://30tools.com/photo-enhancer",
-	},
-	openGraph: {
-		title: "Free AI Photo Enhancer - Improve Image Quality Online",
-		description:
-			"Enhance photo quality instantly with AI. Fix blurry images, upscale resolution, reduce noise, and correct colors automatically.",
-		url: "https://30tools.com/photo-enhancer",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/photo-enhancer.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free AI Photo Enhancer - 30tools",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free AI Photo Enhancer - Improve Image Quality Online",
-		description:
-			"Enhance photo quality instantly with AI. Fix blurry images, upscale resolution, reduce noise, and correct colors automatically.",
-		images: ["/og-images/photo-enhancer.jpg"],
-		creator: "@30tools",
-	},
-	category: "Image Tools",
-};
+export const metadata = generateToolMetadata("photo-enhancer", "image");
 
 export default async function PhotoEnhancerPage({ searchParams }) {
 	const params = await searchParams;

@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ComingSoon from "@/components/shared/ComingSoon";
 
-export const metadata: Metadata = {
-	title: { absolute: "Batch Image Processor - Free Online Tool | 30Tools" },
-	description:
-		"Free online Batch Image Processor. Fast, secure, and easy to use with no registration required.",
-};
+export const metadata = generateToolMetadata("batch-image-processor", "others");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

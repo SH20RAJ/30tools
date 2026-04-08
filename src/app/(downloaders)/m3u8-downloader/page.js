@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "M3U8 Downloader - Download HLS Streams as MP4 Free | 30tools",
-	description:
-		"Download M3U8 HLS streams and convert to MP4 for free. Save any M3U8 playlist stream as an offline video file. No software required. Works in your browser.",
-	keywords: [
-		"m3u8 downloader",
-		"download m3u8 stream",
-		"m3u8 to mp4",
-		"hls stream downloader",
-		"save m3u8 as mp4",
-		"m3u8 video downloader",
-		"hls to mp4 converter",
-		"how to download m3u8 streams",
-		"m3u8 playlist downloader",
-	].join(", "),
-	openGraph: {
-		title: "M3U8 Downloader - Convert HLS Streams to MP4 Free",
-		description:
-			"⚡ Download and convert M3U8 HLS streams to MP4 online. No software, no login.",
-		url: "https://30tools.com/m3u8-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "M3U8 HLS Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "M3U8 Downloader (2026) - HLS to MP4 Free",
-		description:
-			"⚡ Convert M3U8 HLS streams to MP4 online. Free, no software needed.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/m3u8-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("m3u8-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

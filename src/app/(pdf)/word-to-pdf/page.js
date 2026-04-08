@@ -1,4 +1,5 @@
 import { FileSignature, Scale, ShieldAlert } from "lucide-react";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import Link from "next/link";
 import {
 	BreadcrumbsEnhanced,
@@ -15,43 +16,7 @@ import {
 import WordToPDFTool from "@/components/tools/pdf/WordToPDFTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
-export const metadata = {
-	title: "Word to PDF Converter Online (2026) - DOC/DOCX to PDF | 30Tools",
-	description:
-		"Best free online word to pdf converter. transform Word documents (DOC, DOCX) to professional PDF files instantly. convert docx to pdf free online.",
-	keywords: [
-		"word to pdf converter 2026, convert docx to pdf free, doc to pdf secure online, microsoft word to pdf, save word as pdf online, word document to pdf, free word to pdf, convert word to pdf free, best word to pdf, word to pdf high quality, docx to pdf converter online, change word to pdf, word to pdf no watermark, convert doc to pdf free online",
-	].join(", "),
-	alternates: {
-		canonical: "https://30tools.com/word-to-pdf",
-	},
-	openGraph: {
-		title: "Word to PDF Converter (2026) - Free DOCX to PDF",
-		description:
-			"⚡ Convert Word documents (DOC, DOCX) to PDF online! Preserves exact formatting (Updated 2026).",
-		url: "https://30tools.com/word-to-pdf",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/word-to-pdf.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Word to PDF Converter 2026 - Free Tool",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Word to PDF Converter (2026) - Free Tool",
-		description:
-			"⚡ Convert DOC/DOCX to PDF online. formatting preserved. Updated 2026!",
-		images: ["/og-images/word-to-pdf.jpg"],
-		creator: "@30tools",
-	},
-	category: "PDF Tools",
-};
+export const metadata = generateToolMetadata("word-to-pdf", "pdf");
 
 export default async function WordToPDFPage({ searchParams }) {
 	const params = await searchParams;

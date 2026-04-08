@@ -1,57 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title:
-		"Pinterest GIF Downloader - Save Pinterest Animated GIFs Free | 30tools",
-	description:
-		"Download Pinterest animated GIFs for free. Save any Pinterest GIF pin to your device. No login required. Works on Android, iPhone, and PC instantly.",
-	keywords: [
-		"pinterest gif downloader",
-		"download pinterest gif",
-		"save pinterest animated gif",
-		"pinterest gif saver",
-		"pinterest gif download free",
-		"how to download gif from pinterest",
-		"pinterest animated image downloader",
-		"pin gif download",
-	].join(", "),
-	openGraph: {
-		title: "Pinterest GIF Downloader - Save Animated GIFs Free",
-		description:
-			"⚡ Download Pinterest GIF pins as animated GIF files. Free, instant, no login.",
-		url: "https://30tools.com/pinterest-gif-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Pinterest GIF Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Pinterest GIF Downloader (2026) - Free",
-		description: "⚡ Save Pinterest animated GIFs offline. Free, instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/pinterest-gif-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("pinterest-gif-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

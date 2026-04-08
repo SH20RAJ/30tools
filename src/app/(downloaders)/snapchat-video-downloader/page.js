@@ -1,61 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import SnapchatDownloader from "@/components/tools/downloaders/SnapchatDownloader";
 
-export const metadata = {
-	title: "Snapchat Video Downloader - Save Snaps & Spotlight Free | 30tools",
-	description:
-		"Download Snapchat videos, stories, and Spotlight clips anonymously for free. No watermarks, no login needed. Works on iPhone, Android, and PC.",
-	keywords: [
-		"snapchat video downloader",
-		"download snapchat stories",
-		"snapchat story saver",
-		"save snapchat video",
-		"snapchat spotlight downloader",
-		"anonymous snapchat viewer",
-		"download snaps",
-		"save snapchat memories",
-		"snapchat video saver",
-		"download public snaps",
-		"save snapchat spotlight video",
-		"snapchat to mp4",
-	].join(", "),
-	openGraph: {
-		title: "Snapchat Video Downloader - Save Stories & Spotlight No Watermark",
-		description:
-			"⚡ Download Snapchat stories and Spotlight videos anonymously. No watermark, no login needed!",
-		url: "https://30tools.com/snapchat-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/snapchat-video-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Snapchat Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Snapchat Video Downloader (2026) - Save Spotlight",
-		description:
-			"⚡ Save Snapchat videos & stories anonymously. No watermark, free, and instant.",
-		images: ["/og-images/snapchat-video-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/snapchat-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("snapchat-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

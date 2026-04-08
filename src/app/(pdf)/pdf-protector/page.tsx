@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfProtector from "@/components/tools/pdf/PdfProtector";
 
-export const metadata: Metadata = {
-	title: { absolute: "PDF Password Protector - Encrypt PDF Online | 30Tools" },
-	description:
-		"Secure your PDF files with a password instantly using our free online tool. Encrypt documents directly in your browser without uploading.",
-	keywords: [
-		"pdf protector",
-		"encrypt pdf",
-		"password protect pdf",
-		"secure pdf",
-		"add password to pdf",
-	],
-};
+export const metadata = generateToolMetadata("pdf-protector", "others");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

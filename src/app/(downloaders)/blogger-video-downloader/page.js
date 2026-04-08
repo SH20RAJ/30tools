@@ -1,56 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Blogger Video Downloader - Save Blogger Videos Free | 30tools",
-	description:
-		"Download videos embedded on Blogger blogs for free. Save any Blogger blog video as MP4 without login. Works on all devices, instant download.",
-	keywords: [
-		"blogger video downloader",
-		"download blogger video",
-		"save video from blogger blog",
-		"blogger to mp4",
-		"download videos from blogspot",
-		"blogspot video downloader",
-		"blogger embedded video download",
-		"how to download blogger videos",
-	].join(", "),
-	openGraph: {
-		title: "Blogger Video Downloader - Save Blog Videos Free",
-		description:
-			"⚡ Download videos from Blogger/Blogspot blogs as MP4 for free. Instant, no login.",
-		url: "https://30tools.com/blogger-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Blogger Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Blogger Video Downloader (2026) - Free",
-		description: "⚡ Save Blogger blog videos offline as MP4. Free, instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/blogger-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("blogger-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

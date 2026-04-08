@@ -8,62 +8,11 @@ import {
 	UserComments,
 } from "@/components/seo";
 import { DeveloperToolExamples } from "@/components/seo/DeveloperToolsHub";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 
-export const metadata = {
-	title: "Format Large JSON Files Online | Pretty Print JSON Free & Secure",
-	description:
-		"Format large JSON files online instantly. Professional JSON validator with syntax highlighting & error detection. Pretty print JSON for free with secure client-side processing.",
-	keywords: [
-		"format large json files online",
-		"pretty print json free",
-		"json validator with syntax highlighting",
-		"beautify json code safely",
-		"json formatter for developers",
-		"online json prettifier",
-		"json syntax checker online",
-		"format messy json data",
-	].join(", "),
-	openGraph: {
-		title: "JSON Formatter (2026) - Free Validator & Beautifier",
-		description:
-			"⚡ Format, Validate & Minify JSON instantly! Error detection & Tree view included (Updated 2026).",
-		url: "https://30tools.com/json-formatter",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/json-formatter.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free JSON Formatter 2026",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "JSON Formatter (2026) - Free Developer Tool",
-		description: "⚡ Format and Validate JSON instantly. Updated 2026!",
-		images: ["/og-images/json-formatter.jpg"],
-		creator: "@30tools",
-	},
-	alternates: {
-		canonical: "https://30tools.com/json-formatter",
-	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-	category: "Developer Tools",
-};
+export const metadata = generateToolMetadata("json-formatter", "developer");
 
 export default async function JSONFormatterPage({ searchParams }) {
 	const params = await searchParams;

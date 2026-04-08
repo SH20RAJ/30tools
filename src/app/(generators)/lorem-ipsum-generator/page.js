@@ -10,37 +10,8 @@ import {
 } from "@/components/seo/GeneratorToolsHub";
 import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGeneratorTool";
 
-export const metadata = {
-	title: "Lorem Ipsum Generator (2026) - Free Placeholder Text | 30Tools",
-	description:
-		"Generate standard Lorem Ipsum placeholder text for web design, graphic design, and publishing. Customize paragraphs, words, or lists instantly.",
-	keywords: [
-		"lorem ipsum generator",
-		"dummy text generator",
-		"placeholder text",
-		"filler text generator",
-		"lipsum generator",
-		"latin text generator",
-		"random text generator",
-		"design placeholder text",
-		"web design test text",
-	].join(", "),
-	openGraph: {
-		title: "Lorem Ipsum Generator - Free Placeholder Text",
-		description:
-			"Generate standard Lorem Ipsum placeholder text for web design and publishing.",
-		url: "https://30tools.com/lorem-ipsum-generator",
-		siteName: "30tools",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Lorem Ipsum Generator - Free Placeholder Text",
-		description:
-			"Generate standard Lorem Ipsum placeholder text for web design.",
-	},
-	canonical: "https://30tools.com/lorem-ipsum-generator",
-};
+import { generateToolMetadata } from "@/lib/seo-helper";
+export const metadata = generateToolMetadata("lorem-ipsum-generator", "text");
 
 export default async function LoremIpsumGeneratorPage({ searchParams }) {
 	const params = await searchParams;

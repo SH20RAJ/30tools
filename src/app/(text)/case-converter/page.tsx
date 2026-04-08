@@ -1,21 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import CaseConverter from "@/components/tools/text/CaseConverter";
 
-export const metadata: Metadata = {
-	title: {
-		absolute: "Case Converter for SEO Titles & Content | Title Case Converter Online",
-	},
-	description:
-		"Convert text case online instantly. Perfect for SEO titles, YouTube descriptions, and developer notes. Switch between UPPERCASE, Title Case, and camelCase for free.",
-	keywords: [
-		"case converter for seo titles",
-		"title case converter online",
-		"convert text to snake case online",
-		"camelcase converter for developers",
-		"text case transformer free",
-		"lowercase to uppercase tool",
-	],
-};
+export const metadata = generateToolMetadata("case-converter", "text");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

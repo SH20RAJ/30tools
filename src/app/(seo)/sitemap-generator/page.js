@@ -1,40 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import SitemapGeneratorTool from "@/components/tools/seo/SitemapGeneratorTool";
 
-export const metadata = {
-	title: "Sitemap Generator - Free XML Sitemap Creator | 30tools",
-	description:
-		"Generate XML sitemaps for your website. Create SEO-friendly sitemaps to help search engines crawl your site. Free sitemap generator tool.",
-	keywords: [
-		"sitemap generator",
-		"xml sitemap generator",
-		"sitemap creator",
-		"create sitemap",
-		"sitemap generator free",
-		"website sitemap generator",
-		"sitemap xml generator",
-		"seo sitemap generator",
-		"sitemap maker",
-	].join(", "),
-
-	openGraph: {
-		title: "Sitemap Generator - Free XML Sitemap Creator",
-		description:
-			"⚡ Generate XML sitemaps for better SEO. Help search engines crawl your site!",
-		url: "https://30tools.com/sitemap-generator",
-		siteName: "30tools",
-		type: "website",
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "Sitemap Generator - Free",
-		description: "⚡ Create XML sitemaps easily!",
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/sitemap-generator" },
-	robots: { index: true, follow: true },
-};
+export const metadata = generateToolMetadata("sitemap-generator", "seo");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

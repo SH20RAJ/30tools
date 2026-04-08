@@ -1,56 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import InstagramReelDownloader from "@/components/tools/downloaders/InstagramReelDownloader";
 
-export const metadata = {
-	title: "Instagram Reel Downloader Free Online | Save IG Reels with Audio",
-	description:
-		"Download Instagram Reels free online. High-quality Instagram reels downloader with audio. No watermark, no login required. Save IG reels to your device easily.",
-	keywords: [
-		"instagram reel downloader free online",
-		"download instagram reels with audio",
-		"high quality instagram reels downloader",
-		"ig reels saver free",
-		"insta reel download without watermark",
-		"save instagram reels to gallery",
-		"online reels video downloader 2026",
-	],
-	openGraph: {
-		title: "Instagram Reel Downloader - Save Reels with Audio, No Watermark",
-		description:
-			"⚡ Download Instagram Reels in HD 1080p with original audio. No watermark, no login needed!",
-		url: "https://30tools.com/instagram-reel-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/instagram-reel-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Instagram Reel Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Instagram Reel Downloader (2026) - No Watermark",
-		description:
-			"⚡ Save IG Reels offline in HD with audio. No watermark added, completely free.",
-		images: ["/og-images/instagram-reel-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/instagram-reel-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("instagram-reel-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

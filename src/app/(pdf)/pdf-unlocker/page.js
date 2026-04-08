@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfUnlockerTool from "@/components/tools/pdf/PdfUnlockerTool";
 
 const researchedKeywords = [
@@ -153,51 +154,7 @@ const researchedKeywords = [
 	"ilovepdf",
 ];
 
-export const metadata = {
-	title: "Pdf Unlocker - Free PDF Tool | Professional PDF Processing",
-	description:
-		"Free PDF unlocker to remove passwords and restrictions instantly. Unlock PDF for editing, printing, and copying. Secure decrypt pdf tool with no server uploads.",
-	keywords: researchedKeywords.join(", "),
-
-	openGraph: {
-		title: "Unlock PDF Online - Free PDF Password Remover",
-		description:
-			"⚡ Remove PDF passwords and restrictions online. Unlock any PDF file for editing and printing instantly. Secure and free pdf unlocker.",
-		url: "https://30tools.com/pdf-unlocker",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/pdf-unlocker.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Unlock PDF Online 2026",
-			},
-		],
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "PDF Unlocker - Remove Password Protection Free",
-		description:
-			"⚡ The ultimate pdf password remover. Unlock pdf files for free and remove encryption instantly!",
-		images: ["/og-images/pdf-unlocker.jpg"],
-		creator: "@30tools",
-	},
-
-	alternates: { canonical: "https://30tools.com/pdf-unlocker" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("pdf-unlocker", "pdf");
 
 const jsonLdSchemas = {
 	webApp: {

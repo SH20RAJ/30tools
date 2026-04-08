@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Odnoklassniki Video Downloader - Save OK.Ru Videos Free | 30tools",
-	description:
-		"Download Odnoklassniki (OK.ru) videos in HD for free. Save Russian social network videos as MP4 without login. Works on all devices.",
-	keywords: [
-		"odnoklassniki video downloader",
-		"ok.ru video downloader",
-		"download ok.ru video",
-		"odnoklassniki to mp4",
-		"save odnoklassniki video",
-		"russian social network video download",
-		"ok ru downloader",
-		"odnoklassniki hd download",
-	].join(", "),
-	openGraph: {
-		title: "Odnoklassniki Video Downloader - Save OK.ru Videos Free",
-		description:
-			"⚡ Download OK.ru (Odnoklassniki) videos as HD MP4 for free. No login required.",
-		url: "https://30tools.com/odnoklassniki-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Odnoklassniki Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "OK.ru Video Downloader (2026) - HD Free",
-		description: "⚡ Save OK.ru Odnoklassniki videos offline. Free, no login.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: {
-		canonical: "https://30tools.com/odnoklassniki-video-downloader",
-	},
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("odnoklassniki-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

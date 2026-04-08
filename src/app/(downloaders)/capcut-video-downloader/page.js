@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "CapCut Video Downloader - Save CapCut Videos No Watermark | 30tools",
-	description:
-		"Download CapCut videos without watermark for free. Remove CapCut logo and save videos in HD MP4. Works online on Android, iPhone, and PC in seconds.",
-	keywords: [
-		"capcut video downloader",
-		"download capcut video no watermark",
-		"capcut video saver",
-		"capcut downloader without watermark",
-		"save capcut video",
-		"capcut to mp4",
-		"remove capcut watermark",
-		"download capcut video online free",
-		"capcut hd download",
-	].join(", "),
-	openGraph: {
-		title: "CapCut Video Downloader - Remove Watermark Free",
-		description:
-			"⚡ Download CapCut videos without the watermark in HD. Free, instant, no login required.",
-		url: "https://30tools.com/capcut-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "CapCut Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "CapCut Video Downloader (2026) - No Watermark",
-		description:
-			"⚡ Download CapCut videos without watermark in HD. Free online tool.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/capcut-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("capcut-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

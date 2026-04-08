@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+export const metadata = generateToolMetadata("youtube-title-extractor", "youtube");
 
-export const metadata: Metadata = {
-  title: "YouTube Title Extractor | Free Online Tool",
-  description: "Use this free youtube title extractor to get fast and reliable results with clean output.",
-  alternates: {
-    canonical: "https://30tools.com/youtube-title-extractor",
-  },
-};
-
-export default function YoutubeTitleExtractorPage() {
-  return (
-    <ToolPlaceholderPage
-      toolId="youtube-title-extractor"
-      title="YouTube Title Extractor"
-      description="Use this free youtube title extractor to get fast and reliable results with clean output."
-      categoryName="YouTube Tools"
-      categorySlug="youtube-tools"
-    />
-  );
+export default function ToolPage() {
+  return <ToolPlaceholderPage toolId="youtube-title-extractor" />;
 }

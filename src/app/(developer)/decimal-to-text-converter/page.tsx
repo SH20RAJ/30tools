@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+export const metadata = generateToolMetadata("decimal-to-text-converter", "developer");
 
-export const metadata: Metadata = {
-  title: "Decimal to Text Converter | Free Online Tool",
-  description: "Use this free decimal to text converter to get fast and reliable results with clean output.",
-  alternates: {
-    canonical: "https://30tools.com/decimal-to-text-converter",
-  },
-};
-
-export default function DecimalToTextConverterPage() {
-  return (
-    <ToolPlaceholderPage
-      toolId="decimal-to-text-converter"
-      title="Decimal to Text Converter"
-      description="Use this free decimal to text converter to get fast and reliable results with clean output."
-      categoryName="Developer Tools"
-      categorySlug="developer-tools"
-    />
-  );
+export default function ToolPage() {
+  return <ToolPlaceholderPage toolId="decimal-to-text-converter" />;
 }

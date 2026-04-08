@@ -11,86 +11,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = {
-	title: "Free Background Remover (2026) - AI Remove BG Online | 30Tools",
-	description:
-		"Remove image backgrounds automatically in seconds with AI (Updated 2026). Download transparent PNGs & high quality cutouts. Free, unlimited & secure.",
-	keywords: [
-		"remove background 2026",
-		"remove bg",
-		"bg remover",
-		"quitar fondo",
-		"background remover free",
-		"photoroom alternative",
-		"bg remove",
-		"white background maker",
-		"quitar fondo imagen",
-		"removebg",
-		"remove bg gratuit",
-		"remove.bg free",
-		"remove background from image",
-		"hapus background",
-		"remove bg online",
-		"pixelcut alternative",
-		"background remove",
-		"remove bg free",
-		"eliminar fondo",
-		"bg remove background",
-		"remo",
-		"transparent background",
-		"remover bg",
-		"remove background free",
-		"quitar fondo de imagen online",
-		"free background remover",
-		"image background remover",
-		"background remover online",
-		"hintergrund entfernen",
-		"png maker",
-		"background eraser",
-		"adobe background remover",
-		"video background remover",
-		"erase background",
-		"supprimer arrière plan",
-		"bgremove",
-		"azala khalfiyat alsoura",
-		"retirar fundo de imagen online",
-		"remove background from logo",
-		"transparent signature maker",
-		"make logo transparent",
-		"product photo background remover",
-	].join(", "),
-	alternates: {
-		canonical: "https://30tools.com/background-remover",
-	},
-	openGraph: {
-		title: "Free Background Remover (2026) - AI Remove BG Tool",
-		description:
-			"⚡ Remove image backgrounds automatically in seconds with AI! Free & unlimited tool (Updated 2026).",
-		url: "https://30tools.com/background-remover",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/background-remover.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free Background Remover 2026 - AI Tool",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Background Remover (2026) - AI Tool",
-		description:
-			"⚡ Remove image backgrounds automatically in seconds. Updated 2026!",
-		images: ["/og-images/background-remover.jpg"],
-		creator: "@30tools",
-	},
-	category: "Image Tools",
-};
+export const metadata = generateToolMetadata("background-remover", "image");
 
 export default async function BackgroundRemoverPage({ searchParams }) {
 	const params = await searchParams;

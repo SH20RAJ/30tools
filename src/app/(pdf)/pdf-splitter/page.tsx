@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfSplitter from "@/components/tools/pdf/PdfSplitter";
 
-export const metadata: Metadata = {
-	title: { absolute: "PDF Splitter - Extract Pages from PDF Online | 30Tools" },
-	description:
-		"Split PDF files into separate pages or extracting specific page ranges. Free, fast, and secure online PDF splitter.",
-	keywords: [
-		"pdf splitter",
-		"split pdf",
-		"extract pdf pages",
-		"separate pdf pages",
-		"cut pdf",
-	],
-};
+export const metadata = generateToolMetadata("pdf-splitter", "pdf");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

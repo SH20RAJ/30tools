@@ -1,63 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Instagram Photo Downloader - Save IG Images Free | 30tools",
-	description:
-		"Download Instagram photos, carousel posts, and profile pictures in full HD for free. Save any public Instagram image without watermark. No login required.",
-	keywords: [
-		"instagram photo downloader",
-		"download instagram photos",
-		"instagram image downloader",
-		"save instagram photos",
-		"instagram picture downloader",
-		"instagram photo saver",
-		"how to download instagram photos",
-		"download instagram carousel",
-		"save instagram post images",
-		"instagram photo download without watermark",
-		"instagram photo grabber",
-		"ig photo downloader",
-		"download instagram photos by username",
-		"instagram hd photo downloader",
-	].join(", "),
-	openGraph: {
-		title: "Instagram Photo Downloader - Save HD Photos Free",
-		description:
-			"⚡ Download Instagram photos and carousel posts in HD. No watermark, no login, completely free.",
-		url: "https://30tools.com/instagram-image-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Instagram Photo Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Instagram Photo Downloader (2026) - No Watermark",
-		description:
-			"⚡ Save Instagram photos and carousels in full HD. Free, no login, instant download.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/instagram-image-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("instagram-image-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

@@ -1,65 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import YouTubeVideoSummarizer from "@/components/tools/youtube/YouTubeVideoSummarizer";
 
-export const metadata = {
-	title: "YouTube Video Summarizer - AI Summary Tool Free | 30tools",
-	description:
-		"Summarize YouTube videos with AI instantly. Get key points and takeaways from any video in seconds. Free AI-powered video summarization tool.",
-	keywords: [
-		"youtube video summarizer",
-		"youtube summarizer",
-		"summarize youtube video",
-		"video summarizer ai",
-		"youtube video summary",
-		"ai video summarizer",
-		"youtube summary tool",
-		"youtube video to summary",
-		"video summary generator",
-		"youtube video summarizer free",
-		"chatgpt for youtube",
-		"summarize video content",
-		"extract key points from youtube video",
-		"youtube transcript summary",
-		"tl;dw youtube",
-		"quick video summary",
-	].join(", "),
-
-	openGraph: {
-		title: "YouTube Video Summarizer - AI Summary Tool",
-		description: "⚡ Summarize YouTube videos with AI instantly!",
-		url: "https://30tools.com/youtube-video-summarizer",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/youtube-video-summarizer.jpg",
-				width: 1200,
-				height: 630,
-				alt: "YouTube Video Summarizer",
-			},
-		],
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "YouTube Video Summarizer - Free",
-		description: "⚡ AI video summaries!",
-		images: ["/og-images/youtube-video-summarizer.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/youtube-video-summarizer" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("youtube-video-summarizer", "youtube");
 
 const jsonLdSchemas = {
 	webApp: {

@@ -1,4 +1,5 @@
 import { Eye, FileJson, Key, Lock } from "lucide-react";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import JWTDecoder from "@/components/tools/developer/JWTDecoderTool";
 import {
 	Accordion,
@@ -7,54 +8,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const metadata = {
-	title: "Decode JWT Without Secret Online | JWT Token Decoder & Debugger",
-	description:
-		"Decode JWT without secret online instantly. Best free JWT token decoder for 2026. Inspect Header, Payload, and Signature structure securely in your browser.",
-	keywords: [
-		"decode jwt without secret online",
-		"jwt token decoder",
-		"jwt debugger online",
-		"check jwt payload free",
-		"json web token inspector",
-		"jwt viewer for developers",
-		"token debugger tool",
-	],
-	authors: [{ name: "30Tools Team" }],
-	creator: "30Tools",
-	publisher: "30Tools",
-	alternates: {
-		canonical: "https://30tools.com/jwt-decoder",
-	},
-	openGraph: {
-		title: "JWT Decoder (2026) - Decode & Debug Tokens Free",
-		description:
-			"⚡ Decode JSON Web Tokens instantly! View Header & Payload data securely in your browser. Updated 2026.",
-		url: "https://30tools.com/jwt-decoder",
-		siteName: "30Tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/jwt-decoder.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free JWT Decoder 2026",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "JWT Decoder (2026) - Free Token Debugger",
-		description:
-			"⚡ Decode & Inspect JWTs instantly. Secure client-side processing.",
-		images: ["/og-images/jwt-decoder.jpg"],
-		creator: "@30tools",
-	},
-	robots: {
-		index: true,
-		follow: true,
-	},
-};
+export const metadata = generateToolMetadata("jwt-decoder", "developer");
 
 const jsonLdSchemas = {
 	webApp: {

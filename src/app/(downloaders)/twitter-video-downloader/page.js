@@ -1,56 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader";
 
-export const metadata = {
-	title: "Twitter Video Downloader Free Online | X Video Downloader HD",
-	description:
-		"Download Twitter (X) videos free online in HD quality. Best X video downloader 2026. Save Twitter videos and GIFs to MP4 instantly. No login or app needed.",
-	keywords: [
-		"twitter video downloader free online",
-		"x video downloader hd",
-		"download twitter videos without watermark",
-		"save x videos online",
-		"twitter gif downloader mp4",
-		"free online twitter video saver",
-		"best x.com downloader 2026",
-	],
-	openGraph: {
-		title: "Twitter Video Downloader - Save X Videos & GIFs Free",
-		description:
-			"⚡ Save Twitter (X) videos and GIFs instantly in HD quality. No registration needed!",
-		url: "https://30tools.com/twitter-video-downloader",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/twitter-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Twitter Video Downloader",
-			},
-		],
-		siteName: "30tools",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Twitter Video Downloader (2026)",
-		description:
-			"Download HD videos and GIFs directly from Twitter (X) securely.",
-		images: ["/og-images/twitter-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/twitter-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("twitter-video-downloader", "downloaders");
 
 const jsonLdSchemas = {
 	webApp: {

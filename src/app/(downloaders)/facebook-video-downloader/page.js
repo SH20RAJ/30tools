@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 const researchedKeywords = [
@@ -26,51 +27,7 @@ const researchedKeywords = [
 	"fdown alternative",
 ];
 
-export const metadata = {
-	title: "Facebook Video Downloader - Save FB Reels & Stories HD | 30tools",
-	description:
-		"Download Facebook videos, Reels, and Stories in HD for free. No login required. Save private FB videos and FB live streams instantly to MP4.",
-	keywords: researchedKeywords.join(", "),
-
-	openGraph: {
-		title: "Facebook Video Downloader (2026) - Free HD MP4 Saver",
-		description:
-			"⚡ Fast & Free Facebook video downloader. Save HD, 4K, Reels, and Stories without watermarks.",
-		url: "https://30tools.com/facebook-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/facebook-video-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Facebook Video Downloader",
-			},
-		],
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "Facebook Video Downloader HD (2026)",
-		description:
-			"⚡ The ultimate online Facebook downloader. Fast, free, and works for all FB Reels, Stories, and HD Videos!",
-		images: ["/og-images/facebook-video-downloader.jpg"],
-		creator: "@30tools",
-	},
-
-	alternates: { canonical: "https://30tools.com/facebook-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("facebook-video-downloader", "downloaders");
 
 const jsonLdSchemas = {
 	webApp: {

@@ -1,40 +1,8 @@
 import { BreadcrumbsEnhanced, FAQSection } from "@/components/seo";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import OgImageGenerator from "@/components/tools/image/OgImageGenerator/OgImageGenerator";
 
-export const metadata = {
-	title: "Free Open Graph Image Generator | Create OG Images Online",
-	description:
-		"Create professional Open Graph (OG) images for your website, blog, or social media. Customizable templates, instant preview, and free download.",
-	keywords:
-		"og image generator, open graph image creator, social media image generator, blog post image generator, free og image tool",
-	openGraph: {
-		title: "Og Image Generator - Free Online Generator | Create Instantly",
-		description:
-			"Generate Process instantly with our free og image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
-		url: "https://30tools.com/og-image-generator",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/og-image-generator.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Og Image Generator - Free Online Generator | Create Instantly",
-			},
-		],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Og Image Generator - Free Online Generator | Create Instantly",
-		description:
-			"Generate Process instantly with our free og image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
-		images: ["/og-images/og-image-generator.jpg"],
-		creator: "@30tools",
-	},
-	alternates: {
-		canonical: "https://30tools.com/og-image-generator",
-	},
-};
+export const metadata = generateToolMetadata("og-image-generator", "image");
 
 const jsonLd = {
 	"@context": "https://schema.org",

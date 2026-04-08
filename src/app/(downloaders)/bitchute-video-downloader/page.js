@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "BitChute Video Downloader - Save BitChute Videos Free | 30tools",
-	description:
-		"Download BitChute videos to MP4 for free. Save alternative media and podcasts from BitChute without restrictions. No login required. Works on all devices.",
-	keywords: [
-		"bitchute video downloader",
-		"download bitchute video",
-		"bitchute to mp4",
-		"save bitchute video",
-		"bitchute downloader free",
-		"bitchute video saver",
-		"how to download bitchute videos",
-		"bitchute alternative media download",
-		"download from bitchute",
-	].join(", "),
-	openGraph: {
-		title: "BitChute Video Downloader - Save Videos Free",
-		description:
-			"⚡ Download BitChute videos as MP4 for free. No censorship, no login required.",
-		url: "https://30tools.com/bitchute-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "BitChute Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "BitChute Video Downloader (2026)",
-		description:
-			"⚡ Save BitChute videos offline as MP4. Free, no login required.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/bitchute-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("bitchute-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

@@ -1,59 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import RobotsTxtGenerator from "@/components/tools/seo/RobotsTxtGenerator";
 
-export const metadata = {
-	title: "Robots.txt Generator - Free Robots File Creator | 30tools",
-	description:
-		"Generate robots.txt files for your website. Control search engine crawlers with our free robots.txt generator. Easy to use with common presets.",
-	keywords: [
-		"robots.txt generator",
-		"robots txt generator",
-		"robots file generator",
-		"create robots.txt",
-		"robots.txt creator",
-		"robots.txt maker",
-		"robots.txt generator free",
-		"seo robots.txt",
-		"robots.txt tool",
-	].join(", "),
-
-	openGraph: {
-		title: "Robots.txt Generator - Free Robots File Creator",
-		description:
-			"⚡ Generate robots.txt files easily. Control search engine crawlers!",
-		url: "https://30tools.com/robots-txt-generator",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/robots-txt-generator.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Robots.txt Generator",
-			},
-		],
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "Robots.txt Generator - Free",
-		description: "⚡ Create robots.txt files easily!",
-		images: ["/og-images/robots-txt-generator.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/robots-txt-generator" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("robots-txt-generator", "seo");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

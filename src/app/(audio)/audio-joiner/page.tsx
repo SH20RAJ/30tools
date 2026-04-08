@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ComingSoon from "@/components/shared/ComingSoon";
 
-export const metadata: Metadata = {
-	title: { absolute: "Audio Joiner - Free Online Tool | 30Tools" },
-	description:
-		"Free online Audio Joiner. Fast, secure, and easy to use with no registration required.",
-};
+export const metadata = generateToolMetadata("audio-joiner", "others");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

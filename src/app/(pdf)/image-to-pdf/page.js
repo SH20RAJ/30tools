@@ -1,4 +1,5 @@
 import { Camera, FileText, FolderArchive, Share2 } from "lucide-react";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import Link from "next/link";
 import {
 	BreadcrumbsEnhanced,
@@ -15,42 +16,7 @@ import {
 import ImageToPDFTool from "@/components/tools/pdf/ImageToPDFTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
-export const metadata = {
-	title: "Image to PDF Converter Online (2026) - Photos to PDF | 30Tools",
-	description:
-		"Best free online image to pdf converter. combine multiple JPG, PNG, BMP, and GIF images into a professional PDF document instantly and safely.",
-	keywords:
-		"image to pdf 2026, jpg to pdf, png to pdf, convert image to pdf, combine images to pdf, free image to pdf, online pdf converter, picture to pdf, best image to pdf, convert jpg to pdf online free, turn photos into pdf, make pdf from images, jpg to pdf converter free no watermark, create pdf from pictures, photo to pdf converter",
-	alternates: {
-		canonical: "https://30tools.com/image-to-pdf",
-	},
-	openGraph: {
-		title: "Image to PDF Converter - Convert JPG/PNG to PDF Free",
-		description:
-			"Convert images to PDF online for free. Combine multiple JPG, PNG, BMP, and GIF images into a single PDF document. Secure, fast, and easy.",
-		url: "https://30tools.com/image-to-pdf",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/image-to-pdf.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free Image to PDF Converter",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Image to PDF Converter - Convert JPG/PNG to PDF Free",
-		description:
-			"Convert images to PDF online for free. Combine multiple JPG, PNG, BMP, and GIF images into a single PDF document. Secure, fast, and easy.",
-		images: ["/og-images/image-to-pdf.jpg"],
-		creator: "@30tools",
-	},
-	category: "PDF Tools",
-};
+export const metadata = generateToolMetadata("image-to-pdf", "pdf");
 
 export default async function ImageToPDFPage({ searchParams }) {
 	const params = await searchParams;

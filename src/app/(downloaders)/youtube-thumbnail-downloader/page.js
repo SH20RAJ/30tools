@@ -1,60 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "YouTube Thumbnail Downloader - Save HD Thumbnails Free | 30tools",
-	description:
-		"Download YouTube video thumbnails in HD (1280x720) and full resolution for free. Paste any YouTube URL and save the custom thumbnail instantly.",
-	keywords: [
-		"youtube thumbnail downloader",
-		"download youtube thumbnail",
-		"youtube thumbnail hd download",
-		"save youtube thumbnail",
-		"youtube thumbnail saver",
-		"how to download youtube thumbnail",
-		"youtube thumbnail 1080p",
-		"youtube thumbnail grabber",
-		"youtube thumbnail extractor",
-		"get youtube video thumbnail",
-		"youtube thumbnail download free",
-	].join(", "),
-	openGraph: {
-		title: "YouTube Thumbnail Downloader - Save HD Thumbnails Instantly",
-		description:
-			"⚡ Download YouTube video thumbnails in 1080p, 720p, and 480p. Free, no login, instant download.",
-		url: "https://30tools.com/youtube-thumbnail-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "YouTube Thumbnail Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "YouTube Thumbnail Downloader (2026)",
-		description:
-			"⚡ Save any YouTube video's thumbnail in HD. Free and instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/youtube-thumbnail-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("youtube-thumbnail-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

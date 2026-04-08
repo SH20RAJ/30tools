@@ -1,64 +1,9 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import BreadcrumbSchema from "@/components/shared/BreadcrumbSchema";
 import FAQSchema from "@/components/shared/FAQSchema";
 
-export const metadata = {
-	title: "Free Video Downloader - Download Videos from 50+ Sites | 30tools",
-	description:
-		"The best free online video downloader supporting YouTube, TikTok, Instagram, Facebook, Twitter, Reddit, Pinterest, and 50+ more platforms. Save videos as HD MP4 without watermarks. No login required.",
-	keywords: [
-		"video downloader",
-		"free video downloader",
-		"online video downloader",
-		"download videos from any website",
-		"youtube downloader",
-		"tiktok downloader",
-		"instagram video downloader",
-		"facebook video downloader",
-		"twitter video downloader",
-		"reddit video downloader",
-		"best video downloader 2026",
-		"all in one video downloader",
-		"universal video downloader free",
-		"save video as mp4",
-	].join(", "),
-	openGraph: {
-		title: "Free Video Downloader - 50+ Platforms Supported | 30tools",
-		description:
-			"⚡ Download videos from YouTube, TikTok, Instagram, Facebook, Twitter, Reddit & 50+ more. HD, no watermarks, 100% free.",
-		url: "https://30tools.com/all-downloaders",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "30tools Video Downloader Suite",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Video Downloader - 50+ Platforms | 30tools",
-		description:
-			"⚡ Download from YouTube, TikTok, Instagram & 50+ sites. Free, HD, no watermarks.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/all-downloaders" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("all-downloaders", "others");
 
 const DOWNLOADERS = {
 	"Social Media": [

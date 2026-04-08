@@ -11,44 +11,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = {
-	title: "Free EXIF Reader - View Image Metadata Online | 30tools",
-	description:
-		"Professional exif reader for Process images online. Free, fast & secure image processing. No watermarks, maintains original quality.",
-	keywords:
-		"exif reader, view exif data, image metadata viewer, photo metadata reader, check photo location, camera settings viewer, online exif tool, free metadata extractor, view shutter count, check image edit history, photo gps viewer",
-	alternates: {
-		canonical: "https://30tools.com/exif-reader",
-	},
-	openGraph: {
-		title: "Free EXIF Reader - View Image Metadata Online",
-		description:
-			"Read EXIF data from photos online. Extract camera settings, GPS location, timestamp, and other metadata.",
-		url: "https://30tools.com/exif-reader",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/exif-reader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "EXIF Reader - 30tools",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free EXIF Reader - View Image Metadata Online",
-		description:
-			"Read EXIF data from photos online. Extract camera settings, GPS location, timestamp, and other metadata.",
-		images: ["/og-images/exif-reader.jpg"],
-		creator: "@30tools",
-	},
-	category: "Image Tools",
-};
+export const metadata = generateToolMetadata("exif-reader", "image");
 
 export default async function ExifReaderPage({ searchParams }) {
 	const params = await searchParams;

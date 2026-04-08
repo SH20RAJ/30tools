@@ -1,59 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Likee Video Downloader - Save Likee Videos No Watermark | 30tools",
-	description:
-		"Download Likee videos without watermark for free. Save Likee short videos and special effects clips as HD MP4. No login required. Works on all devices.",
-	keywords: [
-		"likee video downloader",
-		"download likee video no watermark",
-		"likee downloader",
-		"save likee video",
-		"likee to mp4",
-		"likee video download free",
-		"likee video saver",
-		"likee without watermark",
-		"how to download likee videos",
-		"likee short video download",
-	].join(", "),
-	openGraph: {
-		title: "Likee Video Downloader - Save Videos Without Watermark",
-		description:
-			"⚡ Download Likee videos without watermark in HD. Free, no login required.",
-		url: "https://30tools.com/likee-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Likee Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Likee Video Downloader (2026) - No Watermark",
-		description:
-			"⚡ Save Likee videos without watermark as HD MP4. Free and instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/likee-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("likee-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

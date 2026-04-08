@@ -1,23 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ImagesToPdf from "@/components/tools/pdf/ImagesToPdf";
 
-export const metadata = {
-	title: "JPG to PDF Converter - Free Online Tool | 30tools",
-	description:
-		"Convert JPG/JPEG images to PDF documents quickly and easily. High quality, fast, and 100% free online tool.",
-	keywords:
-		"jpg to pdf, jpeg to pdf, convert jpg to pdf, image to pdf, free online converter",
-	openGraph: {
-		title: "JPG to PDF Converter (2026) - Free Tool",
-		description:
-			"⚡ Convert JPG/JPEG images to PDF documents quickly and easily.",
-		url: "https://30tools.com/jpg-to-pdf",
-		siteName: "30tools",
-		type: "website",
-	},
-	alternates: { canonical: "https://30tools.com/jpg-to-pdf" },
-	robots: { index: true, follow: true },
-};
+export const metadata = generateToolMetadata("jpg-to-pdf", "pdf");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

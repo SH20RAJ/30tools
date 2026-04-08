@@ -11,42 +11,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGeneratorTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
 
-export const metadata = {
-	title: "AI Voice Generator - Free Text to Speech Tool | 30tools",
-	description:
-		"Generate Process instantly with our free ai voice generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
-	keywords:
-		"ai voice generator, text to speech, ai audio, generate voice, speech ai, free ai voice generator, tts online, text to audio converter, realistic ai voices, voice cloning free, narrator voice generator, youtube voiceover generator",
-	canonical: "https://30tools.com/ai-voice-generator",
-	openGraph: {
-		title: "AI Voice Generator - Free Text to Speech Tool",
-		description:
-			"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
-		url: "https://30tools.com/ai-voice-generator",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/ai-voice-generator.jpg",
-				width: 1200,
-				height: 630,
-				alt: "AI Voice Generator Tool - 30tools",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "AI Voice Generator - Free Text to Speech Tool",
-		description:
-			"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
-		images: ["/og-images/ai-voice-generator.jpg"],
-		creator: "@30tools",
-	},
-	category: "Generators",
-};
+export const metadata = generateToolMetadata("ai-voice-generator", "generators");
 
 export default async function AIVoiceGeneratorPage({ searchParams }) {
 	const params = await searchParams;

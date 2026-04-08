@@ -1,59 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Twitch Video Downloader - Save Twitch VODs & Clips Free | 30tools",
-	description:
-		"Download Twitch VODs, past broadcasts, and clips as MP4 for free. No Twitch subscription required. The fastest online Twitch video downloader.",
-	keywords: [
-		"twitch video downloader",
-		"download twitch vod",
-		"twitch clip downloader",
-		"save twitch video",
-		"twitch to mp4",
-		"twitch video download free",
-		"how to download twitch vods",
-		"twitch past broadcast downloader",
-		"twitch clip saver",
-		"download twitch clips",
-	].join(", "),
-	openGraph: {
-		title: "Twitch Video Downloader - Save VODs and Clips Free",
-		description:
-			"⚡ Download Twitch VODs and clips as MP4 for free. No subscription needed!",
-		url: "https://30tools.com/twitch-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Twitch Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Twitch Video Downloader (2026)",
-		description:
-			"⚡ Download Twitch VODs and clips offline for free. No login required.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/twitch-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("twitch-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

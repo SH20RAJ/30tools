@@ -1,56 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "MX TakaTak Video Downloader - Save Videos No Watermark | 30tools",
-	description:
-		"Download MX TakaTak videos without watermark for free. Save short videos from MX TakaTak as MP4. No login required. Works on Android, iPhone, and PC.",
-	keywords: [
-		"mx takatak video downloader",
-		"download mx takatak video no watermark",
-		"mxtakatak downloader",
-		"save mx takatak video",
-		"mx takatak to mp4",
-		"mxtakatak video saver",
-		"mx takatak without watermark",
-		"how to download mx takatak videos",
-	].join(", "),
-	openGraph: {
-		title: "MX TakaTak Video Downloader - No Watermark Free",
-		description:
-			"⚡ Download MX TakaTak short videos without watermark. Free, instant.",
-		url: "https://30tools.com/mxtakatak-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "MX TakaTak Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "MX TakaTak Video Downloader (2026)",
-		description: "⚡ Save MX TakaTak videos without watermark for free.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/mxtakatak-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("mxtakatak-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

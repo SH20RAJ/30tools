@@ -1,59 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title:
-		"Online Video Downloader - Download Videos from Any Website Free | 30tools",
-	description:
-		"Universal online video downloader. Download videos from any website for free — YouTube, Facebook, Twitter, TikTok, Instagram, and thousands more. No software needed.",
-	keywords: [
-		"online video downloader",
-		"download video from any website",
-		"universal video downloader",
-		"video downloader online free",
-		"save video from website",
-		"download any video free",
-		"video grabber online",
-		"best online video downloader 2026",
-		"all in one video downloader",
-	].join(", "),
-	openGraph: {
-		title: "Online Video Downloader - Download from Any Website Free",
-		description:
-			"⚡ Download videos from any website in one click. YouTube, TikTok, Instagram, and thousands more.",
-		url: "https://30tools.com/online-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Universal Online Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Online Video Downloader (2026) - Works Everywhere",
-		description:
-			"⚡ Download videos from any website free. No software, works on all devices.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/online-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("online-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

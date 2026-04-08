@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Douyin Video Downloader - Save Douyin Videos No Watermark | 30tools",
-	description:
-		"Download Douyin videos without watermark for free. Save Chinese TikTok (Douyin) videos as HD MP4. No login required. Works on all devices.",
-	keywords: [
-		"douyin video downloader",
-		"download douyin video no watermark",
-		"douyin downloader",
-		"save douyin video",
-		"douyin to mp4",
-		"chinese tiktok downloader",
-		"douyin video saver",
-		"how to download douyin videos",
-		"douyin without watermark",
-	].join(", "),
-	openGraph: {
-		title: "Douyin Video Downloader - Save Chinese TikTok Videos Free",
-		description:
-			"⚡ Download Douyin (Chinese TikTok) videos without watermark. Free, instant, no login.",
-		url: "https://30tools.com/douyin-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Douyin Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Douyin Video Downloader (2026) - No Watermark",
-		description:
-			"⚡ Save Douyin videos without watermark for free. Works globally.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/douyin-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("douyin-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

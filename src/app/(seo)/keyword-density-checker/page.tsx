@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+export const metadata = generateToolMetadata("keyword-density-checker", "seo");
 
-export const metadata: Metadata = {
-  title: "Keyword Density Checker | Free Online Tool",
-  description: "Use this free keyword density checker to get fast and reliable results with clean output.",
-  alternates: {
-    canonical: "https://30tools.com/keyword-density-checker",
-  },
-};
-
-export default function KeywordDensityCheckerPage() {
-  return (
-    <ToolPlaceholderPage
-      toolId="keyword-density-checker"
-      title="Keyword Density Checker"
-      description="Use this free keyword density checker to get fast and reliable results with clean output."
-      categoryName="SEO Tools"
-      categorySlug="seo-tools"
-    />
-  );
+export default function ToolPage() {
+  return <ToolPlaceholderPage toolId="keyword-density-checker" />;
 }

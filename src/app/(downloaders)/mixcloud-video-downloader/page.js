@@ -1,61 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Mixcloud Downloader - Save Mixes and Shows to MP3 Free | 30tools",
-	description:
-		"Download Mixcloud mixes, DJ sets, and radio shows as MP3 for free. The best online Mixcloud to MP3 converter. Save any Mixcloud show for offline listening.",
-	keywords: [
-		"mixcloud downloader",
-		"mixcloud to mp3",
-		"download mixcloud mixes",
-		"save mixcloud show",
-		"mixcloud dj set download",
-		"free mixcloud downloader",
-		"mixcloud radio download",
-		"how to download from mixcloud",
-		"mixcloud offline download",
-		"mixcloud mp3 converter",
-		"download mixcloud podcast",
-		"mixcloud track saver",
-	].join(", "),
-	openGraph: {
-		title: "Mixcloud Downloader - Save DJ Mixes to MP3 Free",
-		description:
-			"⚡ Download Mixcloud DJ mixes and radio shows to MP3 for free. No login required.",
-		url: "https://30tools.com/mixcloud-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Mixcloud Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Mixcloud Downloader (2026) - Save Mixes to MP3",
-		description:
-			"⚡ Save Mixcloud DJ sets and radio shows offline as MP3. Free, no subscription needed.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/mixcloud-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("mixcloud-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

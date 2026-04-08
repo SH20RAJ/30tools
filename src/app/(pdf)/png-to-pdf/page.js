@@ -1,22 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ImagesToPdf from "@/components/tools/pdf/ImagesToPdf";
 
-export const metadata = {
-	title: "PNG to PDF Converter - Free Online Tool | 30tools",
-	description:
-		"Convert PNG images to PDF documents quickly and easily. High quality, fast, and 100% free online tool.",
-	keywords:
-		"png to pdf, convert png to pdf, image to pdf, free online converter",
-	openGraph: {
-		title: "PNG to PDF Converter (2026) - Free Tool",
-		description: "⚡ Convert PNG images to PDF documents quickly and easily.",
-		url: "https://30tools.com/png-to-pdf",
-		siteName: "30tools",
-		type: "website",
-	},
-	alternates: { canonical: "https://30tools.com/png-to-pdf" },
-	robots: { index: true, follow: true },
-};
+export const metadata = generateToolMetadata("png-to-pdf", "pdf");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

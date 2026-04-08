@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
@@ -14,42 +15,7 @@ import {
 import PDFEditorTool from "@/components/tools/pdf/PDFEditorTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
-export const metadata = {
-	title: "Free Online PDF Editor (2026) - Manage & Edit PDF Pages | 30Tools",
-	description:
-		"Best free online pdf editor to extract, delete, rotate, and reorder PDF pages instantly. manage your documents securely without watermarks or installation.",
-	keywords: [
-		"pdf editor 2026, edit pdf online free, delete pdf pages online, extract pages from pdf, rotate pdf pages permanent, manage pdf documents, free pdf organizer, best pdf editor, remove pages from pdf, separate pdf pages, reorder pdf pages, organize pdf, change pdf page order",
-	].join(", "),
-	alternates: {
-		canonical: "https://30tools.com/pdf-editor",
-	},
-	openGraph: {
-		title: "Free PDF Editor (2026) - Edit & Manage Pages",
-		description:
-			"⚡ Edit PDF files online: Extract, Delete, Rotate or Reorder pages! Free & Secure (Updated 2026).",
-		url: "https://30tools.com/pdf-editor",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/pdf-editor.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free PDF Editor 2026 - Online Tool",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free PDF Editor (2026) - Edit Pages Online",
-		description: "⚡ Edit, Rotate & Manage PDF pages online. Updated 2026!",
-		images: ["/og-images/pdf-editor.jpg"],
-		creator: "@30tools",
-	},
-	category: "PDF Tools",
-};
+export const metadata = generateToolMetadata("pdf-editor", "pdf");
 
 export default async function PDFEditorPage({ searchParams }) {
 	const params = await searchParams;

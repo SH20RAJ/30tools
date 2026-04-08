@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Dailymotion Video Downloader - Save HD Videos Free | 30tools",
-	description:
-		"Download Dailymotion videos in HD MP4 for free. The best online Dailymotion downloader. No account needed, no watermarks, works on all devices.",
-	keywords: [
-		"dailymotion video downloader",
-		"download dailymotion video",
-		"free dailymotion downloader",
-		"dailymotion to mp4",
-		"save dailymotion video",
-		"dailymotion video download",
-		"how to download dailymotion videos",
-		"dailymotion hd download",
-		"dailymotion downloader online",
-	].join(", "),
-	openGraph: {
-		title: "Dailymotion Video Downloader - Save HD Videos Free",
-		description:
-			"⚡ Download Dailymotion videos in HD MP4 instantly. Free, no account needed, no watermarks.",
-		url: "https://30tools.com/dailymotion-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Dailymotion Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Dailymotion Video Downloader (2026)",
-		description:
-			"⚡ Download Dailymotion videos in HD MP4 for free. No login, no software needed.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/dailymotion-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("dailymotion-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

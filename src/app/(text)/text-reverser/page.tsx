@@ -1,20 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import TextReverser from "@/components/tools/text/TextReverser";
 
-export const metadata: Metadata = {
-	title: { absolute: "Backwards Text Generator | Reverse Text Online Free" },
-	description:
-		"Free backwards text generator online. Reverse text, words, or lines instantly. Perfect for social media, coding, or fun experiments with reversed text.",
-	keywords: [
-		"backwards text generator",
-		"reverse text online free",
-		"text reverser tool",
-		"reverse words online",
-		"text flipper online",
-		"mirror text generator",
-		"reverse text in excel",
-	],
-};
+export const metadata = generateToolMetadata("text-reverser", "text");
 
 export default async function ToolPage({ searchParams }) {
 	const _params = await searchParams;

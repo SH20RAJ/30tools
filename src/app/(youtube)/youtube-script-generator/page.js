@@ -1,63 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import YouTubeScriptGenerator from "@/components/tools/youtube/YouTubeScriptGenerator";
 
-export const metadata = {
-	title: "YouTube Script Generator - AI Video Script Writer Free | 30tools",
-	description:
-		"Generate engaging YouTube video scripts with AI. Create professional scripts for tutorials, vlogs, reviews, and more. Free AI-powered script writing tool.",
-	keywords: [
-		"youtube script generator",
-		"youtube script writer",
-		"video script generator",
-		"ai script generator",
-		"youtube video script",
-		"script generator for youtube",
-		"youtube script ai",
-		"video script writer",
-		"youtube script generator free",
-		"ai video script generator",
-		"youtube script template",
-		"youtube video script generator",
-		"script writing for youtube",
-	].join(", "),
-
-	openGraph: {
-		title: "YouTube Script Generator - AI Script Writer",
-		description:
-			"⚡ Generate engaging YouTube video scripts with AI instantly!",
-		url: "https://30tools.com/youtube-script-generator",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/youtube-script-generator.jpg",
-				width: 1200,
-				height: 630,
-				alt: "YouTube Script Generator",
-			},
-		],
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "YouTube Script Generator - Free AI",
-		description: "⚡ Generate video scripts with AI!",
-		images: ["/og-images/youtube-script-generator.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/youtube-script-generator" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("youtube-script-generator", "youtube");
 
 const jsonLdSchemas = {
 	webApp: {

@@ -1,4 +1,5 @@
 import MarkdownToText from "@/components/tools/text/MarkdownToText";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getAllTools } from "@/constants/tools-utils";
 import toolsData from "@/constants/tools.json";
 import Link from "next/link";
@@ -7,21 +8,7 @@ import { ChevronRight, TypeIcon } from "lucide-react";
 const TOOL_ID = "markdown-to-text";
 const tool = getAllTools().find((t) => t.id === TOOL_ID);
 
-export const metadata = {
-	title: `${tool.name} - Free Online Markdown Converter | 30tools`,
-	description: tool.description,
-	keywords:
-		"markdown to text, convert markdown to plain text, strip markdown formatting, clean ai text, markdown converter online, github flavored markdown to text",
-	alternates: {
-		canonical: `https://30tools.com${tool.route}`,
-	},
-	openGraph: {
-		title: `${tool.name} - 30tools`,
-		description: tool.description,
-		url: `https://30tools.com${tool.route}`,
-		type: "website",
-	},
-};
+export const metadata = generateToolMetadata("markdown-to-text", "text");
 
 export default async function MarkdownToTextPage({ searchParams }) {
 	const params = await searchParams;

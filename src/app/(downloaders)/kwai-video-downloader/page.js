@@ -1,59 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Kwai Video Downloader - Save Kwai Videos No Watermark | 30tools",
-	description:
-		"Download Kwai videos without watermark for free. Save Kwai short videos as MP4 to your device. No login needed. Works on Android, iPhone, and PC instantly.",
-	keywords: [
-		"kwai video downloader",
-		"download kwai video no watermark",
-		"kwai downloader",
-		"save kwai video",
-		"kwai to mp4",
-		"kwai video download free",
-		"kwai video saver",
-		"kwai without watermark",
-		"how to download kwai videos",
-		"kwai short video download",
-	].join(", "),
-	openGraph: {
-		title: "Kwai Video Downloader - Save Videos Without Watermark",
-		description:
-			"⚡ Download Kwai short videos without watermark in HD. Free, no login required.",
-		url: "https://30tools.com/kwai-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Kwai Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Kwai Video Downloader (2026) - No Watermark Free",
-		description:
-			"⚡ Save Kwai videos without watermark as HD MP4. Free, instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/kwai-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("kwai-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

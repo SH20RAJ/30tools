@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import LineSorter from "@/components/tools/text/LineSorter";
 
-export const metadata: Metadata = {
-	title: {
-		absolute: "Alphabetize List Online Free | Sort Lines Alphabetically Online",
-	},
-	description:
-		"Alphabetize lists online for free instantly. Best tool to sort lines alphabetically (A-Z, Z-A), by length, or randomize order. Perfect for developers and designers.",
-	keywords: [
-		"alphabetize list online free",
-		"sort lines alphabetically",
-		"list sorter tool",
-		"randomize list online",
-		"text sorter online",
-		"alphabetizer for lists",
-		"sort text by length",
-	],
-};
+export const metadata = generateToolMetadata("line-sorter", "text");
 
 export default async function LineSorterPage({
 	searchParams,

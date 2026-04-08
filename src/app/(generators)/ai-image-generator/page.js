@@ -12,65 +12,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import AIImageGeneratorTool from "@/components/tools/generators/AIImageGeneratorTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
 
-export const metadata = {
-	title: "Ai Image Generator - Free Online Generator | Create Instantly",
-	description:
-		"Generate Process instantly with our free ai image generator. Professional quality results, unlimited generations. Perfect for creators, developers & businesses.",
-	keywords: [
-		// Primary keywords
-		"ai image generator",
-		"text to image ai",
-		"ai art generator",
-		"free ai image creator",
-		"artificial intelligence image",
-
-		// Long-tail keywords for SEO ranking
-		"free ai image generator no signup",
-		"text to image generator online",
-		"ai art creator from text description",
-		"artificial intelligence image maker",
-		"generate images from text prompts",
-		"ai picture generator free online",
-		"text to ai art converter",
-		"free ai image creation tool",
-		"artificial intelligence art generator",
-		"ai image generator with styles",
-		"text description to image ai",
-		"create ai images from text",
-		"ai image maker free unlimited",
-		"artificial intelligence image creator",
-	].join(", "),
-	openGraph: {
-		title: "Free AI Image Generator - Create Images from Text",
-		description:
-			"Generate stunning AI images from text prompts instantly. Free AI art generator with advanced features and styles. No signup required.",
-		url: "https://30tools.com/ai-image-generator",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/ai-image-generator.jpg",
-				width: 1200,
-				height: 630,
-				alt: "AI Image Generator - Free Text to Image Tool",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "AI Image Generator - Free Text to Image Creator",
-		description:
-			"Generate stunning AI images from text prompts instantly. Free AI art generator with advanced features and no signup required.",
-		images: ["/og-images/ai-image-generator.jpg"],
-		creator: "@30tools",
-	},
-	alternates: {
-		canonical: "https://30tools.com/ai-image-generator",
-	},
-	category: "Generators",
-};
+export const metadata = generateToolMetadata("ai-image-generator", "generators");
 
 export default async function AIImageGeneratorPage({ searchParams }) {
 	const params = await searchParams;

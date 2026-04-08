@@ -8,18 +8,10 @@ import { getToolById } from "@/constants/tools-utils";
 
 interface ToolPlaceholderPageProps {
 	toolId: string;
-	title: string;
-	description: string;
-	categoryName: string;
-	categorySlug: string;
 }
 
 export default function ToolPlaceholderPage({
 	toolId,
-	title,
-	description,
-	categoryName,
-	categorySlug,
 }: ToolPlaceholderPageProps) {
 	const [toolData, setToolData] = useState<any>(null);
 
@@ -30,8 +22,14 @@ export default function ToolPlaceholderPage({
 		}
 	}, [toolId]);
 
+	// Derived values from toolData with fallbacks
+	const title = toolData?.seoTitle || toolData?.name || "";
+	const description = toolData?.seoDescription || toolData?.description || "";
+	const categoryName = toolData?.categoryName || "";
+	const categorySlug = toolData?.categorySlug || "";
+
 	const baseUrl = "https://30tools.com";
-	const toolUrl = `${baseUrl}/${toolId}`;
+	const toolUrl = `${baseUrl}${toolData?.route || "/" + toolId}`;
 
 	// JSON-LD: WebApplication (memoized)
 	const softwareAppJsonLd = useMemo(
@@ -53,8 +51,9 @@ export default function ToolPlaceholderPage({
 				name: "30tools",
 				url: baseUrl,
 			},
+			featureList: toolData?.features || [],
 		}),
-		[title, description, toolUrl],
+		[title, description, toolUrl, toolData?.features],
 	);
 
 	// JSON-LD: FAQ (memoized)

@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import RemoveDuplicates from "@/components/tools/text/RemoveDuplicates";
 
-export const metadata: Metadata = {
-	title: {
-		absolute: "Remove Duplicates from List Online Free | Clean Duplicate Lines",
-	},
-	description:
-		"Remove duplicates from any list online for free. Best tool to clean duplicate lines, dedup text, and organize your data instantly. Secure and easy to use.",
-	keywords: [
-		"remove duplicates from list online",
-		"clean duplicate lines",
-		"dedup list free",
-		"remove repetitive text online",
-		"duplicate line remover",
-		"text deduplication tool",
-		"online list cleaner",
-	],
-};
+export const metadata = generateToolMetadata("remove-duplicates", "others");
 
 export default async function ToolPage({ searchParams }) {
 	const _params = await searchParams;

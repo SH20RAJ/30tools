@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "IMDB Video Downloader - Save IMDB Trailers Free | 30tools",
-	description:
-		"Download IMDB movie trailers, clips, and TV show teasers for free. Save IMDB video content as MP4 offline. No login required. Works on all devices.",
-	keywords: [
-		"imdb video downloader",
-		"download imdb trailer",
-		"imdb clip downloader",
-		"save imdb video",
-		"imdb to mp4",
-		"download movie trailer imdb",
-		"imdb trailer saver",
-		"how to download from imdb",
-		"imdb video download free",
-	].join(", "),
-	openGraph: {
-		title: "IMDB Video Downloader - Save Movie Trailers Free",
-		description:
-			"⚡ Download IMDB movie trailers and clips as MP4 for free. No login required.",
-		url: "https://30tools.com/imdb-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "IMDB Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "IMDB Video Downloader (2026) - Movie Trailers",
-		description:
-			"⚡ Save IMDB movie trailers and TV clips offline as MP4. Free, instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/imdb-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("imdb-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

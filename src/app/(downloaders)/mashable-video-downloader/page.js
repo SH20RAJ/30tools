@@ -1,56 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Mashable Video Downloader - Save Mashable Videos Free | 30tools",
-	description:
-		"Download Mashable tech, science, and entertainment videos for free. Save Mashable web explainers and tech news clips as MP4. No login required. All devices.",
-	keywords: [
-		"mashable video downloader",
-		"download mashable video",
-		"save mashable video",
-		"mashable to mp4",
-		"mashable tech video download",
-		"mashable downloader free",
-		"how to download mashable videos",
-		"mashable clip saver",
-	].join(", "),
-	openGraph: {
-		title: "Mashable Video Downloader - Save Tech Videos Free",
-		description:
-			"⚡ Download Mashable tech, science, and entertainment videos as MP4. Free, instant.",
-		url: "https://30tools.com/mashable-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Mashable Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Mashable Video Downloader (2026)",
-		description: "⚡ Save Mashable videos offline as MP4. Free, no login.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/mashable-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("mashable-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

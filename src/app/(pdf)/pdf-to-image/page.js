@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
@@ -14,42 +15,7 @@ import {
 import PdfToImageTool from "@/components/tools/pdf/PdfToImageTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
-export const metadata = {
-	title: "PDF to Image Converter Online (2026) - PDF to JPG/PNG | 30Tools",
-	description:
-		"Best free online pdf to image converter. extract pages from PDF as high-quality JPG or PNG images instantly. secure pdf to picture conversion online.",
-	keywords:
-		"pdf to image 2026, pdf to jpg, pdf to png, convert pdf to image, pdf to picture, free pdf to image, online pdf converter, extract pdf pages as images, pdf to image converter, save pdf as jpg, turn pdf into image, change pdf to photo, high quality pdf to jpg, pdf to image exact match",
-	alternates: {
-		canonical: "https://30tools.com/pdf-to-image",
-	},
-	openGraph: {
-		title: "PDF to Image Converter - Convert PDF to JPG/PNG Free",
-		description:
-			"Convert PDF pages to high-quality JPG or PNG images online for free. Extract images from PDF securely. Fast, easy, and no installation required.",
-		url: "https://30tools.com/pdf-to-image",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/pdf-to-image.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free PDF to Image Converter",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "PDF to Image Converter - Convert PDF to JPG/PNG Free",
-		description:
-			"Convert PDF pages to high-quality JPG or PNG images online for free. Extract images from PDF securely. Fast, easy, and no installation required.",
-		images: ["/og-images/pdf-to-image.jpg"],
-		creator: "@30tools",
-	},
-	category: "PDF Tools",
-};
+export const metadata = generateToolMetadata("pdf-to-image", "pdf");
 
 export default async function PdfToImagePage({ searchParams }) {
 	const params = await searchParams;

@@ -1,60 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Instagram Story Downloader - Save IG Stories Free | 30tools",
-	description:
-		"Download Instagram Stories anonymously without notifying the account. Free IG story saver for photos and videos. Works on iPhone, Android, and PC.",
-	keywords: [
-		"instagram story downloader",
-		"download instagram story",
-		"save instagram story",
-		"ig story saver",
-		"instagram story viewer",
-		"anonymous instagram story viewer",
-		"insta story download",
-		"how to download instagram story",
-		"instagram story saver online",
-		"save ig story to camera roll",
-		"instagram story downloader without watermark",
-	].join(", "),
-	openGraph: {
-		title: "Instagram Story Downloader - View & Save IG Stories Anonymously",
-		description:
-			"⚡ Download Instagram stories and highlights without anyone knowing. Free online IG story saver.",
-		url: "https://30tools.com/instagram-story-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Instagram Story Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Instagram Story Downloader (2026) - Save Anonymously",
-		description:
-			"⚡ Save Instagram stories without them knowing. Free online IG story downloader.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/instagram-story-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("instagram-story-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

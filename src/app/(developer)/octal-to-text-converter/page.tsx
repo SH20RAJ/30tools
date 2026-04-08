@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+export const metadata = generateToolMetadata("octal-to-text-converter", "developer");
 
-export const metadata: Metadata = {
-  title: "Octal to Text Converter | Free Online Tool",
-  description: "Use this free octal to text converter to get fast and reliable results with clean output.",
-  alternates: {
-    canonical: "https://30tools.com/octal-to-text-converter",
-  },
-};
-
-export default function OctalToTextConverterPage() {
-  return (
-    <ToolPlaceholderPage
-      toolId="octal-to-text-converter"
-      title="Octal to Text Converter"
-      description="Use this free octal to text converter to get fast and reliable results with clean output."
-      categoryName="Developer Tools"
-      categorySlug="developer-tools"
-    />
-  );
+export default function ToolPage() {
+  return <ToolPlaceholderPage toolId="octal-to-text-converter" />;
 }

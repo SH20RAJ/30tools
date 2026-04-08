@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import YouTubeShortsDownloader from "@/components/tools/youtube/YouTubeShortsDownloader";
 
 const researchedKeywords = [
@@ -79,51 +80,7 @@ const researchedKeywords = [
 	"youtube shorts",
 ];
 
-export const metadata = {
-	title: "Youtube Shorts Downloader - Free Online Tool | 30tools",
-	description:
-		"Professional youtube shorts downloader tool. Free online processing with high-quality results. No registration required, instant results.",
-	keywords: researchedKeywords.join(", "),
-
-	openGraph: {
-		title: "YouTube Shorts Downloader (2026) - HD & No Watermark",
-		description:
-			"⚡ Save YouTube Shorts in HD quality instantly (2026 Updated). Fast yt short download - no watermark, works on all devices!",
-		url: "https://30tools.com/youtube-shorts-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/youtube-shorts-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free YouTube Shorts Downloader 2026",
-			},
-		],
-	},
-
-	twitter: {
-		card: "summary_large_image",
-		title: "YouTube Shorts Downloader (2026) - Free HD Downloads",
-		description:
-			"⚡ Download YouTube Shorts videos in HD. Best yt short downloader, updated 2026!",
-		images: ["/og-images/youtube-shorts-downloader.jpg"],
-		creator: "@30tools",
-	},
-
-	alternates: { canonical: "https://30tools.com/youtube-shorts-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("youtube-shorts-downloader", "youtube");
 
 const jsonLdSchemas = {
 	webApp: {

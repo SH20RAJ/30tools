@@ -1,57 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "İzlesene Video Downloader - Save Turkish Videos Free | 30tools",
-	description:
-		"Download İzlesene (izlesene.com) videos for free. Save Turkish video content from Turkey's YouTube as MP4. No login required, works on all devices.",
-	keywords: [
-		"izlesene video downloader",
-		"izlesene downloader",
-		"download izlesene video",
-		"izlesene to mp4",
-		"save izlesene video",
-		"turkish youtube downloader",
-		"izlesene video saver",
-		"how to download from izlesene",
-	].join(", "),
-	openGraph: {
-		title: "İzlesene Video Downloader - Turkish YouTube Downloader",
-		description:
-			"⚡ Download İzlesene videos as MP4 for free. Turkey's YouTube, no login required.",
-		url: "https://30tools.com/izlesene-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "İzlesene Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "İzlesene Video Downloader (2026)",
-		description:
-			"⚡ Save İzlesene Turkish videos offline as MP4. Free, instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/izlesene-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("izlesene-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

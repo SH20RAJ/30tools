@@ -1,56 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Pinterest Video Downloader Free Online | Save Pinterest Videos",
-	description:
-		"Download Pinterest videos free online. Best tool to save Pinterest videos and video pins to your gallery instantly. No watermark, no login required. MP4 format.",
-	keywords: [
-		"pinterest video downloader free online",
-		"save pinterest videos to gallery",
-		"download pinterest video pin free",
-		"best pinterest video saver",
-		"pinterest to mp4 and 4k",
-		"online pinterest video grabber",
-		"save diy and craft videos from pinterest",
-	],
-	openGraph: {
-		title: "Pinterest Video Downloader - Save Video Pins Free",
-		description:
-			"⚡ Download Pinterest videos and video pins as MP4 for free. Instant, no login.",
-		url: "https://30tools.com/pinterest-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Pinterest Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Pinterest Video Downloader (2026) - Free",
-		description:
-			"⚡ Save Pinterest video pins offline as MP4. Free, no watermarks.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/pinterest-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("pinterest-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

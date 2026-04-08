@@ -1,60 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Imgur Video Downloader - Save Imgur Videos & GIFs Free | 30tools",
-	description:
-		"Download Imgur videos, GIFs, and gifv files to your device for free. Save any Imgur post as MP4 without watermarks. No login required, works on all devices.",
-	keywords: [
-		"imgur video downloader",
-		"download imgur video",
-		"imgur gif downloader",
-		"save imgur video",
-		"imgur to mp4",
-		"imgur gifv download",
-		"imgur video saver",
-		"how to save imgur gif",
-		"download imgur post",
-		"imgur video download free",
-		"imgur gif to mp4",
-	].join(", "),
-	openGraph: {
-		title: "Imgur Video Downloader - Save Videos & GIFs Free",
-		description:
-			"⚡ Download Imgur videos, GIFs, and gifv files as MP4 for free. Instant, no login.",
-		url: "https://30tools.com/imgur-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Imgur Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Imgur Video Downloader (2026) - Free",
-		description:
-			"⚡ Save Imgur GIFs and videos as MP4 files instantly. Free, no account needed.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/imgur-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("imgur-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

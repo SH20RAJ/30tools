@@ -8,6 +8,7 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import InstagramDownloader from "@/components/tools/downloaders/InstagramDownloader";
 import {
 	Accordion,
@@ -16,61 +17,7 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const metadata = {
-	title: { absolute: "Instagram Downloader (2026) - No Watermark | 30Tools" },
-	description:
-		"Download Instagram Videos, Reels, Stories & Photos in HD 1080p. Updated 2026. Anonymous, Free, No Watermark. Works on iPhone/Android.",
-	keywords: [
-		"instagram downloader 2026",
-		"instagram login",
-		"ig login",
-		"انستا",
-		"instagram.com login",
-		"instagram entrar",
-		"instagram login account",
-		"ig downloader free",
-		"save instagram video",
-		"instagram to mp4",
-		"instagram story viewer",
-		"no watermark",
-		"anonymous story viewer",
-		"instagram app download",
-		"insta login",
-		"isnta",
-		"ins",
-		"inst",
-		"instagram reels audio download",
-		"download private instagram photos",
-		"ig story saver anonymous",
-		"save instagram highlights",
-		"instagram profile picture downloader full size",
-		"download instagram carousel",
-	].join(", "),
-	openGraph: {
-		title: "Instagram Downloader (2026) - Save Reels & Stories Free",
-		description:
-			"⚡ Download Instagram Reels, Stories & Videos in HD. Free, fast & no watermark! (Updated 2026)",
-		url: "https://30tools.com/instagram-downloader",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/instagram-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Best Instagram Downloader 2026",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Instagram Downloader (2026) - Free & No Watermark",
-		description:
-			"⚡ Download Instagram Reels, Stories & Videos in HD. Updated 2026!",
-		images: ["/og-images/instagram-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/instagram-downloader" },
-};
+export const metadata = generateToolMetadata("instagram-downloader", "downloaders");
 
 // JSON-LD structured data for Bing & Google
 const jsonLdSchemas = {

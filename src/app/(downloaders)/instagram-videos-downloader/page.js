@@ -1,57 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Instagram Video Downloader - Save Reels, IGTV & Photos HD | 30tools",
-	description:
-		"Download Instagram Videos, Reels, Photos, IGTV and Carousel in HD. Free online Instagram video downloader. Save IG videos fast and securely.",
-	keywords: [
-		"instagram video downloader",
-		"download instagram reels",
-		"instagram story downloader",
-		"save instagram video hd",
-		"instagram video saver",
-		"free online instagram video downloader",
-		"download igtv videos",
-		"instagram photo downloader",
-	].join(", "),
-	openGraph: {
-		title: "Instagram Video Downloader (2026) - Save IG Reels & Stories",
-		description:
-			"⚡ Download Instagram Videos, Reels, Photos, IGTV and Carousel in HD. Free online tool to save IG content securely.",
-		url: "https://30tools.com/instagram-videos-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Instagram Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Instagram Video Downloader (2026)",
-		description:
-			"⚡ Download Instagram Videos, Reels, Photos & IGTV in HD. Save your favorite IG content securely.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/instagram-videos-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("instagram-videos-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

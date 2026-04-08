@@ -11,44 +11,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import FaviconGeneratorTool from "@/components/tools/image/FaviconGeneratorTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = {
-	title: "Favicon Generator - Free | 30tools",
-	description:
-		"Create custom favicons for your website in seconds. Convert text, emojis, or images to high-quality favicons. Download in standard sizes.",
-	keywords:
-		"favicon generator, create favicon, favicon maker, website icon creator, emoji to favicon, text to favicon, image to favicon, free favicon tool, favicon.ico generator, app icon generator",
-	alternates: {
-		canonical: "https://30tools.com/favicon-generator",
-	},
-	openGraph: {
-		title: "Free Favicon Generator - Create Website Icons Online",
-		description:
-			"Create custom favicons for your website in seconds. Convert text, emojis, or images to high-quality favicons.",
-		url: "https://30tools.com/favicon-generator",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/favicon-generator.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Favicon Generator - 30tools",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Favicon Generator - Create Website Icons Online",
-		description:
-			"Create custom favicons for your website in seconds. Convert text, emojis, or images to high-quality favicons.",
-		images: ["/og-images/favicon-generator.jpg"],
-		creator: "@30tools",
-	},
-	category: "Image Tools",
-};
+export const metadata = generateToolMetadata("favicon-generator", "image");
 
 export default async function FaviconGeneratorPage({ searchParams }) {
 	const params = await searchParams;

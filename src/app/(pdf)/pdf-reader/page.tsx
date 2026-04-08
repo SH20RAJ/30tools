@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfReader from "@/components/tools/pdf/PdfReader";
 
-export const metadata: Metadata = {
-	title: { absolute: "PDF Reader - View PDF Files Online | 30Tools" },
-	description:
-		"View PDF files directly in your browser with our free online PDF Reader. No software installation required. Secure and fast.",
-	keywords: [
-		"pdf reader",
-		"view pdf online",
-		"pdf viewer",
-		"open pdf",
-		"read pdf",
-	],
-};
+export const metadata = generateToolMetadata("pdf-reader", "others");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

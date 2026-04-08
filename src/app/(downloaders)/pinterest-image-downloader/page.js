@@ -1,58 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Pinterest Image Downloader - Save Pinterest Photos Free | 30tools",
-	description:
-		"Download Pinterest images and photos in original HD quality for free. Save any Pinterest picture to your device without watermarks. No login required.",
-	keywords: [
-		"pinterest image downloader",
-		"download pinterest images",
-		"save pinterest photo",
-		"pinterest photo downloader",
-		"pinterest picture downloader",
-		"download pinterest photos free",
-		"how to download pinterest images",
-		"save pinterest picture hd",
-		"pinterest image saver",
-	].join(", "),
-	openGraph: {
-		title: "Pinterest Image Downloader - Save Photos in HD Free",
-		description:
-			"⚡ Download Pinterest images and photos in original HD quality. Free, no login.",
-		url: "https://30tools.com/pinterest-image-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Pinterest Image Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Pinterest Image Downloader (2026) - HD Free",
-		description:
-			"⚡ Save Pinterest images in original quality. Free, instant, no login.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/pinterest-image-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("pinterest-image-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

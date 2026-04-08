@@ -1,56 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Chingari Video Downloader - Save Chingari Videos Free | 30tools",
-	description:
-		"Download Chingari videos without watermark for free. Save short videos from India's homegrown app as MP4. No login required. Works on Android and iPhone.",
-	keywords: [
-		"chingari video downloader",
-		"download chingari video",
-		"chingari video saver",
-		"chingari to mp4",
-		"chingari downloader",
-		"save chingari video free",
-		"chingari without watermark",
-		"chingari indian short video download",
-	].join(", "),
-	openGraph: {
-		title: "Chingari Video Downloader - Save Indian Short Videos Free",
-		description:
-			"⚡ Download Chingari videos without watermark. India's homegrown TikTok alternative downloader.",
-		url: "https://30tools.com/chingari-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Chingari Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Chingari Video Downloader (2026)",
-		description: "⚡ Save Chingari videos without watermark. Free, instant.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/chingari-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("chingari-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

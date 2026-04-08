@@ -1,18 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ImagesToPdf from "@/components/tools/pdf/ImagesToPdf";
 
-export const metadata: Metadata = {
-	title: { absolute: "Images to PDF Converter - JPG/PNG to PDF | 30Tools" },
-	description:
-		"Convert your images to PDF online for free. Combine multiple JPG or PNG photos into a single PDF document securely in your browser.",
-	keywords: [
-		"images to pdf",
-		"jpg to pdf",
-		"png to pdf",
-		"photo to pdf",
-		"convert images to pdf",
-	],
-};
+export const metadata = generateToolMetadata("images-to-pdf", "others");
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

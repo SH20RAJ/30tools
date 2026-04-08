@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+export const metadata = generateToolMetadata("facebook-id-finder", "utilities");
 
-export const metadata: Metadata = {
-  title: "Facebook ID Finder | Free Online Tool",
-  description: "Use this free facebook id finder to get fast and reliable results with clean output.",
-  alternates: {
-    canonical: "https://30tools.com/facebook-id-finder",
-  },
-};
-
-export default function FacebookIdFinderPage() {
-  return (
-    <ToolPlaceholderPage
-      toolId="facebook-id-finder"
-      title="Facebook ID Finder"
-      description="Use this free facebook id finder to get fast and reliable results with clean output."
-      categoryName="Utility Tools"
-      categorySlug="utility-tools"
-    />
-  );
+export default function ToolPage() {
+  return <ToolPlaceholderPage toolId="facebook-id-finder" />;
 }

@@ -11,44 +11,10 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = {
-	title: "Image Converter - Free Online Converter | Instant Conversion",
-	description:
-		"Convert images online for free. Support for JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert photos with quality control and resizing options.",
-	keywords:
-		"image converter, convert image online, jpg to png, png to jpg, heic to jpg, webp converter, image format converter, free photo converter, bulk image converter, convert pictures to pdf, change photo format, bmp to jpg, tiff converter, raw to jpeg, svg converter",
-	alternates: {
-		canonical: "https://30tools.com/image-converter",
-	},
-	openGraph: {
-		title: "Free Image Converter - Convert JPG, PNG, WebP, HEIC Online",
-		description:
-			"Convert images online for free. Support for JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert photos with quality control.",
-		url: "https://30tools.com/image-converter",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/image-converter.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Image Converter - 30tools",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Image Converter - Convert JPG, PNG, WebP, HEIC Online",
-		description:
-			"Convert images online for free. Support for JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert photos with quality control.",
-		images: ["/og-images/image-converter.jpg"],
-		creator: "@30tools",
-	},
-	category: "Image Tools",
-};
+export const metadata = generateToolMetadata("image-converter", "image");
 
 export default async function ImageConverterPage({ searchParams }) {
 	const params = await searchParams;

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
@@ -14,42 +15,7 @@ import {
 import PdfProtectTool from "@/components/tools/pdf/PdfProtectTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
-export const metadata = {
-	title: "Pdf Protect - Free PDF Tool | Professional PDF Processing",
-	description:
-		"Best free online pdf protector to secure your PDF files with strong AES encryption. add passwords and restrict printing or copying instantly and safely.",
-	keywords:
-		"pdf password protect 2026, encrypt pdf, secure pdf, add password to pdf, pdf security, protect pdf online, pdf encryption, free pdf tools, lock pdf file, password protect pdf online free, secure document transfer, gdpr compliant pdf protection, hipaa compliant document security",
-	alternates: {
-		canonical: "https://30tools.com/pdf-protect",
-	},
-	openGraph: {
-		title: "Free PDF Password Protector - Encrypt & Secure PDF Files",
-		description:
-			"Secure your PDF files with strong AES encryption. Add passwords, restrict printing and copying, and protect your sensitive documents online for free.",
-		url: "https://30tools.com/pdf-protect",
-		siteName: "30tools",
-		images: [
-			{
-				url: "/og-images/pdf-protect.jpg",
-				width: 1200,
-				height: 630,
-				alt: "PDF Password Protector - 30tools",
-			},
-		],
-		locale: "en_US",
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free PDF Password Protector - Encrypt & Secure PDF Files",
-		description:
-			"Secure your PDF files with strong AES encryption. Add passwords, restrict printing and copying, and protect your sensitive documents online for free.",
-		images: ["/og-images/pdf-protect.jpg"],
-		creator: "@30tools",
-	},
-	category: "PDF Tools",
-};
+export const metadata = generateToolMetadata("pdf-protect", "pdf");
 
 export default async function PdfProtectPage({ searchParams }) {
 	const params = await searchParams;

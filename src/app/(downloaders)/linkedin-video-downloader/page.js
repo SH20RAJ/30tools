@@ -1,59 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "LinkedIn Video Downloader - Save LinkedIn Videos Free | 30tools",
-	description:
-		"Download LinkedIn videos, corporate presentations, and native posts for free. Save any LinkedIn video as MP4 without login. Works on all devices instantly.",
-	keywords: [
-		"linkedin video downloader",
-		"download linkedin video",
-		"save linkedin video",
-		"linkedin to mp4",
-		"linkedin video saver",
-		"linkedin post video download",
-		"how to download linkedin videos",
-		"save linkedin native video",
-		"linkedin video download free",
-		"linkedin video grabber",
-	].join(", "),
-	openGraph: {
-		title: "LinkedIn Video Downloader - Save Native Videos Free",
-		description:
-			"⚡ Download LinkedIn native videos and posts as MP4 for free. Professional, instant.",
-		url: "https://30tools.com/linkedin-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "LinkedIn Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "LinkedIn Video Downloader (2026) - Professional",
-		description:
-			"⚡ Save LinkedIn native post videos offline as MP4. Free, no login.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/linkedin-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("linkedin-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

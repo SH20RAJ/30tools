@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+export const metadata = generateToolMetadata("hex-to-text-converter", "developer");
 
-export const metadata: Metadata = {
-  title: "HEX to Text Converter | Free Online Tool",
-  description: "Use this free hex to text converter to get fast and reliable results with clean output.",
-  alternates: {
-    canonical: "https://30tools.com/hex-to-text-converter",
-  },
-};
-
-export default function HexToTextConverterPage() {
-  return (
-    <ToolPlaceholderPage
-      toolId="hex-to-text-converter"
-      title="HEX to Text Converter"
-      description="Use this free hex to text converter to get fast and reliable results with clean output."
-      categoryName="Developer Tools"
-      categorySlug="developer-tools"
-    />
-  );
+export default function ToolPage() {
+  return <ToolPlaceholderPage toolId="hex-to-text-converter" />;
 }

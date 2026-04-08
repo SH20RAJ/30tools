@@ -1,60 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "Reddit Video Downloader (2026) - Save with Audio | 30Tools",
-	description:
-		"Professional reddit downloader tool. Free online processing with high-quality results. No registration required, instant results.",
-	keywords: [
-		"reddit video downloader 2026",
-		"download reddit video with sound",
-		"reddit video saver hd",
-		"save reddit gifs mp4",
-		"reddit clip downloader",
-		"reddit to mp4 converter",
-		"updated 2026",
-		"download reddit video audio",
-		"reddit video downloader with audio",
-		"save reddit video to gallery",
-		"ripsave reddit",
-		"viddit alternative",
-	].join(", "),
-	openGraph: {
-		title: "Reddit Video Downloader (2026) - Save Videos with Audio",
-		description:
-			"⚡ Download Reddit videos with sound in HD quality! Free & unlimited tool (Updated 2026).",
-		url: "https://30tools.com/reddit-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/reddit-downloader.jpg", // Assuming image exists or will differ
-				width: 1200,
-				height: 630,
-				alt: "Reddit Video Downloader 2026",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Reddit Video Downloader (2026) - Free Tool",
-		description: "⚡ Save Reddit videos with audio in HD. Updated 2026!",
-		images: ["/og-images/reddit-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/reddit-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("reddit-downloader", "video");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

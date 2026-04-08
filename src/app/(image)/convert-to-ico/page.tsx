@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+export const metadata = generateToolMetadata("convert-to-ico", "image");
 
-export const metadata: Metadata = {
-  title: "Convert to ICO | Free Online Tool",
-  description: "Use this free convert to ico to get fast and reliable results with clean output.",
-  alternates: {
-    canonical: "https://30tools.com/convert-to-ico",
-  },
-};
-
-export default function ConvertToIcoPage() {
-  return (
-    <ToolPlaceholderPage
-      toolId="convert-to-ico"
-      title="Convert to ICO"
-      description="Use this free convert to ico to get fast and reliable results with clean output."
-      categoryName="Image Tools"
-      categorySlug="image-tools"
-    />
-  );
+export default function ToolPage() {
+  return <ToolPlaceholderPage toolId="convert-to-ico" />;
 }

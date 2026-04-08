@@ -78,7 +78,9 @@ export function generateToolMetadata(
 	currentSlug?: string,
 ): Metadata {
 	const categoryData = toolsData.categories[category];
-	const tool = categoryData?.tools.find((t: any) => t.id === toolId) as Tool | undefined;
+	const tool = categoryData?.tools.find((t: any) => t.id === toolId) as
+		| Tool
+		| undefined;
 
 	if (!tool) {
 		return {
@@ -93,22 +95,34 @@ export function generateToolMetadata(
 		baseTitle = slugToTitle(currentSlug);
 	}
 
-	const title = overrides.title || `${baseTitle} | ${CATEGORY_TITLE_SUFFIX[category] ?? "Free Online Tool"} | ${SITE_NAME}`;
-	const description = truncateText(ensureSentence(overrides.description || tool.description));
-	
+	// Prefer SEO-optimized title and description if available
+	const optimizedTitle = tool.seoTitle
+		? `${tool.seoTitle} | ${SITE_NAME}`
+		: null;
+	const optimizedDesc = tool.seoDescription ? tool.seoDescription : null;
+
+	const title =
+		optimizedTitle ||
+		overrides.title ||
+		`${baseTitle} | ${CATEGORY_TITLE_SUFFIX[category] ?? "Free Online Tool"} | ${SITE_NAME}`;
+	const description = truncateText(
+		ensureSentence(optimizedDesc || overrides.description || tool.description),
+	);
+
 	// Handle canonical for extra slugs
 	const baseUrl = tool.external ? tool.route : `${SITE_URL}${tool.route}`;
-	const currentUrl = currentSlug && tool.extraSlugs?.includes(currentSlug) 
-		? `${SITE_URL}/${currentSlug}`
-		: baseUrl;
-	
-	const url = `${currentUrl}${lang !== 'en' ? `?lang=${lang}` : ''}`;
+	const currentUrl =
+		currentSlug && tool.extraSlugs?.includes(currentSlug)
+			? `${SITE_URL}/${currentSlug}`
+			: baseUrl;
+
+	const url = `${currentUrl}${lang !== "en" ? `?lang=${lang}` : ""}`;
 	const image = resolveImageUrl(overrides.image);
 
 	return {
 		title: { absolute: title },
 		description,
-		alternates: { 
+		alternates: {
 			canonical: url,
 			languages: {
 				en: `${SITE_URL}${tool.route}?lang=en`,
@@ -126,7 +140,7 @@ export function generateToolMetadata(
 				tr: `${SITE_URL}${tool.route}?lang=tr`,
 				vi: `${SITE_URL}${tool.route}?lang=vi`,
 				id: `${SITE_URL}${tool.route}?lang=id`,
-			}
+			},
 		},
 		openGraph: {
 			title,
@@ -155,8 +169,12 @@ export function generateCategoryMetadata(
 	overrides: MetadataOverrides = {},
 ): Metadata {
 	const categoryData = (toolsData.categories as any)[category];
-	const title = overrides.title || `${categoryData?.name || category} Tools | 30Tools`;
-	const description = overrides.description || categoryData?.description || `Free online ${category} tools.`;
+	const title =
+		overrides.title || `${categoryData?.name || category} Tools | 30Tools`;
+	const description =
+		overrides.description ||
+		categoryData?.description ||
+		`Free online ${category} tools.`;
 
 	return {
 		title,

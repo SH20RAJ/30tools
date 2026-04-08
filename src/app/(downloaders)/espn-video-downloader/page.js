@@ -1,59 +1,8 @@
 import Link from "next/link";
+import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = {
-	title: "ESPN Video Downloader - Save Sports Highlights Free | 30tools",
-	description:
-		"Download ESPN sports highlight videos, clips, and replays for free. Save NFL, NBA, MLB, and other ESPN highlights as MP4 for offline viewing.",
-	keywords: [
-		"espn video downloader",
-		"download espn highlights",
-		"espn clip download",
-		"save espn video",
-		"espn to mp4",
-		"espn sports video download",
-		"download espn replay",
-		"how to download espn videos",
-		"espn highlight saver",
-		"nfl highlight download",
-	].join(", "),
-	openGraph: {
-		title: "ESPN Video Downloader - Save Sports Highlights Free",
-		description:
-			"⚡ Download ESPN sports highlights and replays as MP4 for free. Instant offline viewing.",
-		url: "https://30tools.com/espn-video-downloader",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/universal-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "ESPN Video Downloader",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "ESPN Video Downloader (2026) - Sports Highlights",
-		description:
-			"⚡ Save ESPN sports highlights offline as MP4. NFL, NBA, MLB — all sports.",
-		images: ["/og-images/universal-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/espn-video-downloader" },
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-};
+export const metadata = generateToolMetadata("espn-video-downloader", "downloaders");
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">
