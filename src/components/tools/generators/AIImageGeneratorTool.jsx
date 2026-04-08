@@ -643,7 +643,11 @@ export default function AIImageGeneratorTool() {
 												<div className="relative">
 													<img
 														src={imageUrl}
-														alt="AI generated"
+														alt={
+															prompt
+																? `AI generated: ${prompt}`
+																: "AI generated image"
+														}
 														className="w-full rounded-lg border shadow-lg bg-muted object-contain max-h-[600px]"
 														loading="lazy"
 													/>

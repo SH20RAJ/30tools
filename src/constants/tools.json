@@ -82,8 +82,8 @@
               }
             ]
           },
-          "seoTitle": "AI Image Generator - Generator Tool | 30tools",
-          "seoDescription": "AI-powered AI Image Generator. Generate content, images, and more. Free, unlimited, no signup required. All processing happens locally in your browser for compl",
+          "seoTitle": "AI Image Generator - Free AI Tool | 30tools",
+          "seoDescription": "Transform text into stunning AI-generated images with our free AI image generator. Create photorealistic photos, digital art, anime, and illustrations instantly. No registration required, unlimited generations, and 100% private browser-based processing. Try now!",
           "keywords": [
             "ai image generator",
             "ai image generator free",
@@ -106,8 +106,8 @@
             "kd": 9,
             "volume": 1100
           },
-          "seoTitle": "AI Voice Generator - Generator Tool | 30tools",
-          "seoDescription": "AI-powered AI Voice Generator. Generate content, images, and more. Free, unlimited, no signup required. All processing happens locally in your browser for compl",
+          "seoTitle": "AI Voice Generator - Free AI Tool | 30tools",
+          "seoDescription": "Convert text to natural-sounding speech with our free AI voice generator. Choose from multiple voices, languages, and download high-quality audio instantly. No signup required, unlimited usage, and secure browser-based processing. Try now!",
           "features": [
             "100% Free - No hidden costs or subscriptions",
             "No Registration Required - Start immediately",
@@ -839,7 +839,26 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 2100
-          }
+          },
+          "seoTitle": "Image Converter - Free Image Tool | 30tools",
+          "seoDescription": "Convert images between different formats (JPEG, PNG, WebP). 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "image converter",
+            "image",
+            "converter",
+            "image-converter",
+            "image tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "image-cropper",
@@ -1656,7 +1675,27 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 2500
-          }
+          },
+          "seoTitle": "Logo Generator - Free Image Tool | 30tools",
+          "seoDescription": "Create professional logos with text, fonts, and custom colors. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "logo generator",
+            "logo",
+            "generator",
+            "logo-generator",
+            "image",
+            "image tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "og-image-generator",
@@ -1754,7 +1793,27 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 1100
-          }
+          },
+          "seoTitle": "Photo Enhancer - Free Image Tool | 30tools",
+          "seoDescription": "Enhance photo quality with AI-powered image enhancement. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "photo enhancer",
+            "photo",
+            "enhancer",
+            "photo-enhancer",
+            "image",
+            "image tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "png-to-bmp-converter",
@@ -3142,7 +3201,27 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 2800
-          }
+          },
+          "seoTitle": "Remove Duplicates - Free Text Tool | 30tools",
+          "seoDescription": "Remove duplicate lines from text lists. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "remove duplicates",
+            "remove",
+            "duplicates",
+            "remove-duplicates",
+            "text",
+            "text tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "remove-line-breaks",
@@ -4370,7 +4449,26 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 8500
-          }
+          },
+          "seoTitle": "PDF Merger - Free PDF Tool | 30tools",
+          "seoDescription": "Merge multiple PDF files into one document. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "pdf merger",
+            "pdf",
+            "merger",
+            "pdf-merger",
+            "pdf tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "pdf-protect",
@@ -4386,7 +4484,27 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 2100
-          }
+          },
+          "seoTitle": "PDF Password Protect - Free PDF Tool | 30tools",
+          "seoDescription": "Add password protection to PDF files. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "pdf password protect",
+            "pdf",
+            "password",
+            "protect",
+            "pdf-protect",
+            "pdf tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "pdf-splitter",
@@ -4564,7 +4682,26 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 9800
-          }
+          },
+          "seoTitle": "PDF to Word - Free PDF Tool | 30tools",
+          "seoDescription": "Convert PDF files to editable Word documents. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "pdf to word",
+            "pdf",
+            "word",
+            "pdf-to-word",
+            "pdf tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "pdf-unlocker",
@@ -4580,7 +4717,26 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 5400
-          }
+          },
+          "seoTitle": "PDF Unlocker - Free PDF Tool | 30tools",
+          "seoDescription": "Remove password protection from PDF files. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "pdf unlocker",
+            "pdf",
+            "unlocker",
+            "pdf-unlocker",
+            "pdf tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "png-to-pdf",
@@ -4677,7 +4833,26 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 4500
-          }
+          },
+          "seoTitle": "Word to PDF - Free PDF Tool | 30tools",
+          "seoDescription": "Convert Word documents to PDF format. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "word to pdf",
+            "word",
+            "pdf",
+            "word-to-pdf",
+            "pdf tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         }
       ]
     },
@@ -6153,7 +6328,27 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 12000
-          }
+          },
+          "seoTitle": "YouTube Shorts Downloader - Free Video Tool | 30tools",
+          "seoDescription": "Download YouTube Shorts videos in high quality for offline viewing. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and.",
+          "keywords": [
+            "youtube shorts downloader",
+            "youtube",
+            "shorts",
+            "downloader",
+            "youtube-shorts-downloader",
+            "youtube tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "youtube-subscribe-link-generator",
@@ -15729,7 +15924,27 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 25000
-          }
+          },
+          "seoTitle": "Instagram Downloader - Free Video Downloader | 30tools",
+          "seoDescription": "Download Instagram videos, reels, stories, and photos in high quality. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and.",
+          "keywords": [
+            "instagram downloader",
+            "instagram",
+            "downloader",
+            "instagram-downloader",
+            "downloaders",
+            "downloaders tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "instagram-image-downloader",
@@ -15741,7 +15956,28 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 12000
-          }
+          },
+          "seoTitle": "Instagram Image Downloader - Free Video Downloader | 30tools",
+          "seoDescription": "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no.",
+          "keywords": [
+            "instagram image downloader",
+            "instagram",
+            "image",
+            "downloader",
+            "instagram-image-downloader",
+            "downloaders",
+            "downloaders tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "instagram-reel-downloader",
@@ -15757,7 +15993,28 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 12000
-          }
+          },
+          "seoTitle": "Instagram Reel Downloader - Free Video Downloader | 30tools",
+          "seoDescription": "Download Instagram Reels without watermark in HD quality with audio extraction. 100% free, no signup required, fast and secure. Works in browser. Try now!",
+          "keywords": [
+            "instagram reel downloader",
+            "instagram",
+            "reel",
+            "downloader",
+            "instagram-reel-downloader",
+            "downloaders",
+            "downloaders tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "instagram-story-downloader",
@@ -15769,7 +16026,28 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 15000
-          }
+          },
+          "seoTitle": "Instagram Story Downloader - Free Video Downloader | 30tools",
+          "seoDescription": "Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no.",
+          "keywords": [
+            "instagram story downloader",
+            "instagram",
+            "story",
+            "downloader",
+            "instagram-story-downloader",
+            "downloaders",
+            "downloaders tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "instagram-videos-downloader",
@@ -15781,7 +16059,28 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 18000
-          }
+          },
+          "seoTitle": "Instagram Videos Downloader - Free Video Downloader | 30tools",
+          "seoDescription": "Download Instagram Videos, Reels, Photos, IGTV and Carousel. Save your favorite content with our easy-to-use tool. Start downloading now! 100% free, no.",
+          "keywords": [
+            "instagram videos downloader",
+            "instagram",
+            "videos",
+            "downloader",
+            "instagram-videos-downloader",
+            "downloaders",
+            "downloaders tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "izlesene-video-downloader",
@@ -17861,7 +18160,28 @@
                 "url": "https://30tools.com/tiktok-downloader#save"
               }
             ]
-          }
+          },
+          "seoTitle": "TikTok Video Downloader - Free Video Downloader | 30tools",
+          "seoDescription": "Download TikTok videos without watermark for free in HD quality. Our 2026 updated TikTok saver allows you to save videos to your camera roll or PC instantly..",
+          "keywords": [
+            "tiktok video downloader",
+            "tiktok",
+            "video",
+            "downloader",
+            "tiktok-video-downloader",
+            "downloaders",
+            "downloaders tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "tiktok-videos-downloader",
@@ -17873,7 +18193,28 @@
           "seoMetrics": {
             "kd": 10,
             "volume": 15000
-          }
+          },
+          "seoTitle": "Tiktok Videos Downloader - Free Video Downloader | 30tools",
+          "seoDescription": "Download TikTok videos without watermark—free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips. 100%.",
+          "keywords": [
+            "tiktok videos downloader",
+            "tiktok",
+            "videos",
+            "downloader",
+            "tiktok-videos-downloader",
+            "downloaders",
+            "downloaders tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "tumblr-video-downloader",
@@ -26747,7 +27088,28 @@
           "description": "Generate JSON-LD schema markup for rich snippets",
           "route": "/schema-generator",
           "popular": true,
-          "category": "seo"
+          "category": "seo",
+          "seoTitle": "Schema Markup Generator - Free SEO Tool | 30tools",
+          "seoDescription": "Generate JSON-LD schema markup for rich snippets. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "schema markup generator",
+            "schema",
+            "markup",
+            "generator",
+            "schema-generator",
+            "seo",
+            "seo tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "seotoolkit",
@@ -26755,7 +27117,26 @@
           "description": "All-in-one SEO audit and analysis tool. 27+ checks.",
           "route": "/seotoolkit",
           "popular": true,
-          "category": "seo"
+          "category": "seo",
+          "seoTitle": "SEO Toolkit - Free SEO Tool | 30tools",
+          "seoDescription": "All-in-one SEO audit and analysis tool. 27+ checks. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "seo toolkit",
+            "seo",
+            "toolkit",
+            "seotoolkit",
+            "seo tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "twitter-card-generator",
@@ -27008,7 +27389,27 @@
           "description": "Ai Video Summarizer - Coming Soon",
           "route": "/ai-video-summarizer",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Ai Video Summarizer - Free Online Tool | 30tools",
+          "seoDescription": "Ai Video Summarizer - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "ai video summarizer",
+            "video",
+            "summarizer",
+            "ai-video-summarizer",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "all-downloaders",
@@ -27016,7 +27417,27 @@
           "description": "All Downloaders - Coming Soon",
           "route": "/all-downloaders",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "All Downloaders - Free Online Tool | 30tools",
+          "seoDescription": "All Downloaders - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "all downloaders",
+            "all",
+            "downloaders",
+            "all-downloaders",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "audio-equalizer",
@@ -27024,7 +27445,27 @@
           "description": "Audio Equalizer - Coming Soon",
           "route": "/audio-equalizer",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Audio Equalizer - Free Online Tool | 30tools",
+          "seoDescription": "Audio Equalizer - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "audio equalizer",
+            "audio",
+            "equalizer",
+            "audio-equalizer",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "audio-joiner",
@@ -27032,7 +27473,27 @@
           "description": "Audio Joiner - Coming Soon",
           "route": "/audio-joiner",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Audio Joiner - Free Online Tool | 30tools",
+          "seoDescription": "Audio Joiner - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "audio joiner",
+            "audio",
+            "joiner",
+            "audio-joiner",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "audio-normalizer",
@@ -27040,7 +27501,27 @@
           "description": "Audio Normalizer - Coming Soon",
           "route": "/audio-normalizer",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Audio Normalizer - Free Online Tool | 30tools",
+          "seoDescription": "Audio Normalizer - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "audio normalizer",
+            "audio",
+            "normalizer",
+            "audio-normalizer",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "audio-player",
@@ -27048,7 +27529,27 @@
           "description": "Audio Player - Coming Soon",
           "route": "/audio-player",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Audio Player - Free Online Tool | 30tools",
+          "seoDescription": "Audio Player - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "audio player",
+            "audio",
+            "player",
+            "audio-player",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "audio-spectrum",
@@ -27056,7 +27557,27 @@
           "description": "Audio Spectrum - Coming Soon",
           "route": "/audio-spectrum",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Audio Spectrum - Free Online Tool | 30tools",
+          "seoDescription": "Audio Spectrum - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "audio spectrum",
+            "audio",
+            "spectrum",
+            "audio-spectrum",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "audio-splitter",
@@ -27064,7 +27585,27 @@
           "description": "Audio Splitter - Coming Soon",
           "route": "/audio-splitter",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Audio Splitter - Free Online Tool | 30tools",
+          "seoDescription": "Audio Splitter - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "audio splitter",
+            "audio",
+            "splitter",
+            "audio-splitter",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "batch-image-processor",
@@ -27072,7 +27613,28 @@
           "description": "Batch Image Processor - Coming Soon",
           "route": "/batch-image-processor",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Batch Image Processor - Free Online Tool | 30tools",
+          "seoDescription": "Batch Image Processor - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "batch image processor",
+            "batch",
+            "image",
+            "processor",
+            "batch-image-processor",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "code-tools",
@@ -27080,7 +27642,27 @@
           "description": "Code Tools - Coming Soon",
           "route": "/code-tools",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Code Tools - Free Online Tool | 30tools",
+          "seoDescription": "Code Tools - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "code tools",
+            "code",
+            "tools",
+            "code-tools",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "course-video-maker",
@@ -27088,7 +27670,28 @@
           "description": "Course Video Maker - Coming Soon",
           "route": "/course-video-maker",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Course Video Maker - Free Online Tool | 30tools",
+          "seoDescription": "Course Video Maker - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "course video maker",
+            "course",
+            "video",
+            "maker",
+            "course-video-maker",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "developer-tools",
@@ -27096,7 +27699,27 @@
           "description": "Developer Tools - Coming Soon",
           "route": "/developer-tools",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Developer Tools - Free Online Tool | 30tools",
+          "seoDescription": "Developer Tools - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "developer tools",
+            "developer",
+            "tools",
+            "developer-tools",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "faceless-video-generator",
@@ -27104,7 +27727,28 @@
           "description": "Faceless Video Generator - Coming Soon",
           "route": "/faceless-video-generator",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Faceless Video Generator - Free Online Tool | 30tools",
+          "seoDescription": "Faceless Video Generator - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "faceless video generator",
+            "faceless",
+            "video",
+            "generator",
+            "faceless-video-generator",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "generators",
@@ -27112,7 +27756,24 @@
           "description": "Generators - Coming Soon",
           "route": "/generators",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Generators - Free Online Tool | 30tools",
+          "seoDescription": "Generators - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "generators",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "image-to-icon",
@@ -27120,7 +27781,27 @@
           "description": "Image To Icon - Coming Soon",
           "route": "/image-to-icon",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Image To Icon - Free Online Tool | 30tools",
+          "seoDescription": "Image To Icon - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "image to icon",
+            "image",
+            "icon",
+            "image-to-icon",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "images-to-pdf",
@@ -27128,7 +27809,27 @@
           "description": "Images To Pdf - Coming Soon",
           "route": "/images-to-pdf",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Images To Pdf - Free Online Tool | 30tools",
+          "seoDescription": "Images To Pdf - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "images to pdf",
+            "images",
+            "pdf",
+            "images-to-pdf",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "instagram-reel-maker",
@@ -27136,7 +27837,28 @@
           "description": "Instagram Reel Maker - Coming Soon",
           "route": "/instagram-reel-maker",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Instagram Reel Maker - Free Online Tool | 30tools",
+          "seoDescription": "Instagram Reel Maker - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "instagram reel maker",
+            "instagram",
+            "reel",
+            "maker",
+            "instagram-reel-maker",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "meme-video-generator",
@@ -27144,7 +27866,28 @@
           "description": "Meme Video Generator - Coming Soon",
           "route": "/meme-video-generator",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Meme Video Generator - Free Online Tool | 30tools",
+          "seoDescription": "Meme Video Generator - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "meme video generator",
+            "meme",
+            "video",
+            "generator",
+            "meme-video-generator",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "pdf-protector",
@@ -27152,7 +27895,27 @@
           "description": "Pdf Protector - Coming Soon",
           "route": "/pdf-protector",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Pdf Protector - Free Online Tool | 30tools",
+          "seoDescription": "Pdf Protector - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "pdf protector",
+            "pdf",
+            "protector",
+            "pdf-protector",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "pdf-reader",
@@ -27160,7 +27923,27 @@
           "description": "Pdf Reader - Coming Soon",
           "route": "/pdf-reader",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Pdf Reader - Free Online Tool | 30tools",
+          "seoDescription": "Pdf Reader - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "pdf reader",
+            "pdf",
+            "reader",
+            "pdf-reader",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "podcast-video-creator",
@@ -27168,7 +27951,28 @@
           "description": "Podcast Video Creator - Coming Soon",
           "route": "/podcast-video-creator",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Podcast Video Creator - Free Online Tool | 30tools",
+          "seoDescription": "Podcast Video Creator - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "podcast video creator",
+            "podcast",
+            "video",
+            "creator",
+            "podcast-video-creator",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "remove-duplicates",
@@ -27176,7 +27980,27 @@
           "description": "Remove Duplicates - Coming Soon",
           "route": "/remove-duplicates",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Remove Duplicates - Free Online Tool | 30tools",
+          "seoDescription": "Remove Duplicates - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "remove duplicates",
+            "remove",
+            "duplicates",
+            "remove-duplicates",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "text-encoder",
@@ -27184,7 +28008,27 @@
           "description": "Text Encoder - Coming Soon",
           "route": "/text-encoder",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Text Encoder - Free Online Tool | 30tools",
+          "seoDescription": "Text Encoder - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "text encoder",
+            "text",
+            "encoder",
+            "text-encoder",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "video-background-remover",
@@ -27192,7 +28036,28 @@
           "description": "Video Background Remover - Coming Soon",
           "route": "/video-background-remover",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Video Background Remover - Free Online Tool | 30tools",
+          "seoDescription": "Video Background Remover - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "video background remover",
+            "video",
+            "background",
+            "remover",
+            "video-background-remover",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "video-joiner",
@@ -27200,7 +28065,27 @@
           "description": "Video Joiner - Coming Soon",
           "route": "/video-joiner",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Video Joiner - Free Online Tool | 30tools",
+          "seoDescription": "Video Joiner - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "video joiner",
+            "video",
+            "joiner",
+            "video-joiner",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "video-resizer",
@@ -27208,7 +28093,27 @@
           "description": "Video Resizer - Coming Soon",
           "route": "/video-resizer",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Video Resizer - Free Online Tool | 30tools",
+          "seoDescription": "Video Resizer - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "video resizer",
+            "video",
+            "resizer",
+            "video-resizer",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "video-rotator",
@@ -27216,7 +28121,27 @@
           "description": "Video Rotator - Coming Soon",
           "route": "/video-rotator",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Video Rotator - Free Online Tool | 30tools",
+          "seoDescription": "Video Rotator - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "video rotator",
+            "video",
+            "rotator",
+            "video-rotator",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "video-sales-letter",
@@ -27224,7 +28149,28 @@
           "description": "Video Sales Letter - Coming Soon",
           "route": "/video-sales-letter",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Video Sales Letter - Free Online Tool | 30tools",
+          "seoDescription": "Video Sales Letter - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "video sales letter",
+            "video",
+            "sales",
+            "letter",
+            "video-sales-letter",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "video-splitter",
@@ -27232,7 +28178,27 @@
           "description": "Video Splitter - Coming Soon",
           "route": "/video-splitter",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Video Splitter - Free Online Tool | 30tools",
+          "seoDescription": "Video Splitter - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "video splitter",
+            "video",
+            "splitter",
+            "video-splitter",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "video-to-audio",
@@ -27240,7 +28206,27 @@
           "description": "Video To Audio - Coming Soon",
           "route": "/video-to-audio",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Video To Audio - Free Online Tool | 30tools",
+          "seoDescription": "Video To Audio - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "video to audio",
+            "video",
+            "audio",
+            "video-to-audio",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "video-watermark-remover",
@@ -27248,7 +28234,28 @@
           "description": "Video Watermark Remover - Coming Soon",
           "route": "/video-watermark-remover",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Video Watermark Remover - Free Online Tool | 30tools",
+          "seoDescription": "Video Watermark Remover - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "video watermark remover",
+            "video",
+            "watermark",
+            "remover",
+            "video-watermark-remover",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "watermark-remover",
@@ -27256,7 +28263,27 @@
           "description": "Watermark Remover - Coming Soon",
           "route": "/watermark-remover",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Watermark Remover - Free Online Tool | 30tools",
+          "seoDescription": "Watermark Remover - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "watermark remover",
+            "watermark",
+            "remover",
+            "watermark-remover",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "website-analyzer",
@@ -27264,7 +28291,27 @@
           "description": "Website Analyzer - Coming Soon",
           "route": "/website-analyzer",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Website Analyzer - Free Online Tool | 30tools",
+          "seoDescription": "Website Analyzer - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "website analyzer",
+            "website",
+            "analyzer",
+            "website-analyzer",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "youtube-shorts-creator",
@@ -27272,7 +28319,28 @@
           "description": "Youtube Shorts Creator - Coming Soon",
           "route": "/youtube-shorts-creator",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Youtube Shorts Creator - Free Online Tool | 30tools",
+          "seoDescription": "Youtube Shorts Creator - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "youtube shorts creator",
+            "youtube",
+            "shorts",
+            "creator",
+            "youtube-shorts-creator",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "youtube-summary-generator",
@@ -27280,7 +28348,28 @@
           "description": "Youtube Summary Generator - Coming Soon",
           "route": "/youtube-summary-generator",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Youtube Summary Generator - Free Online Tool | 30tools",
+          "seoDescription": "Youtube Summary Generator - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "youtube summary generator",
+            "youtube",
+            "summary",
+            "generator",
+            "youtube-summary-generator",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         },
         {
           "id": "zoom-recorder",
@@ -27288,7 +28377,27 @@
           "description": "Zoom Recorder - Coming Soon",
           "route": "/zoom-recorder",
           "popular": false,
-          "category": "others"
+          "category": "others",
+          "seoTitle": "Zoom Recorder - Free Online Tool | 30tools",
+          "seoDescription": "Zoom Recorder - Coming Soon. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+          "keywords": [
+            "zoom recorder",
+            "zoom",
+            "recorder",
+            "zoom-recorder",
+            "others",
+            "online tool",
+            "free",
+            "online",
+            "tool",
+            "30tools",
+            "no signup",
+            "fast",
+            "secure",
+            "browser-based",
+            "instant",
+            "easy"
+          ]
         }
       ]
     }
