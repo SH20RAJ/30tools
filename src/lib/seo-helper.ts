@@ -74,7 +74,7 @@ function generateKeywords(tool: Tool, category: ToolCategory): string[] {
 	const categoryName = toolsData.categories[category]?.name || category;
 	const categoryLower = category.toLowerCase();
 
-	// Add base keywords
+	// Base keywords
 	keywords.push(
 		"free",
 		"online",
@@ -83,7 +83,7 @@ function generateKeywords(tool: Tool, category: ToolCategory): string[] {
 		SITE_URL.replace("https://", ""),
 	);
 
-	// Add category-specific keywords
+	// Category-specific
 	keywords.push(
 		`${categoryLower} tools`,
 		`free ${categoryLower} tools`,
@@ -92,14 +92,26 @@ function generateKeywords(tool: Tool, category: ToolCategory): string[] {
 		`top ${categoryLower} tools`,
 	);
 
-	// Add tool name variations
+	// Tool name variations (include secondary keywords)
 	const toolName = tool.name.toLowerCase();
-	keywords.push(
-		toolName,
-		`${toolName} free`,
-		`${toolName} online`,
-		`${toolName} tool`,
-	);
+	const toolWords = toolName.split(/[\s_-]+/).filter((w) => w.length > 2);
+
+	keywords.push(toolName);
+	keywords.push(`${toolName} free`);
+	keywords.push(`${toolName} online`);
+	keywords.push(`${toolName} tool`);
+	keywords.push(`${toolName} no signup`);
+	keywords.push(`${toolName} instant`);
+	keywords.push(`${toolName} browser-based`);
+	keywords.push(`${toolName} secure`);
+	keywords.push(`free ${toolName}`);
+	keywords.push(`online ${toolName}`);
+
+	// Additional SEO-optimized variants
+	if (toolWords.length >= 2) {
+		keywords.push(`${toolWords[0]} ${toolWords[1]}`);
+		keywords.push(`${toolWords[1]} ${toolWords[0]}`);
+	}
 
 	// Add tool slug variations as keywords
 	if (tool.route) {
@@ -107,6 +119,20 @@ function generateKeywords(tool: Tool, category: ToolCategory): string[] {
 		routeParts.forEach((part) => {
 			if (part.length > 3) {
 				keywords.push(part);
+				keywords.push(`${part} free`);
+				keywords.push(`${part} online`);
+				keywords.push(`${part} tool`);
+			}
+		});
+	}
+
+	// Extra slugs as keyword sources
+	if (tool.extraSlugs) {
+		tool.extraSlugs.forEach((slug) => {
+			const slugWords = slug.split("-").filter((w) => w.length > 2);
+			keywords.push(...slugWords);
+			if (slugWords.length >= 2) {
+				keywords.push(slugWords.join(" "));
 			}
 		});
 	}
@@ -114,7 +140,7 @@ function generateKeywords(tool: Tool, category: ToolCategory): string[] {
 	// Add branded keywords
 	keywords.push("30tools", "30 tools");
 
-	// Add generic quality keywords
+	// Add quality signals
 	keywords.push(
 		"secure",
 		"fast",
@@ -123,18 +149,76 @@ function generateKeywords(tool: Tool, category: ToolCategory): string[] {
 		"no signup",
 		"instant",
 		"professional",
+		"privacy focused",
+		"client-side",
 	);
-
-	// If tool has extraSlugs, include them as keywords
-	if (tool.extraSlugs) {
-		tool.extraSlugs.forEach((slug) => {
-			const slugKeywords = slug.split("-").filter((w) => w.length > 3);
-			keywords.push(...slugKeywords);
-		});
-	}
 
 	// Deduplicate and clean
 	return Array.from(new Set(keywords)).filter((k) => k.length > 2);
+}
+
+/**
+ * Generate SEO-optimized title with power words
+ */
+function generateOptimizedTitle(tool: Tool, category: ToolCategory): string {
+	const categoryTaglines: Partial<Record<ToolCategory, string>> = {
+		audio: "Free Audio Tool",
+		developer: "Free Developer Tool",
+		downloaders: "Free Video Downloader",
+		generators: "Free AI Tool",
+		image: "Free Image Tool",
+		pdf: "Free PDF Tool",
+		seo: "Free SEO Tool",
+		text: "Free Text Tool",
+		utilities: "Free Online Utility",
+		video: "Free Video Tool",
+	};
+
+	const baseTitle = tool.name;
+	const tagline = categoryTaglines[category] || "Free Online Tool";
+
+	// Build enhanced title with benefits
+	const powerWords = ["Instant", "Fast", "Secure", "Easy", "Free"];
+	const randomPower = powerWords[Math.floor(Math.random() * powerWords.length)];
+
+	// Use provided seoTitle or generate with power word
+	if (tool.seoTitle) {
+		return `${tool.seoTitle} | ${SITE_NAME}`;
+	}
+
+	// Default: Tool name + category tagline
+	return `${baseTitle} - ${tagline} | ${SITE_NAME}`;
+}
+
+/**
+ * Generate CTR-optimized meta description
+ */
+function generateOptimizedDescription(tool: Tool): string {
+	// Use provided description first
+	if (tool.seoDescription) {
+		return truncateText(ensureSentence(tool.seoDescription));
+	}
+
+	// Generate compelling description
+	const sentences = [
+		tool.description.trim(),
+		"100% free, instant processing, no signup required.",
+		"All processing happens in your browser for complete privacy.",
+	];
+
+	// Filter out empty and combine
+	const filtered = sentences.filter((s) => s && s.length > 10);
+	const combined = filtered.join(" ").replace(/\s+/g, " ").trim();
+
+	// Ensure ends with period and within length
+	const final = truncateText(ensureSentence(combined), 158);
+
+	// Add CTA if space permits
+	if (final.length < 140) {
+		return final + " Try now!";
+	}
+
+	return final;
 }
 
 /**
