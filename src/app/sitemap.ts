@@ -41,6 +41,35 @@ function dedupeEntries(entries: MetadataRoute.Sitemap) {
 	return Array.from(uniqueEntries.values());
 }
 
+function withLanguages(
+	url: string,
+	currentDate: Date,
+	changeFrequency:
+		| "always"
+		| "hourly"
+		| "daily"
+		| "weekly"
+		| "monthly"
+		| "yearly"
+		| "never",
+	priority: number,
+) {
+	return [
+		{
+			url,
+			lastModified: currentDate,
+			changeFrequency,
+			priority,
+		},
+		...LANGUAGES.map((lang) => ({
+			url: `${url}${url.includes("?") ? "&" : "?"}lang=${lang}`,
+			lastModified: currentDate,
+			changeFrequency,
+			priority: Math.max(0.1, priority - 0.1),
+		})),
+	];
+}
+
 const LANGUAGES = [
 	"en",
 	"es",
@@ -135,24 +164,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 		if (!mainEntryUrl) return [];
 
-		const entries = LANGUAGES.map((lang) => ({
-			url: `${mainEntryUrl}${mainEntryUrl.includes("?") ? "&" : "?"}lang=${lang}`,
-			lastModified: currentDate,
+		const entries = withLanguages(
+			mainEntryUrl,
+			currentDate,
 			changeFrequency,
-			priority: Math.round(priority * 100) / 100,
-		}));
+			Math.round(priority * 100) / 100,
+		);
 
 		// Add entries for extra slugs if they exist
 		const extraEntries = (tool.extraSlugs || []).flatMap((slug: string) => {
 			const url = normalizeSiteUrl(`${BASE_URL}/${slug}`);
 			if (!url) return [];
 
-			return LANGUAGES.map((lang) => ({
-				url: `${url}${url.includes("?") ? "&" : "?"}lang=${lang}`,
-				lastModified: currentDate,
+			return withLanguages(
+				url,
+				currentDate,
 				changeFrequency,
-				priority: Math.round((priority - 0.05) * 100) / 100,
-			}));
+				Math.round((priority - 0.05) * 100) / 100,
+			);
 		});
 
 		return [...entries, ...extraEntries];
