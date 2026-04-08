@@ -27,6 +27,29 @@ export async function generateMetadata({ searchParams }) {
 		lang,
 	);
 
+	// Base path for home (root)
+	const basePath = "";
+	const canonicalUrl = `https://30tools.com${lang !== "en" ? `?lang=${lang}` : ""}`;
+
+	// Generate language alternates
+	const languages = {
+		en: `https://30tools.com/?lang=en`,
+		es: `https://30tools.com/?lang=es`,
+		fr: `https://30tools.com/?lang=fr`,
+		de: `https://30tools.com/?lang=de`,
+		hi: `https://30tools.com/?lang=hi`,
+		it: `https://30tools.com/?lang=it`,
+		pt: `https://30tools.com/?lang=pt`,
+		ja: `https://30tools.com/?lang=ja`,
+		zh: `https://30tools.com/?lang=zh`,
+		ko: `https://30tools.com/?lang=ko`,
+		ru: `https://30tools.com/?lang=ru`,
+		ar: `https://30tools.com/?lang=ar`,
+		tr: `https://30tools.com/?lang=tr`,
+		vi: `https://30tools.com/?lang=vi`,
+		id: `https://30tools.com/?lang=id`,
+	};
+
 	return {
 		title: { absolute: title },
 		description,
@@ -58,12 +81,13 @@ export async function generateMetadata({ searchParams }) {
 			"web applications",
 		].join(", "),
 		alternates: {
-			canonical: `https://30tools.com${lang !== "en" ? `?lang=${lang}` : ""}`,
+			canonical: canonicalUrl,
+			languages: languages,
 		},
 		openGraph: {
 			title,
 			description,
-			url: `https://30tools.com${lang !== "en" ? `?lang=${lang}` : ""}`,
+			url: canonicalUrl,
 			siteName: "30tools",
 			type: "website",
 			images: [

@@ -246,6 +246,7 @@ export default function SeoToolkit() {
 							<a
 								href={auditData.url}
 								target="_blank"
+								rel="noopener noreferrer"
 								className="text-sm text-muted-foreground hover:underline mb-4 block"
 							>
 								{auditData.url} ↗

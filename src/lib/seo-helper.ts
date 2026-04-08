@@ -243,6 +243,32 @@ export function getToolData(toolId: string, category: ToolCategory) {
 	return categoryData?.tools.find((t: Tool) => t.id === toolId);
 }
 
+const LANGUAGES = [
+	"en",
+	"es",
+	"fr",
+	"de",
+	"hi",
+	"it",
+	"pt",
+	"ja",
+	"zh",
+	"ko",
+	"ru",
+	"ar",
+	"tr",
+	"vi",
+	"id",
+] as const;
+
+function getLanguageAlternates(basePath: string): Record<string, string> {
+	const alternates: Record<string, string> = {};
+	for (const lang of LANGUAGES) {
+		alternates[lang] = `${SITE_URL}${basePath}?lang=${lang}`;
+	}
+	return alternates;
+}
+
 export function generateCategoryMetadata(
 	category: string,
 	overrides: MetadataOverrides = {},
@@ -255,17 +281,20 @@ export function generateCategoryMetadata(
 		categoryData?.description ||
 		`Free online ${category} tools.`;
 
+	const basePath = `/${categoryData?.slug || category}`;
+
 	return {
 		title,
 		description,
 		keywords: overrides.keywords,
 		alternates: {
-			canonical: `${SITE_URL}/${categoryData?.slug || category}`,
+			canonical: `${SITE_URL}${basePath}`,
+			languages: getLanguageAlternates(basePath),
 		},
 		openGraph: {
 			title,
 			description,
-			url: `${SITE_URL}/${categoryData?.slug || category}`,
+			url: `${SITE_URL}${basePath}`,
 			siteName: SITE_NAME,
 			type: "website",
 		},
