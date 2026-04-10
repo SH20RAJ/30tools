@@ -5,8 +5,8 @@ Your task is to fully optimize the given webpage URL for ranking #1 on Google wh
 Input:
 
 * Website: https://30tools.com/
-* Target URL: backwards-text-generator
-(if its not created create it then)
+* Target URL: blutv-video-downloader
+(if its not created create it then, create special component for it not the universal video downloader with seo text and images inside)
 
 ---
 
