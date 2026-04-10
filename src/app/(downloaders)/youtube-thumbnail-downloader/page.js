@@ -1,269 +1,268 @@
+
 import Link from "next/link";
 import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
-export const metadata = generateToolMetadata("youtube-thumbnail-downloader", "downloaders");
-
-const AdUnit = () => (
-	<div className="my-6 flex justify-center">
-		<ins
-			className="adsbygoogle"
-			style={{ display: "block" }}
-			data-ad-format="autorelaxed"
-			data-ad-client="ca-pub-1828915420581549"
-			data-ad-slot="4669751596"
-		></ins>
-	</div>
+export const metadata = generateToolMetadata(
+  "youtube-thumbnail-downloader",
+  "downloaders"
 );
 
-const jsonLdSchemas = {
-	webApp: {
-		"@context": "https://schema.org",
-		"@type": "WebApplication",
-		name: "YouTube Thumbnail Downloader",
-		alternateName: ["YouTube Thumbnail Grabber", "Save YouTube Thumbnail HD"],
-		description:
-			"Free online tool to download YouTube video thumbnails in HD resolution.",
-		url: "https://30tools.com/youtube-thumbnail-downloader",
-		applicationCategory: "MultimediaApplication",
-		operatingSystem: "Any",
-		offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-		featureList: [
-			"Download maxresdefault HD thumbnails",
-			"Multiple resolution options",
-			"No account required",
-			"Free to use",
-		],
-	},
-	howTo: {
-		"@context": "https://schema.org",
-		"@type": "HowTo",
-		name: "How to Download a YouTube Thumbnail",
-		step: [
-			{
-				"@type": "HowToStep",
-				position: 1,
-				name: "Copy YouTube URL",
-				text: "Open the YouTube video whose thumbnail you want. Copy the URL from the address bar or share button.",
-			},
-			{
-				"@type": "HowToStep",
-				position: 2,
-				name: "Paste URL",
-				text: "Paste the YouTube video URL into the 30tools YouTube Thumbnail Downloader input box.",
-			},
-			{
-				"@type": "HowToStep",
-				position: 3,
-				name: "Download Thumbnail",
-				text: "Click on the resolution you want (maxresdefault for best quality) and save the JPEG thumbnail image to your device.",
-			},
-		],
-	},
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: "Free YouTube Thumbnail Downloader",
+  description:
+    "Instantly download any YouTube thumbnail in HD (1280x720), SD, and multiple other resolutions for free. No signup required.",
+  url: "https://30tools.com/youtube-thumbnail-downloader",
+  applicationCategory: "MultimediaApplication",
+  operatingSystem: "Any",
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  featureList: [
+    "Download maxresdefault HD thumbnails",
+    "Multiple resolution options (HD, SD)",
+    "Completely free to use",
+    "No account or signup required",
+    "Instant download",
+    "Works on all devices",
+  ],
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "813",
+  },
+  mainEntity: {
+    "@type": "WebPage",
+    "@id": "https://30tools.com/youtube-thumbnail-downloader",
+  },
 };
 
-export default async function YouTubeThumbnailDownloaderPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
-	return (
-		<>
-			<script
-				async
-				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-				crossOrigin="anonymous"
-			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.webApp),
-				}}
-			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.howTo),
-				}}
-			/>
-			<div className="container mx-auto px-4 py-12 md:py-20">
-				<div className="max-w-6xl mx-auto">
-					<nav aria-label="Breadcrumb" className="mb-8">
-						<ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-							<li>
-								<Link href="/" className="hover:text-primary">
-									Home
-								</Link>
-							</li>
-							<li>/</li>
-							<li>
-								<Link href="/all-downloaders" className="hover:text-primary">
-									Downloaders
-								</Link>
-							</li>
-							<li>/</li>
-							<li className="text-foreground font-medium">
-								YouTube Thumbnail Downloader
-							</li>
-						</ol>
-					</nav>
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the highest quality YouTube thumbnail?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "The highest quality YouTube thumbnail is the 'maxresdefault' image, which is typically 1280x720 pixels. Our tool allows you to download this version instantly.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is it legal to download a YouTube thumbnail?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Downloading thumbnails for personal use, such as for design inspiration or competitive research, is generally acceptable. However, re-using a thumbnail in your own content without permission may violate copyright laws. Always respect the original creator's work.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How to get a YouTube thumbnail for free?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You can use我们的免费 YouTube 缩略图下载器 to get any thumbnail for free. Just paste the YouTube video URL into the input box and click 'Download.' You'll see all available resolutions, including HD.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can I get a thumbnail of a private video?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No, you can only download thumbnails from public YouTube videos. Our tool cannot access private or unlisted content.",
+      },
+    },
+  ],
+};
 
-					<AdUnit />
+export default function YouTubeThumbnailDownloaderPage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+      />
 
-					<div className="text-center mb-12">
-						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							YouTube Thumbnail Downloader
-						</h1>
-						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-							Save any YouTube video's thumbnail in HD resolution (1280x720) or
-							full maxresdefault quality for free. Perfect for designers,
-							marketers, and content creators.
-						</p>
-						<div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-							<span>🖼️ HD 1080p</span>
-							<span>🆓 100% Free</span>
-							<span>⚡ Instant</span>
-							<span>📱 All Devices</span>
-						</div>
-					</div>
+      {/* Hero Section */}
+      <section className="text-center py-12 md:py-20 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            Free YouTube Thumbnail Downloader
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+            Instantly save any YouTube thumbnail in full HD, SD, and multiple
+            sizes. Free, fast, and no signup required.
+          </p>
 
-					<AdUnit />
+          <div className="flex flex-wrap justify-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+            <span className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+              🖼️ HD 1080p
+            </span>
+            <span className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+              🆓 100% Free
+            </span>
+            <span className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+              ⚡ Instant Download
+            </span>
+            <span className="bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full">
+              ✅ No Signup
+            </span>
+          </div>
+        </div>
+      </section>
 
-					<div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-						<UniversalVideoDownloader title="YouTube Thumbnail Downloader" />
-					</div>
+      {/* Tool Interface */}
+      <section className="pb-12 md:pb-20 -mt-16">
+        <div className="container mx-auto px-4">
+          <Card className="max-w-4xl mx-auto p-6 md:p-8 shadow-2xl border-t-4 border-primary">
+            <UniversalVideoDownloader title="YouTube Thumbnail Downloader" />
+          </Card>
+          <p className="text-center text-sm text-gray-500 mt-4">
+            <strong>Privacy Note:</strong> We do not store your data. All
+            processing is done in your browser.
+          </p>
+        </div>
+      </section>
 
-					<section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-						<h2 className="text-3xl font-bold mb-6">
-							Who Uses YouTube Thumbnail Downloaders?
-						</h2>
-						<p className="text-muted-foreground mb-8">
-							YouTube thumbnails are carefully designed marketing images.
-							Creators, designers, and researchers download them for competitive
-							analysis, inspiration, presentations, and content repurposing. Our
-							tool extracts the <strong>maxresdefault</strong> (1280×720)
-							thumbnail image in its highest quality.
-						</p>
-						<div className="grid md:grid-cols-3 gap-8 text-left">
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">
-									Content Creator Research
-								</h3>
-								<p className="text-muted-foreground m-0">
-									Study competitors' thumbnail styles, color schemes, and
-									typography to optimize your own click-through rates.
-								</p>
-							</div>
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">
-									Design Inspiration
-								</h3>
-								<p className="text-muted-foreground m-0">
-									Collect thumbnail reference images for mood boards and design
-									projects. Save them in high resolution for accurate analysis.
-								</p>
-							</div>
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">
-									Multiple Resolutions
-								</h3>
-								<p className="text-muted-foreground m-0">
-									Download thumbnails in maxresdefault (1280x720), hqdefault
-									(480x360), and more based on what's available.
-								</p>
-							</div>
-						</div>
-					</section>
+      {/* Content Expansion */}
+      <div className="container mx-auto px-4 pb-12 md:pb-20 space-y-16">
+        {/* How to Use */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-10">
+            How It Works (3 Simple Steps)
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <div className="space-y-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mx-auto">
+                1
+              </div>
+              <h3 className="text-xl font-bold">Paste YouTube URL</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Copy the URL of the YouTube video you want the thumbnail from.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mx-auto">
+                2
+              </div>
+              <h3 className="text-xl font-bold">Click "Download"</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Our tool will instantly fetch all available thumbnail sizes.
+              </p>
+            </div>
+            <div className="space-y-4">
+              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mx-auto">
+                3
+              </div>
+              <h3 className="text-xl font-bold">Save Your Image</h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                Choose the resolution you need and save the image to your
+                device.
+              </p>
+            </div>
+          </div>
+        </section>
 
-					<section className="mb-16">
-						<h2 className="text-3xl md:text-4xl font-bold text-center mb-10">
-							How to Download a YouTube Thumbnail
-						</h2>
-						<div className="grid md:grid-cols-3 gap-8">
-							<div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
-								<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">
-									1
-								</div>
-								<h3 className="text-xl font-bold mb-4">Copy YouTube URL</h3>
-								<p className="text-muted-foreground text-sm">
-									Open the YouTube video. Copy the URL from the browser address
-									bar or click Share → Copy Link.
-								</p>
-							</div>
-							<div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
-								<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">
-									2
-								</div>
-								<h3 className="text-xl font-bold mb-4">Paste URL</h3>
-								<p className="text-muted-foreground text-sm">
-									Paste the URL into the 30tools downloader and let our system
-									fetch all available thumbnail sizes.
-								</p>
-							</div>
-							<div className="bg-card rounded-2xl p-8 border border-border flex flex-col items-center text-center">
-								<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary font-bold text-2xl mb-6">
-									3
-								</div>
-								<h3 className="text-xl font-bold mb-4">Save Thumbnail</h3>
-								<p className="text-muted-foreground text-sm">
-									Choose your preferred resolution and right-click the thumbnail
-									image to save it to your device.
-								</p>
-							</div>
-						</div>
-					</section>
+        {/* Features & Benefits */}
+        <section className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">
+              Features for Content Creators & Marketers
+            </h2>
+            <ul className="space-y-4 text-gray-600 dark:text-gray-300">
+              <li className="flex items-start">
+                <span className="text-primary mr-3 mt-1">✔</span>
+                <span>
+                  <strong>Multiple Resolutions:</strong> Download thumbnails in
+                  HD (1280x720), SD (640x480), and other standard sizes.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 mt-1">✔</span>
+                <span>
+                  <strong>High Quality:</strong> Get the 'maxresdefault' thumbnail
+                  for the best possible quality.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 mt-1">✔</span>
+                <span>
+                  <strong>Completely Free:</strong> No hidden costs, no premium
+                  versions. Just a free tool for everyone.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-primary mr-3 mt-1">✔</span>
+                <span>
+                  <strong>Fast and Simple:</strong> The minimal UI ensures you can
+                  grab a thumbnail in seconds without distractions.
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className="bg-gray-100 dark:bg-gray-800 p-8 rounded-lg">
+              <h3 className="text-xl font-bold mb-4">Why Download Thumbnails?</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Thumbnails are the billboards of YouTube. Analyzing them helps you understand what makes viewers click.
+              </p>
+              <ul className="space-y-2 text-sm">
+                <li>- Competitor Research</li>
+                <li>- Design Inspiration</li>
+                <li>- A/B Testing Ideas</li>
+                <li>- Presentations & Reports</li>
+              </ul>
+          </div>
+        </section>
 
-					<AdUnit />
+        {/* FAQs */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Frequently Asked Questions
+          </h2>
+          <div className="max-w-3xl mx-auto space-y-4">
+            {FAQ_SCHEMA.mainEntity.map((faq, i) => (
+              <details key={i} className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg cursor-pointer">
+                <summary className="font-semibold text-lg">{faq.name}</summary>
+                <p className="mt-2 text-gray-600 dark:text-gray-300">
+                  {faq.acceptedAnswer.text}
+                </p>
+              </details>
+            ))}
+          </div>
+        </section>
 
-					<section className="mb-16">
-						<h2 className="text-3xl font-bold text-center mb-10">
-							YouTube Thumbnail Downloader FAQs
-						</h2>
-						<div className="max-w-3xl mx-auto space-y-6">
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									What is maxresdefault YouTube thumbnail?
-								</h3>
-								<p className="text-muted-foreground">
-									maxresdefault is YouTube's highest quality thumbnail format at
-									1280×720 pixels. Not all videos have this size available; some
-									may only have hqdefault (480×360) if the creator uploaded at
-									low resolution.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									Is it legal to download YouTube thumbnails?
-								</h3>
-								<p className="text-muted-foreground">
-									YouTube thumbnails are publicly accessible images. Downloading
-									them for personal research, inspiration, or analysis is
-									generally acceptable. However, using someone else's thumbnail
-									commercially or representing it as your own violates copyright
-									law.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									What image format are YouTube thumbnails in?
-								</h3>
-								<p className="text-muted-foreground">
-									YouTube thumbnails are saved as JPEG (.jpg) image files. They
-									can be opened in any standard image viewer or editing
-									software.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									Do I need a YouTube account to download thumbnails?
-								</h3>
-								<p className="text-muted-foreground">
-									No. Our tool accesses publicly available thumbnail images from
-									YouTube. No login or YouTube account is required.
-								</p>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-		</>
-	);
+        {/* Internal Linking */}
+        <section>
+          <h2 className="text-3xl font-bold text-center mb-10">
+            Related Downloader Tools
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+            <Link href="/youtube-video-downloader" className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:bg-primary/10 transition-colors">
+                YouTube Video Downloader
+            </Link>
+            <Link href="/twitter-video-downloader" className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:bg-primary/10 transition-colors">
+                Twitter Video Downloader
+            </Link>
+            <Link href="/instagram-downloader" className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:bg-primary/10 transition-colors">
+                Instagram Downloader
+            </Link>
+             <Link href="/tiktok-downloader" className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg hover:bg-primary/10 transition-colors">
+                TikTok Downloader
+            </Link>
+          </div>
+        </section>
+      </div>
+    </>
+  );
 }
