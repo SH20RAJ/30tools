@@ -2,12 +2,29 @@ import Link from "next/link";
 import { generateToolMetadata } from "@/lib/seo-helper";
 import InstagramReelDownloader from "@/components/tools/downloaders/InstagramReelDownloader";
 
-export const metadata = {
-	...generateToolMetadata("instagram-reel-downloader", "downloaders"),
-	title: "Instagram Reel Downloader: Save Reels in HD (Free & Fast)",
-	description:
-		"Download Instagram Reels in HD 1080p with original audio. No watermark, no signup, 100% free. Save IG Reels to your gallery instantly. Try it now!",
-};
+export async function generateMetadata({ searchParams }) {
+	const params = await searchParams;
+	const variant = params.variant;
+	const baseMetadata = generateToolMetadata(
+		"instagram-reel-downloader",
+		"downloaders",
+		"en",
+		{},
+		variant,
+	);
+
+	// If it's a specific variant, use the generated title, otherwise use our optimized default
+	if (variant) {
+		return baseMetadata;
+	}
+
+	return {
+		...baseMetadata,
+		title: "Instagram Reel Downloader: Save Reels in HD (Free & Fast)",
+		description:
+			"Download Instagram Reels in HD 1080p with original audio. No watermark, no signup, 100% free. Save IG Reels to your gallery instantly. Try it now!",
+	};
+}
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center min-h-[90px]">
