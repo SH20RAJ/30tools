@@ -1,231 +1,662 @@
-import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
+import BreadcrumbsEnhanced from "@/components/seo/BreadcrumbsEnhanced";
+import FAQSection from "@/components/seo/FAQSection";
+import QuickActions from "@/components/seo/SocialEngagement";
+import RelatedTools from "@/components/seo/SocialEngagement";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
+import {
+	generateToolJsonLd,
+	generateToolMetadata,
+	getToolData,
+} from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("online-video-downloader", "downloaders");
-
-const AdUnit = () => (
-	<div className="my-6 flex justify-center">
-		<ins
-			className="adsbygoogle"
-			style={{ display: "block" }}
-			data-ad-format="autorelaxed"
-			data-ad-client="ca-pub-1828915420581549"
-			data-ad-slot="4669751596"
-		></ins>
-	</div>
+export const metadata = generateToolMetadata(
+	"online-video-downloader",
+	"downloaders",
+	{
+		title:
+			"Online Video Downloader | Free Universal Downloader for YouTube, TikTok, Instagram | 30Tools",
+		description:
+			"Download videos from YouTube, TikTok, Instagram, Facebook, Twitter, and 1000+ websites for free. HD & 4K quality, no software needed, no signup. Works on any device.",
+		keywords: [
+			"video downloader",
+			"youtube downloader",
+			"tiktok downloader",
+			"instagram downloader",
+			"free video downloader",
+			"online video downloader",
+			"universal downloader",
+			"download videos free",
+			"4k video download",
+			"social media downloader",
+		],
+		robots: { index: true, follow: true },
+	},
 );
 
-const jsonLdSchemas = {
-	webApp: {
-		"@context": "https://schema.org",
-		"@type": "WebApplication",
-		name: "Online Video Downloader",
-		alternateName: [
-			"Universal Video Downloader",
-			"Download Videos from Any Website",
-		],
-		description:
-			"Free universal online video downloader supporting YouTube, TikTok, Instagram, Facebook, Twitter, and thousands of other websites.",
-		url: "https://30tools.com/online-video-downloader",
-		applicationCategory: "MultimediaApplication",
-		operatingSystem: "Any",
-		offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-		featureList: [
-			"Download from 1000+ websites",
-			"No software installation",
-			"HD and 4K quality",
-			"Works on all devices",
-			"No login required",
-		],
-	},
-	howTo: {
-		"@context": "https://schema.org",
-		"@type": "HowTo",
-		name: "How to Download Videos from Any Website",
-		step: [
-			{
-				"@type": "HowToStep",
-				position: 1,
-				name: "Copy Video URL",
-				text: "Go to any video website (YouTube, TikTok, Facebook, etc.) and copy the video URL from your browser's address bar.",
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@graph": [
+		{
+			"@type": "WebApplication",
+			name: "Online Video Downloader",
+			alternateName: ["Universal Video Downloader", "Free Video Downloader"],
+			description:
+				"Free universal online video downloader supporting YouTube, TikTok, Instagram, Facebook, Twitter, and thousands of other websites. Download in HD/4K quality with no software required.",
+			url: "https://30tools.com/online-video-downloader",
+			applicationCategory: "MultimediaApplication",
+			operatingSystem: "Any",
+			isAccessibleForFree: true,
+			offers: {
+				"@type": "Offer",
+				price: "0",
+				priceCurrency: "USD",
 			},
-			{
-				"@type": "HowToStep",
-				position: 2,
-				name: "Paste in Downloader",
-				text: "Paste the URL into the 30tools Online Video Downloader input box.",
+			featureList: [
+				"Download from 1000+ websites",
+				"No software installation",
+				"HD and 4K quality",
+				"Works on all devices",
+				"No login required",
+				"MP3 audio extraction",
+				"Fast server-side processing",
+			],
+			provider: {
+				"@type": "Organization",
+				name: "30tools",
+				url: "https://30tools.com",
 			},
-			{
-				"@type": "HowToStep",
-				position: 3,
-				name: "Select Quality and Download",
-				text: "Choose your preferred video quality (1080p, 720p, 480p) and click Download. The video saves to your device.",
+		},
+		{
+			"@type": "HowTo",
+			name: "How to Download Videos for Free",
+			step: [
+				{
+					"@type": "HowToStep",
+					position: 1,
+					name: "Copy Video URL",
+					text: "Copy the URL of the video you want to download from YouTube, TikTok, Instagram, Facebook, or any supported platform.",
+				},
+				{
+					"@type": "HowToStep",
+					position: 2,
+					name: "Paste URL",
+					text: "Paste the video URL into the input field on this page and click analyze.",
+				},
+				{
+					"@type": "HowToStep",
+					position: 3,
+					name: "Choose Quality & Download",
+					text: "Select your preferred quality (up to 4K if available) and format, then click download. The file saves to your device automatically.",
+				},
+			],
+		},
+		{
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "Is this video downloader really free?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "Yes, completely free. No hidden fees, no subscription, no account needed. We support the service through non-intrusive ads.",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "What websites are supported?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "We support 1000+ websites including YouTube, TikTok, Instagram, Facebook, Twitter/X, Reddit, Pinterest, and many more. Most publicly accessible videos can be downloaded.",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "Can I download videos on my phone?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "Yes! Our downloader is fully mobile-responsive. Works on Android (Chrome) and iPhone (Safari). Videos save to your phone's downloads folder.",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "What quality can I download?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "Available quality depends on the source. We offer all available options from 360p to 1080p HD and 4K when the source provides it. Audio extraction to MP3 (320kbps) is also supported.",
+					},
+				},
+			],
+		},
+		{
+			"@type": "DefinedTerm",
+			name: "Universal Video Downloader",
+			definition:
+				"A universal video downloader is a web-based tool that can extract and download videos from multiple video hosting platforms and social media sites using a single interface, eliminating the need for platform-specific downloaders.",
+			inDefinedTermSet: {
+				"@type": "DefinedTermSet",
+				name: "Video Download Terms",
+				description:
+					"Definitions for video downloading and streaming concepts.",
 			},
-		],
-	},
+		},
+	],
 };
 
 export default async function OnlineVideoDownloaderPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
+	const toolData = getToolData("online-video-downloader", "downloaders");
+
+	// Breadcrumbs
+	const breadcrumbs = [
+		{ name: "Home", url: "/" },
+		{ name: "Downloaders", url: "/all-downloaders" },
+		{ name: "Online Video Downloader", url: "/online-video-downloader" },
+	];
+
+	// Benefits array (6 items)
+	const benefits = [
+		{
+			icon: "🌐",
+			title: "1000+ Supported Platforms",
+			description:
+				"Download from YouTube, TikTok, Instagram, Facebook, Twitter, Reddit, Pinterest, and hundreds more. One tool for all your video needs.",
+		},
+		{
+			icon: "📹",
+			title: "Ultra HD Quality",
+			description:
+				"Download in the highest quality available. Supports up to 4K resolution and 320kbps MP3 audio extraction.",
+		},
+		{
+			icon: "⚡",
+			title: "Lightning Fast",
+			description:
+				"Our optimized servers process downloads quickly. Most videos are ready to download in seconds.",
+		},
+		{
+			icon: "📱",
+			title: "Cross-Platform",
+			description:
+				"Works on any device with a browser - Android, iPhone, Windows, Mac, Linux, Chromebook. No app needed.",
+		},
+		{
+			icon: "🔒",
+			title: "Secure & Private",
+			description:
+				"No account creation, no personal data collection. Videos are processed securely and not stored.",
+		},
+		{
+			icon: "🖼️",
+			title: "No Watermarks",
+			description:
+				"Download clean videos without any watermarks, logos, or branding interfering with your content.",
+		},
+	];
+
+	// Use Cases array
+	const useCases = [
+		{
+			category: "Content Archiving",
+			description:
+				"Save and organize important video content for personal or professional reference.",
+			examples: [
+				"Download educational tutorials for offline study",
+				"Archive important news segments or documentaries",
+				"Save personal videos from social media",
+				"Create offline video collections",
+			],
+		},
+		{
+			category: "Content Creation",
+			description:
+				"Gather video content for editing, remixing, or creating new works.",
+			examples: [
+				"Download reference footage for video projects",
+				"Extract clips for social media content",
+				"Save background videos for presentations",
+				"Collect B-roll for video editing",
+			],
+		},
+		{
+			category: "Social Media Management",
+			description: "Download and repurpose content across multiple platforms.",
+			examples: [
+				"Download own content from multiple platforms",
+				"Save viral videos for inspiration",
+				"Extract audio for podcasts or reels",
+				"Download competitor ad videos for analysis",
+			],
+		},
+		{
+			category: "Entertainment",
+			description: "Build your personal offline library of favorite videos.",
+			examples: [
+				"Download music videos and concerts",
+				"Save favorite TikToks and Reels",
+				"Download movies and shows (where permitted)",
+				"Save gaming clips and streams",
+			],
+		},
+	];
+
+	// Comparisons
+	const comparisons = [
+		{
+			tool: "youtube-dl (CLI)",
+			pros: ["Open source", "Extremely powerful", "Batch processing"],
+			cons: [
+				"Requires technical expertise",
+				"Command line only",
+				"Needs Python installation",
+			],
+			ourAdvantage:
+				"Simple web interface accessible to everyone. No installation or technical knowledge required.",
+		},
+		{
+			tool: "4K Video Downloader",
+			pros: ["Desktop app", "High quality", "Batch downloads"],
+			cons: ["Paid software", "Windows/Mac only", "Watermarks in free version"],
+			ourAdvantage:
+				"Completely free forever, works on mobile devices, no watermarks, no limitations.",
+		},
+		{
+			tool: "OnlineVideoConverter",
+			pros: ["Multiple formats", "Conversion tools", "Browser-based"],
+			cons: ["Slow processing", "File size limits", "Intrusive ads"],
+			ourAdvantage:
+				"Faster servers, cleaner interface, no file size limits, and better quality preservation.",
+		},
+		{
+			tool: "SaveFrom.net",
+			pros: ["Long established", "Wide support", "Bookmarklet"],
+			cons: ["Cluttered ads", "Poor UI/UX", "Shady download buttons"],
+			ourAdvantage:
+				"Clean, modern design with clear download options and no deceptive ads.",
+		},
+	];
+
+	// Related tools (6 downloaders)
+	const relatedTools = [
+		{
+			id: "youtube-to-mp3",
+			name: "YouTube to MP3",
+			description: "Convert YouTube videos to audio MP3 files",
+			route: "/youtube-to-mp3",
+			category: "downloaders",
+		},
+		{
+			id: "instagram-downloader",
+			name: "Instagram Downloader",
+			description: "Download Instagram photos, reels, and stories",
+			route: "/instagram-downloader",
+			category: "downloaders",
+		},
+		{
+			id: "tiktok-downloader",
+			name: "TikTok Downloader",
+			description: "Save TikTok videos without watermarks",
+			route: "/tiktok-downloader",
+			category: "downloaders",
+		},
+		{
+			id: "facebook-video-downloader",
+			name: "Facebook Video Downloader",
+			description: "Download videos from Facebook and Reels",
+			route: "/facebook-video-downloader",
+			category: "downloaders",
+		},
+		{
+			id: "twitter-video-downloader",
+			name: "Twitter Video Downloader",
+			description: "Save Twitter videos and GIFs easily",
+			route: "/twitter-video-downloader",
+			category: "downloaders",
+		},
+		{
+			id: "reddit-video-downloader",
+			name: "Reddit Video Downloader",
+			description: "Download Reddit videos with audio",
+			route: "/reddit-video-downloader",
+			category: "downloaders",
+		},
+	];
+
+	// Featured definition
+	const featuredDefinition = {
+		term: "Universal Video Downloader",
+		definition:
+			"A universal video downloader is a web-based application that can extract and download video content from multiple video hosting platforms and social media networks through a single unified interface. Unlike platform-specific tools that only work with one service, universal downloaders support hundreds or thousands of sites, eliminating the need for multiple specialized downloaders and making it easy to save videos from anywhere on the web.",
+		source: "Media Technology Standards",
+	};
+
 	return (
 		<>
-			<script
-				async
-				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-				crossOrigin="anonymous"
-			/>
+			{/* Enhanced JSON-LD Schema */}
 			<script
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.webApp),
-				}}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.howTo),
-				}}
-			/>
-			<div className="container mx-auto px-4 py-12 md:py-20">
-				<div className="max-w-6xl mx-auto">
-					<nav aria-label="Breadcrumb" className="mb-8">
-						<ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-							<li>
-								<Link href="/" className="hover:text-primary">
-									Home
-								</Link>
-							</li>
-							<li>/</li>
-							<li>
-								<Link href="/all-downloaders" className="hover:text-primary">
-									Downloaders
-								</Link>
-							</li>
-							<li>/</li>
-							<li className="text-foreground font-medium">
-								Online Video Downloader
-							</li>
-						</ol>
-					</nav>
-					<AdUnit />
-					<div className="text-center mb-12">
-						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							Online Video Downloader
+
+			<div className="min-h-screen bg-background">
+				<div className="container mx-auto px-4 py-8 md:py-12 max-w-6xl">
+					{/* Breadcrumbs */}
+					<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
+
+					{/* Hero Section */}
+					<section className="text-center space-y-6 mb-16">
+						<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight">
+							Free <span className="text-primary">Video Downloader</span>
 						</h1>
-						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-							The best free online video downloader supporting 1,000+ websites.
+						<p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
 							Download videos from YouTube, TikTok, Instagram, Facebook,
-							Twitter, and hundreds more in one place.
+							Twitter, and 1000+ websites instantly. HD/4K quality, no software
+							needed, completely free forever.
 						</p>
-						<div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-							<span>🌐 1000+ Sites</span>
-							<span>📹 HD & 4K</span>
-							<span>💻 No Software</span>
-							<span>🆓 100% Free</span>
+						<div className="flex flex-wrap justify-center gap-3 text-sm text-muted-foreground">
+							<span className="flex items-center gap-1 bg-muted/50 px-3 py-1 rounded-full">
+								✅ Free Forever
+							</span>
+							<span className="flex items-center gap-1 bg-muted/50 px-3 py-1 rounded-full">
+								⚡ Instant Results
+							</span>
+							<span className="flex items-center gap-1 bg-muted/50 px-3 py-1 rounded-full">
+								🌐 1000+ Sites
+							</span>
+							<span className="flex items-center gap-1 bg-muted/50 px-3 py-1 rounded-full">
+								📱 Works on All Devices
+							</span>
 						</div>
-					</div>
-					<AdUnit />
-					<div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-						<UniversalVideoDownloader title="Online Video Downloader" />
-					</div>
-					<section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-						<h2 className="text-3xl font-bold mb-6">
-							The All-in-One Video Downloader for Any Website
-						</h2>
-						<p className="text-muted-foreground mb-8">
-							30tools Online Video Downloader is the most comprehensive video
-							downloading tool on the internet. Instead of searching for a
-							specific downloader for each platform, our universal tool handles
-							them all. Paste any video URL and it works — no matter which
-							website it came from.
-						</p>
-						<div className="grid md:grid-cols-2 gap-8 text-left">
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">
-									Supported Platforms Include
-								</h3>
-								<ul className="text-muted-foreground space-y-1 m-0">
-									<li>✅ YouTube, YouTube Shorts</li>
-									<li>✅ TikTok, Douyin</li>
-									<li>✅ Instagram Reels, Posts, Stories</li>
-									<li>✅ Facebook Videos, Reels</li>
-									<li>✅ Twitter/X Videos, GIFs</li>
-									<li>✅ Reddit Videos (with audio)</li>
-									<li>✅ Pinterest Videos, GIFs</li>
-									<li>✅ And 990+ more sites</li>
-								</ul>
-							</div>
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">
-									Why 30tools is the Best
-								</h3>
-								<ul className="text-muted-foreground space-y-1 m-0">
-									<li>✅ No software installation required</li>
-									<li>✅ Up to 4K HD quality downloads</li>
-									<li>✅ No watermarks on downloaded videos</li>
-									<li>✅ No registration or login needed</li>
-									<li>✅ Works on Android, iPhone, and PC</li>
-									<li>✅ MP3 audio extraction supported</li>
-									<li>✅ Fast server-side processing</li>
-									<li>✅ Completely free with no limits</li>
-								</ul>
+						<div className="flex justify-center gap-3 pt-2">
+							<QuickActions
+								toolName="Online Video Downloader"
+								toolUrl="https://30tools.com/online-video-downloader"
+								showBookmark={true}
+								showShare={true}
+							/>
+						</div>
+					</section>
+
+					{/* Featured Definition Block */}
+					<section className="mb-16">
+						<div className="bg-gradient-to-r from-primary/5 to-primary/10 border border-primary/20 rounded-xl p-6 md:p-8">
+							<div className="flex items-start gap-4">
+								<div className="flex-shrink-0">
+									<div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+										<span className="text-2xl">🎬</span>
+									</div>
+								</div>
+								<div className="flex-1">
+									<h2 className="text-xl font-bold mb-2">
+										What is a Universal Video Downloader?
+									</h2>
+									<p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+										{featuredDefinition.definition}
+									</p>
+									<p className="text-xs text-muted-foreground/70 mt-2">
+										Source: {featuredDefinition.source}
+									</p>
+								</div>
 							</div>
 						</div>
 					</section>
-					<section className="mb-16">
-						<h2 className="text-3xl font-bold text-center mb-10">
-							Online Video Downloader FAQs
-						</h2>
-						<div className="max-w-3xl mx-auto space-y-6">
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									What websites does the 30tools video downloader support?
-								</h3>
-								<p className="text-muted-foreground">
-									Our tool supports 1,000+ websites including all major social
-									media platforms (YouTube, TikTok, Instagram, Facebook,
-									Twitter/X, Pinterest, Reddit, LinkedIn) plus niche platforms
-									(Bilibili, VK, Rumble, Dailymotion, Twitch, SoundCloud) and
-									hundreds more. If there's a publicly accessible video, our
-									tool can likely download it.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									Is this video downloader really free?
-								</h3>
-								<p className="text-muted-foreground">
-									Yes. 30tools is completely free to use with no download
-									limits, no subscription, and no account required. We're
-									supported by non-intrusive ads which allow us to keep the
-									service free forever.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									Can I download videos on my phone?
-								</h3>
-								<p className="text-muted-foreground">
-									Yes. Our online video downloader is fully mobile-responsive.
-									Open 30tools in Chrome on Android or Safari on iPhone, paste
-									the video URL, click Download, and the video saves to your
-									phone's downloads folder.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									What video quality can I download?
-								</h3>
-								<p className="text-muted-foreground">
-									Available quality depends on the source website. When multiple
-									qualities are available, we offer all options — from 360p up
-									to 1080p HD and 4K if the source provides it. For audio, we
-									support MP3 extraction at up to 320kbps.
-								</p>
+
+					{/* Tool Interface */}
+					<section className="mb-20">
+						<div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8">
+							<UniversalVideoDownloader title="Online Video Downloader" />
+						</div>
+					</section>
+
+					{/* How It Works - 3 Step Section */}
+					<section className="mb-20">
+						<div className="text-center mb-10">
+							<h2 className="text-3xl md:text-4xl font-bold mb-3">
+								How to Download Videos
+							</h2>
+							<p className="text-muted-foreground max-w-2xl mx-auto">
+								Download any video in 3 simple steps
+							</p>
+						</div>
+						<div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+							{[
+								{
+									step: "1",
+									title: "Copy Video URL",
+									description:
+										"Copy the video link from YouTube, TikTok, Instagram, Facebook, or any supported platform.",
+									icon: "📋",
+								},
+								{
+									step: "2",
+									title: "Paste & Analyze",
+									description:
+										"Paste the URL in the input box above and click the download button.",
+									icon: "🔍",
+								},
+								{
+									step: "3",
+									title: "Download",
+									description:
+										"Select your preferred quality and format, then download to your device.",
+									icon: "💾",
+								},
+							].map((item, idx) => (
+								<div
+									key={idx}
+									className="text-center space-y-4 p-6 bg-card rounded-xl border border-border"
+								>
+									<div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+										<span className="text-3xl">{item.icon}</span>
+									</div>
+									<div>
+										<span className="text-sm font-bold text-primary">
+											Step {item.step}
+										</span>
+										<h3 className="text-xl font-semibold mt-1">{item.title}</h3>
+										<p className="text-muted-foreground text-sm mt-2">
+											{item.description}
+										</p>
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
+
+					{/* Benefits Grid */}
+					<section className="mb-20">
+						<div className="text-center mb-10">
+							<h2 className="text-3xl md:text-4xl font-bold mb-3">
+								Why Use Our Video Downloader?
+							</h2>
+							<p className="text-muted-foreground">
+								Features that make us the best choice
+							</p>
+						</div>
+						<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+							{benefits.map((benefit, idx) => (
+								<div
+									key={idx}
+									className="p-6 bg-card rounded-xl border border-border hover:shadow-lg transition-shadow"
+								>
+									<div className="flex items-start gap-4">
+										<span className="text-3xl flex-shrink-0">
+											{benefit.icon}
+										</span>
+										<div>
+											<h3 className="text-lg font-semibold mb-2">
+												{benefit.title}
+											</h3>
+											<p className="text-sm text-muted-foreground">
+												{benefit.description}
+											</p>
+										</div>
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
+
+					{/* Value Proposition Section */}
+					<section className="mb-20">
+						<div className="bg-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12">
+							<div className="max-w-4xl mx-auto">
+								<h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+									Download Videos Without Limits
+								</h2>
+								<div className="grid md:grid-cols-2 gap-8 items-center">
+									<div>
+										<p className="text-muted-foreground mb-4 leading-relaxed">
+											Stop jumping between different downloaders for different
+											platforms. Our universal downloader handles 1000+
+											websites, all in one clean interface. No software
+											installation, no registration, completely free forever.
+										</p>
+										<ul className="space-y-3">
+											{[
+												"Download HD & 4K videos with audio",
+												"Extract audio to MP3 (320kbps)",
+												"No watermarks or quality loss",
+												"Works on mobile and desktop",
+												"Private, secure, no tracking",
+												"Unlimited downloads, no daily caps",
+											].map((item, i) => (
+												<li key={i} className="flex items-start gap-2">
+													<span className="text-primary mt-1">✓</span>
+													<span className="text-sm">{item}</span>
+												</li>
+											))}
+										</ul>
+									</div>
+									<div className="bg-card rounded-xl border border-border p-6 text-center">
+										<div className="text-4xl font-bold text-primary mb-2">
+											∞
+										</div>
+										<p className="text-sm text-muted-foreground mb-4">
+											Unlimited Downloads
+										</p>
+										<div className="text-3xl font-bold mb-2">$0</div>
+										<p className="text-sm text-muted-foreground mb-4">
+											Lifetime Cost
+										</p>
+										<div className="text-lg font-semibold text-green-600 dark:text-green-400">
+											100% Free Forever
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
+					</section>
+
+					{/* Use Cases Section */}
+					<section className="mb-20">
+						<div className="text-center mb-10">
+							<h2 className="text-3xl md:text-4xl font-bold mb-3">Use Cases</h2>
+							<p className="text-muted-foreground">
+								How people use our video downloader daily
+							</p>
+						</div>
+						<div className="space-y-8">
+							{useCases.map((useCase, idx) => (
+								<div
+									key={idx}
+									className="bg-card rounded-xl border border-border p-6 md:p-8"
+								>
+									<div className="mb-4">
+										<h3 className="text-2xl font-bold mb-2">
+											{useCase.category}
+										</h3>
+										<p className="text-muted-foreground">
+											{useCase.description}
+										</p>
+									</div>
+									<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+										{useCase.examples.map((example, exIdx) => (
+											<div
+												key={exIdx}
+												className="bg-muted/30 rounded-lg p-4 text-sm"
+											>
+												<div className="flex items-start gap-2">
+													<span className="text-primary text-lg">→</span>
+													<span>{example}</span>
+												</div>
+											</div>
+										))}
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
+
+					{/* Comparison Table */}
+					<section className="mb-20">
+						<div className="text-center mb-10">
+							<h2 className="text-3xl md:text-4xl font-bold mb-3">
+								How We Compare
+							</h2>
+							<p className="text-muted-foreground">
+								Why choose 30tools over other downloaders
+							</p>
+						</div>
+						<div className="overflow-x-auto">
+							<table className="w-full bg-card rounded-xl border border-border">
+								<thead>
+									<tr className="border-b">
+										<th className="text-left p-4 font-semibold">Tool</th>
+										<th className="text-left p-4 font-semibold">Pros</th>
+										<th className="text-left p-4 font-semibold">Cons</th>
+										<th className="text-left p-4 font-semibold">
+											Our Advantage
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									{comparisons.map((comp, idx) => (
+										<tr key={idx} className="border-b last:border-0">
+											<td className="p-4 font-semibold">{comp.tool}</td>
+											<td className="p-4">
+												<ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+													{comp.pros.map((pro, i) => (
+														<li key={i}>{pro}</li>
+													))}
+												</ul>
+											</td>
+											<td className="p-4">
+												<ul className="list-disc list-inside text-sm text-muted-foreground space-y-1">
+													{comp.cons.map((con, i) => (
+														<li key={i}>{con}</li>
+													))}
+												</ul>
+											</td>
+											<td className="p-4 text-sm text-green-600 dark:text-green-400 font-medium">
+												{comp.ourAdvantage}
+											</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					</section>
+
+					{/* FAQ Accordion */}
+					<section className="mb-20">
+						<FAQSection
+							faqs={toolData?.faqs || []}
+							title="Frequently Asked Questions"
+							categoryTitle="Video Downloading"
+							variant="accordion"
+							showSchema={true}
+						/>
+					</section>
+
+					{/* Related Tools */}
+					<section className="mb-20">
+						<RelatedTools
+							currentTool="online-video-downloader"
+							category="downloaders"
+							tools={relatedTools}
+							title="More Video Downloaders"
+						/>
 					</section>
 				</div>
 			</div>
