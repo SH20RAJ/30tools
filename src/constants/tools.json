@@ -2561,83 +2561,103 @@
         {
           "id": "markdown-to-text",
           "name": "AI-to-Text Converter (Markdown Stripper)",
-          "description": "Wanna share things copied from ChatGPT, Grok, Claude or any AI tool? Convert Markdown into a clean, readable text format instantly. Perfect for cleaning up AI-generated content.",
+          "description": "Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing.",
           "route": "/markdown-to-text",
           "extraSlugs": [
             "clean-up-text-from-chatgpt-markdown",
-            "markdown-to-plain-text"
+            "markdown-to-plain-text",
+            "strip-markdown-online"
           ],
           "popular": true,
           "category": "text",
           "seoMetrics": {
             "kd": 3,
-            "volume": 1400
+            "volume": 8500
           },
-          "features": [
-            "Convert AI Markdown from ChatGPT, Claude, Grok & more",
-            "Strip all Markdown formatting for clean sharing",
-            "Perfect for emails, documents, and social media",
-            "Real-time instant conversion",
-            "Copy to clipboard with one click",
-            "100% Private: All processing happens in your browser"
+          "keywords": [
+            "markdown to text",
+            "ai text cleaner",
+            "strip markdown online",
+            "chatgpt markdown to plain text",
+            "markdown stripper"
           ],
-          "seoTitle": "AI-to-Text Converter (Markdown Stripper) Free Online | 30tools",
-          "seoDescription": "Free text tools: AI-to-Text Converter (Markdown Stripper). Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happe",
+          "seoTitle": "AI-to-Text Converter - Clean ChatGPT Markdown Online Free",
+          "seoDescription": "Instantly convert AI Markdown from ChatGPT, Claude, and Grok into clean plain text. Strip bold, italics, links, and code blocks for easy sharing. 100% Free.",
+          "features": [
+            "Removes ChatGPT & Claude Markdown",
+            "Strips bold, italics, and headers",
+            "Cleans up code block formatting",
+            "Converts list items to plain text",
+            "Real-time instant processing",
+            "One-click copy to clipboard",
+            "Privacy-first: No data stored",
+            "Works on all mobile devices"
+          ],
           "faqs": [
             {
-              "question": "Is this AI-to-Text Converter (Markdown Stripper) really free?",
-              "answer": "Yes! Our AI-to-Text Converter (Markdown Stripper) is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+              "question": "What is an AI-to-Text Converter?",
+              "answer": "An AI-to-Text Converter (or Markdown Stripper) is a tool that removes formatting characters like asterisks, hashtags, and brackets often used in AI-generated responses (Markdown). It provides you with clean, readable plain text ready for copy-pasting into emails or documents."
             },
             {
-              "question": "Is my data secure when using AI-to-Text Converter (Markdown Stripper)?",
-              "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+              "question": "Can it clean text from ChatGPT and Claude?",
+              "answer": "Yes! It is specifically optimized to handle the Markdown output from major AI models like ChatGPT, Claude, Gemini, and Grok."
             },
             {
-              "question": "Do I need to create an account to use AI-to-Text Converter (Markdown Stripper)?",
-              "answer": "No registration required. You can start using AI-to-Text Converter (Markdown Stripper) immediately without creating an account or providing any personal information."
+              "question": "Does it remove code blocks?",
+              "answer": "It removes the Markdown markers around code blocks but preserves the content within them, making the code readable without the backticks."
             },
             {
-              "question": "Are there any file size limits for AI-to-Text Converter (Markdown Stripper)?",
-              "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+              "question": "Is my AI-generated data private?",
+              "answer": "Yes. This tool runs entirely in your browser using JavaScript. Your text is never sent to our servers, ensuring your sensitive AI conversations remain private."
             },
             {
-              "question": "Can I use AI-to-Text Converter (Markdown Stripper) on mobile devices?",
-              "answer": "Yes, AI-to-Text Converter (Markdown Stripper) is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+              "question": "Does it handle lists and headers?",
+              "answer": "Yes, it converts Markdown headers (#) and list markers (-, *, 1.) into formatted plain text for better readability."
             },
             {
-              "question": "What file formats does AI-to-Text Converter (Markdown Stripper) support?",
-              "answer": "AI-to-Text Converter (Markdown Stripper) supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+              "question": "How do I use it on mobile?",
+              "answer": "Just visit this page on your smartphone, paste the text into the box, and click 'Copy'. It's fully responsive and thumb-friendly."
+            },
+            {
+              "question": "Why not just copy-paste normally?",
+              "answer": "Normal copy-pasting often carries over Markdown symbols (like **bold**) which look messy in professional emails or chats. This tool 'strips' those symbols for you."
+            },
+            {
+              "question": "Is there a word limit?",
+              "answer": "No. You can paste entire documents or long AI chat histories, and the tool will process them instantly."
+            },
+            {
+              "question": "Can I use it for my blog?",
+              "answer": "Absolutely. It's great for cleaning up AI-written drafts before you move them into your CMS."
+            },
+            {
+              "question": "Is it completely free?",
+              "answer": "Yes, it's free with no signups or limitations."
             }
           ],
           "howTo": {
-            "name": "How to Use AI-to-Text Converter (Markdown Stripper)",
+            "name": "How to Use AI-to-Text Converter",
             "steps": [
               {
-                "name": "Upload or Input",
-                "text": "Provide your file or input data using the upload button or text input field. AI-to-Text Converter (Markdown Stripper) supports drag-and-drop for convenience.",
-                "url": "/markdown-to-text#step1",
+                "name": "Paste Markdown",
+                "text": "Copy the formatted text from your AI chat and paste it into the input box.",
+                "url": "/markdown-to-text#input",
                 "position": 1
               },
               {
-                "name": "Configure Settings",
-                "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-                "url": "/markdown-to-text#step2",
+                "name": "Live Preview",
+                "text": "The tool instantly strips the Markdown and shows the clean plain text in the output box.",
+                "url": "/markdown-to-text#preview",
                 "position": 2
               },
               {
-                "name": "Process & Download",
-                "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-                "url": "/markdown-to-text#step3",
+                "name": "Copy & Share",
+                "text": "Click the 'Copy' button to save the clean text to your clipboard for use anywhere.",
+                "url": "/markdown-to-text#copy",
                 "position": 3
               }
             ]
-          },
-          "keywords": [
-            "ai-to-text converter (markdown stripper)",
-            "ai-to-text converter (markdown stripper) free",
-            "ai-to-text converter (markdown stripper) online",
-            "ai-to-text converter (markdown stripper) tool"
-          ]
+          }
         },
         {
           "id": "article-rewriter",
@@ -2823,82 +2843,108 @@
         {
           "id": "case-converter",
           "name": "Case Converter",
-          "description": "Convert text between upper case, lower case, title case, and more",
+          "description": "Convert text between upper case, lower case, title case, sentence case, and more instantly. Perfect for writers, developers, and social media managers.",
           "route": "/case-converter",
           "extraSlugs": [
-            "case-converter-for-seo-titles",
-            "title-case-converter-online"
+            "change-text-case-online",
+            "upper-case-to-lower-case",
+            "title-case-converter"
           ],
           "popular": true,
           "category": "text",
           "seoMetrics": {
             "kd": 4,
-            "volume": 1500
+            "volume": 850000
           },
-          "seoTitle": "Case Converter - Text Tool | 30tools",
-          "seoDescription": "Free text tools: Case Converter. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in your browser",
+          "keywords": [
+            "case converter",
+            "online case converter",
+            "upper case to lower case",
+            "title case generator",
+            "sentence case converter"
+          ],
+          "seoTitle": "Case Converter - Change Text Case Online Fast & Free",
+          "seoDescription": "Use our free Case Converter tool to instantly change text between upper case, lower case, title case, sentence case, and more. Copy-paste ready for any project.",
           "features": [
-            "Real-time text processing",
-            "Copy to clipboard with one click",
-            "Support for large text inputs",
-            "Multiple formatting options",
-            "Export in various formats",
-            "100% Free - No hidden costs or subscriptions"
+            "6+ Case transformation modes",
+            "Real-time instant results",
+            "Sentence case for perfect grammar",
+            "Title case for headers and titles",
+            "aLtErNaTiNg case for fun effects",
+            "One-click copy to clipboard",
+            "100% Free - No accounts needed",
+            "Secure & Private: Works in-browser"
           ],
           "faqs": [
             {
-              "question": "Is this Case Converter really free?",
-              "answer": "Yes! Our Case Converter is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+              "question": "What is a Case Converter?",
+              "answer": "A Case Converter is a free web tool that allows you to change the capitalization of a block of text. It can convert text to all uppercase, all lowercase, title case (where only the first letter of each word is capitalized), sentence case, and more."
             },
             {
-              "question": "Is my data secure when using Case Converter?",
-              "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+              "question": "How do I use the Title Case converter?",
+              "answer": "Simply paste your text into the input field and select the 'Title Case' option. Our tool will automatically capitalize the first letter of every word while making the rest lowercase."
             },
             {
-              "question": "Do I need to create an account to use Case Converter?",
-              "answer": "No registration required. You can start using Case Converter immediately without creating an account or providing any personal information."
+              "question": "Is sentence case available?",
+              "answer": "Yes! Our tool features an intelligent 'Sentence Case' mode that capitalizes the first letter of sentences and handles common punctuation appropriately."
             },
             {
-              "question": "Are there any file size limits for Case Converter?",
-              "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+              "question": "Can I use this for programming or coding?",
+              "answer": "Absolutely. Developers often use this tool to quickly format strings, convert variable naming conventions, or sanitize text data."
             },
             {
-              "question": "Can I use Case Converter on mobile devices?",
-              "answer": "Yes, Case Converter is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+              "question": "Is there a limit to how much text I can convert?",
+              "answer": "There are no hard limits. Our tool is optimized to process thousands of words instantly directly in your browser."
             },
             {
-              "question": "What file formats does Case Converter support?",
-              "answer": "Case Converter supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+              "question": "Does it work on mobile devices?",
+              "answer": "Yes, our Case Converter is fully responsive and works perfectly on smartphones and tablets."
+            },
+            {
+              "question": "Will my formatting (line breaks) be preserved?",
+              "answer": "Yes, our tool preserves your line breaks and spacing while only changing the character casing."
+            },
+            {
+              "question": "How is this different from Microsoft Word's change case?",
+              "answer": "Our online tool is accessible from any device without software, offers more specific modes like 'Alternating Case' or 'Inverse Case', and is faster for quick copy-paste workflows."
+            },
+            {
+              "question": "Is my data stored on your server?",
+              "answer": "No. All text transformations happen locally on your computer using JavaScript. Your text never touches our servers."
+            },
+            {
+              "question": "Is it completely free?",
+              "answer": "Yes, 100% free with no hidden costs, subscriptions, or login requirements."
             }
           ],
           "howTo": {
             "name": "How to Use Case Converter",
             "steps": [
               {
-                "name": "Upload or Input",
-                "text": "Provide your file or input data using the upload button or text input field. Case Converter supports drag-and-drop for convenience.",
-                "url": "/case-converter#step1",
+                "name": "Paste Your Text",
+                "text": "Copy the text you want to transform and paste it into the input area at the top of the page.",
+                "url": "/case-converter#input",
                 "position": 1
               },
               {
-                "name": "Configure Settings",
-                "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-                "url": "/case-converter#step2",
+                "name": "Choose Transformation",
+                "text": "Click on the button for your desired casing (e.g., UPPER CASE, lower case, Title Case).",
+                "url": "/case-converter#modes",
                 "position": 2
               },
               {
-                "name": "Process & Download",
-                "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-                "url": "/case-converter#step3",
+                "name": "Copy Result",
+                "text": "The text updates instantly in the box. Click the 'Copy' button to save the result to your clipboard.",
+                "url": "/case-converter#output",
                 "position": 3
               }
             ]
           },
-          "keywords": [
-            "case converter",
-            "case converter free",
-            "case converter online",
-            "case converter tool"
+          "keywords_extra": [
+            "convert text to uppercase",
+            "lowercase converter",
+            "proper case tool",
+            "text case switcher"
           ]
         },
         {
