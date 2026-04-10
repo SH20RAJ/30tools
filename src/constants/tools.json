@@ -2722,78 +2722,99 @@
         {
           "id": "backwards-text-generator",
           "name": "Backwards Text Generator",
-          "description": "Free backwards text generator tool to process your data instantly with privacy-friendly browser-based workflows.",
+          "description": "Generate backwards text instantly. Our free reverse text tool flips characters, words, or entire paragraphs. Perfect for Instagram, Discord, and creative writing.",
           "route": "/backwards-text-generator",
           "extraSlugs": [
             "free-backwards-text-generator-online",
-            "backwards-text-generator-tool"
+            "reverse-text-generator",
+            "mirror-text-generator"
           ],
-          "popular": false,
+          "popular": true,
           "category": "text",
           "seoMetrics": {
             "kd": 3,
-            "volume": 120
+            "volume": 74000
           },
           "keywords": [
-            "backwards text generator free",
-            "backwards text generator online",
-            "low competition backwards text tool"
+            "backwards text generator",
+            "reverse text online",
+            "mirror text generator",
+            "flip text generator",
+            "backward text online"
           ],
-          "seoTitle": "Backwards Text Generator - Text Tool | 30tools",
-          "seoDescription": "Free text tools: Backwards Text Generator. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in yo",
+          "seoTitle": "Backwards Text Generator - Write & Reverse Text Online Free",
+          "seoDescription": "Use our free Backwards Text Generator to reverse text, words, or letters instantly. Perfect for Instagram bios, Discord, and social media. 100% secure & private.",
           "features": [
-            "Real-time text processing",
-            "Copy to clipboard with one click",
-            "Support for large text inputs",
-            "Multiple formatting options",
-            "Export in various formats",
-            "100% Free - No hidden costs or subscriptions"
+            "Reverse characters (hello -> olleh)",
+            "Reverse words (hello world -> world hello)",
+            "Mirror text (Unicode flip effect)",
+            "Upside down text effect",
+            "Real-time instant processing",
+            "One-click copy to clipboard",
+            "100% Free - No signup required",
+            "Private: All processing happens in-browser"
           ],
           "faqs": [
             {
-              "question": "Is this Backwards Text Generator really free?",
-              "answer": "Yes! Our Backwards Text Generator is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+              "question": "What is a Backwards Text Generator?",
+              "answer": "A backwards text generator is a free online utility that transforms your regular text into a reversed format. It can reverse characters (making letters appear in reverse order), reverse word order, or use special Unicode characters to create a mirrored or upside-down effect. It's widely used for social media style, creative projects, and fun messaging."
             },
             {
-              "question": "Is my data secure when using Backwards Text Generator?",
-              "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+              "question": "How do I reverse text online?",
+              "answer": "To reverse text online, simply type or paste your text into our tool's input box. The 'Backwards Text Generator' will automatically show the reversed version in real-time. You can then copy the result with a single click."
             },
             {
-              "question": "Do I need to create an account to use Backwards Text Generator?",
-              "answer": "No registration required. You can start using Backwards Text Generator immediately without creating an account or providing any personal information."
+              "question": "Is this tool free to use?",
+              "answer": "Yes, our tool is 100% free with no limitations. You don't need to register or provide any personal information to use it."
             },
             {
-              "question": "Are there any file size limits for Backwards Text Generator?",
-              "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+              "question": "Does this work for Instagram, Discord, and Mobile?",
+              "answer": "Absolutely! The generated text uses standard Unicode characters, meaning you can copy and paste it into Instagram bios, Discord messages, Facebook posts, TikTok captions, and any mobile app that supports text."
             },
             {
-              "question": "Can I use Backwards Text Generator on mobile devices?",
-              "answer": "Yes, Backwards Text Generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+              "question": "Can I reverse words instead of characters?",
+              "answer": "Yes, our tool includes a 'Reverse Words' mode which keeps the letters in each word the same but reverses the order of the words in the sentence (e.g., 'hello world' becomes 'world hello')."
             },
             {
-              "question": "What file formats does Backwards Text Generator support?",
-              "answer": "Backwards Text Generator supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+              "question": "What is the Mirror Text effect?",
+              "answer": "The Mirror Text effect uses specific Unicode characters that look like mirrored versions of standard Latin letters. This creates a visual 'mirror' effect where the text appears to be reflected."
+            },
+            {
+              "question": "Is my data safe?",
+              "answer": "Your privacy is our priority. This tool runs entirely in your browser using JavaScript. No text you enter is ever sent to our servers or stored anywhere. Your data stays on your device."
+            },
+            {
+              "question": "Why would I use a reverse text tool?",
+              "answer": "Users use it for many reasons: creating unique social media bios, making puzzles or codes, designing artistic text for shirts/graphics, or simply having fun with friends in chat apps."
+            },
+            {
+              "question": "How do I flip text upside down?",
+              "answer": "Simply select the 'Upside Down' mode in our tool. It will use a specific set of Unicode characters to rotate your text 180 degrees visually."
+            },
+            {
+              "question": "Can I reverse large paragraphs?",
+              "answer": "Yes, our tool is optimized to handle large blocks of text instantly without any lag or performance issues."
             }
           ],
           "howTo": {
             "name": "How to Use Backwards Text Generator",
             "steps": [
               {
-                "name": "Upload or Input",
-                "text": "Provide your file or input data using the upload button or text input field. Backwards Text Generator supports drag-and-drop for convenience.",
-                "url": "/backwards-text-generator#step1",
+                "name": "Enter Your Text",
+                "text": "Type or paste the text you want to reverse into the input box at the top of the page.",
+                "url": "/backwards-text-generator#input",
                 "position": 1
               },
               {
-                "name": "Configure Settings",
-                "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-                "url": "/backwards-text-generator#step2",
+                "name": "Select Mode",
+                "text": "Choose between 'Reverse Characters', 'Reverse Words', 'Mirror' or 'Upside Down' depending on the effect you want.",
+                "url": "/backwards-text-generator#modes",
                 "position": 2
               },
               {
-                "name": "Process & Download",
-                "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-                "url": "/backwards-text-generator#step3",
+                "name": "Copy Result",
+                "text": "The result appears instantly in the output box. Click the 'Copy' button to save it to your clipboard.",
+                "url": "/backwards-text-generator#output",
                 "position": 3
               }
             ]
