@@ -245,8 +245,8 @@ export default function ImageCompressorTool() {
 				<CardHeader>
 					<CardTitle>Upload Images to Compress</CardTitle>
 					<CardDescription>
-						Drag and drop your JPEG, PNG, or WebP images here to reduce file
-						size instantly
+						Drag and drop your JPEG, PNG, or WebP images here to shrink file
+						size for web, social, and email
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -263,10 +263,10 @@ export default function ImageCompressorTool() {
 					>
 						<UploadIcon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
 						<p className="text-lg font-medium mb-2">
-							Drop your photos here to compress image size
-						</p>
-						<p className="text-sm text-muted-foreground mb-4">
-							Free image compressor supporting JPEG, PNG, WebP formats
+						Drop your photos here to compress and optimize image files
+					</p>
+					<p className="text-sm text-muted-foreground mb-4">
+						Free online image compressor for JPEG, PNG, and WebP
 						</p>
 						<input
 							type="file"
@@ -291,7 +291,7 @@ export default function ImageCompressorTool() {
 					<CardHeader>
 						<CardTitle>Image Compression Settings</CardTitle>
 						<CardDescription>
-							Adjust quality to balance file size reduction and image quality
+						Adjust quality to balance smaller file size with sharp image quality
 						</CardDescription>
 					</CardHeader>
 					<CardContent>

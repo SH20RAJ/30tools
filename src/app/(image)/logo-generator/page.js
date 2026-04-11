@@ -108,12 +108,12 @@ export default async function LogoGeneratorPage({ searchParams }) {
 				{/* Hero Section */}
 				<div className="text-center mb-12">
 					<h1 className="text-4xl font-bold mb-4">
-						Free Online Logo Generator
+						Free Online Logo Generator - Create Brand Logos Fast
 					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Design a professional logo for your brand in minutes. Choose from
-						our library of icons and fonts, customize colors, and download your
-						high-resolution logo for free.
+						Design a professional logo for your brand in minutes. Choose from our
+						library of modern icons and fonts, customize colors, and download a
+						high-resolution logo PNG for free.
 					</p>
 
 					<QuickActions
@@ -123,6 +123,8 @@ export default async function LogoGeneratorPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
+
+
 
 				{/* Tool Interface */}
 				<div className="mb-12">

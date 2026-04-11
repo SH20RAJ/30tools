@@ -108,12 +108,12 @@ export default async function ImageConverterPage({ searchParams }) {
 				{/* Hero Section */}
 				<div className="text-center mb-12">
 					<h1 className="text-4xl font-bold mb-4">
-						Free Online Image Converter
+						Free Image Converter - JPG, PNG, WebP, HEIC Online
 					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Convert your images to any format instantly. Support for JPG, PNG,
-						WebP, GIF, BMP, TIFF, and HEIC. Batch convert multiple files with
-						custom quality and size settings.
+						Convert your images to the perfect file format instantly. Support for
+						JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert multiple files
+						with custom quality and resize options.
 					</p>
 
 					<QuickActions
@@ -123,6 +123,8 @@ export default async function ImageConverterPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
+
+
 
 				{/* Tool Interface */}
 				<div className="mb-12">

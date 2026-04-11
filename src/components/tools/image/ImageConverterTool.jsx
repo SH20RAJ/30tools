@@ -435,7 +435,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 					>
 						<UploadIcon className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
 						<h3 className="text-lg font-semibold mb-2">
-							Drop images here or click to browse
+							Drop images here or click to browse to convert image formats
 						</h3>
 						<p className="text-muted-foreground mb-4">
 							Supports JPG, PNG, WebP, GIF, BMP, TIFF, HEIC formats
@@ -443,9 +443,8 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 
 						<Button onClick={() => fileInputRef.current?.click()}>
 							<FolderIcon className="h-4 w-4 mr-2" />
-							Choose Files
+							Choose Images to Convert
 						</Button>
-
 						<input
 							ref={fileInputRef}
 							type="file"

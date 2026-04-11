@@ -119,7 +119,7 @@ export default function PhotoEnhancerTool() {
 		link.download = `enhanced-${image.name}`;
 		link.href = previewUrl;
 		link.click();
-		toast.success("Image downloaded successfully!");
+				toast.success("Enhanced photo downloaded successfully!");
 	};
 
 	const autoEnhance = () => {
@@ -144,11 +144,11 @@ export default function PhotoEnhancerTool() {
 					<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
 						<Upload className="w-10 h-10 text-primary" />
 					</div>
-					<h2 className="text-2xl font-bold mb-2">Upload a Photo to Enhance</h2>
-					<p className="text-muted-foreground mb-6">
-						Support for JPG, PNG, WebP up to 10MB
-					</p>
-					<Button size="lg">Select Image</Button>
+				<h2 className="text-2xl font-bold mb-2">Upload a Photo to Enhance with AI</h2>
+				<p className="text-muted-foreground mb-6">
+					Support for JPG, PNG, WebP up to 10MB. AI photo enhancement in seconds.
+				</p>
+				<Button size="lg">Select Photo</Button>
 					<input
 						type="file"
 						ref={fileInputRef}
@@ -177,13 +177,7 @@ export default function PhotoEnhancerTool() {
 									variant="secondary"
 								>
 									<Wand2 className="w-4 h-4 mr-2" />
-									Auto Enhance
-								</Button>
-
-								<div className="space-y-4">
-									<div className="space-y-2">
-										<div className="flex justify-between">
-											<Label className="flex items-center gap-2">
+						Auto Enhance Photo
 												<Sun className="w-4 h-4" /> Brightness
 											</Label>
 											<span className="text-xs text-muted-foreground">

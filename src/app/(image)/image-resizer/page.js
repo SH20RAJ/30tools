@@ -108,12 +108,12 @@ export default async function ImageResizerPage({ searchParams }) {
 				{/* Hero Section */}
 				<div className="text-center mb-12">
 					<h1 className="text-4xl font-bold mb-4">
-						Free Image Resizer - Resize Photos Online
+						Free Image Resizer - Resize Photos for Web, Social, & Print
 					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Easily resize your images to exact pixel dimensions or percentages.
-						Perfect for social media, websites, and printing. Batch process
-						multiple photos at once for free.
+						Resize your images to exact pixel or percentage dimensions for web,
+						social media, or print. Use presets for Instagram, Facebook,
+						Twitter, YouTube, and email attachments.
 					</p>
 
 					<QuickActions
@@ -123,6 +123,8 @@ export default async function ImageResizerPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
+
+
 
 				{/* Tool Interface */}
 				<div className="mb-12">

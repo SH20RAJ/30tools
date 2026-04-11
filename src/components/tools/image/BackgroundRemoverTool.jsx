@@ -284,8 +284,8 @@ export default function BackgroundRemoverTool() {
 						Upload Images
 					</CardTitle>
 					<CardDescription>
-						Support: JPG, PNG, WebP • Max size: {formatFileSize(maxFileSize)}{" "}
-						per file • Batch processing available
+					Remove background from image online in seconds. Supports JPG, PNG,
+					WebP. All processing happens locally and privately.
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -296,11 +296,11 @@ export default function BackgroundRemoverTool() {
 					>
 						<Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
 						<p className="text-lg font-medium mb-2">
-							Drop images here or click to browse
-						</p>
-						<p className="text-sm text-muted-foreground mb-4">
-							AI will automatically detect and remove backgrounds • All
-							processing happens locally
+						Drop images here or click to browse to remove background
+					</p>
+					<p className="text-sm text-muted-foreground mb-4">
+						AI will automatically detect and remove backgrounds. All
+						processing happens locally in your browser.
 						</p>
 						<Input
 							ref={fileInputRef}
@@ -311,7 +311,7 @@ export default function BackgroundRemoverTool() {
 							className="hidden"
 						/>
 						<Button onClick={() => fileInputRef.current?.click()}>
-							Choose Images
+						Choose Images to Remove Background
 						</Button>
 					</div>
 				</CardContent>

@@ -78,25 +78,27 @@ export default async function ImageCompressorPage({ searchParams }: { searchPara
 				</div>
 
 				<main className="container mx-auto px-4 py-8 max-w-6xl">
-					{/* Hero Section */}
-					<div className="text-center mb-12">
-						<h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground leading-tight">
-							Free Online <span className="text-primary">{displayTitle}</span>
-						</h1>
-						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-							Welcome to the best <strong>image compressor free online</strong>{" "}
-							utility. Our <strong>{displayTitle} tool</strong>
-							allows you to <strong>compress images online</strong> up to 90%
-							while maintaining high clarity.
-						</p>
+				{/* Hero Section */}
+				<div className="text-center mb-12">
+					<h1 className="text-4xl md:text-6xl font-extrabold mb-6 text-foreground leading-tight">
+						Free Online <span className="text-primary">{displayTitle}</span>
+					</h1>
+					<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
+						Welcome to the best <strong>image compressor free online</strong>{" "}
+						utility. Our <strong>{displayTitle} tool</strong> allows you to
+						<strong>compress images online</strong> up to 90% while maintaining
+						high clarity for websites, social media, and email attachments.
+					</p>
 
-						<QuickActions
-							toolName={displayTitle}
-							toolUrl={variant ? `https://30tools.com/${variant}` : "https://30tools.com/image-compressor"}
-							showBookmark={true}
-							showShare={true}
-						/>
-					</div>
+					<QuickActions
+						toolName={displayTitle}
+						toolUrl={variant ? `https://30tools.com/${variant}` : "https://30tools.com/image-compressor"}
+						showBookmark={true}
+						showShare={true}
+					/>
+				</div>
+
+
 
 					{/* Tool Interface */}
 					<div className="bg-card rounded-2xl shadow-2xl border border-border p-6 md:p-10 mb-20">

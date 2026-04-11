@@ -350,7 +350,8 @@ export default function ImageResizerTool() {
 						<CardHeader>
 							<CardTitle>Resize Settings</CardTitle>
 							<CardDescription>
-								Configure image dimensions and options
+							Configure image dimensions and resize options for web, social,
+							and print
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="space-y-6">
@@ -480,17 +481,17 @@ export default function ImageResizerTool() {
 									className="w-full"
 								>
 									<UploadIcon className="h-4 w-4 mr-2" />
-									Choose Images
-								</Button>
+							Choose Images to Resize
+					</Button>
 								<input
-									ref={fileInputRef}
-									type="file"
-									multiple
-									accept="image/*"
-									onChange={handleFileSelect}
-									className="hidden"
-								/>
-								<div className="text-xs text-muted-foreground">
+						ref={fileInputRef}
+						type="file"
+						multiple
+						accept="image/*"
+						onChange={handleFileSelect}
+						className="hidden"
+					/>
+					<div className="text-xs text-muted-foreground">
 									Supports: JPEG, PNG, WebP, GIF, BMP
 									<br />
 									Max size: 50MB per file

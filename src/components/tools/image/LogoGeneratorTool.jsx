@@ -133,7 +133,7 @@ export default function LogoGeneratorTool() {
 								<Input
 									value={text}
 									onChange={(e) => setText(e.target.value)}
-									placeholder="Enter brand name"
+									placeholder="Enter brand or business name"
 								/>
 							</div>
 							<div>
@@ -276,7 +276,7 @@ export default function LogoGeneratorTool() {
 							disabled={isExporting}
 						>
 							<Download className="w-4 h-4 mr-2" />
-							{isExporting ? "Generating..." : "Download Logo"}
+							{isExporting ? "Generating..." : "Download Logo PNG"}
 						</Button>
 					</CardContent>
 				</Card>

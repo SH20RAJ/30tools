@@ -107,11 +107,13 @@ export default async function PhotoEnhancerPage({ searchParams }) {
 			<main className="container mx-auto px-4 py-8">
 				{/* Hero Section */}
 				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">Free AI Photo Enhancer</h1>
+					<h1 className="text-4xl font-bold mb-4">
+						Free AI Photo Enhancer - Sharpen, Denoise & Upscale
+					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Transform your low-quality photos into high-resolution masterpieces.
-						Our AI automatically fixes blur, reduces noise, and enhances colors
-						in seconds.
+						Transform low-quality photos into high-resolution masterpieces. Our AI
+						automatically fixes blur, reduces noise, restores color, and upscales
+						images in seconds.
 					</p>
 
 					<QuickActions
@@ -121,6 +123,8 @@ export default async function PhotoEnhancerPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
+
+
 
 				{/* Tool Interface */}
 				<div className="mb-12">

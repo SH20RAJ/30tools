@@ -112,11 +112,11 @@ export default async function BackgroundRemoverPage({ searchParams }) {
 					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
 						Instantly <strong>remove backgrounds from images</strong> with our
-						advanced AI. Create <strong>transparent backgrounds</strong>,{" "}
-						<strong>make PNGs</strong>, or add{" "}
-						<strong>white backgrounds</strong> for product photos, portraits,
-						and logos. 100% free, automatic, and the best{" "}
-						<strong>remove.bg alternative</strong> for professional cutouts.
+						advanced AI. Create <strong>transparent PNGs</strong>,{" "}
+						<strong>remove background from photo</strong>, or add a
+						<strong>white background</strong> for product photos, portraits, and logos.
+						100% free, automatic, and the best <strong>remove.bg alternative</strong>
+						for professional cutouts.
 					</p>
 
 					<QuickActions
@@ -126,6 +126,8 @@ export default async function BackgroundRemoverPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
+
+
 
 				{/* Tool Interface */}
 				<div className="mb-12">
