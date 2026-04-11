@@ -62,7 +62,7 @@ export const metadata = generateToolMetadata(
 
 export default async function AIImageGeneratorPage({ searchParams }) {
   const params = await searchParams;
-  const lang = params.lang || "en";
+  const _lang = params.lang || "en";
 
   // Tool-specific data
   const toolData = {
