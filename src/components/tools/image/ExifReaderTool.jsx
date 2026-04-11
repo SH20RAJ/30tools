@@ -113,17 +113,15 @@ export default function ExifReaderTool() {
 					<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
 						<Camera className="w-10 h-10 text-primary" />
 					</div>
-					<h2 className="text-2xl font-bold mb-2">Upload Image to Read EXIF</h2>
-					<p className="text-muted-foreground mb-6">
-						Supports JPG, TIFF, HEIC (converted). View camera settings,
-						location, and more.
-					</p>
-					<Button size="lg">Select Image</Button>
+					<h2 className="text-2xl font-bold mb-2">Upload a Photo to Read EXIF Metadata</h2>                    <p className="text-muted-foreground mb-6">
+                        Supports JPEG, TIFF, HEIC, and PNG. View camera settings, GPS location, timestamp, and hidden image metadata.
+                    </p>
+					<Button size="lg">Select Photo</Button>
 					<input
 						type="file"
 						ref={fileInputRef}
 						className="hidden"
-						accept="image/jpeg,image/tiff,image/png"
+						accept="image/jpeg,image/tiff,image/png,image/heic,image/heif"
 						onChange={handleFileChange}
 					/>
 				</div>
@@ -134,7 +132,7 @@ export default function ExifReaderTool() {
 						<div className="bg-card border rounded-xl p-4 shadow-sm">
 							<img
 								src={previewUrl}
-								alt="Preview"
+								alt="Photo preview for EXIF metadata extraction"
 								className="w-full h-auto rounded-lg mb-4"
 							/>
 							<div className="space-y-2 text-sm">
@@ -284,9 +282,9 @@ export default function ExifReaderTool() {
 								<AlertCircle className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
 								<h3 className="text-lg font-medium mb-2">No EXIF Data Found</h3>
 								<p className="text-muted-foreground">
-									This image doesn't appear to contain any metadata.
+									This photo does not contain detectable EXIF metadata.
 									<br />
-									Try uploading an original photo from a camera or phone.
+									Try uploading an original camera or phone image.
 								</p>
 							</div>
 						)}

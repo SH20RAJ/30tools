@@ -161,7 +161,7 @@ export default function FaviconGeneratorTool() {
 
 							<TabsContent value="text" className="space-y-4 pt-4">
 								<div>
-									<Label>Initials / Text</Label>
+									<Label>Favicon letters</Label>
 									<Input
 										value={text}
 										onChange={(e) => setText(e.target.value)}
@@ -184,7 +184,7 @@ export default function FaviconGeneratorTool() {
 
 							<TabsContent value="emoji" className="space-y-4 pt-4">
 								<div>
-									<Label>Emoji</Label>
+									<Label>Emoji icon</Label>
 									<Input
 										value={emoji}
 										onChange={(e) => setEmoji(e.target.value)}
@@ -211,7 +211,7 @@ export default function FaviconGeneratorTool() {
 									onClick={() => fileInputRef.current?.click()}
 								>
 									<Upload className="w-4 h-4 mr-2" />
-									Upload Image
+									Upload logo or image
 								</Button>
 								<input
 									ref={fileInputRef}
@@ -266,7 +266,7 @@ export default function FaviconGeneratorTool() {
 							)}
 
 							<div>
-								<Label>Shape / Roundness</Label>
+								<Label>Icon shape</Label>
 								<Slider
 									value={[borderRadius]}
 									onValueChange={(v) => setBorderRadius(v[0])}
@@ -284,10 +284,10 @@ export default function FaviconGeneratorTool() {
 
 						<div className="grid grid-cols-2 gap-2">
 							<Button onClick={() => downloadFavicon(32)} variant="outline">
-								<Download className="w-4 h-4 mr-2" /> 32x32
+								<Download className="w-4 h-4 mr-2" /> Download 32x32 favicon
 							</Button>
 							<Button onClick={() => downloadFavicon(512)}>
-								<Download className="w-4 h-4 mr-2" /> 512x512
+								<Download className="w-4 h-4 mr-2" /> Download 512x512 PNG
 							</Button>
 						</div>
 					</CardContent>
@@ -317,14 +317,14 @@ export default function FaviconGeneratorTool() {
 						</div>
 					</div>
 					<div className="bg-white h-64 border-x border-b rounded-b-lg flex items-center justify-center text-muted-foreground">
-						Browser Preview
+						Live favicon preview
 					</div>
 				</Card>
 
 				{/* Large Preview */}
 				<Card>
 					<CardHeader>
-						<CardTitle>Large Preview</CardTitle>
+						<CardTitle>High-resolution preview</CardTitle>
 					</CardHeader>
 					<CardContent className="flex justify-center p-12 bg-gray-50/50">
 						<div className="w-32 h-32 shadow-lg rounded-xl overflow-hidden flex items-center justify-center bg-white">
