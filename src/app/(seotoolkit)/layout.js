@@ -1,9 +1,6 @@
-import { Inter } from "next/font/google";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Button } from "@/components/ui/button";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
 	title: "SEO Toolkit - Free Online SEO Audit & Analysis",
@@ -14,7 +11,7 @@ export const metadata = {
 export default function SeoToolkitLayout({ children }) {
 	return (
 		<div
-			className={`min-h-screen flex flex-col bg-background ${inter.className}`}
+			className="min-h-screen flex flex-col bg-background"
 		>
 			{/* Minimal Navbar */}
 			<header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

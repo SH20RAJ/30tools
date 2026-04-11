@@ -1,4 +1,3 @@
-import { Open_Sans } from "next/font/google";
 import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
@@ -9,12 +8,6 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { getAllTools } from "@/constants/tools-utils";
 import "./globals.css";
 import Script from "next/script";
-
-const openSans = Open_Sans({
-	variable: "--font-open-sans",
-	subsets: ["latin"],
-	weight: ["300", "400", "500", "600", "700"],
-});
 
 const SITE_URL = "https://30tools.com";
 const TOOL_COUNT = getAllTools().length;
@@ -291,7 +284,13 @@ export default async function RootLayout({ children }) {
 					}}
 				/>
 			</head>
-			<body className={`${openSans.variable} ds-page font-sans antialiased`}>
+			<body
+				className="ds-page font-sans antialiased"
+				style={{
+					"--font-open-sans":
+						'"Open Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif',
+				}}
+			>
 				<AppRouterCacheProvider options={{ enableCssLayer: true }}>
 					<ThemeProvider defaultTheme="light" enableSystem={false} forcedTheme="light">
 						<MuiThemeRegistry>

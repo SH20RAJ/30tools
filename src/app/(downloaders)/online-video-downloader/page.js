@@ -1,10 +1,11 @@
 import BreadcrumbsEnhanced from "@/components/seo/BreadcrumbsEnhanced";
 import FAQSection from "@/components/seo/FAQSection";
-import QuickActions from "@/components/seo/SocialEngagement";
-import RelatedTools from "@/components/seo/SocialEngagement";
+import {
+	QuickActions,
+	RelatedTools,
+} from "@/components/seo/SocialEngagement";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 import {
-	generateToolJsonLd,
 	generateToolMetadata,
 	getToolData,
 } from "@/lib/seo-helper";

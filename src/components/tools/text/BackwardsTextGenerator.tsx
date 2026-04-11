@@ -1,6 +1,15 @@
 "use client";
 
-import { Copy, Trash2, RefreshCw, Download, Type, List, Mirror, ArrowDownUp } from "lucide-react";
+import {
+	ArrowDownUp,
+	ArrowLeftRight,
+	Copy,
+	Download,
+	List,
+	RefreshCw,
+	Trash2,
+	Type,
+} from "lucide-react";
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -73,7 +82,7 @@ export default function BackwardsTextGenerator() {
   const modes = [
     { id: "reverse-chars", label: "Reverse Characters", icon: Type, description: "Hello → olleH" },
     { id: "reverse-words", label: "Reverse Words", icon: List, description: "Hello World → World Hello" },
-    { id: "mirror", label: "Mirror Effect", icon: Mirror, description: "Visual reflection effect" },
+    { id: "mirror", label: "Mirror Effect", icon: ArrowLeftRight, description: "Visual reflection effect" },
     { id: "upside-down", label: "Upside Down", icon: ArrowDownUp, description: "Upside down Unicode" },
   ];
 
