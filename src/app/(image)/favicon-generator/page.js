@@ -16,14 +16,12 @@ import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = generateToolMetadata("favicon-generator", "image");
 
-export default async function FaviconGeneratorPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+export default async function FaviconGeneratorPage() {
 	// Tool-specific data
 	const toolData = {
 		id: "favicon-generator",
 		name: "Favicon Generator",
-		description: "Create website favicons instantly",
+		description: "Create website favicons instantly in your browser",
 		category: "image",
 		route: "/favicon-generator",
 	};
@@ -36,35 +34,33 @@ export default async function FaviconGeneratorPage({ searchParams }) {
 
 	// Tool features
 	const features = [
-		"Text to Favicon conversion",
-		"Emoji to Favicon conversion",
-		"Image to Favicon conversion",
-		"Real-time browser preview",
-		"Custom colors & fonts",
-		"High-resolution download",
-		"Standard 32x32 support",
-		"100% Free",
+		"Create favicons from text, emojis, or image uploads",
+		"Live browser tab preview before download",
+		"Customize colors, fonts, and rounded corners",
+		"Download optimized 32x32 and 512x512 icons",
+		"Fast browser-only favicon creation",
+		"No signup, no uploads, 100% free",
 	];
 
 	// Usage examples
 	const examples = [
 		{
 			title: "Brand Initials",
-			description: "Simple text icon",
-			input: "Text 'AB' + Blue Background",
-			output: "Professional Letter Icon",
+			description: "Create a simple letter favicon",
+			input: "Text 'AB' + blue background",
+			output: "Clean browser tab icon",
 		},
 		{
 			title: "Emoji Icon",
-			description: "Fun and expressive",
-			input: "Rocket Emoji 🚀",
-			output: "Emoji Favicon",
+			description: "Design a fun favicon fast",
+			input: "Rocket emoji + contrast colors",
+			output: "Bold emoji browser icon",
 		},
 		{
 			title: "Logo Conversion",
-			description: "From existing logo",
-			input: "Upload Logo Image",
-			output: "Optimized Favicon",
+			description: "Turn your logo into an icon",
+			input: "Upload logo image",
+			output: "Optimized favicon preview",
 		},
 	];
 
@@ -106,32 +102,92 @@ export default async function FaviconGeneratorPage({ searchParams }) {
 			{/* Main Content */}
 			<main className="container mx-auto px-4 py-8">
 				{/* Hero Section */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Free Online Favicon Generator
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Create the perfect favicon for your website. Convert text, emojis,
-						or upload your own image to generate a professional browser tab icon
-						in seconds.
-					</p>
-
-					<QuickActions
-						toolName="Favicon Generator"
-						toolUrl="https://30tools.com/favicon-generator"
-						showBookmark={true}
-						showShare={true}
-					/>
+			<div className="text-center mb-12 max-w-3xl mx-auto">
+				<p className="text-sm uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+					Free favicon design tool
+				</p>
+				<h1 className="text-4xl sm:text-5xl font-bold mb-4">
+					Free Online Favicon Generator
+				</h1>
+				<p className="text-xl text-muted-foreground mb-8 leading-8">
+					Create a browser-ready favicon in seconds. Use text, emojis, or upload your own image to generate a clean website icon with live preview and instant download.
+				</p>
+				<QuickActions
+					toolName="Favicon Generator"
+					toolUrl="https://30tools.com/favicon-generator"
+					showBookmark={true}
+					showShare={true}
+				/>
+				<div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+					<a
+						href="#tool"
+						className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary/90"
+					>
+						Make Favicon Now
+					</a>
+					<a
+						href="#faq"
+						className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+					>
+						FAQ
+					</a>
 				</div>
+				<p className="mt-6 text-sm text-muted-foreground">
+					Fast, free, browser-only favicon generation with no signup.
+				</p>
+			</div>
 
-				{/* Tool Interface */}
-				<div className="mb-12">
-					<FaviconGeneratorTool />
+			{/* Tool Interface */}
+			<div className="mb-12" id="tool">
+				<FaviconGeneratorTool />
+			</div>
+
+			{/* Key Features */}
+			<GeneratorToolFeatures tool={toolData} features={features} />
+
+			<div className="mb-12 max-w-5xl mx-auto rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+				<h2 className="text-3xl font-bold mb-4">Why use this favicon generator?</h2>
+				<p className="text-base leading-7 text-muted-foreground mb-6">
+					Build a clean website icon without design tools. Generate favicons instantly from text, emojis, or image uploads and preview them inside a browser tab mockup.
+				</p>
+				<ul className="grid gap-3 sm:grid-cols-2">
+					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+						Live favicon preview for faster design decisions.
+					</li>
+					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+						Download ready-to-use icon files instantly.
+					</li>
+					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+						No signup, no uploads, and 100% browser-based.
+					</li>
+					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+						Create a favicon for any website in seconds.
+					</li>
+				</ul>
+			</div>
+
+			<div className="mb-12 grid gap-8 lg:grid-cols-2">
+				<div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+					<h2 className="text-3xl font-bold mb-4">Benefits</h2>
+					<ul className="space-y-3 text-sm leading-6 text-muted-foreground list-disc list-inside">
+						<li>Create a favicon that looks crisp in browser tabs and bookmarks.</li>
+						<li>Stay fast with instant previews and downloads.</li>
+						<li>Use your brand initials, emoji, or logo image.</li>
+						<li>Save time compared to manual icon design workflows.</li>
+						<li>Keep your favicon creation private and secure.</li>
+					</ul>
 				</div>
-
-				{/* Key Features */}
-				<GeneratorToolFeatures tool={toolData} features={features} />
-
+				<div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+					<h2 className="text-3xl font-bold mb-4">Use cases</h2>
+					<ul className="space-y-3 text-sm leading-6 text-muted-foreground list-disc list-inside">
+						<li>Build a favicon for a new website or blog.</li>
+						<li>Turn your logo into a tab icon in seconds.</li>
+						<li>Design a simple brand mark for landing pages.</li>
+						<li>Create a recognizable icon for browser bookmarks.</li>
+						<li>Experiment with emoji favicons without design software.</li>
+					</ul>
+				</div>
+			</div>
 				{/* Usage Examples */}
 				<GeneratorToolExamples
 					tool={toolData}

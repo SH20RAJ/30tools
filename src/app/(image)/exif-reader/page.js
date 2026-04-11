@@ -16,14 +16,12 @@ import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = generateToolMetadata("exif-reader", "image");
 
-export default async function ExifReaderPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+export default async function ExifReaderPage() {
 	// Tool-specific data
 	const toolData = {
 		id: "exif-reader",
 		name: "EXIF Reader",
-		description: "View hidden image metadata",
+		description: "View hidden photo metadata instantly in your browser",
 		category: "image",
 		route: "/exif-reader",
 	};
@@ -36,35 +34,33 @@ export default async function ExifReaderPage({ searchParams }) {
 
 	// Tool features
 	const features = [
-		"View Camera Settings (ISO, Aperture, Shutter)",
-		"Extract GPS Location Data",
-		"See Original Date & Time",
-		"Identify Camera Model & Lens",
-		"Support for JPEG, TIFF, & RAW",
-		"Local Processing (Privacy Focused)",
-		"No Upload Required",
-		"100% Free",
+		"Instantly extract hidden EXIF metadata from photos",
+		"Reveal camera make, model, aperture, shutter speed, and ISO",
+		"Find original capture date, time, and GPS coordinates",
+		"Browser-only processing for full privacy",
+		"Fast results with no uploads or signup",
+		"Works on desktop and mobile in any modern browser",
 	];
 
 	// Usage examples
 	const examples = [
 		{
 			title: "Photographers",
-			description: "Check settings",
-			input: "Upload Raw Photo",
-			output: "View ISO, f-stop, etc.",
+			description: "Check camera data quickly",
+			input: "Upload your raw or JPEG photo",
+			output: "See ISO, aperture, and shutter speed",
 		},
 		{
 			title: "Travelers",
-			description: "Find location",
-			input: "Upload Vacation Photo",
-			output: "View GPS Coordinates",
+			description: "Confirm location details",
+			input: "Upload vacation images",
+			output: "Reveal GPS coordinates and map links",
 		},
 		{
 			title: "Verification",
-			description: "Check authenticity",
-			input: "Upload Image",
-			output: "Verify Original Date",
+			description: "Validate authenticity",
+			input: "Upload original photo",
+			output: "Verify date, time, and camera information",
 		},
 	];
 
@@ -106,38 +102,126 @@ export default async function ExifReaderPage({ searchParams }) {
 			{/* Main Content */}
 			<main className="container mx-auto px-4 py-8">
 				{/* Hero Section */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Free Online EXIF Data Reader
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Instantly view hidden metadata in your photos. Check camera
-						settings, GPS location, shutter speed, and more without uploading
-						your images to any server.
-					</p>
-
-					<QuickActions
-						toolName="EXIF Reader"
-						toolUrl="https://30tools.com/exif-reader"
-						showBookmark={true}
-						showShare={true}
-					/>
-				</div>
-
-				{/* Tool Interface */}
-				<div className="mb-12">
-					<ExifReaderTool />
-				</div>
-
-				{/* Key Features */}
-				<GeneratorToolFeatures tool={toolData} features={features} />
-
-				{/* Usage Examples */}
-				<GeneratorToolExamples
-					tool={toolData}
-					examples={examples}
-					title="Why Read EXIF?"
+			<div className="text-center mb-12 max-w-3xl mx-auto">
+				<p className="text-sm uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+					Free image metadata tool
+				</p>
+				<h1 className="text-4xl sm:text-5xl font-bold mb-4">
+					Free Online EXIF Reader
+				</h1>
+				<p className="text-xl text-muted-foreground mb-8 leading-8">
+					Instantly inspect hidden metadata in your photos. View camera settings, GPS location, timestamp, and file tags in your browser without uploads or signup.
+				</p>
+				<QuickActions
+					toolName="EXIF Reader"
+					toolUrl="https://30tools.com/exif-reader"
+					showBookmark={true}
+					showShare={true}
 				/>
+				<div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+					<a
+						href="#tool"
+						className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-primary/90"
+					>
+						Use EXIF Reader
+					</a>
+					<a
+						href="#faq"
+						className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+					>
+						View FAQ
+					</a>
+				</div>
+				<p className="mt-6 text-sm text-muted-foreground">
+					No uploads • Free • No signup • Browser-only privacy.
+				</p>
+			</div>
+
+			{/* Tool Interface */}
+			<div className="mb-12" id="tool">
+				<ExifReaderTool />
+			</div>
+
+			{/* Key Features */}
+			<GeneratorToolFeatures tool={toolData} features={features} />
+
+			{/* What is EXIF data? */}
+			<div className="mb-12 max-w-5xl mx-auto rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+				<h2 className="text-3xl font-bold mb-4">What is this tool?</h2>
+				<p className="text-base leading-7 text-muted-foreground mb-6">
+					This EXIF Reader extracts hidden metadata from your image files in a clean browser interface. See camera make/model, exposure settings, GPS coordinates, and capture timestamps instantly.
+				</p>
+				<ul className="grid gap-3 sm:grid-cols-2">
+					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+						No upload required — all processing stays locally in your browser.
+					</li>
+					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+						Reveal camera settings, location, and timestamp details.
+					</li>
+					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+						Perfect for photographers, editors, and authenticity checks.
+					</li>
+					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+						Fast, free, and private — no signup needed.
+					</li>
+				</ul>
+			</div>
+
+			{/* Benefits and Use Cases */}
+			<div className="mb-12 grid gap-8 lg:grid-cols-2">
+				<div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+					<h2 className="text-3xl font-bold mb-4">Benefits</h2>
+					<ul className="space-y-3 text-sm leading-6 text-muted-foreground list-disc list-inside">
+						<li>Verify photo authenticity before sharing or publishing.</li>
+						<li>Understand camera settings used for every shot.</li>
+						<li>Recover location and timestamp from original images.</li>
+						<li>Make faster editing decisions with metadata insight.</li>
+						<li>Keep your files private with browser-side processing only.</li>
+					</ul>
+				</div>
+				<div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+					<h2 className="text-3xl font-bold mb-4">Use cases</h2>
+					<ul className="space-y-3 text-sm leading-6 text-muted-foreground list-disc list-inside">
+						<li>Inspect travel photos for GPS and timestamp accuracy.</li>
+						<li>Check camera and lens details before editing.</li>
+						<li>Validate capture time and location for proof.</li>
+						<li>Extract metadata from older JPEG or TIFF files.</li>
+						<li>Review image authenticity without uploads.</li>
+					</ul>
+				</div>
+			</div>
+
+			{/* Comparison with alternatives */}
+			<div className="mb-12 max-w-5xl mx-auto">
+				<h2 className="text-3xl font-bold mb-6">EXIF Reader vs alternatives</h2>
+				<div className="grid gap-4 md:grid-cols-3">
+					<div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+						<h3 className="font-semibold mb-3">Browser EXIF tools</h3>
+						<p className="text-sm text-muted-foreground leading-6">
+							Most browser EXIF viewers require uploads. 30tools reads metadata locally for better privacy and faster results.
+						</p>
+					</div>
+					<div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+						<h3 className="font-semibold mb-3">Desktop apps</h3>
+						<p className="text-sm text-muted-foreground leading-6">
+							Desktop EXIF readers need downloads and installations. Our tool works instantly in your browser.
+						</p>
+					</div>
+					<div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+						<h3 className="font-semibold mb-3">Command-line tools</h3>
+						<p className="text-sm text-muted-foreground leading-6">
+							Command-line EXIF readers are powerful but technical. 30tools is easy, visual, and mobile-friendly.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			{/* Usage Examples */}
+			<GeneratorToolExamples
+				tool={toolData}
+				examples={examples}
+				title="Why read EXIF metadata?"
+			/>
 
 				{/* User Reviews */}
 				<div className="mb-12">
