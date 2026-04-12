@@ -8,10 +8,11 @@ import {
 	Shield,
 	Zap,
 } from "lucide-react";
+import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/shared/ToolLayout";
-import { getToolById } from "@/constants/tools-utils";
+import { getAllTools, getToolById } from "@/constants/tools-utils";
 import { cn } from "@/lib/utils";
 
 interface ToolPlaceholderPageProps {
@@ -40,6 +41,16 @@ export default function ToolPlaceholderPage({
 
 	const baseUrl = "https://30tools.com";
 	const toolUrl = `${baseUrl}${route}`;
+
+	const relatedTools = useMemo(() => {
+		if (!toolData) return [];
+		return getAllTools()
+			.filter(
+				(tool) =>
+					tool.categoryKey === "seo" && tool.id !== toolId && tool.route,
+			)
+			.slice(0, 6);
+	}, [toolData, toolId]);
 
 	// JSON-LD: WebApplication
 	const softwareAppJsonLd = useMemo(
@@ -379,6 +390,24 @@ export default function ToolPlaceholderPage({
 					</div>
 				</div>
 			</section>
+
+			{relatedTools.length > 0 && (
+				<section className="mb-12" id="related-tools">
+					<h2 className="text-2xl font-bold mb-4">Related SEO Tools</h2>
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+						{relatedTools.map((tool) => (
+							<Link
+								key={tool.id}
+								href={tool.route}
+								className="rounded-2xl border border-border p-4 bg-card hover:border-primary hover:shadow-sm transition"
+							>
+								<h3 className="font-semibold text-lg mb-2">{tool.name}</h3>
+								<p className="text-sm text-muted-foreground">{tool.description}</p>
+							</Link>
+						))}
+					</div>
+				</section>
+			)}
 		</article>
 	);
 
@@ -389,16 +418,25 @@ export default function ToolPlaceholderPage({
 			description={description}
 			category={{ name: categoryName, slug: categorySlug }}
 			controls={
-				<div className="p-6 bg-card border border-border/50 rounded-2xl">
-					{/* Tool controls will be implemented in actual tool component */}
-					<div className="space-y-4">
-						<div className="h-10 bg-muted rounded-md animate-pulse"></div>
-						<div className="h-10 bg-muted rounded-md animate-pulse"></div>
-						<div className="h-10 bg-muted rounded-md animate-pulse"></div>
+				<div className="p-6 bg-card border border-border/50 rounded-2xl space-y-4">
+					<div className="rounded-2xl bg-primary/10 p-4">
+						<p className="text-sm font-medium text-primary">Quick actions</p>
+						<p className="text-sm text-muted-foreground mt-2">
+							Start using the tool instantly or review the SEO guidance below.
+						</p>
 					</div>
-					<p className="text-sm text-muted-foreground text-center mt-4">
-						Tool interface coming soon
-					</p>
+					<button
+						onClick={() => setActiveTab("tool")}
+						className="w-full rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white hover:bg-primary/90"
+					>
+						Use Tool Now
+					</button>
+					<button
+						onClick={() => setActiveTab("info")}
+						className="w-full rounded-xl border border-border px-4 py-3 text-sm font-semibold text-foreground hover:bg-muted"
+					>
+						Read SEO Tips
+					</button>
 				</div>
 			}
 		>

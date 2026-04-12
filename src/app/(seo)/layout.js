@@ -23,6 +23,24 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "SEO Tools - Free Online SEO Suite",
+		description:
+			"Boost your rankings with our free SEO tools. Keyword planner, backlink checker, site audit, and more.",
+		images: [
+			{
+				url: "/og-images/seo-tools.jpg",
+				width: 1200,
+				height: 630,
+				alt: "Free SEO Tools Collection",
+			},
+		],
+	},
+	robots: {
+		index: true,
+		follow: true,
+	},
 };
 
 const jsonLdSchemas = {
