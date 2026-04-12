@@ -7,8 +7,8 @@ const COMMON_HEADERS = {
 	accept: "application/json, text/javascript, */*; q=0.01",
 	"accept-language": "en-GB,en;q=0.5",
 	"content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-	origin: "https://ytdown.to",
-	referer: "https://ytdown.to/en2/",
+	origin: "https://app.ytdown.to",
+	referer: "https://app.ytdown.to/en2/",
 	"sec-ch-ua": '"Brave";v="143", "Chromium";v="143", "Not A(Brand";v="24"',
 	"sec-ch-ua-mobile": "?0",
 	"sec-ch-ua-platform": '"macOS"',
@@ -73,13 +73,13 @@ function getProgressBar(percent) {
 async function fetchVideoInfo(url) {
 	try {
 		// Cooldown check
-		await fetch("https://ytdown.to/cooldown.php", {
+		await fetch("https://app.ytdown.to/cooldown.php", {
 			method: "POST",
 			headers: COMMON_HEADERS,
 			body: "action=check",
 		});
 
-		const res = await fetch("https://ytdown.to/proxy.php", {
+		const res = await fetch("https://app.ytdown.to/proxy.php", {
 			method: "POST",
 			headers: COMMON_HEADERS,
 			body: `url=${encodeURIComponent(url)}`,
@@ -96,7 +96,7 @@ async function pollStatus(processUrl, chatId, messageId) {
 	let attempts = 0;
 	while (attempts < 8) {
 		try {
-			const res = await fetch("https://ytdown.to/proxy.php", {
+			const res = await fetch("https://app.ytdown.to/proxy.php", {
 				method: "POST",
 				headers: COMMON_HEADERS,
 				body: `url=${encodeURIComponent(processUrl)}`,

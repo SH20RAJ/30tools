@@ -4,7 +4,7 @@ This documentation covers the previous API implementation that proxied requests 
 
 ## Overview
 
-**Base URL**: `https://ytdown.to/proxy.php`
+**Base URL**: `https://app.ytdown.to/proxy.php`
 **Method**: `POST`
 **Content-Type**: `application/x-www-form-urlencoded; charset=UTF-8`
 
@@ -18,8 +18,8 @@ url={YOUTUBE_VIDEO_URL}
 ```
 
 **Required Headers:**
-- `Origin`: `https://ytdown.to`
-- `Referer`: `https://ytdown.to/en2/`
+- `Origin`: `https://app.ytdown.to`
+- `Referer`: `https://app.ytdown.to/en2/`
 - `X-Requested-With`: `XMLHttpRequest`
 
 ### Response
@@ -37,7 +37,7 @@ The API returns a JSON object. The core data is wrapped in an `api` object.
         "type": "Video", // or "Audio"
         "mediaQuality": "1080p",
         "mediaFileSize": "12.5 MB",
-        "mediaUrl": "https://ytdown.to/download/...", // Intermediate URL for Step 2
+        "mediaUrl": "https://app.ytdown.to/download/...", // Intermediate URL for Step 2
         "mediaExtension": "mp4"
         // ... other fields
       },

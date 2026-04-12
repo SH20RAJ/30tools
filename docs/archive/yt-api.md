@@ -7,14 +7,14 @@ Steps :
 
 1. first fetch the cooldown to get data about like
 
-curl 'https://ytdown.to/cooldown.php' \
+curl 'https://app.ytdown.to/cooldown.php' \
   -H 'accept: application/json, text/javascript, */*; q=0.01' \
   -H 'accept-language: en-GB,en;q=0.5' \
   -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' \
   -b 'PHPSESSID=go6tjlikmro2k7uokfkh7jcagg' \
-  -H 'origin: https://ytdown.to' \
+  -H 'origin: https://app.ytdown.to' \
   -H 'priority: u=1, i' \
-  -H 'referer: https://ytdown.to/en2/' \
+  -H 'referer: https://app.ytdown.to/en2/' \
   -H 'sec-ch-ua: "Brave";v="143", "Chromium";v="143", "Not A(Brand";v="24"' \
   -H 'sec-ch-ua-mobile: ?0' \
   -H 'sec-ch-ua-platform: "macOS"' \
@@ -31,14 +31,14 @@ curl 'https://ytdown.to/cooldown.php' \
 
 2. See the video fetching and the response schema json
 
-curl 'https://ytdown.to/proxy.php' \
+curl 'https://app.ytdown.to/proxy.php' \
   -H 'accept: */*' \
   -H 'accept-language: en-GB,en;q=0.5' \
   -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' \
   -b 'PHPSESSID=go6tjlikmro2k7uokfkh7jcagg' \
-  -H 'origin: https://ytdown.to' \
+  -H 'origin: https://app.ytdown.to' \
   -H 'priority: u=1, i' \
-  -H 'referer: https://ytdown.to/en2/' \
+  -H 'referer: https://app.ytdown.to/en2/' \
   -H 'sec-ch-ua: "Brave";v="143", "Chromium";v="143", "Not A(Brand";v="24"' \
   -H 'sec-ch-ua-mobile: ?0' \
   -H 'sec-ch-ua-platform: "macOS"' \
@@ -58,14 +58,14 @@ curl 'https://ytdown.to/proxy.php' \
 
 3. then fetch the process of downloading any video like if I have to download mp4 video the I will fetch 720p link from the prev response mediaUrl it
 
-curl 'https://ytdown.to/proxy.php' \
+curl 'https://app.ytdown.to/proxy.php' \
   -H 'accept: */*' \
   -H 'accept-language: en-GB,en;q=0.5' \
   -H 'content-type: application/x-www-form-urlencoded; charset=UTF-8' \
   -b 'PHPSESSID=go6tjlikmro2k7uokfkh7jcagg' \
-  -H 'origin: https://ytdown.to' \
+  -H 'origin: https://app.ytdown.to' \
   -H 'priority: u=1, i' \
-  -H 'referer: https://ytdown.to/en2/' \
+  -H 'referer: https://app.ytdown.to/en2/' \
   -H 'sec-ch-ua: "Brave";v="143", "Chromium";v="143", "Not A(Brand";v="24"' \
   -H 'sec-ch-ua-mobile: ?0' \
   -H 'sec-ch-ua-platform: "macOS"' \
