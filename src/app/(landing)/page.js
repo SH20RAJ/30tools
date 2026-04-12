@@ -6,7 +6,6 @@ import { MinimalHero } from "@/components/landing/MinimalHero";
 import { SimpleStats } from "@/components/landing/SimpleStats";
 import { ToolDirectory } from "@/components/landing/ToolDirectory";
 import { TrustSection } from "@/components/landing/TrustSection";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 import toolsData from "@/constants/tools.json";
 import translateEngine from "@/lib/translate";
 
@@ -157,15 +156,10 @@ export default async function LandingPage({ searchParams }) {
 	return (
 		<Box
 			sx={{
-				minHeight: "100vh",
-				display: "flex",
-				flexDirection: "column",
 				bgcolor: "background.default",
 			}}
 		>
-			<GoogleNavbar />
-
-			<Box component="main" sx={{ flex: 1, py: { xs: 4, md: 8 } }}>
+			<Box component="main" sx={{ py: { xs: 4, md: 8 } }}>
 				<Container maxWidth="xl">
 					<MinimalHero title={heroTitle} subtitle={heroSubtitle} />
 
@@ -176,8 +170,6 @@ export default async function LandingPage({ searchParams }) {
 					<ToolDirectory categories={filteredCategories} lang={lang} />
 				</Container>
 			</Box>
-
-			<GoogleFooter />
 		</Box>
 	);
 }
