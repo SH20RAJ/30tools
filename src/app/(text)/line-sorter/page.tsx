@@ -1,25 +1,34 @@
 import type { Metadata } from "next";
 import { generateToolMetadata } from "@/lib/seo-helper";
-import LineSorter from "@/components/tools/text/LineSorter";
+import ToolLayout from "@/components/shared/ToolLayout";
+import ToolContent from "@/components/shared/ToolContent";
+import LineSorterTool from "@/components/tools/text/LineSorterTool";
+import { getToolById } from "@/constants/tools-utils";
 
 export const metadata = generateToolMetadata("line-sorter", "text");
 
-export default async function LineSorterPage({
-	searchParams,
-}: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
-	const _params = await searchParams;
+export default function LineSorterPage() {
+	const toolData = getToolById("line-sorter");
+
+	if (!toolData) return null;
+
 	return (
-		<div className="container mx-auto px-4 py-8 md:py-12">
-			<div className="max-w-4xl mx-auto text-center mb-8">
-				<h1 className="text-3xl md:text-4xl font-bold mb-4">
-					Alphabetize List & Sort Lines Online
-				</h1>
-				<p className="text-muted-foreground">
-					Organize your lists instantly. Sort alphabetically, by length, or
-					shuffle.
-				</p>
+		<ToolLayout
+			toolId={toolData.id}
+			title={toolData.seoTitle || toolData.name}
+			description={toolData.seoDescription || toolData.description}
+			category={{ name: "Text Tools", slug: "text" }}
+		>
+			<div className="space-y-16">
+				<section id="tool" className="relative pt-4">
+					<div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-blue-500/5 rounded-[3rem] blur-3xl opacity-30 -z-10" />
+					<LineSorterTool />
+				</section>
+
+				<section id="content" className="border-t border-border/40 pt-16">
+					<ToolContent toolId="line-sorter" />
+				</section>
 			</div>
-			<LineSorter />
-		</div>
+		</ToolLayout>
 	);
 }

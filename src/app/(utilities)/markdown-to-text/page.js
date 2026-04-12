@@ -1,9 +1,8 @@
 import MarkdownToText from "@/components/tools/text/MarkdownToText";
 import { generateToolMetadata } from "@/lib/seo-helper";
 import { getAllTools } from "@/constants/tools-utils";
-import toolsData from "@/constants/tools.json";
-import Link from "next/link";
-import { ChevronRight, TypeIcon } from "lucide-react";
+import ToolLayout from "@/components/shared/ToolLayout";
+import ToolContent from "@/components/shared/ToolContent";
 
 const TOOL_ID = "markdown-to-text";
 const tool = getAllTools().find((t) => t.id === TOOL_ID);
@@ -12,7 +11,10 @@ export const metadata = generateToolMetadata("markdown-to-text", "text");
 
 export default async function MarkdownToTextPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
+
+	if (!tool) return null;
+
 	const jsonLd = {
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",
@@ -33,66 +35,23 @@ export default async function MarkdownToTextPage({ searchParams }) {
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
-			<div className="min-h-screen bg-background pb-20">
-				{/* Breadcrumbs */}
-				<div className="bg-muted/30 border-b">
-					<div className="container mx-auto px-4 py-4">
-						<nav className="flex items-center text-sm font-medium text-muted-foreground">
-							<Link href="/" className="hover:text-primary transition-colors">
-								Home
-							</Link>
-							<ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-							<Link
-								href="/search?category=text"
-								className="hover:text-primary transition-colors"
-							>
-								Text Tools
-							</Link>
-							<ChevronRight className="w-4 h-4 mx-2 opacity-50" />
-							<span className="text-foreground">{tool.name}</span>
-						</nav>
-					</div>
+			<ToolLayout
+				toolId={tool.id}
+				title={tool.seoTitle || tool.name}
+				description={tool.seoDescription || tool.description}
+				category={{ name: "Text Tools", slug: "text" }}
+			>
+				<div className="space-y-16">
+					<section id="tool" className="relative pt-4">
+						<div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-blue-500/5 rounded-[3rem] blur-3xl opacity-30 -z-10" />
+						<MarkdownToText />
+					</section>
+
+					<section id="content" className="border-t border-border/40 pt-16">
+						<ToolContent toolId="markdown-to-text" />
+					</section>
 				</div>
-
-				{/* Header Section */}
-				<header className="container mx-auto px-4 py-12 text-center max-w-4xl">
-					<div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-6 animate-in zoom-in duration-500">
-						<TypeIcon className="w-10 h-10" />
-					</div>
-					<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent italic">
-						AI-to-Text Converter
-					</h1>
-					<p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-						Wanna share things copied from{" "}
-						<span className="text-foreground font-semibold">
-							ChatGPT, Grok, Claude
-						</span>{" "}
-						or any AI tool? Convert Markdown into a clean, readable text format
-						instantly. <br />
-						<span className="text-primary font-medium">
-							Perfect for cleaning up AI-generated content.
-						</span>
-					</p>
-				</header>
-
-				<main className="container mx-auto px-4">
-					<MarkdownToText />
-
-					{/* Features Grid */}
-					<div className="mt-24 grid md:grid-cols-3 gap-8 max-w-6xl mx-auto border-t pt-16">
-						{tool.features.map((feature, i) => (
-							<div key={i} className="flex gap-4">
-								<div className="flex-none w-6 h-6 rounded-full bg-green-500/10 text-green-500 flex items-center justify-center text-xs font-bold">
-									✓
-								</div>
-								<p className="text-sm text-muted-foreground leading-relaxed">
-									{feature}
-								</p>
-							</div>
-						))}
-					</div>
-				</main>
-			</div>
+			</ToolLayout>
 		</>
 	);
 }

@@ -3116,15 +3116,17 @@
             "kd": 9,
             "volume": 3200
           },
-          "seoTitle": "Line Sorter - Text Tool | 30tools",
-          "seoDescription": "Free text tools: Line Sorter. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in your browser fo",
+          "seoTitle": "Line Sorter Online - Alphabetize, Natural, Numeric & Length Sort",
+          "seoDescription": "Sort lines instantly online: A-Z, Z-A, natural, numeric, by length, or shuffle. Remove duplicates and empty lines, then copy clean output in one click.",
           "features": [
-            "Real-time text processing",
-            "Copy to clipboard with one click",
-            "Support for large text inputs",
-            "Multiple formatting options",
-            "Export in various formats",
-            "100% Free - No hidden costs or subscriptions"
+            "Sort lines alphabetically (A-Z or Z-A)",
+            "Natural sort for mixed values like item1, item2, item10",
+            "Numeric sorting for number lists",
+            "Sort by line length (shortest or longest first)",
+            "Remove duplicate lines with optional case sensitivity",
+            "Remove empty lines before sorting",
+            "One-click copy, reverse order, and clear actions",
+            "Runs locally in your browser for privacy"
           ],
           "faqs": [
             {
@@ -3136,40 +3138,40 @@
               "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
             },
             {
-              "question": "Do I need to create an account to use Line Sorter?",
-              "answer": "No registration required. You can start using Line Sorter immediately without creating an account or providing any personal information."
+              "question": "What is natural sorting in this tool?",
+              "answer": "Natural sorting understands numbers inside text, so item2 appears before item10. This is useful for filenames, labels, and ordered list values."
             },
             {
-              "question": "Are there any file size limits for Line Sorter?",
-              "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+              "question": "Can I remove duplicate lines automatically?",
+              "answer": "Yes. Enable the remove duplicates option to keep only unique lines. You can also combine this with case-sensitive mode for exact matching behavior."
             },
             {
-              "question": "Can I use Line Sorter on mobile devices?",
-              "answer": "Yes, Line Sorter is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+              "question": "Can I sort numbers and text in the same list?",
+              "answer": "Yes. Use natural sort for mixed text and numeric values, or use numeric sort when your list is primarily numbers."
             },
             {
-              "question": "What file formats does Line Sorter support?",
-              "answer": "Line Sorter supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+              "question": "Does Line Sorter work on mobile?",
+              "answer": "Yes. The interface is fully responsive and works on phones, tablets, and desktop browsers without installing anything."
             }
           ],
           "howTo": {
             "name": "How to Use Line Sorter",
             "steps": [
               {
-                "name": "Upload or Input",
-                "text": "Provide your file or input data using the upload button or text input field. Line Sorter supports drag-and-drop for convenience.",
+                "name": "Paste Your List",
+                "text": "Paste or type one item per line in the input area.",
                 "url": "/line-sorter#step1",
                 "position": 1
               },
               {
-                "name": "Configure Settings",
-                "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+                "name": "Choose Sort Rules",
+                "text": "Select alphabetical, natural, numeric, length, or random order, then toggle duplicate and empty-line cleanup if needed.",
                 "url": "/line-sorter#step2",
                 "position": 2
               },
               {
-                "name": "Process & Download",
-                "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+                "name": "Sort and Copy",
+                "text": "Run the sort and copy the cleaned output with one click.",
                 "url": "/line-sorter#step3",
                 "position": 3
               }
@@ -3177,9 +3179,11 @@
           },
           "keywords": [
             "line sorter",
-            "line sorter free",
-            "line sorter online",
-            "line sorter tool"
+            "sort lines alphabetically",
+            "alphabetize list",
+            "sort lines online",
+            "remove duplicate lines",
+            "natural sort"
           ]
         },
         {
