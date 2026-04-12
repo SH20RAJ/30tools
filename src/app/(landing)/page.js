@@ -1,7 +1,6 @@
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import React from "react";
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
 import { MinimalHero } from "@/components/landing/MinimalHero";
 import { SimpleStats } from "@/components/landing/SimpleStats";
 import { ToolDirectory } from "@/components/landing/ToolDirectory";
@@ -27,7 +26,7 @@ export async function generateMetadata({ searchParams }) {
 	);
 
 	// Base path for home (root)
-	const basePath = "";
+	const _basePath = "";
 	const canonicalUrl = `https://30tools.com${lang !== "en" ? `?lang=${lang}` : ""}`;
 
 	// Generate language alternates

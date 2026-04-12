@@ -3,6 +3,7 @@ import { getAllCategories, getAllTools } from "@/constants/tools-utils";
 import { blogs } from "@/constants/blog-data";
 
 const BASE_URL = "https://30tools.com";
+const EXCLUDED_SITEMAP_ROUTES = new Set(["/youtube-video-downloader"]);
 
 function normalizeSiteUrl(pathOrUrl: string | undefined) {
 	if (!pathOrUrl) return null;
@@ -121,6 +122,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
 	// Tool pages with intelligent priority calculation
 	const toolPages: MetadataRoute.Sitemap = allTools.flatMap((tool: any) => {
+		if (EXCLUDED_SITEMAP_ROUTES.has(tool.route)) {
+			return [];
+		}
+
 		// Category-based priority adjustments
 		const categoryPriorities: Record<string, number> = {
 			image: 0.95,

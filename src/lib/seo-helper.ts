@@ -228,10 +228,22 @@ function generateOptimizedDescription(tool: Tool): string {
 export function generateToolMetadata(
 	toolId: string,
 	category: ToolCategory,
-	lang: string = "en",
-	overrides: MetadataOverrides = {},
-	currentSlug?: string,
+	langOrOverrides: string | MetadataOverrides = "en",
+	overridesOrCurrentSlug: MetadataOverrides | string = {},
+	currentSlugArg?: string,
 ): Metadata {
+	const lang = typeof langOrOverrides === "string" ? langOrOverrides : "en";
+	const overrides =
+		typeof langOrOverrides === "string"
+			? typeof overridesOrCurrentSlug === "string"
+				? {}
+				: (overridesOrCurrentSlug as MetadataOverrides)
+			: (langOrOverrides as MetadataOverrides);
+	const currentSlug =
+		typeof overridesOrCurrentSlug === "string"
+			? overridesOrCurrentSlug
+			: currentSlugArg;
+
 	const categoryData = toolsData.categories[category];
 	const tool = categoryData?.tools.find((t: any) => t.id === toolId) as
 		| Tool
