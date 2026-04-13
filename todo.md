@@ -16,3 +16,5 @@ get apis from = https://www.urwatools.com/en/pinterest-video-downloader
 ---
 
 https://30tools.com/png-to-pdf, https://30tools.com/jpg-to-pdf and there are so many 404 pages either remove them or create them from the website contents 
+
+https://www.urwatools.com/downloaders
