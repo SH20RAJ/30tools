@@ -1,21 +1,16 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
 
 export const metadata = {
-	title:
-		"Free How To Download Tiktok Videos Without Watermark Online - No Signup | 30tools",
-	description:
-		"Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"how to download tiktok videos without watermark, free online tool, no signup, others, how to download tiktok videos without watermark online, 30tools",
+	title: "Free How To Download Tiktok Videos Without Watermark Online - No Signup | 30tools",
+	description: "Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure.",
+	keywords: "how to download tiktok videos without watermark, free online tool, no signup, others, how to download tiktok videos without watermark online, 30tools",
 	alternates: {
-		canonical:
-			"https://30tools.com/blog/how-to-download-tiktok-videos-without-watermark",
+		canonical: "https://30tools.com/blog/how-to-download-tiktok-videos-without-watermark",
 	},
 	openGraph: {
-		title:
-			"Free How To Download Tiktok Videos Without Watermark Online - No Signup | 30tools",
-		description:
-			"Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free How To Download Tiktok Videos Without Watermark Online - No Signup | 30tools",
+		description: "Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure.",
 		url: "https://30tools.com/blog/how-to-download-tiktok-videos-without-watermark",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -23,10 +18,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title:
-			"Free How To Download Tiktok Videos Without Watermark Online - No Signup | 30tools",
-		description:
-			"Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free How To Download Tiktok Videos Without Watermark Online - No Signup | 30tools",
+		description: "Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -34,15 +27,14 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "how-to-download-tiktok-videos-without-watermark",
-		name: "How To Download Tiktok Videos Without Watermark",
-		description:
-			"Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure.",
-		route: "/blog/how-to-download-tiktok-videos-without-watermark",
-		extraSlugs: [],
-		popular: false,
-		category: "others",
-	};
+		"id": "how-to-download-tiktok-videos-without-watermark",
+		"name": "How To Download Tiktok Videos Without Watermark",
+		"description": "Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure.",
+		"route": "/blog/how-to-download-tiktok-videos-without-watermark",
+		"extraSlugs": [],
+		"popular": false,
+		"category": "others"
+};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",
@@ -51,43 +43,6 @@ export default async function ToolPage() {
 		{
 			name: "How To Download Tiktok Videos Without Watermark",
 			url: "/blog/how-to-download-tiktok-videos-without-watermark",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "ai-video-summarizer",
-			name: "Ai Video Summarizer",
-			description: "Ai Video Summarizer - Coming Soon",
-			route: "/ai-video-summarizer",
-			extraSlugs: [],
-			popular: false,
-			category: "others",
-		},
-		{
-			id: "all-downloaders",
-			name: "All Downloaders",
-			description: "All Downloaders - Coming Soon",
-			route: "/all-downloaders",
-			extraSlugs: [],
-			popular: false,
-			category: "others",
-		},
-		{
-			id: "audio-equalizer",
-			name: "Audio Equalizer",
-			description: "Audio Equalizer - Coming Soon",
-			route: "/audio-equalizer",
-			extraSlugs: [
-				"audio-tools",
-				"audio-trimmer",
-				"change-audio-format",
-				"mp4-audio-ripper",
-				"optimize-audio-files",
-				"shorten-audio-clip",
-				"split-audio-file",
-			],
-			popular: false,
-			category: "others",
 		},
 	];
 
@@ -100,8 +55,7 @@ export default async function ToolPage() {
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
 						name: "How To Download Tiktok Videos Without Watermark",
-						description:
-							"Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure.",
+						description: "Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure.",
 						url: "https://30tools.com/blog/how-to-download-tiktok-videos-without-watermark",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -113,9 +67,8 @@ export default async function ToolPage() {
 			<ToolLayout
 				tool={tool}
 				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
 			>
-				<div>{/* Tool component placeholder */}</div>
+				<ToolPlaceholderPage toolId={tool.id} />
 			</ToolLayout>
 		</>
 	);
