@@ -1,9 +1,5 @@
 import { GoogleFooter } from "@/components/footers/GoogleFooter";
 import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
-import {
-	OPEN_GRAPH_DEFAULTS,
-	TWITTER_DEFAULTS,
-} from "@/constants/seo/metadata-templates";
 
 export const metadata = {
 	title: "Image Tools - Free AI Photo Editor, Converter & Enhancer | 30Tools",
@@ -12,7 +8,6 @@ export const metadata = {
 	keywords:
 		"image tools, background remover, photo enhancer, image converter, image resizer, logo generator, free photo editor online, ai image tools",
 	openGraph: {
-		...OPEN_GRAPH_DEFAULTS,
 		title: "Image Tools - Free AI Photo Editing Suite",
 		description:
 			"Edit, convert, and enhance your photos with our free AI-powered tools.",
@@ -29,10 +24,11 @@ export const metadata = {
 		type: "website",
 	},
 	twitter: {
-		...TWITTER_DEFAULTS,
+		card: "summary_large_image",
 		title: "Image Tools - Free AI Photo Editing Suite",
 		description:
 			"Edit, convert, and enhance your photos with our free AI-powered tools.",
+		images: ["/og-images/image-tools.jpg"],
 	},
 };
 

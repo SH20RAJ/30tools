@@ -1,4 +1,4 @@
-import { getAllCategories, getAllTools } from "@/constants/tools-utils";
+import { getAllCategories, getAllTools } from "@/lib/tools";
 
 const BASE_URL = "https://30tools.com";
 const allCategories = getAllCategories();

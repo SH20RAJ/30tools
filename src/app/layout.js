@@ -3,7 +3,7 @@ import { Toaster } from "sonner";
 import StructuredData from "@/components/shared/StructuredData";
 import ToolSeoStructuredData from "@/components/shared/ToolSeoStructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
-import { getAllTools } from "@/constants/tools-utils";
+import { getAllTools } from "@/lib/tools";
 import "./globals.css";
 import Script from "next/script";
 

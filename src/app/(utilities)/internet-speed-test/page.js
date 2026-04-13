@@ -1,3 +1,4 @@
+import InternetSpeedTestTool from "@/components/tools/utilities/InternetSpeedTestTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {

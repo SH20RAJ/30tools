@@ -7,7 +7,7 @@ import {
 	UserComments,
 } from "@/components/seo";
 import StructuredData from "@/components/shared/StructuredData";
-import { getToolById } from "@/constants/tools-utils";
+import { getToolById } from "@/lib/tools";
 
 export default function ToolSEOLayout({
 	toolId,

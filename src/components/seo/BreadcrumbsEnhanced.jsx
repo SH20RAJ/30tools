@@ -3,7 +3,20 @@
 import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { generateBreadcrumbSchema } from "@/constants/seo/advanced-metadata";
+
+const generateBreadcrumbSchema = (breadcrumbs) => {
+	if (!breadcrumbs || breadcrumbs.length === 0) return null;
+	return {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: breadcrumbs.map((crumb, index) => ({
+			"@type": "ListItem",
+			position: index + 1,
+			name: crumb.name,
+			item: `https://30tools.com${crumb.url}`,
+		})),
+	};
+};
 
 /**
  * @typedef {Object} Breadcrumb
