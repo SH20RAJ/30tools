@@ -1,17 +1,8 @@
-import {
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-	UserComments,
-} from "@/components/seo";
-import {
-	GeneratorToolExamples,
-	GeneratorToolFeatures,
-} from "@/components/seo/GeneratorToolsHub";
-import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGeneratorTool";
-
-import { generateToolMetadata } from "@/lib/seo-helper";
-export const metadata = generateToolMetadata("lorem-ipsum-generator", "text");
+export const metadata = {
+  title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+  description: "Free Lorem Ipsum Generator online tool. Fast and secure.",
+  robots: { index: true, follow: true },
+};
 
 export default async function LoremIpsumGeneratorPage({ searchParams }) {
 	const params = await searchParams;

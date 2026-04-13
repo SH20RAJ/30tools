@@ -212,7 +212,7 @@ export default async function ExifReaderPage() {
 					</a>
 					<a
 						href="#faq"
-						className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+						className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-secondary"
 					>
 						View FAQ
 					</a>
@@ -231,22 +231,22 @@ export default async function ExifReaderPage() {
 			<GeneratorToolFeatures tool={toolData} features={features} />
 
 			{/* What is EXIF data? */}
-			<div className="mb-12 max-w-5xl mx-auto rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+			<div className="mb-12 max-w-5xl mx-auto rounded-3xl border border-border bg-card p-8 shadow-sm">
 				<h2 className="text-3xl font-bold mb-4">What is this tool?</h2>
 				<p className="text-base leading-7 text-muted-foreground mb-6">
 					This EXIF Reader extracts hidden metadata from your image files in a clean browser interface. See camera make/model, exposure settings, GPS coordinates, and capture timestamps instantly.
 				</p>
 				<ul className="grid gap-3 sm:grid-cols-2">
-					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+					<li className="rounded-2xl border border-border bg-secondary p-4 text-sm font-medium">
 						No upload required — all processing stays locally in your browser.
 					</li>
-					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+					<li className="rounded-2xl border border-border bg-secondary p-4 text-sm font-medium">
 						Reveal camera settings, location, and timestamp details.
 					</li>
-					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+					<li className="rounded-2xl border border-border bg-secondary p-4 text-sm font-medium">
 						Perfect for photographers, editors, and authenticity checks.
 					</li>
-					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+					<li className="rounded-2xl border border-border bg-secondary p-4 text-sm font-medium">
 						Fast, free, and private — no signup needed.
 					</li>
 				</ul>
@@ -254,7 +254,7 @@ export default async function ExifReaderPage() {
 
 			{/* Benefits and Use Cases */}
 			<div className="mb-12 grid gap-8 lg:grid-cols-2">
-				<div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+				<div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
 					<h2 className="text-3xl font-bold mb-4">Benefits</h2>
 					<ul className="space-y-3 text-sm leading-6 text-muted-foreground list-disc list-inside">
 						<li>Verify photo authenticity before sharing or publishing.</li>
@@ -264,7 +264,7 @@ export default async function ExifReaderPage() {
 						<li>Keep your files private with browser-side processing only.</li>
 					</ul>
 				</div>
-				<div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+				<div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
 					<h2 className="text-3xl font-bold mb-4">Use cases</h2>
 					<ul className="space-y-3 text-sm leading-6 text-muted-foreground list-disc list-inside">
 						<li>Inspect travel photos for GPS and timestamp accuracy.</li>
@@ -280,19 +280,19 @@ export default async function ExifReaderPage() {
 			<div className="mb-12 max-w-5xl mx-auto">
 				<h2 className="text-3xl font-bold mb-6">EXIF Reader vs alternatives</h2>
 				<div className="grid gap-4 md:grid-cols-3">
-					<div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+					<div className="rounded-3xl border border-border bg-card p-6 shadow-sm">
 						<h3 className="font-semibold mb-3">Browser EXIF tools</h3>
 						<p className="text-sm text-muted-foreground leading-6">
 							Most browser EXIF viewers require uploads. 30tools reads metadata locally for better privacy and faster results.
 						</p>
 					</div>
-					<div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+					<div className="rounded-3xl border border-border bg-card p-6 shadow-sm">
 						<h3 className="font-semibold mb-3">Desktop apps</h3>
 						<p className="text-sm text-muted-foreground leading-6">
 							Desktop EXIF readers need downloads and installations. Our tool works instantly in your browser.
 						</p>
 					</div>
-					<div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+					<div className="rounded-3xl border border-border bg-card p-6 shadow-sm">
 						<h3 className="font-semibold mb-3">Command-line tools</h3>
 						<p className="text-sm text-muted-foreground leading-6">
 							Command-line EXIF readers are powerful but technical. 30tools is easy, visual, and mobile-friendly.

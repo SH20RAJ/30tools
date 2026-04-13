@@ -1,12 +1,10 @@
 import SeoToolkit from "@/components/tools/seo/SeoToolkit";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("seotoolkit", "seo", {
-	title: "SEO Toolkit | Free All-in-One SEO Analysis Tool | 30Tools",
-	description:
-		"Run multiple SEO checks in one place, including audits, keyword research, backlinks, metadata, and performance analysis.",
-	image: "/og-images/seotoolkit.jpg",
-});
+export const metadata = {
+  title: "Free SEO Toolkit Online - No Signup | 30tools",
+  description: "All-in-one SEO audit and analysis tool. 27+ checks.",
+  robots: { index: true, follow: true },
+};
 
 const jsonLd = generateToolJsonLd("seotoolkit", "seo", {
 	name: "SEO Toolkit",

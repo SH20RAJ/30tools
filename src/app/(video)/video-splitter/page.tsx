@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import ComingSoon from "@/components/shared/ComingSoon";
 
-export const metadata = generateToolMetadata("video-splitter", "others");
+export const metadata = {
+  title: "Free Video Splitter Online - No Signup | 30tools",
+  description: "Video Splitter - Coming Soon",
+  robots: { index: true, follow: true },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import ComingSoon from "@/components/shared/ComingSoon";
 
-export const metadata = generateToolMetadata("website-analyzer", "others");
+export const metadata = {
+  title: "Free Website Analyzer Online - No Signup | 30tools",
+  description: "Website Analyzer - Coming Soon",
+  robots: { index: true, follow: true },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

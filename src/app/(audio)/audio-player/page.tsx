@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import ComingSoon from "@/components/shared/ComingSoon";
 
-export const metadata = generateToolMetadata("audio-player", "others");
+export const metadata = {
+  title: "Free Audio Player Online - No Signup | 30tools",
+  description: "Audio Player - Coming Soon",
+  robots: { index: true, follow: true },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

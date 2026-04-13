@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import ComingSoon from "@/components/shared/ComingSoon";
 
-export const metadata = generateToolMetadata("ai-video-summarizer", "others");
+export const metadata = {
+  title: "Free Ai Video Summarizer Online - No Signup | 30tools",
+  description: "Ai Video Summarizer - Coming Soon",
+  robots: { index: true, follow: true },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

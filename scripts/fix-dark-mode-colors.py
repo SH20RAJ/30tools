@@ -16,27 +16,34 @@ REPLACEMENTS = {
 }
 
 def process_class_string(class_string):
-    # Split classes by whitespace
-    classes = class_string.split()
+    # Split classes by whitespace (handles newlines, multiple spaces, etc.)
+    try:
+        classes = re.split(r'(\s+)', class_string)
+    except Exception:
+        return class_string
+        
+    actual_classes = [cls for cls in classes if cls.strip()]
+    has_dark_bg = any(cls.startswith('dark:bg-') for cls in actual_classes)
     
-    # Check for bg-white and dark: equivalent
-    has_bg_white = 'bg-white' in classes
-    has_dark_bg = any(cls.startswith('dark:bg-') for cls in classes)
-    
-    new_classes = []
+    new_parts = []
     for cls in classes:
-        if cls == 'bg-white' and not has_dark_bg:
-            new_classes.append('bg-card')
-        elif cls in REPLACEMENTS:
-            new_classes.append(REPLACEMENTS[cls])
-        else:
-            new_classes.append(cls)
+        if not cls.strip():
+            new_parts.append(cls)
+            continue
             
-    return ' '.join(new_classes)
+        if cls == 'bg-white' and not has_dark_bg:
+            new_parts.append('bg-card')
+        elif cls in REPLACEMENTS:
+            new_parts.append(REPLACEMENTS[cls])
+        else:
+            new_parts.append(cls)
+            
+    return "".join(new_parts)
 
 def process_file(file_path):
-    if any(file_path.endswith(excluded) for excluded in EXCLUDED_FILES):
-        print(f"Skipping excluded file: {file_path}")
+    rel_path = os.path.relpath(file_path, os.getcwd())
+    if any(rel_path == excluded or rel_path.endswith(excluded) for excluded in EXCLUDED_FILES):
+        print(f"Skipping excluded file: {rel_path}")
         return
 
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -44,34 +51,36 @@ def process_file(file_path):
 
     original_content = content
 
-    # Replace classes in className="..." or class="..."
-    def replace_in_match(match):
-        prefix = match.group(1)
-        class_str = match.group(2)
-        suffix = match.group(3)
-        return f'{prefix}{process_class_string(class_str)}{suffix}'
+    # 1. First, handle the unconditional replacements globally with word boundaries
+    for old, new in REPLACEMENTS.items():
+        content = re.sub(r'\b' + re.escape(old) + r'\b', new, content)
 
-    # Regex to find className="..." or class="..."
-    # Handles both single and double quotes
-    content = re.sub(r'(class(?:Name)?=(["\']))(.*?)\2', replace_in_match, content)
+    # 2. Handle bg-white with the dark: check within quoted strings
+    # This covers className="...", className={`...`}, and other string usages
+    def replace_quoted_bg_white(match):
+        quote = match.group(1)
+        inner = match.group(2)
+        if 'bg-white' in inner:
+            return f'{quote}{process_class_string(inner)}{quote}'
+        return match.group(0)
 
-    # Also handle some replacements outside of className if they are literal strings (rare but possible in template literals)
-    # But usually the above covers most cases in React/Next.js
-    
+    # Match single quotes, double quotes, and backticks
+    content = re.sub(r'([\"\'`])(.*?)\1', replace_quoted_bg_white, content, flags=re.DOTALL)
+
     if content != original_content:
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
-        print(f"Updated: {file_path}")
+        print(f"Updated: {rel_path}")
 
 def main():
     for directory in DIRECTORIES:
         full_dir_path = os.path.abspath(directory)
+        if not os.path.exists(full_dir_path):
+            continue
         for root, _, files in os.walk(full_dir_path):
             for file in files:
                 if file.endswith(('.js', '.jsx', '.ts', '.tsx')):
                     file_path = os.path.join(root, file)
-                    # Check relative path for exclusion
-                    rel_path = os.path.relpath(file_path, os.getcwd())
                     process_file(file_path)
 
 if __name__ == "__main__":

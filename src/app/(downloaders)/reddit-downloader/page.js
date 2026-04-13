@@ -1,8 +1,11 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = generateToolMetadata("reddit-downloader", "video");
+export const metadata = {
+  title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+  description: "Download Reddit videos with audio in HD quality",
+  robots: { index: true, follow: true },
+};
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

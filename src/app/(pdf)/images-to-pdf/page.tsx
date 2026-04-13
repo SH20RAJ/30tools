@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import ImagesToPdf from "@/components/tools/pdf/ImagesToPdf";
 
-export const metadata = generateToolMetadata("images-to-pdf", "others");
+export const metadata = {
+  title: "Free Images To Pdf Online - No Signup | 30tools",
+  description: "Images To Pdf - Coming Soon",
+  robots: { index: true, follow: true },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

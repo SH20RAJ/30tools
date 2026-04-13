@@ -549,7 +549,7 @@ END:VCARD`;
 								</CardHeader>
 								<CardContent className="space-y-4">
 									<div className="flex justify-center">
-										<div className="p-4 bg-white rounded-lg border">
+										<div className="p-4 bg-card rounded-lg border">
 											{qrCodeDataUrl ? (
 												<img
 													src={qrCodeDataUrl}

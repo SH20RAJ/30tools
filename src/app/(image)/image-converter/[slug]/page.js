@@ -16,53 +16,6 @@ export async function generateStaticParams() {
 	return Object.keys(CONVERSIONS).map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params: { slug } }) {
-	const conversion = CONVERSIONS[slug];
-	if (!conversion) return {};
-
-	const title = `Convert ${conversion.title} Online Free - Fast Batch Converter`;
-	const description = `Free online ${conversion.title} converter. Convert your ${conversion.from} images to ${conversion.to.toUpperCase()} instantly. No limits, secure, and fast.`;
-	const url = `https://30tools.com/image-converter/${slug}`;
-
-	return {
-		title,
-		description,
-		keywords: [
-			"image converter",
-			"free image converter",
-			"online image converter",
-			`${conversion.from.toLowerCase()} to ${conversion.to.toLowerCase()}`,
-			"image format converter",
-			"image conversion tool",
-			"convert images online",
-			"free file converter",
-			"batch image converter",
-			"fast image converter",
-			"secure image conversion",
-			"30tools",
-			"free online tools",
-			"image tools",
-			"file conversion",
-		],
-		alternates: {
-			canonical: url,
-		},
-		openGraph: {
-			title,
-			description,
-			url,
-			siteName: "30tools",
-			images: [{ url: "/og-image.jpg" }],
-			type: "website",
-		},
-		twitter: {
-			card: "summary_large_image",
-			title,
-			description,
-			images: ["/og-image.jpg"],
-		},
-	};
-}
 
 export default function DynamicConverterPage({ params: { slug } }) {
 	const conversion = CONVERSIONS[slug];

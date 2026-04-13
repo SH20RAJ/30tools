@@ -17,7 +17,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { generateCategoryMetadata } from "@/lib/seo-helper";
 
 export const metadata = generateCategoryMetadata("video", {
 	title: "Video Tools | Free Online Video Editor & Converter | 30Tools",

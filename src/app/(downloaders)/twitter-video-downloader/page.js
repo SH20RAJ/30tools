@@ -166,7 +166,7 @@ export default async function TwitterVideoDownloaderPage({ searchParams }) {
 						</p>
 
 						<div className="grid md:grid-cols-2 gap-8 mt-10">
-							<div className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
+							<div className="bg-secondary dark:bg-slate-900/50 p-8 rounded-2xl border border-border dark:border-slate-800">
 								<h3 className="text-xl font-bold mb-4 mt-0">
 									Download Twitter GIFs
 								</h3>

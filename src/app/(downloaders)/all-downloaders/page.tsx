@@ -1,9 +1,12 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import BreadcrumbSchema from "@/components/shared/BreadcrumbSchema";
 import FAQSchema from "@/components/shared/FAQSchema";
 
-export const metadata = generateToolMetadata("all-downloaders", "others");
+export const metadata = {
+  title: "Free All Downloaders Online - No Signup | 30tools",
+  description: "All Downloaders - Coming Soon",
+  robots: { index: true, follow: true },
+};
 
 const DOWNLOADERS = {
 	"Social Media": [

@@ -17,7 +17,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { generateCategoryMetadata } from "@/lib/seo-helper";
 
 export const metadata = generateCategoryMetadata("pdf", {
 	title: "PDF Tools | Free Online PDF Editor & Converter | 30Tools",

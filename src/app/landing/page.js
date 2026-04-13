@@ -524,7 +524,7 @@ export default async function LandingPage({ searchParams }) {
 						<div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 							<div className="flex-1 text-center lg:text-left">
 								<div className="flex items-center justify-center lg:justify-start gap-2 mb-4">
-									<Badge className="bg-white text-primary border-0 hover:bg-white/90 font-semibold shadow-lg">
+									<Badge className="bg-card text-primary border-0 hover:bg-white/90 font-semibold shadow-lg">
 										🎨 New Premium Resource
 									</Badge>
 									<Badge className="bg-muted/500 text-foreground border-0 font-semibold shadow-lg">
@@ -546,25 +546,25 @@ export default async function LandingPage({ searchParams }) {
 								<div className="flex flex-wrap gap-2 mb-6 justify-center lg:justify-start">
 									<Badge
 										variant="secondary"
-										className="bg-white text-primary border-0 font-medium shadow-md"
+										className="bg-card text-primary border-0 font-medium shadow-md"
 									>
 										🎨 180+ Inspiration Tools
 									</Badge>
 									<Badge
 										variant="secondary"
-										className="bg-white text-primary border-0 font-medium shadow-md"
+										className="bg-card text-primary border-0 font-medium shadow-md"
 									>
 										✨ 92+ Icon Libraries
 									</Badge>
 									<Badge
 										variant="secondary"
-										className="bg-white text-primary border-0 font-medium shadow-md"
+										className="bg-card text-primary border-0 font-medium shadow-md"
 									>
 										🖼️ 123+ Illustration Resources
 									</Badge>
 									<Badge
 										variant="secondary"
-										className="bg-white text-primary border-0 font-medium shadow-md"
+										className="bg-card text-primary border-0 font-medium shadow-md"
 									>
 										📚 110+ Learning Resources
 									</Badge>
@@ -581,7 +581,7 @@ export default async function LandingPage({ searchParams }) {
 									>
 										<Button
 											size="lg"
-											className="bg-white text-primary hover:bg-white/90 shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl min-w-[200px] font-semibold"
+											className="bg-card text-primary hover:bg-white/90 shadow-xl transform transition-all hover:scale-105 hover:shadow-2xl min-w-[200px] font-semibold"
 										>
 											<PaletteIcon className="mr-2 h-5 w-5" />
 											Explore Design Directory

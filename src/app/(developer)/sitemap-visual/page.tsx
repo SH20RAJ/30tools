@@ -14,11 +14,11 @@ export default async function VisualSitemapPage({ searchParams }) {
 	const categories = getAllCategories();
 
 	return (
-		<div className="min-h-screen bg-slate-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
+		<div className="min-h-screen bg-secondary dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
 			<div className="max-w-7xl mx-auto space-y-12">
 				{/* Header */}
 				<div className="text-center space-y-4">
-					<h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl">
+					<h1 className="text-4xl font-extrabold tracking-tight text-foreground dark:text-white sm:text-5xl">
 						Visual Sitemap
 					</h1>
 					<p className="max-w-2xl mx-auto text-xl text-slate-600 dark:text-slate-400">
@@ -34,8 +34,8 @@ export default async function VisualSitemapPage({ searchParams }) {
 
 						return (
 							<section key={key} id={key} className="space-y-6">
-								<div className="border-b border-slate-200 dark:border-slate-800 pb-4">
-									<h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+								<div className="border-b border-border dark:border-slate-800 pb-4">
+									<h2 className="text-2xl font-bold text-foreground dark:text-white flex items-center gap-2">
 										{/* Render icon if simple string or component */}
 										<span>{name}</span>
 										<span className="text-sm font-normal text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-full">
@@ -52,9 +52,9 @@ export default async function VisualSitemapPage({ searchParams }) {
 										<Link
 											key={tool.id}
 											href={tool.external ? tool.route : tool.route}
-											className="group relative flex flex-col p-4 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-200"
+											className="group relative flex flex-col p-4 bg-white dark:bg-slate-900 rounded-lg border border-border dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-200"
 										>
-											<h3 className="font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
+											<h3 className="font-semibold text-foreground dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
 												{tool.name}
 											</h3>
 											<p className="mt-2 text-sm text-slate-500 dark:text-slate-400 line-clamp-2">

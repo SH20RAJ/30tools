@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfReader from "@/components/tools/pdf/PdfReader";
 
-export const metadata = generateToolMetadata("pdf-reader", "others");
+export const metadata = {
+  title: "Free Pdf Reader Online - No Signup | 30tools",
+  description: "Pdf Reader - Coming Soon",
+  robots: { index: true, follow: true },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

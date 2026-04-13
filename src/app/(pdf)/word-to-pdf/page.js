@@ -215,7 +215,7 @@ export default async function WordToPDFPage({ searchParams }) {
 				/>
 
 				{/* Legal & Financial Contract Standards Section (High CPC) */}
-				<section className="mb-12 bg-gradient-to-br from-slate-50 to-transparent dark:from-slate-950/20 p-8 md:p-12 rounded-3xl border border-slate-200 dark:border-slate-800/50">
+				<section className="mb-12 bg-gradient-to-br from-slate-50 to-transparent dark:from-slate-950/20 p-8 md:p-12 rounded-3xl border border-border dark:border-slate-800/50">
 					<div className="max-w-4xl mx-auto">
 						<h2 className="text-3xl font-bold mb-8 text-center">
 							Legal & Financial{" "}

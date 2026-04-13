@@ -108,7 +108,7 @@ export default function IPLocationFinderTool() {
 										Your IP Address
 									</h2>
 									<div className="flex items-center justify-center gap-2">
-										<code className="text-3xl font-mono font-bold text-primary bg-white px-4 py-2 rounded-lg shadow-sm">
+										<code className="text-3xl font-mono font-bold text-primary bg-card px-4 py-2 rounded-lg shadow-sm">
 											{ipInfo.ip}
 										</code>
 										<Button

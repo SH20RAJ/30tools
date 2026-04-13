@@ -10,15 +10,6 @@ export async function generateStaticParams() {
 	}));
 }
 
-export async function generateMetadata({ params }) {
-	const resolvedParams = await params;
-	const tool = API_KEY_TOOLS.find((t) => t.id === resolvedParams.slug);
-
-	if (!tool) {
-		return {
-			title: "Tool Not Found",
-		};
-	}
 
 	const title = `Test ${tool.name} API Key | API Key Tester`;
 	const description = `Securely test your ${tool.name} API key online. ${tool.description}. Free developer tool to validate ${tool.name} credentials.`;

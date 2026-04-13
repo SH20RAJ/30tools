@@ -1,43 +1,9 @@
-import {
-	BreadcrumbsEnhanced,
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-	ReviewSnippets,
-	ToolFeatures,
-	UserComments,
-} from "@/components/seo";
-import { DeveloperToolExamples } from "@/components/seo/DeveloperToolsHub";
-import Base64Tool from "@/components/tools/developer/Base64Tool";
-import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
-import { generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("base64-tool", "developer", {
-	title: "Convert Base64 to PDF Online Free | Base64 Encoder & Decoder",
-	description:
-		"Convert Base64 to PDF online for free. Support for Base64 to Image, Text to Base64, and file encoding. Secure browser-based processing for developers & designers.",
-	image: "/og-images/base64-tool.jpg",
-	keywords: [
-		"convert base64 to pdf online free",
-		"base64 to image converter online",
-		"base64 encoder decoder",
-		"text to base64 tool",
-		"decode base64 to file",
-		"online base64 transformer",
-		"base64 string to pdf",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-});
+export const metadata = {
+  title: "Free Base64 Tool Online - No Signup | 30tools",
+  description: "Free Base64 Tool online tool. Fast and secure.",
+  robots: { index: true, follow: true },
+};
 
 export default async function Base64Page({ searchParams }) {
 	const _params = await searchParams;

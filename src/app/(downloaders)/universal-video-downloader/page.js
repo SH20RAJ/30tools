@@ -530,7 +530,7 @@ export default async function UniversalVideoDownloaderPage({ searchParams }) {
 				</section>
 
 				{/* Format Support Deep Dive */}
-				<section className="bg-slate-50 dark:bg-slate-900/50 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 mb-20">
+				<section className="bg-secondary dark:bg-slate-900/50 p-8 rounded-3xl border border-border dark:border-slate-800 mb-20">
 					<div className="text-center mb-8">
 						<h2 className="text-2xl font-bold">Universal Format Support</h2>
 						<p className="text-muted-foreground">

@@ -212,7 +212,7 @@ export default async function FaviconGeneratorPage() {
 					</a>
 					<a
 						href="#faq"
-						className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-900 hover:bg-slate-50"
+						className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground hover:bg-secondary"
 					>
 						FAQ
 					</a>
@@ -230,29 +230,29 @@ export default async function FaviconGeneratorPage() {
 			{/* Key Features */}
 			<GeneratorToolFeatures tool={toolData} features={features} />
 
-			<div className="mb-12 max-w-5xl mx-auto rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+			<div className="mb-12 max-w-5xl mx-auto rounded-3xl border border-border bg-card p-8 shadow-sm">
 				<h2 className="text-3xl font-bold mb-4">Why use this favicon generator?</h2>
 				<p className="text-base leading-7 text-muted-foreground mb-6">
 					Build a clean website icon without design tools. Generate favicons instantly from text, emojis, or image uploads and preview them inside a browser tab mockup.
 				</p>
 				<ul className="grid gap-3 sm:grid-cols-2">
-					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+					<li className="rounded-2xl border border-border bg-secondary p-4 text-sm font-medium">
 						Live favicon preview for faster design decisions.
 					</li>
-					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+					<li className="rounded-2xl border border-border bg-secondary p-4 text-sm font-medium">
 						Download ready-to-use icon files instantly.
 					</li>
-					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+					<li className="rounded-2xl border border-border bg-secondary p-4 text-sm font-medium">
 						No signup, no uploads, and 100% browser-based.
 					</li>
-					<li className="rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm font-medium">
+					<li className="rounded-2xl border border-border bg-secondary p-4 text-sm font-medium">
 						Create a favicon for any website in seconds.
 					</li>
 				</ul>
 			</div>
 
 			<div className="mb-12 grid gap-8 lg:grid-cols-2">
-				<div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+				<div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
 					<h2 className="text-3xl font-bold mb-4">Benefits</h2>
 					<ul className="space-y-3 text-sm leading-6 text-muted-foreground list-disc list-inside">
 						<li>Create a favicon that looks crisp in browser tabs and bookmarks.</li>
@@ -262,7 +262,7 @@ export default async function FaviconGeneratorPage() {
 						<li>Keep your favicon creation private and secure.</li>
 					</ul>
 				</div>
-				<div className="rounded-3xl border border-slate-200 bg-white p-8 shadow-sm">
+				<div className="rounded-3xl border border-border bg-card p-8 shadow-sm">
 					<h2 className="text-3xl font-bold mb-4">Use cases</h2>
 					<ul className="space-y-3 text-sm leading-6 text-muted-foreground list-disc list-inside">
 						<li>Build a favicon for a new website or blog.</li>

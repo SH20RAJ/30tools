@@ -17,7 +17,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { generateCategoryMetadata } from "@/lib/seo-helper";
 
 export const metadata = generateCategoryMetadata("text", {
 	title: "Text Tools | Free Online Text Utilities & Converters | 30Tools",

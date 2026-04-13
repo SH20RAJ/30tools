@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfProtector from "@/components/tools/pdf/PdfProtector";
 
-export const metadata = generateToolMetadata("pdf-protector", "others");
+export const metadata = {
+  title: "Free Pdf Protector Online - No Signup | 30tools",
+  description: "Pdf Protector - Coming Soon",
+  robots: { index: true, follow: true },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

@@ -356,6 +356,15 @@
             "company-name-ideas"
           ],
           "category": "generators"
+        },
+        {
+          "id": "lorem-ipsum-generator",
+          "name": "Lorem Ipsum Generator",
+          "description": "Free Lorem Ipsum Generator online tool. Fast and secure.",
+          "route": "/lorem-ipsum-generator",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "generators"
         }
       ]
     },
@@ -1371,6 +1380,33 @@
             "instagram-profile-picture-viewer",
             "profile-pic-viewer-instagram"
           ],
+          "category": "image"
+        },
+        {
+          "id": "[slug]",
+          "name": "[slug]",
+          "description": "Free [slug] online tool. Fast and secure.",
+          "route": "/image-converter/[slug]",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "image"
+        },
+        {
+          "id": "image-optimizer",
+          "name": "Image Optimizer",
+          "description": "Free Image Optimizer online tool. Fast and secure.",
+          "route": "/image-optimizer",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "image"
+        },
+        {
+          "id": "image-tools",
+          "name": "Image Tools",
+          "description": "Free Image Tools online tool. Fast and secure.",
+          "route": "/image-tools",
+          "extraSlugs": [],
+          "popular": false,
           "category": "image"
         }
       ]
@@ -2687,6 +2723,24 @@
             "split-video-file"
           ],
           "category": "pdf"
+        },
+        {
+          "id": "pdf-to-images",
+          "name": "Pdf To Images",
+          "description": "Free Pdf To Images online tool. Fast and secure.",
+          "route": "/pdf-to-images",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "pdf"
+        },
+        {
+          "id": "pdf-tools",
+          "name": "Pdf Tools",
+          "description": "Free Pdf Tools online tool. Fast and secure.",
+          "route": "/pdf-tools",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "pdf"
         }
       ]
     },
@@ -3172,6 +3226,15 @@
           "extraSlugs": [
             "download-insta-carousel"
           ],
+          "category": "video"
+        },
+        {
+          "id": "video-tools",
+          "name": "Video Tools",
+          "description": "Free Video Tools online tool. Fast and secure.",
+          "route": "/video-tools",
+          "extraSlugs": [],
+          "popular": false,
           "category": "video"
         }
       ]
@@ -3770,6 +3833,15 @@
           "extraSlugs": [
             "audio-cutter-merger"
           ],
+          "category": "audio"
+        },
+        {
+          "id": "audio-tools",
+          "name": "Audio Tools",
+          "description": "Free Audio Tools online tool. Fast and secure.",
+          "route": "/audio-tools",
+          "extraSlugs": [],
+          "popular": false,
           "category": "audio"
         }
       ]
@@ -5229,6 +5301,33 @@
             "validate-xml-format"
           ],
           "category": "developer"
+        },
+        {
+          "id": "[slug]",
+          "name": "[slug]",
+          "description": "Free [slug] online tool. Fast and secure.",
+          "route": "/api-key-tester/[slug]",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "base64-tool",
+          "name": "Base64 Tool",
+          "description": "Free Base64 Tool online tool. Fast and secure.",
+          "route": "/base64-tool",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "developer"
+        },
+        {
+          "id": "sitemap-visual",
+          "name": "Sitemap Visual",
+          "description": "Free Sitemap Visual online tool. Fast and secure.",
+          "route": "/sitemap-visual",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "developer"
         }
       ]
     },
@@ -6204,6 +6303,15 @@
           "extraSlugs": [
             "save-snaps-to-gallery"
           ],
+          "category": "downloaders"
+        },
+        {
+          "id": "facebook-story-downloader",
+          "name": "Facebook Story Downloader",
+          "description": "Free Facebook Story Downloader online tool. Fast and secure.",
+          "route": "/facebook-story-downloader",
+          "extraSlugs": [],
+          "popular": false,
           "category": "downloaders"
         }
       ]
@@ -7430,6 +7538,24 @@
           "extraSlugs": [
             "ssl-expiry-date"
           ],
+          "category": "utilities"
+        },
+        {
+          "id": "other-tools",
+          "name": "Other Tools",
+          "description": "Free Other Tools online tool. Fast and secure.",
+          "route": "/other-tools",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "utilities"
+        },
+        {
+          "id": "text-tools",
+          "name": "Text Tools",
+          "description": "Free Text Tools online tool. Fast and secure.",
+          "route": "/text-tools",
+          "extraSlugs": [],
+          "popular": false,
           "category": "utilities"
         }
       ]
@@ -9752,6 +9878,195 @@
           "extraSlugs": [
             "contact"
           ],
+          "category": "others"
+        },
+        {
+          "id": "privacy",
+          "name": "Privacy",
+          "description": "Free Privacy online tool. Fast and secure.",
+          "route": "/privacy",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "terms",
+          "name": "Terms",
+          "description": "Free Terms online tool. Fast and secure.",
+          "route": "/terms",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "best-free-youtube-to-mp3-converters-2025",
+          "name": "Best Free Youtube To Mp3 Converters 2025",
+          "description": "Free Best Free Youtube To Mp3 Converters 2025 online tool. Fast and secure.",
+          "route": "/blog/best-free-youtube-to-mp3-converters-2025",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "best-paraphrasing-tools-rewrite-text",
+          "name": "Best Paraphrasing Tools Rewrite Text",
+          "description": "Free Best Paraphrasing Tools Rewrite Text online tool. Fast and secure.",
+          "route": "/blog/best-paraphrasing-tools-rewrite-text",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "best-pdf-document-translators",
+          "name": "Best Pdf Document Translators",
+          "description": "Free Best Pdf Document Translators online tool. Fast and secure.",
+          "route": "/blog/best-pdf-document-translators",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "best-urdu-english-translators-2025",
+          "name": "Best Urdu English Translators 2025",
+          "description": "Free Best Urdu English Translators 2025 online tool. Fast and secure.",
+          "route": "/blog/best-urdu-english-translators-2025",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "cancel-netflix-membership-guide",
+          "name": "Cancel Netflix Membership Guide",
+          "description": "Free Cancel Netflix Membership Guide online tool. Fast and secure.",
+          "route": "/blog/cancel-netflix-membership-guide",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "convert-youtube-videos-high-quality-320kbps-mp3",
+          "name": "Convert Youtube Videos High Quality 320kbps Mp3",
+          "description": "Free Convert Youtube Videos High Quality 320kbps Mp3 online tool. Fast and secure.",
+          "route": "/blog/convert-youtube-videos-high-quality-320kbps-mp3",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "download-reddit-videos-with-sound",
+          "name": "Download Reddit Videos With Sound",
+          "description": "Free Download Reddit Videos With Sound online tool. Fast and secure.",
+          "route": "/blog/download-reddit-videos-with-sound",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "download-videos-from-any-website",
+          "name": "Download Videos From Any Website",
+          "description": "Free Download Videos From Any Website online tool. Fast and secure.",
+          "route": "/blog/download-videos-from-any-website",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "extract-audio-from-video-methods",
+          "name": "Extract Audio From Video Methods",
+          "description": "Free Extract Audio From Video Methods online tool. Fast and secure.",
+          "route": "/blog/extract-audio-from-video-methods",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "how-to-download-instagram-reels",
+          "name": "How To Download Instagram Reels",
+          "description": "Free How To Download Instagram Reels online tool. Fast and secure.",
+          "route": "/blog/how-to-download-instagram-reels",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "how-to-download-tiktok-videos-without-watermark",
+          "name": "How To Download Tiktok Videos Without Watermark",
+          "description": "Free How To Download Tiktok Videos Without Watermark online tool. Fast and secure.",
+          "route": "/blog/how-to-download-tiktok-videos-without-watermark",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "is-downloading-videos-legal-copyright-guide",
+          "name": "Is Downloading Videos Legal Copyright Guide",
+          "description": "Free Is Downloading Videos Legal Copyright Guide online tool. Fast and secure.",
+          "route": "/blog/is-downloading-videos-legal-copyright-guide",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "make-your-own-custom-terabox-telegram-bot",
+          "name": "Make Your Own Custom Terabox Telegram Bot",
+          "description": "Free Make Your Own Custom Terabox Telegram Bot online tool. Fast and secure.",
+          "route": "/blog/make-your-own-custom-terabox-telegram-bot",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "make-your-own-terabox-video-player",
+          "name": "Make Your Own Terabox Video Player",
+          "description": "Free Make Your Own Terabox Video Player online tool. Fast and secure.",
+          "route": "/blog/make-your-own-terabox-video-player",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "publer-reviews",
+          "name": "Publer Reviews",
+          "description": "Free Publer Reviews online tool. Fast and secure.",
+          "route": "/blog/publer-reviews",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "top-sentence-rewriters-review",
+          "name": "Top Sentence Rewriters Review",
+          "description": "Free Top Sentence Rewriters Review online tool. Fast and secure.",
+          "route": "/blog/top-sentence-rewriters-review",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "y2mate-youtube-to-mp3-converter",
+          "name": "Y2mate Youtube To Mp3 Converter",
+          "description": "Free Y2mate Youtube To Mp3 Converter online tool. Fast and secure.",
+          "route": "/blog/y2mate-youtube-to-mp3-converter",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "account",
+          "name": "Account",
+          "description": "Free Account online tool. Fast and secure.",
+          "route": "/account",
+          "extraSlugs": [],
+          "popular": false,
+          "category": "others"
+        },
+        {
+          "id": "dashboard",
+          "name": "Dashboard",
+          "description": "Free Dashboard online tool. Fast and secure.",
+          "route": "/dashboard",
+          "extraSlugs": [],
+          "popular": false,
           "category": "others"
         }
       ]

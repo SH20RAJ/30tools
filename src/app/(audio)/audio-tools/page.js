@@ -17,7 +17,6 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { generateCategoryMetadata } from "@/lib/seo-helper";
 
 export const metadata = generateCategoryMetadata("audio", {
 	title: "Audio Tools | Free Online Audio Editor & Converter | 30Tools",
