@@ -47,7 +47,7 @@ const FacebookStoryDownloader = () => {
 					"https://placehold.co/600x400/png?text=Facebook+Story+Thumbnail", // Placeholder
 				downloadUrl: "#",
 			});
-		} catch (err) {
+		} catch (_err) {
 			setError("Failed to process URL. Please try again.");
 		} finally {
 			setLoading(false);

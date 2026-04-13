@@ -48,8 +48,8 @@ function generateSummary(transcript, title, duration) {
 		.filter((s) => s.trim().length > 20);
 
 	// Take first few sentences and last few sentences as a basic summary
-	const intro = sentences.slice(0, 3).join(". ") + ".";
-	const conclusion = sentences.slice(-2).join(". ") + ".";
+	const intro = `${sentences.slice(0, 3).join(". ")}.`;
+	const conclusion = `${sentences.slice(-2).join(". ")}.`;
 
 	return `This video titled "${title}" (${duration}) covers the following:\n\n${intro}\n\n${conclusion}\n\nNote: This is a basic summary. For AI-powered summaries, integrate with OpenAI or Gemini API.`;
 }

@@ -1,19 +1,24 @@
-
 export const metadata = {
-  title: "Free Internet Speed Test Online - No Signup | 30tools",
-  description: "Free utility tools: Internet Speed Test. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your br",
-  keywords: ["internet speed test","internet speed test free","internet speed test online","internet speed test tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Internet Speed Test Online - No Signup | 30tools",
+	description:
+		"Free utility tools: Internet Speed Test. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your br",
+	keywords: [
+		"internet speed test",
+		"internet speed test free",
+		"internet speed test online",
+		"internet speed test tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLd = generateToolJsonLd("internet-speed-test", "utilities", {
@@ -24,73 +29,80 @@ const jsonLd = generateToolJsonLd("internet-speed-test", "utilities", {
 
 export default async function InternetSpeedTestPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const toolData = {
-  "id": "internet-speed-test",
-  "name": "Internet Speed Test",
-  "description": "Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly.",
-  "category": "utilities",
-  "route": "/internet-speed-test",
-  "features": [
-    "100% Free - No hidden costs or subscriptions",
-    "No Registration Required - Start immediately",
-    "Secure & Private - All processing in your browser",
-    "Fast & Efficient - Get results in seconds",
-    "No File Size Limits - Handle large files easily",
-    "Mobile Friendly - Works on all devices"
-  ],
-  "benefits": [],
-  "useCases": [],
-  "faqs": [
-    {
-      "question": "Is this Internet Speed Test really free?",
-      "answer": "Yes! Our Internet Speed Test is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
-    },
-    {
-      "question": "Is my data secure when using Internet Speed Test?",
-      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
-    },
-    {
-      "question": "Do I need to create an account to use Internet Speed Test?",
-      "answer": "No registration required. You can start using Internet Speed Test immediately without creating an account or providing any personal information."
-    },
-    {
-      "question": "Are there any file size limits for Internet Speed Test?",
-      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
-    },
-    {
-      "question": "Can I use Internet Speed Test on mobile devices?",
-      "answer": "Yes, Internet Speed Test is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
-    },
-    {
-      "question": "What file formats does Internet Speed Test support?",
-      "answer": "Internet Speed Test supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use Internet Speed Test",
-    "steps": [
-      {
-        "name": "Upload or Input",
-        "text": "Provide your file or input data using the upload button or text input field. Internet Speed Test supports drag-and-drop for convenience.",
-        "url": "/internet-speed-test#step1",
-        "position": 1
-      },
-      {
-        "name": "Configure Settings",
-        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-        "url": "/internet-speed-test#step2",
-        "position": 2
-      },
-      {
-        "name": "Process & Download",
-        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-        "url": "/internet-speed-test#step3",
-        "position": 3
-      }
-    ]
-  }
-};
+		id: "internet-speed-test",
+		name: "Internet Speed Test",
+		description:
+			"Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly.",
+		category: "utilities",
+		route: "/internet-speed-test",
+		features: [
+			"100% Free - No hidden costs or subscriptions",
+			"No Registration Required - Start immediately",
+			"Secure & Private - All processing in your browser",
+			"Fast & Efficient - Get results in seconds",
+			"No File Size Limits - Handle large files easily",
+			"Mobile Friendly - Works on all devices",
+		],
+		benefits: [],
+		useCases: [],
+		faqs: [
+			{
+				question: "Is this Internet Speed Test really free?",
+				answer:
+					"Yes! Our Internet Speed Test is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
+			},
+			{
+				question: "Is my data secure when using Internet Speed Test?",
+				answer:
+					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
+			},
+			{
+				question: "Do I need to create an account to use Internet Speed Test?",
+				answer:
+					"No registration required. You can start using Internet Speed Test immediately without creating an account or providing any personal information.",
+			},
+			{
+				question: "Are there any file size limits for Internet Speed Test?",
+				answer:
+					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
+			},
+			{
+				question: "Can I use Internet Speed Test on mobile devices?",
+				answer:
+					"Yes, Internet Speed Test is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
+			},
+			{
+				question: "What file formats does Internet Speed Test support?",
+				answer:
+					"Internet Speed Test supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
+			},
+		],
+		howTo: {
+			name: "How to Use Internet Speed Test",
+			steps: [
+				{
+					name: "Upload or Input",
+					text: "Provide your file or input data using the upload button or text input field. Internet Speed Test supports drag-and-drop for convenience.",
+					url: "/internet-speed-test#step1",
+					position: 1,
+				},
+				{
+					name: "Configure Settings",
+					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+					url: "/internet-speed-test#step2",
+					position: 2,
+				},
+				{
+					name: "Process & Download",
+					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+					url: "/internet-speed-test#step3",
+					position: 3,
+				},
+			],
+		},
+	};
 
 	const features = [
 		"Accurate Download Speed Test",

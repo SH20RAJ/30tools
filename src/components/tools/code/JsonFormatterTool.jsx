@@ -105,7 +105,7 @@ export default function JsonFormatterTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const calculateStats = (original, formatted, minified) => {
@@ -216,7 +216,7 @@ export default function JsonFormatterTool() {
 			setMinifiedJson("");
 			setStats(null);
 		}
-	}, [jsonInput, indentSize]);
+	}, [jsonInput, indentSize, calculateStats, analyzeJson]);
 
 	const handleCopy = async (text) => {
 		try {
@@ -255,7 +255,7 @@ export default function JsonFormatterTool() {
 		setSearchTerm("");
 	};
 
-	const highlightSearchTerm = (text) => {
+	const _highlightSearchTerm = (text) => {
 		if (!searchTerm || !text) return text;
 		const regex = new RegExp(
 			`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")})`,
@@ -333,7 +333,9 @@ export default function JsonFormatterTool() {
 								min="1"
 								max="8"
 								value={indentSize}
-								onChange={(e) => setIndentSize(parseInt(e.target.value) || 2)}
+								onChange={(e) =>
+									setIndentSize(parseInt(e.target.value, 10) || 2)
+								}
 								className="w-16 h-8"
 							/>
 						</div>

@@ -114,7 +114,7 @@ export default function ImagesToPdf() {
 			toast.success("PDF created successfully!");
 		} catch (error) {
 			console.error(error);
-			toast.error("Failed to convert images to PDF. " + error.message);
+			toast.error(`Failed to convert images to PDF. ${error.message}`);
 		} finally {
 			setIsProcessing(false);
 		}

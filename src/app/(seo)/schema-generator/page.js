@@ -1,20 +1,39 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Free Schema Markup Generator Online - No Signup | 30tools",
-  description: "Generate JSON-LD schema markup for rich snippets. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
-  keywords: ["schema markup generator","schema","markup","generator","schema-generator","seo","seo tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Schema Markup Generator Online - No Signup | 30tools",
+	description:
+		"Generate JSON-LD schema markup for rich snippets. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+	keywords: [
+		"schema markup generator",
+		"schema",
+		"markup",
+		"generator",
+		"schema-generator",
+		"seo",
+		"seo tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLdSchemas = {
@@ -42,7 +61,7 @@ const AdUnit = () => (
 
 export default async function SchemaGeneratorPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script
@@ -84,8 +103,9 @@ export default async function SchemaGeneratorPage({ searchParams }) {
 							Schema Markup Generator
 						</h1>
 						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-							Generate JSON-LD structured data for rich results, search features,
-							and cleaner machine-readable markup without writing schema by hand.
+							Generate JSON-LD structured data for rich results, search
+							features, and cleaner machine-readable markup without writing
+							schema by hand.
 						</p>
 						<div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
 							<span>📋 JSON-LD</span>

@@ -15,7 +15,7 @@ export function generateMetadata({
 	noIndex = false,
 	locale = "en",
 }) {
-	const url = `${BASE_URL}${path.startsWith("/") ? path : "/" + path}`;
+	const url = `${BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 
 	return {
 		title,
@@ -74,7 +74,7 @@ export function generateWebAppSchema({
 		"@type": "WebApplication",
 		name,
 		description,
-		url: `${BASE_URL}${path.startsWith("/") ? path : "/" + path}`,
+		url: `${BASE_URL}${path.startsWith("/") ? path : `/${path}`}`,
 		applicationCategory: category,
 		operatingSystem: "Any",
 		offers: {
@@ -124,7 +124,7 @@ export function generateToolSchema({
 		"@type": "SoftwareApplication",
 		name,
 		description,
-		url: `${BASE_URL}${path.startsWith("/") ? path : "/" + path}`,
+		url: `${BASE_URL}${path.startsWith("/") ? path : `/${path}`}`,
 		applicationCategory: category,
 		operatingSystem: "Any",
 		offers: {

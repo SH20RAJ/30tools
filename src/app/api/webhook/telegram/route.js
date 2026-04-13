@@ -63,11 +63,11 @@ async function sendJoinMessage(chatId) {
 }
 
 function getProgressBar(percent) {
-	const p = parseInt(percent.replace("%", "")) || 0;
+	const p = parseInt(percent.replace("%", ""), 10) || 0;
 	const size = 10;
 	const completedSize = Math.floor((p / 100) * size);
 	const remainingSize = size - completedSize;
-	return "█".repeat(completedSize) + "░".repeat(remainingSize) + ` ${p}%`;
+	return `${"█".repeat(completedSize) + "░".repeat(remainingSize)} ${p}%`;
 }
 
 async function fetchVideoInfo(url) {
@@ -111,8 +111,7 @@ async function pollStatus(processUrl, chatId, messageId) {
 					api.fileName &&
 					(api.fileName.toLowerCase().endsWith(".mp3") ||
 						api.fileName.toLowerCase().endsWith(".m4a"));
-				const isVideo =
-					api.fileName && api.fileName.toLowerCase().endsWith(".mp4");
+				const isVideo = api.fileName?.toLowerCase().endsWith(".mp4");
 
 				if (api.percent === "Completed") {
 					// Cleanup status message
@@ -278,7 +277,7 @@ export async function POST(req) {
 				// Sort by resolution
 				const videoFormats = info.mediaItems
 					.filter((m) => m.type === "Video")
-					.sort((a, b) => parseInt(b.mediaRes) - parseInt(a.mediaRes));
+					.sort((a, b) => parseInt(b.mediaRes, 10) - parseInt(a.mediaRes, 10));
 
 				// Add video buttons
 				videoFormats.slice(0, 5).forEach((m) => {

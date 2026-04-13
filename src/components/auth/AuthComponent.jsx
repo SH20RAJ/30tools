@@ -14,7 +14,10 @@ export default function AuthComponent() {
 	useEffect(() => {
 		// Check authentication status with StackAuth
 		checkAuthStatus();
-	}, []);
+	}, [
+		// Check authentication status with StackAuth
+		checkAuthStatus,
+	]);
 
 	const checkAuthStatus = async () => {
 		try {

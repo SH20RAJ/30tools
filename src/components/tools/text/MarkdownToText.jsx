@@ -2,9 +2,9 @@
 
 import { Copy, Download, Trash2 } from "lucide-react";
 import { useEffect, useState } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import { toast } from "sonner";
 
 export default function MarkdownToText() {
 	const [markdown, setMarkdown] = useState("");
@@ -33,14 +33,17 @@ export default function MarkdownToText() {
 
 		// 6. Remove Code Blocks (```code```)
 		text = text.replace(/```[\s\S]*?```/g, (match) => {
-			return match.replace(/```\w*/g, "").replace(/```/g, "").trim();
+			return match
+				.replace(/```\w*/g, "")
+				.replace(/```/g, "")
+				.trim();
 		});
 
 		// 7. Remove Blockquotes (> Quote)
 		text = text.replace(/^\s*>\s+/gm, "");
 
 		// 8. Remove Horizontal Rules (---, ***, ___)
-		text = text.replace(/^[-\*_]{3,}\s*$/gm, "");
+		text = text.replace(/^[-*_]{3,}\s*$/gm, "");
 
 		// 9. Remove HTML tags
 		text = text.replace(/<[^>]*>/g, "");
@@ -53,7 +56,7 @@ export default function MarkdownToText() {
 
 	useEffect(() => {
 		setPlainText(markdownToText(markdown));
-	}, [markdown]);
+	}, [markdown, markdownToText]);
 
 	const copyToClipboard = () => {
 		if (!plainText) return;

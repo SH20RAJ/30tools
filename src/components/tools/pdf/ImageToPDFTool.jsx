@@ -65,7 +65,7 @@ export default function ImageToPDFTool() {
 			});
 
 			toast.success("Images converted to PDF successfully!");
-		} catch (error) {
+		} catch (_error) {
 			toast.error("Conversion failed. Please try again.");
 		} finally {
 			setIsProcessing(false);

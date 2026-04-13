@@ -80,20 +80,38 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "Free YouTube Shorts Downloader Online - No Signup | 30tools",
-  description: "Download YouTube Shorts videos in high quality for offline viewing. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and.",
-  keywords: ["youtube shorts downloader","youtube","shorts","downloader","youtube-shorts-downloader","youtube tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free YouTube Shorts Downloader Online - No Signup | 30tools",
+	description:
+		"Download YouTube Shorts videos in high quality for offline viewing. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and.",
+	keywords: [
+		"youtube shorts downloader",
+		"youtube",
+		"shorts",
+		"downloader",
+		"youtube-shorts-downloader",
+		"youtube tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLdSchemas = {
@@ -191,7 +209,7 @@ const AdUnit = () => (
 
 export default async function YouTubeShortsDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

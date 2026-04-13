@@ -36,7 +36,7 @@ export default function PasswordCheckerTool() {
 	const [showPassword, setShowPassword] = useState(false);
 	const [strength, setStrength] = useState(0);
 	const [feedback, setFeedback] = useState([]);
-	const [isCompromised, setIsCompromised] = useState(false);
+	const [_isCompromised, _setIsCompromised] = useState(false);
 	const [estimatedCrackTime, setEstimatedCrackTime] = useState("");
 
 	const calculatePasswordStrength = (pwd) => {
@@ -151,7 +151,7 @@ export default function PasswordCheckerTool() {
 			setFeedback([]);
 			setEstimatedCrackTime("");
 		}
-	}, [password]);
+	}, [password, calculatePasswordStrength, calculateCrackTime]);
 
 	const getStrengthColor = () => {
 		if (strength < 30) return "text-destructive bg-destructive/20";

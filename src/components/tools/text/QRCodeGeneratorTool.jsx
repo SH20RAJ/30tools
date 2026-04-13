@@ -234,7 +234,7 @@ END:VCARD`;
 			generateQRCode();
 		}, 500);
 		return () => clearTimeout(timer);
-	}, [qrType, qrData, qrOptions]);
+	}, [generateQRCode]);
 
 	const qrTypes = [
 		{

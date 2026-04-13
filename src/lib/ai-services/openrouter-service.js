@@ -55,7 +55,7 @@ async function createOpenRouterCompletion(messages, options = {}) {
 		const data = await response.json();
 
 		// Validate response structure
-		if (!data.choices || !data.choices[0] || !data.choices[0].message) {
+		if (!data.choices?.[0]?.message) {
 			throw new Error("Invalid response format from OpenRouter API");
 		}
 

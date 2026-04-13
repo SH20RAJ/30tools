@@ -35,7 +35,7 @@ export default function SchemaTester() {
 					msg: "Missing @context or @type properties.",
 				});
 			}
-		} catch (e) {
+		} catch (_e) {
 			setResult({
 				valid: false,
 				msg: "Invalid JSON syntax. Please check for missing commas or quotes.",

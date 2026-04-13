@@ -12,7 +12,7 @@ export const API_KEY_TOOLS = [
 		headers: (key) => ({
 			Authorization: `Bearer ${key}`,
 		}),
-		responseCheck: (data) => data && data.data && Array.isArray(data.data),
+		responseCheck: (data) => data?.data && Array.isArray(data.data),
 	},
 	{
 		id: "anthropic",
@@ -40,7 +40,7 @@ export const API_KEY_TOOLS = [
 			max_tokens: 1,
 			messages: [{ role: "user", content: "Hi" }],
 		},
-		responseCheck: (data) => data && data.id && data.type === "message",
+		responseCheck: (data) => data?.id && data.type === "message",
 	},
 	{
 		id: "google-gemini",
@@ -61,7 +61,7 @@ export const API_KEY_TOOLS = [
 		body: {
 			contents: [{ parts: [{ text: "Hi" }] }],
 		},
-		responseCheck: (data) => data && data.candidates,
+		responseCheck: (data) => data?.candidates,
 	},
 	{
 		id: "groq",
@@ -75,7 +75,7 @@ export const API_KEY_TOOLS = [
 		headers: (key) => ({
 			Authorization: `Bearer ${key}`,
 		}),
-		responseCheck: (data) => data && data.data,
+		responseCheck: (data) => data?.data,
 	},
 	{
 		id: "deepseek",
@@ -90,7 +90,7 @@ export const API_KEY_TOOLS = [
 		headers: (key) => ({
 			Authorization: `Bearer ${key}`,
 		}),
-		responseCheck: (data) => data && data.data,
+		responseCheck: (data) => data?.data,
 	},
 	{
 		id: "cohere",
@@ -99,19 +99,18 @@ export const API_KEY_TOOLS = [
 		description: "Test your Cohere API key with the generate endpoint",
 		documentationUrl: "https://docs.cohere.com/reference/generate",
 		type: "browser",
-		endpoint: "https://api.cohere.ai/v1/check-api-key", // Cohere has a specific check endpoint usually, or we use 'generate'
-		// Let's use a safe endpoint if available, 'models' is usually safe. Not all providers have it.
-		// 'check-api-key' returns {valid: true}.
-		method: "POST", // Actually check-api-key might be different. Let's safe bet on 'tokenize' or similar small op if 'check-api-key' isn't standard.
 		// Documentation says 'generate'.
 		endpoint: "https://api.cohere.ai/v1/tokenize",
+		// Let's use a safe endpoint if available, 'models' is usually safe. Not all providers have it.
+		// 'check-api-key' returns {valid: true}.
+
 		method: "POST",
 		headers: (key) => ({
 			Authorization: `Bearer ${key}`,
 			"Content-Type": "application/json",
 		}),
 		body: { text: "test" },
-		responseCheck: (data) => data && data.tokens,
+		responseCheck: (data) => data?.tokens,
 	},
 
 	// --- CRM Tools ---
@@ -127,7 +126,7 @@ export const API_KEY_TOOLS = [
 		headers: (key) => ({
 			Authorization: `Bearer ${key}`,
 		}),
-		responseCheck: (data) => data && data.results,
+		responseCheck: (data) => data?.results,
 	},
 	{
 		id: "attio",
@@ -141,7 +140,7 @@ export const API_KEY_TOOLS = [
 		headers: (key) => ({
 			Authorization: `Bearer ${key}`,
 		}),
-		responseCheck: (data) => data && data.data,
+		responseCheck: (data) => data?.data,
 	},
 	{
 		id: "pipedrive",
@@ -233,17 +232,13 @@ export const API_KEY_TOOLS = [
 			"Test your People Data Labs API key with the person enrichment endpoint",
 		documentationUrl: "https://docs.peopledatalabs.com/",
 		type: "browser",
-		endpoint: "https://api.peopledatalabs.com/v5/person/enrich",
 		method: "GET",
-		headers: (key) => ({
-			"X-Api-Key": key,
-		}),
 		queryParams: { email: "sean@peopledatalabs.com" }, // Usually need a query param
 		endpointBuilder: (key) =>
 			`https://api.peopledatalabs.com/v5/person/enrich?email=sean@peopledatalabs.com&api_key=${key}`, // Often PDL allows api_key in query or header. Header is cleaner if allowed primarily. Documentation says X-Api-Key header.
 		// Let's stick to standard fetch. The 'endpoint' property can be used directly if it's simpler.
 		// If endpoint is a function it builds the full URL.
-		endpoint: (key) =>
+		endpoint: (_key) =>
 			`https://api.peopledatalabs.com/v5/person/enrich?email=sean@peopledatalabs.com`,
 		headers: (key) => ({ "X-Api-Key": key }),
 		responseCheck: (data) => data && data.status === 200,
@@ -475,7 +470,7 @@ export const API_KEY_TOOLS = [
 			subject: "Hello World",
 			html: "<p>Congrats on sending your first email!</p>",
 		},
-		responseCheck: (data) => data && data.id,
+		responseCheck: (data) => data?.id,
 	},
 	{
 		id: "mailgun",
@@ -561,7 +556,7 @@ export const API_KEY_TOOLS = [
 		documentationUrl:
 			"https://docs.aws.amazon.com/ses/latest/APIReference/API_SendEmail.html",
 		type: "server",
-		curlCommand: (key, secret, region) =>
+		curlCommand: (_key, _secret, region) =>
 			`# Amazon SES requires complex signature generation v4.
 # Using AWS CLI is recommended:
 aws ses send-email \\

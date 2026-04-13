@@ -1,149 +1,180 @@
-import Link from "next/link";
-
 // OPTIMIZED METADATA with low KD keywords and CTR optimization
 export const metadata = {
-  title: "Free Pinterest Image Downloader Online - No Signup | 30tools",
-  description: "Download Pinterest images in original HD quality for free. Save pins, mood boards, and aesthetic visuals without watermarks. No signup, unlimited downloads, and instant browser-based processing. Try now!",
-  keywords: ["pinterest image downloader","download pinterest images","pinterest photo downloader","pinterest image downloader hd","save pinterest images","pinterest pin downloader","pinterest mood board downloader","download pinterest pins free","pinterest image saver","pinterest pictures downloader","pinterest image downloader online","pinterest image downloader no watermark","pinterest hd image download","download from pinterest","pinterest image extractor"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Pinterest Image Downloader Online - No Signup | 30tools",
+	description:
+		"Download Pinterest images in original HD quality for free. Save pins, mood boards, and aesthetic visuals without watermarks. No signup, unlimited downloads, and instant browser-based processing. Try now!",
+	keywords: [
+		"pinterest image downloader",
+		"download pinterest images",
+		"pinterest photo downloader",
+		"pinterest image downloader hd",
+		"save pinterest images",
+		"pinterest pin downloader",
+		"pinterest mood board downloader",
+		"download pinterest pins free",
+		"pinterest image saver",
+		"pinterest pictures downloader",
+		"pinterest image downloader online",
+		"pinterest image downloader no watermark",
+		"pinterest hd image download",
+		"download from pinterest",
+		"pinterest image extractor",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function PinterestImageDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 
 	// Tool data
 	const toolData = {
-  "id": "pinterest-image-downloader",
-  "name": "Pinterest Image Downloader",
-  "description": "Download Pinterest images in original HD quality for free. Save pins, mood boards, and aesthetic visuals without watermarks. No signup required, instant downloads, and 100% private.",
-  "category": "downloaders",
-  "route": "/pinterest-image-downloader",
-  "features": [
-    "Download Original HD Quality Images",
-    "No Watermarks or Compression",
-    "Batch Download Multiple Pins",
-    "Supports All Image Formats (JPG, PNG, WebP, GIF)",
-    "Instant Downloads, No Waiting",
-    "100% Free - No Hidden Costs",
-    "No Account or Registration Required",
-    "Privacy-Focused: Client-Side Processing",
-    "Works on Mobile & Desktop",
-    "Chrome Extension Available"
-  ],
-  "benefits": [
-    "Build your personal inspiration library without Pinterest restrictions",
-    "Access original high-resolution images, not compressed feed versions",
-    "Save mood boards for offline design reference and planning",
-    "Download aesthetic content for personal projects and creativity",
-    "Avoid Pinterest's limited in-app saving features"
-  ],
-  "useCases": [
-    "Designers saving color palettes and UI references",
-    "Photographers collecting lighting and composition references",
-    "Interior designers curating room ideas and furniture photos",
-    "Fashion enthusiasts building outfit inspiration boards",
-    "Artists collecting visual references and mood boards",
-    "Bloggers saving images for content inspiration",
-    "Students gathering visual research materials",
-    "Marketers downloading brand aesthetic examples"
-  ],
-  "faqs": [
-    {
-      "question": "What is a Pinterest Image Downloader?",
-      "answer": "A Pinterest Image Downloader is a tool that lets you save images from Pinterest in their original high-resolution quality. Unlike Pinterest's built-in save feature, our tool downloads the full-quality image file directly to your device, making it perfect for offline inspiration libraries and professional reference collections."
-    },
-    {
-      "question": "Is this Pinterest Image Downloader really free?",
-      "answer": "Yes! 30Tools offers a completely free Pinterest Image Downloader with no limitations. Download unlimited images without subscriptions, watermarks, or hidden fees. No account creation needed—start downloading immediately."
-    },
-    {
-      "question": "How do I download images from Pinterest?",
-      "answer": "1. Open Pinterest and find the image you want to download. 2. Click the pin to open it in full view. 3. Copy the URL from your browser's address bar. 4. Paste the link into our Pinterest Image Downloader. 5. Click download to get the original HD image."
-    },
-    {
-      "question": "Can I download images in original quality?",
-      "answer": "Yes! Our tool fetches the original source image, not the compressed version shown in Pinterest feeds. You get the full-resolution file as uploaded by the creator, perfect for printing, professional reference, or high-quality digital use."
-    },
-    {
-      "question": "Are there daily limits on downloads?",
-      "answer": "None! Download as many Pinterest images as you want, completely unlimited. We believe in unrestricted access to inspiration and reference materials. No daily caps, no throttling, no 'premium' tiers."
-    },
-    {
-      "question": "Is it legal to download Pinterest images?",
-      "answer": "Downloading images for personal use, reference, and inspiration is generally acceptable. However, always respect copyright. Only use downloaded images as allowed by the original creator's license. For commercial use, obtain permission from the copyright holder."
-    },
-    {
-      "question": "Can I download secret or private Pinterest boards?",
-      "answer": "No. Our tool can only access publicly available pins. Private boards and secret pins require authentication and are protected by Pinterest's privacy settings. We respect privacy and cannot bypass these restrictions."
-    },
-    {
-      "question": "What image formats are supported?",
-      "answer": "We support all common image formats: JPG/JPEG, PNG, WebP, GIF, and BMP. The downloaded format matches the original uploaded file. If the source is a PNG with transparency, you keep that transparency."
-    },
-    {
-      "question": "Are downloaded images watermarked?",
-      "answer": "No watermarks whatsoever. We fetch the original image file directly from the source. Some pins may already contain watermarks from the original uploader—we cannot remove those, but we don't add our own."
-    },
-    {
-      "question": "Is my privacy protected when using this tool?",
-      "answer": "Absolutely. All processing happens locally in your browser—we don't store your download history, copied URLs, or downloaded images. No tracking, no data collection. Your Pinterest browsing and download activity remains private."
-    },
-    {
-      "question": "Why can't I download some Pinterest images?",
-      "answer": "Some pins link to external websites rather than hosting images directly on Pinterest. In those cases, our tool may not be able to extract the image. Also, deleted or removed pins are obviously unavailable. Most direct image pins work perfectly."
-    },
-    {
-      "question": "Can I download Pinterest videos too?",
-      "answer": "For videos, we have a separate Pinterest Video Downloader tool. This image-focused tool handles photos and static images only. Visit our downloaders collection for video downloads in HD."
-    },
-    {
-      "question": "Do I need to install software or browser extensions?",
-      "answer": "No installation required! Our tool works directly in your browser. However, we also offer a Chrome extension for even faster access—but it's completely optional. The web version works perfectly without any setup."
-    },
-    {
-      "question": "What resolutions are available?",
-      "answer": "You get the original resolution as uploaded. This could range from 720p for standard web uploads up to 4K for professional photography. We cannot upsample—we deliver exactly what exists on the server."
-    },
-    {
-      "question": "Can I bulk download entire Pinterest boards?",
-      "answer": "Yes! Our tool supports batch downloading. You can paste multiple pin URLs and download them sequentially. For massive boards, consider using our batch download feature (if implemented) or download in smaller batches."
-    }
-  ],
-  "howTo": {
-    "name": "How to Download Pinterest Images",
-    "steps": [
-      {
-        "name": "Find the Pinterest Pin",
-        "text": "Navigate to Pinterest and locate the image you want to download. Open the pin to view it in full-screen detail mode.",
-        "url": "https://30tools.com/pinterest-image-downloader#step1",
-        "image": "https://30tools.com/images/pinterest-downloader-step1.jpg"
-      },
-      {
-        "name": "Copy the Pin URL",
-        "text": "With the pin open, copy the complete URL from your browser's address bar. It looks like: pinterest.com/pin/[pin-id]/ or pinterest.de/pin/[pin-id]/",
-        "url": "https://30tools.com/pinterest-image-downloader#step2",
-        "image": "https://30tools.com/images/pinterest-downloader-step2.jpg"
-      },
-      {
-        "name": "Paste and Download",
-        "text": "Paste the copied URL into our Pinterest Image Downloader input field. Click 'Download' and wait a moment for processing. The image will download in the original quality to your device.",
-        "url": "https://30tools.com/pinterest-image-downloader#step3",
-        "image": "https://30tools.com/images/pinterest-downloader-step3.jpg"
-      }
-    ]
-  }
-};
+		id: "pinterest-image-downloader",
+		name: "Pinterest Image Downloader",
+		description:
+			"Download Pinterest images in original HD quality for free. Save pins, mood boards, and aesthetic visuals without watermarks. No signup required, instant downloads, and 100% private.",
+		category: "downloaders",
+		route: "/pinterest-image-downloader",
+		features: [
+			"Download Original HD Quality Images",
+			"No Watermarks or Compression",
+			"Batch Download Multiple Pins",
+			"Supports All Image Formats (JPG, PNG, WebP, GIF)",
+			"Instant Downloads, No Waiting",
+			"100% Free - No Hidden Costs",
+			"No Account or Registration Required",
+			"Privacy-Focused: Client-Side Processing",
+			"Works on Mobile & Desktop",
+			"Chrome Extension Available",
+		],
+		benefits: [
+			"Build your personal inspiration library without Pinterest restrictions",
+			"Access original high-resolution images, not compressed feed versions",
+			"Save mood boards for offline design reference and planning",
+			"Download aesthetic content for personal projects and creativity",
+			"Avoid Pinterest's limited in-app saving features",
+		],
+		useCases: [
+			"Designers saving color palettes and UI references",
+			"Photographers collecting lighting and composition references",
+			"Interior designers curating room ideas and furniture photos",
+			"Fashion enthusiasts building outfit inspiration boards",
+			"Artists collecting visual references and mood boards",
+			"Bloggers saving images for content inspiration",
+			"Students gathering visual research materials",
+			"Marketers downloading brand aesthetic examples",
+		],
+		faqs: [
+			{
+				question: "What is a Pinterest Image Downloader?",
+				answer:
+					"A Pinterest Image Downloader is a tool that lets you save images from Pinterest in their original high-resolution quality. Unlike Pinterest's built-in save feature, our tool downloads the full-quality image file directly to your device, making it perfect for offline inspiration libraries and professional reference collections.",
+			},
+			{
+				question: "Is this Pinterest Image Downloader really free?",
+				answer:
+					"Yes! 30Tools offers a completely free Pinterest Image Downloader with no limitations. Download unlimited images without subscriptions, watermarks, or hidden fees. No account creation needed—start downloading immediately.",
+			},
+			{
+				question: "How do I download images from Pinterest?",
+				answer:
+					"1. Open Pinterest and find the image you want to download. 2. Click the pin to open it in full view. 3. Copy the URL from your browser's address bar. 4. Paste the link into our Pinterest Image Downloader. 5. Click download to get the original HD image.",
+			},
+			{
+				question: "Can I download images in original quality?",
+				answer:
+					"Yes! Our tool fetches the original source image, not the compressed version shown in Pinterest feeds. You get the full-resolution file as uploaded by the creator, perfect for printing, professional reference, or high-quality digital use.",
+			},
+			{
+				question: "Are there daily limits on downloads?",
+				answer:
+					"None! Download as many Pinterest images as you want, completely unlimited. We believe in unrestricted access to inspiration and reference materials. No daily caps, no throttling, no 'premium' tiers.",
+			},
+			{
+				question: "Is it legal to download Pinterest images?",
+				answer:
+					"Downloading images for personal use, reference, and inspiration is generally acceptable. However, always respect copyright. Only use downloaded images as allowed by the original creator's license. For commercial use, obtain permission from the copyright holder.",
+			},
+			{
+				question: "Can I download secret or private Pinterest boards?",
+				answer:
+					"No. Our tool can only access publicly available pins. Private boards and secret pins require authentication and are protected by Pinterest's privacy settings. We respect privacy and cannot bypass these restrictions.",
+			},
+			{
+				question: "What image formats are supported?",
+				answer:
+					"We support all common image formats: JPG/JPEG, PNG, WebP, GIF, and BMP. The downloaded format matches the original uploaded file. If the source is a PNG with transparency, you keep that transparency.",
+			},
+			{
+				question: "Are downloaded images watermarked?",
+				answer:
+					"No watermarks whatsoever. We fetch the original image file directly from the source. Some pins may already contain watermarks from the original uploader—we cannot remove those, but we don't add our own.",
+			},
+			{
+				question: "Is my privacy protected when using this tool?",
+				answer:
+					"Absolutely. All processing happens locally in your browser—we don't store your download history, copied URLs, or downloaded images. No tracking, no data collection. Your Pinterest browsing and download activity remains private.",
+			},
+			{
+				question: "Why can't I download some Pinterest images?",
+				answer:
+					"Some pins link to external websites rather than hosting images directly on Pinterest. In those cases, our tool may not be able to extract the image. Also, deleted or removed pins are obviously unavailable. Most direct image pins work perfectly.",
+			},
+			{
+				question: "Can I download Pinterest videos too?",
+				answer:
+					"For videos, we have a separate Pinterest Video Downloader tool. This image-focused tool handles photos and static images only. Visit our downloaders collection for video downloads in HD.",
+			},
+			{
+				question: "Do I need to install software or browser extensions?",
+				answer:
+					"No installation required! Our tool works directly in your browser. However, we also offer a Chrome extension for even faster access—but it's completely optional. The web version works perfectly without any setup.",
+			},
+			{
+				question: "What resolutions are available?",
+				answer:
+					"You get the original resolution as uploaded. This could range from 720p for standard web uploads up to 4K for professional photography. We cannot upsample—we deliver exactly what exists on the server.",
+			},
+			{
+				question: "Can I bulk download entire Pinterest boards?",
+				answer:
+					"Yes! Our tool supports batch downloading. You can paste multiple pin URLs and download them sequentially. For massive boards, consider using our batch download feature (if implemented) or download in smaller batches.",
+			},
+		],
+		howTo: {
+			name: "How to Download Pinterest Images",
+			steps: [
+				{
+					name: "Find the Pinterest Pin",
+					text: "Navigate to Pinterest and locate the image you want to download. Open the pin to view it in full-screen detail mode.",
+					url: "https://30tools.com/pinterest-image-downloader#step1",
+					image: "https://30tools.com/images/pinterest-downloader-step1.jpg",
+				},
+				{
+					name: "Copy the Pin URL",
+					text: "With the pin open, copy the complete URL from your browser's address bar. It looks like: pinterest.com/pin/[pin-id]/ or pinterest.de/pin/[pin-id]/",
+					url: "https://30tools.com/pinterest-image-downloader#step2",
+					image: "https://30tools.com/images/pinterest-downloader-step2.jpg",
+				},
+				{
+					name: "Paste and Download",
+					text: "Paste the copied URL into our Pinterest Image Downloader input field. Click 'Download' and wait a moment for processing. The image will download in the original quality to your device.",
+					url: "https://30tools.com/pinterest-image-downloader#step3",
+					image: "https://30tools.com/images/pinterest-downloader-step3.jpg",
+				},
+			],
+		},
+	};
 
 	// Breadcrumbs
 	const breadcrumbs = [

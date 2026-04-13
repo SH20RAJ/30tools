@@ -26,7 +26,7 @@ export async function extractYouTubeVideoId(url) {
 
 		for (const pattern of patterns) {
 			const match = url.match(pattern);
-			if (match && match[1]) {
+			if (match?.[1]) {
 				console.log("✅ Video ID extracted:", match[1]);
 				return { success: true, videoId: match[1] };
 			}
@@ -148,11 +148,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 			}
 		}
 
-		if (
-			!subtitleData ||
-			!subtitleData.segments ||
-			subtitleData.segments.length === 0
-		) {
+		if (!subtitleData?.segments || subtitleData.segments.length === 0) {
 			console.log("❌ No subtitles found from any source");
 			return {
 				error:
@@ -170,7 +166,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 		console.log("📊 Stats:", {
 			segments: processedData.segmentCount,
 			words: processedData.wordCount,
-			duration: processedData.duration + "s",
+			duration: `${processedData.duration}s`,
 		});
 
 		return {

@@ -235,7 +235,7 @@ const categories = [
 
 export default async function VideoToolsPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const featuredTools = videoTools.filter((tool) => tool.featured);
 	const trendingTools = videoTools.filter((tool) => tool.trending);
 	const allTools = videoTools;
@@ -594,7 +594,7 @@ export default async function VideoToolsPage({ searchParams }) {
 						"@type": "CollectionPage",
 						name: "Video Tools Collection",
 						description:
-								"Free video tools for editing, converting, compressing, and trimming videos online",
+							"Free video tools for editing, converting, compressing, and trimming videos online",
 						url: "https://30tools.com/video-tools",
 						mainEntity: {
 							"@type": "ItemList",

@@ -3,7 +3,7 @@
 // Server action to fetch OG metadata from Terabox URL
 export async function fetchTeraboxOGData(url) {
 	try {
-		if (!url || !url.includes("teraboxapp.com")) {
+		if (!url?.includes("teraboxapp.com")) {
 			return { error: "Invalid Terabox URL" };
 		}
 
@@ -75,7 +75,7 @@ function parseM3u8Content(m3u8Content, videoId) {
 		const line = lines[i].trim();
 
 		// Look for .ts segment files
-		if (line && line.endsWith(".ts")) {
+		if (line?.endsWith(".ts")) {
 			// Extract segment filename (e.g., "source0.ts")
 			const segmentName = line;
 
@@ -137,7 +137,7 @@ export async function fetchTeraboxVideoDataMdiskplay(url) {
 
 		// Process M3U8 playlist if available
 		let segments = [];
-		if (data.source && data.source.includes(".m3u8")) {
+		if (data.source?.includes(".m3u8")) {
 			try {
 				const m3u8Response = await fetch(data.source, {
 					headers: {
@@ -254,7 +254,7 @@ export async function fetchTeraboxVideoData(
 		const data = await response.json();
 		console.log("✅ Received data from TeraSnap API:", data);
 
-		if (!data || !data.file_name) {
+		if (!data?.file_name) {
 			throw new Error("Invalid video data received");
 		}
 

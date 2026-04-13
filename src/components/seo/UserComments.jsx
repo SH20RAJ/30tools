@@ -297,7 +297,7 @@ export default function UserComments({
 		}
 	});
 
-	const averageRating =
+	const _averageRating =
 		comments.reduce((sum, comment) => sum + (comment.toolRating || 0), 0) /
 		comments.filter((c) => c.toolRating).length;
 
@@ -461,7 +461,7 @@ export function CommentsWidget({ toolId, compact = false }) {
 								<div className="flex text-xs text-primary">
 									{Array.from(
 										{ length: comment.toolRating || 5 },
-										(_, i) => "★",
+										(_, _i) => "★",
 									)}
 								</div>
 							</div>

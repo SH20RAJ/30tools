@@ -26,7 +26,7 @@ export default function FaviconGeneratorTool() {
 	const [borderRadius, setBorderRadius] = useState(8);
 	const [fontSize, setFontSize] = useState(20);
 	const [previewUrl, setPreviewUrl] = useState(null);
-	const [isExporting, setIsExporting] = useState(false);
+	const [_isExporting, _setIsExporting] = useState(false);
 
 	const canvasRef = useRef(null);
 	const fileInputRef = useRef(null);
@@ -98,16 +98,7 @@ export default function FaviconGeneratorTool() {
 
 	useEffect(() => {
 		drawFavicon();
-	}, [
-		mode,
-		text,
-		emoji,
-		uploadedImage,
-		textColor,
-		backgroundColor,
-		borderRadius,
-		fontSize,
-	]);
+	}, [drawFavicon]);
 
 	// Redraw when image loads
 	useEffect(() => {
@@ -116,7 +107,7 @@ export default function FaviconGeneratorTool() {
 			img.onload = drawFavicon;
 			img.src = uploadedImage;
 		}
-	}, [uploadedImage]);
+	}, [uploadedImage, mode, drawFavicon]);
 
 	const downloadFavicon = (size) => {
 		const canvas = canvasRef.current;

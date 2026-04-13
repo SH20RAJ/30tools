@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useMemo } from "react";
-import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@mui/material/styles";
 import { useTheme } from "next-themes";
-import { lightTheme, darkTheme } from "@/lib/mui-theme";
+import { useMemo } from "react";
+import { darkTheme, lightTheme } from "@/lib/mui-theme";
 
 /**
  * MUI ThemeRegistry – bridges next-themes (dark/light class) with MUI ThemeProvider.

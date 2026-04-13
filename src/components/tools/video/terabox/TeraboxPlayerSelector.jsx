@@ -76,7 +76,7 @@ export default function TeraboxPlayerSelector({
 		},
 	};
 
-	const themeDescriptions = {
+	const _themeDescriptions = {
 		default: "Standard player theme with balanced colors",
 		dark: "Dark theme perfect for night viewing",
 		light: "Clean light theme for bright environments",

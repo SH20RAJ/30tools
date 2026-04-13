@@ -7,7 +7,7 @@ import { NextResponse } from "next/server";
 export async function GET(request) {
 	const { searchParams } = new URL(request.url);
 	const videoId = searchParams.get("videoId");
-	const lang = searchParams.get("lang") || "en";
+	const _lang = searchParams.get("lang") || "en";
 
 	if (!videoId) {
 		return NextResponse.json(
@@ -70,7 +70,7 @@ export async function GET(request) {
 					videoInfo.thumbnailUrl?.maxresdefault ||
 					videoInfo.thumbnailUrl?.hqdefault,
 				embedUrl: videoInfo.embedUrl,
-				duration: formatDuration(parseInt(videoInfo.duration)),
+				duration: formatDuration(parseInt(videoInfo.duration, 10)),
 				author: videoInfo.author,
 				channelId: videoInfo.channel_id,
 				language: transcriptData.language_code[0]?.code || "en",
@@ -103,7 +103,7 @@ export async function GET(request) {
  * Parse timestamp string (HH:MM:SS) to seconds
  */
 function parseTimestamp(timestamp) {
-	const parts = timestamp.split(":").map((p) => parseInt(p));
+	const parts = timestamp.split(":").map((p) => parseInt(p, 10));
 	if (parts.length === 3) {
 		return parts[0] * 3600 + parts[1] * 60 + parts[2];
 	} else if (parts.length === 2) {

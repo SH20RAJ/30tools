@@ -2,20 +2,26 @@ import { Globe } from "lucide-react";
 import IndexNowClient from "@/components/tools/general/IndexNowClient";
 
 export const metadata = {
-  title: "Free IndexNow Submitter Online - No Signup | 30tools",
-  description: "Free utility tools: IndexNow Submitter. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your bro",
-  keywords: ["indexnow submitter","indexnow submitter free","indexnow submitter online","indexnow submitter tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free IndexNow Submitter Online - No Signup | 30tools",
+	description:
+		"Free utility tools: IndexNow Submitter. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your bro",
+	keywords: [
+		"indexnow submitter",
+		"indexnow submitter free",
+		"indexnow submitter online",
+		"indexnow submitter tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLd = {
@@ -42,7 +48,7 @@ const jsonLd = {
 
 export default async function IndexNowPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<div className="min-h-screen bg-background py-12">
 			<script

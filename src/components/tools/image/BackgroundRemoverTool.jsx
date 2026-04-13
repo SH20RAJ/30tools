@@ -48,7 +48,7 @@ export default function BackgroundRemoverTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const handleFileSelect = (event) => {
@@ -56,11 +56,14 @@ export default function BackgroundRemoverTool() {
 		processFiles(selectedFiles);
 	};
 
-	const handleDrop = useCallback((e) => {
-		e.preventDefault();
-		const droppedFiles = Array.from(e.dataTransfer.files);
-		processFiles(droppedFiles);
-	}, []);
+	const handleDrop = useCallback(
+		(e) => {
+			e.preventDefault();
+			const droppedFiles = Array.from(e.dataTransfer.files);
+			processFiles(droppedFiles);
+		},
+		[processFiles],
+	);
 
 	const handleDragOver = useCallback((e) => {
 		e.preventDefault();
@@ -284,8 +287,8 @@ export default function BackgroundRemoverTool() {
 						Upload Images
 					</CardTitle>
 					<CardDescription>
-					Remove background from image online in seconds. Supports JPG, PNG,
-					WebP. All processing happens locally and privately.
+						Remove background from image online in seconds. Supports JPG, PNG,
+						WebP. All processing happens locally and privately.
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
@@ -296,11 +299,11 @@ export default function BackgroundRemoverTool() {
 					>
 						<Upload className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
 						<p className="text-lg font-medium mb-2">
-						Drop images here or click to browse to remove background
-					</p>
-					<p className="text-sm text-muted-foreground mb-4">
-						AI will automatically detect and remove backgrounds. All
-						processing happens locally in your browser.
+							Drop images here or click to browse to remove background
+						</p>
+						<p className="text-sm text-muted-foreground mb-4">
+							AI will automatically detect and remove backgrounds. All
+							processing happens locally in your browser.
 						</p>
 						<Input
 							ref={fileInputRef}
@@ -311,7 +314,7 @@ export default function BackgroundRemoverTool() {
 							className="hidden"
 						/>
 						<Button onClick={() => fileInputRef.current?.click()}>
-						Choose Images to Remove Background
+							Choose Images to Remove Background
 						</Button>
 					</div>
 				</CardContent>

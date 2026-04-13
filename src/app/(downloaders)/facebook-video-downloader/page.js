@@ -27,20 +27,26 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "Free Facebook Video Downloader Online - No Signup | 30tools",
-  description: "Free Facebook Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your br",
-  keywords: ["facebook video downloader","facebook video downloader free","facebook video downloader online","facebook video downloader tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Facebook Video Downloader Online - No Signup | 30tools",
+	description:
+		"Free Facebook Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your br",
+	keywords: [
+		"facebook video downloader",
+		"facebook video downloader free",
+		"facebook video downloader online",
+		"facebook video downloader tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLdSchemas = {
@@ -109,7 +115,7 @@ const AdUnit = () => (
 
 export default async function FacebookVideoDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

@@ -1,21 +1,26 @@
-import type { Metadata } from "next";
 import TextEncoder from "@/components/tools/text/TextEncoder";
 
 export const metadata = {
-  title: "Free Text Encoder Online - No Signup | 30tools",
-  description: "Free text tools: Text Encoder. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in your browser f",
-  keywords: ["text encoder","text encoder free","text encoder online","text encoder tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Text Encoder Online - No Signup | 30tools",
+	description:
+		"Free text tools: Text Encoder. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in your browser f",
+	keywords: [
+		"text encoder",
+		"text encoder free",
+		"text encoder online",
+		"text encoder tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function ToolPage({ searchParams }) {

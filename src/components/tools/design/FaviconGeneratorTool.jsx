@@ -33,7 +33,7 @@ export default function FaviconGeneratorTool() {
 	const [generatedFavicons, setGeneratedFavicons] = useState([]);
 	const [progress, setProgress] = useState(0);
 	const fileInputRef = useRef(null);
-	const canvasRef = useRef(null);
+	const _canvasRef = useRef(null);
 
 	const faviconSizes = [
 		{ size: 16, name: "favicon-16x16.png", description: "Browser tab icon" },

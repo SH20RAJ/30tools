@@ -1,10 +1,10 @@
+import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { Toaster } from "sonner";
+import MuiThemeRegistry from "@/components/shared/MuiThemeRegistry";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
 import ToolSeoStructuredData from "@/components/shared/ToolSeoStructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
-import MuiThemeRegistry from "@/components/shared/MuiThemeRegistry";
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { getAllTools } from "@/constants/tools-utils";
 import "./globals.css";
 import Script from "next/script";
@@ -239,7 +239,12 @@ export default async function RootLayout({ children }) {
 					title="30tools Search"
 					href="/opensearch.xml"
 				/>
-				<link rel="alternate" type="text/plain" title="30tools LLM Index" href="/llms.txt" />
+				<link
+					rel="alternate"
+					type="text/plain"
+					title="30tools LLM Index"
+					href="/llms.txt"
+				/>
 
 				{/* Alternate */}
 				<link

@@ -87,16 +87,16 @@ export default function PDFEditorTool() {
 		parts.forEach((part) => {
 			const range = part.trim().split("-");
 			if (range.length === 2) {
-				const start = parseInt(range[0]);
-				const end = parseInt(range[1]);
-				if (!isNaN(start) && !isNaN(end)) {
+				const start = parseInt(range[0], 10);
+				const end = parseInt(range[1], 10);
+				if (!Number.isNaN(start) && !Number.isNaN(end)) {
 					for (let i = start; i <= end; i++) {
 						if (i >= 1 && i <= maxPages) pages.add(i - 1);
 					}
 				}
 			} else {
-				const page = parseInt(part);
-				if (!isNaN(page) && page >= 1 && page <= maxPages) {
+				const page = parseInt(part, 10);
+				if (!Number.isNaN(page) && page >= 1 && page <= maxPages) {
 					pages.add(page - 1);
 				}
 			}

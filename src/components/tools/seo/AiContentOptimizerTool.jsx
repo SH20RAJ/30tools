@@ -46,7 +46,7 @@ export default function AiContentOptimizerTool() {
 			} else {
 				setError(response.error);
 			}
-		} catch (err) {
+		} catch (_err) {
 			setError("An unexpected error occurred. Please try again.");
 		} finally {
 			setLoading(false);
@@ -59,7 +59,7 @@ export default function AiContentOptimizerTool() {
 		return "text-red-600";
 	};
 
-	const getProgressColor = (score) => {
+	const _getProgressColor = (score) => {
 		if (score >= 80) return "bg-green-600";
 		if (score >= 60) return "bg-yellow-600";
 		return "bg-red-600";

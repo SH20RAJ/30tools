@@ -114,25 +114,31 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "Free Terabox Video Downloader Online - No Signup | 30tools",
-  description: "Free video tools: Terabox Video Downloader. Download, convert, edit videos online. High quality, fast processing, no installation. All processing happens locall",
-  keywords: ["terabox video downloader","terabox video downloader free","terabox video downloader online","terabox video downloader tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Terabox Video Downloader Online - No Signup | 30tools",
+	description:
+		"Free video tools: Terabox Video Downloader. Download, convert, edit videos online. High quality, fast processing, no installation. All processing happens locall",
+	keywords: [
+		"terabox video downloader",
+		"terabox video downloader free",
+		"terabox video downloader online",
+		"terabox video downloader tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function TeraboxDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const features = [
 		{
 			icon: <Zap className="w-5 h-5 text-amber-500" />,

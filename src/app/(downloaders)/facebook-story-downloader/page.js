@@ -117,7 +117,7 @@ const jsonLdSchemas = {
 
 export default async function FacebookStoryDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

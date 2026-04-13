@@ -135,10 +135,10 @@ export default function YouTubeDownloader() {
 					const getResHeight = (resStr) => {
 						if (!resStr) return 0;
 						const parts = resStr.split("x");
-						return parts.length === 2 ? parseInt(parts[1]) : 0;
+						return parts.length === 2 ? parseInt(parts[1], 10) : 0;
 					};
 					// Fallback sort by quality string if resolution is missing (e.g. "1080P" -> 1080)
-					const getQualityInt = (q) => parseInt(q) || 0;
+					const getQualityInt = (q) => parseInt(q, 10) || 0;
 
 					return (
 						(getResHeight(b.resolution) || getQualityInt(b.quality)) -

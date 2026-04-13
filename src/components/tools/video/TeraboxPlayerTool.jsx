@@ -86,7 +86,7 @@ export default function TeraboxPlayerTool() {
 			setTeraboxUrl(urlParam);
 			loadVideoFromUrl(urlParam);
 		}
-	}, [searchParams]);
+	}, [searchParams, loadVideoFromUrl]);
 
 	// Update URL parameters
 	const updateUrlParams = (url) => {
@@ -99,7 +99,7 @@ export default function TeraboxPlayerTool() {
 		} else {
 			params.delete("url");
 		}
-		const newUrl = `${window.location.pathname}${params.toString() ? "?" + params.toString() : ""}`;
+		const newUrl = `${window.location.pathname}${params.toString() ? `?${params.toString()}` : ""}`;
 		router.replace(newUrl, { scroll: false });
 	};
 
@@ -157,7 +157,7 @@ export default function TeraboxPlayerTool() {
 				throw new Error(videoResult.error);
 			}
 
-			if (!videoResult.data || !videoResult.data.stream_url) {
+			if (!videoResult.data?.stream_url) {
 				throw new Error("Invalid video data received");
 			}
 

@@ -1,11 +1,10 @@
 import { type NextRequest, NextResponse } from "next/server";
-import toolsData from "./constants/tools.json";
+import { getAllCategories, getAllTools } from "./lib/tools";
 
 // Slug Logic & Valid Routes
-const slugMap = new Map<string, string>();
 const validRoutes = new Set<string>();
 
-// Hardcoded static pages (derived from sitemap.js)
+// Hardcoded static pages
 const staticPages = [
 	"/",
 	"/search",
@@ -18,40 +17,34 @@ const staticPages = [
 	"/api-docs",
 	"/blog",
 ];
-staticPages.forEach((page) => validRoutes.add(page));
+
+for (const page of staticPages) {
+	validRoutes.add(page);
+}
 
 // Category pages
-const categories = Object.keys(toolsData.categories);
-categories.forEach((category) => {
-	validRoutes.add(`/${category}-tools`);
-});
+const allCategories = getAllCategories();
+for (const category of allCategories) {
+	validRoutes.add(`/${category.slug}-tools`);
+}
 
-try {
-	Object.values(toolsData.categories).forEach((category: any) => {
-		if (category.tools) {
-			category.tools.forEach((tool: any) => {
-				// Add main tool route
-				if (tool.route) {
-					validRoutes.add(tool.route);
-				}
-				// Add extra slugs for SEO
-				if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
-					tool.extraSlugs.forEach((slug: string) => {
-						validRoutes.add(`/${slug}`);
-					});
-				}
-			});
+// All tool routes and variants
+const allTools = getAllTools();
+for (const tool of allTools) {
+	if (tool.route) {
+		validRoutes.add(tool.route);
+	}
+	if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
+		for (const slug of tool.extraSlugs) {
+			validRoutes.add(`/${slug}`);
 		}
-	});
-} catch (e) {
-	console.error("Error initializing middleware slug map:", e);
+	}
 }
 
 // Validation Helper
 function isValidRoute(pathname: string): boolean {
 	// 1. Exact match
 	if (validRoutes.has(pathname)) return true;
-	if (slugMap.has(pathname)) return true;
 
 	// 2. Prefix matches for dynamic sections
 	const allowedPrefixes = [
@@ -59,31 +52,24 @@ function isValidRoute(pathname: string): boolean {
 		"/blogs/",
 		"/dashboard",
 		"/account",
-		"/tools/", // In case of sitemap-new structure
-		"/search/", // Search query params or subpaths
+		"/tools/",
+		"/search/",
 	];
 
-	if (allowedPrefixes.some((prefix) => pathname.startsWith(prefix)))
-		return true;
-
-	return false;
+	return allowedPrefixes.some((prefix) => pathname.startsWith(prefix));
 }
 
 export default function middleware(request: NextRequest) {
-	const { pathname } = request.nextUrl;
+	const { pathname } = request.url;
 
-	// 1. Check if route is valid in this application
+	// Allow everything that matches valid routes or prefixes
 	if (isValidRoute(pathname)) {
 		return NextResponse.next();
 	}
 
-	// 3. Allow standard 404 handling for unknown routes
 	return NextResponse.next();
 }
 
 export const config = {
-	// Match all pathnames except for
-	// - … if they start with `/api`, `/_next` or `/_vercel`
-	// - … the ones containing a dot (e.g. `favicon.ico`)
 	matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

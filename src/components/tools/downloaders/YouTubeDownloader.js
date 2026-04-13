@@ -16,9 +16,9 @@ import {
 	Shield,
 	Star,
 	Users,
+	Video,
 	Wrench,
 	Zap,
-	Video,
 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -31,7 +31,9 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
-export default function YouTubeDownloader({ title = "YouTube Video Downloader" }) {
+export default function YouTubeDownloader({
+	title = "YouTube Video Downloader",
+}) {
 	const [url, setUrl] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [videoData, setVideoData] = useState(null);
@@ -43,7 +45,11 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 			return;
 		}
 
-		if (!url.includes("youtube.com") && !url.includes("youtu.be") && !url.includes("youtube.com/shorts")) {
+		if (
+			!url.includes("youtube.com") &&
+			!url.includes("youtu.be") &&
+			!url.includes("youtube.com/shorts")
+		) {
 			setError("Please enter a valid YouTube URL");
 			return;
 		}
@@ -238,7 +244,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 							<div className="flex-1 min-w-0">
 								<h4 className="font-semibold">Find the YouTube Video</h4>
 								<p className="text-sm text-muted-foreground">
-									Open YouTube app or website and find the video or Short you want to download.
+									Open YouTube app or website and find the video or Short you
+									want to download.
 								</p>
 							</div>
 						</div>
@@ -250,7 +257,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 							<div className="flex-1 min-w-0">
 								<h4 className="font-semibold">Copy the Video URL</h4>
 								<p className="text-sm text-muted-foreground">
-									Click the share button and select "Copy link" to get the video URL.
+									Click the share button and select "Copy link" to get the video
+									URL.
 								</p>
 							</div>
 						</div>
@@ -262,7 +270,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 							<div className="flex-1 min-w-0">
 								<h4 className="font-semibold">Paste URL and Download</h4>
 								<p className="text-sm text-muted-foreground">
-									Paste the URL in the input field above and click download. Choose your preferred quality.
+									Paste the URL in the input field above and click download.
+									Choose your preferred quality.
 								</p>
 							</div>
 						</div>
@@ -274,7 +283,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 							<div className="flex-1 min-w-0">
 								<h4 className="font-semibold">Save Your Video</h4>
 								<p className="text-sm text-muted-foreground">
-									The video will be downloaded in your chosen quality format (MP4 or MP3).
+									The video will be downloaded in your chosen quality format
+									(MP4 or MP3).
 								</p>
 							</div>
 						</div>
@@ -388,16 +398,19 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 							Is it legal to download YouTube videos?
 						</h4>
 						<p className="text-sm text-muted-foreground">
-							Downloading videos for personal offline use is generally acceptable for public domain or Creative Commons content. However, downloading copyrighted content without permission may violate YouTube's Terms of Service. Always respect content creators' rights.
+							Downloading videos for personal offline use is generally
+							acceptable for public domain or Creative Commons content. However,
+							downloading copyrighted content without permission may violate
+							YouTube's Terms of Service. Always respect content creators'
+							rights.
 						</p>
 					</div>
 
 					<div className="space-y-3">
-						<h4 className="font-semibold">
-							Can I download YouTube Shorts?
-						</h4>
+						<h4 className="font-semibold">Can I download YouTube Shorts?</h4>
 						<p className="text-sm text-muted-foreground">
-							Yes! YouTube Shorts use the same URL structure. Simply paste the Shorts link and download like any regular video.
+							Yes! YouTube Shorts use the same URL structure. Simply paste the
+							Shorts link and download like any regular video.
 						</p>
 					</div>
 
@@ -406,7 +419,9 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 							Can I convert YouTube videos to MP3?
 						</h4>
 						<p className="text-sm text-muted-foreground">
-							Absolutely! Our tool extracts audio from any YouTube video and saves it as an MP3 file. Perfect for music, podcasts, and lectures.
+							Absolutely! Our tool extracts audio from any YouTube video and
+							saves it as an MP3 file. Perfect for music, podcasts, and
+							lectures.
 						</p>
 					</div>
 
@@ -415,7 +430,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 							What video qualities are available?
 						</h4>
 						<p className="text-sm text-muted-foreground">
-							We offer multiple quality options including 360p, 480p, 720p HD, 1080p Full HD, and 4K when available from the original upload.
+							We offer multiple quality options including 360p, 480p, 720p HD,
+							1080p Full HD, and 4K when available from the original upload.
 						</p>
 					</div>
 
@@ -424,14 +440,16 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 							Do I need to install any software?
 						</h4>
 						<p className="text-sm text-muted-foreground">
-							No! Our YouTube downloader is 100% web-based. No software installation, browser extensions, or suspicious APKs required.
+							No! Our YouTube downloader is 100% web-based. No software
+							installation, browser extensions, or suspicious APKs required.
 						</p>
 					</div>
 
 					<div className="space-y-3">
 						<h4 className="font-semibold">Is there a download limit?</h4>
 						<p className="text-sm text-muted-foreground">
-							We don't impose artificial limits. Download as many videos as you need for personal use.
+							We don't impose artificial limits. Download as many videos as you
+							need for personal use.
 						</p>
 					</div>
 				</CardContent>
@@ -459,12 +477,11 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 											/>
 										))}
 									</div>
-									<span className="text-sm font-medium">
-										Alex T., Student
-									</span>
+									<span className="text-sm font-medium">Alex T., Student</span>
 								</div>
 								<p className="text-sm text-muted-foreground">
-									"Perfect for downloading lecture recordings for offline study. The MP3 conversion feature is a lifesaver for podcasts!"
+									"Perfect for downloading lecture recordings for offline study.
+									The MP3 conversion feature is a lifesaver for podcasts!"
 								</p>
 								<p className="text-xs text-muted-foreground mt-2">
 									December 10, 2025
@@ -486,7 +503,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 									</span>
 								</div>
 								<p className="text-sm text-muted-foreground">
-									"Fast, reliable, and no annoying ads. I use this to save reference videos for my editing projects. Highly recommend!"
+									"Fast, reliable, and no annoying ads. I use this to save
+									reference videos for my editing projects. Highly recommend!"
 								</p>
 								<p className="text-xs text-muted-foreground mt-2">
 									December 5, 2025
@@ -509,7 +527,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 									<span className="text-sm font-medium">James K., Teacher</span>
 								</div>
 								<p className="text-sm text-muted-foreground">
-									"Great tool for downloading educational content for my classroom. Works perfectly on my phone too."
+									"Great tool for downloading educational content for my
+									classroom. Works perfectly on my phone too."
 								</p>
 								<p className="text-xs text-muted-foreground mt-2">
 									November 28, 2025
@@ -531,7 +550,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 									</span>
 								</div>
 								<p className="text-sm text-muted-foreground">
-									"The best YouTube downloader I've found. Clean interface, fast downloads, and the 4K quality option is amazing."
+									"The best YouTube downloader I've found. Clean interface, fast
+									downloads, and the 4K quality option is amazing."
 								</p>
 								<p className="text-xs text-muted-foreground mt-2">
 									November 20, 2025
@@ -597,7 +617,12 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 					<CardContent className="prose prose-sm max-w-none">
 						<h3>Why Download YouTube Videos?</h3>
 						<p>
-							YouTube is the world's largest video platform with over 2 billion monthly active users. Whether you're a student saving lectures, a creator researching trends, or simply want offline access to your favorite content, having a reliable YouTube downloader is essential. Our tool provides fast, secure downloads in multiple quality options.
+							YouTube is the world's largest video platform with over 2 billion
+							monthly active users. Whether you're a student saving lectures, a
+							creator researching trends, or simply want offline access to your
+							favorite content, having a reliable YouTube downloader is
+							essential. Our tool provides fast, secure downloads in multiple
+							quality options.
 						</p>
 
 						<h3>YouTube Video Download Best Practices</h3>
@@ -606,22 +631,27 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 						</p>
 						<ul>
 							<li>
-								<strong>Respect Copyright:</strong> Only download content for personal use and respect creators' rights
+								<strong>Respect Copyright:</strong> Only download content for
+								personal use and respect creators' rights
 							</li>
 							<li>
-								<strong>Choose Quality Wisely:</strong> Higher resolutions for archival, lower for mobile storage
+								<strong>Choose Quality Wisely:</strong> Higher resolutions for
+								archival, lower for mobile storage
 							</li>
 							<li>
-								<strong>Use Legal Sources:</strong> Download from public videos only
+								<strong>Use Legal Sources:</strong> Download from public videos
+								only
 							</li>
 							<li>
-								<strong>Backup Important Content:</strong> Save videos you want to keep before they're removed
+								<strong>Backup Important Content:</strong> Save videos you want
+								to keep before they're removed
 							</li>
 						</ul>
 
 						<h3>YouTube Audio Downloads</h3>
 						<p>
-							Many users download YouTube videos just for the audio. Our MP3 extraction feature allows you to:
+							Many users download YouTube videos just for the audio. Our MP3
+							extraction feature allows you to:
 						</p>
 						<ul>
 							<li>Save music tracks for offline listening</li>
@@ -632,7 +662,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 
 						<h3>Tips for Content Creators</h3>
 						<p>
-							If you're creating content on YouTube, downloading videos can help you:
+							If you're creating content on YouTube, downloading videos can help
+							you:
 						</p>
 						<ul>
 							<li>Study successful video formats and styles</li>
@@ -643,7 +674,8 @@ export default function YouTubeDownloader({ title = "YouTube Video Downloader" }
 
 						<h3>Legal and Ethical Considerations</h3>
 						<p>
-							While downloading YouTube videos for personal use is generally acceptable, always consider:
+							While downloading YouTube videos for personal use is generally
+							acceptable, always consider:
 						</p>
 						<ul>
 							<li>Copyright laws in your country</li>

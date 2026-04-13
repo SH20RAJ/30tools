@@ -7,7 +7,6 @@ const GOOGLE_RED = "#EA4335";
 const GOOGLE_YELLOW = "#FBBC05";
 const GOOGLE_GREEN = "#34A853";
 
-
 const shape = { borderRadius: 12 };
 
 const typography = {
@@ -75,7 +74,11 @@ export const lightTheme = createTheme({
 		},
 		MuiButton: {
 			styleOverrides: {
-				root: { borderRadius: 100, boxShadow: "none", "&:hover": { boxShadow: "none" } },
+				root: {
+					borderRadius: 100,
+					boxShadow: "none",
+					"&:hover": { boxShadow: "none" },
+				},
 			},
 		},
 		MuiChip: {
@@ -164,7 +167,11 @@ export const darkTheme = createTheme({
 		},
 		MuiButton: {
 			styleOverrides: {
-				root: { borderRadius: 100, boxShadow: "none", "&:hover": { boxShadow: "none" } },
+				root: {
+					borderRadius: 100,
+					boxShadow: "none",
+					"&:hover": { boxShadow: "none" },
+				},
 			},
 		},
 		MuiChip: {

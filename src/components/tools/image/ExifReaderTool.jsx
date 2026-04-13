@@ -98,7 +98,7 @@ export default function ExifReaderTool() {
 		});
 	};
 
-	const formatGPS = (coords, ref) => {
+	const _formatGPS = (coords, ref) => {
 		if (!coords) return null;
 		return `${coords[0]}° ${coords[1]}' ${coords[2]}" ${ref || ""}`;
 	};
@@ -113,9 +113,13 @@ export default function ExifReaderTool() {
 					<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
 						<Camera className="w-10 h-10 text-primary" />
 					</div>
-					<h2 className="text-2xl font-bold mb-2">Upload a Photo to Read EXIF Metadata</h2>                    <p className="text-muted-foreground mb-6">
-                        Supports JPEG, TIFF, HEIC, and PNG. View camera settings, GPS location, timestamp, and hidden image metadata.
-                    </p>
+					<h2 className="text-2xl font-bold mb-2">
+						Upload a Photo to Read EXIF Metadata
+					</h2>{" "}
+					<p className="text-muted-foreground mb-6">
+						Supports JPEG, TIFF, HEIC, and PNG. View camera settings, GPS
+						location, timestamp, and hidden image metadata.
+					</p>
 					<Button size="lg">Select Photo</Button>
 					<input
 						type="file"

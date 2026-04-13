@@ -1,13 +1,6 @@
 "use client";
 
-import {
-	Download,
-	HelpCircle,
-	Info,
-	Lightbulb,
-	Shield,
-	Zap,
-} from "lucide-react";
+import { Download, Shield, Zap } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useMemo, useState } from "react";
@@ -115,7 +108,13 @@ export default function ToolPlaceholderPage({
 				position: index + 1,
 			})),
 		};
-	}, [toolData?.howTo?.steps, title, description, toolUrl]);
+	}, [
+		toolData?.howTo?.steps,
+		title,
+		description,
+		toolUrl,
+		toolData.howTo.name,
+	]);
 
 	// Additional keyword-focused content for ranking
 	const renderToolInfo = () => (
@@ -402,7 +401,9 @@ export default function ToolPlaceholderPage({
 								className="rounded-2xl border border-border p-4 bg-card hover:border-primary hover:shadow-sm transition"
 							>
 								<h3 className="font-semibold text-lg mb-2">{tool.name}</h3>
-								<p className="text-sm text-muted-foreground">{tool.description}</p>
+								<p className="text-sm text-muted-foreground">
+									{tool.description}
+								</p>
 							</Link>
 						))}
 					</div>

@@ -15,92 +15,116 @@ import PdfProtectTool from "@/components/tools/pdf/PdfProtectTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
 export const metadata = {
-  title: "Free PDF Password Protect Online - No Signup | 30tools",
-  description: "Add password protection to PDF files. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
-  keywords: ["pdf password protect","pdf","password","protect","pdf-protect","pdf tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free PDF Password Protect Online - No Signup | 30tools",
+	description:
+		"Add password protection to PDF files. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+	keywords: [
+		"pdf password protect",
+		"pdf",
+		"password",
+		"protect",
+		"pdf-protect",
+		"pdf tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function PdfProtectPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-  "id": "pdf-protect",
-  "name": "PDF Password Protect",
-  "description": "Add password protection to PDF files",
-  "category": "pdf",
-  "route": "/pdf-protect",
-  "features": [
-    "Merge unlimited PDF files",
-    "Split by pages or ranges",
-    "Compress without quality loss",
-    "Add password protection",
-    "Convert images to PDF",
-    "100% Free - No hidden costs or subscriptions"
-  ],
-  "benefits": [],
-  "useCases": [],
-  "faqs": [
-    {
-      "question": "Is this PDF Password Protect really free?",
-      "answer": "Yes! Our PDF Password Protect is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
-    },
-    {
-      "question": "Is my data secure when using PDF Password Protect?",
-      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
-    },
-    {
-      "question": "Do I need to create an account to use PDF Password Protect?",
-      "answer": "No registration required. You can start using PDF Password Protect immediately without creating an account or providing any personal information."
-    },
-    {
-      "question": "Are there any file size limits for PDF Password Protect?",
-      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
-    },
-    {
-      "question": "Can I use PDF Password Protect on mobile devices?",
-      "answer": "Yes, PDF Password Protect is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
-    },
-    {
-      "question": "What file formats does PDF Password Protect support?",
-      "answer": "PDF Password Protect supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use PDF Password Protect",
-    "steps": [
-      {
-        "name": "Upload or Input",
-        "text": "Provide your file or input data using the upload button or text input field. PDF Password Protect supports drag-and-drop for convenience.",
-        "url": "/pdf-protect#step1",
-        "position": 1
-      },
-      {
-        "name": "Configure Settings",
-        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-        "url": "/pdf-protect#step2",
-        "position": 2
-      },
-      {
-        "name": "Process & Download",
-        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-        "url": "/pdf-protect#step3",
-        "position": 3
-      }
-    ]
-  }
-};
+		id: "pdf-protect",
+		name: "PDF Password Protect",
+		description: "Add password protection to PDF files",
+		category: "pdf",
+		route: "/pdf-protect",
+		features: [
+			"Merge unlimited PDF files",
+			"Split by pages or ranges",
+			"Compress without quality loss",
+			"Add password protection",
+			"Convert images to PDF",
+			"100% Free - No hidden costs or subscriptions",
+		],
+		benefits: [],
+		useCases: [],
+		faqs: [
+			{
+				question: "Is this PDF Password Protect really free?",
+				answer:
+					"Yes! Our PDF Password Protect is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
+			},
+			{
+				question: "Is my data secure when using PDF Password Protect?",
+				answer:
+					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
+			},
+			{
+				question: "Do I need to create an account to use PDF Password Protect?",
+				answer:
+					"No registration required. You can start using PDF Password Protect immediately without creating an account or providing any personal information.",
+			},
+			{
+				question: "Are there any file size limits for PDF Password Protect?",
+				answer:
+					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
+			},
+			{
+				question: "Can I use PDF Password Protect on mobile devices?",
+				answer:
+					"Yes, PDF Password Protect is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
+			},
+			{
+				question: "What file formats does PDF Password Protect support?",
+				answer:
+					"PDF Password Protect supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
+			},
+		],
+		howTo: {
+			name: "How to Use PDF Password Protect",
+			steps: [
+				{
+					name: "Upload or Input",
+					text: "Provide your file or input data using the upload button or text input field. PDF Password Protect supports drag-and-drop for convenience.",
+					url: "/pdf-protect#step1",
+					position: 1,
+				},
+				{
+					name: "Configure Settings",
+					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+					url: "/pdf-protect#step2",
+					position: 2,
+				},
+				{
+					name: "Process & Download",
+					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+					url: "/pdf-protect#step3",
+					position: 3,
+				},
+			],
+		},
+	};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [

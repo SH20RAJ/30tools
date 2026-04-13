@@ -70,13 +70,13 @@ export default function DataConverter({ fromFormat, toFormat }) {
 				result = JSON.stringify(
 					{
 						note: "XML conversion simulated",
-						content: inputData.substring(0, 50) + "...",
+						content: `${inputData.substring(0, 50)}...`,
 					},
 					null,
 					2,
 				);
 			} else {
-				result = `Converted content from ${from} to ${to}...\n` + inputData;
+				result = `Converted content from ${from} to ${to}...\n${inputData}`;
 			}
 
 			setOutputData(result);

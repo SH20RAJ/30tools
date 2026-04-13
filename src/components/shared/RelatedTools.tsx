@@ -4,7 +4,6 @@ import {
 	FileText,
 	Image,
 	Search,
-	Star,
 	Video,
 	Wrench,
 } from "lucide-react";

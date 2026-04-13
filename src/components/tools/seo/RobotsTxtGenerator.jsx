@@ -398,11 +398,7 @@ Sitemap: https://yoursite.com/sitemap.xml`;
 							/>
 						</div>
 
-						<Button
-							onClick={generateRobotsTxt}
-							className="w-full"
-							size="lg"
-						>
+						<Button onClick={generateRobotsTxt} className="w-full" size="lg">
 							<Robot className="w-4 h-4 mr-2" />
 							Generate Robots.txt
 						</Button>
@@ -446,10 +442,18 @@ Sitemap: https://yoursite.com/sitemap.xml`;
 										Implementation Instructions:
 									</h4>
 									<ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
-										<li className="text-foreground/80">Save the file as "robots.txt" (without quotes)</li>
-										<li className="text-foreground/80">Upload it to your website's root directory</li>
-										<li className="text-foreground/80">Verify it's accessible at yoursite.com/robots.txt</li>
-										<li className="text-foreground/80">Test using Google Search Console</li>
+										<li className="text-foreground/80">
+											Save the file as "robots.txt" (without quotes)
+										</li>
+										<li className="text-foreground/80">
+											Upload it to your website's root directory
+										</li>
+										<li className="text-foreground/80">
+											Verify it's accessible at yoursite.com/robots.txt
+										</li>
+										<li className="text-foreground/80">
+											Test using Google Search Console
+										</li>
 									</ol>
 								</div>
 							</div>

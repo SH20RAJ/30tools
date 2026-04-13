@@ -119,7 +119,7 @@ const categories = [
 
 export default async function ImageToolsPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const featuredTools = imageTools.filter((tool) => tool.featured);
 	const allTools = imageTools;
 
@@ -382,7 +382,7 @@ export default async function ImageToolsPage({ searchParams }) {
 						"@type": "CollectionPage",
 						name: "Image Tools Collection",
 						description:
-								"Free image tools for compression, conversion, resizing, and editing",
+							"Free image tools for compression, conversion, resizing, and editing",
 						url: "https://30tools.com/image-tools",
 						mainEntity: {
 							"@type": "ItemList",

@@ -26,7 +26,7 @@ export default function AIVoiceGeneratorTool() {
 		try {
 			const url = `https://text.pollinations.ai/${encodeURIComponent(text)}?model=openai-audio&voice=nova`;
 			setAudioUrl(url);
-		} catch (e) {
+		} catch (_e) {
 			setError("Failed to generate audio.");
 		}
 		setLoading(false);

@@ -61,13 +61,13 @@ export default function CodeMinifier({ language }) {
 			).toFixed(2);
 
 			setStats({
-				original: (originalSize / 1024).toFixed(2) + " KB",
-				minified: (minifiedSize / 1024).toFixed(2) + " KB",
-				savings: savings + "%",
+				original: `${(originalSize / 1024).toFixed(2)} KB`,
+				minified: `${(minifiedSize / 1024).toFixed(2)} KB`,
+				savings: `${savings}%`,
 			});
 
 			toast.success(`${langLabel} minified successfully!`);
-		} catch (error) {
+		} catch (_error) {
 			toast.error("Minification failed");
 		} finally {
 			setIsProcessing(false);

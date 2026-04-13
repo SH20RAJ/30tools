@@ -3,9 +3,9 @@ import BreadcrumbSchema from "@/components/shared/BreadcrumbSchema";
 import FAQSchema from "@/components/shared/FAQSchema";
 
 export const metadata = {
-  title: "Free All Downloaders Online - No Signup | 30tools",
-  description: "All Downloaders - Coming Soon",
-  robots: { index: true, follow: true },
+	title: "Free All Downloaders Online - No Signup | 30tools",
+	description: "All Downloaders - Coming Soon",
+	robots: { index: true, follow: true },
 };
 
 const DOWNLOADERS = {
@@ -347,7 +347,7 @@ const AdUnit = () => (
 
 export default async function AllDownloadersPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

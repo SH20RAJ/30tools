@@ -1,8 +1,6 @@
 import Link from "next/link";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-
-
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">
 		<ins
@@ -62,98 +60,114 @@ const jsonLdSchemas = {
 };
 
 export const metadata = {
-  title: "Free Reddit Video Downloader Online - No Signup | 30tools",
-  description: "Free Reddit Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your brow",
-  keywords: ["reddit video downloader","reddit video downloader free","reddit video downloader online","reddit video downloader tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+	description:
+		"Free Reddit Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your brow",
+	keywords: [
+		"reddit video downloader",
+		"reddit video downloader free",
+		"reddit video downloader online",
+		"reddit video downloader tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function RedditVideoDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const variant = params.variant;
 	const toolData = {
-  "id": "reddit-video-downloader",
-  "name": "Reddit Video Downloader",
-  "description": "Download Reddit Videos & GIFs in HD Free.",
-  "category": "downloaders",
-  "route": "/reddit-video-downloader",
-  "features": [
-    "HD video downloads with audio",
-    "Support multiple platforms (YouTube, TikTok, Instagram)",
-    "Direct download links",
-    "Multiple format options (MP4, MP3, WEBM)",
-    "Batch download capability",
-    "100% Free - No hidden costs or subscriptions"
-  ],
-  "benefits": [],
-  "useCases": [],
-  "faqs": [
-    {
-      "question": "Is this Reddit Video Downloader really free?",
-      "answer": "Yes! Our Reddit Video Downloader is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
-    },
-    {
-      "question": "Is my data secure when using Reddit Video Downloader?",
-      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
-    },
-    {
-      "question": "Do I need to create an account to use Reddit Video Downloader?",
-      "answer": "No registration required. You can start using Reddit Video Downloader immediately without creating an account or providing any personal information."
-    },
-    {
-      "question": "Are there any file size limits for Reddit Video Downloader?",
-      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
-    },
-    {
-      "question": "Can I use Reddit Video Downloader on mobile devices?",
-      "answer": "Yes, Reddit Video Downloader is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
-    },
-    {
-      "question": "What file formats does Reddit Video Downloader support?",
-      "answer": "Reddit Video Downloader supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use Reddit Video Downloader",
-    "steps": [
-      {
-        "name": "Paste URL",
-        "text": "Copy the video link from your platform and paste it into the input box above.",
-        "url": "/reddit-video-downloader#step1",
-        "position": 1
-      },
-      {
-        "name": "Select Quality",
-        "text": "Choose your preferred video quality and format (MP4, MP3, etc.).",
-        "url": "/reddit-video-downloader#step2",
-        "position": 2
-      },
-      {
-        "name": "Download",
-        "text": "Click the download button to get your file instantly.",
-        "url": "/reddit-video-downloader#step3",
-        "position": 3
-      }
-    ]
-  }
-};
+		id: "reddit-video-downloader",
+		name: "Reddit Video Downloader",
+		description: "Download Reddit Videos & GIFs in HD Free.",
+		category: "downloaders",
+		route: "/reddit-video-downloader",
+		features: [
+			"HD video downloads with audio",
+			"Support multiple platforms (YouTube, TikTok, Instagram)",
+			"Direct download links",
+			"Multiple format options (MP4, MP3, WEBM)",
+			"Batch download capability",
+			"100% Free - No hidden costs or subscriptions",
+		],
+		benefits: [],
+		useCases: [],
+		faqs: [
+			{
+				question: "Is this Reddit Video Downloader really free?",
+				answer:
+					"Yes! Our Reddit Video Downloader is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
+			},
+			{
+				question: "Is my data secure when using Reddit Video Downloader?",
+				answer:
+					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
+			},
+			{
+				question:
+					"Do I need to create an account to use Reddit Video Downloader?",
+				answer:
+					"No registration required. You can start using Reddit Video Downloader immediately without creating an account or providing any personal information.",
+			},
+			{
+				question: "Are there any file size limits for Reddit Video Downloader?",
+				answer:
+					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
+			},
+			{
+				question: "Can I use Reddit Video Downloader on mobile devices?",
+				answer:
+					"Yes, Reddit Video Downloader is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
+			},
+			{
+				question: "What file formats does Reddit Video Downloader support?",
+				answer:
+					"Reddit Video Downloader supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
+			},
+		],
+		howTo: {
+			name: "How to Use Reddit Video Downloader",
+			steps: [
+				{
+					name: "Paste URL",
+					text: "Copy the video link from your platform and paste it into the input box above.",
+					url: "/reddit-video-downloader#step1",
+					position: 1,
+				},
+				{
+					name: "Select Quality",
+					text: "Choose your preferred video quality and format (MP4, MP3, etc.).",
+					url: "/reddit-video-downloader#step2",
+					position: 2,
+				},
+				{
+					name: "Download",
+					text: "Click the download button to get your file instantly.",
+					url: "/reddit-video-downloader#step3",
+					position: 3,
+				},
+			],
+		},
+	};
 
 	if (!toolData) return <div>Tool not found</div>;
 
 	// Dynamic Title based on variant
-	const displayTitle = variant 
-		? variant.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+	const displayTitle = variant
+		? variant
+				.split("-")
+				.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+				.join(" ")
 		: "Reddit Video Downloader";
 	return (
 		<>
@@ -190,9 +204,7 @@ export default async function RedditVideoDownloaderPage({ searchParams }) {
 								</Link>
 							</li>
 							<li>/</li>
-							<li className="text-foreground font-medium">
-								{displayTitle}
-							</li>
+							<li className="text-foreground font-medium">{displayTitle}</li>
 						</ol>
 					</nav>
 					<AdUnit />

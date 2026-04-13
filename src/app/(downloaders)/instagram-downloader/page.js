@@ -17,20 +17,38 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata = {
-  title: "Free Instagram Downloader Online - No Signup | 30tools",
-  description: "Download Instagram videos, reels, stories, and photos in high quality. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and.",
-  keywords: ["instagram downloader","instagram","downloader","instagram-downloader","downloaders","downloaders tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Instagram Downloader Online - No Signup | 30tools",
+	description:
+		"Download Instagram videos, reels, stories, and photos in high quality. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and.",
+	keywords: [
+		"instagram downloader",
+		"instagram",
+		"downloader",
+		"instagram-downloader",
+		"downloaders",
+		"downloaders tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 // JSON-LD structured data for Bing & Google
@@ -157,7 +175,7 @@ const jsonLdSchemas = {
 
 export default async function InstagramDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const features = [
 		{
 			icon: <Video className="w-6 h-6 text-pink-500" />,

@@ -154,20 +154,37 @@ const researchedKeywords = [
 ];
 
 export const metadata = {
-  title: "Free PDF Unlocker Online - No Signup | 30tools",
-  description: "Remove password protection from PDF files. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
-  keywords: ["pdf unlocker","pdf","unlocker","pdf-unlocker","pdf tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free PDF Unlocker Online - No Signup | 30tools",
+	description:
+		"Remove password protection from PDF files. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+	keywords: [
+		"pdf unlocker",
+		"pdf",
+		"unlocker",
+		"pdf-unlocker",
+		"pdf tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLdSchemas = {
@@ -266,7 +283,7 @@ const AdUnit = () => (
 
 export default async function PdfUnlockerPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

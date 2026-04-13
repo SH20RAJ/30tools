@@ -192,7 +192,7 @@ export default function AIImageGeneratorTool() {
 		if (!availableSizes.includes(size)) {
 			setSize(availableSizes[0]);
 		}
-	}, [aspectRatio, availableSizes, size]);
+	}, [availableSizes, size]);
 
 	const saveToHistory = useCallback(
 		(imageData) => {
@@ -315,7 +315,7 @@ export default function AIImageGeneratorTool() {
 			saveToHistory(imageData);
 
 			toast.success("Image generated successfully!");
-		} catch (e) {
+		} catch (_e) {
 			setError("Failed to generate image. Please try again.");
 			toast.error("Generation failed");
 		} finally {

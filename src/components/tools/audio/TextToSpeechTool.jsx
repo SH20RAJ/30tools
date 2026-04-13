@@ -31,10 +31,10 @@ export default function TextToSpeechTool() {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isPaused, setIsPaused] = useState(false);
 	const [voices, setVoices] = useState([]);
-	const [audioBlob, setAudioBlob] = useState(null);
+	const [_audioBlob, _setAudioBlob] = useState(null);
 	const speechRef = useRef(null);
-	const mediaRecorderRef = useRef(null);
-	const audioChunksRef = useRef([]);
+	const _mediaRecorderRef = useRef(null);
+	const _audioChunksRef = useRef([]);
 
 	// Initialize voices when component mounts
 	useEffect(() => {
@@ -58,7 +58,7 @@ export default function TextToSpeechTool() {
 				speechSynthesis.removeEventListener("voiceschanged", loadVoices);
 			}
 		};
-	}, []);
+	}, [selectedVoice]);
 
 	const speakText = () => {
 		if (!text.trim()) {
@@ -108,7 +108,7 @@ export default function TextToSpeechTool() {
 			setIsPaused(false);
 		};
 
-		utterance.onerror = (event) => {
+		utterance.onerror = (_event) => {
 			toast.error("An error occurred during speech synthesis");
 			setIsPlaying(false);
 			setIsPaused(false);
@@ -142,7 +142,7 @@ export default function TextToSpeechTool() {
 			const audioContext = new (
 				window.AudioContext || window.webkitAudioContext
 			)();
-			const destination = audioContext.createMediaStreamDestination();
+			const _destination = audioContext.createMediaStreamDestination();
 
 			// We'll simulate audio generation since direct TTS recording has limitations
 			// In a real implementation, you might use Web Audio API or server-side TTS
@@ -173,11 +173,13 @@ export default function TextToSpeechTool() {
 			<div className="text-center space-y-4">
 				<div className="flex items-center justify-center gap-2 mb-4">
 					<Volume2 className="h-8 w-8 text-primary" />
-					<h1 className="text-3xl font-bold">AI Voice Generator & Text to Speech</h1>
+					<h1 className="text-3xl font-bold">
+						AI Voice Generator & Text to Speech
+					</h1>
 				</div>
 				<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-					Create realistic voiceovers for YouTube, TikTok, and Instagram Shorts. 
-					Our free AI voice generator converts text to natural-sounding speech 
+					Create realistic voiceovers for YouTube, TikTok, and Instagram Shorts.
+					Our free AI voice generator converts text to natural-sounding speech
 					instantly with zero watermark.
 				</p>
 			</div>
@@ -345,10 +347,11 @@ export default function TextToSpeechTool() {
 					</CardHeader>
 					<CardContent className="prose max-w-none">
 						<p>
-							Our free <strong>AI Voice Generator</strong> is designed for content creators who need 
-							realistic text-to-speech for YouTube videos, podcast narration, and e-learning. 
-							Using advanced browser synthesis, you can make text to speech sound human 
-							without expensive subscriptions.
+							Our free <strong>AI Voice Generator</strong> is designed for
+							content creators who need realistic text-to-speech for YouTube
+							videos, podcast narration, and e-learning. Using advanced browser
+							synthesis, you can make text to speech sound human without
+							expensive subscriptions.
 						</p>
 
 						<h3>Key Features:</h3>
@@ -379,11 +382,26 @@ export default function TextToSpeechTool() {
 
 						<h3>Popular Use Cases:</h3>
 						<ul>
-							<li><strong>YouTube Voiceovers:</strong> Create narration for your videos effortlessly.</li>
-							<li><strong>TikTok & Shorts:</strong> Generate engaging audio for short-form content.</li>
-							<li><strong>E-Learning:</strong> Convert educational text into clear spoken audio.</li>
-							<li><strong>Accessibility:</strong> Better reading experience for visually impaired users.</li>
-							<li><strong>Podcast Intro:</strong> Quick and professional voice clips for your show.</li>
+							<li>
+								<strong>YouTube Voiceovers:</strong> Create narration for your
+								videos effortlessly.
+							</li>
+							<li>
+								<strong>TikTok & Shorts:</strong> Generate engaging audio for
+								short-form content.
+							</li>
+							<li>
+								<strong>E-Learning:</strong> Convert educational text into clear
+								spoken audio.
+							</li>
+							<li>
+								<strong>Accessibility:</strong> Better reading experience for
+								visually impaired users.
+							</li>
+							<li>
+								<strong>Podcast Intro:</strong> Quick and professional voice
+								clips for your show.
+							</li>
 						</ul>
 
 						<h3>Voice Settings Explained:</h3>

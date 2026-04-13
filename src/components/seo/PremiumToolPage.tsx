@@ -1,5 +1,6 @@
 "use client";
 
+import * as Tabs from "@radix-ui/react-tabs";
 import {
 	Code,
 	Cpu,
@@ -14,8 +15,7 @@ import {
 	Sparkles,
 	Zap,
 } from "lucide-react";
-import React, { useEffect, useState } from "react";
-import * as Tabs from "@radix-ui/react-tabs";
+import { useEffect, useState } from "react";
 import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
 import { getToolById } from "@/constants/tools-utils";
 import { cn } from "@/lib/utils";
@@ -37,7 +37,9 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 	if (!tool) {
 		return (
 			<div className="flex h-screen items-center justify-center">
-				<div className="animate-pulse text-primary font-medium">Loading premium experience...</div>
+				<div className="animate-pulse text-primary font-medium">
+					Loading premium experience...
+				</div>
 			</div>
 		);
 	}
@@ -50,9 +52,18 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 	];
 
 	const steps = tool.howTo?.steps || [
-		{ name: "Input Data", text: "Provide the necessary information in the tool interface." },
-		{ name: "Configure", text: "Adjust settings to match your specific requirements." },
-		{ name: "Generate", text: "Click the process button to get instant results." },
+		{
+			name: "Input Data",
+			text: "Provide the necessary information in the tool interface.",
+		},
+		{
+			name: "Configure",
+			text: "Adjust settings to match your specific requirements.",
+		},
+		{
+			name: "Generate",
+			text: "Click the process button to get instant results.",
+		},
 	];
 
 	return (
@@ -69,8 +80,8 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 							Power Up Your Workflow with {tool.name}
 						</h2>
 						<p className="text-lg text-muted-foreground leading-relaxed mb-8">
-							{tool.description} Experience the fastest 100% free solution for your digital needs. 
-							Built for professionals, accessed by everyone.
+							{tool.description} Experience the fastest 100% free solution for
+							your digital needs. Built for professionals, accessed by everyone.
 						</p>
 						<div className="flex flex-wrap gap-4">
 							<div className="flex items-center gap-2 text-sm text-foreground font-medium">
@@ -89,7 +100,7 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 					</div>
 					{/* Decorative background element */}
 					<div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/5 blur-3xl" />
-                    <div className="absolute -right-10 -bottom-10 h-48 w-48 rounded-full bg-secondary/20 blur-2xl" />
+					<div className="absolute -right-10 -bottom-10 h-48 w-48 rounded-full bg-secondary/20 blur-2xl" />
 				</section>
 
 				{/* Interaction Tabs */}
@@ -99,7 +110,7 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 							value="tool"
 							className={cn(
 								"group flex items-center gap-2 pb-4 text-sm font-bold transition-all border-b-2 -mb-px whitespace-nowrap outline-none",
-								"data-[state=active]:border-primary data-[state=active]:text-primary text-muted-foreground hover:text-foreground"
+								"data-[state=active]:border-primary data-[state=active]:text-primary text-muted-foreground hover:text-foreground",
 							)}
 						>
 							<Layout className="h-4 w-4" />
@@ -109,7 +120,7 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 							value="docs"
 							className={cn(
 								"group flex items-center gap-2 pb-4 text-sm font-bold transition-all border-b-2 -mb-px whitespace-nowrap outline-none",
-								"data-[state=active]:border-primary data-[state=active]:text-primary text-muted-foreground hover:text-foreground"
+								"data-[state=active]:border-primary data-[state=active]:text-primary text-muted-foreground hover:text-foreground",
 							)}
 						>
 							<FileText className="h-4 w-4" />
@@ -119,7 +130,7 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 							value="faq"
 							className={cn(
 								"group flex items-center gap-2 pb-4 text-sm font-bold transition-all border-b-2 -mb-px whitespace-nowrap outline-none",
-								"data-[state=active]:border-primary data-[state=active]:text-primary text-muted-foreground hover:text-foreground"
+								"data-[state=active]:border-primary data-[state=active]:text-primary text-muted-foreground hover:text-foreground",
 							)}
 						>
 							<HelpCircle className="h-4 w-4" />
@@ -132,10 +143,13 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 							<div className="mx-auto mb-8 flex h-24 w-24 items-center justify-center rounded-3xl bg-primary/10 shadow-inner">
 								<Cpu className="h-12 w-12 text-primary" />
 							</div>
-							<h3 className="text-2xl font-bold mb-4">Initialize {tool.name} Engine</h3>
+							<h3 className="text-2xl font-bold mb-4">
+								Initialize {tool.name} Engine
+							</h3>
 							<p className="mx-auto max-w-md text-muted-foreground mb-8">
-								The tool logic is ready to execute in your local browser environment. 
-								Scroll down to configure specific parameters and start processing.
+								The tool logic is ready to execute in your local browser
+								environment. Scroll down to configure specific parameters and
+								start processing.
 							</p>
 							<div className="flex flex-col sm:flex-row items-center justify-center gap-4">
 								<button className="w-full sm:w-auto rounded-2xl bg-primary px-8 py-4 font-bold text-white shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
@@ -162,8 +176,12 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 												{idx + 1}
 											</div>
 											<div>
-												<h4 className="font-bold text-foreground">{step.name}</h4>
-												<p className="text-sm text-muted-foreground">{step.text}</p>
+												<h4 className="font-bold text-foreground">
+													{step.name}
+												</h4>
+												<p className="text-sm text-muted-foreground">
+													{step.text}
+												</p>
 											</div>
 										</div>
 									))}
@@ -177,7 +195,10 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 								</h3>
 								<div className="grid grid-cols-1 gap-3">
 									{features.map((feature: string, idx: number) => (
-										<div key={idx} className="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-secondary/30">
+										<div
+											key={idx}
+											className="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-secondary/30"
+										>
 											<div className="h-2 w-2 rounded-full bg-primary" />
 											<span className="text-sm font-medium">{feature}</span>
 										</div>
@@ -188,13 +209,15 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 
 						{/* Use Cases Section */}
 						<div className="rounded-3xl border border-border bg-card p-8">
-							<h3 className="text-2xl font-bold mb-6">Real-World Applications</h3>
+							<h3 className="text-2xl font-bold mb-6">
+								Real-World Applications
+							</h3>
 							<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 								{[
 									{ t: "Personal", d: "Quick solutions for daily tasks." },
 									{ t: "Business", d: "Streamline professional workflows." },
 									{ t: "Devs", d: "API-ready logic for development." },
-									{ t: "Education", d: "Resource for students & teachers." }
+									{ t: "Education", d: "Resource for students & teachers." },
 								].map((item, i) => (
 									<div key={i} className="space-y-2">
 										<h4 className="font-bold text-primary">{item.t}</h4>
@@ -208,17 +231,22 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 					<Tabs.Content value="faq" className="outline-none py-4">
 						<div className="bg-muted/10 rounded-3xl p-8 border border-border/50">
 							<p className="text-center text-muted-foreground italic mb-8">
-                                Looking for something else? Our documentation covers 95% of use cases. 
-                                For specific issues, see below.
-                            </p>
+								Looking for something else? Our documentation covers 95% of use
+								cases. For specific issues, see below.
+							</p>
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 								{tool.faqs?.slice(0, 4).map((faq: any, idx: number) => (
-									<div key={idx} className="bg-card p-6 rounded-2xl border border-border">
+									<div
+										key={idx}
+										className="bg-card p-6 rounded-2xl border border-border"
+									>
 										<h4 className="font-bold mb-2 flex items-center gap-2">
-                                            <HelpCircle className="h-4 w-4 text-primary" />
-                                            {faq.question}
-                                        </h4>
-										<p className="text-sm text-muted-foreground leading-relaxed">{faq.answer}</p>
+											<HelpCircle className="h-4 w-4 text-primary" />
+											{faq.question}
+										</h4>
+										<p className="text-sm text-muted-foreground leading-relaxed">
+											{faq.answer}
+										</p>
 									</div>
 								))}
 							</div>
@@ -230,15 +258,21 @@ export default function PremiumToolPage({ toolId }: PremiumToolPageProps) {
 				<div className="flex flex-wrap items-center justify-between gap-8 pt-8 border-t border-border/50">
 					<div className="flex items-center gap-3">
 						<Code className="h-6 w-6 text-muted-foreground" />
-						<span className="text-sm text-muted-foreground font-medium">Open Web Standard</span>
+						<span className="text-sm text-muted-foreground font-medium">
+							Open Web Standard
+						</span>
 					</div>
 					<div className="flex items-center gap-3">
 						<ShieldCheck className="h-6 w-6 text-muted-foreground" />
-						<span className="text-sm text-muted-foreground font-medium">ISO-Grade Privacy</span>
+						<span className="text-sm text-muted-foreground font-medium">
+							ISO-Grade Privacy
+						</span>
 					</div>
 					<div className="flex items-center gap-3">
 						<Download className="h-6 w-6 text-muted-foreground" />
-						<span className="text-sm text-muted-foreground font-medium">No Install Required</span>
+						<span className="text-sm text-muted-foreground font-medium">
+							No Install Required
+						</span>
 					</div>
 				</div>
 			</div>

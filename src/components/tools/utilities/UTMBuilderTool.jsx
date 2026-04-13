@@ -27,7 +27,7 @@ export default function UTMBuilderTool() {
 
 	useEffect(() => {
 		generateUrl();
-	}, [url, source, medium, campaign, term, content]);
+	}, [generateUrl]);
 
 	const generateUrl = () => {
 		if (!url) {
@@ -40,7 +40,7 @@ export default function UTMBuilderTool() {
 			// Validate URL
 			let validUrl = url;
 			if (!validUrl.match(/^https?:\/\//)) {
-				validUrl = "https://" + validUrl;
+				validUrl = `https://${validUrl}`;
 			}
 			new URL(validUrl); // Throws if invalid
 
@@ -53,7 +53,7 @@ export default function UTMBuilderTool() {
 
 			setGeneratedUrl(newUrlObj.toString());
 			setError("");
-		} catch (e) {
+		} catch (_e) {
 			setError("Please enter a valid URL (e.g., website.com)");
 			setGeneratedUrl("");
 		}

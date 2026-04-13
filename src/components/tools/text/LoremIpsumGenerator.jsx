@@ -25,12 +25,12 @@ export default function LoremIpsumGenerator() {
 			for (let i = 0; i < count; i++) {
 				// Shuffle sentences to make random paragraphs
 				const shuffled = [...sentences].sort(() => 0.5 - Math.random());
-				result.push(shuffled.slice(0, 5).join(". ") + ".");
+				result.push(`${shuffled.slice(0, 5).join(". ")}.`);
 			}
 			setOutput(result.join("\n\n"));
 		} else if (type === "sentences") {
 			for (let i = 0; i < count; i++) {
-				result.push(sentences[i % sentences.length] + ".");
+				result.push(`${sentences[i % sentences.length]}.`);
 			}
 			setOutput(result.join(" "));
 		} else if (type === "words") {

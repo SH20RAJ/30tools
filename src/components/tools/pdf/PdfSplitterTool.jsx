@@ -49,7 +49,7 @@ export default function PdfSplitterTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const handleFileSelect = async (event) => {
@@ -111,8 +111,8 @@ export default function PdfSplitterTool() {
 					// Parse individual pages like "1, 3, 5, 7"
 					const pages = individualPages
 						.split(",")
-						.map((p) => parseInt(p.trim()))
-						.filter((p) => !isNaN(p));
+						.map((p) => parseInt(p.trim(), 10))
+						.filter((p) => !Number.isNaN(p));
 					splitCount = pages.length;
 
 					for (let i = 0; i < splitCount; i++) {
@@ -369,7 +369,7 @@ export default function PdfSplitterTool() {
 										max={pageCount}
 										value={intervalPages}
 										onChange={(e) =>
-											setIntervalPages(parseInt(e.target.value) || 1)
+											setIntervalPages(parseInt(e.target.value, 10) || 1)
 										}
 										className="mt-2"
 									/>

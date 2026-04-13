@@ -14,92 +14,116 @@ import PhotoEnhancerTool from "@/components/tools/image/PhotoEnhancerTool";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-  title: "Free Photo Enhancer Online - No Signup | 30tools",
-  description: "Enhance photo quality with AI-powered image enhancement. Fix blur, reduce noise, and upscale images instantly. 100% free, no signup required, fast and secure.",
-  keywords: ["photo enhancer","photo","enhancer","photo-enhancer","image","image tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Photo Enhancer Online - No Signup | 30tools",
+	description:
+		"Enhance photo quality with AI-powered image enhancement. Fix blur, reduce noise, and upscale images instantly. 100% free, no signup required, fast and secure.",
+	keywords: [
+		"photo enhancer",
+		"photo",
+		"enhancer",
+		"photo-enhancer",
+		"image",
+		"image tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function PhotoEnhancerPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-  "id": "photo-enhancer",
-  "name": "Photo Enhancer",
-  "description": "Enhance photo quality with AI-powered image enhancement",
-  "category": "image",
-  "route": "/photo-enhancer",
-  "features": [
-    "Supports JPEG, PNG, WebP, GIF, BMP formats",
-    "Batch process multiple images",
-    "High-quality output preservation",
-    "Adjustable quality and compression settings",
-    "100% Free - No hidden costs or subscriptions",
-    "No Registration Required - Start immediately"
-  ],
-  "benefits": [],
-  "useCases": [],
-  "faqs": [
-    {
-      "question": "Is this Photo Enhancer really free?",
-      "answer": "Yes! Our Photo Enhancer is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
-    },
-    {
-      "question": "Is my data secure when using Photo Enhancer?",
-      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
-    },
-    {
-      "question": "Do I need to create an account to use Photo Enhancer?",
-      "answer": "No registration required. You can start using Photo Enhancer immediately without creating an account or providing any personal information."
-    },
-    {
-      "question": "Are there any file size limits for Photo Enhancer?",
-      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
-    },
-    {
-      "question": "Can I use Photo Enhancer on mobile devices?",
-      "answer": "Yes, Photo Enhancer is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
-    },
-    {
-      "question": "What file formats does Photo Enhancer support?",
-      "answer": "Photo Enhancer supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use Photo Enhancer",
-    "steps": [
-      {
-        "name": "Upload or Input",
-        "text": "Provide your file or input data using the upload button or text input field. Photo Enhancer supports drag-and-drop for convenience.",
-        "url": "/photo-enhancer#step1",
-        "position": 1
-      },
-      {
-        "name": "Configure Settings",
-        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-        "url": "/photo-enhancer#step2",
-        "position": 2
-      },
-      {
-        "name": "Process & Download",
-        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-        "url": "/photo-enhancer#step3",
-        "position": 3
-      }
-    ]
-  }
-};
+		id: "photo-enhancer",
+		name: "Photo Enhancer",
+		description: "Enhance photo quality with AI-powered image enhancement",
+		category: "image",
+		route: "/photo-enhancer",
+		features: [
+			"Supports JPEG, PNG, WebP, GIF, BMP formats",
+			"Batch process multiple images",
+			"High-quality output preservation",
+			"Adjustable quality and compression settings",
+			"100% Free - No hidden costs or subscriptions",
+			"No Registration Required - Start immediately",
+		],
+		benefits: [],
+		useCases: [],
+		faqs: [
+			{
+				question: "Is this Photo Enhancer really free?",
+				answer:
+					"Yes! Our Photo Enhancer is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
+			},
+			{
+				question: "Is my data secure when using Photo Enhancer?",
+				answer:
+					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
+			},
+			{
+				question: "Do I need to create an account to use Photo Enhancer?",
+				answer:
+					"No registration required. You can start using Photo Enhancer immediately without creating an account or providing any personal information.",
+			},
+			{
+				question: "Are there any file size limits for Photo Enhancer?",
+				answer:
+					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
+			},
+			{
+				question: "Can I use Photo Enhancer on mobile devices?",
+				answer:
+					"Yes, Photo Enhancer is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
+			},
+			{
+				question: "What file formats does Photo Enhancer support?",
+				answer:
+					"Photo Enhancer supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
+			},
+		],
+		howTo: {
+			name: "How to Use Photo Enhancer",
+			steps: [
+				{
+					name: "Upload or Input",
+					text: "Provide your file or input data using the upload button or text input field. Photo Enhancer supports drag-and-drop for convenience.",
+					url: "/photo-enhancer#step1",
+					position: 1,
+				},
+				{
+					name: "Configure Settings",
+					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+					url: "/photo-enhancer#step2",
+					position: 2,
+				},
+				{
+					name: "Process & Download",
+					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+					url: "/photo-enhancer#step3",
+					position: 3,
+				},
+			],
+		},
+	};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [
@@ -184,9 +208,9 @@ export default async function PhotoEnhancerPage({ searchParams }) {
 						Free AI Photo Enhancer - Sharpen, Denoise & Upscale
 					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Transform low-quality photos into high-resolution masterpieces. Our AI
-						automatically fixes blur, reduces noise, restores color, and upscales
-						images in seconds.
+						Transform low-quality photos into high-resolution masterpieces. Our
+						AI automatically fixes blur, reduces noise, restores color, and
+						upscales images in seconds.
 					</p>
 
 					<QuickActions
@@ -196,8 +220,6 @@ export default async function PhotoEnhancerPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
-
-
 
 				{/* Tool Interface */}
 				<div className="mb-12">

@@ -2,20 +2,26 @@ import VisualSitemapTool from "@/components/tools/seo/VisualSitemapTool";
 import toolsData from "@/constants/tools.json";
 
 export const metadata = {
-  title: "Free Visual Sitemap Generator Online - No Signup | 30tools",
-  description: "SEO tools: Visual Sitemap Generator. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your bro",
-  keywords: ["visual sitemap generator","visual sitemap generator free","visual sitemap generator online","visual sitemap generator tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Visual Sitemap Generator Online - No Signup | 30tools",
+	description:
+		"SEO tools: Visual Sitemap Generator. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your bro",
+	keywords: [
+		"visual sitemap generator",
+		"visual sitemap generator free",
+		"visual sitemap generator online",
+		"visual sitemap generator tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLd = generateToolJsonLd("visual-sitemap", "seo", {
@@ -26,8 +32,8 @@ const jsonLd = generateToolJsonLd("visual-sitemap", "seo", {
 
 export default async function VisualSitemapPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
-	const tool = toolsData.categories.seo.tools.find(
+	const _lang = params.lang || "en";
+	const _tool = toolsData.categories.seo.tools.find(
 		(t) => t.id === "visual-sitemap",
 	);
 

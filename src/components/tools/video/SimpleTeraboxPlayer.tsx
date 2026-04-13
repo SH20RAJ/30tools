@@ -52,7 +52,7 @@ export function SimpleTeraboxPlayer() {
 				url.match(/\/s\/([a-zA-Z0-9_-]+)/) ||
 				url.match(/surl=([a-zA-Z0-9_-]+)/);
 
-			if (match && match[1]) {
+			if (match?.[1]) {
 				setEmbedId(match[1]);
 			} else {
 				// Simple heuristic: if it looks like an ID (alphanumeric, long enough), try using it directly
@@ -65,7 +65,7 @@ export function SimpleTeraboxPlayer() {
 					);
 				}
 			}
-		} catch (err) {
+		} catch (_err) {
 			setError("An error occurred while processing the URL.");
 		}
 	};

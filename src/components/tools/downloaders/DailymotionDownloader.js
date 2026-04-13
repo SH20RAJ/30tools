@@ -5,7 +5,6 @@ import {
 	BookOpen,
 	CheckCircle,
 	Download,
-	FileText,
 	Globe,
 	HelpCircle,
 	Link,
@@ -410,9 +409,7 @@ export default function DailymotionDownloader() {
 					</div>
 
 					<div className="space-y-3">
-						<h4 className="font-semibold">
-							Can I download on my phone?
-						</h4>
+						<h4 className="font-semibold">Can I download on my phone?</h4>
 						<p className="text-sm text-muted-foreground">
 							Absolutely! Our tool works on all devices including iPhone,
 							Android, tablets, and desktop computers.
@@ -443,7 +440,9 @@ export default function DailymotionDownloader() {
 											/>
 										))}
 									</div>
-									<span className="text-sm font-medium">Pierre D., Journalist</span>
+									<span className="text-sm font-medium">
+										Pierre D., Journalist
+									</span>
 								</div>
 								<p className="text-sm text-muted-foreground">
 									"Great for downloading news clips and interviews from
@@ -597,20 +596,20 @@ export default function DailymotionDownloader() {
 						</p>
 						<ul>
 							<li>
-								<strong>Respect Copyright:</strong> Download only for personal use
-								or with permission
+								<strong>Respect Copyright:</strong> Download only for personal
+								use or with permission
 							</li>
 							<li>
-								<strong>Choose Best Quality:</strong> Select the highest available
-								resolution
+								<strong>Choose Best Quality:</strong> Select the highest
+								available resolution
 							</li>
 							<li>
 								<strong>Check Video Availability:</strong> Some videos may be
 								region-restricted
 							</li>
 							<li>
-								<strong>Use for Education:</strong> Great for saving tutorials and
-								documentaries
+								<strong>Use for Education:</strong> Great for saving tutorials
+								and documentaries
 							</li>
 						</ul>
 
@@ -633,7 +632,10 @@ export default function DailymotionDownloader() {
 						</div>
 
 						<h3>Legal Considerations</h3>
-						<p>Always respect copyright laws and creator rights when downloading content from Dailymotion.</p>
+						<p>
+							Always respect copyright laws and creator rights when downloading
+							content from Dailymotion.
+						</p>
 					</CardContent>
 				</Card>
 			</div>

@@ -2,9 +2,9 @@ import Link from "next/link";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Free Reddit Video Downloader Online - No Signup | 30tools",
-  description: "Download Reddit videos with audio in HD quality",
-  robots: { index: true, follow: true },
+	title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+	description: "Download Reddit videos with audio in HD quality",
+	robots: { index: true, follow: true },
 };
 
 const AdUnit = () => (
@@ -67,7 +67,7 @@ const jsonLdSchemas = {
 
 export default async function RedditDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

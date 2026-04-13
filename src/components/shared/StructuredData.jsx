@@ -17,7 +17,8 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 		const categoryDetails =
 			categoryLookup[tool.category] || categoryLookup[tool.categoryKey] || null;
 		const toolUrl = `${BASE_URL}${tool.route}`;
-		const toolCategoryName = categoryDetails?.name || tool.categoryName || "Utilities";
+		const toolCategoryName =
+			categoryDetails?.name || tool.categoryName || "Utilities";
 		const toolCategoryUrl = `${BASE_URL}/${categoryDetails?.slug || tool.category || "utilities"}`;
 
 		const toolStructuredData = {
@@ -39,7 +40,9 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 				name: "30tools",
 				url: BASE_URL,
 			},
-			featureList: tool.features ? tool.features.join(", ") : "Free online tool",
+			featureList: tool.features
+				? tool.features.join(", ")
+				: "Free online tool",
 		};
 
 		const faqData = tool.faqs

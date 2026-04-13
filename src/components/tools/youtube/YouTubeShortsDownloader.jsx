@@ -92,7 +92,7 @@ export default function YouTubeShortsDownloader() {
 
 			const data = await res.json();
 
-			if (!data.api || !data.api.id) {
+			if (!data.api?.id) {
 				throw new Error("Invalid video URL or API error");
 			}
 
@@ -239,7 +239,7 @@ export default function YouTubeShortsDownloader() {
 		}
 	};
 
-	const handleDownload = async (downloadUrl, filename, formatType) => {
+	const handleDownload = async (downloadUrl, _filename, _formatType) => {
 		if (!downloadUrl) return;
 
 		// Show a toast to indicate processing
@@ -257,7 +257,7 @@ export default function YouTubeShortsDownloader() {
 
 			const data = await res.json();
 
-			if (data.api && data.api.fileUrl) {
+			if (data.api?.fileUrl) {
 				toast.dismiss(toastId);
 				toast.success("Download starting...");
 
@@ -398,8 +398,7 @@ export default function YouTubeShortsDownloader() {
 											</Badge>
 										</div>
 										<p className="text-sm text-muted-foreground">
-											{shortsData.description &&
-												shortsData.description.slice(0, 150)}
+											{shortsData.description?.slice(0, 150)}
 										</p>
 									</div>
 								</div>

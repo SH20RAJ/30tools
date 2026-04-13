@@ -3,8 +3,7 @@ import SearchPageServer from "./SearchPageServer";
 
 const TOOL_COUNT = getAllTools().length;
 
-
-	return {
+return {
 		title,
 		description,
 		keywords:
@@ -20,6 +19,13 @@ const TOOL_COUNT = getAllTools().length;
 		},
 	};
 }
+
+export const metadata = {
+	title: "Free Search Online - No Signup | 30tools",
+	description:
+		"Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+	robots: { index: true, follow: true },
+};
 
 export default async function SearchPage({ searchParams }) {
 	// Await searchParams to fix Next.js 15 async APIs
@@ -59,8 +65,7 @@ export default async function SearchPage({ searchParams }) {
 		"@context": "https://schema.org",
 		"@type": "WebPage",
 		name: `Search ${TOOL_COUNT}+ Free Online Tools | 30tools`,
-		description:
-			`Search ${TOOL_COUNT}+ free online tools. Find image compressors, video converters, PDF tools, SEO tools, developer utilities, and more.`,
+		description: `Search ${TOOL_COUNT}+ free online tools. Find image compressors, video converters, PDF tools, SEO tools, developer utilities, and more.`,
 		url: "https://30tools.com/search",
 		potentialAction: {
 			"@type": "SearchAction",

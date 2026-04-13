@@ -55,15 +55,17 @@ export default function PdfSplitter() {
 			for (const part of parts) {
 				const trimmed = part.trim();
 				if (trimmed.includes("-")) {
-					const [start, end] = trimmed.split("-").map((num) => parseInt(num));
-					if (!isNaN(start) && !isNaN(end)) {
+					const [start, end] = trimmed
+						.split("-")
+						.map((num) => parseInt(num, 10));
+					if (!Number.isNaN(start) && !Number.isNaN(end)) {
 						for (let i = start; i <= end; i++) {
 							if (i >= 1 && i <= totalPages) pagesToKeep.add(i - 1); // 0-indexed
 						}
 					}
 				} else {
-					const pageNum = parseInt(trimmed);
-					if (!isNaN(pageNum) && pageNum >= 1 && pageNum <= totalPages) {
+					const pageNum = parseInt(trimmed, 10);
+					if (!Number.isNaN(pageNum) && pageNum >= 1 && pageNum <= totalPages) {
 						pagesToKeep.add(pageNum - 1);
 					}
 				}
@@ -84,7 +86,7 @@ export default function PdfSplitter() {
 			toast.success("PDF split successfully!");
 		} catch (error) {
 			console.error(error);
-			toast.error("Failed to split PDF. " + error.message);
+			toast.error(`Failed to split PDF. ${error.message}`);
 		} finally {
 			setIsProcessing(false);
 		}

@@ -10,7 +10,7 @@ export async function POST(req) {
 
 		try {
 			new URL(url);
-		} catch (e) {
+		} catch (_e) {
 			return NextResponse.json(
 				{ error: "Invalid URL format" },
 				{ status: 400 },

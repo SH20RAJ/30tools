@@ -104,9 +104,9 @@ export default function LoremIpsumGeneratorTool() {
 			}
 			let text = result.join(" ");
 			if (startWithLorem && !text.toLowerCase().startsWith("lorem ipsum")) {
-				text = "Lorem ipsum " + text;
+				text = `Lorem ipsum ${text}`;
 			}
-			setGeneratedText(capitalize(text) + ".");
+			setGeneratedText(`${capitalize(text)}.`);
 			return;
 		}
 
@@ -122,7 +122,7 @@ export default function LoremIpsumGeneratorTool() {
 				const word = loremWords[Math.floor(Math.random() * loremWords.length)];
 				sentenceWords.push(word);
 			}
-			const sentenceStr = capitalize(sentenceWords.join(" ")) + ".";
+			const sentenceStr = `${capitalize(sentenceWords.join(" "))}.`;
 			sentences.push(sentenceStr);
 		}
 
@@ -130,7 +130,7 @@ export default function LoremIpsumGeneratorTool() {
 			let text = sentences.join(" ");
 			if (startWithLorem && !text.toLowerCase().startsWith("lorem ipsum")) {
 				// Force replace first two words
-				text = "Lorem ipsum " + text.split(" ").slice(2).join(" ");
+				text = `Lorem ipsum ${text.split(" ").slice(2).join(" ")}`;
 			}
 			setGeneratedText(text);
 		} else {
@@ -141,7 +141,7 @@ export default function LoremIpsumGeneratorTool() {
 			}
 			let text = paras.join("\n\n");
 			if (startWithLorem && !text.toLowerCase().startsWith("lorem ipsum")) {
-				text = "Lorem ipsum " + text.split(" ").slice(2).join(" ");
+				text = `Lorem ipsum ${text.split(" ").slice(2).join(" ")}`;
 			}
 			setGeneratedText(text);
 		}
@@ -151,7 +151,7 @@ export default function LoremIpsumGeneratorTool() {
 
 	React.useEffect(() => {
 		generate();
-	}, [count, type, startWithLorem]);
+	}, [generate]);
 
 	const copyToClipboard = () => {
 		if (!generatedText) return;

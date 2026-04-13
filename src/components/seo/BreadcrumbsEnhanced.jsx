@@ -17,7 +17,10 @@ import { generateBreadcrumbSchema } from "@/constants/seo/advanced-metadata";
  * @param {Breadcrumb[]} [props.customBreadcrumbs]
  * @param {string} [props.homeText="Home"]
  */
-export default function BreadcrumbsEnhanced({ customBreadcrumbs = [], homeText = "Home" }) {
+export default function BreadcrumbsEnhanced({
+	customBreadcrumbs = [],
+	homeText = "Home",
+}) {
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
 	const lang = searchParams.get("lang") || "en";
@@ -26,10 +29,13 @@ export default function BreadcrumbsEnhanced({ customBreadcrumbs = [], homeText =
 	// Generate breadcrumbs from URL path if custom ones aren't provided
 	const generateBreadcrumbs = () => {
 		if (customBreadcrumbs.length > 0) {
-			return [{ name: homeText, url: `/${queryString}` }, ...customBreadcrumbs.map(cb => ({
-				...cb,
-				url: `${cb.url}${queryString}`
-			}))];
+			return [
+				{ name: homeText, url: `/${queryString}` },
+				...customBreadcrumbs.map((cb) => ({
+					...cb,
+					url: `${cb.url}${queryString}`,
+				})),
+			];
 		}
 
 		const pathSegments = pathname.split("/").filter(Boolean);
@@ -121,7 +127,7 @@ export function RichBreadcrumbs({
 	className = "",
 	variant = "default", // "default", "minimal", "pills"
 }) {
-	const pathname = usePathname();
+	const _pathname = usePathname();
 
 	const processedBreadcrumbs = showHome
 		? [{ name: "Home", url: "/", icon: Home }, ...breadcrumbs]
@@ -149,7 +155,6 @@ export function RichBreadcrumbs({
 			<nav
 				aria-label="Breadcrumb"
 				className={`flex items-center space-x-1 text-sm text-muted-foreground mb-6 ${variantClasses[variant]} ${className}`}
-				role="navigation"
 			>
 				<ol className="flex items-center space-x-1 overflow-x-auto scrollbar-hide">
 					{processedBreadcrumbs.map((crumb, index) => {

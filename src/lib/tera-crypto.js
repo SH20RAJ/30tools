@@ -25,7 +25,7 @@ function md5(t) {
 	function a(t) {
 		let n = "";
 		for (let r = 0; r < 4; r++) {
-			n += ("0" + ((t >>> (8 * r)) & 255).toString(16)).slice(-2);
+			n += `0${((t >>> (8 * r)) & 255).toString(16)}`.slice(-2);
 		}
 		return n;
 	}
@@ -171,14 +171,14 @@ export async function decryptSecureCookie(t) {
 					w = new TextDecoder().decode(d);
 				console.log("Decrypted successfully with offset:", t);
 				return JSON.parse(w);
-			} catch (t) {}
+			} catch (_t) {}
 		console.error("Decryption failed after trying all time offsets.");
 		return JSON.parse(atob(t));
 	} catch (n) {
 		console.error("Decryption error:", n);
 		try {
 			return JSON.parse(atob(t));
-		} catch (t) {
+		} catch (_t) {
 			return null;
 		}
 	}

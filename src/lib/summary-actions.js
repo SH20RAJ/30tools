@@ -42,7 +42,7 @@ export async function generateYouTubeSummary(url, options = {}) {
 		console.log("📊 Subtitle stats:", {
 			segments: subtitleData.segmentCount,
 			words: subtitleData.wordCount,
-			duration: Math.round(subtitleData.duration) + "s",
+			duration: `${Math.round(subtitleData.duration)}s`,
 		});
 
 		// Step 2: Prepare content for AI processing

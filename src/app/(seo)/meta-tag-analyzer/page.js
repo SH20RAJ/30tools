@@ -1,20 +1,26 @@
 import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
 
 export const metadata = {
-  title: "Free Meta Tag Analyzer Online - No Signup | 30tools",
-  description: "SEO tools: Meta Tag Analyzer. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your browser fo",
-  keywords: ["meta tag analyzer","meta tag analyzer free","meta tag analyzer online","meta tag analyzer tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Meta Tag Analyzer Online - No Signup | 30tools",
+	description:
+		"SEO tools: Meta Tag Analyzer. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your browser fo",
+	keywords: [
+		"meta tag analyzer",
+		"meta tag analyzer free",
+		"meta tag analyzer online",
+		"meta tag analyzer tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLd = generateToolJsonLd("meta-tag-analyzer", "seo", {
@@ -25,7 +31,7 @@ const jsonLd = generateToolJsonLd("meta-tag-analyzer", "seo", {
 
 export default async function MetaTagAnalyzerPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-16 md:py-24">
 			<script

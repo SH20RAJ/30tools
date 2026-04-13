@@ -2,20 +2,39 @@ import Link from "next/link";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Free Instagram Image Downloader Online - No Signup | 30tools",
-  description: "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no.",
-  keywords: ["instagram image downloader","instagram","image","downloader","instagram-image-downloader","downloaders","downloaders tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Instagram Image Downloader Online - No Signup | 30tools",
+	description:
+		"Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no.",
+	keywords: [
+		"instagram image downloader",
+		"instagram",
+		"image",
+		"downloader",
+		"instagram-image-downloader",
+		"downloaders",
+		"downloaders tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const AdUnit = () => (
@@ -78,7 +97,7 @@ const jsonLdSchemas = {
 
 export default async function InstagramImageDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

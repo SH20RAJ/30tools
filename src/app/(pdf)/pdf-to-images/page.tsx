@@ -7,8 +7,14 @@ export const metadata: Metadata = {
 		"Free online PDF to Images. Fast, secure, and easy to use with no registration required.",
 };
 
+export const metadata = {
+	title: "Free Pdf To Images Online - No Signup | 30tools",
+	description: "Free Pdf To Images online tool. Fast and secure.",
+	robots: { index: true, follow: true },
+};
+
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return <ComingSoon toolName="PDF to Images" />;
 }

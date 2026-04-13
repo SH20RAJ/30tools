@@ -19,20 +19,39 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata = {
-  title: "Free TikTok Video Downloader Online - No Signup | 30tools",
-  description: "Download TikTok videos without watermark for free in HD quality. Our 2026 updated TikTok saver allows you to save videos to your camera roll or PC instantly..",
-  keywords: ["tiktok video downloader","tiktok","video","downloader","tiktok-video-downloader","downloaders","downloaders tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free TikTok Video Downloader Online - No Signup | 30tools",
+	description:
+		"Download TikTok videos without watermark for free in HD quality. Our 2026 updated TikTok saver allows you to save videos to your camera roll or PC instantly..",
+	keywords: [
+		"tiktok video downloader",
+		"tiktok",
+		"video",
+		"downloader",
+		"tiktok-video-downloader",
+		"downloaders",
+		"downloaders tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 // Comprehensive JSON-LD schemas

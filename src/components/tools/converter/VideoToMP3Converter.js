@@ -57,7 +57,7 @@ export default function VideoToMP3Converter() {
 				originalFile: file.name,
 				duration: "2:45",
 				format: file.type,
-				outputQuality: selectedQuality + "kbps",
+				outputQuality: `${selectedQuality}kbps`,
 				outputSize: fileSizeMap[selectedQuality],
 				downloadUrl: "#",
 			});

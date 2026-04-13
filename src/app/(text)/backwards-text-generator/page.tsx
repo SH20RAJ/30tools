@@ -1,29 +1,35 @@
-import type { Metadata } from "next";
+import ToolContent from "@/components/shared/ToolContent";
 import ToolLayout from "@/components/shared/ToolLayout";
 import BackwardsTextGenerator from "@/components/tools/text/BackwardsTextGenerator";
 import { getToolById } from "@/constants/tools-utils";
-import ToolContent from "@/components/shared/ToolContent";
 
 export const metadata = {
-  title: "Free Backwards Text Generator Online - No Signup | 30tools",
-  description: "Use our free Backwards Text Generator to reverse text, words, or letters instantly. Perfect for Instagram bios, Discord, and social media. 100% secure & private.",
-  keywords: ["backwards text generator","reverse text online","mirror text generator","flip text generator","backward text online"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Backwards Text Generator Online - No Signup | 30tools",
+	description:
+		"Use our free Backwards Text Generator to reverse text, words, or letters instantly. Perfect for Instagram bios, Discord, and social media. 100% secure & private.",
+	keywords: [
+		"backwards text generator",
+		"reverse text online",
+		"mirror text generator",
+		"flip text generator",
+		"backward text online",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default function ToolPage() {
 	const toolData = getToolById("backwards-text-generator");
-	
+
 	if (!toolData) return null;
 
 	return (

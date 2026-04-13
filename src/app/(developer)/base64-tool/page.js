@@ -1,8 +1,7 @@
-
 export const metadata = {
-  title: "Free Base64 Tool Online - No Signup | 30tools",
-  description: "Free Base64 Tool online tool. Fast and secure.",
-  robots: { index: true, follow: true },
+	title: "Free Base64 Tool Online - No Signup | 30tools",
+	description: "Free Base64 Tool online tool. Fast and secure.",
+	robots: { index: true, follow: true },
 };
 
 export default async function Base64Page({ searchParams }) {

@@ -10,50 +10,12 @@ export async function generateStaticParams() {
 	}));
 }
 
-
-	const title = `Test ${tool.name} API Key | API Key Tester`;
-	const description = `Securely test your ${tool.name} API key online. ${tool.description}. Free developer tool to validate ${tool.name} credentials.`;
-	const url = `https://30tools.com/api-key-tester/${tool.id}`;
-
-	return {
-		title,
-		description,
-		keywords: [
-			"api key tester",
-			"test api key",
-			"validate api key",
-			"free api tester",
-			"developer tools",
-			tool.name,
-			`${tool.name} api`,
-			`${tool.name} api key`,
-			"api key validator",
-			"online api testing",
-			"secure api test",
-			"30tools",
-			"free online tools",
-			"developer utilities",
-			"api testing tool",
-		],
-		alternates: {
-			canonical: url,
-		},
-		openGraph: {
-			title,
-			description,
-			url,
-			siteName: "30tools",
-			images: [{ url: "/og-image.jpg" }],
-			type: "website",
-		},
-		twitter: {
-			card: "summary_large_image",
-			title,
-			description,
-			images: ["/og-image.jpg"],
-		},
-	};
-}
+export const metadata = {
+	title: "API Key Tester - Securely Verify Your API Credentials | 30tools",
+	description:
+		"Securely test and validate your API keys for various services including OpenAI, Anthropic, Google Gemini, Stripe, and more. Free developer tool by 30tools.",
+	robots: { index: true, follow: true },
+};
 
 export default async function ApiKeyToolPage({ params }) {
 	const resolvedParams = await params;

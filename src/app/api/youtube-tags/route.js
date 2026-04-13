@@ -39,7 +39,7 @@ export async function GET(request) {
 		const keywordsMatch = html.match(
 			/<meta\s+name="keywords"\s+content="([^"]+)"/i,
 		);
-		if (keywordsMatch && keywordsMatch[1]) {
+		if (keywordsMatch?.[1]) {
 			tags = keywordsMatch[1].split(",").map((tag) => tag.trim());
 		}
 
@@ -47,7 +47,7 @@ export async function GET(request) {
 		if (tags.length === 0) {
 			const ytInitialDataMatch = html.match(/var ytInitialData = ({.+?});/);
 
-			if (ytInitialDataMatch && ytInitialDataMatch[1]) {
+			if (ytInitialDataMatch?.[1]) {
 				try {
 					const ytData = JSON.parse(ytInitialDataMatch[1]);
 
@@ -82,7 +82,7 @@ export async function GET(request) {
 						}
 						break;
 					}
-				} catch (e) {
+				} catch (_e) {
 					// Continue to next match
 				}
 			}
@@ -91,7 +91,7 @@ export async function GET(request) {
 		// Extract title as fallback
 		let title = "";
 		const titleMatch = html.match(/<title>(.+?)<\/title>/i);
-		if (titleMatch && titleMatch[1]) {
+		if (titleMatch?.[1]) {
 			title = titleMatch[1].replace(" - YouTube", "").trim();
 		}
 

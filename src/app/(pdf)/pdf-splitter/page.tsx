@@ -1,26 +1,31 @@
-import type { Metadata } from "next";
 import PdfSplitter from "@/components/tools/pdf/PdfSplitter";
 
 export const metadata = {
-  title: "Free PDF Splitter Online - No Signup | 30tools",
-  description: "Professional PDF tools: PDF Splitter. Merge, split, compress, convert. 100% free, no watermarks, works on all devices. All processing happens locally in your br",
-  keywords: ["pdf splitter","pdf splitter free","pdf splitter online","pdf splitter tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free PDF Splitter Online - No Signup | 30tools",
+	description:
+		"Professional PDF tools: PDF Splitter. Merge, split, compress, convert. 100% free, no watermarks, works on all devices. All processing happens locally in your br",
+	keywords: [
+		"pdf splitter",
+		"pdf splitter free",
+		"pdf splitter online",
+		"pdf splitter tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-12">
 			<div className="max-w-4xl mx-auto text-center mb-8">

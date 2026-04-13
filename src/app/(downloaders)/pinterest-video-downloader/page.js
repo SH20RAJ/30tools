@@ -2,20 +2,26 @@ import Link from "next/link";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
 export const metadata = {
-  title: "Free Pinterest Video Downloader Online - No Signup | 30tools",
-  description: "Free Pinterest Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your b",
-  keywords: ["pinterest video downloader","pinterest video downloader free","pinterest video downloader online","pinterest video downloader tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Pinterest Video Downloader Online - No Signup | 30tools",
+	description:
+		"Free Pinterest Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your b",
+	keywords: [
+		"pinterest video downloader",
+		"pinterest video downloader free",
+		"pinterest video downloader online",
+		"pinterest video downloader tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const AdUnit = () => (

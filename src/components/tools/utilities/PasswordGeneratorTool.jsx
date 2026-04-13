@@ -27,7 +27,7 @@ export default function PasswordGeneratorTool() {
 
 	useEffect(() => {
 		generatePassword();
-	}, [length, useUppercase, useLowercase, useNumbers, useSymbols]);
+	}, [generatePassword]);
 
 	const generatePassword = () => {
 		let charset = "";

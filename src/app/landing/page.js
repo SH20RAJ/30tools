@@ -127,7 +127,7 @@ import toolsData from "@/constants/tools.json";
 
 export default async function LandingPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const iconMap = {
 		ImageIcon,
 		VideoIcon,

@@ -1,8 +1,7 @@
 import Link from "next/link";
 import InstagramReelDownloader from "@/components/tools/downloaders/InstagramReelDownloader";
 
-
-	return {
+return {
 		...baseMetadata,
 		title: "Instagram Reel Downloader: Save Reels in HD (Free & Fast)",
 		description:
@@ -125,20 +124,41 @@ const jsonLdSchemas = {
 };
 
 export const metadata = {
-  title: "Free Instagram Reel Downloader Online - No Signup | 30tools",
-  description: "Download Instagram Reels in HD 1080p with original audio. No watermark, no signup, 100% free. Save IG Reels to your gallery instantly. Try the best downloader now!",
-  keywords: ["instagram reel downloader","download instagram reels","insta reel download","reels downloader","save instagram reels","instagram reel video download","instagram reel link download","save ig reels without watermark","instagram reel downloader with audio","download reels from instagram","best instagram reel downloader 2026","free","online","tool","30tools","no signup","fast","secure","instant"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Instagram Reel Downloader Online - No Signup | 30tools",
+	description:
+		"Download Instagram Reels in HD 1080p with original audio. No watermark, no signup, 100% free. Save IG Reels to your gallery instantly. Try the best downloader now!",
+	keywords: [
+		"instagram reel downloader",
+		"download instagram reels",
+		"insta reel download",
+		"reels downloader",
+		"save instagram reels",
+		"instagram reel video download",
+		"instagram reel link download",
+		"save ig reels without watermark",
+		"instagram reel downloader with audio",
+		"download reels from instagram",
+		"best instagram reel downloader 2026",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"instant",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function InstagramReelDownloaderPage({ searchParams }) {
@@ -197,9 +217,9 @@ export default async function InstagramReelDownloaderPage({ searchParams }) {
 							Instagram Reel Downloader
 						</h1>
 						<p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-							Fast, free, and secure way to <strong>save Instagram Reels</strong>{" "}
-							in HD quality. Download Reels with audio and no watermark
-							instantly.
+							Fast, free, and secure way to{" "}
+							<strong>save Instagram Reels</strong> in HD quality. Download
+							Reels with audio and no watermark instantly.
 						</p>
 						<div className="flex flex-wrap justify-center gap-3 text-xs md:text-sm">
 							<span className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium">

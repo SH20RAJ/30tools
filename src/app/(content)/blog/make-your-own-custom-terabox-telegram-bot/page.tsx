@@ -11,7 +11,7 @@ export const metadata = {
 
 export default async function BlogPost({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
 			<div className="mb-8">

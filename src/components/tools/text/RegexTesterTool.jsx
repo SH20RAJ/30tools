@@ -151,7 +151,7 @@ export default function RegexTesterTool() {
 
 	useEffect(() => {
 		testRegex();
-	}, [pattern, testText, flags]);
+	}, [testRegex]);
 
 	const copyToClipboard = async (text) => {
 		try {

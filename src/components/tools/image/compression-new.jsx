@@ -51,20 +51,23 @@ export default function ImageCompressionTool() {
 		}
 	}, []);
 
-	const handleDrop = useCallback((e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		setDragActive(false);
+	const handleDrop = useCallback(
+		(e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			setDragActive(false);
 
-		const droppedFiles = Array.from(e.dataTransfer.files);
-		const imageFiles = droppedFiles.filter((file) =>
-			file.type.startsWith("image/"),
-		);
+			const droppedFiles = Array.from(e.dataTransfer.files);
+			const imageFiles = droppedFiles.filter((file) =>
+				file.type.startsWith("image/"),
+			);
 
-		if (imageFiles.length > 0) {
-			processFiles(imageFiles);
-		}
-	}, []);
+			if (imageFiles.length > 0) {
+				processFiles(imageFiles);
+			}
+		},
+		[processFiles],
+	);
 
 	const handleFileInput = (e) => {
 		const selectedFiles = Array.from(e.target.files);
@@ -93,7 +96,7 @@ export default function ImageCompressionTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const compressImage = async (fileItem) => {

@@ -110,7 +110,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const getFormatIcon = (mimeType) => {
@@ -120,14 +120,17 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 		return format ? supportedFormats.input[format].icon : "📄";
 	};
 
-	const handleDrop = useCallback((e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		setDragActive(false);
+	const handleDrop = useCallback(
+		(e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			setDragActive(false);
 
-		const droppedFiles = Array.from(e.dataTransfer.files);
-		processFiles(droppedFiles);
-	}, []);
+			const droppedFiles = Array.from(e.dataTransfer.files);
+			processFiles(droppedFiles);
+		},
+		[processFiles],
+	);
 
 	const handleDragOver = useCallback((e) => {
 		e.preventDefault();
@@ -199,8 +202,10 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 				let { width, height } = img;
 
 				if (conversionSettings.enableResize) {
-					const newWidth = parseInt(conversionSettings.resizeWidth) || width;
-					const newHeight = parseInt(conversionSettings.resizeHeight) || height;
+					const newWidth =
+						parseInt(conversionSettings.resizeWidth, 10) || width;
+					const newHeight =
+						parseInt(conversionSettings.resizeHeight, 10) || height;
 
 					if (conversionSettings.maintainAspectRatio) {
 						const aspectRatio = width / height;

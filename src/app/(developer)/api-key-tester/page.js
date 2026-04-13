@@ -1,19 +1,24 @@
-
 export const metadata = {
-  title: "Free API Key Tester Online - No Signup | 30tools",
-  description: "Developer tools: API Key Tester. Format, validate, convert code/data. Fast, accurate, essential for programmers. All processing happens locally in your browser ",
-  keywords: ["api key tester","api key tester free","api key tester online","api key tester tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free API Key Tester Online - No Signup | 30tools",
+	description:
+		"Developer tools: API Key Tester. Format, validate, convert code/data. Fast, accurate, essential for programmers. All processing happens locally in your browser ",
+	keywords: [
+		"api key tester",
+		"api key tester free",
+		"api key tester online",
+		"api key tester tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLd = generateToolJsonLd("api-key-tester", "developer", {

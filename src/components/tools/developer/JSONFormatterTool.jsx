@@ -74,7 +74,7 @@ export default function JSONFormatterTool() {
 				return { isValid: false, error: error.message };
 			}
 		},
-		[indentSize, sortKeys],
+		[indentSize, sortKeys, sortObjectKeys, parseJSONError],
 	);
 
 	const sortObjectKeys = (obj) => {
@@ -98,7 +98,7 @@ export default function JSONFormatterTool() {
 		// Extract position information from error message
 		const positionMatch = errorMessage.match(/position (\d+)/);
 		if (positionMatch) {
-			const position = parseInt(positionMatch[1]);
+			const position = parseInt(positionMatch[1], 10);
 			const lines = jsonText.substring(0, position).split("\n");
 			const lineNumber = lines.length;
 			const columnNumber = lines[lines.length - 1].length + 1;
@@ -412,7 +412,7 @@ export default function JSONFormatterTool() {
 											id="indent"
 											value={indentSize}
 											onChange={(e) => {
-												setIndentSize(parseInt(e.target.value));
+												setIndentSize(parseInt(e.target.value, 10));
 												if (jsonInput.trim() && isValid) {
 													validateAndFormat(jsonInput);
 												}

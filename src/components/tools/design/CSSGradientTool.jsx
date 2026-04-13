@@ -132,7 +132,7 @@ export default function CSSGradientTool() {
 
 	useEffect(() => {
 		generateCSS();
-	}, [gradientType, direction, colors]);
+	}, [generateCSS]);
 
 	const addColor = () => {
 		const newPosition = colors.length > 1 ? 50 : 100;
@@ -206,7 +206,7 @@ export default function CSSGradientTool() {
 			case "svg": {
 				const svgColors = colors
 					.map(
-						(c, i) =>
+						(c, _i) =>
 							`<stop offset="${c.position}%" style="stop-color:${c.color}" />`,
 					)
 					.join("\n    ");

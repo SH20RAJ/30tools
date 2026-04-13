@@ -36,7 +36,7 @@ export default function PWAInstallPrompt() {
 		if (dismissed) {
 			const dismissedTime = new Date(dismissed);
 			const daysSinceDismissed =
-				(new Date() - dismissedTime) / (1000 * 60 * 60 * 24);
+				(Date.now() - dismissedTime) / (1000 * 60 * 60 * 24);
 			if (daysSinceDismissed < 7) {
 				// Don't show again for 7 days
 				return;

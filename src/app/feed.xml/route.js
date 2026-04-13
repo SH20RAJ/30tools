@@ -1,17 +1,16 @@
-
 import { getAllTools } from "@/lib/tools";
 
 export async function GET() {
-  const baseUrl = "https://30tools.com";
-  const currentDate = new Date().toUTCString();
-  const currentYear = new Date().getFullYear();
-  const allTools = getAllTools();
-  const toolCount = allTools.length;
+	const baseUrl = "https://30tools.com";
+	const currentDate = new Date().toUTCString();
+	const currentYear = new Date().getFullYear();
+	const allTools = getAllTools();
+	const _toolCount = allTools.length;
 
-  const rssItems = allTools
-    .slice(0, 100) // Top 100 for performance
-    .map(
-      (tool) => `
+	const rssItems = allTools
+		.slice(0, 100) // Top 100 for performance
+		.map(
+			(tool) => `
     <item>
       <title><![CDATA[${tool.name} - Free Online Tool]]></title>
       <description><![CDATA[${tool.description}. Use our free ${tool.name} tool online. No registration required, fast and secure processing.]]></description>
@@ -21,10 +20,10 @@ export async function GET() {
       <category><![CDATA[${tool.category}]]></category>
     </item>
   `,
-    )
-    .join("");
+		)
+		.join("");
 
-  const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
+	const rssFeed = `<?xml version="1.0" encoding="UTF-8"?>
     <rss version="2.0">
       <channel>
         <title><![CDATA[30tools - Free Online Toolkit | Latest Tools & Updates]]></title>
@@ -38,10 +37,10 @@ export async function GET() {
       </channel>
     </rss>`;
 
-  return new Response(rssFeed, {
-    headers: {
-      "Content-Type": "application/rss+xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600, s-maxage=3600",
-    },
-  });
+	return new Response(rssFeed, {
+		headers: {
+			"Content-Type": "application/rss+xml; charset=utf-8",
+			"Cache-Control": "public, max-age=3600, s-maxage=3600",
+		},
+	});
 }

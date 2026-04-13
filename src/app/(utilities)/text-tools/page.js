@@ -127,7 +127,7 @@ const categories = [
 
 export default async function TextToolsPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const featuredTools = textTools.filter((tool) => tool.featured);
 	const allTools = textTools;
 

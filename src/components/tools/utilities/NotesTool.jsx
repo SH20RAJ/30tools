@@ -12,7 +12,7 @@ export default function NotesTool() {
 	const [wordCount, setWordCount] = useState(0);
 	const [charCount, setCharCount] = useState(0);
 	const [lastSaved, setLastSaved] = useState(null);
-	const [autoSave, setAutoSave] = useState(true);
+	const [autoSave, _setAutoSave] = useState(true);
 
 	// Load content from localStorage on mount
 	useEffect(() => {

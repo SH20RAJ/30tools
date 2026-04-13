@@ -5,53 +5,65 @@ export const metadata: Metadata = {
 	description: "Learn how we collect, use, and protect your data at 30Tools.",
 };
 
-export default async function PrivacyPage({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
+export default function PrivacyPage() {
 	return (
-		<div className="container mx-auto px-4 py-12 md:py-20 max-w-4xl prose dark:prose-invert">
-			<h1 className="text-4xl font-bold mb-6 text-center">Privacy Policy</h1>
-			<p className="lead text-xl text-muted-foreground text-center mb-12">
-				Last updated: {new Date().getFullYear()}
-			</p>
+		<div className="container mx-auto px-4 py-12 md:py-20 max-w-4xl prose prose-slate dark:prose-invert">
+			<h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
 
-			<section className="space-y-6">
-				<h2>1. Information We Collect</h2>
+			<section className="mb-8">
+				<h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
 				<p>
-					We prioritize your privacy. Most of our tools process data client-side
-					(in your browser), meaning your files and data are not uploaded to our
-					servers unless explicitly stated otherwise for specific tool
-					functionality.
-				</p>
-
-				<h2>2. Log Data</h2>
-				<p>
-					Like many site operators, we collect information that your browser
-					sends whenever you visit our Site ("Log Data").
-				</p>
-
-				<h2>3. Cookies</h2>
-				<p>
-					Cookies are files with small amount of data, which may include an
-					anonymous unique identifier. Cookies are sent to your browser from a
-					web site and stored on your computer's hard drive.
-				</p>
-
-				<h2>4. Service Providers</h2>
-				<p>
-					We may employ third party companies and individuals to facilitate our
-					Service, to provide the Service on our behalf, to perform
-					Service-related services or to assist us in analyzing how our Service
-					is used.
-				</p>
-
-				<h2>5. Security</h2>
-				<p>
-					The security of your Personal Information is important to us, but
-					remember that no method of transmission over the Internet, or method
-					of electronic storage, is 100% secure.
+					At 30Tools, we take your privacy seriously. This Privacy Policy
+					outlines how we collect, use, and protect your information when you
+					use our website and online tools.
 				</p>
 			</section>
+
+			<section className="mb-8">
+				<h2 className="text-2xl font-semibold mb-4">
+					2. Data Collection & Processing
+				</h2>
+				<p>
+					<strong>Local Processing:</strong> Most of our tools process your
+					files directly in your browser. In these cases, your files never leave
+					your device and are not uploaded to our servers.
+				</p>
+				<p>
+					<strong>Server-side Processing:</strong> Some tools may require
+					server-side processing. In these cases, your files are processed
+					temporarily and deleted immediately after the operation is complete.
+				</p>
+			</section>
+
+			<section className="mb-8">
+				<h2 className="text-2xl font-semibold mb-4">3. Cookies & Analytics</h2>
+				<p>
+					We use cookies to improve your user experience and analyze website
+					traffic via tools like Google Analytics. These cookies help us
+					understand how you interact with our site and identify areas for
+					improvement.
+				</p>
+			</section>
+
+			<section className="mb-8">
+				<h2 className="text-2xl font-semibold mb-4">4. Third-party Links</h2>
+				<p>
+					Our website may contain links to other sites. We are not responsible
+					for the privacy practices or content of these third-party websites.
+				</p>
+			</section>
+
+			<section className="mb-8">
+				<h2 className="text-2xl font-semibold mb-4">5. Contact Us</h2>
+				<p>
+					If you have any questions about our Privacy Policy, please contact us
+					at support@30tools.com.
+				</p>
+			</section>
+
+			<footer className="text-sm text-muted-foreground mt-12">
+				Last updated: January 2025
+			</footer>
 		</div>
 	);
 }

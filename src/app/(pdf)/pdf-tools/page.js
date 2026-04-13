@@ -125,7 +125,7 @@ const categories = [
 
 export default async function PdfToolsPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const featuredTools = pdfTools.filter((tool) => tool.featured);
 	const allTools = pdfTools;
 

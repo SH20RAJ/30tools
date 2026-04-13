@@ -67,7 +67,7 @@ export default function HashGeneratorTool() {
 		} else {
 			setHashes({});
 		}
-	}, [inputText]);
+	}, [inputText, generateHashes]);
 
 	const generateHashes = async (text) => {
 		setIsHashing(true);

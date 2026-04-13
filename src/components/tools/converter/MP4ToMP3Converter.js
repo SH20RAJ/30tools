@@ -60,7 +60,7 @@ export default function MP4ToMP3Converter() {
 				originalFile: file.name,
 				duration: "3:12",
 				format: "MP4 Video",
-				outputQuality: selectedQuality + "kbps",
+				outputQuality: `${selectedQuality}kbps`,
 				outputSize: fileSizeMap[selectedQuality],
 				downloadUrl: "#",
 			});

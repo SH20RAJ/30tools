@@ -31,7 +31,7 @@ export default function TeraboxAdvancedTools({
 }) {
 	const [activeTab, setActiveTab] = useState("appearance");
 
-	const handleSettingChange = (key, value) => {
+	const _handleSettingChange = (key, value) => {
 		onSettingsChange({
 			...advancedSettings,
 			[key]: value,

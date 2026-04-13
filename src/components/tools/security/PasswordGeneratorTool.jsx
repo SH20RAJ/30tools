@@ -59,7 +59,7 @@ export default function PasswordGeneratorTool() {
 
 	useEffect(() => {
 		generatePassword();
-	}, [length, options]);
+	}, [generatePassword]);
 
 	const generatePassword = () => {
 		let charset = "";
@@ -147,7 +147,7 @@ export default function PasswordGeneratorTool() {
 
 	const calculateStrength = (pwd) => {
 		let score = 0;
-		const feedback = [];
+		const _feedback = [];
 
 		// Length scoring
 		if (pwd.length >= 12) score += 25;

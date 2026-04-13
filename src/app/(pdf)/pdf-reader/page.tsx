@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
 import PdfReader from "@/components/tools/pdf/PdfReader";
 
 export const metadata = {
-  title: "Free Pdf Reader Online - No Signup | 30tools",
-  description: "Pdf Reader - Coming Soon",
-  robots: { index: true, follow: true },
+	title: "Free Pdf Reader Online - No Signup | 30tools",
+	description: "Pdf Reader - Coming Soon",
+	robots: { index: true, follow: true },
 };
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-12 min-h-screen flex flex-col">
 			<div className="max-w-4xl mx-auto text-center mb-8">

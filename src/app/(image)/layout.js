@@ -1,5 +1,5 @@
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 import {
 	OPEN_GRAPH_DEFAULTS,
 	TWITTER_DEFAULTS,

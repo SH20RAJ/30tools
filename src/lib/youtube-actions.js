@@ -29,7 +29,7 @@ export async function extractYouTubeVideoId(url) {
 
 		for (const pattern of patterns) {
 			const match = url.match(pattern);
-			if (match && match[1]) {
+			if (match?.[1]) {
 				return { success: true, videoId: match[1] };
 			}
 		}
@@ -682,7 +682,7 @@ export async function downloadYouTubePack(videoUrl, selectedAssets) {
 		// Add channel information if selected
 		if (selectedAssets.channelInfo) {
 			packData.channel = {
-				id: "UC" + videoId.substring(0, 22), // Mock channel ID
+				id: `UC${videoId.substring(0, 22)}`, // Mock channel ID
 				title: metadata.author_name || "YouTube Channel",
 				subscriberCount: Math.floor(Math.random() * 1000000) + 1000,
 				videoCount: Math.floor(Math.random() * 1000) + 50,

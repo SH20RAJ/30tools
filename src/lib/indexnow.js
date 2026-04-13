@@ -144,6 +144,6 @@ export function submitCurrentPageToIndexNow() {
  * @param {string} slug - Tool slug or page path
  */
 export async function notifyIndexNowOnUpdate(slug) {
-	const url = `https://${SITE_HOST}${slug.startsWith("/") ? slug : "/" + slug}`;
+	const url = `https://${SITE_HOST}${slug.startsWith("/") ? slug : `/${slug}`}`;
 	return await submitUrlToIndexNow(url);
 }

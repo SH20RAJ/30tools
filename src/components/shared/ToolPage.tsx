@@ -1,10 +1,10 @@
 "use client";
 
-import { Zap, Shield, Download } from "lucide-react";
+import { Download, Shield, Zap } from "lucide-react";
 import Script from "next/script";
 import { useMemo } from "react";
-import ToolLayout from "@/components/shared/ToolLayout";
 import ToolContent from "@/components/shared/ToolContent";
+import ToolLayout from "@/components/shared/ToolLayout";
 import { getToolById } from "@/constants/tools-utils";
 
 interface ToolPageProps {
@@ -88,7 +88,7 @@ export default function ToolPage({ toolId, children }: ToolPageProps) {
 				position: index + 1,
 			})),
 		};
-	}, [toolData.howTo?.steps, title, description, toolUrl]);
+	}, [toolData.howTo?.steps, title, description, toolUrl, toolData.howTo.name]);
 
 	return (
 		<ToolLayout
@@ -128,9 +128,12 @@ export default function ToolPage({ toolId, children }: ToolPageProps) {
 								<div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center mx-auto mb-4 animate-in zoom-in duration-500">
 									<Zap className="w-10 h-10 text-primary" />
 								</div>
-								<h3 className="text-2xl font-bold tracking-tight">Tool Interface</h3>
+								<h3 className="text-2xl font-bold tracking-tight">
+									Tool Interface
+								</h3>
 								<p className="text-muted-foreground leading-relaxed">
-									The {toolData.name} interface is ready. This tool operates 100% in your browser for maximum privacy and speed.
+									The {toolData.name} interface is ready. This tool operates
+									100% in your browser for maximum privacy and speed.
 								</p>
 								<div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
 									<div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">

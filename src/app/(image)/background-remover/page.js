@@ -14,92 +14,104 @@ import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverToo
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-  title: "Free Background Remover Online - No Signup | 30tools",
-  description: "Remove image backgrounds automatically with our free online Background Remover. No registration required. Fast, secure, browser-based processing. All processing happens locally in your browser.",
-  keywords: ["background remover","background remover free","background remover online","background remover tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Background Remover Online - No Signup | 30tools",
+	description:
+		"Remove image backgrounds automatically with our free online Background Remover. No registration required. Fast, secure, browser-based processing. All processing happens locally in your browser.",
+	keywords: [
+		"background remover",
+		"background remover free",
+		"background remover online",
+		"background remover tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function BackgroundRemoverPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-  "id": "background-remover",
-  "name": "Background Remover",
-  "description": "Remove image backgrounds automatically with AI",
-  "category": "image",
-  "route": "/background-remover",
-  "features": [
-    "Supports JPEG, PNG, WebP, GIF, BMP formats",
-    "Batch process multiple images",
-    "High-quality output preservation",
-    "Adjustable quality and compression settings",
-    "100% Free - No hidden costs or subscriptions",
-    "No Registration Required - Start immediately"
-  ],
-  "benefits": [],
-  "useCases": [],
-  "faqs": [
-    {
-      "question": "Is this Background Remover really free?",
-      "answer": "Yes! Our Background Remover is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
-    },
-    {
-      "question": "Is my data secure when using Background Remover?",
-      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
-    },
-    {
-      "question": "Do I need to create an account to use Background Remover?",
-      "answer": "No registration required. You can start using Background Remover immediately without creating an account or providing any personal information."
-    },
-    {
-      "question": "Are there any file size limits for Background Remover?",
-      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
-    },
-    {
-      "question": "Can I use Background Remover on mobile devices?",
-      "answer": "Yes, Background Remover is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
-    },
-    {
-      "question": "What file formats does Background Remover support?",
-      "answer": "Background Remover supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use Background Remover",
-    "steps": [
-      {
-        "name": "Upload or Input",
-        "text": "Provide your file or input data using the upload button or text input field. Background Remover supports drag-and-drop for convenience.",
-        "url": "/background-remover#step1",
-        "position": 1
-      },
-      {
-        "name": "Configure Settings",
-        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-        "url": "/background-remover#step2",
-        "position": 2
-      },
-      {
-        "name": "Process & Download",
-        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-        "url": "/background-remover#step3",
-        "position": 3
-      }
-    ]
-  }
-};
+		id: "background-remover",
+		name: "Background Remover",
+		description: "Remove image backgrounds automatically with AI",
+		category: "image",
+		route: "/background-remover",
+		features: [
+			"Supports JPEG, PNG, WebP, GIF, BMP formats",
+			"Batch process multiple images",
+			"High-quality output preservation",
+			"Adjustable quality and compression settings",
+			"100% Free - No hidden costs or subscriptions",
+			"No Registration Required - Start immediately",
+		],
+		benefits: [],
+		useCases: [],
+		faqs: [
+			{
+				question: "Is this Background Remover really free?",
+				answer:
+					"Yes! Our Background Remover is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
+			},
+			{
+				question: "Is my data secure when using Background Remover?",
+				answer:
+					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
+			},
+			{
+				question: "Do I need to create an account to use Background Remover?",
+				answer:
+					"No registration required. You can start using Background Remover immediately without creating an account or providing any personal information.",
+			},
+			{
+				question: "Are there any file size limits for Background Remover?",
+				answer:
+					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
+			},
+			{
+				question: "Can I use Background Remover on mobile devices?",
+				answer:
+					"Yes, Background Remover is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
+			},
+			{
+				question: "What file formats does Background Remover support?",
+				answer:
+					"Background Remover supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
+			},
+		],
+		howTo: {
+			name: "How to Use Background Remover",
+			steps: [
+				{
+					name: "Upload or Input",
+					text: "Provide your file or input data using the upload button or text input field. Background Remover supports drag-and-drop for convenience.",
+					url: "/background-remover#step1",
+					position: 1,
+				},
+				{
+					name: "Configure Settings",
+					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+					url: "/background-remover#step2",
+					position: 2,
+				},
+				{
+					name: "Process & Download",
+					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+					url: "/background-remover#step3",
+					position: 3,
+				},
+			],
+		},
+	};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [
@@ -187,8 +199,9 @@ export default async function BackgroundRemoverPage({ searchParams }) {
 						Instantly <strong>remove backgrounds from images</strong> with our
 						advanced AI. Create <strong>transparent PNGs</strong>,{" "}
 						<strong>remove background from photo</strong>, or add a
-						<strong>white background</strong> for product photos, portraits, and logos.
-						100% free, automatic, and the best <strong>remove.bg alternative</strong>
+						<strong>white background</strong> for product photos, portraits, and
+						logos. 100% free, automatic, and the best{" "}
+						<strong>remove.bg alternative</strong>
 						for professional cutouts.
 					</p>
 
@@ -199,8 +212,6 @@ export default async function BackgroundRemoverPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
-
-
 
 				{/* Tool Interface */}
 				<div className="mb-12">

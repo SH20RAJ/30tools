@@ -12,8 +12,8 @@ export default function SerpSimulator() {
 	);
 	const [url, setUrl] = useState("example.com/your-page-slug");
 
-	const titleWidth = title.length * 9; // Approx px
-	const titleLimit = 580; // px limit Google approx
+	const _titleWidth = title.length * 9; // Approx px
+	const _titleLimit = 580; // px limit Google approx
 
 	return (
 		<div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">

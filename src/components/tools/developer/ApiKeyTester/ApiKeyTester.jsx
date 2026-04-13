@@ -37,7 +37,7 @@ export default function ApiKeyTester({ toolId }) {
 	const [copied, setCopied] = useState(false);
 
 	// Initialize status badging
-	const getStatusColor = (status) => {
+	const _getStatusColor = (status) => {
 		switch (status) {
 			case "success":
 				return "bg-green-500/10 text-green-500 border-green-500/20";

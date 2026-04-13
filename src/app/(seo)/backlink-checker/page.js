@@ -2,20 +2,35 @@ import BreadcrumbsEnhanced from "@/components/seo/BreadcrumbsEnhanced";
 import FAQSection from "@/components/seo/FAQSection";
 
 export const metadata = {
-  title: "Free Backlink Checker Online - No Signup | 30tools",
-  description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, link quality, and competitor strategies instantly. No signup, unlimited checks, and privacy-focused. Try now!",
-  keywords: ["backlink checker","free backlink checker","check backlinks","backlink analyzer","website backlink checker","seo backlink checker","backlink analysis tool","check website backlinks","free backlink audit","backlink profile checker","backlink check","anchor text checker","referring domains checker"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Backlink Checker Online - No Signup | 30tools",
+	description:
+		"Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, link quality, and competitor strategies instantly. No signup, unlimited checks, and privacy-focused. Try now!",
+	keywords: [
+		"backlink checker",
+		"free backlink checker",
+		"check backlinks",
+		"backlink analyzer",
+		"website backlink checker",
+		"seo backlink checker",
+		"backlink analysis tool",
+		"check website backlinks",
+		"free backlink audit",
+		"backlink profile checker",
+		"backlink check",
+		"anchor text checker",
+		"referring domains checker",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 // Enhanced JSON-LD Schema
@@ -112,123 +127,138 @@ const jsonLd = {
 
 export default async function BacklinkCheckerPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const toolData = {
-  "id": "backlink-checker",
-  "name": "Backlink Checker",
-  "description": "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
-  "category": "seo",
-  "route": "/backlink-checker",
-  "features": [
-    "Comprehensive Backlink Profile Analysis",
-    "Referring Domain Identification",
-    "Anchor Text Distribution",
-    "Link Quality & Authority Metrics",
-    "New & Lost Backlinks Tracking",
-    "Competitor Backlink Comparison",
-    "Export Reports (CSV, PDF)",
-    "Real-time Data Updates",
-    "100% Free - Unlimited Checks",
-    "No Registration Required",
-    "Privacy-Focused Processing",
-    "Fast Results in Seconds"
-  ],
-  "benefits": [
-    "Improve SEO by understanding your backlink profile",
-    "Identify toxic or spammy links harming your rankings",
-    "Discover competitor link-building strategies",
-    "Track link-building campaign effectiveness",
-    "Find opportunities for new backlinks",
-    "Monitor domain authority changes over time"
-  ],
-  "useCases": [
-    "SEO professionals auditing client websites",
-    "Digital marketers tracking competitor backlinks",
-    "Website owners monitoring their link profile",
-    "Link builders identifying opportunities",
-    "Agencies presenting reports to clients",
-    "Researchers studying SEO strategies",
-    "Bloggers checking guest post backlinks",
-    "E-commerce sites analyzing product backlinks"
-  ],
-  "faqs": [
-    {
-      "question": "What is a backlink checker?",
-      "answer": "A backlink checker is an SEO tool that analyzes the external links pointing to a website. It reveals which sites link to you, the anchor text used, the authority of linking domains, and helps assess your site's overall backlink profile quality."
-    },
-    {
-      "question": "Is this Backlink Checker really free?",
-      "answer": "Yes! 30Tools offers a completely free backlink checker with no usage limits, no trials, and no paywalls. Check unlimited websites without creating an account. 100% free forever."
-    },
-    {
-      "question": "How do I check backlinks for a website?",
-      "answer": "Simply enter the website URL you want to analyze. Our tool will scan multiple data sources and compile a comprehensive backlink report showing all known referring domains, individual backlinks, anchor texts, and quality metrics."
-    },
-    {
-      "question": "What data does the backlink report include?",
-      "answer": "Our report includes: total backlinks count, referring domains, anchor text diversity, dofollow/nofollow breakdown, domain authority scores, IP diversity, country distribution, and historical trends. Export options available."
-    },
-    {
-      "question": "Why are backlinks important for SEO?",
-      "answer": "Backlinks are a core Google ranking factor. Quality links from authoritative sites signal trust and relevance, boosting your rankings. Low-quality or spammy links can harm SEO, so regular backlink audits are essential."
-    },
-    {
-      "question": "Can I check my competitors' backlinks?",
-      "answer": "Yes! Enter any competitor's domain to analyze their backlink profile. Discover their linking domains, anchor strategies, and potential link-building opportunities you can replicate or improve upon."
-    },
-    {
-      "question": "How accurate is this backlink data?",
-      "answer": "We aggregate data from multiple trusted SEO data providers to ensure comprehensive coverage. While no tool is 100% perfect due to crawl frequency variations, our data is updated regularly and matches industry standards."
-    },
-    {
-      "question": "What's the difference between backlinks and referring domains?",
-      "answer": "Backlinks are individual links from other sites. Referring domains are unique root domains linking to you. One domain can provide multiple backlinks (e.g., multiple pages linking to you). Domain diversity is generally more valuable than sheer backlink count."
-    },
-    {
-      "question": "Can I export my backlink report?",
-      "answer": "Yes! Export your full backlink analysis in CSV, Excel, or PDF formats. Perfect for sharing with team members, clients, or importing into other SEO tools for further analysis."
-    },
-    {
-      "question": "Is my data secure when using Backlink Checker?",
-      "answer": "Absolutely. Our tool runs entirely in your browser. We do not store the URLs you analyze, your reports, or any identifying information. Your SEO research remains completely private and secure."
-    },
-    {
-      "question": "How often is backlink data updated?",
-      "answer": "Our data is updated regularly from multiple crawl sources. For the most current backlink information, check frequently and cross-reference with Google Search Console data if available for your property."
-    },
-    {
-      "question": "What makes a 'good' backlink?",
-      "answer": "Good backlinks come from authoritative, relevant websites with high domain authority. They use natural anchor text, are placed in content (not footers/sidebars), and come from sites with real human traffic. Quality over quantity always."
-    },
-    {
-      "question": "Can I find toxic backlinks with this tool?",
-      "answer": "Yes. Our analysis flags potentially harmful links from spammy domains, link farms, or irrelevant sites with low authority. We help you identify links that may be hurting your SEO so you can disavow them via Google Search Console."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use the Backlink Checker",
-    "steps": [
-      {
-        "name": "Enter Website URL",
-        "text": "Type or paste the domain you want to analyze (e.g., example.com). Ensure it's a valid, publicly accessible website. Our tool supports any domain, not just yours.",
-        "url": "https://30tools.com/backlink-checker#step1",
-        "image": "https://30tools.com/images/backlink-step1.jpg"
-      },
-      {
-        "name": "Start Analysis",
-        "text": "Click the 'Check Backlinks' button. Our system queries multiple data sources and begins compiling your comprehensive backlink profile report.",
-        "url": "https://30tools.com/backlink-checker#step2",
-        "image": "https://30tools.com/images/backlink-step2.jpg"
-      },
-      {
-        "name": "Review & Export Results",
-        "text": "Once complete, review your backlink data: total links, referring domains, anchor distribution, and quality metrics. Use the export buttons to download your report in CSV or PDF for future reference.",
-        "url": "https://30tools.com/backlink-checker#step3",
-        "image": "https://30tools.com/images/backlink-step3.jpg"
-      }
-    ]
-  }
-};
+		id: "backlink-checker",
+		name: "Backlink Checker",
+		description:
+			"Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
+		category: "seo",
+		route: "/backlink-checker",
+		features: [
+			"Comprehensive Backlink Profile Analysis",
+			"Referring Domain Identification",
+			"Anchor Text Distribution",
+			"Link Quality & Authority Metrics",
+			"New & Lost Backlinks Tracking",
+			"Competitor Backlink Comparison",
+			"Export Reports (CSV, PDF)",
+			"Real-time Data Updates",
+			"100% Free - Unlimited Checks",
+			"No Registration Required",
+			"Privacy-Focused Processing",
+			"Fast Results in Seconds",
+		],
+		benefits: [
+			"Improve SEO by understanding your backlink profile",
+			"Identify toxic or spammy links harming your rankings",
+			"Discover competitor link-building strategies",
+			"Track link-building campaign effectiveness",
+			"Find opportunities for new backlinks",
+			"Monitor domain authority changes over time",
+		],
+		useCases: [
+			"SEO professionals auditing client websites",
+			"Digital marketers tracking competitor backlinks",
+			"Website owners monitoring their link profile",
+			"Link builders identifying opportunities",
+			"Agencies presenting reports to clients",
+			"Researchers studying SEO strategies",
+			"Bloggers checking guest post backlinks",
+			"E-commerce sites analyzing product backlinks",
+		],
+		faqs: [
+			{
+				question: "What is a backlink checker?",
+				answer:
+					"A backlink checker is an SEO tool that analyzes the external links pointing to a website. It reveals which sites link to you, the anchor text used, the authority of linking domains, and helps assess your site's overall backlink profile quality.",
+			},
+			{
+				question: "Is this Backlink Checker really free?",
+				answer:
+					"Yes! 30Tools offers a completely free backlink checker with no usage limits, no trials, and no paywalls. Check unlimited websites without creating an account. 100% free forever.",
+			},
+			{
+				question: "How do I check backlinks for a website?",
+				answer:
+					"Simply enter the website URL you want to analyze. Our tool will scan multiple data sources and compile a comprehensive backlink report showing all known referring domains, individual backlinks, anchor texts, and quality metrics.",
+			},
+			{
+				question: "What data does the backlink report include?",
+				answer:
+					"Our report includes: total backlinks count, referring domains, anchor text diversity, dofollow/nofollow breakdown, domain authority scores, IP diversity, country distribution, and historical trends. Export options available.",
+			},
+			{
+				question: "Why are backlinks important for SEO?",
+				answer:
+					"Backlinks are a core Google ranking factor. Quality links from authoritative sites signal trust and relevance, boosting your rankings. Low-quality or spammy links can harm SEO, so regular backlink audits are essential.",
+			},
+			{
+				question: "Can I check my competitors' backlinks?",
+				answer:
+					"Yes! Enter any competitor's domain to analyze their backlink profile. Discover their linking domains, anchor strategies, and potential link-building opportunities you can replicate or improve upon.",
+			},
+			{
+				question: "How accurate is this backlink data?",
+				answer:
+					"We aggregate data from multiple trusted SEO data providers to ensure comprehensive coverage. While no tool is 100% perfect due to crawl frequency variations, our data is updated regularly and matches industry standards.",
+			},
+			{
+				question:
+					"What's the difference between backlinks and referring domains?",
+				answer:
+					"Backlinks are individual links from other sites. Referring domains are unique root domains linking to you. One domain can provide multiple backlinks (e.g., multiple pages linking to you). Domain diversity is generally more valuable than sheer backlink count.",
+			},
+			{
+				question: "Can I export my backlink report?",
+				answer:
+					"Yes! Export your full backlink analysis in CSV, Excel, or PDF formats. Perfect for sharing with team members, clients, or importing into other SEO tools for further analysis.",
+			},
+			{
+				question: "Is my data secure when using Backlink Checker?",
+				answer:
+					"Absolutely. Our tool runs entirely in your browser. We do not store the URLs you analyze, your reports, or any identifying information. Your SEO research remains completely private and secure.",
+			},
+			{
+				question: "How often is backlink data updated?",
+				answer:
+					"Our data is updated regularly from multiple crawl sources. For the most current backlink information, check frequently and cross-reference with Google Search Console data if available for your property.",
+			},
+			{
+				question: "What makes a 'good' backlink?",
+				answer:
+					"Good backlinks come from authoritative, relevant websites with high domain authority. They use natural anchor text, are placed in content (not footers/sidebars), and come from sites with real human traffic. Quality over quantity always.",
+			},
+			{
+				question: "Can I find toxic backlinks with this tool?",
+				answer:
+					"Yes. Our analysis flags potentially harmful links from spammy domains, link farms, or irrelevant sites with low authority. We help you identify links that may be hurting your SEO so you can disavow them via Google Search Console.",
+			},
+		],
+		howTo: {
+			name: "How to Use the Backlink Checker",
+			steps: [
+				{
+					name: "Enter Website URL",
+					text: "Type or paste the domain you want to analyze (e.g., example.com). Ensure it's a valid, publicly accessible website. Our tool supports any domain, not just yours.",
+					url: "https://30tools.com/backlink-checker#step1",
+					image: "https://30tools.com/images/backlink-step1.jpg",
+				},
+				{
+					name: "Start Analysis",
+					text: "Click the 'Check Backlinks' button. Our system queries multiple data sources and begins compiling your comprehensive backlink profile report.",
+					url: "https://30tools.com/backlink-checker#step2",
+					image: "https://30tools.com/images/backlink-step2.jpg",
+				},
+				{
+					name: "Review & Export Results",
+					text: "Once complete, review your backlink data: total links, referring domains, anchor distribution, and quality metrics. Use the export buttons to download your report in CSV or PDF for future reference.",
+					url: "https://30tools.com/backlink-checker#step3",
+					image: "https://30tools.com/images/backlink-step3.jpg",
+				},
+			],
+		},
+	};
 
 	// Breadcrumbs configuration
 	const breadcrumbs = [

@@ -108,7 +108,7 @@ export default function ImageResizerTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const handleFileSelect = (event) => {
@@ -211,7 +211,7 @@ export default function ImageResizerTool() {
 				img.src = fileData.url;
 			});
 		},
-		[resizeOptions],
+		[resizeOptions, calculateNewDimensions],
 	);
 
 	const handleResize = async () => {
@@ -302,7 +302,7 @@ export default function ImageResizerTool() {
 	};
 
 	const handleWidthChange = (value) => {
-		const width = parseInt(value) || 0;
+		const width = parseInt(value, 10) || 0;
 		setResizeOptions((prev) => {
 			if (prev.maintainAspectRatio && files.length > 0) {
 				const firstFile = files[0];
@@ -322,7 +322,7 @@ export default function ImageResizerTool() {
 	};
 
 	const handleHeightChange = (value) => {
-		const height = parseInt(value) || 0;
+		const height = parseInt(value, 10) || 0;
 		setResizeOptions((prev) => {
 			if (prev.maintainAspectRatio && files.length > 0) {
 				const firstFile = files[0];
@@ -350,8 +350,8 @@ export default function ImageResizerTool() {
 						<CardHeader>
 							<CardTitle>Resize Settings</CardTitle>
 							<CardDescription>
-							Configure image dimensions and resize options for web, social,
-							and print
+								Configure image dimensions and resize options for web, social,
+								and print
 							</CardDescription>
 						</CardHeader>
 						<CardContent className="space-y-6">
@@ -463,7 +463,7 @@ export default function ImageResizerTool() {
 									onChange={(e) =>
 										setResizeOptions((prev) => ({
 											...prev,
-											quality: parseInt(e.target.value),
+											quality: parseInt(e.target.value, 10),
 										}))
 									}
 									className="w-full"

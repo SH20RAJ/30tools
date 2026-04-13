@@ -59,7 +59,7 @@ export default function MailtoLinkGeneratorTool() {
 		}
 
 		if (params.length > 0) {
-			link += "?" + params.join("&");
+			link += `?${params.join("&")}`;
 		}
 
 		setGeneratedLink(link);

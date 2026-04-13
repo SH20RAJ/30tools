@@ -39,12 +39,12 @@ export default function URLExtractorTool() {
 
 			// Add protocol if missing
 			if (normalizedUrl.startsWith("www.")) {
-				normalizedUrl = "https://" + normalizedUrl;
+				normalizedUrl = `https://${normalizedUrl}`;
 			} else if (
 				!normalizedUrl.startsWith("http://") &&
 				!normalizedUrl.startsWith("https://")
 			) {
-				normalizedUrl = "https://" + normalizedUrl;
+				normalizedUrl = `https://${normalizedUrl}`;
 			}
 
 			// Extract domain for display
@@ -52,7 +52,7 @@ export default function URLExtractorTool() {
 			try {
 				const urlObj = new URL(normalizedUrl);
 				domain = urlObj.hostname;
-			} catch (e) {
+			} catch (_e) {
 				domain = normalizedUrl.split("/")[0];
 			}
 

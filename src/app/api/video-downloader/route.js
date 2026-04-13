@@ -13,7 +13,7 @@ export async function POST(request) {
 		// Validate URL format
 		try {
 			new URL(url);
-		} catch (e) {
+		} catch (_e) {
 			return NextResponse.json(
 				{ error: "Invalid URL format" },
 				{ status: 400 },
@@ -99,7 +99,7 @@ export async function POST(request) {
 }
 
 // Helper function to parse the response from savevideo.me
-function parseVideoResponse(responseText, originalUrl) {
+function parseVideoResponse(_responseText, originalUrl) {
 	// This is a simplified implementation
 	// In a real implementation, you would need to parse the actual response
 	// from savevideo.me to extract video URLs and metadata

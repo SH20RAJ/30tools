@@ -163,11 +163,7 @@ export default function TeraboxPlayerTool() {
 				throw new Error(videoResult.error);
 			}
 
-			if (
-				!videoResult.data ||
-				!videoResult.data.download_links ||
-				!videoResult.data.download_links.url_2
-			) {
+			if (!videoResult.data?.download_links?.url_2) {
 				throw new Error("Invalid video data received");
 			}
 
@@ -263,7 +259,7 @@ export default function TeraboxPlayerTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	return (
@@ -568,7 +564,7 @@ export default function TeraboxPlayerTool() {
 														<>
 															<Badge variant="outline">{videoData.type}</Badge>
 															<Badge variant="outline">
-																{formatFileSize(parseInt(videoData.size))}
+																{formatFileSize(parseInt(videoData.size, 10))}
 															</Badge>
 														</>
 													) : ogData ? (
@@ -816,7 +812,7 @@ export default function TeraboxPlayerTool() {
 														File Size:
 													</span>
 													<Badge variant="outline">
-														{formatFileSize(parseInt(videoData.size))}
+														{formatFileSize(parseInt(videoData.size, 10))}
 													</Badge>
 												</div>
 												<div className="flex justify-between">

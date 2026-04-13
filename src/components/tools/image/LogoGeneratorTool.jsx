@@ -84,7 +84,7 @@ export default function LogoGeneratorTool() {
 	const [layout, setLayout] = useState("left");
 	const [textColor, setTextColor] = useState("#000000");
 	const [iconColor, setIconColor] = useState("#2563eb");
-	const [backgroundColor, setBackgroundColor] = useState("#ffffff");
+	const [_backgroundColor, _setBackgroundColor] = useState("#ffffff");
 	const [fontSize, setFontSize] = useState(48);
 	const [iconSize, setIconSize] = useState(64);
 	const [gap, setGap] = useState(16);

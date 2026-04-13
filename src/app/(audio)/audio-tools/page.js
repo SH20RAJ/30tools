@@ -127,7 +127,7 @@ const categories = [
 
 export default async function AudioToolsPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const featuredTools = audioTools.filter((tool) => tool.featured);
 	const allTools = audioTools;
 
@@ -445,7 +445,7 @@ export default async function AudioToolsPage({ searchParams }) {
 						"@type": "CollectionPage",
 						name: "Audio Tools Collection",
 						description:
-								"Free audio tools for recording, editing, converting, and enhancing audio files",
+							"Free audio tools for recording, editing, converting, and enhancing audio files",
 						url: "https://30tools.com/audio-tools",
 						mainEntity: {
 							"@type": "ItemList",

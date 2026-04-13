@@ -26,7 +26,7 @@ export default function TextEncoder() {
 					setOutput(atob(input));
 				}
 			}
-		} catch (e) {
+		} catch (_e) {
 			setOutput("Error: Invalid input for decoding.");
 		}
 	};

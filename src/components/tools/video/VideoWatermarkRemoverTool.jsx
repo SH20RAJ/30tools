@@ -42,7 +42,7 @@ export default function VideoWatermarkRemoverTool() {
 	const [currentStep, setCurrentStep] = useState("");
 	const [previewMode, setPreviewMode] = useState("before");
 	const fileInputRef = useRef(null);
-	const videoRef = useRef(null);
+	const _videoRef = useRef(null);
 
 	const removalMethods = {
 		"ai-automatic": {

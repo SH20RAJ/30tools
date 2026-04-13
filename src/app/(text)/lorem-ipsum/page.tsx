@@ -3,7 +3,8 @@ import LoremIpsumGenerator from "@/components/tools/text/LoremIpsumGenerator";
 
 export const metadata: Metadata = {
 	title: {
-		absolute: "Lorem Ipsum Generator for Figma & Designers | Placeholder Text Free",
+		absolute:
+			"Lorem Ipsum Generator for Figma & Designers | Placeholder Text Free",
 	},
 	description:
 		"Generate specialized Lorem Ipsum placeholder text instantly. Perfect for Figma, Photoshop, and web design. Create paragraphs, sentences, or words for free.",
@@ -19,25 +20,33 @@ export const metadata: Metadata = {
 };
 
 export const metadata = {
-  title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
-  description: "Free text tools: Lorem Ipsum Generator. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in your ",
-  keywords: ["lorem ipsum generator","lorem ipsum generator free","lorem ipsum generator online","lorem ipsum generator tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+	description:
+		"Free text tools: Lorem Ipsum Generator. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in your ",
+	keywords: [
+		"lorem ipsum generator",
+		"lorem ipsum generator free",
+		"lorem ipsum generator online",
+		"lorem ipsum generator tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function LoremIpsumPage({
 	searchParams,
-}: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {
+}: {
+	searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
 	const _params = await searchParams;
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-12">

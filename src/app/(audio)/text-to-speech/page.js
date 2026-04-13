@@ -2,20 +2,26 @@ import Link from "next/link";
 import TextToSpeechTool from "@/components/tools/audio/TextToSpeechTool";
 
 export const metadata = {
-  title: "Free Text to Speech Online - No Signup | 30tools",
-  description: "Audio tools: Text to Speech. Convert, edit, enhance audio files. Support for MP3, WAV, FLAC. Free and fast. All processing happens locally in your browser for c",
-  keywords: ["text to speech","text to speech free","text to speech online","text to speech tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Text to Speech Online - No Signup | 30tools",
+	description:
+		"Audio tools: Text to Speech. Convert, edit, enhance audio files. Support for MP3, WAV, FLAC. Free and fast. All processing happens locally in your browser for c",
+	keywords: [
+		"text to speech",
+		"text to speech free",
+		"text to speech online",
+		"text to speech tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const textToSpeechJsonLd = generateToolJsonLd("text-to-speech", "audio", {
@@ -42,7 +48,7 @@ const textToSpeechJsonLd = generateToolJsonLd("text-to-speech", "audio", {
 });
 
 export default async function TextToSpeechPage({ searchParams }) {
-	const params = await searchParams;
+	const _params = await searchParams;
 	// Dynamic context for future expansion
 	return (
 		<>
@@ -124,7 +130,7 @@ export default async function TextToSpeechPage({ searchParams }) {
 						</summary>
 						<p className="mt-2 text-muted-foreground text-sm">
 							Simply paste your script into our tool, select a natural-sounding
-							voice, and preview. It's the perfect way to create professional 
+							voice, and preview. It's the perfect way to create professional
 							voiceovers for YouTube and Shorts without hiring a voice actor.
 						</p>
 					</details>

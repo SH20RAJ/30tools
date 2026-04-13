@@ -24,4 +24,4 @@ function CollapsibleContent({ ...props }) {
 	);
 }
 
-export { Collapsible, CollapsibleTrigger, CollapsibleContent };
+export { Collapsible, CollapsibleContent, CollapsibleTrigger };

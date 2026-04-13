@@ -2,8 +2,8 @@
 
 import { Search } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { Button } from "@/components/ui/button";
 
 export default function ToolCategoryNavbar({
 	title,

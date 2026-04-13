@@ -24,7 +24,7 @@ export default function TeraboxVideoInfo({
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB", "TB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const downloadVideo = (url, filename) => {
@@ -83,7 +83,7 @@ export default function TeraboxVideoInfo({
 									<Badge variant="outline">
 										{videoData.size_formatted ||
 											videoData.file_size ||
-											formatFileSize(parseInt(videoData.size))}
+											formatFileSize(parseInt(videoData.size, 10))}
 									</Badge>
 								</>
 							) : ogData ? (
@@ -96,7 +96,7 @@ export default function TeraboxVideoInfo({
 				</div>
 
 				{/* Download Options */}
-				{videoData && videoData.download_links && (
+				{videoData?.download_links && (
 					<div className="space-y-2">
 						<Label className="text-sm font-semibold">Download Options</Label>
 						<div className="flex flex-wrap gap-2">

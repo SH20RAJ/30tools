@@ -14,92 +14,104 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-  title: "Free Image Resizer Online - No Signup | 30tools",
-  description: "Resize images with custom dimensions and aspect ratios for web, social media, and print. No registration required. Fast, secure, browser-based processing. All processing happens locally in your browser.",
-  keywords: ["image resizer","image resizer free","image resizer online","image resizer tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Image Resizer Online - No Signup | 30tools",
+	description:
+		"Resize images with custom dimensions and aspect ratios for web, social media, and print. No registration required. Fast, secure, browser-based processing. All processing happens locally in your browser.",
+	keywords: [
+		"image resizer",
+		"image resizer free",
+		"image resizer online",
+		"image resizer tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function ImageResizerPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-  "id": "image-resizer",
-  "name": "Image Resizer",
-  "description": "Resize images with custom dimensions and aspect ratios",
-  "category": "image",
-  "route": "/image-resizer",
-  "features": [
-    "Supports JPEG, PNG, WebP, GIF, BMP formats",
-    "Batch process multiple images",
-    "High-quality output preservation",
-    "Adjustable quality and compression settings",
-    "100% Free - No hidden costs or subscriptions",
-    "No Registration Required - Start immediately"
-  ],
-  "benefits": [],
-  "useCases": [],
-  "faqs": [
-    {
-      "question": "Is this Image Resizer really free?",
-      "answer": "Yes! Our Image Resizer is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
-    },
-    {
-      "question": "Is my data secure when using Image Resizer?",
-      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
-    },
-    {
-      "question": "Do I need to create an account to use Image Resizer?",
-      "answer": "No registration required. You can start using Image Resizer immediately without creating an account or providing any personal information."
-    },
-    {
-      "question": "Are there any file size limits for Image Resizer?",
-      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
-    },
-    {
-      "question": "Can I use Image Resizer on mobile devices?",
-      "answer": "Yes, Image Resizer is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
-    },
-    {
-      "question": "What file formats does Image Resizer support?",
-      "answer": "Image Resizer supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use Image Resizer",
-    "steps": [
-      {
-        "name": "Upload or Input",
-        "text": "Provide your file or input data using the upload button or text input field. Image Resizer supports drag-and-drop for convenience.",
-        "url": "/image-resizer#step1",
-        "position": 1
-      },
-      {
-        "name": "Configure Settings",
-        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-        "url": "/image-resizer#step2",
-        "position": 2
-      },
-      {
-        "name": "Process & Download",
-        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-        "url": "/image-resizer#step3",
-        "position": 3
-      }
-    ]
-  }
-};
+		id: "image-resizer",
+		name: "Image Resizer",
+		description: "Resize images with custom dimensions and aspect ratios",
+		category: "image",
+		route: "/image-resizer",
+		features: [
+			"Supports JPEG, PNG, WebP, GIF, BMP formats",
+			"Batch process multiple images",
+			"High-quality output preservation",
+			"Adjustable quality and compression settings",
+			"100% Free - No hidden costs or subscriptions",
+			"No Registration Required - Start immediately",
+		],
+		benefits: [],
+		useCases: [],
+		faqs: [
+			{
+				question: "Is this Image Resizer really free?",
+				answer:
+					"Yes! Our Image Resizer is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
+			},
+			{
+				question: "Is my data secure when using Image Resizer?",
+				answer:
+					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
+			},
+			{
+				question: "Do I need to create an account to use Image Resizer?",
+				answer:
+					"No registration required. You can start using Image Resizer immediately without creating an account or providing any personal information.",
+			},
+			{
+				question: "Are there any file size limits for Image Resizer?",
+				answer:
+					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
+			},
+			{
+				question: "Can I use Image Resizer on mobile devices?",
+				answer:
+					"Yes, Image Resizer is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
+			},
+			{
+				question: "What file formats does Image Resizer support?",
+				answer:
+					"Image Resizer supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
+			},
+		],
+		howTo: {
+			name: "How to Use Image Resizer",
+			steps: [
+				{
+					name: "Upload or Input",
+					text: "Provide your file or input data using the upload button or text input field. Image Resizer supports drag-and-drop for convenience.",
+					url: "/image-resizer#step1",
+					position: 1,
+				},
+				{
+					name: "Configure Settings",
+					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+					url: "/image-resizer#step2",
+					position: 2,
+				},
+				{
+					name: "Process & Download",
+					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+					url: "/image-resizer#step3",
+					position: 3,
+				},
+			],
+		},
+	};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [
@@ -196,8 +208,6 @@ export default async function ImageResizerPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
-
-
 
 				{/* Tool Interface */}
 				<div className="mb-12">

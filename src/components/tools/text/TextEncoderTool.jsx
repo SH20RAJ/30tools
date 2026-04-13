@@ -56,7 +56,7 @@ export default function TextEncoderTool() {
 
 				case "css":
 					result = inputText.replace(/[^\w\s-]/g, (char) => {
-						return "\\" + char.charCodeAt(0).toString(16) + " ";
+						return `\\${char.charCodeAt(0).toString(16)} `;
 					});
 					break;
 
@@ -78,7 +78,7 @@ export default function TextEncoderTool() {
 					result = Array.from(inputText)
 						.map(
 							(char) =>
-								"\\u" + char.charCodeAt(0).toString(16).padStart(4, "0"),
+								`\\u${char.charCodeAt(0).toString(16).padStart(4, "0")}`,
 						)
 						.join("");
 					break;
@@ -90,7 +90,7 @@ export default function TextEncoderTool() {
 			setOutputText(result);
 			toast.success("Text encoded successfully!");
 		} catch (_error) {
-			toast.error("Error encoding text: " + error.message);
+			toast.error(`Error encoding text: ${error.message}`);
 		}
 	};
 
@@ -127,7 +127,7 @@ export default function TextEncoderTool() {
 					break;
 
 				case "css":
-					result = inputText.replace(/\\([0-9a-fA-F]+)\s?/g, (match, code) => {
+					result = inputText.replace(/\\([0-9a-fA-F]+)\s?/g, (_match, code) => {
 						return String.fromCharCode(parseInt(code, 16));
 					});
 					break;
@@ -149,7 +149,7 @@ export default function TextEncoderTool() {
 					break;
 
 				case "unicode":
-					result = inputText.replace(/\\u([0-9a-fA-F]{4})/g, (match, code) => {
+					result = inputText.replace(/\\u([0-9a-fA-F]{4})/g, (_match, code) => {
 						return String.fromCharCode(parseInt(code, 16));
 					});
 					break;
@@ -161,7 +161,7 @@ export default function TextEncoderTool() {
 			setOutputText(result);
 			toast.success("Text decoded successfully!");
 		} catch (_error) {
-			toast.error("Error decoding text: " + error.message);
+			toast.error(`Error decoding text: ${error.message}`);
 		}
 	};
 

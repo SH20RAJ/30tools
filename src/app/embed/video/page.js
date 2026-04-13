@@ -77,7 +77,7 @@ const jsonLd = {
 
 export default async function EmbedVideoPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

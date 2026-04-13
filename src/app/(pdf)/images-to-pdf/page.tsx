@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
 import ImagesToPdf from "@/components/tools/pdf/ImagesToPdf";
 
 export const metadata = {
-  title: "Free Images To Pdf Online - No Signup | 30tools",
-  description: "Images To Pdf - Coming Soon",
-  robots: { index: true, follow: true },
+	title: "Free Images To Pdf Online - No Signup | 30tools",
+	description: "Images To Pdf - Coming Soon",
+	robots: { index: true, follow: true },
 };
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<div className="container mx-auto px-4 py-8 md:py-12">
 			<div className="max-w-4xl mx-auto text-center mb-8">

@@ -45,7 +45,7 @@ export default function AiTechnicalSeoFixerTool() {
 			} else {
 				setError(response.error);
 			}
-		} catch (err) {
+		} catch (_err) {
 			setError("An unexpected error occurred. Please try again.");
 		} finally {
 			setLoading(false);

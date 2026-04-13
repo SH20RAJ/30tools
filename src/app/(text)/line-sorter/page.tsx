@@ -1,24 +1,31 @@
-import type { Metadata } from "next";
-import ToolLayout from "@/components/shared/ToolLayout";
 import ToolContent from "@/components/shared/ToolContent";
+import ToolLayout from "@/components/shared/ToolLayout";
 import LineSorterTool from "@/components/tools/text/LineSorterTool";
 import { getToolById } from "@/constants/tools-utils";
 
 export const metadata = {
-  title: "Free Line Sorter Online - No Signup | 30tools",
-  description: "Sort lines instantly online: A-Z, Z-A, natural, numeric, by length, or shuffle. Remove duplicates and empty lines, then copy clean output in one click.",
-  keywords: ["line sorter","sort lines alphabetically","alphabetize list","sort lines online","remove duplicate lines","natural sort"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Line Sorter Online - No Signup | 30tools",
+	description:
+		"Sort lines instantly online: A-Z, Z-A, natural, numeric, by length, or shuffle. Remove duplicates and empty lines, then copy clean output in one click.",
+	keywords: [
+		"line sorter",
+		"sort lines alphabetically",
+		"alphabetize list",
+		"sort lines online",
+		"remove duplicate lines",
+		"natural sort",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default function LineSorterPage() {

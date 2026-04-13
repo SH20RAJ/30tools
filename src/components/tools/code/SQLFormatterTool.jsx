@@ -123,7 +123,7 @@ export default function SQLFormatter() {
 			});
 
 			// Add line breaks and indentation
-			const indent = " ".repeat(parseInt(indentSize));
+			const indent = " ".repeat(parseInt(indentSize, 10));
 
 			// Major clauses on new lines
 			const majorClauses = [
@@ -154,7 +154,7 @@ export default function SQLFormatter() {
 			});
 
 			// Subqueries and parentheses
-			formatted = formatted.replace(/\(/g, "(\n" + indent);
+			formatted = formatted.replace(/\(/g, `(\n${indent}`);
 			formatted = formatted.replace(/\)/g, "\n)");
 
 			// Clean up extra newlines and trim

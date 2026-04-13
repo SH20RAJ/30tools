@@ -38,7 +38,7 @@ const TEMPLATES = {
 
 export default function OgImageGenerator() {
 	const canvasRef = useRef(null);
-	const [loading, setLoading] = useState(false);
+	const [_loading, _setLoading] = useState(false);
 	const [config, setConfig] = useState({
 		template: "simple",
 		title: "My Awesome Article",
@@ -55,7 +55,7 @@ export default function OgImageGenerator() {
 	// Draw canvas whenever config changes
 	useEffect(() => {
 		drawCanvas();
-	}, [config]);
+	}, [drawCanvas]);
 
 	const handleConfigChange = (key, value) => {
 		setConfig((prev) => ({ ...prev, [key]: value }));
@@ -179,12 +179,12 @@ export default function OgImageGenerator() {
 		const lineArray = [];
 
 		for (let n = 0; n < words.length; n++) {
-			testLine = line + words[n] + " ";
+			testLine = `${line + words[n]} `;
 			const metrics = ctx.measureText(testLine);
 			const testWidth = metrics.width;
 			if (testWidth > maxWidth && n > 0) {
 				lineArray.push(line);
-				line = words[n] + " ";
+				line = `${words[n]} `;
 			} else {
 				line = testLine;
 			}
@@ -193,7 +193,7 @@ export default function OgImageGenerator() {
 
 		// Center vertically based on number of lines
 		const totalBlockHeight = lineArray.length * lineHeight;
-		const startY = y - totalBlockHeight / 2; // Actually we want it relative to the y passed
+		const _startY = y - totalBlockHeight / 2; // Actually we want it relative to the y passed
 
 		for (let k = 0; k < lineArray.length; k++) {
 			ctx.fillText(lineArray[k], x, y + k * lineHeight);

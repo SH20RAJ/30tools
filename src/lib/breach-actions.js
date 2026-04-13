@@ -114,7 +114,7 @@ export async function checkPasswordBreaches(passwordHash) {
 				return {
 					success: true,
 					data: {
-						count: parseInt(count),
+						count: parseInt(count, 10),
 						isCompromised: true,
 					},
 				};

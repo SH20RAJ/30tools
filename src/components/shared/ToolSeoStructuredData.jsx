@@ -1,7 +1,7 @@
 "use client";
 
-import { useMemo } from "react";
 import { usePathname } from "next/navigation";
+import { useMemo } from "react";
 import { getAllCategories, getAllTools } from "@/constants/tools-utils";
 
 const BASE_URL = "https://30tools.com";

@@ -14,92 +14,115 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
 export const metadata = {
-  title: "Free Image Converter Online - No Signup | 30tools",
-  description: "Convert images between different formats (JPEG, PNG, WebP). 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
-  keywords: ["image converter","image","converter","image-converter","image tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Image Converter Online - No Signup | 30tools",
+	description:
+		"Convert images between different formats (JPEG, PNG, WebP). 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+	keywords: [
+		"image converter",
+		"image",
+		"converter",
+		"image-converter",
+		"image tool",
+		"free",
+		"online",
+		"tool",
+		"30tools",
+		"no signup",
+		"fast",
+		"secure",
+		"browser-based",
+		"instant",
+		"easy",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 export default async function ImageConverterPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-  "id": "image-converter",
-  "name": "Image Converter",
-  "description": "Convert images between different formats (JPEG, PNG, WebP)",
-  "category": "image",
-  "route": "/image-converter",
-  "features": [
-    "Supports JPEG, PNG, WebP, GIF, BMP formats",
-    "Batch process multiple images",
-    "High-quality output preservation",
-    "Adjustable quality and compression settings",
-    "100% Free - No hidden costs or subscriptions",
-    "No Registration Required - Start immediately"
-  ],
-  "benefits": [],
-  "useCases": [],
-  "faqs": [
-    {
-      "question": "Is this Image Converter really free?",
-      "answer": "Yes! Our Image Converter is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
-    },
-    {
-      "question": "Is my data secure when using Image Converter?",
-      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
-    },
-    {
-      "question": "Do I need to create an account to use Image Converter?",
-      "answer": "No registration required. You can start using Image Converter immediately without creating an account or providing any personal information."
-    },
-    {
-      "question": "Are there any file size limits for Image Converter?",
-      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
-    },
-    {
-      "question": "Can I use Image Converter on mobile devices?",
-      "answer": "Yes, Image Converter is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
-    },
-    {
-      "question": "What file formats does Image Converter support?",
-      "answer": "Image Converter supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use Image Converter",
-    "steps": [
-      {
-        "name": "Upload or Input",
-        "text": "Provide your file or input data using the upload button or text input field. Image Converter supports drag-and-drop for convenience.",
-        "url": "/image-converter#step1",
-        "position": 1
-      },
-      {
-        "name": "Configure Settings",
-        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-        "url": "/image-converter#step2",
-        "position": 2
-      },
-      {
-        "name": "Process & Download",
-        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-        "url": "/image-converter#step3",
-        "position": 3
-      }
-    ]
-  }
-};
+		id: "image-converter",
+		name: "Image Converter",
+		description: "Convert images between different formats (JPEG, PNG, WebP)",
+		category: "image",
+		route: "/image-converter",
+		features: [
+			"Supports JPEG, PNG, WebP, GIF, BMP formats",
+			"Batch process multiple images",
+			"High-quality output preservation",
+			"Adjustable quality and compression settings",
+			"100% Free - No hidden costs or subscriptions",
+			"No Registration Required - Start immediately",
+		],
+		benefits: [],
+		useCases: [],
+		faqs: [
+			{
+				question: "Is this Image Converter really free?",
+				answer:
+					"Yes! Our Image Converter is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
+			},
+			{
+				question: "Is my data secure when using Image Converter?",
+				answer:
+					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
+			},
+			{
+				question: "Do I need to create an account to use Image Converter?",
+				answer:
+					"No registration required. You can start using Image Converter immediately without creating an account or providing any personal information.",
+			},
+			{
+				question: "Are there any file size limits for Image Converter?",
+				answer:
+					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
+			},
+			{
+				question: "Can I use Image Converter on mobile devices?",
+				answer:
+					"Yes, Image Converter is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
+			},
+			{
+				question: "What file formats does Image Converter support?",
+				answer:
+					"Image Converter supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
+			},
+		],
+		howTo: {
+			name: "How to Use Image Converter",
+			steps: [
+				{
+					name: "Upload or Input",
+					text: "Provide your file or input data using the upload button or text input field. Image Converter supports drag-and-drop for convenience.",
+					url: "/image-converter#step1",
+					position: 1,
+				},
+				{
+					name: "Configure Settings",
+					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+					url: "/image-converter#step2",
+					position: 2,
+				},
+				{
+					name: "Process & Download",
+					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+					url: "/image-converter#step3",
+					position: 3,
+				},
+			],
+		},
+	};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [
@@ -184,9 +207,9 @@ export default async function ImageConverterPage({ searchParams }) {
 						Free Image Converter - JPG, PNG, WebP, HEIC Online
 					</h1>
 					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Convert your images to the perfect file format instantly. Support for
-						JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert multiple files
-						with custom quality and resize options.
+						Convert your images to the perfect file format instantly. Support
+						for JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert multiple
+						files with custom quality and resize options.
 					</p>
 
 					<QuickActions
@@ -196,8 +219,6 @@ export default async function ImageConverterPage({ searchParams }) {
 						showShare={true}
 					/>
 				</div>
-
-
 
 				{/* Tool Interface */}
 				<div className="mb-12">

@@ -175,7 +175,7 @@ export default function UserAgentParserTool() {
 
 	useEffect(() => {
 		loadCurrentUserAgent();
-	}, []);
+	}, [loadCurrentUserAgent]);
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 py-12 px-4">

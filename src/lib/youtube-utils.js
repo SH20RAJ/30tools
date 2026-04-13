@@ -10,7 +10,7 @@ export function extractYouTubeId(url) {
 
 	for (const p of patterns) {
 		const m = url.match(p);
-		if (m && m[1]) return m[1];
+		if (m?.[1]) return m[1];
 	}
 
 	// If URL contains a v= param but additional params after, attempt to parse

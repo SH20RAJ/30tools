@@ -117,16 +117,7 @@ export default function LogoGeneratorTool() {
 
 	useEffect(() => {
 		generateLogo();
-	}, [
-		logoText,
-		selectedFont,
-		fontSize,
-		letterSpacing,
-		selectedColor,
-		selectedStyle,
-		backgroundColor,
-		isTransparent,
-	]);
+	}, [generateLogo]);
 
 	const generateLogo = () => {
 		const canvas = canvasRef.current;
@@ -159,8 +150,8 @@ export default function LogoGeneratorTool() {
 
 		// Measure text
 		const metrics = ctx.measureText(logoText);
-		const textWidth = metrics.width;
-		const textHeight = fontSize[0];
+		const _textWidth = metrics.width;
+		const _textHeight = fontSize[0];
 
 		const x = 200;
 		const y = 100;

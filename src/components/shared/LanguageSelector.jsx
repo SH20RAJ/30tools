@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import Link from "next/link";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import LanguageIcon from "@mui/icons-material/Language";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Typography from "@mui/material/Typography";
-import LanguageIcon from "@mui/icons-material/Language";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Link from "next/link";
+import { useState } from "react";
 
 export function LanguageSelector({ languages = [] }) {
 	const [anchorEl, setAnchorEl] = useState(null);
@@ -89,7 +89,12 @@ export function LanguageSelector({ languages = [] }) {
 							<span>{lang.name}</span>
 							<Typography
 								component="span"
-								sx={{ fontSize: 9, fontWeight: 700, textTransform: "uppercase", color: "text.disabled" }}
+								sx={{
+									fontSize: 9,
+									fontWeight: 700,
+									textTransform: "uppercase",
+									color: "text.disabled",
+								}}
 							>
 								{lang.code}
 							</Typography>

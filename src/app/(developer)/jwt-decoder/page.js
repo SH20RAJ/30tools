@@ -8,20 +8,26 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata = {
-  title: "Free JWT Decoder Online - No Signup | 30tools",
-  description: "Developer tools: JWT Decoder. Format, validate, convert code/data. Fast, accurate, essential for programmers. All processing happens locally in your browser for",
-  keywords: ["jwt decoder","jwt decoder free","jwt decoder online","jwt decoder tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free JWT Decoder Online - No Signup | 30tools",
+	description:
+		"Developer tools: JWT Decoder. Format, validate, convert code/data. Fast, accurate, essential for programmers. All processing happens locally in your browser for",
+	keywords: [
+		"jwt decoder",
+		"jwt decoder free",
+		"jwt decoder online",
+		"jwt decoder tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLdSchemas = {
@@ -163,7 +169,7 @@ export default async function JWTDecoderPage({ searchParams }) {
 						Decode <span className="text-primary">JWT</span> Without Secret
 					</h1>
 					<p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-						The fastest JWT token decoder and debugger. Inspect your JSON Web 
+						The fastest JWT token decoder and debugger. Inspect your JSON Web
 						Tokens instantly and securely without sending data to a server.
 					</p>
 				</div>

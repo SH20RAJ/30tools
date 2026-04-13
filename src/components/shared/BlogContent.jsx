@@ -13,7 +13,7 @@ export default function BlogContent({ html }) {
 				window.hljs.highlightElement(block);
 			});
 		}
-	}, [html]);
+	}, []);
 
 	const handleHighlightLoad = () => {
 		if (contentRef.current) {

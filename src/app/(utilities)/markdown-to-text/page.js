@@ -1,15 +1,17 @@
+import ToolContent from "@/components/shared/ToolContent";
+import ToolLayout from "@/components/shared/ToolLayout";
 import MarkdownToText from "@/components/tools/text/MarkdownToText";
 import { getAllTools } from "@/constants/tools-utils";
-import ToolLayout from "@/components/shared/ToolLayout";
-import ToolContent from "@/components/shared/ToolContent";
 
 const TOOL_ID = "markdown-to-text";
 const tool = getAllTools().find((t) => t.id === TOOL_ID);
 
 export const metadata = {
-  title: "Free AI-to-Text Converter (Markdown Stripper) Online - No Signup | 30tools",
-  description: "Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing.",
-  robots: { index: true, follow: true },
+	title:
+		"Free AI-to-Text Converter (Markdown Stripper) Online - No Signup | 30tools",
+	description:
+		"Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing.",
+	robots: { index: true, follow: true },
 };
 
 export default async function MarkdownToTextPage({ searchParams }) {

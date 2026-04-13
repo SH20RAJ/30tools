@@ -60,27 +60,30 @@ export default function URLShortenerTool() {
 		return result;
 	};
 
-	const shortenUrl = useCallback(async (originalUrl, alias = "") => {
-		if (!isValidUrl(originalUrl)) {
-			throw new Error("Invalid URL format");
-		}
+	const shortenUrl = useCallback(
+		async (originalUrl, alias = "") => {
+			if (!isValidUrl(originalUrl)) {
+				throw new Error("Invalid URL format");
+			}
 
-		// Simulate API call
-		await new Promise((resolve) => setTimeout(resolve, 800));
+			// Simulate API call
+			await new Promise((resolve) => setTimeout(resolve, 800));
 
-		const shortCode = alias || generateShortCode();
-		const shortUrl = `https://30t.me/${shortCode}`;
+			const shortCode = alias || generateShortCode();
+			const shortUrl = `https://30t.me/${shortCode}`;
 
-		return {
-			id: Math.random().toString(36).substr(2, 9),
-			originalUrl,
-			shortUrl,
-			shortCode,
-			clicks: Math.floor(Math.random() * 1000),
-			createdAt: new Date().toISOString(),
-			qrCode: `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="white"/><text x="50" y="50" text-anchor="middle" fill="black" font-size="8">QR Code</text></svg>`)}`,
-		};
-	}, []);
+			return {
+				id: Math.random().toString(36).substr(2, 9),
+				originalUrl,
+				shortUrl,
+				shortCode,
+				clicks: Math.floor(Math.random() * 1000),
+				createdAt: new Date().toISOString(),
+				qrCode: `data:image/svg+xml;base64,${btoa(`<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="white"/><text x="50" y="50" text-anchor="middle" fill="black" font-size="8">QR Code</text></svg>`)}`,
+			};
+		},
+		[isValidUrl, generateShortCode],
+	);
 
 	const handleShortenUrl = async () => {
 		if (!currentUrl.trim()) return;

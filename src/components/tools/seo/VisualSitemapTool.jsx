@@ -118,7 +118,7 @@ export default function VisualSitemapTool() {
 			const parts = path.split("/").filter(Boolean);
 			let current = root;
 
-			parts.forEach((part, index) => {
+			parts.forEach((part, _index) => {
 				if (!current.children[part]) {
 					current.children[part] = { name: part, children: {} };
 				}

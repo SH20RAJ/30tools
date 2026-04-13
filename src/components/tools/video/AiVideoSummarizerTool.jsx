@@ -45,7 +45,7 @@ export default function AiVideoSummarizerTool() {
 	const [processingStep, setProcessingStep] = useState("");
 	const [copied, setCopied] = useState(false);
 	const fileInputRef = useRef(null);
-	const videoRef = useRef(null);
+	const _videoRef = useRef(null);
 
 	const handleFileUpload = (event) => {
 		const file = event.target.files[0];
@@ -152,7 +152,7 @@ export default function AiVideoSummarizerTool() {
 		return `This is a sample transcript for ${videoName}. The video discusses various topics including productivity tips, workflow optimization, and best practices for content creation. The speaker covers important points about time management, automation tools, and strategies for improving efficiency in daily tasks. Key insights are shared about leveraging technology to streamline processes and achieve better results with less effort.`;
 	};
 
-	const generateSummary = (transcript, type, length) => {
+	const generateSummary = (_transcript, type, length) => {
 		const summaries = {
 			"bullet-points": {
 				short:
@@ -177,10 +177,10 @@ export default function AiVideoSummarizerTool() {
 			},
 		};
 
-		return summaries[type][length] || summaries["bullet-points"]["medium"];
+		return summaries[type][length] || summaries["bullet-points"].medium;
 	};
 
-	const extractKeyPoints = (transcript) => {
+	const extractKeyPoints = (_transcript) => {
 		return [
 			{ point: "Productivity Enhancement", importance: "High" },
 			{ point: "Workflow Optimization", importance: "High" },

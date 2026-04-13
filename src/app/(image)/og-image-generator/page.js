@@ -2,20 +2,26 @@ import { BreadcrumbsEnhanced, FAQSection } from "@/components/seo";
 import OgImageGenerator from "@/components/tools/image/OgImageGenerator/OgImageGenerator";
 
 export const metadata = {
-  title: "Free OG Image Generator Online - No Signup | 30tools",
-  description: "Convert, resize, and edit images with our free OG Image Generator. No registration required. Fast, secure, browser-based processing. All processing happens loca",
-  keywords: ["og image generator","og image generator free","og image generator online","og image generator tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free OG Image Generator Online - No Signup | 30tools",
+	description:
+		"Convert, resize, and edit images with our free OG Image Generator. No registration required. Fast, secure, browser-based processing. All processing happens loca",
+	keywords: [
+		"og image generator",
+		"og image generator free",
+		"og image generator online",
+		"og image generator tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLd = {
@@ -42,7 +48,7 @@ const jsonLd = {
 
 export default async function OgImageGeneratorPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const breadcrumbs = [
 		{ name: "Image Tools", url: "/image-tools" },
 		{ name: "OG Image Generator", url: "/og-image-generator" },

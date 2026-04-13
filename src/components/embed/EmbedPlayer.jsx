@@ -16,7 +16,7 @@ export default function EmbedPlayer({ player, videoId }) {
 		// Nothing fancy: For now, we just leave the page to render an iframe
 		// If advanced player integration is required, dynamic imports and
 		// initialization of player libraries can be added here.
-	}, [player, videoId, searchParams]);
+	}, []);
 
 	const src = `https://www.youtube.com/embed/${videoId}?autoplay=${autoplay ? 1 : 0}&controls=${controls ? 1 : 0}&start=${start}&rel=0`;
 

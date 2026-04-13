@@ -40,4 +40,4 @@ function AvatarFallback({ className, ...props }) {
 	);
 }
 
-export { Avatar, AvatarImage, AvatarFallback };
+export { Avatar, AvatarFallback, AvatarImage };

@@ -2,20 +2,26 @@ import Link from "next/link";
 import YouTubeScriptGenerator from "@/components/tools/youtube/YouTubeScriptGenerator";
 
 export const metadata = {
-  title: "Free AI YouTube Script Generator Online - No Signup | 30tools",
-  description: "YouTube tools: AI YouTube Script Generator. Download thumbnails, get stats, optimize videos. Free, fast, and secure. All processing happens locally in your brow",
-  keywords: ["ai youtube script generator","ai youtube script generator free","ai youtube script generator online","ai youtube script generator tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free AI YouTube Script Generator Online - No Signup | 30tools",
+	description:
+		"YouTube tools: AI YouTube Script Generator. Download thumbnails, get stats, optimize videos. Free, fast, and secure. All processing happens locally in your brow",
+	keywords: [
+		"ai youtube script generator",
+		"ai youtube script generator free",
+		"ai youtube script generator online",
+		"ai youtube script generator tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLdSchemas = {
@@ -50,7 +56,7 @@ const AdUnit = () => (
 
 export default async function YouTubeScriptGeneratorPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

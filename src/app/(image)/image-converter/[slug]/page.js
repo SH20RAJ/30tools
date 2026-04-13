@@ -16,6 +16,13 @@ export async function generateStaticParams() {
 	return Object.keys(CONVERSIONS).map((slug) => ({ slug }));
 }
 
+export const metadata = {
+	title:
+		"Online Image Converter - Free & Fast Image Format Conversion | 30tools",
+	description:
+		"Convert images between various formats including JPG, PNG, WebP, and HEIC for free. Fast, secure, and high-quality image conversion directly in your browser.",
+	robots: { index: true, follow: true },
+};
 
 export default function DynamicConverterPage({ params: { slug } }) {
 	const conversion = CONVERSIONS[slug];

@@ -38,20 +38,23 @@ export default function ImageCompressorTool() {
 		}
 	}, []);
 
-	const handleDrop = useCallback((e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		setDragActive(false);
+	const handleDrop = useCallback(
+		(e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			setDragActive(false);
 
-		const droppedFiles = Array.from(e.dataTransfer.files);
-		const imageFiles = droppedFiles.filter((file) =>
-			file.type.startsWith("image/"),
-		);
+			const droppedFiles = Array.from(e.dataTransfer.files);
+			const imageFiles = droppedFiles.filter((file) =>
+				file.type.startsWith("image/"),
+			);
 
-		if (imageFiles.length > 0) {
-			processFiles(imageFiles);
-		}
-	}, []);
+			if (imageFiles.length > 0) {
+				processFiles(imageFiles);
+			}
+		},
+		[processFiles],
+	);
 
 	const handleFileInput = (e) => {
 		const selectedFiles = Array.from(e.target.files);
@@ -80,7 +83,7 @@ export default function ImageCompressorTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const compressImage = async (fileItem) => {
@@ -109,7 +112,7 @@ export default function ImageCompressorTool() {
 				ctx.drawImage(img, 0, 0, width, height);
 
 				// Determine optimal format and quality
-				const originalFormat = fileItem.file.type;
+				const _originalFormat = fileItem.file.type;
 				let outputFormat = "image/jpeg";
 				let outputQuality = quality[0] / 100;
 
@@ -263,10 +266,10 @@ export default function ImageCompressorTool() {
 					>
 						<UploadIcon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
 						<p className="text-lg font-medium mb-2">
-						Drop your photos here to compress and optimize image files
-					</p>
-					<p className="text-sm text-muted-foreground mb-4">
-						Free online image compressor for JPEG, PNG, and WebP
+							Drop your photos here to compress and optimize image files
+						</p>
+						<p className="text-sm text-muted-foreground mb-4">
+							Free online image compressor for JPEG, PNG, and WebP
 						</p>
 						<input
 							type="file"
@@ -291,7 +294,8 @@ export default function ImageCompressorTool() {
 					<CardHeader>
 						<CardTitle>Image Compression Settings</CardTitle>
 						<CardDescription>
-						Adjust quality to balance smaller file size with sharp image quality
+							Adjust quality to balance smaller file size with sharp image
+							quality
 						</CardDescription>
 					</CardHeader>
 					<CardContent>

@@ -73,7 +73,7 @@ export default function SearchPageComponent() {
 		if (initialQuery || initialCategory !== "all") {
 			searchTools(initialQuery, initialCategory);
 		}
-	}, [searchParams]);
+	}, [searchParams, searchTools]);
 
 	const handleSearch = (e) => {
 		e.preventDefault();
@@ -110,7 +110,7 @@ export default function SearchPageComponent() {
 		"audio converter",
 	];
 
-	const formatToolName = (name) => {
+	const _formatToolName = (name) => {
 		return name.toLowerCase().replace(/\s+/g, "-");
 	};
 

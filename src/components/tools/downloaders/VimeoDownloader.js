@@ -16,7 +16,6 @@ import {
 	Scissors,
 	Shield,
 	Star,
-	Users,
 	Wrench,
 	Zap,
 } from "lucide-react";
@@ -444,7 +443,9 @@ export default function VimeoDownloader() {
 											/>
 										))}
 									</div>
-									<span className="text-sm font-medium">Chris B., Filmmaker</span>
+									<span className="text-sm font-medium">
+										Chris B., Filmmaker
+									</span>
 								</div>
 								<p className="text-sm text-muted-foreground">
 									"Perfect for downloading reference films and client previews.
@@ -470,8 +471,8 @@ export default function VimeoDownloader() {
 									</span>
 								</div>
 								<p className="text-sm text-muted-foreground">
-									"Great tool for downloading stock footage and reference
-									videos from Vimeo. Clean interface and reliable downloads."
+									"Great tool for downloading stock footage and reference videos
+									from Vimeo. Clean interface and reliable downloads."
 								</p>
 								<p className="text-xs text-muted-foreground mt-2">
 									November 12, 2024
@@ -494,8 +495,8 @@ export default function VimeoDownloader() {
 									<span className="text-sm font-medium">Tom H., Student</span>
 								</div>
 								<p className="text-sm text-muted-foreground">
-									"Use it to download lecture videos from Vimeo. Works great
-									and the quality is always excellent."
+									"Use it to download lecture videos from Vimeo. Works great and
+									the quality is always excellent."
 								</p>
 								<p className="text-xs text-muted-foreground mt-2">
 									November 9, 2024
@@ -592,9 +593,7 @@ export default function VimeoDownloader() {
 						</p>
 
 						<h3>Vimeo Download Best Practices</h3>
-						<p>
-							When downloading Vimeo videos, consider these best practices:
-						</p>
+						<p>When downloading Vimeo videos, consider these best practices:</p>
 						<ul>
 							<li>
 								<strong>Respect Creator Rights:</strong> Only download with
@@ -616,8 +615,9 @@ export default function VimeoDownloader() {
 
 						<h3>Vimeo vs YouTube for Downloads</h3>
 						<p>
-							Vimeo generally offers higher quality uploads with less compression
-							than YouTube. Professional creators often use Vimeo for:
+							Vimeo generally offers higher quality uploads with less
+							compression than YouTube. Professional creators often use Vimeo
+							for:
 						</p>
 						<ul>
 							<li>Portfolio and showcase reels</li>
@@ -643,8 +643,8 @@ export default function VimeoDownloader() {
 									websites
 								</li>
 								<li>
-									<strong>Deleted Content:</strong> The video has been removed by
-									the creator
+									<strong>Deleted Content:</strong> The video has been removed
+									by the creator
 								</li>
 							</ul>
 						</div>

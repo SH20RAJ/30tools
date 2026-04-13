@@ -100,7 +100,7 @@ export default function QRCodeGeneratorTool() {
 			// Cleanup: remove script on unmount
 			document.head.removeChild(script);
 		};
-	}, []);
+	}, [generateQRCode]);
 
 	// Enhanced QR Code generation function using QRCode.js library
 	const generateQRCode = async () => {
@@ -183,32 +183,7 @@ export default function QRCodeGeneratorTool() {
 		if (qrCodeLibLoaded) {
 			generateQRCode();
 		}
-	}, [
-		qrType,
-		qrData,
-		qrSize,
-		foregroundColor,
-		backgroundColor,
-		errorCorrectionLevel,
-		includeMargin,
-		wifiSSID,
-		wifiPassword,
-		wifiSecurity,
-		wifiHidden,
-		contactName,
-		contactPhone,
-		contactEmail,
-		contactOrg,
-		contactUrl,
-		emailTo,
-		emailSubject,
-		emailBody,
-		smsNumber,
-		smsMessage,
-		locationLat,
-		locationLng,
-		qrCodeLibLoaded,
-	]);
+	}, [qrCodeLibLoaded, generateQRCode]);
 
 	const downloadPNG = () => {
 		const canvas = canvasRef.current;

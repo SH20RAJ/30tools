@@ -236,14 +236,14 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
 				{/* Header */}
 				<div className="text-center mb-8">
 					<div className="flex items-center justify-center gap-3 mb-4">
-						<div className="p-3 bg-background">
-							<Flame className="h-8 w-8 text-white" />
+						<div className="p-3 bg-primary/10 rounded-xl border border-primary/20">
+							<Flame className="h-8 w-8 text-primary" />
 						</div>
 						<div>
-							<h2 className="text-4xl font-bold bg-background">
+							<h2 className="text-4xl font-bold text-foreground">
 								Productivity Roast Generator
 							</h2>
-							<p className="text-muted-foreground mt-2">
+							<p className="text-muted-foreground mt-2 font-medium">
 								Get the honest feedback about your work habits you need to hear!
 								🔥
 							</p>
@@ -420,16 +420,22 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
 							<CardContent>
 								{roast ? (
 									<div className="space-y-6">
-										<div className="p-6 bg-background/20 dark:to-red-900/20 rounded-xl border-2 border-border">
-											<div className="text-lg leading-relaxed mb-4">
+										<div className="p-6 bg-secondary/50 rounded-xl border-2 border-border">
+											<div className="text-lg leading-relaxed mb-4 text-foreground font-medium">
 												{roast}
 											</div>
-											<div className="flex items-center gap-2 text-sm text-muted-foreground">
-												<Badge variant="outline" className="bg-white">
+											<div className="flex flex-wrap items-center gap-2 text-sm text-muted-foreground">
+												<Badge
+													variant="outline"
+													className="bg-background border-border shadow-sm"
+												>
 													{workStyles.find((s) => s.id === workStyle)?.icon}{" "}
 													{workStyles.find((s) => s.id === workStyle)?.name}
 												</Badge>
-												<Badge variant="outline" className="bg-white">
+												<Badge
+													variant="outline"
+													className="bg-background border-border shadow-sm"
+												>
 													{
 														roastIntensities.find(
 															(i) => i.id === roastIntensity,
@@ -444,7 +450,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
 												{useAI && (
 													<Badge
 														variant="outline"
-														className="bg-muted/50 text-primary"
+														className="bg-primary/10 text-primary border-primary/20 shadow-sm"
 													>
 														🤖 AI-Enhanced
 													</Badge>

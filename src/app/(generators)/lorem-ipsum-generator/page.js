@@ -1,12 +1,12 @@
 export const metadata = {
-  title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
-  description: "Free Lorem Ipsum Generator online tool. Fast and secure.",
-  robots: { index: true, follow: true },
+	title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+	description: "Free Lorem Ipsum Generator online tool. Fast and secure.",
+	robots: { index: true, follow: true },
 };
 
 export default async function LoremIpsumGeneratorPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const toolData = {
 		id: "lorem-ipsum-generator",
 		name: "Lorem Ipsum Generator",

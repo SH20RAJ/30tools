@@ -64,7 +64,7 @@ export default function PdfCompressorTool() {
 
 		// Simulate compression progress
 		const progressSteps = [10, 25, 45, 60, 80, 95, 100];
-		const stepNames = [
+		const _stepNames = [
 			"Analyzing PDF structure...",
 			"Optimizing images...",
 			"Compressing content streams...",
@@ -123,7 +123,7 @@ export default function PdfCompressorTool() {
 		const k = 1024;
 		const sizes = ["Bytes", "KB", "MB", "GB"];
 		const i = Math.floor(Math.log(bytes) / Math.log(k));
-		return parseFloat((bytes / k ** i).toFixed(2)) + " " + sizes[i];
+		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
 	const downloadCompressedFile = () => {

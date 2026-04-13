@@ -3,23 +3,29 @@ import ScrollToTopButton from "@/components/tools/youtube/ScrollToTopButton";
 import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
 
 export const metadata = {
-  title: "Free YouTube Video/Audio Downloader Online - No Signup | 30tools",
-  description: "YouTube tools: YouTube Video/Audio Downloader. Download thumbnails, get stats, optimize videos. Free, fast, and secure. All processing happens locally in your b",
-  keywords: ["youtube video/audio downloader","youtube video/audio downloader free","youtube video/audio downloader online","youtube video/audio downloader tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free YouTube Video/Audio Downloader Online - No Signup | 30tools",
+	description:
+		"YouTube tools: YouTube Video/Audio Downloader. Download thumbnails, get stats, optimize videos. Free, fast, and secure. All processing happens locally in your b",
+	keywords: [
+		"youtube video/audio downloader",
+		"youtube video/audio downloader free",
+		"youtube video/audio downloader online",
+		"youtube video/audio downloader tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
-const KEYWORD_INSIGHTS = [
+const _KEYWORD_INSIGHTS = [
 	{
 		keyword: "turboscribe youtube video downloader free",
 		trends: [44, 89, 92, 46, 108, 27, 66, 40, 70, 58],
@@ -763,7 +769,7 @@ const jsonLd = {
 
 export default async function YouTubeDownloaderPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	return (
 		<>
 			<script

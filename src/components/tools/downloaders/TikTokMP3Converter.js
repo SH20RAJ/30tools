@@ -82,7 +82,7 @@ export default function TikTokMP3Converter() {
 	};
 
 	const downloadMP3 = () => {
-		if (conversionData && conversionData.downloadUrl) {
+		if (conversionData?.downloadUrl) {
 			window.open(conversionData.downloadUrl, "_blank");
 		}
 	};

@@ -1,19 +1,24 @@
-
 export const metadata = {
-  title: "Free Advanced Keyword Research Online - No Signup | 30tools",
-  description: "SEO tools: Advanced Keyword Research. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your br",
-  keywords: ["advanced keyword research","advanced keyword research free","advanced keyword research online","advanced keyword research tool"],
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+	title: "Free Advanced Keyword Research Online - No Signup | 30tools",
+	description:
+		"SEO tools: Advanced Keyword Research. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your br",
+	keywords: [
+		"advanced keyword research",
+		"advanced keyword research free",
+		"advanced keyword research online",
+		"advanced keyword research tool",
+	],
+	robots: {
+		index: true,
+		follow: true,
+		googleBot: {
+			index: true,
+			follow: true,
+			"max-video-preview": -1,
+			"max-image-preview": "large",
+			"max-snippet": -1,
+		},
+	},
 };
 
 const jsonLd = generateToolJsonLd("keyword-research-tool", "seo", {
@@ -24,73 +29,82 @@ const jsonLd = generateToolJsonLd("keyword-research-tool", "seo", {
 
 export default async function KeywordResearchToolPage({ searchParams }) {
 	const params = await searchParams;
-	const lang = params.lang || "en";
+	const _lang = params.lang || "en";
 	const toolData = {
-  "id": "keyword-research-tool",
-  "name": "Advanced Keyword Research",
-  "description": "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO.",
-  "category": "seo",
-  "route": "/keyword-research-tool",
-  "features": [
-    "100% Free - No hidden costs or subscriptions",
-    "No Registration Required - Start immediately",
-    "Secure & Private - All processing in your browser",
-    "Fast & Efficient - Get results in seconds",
-    "No File Size Limits - Handle large files easily",
-    "Mobile Friendly - Works on all devices"
-  ],
-  "benefits": [],
-  "useCases": [],
-  "faqs": [
-    {
-      "question": "Is this Advanced Keyword Research really free?",
-      "answer": "Yes! Our Advanced Keyword Research is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
-    },
-    {
-      "question": "Is my data secure when using Advanced Keyword Research?",
-      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
-    },
-    {
-      "question": "Do I need to create an account to use Advanced Keyword Research?",
-      "answer": "No registration required. You can start using Advanced Keyword Research immediately without creating an account or providing any personal information."
-    },
-    {
-      "question": "Are there any file size limits for Advanced Keyword Research?",
-      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
-    },
-    {
-      "question": "Can I use Advanced Keyword Research on mobile devices?",
-      "answer": "Yes, Advanced Keyword Research is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
-    },
-    {
-      "question": "What file formats does Advanced Keyword Research support?",
-      "answer": "Advanced Keyword Research supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
-    }
-  ],
-  "howTo": {
-    "name": "How to Use Advanced Keyword Research",
-    "steps": [
-      {
-        "name": "Upload or Input",
-        "text": "Provide your file or input data using the upload button or text input field. Advanced Keyword Research supports drag-and-drop for convenience.",
-        "url": "/keyword-research-tool#step1",
-        "position": 1
-      },
-      {
-        "name": "Configure Settings",
-        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-        "url": "/keyword-research-tool#step2",
-        "position": 2
-      },
-      {
-        "name": "Process & Download",
-        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-        "url": "/keyword-research-tool#step3",
-        "position": 3
-      }
-    ]
-  }
-};
+		id: "keyword-research-tool",
+		name: "Advanced Keyword Research",
+		description:
+			"Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO.",
+		category: "seo",
+		route: "/keyword-research-tool",
+		features: [
+			"100% Free - No hidden costs or subscriptions",
+			"No Registration Required - Start immediately",
+			"Secure & Private - All processing in your browser",
+			"Fast & Efficient - Get results in seconds",
+			"No File Size Limits - Handle large files easily",
+			"Mobile Friendly - Works on all devices",
+		],
+		benefits: [],
+		useCases: [],
+		faqs: [
+			{
+				question: "Is this Advanced Keyword Research really free?",
+				answer:
+					"Yes! Our Advanced Keyword Research is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
+			},
+			{
+				question: "Is my data secure when using Advanced Keyword Research?",
+				answer:
+					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
+			},
+			{
+				question:
+					"Do I need to create an account to use Advanced Keyword Research?",
+				answer:
+					"No registration required. You can start using Advanced Keyword Research immediately without creating an account or providing any personal information.",
+			},
+			{
+				question:
+					"Are there any file size limits for Advanced Keyword Research?",
+				answer:
+					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
+			},
+			{
+				question: "Can I use Advanced Keyword Research on mobile devices?",
+				answer:
+					"Yes, Advanced Keyword Research is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
+			},
+			{
+				question: "What file formats does Advanced Keyword Research support?",
+				answer:
+					"Advanced Keyword Research supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
+			},
+		],
+		howTo: {
+			name: "How to Use Advanced Keyword Research",
+			steps: [
+				{
+					name: "Upload or Input",
+					text: "Provide your file or input data using the upload button or text input field. Advanced Keyword Research supports drag-and-drop for convenience.",
+					url: "/keyword-research-tool#step1",
+					position: 1,
+				},
+				{
+					name: "Configure Settings",
+					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+					url: "/keyword-research-tool#step2",
+					position: 2,
+				},
+				{
+					name: "Process & Download",
+					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+					url: "/keyword-research-tool#step3",
+					position: 3,
+				},
+			],
+		},
+	};
 
 	const features = [
 		"Real-time Search Volume Data",
