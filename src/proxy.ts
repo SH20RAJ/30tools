@@ -65,7 +65,7 @@ function isValidRoute(pathname: string): boolean {
 	return allowedPrefixes.some((prefix) => pathname.startsWith(prefix));
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
 	// Handle Redirects for extraSlugs
