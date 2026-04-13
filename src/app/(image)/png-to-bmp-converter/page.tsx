@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("png-to-bmp-converter", "image");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="png-to-bmp-converter" />;
+  return <PremiumToolPage toolId="png-to-bmp-converter" />;
 }

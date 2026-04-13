@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("url-rewriting-tool", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="url-rewriting-tool" />;
+  return <PremiumToolPage toolId="url-rewriting-tool" />;
 }

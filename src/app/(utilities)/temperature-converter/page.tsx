@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("temperature-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="temperature-converter" />;
+  return <PremiumToolPage toolId="temperature-converter" />;
 }

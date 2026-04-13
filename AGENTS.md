@@ -16,10 +16,11 @@
 
 ### 3. SEO Infrastructure
 - **seo-helper.ts**: Centralized logic for generating metadata, JSON-LD (Schema.org), and handled canonical URLs for variants.
-- **ToolPlaceholderPage.tsx**: A standard component used to rapidly deploy SEO-optimized landing pages for new tools. It renders features, FAQs, How-To steps, and structured data dynamically from `tools.json`.
+- **PremiumToolPage.tsx**: A standard component used to rapidly deploy SEO-optimized landing pages for new tools. It renders features, FAQs, How-To steps, and structured data dynamically from `tools.json`.
 
 ### 4. Components
 - **ToolLayout**: Shared wrapper for all tool pages providing consistent navigation and structure.
+- **PremiumToolPage**: Enhanced component for tool pages with premium UI, tabs, and SEO optimization.
 - **SEO Components**: `BreadcrumbsEnhanced`, `QuickActions`, `RelatedTools`, and `UserComments` are integrated into tool pages to boost engagement and rank.
 
 ## Recent Optimizations
@@ -29,5 +30,5 @@
 ## Developer Workflow
 - To add a new tool:
     1. Append entry to `src/constants/tools.json`.
-    2. Create folder and `page.tsx` in `src/app/(category)/[slug]/` using `ToolPlaceholderPage`.
+    2. Create folder and `page.tsx` in `src/app/(category)/[slug]/` using `PremiumToolPage`.
     3. The middleware and rewrite system will handle the rest.

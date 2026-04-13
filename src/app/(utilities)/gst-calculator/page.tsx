@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("gst-calculator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="gst-calculator" />;
+  return <PremiumToolPage toolId="gst-calculator" />;
 }

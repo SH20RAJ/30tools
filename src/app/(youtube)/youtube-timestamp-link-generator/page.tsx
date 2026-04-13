@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-timestamp-link-generator", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-timestamp-link-generator" />;
+  return <PremiumToolPage toolId="youtube-timestamp-link-generator" />;
 }

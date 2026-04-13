@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("get-http-headers", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="get-http-headers" />;
+  return <PremiumToolPage toolId="get-http-headers" />;
 }

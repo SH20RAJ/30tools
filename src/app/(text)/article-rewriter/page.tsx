@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("article-rewriter", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="article-rewriter" />;
+  return <PremiumToolPage toolId="article-rewriter" />;
 }

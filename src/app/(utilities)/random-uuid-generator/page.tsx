@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("random-uuid-generator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="random-uuid-generator" />;
+  return <PremiumToolPage toolId="random-uuid-generator" />;
 }

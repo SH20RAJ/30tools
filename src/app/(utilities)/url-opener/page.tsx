@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("url-opener", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="url-opener" />;
+  return <PremiumToolPage toolId="url-opener" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("pressure-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="pressure-converter" />;
+  return <PremiumToolPage toolId="pressure-converter" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-views-ratio-calculator", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-views-ratio-calculator" />;
+  return <PremiumToolPage toolId="youtube-views-ratio-calculator" />;
 }

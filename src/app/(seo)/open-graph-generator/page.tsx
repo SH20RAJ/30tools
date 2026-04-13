@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("open-graph-generator", "seo");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="open-graph-generator" />;
+  return <PremiumToolPage toolId="open-graph-generator" />;
 }

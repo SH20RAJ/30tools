@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("decimal-to-octal-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="decimal-to-octal-converter" />;
+  return <PremiumToolPage toolId="decimal-to-octal-converter" />;
 }

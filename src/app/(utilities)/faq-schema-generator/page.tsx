@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("faq-schema-generator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="faq-schema-generator" />;
+  return <PremiumToolPage toolId="faq-schema-generator" />;
 }

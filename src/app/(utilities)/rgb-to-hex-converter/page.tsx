@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("rgb-to-hex-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="rgb-to-hex-converter" />;
+  return <PremiumToolPage toolId="rgb-to-hex-converter" />;
 }

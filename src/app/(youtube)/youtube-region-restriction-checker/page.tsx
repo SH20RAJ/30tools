@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-region-restriction-checker", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-region-restriction-checker" />;
+  return <PremiumToolPage toolId="youtube-region-restriction-checker" />;
 }

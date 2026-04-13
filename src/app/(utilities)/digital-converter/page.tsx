@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("digital-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="digital-converter" />;
+  return <PremiumToolPage toolId="digital-converter" />;
 }

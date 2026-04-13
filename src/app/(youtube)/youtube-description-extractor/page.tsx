@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-description-extractor", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-description-extractor" />;
+  return <PremiumToolPage toolId="youtube-description-extractor" />;
 }

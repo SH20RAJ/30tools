@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("what-is-my-screen-resolution", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="what-is-my-screen-resolution" />;
+  return <PremiumToolPage toolId="what-is-my-screen-resolution" />;
 }

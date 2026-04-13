@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("json-to-text-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="json-to-text-converter" />;
+  return <PremiumToolPage toolId="json-to-text-converter" />;
 }

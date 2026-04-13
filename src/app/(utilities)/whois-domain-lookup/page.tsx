@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("whois-domain-lookup", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="whois-domain-lookup" />;
+  return <PremiumToolPage toolId="whois-domain-lookup" />;
 }

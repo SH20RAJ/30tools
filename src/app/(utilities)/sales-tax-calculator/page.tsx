@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("sales-tax-calculator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="sales-tax-calculator" />;
+  return <PremiumToolPage toolId="sales-tax-calculator" />;
 }

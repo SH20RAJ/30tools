@@ -109,13 +109,12 @@ export default async function ImageToPDFPage({ searchParams }) {
 			<main className="container mx-auto px-4 py-8">
 				{/* Hero Section */}
 				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Free Image to PDF Converter
+					<h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4">
+						Free Image to PDF Converter - Instant Online
 					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
+					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
 						Convert and combine your images (JPG, PNG, BMP, GIF) into a single
-						PDF document. Reorder pages and create professional PDFs instantly
-						and securely.
+						professional PDF document instantly. No signup, no watermarks, and 100% secure.
 					</p>
 
 					<QuickActions

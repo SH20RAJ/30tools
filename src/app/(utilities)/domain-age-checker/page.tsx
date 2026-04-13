@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("domain-age-checker", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="domain-age-checker" />;
+  return <PremiumToolPage toolId="domain-age-checker" />;
 }

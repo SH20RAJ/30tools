@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("cpm-calculator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="cpm-calculator" />;
+  return <PremiumToolPage toolId="cpm-calculator" />;
 }

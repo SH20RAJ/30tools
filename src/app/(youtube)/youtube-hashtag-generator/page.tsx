@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-hashtag-generator", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-hashtag-generator" />;
+  return <PremiumToolPage toolId="youtube-hashtag-generator" />;
 }

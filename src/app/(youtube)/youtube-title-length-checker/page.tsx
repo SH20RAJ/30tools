@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-title-length-checker", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-title-length-checker" />;
+  return <PremiumToolPage toolId="youtube-title-length-checker" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("octal-to-binary-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="octal-to-binary-converter" />;
+  return <PremiumToolPage toolId="octal-to-binary-converter" />;
 }

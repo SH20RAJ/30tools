@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("torque-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="torque-converter" />;
+  return <PremiumToolPage toolId="torque-converter" />;
 }

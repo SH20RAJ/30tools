@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("ip-address-lookup", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="ip-address-lookup" />;
+  return <PremiumToolPage toolId="ip-address-lookup" />;
 }

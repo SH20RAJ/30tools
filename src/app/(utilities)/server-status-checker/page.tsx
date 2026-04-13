@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("server-status-checker", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="server-status-checker" />;
+  return <PremiumToolPage toolId="server-status-checker" />;
 }

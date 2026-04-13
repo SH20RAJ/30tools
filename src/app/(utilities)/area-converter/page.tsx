@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("area-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="area-converter" />;
+  return <PremiumToolPage toolId="area-converter" />;
 }

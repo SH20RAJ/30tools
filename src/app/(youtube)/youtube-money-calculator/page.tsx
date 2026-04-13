@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-money-calculator", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-money-calculator" />;
+  return <PremiumToolPage toolId="youtube-money-calculator" />;
 }

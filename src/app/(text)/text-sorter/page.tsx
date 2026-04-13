@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("text-sorter", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="text-sorter" />;
+  return <PremiumToolPage toolId="text-sorter" />;
 }

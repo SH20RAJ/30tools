@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-subscribe-link-generator", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-subscribe-link-generator" />;
+  return <PremiumToolPage toolId="youtube-subscribe-link-generator" />;
 }

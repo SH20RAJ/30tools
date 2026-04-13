@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("word-counter", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="word-counter" />;
+  return <PremiumToolPage toolId="word-counter" />;
 }

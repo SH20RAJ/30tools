@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("json-minify", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="json-minify" />;
+  return <PremiumToolPage toolId="json-minify" />;
 }

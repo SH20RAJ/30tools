@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("decimal-to-text-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="decimal-to-text-converter" />;
+  return <PremiumToolPage toolId="decimal-to-text-converter" />;
 }

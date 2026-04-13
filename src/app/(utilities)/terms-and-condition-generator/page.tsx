@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("terms-and-condition-generator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="terms-and-condition-generator" />;
+  return <PremiumToolPage toolId="terms-and-condition-generator" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("color-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="color-converter" />;
+  return <PremiumToolPage toolId="color-converter" />;
 }

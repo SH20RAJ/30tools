@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("screen-resolution-simulator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="screen-resolution-simulator" />;
+  return <PremiumToolPage toolId="screen-resolution-simulator" />;
 }

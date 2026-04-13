@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("octal-to-text-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="octal-to-text-converter" />;
+  return <PremiumToolPage toolId="octal-to-text-converter" />;
 }

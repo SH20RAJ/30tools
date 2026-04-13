@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("privacy-policy-generator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="privacy-policy-generator" />;
+  return <PremiumToolPage toolId="privacy-policy-generator" />;
 }

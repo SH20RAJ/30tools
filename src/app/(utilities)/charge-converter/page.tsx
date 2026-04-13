@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("charge-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="charge-converter" />;
+  return <PremiumToolPage toolId="charge-converter" />;
 }

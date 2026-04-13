@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("hosting-checker", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="hosting-checker" />;
+  return <PremiumToolPage toolId="hosting-checker" />;
 }

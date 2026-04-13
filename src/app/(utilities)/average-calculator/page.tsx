@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("average-calculator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="average-calculator" />;
+  return <PremiumToolPage toolId="average-calculator" />;
 }

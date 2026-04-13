@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("speed-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="speed-converter" />;
+  return <PremiumToolPage toolId="speed-converter" />;
 }

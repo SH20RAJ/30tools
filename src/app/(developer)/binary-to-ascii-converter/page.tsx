@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("binary-to-ascii-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="binary-to-ascii-converter" />;
+  return <PremiumToolPage toolId="binary-to-ascii-converter" />;
 }

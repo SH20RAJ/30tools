@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-comment-picker", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-comment-picker" />;
+  return <PremiumToolPage toolId="youtube-comment-picker" />;
 }

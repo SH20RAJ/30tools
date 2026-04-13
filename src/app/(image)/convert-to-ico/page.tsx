@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("convert-to-ico", "image");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="convert-to-ico" />;
+  return <PremiumToolPage toolId="convert-to-ico" />;
 }

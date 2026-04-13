@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("redirect-checker", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="redirect-checker" />;
+  return <PremiumToolPage toolId="redirect-checker" />;
 }

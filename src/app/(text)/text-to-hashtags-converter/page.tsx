@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("text-to-hashtags-converter", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="text-to-hashtags-converter" />;
+  return <PremiumToolPage toolId="text-to-hashtags-converter" />;
 }

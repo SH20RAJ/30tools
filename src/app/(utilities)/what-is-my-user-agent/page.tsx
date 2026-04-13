@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("what-is-my-user-agent", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="what-is-my-user-agent" />;
+  return <PremiumToolPage toolId="what-is-my-user-agent" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("google-cache-checker", "seo");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="google-cache-checker" />;
+  return <PremiumToolPage toolId="google-cache-checker" />;
 }

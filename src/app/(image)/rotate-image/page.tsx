@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("rotate-image", "image");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="rotate-image" />;
+  return <PremiumToolPage toolId="rotate-image" />;
 }

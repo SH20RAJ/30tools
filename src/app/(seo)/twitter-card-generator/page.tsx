@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("twitter-card-generator", "seo");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="twitter-card-generator" />;
+  return <PremiumToolPage toolId="twitter-card-generator" />;
 }

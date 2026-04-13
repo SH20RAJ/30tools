@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("text-repeater", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="text-repeater" />;
+  return <PremiumToolPage toolId="text-repeater" />;
 }

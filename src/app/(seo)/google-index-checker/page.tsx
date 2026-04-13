@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("google-index-checker", "seo");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="google-index-checker" />;
+  return <PremiumToolPage toolId="google-index-checker" />;
 }

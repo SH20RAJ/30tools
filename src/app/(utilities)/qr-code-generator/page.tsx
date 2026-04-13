@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("qr-code-generator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="qr-code-generator" />;
+  return <PremiumToolPage toolId="qr-code-generator" />;
 }

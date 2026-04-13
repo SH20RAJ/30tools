@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("base64-encode", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="base64-encode" />;
+  return <PremiumToolPage toolId="base64-encode" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("facebook-id-finder", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="facebook-id-finder" />;
+  return <PremiumToolPage toolId="facebook-id-finder" />;
 }

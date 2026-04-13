@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("webp-to-png-converter", "image");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="webp-to-png-converter" />;
+  return <PremiumToolPage toolId="webp-to-png-converter" />;
 }

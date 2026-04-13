@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("text-to-binary-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="text-to-binary-converter" />;
+  return <PremiumToolPage toolId="text-to-binary-converter" />;
 }

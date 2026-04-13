@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("disclaimer-generator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="disclaimer-generator" />;
+  return <PremiumToolPage toolId="disclaimer-generator" />;
 }

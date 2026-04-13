@@ -24,7 +24,7 @@ CATEGORY_TO_FOLDER = {
 
 # Double braces for f-string/format escaping in Next.js code
 template = """import {{ generateToolMetadata }} from "@/lib/seo-helper";
-import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+import PremiumToolPage from "@/components/seo/PremiumToolPage";
 
 const TOOL_ID = "{tool_id}";
 const CATEGORY = "{category}";
@@ -35,7 +35,7 @@ export async function generateMetadata({{ searchParams }}: any) {{
 }}
 
 export default async function Page() {{
-    return <ToolPlaceholderPage toolId={{TOOL_ID}} />;
+    return <PremiumToolPage toolId={{TOOL_ID}} />;
 }}
 """
 

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("javascript-deobfuscator", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="javascript-deobfuscator" />;
+  return <PremiumToolPage toolId="javascript-deobfuscator" />;
 }

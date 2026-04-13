@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("keyword-density-checker", "seo");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="keyword-density-checker" />;
+  return <PremiumToolPage toolId="keyword-density-checker" />;
 }

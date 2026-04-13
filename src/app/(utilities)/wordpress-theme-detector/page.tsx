@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("wordpress-theme-detector", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="wordpress-theme-detector" />;
+  return <PremiumToolPage toolId="wordpress-theme-detector" />;
 }

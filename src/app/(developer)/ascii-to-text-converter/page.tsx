@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("ascii-to-text-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="ascii-to-text-converter" />;
+  return <PremiumToolPage toolId="ascii-to-text-converter" />;
 }

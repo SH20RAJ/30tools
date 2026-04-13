@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("url-encode", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="url-encode" />;
+  return <PremiumToolPage toolId="url-encode" />;
 }

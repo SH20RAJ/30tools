@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-embed-code-generator", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-embed-code-generator" />;
+  return <PremiumToolPage toolId="youtube-embed-code-generator" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("dns-records-checker", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="dns-records-checker" />;
+  return <PremiumToolPage toolId="dns-records-checker" />;
 }

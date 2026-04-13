@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("text-to-slug-converter", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="text-to-slug-converter" />;
+  return <PremiumToolPage toolId="text-to-slug-converter" />;
 }

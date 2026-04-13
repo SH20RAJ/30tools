@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("percentage-calculator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="percentage-calculator" />;
+  return <PremiumToolPage toolId="percentage-calculator" />;
 }

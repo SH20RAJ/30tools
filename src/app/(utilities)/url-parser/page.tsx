@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("url-parser", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="url-parser" />;
+  return <PremiumToolPage toolId="url-parser" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("remove-line-breaks", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="remove-line-breaks" />;
+  return <PremiumToolPage toolId="remove-line-breaks" />;
 }

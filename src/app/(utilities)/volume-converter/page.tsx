@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("volume-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="volume-converter" />;
+  return <PremiumToolPage toolId="volume-converter" />;
 }

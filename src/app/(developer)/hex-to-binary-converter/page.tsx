@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("hex-to-binary-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="hex-to-binary-converter" />;
+  return <PremiumToolPage toolId="hex-to-binary-converter" />;
 }

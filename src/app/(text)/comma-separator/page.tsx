@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("comma-separator", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="comma-separator" />;
+  return <PremiumToolPage toolId="comma-separator" />;
 }

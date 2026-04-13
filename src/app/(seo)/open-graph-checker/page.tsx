@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("open-graph-checker", "seo");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="open-graph-checker" />;
+  return <PremiumToolPage toolId="open-graph-checker" />;
 }

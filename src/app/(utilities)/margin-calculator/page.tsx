@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("margin-calculator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="margin-calculator" />;
+  return <PremiumToolPage toolId="margin-calculator" />;
 }

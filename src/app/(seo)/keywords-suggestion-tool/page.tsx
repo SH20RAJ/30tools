@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("keywords-suggestion-tool", "seo");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="keywords-suggestion-tool" />;
+  return <PremiumToolPage toolId="keywords-suggestion-tool" />;
 }

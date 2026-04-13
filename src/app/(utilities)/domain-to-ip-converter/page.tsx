@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("domain-to-ip-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="domain-to-ip-converter" />;
+  return <PremiumToolPage toolId="domain-to-ip-converter" />;
 }

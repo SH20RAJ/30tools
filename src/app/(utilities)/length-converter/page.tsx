@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("length-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="length-converter" />;
+  return <PremiumToolPage toolId="length-converter" />;
 }

@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("tsv-to-json-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="tsv-to-json-converter" />;
+  return <PremiumToolPage toolId="tsv-to-json-converter" />;
 }

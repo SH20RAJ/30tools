@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("page-size-checker", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="page-size-checker" />;
+  return <PremiumToolPage toolId="page-size-checker" />;
 }

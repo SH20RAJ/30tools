@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("website-ranking-checker", "seo");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="website-ranking-checker" />;
+  return <PremiumToolPage toolId="website-ranking-checker" />;
 }

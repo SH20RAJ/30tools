@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("number-to-roman-numerals", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="number-to-roman-numerals" />;
+  return <PremiumToolPage toolId="number-to-roman-numerals" />;
 }

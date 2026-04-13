@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("css-beautifier", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="css-beautifier" />;
+  return <PremiumToolPage toolId="css-beautifier" />;
 }

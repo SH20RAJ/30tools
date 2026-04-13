@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("random-word-generator", "text");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="random-word-generator" />;
+  return <PremiumToolPage toolId="random-word-generator" />;
 }

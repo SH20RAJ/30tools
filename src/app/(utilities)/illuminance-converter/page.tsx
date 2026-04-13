@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("illuminance-converter", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="illuminance-converter" />;
+  return <PremiumToolPage toolId="illuminance-converter" />;
 }

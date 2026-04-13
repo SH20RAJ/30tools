@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("discount-calculator", "utilities");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="discount-calculator" />;
+  return <PremiumToolPage toolId="discount-calculator" />;
 }

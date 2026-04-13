@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("text-to-hex-converter", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="text-to-hex-converter" />;
+  return <PremiumToolPage toolId="text-to-hex-converter" />;
 }

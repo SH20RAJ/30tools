@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("youtube-channel-statistics", "youtube");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="youtube-channel-statistics" />;
+  return <PremiumToolPage toolId="youtube-channel-statistics" />;
 }

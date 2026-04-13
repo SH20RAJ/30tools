@@ -4,5 +4,5 @@ import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("json-to-json-schema", "developer");
 
 export default function ToolPage() {
-  return <ToolPlaceholderPage toolId="json-to-json-schema" />;
+  return <PremiumToolPage toolId="json-to-json-schema" />;
 }
