@@ -296,35 +296,6 @@ export default async function PdfToImagePage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Free PDF to Image Converter",
-							description:
-								"Convert PDF pages to high-quality JPG or PNG images online for free.",
-							url: "https://30tools.com/pdf-to-image",
-							applicationCategory: "UtilityApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/pdf-to-image.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.6",
-								reviewCount: "380",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Convert PDF to Image",
 							step: [

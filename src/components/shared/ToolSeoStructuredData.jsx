@@ -68,19 +68,6 @@ export default function ToolSeoStructuredData() {
 		],
 	};
 
-	const faqSchema =
-		Array.isArray(tool.faqs) && tool.faqs.length > 0
-			? {
-					"@context": "https://schema.org",
-					"@type": "FAQPage",
-					mainEntity: tool.faqs.map((faq) => ({
-						"@type": "Question",
-						name: faq.question,
-						acceptedAnswer: { "@type": "Answer", text: faq.answer },
-					})),
-			  }
-			: null;
-
 	return (
 		<>
 			<script
@@ -91,12 +78,6 @@ export default function ToolSeoStructuredData() {
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
 			/>
-			{faqSchema && (
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-				/>
-			)}
 		</>
 	);
 }

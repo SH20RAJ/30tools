@@ -305,35 +305,6 @@ export default async function ImageToPDFPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Free Image to PDF Converter",
-							description:
-								"Convert images to PDF online for free. Combine multiple JPG, PNG, BMP, and GIF images.",
-							url: "https://30tools.com/image-to-pdf",
-							applicationCategory: "UtilityApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/image-to-pdf.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.7",
-								reviewCount: "410",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Convert Image to PDF",
 							step: [

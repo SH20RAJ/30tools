@@ -295,35 +295,6 @@ export default async function PDFToWordPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Free PDF to Word Converter",
-							description:
-								"Convert PDF files to editable Word documents online for free.",
-							url: "https://30tools.com/pdf-to-word",
-							applicationCategory: "UtilityApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/pdf-to-word.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.7",
-								reviewCount: "450",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Convert PDF to Word",
 							step: [

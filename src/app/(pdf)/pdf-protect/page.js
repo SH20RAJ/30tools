@@ -285,35 +285,6 @@ export default async function PdfProtectPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Free PDF Password Protector",
-							description:
-								"Secure your PDF files with strong AES encryption. Add passwords and restrict permissions.",
-							url: "https://30tools.com/pdf-protect",
-							applicationCategory: "UtilityApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/pdf-protect.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.8",
-								reviewCount: "620",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Password Protect a PDF",
 							step: [

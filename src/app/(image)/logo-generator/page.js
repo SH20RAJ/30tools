@@ -225,35 +225,6 @@ export default async function LogoGeneratorPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Free Logo Generator",
-							description:
-								"Create professional logos for your business or brand in seconds. Free online logo maker with customizable icons, fonts, and colors.",
-							url: "https://30tools.com/logo-generator",
-							applicationCategory: "DesignApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/logo-generator.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.8",
-								reviewCount: "1250",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Create a Logo Online",
 							step: [

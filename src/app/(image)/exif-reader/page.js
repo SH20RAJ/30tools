@@ -308,35 +308,6 @@ export default async function ExifReaderPage() {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Free EXIF Reader",
-							description:
-								"Read EXIF data from photos online. Extract camera settings, GPS location, timestamp, and other metadata.",
-							url: "https://30tools.com/exif-reader",
-							applicationCategory: "UtilityApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/exif-reader.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.6",
-								reviewCount: "420",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to View Photo Metadata",
 							step: [

@@ -1,0 +1,3663 @@
+{
+  "extraSlugsMapping": {
+    "ai-image-generator": [
+      "image-editor",
+      "icon-generator",
+      "scale-image",
+      "hash-generator",
+      "gradient-generator",
+      "randomness-generator",
+      "image-tools",
+      "excuse-generator",
+      "ai-poetry-generator",
+      "ai-business-name-generator",
+      "text-to-image-ai",
+      "ai-picture-generator",
+      "ai-photo-generator-free",
+      "poem-generator-ai",
+      "rhyme-generator",
+      "haiku-generator"
+    ],
+    "base64-to-image-converter": [
+      "base64-image",
+      "convert-image-to-jpg",
+      "add-text-to-image",
+      "image-to-base64",
+      "base64-to-image",
+      "encode-image-base64",
+      "decode-base64-image",
+      "video-converter",
+      "mp3-converter",
+      "audio-converter",
+      "file-converter",
+      "document-converter",
+      "epub-converter",
+      "video-to-mp3-converter",
+      "avi-to-mp4-converter",
+      "mov-to-mp4-converter",
+      "webm-to-mp4-converter",
+      "mkv-to-mp4-converter",
+      "flv-to-mp4-converter",
+      "wav-to-mp3-converter",
+      "m4a-to-mp3-converter",
+      "ogg-to-mp3-converter",
+      "base64-tool",
+      "unit-converter",
+      "timestamp-converter",
+      "timezone-converter",
+      "epoch-converter",
+      "image-to-pdf-converter",
+      "docx-to-pdf-converter",
+      "pdf-to-docx-converter",
+      "xlsx-to-pdf-converter",
+      "pptx-to-pdf-converter",
+      "photos-to-pdf-converter",
+      "md-to-txt-converter",
+      "pdf-to-epub-converter",
+      "url-to-pdf-converter",
+      "movie-to-mp3-converter",
+      "base64-to-text",
+      "measurement-converter",
+      "folder-to-zip-converter",
+      "usd-to-eur-converter",
+      "youtube-to-mp4-converter"
+    ],
+    "instagram-story-downloader": [
+      "instagram-story-resizer",
+      "resize-for-instagram-story",
+      "instagram-story-dimensions-fix",
+      "fit-photo-to-instagram-story",
+      "instagram-story-viewer",
+      "instagram-anonymous-story-viewer",
+      "save-instagram-story-anonymous",
+      "instagram-story-viewer-download",
+      "instagram-viewer-story"
+    ],
+    "rotate-image": [
+      "pdf-rotate"
+    ],
+    "image-to-pdf": [
+      "excel-to-pdf",
+      "powerpoint-to-pdf",
+      "html-to-pdf",
+      "jpeg-to-pdf-online",
+      "encrypt-pdf",
+      "add-password-to-pdf",
+      "add-page-numbers-to-pdf-online",
+      "paginate-pdf",
+      "save-pdf-as-image",
+      "export-pdf-to-image",
+      "spreadsheet-to-pdf",
+      "excel-sheet-to-pdf",
+      "slides-to-pdf",
+      "presentation-to-pdf",
+      "print-html-to-pdf",
+      "web-to-pdf-online",
+      "pdf-tools"
+    ],
+    "image-compressor": [
+      "free-image-compressor",
+      "video-compressor",
+      "audio-compressor",
+      "css-compressor"
+    ],
+    "jpg-to-png-converter": [
+      "convert-png-to-jpg",
+      "jpg-png-to-pdf"
+    ],
+    "jpg-to-webp-converter": [
+      "webp-converter"
+    ],
+    "jpg-to-bmp-converter": [
+      "heic-to-jpg-converter"
+    ],
+    "photo-enhancer": [
+      "ai-photo-enhancer",
+      "cut-photo"
+    ],
+    "convert-to-ico": [
+      "convert-picture-to-string",
+      "convert-png-to-favicon",
+      "convert-doc-to-pdf",
+      "convert-pdf-to-doc",
+      "convert-xls-to-pdf",
+      "convert-ppt-to-pdf",
+      "convert-mp4-to-gif",
+      "convert-mp4-to-mp3",
+      "convert-landscape-to-portrait-video",
+      "convert-text-to-audio",
+      "convert-string-to-binary",
+      "convert-to-epub-online",
+      "convert-html-to-pdf",
+      "convert-video-file-to-mp3",
+      "convert-mp4-video-to-mp3",
+      "convert-avi-to-mp4",
+      "convert-mov-to-mp4",
+      "convert-webm-to-mp4",
+      "convert-mkv-to-mp4",
+      "convert-flv-to-mp4",
+      "convert-wav-to-mp3",
+      "convert-m4a-to-mp3",
+      "convert-ogg-to-mp3",
+      "convert-time-to-timestamp",
+      "convert-md-to-html",
+      "convert-tiktok-to-mp3"
+    ],
+    "image-resizer": [
+      "ig-story-image-resizer"
+    ],
+    "logo-generator": [
+      "brand-logo-generator",
+      "logo-maker"
+    ],
+    "jpg-to-gif-converter": [
+      "video-to-gif",
+      "video-to-gif-converter",
+      "mov-to-gif"
+    ],
+    "pdf-editor": [
+      "video-editor",
+      "audio-editor",
+      "pdf-text-editor"
+    ],
+    "reddit-downloader": [
+      "video-trimmer",
+      "video-player",
+      "x-video-downloader",
+      "reddit-video-saver",
+      "save-reddit-video",
+      "download-reddit-video",
+      "reddit-mp4-downloader",
+      "video-tools",
+      "instagram-video-downloader",
+      "fb-video-downloader",
+      "ig-video-downloader",
+      "musically-downloader",
+      "tt-video-downloader",
+      "snap-video-downloader",
+      "any-video-downloader"
+    ],
+    "screen-resolution-simulator": [
+      "screen-recorder"
+    ],
+    "youtube-script-generator": [
+      "youtube-thumbnail-generator",
+      "youtube-idea-generator",
+      "youtube-analytics",
+      "youtube-trends"
+    ],
+    "tiktok-video-downloader": [
+      "tiktok-video-resizer",
+      "resize-video-for-tiktok",
+      "fit-video-to-tiktok",
+      "tiktok-video-dimensions",
+      "tiktok-video-downloader-2",
+      "tiktok-audio-downloader",
+      "download-tiktok-video",
+      "fast-tiktok-downloader",
+      "tiktok-downloader-hd",
+      "tiktok-video-saver-free",
+      "tiktok-sound-downloader-mp3"
+    ],
+    "twitter-video-downloader": [
+      "twitter-downloader",
+      "twitter-video-saver",
+      "download-twitter-video",
+      "save-twitter-video"
+    ],
+    "facebook-video-downloader": [
+      "facebook-downloader",
+      "facebook-reels-downloader",
+      "save-facebook-video",
+      "facebook-story-downloader",
+      "facebook-video-saver"
+    ],
+    "audio-equalizer": [
+      "audio-trimmer",
+      "audio-tools"
+    ],
+    "ai-voice-generator": [
+      "voice-recorder",
+      "ai-voice-reader",
+      "ai-voice-changer",
+      "realistic-voice-generator",
+      "free-ai-voice-over",
+      "celebrity-voice-generator"
+    ],
+    "word-counter": [
+      "character-counter",
+      "essay-word-counter",
+      "letter-counter"
+    ],
+    "markdown-to-text": [
+      "text-case-converter",
+      "text-diff",
+      "text-formatter",
+      "chatgpt-text-converter",
+      "add-text-to-pdf",
+      "pdf-to-text-converter",
+      "listen-to-text",
+      "beautify-text",
+      "convert-markdown-to-plain-text",
+      "clean-markdown-text",
+      "text-tools",
+      "markdown-to-html"
+    ],
+    "pdf-protect": [
+      "password-generator2",
+      "password-protect-pdf",
+      "remove-pdf-password",
+      "pdf-password-remover"
+    ],
+    "lorem-ipsum-generator": [
+      "lorem-ipsum-generator",
+      "lorem-ipsum-text-copy"
+    ],
+    "internet-speed-test": [
+      "typing-speed-test",
+      "keyboard-speed-test",
+      "speed-test-google"
+    ],
+    "ascii-to-binary-converter": [
+      "binary-converter",
+      "ascii-to-binary"
+    ],
+    "youtube-channel-id-extractor": [
+      "email-extractor",
+      "url-extractor"
+    ],
+    "amazon-ses-api-key-tester": [
+      "regex-tester",
+      "api-tester",
+      "api-endpoint-tester",
+      "api-docs"
+    ],
+    "json-formatter": [
+      "sql-formatter",
+      "xml-formatter"
+    ],
+    "text-encoder": [
+      "url-encoder"
+    ],
+    "html-beautifier": [
+      "html-validator"
+    ],
+    "meta-tag-analyzer": [
+      "complexity-analyzer"
+    ],
+    "youtube-comment-picker": [
+      "color-picker",
+      "youtube-comment-responder"
+    ],
+    "podcast-video-creator": [
+      "zip-creator"
+    ],
+    "random-word-generator": [
+      "random-generator",
+      "random-string-generator-secure",
+      "random-excuse-generator"
+    ],
+    "youtube-subscribe-link-generator": [
+      "whatsapp-link-generator",
+      "paypal-link-generator",
+      "wa-me-link-generator",
+      "custom-payment-link-generator"
+    ],
+    "youtube-channel-age-checker": [
+      "whatsapp-checker",
+      "ssl-checker",
+      "html-checker",
+      "https-checker"
+    ],
+    "google-index-checker": [
+      "bulk-google-index-checker",
+      "google-index-status",
+      "website-index-checker"
+    ],
+    "youtube-title-length-checker": [
+      "title-rewrite-checker",
+      "text-length-checker",
+      "serp-title-checker",
+      "title-tag-checker",
+      "meta-length-checker"
+    ],
+    "keyword-research-tool": [
+      "bing-keyword-research",
+      "google-keyword-research",
+      "advanced-regex-tool",
+      "long-tail-keyword-tool",
+      "bing-keyword-tool",
+      "keyword-tool-google",
+      "keyword-monitoring-tool",
+      "keyword-counter-tool"
+    ],
+    "seo-audit-tool": [
+      "local-seo-tool",
+      "website-seo-audit",
+      "technical-seo-audit",
+      "seo-tools"
+    ],
+    "data-axle-api-key-tester": [
+      "structured-data-tester"
+    ],
+    "meta-tag-generator": [
+      "meta-tags-generator",
+      "free-meta-tag-generator",
+      "meta-header-generator"
+    ],
+    "keyword-density-checker": [
+      "keyword-density"
+    ],
+    "jpg-to-pdf": [
+      "convert-jpg-to-pdf",
+      "combine-jpg-to-pdf",
+      "convert-pdf-to-jpg",
+      "pdf-pages-to-jpg"
+    ],
+    "images-to-pdf": [
+      "make-pdf-from-images",
+      "combine-images-to-pdf"
+    ],
+    "png-to-pdf": [
+      "convert-png-to-pdf",
+      "png-images-to-pdf",
+      "turn-png-into-pdf",
+      "combine-png-to-pdf",
+      "pdf-from-png"
+    ],
+    "pdf-to-word": [
+      "save-word-as-pdf",
+      "word-document-to-pdf",
+      "microsoft-word-to-pdf",
+      "editable-pdf-to-word"
+    ],
+    "online-video-downloader": [
+      "compress-video-online",
+      "edit-video-online",
+      "trim-video-online",
+      "video-cutter-online",
+      "video-to-mp3-online",
+      "online-video-player-creator",
+      "youtube-video-downloader-online",
+      "save-tiktok-video-online",
+      "video-grabber-online"
+    ],
+    "video-to-audio": [
+      "add-audio-to-video",
+      "extract-audio-from-video",
+      "video-audio-extractor",
+      "mp4-file-to-audio",
+      "iphone-audio-to-mp3",
+      "tiktok-video-to-audio"
+    ],
+    "course-video-maker": [
+      "simple-video-maker",
+      "custom-video-player-maker"
+    ],
+    "youtube-thumbnail-downloader": [
+      "create-youtube-thumbnail"
+    ],
+    "faceless-video-generator": [
+      "html5-video-player-generator"
+    ],
+    "terabox-downloader": [
+      "terabox-link-downloader",
+      "terabox-video-saver"
+    ],
+    "pinterest-gif-downloader": [
+      "twitter-gif-downloader",
+      "pinterest-media-downloader"
+    ],
+    "password-generator": [
+      "strong-password-generator"
+    ],
+    "what-is-my-browser": [
+      "how-strong-is-my-password"
+    ],
+    "backwards-text-generator": [
+      "dummy-text-generator",
+      "random-text-generator",
+      "stylish-text-generator"
+    ],
+    "text-compare": [
+      "compare-text-online"
+    ],
+    "binary-to-text-converter": [
+      "binary-to-text-online"
+    ],
+    "number-to-word-converter": [
+      "word-to-epub"
+    ],
+    "csv-to-json-converter": [
+      "convert-csv-to-json",
+      "csv-file-to-json",
+      "json-converter-from-csv",
+      "csv-data-to-json",
+      "online-csv-json-tool",
+      "csv-to-json",
+      "convert-csv-to-json-code",
+      "csv-json-parser",
+      "csv-to-object-converter",
+      "comma-separated-to-json"
+    ],
+    "json-to-xml-converter": [
+      "convert-xml-to-json",
+      "xml-file-to-json",
+      "xml-data-converter",
+      "parse-xml-to-json",
+      "online-xml-converter",
+      "xml-indenter"
+    ],
+    "css-beautifier": [
+      "json-beautifier",
+      "beautify-css",
+      "css-formatter"
+    ],
+    "json-viewer": [
+      "json-viewer-online",
+      "insta-viewer"
+    ],
+    "md5-generator": [
+      "md5-hash-generator"
+    ],
+    "base64-encode": [
+      "encode-base64-online"
+    ],
+    "base64-decode": [
+      "decode-base64-string"
+    ],
+    "javascript-beautifier": [
+      "obfuscate-javascript"
+    ],
+    "jwt-decoder": [
+      "jwt-parser",
+      "jwt-debugger"
+    ],
+    "url-encode": [
+      "encode-url-online",
+      "encode-url-string"
+    ],
+    "url-rewriting-tool": [
+      "url-decoder-tool"
+    ],
+    "html-decoder": [
+      "url-decoder"
+    ],
+    "css-minifier": [
+      "stylesheet-minifier",
+      "online-css-minifier"
+    ],
+    "visual-sitemap": [
+      "visual-shadow-generator"
+    ],
+    "hex-to-rgb-converter": [
+      "convert-hex-to-rgb",
+      "rgb-to-hsl-converter",
+      "hex-rgb-hsl-tool"
+    ],
+    "color-converter": [
+      "color-code-converter"
+    ],
+    "length-converter": [
+      "weight-length-temp-converter"
+    ],
+    "youtube-timestamp-link-generator": [
+      "timestamp-translator",
+      "timestamp-decoder",
+      "youtube-timestamp-generator"
+    ],
+    "time-converter": [
+      "unix-time-converter"
+    ],
+    "http-status-code-checker": [
+      "whatsapp-status-checker"
+    ],
+    "bulk-keyword-rank-checker": [
+      "rank-checker-bulk",
+      "keyword-position-checker",
+      "google-rank-checker-bulk",
+      "google-rank-checker"
+    ],
+    "url-parser": [
+      "sitemap-parser"
+    ],
+    "sitemap-generator": [
+      "google-sitemap-generator"
+    ],
+    "broken-link-checker": [
+      "broken-link-scanner",
+      "inbound-link-checker",
+      "link-profile-checker"
+    ],
+    "website-analyzer": [
+      "website-content-analyzer"
+    ],
+    "page-size-checker": [
+      "on-page-seo-checker"
+    ],
+    "google-cache-checker": [
+      "google-search-volume-checker",
+      "google-pixel-width-checker"
+    ],
+    "schema-generator": [
+      "validate-schema-markup",
+      "schema-markup-builder"
+    ],
+    "json-validator": [
+      "json-ld-validator"
+    ],
+    "robots-txt-generator": [
+      "create-robots-txt",
+      "robots-txt-builder"
+    ],
+    "qr-code-decoder": [
+      "create-qr-code-free",
+      "qr-code-maker-online",
+      "url-to-qr-code"
+    ],
+    "qr-code-generator": [
+      "custom-qr-generator"
+    ],
+    "percentage-calculator": [
+      "keyword-percentage-calculator"
+    ],
+    "code-tools": [
+      "utilities-tools"
+    ],
+    "youtube-hashtag-generator": [
+      "instagram-hashtag-generator",
+      "viral-hashtag-generator"
+    ],
+    "youtube-channel-banner-downloader": [
+      "youtube-subtitles-downloader",
+      "youtube-transcript-downloader",
+      "youtube-subtitle-downloader",
+      "youtube-pack-downloader",
+      "youtube-downloader-4k",
+      "youtube-downloader-free",
+      "youtube-downloader-android",
+      "youtube-downloader-iphone",
+      "fast-youtube-downloader",
+      "secure-youtube-downloader",
+      "youtube-caption-downloader",
+      "youtube-srt-downloader"
+    ],
+    "youtube-embed-code-generator": [
+      "youtube-embed-generator",
+      "code-formatter",
+      "code-minifier",
+      "code-prettifier"
+    ],
+    "instagram-downloader": [
+      "instagram-dp-downloader",
+      "instagram-photo-downloader",
+      "instagram-downloader-mp4",
+      "instagram-profile-pic-downloader",
+      "instagram-tool-downloader"
+    ],
+    "text-to-speech": [
+      "text-to-speech-ai"
+    ],
+    "youtube-video-downloader": [
+      "youtube-video-downloader-2026"
+    ],
+    "instagram-videos-downloader": [
+      "download-instagram-videos-online"
+    ],
+    "pinterest-video-downloader": [
+      "save-pinterest-video",
+      "pinterest-video-download-hd"
+    ],
+    "instagram-image-downloader": [
+      "ig-image-downloader"
+    ],
+    "privacy-policy-generator": [
+      "privacy"
+    ],
+    "terms-and-condition-generator": [
+      "terms"
+    ]
+  },
+  "newTools": [
+    {
+      "master": "social-media-resizer",
+      "extraSlugs": [
+        "social-media-resizer",
+        "resize-image-for-social-media",
+        "social-media-post-size",
+        "social-media-downloader"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "photo-collage-maker",
+      "extraSlugs": [
+        "photo-collage-maker",
+        "online-collage-maker",
+        "free-photo-grid-maker",
+        "aesthetic-collage-maker"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "pdf-add-page-numbers",
+      "extraSlugs": [
+        "pdf-add-page-numbers",
+        "pdf-page-separator",
+        "insert-page-numbers-in-pdf"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "search",
+      "extraSlugs": [
+        "search"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "calculators",
+      "extraSlugs": [
+        "calculators"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "compress-image-online",
+      "extraSlugs": [
+        "compress-image-online",
+        "compress-images-online",
+        "resize-image-online",
+        "upscale-image-online",
+        "crop-image-online",
+        "compress-pdf-online",
+        "compress-mp3-online",
+        "compress-css-online"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "reduce-image-size",
+      "extraSlugs": [
+        "reduce-image-size",
+        "shrink-image-file-size",
+        "reduce-pdf-size",
+        "reduce-video-size",
+        "reduce-audio-file-size",
+        "reduce-js-file-size",
+        "reduce-css-size",
+        "image-size-analyzer",
+        "reduce-code-size"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "compress-jpeg-png",
+      "extraSlugs": [
+        "compress-jpeg-png"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "optimize-images-for-web",
+      "extraSlugs": [
+        "optimize-images-for-web",
+        "optimize-pdf-for-web"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "image-format-changer",
+      "extraSlugs": [
+        "image-format-changer",
+        "color-format-changer"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "change-image-dimensions",
+      "extraSlugs": [
+        "change-image-dimensions"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "photo-resizer-free",
+      "extraSlugs": [
+        "photo-resizer-free"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "resize-picture-pixels",
+      "extraSlugs": [
+        "resize-picture-pixels"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "remove-bg-online",
+      "extraSlugs": [
+        "remove-bg-online"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "delete-image-background",
+      "extraSlugs": [
+        "delete-image-background",
+        "remove-background-from-image-free"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "picture-background-eraser",
+      "extraSlugs": [
+        "picture-background-eraser"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "online-photo-editor",
+      "extraSlugs": [
+        "online-photo-editor",
+        "photo-filter-editor",
+        "sound-editor-online"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "edit-pictures-free",
+      "extraSlugs": [
+        "edit-pictures-free",
+        "edit-pdf-online-free"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "crop-and-edit-photos",
+      "extraSlugs": [
+        "crop-and-edit-photos"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "enhance-image-quality",
+      "extraSlugs": [
+        "enhance-image-quality"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "fix-blurry-photos",
+      "extraSlugs": [
+        "fix-blurry-photos"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "improve-picture-resolution",
+      "extraSlugs": [
+        "improve-picture-resolution"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "circular-image-crop",
+      "extraSlugs": [
+        "circular-image-crop"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "square-photo-cropper",
+      "extraSlugs": [
+        "square-photo-cropper"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "free-picture-cropper",
+      "extraSlugs": [
+        "free-picture-cropper"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "insta-story-size-converter",
+      "extraSlugs": [
+        "insta-story-size-converter",
+        "insta-story-saver",
+        "insta-story-viewer"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "facebook-cover-resizer",
+      "extraSlugs": [
+        "facebook-cover-resizer"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "twitter-header-size-maker",
+      "extraSlugs": [
+        "twitter-header-size-maker",
+        "twitter-bio-maker"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "linkedin-banner-resizer",
+      "extraSlugs": [
+        "linkedin-banner-resizer"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "combine-photos-online",
+      "extraSlugs": [
+        "combine-photos-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "picture-collage-creator",
+      "extraSlugs": [
+        "picture-collage-creator"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "free-logo-maker",
+      "extraSlugs": [
+        "free-logo-maker",
+        "company-logo-maker-free",
+        "design-logo-free",
+        "custom-logo-maker",
+        "free-poetry-maker"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "business-logo-creator",
+      "extraSlugs": [
+        "business-logo-creator",
+        "simple-logo-creator",
+        "business-logo-designer"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "online-logo-design",
+      "extraSlugs": [
+        "online-logo-design"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "create-favicon-online",
+      "extraSlugs": [
+        "create-favicon-online",
+        "create-gif-online",
+        "create-zip-file-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "website-icon-generator",
+      "extraSlugs": [
+        "website-icon-generator",
+        "app-icon-generator",
+        "web-app-icon-generator"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "favicon-maker-from-image",
+      "extraSlugs": [
+        "favicon-maker-from-image"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "ico-file-generator",
+      "extraSlugs": [
+        "ico-file-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "android-icon-maker",
+      "extraSlugs": [
+        "android-icon-maker"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "ios-app-icon-creator",
+      "extraSlugs": [
+        "ios-app-icon-creator"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "generate-icons-for-apps",
+      "extraSlugs": [
+        "generate-icons-for-apps"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "view-image-metadata",
+      "extraSlugs": [
+        "view-image-metadata"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "photo-exif-viewer",
+      "extraSlugs": [
+        "photo-exif-viewer"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "check-image-location",
+      "extraSlugs": [
+        "check-image-location",
+        "check-image-seo"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "read-exif-data-online",
+      "extraSlugs": [
+        "read-exif-data-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "camera-metadata-viewer",
+      "extraSlugs": [
+        "camera-metadata-viewer"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "password-strength-checker",
+      "extraSlugs": [
+        "password-strength-checker",
+        "password-breach-checker",
+        "test-password-strength",
+        "password-safety-checker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "duplicate-line-remover",
+      "extraSlugs": [
+        "duplicate-line-remover"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "mp4-to-mp3",
+      "extraSlugs": [
+        "mp4-to-mp3",
+        "mov-to-mp4",
+        "m4a-to-mp3-online",
+        "change-avi-to-mp4",
+        "avi-file-to-mp4-online",
+        "change-mov-to-mp4",
+        "mov-file-to-mp4-online",
+        "quicktime-to-mp4",
+        "change-webm-to-mp4",
+        "webm-file-to-mp4-online",
+        "change-mkv-to-mp4",
+        "mkv-file-to-mp4-online",
+        "change-flv-to-mp4",
+        "flv-file-to-mp4-online",
+        "change-wav-to-mp3",
+        "wav-file-to-mp3-online",
+        "compress-wav-to-mp3",
+        "change-m4a-to-mp3",
+        "m4a-file-to-mp3-online",
+        "change-ogg-to-mp3",
+        "ogg-file-to-mp3-online",
+        "compress-ogg-to-mp3",
+        "youtube-to-mp3-high-quality",
+        "instagram-reels-to-mp4",
+        "tiktok-to-mp3-online"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "hash-generator2",
+      "extraSlugs": [
+        "hash-generator2"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "regex-tester2",
+      "extraSlugs": [
+        "regex-tester2"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "email-breach-checker",
+      "extraSlugs": [
+        "email-breach-checker",
+        "temp-email-checker",
+        "data-breach-email-search",
+        "compromised-email-checker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "color-palette-generator",
+      "extraSlugs": [
+        "color-palette-generator",
+        "color-wheel-generator",
+        "website-color-palette",
+        "gradient-color-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "css-gradient-generator",
+      "extraSlugs": [
+        "css-gradient-generator",
+        "linear-gradient-generator",
+        "css-gradient-maker",
+        "web-gradient-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "css-box-shadow",
+      "extraSlugs": [
+        "css-box-shadow",
+        "generate-box-shadow",
+        "css-shadow-maker",
+        "box-shadow-generator-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "whiteboard",
+      "extraSlugs": [
+        "whiteboard"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "font-previewer",
+      "extraSlugs": [
+        "font-previewer"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "xml-sitemap-extractor",
+      "extraSlugs": [
+        "xml-sitemap-extractor",
+        "xml-sitemap-analyzer",
+        "create-xml-sitemap",
+        "xml-sitemap-builder"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "duplicate-content-finder",
+      "extraSlugs": [
+        "duplicate-content-finder"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "competitor-analysis-tool",
+      "extraSlugs": [
+        "competitor-analysis-tool",
+        "text-analysis-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "rank-tracking-tool",
+      "extraSlugs": [
+        "rank-tracking-tool"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "mobile-seo-checker",
+      "extraSlugs": [
+        "mobile-seo-checker",
+        "plagiarism-checker-seo",
+        "seo-meta-checker",
+        "seo-score-checker",
+        "seo-competitor-checker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "serp-snippet-optimizer",
+      "extraSlugs": [
+        "serp-snippet-optimizer"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "image-seo-analyzer",
+      "extraSlugs": [
+        "image-seo-analyzer",
+        "seo-title-analyzer",
+        "seo-text-analyzer"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "combine-pdf-files",
+      "extraSlugs": [
+        "combine-pdf-files",
+        "separate-pdf-files"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "merge-pdf-online",
+      "extraSlugs": [
+        "merge-pdf-online",
+        "merge-multiple-pdf",
+        "unlock-pdf-online",
+        "rotate-pdf-online",
+        "annotate-pdf-online"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "pdf-combiner-free",
+      "extraSlugs": [
+        "pdf-combiner-free"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "join-pdf-documents",
+      "extraSlugs": [
+        "join-pdf-documents"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "split-pdf-pages",
+      "extraSlugs": [
+        "split-pdf-pages",
+        "extract-pdf-pages",
+        "cut-pdf-pages",
+        "rotate-pdf-pages",
+        "flip-pdf-pages",
+        "number-pdf-pages"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "shrink-pdf-file",
+      "extraSlugs": [
+        "shrink-pdf-file",
+        "lock-pdf-file",
+        "decrypt-pdf-file",
+        "shrink-mp4-file"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "pdf-size-reducer",
+      "extraSlugs": [
+        "pdf-size-reducer",
+        "video-size-reducer",
+        "audio-size-reducer"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "secure-pdf-document",
+      "extraSlugs": [
+        "secure-pdf-document"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "open-protected-pdf",
+      "extraSlugs": [
+        "open-protected-pdf"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "change-pdf-orientation",
+      "extraSlugs": [
+        "change-pdf-orientation"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "save-rotated-pdf",
+      "extraSlugs": [
+        "save-rotated-pdf",
+        "save-excel-as-pdf",
+        "save-powerpoint-as-pdf",
+        "save-webpage-as-pdf"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "pdf-pagination-tool",
+      "extraSlugs": [
+        "pdf-pagination-tool"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "modify-pdf-content",
+      "extraSlugs": [
+        "modify-pdf-content"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "extract-text-from-pdf",
+      "extraSlugs": [
+        "extract-text-from-pdf",
+        "make-pdf-from-photos",
+        "filter-emails-from-text",
+        "create-epub-from-pdf",
+        "extract-mp3-from-video",
+        "extract-sound-from-mp4",
+        "extract-urls-from-sitemap",
+        "extract-links-from-text",
+        "generate-images-from-text"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "compress-video-for-whatsapp",
+      "extraSlugs": [
+        "compress-video-for-whatsapp"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "make-gif-from-video",
+      "extraSlugs": [
+        "make-gif-from-video"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "convert-video-format",
+      "extraSlugs": [
+        "convert-video-format",
+        "convert-audio-format"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "change-video-type",
+      "extraSlugs": [
+        "change-video-type"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "mp4-converter-online",
+      "extraSlugs": [
+        "mp4-converter-online",
+        "mp3-converter-online",
+        "mp4-audio-converter"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "free-video-editor",
+      "extraSlugs": [
+        "free-video-editor",
+        "free-audio-editor"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "cut-and-merge-video",
+      "extraSlugs": [
+        "cut-and-merge-video",
+        "cut-video-length"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "shorten-video-clip",
+      "extraSlugs": [
+        "shorten-video-clip",
+        "shorten-audio-clip"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "split-video-file",
+      "extraSlugs": [
+        "split-video-file",
+        "split-audio-file"
+      ],
+      "category": "pdf"
+    },
+    {
+      "master": "record-screen-online",
+      "extraSlugs": [
+        "record-screen-online",
+        "online-screen-capture",
+        "record-voice-online",
+        "record-mp3-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "free-screen-recorder",
+      "extraSlugs": [
+        "free-screen-recorder"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "screen-capture-video",
+      "extraSlugs": [
+        "screen-capture-video"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "record-browser-tab",
+      "extraSlugs": [
+        "record-browser-tab"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "free-mp3-extractor",
+      "extraSlugs": [
+        "free-mp3-extractor"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "audio-converter-mp3",
+      "extraSlugs": [
+        "audio-converter-mp3",
+        "wav-audio-converter",
+        "m4a-audio-converter",
+        "ogg-audio-converter",
+        "tiktok-mp3-converter"
+      ],
+      "category": "audio"
+    },
+    {
+      "master": "yt-thumbnail-maker",
+      "extraSlugs": [
+        "yt-thumbnail-maker"
+      ],
+      "category": "youtube"
+    },
+    {
+      "master": "online-thumbnail-creator",
+      "extraSlugs": [
+        "online-thumbnail-creator",
+        "schema-creator-online"
+      ],
+      "category": "youtube"
+    },
+    {
+      "master": "free-thumbnail-design",
+      "extraSlugs": [
+        "free-thumbnail-design"
+      ],
+      "category": "youtube"
+    },
+    {
+      "master": "youtube-cover-maker",
+      "extraSlugs": [
+        "youtube-cover-maker",
+        "youtube-gif-maker"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "tiktok-aspect-ratio-converter",
+      "extraSlugs": [
+        "tiktok-aspect-ratio-converter",
+        "tiktok-music-converter"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "embed-video-player",
+      "extraSlugs": [
+        "embed-video-player",
+        "responsive-video-player"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "download-terabox-file",
+      "extraSlugs": [
+        "download-terabox-file",
+        "terabox-direct-download"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "terabox-player-online",
+      "extraSlugs": [
+        "terabox-player-online"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "fb-video-saver",
+      "extraSlugs": [
+        "fb-video-saver",
+        "download-fb-video",
+        "fb-story-saver",
+        "insta-video-saver"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "facebook-story-saver",
+      "extraSlugs": [
+        "facebook-story-saver",
+        "download-story-facebook",
+        "facebook-story-viewer-download"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "reddit-media-saver",
+      "extraSlugs": [
+        "reddit-media-saver",
+        "twitter-media-saver",
+        "instagram-media-saver"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "shrink-mp3-size",
+      "extraSlugs": [
+        "shrink-mp3-size"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "optimize-audio-files",
+      "extraSlugs": [
+        "optimize-audio-files"
+      ],
+      "category": "audio"
+    },
+    {
+      "master": "change-audio-format",
+      "extraSlugs": [
+        "change-audio-format"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "edit-audio-online",
+      "extraSlugs": [
+        "edit-audio-online",
+        "trim-audio-online",
+        "audio-cutter-online",
+        "audio-recorder-online"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "modify-mp3-file",
+      "extraSlugs": [
+        "modify-mp3-file",
+        "cut-mp3-file"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "audio-cutter-merger",
+      "extraSlugs": [
+        "audio-cutter-merger"
+      ],
+      "category": "audio"
+    },
+    {
+      "master": "online-microphone-recorder",
+      "extraSlugs": [
+        "online-microphone-recorder",
+        "microphone-test-recorder"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "read-text-aloud",
+      "extraSlugs": [
+        "read-text-aloud"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "online-tts-reader",
+      "extraSlugs": [
+        "online-tts-reader"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "count-words-online",
+      "extraSlugs": [
+        "count-words-online",
+        "count-characters-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "character-count-tool",
+      "extraSlugs": [
+        "character-count-tool",
+        "tweet-character-count"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "check-word-count",
+      "extraSlugs": [
+        "check-word-count"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "calculate-text-length",
+      "extraSlugs": [
+        "calculate-text-length",
+        "calculate-text-complexity"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "meta-description-length-check",
+      "extraSlugs": [
+        "meta-description-length-check",
+        "meta-description-test"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "convert-text-case",
+      "extraSlugs": [
+        "convert-text-case"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "uppercase-to-lowercase",
+      "extraSlugs": [
+        "uppercase-to-lowercase"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "capitalize-text-online",
+      "extraSlugs": [
+        "capitalize-text-online",
+        "format-text-online",
+        "deduplicate-text-online",
+        "encrypt-text-online"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "sentence-case-tool",
+      "extraSlugs": [
+        "sentence-case-tool"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "generate-secure-password",
+      "extraSlugs": [
+        "generate-secure-password",
+        "secure-password-creator"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "random-password-maker",
+      "extraSlugs": [
+        "random-password-maker",
+        "custom-password-maker",
+        "random-string-maker"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "create-strong-password",
+      "extraSlugs": [
+        "create-strong-password"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "secure-pass-generator",
+      "extraSlugs": [
+        "secure-pass-generator",
+        "secure-hash-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "configurable-password-tool",
+      "extraSlugs": [
+        "configurable-password-tool"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "check-password-security",
+      "extraSlugs": [
+        "check-password-security",
+        "check-pwned-password",
+        "password-leak-check",
+        "security-certificate-check"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "password-tester-online",
+      "extraSlugs": [
+        "password-tester-online"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "filler-text-maker",
+      "extraSlugs": [
+        "filler-text-maker",
+        "fake-text-message-maker"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "generate-placeholder-text",
+      "extraSlugs": [
+        "generate-placeholder-text"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "find-text-differences",
+      "extraSlugs": [
+        "find-text-differences",
+        "find-emails-in-text"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "diff-checker-online",
+      "extraSlugs": [
+        "diff-checker-online",
+        "check-diff-online",
+        "schema-checker-online"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "text-comparison-tool",
+      "extraSlugs": [
+        "text-comparison-tool",
+        "text-cleaner-tool",
+        "website-comparison-tool"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "remove-extra-spaces",
+      "extraSlugs": [
+        "remove-extra-spaces"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "fix-text-spacing",
+      "extraSlugs": [
+        "fix-text-spacing"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "remove-duplicate-lines",
+      "extraSlugs": [
+        "remove-duplicate-lines"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "delete-duplicate-text",
+      "extraSlugs": [
+        "delete-duplicate-text"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "clean-duplicates-list",
+      "extraSlugs": [
+        "clean-duplicates-list"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "unique-lines-filter",
+      "extraSlugs": [
+        "unique-lines-filter"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "check-wpm-online",
+      "extraSlugs": [
+        "check-wpm-online",
+        "check-regex-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "typing-racer-test",
+      "extraSlugs": [
+        "typing-racer-test"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "how-fast-can-i-type",
+      "extraSlugs": [
+        "how-fast-can-i-type"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "words-per-minute-test",
+      "extraSlugs": [
+        "words-per-minute-test"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "binary-code-translator",
+      "extraSlugs": [
+        "binary-code-translator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "humanize-chatgpt-text",
+      "extraSlugs": [
+        "humanize-chatgpt-text"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "ai-text-rewriter",
+      "extraSlugs": [
+        "ai-text-rewriter",
+        "make-ai-text-human"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "bypass-ai-detection",
+      "extraSlugs": [
+        "bypass-ai-detection"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "rewrite-gpt-content",
+      "extraSlugs": [
+        "rewrite-gpt-content"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "remove-markdown-formatting",
+      "extraSlugs": [
+        "remove-markdown-formatting"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "strip-markdown-syntax",
+      "extraSlugs": [
+        "strip-markdown-syntax"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "extract-email-addresses",
+      "extraSlugs": [
+        "extract-email-addresses"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "email-scraper-tool",
+      "extraSlugs": [
+        "email-scraper-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "get-emails-from-string",
+      "extraSlugs": [
+        "get-emails-from-string",
+        "get-urls-from-sitemap",
+        "get-all-urls-from-page"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "ebook-format-converter",
+      "extraSlugs": [
+        "ebook-format-converter"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "mp4-audio-ripper",
+      "extraSlugs": [
+        "mp4-audio-ripper"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "music-from-mp4",
+      "extraSlugs": [
+        "music-from-mp4"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "avi-video-converter",
+      "extraSlugs": [
+        "avi-video-converter",
+        "mov-video-converter",
+        "webm-video-converter",
+        "mkv-video-converter",
+        "flv-video-converter"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "play-avi-as-mp4",
+      "extraSlugs": [
+        "play-avi-as-mp4",
+        "play-webm-as-mp4",
+        "play-mkv-as-mp4",
+        "play-flv-as-mp4"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "prettify-json-online",
+      "extraSlugs": [
+        "prettify-json-online"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "validate-json-code",
+      "extraSlugs": [
+        "validate-json-code",
+        "validate-html-code"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "format-json-file",
+      "extraSlugs": [
+        "format-json-file",
+        "format-xml-file"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "sha256-hash-calculator",
+      "extraSlugs": [
+        "sha256-hash-calculator",
+        "advanced-hash-calculator"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "generate-hash-online",
+      "extraSlugs": [
+        "generate-hash-online",
+        "generate-sha512-hash",
+        "generate-sitemap-online"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "hash-string-message",
+      "extraSlugs": [
+        "hash-string-message"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "multi-algorithm-hashing",
+      "extraSlugs": [
+        "multi-algorithm-hashing"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "file-checksum-calculator",
+      "extraSlugs": [
+        "file-checksum-calculator"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "base64-encoder-decoder",
+      "extraSlugs": [
+        "base64-encoder-decoder"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "text-fo-base64",
+      "extraSlugs": [
+        "text-fo-base64"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "minify-js-online",
+      "extraSlugs": [
+        "minify-js-online",
+        "minify-code-online"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "compress-javascript-code",
+      "extraSlugs": [
+        "compress-javascript-code"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "js-compressor-minifier",
+      "extraSlugs": [
+        "js-compressor-minifier"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "test-regex-online",
+      "extraSlugs": [
+        "test-regex-online",
+        "test-rest-api-online"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "regular-expression-validator",
+      "extraSlugs": [
+        "regular-expression-validator"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "debug-regex-pattern",
+      "extraSlugs": [
+        "debug-regex-pattern"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "regex-match-tester",
+      "extraSlugs": [
+        "regex-match-tester",
+        "regex-replace-tester",
+        "regex-flags-tester"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "beautify-sql-query",
+      "extraSlugs": [
+        "beautify-sql-query"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "format-sql-online",
+      "extraSlugs": [
+        "format-sql-online"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "sql-prettifier",
+      "extraSlugs": [
+        "sql-prettifier"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "validate-sql-syntax",
+      "extraSlugs": [
+        "validate-sql-syntax"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "sql-code-formatter",
+      "extraSlugs": [
+        "sql-code-formatter",
+        "source-code-formatter"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "complex-regex-validator",
+      "extraSlugs": [
+        "complex-regex-validator"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "regex-cheatsheet-tool",
+      "extraSlugs": [
+        "regex-cheatsheet-tool"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "send-http-request",
+      "extraSlugs": [
+        "send-http-request"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "postman-alternative-online",
+      "extraSlugs": [
+        "postman-alternative-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "debug-api-requests",
+      "extraSlugs": [
+        "debug-api-requests"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "decode-jwt-online",
+      "extraSlugs": [
+        "decode-jwt-online",
+        "decode-jwt-token"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "json-web-token-decoder",
+      "extraSlugs": [
+        "json-web-token-decoder"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "read-jwt-content",
+      "extraSlugs": [
+        "read-jwt-content"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "verify-jwt-signature-free",
+      "extraSlugs": [
+        "verify-jwt-signature-free"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "percent-encoding-tool",
+      "extraSlugs": [
+        "percent-encoding-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "escape-url-characters",
+      "extraSlugs": [
+        "escape-url-characters"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "url-string-converter",
+      "extraSlugs": [
+        "url-string-converter"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "minify-css-file",
+      "extraSlugs": [
+        "minify-css-file"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "css-optimizer-online",
+      "extraSlugs": [
+        "css-optimizer-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "check-html-syntax",
+      "extraSlugs": [
+        "check-html-syntax",
+        "check-html-markup",
+        "html-syntax-checker"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "html-error-checker",
+      "extraSlugs": [
+        "html-error-checker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "w3c-html-validation-alternative",
+      "extraSlugs": [
+        "w3c-html-validation-alternative"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "validate-html-online",
+      "extraSlugs": [
+        "validate-html-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "have-i-been-pwned-password",
+      "extraSlugs": [
+        "have-i-been-pwned-password",
+        "have-i-been-pwned-check"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "verify-password-safety",
+      "extraSlugs": [
+        "verify-password-safety"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "data-breach-password-search",
+      "extraSlugs": [
+        "data-breach-password-search"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "check-email-hack",
+      "extraSlugs": [
+        "check-email-hack",
+        "email-leak-check",
+        "check-throwaway-email"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "detect-fake-email",
+      "extraSlugs": [
+        "detect-fake-email"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "disposable-email-detector",
+      "extraSlugs": [
+        "disposable-email-detector"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "identify-temp-mail",
+      "extraSlugs": [
+        "identify-temp-mail"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "verify-email-domain-validity",
+      "extraSlugs": [
+        "verify-email-domain-validity"
+      ],
+      "category": "utilities"
+    },
+    {
+      "master": "readability-score-checker",
+      "extraSlugs": [
+        "readability-score-checker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "check-code-complexity",
+      "extraSlugs": [
+        "check-code-complexity"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "flesch-kincaid-calculator",
+      "extraSlugs": [
+        "flesch-kincaid-calculator"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "online-color-picker",
+      "extraSlugs": [
+        "online-color-picker",
+        "image-color-picker-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "find-color-code",
+      "extraSlugs": [
+        "find-color-code"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "hex-color-finder",
+      "extraSlugs": [
+        "hex-color-finder"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "rgb-color-selector",
+      "extraSlugs": [
+        "rgb-color-selector"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "create-color-scheme",
+      "extraSlugs": [
+        "create-color-scheme"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "brand-colors-generator",
+      "extraSlugs": [
+        "brand-colors-generator",
+        "brand-name-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "random-color-schemes",
+      "extraSlugs": [
+        "random-color-schemes"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "make-css-gradients",
+      "extraSlugs": [
+        "make-css-gradients"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "css3-gradient-maker",
+      "extraSlugs": [
+        "css3-gradient-maker",
+        "css3-gradient-tool"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "background-gradient-tool",
+      "extraSlugs": [
+        "background-gradient-tool",
+        "background-gradient-creator"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "web-gradient-creator",
+      "extraSlugs": [
+        "web-gradient-creator"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "brand-identity-maker",
+      "extraSlugs": [
+        "brand-identity-maker"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "css3-shadow-tool",
+      "extraSlugs": [
+        "css3-shadow-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "online-whiteboard-free",
+      "extraSlugs": [
+        "online-whiteboard-free"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "collaborative-whiteboard",
+      "extraSlugs": [
+        "collaborative-whiteboard"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "sketch-board-online",
+      "extraSlugs": [
+        "sketch-board-online",
+        "drawing-board-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "virtual-whiteboard",
+      "extraSlugs": [
+        "virtual-whiteboard"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "test-google-fonts",
+      "extraSlugs": [
+        "test-google-fonts",
+        "compare-google-fonts",
+        "google-mobile-test"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "preview-fonts-online",
+      "extraSlugs": [
+        "preview-fonts-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "font-tester-tool",
+      "extraSlugs": [
+        "font-tester-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "typography-preview-tool",
+      "extraSlugs": [
+        "typography-preview-tool",
+        "serp-preview-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "convert-units-online",
+      "extraSlugs": [
+        "convert-units-online",
+        "convert-money-online"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "all-in-one-unit-converter",
+      "extraSlugs": [
+        "all-in-one-unit-converter"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "metric-imperial-converter",
+      "extraSlugs": [
+        "metric-imperial-converter"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "compress-files-to-zip",
+      "extraSlugs": [
+        "compress-files-to-zip",
+        "zip-files-free"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "make-archive-online",
+      "extraSlugs": [
+        "make-archive-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "shorten-link-free",
+      "extraSlugs": [
+        "shorten-link-free"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "make-url-shorter",
+      "extraSlugs": [
+        "make-url-shorter"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "link-shortener-custom",
+      "extraSlugs": [
+        "link-shortener-custom"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "reduce-link-length",
+      "extraSlugs": [
+        "reduce-link-length"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "create-short-link",
+      "extraSlugs": [
+        "create-short-link",
+        "create-wa-link",
+        "create-paypal-me-link"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "unix-timestamp-to-date",
+      "extraSlugs": [
+        "unix-timestamp-to-date",
+        "date-to-epoch"
+      ],
+      "category": "utilities"
+    },
+    {
+      "master": "human-readable-time",
+      "extraSlugs": [
+        "human-readable-time"
+      ],
+      "category": "utilities"
+    },
+    {
+      "master": "generate-random-stuff",
+      "extraSlugs": [
+        "generate-random-stuff"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "random-number-picker",
+      "extraSlugs": [
+        "random-number-picker"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "lucky-number-generator",
+      "extraSlugs": [
+        "lucky-number-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "exchange-rate-calculator",
+      "extraSlugs": [
+        "exchange-rate-calculator"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "currency-calculator-live",
+      "extraSlugs": [
+        "currency-calculator-live"
+      ],
+      "category": "utilities"
+    },
+    {
+      "master": "foreign-exchange-tool",
+      "extraSlugs": [
+        "foreign-exchange-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "world-clock-converter",
+      "extraSlugs": [
+        "world-clock-converter"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "check-time-difference",
+      "extraSlugs": [
+        "check-time-difference"
+      ],
+      "category": "utilities"
+    },
+    {
+      "master": "time-zone-map",
+      "extraSlugs": [
+        "time-zone-map",
+        "meeting-planner-time-zone"
+      ],
+      "category": "utilities"
+    },
+    {
+      "master": "convert-time-across-zones",
+      "extraSlugs": [
+        "convert-time-across-zones",
+        "convert-epoch-time"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "epoch-to-datetime",
+      "extraSlugs": [
+        "epoch-to-datetime"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "current-epoch-time",
+      "extraSlugs": [
+        "current-epoch-time"
+      ],
+      "category": "utilities"
+    },
+    {
+      "master": "whatsapp-chat-link",
+      "extraSlugs": [
+        "whatsapp-chat-link",
+        "click-to-chat-whatsapp",
+        "whatsapp-direct-message-link",
+        "fake-whatsapp-chat-generator"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "generate-payment-url",
+      "extraSlugs": [
+        "generate-payment-url"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "paypal-donation-link",
+      "extraSlugs": [
+        "paypal-donation-link",
+        "direct-paypal-link"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "check-whatsapp-number",
+      "extraSlugs": [
+        "check-whatsapp-number"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "verify-whatsapp-account",
+      "extraSlugs": [
+        "verify-whatsapp-account"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "is-on-whatsapp",
+      "extraSlugs": [
+        "is-on-whatsapp"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "wa-number-validator",
+      "extraSlugs": [
+        "wa-number-validator"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "serp-tracker-bulk",
+      "extraSlugs": [
+        "serp-tracker-bulk",
+        "serp-tracker-pro"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "check-multiple-keywords",
+      "extraSlugs": [
+        "check-multiple-keywords"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "check-url-indexation",
+      "extraSlugs": [
+        "check-url-indexation"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "bulk-url-indexer",
+      "extraSlugs": [
+        "bulk-url-indexer"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "google-search-console-tool",
+      "extraSlugs": [
+        "google-search-console-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "google-title-rewrites",
+      "extraSlugs": [
+        "google-title-rewrites"
+      ],
+      "category": "youtube"
+    },
+    {
+      "master": "page-title-optimization",
+      "extraSlugs": [
+        "page-title-optimization"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "google-snippet-preview",
+      "extraSlugs": [
+        "google-snippet-preview"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "sitemap-url-downloader",
+      "extraSlugs": [
+        "sitemap-url-downloader"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "website-map-maker",
+      "extraSlugs": [
+        "website-map-maker"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "link-scraper-online",
+      "extraSlugs": [
+        "link-scraper-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "website-url-finder",
+      "extraSlugs": [
+        "website-url-finder"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "extract-hyperlinks",
+      "extraSlugs": [
+        "extract-hyperlinks"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "find-404-errors",
+      "extraSlugs": [
+        "find-404-errors"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "dead-link-finder",
+      "extraSlugs": [
+        "dead-link-finder"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "website-link-validator",
+      "extraSlugs": [
+        "website-link-validator"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "check-website-errors",
+      "extraSlugs": [
+        "check-website-errors",
+        "check-website-speed"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "content-duplication-tool",
+      "extraSlugs": [
+        "content-duplication-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "find-copied-content",
+      "extraSlugs": [
+        "find-copied-content"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "duplicate-page-detector",
+      "extraSlugs": [
+        "duplicate-page-detector"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "analyze-meta-tags",
+      "extraSlugs": [
+        "analyze-meta-tags",
+        "generate-meta-tags"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "website-meta-audit",
+      "extraSlugs": [
+        "website-meta-audit"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "website-performance-test",
+      "extraSlugs": [
+        "website-performance-test"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "load-time-checker",
+      "extraSlugs": [
+        "load-time-checker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "core-web-vitals-check",
+      "extraSlugs": [
+        "core-web-vitals-check"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "site-health-check",
+      "extraSlugs": [
+        "site-health-check"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "check-backlinks-free",
+      "extraSlugs": [
+        "check-backlinks-free"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "website-backlink-analysis",
+      "extraSlugs": [
+        "website-backlink-analysis"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "find-backlinks-url",
+      "extraSlugs": [
+        "find-backlinks-url"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "competitor-keyword-spy",
+      "extraSlugs": [
+        "competitor-keyword-spy"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "analyze-competitor-site",
+      "extraSlugs": [
+        "analyze-competitor-site"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "seo-competition-analysis",
+      "extraSlugs": [
+        "seo-competition-analysis"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "find-keywords-online",
+      "extraSlugs": [
+        "find-keywords-online",
+        "find-bing-keywords",
+        "find-google-keywords"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "free-keyword-finder",
+      "extraSlugs": [
+        "free-keyword-finder",
+        "google-keyword-planner-free"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "seo-keyword-generator",
+      "extraSlugs": [
+        "seo-keyword-generator"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "search-volume-checker",
+      "extraSlugs": [
+        "search-volume-checker",
+        "bing-search-volume"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "keyword-ideas-bing",
+      "extraSlugs": [
+        "keyword-ideas-bing"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "bing-seo-keywords",
+      "extraSlugs": [
+        "bing-seo-keywords",
+        "seo-keywords-google"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "search-ranking-monitor",
+      "extraSlugs": [
+        "search-ranking-monitor",
+        "local-search-ranking"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "seo-position-tracker",
+      "extraSlugs": [
+        "seo-position-tracker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "mobile-friendly-test",
+      "extraSlugs": [
+        "mobile-friendly-test"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "responsive-design-checker",
+      "extraSlugs": [
+        "responsive-design-checker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "mobile-optimization-tool",
+      "extraSlugs": [
+        "mobile-optimization-tool",
+        "gmb-optimization-tool",
+        "code-optimization-tool"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "smartphone-view-simulator",
+      "extraSlugs": [
+        "smartphone-view-simulator"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "check-local-listings",
+      "extraSlugs": [
+        "check-local-listings"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "google-maps-seo",
+      "extraSlugs": [
+        "google-maps-seo"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "local-business-seo",
+      "extraSlugs": [
+        "local-business-seo"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "snippet-optimization",
+      "extraSlugs": [
+        "snippet-optimization"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "title-tag-preview",
+      "extraSlugs": [
+        "title-tag-preview"
+      ],
+      "category": "youtube"
+    },
+    {
+      "master": "test-structured-data",
+      "extraSlugs": [
+        "test-structured-data",
+        "google-structured-data-helper"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "rich-results-test",
+      "extraSlugs": [
+        "rich-results-test"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "alt-text-checker",
+      "extraSlugs": [
+        "alt-text-checker"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "image-optimization-test",
+      "extraSlugs": [
+        "image-optimization-test"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "find-missing-alt-tags",
+      "extraSlugs": [
+        "find-missing-alt-tags"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "robots-file-maker",
+      "extraSlugs": [
+        "robots-file-maker"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "allow-disallow-generator",
+      "extraSlugs": [
+        "allow-disallow-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "crawl-control-tool",
+      "extraSlugs": [
+        "crawl-control-tool"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "json-ld-generator",
+      "extraSlugs": [
+        "json-ld-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "rich-snippets-maker",
+      "extraSlugs": [
+        "rich-snippets-maker"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "check-ssl-certificate",
+      "extraSlugs": [
+        "check-ssl-certificate"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "verify-ssl-installation",
+      "extraSlugs": [
+        "verify-ssl-installation"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "ssl-expiry-date",
+      "extraSlugs": [
+        "ssl-expiry-date"
+      ],
+      "category": "utilities"
+    },
+    {
+      "master": "create-seo-tags",
+      "extraSlugs": [
+        "create-seo-tags"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "html-head-tags-maker",
+      "extraSlugs": [
+        "html-head-tags-maker"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "generate-qr-image",
+      "extraSlugs": [
+        "generate-qr-image"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "check-keyword-frequency",
+      "extraSlugs": [
+        "check-keyword-frequency"
+      ],
+      "category": "seo"
+    },
+    {
+      "master": "content-density-check",
+      "extraSlugs": [
+        "content-density-check"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "about",
+      "extraSlugs": [
+        "about"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "help",
+      "extraSlugs": [
+        "help"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "blog",
+      "extraSlugs": [
+        "blog"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "aesthetic-bio-generator",
+      "extraSlugs": [
+        "aesthetic-bio-generator",
+        "instagram-bio-generator",
+        "aesthetic-instagram-bio",
+        "tiktok-bio-generator",
+        "copy-paste-aesthetic-bio",
+        "stylish-bio-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "startup-name-generator",
+      "extraSlugs": [
+        "startup-name-generator",
+        "business-name-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "fake-chat-generator",
+      "extraSlugs": [
+        "fake-chat-generator",
+        "fake-instagram-dm-generator",
+        "fake-imessage-generator",
+        "fake-discord-chat-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "instagram-font-generator",
+      "extraSlugs": [
+        "instagram-font-generator"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "instagram-profile-picture-viewer",
+      "extraSlugs": [
+        "instagram-profile-picture-viewer",
+        "ig-profile-picture-viewer",
+        "instagram-profile-photo-hd",
+        "profile-pic-viewer-instagram",
+        "instagram-picture-saver"
+      ],
+      "category": "image"
+    },
+    {
+      "master": "company-name-ideas",
+      "extraSlugs": [
+        "company-name-ideas"
+      ],
+      "category": "generators"
+    },
+    {
+      "master": "creative-business-names",
+      "extraSlugs": [
+        "creative-business-names"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "good-excuses-for-work",
+      "extraSlugs": [
+        "good-excuses-for-work",
+        "late-for-work-excuses",
+        "excuses-for-missing-school"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "best-excuse-generator",
+      "extraSlugs": [
+        "best-excuse-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "love-poem-generator",
+      "extraSlugs": [
+        "love-poem-generator"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "insta-fonts",
+      "extraSlugs": [
+        "insta-fonts"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "aesthetic-fonts-for-instagram",
+      "extraSlugs": [
+        "aesthetic-fonts-for-instagram"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "cool-bio-fonts",
+      "extraSlugs": [
+        "cool-bio-fonts"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "instagram-fancy-text",
+      "extraSlugs": [
+        "instagram-fancy-text"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "trending-instagram-hashtags",
+      "extraSlugs": [
+        "trending-instagram-hashtags"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "insta-hashtag-finder",
+      "extraSlugs": [
+        "insta-hashtag-finder"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "best-hashtags-for-reels",
+      "extraSlugs": [
+        "best-hashtags-for-reels"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "grow-on-instagram",
+      "extraSlugs": [
+        "grow-on-instagram"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "download-youtube-videos-1080p",
+      "extraSlugs": [
+        "download-youtube-videos-1080p",
+        "download-youtube-transcript",
+        "download-facebook-videos-hd",
+        "download-pinterest-videos",
+        "download-videos-from-any-site"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "extract-youtube-subtitles",
+      "extraSlugs": [
+        "extract-youtube-subtitles"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "save-youtube-captions",
+      "extraSlugs": [
+        "save-youtube-captions"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "beautify-code-online",
+      "extraSlugs": [
+        "beautify-code-online",
+        "beautify-xml-online"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "format-html-css-js",
+      "extraSlugs": [
+        "format-html-css-js",
+        "compress-html-css-js"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "clean-code-indentation",
+      "extraSlugs": [
+        "clean-code-indentation"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "web-code-compressor",
+      "extraSlugs": [
+        "web-code-compressor"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "transform-csv-data",
+      "extraSlugs": [
+        "transform-csv-data"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "markdown-parser-online",
+      "extraSlugs": [
+        "markdown-parser-online"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "render-markdown-html",
+      "extraSlugs": [
+        "render-markdown-html"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "readme-to-html",
+      "extraSlugs": [
+        "readme-to-html"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "md-html-converter",
+      "extraSlugs": [
+        "md-html-converter"
+      ],
+      "category": "text"
+    },
+    {
+      "master": "xml-pretty-print",
+      "extraSlugs": [
+        "xml-pretty-print"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "validate-xml-format",
+      "extraSlugs": [
+        "validate-xml-format"
+      ],
+      "category": "developer"
+    },
+    {
+      "master": "fb-clip-downloader",
+      "extraSlugs": [
+        "fb-clip-downloader",
+        "fb-highlights-downloader"
+      ],
+      "category": "youtube"
+    },
+    {
+      "master": "save-fb-stories-anonymous",
+      "extraSlugs": [
+        "save-fb-stories-anonymous"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "save-instagram-clips",
+      "extraSlugs": [
+        "save-instagram-clips",
+        "save-instagram-photos"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "download-ig-stories",
+      "extraSlugs": [
+        "download-ig-stories",
+        "download-snapchat-stories",
+        "watch-ig-stories-private",
+        "ig-photo-download-hd"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "ig-highlights-saver",
+      "extraSlugs": [
+        "ig-highlights-saver"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "insta-dp-viewer",
+      "extraSlugs": [
+        "insta-dp-viewer",
+        "ig-dp-viewer"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "download-full-size-dp",
+      "extraSlugs": [
+        "download-full-size-dp",
+        "view-full-size-ig-dp"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "save-insta-pfp",
+      "extraSlugs": [
+        "save-insta-pfp"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "download-instagram-reels",
+      "extraSlugs": [
+        "download-instagram-reels",
+        "download-from-instagram"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "insta-reels-saver",
+      "extraSlugs": [
+        "insta-reels-saver"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "save-reels-video",
+      "extraSlugs": [
+        "save-reels-video"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "ig-reels-downloader-hd",
+      "extraSlugs": [
+        "ig-reels-downloader-hd",
+        "ig-downloader-all"
+      ],
+      "category": "youtube"
+    },
+    {
+      "master": "save-twitter-videos",
+      "extraSlugs": [
+        "save-twitter-videos",
+        "save-snapchat-videos"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "download-twitter-clips",
+      "extraSlugs": [
+        "download-twitter-clips"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "tiktok-saver-no-watermark",
+      "extraSlugs": [
+        "tiktok-saver-no-watermark",
+        "no-watermark-tiktok",
+        "tiktok-mp3-saver"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "save-tiktok-mp4",
+      "extraSlugs": [
+        "save-tiktok-mp4",
+        "save-tiktok-music"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "piknu",
+      "extraSlugs": [
+        "piknu"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "instastoryviewer",
+      "extraSlugs": [
+        "instastoryviewer"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "view-stories-anonymously",
+      "extraSlugs": [
+        "view-stories-anonymously"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "watch-instagram-stories",
+      "extraSlugs": [
+        "watch-instagram-stories"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "save-ig-content",
+      "extraSlugs": [
+        "save-ig-content"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "download-tiktok-sound",
+      "extraSlugs": [
+        "download-tiktok-sound"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "extract-tiktok-audio",
+      "extraSlugs": [
+        "extract-tiktok-audio"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "mp3-from-tiktok",
+      "extraSlugs": [
+        "mp3-from-tiktok"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "pinterest-clip-saver",
+      "extraSlugs": [
+        "pinterest-clip-saver"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "snapchat-saver-online",
+      "extraSlugs": [
+        "snapchat-saver-online"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "save-snaps-to-gallery",
+      "extraSlugs": [
+        "save-snaps-to-gallery"
+      ],
+      "category": "downloaders"
+    },
+    {
+      "master": "insta-anonymous",
+      "extraSlugs": [
+        "insta-anonymous"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "story-viewer-without-account",
+      "extraSlugs": [
+        "story-viewer-without-account"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "anonymous-ig-viewer",
+      "extraSlugs": [
+        "anonymous-ig-viewer"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "instazoom-alternative",
+      "extraSlugs": [
+        "instazoom-alternative"
+      ],
+      "category": "others"
+    },
+    {
+      "master": "download-insta-carousel",
+      "extraSlugs": [
+        "download-insta-carousel"
+      ],
+      "category": "video"
+    },
+    {
+      "master": "contact",
+      "extraSlugs": [
+        "contact"
+      ],
+      "category": "others"
+    }
+  ]
+}

@@ -227,36 +227,6 @@ export default async function AIVoiceGeneratorPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "AI Voice Generator",
-							description:
-								"Convert text to natural-sounding speech instantly with our free AI voice generator",
-							url: "https://30tools.com/ai-voice-generator",
-							applicationCategory: "MultimediaApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot:
-								"https://30tools.com/screenshots/ai-voice-generator.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.9",
-								reviewCount: "2847",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Convert Text to Speech",
 							step: [

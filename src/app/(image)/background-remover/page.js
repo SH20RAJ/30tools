@@ -240,36 +240,6 @@ export default async function BackgroundRemoverPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Background Remover",
-							description:
-								"Remove image backgrounds automatically in seconds with AI. Download transparent PNGs.",
-							url: "https://30tools.com/background-remover",
-							applicationCategory: "MultimediaApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot:
-								"https://30tools.com/screenshots/background-remover.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.9",
-								reviewCount: "3521",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Remove Background from Image",
 							step: [

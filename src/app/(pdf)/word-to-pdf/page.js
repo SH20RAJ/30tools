@@ -297,35 +297,6 @@ export default async function WordToPDFPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Free Word to PDF Converter",
-							description:
-								"Convert Word documents to PDF online for free. Supports DOC and DOCX formats.",
-							url: "https://30tools.com/word-to-pdf",
-							applicationCategory: "UtilityApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/word-to-pdf.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.8",
-								reviewCount: "520",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Convert Word to PDF",
 							step: [

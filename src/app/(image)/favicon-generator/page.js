@@ -281,36 +281,6 @@ export default async function FaviconGeneratorPage() {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Free Favicon Generator",
-							description:
-								"Create custom favicons for your website in seconds. Convert text, emojis, or images to high-quality favicons.",
-							url: "https://30tools.com/favicon-generator",
-							applicationCategory: "DesignApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot:
-								"https://30tools.com/screenshots/favicon-generator.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.9",
-								reviewCount: "876",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Create a Website Favicon",
 							step: [

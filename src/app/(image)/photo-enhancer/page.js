@@ -228,35 +228,6 @@ export default async function PhotoEnhancerPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Photo Enhancer",
-							description:
-								"Enhance photo quality instantly with AI. Fix blurry images, upscale resolution, reduce noise.",
-							url: "https://30tools.com/photo-enhancer",
-							applicationCategory: "MultimediaApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/photo-enhancer.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.8",
-								reviewCount: "1542",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Enhance Photos Online",
 							step: [

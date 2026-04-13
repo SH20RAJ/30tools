@@ -227,35 +227,6 @@ export default async function ImageResizerPage({ searchParams }) {
 					__html: JSON.stringify([
 						{
 							"@context": "https://schema.org",
-							"@type": "SoftwareApplication",
-							name: "Image Resizer",
-							description:
-								"Resize images online for free. Change dimensions, maintain aspect ratio, batch resize.",
-							url: "https://30tools.com/image-resizer",
-							applicationCategory: "MultimediaApplication",
-							operatingSystem: "Web Browser",
-							offers: {
-								"@type": "Offer",
-								price: "0",
-								priceCurrency: "USD",
-							},
-							creator: {
-								"@type": "Organization",
-								name: "30tools",
-								url: "https://30tools.com",
-							},
-							featureList: features,
-							screenshot: "https://30tools.com/screenshots/image-resizer.jpg",
-							aggregateRating: {
-								"@type": "AggregateRating",
-								ratingValue: "4.8",
-								reviewCount: "2156",
-								bestRating: "5",
-								worstRating: "1",
-							},
-						},
-						{
-							"@context": "https://schema.org",
 							"@type": "HowTo",
 							name: "How to Resize Images Online",
 							step: [
