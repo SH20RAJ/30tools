@@ -1,415 +1,251 @@
-import {
-	Archive,
-	Download,
-	Eye,
-	FileImage,
-	Image,
-	Palette,
-	Scissors,
-} from "lucide-react";
-import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
 
-export const metadata = generateCategoryMetadata("image", {
-	title: "Image Tools | Free Online Image Processing & Editing | 30Tools",
-	description:
-		"Free image tools for compressing, converting, resizing, and editing images online. Fast, browser-based, and easy to use.",
-});
+import ToolLayout from "@/components/tools/shared/ToolLayout";
 
-const imageTools = [
-	{
-		name: "Image Compressor",
-		description:
-			"Compress images up to 90% while maintaining quality using advanced algorithms",
-		href: "/image-compressor",
-		icon: Archive,
-		category: "Optimization",
-		featured: true,
-	},
-	{
-		name: "Image Converter",
-		description:
-			"Convert between JPEG, PNG, WebP, GIF, AVIF, and other formats",
-		href: "/image-converter",
-		icon: FileImage,
-		category: "Conversion",
-		featured: true,
-	},
-	{
-		name: "Image Resizer",
-		description: "Resize images while maintaining aspect ratio and quality",
-		href: "/image-resizer",
-		icon: Scissors,
-		category: "Editing",
-		featured: true,
-	},
-	{
-		name: "Photo Enhancer",
-		description:
-			"Enhance photo quality with AI-powered filters and adjustments",
-		href: "/photo-enhancer",
-		icon: Eye,
-		category: "Enhancement",
-	},
-	{
-		name: "Background Remover",
-		description: "Remove image backgrounds automatically using AI technology",
-		href: "/background-remover",
-		icon: Image,
-		category: "Editing",
-	},
-	{
-		name: "Watermark Remover",
-		description: "Remove watermarks from images while preserving quality",
-		href: "/watermark-remover",
-		icon: Eye,
-		category: "Editing",
-	},
-	{
-		name: "Image to Icon",
-		description: "Convert images to ICO format for favicons and icons",
-		href: "/image-to-icon",
-		icon: Download,
-		category: "Conversion",
-	},
-	{
-		name: "Batch Image Processor",
-		description: "Process multiple images simultaneously with bulk operations",
-		href: "/batch-image-processor",
-		icon: Archive,
-		category: "Batch",
-	},
-	{
-		name: "OG Image Generator",
-		description: "Create Open Graph images for social media previews",
-		href: "/og-image-generator",
-		icon: Palette,
-		category: "Conversion",
-	},
-	{
-		name: "Logo Generator",
-		description: "Create professional logos for your brand instantly",
-		href: "/logo-generator",
-		icon: Palette,
-		category: "Editing",
-	},
-	{
-		name: "Favicon Generator",
-		description: "Create favicons for your website from text, emoji, or image",
-		href: "/favicon-generator",
-		icon: FileImage,
-		category: "Conversion",
-	},
+
+export const metadata = {
+  title: "Free Image Tools Online - No Signup | 30tools",
+  description: "Free Image Tools online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "image tools, free online tool, no signup, image, image tools online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/image-tools",
+  },
+  openGraph: {
+    title: "Free Image Tools Online - No Signup | 30tools",
+    description: "Free Image Tools online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/image-tools",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Image Tools Online - No Signup | 30tools",
+    description: "Free Image Tools online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
+};
+
+export default async function ToolPage() {
+  const tool = {
+  "id": "image-tools",
+  "name": "Image Tools",
+  "description": "Free Image Tools online tool. Fast and secure.",
+  "route": "/image-tools",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "image"
+};
+  const breadcrumbs = [
+  {
+    "name": "Image Tools",
+    "url": "/image-tools"
+  },
+  {
+    "name": "Image Tools",
+    "url": "/image-tools"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "background-remover",
+    "name": "Background Remover",
+    "description": "Remove image backgrounds automatically with AI",
+    "route": "/background-remover",
+    "extraSlugs": [
+      "remove-background-from-signature-free",
+      "transparent-background-maker",
+      "picture-background-eraser",
+      "duplicate-line-remover",
+      "background-gradient-tool",
+      "background-gradient-creator"
+    ],
+    "popular": true,
+    "category": "image"
+  },
+  {
+    "id": "base64-to-image-converter",
+    "name": "Base64 to Image Converter",
+    "description": "Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/base64-to-image-converter",
+    "extraSlugs": [
+      "add-text-to-image",
+      "all-in-one-unit-converter",
+      "audio-converter",
+      "audio-converter-mp3",
+      "avi-file-to-mp4-online",
+      "avi-to-mp4-converter",
+      "avi-video-converter",
+      "base64-encoder-decoder",
+      "base64-image",
+      "base64-to-image",
+      "base64-to-image-converter-tool",
+      "base64-to-text",
+      "base64-tool",
+      "change-audio-format",
+      "change-avi-to-mp4",
+      "change-flv-to-mp4",
+      "change-image-dimensions",
+      "change-m4a-to-mp3",
+      "change-mkv-to-mp4",
+      "change-mov-to-mp4",
+      "change-ogg-to-mp3",
+      "change-pdf-orientation",
+      "change-video-type",
+      "change-wav-to-mp3",
+      "change-webm-to-mp4",
+      "click-to-chat-whatsapp",
+      "compress-files-to-zip",
+      "compress-ogg-to-mp3",
+      "compress-wav-to-mp3",
+      "convert-audio-format",
+      "convert-image-to-jpg",
+      "convert-picture-to-string",
+      "convert-video-format",
+      "date-to-epoch",
+      "decode-base64-image",
+      "document-converter",
+      "docx-to-pdf-converter",
+      "ebook-format-converter",
+      "encode-image-base64",
+      "epoch-converter",
+      "epoch-to-datetime",
+      "epub-converter",
+      "file-converter",
+      "fit-photo-to-instagram-story",
+      "flv-file-to-mp4-online",
+      "flv-to-mp4-converter",
+      "flv-video-converter",
+      "folder-to-zip-converter",
+      "format-html-css-js",
+      "format-sql-online",
+      "free-base64-to-image-converter-online",
+      "image-format-changer",
+      "image-to-base64",
+      "image-to-pdf-converter",
+      "insta-story-size-converter",
+      "instagram-reels-to-mp4",
+      "m4a-audio-converter",
+      "m4a-file-to-mp3-online",
+      "m4a-to-mp3-converter",
+      "m4a-to-mp3-online",
+      "md-html-converter",
+      "md-to-txt-converter",
+      "measurement-converter",
+      "metric-imperial-converter",
+      "mkv-file-to-mp4-online",
+      "mkv-to-mp4-converter",
+      "mkv-video-converter",
+      "mov-file-to-mp4-online",
+      "mov-to-mp4",
+      "mov-to-mp4-converter",
+      "mov-video-converter",
+      "movie-to-mp3-converter",
+      "mp3-converter",
+      "mp3-converter-online",
+      "mp4-audio-converter",
+      "mp4-converter-online",
+      "mp4-to-mp3",
+      "ogg-audio-converter",
+      "ogg-file-to-mp3-online",
+      "ogg-to-mp3-converter",
+      "pdf-to-docx-converter",
+      "pdf-to-epub-converter",
+      "photos-to-pdf-converter",
+      "pptx-to-pdf-converter",
+      "quicktime-to-mp4",
+      "readme-to-html",
+      "save-snaps-to-gallery",
+      "text-fo-base64",
+      "tiktok-aspect-ratio-converter",
+      "tiktok-mp3-converter",
+      "tiktok-music-converter",
+      "tiktok-to-mp3-online",
+      "timestamp-converter",
+      "timezone-converter",
+      "unit-converter",
+      "unix-timestamp-to-date",
+      "uppercase-to-lowercase",
+      "url-string-converter",
+      "url-to-pdf-converter",
+      "usd-to-eur-converter",
+      "video-converter",
+      "video-to-mp3-converter",
+      "wav-audio-converter",
+      "wav-file-to-mp3-online",
+      "wav-to-mp3-converter",
+      "webm-file-to-mp4-online",
+      "webm-to-mp4-converter",
+      "webm-video-converter",
+      "world-clock-converter",
+      "xlsx-to-pdf-converter",
+      "youtube-to-mp3-high-quality",
+      "youtube-to-mp4-converter"
+    ],
+    "popular": false,
+    "category": "image"
+  },
+  {
+    "id": "convert-to-ico",
+    "name": "Convert to ICO",
+    "description": "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/convert-to-ico",
+    "extraSlugs": [
+      "convert-audio-format",
+      "convert-avi-to-mp4",
+      "convert-doc-to-pdf",
+      "convert-epoch-time",
+      "convert-flv-to-mp4",
+      "convert-html-to-pdf",
+      "convert-landscape-to-portrait-video",
+      "convert-m4a-to-mp3",
+      "convert-md-to-html",
+      "convert-mkv-to-mp4",
+      "convert-money-online",
+      "convert-mov-to-mp4",
+      "convert-mp4-to-gif",
+      "convert-mp4-to-mp3",
+      "convert-mp4-video-to-mp3",
+      "convert-ogg-to-mp3",
+      "convert-pdf-to-doc",
+      "convert-picture-to-string",
+      "convert-png-to-favicon",
+      "convert-ppt-to-pdf",
+      "convert-string-to-binary",
+      "convert-text-case",
+      "convert-text-to-audio",
+      "convert-tiktok-to-mp3",
+      "convert-time-across-zones",
+      "convert-time-to-timestamp",
+      "convert-to-epub-online",
+      "convert-to-ico-tool",
+      "convert-units-online",
+      "convert-video-file-to-mp3",
+      "convert-video-format",
+      "convert-wav-to-mp3",
+      "convert-webm-to-mp4",
+      "convert-xls-to-pdf",
+      "free-convert-to-ico-online"
+    ],
+    "popular": false,
+    "category": "image"
+  }
 ];
 
-const categories = [
-	{ name: "Optimization", count: 3, color: "bg-muted text-foreground" },
-	{ name: "Conversion", count: 3, color: "bg-muted text-foreground" },
-	{ name: "Editing", count: 4, color: "bg-muted text-foreground" },
-	{ name: "Enhancement", count: 1, color: "bg-muted text-primary" },
-	{ name: "Batch", count: 1, color: "bg-destructive/20 text-destructive" },
-];
-
-export default async function ImageToolsPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	const featuredTools = imageTools.filter((tool) => tool.featured);
-	const allTools = imageTools;
-
-	return (
-		<div className="max-w-7xl mx-auto p-6 space-y-8">
-			{/* Header */}
-			<div className="text-center space-y-4">
-				<div className="flex items-center justify-center gap-2 mb-4">
-					<Image className="h-8 w-8 text-primary" />
-					<h1 className="text-4xl font-bold">Image Tools</h1>
-				</div>
-				<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-					Free image tools for compression, conversion, resizing, and editing.
-					All processing happens locally in your browser for privacy and speed.
-				</p>
-			</div>
-
-			{/* Stats */}
-			<div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-				<Card>
-					<CardContent className="p-4 text-center">
-						<div className="text-2xl font-bold text-primary">
-							{imageTools.length}+
-						</div>
-						<div className="text-sm text-muted-foreground">Image Tools</div>
-					</CardContent>
-				</Card>
-				<Card>
-					<CardContent className="p-4 text-center">
-						<div className="text-2xl font-bold text-primary">90%</div>
-						<div className="text-sm text-muted-foreground">Compression</div>
-					</CardContent>
-				</Card>
-				<Card>
-					<CardContent className="p-4 text-center">
-						<div className="text-2xl font-bold text-primary">15+</div>
-						<div className="text-sm text-muted-foreground">Formats</div>
-					</CardContent>
-				</Card>
-				<Card>
-					<CardContent className="p-4 text-center">
-						<div className="text-2xl font-bold text-primary">100%</div>
-						<div className="text-sm text-muted-foreground">Private</div>
-					</CardContent>
-				</Card>
-			</div>
-
-			{/* Categories */}
-			<div>
-				<h2 className="text-2xl font-bold mb-4">Categories</h2>
-				<div className="flex flex-wrap gap-2">
-					{categories.map((category) => (
-						<Badge
-							key={category.name}
-							variant="secondary"
-							className={category.color}
-						>
-							{category.name} ({category.count})
-						</Badge>
-					))}
-				</div>
-			</div>
-
-			{/* Featured Tools */}
-			{featuredTools.length > 0 && (
-				<div>
-					<h2 className="text-2xl font-bold mb-4">Featured Tools</h2>
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-						{featuredTools.map((tool) => {
-							const IconComponent = tool.icon;
-							return (
-								<Card
-									key={tool.name}
-									className="hover:shadow-lg transition-shadow border-primary/20"
-								>
-									<CardHeader>
-										<div className="flex items-center gap-3">
-											<div className="p-2 bg-primary/10 rounded-lg">
-												<IconComponent className="h-6 w-6 text-primary" />
-											</div>
-											<div>
-												<CardTitle className="text-lg">{tool.name}</CardTitle>
-												<Badge variant="outline" className="text-xs">
-													{tool.category}
-												</Badge>
-											</div>
-										</div>
-									</CardHeader>
-									<CardContent>
-										<CardDescription className="mb-4">
-											{tool.description}
-										</CardDescription>
-										<Link href={tool.href}>
-											<button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 rounded-md text-sm font-medium transition-colors">
-												Try Now
-											</button>
-										</Link>
-									</CardContent>
-								</Card>
-							);
-						})}
-					</div>
-				</div>
-			)}
-
-			{/* All Tools */}
-			<div>
-				<h2 className="text-2xl font-bold mb-4">All Image Tools</h2>
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-					{allTools.map((tool) => {
-						const IconComponent = tool.icon;
-						return (
-							<Card
-								key={tool.name}
-								className="hover:shadow-lg transition-shadow"
-							>
-								<CardHeader>
-									<div className="flex items-center gap-3">
-										<div className="p-2 bg-muted rounded-lg">
-											<IconComponent className="h-5 w-5" />
-										</div>
-										<div>
-											<CardTitle className="text-lg">{tool.name}</CardTitle>
-											<Badge variant="outline" className="text-xs">
-												{tool.category}
-											</Badge>
-										</div>
-									</div>
-								</CardHeader>
-								<CardContent>
-									<CardDescription className="mb-4">
-										{tool.description}
-									</CardDescription>
-									<Link href={tool.href}>
-										<button className="w-full border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 rounded-md text-sm font-medium transition-colors">
-											Use Tool
-										</button>
-									</Link>
-								</CardContent>
-							</Card>
-						);
-					})}
-				</div>
-			</div>
-
-			{/* SEO Content */}
-			<div className="mt-12 space-y-8">
-				<Card>
-					<CardHeader>
-						<CardTitle>About Image Processing Tools</CardTitle>
-					</CardHeader>
-					<CardContent className="prose max-w-none">
-						<p>
-							Image processing tools are essential for anyone working with
-							digital images, from web developers and graphic designers to
-							content creators and e-commerce businesses. Our comprehensive
-							collection of image tools helps you optimize, convert, edit, and
-							enhance images efficiently.
-						</p>
-
-						<h3>Why Use Our Image Tools?</h3>
-						<ul>
-							<li>
-								<strong>Privacy First:</strong> All processing happens locally
-								in your browser
-							</li>
-							<li>
-								<strong>High Quality:</strong> Advanced algorithms maintain
-								image quality
-							</li>
-							<li>
-								<strong>Fast Processing:</strong> Optimized for speed and
-								performance
-							</li>
-							<li>
-								<strong>Multiple Formats:</strong> Support for JPEG, PNG, WebP,
-								GIF, AVIF, and more
-							</li>
-							<li>
-								<strong>No Limits:</strong> Process unlimited images without
-								restrictions
-							</li>
-							<li>
-								<strong>Professional Results:</strong> Enterprise-grade image
-								processing
-							</li>
-						</ul>
-
-						<h3>Image Optimization Benefits:</h3>
-						<ul>
-							<li>
-								<strong>Faster Loading:</strong> Compressed images load faster
-								on websites
-							</li>
-							<li>
-								<strong>Better SEO:</strong> Optimized images improve search
-								rankings
-							</li>
-							<li>
-								<strong>Storage Savings:</strong> Reduce file sizes without
-								quality loss
-							</li>
-							<li>
-								<strong>Bandwidth Efficiency:</strong> Lower data usage for
-								mobile users
-							</li>
-							<li>
-								<strong>User Experience:</strong> Improved site performance and
-								engagement
-							</li>
-						</ul>
-
-						<h3>Supported Image Formats:</h3>
-						<div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
-							<div className="text-center p-3 bg-muted rounded-lg">
-								<div className="font-semibold">JPEG</div>
-								<div className="text-sm text-muted-foreground">
-									Lossy compression
-								</div>
-							</div>
-							<div className="text-center p-3 bg-muted rounded-lg">
-								<div className="font-semibold">PNG</div>
-								<div className="text-sm text-muted-foreground">
-									Lossless compression
-								</div>
-							</div>
-							<div className="text-center p-3 bg-muted rounded-lg">
-								<div className="font-semibold">WebP</div>
-								<div className="text-sm text-muted-foreground">
-									Modern format
-								</div>
-							</div>
-							<div className="text-center p-3 bg-muted rounded-lg">
-								<div className="font-semibold">AVIF</div>
-								<div className="text-sm text-muted-foreground">
-									Next-gen format
-								</div>
-							</div>
-						</div>
-
-						<h3>Common Use Cases:</h3>
-						<ul>
-							<li>Website optimization and performance</li>
-							<li>Social media content creation</li>
-							<li>E-commerce product images</li>
-							<li>Digital marketing materials</li>
-							<li>Photo editing and enhancement</li>
-							<li>Batch image processing</li>
-						</ul>
-					</CardContent>
-				</Card>
-			</div>
-
-			{/* Schema.org structured data */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "CollectionPage",
-						name: "Image Tools Collection",
-						description:
-							"Free image tools for compression, conversion, resizing, and editing",
-						url: "https://30tools.com/image-tools",
-						mainEntity: {
-							"@type": "ItemList",
-							numberOfItems: imageTools.length,
-							itemListElement: imageTools.map((tool, index) => ({
-								"@type": "SoftwareApplication",
-								position: index + 1,
-								name: tool.name,
-								description: tool.description,
-								url: `https://30tools.com${tool.href}`,
-								applicationCategory: "MultimediaApplication",
-								operatingSystem: "Any",
-								offers: {
-									"@type": "Offer",
-									price: "0",
-									priceCurrency: "USD",
-								},
-							})),
-						},
-						provider: {
-							"@type": "Organization",
-							name: "30tools",
-							url: "https://30tools.com",
-						},
-					}),
-				}}
-			/>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Tools","description":"Free Image Tools online tool. Fast and secure.","url":"https://30tools.com/image-tools","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

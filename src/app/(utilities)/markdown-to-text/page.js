@@ -1,62 +1,161 @@
-import ToolContent from "@/components/shared/ToolContent";
-import ToolLayout from "@/components/shared/ToolLayout";
-import MarkdownToText from "@/components/tools/text/MarkdownToText";
-import { getAllTools } from "@/constants/tools-utils";
 
-const TOOL_ID = "markdown-to-text";
-const tool = getAllTools().find((t) => t.id === TOOL_ID);
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title:
-		"Free AI-to-Text Converter (Markdown Stripper) Online - No Signup | 30tools",
-	description:
-		"Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing.",
-	robots: { index: true, follow: true },
+  title: "Free AI-to-Text Converter (Markdown Stripper) Online - No Signup | 30tools",
+  description: "Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "ai-to-text converter (markdown stripper), free online tool, no signup, text, ai-to-text converter (markdown stripper) online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/markdown-to-text",
+  },
+  openGraph: {
+    title: "Free AI-to-Text Converter (Markdown Stripper) Online - No Signup | 30tools",
+    description: "Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/markdown-to-text",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free AI-to-Text Converter (Markdown Stripper) Online - No Signup | 30tools",
+    description: "Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function MarkdownToTextPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
+export default async function ToolPage() {
+  const tool = {
+  "id": "markdown-to-text",
+  "name": "AI-to-Text Converter (Markdown Stripper)",
+  "description": "Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing.",
+  "route": "/markdown-to-text",
+  "extraSlugs": [
+    "add-text-to-pdf",
+    "ai-text-rewriter",
+    "alt-text-checker",
+    "beautify-text",
+    "calculate-text-complexity",
+    "calculate-text-length",
+    "capitalize-text-online",
+    "chatgpt-text-converter",
+    "clean-markdown-text",
+    "clean-up-text-from-chatgpt-markdown",
+    "convert-markdown-to-plain-text",
+    "deduplicate-text-online",
+    "delete-duplicate-text",
+    "encrypt-text-online",
+    "extract-links-from-text",
+    "extract-text-from-pdf",
+    "fake-text-message-maker",
+    "filler-text-maker",
+    "filter-emails-from-text",
+    "find-emails-in-text",
+    "find-text-differences",
+    "fix-text-spacing",
+    "format-text-online",
+    "generate-images-from-text",
+    "generate-placeholder-text",
+    "humanize-chatgpt-text",
+    "instagram-fancy-text",
+    "listen-to-text",
+    "make-ai-text-human",
+    "markdown-parser-online",
+    "markdown-to-html",
+    "markdown-to-plain-text",
+    "pdf-to-text-converter",
+    "read-text-aloud",
+    "remove-markdown-formatting",
+    "render-markdown-html",
+    "seo-text-analyzer",
+    "strip-markdown-online",
+    "strip-markdown-syntax",
+    "text-analysis-tool",
+    "text-case-converter",
+    "text-cleaner-tool",
+    "text-comparison-tool",
+    "text-diff",
+    "text-formatter",
+    "text-to-image-ai",
+    "text-to-speech-ai",
+    "text-tools"
+  ],
+  "popular": true,
+  "category": "text"
+};
+  const breadcrumbs = [
+  {
+    "name": "Text Tools",
+    "url": "/text-tools"
+  },
+  {
+    "name": "AI-to-Text Converter (Markdown Stripper)",
+    "url": "/markdown-to-text"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "article-rewriter",
+    "name": "Article Rewriter",
+    "description": "Free article rewriter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/article-rewriter",
+    "extraSlugs": [
+      "free-article-rewriter-online",
+      "article-rewriter-tool"
+    ],
+    "popular": false,
+    "category": "text"
+  },
+  {
+    "id": "backwards-text-generator",
+    "name": "Backwards Text Generator",
+    "description": "Generate backwards text instantly. Our free reverse text tool flips characters, words, or entire paragraphs. Perfect for Instagram, Discord, and creative writing.",
+    "route": "/backwards-text-generator",
+    "extraSlugs": [
+      "dummy-text-generator",
+      "fake-text-message-maker",
+      "filler-text-maker",
+      "free-backwards-text-generator-online",
+      "mirror-text-generator",
+      "random-text-generator",
+      "reverse-text-generator",
+      "stylish-text-generator"
+    ],
+    "popular": true,
+    "category": "text"
+  },
+  {
+    "id": "case-converter",
+    "name": "Case Converter",
+    "description": "Convert text between upper case, lower case, title case, sentence case, and more instantly. Perfect for writers, developers, and social media managers.",
+    "route": "/case-converter",
+    "extraSlugs": [
+      "change-text-case-online",
+      "upper-case-to-lower-case",
+      "title-case-converter",
+      "sentence-case-tool"
+    ],
+    "popular": true,
+    "category": "text"
+  }
+];
 
-	if (!tool) return null;
-
-	const jsonLd = {
-		"@context": "https://schema.org",
-		"@type": "SoftwareApplication",
-		name: tool.name,
-		description: tool.description,
-		applicationCategory: "TextManipulation",
-		operatingSystem: "All",
-		offers: {
-			"@type": "Offer",
-			price: "0",
-			priceCurrency: "USD",
-		},
-	};
-
-	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-			/>
-			<ToolLayout
-				toolId={tool.id}
-				title={tool.seoTitle || tool.name}
-				description={tool.seoDescription || tool.description}
-				category={{ name: "Text Tools", slug: "text" }}
-			>
-				<div className="space-y-16">
-					<section id="tool" className="relative pt-4">
-						<div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-blue-500/5 rounded-[3rem] blur-3xl opacity-30 -z-10" />
-						<MarkdownToText />
-					</section>
-
-					<section id="content" className="border-t border-border/40 pt-16">
-						<ToolContent toolId="markdown-to-text" />
-					</section>
-				</div>
-			</ToolLayout>
-		</>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI-to-Text Converter (Markdown Stripper)","description":"Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing.","url":"https://30tools.com/markdown-to-text","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

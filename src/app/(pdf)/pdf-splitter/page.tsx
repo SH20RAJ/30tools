@@ -1,40 +1,160 @@
-import PdfSplitter from "@/components/tools/pdf/PdfSplitter";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Free PDF Splitter Online - No Signup | 30tools",
-	description:
-		"Professional PDF tools: PDF Splitter. Merge, split, compress, convert. 100% free, no watermarks, works on all devices. All processing happens locally in your br",
-	keywords: [
-		"pdf splitter",
-		"pdf splitter free",
-		"pdf splitter online",
-		"pdf splitter tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free PDF Splitter Online - No Signup | 30tools",
+  description: "Split PDF files into separate pages or ranges 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "pdf splitter, free online tool, no signup, pdf, pdf splitter online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/pdf-splitter",
+  },
+  openGraph: {
+    title: "Free PDF Splitter Online - No Signup | 30tools",
+    description: "Split PDF files into separate pages or ranges 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/pdf-splitter",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free PDF Splitter Online - No Signup | 30tools",
+    description: "Split PDF files into separate pages or ranges 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function ToolPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return (
-		<div className="container mx-auto px-4 py-8 md:py-12">
-			<div className="max-w-4xl mx-auto text-center mb-8">
-				<h1 className="text-3xl md:text-4xl font-bold mb-4">Split PDF Files</h1>
-				<p className="text-muted-foreground">
-					Extract pages or split your PDF into multiple documents.
-				</p>
-			</div>
-			<PdfSplitter />
-		</div>
-	);
+export default async function ToolPage() {
+  const tool = {
+  "id": "pdf-splitter",
+  "name": "PDF Splitter",
+  "description": "Split PDF files into separate pages or ranges",
+  "route": "/pdf-splitter",
+  "extraSlugs": [
+    "split-pdf-pages-online-free",
+    "pdf-page-extractor"
+  ],
+  "popular": true,
+  "category": "pdf"
+};
+  const breadcrumbs = [
+  {
+    "name": "Pdf Tools",
+    "url": "/pdf-tools"
+  },
+  {
+    "name": "PDF Splitter",
+    "url": "/pdf-splitter"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "image-to-pdf",
+    "name": "Image to PDF",
+    "description": "Convert multiple images to a single PDF document",
+    "route": "/image-to-pdf",
+    "extraSlugs": [
+      "add-page-numbers-to-pdf-online",
+      "add-password-to-pdf",
+      "annotate-pdf-online",
+      "change-pdf-orientation",
+      "combine-pdf-files",
+      "compress-pdf-online",
+      "convert-images-to-pdf",
+      "create-epub-from-pdf",
+      "cut-pdf-pages",
+      "decrypt-pdf-file",
+      "edit-pdf-online-free",
+      "encrypt-pdf",
+      "excel-sheet-to-pdf",
+      "excel-to-pdf",
+      "export-pdf-to-image",
+      "extract-pdf-pages",
+      "html-to-pdf",
+      "insert-page-numbers-in-pdf",
+      "join-pdf-documents",
+      "jpeg-to-pdf-online",
+      "jpg-to-pdf-high-quality-free",
+      "lock-pdf-file",
+      "make-pdf-from-photos",
+      "merge-multiple-pdf",
+      "merge-pdf-online",
+      "modify-pdf-content",
+      "open-protected-pdf",
+      "optimize-pdf-for-web",
+      "paginate-pdf",
+      "pdf-add-page-numbers",
+      "pdf-combiner-free",
+      "pdf-pagination-tool",
+      "pdf-size-reducer",
+      "pdf-tools",
+      "powerpoint-to-pdf",
+      "presentation-to-pdf",
+      "print-html-to-pdf",
+      "reduce-pdf-size",
+      "save-excel-as-pdf",
+      "save-pdf-as-image",
+      "save-powerpoint-as-pdf",
+      "save-rotated-pdf",
+      "save-webpage-as-pdf",
+      "secure-pdf-document",
+      "separate-pdf-files",
+      "shrink-pdf-file",
+      "slides-to-pdf",
+      "split-pdf-pages",
+      "spreadsheet-to-pdf",
+      "unlock-pdf-online",
+      "web-to-pdf-online"
+    ],
+    "popular": true,
+    "category": "pdf"
+  },
+  {
+    "id": "jpg-to-pdf",
+    "name": "JPG to PDF",
+    "description": "Convert JPG/JPEG images to PDF documents quickly and easily. Free online tool.",
+    "route": "/jpg-to-pdf",
+    "extraSlugs": [
+      "combine-jpg-to-pdf",
+      "convert-jpeg-to-pdf",
+      "convert-jpg-to-pdf",
+      "convert-pdf-to-jpg",
+      "jpg-to-pdf-converter-free-online",
+      "pdf-pages-to-jpg"
+    ],
+    "popular": true,
+    "category": "pdf"
+  },
+  {
+    "id": "pdf-compressor",
+    "name": "PDF Compressor",
+    "description": "Reduce PDF file size online free without losing quality. Our 2026 updated PDF size reducer uses advanced browser-side compression to safely shrink documents for email and web uploads. 100% private and secure.",
+    "route": "/pdf-compressor",
+    "extraSlugs": [
+      "compress-pdf-to-200kb",
+      "shrink-pdf-file-size-free"
+    ],
+    "popular": true,
+    "category": "pdf"
+  }
+];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"PDF Splitter","description":"Split PDF files into separate pages or ranges","url":"https://30tools.com/pdf-splitter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

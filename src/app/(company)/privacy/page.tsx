@@ -1,69 +1,103 @@
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-	title: "Privacy Policy | 30Tools",
-	description: "Learn how we collect, use, and protect your data at 30Tools.",
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
+
+export const metadata = {
+  title: "Free Privacy Online - No Signup | 30tools",
+  description: "Free Privacy online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "privacy, free online tool, no signup, others, privacy online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/privacy",
+  },
+  openGraph: {
+    title: "Free Privacy Online - No Signup | 30tools",
+    description: "Free Privacy online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/privacy",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Privacy Online - No Signup | 30tools",
+    description: "Free Privacy online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default function PrivacyPage() {
-	return (
-		<div className="container mx-auto px-4 py-12 md:py-20 max-w-4xl prose prose-slate dark:prose-invert">
-			<h1 className="text-4xl font-bold mb-8">Privacy Policy</h1>
+export default async function ToolPage() {
+  const tool = {
+  "id": "privacy",
+  "name": "Privacy",
+  "description": "Free Privacy online tool. Fast and secure.",
+  "route": "/privacy",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "others"
+};
+  const breadcrumbs = [
+  {
+    "name": "Others Tools",
+    "url": "/others-tools"
+  },
+  {
+    "name": "Privacy",
+    "url": "/privacy"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "ai-video-summarizer",
+    "name": "Ai Video Summarizer",
+    "description": "Ai Video Summarizer - Coming Soon",
+    "route": "/ai-video-summarizer",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "all-downloaders",
+    "name": "All Downloaders",
+    "description": "All Downloaders - Coming Soon",
+    "route": "/all-downloaders",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "audio-equalizer",
+    "name": "Audio Equalizer",
+    "description": "Audio Equalizer - Coming Soon",
+    "route": "/audio-equalizer",
+    "extraSlugs": [
+      "audio-tools",
+      "audio-trimmer",
+      "change-audio-format",
+      "mp4-audio-ripper",
+      "optimize-audio-files",
+      "shorten-audio-clip",
+      "split-audio-file"
+    ],
+    "popular": false,
+    "category": "others"
+  }
+];
 
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">1. Introduction</h2>
-				<p>
-					At 30Tools, we take your privacy seriously. This Privacy Policy
-					outlines how we collect, use, and protect your information when you
-					use our website and online tools.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">
-					2. Data Collection & Processing
-				</h2>
-				<p>
-					<strong>Local Processing:</strong> Most of our tools process your
-					files directly in your browser. In these cases, your files never leave
-					your device and are not uploaded to our servers.
-				</p>
-				<p>
-					<strong>Server-side Processing:</strong> Some tools may require
-					server-side processing. In these cases, your files are processed
-					temporarily and deleted immediately after the operation is complete.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">3. Cookies & Analytics</h2>
-				<p>
-					We use cookies to improve your user experience and analyze website
-					traffic via tools like Google Analytics. These cookies help us
-					understand how you interact with our site and identify areas for
-					improvement.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">4. Third-party Links</h2>
-				<p>
-					Our website may contain links to other sites. We are not responsible
-					for the privacy practices or content of these third-party websites.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">5. Contact Us</h2>
-				<p>
-					If you have any questions about our Privacy Policy, please contact us
-					at support@30tools.com.
-				</p>
-			</section>
-
-			<footer className="text-sm text-muted-foreground mt-12">
-				Last updated: January 2025
-			</footer>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Privacy","description":"Free Privacy online tool. Fast and secure.","url":"https://30tools.com/privacy","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

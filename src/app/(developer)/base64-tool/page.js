@@ -1,203 +1,112 @@
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
+
 export const metadata = {
-	title: "Free Base64 Tool Online - No Signup | 30tools",
-	description: "Free Base64 Tool online tool. Fast and secure.",
-	robots: { index: true, follow: true },
+  title: "Free Base64 Tool Online - No Signup | 30tools",
+  description: "Free Base64 Tool online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "base64 tool, free online tool, no signup, developer, base64 tool online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/base64-tool",
+  },
+  openGraph: {
+    title: "Free Base64 Tool Online - No Signup | 30tools",
+    description: "Free Base64 Tool online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/base64-tool",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Base64 Tool Online - No Signup | 30tools",
+    description: "Free Base64 Tool online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function Base64Page({ searchParams }) {
-	const _params = await searchParams;
-	// Tool-specific data
-	const toolData = {
-		id: "base64-tool",
-		name: "Base64 Encoder & Decoder",
-		description: "Encode and decode Base64 strings and files",
-		category: "developer-tools",
-		route: "/base64-tool",
-	};
+export default async function ToolPage() {
+  const tool = {
+  "id": "base64-tool",
+  "name": "Base64 Tool",
+  "description": "Free Base64 Tool online tool. Fast and secure.",
+  "route": "/base64-tool",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "developer"
+};
+  const breadcrumbs = [
+  {
+    "name": "Developer Tools",
+    "url": "/developer-tools"
+  },
+  {
+    "name": "Base64 Tool",
+    "url": "/base64-tool"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "amazon-ses-api-key-tester",
+    "name": "Amazon SES API Key Tester",
+    "description": "Test your Amazon SES credentials with the send email endpoint.",
+    "route": "/api-key-tester/amazon-ses",
+    "extraSlugs": [
+      "api-docs",
+      "api-endpoint-tester",
+      "api-tester",
+      "debug-api-requests",
+      "font-tester-tool",
+      "regex-flags-tester",
+      "regex-match-tester",
+      "regex-replace-tester",
+      "regex-tester",
+      "test-rest-api-online"
+    ],
+    "popular": false,
+    "category": "developer"
+  },
+  {
+    "id": "anthropic-api-key-tester",
+    "name": "Anthropic Claude API Key Tester",
+    "description": "Test your Anthropic Claude API key with the messages endpoint.",
+    "route": "/api-key-tester/anthropic",
+    "extraSlugs": [
+      "validate-claude-api-key-online",
+      "anthropic-api-tester"
+    ],
+    "popular": false,
+    "category": "developer"
+  },
+  {
+    "id": "api-key-tester",
+    "name": "API Key Tester",
+    "description": "Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
+    "route": "/api-key-tester",
+    "extraSlugs": [
+      "test-openai-api-key-online-safely",
+      "validate-api-keys-safely"
+    ],
+    "popular": true,
+    "category": "developer"
+  }
+];
 
-	// Breadcrumb navigation
-	const breadcrumbs = [
-		{ name: "Developer Tools", url: "/developer-tools" },
-		{ name: "Base64 Encoder", url: "/base64-tool" },
-	];
-
-	// Tool features
-	const features = [
-		"Encode text to Base64",
-		"Decode Base64 to text",
-		"File to Base64 conversion",
-		"Image to Base64 encoding",
-		"Bulk processing support",
-		"Copy to clipboard",
-		"Format validation",
-		"Client-side processing",
-	];
-
-	// Usage examples
-	const examples = [
-		{
-			title: "Encode Text",
-			description:
-				"Convert text to Base64 for email transmission or data storage",
-			input: "Hello, World!",
-			output: "SGVsbG8sIFdvcmxkIQ==",
-		},
-		{
-			title: "Decode Base64",
-			description: "Convert Base64 back to readable text",
-			input: "SGVsbG8sIFdvcmxkIQ==",
-			output: "Hello, World!",
-		},
-		{
-			title: "Data URI Creation",
-			description: "Create data URIs for embedding images in web pages",
-			input: "[Image File]",
-			output: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAA...",
-		},
-	];
-
-	// FAQ data
-	const faqs = getDeveloperToolFAQs("base64-tool");
-
-	// Related tools
-	const relatedTools = [
-		{
-			id: "json-formatter",
-			name: "JSON Formatter",
-			description: "Format and validate JSON data",
-			route: "/json-formatter",
-			category: "developer-tools",
-		},
-		{
-			id: "url-encoder",
-			name: "URL Encoder",
-			description: "Encode and decode URLs",
-			route: "/url-encoder",
-			category: "developer-tools",
-		},
-		{
-			id: "hash-generator",
-			name: "Hash Generator",
-			description: "Generate MD5, SHA256 hashes",
-			route: "/hash-generator",
-			category: "developer-tools",
-		},
-	];
-
-	return (
-		<div className="min-h-screen bg-background">
-			{/* Enhanced Breadcrumbs with Schema */}
-			<div className="container mx-auto px-4 pt-6">
-				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
-			</div>
-
-			{/* Main Content */}
-			<main className="container mx-auto px-4 py-8">
-				{/* Hero Section */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Convert Base64 to PDF Online Free & Base64 Encoder/Decoder
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Encode text, files & images to Base64 or decode Base64 strings.
-						Secure client-side processing, supports bulk operations. Perfect for
-						developers, email attachments, data URIs, and API data transmission.
-					</p>
-
-					<QuickActions
-						toolName="Base64 Encoder"
-						toolUrl="https://30tools.com/base64-tool"
-						showBookmark={true}
-						showShare={true}
-					/>
-				</div>
-
-				{/* Tool Interface */}
-				<div className="mb-12">
-					<Base64Tool />
-				</div>
-
-				{/* Key Features */}
-				<div className="mb-12">
-					<ToolFeatures
-						features={features}
-						title="Why Choose Our Base64 Tool?"
-						variant="grid"
-					/>
-				</div>
-
-				{/* Usage Examples */}
-				<DeveloperToolExamples tool={toolData} examples={examples} />
-
-				{/* User Reviews */}
-				<div className="mb-12">
-					<ReviewSnippets
-						toolId="base64-tool"
-						title="What Developers Say About Our Base64 Tool"
-						showRatingSummary={true}
-						variant="grid"
-						limit={6}
-					/>
-				</div>
-
-				{/* FAQ Section */}
-				<div className="mb-12">
-					<FAQSection
-						faqs={faqs}
-						title="Base64 Encoder FAQ"
-						categoryTitle="Base64 Encoding & Decoding"
-						variant="accordion"
-						showSchema={true}
-					/>
-				</div>
-
-				{/* Related Tools */}
-				<div className="mb-12">
-					<RelatedTools
-						currentTool="base64-tool"
-						category="developer-tools"
-						tools={relatedTools}
-						title="More Developer Tools"
-					/>
-				</div>
-
-				{/* User Comments */}
-				<UserComments
-					toolId="base64-tool"
-					toolName="Base64 Encoder"
-					showStats={true}
-					allowComments={true}
-				/>
-			</main>
-
-			{/* Structured Data for Tool */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "Base64 Encoder & Decoder",
-						description:
-							"Encode text, files & images to Base64 or decode Base64 strings",
-						url: "https://30tools.com/base64-tool",
-						applicationCategory: "DeveloperApplication",
-						operatingSystem: "Web Browser",
-						offers: {
-							"@type": "Offer",
-							price: "0",
-							priceCurrency: "USD",
-						},
-						creator: {
-							"@type": "Organization",
-							name: "30tools",
-							url: "https://30tools.com",
-						},
-						featureList: features,
-						screenshot: "https://30tools.com/screenshots/base64-tool.jpg",
-					}),
-				}}
-			/>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Base64 Tool","description":"Free Base64 Tool online tool. Fast and secure.","url":"https://30tools.com/base64-tool","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <Base64Tool />
+      </ToolLayout>
+    </>
+  );
 }

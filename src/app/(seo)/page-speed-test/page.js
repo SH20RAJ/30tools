@@ -1,52 +1,114 @@
-import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Free Page Speed Test Tool Online - No Signup | 30tools",
-	description:
-		"SEO tools: Page Speed Test Tool. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your browser",
-	keywords: [
-		"page speed test tool",
-		"page speed test tool free",
-		"page speed test tool online",
-		"page speed test tool tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Page Speed Test Tool Online - No Signup | 30tools",
+  description: "Test website page speed and performance. Get detailed insights on Core Web Vitals, loading times, and optimization suggestions. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "page speed test tool, free online tool, no signup, seo, page speed test tool online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/page-speed-test",
+  },
+  openGraph: {
+    title: "Free Page Speed Test Tool Online - No Signup | 30tools",
+    description: "Test website page speed and performance. Get detailed insights on Core Web Vitals, loading times, and optimization suggestions. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/page-speed-test",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Page Speed Test Tool Online - No Signup | 30tools",
+    description: "Test website page speed and performance. Get detailed insights on Core Web Vitals, loading times, and optimization suggestions. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-const jsonLd = generateToolJsonLd("page-speed-test", "seo", {
-	name: "Page Speed Test",
-	description:
-		"Test page speed, Core Web Vitals, and load performance to find issues that can hurt SEO and user experience.",
-});
+export default async function ToolPage() {
+  const tool = {
+  "id": "page-speed-test",
+  "name": "Page Speed Test Tool",
+  "description": "Test website page speed and performance. Get detailed insights on Core Web Vitals, loading times, and optimization suggestions.",
+  "route": "/page-speed-test",
+  "extraSlugs": [],
+  "popular": true,
+  "category": "seo"
+};
+  const breadcrumbs = [
+  {
+    "name": "Seo Tools",
+    "url": "/seo-tools"
+  },
+  {
+    "name": "Page Speed Test Tool",
+    "url": "/page-speed-test"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "keyword-research-tool",
+    "name": "Advanced Keyword Research",
+    "description": "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO.",
+    "route": "/keyword-research-tool",
+    "extraSlugs": [
+      "advanced-regex-tool",
+      "bing-keyword-research",
+      "bing-keyword-tool",
+      "competitor-keyword-spy",
+      "google-keyword-research",
+      "keyword-counter-tool",
+      "keyword-ideas-bing",
+      "keyword-monitoring-tool",
+      "keyword-tool-google",
+      "long-tail-keyword-tool"
+    ],
+    "popular": true,
+    "category": "seo"
+  },
+  {
+    "id": "sitemap-generator",
+    "name": "Advanced Sitemap Generator",
+    "description": "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata.",
+    "route": "/sitemap-generator",
+    "extraSlugs": [
+      "extract-urls-from-sitemap",
+      "google-sitemap-generator",
+      "xml-sitemap-builder"
+    ],
+    "popular": true,
+    "category": "seo"
+  },
+  {
+    "id": "broken-link-checker",
+    "name": "Broken Link Checker",
+    "description": "Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages.",
+    "route": "/broken-link-checker",
+    "extraSlugs": [
+      "broken-link-scanner",
+      "inbound-link-checker",
+      "link-profile-checker"
+    ],
+    "popular": true,
+    "category": "seo"
+  }
+];
 
-export default async function PageSpeedTestPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return (
-		<div className="container mx-auto px-4 py-16 md:py-24">
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-			/>
-			<div className="text-center space-y-4 mb-12">
-				<h1 className="text-4xl md:text-5xl font-extrabold tracking-tight">
-					Page Speed <span className="text-primary">Test</span>
-				</h1>
-				<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-					Analyze your website's loading speed and performance metrics.
-				</p>
-			</div>
-			<SeoAnalyzer type="page-speed" title="Test Speed" />
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Page Speed Test Tool","description":"Test website page speed and performance. Get detailed insights on Core Web Vitals, loading times, and optimization suggestions.","url":"https://30tools.com/page-speed-test","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

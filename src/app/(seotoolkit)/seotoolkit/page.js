@@ -1,19 +1,114 @@
-import SeoToolkit from "@/components/tools/seo/SeoToolkit";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Free SEO Toolkit Online - No Signup | 30tools",
-	description: "All-in-one SEO audit and analysis tool. 27+ checks.",
-	robots: { index: true, follow: true },
+  title: "Free SEO Toolkit Online - No Signup | 30tools",
+  description: "All-in-one SEO audit and analysis tool. 27+ checks. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "seo toolkit, free online tool, no signup, seo, seo toolkit online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/seotoolkit",
+  },
+  openGraph: {
+    title: "Free SEO Toolkit Online - No Signup | 30tools",
+    description: "All-in-one SEO audit and analysis tool. 27+ checks. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/seotoolkit",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free SEO Toolkit Online - No Signup | 30tools",
+    description: "All-in-one SEO audit and analysis tool. 27+ checks. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-const _jsonLd = generateToolJsonLd("seotoolkit", "seo", {
-	name: "SEO Toolkit",
-	description:
-		"Run multiple SEO checks in one place, including audits, keyword research, backlinks, metadata, and performance analysis.",
-});
+export default async function ToolPage() {
+  const tool = {
+  "id": "seotoolkit",
+  "name": "SEO Toolkit",
+  "description": "All-in-one SEO audit and analysis tool. 27+ checks.",
+  "route": "/seotoolkit",
+  "extraSlugs": [],
+  "popular": true,
+  "category": "seo"
+};
+  const breadcrumbs = [
+  {
+    "name": "Seo Tools",
+    "url": "/seo-tools"
+  },
+  {
+    "name": "SEO Toolkit",
+    "url": "/seotoolkit"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "keyword-research-tool",
+    "name": "Advanced Keyword Research",
+    "description": "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO.",
+    "route": "/keyword-research-tool",
+    "extraSlugs": [
+      "advanced-regex-tool",
+      "bing-keyword-research",
+      "bing-keyword-tool",
+      "competitor-keyword-spy",
+      "google-keyword-research",
+      "keyword-counter-tool",
+      "keyword-ideas-bing",
+      "keyword-monitoring-tool",
+      "keyword-tool-google",
+      "long-tail-keyword-tool"
+    ],
+    "popular": true,
+    "category": "seo"
+  },
+  {
+    "id": "sitemap-generator",
+    "name": "Advanced Sitemap Generator",
+    "description": "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata.",
+    "route": "/sitemap-generator",
+    "extraSlugs": [
+      "extract-urls-from-sitemap",
+      "google-sitemap-generator",
+      "xml-sitemap-builder"
+    ],
+    "popular": true,
+    "category": "seo"
+  },
+  {
+    "id": "broken-link-checker",
+    "name": "Broken Link Checker",
+    "description": "Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages.",
+    "route": "/broken-link-checker",
+    "extraSlugs": [
+      "broken-link-scanner",
+      "inbound-link-checker",
+      "link-profile-checker"
+    ],
+    "popular": true,
+    "category": "seo"
+  }
+];
 
-export default async function SeoToolkitPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return <SeoToolkit />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"SEO Toolkit","description":"All-in-one SEO audit and analysis tool. 27+ checks.","url":"https://30tools.com/seotoolkit","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <SeoToolkit />
+      </ToolLayout>
+    </>
+  );
 }

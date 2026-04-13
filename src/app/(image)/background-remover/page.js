@@ -1,355 +1,260 @@
-import {
-	BreadcrumbsEnhanced,
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-	ReviewSnippets,
-	UserComments,
-} from "@/components/seo";
-import {
-	GeneratorToolExamples,
-	GeneratorToolFeatures,
-} from "@/components/seo/GeneratorToolsHub";
-import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverTool";
-import { getImageToolFAQs } from "@/constants/seo/image-faqs";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverTool"
 
 export const metadata = {
-	title: "Free Background Remover Online - No Signup | 30tools",
-	description:
-		"Remove image backgrounds automatically with our free online Background Remover. No registration required. Fast, secure, browser-based processing. All processing happens locally in your browser.",
-	keywords: [
-		"background remover",
-		"background remover free",
-		"background remover online",
-		"background remover tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Background Remover Online - No Signup | 30tools",
+  description: "Remove image backgrounds automatically with AI 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "background remover, free online tool, no signup, image, background remover online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/background-remover",
+  },
+  openGraph: {
+    title: "Free Background Remover Online - No Signup | 30tools",
+    description: "Remove image backgrounds automatically with AI 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/background-remover",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Background Remover Online - No Signup | 30tools",
+    description: "Remove image backgrounds automatically with AI 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function BackgroundRemoverPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	// Tool-specific data
-	const toolData = {
-		id: "background-remover",
-		name: "Background Remover",
-		description: "Remove image backgrounds automatically with AI",
-		category: "image",
-		route: "/background-remover",
-		features: [
-			"Supports JPEG, PNG, WebP, GIF, BMP formats",
-			"Batch process multiple images",
-			"High-quality output preservation",
-			"Adjustable quality and compression settings",
-			"100% Free - No hidden costs or subscriptions",
-			"No Registration Required - Start immediately",
-		],
-		benefits: [],
-		useCases: [],
-		faqs: [
-			{
-				question: "Is this Background Remover really free?",
-				answer:
-					"Yes! Our Background Remover is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
-			},
-			{
-				question: "Is my data secure when using Background Remover?",
-				answer:
-					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
-			},
-			{
-				question: "Do I need to create an account to use Background Remover?",
-				answer:
-					"No registration required. You can start using Background Remover immediately without creating an account or providing any personal information.",
-			},
-			{
-				question: "Are there any file size limits for Background Remover?",
-				answer:
-					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
-			},
-			{
-				question: "Can I use Background Remover on mobile devices?",
-				answer:
-					"Yes, Background Remover is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
-			},
-			{
-				question: "What file formats does Background Remover support?",
-				answer:
-					"Background Remover supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
-			},
-		],
-		howTo: {
-			name: "How to Use Background Remover",
-			steps: [
-				{
-					name: "Upload or Input",
-					text: "Provide your file or input data using the upload button or text input field. Background Remover supports drag-and-drop for convenience.",
-					url: "/background-remover#step1",
-					position: 1,
-				},
-				{
-					name: "Configure Settings",
-					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-					url: "/background-remover#step2",
-					position: 2,
-				},
-				{
-					name: "Process & Download",
-					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-					url: "/background-remover#step3",
-					position: 3,
-				},
-			],
-		},
-	};
+export default async function ToolPage() {
+  const tool = {
+  "id": "background-remover",
+  "name": "Background Remover",
+  "description": "Remove image backgrounds automatically with AI",
+  "route": "/background-remover",
+  "extraSlugs": [
+    "remove-background-from-signature-free",
+    "transparent-background-maker",
+    "picture-background-eraser",
+    "duplicate-line-remover",
+    "background-gradient-tool",
+    "background-gradient-creator"
+  ],
+  "popular": true,
+  "category": "image"
+};
+  const breadcrumbs = [
+  {
+    "name": "Image Tools",
+    "url": "/image-tools"
+  },
+  {
+    "name": "Background Remover",
+    "url": "/background-remover"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "base64-to-image-converter",
+    "name": "Base64 to Image Converter",
+    "description": "Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/base64-to-image-converter",
+    "extraSlugs": [
+      "add-text-to-image",
+      "all-in-one-unit-converter",
+      "audio-converter",
+      "audio-converter-mp3",
+      "avi-file-to-mp4-online",
+      "avi-to-mp4-converter",
+      "avi-video-converter",
+      "base64-encoder-decoder",
+      "base64-image",
+      "base64-to-image",
+      "base64-to-image-converter-tool",
+      "base64-to-text",
+      "base64-tool",
+      "change-audio-format",
+      "change-avi-to-mp4",
+      "change-flv-to-mp4",
+      "change-image-dimensions",
+      "change-m4a-to-mp3",
+      "change-mkv-to-mp4",
+      "change-mov-to-mp4",
+      "change-ogg-to-mp3",
+      "change-pdf-orientation",
+      "change-video-type",
+      "change-wav-to-mp3",
+      "change-webm-to-mp4",
+      "click-to-chat-whatsapp",
+      "compress-files-to-zip",
+      "compress-ogg-to-mp3",
+      "compress-wav-to-mp3",
+      "convert-audio-format",
+      "convert-image-to-jpg",
+      "convert-picture-to-string",
+      "convert-video-format",
+      "date-to-epoch",
+      "decode-base64-image",
+      "document-converter",
+      "docx-to-pdf-converter",
+      "ebook-format-converter",
+      "encode-image-base64",
+      "epoch-converter",
+      "epoch-to-datetime",
+      "epub-converter",
+      "file-converter",
+      "fit-photo-to-instagram-story",
+      "flv-file-to-mp4-online",
+      "flv-to-mp4-converter",
+      "flv-video-converter",
+      "folder-to-zip-converter",
+      "format-html-css-js",
+      "format-sql-online",
+      "free-base64-to-image-converter-online",
+      "image-format-changer",
+      "image-to-base64",
+      "image-to-pdf-converter",
+      "insta-story-size-converter",
+      "instagram-reels-to-mp4",
+      "m4a-audio-converter",
+      "m4a-file-to-mp3-online",
+      "m4a-to-mp3-converter",
+      "m4a-to-mp3-online",
+      "md-html-converter",
+      "md-to-txt-converter",
+      "measurement-converter",
+      "metric-imperial-converter",
+      "mkv-file-to-mp4-online",
+      "mkv-to-mp4-converter",
+      "mkv-video-converter",
+      "mov-file-to-mp4-online",
+      "mov-to-mp4",
+      "mov-to-mp4-converter",
+      "mov-video-converter",
+      "movie-to-mp3-converter",
+      "mp3-converter",
+      "mp3-converter-online",
+      "mp4-audio-converter",
+      "mp4-converter-online",
+      "mp4-to-mp3",
+      "ogg-audio-converter",
+      "ogg-file-to-mp3-online",
+      "ogg-to-mp3-converter",
+      "pdf-to-docx-converter",
+      "pdf-to-epub-converter",
+      "photos-to-pdf-converter",
+      "pptx-to-pdf-converter",
+      "quicktime-to-mp4",
+      "readme-to-html",
+      "save-snaps-to-gallery",
+      "text-fo-base64",
+      "tiktok-aspect-ratio-converter",
+      "tiktok-mp3-converter",
+      "tiktok-music-converter",
+      "tiktok-to-mp3-online",
+      "timestamp-converter",
+      "timezone-converter",
+      "unit-converter",
+      "unix-timestamp-to-date",
+      "uppercase-to-lowercase",
+      "url-string-converter",
+      "url-to-pdf-converter",
+      "usd-to-eur-converter",
+      "video-converter",
+      "video-to-mp3-converter",
+      "wav-audio-converter",
+      "wav-file-to-mp3-online",
+      "wav-to-mp3-converter",
+      "webm-file-to-mp4-online",
+      "webm-to-mp4-converter",
+      "webm-video-converter",
+      "world-clock-converter",
+      "xlsx-to-pdf-converter",
+      "youtube-to-mp3-high-quality",
+      "youtube-to-mp4-converter"
+    ],
+    "popular": false,
+    "category": "image"
+  },
+  {
+    "id": "convert-to-ico",
+    "name": "Convert to ICO",
+    "description": "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/convert-to-ico",
+    "extraSlugs": [
+      "convert-audio-format",
+      "convert-avi-to-mp4",
+      "convert-doc-to-pdf",
+      "convert-epoch-time",
+      "convert-flv-to-mp4",
+      "convert-html-to-pdf",
+      "convert-landscape-to-portrait-video",
+      "convert-m4a-to-mp3",
+      "convert-md-to-html",
+      "convert-mkv-to-mp4",
+      "convert-money-online",
+      "convert-mov-to-mp4",
+      "convert-mp4-to-gif",
+      "convert-mp4-to-mp3",
+      "convert-mp4-video-to-mp3",
+      "convert-ogg-to-mp3",
+      "convert-pdf-to-doc",
+      "convert-picture-to-string",
+      "convert-png-to-favicon",
+      "convert-ppt-to-pdf",
+      "convert-string-to-binary",
+      "convert-text-case",
+      "convert-text-to-audio",
+      "convert-tiktok-to-mp3",
+      "convert-time-across-zones",
+      "convert-time-to-timestamp",
+      "convert-to-epub-online",
+      "convert-to-ico-tool",
+      "convert-units-online",
+      "convert-video-file-to-mp3",
+      "convert-video-format",
+      "convert-wav-to-mp3",
+      "convert-webm-to-mp4",
+      "convert-xls-to-pdf",
+      "free-convert-to-ico-online"
+    ],
+    "popular": false,
+    "category": "image"
+  },
+  {
+    "id": "exif-reader",
+    "name": "EXIF Reader",
+    "description": "Extract metadata and EXIF data from images including camera settings and GPS location",
+    "route": "/exif-reader",
+    "extraSlugs": [
+      "view-photo-metadata-online",
+      "exif-data-viewer-free",
+      "online-exif-reader",
+      "photo-metadata-extractor",
+      "read-image-metadata",
+      "photo-exif-viewer",
+      "read-exif-data-online",
+      "online-tts-reader"
+    ],
+    "popular": true,
+    "category": "image"
+  }
+];
 
-	// Breadcrumb navigation
-	const breadcrumbs = [
-		{ name: "Image Tools", url: "/image-tools" },
-		{ name: "Background Remover", url: "/background-remover" },
-	];
-
-	// Tool features
-	const features = [
-		"AI-powered auto removal (remove bg ai)",
-		"Instant transparent background (transparent maker)",
-		"Handle complex edges (perfect background eraser)",
-		"Add solid color backgrounds (white background remover)",
-		"High-resolution output (hd background remover)",
-		"No signup required (free online background remover)",
-		"Unlimited free use (remove background for free)",
-		"Secure processing (privately remove .bg)",
-	];
-
-	// Usage examples
-	const examples = [
-		{
-			title: "E-commerce Products",
-			description: "Clean white background for listings",
-			input: "Product photo with messy background",
-			output: "Professional product image on white",
-		},
-		{
-			title: "Profile Pictures",
-			description: "Create professional headshots",
-			input: "Selfie with distracting background",
-			output: "Clean headshot with transparent/color bg",
-		},
-		{
-			title: "Marketing Materials",
-			description: "Isolate subjects for designs",
-			input: "Photo of person or object",
-			output: "Cutout subject ready for design",
-		},
-	];
-
-	// FAQ data
-	const faqs = getImageToolFAQs("background-remover");
-
-	// Related tools
-	const relatedTools = [
-		{
-			id: "image-resizer",
-			name: "Image Resizer",
-			description: "Resize images for social media",
-			route: "/image-resizer",
-			category: "image",
-		},
-		{
-			id: "image-compressor",
-			name: "Image Compressor",
-			description: "Reduce image file size",
-			route: "/image-compressor",
-			category: "image",
-		},
-		{
-			id: "image-converter",
-			name: "Image Converter",
-			description: "Convert image formats",
-			route: "/image-converter",
-			category: "image",
-		},
-	];
-
-	return (
-		<div className="min-h-screen bg-background">
-			{/* Enhanced Breadcrumbs with Schema */}
-			<div className="container mx-auto px-4 pt-6">
-				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
-			</div>
-
-			{/* Main Content */}
-			<main className="container mx-auto px-4 py-8">
-				{/* Hero Section */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
-						Free AI Background Remover - Remove BG Online
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto leading-relaxed">
-						Instantly <strong>remove backgrounds from images</strong> with our
-						advanced AI. Create <strong>transparent PNGs</strong>,{" "}
-						<strong>remove background from photo</strong>, or add a
-						<strong>white background</strong> for product photos, portraits, and
-						logos. 100% free, automatic, and the best{" "}
-						<strong>remove.bg alternative</strong>
-						for professional cutouts.
-					</p>
-
-					<QuickActions
-						toolName="Background Remover"
-						toolUrl="https://30tools.com/background-remover"
-						showBookmark={true}
-						showShare={true}
-					/>
-				</div>
-
-				{/* Tool Interface */}
-				<div className="mb-12">
-					<BackgroundRemoverTool />
-				</div>
-
-				{/* Key Features */}
-				<GeneratorToolFeatures tool={toolData} features={features} />
-
-				{/* Usage Examples */}
-				<GeneratorToolExamples
-					tool={toolData}
-					examples={examples}
-					title="See What You Can Create"
-				/>
-
-				{/* User Reviews */}
-				<div className="mb-12">
-					<ReviewSnippets
-						toolId="background-remover"
-						title="Loved by Designers & Sellers"
-						showRatingSummary={true}
-						variant="grid"
-						limit={6}
-					/>
-				</div>
-
-				{/* How to Use Section */}
-				<div className="mb-12 max-w-4xl mx-auto">
-					<h2 className="text-3xl font-bold mb-8 text-center">
-						How to Remove Background from Image Free
-					</h2>
-					<div className="grid md:grid-cols-3 gap-8">
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								1
-							</div>
-							<h3 className="font-semibold text-lg mb-2">
-								Upload for Background Removal
-							</h3>
-							<p className="text-muted-foreground text-sm">
-								Upload your picture to <strong>delete background image</strong>.
-								We support JPG, PNG, or WebP. Use our{" "}
-								<strong>signature background remover</strong> for crisp results.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								2
-							</div>
-							<h3 className="font-semibold text-lg mb-2">
-								AI Erase Background
-							</h3>
-							<p className="text-muted-foreground text-sm">
-								Wait while the <strong>ai remove background</strong> engine
-								detects and <strong>clears background</strong> in seconds.
-								Better than <strong>adobe express background remover</strong>.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								3
-							</div>
-							<h3 className="font-semibold text-lg mb-2">
-								Download PNG Remover
-							</h3>
-							<p className="text-muted-foreground text-sm">
-								Download your <strong>no background</strong> image as a{" "}
-								<strong>png maker</strong> output or add a{" "}
-								<strong>white background</strong>.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				{/* FAQ Section */}
-				<div className="mb-12">
-					<FAQSection
-						faqs={faqs}
-						title="Background Remover FAQ"
-						categoryTitle="Background Removal"
-						variant="accordion"
-						showSchema={true}
-					/>
-				</div>
-
-				{/* Related Tools */}
-				<div className="mb-12">
-					<RelatedTools
-						currentTool="background-remover"
-						category="image"
-						tools={relatedTools}
-						title="More Image Tools"
-					/>
-				</div>
-
-				{/* User Comments */}
-				<UserComments
-					toolId="background-remover"
-					toolName="Background Remover"
-					showStats={true}
-					allowComments={true}
-				/>
-			</main>
-
-			{/* Structured Data for Tool */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify([
-						{
-							"@context": "https://schema.org",
-							"@type": "HowTo",
-							name: "How to Remove Background from Image",
-							step: [
-								{
-									"@type": "HowToStep",
-									name: "Upload Image",
-									text: "Upload your JPG, PNG, or WebP image. Our AI works best with clear subjects.",
-									url: "https://30tools.com/background-remover#step1",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Auto Process",
-									text: "Wait a few seconds while the AI automatically detects and removes the background.",
-									url: "https://30tools.com/background-remover#step2",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Download",
-									text: "Download your image as a transparent PNG or add a new background color.",
-									url: "https://30tools.com/background-remover#step3",
-								},
-							],
-						},
-					]),
-				}}
-			/>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Background Remover","description":"Remove image backgrounds automatically with AI","url":"https://30tools.com/background-remover","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <BackgroundRemoverTool />
+      </ToolLayout>
+    </>
+  );
 }

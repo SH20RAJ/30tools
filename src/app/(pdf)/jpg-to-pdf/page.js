@@ -1,86 +1,176 @@
-import Link from "next/link";
-import ImagesToPdf from "@/components/tools/pdf/ImagesToPdf";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Free JPG to PDF Online - No Signup | 30tools",
-	description:
-		"Professional PDF tools: JPG to PDF. Merge, split, compress, convert. 100% free, no watermarks, works on all devices. All processing happens locally in your brow",
-	keywords: [
-		"jpg to pdf",
-		"jpg to pdf free",
-		"jpg to pdf online",
-		"jpg to pdf tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free JPG to PDF Online - No Signup | 30tools",
+  description: "Convert JPG/JPEG images to PDF documents quickly and easily. Free online tool. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "jpg to pdf, free online tool, no signup, pdf, jpg to pdf online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/jpg-to-pdf",
+  },
+  openGraph: {
+    title: "Free JPG to PDF Online - No Signup | 30tools",
+    description: "Convert JPG/JPEG images to PDF documents quickly and easily. Free online tool. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/jpg-to-pdf",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free JPG to PDF Online - No Signup | 30tools",
+    description: "Convert JPG/JPEG images to PDF documents quickly and easily. Free online tool. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-const AdUnit = () => (
-	<div className="my-6 flex justify-center">
-		<ins
-			className="adsbygoogle"
-			style={{ display: "block" }}
-			data-ad-format="autorelaxed"
-			data-ad-client="ca-pub-1828915420581549"
-			data-ad-slot="4669751596"
-		></ins>
-	</div>
-);
+export default async function ToolPage() {
+  const tool = {
+  "id": "jpg-to-pdf",
+  "name": "JPG to PDF",
+  "description": "Convert JPG/JPEG images to PDF documents quickly and easily. Free online tool.",
+  "route": "/jpg-to-pdf",
+  "extraSlugs": [
+    "combine-jpg-to-pdf",
+    "convert-jpeg-to-pdf",
+    "convert-jpg-to-pdf",
+    "convert-pdf-to-jpg",
+    "jpg-to-pdf-converter-free-online",
+    "pdf-pages-to-jpg"
+  ],
+  "popular": true,
+  "category": "pdf"
+};
+  const breadcrumbs = [
+  {
+    "name": "Pdf Tools",
+    "url": "/pdf-tools"
+  },
+  {
+    "name": "JPG to PDF",
+    "url": "/jpg-to-pdf"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "image-to-pdf",
+    "name": "Image to PDF",
+    "description": "Convert multiple images to a single PDF document",
+    "route": "/image-to-pdf",
+    "extraSlugs": [
+      "add-page-numbers-to-pdf-online",
+      "add-password-to-pdf",
+      "annotate-pdf-online",
+      "change-pdf-orientation",
+      "combine-pdf-files",
+      "compress-pdf-online",
+      "convert-images-to-pdf",
+      "create-epub-from-pdf",
+      "cut-pdf-pages",
+      "decrypt-pdf-file",
+      "edit-pdf-online-free",
+      "encrypt-pdf",
+      "excel-sheet-to-pdf",
+      "excel-to-pdf",
+      "export-pdf-to-image",
+      "extract-pdf-pages",
+      "html-to-pdf",
+      "insert-page-numbers-in-pdf",
+      "join-pdf-documents",
+      "jpeg-to-pdf-online",
+      "jpg-to-pdf-high-quality-free",
+      "lock-pdf-file",
+      "make-pdf-from-photos",
+      "merge-multiple-pdf",
+      "merge-pdf-online",
+      "modify-pdf-content",
+      "open-protected-pdf",
+      "optimize-pdf-for-web",
+      "paginate-pdf",
+      "pdf-add-page-numbers",
+      "pdf-combiner-free",
+      "pdf-pagination-tool",
+      "pdf-size-reducer",
+      "pdf-tools",
+      "powerpoint-to-pdf",
+      "presentation-to-pdf",
+      "print-html-to-pdf",
+      "reduce-pdf-size",
+      "save-excel-as-pdf",
+      "save-pdf-as-image",
+      "save-powerpoint-as-pdf",
+      "save-rotated-pdf",
+      "save-webpage-as-pdf",
+      "secure-pdf-document",
+      "separate-pdf-files",
+      "shrink-pdf-file",
+      "slides-to-pdf",
+      "split-pdf-pages",
+      "spreadsheet-to-pdf",
+      "unlock-pdf-online",
+      "web-to-pdf-online"
+    ],
+    "popular": true,
+    "category": "pdf"
+  },
+  {
+    "id": "pdf-compressor",
+    "name": "PDF Compressor",
+    "description": "Reduce PDF file size online free without losing quality. Our 2026 updated PDF size reducer uses advanced browser-side compression to safely shrink documents for email and web uploads. 100% private and secure.",
+    "route": "/pdf-compressor",
+    "extraSlugs": [
+      "compress-pdf-to-200kb",
+      "shrink-pdf-file-size-free"
+    ],
+    "popular": true,
+    "category": "pdf"
+  },
+  {
+    "id": "pdf-editor",
+    "name": "PDF Editor",
+    "description": "Professional PDF editing - add text, annotations, and modify content",
+    "route": "/pdf-editor",
+    "extraSlugs": [
+      "annotate-pdf-online-free",
+      "audio-editor",
+      "crop-and-edit-photos",
+      "edit-audio-online",
+      "edit-pdf-online-free",
+      "edit-pictures-free",
+      "edit-video-online",
+      "fix-blurry-photos",
+      "fix-text-spacing",
+      "free-audio-editor",
+      "free-pdf-text-editor",
+      "free-video-editor",
+      "instagram-story-dimensions-fix",
+      "online-photo-editor",
+      "pdf-text-editor",
+      "photo-filter-editor",
+      "sound-editor-online",
+      "video-editor"
+    ],
+    "popular": true,
+    "category": "pdf"
+  }
+];
 
-export default async function JpgToPdfPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return (
-		<div className="container mx-auto px-4 py-12 md:py-20">
-			<div className="max-w-6xl mx-auto">
-				<nav aria-label="Breadcrumb" className="mb-8">
-					<ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-						<li>
-							<Link href="/" className="hover:text-primary">
-								Home
-							</Link>
-						</li>
-						<li>/</li>
-						<li>
-							<Link href="/pdf-tools" className="hover:text-primary">
-								PDF Tools
-							</Link>
-						</li>
-						<li>/</li>
-						<li className="text-foreground font-medium">JPG to PDF</li>
-					</ol>
-				</nav>
-
-				<AdUnit />
-
-				<div className="text-center mb-12">
-					<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-						JPG to PDF
-					</h1>
-					<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-						Easily convert JPG images to PDF documents without losing quality.
-						Completely free to use.
-					</p>
-				</div>
-
-				<AdUnit />
-
-				<div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-					<ImagesToPdf
-						acceptedFormats=".jpg,.jpeg,image/jpeg"
-						defaultTitle="JPG to PDF Converter"
-					/>
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"JPG to PDF","description":"Convert JPG/JPEG images to PDF documents quickly and easily. Free online tool.","url":"https://30tools.com/jpg-to-pdf","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

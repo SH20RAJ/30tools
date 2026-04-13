@@ -1,120 +1,103 @@
-import BlogList from "@/components/blog/BlogList";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Blog - Web Development Articles & Tutorials | 30tools",
-	description:
-		"Read the latest articles and tutorials on web development, JavaScript, React, Next.js, SEO, and productivity tools. Stay updated with industry trends and best practices.",
-	keywords:
-		"web development blog, javascript tutorials, react articles, nextjs guides, seo tips, programming tutorials, developer resources",
-	openGraph: {
-		title: "Blog - Web Development Articles & Tutorials | 30tools",
-		description:
-			"Read the latest articles and tutorials on web development, JavaScript, React, Next.js, SEO, and productivity tools.",
-		type: "website",
-		url: "https://30tools.com/blogs",
-		images: [
-			{
-				url: "/og-images/blog.jpg",
-				width: 1200,
-				height: 630,
-				alt: "30tools Blog - Web Development Articles",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Blog - Web Development Articles & Tutorials | 30tools",
-		description:
-			"Read the latest articles and tutorials on web development, JavaScript, React, Next.js, SEO, and productivity tools.",
-		images: ["/og-images/blog.jpg"],
-	},
-	alternates: {
-		canonical: "https://30tools.com/blogs",
-	},
+  title: "Free Blogs Online - No Signup | 30tools",
+  description: "Free Blogs online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "blogs, free online tool, no signup, others, blogs online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/blogs",
+  },
+  openGraph: {
+    title: "Free Blogs Online - No Signup | 30tools",
+    description: "Free Blogs online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/blogs",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Blogs Online - No Signup | 30tools",
+    description: "Free Blogs online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-// JSON-LD structured data for the blog listing page
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "Blog",
-	name: "30tools Blog",
-	description:
-		"Read the latest articles and tutorials on web development, JavaScript, React, Next.js, SEO, and productivity tools.",
-	url: "https://30tools.com/blogs",
-	publisher: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-		logo: {
-			"@type": "ImageObject",
-			url: "https://30tools.com/logo.png",
-		},
-	},
-	blogPost: {
-		"@type": "ItemList",
-		itemListElement: [],
-	},
+export default async function ToolPage() {
+  const tool = {
+  "id": "blogs",
+  "name": "Blogs",
+  "description": "Free Blogs online tool. Fast and secure.",
+  "route": "/blogs",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "others"
 };
+  const breadcrumbs = [
+  {
+    "name": "Others Tools",
+    "url": "/others-tools"
+  },
+  {
+    "name": "Blogs",
+    "url": "/blogs"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "ai-video-summarizer",
+    "name": "Ai Video Summarizer",
+    "description": "Ai Video Summarizer - Coming Soon",
+    "route": "/ai-video-summarizer",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "all-downloaders",
+    "name": "All Downloaders",
+    "description": "All Downloaders - Coming Soon",
+    "route": "/all-downloaders",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "audio-equalizer",
+    "name": "Audio Equalizer",
+    "description": "Audio Equalizer - Coming Soon",
+    "route": "/audio-equalizer",
+    "extraSlugs": [
+      "audio-tools",
+      "audio-trimmer",
+      "change-audio-format",
+      "mp4-audio-ripper",
+      "optimize-audio-files",
+      "shorten-audio-clip",
+      "split-audio-file"
+    ],
+    "popular": false,
+    "category": "others"
+  }
+];
 
-export default function BlogPage() {
-	return (
-		<>
-			{/* JSON-LD Structured Data */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-			/>
-
-			<div className="container mx-auto px-4 py-12">
-				{/* SEO-friendly header with static content */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">Latest Articles</h1>
-					<p className="text-muted-foreground max-w-2xl mx-auto">
-						Explore our collection of articles about web development,
-						JavaScript, React, Next.js, and productivity tools. Stay updated
-						with the latest trends and best practices.
-					</p>
-				</div>
-
-				{/* Client-side blog list with pagination */}
-				<BlogList />
-
-				{/* SEO-friendly static content */}
-				<section className="mt-16 border-t pt-12">
-					<h2 className="text-2xl font-bold mb-6 text-center">
-						Why Read Our Blog?
-					</h2>
-					<div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-						<div className="text-center">
-							<div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-								<span className="text-2xl">📚</span>
-							</div>
-							<h3 className="font-semibold mb-2">Expert Tutorials</h3>
-							<p className="text-sm text-muted-foreground">
-								Learn from detailed tutorials written by experienced developers.
-							</p>
-						</div>
-						<div className="text-center">
-							<div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-								<span className="text-2xl">🚀</span>
-							</div>
-							<h3 className="font-semibold mb-2">Latest Trends</h3>
-							<p className="text-sm text-muted-foreground">
-								Stay updated with the newest technologies and frameworks.
-							</p>
-						</div>
-						<div className="text-center">
-							<div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-4">
-								<span className="text-2xl">💡</span>
-							</div>
-							<h3 className="font-semibold mb-2">Practical Tips</h3>
-							<p className="text-sm text-muted-foreground">
-								Get actionable advice you can apply to your projects today.
-							</p>
-						</div>
-					</div>
-				</section>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Blogs","description":"Free Blogs online tool. Fast and secure.","url":"https://30tools.com/blogs","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

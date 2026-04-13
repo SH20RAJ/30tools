@@ -1,65 +1,103 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Best Urdu to English Translators You Can Use in 2025 - 30Tools",
-	description:
-		"Top translation tools for accurate Urdu to English conversion, featuring Google Translate and more.",
+  title: "Free Best Urdu English Translators 2025 Online - No Signup | 30tools",
+  description: "Free Best Urdu English Translators 2025 online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "best urdu english translators 2025, free online tool, no signup, others, best urdu english translators 2025 online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/blog/best-urdu-english-translators-2025",
+  },
+  openGraph: {
+    title: "Free Best Urdu English Translators 2025 Online - No Signup | 30tools",
+    description: "Free Best Urdu English Translators 2025 online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/blog/best-urdu-english-translators-2025",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Best Urdu English Translators 2025 Online - No Signup | 30tools",
+    description: "Free Best Urdu English Translators 2025 online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function BlogPost({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return (
-		<div className="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
-			<div className="mb-8">
-				<Button
-					variant="ghost"
-					asChild
-					className="pl-0 hover:bg-transparent hover:text-primary"
-				>
-					<Link href="/blog">
-						<ArrowLeft className="mr-2 h-4 w-4" />
-						Back to Blog
-					</Link>
-				</Button>
-			</div>
+export default async function ToolPage() {
+  const tool = {
+  "id": "best-urdu-english-translators-2025",
+  "name": "Best Urdu English Translators 2025",
+  "description": "Free Best Urdu English Translators 2025 online tool. Fast and secure.",
+  "route": "/blog/best-urdu-english-translators-2025",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "others"
+};
+  const breadcrumbs = [
+  {
+    "name": "Others Tools",
+    "url": "/others-tools"
+  },
+  {
+    "name": "Best Urdu English Translators 2025",
+    "url": "/blog/best-urdu-english-translators-2025"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "ai-video-summarizer",
+    "name": "Ai Video Summarizer",
+    "description": "Ai Video Summarizer - Coming Soon",
+    "route": "/ai-video-summarizer",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "all-downloaders",
+    "name": "All Downloaders",
+    "description": "All Downloaders - Coming Soon",
+    "route": "/all-downloaders",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "audio-equalizer",
+    "name": "Audio Equalizer",
+    "description": "Audio Equalizer - Coming Soon",
+    "route": "/audio-equalizer",
+    "extraSlugs": [
+      "audio-tools",
+      "audio-trimmer",
+      "change-audio-format",
+      "mp4-audio-ripper",
+      "optimize-audio-files",
+      "shorten-audio-clip",
+      "split-audio-file"
+    ],
+    "popular": false,
+    "category": "others"
+  }
+];
 
-			<article className="prose prose-lg dark:prose-invert max-w-none">
-				<h1 className="text-4xl md:text-5xl font-bold mb-6">
-					Best Urdu to English Translators You Can Use in 2025
-				</h1>
-				<div className="flex items-center gap-4 text-muted-foreground mb-8">
-					<span>January 9, 2025</span>
-					<span>•</span>
-					<span>6 min read</span>
-				</div>
-
-				<p className="lead">
-					Finding accurate translation tools for Urdu can be challenging due to
-					its complex script and grammar. Here are the best tools available in
-					2025.
-				</p>
-
-				<h2>1. Google Translate</h2>
-				<p>
-					Still the market leader with improved neural machine translation for
-					Urdu.
-				</p>
-
-				<h2>2. Bing Microsoft Translator</h2>
-				<p>
-					A strong alternative with good support for formal Urdu similar to
-					business contexts.
-				</p>
-
-				<h2>3. Easy Urdu Keyboard</h2>
-				<p>
-					Great for mobile users who want to type in Urdu and translate on the
-					fly.
-				</p>
-			</article>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Best Urdu English Translators 2025","description":"Free Best Urdu English Translators 2025 online tool. Fast and secure.","url":"https://30tools.com/blog/best-urdu-english-translators-2025","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

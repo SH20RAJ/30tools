@@ -1,65 +1,27 @@
-import Box from "@mui/material/Box";
-import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
+import React from "react";
 
 export function TrustSection() {
-	const logos = [
-		{ name: "Product Hunt", color: "#DA552F" },
-		{ name: "reddit", color: "#FF4500" },
-		{ name: "brave", color: "#FB542B" },
-	];
+  const logos = [
+    { name: "Product Hunt", color: "text-[#DA552F]" },
+    { name: "reddit", color: "text-[#FF4500]" },
+    { name: "brave", color: "text-[#FB542B]" },
+  ];
 
-	return (
-		<Box
-			sx={{
-				py: 4,
-				textAlign: "center",
-			}}
-		>
-			<Stack
-				direction="row"
-				spacing={4}
-				alignItems="center"
-				justifyContent="center"
-				flexWrap="wrap"
-			>
-				<Typography
-					variant="h6"
-					sx={{
-						fontSize: "1.25rem",
-						fontWeight: 700,
-						color: "text.primary",
-						textTransform: "uppercase",
-						letterSpacing: "0.1em",
-						mr: 2,
-					}}
-				>
-					AS SEEN IN:
-				</Typography>
-				{logos.map((logo) => (
-					<Box
-						key={logo.name}
-						sx={{
-							fontSize: "1.5rem",
-							fontWeight: 800,
-							color: logo.color,
-							px: 2,
-							py: 1,
-							borderRadius: 2,
-							border: "1px solid",
-							borderColor: "divider",
-							bgcolor: "background.paper",
-							boxShadow: "0 2px 8px rgba(0,0,0,0.05)",
-							display: "flex",
-							alignItems: "center",
-							gap: 1,
-							transition: "none",
-						}}
-					>
-						{logo.name}
-					</Box>
-				))}
-			</Stack>
-		</Box>
-	);
+  return (
+    <section className="py-8 text-center border-y border-border/50 bg-secondary/20 rounded-3xl mb-12">
+      <div className="flex flex-row space-x-8 items-center justify-center flex-wrap gap-y-4 px-4">
+        <span className="text-sm font-black text-muted-foreground uppercase tracking-[0.2em]">
+          AS SEEN IN:
+        </span>
+        {logos.map((logo) => (
+          <div
+            key={logo.name}
+            className={`text-xl font-black ${logo.color} px-4 py-2 rounded-xl border border-border bg-card shadow-sm flex items-center gap-2`}
+          >
+            {logo.name}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }

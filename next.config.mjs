@@ -32,8 +32,6 @@ const nextConfig = {
 			"@radix-ui/react-icons",
 			"react-icons",
 			"framer-motion",
-			"@mui/material",
-			"@mui/icons-material",
 		],
 		webVitalsAttribution: ["CLS", "LCP", "FCP", "FID", "TTFB"],
 	},

@@ -1,6 +1,4 @@
-import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
 import { Toaster } from "sonner";
-import MuiThemeRegistry from "@/components/shared/MuiThemeRegistry";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
 import ToolSeoStructuredData from "@/components/shared/ToolSeoStructuredData";
@@ -281,7 +279,7 @@ export default async function RootLayout({ children }) {
 					dangerouslySetInnerHTML={{
 						__html: `
               (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  c[a]=c[a]||function(){(c[a].q=c[a].q[]).push(arguments)};
                   t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
                   y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
               })(window, document, "clarity", "script", "uh6y61lx9p");
@@ -296,29 +294,25 @@ export default async function RootLayout({ children }) {
 						'"Open Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif',
 				}}
 			>
-				<AppRouterCacheProvider options={{ enableCssLayer: true }}>
-					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-						<MuiThemeRegistry>
-							<StructuredData includeFAQ={false} />
-							<ToolSeoStructuredData />
-							{children}
-							{/* <PWAInstallPrompt /> */}
-							<Toaster />
-							<a
-								className="sr-only"
-								href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
-							>
-								<img
-									src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
-									alt="Visitor badge"
-									width="200"
-									height="20"
-									loading="lazy"
-								/>
-							</a>
-						</MuiThemeRegistry>
-					</ThemeProvider>
-				</AppRouterCacheProvider>
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+					<StructuredData includeFAQ={false} />
+					<ToolSeoStructuredData />
+					{children}
+					{/* <PWAInstallPrompt /> */}
+					<Toaster />
+					<a
+						className="sr-only"
+						href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
+					>
+						<img
+							src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
+							alt="Visitor badge"
+							width="200"
+							height="20"
+							loading="lazy"
+						/>
+					</a>
+				</ThemeProvider>
 
 				<script
 					defer

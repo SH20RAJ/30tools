@@ -1,26 +1,113 @@
-import PremiumToolPage from "@/components/seo/PremiumToolPage";
 
-const TOOL_ID = "check-code-complexity";
-const _CATEGORY = "developer";
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Free Check Code Complexity Online - No Signup | 30tools",
-	description:
-		"Use our free Check Code Complexity to format and convert code data instantly. No registration needed, high quality results, and secure browser-based processing. Try check-code-complexity now!",
-	keywords: ["check-code-complexity", "check", "code", "complexity"],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Check Code Complexity Online - No Signup | 30tools",
+  description: "Free Check Code Complexity online. Check Code Complexity allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "check code complexity, free online tool, no signup, developer, check code complexity online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/check-code-complexity",
+  },
+  openGraph: {
+    title: "Free Check Code Complexity Online - No Signup | 30tools",
+    description: "Free Check Code Complexity online. Check Code Complexity allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/check-code-complexity",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Check Code Complexity Online - No Signup | 30tools",
+    description: "Free Check Code Complexity online. Check Code Complexity allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function Page() {
-	return <PremiumToolPage toolId={TOOL_ID} />;
+export default async function ToolPage() {
+  const tool = {
+  "id": "check-code-complexity",
+  "name": "Check Code Complexity",
+  "description": "Free Check Code Complexity online. Check Code Complexity allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+  "route": "/check-code-complexity",
+  "extraSlugs": [
+    "check-code-complexity"
+  ],
+  "category": "developer"
+};
+  const breadcrumbs = [
+  {
+    "name": "Developer Tools",
+    "url": "/developer-tools"
+  },
+  {
+    "name": "Check Code Complexity",
+    "url": "/check-code-complexity"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "amazon-ses-api-key-tester",
+    "name": "Amazon SES API Key Tester",
+    "description": "Test your Amazon SES credentials with the send email endpoint.",
+    "route": "/api-key-tester/amazon-ses",
+    "extraSlugs": [
+      "api-docs",
+      "api-endpoint-tester",
+      "api-tester",
+      "debug-api-requests",
+      "font-tester-tool",
+      "regex-flags-tester",
+      "regex-match-tester",
+      "regex-replace-tester",
+      "regex-tester",
+      "test-rest-api-online"
+    ],
+    "popular": false,
+    "category": "developer"
+  },
+  {
+    "id": "anthropic-api-key-tester",
+    "name": "Anthropic Claude API Key Tester",
+    "description": "Test your Anthropic Claude API key with the messages endpoint.",
+    "route": "/api-key-tester/anthropic",
+    "extraSlugs": [
+      "validate-claude-api-key-online",
+      "anthropic-api-tester"
+    ],
+    "popular": false,
+    "category": "developer"
+  },
+  {
+    "id": "api-key-tester",
+    "name": "API Key Tester",
+    "description": "Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
+    "route": "/api-key-tester",
+    "extraSlugs": [
+      "test-openai-api-key-online-safely",
+      "validate-api-keys-safely"
+    ],
+    "popular": true,
+    "category": "developer"
+  }
+];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Check Code Complexity","description":"Free Check Code Complexity online. Check Code Complexity allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.","url":"https://30tools.com/check-code-complexity","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <PremiumToolPage toolId={TOOL_ID} />
+      </ToolLayout>
+    </>
+  );
 }

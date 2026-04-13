@@ -1,80 +1,117 @@
-import { notFound } from "next/navigation";
-import { BreadcrumbsEnhanced, RelatedTools } from "@/components/seo";
-import ApiKeyTester from "@/components/tools/developer/ApiKeyTester/ApiKeyTester";
-import { Badge } from "@/components/ui/badge";
-import { API_KEY_TOOLS } from "@/data/api-key-tools";
 
-export async function generateStaticParams() {
-	return API_KEY_TOOLS.map((tool) => ({
-		slug: tool.id,
-	}));
-}
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "API Key Tester - Securely Verify Your API Credentials | 30tools",
-	description:
-		"Securely test and validate your API keys for various services including OpenAI, Anthropic, Google Gemini, Stripe, and more. Free developer tool by 30tools.",
-	robots: { index: true, follow: true },
+  title: "Free [slug] Online - No Signup | 30tools",
+  description: "Free [slug] online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "[slug], free online tool, no signup, developer, [slug] online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/api-key-tester/[slug]",
+  },
+  openGraph: {
+    title: "Free [slug] Online - No Signup | 30tools",
+    description: "Free [slug] online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/api-key-tester/[slug]",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free [slug] Online - No Signup | 30tools",
+    description: "Free [slug] online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function ApiKeyToolPage({ params }) {
-	const resolvedParams = await params;
-	const tool = API_KEY_TOOLS.find((t) => t.id === resolvedParams.slug);
+export default async function ToolPage() {
+  const tool = {
+  "id": "[slug]",
+  "name": "[slug]",
+  "description": "Free [slug] online tool. Fast and secure.",
+  "route": "/api-key-tester/[slug]",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "developer"
+};
+  const breadcrumbs = [
+  {
+    "name": "Developer Tools",
+    "url": "/developer-tools"
+  },
+  {
+    "name": "[slug]",
+    "url": "/api-key-tester/[slug]"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "amazon-ses-api-key-tester",
+    "name": "Amazon SES API Key Tester",
+    "description": "Test your Amazon SES credentials with the send email endpoint.",
+    "route": "/api-key-tester/amazon-ses",
+    "extraSlugs": [
+      "api-docs",
+      "api-endpoint-tester",
+      "api-tester",
+      "debug-api-requests",
+      "font-tester-tool",
+      "regex-flags-tester",
+      "regex-match-tester",
+      "regex-replace-tester",
+      "regex-tester",
+      "test-rest-api-online"
+    ],
+    "popular": false,
+    "category": "developer"
+  },
+  {
+    "id": "anthropic-api-key-tester",
+    "name": "Anthropic Claude API Key Tester",
+    "description": "Test your Anthropic Claude API key with the messages endpoint.",
+    "route": "/api-key-tester/anthropic",
+    "extraSlugs": [
+      "validate-claude-api-key-online",
+      "anthropic-api-tester"
+    ],
+    "popular": false,
+    "category": "developer"
+  },
+  {
+    "id": "api-key-tester",
+    "name": "API Key Tester",
+    "description": "Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
+    "route": "/api-key-tester",
+    "extraSlugs": [
+      "test-openai-api-key-online-safely",
+      "validate-api-keys-safely"
+    ],
+    "popular": true,
+    "category": "developer"
+  }
+];
 
-	if (!tool) {
-		notFound();
-	}
-
-	const breadcrumbs = [
-		{ name: "Developer Tools", url: "/developer-tools" },
-		{ name: "API Key Tester", url: "/api-key-tester" },
-		{ name: tool.name, url: `/api-key-tester/${tool.id}` },
-	];
-
-	const relatedTools = API_KEY_TOOLS.filter(
-		(t) => t.category === tool.category && t.id !== tool.id,
-	)
-		.slice(0, 3)
-		.map((t) => ({
-			id: t.id,
-			name: t.name,
-			description: t.description,
-			route: `/api-key-tester/${t.id}`,
-			category: t.category,
-		}));
-
-	return (
-		<div className="min-h-screen bg-background">
-			<div className="container mx-auto px-4 pt-6">
-				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
-			</div>
-
-			<main className="container mx-auto px-4 py-8">
-				<div className="max-w-4xl mx-auto mb-8 text-center">
-					<Badge variant="outline" className="mb-4">
-						{tool.category}
-					</Badge>
-					<h1 className="text-3xl md:text-4xl font-bold mb-4">
-						Test Your {tool.name} API Key
-					</h1>
-					<p className="text-xl text-muted-foreground">
-						{tool.description}. Securely validate your credentials.
-					</p>
-				</div>
-
-				<ApiKeyTester toolId={tool.id} />
-
-				{relatedTools.length > 0 && (
-					<div className="mt-16 max-w-4xl mx-auto">
-						<RelatedTools
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"[slug]","description":"Free [slug] online tool. Fast and secure.","url":"https://30tools.com/api-key-tester/[slug]","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <RelatedTools
 							currentTool={tool.id}
 							category="developer-tools"
 							tools={relatedTools}
 							title={`More ${tool.category} Tools`}
 						/>
-					</div>
-				)}
-			</main>
-		</div>
-	);
+      </ToolLayout>
+    </>
+  );
 }

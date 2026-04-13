@@ -1,57 +1,95 @@
-import DownloaderToolsFooter from "@/components/footers/DownloaderToolsFooter";
-import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 
 export const metadata = {
-	title: "Universal Video Downloader (2026) - All-in-One Free Tool | 30Tools",
-	description:
-		"Download videos from TikTok, Instagram, Facebook, X (Twitter) & more. Updated 2026. Free, no watermark, all-in-one downloader.",
-	keywords: [
-		"universal video downloader",
-		"all in one video downloader",
-		"download video from link",
-		"tiktok downloader 2026",
-		"instagram video saver",
-		"facebook video downloader",
-		"twitter video download",
-		"free video downloader online",
-		"updated 2026",
-		"no watermark downloader",
-	].join(", "),
-	alternates: {
-		canonical: "https://30tools.com/downloaders",
-	},
-	openGraph: {
-		title: "Universal Video Downloader (2026) - All-in-One Free Tool",
-		description:
-			"⚡ Download videos from TikTok, Instagram, Facebook & more instantly (2026 Updated). All-in-one free tool, no watermark!",
-		url: "https://30tools.com/downloaders",
-		siteName: "30tools",
-		type: "website",
-	},
+  title: "Free Downloaders Online - No Signup | 30tools",
+  description: "Free Downloaders online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "downloaders, free online tool, no signup, downloaders, downloaders online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/downloaders",
+  },
+  openGraph: {
+    title: "Free Downloaders Online - No Signup | 30tools",
+    description: "Free Downloaders online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/downloaders",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Downloaders Online - No Signup | 30tools",
+    description: "Free Downloaders online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default function DownloadersPage() {
-	return (
-		<div className="min-h-screen flex-col">
-			<main className="grow bg-gray-50 dark:bg-gray-900/50 py-8">
-				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<div className="text-center mb-12">
-						<h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-							Universal Video Downloader
-						</h1>
-						<p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-							Download videos from TikTok, Facebook, Instagram, Twitter/X,
-							Vimeo, Dailymotion, Reddit, Rumble and more easily!
-						</p>
-					</div>
+export default async function ToolPage() {
+  const tool = {
+  "id": "downloaders",
+  "name": "Downloaders",
+  "description": "Free Downloaders online tool. Fast and secure.",
+  "route": "/downloaders",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "downloaders"
+};
+  const breadcrumbs = [
+  {
+    "name": "Downloaders Tools",
+    "url": "/downloaders-tools"
+  },
+  {
+    "name": "Downloaders",
+    "url": "/downloaders"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "akillitv-video-downloader",
+    "name": "AkilliTv Video Downloader",
+    "description": "Download AkilliTv videos easily with our free online downloader.",
+    "route": "/akillitv-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  },
+  {
+    "id": "bandcamp-video-downloader",
+    "name": "Bandcamp Video Downloader",
+    "description": "The easiest way to download Bandcamp videos online.",
+    "route": "/bandcamp-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  },
+  {
+    "id": "bilibili-video-downloader",
+    "name": "Bilibili Video Downloader",
+    "description": "Download Bilibili videos online with ease.",
+    "route": "/bilibili-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  }
+];
 
-					<div className="flex justify-center">
-						<UniversalVideoDownloader />
-					</div>
-				</div>
-			</main>
-
-			<DownloaderToolsFooter />
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Downloaders","description":"Free Downloaders online tool. Fast and secure.","url":"https://30tools.com/downloaders","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <DownloaderEngine placeholder="Enter URL to download..." />
+      </ToolLayout>
+    </>
+  );
 }

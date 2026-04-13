@@ -1,352 +1,264 @@
-import {
-	BreadcrumbsEnhanced,
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-	ReviewSnippets,
-	UserComments,
-} from "@/components/seo";
-import {
-	GeneratorToolExamples,
-	GeneratorToolFeatures,
-} from "@/components/seo/GeneratorToolsHub";
-import LogoGeneratorTool from "@/components/tools/image/LogoGeneratorTool";
-import { getImageToolFAQs } from "@/constants/seo/image-faqs";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import LogoGeneratorTool from "@/components/tools/image/LogoGeneratorTool"
 
 export const metadata = {
-	title: "Free Logo Generator Online - No Signup | 30tools",
-	description:
-		"Create professional logos with text, fonts, and custom colors. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
-	keywords: [
-		"logo generator",
-		"logo",
-		"generator",
-		"logo-generator",
-		"image",
-		"image tool",
-		"free",
-		"online",
-		"tool",
-		"30tools",
-		"no signup",
-		"fast",
-		"secure",
-		"browser-based",
-		"instant",
-		"easy",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Logo Generator Online - No Signup | 30tools",
+  description: "Create professional logos with text, fonts, and custom colors 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "logo generator, free online tool, no signup, image, logo generator online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/logo-generator",
+  },
+  openGraph: {
+    title: "Free Logo Generator Online - No Signup | 30tools",
+    description: "Create professional logos with text, fonts, and custom colors 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/logo-generator",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Logo Generator Online - No Signup | 30tools",
+    description: "Create professional logos with text, fonts, and custom colors 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function LogoGeneratorPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	// Tool-specific data
-	const toolData = {
-		id: "logo-generator",
-		name: "Logo Generator",
-		description:
-			"Create professional logos with text, fonts, and custom colors",
-		category: "image",
-		route: "/logo-generator",
-		features: [
-			"Supports JPEG, PNG, WebP, GIF, BMP formats",
-			"Batch process multiple images",
-			"High-quality output preservation",
-			"Adjustable quality and compression settings",
-			"100% Free - No hidden costs or subscriptions",
-			"No Registration Required - Start immediately",
-		],
-		benefits: [],
-		useCases: [],
-		faqs: [
-			{
-				question: "Is this Logo Generator really free?",
-				answer:
-					"Yes! Our Logo Generator is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
-			},
-			{
-				question: "Is my data secure when using Logo Generator?",
-				answer:
-					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
-			},
-			{
-				question: "Do I need to create an account to use Logo Generator?",
-				answer:
-					"No registration required. You can start using Logo Generator immediately without creating an account or providing any personal information.",
-			},
-			{
-				question: "Are there any file size limits for Logo Generator?",
-				answer:
-					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
-			},
-			{
-				question: "Can I use Logo Generator on mobile devices?",
-				answer:
-					"Yes, Logo Generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
-			},
-			{
-				question: "What file formats does Logo Generator support?",
-				answer:
-					"Logo Generator supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
-			},
-		],
-		howTo: {
-			name: "How to Use Logo Generator",
-			steps: [
-				{
-					name: "Upload or Input",
-					text: "Provide your file or input data using the upload button or text input field. Logo Generator supports drag-and-drop for convenience.",
-					url: "/logo-generator#step1",
-					position: 1,
-				},
-				{
-					name: "Configure Settings",
-					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-					url: "/logo-generator#step2",
-					position: 2,
-				},
-				{
-					name: "Process & Download",
-					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-					url: "/logo-generator#step3",
-					position: 3,
-				},
-			],
-		},
-	};
+export default async function ToolPage() {
+  const tool = {
+  "id": "logo-generator",
+  "name": "Logo Generator",
+  "description": "Create professional logos with text, fonts, and custom colors",
+  "route": "/logo-generator",
+  "extraSlugs": [
+    "brand-logo-generator",
+    "business-logo-creator",
+    "business-logo-designer",
+    "company-logo-maker-free",
+    "custom-logo-maker",
+    "design-logo-free",
+    "free-logo-maker",
+    "free-logo-maker-for-twitch",
+    "gaming-logo-generator",
+    "logo-maker",
+    "online-logo-design",
+    "simple-logo-creator"
+  ],
+  "popular": true,
+  "category": "image"
+};
+  const breadcrumbs = [
+  {
+    "name": "Image Tools",
+    "url": "/image-tools"
+  },
+  {
+    "name": "Logo Generator",
+    "url": "/logo-generator"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "background-remover",
+    "name": "Background Remover",
+    "description": "Remove image backgrounds automatically with AI",
+    "route": "/background-remover",
+    "extraSlugs": [
+      "remove-background-from-signature-free",
+      "transparent-background-maker",
+      "picture-background-eraser",
+      "duplicate-line-remover",
+      "background-gradient-tool",
+      "background-gradient-creator"
+    ],
+    "popular": true,
+    "category": "image"
+  },
+  {
+    "id": "base64-to-image-converter",
+    "name": "Base64 to Image Converter",
+    "description": "Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/base64-to-image-converter",
+    "extraSlugs": [
+      "add-text-to-image",
+      "all-in-one-unit-converter",
+      "audio-converter",
+      "audio-converter-mp3",
+      "avi-file-to-mp4-online",
+      "avi-to-mp4-converter",
+      "avi-video-converter",
+      "base64-encoder-decoder",
+      "base64-image",
+      "base64-to-image",
+      "base64-to-image-converter-tool",
+      "base64-to-text",
+      "base64-tool",
+      "change-audio-format",
+      "change-avi-to-mp4",
+      "change-flv-to-mp4",
+      "change-image-dimensions",
+      "change-m4a-to-mp3",
+      "change-mkv-to-mp4",
+      "change-mov-to-mp4",
+      "change-ogg-to-mp3",
+      "change-pdf-orientation",
+      "change-video-type",
+      "change-wav-to-mp3",
+      "change-webm-to-mp4",
+      "click-to-chat-whatsapp",
+      "compress-files-to-zip",
+      "compress-ogg-to-mp3",
+      "compress-wav-to-mp3",
+      "convert-audio-format",
+      "convert-image-to-jpg",
+      "convert-picture-to-string",
+      "convert-video-format",
+      "date-to-epoch",
+      "decode-base64-image",
+      "document-converter",
+      "docx-to-pdf-converter",
+      "ebook-format-converter",
+      "encode-image-base64",
+      "epoch-converter",
+      "epoch-to-datetime",
+      "epub-converter",
+      "file-converter",
+      "fit-photo-to-instagram-story",
+      "flv-file-to-mp4-online",
+      "flv-to-mp4-converter",
+      "flv-video-converter",
+      "folder-to-zip-converter",
+      "format-html-css-js",
+      "format-sql-online",
+      "free-base64-to-image-converter-online",
+      "image-format-changer",
+      "image-to-base64",
+      "image-to-pdf-converter",
+      "insta-story-size-converter",
+      "instagram-reels-to-mp4",
+      "m4a-audio-converter",
+      "m4a-file-to-mp3-online",
+      "m4a-to-mp3-converter",
+      "m4a-to-mp3-online",
+      "md-html-converter",
+      "md-to-txt-converter",
+      "measurement-converter",
+      "metric-imperial-converter",
+      "mkv-file-to-mp4-online",
+      "mkv-to-mp4-converter",
+      "mkv-video-converter",
+      "mov-file-to-mp4-online",
+      "mov-to-mp4",
+      "mov-to-mp4-converter",
+      "mov-video-converter",
+      "movie-to-mp3-converter",
+      "mp3-converter",
+      "mp3-converter-online",
+      "mp4-audio-converter",
+      "mp4-converter-online",
+      "mp4-to-mp3",
+      "ogg-audio-converter",
+      "ogg-file-to-mp3-online",
+      "ogg-to-mp3-converter",
+      "pdf-to-docx-converter",
+      "pdf-to-epub-converter",
+      "photos-to-pdf-converter",
+      "pptx-to-pdf-converter",
+      "quicktime-to-mp4",
+      "readme-to-html",
+      "save-snaps-to-gallery",
+      "text-fo-base64",
+      "tiktok-aspect-ratio-converter",
+      "tiktok-mp3-converter",
+      "tiktok-music-converter",
+      "tiktok-to-mp3-online",
+      "timestamp-converter",
+      "timezone-converter",
+      "unit-converter",
+      "unix-timestamp-to-date",
+      "uppercase-to-lowercase",
+      "url-string-converter",
+      "url-to-pdf-converter",
+      "usd-to-eur-converter",
+      "video-converter",
+      "video-to-mp3-converter",
+      "wav-audio-converter",
+      "wav-file-to-mp3-online",
+      "wav-to-mp3-converter",
+      "webm-file-to-mp4-online",
+      "webm-to-mp4-converter",
+      "webm-video-converter",
+      "world-clock-converter",
+      "xlsx-to-pdf-converter",
+      "youtube-to-mp3-high-quality",
+      "youtube-to-mp4-converter"
+    ],
+    "popular": false,
+    "category": "image"
+  },
+  {
+    "id": "convert-to-ico",
+    "name": "Convert to ICO",
+    "description": "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/convert-to-ico",
+    "extraSlugs": [
+      "convert-audio-format",
+      "convert-avi-to-mp4",
+      "convert-doc-to-pdf",
+      "convert-epoch-time",
+      "convert-flv-to-mp4",
+      "convert-html-to-pdf",
+      "convert-landscape-to-portrait-video",
+      "convert-m4a-to-mp3",
+      "convert-md-to-html",
+      "convert-mkv-to-mp4",
+      "convert-money-online",
+      "convert-mov-to-mp4",
+      "convert-mp4-to-gif",
+      "convert-mp4-to-mp3",
+      "convert-mp4-video-to-mp3",
+      "convert-ogg-to-mp3",
+      "convert-pdf-to-doc",
+      "convert-picture-to-string",
+      "convert-png-to-favicon",
+      "convert-ppt-to-pdf",
+      "convert-string-to-binary",
+      "convert-text-case",
+      "convert-text-to-audio",
+      "convert-tiktok-to-mp3",
+      "convert-time-across-zones",
+      "convert-time-to-timestamp",
+      "convert-to-epub-online",
+      "convert-to-ico-tool",
+      "convert-units-online",
+      "convert-video-file-to-mp3",
+      "convert-video-format",
+      "convert-wav-to-mp3",
+      "convert-webm-to-mp4",
+      "convert-xls-to-pdf",
+      "free-convert-to-ico-online"
+    ],
+    "popular": false,
+    "category": "image"
+  }
+];
 
-	// Breadcrumb navigation
-	const breadcrumbs = [
-		{ name: "Image Tools", url: "/image-tools" },
-		{ name: "Logo Generator", url: "/logo-generator" },
-	];
-
-	// Tool features
-	const features = [
-		"Instant logo generation",
-		"Professional icon library",
-		"Curated font selection",
-		"Customizable colors",
-		"Adjustable layout & spacing",
-		"High-resolution PNG download",
-		"Transparent background",
-		"100% Free for commercial use",
-	];
-
-	// Usage examples
-	const examples = [
-		{
-			title: "Tech Startup",
-			description: "Modern and clean",
-			input: "Rocket Icon + Inter Font",
-			output: "Minimalist Tech Logo",
-		},
-		{
-			title: "Coffee Shop",
-			description: "Warm and inviting",
-			input: "Coffee Icon + Serif Font",
-			output: "Classic Cafe Logo",
-		},
-		{
-			title: "Creative Studio",
-			description: "Bold and artistic",
-			input: "Star Icon + Cursive Font",
-			output: "Artistic Brand Logo",
-		},
-	];
-
-	// FAQ data
-	const faqs = getImageToolFAQs("logo-generator");
-
-	// Related tools
-	const relatedTools = [
-		{
-			id: "favicon-generator",
-			name: "Favicon Generator",
-			description: "Create website favicons",
-			route: "/favicon-generator",
-			category: "image",
-		},
-		{
-			id: "image-resizer",
-			name: "Image Resizer",
-			description: "Resize logo for social media",
-			route: "/image-resizer",
-			category: "image",
-		},
-		{
-			id: "image-converter",
-			name: "Image Converter",
-			description: "Convert logo to different formats",
-			route: "/image-converter",
-			category: "image",
-		},
-	];
-
-	return (
-		<div className="min-h-screen bg-background">
-			{/* Enhanced Breadcrumbs with Schema */}
-			<div className="container mx-auto px-4 pt-6">
-				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
-			</div>
-
-			{/* Main Content */}
-			<main className="container mx-auto px-4 py-8">
-				{/* Hero Section */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Free Online Logo Generator - Create Brand Logos Fast
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Design a professional logo for your brand in minutes. Choose from
-						our library of modern icons and fonts, customize colors, and
-						download a high-resolution logo PNG for free.
-					</p>
-
-					<QuickActions
-						toolName="Logo Generator"
-						toolUrl="https://30tools.com/logo-generator"
-						showBookmark={true}
-						showShare={true}
-					/>
-				</div>
-
-				{/* Tool Interface */}
-				<div className="mb-12">
-					<LogoGeneratorTool />
-				</div>
-
-				{/* Key Features */}
-				<GeneratorToolFeatures tool={toolData} features={features} />
-
-				{/* Usage Examples */}
-				<GeneratorToolExamples
-					tool={toolData}
-					examples={examples}
-					title="Logo Inspiration"
-				/>
-
-				{/* User Reviews */}
-				<div className="mb-12">
-					<ReviewSnippets
-						toolId="logo-generator"
-						title="User Reviews"
-						showRatingSummary={true}
-						variant="grid"
-						limit={6}
-					/>
-				</div>
-
-				{/* How to Use Section */}
-				<div className="mb-12 max-w-4xl mx-auto">
-					<h2 className="text-3xl font-bold mb-8 text-center">
-						How to Create a Logo
-					</h2>
-					<div className="grid md:grid-cols-3 gap-8">
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								1
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Enter Name</h3>
-							<p className="text-muted-foreground text-sm">
-								Type your brand name and optional tagline. Choose a font style.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								2
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Customize</h3>
-							<p className="text-muted-foreground text-sm">
-								Select an icon, adjust colors, and tweak the layout and spacing.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								3
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Download</h3>
-							<p className="text-muted-foreground text-sm">
-								Get your logo as a high-quality transparent PNG instantly.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				{/* FAQ Section */}
-				<div className="mb-12">
-					<FAQSection
-						faqs={faqs}
-						title="Logo Generator FAQ"
-						categoryTitle="Logo Design"
-						variant="accordion"
-						showSchema={true}
-					/>
-				</div>
-
-				{/* Related Tools */}
-				<div className="mb-12">
-					<RelatedTools
-						currentTool="logo-generator"
-						category="image"
-						tools={relatedTools}
-						title="More Branding Tools"
-					/>
-				</div>
-
-				{/* User Comments */}
-				<UserComments
-					toolId="logo-generator"
-					toolName="Logo Generator"
-					showStats={true}
-					allowComments={true}
-				/>
-			</main>
-
-			{/* Structured Data for Tool */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify([
-						{
-							"@context": "https://schema.org",
-							"@type": "HowTo",
-							name: "How to Create a Logo Online",
-							step: [
-								{
-									"@type": "HowToStep",
-									name: "Enter Name",
-									text: "Type your brand name and optional tagline. Choose a font style.",
-									url: "https://30tools.com/logo-generator#step1",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Customize",
-									text: "Select an icon, adjust colors, and tweak the layout and spacing.",
-									url: "https://30tools.com/logo-generator#step2",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Download",
-									text: "Get your logo as a high-quality transparent PNG instantly.",
-									url: "https://30tools.com/logo-generator#step3",
-								},
-							],
-						},
-					]),
-				}}
-			/>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Logo Generator","description":"Create professional logos with text, fonts, and custom colors","url":"https://30tools.com/logo-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <LogoGeneratorTool />
+      </ToolLayout>
+    </>
+  );
 }

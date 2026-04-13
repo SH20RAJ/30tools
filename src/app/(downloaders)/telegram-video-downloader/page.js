@@ -1,189 +1,95 @@
-import Link from "next/link";
-import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 
 export const metadata = {
-	title: "Free Telegram Video Downloader Online - No Signup | 30tools",
-	description:
-		"Free Telegram Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your br",
-	keywords: [
-		"telegram video downloader",
-		"telegram video downloader free",
-		"telegram video downloader online",
-		"telegram video downloader tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Telegram Video Downloader Online - No Signup | 30tools",
+  description: "The ultimate tool for downloading videos from Telegram. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "telegram video downloader, free online tool, no signup, downloaders, telegram video downloader online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/telegram-video-downloader",
+  },
+  openGraph: {
+    title: "Free Telegram Video Downloader Online - No Signup | 30tools",
+    description: "The ultimate tool for downloading videos from Telegram. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/telegram-video-downloader",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Telegram Video Downloader Online - No Signup | 30tools",
+    description: "The ultimate tool for downloading videos from Telegram. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-const AdUnit = () => (
-	<div className="my-6 flex justify-center">
-		<ins
-			className="adsbygoogle"
-			style={{ display: "block" }}
-			data-ad-format="autorelaxed"
-			data-ad-client="ca-pub-1828915420581549"
-			data-ad-slot="4669751596"
-		></ins>
-	</div>
-);
-
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
-	name: "Telegram Video Downloader",
-	alternateName: ["Telegram Channel Downloader", "Telegram to MP4"],
-	description:
-		"Free online downloader for Telegram videos, GIFs, and media from public channels.",
-	url: "https://30tools.com/telegram-video-downloader",
-	applicationCategory: "MultimediaApplication",
-	operatingSystem: "Any",
-	offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-	featureList: [
-		"Download Telegram videos as MP4",
-		"Save GIFs from Telegram",
-		"Works with public channels",
-		"No app required",
-	],
+export default async function ToolPage() {
+  const tool = {
+  "id": "telegram-video-downloader",
+  "name": "Telegram Video Downloader",
+  "description": "The ultimate tool for downloading videos from Telegram.",
+  "route": "/telegram-video-downloader",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "downloaders"
 };
+  const breadcrumbs = [
+  {
+    "name": "Downloaders Tools",
+    "url": "/downloaders-tools"
+  },
+  {
+    "name": "Telegram Video Downloader",
+    "url": "/telegram-video-downloader"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "akillitv-video-downloader",
+    "name": "AkilliTv Video Downloader",
+    "description": "Download AkilliTv videos easily with our free online downloader.",
+    "route": "/akillitv-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  },
+  {
+    "id": "bandcamp-video-downloader",
+    "name": "Bandcamp Video Downloader",
+    "description": "The easiest way to download Bandcamp videos online.",
+    "route": "/bandcamp-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  },
+  {
+    "id": "bilibili-video-downloader",
+    "name": "Bilibili Video Downloader",
+    "description": "Download Bilibili videos online with ease.",
+    "route": "/bilibili-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  }
+];
 
-export default async function TelegramVideoDownloaderPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return (
-		<>
-			<script
-				async
-				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-				crossOrigin="anonymous"
-			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-			/>
-			<div className="container mx-auto px-4 py-12 md:py-20">
-				<div className="max-w-6xl mx-auto">
-					<nav aria-label="Breadcrumb" className="mb-8">
-						<ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-							<li>
-								<Link href="/" className="hover:text-primary">
-									Home
-								</Link>
-							</li>
-							<li>/</li>
-							<li>
-								<Link href="/all-downloaders" className="hover:text-primary">
-									Downloaders
-								</Link>
-							</li>
-							<li>/</li>
-							<li className="text-foreground font-medium">
-								Telegram Video Downloader
-							</li>
-						</ol>
-					</nav>
-					<AdUnit />
-					<div className="text-center mb-12">
-						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							Telegram Video Downloader
-						</h1>
-						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-							Save videos, GIFs, and media from public Telegram channels and
-							groups directly to your device. No Telegram app installation
-							required. Works on all browsers.
-						</p>
-						<div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-							<span>📺 Channel Videos</span>
-							<span>🎞️ GIFs</span>
-							<span>🌐 Online Tool</span>
-							<span>🆓 100% Free</span>
-						</div>
-					</div>
-					<AdUnit />
-					<div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-						<UniversalVideoDownloader title="Telegram Video Downloader" />
-					</div>
-					<section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-						<h2 className="text-3xl font-bold mb-6">
-							Save Telegram Channel Videos Offline
-						</h2>
-						<p className="text-muted-foreground mb-8">
-							Telegram channels share millions of videos daily — news clips,
-							tutorials, entertainment, and exclusive content. Our{" "}
-							<strong>Telegram Video Downloader</strong> lets you save any video
-							from a public Telegram channel directly to your device without
-							needing the Telegram app.
-						</p>
-						<div className="grid md:grid-cols-3 gap-8 text-left">
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">Public Channels</h3>
-								<p className="text-muted-foreground m-0">
-									Access and download media from any public Telegram channel by
-									pasting its post link. No channel membership required.
-								</p>
-							</div>
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">Videos & GIFs</h3>
-								<p className="text-muted-foreground m-0">
-									Download both MP4 videos and GIF animations from Telegram
-									posts. Files save in their original quality.
-								</p>
-							</div>
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">No App Required</h3>
-								<p className="text-muted-foreground m-0">
-									No need to install the Telegram app. Works directly in your
-									web browser on any device.
-								</p>
-							</div>
-						</div>
-					</section>
-					<section className="mb-16">
-						<h2 className="text-3xl font-bold text-center mb-10">
-							Telegram Video Downloader FAQs
-						</h2>
-						<div className="max-w-3xl mx-auto space-y-6">
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									How do I get the link to a Telegram video?
-								</h3>
-								<p className="text-muted-foreground">
-									On Telegram web (web.telegram.org), right-click on the message
-									and select "Copy Message Link". For mobile, long-press the
-									message and tap "Copy Link". Paste that link into our
-									downloader.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									Can I download from private Telegram channels?
-								</h3>
-								<p className="text-muted-foreground">
-									No. Private Telegram channels require authentication. Our tool
-									only works with publicly accessible Telegram content.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									What file formats are supported?
-								</h3>
-								<p className="text-muted-foreground">
-									MP4 video files and GIF animations. The download quality
-									matches the original file uploaded to the Telegram channel.
-								</p>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Telegram Video Downloader","description":"The ultimate tool for downloading videos from Telegram.","url":"https://30tools.com/telegram-video-downloader","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <DownloaderEngine placeholder="Enter URL to download..." />
+      </ToolLayout>
+    </>
+  );
 }

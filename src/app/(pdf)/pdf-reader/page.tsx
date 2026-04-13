@@ -1,25 +1,103 @@
-import PdfReader from "@/components/tools/pdf/PdfReader";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Free Pdf Reader Online - No Signup | 30tools",
-	description: "Pdf Reader - Coming Soon",
-	robots: { index: true, follow: true },
+  title: "Free Pdf Reader Online - No Signup | 30tools",
+  description: "Pdf Reader - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "pdf reader, free online tool, no signup, others, pdf reader online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/pdf-reader",
+  },
+  openGraph: {
+    title: "Free Pdf Reader Online - No Signup | 30tools",
+    description: "Pdf Reader - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/pdf-reader",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Pdf Reader Online - No Signup | 30tools",
+    description: "Pdf Reader - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function ToolPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return (
-		<div className="container mx-auto px-4 py-8 md:py-12 min-h-screen flex flex-col">
-			<div className="max-w-4xl mx-auto text-center mb-8">
-				<h1 className="text-3xl md:text-4xl font-bold mb-4">
-					Online PDF Reader
-				</h1>
-				<p className="text-muted-foreground">
-					Open and view PDF files instantly in your browser.
-				</p>
-			</div>
-			<PdfReader />
-		</div>
-	);
+export default async function ToolPage() {
+  const tool = {
+  "id": "pdf-reader",
+  "name": "Pdf Reader",
+  "description": "Pdf Reader - Coming Soon",
+  "route": "/pdf-reader",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "others"
+};
+  const breadcrumbs = [
+  {
+    "name": "Others Tools",
+    "url": "/others-tools"
+  },
+  {
+    "name": "Pdf Reader",
+    "url": "/pdf-reader"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "ai-video-summarizer",
+    "name": "Ai Video Summarizer",
+    "description": "Ai Video Summarizer - Coming Soon",
+    "route": "/ai-video-summarizer",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "all-downloaders",
+    "name": "All Downloaders",
+    "description": "All Downloaders - Coming Soon",
+    "route": "/all-downloaders",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "audio-equalizer",
+    "name": "Audio Equalizer",
+    "description": "Audio Equalizer - Coming Soon",
+    "route": "/audio-equalizer",
+    "extraSlugs": [
+      "audio-tools",
+      "audio-trimmer",
+      "change-audio-format",
+      "mp4-audio-ripper",
+      "optimize-audio-files",
+      "shorten-audio-clip",
+      "split-audio-file"
+    ],
+    "popular": false,
+    "category": "others"
+  }
+];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pdf Reader","description":"Pdf Reader - Coming Soon","url":"https://30tools.com/pdf-reader","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

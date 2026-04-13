@@ -1,5 +1,4 @@
-import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
+import React from "react";
 import { MinimalHero } from "@/components/landing/MinimalHero";
 import { SimpleStats } from "@/components/landing/SimpleStats";
 import { ToolDirectory } from "@/components/landing/ToolDirectory";
@@ -7,17 +6,100 @@ import { TrustSection } from "@/components/landing/TrustSection";
 import toolsData from "@/constants/tools.json";
 import translateEngine from "@/lib/translate";
 
-const _TOOL_COUNT = Object.values(toolsData.categories || {}).reduce(
+const TOOL_COUNT = Object.values(toolsData.categories || {}).reduce(
 	(total, category) => total + (category.tools?.length || 0),
 	0,
 );
 
-export const metadata = {
-	title: "30tools - 100% Free Online Toolkit | Image, PDF, Video & SEO Tools",
-	description:
-		"Efficiently process files with over 600+ free online tools. Image compressors, PDF editors, video converters, SEO utilities, and more. Fast, secure, and always free.",
-	robots: { index: true, follow: true },
-};
+export async function generateMetadata({ searchParams }) {
+	const params = await searchParams;
+	const lang = params.lang || "en";
+	const title = await translateEngine.translate(
+		`30tools - ${TOOL_COUNT}+ Free Online Tools | SEO & Developer Tools`,
+		lang,
+	);
+	const description = await translateEngine.translate(
+		`Minimal, fast, and private online toolkit with ${TOOL_COUNT}+ tools for image, PDF, and video. Free forever, no signup required.`,
+		lang,
+	);
+
+	const canonicalUrl = `https://30tools.com${lang !== "en" ? `?lang=${lang}` : ""}`;
+
+	const languages = {
+		en: `https://30tools.com/?lang=en`,
+		es: `https://30tools.com/?lang=es`,
+		fr: `https://30tools.com/?lang=fr`,
+		de: `https://30tools.com/?lang=de`,
+		hi: `https://30tools.com/?lang=hi`,
+		it: `https://30tools.com/?lang=it`,
+		pt: `https://30tools.com/?lang=pt`,
+		ja: `https://30tools.com/?lang=ja`,
+		zh: `https://30tools.com/?lang=zh`,
+		ko: `https://30tools.com/?lang=ko`,
+		ru: `https://30tools.com/?lang=ru`,
+		ar: `https://30tools.com/?lang=ar`,
+		tr: `https://30tools.com/?lang=tr`,
+		vi: `https://30tools.com/?lang=vi`,
+		id: `https://30tools.com/?lang=id`,
+	};
+
+	return {
+		title: { absolute: title },
+		description,
+		keywords: [
+			"free online tools",
+			"online toolkit",
+			"web tools",
+			"digital tools",
+			"image tools online",
+			"image compressors",
+			"video converters",
+			"pdf tools free",
+			"developer utilities",
+			"seo tools",
+			"text tools free",
+			"file converter",
+			"online utilities",
+			"productivity tools",
+			"browser-based tools",
+			"no registration required",
+			"free forever",
+			"privacy focused",
+			"fast processing",
+			"100% free",
+			"30tools",
+			"30tools.com",
+			"professional tools",
+			"online converters",
+			"web applications",
+		].join(", "),
+		alternates: {
+			canonical: canonicalUrl,
+			languages: languages,
+		},
+		openGraph: {
+			title,
+			description,
+			url: canonicalUrl,
+			siteName: "30tools",
+			type: "website",
+			images: [
+				{
+					url: "https://30tools.com/og-image.jpg",
+					width: 1200,
+					height: 630,
+					alt: title,
+				},
+			],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title,
+			description,
+			images: ["https://30tools.com/og-image.jpg"],
+		},
+	};
+}
 
 export default async function LandingPage({ searchParams }) {
 	const params = await searchParams;
@@ -66,22 +148,16 @@ export default async function LandingPage({ searchParams }) {
 	const filteredCategories = toolCategories.filter(Boolean);
 
 	return (
-		<Box
-			sx={{
-				bgcolor: "background.default",
-			}}
-		>
-			<Box component="main" sx={{ py: { xs: 4, md: 8 } }}>
-				<Container maxWidth="xl">
-					<MinimalHero title={heroTitle} subtitle={heroSubtitle} />
+		<main className="bg-background min-h-screen py-8 md:py-16">
+			<div className="container mx-auto px-4 max-w-7xl">
+				<MinimalHero title={heroTitle} subtitle={heroSubtitle} />
 
-					<TrustSection />
+				<TrustSection />
 
-					<SimpleStats />
+				<SimpleStats />
 
-					<ToolDirectory categories={filteredCategories} lang={lang} />
-				</Container>
-			</Box>
-		</Box>
+				<ToolDirectory categories={filteredCategories} lang={lang} />
+			</div>
+		</main>
 	);
 }

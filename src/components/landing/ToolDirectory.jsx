@@ -1,125 +1,71 @@
 "use client";
 
-import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
-import BoltIcon from "@mui/icons-material/Bolt";
-import CodeIcon from "@mui/icons-material/Code";
-import DownloadIcon from "@mui/icons-material/Download";
-import GridViewIcon from "@mui/icons-material/GridView";
-import ImageIcon from "@mui/icons-material/Image";
-import MusicNoteIcon from "@mui/icons-material/MusicNote";
-import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import ShieldIcon from "@mui/icons-material/Shield";
-import StarIcon from "@mui/icons-material/Star";
-import TravelExploreIcon from "@mui/icons-material/TravelExplore";
-import TuneIcon from "@mui/icons-material/Tune";
-import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
-import Box from "@mui/material/Box";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
+import React from "react";
 import Link from "next/link";
+import { 
+  Sparkles, 
+  Zap, 
+  Code, 
+  Download, 
+  LayoutGrid, 
+  Image, 
+  Music, 
+  FileText, 
+  Shield, 
+  Star, 
+  Search, 
+  Settings, 
+  Video 
+} from "lucide-react";
 
 const ICON_MAP = {
-	ImageIcon: ImageIcon,
-	LayoutGridIcon: GridViewIcon,
-	SearchIcon: TravelExploreIcon,
-	StarIcon: StarIcon,
-	UsersIcon: StarIcon,
-	ShieldCheckIcon: ShieldIcon,
-	ZapIcon: BoltIcon,
-	pdf: PictureAsPdfIcon,
-	video: VideoLibraryIcon,
-	image: ImageIcon,
-	downloaders: DownloadIcon,
-	audio: MusicNoteIcon,
-	utilities: TuneIcon,
-	developer: CodeIcon,
-	generators: AutoAwesomeIcon,
-	seo: TravelExploreIcon,
+  ImageIcon: Image,
+  LayoutGridIcon: LayoutGrid,
+  SearchIcon: Search,
+  StarIcon: Star,
+  UsersIcon: Star,
+  ShieldCheckIcon: Shield,
+  ZapIcon: Zap,
+  pdf: FileText,
+  video: Video,
+  image: Image,
+  downloaders: Download,
+  audio: Music,
+  utilities: Settings,
+  developer: Code,
+  generators: Sparkles,
+  seo: Search,
 };
 
 export function ToolDirectory({ categories = [], lang = "en" }) {
-	return (
-		<Box sx={{ py: 6 }}>
-			{categories.map((category) => (
-				<Box key={category.key} sx={{ mb: 10 }}>
-					<Typography
-						variant="h4"
-						sx={{
-							textAlign: "center",
-							fontWeight: 700,
-							mb: 6,
-							color: "text.primary",
-							fontSize: { xs: "1.75rem", md: "2.25rem" },
-							textDecoration: "underline",
-							textUnderlineOffset: "8px",
-							textDecorationColor: "primary.main",
-						}}
-					>
-						{category.name}
-					</Typography>
-					<Grid container spacing={3}>
-						{category.tools.map((tool) => (
-							<Grid key={tool.id} item xs={12} sm={6} md={4} lg={3}>
-								<Box
-									component={Link}
-									href={tool.route}
-									sx={{
-										display: "flex",
-										alignItems: "center",
-										gap: 2,
-										p: 3,
-										borderRadius: 4,
-										border: "1px solid",
-										borderColor: "divider",
-										bgcolor: "background.paper",
-										textDecoration: "none",
-										boxShadow: "0 2px 8px rgba(0,0,0,0.02)",
-										transition: "none",
-										"&:hover": {
-											borderColor: "primary.main",
-											"& .tool-icon": { color: "primary.main" },
-										},
-									}}
-								>
-									<Box
-										className="tool-icon"
-										sx={{
-											p: 1.5,
-											borderRadius: 3,
-											bgcolor: "action.hover",
-											color: "text.secondary",
-											display: "flex",
-											alignItems: "center",
-											justifyContent: "center",
-											transition: "none",
-										}}
-									>
-										{(() => {
-											const Icon =
-												ICON_MAP[tool.icon] ||
-												ICON_MAP[category.iconKey] ||
-												ICON_MAP[category.key] ||
-												GridViewIcon;
-											return <Icon sx={{ fontSize: 28 }} />;
-										})()}
-									</Box>
-									<Typography
-										variant="h6"
-										sx={{
-											fontSize: "1rem",
-											fontWeight: 600,
-											color: "text.primary",
-											lineHeight: 1.2,
-										}}
-									>
-										{tool.name}
-									</Typography>
-								</Box>
-							</Grid>
-						))}
-					</Grid>
-				</Box>
-			))}
-		</Box>
-	);
+  return (
+    <div className="py-12">
+      {categories.map((category) => (
+        <section key={category.key} className="mb-16">
+          <h2 className="text-3xl md:text-4xl font-black text-center text-foreground mb-12 decoration-primary decoration-4 underline-offset-[12px] underline">
+            {category.name}
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {category.tools.map((tool) => {
+              const Icon = ICON_MAP[tool.icon] || ICON_MAP[category.iconKey] || ICON_MAP[category.key] || LayoutGrid;
+              return (
+                <Link
+                  key={tool.id}
+                  href={tool.route}
+                  className="flex items-center gap-4 p-4 rounded-2xl border border-border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-200 group no-underline"
+                >
+                  <div className="p-3 rounded-xl bg-secondary/50 text-muted-foreground group-hover:text-primary group-hover:bg-primary/10 transition-colors">
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-base font-bold text-foreground leading-snug group-hover:text-primary transition-colors">
+                    {tool.name}
+                  </h3>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      ))}
+    </div>
+  );
 }

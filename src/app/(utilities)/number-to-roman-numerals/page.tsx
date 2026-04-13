@@ -1,26 +1,107 @@
-import PremiumToolPage from "@/components/seo/PremiumToolPage";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
+
 export const metadata = {
-	title: "Free Number to Roman Numerals Online - No Signup | 30tools",
-	description:
-		"Free utility tools: Number to Roman Numerals. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in yo",
-	keywords: [
-		"number to roman numerals free",
-		"number to roman numerals online",
-		"low competition number to roman numerals tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Number to Roman Numerals Online - No Signup | 30tools",
+  description: "Free number to roman numerals tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "number to roman numerals, free online tool, no signup, utilities, number to roman numerals online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/number-to-roman-numerals",
+  },
+  openGraph: {
+    title: "Free Number to Roman Numerals Online - No Signup | 30tools",
+    description: "Free number to roman numerals tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/number-to-roman-numerals",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Number to Roman Numerals Online - No Signup | 30tools",
+    description: "Free number to roman numerals tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default function ToolPage() {
-	return <PremiumToolPage toolId="number-to-roman-numerals" />;
+export default async function ToolPage() {
+  const tool = {
+  "id": "number-to-roman-numerals",
+  "name": "Number to Roman Numerals",
+  "description": "Free number to roman numerals tool to process your data instantly with privacy-friendly browser-based workflows.",
+  "route": "/number-to-roman-numerals",
+  "extraSlugs": [
+    "free-number-to-roman-numerals-online",
+    "number-to-roman-numerals-tool"
+  ],
+  "popular": false,
+  "category": "utilities"
+};
+  const breadcrumbs = [
+  {
+    "name": "Utilities Tools",
+    "url": "/utilities-tools"
+  },
+  {
+    "name": "Number to Roman Numerals",
+    "url": "/number-to-roman-numerals"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "adsense-calculator",
+    "name": "Adsense Calculator",
+    "description": "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/adsense-calculator",
+    "extraSlugs": [
+      "free-adsense-calculator-online",
+      "adsense-calculator-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  },
+  {
+    "id": "age-calculator",
+    "name": "Age Calculator",
+    "description": "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/age-calculator",
+    "extraSlugs": [
+      "free-age-calculator-online",
+      "age-calculator-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  },
+  {
+    "id": "angle-converter",
+    "name": "Angle Converter",
+    "description": "Free angle converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/angle-converter",
+    "extraSlugs": [
+      "free-angle-converter-online",
+      "angle-converter-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  }
+];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Number to Roman Numerals","description":"Free number to roman numerals tool to process your data instantly with privacy-friendly browser-based workflows.","url":"https://30tools.com/number-to-roman-numerals","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <PremiumToolPage toolId="number-to-roman-numerals" />
+      </ToolLayout>
+    </>
+  );
 }

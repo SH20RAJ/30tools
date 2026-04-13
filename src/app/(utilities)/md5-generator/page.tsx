@@ -1,26 +1,108 @@
-import PremiumToolPage from "@/components/seo/PremiumToolPage";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
+
 export const metadata = {
-	title: "Free MD5 Generator Online - No Signup | 30tools",
-	description:
-		"Free utility tools: MD5 Generator. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your browser ",
-	keywords: [
-		"md5 generator free",
-		"md5 generator online",
-		"low competition md5 tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free MD5 Generator Online - No Signup | 30tools",
+  description: "Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "md5 generator, free online tool, no signup, utilities, md5 generator online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/md5-generator",
+  },
+  openGraph: {
+    title: "Free MD5 Generator Online - No Signup | 30tools",
+    description: "Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/md5-generator",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free MD5 Generator Online - No Signup | 30tools",
+    description: "Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default function ToolPage() {
-	return <PremiumToolPage toolId="md5-generator" />;
+export default async function ToolPage() {
+  const tool = {
+  "id": "md5-generator",
+  "name": "MD5 Generator",
+  "description": "Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows.",
+  "route": "/md5-generator",
+  "extraSlugs": [
+    "free-md5-generator-online",
+    "md5-generator-tool",
+    "md5-hash-generator"
+  ],
+  "popular": false,
+  "category": "utilities"
+};
+  const breadcrumbs = [
+  {
+    "name": "Utilities Tools",
+    "url": "/utilities-tools"
+  },
+  {
+    "name": "MD5 Generator",
+    "url": "/md5-generator"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "adsense-calculator",
+    "name": "Adsense Calculator",
+    "description": "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/adsense-calculator",
+    "extraSlugs": [
+      "free-adsense-calculator-online",
+      "adsense-calculator-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  },
+  {
+    "id": "age-calculator",
+    "name": "Age Calculator",
+    "description": "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/age-calculator",
+    "extraSlugs": [
+      "free-age-calculator-online",
+      "age-calculator-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  },
+  {
+    "id": "angle-converter",
+    "name": "Angle Converter",
+    "description": "Free angle converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/angle-converter",
+    "extraSlugs": [
+      "free-angle-converter-online",
+      "angle-converter-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  }
+];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"MD5 Generator","description":"Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows.","url":"https://30tools.com/md5-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <PremiumToolPage toolId="md5-generator" />
+      </ToolLayout>
+    </>
+  );
 }

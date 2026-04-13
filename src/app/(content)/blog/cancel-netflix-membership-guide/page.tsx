@@ -1,64 +1,103 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Step-by-Step Guide to Cancel Your Netflix Membership - 30Tools",
-	description:
-		"Hassle-free guide to canceling your Netflix subscription in just a few clicks.",
+  title: "Free Cancel Netflix Membership Guide Online - No Signup | 30tools",
+  description: "Free Cancel Netflix Membership Guide online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "cancel netflix membership guide, free online tool, no signup, others, cancel netflix membership guide online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/blog/cancel-netflix-membership-guide",
+  },
+  openGraph: {
+    title: "Free Cancel Netflix Membership Guide Online - No Signup | 30tools",
+    description: "Free Cancel Netflix Membership Guide online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/blog/cancel-netflix-membership-guide",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Cancel Netflix Membership Guide Online - No Signup | 30tools",
+    description: "Free Cancel Netflix Membership Guide online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function BlogPost({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return (
-		<div className="container mx-auto px-4 py-8 md:py-16 max-w-4xl">
-			<div className="mb-8">
-				<Button
-					variant="ghost"
-					asChild
-					className="pl-0 hover:bg-transparent hover:text-primary"
-				>
-					<Link href="/blog">
-						<ArrowLeft className="mr-2 h-4 w-4" />
-						Back to Blog
-					</Link>
-				</Button>
-			</div>
+export default async function ToolPage() {
+  const tool = {
+  "id": "cancel-netflix-membership-guide",
+  "name": "Cancel Netflix Membership Guide",
+  "description": "Free Cancel Netflix Membership Guide online tool. Fast and secure.",
+  "route": "/blog/cancel-netflix-membership-guide",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "others"
+};
+  const breadcrumbs = [
+  {
+    "name": "Others Tools",
+    "url": "/others-tools"
+  },
+  {
+    "name": "Cancel Netflix Membership Guide",
+    "url": "/blog/cancel-netflix-membership-guide"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "ai-video-summarizer",
+    "name": "Ai Video Summarizer",
+    "description": "Ai Video Summarizer - Coming Soon",
+    "route": "/ai-video-summarizer",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "all-downloaders",
+    "name": "All Downloaders",
+    "description": "All Downloaders - Coming Soon",
+    "route": "/all-downloaders",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "audio-equalizer",
+    "name": "Audio Equalizer",
+    "description": "Audio Equalizer - Coming Soon",
+    "route": "/audio-equalizer",
+    "extraSlugs": [
+      "audio-tools",
+      "audio-trimmer",
+      "change-audio-format",
+      "mp4-audio-ripper",
+      "optimize-audio-files",
+      "shorten-audio-clip",
+      "split-audio-file"
+    ],
+    "popular": false,
+    "category": "others"
+  }
+];
 
-			<article className="prose prose-lg dark:prose-invert max-w-none">
-				<h1 className="text-4xl md:text-5xl font-bold mb-6">
-					Step-by-Step Guide to Cancel Your Netflix Membership
-				</h1>
-				<div className="flex items-center gap-4 text-muted-foreground mb-8">
-					<span>January 10, 2025</span>
-					<span>•</span>
-					<span>3 min read</span>
-				</div>
-
-				<p className="lead">
-					Need to take a break from streaming? Canceling your Netflix membership
-					is straightforward if you know where to look.
-				</p>
-
-				<h2>Steps to Cancel</h2>
-				<ol>
-					<li>Sign in to Netflix.com.</li>
-					<li>
-						Click on your profile icon and select <strong>Account</strong>.
-					</li>
-					<li>
-						Under "Membership & Billing", click{" "}
-						<strong>Cancel Membership</strong>.
-					</li>
-					<li>Confirm your cancellation.</li>
-				</ol>
-
-				<p>
-					Your account will remain active until the end of the current billing
-					period.
-				</p>
-			</article>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Cancel Netflix Membership Guide","description":"Free Cancel Netflix Membership Guide online tool. Fast and secure.","url":"https://30tools.com/blog/cancel-netflix-membership-guide","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

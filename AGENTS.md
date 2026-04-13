@@ -15,13 +15,13 @@
 - **App Router**: Tools are organized into semantic category folders (e.g., `(image)`, `(pdf)`, `(downloaders)`) for better codebase management and SEO.
 
 ### 3. SEO Infrastructure
-- **seo-helper.ts**: Centralized logic for generating metadata, JSON-LD (Schema.org), and handled canonical URLs for variants.
-- **PremiumToolPage.tsx**: A standard component used to rapidly deploy SEO-optimized landing pages for new tools. It renders features, FAQs, How-To steps, and structured data dynamically from `tools.json`.
+- **Modular Metadata**: All tool pages export hardcoded `metadata` objects for optimal performance and SEO.
+- **ToolLayout**: The standard modular wrapper for all tool pages. It handles breadcrumbs, hero section, trust components, features, FAQs, and internal linking.
 
 ### 4. Components
-- **ToolLayout**: Shared wrapper for all tool pages providing consistent navigation and structure.
-- **PremiumToolPage**: Enhanced component for tool pages with premium UI, tabs, and SEO optimization.
-- **SEO Components**: `BreadcrumbsEnhanced`, `QuickActions`, `RelatedTools`, and `UserComments` are integrated into tool pages to boost engagement and rank.
+- **ToolLayout**: Shared wrapper providing consistent structure and SEO-rich content (FAQs, Features, Steps).
+- **DownloaderEngine**: The core interactive component for all video and social media downloaders.
+- **Modular Shared Components**: `ToolTrust`, `ToolFeatures`, `ToolSteps`, and `ToolFAQ` are separate components used within `ToolLayout` for better maintainability.
 
 ## Recent Optimizations
 - **URL Resolution**: Resolved 1057 404 errors by clustering them into existing tool variants or new placeholder tools.

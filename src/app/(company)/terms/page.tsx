@@ -1,64 +1,103 @@
-import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-	title: "Terms of Service | 30Tools",
-	description:
-		"Please read these terms of service carefully before using 30Tools.",
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
+
+export const metadata = {
+  title: "Free Terms Online - No Signup | 30tools",
+  description: "Free Terms online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "terms, free online tool, no signup, others, terms online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/terms",
+  },
+  openGraph: {
+    title: "Free Terms Online - No Signup | 30tools",
+    description: "Free Terms online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/terms",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Terms Online - No Signup | 30tools",
+    description: "Free Terms online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default function TermsPage() {
-	return (
-		<div className="container mx-auto px-4 py-12 md:py-20 max-w-4xl prose prose-slate dark:prose-invert">
-			<h1 className="text-4xl font-bold mb-8">Terms of Service</h1>
+export default async function ToolPage() {
+  const tool = {
+  "id": "terms",
+  "name": "Terms",
+  "description": "Free Terms online tool. Fast and secure.",
+  "route": "/terms",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "others"
+};
+  const breadcrumbs = [
+  {
+    "name": "Others Tools",
+    "url": "/others-tools"
+  },
+  {
+    "name": "Terms",
+    "url": "/terms"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "ai-video-summarizer",
+    "name": "Ai Video Summarizer",
+    "description": "Ai Video Summarizer - Coming Soon",
+    "route": "/ai-video-summarizer",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "all-downloaders",
+    "name": "All Downloaders",
+    "description": "All Downloaders - Coming Soon",
+    "route": "/all-downloaders",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "audio-equalizer",
+    "name": "Audio Equalizer",
+    "description": "Audio Equalizer - Coming Soon",
+    "route": "/audio-equalizer",
+    "extraSlugs": [
+      "audio-tools",
+      "audio-trimmer",
+      "change-audio-format",
+      "mp4-audio-ripper",
+      "optimize-audio-files",
+      "shorten-audio-clip",
+      "split-audio-file"
+    ],
+    "popular": false,
+    "category": "others"
+  }
+];
 
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">1. Acceptance of Terms</h2>
-				<p>
-					By accessing and using 30Tools, you agree to be bound by these Terms
-					of Service and all applicable laws and regulations.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">2. Use License</h2>
-				<p>
-					We provide these tools for personal and professional use. You may not
-					use our services for any illegal activities or to infringe upon the
-					rights of others.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">3. Disclaimer</h2>
-				<p>
-					The materials on 30Tools are provided on an 'as is' basis. 30Tools
-					makes no warranties, expressed or implied, and hereby disclaims all
-					other warranties including, without limitation, implied warranties or
-					conditions of merchantability or fitness for a particular purpose.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">4. Limitations</h2>
-				<p>
-					In no event shall 30Tools or its suppliers be liable for any damages
-					arising out of the use or inability to use the materials on our
-					website.
-				</p>
-			</section>
-
-			<section className="mb-8">
-				<h2 className="text-2xl font-semibold mb-4">5. Governing Law</h2>
-				<p>
-					These terms and conditions are governed by and construed in accordance
-					with the laws, and you irrevocably submit to the exclusive
-					jurisdiction of the courts in that location.
-				</p>
-			</section>
-
-			<footer className="text-sm text-muted-foreground mt-12">
-				Last updated: January 2025
-			</footer>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Terms","description":"Free Terms online tool. Fast and secure.","url":"https://30tools.com/terms","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

@@ -20,12 +20,7 @@
 		"generate-feed": "node scripts/generate-feed.cjs"
 	},
 	"dependencies": {
-		"@emotion/react": "^11.14.0",
-		"@emotion/styled": "^11.14.1",
 		"@google-cloud/translate": "^9.3.0",
-		"@mui/icons-material": "^7.3.9",
-		"@mui/material": "^7.3.9",
-		"@mui/material-nextjs": "^7.3.9",
 		"@opennextjs/cloudflare": "^1.11.0",
 		"@radix-ui/react-accordion": "^1.2.11",
 		"@radix-ui/react-alert-dialog": "^1.1.14",

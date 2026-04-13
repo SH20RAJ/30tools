@@ -1,354 +1,262 @@
-import {
-	BreadcrumbsEnhanced,
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-	ReviewSnippets,
-	UserComments,
-} from "@/components/seo";
-import {
-	GeneratorToolExamples,
-	GeneratorToolFeatures,
-} from "@/components/seo/GeneratorToolsHub";
-import PhotoEnhancerTool from "@/components/tools/image/PhotoEnhancerTool";
-import { getImageToolFAQs } from "@/constants/seo/image-faqs";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import PhotoEnhancerTool from "@/components/tools/image/PhotoEnhancerTool"
 
 export const metadata = {
-	title: "Free Photo Enhancer Online - No Signup | 30tools",
-	description:
-		"Enhance photo quality with AI-powered image enhancement. Fix blur, reduce noise, and upscale images instantly. 100% free, no signup required, fast and secure.",
-	keywords: [
-		"photo enhancer",
-		"photo",
-		"enhancer",
-		"photo-enhancer",
-		"image",
-		"image tool",
-		"free",
-		"online",
-		"tool",
-		"30tools",
-		"no signup",
-		"fast",
-		"secure",
-		"browser-based",
-		"instant",
-		"easy",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Photo Enhancer Online - No Signup | 30tools",
+  description: "Enhance photo quality with AI-powered image enhancement 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "photo enhancer, free online tool, no signup, image, photo enhancer online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/photo-enhancer",
+  },
+  openGraph: {
+    title: "Free Photo Enhancer Online - No Signup | 30tools",
+    description: "Enhance photo quality with AI-powered image enhancement 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/photo-enhancer",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Photo Enhancer Online - No Signup | 30tools",
+    description: "Enhance photo quality with AI-powered image enhancement 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function PhotoEnhancerPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	// Tool-specific data
-	const toolData = {
-		id: "photo-enhancer",
-		name: "Photo Enhancer",
-		description: "Enhance photo quality with AI-powered image enhancement",
-		category: "image",
-		route: "/photo-enhancer",
-		features: [
-			"Supports JPEG, PNG, WebP, GIF, BMP formats",
-			"Batch process multiple images",
-			"High-quality output preservation",
-			"Adjustable quality and compression settings",
-			"100% Free - No hidden costs or subscriptions",
-			"No Registration Required - Start immediately",
-		],
-		benefits: [],
-		useCases: [],
-		faqs: [
-			{
-				question: "Is this Photo Enhancer really free?",
-				answer:
-					"Yes! Our Photo Enhancer is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
-			},
-			{
-				question: "Is my data secure when using Photo Enhancer?",
-				answer:
-					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
-			},
-			{
-				question: "Do I need to create an account to use Photo Enhancer?",
-				answer:
-					"No registration required. You can start using Photo Enhancer immediately without creating an account or providing any personal information.",
-			},
-			{
-				question: "Are there any file size limits for Photo Enhancer?",
-				answer:
-					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
-			},
-			{
-				question: "Can I use Photo Enhancer on mobile devices?",
-				answer:
-					"Yes, Photo Enhancer is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
-			},
-			{
-				question: "What file formats does Photo Enhancer support?",
-				answer:
-					"Photo Enhancer supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
-			},
-		],
-		howTo: {
-			name: "How to Use Photo Enhancer",
-			steps: [
-				{
-					name: "Upload or Input",
-					text: "Provide your file or input data using the upload button or text input field. Photo Enhancer supports drag-and-drop for convenience.",
-					url: "/photo-enhancer#step1",
-					position: 1,
-				},
-				{
-					name: "Configure Settings",
-					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-					url: "/photo-enhancer#step2",
-					position: 2,
-				},
-				{
-					name: "Process & Download",
-					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-					url: "/photo-enhancer#step3",
-					position: 3,
-				},
-			],
-		},
-	};
+export default async function ToolPage() {
+  const tool = {
+  "id": "photo-enhancer",
+  "name": "Photo Enhancer",
+  "description": "Enhance photo quality with AI-powered image enhancement",
+  "route": "/photo-enhancer",
+  "extraSlugs": [
+    "ai-photo-enhancer",
+    "cut-photo",
+    "free-photo-grid-maker",
+    "ig-photo-download-hd",
+    "instagram-profile-photo-hd",
+    "online-photo-editor",
+    "photo-collage-maker",
+    "photo-filter-editor",
+    "photo-quality-improver",
+    "upscale-illustration-online-free"
+  ],
+  "popular": true,
+  "category": "image"
+};
+  const breadcrumbs = [
+  {
+    "name": "Image Tools",
+    "url": "/image-tools"
+  },
+  {
+    "name": "Photo Enhancer",
+    "url": "/photo-enhancer"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "background-remover",
+    "name": "Background Remover",
+    "description": "Remove image backgrounds automatically with AI",
+    "route": "/background-remover",
+    "extraSlugs": [
+      "remove-background-from-signature-free",
+      "transparent-background-maker",
+      "picture-background-eraser",
+      "duplicate-line-remover",
+      "background-gradient-tool",
+      "background-gradient-creator"
+    ],
+    "popular": true,
+    "category": "image"
+  },
+  {
+    "id": "base64-to-image-converter",
+    "name": "Base64 to Image Converter",
+    "description": "Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/base64-to-image-converter",
+    "extraSlugs": [
+      "add-text-to-image",
+      "all-in-one-unit-converter",
+      "audio-converter",
+      "audio-converter-mp3",
+      "avi-file-to-mp4-online",
+      "avi-to-mp4-converter",
+      "avi-video-converter",
+      "base64-encoder-decoder",
+      "base64-image",
+      "base64-to-image",
+      "base64-to-image-converter-tool",
+      "base64-to-text",
+      "base64-tool",
+      "change-audio-format",
+      "change-avi-to-mp4",
+      "change-flv-to-mp4",
+      "change-image-dimensions",
+      "change-m4a-to-mp3",
+      "change-mkv-to-mp4",
+      "change-mov-to-mp4",
+      "change-ogg-to-mp3",
+      "change-pdf-orientation",
+      "change-video-type",
+      "change-wav-to-mp3",
+      "change-webm-to-mp4",
+      "click-to-chat-whatsapp",
+      "compress-files-to-zip",
+      "compress-ogg-to-mp3",
+      "compress-wav-to-mp3",
+      "convert-audio-format",
+      "convert-image-to-jpg",
+      "convert-picture-to-string",
+      "convert-video-format",
+      "date-to-epoch",
+      "decode-base64-image",
+      "document-converter",
+      "docx-to-pdf-converter",
+      "ebook-format-converter",
+      "encode-image-base64",
+      "epoch-converter",
+      "epoch-to-datetime",
+      "epub-converter",
+      "file-converter",
+      "fit-photo-to-instagram-story",
+      "flv-file-to-mp4-online",
+      "flv-to-mp4-converter",
+      "flv-video-converter",
+      "folder-to-zip-converter",
+      "format-html-css-js",
+      "format-sql-online",
+      "free-base64-to-image-converter-online",
+      "image-format-changer",
+      "image-to-base64",
+      "image-to-pdf-converter",
+      "insta-story-size-converter",
+      "instagram-reels-to-mp4",
+      "m4a-audio-converter",
+      "m4a-file-to-mp3-online",
+      "m4a-to-mp3-converter",
+      "m4a-to-mp3-online",
+      "md-html-converter",
+      "md-to-txt-converter",
+      "measurement-converter",
+      "metric-imperial-converter",
+      "mkv-file-to-mp4-online",
+      "mkv-to-mp4-converter",
+      "mkv-video-converter",
+      "mov-file-to-mp4-online",
+      "mov-to-mp4",
+      "mov-to-mp4-converter",
+      "mov-video-converter",
+      "movie-to-mp3-converter",
+      "mp3-converter",
+      "mp3-converter-online",
+      "mp4-audio-converter",
+      "mp4-converter-online",
+      "mp4-to-mp3",
+      "ogg-audio-converter",
+      "ogg-file-to-mp3-online",
+      "ogg-to-mp3-converter",
+      "pdf-to-docx-converter",
+      "pdf-to-epub-converter",
+      "photos-to-pdf-converter",
+      "pptx-to-pdf-converter",
+      "quicktime-to-mp4",
+      "readme-to-html",
+      "save-snaps-to-gallery",
+      "text-fo-base64",
+      "tiktok-aspect-ratio-converter",
+      "tiktok-mp3-converter",
+      "tiktok-music-converter",
+      "tiktok-to-mp3-online",
+      "timestamp-converter",
+      "timezone-converter",
+      "unit-converter",
+      "unix-timestamp-to-date",
+      "uppercase-to-lowercase",
+      "url-string-converter",
+      "url-to-pdf-converter",
+      "usd-to-eur-converter",
+      "video-converter",
+      "video-to-mp3-converter",
+      "wav-audio-converter",
+      "wav-file-to-mp3-online",
+      "wav-to-mp3-converter",
+      "webm-file-to-mp4-online",
+      "webm-to-mp4-converter",
+      "webm-video-converter",
+      "world-clock-converter",
+      "xlsx-to-pdf-converter",
+      "youtube-to-mp3-high-quality",
+      "youtube-to-mp4-converter"
+    ],
+    "popular": false,
+    "category": "image"
+  },
+  {
+    "id": "convert-to-ico",
+    "name": "Convert to ICO",
+    "description": "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/convert-to-ico",
+    "extraSlugs": [
+      "convert-audio-format",
+      "convert-avi-to-mp4",
+      "convert-doc-to-pdf",
+      "convert-epoch-time",
+      "convert-flv-to-mp4",
+      "convert-html-to-pdf",
+      "convert-landscape-to-portrait-video",
+      "convert-m4a-to-mp3",
+      "convert-md-to-html",
+      "convert-mkv-to-mp4",
+      "convert-money-online",
+      "convert-mov-to-mp4",
+      "convert-mp4-to-gif",
+      "convert-mp4-to-mp3",
+      "convert-mp4-video-to-mp3",
+      "convert-ogg-to-mp3",
+      "convert-pdf-to-doc",
+      "convert-picture-to-string",
+      "convert-png-to-favicon",
+      "convert-ppt-to-pdf",
+      "convert-string-to-binary",
+      "convert-text-case",
+      "convert-text-to-audio",
+      "convert-tiktok-to-mp3",
+      "convert-time-across-zones",
+      "convert-time-to-timestamp",
+      "convert-to-epub-online",
+      "convert-to-ico-tool",
+      "convert-units-online",
+      "convert-video-file-to-mp3",
+      "convert-video-format",
+      "convert-wav-to-mp3",
+      "convert-webm-to-mp4",
+      "convert-xls-to-pdf",
+      "free-convert-to-ico-online"
+    ],
+    "popular": false,
+    "category": "image"
+  }
+];
 
-	// Breadcrumb navigation
-	const breadcrumbs = [
-		{ name: "Image Tools", url: "/image-tools" },
-		{ name: "Photo Enhancer", url: "/photo-enhancer" },
-	];
-
-	// Tool features
-	const features = [
-		"AI-powered enhancement",
-		"Fix blurry photos",
-		"Upscale resolution (2x, 4x)",
-		"Reduce image noise",
-		"Color correction",
-		"Face restoration",
-		"Instant processing",
-		"High-quality download",
-	];
-
-	// Usage examples
-	const examples = [
-		{
-			title: "Restore Old Photos",
-			description: "Bring memories back to life",
-			input: "Old, grainy, faded photo",
-			output: "Sharp, vibrant, clear image",
-		},
-		{
-			title: "Fix Blurry Shots",
-			description: "Save out-of-focus pictures",
-			input: "Blurry action shot",
-			output: "Crisp, detailed photograph",
-		},
-		{
-			title: "Upscale for Print",
-			description: "Increase size without pixelation",
-			input: "Small web image (500px)",
-			output: "High-res print image (2000px)",
-		},
-	];
-
-	// FAQ data
-	const faqs = getImageToolFAQs("photo-enhancer");
-
-	// Related tools
-	const relatedTools = [
-		{
-			id: "image-editor",
-			name: "Image Editor",
-			description: "Edit photos with filters and text",
-			route: "/image-editor",
-			category: "image",
-		},
-		{
-			id: "background-remover",
-			name: "Background Remover",
-			description: "Remove image backgrounds automatically",
-			route: "/background-remover",
-			category: "image",
-		},
-		{
-			id: "image-compressor",
-			name: "Image Compressor",
-			description: "Reduce image file size",
-			route: "/image-compressor",
-			category: "image",
-		},
-	];
-
-	return (
-		<div className="min-h-screen bg-background">
-			{/* Enhanced Breadcrumbs with Schema */}
-			<div className="container mx-auto px-4 pt-6">
-				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
-			</div>
-
-			{/* Main Content */}
-			<main className="container mx-auto px-4 py-8">
-				{/* Hero Section */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Free AI Photo Enhancer - Sharpen, Denoise & Upscale
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Transform low-quality photos into high-resolution masterpieces. Our
-						AI automatically fixes blur, reduces noise, restores color, and
-						upscales images in seconds.
-					</p>
-
-					<QuickActions
-						toolName="Photo Enhancer"
-						toolUrl="https://30tools.com/photo-enhancer"
-						showBookmark={true}
-						showShare={true}
-					/>
-				</div>
-
-				{/* Tool Interface */}
-				<div className="mb-12">
-					<PhotoEnhancerTool />
-				</div>
-
-				{/* Key Features */}
-				<GeneratorToolFeatures tool={toolData} features={features} />
-
-				{/* Usage Examples */}
-				<GeneratorToolExamples
-					tool={toolData}
-					examples={examples}
-					title="Enhancement Examples"
-				/>
-
-				{/* User Reviews */}
-				<div className="mb-12">
-					<ReviewSnippets
-						toolId="photo-enhancer"
-						title="User Success Stories"
-						showRatingSummary={true}
-						variant="grid"
-						limit={6}
-					/>
-				</div>
-
-				{/* How to Use Section */}
-				<div className="mb-12 max-w-4xl mx-auto">
-					<h2 className="text-3xl font-bold mb-8 text-center">
-						How to Enhance Photos
-					</h2>
-					<div className="grid md:grid-cols-3 gap-8">
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								1
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Upload Photo</h3>
-							<p className="text-muted-foreground text-sm">
-								Select the image you want to improve. We accept JPG, PNG, and
-								WebP.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								2
-							</div>
-							<h3 className="font-semibold text-lg mb-2">AI Processing</h3>
-							<p className="text-muted-foreground text-sm">
-								Our AI analyzes and enhances your photo automatically in
-								seconds.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								3
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Download</h3>
-							<p className="text-muted-foreground text-sm">
-								Preview the result and download your enhanced, high-quality
-								image.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				{/* FAQ Section */}
-				<div className="mb-12">
-					<FAQSection
-						faqs={faqs}
-						title="Photo Enhancer FAQ"
-						categoryTitle="Image Enhancement"
-						variant="accordion"
-						showSchema={true}
-					/>
-				</div>
-
-				{/* Related Tools */}
-				<div className="mb-12">
-					<RelatedTools
-						currentTool="photo-enhancer"
-						category="image"
-						tools={relatedTools}
-						title="More Image Tools"
-					/>
-				</div>
-
-				{/* User Comments */}
-				<UserComments
-					toolId="photo-enhancer"
-					toolName="Photo Enhancer"
-					showStats={true}
-					allowComments={true}
-				/>
-			</main>
-
-			{/* Structured Data for Tool */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify([
-						{
-							"@context": "https://schema.org",
-							"@type": "HowTo",
-							name: "How to Enhance Photos Online",
-							step: [
-								{
-									"@type": "HowToStep",
-									name: "Upload Photo",
-									text: "Select the image you want to improve. We accept JPG, PNG, and WebP.",
-									url: "https://30tools.com/photo-enhancer#step1",
-								},
-								{
-									"@type": "HowToStep",
-									name: "AI Processing",
-									text: "Our AI analyzes and enhances your photo automatically in seconds.",
-									url: "https://30tools.com/photo-enhancer#step2",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Download",
-									text: "Preview the result and download your enhanced, high-quality image.",
-									url: "https://30tools.com/photo-enhancer#step3",
-								},
-							],
-						},
-					]),
-				}}
-			/>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Photo Enhancer","description":"Enhance photo quality with AI-powered image enhancement","url":"https://30tools.com/photo-enhancer","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <PhotoEnhancerTool />
+      </ToolLayout>
+    </>
+  );
 }

@@ -1,92 +1,104 @@
-import { getAllTools } from "@/constants/tools-utils";
-import SearchPageServer from "./SearchPageServer";
 
-const TOOL_COUNT = getAllTools().length;
+import ToolLayout from "@/components/tools/shared/ToolLayout";
 
-return {
-		title,
-		description,
-		keywords:
-			"search tools, online tools, image compressor, video converter, pdf tools, seo tools, developer tools, search free tools, file converter, online utilities",
-		openGraph: {
-			title,
-			description,
-			type: "website",
-			url: `https://30tools.com/search${query ? `?q=${query}` : ""}${category !== "all" ? `${query ? "&" : "?"}category=${category}` : ""}`,
-		},
-		alternates: {
-			canonical: "https://30tools.com/search",
-		},
-	};
-}
 
 export const metadata = {
-	title: "Free Search Online - No Signup | 30tools",
-	description:
-		"Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-	robots: { index: true, follow: true },
+  title: "Free Search Online - No Signup | 30tools",
+  description: "Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "search, free online tool, no signup, others, search online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/search",
+  },
+  openGraph: {
+    title: "Free Search Online - No Signup | 30tools",
+    description: "Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/search",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Search Online - No Signup | 30tools",
+    description: "Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function SearchPage({ searchParams }) {
-	// Await searchParams to fix Next.js 15 async APIs
-	const params = await searchParams;
+export default async function ToolPage() {
+  const tool = {
+  "id": "search",
+  "name": "Search",
+  "description": "Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+  "route": "/search",
+  "extraSlugs": [
+    "search"
+  ],
+  "category": "others"
+};
+  const breadcrumbs = [
+  {
+    "name": "Others Tools",
+    "url": "/others-tools"
+  },
+  {
+    "name": "Search",
+    "url": "/search"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "ai-video-summarizer",
+    "name": "Ai Video Summarizer",
+    "description": "Ai Video Summarizer - Coming Soon",
+    "route": "/ai-video-summarizer",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "all-downloaders",
+    "name": "All Downloaders",
+    "description": "All Downloaders - Coming Soon",
+    "route": "/all-downloaders",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "others"
+  },
+  {
+    "id": "audio-equalizer",
+    "name": "Audio Equalizer",
+    "description": "Audio Equalizer - Coming Soon",
+    "route": "/audio-equalizer",
+    "extraSlugs": [
+      "audio-tools",
+      "audio-trimmer",
+      "change-audio-format",
+      "mp4-audio-ripper",
+      "optimize-audio-files",
+      "shorten-audio-clip",
+      "split-audio-file"
+    ],
+    "popular": false,
+    "category": "others"
+  }
+];
 
-	// Get all tools server-side
-	const allTools = getAllTools();
-
-	// Get search parameters
-	const query = params?.q || "";
-	const category = params?.category || "all";
-	const premium = params?.premium === "true";
-
-	// Server-side filtering for initial results
-	let filteredTools = allTools;
-
-	if (query) {
-		const searchTerm = query.toLowerCase();
-		filteredTools = allTools.filter(
-			(tool) =>
-				tool.name.toLowerCase().includes(searchTerm) ||
-				tool.description.toLowerCase().includes(searchTerm) ||
-				tool.category.toLowerCase().includes(searchTerm),
-		);
-	}
-
-	if (category && category !== "all") {
-		filteredTools = filteredTools.filter((tool) => tool.category === category);
-	}
-
-	if (premium) {
-		filteredTools = filteredTools.filter((tool) => tool.premium === true);
-	}
-
-	// Create JSON-LD structured data for SEO
-	const jsonLd = {
-		"@context": "https://schema.org",
-		"@type": "WebPage",
-		name: `Search ${TOOL_COUNT}+ Free Online Tools | 30tools`,
-		description: `Search ${TOOL_COUNT}+ free online tools. Find image compressors, video converters, PDF tools, SEO tools, developer utilities, and more.`,
-		url: "https://30tools.com/search",
-		potentialAction: {
-			"@type": "SearchAction",
-			target: "https://30tools.com/search?q={search_term_string}",
-			"query-input": "required name=search_term_string",
-		},
-	};
-
-	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-			/>
-			<SearchPageServer
-				initialTools={filteredTools}
-				initialQuery={query}
-				initialCategory={category}
-				initialPremium={premium}
-				allTools={allTools}
-			/>
-		</>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Search","description":"Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.","url":"https://30tools.com/search","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

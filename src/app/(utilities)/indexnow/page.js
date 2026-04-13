@@ -1,72 +1,107 @@
-import { Globe } from "lucide-react";
-import IndexNowClient from "@/components/tools/general/IndexNowClient";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Free IndexNow Submitter Online - No Signup | 30tools",
-	description:
-		"Free utility tools: IndexNow Submitter. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your bro",
-	keywords: [
-		"indexnow submitter",
-		"indexnow submitter free",
-		"indexnow submitter online",
-		"indexnow submitter tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free IndexNow Submitter Online - No Signup | 30tools",
+  description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "indexnow submitter, free online tool, no signup, utilities, indexnow submitter online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/indexnow",
+  },
+  openGraph: {
+    title: "Free IndexNow Submitter Online - No Signup | 30tools",
+    description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/indexnow",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free IndexNow Submitter Online - No Signup | 30tools",
+    description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "WebApplication",
-	name: "IndexNow Tool",
-	description:
-		"Submit URLs to search engines instantly using IndexNow protocol.",
-	url: "https://30tools.com/indexnow",
-	applicationCategory: "UtilityApplication",
-	operatingSystem: "Any",
-	permissions: "internet",
-	offers: {
-		"@type": "Offer",
-		price: "0",
-		priceCurrency: "USD",
-	},
-	author: {
-		"@type": "Organization",
-		name: "30tools",
-		url: "https://30tools.com",
-	},
+export default async function ToolPage() {
+  const tool = {
+  "id": "indexnow-submitter",
+  "name": "IndexNow Submitter",
+  "description": "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
+  "route": "/indexnow",
+  "extraSlugs": [
+    "submit-url-to-bing-instantly",
+    "indexnow-api-tool"
+  ],
+  "popular": false,
+  "category": "utilities"
 };
+  const breadcrumbs = [
+  {
+    "name": "Utilities Tools",
+    "url": "/utilities-tools"
+  },
+  {
+    "name": "IndexNow Submitter",
+    "url": "/indexnow"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "adsense-calculator",
+    "name": "Adsense Calculator",
+    "description": "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/adsense-calculator",
+    "extraSlugs": [
+      "free-adsense-calculator-online",
+      "adsense-calculator-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  },
+  {
+    "id": "age-calculator",
+    "name": "Age Calculator",
+    "description": "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/age-calculator",
+    "extraSlugs": [
+      "free-age-calculator-online",
+      "age-calculator-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  },
+  {
+    "id": "angle-converter",
+    "name": "Angle Converter",
+    "description": "Free angle converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/angle-converter",
+    "extraSlugs": [
+      "free-angle-converter-online",
+      "angle-converter-tool"
+    ],
+    "popular": false,
+    "category": "utilities"
+  }
+];
 
-export default async function IndexNowPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	return (
-		<div className="min-h-screen bg-background py-12">
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-			/>
-			<div className="container mx-auto px-4 max-w-4xl">
-				<div className="text-center mb-8">
-					<h1 className="text-4xl font-bold mb-4 flex items-center justify-center gap-2">
-						<Globe className="w-10 h-10 text-primary" />
-						IndexNow Integration
-					</h1>
-					<p className="text-xl text-muted-foreground">
-						Submit URLs to search engines instantly using IndexNow protocol
-					</p>
-				</div>
-				<IndexNowClient />
-			</div>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"IndexNow Submitter","description":"Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.","url":"https://30tools.com/indexnow","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

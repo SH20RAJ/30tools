@@ -1,344 +1,217 @@
-import {
-	BreadcrumbsEnhanced,
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-	ReviewSnippets,
-	UserComments,
-} from "@/components/seo";
-import {
-	GeneratorToolExamples,
-	GeneratorToolFeatures,
-} from "@/components/seo/GeneratorToolsHub";
-import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGeneratorTool";
-import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGeneratorTool"
 
 export const metadata = {
-	title: "Free AI Voice Generator Online - No Signup | 30tools",
-	description:
-		"Convert text to natural-sounding speech with our free AI voice generator. Choose from multiple voices, languages, and download high-quality audio instantly. No signup required, unlimited usage, and secure browser-based processing. Try now!",
-	keywords: [
-		"ai voice generator",
-		"ai voice generator free",
-		"ai voice generator online",
-		"ai voice generator tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free AI Voice Generator Online - No Signup | 30tools",
+  description: "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "ai voice generator, free online tool, no signup, generators, ai voice generator online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/ai-voice-generator",
+  },
+  openGraph: {
+    title: "Free AI Voice Generator Online - No Signup | 30tools",
+    description: "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/ai-voice-generator",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free AI Voice Generator Online - No Signup | 30tools",
+    description: "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function AIVoiceGeneratorPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	// Tool-specific data
-	const toolData = {
-		id: "ai-voice-generator",
-		name: "AI Voice Generator",
-		description:
-			"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
-		category: "generators",
-		route: "/ai-voice-generator",
-		features: [
-			"100% Free - No hidden costs or subscriptions",
-			"No Registration Required - Start immediately",
-			"Secure & Private - All processing in your browser",
-			"Fast & Efficient - Get results in seconds",
-			"No File Size Limits - Handle large files easily",
-			"Mobile Friendly - Works on all devices",
-		],
-		benefits: [],
-		useCases: [],
-		faqs: [
-			{
-				question: "Is this AI Voice Generator really free?",
-				answer:
-					"Yes! Our AI Voice Generator is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
-			},
-			{
-				question: "Is my data secure when using AI Voice Generator?",
-				answer:
-					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
-			},
-			{
-				question: "Do I need to create an account to use AI Voice Generator?",
-				answer:
-					"No registration required. You can start using AI Voice Generator immediately without creating an account or providing any personal information.",
-			},
-			{
-				question: "Are there any file size limits for AI Voice Generator?",
-				answer:
-					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
-			},
-			{
-				question: "Can I use AI Voice Generator on mobile devices?",
-				answer:
-					"Yes, AI Voice Generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
-			},
-			{
-				question: "What file formats does AI Voice Generator support?",
-				answer:
-					"AI Voice Generator supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
-			},
-		],
-		howTo: {
-			name: "How to Use AI Voice Generator",
-			steps: [
-				{
-					name: "Upload or Input",
-					text: "Provide your file or input data using the upload button or text input field. AI Voice Generator supports drag-and-drop for convenience.",
-					url: "/ai-voice-generator#step1",
-					position: 1,
-				},
-				{
-					name: "Configure Settings",
-					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-					url: "/ai-voice-generator#step2",
-					position: 2,
-				},
-				{
-					name: "Process & Download",
-					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-					url: "/ai-voice-generator#step3",
-					position: 3,
-				},
-			],
-		},
-	};
+export default async function ToolPage() {
+  const tool = {
+  "id": "ai-voice-generator",
+  "name": "AI Voice Generator",
+  "description": "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
+  "route": "/ai-voice-generator",
+  "extraSlugs": [
+    "ai-voice-changer",
+    "ai-voice-creator-online",
+    "ai-voice-reader",
+    "celebrity-voice-generator",
+    "free-ai-voice-over",
+    "realistic-voice-generator",
+    "record-voice-online",
+    "text-to-speech-robotic-voice-free",
+    "voice-recorder"
+  ],
+  "popular": true,
+  "category": "generators"
+};
+  const breadcrumbs = [
+  {
+    "name": "Generators Tools",
+    "url": "/generators-tools"
+  },
+  {
+    "name": "AI Voice Generator",
+    "url": "/ai-voice-generator"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "ai-image-generator",
+    "name": "AI Image Generator",
+    "description": "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing.",
+    "route": "/ai-image-generator",
+    "extraSlugs": [
+      "aesthetic-bio-generator",
+      "aesthetic-collage-maker",
+      "ai-art-generator-online",
+      "ai-business-name-generator",
+      "ai-image-generator-for-beginners",
+      "ai-photo-enhancer",
+      "ai-photo-generator-free",
+      "ai-picture-generator",
+      "ai-picture-generator-no-signup",
+      "ai-poetry-generator",
+      "allow-disallow-generator",
+      "android-icon-maker",
+      "app-icon-generator",
+      "background-gradient-creator",
+      "best-excuse-generator",
+      "box-shadow-generator-online",
+      "brand-colors-generator",
+      "brand-identity-maker",
+      "brand-name-generator",
+      "business-name-generator",
+      "bypass-ai-detection",
+      "change-image-dimensions",
+      "check-image-location",
+      "check-image-seo",
+      "circular-image-crop",
+      "color-palette-generator",
+      "color-wheel-generator",
+      "compress-image-online",
+      "crop-image-online",
+      "css-gradient-generator",
+      "css-gradient-maker",
+      "css-shadow-maker",
+      "css3-gradient-maker",
+      "cut-photo",
+      "delete-image-background",
+      "enhance-image-quality",
+      "excuse-generator",
+      "fake-chat-generator",
+      "fake-discord-chat-generator",
+      "fake-imessage-generator",
+      "fake-instagram-dm-generator",
+      "fake-whatsapp-chat-generator",
+      "favicon-maker-from-image",
+      "free-ai-art-generator",
+      "free-ai-image-generator",
+      "free-photo-grid-maker",
+      "free-poetry-maker",
+      "generate-qr-image",
+      "gradient-color-generator",
+      "gradient-generator",
+      "haiku-generator",
+      "hash-generator",
+      "html-head-tags-maker",
+      "ico-file-generator",
+      "icon-generator",
+      "ig-photo-download-hd",
+      "ig-profile-picture-viewer",
+      "image-color-picker-tool",
+      "image-editor",
+      "image-format-changer",
+      "image-optimization-test",
+      "image-seo-analyzer",
+      "image-size-analyzer",
+      "image-tools",
+      "improve-picture-resolution",
+      "instagram-bio-generator",
+      "instagram-font-generator",
+      "instant-ai-image-creator",
+      "ios-app-icon-creator",
+      "json-ld-generator",
+      "linear-gradient-generator",
+      "love-poem-generator",
+      "lucky-number-generator",
+      "online-collage-maker",
+      "online-thumbnail-creator",
+      "photo-collage-maker",
+      "photo-exif-viewer",
+      "picture-background-eraser",
+      "picture-collage-creator",
+      "poem-generator-ai",
+      "randomness-generator",
+      "reduce-image-size",
+      "remove-background-from-image-free",
+      "resize-image-for-social-media",
+      "resize-image-online",
+      "resize-picture-pixels",
+      "rhyme-generator",
+      "rich-snippets-maker",
+      "scale-image",
+      "secure-hash-generator",
+      "secure-pass-generator",
+      "seo-keyword-generator",
+      "shrink-image-file-size",
+      "simple-ai-image-generator",
+      "startup-name-generator",
+      "stylish-bio-generator",
+      "text-to-image-ai",
+      "text-to-image-free",
+      "tiktok-bio-generator",
+      "upscale-image-online",
+      "view-image-metadata",
+      "web-app-icon-generator",
+      "web-gradient-creator",
+      "web-gradient-generator",
+      "website-icon-generator",
+      "website-map-maker",
+      "yt-thumbnail-maker",
+      "zip-creator"
+    ],
+    "popular": true,
+    "category": "generators"
+  },
+  {
+    "id": "generate-icons-for-apps",
+    "name": "Generate Icons For Apps",
+    "description": "Free Generate Icons For Apps online. Generate Icons For Apps allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+    "route": "/generate-icons-for-apps",
+    "extraSlugs": [
+      "generate-icons-for-apps"
+    ],
+    "category": "generators"
+  },
+  {
+    "id": "generate-secure-password",
+    "name": "Generate Secure Password",
+    "description": "Free Generate Secure Password online. Generate Secure Password allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+    "route": "/generate-secure-password",
+    "extraSlugs": [
+      "generate-secure-password",
+      "secure-password-creator"
+    ],
+    "category": "generators"
+  }
+];
 
-	// Breadcrumb navigation
-	const breadcrumbs = [
-		{ name: "Generators", url: "/generators" },
-		{ name: "AI Voice Generator", url: "/ai-voice-generator" },
-	];
-
-	// Tool features
-	const features = [
-		"Natural-sounding AI voices",
-		"Multiple languages & accents",
-		"Male & Female voice options",
-		"Adjustable speed & pitch",
-		"Instant MP3 download",
-		"Unlimited text conversion",
-		"Commercial use allowed",
-		"No signup required",
-	];
-
-	// Usage examples
-	const examples = [
-		{
-			title: "YouTube Voiceover",
-			description: "Narration for video content",
-			input:
-				"Text: 'Welcome to our channel! Today we're exploring...', Voice: Male (American)",
-			output: "Professional quality voiceover audio file",
-		},
-		{
-			title: "Podcast Intro",
-			description: "Opening segment for podcasts",
-			input:
-				"Text: 'You are listening to The Tech Daily...', Voice: Female (British)",
-			output: "Clear, engaging podcast introduction",
-		},
-		{
-			title: "E-Learning",
-			description: "Educational content narration",
-			input:
-				"Text: 'Chapter 1: Introduction to Biology...', Voice: Female (Calm)",
-			output: "Easy-to-understand educational audio",
-		},
-	];
-
-	// FAQ data
-	const faqs = getGeneratorToolFAQs("ai-voice-generator");
-
-	// Related tools
-	const relatedTools = [
-		{
-			id: "ai-image-generator",
-			name: "AI Image Generator",
-			description: "Create AI art from text",
-			route: "/ai-image-generator",
-			category: "generators",
-		},
-		{
-			id: "text-to-speech",
-			name: "Text to Speech (Pro)",
-			description: "Advanced TTS Tool",
-			route: "/text-to-speech",
-			category: "audio",
-		},
-		{
-			id: "youtube-video-summarizer",
-			name: "Video Summarizer",
-			description: "Summarize YouTube videos",
-			route: "/youtube-video-summarizer",
-			category: "youtube",
-		},
-	];
-
-	return (
-		<div className="min-h-screen bg-background">
-			{/* Enhanced Breadcrumbs with Schema */}
-			<div className="container mx-auto px-4 pt-6">
-				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
-			</div>
-
-			{/* Main Content */}
-			<main className="container mx-auto px-4 py-8">
-				{/* Hero Section */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Free AI Voice Generator - Text to Speech Converter
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Transform your text into lifelike speech with our advanced AI voice
-						generator. Choose from a variety of natural-sounding voices,
-						accents, and languages. Perfect for videos, podcasts, presentations,
-						and more.
-					</p>
-
-					<QuickActions
-						toolName="AI Voice Generator"
-						toolUrl="https://30tools.com/ai-voice-generator"
-						showBookmark={true}
-						showShare={true}
-					/>
-				</div>
-
-				{/* Tool Interface */}
-				<div className="mb-12">
-					<AIVoiceGeneratorTool />
-				</div>
-
-				{/* Key Features */}
-				<GeneratorToolFeatures tool={toolData} features={features} />
-
-				{/* Usage Examples */}
-				<GeneratorToolExamples tool={toolData} examples={examples} />
-
-				{/* User Reviews */}
-				<div className="mb-12">
-					<ReviewSnippets
-						toolId="ai-voice-generator"
-						title="What Creators Say About Our Voice Tool"
-						showRatingSummary={true}
-						variant="grid"
-						limit={6}
-					/>
-				</div>
-
-				{/* How to Use Section */}
-				<div className="mb-12 max-w-4xl mx-auto">
-					<h2 className="text-3xl font-bold mb-8 text-center">
-						How to Convert Text to Speech
-					</h2>
-					<div className="grid md:grid-cols-3 gap-8">
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								1
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Enter Text</h3>
-							<p className="text-muted-foreground text-sm">
-								Type or paste the text you want to convert into the input box.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								2
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Select Voice</h3>
-							<p className="text-muted-foreground text-sm">
-								Choose your preferred language, accent, and voice gender from
-								the options.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								3
-							</div>
-							<h3 className="font-semibold text-lg mb-2">
-								Generate & Download
-							</h3>
-							<p className="text-muted-foreground text-sm">
-								Click generate to hear the audio, then download the MP3 file for
-								your project.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				{/* FAQ Section */}
-				<div className="mb-12">
-					<FAQSection
-						faqs={faqs}
-						title="AI Voice Generator FAQ"
-						categoryTitle="Text to Speech"
-						variant="accordion"
-						showSchema={true}
-					/>
-				</div>
-
-				{/* Related Tools */}
-				<div className="mb-12">
-					<RelatedTools
-						currentTool="ai-voice-generator"
-						category="generators"
-						tools={relatedTools}
-						title="More Creative Generators"
-					/>
-				</div>
-
-				{/* User Comments */}
-				<UserComments
-					toolId="ai-voice-generator"
-					toolName="AI Voice Generator"
-					showStats={true}
-					allowComments={true}
-				/>
-			</main>
-
-			{/* Structured Data for Tool */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify([
-						{
-							"@context": "https://schema.org",
-							"@type": "HowTo",
-							name: "How to Convert Text to Speech",
-							step: [
-								{
-									"@type": "HowToStep",
-									name: "Enter Text",
-									text: "Type or paste the text you want to convert into the input box.",
-									url: "https://30tools.com/ai-voice-generator#step1",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Select Voice",
-									text: "Choose your preferred language, accent, and voice gender from the options.",
-									url: "https://30tools.com/ai-voice-generator#step2",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Generate & Download",
-									text: "Click generate to hear the audio, then download the MP3 file for your project.",
-									url: "https://30tools.com/ai-voice-generator#step3",
-								},
-							],
-						},
-					]),
-				}}
-			/>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Voice Generator","description":"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.","url":"https://30tools.com/ai-voice-generator","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <AIVoiceGeneratorTool />
+      </ToolLayout>
+    </>
+  );
 }

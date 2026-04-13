@@ -1,353 +1,254 @@
-import {
-	BreadcrumbsEnhanced,
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-	ReviewSnippets,
-	UserComments,
-} from "@/components/seo";
-import {
-	GeneratorToolExamples,
-	GeneratorToolFeatures,
-} from "@/components/seo/GeneratorToolsHub";
-import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
-import { getImageToolFAQs } from "@/constants/seo/image-faqs";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ImageConverterTool from "@/components/tools/image/ImageConverterTool"
 
 export const metadata = {
-	title: "Free Image Converter Online - No Signup | 30tools",
-	description:
-		"Convert images between different formats (JPEG, PNG, WebP). 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
-	keywords: [
-		"image converter",
-		"image",
-		"converter",
-		"image-converter",
-		"image tool",
-		"free",
-		"online",
-		"tool",
-		"30tools",
-		"no signup",
-		"fast",
-		"secure",
-		"browser-based",
-		"instant",
-		"easy",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Image Converter Online - No Signup | 30tools",
+  description: "Convert images between different formats (JPEG, PNG, WebP) 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "image converter, free online tool, no signup, image, image converter online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/image-converter",
+  },
+  openGraph: {
+    title: "Free Image Converter Online - No Signup | 30tools",
+    description: "Convert images between different formats (JPEG, PNG, WebP) 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/image-converter",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Image Converter Online - No Signup | 30tools",
+    description: "Convert images between different formats (JPEG, PNG, WebP) 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function ImageConverterPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	// Tool-specific data
-	const toolData = {
-		id: "image-converter",
-		name: "Image Converter",
-		description: "Convert images between different formats (JPEG, PNG, WebP)",
-		category: "image",
-		route: "/image-converter",
-		features: [
-			"Supports JPEG, PNG, WebP, GIF, BMP formats",
-			"Batch process multiple images",
-			"High-quality output preservation",
-			"Adjustable quality and compression settings",
-			"100% Free - No hidden costs or subscriptions",
-			"No Registration Required - Start immediately",
-		],
-		benefits: [],
-		useCases: [],
-		faqs: [
-			{
-				question: "Is this Image Converter really free?",
-				answer:
-					"Yes! Our Image Converter is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations.",
-			},
-			{
-				question: "Is my data secure when using Image Converter?",
-				answer:
-					"Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security.",
-			},
-			{
-				question: "Do I need to create an account to use Image Converter?",
-				answer:
-					"No registration required. You can start using Image Converter immediately without creating an account or providing any personal information.",
-			},
-			{
-				question: "Are there any file size limits for Image Converter?",
-				answer:
-					"There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably.",
-			},
-			{
-				question: "Can I use Image Converter on mobile devices?",
-				answer:
-					"Yes, Image Converter is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser.",
-			},
-			{
-				question: "What file formats does Image Converter support?",
-				answer:
-					"Image Converter supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software.",
-			},
-		],
-		howTo: {
-			name: "How to Use Image Converter",
-			steps: [
-				{
-					name: "Upload or Input",
-					text: "Provide your file or input data using the upload button or text input field. Image Converter supports drag-and-drop for convenience.",
-					url: "/image-converter#step1",
-					position: 1,
-				},
-				{
-					name: "Configure Settings",
-					text: "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
-					url: "/image-converter#step2",
-					position: 2,
-				},
-				{
-					name: "Process & Download",
-					text: "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
-					url: "/image-converter#step3",
-					position: 3,
-				},
-			],
-		},
-	};
+export default async function ToolPage() {
+  const tool = {
+  "id": "image-converter",
+  "name": "Image Converter",
+  "description": "Convert images between different formats (JPEG, PNG, WebP)",
+  "route": "/image-converter",
+  "extraSlugs": [
+    "convert-image-to-embroidery-pattern",
+    "free-image-converter-online"
+  ],
+  "popular": true,
+  "category": "image"
+};
+  const breadcrumbs = [
+  {
+    "name": "Image Tools",
+    "url": "/image-tools"
+  },
+  {
+    "name": "Image Converter",
+    "url": "/image-converter"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "background-remover",
+    "name": "Background Remover",
+    "description": "Remove image backgrounds automatically with AI",
+    "route": "/background-remover",
+    "extraSlugs": [
+      "remove-background-from-signature-free",
+      "transparent-background-maker",
+      "picture-background-eraser",
+      "duplicate-line-remover",
+      "background-gradient-tool",
+      "background-gradient-creator"
+    ],
+    "popular": true,
+    "category": "image"
+  },
+  {
+    "id": "base64-to-image-converter",
+    "name": "Base64 to Image Converter",
+    "description": "Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/base64-to-image-converter",
+    "extraSlugs": [
+      "add-text-to-image",
+      "all-in-one-unit-converter",
+      "audio-converter",
+      "audio-converter-mp3",
+      "avi-file-to-mp4-online",
+      "avi-to-mp4-converter",
+      "avi-video-converter",
+      "base64-encoder-decoder",
+      "base64-image",
+      "base64-to-image",
+      "base64-to-image-converter-tool",
+      "base64-to-text",
+      "base64-tool",
+      "change-audio-format",
+      "change-avi-to-mp4",
+      "change-flv-to-mp4",
+      "change-image-dimensions",
+      "change-m4a-to-mp3",
+      "change-mkv-to-mp4",
+      "change-mov-to-mp4",
+      "change-ogg-to-mp3",
+      "change-pdf-orientation",
+      "change-video-type",
+      "change-wav-to-mp3",
+      "change-webm-to-mp4",
+      "click-to-chat-whatsapp",
+      "compress-files-to-zip",
+      "compress-ogg-to-mp3",
+      "compress-wav-to-mp3",
+      "convert-audio-format",
+      "convert-image-to-jpg",
+      "convert-picture-to-string",
+      "convert-video-format",
+      "date-to-epoch",
+      "decode-base64-image",
+      "document-converter",
+      "docx-to-pdf-converter",
+      "ebook-format-converter",
+      "encode-image-base64",
+      "epoch-converter",
+      "epoch-to-datetime",
+      "epub-converter",
+      "file-converter",
+      "fit-photo-to-instagram-story",
+      "flv-file-to-mp4-online",
+      "flv-to-mp4-converter",
+      "flv-video-converter",
+      "folder-to-zip-converter",
+      "format-html-css-js",
+      "format-sql-online",
+      "free-base64-to-image-converter-online",
+      "image-format-changer",
+      "image-to-base64",
+      "image-to-pdf-converter",
+      "insta-story-size-converter",
+      "instagram-reels-to-mp4",
+      "m4a-audio-converter",
+      "m4a-file-to-mp3-online",
+      "m4a-to-mp3-converter",
+      "m4a-to-mp3-online",
+      "md-html-converter",
+      "md-to-txt-converter",
+      "measurement-converter",
+      "metric-imperial-converter",
+      "mkv-file-to-mp4-online",
+      "mkv-to-mp4-converter",
+      "mkv-video-converter",
+      "mov-file-to-mp4-online",
+      "mov-to-mp4",
+      "mov-to-mp4-converter",
+      "mov-video-converter",
+      "movie-to-mp3-converter",
+      "mp3-converter",
+      "mp3-converter-online",
+      "mp4-audio-converter",
+      "mp4-converter-online",
+      "mp4-to-mp3",
+      "ogg-audio-converter",
+      "ogg-file-to-mp3-online",
+      "ogg-to-mp3-converter",
+      "pdf-to-docx-converter",
+      "pdf-to-epub-converter",
+      "photos-to-pdf-converter",
+      "pptx-to-pdf-converter",
+      "quicktime-to-mp4",
+      "readme-to-html",
+      "save-snaps-to-gallery",
+      "text-fo-base64",
+      "tiktok-aspect-ratio-converter",
+      "tiktok-mp3-converter",
+      "tiktok-music-converter",
+      "tiktok-to-mp3-online",
+      "timestamp-converter",
+      "timezone-converter",
+      "unit-converter",
+      "unix-timestamp-to-date",
+      "uppercase-to-lowercase",
+      "url-string-converter",
+      "url-to-pdf-converter",
+      "usd-to-eur-converter",
+      "video-converter",
+      "video-to-mp3-converter",
+      "wav-audio-converter",
+      "wav-file-to-mp3-online",
+      "wav-to-mp3-converter",
+      "webm-file-to-mp4-online",
+      "webm-to-mp4-converter",
+      "webm-video-converter",
+      "world-clock-converter",
+      "xlsx-to-pdf-converter",
+      "youtube-to-mp3-high-quality",
+      "youtube-to-mp4-converter"
+    ],
+    "popular": false,
+    "category": "image"
+  },
+  {
+    "id": "convert-to-ico",
+    "name": "Convert to ICO",
+    "description": "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
+    "route": "/convert-to-ico",
+    "extraSlugs": [
+      "convert-audio-format",
+      "convert-avi-to-mp4",
+      "convert-doc-to-pdf",
+      "convert-epoch-time",
+      "convert-flv-to-mp4",
+      "convert-html-to-pdf",
+      "convert-landscape-to-portrait-video",
+      "convert-m4a-to-mp3",
+      "convert-md-to-html",
+      "convert-mkv-to-mp4",
+      "convert-money-online",
+      "convert-mov-to-mp4",
+      "convert-mp4-to-gif",
+      "convert-mp4-to-mp3",
+      "convert-mp4-video-to-mp3",
+      "convert-ogg-to-mp3",
+      "convert-pdf-to-doc",
+      "convert-picture-to-string",
+      "convert-png-to-favicon",
+      "convert-ppt-to-pdf",
+      "convert-string-to-binary",
+      "convert-text-case",
+      "convert-text-to-audio",
+      "convert-tiktok-to-mp3",
+      "convert-time-across-zones",
+      "convert-time-to-timestamp",
+      "convert-to-epub-online",
+      "convert-to-ico-tool",
+      "convert-units-online",
+      "convert-video-file-to-mp3",
+      "convert-video-format",
+      "convert-wav-to-mp3",
+      "convert-webm-to-mp4",
+      "convert-xls-to-pdf",
+      "free-convert-to-ico-online"
+    ],
+    "popular": false,
+    "category": "image"
+  }
+];
 
-	// Breadcrumb navigation
-	const breadcrumbs = [
-		{ name: "Image Tools", url: "/image-tools" },
-		{ name: "Image Converter", url: "/image-converter" },
-	];
-
-	// Tool features
-	const features = [
-		"Convert 8+ Formats (JPG, PNG, WebP, etc.)",
-		"HEIC/HEIF Support (iPhone Photos)",
-		"Batch Processing",
-		"Quality Control",
-		"Resize Options",
-		"Secure Local Processing",
-		"No File Size Limits",
-		"100% Free",
-	];
-
-	// Usage examples
-	const examples = [
-		{
-			title: "iPhone Photos",
-			description: "Universal compatibility",
-			input: "HEIC Photos",
-			output: "JPG Images",
-		},
-		{
-			title: "Web Optimization",
-			description: "Faster loading",
-			input: "PNG/JPG Images",
-			output: "WebP Format",
-		},
-		{
-			title: "File Size Reduction",
-			description: "Save storage space",
-			input: "Uncompressed BMP",
-			output: "Compressed JPG",
-		},
-	];
-
-	// FAQ data
-	const faqs = getImageToolFAQs("image-converter");
-
-	// Related tools
-	const relatedTools = [
-		{
-			id: "image-compressor",
-			name: "Image Compressor",
-			description: "Reduce file size",
-			route: "/image-compressor",
-			category: "image",
-		},
-		{
-			id: "image-resizer",
-			name: "Image Resizer",
-			description: "Resize dimensions",
-			route: "/image-resizer",
-			category: "image",
-		},
-		{
-			id: "background-remover",
-			name: "Background Remover",
-			description: "Remove backgrounds",
-			route: "/background-remover",
-			category: "image",
-		},
-	];
-
-	return (
-		<div className="min-h-screen bg-background">
-			{/* Enhanced Breadcrumbs with Schema */}
-			<div className="container mx-auto px-4 pt-6">
-				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
-			</div>
-
-			{/* Main Content */}
-			<main className="container mx-auto px-4 py-8">
-				{/* Hero Section */}
-				<div className="text-center mb-12">
-					<h1 className="text-4xl font-bold mb-4">
-						Free Image Converter - JPG, PNG, WebP, HEIC Online
-					</h1>
-					<p className="text-xl text-muted-foreground mb-6 max-w-4xl mx-auto">
-						Convert your images to the perfect file format instantly. Support
-						for JPG, PNG, WebP, GIF, BMP, TIFF, and HEIC. Batch convert multiple
-						files with custom quality and resize options.
-					</p>
-
-					<QuickActions
-						toolName="Image Converter"
-						toolUrl="https://30tools.com/image-converter"
-						showBookmark={true}
-						showShare={true}
-					/>
-				</div>
-
-				{/* Tool Interface */}
-				<div className="mb-12">
-					<ImageConverterTool />
-				</div>
-
-				{/* Key Features */}
-				<GeneratorToolFeatures tool={toolData} features={features} />
-
-				{/* Usage Examples */}
-				<GeneratorToolExamples
-					tool={toolData}
-					examples={examples}
-					title="Conversion Examples"
-				/>
-
-				{/* User Reviews */}
-				<div className="mb-12">
-					<ReviewSnippets
-						toolId="image-converter"
-						title="User Reviews"
-						showRatingSummary={true}
-						variant="grid"
-						limit={6}
-					/>
-				</div>
-
-				{/* How to Use Section */}
-				<div className="mb-12 max-w-4xl mx-auto">
-					<h2 className="text-3xl font-bold mb-8 text-center">
-						How to Convert Images
-					</h2>
-					<div className="grid md:grid-cols-3 gap-8">
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								1
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Upload</h3>
-							<p className="text-muted-foreground text-sm">
-								Drag & drop your images or click to select files. Supports all
-								major formats.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								2
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Configure</h3>
-							<p className="text-muted-foreground text-sm">
-								Choose your target format, adjust quality, and optionally resize
-								your images.
-							</p>
-						</div>
-						<div className="bg-card p-6 rounded-xl border text-center relative">
-							<div className="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-								3
-							</div>
-							<h3 className="font-semibold text-lg mb-2">Download</h3>
-							<p className="text-muted-foreground text-sm">
-								Convert and download your new images instantly. Batch download
-								available.
-							</p>
-						</div>
-					</div>
-				</div>
-
-				{/* FAQ Section */}
-				<div className="mb-12">
-					<FAQSection
-						faqs={faqs}
-						title="Image Converter FAQ"
-						categoryTitle="Conversion"
-						variant="accordion"
-						showSchema={true}
-					/>
-				</div>
-
-				{/* Related Tools */}
-				<div className="mb-12">
-					<RelatedTools
-						currentTool="image-converter"
-						category="image"
-						tools={relatedTools}
-						title="More Image Tools"
-					/>
-				</div>
-
-				{/* User Comments */}
-				<UserComments
-					toolId="image-converter"
-					toolName="Image Converter"
-					showStats={true}
-					allowComments={true}
-				/>
-			</main>
-
-			{/* Structured Data for Tool */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify([
-						{
-							"@context": "https://schema.org",
-							"@type": "HowTo",
-							name: "How to Convert Images",
-							step: [
-								{
-									"@type": "HowToStep",
-									name: "Upload",
-									text: "Drag & drop your images or click to select files.",
-									url: "https://30tools.com/image-converter#step1",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Configure",
-									text: "Choose your target format, adjust quality, and optionally resize your images.",
-									url: "https://30tools.com/image-converter#step2",
-								},
-								{
-									"@type": "HowToStep",
-									name: "Download",
-									text: "Convert and download your new images instantly.",
-									url: "https://30tools.com/image-converter#step3",
-								},
-							],
-						},
-					]),
-				}}
-			/>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Image Converter","description":"Convert images between different formats (JPEG, PNG, WebP)","url":"https://30tools.com/image-converter","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <ImageConverterTool />
+      </ToolLayout>
+    </>
+  );
 }

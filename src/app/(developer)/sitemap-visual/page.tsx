@@ -1,76 +1,112 @@
-import { ArrowRight } from "lucide-react";
-import Link from "next/link";
-import { getAllCategories, getToolsByCategory } from "@/constants/tools-utils";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+
 
 export const metadata = {
-	title: "Visual Sitemap | 30Tools",
-	description:
-		"Browse all 135+ free online tools available on 30Tools. Find image converters, PDF tools, video downloaders, and more.",
+  title: "Free Sitemap Visual Online - No Signup | 30tools",
+  description: "Free Sitemap Visual online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "sitemap visual, free online tool, no signup, developer, sitemap visual online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/sitemap-visual",
+  },
+  openGraph: {
+    title: "Free Sitemap Visual Online - No Signup | 30tools",
+    description: "Free Sitemap Visual online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/sitemap-visual",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Sitemap Visual Online - No Signup | 30tools",
+    description: "Free Sitemap Visual online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-export default async function VisualSitemapPage({ searchParams }) {
-	const params = await searchParams;
-	const _lang = params.lang || "en";
-	const categories = getAllCategories();
+export default async function ToolPage() {
+  const tool = {
+  "id": "sitemap-visual",
+  "name": "Sitemap Visual",
+  "description": "Free Sitemap Visual online tool. Fast and secure.",
+  "route": "/sitemap-visual",
+  "extraSlugs": [],
+  "popular": false,
+  "category": "developer"
+};
+  const breadcrumbs = [
+  {
+    "name": "Developer Tools",
+    "url": "/developer-tools"
+  },
+  {
+    "name": "Sitemap Visual",
+    "url": "/sitemap-visual"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "amazon-ses-api-key-tester",
+    "name": "Amazon SES API Key Tester",
+    "description": "Test your Amazon SES credentials with the send email endpoint.",
+    "route": "/api-key-tester/amazon-ses",
+    "extraSlugs": [
+      "api-docs",
+      "api-endpoint-tester",
+      "api-tester",
+      "debug-api-requests",
+      "font-tester-tool",
+      "regex-flags-tester",
+      "regex-match-tester",
+      "regex-replace-tester",
+      "regex-tester",
+      "test-rest-api-online"
+    ],
+    "popular": false,
+    "category": "developer"
+  },
+  {
+    "id": "anthropic-api-key-tester",
+    "name": "Anthropic Claude API Key Tester",
+    "description": "Test your Anthropic Claude API key with the messages endpoint.",
+    "route": "/api-key-tester/anthropic",
+    "extraSlugs": [
+      "validate-claude-api-key-online",
+      "anthropic-api-tester"
+    ],
+    "popular": false,
+    "category": "developer"
+  },
+  {
+    "id": "api-key-tester",
+    "name": "API Key Tester",
+    "description": "Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
+    "route": "/api-key-tester",
+    "extraSlugs": [
+      "test-openai-api-key-online-safely",
+      "validate-api-keys-safely"
+    ],
+    "popular": true,
+    "category": "developer"
+  }
+];
 
-	return (
-		<div className="min-h-screen bg-secondary dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
-			<div className="max-w-7xl mx-auto space-y-12">
-				{/* Header */}
-				<div className="text-center space-y-4">
-					<h1 className="text-4xl font-extrabold tracking-tight text-foreground dark:text-white sm:text-5xl">
-						Visual Sitemap
-					</h1>
-					<p className="max-w-2xl mx-auto text-xl text-slate-600 dark:text-slate-400">
-						A complete overview of all free tools available on our platform.
-					</p>
-				</div>
-
-				{/* Categories Grid */}
-				<div className="grid gap-12">
-					{categories.map(({ key, name, description, icon }) => {
-						const tools = getToolsByCategory(key);
-						if (tools.length === 0) return null;
-
-						return (
-							<section key={key} id={key} className="space-y-6">
-								<div className="border-b border-border dark:border-slate-800 pb-4">
-									<h2 className="text-2xl font-bold text-foreground dark:text-white flex items-center gap-2">
-										{/* Render icon if simple string or component */}
-										<span>{name}</span>
-										<span className="text-sm font-normal text-slate-500 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-full">
-											{tools.length}
-										</span>
-									</h2>
-									<p className="text-slate-600 dark:text-slate-400 mt-1">
-										{description}
-									</p>
-								</div>
-
-								<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-									{tools.map((tool: any) => (
-										<Link
-											key={tool.id}
-											href={tool.external ? tool.route : tool.route}
-											className="group relative flex flex-col p-4 bg-white dark:bg-slate-900 rounded-lg border border-border dark:border-slate-800 shadow-sm hover:shadow-md hover:border-blue-500 dark:hover:border-blue-500 transition-all duration-200"
-										>
-											<h3 className="font-semibold text-foreground dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400">
-												{tool.name}
-											</h3>
-											<p className="mt-2 text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
-												{tool.description}
-											</p>
-											<div className="mt-auto pt-4 flex items-center text-xs font-medium text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
-												Go to Tool <ArrowRight className="w-3 h-3 ml-1" />
-											</div>
-										</Link>
-									))}
-								</div>
-							</section>
-						);
-					})}
-				</div>
-			</div>
-		</div>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Sitemap Visual","description":"Free Sitemap Visual online tool. Fast and secure.","url":"https://30tools.com/sitemap-visual","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <div>{/* Tool component placeholder */}</div>
+      </ToolLayout>
+    </>
+  );
 }

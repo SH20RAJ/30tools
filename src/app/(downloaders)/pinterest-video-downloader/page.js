@@ -1,216 +1,100 @@
-import Link from "next/link";
-import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
+
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 
 export const metadata = {
-	title: "Free Pinterest Video Downloader Online - No Signup | 30tools",
-	description:
-		"Free Pinterest Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your b",
-	keywords: [
-		"pinterest video downloader",
-		"pinterest video downloader free",
-		"pinterest video downloader online",
-		"pinterest video downloader tool",
-	],
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
+  title: "Free Pinterest Video Downloader Online - No Signup | 30tools",
+  description: "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, no signup required, and privacy-focused processing in your browser.",
+  keywords: "pinterest video downloader, free online tool, no signup, downloaders, pinterest video downloader online, 30tools",
+  alternates: {
+    canonical: "https://30tools.com/pinterest-video-downloader",
+  },
+  openGraph: {
+    title: "Free Pinterest Video Downloader Online - No Signup | 30tools",
+    description: "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, no signup required, and privacy-focused processing in your browser.",
+    url: "https://30tools.com/pinterest-video-downloader",
+    siteName: "30tools",
+    images: [{ url: "/og-image.jpg" }],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Pinterest Video Downloader Online - No Signup | 30tools",
+    description: "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, no signup required, and privacy-focused processing in your browser.",
+    images: ["/og-image.jpg"],
+  },
+  robots: { index: true, follow: true },
 };
 
-const AdUnit = () => (
-	<div className="my-6 flex justify-center">
-		<ins
-			className="adsbygoogle"
-			style={{ display: "block" }}
-			data-ad-format="autorelaxed"
-			data-ad-client="ca-pub-1828915420581549"
-			data-ad-slot="4669751596"
-		></ins>
-	</div>
-);
-
-const jsonLdSchemas = {
-	webApp: {
-		"@context": "https://schema.org",
-		"@type": "WebApplication",
-		name: "Pinterest Video Downloader",
-		alternateName: ["Pinterest to MP4", "Save Pinterest Video Pin"],
-		description:
-			"Free online tool to download Pinterest videos and video pins as MP4 without watermarks.",
-		url: "https://30tools.com/pinterest-video-downloader",
-		applicationCategory: "MultimediaApplication",
-		operatingSystem: "Any",
-		offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-		featureList: [
-			"Download Pinterest video pins",
-			"No watermarks",
-			"No account required",
-			"Works on all devices",
-		],
-	},
-	howTo: {
-		"@context": "https://schema.org",
-		"@type": "HowTo",
-		name: "How to Download Pinterest Videos",
-		step: [
-			{
-				"@type": "HowToStep",
-				position: 1,
-				name: "Copy Pinterest URL",
-				text: "Find the Pinterest video pin and copy its URL from the browser address bar.",
-			},
-			{
-				"@type": "HowToStep",
-				position: 2,
-				name: "Paste URL",
-				text: "Paste the Pinterest video URL into the 30tools downloader.",
-			},
-			{
-				"@type": "HowToStep",
-				position: 3,
-				name: "Download MP4",
-				text: "Click Download and save the Pinterest video as an MP4 file.",
-			},
-		],
-	},
+export default async function ToolPage() {
+  const tool = {
+  "id": "pinterest-video-downloader",
+  "name": "Pinterest Video Downloader",
+  "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
+  "route": "/pinterest-video-downloader",
+  "extraSlugs": [
+    "how-to-download-pinterest-videos-to-camera-roll",
+    "pinterest-video-download-hd",
+    "pinterest-video-saver-hd",
+    "save-pinterest-video"
+  ],
+  "popular": true,
+  "category": "downloaders"
 };
+  const breadcrumbs = [
+  {
+    "name": "Downloaders Tools",
+    "url": "/downloaders-tools"
+  },
+  {
+    "name": "Pinterest Video Downloader",
+    "url": "/pinterest-video-downloader"
+  }
+];
+  const relatedTools = [
+  {
+    "id": "akillitv-video-downloader",
+    "name": "AkilliTv Video Downloader",
+    "description": "Download AkilliTv videos easily with our free online downloader.",
+    "route": "/akillitv-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  },
+  {
+    "id": "bandcamp-video-downloader",
+    "name": "Bandcamp Video Downloader",
+    "description": "The easiest way to download Bandcamp videos online.",
+    "route": "/bandcamp-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  },
+  {
+    "id": "bilibili-video-downloader",
+    "name": "Bilibili Video Downloader",
+    "description": "Download Bilibili videos online with ease.",
+    "route": "/bilibili-video-downloader",
+    "extraSlugs": [],
+    "popular": false,
+    "category": "downloaders"
+  }
+];
 
-export default async function PinterestVideoDownloaderPage({ searchParams }) {
-	const _params = await searchParams;
-	return (
-		<>
-			<script
-				async
-				src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-				crossOrigin="anonymous"
-			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.webApp),
-				}}
-			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.howTo),
-				}}
-			/>
-			<div className="container mx-auto px-4 py-12 md:py-20">
-				<div className="max-w-6xl mx-auto">
-					<nav aria-label="Breadcrumb" className="mb-8">
-						<ol className="flex items-center space-x-2 text-sm text-muted-foreground">
-							<li>
-								<Link href="/" className="hover:text-primary">
-									Home
-								</Link>
-							</li>
-							<li>/</li>
-							<li>
-								<Link href="/all-downloaders" className="hover:text-primary">
-									Downloaders
-								</Link>
-							</li>
-							<li>/</li>
-							<li className="text-foreground font-medium">
-								Pinterest Video Downloader
-							</li>
-						</ol>
-					</nav>
-					<AdUnit />
-					<div className="text-center mb-12">
-						<h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-							Pinterest Video Downloader Free
-						</h1>
-						<p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-							Save Pinterest video pins as MP4 files for free. Download DIY
-							tutorials, recipe videos, fashion clips, and all Pinterest video
-							content without watermarks. No login needed.
-						</p>
-						<div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-							<span>📌 Video Pins</span>
-							<span>🎨 DIY & Recipes</span>
-							<span>📹 MP4</span>
-							<span>🆓 100% Free</span>
-						</div>
-					</div>
-					<AdUnit />
-					<div className="bg-card rounded-2xl shadow-xl border border-border p-6 md:p-8 mb-16">
-						<UniversalVideoDownloader title="Pinterest Video Downloader" />
-					</div>
-					<section className="mb-16 prose prose-slate dark:prose-invert max-w-none">
-						<h2 className="text-3xl font-bold mb-6">
-							Save Pinterest Video Inspiration Offline
-						</h2>
-						<p className="text-muted-foreground mb-8">
-							Pinterest is a visual discovery engine featuring hundreds of
-							millions of ideas — from DIY crafts and home decor to cooking
-							guides and fashion inspiration, many shared as video pins. Our{" "}
-							<strong>Pinterest Video Downloader</strong> lets you save those
-							creative video pins directly to your device for offline reference.
-						</p>
-						<div className="grid md:grid-cols-3 gap-8 text-left">
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">DIY & Crafts</h3>
-								<p className="text-muted-foreground m-0">
-									Download DIY craft video tutorials from Pinterest to follow
-									step-by-step without needing internet access while you work.
-								</p>
-							</div>
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">Recipe Videos</h3>
-								<p className="text-muted-foreground m-0">
-									Save cooking and baking recipe videos from Pinterest to watch
-									in the kitchen without keeping your phone screen active and
-									burning mobile data.
-								</p>
-							</div>
-							<div className="p-6 bg-card rounded-xl border border-border">
-								<h3 className="text-xl font-bold mb-3 mt-0">Fashion & Style</h3>
-								<p className="text-muted-foreground m-0">
-									Download fashion lookbook videos, styling tutorials, and
-									outfit inspiration from Pinterest for your personal style
-									archive.
-								</p>
-							</div>
-						</div>
-					</section>
-					<section className="mb-16">
-						<h2 className="text-3xl font-bold text-center mb-10">
-							Pinterest Video Downloader FAQs
-						</h2>
-						<div className="max-w-3xl mx-auto space-y-6">
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									How do I get the Pinterest video pin URL?
-								</h3>
-								<p className="text-muted-foreground">
-									Click on a Pinterest video pin to open it. Copy the URL from
-									your browser's address bar (e.g. pinterest.com/pin/...). Paste
-									it into 30tools and click Download.
-								</p>
-							</div>
-							<div className="bg-card border border-border rounded-xl p-6">
-								<h3 className="text-lg font-bold mb-2">
-									Can I download Pinterest videos on iPhone?
-								</h3>
-								<p className="text-muted-foreground">
-									Yes. Open 30tools in Safari on your iPhone, paste the
-									Pinterest URL, click Download, then long-press the video and
-									tap "Save to Photos".
-								</p>
-							</div>
-						</div>
-					</section>
-				</div>
-			</div>
-		</>
-	);
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({"@context":"https://schema.org","@type":"SoftwareApplication","name":"Pinterest Video Downloader","description":"Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.","url":"https://30tools.com/pinterest-video-downloader","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}) }}
+      />
+      
+      <ToolLayout 
+        tool={tool} 
+        breadcrumbs={breadcrumbs}
+        relatedTools={relatedTools}
+      >
+        <DownloaderEngine placeholder="Enter URL to download..." />
+      </ToolLayout>
+    </>
+  );
 }
