@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 import withPWA from "next-pwa";
-import { toolRedirects } from "./scripts/redirects.cjs";
 
 const nextConfig = {
 	// TypeScript configuration
@@ -113,48 +112,7 @@ const nextConfig = {
 		];
 	},
 
-	// Redirects for SEO
-	async redirects() {
-		return [
-			...toolRedirects,
-			{
-				source: "/tool/:slug",
-				destination: "/:slug",
-				permanent: true,
-			},
-			{
-				source: "/tools/:slug",
-				destination: "/:slug",
-				permanent: true,
-			},
-			{
-				source: "/youtube-video-downloader",
-				destination: "/youtube-downloader",
-				permanent: true,
-			},
-			// Legacy/broken link redirects
-			{
-				source: "/more-tools",
-				destination: "/other-tools",
-				permanent: true,
-			},
-			{
-				source: "/video-compressor",
-				destination: "/search?q=video+compressor",
-				permanent: true,
-			},
-			{
-				source: "/color-picker",
-				destination: "/color-converter",
-				permanent: true,
-			},
-			{
-				source: "/base64-tool",
-				destination: "/base64-encode",
-				permanent: true,
-			},
-		];
-	},
+
 
 	// Rewrites for programmatic SEO (keyword variants)
 	async rewrites() {

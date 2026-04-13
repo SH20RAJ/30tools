@@ -60,7 +60,7 @@ function isValidRoute(pathname: string): boolean {
 }
 
 export default function middleware(request: NextRequest) {
-	const { pathname } = request.url;
+	const { pathname } = request.nextUrl;
 
 	// Allow everything that matches valid routes or prefixes
 	if (isValidRoute(pathname)) {
