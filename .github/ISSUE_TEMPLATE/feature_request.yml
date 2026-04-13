@@ -1,0 +1,24 @@
+name: Feature Request / New Tool Proposal
+description: Suggest an idea for 30tools or a new tool to add
+labels: ["enhancement", "new tool"]
+body:
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: Feature / Tool Description
+      description: A clear and concise description of what the feature or tool is.
+      placeholder: I would like to have a tool that does...
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Why is this needed?
+      description: Explain the use case or problem this feature solves.
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context or screenshots about the feature request here.

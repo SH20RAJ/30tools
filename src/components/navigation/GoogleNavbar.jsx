@@ -6,7 +6,6 @@ import { useRouter } from "next/navigation";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import InputBase from "@mui/material/InputBase";
 import Box from "@mui/material/Box";
 import Tooltip from "@mui/material/Tooltip";
 import Avatar from "@mui/material/Avatar";
@@ -15,6 +14,7 @@ import AppsIcon from "@mui/icons-material/Apps";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { GoogleLogo } from "@/components/shared/GoogleLogo";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 export function GoogleNavbar() {
   const router = useRouter();
@@ -33,7 +33,7 @@ export function GoogleNavbar() {
   }, [router]);
 
   return (
-    <AppBar position="sticky" elevation={0}>
+    <AppBar position="sticky" elevation={0} className="bg-background/80 backdrop-blur-md border-b border-border transition-colors duration-300">
       <Toolbar sx={{ gap: 1, px: { xs: 2, md: 3 } }}>
         {/* Logo */}
         <Box sx={{ display: "flex", alignItems: "center", mr: 2 }}>
@@ -44,45 +44,15 @@ export function GoogleNavbar() {
         <Box
           component={Link}
           href="/search"
+          className="hidden md:flex flex-1 max-w-[560px] items-center px-4 py-1.5 rounded-full border border-border bg-secondary/50 hover:bg-secondary hover:border-muted-foreground/30 transition-all duration-200"
           sx={{
-            display: { xs: "none", md: "flex" },
-            flex: 1,
-            maxWidth: 560,
-            alignItems: "center",
-            px: 2,
-            py: 0.75,
-            borderRadius: 100,
-            border: "1px solid",
-            borderColor: "divider",
-            bgcolor: "action.hover",
-            cursor: "text",
             textDecoration: "none",
-            transition: "all 0.15s",
-            boxShadow: "0 1px 2px rgba(0,0,0,0.03)",
-            "&:hover": { borderColor: "text.disabled", bgcolor: "action.selected" },
           }}
         >
-          <SearchIcon sx={{ color: "text.secondary", mr: 1.5, fontSize: 20 }} />
-          <InputBase
-            placeholder="Search tools…"
-            inputProps={{ "aria-label": "search tools", tabIndex: -1 }}
-            sx={{ flex: 1, pointerEvents: "none", fontSize: 14, color: "text.secondary" }}
-          />
+          <SearchIcon className="text-muted-foreground mr-3 w-5 h-5" />
+          <span className="flex-1 text-sm text-muted-foreground">Search tools…</span>
           <Box
-            component="span"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: 0.5,
-              px: 0.75,
-              py: 0.25,
-              border: "1px solid",
-              borderColor: "divider",
-              borderRadius: 1,
-              fontSize: 10,
-              fontWeight: 700,
-              color: "text.disabled",
-            }}
+            className="flex items-center gap-0.5 px-2 py-0.5 border border-border rounded bg-background text-[10px] font-bold text-muted-foreground"
           >
             <span>⌘</span>
             <span>K</span>
@@ -98,19 +68,21 @@ export function GoogleNavbar() {
             component={Link}
             href="/search"
             size="small"
-            sx={{ display: { md: "none" }, borderRadius: "50%" }}
+            className="md:hidden rounded-full text-muted-foreground hover:bg-secondary"
           >
             <SearchIcon fontSize="small" />
           </IconButton>
         </Tooltip>
 
+        <ThemeToggle />
+
         {/* Help */}
         <Tooltip title="Help">
           <IconButton
             size="small"
-            sx={{ display: { xs: "none", sm: "inline-flex" }, borderRadius: "50%" }}
+            className="hidden sm:inline-flex rounded-full text-muted-foreground hover:bg-secondary"
           >
-            <HelpOutlineIcon fontSize="small" sx={{ color: "text.secondary" }} />
+            <HelpOutlineIcon fontSize="small" />
           </IconButton>
         </Tooltip>
 
@@ -122,9 +94,9 @@ export function GoogleNavbar() {
             target="_blank"
             rel="noopener noreferrer"
             size="small"
-            sx={{ borderRadius: "50%" }}
+            className="rounded-full text-muted-foreground hover:bg-secondary"
           >
-            <GitHubIcon fontSize="small" sx={{ color: "text.secondary" }} />
+            <GitHubIcon fontSize="small" />
           </IconButton>
         </Tooltip>
 
@@ -134,35 +106,21 @@ export function GoogleNavbar() {
             component={Link}
             href="/search"
             size="small"
-            sx={{ borderRadius: "50%" }}
+            className="rounded-full text-muted-foreground hover:bg-secondary"
           >
-            <AppsIcon fontSize="small" sx={{ color: "text.secondary" }} />
+            <AppsIcon fontSize="small" />
           </IconButton>
         </Tooltip>
 
         {/* Divider */}
         <Box
-          sx={{
-            width: 1,
-            height: 24,
-            bgcolor: "divider",
-            display: { xs: "none", sm: "block" },
-          }}
+          className="w-px h-6 bg-border hidden sm:block mx-1"
         />
 
         {/* Avatar badge */}
         {mounted && (
           <Avatar
-            sx={{
-              width: 32,
-              height: 32,
-              bgcolor: "primary.main",
-              fontSize: 11,
-              fontWeight: 700,
-              ml: 0.5,
-              border: "2px solid",
-              borderColor: "primary.light",
-            }}
+            className="w-8 h-8 bg-primary text-[11px] font-bold ml-1 border-2 border-primary/20"
           >
             30
           </Avatar>

@@ -400,7 +400,8 @@ Sitemap: https://yoursite.com/sitemap.xml`;
 
 						<Button
 							onClick={generateRobotsTxt}
-							className="w-full bg-muted/500 hover:bg-primary text-white"
+							className="w-full"
+							size="lg"
 						>
 							<Robot className="w-4 h-4 mr-2" />
 							Generate Robots.txt
@@ -410,7 +411,7 @@ Sitemap: https://yoursite.com/sitemap.xml`;
 
 				{/* Generated Output */}
 				<Card className="border-2 border-border/20 shadow-lg">
-					<CardHeader className="bg-background/20 dark:to-purple-900/20">
+					<CardHeader className="bg-background/20">
 						<CardTitle className="text-2xl text-center flex items-center justify-center gap-2">
 							<FileText className="w-6 h-6 text-primary" />
 							Generated Robots.txt
@@ -434,21 +435,21 @@ Sitemap: https://yoursite.com/sitemap.xml`;
 									</Button>
 								</div>
 
-								<div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 max-h-96 overflow-auto">
-									<pre className="text-sm whitespace-pre-wrap break-words font-mono">
+								<div className="bg-secondary/50 rounded-lg p-4 max-h-96 overflow-auto border border-border">
+									<pre className="text-sm whitespace-pre-wrap break-words font-mono text-foreground">
 										{generatedRobots}
 									</pre>
 								</div>
 
-								<div className="bg-muted/50 dark:bg-blue-950/20 border border-border rounded-lg p-4">
-									<h4 className="font-medium text-foreground dark:text-blue-200 mb-2">
+								<div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+									<h4 className="font-medium text-foreground mb-2">
 										Implementation Instructions:
 									</h4>
-									<ol className="text-sm text-primary dark:text-blue-300 space-y-1 list-decimal list-inside">
-										<li>Save the file as "robots.txt" (without quotes)</li>
-										<li>Upload it to your website's root directory</li>
-										<li>Verify it's accessible at yoursite.com/robots.txt</li>
-										<li>Test using Google Search Console</li>
+									<ol className="text-sm text-muted-foreground space-y-1 list-decimal list-inside">
+										<li className="text-foreground/80">Save the file as "robots.txt" (without quotes)</li>
+										<li className="text-foreground/80">Upload it to your website's root directory</li>
+										<li className="text-foreground/80">Verify it's accessible at yoursite.com/robots.txt</li>
+										<li className="text-foreground/80">Test using Google Search Console</li>
 									</ol>
 								</div>
 							</div>

@@ -3,6 +3,7 @@
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 export default function ToolCategoryNavbar({
 	title,
@@ -13,7 +14,7 @@ export default function ToolCategoryNavbar({
 	return (
 		<div className="space-y-4">
 			{/* Main Navigation */}
-			<nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border">
+			<nav className="sticky top-0 z-50 bg-card/95 backdrop-blur-md border-b border-border transition-colors duration-300">
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex justify-between items-center h-16">
 						<Link href="/" className="flex items-center space-x-2 group">
@@ -28,6 +29,7 @@ export default function ToolCategoryNavbar({
 							</span>
 						</Link>
 						<div className="flex items-center space-x-2">
+							<ThemeToggle />
 							<Link href="/other-tools">
 								<Button
 									variant="ghost"
