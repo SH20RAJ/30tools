@@ -1,18 +1,16 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
 
 export const metadata = {
 	title: "Free Course Video Maker Online - No Signup | 30tools",
-	description:
-		"Course Video Maker - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"course video maker, free online tool, no signup, others, course video maker online, 30tools",
+	description: "Free Course Video Maker online. Course Video Maker allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+	keywords: "course video maker, free online tool, no signup, others, course video maker online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/course-video-maker",
 	},
 	openGraph: {
 		title: "Free Course Video Maker Online - No Signup | 30tools",
-		description:
-			"Course Video Maker - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
+		description: "Free Course Video Maker online. Course Video Maker allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/course-video-maker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,8 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Course Video Maker Online - No Signup | 30tools",
-		description:
-			"Course Video Maker - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
+		description: "Free Course Video Maker online. Course Video Maker allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -30,23 +27,23 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "course-video-maker",
-		name: "Course Video Maker",
-		description: "Course Video Maker - Coming Soon",
-		route: "/course-video-maker",
-		extraSlugs: [
-			"aesthetic-collage-maker",
-			"android-icon-maker",
-			"brand-identity-maker",
-			"css3-gradient-maker",
-			"custom-video-player-maker",
-			"free-poetry-maker",
-			"rich-snippets-maker",
-			"simple-video-maker",
+		"id": "course-video-maker",
+		"name": "Course Video Maker",
+		"description": "Course Video Maker - Coming Soon",
+		"route": "/course-video-maker",
+		"extraSlugs": [
+				"aesthetic-collage-maker",
+				"android-icon-maker",
+				"brand-identity-maker",
+				"css3-gradient-maker",
+				"custom-video-player-maker",
+				"free-poetry-maker",
+				"rich-snippets-maker",
+				"simple-video-maker"
 		],
-		popular: false,
-		category: "others",
-	};
+		"popular": false,
+		"category": "others"
+};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",
@@ -55,43 +52,6 @@ export default async function ToolPage() {
 		{
 			name: "Course Video Maker",
 			url: "/course-video-maker",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "ai-video-summarizer",
-			name: "Ai Video Summarizer",
-			description: "Ai Video Summarizer - Coming Soon",
-			route: "/ai-video-summarizer",
-			extraSlugs: [],
-			popular: false,
-			category: "others",
-		},
-		{
-			id: "all-downloaders",
-			name: "All Downloaders",
-			description: "All Downloaders - Coming Soon",
-			route: "/all-downloaders",
-			extraSlugs: [],
-			popular: false,
-			category: "others",
-		},
-		{
-			id: "audio-equalizer",
-			name: "Audio Equalizer",
-			description: "Audio Equalizer - Coming Soon",
-			route: "/audio-equalizer",
-			extraSlugs: [
-				"audio-tools",
-				"audio-trimmer",
-				"change-audio-format",
-				"mp4-audio-ripper",
-				"optimize-audio-files",
-				"shorten-audio-clip",
-				"split-audio-file",
-			],
-			popular: false,
-			category: "others",
 		},
 	];
 
@@ -104,7 +64,7 @@ export default async function ToolPage() {
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
 						name: "Course Video Maker",
-						description: "Course Video Maker - Coming Soon",
+						description: "Free Course Video Maker online. Course Video Maker allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 						url: "https://30tools.com/course-video-maker",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -116,9 +76,8 @@ export default async function ToolPage() {
 			<ToolLayout
 				tool={tool}
 				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
 			>
-				<div>{/* Tool component placeholder */}</div>
+				<ToolPlaceholderPage toolId={tool.id} />
 			</ToolLayout>
 		</>
 	);

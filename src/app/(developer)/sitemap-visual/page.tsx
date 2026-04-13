@@ -1,18 +1,16 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
 
 export const metadata = {
 	title: "Free Sitemap Visual Online - No Signup | 30tools",
-	description:
-		"Free Sitemap Visual online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"sitemap visual, free online tool, no signup, developer, sitemap visual online, 30tools",
+	description: "Free Sitemap Visual online tool. Fast and secure.",
+	keywords: "sitemap visual, free online tool, no signup, developer, sitemap visual online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/sitemap-visual",
 	},
 	openGraph: {
 		title: "Free Sitemap Visual Online - No Signup | 30tools",
-		description:
-			"Free Sitemap Visual online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+		description: "Free Sitemap Visual online tool. Fast and secure.",
 		url: "https://30tools.com/sitemap-visual",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,8 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Sitemap Visual Online - No Signup | 30tools",
-		description:
-			"Free Sitemap Visual online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+		description: "Free Sitemap Visual online tool. Fast and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -30,14 +27,14 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "sitemap-visual",
-		name: "Sitemap Visual",
-		description: "Free Sitemap Visual online tool. Fast and secure.",
-		route: "/sitemap-visual",
-		extraSlugs: [],
-		popular: false,
-		category: "developer",
-	};
+		"id": "sitemap-visual",
+		"name": "Sitemap Visual",
+		"description": "Free Sitemap Visual online tool. Fast and secure.",
+		"route": "/sitemap-visual",
+		"extraSlugs": [],
+		"popular": false,
+		"category": "developer"
+};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",
@@ -46,52 +43,6 @@ export default async function ToolPage() {
 		{
 			name: "Sitemap Visual",
 			url: "/sitemap-visual",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
 		},
 	];
 
@@ -116,9 +67,8 @@ export default async function ToolPage() {
 			<ToolLayout
 				tool={tool}
 				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
 			>
-				<div>{/* Tool component placeholder */}</div>
+				<ToolPlaceholderPage toolId={tool.id} />
 			</ToolLayout>
 		</>
 	);

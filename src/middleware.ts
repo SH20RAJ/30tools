@@ -1,8 +1,9 @@
 import { type NextRequest, NextResponse } from "next/server";
 import { getAllCategories, getAllTools } from "./lib/tools";
 
-// Slug Logic & Valid Routes
+// Route and Redirect Maps
 const validRoutes = new Set<string>();
+const redirectMap = new Map<string, string>();
 
 // Hardcoded static pages
 const staticPages = [
@@ -33,10 +34,15 @@ const allTools = getAllTools();
 for (const tool of allTools) {
 	if (tool.route) {
 		validRoutes.add(tool.route);
-	}
-	if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
-		for (const slug of tool.extraSlugs) {
-			validRoutes.add(`/${slug}`);
+		
+		// Map extraSlugs to the main route
+		if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
+			for (const slug of tool.extraSlugs) {
+				const extraRoute = slug.startsWith('/') ? slug : `/${slug}`;
+				if (extraRoute !== tool.route) {
+					redirectMap.set(extraRoute, tool.route);
+				}
+			}
 		}
 	}
 }
@@ -59,8 +65,16 @@ function isValidRoute(pathname: string): boolean {
 	return allowedPrefixes.some((prefix) => pathname.startsWith(prefix));
 }
 
-export default function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
 	const { pathname } = request.nextUrl;
+
+	// Handle Redirects for extraSlugs
+	if (redirectMap.has(pathname)) {
+		const target = redirectMap.get(pathname)!;
+		return NextResponse.redirect(new URL(target, request.url), {
+			status: 301,
+		});
+	}
 
 	// Allow everything that matches valid routes or prefixes
 	if (isValidRoute(pathname)) {

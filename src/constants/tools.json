@@ -154,7 +154,9 @@
 					"name": "Generate Icons For Apps",
 					"description": "Free Generate Icons For Apps online. Generate Icons For Apps allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/generate-icons-for-apps",
-					"extraSlugs": ["generate-icons-for-apps"],
+					"extraSlugs": [
+						"generate-icons-for-apps"
+					],
 					"category": "generators"
 				},
 				{
@@ -162,7 +164,10 @@
 					"name": "Generate Secure Password",
 					"description": "Free Generate Secure Password online. Generate Secure Password allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/generate-secure-password",
-					"extraSlugs": ["generate-secure-password", "secure-password-creator"],
+					"extraSlugs": [
+						"generate-secure-password",
+						"secure-password-creator"
+					],
 					"category": "generators"
 				},
 				{
@@ -182,7 +187,9 @@
 					"name": "Create Strong Password",
 					"description": "Free Create Strong Password online. Create Strong Password allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/create-strong-password",
-					"extraSlugs": ["create-strong-password"],
+					"extraSlugs": [
+						"create-strong-password"
+					],
 					"category": "generators"
 				},
 				{
@@ -190,7 +197,9 @@
 					"name": "Configurable Password Tool",
 					"description": "Free Configurable Password Tool online. Configurable Password Tool allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/configurable-password-tool",
-					"extraSlugs": ["configurable-password-tool"],
+					"extraSlugs": [
+						"configurable-password-tool"
+					],
 					"category": "generators"
 				},
 				{
@@ -211,7 +220,9 @@
 					"name": "Password Tester Online",
 					"description": "Free Password Tester Online online. Password Tester Online allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/password-tester-online",
-					"extraSlugs": ["password-tester-online"],
+					"extraSlugs": [
+						"password-tester-online"
+					],
 					"category": "generators"
 				},
 				{
@@ -219,7 +230,9 @@
 					"name": "Bypass Ai Detection",
 					"description": "Free Bypass Ai Detection online. Bypass Ai Detection allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/bypass-ai-detection",
-					"extraSlugs": ["bypass-ai-detection"],
+					"extraSlugs": [
+						"bypass-ai-detection"
+					],
 					"category": "generators"
 				},
 				{
@@ -238,7 +251,9 @@
 					"name": "Verify Password Safety",
 					"description": "Free Verify Password Safety online. Verify Password Safety allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/verify-password-safety",
-					"extraSlugs": ["verify-password-safety"],
+					"extraSlugs": [
+						"verify-password-safety"
+					],
 					"category": "generators"
 				},
 				{
@@ -246,7 +261,9 @@
 					"name": "Data Breach Password Search",
 					"description": "Free Data Breach Password Search online. Data Breach Password Search allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/data-breach-password-search",
-					"extraSlugs": ["data-breach-password-search"],
+					"extraSlugs": [
+						"data-breach-password-search"
+					],
 					"category": "generators"
 				},
 				{
@@ -254,7 +271,10 @@
 					"name": "Css3 Gradient Maker",
 					"description": "Free Css3 Gradient Maker online. Css3 Gradient Maker allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/css3-gradient-maker",
-					"extraSlugs": ["css3-gradient-maker", "css3-gradient-tool"],
+					"extraSlugs": [
+						"css3-gradient-maker",
+						"css3-gradient-tool"
+					],
 					"category": "generators"
 				},
 				{
@@ -262,7 +282,9 @@
 					"name": "Web Gradient Creator",
 					"description": "Free Web Gradient Creator online. Web Gradient Creator allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/web-gradient-creator",
-					"extraSlugs": ["web-gradient-creator"],
+					"extraSlugs": [
+						"web-gradient-creator"
+					],
 					"category": "generators"
 				},
 				{
@@ -270,7 +292,9 @@
 					"name": "Brand Identity Maker",
 					"description": "Free Brand Identity Maker online. Brand Identity Maker allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/brand-identity-maker",
-					"extraSlugs": ["brand-identity-maker"],
+					"extraSlugs": [
+						"brand-identity-maker"
+					],
 					"category": "generators"
 				},
 				{
@@ -278,7 +302,9 @@
 					"name": "Generate Random Stuff",
 					"description": "Free Generate Random Stuff online. Generate Random Stuff allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/generate-random-stuff",
-					"extraSlugs": ["generate-random-stuff"],
+					"extraSlugs": [
+						"generate-random-stuff"
+					],
 					"category": "generators"
 				},
 				{
@@ -286,7 +312,9 @@
 					"name": "Generate Payment Url",
 					"description": "Free Generate Payment Url online. Generate Payment Url allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/generate-payment-url",
-					"extraSlugs": ["generate-payment-url"],
+					"extraSlugs": [
+						"generate-payment-url"
+					],
 					"category": "generators"
 				},
 				{
@@ -294,7 +322,9 @@
 					"name": "Website Map Maker",
 					"description": "Free Website Map Maker online. Website Map Maker allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/website-map-maker",
-					"extraSlugs": ["website-map-maker"],
+					"extraSlugs": [
+						"website-map-maker"
+					],
 					"category": "generators"
 				},
 				{
@@ -302,7 +332,9 @@
 					"name": "Rich Snippets Maker",
 					"description": "Free Rich Snippets Maker online. Rich Snippets Maker allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/rich-snippets-maker",
-					"extraSlugs": ["rich-snippets-maker"],
+					"extraSlugs": [
+						"rich-snippets-maker"
+					],
 					"category": "generators"
 				},
 				{
@@ -310,7 +342,9 @@
 					"name": "Html Head Tags Maker",
 					"description": "Free Html Head Tags Maker online. Html Head Tags Maker allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/html-head-tags-maker",
-					"extraSlugs": ["html-head-tags-maker"],
+					"extraSlugs": [
+						"html-head-tags-maker"
+					],
 					"category": "generators"
 				},
 				{
@@ -318,7 +352,9 @@
 					"name": "Company Name Ideas",
 					"description": "Free Company Name Ideas online. Company Name Ideas allows you to generate random content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/company-name-ideas",
-					"extraSlugs": ["company-name-ideas"],
+					"extraSlugs": [
+						"company-name-ideas"
+					],
 					"category": "generators"
 				},
 				{
@@ -630,7 +666,10 @@
 					"name": "Image Enlarger",
 					"description": "Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/image-enlarger",
-					"extraSlugs": ["free-image-enlarger-online", "image-enlarger-tool"],
+					"extraSlugs": [
+						"free-image-enlarger-online",
+						"image-enlarger-tool"
+					],
 					"popular": false,
 					"category": "image"
 				},
@@ -668,7 +707,10 @@
 					"name": "JPG Converter",
 					"description": "Free jpg converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/jpg-converter",
-					"extraSlugs": ["free-jpg-converter-online", "jpg-converter-tool"],
+					"extraSlugs": [
+						"free-jpg-converter-online",
+						"jpg-converter-tool"
+					],
 					"popular": false,
 					"category": "image"
 				},
@@ -948,7 +990,9 @@
 					"name": "Compress Jpeg Png",
 					"description": "Free Compress Jpeg Png online. Compress Jpeg Png allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/compress-jpeg-png",
-					"extraSlugs": ["compress-jpeg-png"],
+					"extraSlugs": [
+						"compress-jpeg-png"
+					],
 					"category": "image"
 				},
 				{
@@ -956,7 +1000,10 @@
 					"name": "Image Format Changer",
 					"description": "Free Image Format Changer online. Image Format Changer allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/image-format-changer",
-					"extraSlugs": ["color-format-changer", "image-format-changer"],
+					"extraSlugs": [
+						"color-format-changer",
+						"image-format-changer"
+					],
 					"category": "image"
 				},
 				{
@@ -964,7 +1011,9 @@
 					"name": "Change Image Dimensions",
 					"description": "Free Change Image Dimensions online. Change Image Dimensions allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/change-image-dimensions",
-					"extraSlugs": ["change-image-dimensions"],
+					"extraSlugs": [
+						"change-image-dimensions"
+					],
 					"category": "image"
 				},
 				{
@@ -972,7 +1021,9 @@
 					"name": "Photo Resizer Free",
 					"description": "Free Photo Resizer Free online. Photo Resizer Free allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/photo-resizer-free",
-					"extraSlugs": ["photo-resizer-free"],
+					"extraSlugs": [
+						"photo-resizer-free"
+					],
 					"category": "image"
 				},
 				{
@@ -980,7 +1031,9 @@
 					"name": "Resize Picture Pixels",
 					"description": "Free Resize Picture Pixels online. Resize Picture Pixels allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/resize-picture-pixels",
-					"extraSlugs": ["resize-picture-pixels"],
+					"extraSlugs": [
+						"resize-picture-pixels"
+					],
 					"category": "image"
 				},
 				{
@@ -999,7 +1052,9 @@
 					"name": "Picture Background Eraser",
 					"description": "Free Picture Background Eraser online. Picture Background Eraser allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/picture-background-eraser",
-					"extraSlugs": ["picture-background-eraser"],
+					"extraSlugs": [
+						"picture-background-eraser"
+					],
 					"category": "image"
 				},
 				{
@@ -1019,7 +1074,10 @@
 					"name": "Edit Pictures Free",
 					"description": "Free Edit Pictures Free online. Edit Pictures Free allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/edit-pictures-free",
-					"extraSlugs": ["edit-pdf-online-free", "edit-pictures-free"],
+					"extraSlugs": [
+						"edit-pdf-online-free",
+						"edit-pictures-free"
+					],
 					"category": "image"
 				},
 				{
@@ -1027,7 +1085,9 @@
 					"name": "Crop And Edit Photos",
 					"description": "Free Crop And Edit Photos online. Crop And Edit Photos allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/crop-and-edit-photos",
-					"extraSlugs": ["crop-and-edit-photos"],
+					"extraSlugs": [
+						"crop-and-edit-photos"
+					],
 					"category": "image"
 				},
 				{
@@ -1035,7 +1095,9 @@
 					"name": "Enhance Image Quality",
 					"description": "Free Enhance Image Quality online. Enhance Image Quality allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/enhance-image-quality",
-					"extraSlugs": ["enhance-image-quality"],
+					"extraSlugs": [
+						"enhance-image-quality"
+					],
 					"category": "image"
 				},
 				{
@@ -1043,7 +1105,9 @@
 					"name": "Improve Picture Resolution",
 					"description": "Free Improve Picture Resolution online. Improve Picture Resolution allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/improve-picture-resolution",
-					"extraSlugs": ["improve-picture-resolution"],
+					"extraSlugs": [
+						"improve-picture-resolution"
+					],
 					"category": "image"
 				},
 				{
@@ -1051,7 +1115,9 @@
 					"name": "Circular Image Crop",
 					"description": "Free Circular Image Crop online. Circular Image Crop allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/circular-image-crop",
-					"extraSlugs": ["circular-image-crop"],
+					"extraSlugs": [
+						"circular-image-crop"
+					],
 					"category": "image"
 				},
 				{
@@ -1059,7 +1125,9 @@
 					"name": "Square Photo Cropper",
 					"description": "Free Square Photo Cropper online. Square Photo Cropper allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/square-photo-cropper",
-					"extraSlugs": ["square-photo-cropper"],
+					"extraSlugs": [
+						"square-photo-cropper"
+					],
 					"category": "image"
 				},
 				{
@@ -1067,7 +1135,9 @@
 					"name": "Free Picture Cropper",
 					"description": "Free Free Picture Cropper online. Free Picture Cropper allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/free-picture-cropper",
-					"extraSlugs": ["free-picture-cropper"],
+					"extraSlugs": [
+						"free-picture-cropper"
+					],
 					"category": "image"
 				},
 				{
@@ -1075,7 +1145,9 @@
 					"name": "Picture Collage Creator",
 					"description": "Free Picture Collage Creator online. Picture Collage Creator allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/picture-collage-creator",
-					"extraSlugs": ["picture-collage-creator"],
+					"extraSlugs": [
+						"picture-collage-creator"
+					],
 					"category": "image"
 				},
 				{
@@ -1109,7 +1181,9 @@
 					"name": "Online Logo Design",
 					"description": "Free Online Logo Design online. Online Logo Design allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/online-logo-design",
-					"extraSlugs": ["online-logo-design"],
+					"extraSlugs": [
+						"online-logo-design"
+					],
 					"category": "image"
 				},
 				{
@@ -1129,7 +1203,9 @@
 					"name": "Favicon Maker From Image",
 					"description": "Free Favicon Maker From Image online. Favicon Maker From Image allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/favicon-maker-from-image",
-					"extraSlugs": ["favicon-maker-from-image"],
+					"extraSlugs": [
+						"favicon-maker-from-image"
+					],
 					"category": "image"
 				},
 				{
@@ -1137,7 +1213,9 @@
 					"name": "Android Icon Maker",
 					"description": "Free Android Icon Maker online. Android Icon Maker allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/android-icon-maker",
-					"extraSlugs": ["android-icon-maker"],
+					"extraSlugs": [
+						"android-icon-maker"
+					],
 					"category": "image"
 				},
 				{
@@ -1145,7 +1223,9 @@
 					"name": "Ios App Icon Creator",
 					"description": "Free Ios App Icon Creator online. Ios App Icon Creator allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/ios-app-icon-creator",
-					"extraSlugs": ["ios-app-icon-creator"],
+					"extraSlugs": [
+						"ios-app-icon-creator"
+					],
 					"category": "image"
 				},
 				{
@@ -1153,7 +1233,9 @@
 					"name": "View Image Metadata",
 					"description": "Free View Image Metadata online. View Image Metadata allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/view-image-metadata",
-					"extraSlugs": ["view-image-metadata"],
+					"extraSlugs": [
+						"view-image-metadata"
+					],
 					"category": "image"
 				},
 				{
@@ -1161,7 +1243,9 @@
 					"name": "Photo Exif Viewer",
 					"description": "Free Photo Exif Viewer online. Photo Exif Viewer allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/photo-exif-viewer",
-					"extraSlugs": ["photo-exif-viewer"],
+					"extraSlugs": [
+						"photo-exif-viewer"
+					],
 					"category": "image"
 				},
 				{
@@ -1169,7 +1253,10 @@
 					"name": "Check Image Location",
 					"description": "Free Check Image Location online. Check Image Location allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-image-location",
-					"extraSlugs": ["check-image-location", "check-image-seo"],
+					"extraSlugs": [
+						"check-image-location",
+						"check-image-seo"
+					],
 					"category": "image"
 				},
 				{
@@ -1189,7 +1276,9 @@
 					"name": "Make Gif From Video",
 					"description": "Free Make Gif From Video online. Make Gif From Video allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/make-gif-from-video",
-					"extraSlugs": ["make-gif-from-video"],
+					"extraSlugs": [
+						"make-gif-from-video"
+					],
 					"category": "image"
 				},
 				{
@@ -1210,7 +1299,9 @@
 					"name": "Compress Javascript Code",
 					"description": "Free Compress Javascript Code online. Compress Javascript Code allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/compress-javascript-code",
-					"extraSlugs": ["compress-javascript-code"],
+					"extraSlugs": [
+						"compress-javascript-code"
+					],
 					"category": "image"
 				},
 				{
@@ -1229,7 +1320,10 @@
 					"name": "Convert Units Online",
 					"description": "Free Convert Units Online online. Convert Units Online allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/convert-units-online",
-					"extraSlugs": ["convert-money-online", "convert-units-online"],
+					"extraSlugs": [
+						"convert-money-online",
+						"convert-units-online"
+					],
 					"category": "image"
 				},
 				{
@@ -1237,7 +1331,10 @@
 					"name": "Compress Files To Zip",
 					"description": "Free Compress Files To Zip online. Compress Files To Zip allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/compress-files-to-zip",
-					"extraSlugs": ["compress-files-to-zip", "zip-files-free"],
+					"extraSlugs": [
+						"compress-files-to-zip",
+						"zip-files-free"
+					],
 					"category": "image"
 				},
 				{
@@ -1245,7 +1342,10 @@
 					"name": "Convert Time Across Zones",
 					"description": "Free Convert Time Across Zones online. Convert Time Across Zones allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/convert-time-across-zones",
-					"extraSlugs": ["convert-epoch-time", "convert-time-across-zones"],
+					"extraSlugs": [
+						"convert-epoch-time",
+						"convert-time-across-zones"
+					],
 					"category": "image"
 				},
 				{
@@ -1253,7 +1353,9 @@
 					"name": "Image Optimization Test",
 					"description": "Free Image Optimization Test online. Image Optimization Test allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/image-optimization-test",
-					"extraSlugs": ["image-optimization-test"],
+					"extraSlugs": [
+						"image-optimization-test"
+					],
 					"category": "image"
 				},
 				{
@@ -1261,7 +1363,9 @@
 					"name": "Generate Qr Image",
 					"description": "Free Generate Qr Image online. Generate Qr Image allows you to compress, convert, and edit images quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/generate-qr-image",
-					"extraSlugs": ["generate-qr-image"],
+					"extraSlugs": [
+						"generate-qr-image"
+					],
 					"category": "image"
 				},
 				{
@@ -1551,7 +1655,10 @@
 					"name": "Text Repeater",
 					"description": "Free text repeater tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/text-repeater",
-					"extraSlugs": ["free-text-repeater-online", "text-repeater-tool"],
+					"extraSlugs": [
+						"free-text-repeater-online",
+						"text-repeater-tool"
+					],
 					"popular": false,
 					"category": "text"
 				},
@@ -1560,7 +1667,10 @@
 					"name": "Text Reverser",
 					"description": "Reverse text, words, or lines instantly",
 					"route": "/text-reverser",
-					"extraSlugs": ["reverse-text-in-excel", "backwards-text-generator"],
+					"extraSlugs": [
+						"reverse-text-in-excel",
+						"backwards-text-generator"
+					],
 					"popular": false,
 					"category": "text"
 				},
@@ -1569,7 +1679,10 @@
 					"name": "Text Sorter",
 					"description": "Free text sorter tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/text-sorter",
-					"extraSlugs": ["free-text-sorter-online", "text-sorter-tool"],
+					"extraSlugs": [
+						"free-text-sorter-online",
+						"text-sorter-tool"
+					],
 					"popular": false,
 					"category": "text"
 				},
@@ -1649,7 +1762,9 @@
 					"name": "Remove Bg Online",
 					"description": "Free Remove Bg Online online. Remove Bg Online allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/remove-bg-online",
-					"extraSlugs": ["remove-bg-online"],
+					"extraSlugs": [
+						"remove-bg-online"
+					],
 					"category": "text"
 				},
 				{
@@ -1657,7 +1772,9 @@
 					"name": "Ico File Generator",
 					"description": "Free Ico File Generator online. Ico File Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/ico-file-generator",
-					"extraSlugs": ["ico-file-generator"],
+					"extraSlugs": [
+						"ico-file-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -1665,7 +1782,9 @@
 					"name": "Duplicate Line Remover",
 					"description": "Free Duplicate Line Remover online. Duplicate Line Remover allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/duplicate-line-remover",
-					"extraSlugs": ["duplicate-line-remover"],
+					"extraSlugs": [
+						"duplicate-line-remover"
+					],
 					"category": "text"
 				},
 				{
@@ -1699,7 +1818,9 @@
 					"name": "Duplicate Content Finder",
 					"description": "Free Duplicate Content Finder online. Duplicate Content Finder allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/duplicate-content-finder",
-					"extraSlugs": ["duplicate-content-finder"],
+					"extraSlugs": [
+						"duplicate-content-finder"
+					],
 					"category": "text"
 				},
 				{
@@ -1725,7 +1846,9 @@
 					"name": "Read Text Aloud",
 					"description": "Free Read Text Aloud online. Read Text Aloud allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/read-text-aloud",
-					"extraSlugs": ["read-text-aloud"],
+					"extraSlugs": [
+						"read-text-aloud"
+					],
 					"category": "text"
 				},
 				{
@@ -1733,7 +1856,10 @@
 					"name": "Character Count Tool",
 					"description": "Free Character Count Tool online. Character Count Tool allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/character-count-tool",
-					"extraSlugs": ["character-count-tool", "tweet-character-count"],
+					"extraSlugs": [
+						"character-count-tool",
+						"tweet-character-count"
+					],
 					"category": "text"
 				},
 				{
@@ -1741,7 +1867,9 @@
 					"name": "Check Word Count",
 					"description": "Free Check Word Count online. Check Word Count allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-word-count",
-					"extraSlugs": ["check-word-count"],
+					"extraSlugs": [
+						"check-word-count"
+					],
 					"category": "text"
 				},
 				{
@@ -1749,7 +1877,10 @@
 					"name": "Calculate Text Length",
 					"description": "Free Calculate Text Length online. Calculate Text Length allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/calculate-text-length",
-					"extraSlugs": ["calculate-text-complexity", "calculate-text-length"],
+					"extraSlugs": [
+						"calculate-text-complexity",
+						"calculate-text-length"
+					],
 					"category": "text"
 				},
 				{
@@ -1757,7 +1888,9 @@
 					"name": "Convert Text Case",
 					"description": "Free Convert Text Case online. Convert Text Case allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/convert-text-case",
-					"extraSlugs": ["convert-text-case"],
+					"extraSlugs": [
+						"convert-text-case"
+					],
 					"category": "text"
 				},
 				{
@@ -1778,7 +1911,9 @@
 					"name": "Sentence Case Tool",
 					"description": "Free Sentence Case Tool online. Sentence Case Tool allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/sentence-case-tool",
-					"extraSlugs": ["sentence-case-tool"],
+					"extraSlugs": [
+						"sentence-case-tool"
+					],
 					"category": "text"
 				},
 				{
@@ -1786,7 +1921,10 @@
 					"name": "Secure Pass Generator",
 					"description": "Free Secure Pass Generator online. Secure Pass Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/secure-pass-generator",
-					"extraSlugs": ["secure-hash-generator", "secure-pass-generator"],
+					"extraSlugs": [
+						"secure-hash-generator",
+						"secure-pass-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -1794,7 +1932,10 @@
 					"name": "Filler Text Maker",
 					"description": "Free Filler Text Maker online. Filler Text Maker allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/filler-text-maker",
-					"extraSlugs": ["fake-text-message-maker", "filler-text-maker"],
+					"extraSlugs": [
+						"fake-text-message-maker",
+						"filler-text-maker"
+					],
 					"category": "text"
 				},
 				{
@@ -1802,7 +1943,9 @@
 					"name": "Generate Placeholder Text",
 					"description": "Free Generate Placeholder Text online. Generate Placeholder Text allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/generate-placeholder-text",
-					"extraSlugs": ["generate-placeholder-text"],
+					"extraSlugs": [
+						"generate-placeholder-text"
+					],
 					"category": "text"
 				},
 				{
@@ -1810,7 +1953,10 @@
 					"name": "Find Text Differences",
 					"description": "Free Find Text Differences online. Find Text Differences allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/find-text-differences",
-					"extraSlugs": ["find-emails-in-text", "find-text-differences"],
+					"extraSlugs": [
+						"find-emails-in-text",
+						"find-text-differences"
+					],
 					"category": "text"
 				},
 				{
@@ -1830,7 +1976,9 @@
 					"name": "Remove Extra Spaces",
 					"description": "Free Remove Extra Spaces online. Remove Extra Spaces allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/remove-extra-spaces",
-					"extraSlugs": ["remove-extra-spaces"],
+					"extraSlugs": [
+						"remove-extra-spaces"
+					],
 					"category": "text"
 				},
 				{
@@ -1838,7 +1986,9 @@
 					"name": "Fix Text Spacing",
 					"description": "Free Fix Text Spacing online. Fix Text Spacing allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/fix-text-spacing",
-					"extraSlugs": ["fix-text-spacing"],
+					"extraSlugs": [
+						"fix-text-spacing"
+					],
 					"category": "text"
 				},
 				{
@@ -1846,7 +1996,9 @@
 					"name": "Remove Duplicate Lines",
 					"description": "Free Remove Duplicate Lines online. Remove Duplicate Lines allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/remove-duplicate-lines",
-					"extraSlugs": ["remove-duplicate-lines"],
+					"extraSlugs": [
+						"remove-duplicate-lines"
+					],
 					"category": "text"
 				},
 				{
@@ -1854,7 +2006,9 @@
 					"name": "Delete Duplicate Text",
 					"description": "Free Delete Duplicate Text online. Delete Duplicate Text allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/delete-duplicate-text",
-					"extraSlugs": ["delete-duplicate-text"],
+					"extraSlugs": [
+						"delete-duplicate-text"
+					],
 					"category": "text"
 				},
 				{
@@ -1862,7 +2016,9 @@
 					"name": "Binary Code Translator",
 					"description": "Free Binary Code Translator online. Binary Code Translator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/binary-code-translator",
-					"extraSlugs": ["binary-code-translator"],
+					"extraSlugs": [
+						"binary-code-translator"
+					],
 					"category": "text"
 				},
 				{
@@ -1870,7 +2026,9 @@
 					"name": "Humanize Chatgpt Text",
 					"description": "Free Humanize Chatgpt Text online. Humanize Chatgpt Text allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/humanize-chatgpt-text",
-					"extraSlugs": ["humanize-chatgpt-text"],
+					"extraSlugs": [
+						"humanize-chatgpt-text"
+					],
 					"category": "text"
 				},
 				{
@@ -1878,7 +2036,10 @@
 					"name": "Ai Text Rewriter",
 					"description": "Free Ai Text Rewriter online. Ai Text Rewriter allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/ai-text-rewriter",
-					"extraSlugs": ["ai-text-rewriter", "make-ai-text-human"],
+					"extraSlugs": [
+						"ai-text-rewriter",
+						"make-ai-text-human"
+					],
 					"category": "text"
 				},
 				{
@@ -1886,7 +2047,9 @@
 					"name": "Remove Markdown Formatting",
 					"description": "Free Remove Markdown Formatting online. Remove Markdown Formatting allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/remove-markdown-formatting",
-					"extraSlugs": ["remove-markdown-formatting"],
+					"extraSlugs": [
+						"remove-markdown-formatting"
+					],
 					"category": "text"
 				},
 				{
@@ -1894,7 +2057,9 @@
 					"name": "Extract Email Addresses",
 					"description": "Free Extract Email Addresses online. Extract Email Addresses allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/extract-email-addresses",
-					"extraSlugs": ["extract-email-addresses"],
+					"extraSlugs": [
+						"extract-email-addresses"
+					],
 					"category": "text"
 				},
 				{
@@ -1902,7 +2067,9 @@
 					"name": "Ebook Format Converter",
 					"description": "Free Ebook Format Converter online. Ebook Format Converter allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/ebook-format-converter",
-					"extraSlugs": ["ebook-format-converter"],
+					"extraSlugs": [
+						"ebook-format-converter"
+					],
 					"category": "text"
 				},
 				{
@@ -1910,7 +2077,9 @@
 					"name": "Base64 Encoder Decoder",
 					"description": "Free Base64 Encoder Decoder online. Base64 Encoder Decoder allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/base64-encoder-decoder",
-					"extraSlugs": ["base64-encoder-decoder"],
+					"extraSlugs": [
+						"base64-encoder-decoder"
+					],
 					"category": "text"
 				},
 				{
@@ -1918,7 +2087,9 @@
 					"name": "Text Fo Base64",
 					"description": "Free Text Fo Base64 online. Text Fo Base64 allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/text-fo-base64",
-					"extraSlugs": ["text-fo-base64"],
+					"extraSlugs": [
+						"text-fo-base64"
+					],
 					"category": "text"
 				},
 				{
@@ -1926,7 +2097,9 @@
 					"name": "Url String Converter",
 					"description": "Free Url String Converter online. Url String Converter allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/url-string-converter",
-					"extraSlugs": ["url-string-converter"],
+					"extraSlugs": [
+						"url-string-converter"
+					],
 					"category": "text"
 				},
 				{
@@ -1934,7 +2107,9 @@
 					"name": "Hex Color Finder",
 					"description": "Free Hex Color Finder online. Hex Color Finder allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/hex-color-finder",
-					"extraSlugs": ["hex-color-finder"],
+					"extraSlugs": [
+						"hex-color-finder"
+					],
 					"category": "text"
 				},
 				{
@@ -1942,7 +2117,10 @@
 					"name": "Brand Colors Generator",
 					"description": "Free Brand Colors Generator online. Brand Colors Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/brand-colors-generator",
-					"extraSlugs": ["brand-colors-generator", "brand-name-generator"],
+					"extraSlugs": [
+						"brand-colors-generator",
+						"brand-name-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -1950,7 +2128,9 @@
 					"name": "Random Color Schemes",
 					"description": "Free Random Color Schemes online. Random Color Schemes allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/random-color-schemes",
-					"extraSlugs": ["random-color-schemes"],
+					"extraSlugs": [
+						"random-color-schemes"
+					],
 					"category": "text"
 				},
 				{
@@ -1958,7 +2138,9 @@
 					"name": "All In One Unit Converter",
 					"description": "Free All In One Unit Converter online. All In One Unit Converter allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/all-in-one-unit-converter",
-					"extraSlugs": ["all-in-one-unit-converter"],
+					"extraSlugs": [
+						"all-in-one-unit-converter"
+					],
 					"category": "text"
 				},
 				{
@@ -1966,7 +2148,9 @@
 					"name": "Metric Imperial Converter",
 					"description": "Free Metric Imperial Converter online. Metric Imperial Converter allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/metric-imperial-converter",
-					"extraSlugs": ["metric-imperial-converter"],
+					"extraSlugs": [
+						"metric-imperial-converter"
+					],
 					"category": "text"
 				},
 				{
@@ -1974,7 +2158,9 @@
 					"name": "Random Number Picker",
 					"description": "Free Random Number Picker online. Random Number Picker allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/random-number-picker",
-					"extraSlugs": ["random-number-picker"],
+					"extraSlugs": [
+						"random-number-picker"
+					],
 					"category": "text"
 				},
 				{
@@ -1982,7 +2168,9 @@
 					"name": "Lucky Number Generator",
 					"description": "Free Lucky Number Generator online. Lucky Number Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/lucky-number-generator",
-					"extraSlugs": ["lucky-number-generator"],
+					"extraSlugs": [
+						"lucky-number-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -1990,7 +2178,9 @@
 					"name": "World Clock Converter",
 					"description": "Free World Clock Converter online. World Clock Converter allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/world-clock-converter",
-					"extraSlugs": ["world-clock-converter"],
+					"extraSlugs": [
+						"world-clock-converter"
+					],
 					"category": "text"
 				},
 				{
@@ -1998,7 +2188,9 @@
 					"name": "Extract Hyperlinks",
 					"description": "Free Extract Hyperlinks online. Extract Hyperlinks allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/extract-hyperlinks",
-					"extraSlugs": ["extract-hyperlinks"],
+					"extraSlugs": [
+						"extract-hyperlinks"
+					],
 					"category": "text"
 				},
 				{
@@ -2006,7 +2198,9 @@
 					"name": "Duplicate Page Detector",
 					"description": "Free Duplicate Page Detector online. Duplicate Page Detector allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/duplicate-page-detector",
-					"extraSlugs": ["duplicate-page-detector"],
+					"extraSlugs": [
+						"duplicate-page-detector"
+					],
 					"category": "text"
 				},
 				{
@@ -2014,7 +2208,9 @@
 					"name": "Alt Text Checker",
 					"description": "Free Alt Text Checker online. Alt Text Checker allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/alt-text-checker",
-					"extraSlugs": ["alt-text-checker"],
+					"extraSlugs": [
+						"alt-text-checker"
+					],
 					"category": "text"
 				},
 				{
@@ -2022,7 +2218,9 @@
 					"name": "Allow Disallow Generator",
 					"description": "Free Allow Disallow Generator online. Allow Disallow Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/allow-disallow-generator",
-					"extraSlugs": ["allow-disallow-generator"],
+					"extraSlugs": [
+						"allow-disallow-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -2030,7 +2228,9 @@
 					"name": "Json Ld Generator",
 					"description": "Free Json Ld Generator online. Json Ld Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/json-ld-generator",
-					"extraSlugs": ["json-ld-generator"],
+					"extraSlugs": [
+						"json-ld-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -2053,7 +2253,10 @@
 					"name": "Startup Name Generator",
 					"description": "Free Startup Name Generator online. Startup Name Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/startup-name-generator",
-					"extraSlugs": ["business-name-generator", "startup-name-generator"],
+					"extraSlugs": [
+						"business-name-generator",
+						"startup-name-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -2074,7 +2277,9 @@
 					"name": "Best Excuse Generator",
 					"description": "Free Best Excuse Generator online. Best Excuse Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/best-excuse-generator",
-					"extraSlugs": ["best-excuse-generator"],
+					"extraSlugs": [
+						"best-excuse-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -2082,7 +2287,9 @@
 					"name": "Love Poem Generator",
 					"description": "Free Love Poem Generator online. Love Poem Generator allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/love-poem-generator",
-					"extraSlugs": ["love-poem-generator"],
+					"extraSlugs": [
+						"love-poem-generator"
+					],
 					"category": "text"
 				},
 				{
@@ -2090,7 +2297,9 @@
 					"name": "Md Html Converter",
 					"description": "Free Md Html Converter online. Md Html Converter allows you to transform and analyze text quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/md-html-converter",
-					"extraSlugs": ["md-html-converter"],
+					"extraSlugs": [
+						"md-html-converter"
+					],
 					"category": "text"
 				}
 			]
@@ -2183,7 +2392,10 @@
 					"name": "PDF Compressor",
 					"description": "Reduce PDF file size online free without losing quality. Our 2026 updated PDF size reducer uses advanced browser-side compression to safely shrink documents for email and web uploads. 100% private and secure.",
 					"route": "/pdf-compressor",
-					"extraSlugs": ["compress-pdf-to-200kb", "shrink-pdf-file-size-free"],
+					"extraSlugs": [
+						"compress-pdf-to-200kb",
+						"shrink-pdf-file-size-free"
+					],
 					"popular": true,
 					"category": "pdf"
 				},
@@ -2265,7 +2477,10 @@
 					"name": "PDF Splitter",
 					"description": "Split PDF files into separate pages or ranges",
 					"route": "/pdf-splitter",
-					"extraSlugs": ["split-pdf-pages-online-free", "pdf-page-extractor"],
+					"extraSlugs": [
+						"split-pdf-pages-online-free",
+						"pdf-page-extractor"
+					],
 					"popular": true,
 					"category": "pdf"
 				},
@@ -2355,7 +2570,10 @@
 					"name": "Combine Pdf Files",
 					"description": "Free Combine Pdf Files online. Combine Pdf Files allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/combine-pdf-files",
-					"extraSlugs": ["combine-pdf-files", "separate-pdf-files"],
+					"extraSlugs": [
+						"combine-pdf-files",
+						"separate-pdf-files"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2377,7 +2595,9 @@
 					"name": "Pdf Combiner Free",
 					"description": "Free Pdf Combiner Free online. Pdf Combiner Free allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/pdf-combiner-free",
-					"extraSlugs": ["pdf-combiner-free"],
+					"extraSlugs": [
+						"pdf-combiner-free"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2385,7 +2605,9 @@
 					"name": "Join Pdf Documents",
 					"description": "Free Join Pdf Documents online. Join Pdf Documents allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/join-pdf-documents",
-					"extraSlugs": ["join-pdf-documents"],
+					"extraSlugs": [
+						"join-pdf-documents"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2433,7 +2655,9 @@
 					"name": "Secure Pdf Document",
 					"description": "Free Secure Pdf Document online. Secure Pdf Document allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/secure-pdf-document",
-					"extraSlugs": ["secure-pdf-document"],
+					"extraSlugs": [
+						"secure-pdf-document"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2441,7 +2665,9 @@
 					"name": "Open Protected Pdf",
 					"description": "Free Open Protected Pdf online. Open Protected Pdf allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/open-protected-pdf",
-					"extraSlugs": ["open-protected-pdf"],
+					"extraSlugs": [
+						"open-protected-pdf"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2449,7 +2675,9 @@
 					"name": "Change Pdf Orientation",
 					"description": "Free Change Pdf Orientation online. Change Pdf Orientation allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/change-pdf-orientation",
-					"extraSlugs": ["change-pdf-orientation"],
+					"extraSlugs": [
+						"change-pdf-orientation"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2470,7 +2698,9 @@
 					"name": "Pdf Pagination Tool",
 					"description": "Free Pdf Pagination Tool online. Pdf Pagination Tool allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/pdf-pagination-tool",
-					"extraSlugs": ["pdf-pagination-tool"],
+					"extraSlugs": [
+						"pdf-pagination-tool"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2478,7 +2708,9 @@
 					"name": "Modify Pdf Content",
 					"description": "Free Modify Pdf Content online. Modify Pdf Content allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/modify-pdf-content",
-					"extraSlugs": ["modify-pdf-content"],
+					"extraSlugs": [
+						"modify-pdf-content"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2486,7 +2718,10 @@
 					"name": "Split Video File",
 					"description": "Free Split Video File online. Split Video File allows you to manage PDF documents quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/split-video-file",
-					"extraSlugs": ["split-audio-file", "split-video-file"],
+					"extraSlugs": [
+						"split-audio-file",
+						"split-video-file"
+					],
 					"category": "pdf"
 				},
 				{
@@ -2599,7 +2834,9 @@
 					"name": "Facebook Cover Resizer",
 					"description": "Free Facebook Cover Resizer online. Facebook Cover Resizer allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/facebook-cover-resizer",
-					"extraSlugs": ["facebook-cover-resizer"],
+					"extraSlugs": [
+						"facebook-cover-resizer"
+					],
 					"category": "video"
 				},
 				{
@@ -2607,7 +2844,10 @@
 					"name": "Twitter Header Size Maker",
 					"description": "Free Twitter Header Size Maker online. Twitter Header Size Maker allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/twitter-header-size-maker",
-					"extraSlugs": ["twitter-bio-maker", "twitter-header-size-maker"],
+					"extraSlugs": [
+						"twitter-bio-maker",
+						"twitter-header-size-maker"
+					],
 					"category": "video"
 				},
 				{
@@ -2615,7 +2855,9 @@
 					"name": "Compress Video For Whatsapp",
 					"description": "Free Compress Video For Whatsapp online. Compress Video For Whatsapp allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/compress-video-for-whatsapp",
-					"extraSlugs": ["compress-video-for-whatsapp"],
+					"extraSlugs": [
+						"compress-video-for-whatsapp"
+					],
 					"category": "video"
 				},
 				{
@@ -2623,7 +2865,10 @@
 					"name": "Convert Video Format",
 					"description": "Free Convert Video Format online. Convert Video Format allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/convert-video-format",
-					"extraSlugs": ["convert-audio-format", "convert-video-format"],
+					"extraSlugs": [
+						"convert-audio-format",
+						"convert-video-format"
+					],
 					"category": "video"
 				},
 				{
@@ -2631,7 +2876,9 @@
 					"name": "Change Video Type",
 					"description": "Free Change Video Type online. Change Video Type allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/change-video-type",
-					"extraSlugs": ["change-video-type"],
+					"extraSlugs": [
+						"change-video-type"
+					],
 					"category": "video"
 				},
 				{
@@ -2651,7 +2898,10 @@
 					"name": "Free Video Editor",
 					"description": "Free Free Video Editor online. Free Video Editor allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/free-video-editor",
-					"extraSlugs": ["free-audio-editor", "free-video-editor"],
+					"extraSlugs": [
+						"free-audio-editor",
+						"free-video-editor"
+					],
 					"category": "video"
 				},
 				{
@@ -2659,7 +2909,10 @@
 					"name": "Cut And Merge Video",
 					"description": "Free Cut And Merge Video online. Cut And Merge Video allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/cut-and-merge-video",
-					"extraSlugs": ["cut-and-merge-video", "cut-video-length"],
+					"extraSlugs": [
+						"cut-and-merge-video",
+						"cut-video-length"
+					],
 					"category": "video"
 				},
 				{
@@ -2667,7 +2920,10 @@
 					"name": "Shorten Video Clip",
 					"description": "Free Shorten Video Clip online. Shorten Video Clip allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/shorten-video-clip",
-					"extraSlugs": ["shorten-audio-clip", "shorten-video-clip"],
+					"extraSlugs": [
+						"shorten-audio-clip",
+						"shorten-video-clip"
+					],
 					"category": "video"
 				},
 				{
@@ -2675,7 +2931,9 @@
 					"name": "Screen Capture Video",
 					"description": "Free Screen Capture Video online. Screen Capture Video allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/screen-capture-video",
-					"extraSlugs": ["screen-capture-video"],
+					"extraSlugs": [
+						"screen-capture-video"
+					],
 					"category": "video"
 				},
 				{
@@ -2683,7 +2941,10 @@
 					"name": "Youtube Cover Maker",
 					"description": "Free Youtube Cover Maker online. Youtube Cover Maker allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/youtube-cover-maker",
-					"extraSlugs": ["youtube-cover-maker", "youtube-gif-maker"],
+					"extraSlugs": [
+						"youtube-cover-maker",
+						"youtube-gif-maker"
+					],
 					"category": "video"
 				},
 				{
@@ -2702,7 +2963,10 @@
 					"name": "Embed Video Player",
 					"description": "Free Embed Video Player online. Embed Video Player allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/embed-video-player",
-					"extraSlugs": ["embed-video-player", "responsive-video-player"],
+					"extraSlugs": [
+						"embed-video-player",
+						"responsive-video-player"
+					],
 					"category": "video"
 				},
 				{
@@ -2710,7 +2974,10 @@
 					"name": "Download Terabox File",
 					"description": "Free Download Terabox File online. Download Terabox File allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/download-terabox-file",
-					"extraSlugs": ["download-terabox-file", "terabox-direct-download"],
+					"extraSlugs": [
+						"download-terabox-file",
+						"terabox-direct-download"
+					],
 					"category": "video"
 				},
 				{
@@ -2718,7 +2985,9 @@
 					"name": "Terabox Player Online",
 					"description": "Free Terabox Player Online online. Terabox Player Online allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/terabox-player-online",
-					"extraSlugs": ["terabox-player-online"],
+					"extraSlugs": [
+						"terabox-player-online"
+					],
 					"category": "video"
 				},
 				{
@@ -2738,7 +3007,9 @@
 					"name": "Mp4 Audio Ripper",
 					"description": "Free Mp4 Audio Ripper online. Mp4 Audio Ripper allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/mp4-audio-ripper",
-					"extraSlugs": ["mp4-audio-ripper"],
+					"extraSlugs": [
+						"mp4-audio-ripper"
+					],
 					"category": "video"
 				},
 				{
@@ -2746,7 +3017,9 @@
 					"name": "Music From Mp4",
 					"description": "Free Music From Mp4 online. Music From Mp4 allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/music-from-mp4",
-					"extraSlugs": ["music-from-mp4"],
+					"extraSlugs": [
+						"music-from-mp4"
+					],
 					"category": "video"
 				},
 				{
@@ -2781,7 +3054,9 @@
 					"name": "Instagram Font Generator",
 					"description": "Free Instagram Font Generator online. Instagram Font Generator allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/instagram-font-generator",
-					"extraSlugs": ["instagram-font-generator"],
+					"extraSlugs": [
+						"instagram-font-generator"
+					],
 					"category": "video"
 				},
 				{
@@ -2789,7 +3064,9 @@
 					"name": "Aesthetic Fonts For Instagram",
 					"description": "Free Aesthetic Fonts For Instagram online. Aesthetic Fonts For Instagram allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/aesthetic-fonts-for-instagram",
-					"extraSlugs": ["aesthetic-fonts-for-instagram"],
+					"extraSlugs": [
+						"aesthetic-fonts-for-instagram"
+					],
 					"category": "video"
 				},
 				{
@@ -2797,7 +3074,9 @@
 					"name": "Instagram Fancy Text",
 					"description": "Free Instagram Fancy Text online. Instagram Fancy Text allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/instagram-fancy-text",
-					"extraSlugs": ["instagram-fancy-text"],
+					"extraSlugs": [
+						"instagram-fancy-text"
+					],
 					"category": "video"
 				},
 				{
@@ -2805,7 +3084,9 @@
 					"name": "Trending Instagram Hashtags",
 					"description": "Free Trending Instagram Hashtags online. Trending Instagram Hashtags allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/trending-instagram-hashtags",
-					"extraSlugs": ["trending-instagram-hashtags"],
+					"extraSlugs": [
+						"trending-instagram-hashtags"
+					],
 					"category": "video"
 				},
 				{
@@ -2813,7 +3094,9 @@
 					"name": "Grow On Instagram",
 					"description": "Free Grow On Instagram online. Grow On Instagram allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/grow-on-instagram",
-					"extraSlugs": ["grow-on-instagram"],
+					"extraSlugs": [
+						"grow-on-instagram"
+					],
 					"category": "video"
 				},
 				{
@@ -2835,7 +3118,9 @@
 					"name": "Extract Youtube Subtitles",
 					"description": "Free Extract Youtube Subtitles online. Extract Youtube Subtitles allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/extract-youtube-subtitles",
-					"extraSlugs": ["extract-youtube-subtitles"],
+					"extraSlugs": [
+						"extract-youtube-subtitles"
+					],
 					"category": "video"
 				},
 				{
@@ -2843,7 +3128,9 @@
 					"name": "Save Youtube Captions",
 					"description": "Free Save Youtube Captions online. Save Youtube Captions allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-youtube-captions",
-					"extraSlugs": ["save-youtube-captions"],
+					"extraSlugs": [
+						"save-youtube-captions"
+					],
 					"category": "video"
 				},
 				{
@@ -2864,7 +3151,10 @@
 					"name": "Download Full Size Dp",
 					"description": "Free Download Full Size Dp online. Download Full Size Dp allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/download-full-size-dp",
-					"extraSlugs": ["download-full-size-dp", "view-full-size-ig-dp"],
+					"extraSlugs": [
+						"download-full-size-dp",
+						"view-full-size-ig-dp"
+					],
 					"category": "video"
 				},
 				{
@@ -2872,7 +3162,10 @@
 					"name": "Download Instagram Reels",
 					"description": "Free Download Instagram Reels online. Download Instagram Reels allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/download-instagram-reels",
-					"extraSlugs": ["download-from-instagram", "download-instagram-reels"],
+					"extraSlugs": [
+						"download-from-instagram",
+						"download-instagram-reels"
+					],
 					"category": "video"
 				},
 				{
@@ -2880,7 +3173,9 @@
 					"name": "Download Twitter Clips",
 					"description": "Free Download Twitter Clips online. Download Twitter Clips allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/download-twitter-clips",
-					"extraSlugs": ["download-twitter-clips"],
+					"extraSlugs": [
+						"download-twitter-clips"
+					],
 					"category": "video"
 				},
 				{
@@ -2888,7 +3183,9 @@
 					"name": "Watch Instagram Stories",
 					"description": "Free Watch Instagram Stories online. Watch Instagram Stories allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/watch-instagram-stories",
-					"extraSlugs": ["watch-instagram-stories"],
+					"extraSlugs": [
+						"watch-instagram-stories"
+					],
 					"category": "video"
 				},
 				{
@@ -2896,7 +3193,9 @@
 					"name": "Download Tiktok Sound",
 					"description": "Free Download Tiktok Sound online. Download Tiktok Sound allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/download-tiktok-sound",
-					"extraSlugs": ["download-tiktok-sound"],
+					"extraSlugs": [
+						"download-tiktok-sound"
+					],
 					"category": "video"
 				},
 				{
@@ -2904,7 +3203,9 @@
 					"name": "Extract Tiktok Audio",
 					"description": "Free Extract Tiktok Audio online. Extract Tiktok Audio allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/extract-tiktok-audio",
-					"extraSlugs": ["extract-tiktok-audio"],
+					"extraSlugs": [
+						"extract-tiktok-audio"
+					],
 					"category": "video"
 				},
 				{
@@ -2912,7 +3213,9 @@
 					"name": "Story Viewer Without Account",
 					"description": "Free Story Viewer Without Account online. Story Viewer Without Account allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/story-viewer-without-account",
-					"extraSlugs": ["story-viewer-without-account"],
+					"extraSlugs": [
+						"story-viewer-without-account"
+					],
 					"category": "video"
 				},
 				{
@@ -2920,7 +3223,9 @@
 					"name": "Download Insta Carousel",
 					"description": "Free Download Insta Carousel online. Download Insta Carousel allows you to process video files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/download-insta-carousel",
-					"extraSlugs": ["download-insta-carousel"],
+					"extraSlugs": [
+						"download-insta-carousel"
+					],
 					"category": "video"
 				},
 				{
@@ -3407,7 +3712,9 @@
 					"name": "Yt Thumbnail Maker",
 					"description": "Free Yt Thumbnail Maker online. Yt Thumbnail Maker allows you to download YouTube content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/yt-thumbnail-maker",
-					"extraSlugs": ["yt-thumbnail-maker"],
+					"extraSlugs": [
+						"yt-thumbnail-maker"
+					],
 					"category": "youtube"
 				},
 				{
@@ -3415,7 +3722,10 @@
 					"name": "Online Thumbnail Creator",
 					"description": "Free Online Thumbnail Creator online. Online Thumbnail Creator allows you to download YouTube content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/online-thumbnail-creator",
-					"extraSlugs": ["online-thumbnail-creator", "schema-creator-online"],
+					"extraSlugs": [
+						"online-thumbnail-creator",
+						"schema-creator-online"
+					],
 					"category": "youtube"
 				},
 				{
@@ -3423,7 +3733,9 @@
 					"name": "Free Thumbnail Design",
 					"description": "Free Free Thumbnail Design online. Free Thumbnail Design allows you to download YouTube content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/free-thumbnail-design",
-					"extraSlugs": ["free-thumbnail-design"],
+					"extraSlugs": [
+						"free-thumbnail-design"
+					],
 					"category": "youtube"
 				},
 				{
@@ -3431,7 +3743,9 @@
 					"name": "Google Title Rewrites",
 					"description": "Free Google Title Rewrites online. Google Title Rewrites allows you to download YouTube content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/google-title-rewrites",
-					"extraSlugs": ["google-title-rewrites"],
+					"extraSlugs": [
+						"google-title-rewrites"
+					],
 					"category": "youtube"
 				},
 				{
@@ -3439,7 +3753,9 @@
 					"name": "Title Tag Preview",
 					"description": "Free Title Tag Preview online. Title Tag Preview allows you to download YouTube content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/title-tag-preview",
-					"extraSlugs": ["title-tag-preview"],
+					"extraSlugs": [
+						"title-tag-preview"
+					],
 					"category": "youtube"
 				},
 				{
@@ -3447,7 +3763,10 @@
 					"name": "Fb Clip Downloader",
 					"description": "Free Fb Clip Downloader online. Fb Clip Downloader allows you to download YouTube content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/fb-clip-downloader",
-					"extraSlugs": ["fb-clip-downloader", "fb-highlights-downloader"],
+					"extraSlugs": [
+						"fb-clip-downloader",
+						"fb-highlights-downloader"
+					],
 					"category": "youtube"
 				},
 				{
@@ -3455,7 +3774,10 @@
 					"name": "Ig Reels Downloader Hd",
 					"description": "Free Ig Reels Downloader Hd online. Ig Reels Downloader Hd allows you to download YouTube content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/ig-reels-downloader-hd",
-					"extraSlugs": ["ig-downloader-all", "ig-reels-downloader-hd"],
+					"extraSlugs": [
+						"ig-downloader-all",
+						"ig-reels-downloader-hd"
+					],
 					"category": "youtube"
 				}
 			]
@@ -3498,7 +3820,9 @@
 					"name": "Optimize Audio Files",
 					"description": "Free Optimize Audio Files online. Optimize Audio Files allows you to edit audio files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/optimize-audio-files",
-					"extraSlugs": ["optimize-audio-files"],
+					"extraSlugs": [
+						"optimize-audio-files"
+					],
 					"category": "audio"
 				},
 				{
@@ -3506,7 +3830,9 @@
 					"name": "Audio Cutter Merger",
 					"description": "Free Audio Cutter Merger online. Audio Cutter Merger allows you to edit audio files quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/audio-cutter-merger",
-					"extraSlugs": ["audio-cutter-merger"],
+					"extraSlugs": [
+						"audio-cutter-merger"
+					],
 					"category": "audio"
 				},
 				{
@@ -3917,7 +4243,10 @@
 					"name": "Groq API Key Tester",
 					"description": "Test your Groq API key with the chat completions endpoint.",
 					"route": "/api-key-tester/groq",
-					"extraSlugs": ["groq-api-test-tool-online", "test-groq-api-key-free"],
+					"extraSlugs": [
+						"groq-api-test-tool-online",
+						"test-groq-api-key-free"
+					],
 					"popular": false,
 					"category": "developer"
 				},
@@ -4013,7 +4342,10 @@
 					"name": "HTML Encoder",
 					"description": "Free html encoder tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/html-encoder",
-					"extraSlugs": ["free-html-encoder-online", "html-encoder-tool"],
+					"extraSlugs": [
+						"free-html-encoder-online",
+						"html-encoder-tool"
+					],
 					"popular": false,
 					"category": "developer"
 				},
@@ -4022,7 +4354,10 @@
 					"name": "HTML Minifier",
 					"description": "Free html minifier tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/html-minifier",
-					"extraSlugs": ["free-html-minifier-online", "html-minifier-tool"],
+					"extraSlugs": [
+						"free-html-minifier-online",
+						"html-minifier-tool"
+					],
 					"popular": false,
 					"category": "developer"
 				},
@@ -4098,7 +4433,10 @@
 					"name": "JSON Editor",
 					"description": "Free json editor tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/json-editor",
-					"extraSlugs": ["free-json-editor-online", "json-editor-tool"],
+					"extraSlugs": [
+						"free-json-editor-online",
+						"json-editor-tool"
+					],
 					"popular": false,
 					"category": "developer"
 				},
@@ -4460,7 +4798,10 @@
 					"name": "Stripe API Key Tester",
 					"description": "Test your Stripe API key with the charges endpoint.",
 					"route": "/api-key-tester/stripe",
-					"extraSlugs": ["test-stripe-secret-key-online", "stripe-api-tester"],
+					"extraSlugs": [
+						"test-stripe-secret-key-online",
+						"stripe-api-tester"
+					],
 					"popular": false,
 					"category": "developer"
 				},
@@ -4580,7 +4921,9 @@
 					"name": "Hash Generator2",
 					"description": "Free Hash Generator2 online. Hash Generator2 allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/hash-generator2",
-					"extraSlugs": ["hash-generator2"],
+					"extraSlugs": [
+						"hash-generator2"
+					],
 					"category": "developer"
 				},
 				{
@@ -4588,7 +4931,9 @@
 					"name": "Regex Tester2",
 					"description": "Free Regex Tester2 online. Regex Tester2 allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/regex-tester2",
-					"extraSlugs": ["regex-tester2"],
+					"extraSlugs": [
+						"regex-tester2"
+					],
 					"category": "developer"
 				},
 				{
@@ -4609,7 +4954,9 @@
 					"name": "Change Audio Format",
 					"description": "Free Change Audio Format online. Change Audio Format allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/change-audio-format",
-					"extraSlugs": ["change-audio-format"],
+					"extraSlugs": [
+						"change-audio-format"
+					],
 					"category": "developer"
 				},
 				{
@@ -4617,7 +4964,9 @@
 					"name": "Prettify Json Online",
 					"description": "Free Prettify Json Online online. Prettify Json Online allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/prettify-json-online",
-					"extraSlugs": ["prettify-json-online"],
+					"extraSlugs": [
+						"prettify-json-online"
+					],
 					"category": "developer"
 				},
 				{
@@ -4625,7 +4974,10 @@
 					"name": "Validate Json Code",
 					"description": "Free Validate Json Code online. Validate Json Code allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/validate-json-code",
-					"extraSlugs": ["validate-html-code", "validate-json-code"],
+					"extraSlugs": [
+						"validate-html-code",
+						"validate-json-code"
+					],
 					"category": "developer"
 				},
 				{
@@ -4633,7 +4985,10 @@
 					"name": "Format Json File",
 					"description": "Free Format Json File online. Format Json File allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/format-json-file",
-					"extraSlugs": ["format-json-file", "format-xml-file"],
+					"extraSlugs": [
+						"format-json-file",
+						"format-xml-file"
+					],
 					"category": "developer"
 				},
 				{
@@ -4641,7 +4996,10 @@
 					"name": "Sha256 Hash Calculator",
 					"description": "Free Sha256 Hash Calculator online. Sha256 Hash Calculator allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/sha256-hash-calculator",
-					"extraSlugs": ["advanced-hash-calculator", "sha256-hash-calculator"],
+					"extraSlugs": [
+						"advanced-hash-calculator",
+						"sha256-hash-calculator"
+					],
 					"category": "developer"
 				},
 				{
@@ -4661,7 +5019,9 @@
 					"name": "Hash String Message",
 					"description": "Free Hash String Message online. Hash String Message allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/hash-string-message",
-					"extraSlugs": ["hash-string-message"],
+					"extraSlugs": [
+						"hash-string-message"
+					],
 					"category": "developer"
 				},
 				{
@@ -4669,7 +5029,10 @@
 					"name": "Minify Js Online",
 					"description": "Free Minify Js Online online. Minify Js Online allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/minify-js-online",
-					"extraSlugs": ["minify-code-online", "minify-js-online"],
+					"extraSlugs": [
+						"minify-code-online",
+						"minify-js-online"
+					],
 					"category": "developer"
 				},
 				{
@@ -4677,7 +5040,10 @@
 					"name": "Test Regex Online",
 					"description": "Free Test Regex Online online. Test Regex Online allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/test-regex-online",
-					"extraSlugs": ["test-regex-online", "test-rest-api-online"],
+					"extraSlugs": [
+						"test-regex-online",
+						"test-rest-api-online"
+					],
 					"category": "developer"
 				},
 				{
@@ -4685,7 +5051,9 @@
 					"name": "Debug Regex Pattern",
 					"description": "Free Debug Regex Pattern online. Debug Regex Pattern allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/debug-regex-pattern",
-					"extraSlugs": ["debug-regex-pattern"],
+					"extraSlugs": [
+						"debug-regex-pattern"
+					],
 					"category": "developer"
 				},
 				{
@@ -4705,7 +5073,9 @@
 					"name": "Beautify Sql Query",
 					"description": "Free Beautify Sql Query online. Beautify Sql Query allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/beautify-sql-query",
-					"extraSlugs": ["beautify-sql-query"],
+					"extraSlugs": [
+						"beautify-sql-query"
+					],
 					"category": "developer"
 				},
 				{
@@ -4713,7 +5083,9 @@
 					"name": "Format Sql Online",
 					"description": "Free Format Sql Online online. Format Sql Online allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/format-sql-online",
-					"extraSlugs": ["format-sql-online"],
+					"extraSlugs": [
+						"format-sql-online"
+					],
 					"category": "developer"
 				},
 				{
@@ -4721,7 +5093,9 @@
 					"name": "Sql Prettifier",
 					"description": "Free Sql Prettifier online. Sql Prettifier allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/sql-prettifier",
-					"extraSlugs": ["sql-prettifier"],
+					"extraSlugs": [
+						"sql-prettifier"
+					],
 					"category": "developer"
 				},
 				{
@@ -4729,7 +5103,9 @@
 					"name": "Validate Sql Syntax",
 					"description": "Free Validate Sql Syntax online. Validate Sql Syntax allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/validate-sql-syntax",
-					"extraSlugs": ["validate-sql-syntax"],
+					"extraSlugs": [
+						"validate-sql-syntax"
+					],
 					"category": "developer"
 				},
 				{
@@ -4737,7 +5113,10 @@
 					"name": "Sql Code Formatter",
 					"description": "Free Sql Code Formatter online. Sql Code Formatter allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/sql-code-formatter",
-					"extraSlugs": ["source-code-formatter", "sql-code-formatter"],
+					"extraSlugs": [
+						"source-code-formatter",
+						"sql-code-formatter"
+					],
 					"category": "developer"
 				},
 				{
@@ -4745,7 +5124,9 @@
 					"name": "Complex Regex Validator",
 					"description": "Free Complex Regex Validator online. Complex Regex Validator allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/complex-regex-validator",
-					"extraSlugs": ["complex-regex-validator"],
+					"extraSlugs": [
+						"complex-regex-validator"
+					],
 					"category": "developer"
 				},
 				{
@@ -4753,7 +5134,9 @@
 					"name": "Regex Cheatsheet Tool",
 					"description": "Free Regex Cheatsheet Tool online. Regex Cheatsheet Tool allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/regex-cheatsheet-tool",
-					"extraSlugs": ["regex-cheatsheet-tool"],
+					"extraSlugs": [
+						"regex-cheatsheet-tool"
+					],
 					"category": "developer"
 				},
 				{
@@ -4761,7 +5144,9 @@
 					"name": "Send Http Request",
 					"description": "Free Send Http Request online. Send Http Request allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/send-http-request",
-					"extraSlugs": ["send-http-request"],
+					"extraSlugs": [
+						"send-http-request"
+					],
 					"category": "developer"
 				},
 				{
@@ -4769,7 +5154,9 @@
 					"name": "Debug Api Requests",
 					"description": "Free Debug Api Requests online. Debug Api Requests allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/debug-api-requests",
-					"extraSlugs": ["debug-api-requests"],
+					"extraSlugs": [
+						"debug-api-requests"
+					],
 					"category": "developer"
 				},
 				{
@@ -4777,7 +5164,10 @@
 					"name": "Decode Jwt Online",
 					"description": "Free Decode Jwt Online online. Decode Jwt Online allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/decode-jwt-online",
-					"extraSlugs": ["decode-jwt-online", "decode-jwt-token"],
+					"extraSlugs": [
+						"decode-jwt-online",
+						"decode-jwt-token"
+					],
 					"category": "developer"
 				},
 				{
@@ -4785,7 +5175,9 @@
 					"name": "Json Web Token Decoder",
 					"description": "Free Json Web Token Decoder online. Json Web Token Decoder allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/json-web-token-decoder",
-					"extraSlugs": ["json-web-token-decoder"],
+					"extraSlugs": [
+						"json-web-token-decoder"
+					],
 					"category": "developer"
 				},
 				{
@@ -4793,7 +5185,9 @@
 					"name": "Read Jwt Content",
 					"description": "Free Read Jwt Content online. Read Jwt Content allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/read-jwt-content",
-					"extraSlugs": ["read-jwt-content"],
+					"extraSlugs": [
+						"read-jwt-content"
+					],
 					"category": "developer"
 				},
 				{
@@ -4801,7 +5195,9 @@
 					"name": "Verify Jwt Signature Free",
 					"description": "Free Verify Jwt Signature Free online. Verify Jwt Signature Free allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/verify-jwt-signature-free",
-					"extraSlugs": ["verify-jwt-signature-free"],
+					"extraSlugs": [
+						"verify-jwt-signature-free"
+					],
 					"category": "developer"
 				},
 				{
@@ -4809,7 +5205,9 @@
 					"name": "Minify Css File",
 					"description": "Free Minify Css File online. Minify Css File allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/minify-css-file",
-					"extraSlugs": ["minify-css-file"],
+					"extraSlugs": [
+						"minify-css-file"
+					],
 					"category": "developer"
 				},
 				{
@@ -4817,7 +5215,9 @@
 					"name": "Check Code Complexity",
 					"description": "Free Check Code Complexity online. Check Code Complexity allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-code-complexity",
-					"extraSlugs": ["check-code-complexity"],
+					"extraSlugs": [
+						"check-code-complexity"
+					],
 					"category": "developer"
 				},
 				{
@@ -4825,7 +5225,9 @@
 					"name": "Find Color Code",
 					"description": "Free Find Color Code online. Find Color Code allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/find-color-code",
-					"extraSlugs": ["find-color-code"],
+					"extraSlugs": [
+						"find-color-code"
+					],
 					"category": "developer"
 				},
 				{
@@ -4833,7 +5235,10 @@
 					"name": "Beautify Code Online",
 					"description": "Free Beautify Code Online online. Beautify Code Online allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/beautify-code-online",
-					"extraSlugs": ["beautify-code-online", "beautify-xml-online"],
+					"extraSlugs": [
+						"beautify-code-online",
+						"beautify-xml-online"
+					],
 					"category": "developer"
 				},
 				{
@@ -4841,7 +5246,10 @@
 					"name": "Format Html Css Js",
 					"description": "Free Format Html Css Js online. Format Html Css Js allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/format-html-css-js",
-					"extraSlugs": ["compress-html-css-js", "format-html-css-js"],
+					"extraSlugs": [
+						"compress-html-css-js",
+						"format-html-css-js"
+					],
 					"category": "developer"
 				},
 				{
@@ -4849,7 +5257,9 @@
 					"name": "Clean Code Indentation",
 					"description": "Free Clean Code Indentation online. Clean Code Indentation allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/clean-code-indentation",
-					"extraSlugs": ["clean-code-indentation"],
+					"extraSlugs": [
+						"clean-code-indentation"
+					],
 					"category": "developer"
 				},
 				{
@@ -4857,7 +5267,9 @@
 					"name": "Web Code Compressor",
 					"description": "Free Web Code Compressor online. Web Code Compressor allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/web-code-compressor",
-					"extraSlugs": ["web-code-compressor"],
+					"extraSlugs": [
+						"web-code-compressor"
+					],
 					"category": "developer"
 				},
 				{
@@ -4865,7 +5277,9 @@
 					"name": "Transform Csv Data",
 					"description": "Free Transform Csv Data online. Transform Csv Data allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/transform-csv-data",
-					"extraSlugs": ["transform-csv-data"],
+					"extraSlugs": [
+						"transform-csv-data"
+					],
 					"category": "developer"
 				},
 				{
@@ -4873,7 +5287,9 @@
 					"name": "Xml Pretty Print",
 					"description": "Free Xml Pretty Print online. Xml Pretty Print allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/xml-pretty-print",
-					"extraSlugs": ["xml-pretty-print"],
+					"extraSlugs": [
+						"xml-pretty-print"
+					],
 					"category": "developer"
 				},
 				{
@@ -4881,7 +5297,9 @@
 					"name": "Validate Xml Format",
 					"description": "Free Validate Xml Format online. Validate Xml Format allows you to format and convert code data quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/validate-xml-format",
-					"extraSlugs": ["validate-xml-format"],
+					"extraSlugs": [
+						"validate-xml-format"
+					],
 					"category": "developer"
 				},
 				{
@@ -4908,6 +5326,71 @@
 					"description": "Free Sitemap Visual online tool. Fast and secure.",
 					"route": "/sitemap-visual",
 					"extraSlugs": [],
+					"popular": false,
+					"category": "developer"
+				},
+				{
+					"id": "cron-expression-generator",
+					"name": "Cron Expression Generator",
+					"description": "Free Cron Expression Generator online. Easily generate cron schedules for your applications.",
+					"route": "/cron-expression-generator",
+					"extraSlugs": [
+						"cron-generator",
+						"cron-scheduler",
+						"crontab-generator"
+					],
+					"popular": false,
+					"category": "developer"
+				},
+				{
+					"id": "pixels-to-rem-converter",
+					"name": "Pixels to REM Converter",
+					"description": "Free Pixels to REM Converter online. Convert pixels (px) to REM units based on your base font size.",
+					"route": "/pixels-to-rem-converter",
+					"extraSlugs": [
+						"px-to-rem",
+						"rem-converter",
+						"pixels-to-rem"
+					],
+					"popular": false,
+					"category": "developer"
+				},
+				{
+					"id": "contrast-checker",
+					"name": "WCAG Color Contrast Checker",
+					"description": "Free WCAG Color Contrast Checker. Ensure your color combinations meet accessibility standards.",
+					"route": "/contrast-checker",
+					"extraSlugs": [
+						"color-contrast-checker",
+						"wcag-checker",
+						"accessibility-contrast"
+					],
+					"popular": false,
+					"category": "developer"
+				},
+				{
+					"id": "rsa-key-generator",
+					"name": "RSA Key Pair Generator",
+					"description": "Free RSA Key Pair Generator online. Generate secure public and private keys for encryption.",
+					"route": "/rsa-key-generator",
+					"extraSlugs": [
+						"rsa-generator",
+						"generate-rsa-keys",
+						"public-private-key-generator"
+					],
+					"popular": false,
+					"category": "developer"
+				},
+				{
+					"id": "dns-lookup-tool",
+					"name": "DNS Lookup Tool",
+					"description": "Free DNS Lookup Tool online. Check DNS records (A, MX, CNAME, TXT) for any domain.",
+					"route": "/dns-lookup-tool",
+					"extraSlugs": [
+						"dns-checker",
+						"lookup-dns",
+						"dns-records-viewer"
+					],
 					"popular": false,
 					"category": "developer"
 				}
@@ -5005,7 +5488,10 @@
 					"name": "Dailymotion Video Downloader",
 					"description": "Free online Dailymotion downloader to save videos as MP4 in HD. Fast, secure, no signup required.",
 					"route": "/dailymotion-video-downloader",
-					"extraSlugs": ["save-dailymotion-videos-hd", "dailymotion-to-mp4"],
+					"extraSlugs": [
+						"save-dailymotion-videos-hd",
+						"dailymotion-to-mp4"
+					],
 					"popular": false,
 					"category": "downloaders"
 				},
@@ -5250,7 +5736,10 @@
 					"name": "M3U8 Downloader",
 					"description": "Download m3u8 playlists and convert them to high-quality MP4 videos.",
 					"route": "/m3u8-downloader",
-					"extraSlugs": ["download-m3u8-video-online", "m3u8-to-mp4-converter"],
+					"extraSlugs": [
+						"download-m3u8-video-online",
+						"m3u8-to-mp4-converter"
+					],
 					"popular": false,
 					"category": "downloaders"
 				},
@@ -5640,7 +6129,9 @@
 					"name": "YouTube Video Downloader",
 					"description": "Download YouTube videos quickly in multiple formats and resolutions—free, fast, secure, no signup, and fully browser-based.",
 					"route": "/youtube-video-downloader",
-					"extraSlugs": ["youtube-video-downloader-2026"],
+					"extraSlugs": [
+						"youtube-video-downloader-2026"
+					],
 					"popular": false,
 					"category": "downloaders"
 				},
@@ -5683,7 +6174,9 @@
 					"name": "Free Mp3 Extractor",
 					"description": "Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/free-mp3-extractor",
-					"extraSlugs": ["free-mp3-extractor"],
+					"extraSlugs": [
+						"free-mp3-extractor"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5716,7 +6209,9 @@
 					"name": "Shrink Mp3 Size",
 					"description": "Free Shrink Mp3 Size online. Shrink Mp3 Size allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/shrink-mp3-size",
-					"extraSlugs": ["shrink-mp3-size"],
+					"extraSlugs": [
+						"shrink-mp3-size"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5724,7 +6219,10 @@
 					"name": "Modify Mp3 File",
 					"description": "Free Modify Mp3 File online. Modify Mp3 File allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/modify-mp3-file",
-					"extraSlugs": ["cut-mp3-file", "modify-mp3-file"],
+					"extraSlugs": [
+						"cut-mp3-file",
+						"modify-mp3-file"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5732,7 +6230,9 @@
 					"name": "Save Fb Stories Anonymous",
 					"description": "Free Save Fb Stories Anonymous online. Save Fb Stories Anonymous allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-fb-stories-anonymous",
-					"extraSlugs": ["save-fb-stories-anonymous"],
+					"extraSlugs": [
+						"save-fb-stories-anonymous"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5740,7 +6240,10 @@
 					"name": "Save Instagram Clips",
 					"description": "Free Save Instagram Clips online. Save Instagram Clips allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-instagram-clips",
-					"extraSlugs": ["save-instagram-clips", "save-instagram-photos"],
+					"extraSlugs": [
+						"save-instagram-clips",
+						"save-instagram-photos"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5748,7 +6251,9 @@
 					"name": "Ig Highlights Saver",
 					"description": "Free Ig Highlights Saver online. Ig Highlights Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/ig-highlights-saver",
-					"extraSlugs": ["ig-highlights-saver"],
+					"extraSlugs": [
+						"ig-highlights-saver"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5756,7 +6261,9 @@
 					"name": "Save Insta Pfp",
 					"description": "Free Save Insta Pfp online. Save Insta Pfp allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-insta-pfp",
-					"extraSlugs": ["save-insta-pfp"],
+					"extraSlugs": [
+						"save-insta-pfp"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5764,7 +6271,9 @@
 					"name": "Insta Reels Saver",
 					"description": "Free Insta Reels Saver online. Insta Reels Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/insta-reels-saver",
-					"extraSlugs": ["insta-reels-saver"],
+					"extraSlugs": [
+						"insta-reels-saver"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5772,7 +6281,9 @@
 					"name": "Save Reels Video",
 					"description": "Free Save Reels Video online. Save Reels Video allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-reels-video",
-					"extraSlugs": ["save-reels-video"],
+					"extraSlugs": [
+						"save-reels-video"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5780,7 +6291,10 @@
 					"name": "Save Twitter Videos",
 					"description": "Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-twitter-videos",
-					"extraSlugs": ["save-snapchat-videos", "save-twitter-videos"],
+					"extraSlugs": [
+						"save-snapchat-videos",
+						"save-twitter-videos"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5800,7 +6314,10 @@
 					"name": "Save Tiktok Mp4",
 					"description": "Free Save Tiktok Mp4 online. Save Tiktok Mp4 allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-tiktok-mp4",
-					"extraSlugs": ["save-tiktok-mp4", "save-tiktok-music"],
+					"extraSlugs": [
+						"save-tiktok-mp4",
+						"save-tiktok-music"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5808,7 +6325,9 @@
 					"name": "Save Ig Content",
 					"description": "Free Save Ig Content online. Save Ig Content allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-ig-content",
-					"extraSlugs": ["save-ig-content"],
+					"extraSlugs": [
+						"save-ig-content"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5816,7 +6335,9 @@
 					"name": "Mp3 From Tiktok",
 					"description": "Free Mp3 From Tiktok online. Mp3 From Tiktok allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/mp3-from-tiktok",
-					"extraSlugs": ["mp3-from-tiktok"],
+					"extraSlugs": [
+						"mp3-from-tiktok"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5824,7 +6345,9 @@
 					"name": "Pinterest Clip Saver",
 					"description": "Free Pinterest Clip Saver online. Pinterest Clip Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/pinterest-clip-saver",
-					"extraSlugs": ["pinterest-clip-saver"],
+					"extraSlugs": [
+						"pinterest-clip-saver"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5832,7 +6355,9 @@
 					"name": "Snapchat Saver Online",
 					"description": "Free Snapchat Saver Online online. Snapchat Saver Online allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/snapchat-saver-online",
-					"extraSlugs": ["snapchat-saver-online"],
+					"extraSlugs": [
+						"snapchat-saver-online"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5840,7 +6365,9 @@
 					"name": "Save Snaps To Gallery",
 					"description": "Free Save Snaps To Gallery online. Save Snaps To Gallery allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/save-snaps-to-gallery",
-					"extraSlugs": ["save-snaps-to-gallery"],
+					"extraSlugs": [
+						"save-snaps-to-gallery"
+					],
 					"category": "downloaders"
 				},
 				{
@@ -5886,7 +6413,10 @@
 					"name": "Age Calculator",
 					"description": "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/age-calculator",
-					"extraSlugs": ["free-age-calculator-online", "age-calculator-tool"],
+					"extraSlugs": [
+						"free-age-calculator-online",
+						"age-calculator-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -5895,7 +6425,10 @@
 					"name": "Angle Converter",
 					"description": "Free angle converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/angle-converter",
-					"extraSlugs": ["free-angle-converter-online", "angle-converter-tool"],
+					"extraSlugs": [
+						"free-angle-converter-online",
+						"angle-converter-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -5916,7 +6449,10 @@
 					"name": "Area Converter",
 					"description": "Free area converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/area-converter",
-					"extraSlugs": ["free-area-converter-online", "area-converter-tool"],
+					"extraSlugs": [
+						"free-area-converter-online",
+						"area-converter-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6028,7 +6564,10 @@
 					"name": "CPM Calculator",
 					"description": "Free cpm calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/cpm-calculator",
-					"extraSlugs": ["free-cpm-calculator-online", "cpm-calculator-tool"],
+					"extraSlugs": [
+						"free-cpm-calculator-online",
+						"cpm-calculator-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6159,7 +6698,10 @@
 					"name": "Each Converter",
 					"description": "Free each converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/each-converter",
-					"extraSlugs": ["free-each-converter-online", "each-converter-tool"],
+					"extraSlugs": [
+						"free-each-converter-online",
+						"each-converter-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6234,7 +6776,10 @@
 					"name": "GST Calculator",
 					"description": "Free gst calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/gst-calculator",
-					"extraSlugs": ["free-gst-calculator-online", "gst-calculator-tool"],
+					"extraSlugs": [
+						"free-gst-calculator-online",
+						"gst-calculator-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6258,7 +6803,10 @@
 					"name": "Hosting Checker",
 					"description": "Free hosting checker tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/hosting-checker",
-					"extraSlugs": ["free-hosting-checker-online", "hosting-checker-tool"],
+					"extraSlugs": [
+						"free-hosting-checker-online",
+						"hosting-checker-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6304,7 +6852,10 @@
 					"name": "IndexNow Submitter",
 					"description": "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
 					"route": "/indexnow",
-					"extraSlugs": ["submit-url-to-bing-instantly", "indexnow-api-tool"],
+					"extraSlugs": [
+						"submit-url-to-bing-instantly",
+						"indexnow-api-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6360,7 +6911,10 @@
 					"name": "Loan Calculator",
 					"description": "Free loan calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/loan-calculator",
-					"extraSlugs": ["free-loan-calculator-online", "loan-calculator-tool"],
+					"extraSlugs": [
+						"free-loan-calculator-online",
+						"loan-calculator-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6406,7 +6960,10 @@
 					"name": "Pace Converter",
 					"description": "Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/pace-converter",
-					"extraSlugs": ["free-pace-converter-online", "pace-converter-tool"],
+					"extraSlugs": [
+						"free-pace-converter-online",
+						"pace-converter-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6489,7 +7046,10 @@
 					"name": "Power Converter",
 					"description": "Free power converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/power-converter",
-					"extraSlugs": ["free-power-converter-online", "power-converter-tool"],
+					"extraSlugs": [
+						"free-power-converter-online",
+						"power-converter-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6676,7 +7236,10 @@
 					"name": "Speed Converter",
 					"description": "Free speed converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/speed-converter",
-					"extraSlugs": ["free-speed-converter-online", "speed-converter-tool"],
+					"extraSlugs": [
+						"free-speed-converter-online",
+						"speed-converter-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6772,7 +7335,10 @@
 					"name": "URL Opener",
 					"description": "Free url opener tool to process your data instantly with privacy-friendly browser-based workflows.",
 					"route": "/url-opener",
-					"extraSlugs": ["free-url-opener-online", "url-opener-tool"],
+					"extraSlugs": [
+						"free-url-opener-online",
+						"url-opener-tool"
+					],
 					"popular": false,
 					"category": "utilities"
 				},
@@ -6971,7 +7537,9 @@
 					"name": "Verify Email Domain Validity",
 					"description": "Free Verify Email Domain Validity online. Verify Email Domain Validity allows you to perform helpful calculations quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/verify-email-domain-validity",
-					"extraSlugs": ["verify-email-domain-validity"],
+					"extraSlugs": [
+						"verify-email-domain-validity"
+					],
 					"category": "utilities"
 				},
 				{
@@ -6979,7 +7547,10 @@
 					"name": "Unix Timestamp To Date",
 					"description": "Free Unix Timestamp To Date online. Unix Timestamp To Date allows you to perform helpful calculations quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/unix-timestamp-to-date",
-					"extraSlugs": ["date-to-epoch", "unix-timestamp-to-date"],
+					"extraSlugs": [
+						"date-to-epoch",
+						"unix-timestamp-to-date"
+					],
 					"category": "utilities"
 				},
 				{
@@ -6987,7 +7558,9 @@
 					"name": "Human Readable Time",
 					"description": "Free Human Readable Time online. Human Readable Time allows you to perform helpful calculations quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/human-readable-time",
-					"extraSlugs": ["human-readable-time"],
+					"extraSlugs": [
+						"human-readable-time"
+					],
 					"category": "utilities"
 				},
 				{
@@ -6995,7 +7568,9 @@
 					"name": "Currency Calculator Live",
 					"description": "Free Currency Calculator Live online. Currency Calculator Live allows you to perform helpful calculations quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/currency-calculator-live",
-					"extraSlugs": ["currency-calculator-live"],
+					"extraSlugs": [
+						"currency-calculator-live"
+					],
 					"category": "utilities"
 				},
 				{
@@ -7003,7 +7578,9 @@
 					"name": "Check Time Difference",
 					"description": "Free Check Time Difference online. Check Time Difference allows you to perform helpful calculations quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-time-difference",
-					"extraSlugs": ["check-time-difference"],
+					"extraSlugs": [
+						"check-time-difference"
+					],
 					"category": "utilities"
 				},
 				{
@@ -7011,7 +7588,10 @@
 					"name": "Time Zone Map",
 					"description": "Free Time Zone Map online. Time Zone Map allows you to perform helpful calculations quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/time-zone-map",
-					"extraSlugs": ["meeting-planner-time-zone", "time-zone-map"],
+					"extraSlugs": [
+						"meeting-planner-time-zone",
+						"time-zone-map"
+					],
 					"category": "utilities"
 				},
 				{
@@ -7019,7 +7599,9 @@
 					"name": "Current Epoch Time",
 					"description": "Free Current Epoch Time online. Current Epoch Time allows you to perform helpful calculations quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/current-epoch-time",
-					"extraSlugs": ["current-epoch-time"],
+					"extraSlugs": [
+						"current-epoch-time"
+					],
 					"category": "utilities"
 				},
 				{
@@ -7027,7 +7609,9 @@
 					"name": "Ssl Expiry Date",
 					"description": "Free Ssl Expiry Date online. Ssl Expiry Date allows you to perform helpful calculations quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/ssl-expiry-date",
-					"extraSlugs": ["ssl-expiry-date"],
+					"extraSlugs": [
+						"ssl-expiry-date"
+					],
 					"category": "utilities"
 				},
 				{
@@ -7045,6 +7629,32 @@
 					"description": "Free Text Tools online tool. Fast and secure.",
 					"route": "/text-tools",
 					"extraSlugs": [],
+					"popular": false,
+					"category": "utilities"
+				},
+				{
+					"id": "public-ip-checker",
+					"name": "Public IP Checker",
+					"description": "Free Public IP Checker online. Quickly find your public IP address and network details.",
+					"route": "/public-ip-checker",
+					"extraSlugs": [
+						"my-ip",
+						"whats-my-ip",
+						"ip-checker"
+					],
+					"popular": false,
+					"category": "utilities"
+				},
+				{
+					"id": "port-scanner-online",
+					"name": "Online Port Scanner",
+					"description": "Free Online Port Scanner. Scan common ports of a host to check for open services.",
+					"route": "/port-scanner-online",
+					"extraSlugs": [
+						"port-scanner",
+						"scan-ports",
+						"online-port-scan"
+					],
 					"popular": false,
 					"category": "utilities"
 				}
@@ -7225,7 +7835,9 @@
 					"name": "Meta Tag Analyzer",
 					"description": "Analyze and audit meta tags across your website. Check title tags, meta descriptions, Open Graph tags, and other SEO metadata.",
 					"route": "/meta-tag-analyzer",
-					"extraSlugs": ["complexity-analyzer"],
+					"extraSlugs": [
+						"complexity-analyzer"
+					],
 					"popular": true,
 					"category": "seo"
 				},
@@ -7295,7 +7907,10 @@
 					"name": "Schema Markup Generator",
 					"description": "Generate JSON-LD schema markup for rich snippets",
 					"route": "/schema-generator",
-					"extraSlugs": ["schema-markup-builder", "validate-schema-markup"],
+					"extraSlugs": [
+						"schema-markup-builder",
+						"validate-schema-markup"
+					],
 					"popular": true,
 					"category": "seo"
 				},
@@ -7327,7 +7942,9 @@
 					"name": "Visual Sitemap Generator",
 					"description": "Visualize your website's sitemap structure instantly. Enter your XML sitemap URL to generate a dynamic tree view of your site hierarchy.",
 					"route": "/visual-sitemap",
-					"extraSlugs": ["visual-shadow-generator"],
+					"extraSlugs": [
+						"visual-shadow-generator"
+					],
 					"popular": true,
 					"category": "seo"
 				},
@@ -7378,7 +7995,9 @@
 					"name": "Rank Tracking Tool",
 					"description": "Free Rank Tracking Tool online. Rank Tracking Tool allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/rank-tracking-tool",
-					"extraSlugs": ["rank-tracking-tool"],
+					"extraSlugs": [
+						"rank-tracking-tool"
+					],
 					"category": "seo"
 				},
 				{
@@ -7400,7 +8019,9 @@
 					"name": "Serp Snippet Optimizer",
 					"description": "Free Serp Snippet Optimizer online. Serp Snippet Optimizer allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/serp-snippet-optimizer",
-					"extraSlugs": ["serp-snippet-optimizer"],
+					"extraSlugs": [
+						"serp-snippet-optimizer"
+					],
 					"category": "seo"
 				},
 				{
@@ -7431,7 +8052,9 @@
 					"name": "Html Error Checker",
 					"description": "Free Html Error Checker online. Html Error Checker allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/html-error-checker",
-					"extraSlugs": ["html-error-checker"],
+					"extraSlugs": [
+						"html-error-checker"
+					],
 					"category": "seo"
 				},
 				{
@@ -7439,7 +8062,9 @@
 					"name": "Readability Score Checker",
 					"description": "Free Readability Score Checker online. Readability Score Checker allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/readability-score-checker",
-					"extraSlugs": ["readability-score-checker"],
+					"extraSlugs": [
+						"readability-score-checker"
+					],
 					"category": "seo"
 				},
 				{
@@ -7447,7 +8072,10 @@
 					"name": "Serp Tracker Bulk",
 					"description": "Free Serp Tracker Bulk online. Serp Tracker Bulk allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/serp-tracker-bulk",
-					"extraSlugs": ["serp-tracker-bulk", "serp-tracker-pro"],
+					"extraSlugs": [
+						"serp-tracker-bulk",
+						"serp-tracker-pro"
+					],
 					"category": "seo"
 				},
 				{
@@ -7455,7 +8083,9 @@
 					"name": "Page Title Optimization",
 					"description": "Free Page Title Optimization online. Page Title Optimization allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/page-title-optimization",
-					"extraSlugs": ["page-title-optimization"],
+					"extraSlugs": [
+						"page-title-optimization"
+					],
 					"category": "seo"
 				},
 				{
@@ -7463,7 +8093,9 @@
 					"name": "Sitemap Url Downloader",
 					"description": "Free Sitemap Url Downloader online. Sitemap Url Downloader allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/sitemap-url-downloader",
-					"extraSlugs": ["sitemap-url-downloader"],
+					"extraSlugs": [
+						"sitemap-url-downloader"
+					],
 					"category": "seo"
 				},
 				{
@@ -7471,7 +8103,10 @@
 					"name": "Analyze Meta Tags",
 					"description": "Free Analyze Meta Tags online. Analyze Meta Tags allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/analyze-meta-tags",
-					"extraSlugs": ["analyze-meta-tags", "generate-meta-tags"],
+					"extraSlugs": [
+						"analyze-meta-tags",
+						"generate-meta-tags"
+					],
 					"category": "seo"
 				},
 				{
@@ -7479,7 +8114,9 @@
 					"name": "Website Meta Audit",
 					"description": "Free Website Meta Audit online. Website Meta Audit allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/website-meta-audit",
-					"extraSlugs": ["website-meta-audit"],
+					"extraSlugs": [
+						"website-meta-audit"
+					],
 					"category": "seo"
 				},
 				{
@@ -7487,7 +8124,9 @@
 					"name": "Load Time Checker",
 					"description": "Free Load Time Checker online. Load Time Checker allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/load-time-checker",
-					"extraSlugs": ["load-time-checker"],
+					"extraSlugs": [
+						"load-time-checker"
+					],
 					"category": "seo"
 				},
 				{
@@ -7495,7 +8134,9 @@
 					"name": "Website Backlink Analysis",
 					"description": "Free Website Backlink Analysis online. Website Backlink Analysis allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/website-backlink-analysis",
-					"extraSlugs": ["website-backlink-analysis"],
+					"extraSlugs": [
+						"website-backlink-analysis"
+					],
 					"category": "seo"
 				},
 				{
@@ -7503,7 +8144,9 @@
 					"name": "Competitor Keyword Spy",
 					"description": "Free Competitor Keyword Spy online. Competitor Keyword Spy allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/competitor-keyword-spy",
-					"extraSlugs": ["competitor-keyword-spy"],
+					"extraSlugs": [
+						"competitor-keyword-spy"
+					],
 					"category": "seo"
 				},
 				{
@@ -7511,7 +8154,9 @@
 					"name": "Seo Competition Analysis",
 					"description": "Free Seo Competition Analysis online. Seo Competition Analysis allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/seo-competition-analysis",
-					"extraSlugs": ["seo-competition-analysis"],
+					"extraSlugs": [
+						"seo-competition-analysis"
+					],
 					"category": "seo"
 				},
 				{
@@ -7519,7 +8164,10 @@
 					"name": "Free Keyword Finder",
 					"description": "Free Free Keyword Finder online. Free Keyword Finder allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/free-keyword-finder",
-					"extraSlugs": ["free-keyword-finder", "google-keyword-planner-free"],
+					"extraSlugs": [
+						"free-keyword-finder",
+						"google-keyword-planner-free"
+					],
 					"category": "seo"
 				},
 				{
@@ -7527,7 +8175,9 @@
 					"name": "Seo Keyword Generator",
 					"description": "Free Seo Keyword Generator online. Seo Keyword Generator allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/seo-keyword-generator",
-					"extraSlugs": ["seo-keyword-generator"],
+					"extraSlugs": [
+						"seo-keyword-generator"
+					],
 					"category": "seo"
 				},
 				{
@@ -7535,7 +8185,10 @@
 					"name": "Search Volume Checker",
 					"description": "Free Search Volume Checker online. Search Volume Checker allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/search-volume-checker",
-					"extraSlugs": ["bing-search-volume", "search-volume-checker"],
+					"extraSlugs": [
+						"bing-search-volume",
+						"search-volume-checker"
+					],
 					"category": "seo"
 				},
 				{
@@ -7543,7 +8196,9 @@
 					"name": "Keyword Ideas Bing",
 					"description": "Free Keyword Ideas Bing online. Keyword Ideas Bing allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/keyword-ideas-bing",
-					"extraSlugs": ["keyword-ideas-bing"],
+					"extraSlugs": [
+						"keyword-ideas-bing"
+					],
 					"category": "seo"
 				},
 				{
@@ -7551,7 +8206,10 @@
 					"name": "Bing Seo Keywords",
 					"description": "Free Bing Seo Keywords online. Bing Seo Keywords allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/bing-seo-keywords",
-					"extraSlugs": ["bing-seo-keywords", "seo-keywords-google"],
+					"extraSlugs": [
+						"bing-seo-keywords",
+						"seo-keywords-google"
+					],
 					"category": "seo"
 				},
 				{
@@ -7559,7 +8217,9 @@
 					"name": "Seo Position Tracker",
 					"description": "Free Seo Position Tracker online. Seo Position Tracker allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/seo-position-tracker",
-					"extraSlugs": ["seo-position-tracker"],
+					"extraSlugs": [
+						"seo-position-tracker"
+					],
 					"category": "seo"
 				},
 				{
@@ -7567,7 +8227,9 @@
 					"name": "Responsive Design Checker",
 					"description": "Free Responsive Design Checker online. Responsive Design Checker allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/responsive-design-checker",
-					"extraSlugs": ["responsive-design-checker"],
+					"extraSlugs": [
+						"responsive-design-checker"
+					],
 					"category": "seo"
 				},
 				{
@@ -7587,7 +8249,9 @@
 					"name": "Google Maps Seo",
 					"description": "Free Google Maps Seo online. Google Maps Seo allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/google-maps-seo",
-					"extraSlugs": ["google-maps-seo"],
+					"extraSlugs": [
+						"google-maps-seo"
+					],
 					"category": "seo"
 				},
 				{
@@ -7595,7 +8259,9 @@
 					"name": "Local Business Seo",
 					"description": "Free Local Business Seo online. Local Business Seo allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/local-business-seo",
-					"extraSlugs": ["local-business-seo"],
+					"extraSlugs": [
+						"local-business-seo"
+					],
 					"category": "seo"
 				},
 				{
@@ -7603,7 +8269,9 @@
 					"name": "Snippet Optimization",
 					"description": "Free Snippet Optimization online. Snippet Optimization allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/snippet-optimization",
-					"extraSlugs": ["snippet-optimization"],
+					"extraSlugs": [
+						"snippet-optimization"
+					],
 					"category": "seo"
 				},
 				{
@@ -7611,7 +8279,9 @@
 					"name": "Robots File Maker",
 					"description": "Free Robots File Maker online. Robots File Maker allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/robots-file-maker",
-					"extraSlugs": ["robots-file-maker"],
+					"extraSlugs": [
+						"robots-file-maker"
+					],
 					"category": "seo"
 				},
 				{
@@ -7619,7 +8289,9 @@
 					"name": "Create Seo Tags",
 					"description": "Free Create Seo Tags online. Create Seo Tags allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/create-seo-tags",
-					"extraSlugs": ["create-seo-tags"],
+					"extraSlugs": [
+						"create-seo-tags"
+					],
 					"category": "seo"
 				},
 				{
@@ -7627,7 +8299,22 @@
 					"name": "Check Keyword Frequency",
 					"description": "Free Check Keyword Frequency online. Check Keyword Frequency allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-keyword-frequency",
-					"extraSlugs": ["check-keyword-frequency"],
+					"extraSlugs": [
+						"check-keyword-frequency"
+					],
+					"category": "seo"
+				},
+				{
+					"id": "opengraph-generator",
+					"name": "OpenGraph Meta Tags Generator",
+					"description": "Free OpenGraph Meta Tags Generator online. Create social media tags for better link sharing.",
+					"route": "/opengraph-generator",
+					"extraSlugs": [
+						"og-tags-generator",
+						"social-tags-maker",
+						"opengraph-meta-tags"
+					],
+					"popular": false,
 					"category": "seo"
 				}
 			]
@@ -7732,7 +8419,9 @@
 					"name": "Code Tools",
 					"description": "Code Tools - Coming Soon",
 					"route": "/code-tools",
-					"extraSlugs": ["utilities-tools"],
+					"extraSlugs": [
+						"utilities-tools"
+					],
 					"popular": false,
 					"category": "others"
 				},
@@ -7789,7 +8478,9 @@
 					"name": "Image To Icon",
 					"description": "Image To Icon - Coming Soon",
 					"route": "/image-to-icon",
-					"extraSlugs": ["ios-app-icon-creator"],
+					"extraSlugs": [
+						"ios-app-icon-creator"
+					],
 					"popular": false,
 					"category": "others"
 				},
@@ -7869,7 +8560,9 @@
 					"name": "Text Encoder",
 					"description": "Text Encoder - Coming Soon",
 					"route": "/text-encoder",
-					"extraSlugs": ["url-encoder"],
+					"extraSlugs": [
+						"url-encoder"
+					],
 					"popular": false,
 					"category": "others"
 				},
@@ -7966,7 +8659,9 @@
 					"name": "Website Analyzer",
 					"description": "Website Analyzer - Coming Soon",
 					"route": "/website-analyzer",
-					"extraSlugs": ["website-content-analyzer"],
+					"extraSlugs": [
+						"website-content-analyzer"
+					],
 					"popular": false,
 					"category": "others"
 				},
@@ -8015,7 +8710,9 @@
 					"name": "Search",
 					"description": "Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/search",
-					"extraSlugs": ["search"],
+					"extraSlugs": [
+						"search"
+					],
 					"category": "others"
 				},
 				{
@@ -8023,7 +8720,9 @@
 					"name": "Calculators",
 					"description": "Free Calculators online. Calculators allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/calculators",
-					"extraSlugs": ["calculators"],
+					"extraSlugs": [
+						"calculators"
+					],
 					"category": "others"
 				},
 				{
@@ -8031,7 +8730,10 @@
 					"name": "Optimize Images For Web",
 					"description": "Free Optimize Images For Web online. Optimize Images For Web allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/optimize-images-for-web",
-					"extraSlugs": ["optimize-images-for-web", "optimize-pdf-for-web"],
+					"extraSlugs": [
+						"optimize-images-for-web",
+						"optimize-pdf-for-web"
+					],
 					"category": "others"
 				},
 				{
@@ -8039,7 +8741,9 @@
 					"name": "Fix Blurry Photos",
 					"description": "Free Fix Blurry Photos online. Fix Blurry Photos allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/fix-blurry-photos",
-					"extraSlugs": ["fix-blurry-photos"],
+					"extraSlugs": [
+						"fix-blurry-photos"
+					],
 					"category": "others"
 				},
 				{
@@ -8047,7 +8751,9 @@
 					"name": "Linkedin Banner Resizer",
 					"description": "Free Linkedin Banner Resizer online. Linkedin Banner Resizer allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/linkedin-banner-resizer",
-					"extraSlugs": ["linkedin-banner-resizer"],
+					"extraSlugs": [
+						"linkedin-banner-resizer"
+					],
 					"category": "others"
 				},
 				{
@@ -8055,7 +8761,9 @@
 					"name": "Combine Photos Online",
 					"description": "Free Combine Photos Online online. Combine Photos Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/combine-photos-online",
-					"extraSlugs": ["combine-photos-online"],
+					"extraSlugs": [
+						"combine-photos-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8075,7 +8783,9 @@
 					"name": "Read Exif Data Online",
 					"description": "Free Read Exif Data Online online. Read Exif Data Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/read-exif-data-online",
-					"extraSlugs": ["read-exif-data-online"],
+					"extraSlugs": [
+						"read-exif-data-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8083,7 +8793,9 @@
 					"name": "Camera Metadata Viewer",
 					"description": "Free Camera Metadata Viewer online. Camera Metadata Viewer allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/camera-metadata-viewer",
-					"extraSlugs": ["camera-metadata-viewer"],
+					"extraSlugs": [
+						"camera-metadata-viewer"
+					],
 					"category": "others"
 				},
 				{
@@ -8104,7 +8816,9 @@
 					"name": "Whiteboard",
 					"description": "Free Whiteboard online. Whiteboard allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/whiteboard",
-					"extraSlugs": ["whiteboard"],
+					"extraSlugs": [
+						"whiteboard"
+					],
 					"category": "others"
 				},
 				{
@@ -8112,7 +8826,9 @@
 					"name": "Font Previewer",
 					"description": "Free Font Previewer online. Font Previewer allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/font-previewer",
-					"extraSlugs": ["font-previewer"],
+					"extraSlugs": [
+						"font-previewer"
+					],
 					"category": "others"
 				},
 				{
@@ -8120,7 +8836,10 @@
 					"name": "Competitor Analysis Tool",
 					"description": "Free Competitor Analysis Tool online. Competitor Analysis Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/competitor-analysis-tool",
-					"extraSlugs": ["competitor-analysis-tool", "text-analysis-tool"],
+					"extraSlugs": [
+						"competitor-analysis-tool",
+						"text-analysis-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8141,7 +8860,9 @@
 					"name": "Free Screen Recorder",
 					"description": "Free Free Screen Recorder online. Free Screen Recorder allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/free-screen-recorder",
-					"extraSlugs": ["free-screen-recorder"],
+					"extraSlugs": [
+						"free-screen-recorder"
+					],
 					"category": "others"
 				},
 				{
@@ -8149,7 +8870,9 @@
 					"name": "Record Browser Tab",
 					"description": "Free Record Browser Tab online. Record Browser Tab allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/record-browser-tab",
-					"extraSlugs": ["record-browser-tab"],
+					"extraSlugs": [
+						"record-browser-tab"
+					],
 					"category": "others"
 				},
 				{
@@ -8168,7 +8891,9 @@
 					"name": "Online Tts Reader",
 					"description": "Free Online Tts Reader online. Online Tts Reader allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/online-tts-reader",
-					"extraSlugs": ["online-tts-reader"],
+					"extraSlugs": [
+						"online-tts-reader"
+					],
 					"category": "others"
 				},
 				{
@@ -8176,7 +8901,10 @@
 					"name": "Count Words Online",
 					"description": "Free Count Words Online online. Count Words Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/count-words-online",
-					"extraSlugs": ["count-characters-online", "count-words-online"],
+					"extraSlugs": [
+						"count-characters-online",
+						"count-words-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8184,7 +8912,9 @@
 					"name": "Uppercase To Lowercase",
 					"description": "Free Uppercase To Lowercase online. Uppercase To Lowercase allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/uppercase-to-lowercase",
-					"extraSlugs": ["uppercase-to-lowercase"],
+					"extraSlugs": [
+						"uppercase-to-lowercase"
+					],
 					"category": "others"
 				},
 				{
@@ -8192,7 +8922,9 @@
 					"name": "Clean Duplicates List",
 					"description": "Free Clean Duplicates List online. Clean Duplicates List allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/clean-duplicates-list",
-					"extraSlugs": ["clean-duplicates-list"],
+					"extraSlugs": [
+						"clean-duplicates-list"
+					],
 					"category": "others"
 				},
 				{
@@ -8200,7 +8932,9 @@
 					"name": "Unique Lines Filter",
 					"description": "Free Unique Lines Filter online. Unique Lines Filter allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/unique-lines-filter",
-					"extraSlugs": ["unique-lines-filter"],
+					"extraSlugs": [
+						"unique-lines-filter"
+					],
 					"category": "others"
 				},
 				{
@@ -8208,7 +8942,10 @@
 					"name": "Check Wpm Online",
 					"description": "Free Check Wpm Online online. Check Wpm Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-wpm-online",
-					"extraSlugs": ["check-regex-online", "check-wpm-online"],
+					"extraSlugs": [
+						"check-regex-online",
+						"check-wpm-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8216,7 +8953,9 @@
 					"name": "Typing Racer Test",
 					"description": "Free Typing Racer Test online. Typing Racer Test allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/typing-racer-test",
-					"extraSlugs": ["typing-racer-test"],
+					"extraSlugs": [
+						"typing-racer-test"
+					],
 					"category": "others"
 				},
 				{
@@ -8224,7 +8963,9 @@
 					"name": "How Fast Can I Type",
 					"description": "Free How Fast Can I Type online. How Fast Can I Type allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/how-fast-can-i-type",
-					"extraSlugs": ["how-fast-can-i-type"],
+					"extraSlugs": [
+						"how-fast-can-i-type"
+					],
 					"category": "others"
 				},
 				{
@@ -8232,7 +8973,9 @@
 					"name": "Words Per Minute Test",
 					"description": "Free Words Per Minute Test online. Words Per Minute Test allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/words-per-minute-test",
-					"extraSlugs": ["words-per-minute-test"],
+					"extraSlugs": [
+						"words-per-minute-test"
+					],
 					"category": "others"
 				},
 				{
@@ -8240,7 +8983,9 @@
 					"name": "Rewrite Gpt Content",
 					"description": "Free Rewrite Gpt Content online. Rewrite Gpt Content allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/rewrite-gpt-content",
-					"extraSlugs": ["rewrite-gpt-content"],
+					"extraSlugs": [
+						"rewrite-gpt-content"
+					],
 					"category": "others"
 				},
 				{
@@ -8248,7 +8993,9 @@
 					"name": "Strip Markdown Syntax",
 					"description": "Free Strip Markdown Syntax online. Strip Markdown Syntax allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/strip-markdown-syntax",
-					"extraSlugs": ["strip-markdown-syntax"],
+					"extraSlugs": [
+						"strip-markdown-syntax"
+					],
 					"category": "others"
 				},
 				{
@@ -8256,7 +9003,9 @@
 					"name": "Email Scraper Tool",
 					"description": "Free Email Scraper Tool online. Email Scraper Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/email-scraper-tool",
-					"extraSlugs": ["email-scraper-tool"],
+					"extraSlugs": [
+						"email-scraper-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8276,7 +9025,9 @@
 					"name": "Multi Algorithm Hashing",
 					"description": "Free Multi Algorithm Hashing online. Multi Algorithm Hashing allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/multi-algorithm-hashing",
-					"extraSlugs": ["multi-algorithm-hashing"],
+					"extraSlugs": [
+						"multi-algorithm-hashing"
+					],
 					"category": "others"
 				},
 				{
@@ -8284,7 +9035,9 @@
 					"name": "File Checksum Calculator",
 					"description": "Free File Checksum Calculator online. File Checksum Calculator allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/file-checksum-calculator",
-					"extraSlugs": ["file-checksum-calculator"],
+					"extraSlugs": [
+						"file-checksum-calculator"
+					],
 					"category": "others"
 				},
 				{
@@ -8292,7 +9045,9 @@
 					"name": "Js Compressor Minifier",
 					"description": "Free Js Compressor Minifier online. Js Compressor Minifier allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/js-compressor-minifier",
-					"extraSlugs": ["js-compressor-minifier"],
+					"extraSlugs": [
+						"js-compressor-minifier"
+					],
 					"category": "others"
 				},
 				{
@@ -8300,7 +9055,9 @@
 					"name": "Regular Expression Validator",
 					"description": "Free Regular Expression Validator online. Regular Expression Validator allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/regular-expression-validator",
-					"extraSlugs": ["regular-expression-validator"],
+					"extraSlugs": [
+						"regular-expression-validator"
+					],
 					"category": "others"
 				},
 				{
@@ -8308,7 +9065,9 @@
 					"name": "Postman Alternative Online",
 					"description": "Free Postman Alternative Online online. Postman Alternative Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/postman-alternative-online",
-					"extraSlugs": ["postman-alternative-online"],
+					"extraSlugs": [
+						"postman-alternative-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8316,7 +9075,9 @@
 					"name": "Percent Encoding Tool",
 					"description": "Free Percent Encoding Tool online. Percent Encoding Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/percent-encoding-tool",
-					"extraSlugs": ["percent-encoding-tool"],
+					"extraSlugs": [
+						"percent-encoding-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8324,7 +9085,9 @@
 					"name": "Escape Url Characters",
 					"description": "Free Escape Url Characters online. Escape Url Characters allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/escape-url-characters",
-					"extraSlugs": ["escape-url-characters"],
+					"extraSlugs": [
+						"escape-url-characters"
+					],
 					"category": "others"
 				},
 				{
@@ -8332,7 +9095,9 @@
 					"name": "Css Optimizer Online",
 					"description": "Free Css Optimizer Online online. Css Optimizer Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/css-optimizer-online",
-					"extraSlugs": ["css-optimizer-online"],
+					"extraSlugs": [
+						"css-optimizer-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8352,7 +9117,9 @@
 					"name": "W3c Html Validation Alternative",
 					"description": "Free W3c Html Validation Alternative online. W3c Html Validation Alternative allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/w3c-html-validation-alternative",
-					"extraSlugs": ["w3c-html-validation-alternative"],
+					"extraSlugs": [
+						"w3c-html-validation-alternative"
+					],
 					"category": "others"
 				},
 				{
@@ -8360,7 +9127,9 @@
 					"name": "Validate Html Online",
 					"description": "Free Validate Html Online online. Validate Html Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/validate-html-online",
-					"extraSlugs": ["validate-html-online"],
+					"extraSlugs": [
+						"validate-html-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8380,7 +9149,9 @@
 					"name": "Detect Fake Email",
 					"description": "Free Detect Fake Email online. Detect Fake Email allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/detect-fake-email",
-					"extraSlugs": ["detect-fake-email"],
+					"extraSlugs": [
+						"detect-fake-email"
+					],
 					"category": "others"
 				},
 				{
@@ -8388,7 +9159,9 @@
 					"name": "Disposable Email Detector",
 					"description": "Free Disposable Email Detector online. Disposable Email Detector allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/disposable-email-detector",
-					"extraSlugs": ["disposable-email-detector"],
+					"extraSlugs": [
+						"disposable-email-detector"
+					],
 					"category": "others"
 				},
 				{
@@ -8396,7 +9169,9 @@
 					"name": "Identify Temp Mail",
 					"description": "Free Identify Temp Mail online. Identify Temp Mail allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/identify-temp-mail",
-					"extraSlugs": ["identify-temp-mail"],
+					"extraSlugs": [
+						"identify-temp-mail"
+					],
 					"category": "others"
 				},
 				{
@@ -8404,7 +9179,9 @@
 					"name": "Flesch Kincaid Calculator",
 					"description": "Free Flesch Kincaid Calculator online. Flesch Kincaid Calculator allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/flesch-kincaid-calculator",
-					"extraSlugs": ["flesch-kincaid-calculator"],
+					"extraSlugs": [
+						"flesch-kincaid-calculator"
+					],
 					"category": "others"
 				},
 				{
@@ -8412,7 +9189,10 @@
 					"name": "Online Color Picker",
 					"description": "Free Online Color Picker online. Online Color Picker allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/online-color-picker",
-					"extraSlugs": ["image-color-picker-tool", "online-color-picker"],
+					"extraSlugs": [
+						"image-color-picker-tool",
+						"online-color-picker"
+					],
 					"category": "others"
 				},
 				{
@@ -8420,7 +9200,9 @@
 					"name": "Rgb Color Selector",
 					"description": "Free Rgb Color Selector online. Rgb Color Selector allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/rgb-color-selector",
-					"extraSlugs": ["rgb-color-selector"],
+					"extraSlugs": [
+						"rgb-color-selector"
+					],
 					"category": "others"
 				},
 				{
@@ -8428,7 +9210,9 @@
 					"name": "Create Color Scheme",
 					"description": "Free Create Color Scheme online. Create Color Scheme allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/create-color-scheme",
-					"extraSlugs": ["create-color-scheme"],
+					"extraSlugs": [
+						"create-color-scheme"
+					],
 					"category": "others"
 				},
 				{
@@ -8436,7 +9220,9 @@
 					"name": "Make Css Gradients",
 					"description": "Free Make Css Gradients online. Make Css Gradients allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/make-css-gradients",
-					"extraSlugs": ["make-css-gradients"],
+					"extraSlugs": [
+						"make-css-gradients"
+					],
 					"category": "others"
 				},
 				{
@@ -8444,7 +9230,9 @@
 					"name": "Css3 Shadow Tool",
 					"description": "Free Css3 Shadow Tool online. Css3 Shadow Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/css3-shadow-tool",
-					"extraSlugs": ["css3-shadow-tool"],
+					"extraSlugs": [
+						"css3-shadow-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8452,7 +9240,9 @@
 					"name": "Online Whiteboard Free",
 					"description": "Free Online Whiteboard Free online. Online Whiteboard Free allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/online-whiteboard-free",
-					"extraSlugs": ["online-whiteboard-free"],
+					"extraSlugs": [
+						"online-whiteboard-free"
+					],
 					"category": "others"
 				},
 				{
@@ -8460,7 +9250,9 @@
 					"name": "Collaborative Whiteboard",
 					"description": "Free Collaborative Whiteboard online. Collaborative Whiteboard allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/collaborative-whiteboard",
-					"extraSlugs": ["collaborative-whiteboard"],
+					"extraSlugs": [
+						"collaborative-whiteboard"
+					],
 					"category": "others"
 				},
 				{
@@ -8468,7 +9260,10 @@
 					"name": "Sketch Board Online",
 					"description": "Free Sketch Board Online online. Sketch Board Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/sketch-board-online",
-					"extraSlugs": ["drawing-board-online", "sketch-board-online"],
+					"extraSlugs": [
+						"drawing-board-online",
+						"sketch-board-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8476,7 +9271,9 @@
 					"name": "Virtual Whiteboard",
 					"description": "Free Virtual Whiteboard online. Virtual Whiteboard allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/virtual-whiteboard",
-					"extraSlugs": ["virtual-whiteboard"],
+					"extraSlugs": [
+						"virtual-whiteboard"
+					],
 					"category": "others"
 				},
 				{
@@ -8496,7 +9293,9 @@
 					"name": "Preview Fonts Online",
 					"description": "Free Preview Fonts Online online. Preview Fonts Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/preview-fonts-online",
-					"extraSlugs": ["preview-fonts-online"],
+					"extraSlugs": [
+						"preview-fonts-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8504,7 +9303,9 @@
 					"name": "Font Tester Tool",
 					"description": "Free Font Tester Tool online. Font Tester Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/font-tester-tool",
-					"extraSlugs": ["font-tester-tool"],
+					"extraSlugs": [
+						"font-tester-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8512,7 +9313,10 @@
 					"name": "Typography Preview Tool",
 					"description": "Free Typography Preview Tool online. Typography Preview Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/typography-preview-tool",
-					"extraSlugs": ["serp-preview-tool", "typography-preview-tool"],
+					"extraSlugs": [
+						"serp-preview-tool",
+						"typography-preview-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8520,7 +9324,9 @@
 					"name": "Make Archive Online",
 					"description": "Free Make Archive Online online. Make Archive Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/make-archive-online",
-					"extraSlugs": ["make-archive-online"],
+					"extraSlugs": [
+						"make-archive-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8528,7 +9334,9 @@
 					"name": "Shorten Link Free",
 					"description": "Free Shorten Link Free online. Shorten Link Free allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/shorten-link-free",
-					"extraSlugs": ["shorten-link-free"],
+					"extraSlugs": [
+						"shorten-link-free"
+					],
 					"category": "others"
 				},
 				{
@@ -8536,7 +9344,9 @@
 					"name": "Make Url Shorter",
 					"description": "Free Make Url Shorter online. Make Url Shorter allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/make-url-shorter",
-					"extraSlugs": ["make-url-shorter"],
+					"extraSlugs": [
+						"make-url-shorter"
+					],
 					"category": "others"
 				},
 				{
@@ -8544,7 +9354,9 @@
 					"name": "Link Shortener Custom",
 					"description": "Free Link Shortener Custom online. Link Shortener Custom allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/link-shortener-custom",
-					"extraSlugs": ["link-shortener-custom"],
+					"extraSlugs": [
+						"link-shortener-custom"
+					],
 					"category": "others"
 				},
 				{
@@ -8552,7 +9364,9 @@
 					"name": "Reduce Link Length",
 					"description": "Free Reduce Link Length online. Reduce Link Length allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/reduce-link-length",
-					"extraSlugs": ["reduce-link-length"],
+					"extraSlugs": [
+						"reduce-link-length"
+					],
 					"category": "others"
 				},
 				{
@@ -8572,7 +9386,9 @@
 					"name": "Exchange Rate Calculator",
 					"description": "Free Exchange Rate Calculator online. Exchange Rate Calculator allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/exchange-rate-calculator",
-					"extraSlugs": ["exchange-rate-calculator"],
+					"extraSlugs": [
+						"exchange-rate-calculator"
+					],
 					"category": "others"
 				},
 				{
@@ -8580,7 +9396,9 @@
 					"name": "Foreign Exchange Tool",
 					"description": "Free Foreign Exchange Tool online. Foreign Exchange Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/foreign-exchange-tool",
-					"extraSlugs": ["foreign-exchange-tool"],
+					"extraSlugs": [
+						"foreign-exchange-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8588,7 +9406,9 @@
 					"name": "Epoch To Datetime",
 					"description": "Free Epoch To Datetime online. Epoch To Datetime allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/epoch-to-datetime",
-					"extraSlugs": ["epoch-to-datetime"],
+					"extraSlugs": [
+						"epoch-to-datetime"
+					],
 					"category": "others"
 				},
 				{
@@ -8609,7 +9429,10 @@
 					"name": "Paypal Donation Link",
 					"description": "Free Paypal Donation Link online. Paypal Donation Link allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/paypal-donation-link",
-					"extraSlugs": ["direct-paypal-link", "paypal-donation-link"],
+					"extraSlugs": [
+						"direct-paypal-link",
+						"paypal-donation-link"
+					],
 					"category": "others"
 				},
 				{
@@ -8617,7 +9440,9 @@
 					"name": "Check Whatsapp Number",
 					"description": "Free Check Whatsapp Number online. Check Whatsapp Number allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-whatsapp-number",
-					"extraSlugs": ["check-whatsapp-number"],
+					"extraSlugs": [
+						"check-whatsapp-number"
+					],
 					"category": "others"
 				},
 				{
@@ -8625,7 +9450,9 @@
 					"name": "Verify Whatsapp Account",
 					"description": "Free Verify Whatsapp Account online. Verify Whatsapp Account allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/verify-whatsapp-account",
-					"extraSlugs": ["verify-whatsapp-account"],
+					"extraSlugs": [
+						"verify-whatsapp-account"
+					],
 					"category": "others"
 				},
 				{
@@ -8633,7 +9460,9 @@
 					"name": "Is On Whatsapp",
 					"description": "Free Is On Whatsapp online. Is On Whatsapp allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/is-on-whatsapp",
-					"extraSlugs": ["is-on-whatsapp"],
+					"extraSlugs": [
+						"is-on-whatsapp"
+					],
 					"category": "others"
 				},
 				{
@@ -8641,7 +9470,9 @@
 					"name": "Wa Number Validator",
 					"description": "Free Wa Number Validator online. Wa Number Validator allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/wa-number-validator",
-					"extraSlugs": ["wa-number-validator"],
+					"extraSlugs": [
+						"wa-number-validator"
+					],
 					"category": "others"
 				},
 				{
@@ -8649,7 +9480,9 @@
 					"name": "Check Multiple Keywords",
 					"description": "Free Check Multiple Keywords online. Check Multiple Keywords allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-multiple-keywords",
-					"extraSlugs": ["check-multiple-keywords"],
+					"extraSlugs": [
+						"check-multiple-keywords"
+					],
 					"category": "others"
 				},
 				{
@@ -8657,7 +9490,9 @@
 					"name": "Check Url Indexation",
 					"description": "Free Check Url Indexation online. Check Url Indexation allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-url-indexation",
-					"extraSlugs": ["check-url-indexation"],
+					"extraSlugs": [
+						"check-url-indexation"
+					],
 					"category": "others"
 				},
 				{
@@ -8665,7 +9500,9 @@
 					"name": "Bulk Url Indexer",
 					"description": "Free Bulk Url Indexer online. Bulk Url Indexer allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/bulk-url-indexer",
-					"extraSlugs": ["bulk-url-indexer"],
+					"extraSlugs": [
+						"bulk-url-indexer"
+					],
 					"category": "others"
 				},
 				{
@@ -8673,7 +9510,9 @@
 					"name": "Google Search Console Tool",
 					"description": "Free Google Search Console Tool online. Google Search Console Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/google-search-console-tool",
-					"extraSlugs": ["google-search-console-tool"],
+					"extraSlugs": [
+						"google-search-console-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8681,7 +9520,9 @@
 					"name": "Google Snippet Preview",
 					"description": "Free Google Snippet Preview online. Google Snippet Preview allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/google-snippet-preview",
-					"extraSlugs": ["google-snippet-preview"],
+					"extraSlugs": [
+						"google-snippet-preview"
+					],
 					"category": "others"
 				},
 				{
@@ -8689,7 +9530,9 @@
 					"name": "Link Scraper Online",
 					"description": "Free Link Scraper Online online. Link Scraper Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/link-scraper-online",
-					"extraSlugs": ["link-scraper-online"],
+					"extraSlugs": [
+						"link-scraper-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8697,7 +9540,9 @@
 					"name": "Website Url Finder",
 					"description": "Free Website Url Finder online. Website Url Finder allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/website-url-finder",
-					"extraSlugs": ["website-url-finder"],
+					"extraSlugs": [
+						"website-url-finder"
+					],
 					"category": "others"
 				},
 				{
@@ -8705,7 +9550,9 @@
 					"name": "Find 404 Errors",
 					"description": "Free Find 404 Errors online. Find 404 Errors allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/find-404-errors",
-					"extraSlugs": ["find-404-errors"],
+					"extraSlugs": [
+						"find-404-errors"
+					],
 					"category": "others"
 				},
 				{
@@ -8713,7 +9560,9 @@
 					"name": "Dead Link Finder",
 					"description": "Free Dead Link Finder online. Dead Link Finder allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/dead-link-finder",
-					"extraSlugs": ["dead-link-finder"],
+					"extraSlugs": [
+						"dead-link-finder"
+					],
 					"category": "others"
 				},
 				{
@@ -8721,7 +9570,9 @@
 					"name": "Website Link Validator",
 					"description": "Free Website Link Validator online. Website Link Validator allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/website-link-validator",
-					"extraSlugs": ["website-link-validator"],
+					"extraSlugs": [
+						"website-link-validator"
+					],
 					"category": "others"
 				},
 				{
@@ -8729,7 +9580,10 @@
 					"name": "Check Website Errors",
 					"description": "Free Check Website Errors online. Check Website Errors allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-website-errors",
-					"extraSlugs": ["check-website-errors", "check-website-speed"],
+					"extraSlugs": [
+						"check-website-errors",
+						"check-website-speed"
+					],
 					"category": "others"
 				},
 				{
@@ -8737,7 +9591,9 @@
 					"name": "Content Duplication Tool",
 					"description": "Free Content Duplication Tool online. Content Duplication Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/content-duplication-tool",
-					"extraSlugs": ["content-duplication-tool"],
+					"extraSlugs": [
+						"content-duplication-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8745,7 +9601,9 @@
 					"name": "Find Copied Content",
 					"description": "Free Find Copied Content online. Find Copied Content allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/find-copied-content",
-					"extraSlugs": ["find-copied-content"],
+					"extraSlugs": [
+						"find-copied-content"
+					],
 					"category": "others"
 				},
 				{
@@ -8753,7 +9611,9 @@
 					"name": "Website Performance Test",
 					"description": "Free Website Performance Test online. Website Performance Test allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/website-performance-test",
-					"extraSlugs": ["website-performance-test"],
+					"extraSlugs": [
+						"website-performance-test"
+					],
 					"category": "others"
 				},
 				{
@@ -8761,7 +9621,9 @@
 					"name": "Core Web Vitals Check",
 					"description": "Free Core Web Vitals Check online. Core Web Vitals Check allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/core-web-vitals-check",
-					"extraSlugs": ["core-web-vitals-check"],
+					"extraSlugs": [
+						"core-web-vitals-check"
+					],
 					"category": "others"
 				},
 				{
@@ -8769,7 +9631,9 @@
 					"name": "Site Health Check",
 					"description": "Free Site Health Check online. Site Health Check allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/site-health-check",
-					"extraSlugs": ["site-health-check"],
+					"extraSlugs": [
+						"site-health-check"
+					],
 					"category": "others"
 				},
 				{
@@ -8777,7 +9641,9 @@
 					"name": "Check Backlinks Free",
 					"description": "Free Check Backlinks Free online. Check Backlinks Free allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-backlinks-free",
-					"extraSlugs": ["check-backlinks-free"],
+					"extraSlugs": [
+						"check-backlinks-free"
+					],
 					"category": "others"
 				},
 				{
@@ -8785,7 +9651,9 @@
 					"name": "Find Backlinks Url",
 					"description": "Free Find Backlinks Url online. Find Backlinks Url allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/find-backlinks-url",
-					"extraSlugs": ["find-backlinks-url"],
+					"extraSlugs": [
+						"find-backlinks-url"
+					],
 					"category": "others"
 				},
 				{
@@ -8793,7 +9661,9 @@
 					"name": "Analyze Competitor Site",
 					"description": "Free Analyze Competitor Site online. Analyze Competitor Site allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/analyze-competitor-site",
-					"extraSlugs": ["analyze-competitor-site"],
+					"extraSlugs": [
+						"analyze-competitor-site"
+					],
 					"category": "others"
 				},
 				{
@@ -8813,7 +9683,10 @@
 					"name": "Search Ranking Monitor",
 					"description": "Free Search Ranking Monitor online. Search Ranking Monitor allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/search-ranking-monitor",
-					"extraSlugs": ["local-search-ranking", "search-ranking-monitor"],
+					"extraSlugs": [
+						"local-search-ranking",
+						"search-ranking-monitor"
+					],
 					"category": "others"
 				},
 				{
@@ -8821,7 +9694,9 @@
 					"name": "Mobile Friendly Test",
 					"description": "Free Mobile Friendly Test online. Mobile Friendly Test allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/mobile-friendly-test",
-					"extraSlugs": ["mobile-friendly-test"],
+					"extraSlugs": [
+						"mobile-friendly-test"
+					],
 					"category": "others"
 				},
 				{
@@ -8829,7 +9704,9 @@
 					"name": "Smartphone View Simulator",
 					"description": "Free Smartphone View Simulator online. Smartphone View Simulator allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/smartphone-view-simulator",
-					"extraSlugs": ["smartphone-view-simulator"],
+					"extraSlugs": [
+						"smartphone-view-simulator"
+					],
 					"category": "others"
 				},
 				{
@@ -8837,7 +9714,9 @@
 					"name": "Check Local Listings",
 					"description": "Free Check Local Listings online. Check Local Listings allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-local-listings",
-					"extraSlugs": ["check-local-listings"],
+					"extraSlugs": [
+						"check-local-listings"
+					],
 					"category": "others"
 				},
 				{
@@ -8856,7 +9735,9 @@
 					"name": "Rich Results Test",
 					"description": "Free Rich Results Test online. Rich Results Test allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/rich-results-test",
-					"extraSlugs": ["rich-results-test"],
+					"extraSlugs": [
+						"rich-results-test"
+					],
 					"category": "others"
 				},
 				{
@@ -8864,7 +9745,9 @@
 					"name": "Find Missing Alt Tags",
 					"description": "Free Find Missing Alt Tags online. Find Missing Alt Tags allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/find-missing-alt-tags",
-					"extraSlugs": ["find-missing-alt-tags"],
+					"extraSlugs": [
+						"find-missing-alt-tags"
+					],
 					"category": "others"
 				},
 				{
@@ -8872,7 +9755,9 @@
 					"name": "Crawl Control Tool",
 					"description": "Free Crawl Control Tool online. Crawl Control Tool allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/crawl-control-tool",
-					"extraSlugs": ["crawl-control-tool"],
+					"extraSlugs": [
+						"crawl-control-tool"
+					],
 					"category": "others"
 				},
 				{
@@ -8880,7 +9765,9 @@
 					"name": "Check Ssl Certificate",
 					"description": "Free Check Ssl Certificate online. Check Ssl Certificate allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/check-ssl-certificate",
-					"extraSlugs": ["check-ssl-certificate"],
+					"extraSlugs": [
+						"check-ssl-certificate"
+					],
 					"category": "others"
 				},
 				{
@@ -8888,7 +9775,9 @@
 					"name": "Verify Ssl Installation",
 					"description": "Free Verify Ssl Installation online. Verify Ssl Installation allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/verify-ssl-installation",
-					"extraSlugs": ["verify-ssl-installation"],
+					"extraSlugs": [
+						"verify-ssl-installation"
+					],
 					"category": "others"
 				},
 				{
@@ -8896,7 +9785,9 @@
 					"name": "Content Density Check",
 					"description": "Free Content Density Check online. Content Density Check allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/content-density-check",
-					"extraSlugs": ["content-density-check"],
+					"extraSlugs": [
+						"content-density-check"
+					],
 					"category": "others"
 				},
 				{
@@ -8904,7 +9795,9 @@
 					"name": "About",
 					"description": "Free About online. About allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/about",
-					"extraSlugs": ["about"],
+					"extraSlugs": [
+						"about"
+					],
 					"category": "others"
 				},
 				{
@@ -8912,7 +9805,9 @@
 					"name": "Help",
 					"description": "Free Help online. Help allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/help",
-					"extraSlugs": ["help"],
+					"extraSlugs": [
+						"help"
+					],
 					"category": "others"
 				},
 				{
@@ -8920,7 +9815,9 @@
 					"name": "Blog",
 					"description": "Free Blog online. Blog allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/blog",
-					"extraSlugs": ["blog"],
+					"extraSlugs": [
+						"blog"
+					],
 					"category": "others"
 				},
 				{
@@ -8928,7 +9825,9 @@
 					"name": "Creative Business Names",
 					"description": "Free Creative Business Names online. Creative Business Names allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/creative-business-names",
-					"extraSlugs": ["creative-business-names"],
+					"extraSlugs": [
+						"creative-business-names"
+					],
 					"category": "others"
 				},
 				{
@@ -8948,7 +9847,9 @@
 					"name": "Insta Fonts",
 					"description": "Free Insta Fonts online. Insta Fonts allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/insta-fonts",
-					"extraSlugs": ["insta-fonts"],
+					"extraSlugs": [
+						"insta-fonts"
+					],
 					"category": "others"
 				},
 				{
@@ -8956,7 +9857,9 @@
 					"name": "Cool Bio Fonts",
 					"description": "Free Cool Bio Fonts online. Cool Bio Fonts allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/cool-bio-fonts",
-					"extraSlugs": ["cool-bio-fonts"],
+					"extraSlugs": [
+						"cool-bio-fonts"
+					],
 					"category": "others"
 				},
 				{
@@ -8964,7 +9867,9 @@
 					"name": "Insta Hashtag Finder",
 					"description": "Free Insta Hashtag Finder online. Insta Hashtag Finder allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/insta-hashtag-finder",
-					"extraSlugs": ["insta-hashtag-finder"],
+					"extraSlugs": [
+						"insta-hashtag-finder"
+					],
 					"category": "others"
 				},
 				{
@@ -8972,7 +9877,9 @@
 					"name": "Best Hashtags For Reels",
 					"description": "Free Best Hashtags For Reels online. Best Hashtags For Reels allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/best-hashtags-for-reels",
-					"extraSlugs": ["best-hashtags-for-reels"],
+					"extraSlugs": [
+						"best-hashtags-for-reels"
+					],
 					"category": "others"
 				},
 				{
@@ -8980,7 +9887,9 @@
 					"name": "Markdown Parser Online",
 					"description": "Free Markdown Parser Online online. Markdown Parser Online allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/markdown-parser-online",
-					"extraSlugs": ["markdown-parser-online"],
+					"extraSlugs": [
+						"markdown-parser-online"
+					],
 					"category": "others"
 				},
 				{
@@ -8988,7 +9897,9 @@
 					"name": "Render Markdown Html",
 					"description": "Free Render Markdown Html online. Render Markdown Html allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/render-markdown-html",
-					"extraSlugs": ["render-markdown-html"],
+					"extraSlugs": [
+						"render-markdown-html"
+					],
 					"category": "others"
 				},
 				{
@@ -8996,7 +9907,9 @@
 					"name": "Readme To Html",
 					"description": "Free Readme To Html online. Readme To Html allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/readme-to-html",
-					"extraSlugs": ["readme-to-html"],
+					"extraSlugs": [
+						"readme-to-html"
+					],
 					"category": "others"
 				},
 				{
@@ -9004,7 +9917,10 @@
 					"name": "Insta Dp Viewer",
 					"description": "Free Insta Dp Viewer online. Insta Dp Viewer allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/insta-dp-viewer",
-					"extraSlugs": ["ig-dp-viewer", "insta-dp-viewer"],
+					"extraSlugs": [
+						"ig-dp-viewer",
+						"insta-dp-viewer"
+					],
 					"category": "others"
 				},
 				{
@@ -9012,7 +9928,9 @@
 					"name": "Piknu",
 					"description": "Free Piknu online. Piknu allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/piknu",
-					"extraSlugs": ["piknu"],
+					"extraSlugs": [
+						"piknu"
+					],
 					"category": "others"
 				},
 				{
@@ -9020,7 +9938,9 @@
 					"name": "Instastoryviewer",
 					"description": "Free Instastoryviewer online. Instastoryviewer allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/instastoryviewer",
-					"extraSlugs": ["instastoryviewer"],
+					"extraSlugs": [
+						"instastoryviewer"
+					],
 					"category": "others"
 				},
 				{
@@ -9028,7 +9948,9 @@
 					"name": "View Stories Anonymously",
 					"description": "Free View Stories Anonymously online. View Stories Anonymously allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/view-stories-anonymously",
-					"extraSlugs": ["view-stories-anonymously"],
+					"extraSlugs": [
+						"view-stories-anonymously"
+					],
 					"category": "others"
 				},
 				{
@@ -9036,7 +9958,9 @@
 					"name": "Insta Anonymous",
 					"description": "Free Insta Anonymous online. Insta Anonymous allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/insta-anonymous",
-					"extraSlugs": ["insta-anonymous"],
+					"extraSlugs": [
+						"insta-anonymous"
+					],
 					"category": "others"
 				},
 				{
@@ -9044,7 +9968,9 @@
 					"name": "Anonymous Ig Viewer",
 					"description": "Free Anonymous Ig Viewer online. Anonymous Ig Viewer allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/anonymous-ig-viewer",
-					"extraSlugs": ["anonymous-ig-viewer"],
+					"extraSlugs": [
+						"anonymous-ig-viewer"
+					],
 					"category": "others"
 				},
 				{
@@ -9052,7 +9978,9 @@
 					"name": "Instazoom Alternative",
 					"description": "Free Instazoom Alternative online. Instazoom Alternative allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/instazoom-alternative",
-					"extraSlugs": ["instazoom-alternative"],
+					"extraSlugs": [
+						"instazoom-alternative"
+					],
 					"category": "others"
 				},
 				{
@@ -9060,7 +9988,9 @@
 					"name": "Contact",
 					"description": "Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 					"route": "/contact",
-					"extraSlugs": ["contact"],
+					"extraSlugs": [
+						"contact"
+					],
 					"category": "others"
 				},
 				{
