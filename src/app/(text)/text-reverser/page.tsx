@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import TextReverser from "@/components/tools/text/TextReverser";
 
-export const metadata = generateToolMetadata("text-reverser", "text");
+export const metadata = {
+  title: "Free Text Reverser Online - No Signup | 30tools",
+  description: "Free text tools: Text Reverser. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in your browser ",
+  keywords: ["text reverser","text reverser free","text reverser online","text reverser tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const _params = await searchParams;

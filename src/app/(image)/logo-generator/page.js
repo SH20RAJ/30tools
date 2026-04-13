@@ -11,22 +11,95 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import LogoGeneratorTool from "@/components/tools/image/LogoGeneratorTool";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = generateToolMetadata("logo-generator", "image");
+export const metadata = {
+  title: "Free Logo Generator Online - No Signup | 30tools",
+  description: "Create professional logos with text, fonts, and custom colors. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+  keywords: ["logo generator","logo","generator","logo-generator","image","image tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function LogoGeneratorPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-		id: "logo-generator",
-		name: "Logo Generator",
-		description: "Create professional logos instantly",
-		category: "image",
-		route: "/logo-generator",
-	};
+  "id": "logo-generator",
+  "name": "Logo Generator",
+  "description": "Create professional logos with text, fonts, and custom colors",
+  "category": "image",
+  "route": "/logo-generator",
+  "features": [
+    "Supports JPEG, PNG, WebP, GIF, BMP formats",
+    "Batch process multiple images",
+    "High-quality output preservation",
+    "Adjustable quality and compression settings",
+    "100% Free - No hidden costs or subscriptions",
+    "No Registration Required - Start immediately"
+  ],
+  "benefits": [],
+  "useCases": [],
+  "faqs": [
+    {
+      "question": "Is this Logo Generator really free?",
+      "answer": "Yes! Our Logo Generator is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+    },
+    {
+      "question": "Is my data secure when using Logo Generator?",
+      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+    },
+    {
+      "question": "Do I need to create an account to use Logo Generator?",
+      "answer": "No registration required. You can start using Logo Generator immediately without creating an account or providing any personal information."
+    },
+    {
+      "question": "Are there any file size limits for Logo Generator?",
+      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+    },
+    {
+      "question": "Can I use Logo Generator on mobile devices?",
+      "answer": "Yes, Logo Generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+    },
+    {
+      "question": "What file formats does Logo Generator support?",
+      "answer": "Logo Generator supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use Logo Generator",
+    "steps": [
+      {
+        "name": "Upload or Input",
+        "text": "Provide your file or input data using the upload button or text input field. Logo Generator supports drag-and-drop for convenience.",
+        "url": "/logo-generator#step1",
+        "position": 1
+      },
+      {
+        "name": "Configure Settings",
+        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+        "url": "/logo-generator#step2",
+        "position": 2
+      },
+      {
+        "name": "Process & Download",
+        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+        "url": "/logo-generator#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [

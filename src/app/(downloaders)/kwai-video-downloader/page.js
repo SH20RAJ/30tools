@@ -1,8 +1,22 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = generateToolMetadata("kwai-video-downloader", "downloaders");
+export const metadata = {
+  title: "Free Kwai Video Downloader Online - No Signup | 30tools",
+  description: "Free Kwai Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your browse",
+  keywords: ["kwai video downloader","kwai video downloader free","kwai video downloader online","kwai video downloader tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

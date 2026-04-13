@@ -18,6 +18,23 @@ export const metadata: Metadata = {
 	],
 };
 
+export const metadata = {
+  title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+  description: "Free text tools: Lorem Ipsum Generator. Format, convert, manipulate text. Instant results, copy to clipboard, no limits. All processing happens locally in your ",
+  keywords: ["lorem ipsum generator","lorem ipsum generator free","lorem ipsum generator online","lorem ipsum generator tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
+
 export default async function LoremIpsumPage({
 	searchParams,
 }: { searchParams: Promise<{ [key: string]: string | string[] | undefined }> }) {

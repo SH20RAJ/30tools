@@ -1,14 +1,22 @@
 import Link from "next/link";
 import BrokenLinkChecker from "@/components/tools/seo/BrokenLinkChecker";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("broken-link-checker", "seo", {
-	title: "Broken Link Checker | Find 404s & Dead Links Free | 30Tools",
-	description:
-		"Scan a page or site for broken links, 404 errors, and redirect issues that can hurt SEO and user experience.",
-	image: "/og-images/broken-link-checker.jpg",
-	robots: { index: true, follow: true },
-});
+export const metadata = {
+  title: "Free Broken Link Checker Online - No Signup | 30tools",
+  description: "SEO tools: Broken Link Checker. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your browser ",
+  keywords: ["broken link checker","broken link checker free","broken link checker online","broken link checker tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

@@ -1,9 +1,23 @@
 import RelatedTools from "@/components/shared/RelatedTools";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import ScrollToTopButton from "@/components/tools/youtube/ScrollToTopButton";
 import YouTubeDownloader from "@/components/tools/youtube/YouTubeDownloader";
 
-export const metadata = generateToolMetadata("youtube-downloader", "youtube");
+export const metadata = {
+  title: "Free YouTube Video/Audio Downloader Online - No Signup | 30tools",
+  description: "YouTube tools: YouTube Video/Audio Downloader. Download thumbnails, get stats, optimize videos. Free, fast, and secure. All processing happens locally in your b",
+  keywords: ["youtube video/audio downloader","youtube video/audio downloader free","youtube video/audio downloader online","youtube video/audio downloader tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const KEYWORD_INSIGHTS = [
 	{

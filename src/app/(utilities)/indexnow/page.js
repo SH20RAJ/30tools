@@ -2,31 +2,20 @@ import { Globe } from "lucide-react";
 import IndexNowClient from "@/components/tools/general/IndexNowClient";
 
 export const metadata = {
-	title: "IndexNow Integration - Submit URLs Instantly | 30tools",
-	description:
-		"Submit URLs to search engines (Bing, Yandex, etc.) instantly using IndexNow. Boost your SEO with real-time indexing. Free online tool.",
-	keywords:
-		"indexnow, submit url, fast indexing, bing webmaster tools, seo tool, indexnow api",
-	openGraph: {
-		title: "IndexNow Integration - Submit URLs Instantly | 30tools",
-		description:
-			"Submit URLs to search engines instantly using IndexNow protocol.",
-		url: "https://30tools.com/indexnow",
-		siteName: "30tools",
-		type: "website",
-		images: [{ url: "/og-images/indexnow.jpg", width: 1200, height: 630 }],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "IndexNow Integration - Submit URLs Instantly",
-		description:
-			"Submit URLs to search engines instantly using IndexNow protocol.",
-		images: ["/og-images/indexnow.jpg"],
-		creator: "@30tools",
-	},
-	alternates: {
-		canonical: "https://30tools.com/indexnow",
-	},
+  title: "Free IndexNow Submitter Online - No Signup | 30tools",
+  description: "Free utility tools: IndexNow Submitter. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your bro",
+  keywords: ["indexnow submitter","indexnow submitter free","indexnow submitter online","indexnow submitter tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 const jsonLd = {

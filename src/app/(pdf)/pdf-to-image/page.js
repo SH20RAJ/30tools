@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import {
 	BreadcrumbsEnhanced,
 	FAQSection,
@@ -15,19 +14,93 @@ import {
 import PdfToImageTool from "@/components/tools/pdf/PdfToImageTool";
 import { getPdfToolFAQs } from "@/constants/seo/pdf-faqs";
 
-export const metadata = generateToolMetadata("pdf-to-image", "pdf");
+export const metadata = {
+  title: "Free PDF to Image Online - No Signup | 30tools",
+  description: "Professional PDF tools: PDF to Image. Merge, split, compress, convert. 100% free, no watermarks, works on all devices. All processing happens locally in your br",
+  keywords: ["pdf to image","pdf to image free","pdf to image online","pdf to image tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function PdfToImagePage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-		id: "pdf-to-image",
-		name: "PDF to Image",
-		description: "Convert PDF pages to image files",
-		category: "pdf",
-		route: "/pdf-to-image",
-	};
+  "id": "pdf-to-image",
+  "name": "PDF to Image",
+  "description": "Convert PDF pages to high-quality JPG, PNG images",
+  "category": "pdf",
+  "route": "/pdf-to-image",
+  "features": [
+    "Merge unlimited PDF files",
+    "Split by pages or ranges",
+    "Compress without quality loss",
+    "Add password protection",
+    "Convert images to PDF",
+    "100% Free - No hidden costs or subscriptions"
+  ],
+  "benefits": [],
+  "useCases": [],
+  "faqs": [
+    {
+      "question": "Is this PDF to Image really free?",
+      "answer": "Yes! Our PDF to Image is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+    },
+    {
+      "question": "Is my data secure when using PDF to Image?",
+      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+    },
+    {
+      "question": "Do I need to create an account to use PDF to Image?",
+      "answer": "No registration required. You can start using PDF to Image immediately without creating an account or providing any personal information."
+    },
+    {
+      "question": "Are there any file size limits for PDF to Image?",
+      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+    },
+    {
+      "question": "Can I use PDF to Image on mobile devices?",
+      "answer": "Yes, PDF to Image is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+    },
+    {
+      "question": "What file formats does PDF to Image support?",
+      "answer": "PDF to Image supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use PDF to Image",
+    "steps": [
+      {
+        "name": "Upload or Input",
+        "text": "Provide your file or input data using the upload button or text input field. PDF to Image supports drag-and-drop for convenience.",
+        "url": "/pdf-to-image#step1",
+        "position": 1
+      },
+      {
+        "name": "Configure Settings",
+        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+        "url": "/pdf-to-image#step2",
+        "position": 2
+      },
+      {
+        "name": "Process & Download",
+        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+        "url": "/pdf-to-image#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [

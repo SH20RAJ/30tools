@@ -1,8 +1,22 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader";
 
-export const metadata = generateToolMetadata("twitter-video-downloader", "downloaders");
+export const metadata = {
+  title: "Free Twitter/X Video Downloader Online - No Signup | 30tools",
+  description: "Free Twitter/X Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your b",
+  keywords: ["twitter/x video downloader","twitter/x video downloader free","twitter/x video downloader online","twitter/x video downloader tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLdSchemas = {
 	webApp: {

@@ -1,5 +1,4 @@
 import { Eye, FileJson, Key, Lock } from "lucide-react";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import JWTDecoder from "@/components/tools/developer/JWTDecoderTool";
 import {
 	Accordion,
@@ -8,7 +7,22 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const metadata = generateToolMetadata("jwt-decoder", "developer");
+export const metadata = {
+  title: "Free JWT Decoder Online - No Signup | 30tools",
+  description: "Developer tools: JWT Decoder. Format, validate, convert code/data. Fast, accurate, essential for programmers. All processing happens locally in your browser for",
+  keywords: ["jwt decoder","jwt decoder free","jwt decoder online","jwt decoder tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLdSchemas = {
 	webApp: {

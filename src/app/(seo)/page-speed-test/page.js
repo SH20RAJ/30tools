@@ -1,12 +1,21 @@
 import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("page-speed-test", "seo", {
-	title: "Page Speed Test | Free Website Performance Checker | 30Tools",
-	description:
-		"Test page speed, Core Web Vitals, and load performance to find issues that can hurt SEO and user experience.",
-	image: "/og-images/page-speed-test.jpg",
-});
+export const metadata = {
+  title: "Free Page Speed Test Tool Online - No Signup | 30tools",
+  description: "SEO tools: Page Speed Test Tool. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your browser",
+  keywords: ["page speed test tool","page speed test tool free","page speed test tool online","page speed test tool tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLd = generateToolJsonLd("page-speed-test", "seo", {
 	name: "Page Speed Test",

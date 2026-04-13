@@ -11,22 +11,95 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGeneratorTool";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
 
-export const metadata = generateToolMetadata("ai-voice-generator", "generators");
+export const metadata = {
+  title: "Free AI Voice Generator Online - No Signup | 30tools",
+  description: "Convert text to natural-sounding speech with our free AI voice generator. Choose from multiple voices, languages, and download high-quality audio instantly. No signup required, unlimited usage, and secure browser-based processing. Try now!",
+  keywords: ["ai voice generator","ai voice generator free","ai voice generator online","ai voice generator tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function AIVoiceGeneratorPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-		id: "ai-voice-generator",
-		name: "AI Voice Generator",
-		description: "Convert text to natural-sounding speech with AI",
-		category: "generators",
-		route: "/ai-voice-generator",
-	};
+  "id": "ai-voice-generator",
+  "name": "AI Voice Generator",
+  "description": "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
+  "category": "generators",
+  "route": "/ai-voice-generator",
+  "features": [
+    "100% Free - No hidden costs or subscriptions",
+    "No Registration Required - Start immediately",
+    "Secure & Private - All processing in your browser",
+    "Fast & Efficient - Get results in seconds",
+    "No File Size Limits - Handle large files easily",
+    "Mobile Friendly - Works on all devices"
+  ],
+  "benefits": [],
+  "useCases": [],
+  "faqs": [
+    {
+      "question": "Is this AI Voice Generator really free?",
+      "answer": "Yes! Our AI Voice Generator is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+    },
+    {
+      "question": "Is my data secure when using AI Voice Generator?",
+      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+    },
+    {
+      "question": "Do I need to create an account to use AI Voice Generator?",
+      "answer": "No registration required. You can start using AI Voice Generator immediately without creating an account or providing any personal information."
+    },
+    {
+      "question": "Are there any file size limits for AI Voice Generator?",
+      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+    },
+    {
+      "question": "Can I use AI Voice Generator on mobile devices?",
+      "answer": "Yes, AI Voice Generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+    },
+    {
+      "question": "What file formats does AI Voice Generator support?",
+      "answer": "AI Voice Generator supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use AI Voice Generator",
+    "steps": [
+      {
+        "name": "Upload or Input",
+        "text": "Provide your file or input data using the upload button or text input field. AI Voice Generator supports drag-and-drop for convenience.",
+        "url": "/ai-voice-generator#step1",
+        "position": 1
+      },
+      {
+        "name": "Configure Settings",
+        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+        "url": "/ai-voice-generator#step2",
+        "position": 2
+      },
+      {
+        "name": "Process & Download",
+        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+        "url": "/ai-voice-generator#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [

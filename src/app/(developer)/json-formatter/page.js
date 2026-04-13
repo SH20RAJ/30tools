@@ -8,24 +8,96 @@ import {
 	UserComments,
 } from "@/components/seo";
 import { DeveloperToolExamples } from "@/components/seo/DeveloperToolsHub";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 import { getDeveloperToolFAQs } from "@/constants/seo/developer-faqs";
 
-export const metadata = generateToolMetadata("json-formatter", "developer");
+export const metadata = {
+  title: "Free JSON Formatter Online - No Signup | 30tools",
+  description: "Developer tools: JSON Formatter. Format, validate, convert code/data. Fast, accurate, essential for programmers. All processing happens locally in your browser ",
+  keywords: ["json formatter","json formatter free","json formatter online","json formatter tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function JSONFormatterPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 	// Tool-specific data
 	const toolData = {
-		id: "json-formatter",
-		name: "JSON Formatter & Validator",
-		description:
-			"Format, validate, and beautify JSON data with error detection",
-		category: "developer-tools",
-		route: "/json-formatter",
-	};
+  "id": "json-formatter",
+  "name": "JSON Formatter",
+  "description": "Format, validate, and beautify JSON data",
+  "category": "developer",
+  "route": "/json-formatter",
+  "features": [
+    "Syntax highlighting",
+    "Multiple language support",
+    "Validation & error checking",
+    "Export formatted code",
+    "API integration available",
+    "100% Free - No hidden costs or subscriptions"
+  ],
+  "benefits": [],
+  "useCases": [],
+  "faqs": [
+    {
+      "question": "Is this JSON Formatter really free?",
+      "answer": "Yes! Our JSON Formatter is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+    },
+    {
+      "question": "Is my data secure when using JSON Formatter?",
+      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+    },
+    {
+      "question": "Do I need to create an account to use JSON Formatter?",
+      "answer": "No registration required. You can start using JSON Formatter immediately without creating an account or providing any personal information."
+    },
+    {
+      "question": "Are there any file size limits for JSON Formatter?",
+      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+    },
+    {
+      "question": "Can I use JSON Formatter on mobile devices?",
+      "answer": "Yes, JSON Formatter is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+    },
+    {
+      "question": "What file formats does JSON Formatter support?",
+      "answer": "JSON Formatter supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use JSON Formatter",
+    "steps": [
+      {
+        "name": "Upload or Input",
+        "text": "Provide your file or input data using the upload button or text input field. JSON Formatter supports drag-and-drop for convenience.",
+        "url": "/json-formatter#step1",
+        "position": 1
+      },
+      {
+        "name": "Configure Settings",
+        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+        "url": "/json-formatter#step2",
+        "position": 2
+      },
+      {
+        "name": "Process & Download",
+        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+        "url": "/json-formatter#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [

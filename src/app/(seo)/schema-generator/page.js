@@ -1,25 +1,21 @@
 import Link from "next/link";
-import { AuthorBio } from "@/components/seo";
-import SchemaGenerator from "@/components/tools/seo/SchemaGenerator";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("schema-generator", "seo", {
-	title: "Schema Markup Generator | Free JSON-LD Tool | 30Tools",
-	description:
-		"Generate JSON-LD structured data for FAQ, HowTo, software, and other rich result types without writing schema by hand.",
-	image: "/og-images/schema-generator.jpg",
-	robots: {
-		index: true,
-		follow: true,
-		googleBot: {
-			index: true,
-			follow: true,
-			"max-video-preview": -1,
-			"max-image-preview": "large",
-			"max-snippet": -1,
-		},
-	},
-});
+export const metadata = {
+  title: "Free Schema Markup Generator Online - No Signup | 30tools",
+  description: "Generate JSON-LD schema markup for rich snippets. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+  keywords: ["schema markup generator","schema","markup","generator","schema-generator","seo","seo tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLdSchemas = {
 	webApp: generateToolJsonLd("schema-generator", "seo", {

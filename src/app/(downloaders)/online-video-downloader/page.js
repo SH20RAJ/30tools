@@ -1,32 +1,22 @@
 import BreadcrumbsEnhanced from "@/components/seo/BreadcrumbsEnhanced";
 import FAQSection from "@/components/seo/FAQSection";
-import { QuickActions, RelatedTools } from "@/components/seo/SocialEngagement";
-import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
-import { generateToolMetadata, getToolData } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata(
-  "online-video-downloader",
-  "downloaders",
-  {
-    title:
-      "Online Video Downloader | Free Universal Downloader for YouTube, TikTok, Instagram | 30Tools",
-    description:
-      "Download videos from YouTube, TikTok, Instagram, Facebook, Twitter, and 1000+ websites for free. HD & 4K quality, no software needed, no signup. Works on any device.",
-    keywords: [
-      "video downloader",
-      "youtube downloader",
-      "tiktok downloader",
-      "instagram downloader",
-      "free video downloader",
-      "online video downloader",
-      "universal downloader",
-      "download videos free",
-      "4k video download",
-      "social media downloader",
-    ],
-    robots: { index: true, follow: true },
+export const metadata = {
+  title: "Free Online Video Downloader Online - No Signup | 30tools",
+  description: "Download videos from any website for free with our online video downloader. Supports YouTube, TikTok, Instagram, Facebook, Twitter and 1000+ sites. HD quality, MP4/MP3 formats, no watermarks, no signup. Try now!",
+  keywords: ["online video downloader","video downloader free","download videos from any website","youtube video downloader free","tiktok video downloader","instagram video downloader","facebook video downloader","video downloader online","free video downloader no watermark","hd video downloader","video downloader for pc","video downloader mobile","video downloader chrome","video downloader app","video to mp3 converter"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-);
+};
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -140,7 +130,130 @@ const jsonLd = {
 export default async function OnlineVideoDownloaderPage({ searchParams }) {
   const params = await searchParams;
   const _lang = params.lang || "en";
-  const toolData = getToolData("online-video-downloader", "downloaders");
+  const toolData = {
+  "id": "online-video-downloader",
+  "name": "Online Video Downloader",
+  "description": "Download videos from any website for free with our online video downloader. Supports YouTube, TikTok, Instagram, Facebook, Twitter and 1000+ sites. HD quality, MP4/MP3 formats, no watermarks.",
+  "category": "downloaders",
+  "route": "/online-video-downloader",
+  "features": [
+    "Support 1000+ Video Sharing Sites",
+    "HD, Full HD, 4K Quality Downloads",
+    "Multiple Formats: MP4, MP3, WEBM, MOV",
+    "No Watermarks or Branding",
+    "Batch Download Multiple Videos",
+    "High-Speed Downloads",
+    "100% Free - No Hidden Costs",
+    "No Account or Registration Needed",
+    "Privacy-Preserving: Browser-Based",
+    "Unlimited Usage, No Quotas",
+    "Regularly Updated Site Support",
+    "Clean, Ad-Light Interface"
+  ],
+  "benefits": [
+    "Watch videos offline without internet connection",
+    "Save educational tutorials and courses for later",
+    "Create personal video libraries and archives",
+    "Download content from platforms without native download",
+    "Convert videos to audio (MP3) for listening offline",
+    "Preserve memories from social media platforms"
+  ],
+  "useCases": [
+    "Students downloading lecture videos for study",
+    "Travelers saving videos for offline entertainment",
+    "Content creators archiving their own videos",
+    "Researchers collecting video data for analysis",
+    "Teachers preparing offline classroom materials",
+    "Professionals saving training videos",
+    "Families preserving personal video memories",
+    "Marketers saving competitor ad videos"
+  ],
+  "faqs": [
+    {
+      "question": "What is an online video downloader?",
+      "answer": "An online video downloader is a web-based tool that extracts video files from various video-sharing platforms like YouTube, TikTok, Instagram, Facebook, and Twitter. It fetches the direct video URL and lets you download the file to your device in various formats and qualities."
+    },
+    {
+      "question": "Is this online video downloader really free?",
+      "answer": "Yes! 30Tools provides a completely free video downloader with no hidden costs, subscriptions, or usage limits. Download unlimited videos from supported sites without creating an account. 100% free forever."
+    },
+    {
+      "question": "How do I download a video from any website?",
+      "answer": "1. Copy the video URL from your browser's address bar or share button. 2. Paste the link into our downloader input field. 3. Our tool detects available formats and qualities. 4. Select your preferred format (MP4, MP3, etc.) and quality (HD, 4K). 5. Click download to save the file."
+    },
+    {
+      "question": "Which websites are supported?",
+      "answer": "We support 1000+ video platforms including YouTube, TikTok, Instagram, Facebook, Twitter/X, Vimeo, Dailymotion, Twitch, Rumble, Pinterest, and many more. Our tool automatically detects if a site is supported when you paste the URL."
+    },
+    {
+      "question": "What video quality and formats are available?",
+      "answer": "Available qualities depend on the source platform: up to 4K Ultra HD, 1080p Full HD, 720p, 480p, etc. Formats include MP4 (video), MP3 (audio-only), WEBM, MOV, and more. We offer the best available quality for that source video."
+    },
+    {
+      "question": "Can I download YouTube videos as MP3?",
+      "answer": "Yes! When downloading from YouTube or similar platforms, you can choose MP3 audio-only format. This extracts the audio track and saves it as a high-quality MP3 file perfect for music or podcasts."
+    },
+    {
+      "question": "Is it legal to download videos from these platforms?",
+      "answer": "Downloading videos for personal offline use is generally acceptable. However, redistributing, reuploading, or using downloaded content commercially without permission violates copyright laws and platform terms of service. Always respect creators' rights."
+    },
+    {
+      "question": "Are there any usage limits or daily caps?",
+      "answer": "None whatsoever. Download as many videos as you want, whenever you want. We don't track your usage or impose artificial limits. Our service is truly unlimited and free."
+    },
+    {
+      "question": "Is my data secure when using this downloader?",
+      "answer": "Absolutely. The entire process runs in your browser. We do not store the URLs you submit, the videos you download, or any personal data. Your download activities remain completely private and secure."
+    },
+    {
+      "question": "Why can't I download a certain video?",
+      "answer": "Some videos cannot be downloaded due to: platform restrictions (e.g., age-restricted, private, or deleted videos), DRM protection (Netflix, Amazon Prime), geographic restrictions, or the platform simply not being supported yet. We constantly expand our supported sites."
+    },
+    {
+      "question": "What if the video is age-restricted or private?",
+      "answer": "Age-restricted or private videos require authentication and cannot be accessed by our tool due to privacy and legal restrictions. Only publicly available videos can be downloaded."
+    },
+    {
+      "question": "Can I download entire playlists or channels?",
+      "answer": "Our current version downloads individual videos. For bulk downloads of playlists or channels, you can paste each video URL sequentially. Batch download capabilities for full playlists may be available in the future."
+    },
+    {
+      "question": "Do downloaded videos contain watermarks?",
+      "answer": "No. We fetch the direct source video file without any overlays or branding. Some platforms may already embed watermarks in their source files (e.g., TikTok), which we cannot remove, but we don't add our own."
+    },
+    {
+      "question": "What devices and browsers are supported?",
+      "answer": "Our tool works on any modern browser (Chrome, Firefox, Safari, Edge) across Windows, macOS, Linux, Android, and iOS. The responsive design ensures a great experience on desktop, tablet, and mobile."
+    },
+    {
+      "question": "How fast are the downloads?",
+      "answer": "Download speed depends on your internet connection and the source platform's server speed. Our extraction process is instant, but actual file download speed is determined by your network. We don't throttle or limit speeds."
+    }
+  ],
+  "howTo": {
+    "name": "How to Download Videos Online",
+    "steps": [
+      {
+        "name": "Copy the Video Link",
+        "text": "Open the video you want to download on its platform (YouTube, TikTok, Instagram, etc.). Copy the full URL from your browser's address bar or use the platform's Share → Copy Link feature.",
+        "url": "https://30tools.com/online-video-downloader#step1",
+        "image": "https://30tools.com/images/video-dl-step1.jpg"
+      },
+      {
+        "name": "Paste the URL",
+        "text": "Navigate to 30Tools Online Video Downloader. Paste the copied URL into the input field. Our system will verify the link is valid and fetch all available download options (formats and qualities).",
+        "url": "https://30tools.com/online-video-downloader#step2",
+        "image": "https://30tools.com/images/video-dl-step2.jpg"
+      },
+      {
+        "name": "Choose Format & Download",
+        "text": "Select your preferred format (MP4 video, MP3 audio, etc.) and quality (4K, 1080p, 720p, etc.). Click the download button, and the file will begin downloading to your device. Save it to your desired folder.",
+        "url": "https://30tools.com/online-video-downloader#step3",
+        "image": "https://30tools.com/images/video-dl-step3.jpg"
+      }
+    ]
+  }
+};
 
   // Breadcrumbs
   const breadcrumbs = [

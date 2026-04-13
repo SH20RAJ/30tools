@@ -1,22 +1,6 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import InstagramReelDownloader from "@/components/tools/downloaders/InstagramReelDownloader";
 
-export async function generateMetadata({ searchParams }) {
-	const params = await searchParams;
-	const variant = params.variant;
-	const baseMetadata = generateToolMetadata(
-		"instagram-reel-downloader",
-		"downloaders",
-		"en",
-		{},
-		variant,
-	);
-
-	// If it's a specific variant, use the generated title, otherwise use our optimized default
-	if (variant) {
-		return baseMetadata;
-	}
 
 	return {
 		...baseMetadata,
@@ -138,6 +122,23 @@ const jsonLdSchemas = {
 			},
 		],
 	},
+};
+
+export const metadata = {
+  title: "Free Instagram Reel Downloader Online - No Signup | 30tools",
+  description: "Download Instagram Reels in HD 1080p with original audio. No watermark, no signup, 100% free. Save IG Reels to your gallery instantly. Try the best downloader now!",
+  keywords: ["instagram reel downloader","download instagram reels","insta reel download","reels downloader","save instagram reels","instagram reel video download","instagram reel link download","save ig reels without watermark","instagram reel downloader with audio","download reels from instagram","best instagram reel downloader 2026","free","online","tool","30tools","no signup","fast","secure","instant"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default async function InstagramReelDownloaderPage({ searchParams }) {

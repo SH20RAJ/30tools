@@ -9,24 +9,93 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import UTMBuilderTool from "@/components/tools/utilities/UTMBuilderTool";
-import { generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("utm-builder", "utilities", {
-	title: "UTM Builder | Free Campaign URL Generator | 30Tools",
-	description:
-		"Build tagged campaign URLs with UTM parameters for Google Analytics and marketing attribution.",
-});
+export const metadata = {
+  title: "Free UTM Builder Online - No Signup | 30tools",
+  description: "Free utility tools: UTM Builder. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your browser fo",
+  keywords: ["utm builder","utm builder free","utm builder online","utm builder tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function UTMBuilderPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 	const toolData = {
-		id: "utm-builder",
-		name: "UTM Builder",
-		description: "Generate campaign URLs for tracking",
-		category: "utilities",
-		route: "/utm-builder",
-	};
+  "id": "utm-builder",
+  "name": "UTM Builder",
+  "description": "Easily build campaign URLs with UTM parameters for Google Analytics tracking.",
+  "category": "utilities",
+  "route": "/utm-builder",
+  "features": [
+    "100% Free - No hidden costs or subscriptions",
+    "No Registration Required - Start immediately",
+    "Secure & Private - All processing in your browser",
+    "Fast & Efficient - Get results in seconds",
+    "No File Size Limits - Handle large files easily",
+    "Mobile Friendly - Works on all devices"
+  ],
+  "benefits": [],
+  "useCases": [],
+  "faqs": [
+    {
+      "question": "Is this UTM Builder really free?",
+      "answer": "Yes! Our UTM Builder is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+    },
+    {
+      "question": "Is my data secure when using UTM Builder?",
+      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+    },
+    {
+      "question": "Do I need to create an account to use UTM Builder?",
+      "answer": "No registration required. You can start using UTM Builder immediately without creating an account or providing any personal information."
+    },
+    {
+      "question": "Are there any file size limits for UTM Builder?",
+      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+    },
+    {
+      "question": "Can I use UTM Builder on mobile devices?",
+      "answer": "Yes, UTM Builder is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+    },
+    {
+      "question": "What file formats does UTM Builder support?",
+      "answer": "UTM Builder supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use UTM Builder",
+    "steps": [
+      {
+        "name": "Upload or Input",
+        "text": "Provide your file or input data using the upload button or text input field. UTM Builder supports drag-and-drop for convenience.",
+        "url": "/utm-builder#step1",
+        "position": 1
+      },
+      {
+        "name": "Configure Settings",
+        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+        "url": "/utm-builder#step2",
+        "position": 2
+      },
+      {
+        "name": "Process & Download",
+        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+        "url": "/utm-builder#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	const features = [
 		"Instant URL Generation",

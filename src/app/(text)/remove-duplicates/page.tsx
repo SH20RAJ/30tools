@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import RemoveDuplicates from "@/components/tools/text/RemoveDuplicates";
 
-export const metadata = generateToolMetadata("remove-duplicates", "others");
+export const metadata = {
+  title: "Free Remove Duplicates Online - No Signup | 30tools",
+  description: "Remove duplicate lines from text lists. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+  keywords: ["remove duplicates","remove","duplicates","remove-duplicates","text","text tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const _params = await searchParams;

@@ -11,20 +11,105 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import FaviconGeneratorTool from "@/components/tools/image/FaviconGeneratorTool";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = generateToolMetadata("favicon-generator", "image");
+export const metadata = {
+  title: "Free Favicon Generator Online - No Signup | 30tools",
+  description: "Create website favicons in seconds with text, emojis, or image uploads. Fast, free, browser-based favicon generator with preview and no signup required.",
+  keywords: ["favicon generator","free favicon maker","online favicon generator","website icon maker","create favicon online","favicon creator","favicon design tool","browser favicon maker","text favicon generator","emoji favicon creator"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function FaviconGeneratorPage() {
 	// Tool-specific data
 	const toolData = {
-		id: "favicon-generator",
-		name: "Favicon Generator",
-		description: "Create website favicons instantly in your browser",
-		category: "image",
-		route: "/favicon-generator",
-	};
+  "id": "favicon-generator",
+  "name": "Favicon Generator",
+  "description": "Generate favicons from text, images, or emojis for websites",
+  "category": "image",
+  "route": "/favicon-generator",
+  "features": [
+    "Create favicons from text, emojis, or image uploads",
+    "Live browser tab preview before download",
+    "Customize colors, fonts, and rounded corners",
+    "Download optimized 32x32 and 512x512 icons",
+    "Fast browser-only favicon creation",
+    "No signup, no uploads, 100% free"
+  ],
+  "benefits": [
+    "Build a crisp browser icon in seconds",
+    "Keep favicon creation private and secure",
+    "Use brand initials, emoji, or logo images",
+    "Avoid complex graphic design tools",
+    "Download ready-to-use icons instantly"
+  ],
+  "useCases": [
+    "Create a favicon for a new website or blog",
+    "Turn a logo into a tab icon quickly",
+    "Design a simple brand mark for landing pages",
+    "Build a recognizable icon for bookmarks",
+    "Experiment with emoji favicons without design software"
+  ],
+  "faqs": [
+    {
+      "question": "Is this Favicon Generator really free?",
+      "answer": "Yes! Our Favicon Generator is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+    },
+    {
+      "question": "Is my data secure when using Favicon Generator?",
+      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+    },
+    {
+      "question": "Do I need to create an account to use Favicon Generator?",
+      "answer": "No registration required. You can start using Favicon Generator immediately without creating an account or providing any personal information."
+    },
+    {
+      "question": "Are there any file size limits for Favicon Generator?",
+      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+    },
+    {
+      "question": "Can I use Favicon Generator on mobile devices?",
+      "answer": "Yes, Favicon Generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+    },
+    {
+      "question": "What file formats does Favicon Generator support?",
+      "answer": "Favicon Generator supports images and text-based icons. Upload common image formats and download browser-ready PNG icons quickly."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use Favicon Generator",
+    "steps": [
+      {
+        "name": "Upload or Input",
+        "text": "Provide your content by uploading an image, entering text, or selecting an emoji. The tool supports drag-and-drop for convenience.",
+        "url": "/favicon-generator#step1",
+        "position": 1
+      },
+      {
+        "name": "Customize Design",
+        "text": "Choose colors, fonts, size, and roundness. Preview the favicon immediately in the browser tab mockup.",
+        "url": "/favicon-generator#step2",
+        "position": 2
+      },
+      {
+        "name": "Download Icon",
+        "text": "Download your favicon in standard and high-resolution sizes. Save it for your website or bookmark icon.",
+        "url": "/favicon-generator#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [

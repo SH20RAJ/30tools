@@ -1,7 +1,21 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import PremiumToolPage from "@/components/seo/PremiumToolPage";
-export const metadata = generateToolMetadata("temperature-converter", "utilities");
+export const metadata = {
+  title: "Free Temperature Converter Online - No Signup | 30tools",
+  description: "Free utility tools: Temperature Converter. Convert units, compress files, shorten URLs. Fast, accurate, and easy to use. All processing happens locally in your ",
+  keywords: ["temperature converter free","temperature converter online","low competition temperature tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default function ToolPage() {
   return <PremiumToolPage toolId="temperature-converter" />;

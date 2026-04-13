@@ -1,8 +1,22 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import RobotsTxtGenerator from "@/components/tools/seo/RobotsTxtGenerator";
 
-export const metadata = generateToolMetadata("robots-txt-generator", "seo");
+export const metadata = {
+  title: "Free Robots.txt Generator Online - No Signup | 30tools",
+  description: "SEO tools: Robots.txt Generator. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your browser",
+  keywords: ["robots.txt generator","robots.txt generator free","robots.txt generator online","robots.txt generator tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

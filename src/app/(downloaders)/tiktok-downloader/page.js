@@ -19,42 +19,20 @@ import {
 } from "@/components/ui/accordion";
 
 export const metadata = {
-	title: "TikTok Downloader Without Watermark Free | Download TikTok Videos",
-	description:
-		"Download TikTok videos without watermark for free online. Safely save TikToks to MP4 in HD quality using the best TikTok downloader of 2026. No login required.",
-	keywords: [
-		"tiktok downloader without watermark free",
-		"download tiktok videos online",
-		"tiktok mp4 downloader free",
-		"save tiktok video no watermark",
-		"snaptik alternative free",
-		"ssstik tiktok downloader online",
-		"best tiktok saver 2026",
-	],
-	openGraph: {
-		title: "TikTok Downloader (2026) - No Watermark HD Video Download",
-		description:
-			"⚡ Download TikTok videos without watermark in HD. Save TikToks to MP4 instantly. Free, fast & unlimited! (Updated 2026)",
-		url: "https://30tools.com/tiktok-downloader",
-		type: "website",
-		images: [
-			{
-				url: "/og-images/tiktok-downloader.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Best TikTok Downloader 2026 - No Watermark",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "TikTok Downloader (2026) - No Watermark HD Download",
-		description:
-			"⚡ Download TikTok videos without watermark. Save to MP4 in HD quality. Updated 2026!",
-		images: ["/og-images/tiktok-downloader.jpg"],
-		creator: "@30tools",
-	},
-	alternates: { canonical: "https://30tools.com/tiktok-downloader" },
+  title: "Free TikTok Video Downloader Online - No Signup | 30tools",
+  description: "Download TikTok videos without watermark for free in HD quality. Our 2026 updated TikTok saver allows you to save videos to your camera roll or PC instantly..",
+  keywords: ["tiktok video downloader","tiktok","video","downloader","tiktok-video-downloader","downloaders","downloaders tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 // Comprehensive JSON-LD schemas

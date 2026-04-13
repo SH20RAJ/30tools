@@ -13,52 +13,24 @@ import {
 } from "@/components/seo/GeneratorToolsHub";
 import AIImageGeneratorTool from "@/components/tools/generators/AIImageGeneratorTool";
 import { getGeneratorToolFAQs } from "@/constants/seo/generator-faqs";
-import { generateToolMetadata } from "@/lib/seo-helper";
 
 // OPTIMIZED METADATA: Override with low KD keywords and CTR-optimized
-export const metadata = generateToolMetadata(
-  "ai-image-generator",
-  "generators",
-  "en",
-  {
-    title: "Free AI Image Generator - Instant Text-to-Image Art | 30tools",
-    description:
-      "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and privacy-focused browser processing. Try now!",
-    keywords: [
-      "ai image generator",
-      "free ai image generator",
-      "ai image generator online",
-      "ai picture generator",
-      "text to image ai",
-      "ai art generator",
-      "ai image creator",
-      "instant ai generator",
-      "ai image generator no signup",
-      "free ai art generator",
-      "text to image free",
-      "online ai image generator",
-      "ai image generator tool",
-      "ai image generator for beginners",
-      "ai generated images",
-      "ai image generator commercial use",
-      "ai image generator easy",
-      "simple ai image generator",
-      "ai image generator fast",
-      "ai art generator free online",
-    ],
-    robots: {
+export const metadata = {
+  title: "Free AI Image Generator Online - No Signup | 30tools",
+  description: "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and privacy-focused browser processing. Try now and transform your ideas into beautiful artwork!",
+  keywords: ["ai image generator","free ai image generator","ai image generator online","ai picture generator","text to image ai","ai art generator","ai image creator","instant ai generator","ai image generator no signup","free ai art generator","text to image free","online ai image generator","ai image generator tool","ai image generator for beginners","ai generated images","ai image generator commercial use"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
       index: true,
       follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
-);
+};
 
 export default async function AIImageGeneratorPage({ searchParams }) {
   const params = await searchParams;
@@ -66,12 +38,126 @@ export default async function AIImageGeneratorPage({ searchParams }) {
 
   // Tool-specific data
   const toolData = {
-    id: "ai-image-generator",
-    name: "AI Image Generator",
-    description: "Generate stunning AI images from text prompts instantly",
-    category: "generators",
-    route: "/ai-image-generator",
-  };
+  "id": "ai-image-generator",
+  "name": "AI Image Generator",
+  "description": "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing.",
+  "category": "generators",
+  "route": "/ai-image-generator",
+  "features": [
+    "Advanced Text-to-Image AI Engine",
+    "Multiple Art Styles: Photorealistic, Anime, Digital Art, Cyberpunk, Oil Painting, Watercolor, Cartoon, Fantasy",
+    "High-Resolution Outputs up to 4K",
+    "Customizable Aspect Ratios (1:1, 4:3, 3:4, 16:9, 21:9)",
+    "Seed-based Reproducible Results",
+    "100% Free with Unlimited Generations",
+    "No Account or Registration Needed",
+    "Privacy-focused: All Processing Local",
+    "Instant Download in HD",
+    "Generation History & Favorites"
+  ],
+  "benefits": [
+    "Create professional artwork in seconds without design skills",
+    "Perfect for content creators, marketers, and designers",
+    "Generate unique visuals for blogs, social media, and ads",
+    "Experiment with different art styles effortlessly",
+    "Save time and money on stock image subscriptions"
+  ],
+  "useCases": [
+    "Social media content creation",
+    "Blog and website illustrations",
+    "Marketing and ad creatives",
+    "Product mockups and concepts",
+    "Character design and storytelling",
+    "Educational materials",
+    "Personal art projects",
+    "Commercial branding assets"
+  ],
+  "faqs": [
+    {
+      "question": "What is an AI image generator?",
+      "answer": "An AI image generator is a tool that uses artificial intelligence to create images from text descriptions (prompts). It analyzes millions of images to understand patterns and generate unique visuals based on your input."
+    },
+    {
+      "question": "Is this AI Image Generator really free?",
+      "answer": "Yes, 30Tools provides a completely free AI image generator with no hidden costs or subscription models. Generate unlimited images from text prompts without creating an account. 100% free forever."
+    },
+    {
+      "question": "How do I write the best AI prompts?",
+      "answer": "Be descriptive. Include the subject, environment, art style (e.g., 'Van Gogh style', 'cinematic lighting'), colors, mood, and resolution ('8k detailed'). The more detail you provide, the better the AI visualizes your idea."
+    },
+    {
+      "question": "Can I use generated images for commercial projects?",
+      "answer": "Yes, all images generated are free for personal and commercial use. They're unique creations based on your prompts. However, avoid prompts referencing copyrighted characters or trademarks."
+    },
+    {
+      "question": "What image quality can I download?",
+      "answer": "Our generator supports high-definition outputs up to 4K resolution (1024x1024, 1920x1080, etc.). Download images in PNG format with crystal-clear quality suitable for social media, blogs, print, and commercial projects."
+    },
+    {
+      "question": "Is my data secure and private?",
+      "answer": "Absolutely. All image generation happens locally in your browser using client-side processing. We don't store, access, or transmit your prompts or generated images. Your creative process remains completely private."
+    },
+    {
+      "question": "Do I need to create an account?",
+      "answer": "No registration required. Start generating AI images instantly without providing any personal information. Your generation history and favorites are stored locally in your browser for privacy."
+    },
+    {
+      "question": "How can I reproduce the same image?",
+      "answer": "Use the same prompt, style, size, and seed number. The seed acts as a random generator starting point - keeping it identical produces reproducible results. Generate a random seed or set your own."
+    },
+    {
+      "question": "What art styles are available?",
+      "answer": "Choose from 8 styles: Photorealistic (camera-like photos), Digital Art (modern illustrations), Oil Painting (classic technique), Watercolor (soft artistic), Cartoon (fun animation), Anime (Japanese style), Cyberpunk (futuristic neon), and Fantasy (magical themes)."
+    },
+    {
+      "question": "How fast does image generation take?",
+      "answer": "Most images generate in 2-5 seconds depending on complexity and size. Our AI optimizations ensure fast processing while maintaining high quality. No waiting in queues or processing delays."
+    },
+    {
+      "question": "Can I save and reuse my favorite images?",
+      "answer": "Yes! Use the heart icon to save favorites and access your generation history. All favorites and history are stored locally in your browser, making it easy to revisit and download your best creations anytime."
+    },
+    {
+      "question": "What aspect ratios are supported?",
+      "answer": "We support all common ratios: Square (1:1) for social media, Landscape (4:3, 16:9, 21:9) for banners and videos, Portrait (3:4) for stories and mobile displays. Choose based on your use case."
+    },
+    {
+      "question": "How many images can I generate?",
+      "answer": "Unlimited! There's no daily or monthly limit. Generate as many images as you want, completely free. We believe in unrestricted creativity for everyone."
+    },
+    {
+      "question": "What file format are downloads?",
+      "answer": "Images download in high-quality PNG format with transparent background support. This ensures maximum compatibility and quality for both digital and print use cases."
+    },
+    {
+      "question": "Is this suitable for professional designers?",
+      "answer": "Yes! Professionals use our tool for concept art, mood boards, quick mockups, and creative exploration. The quality, speed, and customization options meet professional standards while being accessible to beginners."
+    }
+  ],
+  "howTo": {
+    "name": "How to Generate AI Images from Text",
+    "steps": [
+      {
+        "name": "Enter Your Prompt",
+        "text": "Type a detailed description of the image you want the AI to create. Include subject, style, colors, lighting, and mood for best results.",
+        "url": "https://30tools.com/ai-image-generator#step1",
+        "image": "https://30tools.com/images/ai-generator-step1.jpg"
+      },
+      {
+        "name": "Select Art Style & Settings",
+        "text": "Choose your preferred art style (Photorealistic, Anime, Digital Art, etc.). Set aspect ratio and image size. Optionally add a seed number to reproduce results.",
+        "url": "https://30tools.com/ai-image-generator#step2",
+        "image": "https://30tools.com/images/ai-generator-step2.jpg"
+      },
+      {
+        "name": "Generate & Download",
+        "text": "Click the 'Generate AI Image' button. Wait 2-5 seconds for processing. Once complete, download in HD or save to favorites. Your image is ready to use!",
+        "url": "https://30tools.com/ai-image-generator#step3",
+        "image": "https://30tools.com/images/ai-generator-step3.jpg"
+      }
+    ]
+  }
+};
 
   // Breadcrumb navigation
   const breadcrumbs = [

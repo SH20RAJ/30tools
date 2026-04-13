@@ -1,8 +1,22 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import ImagesToPdf from "@/components/tools/pdf/ImagesToPdf";
 
-export const metadata = generateToolMetadata("jpg-to-pdf", "pdf");
+export const metadata = {
+  title: "Free JPG to PDF Online - No Signup | 30tools",
+  description: "Professional PDF tools: JPG to PDF. Merge, split, compress, convert. 100% free, no watermarks, works on all devices. All processing happens locally in your brow",
+  keywords: ["jpg to pdf","jpg to pdf free","jpg to pdf online","jpg to pdf tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

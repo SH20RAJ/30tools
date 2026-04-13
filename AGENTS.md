@@ -30,5 +30,13 @@
 ## Developer Workflow
 - To add a new tool:
     1. Append entry to `src/constants/tools.json`.
-    2. Create folder and `page.tsx` in `src/app/(category)/[slug]/` using `PremiumToolPage`.
+    2. Create folder and `page.js` in `src/app/(category)/[slug]/`.
     3. The middleware and rewrite system will handle the rest.
+
+### CRITICAL: Metadata & Component Rules
+- **Metadata Export:** Every `page.js` and `layout.js` MUST directly export a `metadata` object using `export const metadata = { ... }`. 
+- **No Dynamic Helpers:** Do NOT use `generateToolMetadata` or any other dynamic metadata generation library. All metadata (titles, descriptions, keywords) must be hardcoded in the file for maximum performance and SEO predictability.
+- **Server Components ONLY:** All `page.js` and `layout.js` files MUST remain Server Components. NEVER add `'use client'` to these files. If interactivity is needed, encapsulate it in a separate Client Component and import it into the server page.
+- **SEO Title Strategy:** Always use the "Low-Hanging-Fruit" strategy for titles. 
+  - Pattern: `Free [Tool Name] Online - No Signup | 30tools`
+  - Avoid high-competition generic titles.

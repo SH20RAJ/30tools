@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfCompressor from "@/components/tools/pdf/PdfCompressor";
 
-export const metadata = generateToolMetadata("pdf-compressor", "pdf");
+export const metadata = {
+  title: "Free PDF Compressor Online - No Signup | 30tools",
+  description: "Professional PDF tools: PDF Compressor. Merge, split, compress, convert. 100% free, no watermarks, works on all devices. All processing happens locally in your ",
+  keywords: ["pdf compressor","pdf compressor free","pdf compressor online","pdf compressor tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

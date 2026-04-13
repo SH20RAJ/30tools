@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfSplitter from "@/components/tools/pdf/PdfSplitter";
 
-export const metadata = generateToolMetadata("pdf-splitter", "pdf");
+export const metadata = {
+  title: "Free PDF Splitter Online - No Signup | 30tools",
+  description: "Professional PDF tools: PDF Splitter. Merge, split, compress, convert. 100% free, no watermarks, works on all devices. All processing happens locally in your br",
+  keywords: ["pdf splitter","pdf splitter free","pdf splitter online","pdf splitter tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function ToolPage({ searchParams }) {
 	const params = await searchParams;

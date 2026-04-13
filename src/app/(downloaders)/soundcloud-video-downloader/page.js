@@ -1,8 +1,22 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
 
-export const metadata = generateToolMetadata("soundcloud-video-downloader", "downloaders");
+export const metadata = {
+  title: "Free Soundcloud Video Downloader Online - No Signup | 30tools",
+  description: "Free Soundcloud Video Downloader. Download videos from multiple platforms. HD quality, no watermarks, instant downloads. All processing happens locally in your ",
+  keywords: ["soundcloud video downloader","soundcloud video downloader free","soundcloud video downloader online","soundcloud video downloader tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

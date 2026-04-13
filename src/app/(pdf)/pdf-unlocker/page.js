@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import PdfUnlockerTool from "@/components/tools/pdf/PdfUnlockerTool";
 
 const researchedKeywords = [
@@ -154,7 +153,22 @@ const researchedKeywords = [
 	"ilovepdf",
 ];
 
-export const metadata = generateToolMetadata("pdf-unlocker", "pdf");
+export const metadata = {
+  title: "Free PDF Unlocker Online - No Signup | 30tools",
+  description: "Remove password protection from PDF files. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and secure.",
+  keywords: ["pdf unlocker","pdf","unlocker","pdf-unlocker","pdf tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLdSchemas = {
 	webApp: {

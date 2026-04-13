@@ -1,13 +1,22 @@
 import Link from "next/link";
 import TextToSpeechTool from "@/components/tools/audio/TextToSpeechTool";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("text-to-speech", "audio", {
-	title: "AI Voice Generator for YouTube & Shorts | Free Text to Speech Online",
-	description:
-		"Create realistic voiceovers for YouTube and Shorts with our free AI voice generator. Make text to speech sound human with professional online TTS tools.",
-	keywords: "ai voice generator for youtube, text to speech for shorts, realistic tts online free, make text to speech sound human, professional voiceover generator, text to speech with no watermark",
-});
+export const metadata = {
+  title: "Free Text to Speech Online - No Signup | 30tools",
+  description: "Audio tools: Text to Speech. Convert, edit, enhance audio files. Support for MP3, WAV, FLAC. Free and fast. All processing happens locally in your browser for c",
+  keywords: ["text to speech","text to speech free","text to speech online","text to speech tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const textToSpeechJsonLd = generateToolJsonLd("text-to-speech", "audio", {
 	name: "Free AI Voice Generator & TTS Converter",

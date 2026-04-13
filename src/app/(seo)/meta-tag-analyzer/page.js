@@ -1,12 +1,21 @@
 import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("meta-tag-analyzer", "seo", {
-	title: "Meta Tag Analyzer | Free Meta Title & Description Checker | 30Tools",
-	description:
-		"Analyze title tags, meta descriptions, Open Graph tags, and other on-page metadata for SEO issues.",
-	image: "/og-images/meta-tag-analyzer.jpg",
-});
+export const metadata = {
+  title: "Free Meta Tag Analyzer Online - No Signup | 30tools",
+  description: "SEO tools: Meta Tag Analyzer. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your browser fo",
+  keywords: ["meta tag analyzer","meta tag analyzer free","meta tag analyzer online","meta tag analyzer tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLd = generateToolJsonLd("meta-tag-analyzer", "seo", {
 	name: "Meta Tag Analyzer",

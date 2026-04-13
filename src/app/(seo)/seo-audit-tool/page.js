@@ -1,22 +1,20 @@
-import {
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-	UserComments,
-} from "@/components/seo";
-import {
-	GeneratorToolExamples,
-	GeneratorToolFeatures,
-} from "@/components/seo/GeneratorToolsHub";
-import SeoAnalyzer from "@/components/tools/seo/SeoAnalyzer";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("seo-audit-tool", "seo", {
-	title: "SEO Audit Tool | Free Website SEO Checker | 30Tools",
-	description:
-		"Run a full SEO audit to uncover technical, on-page, and performance issues that affect search visibility.",
-	image: "/og-images/seo-audit-tool.jpg",
-});
+export const metadata = {
+  title: "Free Complete SEO Audit Tool Online - No Signup | 30tools",
+  description: "SEO tools: Complete SEO Audit Tool. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your brow",
+  keywords: ["complete seo audit tool","complete seo audit tool free","complete seo audit tool online","complete seo audit tool tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLd = generateToolJsonLd("seo-audit-tool", "seo", {
 	name: "SEO Audit Tool",
@@ -28,12 +26,71 @@ export default async function SeoAuditToolPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 	const toolData = {
-		id: "seo-audit-tool",
-		name: "SEO Audit Tool",
-		description: "Complete website health check",
-		category: "seo",
-		route: "/seo-audit-tool",
-	};
+  "id": "seo-audit-tool",
+  "name": "Complete SEO Audit Tool",
+  "description": "Comprehensive SEO audit tool that analyzes technical SEO, on-page optimization, content quality, and provides actionable recommendations.",
+  "category": "seo",
+  "route": "/seo-audit-tool",
+  "features": [
+    "100% Free - No hidden costs or subscriptions",
+    "No Registration Required - Start immediately",
+    "Secure & Private - All processing in your browser",
+    "Fast & Efficient - Get results in seconds",
+    "No File Size Limits - Handle large files easily",
+    "Mobile Friendly - Works on all devices"
+  ],
+  "benefits": [],
+  "useCases": [],
+  "faqs": [
+    {
+      "question": "Is this Complete SEO Audit Tool really free?",
+      "answer": "Yes! Our Complete SEO Audit Tool is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+    },
+    {
+      "question": "Is my data secure when using Complete SEO Audit Tool?",
+      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+    },
+    {
+      "question": "Do I need to create an account to use Complete SEO Audit Tool?",
+      "answer": "No registration required. You can start using Complete SEO Audit Tool immediately without creating an account or providing any personal information."
+    },
+    {
+      "question": "Are there any file size limits for Complete SEO Audit Tool?",
+      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+    },
+    {
+      "question": "Can I use Complete SEO Audit Tool on mobile devices?",
+      "answer": "Yes, Complete SEO Audit Tool is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+    },
+    {
+      "question": "What file formats does Complete SEO Audit Tool support?",
+      "answer": "Complete SEO Audit Tool supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use Complete SEO Audit Tool",
+    "steps": [
+      {
+        "name": "Upload or Input",
+        "text": "Provide your file or input data using the upload button or text input field. Complete SEO Audit Tool supports drag-and-drop for convenience.",
+        "url": "/seo-audit-tool#step1",
+        "position": 1
+      },
+      {
+        "name": "Configure Settings",
+        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+        "url": "/seo-audit-tool#step2",
+        "position": 2
+      },
+      {
+        "name": "Process & Download",
+        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+        "url": "/seo-audit-tool#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	const features = [
 		"On-Page SEO Analysis",

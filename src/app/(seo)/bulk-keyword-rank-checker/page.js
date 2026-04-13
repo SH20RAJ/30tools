@@ -1,32 +1,22 @@
 import BreadcrumbsEnhanced from "@/components/seo/BreadcrumbsEnhanced";
 import FAQSection from "@/components/seo/FAQSection";
-import { QuickActions, RelatedTools } from "@/components/seo/SocialEngagement";
-import BulkKeywordRankChecker from "@/components/tools/seo/BulkKeywordRankChecker";
-import { generateToolMetadata, getToolData } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata(
-  "bulk-keyword-rank-checker",
-  "seo",
-  {
-    title:
-      "Bulk Keyword Rank Checker | Free Google Position Checker | Track Keyword Rankings | 30Tools",
-    description:
-      "Check Google rankings for multiple keywords instantly. Track keyword positions, monitor rank changes, and measure SEO performance across your target terms. Free, accurate, no signup required.",
-    keywords: [
-      "keyword rank checker",
-      "bulk keyword rank",
-      "google position checker",
-      "check keyword rankings",
-      "track keyword positions",
-      "SEO rank tracker",
-      "keyword position tool",
-      "search engine ranking",
-      "keyword tracking",
-      "rank monitoring",
-    ],
-    robots: { index: true, follow: true },
+export const metadata = {
+  title: "Free Bulk Keyword Rank Checker Online - No Signup | 30tools",
+  description: "Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required, unlimited checks, and export reports. Try now!",
+  keywords: ["bulk keyword rank checker","keyword rank checker","google rank checker","check keyword position","serp checker","keyword position tracker","bulk rank tracking","free rank checker","keyword ranking tool","google keyword checker","serp rank checker","bulk keyword position checker","rank tracker online","keyword rank monitor"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
-);
+};
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -135,7 +125,130 @@ const jsonLd = {
 export default async function BulkKeywordRankCheckerPage({ searchParams }) {
   const params = await searchParams;
   const _lang = params.lang || "en";
-  const toolData = getToolData("bulk-keyword-rank-checker", "seo");
+  const toolData = {
+  "id": "bulk-keyword-rank-checker",
+  "name": "Bulk Keyword Rank Checker",
+  "description": "Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required.",
+  "category": "seo",
+  "route": "/bulk-keyword-rank-checker",
+  "features": [
+    "Bulk Check Up to 100 Keywords at Once",
+    "Accurate Google SERP Positions",
+    "Global & Local Ranking Support",
+    "Competitor Position Comparison",
+    "Historical Rank Tracking",
+    "Search Volume & CPC Data",
+    "Export to CSV/Excel",
+    "Domain vs Subdomain Analysis",
+    "Mobile & Desktop Rankings",
+    "Real-time Updates",
+    "100% Free - No Limits",
+    "No Account Required"
+  ],
+  "benefits": [
+    "Save hours by checking hundreds of keywords in seconds",
+    "Identify ranking opportunities and drops quickly",
+    "Monitor SEO campaign performance daily",
+    "Benchmark against competitors' positions",
+    "Track long-tail keyword performance",
+    "Optimize content based on actual rankings"
+  ],
+  "useCases": [
+    "SEO agencies tracking client keyword portfolios",
+    "In-house marketers monitoring website rankings",
+    "Bloggers tracking content performance",
+    "E-commerce sites monitoring product keywords",
+    "Freelancers providing SEO reports",
+    "Researchers studying SERP trends",
+    "Students learning SEO analytics",
+    "Small businesses tracking local rankings"
+  ],
+  "faqs": [
+    {
+      "question": "What is a bulk keyword rank checker?",
+      "answer": "A bulk keyword rank checker is an SEO tool that queries Google for multiple keywords at once and returns the position (ranking) of a specified website for each keyword. It automates the tedious process of manually searching for each keyword to find your site's rank."
+    },
+    {
+      "question": "Is this Bulk Keyword Rank Checker really free?",
+      "answer": "Yes! 30Tools offers a completely free bulk rank checker with no usage limits, no trials, and no paywalls. Check unlimited keywords for unlimited domains without ever creating an account. 100% free forever."
+    },
+    {
+      "question": "How do I check keyword rankings in bulk?",
+      "answer": "1. Enter your domain (e.g., yourwebsite.com). 2. Paste your list of keywords (one per line, up to 100). 3. Select target country/device if needed. 4. Click 'Check Rankings'. 5. View results showing each keyword's position, search volume, and change over time."
+    },
+    {
+      "question": "How accurate are the rank positions?",
+      "answer": "We use real-time queries to Google from clean IP addresses to ensure accuracy. Rankings can vary by location, device, search history, and SERP features. We provide an average position based on standardized queries for consistent tracking."
+    },
+    {
+      "question": "What data is included in the rank report?",
+      "answer": "Reports include: keyword, your domain's position, search volume, CPC, competition level, top 10 competitors for that keyword, historical position graph, and whether a SERP feature (featured snippet, local pack) appears."
+    },
+    {
+      "question": "Can I track rankings over time?",
+      "answer": "Yes! Our tool stores historical data for your checks. You can view position trends, identify improvements or drops, and monitor the impact of your SEO efforts over days, weeks, or months. Export history for your records."
+    },
+    {
+      "question": "Can I check competitor rankings?",
+      "answer": "Absolutely. Enter any competitor's domain alongside yours to compare keyword positions side-by-side. See who ranks higher for which keywords and identify gaps or opportunities to outrank them."
+    },
+    {
+      "question": "What is the maximum number of keywords I can check at once?",
+      "answer": "Our free tool supports up to 100 keywords per bulk check. You can perform unlimited batches—run multiple groups of 100 to cover your entire keyword portfolio without restriction."
+    },
+    {
+      "question": "Do I need to be logged in or create an account?",
+      "answer": "No. Our rank checker works instantly without any account creation, login, or personal information. Your checks are private and we don't store your keyword lists or domain data longer than necessary."
+    },
+    {
+      "question": "Why are some keywords showing 'Not in Top 100'?",
+      "answer": "If your domain doesn't appear in the first 100 organic results for that keyword, we report 'Not in Top 100'. This means you're ranking very low (beyond page 10) or not indexed for that query. Focus on improving those keywords."
+    },
+    {
+      "question": "Can I check local rankings for specific cities?",
+      "answer": "Yes! Our tool supports local rank checking. Select a specific country, state/province, or city to see rankings as they appear to users in that location. Great for local SEO and multi-location businesses."
+    },
+    {
+      "question": "What search engines are supported?",
+      "answer": "Currently we support Google (most regions). Additional search engines like Bing and DuckDuckGo may be added in the future based on demand. Google holds ~90% market share and our primary focus."
+    },
+    {
+      "question": "Is there a limit on how many times I can use this per day?",
+      "answer": "No daily limits. Use as often as needed—hourly, daily, or weekly. We encourage regular monitoring as rankings can fluctuate. Check your entire keyword portfolio as frequently as you like."
+    },
+    {
+      "question": "How often is ranking data updated?",
+      "answer": "Rankings are fetched in real-time on each check, so you're seeing the current Google SERP snapshot. Historical data points are stored for trend analysis. Regular checks (daily/weekly) help you stay on top of changes."
+    },
+    {
+      "question": "Can I export my ranking reports?",
+      "answer": "Yes! Export your bulk rank results to CSV or Excel format. Includes keyword, position, search volume, and competitor data. Perfect for sharing with team members, clients, or importing into other SEO platforms."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use the Bulk Keyword Rank Checker",
+    "steps": [
+      {
+        "name": "Enter Your Domain",
+        "text": "Input the website domain you want to track (e.g., yoursite.com). Use the root domain for domain-wide tracking, or a specific subpage URL for page-level rankings.",
+        "url": "https://30tools.com/bulk-keyword-rank-checker#step1",
+        "image": "https://30tools.com/images/rank-checker-step1.jpg"
+      },
+      {
+        "name": "Paste Your Keywords",
+        "text": "Prepare your keyword list (one keyword per line). Paste up to 100 keywords into the text area. You can copy from spreadsheets, documents, or SEO tools like Google Search Console.",
+        "url": "https://30tools.com/bulk-keyword-rank-checker#step2",
+        "image": "https://30tools.com/images/rank-checker-step2.jpg"
+      },
+      {
+        "name": "Run Check & Analyze",
+        "text": "Select target location and device (optional). Click 'Check Rankings Now'. Within seconds, you'll see each keyword's current position, search volume, and changes. Export your report for records or share with your team.",
+        "url": "https://30tools.com/bulk-keyword-rank-checker#step3",
+        "image": "https://30tools.com/images/rank-checker-step3.jpg"
+      }
+    ]
+  }
+};
 
   // Breadcrumbs
   const breadcrumbs = [

@@ -1,13 +1,25 @@
-import { generateToolMetadata } from "@/lib/seo-helper";
 import PremiumToolPage from "@/components/seo/PremiumToolPage";
 
 const TOOL_ID = "regex-match-tester";
 const CATEGORY = "developer";
 
-export async function generateMetadata({ searchParams }: any) {
-    const params = await searchParams;
-    return generateToolMetadata(TOOL_ID, CATEGORY, params.lang || "en", {}, params.variant);
-}
+
+export const metadata = {
+  title: "Free Regex Match Tester Online - No Signup | 30tools",
+  description: "Use our free Regex Match Tester to format and convert code data instantly. No registration needed, high quality results, and secure browser-based processing. Try regex-match-tester now!",
+  keywords: ["regex-match-tester","regex","match","tester"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function Page() {
     return <PremiumToolPage toolId={TOOL_ID} />;

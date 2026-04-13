@@ -1,8 +1,22 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import SitemapGeneratorTool from "@/components/tools/seo/SitemapGeneratorTool";
 
-export const metadata = generateToolMetadata("sitemap-generator", "seo");
+export const metadata = {
+  title: "Free Advanced Sitemap Generator Online - No Signup | 30tools",
+  description: "SEO tools: Advanced Sitemap Generator. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your b",
+  keywords: ["advanced sitemap generator","advanced sitemap generator free","advanced sitemap generator online","advanced sitemap generator tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const AdUnit = () => (
 	<div className="my-6 flex justify-center">

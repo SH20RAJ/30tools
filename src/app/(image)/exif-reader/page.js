@@ -11,20 +11,105 @@ import {
 	GeneratorToolFeatures,
 } from "@/components/seo/GeneratorToolsHub";
 import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import { getImageToolFAQs } from "@/constants/seo/image-faqs";
 
-export const metadata = generateToolMetadata("exif-reader", "image");
+export const metadata = {
+  title: "Free EXIF Reader Online - No Signup | 30tools",
+  description: "Instantly extract photo metadata in your browser. Free EXIF Reader reveals camera make/model, shutter speed, ISO, GPS, and timestamp without uploads or signup.",
+  keywords: ["exif reader","free exif reader","online exif reader","photo metadata viewer","image metadata reader","exif data viewer","exif metadata extractor","browser exif reader","view photo metadata free","metadata reader online"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function ExifReaderPage() {
 	// Tool-specific data
 	const toolData = {
-		id: "exif-reader",
-		name: "EXIF Reader",
-		description: "View hidden photo metadata instantly in your browser",
-		category: "image",
-		route: "/exif-reader",
-	};
+  "id": "exif-reader",
+  "name": "EXIF Reader",
+  "description": "Extract metadata and EXIF data from images including camera settings and GPS location",
+  "category": "image",
+  "route": "/exif-reader",
+  "features": [
+    "Instantly extract hidden EXIF metadata from photos",
+    "Reveal camera make, model, aperture, shutter speed, and ISO",
+    "Find original capture date, time, and GPS coordinates",
+    "Browser-only processing for full privacy",
+    "Fast results with no uploads or signup",
+    "Works on desktop and mobile in any modern browser"
+  ],
+  "benefits": [
+    "Verify photo authenticity before sharing or publishing",
+    "Understand camera settings used for every shot",
+    "Recover location and timestamp from original images",
+    "Make faster editing decisions with metadata insight",
+    "Keep files private with browser-side processing only"
+  ],
+  "useCases": [
+    "Inspect travel photos for GPS and date details",
+    "Check camera and lens data before editing",
+    "Validate timestamp information for documentation",
+    "Extract metadata from old JPEGs and TIFFs",
+    "Review photo authenticity with one click"
+  ],
+  "faqs": [
+    {
+      "question": "Is this EXIF Reader really free?",
+      "answer": "Yes! Our EXIF Reader is completely free to use with no hidden costs, subscriptions, or premium features. You get full access to all functionality without any limitations."
+    },
+    {
+      "question": "Is my data secure when using EXIF Reader?",
+      "answer": "Absolutely. All processing happens locally in your browser - your files never leave your device. We don't store, access, or transmit your data, ensuring complete privacy and security."
+    },
+    {
+      "question": "Do I need to create an account to use EXIF Reader?",
+      "answer": "No registration required. You can start using EXIF Reader immediately without creating an account or providing any personal information."
+    },
+    {
+      "question": "Are there any file size limits for EXIF Reader?",
+      "answer": "There are no artificial file size limits. The only limitation is your browser's memory capacity, which can handle most typical files comfortably."
+    },
+    {
+      "question": "Can I use EXIF Reader on mobile devices?",
+      "answer": "Yes, EXIF Reader is fully responsive and works perfectly on smartphones, tablets, and desktop computers with any modern browser."
+    },
+    {
+      "question": "What file formats does EXIF Reader support?",
+      "answer": "EXIF Reader supports all major formats for its category. Upload common file types and get converted results in standard output formats compatible with any device or software."
+    }
+  ],
+  "howTo": {
+    "name": "How to Use EXIF Reader",
+    "steps": [
+      {
+        "name": "Upload or Input",
+        "text": "Provide your file or input data using the upload button or text input field. EXIF Reader supports drag-and-drop for convenience.",
+        "url": "/exif-reader#step1",
+        "position": 1
+      },
+      {
+        "name": "Configure Settings",
+        "text": "Choose your desired output format, quality settings, or other options. Customize to match your specific requirements.",
+        "url": "/exif-reader#step2",
+        "position": 2
+      },
+      {
+        "name": "Process & Download",
+        "text": "Click the process button and wait for completion. Once ready, download your result instantly or copy to clipboard.",
+        "url": "/exif-reader#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	// Breadcrumb navigation
 	const breadcrumbs = [

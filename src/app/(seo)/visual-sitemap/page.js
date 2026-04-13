@@ -1,13 +1,22 @@
 import VisualSitemapTool from "@/components/tools/seo/VisualSitemapTool";
 import toolsData from "@/constants/tools.json";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("visual-sitemap", "seo", {
-	title: "Visual Sitemap Generator | Visualize XML Sitemaps | 30Tools",
-	description:
-		"Turn an XML sitemap into a visual tree so you can review site structure, hierarchy, and internal navigation more clearly.",
-	image: "/og-images/visual-sitemap.jpg",
-});
+export const metadata = {
+  title: "Free Visual Sitemap Generator Online - No Signup | 30tools",
+  description: "SEO tools: Visual Sitemap Generator. Analyze, optimize, improve search rankings. Free, professional, instant results. All processing happens locally in your bro",
+  keywords: ["visual sitemap generator","visual sitemap generator free","visual sitemap generator online","visual sitemap generator tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLd = generateToolJsonLd("visual-sitemap", "seo", {
 	name: "Visual Sitemap Generator",

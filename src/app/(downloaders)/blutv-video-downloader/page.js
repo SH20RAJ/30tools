@@ -1,64 +1,185 @@
 import Link from "next/link";
-import {
-	BreadcrumbsEnhanced,
-	FAQSection,
-	QuickActions,
-	RelatedTools,
-} from "@/components/seo";
-import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVideoDownloader";
-import { generateToolMetadata, getToolData } from "@/lib/seo-helper";
 
 // OPTIMIZED METADATA
-export const metadata = generateToolMetadata(
-	"blutv-video-downloader",
-	"downloaders",
-	"en",
-	{
-		title:
-			"Free BluTV Video Downloader - Download Turkish Series Trailers Instantly | 30tools",
-		description:
-			"Free BluTV Video Downloader. Download Turkish series trailers and previews instantly in MP4. No signup, 100% private, works on any device. Try now!",
-		keywords: [
-			"blutv video downloader",
-			"blutv videos indir",
-			"blutv downloader",
-			"blutv video download",
-			"blutv to mp4",
-			"download blutv videos",
-			"blutv trailer downloader",
-			"free blutv downloader",
-			"online blutv video downloader",
-			"blutv video download tool",
-			"blutv videos download",
-			"blutv video downloader free",
-			"blutv content downloader",
-			"download blutv trailers",
-			"blutv video saver",
-			"blutv video download instant",
-			"blutv turkish series downloader",
-			"blutv preview downloader",
-			"blutv video extractor",
-			"blutv mp4 download",
-		],
-		robots: {
-			index: true,
-			follow: true,
-			googleBot: {
-				index: true,
-				follow: true,
-				"max-video-preview": -1,
-				"max-image-preview": "large",
-				"max-snippet": -1,
-			},
-		},
-	},
-);
+export const metadata = {
+  title: "Free BluTV Video Downloader Online - No Signup | 30tools",
+  description: "Free BluTV Video Downloader. Download Turkish series trailers and previews instantly in MP4. No signup, 100% private, works on any device. Try now!",
+  keywords: ["blutv video downloader","blutv videos indir","blutv downloader","blutv video download","blutv to mp4","download blutv videos","blutv trailer downloader","free blutv downloader","online blutv video downloader","blutv video download tool","blutv videos download","blutv video downloader free","blutv content downloader","download blutv trailers","blutv video saver","blutv video download instant","blutv turkish series downloader","blutv preview downloader","blutv video extractor"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 export default async function BlutvVideoDownloaderPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 
-	const toolData = getToolData("blutv-video-downloader", "downloaders");
+	const toolData = {
+  "id": "blutv-video-downloader",
+  "name": "BluTV Video Downloader",
+  "description": "Download publicly accessible BluTV content—trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
+  "category": "downloaders",
+  "route": "/blutv-video-downloader",
+  "features": [
+    "Download publicly available BluTV content (trailers, previews, clips)",
+    "High-quality MP4 format with audio",
+    "100% Free - No subscriptions, no hidden fees",
+    "No registration or account required",
+    "Works on any device (PC, Mac, Android, iPhone)",
+    "Privacy-focused: All processing in browser",
+    "Instant downloads with direct links",
+    "No watermarks or quality loss"
+  ],
+  "benefits": [
+    {
+      "title": "Access Turkish Content Worldwide",
+      "description": "Save trailers and teasers from BluTV's acclaimed Turkish original series even if you don't have a subscription. Preview content before committing to a paid plan."
+    },
+    {
+      "title": "Completely Free Forever",
+      "description": "Unlimited downloads, no trials, no paywalls. Our tool is 100% free with no premium tiers. Download as many BluTV previews as you want, whenever you want."
+    },
+    {
+      "title": "Privacy & Security First",
+      "description": "No data collection, no tracking, no storage. All video URL processing happens locally in your browser. Your browsing history and preferences stay completely private."
+    },
+    {
+      "title": "No Installation Required",
+      "description": "Works entirely in your web browser—no apps, no extensions, no software downloads. Access from any device instantly without setup."
+    },
+    {
+      "title": "High-Quality MP4 Output",
+      "description": "Get the best available quality with intact audio. No compression artifacts, no watermarks—direct from the source. Perfect for offline viewing or sharing."
+    },
+    {
+      "title": "Simple & Instant Workflow",
+      "description": "Paste URL, select format, download. Three clicks and you're done. No complex options, no queues, no waiting. Instant gratification."
+    }
+  ],
+  "useCases": [
+    {
+      "category": "Turkish Series Fans",
+      "examples": [
+        "Download latest trailers before episodes air",
+        "Save teaser clips to share with friends",
+        "Build a collection of favorite series previews",
+        "Preview upcoming shows without subscription",
+        "Watch content offline during travel"
+      ]
+    },
+    {
+      "category": "Content Creators & Marketers",
+      "examples": [
+        "Use authentic BluTV footage in reaction videos",
+        "Create promotional content for Turkish series blogs",
+        "Make compilation videos of best trailers",
+        "Analyze BluTV's marketing creative strategies",
+        "Generate thumbnails using real BluTV scenes"
+      ]
+    },
+    {
+      "category": "Researchers & Analysts",
+      "examples": [
+        "Study BluTV's content strategy and trailer trends",
+        "Archive promotional materials for market research",
+        "Compare BluTV's trailer approach with competitors",
+        "Build datasets of Turkish streaming marketing tactics",
+        "Analyze visual storytelling patterns in BluTV promos"
+      ]
+    },
+    {
+      "category": "Language & Culture Learners",
+      "examples": [
+        "Download Turkish dialogue for language practice",
+        "Save cultural context clips from popular series",
+        "Create offline libraries for studying Turkish media",
+        "Share authentic Turkish content with language exchange groups",
+        "Use trailers to introduce Turkish series to international audiences"
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Can I download full BluTV episodes?",
+      "answer": "No. BluTV full episodes are DRM-protected and require a valid subscription. Our tool works exclusively for publicly accessible trailers, previews, and promotional clips that BluTV shares on their official website and social media channels."
+    },
+    {
+      "question": "Where do I find BluTV video links to download?",
+      "answer": "BluTV shares trailers on their official YouTube channel, Facebook page, Instagram, and website's promo sections. Copy the URL of any publicly embedded video player and paste it into our downloader to fetch the direct video file."
+    },
+    {
+      "question": "Is BluTV Video Downloader legal?",
+      "answer": "Yes. Our tool only processes publicly available content that BluTV distributes legally for promotional purposes. Downloading publicly shared trailers and previews for personal use is generally considered fair use. We do not facilitate copyright infringement."
+    },
+    {
+      "question": "What video quality can I expect?",
+      "answer": "We fetch the highest available quality from the source—typically 720p (HD) or 1080p depending on what BluTV publishes. Audio is preserved in original quality. No compression or downscaling occurs."
+    },
+    {
+      "question": "Will this work on mobile devices?",
+      "answer": "Yes. BluTV Video Downloader is fully responsive and works on Android, iPhone, iPad, and desktop browsers. Simply open 30tools.com on your mobile browser and use the tool like on desktop."
+    },
+    {
+      "question": "Do I need to install any software?",
+      "answer": "No installation required. Everything happens in your web browser. No apps, no browser extensions, no plugins. Just visit the page, paste your link, and download instantly."
+    },
+    {
+      "question": "Is my data private? What do you store?",
+      "answer": "Nothing. All video URL processing happens locally in your browser via client-side JavaScript. We don't store your URLs, downloaded files, or any usage data. No tracking, no cookies, no server logs beyond basic analytics."
+    },
+    {
+      "question": "What video formats are supported?",
+      "answer": "The tool detects and downloads the original format provided by BluTV, typically MP4 with H.264 video codec and AAC audio. The download includes both video and audio combined in a single file ready for playback."
+    },
+    {
+      "question": "Why is my download not starting?",
+      "answer": "Common reasons: the video is private or geo-blocked, the URL is incorrect, or BluTV changed their embed structure. Ensure you're using a public trailer URL from BluTV's official channels. Try a different URL if issues persist."
+    },
+    {
+      "question": "Can I download BluTV content in bulk?",
+      "answer": "Currently, our tool processes one URL at a time for optimal performance. For bulk downloads (multiple trailers), you can use the tool sequentially by pasting each link one by one. Batch automation may be added based on user demand."
+    },
+    {
+      "question": "Is there a daily download limit?",
+      "answer": "No. We impose no artificial limits. You can download as many public BluTV videos as you want, as often as you want. We only ask that you use the tool responsibly and respect BluTV's servers."
+    },
+    {
+      "question": "Does this work for all BluTV regions?",
+      "answer": "Our tool processes any publicly accessible BluTV video URL. However, some BluTV content may be geo-restricted to Turkey. If a video is blocked in your region, the download may fail regardless of tool functionality. Use a VPN if needed."
+    }
+  ],
+  "howTo": {
+    "name": "How to Download BluTV Videos",
+    "steps": [
+      {
+        "name": "Copy BluTV video URL",
+        "text": "Navigate to the BluTV video you want (trailer/preview) on YouTube, Facebook, or BluTV's site. Copy the complete URL from your browser address bar.",
+        "url": "/blutv-video-downloader#step1",
+        "position": 1
+      },
+      {
+        "name": "Paste and analyze",
+        "text": "Paste the URL into the input field above. Our tool automatically fetches available video qualities and formats within seconds.",
+        "url": "/blutv-video-downloader#step2",
+        "position": 2
+      },
+      {
+        "name": "Download MP4",
+        "text": "Select your preferred quality and click the download button. The file saves directly to your device. No waiting, no queues, no signup needed.",
+        "url": "/blutv-video-downloader#step3",
+        "position": 3
+      }
+    ]
+  }
+};
 
 	const breadcrumbs = [
 		{ name: "Downloaders", url: "/all-downloaders" },

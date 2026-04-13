@@ -1,31 +1,20 @@
-import { Globe, ShieldCheck, Terminal } from "lucide-react";
-import Link from "next/link";
-import { BreadcrumbsEnhanced } from "@/components/seo";
-import { Badge } from "@/components/ui/badge";
-import {
-	Card,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
-import { API_KEY_TOOLS } from "@/data/api-key-tools";
-import { generateToolJsonLd, generateToolMetadata } from "@/lib/seo-helper";
 
-export const metadata = generateToolMetadata("api-key-tester", "developer", {
-	title: "Test API Key Online Safely | OpenAI, Stripe & 30+ Services",
-	description:
-		"Securely test API keys online for free. Support for OpenAI, Stripe, Anthropic, and 30+ other services. 100% client-side validation to ensure your keys stay private.",
-	image: "/og-images/api-key-tester.jpg",
-	keywords: [
-		"test api key online safely",
-		"openai api key tester free",
-		"validate api keys online",
-		"check if api key is valid",
-		"stripe api key tester online",
-		"anthropic api key validator",
-		"secure api tester tool",
-	],
-});
+export const metadata = {
+  title: "Free API Key Tester Online - No Signup | 30tools",
+  description: "Developer tools: API Key Tester. Format, validate, convert code/data. Fast, accurate, essential for programmers. All processing happens locally in your browser ",
+  keywords: ["api key tester","api key tester free","api key tester online","api key tester tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLd = generateToolJsonLd("api-key-tester", "developer", {
 	name: "API Key Tester",

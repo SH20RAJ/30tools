@@ -8,7 +8,6 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import InstagramDownloader from "@/components/tools/downloaders/InstagramDownloader";
 import {
 	Accordion,
@@ -17,7 +16,22 @@ import {
 	AccordionTrigger,
 } from "@/components/ui/accordion";
 
-export const metadata = generateToolMetadata("instagram-downloader", "downloaders");
+export const metadata = {
+  title: "Free Instagram Downloader Online - No Signup | 30tools",
+  description: "Download Instagram videos, reels, stories, and photos in high quality. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and.",
+  keywords: ["instagram downloader","instagram","downloader","instagram-downloader","downloaders","downloaders tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 // JSON-LD structured data for Bing & Google
 const jsonLdSchemas = {

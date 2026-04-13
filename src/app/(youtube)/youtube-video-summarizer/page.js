@@ -1,8 +1,22 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import YouTubeVideoSummarizer from "@/components/tools/youtube/YouTubeVideoSummarizer";
 
-export const metadata = generateToolMetadata("youtube-video-summarizer", "youtube");
+export const metadata = {
+  title: "Free AI YouTube Video Summarizer Online - No Signup | 30tools",
+  description: "YouTube tools: AI YouTube Video Summarizer. Download thumbnails, get stats, optimize videos. Free, fast, and secure. All processing happens locally in your brow",
+  keywords: ["ai youtube video summarizer","ai youtube video summarizer free","ai youtube video summarizer online","ai youtube video summarizer tool"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLdSchemas = {
 	webApp: {

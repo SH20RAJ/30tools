@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { generateToolMetadata } from "@/lib/seo-helper";
 import YouTubeShortsDownloader from "@/components/tools/youtube/YouTubeShortsDownloader";
 
 const researchedKeywords = [
@@ -80,7 +79,22 @@ const researchedKeywords = [
 	"youtube shorts",
 ];
 
-export const metadata = generateToolMetadata("youtube-shorts-downloader", "youtube");
+export const metadata = {
+  title: "Free YouTube Shorts Downloader Online - No Signup | 30tools",
+  description: "Download YouTube Shorts videos in high quality for offline viewing. 100% free, no signup required, fast and secure. Works in browser. Try now! Easy and.",
+  keywords: ["youtube shorts downloader","youtube","shorts","downloader","youtube-shorts-downloader","youtube tool","free","online","tool","30tools","no signup","fast","secure","browser-based","instant","easy"],
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+};
 
 const jsonLdSchemas = {
 	webApp: {
