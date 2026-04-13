@@ -1,5 +1,6 @@
 
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
 
 
 export const metadata = {
@@ -105,7 +106,7 @@ export default async function ToolPage() {
         breadcrumbs={breadcrumbs}
         relatedTools={relatedTools}
       >
-        <PremiumToolPage toolId="color-converter" />
+        <ToolPlaceholderPage toolId="color-converter" />
       </ToolLayout>
     </>
   );

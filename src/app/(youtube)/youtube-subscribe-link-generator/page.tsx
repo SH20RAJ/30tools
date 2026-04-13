@@ -1,5 +1,6 @@
 
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
 
 
 export const metadata = {
@@ -146,7 +147,7 @@ export default async function ToolPage() {
         breadcrumbs={breadcrumbs}
         relatedTools={relatedTools}
       >
-        <PremiumToolPage toolId="youtube-subscribe-link-generator" />
+        <ToolPlaceholderPage toolId="youtube-subscribe-link-generator" />
       </ToolLayout>
     </>
   );

@@ -3,6 +3,25 @@ import { BreadcrumbsEnhanced } from "@/components/seo";
 import { ToolTrust, ToolFeatures, ToolSteps, ToolFAQ } from "./ToolSharedComponents";
 import { RelatedTools } from "@/components/seo";
 
+/**
+ * @typedef {Object} Tool
+ * @property {string} id
+ * @property {string} name
+ * @property {string} description
+ * @property {string} [category]
+ * @property {string[]} [features]
+ * @property {Object} [howTo]
+ * @property {Object[]} [howTo.steps]
+ * @property {Object[]} [faqs]
+ */
+
+/**
+ * @param {Object} props
+ * @param {Tool} props.tool
+ * @param {React.ReactNode} props.children
+ * @param {Object[]} [props.breadcrumbs]
+ * @param {Tool[]} [props.relatedTools]
+ */
 export default function ToolLayout({ 
   tool, 
   children, // The actual tool interactive part

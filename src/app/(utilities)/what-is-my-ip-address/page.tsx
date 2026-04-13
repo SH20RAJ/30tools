@@ -1,5 +1,6 @@
 
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
 
 
 export const metadata = {
@@ -100,7 +101,7 @@ export default async function ToolPage() {
         breadcrumbs={breadcrumbs}
         relatedTools={relatedTools}
       >
-        <PremiumToolPage toolId="what-is-my-ip-address" />
+        <ToolPlaceholderPage toolId="what-is-my-ip-address" />
       </ToolLayout>
     </>
   );
