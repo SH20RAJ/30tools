@@ -2,7 +2,10 @@
 
 [![GitHub license](https://img.shields.io/github/license/sh20raj/30tools)](https://github.com/sh20raj/30tools/blob/main/LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/sh20raj/30tools)](https://github.com/sh20raj/30tools/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/sh20raj/30tools)](https://github.com/sh20raj/30tools/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/sh20raj/30tools)](https://github.com/sh20raj/30tools/issues)
+[![GitHub last commit](https://img.shields.io/github/last-commit/sh20raj/30tools)](https://github.com/sh20raj/30tools/commits/main)
+[![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Fgithub.com%2Fsh20raj%2F30tools&countColor=%23263759&style=flat-square)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fsh20raj%2F30tools)
 
 **30tools** is a high-performance, developer-first API and utility ecosystem. It provides over **600+ free online tools** for SEO experts, developers, students, and writers—all with no registration required, privacy-focused processing, and a premium Glassmorphism design.
 
