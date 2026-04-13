@@ -1,6 +1,10 @@
 export const dynamic = "force-static";
 
-export default function EmbedLayout({ children }) {
+export default function EmbedLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	// Minimal layout with no navigation or footer to make iframe-friendly pages
 	return (
 		<html>

@@ -103,7 +103,7 @@ export function SimpleTeraboxPlayer() {
 	return (
 		<div className="w-full max-w-4xl mx-auto space-y-8">
 			<Card className="border-border/50 shadow-xl bg-card/50 backdrop-blur-sm">
-				<CardHeader>
+				<CardHeader className="p-6">
 					<CardTitle className="text-2xl flex items-center gap-2">
 						<Play className="w-6 h-6 text-primary" />
 						Play Terabox Video
@@ -120,8 +120,11 @@ export function SimpleTeraboxPlayer() {
 								<Input
 									placeholder="Paste Terabox link here (e.g., https://terabox.com/s/...)"
 									value={url}
-									onChange={(e) => setUrl(e.target.value)}
+									onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+										setUrl(e.target.value)
+									}
 									className="h-12 text-base pl-4 pr-10 border-primary/20 focus:border-primary transition-all"
+									type="text"
 								/>
 							</div>
 							<Button
@@ -177,6 +180,7 @@ export function SimpleTeraboxPlayer() {
 					<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 						<Button
 							variant="secondary"
+							size="default"
 							className="h-12 gap-2 text-base"
 							onClick={handleNewTab}
 						>
@@ -186,20 +190,29 @@ export function SimpleTeraboxPlayer() {
 
 						<Dialog>
 							<DialogTrigger asChild>
-								<Button variant="secondary" className="h-12 gap-2 text-base">
+								<Button
+									variant="secondary"
+									size="default"
+									className="h-12 gap-2 text-base"
+								>
 									<Code2 className="w-4 h-4" />
 									Embed Video
 								</Button>
 							</DialogTrigger>
 							<DialogContent className="sm:max-w-md">
-								<DialogHeader>
-									<DialogTitle>Embed Video</DialogTitle>
+								<DialogHeader className="">
+									<DialogTitle className="">Embed Video</DialogTitle>
 								</DialogHeader>
 								<div className="space-y-4 pt-2">
 									<div className="p-4 bg-muted rounded-md font-mono text-xs break-all border overflow-hidden">
 										{getEmbedCode()}
 									</div>
-									<Button onClick={copyEmbedCode} className="w-full gap-2">
+									<Button
+										variant="default"
+										size="default"
+										onClick={copyEmbedCode}
+										className="w-full gap-2"
+									>
 										<Copy className="w-4 h-4" /> Copy Embed Code
 									</Button>
 								</div>
@@ -208,6 +221,7 @@ export function SimpleTeraboxPlayer() {
 
 						<Button
 							variant="secondary"
+							size="default"
 							className="h-12 gap-2 text-base"
 							onClick={handleCopy}
 						>

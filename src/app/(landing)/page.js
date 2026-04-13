@@ -1,4 +1,3 @@
-import React from "react";
 import { MinimalHero } from "@/components/landing/MinimalHero";
 import { SimpleStats } from "@/components/landing/SimpleStats";
 import { ToolDirectory } from "@/components/landing/ToolDirectory";

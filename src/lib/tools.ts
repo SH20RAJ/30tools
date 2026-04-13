@@ -8,6 +8,16 @@ export interface Tool {
 	category: string;
 	extraSlugs?: string[];
 	popular?: boolean;
+	seoTitle?: string;
+	seoDescription?: string;
+	categoryName?: string;
+	categorySlug?: string;
+	features?: string[];
+	howTo?: {
+		name?: string;
+		steps?: { name: string; text: string; url?: string }[];
+	};
+	faqs?: { question: string; answer: string }[];
 }
 
 export interface Category {

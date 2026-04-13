@@ -31,8 +31,8 @@ export default function RelatedTools({
 	limit = 8,
 }: RelatedToolsProps) {
 	// Flatten tools for searching
-	const allTools = Object.values(toolsData.categories).flatMap(
-		(cat) => cat.tools,
+	const allTools = Object.values(toolsData.categories).flatMap((cat: any) =>
+		cat.tools.map((tool: any) => ({ ...tool, categoryName: cat.name })),
 	);
 
 	// Get current tool details
@@ -45,7 +45,7 @@ export default function RelatedTools({
 	);
 
 	// 2. Popular tools from related categories
-	const relatedCategories = {
+	const relatedCategories: Record<string, string[]> = {
 		image: ["pdf", "video"],
 		video: ["image", "audio"],
 		pdf: ["image", "text"],
@@ -108,7 +108,7 @@ export default function RelatedTools({
 			</div>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-				{displayTools.map((tool) => {
+				{displayTools.map((tool: any) => {
 					const Icon = getCategoryIcon(tool.category);
 					return (
 						<Link

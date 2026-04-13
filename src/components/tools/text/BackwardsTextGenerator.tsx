@@ -302,7 +302,9 @@ export default function BackwardsTextGenerator() {
 					</div>
 					<Textarea
 						value={inputText}
-						onChange={(e) => setInputText(e.target.value)}
+						onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+							setInputText(e.target.value)
+						}
 						placeholder="Type or paste your text here..."
 						className="min-h-[350px] text-lg p-6 bg-card border-border/60 focus:border-primary/50 transition-colors resize-none rounded-2xl shadow-sm"
 					/>
@@ -326,6 +328,7 @@ export default function BackwardsTextGenerator() {
 								Download
 							</Button>
 							<Button
+								variant="default"
 								size="sm"
 								onClick={copyToClipboard}
 								disabled={!outputText}

@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
 import EmbedPlayer from "@/components/embed/EmbedPlayer";
 
-export default async function Embed({ params }) {
+export default async function Embed({
+	params,
+}: {
+	params: Promise<{ player: string; videoId: string }>;
+}) {
 	const { player, videoId } = await params;
 	if (!videoId) return notFound();
 

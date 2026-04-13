@@ -119,6 +119,7 @@ export default function CaseConverter() {
 					<Button
 						key={m.id}
 						variant={mode === m.id ? "default" : "outline"}
+						size="default"
 						onClick={() => handleModeClick(m.id as Mode)}
 						className={cn(
 							"h-12 rounded-xl border-2 transition-all duration-200",
@@ -136,7 +137,9 @@ export default function CaseConverter() {
 			<div className="relative group">
 				<Textarea
 					value={inputText}
-					onChange={(e) => setInputText(e.target.value)}
+					onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+						setInputText(e.target.value)
+					}
 					placeholder="Type or paste your text here..."
 					className="min-h-[400px] text-lg p-8 bg-card border-border/60 focus:border-primary/50 transition-all resize-none rounded-[2rem] shadow-sm font-medium"
 				/>
@@ -153,6 +156,7 @@ export default function CaseConverter() {
 						Clear
 					</Button>
 					<Button
+						variant="default"
 						size="sm"
 						onClick={copyToClipboard}
 						disabled={!outputText}

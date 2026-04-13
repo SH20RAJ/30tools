@@ -44,7 +44,7 @@ export default function SearchPageComponent() {
 		}));
 	}, []);
 
-	const searchTools = async (searchQuery, selectedCategory) => {
+	const searchTools = useCallback(async (searchQuery, selectedCategory) => {
 		setLoading(true);
 		try {
 			const params = new URLSearchParams();
@@ -58,13 +58,13 @@ export default function SearchPageComponent() {
 			setResults(data.results || []);
 			setTotal(data.total || 0);
 		} catch (_error) {
-			console.error("Search failed:", error);
+			console.error("Search failed:", _error);
 			setResults([]);
 			setTotal(0);
 		} finally {
 			setLoading(false);
 		}
-	};
+	}, []);
 
 	useEffect(() => {
 		const initialQuery = searchParams.get("q") || "";

@@ -2,7 +2,7 @@
 
 import { Check, Download, HelpCircle, Shield, Zap } from "lucide-react";
 import { useMemo } from "react";
-import { getToolById } from "@/constants/tools-utils";
+import { getToolById } from "@/lib/tools";
 
 interface ToolContentProps {
 	toolId: string;
@@ -116,14 +116,14 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 			</section>
 
 			{/* FAQ Section */}
-			{toolData.faqs?.length > 0 && (
+			{(toolData.faqs?.length ?? 0) > 0 && (
 				<section className="scroll-mt-24">
 					<h2 className="text-3xl font-bold tracking-tight mb-8 flex items-center gap-3">
 						<HelpCircle className="w-8 h-8 text-primary" />
 						Frequently Asked Questions
 					</h2>
 					<div className="space-y-4">
-						{toolData.faqs.map((faq: any, idx: number) => (
+						{toolData.faqs?.map((faq: any, idx: number) => (
 							<div
 								key={idx}
 								className="p-8 bg-card border border-border/50 rounded-3xl hover:border-primary/20 transition-all"

@@ -112,8 +112,6 @@ const nextConfig = {
 		];
 	},
 
-
-
 	// Rewrites for programmatic SEO (keyword variants)
 	async rewrites() {
 		try {

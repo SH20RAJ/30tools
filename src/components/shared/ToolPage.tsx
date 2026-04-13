@@ -5,7 +5,7 @@ import Script from "next/script";
 import { useMemo } from "react";
 import ToolContent from "@/components/shared/ToolContent";
 import ToolLayout from "@/components/shared/ToolLayout";
-import { getToolById } from "@/constants/tools-utils";
+import { getToolById } from "@/lib/tools";
 
 interface ToolPageProps {
 	toolId: string;
@@ -88,7 +88,13 @@ export default function ToolPage({ toolId, children }: ToolPageProps) {
 				position: index + 1,
 			})),
 		};
-	}, [toolData.howTo?.steps, title, description, toolUrl, toolData.howTo.name]);
+	}, [
+		toolData.howTo?.steps,
+		title,
+		description,
+		toolUrl,
+		toolData.howTo?.name,
+	]);
 
 	return (
 		<ToolLayout

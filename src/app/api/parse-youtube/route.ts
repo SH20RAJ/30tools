@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { extractYouTubeId } from "@/lib/youtube-utils";
 
-export async function GET(request) {
+export async function GET(request: Request) {
 	try {
 		const { searchParams } = new URL(request.url);
 		const url = searchParams.get("url") || "";

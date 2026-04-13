@@ -5,7 +5,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { useEffect, useMemo, useState } from "react";
 import ToolLayout from "@/components/shared/ToolLayout";
-import { getAllTools, getToolById } from "@/constants/tools-utils";
+import { getAllTools, getToolById } from "@/lib/tools";
 import { cn } from "@/lib/utils";
 
 interface ToolPlaceholderPageProps {
@@ -39,7 +39,7 @@ export default function ToolPlaceholderPage({
 		if (!toolData) return [];
 		return getAllTools()
 			.filter(
-				(tool) =>
+				(tool: any) =>
 					tool.categoryKey === "seo" && tool.id !== toolId && tool.route,
 			)
 			.slice(0, 6);
@@ -394,7 +394,7 @@ export default function ToolPlaceholderPage({
 				<section className="mb-12" id="related-tools">
 					<h2 className="text-2xl font-bold mb-4">Related SEO Tools</h2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-						{relatedTools.map((tool) => (
+						{relatedTools.map((tool: any) => (
 							<Link
 								key={tool.id}
 								href={tool.route}

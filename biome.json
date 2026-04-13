@@ -25,6 +25,9 @@
 			},
 			"performance": {
 				"noAccumulatingSpread": "warn"
+			},
+			"security": {
+				"noDangerouslySetInnerHtml": "off"
 			}
 		}
 	}
