@@ -40,7 +40,9 @@ export default function PDFToolsFooter() {
 						</p>
 						<div className="flex space-x-4">
 							<a
-								href="https://github.com"
+								href="https://github.com/sh20raj/30tools"
+								target="_blank"
+								rel="noopener noreferrer"
 								className="text-muted-foreground hover:text-primary transition-colors"
 							>
 								<Github className="w-5 h-5" />

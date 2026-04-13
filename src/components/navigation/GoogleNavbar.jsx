@@ -13,6 +13,7 @@ import Avatar from "@mui/material/Avatar";
 import SearchIcon from "@mui/icons-material/Search";
 import AppsIcon from "@mui/icons-material/Apps";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { GoogleLogo } from "@/components/shared/GoogleLogo";
 
 export function GoogleNavbar() {
@@ -110,6 +111,20 @@ export function GoogleNavbar() {
             sx={{ display: { xs: "none", sm: "inline-flex" }, borderRadius: "50%" }}
           >
             <HelpOutlineIcon fontSize="small" sx={{ color: "text.secondary" }} />
+          </IconButton>
+        </Tooltip>
+
+        {/* GitHub */}
+        <Tooltip title="Open Source - GitHub">
+          <IconButton
+            component="a"
+            href="https://github.com/sh20raj/30tools"
+            target="_blank"
+            rel="noopener noreferrer"
+            size="small"
+            sx={{ borderRadius: "50%" }}
+          >
+            <GitHubIcon fontSize="small" sx={{ color: "text.secondary" }} />
           </IconButton>
         </Tooltip>
 

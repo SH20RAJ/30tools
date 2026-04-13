@@ -48,12 +48,14 @@ export default function ImageToolsFooter() {
 							>
 								<TwitterIcon className="h-5 w-5" />
 							</Link>
-							<Link
-								href="https://github.com/sh20raj"
-								className="text-muted-foreground hover:text-foreground"
+							<a
+								href="https://github.com/sh20raj/30tools"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="text-muted-foreground hover:text-primary transition-colors"
 							>
-								<GithubIcon className="h-5 w-5" />
-							</Link>
+								<GithubIcon className="w-5 h-5" />
+							</a>
 						</div>
 					</div>
 

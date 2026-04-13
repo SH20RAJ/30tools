@@ -144,7 +144,13 @@
     @apply bg-background text-foreground min-h-screen font-sans;
 		background-color: hsl(var(--background));
   }
+  
+  ::selection {
+    background-color: hsl(var(--primary) / 0.3);
+    color: inherit;
+  }
 }
+
 
 /* Custom Scrollbar for Premium Feel */
 ::-webkit-scrollbar {

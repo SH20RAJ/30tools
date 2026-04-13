@@ -27,12 +27,14 @@ export default function BlogFooter() {
 							>
 								<TwitterIcon className="h-5 w-5" />
 							</Link>
-							<Link
-								href="https://github.com/sh20raj"
+							<a
+								href="https://github.com/sh20raj/30tools"
+								target="_blank"
+								rel="noopener noreferrer"
 								className="text-muted-foreground hover:text-foreground"
 							>
 								<GithubIcon className="h-5 w-5" />
-							</Link>
+							</a>
 						</div>
 					</div>
 

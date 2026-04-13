@@ -92,12 +92,13 @@ export function GoogleFooter() {
               <li><MuiLink component={Link} href="/privacy" variant="body2" color="text.secondary" underline="hover">Privacy Policy</MuiLink></li>
               <li><MuiLink component={Link} href="/terms" variant="body2" color="text.secondary" underline="hover">Terms of Service</MuiLink></li>
               <li><MuiLink component={Link} href="/contact" variant="body2" color="text.secondary" underline="hover">Contact Us</MuiLink></li>
+              <li><MuiLink href="https://github.com/sh20raj/30tools" target="_blank" rel="noopener noreferrer" variant="body2" color="text.secondary" underline="hover">Open Source</MuiLink></li>
             </Stack>
 
             <Stack direction="row" spacing={2}>
               <MuiLink href="#" sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}><FacebookIcon /></MuiLink>
               <MuiLink href="#" sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}><TwitterIcon /></MuiLink>
-              <MuiLink href="#" sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}><GitHubIcon /></MuiLink>
+              <MuiLink href="https://github.com/sh20raj/30tools" target="_blank" rel="noopener noreferrer" sx={{ color: "text.secondary", "&:hover": { color: "primary.main" } }}><GitHubIcon /></MuiLink>
             </Stack>
           </Grid>
 

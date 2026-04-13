@@ -292,7 +292,7 @@ export default async function RootLayout({ children }) {
 				}}
 			>
 				<AppRouterCacheProvider options={{ enableCssLayer: true }}>
-					<ThemeProvider defaultTheme="light" enableSystem={false} forcedTheme="light">
+					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 						<MuiThemeRegistry>
 							<StructuredData includeFAQ={false} />
 							<ToolSeoStructuredData />
