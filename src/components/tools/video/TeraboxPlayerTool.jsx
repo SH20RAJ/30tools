@@ -189,7 +189,7 @@ export default function TeraboxPlayerTool() {
 								<div className="flex-shrink-0">
 									<AlertCircleIcon className="h-6 w-6 text-primary dark:text-primary" />
 								</div>
-								<div className="flex-1">
+								{/* <div className="flex-1">
 									<h3 className="text-lg font-semibold text-primary dark:text-blue-100 mb-2">
 										🎉 Terabox Player Has Moved!
 									</h3>
@@ -205,7 +205,7 @@ export default function TeraboxPlayerTool() {
 									>
 										Visit terabox.beer →
 									</a>
-								</div>
+								</div> */}
 							</div>
 						</CardContent>
 					</Card>
