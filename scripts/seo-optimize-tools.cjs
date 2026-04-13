@@ -8,6 +8,9 @@ const toolsData = JSON.parse(
 // Helper to create SEO-optimized title
 function generateTitle(tool, category) {
 	const baseName = tool.name;
+	const powerWords = ["Free", "Instant", "Fast", "Online", "Secure", "Easy", "100% Free", "No Signup"];
+	const selectedPower = powerWords[Math.floor(Math.random() * powerWords.length)];
+	
 	const modifiers = {
 		image: "Free Image Tool",
 		pdf: "Free PDF Tool",
@@ -21,10 +24,17 @@ function generateTitle(tool, category) {
 		generators: "Generator Tool",
 		audio: "Audio Tool",
 	};
+	
 	const modifier = modifiers[category] || "Free Online Tool";
-	// Keep under 60 chars
-	const title = `${baseName} - ${modifier} | 30tools`;
-	return title.length > 60 ? `${baseName} Free Online | 30tools` : title;
+	
+	// Strategy: <Tool Name> - <Power Word> <Modifier> | 30tools
+	let title = `${baseName} - ${selectedPower} ${modifier} | 30tools`;
+	
+	if (title.length > 65) {
+		title = `${baseName} ${selectedPower} Online | 30tools`;
+	}
+	
+	return title;
 }
 
 // Helper to create SEO-optimized meta description
@@ -302,13 +312,14 @@ Object.entries(toolsData.categories).forEach(([catKey, category]) => {
 	category.tools.forEach((tool) => {
 		totalTools++;
 
-		// Only optimize tools with KD < 10
-		if (tool.seoMetrics && tool.seoMetrics.kd < 10) {
+		// Optimize all tools
+		if (true) {
 			let changed = false;
 
 			// Generate and set SEO title
-			if (!tool.seoTitle || tool.seoTitle.length === 0) {
-				tool.seoTitle = generateTitle(tool, catKey);
+			const newTitle = generateTitle(tool, catKey);
+			if (tool.seoTitle !== newTitle) {
+				tool.seoTitle = newTitle;
 				changed = true;
 			}
 
@@ -364,7 +375,7 @@ Object.entries(toolsData.categories).forEach(([catKey, category]) => {
 			if (changed) {
 				updatedCount++;
 				console.log(
-					`✓ Updated ${tool.id} (KD: ${tool.seoMetrics.kd}, Volume: ${tool.seoMetrics.volume})`,
+					`✓ Updated ${tool.id} ${tool.seoMetrics ? `(KD: ${tool.seoMetrics.kd}, Volume: ${tool.seoMetrics.volume})` : "(No SEO Metrics)"}`,
 				);
 			}
 		}
