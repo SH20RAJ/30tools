@@ -1,3 +1,4 @@
+import Base64Tool from "@/components/tools/developer/Base64Tool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {

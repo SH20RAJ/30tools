@@ -1,3 +1,4 @@
+import KeywordTool from "@/components/tools/seo/KeywordTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {

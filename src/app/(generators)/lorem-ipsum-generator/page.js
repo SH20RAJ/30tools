@@ -1,3 +1,4 @@
+import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGeneratorTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {

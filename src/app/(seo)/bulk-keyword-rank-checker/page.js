@@ -139,12 +139,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<RelatedTools
-					currentTool="bulk-keyword-rank-checker"
-					category="seo"
-					tools={relatedTools}
-					title="Explore More SEO Tools"
-				/>
+				<div>{/* Interactive tool will be injected here */}</div>
 			</ToolLayout>
 		</>
 	);

@@ -1,3 +1,4 @@
+import URLShortenerTool from "@/components/tools/utilities/URLShortenerTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {

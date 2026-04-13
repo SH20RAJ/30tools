@@ -1,3 +1,4 @@
+import OtherTool from "@/components/tools/OtherToolsPage";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {

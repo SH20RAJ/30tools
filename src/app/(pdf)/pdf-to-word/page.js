@@ -1,3 +1,4 @@
+import PDFToWordTool from "@/components/tools/pdf/PDFToWordTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
