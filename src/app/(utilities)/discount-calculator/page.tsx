@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { generateToolMetadata } from "@/lib/seo-helper";
-import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+import PremiumToolPage from "@/components/seo/PremiumToolPage";
 export const metadata = generateToolMetadata("discount-calculator", "utilities");
 
 export default function ToolPage() {

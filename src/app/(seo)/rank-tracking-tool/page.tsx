@@ -1,5 +1,5 @@
 import { generateToolMetadata } from "@/lib/seo-helper";
-import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+import PremiumToolPage from "@/components/seo/PremiumToolPage";
 
 const TOOL_ID = "rank-tracking-tool";
 const CATEGORY = "seo";
@@ -10,5 +10,5 @@ export async function generateMetadata({ searchParams }: any) {
 }
 
 export default async function Page() {
-    return <ToolPlaceholderPage toolId={TOOL_ID} />;
+    return <PremiumToolPage toolId={TOOL_ID} />;
 }

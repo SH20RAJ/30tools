@@ -8190,7 +8190,8 @@
           "route": "/word-to-number-converter",
           "extraSlugs": [
             "free-word-to-number-converter-online",
-            "word-to-number-converter-tool"
+            "word-to-number-converter-tool",
+            "word-to-number"
           ],
           "popular": false,
           "category": "text",

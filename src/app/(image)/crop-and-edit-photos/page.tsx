@@ -1,5 +1,5 @@
 import { generateToolMetadata } from "@/lib/seo-helper";
-import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+import PremiumToolPage from "@/components/seo/PremiumToolPage";
 
 const TOOL_ID = "crop-and-edit-photos";
 const CATEGORY = "image";
@@ -10,5 +10,5 @@ export async function generateMetadata({ searchParams }: any) {
 }
 
 export default async function Page() {
-    return <ToolPlaceholderPage toolId={TOOL_ID} />;
+    return <PremiumToolPage toolId={TOOL_ID} />;
 }

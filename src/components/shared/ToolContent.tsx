@@ -24,7 +24,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 				<h2 className="text-3xl font-bold tracking-tight mb-6">What is {toolData.name}?</h2>
 				<div className="bg-card border border-border/50 rounded-3xl p-8 shadow-sm">
 					<p className="text-lg text-muted-foreground leading-relaxed">
-						{description} This free online tool is part of the 30tools suite, designed to provide lightning-fast text processing directly in your browser. Whether you're looking to create unique social media bios, reverse strings for coding, or just have fun with mirrored text, our {toolData.name} offers a professional, privacy-first solution.
+						{description} This free online tool is part of the 30tools suite, designed to provide lightning-fast processing directly in your browser. Whether you're a professional looking for advanced utilities or a casual user needing a quick solution, our {toolData.name} offers a secure, privacy-first experience.
 					</p>
 				</div>
 			</section>
@@ -152,18 +152,18 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 			{/* Quick Reference / Snippet Section */}
 			<section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10">
 				<div className="max-w-2xl">
-					<h2 className="text-2xl font-bold mb-4">The #1 Backwards Text Generator Online</h2>
+					<h2 className="text-2xl font-bold mb-4">The #1 Online {toolData.name}</h2>
 					<p className="text-lg text-muted-foreground mb-6">
-						Our {toolData.name} is a versatile, high-speed utility for anyone needing to flip, reverse, or mirror text. Developed with modern SEO standards and user privacy in mind, it outperforms typical alternatives by processing everything locally. Use it for social media, coding tests, or creative design without ever worrying about your data privacy.
+						Our {toolData.name} is a versatile, high-speed utility for anyone needing professional results instantly. Developed with modern SEO standards and user privacy in mind, it outperforms typical alternatives by processing everything locally in your browser. Use it for your projects, professional work, or creative tasks without ever worrying about your data privacy.
 					</p>
 					<ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 						<li className="flex items-center gap-2 text-sm font-medium">
 							<div className="w-1.5 h-1.5 rounded-full bg-primary" />
-							Optimized for Google SGE
+							Optimized for Speed
 						</li>
 						<li className="flex items-center gap-2 text-sm font-medium">
 							<div className="w-1.5 h-1.5 rounded-full bg-primary" />
-							Supports Multi-line Text
+							Supports Multiple Formats
 						</li>
 						<li className="flex items-center gap-2 text-sm font-medium">
 							<div className="w-1.5 h-1.5 rounded-full bg-primary" />
