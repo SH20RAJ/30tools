@@ -3,10 +3,10 @@ import { Button } from "@/components/ui/button";
 export function MinimalHero({ title, subtitle }) {
 	return (
 		<div className="text-center animate-in">
-			<h1 className="text-apple-hero text-white mb-6">
+			<h1 className="text-apple-hero text-[#1d1d1f] mb-6">
 				{title}
 			</h1>
-			<p className="text-2xl md:text-3xl font-normal text-white/80 max-w-2xl mx-auto mb-10 tracking-tight leading-tight">
+			<p className="text-2xl md:text-3xl font-normal text-[#1d1d1f]/80 max-w-2xl mx-auto mb-10 tracking-tight leading-tight">
 				{subtitle}
 			</p>
 			<div className="flex items-center justify-center gap-4">

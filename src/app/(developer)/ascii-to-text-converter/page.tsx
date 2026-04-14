@@ -1,131 +1,78 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import BaseConverter from "@/components/tools/shared/BaseConverter";
 
 export const metadata = {
 	title: "Free ASCII to Text Converter Online - No Signup | 30tools",
 	description:
-		"Free ascii to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert ASCII decimal codes to plain text instantly. Free online tool to process your data with privacy-friendly browser-based workflows. 100% free, no signup required.",
 	keywords:
-		"ascii to text converter, free online tool, no signup, developer, ascii to text converter online, 30tools",
+		"ascii to text converter, ascii decimal to text, character code to text, ascii converter online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ascii-to-text-converter",
 	},
-	openGraph: {
-		title: "Free ASCII to Text Converter Online - No Signup | 30tools",
-		description:
-			"Free ascii to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/ascii-to-text-converter",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free ASCII to Text Converter Online - No Signup | 30tools",
-		description:
-			"Free ascii to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
-	},
-	robots: { index: true, follow: true },
 };
 
-export default async function ToolPage() {
+export default function ToolPage() {
 	const tool = {
 		id: "ascii-to-text-converter",
 		name: "ASCII to Text Converter",
 		description:
-			"Free ascii to text converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Convert ASCII decimal codes back to text. Input a series of decimal values (separated by spaces, commas, or newlines) to see the decoded characters.",
 		route: "/ascii-to-text-converter",
-		extraSlugs: [
-			"free-ascii-to-text-converter-online",
-			"ascii-to-text-converter-tool",
-		],
-		popular: false,
 		category: "developer",
+		features: [
+			"Instant decoding",
+			"Supports space, comma, and newline separators",
+			"Privacy-focused processing",
+			"100% free and easy to use",
+		],
+		howTo: {
+			steps: [
+				{
+					name: "Input ASCII Codes",
+					text: "Enter a sequence of decimal values like '72 101 108 108 111'.",
+				},
+				{
+					name: "Automatic Translation",
+					text: "The tool converts these codes into readable text immediately.",
+				},
+				{
+					name: "Save Results",
+					text: "Copy the decoded text or download it as a text file.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What is an ASCII decimal code?",
+				answer: "Each character is represented by a number (e.g., 'H' is 72). This tool reverses that mapping to turn numbers back into text.",
+			},
+			{
+				question: "Can I use separators other than spaces?",
+				answer: "Yes, you can separate the numbers with spaces, commas, or newlines.",
+			},
+		],
 	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "ASCII to Text Converter",
-			url: "/ascii-to-text-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+
+	const convertFn = (input: string) => {
+		return input
+			.trim()
+			.split(/[\s,]+/)
+			.map((code) => {
+				const num = parseInt(code, 10);
+				return isNaN(num) ? "" : String.fromCharCode(num);
+			})
+			.join("");
+	};
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "ASCII to Text Converter",
-						description:
-							"Free ascii to text converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-						url: "https://30tools.com/ascii-to-text-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
+		<ToolLayout tool={tool}>
+			<BaseConverter
+				title="ASCII to Text"
+				inputPlaceholder="Enter ASCII codes (e.g., 72 101 108 108 111)..."
+				outputPlaceholder="Text output will appear here..."
+				convertFn={convertFn}
 			/>
-
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolPlaceholderPage toolId="ascii-to-text-converter" />
-			</ToolLayout>
-		</>
+		</ToolLayout>
 	);
 }

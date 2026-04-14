@@ -1,133 +1,78 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import BaseConverter from "@/components/tools/shared/BaseConverter";
 
 export const metadata = {
 	title: "Free ASCII to Binary Converter Online - No Signup | 30tools",
 	description:
-		"Free ascii to binary converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert ASCII text to binary code instantly. Free online tool to process your data with privacy-friendly browser-based workflows. 100% free, no signup required.",
 	keywords:
-		"ascii to binary converter, free online tool, no signup, developer, ascii to binary converter online, 30tools",
+		"ascii to binary converter, text to binary, ascii code to binary, binary converter online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ascii-to-binary-converter",
 	},
-	openGraph: {
-		title: "Free ASCII to Binary Converter Online - No Signup | 30tools",
-		description:
-			"Free ascii to binary converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/ascii-to-binary-converter",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free ASCII to Binary Converter Online - No Signup | 30tools",
-		description:
-			"Free ascii to binary converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
-	},
-	robots: { index: true, follow: true },
 };
 
-export default async function ToolPage() {
+export default function ToolPage() {
 	const tool = {
 		id: "ascii-to-binary-converter",
 		name: "ASCII to Binary Converter",
 		description:
-			"Free ascii to binary converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Convert ASCII text to binary code instantly. Every character is transformed into its 8-bit binary representation.",
 		route: "/ascii-to-binary-converter",
-		extraSlugs: [
-			"ascii-to-binary",
-			"ascii-to-binary-converter-tool",
-			"binary-converter",
-			"free-ascii-to-binary-converter-online",
-		],
-		popular: false,
 		category: "developer",
+		features: [
+			"Real-time conversion",
+			"8-bit binary output",
+			"Space-separated binary blocks",
+			"Privacy-focused (browser-based)",
+			"Free and no signup",
+		],
+		howTo: {
+			steps: [
+				{
+					name: "Enter ASCII Text",
+					text: "Type or paste your text into the input field.",
+				},
+				{
+					name: "Get Binary Code",
+					text: "The tool automatically converts each character to its 8-bit binary value.",
+				},
+				{
+					name: "Copy or Download",
+					text: "Click the copy or download button to save your binary result.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "How does ASCII to Binary conversion work?",
+				answer: "Each character in ASCII has a decimal code (e.g., 'A' is 65). This decimal value is then converted into a base-2 (binary) number, typically padded to 8 bits.",
+			},
+			{
+				question: "Is this tool secure?",
+				answer: "Yes, all processing happens locally in your browser. Your data is never sent to any server.",
+			},
+		],
 	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "ASCII to Binary Converter",
-			url: "/ascii-to-binary-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+
+	const convertFn = (input: string) => {
+		return input
+			.split("")
+			.map((char) => {
+				const binary = char.charCodeAt(0).toString(2);
+				return "00000000".slice(binary.length) + binary;
+			})
+			.join(" ");
+	};
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "ASCII to Binary Converter",
-						description:
-							"Free ascii to binary converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-						url: "https://30tools.com/ascii-to-binary-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
+		<ToolLayout tool={tool}>
+			<BaseConverter
+				title="ASCII to Binary"
+				inputPlaceholder="Enter text here (e.g., Hello)..."
+				outputPlaceholder="Binary output will appear here..."
+				convertFn={convertFn}
 			/>
-
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolPlaceholderPage toolId="ascii-to-binary-converter" />
-			</ToolLayout>
-		</>
+		</ToolLayout>
 	);
 }
