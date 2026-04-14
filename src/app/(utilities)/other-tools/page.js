@@ -1,4 +1,5 @@
-import OtherTool from "@/components/tools/OtherToolsPage";
+import OtherToolsPage from "@/components/tools/OtherToolsPage";
+import { getAllCategories, getOtherTools } from "@/lib/other-tools-actions";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
@@ -30,6 +31,9 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
+	const categoriesResult = await getAllCategories();
+	const otherToolsResult = await getOtherTools();
+
 	const tool = {
 		id: "other-tools",
 		name: "Other Tools",

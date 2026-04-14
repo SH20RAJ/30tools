@@ -135,7 +135,10 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<GeneratorToolFeatures tool={toolData} features={features} />
+				<div className="text-center p-12 bg-muted/20 rounded-3xl border border-dashed border-border">
+					<h3 className="text-xl font-bold mb-2">SEO Audit Tool Ready</h3>
+					<p className="text-muted-foreground">The technical audit engine is initializing in your browser.</p>
+				</div>
 			</ToolLayout>
 		</>
 	);

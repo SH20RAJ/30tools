@@ -1,4 +1,4 @@
-import SeoTool from "@/components/tools/seo/SeoToolkit";
+import SeoToolkit from "@/components/tools/seo/SeoToolkit";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {

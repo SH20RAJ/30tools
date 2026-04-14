@@ -5,13 +5,13 @@
 
 ## Core Architecture
 
-### 1. Data Layer (`src/constants/`)
-- **tools.json**: The single source of truth for the entire tool ecosystem. Contains metadata for all tools, including SEO titles, descriptions, categories, features, FAQs, and `extraSlugs`.
-- **tools-utils.js**: Utility functions to query and filter tools from the JSON data.
+### 1. Data Layer
+- **tools.json**: Located in `src/constants/tools.json`. The single source of truth for the entire tool ecosystem. Contains metadata for all tools, including SEO titles, descriptions, categories, and `extraSlugs`.
+- **tools.ts**: Located in `src/lib/tools.ts`. Type-safe utility functions to query and filter tools from the JSON data.
 
 ### 2. Routing System
-- **Next.js rewrites**: Located in `next.config.mjs`, this programmatically handles all SEO variants defined in `extraSlugs` of `tools.json`. Any URL in `extraSlugs` will automatically serve its parent tool's content.
-- **Middleware (`src/middleware.ts`)**: Dynamically validates incoming requests against the `tools.json` dataset to ensure only valid tool routes are processed, reducing 404 errors.
+- **Next.js rewrites**: Located in `next.config.mjs`, this programmatically handles all SEO variants defined in `extraSlugs` of `tools.json`.
+- **Proxy (`src/proxy.ts`)**: Replaces the deprecated middleware.ts. Dynamically validates incoming requests and handles 301 redirects for `extraSlugs`.
 - **App Router**: Tools are organized into semantic category folders (e.g., `(image)`, `(pdf)`, `(downloaders)`) for better codebase management and SEO.
 
 ### 3. SEO Infrastructure
