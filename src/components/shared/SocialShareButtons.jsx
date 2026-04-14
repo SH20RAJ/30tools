@@ -14,7 +14,6 @@ import {
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const SocialShareButtons = ({
 	toolName,
@@ -60,96 +59,88 @@ const SocialShareButtons = ({
 	};
 
 	return (
-		<Card className="bg-gradient-cute border-primary/20">
-			<CardHeader className="pb-3">
-				<CardTitle className="flex items-center gap-2 text-lg">
-					<Heart className="h-5 w-5 text-primary animate-pulse" />
-					Love this tool? Share it!
-				</CardTitle>
-				<p className="text-sm text-muted-foreground">
-					Help others discover this amazing free tool ✨
+		<div className="bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl p-8 md:p-12 animate-in">
+			<div className="text-center mb-10">
+				<h3 className="text-2xl md:text-3xl font-semibold tracking-tight mb-3">
+					Love this tool? Share it.
+				</h3>
+				<p className="text-lg opacity-60">
+					Help others discover the best free toolkit on the web.
 				</p>
-			</CardHeader>
-			<CardContent className="space-y-4">
-				{/* Main Share Buttons */}
-				<div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={() => handleShare("twitter")}
-						className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-foreground"
-					>
-						<Twitter className="h-4 w-4 mr-2" />
-						Twitter
-					</Button>
+			</div>
 
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={() => handleShare("facebook")}
-						className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-primary"
-					>
-						<Facebook className="h-4 w-4 mr-2" />
-						Facebook
-					</Button>
+			<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+				<Button
+					variant="secondary"
+					size="lg"
+					onClick={() => handleShare("twitter")}
+					className="w-full"
+				>
+					<Twitter className="h-4 w-4 mr-2" />
+					Twitter
+				</Button>
 
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={() => handleShare("linkedin")}
-						className="bg-muted/50 hover:bg-muted border-border text-foreground hover:text-primary"
-					>
-						<Linkedin className="h-4 w-4 mr-2" />
-						LinkedIn
-					</Button>
+				<Button
+					variant="secondary"
+					size="lg"
+					onClick={() => handleShare("facebook")}
+					className="w-full"
+				>
+					<Facebook className="h-4 w-4 mr-2" />
+					Facebook
+				</Button>
 
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={() => handleShare("whatsapp")}
-						className="bg-muted/50 hover:bg-muted border-border text-primary hover:text-foreground"
-					>
-						<MessageCircle className="h-4 w-4 mr-2" />
-						WhatsApp
-					</Button>
-				</div>
+				<Button
+					variant="secondary"
+					size="lg"
+					onClick={() => handleShare("linkedin")}
+					className="w-full"
+				>
+					<Linkedin className="h-4 w-4 mr-2" />
+					LinkedIn
+				</Button>
 
-				{/* Additional Actions */}
-				<div className="flex gap-3">
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={() => handleShare("email")}
-						className="flex-1 bg-gray-50 hover:bg-gray-100 border-border"
-					>
-						<Mail className="h-4 w-4 mr-2" />
-						Email
-					</Button>
+				<Button
+					variant="secondary"
+					size="lg"
+					onClick={() => handleShare("whatsapp")}
+					className="w-full"
+				>
+					<MessageCircle className="h-4 w-4 mr-2" />
+					WhatsApp
+				</Button>
 
-					<Button
-						variant="outline"
-						size="sm"
-						onClick={() => handleShare("copy")}
-						className="flex-1 bg-muted/50 hover:bg-muted border-border text-primary"
-					>
-						{copied ? (
-							<CheckCircle2 className="h-4 w-4 mr-2 text-primary" />
-						) : (
-							<Copy className="h-4 w-4 mr-2" />
-						)}
-						{copied ? "Copied!" : "Copy Link"}
-					</Button>
-				</div>
+				<Button
+					variant="secondary"
+					size="lg"
+					onClick={() => handleShare("email")}
+					className="w-full"
+				>
+					<Mail className="h-4 w-4 mr-2" />
+					Email
+				</Button>
 
-				{/* Engagement Message */}
-				<div className="text-center pt-2">
-					<Badge variant="secondary" className="bg-primary/10 text-primary">
-						<Share2 className="h-3 w-3 mr-1" />
-						Free forever • No sign-up required
-					</Badge>
-				</div>
-			</CardContent>
-		</Card>
+				<Button
+					variant="secondary"
+					size="lg"
+					onClick={() => handleShare("copy")}
+					className="w-full"
+				>
+					{copied ? (
+						<CheckCircle2 className="h-4 w-4 mr-2 text-[#0071e3]" />
+					) : (
+						<Copy className="h-4 w-4 mr-2" />
+					)}
+					{copied ? "Copied" : "Copy"}
+				</Button>
+			</div>
+
+			<div className="mt-12 text-center opacity-40">
+				<p className="text-sm font-medium tracking-tight">
+					Free forever. No registration required. Privacy focused.
+				</p>
+			</div>
+		</div>
 	);
 };
 

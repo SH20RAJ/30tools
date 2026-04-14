@@ -127,31 +127,30 @@ export default function ToolPage({ toolId, children }: ToolPageProps) {
 			<div className="space-y-16">
 				{/* Main Tool Interface */}
 				<section id="tool" className="relative pt-4">
-					<div className="absolute -inset-4 bg-gradient-to-r from-primary/5 to-blue-500/5 rounded-[3rem] blur-3xl opacity-30 -z-10" />
 					{children || (
-						<div className="min-h-[400px] flex items-center justify-center bg-card border border-border/60 rounded-[2.5rem] p-8 shadow-sm">
+						<div className="min-h-[400px] flex items-center justify-center bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl p-8">
 							<div className="text-center space-y-6 max-w-md">
-								<div className="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center mx-auto mb-4 animate-in zoom-in duration-500">
-									<Zap className="w-10 h-10 text-primary" />
+								<div className="w-16 h-16 rounded-xl bg-[#0071e3]/10 flex items-center justify-center mx-auto mb-4 animate-in zoom-in duration-500">
+									<Zap className="w-8 h-8 text-[#0071e3]" />
 								</div>
-								<h3 className="text-2xl font-bold tracking-tight">
+								<h3 className="text-2xl font-semibold tracking-tight">
 									Tool Interface
 								</h3>
-								<p className="text-muted-foreground leading-relaxed">
+								<p className="text-[#1d1d1f]/60 dark:text-white/60 leading-relaxed">
 									The {toolData.name} interface is ready. This tool operates
 									100% in your browser for maximum privacy and speed.
 								</p>
-								<div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-									<div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+								<div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-4">
+									<div className="flex items-center gap-2 text-sm font-medium opacity-60">
 										<Shield className="w-4 h-4 text-green-500" />
 										Private
 									</div>
-									<div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
+									<div className="flex items-center gap-2 text-sm font-medium opacity-60">
 										<Zap className="w-4 h-4 text-yellow-500" />
 										Instant
 									</div>
-									<div className="flex items-center gap-2 text-sm font-medium text-muted-foreground">
-										<Download className="w-4 h-4 text-blue-500" />
+									<div className="flex items-center gap-2 text-sm font-medium opacity-60">
+										<Download className="w-4 h-4 text-[#0071e3]" />
 										Free
 									</div>
 								</div>
@@ -161,7 +160,7 @@ export default function ToolPage({ toolId, children }: ToolPageProps) {
 				</section>
 
 				{/* Rich SEO Content */}
-				<section id="content" className="border-t border-border/40 pt-16">
+				<section id="content" className="border-t border-black/5 dark:border-white/5 pt-16">
 					<ToolContent toolId={toolId} />
 				</section>
 			</div>

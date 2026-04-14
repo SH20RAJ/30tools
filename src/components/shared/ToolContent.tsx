@@ -17,14 +17,14 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 	const description = toolData.seoDescription || toolData.description;
 
 	return (
-		<article className="prose prose-slate dark:prose-invert max-w-none space-y-16">
+		<article className="prose prose-slate dark:prose-invert max-w-none space-y-24">
 			{/* What is Section */}
 			<section className="scroll-mt-24">
-				<h2 className="text-3xl font-bold tracking-tight mb-6">
+				<h2 className="text-3xl font-semibold tracking-tight mb-6">
 					What is {toolData.name}?
 				</h2>
-				<div className="bg-card border border-border/50 rounded-3xl p-8 shadow-sm">
-					<p className="text-lg text-muted-foreground leading-relaxed">
+				<div className="bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl p-8">
+					<p className="text-lg text-[#1d1d1f]/80 dark:text-white/80 leading-relaxed">
 						{description} This free online tool is part of the 30tools suite,
 						designed to provide lightning-fast processing directly in your
 						browser. Whether you're a professional looking for advanced
@@ -36,20 +36,20 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 
 			{/* How to Use Section */}
 			<section className="scroll-mt-24">
-				<h2 className="text-3xl font-bold tracking-tight mb-8">
+				<h2 className="text-3xl font-semibold tracking-tight mb-8">
 					How to Use {toolData.name}
 				</h2>
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					{toolData.howTo?.steps?.map((step: any, idx: number) => (
 						<div
 							key={idx}
-							className="relative p-6 bg-muted/30 rounded-2xl border border-border/40 group hover:border-primary/30 transition-colors"
+							className="relative p-8 bg-white dark:bg-[#1d1d1f] rounded-xl border border-black/5 dark:border-white/5 group transition-all"
 						>
-							<div className="absolute -top-4 -left-4 w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold shadow-lg">
-								{idx + 1}
+							<div className="text-[#0071e3] font-bold text-lg mb-4">
+								{idx + 1}.
 							</div>
-							<h3 className="text-xl font-bold mb-3 mt-2">{step.name}</h3>
-							<p className="text-muted-foreground text-sm leading-relaxed">
+							<h3 className="text-xl font-semibold mb-3">{step.name}</h3>
+							<p className="text-[#1d1d1f]/60 dark:text-white/60 text-sm leading-relaxed">
 								{step.text}
 							</p>
 						</div>
@@ -63,17 +63,17 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 
 			{/* Features Grid */}
 			<section className="scroll-mt-24">
-				<h2 className="text-3xl font-bold tracking-tight mb-8">
+				<h2 className="text-3xl font-semibold tracking-tight mb-8">
 					Key Features & Benefits
 				</h2>
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 					{toolData.features?.map((feature: string, idx: number) => (
 						<div
 							key={idx}
-							className="flex items-start gap-4 p-5 bg-card border border-border/50 rounded-2xl hover:shadow-md transition-all"
+							className="flex items-start gap-4 p-6 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl hover:shadow-sm transition-all"
 						>
-							<div className="mt-1 w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center text-green-600">
-								<Check className="w-4 h-4" />
+							<div className="mt-1 w-5 h-5 rounded-full bg-[#0071e3]/10 flex items-center justify-center text-[#0071e3]">
+								<Check className="w-3 h-3" />
 							</div>
 							<span className="text-base font-medium">{feature}</span>
 						</div>
@@ -82,33 +82,33 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 			</section>
 
 			{/* Trust Section */}
-			<section className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-10 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 border border-primary/10 rounded-[2.5rem]">
-				<div className="text-center space-y-3">
-					<div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto text-primary">
-						<Zap className="w-7 h-7" />
+			<section className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-12 bg-[#f5f5f7] dark:bg-[#161617] rounded-xl border border-black/5 dark:border-white/5">
+				<div className="text-center space-y-4">
+					<div className="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto text-[#0071e3]">
+						<Zap className="w-6 h-6" />
 					</div>
-					<h3 className="font-bold text-lg">Instant Results</h3>
-					<p className="text-sm text-muted-foreground">
+					<h3 className="font-semibold text-lg">Instant Results</h3>
+					<p className="text-sm opacity-60">
 						Real-time processing with zero latency. No waiting, just instant
 						output.
 					</p>
 				</div>
-				<div className="text-center space-y-3">
-					<div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto text-primary">
-						<Shield className="w-7 h-7" />
+				<div className="text-center space-y-4">
+					<div className="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto text-[#0071e3]">
+						<Shield className="w-6 h-6" />
 					</div>
-					<h3 className="font-bold text-lg">Maximum Privacy</h3>
-					<p className="text-sm text-muted-foreground">
+					<h3 className="font-semibold text-lg">Maximum Privacy</h3>
+					<p className="text-sm opacity-60">
 						All processing is done locally in your browser. We never store or
 						see your data.
 					</p>
 				</div>
-				<div className="text-center space-y-3">
-					<div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto text-primary">
-						<Download className="w-7 h-7" />
+				<div className="text-center space-y-4">
+					<div className="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto text-[#0071e3]">
+						<Download className="w-6 h-6" />
 					</div>
-					<h3 className="font-bold text-lg">Free Forever</h3>
-					<p className="text-sm text-muted-foreground">
+					<h3 className="font-semibold text-lg">Free Forever</h3>
+					<p className="text-sm opacity-60">
 						No signups, no hidden costs, and no limits. Use it as much as you
 						need.
 					</p>
@@ -118,18 +118,17 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 			{/* FAQ Section */}
 			{(toolData.faqs?.length ?? 0) > 0 && (
 				<section className="scroll-mt-24">
-					<h2 className="text-3xl font-bold tracking-tight mb-8 flex items-center gap-3">
-						<HelpCircle className="w-8 h-8 text-primary" />
+					<h2 className="text-3xl font-semibold tracking-tight mb-8">
 						Frequently Asked Questions
 					</h2>
 					<div className="space-y-4">
 						{toolData.faqs?.map((faq: any, idx: number) => (
 							<div
 								key={idx}
-								className="p-8 bg-card border border-border/50 rounded-3xl hover:border-primary/20 transition-all"
+								className="p-8 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl transition-all"
 							>
-								<h3 className="text-xl font-bold mb-4">{faq.question}</h3>
-								<p className="text-muted-foreground leading-relaxed text-lg">
+								<h3 className="text-xl font-semibold mb-4">{faq.question}</h3>
+								<p className="opacity-60 leading-relaxed text-lg">
 									{faq.answer}
 								</p>
 							</div>
@@ -140,48 +139,48 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 
 			{/* Comparison Table */}
 			<section className="scroll-mt-24">
-				<h2 className="text-3xl font-bold tracking-tight mb-8">
+				<h2 className="text-3xl font-semibold tracking-tight mb-8">
 					Why 30tools is Better
 				</h2>
-				<div className="overflow-hidden rounded-3xl border border-border/50 bg-card">
+				<div className="overflow-hidden rounded-xl border border-black/5 dark:border-white/5 bg-white dark:bg-[#1d1d1f]">
 					<table className="w-full text-left border-collapse">
 						<thead>
-							<tr className="bg-muted/50 border-b border-border/50">
-								<th className="p-6 font-bold text-sm uppercase tracking-wider">
+							<tr className="bg-[#f5f5f7] dark:bg-[#161617] border-b border-black/5 dark:border-white/5">
+								<th className="p-6 font-semibold text-xs uppercase tracking-wider">
 									Feature
 								</th>
-								<th className="p-6 font-bold text-sm uppercase tracking-wider text-primary">
+								<th className="p-6 font-semibold text-xs uppercase tracking-wider text-[#0071e3]">
 									30tools
 								</th>
-								<th className="p-6 font-bold text-sm uppercase tracking-wider">
+								<th className="p-6 font-semibold text-xs uppercase tracking-wider">
 									Others
 								</th>
 							</tr>
 						</thead>
-						<tbody className="divide-y divide-border/50">
+						<tbody className="divide-y divide-black/5 dark:divide-white/5">
 							<tr>
-								<td className="p-6 font-medium">Cost</td>
-								<td className="p-6 text-green-600 font-bold">Free Forever</td>
-								<td className="p-6 text-muted-foreground">
+								<td className="p-6 text-sm font-medium">Cost</td>
+								<td className="p-6 text-sm text-green-600 font-bold">Free Forever</td>
+								<td className="p-6 text-sm opacity-60">
 									Often Paid/Credits
 								</td>
 							</tr>
 							<tr>
-								<td className="p-6 font-medium">Registration</td>
-								<td className="p-6 text-green-600 font-bold">No Signup</td>
-								<td className="p-6 text-muted-foreground">Email Required</td>
+								<td className="p-6 text-sm font-medium">Registration</td>
+								<td className="p-6 text-sm text-green-600 font-bold">No Signup</td>
+								<td className="p-6 text-sm opacity-60">Email Required</td>
 							</tr>
 							<tr>
-								<td className="p-6 font-medium">Data Storage</td>
-								<td className="p-6 text-green-600 font-bold">
+								<td className="p-6 text-sm font-medium">Data Storage</td>
+								<td className="p-6 text-sm text-green-600 font-bold">
 									100% Client-side
 								</td>
-								<td className="p-6 text-muted-foreground">Stored on Servers</td>
+								<td className="p-6 text-sm opacity-60">Stored on Servers</td>
 							</tr>
 							<tr>
-								<td className="p-6 font-medium">Processing Speed</td>
-								<td className="p-6 text-green-600 font-bold">Instant (ms)</td>
-								<td className="p-6 text-muted-foreground">Network Dependent</td>
+								<td className="p-6 text-sm font-medium">Speed</td>
+								<td className="p-6 text-sm text-green-600 font-bold">Instant (ms)</td>
+								<td className="p-6 text-sm opacity-60">Network Dependent</td>
 							</tr>
 						</tbody>
 					</table>
@@ -189,12 +188,12 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 			</section>
 
 			{/* Quick Reference / Snippet Section */}
-			<section className="p-10 bg-primary/5 rounded-[2.5rem] border border-primary/10">
-				<div className="max-w-2xl">
-					<h2 className="text-2xl font-bold mb-4">
+			<section className="p-12 bg-white dark:bg-[#1d1d1f] rounded-xl border border-black/5 dark:border-white/5">
+				<div className="max-w-3xl">
+					<h2 className="text-2xl font-semibold mb-6">
 						The #1 Online {toolData.name}
 					</h2>
-					<p className="text-lg text-muted-foreground mb-6">
+					<p className="text-lg opacity-60 mb-8 leading-relaxed">
 						Our {toolData.name} is a versatile, high-speed utility for anyone
 						needing professional results instantly. Developed with modern SEO
 						standards and user privacy in mind, it outperforms typical
@@ -202,21 +201,21 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 						it for your projects, professional work, or creative tasks without
 						ever worrying about your data privacy.
 					</p>
-					<ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-						<li className="flex items-center gap-2 text-sm font-medium">
-							<div className="w-1.5 h-1.5 rounded-full bg-primary" />
+					<ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						<li className="flex items-center gap-3 text-sm font-medium">
+							<div className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
 							Optimized for Speed
 						</li>
-						<li className="flex items-center gap-2 text-sm font-medium">
-							<div className="w-1.5 h-1.5 rounded-full bg-primary" />
+						<li className="flex items-center gap-3 text-sm font-medium">
+							<div className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
 							Supports Multiple Formats
 						</li>
-						<li className="flex items-center gap-2 text-sm font-medium">
-							<div className="w-1.5 h-1.5 rounded-full bg-primary" />
+						<li className="flex items-center gap-3 text-sm font-medium">
+							<div className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
 							One-click Clipboard Sync
 						</li>
-						<li className="flex items-center gap-2 text-sm font-medium">
-							<div className="w-1.5 h-1.5 rounded-full bg-primary" />
+						<li className="flex items-center gap-3 text-sm font-medium">
+							<div className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
 							Mobile & Desktop Ready
 						</li>
 					</ul>
