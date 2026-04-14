@@ -112,43 +112,12 @@ const nextConfig = {
 		];
 	},
 
-	// Programmatic SEO Redirects (301) for extraSlugs
+	// SEO Redirects and Rewrites are now handled dynamically in src/middleware.ts
+	// to avoid the 1000+ custom routes limit and improve performance.
 	async redirects() {
-		try {
-			const fs = (await import("node:fs")).default;
-			const path = (await import("node:path")).default;
-			const toolsPath = path.resolve("./src/constants/tools.json");
-			const toolsData = JSON.parse(fs.readFileSync(toolsPath, "utf-8"));
-
-			const toolRedirects = [];
-
-			Object.values(toolsData.categories).forEach((category) => {
-				if (category.tools) {
-					category.tools.forEach((tool) => {
-						if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
-							tool.extraSlugs.forEach((slug) => {
-								const source = slug.startsWith("/") ? slug : `/${slug}`;
-								if (source !== tool.route) {
-									toolRedirects.push({
-										source: source,
-										destination: tool.route,
-										permanent: true,
-									});
-								}
-							});
-						}
-					});
-				}
-			});
-
-			return toolRedirects;
-		} catch (e) {
-			console.error("Failed to generate tool redirects:", e);
-			return [];
-		}
+		return [];
 	},
 
-	// Minimal rewrites for internal routing
 	async rewrites() {
 		return [];
 	},

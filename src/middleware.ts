@@ -1,6 +1,22 @@
 import { type NextRequest, NextResponse } from "next/server";
+import toolsData from "./constants/tools.json";
 
-// Hardcoded static pages for fast lookups
+// 1. Pre-build the Slug Map for high-performance lookups
+const SLUG_MAP = new Map<string, string>();
+
+Object.values(toolsData.categories).forEach((category: any) => {
+	category.tools?.forEach((tool: any) => {
+		if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
+			tool.extraSlugs.forEach((slug) => {
+				const normalizedSlug = slug.startsWith("/") ? slug : `/${slug}`;
+				// Map the variant slug to the primary tool route
+				SLUG_MAP.set(normalizedSlug, tool.route);
+			});
+		}
+	});
+});
+
+// 2. Hardcoded static pages
 const STATIC_PAGES = new Set([
 	"/",
 	"/search",
@@ -15,31 +31,14 @@ const STATIC_PAGES = new Set([
 	"/blog/",
 ]);
 
-// Validation Helper - minimal for Edge performance
-function isValidRoute(pathname: string): boolean {
-	if (STATIC_PAGES.has(pathname)) return true;
-
-	const allowedPrefixes = [
-		"/blog/",
-		"/blogs/",
-		"/dashboard",
-		"/account",
-		"/tools/",
-		"/search/",
-		"/api/",
-	];
-
-	return allowedPrefixes.some((prefix) => pathname.startsWith(prefix));
-}
-
 /**
  * Global Middleware for 30tools
- * Optimized for Cloudflare Edge Runtime
+ * Optimized for Cloudflare Edge Runtime (experimental-edge)
  */
 export async function middleware(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
-	// 1. Pass through internal assets and API requests immediately
+	// 1. Pass through internal assets and direct API requests immediately
 	if (
 		pathname.startsWith("/_next") ||
 		pathname.startsWith("/static") ||
@@ -49,17 +48,26 @@ export async function middleware(request: NextRequest) {
 		return NextResponse.next();
 	}
 
-	// 2. SEO Redirects and complex logic are handled via next.config.mjs redirects
-	// for maximum performance. This middleware only handles request filtering
-	// and basic safety checks.
+	// 2. Check for extraSlugs (SEO variants)
+	// If found, we REWRITE to the primary tool page to show the content
+	// without changing the URL in the browser (improving SEO indexability).
+	const primaryRoute = SLUG_MAP.get(pathname);
+	if (primaryRoute) {
+		// Create the target URL for the rewrite
+		const url = request.nextUrl.clone();
+		url.pathname = primaryRoute;
+		return NextResponse.rewrite(url);
+	}
 
+	// 3. Simple protection for non-existent routes
+	// Most routing is handled by Next.js filesystem or [slug] routes
 	return NextResponse.next();
 }
 
-export const runtime = "edge";
-
+// Next.js 16 configuration for Edge
 export const config = {
-	// Match all routes except static assets
 	matcher: ["/((?!api|_next|_static|_vercel|[\\w-]+\\.\\w+).*)"],
 };
 
+// Required for the specific Cloudflare/Next.js 16 environment
+export const runtime = "experimental-edge";
