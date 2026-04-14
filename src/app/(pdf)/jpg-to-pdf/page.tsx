@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free JPG to PDF Online - No Signup | 30tools",
@@ -32,16 +31,16 @@ export default async function ToolPage() {
 		"description": "Convert JPG/JPEG images to PDF documents quickly and easily. Free online tool.",
 		"route": "/jpg-to-pdf",
 		"extraSlugs": [
-				"combine-jpg-to-pdf",
-				"convert-jpeg-to-pdf",
-				"convert-jpg-to-pdf",
-				"convert-pdf-to-jpg",
-				"jpg-to-pdf-converter-free-online",
-				"pdf-pages-to-jpg"
+			"combine-jpg-to-pdf",
+			"convert-jpeg-to-pdf",
+			"convert-jpg-to-pdf",
+			"convert-pdf-to-jpg",
+			"jpg-to-pdf-converter-free-online",
+			"pdf-pages-to-jpg"
 		],
 		"popular": true,
 		"category": "pdf"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Pdf Tools",

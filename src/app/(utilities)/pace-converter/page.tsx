@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
 
 export const metadata = {
 	title: "Free Pace Converter Online - No Signup | 30tools",

@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Broken Link Checker Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Find broken links on any website. Check for 404 errors, redirect chains, and link health across entire websites or specific pages.",
 		"route": "/broken-link-checker",
 		"extraSlugs": [
-				"broken-link-scanner",
-				"inbound-link-checker",
-				"link-profile-checker"
+			"broken-link-scanner",
+			"inbound-link-checker",
+			"link-profile-checker"
 		],
 		"popular": true,
 		"category": "seo"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Seo Tools",

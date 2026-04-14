@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free JWT Decoder Online - No Signup | 30tools",
@@ -32,18 +31,18 @@ export default async function ToolPage() {
 		"description": "Decode and verify JSON Web Tokens",
 		"route": "/jwt-decoder",
 		"extraSlugs": [
-				"decode-jwt-online",
-				"decode-jwt-token",
-				"decode-jwt-without-secret-online",
-				"jwt-debugger",
-				"jwt-parser",
-				"jwt-token-decoder",
-				"read-jwt-content",
-				"verify-jwt-signature-free"
+			"decode-jwt-online",
+			"decode-jwt-token",
+			"decode-jwt-without-secret-online",
+			"jwt-debugger",
+			"jwt-parser",
+			"jwt-token-decoder",
+			"read-jwt-content",
+			"verify-jwt-signature-free"
 		],
 		"popular": true,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

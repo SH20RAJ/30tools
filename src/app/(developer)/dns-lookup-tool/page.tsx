@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free DNS Lookup Tool Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free DNS Lookup Tool online. Check DNS records (A, MX, CNAME, TXT) for any domain.",
 		"route": "/dns-lookup-tool",
 		"extraSlugs": [
-				"dns-checker",
-				"lookup-dns",
-				"dns-records-viewer"
+			"dns-checker",
+			"lookup-dns",
+			"dns-records-viewer"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

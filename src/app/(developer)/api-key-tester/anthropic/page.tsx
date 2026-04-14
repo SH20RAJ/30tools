@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Anthropic Claude API Key Tester Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Test your Anthropic Claude API key with the messages endpoint.",
 		"route": "/api-key-tester/anthropic",
 		"extraSlugs": [
-				"validate-claude-api-key-online",
-				"anthropic-api-tester"
+			"validate-claude-api-key-online",
+			"anthropic-api-tester"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

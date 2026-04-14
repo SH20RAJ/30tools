@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Cron Expression Generator Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free Cron Expression Generator online. Easily generate cron schedules for your applications.",
 		"route": "/cron-expression-generator",
 		"extraSlugs": [
-				"cron-generator",
-				"cron-scheduler",
-				"crontab-generator"
+			"cron-generator",
+			"cron-scheduler",
+			"crontab-generator"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

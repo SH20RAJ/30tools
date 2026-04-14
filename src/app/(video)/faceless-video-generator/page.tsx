@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Faceless Video Generator Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Faceless Video Generator - Coming Soon",
 		"route": "/faceless-video-generator",
 		"extraSlugs": [
-				"html5-video-player-generator",
-				"online-video-player-creator"
+			"html5-video-player-generator",
+			"online-video-player-creator"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Cancel Netflix Membership Guide Online - No Signup | 30tools",
@@ -34,7 +33,7 @@ export default async function ToolPage() {
 		"extraSlugs": [],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

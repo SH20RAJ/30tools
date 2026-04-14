@@ -1382,15 +1382,7 @@
 					],
 					"category": "image"
 				},
-				{
-					"id": "[slug]",
-					"name": "[slug]",
-					"description": "Free [slug] online tool. Fast and secure.",
-					"route": "/image-converter/[slug]",
-					"extraSlugs": [],
-					"popular": false,
-					"category": "image"
-				},
+	
 				{
 					"id": "image-optimizer",
 					"name": "Image Optimizer",

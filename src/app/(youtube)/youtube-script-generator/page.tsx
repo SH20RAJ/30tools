@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free AI YouTube Script Generator Online - No Signup | 30tools",
@@ -32,22 +31,22 @@ export default async function ToolPage() {
 		"description": "Generate engaging YouTube video scripts with AI assistance",
 		"route": "/youtube-script-generator",
 		"extraSlugs": [
-				"ai-youtube-script-writer-for-gaming",
-				"download-youtube-transcript",
-				"download-youtube-videos-1080p",
-				"extract-youtube-subtitles",
-				"save-youtube-captions",
-				"youtube-analytics",
-				"youtube-cover-maker",
-				"youtube-gif-maker",
-				"youtube-idea-generator",
-				"youtube-thumbnail-generator",
-				"youtube-trends",
-				"youtube-video-script-maker-free"
+			"ai-youtube-script-writer-for-gaming",
+			"download-youtube-transcript",
+			"download-youtube-videos-1080p",
+			"extract-youtube-subtitles",
+			"save-youtube-captions",
+			"youtube-analytics",
+			"youtube-cover-maker",
+			"youtube-gif-maker",
+			"youtube-idea-generator",
+			"youtube-thumbnail-generator",
+			"youtube-trends",
+			"youtube-video-script-maker-free"
 		],
 		"popular": false,
 		"category": "youtube"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Youtube Tools",

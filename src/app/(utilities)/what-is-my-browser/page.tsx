@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
 
 export const metadata = {
 	title: "Free What Is My Browser Online - No Signup | 30tools",

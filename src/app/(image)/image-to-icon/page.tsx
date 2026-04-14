@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Image To Icon Online - No Signup | 30tools",
@@ -32,11 +31,11 @@ export default async function ToolPage() {
 		"description": "Image To Icon - Coming Soon",
 		"route": "/image-to-icon",
 		"extraSlugs": [
-				"ios-app-icon-creator"
+			"ios-app-icon-creator"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

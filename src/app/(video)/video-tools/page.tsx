@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Video Tools Online - No Signup | 30tools",
@@ -34,7 +33,7 @@ export default async function ToolPage() {
 		"extraSlugs": [],
 		"popular": false,
 		"category": "video"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Video Tools",

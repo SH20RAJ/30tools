@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Meta Tag Analyzer Online - No Signup | 30tools",
@@ -32,11 +31,11 @@ export default async function ToolPage() {
 		"description": "Analyze and audit meta tags across your website. Check title tags, meta descriptions, Open Graph tags, and other SEO metadata.",
 		"route": "/meta-tag-analyzer",
 		"extraSlugs": [
-				"complexity-analyzer"
+			"complexity-analyzer"
 		],
 		"popular": true,
 		"category": "seo"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Seo Tools",

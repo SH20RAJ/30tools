@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free OpenGraph Meta Tags Generator Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free OpenGraph Meta Tags Generator online. Create social media tags for better link sharing.",
 		"route": "/opengraph-generator",
 		"extraSlugs": [
-				"og-tags-generator",
-				"social-tags-maker",
-				"opengraph-meta-tags"
+			"og-tags-generator",
+			"social-tags-maker",
+			"opengraph-meta-tags"
 		],
 		"popular": false,
 		"category": "seo"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Seo Tools",

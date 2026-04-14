@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Video To Audio Online - No Signup | 30tools",
@@ -32,16 +31,16 @@ export default async function ToolPage() {
 		"description": "Video To Audio - Coming Soon",
 		"route": "/video-to-audio",
 		"extraSlugs": [
-				"add-audio-to-video",
-				"extract-audio-from-video",
-				"iphone-audio-to-mp3",
-				"mp4-file-to-audio",
-				"tiktok-video-to-audio",
-				"video-audio-extractor"
+			"add-audio-to-video",
+			"extract-audio-from-video",
+			"iphone-audio-to-mp3",
+			"mp4-file-to-audio",
+			"tiktok-video-to-audio",
+			"video-audio-extractor"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

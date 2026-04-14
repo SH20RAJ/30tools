@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free RSA Key Pair Generator Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free RSA Key Pair Generator online. Generate secure public and private keys for encryption.",
 		"route": "/rsa-key-generator",
 		"extraSlugs": [
-				"rsa-generator",
-				"generate-rsa-keys",
-				"public-private-key-generator"
+			"rsa-generator",
+			"generate-rsa-keys",
+			"public-private-key-generator"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

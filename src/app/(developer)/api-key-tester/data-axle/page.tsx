@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Data Axle API Key Tester Online - No Signup | 30tools",
@@ -32,14 +31,14 @@ export default async function ToolPage() {
 		"description": "Test your Data Axle API key with the business lookup endpoint.",
 		"route": "/api-key-tester/data-axle",
 		"extraSlugs": [
-				"data-breach-email-search",
-				"google-structured-data-helper",
-				"structured-data-tester",
-				"test-structured-data"
+			"data-breach-email-search",
+			"google-structured-data-helper",
+			"structured-data-tester",
+			"test-structured-data"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

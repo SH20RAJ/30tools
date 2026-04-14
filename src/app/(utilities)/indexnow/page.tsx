@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free IndexNow Submitter Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
 		"route": "/indexnow",
 		"extraSlugs": [
-				"submit-url-to-bing-instantly",
-				"indexnow-api-tool"
+			"submit-url-to-bing-instantly",
+			"indexnow-api-tool"
 		],
 		"popular": false,
 		"category": "utilities"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Utilities Tools",

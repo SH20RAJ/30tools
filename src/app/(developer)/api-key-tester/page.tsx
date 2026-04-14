@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free API Key Tester Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
 		"route": "/api-key-tester",
 		"extraSlugs": [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely"
+			"test-openai-api-key-online-safely",
+			"validate-api-keys-safely"
 		],
 		"popular": true,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

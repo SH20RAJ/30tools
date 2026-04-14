@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
 
 export const metadata = {
 	title: "Free IP Address Lookup Online - No Signup | 30tools",

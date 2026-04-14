@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Public IP Checker Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free Public IP Checker online. Quickly find your public IP address and network details.",
 		"route": "/public-ip-checker",
 		"extraSlugs": [
-				"my-ip",
-				"whats-my-ip",
-				"ip-checker"
+			"my-ip",
+			"whats-my-ip",
+			"ip-checker"
 		],
 		"popular": false,
 		"category": "utilities"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Utilities Tools",

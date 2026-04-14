@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Search Online - No Signup | 30tools",
@@ -32,10 +31,10 @@ export default async function ToolPage() {
 		"description": "Free Search online. Search allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		"route": "/search",
 		"extraSlugs": [
-				"search"
+			"search"
 		],
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

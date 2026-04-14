@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Course Video Maker Online - No Signup | 30tools",
@@ -32,18 +31,18 @@ export default async function ToolPage() {
 		"description": "Course Video Maker - Coming Soon",
 		"route": "/course-video-maker",
 		"extraSlugs": [
-				"aesthetic-collage-maker",
-				"android-icon-maker",
-				"brand-identity-maker",
-				"css3-gradient-maker",
-				"custom-video-player-maker",
-				"free-poetry-maker",
-				"rich-snippets-maker",
-				"simple-video-maker"
+			"aesthetic-collage-maker",
+			"android-icon-maker",
+			"brand-identity-maker",
+			"css3-gradient-maker",
+			"custom-video-player-maker",
+			"free-poetry-maker",
+			"rich-snippets-maker",
+			"simple-video-maker"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

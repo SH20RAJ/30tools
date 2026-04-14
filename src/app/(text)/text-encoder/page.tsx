@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Text Encoder Online - No Signup | 30tools",
@@ -32,11 +31,11 @@ export default async function ToolPage() {
 		"description": "Text Encoder - Coming Soon",
 		"route": "/text-encoder",
 		"extraSlugs": [
-				"url-encoder"
+			"url-encoder"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

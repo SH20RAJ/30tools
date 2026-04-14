@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Online Port Scanner Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free Online Port Scanner. Scan common ports of a host to check for open services.",
 		"route": "/port-scanner-online",
 		"extraSlugs": [
-				"port-scanner",
-				"scan-ports",
-				"online-port-scan"
+			"port-scanner",
+			"scan-ports",
+			"online-port-scan"
 		],
 		"popular": false,
 		"category": "utilities"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Utilities Tools",

@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Groq API Key Tester Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Test your Groq API key with the chat completions endpoint.",
 		"route": "/api-key-tester/groq",
 		"extraSlugs": [
-				"groq-api-test-tool-online",
-				"test-groq-api-key-free"
+			"groq-api-test-tool-online",
+			"test-groq-api-key-free"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

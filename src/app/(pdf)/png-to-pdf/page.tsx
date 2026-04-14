@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free PNG to PDF Online - No Signup | 30tools",
@@ -32,17 +31,17 @@ export default async function ToolPage() {
 		"description": "Convert PNG images to PDF documents quickly and easily. Free online tool.",
 		"route": "/png-to-pdf",
 		"extraSlugs": [
-				"combine-png-to-pdf",
-				"convert-png-to-pdf",
-				"convert-png-to-pdf-free",
-				"pdf-from-png",
-				"png-images-to-pdf",
-				"png-to-pdf-multiple-images",
-				"turn-png-into-pdf"
+			"combine-png-to-pdf",
+			"convert-png-to-pdf",
+			"convert-png-to-pdf-free",
+			"pdf-from-png",
+			"png-images-to-pdf",
+			"png-to-pdf-multiple-images",
+			"turn-png-into-pdf"
 		],
 		"popular": true,
 		"category": "pdf"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Pdf Tools",

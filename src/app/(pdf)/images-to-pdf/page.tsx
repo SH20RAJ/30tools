@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Images To Pdf Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Images To Pdf - Coming Soon",
 		"route": "/images-to-pdf",
 		"extraSlugs": [
-				"combine-images-to-pdf",
-				"make-pdf-from-images",
-				"optimize-images-for-web"
+			"combine-images-to-pdf",
+			"make-pdf-from-images",
+			"optimize-images-for-web"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

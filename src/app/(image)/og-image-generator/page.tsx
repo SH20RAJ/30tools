@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free OG Image Generator Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Create beautiful Open Graph images for your website for free. Customize templates, backgrounds, and text.",
 		"route": "/og-image-generator",
 		"extraSlugs": [
-				"create-og-image-for-website",
-				"open-graph-image-generator-free"
+			"create-og-image-for-website",
+			"open-graph-image-generator-free"
 		],
 		"popular": true,
 		"category": "image"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Image Tools",

@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Pixels to REM Converter Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free Pixels to REM Converter online. Convert pixels (px) to REM units based on your base font size.",
 		"route": "/pixels-to-rem-converter",
 		"extraSlugs": [
-				"px-to-rem",
-				"rem-converter",
-				"pixels-to-rem"
+			"px-to-rem",
+			"rem-converter",
+			"pixels-to-rem"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

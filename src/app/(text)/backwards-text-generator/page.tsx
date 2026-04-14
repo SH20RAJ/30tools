@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Backwards Text Generator Online - No Signup | 30tools",
@@ -32,18 +31,18 @@ export default async function ToolPage() {
 		"description": "Generate backwards text instantly. Our free reverse text tool flips characters, words, or entire paragraphs. Perfect for Instagram, Discord, and creative writing.",
 		"route": "/backwards-text-generator",
 		"extraSlugs": [
-				"dummy-text-generator",
-				"fake-text-message-maker",
-				"filler-text-maker",
-				"free-backwards-text-generator-online",
-				"mirror-text-generator",
-				"random-text-generator",
-				"reverse-text-generator",
-				"stylish-text-generator"
+			"dummy-text-generator",
+			"fake-text-message-maker",
+			"filler-text-maker",
+			"free-backwards-text-generator-online",
+			"mirror-text-generator",
+			"random-text-generator",
+			"reverse-text-generator",
+			"stylish-text-generator"
 		],
 		"popular": true,
 		"category": "text"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Text Tools",

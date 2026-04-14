@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Audio Equalizer Online - No Signup | 30tools",
@@ -32,17 +31,17 @@ export default async function ToolPage() {
 		"description": "Audio Equalizer - Coming Soon",
 		"route": "/audio-equalizer",
 		"extraSlugs": [
-				"audio-tools",
-				"audio-trimmer",
-				"change-audio-format",
-				"mp4-audio-ripper",
-				"optimize-audio-files",
-				"shorten-audio-clip",
-				"split-audio-file"
+			"audio-tools",
+			"audio-trimmer",
+			"change-audio-format",
+			"mp4-audio-ripper",
+			"optimize-audio-files",
+			"shorten-audio-clip",
+			"split-audio-file"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

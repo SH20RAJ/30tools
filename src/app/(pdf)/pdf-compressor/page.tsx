@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free PDF Compressor Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Reduce PDF file size online free without losing quality. Our 2026 updated PDF size reducer uses advanced browser-side compression to safely shrink documents for email and web uploads. 100% private and secure.",
 		"route": "/pdf-compressor",
 		"extraSlugs": [
-				"compress-pdf-to-200kb",
-				"shrink-pdf-file-size-free"
+			"compress-pdf-to-200kb",
+			"shrink-pdf-file-size-free"
 		],
 		"popular": true,
 		"category": "pdf"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Pdf Tools",

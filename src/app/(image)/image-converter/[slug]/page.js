@@ -1,40 +1,48 @@
 import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
-export const metadata = {
-	title: "Free [slug] Online - No Signup | 30tools",
-	description:
-		"Free [slug] online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"[slug], free online tool, no signup, image, [slug] online, 30tools",
-	alternates: {
-		canonical: "https://30tools.com/image-converter/[slug]",
-	},
-	openGraph: {
-		title: "Free [slug] Online - No Signup | 30tools",
-		description:
-			"Free [slug] online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/image-converter/[slug]",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free [slug] Online - No Signup | 30tools",
-		description:
-			"Free [slug] online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
-	},
-	robots: { index: true, follow: true },
-};
+export async function generateMetadata({ params }) {
+	const { slug } = await params;
+	const name = slug
+		.split("-")
+		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+		.join(" ");
+	return {
+		title: `Free ${name} Online - No Signup | 30tools`,
+		description: `Free ${name} online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.`,
+		keywords: `${slug}, free online tool, no signup, image, ${slug} online, 30tools`,
+		alternates: {
+			canonical: `https://30tools.com/image-converter/${slug}`,
+		},
+		openGraph: {
+			title: `Free ${name} Online - No Signup | 30tools`,
+			description: `Free ${name} online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.`,
+			url: `https://30tools.com/image-converter/${slug}`,
+			siteName: "30tools",
+			images: [{ url: "/og-image.jpg" }],
+			type: "website",
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: `Free ${name} Online - No Signup | 30tools`,
+			description: `Free ${name} online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.`,
+			images: ["/og-image.jpg"],
+		},
+		robots: { index: true, follow: true },
+	};
+}
 
-export default async function ToolPage() {
+export default async function ToolPage({ params }) {
+	const { slug } = await params;
+	const name = slug
+		.split("-")
+		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+		.join(" ");
 	const tool = {
-		id: "[slug]",
-		name: "[slug]",
-		description: "Free [slug] online tool. Fast and secure.",
-		route: "/image-converter/[slug]",
+		id: slug,
+		name: name,
+		description: `Free ${name} online tool. Fast and secure.`,
+		route: `/image-converter/${slug}`,
 		extraSlugs: [],
 		popular: false,
 		category: "image",
@@ -45,10 +53,11 @@ export default async function ToolPage() {
 			url: "/image-tools",
 		},
 		{
-			name: "[slug]",
-			url: "/image-converter/[slug]",
+			name: name,
+			url: `/image-converter/${slug}`,
 		},
 	];
+
 	const relatedTools = [
 		{
 			id: "background-remover",
@@ -245,9 +254,9 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "[slug]",
-						description: "Free [slug] online tool. Fast and secure.",
-						url: "https://30tools.com/image-converter/[slug]",
+						name: name,
+						description: `Free ${name} online tool. Fast and secure.`,
+						url: `https://30tools.com/image-converter/${slug}`,
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

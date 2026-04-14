@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Amazon SES API Key Tester Online - No Signup | 30tools",
@@ -32,20 +31,20 @@ export default async function ToolPage() {
 		"description": "Test your Amazon SES credentials with the send email endpoint.",
 		"route": "/api-key-tester/amazon-ses",
 		"extraSlugs": [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online"
+			"api-docs",
+			"api-endpoint-tester",
+			"api-tester",
+			"debug-api-requests",
+			"font-tester-tool",
+			"regex-flags-tester",
+			"regex-match-tester",
+			"regex-replace-tester",
+			"regex-tester",
+			"test-rest-api-online"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free WCAG Color Contrast Checker Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free WCAG Color Contrast Checker. Ensure your color combinations meet accessibility standards.",
 		"route": "/contrast-checker",
 		"extraSlugs": [
-				"color-contrast-checker",
-				"wcag-checker",
-				"accessibility-contrast"
+			"color-contrast-checker",
+			"wcag-checker",
+			"accessibility-contrast"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

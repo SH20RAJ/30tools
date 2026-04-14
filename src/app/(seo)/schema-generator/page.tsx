@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Schema Markup Generator Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Generate JSON-LD schema markup for rich snippets",
 		"route": "/schema-generator",
 		"extraSlugs": [
-				"schema-markup-builder",
-				"validate-schema-markup"
+			"schema-markup-builder",
+			"validate-schema-markup"
 		],
 		"popular": true,
 		"category": "seo"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Seo Tools",

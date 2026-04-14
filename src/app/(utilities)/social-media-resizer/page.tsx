@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Social Media Resizer Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Free Social Media Resizer online. Social Media Resizer allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		"route": "/social-media-resizer",
 		"extraSlugs": [
-				"resize-image-for-social-media",
-				"social-media-downloader",
-				"social-media-post-size",
-				"social-media-resizer"
+			"resize-image-for-social-media",
+			"social-media-downloader",
+			"social-media-post-size",
+			"social-media-resizer"
 		],
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

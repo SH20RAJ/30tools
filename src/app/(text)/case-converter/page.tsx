@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Case Converter Online - No Signup | 30tools",
@@ -32,14 +31,14 @@ export default async function ToolPage() {
 		"description": "Convert text between upper case, lower case, title case, sentence case, and more instantly. Perfect for writers, developers, and social media managers.",
 		"route": "/case-converter",
 		"extraSlugs": [
-				"change-text-case-online",
-				"upper-case-to-lower-case",
-				"title-case-converter",
-				"sentence-case-tool"
+			"change-text-case-online",
+			"upper-case-to-lower-case",
+			"title-case-converter",
+			"sentence-case-tool"
 		],
 		"popular": true,
 		"category": "text"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Text Tools",

@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Google Gemini API Key Tester Online - No Signup | 30tools",
@@ -32,20 +31,20 @@ export default async function ToolPage() {
 		"description": "Test your Google Gemini API key with the generateContent endpoint.",
 		"route": "/api-key-tester/google-gemini",
 		"extraSlugs": [
-				"test-gemini-pro-api-key",
-				"google-ai-api-tester",
-				"test-google-fonts",
-				"google-search-console-tool",
-				"google-snippet-preview",
-				"google-keyword-planner-free",
-				"find-google-keywords",
-				"seo-keywords-google",
-				"google-mobile-test",
-				"google-maps-seo"
+			"test-gemini-pro-api-key",
+			"google-ai-api-tester",
+			"test-google-fonts",
+			"google-search-console-tool",
+			"google-snippet-preview",
+			"google-keyword-planner-free",
+			"find-google-keywords",
+			"seo-keywords-google",
+			"google-mobile-test",
+			"google-maps-seo"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

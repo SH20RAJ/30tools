@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Text Reverser Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Reverse text, words, or lines instantly",
 		"route": "/text-reverser",
 		"extraSlugs": [
-				"reverse-text-in-excel",
-				"backwards-text-generator"
+			"reverse-text-in-excel",
+			"backwards-text-generator"
 		],
 		"popular": false,
 		"category": "text"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Text Tools",

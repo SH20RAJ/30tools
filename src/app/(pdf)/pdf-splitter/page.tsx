@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free PDF Splitter Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Split PDF files into separate pages or ranges",
 		"route": "/pdf-splitter",
 		"extraSlugs": [
-				"split-pdf-pages-online-free",
-				"pdf-page-extractor"
+			"split-pdf-pages-online-free",
+			"pdf-page-extractor"
 		],
 		"popular": true,
 		"category": "pdf"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Pdf Tools",

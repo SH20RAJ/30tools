@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Podcast Video Creator Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Podcast Video Creator - Coming Soon",
 		"route": "/podcast-video-creator",
 		"extraSlugs": [
-				"picture-collage-creator",
-				"web-gradient-creator",
-				"zip-creator"
+			"picture-collage-creator",
+			"web-gradient-creator",
+			"zip-creator"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

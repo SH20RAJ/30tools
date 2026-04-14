@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Stripe API Key Tester Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Test your Stripe API key with the charges endpoint.",
 		"route": "/api-key-tester/stripe",
 		"extraSlugs": [
-				"test-stripe-secret-key-online",
-				"stripe-api-tester"
+			"test-stripe-secret-key-online",
+			"stripe-api-tester"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

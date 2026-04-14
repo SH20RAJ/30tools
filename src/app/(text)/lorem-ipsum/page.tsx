@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
@@ -32,14 +31,14 @@ export default async function ToolPage() {
 		"description": "Generate custom Lorem Ipsum text for your designs.",
 		"route": "/lorem-ipsum",
 		"extraSlugs": [
-				"lorem-ipsum-generator",
-				"lorem-ipsum-generator-for-figma",
-				"lorem-ipsum-text-copy",
-				"placeholder-text-generator"
+			"lorem-ipsum-generator",
+			"lorem-ipsum-generator-for-figma",
+			"lorem-ipsum-text-copy",
+			"placeholder-text-generator"
 		],
 		"popular": false,
 		"category": "text"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Text Tools",

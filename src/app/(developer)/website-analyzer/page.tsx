@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Website Analyzer Online - No Signup | 30tools",
@@ -32,11 +31,11 @@ export default async function ToolPage() {
 		"description": "Website Analyzer - Coming Soon",
 		"route": "/website-analyzer",
 		"extraSlugs": [
-				"website-content-analyzer"
+			"website-content-analyzer"
 		],
 		"popular": false,
 		"category": "others"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Others Tools",

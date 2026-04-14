@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free OpenAI API Key Tester Online - No Signup | 30tools",
@@ -32,12 +31,12 @@ export default async function ToolPage() {
 		"description": "Test your OpenAI API key with the models endpoint.",
 		"route": "/api-key-tester/openai",
 		"extraSlugs": [
-				"check-openai-usage-by-api-key",
-				"test-openai-key-free"
+			"check-openai-usage-by-api-key",
+			"test-openai-key-free"
 		],
 		"popular": false,
 		"category": "developer"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Developer Tools",

@@ -1,5 +1,4 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Robots.txt Generator Online - No Signup | 30tools",
@@ -32,13 +31,13 @@ export default async function ToolPage() {
 		"description": "Generate robots.txt files for website crawling control",
 		"route": "/robots-txt-generator",
 		"extraSlugs": [
-				"create-robots-txt",
-				"robots-file-maker",
-				"robots-txt-builder"
+			"create-robots-txt",
+			"robots-file-maker",
+			"robots-txt-builder"
 		],
 		"popular": true,
 		"category": "seo"
-};
+	};
 	const breadcrumbs = [
 		{
 			name: "Seo Tools",
