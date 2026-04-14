@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/ToolPlaceholderPage";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Current Epoch Time Online - No Signup | 30tools",
@@ -106,7 +106,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId={tool.id} />
+				<ToolInteractivePlaceholder toolName={tool.name} />
 			</ToolLayout>
 		</>
 	);
