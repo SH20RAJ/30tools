@@ -12,14 +12,13 @@ const STATIC_PAGES = new Set([
 	"/terms",
 	"/api-docs",
 	"/blog",
+	"/blog/",
 ]);
 
-// Validation Helper
+// Validation Helper - minimal for Edge performance
 function isValidRoute(pathname: string): boolean {
-	// 1. Check static pages
 	if (STATIC_PAGES.has(pathname)) return true;
 
-	// 2. Check dynamic section prefixes
 	const allowedPrefixes = [
 		"/blog/",
 		"/blogs/",
@@ -30,19 +29,17 @@ function isValidRoute(pathname: string): boolean {
 		"/api/",
 	];
 
-	if (allowedPrefixes.some((prefix) => pathname.startsWith(prefix))) {
-		return true;
-	}
-
-	// 3. Fallback for tool routes (most are top-level or category-prefixed)
-	// We allow these to proceed to Next.js routing which will handle 404s properly
-	return true; 
+	return allowedPrefixes.some((prefix) => pathname.startsWith(prefix));
 }
 
-export function proxy(request: NextRequest) {
+/**
+ * Global Middleware for 30tools
+ * Optimized for Cloudflare Edge Runtime
+ */
+export async function middleware(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
-	// Handle internal Next.js requests and assets
+	// 1. Pass through internal assets and API requests immediately
 	if (
 		pathname.startsWith("/_next") ||
 		pathname.startsWith("/static") ||
@@ -52,19 +49,17 @@ export function proxy(request: NextRequest) {
 		return NextResponse.next();
 	}
 
-	// Basic Route Validation
-	if (!isValidRoute(pathname)) {
-		// If we wanted to 404 early, we could do it here
-		// But allowing it to reach Next.js is safer for compatibility
-		return NextResponse.next();
-	}
+	// 2. SEO Redirects and complex logic are handled via next.config.mjs redirects
+	// for maximum performance. This middleware only handles request filtering
+	// and basic safety checks.
 
-	// The previous complex redirect logic for extraSlugs was causing Edge crashes.
-	// It is now handled more efficiently via Next.js rewrites in next.config.mjs.
-	
 	return NextResponse.next();
 }
 
+export const runtime = "edge";
+
 export const config = {
+	// Match all routes except static assets
 	matcher: ["/((?!api|_next|_static|_vercel|[\\w-]+\\.\\w+).*)"],
 };
+
