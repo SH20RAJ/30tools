@@ -1,10 +1,10 @@
 export function MinimalHero({ title, subtitle }) {
 	return (
-		<section className="pt-20 md:pt-24 pb-10 md:pb-16 text-center">
-			<h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 tracking-tight">
+		<section className="pt-24 md:pt-32 pb-16 md:pb-24 text-center animate-in">
+			<h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground mb-10 tracking-tighter leading-[1.1] bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
 				{title}
 			</h1>
-			<p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto font-medium leading-relaxed">
+			<p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-medium leading-relaxed opacity-90">
 				{subtitle}
 			</p>
 		</section>

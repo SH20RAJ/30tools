@@ -33,30 +33,30 @@ export function GoogleNavbar() {
 
 	return (
 		<TooltipProvider>
-			<header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-colors duration-300">
-				<div className="flex h-16 items-center px-4 sm:px-6 gap-4">
+			<header className="sticky top-0 z-50 w-full bg-background/70 backdrop-blur-xl border-b border-border/50 transition-all duration-300">
+				<div className="flex h-20 items-center px-6 sm:px-10 gap-6">
 					{/* Logo */}
-					<div className="flex items-center mr-2">
+					<div className="flex items-center">
 						<GoogleLogo />
 					</div>
 
 					{/* Search Bar – desktop only */}
 					<Link
 						href="/search"
-						className="hidden md:flex flex-1 max-w-[560px] items-center px-4 py-1.5 rounded-full border border-border bg-secondary/50 hover:bg-secondary hover:border-muted-foreground/30 transition-all duration-200 group no-underline"
+						className="hidden lg:flex flex-1 max-w-[640px] items-center px-6 py-2.5 rounded-2xl border border-border/60 bg-secondary/30 hover:bg-secondary/80 hover:border-primary/20 hover:shadow-inner transition-all duration-300 group no-underline"
 					>
-						<Search className="text-muted-foreground mr-3 w-5 h-5" />
-						<span className="flex-1 text-sm text-muted-foreground">
-							Search tools…
+						<Search className="text-muted-foreground group-hover:text-primary transition-colors mr-4 w-5 h-5" />
+						<span className="flex-1 text-sm font-medium text-muted-foreground">
+							Search 600+ tools...
 						</span>
-						<div className="flex items-center gap-0.5 px-2 py-0.5 border border-border rounded bg-background text-[10px] font-bold text-muted-foreground">
+						<div className="flex items-center gap-1.5 px-2.5 py-1 border border-border/60 rounded-xl bg-background shadow-sm text-[11px] font-black text-muted-foreground group-hover:text-primary transition-colors">
 							<span>⌘</span>
 							<span>K</span>
 						</div>
 					</Link>
 
 					{/* Spacer */}
-					<div className="flex-1 md:hidden" />
+					<div className="flex-1 lg:hidden" />
 
 					{/* Desktop/Mobile actions */}
 					<div className="flex items-center gap-1">
