@@ -1,4 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Audio Joiner Online - No Signup | 30tools",

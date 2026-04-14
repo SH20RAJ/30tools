@@ -1,4 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
 export const metadata = {
 	title: "Free Xml Pretty Print Online - No Signup | 30tools",

@@ -5295,15 +5295,6 @@
 					"category": "developer"
 				},
 				{
-					"id": "[slug]",
-					"name": "[slug]",
-					"description": "Free [slug] online tool. Fast and secure.",
-					"route": "/api-key-tester/[slug]",
-					"extraSlugs": [],
-					"popular": false,
-					"category": "developer"
-				},
-				{
 					"id": "base64-tool",
 					"name": "Base64 Tool",
 					"description": "Free Base64 Tool online tool. Fast and secure.",
@@ -10170,15 +10161,6 @@
 					"name": "Dashboard",
 					"description": "Free Dashboard online tool. Fast and secure.",
 					"route": "/dashboard",
-					"extraSlugs": [],
-					"popular": false,
-					"category": "others"
-				},
-				{
-					"id": "[slug]",
-					"name": "Tool",
-					"description": "Free Tool online tool. Fast and secure.",
-					"route": "/blogs/[username]/[slug]",
 					"extraSlugs": [],
 					"popular": false,
 					"category": "others"
