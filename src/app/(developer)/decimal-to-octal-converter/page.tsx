@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import NumberBaseConverter from "@/components/tools/converter/NumberBaseConverter";
 
 export const metadata = {
 	title: "Free Decimal to Octal Converter Online - No Signup | 30tools",
@@ -124,7 +124,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId="decimal-to-octal-converter" />
+				<NumberBaseConverter defaultFrom="decimal" defaultTo="octal" />
 			</ToolLayout>
 		</>
 	);

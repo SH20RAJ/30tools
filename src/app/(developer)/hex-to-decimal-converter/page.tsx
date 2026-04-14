@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import NumberBaseConverter from "@/components/tools/converter/NumberBaseConverter";
 
 export const metadata = {
 	title: "Free HEX to Decimal Converter Online - No Signup | 30tools",
@@ -124,7 +124,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId="hex-to-decimal-converter" />
+				<NumberBaseConverter defaultFrom="hexadecimal" defaultTo="decimal" />
 			</ToolLayout>
 		</>
 	);

@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import NumberBaseConverter from "@/components/tools/converter/NumberBaseConverter";
 
 export const metadata = {
 	title: "Free HEX to Octal Converter Online - No Signup | 30tools",
