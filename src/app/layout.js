@@ -6,6 +6,8 @@ import { ThemeProvider } from "@/components/shared/theme-provider";
 import { getAllTools } from "@/lib/tools";
 import "./globals.css";
 import Script from "next/script";
+import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
+import { GoogleFooter } from "@/components/footers/GoogleFooter";
 
 const SITE_URL = "https://30tools.com";
 const TOOL_COUNT = getAllTools().length;
@@ -279,7 +281,7 @@ export default async function RootLayout({ children }) {
 					dangerouslySetInnerHTML={{
 						__html: `
               (function(c,l,a,r,i,t,y){
-                  c[a]=c[a]||function(){(c[a].q=c[a].q[]).push(arguments)};
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                   t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
                   y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
               })(window, document, "clarity", "script", "uh6y61lx9p");
@@ -297,7 +299,9 @@ export default async function RootLayout({ children }) {
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<StructuredData includeFAQ={false} />
 					<ToolSeoStructuredData />
+					<GoogleNavbar />
 					{children}
+					<GoogleFooter />
 					{/* <PWAInstallPrompt /> */}
 					<Toaster />
 					<a

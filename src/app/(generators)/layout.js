@@ -1,5 +1,3 @@
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title: "AI Generator Tools - Free AI Content Creation Suite | 30Tools",
@@ -62,9 +60,7 @@ export default function GeneratorsLayout({ children }) {
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<GoogleFooter />
 		</div>
 	);
 }

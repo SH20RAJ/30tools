@@ -1,5 +1,3 @@
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title:
@@ -69,9 +67,7 @@ export default function DeveloperToolsLayout({ children }) {
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<GoogleFooter />
 		</div>
 	);
 }

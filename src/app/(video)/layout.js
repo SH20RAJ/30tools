@@ -1,5 +1,3 @@
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title: "Video Tools - Terabox Player, Downloader & Converters | 30Tools",
@@ -56,9 +54,7 @@ export default function VideoToolsLayout({ children }) {
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<GoogleFooter />
 		</div>
 	);
 }

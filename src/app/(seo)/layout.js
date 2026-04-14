@@ -1,5 +1,3 @@
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
 	title: "SEO Tools - Free Online SEO Audit, Keywords & Backlinks | 30Tools",
@@ -104,9 +102,7 @@ export default function SEOToolsLayout({ children }) {
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<GoogleFooter />
 		</div>
 	);
 }
