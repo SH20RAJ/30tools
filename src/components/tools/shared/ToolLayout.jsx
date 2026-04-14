@@ -40,7 +40,7 @@ export default function ToolLayout({
 			<main className="container mx-auto px-4 py-16 max-w-6xl space-y-32">
 				{/* Hero Section */}
 				<section className="text-center space-y-8 max-w-4xl mx-auto animate-in">
-					<h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/70">
+					<h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight   bg-gradient-to-b from-foreground to-foreground/70">
 						{tool.name}
 					</h1>
 					<p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">

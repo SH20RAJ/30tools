@@ -39,7 +39,7 @@ export default function UnstoryOpenmindCTACompact() {
 						Find Your Calm
 					</Badge>
 
-					<h2 className="text-2xl font-bold mb-2 bg-muted/20 bg-clip-text text-transparent">
+					<h2 className="text-2xl font-bold mb-2 bg-muted/20  ">
 						Join Unstory Openmind
 					</h2>
 

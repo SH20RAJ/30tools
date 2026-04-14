@@ -159,7 +159,7 @@ export default function VisualSitemapTool() {
 		<div className="space-y-8 w-full max-w-5xl mx-auto">
 			<Card className="border-2 border-primary/5 shadow-lg">
 				<CardHeader className="bg-muted/30 pb-8 border-b">
-					<h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent flex items-center gap-3">
+					<h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-600   flex items-center gap-3">
 						<Network className="w-8 h-8 text-primary" />
 						Visual Sitemap Generator
 					</h1>

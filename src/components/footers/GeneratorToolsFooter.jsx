@@ -14,7 +14,7 @@ export default function GeneratorToolsFooter() {
 						<div className="w-8 h-8 bg-background">
 							<Sparkles className="w-5 h-5 text-white" />
 						</div>
-						<span className="text-xl font-semibold bg-primary bg-clip-text text-transparent">
+						<span className="text-xl font-semibold bg-primary  ">
 							30tools
 						</span>
 					</Link>

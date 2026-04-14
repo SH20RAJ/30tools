@@ -88,7 +88,7 @@ export default function DeveloperToolsHub({
 						Professional Developer Tools
 					</div>
 
-					<h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-500 to-accent bg-clip-text text-transparent">
+					<h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-purple-500 to-accent  ">
 						Free Developer Tools
 					</h1>
 

@@ -1,12 +1,7 @@
 import { type NextRequest, NextResponse } from "next/server";
-import { getAllCategories, getAllTools } from "./lib/tools";
 
-// Route and Redirect Maps
-const validRoutes = new Set<string>();
-const redirectMap = new Map<string, string>();
-
-// Hardcoded static pages
-const staticPages = [
+// Hardcoded static pages for fast lookups
+const STATIC_PAGES = new Set([
 	"/",
 	"/search",
 	"/calculators",
@@ -17,42 +12,14 @@ const staticPages = [
 	"/terms",
 	"/api-docs",
 	"/blog",
-];
-
-for (const page of staticPages) {
-	validRoutes.add(page);
-}
-
-// Category pages
-const allCategories = getAllCategories();
-for (const category of allCategories) {
-	validRoutes.add(`/${category.slug}-tools`);
-}
-
-// All tool routes and variants
-const allTools = getAllTools();
-for (const tool of allTools) {
-	if (tool.route) {
-		validRoutes.add(tool.route);
-		
-		// Map extraSlugs to the main route
-		if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
-			for (const slug of tool.extraSlugs) {
-				const extraRoute = slug.startsWith('/') ? slug : `/${slug}`;
-				if (extraRoute !== tool.route) {
-					redirectMap.set(extraRoute, tool.route);
-				}
-			}
-		}
-	}
-}
+]);
 
 // Validation Helper
 function isValidRoute(pathname: string): boolean {
-	// 1. Exact match
-	if (validRoutes.has(pathname)) return true;
+	// 1. Check static pages
+	if (STATIC_PAGES.has(pathname)) return true;
 
-	// 2. Prefix matches for dynamic sections
+	// 2. Check dynamic section prefixes
 	const allowedPrefixes = [
 		"/blog/",
 		"/blogs/",
@@ -60,30 +27,44 @@ function isValidRoute(pathname: string): boolean {
 		"/account",
 		"/tools/",
 		"/search/",
+		"/api/",
 	];
 
-	return allowedPrefixes.some((prefix) => pathname.startsWith(prefix));
+	if (allowedPrefixes.some((prefix) => pathname.startsWith(prefix))) {
+		return true;
+	}
+
+	// 3. Fallback for tool routes (most are top-level or category-prefixed)
+	// We allow these to proceed to Next.js routing which will handle 404s properly
+	return true; 
 }
 
 export function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
-	// Handle Redirects for extraSlugs
-	if (redirectMap.has(pathname)) {
-		const target = redirectMap.get(pathname)!;
-		return NextResponse.redirect(new URL(target, request.url), {
-			status: 301,
-		});
-	}
-
-	// Allow everything that matches valid routes or prefixes
-	if (isValidRoute(pathname)) {
+	// Handle internal Next.js requests and assets
+	if (
+		pathname.startsWith("/_next") ||
+		pathname.startsWith("/static") ||
+		pathname.startsWith("/api") ||
+		pathname.includes(".")
+	) {
 		return NextResponse.next();
 	}
 
+	// Basic Route Validation
+	if (!isValidRoute(pathname)) {
+		// If we wanted to 404 early, we could do it here
+		// But allowing it to reach Next.js is safer for compatibility
+		return NextResponse.next();
+	}
+
+	// The previous complex redirect logic for extraSlugs was causing Edge crashes.
+	// It is now handled more efficiently via Next.js rewrites in next.config.mjs.
+	
 	return NextResponse.next();
 }
 
 export const config = {
-	matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+	matcher: ["/((?!api|_next|_static|_vercel|[\\w-]+\\.\\w+).*)"],
 };

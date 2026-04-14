@@ -13,7 +13,7 @@ export default function TextToolsFooter() {
 						<div className="w-8 h-8 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
 							<Type className="w-5 h-5 text-primary-foreground" />
 						</div>
-						<span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+						<span className="text-xl font-semibold bg-gradient-to-r from-primary to-accent  ">
 							30tools
 						</span>
 					</Link>

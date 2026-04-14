@@ -113,7 +113,7 @@ export default function UnstoryOpenmindCTA() {
 							Find Your Calm & Share Your Story
 						</Badge>
 
-						<h2 className="text-3xl md:text-4xl font-bold mb-4 bg-muted/20 bg-clip-text text-transparent">
+						<h2 className="text-3xl md:text-4xl font-bold mb-4 bg-muted/20  ">
 							Join Unstory Openmind
 						</h2>
 

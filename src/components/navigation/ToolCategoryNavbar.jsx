@@ -21,7 +21,7 @@ export default function ToolCategoryNavbar({
 							<div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
 								<CategoryIcon className="w-5 h-5 text-primary" />
 							</div>
-							<span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+							<span className="text-xl font-bold   bg-gradient-to-r from-primary to-primary/60">
 								30tools
 							</span>
 							<span className="hidden sm:inline-block text-sm text-muted-foreground font-medium px-2 py-0.5 rounded-full bg-muted/50 border border-border/50">

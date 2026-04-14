@@ -87,7 +87,7 @@ export default function GeneratorToolsHub({
 						AI-Powered Content Generators
 					</div>
 
-					<h1 className="text-4xl md:text-6xl font-bold mb-6 bg-muted/20 bg-clip-text text-transparent">
+					<h1 className="text-4xl md:text-6xl font-bold mb-6 bg-muted/20  ">
 						Free AI Generators
 					</h1>
 

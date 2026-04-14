@@ -10,7 +10,7 @@ export default function ComingSoon({ toolName }) {
 					<Hammer className="w-10 h-10 text-primary" />
 				</div>
 
-				<h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
+				<h1 className="text-4xl md:text-5xl font-bold   bg-gradient-to-r from-primary to-primary/60">
 					{toolName}
 				</h1>
 
