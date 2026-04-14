@@ -10164,15 +10164,6 @@
 					"extraSlugs": [],
 					"popular": false,
 					"category": "others"
-				},
-				{
-					"id": "blogs",
-					"name": "Blogs",
-					"description": "Free Blogs online tool. Fast and secure.",
-					"route": "/blogs",
-					"extraSlugs": [],
-					"popular": false,
-					"category": "others"
 				}
 			]
 		}

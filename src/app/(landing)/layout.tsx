@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata: Metadata = {
 	title: "Free Online Tools Hub - 30tools",
@@ -25,9 +23,7 @@ export default function LandingGroupLayout({
 }) {
 	return (
 		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
-			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<GoogleFooter />
 		</div>
 	);
 }

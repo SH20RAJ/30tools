@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata: Metadata = {
 	title: "Text Tools - Free Online Text Utilities | 30tools",
@@ -44,9 +42,7 @@ export default function TextGroupLayout({
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 			/>
-			<GoogleNavbar />
 			<main className="flex-1">{children}</main>
-			<GoogleFooter />
 		</div>
 	);
 }
