@@ -21,7 +21,22 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				sans: ["var(--font-open-sans)", ...defaultTheme.fontFamily.sans],
+				sans: [
+					"SF Pro Text",
+					"SF Pro Icons",
+					"Helvetica Neue",
+					"Helvetica",
+					"Arial",
+					...defaultTheme.fontFamily.sans,
+				],
+				display: [
+					"SF Pro Display",
+					"SF Pro Icons",
+					"Helvetica Neue",
+					"Helvetica",
+					"Arial",
+					...defaultTheme.fontFamily.sans,
+				],
 			},
 			colors: {
 				border: "hsl(var(--border))",

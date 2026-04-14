@@ -1,24 +1,22 @@
 export function TrustSection() {
-	const logos = [
-		{ name: "Product Hunt", color: "text-[#DA552F]" },
-		{ name: "reddit", color: "text-[#FF4500]" },
-		{ name: "brave", color: "text-[#FB542B]" },
-	];
+	const logos = ["Product Hunt", "Reddit", "Brave"];
 
 	return (
-		<section className="py-8 text-center border-y border-border/50 bg-secondary/20 rounded-3xl mb-12">
-			<div className="flex flex-row space-x-8 items-center justify-center flex-wrap gap-y-4 px-4">
-				<span className="text-sm font-black text-muted-foreground uppercase tracking-[0.2em]">
-					AS SEEN IN:
+		<section className="py-12 text-center animate-in">
+			<div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+				<span className="text-[12px] font-semibold uppercase tracking-[0.1em] text-[#1d1d1f]">
+					As featured on:
 				</span>
-				{logos.map((logo) => (
-					<div
-						key={logo.name}
-						className={`text-xl font-black ${logo.color} px-4 py-2 rounded-xl border border-border bg-card shadow-sm flex items-center gap-2`}
-					>
-						{logo.name}
-					</div>
-				))}
+				<div className="flex flex-row items-center justify-center gap-8 md:gap-12 flex-wrap">
+					{logos.map((logo) => (
+						<div
+							key={logo}
+							className="text-xl md:text-2xl font-bold text-[#1d1d1f] tracking-tight"
+						>
+							{logo}
+						</div>
+					))}
+				</div>
 			</div>
 		</section>
 	);

@@ -1,12 +1,22 @@
+import { Button } from "@/components/ui/button";
+
 export function MinimalHero({ title, subtitle }) {
 	return (
-		<section className="pt-24 md:pt-32 pb-16 md:pb-24 text-center animate-in">
-			<h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-foreground mb-10 tracking-tighter leading-[1.1]">
+		<div className="text-center animate-in">
+			<h1 className="text-apple-hero text-white mb-6">
 				{title}
 			</h1>
-			<p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto font-medium leading-relaxed opacity-90">
+			<p className="text-2xl md:text-3xl font-normal text-white/80 max-w-2xl mx-auto mb-10 tracking-tight leading-tight">
 				{subtitle}
 			</p>
-		</section>
+			<div className="flex items-center justify-center gap-4">
+				<Button variant="pill" size="lg">
+					Get Started
+				</Button>
+				<Button variant="link" className="text-[#2997ff] text-lg font-normal">
+					Browse all tools &gt;
+				</Button>
+			</div>
+		</div>
 	);
 }

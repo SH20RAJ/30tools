@@ -1,74 +1,42 @@
 "use client";
 
-import {
-	Code,
-	Download,
-	FileText,
-	Image,
-	LayoutGrid,
-	Music,
-	Search,
-	Settings,
-	Shield,
-	Sparkles,
-	Star,
-	Video,
-	Zap,
-} from "lucide-react";
 import Link from "next/link";
-
-const ICON_MAP = {
-	ImageIcon: Image,
-	LayoutGridIcon: LayoutGrid,
-	SearchIcon: Search,
-	StarIcon: Star,
-	UsersIcon: Star,
-	ShieldCheckIcon: Shield,
-	ZapIcon: Zap,
-	pdf: FileText,
-	video: Video,
-	image: Image,
-	downloaders: Download,
-	audio: Music,
-	utilities: Settings,
-	developer: Code,
-	generators: Sparkles,
-	seo: Search,
-};
 
 export function ToolDirectory({ categories = [], lang = "en" }) {
 	return (
-		<div className="py-24 space-y-32">
+		<div className="space-y-24">
 			{categories.map((category) => (
-				<section key={category.key} className="scroll-mt-24">
-					<div className="flex flex-col items-center mb-16 text-center space-y-4">
-						<h2 className="text-4xl md:text-5xl font-black text-foreground tracking-tight">
+				<section key={category.key} className="animate-in">
+					<div className="mb-12">
+						<h2 className="text-3xl md:text-4xl font-semibold text-[#1d1d1f] tracking-tight mb-2">
 							{category.name}
 						</h2>
-						<div className="w-24 h-1.5 bg-primary rounded-full" />
+						<p className="text-lg text-[#1d1d1f]/60 font-normal">
+							{category.description}
+						</p>
 					</div>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-						{category.tools.map((tool) => {
-							const Icon =
-								ICON_MAP[tool.icon] ||
-								ICON_MAP[category.iconKey] ||
-								ICON_MAP[category.key] ||
-								LayoutGrid;
-							return (
-								<Link
-									key={tool.id}
-									href={tool.route}
-									className="flex items-center gap-5 p-6 rounded-[2rem] border border-border/60 bg-card hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group no-underline"
-								>
-									<div className="p-4 rounded-2xl bg-secondary/30 text-muted-foreground group-hover:text-primary group-hover:bg-primary/10 transition-all duration-300 shadow-sm">
-										<Icon className="w-6 h-6" />
-									</div>
-									<h3 className="text-lg font-bold text-foreground tracking-tight group-hover:text-primary transition-colors">
+					<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+						{category.tools.map((tool) => (
+							<Link
+								key={tool.id}
+								href={tool.route}
+								className="group flex flex-col justify-between p-6 md:p-8 rounded-[12px] bg-white border border-black/5 hover:shadow-xl transition-all duration-500 no-underline h-full"
+							>
+								<div>
+									<h3 className="text-xl md:text-2xl font-semibold text-[#1d1d1f] tracking-tight mb-2 group-hover:text-[#0066cc] transition-colors">
 										{tool.name}
 									</h3>
-								</Link>
-							);
-						})}
+									{tool.description && (
+										<p className="text-sm text-[#1d1d1f]/60 line-clamp-2">
+											{tool.description}
+										</p>
+									)}
+								</div>
+								<div className="mt-6 text-[#0066cc] text-sm font-medium flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+									Open Tool <span>&gt;</span>
+								</div>
+							</Link>
+						))}
 					</div>
 				</section>
 			))}

@@ -6,8 +6,8 @@ import { ThemeProvider } from "@/components/shared/theme-provider";
 import { getAllTools } from "@/lib/tools";
 import "./globals.css";
 import Script from "next/script";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
+import { AppleNavbar } from "@/components/navigation/AppleNavbar";
+import { AppleFooter } from "@/components/footers/AppleFooter";
 
 const SITE_URL = "https://30tools.com";
 const TOOL_COUNT = getAllTools().length;
@@ -289,19 +289,13 @@ export default async function RootLayout({ children }) {
 					}}
 				/>
 			</head>
-			<body
-				className="ds-page font-sans antialiased"
-				style={{
-					"--font-open-sans":
-						'"Open Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif',
-				}}
-			>
+			<body className="ds-page font-sans antialiased">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<StructuredData includeFAQ={false} />
 					<ToolSeoStructuredData />
-					<GoogleNavbar />
+					<AppleNavbar />
 					{children}
-					<GoogleFooter />
+					<AppleFooter />
 					{/* <PWAInstallPrompt /> */}
 					<Toaster />
 					<a
