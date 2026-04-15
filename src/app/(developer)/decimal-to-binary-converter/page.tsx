@@ -1,131 +1,83 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import BaseConverter from "@/components/tools/shared/BaseConverter";
 
 export const metadata = {
 	title: "Free Decimal to Binary Converter Online - No Signup | 30tools",
 	description:
-		"Free decimal to binary converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert decimal numbers to binary code instantly. Our free online decimal to binary converter is privacy-focused, fast, and requires no signup.",
 	keywords:
-		"decimal to binary converter, free online tool, no signup, developer, decimal to binary converter online, 30tools",
+		"decimal to binary converter, dec to bin, convert number to binary, online decimal converter, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/decimal-to-binary-converter",
 	},
-	openGraph: {
-		title: "Free Decimal to Binary Converter Online - No Signup | 30tools",
-		description:
-			"Free decimal to binary converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/decimal-to-binary-converter",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Decimal to Binary Converter Online - No Signup | 30tools",
-		description:
-			"Free decimal to binary converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
-	},
-	robots: { index: true, follow: true },
 };
 
-export default async function ToolPage() {
+export default function ToolPage() {
 	const tool = {
 		id: "decimal-to-binary-converter",
 		name: "Decimal to Binary Converter",
 		description:
-			"Free decimal to binary converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Transform standard decimal (base-10) numbers into binary (base-2) format. Ideal for understanding computer data representation and coding.",
 		route: "/decimal-to-binary-converter",
-		extraSlugs: [
-			"free-decimal-to-binary-converter-online",
-			"decimal-to-binary-converter-tool",
-		],
-		popular: false,
 		category: "developer",
+		features: [
+			"Instant decimal to binary conversion",
+			"Padded 8-bit output option",
+			"Secure, local browser processing",
+			"Free for all users, no signup",
+			"Mobile-responsive design",
+		],
+		howTo: {
+			steps: [
+				{
+					name: "Enter Decimal Numbers",
+					text: "Type your numbers (e.g., 10, 255) into the input field, separated by spaces or commas.",
+				},
+				{
+					name: "View Binary Output",
+					text: "The tool immediately shows the binary equivalent for every number entered.",
+				},
+				{
+					name: "Save Results",
+					text: "Copy the binary blocks or download them as a text file.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "How is a decimal number converted to binary?",
+				answer: "The decimal number is repeatedly divided by 2, and the remainders are recorded in reverse order to form the binary representation.",
+			},
+			{
+				question: "What is the maximum number I can convert?",
+				answer: "This tool handles any standard integer size instantly within your browser.",
+			},
+		],
 	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "Decimal to Binary Converter",
-			url: "/decimal-to-binary-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+
+	const convertFn = (input: string) => {
+		return input
+			.trim()
+			.split(/[\s,]+/)
+			.map((dec) => {
+				const num = parseInt(dec, 10);
+				if (isNaN(num)) return "";
+				const binary = num.toString(2);
+				// Optional: Pad to 8 bits if it's small, or leave as is. 
+				// Let's provide a clean standard binary string.
+				return binary;
+			})
+			.join(" ");
+	};
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "Decimal to Binary Converter",
-						description:
-							"Free decimal to binary converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-						url: "https://30tools.com/decimal-to-binary-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
+		<ToolLayout tool={tool}>
+			<BaseConverter
+				title="Decimal to Binary"
+				inputPlaceholder="Enter decimal numbers (e.g., 10 25)..."
+				outputPlaceholder="Binary output will appear here..."
+				convertFn={convertFn}
 			/>
-
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolPlaceholderPage toolId="decimal-to-binary-converter" />
-			</ToolLayout>
-		</>
+		</ToolLayout>
 	);
 }

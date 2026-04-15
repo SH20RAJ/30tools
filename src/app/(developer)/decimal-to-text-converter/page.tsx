@@ -1,131 +1,79 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import BaseConverter from "@/components/tools/shared/BaseConverter";
 
 export const metadata = {
 	title: "Free Decimal to Text Converter Online - No Signup | 30tools",
 	description:
-		"Free decimal to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert decimal numbers (ASCII codes) to text instantly. Our free online decimal to text converter provides secure, private processing in your browser.",
 	keywords:
-		"decimal to text converter, free online tool, no signup, developer, decimal to text converter online, 30tools",
+		"decimal to text converter, dec to text, character code to text, translate numbers to letters, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/decimal-to-text-converter",
 	},
-	openGraph: {
-		title: "Free Decimal to Text Converter Online - No Signup | 30tools",
-		description:
-			"Free decimal to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/decimal-to-text-converter",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Decimal to Text Converter Online - No Signup | 30tools",
-		description:
-			"Free decimal to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
-	},
-	robots: { index: true, follow: true },
 };
 
-export default async function ToolPage() {
+export default function ToolPage() {
 	const tool = {
 		id: "decimal-to-text-converter",
 		name: "Decimal to Text Converter",
 		description:
-			"Free decimal to text converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Translate decimal codes back into text. Perfect for decoding numeric strings or learning how characters are represented by numbers.",
 		route: "/decimal-to-text-converter",
-		extraSlugs: [
-			"free-decimal-to-text-converter-online",
-			"decimal-to-text-converter-tool",
-		],
-		popular: false,
 		category: "developer",
+		features: [
+			"Instant decimal to text conversion",
+			"Supports space and comma separated values",
+			"Secure browser-side translation",
+			"100% free with no registration",
+			"User-friendly interface",
+		],
+		howTo: {
+			steps: [
+				{
+					name: "Enter Decimal Codes",
+					text: "Paste your numeric values (e.g., 72 101 108 108 111) into the input box.",
+				},
+				{
+					name: "Automatic Translation",
+					text: "The tool immediately translates the decimal codes into readable text.",
+				},
+				{
+					name: "Get Result",
+					text: "Copy the decoded text or download it as a text file.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What are decimal codes for text?",
+				answer: "These are numeric representations of characters based on standards like ASCII. For example, the decimal code 65 corresponds to the letter 'A'.",
+			},
+			{
+				question: "Can I convert large blocks of decimal values?",
+				answer: "Yes, our tool handles large text conversions instantly without sending any data to our servers.",
+			},
+		],
 	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "Decimal to Text Converter",
-			url: "/decimal-to-text-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+
+	const convertFn = (input: string) => {
+		return input
+			.trim()
+			.split(/[\s,]+/)
+			.map((dec) => {
+				const num = parseInt(dec, 10);
+				return isNaN(num) ? "" : String.fromCharCode(num);
+			})
+			.join("");
+	};
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "Decimal to Text Converter",
-						description:
-							"Free decimal to text converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-						url: "https://30tools.com/decimal-to-text-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
+		<ToolLayout tool={tool}>
+			<BaseConverter
+				title="Decimal to Text"
+				inputPlaceholder="Enter decimal codes (e.g., 72 101 108 108 111)..."
+				outputPlaceholder="Text output will appear here..."
+				convertFn={convertFn}
 			/>
-
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolPlaceholderPage toolId="decimal-to-text-converter" />
-			</ToolLayout>
-		</>
+		</ToolLayout>
 	);
 }

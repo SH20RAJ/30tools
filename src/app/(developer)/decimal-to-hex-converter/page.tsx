@@ -1,131 +1,79 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import BaseConverter from "@/components/tools/shared/BaseConverter";
 
 export const metadata = {
 	title: "Free Decimal to HEX Converter Online - No Signup | 30tools",
 	description:
-		"Free decimal to hex converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert decimal numbers to hexadecimal code instantly. Our free online decimal to HEX converter is secure, browser-based, and requires no registration.",
 	keywords:
-		"decimal to hex converter, free online tool, no signup, developer, decimal to hex converter online, 30tools",
+		"decimal to hex converter, dec to hex, convert number to hexadecimal, hex converter online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/decimal-to-hex-converter",
 	},
-	openGraph: {
-		title: "Free Decimal to HEX Converter Online - No Signup | 30tools",
-		description:
-			"Free decimal to hex converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/decimal-to-hex-converter",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Decimal to HEX Converter Online - No Signup | 30tools",
-		description:
-			"Free decimal to hex converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
-	},
-	robots: { index: true, follow: true },
 };
 
-export default async function ToolPage() {
+export default function ToolPage() {
 	const tool = {
 		id: "decimal-to-hex-converter",
 		name: "Decimal to HEX Converter",
 		description:
-			"Free decimal to hex converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Easy conversion from decimal (base-10) to hexadecimal (base-16). This tool provides quick results for developers working with memory addresses or colors.",
 		route: "/decimal-to-hex-converter",
-		extraSlugs: [
-			"free-decimal-to-hex-converter-online",
-			"decimal-to-hex-converter-tool",
-		],
-		popular: false,
 		category: "developer",
+		features: [
+			"Instant decimal to HEX conversion",
+			"Supports multiple numeric inputs",
+			"Uppercase HEX output format",
+			"Privacy-focused browser processing",
+			"100% free with no signup",
+		],
+		howTo: {
+			steps: [
+				{
+					name: "Input Decimal Data",
+					text: "Enter your base-10 numbers, separated by spaces or commas.",
+				},
+				{
+					name: "Automatic HEX Mapping",
+					text: "The tool translates each number into its hexadecimal counterpart instantly.",
+				},
+				{
+					name: "Copy Output",
+					text: "Copy the HEX strings directly to your clipboard.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What is hexadecimal?",
+				answer: "Hexadecimal is a base-16 system that uses digits 0-9 and letters A-F. It is widely used in computer science to represent binary data compactly.",
+			},
+			{
+				question: "Can I convert negative numbers?",
+				answer: "This tool is optimized for positive integers. For negative values, standard two's complement representation may be required depending on your needs.",
+			},
+		],
 	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "Decimal to HEX Converter",
-			url: "/decimal-to-hex-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+
+	const convertFn = (input: string) => {
+		return input
+			.trim()
+			.split(/[\s,]+/)
+			.map((dec) => {
+				const num = parseInt(dec, 10);
+				return isNaN(num) ? "" : num.toString(16).toUpperCase();
+			})
+			.join(" ");
+	};
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "Decimal to HEX Converter",
-						description:
-							"Free decimal to hex converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-						url: "https://30tools.com/decimal-to-hex-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
+		<ToolLayout tool={tool}>
+			<BaseConverter
+				title="Decimal to HEX"
+				inputPlaceholder="Enter decimal (e.g., 255 1024)..."
+				outputPlaceholder="HEX output will appear here..."
+				convertFn={convertFn}
 			/>
-
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolPlaceholderPage toolId="decimal-to-hex-converter" />
-			</ToolLayout>
-		</>
+		</ToolLayout>
 	);
 }

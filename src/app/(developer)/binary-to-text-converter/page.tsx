@@ -1,132 +1,79 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import BaseConverter from "@/components/tools/shared/BaseConverter";
 
 export const metadata = {
 	title: "Free Binary to Text Converter Online - No Signup | 30tools",
 	description:
-		"Free binary to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Translate binary code into readable text instantly. Our free online binary to text converter works entirely in your browser for maximum privacy. No signup required.",
 	keywords:
-		"binary to text converter, free online tool, no signup, developer, binary to text converter online, 30tools",
+		"binary to text converter, translate binary to english, binary decoder, binary to ascii, free online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/binary-to-text-converter",
 	},
-	openGraph: {
-		title: "Free Binary to Text Converter Online - No Signup | 30tools",
-		description:
-			"Free binary to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/binary-to-text-converter",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Binary to Text Converter Online - No Signup | 30tools",
-		description:
-			"Free binary to text converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
-	},
-	robots: { index: true, follow: true },
 };
 
-export default async function ToolPage() {
+export default function ToolPage() {
 	const tool = {
 		id: "binary-to-text-converter",
 		name: "Binary to Text Converter",
 		description:
-			"Free binary to text converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Convert binary (base-2) code into human-readable text. This tool decodes binary sequences into ASCII/Unicode characters instantly.",
 		route: "/binary-to-text-converter",
-		extraSlugs: [
-			"binary-to-text-converter-tool",
-			"binary-to-text-online",
-			"free-binary-to-text-converter-online",
-		],
-		popular: false,
 		category: "developer",
+		features: [
+			"Instant binary to text decoding",
+			"Supports 8-bit binary formatting",
+			"Privacy-first browser processing",
+			"Free and no registration required",
+			"Works offline after loading",
+		],
+		howTo: {
+			steps: [
+				{
+					name: "Paste Binary Code",
+					text: "Enter your binary sequence (e.g., 01001000 01101001) into the input box.",
+				},
+				{
+					name: "Automatic Translation",
+					text: "The tool decodes each binary block into its corresponding text character.",
+				},
+				{
+					name: "Copy Result",
+					text: "Use the copy button to save your translated text.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "How do I translate binary to text?",
+				answer: "Simply paste your binary code into our converter. It will interpret each 8-bit sequence as a character and display the full message instantly.",
+			},
+			{
+				question: "Is this binary decoder private?",
+				answer: "Absolutely. All decoding is done using JavaScript in your browser. Your data never leaves your computer.",
+			},
+		],
 	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "Binary to Text Converter",
-			url: "/binary-to-text-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+
+	const convertFn = (input: string) => {
+		return input
+			.trim()
+			.split(/[\s,]+/)
+			.map((bin) => {
+				const num = parseInt(bin, 2);
+				return isNaN(num) ? "" : String.fromCharCode(num);
+			})
+			.join("");
+	};
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "Binary to Text Converter",
-						description:
-							"Free binary to text converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-						url: "https://30tools.com/binary-to-text-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
+		<ToolLayout tool={tool}>
+			<BaseConverter
+				title="Binary to Text"
+				inputPlaceholder="Enter binary sequence (e.g., 01001000 01101001)..."
+				outputPlaceholder="Text output will appear here..."
+				convertFn={convertFn}
 			/>
-
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolPlaceholderPage toolId="binary-to-text-converter" />
-			</ToolLayout>
-		</>
+		</ToolLayout>
 	);
 }
