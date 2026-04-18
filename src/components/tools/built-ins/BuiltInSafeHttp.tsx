@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -63,12 +63,17 @@ export default function BuiltInSafeHttp({ toolId }: { toolId: string }) {
 						: "Server reachability";
 
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">{title}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
-				<Input value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://..." />
+				<Input
+					className=""
+					value={url}
+					onChange={(e: ChangeEvent<HTMLInputElement>) => setUrl(e.target.value)}
+					placeholder="https://..."
+				/>
 				<div className="flex flex-wrap gap-2">
 					<Button type="button" variant="secondary" onClick={runHead}>
 						HEAD chain

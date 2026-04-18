@@ -178,6 +178,11 @@ export default async function RootLayout({ children }) {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `window.__name = (t, v) => Object.defineProperty(t, 'name', { value: v, configurable: true });`,
+					}}
+				/>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1, maximum-scale=5"

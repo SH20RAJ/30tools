@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
 	title: "Free Whois Domain Lookup Online - No Signup | 30tools",
@@ -107,7 +107,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId="whois-domain-lookup" />
+				<ToolImplementation toolId="whois-domain-lookup" />
 			</ToolLayout>
 		</>
 	);

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
@@ -69,7 +69,7 @@ function xmlToJson(xml: string): string {
 	const err = doc.querySelector("parsererror");
 	if (err) throw new Error("Invalid XML");
 	function nodeToObj(el: Element): unknown {
-		const kids = [...el.children];
+		const kids = Array.from(el.children);
 		if (!kids.length) return el.textContent ?? "";
 		const o: Record<string, unknown> = {};
 		for (const c of kids) {
@@ -144,15 +144,15 @@ export default function BuiltInSerialization({ toolId }: { toolId: string }) {
 	};
 
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Convert</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-4">
 				<Textarea
 					className="min-h-[220px] font-mono text-sm"
 					value={input}
-					onChange={(e) => setInput(e.target.value)}
+					onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setInput(e.target.value)}
 					placeholder="Paste input..."
 				/>
 				<Button type="button" onClick={run}>

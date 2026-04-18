@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 import NumberBaseConverter from "@/components/tools/converter/NumberBaseConverter";
 
 export const metadata = {
@@ -125,7 +125,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId="hex-to-octal-converter" />
+				<ToolImplementation toolId="hex-to-octal-converter" />
 			</ToolLayout>
 		</>
 	);

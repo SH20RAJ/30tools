@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
 	title: "Free YouTube Video Count Checker Online - No Signup | 30tools",
@@ -152,7 +152,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId="youtube-video-count-checker" />
+				<ToolImplementation toolId="youtube-video-count-checker" />
 			</ToolLayout>
 		</>
 	);

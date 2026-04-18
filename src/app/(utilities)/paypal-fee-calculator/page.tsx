@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
 	title: "Free Paypal Fee Calculator Online - No Signup | 30tools",
@@ -110,7 +110,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId="paypal-fee-calculator" />
+				<ToolImplementation toolId="paypal-fee-calculator" />
 			</ToolLayout>
 		</>
 	);

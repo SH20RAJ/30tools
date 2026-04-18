@@ -126,8 +126,8 @@ function TextCompareMount() {
 	const [b, setB] = useState("");
 	const diff = useMemo(() => diffChars(a, b), [a, b]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Text compare</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-2">
@@ -158,8 +158,8 @@ function SimpleRepeater() {
 		return Array(c).fill(t).join("");
 	}, [t, n]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Text repeater</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -180,8 +180,8 @@ function WordCounterMount() {
 		return { words, chars, lines };
 	}, [t]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Word counter</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -199,8 +199,8 @@ function RemoveBreaks() {
 	const [t, setT] = useState("");
 	const out = useMemo(() => t.replace(/\r?\n+/g, " ").replace(/\s+/g, " ").trim(), [t]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Remove line breaks</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -215,8 +215,8 @@ function CommaSeparatorMount() {
 	const [t, setT] = useState("");
 	const out = useMemo(() => t.split(/\r?\n/).join(", "), [t]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Lines to comma separated</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -238,8 +238,8 @@ function SlugMount() {
 		[t],
 	);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Slug</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -258,9 +258,9 @@ function TagsFromText({ prefix }: { prefix: string }) {
 		return uniq.map((w) => `${prefix}${w}`).join(prefix === "#" ? " " : ", ");
 	}, [t, prefix]);
 	return (
-		<Card>
-			<CardHeader>
-				<CardTitle className="text-lg">{prefix === "#" ? "Hashtags" : "Tags"}</CardTitle>
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="text-lg">{prefix === "#" ? "Hashtags" : "Comma tags"}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
 				<Textarea className="min-h-[180px]" value={t} onChange={(e) => setT(e.target.value)} />
@@ -270,7 +270,7 @@ function TagsFromText({ prefix }: { prefix: string }) {
 	);
 }
 
-function RomanMount(toRoman: boolean) {
+function RomanMount({ toRoman }: { toRoman: boolean }) {
 	const [v, setV] = useState(toRoman ? "2026" : "MMXXVI");
 	const out = useMemo(() => {
 		if (toRoman) {
@@ -313,8 +313,8 @@ function RomanMount(toRoman: boolean) {
 		return String(total);
 	}, [v, toRoman]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">{toRoman ? "Number → Roman" : "Roman → Number"}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -325,7 +325,7 @@ function RomanMount(toRoman: boolean) {
 	);
 }
 
-function RgbHexMount(mode: "rgb2hex" | "hex2rgb") {
+function RgbHexMount({ mode }: { mode: "rgb2hex" | "hex2rgb" }) {
 	const [v, setV] = useState(mode === "rgb2hex" ? "10 20 30" : "#0A141E");
 	const out = useMemo(() => {
 		if (mode === "rgb2hex") {
@@ -343,8 +343,8 @@ function RgbHexMount(mode: "rgb2hex" | "hex2rgb") {
 		return `rgb(${r}, ${g}, ${b})`;
 	}, [v, mode]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">{mode === "rgb2hex" ? "RGB → Hex" : "Hex → RGB"}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -363,8 +363,8 @@ function UuidMount() {
 		toast.success("Generated");
 	};
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">UUID v4</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -387,8 +387,8 @@ function UrlCodecMount(mode: "enc" | "dec") {
 		}
 	}, [t, mode]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">{mode === "enc" ? "URL encode" : "URL decode"}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -425,8 +425,8 @@ function UrlParserMount() {
 		}
 	}, [u]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">URL parser</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -449,8 +449,8 @@ function ScreenResCard() {
 		});
 	}, []);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Screen</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-2 text-sm">
@@ -477,11 +477,11 @@ function ScreenResCard() {
 function UserAgentCard() {
 	const ua = typeof navigator !== "undefined" ? navigator.userAgent : "";
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">User agent</CardTitle>
 			</CardHeader>
-			<CardContent>
+			<CardContent className="">
 				<Textarea readOnly className="min-h-[120px] font-mono text-xs" value={ua} />
 			</CardContent>
 		</Card>
@@ -495,8 +495,8 @@ function BrowserGuessCard() {
 	const isSafari = /Safari\//.test(ua) && !/Chrome\//.test(ua);
 	const name = isChrome ? "Chromium-based" : isFirefox ? "Firefox" : isSafari ? "Safari" : "Unknown";
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Browser (heuristic)</CardTitle>
 			</CardHeader>
 			<CardContent className="text-sm space-y-2">
@@ -522,8 +522,8 @@ function PublicIpCard() {
 		}
 	};
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Public IP</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -555,8 +555,8 @@ function DomainToIpMount() {
 		}
 	};
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Domain → A records</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -589,8 +589,8 @@ function DnsLookupMount() {
 		}
 	};
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">DNS lookup</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -617,8 +617,8 @@ function MetaTagDraft() {
 		[title, desc],
 	);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Core meta tags</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -645,8 +645,8 @@ function OgDraft() {
 		[u, t, d],
 	);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Open Graph snippet</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -671,8 +671,8 @@ function TwitterCardDraft() {
 		[card, t],
 	);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Twitter card snippet</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -707,8 +707,8 @@ function JsonLdFaqDraft() {
 		[q1, a1],
 	);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">FAQ JSON-LD</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -725,8 +725,8 @@ function HtaccessDraft() {
 	const [to, setTo] = useState("/new-path");
 	const snippet = `RewriteEngine On\nRewriteRule ^${from.replace(/^\//, "")}/?$ ${to} [R=301,L]`;
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Apache redirect rule</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -746,11 +746,11 @@ function LegalDraft({ kind }: { kind: "privacy" | "terms" | "disclaimer" }) {
 				? "This template is not legal advice. Add jurisdiction, acceptable use, liability limits, and governing law."
 				: "This template is not legal advice. Add scope of information, warranties, and professional advice disclaimer.";
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Draft outline</CardTitle>
 			</CardHeader>
-			<CardContent>
+			<CardContent className="">
 				<Textarea readOnly className="min-h-[200px] text-sm bg-muted/30" value={body} />
 			</CardContent>
 		</Card>
@@ -769,8 +769,8 @@ function KeywordDensity() {
 		return `${((hits / m.length) * 100).toFixed(2)}%`;
 	}, [text, word]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Keyword density</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -833,26 +833,26 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "remove-line-breaks") return <RemoveBreaks />;
 	if (toolId === "comma-separator") return <CommaSeparatorMount />;
 	if (toolId === "text-to-slug-converter") return <SlugMount />;
-	if (toolId === "text-to-hashtags-converter") return <TagsFromText "#" />;
-	if (toolId === "text-to-tags-converter") return <TagsFromText "" />;
+	if (toolId === "text-to-hashtags-converter") return <TagsFromText prefix="#" />;
+	if (toolId === "text-to-tags-converter") return <TagsFromText prefix="" />;
 	if (toolId === "base64-encode" || toolId === "base64-decode") return <Base64Tool />;
 	if (toolId === "md5-generator") return <HashGeneratorTool />;
 	if (toolId === "qr-code-generator") return <QrGeneratorTool />;
 	if (toolId === "youtube-channel-id-extractor") return <YouTubeChannelIDFinderTool />;
 
-	if (toolId === "number-to-roman-numerals") return <RomanMount true />;
-	if (toolId === "roman-numerals-to-number") return <RomanMount false />;
-	if (toolId === "rgb-to-hex-converter") return <RgbHexMount "rgb2hex" />;
-	if (toolId === "hex-to-rgb-converter") return <RgbHexMount "hex2rgb" />;
+	if (toolId === "number-to-roman-numerals") return <RomanMount toRoman={true} />;
+	if (toolId === "roman-numerals-to-number") return <RomanMount toRoman={false} />;
+	if (toolId === "rgb-to-hex-converter") return <RgbHexMount mode="rgb2hex" />;
+	if (toolId === "hex-to-rgb-converter") return <RgbHexMount mode="hex2rgb" />;
 	if (toolId === "random-uuid-generator") return <UuidMount />;
 	if (toolId === "url-encode") return <UrlCodecMount mode="enc" />;
 	if (toolId === "url-decode") return <UrlCodecMount mode="dec" />;
 	if (toolId === "url-parser") return <UrlParserMount />;
 
-	if (toolId === "what-is-my-screen-resolution") return <ScreenInfoMount res />;
-	if (toolId === "what-is-my-user-agent") return <ScreenInfoMount ua />;
-	if (toolId === "what-is-my-browser") return <ScreenInfoMount browser />;
-	if (toolId === "what-is-my-ip-address") return <ScreenInfoMount ip />;
+	if (toolId === "what-is-my-screen-resolution") return <ScreenResCard />;
+	if (toolId === "what-is-my-user-agent") return <UserAgentCard />;
+	if (toolId === "what-is-my-browser") return <BrowserGuessCard />;
+	if (toolId === "what-is-my-ip-address") return <PublicIpCard />;
 
 	if (toolId === "keyword-density-checker") return <KeywordDensity />;
 

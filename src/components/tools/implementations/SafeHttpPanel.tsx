@@ -60,6 +60,7 @@ export default function SafeHttpPanel({
 					...Object.entries(data.headers || {}).map(([k, v]) => `${k}: ${v}`),
 				].join("\n");
 				setResult(block);
+				toast.success("Done");
 				setLoading(false);
 				return;
 			}

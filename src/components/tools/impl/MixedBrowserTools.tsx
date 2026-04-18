@@ -39,19 +39,12 @@ function toRoman(n: number): string {
 }
 
 function fromRoman(r: string): number {
-	const t = r.toUpperCase().trim();
-	let i = 0;
+	let s = r.toUpperCase().trim();
 	let n = 0;
-	const sym: Record<string, number> = { M: 1000, D: 500, C: 100, L: 50, X: 10, V: 5, I: 1 };
-	while (i < t.length) {
-		const a = sym[t[i]] || 0;
-		const b = sym[t[i + 1]] || 0;
-		if (a < b) {
-			n += b - a;
-			i += 2;
-		} else {
-			n += a;
-			i += 1;
+	for (const [val, sym] of ROMAN_MAP) {
+		while (s.startsWith(sym)) {
+			n += val;
+			s = s.slice(sym.length);
 		}
 	}
 	return n;

@@ -285,7 +285,7 @@ export default function UniversalUnitConverter({ preset }: { preset: UnitPreset 
 
 	return (
 		<Card className="border-border/60 shadow-sm">
-			<CardHeader>
+			<CardHeader className="">
 				<CardTitle className="flex items-center gap-2 text-lg">
 					<ArrowRightLeft className="h-5 w-5 text-primary" />
 					Unit converter
@@ -294,14 +294,16 @@ export default function UniversalUnitConverter({ preset }: { preset: UnitPreset 
 			<CardContent className="space-y-6">
 				<div className="grid gap-4 md:grid-cols-2">
 					<div className="space-y-2">
-						<Label htmlFor="from-u">From</Label>
+						<Label className="" htmlFor="from-u">
+							From
+						</Label>
 						<Select value={fromId} onValueChange={setFromId}>
-							<SelectTrigger id="from-u">
+							<SelectTrigger className="" id="from-u">
 								<SelectValue />
 							</SelectTrigger>
-							<SelectContent>
+							<SelectContent className="">
 								{units.map((u) => (
-									<SelectItem key={u.id} value={u.id}>
+									<SelectItem className="" key={u.id} value={u.id}>
 										{u.label}
 									</SelectItem>
 								))}
@@ -309,14 +311,16 @@ export default function UniversalUnitConverter({ preset }: { preset: UnitPreset 
 						</Select>
 					</div>
 					<div className="space-y-2">
-						<Label htmlFor="to-u">To</Label>
+						<Label className="" htmlFor="to-u">
+							To
+						</Label>
 						<Select value={toId} onValueChange={setToId}>
-							<SelectTrigger id="to-u">
+							<SelectTrigger className="" id="to-u">
 								<SelectValue />
 							</SelectTrigger>
-							<SelectContent>
+							<SelectContent className="">
 								{units.map((u) => (
-									<SelectItem key={`t-${u.id}`} value={u.id}>
+									<SelectItem className="" key={`t-${u.id}`} value={u.id}>
 										{u.label}
 									</SelectItem>
 								))}
@@ -326,8 +330,11 @@ export default function UniversalUnitConverter({ preset }: { preset: UnitPreset 
 				</div>
 				<div className="grid gap-4 md:grid-cols-2">
 					<div className="space-y-2">
-						<Label htmlFor="val-in">Value</Label>
+						<Label className="" htmlFor="val-in">
+							Value
+						</Label>
 						<Input
+							className=""
 							id="val-in"
 							inputMode="decimal"
 							value={input}
@@ -336,8 +343,10 @@ export default function UniversalUnitConverter({ preset }: { preset: UnitPreset 
 						/>
 					</div>
 					<div className="space-y-2">
-						<Label htmlFor="val-out">Result</Label>
-						<Input id="val-out" readOnly value={output} className="bg-muted/40 font-mono" />
+						<Label className="" htmlFor="val-out">
+							Result
+						</Label>
+						<Input className="bg-muted/40 font-mono" id="val-out" readOnly value={output} />
 					</div>
 				</div>
 				<p className="text-xs text-muted-foreground">

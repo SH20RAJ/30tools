@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ChangeEvent } from "react";
 import { Calculator } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -57,8 +57,16 @@ function Field({
 }) {
 	return (
 		<div className="space-y-1.5">
-			<Label htmlFor={id}>{label}</Label>
-			<Input id={id} type={type} value={value} onChange={(e) => onChange(e.target.value)} />
+			<Label className="" htmlFor={id}>
+				{label}
+			</Label>
+			<Input
+				className=""
+				id={id}
+				type={type}
+				value={value}
+				onChange={(e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+			/>
 		</div>
 	);
 }
@@ -73,8 +81,8 @@ function PctCalc() {
 		return `${((p / w) * 100).toFixed(4)}%`;
 	}, [part, whole]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="flex items-center gap-2 text-lg">
 					<Calculator className="h-5 w-5" />
 					Percentage
@@ -103,8 +111,8 @@ function GstCalc() {
 		return { base: a.toFixed(2), tax: t.toFixed(2), total: (a + t).toFixed(2) };
 	}, [amount, rate]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">GST breakdown</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-2">
@@ -134,8 +142,8 @@ function DiscountCalc() {
 		return { pay: (p - s).toFixed(2), save: s.toFixed(2) };
 	}, [price, off]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Discount</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-2">
@@ -158,8 +166,8 @@ function MarginCalc() {
 		return `${(((s - c) / s) * 100).toFixed(2)}%`;
 	}, [cost, sell]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Margin %</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-2">
@@ -189,8 +197,8 @@ function LoanCalc() {
 		return Number.isFinite(m) ? m.toFixed(2) : "";
 	}, [p, apr, years]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Mortgage payment (monthly)</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-3">
@@ -215,8 +223,8 @@ function AgeCalc() {
 		return `${Math.floor(diff / (365.25 * 24 * 3600 * 1000))} years (approx.)`;
 	}, [dob]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Age from birthday</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-4">
@@ -238,8 +246,8 @@ function SalesTaxCalc() {
 		return { tax: t.toFixed(2), gross: (n + t).toFixed(2) };
 	}, [net, rate]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Sales tax</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-2">
@@ -263,8 +271,8 @@ function AverageCalc() {
 		return (nums.reduce((a, b) => a + b, 0) / nums.length).toFixed(6);
 	}, [txt]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Average</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
@@ -285,8 +293,8 @@ function CpmCalc() {
 		return ((c / i) * 1000).toFixed(4);
 	}, [imp, cost]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">CPM</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-2">
@@ -310,8 +318,8 @@ function AdsenseCalc() {
 		return ((r * p) / 1000).toFixed(2);
 	}, [rpm, pv]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">AdSense estimate</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-2">
@@ -340,8 +348,8 @@ function PaypalCalc() {
 		return (a - a * f - fx).toFixed(2);
 	}, [amt, feePct, fixed]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">PayPal fee (simple)</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-3">
@@ -376,8 +384,8 @@ function ProbCalc() {
 		return Number.isFinite(val) ? val.toExponential(4) : "";
 	}, [p, n, k]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Binomial P(X = k)</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-3">
@@ -408,8 +416,8 @@ function CiCalc() {
 		return { lo: (m - zz * se).toFixed(4), hi: (m + zz * se).toFixed(4) };
 	}, [mean, sd, n, z]);
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">95% style CI (normal approx.)</CardTitle>
 			</CardHeader>
 			<CardContent className="grid gap-4 md:grid-cols-2">
@@ -453,8 +461,8 @@ function CurrencyConverter() {
 	};
 
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">Currency converter</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-4">

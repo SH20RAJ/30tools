@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
 	title: "Free Number to Roman Numerals Online - No Signup | 30tools",
@@ -110,7 +110,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId="number-to-roman-numerals" />
+				<ToolImplementation toolId="number-to-roman-numerals" />
 			</ToolLayout>
 		</>
 	);

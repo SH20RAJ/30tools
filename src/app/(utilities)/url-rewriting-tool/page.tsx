@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
 	title: "Free URL Rewriting Tool Online - No Signup | 30tools",
@@ -126,7 +126,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<ToolPlaceholderPage toolId="url-rewriting-tool" />
+				<ToolImplementation toolId="url-rewriting-tool" />
 			</ToolLayout>
 		</>
 	);

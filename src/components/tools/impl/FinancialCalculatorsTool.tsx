@@ -110,6 +110,15 @@ export function FinancialCalculatorsTool({ toolId }: { toolId: string }) {
 				if (Number.isNaN(v1) || Number.isNaN(v2) || v2 === 0) return "";
 				return `Ratio: ${(v1 / v2).toFixed(3)}:1`;
 			}
+			if (toolId === "age-calculator") {
+				const birth = new Date(a);
+				if (Number.isNaN(birth.getTime())) return "";
+				const now = new Date();
+				let years = now.getFullYear() - birth.getFullYear();
+				const m = now.getMonth() - birth.getMonth();
+				if (m < 0 || (m === 0 && now.getDate() < birth.getDate())) years--;
+				return `Approximate age: ${years} years`;
+			}
 		} catch {
 			return "";
 		}
@@ -145,6 +154,8 @@ export function FinancialCalculatorsTool({ toolId }: { toolId: string }) {
 				return ["Views", "RPM ($)", "", ""];
 			case "youtube-views-ratio-calculator":
 				return ["Views A", "Views B", "", ""];
+			case "age-calculator":
+				return ["Birth date (YYYY-MM-DD)", "", "", ""];
 			default:
 				return ["A", "B", "C", "D"];
 		}
@@ -209,4 +220,5 @@ export const FINANCE_TOOL_IDS = new Set([
 	"confidence-interval-calculator",
 	"youtube-money-calculator",
 	"youtube-views-ratio-calculator",
+	"age-calculator",
 ]);

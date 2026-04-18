@@ -30,6 +30,15 @@ function extractMeta(html: string, name: string) {
 	return m?.[1] ?? "";
 }
 
+function extractOg(html: string, prop: string) {
+	const re = new RegExp(
+		`<meta[^>]+property=["']${prop}["'][^>]+content=["']([^"']+)["']`,
+		"i",
+	);
+	const m = html.match(re);
+	return m?.[1] ?? "";
+}
+
 export default function SeoToolsSuite({ toolId }: { toolId: string }) {
 	const [url, setUrl] = useState("https://");
 	const [text, setText] = useState("");
@@ -43,6 +52,17 @@ export default function SeoToolsSuite({ toolId }: { toolId: string }) {
 	const fetchPage = async () => {
 		setOut("");
 		try {
+			if (toolId === "keywords-suggestion-tool") {
+				const words = text
+					.toLowerCase()
+					.replace(/[^\p{L}\p{N}\s]/gu, " ")
+					.split(/\s+/)
+					.filter((w) => w.length > 3);
+				const uniq = [...new Set(words)].slice(0, 40);
+				setOut(uniq.join(", ") || "Paste longer copy to extract tokens.");
+				toast.success("Extracted");
+				return;
+			}
 			const res = await fetch("/api/tools/safe-http", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -52,9 +72,12 @@ export default function SeoToolsSuite({ toolId }: { toolId: string }) {
 			if (!res.ok) throw new Error(data.error || "Fetch failed");
 			const html = data.text || "";
 			if (toolId === "open-graph-checker" || toolId === "google-cache-checker") {
-				const ogTitle = extractMeta(html, "og:title") || html.match(/<title>([^<]+)<\/title>/i)?.[1];
+				const ogTitle =
+					extractOg(html, "og:title") ||
+					html.match(/<title>([^<]+)<\/title>/i)?.[1] ||
+					"";
 				const ogDesc =
-					extractMeta(html, "og:description") || extractMeta(html, "description");
+					extractOg(html, "og:description") || extractMeta(html, "description");
 				setOut(
 					[
 						`HTTP: ${data.status}`,
@@ -74,15 +97,6 @@ export default function SeoToolsSuite({ toolId }: { toolId: string }) {
 				setOut(
 					"Live ranking requires SERP APIs. Use Google Search Console for your own domain, or connect a rank-tracking provider.",
 				);
-				return;
-			}
-			if (toolId === "keywords-suggestion-tool") {
-				const words = text
-					.toLowerCase()
-					.split(/\s+/)
-					.filter((w) => w.length > 3);
-				const uniq = [...new Set(words)].slice(0, 40);
-				setOut(uniq.join(", "));
 				return;
 			}
 			toast.success("Done");

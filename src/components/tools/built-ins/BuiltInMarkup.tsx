@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ChangeEvent } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
@@ -133,15 +133,15 @@ export default function BuiltInMarkup({ toolId }: { toolId: string }) {
 	const cfg = modeFor();
 
 	return (
-		<Card>
-			<CardHeader>
+		<Card className="">
+			<CardHeader className="">
 				<CardTitle className="text-lg">{cfg.title}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
 				<Textarea
 					className="min-h-[200px] font-mono text-sm"
 					value={input}
-					onChange={(e) => setInput(e.target.value)}
+					onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setInput(e.target.value)}
 				/>
 				<div className="flex flex-wrap gap-2">
 					{cfg.actions.map((a) => (
