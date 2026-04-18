@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import BaseConverter from "@/components/tools/shared/BaseConverter";
+import StandardConverter from "@/components/tools/shared/StandardConverter";
 
 export const metadata = {
 	title: "Free ASCII to Binary Converter Online - No Signup | 30tools",
