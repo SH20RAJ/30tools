@@ -250,7 +250,7 @@ function SlugMount() {
 	);
 }
 
-function TagsFromText(prefix: "#" | "") {
+function TagsFromText({ prefix }: { prefix: string }) {
 	const [t, setT] = useState("");
 	const out = useMemo(() => {
 		const words = t.toLowerCase().match(/[a-z0-9]{3,}/g) ?? [];
@@ -855,6 +855,28 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "what-is-my-ip-address") return <ScreenInfoMount ip />;
 
 	if (toolId === "keyword-density-checker") return <KeywordDensity />;
+
+	const safeHttpIds = new Set([
+		"redirect-checker",
+		"http-status-code-checker",
+		"get-http-headers",
+		"page-size-checker",
+		"server-status-checker",
+		"hosting-checker",
+	]);
+	if (safeHttpIds.has(toolId)) return <BuiltInSafeHttp toolId={toolId} />;
+
+	if (toolId === "domain-to-ip-converter") return <DomainToIpMount />;
+	if (toolId === "dns-records-checker") return <DnsLookupMount />;
+
+	if (toolId === "meta-tag-generator") return <MetaTagDraft />;
+	if (toolId === "open-graph-generator") return <OgDraft />;
+	if (toolId === "twitter-card-generator") return <TwitterCardDraft />;
+	if (toolId === "faq-schema-generator") return <JsonLdFaqDraft />;
+	if (toolId === "htaccess-redirect-generator") return <HtaccessDraft />;
+	if (toolId === "privacy-policy-generator") return <LegalDraft kind="privacy" />;
+	if (toolId === "terms-and-condition-generator") return <LegalDraft kind="terms" />;
+	if (toolId === "disclaimer-generator") return <LegalDraft kind="disclaimer" />;
 
 	return <GenericNotice toolId={toolId} />;
 }

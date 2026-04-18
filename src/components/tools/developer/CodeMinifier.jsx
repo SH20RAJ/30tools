@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 /**
  * Code Minifier Component
- * @param {string} language - 'javascript' | 'css'
+ * @param {string} language - 'javascript' | 'css' | 'html'
  */
 export default function CodeMinifier({ language }) {
 	const [inputCode, setInputCode] = useState("");
@@ -17,7 +17,8 @@ export default function CodeMinifier({ language }) {
 	const [stats, setStats] = useState(null);
 	const [isCopied, setIsCopied] = useState(false);
 
-	const langLabel = language === "javascript" ? "JavaScript" : "CSS";
+	const langLabel =
+		language === "javascript" ? "JavaScript" : language === "html" ? "HTML" : "CSS";
 
 	const minify = async () => {
 		if (!inputCode.trim()) {
@@ -40,6 +41,12 @@ export default function CodeMinifier({ language }) {
 					.replace(/\/\*[\s\S]*?\*\//g, "")
 					.replace(/\s+/g, " ")
 					.replace(/ ?([:;,{}]) ?/g, "$1")
+					.trim();
+			} else if (language === "html") {
+				minified = inputCode
+					.replace(/<!--[\s\S]*?-->/g, "")
+					.replace(/\s+/g, " ")
+					.replace(/>\s+</g, "><")
 					.trim();
 			} else {
 				// Simple JS minification sim (removing comments and extra spaces)
@@ -86,7 +93,7 @@ export default function CodeMinifier({ language }) {
 		const url = URL.createObjectURL(blob);
 		const a = document.createElement("a");
 		a.href = url;
-		a.download = `minified.${language === "javascript" ? "js" : "css"}`;
+		a.download = `minified.${language === "javascript" ? "js" : language === "html" ? "html" : "css"}`;
 		document.body.appendChild(a);
 		a.click();
 		document.body.removeChild(a);

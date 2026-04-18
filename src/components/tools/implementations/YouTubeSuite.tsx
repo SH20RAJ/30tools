@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 
@@ -36,7 +35,7 @@ export default function YouTubeSuite({ toolId }: { toolId: string }) {
 			}
 			if (toolId === "youtube-title-length-checker") {
 				setOut(
-					`Characters: ${text.length}\nRecommended: ≤ 100 chars for full visibility on many devices.`,
+					`Characters: ${text.length}\nMany layouts truncate after ~60–70 characters — aim concise titles.`,
 				);
 				return;
 			}
@@ -68,7 +67,7 @@ export default function YouTubeSuite({ toolId }: { toolId: string }) {
 				const r = await fetch(
 					`/api/parse-youtube?url=${encodeURIComponent(text.trim())}`,
 				);
-				const j = (await r.json()) as { embedUrl?: string; id?: string; error?: string };
+				const j = (await r.json()) as { embedUrl?: string; error?: string };
 				if (!r.ok) throw new Error(j.error || "Bad URL");
 				setOut(
 					`<iframe width="560" height="315" src="${j.embedUrl}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`,
@@ -77,7 +76,7 @@ export default function YouTubeSuite({ toolId }: { toolId: string }) {
 			}
 			if (toolId === "youtube-timestamp-link-generator") {
 				const id = extractVideoId(text);
-				const t = prompt("Seconds to jump to?", "60");
+				const t = typeof window !== "undefined" ? window.prompt("Seconds to jump to?", "60") : null;
 				if (!id || !t) return;
 				setOut(`https://www.youtube.com/watch?v=${id}&t=${Number.parseInt(t, 10)}s`);
 				return;
@@ -112,7 +111,18 @@ export default function YouTubeSuite({ toolId }: { toolId: string }) {
 				);
 				return;
 			}
-			toast.message("Use fields above; this preset is a lightweight helper.");
+			setOut(
+				[
+					"This page bundles lightweight, browser-side helpers.",
+					"Official analytics, tags, and comment moderation require YouTube Studio or the YouTube Data API.",
+					"",
+					"Tips:",
+					"- Video ID: 11 characters from watch?v=, youtu.be/, or /shorts/",
+					"- Channel uploads RSS: https://www.youtube.com/feeds/videos.xml?channel_id=CHANNEL_ID",
+					"",
+					`Tool id: ${toolId}`,
+				].join("\n"),
+			);
 		} catch (e) {
 			toast.error(e instanceof Error ? e.message : "Failed");
 		}
@@ -121,36 +131,25 @@ export default function YouTubeSuite({ toolId }: { toolId: string }) {
 	return (
 		<Card>
 			<CardHeader>
-				<CardTitle className="text-xl">YouTube helper</CardTitle>
+				<CardTitle className="text-xl">YouTube utilities</CardTitle>
 				<CardDescription>
-					Client-side utilities. Official stats require YouTube Studio or the Data API.
+					Free helpers that run in your browser. Paste URLs or text, then run.
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="space-y-4">
 				{toolId === "youtube-timestamp-link-generator" ? (
 					<p className="text-sm text-muted-foreground">
-						Paste a watch or youtu.be URL, click generate, then enter seconds in the prompt.
+						Paste a video URL, click run, then enter seconds in the browser prompt.
 					</p>
 				) : null}
 				<Textarea value={text} onChange={(e) => setText(e.target.value)} className="min-h-[140px]" />
 				<Button type="button" onClick={run}>
 					Run
 				</Button>
-				<pre className="rounded-lg border bg-muted/40 p-4 text-sm whitespace-pre-wrap">{out}</pre>
+				<pre className="max-h-[360px] overflow-auto rounded-lg border bg-muted/40 p-4 text-sm whitespace-pre-wrap">
+					{out}
+				</pre>
 			</CardContent>
 		</Card>
 	);
 }
-
-export const YOUTUBE_SUITE_IDS = new Set([
-	"youtube-title-capitalizer",
-	"youtube-title-length-checker",
-	"youtube-tag-generator",
-	"youtube-hashtag-generator",
-	"youtube-subscribe-link-generator",
-	"youtube-embed-code-generator",
-	"youtube-timestamp-link-generator",
-	"youtube-channel-id-extractor",
-	"youtube-description-generator",
-	"youtube-title-generator",
-]);

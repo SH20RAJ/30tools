@@ -44,7 +44,10 @@ export default function ToolLayout({
 						{tool.name}
 					</h1>
 					<p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-						{tool.description} Fast, secure, and professional online tool.
+						{tool.description}
+						{!String(tool.description || "").includes("privacy-friendly browser-based workflows")
+							? " Runs in your browser with no signup."
+							: " Free online utility — fast, private, and built for real workflows."}
 					</p>
 				</section>
 

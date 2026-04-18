@@ -12,7 +12,29 @@ type Mode =
 	| "json-to-csv"
 	| "json-to-tsv"
 	| "json-to-text"
-	| "xml-to-json";
+	| "xml-to-json"
+	| "json-to-xml";
+
+function jsonToXml(value: unknown, tagName = "item"): string {
+	if (value === null || value === undefined) return `<${tagName} />`;
+	if (typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+		return `<${tagName}>${String(value)
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;")}</${tagName}>`;
+	}
+	if (Array.isArray(value)) {
+		return value.map((v, i) => jsonToXml(v, `${tagName}-${i}`)).join("\n");
+	}
+	if (typeof value === "object") {
+		const o = value as Record<string, unknown>;
+		const inner = Object.entries(o)
+			.map(([k, v]) => jsonToXml(v, k.replace(/[^a-zA-Z0-9_-]/g, "_") || "prop"))
+			.join("\n");
+		return `<${tagName}>\n${inner}\n</${tagName}>`;
+	}
+	return "";
+}
 
 function parseDelimited(text: string, delimiter: string) {
 	const lines = text.trim().split(/\r?\n/).filter(Boolean);
@@ -100,6 +122,7 @@ const titles: Record<Mode, string> = {
 	"json-to-tsv": "JSON → TSV",
 	"json-to-text": "JSON → readable text",
 	"xml-to-json": "XML → JSON",
+	"json-to-xml": "JSON → XML (simple)",
 };
 
 export default function DataInterchangeTool({ mode }: { mode: Mode }) {
@@ -120,6 +143,9 @@ export default function DataInterchangeTool({ mode }: { mode: Mode }) {
 				setOutput(JSON.stringify(JSON.parse(input), null, 2));
 			} else if (mode === "xml-to-json") {
 				setOutput(JSON.stringify(xmlToJson(input), null, 2));
+			} else if (mode === "json-to-xml") {
+				const parsed = JSON.parse(input);
+				setOutput(`<?xml version="1.0" encoding="UTF-8"?>\n${jsonToXml(parsed, "root")}`);
 			}
 			toast.success("Converted");
 		} catch (e) {
