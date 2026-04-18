@@ -252,7 +252,7 @@ export default function LogoGeneratorTool() {
 			link.click();
 
 			toast.success(`Logo downloaded as ${format.toUpperCase()}!`);
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to download logo. Please try again.");
 		}
 	};
@@ -268,7 +268,7 @@ export default function LogoGeneratorTool() {
 				toast.success("Logo copied to clipboard!");
 				setTimeout(() => setCopied(false), 2000);
 			});
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to copy logo. Please try again.");
 		}
 	};

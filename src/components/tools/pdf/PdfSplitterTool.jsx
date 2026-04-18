@@ -175,7 +175,7 @@ export default function PdfSplitterTool() {
 			}
 
 			setSplitResults(results);
-		} catch (_error) {
+		} catch (error) {
 			console.error("Error splitting PDF:", error);
 			alert("Error splitting PDF. Please try again.");
 		}

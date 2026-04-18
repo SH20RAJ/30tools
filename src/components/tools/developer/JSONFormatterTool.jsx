@@ -62,7 +62,7 @@ export default function JSONFormatterTool() {
 				setErrors([]);
 
 				return { isValid: true, formatted, minified };
-			} catch (_error) {
+			} catch (error) {
 				setIsValid(false);
 				setFormattedJson("");
 				setMinifiedJson("");

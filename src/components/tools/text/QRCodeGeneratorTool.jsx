@@ -162,7 +162,7 @@ END:VCARD`;
 
 			const dataUrl = canvas.toDataURL("image/png");
 			setQrCodeDataUrl(dataUrl);
-		} catch (_error) {
+		} catch (error) {
 			console.error("Error generating QR code:", error);
 		}
 		setIsGenerating(false);

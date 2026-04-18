@@ -80,7 +80,7 @@ export default function PDFMergerTool() {
 			const PDFLib = await loadPDFLib();
 			const pdf = await PDFLib.PDFDocument.load(arrayBuffer);
 			return pdf.getPageCount();
-		} catch (_error) {
+		} catch (error) {
 			console.error("Error reading PDF:", error);
 			return 0;
 		}
@@ -165,7 +165,7 @@ export default function PDFMergerTool() {
 			});
 
 			setProgress(100);
-		} catch (_error) {
+		} catch (error) {
 			console.error("Error merging PDFs:", error);
 			alert("Error merging PDFs. Please try again.");
 		} finally {

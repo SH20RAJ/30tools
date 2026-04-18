@@ -244,7 +244,7 @@ export default function ImageResizerTool() {
 							: f,
 					),
 				);
-			} catch (_error) {
+			} catch (error) {
 				setFiles((prev) =>
 					prev.map((f) =>
 						f.id === fileData.id ? { ...f, status: "error" } : f,

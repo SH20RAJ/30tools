@@ -172,7 +172,7 @@ export default function VideoWatermarkRemoverTool() {
 			setProcessedVideo(processedData);
 			setCurrentStep("Complete!");
 			toast.success("Watermarks removed successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to process video. Please try again.");
 		} finally {
 			setIsProcessing(false);

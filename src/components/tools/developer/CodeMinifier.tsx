@@ -68,7 +68,7 @@ export default function CodeMinifier({ language }: { language: Lang }) {
 			});
 
 			toast.success(`${langLabel} minified successfully!`);
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Minification failed");
 		} finally {
 			setIsProcessing(false);

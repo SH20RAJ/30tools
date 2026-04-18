@@ -194,7 +194,7 @@ export default function ImageCompressorTool() {
 								: f,
 						),
 					);
-				} catch (_error) {
+				} catch (error) {
 					setFiles((prev) =>
 						prev.map((f, index) =>
 							index === i ? { ...f, status: "error", progress: 0 } : f,

@@ -453,7 +453,7 @@ export default function SchemaGenerator() {
 						text: q.answer,
 					},
 				}));
-			} catch (_error) {
+			} catch (error) {
 				toast.error("Invalid JSON format for questions");
 				return;
 			}

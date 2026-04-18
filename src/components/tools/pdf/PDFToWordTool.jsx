@@ -64,7 +64,7 @@ export default function PDFToWordTool() {
 			});
 
 			toast.success("File converted successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Conversion failed. Please try again.");
 		} finally {
 			setIsProcessing(false);

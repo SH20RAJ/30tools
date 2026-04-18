@@ -153,7 +153,7 @@ export default function ImageCompressionTool() {
 								: f,
 						),
 					);
-				} catch (_error) {
+				} catch (error) {
 					setFiles((prev) =>
 						prev.map((f, index) =>
 							index === i ? { ...f, status: "error", progress: 0 } : f,

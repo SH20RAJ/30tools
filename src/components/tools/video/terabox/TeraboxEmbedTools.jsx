@@ -44,7 +44,7 @@ export default function TeraboxEmbedTools({
 		try {
 			await navigator.clipboard.writeText(text);
 			toast.success(`${type} copied to clipboard!`);
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to copy to clipboard");
 		}
 	};

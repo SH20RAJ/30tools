@@ -105,7 +105,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         return {
           content: [{ type: 'text', text: result }],
         };
-      } catch (_error) {
+      } catch (error) {
         throw new McpError(
           ErrorCode.InternalError,
           \`Tool execution failed: \${error.message}\`
@@ -215,7 +215,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         return {
           content: [{ type: 'text', text: result }],
         };
-      } catch (_error) {
+      } catch (error) {
         throw new McpError(
           ErrorCode.InternalError,
           \`Tool execution failed: \${error.message}\`
@@ -402,7 +402,7 @@ if __name__ == "__main__":
 			setCopied(true);
 			setTimeout(() => setCopied(false), 2000);
 			toast.success("MCP server code copied successfully");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to copy code to clipboard");
 		}
 	};

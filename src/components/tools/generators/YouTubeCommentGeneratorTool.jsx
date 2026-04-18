@@ -161,7 +161,7 @@ Make it feel genuine but entertaining!`;
 			);
 			const result = await response.text();
 			return result;
-		} catch (_error) {
+		} catch (error) {
 			console.error("AI generation failed:", error);
 			return generateFallbackComment(style, emotion);
 		}
@@ -227,7 +227,7 @@ Make it feel genuine but entertaining!`;
 			setGeneratedComments((prev) => [newComment, ...prev.slice(0, 9)]);
 
 			toast.success("Comment generated successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to generate comment. Please try again.");
 		} finally {
 			setIsGenerating(false);

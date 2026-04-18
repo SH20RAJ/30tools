@@ -94,7 +94,7 @@ export default function URLShortenerTool() {
 			setUrls((prev) => [result, ...prev]);
 			setCurrentUrl("");
 			setCustomAlias("");
-		} catch (_error) {
+		} catch (error) {
 			alert(error.message);
 		}
 		setIsProcessing(false);
@@ -113,7 +113,7 @@ export default function URLShortenerTool() {
 			try {
 				const result = await shortenUrl(url.trim());
 				results.push(result);
-			} catch (_error) {
+			} catch (error) {
 				console.error(`Failed to shorten ${url}:`, error);
 			}
 		}

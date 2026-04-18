@@ -89,7 +89,7 @@ export default function TextEncoderTool() {
 
 			setOutputText(result);
 			toast.success("Text encoded successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error(`Error encoding text: ${error.message}`);
 		}
 	};
@@ -160,7 +160,7 @@ export default function TextEncoderTool() {
 
 			setOutputText(result);
 			toast.success("Text decoded successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error(`Error decoding text: ${error.message}`);
 		}
 	};

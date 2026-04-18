@@ -154,7 +154,7 @@ export default function FaviconGeneratorTool() {
 			};
 
 			img.src = imagePreview;
-		} catch (_error) {
+		} catch (error) {
 			console.error("Error generating favicons:", error);
 			setIsGenerating(false);
 			alert("Error generating favicons. Please try again.");

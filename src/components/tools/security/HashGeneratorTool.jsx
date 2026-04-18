@@ -102,7 +102,7 @@ export default function HashGeneratorTool() {
 						results["SHA-512"] = Array.from(new Uint8Array(sha512Buffer))
 							.map((b) => b.toString(16).padStart(2, "0"))
 							.join("");
-					} catch (_error) {
+					} catch (error) {
 						console.error("Error generating hashes:", error);
 					}
 				}
@@ -121,7 +121,7 @@ export default function HashGeneratorTool() {
 			}
 
 			setHashes(results);
-		} catch (_error) {
+		} catch (error) {
 			console.error("Error generating hashes:", error);
 		} finally {
 			setIsHashing(false);

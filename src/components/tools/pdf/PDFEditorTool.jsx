@@ -75,7 +75,7 @@ export default function PDFEditorTool() {
 			setPdfFile(file);
 			setPageCount(doc.getPageCount());
 			toast.success(`PDF loaded: ${doc.getPageCount()} pages`);
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to load PDF");
 		}
 	};
@@ -128,7 +128,7 @@ export default function PDFEditorTool() {
 			const pdfBytes = await newDoc.save();
 			downloadPDF(pdfBytes, "edited-document.pdf");
 			toast.success("Pages deleted successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to delete pages");
 		} finally {
 			setProcessing(false);
@@ -153,7 +153,7 @@ export default function PDFEditorTool() {
 			const pdfBytes = await newDoc.save();
 			downloadPDF(pdfBytes, "extracted-pages.pdf");
 			toast.success("Pages extracted successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to extract pages");
 		} finally {
 			setProcessing(false);
@@ -188,7 +188,7 @@ export default function PDFEditorTool() {
 			const pdfBytes = await newDoc.save();
 			downloadPDF(pdfBytes, "rotated-document.pdf");
 			toast.success("Pages rotated successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to rotate pages");
 		} finally {
 			setProcessing(false);

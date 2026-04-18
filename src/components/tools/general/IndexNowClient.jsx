@@ -35,7 +35,7 @@ export default function IndexNowClient() {
 
 			const data = await response.json();
 			setResult(data);
-		} catch (_error) {
+		} catch (error) {
 			setResult({
 				success: false,
 				message: "Failed to submit URLs",
@@ -74,7 +74,7 @@ export default function IndexNowClient() {
 
 			const data = await response.json();
 			setResult(data);
-		} catch (_error) {
+		} catch (error) {
 			setResult({
 				success: false,
 				message: "Failed to submit URLs",

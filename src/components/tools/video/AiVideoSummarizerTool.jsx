@@ -119,7 +119,7 @@ export default function AiVideoSummarizerTool() {
 			setProcessingStep("Complete!");
 
 			toast.success("Video summary generated successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to process video. Please try again.");
 		} finally {
 			setIsProcessing(false);
@@ -197,7 +197,7 @@ export default function AiVideoSummarizerTool() {
 			setCopied(true);
 			setTimeout(() => setCopied(false), 2000);
 			toast.success("Copied to clipboard!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to copy to clipboard");
 		}
 	};

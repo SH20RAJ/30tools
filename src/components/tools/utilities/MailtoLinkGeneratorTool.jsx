@@ -72,7 +72,7 @@ export default function MailtoLinkGeneratorTool() {
 			setCopied(true);
 			toast.success("Link copied to clipboard!");
 			setTimeout(() => setCopied(false), 2000);
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to copy link");
 		}
 	};
@@ -90,7 +90,7 @@ export default function MailtoLinkGeneratorTool() {
 		try {
 			await navigator.clipboard.writeText(htmlCode);
 			toast.success("HTML code copied to clipboard!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Failed to copy HTML code");
 		}
 	};

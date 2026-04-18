@@ -60,7 +60,7 @@ export default function JWTDecoder() {
 			setIsValid(true);
 
 			toast.success("JWT decoded successfully!");
-		} catch (_error) {
+		} catch (error) {
 			toast.error("Invalid JWT token format");
 			setHeader("");
 			setPayload("");

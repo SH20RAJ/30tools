@@ -291,8 +291,8 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 							: f,
 					),
 				);
-			} catch (_error) {
-				console.error("Conversion failed:", _error);
+			} catch (error) {
+				console.error("Conversion failed:", error);
 				setFiles((prev) =>
 					prev.map((f) =>
 						f.id === fileData.id ? { ...f, status: "error" } : f,
