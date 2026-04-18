@@ -1,5 +1,88 @@
 /** @type {import('next').NextConfig} */
+import fs from "node:fs";
+import path from "node:path";
 import withPWA from "next-pwa";
+
+const toolsJsonPath = path.join(process.cwd(), "src/constants/tools.json");
+const toolsData = JSON.parse(fs.readFileSync(toolsJsonPath, "utf8"));
+
+const STATIC_PAGES = new Set([
+	"/",
+	"/search",
+	"/calculators",
+	"/about",
+	"/contact",
+	"/help",
+	"/privacy",
+	"/terms",
+	"/api-docs",
+	"/blog",
+	"/blog/",
+]);
+
+function normalizePath(input) {
+	if (!input || typeof input !== "string") return null;
+	const withSlash = input.startsWith("/") ? input : `/${input}`;
+	if (withSlash.length > 1 && withSlash.endsWith("/")) {
+		return withSlash.slice(0, -1);
+	}
+	return withSlash;
+}
+
+function getAllTools() {
+	const categories = Object.values(toolsData.categories || {});
+	return categories.flatMap((category) => category.tools || []);
+}
+
+function buildSlugRoutingRules() {
+	const tools = getAllTools();
+	const primaryRoutes = new Set();
+
+	for (const tool of tools) {
+		const route = normalizePath(tool.route);
+		if (route) primaryRoutes.add(route);
+	}
+
+	const redirects = [];
+	const rewritesMap = new Map();
+
+	for (const tool of tools) {
+		const destination = normalizePath(tool.route);
+		if (!destination) continue;
+
+		for (const rawSlug of tool.extraSlugs || []) {
+			const source = normalizePath(rawSlug);
+			if (!source) continue;
+
+			// Keep canonical tool routes and static pages untouched.
+			if (
+				source === destination ||
+				primaryRoutes.has(source) ||
+				STATIC_PAGES.has(source)
+			) {
+				continue;
+			}
+
+			if (rewritesMap.has(source)) continue;
+
+			rewritesMap.set(source, destination);
+			redirects.push({
+				source: `${source}/`,
+				destination: source,
+				permanent: true,
+			});
+		}
+	}
+
+	const rewrites = Array.from(rewritesMap.entries()).map(
+		([source, destination]) => ({ source, destination }),
+	);
+
+	return { redirects, rewrites };
+}
+
+const { redirects: slugRedirects, rewrites: slugRewrites } =
+	buildSlugRoutingRules();
 
 const nextConfig = {
 	// TypeScript configuration
@@ -112,14 +195,13 @@ const nextConfig = {
 		];
 	},
 
-	// SEO Redirects and Rewrites are now handled dynamically in src/middleware.ts
-	// to avoid the 1000+ custom routes limit and improve performance.
+	// SEO Redirects and Rewrites are generated from src/constants/tools.json.
 	async redirects() {
-		return [];
+		return slugRedirects;
 	},
 
 	async rewrites() {
-		return [];
+		return slugRewrites;
 	},
 
 	// Turbopack configuration (empty to silence Next.js 16 warning)
