@@ -89,7 +89,7 @@ export default function BreadcrumbsEnhanced({
 			{/* Visible breadcrumbs */}
 			<nav
 				aria-label="Breadcrumb navigation"
-				className="flex items-center space-x-1 text-sm text-muted-foreground mb-6 bg-muted/30 px-4 py-2 rounded-lg"
+				className="flex items-center space-x-1 text-sm text-muted-foreground mb-6 bg-muted/30 px-4 py-2 "
 			>
 				<div className="flex items-center space-x-1 overflow-x-auto scrollbar-hide">
 					{breadcrumbs.map((crumb, index) => (
@@ -151,7 +151,7 @@ export function RichBreadcrumbs({
 		: null;
 
 	const variantClasses = {
-		default: "bg-muted/30 px-4 py-2 rounded-lg",
+		default: "bg-muted/30 px-4 py-2 ",
 		minimal: "border-b pb-2",
 		pills: "space-x-2",
 	};
@@ -194,7 +194,7 @@ export function RichBreadcrumbs({
 											href={crumb.url}
 											className={`hover:text-foreground transition-colors ${
 												variant === "pills"
-													? "bg-muted px-2 py-1 rounded-full hover:bg-muted/80"
+													? "bg-muted px-2 py-1 "
 													: "underline-offset-4 hover:underline"
 											}`}
 											title={`Navigate to ${crumb.name}`}

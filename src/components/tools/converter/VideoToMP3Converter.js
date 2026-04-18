@@ -106,7 +106,7 @@ export default function VideoToMP3Converter() {
 				</CardHeader>
 				<CardContent className="space-y-4">
 					{/* File Upload */}
-					<div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
+					<div className="border-2 border-dashed border-border ">
 						<input
 							type="file"
 							accept="video/*"
@@ -177,7 +177,7 @@ export default function VideoToMP3Converter() {
 					)}
 
 					{error && (
-						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
+						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 structive">
 							<AlertCircle className="h-4 w-4" />
 							<span className="text-sm">{error}</span>
 						</div>
@@ -185,7 +185,7 @@ export default function VideoToMP3Converter() {
 
 					{conversionData && (
 						<div className="space-y-4">
-							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
+							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border ">
 								<CheckCircle2 className="h-4 w-4" />
 								<span className="text-sm">
 									Video converted to MP3 successfully!
@@ -195,7 +195,7 @@ export default function VideoToMP3Converter() {
 							<Card>
 								<CardContent className="p-4">
 									<div className="flex items-center gap-4 mb-4">
-										<div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
+										<div className="w-16 h-16 bg-muted s-center justify-center">
 											<Music className="h-8 w-8 text-primary" />
 										</div>
 										<div className="flex-1">
@@ -214,7 +214,7 @@ export default function VideoToMP3Converter() {
 										</div>
 									</div>
 
-									<div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
+									<div className="flex items-center justify-between p-3 bg-gray-50 ">
 										<div className="flex items-center gap-2">
 											<Music className="h-4 w-4 text-primary" />
 											<div>

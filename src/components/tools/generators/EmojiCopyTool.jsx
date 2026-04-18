@@ -1524,21 +1524,21 @@ function EmojiCopyTool() {
 					</CardHeader>
 					<CardContent>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-							<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+							<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 								<h4 className="font-semibold mb-2">🔍 Find Emojis Fast</h4>
 								<p>
 									Use the search bar to quickly find specific emojis by typing
 									keywords
 								</p>
 							</div>
-							<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+							<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 								<h4 className="font-semibold mb-2">📋 One-Click Copy</h4>
 								<p>
 									Click any emoji to instantly copy it to your clipboard for
 									pasting anywhere
 								</p>
 							</div>
-							<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+							<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 								<h4 className="font-semibold mb-2">🌈 Emoji Categories</h4>
 								<p>
 									Browse emojis by category to find the perfect one for your

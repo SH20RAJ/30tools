@@ -89,7 +89,7 @@ export default function JsonWorkbenchTool({ initialTab = "format" as Mode }) {
 					</TabsContent>
 					<TabsContent value="validate" className="pt-2">
 						<div
-							className={`flex items-center gap-2 rounded-lg border px-3 py-2 text-sm ${
+							className={`flex items-center gap-2 sm ${
 								validation.ok
 									? "border-emerald-500/40 bg-emerald-500/10 text-emerald-800 dark:text-emerald-200"
 									: "border-destructive/40 bg-destructive/10 text-destructive"

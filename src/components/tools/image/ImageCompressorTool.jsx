@@ -254,7 +254,7 @@ export default function ImageCompressorTool() {
 				</CardHeader>
 				<CardContent>
 					<div
-						className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+						className={`border-2 border-dashed sition-colors ${
 							dragActive
 								? "border-primary bg-primary/10"
 								: "border-muted-foreground/25"
@@ -357,7 +357,7 @@ export default function ImageCompressorTool() {
 							{files.map((fileItem) => (
 								<div
 									key={fileItem.id}
-									className="flex items-center justify-between p-4 border rounded-lg"
+									className="flex items-center justify-between p-4 border "
 								>
 									<div className="flex items-center space-x-3 flex-1">
 										<FileIcon className="h-5 w-5 text-muted-foreground" />

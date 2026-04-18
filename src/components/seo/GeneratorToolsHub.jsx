@@ -82,12 +82,12 @@ export default function GeneratorToolsHub({
 			{/* Hero Section */}
 			<section className="py-16 px-4">
 				<div className="max-w-7xl mx-auto text-center">
-					<div className="inline-flex items-center gap-2 bg-background/30 dark:to-pink-900/30 text-primary dark:text-purple-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
+					<div className="inline-flex items-center gap-2 bg-background/30 dark:to-pink-900/30 text-primary dark:text-purple-300 px-4 py-2 sm font-medium mb-6">
 						<Sparkles className="h-4 w-4" />
 						AI-Powered Content Generators
 					</div>
 
-					<h1 className="text-4xl md:text-6xl font-bold mb-6 bg-muted/20  ">
+					<h1 className="text-4xl md:text-6xl font-bold mb-6 bg-muted/20 ">
 						Free AI Generators
 					</h1>
 
@@ -166,7 +166,7 @@ export default function GeneratorToolsHub({
 									<CardHeader className="pb-3">
 										<div className="flex items-center justify-between mb-2">
 											<div className="flex items-center gap-2">
-												<div className="p-2 bg-background/30 dark:to-pink-900/30 rounded-lg group-hover:scale-110 transition-transform">
+												<div className="p-2 bg-background/30 dark:to-pink-900/30 scale-110 transition-transform">
 													<Icon className="h-5 w-5 text-primary dark:text-primary" />
 												</div>
 												<Badge
@@ -409,7 +409,7 @@ export function GeneratorToolFeatures({ tool, features = [] }) {
 				<div className="grid md:grid-cols-2 gap-4">
 					{features.map((feature, index) => (
 						<div key={index} className="flex items-start gap-3">
-							<div className="flex-shrink-0 w-2 h-2 bg-muted/500 rounded-full mt-2" />
+							<div className="flex-shrink-0 w-2 h-2 bg-muted/500 " />
 							<div>
 								<h4 className="font-medium text-sm">
 									{feature.title || feature}
@@ -468,7 +468,7 @@ export function GeneratorToolExamples({ tool, examples = [] }) {
 									<label className="text-xs font-medium text-muted-foreground">
 										Input:
 									</label>
-									<div className="mt-1 p-3 bg-muted rounded-lg font-mono text-sm">
+									<div className="mt-1 p-3 bg-muted sm">
 										{examples[activeExample].input}
 									</div>
 								</div>
@@ -479,7 +479,7 @@ export function GeneratorToolExamples({ tool, examples = [] }) {
 									<label className="text-xs font-medium text-muted-foreground">
 										Output:
 									</label>
-									<div className="mt-1 p-3 bg-background/20 dark:to-pink-950/20 rounded-lg text-sm">
+									<div className="mt-1 p-3 bg-background/20 dark:to-pink-950/20 sm">
 										{examples[activeExample].output}
 									</div>
 								</div>

@@ -120,7 +120,7 @@ export default function YouTubeShortsDownloader() {
 					</div>
 
 					{error && (
-						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
+						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 structive">
 							<AlertCircle className="h-4 w-4" />
 							<span className="text-sm">{error}</span>
 						</div>
@@ -128,7 +128,7 @@ export default function YouTubeShortsDownloader() {
 
 					{shortsData && (
 						<div className="space-y-4">
-							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
+							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border ">
 								<CheckCircle className="h-4 w-4" />
 								<span className="text-sm">
 									YouTube Shorts processed successfully!
@@ -145,7 +145,7 @@ export default function YouTubeShortsDownloader() {
 												className="w-20 h-32 object-cover rounded"
 											/>
 											<div className="absolute inset-0 flex items-center justify-center">
-												<Play className="h-8 w-8 text-white bg-destructive bg-opacity-80 rounded-full p-1" />
+												<Play className="h-8 w-8 text-white bg-destructive bg-opacity-80 " />
 											</div>
 											<div className="absolute bottom-1 right-1 bg-black bg-opacity-70 text-white text-xs px-1 rounded">
 												{shortsData.duration}

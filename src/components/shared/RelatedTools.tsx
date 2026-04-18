@@ -93,14 +93,14 @@ export default function RelatedTools({
 				<Link
 					key={tool.id}
 					href={tool.route}
-					className="group flex flex-col p-6 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl hover:shadow-xl transition-all duration-500 no-underline h-full"
+					className="group flex flex-col p-6 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 shadow-xl transition-all duration-500 no-underline h-full"
 				>
 					<div className="flex items-start justify-between mb-6">
 						<span className="text-[10px] font-semibold uppercase tracking-wider text-[#1d1d1f]/40 dark:text-white/40">
 							{tool.category}
 						</span>
 						{tool.popular && (
-							<span className="text-[10px] font-semibold uppercase tracking-wider bg-[#0071e3]/10 text-[#0071e3] px-2 py-0.5 rounded-full">
+							<span className="text-[10px] font-semibold uppercase tracking-wider bg-[#0071e3]/10 text-[#0071e3] px-2 py-0.5 ">
 								Popular
 							</span>
 						)}

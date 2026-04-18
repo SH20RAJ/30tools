@@ -26,7 +26,7 @@ export function ToolAuthGuard({
 
 	if (variant === "inline") {
 		return (
-			<div className="flex items-center justify-center p-6 border-2 border-dashed border-muted-foreground/25 rounded-lg bg-muted/10">
+			<div className="flex items-center justify-center p-6 border-2 border-dashed border-muted-foreground/25 ">
 				<div className="text-center space-y-3">
 					<Icon className="w-8 h-8 mx-auto text-muted-foreground" />
 					<div>
@@ -49,7 +49,7 @@ export function ToolAuthGuard({
 				<div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm">
 					<Card className="w-full max-w-md">
 						<CardHeader className="text-center">
-							<div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+							<div className="w-16 h-16 mx-auto mb-4 s-center justify-center">
 								<Icon className="w-8 h-8 text-primary" />
 							</div>
 							<CardTitle>{title}</CardTitle>
@@ -74,7 +74,7 @@ export function ToolAuthGuard({
 	return (
 		<Card className="w-full">
 			<CardHeader className="text-center">
-				<div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center">
+				<div className="w-16 h-16 mx-auto mb-4 s-center justify-center">
 					<Icon className="w-8 h-8 text-primary" />
 				</div>
 				<CardTitle>{title}</CardTitle>

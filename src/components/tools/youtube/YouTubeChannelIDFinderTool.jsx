@@ -140,7 +140,7 @@ export default function YouTubeChannelIDFinderTool() {
 										alt={result.title}
 										width={128}
 										height={128}
-										className="w-32 h-32 rounded-full border-4 border-background shadow-md"
+										className="w-32 h-32 shadow-md"
 									/>
 								)}
 								<div className="flex-1 space-y-4 text-center md:text-left w-full">
@@ -151,9 +151,9 @@ export default function YouTubeChannelIDFinderTool() {
 										</p>
 									</div>
 
-									<div className="bg-muted/50 p-4 rounded-xl border border-border flex flex-col sm:flex-row items-center justify-between gap-4">
+									<div className="bg-muted/50 p-4 sm:flex-row items-center justify-between gap-4">
 										<div className="flex items-center gap-3">
-											<div className="p-2 bg-primary/10 rounded-lg">
+											<div className="p-2 bg-primary/10 ">
 												<User className="w-5 h-5 text-primary" />
 											</div>
 											<div className="text-left">

@@ -419,7 +419,7 @@ export default function AiVideoSummarizerTool() {
 											{keyPoints.map((point, index) => (
 												<div
 													key={index}
-													className="flex justify-between items-center p-2 bg-muted rounded-lg"
+													className="flex justify-between items-center p-2 bg-muted "
 												>
 													<span className="text-sm">{point.point}</span>
 													<Badge
@@ -451,7 +451,7 @@ export default function AiVideoSummarizerTool() {
 								)}
 							</>
 						) : (
-							<div className="flex items-center justify-center h-64 bg-muted rounded-lg">
+							<div className="flex items-center justify-center h-64 bg-muted ">
 								<div className="text-center text-muted-foreground">
 									<FileText className="h-12 w-12 mx-auto mb-2" />
 									<p>Your AI summary will appear here</p>

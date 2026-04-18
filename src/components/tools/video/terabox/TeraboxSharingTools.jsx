@@ -186,7 +186,7 @@ export default function TeraboxSharingTools({ shareUrl, videoData }) {
 									<img
 										src={qrCodeUrl}
 										alt="QR Code for video"
-										className="mx-auto border rounded-lg"
+										className="mx-auto border "
 									/>
 									<div className="flex justify-center space-x-2">
 										<Button

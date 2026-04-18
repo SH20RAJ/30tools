@@ -86,7 +86,7 @@ export default function PdfCompressor() {
 					<Label htmlFor="pdf-upload" className="text-base font-medium">
 						1. Upload PDF
 					</Label>
-					<div className="border-2 border-dashed border-input rounded-lg p-8 text-center hover:bg-muted/20 transition-colors cursor-pointer relative">
+					<div className="border-2 border-dashed border-input sition-colors cursor-pointer relative">
 						<input
 							id="pdf-upload"
 							type="file"
@@ -129,7 +129,7 @@ export default function PdfCompressor() {
 
 				{downloadUrl && (
 					<div className="pt-4 border-t space-y-4">
-						<div className="flex justify-between items-center text-sm p-3 bg-muted rounded-lg">
+						<div className="flex justify-between items-center text-sm p-3 bg-muted ">
 							<span>
 								New Size:{" "}
 								<span className="font-bold">

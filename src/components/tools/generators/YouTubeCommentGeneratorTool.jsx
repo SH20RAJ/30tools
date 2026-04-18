@@ -271,7 +271,7 @@ Make it feel genuine but entertaining!`;
 						<Play className="w-4 h-4" />
 						Viral Comment Generator
 					</div>
-					<h2 className="text-4xl md:text-6xl font-bold bg-muted/20  ">
+					<h2 className="text-4xl md:text-6xl font-bold bg-muted/20 ">
 						YouTube Comment Generator
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -393,7 +393,7 @@ Make it feel genuine but entertaining!`;
 								<CardContent className="space-y-4">
 									{comment ? (
 										<>
-											<div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-border">
+											<div className="bg-gray-50 p-4 shed border-border">
 												<div className="flex items-start gap-3">
 													<div className="w-8 h-8 bg-background">U</div>
 													<div className="flex-1">
@@ -477,7 +477,7 @@ Make it feel genuine but entertaining!`;
 										</CardTitle>
 									</CardHeader>
 									<CardContent>
-										<div className="bg-gray-50 p-3 rounded-lg mb-4">
+										<div className="bg-gray-50 p-3 ">
 											<div className="flex items-start gap-2">
 												<div className="w-6 h-6 bg-background">U</div>
 												<div className="flex-1">
@@ -552,7 +552,7 @@ Make it feel genuine but entertaining!`;
 											</div>
 										</CardHeader>
 										<CardContent>
-											<div className="bg-gray-50 p-3 rounded-lg">
+											<div className="bg-gray-50 p-3 ">
 												<p className="text-sm text-foreground">{item.text}</p>
 											</div>
 										</CardContent>

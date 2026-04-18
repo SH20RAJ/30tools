@@ -637,13 +637,13 @@ export default function SchemaGenerator() {
 									</Button>
 								</div>
 
-								<div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-4 max-h-96 overflow-auto">
+								<div className="bg-gray-50 dark:bg-gray-900 ">
 									<pre className="text-sm whitespace-pre-wrap break-words">
 										<code>{generatedSchema}</code>
 									</pre>
 								</div>
 
-								<div className="bg-muted/50 dark:bg-green-950/20 border border-border rounded-lg p-4">
+								<div className="bg-muted/50 dark:bg-green-950/20 border border-border ">
 									<h4 className="font-medium text-foreground dark:text-green-200 mb-2">
 										Implementation Instructions:
 									</h4>

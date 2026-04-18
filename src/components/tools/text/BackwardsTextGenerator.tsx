@@ -256,7 +256,7 @@ export default function BackwardsTextGenerator() {
 						key={m.id}
 						onClick={() => setMode(m.id as Mode)}
 						className={cn(
-							"flex flex-col items-center gap-3 p-4 rounded-2xl border-2 transition-all duration-200 text-center",
+							"flex flex-col items-center gap-3 p-4 sition-all duration-200 text-center",
 							mode === m.id
 								? "border-primary bg-primary/5 shadow-sm"
 								: "border-border bg-card hover:border-primary/50 hover:bg-muted/50",
@@ -264,7 +264,7 @@ export default function BackwardsTextGenerator() {
 					>
 						<div
 							className={cn(
-								"w-12 h-12 rounded-xl flex items-center justify-center transition-colors",
+								"w-12 h-12 s-center justify-center transition-colors",
 								mode === m.id
 									? "bg-primary text-primary-foreground"
 									: "bg-muted text-muted-foreground",
@@ -306,7 +306,7 @@ export default function BackwardsTextGenerator() {
 							setInputText(e.target.value)
 						}
 						placeholder="Type or paste your text here..."
-						className="min-h-[350px] text-lg p-6 bg-card border-border/60 focus:border-primary/50 transition-colors resize-none rounded-2xl shadow-sm"
+						className="min-h-[350px] text-lg p-6 bg-card border-border/60 focus:border-primary/50 transition-colors resize-none shadow-sm"
 					/>
 				</div>
 
@@ -322,7 +322,7 @@ export default function BackwardsTextGenerator() {
 								size="sm"
 								onClick={downloadText}
 								disabled={!outputText}
-								className="h-8 rounded-lg"
+								className="h-8 "
 							>
 								<Download className="w-4 h-4 mr-2" />
 								Download
@@ -332,7 +332,7 @@ export default function BackwardsTextGenerator() {
 								size="sm"
 								onClick={copyToClipboard}
 								disabled={!outputText}
-								className="h-8 rounded-lg shadow-sm"
+								className="h-8 shadow-sm"
 							>
 								<Copy className="w-4 h-4 mr-2" />
 								Copy
@@ -340,7 +340,7 @@ export default function BackwardsTextGenerator() {
 						</div>
 					</div>
 					<div className="relative group">
-						<div className="min-h-[350px] w-full p-6 bg-muted/30 border border-border/60 rounded-2xl text-lg break-words overflow-auto">
+						<div className="min-h-[350px] w-full p-6 bg-muted/30 border border-border/60 s overflow-auto">
 							{outputText || (
 								<span className="text-muted-foreground italic">
 									Your result will appear here...
@@ -359,9 +359,9 @@ export default function BackwardsTextGenerator() {
 			</div>
 
 			{/* Statistics Footer */}
-			<div className="flex flex-wrap items-center justify-center gap-8 py-6 px-10 bg-card border border-border/50 rounded-3xl shadow-sm">
+			<div className="flex flex-wrap items-center justify-center gap-8 py-6 px-10 bg-card border border-border/50 shadow-sm">
 				<div className="flex items-center gap-3">
-					<div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+					<div className="w-10 h-10 s-center justify-center text-primary">
 						<Type className="w-5 h-5" />
 					</div>
 					<div className="flex flex-col">
@@ -375,7 +375,7 @@ export default function BackwardsTextGenerator() {
 				</div>
 				<div className="w-px h-8 bg-border hidden sm:block" />
 				<div className="flex items-center gap-3">
-					<div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+					<div className="w-10 h-10 s-center justify-center text-primary">
 						<List className="w-5 h-5" />
 					</div>
 					<div className="flex flex-col">
@@ -389,7 +389,7 @@ export default function BackwardsTextGenerator() {
 				</div>
 				<div className="w-px h-8 bg-border hidden sm:block" />
 				<div className="flex items-center gap-3">
-					<div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+					<div className="w-10 h-10 s-center justify-center text-primary">
 						<RefreshCw className="w-5 h-5" />
 					</div>
 					<div className="flex flex-col">

@@ -257,7 +257,7 @@ export default function ImageCompressionTool() {
 					</CardHeader>
 					<CardContent>
 						<div
-							className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+							className={`border-2 border-dashed sition-colors ${
 								dragActive
 									? "border-primary bg-primary/10"
 									: "border-muted-foreground/25"
@@ -352,7 +352,7 @@ export default function ImageCompressionTool() {
 								{files.map((fileItem) => (
 									<div
 										key={fileItem.id}
-										className="flex items-center justify-between p-4 border rounded-lg"
+										className="flex items-center justify-between p-4 border "
 									>
 										<div className="flex items-center space-x-3 flex-1">
 											<FileIcon className="h-5 w-5 text-muted-foreground" />
@@ -609,7 +609,7 @@ export default function ImageCompressionTool() {
 					</div>
 
 					{/* Technical SEO Content */}
-					<div className="bg-muted/30 rounded-lg p-8 mb-12">
+					<div className="bg-muted/30 ">
 						<h3 className="text-2xl font-bold mb-4">
 							Why Choose Our Free Image Optimizer?
 						</h3>
@@ -647,25 +647,25 @@ export default function ImageCompressionTool() {
 							Popular Use Cases
 						</h3>
 						<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-							<div className="text-center p-4 bg-muted/20 rounded-lg">
+							<div className="text-center p-4 bg-muted/20 ">
 								<h4 className="font-semibold mb-2">Website Optimization</h4>
 								<p className="text-xs text-muted-foreground">
 									Faster loading pages, better SEO rankings
 								</p>
 							</div>
-							<div className="text-center p-4 bg-muted/20 rounded-lg">
+							<div className="text-center p-4 bg-muted/20 ">
 								<h4 className="font-semibold mb-2">Email Attachments</h4>
 								<p className="text-xs text-muted-foreground">
 									Stay under size limits without quality loss
 								</p>
 							</div>
-							<div className="text-center p-4 bg-muted/20 rounded-lg">
+							<div className="text-center p-4 bg-muted/20 ">
 								<h4 className="font-semibold mb-2">Social Media</h4>
 								<p className="text-xs text-muted-foreground">
 									Instagram, Facebook, Twitter optimization
 								</p>
 							</div>
-							<div className="text-center p-4 bg-muted/20 rounded-lg">
+							<div className="text-center p-4 bg-muted/20 ">
 								<h4 className="font-semibold mb-2">Storage Savings</h4>
 								<p className="text-xs text-muted-foreground">
 									Free up disk space and cloud storage

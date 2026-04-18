@@ -103,7 +103,7 @@ export default function JWTDecoder() {
 					</Link>
 
 					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 							<Key className="h-6 w-6 text-primary" />
 						</div>
 						<div>
@@ -161,7 +161,7 @@ export default function JWTDecoder() {
 
 								{isValid !== null && (
 									<div
-										className={`flex items-center gap-2 p-3 rounded-lg ${isValid ? "bg-muted/50 dark:bg-green-950" : "bg-destructive/10 dark:bg-red-950"}`}
+										className={`flex items-center gap-2 p-3 sValid ? "bg-muted/50 dark:bg-green-950" : "bg-destructive/10 dark:bg-red-950"}`}
 									>
 										{isValid ? (
 											<CheckCircleIcon className="h-5 w-5 text-primary" />
@@ -240,7 +240,7 @@ export default function JWTDecoder() {
 								</CardDescription>
 							</CardHeader>
 							<CardContent className="space-y-4">
-								<div className="p-3 bg-muted rounded-lg font-mono text-sm break-all">
+								<div className="p-3 bg-muted sm break-all">
 									{signature || "Signature will appear here..."}
 								</div>
 								<Button

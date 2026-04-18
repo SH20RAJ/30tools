@@ -152,7 +152,7 @@ export function SimpleTeraboxPlayer() {
 					</div>
 
 					{error && (
-						<div className="p-4 rounded-lg bg-destructive/10 text-destructive border border-destructive/20 flex items-center">
+						<div className="p-4 structive/10 text-destructive border border-destructive/20 flex items-center">
 							<span className="mr-2">⚠️</span> {error}
 						</div>
 					)}
@@ -204,7 +204,7 @@ export function SimpleTeraboxPlayer() {
 									<DialogTitle className="">Embed Video</DialogTitle>
 								</DialogHeader>
 								<div className="space-y-4 pt-2">
-									<div className="p-4 bg-muted rounded-md font-mono text-xs break-all border overflow-hidden">
+									<div className="p-4 bg-muted s break-all border overflow-hidden">
 										{getEmbedCode()}
 									</div>
 									<Button

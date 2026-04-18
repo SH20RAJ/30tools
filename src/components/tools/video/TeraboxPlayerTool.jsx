@@ -201,7 +201,7 @@ export default function TeraboxPlayerTool() {
 										href="https://terabox.beer"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary/90 text-white font-medium rounded-lg transition-colors"
+										className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary/90 text-white font-medium sition-colors"
 									>
 										Visit terabox.beer →
 									</a>
@@ -264,7 +264,7 @@ export default function TeraboxPlayerTool() {
 						{error && (
 							<Card>
 								<CardContent className="py-6">
-									<div className="flex items-center p-3 bg-destructive/10 border border-destructive/20 rounded-md">
+									<div className="flex items-center p-3 bg-destructive/10 border border-destructive/20 ">
 										<AlertCircleIcon className="h-5 w-5 text-destructive mr-2" />
 										<span className="text-sm text-destructive">{error}</span>
 									</div>
@@ -286,7 +286,7 @@ export default function TeraboxPlayerTool() {
 							<Card>
 								<CardContent className="py-8">
 									<div className="text-center space-y-3">
-										<div className="w-16 h-16 bg-muted dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto">
+										<div className="w-16 h-16 bg-muted dark:bg-primary/20 s-center justify-center mx-auto">
 											<PlayIcon className="h-8 w-8 text-primary" />
 										</div>
 										<div>
@@ -439,7 +439,7 @@ export default function TeraboxPlayerTool() {
 								Features of 30Tools Terabox Player
 							</h2>
 							<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-								<div className="text-center p-4 border rounded-lg">
+								<div className="text-center p-4 border ">
 									<h4 className="font-semibold mb-2">
 										Online Terabox Link Player
 									</h4>
@@ -447,31 +447,31 @@ export default function TeraboxPlayerTool() {
 										Play any Terabox video directly in your browser
 									</p>
 								</div>
-								<div className="text-center p-4 border rounded-lg">
+								<div className="text-center p-4 border ">
 									<h4 className="font-semibold mb-2">No Login Required</h4>
 									<p className="text-sm text-muted-foreground">
 										Watch Terabox videos without creating an account
 									</p>
 								</div>
-								<div className="text-center p-4 border rounded-lg">
+								<div className="text-center p-4 border ">
 									<h4 className="font-semibold mb-2">App-Free Experience</h4>
 									<p className="text-sm text-muted-foreground">
 										No need to download the Terabox app
 									</p>
 								</div>
-								<div className="text-center p-4 border rounded-lg">
+								<div className="text-center p-4 border ">
 									<h4 className="font-semibold mb-2">Fast Streaming</h4>
 									<p className="text-sm text-muted-foreground">
 										Instant video loading with smooth playback
 									</p>
 								</div>
-								<div className="text-center p-4 border rounded-lg">
+								<div className="text-center p-4 border ">
 									<h4 className="font-semibold mb-2">Mobile Compatible</h4>
 									<p className="text-sm text-muted-foreground">
 										Works perfectly on phones, tablets, and desktops
 									</p>
 								</div>
-								<div className="text-center p-4 border rounded-lg">
+								<div className="text-center p-4 border ">
 									<h4 className="font-semibold mb-2">Download Options</h4>
 									<p className="text-sm text-muted-foreground">
 										Multiple download links for offline viewing
@@ -490,7 +490,7 @@ export default function TeraboxPlayerTool() {
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 								<div className="space-y-4">
 									<div className="flex items-start space-x-3">
-										<div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
+										<div className="w-2 h-2 bg-muted/500 "></div>
 										<div>
 											<h4 className="font-semibold">
 												Watch viral Terabox videos online
@@ -501,7 +501,7 @@ export default function TeraboxPlayerTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
+										<div className="w-2 h-2 bg-muted/500 "></div>
 										<div>
 											<h4 className="font-semibold">
 												Play Terabox videos on school or office PCs
@@ -512,7 +512,7 @@ export default function TeraboxPlayerTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
+										<div className="w-2 h-2 bg-muted/500 "></div>
 										<div>
 											<h4 className="font-semibold">
 												Open Terabox video links instantly
@@ -525,7 +525,7 @@ export default function TeraboxPlayerTool() {
 								</div>
 								<div className="space-y-4">
 									<div className="flex items-start space-x-3">
-										<div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
+										<div className="w-2 h-2 bg-muted/500 "></div>
 										<div>
 											<h4 className="font-semibold">
 												Terabox video viewer on mobile
@@ -536,7 +536,7 @@ export default function TeraboxPlayerTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
+										<div className="w-2 h-2 bg-muted/500 "></div>
 										<div>
 											<h4 className="font-semibold">
 												Access content from friends
@@ -547,7 +547,7 @@ export default function TeraboxPlayerTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-2 h-2 bg-muted/500 rounded-full mt-2"></div>
+										<div className="w-2 h-2 bg-muted/500 "></div>
 										<div>
 											<h4 className="font-semibold">
 												Preview large video files
@@ -654,7 +654,7 @@ export default function TeraboxPlayerTool() {
 								play it without installing the Terabox app - just remember one
 								thing:
 							</p>
-							<div className="bg-muted/50 dark:bg-primary/20 p-6 rounded-lg mb-6">
+							<div className="bg-muted/50 dark:bg-primary/20 p-6 ">
 								<p className="text-xl font-semibold text-primary dark:text-primary">
 									Go to 30Tools.com and start watching instantly!
 								</p>

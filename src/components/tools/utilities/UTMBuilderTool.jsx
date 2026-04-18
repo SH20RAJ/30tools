@@ -200,7 +200,7 @@ export default function UTMBuilderTool() {
 				<div className="space-y-3 pt-6 border-t">
 					<h3 className="text-lg font-semibold">Generated Campaign URL</h3>
 					<div className="relative">
-						<div className="p-4 bg-secondary rounded-lg font-mono text-sm break-all min-h-[3rem] flex items-center pr-12">
+						<div className="p-4 bg-secondary sm break-all min-h-[3rem] flex items-center pr-12">
 							{generatedUrl || "Fill in the fields above to generate URL..."}
 						</div>
 						<Button

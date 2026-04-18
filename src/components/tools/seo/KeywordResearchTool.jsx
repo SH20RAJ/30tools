@@ -139,7 +139,7 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 		<div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
 			{/* Header */}
 			<div className="text-center space-y-4">
-				<div className="inline-flex items-center justify-center w-16 h-16 bg-muted rounded-full mb-4">
+				<div className="inline-flex items-center justify-center w-16 h-16 bg-muted ">
 					<Globe className="h-8 w-8 text-primary" />
 				</div>
 				<h2 className="text-4xl font-bold text-foreground">
@@ -460,7 +460,7 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 							Long-tail keywords are longer, more specific phrases that are
 							easier to rank for and often have higher conversion rates.
 						</p>
-						<div className="bg-muted p-3 rounded-lg">
+						<div className="bg-muted p-3 ">
 							<p className="text-sm font-medium mb-2">Examples:</p>
 							<ul className="text-sm space-y-1">
 								<li>
@@ -576,7 +576,7 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 				<CardContent>
 					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 						<div className="space-y-4">
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<div className="flex items-center gap-2 mb-2">
 									<div className="flex">
 										{[...Array(5)].map((_, i) => (
@@ -601,7 +601,7 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 								</p>
 							</div>
 
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<div className="flex items-center gap-2 mb-2">
 									<div className="flex">
 										{[...Array(5)].map((_, i) => (
@@ -627,7 +627,7 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 						</div>
 
 						<div className="space-y-4">
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<div className="flex items-center gap-2 mb-2">
 									<div className="flex">
 										{[...Array(4)].map((_, i) => (
@@ -653,7 +653,7 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 								</p>
 							</div>
 
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<div className="flex items-center gap-2 mb-2">
 									<div className="flex">
 										{[...Array(5)].map((_, i) => (
@@ -695,8 +695,8 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 				</CardHeader>
 				<CardContent>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-						<div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-							<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border sition-colors">
+							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto mb-3">
 								<Search className="h-6 w-6 text-primary" />
 							</div>
 							<h4 className="font-medium mb-1">Meta Tags Generator</h4>
@@ -705,8 +705,8 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 							</p>
 						</div>
 
-						<div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-							<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border sition-colors">
+							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto mb-3">
 								<Globe className="h-6 w-6 text-primary" />
 							</div>
 							<h4 className="font-medium mb-1">Sitemap Generator</h4>
@@ -715,8 +715,8 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 							</p>
 						</div>
 
-						<div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-							<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border sition-colors">
+							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto mb-3">
 								<Shield className="h-6 w-6 text-primary" />
 							</div>
 							<h4 className="font-medium mb-1">SSL Checker</h4>
@@ -785,7 +785,7 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 						</ul>
 
 						<h3>Keyword Research Best Practices</h3>
-						<div className="bg-muted p-4 rounded-lg">
+						<div className="bg-muted p-4 ">
 							<h4>Do's and Don'ts:</h4>
 							<div className="grid md:grid-cols-2 gap-4 mt-3">
 								<div>

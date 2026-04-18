@@ -257,15 +257,15 @@ export default function SeoToolkit() {
 							</p>
 							<div className="flex gap-4 justify-center md:justify-start">
 								<span className="flex items-center gap-2 text-sm">
-									<span className="w-2 h-2 rounded-full bg-red-500" />{" "}
+									<span className="w-2 h-2 " />{" "}
 									{auditData.issues.critical} Critical
 								</span>
 								<span className="flex items-center gap-2 text-sm">
-									<span className="w-2 h-2 rounded-full bg-amber-500" />{" "}
+									<span className="w-2 h-2 " />{" "}
 									{auditData.issues.warning} Warning
 								</span>
 								<span className="flex items-center gap-2 text-sm">
-									<span className="w-2 h-2 rounded-full bg-emerald-500" />{" "}
+									<span className="w-2 h-2 " />{" "}
 									{auditData.issues.passed} Good
 								</span>
 							</div>
@@ -296,13 +296,13 @@ export default function SeoToolkit() {
 									<XCircle className="w-5 h-5 text-red-500" />
 								)}
 							</div>
-							<div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center mb-4 text-orange-500">
+							<div className="w-10 h-10 s-center justify-center mb-4 text-orange-500">
 								{check.icon}
 							</div>
 							<h4 className="font-semibold mb-2 pr-8">{check.title}</h4>
 							<p className="text-sm text-muted-foreground mb-4">{check.desc}</p>
 							{check.status !== "good" && (
-								<div className="mt-4 p-3 bg-muted/50 rounded-md text-sm border border-border/50">
+								<div className="mt-4 p-3 bg-muted/50 sm border border-border/50">
 									<span className="font-medium text-foreground">Issue:</span>{" "}
 									Sample issue description detected.
 								</div>
@@ -318,7 +318,7 @@ export default function SeoToolkit() {
 		<div className="container mx-auto px-4 py-16 md:py-24">
 			{/* Hero Section */}
 			<div className="text-center max-w-3xl mx-auto mb-20">
-				<div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-100 text-orange-600 text-sm font-medium mb-8">
+				<div className="inline-flex items-center gap-2 px-3 py-1 sm font-medium mb-8">
 					<Zap className="w-3 h-3" /> 27 Free Checks included
 				</div>
 				<h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 text-foreground">
@@ -343,7 +343,7 @@ export default function SeoToolkit() {
 					<Input
 						type="url"
 						placeholder="Enter website URL..."
-						className="pl-11 pr-32 h-14 text-lg rounded-xl shadow-sm border-2 focus-visible:ring-offset-0 focus-visible:border-orange-500"
+						className="pl-11 pr-32 h-14 text-lg shadow-sm border-2 focus-visible:ring-offset-0 focus-visible:border-orange-500"
 						value={url}
 						onChange={(e) => setUrl(e.target.value)}
 						required
@@ -352,7 +352,7 @@ export default function SeoToolkit() {
 						<Button
 							type="submit"
 							size="lg"
-							className="h-full bg-orange-500 hover:bg-orange-600 text-white rounded-lg px-6 font-semibold"
+							className="h-full bg-orange-500 hover:bg-orange-600 text-white semibold"
 							disabled={isAnalyzing}
 						>
 							{isAnalyzing ? "Scanning..." : "Scan Free"}
@@ -381,7 +381,7 @@ export default function SeoToolkit() {
 						key={i}
 						className="p-6 border border-border/50 shadow-sm hover:shadow-md transition-all"
 					>
-						<div className="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center mb-4">
+						<div className="w-10 h-10 s-center justify-center mb-4">
 							{check.icon}
 						</div>
 						<h3 className="font-semibold mb-2">{check.title}</h3>
@@ -390,8 +390,8 @@ export default function SeoToolkit() {
 				))}
 
 				{/* Upgrade / More Card */}
-				<div className="p-6 flex flex-col items-center justify-center text-center border-2 border-dashed border-border rounded-xl">
-					<div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center mb-4">
+				<div className="p-6 flex flex-col items-center justify-center text-center border-2 border-dashed border-border ">
+					<div className="w-10 h-10 s-center justify-center mb-4">
 						<Zap className="w-5 h-5 text-muted-foreground" />
 					</div>
 					<h3 className="font-semibold mb-2">And much more...</h3>

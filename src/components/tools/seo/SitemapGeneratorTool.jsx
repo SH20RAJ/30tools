@@ -64,12 +64,12 @@ export default function SitemapGeneratorTool() {
 			const fullUrl = item.url.startsWith("http")
 				? item.url
 				: `${baseUrl.replace(/\/$/, "")}/${item.url.replace(/^\//, "")}`;
-			xml += `  <url>\n`;
-			xml += `    <loc>${fullUrl}</loc>\n`;
-			xml += `    <lastmod>${currentDate}</lastmod>\n`;
-			xml += `    <changefreq>${item.changefreq}</changefreq>\n`;
-			xml += `    <priority>${item.priority}</priority>\n`;
-			xml += `  </url>\n`;
+			xml += ` <url>\n`;
+			xml += ` <loc>${fullUrl}</loc>\n`;
+			xml += ` <lastmod>${currentDate}</lastmod>\n`;
+			xml += ` <changefreq>${item.changefreq}</changefreq>\n`;
+			xml += ` <priority>${item.priority}</priority>\n`;
+			xml += ` </url>\n`;
 		});
 
 		xml += `</urlset>`;
@@ -109,7 +109,7 @@ export default function SitemapGeneratorTool() {
 					</Link>
 
 					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 							<MapIcon className="h-6 w-6 text-primary" />
 						</div>
 						<div>
@@ -164,7 +164,7 @@ export default function SitemapGeneratorTool() {
 							</CardHeader>
 							<CardContent className="space-y-4">
 								{urls.map((item, index) => (
-									<div key={index} className="p-4 border rounded-lg space-y-3">
+									<div key={index} className="p-4 border space-y-3">
 										<div className="flex items-center justify-between">
 											<Label>URL {index + 1}</Label>
 											{urls.length > 1 && (
@@ -192,7 +192,7 @@ export default function SitemapGeneratorTool() {
 													onChange={(e) =>
 														updateUrl(index, "changefreq", e.target.value)
 													}
-													className="w-full mt-1 px-3 py-2 border rounded-md text-sm"
+													className="w-full mt-1 px-3 py-2 border sm"
 												>
 													<option value="always">Always</option>
 													<option value="hourly">Hourly</option>
@@ -211,7 +211,7 @@ export default function SitemapGeneratorTool() {
 													onChange={(e) =>
 														updateUrl(index, "priority", e.target.value)
 													}
-													className="w-full mt-1 px-3 py-2 border rounded-md text-sm"
+													className="w-full mt-1 px-3 py-2 border sm"
 												>
 													<option value="1.0">1.0 (Highest)</option>
 													<option value="0.9">0.9</option>
@@ -304,7 +304,7 @@ export default function SitemapGeneratorTool() {
 							</CardHeader>
 							<CardContent className="space-y-3 text-sm">
 								<div className="flex items-start gap-2">
-									<div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+									<div className="w-2 h-2 bg-primary shrink-0"></div>
 									<div>
 										<p className="font-medium">Update Frequency</p>
 										<p className="text-muted-foreground">
@@ -314,7 +314,7 @@ export default function SitemapGeneratorTool() {
 									</div>
 								</div>
 								<div className="flex items-start gap-2">
-									<div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+									<div className="w-2 h-2 bg-primary shrink-0"></div>
 									<div>
 										<p className="font-medium">Priority Settings</p>
 										<p className="text-muted-foreground">
@@ -324,7 +324,7 @@ export default function SitemapGeneratorTool() {
 									</div>
 								</div>
 								<div className="flex items-start gap-2">
-									<div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+									<div className="w-2 h-2 bg-primary shrink-0"></div>
 									<div>
 										<p className="font-medium">Submit to Search Engines</p>
 										<p className="text-muted-foreground">

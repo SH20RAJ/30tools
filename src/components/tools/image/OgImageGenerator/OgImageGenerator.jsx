@@ -358,7 +358,7 @@ export default function OgImageGenerator() {
 						<div className="transform scale-75 md:scale-90 lg:scale-100 transition-transform origin-top">
 							<canvas
 								ref={canvasRef}
-								className="shadow-2xl rounded-lg max-w-full h-auto"
+								className="shadow-2xl "
 								style={{ width: "800px", height: "420px" }} // Display size (aspect ratio preserved)
 							/>
 						</div>
@@ -366,7 +366,7 @@ export default function OgImageGenerator() {
 				</Card>
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-					<div className="bg-muted p-4 rounded-lg text-center text-sm">
+					<div className="bg-muted p-4 sm">
 						<p className="font-semibold text-foreground">
 							Optimized for Socials
 						</p>
@@ -375,13 +375,13 @@ export default function OgImageGenerator() {
 							LinkedIn.
 						</p>
 					</div>
-					<div className="bg-muted p-4 rounded-lg text-center text-sm">
+					<div className="bg-muted p-4 sm">
 						<p className="font-semibold text-foreground">Fast & Secure</p>
 						<p className="text-muted-foreground">
 							Generated instantly in your browser. No server uploads.
 						</p>
 					</div>
-					<div className="bg-muted p-4 rounded-lg text-center text-sm">
+					<div className="bg-muted p-4 sm">
 						<p className="font-semibold text-foreground">Customizable</p>
 						<p className="text-muted-foreground">
 							Use your own brand colors, logos, and custom layout.

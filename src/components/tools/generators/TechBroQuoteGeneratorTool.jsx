@@ -348,7 +348,7 @@ const TechBroQuoteGeneratorTool = () => {
 							<CardContent>
 								{generatedQuote ? (
 									<div className="space-y-4">
-										<div className="p-6 bg-background/20 dark:to-purple-900/20 rounded-lg border-2 border-dashed border-border dark:border-border">
+										<div className="p-6 bg-background/20 dark:to-purple-900/20 shed border-border dark:border-border">
 											<pre className="whitespace-pre-wrap font-medium text-foreground dark:text-gray-200 leading-relaxed">
 												{generatedQuote}
 											</pre>
@@ -395,20 +395,20 @@ const TechBroQuoteGeneratorTool = () => {
 					</CardHeader>
 					<CardContent>
 						<div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-							<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+							<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 								<h4 className="font-semibold mb-2">🎯 Perfect for Memes</h4>
 								<p>
 									Use these quotes for satirical content and startup parody
 									posts
 								</p>
 							</div>
-							<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+							<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 								<h4 className="font-semibold mb-2">📱 Social Media Ready</h4>
 								<p>
 									Formatted for LinkedIn, Twitter, and other social platforms
 								</p>
 							</div>
-							<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+							<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 								<h4 className="font-semibold mb-2">😂 Satirical Content</h4>
 								<p>
 									Perfect for poking fun at startup culture and tech buzzwords

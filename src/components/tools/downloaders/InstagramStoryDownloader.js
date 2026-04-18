@@ -121,7 +121,7 @@ export default function InstagramStoryDownloader() {
 					</div>
 
 					{error && (
-						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
+						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 structive">
 							<AlertCircle className="h-4 w-4" />
 							<span className="text-sm">{error}</span>
 						</div>
@@ -129,7 +129,7 @@ export default function InstagramStoryDownloader() {
 
 					{storiesData && (
 						<div className="space-y-4">
-							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
+							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border ">
 								<CheckCircle className="h-4 w-4" />
 								<span className="text-sm">
 									Stories loaded successfully! (Anonymous viewing)
@@ -143,7 +143,7 @@ export default function InstagramStoryDownloader() {
 										<img
 											src={storiesData.profilePic}
 											alt="Profile"
-											className="w-12 h-12 rounded-full object-cover"
+											className="w-12 h-12 "
 										/>
 										<div>
 											<h3 className="font-medium">@{storiesData.username}</h3>
@@ -205,7 +205,7 @@ export default function InstagramStoryDownloader() {
 														<img
 															src={highlight.cover}
 															alt={highlight.name}
-															className="w-8 h-8 rounded-full object-cover"
+															className="w-8 h-8 "
 														/>
 														<div>
 															<p className="text-sm font-medium">

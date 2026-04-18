@@ -62,30 +62,30 @@ export default function TeraboxEmbedTools({
 		const dataString = btoa(JSON.stringify(embedData));
 
 		return `<iframe 
-  src="${window.location.origin}/embed/video?data=${dataString}" 
-  width="${embedSettings.width}" 
-  height="${embedSettings.height}"
-  style="border: none; border-radius: 8px; ${embedSettings.responsive ? "max-width: 100%;" : ""}"
-  allowfullscreen
-  title="${videoData.name}"
-  ${embedSettings.autoplay ? 'allow="autoplay"' : ""}
+ src="${window.location.origin}/embed/video?data=${dataString}" 
+ width="${embedSettings.width}" 
+ height="${embedSettings.height}"
+ style="border: none; border-radius: 8px; ${embedSettings.responsive ? "max-width: 100%;" : ""}"
+ allowfullscreen
+ title="${videoData.name}"
+ ${embedSettings.autoplay ? 'allow="autoplay"' : ""}
 ></iframe>`;
 	};
 
 	const generateDirectVideoCode = () => {
 		return `<video 
-  width="${embedSettings.width}" 
-  height="${embedSettings.height}"
-  ${embedSettings.controls ? "controls" : ""}
-  ${embedSettings.autoplay ? "autoplay" : ""}
-  ${embedSettings.muted ? "muted" : ""}
-  ${embedSettings.loop ? "loop" : ""}
-  poster="${videoData.thumbnail}"
-  preload="metadata"
-  style="border-radius: 8px; ${embedSettings.responsive ? "max-width: 100%;" : ""}"
+ width="${embedSettings.width}" 
+ height="${embedSettings.height}"
+ ${embedSettings.controls ? "controls" : ""}
+ ${embedSettings.autoplay ? "autoplay" : ""}
+ ${embedSettings.muted ? "muted" : ""}
+ ${embedSettings.loop ? "loop" : ""}
+ poster="${videoData.thumbnail}"
+ preload="metadata"
+ style="border-radius: 8px; ${embedSettings.responsive ? "max-width: 100%;" : ""}"
 >
-  <source src="${videoData.stream_url}" type="video/mp4">
-  Your browser does not support the video tag.
+ <source src="${videoData.stream_url}" type="video/mp4">
+ Your browser does not support the video tag.
 </video>`;
 	};
 
@@ -93,26 +93,26 @@ export default function TeraboxEmbedTools({
 		return `import React from 'react';
 
 const TeraboxVideo = () => {
-  return (
-    <div style={{ width: '${embedSettings.width}', maxWidth: '100%' }}>
-      ${embedSettings.showTitle ? `<h3>${videoData.name}</h3>` : ""}
-      <video 
-        width="100%" 
-        height="${embedSettings.height}"
-        ${embedSettings.controls ? "controls" : ""}
-        ${embedSettings.autoplay ? "autoplay" : ""}
-        ${embedSettings.muted ? "muted" : ""}
-        ${embedSettings.loop ? "loop" : ""}
-        poster="${videoData.thumbnail}"
-        preload="metadata"
-        style={{ borderRadius: '8px' }}
-      >
-        <source src="${videoData.stream_url}" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      ${embedSettings.showDescription ? `<p>Watch ${videoData.name} online</p>` : ""}
-    </div>
-  );
+ return (
+ <div style={{ width: '${embedSettings.width}', maxWidth: '100%' }}>
+ ${embedSettings.showTitle ? `<h3>${videoData.name}</h3>` : ""}
+ <video 
+ width="100%" 
+ height="${embedSettings.height}"
+ ${embedSettings.controls ? "controls" : ""}
+ ${embedSettings.autoplay ? "autoplay" : ""}
+ ${embedSettings.muted ? "muted" : ""}
+ ${embedSettings.loop ? "loop" : ""}
+ poster="${videoData.thumbnail}"
+ preload="metadata"
+ style={{ borderRadius: '8px' }}
+ >
+ <source src="${videoData.stream_url}" type="video/mp4" />
+ Your browser does not support the video tag.
+ </video>
+ ${embedSettings.showDescription ? `<p>Watch ${videoData.name} online</p>` : ""}
+ </div>
+ );
 };
 
 export default TeraboxVideo;`;
@@ -295,7 +295,7 @@ export default TeraboxVideo;`;
 						</div>
 
 						<div className="space-y-4">
-							<div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+							<div className="bg-gray-100 dark:bg-gray-800 p-4 ">
 								<iframe
 									src={previewUrl}
 									width="100%"
@@ -342,7 +342,7 @@ export default TeraboxVideo;`;
 								</div>
 							</div>
 
-							<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+							<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 								<h5 className="font-medium text-sm mb-2">Quick Actions</h5>
 								<div className="flex flex-wrap gap-2">
 									<Button

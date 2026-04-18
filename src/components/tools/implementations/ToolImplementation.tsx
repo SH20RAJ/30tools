@@ -28,7 +28,7 @@ import { IMAGE_CONVERT_DEFAULT_FORMAT } from "./imageFormatDefaults";
 
 function QrDecodeTool() {
 	return (
-		<div className="rounded-xl border border-dashed p-8 text-center text-muted-foreground">
+		<div className="shed p-8 text-center text-muted-foreground">
 			<p className="mb-2 font-medium text-foreground">Decode QR from camera</p>
 			<p className="text-sm">
 				On Chromium browsers you can use the in-app camera scanner from our QR generator tool
@@ -47,7 +47,7 @@ function PolicyDraftTool({ kind }: { kind: "privacy" | "terms" | "disclaimer" })
 				? "By using this site you agree to follow applicable laws. Service provided as-is without warranties."
 				: "This site provides tools as-is; verify critical outputs independently.";
 	return (
-		<div className="prose prose-sm dark:prose-invert max-w-none rounded-xl border bg-card p-6">
+		<div className="prose prose-sm dark:prose-invert max-w-none ">
 			<h3 className="mt-0">Starter template</h3>
 			<p>{body}</p>
 			<p className="text-muted-foreground text-xs">
@@ -274,7 +274,7 @@ export default function ToolImplementation({ toolId }: { toolId: string }) {
 
 	if (toolId === "htaccess-redirect-generator") {
 		return (
-			<pre className="rounded-xl border bg-muted/40 p-4 text-xs leading-relaxed">
+			<pre className="s leading-relaxed">
 				{`RewriteEngine On
 RewriteRule ^old-path$ /new-path [R=301,L]`}
 			</pre>
@@ -283,15 +283,15 @@ RewriteRule ^old-path$ /new-path [R=301,L]`}
 
 	if (toolId === "faq-schema-generator") {
 		return (
-			<pre className="rounded-xl border bg-muted/40 p-4 text-xs leading-relaxed">
+			<pre className="s leading-relaxed">
 				{`{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [{
-    "@type": "Question",
-    "name": "Your question?",
-    "acceptedAnswer": { "@type": "Answer", "text": "Your answer." }
-  }]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [{
+ "@type": "Question",
+ "name": "Your question?",
+ "acceptedAnswer": { "@type": "Answer", "text": "Your answer." }
+ }]
 }`}
 			</pre>
 		);

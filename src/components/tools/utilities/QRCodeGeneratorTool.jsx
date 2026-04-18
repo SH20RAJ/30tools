@@ -466,7 +466,7 @@ export default function QRCodeGeneratorTool() {
 					</Link>
 
 					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 							<QrCodeIcon className="h-6 w-6 text-primary" />
 						</div>
 						<div>
@@ -656,7 +656,7 @@ export default function QRCodeGeneratorTool() {
 								<CardDescription>{getPreviewData()}</CardDescription>
 							</CardHeader>
 							<CardContent className="space-y-4">
-								<div className="flex justify-center p-8 bg-muted/50 rounded-lg">
+								<div className="flex justify-center p-8 bg-muted/50 ">
 									{isGenerating ? (
 										<div className="flex items-center gap-2">
 											<RefreshCwIcon className="h-6 w-6 animate-spin" />
@@ -665,7 +665,7 @@ export default function QRCodeGeneratorTool() {
 									) : (
 										<canvas
 											ref={canvasRef}
-											className="border rounded-lg shadow-sm"
+											className="border shadow-sm"
 											style={{ maxWidth: "100%", height: "auto" }}
 										/>
 									)}

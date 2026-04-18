@@ -6,11 +6,11 @@ export default function ComingSoon({ toolName }) {
 	return (
 		<div className="container mx-auto px-4 py-20 text-center">
 			<div className="max-w-2xl mx-auto space-y-8">
-				<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+				<div className="w-20 h-20 bg-primary/10 s-center justify-center mx-auto mb-6 animate-pulse">
 					<Hammer className="w-10 h-10 text-primary" />
 				</div>
 
-				<h1 className="text-4xl md:text-5xl font-bold   bg-gradient-to-r from-primary to-primary/60">
+				<h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-primary/60">
 					{toolName}
 				</h1>
 
@@ -20,7 +20,7 @@ export default function ComingSoon({ toolName }) {
 					you. It will be available very soon!
 				</p>
 
-				<div className="p-6 bg-card border border-border/50 rounded-xl shadow-sm">
+				<div className="p-6 bg-card border border-border/50 shadow-sm">
 					<p className="font-medium mb-4">
 						While you wait, check out our other popular tools:
 					</p>
@@ -45,7 +45,7 @@ export default function ComingSoon({ toolName }) {
 
 				<div className="pt-8">
 					<Link href="/">
-						<Button size="lg" className="rounded-full px-8">
+						<Button size="lg" className="">
 							Explore All Tools
 						</Button>
 					</Link>

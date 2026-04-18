@@ -37,7 +37,7 @@ export default function TallyContactForm() {
 				marginHeight="0"
 				marginWidth="0"
 				title="Contact 30tools.com"
-				className="rounded-lg border"
+				className=""
 			/>
 		</div>
 	);

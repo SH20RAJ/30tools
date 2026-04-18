@@ -127,7 +127,7 @@ export default function ImagesToPdf() {
 					<Label htmlFor="image-upload" className="text-base font-medium">
 						1. Select Images
 					</Label>
-					<div className="border-2 border-dashed border-input rounded-lg p-8 text-center hover:bg-muted/20 transition-colors cursor-pointer relative">
+					<div className="border-2 border-dashed border-input sition-colors cursor-pointer relative">
 						<input
 							id="image-upload"
 							type="file"
@@ -152,7 +152,7 @@ export default function ImagesToPdf() {
 							{images.map((img, index) => (
 								<div
 									key={img.id}
-									className="relative group border rounded-lg p-2 bg-background"
+									className="relative group border "
 								>
 									<div className="relative w-full h-32 rounded overflow-hidden">
 										<Image
@@ -164,7 +164,7 @@ export default function ImagesToPdf() {
 									</div>
 									<button
 										onClick={() => removeImage(img.id)}
-										className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+										className="absolute top-1 right-1 bg-red-500 text-white sition-opacity"
 									>
 										<X className="w-3 h-3" />
 									</button>

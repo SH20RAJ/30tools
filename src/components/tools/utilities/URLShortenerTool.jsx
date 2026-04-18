@@ -361,7 +361,7 @@ export default function URLShortenerTool() {
 							{urls.map((urlData) => (
 								<div
 									key={urlData.id}
-									className="border rounded-lg p-4 space-y-3"
+									className="border space-y-3"
 								>
 									<div className="flex items-start justify-between">
 										<div className="flex-1 min-w-0 space-y-2">

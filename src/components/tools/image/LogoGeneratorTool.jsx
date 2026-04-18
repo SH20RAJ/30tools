@@ -296,7 +296,7 @@ export default function LogoGeneratorTool() {
 					<CardContent className="p-12 w-full flex items-center justify-center">
 						<div
 							ref={logoRef}
-							className="p-12 rounded-xl bg-transparent flex items-center justify-center"
+							className="p-12 sparent flex items-center justify-center"
 							style={{
 								flexDirection:
 									layout === "top"

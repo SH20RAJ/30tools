@@ -95,7 +95,7 @@ export default function AiVoiceSearchOptimizerTool() {
 						</Button>
 					</div>
 					{error && (
-						<div className="p-4 bg-red-50 text-red-600 rounded-md flex items-center gap-2">
+						<div className="p-4 bg-red-50 text-red-600 s-center gap-2">
 							<AlertCircle className="w-5 h-5" />
 							{error}
 						</div>

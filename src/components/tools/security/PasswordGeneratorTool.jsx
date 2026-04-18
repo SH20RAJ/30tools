@@ -219,7 +219,7 @@ export default function PasswordGeneratorTool() {
 			</Link>
 
 			<div className="flex items-center gap-3 mb-4">
-				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 					<ShieldIcon className="h-6 w-6 text-primary" />
 				</div>
 				<div>
@@ -305,9 +305,9 @@ export default function PasswordGeneratorTool() {
 											{strengthText} ({strength}%)
 										</span>
 									</div>
-									<div className="w-full bg-gray-200 rounded-full h-3">
+									<div className="w-full bg-gray-200 ">
 										<div
-											className={`h-3 rounded-full transition-all duration-300 ${getStrengthColor()}`}
+											className={`h-3 sition-all duration-300 ${getStrengthColor()}`}
 											style={{ width: `${strength}%` }}
 										/>
 									</div>
@@ -461,7 +461,7 @@ export default function PasswordGeneratorTool() {
 									{generatedPasswords.map((pwd, index) => (
 										<div
 											key={index}
-											className="flex items-center gap-2 p-2 border rounded-lg"
+											className="flex items-center gap-2 p-2 border "
 										>
 											<Input
 												value={pwd}

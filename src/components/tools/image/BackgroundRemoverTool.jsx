@@ -293,7 +293,7 @@ export default function BackgroundRemoverTool() {
 				</CardHeader>
 				<CardContent>
 					<div
-						className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center"
+						className="border-2 border-dashed border-muted-foreground/25 "
 						onDrop={handleDrop}
 						onDragOver={handleDragOver}
 					>
@@ -370,7 +370,7 @@ export default function BackgroundRemoverTool() {
 					<CardContent>
 						<div className="space-y-6">
 							{files.map((file) => (
-								<div key={file.id} className="border rounded-lg p-4">
+								<div key={file.id} className="border ">
 									<div className="flex items-center justify-between mb-4">
 										<div className="flex items-center gap-3">
 											{getStatusIcon(file.status)}

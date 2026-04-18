@@ -351,13 +351,13 @@ export default function VideoWatermarkRemoverTool() {
 
 						{/* Method Information */}
 						<div className="grid grid-cols-2 gap-4 text-sm">
-							<div className="text-center p-3 bg-muted rounded-lg">
+							<div className="text-center p-3 bg-muted ">
 								<div className="font-semibold">
 									{removalMethods[removalMethod].accuracy}
 								</div>
 								<div className="text-xs text-muted-foreground">Accuracy</div>
 							</div>
-							<div className="text-center p-3 bg-muted rounded-lg">
+							<div className="text-center p-3 bg-muted ">
 								<div className="font-semibold">
 									{removalMethods[removalMethod].speed}
 								</div>
@@ -396,7 +396,7 @@ export default function VideoWatermarkRemoverTool() {
 									</Button>
 								</div>
 
-								<div className="aspect-video bg-black rounded-lg overflow-hidden relative">
+								<div className="aspect-video bg-black ">
 									<img
 										src={
 											previewMode === "after"
@@ -473,7 +473,7 @@ export default function VideoWatermarkRemoverTool() {
 								</div>
 							</div>
 						) : (
-							<div className="flex items-center justify-center h-96 bg-muted rounded-lg">
+							<div className="flex items-center justify-center h-96 bg-muted ">
 								<div className="text-center text-muted-foreground">
 									<Wand2 className="h-12 w-12 mx-auto mb-2" />
 									<p>Upload a video to start watermark removal</p>
@@ -494,7 +494,7 @@ export default function VideoWatermarkRemoverTool() {
 						{Object.entries(removalMethods).map(([key, method]) => (
 							<div
 								key={key}
-								className={`p-4 rounded-lg border cursor-pointer transition-colors ${
+								className={`p-4 sor-pointer transition-colors ${
 									removalMethod === key
 										? "border-primary bg-primary/5"
 										: "border-border hover:border-primary/50"

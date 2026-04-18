@@ -129,7 +129,7 @@ export default function WebsiteAnalyzerTool() {
 			</Link>
 
 			<div className="flex items-center gap-3 mb-4">
-				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 					<BarChart3Icon className="h-6 w-6 text-primary" />
 				</div>
 				<div>

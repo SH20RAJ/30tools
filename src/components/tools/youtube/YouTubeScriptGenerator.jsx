@@ -256,7 +256,7 @@ export default function YouTubeScriptGenerator() {
 					</div>
 
 					{error && (
-						<div className="text-sm text-destructive bg-destructive/10 p-3 rounded-lg">
+						<div className="text-sm text-destructive bg-destructive/10 p-3 ">
 							{error}
 						</div>
 					)}
@@ -359,7 +359,7 @@ export default function YouTubeScriptGenerator() {
 							</ul>
 						</div>
 					</div>
-					<div className="p-3 bg-accent/20 rounded-lg">
+					<div className="p-3 bg-accent/20 ">
 						<p className="text-sm text-muted-foreground">
 							<strong>Pro Tip:</strong> Use the generated script as a foundation
 							and add your personal touch, examples, and unique insights to make

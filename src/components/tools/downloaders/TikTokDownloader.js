@@ -130,7 +130,7 @@ export default function TikTokDownloader() {
 					</div>
 
 					{error && (
-						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
+						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 structive">
 							<AlertCircle className="h-4 w-4" />
 							<span className="text-sm">{error}</span>
 						</div>
@@ -138,7 +138,7 @@ export default function TikTokDownloader() {
 
 					{videoData && (
 						<div className="space-y-4">
-							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
+							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border ">
 								<CheckCircle className="h-4 w-4" />
 								<span className="text-sm">
 									TikTok video processed successfully!
@@ -234,7 +234,7 @@ export default function TikTokDownloader() {
 				<CardContent>
 					<div className="space-y-4">
 						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-							<div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+							<div className="flex-shrink-0 w-8 h-8 bg-primary/10 s-center justify-center">
 								<span className="text-sm font-semibold text-primary">1</span>
 							</div>
 							<div className="flex-1 min-w-0">
@@ -247,7 +247,7 @@ export default function TikTokDownloader() {
 						</div>
 
 						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-							<div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+							<div className="flex-shrink-0 w-8 h-8 bg-primary/10 s-center justify-center">
 								<span className="text-sm font-semibold text-primary">2</span>
 							</div>
 							<div className="flex-1 min-w-0">
@@ -260,7 +260,7 @@ export default function TikTokDownloader() {
 						</div>
 
 						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-							<div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+							<div className="flex-shrink-0 w-8 h-8 bg-primary/10 s-center justify-center">
 								<span className="text-sm font-semibold text-primary">3</span>
 							</div>
 							<div className="flex-1 min-w-0">
@@ -273,7 +273,7 @@ export default function TikTokDownloader() {
 						</div>
 
 						<div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-							<div className="flex-shrink-0 w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+							<div className="flex-shrink-0 w-8 h-8 bg-primary/10 s-center justify-center">
 								<span className="text-sm font-semibold text-primary">4</span>
 							</div>
 							<div className="flex-1 min-w-0">
@@ -300,7 +300,7 @@ export default function TikTokDownloader() {
 					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 						<div className="space-y-4">
 							<div className="flex items-start gap-3">
-								<div className="w-8 h-8 bg-green-100 rounded-full flex items-center justify-center shrink-0">
+								<div className="w-8 h-8 bg-green-100 s-center justify-center shrink-0">
 									<Shield className="h-4 w-4 text-green-600" />
 								</div>
 								<div className="min-w-0">
@@ -312,7 +312,7 @@ export default function TikTokDownloader() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center shrink-0">
+								<div className="w-8 h-8 bg-blue-100 s-center justify-center shrink-0">
 									<Play className="h-4 w-4 text-blue-600" />
 								</div>
 								<div className="min-w-0">
@@ -324,7 +324,7 @@ export default function TikTokDownloader() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center shrink-0">
+								<div className="w-8 h-8 bg-purple-100 s-center justify-center shrink-0">
 									<Music className="h-4 w-4 text-purple-600" />
 								</div>
 								<div className="min-w-0">
@@ -338,7 +338,7 @@ export default function TikTokDownloader() {
 
 						<div className="space-y-4">
 							<div className="flex items-start gap-3">
-								<div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center shrink-0">
+								<div className="w-8 h-8 bg-orange-100 s-center justify-center shrink-0">
 									<Zap className="h-4 w-4 text-orange-600" />
 								</div>
 								<div className="min-w-0">
@@ -350,7 +350,7 @@ export default function TikTokDownloader() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center shrink-0">
+								<div className="w-8 h-8 bg-red-100 s-center justify-center shrink-0">
 									<Users className="h-4 w-4 text-red-600" />
 								</div>
 								<div className="min-w-0">
@@ -362,7 +362,7 @@ export default function TikTokDownloader() {
 							</div>
 
 							<div className="flex items-start gap-3">
-								<div className="w-8 h-8 bg-teal-100 rounded-full flex items-center justify-center shrink-0">
+								<div className="w-8 h-8 bg-teal-100 s-center justify-center shrink-0">
 									<Globe className="h-4 w-4 text-teal-600" />
 								</div>
 								<div className="min-w-0">
@@ -467,7 +467,7 @@ export default function TikTokDownloader() {
 				<CardContent>
 					<div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
 						<div className="space-y-4">
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<div className="flex items-center gap-2 mb-2">
 									<div className="flex">
 										{[...Array(5)].map((_, i) => (
@@ -491,7 +491,7 @@ export default function TikTokDownloader() {
 								</p>
 							</div>
 
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<div className="flex items-center gap-2 mb-2">
 									<div className="flex">
 										{[...Array(5)].map((_, i) => (
@@ -517,7 +517,7 @@ export default function TikTokDownloader() {
 						</div>
 
 						<div className="space-y-4">
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<div className="flex items-center gap-2 mb-2">
 									<div className="flex">
 										{[...Array(4)].map((_, i) => (
@@ -540,7 +540,7 @@ export default function TikTokDownloader() {
 								</p>
 							</div>
 
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<div className="flex items-center gap-2 mb-2">
 									<div className="flex">
 										{[...Array(5)].map((_, i) => (
@@ -581,8 +581,8 @@ export default function TikTokDownloader() {
 				</CardHeader>
 				<CardContent>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-						<div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-							<div className="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border sition-colors">
+							<div className="w-12 h-12 bg-pink-100 s-center justify-center mx-auto mb-3">
 								<Scissors className="h-6 w-6 text-pink-600" />
 							</div>
 							<h4 className="font-medium mb-1">Instagram Downloader</h4>
@@ -591,8 +591,8 @@ export default function TikTokDownloader() {
 							</p>
 						</div>
 
-						<div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-							<div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border sition-colors">
+							<div className="w-12 h-12 bg-blue-100 s-center justify-center mx-auto mb-3">
 								<FileText className="h-6 w-6 text-blue-600" />
 							</div>
 							<h4 className="font-medium mb-1">Twitter Downloader</h4>
@@ -601,8 +601,8 @@ export default function TikTokDownloader() {
 							</p>
 						</div>
 
-						<div className="text-center p-4 border rounded-lg hover:bg-muted/50 transition-colors">
-							<div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border sition-colors">
+							<div className="w-12 h-12 bg-red-100 s-center justify-center mx-auto mb-3">
 								<Play className="h-6 w-6 text-red-600" />
 							</div>
 							<h4 className="font-medium mb-1">YouTube Downloader</h4>
@@ -659,7 +659,7 @@ export default function TikTokDownloader() {
 						</ul>
 
 						<h3>Common TikTok Download Issues & Solutions</h3>
-						<div className="bg-muted p-4 rounded-lg">
+						<div className="bg-muted p-4 ">
 							<h4>Can't Download a Video?</h4>
 							<ul className="mt-2 space-y-1">
 								<li>

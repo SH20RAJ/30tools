@@ -412,7 +412,7 @@ export default function LogoGeneratorTool() {
 										{colorPalettes.map((palette) => (
 											<div
 												key={palette.name}
-												className={`p-2 rounded-lg border-2 cursor-pointer transition-all ${
+												className={`p-2 sor-pointer transition-all ${
 													selectedPalette.name === palette.name
 														? "border-primary"
 														: "border-border hover:border-primary/50"
@@ -445,8 +445,7 @@ export default function LogoGeneratorTool() {
 										{selectedPalette.colors.map((color) => (
 											<button
 												key={color}
-												className={`w-8 h-8 rounded-lg border-2 ${
-													selectedColor === color
+												className={`w-8 h-8 selectedColor === color
 														? "border-foreground"
 														: "border-border"
 												}`}
@@ -469,7 +468,7 @@ export default function LogoGeneratorTool() {
 										{logoStyles.map((style) => (
 											<button
 												key={style.name}
-												className={`p-3 text-left rounded-lg border transition-all ${
+												className={`p-3 text-left sition-all ${
 													selectedStyle.name === style.name
 														? "border-primary bg-primary/5"
 														: "border-border hover:border-primary/50"
@@ -545,7 +544,7 @@ export default function LogoGeneratorTool() {
 								<div className="flex justify-center p-8 bg-background">
 									<canvas
 										ref={canvasRef}
-										className="border border-border rounded-lg shadow-lg"
+										className="border border-border shadow-lg"
 										style={{ maxWidth: "100%", height: "auto" }}
 									/>
 								</div>
@@ -590,7 +589,7 @@ export default function LogoGeneratorTool() {
 									</Button>
 								</div>
 
-								<div className="mt-4 p-4 bg-muted rounded-lg">
+								<div className="mt-4 p-4 bg-muted ">
 									<h4 className="font-medium mb-2">💡 Pro Tips:</h4>
 									<ul className="text-sm text-muted-foreground space-y-1">
 										<li>• PNG format supports transparency for web use</li>
@@ -613,7 +612,7 @@ export default function LogoGeneratorTool() {
 							<CardContent>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 									<div className="flex items-start space-x-3">
-										<div className="w-8 h-8 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+										<div className="w-8 h-8 bg-muted dark:bg-primary/30 s-center justify-center">
 											<Zap className="w-4 h-4 text-primary dark:text-primary" />
 										</div>
 										<div>
@@ -624,7 +623,7 @@ export default function LogoGeneratorTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-8 h-8 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+										<div className="w-8 h-8 bg-muted dark:bg-primary/30 s-center justify-center">
 											<Type className="w-4 h-4 text-primary dark:text-primary" />
 										</div>
 										<div>
@@ -635,7 +634,7 @@ export default function LogoGeneratorTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-8 h-8 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+										<div className="w-8 h-8 bg-muted dark:bg-primary/30 s-center justify-center">
 											<Palette className="w-4 h-4 text-primary dark:text-primary" />
 										</div>
 										<div>
@@ -646,7 +645,7 @@ export default function LogoGeneratorTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-8 h-8 bg-muted dark:bg-primary/30 rounded-lg flex items-center justify-center">
+										<div className="w-8 h-8 bg-muted dark:bg-primary/30 s-center justify-center">
 											<Download className="w-4 h-4 text-primary dark:text-primary" />
 										</div>
 										<div>

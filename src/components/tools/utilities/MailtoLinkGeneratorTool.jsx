@@ -314,7 +314,7 @@ export default function MailtoLinkGeneratorTool() {
 							</div>
 
 							{/* Preview */}
-							<div className="bg-gray-50 rounded-lg p-4">
+							<div className="bg-gray-50 ">
 								<h3 className="font-semibold mb-2">Preview:</h3>
 								<a
 									href={generatedLink}

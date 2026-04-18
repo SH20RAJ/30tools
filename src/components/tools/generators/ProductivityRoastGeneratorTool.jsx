@@ -236,7 +236,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
 				{/* Header */}
 				<div className="text-center mb-8">
 					<div className="flex items-center justify-center gap-3 mb-4">
-						<div className="p-3 bg-primary/10 rounded-xl border border-primary/20">
+						<div className="p-3 bg-primary/10 ">
 							<Flame className="h-8 w-8 text-primary" />
 						</div>
 						<div>
@@ -364,7 +364,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
 								</div>
 
 								{/* AI Toggle */}
-								<div className="flex items-center justify-between p-4 bg-background/20 dark:to-blue-900/20 rounded-lg border-2 border-border">
+								<div className="flex items-center justify-between p-4 bg-background/20 dark:to-blue-900/20 ">
 									<div className="flex items-center space-x-3">
 										<Switch
 											id="useAI"
@@ -420,7 +420,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
 							<CardContent>
 								{roast ? (
 									<div className="space-y-6">
-										<div className="p-6 bg-secondary/50 rounded-xl border-2 border-border">
+										<div className="p-6 bg-secondary/50 ">
 											<div className="text-lg leading-relaxed mb-4 text-foreground font-medium">
 												{roast}
 											</div>
@@ -511,7 +511,7 @@ Style: ${roastIntensity === "motivational" ? "Tough love coach" : roastIntensity
 										{generatedRoasts.map((item, index) => (
 											<div
 												key={index}
-												className="p-3 bg-muted rounded-lg text-sm"
+												className="p-3 bg-muted sm"
 											>
 												<p className="mb-2">{item.text}</p>
 												<div className="flex gap-1">

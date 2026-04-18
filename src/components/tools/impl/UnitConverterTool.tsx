@@ -321,7 +321,7 @@ export function UnitConverterTool({ toolId }: { toolId: string }) {
 						<Label>Value</Label>
 						<Input value={input} onChange={(e) => setInput(e.target.value)} className="font-mono" />
 					</div>
-					<div className="md:col-span-3 rounded-lg border bg-muted/40 p-4 font-mono text-lg">
+					<div className="md:col-span-3 ">
 						Result: {out || "—"}
 					</div>
 				</CardContent>
@@ -391,7 +391,7 @@ export function UnitConverterTool({ toolId }: { toolId: string }) {
 						Copy result
 					</Button>
 				</div>
-				<div className="md:col-span-3 rounded-lg border bg-muted/40 p-4 font-mono text-lg">
+				<div className="md:col-span-3 ">
 					Result: {out || "—"}
 				</div>
 			</CardContent>

@@ -234,7 +234,7 @@ export default function SEOBooster({
 					</CardHeader>
 					<CardContent>
 						<div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-							<div className="text-center p-4 border rounded-lg">
+							<div className="text-center p-4 border ">
 								<div className="text-2xl font-bold mb-1">
 									{performanceMetrics.lcp || "--"}ms
 								</div>
@@ -249,7 +249,7 @@ export default function SEOBooster({
 								</Badge>
 							</div>
 
-							<div className="text-center p-4 border rounded-lg">
+							<div className="text-center p-4 border ">
 								<div className="text-2xl font-bold mb-1">
 									{performanceMetrics.fid || "--"}ms
 								</div>
@@ -264,7 +264,7 @@ export default function SEOBooster({
 								</Badge>
 							</div>
 
-							<div className="text-center p-4 border rounded-lg">
+							<div className="text-center p-4 border ">
 								<div className="text-2xl font-bold mb-1">
 									{performanceMetrics.cls || "--"}
 								</div>
@@ -279,7 +279,7 @@ export default function SEOBooster({
 								</Badge>
 							</div>
 
-							<div className="text-center p-4 border rounded-lg">
+							<div className="text-center p-4 border ">
 								<div className="text-2xl font-bold mb-1">
 									{performanceMetrics.ttfb || "--"}ms
 								</div>
@@ -314,7 +314,7 @@ export default function SEOBooster({
 								return (
 									<div
 										key={index}
-										className="flex items-start gap-3 p-3 border rounded-lg"
+										className="flex items-start gap-3 p-3 border "
 									>
 										<Icon className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
 										<div className="flex-1">

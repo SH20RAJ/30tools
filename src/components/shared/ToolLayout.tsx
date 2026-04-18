@@ -79,7 +79,7 @@ export default function ToolLayout({
 				{controls && (
 					<aside className="md:col-span-4 lg:col-span-3 space-y-8">
 						<div className="md:sticky md:top-24 space-y-8">
-							<div className="bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl p-6 shadow-sm">
+							<div className="bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 shadow-sm">
 								<h2 className="text-lg font-semibold mb-6 flex items-center gap-2 tracking-tight">
 									Controls
 								</h2>
@@ -98,7 +98,7 @@ export default function ToolLayout({
 						controls ? "md:col-span-8 lg:col-span-9" : "col-span-12",
 					)}
 				>
-					<div className="min-h-[400px] bg-white dark:bg-[#1d1d1f] rounded-xl border border-black/5 dark:border-white/5 p-4 md:p-8 shadow-sm">
+					<div className="min-h-[400px] bg-white dark:bg-[#1d1d1f] shadow-sm">
 						{children}
 					</div>
 
