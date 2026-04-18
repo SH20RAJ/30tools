@@ -150,7 +150,7 @@ export default function Base64Tool({ initialMode = "encode" } = {}) {
 			</Link>
 
 			<div className="flex items-center gap-3 mb-4">
-				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 					<CodeIcon className="h-6 w-6 text-primary" />
 				</div>
 				<div>
@@ -214,7 +214,7 @@ export default function Base64Tool({ initialMode = "encode" } = {}) {
 									<Label htmlFor="file-upload" className="text-sm font-medium">
 										Upload File (Optional)
 									</Label>
-									<div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-4 text-center">
+									<div className="border-2 border-dashed border-muted-foreground/25 ">
 										<input
 											id="file-upload"
 											type="file"

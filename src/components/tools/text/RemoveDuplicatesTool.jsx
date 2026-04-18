@@ -196,7 +196,7 @@ export default function RemoveDuplicatesTool() {
 
 					{/* Statistics */}
 					{stats.totalLines > 0 && (
-						<div className="bg-muted rounded-lg p-4">
+						<div className="bg-muted ">
 							<div className="flex items-center gap-2 mb-3">
 								<BarChart3 className="h-4 w-4" />
 								<span className="font-medium">Deduplication Statistics</span>
@@ -328,7 +328,7 @@ export default function RemoveDuplicatesTool() {
 				</CardHeader>
 				<CardContent className="space-y-6">
 					<div className="space-y-4">
-						<div className="border rounded-lg p-4">
+						<div className="border ">
 							<h3 className="font-medium mb-2 text-primary">
 								Case Sensitive Deduplication:
 							</h3>
@@ -362,7 +362,7 @@ export default function RemoveDuplicatesTool() {
 							</div>
 						</div>
 
-						<div className="border rounded-lg p-4">
+						<div className="border ">
 							<h3 className="font-medium mb-2 text-primary">
 								Case Insensitive Deduplication:
 							</h3>
@@ -392,7 +392,7 @@ export default function RemoveDuplicatesTool() {
 							</div>
 						</div>
 
-						<div className="border rounded-lg p-4">
+						<div className="border ">
 							<h3 className="font-medium mb-2 text-primary">
 								Whitespace Trimming:
 							</h3>

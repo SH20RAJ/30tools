@@ -221,7 +221,7 @@ Features:
 
 				{/* Quick Tips */}
 				{content.length === 0 && (
-					<div className="bg-muted/50 dark:bg-indigo-950/20 border border-border dark:border-border rounded-lg p-4 mt-4">
+					<div className="bg-muted/50 dark:bg-indigo-950/20 border border-border dark:border-border ">
 						<h4 className="font-medium text-primary dark:text-indigo-100 mb-2">
 							Quick Tips:
 						</h4>

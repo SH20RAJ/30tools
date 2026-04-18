@@ -401,7 +401,7 @@ export default function LineSorterTool() {
 				<CardContent className="space-y-6">
 					<div className="grid md:grid-cols-2 gap-6">
 						<div className="space-y-4">
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<h3 className="font-medium mb-2 text-primary">
 									Alphabetical Sort (A-Z):
 								</h3>
@@ -415,7 +415,7 @@ export default function LineSorterTool() {
 								</div>
 							</div>
 
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<h3 className="font-medium mb-2 text-primary">
 									Numerical Sort (1-100):
 								</h3>
@@ -431,7 +431,7 @@ export default function LineSorterTool() {
 						</div>
 
 						<div className="space-y-4">
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<h3 className="font-medium mb-2 text-primary">
 									Length Sort (Short to Long):
 								</h3>
@@ -445,7 +445,7 @@ export default function LineSorterTool() {
 								</div>
 							</div>
 
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<h3 className="font-medium mb-2 text-primary">Natural Sort:</h3>
 								<div className="bg-muted p-3 rounded font-mono text-sm space-y-2">
 									<div>

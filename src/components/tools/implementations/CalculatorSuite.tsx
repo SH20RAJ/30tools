@@ -179,7 +179,7 @@ export default function CalculatorSuite({ toolId }: Props) {
 				>
 					Recalculate
 				</Button>
-				<pre className="rounded-lg border bg-muted/40 p-4 text-sm whitespace-pre-wrap">{result || "—"}</pre>
+				<pre className="sm whitespace-pre-wrap">{result || "—"}</pre>
 			</CardContent>
 		</Card>
 	);

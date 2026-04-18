@@ -61,7 +61,7 @@ export default function WordCounterTool() {
 					{items.map((row) => (
 						<div
 							key={row.label}
-							className="rounded-xl border border-border/70 bg-muted/30 px-4 py-3"
+							className=""
 						>
 							<p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">
 								{row.label}

@@ -43,13 +43,13 @@ export function GoogleNavbar() {
 					{/* Search Bar – desktop only */}
 					<Link
 						href="/search"
-						className="hidden lg:flex flex-1 max-w-[640px] items-center px-6 py-2.5 rounded-2xl border border-border/60 bg-secondary/30 hover:bg-secondary/80 hover:border-primary/20 hover:shadow-inner transition-all duration-300 group no-underline"
+						className="hidden lg:flex flex-1 max-w-[640px] items-center px-6 py-2.5 secondary/30 hover:bg-secondary/80 hover:border-primary/20 hover:shadow-inner transition-all duration-300 group no-underline"
 					>
 						<Search className="text-muted-foreground group-hover:text-primary transition-colors mr-4 w-5 h-5" />
 						<span className="flex-1 text-sm font-medium text-muted-foreground">
 							Search 600+ tools...
 						</span>
-						<div className="flex items-center gap-1.5 px-2.5 py-1 border border-border/60 rounded-xl bg-background shadow-sm text-[11px] font-black text-muted-foreground group-hover:text-primary transition-colors">
+						<div className="flex items-center gap-1.5 px-2.5 py-1 border border-border/60 shadow-sm text-[11px] font-black text-muted-foreground group-hover:text-primary transition-colors">
 							<span>⌘</span>
 							<span>K</span>
 						</div>
@@ -67,7 +67,7 @@ export function GoogleNavbar() {
 									asChild
 									variant="ghost"
 									size="icon"
-									className="md:hidden rounded-full text-muted-foreground"
+									className="md:hidden "
 								>
 									<Link href="/search">
 										<Search className="h-4 w-4" />
@@ -85,7 +85,7 @@ export function GoogleNavbar() {
 								<Button
 									variant="ghost"
 									size="icon"
-									className="hidden sm:inline-flex rounded-full text-muted-foreground"
+									className="hidden sm:inline-flex "
 								>
 									<HelpCircle className="h-4 w-4" />
 								</Button>
@@ -100,7 +100,7 @@ export function GoogleNavbar() {
 									asChild
 									variant="ghost"
 									size="icon"
-									className="rounded-full text-muted-foreground"
+									className=""
 								>
 									<a
 										href="https://github.com/sh20raj/30tools"
@@ -121,7 +121,7 @@ export function GoogleNavbar() {
 									asChild
 									variant="ghost"
 									size="icon"
-									className="rounded-full text-muted-foreground"
+									className=""
 								>
 									<Link href="/search">
 										<LayoutGrid className="h-4 w-4" />

@@ -282,7 +282,7 @@ export default function YouTubeDownloader() {
 			<div className="relative z-10 mx-auto max-w-3xl">
 				<form onSubmit={handleSubmit} className="relative group">
 					{/* Removed colorful gradient overlay */}
-					<div className="relative bg-background rounded-2xl p-2 shadow-sm border border-border flex flex-col md:flex-row items-center gap-2">
+					<div className="relative bg-background shadow-sm border border-border flex flex-col md:flex-row items-center gap-2">
 						<Input
 							type="url"
 							placeholder="Paste YouTube link here..."
@@ -298,7 +298,7 @@ export default function YouTubeDownloader() {
 							type="submit"
 							disabled={isLoading || !url.trim()}
 							size="lg"
-							className="h-14 px-8 w-full md:w-auto text-lg font-medium rounded-xl bg-foreground text-background hover:bg-foreground/90 shadow-sm transition-all"
+							className="h-14 px-8 w-full md:w-auto text-lg font-medium shadow-sm transition-all"
 						>
 							{isLoading ? (
 								<div className="flex items-center gap-2">
@@ -317,7 +317,7 @@ export default function YouTubeDownloader() {
 
 				{/* Minimal Error */}
 				{error && (
-					<div className="mt-4 p-4 bg-destructive/5 border border-destructive/10 text-destructive rounded-xl flex items-center justify-center gap-2 animate-in slide-in-from-top-2">
+					<div className="mt-4 p-4 bg-destructive/5 border border-destructive/10 text-destructive s-center justify-center gap-2 animate-in slide-in-from-top-2">
 						<X className="w-5 h-5" />
 						<p className="font-medium text-center">{error}</p>
 					</div>
@@ -327,7 +327,7 @@ export default function YouTubeDownloader() {
 			{/* Results Area */}
 			{videoData && (
 				<div className="mt-12 animate-in fade-in slide-in-from-bottom-8 duration-700">
-					<div className="bg-card rounded-3xl border border-border overflow-hidden shadow-sm">
+					<div className="bg-card shadow-sm">
 						<div className="grid md:grid-cols-2 lg:grid-cols-5 gap-0">
 							{/* Preview Side */}
 							<div className="lg:col-span-2 relative group overflow-hidden bg-muted/50">
@@ -373,7 +373,7 @@ export default function YouTubeDownloader() {
 																href={format.finalUrl}
 																target="_blank"
 																rel="noopener noreferrer"
-																className="h-10 px-4 rounded-lg border-border transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+																className="h-10 px-4 sition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
 															>
 																<div className="text-left mr-3">
 																	<div className="font-medium flex items-center gap-2 text-sm">
@@ -408,7 +408,7 @@ export default function YouTubeDownloader() {
 																downloadingFormat !== null &&
 																downloadingFormat !== format.url
 															}
-															className="h-10 px-4 rounded-lg border-border transition-all group"
+															className="h-10 px-4 sition-all group"
 														>
 															<div className="text-left mr-3">
 																<div className="font-medium flex items-center gap-2 text-sm">
@@ -464,7 +464,7 @@ export default function YouTubeDownloader() {
 																href={format.finalUrl}
 																target="_blank"
 																rel="noopener noreferrer"
-																className="h-10 px-4 rounded-lg border-border transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+																className="h-10 px-4 sition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
 															>
 																<div className="text-left mr-3">
 																	<div className="font-medium text-sm">MP3</div>
@@ -492,7 +492,7 @@ export default function YouTubeDownloader() {
 																downloadingFormat !== null &&
 																downloadingFormat !== format.url
 															}
-															className="h-10 px-4 rounded-lg border-border transition-all group"
+															className="h-10 px-4 sition-all group"
 														>
 															<div className="text-left mr-3">
 																<div className="font-medium text-sm">MP3</div>
@@ -532,7 +532,7 @@ export default function YouTubeDownloader() {
 					href="https://t.me/sopbots_ytdlbot"
 					target="_blank"
 					rel="noopener noreferrer"
-					className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-muted text-muted-foreground text-sm font-medium hover:bg-muted/80 transition-colors"
+					className="group inline-flex items-center gap-2 px-6 py-3 sm font-medium hover:bg-muted/80 transition-colors"
 				>
 					<Send className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
 					<span>Try our Telegram Bot for faster downloads</span>

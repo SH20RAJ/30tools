@@ -81,7 +81,7 @@ export default function SerpSimulator() {
 								</p>
 								<div className="max-w-[360px] bg-white dark:bg-black p-2 rounded">
 									<div className="flex items-center gap-2 mb-1">
-										<div className="w-6 h-6 bg-gray-200 rounded-full flex-shrink-0"></div>
+										<div className="w-6 h-6 bg-gray-200 shrink-0"></div>
 										<div className="text-sm text-[#202124] dark:text-[#dadce0]">
 											<div className="text-xs truncate">
 												{url.split("/")[0]}

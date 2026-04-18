@@ -184,7 +184,7 @@ export default function PdfProtectTool() {
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
+					<div className="border-2 border-dashed border-muted-foreground/25 ">
 						<FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
 						<p className="text-lg font-medium mb-2">
 							Drop PDF file here or click to browse
@@ -205,7 +205,7 @@ export default function PdfProtectTool() {
 					</div>
 
 					{pdfFile && (
-						<div className="mt-4 p-4 bg-muted rounded-lg">
+						<div className="mt-4 p-4 bg-muted ">
 							<div className="flex items-center justify-between">
 								<div>
 									<p className="font-medium">{pdfFile.name}</p>
@@ -272,9 +272,9 @@ export default function PdfProtectTool() {
 												{passwordStrength.strength}
 											</span>
 										</div>
-										<div className="w-full bg-gray-200 rounded-full h-1.5 mt-1">
+										<div className="w-full bg-gray-200 ">
 											<div
-												className={`h-1.5 rounded-full transition-all ${
+												className={`h-1.5 sition-all ${
 													passwordStrength.score <= 2
 														? "bg-destructive/100"
 														: passwordStrength.score <= 3
@@ -514,7 +514,7 @@ export default function PdfProtectTool() {
 						</CardDescription>
 					</CardHeader>
 					<CardContent>
-						<div className="flex items-center justify-between p-4 bg-muted rounded-lg mb-4">
+						<div className="flex items-center justify-between p-4 bg-muted ">
 							<div className="flex items-center gap-3">
 								<Lock className="h-6 w-6 text-primary" />
 								<div>

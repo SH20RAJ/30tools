@@ -431,13 +431,13 @@ Sitemap: https://yoursite.com/sitemap.xml`;
 									</Button>
 								</div>
 
-								<div className="bg-secondary/50 rounded-lg p-4 max-h-96 overflow-auto border border-border">
+								<div className="bg-secondary/50 ">
 									<pre className="text-sm whitespace-pre-wrap break-words font-mono text-foreground">
 										{generatedRobots}
 									</pre>
 								</div>
 
-								<div className="bg-primary/5 border border-primary/20 rounded-lg p-4">
+								<div className="bg-primary/5 border border-primary/20 ">
 									<h4 className="font-medium text-foreground mb-2">
 										Implementation Instructions:
 									</h4>

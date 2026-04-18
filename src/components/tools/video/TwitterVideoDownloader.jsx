@@ -110,7 +110,7 @@ const TwitterVideoDownloader = () => {
 						</div>
 
 						{error && (
-							<div className="text-red-500 text-sm p-2 bg-red-50 rounded-md">
+							<div className="text-red-500 text-sm p-2 bg-red-50 ">
 								{error}
 							</div>
 						)}
@@ -122,7 +122,7 @@ const TwitterVideoDownloader = () => {
 									{downloadOptions.map((option, index) => (
 										<div
 											key={index}
-											className="flex items-center justify-between p-3 border rounded-md"
+											className="flex items-center justify-between p-3 border "
 										>
 											<div>
 												<span className="font-medium">{option.quality}</span>

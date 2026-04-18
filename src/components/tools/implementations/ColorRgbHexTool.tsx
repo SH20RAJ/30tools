@@ -71,7 +71,7 @@ export default function ColorRgbHexTool({ mode }: { mode: "hex-rgb" | "rgb-hex" 
 					</div>
 				)}
 				<div
-					className="h-24 w-full rounded-xl border"
+					className="h-24 w-full "
 					style={{
 						backgroundColor:
 							mode === "rgb-hex" && preview.startsWith("#") ? preview : hexToRgb(hex) ? hex : "#ccc",

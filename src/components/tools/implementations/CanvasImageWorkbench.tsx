@@ -200,7 +200,7 @@ export default function CanvasImageWorkbench({
 				</div>
 				<canvas
 					ref={canvasRef}
-					className="max-h-[480px] w-full rounded-lg border border-border bg-muted/20"
+					className="max-h-[480px] w-full "
 				/>
 			</CardContent>
 		</Card>

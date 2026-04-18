@@ -224,7 +224,7 @@ export default function TextReverserTool() {
 				</CardHeader>
 				<CardContent className="space-y-6">
 					<div className="space-y-4">
-						<div className="border rounded-lg p-4">
+						<div className="border ">
 							<h3 className="font-medium mb-2 text-primary">
 								Character Reversal:
 							</h3>
@@ -238,7 +238,7 @@ export default function TextReverserTool() {
 							</div>
 						</div>
 
-						<div className="border rounded-lg p-4">
+						<div className="border ">
 							<h3 className="font-medium mb-2 text-primary">
 								Word Order Reversal:
 							</h3>
@@ -252,7 +252,7 @@ export default function TextReverserTool() {
 							</div>
 						</div>
 
-						<div className="border rounded-lg p-4">
+						<div className="border ">
 							<h3 className="font-medium mb-2 text-primary">
 								Line Order Reversal:
 							</h3>

@@ -210,24 +210,24 @@ export default function FaviconGeneratorTool() {
 
 	const generateWebManifest = () => {
 		return `{
-  "name": "Your App Name",
-  "short_name": "App",
-  "icons": [
-    {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "start_url": "/"
+ "name": "Your App Name",
+ "short_name": "App",
+ "icons": [
+ {
+ "src": "/android-chrome-192x192.png",
+ "sizes": "192x192",
+ "type": "image/png"
+ },
+ {
+ "src": "/android-chrome-512x512.png",
+ "sizes": "512x512",
+ "type": "image/png"
+ }
+ ],
+ "theme_color": "#ffffff",
+ "background_color": "#ffffff",
+ "display": "standalone",
+ "start_url": "/"
 }`;
 	};
 
@@ -252,7 +252,7 @@ export default function FaviconGeneratorTool() {
 					</Link>
 
 					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 							<StarIcon className="h-6 w-6 text-primary" />
 						</div>
 						<div>
@@ -286,7 +286,7 @@ export default function FaviconGeneratorTool() {
 								<div className="space-y-3">
 									<Label>Select Image File</Label>
 									<div
-										className={`border-2 border-dashed rounded-lg p-6 text-center cursor-pointer transition-colors ${
+										className={`border-2 border-dashed sor-pointer transition-colors ${
 											imagePreview
 												? "border-primary/50 bg-primary/5"
 												: "border-muted-foreground/25 hover:border-primary/50"
@@ -298,7 +298,7 @@ export default function FaviconGeneratorTool() {
 												<img
 													src={imagePreview}
 													alt="Preview"
-													className="mx-auto w-24 h-24 object-cover rounded-lg"
+													className="mx-auto w-24 h-24 object-cover "
 												/>
 												<p className="text-sm text-muted-foreground">
 													Click to change image
@@ -350,7 +350,7 @@ export default function FaviconGeneratorTool() {
 								)}
 
 								{/* Tips */}
-								<div className="bg-muted/50 p-4 rounded-lg">
+								<div className="bg-muted/50 p-4 ">
 									<h4 className="font-medium mb-2">
 										💡 Tips for best results:
 									</h4>
@@ -390,7 +390,7 @@ export default function FaviconGeneratorTool() {
 										<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 											{generatedFavicons.map((favicon, index) => (
 												<div key={index} className="text-center space-y-2">
-													<div className="bg-muted/50 p-3 rounded-lg">
+													<div className="bg-muted/50 p-3 ">
 														<img
 															src={favicon.dataUrl}
 															alt={`${favicon.size}x${favicon.size}`}
@@ -516,7 +516,7 @@ export default function FaviconGeneratorTool() {
 									<div className="text-center space-y-3">
 										<MonitorIcon className="h-8 w-8 mx-auto text-muted-foreground" />
 										<h4 className="font-medium">Desktop Browser</h4>
-										<div className="bg-muted/50 p-4 rounded-lg">
+										<div className="bg-muted/50 p-4 ">
 											<div className="flex items-center gap-2 bg-background p-2 rounded border text-sm">
 												<img
 													src={
@@ -536,14 +536,14 @@ export default function FaviconGeneratorTool() {
 										<SmartphoneIcon className="h-8 w-8 mx-auto text-muted-foreground" />
 										<h4 className="font-medium">iPhone Home Screen</h4>
 										<div className="bg-background">
-											<div className="bg-white p-2 rounded-xl shadow-sm w-fit mx-auto">
+											<div className="bg-white p-2 shadow-sm w-fit mx-auto">
 												<img
 													src={
 														generatedFavicons.find((f) => f.size === 180)
 															?.dataUrl
 													}
 													alt="App Icon"
-													className="w-12 h-12 rounded-lg"
+													className="w-12 h-12 "
 												/>
 											</div>
 											<p className="text-white text-xs mt-1">Your App</p>
@@ -555,14 +555,14 @@ export default function FaviconGeneratorTool() {
 										<TabletIcon className="h-8 w-8 mx-auto text-muted-foreground" />
 										<h4 className="font-medium">Android Home Screen</h4>
 										<div className="bg-background">
-											<div className="bg-white p-1 rounded-full shadow-sm w-fit mx-auto">
+											<div className="bg-white p-1 shadow-sm w-fit mx-auto">
 												<img
 													src={
 														generatedFavicons.find((f) => f.size === 192)
 															?.dataUrl
 													}
 													alt="App Icon"
-													className="w-12 h-12 rounded-full"
+													className="w-12 h-12 "
 												/>
 											</div>
 											<p className="text-white text-xs mt-1">Your App</p>

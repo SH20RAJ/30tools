@@ -95,7 +95,7 @@ export default function PasswordGeneratorTool() {
 			<CardContent className="p-6 space-y-8">
 				{/* Password Display */}
 				<div className="relative">
-					<div className="p-6 bg-secondary/50 rounded-lg text-center font-mono text-3xl tracking-wider break-all min-h-[5rem] flex items-center justify-center border-2 border-dashed border-muted-foreground/20">
+					<div className="p-6 bg-secondary/50 s-center justify-center border-2 border-dashed border-muted-foreground/20">
 						{password || "Select options..."}
 					</div>
 					<Button
@@ -145,7 +145,7 @@ export default function PasswordGeneratorTool() {
 
 					<div className="grid grid-cols-2 gap-4">
 						<div
-							className="flex items-center space-x-2 border p-4 rounded-md hover:bg-muted/50 transition-colors cursor-pointer"
+							className="flex items-center space-x-2 border p-4 sition-colors cursor-pointer"
 							onClick={() => setUseUppercase(!useUppercase)}
 						>
 							<Checkbox
@@ -158,7 +158,7 @@ export default function PasswordGeneratorTool() {
 							</Label>
 						</div>
 						<div
-							className="flex items-center space-x-2 border p-4 rounded-md hover:bg-muted/50 transition-colors cursor-pointer"
+							className="flex items-center space-x-2 border p-4 sition-colors cursor-pointer"
 							onClick={() => setUseLowercase(!useLowercase)}
 						>
 							<Checkbox
@@ -171,7 +171,7 @@ export default function PasswordGeneratorTool() {
 							</Label>
 						</div>
 						<div
-							className="flex items-center space-x-2 border p-4 rounded-md hover:bg-muted/50 transition-colors cursor-pointer"
+							className="flex items-center space-x-2 border p-4 sition-colors cursor-pointer"
 							onClick={() => setUseNumbers(!useNumbers)}
 						>
 							<Checkbox
@@ -184,7 +184,7 @@ export default function PasswordGeneratorTool() {
 							</Label>
 						</div>
 						<div
-							className="flex items-center space-x-2 border p-4 rounded-md hover:bg-muted/50 transition-colors cursor-pointer"
+							className="flex items-center space-x-2 border p-4 sition-colors cursor-pointer"
 							onClick={() => setUseSymbols(!useSymbols)}
 						>
 							<Checkbox

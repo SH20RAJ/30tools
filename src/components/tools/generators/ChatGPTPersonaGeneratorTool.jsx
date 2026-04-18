@@ -235,7 +235,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
 						<Sparkles className="w-4 h-4" />
 						AI-Powered Persona Generator
 					</div>
-					<h2 className="text-4xl md:text-6xl font-bold bg-muted/20  ">
+					<h2 className="text-4xl md:text-6xl font-bold bg-muted/20 ">
 						ChatGPT Persona Generator
 					</h2>
 					<p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -357,7 +357,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
 								<CardContent className="space-y-4">
 									{persona ? (
 										<>
-											<div className="bg-gray-50 p-4 rounded-lg border-2 border-dashed border-border">
+											<div className="bg-gray-50 p-4 shed border-border">
 												<p className="text-sm text-foreground whitespace-pre-wrap">
 													{persona}
 												</p>

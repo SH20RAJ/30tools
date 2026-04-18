@@ -341,7 +341,7 @@ export default function UserComments({
 										Share your experience with {toolName}
 									</Button>
 								) : (
-									<div className="space-y-3 p-4 border rounded-lg bg-muted/50">
+									<div className="space-y-3 p-4 border ">
 										<Textarea
 											placeholder={`How was your experience with ${toolName}? Help others by sharing your feedback...`}
 											value={newComment}
@@ -363,7 +363,7 @@ export default function UserComments({
 						)}
 
 						{/* Filters and Sorting */}
-						<div className="flex flex-wrap items-center gap-4 p-4 bg-muted/30 rounded-lg">
+						<div className="flex flex-wrap items-center gap-4 p-4 bg-muted/30 ">
 							<div className="flex items-center gap-2">
 								<span className="text-sm font-medium">Sort by:</span>
 								<select

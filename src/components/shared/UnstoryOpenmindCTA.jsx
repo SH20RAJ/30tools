@@ -83,8 +83,8 @@ export default function UnstoryOpenmindCTA() {
 			>
 				{/* Background Elements */}
 				<div className="absolute inset-0 overflow-hidden">
-					<div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-purple-200/20 dark:from-blue-700/10 dark:to-purple-700/10 rounded-full blur-3xl" />
-					<div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-200/20 to-purple-200/20 dark:from-pink-700/10 dark:to-purple-700/10 rounded-full blur-3xl" />
+					<div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-blue-200/20 to-purple-200/20 dark:from-blue-700/10 dark:to-purple-700/10 " />
+					<div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-200/20 to-purple-200/20 dark:from-pink-700/10 dark:to-purple-700/10 " />
 					{/* Floating Elements */}
 					<div
 						className={`absolute transition-all duration-1000 ${isHovered ? "translate-y-2 scale-110" : "translate-y-0"}`}
@@ -113,7 +113,7 @@ export default function UnstoryOpenmindCTA() {
 							Find Your Calm & Share Your Story
 						</Badge>
 
-						<h2 className="text-3xl md:text-4xl font-bold mb-4 bg-muted/20  ">
+						<h2 className="text-3xl md:text-4xl font-bold mb-4 bg-muted/20 ">
 							Join Unstory Openmind
 						</h2>
 
@@ -133,7 +133,7 @@ export default function UnstoryOpenmindCTA() {
 							return (
 								<div
 									key={index}
-									className="text-center p-6 rounded-2xl bg-white/50 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-gray-700/30 hover:bg-white/70 dark:hover:bg-gray-800/50 transition-all duration-300 group"
+									className="text-center p-6 sm border border-white/20 dark:border-gray-700/30 hover:bg-white/70 dark:hover:bg-gray-800/50 transition-all duration-300 group"
 								>
 									<div className="w-12 h-12 bg-background:scale-110 transition-transform duration-300">
 										<IconComponent className="w-6 h-6 text-white" />
@@ -156,7 +156,7 @@ export default function UnstoryOpenmindCTA() {
 							return (
 								<div
 									key={index}
-									className="text-center p-4 rounded-xl bg-white/30 dark:bg-gray-800/20 backdrop-blur-sm"
+									className="text-center p-4 sm"
 								>
 									<IconComponent className="w-5 h-5 text-primary dark:text-primary mx-auto mb-1" />
 									<div className="text-lg font-bold text-foreground">
@@ -171,7 +171,7 @@ export default function UnstoryOpenmindCTA() {
 					</div>
 
 					{/* Testimonial Carousel */}
-					<div className="mb-8 p-6 rounded-2xl bg-white/40 dark:bg-gray-800/20 backdrop-blur-sm border border-white/30 dark:border-gray-700/20">
+					<div className="mb-8 p-6 sm border border-white/30 dark:border-gray-700/20">
 						<div className="text-center min-h-[100px] flex flex-col justify-center">
 							<MessageCircle className="w-8 h-8 text-primary mx-auto mb-3" />
 							<blockquote className="text-lg italic text-foreground mb-3 transition-all duration-500">
@@ -188,7 +188,7 @@ export default function UnstoryOpenmindCTA() {
 								<button
 									key={index}
 									onClick={() => setCurrentTestimonial(index)}
-									className={`w-2 h-2 rounded-full transition-all duration-300 ${
+									className={`w-2 h-2 sition-all duration-300 ${
 										index === currentTestimonial
 											? "bg-muted/500 w-6"
 											: "bg-gray-300 dark:bg-gray-600"

@@ -107,10 +107,10 @@ export default function ExifReaderTool() {
 		<div className="w-full max-w-6xl mx-auto p-4">
 			{!image ? (
 				<div
-					className="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl p-12 text-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+					className="border-2 border-dashed border-gray-300 dark:border-gray-700 sor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
 					onClick={() => fileInputRef.current?.click()}
 				>
-					<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+					<div className="w-20 h-20 bg-primary/10 s-center justify-center mx-auto mb-6">
 						<Camera className="w-10 h-10 text-primary" />
 					</div>
 					<h2 className="text-2xl font-bold mb-2">
@@ -133,11 +133,11 @@ export default function ExifReaderTool() {
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 					{/* Image Preview */}
 					<div className="lg:col-span-4 space-y-6">
-						<div className="bg-card border rounded-xl p-4 shadow-sm">
+						<div className="bg-card border shadow-sm">
 							<img
 								src={previewUrl}
 								alt="Photo preview for EXIF metadata extraction"
-								className="w-full h-auto rounded-lg mb-4"
+								className="w-full h-auto "
 							/>
 							<div className="space-y-2 text-sm">
 								<div className="flex justify-between py-2 border-b">
@@ -175,7 +175,7 @@ export default function ExifReaderTool() {
 					<div className="lg:col-span-8 space-y-6">
 						{loading ? (
 							<div className="flex items-center justify-center h-64">
-								<div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+								<div className="animate-spin "></div>
 							</div>
 						) : exifData && Object.keys(exifData.all).length > 0 ? (
 							<div className="space-y-6">
@@ -275,14 +275,14 @@ export default function ExifReaderTool() {
 										</CardTitle>
 									</CardHeader>
 									<CardContent>
-										<div className="bg-muted p-4 rounded-lg overflow-x-auto text-xs font-mono max-h-96 overflow-y-auto">
+										<div className="bg-muted p-4 s font-mono max-h-96 overflow-y-auto">
 											<pre>{JSON.stringify(exifData.all, null, 2)}</pre>
 										</div>
 									</CardContent>
 								</Card>
 							</div>
 						) : (
-							<div className="text-center py-12 bg-card border rounded-xl">
+							<div className="text-center py-12 bg-card border ">
 								<AlertCircle className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
 								<h3 className="text-lg font-medium mb-2">No EXIF Data Found</h3>
 								<p className="text-muted-foreground">

@@ -116,7 +116,7 @@ export const DownloaderEngine = ({ placeholder, buttonText }) => {
 
 			{videoData && (
 				<div className="space-y-6 animate-in fade-in slide-in-from-top-4 duration-500">
-					<div className="flex items-center gap-2 p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-600">
+					<div className="flex items-center gap-2 p-4 bg-green-500/10 border border-green-500/20 ">
 						<CheckCircle2 className="h-5 w-5" />
 						<span className="text-sm font-bold">
 							{videoData.platform} video ready for download!
@@ -150,7 +150,7 @@ export const DownloaderEngine = ({ placeholder, buttonText }) => {
 						{videoData.qualities.map((quality, idx) => (
 							<div
 								key={idx}
-								className="flex items-center justify-between p-4 bg-card border border-border/50 rounded-xl hover:bg-accent transition-colors"
+								className="flex items-center justify-between p-4 bg-card border border-border/50 sition-colors"
 							>
 								<div className="flex items-center gap-4">
 									<div className="font-bold">{quality.quality}</div>

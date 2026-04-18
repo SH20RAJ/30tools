@@ -19,8 +19,8 @@ export default function UnstoryOpenmindCTACompact() {
 			<Card className="relative overflow-hidden bg-muted/20 dark:from-blue-950/30 dark:via-purple-950/30 dark:to-pink-950/30 border-0 shadow-lg">
 				{/* Background Elements */}
 				<div className="absolute inset-0 overflow-hidden">
-					<div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-blue-200/20 to-purple-200/20 dark:from-blue-700/10 dark:to-purple-700/10 rounded-full blur-2xl" />
-					<div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-tr from-pink-200/20 to-purple-200/20 dark:from-pink-700/10 dark:to-purple-700/10 rounded-full blur-2xl" />
+					<div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-blue-200/20 to-purple-200/20 dark:from-blue-700/10 dark:to-purple-700/10 " />
+					<div className="absolute -bottom-20 -left-20 w-40 h-40 bg-gradient-to-tr from-pink-200/20 to-purple-200/20 dark:from-pink-700/10 dark:to-purple-700/10 " />
 				</div>
 
 				<CardContent className="relative p-6 text-center">
@@ -39,7 +39,7 @@ export default function UnstoryOpenmindCTACompact() {
 						Find Your Calm
 					</Badge>
 
-					<h2 className="text-2xl font-bold mb-2 bg-muted/20  ">
+					<h2 className="text-2xl font-bold mb-2 bg-muted/20 ">
 						Join Unstory Openmind
 					</h2>
 

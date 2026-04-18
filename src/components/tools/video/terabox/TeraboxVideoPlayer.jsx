@@ -145,7 +145,7 @@ export default function TeraboxVideoPlayer({ videoData }) {
 
 			{/* Primary Video Player */}
 			{!showFallback ? (
-				<div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+				<div className="bg-gray-100 dark:bg-gray-800 p-4 ">
 					<div className="relative">
 						<video
 							ref={videoRef}
@@ -168,7 +168,7 @@ export default function TeraboxVideoPlayer({ videoData }) {
 						{isLoading && (
 							<div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 rounded">
 								<div className="text-white text-center">
-									<div className="animate-spin rounded-full h-8 w-8 border-b-2 border-white mx-auto mb-2"></div>
+									<div className="animate-spin "></div>
 									<p className="text-sm">
 										{isM3u8 ? "Loading M3U8 stream..." : "Loading video..."}
 									</p>
@@ -206,7 +206,7 @@ export default function TeraboxVideoPlayer({ videoData }) {
 				</div>
 			) : (
 				/* Fallback Player */
-				<div className="bg-gray-100 dark:bg-gray-800 p-6 rounded-lg">
+				<div className="bg-gray-100 dark:bg-gray-800 p-6 ">
 					<div className="flex flex-col items-center justify-center h-64 space-y-4">
 						{videoData.image && (
 							<img

@@ -163,7 +163,7 @@ export default function YouTubeVideoSummarizer() {
 						</div>
 
 						{error && (
-							<div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 rounded-lg">
+							<div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 ">
 								{error}
 							</div>
 						)}
@@ -172,13 +172,13 @@ export default function YouTubeVideoSummarizer() {
 					{transcriptData && (
 						<div className="mt-6 space-y-6">
 							{/* Video Info */}
-							<div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-950/20 border border-border rounded-lg p-4">
+							<div className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-950/20 border border-border ">
 								<div className="flex items-start gap-4">
 									{transcriptData.thumbnail && (
 										<img
 											src={transcriptData.thumbnail}
 											alt="Video thumbnail"
-											className="w-40 h-28 object-cover rounded-lg shadow-md"
+											className="w-40 h-28 object-cover shadow-md"
 										/>
 									)}
 									<div className="flex-1 min-w-0">
@@ -280,7 +280,7 @@ export default function YouTubeVideoSummarizer() {
 												<ul className="space-y-3">
 													{summary.keyPoints?.map((point, index) => (
 														<li key={index} className="flex items-start gap-3">
-															<span className="flex-shrink-0 w-6 h-6 bg-primary/10 text-primary rounded-full flex items-center justify-center text-sm font-semibold">
+															<span className="flex-shrink-0 w-6 h-6 bg-primary/10 text-primary s-center justify-center text-sm font-semibold">
 																{index + 1}
 															</span>
 															<span className="text-foreground">{point}</span>

@@ -390,7 +390,7 @@ export default function TextEncoderTool() {
 						{encodingFormats.map((format) => (
 							<div
 								key={format.value}
-								className={`border rounded-lg p-4 cursor-pointer transition-all ${
+								className={`border sor-pointer transition-all ${
 									encodingType === format.value
 										? "border-primary bg-primary/5"
 										: ""
@@ -423,7 +423,7 @@ export default function TextEncoderTool() {
 				<CardContent className="space-y-6">
 					<div className="grid md:grid-cols-2 gap-6">
 						<div className="space-y-4">
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<h3 className="font-medium mb-2 text-primary">URL Encoding:</h3>
 								<div className="bg-muted p-3 rounded font-mono text-sm space-y-1">
 									<div>
@@ -435,7 +435,7 @@ export default function TextEncoderTool() {
 								</div>
 							</div>
 
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<h3 className="font-medium mb-2 text-primary">
 									Base64 Encoding:
 								</h3>
@@ -451,7 +451,7 @@ export default function TextEncoderTool() {
 						</div>
 
 						<div className="space-y-4">
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<h3 className="font-medium mb-2 text-primary">
 									HTML Entities:
 								</h3>
@@ -465,7 +465,7 @@ export default function TextEncoderTool() {
 								</div>
 							</div>
 
-							<div className="border rounded-lg p-4">
+							<div className="border ">
 								<h3 className="font-medium mb-2 text-primary">
 									Unicode Escapes:
 								</h3>

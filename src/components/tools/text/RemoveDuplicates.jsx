@@ -52,7 +52,7 @@ export default function RemoveDuplicates() {
 
 	return (
 		<div className="max-w-4xl mx-auto space-y-6">
-			<div className="flex flex-col md:flex-row gap-6 items-center justify-between p-4 bg-muted/20 rounded-lg border border-border">
+			<div className="flex flex-col md:flex-row gap-6 items-center justify-between p-4 bg-muted/20 ">
 				<div className="flex gap-6">
 					<div className="flex items-center space-x-2">
 						<Switch
@@ -101,7 +101,7 @@ export default function RemoveDuplicates() {
 				</div>
 			</div>
 
-			<div className="flex gap-6 text-sm text-muted-foreground bg-muted/30 p-4 rounded-lg">
+			<div className="flex gap-6 text-sm text-muted-foreground bg-muted/30 p-4 ">
 				<div>
 					<span className="font-semibold text-foreground">
 						{text ? text.split("\n").length : 0}

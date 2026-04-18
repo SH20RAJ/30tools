@@ -259,28 +259,28 @@ export default function InternetSpeedTestTool() {
 					</CardHeader>
 					<CardContent>
 						<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-							<div className="text-center p-4 bg-gray-50 rounded-lg">
+							<div className="text-center p-4 bg-gray-50 ">
 								<h3 className="font-semibold mb-2">Basic Browsing</h3>
 								<div className="text-2xl font-bold text-primary">1-5 Mbps</div>
 								<p className="text-sm text-muted-foreground mt-1">
 									Web browsing, email
 								</p>
 							</div>
-							<div className="text-center p-4 bg-gray-50 rounded-lg">
+							<div className="text-center p-4 bg-gray-50 ">
 								<h3 className="font-semibold mb-2">HD Streaming</h3>
 								<div className="text-2xl font-bold text-primary">5-25 Mbps</div>
 								<p className="text-sm text-muted-foreground mt-1">
 									Netflix, YouTube HD
 								</p>
 							</div>
-							<div className="text-center p-4 bg-gray-50 rounded-lg">
+							<div className="text-center p-4 bg-gray-50 ">
 								<h3 className="font-semibold mb-2">4K Streaming</h3>
 								<div className="text-2xl font-bold text-primary">25+ Mbps</div>
 								<p className="text-sm text-muted-foreground mt-1">
 									Ultra HD content
 								</p>
 							</div>
-							<div className="text-center p-4 bg-gray-50 rounded-lg">
+							<div className="text-center p-4 bg-gray-50 ">
 								<h3 className="font-semibold mb-2">Gaming</h3>
 								<div className="text-2xl font-bold text-destructive">
 									&lt;50ms

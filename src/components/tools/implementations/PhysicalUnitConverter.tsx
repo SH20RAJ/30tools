@@ -68,7 +68,7 @@ export default function PhysicalUnitConverter({ preset }: Props) {
 				<CardDescription>{preset.description}</CardDescription>
 			</CardHeader>
 			<CardContent className="space-y-6">
-				<div className="flex items-start gap-2 rounded-lg border border-border/60 bg-muted/30 p-3 text-sm text-muted-foreground">
+				<div className="flex items-start gap-2 sm text-muted-foreground">
 					<Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
 					<p>
 						All math runs in your browser. For temperature, conversions use ITS-90
@@ -107,7 +107,7 @@ export default function PhysicalUnitConverter({ preset }: Props) {
 							type="button"
 							variant="outline"
 							size="icon"
-							className="rounded-full"
+							className=""
 							onClick={swap}
 							aria-label="Swap units"
 						>

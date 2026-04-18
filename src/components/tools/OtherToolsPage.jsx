@@ -82,11 +82,11 @@ export default function OtherToolsPage({ categories, otherTools }) {
 				{/* Header Section */}
 				<div className="text-center mb-12">
 					<div className="flex justify-center mb-4">
-						<div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl shadow-lg">
+						<div className="flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary shadow-lg">
 							<Grid3X3 className="w-8 h-8 text-primary-foreground" />
 						</div>
 					</div>
-					<h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-primary  ">
+					<h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-primary ">
 						Discover Other Tools
 					</h1>
 					<p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
@@ -105,7 +105,7 @@ export default function OtherToolsPage({ categories, otherTools }) {
 								placeholder="Search for specialized tools, converters, utilities..."
 								value={searchTerm}
 								onChange={(e) => setSearchTerm(e.target.value)}
-								className="pl-10 pr-4 py-3 text-lg border-2 border-primary/20 focus:border-primary/50 rounded-xl"
+								className="pl-10 pr-4 py-3 text-lg border-2 border-primary/20 focus:border-primary/50 "
 							/>
 						</div>
 
@@ -114,7 +114,7 @@ export default function OtherToolsPage({ categories, otherTools }) {
 								variant={selectedCategory === "all" ? "default" : "outline"}
 								size="sm"
 								onClick={() => setSelectedCategory("all")}
-								className="rounded-full"
+								className=""
 							>
 								<Filter className="w-4 h-4 mr-1" />
 								All Categories
@@ -129,7 +129,7 @@ export default function OtherToolsPage({ categories, otherTools }) {
 										}
 										size="sm"
 										onClick={() => setSelectedCategory(category.slug)}
-										className="rounded-full"
+										className=""
 									>
 										<IconComponent className="w-4 h-4 mr-1" />
 										{category.name}
@@ -183,7 +183,7 @@ export default function OtherToolsPage({ categories, otherTools }) {
 								return (
 									<div key={categorySlug}>
 										<div className="flex items-center gap-3 mb-6">
-											<div className="flex items-center justify-center w-10 h-10 bg-primary/10 rounded-lg">
+											<div className="flex items-center justify-center w-10 h-10 bg-primary/10 ">
 												<IconComponent className="w-5 h-5 text-primary" />
 											</div>
 											<h2 className="text-2xl font-bold">
@@ -257,7 +257,7 @@ export default function OtherToolsPage({ categories, otherTools }) {
 				) : (
 					<div className="text-center py-12">
 						<div className="flex justify-center mb-4">
-							<div className="flex items-center justify-center w-16 h-16 bg-muted rounded-full">
+							<div className="flex items-center justify-center w-16 h-16 bg-muted ">
 								<Search className="w-8 h-8 text-muted-foreground" />
 							</div>
 						</div>
@@ -278,7 +278,7 @@ export default function OtherToolsPage({ categories, otherTools }) {
 				)}
 
 				{/* CTA Section */}
-				<div className="mt-16 text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 rounded-2xl p-8">
+				<div className="mt-16 text-center bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10 ">
 					<h2 className="text-2xl font-bold mb-4">Need a Specific Tool?</h2>
 					<p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
 						Can't find what you're looking for? Our comprehensive toolkit

@@ -173,7 +173,7 @@ export default function PdfCompressorTool() {
 					</Link>
 
 					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 							<MinimizeIcon className="h-6 w-6 text-primary" />
 						</div>
 						<div>
@@ -213,7 +213,7 @@ export default function PdfCompressorTool() {
 						<CardContent>
 							{!selectedFile ? (
 								<div
-									className="border-2 border-dashed border-border rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
+									className="border-2 border-dashed border-border sor-pointer hover:border-primary transition-colors"
 									onClick={() => fileInputRef.current?.click()}
 								>
 									<UploadIcon className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
@@ -234,7 +234,7 @@ export default function PdfCompressorTool() {
 								</div>
 							) : (
 								<div className="space-y-4">
-									<div className="flex items-center gap-3 p-4 border rounded-lg">
+									<div className="flex items-center gap-3 p-4 border ">
 										<FileIcon className="h-8 w-8 text-destructive" />
 										<div className="flex-1">
 											<p className="font-medium">{selectedFile.name}</p>
@@ -382,7 +382,7 @@ export default function PdfCompressorTool() {
 
 									<div className="space-y-4">
 										<div className="grid grid-cols-2 gap-4 text-center">
-											<div className="p-4 bg-muted/50 rounded-lg">
+											<div className="p-4 bg-muted/50 ">
 												<p className="text-2xl font-bold text-destructive">
 													{formatFileSize(compressionStats.originalSize)}
 												</p>
@@ -390,7 +390,7 @@ export default function PdfCompressorTool() {
 													Original Size
 												</p>
 											</div>
-											<div className="p-4 bg-muted/50 rounded-lg">
+											<div className="p-4 bg-muted/50 ">
 												<p className="text-2xl font-bold text-primary">
 													{formatFileSize(compressionStats.compressedSize)}
 												</p>
@@ -400,7 +400,7 @@ export default function PdfCompressorTool() {
 											</div>
 										</div>
 
-										<div className="text-center p-4 bg-primary/10 rounded-lg">
+										<div className="text-center p-4 bg-primary/10 ">
 											<p className="text-3xl font-bold text-primary">
 												{compressionStats.reductionPercentage}%
 											</p>

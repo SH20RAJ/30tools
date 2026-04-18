@@ -353,7 +353,7 @@ export default function YouTubeShortsDownloader() {
 						)}
 
 						{error && (
-							<div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 rounded-lg">
+							<div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 ">
 								{error}
 							</div>
 						)}
@@ -361,14 +361,14 @@ export default function YouTubeShortsDownloader() {
 
 					{shortsData && (
 						<div className="mt-6 space-y-4">
-							<div className="bg-background/20 dark:to-emerald-950/20 border border-border rounded-lg p-4">
+							<div className="bg-background/20 dark:to-emerald-950/20 border border-border ">
 								<div className="flex items-start gap-4">
 									<div className="relative">
 										{shortsData.thumbnail && (
 											<img
 												src={shortsData.thumbnail}
 												alt="Shorts thumbnail"
-												className="w-24 h-32 object-cover rounded-lg shadow-md"
+												className="w-24 h-32 object-cover shadow-md"
 												style={{ aspectRatio: "9/16" }}
 											/>
 										)}
@@ -418,7 +418,7 @@ export default function YouTubeShortsDownloader() {
 											shortsData.videoFormats.map((format, index) => (
 												<div
 													key={index}
-													className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 rounded-lg"
+													className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-pink-950/10 "
 												>
 													<div>
 														<div className="font-medium">
@@ -465,7 +465,7 @@ export default function YouTubeShortsDownloader() {
 											shortsData.audioFormats.map((format, index) => (
 												<div
 													key={index}
-													className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 rounded-lg"
+													className="flex items-center justify-between p-3 bg-muted/50/50 dark:bg-purple-950/10 "
 												>
 													<div>
 														<div className="font-medium">
@@ -539,7 +539,7 @@ export default function YouTubeShortsDownloader() {
 											{bookmarkedUrls.map((bookmark, index) => (
 												<div
 													key={index}
-													className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 rounded-lg border"
+													className="flex items-center gap-3 p-3 bg-white dark:bg-gray-800 "
 												>
 													{bookmark.thumbnail && (
 														<img
@@ -591,7 +591,7 @@ export default function YouTubeShortsDownloader() {
 						</div>
 					)}
 
-					<div className="mt-6 bg-background/20 dark:to-purple-950/20 rounded-lg p-4">
+					<div className="mt-6 bg-background/20 dark:to-purple-950/20 ">
 						<h3 className="font-medium mb-2 text-center">
 							💡 Pro Tips for YouTube Shorts Downloads
 						</h3>

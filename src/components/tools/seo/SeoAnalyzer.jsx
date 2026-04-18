@@ -177,13 +177,13 @@ export default function SeoAnalyzer({ type = "audit", title = "SEO Audit" }) {
 									<div className="flex items-center gap-3">
 										<span className="font-mono">{item.value}</span>
 										{item.status === "good" && (
-											<div className="w-3 h-3 rounded-full bg-green-500" />
+											<div className="w-3 h-3 " />
 										)}
 										{item.status === "warning" && (
-											<div className="w-3 h-3 rounded-full bg-amber-500" />
+											<div className="w-3 h-3 " />
 										)}
 										{item.status === "bad" && (
-											<div className="w-3 h-3 rounded-full bg-red-500" />
+											<div className="w-3 h-3 " />
 										)}
 									</div>
 								</div>

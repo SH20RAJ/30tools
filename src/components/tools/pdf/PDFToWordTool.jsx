@@ -99,7 +99,7 @@ export default function PDFToWordTool() {
 				<Card>
 					<CardContent className="pt-6">
 						<div
-							className="border-2 border-dashed rounded-xl p-12 text-center cursor-pointer hover:bg-muted/50 transition-colors"
+							className="border-2 border-dashed sor-pointer hover:bg-muted/50 transition-colors"
 							onClick={() => fileInputRef.current?.click()}
 						>
 							<Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
@@ -138,7 +138,7 @@ export default function PDFToWordTool() {
 					<CardContent className="space-y-6">
 						{!convertedFile ? (
 							<div className="space-y-4">
-								<div className="flex items-center justify-center p-8 bg-muted/30 rounded-lg">
+								<div className="flex items-center justify-center p-8 bg-muted/30 ">
 									<FileType className="w-16 h-16 text-red-500" />
 									<div className="mx-4 text-2xl text-muted-foreground">→</div>
 									<FileText className="w-16 h-16 text-blue-500" />
@@ -165,7 +165,7 @@ export default function PDFToWordTool() {
 							</div>
 						) : (
 							<div className="space-y-4">
-								<div className="flex items-center justify-center p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-100 dark:border-green-900">
+								<div className="flex items-center justify-center p-6 bg-green-50 dark:bg-green-900/20 ">
 									<div className="text-center">
 										<CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-2" />
 										<h3 className="font-semibold text-green-700 dark:text-green-400">

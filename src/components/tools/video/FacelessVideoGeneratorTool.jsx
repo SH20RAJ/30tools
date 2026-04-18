@@ -414,7 +414,7 @@ export default function FacelessVideoGeneratorTool() {
 					<CardContent>
 						{generatedVideo ? (
 							<div className="space-y-4">
-								<div className="aspect-video bg-black rounded-lg overflow-hidden relative">
+								<div className="aspect-video bg-black ">
 									<img
 										src={generatedVideo.thumbnail}
 										alt={generatedVideo.title}
@@ -434,7 +434,7 @@ export default function FacelessVideoGeneratorTool() {
 									</h3>
 
 									<div className="grid grid-cols-3 gap-4 text-sm">
-										<div className="text-center p-3 bg-muted rounded-lg">
+										<div className="text-center p-3 bg-muted ">
 											<Eye className="h-4 w-4 mx-auto mb-1 text-primary" />
 											<div className="font-semibold">
 												{generatedVideo.stats.estimated_views.toLocaleString()}
@@ -443,7 +443,7 @@ export default function FacelessVideoGeneratorTool() {
 												Est. Views
 											</div>
 										</div>
-										<div className="text-center p-3 bg-muted rounded-lg">
+										<div className="text-center p-3 bg-muted ">
 											<TrendingUp className="h-4 w-4 mx-auto mb-1 text-primary" />
 											<div className="font-semibold">
 												{generatedVideo.stats.engagement_rate}%
@@ -452,7 +452,7 @@ export default function FacelessVideoGeneratorTool() {
 												Engagement
 											</div>
 										</div>
-										<div className="text-center p-3 bg-muted rounded-lg">
+										<div className="text-center p-3 bg-muted ">
 											<DollarSign className="h-4 w-4 mx-auto mb-1 text-primary" />
 											<div className="font-semibold">
 												${generatedVideo.stats.monetization_potential}
@@ -483,7 +483,7 @@ export default function FacelessVideoGeneratorTool() {
 								</div>
 							</div>
 						) : (
-							<div className="flex items-center justify-center h-96 bg-muted rounded-lg">
+							<div className="flex items-center justify-center h-96 bg-muted ">
 								<div className="text-center text-muted-foreground">
 									<Video className="h-12 w-12 mx-auto mb-2" />
 									<p>Your generated video will appear here</p>
@@ -504,7 +504,7 @@ export default function FacelessVideoGeneratorTool() {
 						{Object.entries(videoTemplates).map(([key, template]) => (
 							<div
 								key={key}
-								className={`p-4 rounded-lg border cursor-pointer transition-colors ${
+								className={`p-4 sor-pointer transition-colors ${
 									videoType === key
 										? "border-primary bg-primary/5"
 										: "border-border hover:border-primary/50"

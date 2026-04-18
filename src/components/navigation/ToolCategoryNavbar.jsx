@@ -18,13 +18,13 @@ export default function ToolCategoryNavbar({
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="flex justify-between items-center h-16">
 						<Link href="/" className="flex items-center space-x-2 group">
-							<div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+							<div className="w-8 h-8 s-center justify-center group-hover:bg-primary/20 transition-colors">
 								<CategoryIcon className="w-5 h-5 text-primary" />
 							</div>
-							<span className="text-xl font-bold   bg-gradient-to-r from-primary to-primary/60">
+							<span className="text-xl font-bold bg-gradient-to-r from-primary to-primary/60">
 								30tools
 							</span>
-							<span className="hidden sm:inline-block text-sm text-muted-foreground font-medium px-2 py-0.5 rounded-full bg-muted/50 border border-border/50">
+							<span className="hidden sm:inline-block text-sm text-muted-foreground font-medium px-2 py-0.5 ">
 								{title}
 							</span>
 						</Link>
@@ -56,7 +56,7 @@ export default function ToolCategoryNavbar({
 
 			{/* Tools Quick Access */}
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div className="bg-background rounded-xl border border-border/40 p-1">
+				<div className="bg-background ">
 					<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2">
 						{tools.map((tool) => {
 							const Icon = tool.icon;
@@ -67,7 +67,7 @@ export default function ToolCategoryNavbar({
 										className="w-full justify-start h-auto p-3 hover:bg-primary/5 transition-all duration-200 group border border-transparent hover:border-primary/10"
 									>
 										<div className="flex items-center space-x-3 w-full">
-											<div className="p-2 rounded-md bg-muted/50 group-hover:bg-background shadow-sm transition-colors">
+											<div className="p-2 shadow-sm transition-colors">
 												<Icon className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
 											</div>
 											<div className="flex flex-col items-start min-w-0">
@@ -76,7 +76,7 @@ export default function ToolCategoryNavbar({
 												</span>
 												{tool.popular && (
 													<div className="flex items-center gap-1 mt-0.5">
-														<span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+														<span className="inline-block w-1.5 h-1.5 se" />
 														<span className="text-[10px] text-muted-foreground font-normal">
 															Popular
 														</span>

@@ -45,7 +45,7 @@ export default function LoremIpsumGenerator() {
 
 	return (
 		<div className="max-w-4xl mx-auto space-y-8">
-			<div className="p-6 bg-muted/20 rounded-xl border border-border space-y-6">
+			<div className="p-6 bg-muted/20 space-y-6">
 				<div className="space-y-4">
 					<Label className="text-base">Generate What?</Label>
 					<RadioGroup

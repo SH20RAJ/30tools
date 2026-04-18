@@ -290,7 +290,7 @@ END:VCARD`;
 					</Link>
 
 					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 							<QrCodeIcon className="h-6 w-6 text-primary" />
 						</div>
 						<div>
@@ -328,7 +328,7 @@ END:VCARD`;
 											<button
 												key={type.id}
 												onClick={() => setQrType(type.id)}
-												className={`p-4 rounded-lg border-2 transition-all text-left ${
+												className={`p-4 sition-all text-left ${
 													qrType === type.id
 														? "border-primary bg-primary/5"
 														: "border-border hover:border-primary/50"
@@ -549,7 +549,7 @@ END:VCARD`;
 								</CardHeader>
 								<CardContent className="space-y-4">
 									<div className="flex justify-center">
-										<div className="p-4 bg-card rounded-lg border">
+										<div className="p-4 bg-card ">
 											{qrCodeDataUrl ? (
 												<img
 													src={qrCodeDataUrl}

@@ -77,11 +77,11 @@ export default function PhotoEnhancerTool() {
 
 			// Apply basic filters
 			ctx.filter = `
-        brightness(${adjustments.brightness}%) 
-        contrast(${adjustments.contrast}%) 
-        saturate(${adjustments.saturation}%)
-        blur(${adjustments.blur}px)
-      `;
+ brightness(${adjustments.brightness}%) 
+ contrast(${adjustments.contrast}%) 
+ saturate(${adjustments.saturation}%)
+ blur(${adjustments.blur}px)
+ `;
 
 			ctx.drawImage(img, 0, 0);
 
@@ -138,10 +138,10 @@ export default function PhotoEnhancerTool() {
 		<div className="w-full max-w-6xl mx-auto p-4">
 			{!image ? (
 				<div
-					className="border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl p-12 text-center cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+					className="border-2 border-dashed border-gray-300 dark:border-gray-700 sor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
 					onClick={() => fileInputRef.current?.click()}
 				>
-					<div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+					<div className="w-20 h-20 bg-primary/10 s-center justify-center mx-auto mb-6">
 						<Upload className="w-10 h-10 text-primary" />
 					</div>
 					<h2 className="text-2xl font-bold mb-2">
@@ -164,7 +164,7 @@ export default function PhotoEnhancerTool() {
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
 					{/* Controls Sidebar */}
 					<div className="lg:col-span-4 space-y-6">
-						<div className="bg-card border rounded-xl p-6 shadow-sm">
+						<div className="bg-card border shadow-sm">
 							<div className="flex items-center justify-between mb-6">
 								<h3 className="font-semibold text-lg">Adjustments</h3>
 								<Button variant="outline" size="sm" onClick={resetAdjustments}>
@@ -296,11 +296,11 @@ export default function PhotoEnhancerTool() {
 
 					{/* Preview Area */}
 					<div className="lg:col-span-8">
-						<div className="bg-gray-100 dark:bg-gray-900 rounded-xl p-4 h-[600px] flex items-center justify-center relative overflow-hidden border">
+						<div className="bg-gray-100 dark:bg-gray-900 s-center justify-center relative overflow-hidden border">
 							<img
 								src={showCompare ? originalUrl : previewUrl}
 								alt="Preview"
-								className="max-w-full max-h-full object-contain shadow-lg rounded-lg transition-all duration-200"
+								className="max-w-full max-h-full object-contain shadow-lg sition-all duration-200"
 							/>
 
 							<Button

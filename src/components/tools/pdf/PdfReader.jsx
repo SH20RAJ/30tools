@@ -34,7 +34,7 @@ export default function PdfReader() {
 						<Label htmlFor="pdf-upload" className="text-base font-medium">
 							Select PDF to Read
 						</Label>
-						<div className="border-2 border-dashed border-input rounded-lg p-12 text-center hover:bg-muted/20 transition-colors cursor-pointer relative">
+						<div className="border-2 border-dashed border-input sition-colors cursor-pointer relative">
 							<input
 								id="pdf-upload"
 								type="file"
@@ -56,7 +56,7 @@ export default function PdfReader() {
 				</Card>
 			) : (
 				<div className="space-y-4 h-[80vh] flex flex-col">
-					<div className="flex justify-between items-center bg-card p-4 rounded-lg border shadow-sm">
+					<div className="flex justify-between items-center bg-card p-4 shadow-sm">
 						<div className="flex items-center gap-2">
 							<FileText className="w-5 h-5 text-primary" />
 							<span className="font-medium">{pdfFile.file.name}</span>
@@ -65,7 +65,7 @@ export default function PdfReader() {
 							<X className="w-4 h-4 mr-2" /> Close File
 						</Button>
 					</div>
-					<div className="flex-1 w-full bg-muted rounded-lg overflow-hidden border">
+					<div className="flex-1 w-full bg-muted ">
 						<iframe
 							src={pdfFile.url}
 							className="w-full h-full"

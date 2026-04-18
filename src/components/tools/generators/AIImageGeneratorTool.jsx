@@ -389,7 +389,7 @@ export default function AIImageGeneratorTool() {
 
 					<div className="space-y-4 mb-8">
 						<div className="flex items-start gap-4">
-							<div className="p-3 border rounded-lg bg-background">
+							<div className="p-3 border ">
 								<Sparkles className="h-6 w-6" />
 							</div>
 							<div className="space-y-2">
@@ -648,11 +648,11 @@ export default function AIImageGeneratorTool() {
 																? `AI generated: ${prompt}`
 																: "AI generated image"
 														}
-														className="w-full rounded-lg border shadow-lg bg-muted object-contain max-h-[600px]"
+														className="w-full shadow-lg bg-muted object-contain max-h-[600px]"
 														loading="lazy"
 													/>
 													{loading && (
-														<div className="absolute inset-0 bg-background/80 backdrop-blur-sm rounded-lg flex items-center justify-center">
+														<div className="absolute inset-0 bg-background/80 backdrop-blur-sm s-center justify-center">
 															<div className="text-center">
 																<RefreshCwIcon className="h-8 w-8 animate-spin mx-auto mb-2" />
 																<p className="text-sm font-medium">
@@ -697,7 +697,7 @@ export default function AIImageGeneratorTool() {
 													</Button>
 												</div>
 
-												<div className="bg-muted/50 p-4 rounded-lg space-y-3">
+												<div className="bg-muted/50 p-4 space-y-3">
 													<div>
 														<p className="text-sm font-medium mb-1">Prompt:</p>
 														<p className="text-sm text-muted-foreground">
@@ -818,7 +818,7 @@ export default function AIImageGeneratorTool() {
 										{history.map((item) => (
 											<div
 												key={item.id}
-												className="group border rounded-lg p-3 hover:shadow-md transition-all cursor-pointer"
+												className="group border shadow-md transition-all cursor-pointer"
 											>
 												<img
 													src={item.url}
@@ -874,7 +874,7 @@ export default function AIImageGeneratorTool() {
 										{favorites.map((item) => (
 											<div
 												key={item.id}
-												className="group border rounded-lg p-3 hover:shadow-md transition-all"
+												className="group border shadow-md transition-all"
 											>
 												<div className="relative">
 													<img

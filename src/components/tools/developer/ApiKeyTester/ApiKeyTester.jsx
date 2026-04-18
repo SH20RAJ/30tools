@@ -256,7 +256,7 @@ export default function ApiKeyTester({ toolId }) {
 								</AlertDescription>
 							</Alert>
 							<div className="relative group">
-								<div className="bg-muted p-4 rounded-lg font-mono text-sm break-all whitespace-pre-wrap">
+								<div className="bg-muted p-4 sm break-all whitespace-pre-wrap">
 									{getCurlCommand() || "# Enter API Key to see command"}
 								</div>
 								{apiKey && (
@@ -289,7 +289,7 @@ export default function ApiKeyTester({ toolId }) {
 					{result && (
 						<div className="space-y-4 animate-in fade-in slide-in-from-top-4">
 							<div
-								className={`p-4 rounded-lg border flex items-center gap-3 ${
+								className={`p-4 s-center gap-3 ${
 									result.success
 										? "bg-green-500/10 border-green-500/20 text-green-700"
 										: "bg-red-500/10 border-red-500/20 text-red-700"
@@ -317,7 +317,7 @@ export default function ApiKeyTester({ toolId }) {
 
 							<div className="space-y-2">
 								<Label>Response Details</Label>
-								<div className="bg-muted p-4 rounded-lg overflow-x-auto">
+								<div className="bg-muted p-4 ">
 									<pre className="text-xs font-mono">
 										{JSON.stringify(result.data, null, 2)}
 									</pre>

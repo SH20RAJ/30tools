@@ -197,7 +197,7 @@ export default function HashGeneratorTool() {
 			</Link>
 
 			<div className="flex items-center gap-3 mb-4">
-				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 					<HashIcon className="h-6 w-6 text-primary" />
 				</div>
 				<div>
@@ -257,7 +257,7 @@ export default function HashGeneratorTool() {
 								</TabsContent>
 
 								<TabsContent value="file" className="space-y-4">
-									<div className="border-2 border-dashed border-border rounded-lg p-6 text-center">
+									<div className="border-2 border-dashed border-border ">
 										<UploadIcon className="h-8 w-8 mx-auto mb-2 text-muted-foreground" />
 										<Label htmlFor="file-upload" className="cursor-pointer">
 											<span className="text-primary font-medium">
@@ -278,7 +278,7 @@ export default function HashGeneratorTool() {
 									</div>
 
 									{file && (
-										<div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
+										<div className="flex items-center gap-2 p-3 bg-muted ">
 											<FileTextIcon className="h-4 w-4" />
 											<span className="text-sm font-medium">{file.name}</span>
 											<span className="text-xs text-muted-foreground">
@@ -302,7 +302,7 @@ export default function HashGeneratorTool() {
 									</span>
 									{isHashing && (
 										<div className="flex items-center gap-2 text-sm text-muted-foreground">
-											<div className="animate-spin h-4 w-4 border-2 border-primary border-t-transparent rounded-full"></div>
+											<div className="animate-spin h-4 w-4 border-2 border-primary border-t-transparent "></div>
 											Generating...
 										</div>
 									)}
@@ -337,7 +337,7 @@ export default function HashGeneratorTool() {
 													)}
 												</Button>
 											</div>
-											<div className="font-mono text-sm bg-muted p-3 rounded-lg break-all">
+											<div className="font-mono text-sm bg-muted p-3 ">
 												{hash}
 											</div>
 										</div>

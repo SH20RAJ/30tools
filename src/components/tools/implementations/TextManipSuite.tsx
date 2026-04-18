@@ -176,7 +176,7 @@ export default function TextManipSuite({ toolId }: { toolId: string }) {
 						<Textarea value={left} onChange={(e) => setLeft(e.target.value)} placeholder="Text A" className="min-h-[200px]" />
 						<Textarea value={right} onChange={(e) => setRight(e.target.value)} placeholder="Text B" className="min-h-[200px]" />
 						<div
-							className="md:col-span-2 rounded-lg border bg-muted/30 p-4 text-sm font-mono whitespace-pre-wrap"
+							className="md:col-span-2 sm font-mono whitespace-pre-wrap"
 							// eslint-disable-next-line react/no-danger
 							dangerouslySetInnerHTML={{ __html: diffHtml || "<span class='text-muted-foreground'>Diff appears here…</span>" }}
 						/>
@@ -200,7 +200,7 @@ export default function TextManipSuite({ toolId }: { toolId: string }) {
 						>
 							Copy output
 						</Button>
-						<pre className="rounded-lg border bg-muted/40 p-4 text-sm whitespace-pre-wrap">{out || "—"}</pre>
+						<pre className="sm whitespace-pre-wrap">{out || "—"}</pre>
 					</>
 				)}
 			</CardContent>
