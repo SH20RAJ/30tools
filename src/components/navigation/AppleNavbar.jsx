@@ -38,11 +38,16 @@ export function AppleNavbar() {
 
 	return (
 		<TooltipProvider>
-			<header className="sticky top-0 z-50 w-full h-[48px] apple-glass text-white border-b border-white/10 transition-all duration-300">
+			<header className="sticky top-0 z-50 w-full h-16 apple-glass text-white border-b border-white/10 transition-all duration-300">
 				<div className="container mx-auto h-full flex items-center justify-between px-4 max-w-5xl">
 					{/* Logo */}
-					<Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-						<span className="text-lg font-semibold tracking-tight">30tools</span>
+					<Link
+						href="/"
+						className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+					>
+						<span className="text-lg font-semibold tracking-tight">
+							30tools
+						</span>
 					</Link>
 
 					{/* Desktop Navigation */}
@@ -51,7 +56,7 @@ export function AppleNavbar() {
 							<Link
 								key={link.name}
 								href={link.href}
-								className="text-[12px] font-normal text-white/80 hover:text-white transition-colors"
+								className="text-sm font-normal text-white/80 hover:text-white transition-colors"
 							>
 								{link.name}
 							</Link>
@@ -62,7 +67,10 @@ export function AppleNavbar() {
 					<div className="flex items-center gap-4">
 						<Tooltip>
 							<TooltipTrigger asChild>
-								<Link href="/search" className="text-white/80 hover:text-white transition-colors">
+								<Link
+									href="/search"
+									className="text-white/80 hover:text-white transition-colors"
+								>
 									<Search className="h-4 w-4" />
 								</Link>
 							</TooltipTrigger>
@@ -71,7 +79,7 @@ export function AppleNavbar() {
 
 						<div className="hidden sm:flex items-center gap-4">
 							<ThemeToggle />
-							
+
 							<Tooltip>
 								<TooltipTrigger asChild>
 									<a
@@ -88,7 +96,10 @@ export function AppleNavbar() {
 
 							<Tooltip>
 								<TooltipTrigger asChild>
-									<Link href="/search" className="text-white/80 hover:text-white transition-colors">
+									<Link
+										href="/search"
+										className="text-white/80 hover:text-white transition-colors"
+									>
 										<LayoutGrid className="h-4 w-4" />
 									</Link>
 								</TooltipTrigger>
