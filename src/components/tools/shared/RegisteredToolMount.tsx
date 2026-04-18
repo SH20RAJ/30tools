@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useMemo, useState } from "react";
+import { type ChangeEvent, useEffect, useMemo, useState } from "react";
 import { diffChars } from "diff";
 import BuiltInCalculators, { type CalcKind } from "@/components/tools/built-ins/BuiltInCalculators";
 import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
@@ -377,7 +377,7 @@ function UuidMount() {
 	);
 }
 
-function UrlCodecMount(mode: "enc" | "dec") {
+function UrlCodecMount({ mode }: { mode: "enc" | "dec" }) {
 	const [t, setT] = useState("");
 	const out = useMemo(() => {
 		try {
@@ -392,7 +392,11 @@ function UrlCodecMount(mode: "enc" | "dec") {
 				<CardTitle className="text-lg">{mode === "enc" ? "URL encode" : "URL decode"}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
-				<Textarea className="min-h-[160px] font-mono text-sm" value={t} onChange={(e) => setT(e.target.value)} />
+				<Textarea
+					className="min-h-[160px] font-mono text-sm"
+					value={t}
+					onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setT(e.target.value)}
+				/>
 				<Textarea readOnly className="min-h-[160px] font-mono text-sm bg-muted/30" value={out} />
 			</CardContent>
 		</Card>
@@ -622,8 +626,16 @@ function MetaTagDraft() {
 				<CardTitle className="text-lg">Core meta tags</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
-				<Input value={title} onChange={(e) => setTitle(e.target.value)} />
-				<Textarea value={desc} onChange={(e) => setDesc(e.target.value)} />
+				<Input
+					className=""
+					value={title}
+					onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
+				/>
+				<Textarea
+					className=""
+					value={desc}
+					onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setDesc(e.target.value)}
+				/>
 				<Textarea readOnly className="min-h-[120px] font-mono text-xs bg-muted/30" value={snippet} />
 			</CardContent>
 		</Card>
@@ -774,8 +786,17 @@ function KeywordDensity() {
 				<CardTitle className="text-lg">Keyword density</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
-				<Input placeholder="Target word" value={word} onChange={(e) => setWord(e.target.value)} />
-				<Textarea className="min-h-[200px]" value={text} onChange={(e) => setText(e.target.value)} />
+				<Input
+					className=""
+					placeholder="Target word"
+					value={word}
+					onChange={(e: ChangeEvent<HTMLInputElement>) => setWord(e.target.value)}
+				/>
+				<Textarea
+					className="min-h-[200px]"
+					value={text}
+					onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setText(e.target.value)}
+				/>
 				<p className="text-sm">
 					Density (token-based): <strong>{pct || "—"}</strong>
 				</p>
@@ -787,7 +808,7 @@ function KeywordDensity() {
 function GenericNotice({ toolId }: { toolId: string }) {
 	return (
 		<Card className="border-dashed">
-			<CardHeader>
+			<CardHeader className="">
 				<CardTitle className="text-lg">{titleCaseId(toolId)}</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3 text-sm text-muted-foreground">
@@ -795,7 +816,7 @@ function GenericNotice({ toolId }: { toolId: string }) {
 					Interactive workflow for this page is being expanded. You can still use breadcrumbs and related
 					tools below, or request prioritization on GitHub.
 				</p>
-				<Button variant="outline" asChild>
+				<Button className="" variant="outline" asChild>
 					<a href="https://github.com/sh20raj/30tools/issues" target="_blank" rel="noreferrer">
 						Open GitHub issue
 					</a>

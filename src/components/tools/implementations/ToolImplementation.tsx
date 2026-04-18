@@ -4,7 +4,8 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import { MixedBrowserTools, MIXED_BROWSER_IDS } from "@/components/tools/impl/MixedBrowserTools";
 import QRCodeGeneratorTool from "@/components/tools/utilities/QRCodeGeneratorTool";
 import BaseConverter from "@/components/tools/shared/BaseConverter";
-import ToolPlaceholderPage from "@/components/tools/shared/ToolPlaceholderPage";
+import CurrencyConverterTool from "./CurrencyConverterTool";
+import ProgressiveToolNotice from "./ProgressiveToolNotice";
 import { BASE_CONVERTER_BY_TOOL_ID } from "./baseConverterRoutes";
 import Base64QuickTool from "./Base64QuickTool";
 import CalculatorSuite, { CALCULATOR_TOOL_IDS } from "./CalculatorSuite";
@@ -129,7 +130,7 @@ export default function ToolImplementation({ toolId }: { toolId: string }) {
 		return <JsonSchemaInferTool />;
 	}
 
-	if (toolId === "csv-to-json") {
+	if (toolId === "csv-to-json-converter") {
 		return <DataInterchangeTool mode="csv-to-json" />;
 	}
 	if (toolId === "tsv-to-json-converter") {
@@ -253,9 +254,48 @@ export default function ToolImplementation({ toolId }: { toolId: string }) {
 		return <PolicyDraftTool kind="disclaimer" />;
 	}
 
-	if (toolId === "domain-to-ip-converter") {
+	if (toolId === "domain-to-ip-converter" || toolId === "ip-address-lookup") {
 		return <DomainIpTool />;
 	}
 
-	return <ToolPlaceholderPage toolId={toolId} />;
+	if (toolId === "currency-converter") {
+		return <CurrencyConverterTool />;
+	}
+
+	if (toolId === "server-status-checker" || toolId === "hosting-checker") {
+		return (
+			<SafeHttpPanel
+				mode="status"
+				title="HTTP status check"
+				description="Shows the first hop in the redirect chain (HEAD)."
+			/>
+		);
+	}
+
+	if (toolId === "htaccess-redirect-generator") {
+		return (
+			<pre className="rounded-xl border bg-muted/40 p-4 text-xs leading-relaxed">
+				{`RewriteEngine On
+RewriteRule ^old-path$ /new-path [R=301,L]`}
+			</pre>
+		);
+	}
+
+	if (toolId === "faq-schema-generator") {
+		return (
+			<pre className="rounded-xl border bg-muted/40 p-4 text-xs leading-relaxed">
+				{`{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Your question?",
+    "acceptedAnswer": { "@type": "Answer", "text": "Your answer." }
+  }]
+}`}
+			</pre>
+		);
+	}
+
+	return <ProgressiveToolNotice toolId={toolId} />;
 }

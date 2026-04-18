@@ -4,16 +4,16 @@ import ToolImplementation from "@/components/tools/implementations/ToolImplement
 export const metadata = {
 	title: "Free Keyword Density Checker Online - No Signup | 30tools",
 	description:
-		"Free keyword density checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Measure exact-match keyword density for pasted copy. Useful for editing blogs, landing pages, and meta descriptions before publish—all client-side.",
 	keywords:
-		"keyword density checker, free online tool, no signup, seo, keyword density checker online, 30tools",
+		"keyword density checker, SEO keyword frequency, content optimization, on-page SEO, free online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/keyword-density-checker",
 	},
 	openGraph: {
 		title: "Free Keyword Density Checker Online - No Signup | 30tools",
 		description:
-			"Free keyword density checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Measure exact-match keyword density for pasted copy. Useful for editing blogs, landing pages, and meta descriptions before publish—all client-side.",
 		url: "https://30tools.com/keyword-density-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -23,7 +23,7 @@ export const metadata = {
 		card: "summary_large_image",
 		title: "Free Keyword Density Checker Online - No Signup | 30tools",
 		description:
-			"Free keyword density checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Measure exact-match keyword density for pasted copy. Useful for editing blogs, landing pages, and meta descriptions before publish—all client-side.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

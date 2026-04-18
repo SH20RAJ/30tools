@@ -4,16 +4,16 @@ import ToolImplementation from "@/components/tools/implementations/ToolImplement
 export const metadata = {
 	title: "Free Temperature Converter Online - No Signup | 30tools",
 	description:
-		"Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert Celsius, Fahrenheit, Kelvin, and Rankine in your browser. Accurate offsets, instant results, no uploads, and no account required.",
 	keywords:
-		"temperature converter, free online tool, no signup, utilities, temperature converter online, 30tools",
+		"temperature converter, celsius to fahrenheit, kelvin converter, rankine, free online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/temperature-converter",
 	},
 	openGraph: {
 		title: "Free Temperature Converter Online - No Signup | 30tools",
 		description:
-			"Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Convert Celsius, Fahrenheit, Kelvin, and Rankine in your browser. Accurate offsets, instant results, no uploads, and no account required.",
 		url: "https://30tools.com/temperature-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -23,7 +23,7 @@ export const metadata = {
 		card: "summary_large_image",
 		title: "Free Temperature Converter Online - No Signup | 30tools",
 		description:
-			"Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Convert Celsius, Fahrenheit, Kelvin, and Rankine in your browser. Accurate offsets, instant results, no uploads, and no account required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

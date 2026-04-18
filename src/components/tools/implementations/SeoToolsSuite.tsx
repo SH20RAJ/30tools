@@ -63,6 +63,21 @@ export default function SeoToolsSuite({ toolId }: { toolId: string }) {
 				toast.success("Extracted");
 				return;
 			}
+			if (toolId === "google-index-checker") {
+				const host = new URL(url).hostname;
+				setOut(
+					`Search Google for indexed pages from this host:\nhttps://www.google.com/search?q=site%3A${encodeURIComponent(host)}`,
+				);
+				toast.success("Done");
+				return;
+			}
+			if (toolId === "website-ranking-checker") {
+				setOut(
+					"Live ranking requires SERP APIs. Use Google Search Console for your own domain, or connect a rank-tracking provider.",
+				);
+				toast.success("Done");
+				return;
+			}
 			const res = await fetch("/api/tools/safe-http", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
@@ -86,20 +101,9 @@ export default function SeoToolsSuite({ toolId }: { toolId: string }) {
 						`twitter:card: ${extractMeta(html, "twitter:card") || "—"}`,
 					].join("\n"),
 				);
+				toast.success("Done");
 				return;
 			}
-			if (toolId === "google-index-checker") {
-				const host = new URL(url).hostname;
-				setOut(`Search Google for indexed pages from this host:\nhttps://www.google.com/search?q=site%3A${encodeURIComponent(host)}`);
-				return;
-			}
-			if (toolId === "website-ranking-checker") {
-				setOut(
-					"Live ranking requires SERP APIs. Use Google Search Console for your own domain, or connect a rank-tracking provider.",
-				);
-				return;
-			}
-			toast.success("Done");
 		} catch (e) {
 			toast.error(e instanceof Error ? e.message : "Failed");
 		}

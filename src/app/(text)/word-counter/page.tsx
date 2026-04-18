@@ -4,16 +4,16 @@ import ToolImplementation from "@/components/tools/implementations/ToolImplement
 export const metadata = {
 	title: "Free Word Counter Online - No Signup | 30tools",
 	description:
-		"Free word counter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Count words, characters, sentences, and paragraphs for essays, SEO copy, and social posts. Live tallies in your browser with no uploads or sign-in.",
 	keywords:
-		"word counter, free online tool, no signup, text, word counter online, 30tools",
+		"word counter, character counter, paragraph count, essay length, SEO word count, free online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/word-counter",
 	},
 	openGraph: {
 		title: "Free Word Counter Online - No Signup | 30tools",
 		description:
-			"Free word counter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Count words, characters, sentences, and paragraphs for essays, SEO copy, and social posts. Live tallies in your browser with no uploads or sign-in.",
 		url: "https://30tools.com/word-counter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -23,7 +23,7 @@ export const metadata = {
 		card: "summary_large_image",
 		title: "Free Word Counter Online - No Signup | 30tools",
 		description:
-			"Free word counter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Count words, characters, sentences, and paragraphs for essays, SEO copy, and social posts. Live tallies in your browser with no uploads or sign-in.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
