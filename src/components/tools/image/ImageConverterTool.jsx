@@ -13,7 +13,7 @@ import {
 	UploadIcon,
 	ZapIcon,
 } from "lucide-react";
-import { useCallback, useRef, useState } from "react";
+import { useState, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -120,8 +120,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 		return format ? supportedFormats.input[format].icon : "📄";
 	};
 
-	// Define processFiles before useCallback that references it
-	const processFilesRef = useRef((fileList) => {
+	const processFiles = (fileList) => {
 		const validFiles = fileList.filter((file) => {
 			const isValidFormat = Object.keys(supportedFormats.input).some(
 				(format) =>
@@ -161,30 +160,28 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 				reader.readAsDataURL(fileData.file);
 			}
 		});
-	});
+	};
 
-	const processFiles = (fileList) => processFilesRef.current(fileList);
-
-	const handleDrop = useCallback((e) => {
+	const handleDrop = (e) => {
 		e.preventDefault();
 		e.stopPropagation();
 		setDragActive(false);
 
 		const droppedFiles = Array.from(e.dataTransfer.files);
 		processFiles(droppedFiles);
-	}, []);
+	};
 
-	const handleDragOver = useCallback((e) => {
+	const handleDragOver = (e) => {
 		e.preventDefault();
 		e.stopPropagation();
 		setDragActive(true);
-	}, []);
+	};
 
-	const handleDragLeave = useCallback((e) => {
+	const handleDragLeave = (e) => {
 		e.preventDefault();
 		e.stopPropagation();
 		setDragActive(false);
-	}, []);
+	};
 
 	const handleFileSelect = (event) => {
 		const selectedFiles = Array.from(event.target.files);
