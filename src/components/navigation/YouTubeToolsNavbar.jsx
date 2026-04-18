@@ -61,7 +61,7 @@ export default function YouTubeToolsNavbar() {
 									More Tools <ChevronDown className="w-4 h-4 ml-1" />
 								</button>
 								{isDropdownOpen && (
-									<div className="absolute left-0 mt-2 w-48 bg-card border border-border rounded-lg shadow-lg z-50">
+									<div className="absolute left-0 mt-2 w-48 bg-card border border-border shadow-lg z-50">
 										{moreTools.map((tool) => (
 											<Link
 												key={tool.name}
@@ -108,7 +108,7 @@ export default function YouTubeToolsNavbar() {
 								<Link
 									key={tool.name}
 									href={tool.href}
-									className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:text-destructive hover:bg-accent/20 rounded-lg transition-colors"
+									className="block px-3 py-2 text-sm font-medium text-foreground/80 hover:text-destructive hover:bg-accent/20 sition-colors"
 									onClick={() => setIsMenuOpen(false)}
 								>
 									{tool.name}

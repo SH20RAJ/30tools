@@ -122,7 +122,7 @@ export default function CaseConverter() {
 						size="default"
 						onClick={() => handleModeClick(m.id as Mode)}
 						className={cn(
-							"h-12 rounded-xl border-2 transition-all duration-200",
+							"h-12 sition-all duration-200",
 							mode === m.id
 								? "shadow-md scale-[1.02]"
 								: "hover:border-primary/50",
@@ -141,7 +141,7 @@ export default function CaseConverter() {
 						setInputText(e.target.value)
 					}
 					placeholder="Type or paste your text here..."
-					className="min-h-[400px] text-lg p-8 bg-card border-border/60 focus:border-primary/50 transition-all resize-none rounded-[2rem] shadow-sm font-medium"
+					className="min-h-[400px] text-lg p-8 bg-card border-border/60 focus:border-primary/50 transition-all resize-none shadow-sm font-medium"
 				/>
 
 				{/* Floating Actions */}
@@ -150,7 +150,7 @@ export default function CaseConverter() {
 						variant="secondary"
 						size="sm"
 						onClick={clearText}
-						className="rounded-full shadow-lg h-10 px-6 bg-background/80 backdrop-blur-sm border border-border hover:bg-destructive hover:text-destructive-foreground transition-all"
+						className="shadow-lg h-10 px-6 bg-background/80 backdrop-blur-sm border border-border hover:bg-destructive hover:text-destructive-foreground transition-all"
 					>
 						<Trash2 className="w-4 h-4 mr-2" />
 						Clear
@@ -160,7 +160,7 @@ export default function CaseConverter() {
 						size="sm"
 						onClick={copyToClipboard}
 						disabled={!outputText}
-						className="rounded-full shadow-lg h-10 px-6 bg-primary text-primary-foreground transition-all hover:scale-105"
+						className="shadow-lg h-10 px-6 bg-primary text-primary-foreground transition-all hover:scale-105"
 					>
 						<Copy className="w-4 h-4 mr-2" />
 						Copy Result
@@ -170,7 +170,7 @@ export default function CaseConverter() {
 				{/* Real-time Indicator */}
 				<div className="absolute top-6 right-8 hidden md:block">
 					{mode && (
-						<div className="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest border border-primary/20">
+						<div className="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1.5 se tracking-widest border border-primary/20">
 							Active: {mode}
 						</div>
 					)}
@@ -179,8 +179,8 @@ export default function CaseConverter() {
 
 			{/* Stats Cards */}
 			<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 rounded-2xl shadow-sm">
-					<div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 shadow-sm">
+					<div className="w-12 h-12 s-center justify-center text-primary">
 						<Type className="w-6 h-6" />
 					</div>
 					<div className="flex flex-col">
@@ -191,8 +191,8 @@ export default function CaseConverter() {
 					</div>
 				</div>
 
-				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 rounded-2xl shadow-sm">
-					<div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 shadow-sm">
+					<div className="w-12 h-12 s-center justify-center text-primary">
 						<CaseSensitive className="w-6 h-6" />
 					</div>
 					<div className="flex flex-col">
@@ -205,8 +205,8 @@ export default function CaseConverter() {
 					</div>
 				</div>
 
-				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 rounded-2xl shadow-sm">
-					<div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 shadow-sm">
+					<div className="w-12 h-12 s-center justify-center text-primary">
 						<ArrowDownUp className="w-6 h-6" />
 					</div>
 					<div className="flex flex-col">

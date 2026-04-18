@@ -146,7 +146,7 @@ export default function YouTubeSuite({ toolId }: { toolId: string }) {
 				<Button type="button" onClick={run}>
 					Run
 				</Button>
-				<pre className="max-h-[360px] overflow-auto rounded-lg border bg-muted/40 p-4 text-sm whitespace-pre-wrap">
+				<pre className="max-h-[360px] overflow-auto sm whitespace-pre-wrap">
 					{out}
 				</pre>
 			</CardContent>

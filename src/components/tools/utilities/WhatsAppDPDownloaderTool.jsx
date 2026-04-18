@@ -155,11 +155,11 @@ export default function WhatsAppDPDownloaderTool() {
 									</Button>
 								</div>
 
-								<div className="bg-gray-50 rounded-lg p-4">
+								<div className="bg-gray-50 ">
 									<img
 										src={dpUrl}
 										alt="WhatsApp Profile Picture"
-										className="w-32 h-32 rounded-full object-cover mx-auto"
+										className="w-32 h-32 "
 										onError={() =>
 											toast.error("Could not load profile picture")
 										}

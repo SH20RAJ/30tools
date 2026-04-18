@@ -245,7 +245,7 @@ export default function PhoneValidatorTool() {
 					<Card>
 						<CardContent className="pt-6">
 							<div className="text-center py-8">
-								<div className="animate-spin rounded-full h-12 w-12 border-b-2 border-border mx-auto mb-4"></div>
+								<div className="animate-spin "></div>
 								<p className="text-muted-foreground">
 									Validating phone number...
 								</p>
@@ -262,7 +262,7 @@ export default function PhoneValidatorTool() {
 							<CardContent className="pt-6">
 								<div className="text-center py-6">
 									<div
-										className={`w-20 h-20 mx-auto mb-4 rounded-full flex items-center justify-center ${
+										className={`w-20 h-20 mx-auto mb-4 s-center justify-center ${
 											validationResult.isValid
 												? "bg-muted"
 												: "bg-destructive/20"
@@ -374,7 +374,7 @@ export default function PhoneValidatorTool() {
 									</CardHeader>
 									<CardContent>
 										<div className="grid md:grid-cols-3 gap-4">
-											<div className="text-center p-4 bg-muted/50 rounded-lg">
+											<div className="text-center p-4 bg-muted/50 ">
 												<h3 className="font-semibold text-foreground mb-2">
 													International
 												</h3>
@@ -382,7 +382,7 @@ export default function PhoneValidatorTool() {
 													{validationResult.format.international}
 												</div>
 											</div>
-											<div className="text-center p-4 bg-muted/50 rounded-lg">
+											<div className="text-center p-4 bg-muted/50 ">
 												<h3 className="font-semibold text-foreground mb-2">
 													National
 												</h3>
@@ -390,7 +390,7 @@ export default function PhoneValidatorTool() {
 													{validationResult.format.national}
 												</div>
 											</div>
-											<div className="text-center p-4 bg-muted/50 rounded-lg">
+											<div className="text-center p-4 bg-muted/50 ">
 												<h3 className="font-semibold text-foreground mb-2">
 													E.164
 												</h3>

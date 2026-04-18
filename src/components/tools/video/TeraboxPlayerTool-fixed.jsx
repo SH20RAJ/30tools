@@ -215,12 +215,12 @@ export default function TeraboxPlayerTool() {
 		);
 
 		return `<iframe 
-  src="${window.location.origin}/video-player-embed?data=${shareData}" 
-  width="${formData.width}" 
-  height="${formData.height}"
-  style="border: none; border-radius: 8px;"
-  allowfullscreen
-  title="${title || "Terabox Video Player"}"
+ src="${window.location.origin}/video-player-embed?data=${shareData}" 
+ width="${formData.width}" 
+ height="${formData.height}"
+ style="border: none; border-radius: 8px;"
+ allowfullscreen
+ title="${title || "Terabox Video Player"}"
 ></iframe>`;
 	};
 
@@ -471,7 +471,7 @@ export default function TeraboxPlayerTool() {
 							<CardContent className="pt-6">
 								<div className="space-y-4">
 									{error && (
-										<div className="flex items-center p-3 bg-destructive/10 border border-destructive/20 rounded-md">
+										<div className="flex items-center p-3 bg-destructive/10 border border-destructive/20 ">
 											<AlertCircleIcon className="h-5 w-5 text-destructive mr-2" />
 											<span className="text-sm text-destructive">{error}</span>
 										</div>
@@ -656,7 +656,7 @@ export default function TeraboxPlayerTool() {
 											</CardTitle>
 										</CardHeader>
 										<CardContent>
-											<div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg">
+											<div className="bg-gray-100 dark:bg-gray-800 p-4 ">
 												<iframe
 													ref={previewRef}
 													src={shareUrl ? getCleanEmbedUrl() : ""}
@@ -868,7 +868,7 @@ export default function TeraboxPlayerTool() {
 							<CardContent className="space-y-6">
 								<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 									<div className="text-center">
-										<div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">
+										<div className="w-12 h-12 bg-primary text-primary-foreground s-center justify-center mx-auto mb-3 text-xl font-bold">
 											1
 										</div>
 										<h3 className="font-semibold mb-2">Paste Terabox URL</h3>
@@ -878,7 +878,7 @@ export default function TeraboxPlayerTool() {
 										</p>
 									</div>
 									<div className="text-center">
-										<div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">
+										<div className="w-12 h-12 bg-primary text-primary-foreground s-center justify-center mx-auto mb-3 text-xl font-bold">
 											2
 										</div>
 										<h3 className="font-semibold mb-2">
@@ -890,7 +890,7 @@ export default function TeraboxPlayerTool() {
 										</p>
 									</div>
 									<div className="text-center">
-										<div className="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-3 text-xl font-bold">
+										<div className="w-12 h-12 bg-primary text-primary-foreground s-center justify-center mx-auto mb-3 text-xl font-bold">
 											3
 										</div>
 										<h3 className="font-semibold mb-2">Generate Player</h3>

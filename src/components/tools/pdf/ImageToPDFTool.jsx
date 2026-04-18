@@ -100,7 +100,7 @@ export default function ImageToPDFTool() {
 				<Card>
 					<CardContent className="pt-6">
 						<div
-							className="border-2 border-dashed rounded-xl p-12 text-center cursor-pointer hover:bg-muted/50 transition-colors"
+							className="border-2 border-dashed sor-pointer hover:bg-muted/50 transition-colors"
 							onClick={() => fileInputRef.current?.click()}
 						>
 							<ImageIcon className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
@@ -150,7 +150,7 @@ export default function ImageToPDFTool() {
 									{files.map((file, index) => (
 										<div
 											key={index}
-											className="relative group aspect-square bg-muted rounded-lg overflow-hidden border"
+											className="relative group aspect-square bg-muted "
 										>
 											<img
 												src={URL.createObjectURL(file)}
@@ -159,7 +159,7 @@ export default function ImageToPDFTool() {
 											/>
 											<button
 												onClick={() => removeFile(index)}
-												className="absolute top-1 right-1 bg-black/50 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
+												className="absolute top-1 right-1 bg-black/50 text-white sition-opacity"
 											>
 												<X className="w-4 h-4" />
 											</button>
@@ -191,7 +191,7 @@ export default function ImageToPDFTool() {
 							</>
 						) : (
 							<div className="space-y-4">
-								<div className="flex items-center justify-center p-6 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-100 dark:border-green-900">
+								<div className="flex items-center justify-center p-6 bg-green-50 dark:bg-green-900/20 ">
 									<div className="text-center">
 										<CheckCircle className="w-12 h-12 text-green-500 mx-auto mb-2" />
 										<h3 className="font-semibold text-green-700 dark:text-green-400">

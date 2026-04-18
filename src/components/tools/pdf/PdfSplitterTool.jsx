@@ -262,7 +262,7 @@ export default function PdfSplitterTool() {
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
-					<div className="border-2 border-dashed border-muted-foreground/25 rounded-lg p-8 text-center">
+					<div className="border-2 border-dashed border-muted-foreground/25 ">
 						<FileText className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
 						<p className="text-lg font-medium mb-2">
 							Drop PDF file here or click to browse
@@ -284,7 +284,7 @@ export default function PdfSplitterTool() {
 					</div>
 
 					{pdfFile && (
-						<div className="mt-4 p-4 bg-muted rounded-lg">
+						<div className="mt-4 p-4 bg-muted ">
 							<div className="flex items-center justify-between">
 								<div>
 									<p className="font-medium">{pdfFile.name}</p>
@@ -450,7 +450,7 @@ export default function PdfSplitterTool() {
 							{splitResults.map((result) => (
 								<div
 									key={result.id}
-									className="flex items-center justify-between p-3 border rounded-lg"
+									className="flex items-center justify-between p-3 border "
 								>
 									<div className="flex items-center gap-3">
 										<FileText className="h-5 w-5 text-primary" />

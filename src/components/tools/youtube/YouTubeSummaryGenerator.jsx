@@ -435,7 +435,7 @@ export default function YouTubeSummaryGenerator() {
 										Copy
 									</Button>
 								</div>
-								<div className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+								<div className="bg-gray-50 dark:bg-gray-800 p-6 ">
 									<div className="prose prose-sm max-w-none dark:prose-invert">
 										<div className="whitespace-pre-wrap">
 											{summaryData.summary}
@@ -494,7 +494,7 @@ export default function YouTubeSummaryGenerator() {
 										Copy
 									</Button>
 								</div>
-								<div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg max-h-96 overflow-y-auto">
+								<div className="bg-gray-50 dark:bg-gray-800 p-4 ">
 									<pre className="whitespace-pre-wrap text-sm">
 										{summaryData.originalTranscript}
 									</pre>

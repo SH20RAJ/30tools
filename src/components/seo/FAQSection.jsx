@@ -75,7 +75,7 @@ export default function FAQSection({
 						key={index}
 						open={openItems.has(index)}
 						onOpenChange={() => toggleItem(index)}
-						className="border rounded-lg"
+						className="border "
 					>
 						<CollapsibleTrigger className="w-full px-4 py-3 text-left hover:bg-muted/50 transition-colors">
 							<div className="flex items-center justify-between">
@@ -228,7 +228,7 @@ export function SearchableFAQ({
 								placeholder={placeholder}
 								value={searchTerm}
 								onChange={(e) => handleSearch(e.target.value)}
-								className="w-full px-4 py-3 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background"
+								className="w-full px-4 py-3 border border-border s:outline-none focus:ring-2 focus:ring-primary bg-background"
 							/>
 						</div>
 

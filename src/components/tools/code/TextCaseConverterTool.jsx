@@ -402,31 +402,31 @@ export default function TextCaseConverterTool() {
 					</CardHeader>
 					<CardContent>
 						<div className="grid gap-4 md:grid-cols-5">
-							<div className="text-center p-3 bg-muted rounded-lg">
+							<div className="text-center p-3 bg-muted ">
 								<div className="text-lg font-bold text-primary">
 									{stats.characters}
 								</div>
 								<div className="text-xs text-muted-foreground">Characters</div>
 							</div>
-							<div className="text-center p-3 bg-muted rounded-lg">
+							<div className="text-center p-3 bg-muted ">
 								<div className="text-lg font-bold text-primary">
 									{stats.charactersNoSpaces}
 								</div>
 								<div className="text-xs text-muted-foreground">No Spaces</div>
 							</div>
-							<div className="text-center p-3 bg-muted rounded-lg">
+							<div className="text-center p-3 bg-muted ">
 								<div className="text-lg font-bold text-primary">
 									{stats.words}
 								</div>
 								<div className="text-xs text-muted-foreground">Words</div>
 							</div>
-							<div className="text-center p-3 bg-muted rounded-lg">
+							<div className="text-center p-3 bg-muted ">
 								<div className="text-lg font-bold text-primary">
 									{stats.sentences}
 								</div>
 								<div className="text-xs text-muted-foreground">Sentences</div>
 							</div>
-							<div className="text-center p-3 bg-muted rounded-lg">
+							<div className="text-center p-3 bg-muted ">
 								<div className="text-lg font-bold text-destructive">
 									{stats.paragraphs}
 								</div>

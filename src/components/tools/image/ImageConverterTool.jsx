@@ -426,7 +426,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 				</CardHeader>
 				<CardContent>
 					<div
-						className={`border-2 border-dashed rounded-lg p-8 text-center transition-colors ${
+						className={`border-2 border-dashed sition-colors ${
 							dragActive
 								? "border-primary bg-primary/5"
 								: "border-muted-foreground/25 hover:border-primary/50"
@@ -632,7 +632,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 														resizeWidth: e.target.value,
 													}))
 												}
-												className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+												className="flex h-10 w-full sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 											/>
 										</div>
 										<div>
@@ -648,7 +648,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 														resizeHeight: e.target.value,
 													}))
 												}
-												className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+												className="flex h-10 w-full sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 											/>
 										</div>
 									</div>
@@ -697,7 +697,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 								return (
 									<div
 										key={fileData.id}
-										className="flex items-center gap-4 p-4 border rounded-lg"
+										className="flex items-center gap-4 p-4 border "
 									>
 										{/* Preview */}
 										<div className="flex-shrink-0">

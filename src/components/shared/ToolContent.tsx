@@ -23,7 +23,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 				<h2 className="text-3xl font-semibold tracking-tight mb-6">
 					What is {toolData.name}?
 				</h2>
-				<div className="bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl p-8">
+				<div className="bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 ">
 					<p className="text-lg text-[#1d1d1f]/80 dark:text-white/80 leading-relaxed">
 						{description} This free online tool is part of the 30tools suite,
 						designed to provide lightning-fast processing directly in your
@@ -43,7 +43,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					{toolData.howTo?.steps?.map((step: any, idx: number) => (
 						<div
 							key={idx}
-							className="relative p-8 bg-white dark:bg-[#1d1d1f] rounded-xl border border-black/5 dark:border-white/5 group transition-all"
+							className="relative p-8 bg-white dark:bg-[#1d1d1f] sition-all"
 						>
 							<div className="text-[#0071e3] font-bold text-lg mb-4">
 								{idx + 1}.
@@ -70,9 +70,9 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					{toolData.features?.map((feature: string, idx: number) => (
 						<div
 							key={idx}
-							className="flex items-start gap-4 p-6 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl hover:shadow-sm transition-all"
+							className="flex items-start gap-4 p-6 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 shadow-sm transition-all"
 						>
-							<div className="mt-1 w-5 h-5 rounded-full bg-[#0071e3]/10 flex items-center justify-center text-[#0071e3]">
+							<div className="mt-1 w-5 h-5 s-center justify-center text-[#0071e3]">
 								<Check className="w-3 h-3" />
 							</div>
 							<span className="text-base font-medium">{feature}</span>
@@ -82,9 +82,9 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 			</section>
 
 			{/* Trust Section */}
-			<section className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-12 bg-[#f5f5f7] dark:bg-[#161617] rounded-xl border border-black/5 dark:border-white/5">
+			<section className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-12 bg-[#f5f5f7] dark:bg-[#161617] ">
 				<div className="text-center space-y-4">
-					<div className="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto text-[#0071e3]">
+					<div className="w-12 h-12 bg-[#0071e3]/10 s-center justify-center mx-auto text-[#0071e3]">
 						<Zap className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Instant Results</h3>
@@ -94,7 +94,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					</p>
 				</div>
 				<div className="text-center space-y-4">
-					<div className="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto text-[#0071e3]">
+					<div className="w-12 h-12 bg-[#0071e3]/10 s-center justify-center mx-auto text-[#0071e3]">
 						<Shield className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Maximum Privacy</h3>
@@ -104,7 +104,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					</p>
 				</div>
 				<div className="text-center space-y-4">
-					<div className="w-12 h-12 bg-[#0071e3]/10 rounded-xl flex items-center justify-center mx-auto text-[#0071e3]">
+					<div className="w-12 h-12 bg-[#0071e3]/10 s-center justify-center mx-auto text-[#0071e3]">
 						<Download className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Free Forever</h3>
@@ -125,7 +125,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 						{toolData.faqs?.map((faq: any, idx: number) => (
 							<div
 								key={idx}
-								className="p-8 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 rounded-xl transition-all"
+								className="p-8 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 sition-all"
 							>
 								<h3 className="text-xl font-semibold mb-4">{faq.question}</h3>
 								<p className="opacity-60 leading-relaxed text-lg">
@@ -142,7 +142,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 				<h2 className="text-3xl font-semibold tracking-tight mb-8">
 					Why 30tools is Better
 				</h2>
-				<div className="overflow-hidden rounded-xl border border-black/5 dark:border-white/5 bg-white dark:bg-[#1d1d1f]">
+				<div className="overflow-hidden ">
 					<table className="w-full text-left border-collapse">
 						<thead>
 							<tr className="bg-[#f5f5f7] dark:bg-[#161617] border-b border-black/5 dark:border-white/5">
@@ -188,7 +188,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 			</section>
 
 			{/* Quick Reference / Snippet Section */}
-			<section className="p-12 bg-white dark:bg-[#1d1d1f] rounded-xl border border-black/5 dark:border-white/5">
+			<section className="p-12 bg-white dark:bg-[#1d1d1f] ">
 				<div className="max-w-3xl">
 					<h2 className="text-2xl font-semibold mb-6">
 						The #1 Online {toolData.name}
@@ -203,19 +203,19 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					</p>
 					<ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 						<li className="flex items-center gap-3 text-sm font-medium">
-							<div className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
+							<div className="w-1.5 h-1.5 " />
 							Optimized for Speed
 						</li>
 						<li className="flex items-center gap-3 text-sm font-medium">
-							<div className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
+							<div className="w-1.5 h-1.5 " />
 							Supports Multiple Formats
 						</li>
 						<li className="flex items-center gap-3 text-sm font-medium">
-							<div className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
+							<div className="w-1.5 h-1.5 " />
 							One-click Clipboard Sync
 						</li>
 						<li className="flex items-center gap-3 text-sm font-medium">
-							<div className="w-1.5 h-1.5 rounded-full bg-[#0071e3]" />
+							<div className="w-1.5 h-1.5 " />
 							Mobile & Desktop Ready
 						</li>
 					</ul>

@@ -199,7 +199,7 @@ export function FinancialCalculatorsTool({ toolId }: { toolId: string }) {
 				>
 					Calculate
 				</Button>
-				<div className="rounded-lg border bg-muted/40 p-4 font-mono min-h-[3rem]">{result || "—"}</div>
+				<div className="">{result || "—"}</div>
 			</CardContent>
 		</Card>
 	);

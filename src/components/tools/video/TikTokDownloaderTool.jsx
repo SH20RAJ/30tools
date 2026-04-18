@@ -314,7 +314,7 @@ export default function TikTokDownloaderTool() {
 					<CardContent>
 						{videoData ? (
 							<div className="space-y-4">
-								<div className="aspect-[9/16] bg-black rounded-lg overflow-hidden relative max-w-[300px] mx-auto">
+								<div className="aspect-[9/16] bg-black ">
 									<img
 										src={videoData.thumbnail}
 										alt={videoData.title}
@@ -389,7 +389,7 @@ export default function TikTokDownloaderTool() {
 								</div>
 							</div>
 						) : (
-							<div className="flex items-center justify-center h-96 bg-muted rounded-lg">
+							<div className="flex items-center justify-center h-96 bg-muted ">
 								<div className="text-center text-muted-foreground">
 									<Smartphone className="h-12 w-12 mx-auto mb-2" />
 									<p>Enter a TikTok URL to see preview</p>
@@ -408,7 +408,7 @@ export default function TikTokDownloaderTool() {
 				<CardContent>
 					<div className="grid md:grid-cols-3 gap-6">
 						<div className="text-center space-y-2">
-							<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto">
 								<LinkIcon className="h-6 w-6 text-primary" />
 							</div>
 							<h3 className="font-semibold">1. Copy TikTok URL</h3>
@@ -417,7 +417,7 @@ export default function TikTokDownloaderTool() {
 							</p>
 						</div>
 						<div className="text-center space-y-2">
-							<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto">
 								<Download className="h-6 w-6 text-primary" />
 							</div>
 							<h3 className="font-semibold">2. Paste & Process</h3>
@@ -426,7 +426,7 @@ export default function TikTokDownloaderTool() {
 							</p>
 						</div>
 						<div className="text-center space-y-2">
-							<div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto">
+							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto">
 								<Play className="h-6 w-6 text-primary" />
 							</div>
 							<h3 className="font-semibold">3. Save & Enjoy</h3>

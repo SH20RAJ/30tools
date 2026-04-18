@@ -133,7 +133,7 @@ function TextCompareMount() {
 			<CardContent className="grid gap-4 md:grid-cols-2">
 				<Textarea className="min-h-[200px] font-mono text-sm" value={a} onChange={(e) => setA(e.target.value)} />
 				<Textarea className="min-h-[200px] font-mono text-sm" value={b} onChange={(e) => setB(e.target.value)} />
-				<div className="md:col-span-2 rounded-lg border bg-muted/20 p-3 text-sm font-mono whitespace-pre-wrap">
+				<div className="md:col-span-2 sm font-mono whitespace-pre-wrap">
 					{diff.map((part, i) => (
 						<span
 							key={i}

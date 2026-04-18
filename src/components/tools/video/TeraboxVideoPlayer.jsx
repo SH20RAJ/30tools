@@ -166,7 +166,7 @@ export default function TeraboxVideoPlayer() {
 						</div>
 
 						{error && (
-							<div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 rounded-lg flex items-start gap-2">
+							<div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 s-start gap-2">
 								<AlertCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
 								<span>{error}</span>
 							</div>
@@ -176,7 +176,7 @@ export default function TeraboxVideoPlayer() {
 					{videoData && (
 						<div className="mt-6 space-y-4">
 							{/* Video Player */}
-							<div className="relative bg-black rounded-lg overflow-hidden aspect-video">
+							<div className="relative bg-black spect-video">
 								<video
 									ref={videoRef}
 									className="w-full h-full"
@@ -192,7 +192,7 @@ export default function TeraboxVideoPlayer() {
 										<Button
 											onClick={handlePlay}
 											size="lg"
-											className="bg-muted/500 hover:bg-primary text-white rounded-full w-20 h-20"
+											className="bg-muted/500 hover:bg-primary text-white "
 										>
 											<Play className="w-10 h-10" />
 										</Button>
@@ -212,7 +212,7 @@ export default function TeraboxVideoPlayer() {
 							</div>
 
 							{/* Video Info */}
-							<div className="bg-muted/50 dark:bg-blue-950/20 border border-border rounded-lg p-4">
+							<div className="bg-muted/50 dark:bg-blue-950/20 border border-border ">
 								<h3 className="font-semibold text-lg mb-2 text-foreground dark:text-blue-200">
 									Video Ready
 								</h3>

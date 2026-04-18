@@ -153,7 +153,7 @@ export default function TeraboxPlayerSelector({
 							</div>
 
 							{currentPlayer && (
-								<div className="space-y-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+								<div className="space-y-3 p-3 bg-gray-50 dark:bg-gray-800 ">
 									<div>
 										<h4 className="font-semibold">{currentPlayer.name}</h4>
 										<p className="text-sm text-muted-foreground">
@@ -199,7 +199,7 @@ export default function TeraboxPlayerSelector({
 											<SelectItem key={theme} value={theme}>
 												<div className="flex items-center space-x-2">
 													<div
-														className={`w-3 h-3 rounded-full ${getThemeColor(theme)}`}
+														className={`w-3 h-3 }`}
 													></div>
 													<span className="capitalize">{theme}</span>
 												</div>
@@ -221,7 +221,7 @@ export default function TeraboxPlayerSelector({
 										}`}
 									>
 										<div
-											className={`w-4 h-4 rounded-full ${getThemeColor(theme)} mx-auto mb-1`}
+											className={`w-4 h-4 } mx-auto mb-1`}
 										></div>
 										<span className="text-xs capitalize">{theme}</span>
 									</button>
@@ -230,7 +230,7 @@ export default function TeraboxPlayerSelector({
 						</div>
 
 						{/* Configuration Summary */}
-						<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+						<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 							<h5 className="font-medium text-sm mb-2">Current Selection</h5>
 							<div className="text-sm space-y-1">
 								<div className="flex justify-between">
@@ -264,7 +264,7 @@ export default function TeraboxPlayerSelector({
 
 						{videoData && generatePreviewUrl() ? (
 							<div className="space-y-3">
-								<div className="bg-gray-100 dark:bg-gray-800 p-2 rounded-lg">
+								<div className="bg-gray-100 dark:bg-gray-800 p-2 ">
 									<iframe
 										src={generatePreviewUrl()}
 										className="w-full h-48 border-0 rounded"
@@ -296,7 +296,7 @@ export default function TeraboxPlayerSelector({
 								</div>
 							</div>
 						) : (
-							<div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-8 text-center">
+							<div className="bg-gray-100 dark:bg-gray-800 ">
 								<MonitorIcon className="h-12 w-12 mx-auto text-muted-foreground mb-3" />
 								<p className="text-sm text-muted-foreground mb-2">
 									Preview will appear here
@@ -308,25 +308,25 @@ export default function TeraboxPlayerSelector({
 						)}
 
 						{/* Compatibility Info */}
-						<div className="p-3 bg-muted/50 dark:bg-primary/20 rounded-lg">
+						<div className="p-3 bg-muted/50 dark:bg-primary/20 ">
 							<h5 className="font-medium text-sm mb-2 text-foreground dark:text-green-200">
 								Compatibility
 							</h5>
 							<div className="text-sm space-y-1">
 								<div className="flex items-center space-x-2">
-									<div className="w-2 h-2 bg-muted/500 rounded-full"></div>
+									<div className="w-2 h-2 bg-muted/500 "></div>
 									<span className="text-primary dark:text-green-300">
 										Modern Browsers
 									</span>
 								</div>
 								<div className="flex items-center space-x-2">
-									<div className="w-2 h-2 bg-muted/500 rounded-full"></div>
+									<div className="w-2 h-2 bg-muted/500 "></div>
 									<span className="text-primary dark:text-green-300">
 										Mobile Devices
 									</span>
 								</div>
 								<div className="flex items-center space-x-2">
-									<div className="w-2 h-2 bg-muted/500 rounded-full"></div>
+									<div className="w-2 h-2 bg-muted/500 "></div>
 									<span className="text-primary dark:text-green-300">
 										Responsive Design
 									</span>

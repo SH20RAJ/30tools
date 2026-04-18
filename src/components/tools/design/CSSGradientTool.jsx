@@ -198,10 +198,10 @@ export default function CSSGradientTool() {
 
 		switch (format) {
 			case "css":
-				content = `.gradient {\n  ${css}\n}`;
+				content = `.gradient {\n ${css}\n}`;
 				break;
 			case "scss":
-				content = `$gradient: ${css.replace("background: ", "").replace(";", "")};\n\n.gradient {\n  background: $gradient;\n}`;
+				content = `$gradient: ${css.replace("background: ", "").replace(";", "")};\n\n.gradient {\n background: $gradient;\n}`;
 				break;
 			case "svg": {
 				const svgColors = colors
@@ -209,14 +209,14 @@ export default function CSSGradientTool() {
 						(c, _i) =>
 							`<stop offset="${c.position}%" style="stop-color:${c.color}" />`,
 					)
-					.join("\n    ");
+					.join("\n ");
 				content = `<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      ${svgColors}
-    </linearGradient>
-  </defs>
-  <rect width="400" height="200" fill="url(#gradient)" />
+ <defs>
+ <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+ ${svgColors}
+ </linearGradient>
+ </defs>
+ <rect width="400" height="200" fill="url(#gradient)" />
 </svg>`;
 				break;
 			}
@@ -242,7 +242,7 @@ export default function CSSGradientTool() {
 			</Link>
 
 			<div className="flex items-center gap-3 mb-4">
-				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 					<PaletteIcon className="h-6 w-6 text-primary" />
 				</div>
 				<div>
@@ -421,7 +421,7 @@ export default function CSSGradientTool() {
 						</CardHeader>
 						<CardContent>
 							<div
-								className="w-full h-64 rounded-lg border"
+								className="w-full h-64 "
 								style={{
 									background: cssOutput
 										.replace("background: ", "")
@@ -441,7 +441,7 @@ export default function CSSGradientTool() {
 						</CardHeader>
 						<CardContent>
 							<div className="relative">
-								<pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
+								<pre className="bg-muted p-4 sm overflow-x-auto">
 									<code>{cssOutput}</code>
 								</pre>
 								<Button
@@ -507,17 +507,17 @@ export default function CSSGradientTool() {
 						<TabsContent value="basic" className="space-y-4">
 							<div className="space-y-3">
 								<h4 className="font-medium">HTML + CSS</h4>
-								<pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
+								<pre className="bg-muted p-4 sm overflow-x-auto">
 									<code>{`<div class="gradient-bg">
-  <h2>Beautiful Gradient Background</h2>
+ <h2>Beautiful Gradient Background</h2>
 </div>
 
 <style>
 .gradient-bg {
-  ${cssOutput}
-  padding: 2rem;
-  color: white;
-  text-align: center;
+ ${cssOutput}
+ padding: 2rem;
+ color: white;
+ text-align: center;
 }
 </style>`}</code>
 								</pre>
@@ -527,17 +527,17 @@ export default function CSSGradientTool() {
 						<TabsContent value="advanced" className="space-y-4">
 							<div className="space-y-3">
 								<h4 className="font-medium">With Animation</h4>
-								<pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
+								<pre className="bg-muted p-4 sm overflow-x-auto">
 									<code>{`.animated-gradient {
-  ${cssOutput}
-  background-size: 200% 200%;
-  animation: gradientShift 3s ease infinite;
+ ${cssOutput}
+ background-size: 200% 200%;
+ animation: gradientShift 3s ease infinite;
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+ 0% { background-position: 0% 50%; }
+ 50% { background-position: 100% 50%; }
+ 100% { background-position: 0% 50%; }
 }`}</code>
 								</pre>
 							</div>
@@ -546,21 +546,21 @@ export default function CSSGradientTool() {
 						<TabsContent value="frameworks" className="space-y-4">
 							<div className="space-y-3">
 								<h4 className="font-medium">Tailwind CSS</h4>
-								<pre className="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
+								<pre className="bg-muted p-4 sm overflow-x-auto">
 									<code>{`<!-- Add to tailwind.config.js -->
 module.exports = {
-  theme: {
-    extend: {
-      backgroundImage: {
-        'custom-gradient': '${cssOutput.replace("background: ", "").replace(";", "")}'
-      }
-    }
-  }
+ theme: {
+ extend: {
+ backgroundImage: {
+ 'custom-gradient': '${cssOutput.replace("background: ", "").replace(";", "")}'
+ }
+ }
+ }
 }
 
 <!-- Use in HTML -->
 <div class="bg-custom-gradient p-8 text-white">
-  Your content here
+ Your content here
 </div>`}</code>
 								</pre>
 							</div>

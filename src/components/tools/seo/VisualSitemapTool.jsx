@@ -30,15 +30,15 @@ const TreeNode = ({ node, depth = 0 }) => {
 		<div className="select-none">
 			<div
 				className={`
-          flex items-center gap-2 py-1.5 px-2 rounded-md transition-colors cursor-pointer
-          ${isExpanded ? "bg-muted/30" : "hover:bg-muted/50"}
-          ${isRoot ? "font-bold text-lg text-primary" : "text-sm"}
-        `}
+ flex items-center gap-2 py-1.5 px-2 sition-colors cursor-pointer
+ ${isExpanded ? "bg-muted/30" : "hover:bg-muted/50"}
+ ${isRoot ? "font-bold text-lg text-primary" : "text-sm"}
+ `}
 				style={{ marginLeft: `${depth * 12}px` }}
 				onClick={() => setIsExpanded(!isExpanded)}
 			>
 				<div
-					className={`p-1 rounded-md ${hasChildren ? "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400" : "bg-gray-100 dark:bg-gray-800 text-gray-500"}`}
+					className={`p-1 sChildren ? "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400" : "bg-gray-100 dark:bg-gray-800 text-gray-500"}`}
 				>
 					{hasChildren ? (
 						isExpanded ? (
@@ -60,7 +60,7 @@ const TreeNode = ({ node, depth = 0 }) => {
 				<span className="truncate">{node.name || (isRoot ? "Root" : "/")}</span>
 
 				{hasChildren && (
-					<span className="text-xs text-muted-foreground ml-auto bg-muted px-1.5 py-0.5 rounded-full">
+					<span className="text-xs text-muted-foreground ml-auto bg-muted px-1.5 py-0.5 ">
 						{Object.keys(node.children).length}
 					</span>
 				)}
@@ -159,7 +159,7 @@ export default function VisualSitemapTool() {
 		<div className="space-y-8 w-full max-w-5xl mx-auto">
 			<Card className="border-2 border-primary/5 shadow-lg">
 				<CardHeader className="bg-muted/30 pb-8 border-b">
-					<h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-600   flex items-center gap-3">
+					<h1 className="text-3xl font-bold bg-gradient-to-r from-primary to-blue-600 flex items-center gap-3">
 						<Network className="w-8 h-8 text-primary" />
 						Visual Sitemap Generator
 					</h1>
@@ -219,7 +219,7 @@ export default function VisualSitemapTool() {
 						</Button>
 					</CardHeader>
 					<CardContent className="p-6 bg-card min-h-[500px]">
-						<div className="border rounded-lg p-6 bg-background shadow-inner">
+						<div className="border shadow-inner">
 							<TreeNode node={treeData} />
 						</div>
 					</CardContent>

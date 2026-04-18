@@ -145,18 +145,18 @@ export default function MarkdownToText() {
 			</div>
 
 			{/* Stats Bar */}
-			<div className="flex flex-wrap gap-4 text-xs font-medium text-muted-foreground bg-secondary/30 p-3 rounded-xl border border-border/40">
-				<div className="flex items-center px-2 py-1 bg-background/50 rounded-lg">
+			<div className="flex flex-wrap gap-4 text-xs font-medium text-muted-foreground bg-secondary/30 p-3 ">
+				<div className="flex items-center px-2 py-1 bg-background/50 ">
 					<span className="opacity-70 mr-2">Input Characters:</span>
 					<span className="text-foreground">{markdown.length}</span>
 				</div>
-				<div className="flex items-center px-2 py-1 bg-background/50 rounded-lg">
+				<div className="flex items-center px-2 py-1 bg-background/50 ">
 					<span className="opacity-70 mr-2">Output Words:</span>
 					<span className="text-foreground">
 						{plainText.split(/\s+/).filter((w) => w.length > 0).length}
 					</span>
 				</div>
-				<div className="flex items-center px-2 py-1 bg-background/50 rounded-lg">
+				<div className="flex items-center px-2 py-1 bg-background/50 ">
 					<span className="opacity-70 mr-2">Markdown Savings:</span>
 					<span className="text-green-500 font-bold">
 						{markdown.length > 0

@@ -270,7 +270,7 @@ export default function PdfUnlockerTool() {
 					<CardContent>
 						{!selectedFile ? (
 							<div
-								className="border-2 border-dashed border-border rounded-lg p-8 text-center cursor-pointer hover:border-primary transition-colors"
+								className="border-2 border-dashed border-border sor-pointer hover:border-primary transition-colors"
 								onClick={() => fileInputRef.current?.click()}
 							>
 								<UploadIcon className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
@@ -289,7 +289,7 @@ export default function PdfUnlockerTool() {
 							</div>
 						) : (
 							<div className="space-y-4">
-								<div className="flex items-center gap-3 p-4 border rounded-lg">
+								<div className="flex items-center gap-3 p-4 border ">
 									<LockIcon className="h-8 w-8 text-primary" />
 									<div className="flex-1">
 										<p className="font-medium">{selectedFile.name}</p>
@@ -405,13 +405,13 @@ export default function PdfUnlockerTool() {
 
 								<div className="space-y-4">
 									<div className="grid grid-cols-2 gap-4 text-center">
-										<div className="p-4 bg-muted/50 rounded-lg">
+										<div className="p-4 bg-muted/50 ">
 											<p className="text-2xl font-bold text-primary">
 												<LockIcon className="h-6 w-6 mx-auto mb-1" />
 											</p>
 											<p className="text-sm text-muted-foreground">Protected</p>
 										</div>
-										<div className="p-4 bg-muted/50 rounded-lg">
+										<div className="p-4 bg-muted/50 ">
 											<p className="text-2xl font-bold text-primary">
 												<UnlockIcon className="h-6 w-6 mx-auto mb-1" />
 											</p>
@@ -419,7 +419,7 @@ export default function PdfUnlockerTool() {
 										</div>
 									</div>
 
-									<div className="text-center p-4 bg-muted/50 dark:bg-green-950 rounded-lg">
+									<div className="text-center p-4 bg-muted/50 dark:bg-green-950 ">
 										<p className="text-lg font-medium text-primary dark:text-green-300">
 											Password:{" "}
 											<code className="bg-muted dark:bg-primary px-2 py-1 rounded">

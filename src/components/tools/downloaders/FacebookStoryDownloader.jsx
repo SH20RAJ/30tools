@@ -96,7 +96,7 @@ const FacebookStoryDownloader = () => {
 					)}
 
 					{result && (
-						<div className="mt-8 p-6 bg-muted/50 rounded-xl animate-in fade-in slide-in-from-bottom-4">
+						<div className="mt-8 p-6 bg-muted/50 slide-in-from-bottom-4">
 							<div className="flex flex-col items-center gap-4">
 								<CheckCircle2 className="w-12 h-12 text-green-500" />
 								<h3 className="text-xl font-semibold text-center">
@@ -107,7 +107,7 @@ const FacebookStoryDownloader = () => {
 								</p>
 
 								{/* Visual placeholder for the video thumbnail */}
-								<div className="relative w-full aspect-video rounded-lg overflow-hidden bg-black/10 my-2">
+								<div className="relative w-full aspect-video ">
 									<Image
 										src={result.thumbnail}
 										alt="Thumbnail"
@@ -130,19 +130,19 @@ const FacebookStoryDownloader = () => {
 
 			{/* Lightweight Features Section */}
 			<div className="grid md:grid-cols-3 gap-6 text-center">
-				<div className="p-4 rounded-lg bg-muted/30">
+				<div className="p-4 ">
 					<h3 className="font-semibold mb-2">Fast & Free</h3>
 					<p className="text-sm text-muted-foreground">
 						Download stories instantly without any hidden fees.
 					</p>
 				</div>
-				<div className="p-4 rounded-lg bg-muted/30">
+				<div className="p-4 ">
 					<h3 className="font-semibold mb-2">No Registration</h3>
 					<p className="text-sm text-muted-foreground">
 						No sign-up required. Just paste the link and download.
 					</p>
 				</div>
-				<div className="p-4 rounded-lg bg-muted/30">
+				<div className="p-4 ">
 					<h3 className="font-semibold mb-2">Secure</h3>
 					<p className="text-sm text-muted-foreground">
 						We do not store your downloads or track your history.

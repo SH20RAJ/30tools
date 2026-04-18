@@ -90,7 +90,7 @@ export default function PdfToImageTool() {
 				<Card>
 					<CardContent className="pt-6">
 						<div
-							className="border-2 border-dashed rounded-xl p-12 text-center cursor-pointer hover:bg-muted/50 transition-colors"
+							className="border-2 border-dashed sor-pointer hover:bg-muted/50 transition-colors"
 							onClick={() => fileInputRef.current?.click()}
 						>
 							<Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
@@ -129,7 +129,7 @@ export default function PdfToImageTool() {
 					<CardContent className="space-y-6">
 						{convertedImages.length === 0 ? (
 							<div className="space-y-4">
-								<div className="flex items-center justify-center p-8 bg-muted/30 rounded-lg">
+								<div className="flex items-center justify-center p-8 bg-muted/30 ">
 									<FileText className="w-16 h-16 text-red-500" />
 									<div className="mx-4 text-2xl text-muted-foreground">→</div>
 									<Images className="w-16 h-16 text-blue-500" />
@@ -156,7 +156,7 @@ export default function PdfToImageTool() {
 							</div>
 						) : (
 							<div className="space-y-6">
-								<div className="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-100 dark:border-green-900">
+								<div className="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 ">
 									<div className="flex items-center gap-3">
 										<CheckCircle className="w-6 h-6 text-green-500" />
 										<div>

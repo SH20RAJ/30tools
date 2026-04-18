@@ -237,7 +237,7 @@ export default function BrokenLinkChecker() {
 		<div className="max-w-6xl mx-auto p-6 space-y-8">
 			{/* Header */}
 			<div className="text-center space-y-4">
-				<div className="inline-flex items-center justify-center w-16 h-16 bg-destructive/20 rounded-full mb-4">
+				<div className="inline-flex items-center justify-center w-16 h-16 bg-destructive/20 ">
 					<Link className="h-8 w-8 text-destructive" />
 				</div>
 				<h2 className="text-4xl font-bold text-foreground">

@@ -49,81 +49,81 @@ export default function McpServerTool() {
 import { Server } from '@modelcontextprotocol/sdk/server/index.js';
 import { StdioServerTransport } from '@modelcontextprotocol/sdk/server/stdio.js';
 import {
-  CallToolRequestSchema,
-  ErrorCode,
-  ListToolsRequestSchema,
-  McpError,
+ CallToolRequestSchema,
+ ErrorCode,
+ ListToolsRequestSchema,
+ McpError,
 } from '@modelcontextprotocol/sdk/types.js';
 
 // Server configuration
 const server = new Server(
-  {
-    name: '${serverName}',
-    version: '0.1.0',
-  },
-  {
-    capabilities: {
-      tools: {},
-      ${includeCors === "true" ? "cors: true," : ""}
-    },
-  }
+ {
+ name: '${serverName}',
+ version: '0.1.0',
+ },
+ {
+ capabilities: {
+ tools: {},
+ ${includeCors === "true" ? "cors: true," : ""}
+ },
+ }
 );
 
 // Tool definitions
 const TOOLS = [
-  {
-    name: 'example-tool',
-    description: '${serverDescription || "Example tool for your MCP server"}',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        input: {
-          type: 'string',
-          description: 'Input parameter for the tool',
-        },
-      },
-      required: ['input'],
-    },
-  },
+ {
+ name: 'example-tool',
+ description: '${serverDescription || "Example tool for your MCP server"}',
+ inputSchema: {
+ type: 'object',
+ properties: {
+ input: {
+ type: 'string',
+ description: 'Input parameter for the tool',
+ },
+ },
+ required: ['input'],
+ },
+ },
 ];
 
 // List tools handler
 server.setRequestHandler(ListToolsRequestSchema, async () => {
-  return {
-    tools: TOOLS,
-  };
+ return {
+ tools: TOOLS,
+ };
 });
 
 // Call tool handler
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  const { name, arguments: args } = request.params;
+ const { name, arguments: args } = request.params;
 
-  switch (name) {
-    case 'example-tool':
-      try {
-        const result = await handleExampleTool(args.input);
-        return {
-          content: [{ type: 'text', text: result }],
-        };
-      } catch (error) {
-        throw new McpError(
-          ErrorCode.InternalError,
-          \`Tool execution failed: \${error.message}\`
-        );
-      }
+ switch (name) {
+ case 'example-tool':
+ try {
+ const result = await handleExampleTool(args.input);
+ return {
+ content: [{ type: 'text', text: result }],
+ };
+ } catch (error) {
+ throw new McpError(
+ ErrorCode.InternalError,
+ \`Tool execution failed: \${error.message}\`
+ );
+ }
 
-    default:
-      throw new McpError(
-        ErrorCode.MethodNotFound,
-        \`Unknown tool: \${name}\`
-      );
-  }
+ default:
+ throw new McpError(
+ ErrorCode.MethodNotFound,
+ \`Unknown tool: \${name}\`
+ );
+ }
 });
 
 // Tool implementation
 async function handleExampleTool(input: string): Promise<string> {
-  // Implement your tool logic here
-  return \`Processed: \${input}\`;
+ // Implement your tool logic here
+ return \`Processed: \${input}\`;
 }
 
 ${
@@ -131,8 +131,8 @@ ${
 		? `
 // Authentication middleware (optional)
 function authenticate(token: string): boolean {
-  // Implement your authentication logic
-  return token === process.env.MCP_AUTH_TOKEN;
+ // Implement your authentication logic
+ return token === process.env.MCP_AUTH_TOKEN;
 }
 `
 		: ""
@@ -140,14 +140,14 @@ function authenticate(token: string): boolean {
 
 // Start the server
 async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-  console.log('${serverName} MCP server running on stdio');
+ const transport = new StdioServerTransport();
+ await server.connect(transport);
+ console.log('${serverName} MCP server running on stdio');
 }
 
 main().catch((error) => {
-  console.error('Server failed to start:', error);
-  process.exit(1);
+ console.error('Server failed to start:', error);
+ process.exit(1);
 });
 
 export { server };`;
@@ -159,81 +159,81 @@ export { server };`;
 const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
 const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
 const {
-  CallToolRequestSchema,
-  ErrorCode,
-  ListToolsRequestSchema,
-  McpError,
+ CallToolRequestSchema,
+ ErrorCode,
+ ListToolsRequestSchema,
+ McpError,
 } = require('@modelcontextprotocol/sdk/types.js');
 
 // Server configuration
 const server = new Server(
-  {
-    name: '${serverName}',
-    version: '0.1.0',
-  },
-  {
-    capabilities: {
-      tools: {},
-      ${includeCors === "true" ? "cors: true," : ""}
-    },
-  }
+ {
+ name: '${serverName}',
+ version: '0.1.0',
+ },
+ {
+ capabilities: {
+ tools: {},
+ ${includeCors === "true" ? "cors: true," : ""}
+ },
+ }
 );
 
 // Tool definitions
 const TOOLS = [
-  {
-    name: 'example-tool',
-    description: '${serverDescription || "Example tool for your MCP server"}',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        input: {
-          type: 'string',
-          description: 'Input parameter for the tool',
-        },
-      },
-      required: ['input'],
-    },
-  },
+ {
+ name: 'example-tool',
+ description: '${serverDescription || "Example tool for your MCP server"}',
+ inputSchema: {
+ type: 'object',
+ properties: {
+ input: {
+ type: 'string',
+ description: 'Input parameter for the tool',
+ },
+ },
+ required: ['input'],
+ },
+ },
 ];
 
 // List tools handler
 server.setRequestHandler(ListToolsRequestSchema, async () => {
-  return {
-    tools: TOOLS,
-  };
+ return {
+ tools: TOOLS,
+ };
 });
 
 // Call tool handler
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
-  const { name, arguments: args } = request.params;
+ const { name, arguments: args } = request.params;
 
-  switch (name) {
-    case 'example-tool':
-      try {
-        const result = await handleExampleTool(args.input);
-        return {
-          content: [{ type: 'text', text: result }],
-        };
-      } catch (error) {
-        throw new McpError(
-          ErrorCode.InternalError,
-          \`Tool execution failed: \${error.message}\`
-        );
-      }
+ switch (name) {
+ case 'example-tool':
+ try {
+ const result = await handleExampleTool(args.input);
+ return {
+ content: [{ type: 'text', text: result }],
+ };
+ } catch (error) {
+ throw new McpError(
+ ErrorCode.InternalError,
+ \`Tool execution failed: \${error.message}\`
+ );
+ }
 
-    default:
-      throw new McpError(
-        ErrorCode.MethodNotFound,
-        \`Unknown tool: \${name}\`
-      );
-  }
+ default:
+ throw new McpError(
+ ErrorCode.MethodNotFound,
+ \`Unknown tool: \${name}\`
+ );
+ }
 });
 
 // Tool implementation
 async function handleExampleTool(input) {
-  // Implement your tool logic here
-  return \`Processed: \${input}\`;
+ // Implement your tool logic here
+ return \`Processed: \${input}\`;
 }
 
 ${
@@ -241,8 +241,8 @@ ${
 		? `
 // Authentication middleware (optional)
 function authenticate(token) {
-  // Implement your authentication logic
-  return token === process.env.MCP_AUTH_TOKEN;
+ // Implement your authentication logic
+ return token === process.env.MCP_AUTH_TOKEN;
 }
 `
 		: ""
@@ -250,14 +250,14 @@ function authenticate(token) {
 
 // Start the server
 async function main() {
-  const transport = new StdioServerTransport();
-  await server.connect(transport);
-  console.log('${serverName} MCP server running on stdio');
+ const transport = new StdioServerTransport();
+ await server.connect(transport);
+ console.log('${serverName} MCP server running on stdio');
 }
 
 main().catch((error) => {
-  console.error('Server failed to start:', error);
-  process.exit(1);
+ console.error('Server failed to start:', error);
+ process.exit(1);
 });
 
 module.exports = { server };`;
@@ -274,12 +274,12 @@ from mcp.server.models import InitializationOptions
 from mcp.server.server import NotificationOptions, Server
 from mcp.server.stdio import stdio_server
 from mcp.types import (
-    CallToolRequest,
-    CallToolResult,
-    ListToolsRequest,
-    ListToolsResult,
-    TextContent,
-    Tool,
+ CallToolRequest,
+ CallToolResult,
+ ListToolsRequest,
+ ListToolsResult,
+ TextContent,
+ Tool,
 )
 
 # Configure logging
@@ -291,81 +291,81 @@ server = Server("${serverName}")
 
 # Tool definitions
 TOOLS = [
-    Tool(
-        name="example-tool",
-        description="${serverDescription || "Example tool for your MCP server"}",
-        inputSchema={
-            "type": "object",
-            "properties": {
-                "input": {
-                    "type": "string",
-                    "description": "Input parameter for the tool",
-                }
-            },
-            "required": ["input"],
-        },
-    )
+ Tool(
+ name="example-tool",
+ description="${serverDescription || "Example tool for your MCP server"}",
+ inputSchema={
+ "type": "object",
+ "properties": {
+ "input": {
+ "type": "string",
+ "description": "Input parameter for the tool",
+ }
+ },
+ "required": ["input"],
+ },
+ )
 ]
 
 @server.list_tools()
 async def handle_list_tools() -> ListToolsResult:
-    """List available tools."""
-    return ListToolsResult(tools=TOOLS)
+ """List available tools."""
+ return ListToolsResult(tools=TOOLS)
 
 @server.call_tool()
 async def handle_call_tool(request: CallToolRequest) -> CallToolResult:
-    """Handle tool calls."""
-    tool_name = request.params.name
-    arguments = request.params.arguments or {}
-    
-    if tool_name == "example-tool":
-        try:
-            result = await handle_example_tool(arguments.get("input", ""))
-            return CallToolResult(
-                content=[TextContent(type="text", text=result)]
-            )
-        except Exception as e:
-            logger.error(f"Tool execution failed: {e}")
-            return CallToolResult(
-                content=[TextContent(type="text", text=f"Error: {str(e)}")]
-            )
-    else:
-        raise ValueError(f"Unknown tool: {tool_name}")
+ """Handle tool calls."""
+ tool_name = request.params.name
+ arguments = request.params.arguments or {}
+ 
+ if tool_name == "example-tool":
+ try:
+ result = await handle_example_tool(arguments.get("input", ""))
+ return CallToolResult(
+ content=[TextContent(type="text", text=result)]
+ )
+ except Exception as e:
+ logger.error(f"Tool execution failed: {e}")
+ return CallToolResult(
+ content=[TextContent(type="text", text=f"Error: {str(e)}")]
+ )
+ else:
+ raise ValueError(f"Unknown tool: {tool_name}")
 
 async def handle_example_tool(input_text: str) -> str:
-    """Example tool implementation."""
-    # Implement your tool logic here
-    return f"Processed: {input_text}"
+ """Example tool implementation."""
+ # Implement your tool logic here
+ return f"Processed: {input_text}"
 
 ${
 	includeAuth === "true"
 		? `
 def authenticate(token: str) -> bool:
-    """Authentication middleware (optional)."""
-    import os
-    return token == os.getenv("MCP_AUTH_TOKEN")
+ """Authentication middleware (optional)."""
+ import os
+ return token == os.getenv("MCP_AUTH_TOKEN")
 `
 		: ""
 }
 
 async def main():
-    """Main server entry point."""
-    async with stdio_server() as (read_stream, write_stream):
-        await server.run(
-            read_stream,
-            write_stream,
-            InitializationOptions(
-                server_name="${serverName}",
-                server_version="0.1.0",
-                capabilities=server.get_capabilities(
-                    notification_options=NotificationOptions(),
-                    experimental_capabilities={},
-                ),
-            ),
-        )
+ """Main server entry point."""
+ async with stdio_server() as (read_stream, write_stream):
+ await server.run(
+ read_stream,
+ write_stream,
+ InitializationOptions(
+ server_name="${serverName}",
+ server_version="0.1.0",
+ capabilities=server.get_capabilities(
+ notification_options=NotificationOptions(),
+ experimental_capabilities={},
+ ),
+ ),
+ )
 
 if __name__ == "__main__":
-    asyncio.run(main())`;
+ asyncio.run(main())`;
 		}
 
 		setGeneratedCode(code);
@@ -532,7 +532,7 @@ if __name__ == "__main__":
 					<CardContent>
 						{generatedCode ? (
 							<div className="space-y-4">
-								<div className="bg-muted rounded-lg p-4 max-h-96 overflow-auto">
+								<div className="bg-muted ">
 									<pre className="text-sm">
 										<code>{generatedCode}</code>
 									</pre>
@@ -554,7 +554,7 @@ if __name__ == "__main__":
 								</div>
 							</div>
 						) : (
-							<div className="flex items-center justify-center h-64 bg-muted rounded-lg">
+							<div className="flex items-center justify-center h-64 bg-muted ">
 								<div className="text-center text-muted-foreground">
 									<Code className="h-12 w-12 mx-auto mb-2" />
 									<p>Your MCP server code will appear here</p>
@@ -654,7 +654,7 @@ if __name__ == "__main__":
 							</ol>
 						</div>
 
-						<div className="bg-muted/50 dark:bg-blue-950/20 p-6 rounded-lg">
+						<div className="bg-muted/50 dark:bg-blue-950/20 p-6 ">
 							<h4 className="font-semibold text-primary dark:text-blue-100 mb-2">
 								Perfect for #21stdev Developers
 							</h4>

@@ -237,7 +237,7 @@ export default function UserAgentParserTool() {
 							</CardHeader>
 							<CardContent>
 								<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-									<div className="text-center p-4 bg-muted/50 rounded-lg">
+									<div className="text-center p-4 bg-muted/50 ">
 										<h3 className="font-semibold text-foreground mb-2">
 											Browser
 										</h3>
@@ -248,7 +248,7 @@ export default function UserAgentParserTool() {
 											{parsedData.browser.version}
 										</div>
 									</div>
-									<div className="text-center p-4 bg-muted/50 rounded-lg">
+									<div className="text-center p-4 bg-muted/50 ">
 										<h3 className="font-semibold text-foreground mb-2">
 											Operating System
 										</h3>
@@ -259,7 +259,7 @@ export default function UserAgentParserTool() {
 											{parsedData.os.version}
 										</div>
 									</div>
-									<div className="text-center p-4 bg-muted/50 rounded-lg">
+									<div className="text-center p-4 bg-muted/50 ">
 										<h3 className="font-semibold text-foreground mb-2">
 											Device Type
 										</h3>
@@ -270,7 +270,7 @@ export default function UserAgentParserTool() {
 											{parsedData.device.vendor} {parsedData.device.model}
 										</div>
 									</div>
-									<div className="text-center p-4 bg-muted/50 rounded-lg">
+									<div className="text-center p-4 bg-muted/50 ">
 										<h3 className="font-semibold text-primary mb-2">Engine</h3>
 										<div className="text-lg font-bold">
 											{parsedData.engine.name}
@@ -347,7 +347,7 @@ export default function UserAgentParserTool() {
 								</CardTitle>
 							</CardHeader>
 							<CardContent>
-								<div className="bg-gray-50 p-4 rounded-lg">
+								<div className="bg-gray-50 p-4 ">
 									<code className="text-sm break-all">
 										{parsedData.userAgent}
 									</code>

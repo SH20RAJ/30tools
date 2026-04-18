@@ -10,95 +10,64 @@ const TOOL_COUNT = Object.values(toolsData.categories || {}).reduce(
 	0,
 );
 
-export async function generateMetadata({ searchParams }) {
-	const params = await searchParams;
-	const lang = params.lang || "en";
-	const title = await translateEngine.translate(
-		`30tools - ${TOOL_COUNT}+ Free Online Tools | SEO & Developer Tools`,
-		lang,
-	);
-	const description = await translateEngine.translate(
-		`Minimal, fast, and private online toolkit with ${TOOL_COUNT}+ tools for image, PDF, and video. Free forever, no signup required.`,
-		lang,
-	);
-
-	const canonicalUrl = `https://30tools.com${lang !== "en" ? `?lang=${lang}` : ""}`;
-
-	const languages = {
-		en: `https://30tools.com/?lang=en`,
-		es: `https://30tools.com/?lang=es`,
-		fr: `https://30tools.com/?lang=fr`,
-		de: `https://30tools.com/?lang=de`,
-		hi: `https://30tools.com/?lang=hi`,
-		it: `https://30tools.com/?lang=it`,
-		pt: `https://30tools.com/?lang=pt`,
-		ja: `https://30tools.com/?lang=ja`,
-		zh: `https://30tools.com/?lang=zh`,
-		ko: `https://30tools.com/?lang=ko`,
-		ru: `https://30tools.com/?lang=ru`,
-		ar: `https://30tools.com/?lang=ar`,
-		tr: `https://30tools.com/?lang=tr`,
-		vi: `https://30tools.com/?lang=vi`,
-		id: `https://30tools.com/?lang=id`,
-	};
-
-	return {
-		title: { absolute: title },
-		description,
-		keywords: [
-			"free online tools",
-			"online toolkit",
-			"web tools",
-			"digital tools",
-			"image tools online",
-			"image compressors",
-			"video converters",
-			"pdf tools free",
-			"developer utilities",
-			"seo tools",
-			"text tools free",
-			"file converter",
-			"online utilities",
-			"productivity tools",
-			"browser-based tools",
-			"no registration required",
-			"free forever",
-			"privacy focused",
-			"fast processing",
-			"100% free",
-			"30tools",
-			"30tools.com",
-			"professional tools",
-			"online converters",
-			"web applications",
-		].join(", "),
-		alternates: {
-			canonical: canonicalUrl,
-			languages: languages,
+export const metadata = {
+	title: `Free Online Tools Collection - No Signup | 30tools`,
+	description: `Access ${TOOL_COUNT}+ free online tools for image, PDF, video, SEO, and developer workflows. Fast processing, privacy-first design, and no signup required.`,
+	keywords: [
+		"free online tools",
+		"online toolkit",
+		"web tools",
+		"image tools online",
+		"video converters",
+		"pdf tools free",
+		"developer utilities",
+		"seo tools",
+		"no registration required",
+		"privacy focused tools",
+		"30tools",
+	].join(", "),
+	alternates: {
+		canonical: "https://30tools.com/",
+		languages: {
+			en: "https://30tools.com/?lang=en",
+			es: "https://30tools.com/?lang=es",
+			fr: "https://30tools.com/?lang=fr",
+			de: "https://30tools.com/?lang=de",
+			hi: "https://30tools.com/?lang=hi",
+			it: "https://30tools.com/?lang=it",
+			pt: "https://30tools.com/?lang=pt",
+			ja: "https://30tools.com/?lang=ja",
+			zh: "https://30tools.com/?lang=zh",
+			ko: "https://30tools.com/?lang=ko",
+			ru: "https://30tools.com/?lang=ru",
+			ar: "https://30tools.com/?lang=ar",
+			tr: "https://30tools.com/?lang=tr",
+			vi: "https://30tools.com/?lang=vi",
+			id: "https://30tools.com/?lang=id",
 		},
-		openGraph: {
-			title,
-			description,
-			url: canonicalUrl,
-			siteName: "30tools",
-			type: "website",
-			images: [
-				{
-					url: "https://30tools.com/og-image.jpg",
-					width: 1200,
-					height: 630,
-					alt: title,
-				},
-			],
-		},
-		twitter: {
-			card: "summary_large_image",
-			title,
-			description,
-			images: ["https://30tools.com/og-image.jpg"],
-		},
-	};
-}
+	},
+	openGraph: {
+		title: `Free Online Tools Collection - No Signup | 30tools`,
+		description: `Access ${TOOL_COUNT}+ free online tools for image, PDF, video, SEO, and developer workflows.`,
+		url: "https://30tools.com/",
+		siteName: "30tools",
+		type: "website",
+		images: [
+			{
+				url: "https://30tools.com/og-image.jpg",
+				width: 1200,
+				height: 630,
+				alt: "30tools free online tools directory",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: `Free Online Tools Collection - No Signup | 30tools`,
+		description: `Access ${TOOL_COUNT}+ free online tools for image, PDF, video, SEO, and developer workflows.`,
+		images: ["https://30tools.com/og-image.jpg"],
+	},
+};
 
 export default async function LandingPage({ searchParams }) {
 	const params = await searchParams;

@@ -62,7 +62,7 @@ export default function ArchivePage() {
 						return (
 							<section key={key} id={key} className="scroll-mt-20">
 								<div className="flex items-center gap-4 mb-8 border-b pb-4">
-									<div className="p-3 rounded-2xl bg-primary/10 text-primary">
+									<div className="p-3 ">
 										<Icon className="h-8 w-8" />
 									</div>
 									<div>
@@ -77,7 +77,7 @@ export default function ArchivePage() {
 									{category.tools.map((tool: any) => (
 										<div
 											key={tool.id}
-											className="group p-6 bg-card rounded-2xl border border-border hover:shadow-xl transition-all duration-300"
+											className="group p-6 bg-card shadow-xl transition-all duration-300"
 										>
 											<h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
 												<Link href={tool.route}>{tool.name}</Link>
@@ -97,7 +97,7 @@ export default function ArchivePage() {
 															<Link
 																key={slug}
 																href={`/${slug}`}
-																className="px-2 py-1 bg-secondary/50 hover:bg-primary/10 rounded-md text-[11px] text-muted-foreground hover:text-primary transition-all underline decoration-border/50 underline-offset-4"
+																className="px-2 py-1 bg-secondary/50 hover:bg-primary/10 sition-all underline decoration-border/50 underline-offset-4"
 															>
 																{slug.split("-").join(" ")}
 															</Link>

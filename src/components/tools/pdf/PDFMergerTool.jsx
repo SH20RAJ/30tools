@@ -202,7 +202,7 @@ export default function PDFMergerTool() {
 					</Link>
 
 					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-lg">
+						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
 							<FileTextIcon className="h-6 w-6 text-primary" />
 						</div>
 						<div>
@@ -304,7 +304,7 @@ export default function PDFMergerTool() {
 												onDragStart={(e) => handleDragStart(e, index)}
 												onDragOver={handleDragOver}
 												onDrop={(e) => handleDrop(e, index)}
-												className="flex items-center gap-3 p-3 border rounded-lg cursor-move hover:bg-muted/50 transition-colors"
+												className="flex items-center gap-3 p-3 border sor-move hover:bg-muted/50 transition-colors"
 											>
 												<GripVerticalIcon className="h-4 w-4 text-muted-foreground" />
 

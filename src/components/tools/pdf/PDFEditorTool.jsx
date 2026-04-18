@@ -217,7 +217,7 @@ export default function PDFEditorTool() {
 			{!pdfFile ? (
 				<Card>
 					<CardContent className="pt-6">
-						<label className="border-2 border-dashed rounded-xl p-12 text-center cursor-pointer hover:bg-muted/50 transition-colors block">
+						<label className="border-2 border-dashed sor-pointer hover:bg-muted/50 transition-colors block">
 							<Upload className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
 							<h3 className="text-lg font-semibold mb-2">Upload PDF</h3>
 							<p className="text-sm text-muted-foreground">

@@ -186,7 +186,7 @@ export default function QrGeneratorTool() {
 									<img
 										src={qrCodeUrl}
 										alt="Generated QR Code"
-										className="border rounded-lg shadow-lg max-w-full h-auto"
+										className="border shadow-lg max-w-full h-auto"
 									/>
 								</div>
 
@@ -210,7 +210,7 @@ export default function QrGeneratorTool() {
 								</div>
 							</div>
 						) : (
-							<div className="flex items-center justify-center h-64 bg-muted rounded-lg">
+							<div className="flex items-center justify-center h-64 bg-muted ">
 								<div className="text-center text-muted-foreground">
 									<QrCode className="h-12 w-12 mx-auto mb-2" />
 									<p>Your QR code will appear here</p>

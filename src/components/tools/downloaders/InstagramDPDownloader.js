@@ -98,7 +98,7 @@ export default function InstagramDPDownloader() {
 					</div>
 
 					{error && (
-						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
+						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 structive">
 							<AlertCircle className="h-4 w-4" />
 							<span className="text-sm">{error}</span>
 						</div>
@@ -106,7 +106,7 @@ export default function InstagramDPDownloader() {
 
 					{profileData && (
 						<div className="space-y-4">
-							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
+							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border ">
 								<CheckCircle className="h-4 w-4" />
 								<span className="text-sm">
 									Profile picture loaded successfully!
@@ -121,10 +121,10 @@ export default function InstagramDPDownloader() {
 											<img
 												src={profileData.profilePicUrl}
 												alt="Profile Picture"
-												className="w-24 h-24 rounded-full object-cover border-2 border-border"
+												className="w-24 h-24 "
 											/>
 											{profileData.isVerified && (
-												<div className="absolute -bottom-1 -right-1 w-6 h-6 bg-muted/500 rounded-full flex items-center justify-center">
+												<div className="absolute -bottom-1 -right-1 w-6 h-6 bg-muted/500 s-center justify-center">
 													<CheckCircle className="h-4 w-4 text-white" />
 												</div>
 											)}
@@ -200,7 +200,7 @@ export default function InstagramDPDownloader() {
 										<img
 											src={profileData.profilePicUrl}
 											alt="Full Size Preview"
-											className="w-full max-w-xs mx-auto rounded-lg border"
+											className="w-full max-w-xs mx-auto "
 										/>
 									</div>
 								</CardContent>

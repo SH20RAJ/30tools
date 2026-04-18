@@ -348,7 +348,7 @@ export default function RegexTesterTool() {
 							</div>
 
 							{/* Highlighted Text */}
-							<div className="bg-muted p-4 rounded-lg">
+							<div className="bg-muted p-4 ">
 								<h3 className="font-medium mb-2">
 									Text with Highlighted Matches:
 								</h3>
@@ -365,7 +365,7 @@ export default function RegexTesterTool() {
 								<h3 className="font-medium">Match Details:</h3>
 								<div className="space-y-2 max-h-60 overflow-y-auto">
 									{matches.map((match, index) => (
-										<div key={index} className="border rounded-lg p-3">
+										<div key={index} className="border ">
 											<div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
 												<div>
 													<span className="font-medium">

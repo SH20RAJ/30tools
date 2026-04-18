@@ -155,7 +155,7 @@ export default function ToolImplementation({ toolId }: { toolId: string }) {
 	}
 
 	return (
-		<div className="rounded-xl border border-dashed p-8 text-center text-muted-foreground">
+		<div className="shed p-8 text-center text-muted-foreground">
 			<p className="font-medium text-foreground">{titleCaseId(toolId)}</p>
 			<p className="mt-2 text-sm">
 				Interactive module is not mapped for this id yet. Please report the tool name on GitHub issues.

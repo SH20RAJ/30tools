@@ -115,7 +115,7 @@ export default function TwitterDownloader() {
 					</div>
 
 					{error && (
-						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 rounded-lg text-destructive">
+						<div className="flex items-center gap-2 p-3 bg-destructive/10 border border-destructive/50 structive">
 							<AlertCircle className="h-4 w-4" />
 							<span className="text-sm">{error}</span>
 						</div>
@@ -123,7 +123,7 @@ export default function TwitterDownloader() {
 
 					{videoData && (
 						<div className="space-y-4">
-							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border rounded-lg text-primary">
+							<div className="flex items-center gap-2 p-3 bg-muted/50 border border-border ">
 								<CheckCircle2 className="h-4 w-4" />
 								<span className="text-sm">
 									Twitter/X video processed successfully!

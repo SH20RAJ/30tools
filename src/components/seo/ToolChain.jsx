@@ -8,18 +8,18 @@ import { Button } from "@/components/ui/button";
  *
  * Usage:
  * <ToolChain
- *   currentTool="tiktok-downloader"
- *   suggestions={[
- *     { id: 'video-to-audio', title: 'Extract Audio', desc: 'Convert this video to MP3', icon: 'MusicIcon', href: '/video-to-audio' },
- *     { id: 'video-trimmer', title: 'Trim Video', desc: 'Cut specific parts', icon: 'ScissorsIcon', href: '/video-trimmer' }
- *   ]}
+ * currentTool="tiktok-downloader"
+ * suggestions={[
+ * { id: 'video-to-audio', title: 'Extract Audio', desc: 'Convert this video to MP3', icon: 'MusicIcon', href: '/video-to-audio' },
+ * { id: 'video-trimmer', title: 'Trim Video', desc: 'Cut specific parts', icon: 'ScissorsIcon', href: '/video-trimmer' }
+ * ]}
  * />
  */
 export default function ToolChain({ suggestions = [] }) {
 	if (!suggestions || suggestions.length === 0) return null;
 
 	return (
-		<div className="my-8 p-6 bg-muted/30 rounded-xl border border-border/50">
+		<div className="my-8 p-6 bg-muted/30 ">
 			<h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
 				<span className="text-primary">✨</span> Next Steps
 			</h3>
@@ -27,7 +27,7 @@ export default function ToolChain({ suggestions = [] }) {
 				{suggestions.map((tool) => (
 					<div
 						key={tool.id}
-						className="flex items-center justify-between p-4 bg-background rounded-lg border shadow-sm hover:shadow-md transition-shadow"
+						className="flex items-center justify-between p-4 bg-background shadow-sm hover:shadow-md transition-shadow"
 					>
 						<div>
 							<h4 className="font-medium text-foreground">{tool.title}</h4>

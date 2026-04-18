@@ -242,7 +242,7 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
 						</CardHeader>
 						<CardContent>
 							<div className="grid md:grid-cols-4 gap-4 mb-6">
-								<div className="text-center p-4 bg-muted/50 rounded-lg">
+								<div className="text-center p-4 bg-muted/50 ">
 									<div className="text-2xl font-bold text-primary">
 										{stats.total}
 									</div>
@@ -250,7 +250,7 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
 										Total URLs
 									</div>
 								</div>
-								<div className="text-center p-4 bg-muted/50 rounded-lg">
+								<div className="text-center p-4 bg-muted/50 ">
 									<div className="text-2xl font-bold text-primary">
 										{stats.valid}
 									</div>
@@ -258,7 +258,7 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
 										Valid URLs
 									</div>
 								</div>
-								<div className="text-center p-4 bg-destructive/10 rounded-lg">
+								<div className="text-center p-4 bg-destructive/10 ">
 									<div className="text-2xl font-bold text-destructive">
 										{stats.invalid}
 									</div>
@@ -266,7 +266,7 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
 										Invalid URLs
 									</div>
 								</div>
-								<div className="text-center p-4 bg-muted/50 rounded-lg">
+								<div className="text-center p-4 bg-muted/50 ">
 									<div className="text-2xl font-bold text-primary">
 										{stats.uniqueDomains}
 									</div>
@@ -294,7 +294,7 @@ http://subdomain.example.org/path/to/resource?param=value#section`;
 								{extractedUrls.map((urlData) => (
 									<div
 										key={urlData.id}
-										className="flex items-center justify-between p-3 border rounded-lg hover:bg-gray-50"
+										className="flex items-center justify-between p-3 border "
 									>
 										<div className="flex-1 min-w-0">
 											<div className="flex items-center gap-2 mb-1">
