@@ -17,22 +17,40 @@ export type BaseConverterKind =
   | "decimal-to-hex"
   | "binary-to-ascii"
   | "decimal-to-binary"
-  | "decimal-to-octal";
+  | "decimal-to-octal"
+  | "text-to-binary"
+  | "text-to-hex"
+  | "text-to-octal"
+  | "text-to-decimal"
+  | "text-to-ascii"
+  | "hex-to-text"
+  | "hex-to-binary"
+  | "hex-to-decimal"
+  | "hex-to-octal"
+  | "octal-to-text"
+  | "octal-to-binary"
+  | "octal-to-decimal"
+  | "octal-to-hex";
 
 function splitTokens(input: string) {
   return input.trim().split(/[\s,]+/);
 }
 
+function hexByteTokens(input: string): string[] {
+  const compact = input.replace(/\s+/g, "");
+  if (!compact) return [];
+  if (compact.includes(" ") || compact.includes(",")) {
+    return splitTokens(input).filter(Boolean);
+  }
+  const pairs: string[] = [];
+  for (let i = 0; i < compact.length; i += 2) {
+    pairs.push(compact.slice(i, i + 2));
+  }
+  return pairs.filter((p) => p.length > 0);
+}
+
 function convertByKind(kind: BaseConverterKind, input: string): string {
   switch (kind) {
-    case "ascii-to-binary":
-      return input
-        .split("")
-        .map((char) => {
-          const binary = char.charCodeAt(0).toString(2);
-          return "00000000".slice(binary.length) + binary;
-        })
-        .join(" ");
     case "binary-to-text":
     case "binary-to-ascii":
       return splitTokens(input)
@@ -64,6 +82,7 @@ function convertByKind(kind: BaseConverterKind, input: string): string {
         .join(" ");
     case "decimal-to-text":
     case "ascii-to-text":
+    case "text-to-ascii":
       return splitTokens(input)
         .map((dec) => {
           const num = parseInt(dec, 10);
@@ -89,6 +108,83 @@ function convertByKind(kind: BaseConverterKind, input: string): string {
         .map((dec) => {
           const num = parseInt(dec, 10);
           return Number.isNaN(num) ? "" : num.toString(8);
+        })
+        .join(" ");
+    case "ascii-to-binary":
+    case "text-to-binary":
+      return input
+        .split("")
+        .map((char) => {
+          const binary = char.charCodeAt(0).toString(2);
+          return "00000000".slice(binary.length) + binary;
+        })
+        .join(" ");
+    case "text-to-hex":
+      return Array.from(input)
+        .map((char) => char.charCodeAt(0).toString(16).toUpperCase().padStart(2, "0"))
+        .join(" ");
+    case "text-to-octal":
+      return Array.from(input)
+        .map((char) => char.charCodeAt(0).toString(8).padStart(3, "0"))
+        .join(" ");
+    case "text-to-decimal":
+      return Array.from(input)
+        .map((char) => String(char.charCodeAt(0)))
+        .join(" ");
+    case "hex-to-text":
+      return hexByteTokens(input)
+        .map((h) => {
+          const num = parseInt(h, 16);
+          return Number.isNaN(num) ? "" : String.fromCharCode(num & 0xff);
+        })
+        .join("");
+    case "hex-to-binary":
+      return hexByteTokens(input)
+        .map((h) => {
+          const num = parseInt(h, 16);
+          return Number.isNaN(num) ? "" : num.toString(2).padStart(8, "0");
+        })
+        .join(" ");
+    case "hex-to-decimal":
+      return hexByteTokens(input)
+        .map((h) => {
+          const num = parseInt(h, 16);
+          return Number.isNaN(num) ? "" : String(num);
+        })
+        .join(" ");
+    case "hex-to-octal":
+      return hexByteTokens(input)
+        .map((h) => {
+          const num = parseInt(h, 16);
+          return Number.isNaN(num) ? "" : num.toString(8);
+        })
+        .join(" ");
+    case "octal-to-text":
+      return splitTokens(input)
+        .map((o) => {
+          const num = parseInt(o, 8);
+          return Number.isNaN(num) ? "" : String.fromCharCode(num & 0xff);
+        })
+        .join("");
+    case "octal-to-binary":
+      return splitTokens(input)
+        .map((o) => {
+          const num = parseInt(o, 8);
+          return Number.isNaN(num) ? "" : num.toString(2);
+        })
+        .join(" ");
+    case "octal-to-decimal":
+      return splitTokens(input)
+        .map((o) => {
+          const num = parseInt(o, 8);
+          return Number.isNaN(num) ? "" : String(num);
+        })
+        .join(" ");
+    case "octal-to-hex":
+      return splitTokens(input)
+        .map((o) => {
+          const num = parseInt(o, 8);
+          return Number.isNaN(num) ? "" : num.toString(16).toUpperCase();
         })
         .join(" ");
     default: {

@@ -1,0 +1,20 @@
+/** Default raster output for {@link ImageConverterTool} per route id. */
+export const IMAGE_CONVERT_DEFAULT_FORMAT: Record<string, string> = {
+	"jpg-to-png-converter": "png",
+	"jpg-to-webp-converter": "webp",
+	"jpg-to-bmp-converter": "bmp",
+	"jpg-to-gif-converter": "gif",
+	"jpg-to-ico-converter": "png",
+	"png-to-jpg-converter": "jpeg",
+	"png-to-webp-converter": "webp",
+	"png-to-bmp-converter": "bmp",
+	"png-to-gif-converter": "gif",
+	"png-to-ico-converter": "png",
+	"webp-to-jpg-converter": "jpeg",
+	"webp-to-png-converter": "png",
+	"ico-to-png-converter": "png",
+	"jpg-converter": "webp",
+	"base64-to-image-converter": "png",
+	"image-to-base64-converter": "png",
+	"convert-to-ico": "png",
+};

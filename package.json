@@ -63,6 +63,7 @@
 		"jszip": "^3.10.1",
 		"lamejs": "^1.2.1",
 		"lucide-react": "^0.515.0",
+		"md5": "^2.3.0",
 		"next": "^16.0.1",
 		"next-pwa": "^5.6.0",
 		"next-themes": "^0.4.6",
@@ -85,6 +86,7 @@
 	"devDependencies": {
 		"@eslint/eslintrc": "^3",
 		"@tailwindcss/postcss": "^4",
+		"@types/md5": "^2.3.6",
 		"@types/minimatch": "^5.1.2",
 		"@types/node": "^24.9.1",
 		"@types/react": "^19.2.2",

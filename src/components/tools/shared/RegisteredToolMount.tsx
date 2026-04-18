@@ -1,0 +1,650 @@
+"use client";
+
+import dynamic from "next/dynamic";
+import { useEffect, useMemo, useState } from "react";
+import { diffChars } from "diff";
+import BuiltInCalculators, { type CalcKind } from "@/components/tools/built-ins/BuiltInCalculators";
+import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
+import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerialization";
+import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitConverter";
+import BaseConverter from "@/components/tools/shared/BaseConverter";
+import type { BaseConverterKind } from "@/components/tools/shared/BaseConverter";
+import {
+	BASE_CONVERTER_MAP,
+	IMAGE_FORMAT_TOOL_MAP,
+	UNIT_TOOL_MAP,
+} from "@/components/tools/shared/tool-id-registry";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "sonner";
+
+const JsonFormatterTool = dynamic(() => import("@/components/tools/code/JsonFormatterTool.jsx"), {
+	ssr: false,
+});
+const JSONMinifierTool = dynamic(() => import("@/components/tools/developer/JSONMinifierTool.jsx"), {
+	ssr: false,
+});
+const JSONToTSVTool = dynamic(() => import("@/components/tools/developer/JSONToTSVTool.jsx"), {
+	ssr: false,
+});
+const JSONToSchemaTool = dynamic(() => import("@/components/tools/developer/JSONToSchemaTool.jsx"), {
+	ssr: false,
+});
+const Base64Tool = dynamic(() => import("@/components/tools/developer/Base64Tool.jsx"), { ssr: false });
+const HashGeneratorTool = dynamic(
+	() => import("@/components/tools/security/HashGeneratorTool.jsx"),
+	{ ssr: false },
+);
+const QrGeneratorTool = dynamic(() => import("@/components/tools/utilities/QrGeneratorTool.jsx"), {
+	ssr: false,
+});
+const ImageConverterTool = dynamic(
+	() => import("@/components/tools/image/ImageConverterTool.jsx"),
+	{ ssr: false },
+);
+const ImageResizerTool = dynamic(() => import("@/components/tools/image/ImageResizerTool.jsx"), {
+	ssr: false,
+});
+const LineSorterTool = dynamic(() => import("@/components/tools/text/LineSorterTool.jsx"), {
+	ssr: false,
+});
+const YouTubeChannelIDFinderTool = dynamic(
+	() => import("@/components/tools/youtube/YouTubeChannelIDFinderTool.jsx"),
+	{ ssr: false },
+);
+
+const JSON_FORMATTER_IDS = new Set(["json-editor", "json-viewer", "json-validator"]);
+
+const CALC_IDS = new Set([
+	"percentage-calculator",
+	"gst-calculator",
+	"discount-calculator",
+	"margin-calculator",
+	"loan-calculator",
+	"age-calculator",
+	"sales-tax-calculator",
+	"average-calculator",
+	"cpm-calculator",
+	"adsense-calculator",
+	"paypal-fee-calculator",
+	"probability-calculator",
+	"confidence-interval-calculator",
+	"currency-converter",
+]);
+
+const MARKUP_IDS = new Set([
+	"html-minifier",
+	"html-beautifier",
+	"css-minifier",
+	"css-beautifier",
+	"javascript-minifier",
+	"javascript-beautifier",
+	"javascript-obfuscator",
+	"javascript-deobfuscator",
+	"html-encoder",
+	"html-decoder",
+]);
+
+const SERIAL_IDS = new Set([
+	"json-to-csv-converter",
+	"json-to-tsv-converter",
+	"json-to-text-converter",
+	"csv-to-json-converter",
+	"tsv-to-json-converter",
+	"xml-to-json-converter",
+	"json-to-xml-converter",
+]);
+
+const IMAGE_RESIZER_IDS = new Set(["rotate-image", "flip-image", "image-cropper", "image-enlarger"]);
+
+function titleCaseId(id: string) {
+	return id
+		.split("-")
+		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+		.join(" ");
+}
+
+function BaseConvMount({ toolId }: { toolId: string }) {
+	const k = BASE_CONVERTER_MAP[toolId] as BaseConverterKind | undefined;
+	if (!k) return null;
+	const t = titleCaseId(toolId.replace(/-converter$/, "").replace(/-/g, " "));
+	return (
+		<BaseConverter
+			title={t}
+			inputPlaceholder="Paste values here..."
+			outputPlaceholder="Converted output"
+			converterKind={k}
+		/>
+	);
+}
+
+function TextCompareMount() {
+	const [a, setA] = useState("");
+	const [b, setB] = useState("");
+	const diff = useMemo(() => diffChars(a, b), [a, b]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Text compare</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Textarea className="min-h-[200px] font-mono text-sm" value={a} onChange={(e) => setA(e.target.value)} />
+				<Textarea className="min-h-[200px] font-mono text-sm" value={b} onChange={(e) => setB(e.target.value)} />
+				<div className="md:col-span-2 rounded-lg border bg-muted/20 p-3 text-sm font-mono whitespace-pre-wrap">
+					{diff.map((part, i) => (
+						<span
+							key={i}
+							className={
+								part.added ? "bg-emerald-500/25" : part.removed ? "bg-rose-500/25" : undefined
+							}
+						>
+							{part.value}
+						</span>
+					))}
+				</div>
+			</CardContent>
+		</Card>
+	);
+}
+
+function SimpleRepeater() {
+	const [t, setT] = useState("Hello");
+	const [n, setN] = useState("3");
+	const out = useMemo(() => {
+		const c = Math.max(0, Math.min(5000, Math.floor(Number(n) || 0)));
+		return Array(c).fill(t).join("");
+	}, [t, n]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Text repeater</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Textarea value={t} onChange={(e) => setT(e.target.value)} />
+				<Input type="number" min={0} max={5000} value={n} onChange={(e) => setN(e.target.value)} />
+				<Textarea readOnly className="min-h-[160px] font-mono text-sm bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function WordCounterMount() {
+	const [t, setT] = useState("");
+	const stats = useMemo(() => {
+		const words = t.trim() ? t.trim().split(/\s+/).length : 0;
+		const chars = t.length;
+		const lines = t ? t.split(/\r?\n/).length : 0;
+		return { words, chars, lines };
+	}, [t]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Word counter</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Textarea className="min-h-[220px]" value={t} onChange={(e) => setT(e.target.value)} />
+				<p className="text-sm text-muted-foreground">
+					Words: <strong>{stats.words}</strong> · Characters: <strong>{stats.chars}</strong> · Lines:{" "}
+					<strong>{stats.lines}</strong>
+				</p>
+			</CardContent>
+		</Card>
+	);
+}
+
+function RemoveBreaks() {
+	const [t, setT] = useState("");
+	const out = useMemo(() => t.replace(/\r?\n+/g, " ").replace(/\s+/g, " ").trim(), [t]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Remove line breaks</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Textarea className="min-h-[200px]" value={t} onChange={(e) => setT(e.target.value)} />
+				<Textarea readOnly className="min-h-[120px] bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function CommaSeparatorMount() {
+	const [t, setT] = useState("");
+	const out = useMemo(() => t.split(/\r?\n/).join(", "), [t]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Lines to comma separated</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Textarea className="min-h-[200px]" value={t} onChange={(e) => setT(e.target.value)} />
+				<Textarea readOnly className="min-h-[120px] bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function SlugMount() {
+	const [t, setT] = useState("");
+	const slug = useMemo(
+		() =>
+			t
+				.toLowerCase()
+				.replace(/[^a-z0-9]+/g, "-")
+				.replace(/^-+|-+$/g, ""),
+		[t],
+	);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Slug</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Textarea value={t} onChange={(e) => setT(e.target.value)} />
+				<Input readOnly className="font-mono bg-muted/30" value={slug} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function TagsFromText(prefix: "#" | "") {
+	const [t, setT] = useState("");
+	const out = useMemo(() => {
+		const words = t.toLowerCase().match(/[a-z0-9]{3,}/g) ?? [];
+		const uniq = [...new Set(words)].slice(0, 60);
+		return uniq.map((w) => `${prefix}${w}`).join(prefix === "#" ? " " : ", ");
+	}, [t, prefix]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">{prefix === "#" ? "Hashtags" : "Tags"}</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Textarea className="min-h-[180px]" value={t} onChange={(e) => setT(e.target.value)} />
+				<Textarea readOnly className="min-h-[100px] bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function RomanMount(toRoman: boolean) {
+	const [v, setV] = useState(toRoman ? "2026" : "MMXXVI");
+	const out = useMemo(() => {
+		if (toRoman) {
+			const n = Math.floor(Number(v));
+			if (!Number.isFinite(n) || n <= 0 || n > 3999) return "";
+			const sym: [number, string][] = [
+				[1000, "M"],
+				[900, "CM"],
+				[500, "D"],
+				[400, "CD"],
+				[100, "C"],
+				[90, "XC"],
+				[50, "L"],
+				[40, "XL"],
+				[10, "X"],
+				[9, "IX"],
+				[5, "V"],
+				[4, "IV"],
+				[1, "I"],
+			];
+			let x = n;
+			let s = "";
+			for (const [val, ch] of sym) {
+				while (x >= val) {
+					s += ch;
+					x -= val;
+				}
+			}
+			return s;
+		}
+		const rx = /^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/i;
+		const m = v.trim().toUpperCase().match(rx);
+		if (!m) return "";
+		const map: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+		let total = 0;
+		let prev = 0;
+		for (const ch of v.trim().toUpperCase().split("").reverse()) {
+			const n = map[ch] ?? 0;
+			total += n < prev ? -n : n;
+			prev = n;
+		}
+		return String(total);
+	}, [v, toRoman]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">{toRoman ? "Number → Roman" : "Roman → Number"}</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={v} onChange={(e) => setV(e.target.value)} />
+				<Input readOnly className="font-mono bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function RgbHexMount(mode: "rgb2hex" | "hex2rgb") {
+	const [v, setV] = useState(mode === "rgb2hex" ? "10 20 30" : "#0A141E");
+	const out = useMemo(() => {
+		if (mode === "rgb2hex") {
+			const p = v.trim().split(/[\s,]+/).map(Number);
+			if (p.length < 3 || p.some((n) => !Number.isFinite(n))) return "";
+			const [r, g, b] = p.map((n) => Math.max(0, Math.min(255, Math.round(n))));
+			return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
+		}
+		const m = v.trim().match(/^#?([0-9a-f]{6})$/i);
+		if (!m) {
+			const map: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+			let total = 0;
+			let prev = 0;
+			for (const ch of v.trim().toUpperCase().split("")) {
+				const n = map[ch] ?? 0;
+				total += n < prev ? -n : n;
+				prev = n;
+			}
+			return Number.isFinite(total) ? String(total) : "";
+		}
+		const n = parseInt(m[1], 16);
+		const r = (n >> 16) & 255;
+		const g = (n >> 8) & 255;
+		const b = n & 255;
+		return `rgb(${r}, ${g}, ${b})`;
+	}, [v, mode]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">{mode === "rgb2hex" ? "RGB → Hex" : "Hex → RGB"}</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={v} onChange={(e) => setV(e.target.value)} />
+				<Input readOnly className="font-mono bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function UuidMount() {
+	const [ids, setIds] = useState("");
+	const gen = () => {
+		const rows = Array.from({ length: 5 }, () => crypto.randomUUID());
+		setIds(rows.join("\n"));
+		toast.success("Generated");
+	};
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">UUID v4</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Button type="button" onClick={gen}>
+					Generate batch
+				</Button>
+				<Textarea readOnly className="min-h-[140px] font-mono text-sm bg-muted/30" value={ids} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function UrlCodecMount(mode: "enc" | "dec") {
+	const [t, setT] = useState("");
+	const out = useMemo(() => {
+		try {
+			return mode === "enc" ? encodeURIComponent(t) : decodeURIComponent(t);
+		} catch {
+			return "";
+		}
+	}, [t, mode]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">{mode === "enc" ? "URL encode" : "URL decode"}</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Textarea className="min-h-[160px] font-mono text-sm" value={t} onChange={(e) => setT(e.target.value)} />
+				<Textarea readOnly className="min-h-[160px] font-mono text-sm bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function UrlParserMount() {
+	const [u, setU] = useState("https://user:pass@example.com:8080/path?q=1#h");
+	const parsed = useMemo(() => {
+		try {
+			const x = new URL(u);
+			return JSON.stringify(
+				{
+					href: x.href,
+					protocol: x.protocol,
+					host: x.host,
+					hostname: x.hostname,
+					port: x.port,
+					pathname: x.pathname,
+					search: x.search,
+					hash: x.hash,
+					username: x.username,
+					password: x.password ? "***" : "",
+				},
+				null,
+				2,
+			);
+		} catch {
+			return "Invalid URL";
+		}
+	}, [u]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">URL parser</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={u} onChange={(e) => setU(e.target.value)} />
+				<Textarea readOnly className="min-h-[220px] font-mono text-sm bg-muted/30" value={parsed} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function ScreenResCard() {
+	const [dims, setDims] = useState({ sw: 0, sh: 0, vw: 0, vh: 0, pr: 1 });
+	useEffect(() => {
+		setDims({
+			sw: window.screen.width,
+			sh: window.screen.height,
+			vw: window.innerWidth,
+			vh: window.innerHeight,
+			pr: window.devicePixelRatio,
+		});
+	}, []);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Screen</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-2 text-sm">
+				<p>
+					Resolution:{" "}
+					<strong>
+						{dims.sw ? `${dims.sw}×${dims.sh}` : "—"}
+					</strong>
+				</p>
+				<p>
+					Viewport:{" "}
+					<strong>
+						{dims.vw ? `${dims.vw}×${dims.vh}` : "—"}
+					</strong>
+				</p>
+				<p>
+					Pixel ratio: <strong>{dims.sw ? dims.pr : "—"}</strong>
+				</p>
+			</CardContent>
+		</Card>
+	);
+}
+
+function UserAgentCard() {
+	const ua = typeof navigator !== "undefined" ? navigator.userAgent : "";
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">User agent</CardTitle>
+			</CardHeader>
+			<CardContent>
+				<Textarea readOnly className="min-h-[120px] font-mono text-xs" value={ua} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function BrowserGuessCard() {
+	const ua = typeof navigator !== "undefined" ? navigator.userAgent : "";
+	const isChrome = /Chrome\//.test(ua) && !/Edg\//.test(ua);
+	const isFirefox = /Firefox\//.test(ua);
+	const isSafari = /Safari\//.test(ua) && !/Chrome\//.test(ua);
+	const name = isChrome ? "Chromium-based" : isFirefox ? "Firefox" : isSafari ? "Safari" : "Unknown";
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Browser (heuristic)</CardTitle>
+			</CardHeader>
+			<CardContent className="text-sm space-y-2">
+				<p>
+					Likely family: <strong>{name}</strong>
+				</p>
+				<Textarea readOnly className="min-h-[100px] font-mono text-xs" value={ua} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function PublicIpCard() {
+	const [ip, setIp] = useState("");
+	const load = async () => {
+		try {
+			const r = await fetch("https://api.ipify.org?format=json");
+			const d = (await r.json()) as { ip?: string };
+			setIp(d.ip ?? "");
+			toast.success("Loaded");
+		} catch {
+			toast.error("Could not load IP");
+		}
+	};
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Public IP</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Button type="button" onClick={load}>
+					Fetch via ipify
+				</Button>
+				<Input readOnly value={ip} className="font-mono" />
+			</CardContent>
+		</Card>
+	);
+}
+
+function KeywordDensity() {
+	const [text, setText] = useState("");
+	const [word, setWord] = useState("");
+	const pct = useMemo(() => {
+		if (!text.trim() || !word.trim()) return "";
+		const re = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "gi");
+		const m = text.match(/\b[a-z0-9']+\b/gi) ?? [];
+		const hits = (text.match(re) ?? []).length;
+		if (!m.length) return "";
+		return `${((hits / m.length) * 100).toFixed(2)}%`;
+	}, [text, word]);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Keyword density</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input placeholder="Target word" value={word} onChange={(e) => setWord(e.target.value)} />
+				<Textarea className="min-h-[200px]" value={text} onChange={(e) => setText(e.target.value)} />
+				<p className="text-sm">
+					Density (token-based): <strong>{pct || "—"}</strong>
+				</p>
+			</CardContent>
+		</Card>
+	);
+}
+
+function GenericNotice({ toolId }: { toolId: string }) {
+	return (
+		<Card className="border-dashed">
+			<CardHeader>
+				<CardTitle className="text-lg">{titleCaseId(toolId)}</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3 text-sm text-muted-foreground">
+				<p>
+					Interactive workflow for this page is being expanded. You can still use breadcrumbs and related
+					tools below, or request prioritization on GitHub.
+				</p>
+				<Button variant="outline" asChild>
+					<a href="https://github.com/sh20raj/30tools/issues" target="_blank" rel="noreferrer">
+						Open GitHub issue
+					</a>
+				</Button>
+			</CardContent>
+		</Card>
+	);
+}
+
+export default function RegisteredToolMount({ toolId }: { toolId: string }) {
+	const preset = UNIT_TOOL_MAP[toolId as keyof typeof UNIT_TOOL_MAP];
+	if (preset) return <UniversalUnitConverter preset={preset} />;
+
+	if (toolId in BASE_CONVERTER_MAP) return <BaseConvMount toolId={toolId} />;
+
+	const imgFmt = IMAGE_FORMAT_TOOL_MAP[toolId as keyof typeof IMAGE_FORMAT_TOOL_MAP];
+	if (imgFmt) return <ImageConverterTool defaultOutputFormat={imgFmt} />;
+
+	if (IMAGE_RESIZER_IDS.has(toolId)) return <ImageResizerTool />;
+
+	if (JSON_FORMATTER_IDS.has(toolId)) return <JsonFormatterTool />;
+	if (toolId === "json-minify") return <JSONMinifierTool />;
+	if (toolId === "json-to-tsv-converter") return <JSONToTSVTool />;
+	if (toolId === "json-to-json-schema") return <JSONToSchemaTool />;
+	if (SERIAL_IDS.has(toolId)) return <BuiltInSerialization toolId={toolId} />;
+
+	if (MARKUP_IDS.has(toolId)) return <BuiltInMarkup toolId={toolId} />;
+
+	if (CALC_IDS.has(toolId)) return <BuiltInCalculators kind={toolId as CalcKind} />;
+
+	if (toolId === "text-compare") return <TextCompareMount />;
+	if (toolId === "text-repeater") return <SimpleRepeater />;
+	if (toolId === "text-sorter") return <LineSorterTool />;
+	if (toolId === "word-counter") return <WordCounterMount />;
+	if (toolId === "remove-line-breaks") return <RemoveBreaks />;
+	if (toolId === "comma-separator") return <CommaSeparatorMount />;
+	if (toolId === "text-to-slug-converter") return <SlugMount />;
+	if (toolId === "text-to-hashtags-converter") return <TagsFromText "#" />;
+	if (toolId === "text-to-tags-converter") return <TagsFromText "" />;
+	if (toolId === "base64-encode" || toolId === "base64-decode") return <Base64Tool />;
+	if (toolId === "md5-generator") return <HashGeneratorTool />;
+	if (toolId === "qr-code-generator") return <QrGeneratorTool />;
+	if (toolId === "youtube-channel-id-extractor") return <YouTubeChannelIDFinderTool />;
+
+	if (toolId === "number-to-roman-numerals") return <RomanMount true />;
+	if (toolId === "roman-numerals-to-number") return <RomanMount false />;
+	if (toolId === "rgb-to-hex-converter") return <RgbHexMount "rgb2hex" />;
+	if (toolId === "hex-to-rgb-converter") return <RgbHexMount "hex2rgb" />;
+	if (toolId === "random-uuid-generator") return <UuidMount />;
+	if (toolId === "url-encode") return <UrlCodecMount mode="enc" />;
+	if (toolId === "url-decode") return <UrlCodecMount mode="dec" />;
+	if (toolId === "url-parser") return <UrlParserMount />;
+
+	if (toolId === "what-is-my-screen-resolution") return <ScreenInfoMount res />;
+	if (toolId === "what-is-my-user-agent") return <ScreenInfoMount ua />;
+	if (toolId === "what-is-my-browser") return <ScreenInfoMount browser />;
+	if (toolId === "what-is-my-ip-address") return <ScreenInfoMount ip />;
+
+	if (toolId === "keyword-density-checker") return <KeywordDensity />;
+
+	return <GenericNotice toolId={toolId} />;
+}

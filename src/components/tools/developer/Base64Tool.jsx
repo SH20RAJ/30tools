@@ -32,10 +32,10 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 
-export default function Base64Tool() {
+export default function Base64Tool({ initialMode = "encode" } = {}) {
 	const [input, setInput] = useState("");
 	const [output, setOutput] = useState("");
-	const [mode, setMode] = useState("encode");
+	const [mode, setMode] = useState(initialMode);
 	const [error, setError] = useState("");
 	const [copied, setCopied] = useState(false);
 	const [fileInfo, setFileInfo] = useState(null);
@@ -55,8 +55,8 @@ export default function Base64Tool() {
 				const decoded = decodeURIComponent(escape(atob(text)));
 				setOutput(decoded);
 			}
-		} catch (_err) {
-			setError(`Invalid Base64 input: ${err.message}`);
+		} catch (err) {
+			setError(`Invalid Base64 input: ${err instanceof Error ? err.message : "decode error"}`);
 			setOutput("");
 		}
 	}, []);
