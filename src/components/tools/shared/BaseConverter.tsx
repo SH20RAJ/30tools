@@ -98,7 +98,7 @@ export default function BaseConverter({
           <Textarea
             placeholder={inputPlaceholder}
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setInput(e.target.value)}
             className="min-h-[300px] font-mono text-sm resize-none bg-background/50 focus:bg-background transition-colors"
           />
         </div>
