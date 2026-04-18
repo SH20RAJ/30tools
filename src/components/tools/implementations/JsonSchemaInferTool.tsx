@@ -29,9 +29,10 @@ export default function JsonSchemaInferTool() {
 	const run = () => {
 		try {
 			const parsed = JSON.parse(text);
+			const inferred = infer(parsed) as Record<string, unknown>;
 			const schema = {
 				$schema: "https://json-schema.org/draft/2020-12/schema",
-				...infer(parsed),
+				...inferred,
 			};
 			setOut(JSON.stringify(schema, null, 2));
 			toast.success("Inferred");

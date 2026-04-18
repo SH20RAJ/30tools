@@ -70,7 +70,7 @@ export default function JsonWorkbenchTool({ initialTab = "format" as Mode }) {
 				</p>
 			</CardHeader>
 			<CardContent className="space-y-4">
-				<Tabs value={tab} onValueChange={(v) => setTab(v as Mode)}>
+				<Tabs value={tab} onValueChange={(v: string) => setTab(v as Mode)}>
 					<TabsList className="grid w-full grid-cols-3">
 						<TabsTrigger value="format">Format</TabsTrigger>
 						<TabsTrigger value="minify">Minify</TabsTrigger>

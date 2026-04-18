@@ -6,15 +6,17 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-/**
- * Code Minifier Component
- * @param {string} language - 'javascript' | 'css' | 'html'
- */
-export default function CodeMinifier({ language }) {
+type Lang = "javascript" | "css" | "html";
+
+export default function CodeMinifier({ language }: { language: Lang }) {
 	const [inputCode, setInputCode] = useState("");
 	const [outputCode, setOutputCode] = useState("");
 	const [isProcessing, setIsProcessing] = useState(false);
-	const [stats, setStats] = useState(null);
+	const [stats, setStats] = useState<{
+		original: string;
+		minified: string;
+		savings: string;
+	} | null>(null);
 	const [isCopied, setIsCopied] = useState(false);
 
 	const langLabel =
@@ -28,15 +30,12 @@ export default function CodeMinifier({ language }) {
 
 		setIsProcessing(true);
 
-		// Simulate minification delay
 		await new Promise((resolve) => setTimeout(resolve, 600));
 
 		try {
 			let minified = "";
 
-			// Basic simulation of minification logic
 			if (language === "css") {
-				// Remove comments and whitespace
 				minified = inputCode
 					.replace(/\/\*[\s\S]*?\*\//g, "")
 					.replace(/\s+/g, " ")
@@ -49,7 +48,6 @@ export default function CodeMinifier({ language }) {
 					.replace(/>\s+</g, "><")
 					.trim();
 			} else {
-				// Simple JS minification sim (removing comments and extra spaces)
 				minified = inputCode
 					.replace(/\/\*[\s\S]*?\*\//g, "")
 					.replace(/\/\/.*$/gm, "")
@@ -59,13 +57,9 @@ export default function CodeMinifier({ language }) {
 
 			setOutputCode(minified);
 
-			// Calculate savings
 			const originalSize = new Blob([inputCode]).size;
 			const minifiedSize = new Blob([minified]).size;
-			const savings = (
-				((originalSize - minifiedSize) / originalSize) *
-				100
-			).toFixed(2);
+			const savings = (((originalSize - minifiedSize) / originalSize) * 100).toFixed(2);
 
 			setStats({
 				original: `${(originalSize / 1024).toFixed(2)} KB`,
@@ -118,11 +112,7 @@ export default function CodeMinifier({ language }) {
 					/>
 				</CardContent>
 				<div className="p-4 border-t bg-muted/10">
-					<Button
-						onClick={minify}
-						disabled={isProcessing || !inputCode}
-						className="w-full"
-					>
+					<Button onClick={minify} disabled={isProcessing || !inputCode} className="w-full">
 						{isProcessing ? (
 							<Sparkles className="w-4 h-4 mr-2 animate-spin" />
 						) : (
@@ -161,25 +151,11 @@ export default function CodeMinifier({ language }) {
 					)}
 				</CardContent>
 				<div className="p-4 border-t bg-muted/10 flex gap-4">
-					<Button
-						variant="outline"
-						onClick={copyToClipboard}
-						disabled={!outputCode}
-						className="flex-1"
-					>
-						{isCopied ? (
-							<Check className="w-4 h-4 mr-2" />
-						) : (
-							<Copy className="w-4 h-4 mr-2" />
-						)}
+					<Button variant="outline" onClick={copyToClipboard} disabled={!outputCode} className="flex-1">
+						{isCopied ? <Check className="w-4 h-4 mr-2" /> : <Copy className="w-4 h-4 mr-2" />}
 						Copy Code
 					</Button>
-					<Button
-						variant="outline"
-						onClick={downloadCode}
-						disabled={!outputCode}
-						className="flex-1"
-					>
+					<Button variant="outline" onClick={downloadCode} disabled={!outputCode} className="flex-1">
 						<Download className="w-4 h-4 mr-2" />
 						Download
 					</Button>

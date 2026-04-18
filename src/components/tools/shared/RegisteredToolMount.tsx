@@ -434,7 +434,11 @@ function UrlParserMount() {
 				<CardTitle className="text-lg">URL parser</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
-				<Input value={u} onChange={(e) => setU(e.target.value)} />
+				<Input
+					className=""
+					value={u}
+					onChange={(e: ChangeEvent<HTMLInputElement>) => setU(e.target.value)}
+				/>
 				<Textarea readOnly className="min-h-[220px] font-mono text-sm bg-muted/30" value={parsed} />
 			</CardContent>
 		</Card>
@@ -662,9 +666,13 @@ function OgDraft() {
 				<CardTitle className="text-lg">Open Graph snippet</CardTitle>
 			</CardHeader>
 			<CardContent className="space-y-3">
-				<Input value={u} onChange={(e) => setU(e.target.value)} />
-				<Input value={t} onChange={(e) => setT(e.target.value)} />
-				<Textarea value={d} onChange={(e) => setD(e.target.value)} />
+				<Input className="" value={u} onChange={(e: ChangeEvent<HTMLInputElement>) => setU(e.target.value)} />
+				<Input className="" value={t} onChange={(e: ChangeEvent<HTMLInputElement>) => setT(e.target.value)} />
+				<Textarea
+					className=""
+					value={d}
+					onChange={(e: ChangeEvent<HTMLTextAreaElement>) => setD(e.target.value)}
+				/>
 				<Textarea readOnly className="min-h-[140px] font-mono text-xs bg-muted/30" value={snippet} />
 			</CardContent>
 		</Card>
