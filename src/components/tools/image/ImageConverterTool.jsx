@@ -120,36 +120,16 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 		return format ? supportedFormats.input[format].icon : "📄";
 	};
 
-	const handleDrop = useCallback(
-		(e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			setDragActive(false);
-
-			const droppedFiles = Array.from(e.dataTransfer.files);
-			processFiles(droppedFiles);
-		},
-		[processFiles],
-	);
-
-	const handleDragOver = useCallback((e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		setDragActive(true);
-	}, []);
-
-	const handleDragLeave = useCallback((e) => {
+	const handleDrop = useCallback((e) => {
 		e.preventDefault();
 		e.stopPropagation();
 		setDragActive(false);
+
+		const droppedFiles = Array.from(e.dataTransfer.files);
+		processFiles(droppedFiles);
 	}, []);
 
-	const handleFileSelect = (event) => {
-		const selectedFiles = Array.from(event.target.files);
-		processFiles(selectedFiles);
-	};
-
-	const processFiles = (fileList) => {
+	function processFiles(fileList) {
 		const validFiles = fileList.filter((file) => {
 			const isValidFormat = Object.keys(supportedFormats.input).some(
 				(format) =>
@@ -189,6 +169,23 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 				reader.readAsDataURL(fileData.file);
 			}
 		});
+	}
+
+	const handleDragOver = useCallback((e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		setDragActive(true);
+	}, []);
+
+	const handleDragLeave = useCallback((e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		setDragActive(false);
+	}, []);
+
+	const handleFileSelect = (event) => {
+		const selectedFiles = Array.from(event.target.files);
+		processFiles(selectedFiles);
 	};
 
 	const convertImage = async (fileData) => {
@@ -295,7 +292,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 					),
 				);
 			} catch (_error) {
-				console.error("Conversion failed:", error);
+				console.error("Conversion failed:", _error);
 				setFiles((prev) =>
 					prev.map((f) =>
 						f.id === fileData.id ? { ...f, status: "error" } : f,
