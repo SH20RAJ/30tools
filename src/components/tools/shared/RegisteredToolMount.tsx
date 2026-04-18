@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { diffChars } from "diff";
 import BuiltInCalculators, { type CalcKind } from "@/components/tools/built-ins/BuiltInCalculators";
 import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
+import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerialization";
 import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitConverter";
 import BaseConverter from "@/components/tools/shared/BaseConverter";
@@ -300,14 +301,12 @@ function RomanMount(toRoman: boolean) {
 			}
 			return s;
 		}
-		const rx = /^(M{0,3})(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$/i;
-		const m = v.trim().toUpperCase().match(rx);
-		if (!m) return "";
 		const map: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
 		let total = 0;
 		let prev = 0;
 		for (const ch of v.trim().toUpperCase().split("").reverse()) {
 			const n = map[ch] ?? 0;
+			if (!n) return "";
 			total += n < prev ? -n : n;
 			prev = n;
 		}
@@ -336,17 +335,7 @@ function RgbHexMount(mode: "rgb2hex" | "hex2rgb") {
 			return `#${((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)}`;
 		}
 		const m = v.trim().match(/^#?([0-9a-f]{6})$/i);
-		if (!m) {
-			const map: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
-			let total = 0;
-			let prev = 0;
-			for (const ch of v.trim().toUpperCase().split("")) {
-				const n = map[ch] ?? 0;
-				total += n < prev ? -n : n;
-				prev = n;
-			}
-			return Number.isFinite(total) ? String(total) : "";
-		}
+		if (!m) return "";
 		const n = parseInt(m[1], 16);
 		const r = (n >> 16) & 255;
 		const g = (n >> 8) & 255;
@@ -542,6 +531,227 @@ function PublicIpCard() {
 					Fetch via ipify
 				</Button>
 				<Input readOnly value={ip} className="font-mono" />
+			</CardContent>
+		</Card>
+	);
+}
+
+function DomainToIpMount() {
+	const [domain, setDomain] = useState("example.com");
+	const [out, setOut] = useState("");
+	const run = async () => {
+		try {
+			const name = domain.replace(/^https?:\/\//, "").split("/")[0];
+			const r = await fetch(
+				`https://1.1.1.1/dns-query?name=${encodeURIComponent(name)}&type=A`,
+				{ headers: { accept: "application/dns-json" } },
+			);
+			const j = (await r.json()) as { Answer?: { data?: string }[] };
+			const ips = (j.Answer ?? []).map((a) => a.data).filter(Boolean);
+			setOut(ips.length ? ips.join("\n") : "No A records (or blocked).");
+			toast.success("Resolved");
+		} catch {
+			toast.error("Lookup failed");
+		}
+	};
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Domain → A records</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={domain} onChange={(e) => setDomain(e.target.value)} />
+				<Button type="button" onClick={run}>
+					Resolve (Cloudflare DoH)
+				</Button>
+				<Textarea readOnly className="min-h-[100px] font-mono text-sm bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function DnsLookupMount() {
+	const [domain, setDomain] = useState("example.com");
+	const [out, setOut] = useState("");
+	const run = async (type: string) => {
+		try {
+			const name = domain.replace(/^https?:\/\//, "").split("/")[0];
+			const r = await fetch(
+				`https://1.1.1.1/dns-query?name=${encodeURIComponent(name)}&type=${type}`,
+				{ headers: { accept: "application/dns-json" } },
+			);
+			const j = (await r.json()) as { Answer?: { type: number; data: string }[] };
+			const lines = (j.Answer ?? []).map((a) => `${type} ${a.data}`);
+			setOut(lines.join("\n") || "No answers.");
+			toast.success("OK");
+		} catch {
+			toast.error("Lookup failed");
+		}
+	};
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">DNS lookup</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={domain} onChange={(e) => setDomain(e.target.value)} />
+				<div className="flex flex-wrap gap-2">
+					{["A", "AAAA", "MX", "TXT", "NS", "CNAME"].map((t) => (
+						<Button key={t} type="button" size="sm" variant="secondary" onClick={() => run(t)}>
+							{t}
+						</Button>
+					))}
+				</div>
+				<Textarea readOnly className="min-h-[180px] font-mono text-xs bg-muted/30" value={out} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function MetaTagDraft() {
+	const [title, setTitle] = useState("My page title");
+	const [desc, setDesc] = useState("Concise description for search results.");
+	const snippet = useMemo(
+		() =>
+			`<title>${title.replace(/</g, "")}</title>\n<meta name="description" content="${desc.replace(/"/g, "&quot;")}" />`,
+		[title, desc],
+	);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Core meta tags</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={title} onChange={(e) => setTitle(e.target.value)} />
+				<Textarea value={desc} onChange={(e) => setDesc(e.target.value)} />
+				<Textarea readOnly className="min-h-[120px] font-mono text-xs bg-muted/30" value={snippet} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function OgDraft() {
+	const [u, setU] = useState("https://30tools.com");
+	const [t, setT] = useState("30tools");
+	const [d, setD] = useState("Free utilities");
+	const snippet = useMemo(
+		() =>
+			[
+				`<meta property="og:url" content="${u}" />`,
+				`<meta property="og:title" content="${t.replace(/"/g, "&quot;")}" />`,
+				`<meta property="og:description" content="${d.replace(/"/g, "&quot;")}" />`,
+				`<meta property="og:type" content="website" />`,
+			].join("\n"),
+		[u, t, d],
+	);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Open Graph snippet</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={u} onChange={(e) => setU(e.target.value)} />
+				<Input value={t} onChange={(e) => setT(e.target.value)} />
+				<Textarea value={d} onChange={(e) => setD(e.target.value)} />
+				<Textarea readOnly className="min-h-[140px] font-mono text-xs bg-muted/30" value={snippet} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function TwitterCardDraft() {
+	const [card, setCard] = useState("summary_large_image");
+	const [t, setT] = useState("Title");
+	const snippet = useMemo(
+		() =>
+			[
+				`<meta name="twitter:card" content="${card}" />`,
+				`<meta name="twitter:title" content="${t.replace(/"/g, "&quot;")}" />`,
+			].join("\n"),
+		[card, t],
+	);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Twitter card snippet</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={card} onChange={(e) => setCard(e.target.value)} />
+				<Input value={t} onChange={(e) => setT(e.target.value)} />
+				<Textarea readOnly className="min-h-[100px] font-mono text-xs bg-muted/30" value={snippet} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function JsonLdFaqDraft() {
+	const [q1, setQ1] = useState("What is this?");
+	const [a1, setA1] = useState("A helpful answer.");
+	const json = useMemo(
+		() =>
+			JSON.stringify(
+				{
+					"@context": "https://schema.org",
+					"@type": "FAQPage",
+					mainEntity: [
+						{
+							"@type": "Question",
+							name: q1,
+							acceptedAnswer: { "@type": "Answer", text: a1 },
+						},
+					],
+				},
+				null,
+				2,
+			),
+		[q1, a1],
+	);
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">FAQ JSON-LD</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={q1} onChange={(e) => setQ1(e.target.value)} />
+				<Textarea value={a1} onChange={(e) => setA1(e.target.value)} />
+				<Textarea readOnly className="min-h-[200px] font-mono text-xs bg-muted/30" value={json} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function HtaccessDraft() {
+	const [from, setFrom] = useState("/old-path");
+	const [to, setTo] = useState("/new-path");
+	const snippet = `RewriteEngine On\nRewriteRule ^${from.replace(/^\//, "")}/?$ ${to} [R=301,L]`;
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Apache redirect rule</CardTitle>
+			</CardHeader>
+			<CardContent className="space-y-3">
+				<Input value={from} onChange={(e) => setFrom(e.target.value)} />
+				<Input value={to} onChange={(e) => setTo(e.target.value)} />
+				<Textarea readOnly className="min-h-[120px] font-mono text-xs bg-muted/30" value={snippet} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function LegalDraft({ kind }: { kind: "privacy" | "terms" | "disclaimer" }) {
+	const body =
+		kind === "privacy"
+			? "This template is not legal advice. Describe what data you collect, cookies, analytics, retention, and contact email."
+			: kind === "terms"
+				? "This template is not legal advice. Add jurisdiction, acceptable use, liability limits, and governing law."
+				: "This template is not legal advice. Add scope of information, warranties, and professional advice disclaimer.";
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle className="text-lg">Draft outline</CardTitle>
+			</CardHeader>
+			<CardContent>
+				<Textarea readOnly className="min-h-[200px] text-sm bg-muted/30" value={body} />
 			</CardContent>
 		</Card>
 	);
