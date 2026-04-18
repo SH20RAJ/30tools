@@ -8,16 +8,16 @@ export function SimpleStats() {
 
 	return (
 		<section className="py-20 text-center animate-in">
-			<h2 className="text-apple-section-heading text-[#1d1d1f] mb-16">
+			<h2 className="text-apple-section-heading text-foreground mb-16">
 				Growing together.
 			</h2>
 			<div className="grid grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
 				{stats.map((stat) => (
 					<div key={stat.label} className="text-center">
-						<h3 className="text-5xl md:text-6xl font-semibold text-[#1d1d1f] mb-4 tracking-tighter">
+						<h3 className="text-5xl md:text-6xl font-semibold text-foreground mb-4 tracking-tighter">
 							{stat.title}
 						</h3>
-						<p className="text-lg md:text-xl font-normal text-[#1d1d1f]/60 tracking-tight">
+						<p className="text-lg md:text-xl font-normal text-foreground/60 tracking-tight">
 							{stat.label}
 						</p>
 					</div>
