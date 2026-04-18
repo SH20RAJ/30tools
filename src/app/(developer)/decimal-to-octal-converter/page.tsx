@@ -55,24 +55,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.trim()
-			.split(/[\s,]+/)
-			.map((dec) => {
-				const num = parseInt(dec, 10);
-				return isNaN(num) ? "" : num.toString(8);
-			})
-			.join(" ");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="Decimal to Octal"
 				inputPlaceholder="Enter decimal (e.g., 8 64 100)..."
 				outputPlaceholder="Octal output will appear here..."
-				convertFn={convertFn}
+				converterKind="decimal-to-octal"
 			/>
 		</ToolLayout>
 	);

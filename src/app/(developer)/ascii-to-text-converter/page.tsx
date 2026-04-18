@@ -54,24 +54,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.trim()
-			.split(/[\s,]+/)
-			.map((code) => {
-				const num = parseInt(code, 10);
-				return isNaN(num) ? "" : String.fromCharCode(num);
-			})
-			.join("");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="ASCII to Text"
 				inputPlaceholder="Enter ASCII codes (e.g., 72 101 108 108 111)..."
 				outputPlaceholder="Text output will appear here..."
-				convertFn={convertFn}
+				converterKind="ascii-to-text"
 			/>
 		</ToolLayout>
 	);

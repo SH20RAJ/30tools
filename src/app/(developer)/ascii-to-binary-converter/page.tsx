@@ -55,23 +55,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.split("")
-			.map((char) => {
-				const binary = char.charCodeAt(0).toString(2);
-				return "00000000".slice(binary.length) + binary;
-			})
-			.join(" ");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="ASCII to Binary"
 				inputPlaceholder="Enter text here (e.g., Hello)..."
 				outputPlaceholder="Binary output will appear here..."
-				convertFn={convertFn}
+				converterKind="ascii-to-binary"
 			/>
 		</ToolLayout>
 	);

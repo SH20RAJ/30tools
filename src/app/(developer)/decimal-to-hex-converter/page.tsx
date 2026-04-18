@@ -55,24 +55,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.trim()
-			.split(/[\s,]+/)
-			.map((dec) => {
-				const num = parseInt(dec, 10);
-				return isNaN(num) ? "" : num.toString(16).toUpperCase();
-			})
-			.join(" ");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="Decimal to HEX"
 				inputPlaceholder="Enter decimal (e.g., 255 1024)..."
 				outputPlaceholder="HEX output will appear here..."
-				convertFn={convertFn}
+				converterKind="decimal-to-hex"
 			/>
 		</ToolLayout>
 	);

@@ -55,24 +55,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.trim()
-			.split(/[\s,]+/)
-			.map((dec) => {
-				const num = parseInt(dec, 10);
-				return isNaN(num) ? "" : String.fromCharCode(num);
-			})
-			.join("");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="Decimal to Text"
 				inputPlaceholder="Enter decimal codes (e.g., 72 101 108 108 111)..."
 				outputPlaceholder="Text output will appear here..."
-				convertFn={convertFn}
+				converterKind="decimal-to-text"
 			/>
 		</ToolLayout>
 	);

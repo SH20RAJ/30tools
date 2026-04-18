@@ -55,24 +55,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.trim()
-			.split(/[\s,]+/)
-			.map((bin) => {
-				const num = parseInt(bin, 2);
-				return isNaN(num) ? "" : String.fromCharCode(num);
-			})
-			.join("");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="Binary to Text"
 				inputPlaceholder="Enter binary sequence (e.g., 01001000 01101001)..."
 				outputPlaceholder="Text output will appear here..."
-				convertFn={convertFn}
+				converterKind="binary-to-text"
 			/>
 		</ToolLayout>
 	);

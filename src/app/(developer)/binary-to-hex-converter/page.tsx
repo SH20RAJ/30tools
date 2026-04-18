@@ -54,24 +54,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.trim()
-			.split(/[\s,]+/)
-			.map((bin) => {
-				const num = parseInt(bin, 2);
-				return isNaN(num) ? "" : num.toString(16).toUpperCase();
-			})
-			.join(" ");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="Binary to HEX"
 				inputPlaceholder="Enter binary sequence (e.g., 01001000 01100101)..."
 				outputPlaceholder="HEX output will appear here..."
-				convertFn={convertFn}
+				converterKind="binary-to-hex"
 			/>
 		</ToolLayout>
 	);

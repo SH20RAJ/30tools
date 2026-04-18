@@ -1,16 +1,108 @@
 "use client";
 
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Copy, Trash2, Download, Check, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 
+export type BaseConverterKind =
+  | "ascii-to-binary"
+  | "binary-to-text"
+  | "binary-to-decimal"
+  | "binary-to-hex"
+  | "binary-to-octal"
+  | "decimal-to-text"
+  | "ascii-to-text"
+  | "decimal-to-hex"
+  | "binary-to-ascii"
+  | "decimal-to-binary"
+  | "decimal-to-octal";
+
+function splitTokens(input: string) {
+  return input.trim().split(/[\s,]+/);
+}
+
+function convertByKind(kind: BaseConverterKind, input: string): string {
+  switch (kind) {
+    case "ascii-to-binary":
+      return input
+        .split("")
+        .map((char) => {
+          const binary = char.charCodeAt(0).toString(2);
+          return "00000000".slice(binary.length) + binary;
+        })
+        .join(" ");
+    case "binary-to-text":
+    case "binary-to-ascii":
+      return splitTokens(input)
+        .map((bin) => {
+          const num = parseInt(bin, 2);
+          return Number.isNaN(num) ? "" : String.fromCharCode(num);
+        })
+        .join("");
+    case "binary-to-decimal":
+      return splitTokens(input)
+        .map((bin) => {
+          const num = parseInt(bin, 2);
+          return Number.isNaN(num) ? "" : num.toString(10);
+        })
+        .join(" ");
+    case "binary-to-hex":
+      return splitTokens(input)
+        .map((bin) => {
+          const num = parseInt(bin, 2);
+          return Number.isNaN(num) ? "" : num.toString(16).toUpperCase();
+        })
+        .join(" ");
+    case "binary-to-octal":
+      return splitTokens(input)
+        .map((bin) => {
+          const num = parseInt(bin, 2);
+          return Number.isNaN(num) ? "" : num.toString(8);
+        })
+        .join(" ");
+    case "decimal-to-text":
+    case "ascii-to-text":
+      return splitTokens(input)
+        .map((dec) => {
+          const num = parseInt(dec, 10);
+          return Number.isNaN(num) ? "" : String.fromCharCode(num);
+        })
+        .join("");
+    case "decimal-to-hex":
+      return splitTokens(input)
+        .map((dec) => {
+          const num = parseInt(dec, 10);
+          return Number.isNaN(num) ? "" : num.toString(16).toUpperCase();
+        })
+        .join(" ");
+    case "decimal-to-binary":
+      return splitTokens(input)
+        .map((dec) => {
+          const num = parseInt(dec, 10);
+          return Number.isNaN(num) ? "" : num.toString(2);
+        })
+        .join(" ");
+    case "decimal-to-octal":
+      return splitTokens(input)
+        .map((dec) => {
+          const num = parseInt(dec, 10);
+          return Number.isNaN(num) ? "" : num.toString(8);
+        })
+        .join(" ");
+    default: {
+      const _exhaustive: never = kind;
+      return _exhaustive;
+    }
+  }
+}
+
 interface BaseConverterProps {
   title: string;
   inputPlaceholder: string;
   outputPlaceholder: string;
-  convertFn: (input: string) => string;
+  converterKind: BaseConverterKind;
   onCopy?: (text: string) => void;
   onClear?: () => void;
   onDownload?: (text: string) => void;
@@ -21,12 +113,17 @@ export default function BaseConverter({
   title,
   inputPlaceholder,
   outputPlaceholder,
-  convertFn,
+  converterKind,
   autoConvert = true,
 }: BaseConverterProps) {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState("");
   const [isCopied, setIsCopied] = useState(false);
+
+  const convertInput = useMemo(
+    () => (value: string) => convertByKind(converterKind, value),
+    [converterKind],
+  );
 
   const handleConvert = useCallback(() => {
     if (!input.trim()) {
@@ -34,13 +131,13 @@ export default function BaseConverter({
       return;
     }
     try {
-      const result = convertFn(input);
+      const result = convertInput(input);
       setOutput(result);
     } catch (error) {
       console.error("Conversion error:", error);
       toast.error("Error during conversion. Please check your input.");
     }
-  }, [input, convertFn]);
+  }, [input, convertInput]);
 
   useEffect(() => {
     if (autoConvert) {
@@ -78,6 +175,7 @@ export default function BaseConverter({
 
   return (
     <div className="space-y-6">
+      <h2 className="sr-only">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="space-y-4">
           <div className="flex items-center justify-between">

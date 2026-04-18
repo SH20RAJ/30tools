@@ -55,24 +55,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.trim()
-			.split(/[\s,]+/)
-			.map((bin) => {
-				const num = parseInt(bin, 2);
-				return isNaN(num) ? "" : num.toString(10);
-			})
-			.join(" ");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="Binary to Decimal"
 				inputPlaceholder="Enter binary (e.g., 1010 1111)..."
 				outputPlaceholder="Decimal output will appear here..."
-				convertFn={convertFn}
+				converterKind="binary-to-decimal"
 			/>
 		</ToolLayout>
 	);

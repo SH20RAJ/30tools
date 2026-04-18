@@ -55,28 +55,13 @@ export default function ToolPage() {
 		],
 	};
 
-	const convertFn = (input: string) => {
-		return input
-			.trim()
-			.split(/[\s,]+/)
-			.map((dec) => {
-				const num = parseInt(dec, 10);
-				if (isNaN(num)) return "";
-				const binary = num.toString(2);
-				// Optional: Pad to 8 bits if it's small, or leave as is. 
-				// Let's provide a clean standard binary string.
-				return binary;
-			})
-			.join(" ");
-	};
-
 	return (
 		<ToolLayout tool={tool}>
 			<BaseConverter
 				title="Decimal to Binary"
 				inputPlaceholder="Enter decimal numbers (e.g., 10 25)..."
 				outputPlaceholder="Binary output will appear here..."
-				convertFn={convertFn}
+				converterKind="decimal-to-binary"
 			/>
 		</ToolLayout>
 	);
