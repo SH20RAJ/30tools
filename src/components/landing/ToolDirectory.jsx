@@ -17,7 +17,7 @@ export function ToolDirectory({ categories = [], lang = "en" }) {
 							<Link
 								key={tool.id}
 								href={tool.route}
-								className="group flex flex-col justify-between p-6 md:p-8 rounded-[12px] bg-card border border-border hover:shadow-xl hover:border-primary/20 transition-all duration-500 no-underline h-full"
+								className="group flex flex-col justify-between p-6 md:p-8 bg-card border border-border hover:shadow-xl hover:border-primary/20 transition-all duration-500 no-underline h-full"
 							>
 								<div>
 									<h3 className="text-xl md:text-2xl font-semibold text-card-foreground tracking-tight mb-2 group-hover:text-primary transition-colors">

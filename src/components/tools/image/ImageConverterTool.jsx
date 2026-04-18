@@ -120,16 +120,8 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 		return format ? supportedFormats.input[format].icon : "📄";
 	};
 
-	const handleDrop = useCallback((e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		setDragActive(false);
-
-		const droppedFiles = Array.from(e.dataTransfer.files);
-		processFiles(droppedFiles);
-	}, []);
-
-	function processFiles(fileList) {
+	// Define processFiles before useCallback that references it
+	const processFilesRef = useRef((fileList) => {
 		const validFiles = fileList.filter((file) => {
 			const isValidFormat = Object.keys(supportedFormats.input).some(
 				(format) =>
@@ -169,7 +161,18 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 				reader.readAsDataURL(fileData.file);
 			}
 		});
-	}
+	});
+
+	const processFiles = (fileList) => processFilesRef.current(fileList);
+
+	const handleDrop = useCallback((e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		setDragActive(false);
+
+		const droppedFiles = Array.from(e.dataTransfer.files);
+		processFiles(droppedFiles);
+	}, []);
 
 	const handleDragOver = useCallback((e) => {
 		e.preventDefault();
