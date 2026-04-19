@@ -28,7 +28,7 @@ export interface Category {
 	tools: Tool[];
 }
 
-export const categories = toolsData.categories as Record<string, Category>;
+export const categories = toolsData.categories as unknown as Record<string, Category>;
 
 export function getAllTools(): Tool[] {
 	return Object.values(categories).flatMap((cat) => cat.tools);

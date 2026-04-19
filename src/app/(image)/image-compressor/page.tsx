@@ -1,7 +1,8 @@
+import { Metadata } from "next";
 import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: "Free Online Bulk Image Compressor - Reduce JPEG, PNG & WebP Size",
 	description:
 		"Compress multiple images up to 90% without losing quality. Best bulk image optimizer for JPEG, PNG, and WebP. Reduce image size from MB to KB instantly. Fast, secure, and no signup required.",

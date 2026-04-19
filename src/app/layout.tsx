@@ -7,10 +7,16 @@ import "./globals.css";
 import Script from "next/script";
 import { AppleNavbar } from "@/components/navigation/AppleNavbar";
 import { AppleFooter } from "@/components/footers/AppleFooter";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 
 const SITE_URL = "https://30tools.com";
 const TOOL_COUNT = getAllTools().length;
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 5,
+};
 const DEFAULT_DESCRIPTION = `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, and more. No registration required. Privacy-focused, fast, and secure.`;
 
 const siteVerification = {
@@ -26,7 +32,7 @@ const siteVerification = {
 	...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
 		? {
 				other: {
-					"msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION,
+					"msvalidate.01": [process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION],
 				},
 			}
 		: {}),
@@ -156,7 +162,7 @@ export const metadata: Metadata = {
 		},
 	},
 	...(Object.keys(siteVerification).length > 0
-		? { verification: siteVerification as any }
+		? { verification: siteVerification }
 		: {}),
 	manifest: "/manifest.json",
 	icons: {
@@ -208,10 +214,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					dangerouslySetInnerHTML={{
 						__html: `window.__name = (t, v) => Object.defineProperty(t, 'name', { value: v, configurable: true });`,
 					}}
-				/>
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1, maximum-scale=5"
 				/>
 
 				{/* Preconnect for performance */}

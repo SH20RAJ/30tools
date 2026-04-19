@@ -298,16 +298,16 @@ export default function ImageCompressorTool() {
 								<div className="grid grid-cols-2 gap-4">
 									<Button 
 										onClick={handleCompress} 
-										disabled={isComprounded-3xl-off!files.some(f => f.status === "pending")}
+										disabled={isCompressing || !files.some(f => f.status === "pending")}
 										className="h-20 rounded-3xl text-lg font-black tracking-tight shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3"
 									>
-										{isCompressing ? <RefreshCwIcon className="animate-spin w-5 h-5" /> : <ZapIcon className="w-5 h-5 fill-current" />}
+										{isCompressing ? <RefreshCwIcon className="w-5 h-5" /> : <ZapIcon className="w-5 h-5 fill-current" />}
 										{isCompressing ? "Shrinking..." : "Optimise"}
 									</Button>
 									
 									<Button 
 										variant="outline" 
-										onClick={clearAlrounded-3xl-off
+										onClick={clearAll}
 										className="h-20 rounded-3xl font-bold border-border/40 hover:bg-destructive/5 hover:text-destructive hover:border-destructive/20 transition-all px-0"
 									>
 										Clear All
@@ -321,11 +321,11 @@ export default function ImageCompressorTool() {
 								<div className="flex justify-between text-base font-bold text-muted-foreground uppercase tracking-widest text-[10px]">
 									Optimization Stats
 								</div>
-								<div className="grid rounded-3xl-off gap-4">
+								<div className="grid grid-cols-2 gap-4">
 									<div className="p-6 rounded-3xl bg-muted/20 border border-border/40 text-center">
 										<div className="text-2xl font-black">{files.length}</div>
 										<div className="text-xs text-muted-foreground font-bold">Files</div>
-									</div>rounded-3xl-off
+									</div>
 									<div className="p-6 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 text-center">
 										<div className="text-2xl font-black text-emerald-500">
 											{files.filter(f => f.status === "completed").length}
@@ -356,7 +356,7 @@ export default function ImageCompressorTool() {
 				{files.map((fileItem) => (
 					<div
 						key={fileItem.id}
-						className={cn(rounded - 3xl - off
+						className={cn(
 											"flex items-center gap-5 p-5 rounded-3xl border border-border/40 transition-all duration-300",
 							fileItem.status === "completed" && "bg-emerald-500/[0.03] border-emerald-500/20 shadow-sm shadow-emerald-500/5"
 						)}
@@ -427,6 +427,26 @@ export default function ImageCompressorTool() {
 }
 
 // Minimal stub for missing icon
+// Minimal high-fidelity Apple-style spinner
 function RefreshCwIcon({ className }) {
-	return <ReplaceAll className={cn("animate-spin", className)} />;
+	return (
+		<div className={cn("relative flex items-center justify-center", className)}>
+			{[...Array(8)].map((_, i) => (
+				<div
+					key={i}
+					className="absolute w-[12%] h-[35%] bg-current rounded-full origin-[center_140%] animate-[apple-spinner_0.8s_linear_infinite]"
+					style={{
+						transform: `rotate(${i * 45}deg)`,
+						animationDelay: `${-0.7 + i * 0.1}s`,
+					}}
+				/>
+			))}
+			<style jsx>{`
+				@keyframes apple-spinner {
+					0% { opacity: 1; }
+					100% { opacity: 0.15; }
+				}
+			`}</style>
+		</div>
+	);
 }
