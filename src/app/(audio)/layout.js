@@ -1,8 +1,8 @@
 
 export const metadata = {
-	title: "Audio Tools - Free AI Text to Speech & Audio Processing | 30Tools",
+	title: "Free Audio Tools Online - No Signup",
 	description:
-		"Free online audio tools: AI Text to Speech converter, audio compression, and format conversion. Generate natural voiceovers instantly.",
+		"Free online audio tools: AI Text to Speech converter, audio compression, and format conversion. Generate natural voiceovers instantly. 100% free, no signup required.",
 	keywords:
 		"audio tools, text to speech, tts, ai voice generator, audio compressor, audio converter, free audio tools",
 	openGraph: {

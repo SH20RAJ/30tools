@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Text Tools - Free Online Text Utilities | 30tools",
+	title: "Free Text Tools Online - No Signup | 30tools",
 	description:
-		"Free online text tools to sort, convert, clean, and format text instantly. Privacy-first and browser-based with no signup required.",
+		"Free online text tools to sort, convert, clean, and format text instantly. 100% free, no signup required. Privacy-first and browser-based.",
 	keywords:
 		"text tools, line sorter, case converter, word counter, text reverser, markdown to text, free online text utilities",
 	openGraph: {

@@ -2,9 +2,9 @@ import { GoogleFooter } from "@/components/footers/GoogleFooter";
 import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
 
 export const metadata = {
-	title: "SEO Tools - Free Online SEO Audit, Keywords & Backlinks | 30Tools",
+	title: "Free SEO Tools Online - No Signup | 30tools",
 	description:
-		"Boost your rankings with our free SEO tools. Keyword planner, backlink checker, site audit, and more. 100% free with no limits.",
+		"Boost your rankings with our free SEO tools. Keyword planner, backlink checker, site audit, and more. 100% free, no signup required.",
 	keywords:
 		"seo tools, keyword research tool, backlink checker, seo audit tool, free seo software, google seo tools, website analyzer",
 	openGraph: {

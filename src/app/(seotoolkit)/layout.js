@@ -3,9 +3,9 @@ import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { Button } from "@/components/ui/button";
 
 export const metadata = {
-	title: "SEO Toolkit - Free Online SEO Audit & Analysis",
+	title: "Free SEO Toolkit Online - No Signup | 30tools",
 	description:
-		"Comprehensive SEO toolkit to analyze your website's performance, technical SEO, and on-page elements.",
+		"Comprehensive SEO toolkit to analyze your website's performance, technical SEO, and on-page elements. 100% free, no signup required.",
 };
 
 export default function SeoToolkitLayout({ children }) {

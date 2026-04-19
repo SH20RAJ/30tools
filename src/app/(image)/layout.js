@@ -1,8 +1,8 @@
 
 export const metadata = {
-	title: "Image Tools - Free AI Photo Editor, Converter & Enhancer | 30Tools",
+	title: "Free Image Tools Online - No Signup | 30tools",
 	description:
-		"Free online image tools: Remove backgrounds, resize photos, convert formats, generate logos, and enhance quality with AI. No signup required.",
+		"Free online image tools: Remove backgrounds, resize photos, convert formats, generate logos, and enhance quality with AI. 100% free, no signup required.",
 	keywords:
 		"image tools, background remover, photo enhancer, image converter, image resizer, logo generator, free photo editor online, ai image tools",
 	openGraph: {

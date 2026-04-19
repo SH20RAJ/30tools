@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import EmbedVideoPlayer from "./EmbedVideoPlayer";
 
 export const metadata = {
-	title: "Video - Free Online Tool | Professional Results",
+	title: "Free Video Player Online - No Signup | 30tools",
 	description:
 		"Professional video tool. Free online processing with high-quality results. No registration required, instant results.",
 	keywords: [
@@ -23,7 +23,7 @@ export const metadata = {
 	robots: "noindex, nofollow",
 
 	openGraph: {
-		title: "Video - Free Online Tool | Professional Results",
+		title: "Free Video Player Online - No Signup | 30tools",
 		description:
 			"Professional video tool. Free online processing with high-quality results. No registration required, instant results.",
 		url: "https://30tools.com/video",
@@ -33,7 +33,7 @@ export const metadata = {
 				url: "/og-images/video.jpg",
 				width: 1200,
 				height: 630,
-				alt: "Video - Free Online Tool | Professional Results",
+				alt: "Free Video Player Online - No Signup | 30tools",
 			},
 		],
 		type: "website",
@@ -41,7 +41,7 @@ export const metadata = {
 
 	twitter: {
 		card: "summary_large_image",
-		title: "Video - Free Online Tool | Professional Results",
+		title: "Free Video Player Online - No Signup | 30tools",
 		description:
 			"Professional video tool. Free online processing with high-quality results. No registration required, instant results.",
 		images: ["/og-images/video.jpg"],

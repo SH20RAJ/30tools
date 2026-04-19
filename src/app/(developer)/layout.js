@@ -1,9 +1,8 @@
 
 export const metadata = {
-	title:
-		"Developer Tools - Free Online JSON Formatter, Base64 & JWT Decoder | 30Tools",
+	title: "Free Developer Tools Online - No Signup",
 	description:
-		"Essential free developer tools: Format JSON, Decode JWT tokens, Encode Base64, and more. Secure client-side processing for all utilities.",
+		"Essential free developer tools: Format JSON, Decode JWT tokens, Encode Base64, and more. 100% free, no signup required. Secure client-side processing for all utilities.",
 	keywords:
 		"developer tools, json formatter, jwt decoder, base64 encoder, hash generator, free developer utilities, online coding tools, debug jwt, validate json",
 	openGraph: {

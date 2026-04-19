@@ -1,7 +1,6 @@
 import { Toaster } from "sonner";
 // import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
-import ToolSeoStructuredData from "@/components/shared/ToolSeoStructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { getAllTools } from "@/lib/tools";
 import "./globals.css";
@@ -34,10 +33,10 @@ const siteVerification = {
 
 export const metadata = {
 	title: {
-		default: `30tools - ${TOOL_COUNT}+ Free Online Tools | Image, PDF, Video, SEO & Developer Tools`,
-		template: "%s | 30tools - Free Online Toolkit",
+		default: "Free Online Tools - No Signup | 30tools",
+		template: "%s | 30tools",
 	},
-	description: DEFAULT_DESCRIPTION,
+	description: `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, and more. 100% free, no signup required. Privacy-focused, fast, and secure.`,
 	keywords: [
 		// Primary keywords
 		"free online tools",
@@ -46,6 +45,7 @@ export const metadata = {
 		"video converter",
 		"seo tools",
 		"developer tools",
+		"online toolkit",
 
 		// Long-tail keywords
 		"compress images online free",
@@ -58,6 +58,8 @@ export const metadata = {
 		"text case converter",
 		"url shortener free",
 		"json formatter online",
+		"ai text to speech free",
+		"video downloader online",
 
 		// Semantic keywords
 		"online utilities",
@@ -94,6 +96,22 @@ export const metadata = {
 	metadataBase: new URL(SITE_URL),
 	alternates: {
 		canonical: "/",
+		languages: {
+			en: "/?lang=en",
+			es: "/?lang=es",
+			fr: "/?lang=fr",
+			de: "/?lang=de",
+			hi: "/?lang=hi",
+			it: "/?lang=it",
+			pt: "/?lang=pt",
+			ja: "/?lang=ja",
+			zh: "/?lang=zh",
+			ko: "/?lang=ko",
+			ru: "/?lang=ru",
+			tr: "/?lang=tr",
+			vi: "/?lang=vi",
+			id: "/?lang=id",
+		},
 		types: {
 			"application/rss+xml": [{ url: "/feed.xml", title: "30tools RSS Feed" }],
 		},

@@ -8,36 +8,61 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	const allCategories = getAllCategories();
 	const currentDate = new Date();
 
+	const languages = ["en", "es", "fr", "de", "hi", "it", "pt", "ja", "zh", "ko", "ru", "tr", "vi", "id"];
+
+	const getAlternates = (path: string) => {
+		const alternates: Record<string, string> = {};
+		for (const lang of languages) {
+			alternates[lang] = `${BASE_URL}${path}${path.includes("?") ? "&" : "?"}lang=${lang}`;
+		}
+		return alternates;
+	};
+
 	const staticPages: MetadataRoute.Sitemap = [
 		{
 			url: BASE_URL,
 			lastModified: currentDate,
 			changeFrequency: "daily",
 			priority: 1.0,
+			alternates: {
+				languages: getAlternates(""),
+			},
 		},
 		{
 			url: `${BASE_URL}/search`,
 			lastModified: currentDate,
 			changeFrequency: "daily",
 			priority: 0.8,
+			alternates: {
+				languages: getAlternates("/search"),
+			},
 		},
 		{
 			url: `${BASE_URL}/about`,
 			lastModified: currentDate,
 			changeFrequency: "monthly",
 			priority: 0.7,
+			alternates: {
+				languages: getAlternates("/about"),
+			},
 		},
 		{
 			url: `${BASE_URL}/contact`,
 			lastModified: currentDate,
 			changeFrequency: "monthly",
 			priority: 0.7,
+			alternates: {
+				languages: getAlternates("/contact"),
+			},
 		},
 		{
 			url: `${BASE_URL}/blog`,
 			lastModified: currentDate,
 			changeFrequency: "daily",
 			priority: 0.8,
+			alternates: {
+				languages: getAlternates("/blog"),
+			},
 		},
 	];
 
@@ -46,6 +71,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		lastModified: currentDate,
 		changeFrequency: "weekly",
 		priority: tool.popular ? 0.9 : 0.8,
+		alternates: {
+			languages: getAlternates(tool.route),
+		},
 	}));
 
 	const categoryPages: MetadataRoute.Sitemap = allCategories.map((cat) => ({
@@ -53,6 +81,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		lastModified: currentDate,
 		changeFrequency: "weekly",
 		priority: 0.85,
+		alternates: {
+			languages: getAlternates(`/${cat.slug}`),
+		},
 	}));
 
 	return [...staticPages, ...categoryPages, ...toolPages];

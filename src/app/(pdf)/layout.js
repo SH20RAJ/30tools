@@ -1,8 +1,8 @@
 
 export const metadata = {
-	title: "PDF Tools - Free Online PDF Processing | 30tools",
+	title: "Free PDF Tools Online - No Signup | 30tools",
 	description:
-		"Professional PDF tools for merging, splitting, compression, and conversion. Free online PDF processing with batch support and no watermarks.",
+		"Professional PDF tools for merging, splitting, compression, and conversion. 100% free, no signup required. Free online PDF processing with batch support and no watermarks.",
 	keywords:
 		"pdf tools, pdf merger, pdf splitter, pdf compressor, free pdf tools online, online pdf editor, convert pdf to word, image to pdf converter, secure pdf tools, pdf utilities, 30tools pdf, unlock pdf, protect pdf, compress pdf online free",
 	openGraph: {

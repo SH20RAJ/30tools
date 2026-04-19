@@ -1,8 +1,8 @@
 
 export const metadata = {
-	title: "Utility Tools - Free Online Internet Speed & Link Tools | 30Tools",
+	title: "Free Utility Tools Online - No Signup | 30tools",
 	description:
-		"Essential utility tools for everyday tasks: Internet Speed Test, URL Shortener, and IndexNow integration. Fast, free, and accurate.",
+		"Essential utility tools for everyday tasks: Internet Speed Test, URL Shortener, and IndexNow integration. 100% free, no signup required. Fast, free, and accurate.",
 	keywords:
 		"utility tools, internet speed test, url shortener, indexnow, free online utilities, network tools, link management",
 	openGraph: {

@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation";
 import EmbedPlayer from "@/components/embed/EmbedPlayer";
 
+export const metadata = {
+	title: "Video Embed - 30tools",
+	robots: "noindex, nofollow",
+};
+
 export default async function Embed({
 	params,
 }: {

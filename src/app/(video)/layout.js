@@ -1,8 +1,8 @@
 
 export const metadata = {
-	title: "Video Tools - Terabox Player, Downloader & Converters | 30Tools",
+	title: "Free Video Tools Online - No Signup | 30tools",
 	description:
-		"Free online video tools: Terabox video player and downloader, video compression, and format conversion. High-speed, secure, and no installation required.",
+		"Free online video tools: Terabox video player and downloader, video compression, and format conversion. 100% free, no signup required. High-speed, secure, and no installation required.",
 	keywords:
 		"video tools, terabox downloader, terabox player online, video compressor, video converter, free video tools",
 	openGraph: {

@@ -1,9 +1,8 @@
 
 export const metadata = {
-	title:
-		"YouTube Tools - Video Downloader, AI Summarizer & Script Generator | 30Tools",
+	title: "Free YouTube Tools Online - No Signup | 30tools",
 	description:
-		"Free YouTube tools for creators and viewers: Download videos in 4K, generate AI scripts, summarize videos instantly, and download Shorts without watermarks.",
+		"Free YouTube tools for creators and viewers: Download videos, generate scripts, and summarize content. 100% free, no signup required.",
 	keywords:
 		"youtube tools, youtube downloader, youtube shorts downloader, youtube script generator, youtube video summarizer, ai youtube tools, content creator tools",
 	openGraph: {
