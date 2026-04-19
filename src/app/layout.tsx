@@ -1,5 +1,4 @@
 import { Toaster } from "sonner";
-// import PWAInstallPrompt from "@/components/shared/PWAInstallPrompt";
 import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { getAllTools } from "@/lib/tools";
@@ -192,16 +191,20 @@ export const metadata: Metadata = {
 	},
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
 	const tools = getAllTools();
 	const categoriesMap = new Map();
-	
+
 	for (const tool of tools) {
 		const catKey = tool.categoryKey || tool.category;
 		if (catKey && !categoriesMap.has(catKey)) {
 			categoriesMap.set(catKey, {
 				label: tool.categoryName || catKey,
-				href: `/search?category=${catKey}`
+				href: `/search?category=${catKey}`,
 			});
 		}
 	}
@@ -334,7 +337,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 					<AppleNavbar />
 					{children}
 					<AppleFooter categories={categories} />
-					{/* <PWAInstallPrompt /> */}
 					<Toaster />
 					<a
 						className="sr-only"
