@@ -16,7 +16,7 @@ export const metadata = {
 			"Save Vkontakte videos directly to your device easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/vkontakte-video-downloader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Vkontakte%20Video%20Downloader%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Vkontakte Video Downloader Online - No Signup | 30tools",
 		description:
 			"Save Vkontakte videos directly to your device easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Vkontakte%20Video%20Downloader%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

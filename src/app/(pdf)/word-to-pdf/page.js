@@ -16,7 +16,7 @@ export const metadata = {
 			"Convert Word documents to PDF format 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/word-to-pdf",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Word%20to%20PDF%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Word to PDF Online - No Signup | 30tools",
 		description:
 			"Convert Word documents to PDF format 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Word%20to%20PDF%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

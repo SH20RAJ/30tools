@@ -126,18 +126,11 @@ export const metadata: Metadata = {
 		description: DEFAULT_DESCRIPTION,
 		images: [
 			{
-				url: "/api/og?title=30tools%20RSS%20Feed",
+				url: "/og-image.jpg",
 				width: 1200,
 				height: 630,
 				alt: `30tools - Professional Free Online Toolkit with ${TOOL_COUNT}+ Tools`,
 				type: "image/jpeg",
-			},
-			{
-				url: "/og-image.png",
-				width: 1200,
-				height: 630,
-				alt: "30tools - Free Online Tools for Professionals",
-				type: "image/png",
 			},
 		],
 	},
@@ -147,7 +140,7 @@ export const metadata: Metadata = {
 		creator: "@30tools",
 		title: `30tools - ${TOOL_COUNT}+ Free Online Tools | Professional Toolkit`,
 		description: DEFAULT_DESCRIPTION,
-		images: ["/api/og?title=30tools%20RSS%20Feed"],
+		images: ["/og-image.jpg"],
 	},
 	robots: {
 		index: true,

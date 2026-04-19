@@ -16,7 +16,7 @@ export const metadata = {
 			"Generate custom Lorem Ipsum dummy text for your designs. Fast, free, and secure placeholder text generator. No signup required.",
 		url: "https://30tools.com/lorem-ipsum-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Lorem%20Ipsum%20Generator%20-%20Dummy%20Text" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Lorem Ipsum Generator Online - Dummy & Placeholder Text",
 		description:
 			"Generate custom Lorem Ipsum dummy text for your designs. No signup required.",
-		images: ["/api/og?title=Lorem%20Ipsum%20Generator%20-%20Dummy%20Text"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

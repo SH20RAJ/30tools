@@ -16,7 +16,7 @@ export const metadata = {
 			"Download videos from 1000+ sites including YouTube, TikTok, and Instagram. High quality MP4 downloads, no signup required.",
 		url: "https://30tools.com/online-video-downloader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Online%20Video%20Downloader" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Online Video Downloader - 30tools",
 		description:
 			"Save videos from any website in seconds. All-in-one downloader for YouTube, TikTok, FB & more.",
-		images: ["/api/og?title=Online%20Video%20Downloader"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

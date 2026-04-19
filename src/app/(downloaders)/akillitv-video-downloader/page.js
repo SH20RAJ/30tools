@@ -16,7 +16,7 @@ export const metadata = {
 			"Download AkilliTv videos easily with our free online downloader. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/akillitv-video-downloader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20AkilliTv%20Video%20Downloader%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free AkilliTv Video Downloader Online - No Signup | 30tools",
 		description:
 			"Download AkilliTv videos easily with our free online downloader. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20AkilliTv%20Video%20Downloader%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

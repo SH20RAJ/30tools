@@ -16,7 +16,7 @@ export const metadata = {
 			"Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/keyword-research-tool",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Advanced%20Keyword%20Research%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Advanced Keyword Research Online - No Signup | 30tools",
 		description:
 			"Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Advanced%20Keyword%20Research%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

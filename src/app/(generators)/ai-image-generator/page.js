@@ -16,7 +16,7 @@ export const metadata = {
 			"Create stunning AI art for free with our Stable Diffusion and DALL-E 3 alternative. Generate realistic photos, anime, and digital illustrations from text prompts. No signup, no limits, and 100% private.",
 		url: "https://30tools.com/ai-image-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=AI%20Image%20Generator%20-%20Stable%20Diffusion%20Alternative" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free AI Image Generator Online - Stable Diffusion & DALL-E Alternative",
 		description:
 			"Create stunning AI art for free with our Stable Diffusion and DALL-E 3 alternative. No signup, no limits.",
-		images: ["/api/og?title=AI%20Image%20Generator%20-%20Stable%20Diffusion%20Alternative"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

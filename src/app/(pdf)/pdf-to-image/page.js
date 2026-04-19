@@ -16,7 +16,7 @@ export const metadata = {
 			"Convert PDF pages to high-quality JPG, PNG images 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/pdf-to-image",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20PDF%20to%20Image%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free PDF to Image Online - No Signup | 30tools",
 		description:
 			"Convert PDF pages to high-quality JPG, PNG images 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20PDF%20to%20Image%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

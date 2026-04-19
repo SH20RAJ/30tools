@@ -16,7 +16,7 @@ export const metadata = {
 			"Generate high-quality favicons from images, text, or emojis. Create .ico files and Apple Touch Icons instantly. No signup required.",
 		url: "https://30tools.com/favicon-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Favicon%20Generator%20-%20Create%20ICO%20Online" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Favicon Generator Online - Create ICO & Web Icons",
 		description:
 			"Generate high-quality favicons from images, text, or emojis instantly. No signup required.",
-		images: ["/api/og?title=Favicon%20Generator%20-%20Create%20ICO%20Online"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

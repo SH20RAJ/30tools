@@ -16,7 +16,7 @@ export const metadata = {
 			"Convert text to lifelike AI voices for free with our ElevenLabs alternative. Generate natural-sounding speech instantly. No signup, multiple languages.",
 		url: "https://30tools.com/ai-voice-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=AI%20Voice%20Generator%20-%20Realistic%20ElevenLabs%20Alternative" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free AI Voice Generator Online - Realistic ElevenLabs Alternative",
 		description:
 			"Convert text to lifelike AI voices for free with our ElevenLabs alternative. No signup required.",
-		images: ["/api/og?title=AI%20Voice%20Generator%20-%20Realistic%20ElevenLabs%20Alternative"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

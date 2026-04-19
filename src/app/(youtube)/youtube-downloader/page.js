@@ -16,7 +16,7 @@ export const metadata = {
 			"Download YouTube videos and audio in multiple formats and qualities 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/youtube-downloader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20YouTube%20Video/Audio%20Downloader%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free YouTube Video/Audio Downloader Online - No Signup | 30tools",
 		description:
 			"Download YouTube videos and audio in multiple formats and qualities 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20YouTube%20Video/Audio%20Downloader%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

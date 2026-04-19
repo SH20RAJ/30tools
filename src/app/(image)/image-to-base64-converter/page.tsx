@@ -16,7 +16,7 @@ export const metadata = {
 			"Convert any image to a Base64 string for free. Easily encode JPEG, PNG, SVG, or WebP. No signup required.",
 		url: "https://30tools.com/image-to-base64-converter",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Image%20to%20Base64%20Converter" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Image to Base64 Converter Online - Encode Images Instantly",
 		description:
 			"Convert any image to a Base64 string for free. Easily encode JPEG, PNG, SVG, or WebP. No signup required.",
-		images: ["/api/og?title=Image%20to%20Base64%20Converter"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

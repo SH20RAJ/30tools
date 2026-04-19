@@ -16,7 +16,7 @@ export const metadata = {
 			"Convert PNG, JPG, and WebP images to high-quality ICO files for free. Perfect for website favicons. No signup required.",
 		url: "https://30tools.com/convert-to-ico",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Convert%20to%20ICO" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Convert to ICO Online - PNG & JPG to ICO Converter",
 		description:
 			"Convert PNG, JPG, and WebP images to high-quality ICO files for free. No signup required.",
-		images: ["/api/og?title=Convert%20to%20ICO"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

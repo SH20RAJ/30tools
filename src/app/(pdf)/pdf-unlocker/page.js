@@ -16,7 +16,7 @@ export const metadata = {
 			"Remove password protection from PDF files 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/pdf-unlocker",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20PDF%20Unlocker%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free PDF Unlocker Online - No Signup | 30tools",
 		description:
 			"Remove password protection from PDF files 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20PDF%20Unlocker%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

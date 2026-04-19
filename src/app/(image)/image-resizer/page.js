@@ -16,7 +16,7 @@ export const metadata = {
 			"Change image dimensions and aspect ratios instantly. High-quality image resizing for social media and web. No signup required.",
 		url: "https://30tools.com/image-resizer",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Image%20Resizer%20-%20Resize%20Without%20Losing%20Quality" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Image Resizer Online - Resize Without Losing Quality",
 		description:
 			"Change image dimensions and aspect ratios instantly. No signup required.",
-		images: ["/api/og?title=Image%20Resizer%20-%20Resize%20Without%20Losing%20Quality"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

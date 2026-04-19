@@ -16,7 +16,7 @@ export const metadata = {
 			"Crop images easily with our free online photo cropper. Create square, circle, or custom aspect ratio crops instantly. No signup required.",
 		url: "https://30tools.com/image-cropper",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Image%20Cropper%20-%20Crop%20Photos%20Online" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Image Cropper Online - Crop Photo into Square or Circle",
 		description:
 			"Crop images easily with our free online photo cropper. No signup required.",
-		images: ["/api/og?title=Image%20Cropper%20-%20Crop%20Photos%20Online"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

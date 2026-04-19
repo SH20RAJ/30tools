@@ -16,7 +16,7 @@ export const metadata = {
 			"Remove image backgrounds automatically for free with our AI. Create transparent backgrounds instantly. No signup required.",
 		url: "https://30tools.com/background-remover",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=AI%20Background%20Remover%20-%20Remove%20BG%20Free" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free AI Background Remover Online - Remove BG & Make Transparent",
 		description:
 			"Remove image backgrounds automatically for free with our AI. No signup required.",
-		images: ["/api/og?title=AI%20Background%20Remover%20-%20Remove%20BG%20Free"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

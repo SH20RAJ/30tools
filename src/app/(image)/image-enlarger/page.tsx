@@ -16,7 +16,7 @@ export const metadata = {
 			"Enlarge and upscale images for free using AI. Increase photo resolution and size without losing quality. No signup required.",
 		url: "https://30tools.com/image-enlarger",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Image%20Enlarger%20-%20Upscale%20Photos%20Free" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free AI Image Enlarger Online - Upscale Without Quality Loss",
 		description:
 			"Enlarge and upscale images for free using AI. Increase photo resolution without losing quality.",
-		images: ["/api/og?title=Image%20Enlarger%20-%20Upscale%20Photos%20Free"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -16,7 +16,7 @@ export const metadata = {
 			"Transform PDF files to editable Word documents instantly. High accuracy conversion, no software to install, no signup needed.",
 		url: "https://30tools.com/pdf-to-word",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=PDF%20to%20Word%20Converter" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Online PDF to Word Converter - 30tools",
 		description:
 			"Convert PDF to editable Word documents with high accuracy. 100% free and secure.",
-		images: ["/api/og?title=PDF%20to%20Word%20Converter"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

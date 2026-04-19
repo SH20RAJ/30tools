@@ -16,7 +16,7 @@ export const metadata = {
 			"Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/sitemap-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Advanced%20Sitemap%20Generator%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Advanced Sitemap Generator Online - No Signup | 30tools",
 		description:
 			"Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Advanced%20Sitemap%20Generator%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

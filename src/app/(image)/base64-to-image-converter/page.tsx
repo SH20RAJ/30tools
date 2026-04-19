@@ -16,7 +16,7 @@ export const metadata = {
 			"Instantly decode Base64 strings back into viewable images. Download as PNG, JPG, or SVG. No signup required.",
 		url: "https://30tools.com/base64-to-image-converter",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Base64%20to%20Image%20Converter" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Base64 to Image Converter Online - Decode Base64 Strings",
 		description:
 			"Instantly decode Base64 strings back into viewable images. Download as PNG, JPG, or SVG. No signup required.",
-		images: ["/api/og?title=Base64%20to%20Image%20Converter"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

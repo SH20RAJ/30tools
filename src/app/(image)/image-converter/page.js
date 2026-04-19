@@ -16,7 +16,7 @@ export const metadata = {
 			"Convert images between all major formats instantly. Free online image converter with bulk processing. No signup required.",
 		url: "https://30tools.com/image-converter",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Image%20Converter%20-%20Convert%20JPEG,%20PNG,%20WebP" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Image Converter Online - Convert JPEG, PNG, WebP & GIF",
 		description:
 			"Convert images between all major formats instantly. Free online image converter with bulk processing.",
-		images: ["/api/og?title=Image%20Converter%20-%20Convert%20JPEG,%20PNG,%20WebP"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

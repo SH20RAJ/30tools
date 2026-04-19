@@ -16,7 +16,7 @@ export const metadata = {
 			"Extract hidden metadata and EXIF data from your photos. View camera settings, GPS location, and more. No signup required.",
 		url: "https://30tools.com/exif-reader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=EXIF%20Reader%20-%20View%20Photo%20Metadata" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free EXIF Reader Online - View Photo Metadata & GPS Info",
 		description:
 			"Extract hidden metadata and EXIF data from your photos. View camera settings, GPS location, and more.",
-		images: ["/api/og?title=EXIF%20Reader%20-%20View%20Photo%20Metadata"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -16,7 +16,7 @@ export const metadata = {
 			"Add password protection to PDF files 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/pdf-protect",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20PDF%20Password%20Protect%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free PDF Password Protect Online - No Signup | 30tools",
 		description:
 			"Add password protection to PDF files 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20PDF%20Password%20Protect%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -16,7 +16,7 @@ export const metadata = {
 			"Download Instagram videos, reels, stories, and photos in high quality 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/instagram-downloader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Instagram%20Downloader%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Instagram Downloader Online - No Signup | 30tools",
 		description:
 			"Download Instagram videos, reels, stories, and photos in high quality 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Instagram%20Downloader%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
