@@ -5,8 +5,8 @@ import ToolCategoryNavbar from "./ToolCategoryNavbar";
 
 export default function VideoToolsNavbar() {
 	const tools = [
-		{ name: "Video Compressor", href: "/video-compressor", icon: Video },
-		{ name: "Video to GIF", href: "/video-to-gif", icon: Video },
+		{ name: "Video Compressor", href: "/image-compressor", icon: Video },
+		{ name: "Video to GIF", href: "/jpg-to-gif-converter", icon: Video },
 	];
 
 	return (

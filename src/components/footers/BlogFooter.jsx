@@ -52,7 +52,7 @@ export default function BlogFooter() {
 							</li>
 							<li>
 								<Link
-									href="/blogs"
+									href="/blog"
 									className="text-muted-foreground hover:text-foreground"
 								>
 									Blog
