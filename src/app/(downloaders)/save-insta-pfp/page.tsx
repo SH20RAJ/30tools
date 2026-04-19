@@ -16,7 +16,7 @@ export const metadata = {
 			"Free Save Insta Pfp online. Save Insta Pfp allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/save-insta-pfp",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Save%20Insta%20Pfp%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Save Insta Pfp Online - No Signup | 30tools",
 		description:
 			"Free Save Insta Pfp online. Save Insta Pfp allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Save%20Insta%20Pfp%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

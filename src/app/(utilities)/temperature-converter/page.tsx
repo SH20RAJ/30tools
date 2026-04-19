@@ -16,7 +16,7 @@ export const metadata = {
 			"Convert Celsius, Fahrenheit, Kelvin, and Rankine in your browser. Accurate offsets, instant results, no uploads, and no account required.",
 		url: "https://30tools.com/temperature-converter",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Temperature%20Converter%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Temperature Converter Online - No Signup | 30tools",
 		description:
 			"Convert Celsius, Fahrenheit, Kelvin, and Rankine in your browser. Accurate offsets, instant results, no uploads, and no account required.",
-		images: ["/api/og?title=Free%20Temperature%20Converter%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

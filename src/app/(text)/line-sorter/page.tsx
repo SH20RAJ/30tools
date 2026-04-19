@@ -16,7 +16,7 @@ export const metadata = {
 			"Sort lists alphabetically or by length 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/line-sorter",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Line%20Sorter%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Line Sorter Online - No Signup | 30tools",
 		description:
 			"Sort lists alphabetically or by length 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Line%20Sorter%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

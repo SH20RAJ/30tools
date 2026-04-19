@@ -16,7 +16,7 @@ export const metadata = {
 			"Download Terabox videos with direct links and embed custom video players 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/terabox-downloader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Terabox%20Video%20Downloader%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Terabox Video Downloader Online - No Signup | 30tools",
 		description:
 			"Download Terabox videos with direct links and embed custom video players 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Terabox%20Video%20Downloader%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

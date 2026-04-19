@@ -24,58 +24,8 @@ export default function ToolLayout({
 	controls,
 	category,
 }: ToolLayoutProps) {
-	const softwareSchema = {
-		"@context": "https://schema.org",
-		"@type": "SoftwareApplication",
-		name: title,
-		description: description,
-		applicationCategory: "BrowserApplication",
-		operatingSystem: "All",
-		offers: {
-			"@type": "Offer",
-			price: "0",
-			priceCurrency: "USD",
-		},
-		aggregateRating: {
-			"@type": "AggregateRating",
-			ratingValue: "4.9",
-			ratingCount: 154,
-		},
-	};
-
-	const faqSchema = {
-		"@context": "https://schema.org",
-		"@type": "FAQPage",
-		mainEntity: [
-			{
-				"@type": "Question",
-				name: `Is the ${title} free to use?`,
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: `Yes, the ${title} is 100% free with no hidden charges.`,
-				},
-			},
-			{
-				"@type": "Question",
-				name: `Do I need to sign up to use the ${title}?`,
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: `No sign-up or registration is required. You can use the ${title} instantly in your browser.`,
-				},
-			},
-		],
-	};
-
 	return (
 		<div className="container mx-auto px-4 py-12 md:py-20 max-w-6xl animate-in">
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
-			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-			/>
 			{/* Breadcrumbs */}
 			<nav
 				aria-label="Breadcrumb"

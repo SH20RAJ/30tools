@@ -16,7 +16,7 @@ export const metadata = {
 			"Free number to roman numerals tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/number-to-roman-numerals",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Number%20to%20Roman%20Numerals%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Number to Roman Numerals Online - No Signup | 30tools",
 		description:
 			"Free number to roman numerals tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Number%20to%20Roman%20Numerals%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -16,7 +16,7 @@ export const metadata = {
 			"Free base64 encode tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/base64-encode",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Base64%20Encode%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Base64 Encode Online - No Signup | 30tools",
 		description:
 			"Free base64 encode tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Base64%20Encode%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

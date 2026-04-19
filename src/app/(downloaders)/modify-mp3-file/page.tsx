@@ -16,7 +16,7 @@ export const metadata = {
 			"Free Modify Mp3 File online. Modify Mp3 File allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/modify-mp3-file",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Modify%20Mp3%20File%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Modify Mp3 File Online - No Signup | 30tools",
 		description:
 			"Free Modify Mp3 File online. Modify Mp3 File allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Modify%20Mp3%20File%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

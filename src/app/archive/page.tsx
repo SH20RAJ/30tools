@@ -18,9 +18,9 @@ import toolsData from "@/constants/tools.json";
  * Metadata for the Archive page.
  */
 export const metadata = {
-	title: "Complete Tools Archive - Free Online Tools - No Signup | 30tools",
+	title: "Tools Archive | 30Tools - Complete Directory of 90+ Online Tools",
 	description:
-		"Browse our complete directory of 300+ free online tools. 100% free, no signup required, and privacy-focused.",
+		"Browse our complete directory of free online tools. From image editing and PDF management to SEO audit and developer utilities.",
 };
 
 const categoryIcons: Record<string, any> = {

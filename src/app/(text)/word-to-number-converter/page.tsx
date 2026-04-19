@@ -16,7 +16,7 @@ export const metadata = {
 			"Free word to number converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/word-to-number-converter",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Word%20to%20Number%20Converter%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Word to Number Converter Online - No Signup | 30tools",
 		description:
 			"Free word to number converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Word%20to%20Number%20Converter%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

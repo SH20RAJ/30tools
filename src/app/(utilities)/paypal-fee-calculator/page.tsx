@@ -16,7 +16,7 @@ export const metadata = {
 			"Free paypal fee calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/paypal-fee-calculator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Paypal%20Fee%20Calculator%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Paypal Fee Calculator Online - No Signup | 30tools",
 		description:
 			"Free paypal fee calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Paypal%20Fee%20Calculator%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -16,7 +16,7 @@ export const metadata = {
 			"Measure exact-match keyword density for pasted copy. Useful for editing blogs, landing pages, and meta descriptions before publish—all client-side.",
 		url: "https://30tools.com/keyword-density-checker",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Keyword%20Density%20Checker%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Keyword Density Checker Online - No Signup | 30tools",
 		description:
 			"Measure exact-match keyword density for pasted copy. Useful for editing blogs, landing pages, and meta descriptions before publish—all client-side.",
-		images: ["/api/og?title=Free%20Keyword%20Density%20Checker%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

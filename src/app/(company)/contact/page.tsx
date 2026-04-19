@@ -15,7 +15,7 @@ export const metadata = {
 			"Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/contact",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Contact%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -23,7 +23,7 @@ export const metadata = {
 		title: "Free Contact Online - No Signup | 30tools",
 		description:
 			"Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Contact%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

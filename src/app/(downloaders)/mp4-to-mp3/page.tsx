@@ -16,7 +16,7 @@ export const metadata = {
 			"Free Mp4 To Mp3 online. Mp4 To Mp3 allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/mp4-to-mp3",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Mp4%20To%20Mp3%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Mp4 To Mp3 Online - No Signup | 30tools",
 		description:
 			"Free Mp4 To Mp3 online. Mp4 To Mp3 allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Mp4%20To%20Mp3%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

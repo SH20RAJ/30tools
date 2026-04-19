@@ -49,7 +49,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 								{idx + 1}.
 							</div>
 							<h3 className="text-xl font-semibold mb-3">{step.name}</h3>
-							<p className="text-[#1d1d1f]/85 dark:text-white/85 text-sm leading-relaxed">
+							<p className="text-[#1d1d1f]/60 dark:text-white/60 text-sm leading-relaxed">
 								{step.text}
 							</p>
 						</div>
@@ -88,7 +88,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 						<Zap className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Instant Results</h3>
-					<p className="text-sm opacity-85">
+					<p className="text-sm opacity-60">
 						Real-time processing with zero latency. No waiting, just instant
 						output.
 					</p>
@@ -98,7 +98,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 						<Shield className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Maximum Privacy</h3>
-					<p className="text-sm opacity-85">
+					<p className="text-sm opacity-60">
 						All processing is done locally in your browser. We never store or
 						see your data.
 					</p>
@@ -108,7 +108,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 						<Download className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Free Forever</h3>
-					<p className="text-sm opacity-85">
+					<p className="text-sm opacity-60">
 						No signups, no hidden costs, and no limits. Use it as much as you
 						need.
 					</p>
@@ -128,7 +128,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 								className="p-8 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 sition-all"
 							>
 								<h3 className="text-xl font-semibold mb-4">{faq.question}</h3>
-								<p className="opacity-85 leading-relaxed text-lg">
+								<p className="opacity-60 leading-relaxed text-lg">
 									{faq.answer}
 								</p>
 							</div>
@@ -161,26 +161,26 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 							<tr>
 								<td className="p-6 text-sm font-medium">Cost</td>
 								<td className="p-6 text-sm text-green-600 font-bold">Free Forever</td>
-								<td className="p-6 text-sm opacity-85">
+								<td className="p-6 text-sm opacity-60">
 									Often Paid/Credits
 								</td>
 							</tr>
 							<tr>
 								<td className="p-6 text-sm font-medium">Registration</td>
 								<td className="p-6 text-sm text-green-600 font-bold">No Signup</td>
-								<td className="p-6 text-sm opacity-85">Email Required</td>
+								<td className="p-6 text-sm opacity-60">Email Required</td>
 							</tr>
 							<tr>
 								<td className="p-6 text-sm font-medium">Data Storage</td>
 								<td className="p-6 text-sm text-green-600 font-bold">
 									100% Client-side
 								</td>
-								<td className="p-6 text-sm opacity-85">Stored on Servers</td>
+								<td className="p-6 text-sm opacity-60">Stored on Servers</td>
 							</tr>
 							<tr>
 								<td className="p-6 text-sm font-medium">Speed</td>
 								<td className="p-6 text-sm text-green-600 font-bold">Instant (ms)</td>
-								<td className="p-6 text-sm opacity-85">Network Dependent</td>
+								<td className="p-6 text-sm opacity-60">Network Dependent</td>
 							</tr>
 						</tbody>
 					</table>
@@ -193,7 +193,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					<h2 className="text-2xl font-semibold mb-6">
 						The #1 Online {toolData.name}
 					</h2>
-					<p className="text-lg opacity-85 mb-8 leading-relaxed">
+					<p className="text-lg opacity-60 mb-8 leading-relaxed">
 						Our {toolData.name} is a versatile, high-speed utility for anyone
 						needing professional results instantly. Developed with modern SEO
 						standards and user privacy in mind, it outperforms typical

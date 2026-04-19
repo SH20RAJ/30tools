@@ -16,7 +16,7 @@ export const metadata = {
 			"Free open graph checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/open-graph-checker",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Open%20Graph%20Checker%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Open Graph Checker Online - No Signup | 30tools",
 		description:
 			"Free open graph checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Open%20Graph%20Checker%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

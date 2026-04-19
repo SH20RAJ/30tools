@@ -16,7 +16,7 @@ export const metadata = {
 			"Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/free-mp3-extractor",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Free%20Mp3%20Extractor%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Free Mp3 Extractor Online - No Signup | 30tools",
 		description:
 			"Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Free%20Mp3%20Extractor%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

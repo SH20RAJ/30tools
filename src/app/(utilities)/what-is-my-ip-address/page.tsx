@@ -16,7 +16,7 @@ export const metadata = {
 			"Free what is my ip address tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/what-is-my-ip-address",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20What%20Is%20My%20IP%20Address%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free What Is My IP Address Online - No Signup | 30tools",
 		description:
 			"Free what is my ip address tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20What%20Is%20My%20IP%20Address%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -16,7 +16,7 @@ export const metadata = {
 			"Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/save-twitter-videos",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Save%20Twitter%20Videos%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Save Twitter Videos Online - No Signup | 30tools",
 		description:
 			"Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Save%20Twitter%20Videos%20Online%20-%20No%20Signup"],
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
