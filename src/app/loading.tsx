@@ -13,7 +13,7 @@ export default function Loading() {
 				{[...Array(12)].map((_, i) => (
 					<div
 						key={i}
-						className="absolute left-[47%] top-0 w-[6%] h-[28%] bg-foreground/60 rounded-full origin-[center_180%]"
+						className="absolute top-0 left-1/2 -translate-x-1/2 w-[12%] h-[28%] bg-foreground/60 rounded-none origin-[center_180%]"
 						style={{
 							transform: `rotate(${i * 30}deg)`,
 							animation: `apple-spinner 1.2s linear infinite`,

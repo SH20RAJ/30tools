@@ -101,7 +101,7 @@
 		--border: 240 3% 12% / 0.1;
 		--input: 240 3% 12% / 0.1;
 		--ring: 210 100% 45%;
-		--radius: 8px;
+		--radius: 0px;
 
 		--chart-1: 12 76% 61%;
 		--chart-2: 173 58% 39%;
@@ -200,7 +200,7 @@
 	}
 
 	.apple-pill {
-		border-radius: 980px;
+		border-radius: 0px;
 	}
 
 	.bg-gradient-cute {
@@ -221,7 +221,7 @@
 
 ::-webkit-scrollbar-thumb {
 	background: hsl(var(--border));
-	border-radius: 10px;
+	border-radius: 0px;
 }
 
 ::-webkit-scrollbar-thumb:hover {

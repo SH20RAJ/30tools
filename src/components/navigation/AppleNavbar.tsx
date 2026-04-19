@@ -37,7 +37,7 @@ function SearchInput() {
 				placeholder="Search tools... (⌘K)"
 				value={query}
 				onChange={(e) => setQuery(e.target.value)}
-				className="bg-muted border-transparent text-foreground placeholder:text-muted-foreground h-9 pl-9 pr-4 rounded-full focus-visible:ring-1 focus-visible:ring-ring transition-all w-full md:w-[200px] lg:w-[300px]"
+				className="bg-muted border-transparent text-foreground placeholder:text-muted-foreground h-9 pl-9 pr-4 rounded-none focus-visible:ring-1 focus-visible:ring-ring transition-all w-full md:w-[200px] lg:w-[300px]"
 			/>
 		</form>
 	);
@@ -113,7 +113,7 @@ export function AppleNavbar() {
 					</div>
 
 					{/* Center: Search */}
-					<Suspense fallback={<div className="w-[300px] h-9 bg-muted rounded-full hidden md:block" />}>
+					<Suspense fallback={<div className="w-[300px] h-9 bg-muted rounded-none hidden md:block" />}>
 						<SearchInput />
 					</Suspense>
 
@@ -128,7 +128,7 @@ export function AppleNavbar() {
 										href="https://github.com/sh20raj/30tools"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-all"
+										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-none transition-all"
 										aria-label="GitHub Repository"
 									>
 										<Github className="h-5 w-5" />
@@ -141,7 +141,7 @@ export function AppleNavbar() {
 								<TooltipTrigger asChild>
 									<Link
 										href="/search"
-										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-full transition-all"
+										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-none transition-all"
 										aria-label="Browse all tools"
 									>
 										<LayoutGrid className="h-5 w-5" />

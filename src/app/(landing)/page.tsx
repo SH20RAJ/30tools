@@ -128,13 +128,13 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 
 				{/* Final CTA */}
 				<section className="py-32 text-center">
-					<div className="max-w-2xl mx-auto px-4 py-16 rounded-[40px] bg-foreground text-background relative overflow-hidden group">
+					<div className="max-w-2xl mx-auto px-4 py-16 rounded-none bg-foreground text-background relative overflow-hidden group">
 						<div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />
 						<h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Ready to work faster?</h2>
 						<p className="text-xl opacity-80 mb-10 text-background/90">Start using any of our 600+ tools today. No accounts, no hassle.</p>
 						<a 
 							href="/search" 
-							className="inline-flex h-14 items-center justify-center rounded-2xl bg-background text-foreground px-10 text-lg font-bold hover:scale-105 transition-transform"
+							className="inline-flex h-14 items-center justify-center rounded-none bg-background text-foreground px-10 text-lg font-bold hover:scale-105 transition-transform"
 						>
 							Browse All Tools
 						</a>

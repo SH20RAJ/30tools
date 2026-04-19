@@ -299,7 +299,7 @@ export default function ImageCompressorTool() {
 									<Button 
 										onClick={handleCompress} 
 										disabled={isCompressing || !files.some(f => f.status === "pending")}
-										className="h-20 rounded-3xl text-lg font-black tracking-tight shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+										className="h-20 rounded-none text-lg font-black tracking-tight shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3"
 									>
 										{isCompressing ? <RefreshCwIcon className="w-5 h-5" /> : <ZapIcon className="w-5 h-5 fill-current" />}
 										{isCompressing ? "Shrinking..." : "Optimise"}
@@ -308,7 +308,7 @@ export default function ImageCompressorTool() {
 									<Button 
 										variant="outline" 
 										onClick={clearAll}
-										className="h-20 rounded-3xl font-bold border-border/40 hover:bg-destructive/5 hover:text-destructive hover:border-destructive/20 transition-all px-0"
+										className="h-20 rounded-none font-bold border-border/40 hover:bg-destructive/5 hover:text-destructive hover:border-destructive/20 transition-all px-0"
 									>
 										Clear All
 									</Button>
@@ -338,7 +338,7 @@ export default function ImageCompressorTool() {
 									<Button 
 										onClick={downloadAllAsZip} 
 										variant="secondary" 
-										className="w-full h-14 rounded-2xl font-black text-lg shadow-xl"
+										className="w-full h-14 rounded-none font-black text-lg shadow-xl"
 									>
 										<DownloadIcon className="w-5 h-5 mr-3" />
 										Download All
@@ -400,7 +400,7 @@ export default function ImageCompressorTool() {
 									size="icon"
 									variant="secondary"
 									onClick={() => downloadFile(fileItem)}
-									className="rounded-xl hover:scale-110 transition-transform shadow-md"
+									className="rounded-none hover:scale-110 transition-transform shadow-md"
 								>
 									<DownloadIcon className="h-5 w-5" />
 								</Button>
@@ -434,7 +434,7 @@ function RefreshCwIcon({ className }) {
 			{[...Array(8)].map((_, i) => (
 				<div
 					key={i}
-					className="absolute w-[12%] h-[35%] bg-current rounded-full origin-[center_140%] animate-[apple-spinner_0.8s_linear_infinite]"
+					className="absolute w-[12%] h-[35%] bg-current rounded-none origin-[center_140%] animate-[apple-spinner_0.8s_linear_infinite]"
 					style={{
 						transform: `rotate(${i * 45}deg)`,
 						animationDelay: `${-0.7 + i * 0.1}s`,

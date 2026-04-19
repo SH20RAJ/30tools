@@ -19,6 +19,7 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 // Social sharing component
 export function SocialShare({ url, title, description, className = "" }) {
@@ -132,46 +133,72 @@ export function RelatedTools({
 	// Filter related tools (excluding current tool)
 	const relatedTools = tools
 		.filter((tool) => tool.id !== currentTool && tool.category === category)
-		.slice(0, 6);
+		.slice(0, 10);
 
 	if (relatedTools.length === 0) {
 		return null;
 	}
 
 	return (
-		<Card>
+		<Card className="rounded-none border-t-4 border-t-primary shadow-2xl">
 			<CardHeader>
-				<CardTitle className="flex items-center gap-2">
-					<ArrowRight className="h-5 w-5 text-primary" />
+				<CardTitle className="flex items-center gap-2 text-2xl font-black italic uppercase tracking-tighter">
+					<TrendingUp className="h-6 w-6 text-primary" />
 					{title}
 				</CardTitle>
 			</CardHeader>
 			<CardContent>
-				<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-					{relatedTools.map((tool) => (
-						<Link
-							key={tool.id}
-							href={tool.route}
-							className="group block p-4 border shadow-md transition-shadow"
-						>
-							<div className="flex items-start gap-3">
-								<div className="flex-1">
-									<h3 className="font-medium group-hover:text-primary transition-colors">
-										{tool.name}
-									</h3>
-									<p className="text-sm text-muted-foreground mt-1 line-clamp-2">
-										{tool.description}
-									</p>
-									{showCategory && (
-										<Badge variant="secondary" className="mt-2 text-xs">
-											{tool.category}
-										</Badge>
-									)}
+				<div className="grid md:grid-cols-2 lg:grid-cols-2 gap-4">
+					{relatedTools.map((tool, index) => {
+						const isHighlighted = index < 3;
+						return (
+							<Link
+								key={tool.id}
+								href={tool.route}
+								className={cn(
+									"group relative block p-6 border transition-all duration-300 rounded-none",
+									isHighlighted 
+										? "bg-primary/[0.03] border-primary/30 shadow-lg shadow-primary/5" 
+										: "bg-card border-border/40 hover:border-primary/20"
+								)}
+							>
+								{isHighlighted && (
+									<div className="absolute top-0 right-0 px-3 py-1 bg-primary text-[10px] font-black text-white uppercase tracking-widest leading-none">
+										Top Recommendation
+									</div>
+								)}
+								<div className="flex items-start gap-4">
+									<div className="flex-1">
+										<div className="flex items-center gap-2">
+											<h3 className={cn(
+												"font-bold transition-colors group-hover:text-primary",
+												isHighlighted ? "text-xl" : "text-lg"
+											)}>
+												{tool.name}
+											</h3>
+											{isHighlighted && <Star className="h-4 w-4 text-primary fill-current" />}
+										</div>
+										<p className="text-sm text-muted-foreground mt-2 line-clamp-2 leading-relaxed">
+											{tool.description}
+										</p>
+										{showCategory && (
+											<div className="mt-4 flex flex-wrap gap-2">
+												<Badge variant="secondary" className="rounded-none text-[10px] font-bold uppercase tracking-wider bg-muted/50">
+													{tool.category}
+												</Badge>
+												{isHighlighted && (
+													<Badge variant="outline" className="rounded-none text-[10px] font-bold uppercase tracking-wider border-primary/20 text-primary">
+														Featured
+													</Badge>
+												)}
+											</div>
+										)}
+									</div>
+									<ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
 								</div>
-								<ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-							</div>
-						</Link>
-					))}
+							</Link>
+						);
+					})}
 				</div>
 			</CardContent>
 		</Card>
@@ -380,7 +407,7 @@ export function ToolFeatures({
 	);
 
 	return (
-		<Card>
+		<Card className="rounded-none">
 			<CardHeader>
 				<CardTitle className="text-lg">{title}</CardTitle>
 			</CardHeader>

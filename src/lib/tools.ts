@@ -45,3 +45,11 @@ export function getToolById(id: string): Tool | undefined {
 export function getAllCategories(): Category[] {
 	return Object.values(categories);
 }
+
+export function getRelatedTools(tool: Tool, limit: number = 10): Tool[] {
+	if (!tool) return [];
+	const allTools = getAllTools();
+	return allTools
+		.filter((t) => t.id !== tool.id && t.category === tool.category)
+		.slice(0, limit);
+}

@@ -62,11 +62,11 @@ export default async function SearchPage({ searchParams }) {
 							name="q"
 							defaultValue={query}
 							placeholder="What tool are you looking for?"
-							className="pl-12 h-14 text-lg rounded-2xl border-2 focus-visible:ring-0 focus-visible:border-primary transition-all shadow-sm"
+							className="pl-12 h-14 text-lg border-2 focus-visible:ring-0 focus-visible:border-primary transition-all shadow-sm"
 						/>
 						<button
 							type="submit"
-							className="absolute right-2 top-1/2 -transpace-y-1/2 bg-primary text-primary-foreground px-6 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity"
+							className="absolute right-2 top-1/2 -transpace-y-1/2 bg-primary text-primary-foreground px-6 py-2 font-medium hover:opacity-90 transition-opacity"
 						>
 							Search
 						</button>
@@ -79,7 +79,7 @@ export default async function SearchPage({ searchParams }) {
 						<Link
 							key={cat.key}
 							href={`/search?category=${cat.key}${query ? `&q=${query}` : ""}`}
-							className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${(categoryKey === cat.key || (!categoryKey && cat.key === "all"))
+							className={`px-4 py-2 text-sm font-medium transition-all ${(categoryKey === cat.key || (!categoryKey && cat.key === "all"))
 									? "bg-primary text-primary-foreground shadow-md"
 									: "bg-secondary text-secondary-foreground hover:bg-secondary/80"
 								}`}
@@ -90,7 +90,7 @@ export default async function SearchPage({ searchParams }) {
 					{allCategories.length > 8 && (
 						<Link
 							href="/search"
-							className="px-4 py-2 rounded-full text-sm font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all"
+							className="px-4 py-2 text-sm font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all"
 						>
 							More...
 						</Link>
@@ -103,7 +103,7 @@ export default async function SearchPage({ searchParams }) {
 					<h2 className="text-xl font-semibold">
 						{query ? `Results for "${query}"` : "All Tools"}
 					</h2>
-					<span className="bg-secondary text-secondary-foreground px-2 py-0.5 rounded text-xs font-bold">
+					<span className="bg-secondary text-secondary-foreground px-2 py-0.5 text-xs font-bold">
 						{filteredCategories.reduce((acc, cat) => acc + cat.tools.length, 0)} tools
 					</span>
 				</div>
@@ -112,15 +112,15 @@ export default async function SearchPage({ searchParams }) {
 			{filteredCategories.length > 0 ? (
 				<ToolDirectory categories={filteredCategories} />
 			) : (
-				<div className="text-center py-32 border-2 border-dashed rounded-3xl-off bg-secondary/10">
-					<div className="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+				<div className="text-center py-32 border-2 border-dashed bg-secondary/10">
+					<div className="bg-secondary/20 w-16 h-16 flex items-center justify-center mx-auto mb-4">
 						<Search className="h-8 w-8 text-muted-foreground" />
 					</div>
 					<h3 className="text-xl font-bold mb-2">No tools found</h3>
 					<p className="text-muted-foreground mb-6">We couldn't find any tools matching your search criteria.</p>
 					<Link
 						href="/search"
-						className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-2xl font-bold hover:opacity-90 transition-all"
+						className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 font-bold hover:opacity-90 transition-all"
 					>
 						Browse All Tools
 					</Link>

@@ -8,6 +8,7 @@ import {
 } from "./ToolSharedComponents";
 import VariantLinks from "./VariantLinks";
 import { getDynamicSEOContent } from "./seoTemplates";
+import { getRelatedTools } from "@/lib/tools";
 
 function ToolArticle({ content }) {
 	if (!content) return null;
@@ -88,6 +89,12 @@ export default function ToolLayout({
 		if (!enrichedTool.article) enrichedTool.article = dynamicContent.article;
 	}
 
+	// Ensure at least 10 related tools
+	const finalRelatedTools =
+		relatedTools.length < 10
+			? getRelatedTools(tool, 15) // Get more than 10 to be safe
+			: relatedTools;
+
 	return (
 		<div className="min-h-screen bg-background text-foreground selection:bg-primary/20 ambient-glow">
 			<StructuredData tool={enrichedTool} />
@@ -134,11 +141,11 @@ export default function ToolLayout({
 				{/* Internal Link Sculpting Segment */}
 				<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />
 
-				{relatedTools.length > 0 && (
+				{finalRelatedTools.length > 0 && (
 					<RelatedTools
 						currentTool={tool.id}
 						category={tool.category}
-						tools={relatedTools}
+						tools={finalRelatedTools}
 					/>
 				)}
 			</main>
