@@ -2,29 +2,29 @@ import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free EXIF Reader Online - No Signup | 30tools",
+	title: "Free EXIF Reader Online - View Photo Metadata & GPS Info",
 	description:
-		"Extract metadata and EXIF data from images including camera settings and GPS location 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Extract hidden metadata and EXIF data from your photos. View camera settings, GPS location, lens info, and more for free. 100% private browser-based processing, no upload needed.",
 	keywords:
-		"exif reader, free online tool, no signup, image, exif reader online, 30tools",
+		"exif reader, view image metadata online, extract gps from photo, exif data viewer, photo metadata extractor, 30tools, image info viewer",
 	alternates: {
 		canonical: "https://30tools.com/exif-reader",
 	},
 	openGraph: {
-		title: "Free EXIF Reader Online - No Signup | 30tools",
+		title: "Free EXIF Reader Online - View Photo Metadata & GPS Info",
 		description:
-			"Extract metadata and EXIF data from images including camera settings and GPS location 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Extract hidden metadata and EXIF data from your photos. View camera settings, GPS location, and more. No signup required.",
 		url: "https://30tools.com/exif-reader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20EXIF%20Reader%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=EXIF%20Reader%20-%20View%20Photo%20Metadata" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free EXIF Reader Online - No Signup | 30tools",
+		title: "Free EXIF Reader Online - View Photo Metadata & GPS Info",
 		description:
-			"Extract metadata and EXIF data from images including camera settings and GPS location 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20EXIF%20Reader%20Online%20-%20No%20Signup"],
+			"Extract hidden metadata and EXIF data from your photos. View camera settings, GPS location, and more.",
+		images: ["/api/og?title=EXIF%20Reader%20-%20View%20Photo%20Metadata"],
 	},
 	robots: { index: true, follow: true },
 };

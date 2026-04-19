@@ -2,18 +2,18 @@ import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free Image Compressor Online - No Signup | 30tools",
+	title: "Free Image Compressor Online - Reduce JPEG, PNG & WebP Size",
 	description:
-		"Compress images to reduce file size while maintaining quality 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Compress images up to 90% without losing quality. Our free online tool helps you reduce image size from MB to KB for JPEG, PNG, and WebP formats. Bulk compression, privacy-first, and no signup.",
 	keywords:
-		"image compressor, free online tool, no signup, image, image compressor online, 30tools",
+		"image compressor, compress jpeg png online, reduce image size in kb, tinyjpg alternative, image optimizer, 30tools, free image shrinker",
 	alternates: {
 		canonical: "https://30tools.com/image-compressor",
 	},
 	openGraph: {
-		title: "Free Image Compressor Online - No Signup | 30tools",
+		title: "Free Image Compressor Online - Reduce JPEG, PNG & WebP Size",
 		description:
-			"Compress images to reduce file size while maintaining quality 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Compress images up to 90% without losing quality. Reduce image size from MB to KB for JPEG, PNG, and WebP instantly. No signup required.",
 		url: "https://30tools.com/image-compressor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +21,9 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Compressor Online - No Signup | 30tools",
+		title: "Free Image Compressor Online - Reduce JPEG, PNG & WebP Size",
 		description:
-			"Compress images to reduce file size while maintaining quality 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Compress images up to 90% without losing quality. Reduce image size from MB to KB instantly.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

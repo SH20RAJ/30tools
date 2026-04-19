@@ -2,29 +2,29 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free Image Resizer Online - No Signup | 30tools",
+	title: "Free Image Resizer Online - Resize Without Losing Quality",
 	description:
-		"Resize images with custom dimensions and aspect ratios 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Easily resize your images for social media, websites, or personal use. Change image dimensions, aspect ratios, and file sizes instantly without losing quality. 100% free and no signup required.",
 	keywords:
-		"image resizer, free online tool, no signup, image, image resizer online, 30tools",
+		"image resizer, resize image without losing quality, change image dimensions online, image resizer for social media, photo resizer, 30tools, free image scaler",
 	alternates: {
 		canonical: "https://30tools.com/image-resizer",
 	},
 	openGraph: {
-		title: "Free Image Resizer Online - No Signup | 30tools",
+		title: "Free Image Resizer Online - Resize Without Losing Quality",
 		description:
-			"Resize images with custom dimensions and aspect ratios 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Change image dimensions and aspect ratios instantly. High-quality image resizing for social media and web. No signup required.",
 		url: "https://30tools.com/image-resizer",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Image%20Resizer%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=Image%20Resizer%20-%20Resize%20Without%20Losing%20Quality" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Resizer Online - No Signup | 30tools",
+		title: "Free Image Resizer Online - Resize Without Losing Quality",
 		description:
-			"Resize images with custom dimensions and aspect ratios 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Image%20Resizer%20Online%20-%20No%20Signup"],
+			"Change image dimensions and aspect ratios instantly. No signup required.",
+		images: ["/api/og?title=Image%20Resizer%20-%20Resize%20Without%20Losing%20Quality"],
 	},
 	robots: { index: true, follow: true },
 };

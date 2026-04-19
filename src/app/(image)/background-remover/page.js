@@ -2,29 +2,29 @@ import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverToo
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free Background Remover Online - No Signup | 30tools",
+	title: "Free AI Background Remover Online - Remove BG & Make Transparent",
 	description:
-		"Remove image backgrounds automatically with AI 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Remove image backgrounds automatically for free with our AI-powered tool. Create transparent backgrounds for products, portraits, and signatures instantly. 100% private and no signup required.",
 	keywords:
-		"background remover, free online tool, no signup, image, background remover online, 30tools",
+		"remove bg free, background remover ai, transparent background maker, remove background from image, online photo editor, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/background-remover",
 	},
 	openGraph: {
-		title: "Free Background Remover Online - No Signup | 30tools",
+		title: "Free AI Background Remover Online - Remove BG & Make Transparent",
 		description:
-			"Remove image backgrounds automatically with AI 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Remove image backgrounds automatically for free with our AI. Create transparent backgrounds instantly. No signup required.",
 		url: "https://30tools.com/background-remover",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Background%20Remover%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=AI%20Background%20Remover%20-%20Remove%20BG%20Free" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Background Remover Online - No Signup | 30tools",
+		title: "Free AI Background Remover Online - Remove BG & Make Transparent",
 		description:
-			"Remove image backgrounds automatically with AI 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Background%20Remover%20Online%20-%20No%20Signup"],
+			"Remove image backgrounds automatically for free with our AI. No signup required.",
+		images: ["/api/og?title=AI%20Background%20Remover%20-%20Remove%20BG%20Free"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -2,29 +2,29 @@ import FaviconGeneratorTool from "@/components/tools/image/FaviconGeneratorTool"
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free Favicon Generator Online - No Signup | 30tools",
+	title: "Free Favicon Generator Online - Create ICO & Web Icons",
 	description:
-		"Generate favicons from text, images, or emojis for websites 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Generate high-quality favicons from images, text, or emojis. Create .ico files, PNGs, and Apple Touch Icons for your website instantly. 100% free, private, and no signup required.",
 	keywords:
-		"favicon generator, free online tool, no signup, image, favicon generator online, 30tools",
+		"favicon generator, generate favicon from image, ico converter for website, create apple touch icon, website icon maker, 30tools, free favicon maker",
 	alternates: {
 		canonical: "https://30tools.com/favicon-generator",
 	},
 	openGraph: {
-		title: "Free Favicon Generator Online - No Signup | 30tools",
+		title: "Free Favicon Generator Online - Create ICO & Web Icons",
 		description:
-			"Generate favicons from text, images, or emojis for websites 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Generate high-quality favicons from images, text, or emojis. Create .ico files and Apple Touch Icons instantly. No signup required.",
 		url: "https://30tools.com/favicon-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Favicon%20Generator%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=Favicon%20Generator%20-%20Create%20ICO%20Online" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Favicon Generator Online - No Signup | 30tools",
+		title: "Free Favicon Generator Online - Create ICO & Web Icons",
 		description:
-			"Generate favicons from text, images, or emojis for websites 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Favicon%20Generator%20Online%20-%20No%20Signup"],
+			"Generate high-quality favicons from images, text, or emojis instantly. No signup required.",
+		images: ["/api/og?title=Favicon%20Generator%20-%20Create%20ICO%20Online"],
 	},
 	robots: { index: true, follow: true },
 };
