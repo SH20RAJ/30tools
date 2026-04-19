@@ -16,7 +16,7 @@ export const metadata = {
 			"Free Ig Highlights Saver online. Ig Highlights Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/ig-highlights-saver",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Ig%20Highlights%20Saver%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Ig Highlights Saver Online - No Signup | 30tools",
 		description:
 			"Free Ig Highlights Saver online. Ig Highlights Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Ig%20Highlights%20Saver%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

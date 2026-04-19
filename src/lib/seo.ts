@@ -27,12 +27,19 @@ export function generateMetadata({
 	locale = "en",
 }: MetadataProps): Metadata {
 	const url = `${BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+	const languages = ["en", "es", "fr", "de", "hi", "it", "pt", "ja", "zh", "ko", "ru", "tr", "vi", "id"];
+	
+	const languageAlternates: Record<string, string> = {};
+	for (const lang of languages) {
+		languageAlternates[lang] = `${url}${url.includes("?") ? "&" : "?"}lang=${lang}`;
+	}
 
 	return {
 		title,
 		description,
 		alternates: {
 			canonical: url,
+			languages: languageAlternates,
 		},
 		openGraph: {
 			title,

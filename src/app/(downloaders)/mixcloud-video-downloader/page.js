@@ -16,7 +16,7 @@ export const metadata = {
 			"The easiest way to download Mixcloud videos and audio online. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/mixcloud-video-downloader",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Mixcloud%20Video%20Downloader%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Mixcloud Video Downloader Online - No Signup | 30tools",
 		description:
 			"The easiest way to download Mixcloud videos and audio online. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Mixcloud%20Video%20Downloader%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

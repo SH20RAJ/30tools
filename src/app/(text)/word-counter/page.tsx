@@ -16,7 +16,7 @@ export const metadata = {
 			"Count words, characters, sentences, and paragraphs for essays, SEO copy, and social posts. Live tallies in your browser with no uploads or sign-in.",
 		url: "https://30tools.com/word-counter",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Word%20Counter%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Word Counter Online - No Signup | 30tools",
 		description:
 			"Count words, characters, sentences, and paragraphs for essays, SEO copy, and social posts. Live tallies in your browser with no uploads or sign-in.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Word%20Counter%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

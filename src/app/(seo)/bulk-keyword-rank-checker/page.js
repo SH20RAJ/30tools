@@ -15,7 +15,7 @@ export const metadata = {
 			"Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/bulk-keyword-rank-checker",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Bulk%20Keyword%20Rank%20Checker%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -23,7 +23,7 @@ export const metadata = {
 		title: "Free Bulk Keyword Rank Checker Online - No Signup | 30tools",
 		description:
 			"Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Bulk%20Keyword%20Rank%20Checker%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

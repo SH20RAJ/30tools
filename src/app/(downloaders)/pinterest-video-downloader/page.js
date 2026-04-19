@@ -16,7 +16,7 @@ export const metadata = {
 			"Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/pinterest-video-downloader",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Pinterest%20Video%20Downloader%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Pinterest Video Downloader Online - No Signup | 30tools",
 		description:
 			"Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Pinterest%20Video%20Downloader%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

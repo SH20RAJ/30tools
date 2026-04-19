@@ -16,7 +16,7 @@ export const metadata = {
 			"Free Save Snaps To Gallery online. Save Snaps To Gallery allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/save-snaps-to-gallery",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Save%20Snaps%20To%20Gallery%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Save Snaps To Gallery Online - No Signup | 30tools",
 		description:
 			"Free Save Snaps To Gallery online. Save Snaps To Gallery allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Save%20Snaps%20To%20Gallery%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -38,18 +38,18 @@ export function AppleFooter({ categories = [] }) {
 						<Link href="/" className="text-lg font-semibold tracking-tight mb-4 block">
 							30tools
 						</Link>
-						<p className="text-[12px] leading-relaxed opacity-80 max-w-xs">
+						<p className="text-[12px] leading-relaxed opacity-90 max-w-xs">
 							200+ free tools for creators, developers, and professionals. 
 							Fast, secure, and private.
 						</p>
 					</div>
 
 					<div>
-						<h4 className="text-[12px] font-semibold mb-4 opacity-90">Categories</h4>
+						<h4 className="text-[12px] font-semibold mb-4">Categories</h4>
 						<ul className="space-y-2">
 							{categories.slice(0, 6).map((item) => (
 								<li key={item.label}>
-									<Link href={item.href} className="text-[12px] opacity-80 hover:opacity-100 transition-opacity">
+									<Link href={item.href} className="text-[12px] opacity-90 hover:opacity-100 transition-opacity">
 										{item.label}
 									</Link>
 								</li>
@@ -58,11 +58,11 @@ export function AppleFooter({ categories = [] }) {
 					</div>
 
 					<div>
-						<h4 className="text-[12px] font-semibold mb-4 opacity-90">Company</h4>
+						<h4 className="text-[12px] font-semibold mb-4">Company</h4>
 						<ul className="space-y-2">
 							{footerNav.map((item) => (
 								<li key={item.name}>
-									<Link href={item.href} className="text-[12px] opacity-80 hover:opacity-100 transition-opacity">
+									<Link href={item.href} className="text-[12px] opacity-90 hover:opacity-100 transition-opacity">
 										{item.name}
 									</Link>
 								</li>
@@ -71,15 +71,15 @@ export function AppleFooter({ categories = [] }) {
 					</div>
 
 					<div>
-						<h4 className="text-[12px] font-semibold mb-4 opacity-90">Developer</h4>
+						<h4 className="text-[12px] font-semibold mb-4">Developer</h4>
 						<ul className="space-y-2">
 							<li>
-								<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-80 hover:opacity-100 transition-opacity flex items-center gap-1">
+								<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity flex items-center gap-1">
 									GitHub <ArrowUpRight className="h-3 w-3" />
 								</a>
 							</li>
 							<li>
-								<Link href="/blog" className="text-[12px] opacity-80 hover:opacity-100 transition-opacity">
+								<Link href="/blog" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity">
 									Blog
 								</Link>
 							</li>
@@ -87,16 +87,16 @@ export function AppleFooter({ categories = [] }) {
 					</div>
 
 					<div className="hidden lg:block">
-						<h4 className="text-[12px] font-semibold mb-4 opacity-90">Language</h4>
+						<h4 className="text-[12px] font-semibold mb-4">Language</h4>
 						<LanguageSelector languages={languages} />
 					</div>
 				</div>
 
 				<div className="pt-8 border-t border-black/5 dark:border-white/5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-					<p className="text-[12px] opacity-70">
+					<p className="text-[12px] opacity-80">
 						Copyright © 2026 30tools Inc. All rights reserved.
 					</p>
-					<div className="flex gap-6 opacity-80">
+					<div className="flex gap-6 opacity-90">
 						<Link href="/privacy" className="text-[12px] hover:underline underline-offset-4">Privacy Policy</Link>
 						<Link href="/terms" className="text-[12px] hover:underline underline-offset-4">Terms of Use</Link>
 						<Link href="/contact" className="text-[12px] hover:underline underline-offset-4">Contact</Link>

@@ -16,7 +16,7 @@ export const metadata = {
 			"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/ai-voice-generator",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20AI%20Voice%20Generator%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free AI Voice Generator Online - No Signup | 30tools",
 		description:
 			"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20AI%20Voice%20Generator%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

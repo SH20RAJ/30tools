@@ -68,6 +68,7 @@ export function GoogleNavbar() {
 									variant="ghost"
 									size="icon"
 									className="md:hidden "
+									aria-label="Search Tools"
 								>
 									<Link href="/search">
 										<Search className="h-4 w-4" />
@@ -77,7 +78,7 @@ export function GoogleNavbar() {
 							<TooltipContent>Search</TooltipContent>
 						</Tooltip>
 
-						<ThemeToggle />
+						<ThemeToggle aria-label="Toggle Theme" />
 
 						{/* Help */}
 						<Tooltip>
@@ -86,6 +87,7 @@ export function GoogleNavbar() {
 									variant="ghost"
 									size="icon"
 									className="hidden sm:inline-flex "
+									aria-label="Help and Documentation"
 								>
 									<HelpCircle className="h-4 w-4" />
 								</Button>
@@ -101,6 +103,7 @@ export function GoogleNavbar() {
 									variant="ghost"
 									size="icon"
 									className=""
+									aria-label="GitHub Repository"
 								>
 									<a
 										href="https://github.com/sh20raj/30tools"
@@ -122,6 +125,7 @@ export function GoogleNavbar() {
 									variant="ghost"
 									size="icon"
 									className=""
+									aria-label="Browse all tools"
 								>
 									<Link href="/search">
 										<LayoutGrid className="h-4 w-4" />

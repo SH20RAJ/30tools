@@ -15,7 +15,7 @@ export const metadata = {
 			"Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/backlink-checker",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Backlink%20Checker%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -23,7 +23,7 @@ export const metadata = {
 		title: "Free Backlink Checker Online - No Signup | 30tools",
 		description:
 			"Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Backlink%20Checker%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

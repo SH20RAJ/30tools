@@ -16,7 +16,7 @@ export const metadata = {
 			"Free youtube views ratio calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/youtube-views-ratio-calculator",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20YouTube%20Views%20Ratio%20Calculator%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free YouTube Views Ratio Calculator Online - No Signup | 30tools",
 		description:
 			"Free youtube views ratio calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20YouTube%20Views%20Ratio%20Calculator%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

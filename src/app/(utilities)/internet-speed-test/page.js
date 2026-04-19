@@ -16,7 +16,7 @@ export const metadata = {
 			"Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/internet-speed-test",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Internet%20Speed%20Test%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Internet Speed Test Online - No Signup | 30tools",
 		description:
 			"Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Internet%20Speed%20Test%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

@@ -16,7 +16,7 @@ export const metadata = {
 			"Download TikTok videos without watermark—free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/tiktok-videos-downloader",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Tiktok%20Videos%20Downloader%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Tiktok Videos Downloader Online - No Signup | 30tools",
 		description:
 			"Download TikTok videos without watermark—free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Tiktok%20Videos%20Downloader%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

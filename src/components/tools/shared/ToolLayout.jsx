@@ -1,4 +1,5 @@
 import { BreadcrumbsEnhanced, RelatedTools } from "@/components/seo";
+import StructuredData from "@/components/shared/StructuredData";
 import {
 	ToolFAQ,
 	ToolFeatures,
@@ -33,8 +34,12 @@ export default function ToolLayout({
 }) {
 	return (
 		<div className="min-h-screen bg-background text-foreground selection:bg-primary/20 ambient-glow">
+			<StructuredData tool={tool} />
 			<div className="container mx-auto px-4 pt-8">
-				<BreadcrumbsEnhanced customBreadcrumbs={breadcrumbs} />
+				<BreadcrumbsEnhanced 
+					customBreadcrumbs={breadcrumbs} 
+					suppressSchema={true}
+				/>
 			</div>
 
 			<main className="container mx-auto px-4 py-16 max-w-6xl space-y-32">

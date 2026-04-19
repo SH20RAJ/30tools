@@ -16,7 +16,7 @@ export const metadata = {
 			"Free Save Fb Stories Anonymous online. Save Fb Stories Anonymous allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/save-fb-stories-anonymous",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Save%20Fb%20Stories%20Anonymous%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Save Fb Stories Anonymous Online - No Signup | 30tools",
 		description:
 			"Free Save Fb Stories Anonymous online. Save Fb Stories Anonymous allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Save%20Fb%20Stories%20Anonymous%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

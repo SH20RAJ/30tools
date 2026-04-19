@@ -16,7 +16,7 @@ export const metadata = {
 			"Download YouTube video thumbnails in HD and maxresdefault quality for free. Save high-resolution thumbnails for design, analysis, and content creation. No signup required, instant downloads. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/youtube-thumbnail-downloader",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20YouTube%20Thumbnail%20Downloader%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free YouTube Thumbnail Downloader Online - No Signup | 30tools",
 		description:
 			"Download YouTube video thumbnails in HD and maxresdefault quality for free. Save high-resolution thumbnails for design, analysis, and content creation. No signup required, instant downloads. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20YouTube%20Thumbnail%20Downloader%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

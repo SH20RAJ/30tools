@@ -1,33 +1,12 @@
 import TextToSpeechTool from "@/components/tools/audio/TextToSpeechTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import { generateMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = generateMetadata({
 	title: "Free Text to Speech Online - No Signup | 30tools",
-	description:
-		"Convert text to natural sounding speech audio 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"text to speech, free online tool, no signup, audio, text to speech online, 30tools",
-	alternates: {
-		canonical: "https://30tools.com/text-to-speech",
-	},
-	openGraph: {
-		title: "Free Text to Speech Online - No Signup | 30tools",
-		description:
-			"Convert text to natural sounding speech audio 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/text-to-speech",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Text to Speech Online - No Signup | 30tools",
-		description:
-			"Convert text to natural sounding speech audio 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
-	},
-	robots: { index: true, follow: true },
-};
+	description: "Convert text to natural sounding speech audio 100% free, no signup required, and privacy-focused processing in your browser.",
+	path: "/text-to-speech",
+});
 
 export default async function ToolPage() {
 	const tool = {
@@ -90,30 +69,12 @@ export default async function ToolPage() {
 	];
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: "Text to Speech",
-						description: "Convert text to natural sounding speech audio",
-						url: "https://30tools.com/text-to-speech",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<TextToSpeechTool />
-			</ToolLayout>
-		</>
+		<ToolLayout
+			tool={tool}
+			breadcrumbs={breadcrumbs}
+			relatedTools={relatedTools}
+		>
+			<TextToSpeechTool />
+		</ToolLayout>
 	);
 }

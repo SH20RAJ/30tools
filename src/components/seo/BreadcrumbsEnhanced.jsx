@@ -29,10 +29,12 @@ const generateBreadcrumbSchema = (breadcrumbs) => {
  * @param {Object} props
  * @param {Breadcrumb[]} [props.customBreadcrumbs]
  * @param {string} [props.homeText="Home"]
+ * @param {boolean} [props.suppressSchema=false]
  */
 export default function BreadcrumbsEnhanced({
 	customBreadcrumbs = [],
 	homeText = "Home",
+	suppressSchema = false,
 }) {
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
@@ -76,15 +78,17 @@ export default function BreadcrumbsEnhanced({
 	};
 
 	const breadcrumbs = generateBreadcrumbs();
-	const schema = generateBreadcrumbSchema(breadcrumbs);
+	const schema = suppressSchema ? null : generateBreadcrumbSchema(breadcrumbs);
 
 	return (
 		<>
 			{/* Schema.org structured data */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-			/>
+			{schema && (
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+				/>
+			)}
 
 			{/* Visible breadcrumbs */}
 			<nav

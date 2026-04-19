@@ -16,7 +16,7 @@ export const metadata = {
 			"Download Pinterest images in original HD quality for free. Save pins, mood boards, and aesthetic visuals without watermarks. No signup required, instant downloads, and 100% private. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/pinterest-image-downloader",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20Pinterest%20Image%20Downloader%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free Pinterest Image Downloader Online - No Signup | 30tools",
 		description:
 			"Download Pinterest images in original HD quality for free. Save pins, mood boards, and aesthetic visuals without watermarks. No signup required, instant downloads, and 100% private. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20Pinterest%20Image%20Downloader%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

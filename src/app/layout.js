@@ -125,7 +125,7 @@ export const metadata = {
 		description: DEFAULT_DESCRIPTION,
 		images: [
 			{
-				url: "/og-image.jpg",
+				url: "/api/og?title=30tools%20RSS%20Feed",
 				width: 1200,
 				height: 630,
 				alt: `30tools - Professional Free Online Toolkit with ${TOOL_COUNT}+ Tools`,
@@ -146,7 +146,7 @@ export const metadata = {
 		creator: "@30tools",
 		title: `30tools - ${TOOL_COUNT}+ Free Online Tools | Professional Toolkit`,
 		description: DEFAULT_DESCRIPTION,
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=30tools%20RSS%20Feed"],
 	},
 	robots: {
 		index: true,

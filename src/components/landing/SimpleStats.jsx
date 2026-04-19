@@ -7,7 +7,7 @@ export function SimpleStats() {
 	];
 
 	return (
-		<section className="py-20 text-center animate-in">
+		<section className="py-20 text-center">
 			<h2 className="text-apple-section-heading text-foreground mb-16">
 				Growing together.
 			</h2>

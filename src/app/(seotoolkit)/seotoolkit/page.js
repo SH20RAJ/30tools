@@ -16,7 +16,7 @@ export const metadata = {
 			"All-in-one SEO audit and analysis tool. 27+ checks. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/seotoolkit",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20SEO%20Toolkit%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free SEO Toolkit Online - No Signup | 30tools",
 		description:
 			"All-in-one SEO audit and analysis tool. 27+ checks. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20SEO%20Toolkit%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };

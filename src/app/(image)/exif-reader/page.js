@@ -16,7 +16,7 @@ export const metadata = {
 			"Extract metadata and EXIF data from images including camera settings and GPS location 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/exif-reader",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Free%20EXIF%20Reader%20Online%20-%20No%20Signup" }],
 		type: "website",
 	},
 	twitter: {
@@ -24,7 +24,7 @@ export const metadata = {
 		title: "Free EXIF Reader Online - No Signup | 30tools",
 		description:
 			"Extract metadata and EXIF data from images including camera settings and GPS location 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+		images: ["/api/og?title=Free%20EXIF%20Reader%20Online%20-%20No%20Signup"],
 	},
 	robots: { index: true, follow: true },
 };
