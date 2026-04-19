@@ -22,13 +22,13 @@ export default function SEOToolsNavbar() {
 		},
 		{
 			name: "Google Index Checker",
-			href: "/bulk-google-index-checker",
+			href: "/google-index-checker",
 			icon: Globe,
 			popular: true,
 		},
 		{
 			name: "Title Rewrite Checker",
-			href: "/title-rewrite-checker",
+			href: "/youtube-title-length-checker",
 			icon: FileSearch,
 			popular: true,
 		},
@@ -46,7 +46,7 @@ export default function SEOToolsNavbar() {
 		},
 		{
 			name: "Meta Tags Generator",
-			href: "/meta-tags-generator",
+			href: "/meta-tag-generator",
 			icon: CheckCircle2,
 			popular: false,
 		},

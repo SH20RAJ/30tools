@@ -31,7 +31,7 @@ export function AppleNavbar() {
 	const navLinks = [
 		{ name: "Image", href: "/image-compressor" },
 		{ name: "PDF", href: "/pdf-to-word" },
-		{ name: "Video", href: "/video-downloader" },
+		{ name: "Video", href: "/online-video-downloader" },
 		{ name: "Developer", href: "/json-formatter" },
 		{ name: "SEO", href: "/seo-audit-tool" },
 	];
@@ -70,6 +70,7 @@ export function AppleNavbar() {
 								<Link
 									href="/search"
 									className="text-white/80 hover:text-white transition-colors"
+									aria-label="Search Tools"
 								>
 									<Search className="h-4 w-4" />
 								</Link>
@@ -78,7 +79,7 @@ export function AppleNavbar() {
 						</Tooltip>
 
 						<div className="hidden sm:flex items-center gap-4">
-							<ThemeToggle />
+							<ThemeToggle aria-label="Toggle Theme" />
 
 							<Tooltip>
 								<TooltipTrigger asChild>
@@ -87,6 +88,7 @@ export function AppleNavbar() {
 										target="_blank"
 										rel="noopener noreferrer"
 										className="text-white/80 hover:text-white transition-colors"
+										aria-label="GitHub Repository"
 									>
 										<Github className="h-4 w-4" />
 									</a>
@@ -99,6 +101,7 @@ export function AppleNavbar() {
 									<Link
 										href="/search"
 										className="text-white/80 hover:text-white transition-colors"
+										aria-label="Browse all tools"
 									>
 										<LayoutGrid className="h-4 w-4" />
 									</Link>

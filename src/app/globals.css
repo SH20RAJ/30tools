@@ -47,7 +47,7 @@
 
 	--animate-accordion-down: accordion-down 0.2s ease-out;
 	--animate-accordion-up: accordion-up 0.2s ease-out;
-	--animate-fade-in: fadeIn 0.5s ease-out forwards;
+	--animate-fade-in: fadeIn 0.4s ease-out forwards;
 
 	@keyframes accordion-down {
 		from {
@@ -70,11 +70,9 @@
 	@keyframes fadeIn {
 		from {
 			opacity: 0;
-			transform: translateY(10px);
 		}
 		to {
 			opacity: 1;
-			transform: translateY(0);
 		}
 	}
 }
@@ -93,7 +91,7 @@
 		--secondary: 240 5% 96%;
 		--secondary-foreground: 240 3% 12%;
 		--muted: 240 2% 90%;
-		--muted-foreground: 0 0% 0% / 0.56;
+		--muted-foreground: 240 3% 12% / 0.7;
 		--accent: 210 100% 45% / 0.1;
 		--accent-foreground: 210 100% 45%;
 		--destructive: 0 84% 60%;
@@ -196,7 +194,7 @@
 
 	.apple-glass {
 		background-color: rgb(0 0 0 / 0.8);
-		backdrop-filter: saturate(180%) blur(20px);
+		backdrop-filter: saturate(180%) blur(12px);
 	}
 
 	.apple-pill {

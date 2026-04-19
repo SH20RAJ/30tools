@@ -175,6 +175,20 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
+	const tools = getAllTools();
+	const categoriesMap = new Map();
+	
+	for (const tool of tools) {
+		const catKey = tool.categoryKey || tool.category;
+		if (catKey && !categoriesMap.has(catKey)) {
+			categoriesMap.set(catKey, {
+				label: tool.categoryName || catKey,
+				href: `/search?category=${catKey}`
+			});
+		}
+	}
+	const categories = Array.from(categoriesMap.values());
+
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
@@ -201,11 +215,20 @@ export default async function RootLayout({ children }) {
 				/>
 				<link
 					rel="preconnect"
+					href="https://fundingchoicesmessages.google.com"
+					crossOrigin="anonymous"
+				/>
+				<link
+					rel="preconnect"
 					href="https://www.clarity.ms"
 					crossOrigin="anonymous"
 				/>
 				<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
 				<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+				<link
+					rel="dns-prefetch"
+					href="https://fundingchoicesmessages.google.com"
+				/>
 
 				<meta httpEquiv="Content-Language" content="en" />
 
@@ -259,24 +282,21 @@ export default async function RootLayout({ children }) {
 					href="/feed.xml"
 				/>
 
-				<script
-					async
+				<Script
 					src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
+					strategy="afterInteractive"
 				/>
-				<script
-					id="google-analytics"
-					dangerouslySetInnerHTML={{
-						__html: `
+				<Script id="google-analytics" strategy="afterInteractive">
+					{`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
               gtag('config', 'G-0LV8F646TM');
-            `,
-					}}
-				/>
-				<script
-					async
+            `}
+				</Script>
+				<Script
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
+					strategy="afterInteractive"
 					crossOrigin="anonymous"
 				/>
 				{/* Clarity Tracking Code */}
@@ -297,15 +317,15 @@ export default async function RootLayout({ children }) {
 			<body className="ds-page font-sans antialiased">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<StructuredData includeFAQ={false} />
-					<ToolSeoStructuredData />
 					<AppleNavbar />
 					{children}
-					<AppleFooter />
+					<AppleFooter categories={categories} />
 					{/* <PWAInstallPrompt /> */}
 					<Toaster />
 					<a
 						className="sr-only"
 						href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
+						aria-label="Visitor Badge"
 					>
 						<img
 							src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"

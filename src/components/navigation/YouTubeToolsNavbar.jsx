@@ -12,14 +12,13 @@ export default function YouTubeToolsNavbar() {
 		{ name: "Thumbnail Downloader", href: "/youtube-thumbnail-downloader" },
 		{ name: "Video Downloader", href: "/youtube-downloader" },
 		{ name: "Shorts Downloader", href: "/youtube-shorts-downloader" },
-		{ name: "Transcript Downloader", href: "/youtube-transcript-downloader" },
-		{ name: "Timestamp Generator", href: "/youtube-timestamp-generator" },
-		{ name: "Embed Generator", href: "/youtube-embed-generator" },
-		{ name: "GIF Maker", href: "/youtube-gif-maker" },
+		{ name: "Transcript Downloader", href: "/youtube-downloader" },
+		{ name: "Timestamp Generator", href: "/youtube-timestamp-link-generator" },
+		{ name: "Embed Generator", href: "/youtube-embed-code-generator" },
+		{ name: "GIF Maker", href: "/jpg-to-gif-converter" },
 		{ name: "AI Script Generator", href: "/youtube-script-generator" },
-		{ name: "Comment Responder", href: "/youtube-comment-responder" },
-		{ name: "Idea Generator", href: "/youtube-idea-generator" },
-		{ name: "Pack Downloader", href: "/youtube-pack-downloader" },
+		{ name: "Comment Responder", href: "/youtube-comment-picker" },
+		{ name: "Pack Downloader", href: "/youtube-downloader" },
 	];
 
 	// Pick highlighted tools (fixed to prevent hydration mismatch)

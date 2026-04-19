@@ -73,13 +73,17 @@ export default async function LandingPage({ searchParams }) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 
-	const [heroTitle, heroSubtitle] = await Promise.all([
-		translateEngine.translate("30Tools - 100% Free Online Toolkit", lang),
-		translateEngine.translate(
-			"Efficiently process files with over 200+ free online tools. Image compressors, PDF editors, video converters, SEO utilities, and more. Fast, secure, and always free.",
-			lang,
-		),
-	]);
+	const isEnglish = lang === "en" || lang === "default";
+
+	const [heroTitle, heroSubtitle] = isEnglish 
+		? ["30Tools - 100% Free Online Toolkit", "Efficiently process files with over 200+ free online tools. Image compressors, PDF editors, video converters, SEO utilities, and more. Fast, secure, and always free."]
+		: await Promise.all([
+			translateEngine.translate("30Tools - 100% Free Online Toolkit", lang),
+			translateEngine.translate(
+				"Efficiently process files with over 200+ free online tools. Image compressors, PDF editors, video converters, SEO utilities, and more. Fast, secure, and always free.",
+				lang,
+			),
+		]);
 
 	const priorityOrder = [
 		"image",
@@ -93,25 +97,44 @@ export default async function LandingPage({ searchParams }) {
 		"seo",
 	];
 
-	const toolCategories = await Promise.all(
-		priorityOrder.map(async (key) => {
-			const cat = toolsData.categories[key];
-			if (!cat) return null;
+	const toolCategories = isEnglish
+		? priorityOrder.map((key) => {
+				const cat = toolsData.categories[key];
+				if (!cat) return null;
+				return {
+					key,
+					iconKey: cat.icon || key,
+					name: cat.name,
+					description: cat.description,
+					tools: cat.tools || [],
+				};
+			})
+		: await Promise.all(
+				priorityOrder.map(async (key) => {
+					const cat = toolsData.categories[key];
+					if (!cat) return null;
 
-			return {
-				key,
-				iconKey: cat.icon || key,
-				name: await translateEngine.translate(cat.name, lang),
-				description: await translateEngine.translate(cat.description, lang),
-				tools: await Promise.all(
-					(cat.tools || []).map(async (tool) => ({
-						...tool,
-						name: await translateEngine.translate(tool.name, lang),
-					})),
-				),
-			};
-		}),
-	);
+					const [translatedName, translatedDesc] = await Promise.all([
+						translateEngine.translate(cat.name, lang),
+						translateEngine.translate(cat.description, lang),
+					]);
+
+					const translatedTools = await Promise.all(
+						(cat.tools || []).map(async (tool) => ({
+							...tool,
+							name: await translateEngine.translate(tool.name, lang),
+						})),
+					);
+
+					return {
+						key,
+						iconKey: cat.icon || key,
+						name: translatedName,
+						description: translatedDesc,
+						tools: translatedTools,
+					};
+				}),
+			);
 
 	const filteredCategories = toolCategories.filter(Boolean);
 
