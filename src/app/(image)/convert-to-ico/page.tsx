@@ -2,29 +2,29 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
-	title: "Free Convert to ICO Online - No Signup | 30tools",
+	title: "Free Convert to ICO Online - PNG & JPG to ICO Converter",
 	description:
-		"Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert PNG, JPG, and WebP images to high-quality ICO files for free. Perfect for website favicons and Windows application icons. Fast, private, and no signup.",
 	keywords:
-		"convert to ico, free online tool, no signup, image, convert to ico online, 30tools",
+		"convert to ico, png to ico, jpg to ico, create ico file, ico converter online, 30tools, free ico maker, website icon creator",
 	alternates: {
 		canonical: "https://30tools.com/convert-to-ico",
 	},
 	openGraph: {
-		title: "Free Convert to ICO Online - No Signup | 30tools",
+		title: "Free Convert to ICO Online - PNG & JPG to ICO Converter",
 		description:
-			"Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Convert PNG, JPG, and WebP images to high-quality ICO files for free. Perfect for website favicons. No signup required.",
 		url: "https://30tools.com/convert-to-ico",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Convert%20to%20ICO" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Convert to ICO Online - No Signup | 30tools",
+		title: "Free Convert to ICO Online - PNG & JPG to ICO Converter",
 		description:
-			"Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+			"Convert PNG, JPG, and WebP images to high-quality ICO files for free. No signup required.",
+		images: ["/api/og?title=Convert%20to%20ICO"],
 	},
 	robots: { index: true, follow: true },
 };
@@ -34,7 +34,7 @@ export default async function ToolPage() {
 		id: "convert-to-ico",
 		name: "Convert to ICO",
 		description:
-			"Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Quickly convert your images into the .ico format required for website favicons and desktop application icons.",
 		route: "/convert-to-ico",
 		extraSlugs: [
 			"convert-audio-format",
@@ -75,6 +75,43 @@ export default async function ToolPage() {
 		],
 		popular: false,
 		category: "image",
+		features: [
+			"Instant Conversion: Convert your PNG or JPG images to the ICO format in milliseconds.",
+			"Perfect for Favicons: Generates valid .ico files that are fully compatible with all modern web browsers.",
+			"Transparency Support: Preserves the transparent background of your PNG images in the final ICO file.",
+			"Privacy First: The conversion happens locally in your web browser. Your images are never uploaded to a remote server.",
+		],
+		howTo: {
+			name: "How to Convert an Image to ICO",
+			steps: [
+				{
+					name: "Upload Image",
+					text: "Drag and drop your PNG or JPG image into the converter.",
+				},
+				{
+					name: "Convert",
+					text: "The tool will automatically process the image and convert it into the ICO format.",
+				},
+				{
+					name: "Download",
+					text: "Click the download button to save your new .ico file to your computer.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What is an ICO file?",
+				answer: "An ICO file is an image file format used for computer icons in Microsoft Windows. It's also the standard format used for website 'favicons'—the small icons that appear in browser tabs.",
+			},
+			{
+				question: "Should I use PNG or JPG for the source image?",
+				answer: "We highly recommend using a PNG image with a transparent background. JPGs do not support transparency, which means your resulting icon will have a solid background (usually white).",
+			},
+			{
+				question: "Is this tool safe to use for company logos?",
+				answer: "Yes! Because the conversion process runs entirely on your own device using browser-based technologies, your logo is never uploaded, stored, or seen by anyone else.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{
