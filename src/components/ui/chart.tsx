@@ -1,4 +1,5 @@
 "use client";
+
 import * as React from "react";
 import * as RechartsPrimitive from "recharts";
 
@@ -8,9 +9,23 @@ import { cn } from "@/lib/utils";
 const THEMES = {
 	light: "",
 	dark: ".dark",
+} as const;
+
+export type ChartConfig = {
+	[key: string]: {
+		label?: React.ReactNode;
+		icon?: React.ComponentType;
+	} & (
+		| { color?: string; theme?: never }
+		| { color?: never; theme: Record<keyof typeof THEMES, string> }
+	);
 };
 
-const ChartContext = React.createContext(null);
+interface ChartContextProps {
+	config: ChartConfig;
+}
+
+const ChartContext = React.createContext<ChartContextProps | null>(null);
 
 function useChart() {
 	const context = React.useContext(ChartContext);
@@ -22,7 +37,12 @@ function useChart() {
 	return context;
 }
 
-function ChartContainer({ id, className, children, config, ...props }) {
+interface ChartContainerProps extends React.ComponentProps<"div"> {
+	config: ChartConfig;
+	children: React.ReactNode;
+}
+
+function ChartContainer({ id, className, children, config, ...props }: ChartContainerProps) {
 	const uniqueId = React.useId();
 	const chartId = `chart-${id || uniqueId.replace(/:/g, "")}`;
 
@@ -39,14 +59,14 @@ function ChartContainer({ id, className, children, config, ...props }) {
 			>
 				<ChartStyle id={chartId} config={config} />
 				<RechartsPrimitive.ResponsiveContainer>
-					{children}
+					{children as React.ReactElement}
 				</RechartsPrimitive.ResponsiveContainer>
 			</div>
 		</ChartContext.Provider>
 	);
 }
 
-const ChartStyle = ({ id, config }) => {
+const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
 	const colorConfig = Object.entries(config).filter(
 		([, config]) => config.theme || config.color,
 	);
@@ -64,7 +84,7 @@ const ChartStyle = ({ id, config }) => {
 ${prefix} [data-chart=${id}] {
 ${colorConfig
 	.map(([key, itemConfig]) => {
-		const color = itemConfig.theme?.[theme] || itemConfig.color;
+		const color = itemConfig.theme?.[theme as keyof typeof THEMES] || itemConfig.color;
 		return color ? ` --color-${key}: ${color};` : null;
 	})
 	.join("\n")}
@@ -78,6 +98,14 @@ ${colorConfig
 };
 
 const ChartTooltip = RechartsPrimitive.Tooltip;
+
+interface ChartTooltipContentProps extends React.ComponentProps<typeof RechartsPrimitive.Tooltip> {
+	hideLabel?: boolean;
+	hideIndicator?: boolean;
+	indicator?: "dot" | "line" | "dashed";
+	nameKey?: string;
+	labelKey?: string;
+}
 
 function ChartTooltipContent({
 	active,
@@ -93,7 +121,7 @@ function ChartTooltipContent({
 	color,
 	nameKey,
 	labelKey,
-}) {
+}: ChartTooltipContentProps) {
 	const { config } = useChart();
 
 	const tooltipLabel = React.useMemo(() => {
@@ -179,10 +207,12 @@ function ChartTooltipContent({
 														"my-0.5": nestLabel && indicator === "dashed",
 													},
 												)}
-												style={{
-													"--color-bg": indicatorColor,
-													"--color-border": indicatorColor,
-												}}
+												style={
+													{
+														"--color-bg": indicatorColor,
+														"--color-border": indicatorColor,
+													} as React.CSSProperties
+												}
 											/>
 										)
 									)}
@@ -216,13 +246,18 @@ function ChartTooltipContent({
 
 const ChartLegend = RechartsPrimitive.Legend;
 
+interface ChartLegendContentProps extends React.ComponentProps<"div">, Pick<RechartsPrimitive.LegendProps, "payload" | "verticalAlign"> {
+	hideIcon?: boolean;
+	nameKey?: string;
+}
+
 function ChartLegendContent({
 	className,
 	hideIcon = false,
 	payload,
 	verticalAlign = "bottom",
 	nameKey,
-}) {
+}: ChartLegendContentProps) {
 	const { config } = useChart();
 
 	if (!payload?.length) {
@@ -267,7 +302,7 @@ function ChartLegendContent({
 }
 
 // Helper to extract item config from a payload.
-function getPayloadConfigFromPayload(config, payload, key) {
+function getPayloadConfigFromPayload(config: ChartConfig, payload: any, key: string) {
 	if (typeof payload !== "object" || payload === null) {
 		return undefined;
 	}

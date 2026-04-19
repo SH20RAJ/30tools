@@ -2,29 +2,29 @@ import PDFToWordTool from "@/components/tools/pdf/PDFToWordTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free PDF to Word Online - No Signup | 30tools",
+	title: "Free Online PDF to Word Converter - Editable Docx in Seconds",
 	description:
-		"Convert PDF files to editable Word documents 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert your PDF files into fully editable Word documents (Docx) with high accuracy. No signup required, 100% free, and secure browser-based processing. 30tools.",
 	keywords:
-		"pdf to word, free online tool, no signup, pdf, pdf to word online, 30tools",
+		"pdf to word converter, editable word from pdf, convert pdf to docx free, online pdf to word, pdf to doc converter, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pdf-to-word",
 	},
 	openGraph: {
-		title: "Free PDF to Word Online - No Signup | 30tools",
+		title: "PDF to Word Converter Online - Free & Editable",
 		description:
-			"Convert PDF files to editable Word documents 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Transform PDF files to editable Word documents instantly. High accuracy conversion, no software to install, no signup needed.",
 		url: "https://30tools.com/pdf-to-word",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20PDF%20to%20Word%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=PDF%20to%20Word%20Converter" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free PDF to Word Online - No Signup | 30tools",
+		title: "Free Online PDF to Word Converter - 30tools",
 		description:
-			"Convert PDF files to editable Word documents 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20PDF%20to%20Word%20Online%20-%20No%20Signup"],
+			"Convert PDF to editable Word documents with high accuracy. 100% free and secure.",
+		images: ["/api/og?title=PDF%20to%20Word%20Converter"],
 	},
 	robots: { index: true, follow: true },
 };

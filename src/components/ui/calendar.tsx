@@ -6,9 +6,13 @@ import {
 	ChevronRightIcon,
 } from "lucide-react";
 import * as React from "react";
-import { DayPicker, getDefaultClassNames } from "react-day-picker";
+import { DayPicker, getDefaultClassNames, type DayPickerProps } from "react-day-picker";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+
+export type CalendarProps = DayPickerProps & {
+	buttonVariant?: "ghost" | "default" | "outline" | "secondary" | "destructive" | "link" | "pill";
+}
 
 function Calendar({
 	className,
@@ -19,7 +23,7 @@ function Calendar({
 	formatters,
 	components,
 	...props
-}) {
+}: CalendarProps) {
 	const defaultClassNames = getDefaultClassNames();
 
 	return (
@@ -166,10 +170,10 @@ function Calendar({
 	);
 }
 
-function CalendarDayButton({ className, day, modifiers, ...props }) {
+function CalendarDayButton({ className, day, modifiers, ...props }: any) {
 	const defaultClassNames = getDefaultClassNames();
 
-	const ref = React.useRef(null);
+	const ref = React.useRef<HTMLButtonElement>(null);
 	React.useEffect(() => {
 		if (modifiers.focused) ref.current?.focus();
 	}, [modifiers.focused]);
@@ -186,6 +190,7 @@ function CalendarDayButton({ className, day, modifiers, ...props }) {
 				!modifiers.range_end &&
 				!modifiers.range_middle
 			}
+			data-day-button=""
 			data-range-start={modifiers.range_start}
 			data-range-end={modifiers.range_end}
 			data-range-middle={modifiers.range_middle}

@@ -2,29 +2,29 @@ import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngin
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free Online Video Downloader Online - No Signup | 30tools",
+	title: "Free Online Video Downloader - Save Videos from 1000+ Sites",
 	description:
-		"Download videos from any website for free with our online video downloader. Supports YouTube, TikTok, Instagram, Facebook, Twitter and 1000+ sites. HD quality, MP4/MP3 formats, no watermarks. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Best all-in-one video downloader. Save videos from YouTube, TikTok, Instagram, Facebook, and 1000+ other websites in HD MP4/MP3 format. Free, no signup, and no watermarks. 30tools.",
 	keywords:
-		"online video downloader, free online tool, no signup, downloaders, online video downloader online, 30tools",
+		"download video from url, free online video downloader, save video from any website, all in one video downloader, mp4 downloader online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/online-video-downloader",
 	},
 	openGraph: {
-		title: "Free Online Video Downloader Online - No Signup | 30tools",
+		title: "Online Video Downloader - Save Any Video Free",
 		description:
-			"Download videos from any website for free with our online video downloader. Supports YouTube, TikTok, Instagram, Facebook, Twitter and 1000+ sites. HD quality, MP4/MP3 formats, no watermarks. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Download videos from 1000+ sites including YouTube, TikTok, and Instagram. High quality MP4 downloads, no signup required.",
 		url: "https://30tools.com/online-video-downloader",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Online%20Video%20Downloader%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=Online%20Video%20Downloader" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Online Video Downloader Online - No Signup | 30tools",
+		title: "Free Online Video Downloader - 30tools",
 		description:
-			"Download videos from any website for free with our online video downloader. Supports YouTube, TikTok, Instagram, Facebook, Twitter and 1000+ sites. HD quality, MP4/MP3 formats, no watermarks. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Online%20Video%20Downloader%20Online%20-%20No%20Signup"],
+			"Save videos from any website in seconds. All-in-one downloader for YouTube, TikTok, FB & more.",
+		images: ["/api/og?title=Online%20Video%20Downloader"],
 	},
 	robots: { index: true, follow: true },
 };

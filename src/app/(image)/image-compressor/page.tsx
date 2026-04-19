@@ -2,18 +2,18 @@ import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free Image Compressor Online - Reduce JPEG, PNG & WebP Size",
+	title: "Free Online Bulk Image Compressor - Reduce JPEG, PNG & WebP Size",
 	description:
-		"Compress images up to 90% without losing quality. Our free online tool helps you reduce image size from MB to KB for JPEG, PNG, and WebP formats. Bulk compression, privacy-first, and no signup.",
+		"Compress multiple images up to 90% without losing quality. Best bulk image optimizer for JPEG, PNG, and WebP. Reduce image size from MB to KB instantly. Fast, secure, and no signup required.",
 	keywords:
-		"image compressor, compress jpeg png online, reduce image size in kb, tinyjpg alternative, image optimizer, 30tools, free image shrinker",
+		"bulk image compressor, compress jpeg png without losing quality, reduce image size in kb, image optimizer online, webp compressor, tinyjpg alternative, shrink image file size, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/image-compressor",
 	},
 	openGraph: {
-		title: "Free Image Compressor Online - Reduce JPEG, PNG & WebP Size",
+		title: "Bulk Image Compressor Online - Reduce JPEG, PNG & WebP Size",
 		description:
-			"Compress images up to 90% without losing quality. Reduce image size from MB to KB for JPEG, PNG, and WebP instantly. No signup required.",
+			"Compress multiple images up to 90% without quality loss. Best bulk image optimizer for JPEG, PNG, and WebP instantly. No signup required.",
 		url: "https://30tools.com/image-compressor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +21,9 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Compressor Online - Reduce JPEG, PNG & WebP Size",
+		title: "Free Online Bulk Image Compressor - 30tools",
 		description:
-			"Compress images up to 90% without losing quality. Reduce image size from MB to KB instantly.",
+			"Compress multiple images up to 90% without quality loss. Reduce image size from MB to KB instantly.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

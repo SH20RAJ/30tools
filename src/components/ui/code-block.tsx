@@ -1,11 +1,18 @@
 "use client";
 
 import { CheckIcon, CopyIcon } from "lucide-react";
+import * as React from "react";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 
-const CodeBlock = ({ code, language = "html", className = "" }) => {
+interface CodeBlockProps {
+	code: string;
+	language?: string;
+	className?: string;
+}
+
+const CodeBlock = ({ code, language = "html", className = "" }: CodeBlockProps) => {
 	const [copied, setCopied] = useState(false);
 
 	const copyToClipboard = () => {
@@ -17,7 +24,7 @@ const CodeBlock = ({ code, language = "html", className = "" }) => {
 	};
 
 	// Simple syntax highlighting for HTML, JavaScript, and JSX
-	const highlightCode = (code, language) => {
+	const highlightCode = (code: string, language: string) => {
 		if (!code) return "";
 
 		let highlighted = code;
@@ -63,7 +70,7 @@ const CodeBlock = ({ code, language = "html", className = "" }) => {
 	};
 
 	// Convert < and > to HTML entities for display
-	const escapeHtml = (text) => {
+	const escapeHtml = (text: string) => {
 		return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 	};
 
@@ -71,7 +78,7 @@ const CodeBlock = ({ code, language = "html", className = "" }) => {
 
 	return (
 		<div
-			className={`relative bg-gray-900 text-gray-100 ssName}`}
+			className={`relative bg-gray-900 text-gray-100 ${className}`}
 		>
 			<div className="flex items-center justify-between px-4 py-2 bg-gray-800 border-b border-gray-700">
 				<span className="text-sm font-mono text-gray-300">

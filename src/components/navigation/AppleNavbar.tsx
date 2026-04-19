@@ -1,8 +1,9 @@
 "use client";
 
-import { Github, LayoutGrid, Search, HelpCircle } from "lucide-react";
+import { Github, LayoutGrid, Search } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import * as React from "react";
 import { useEffect, useState } from "react";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import {
@@ -12,13 +13,18 @@ import {
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
 
+interface NavLink {
+	name: string;
+	href: string;
+}
+
 export function AppleNavbar() {
 	const router = useRouter();
-	const [mounted, setMounted] = useState(false);
+	const [, setMounted] = useState(false);
 
 	useEffect(() => {
 		setMounted(true);
-		const handleKeyDown = (e) => {
+		const handleKeyDown = (e: KeyboardEvent) => {
 			if ((e.metaKey || e.ctrlKey) && e.key === "k") {
 				e.preventDefault();
 				router.push("/search");
@@ -28,7 +34,7 @@ export function AppleNavbar() {
 		return () => window.removeEventListener("keydown", handleKeyDown);
 	}, [router]);
 
-	const navLinks = [
+	const navLinks: NavLink[] = [
 		{ name: "Image", href: "/image-compressor" },
 		{ name: "PDF", href: "/pdf-to-word" },
 		{ name: "Video", href: "/online-video-downloader" },
