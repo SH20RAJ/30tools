@@ -7,6 +7,49 @@ import {
 	ToolTrust,
 } from "./ToolSharedComponents";
 import VariantLinks from "./VariantLinks";
+import { getDynamicSEOContent } from "./seoTemplates";
+
+function ToolArticle({ content }) {
+	if (!content) return null;
+
+	// Simple markdown-like parser for the templates
+	const lines = content.trim().split("\n");
+	return (
+		<section className="scroll-mt-24 prose prose-invert max-w-none">
+			<div className="space-y-8">
+				{lines.map((line, i) => {
+					if (line.startsWith("## ")) {
+						return (
+							<h2 key={i} className="text-3xl md:text-5xl font-extrabold tracking-tight mt-16 mb-8 text-foreground">
+								{line.replace("## ", "")}
+							</h2>
+						);
+					}
+					if (line.startsWith("### ")) {
+						return (
+							<h3 key={i} className="text-2xl md:text-3xl font-bold tracking-tight mt-12 mb-6 text-foreground/90">
+								{line.replace("### ", "")}
+							</h3>
+						);
+					}
+					if (line.startsWith("- ")) {
+						return (
+							<li key={i} className="text-lg text-muted-foreground ml-6 list-disc">
+								{line.replace("- ", "")}
+							</li>
+						);
+					}
+					if (line.trim() === "") return <div key={i} className="h-4" />;
+					return (
+						<p key={i} className="text-xl text-muted-foreground leading-relaxed">
+							{line}
+						</p>
+					);
+				})}
+			</div>
+		</section>
+	);
+}
 
 /**
  * @typedef {Object} Tool
@@ -19,6 +62,7 @@ import VariantLinks from "./VariantLinks";
  * @property {Object} [howTo]
  * @property {Object[]} [howTo.steps]
  * @property {Object[]} [faqs]
+ * @property {string} [article]
  */
 
 /**
@@ -30,13 +74,23 @@ import VariantLinks from "./VariantLinks";
  */
 export default function ToolLayout({
 	tool,
-	children, // The actual tool interactive part
+	children,
 	breadcrumbs,
 	relatedTools = [],
 }) {
+	// Dynamically enrich tool data if SEO content is missing
+	const enrichedTool = { ...tool };
+	if (!enrichedTool.features || !enrichedTool.faqs || !enrichedTool.howTo || !enrichedTool.article) {
+		const dynamicContent = getDynamicSEOContent(tool);
+		if (!enrichedTool.features) enrichedTool.features = dynamicContent.features;
+		if (!enrichedTool.howTo) enrichedTool.howTo = dynamicContent.howTo;
+		if (!enrichedTool.faqs) enrichedTool.faqs = dynamicContent.faqs;
+		if (!enrichedTool.article) enrichedTool.article = dynamicContent.article;
+	}
+
 	return (
 		<div className="min-h-screen bg-background text-foreground selection:bg-primary/20 ambient-glow">
-			<StructuredData tool={tool} />
+			<StructuredData tool={enrichedTool} />
 			<div className="container mx-auto px-4 pt-8">
 				<BreadcrumbsEnhanced 
 					customBreadcrumbs={breadcrumbs} 
@@ -48,11 +102,11 @@ export default function ToolLayout({
 				{/* Hero Section */}
 				<section className="text-center space-y-8 max-w-4xl mx-auto animate-in">
 					<h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight bg-gradient-to-b from-foreground to-foreground/70">
-						{tool.name}
+						{enrichedTool.name}
 					</h1>
 					<p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-						{tool.description}
-						{!String(tool.description || "").includes("privacy-friendly browser-based workflows")
+						{enrichedTool.description}
+						{!String(enrichedTool.description || "").includes("privacy-friendly browser-based workflows")
 							? " Runs in your browser with no signup."
 							: " Free online utility — fast, private, and built for real workflows."}
 					</p>
@@ -68,11 +122,12 @@ export default function ToolLayout({
 				{/* Trust & SEO Content */}
 				<div className="space-y-32">
 					<ToolTrust />
+					<ToolArticle content={enrichedTool.article} />
 
 					<div className="grid grid-cols-1 gap-32">
-						<ToolFeatures features={tool.features} />
-						<ToolSteps steps={tool.howTo?.steps} toolName={tool.name} />
-						<ToolFAQ faqs={tool.faqs} toolName={tool.name} />
+						<ToolFeatures features={enrichedTool.features} />
+						<ToolSteps steps={enrichedTool.howTo?.steps} toolName={enrichedTool.name} />
+						<ToolFAQ faqs={enrichedTool.faqs} toolName={enrichedTool.name} />
 					</div>
 				</div>
 
