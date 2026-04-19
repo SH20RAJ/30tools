@@ -52,6 +52,43 @@ export default async function ToolPage() {
 		],
 		popular: true,
 		category: "image",
+		features: [
+			"Custom Text & Fonts: Choose from a variety of modern web fonts and customize your logo text.",
+			"Color Customization: Easily change text and background colors using a visual color picker.",
+			"Layout Options: Adjust sizing, spacing, and alignment to get the perfect look for your brand.",
+			"High-Quality Export: Download your finished logo as a crisp, transparent PNG ready for web or print.",
+		],
+		howTo: {
+			name: "How to Generate a Free Logo",
+			steps: [
+				{
+					name: "Enter Text",
+					text: "Type in your company name, brand, or initials.",
+				},
+				{
+					name: "Customize Design",
+					text: "Select a font, adjust text size, and pick your brand colors for the text and background.",
+				},
+				{
+					name: "Download",
+					text: "Preview your logo in real-time. Once you're happy with it, click 'Download Logo' to save the PNG file.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "Is this logo maker completely free?",
+				answer: "Yes! Our logo generator is 100% free to use. There are no hidden fees, no watermarks, and no sign-up required.",
+			},
+			{
+				question: "Can I use the logo for my business?",
+				answer: "Absolutely. The logos you create are yours to use for both personal and commercial projects, including websites, business cards, and social media.",
+			},
+			{
+				question: "What format will my logo be saved in?",
+				answer: "Your logo will be downloaded as a high-quality PNG file. You can choose to download it with a transparent background by setting the background color opacity to 0.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

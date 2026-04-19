@@ -45,6 +45,43 @@ export default async function ToolPage() {
 		],
 		popular: true,
 		category: "image",
+		features: [
+			"Multiple Generation Methods: Create favicons from your existing images, text, or even emojis.",
+			"Automatic Sizing: Generates all the necessary sizes for modern web browsers, including 16x16, 32x32, and 48x48.",
+			"Apple Touch Icon Support: Automatically creates high-resolution icons for iOS devices.",
+			"Instant Preview: See how your favicon will look in a browser tab before downloading.",
+		],
+		howTo: {
+			name: "How to Generate a Favicon",
+			steps: [
+				{
+					name: "Choose a Source",
+					text: "Select whether you want to create a favicon from an Image, Text, or an Emoji.",
+				},
+				{
+					name: "Customize",
+					text: "If using text or emoji, customize the background color and shape. If using an image, crop and position it as needed.",
+				},
+				{
+					name: "Download",
+					text: "Click 'Download' to get a ZIP file containing your .ico file and all the HTML tags needed to add it to your website.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What is a favicon?",
+				answer: "A favicon (short for favorite icon) is a small image displayed next to your website's title in a browser tab. It helps users easily identify your website when they have multiple tabs open.",
+			},
+			{
+				question: "What sizes are included in the download?",
+				answer: "Our tool generates a standard .ico file containing 16x16, 32x32, and 48x48 pixel sizes. It also provides a 180x180 pixel Apple Touch Icon for iOS devices.",
+			},
+			{
+				question: "Do I need to sign up to download the favicon?",
+				answer: "No! You can generate and download your favicons completely free, without ever needing to create an account or provide your email.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

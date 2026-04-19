@@ -2,29 +2,29 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
-	title: "Free Image Cropper Online - No Signup | 30tools",
+	title: "Free Image Cropper Online - Crop Photo into Square or Circle",
 	description:
-		"Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Crop images easily with our free online photo cropper. Create square, circle, or custom aspect ratio crops for Instagram, Facebook, and Twitter. 100% private and no signup required.",
 	keywords:
-		"image cropper, free online tool, no signup, image, image cropper online, 30tools",
+		"image cropper, crop photo online, square photo cropper, circle image crop, free picture cropper, 30tools, resize and crop image",
 	alternates: {
 		canonical: "https://30tools.com/image-cropper",
 	},
 	openGraph: {
-		title: "Free Image Cropper Online - No Signup | 30tools",
+		title: "Free Image Cropper Online - Crop Photo into Square or Circle",
 		description:
-			"Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Crop images easily with our free online photo cropper. Create square, circle, or custom aspect ratio crops instantly. No signup required.",
 		url: "https://30tools.com/image-cropper",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Image%20Cropper%20-%20Crop%20Photos%20Online" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Cropper Online - No Signup | 30tools",
+		title: "Free Image Cropper Online - Crop Photo into Square or Circle",
 		description:
-			"Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+			"Crop images easily with our free online photo cropper. No signup required.",
+		images: ["/api/og?title=Image%20Cropper%20-%20Crop%20Photos%20Online"],
 	},
 	robots: { index: true, follow: true },
 };
@@ -34,7 +34,7 @@ export default async function ToolPage() {
 		id: "image-cropper",
 		name: "Image Cropper",
 		description:
-			"Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Crop images with custom aspect ratios, perfect for social media profiles and posts.",
 		route: "/image-cropper",
 		extraSlugs: [
 			"free-image-cropper-online",
@@ -44,6 +44,43 @@ export default async function ToolPage() {
 		],
 		popular: false,
 		category: "image",
+		features: [
+			"Fixed Aspect Ratios: Easily crop your images to 1:1 (Square), 16:9, 4:3, or 3:2 for perfect social media posts.",
+			"Freeform Cropping: Drag the handles to crop your photo to any custom size you need.",
+			"High Resolution: Your cropped image retains its original high quality and clarity.",
+			"100% Private: Cropping happens directly in your browser. We never upload your photos to any servers.",
+		],
+		howTo: {
+			name: "How to Crop an Image Online",
+			steps: [
+				{
+					name: "Upload Image",
+					text: "Drag and drop your photo into the cropper, or click to browse files.",
+				},
+				{
+					name: "Select Crop Area",
+					text: "Choose a preset aspect ratio or drag the corners of the crop box to frame your image.",
+				},
+				{
+					name: "Crop and Download",
+					text: "Click the 'Crop Image' button, preview your result, and download the finished image.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "Can I crop my photo into a perfect square?",
+				answer: "Yes! Just select the 1:1 aspect ratio option. This is perfect for Instagram posts and profile pictures across all social media platforms.",
+			},
+			{
+				question: "Will my image lose quality when cropped?",
+				answer: "No. The cropper only removes the unwanted pixels outside your selected area. The remaining pixels are preserved in their original, high-quality state.",
+			},
+			{
+				question: "Is this image cropper safe to use for personal photos?",
+				answer: "Absolutely. Our cropper uses client-side processing, meaning the image never leaves your computer. We do not store or see your photos.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

@@ -48,6 +48,43 @@ export default async function ToolPage() {
 		],
 		popular: true,
 		category: "image",
+		features: [
+			"Detailed EXIF Extraction: View camera model, exposure, aperture, ISO, focal length, and more.",
+			"GPS Location Data: Discover exactly where a photo was taken with embedded GPS coordinates.",
+			"100% Private: Images are analyzed entirely within your browser. No files are uploaded.",
+			"Support for Multiple Formats: Read metadata from JPEG, HEIC, TIFF, WebP, and RAW image formats.",
+		],
+		howTo: {
+			name: "How to Read EXIF Metadata",
+			steps: [
+				{
+					name: "Select Image",
+					text: "Drag and drop your photo into the analyzer tool, or click to browse files.",
+				},
+				{
+					name: "Wait for Extraction",
+					text: "The tool will instantly parse the image file and extract all available metadata without uploading.",
+				},
+				{
+					name: "View Results",
+					text: "Browse through the extracted data, including camera settings, software used, and GPS coordinates.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What is EXIF data?",
+				answer: "EXIF (Exchangeable Image File Format) is a standard that specifies the formats for images, sound, and ancillary tags used by digital cameras, smartphones, and scanners. It includes information like date, time, camera settings, and sometimes GPS location.",
+			},
+			{
+				question: "Is it safe to use this EXIF Reader?",
+				answer: "Yes! Our EXIF reader is completely safe because it processes the image locally in your web browser. Your photos are never uploaded to any server, guaranteeing your privacy.",
+			},
+			{
+				question: "Why can't I see GPS data on my photo?",
+				answer: "Not all photos contain GPS data. Many social media platforms (like Facebook, Instagram, and WhatsApp) automatically strip EXIF and GPS data when you upload or send a photo to protect user privacy. Additionally, the location services might have been disabled on the camera when the photo was taken.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

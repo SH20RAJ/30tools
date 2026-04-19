@@ -48,6 +48,43 @@ export default async function ToolPage() {
 		],
 		popular: true,
 		category: "image",
+		features: [
+			"Bulk Compression: Compress multiple images at the same time to speed up your workflow.",
+			"Lossless Optimization: Reduce file size significantly without visible loss in image quality.",
+			"Format Support: Works with JPEG, PNG, and WebP images.",
+			"Privacy First: All compression happens locally in your browser. No files are uploaded to our servers.",
+		],
+		howTo: {
+			name: "How to Compress Images Online",
+			steps: [
+				{
+					name: "Upload Images",
+					text: "Drag and drop your JPEG, PNG, or WebP files into the upload area. You can select multiple files at once.",
+				},
+				{
+					name: "Adjust Quality",
+					text: "Use the slider to set your desired compression level. A lower quality percentage means a smaller file size.",
+				},
+				{
+					name: "Download",
+					text: "Review the size savings and click 'Download All' to save your compressed images.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "Will compressing my image reduce its quality?",
+				answer: "Our tool uses advanced optimization algorithms to reduce the file size by stripping out unnecessary metadata and intelligently compressing the image data. In most cases, the quality difference is imperceptible to the human eye.",
+			},
+			{
+				question: "Is there a limit to how many images I can compress?",
+				answer: "No, there are no artificial limits. Since the processing happens on your device, you can compress as many images as you need for free.",
+			},
+			{
+				question: "Are my images stored on your servers?",
+				answer: "Absolutely not. The Image Compressor works entirely within your web browser. Your photos never leave your computer, ensuring complete privacy and security.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

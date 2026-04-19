@@ -49,6 +49,43 @@ export default async function ToolPage() {
 		],
 		popular: true,
 		category: "image",
+		features: [
+			"AI-Powered Upscaling: Increase image resolution without losing clarity or introducing artifacts.",
+			"Noise Reduction: Automatically remove grain and digital noise from low-light photos.",
+			"Color Correction: Enhance contrast, saturation, and vibrancy with a single click.",
+			"Browser-Based Processing: Fast, secure, and entirely private image enhancement without cloud uploads.",
+		],
+		howTo: {
+			name: "How to Enhance a Photo Online",
+			steps: [
+				{
+					name: "Upload Photo",
+					text: "Select a blurry, low-resolution, or noisy photo from your device.",
+				},
+				{
+					name: "Apply AI Enhancement",
+					text: "Click the 'Enhance' button. Our AI will analyze the image and apply smart corrections to improve clarity and color.",
+				},
+				{
+					name: "Compare & Download",
+					text: "Use the before/after slider to see the improvements, then download your high-quality enhanced image.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "How does the AI photo enhancer work?",
+				answer: "The tool uses machine learning algorithms running directly in your browser to analyze patterns in your image. It then predicts and fills in missing details, removes noise, and adjusts colors to create a sharper, clearer result.",
+			},
+			{
+				question: "Can I enhance old, blurry photos?",
+				answer: "Yes, the AI is specifically trained to improve the sharpness of out-of-focus or compressed images, making it great for restoring older digital photos.",
+			},
+			{
+				question: "Are my enhanced photos kept private?",
+				answer: "Absolutely. Unlike other services, our enhancer processes the image locally on your device. No data is sent to our servers, guaranteeing complete privacy.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

@@ -45,6 +45,43 @@ export default async function ToolPage() {
 		],
 		popular: true,
 		category: "image",
+		features: [
+			"AI-Powered Removal: Instantly remove backgrounds from images with high precision.",
+			"100% Free & Private: All processing happens directly in your browser. No images are uploaded to external servers.",
+			"High Quality output: Maintain edge details and original image quality.",
+			"Fast Processing: Get your transparent PNG in seconds without waiting in a queue.",
+		],
+		howTo: {
+			name: "How to Remove Image Backgrounds",
+			steps: [
+				{
+					name: "Upload Image",
+					text: "Drag and drop your image (JPG, PNG, or WebP) or click to select a file from your device.",
+				},
+				{
+					name: "Process",
+					text: "Click the 'Remove Backgrounds' button. Our client-side AI will automatically detect the main subject and remove the background.",
+				},
+				{
+					name: "Download",
+					text: "Preview the result and click 'Download' to save your new image with a transparent background.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "Is this background remover really free?",
+				answer: "Yes! Our tool is 100% free to use with no hidden fees, no subscriptions, and no limits on the number of images you can process.",
+			},
+			{
+				question: "Are my images uploaded to your servers?",
+				answer: "No. Privacy is our priority. All background removal processing happens locally within your web browser. Your images never leave your device.",
+			},
+			{
+				question: "What image formats are supported?",
+				answer: "You can upload JPG, PNG, and WebP images up to 10MB in size. The output file will always be a high-quality PNG to preserve transparency.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

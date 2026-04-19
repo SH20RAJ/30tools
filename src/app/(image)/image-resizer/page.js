@@ -46,6 +46,43 @@ export default async function ToolPage() {
 		],
 		popular: false,
 		category: "image",
+		features: [
+			"Custom Dimensions: Enter exact pixel width and height for precise resizing.",
+			"Aspect Ratio Lock: Maintain original proportions to prevent distortion or stretching.",
+			"Social Media Ready: Quickly scale images for Instagram, Facebook, LinkedIn, or Twitter banners.",
+			"100% Private & Free: Your photos are resized entirely within your browser and never uploaded anywhere.",
+		],
+		howTo: {
+			name: "How to Resize an Image Online",
+			steps: [
+				{
+					name: "Upload Image",
+					text: "Drag and drop the photo you want to resize, or click to browse your device.",
+				},
+				{
+					name: "Enter Dimensions",
+					text: "Input the new width or height in pixels. Keep the 'lock aspect ratio' option checked to avoid distorting the image.",
+				},
+				{
+					name: "Download",
+					text: "Click 'Resize' and instantly download your newly dimensioned image.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "Will resizing my image reduce its quality?",
+				answer: "If you are making the image smaller (downscaling), the quality will be preserved. However, if you are making it significantly larger (upscaling), it may become pixelated or blurry because new pixels have to be generated.",
+			},
+			{
+				question: "Is this image resizer really free to use?",
+				answer: "Yes, our tool is completely free. There are no watermarks added, no premium features hidden behind paywalls, and no account required to use it.",
+			},
+			{
+				question: "Are my photos uploaded to the internet?",
+				answer: "No. Our resizer works directly in your web browser utilizing your device's processing power. We do not upload, store, or view your images.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

@@ -2,29 +2,29 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free Image Converter Online - No Signup | 30tools",
+	title: "Free Image Converter Online - Convert JPEG, PNG, WebP & GIF",
 	description:
-		"Convert images between different formats (JPEG, PNG, WebP) 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert images between all major formats including JPEG, PNG, WebP, GIF, and BMP. Free online image converter with bulk processing and no quality loss. No signup required.",
 	keywords:
-		"image converter, free online tool, no signup, image, image converter online, 30tools",
+		"image converter, convert jpeg to png, webp converter online, free image converter, bulk image converter, 30tools, change image format",
 	alternates: {
 		canonical: "https://30tools.com/image-converter",
 	},
 	openGraph: {
-		title: "Free Image Converter Online - No Signup | 30tools",
+		title: "Free Image Converter Online - Convert JPEG, PNG, WebP & GIF",
 		description:
-			"Convert images between different formats (JPEG, PNG, WebP) 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Convert images between all major formats instantly. Free online image converter with bulk processing. No signup required.",
 		url: "https://30tools.com/image-converter",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Image%20Converter%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=Image%20Converter%20-%20Convert%20JPEG,%20PNG,%20WebP" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Converter Online - No Signup | 30tools",
+		title: "Free Image Converter Online - Convert JPEG, PNG, WebP & GIF",
 		description:
-			"Convert images between different formats (JPEG, PNG, WebP) 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Image%20Converter%20Online%20-%20No%20Signup"],
+			"Convert images between all major formats instantly. Free online image converter with bulk processing.",
+		images: ["/api/og?title=Image%20Converter%20-%20Convert%20JPEG,%20PNG,%20WebP"],
 	},
 	robots: { index: true, follow: true },
 };
@@ -41,6 +41,43 @@ export default async function ToolPage() {
 		],
 		popular: true,
 		category: "image",
+		features: [
+			"Multi-Format Support: Convert between JPEG, PNG, WebP, GIF, and BMP.",
+			"Bulk Conversion: Select and convert multiple files at the same time.",
+			"Lossless Quality: Maintain the highest possible image quality during format conversion.",
+			"100% Private: All conversions happen securely within your browser. Files are never uploaded.",
+		],
+		howTo: {
+			name: "How to Convert an Image Format",
+			steps: [
+				{
+					name: "Select Files",
+					text: "Drag and drop your images into the converter, or click to browse your device.",
+				},
+				{
+					name: "Choose Output Format",
+					text: "Select the format you want to convert your images into (e.g., convert WebP to JPEG).",
+				},
+				{
+					name: "Convert & Download",
+					text: "Click convert and download your new images instantly. You can also download them all as a ZIP file.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What image formats can I convert?",
+				answer: "Our tool supports converting between all standard web formats, including JPEG/JPG, PNG, WebP, GIF, and BMP.",
+			},
+			{
+				question: "Can I convert WebP images to standard JPGs?",
+				answer: "Yes! WebP to JPG is one of our most popular conversions, allowing you to use modern web images in older applications that don't support WebP.",
+			},
+			{
+				question: "Is there a file size limit for conversion?",
+				answer: "You can convert images up to 50MB in size. Because the processing happens on your own device, larger files may take slightly longer depending on your computer's speed.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{
