@@ -12,6 +12,7 @@ import {
 	TrashIcon,
 	UploadIcon,
 	ZapIcon,
+	Image as ImageLucide
 } from "lucide-react";
 import { useState, useRef } from "react";
 import { Badge } from "@/components/ui/badge";
@@ -36,6 +37,8 @@ import { Separator } from "@/components/ui/separator";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { GlassCard, PremiumDropZone, WorkspaceTitle } from "../shared/WorkspaceComponents";
+import { cn } from "@/lib/utils";
 
 export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 	const [files, setFiles] = useState([]);
@@ -375,32 +378,12 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 			case "converting":
 				return <RefreshCwIcon className="h-4 w-4 text-primary animate-spin" />;
 			case "completed":
-				return <CheckCircleIcon className="h-4 w-4 text-primary" />;
+				return <CheckCircleIcon className="h-4 w-4 text-emerald-500" />;
 			case "error":
 				return <AlertCircleIcon className="h-4 w-4 text-destructive" />;
 			default:
 				return <ImageIcon className="h-4 w-4" />;
 		}
-	};
-
-	const getStatusBadge = (status) => {
-		const variants = {
-			ready: "secondary",
-			converting: "default",
-			completed: "success",
-			error: "destructive",
-		};
-
-		const labels = {
-			ready: "Ready",
-			converting: "Converting...",
-			completed: "Completed",
-			error: "Error",
-		};
-
-		return (
-			<Badge variant={variants[status] || "secondary"}>{labels[status]}</Badge>
-		);
 	};
 
 	const getSavingsInfo = (originalSize, convertedSize) => {
@@ -415,450 +398,334 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 	};
 
 	return (
-		<div className="w-full max-w-4xl mx-auto space-y-6">
-			{/* Upload Section */}
-			<Card>
-				<CardHeader>
-					<CardTitle>Upload Images</CardTitle>
-					<CardDescription>
-						Support: JPG, PNG, WebP, GIF, BMP, TIFF, HEIC, HEIF (max 50MB each)
-					</CardDescription>
-				</CardHeader>
-				<CardContent>
-					<div
-						className={`border-2 border-dashed sition-colors ${
-							dragActive
-								? "border-primary bg-primary/5"
-								: "border-muted-foreground/25 hover:border-primary/50"
-						}`}
-						onDrop={handleDrop}
-						onDragOver={handleDragOver}
-						onDragLeave={handleDragLeave}
-					>
-						<UploadIcon className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
-						<h3 className="text-lg font-semibold mb-2">
-							Drop images here or click to browse to convert image formats
-						</h3>
-						<p className="text-muted-foreground mb-4">
-							Supports JPG, PNG, WebP, GIF, BMP, TIFF, HEIC formats
-						</p>
-
-						<Button onClick={() => fileInputRef.current?.click()}>
-							<FolderIcon className="h-4 w-4 mr-2" />
-							Choose Images to Convert
-						</Button>
-						<input
-							ref={fileInputRef}
-							type="file"
-							multiple
-							accept="image/*,.heic,.heif"
-							onChange={handleFileSelect}
-							className="hidden"
-						/>
-					</div>
-
-					{files.length > 0 && (
-						<div className="mt-4 flex justify-between items-center">
-							<span className="text-sm text-muted-foreground">
-								{files.length} file(s) selected
+		<div className="w-full max-w-5xl mx-auto space-y-12 pb-24 animate-in">
+			{/* Hero / Uploader Section */}
+			<section>
+				<PremiumDropZone 
+					onDrop={handleDrop}
+					onDragOver={handleDragOver}
+					onDragLeave={handleDragLeave}
+					onClick={() => fileInputRef.current?.click()}
+					dragActive={dragActive}
+					icon={ImageLucide}
+					title="Drop your images here"
+					subtitle="Support for JPG, PNG, WebP, GIF, BMP, and more (Max 50MB)"
+				/>
+				<input
+					ref={fileInputRef}
+					type="file"
+					multiple
+					accept="image/*,.heic,.heif"
+					onChange={handleFileSelect}
+					className="hidden"
+				/>
+				
+				{files.length > 0 && (
+					<div className="mt-8 flex justify-between items-center px-4">
+						<div className="flex items-center gap-4">
+							<Badge variant="secondary" className="px-4 py-1.5 text-sm rounded-full">
+								{files.length} file(s) ready
+							</Badge>
+							<span className="text-sm text-muted-foreground animate-pulse">
+								Click 'Convert' below to start
 							</span>
-							<Button variant="ghost" size="sm" onClick={clearAll}>
-								<TrashIcon className="h-4 w-4 mr-2" />
-								Clear All
-							</Button>
 						</div>
-					)}
-				</CardContent>
-			</Card>
+						<Button variant="ghost" size="sm" onClick={clearAll} className="rounded-full hover:bg-destructive/10 hover:text-destructive transition-colors">
+							<TrashIcon className="h-4 w-4 mr-2" />
+							Clear Workspace
+						</Button>
+					</div>
+				)}
+			</section>
 
-			{/* Conversion Settings */}
-			<Card>
-				<CardHeader>
-					<CardTitle className="flex items-center gap-2">
-						<SettingsIcon className="h-5 w-5" />
-						Conversion Settings
-					</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<Tabs defaultValue="format" className="w-full">
-						<TabsList className="grid w-full grid-cols-3">
-							<TabsTrigger value="format">Format</TabsTrigger>
-							<TabsTrigger value="quality">Quality</TabsTrigger>
-							<TabsTrigger value="resize">Resize</TabsTrigger>
-						</TabsList>
-
-						<TabsContent value="format" className="space-y-4">
-							<div>
-								<Label>Output Format</Label>
-								<Select
-									value={conversionSettings.outputFormat}
-									onValueChange={(value) =>
-										setConversionSettings((prev) => ({
-											...prev,
-											outputFormat: value,
-										}))
-									}
-								>
-									<SelectTrigger>
-										<SelectValue />
-									</SelectTrigger>
-									<SelectContent>
-										{Object.entries(supportedFormats.output).map(
-											([key, format]) => (
-												<SelectItem key={key} value={key}>
-													<div className="flex items-center gap-2">
-														<span>{format.icon}</span>
-														<div>
-															<div className="font-medium">
-																{format.name} ({format.ext})
-															</div>
-															<div className="text-xs text-muted-foreground">
-																{format.description}
-															</div>
-														</div>
-													</div>
-												</SelectItem>
-											),
-										)}
-									</SelectContent>
-								</Select>
-							</div>
-
-							<div className="flex items-center justify-between">
-								<Label htmlFor="preserve-exif">Preserve EXIF Data</Label>
-								<Switch
-									id="preserve-exif"
-									checked={conversionSettings.preserveExif}
-									onCheckedChange={(checked) =>
-										setConversionSettings((prev) => ({
-											...prev,
-											preserveExif: checked,
-										}))
-									}
-								/>
-							</div>
-						</TabsContent>
-
-						<TabsContent value="quality" className="space-y-4">
-							<div>
-								<Label className="flex justify-between">
-									<span>Quality</span>
-									<span className="text-sm font-mono">
-										{conversionSettings.quality[0]}%
-									</span>
-								</Label>
-								<Slider
-									value={conversionSettings.quality}
-									onValueChange={(value) =>
-										setConversionSettings((prev) => ({
-											...prev,
-											quality: value,
-										}))
-									}
-									min={10}
-									max={100}
-									step={5}
-									className="mt-2"
-								/>
-								<div className="flex justify-between text-xs text-muted-foreground mt-1">
-									<span>Smaller file</span>
-									<span>Better quality</span>
-								</div>
-							</div>
-
-							<div className="grid grid-cols-4 gap-2">
-								{[
-									{ value: 60, label: "Low", desc: "Smallest files" },
-									{ value: 75, label: "Medium", desc: "Balanced" },
-									{ value: 90, label: "High", desc: "Best quality" },
-									{
-										value: 100,
-										label: "Maximum",
-										desc: "No compression",
-									},
-								].map((preset) => (
-									<Button
-										key={preset.value}
-										variant={
-											conversionSettings.quality[0] === preset.value
-												? "default"
-												: "outline"
-										}
-										size="sm"
-										onClick={() =>
-											setConversionSettings((prev) => ({
-												...prev,
-												quality: [preset.value],
-											}))
-										}
-									>
-										<div className="text-center">
-											<div className="font-medium">{preset.label}</div>
-											<div className="text-xs">{preset.desc}</div>
-										</div>
-									</Button>
-								))}
-							</div>
-						</TabsContent>
-
-						<TabsContent value="resize" className="space-y-4">
-							<div className="flex items-center justify-between">
-								<Label htmlFor="enable-resize">Enable Resize</Label>
-								<Switch
-									id="enable-resize"
-									checked={conversionSettings.enableResize}
-									onCheckedChange={(checked) =>
-										setConversionSettings((prev) => ({
-											...prev,
-											enableResize: checked,
-										}))
-									}
-								/>
-							</div>
-
-							{conversionSettings.enableResize && (
-								<>
-									<div className="grid grid-cols-2 gap-4">
-										<div>
-											<Label htmlFor="width">Width (px)</Label>
-											<input
-												id="width"
-												type="number"
-												placeholder="e.g. 1920"
-												value={conversionSettings.resizeWidth}
-												onChange={(e) =>
-													setConversionSettings((prev) => ({
-														...prev,
-														resizeWidth: e.target.value,
-													}))
-												}
-												className="flex h-10 w-full sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-											/>
-										</div>
-										<div>
-											<Label htmlFor="height">Height (px)</Label>
-											<input
-												id="height"
-												type="number"
-												placeholder="e.g. 1080"
-												value={conversionSettings.resizeHeight}
-												onChange={(e) =>
-													setConversionSettings((prev) => ({
-														...prev,
-														resizeHeight: e.target.value,
-													}))
-												}
-												className="flex h-10 w-full sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-											/>
-										</div>
-									</div>
-
-									<div className="flex items-center justify-between">
-										<Label htmlFor="maintain-aspect">
-											Maintain Aspect Ratio
-										</Label>
-										<Switch
-											id="maintain-aspect"
-											checked={conversionSettings.maintainAspectRatio}
-											onCheckedChange={(checked) =>
-												setConversionSettings((prev) => ({
-													...prev,
-													maintainAspectRatio: checked,
-												}))
-											}
-										/>
-									</div>
-								</>
-							)}
-						</TabsContent>
-					</Tabs>
-				</CardContent>
-			</Card>
-
-			{/* File List */}
+			{/* Main Workspace Area (Displayed only if files selected) */}
 			{files.length > 0 && (
-				<Card>
-					<CardHeader>
-						<CardTitle>Files to Convert</CardTitle>
-						<CardDescription>
-							Converting to{" "}
-							{supportedFormats.output[conversionSettings.outputFormat].name}{" "}
-							format
-						</CardDescription>
-					</CardHeader>
-					<CardContent>
-						<div className="space-y-4">
-							{files.map((fileData) => {
-								const savings = getSavingsInfo(
-									fileData.size,
-									fileData.convertedSize,
-								);
-
-								return (
-									<div
-										key={fileData.id}
-										className="flex items-center gap-4 p-4 border "
-									>
-										{/* Preview */}
-										<div className="flex-shrink-0">
-											{fileData.preview ? (
-												<img
-													src={fileData.preview}
-													alt={fileData.name}
-													className="w-16 h-16 object-cover rounded"
-												/>
-											) : (
-												<div className="w-16 h-16 bg-muted rounded flex items-center justify-center">
-													<span className="text-2xl">
-														{getFormatIcon(fileData.type)}
-													</span>
-												</div>
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+					{/* Left Column: File List */}
+					<div className="lg:col-span-7 space-y-6">
+						<GlassCard className="p-8">
+							<h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+								<ImageIcon className="text-primary w-6 h-6" />
+								Your Gallery
+							</h3>
+							
+							<div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+								{files.map((fileData) => {
+									const savings = getSavingsInfo(fileData.size, fileData.convertedSize);
+									return (
+										<div
+											key={fileData.id}
+											className={cn(
+												"flex items-center gap-4 p-5 rounded-3xl border border-border/40 transition-all duration-300 group hover:bg-primary/[0.02]",
+												fileData.status === "completed" && "bg-emerald-500/[0.03] border-emerald-500/20"
 											)}
-										</div>
-
-										{/* File Info */}
-										<div className="flex-1 min-w-0">
-											<div className="flex items-center gap-2 mb-1">
-												<span className="font-medium truncate">
-													{fileData.name}
-												</span>
-												{getStatusIcon(fileData.status)}
-											</div>
-
-											<div className="flex items-center gap-4 text-sm text-muted-foreground">
-												<span>{formatFileSize(fileData.size)}</span>
-												<ArrowRightIcon className="h-3 w-3" />
-												<span>
-													{
-														supportedFormats.output[
-															conversionSettings.outputFormat
-														].name
-													}
-													{fileData.convertedSize &&
-														` (${formatFileSize(fileData.convertedSize)})`}
-												</span>
-												{savings && (
-													<Badge
-														variant={
-															savings.isSmaller ? "success" : "secondary"
-														}
-														className="text-xs"
-													>
-														{savings.percentage}% {savings.text}
-													</Badge>
+										>
+											<div className="relative flex-shrink-0">
+												{fileData.preview ? (
+													<img
+														src={fileData.preview}
+														alt={fileData.name}
+														className="w-20 h-20 object-cover rounded-2xl shadow-md group-hover:scale-105 transition-transform"
+													/>
+												) : (
+													<div className="w-20 h-20 bg-muted/30 rounded-2xl flex items-center justify-center text-4xl">
+														{getFormatIcon(fileData.type)}
+													</div>
+												)}
+												{fileData.status === "completed" && (
+													<div className="absolute -top-2 -right-2 bg-emerald-500 text-white p-1 rounded-full shadow-lg">
+														<CheckCircleIcon className="w-4 h-4" />
+													</div>
 												)}
 											</div>
 
-											<div className="mt-2">
-												{getStatusBadge(fileData.status)}
+											<div className="flex-1 min-w-0">
+												<div className="flex items-center gap-2 mb-2">
+													<span className="font-bold truncate text-lg">
+														{fileData.name}
+													</span>
+													{getStatusIcon(fileData.status)}
+												</div>
+
+												<div className="flex items-center gap-4 text-sm text-muted-foreground font-medium">
+													<span className="bg-muted/30 px-2 py-0.5 rounded-md font-mono">{formatFileSize(fileData.size)}</span>
+													<ArrowRightIcon className="h-3 w-3" />
+													<span className="text-foreground">
+														{supportedFormats.output[conversionSettings.outputFormat].name}
+														{fileData.convertedSize && 
+															<span className="ml-2 font-bold text-emerald-500">
+																({formatFileSize(fileData.convertedSize)})
+															</span>
+														}
+													</span>
+												</div>
+												
+												{savings && (
+													<div className="mt-3">
+														<Badge variant={savings.isSmaller ? "success" : "secondary"} className="rounded-full">
+															{savings.percentage}% {savings.text}
+														</Badge>
+													</div>
+												)}
+											</div>
+
+											<div className="flex flex-col gap-2">
+												{fileData.status === "completed" && (
+													<Button size="icon" variant="secondary" onClick={() => downloadFile(fileData)} className="rounded-xl hover:scale-110 transition-transform">
+														<DownloadIcon className="h-5 w-5" />
+													</Button>
+												)}
+												<Button variant="ghost" size="icon" onClick={() => removeFile(fileData.id)} className="rounded-xl hover:text-destructive transition-colors">
+													<TrashIcon className="h-5 w-5" />
+												</Button>
 											</div>
 										</div>
+									);
+								})}
+							</div>
+						</GlassCard>
+					</div>
 
-										{/* Actions */}
-										<div className="flex items-center gap-2">
-											{fileData.status === "completed" && (
-												<Button
-													size="sm"
-													onClick={() => downloadFile(fileData)}
-												>
-													<DownloadIcon className="h-4 w-4 mr-2" />
-													Download
-												</Button>
-											)}
-											<Button
-												variant="ghost"
-												size="sm"
-												onClick={() => removeFile(fileData.id)}
-											>
-												<TrashIcon className="h-4 w-4" />
-											</Button>
+					{/* Right Column: Settings & Summary */}
+					<div className="lg:col-span-5 space-y-8">
+						{/* Settings Card */}
+						<GlassCard className="p-8">
+							<div className="flex items-center gap-3 mb-8">
+								<SettingsIcon className="text-primary w-6 h-6" />
+								<h3 className="text-2xl font-bold">Optimization</h3>
+							</div>
+
+							<Tabs defaultValue="format" className="w-full">
+								<TabsList className="grid w-full grid-cols-3 bg-muted/30 p-1.5 h-14 rounded-2xl mb-8">
+									<TabsTrigger value="format" className="rounded-xl data-[state=active]:bg-background data-[state=active]:shadow-lg font-bold">Format</TabsTrigger>
+									<TabsTrigger value="quality" className="rounded-xl data-[state=active]:bg-background data-[state=active]:shadow-lg font-bold">Quality</TabsTrigger>
+									<TabsTrigger value="resize" className="rounded-xl data-[state=active]:bg-background data-[state=active]:shadow-lg font-bold">Resize</TabsTrigger>
+								</TabsList>
+
+								<TabsContent value="format" className="space-y-8 mt-0">
+									<div className="space-y-4">
+										<Label className="text-base font-bold ml-1">Target Extension</Label>
+										<Select
+											value={conversionSettings.outputFormat}
+											onValueChange={(value) => setConversionSettings(prev => ({ ...prev, outputFormat: value }))}
+										>
+											<SelectTrigger className="h-16 rounded-2xl border-border/40 bg-muted/20 px-6 font-bold text-lg hover:border-primary/40 transition-all">
+												<SelectValue />
+											</SelectTrigger>
+											<SelectContent className="rounded-2xl border-border/40 p-2">
+												{Object.entries(supportedFormats.output).map(([key, format]) => (
+													<SelectItem key={key} value={key} className="rounded-xl py-3 px-4 focus:bg-primary/10 mb-1">
+														<div className="flex items-center gap-4">
+															<span className="text-2xl">{format.icon}</span>
+															<div>
+																<div className="font-bold">{format.name}</div>
+																<div className="text-xs text-muted-foreground">{format.description}</div>
+															</div>
+														</div>
+													</SelectItem>
+												))}
+											</SelectContent>
+										</Select>
+									</div>
+
+									<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40">
+										<div className="space-y-1">
+											<Label htmlFor="preserve-exif" className="text-lg font-bold">Preserve Metadata</Label>
+											<p className="text-sm text-muted-foreground leading-tight">Keep camera settings & location</p>
+										</div>
+										<Switch
+											id="preserve-exif"
+											checked={conversionSettings.preserveExif}
+											onCheckedChange={(checked) => setConversionSettings(prev => ({ ...prev, preserveExif: checked }))}
+											className="scale-125"
+										/>
+									</div>
+								</TabsContent>
+
+								<TabsContent value="quality" className="space-y-10 mt-0">
+									<div className="space-y-6 px-2">
+										<div className="flex justify-between items-end">
+											<Label className="text-lg font-bold">Compression Quality</Label>
+											<span className="text-4xl font-black text-primary font-mono tracking-tighter">
+												{conversionSettings.quality[0]}
+												<span className="text-xl">%</span>
+											</span>
+										</div>
+										<Slider
+											value={conversionSettings.quality}
+											onValueChange={(value) => setConversionSettings(prev => ({ ...prev, quality: value }))}
+											min={10}
+											max={100}
+											step={5}
+											className="py-4"
+										/>
+										<div className="flex justify-between text-xs font-bold text-muted-foreground leading-none">
+											<span className="flex items-center gap-1"><ZapIcon className="w-3 h-3" /> Smaller Size</span>
+											<span className="flex items-center gap-1">Maximum Quality <RefreshCwIcon className="w-3 h-3" /></span>
 										</div>
 									</div>
-								);
-							})}
-						</div>
-					</CardContent>
-				</Card>
-			)}
 
-			{/* Control Panel */}
-			<Card>
-				<CardHeader>
-					<CardTitle>Conversion Summary</CardTitle>
-				</CardHeader>
-				<CardContent className="space-y-4">
-					<div className="space-y-2">
-						<div className="flex justify-between text-sm">
-							<span>Files:</span>
-							<span className="font-medium">{files.length}</span>
-						</div>
-						<div className="flex justify-between text-sm">
-							<span>Output Format:</span>
-							<span className="font-medium">
-								{supportedFormats.output[conversionSettings.outputFormat].name}
-							</span>
-						</div>
-						<div className="flex justify-between text-sm">
-							<span>Quality:</span>
-							<span className="font-medium">
-								{conversionSettings.quality[0]}%
-							</span>
-						</div>
-						{conversionSettings.enableResize && (
-							<div className="flex justify-between text-sm">
-								<span>Resize:</span>
-								<span className="font-medium">
-									{conversionSettings.resizeWidth || "Auto"} ×{" "}
-									{conversionSettings.resizeHeight || "Auto"}
-								</span>
-							</div>
-						)}
-					</div>
+									<div className="grid grid-cols-2 gap-4">
+										{[
+											{ value: 60, label: "Lite", color: "text-blue-500" },
+											{ value: 90, label: "Pro", color: "text-primary" },
+										].map((preset) => (
+											<Button
+												key={preset.value}
+												variant={conversionSettings.quality[0] === preset.value ? "default" : "outline"}
+												className={cn(
+													"h-20 rounded-2xl flex flex-col items-center justify-center gap-1 transition-all",
+													conversionSettings.quality[0] !== preset.value && "border-border/40 hover:border-primary/40 bg-muted/10"
+												)}
+												onClick={() => setConversionSettings(prev => ({ ...prev, quality: [preset.value] }))}
+											>
+												<span className="text-lg font-black tracking-tight">{preset.label}</span>
+												<span className="text-xs opacity-70 font-bold">{preset.value}% Quality</span>
+											</Button>
+										))}
+									</div>
+								</TabsContent>
 
-					<Separator />
+								<TabsContent value="resize" className="space-y-8 mt-0">
+									<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40 overflow-hidden relative">
+										<div className="space-y-1 z-10">
+											<Label htmlFor="enable-resize" className="text-lg font-bold">Image Rescaling</Label>
+											<p className="text-sm text-muted-foreground leading-tight">Change pixel dimensions</p>
+										</div>
+										<Switch
+											id="enable-resize"
+											checked={conversionSettings.enableResize}
+											onCheckedChange={(checked) => setConversionSettings(prev => ({ ...prev, enableResize: checked }))}
+											className="scale-125 z-10"
+										/>
+										{conversionSettings.enableResize && <div className="absolute inset-0 bg-primary/5 animate-pulse" />}
+									</div>
 
-					<div className="space-y-2">
-						<Button
-							onClick={handleConvert}
-							disabled={files.length === 0 || isConverting}
-							className="w-full"
-							size="lg"
-						>
-							{isConverting ? (
-								<>
-									<RefreshCwIcon className="h-4 w-4 mr-2 animate-spin" />
-									Converting...
-								</>
-							) : (
-								<>
-									<ZapIcon className="h-4 w-4 mr-2" />
-									Convert Images
-								</>
-							)}
-						</Button>
+									{conversionSettings.enableResize && (
+										<div className="space-y-6 animate-in">
+											<div className="grid grid-cols-2 gap-4">
+												<div className="space-y-2">
+													<Label className="font-bold ml-1">Width (px)</Label>
+													<input
+														type="number"
+														placeholder="1920"
+														value={conversionSettings.resizeWidth}
+														onChange={(e) => setConversionSettings(prev => ({ ...prev, resizeWidth: e.target.value }))}
+														className="h-14 w-full rounded-2xl bg-muted/20 border border-border/40 px-6 font-bold placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+													/>
+												</div>
+												<div className="space-y-2">
+													<Label className="font-bold ml-1">Height (px)</Label>
+													<input
+														type="number"
+														placeholder="1080"
+														value={conversionSettings.resizeHeight}
+														onChange={(e) => setConversionSettings(prev => ({ ...prev, resizeHeight: e.target.value }))}
+														className="h-14 w-full rounded-2xl bg-muted/20 border border-border/40 px-6 font-bold placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+													/>
+												</div>
+											</div>
 
-						{isConverting && (
-							<div className="space-y-2">
-								<Progress value={progress} />
-								<div className="text-xs text-center text-muted-foreground">
-									{Math.round(progress)}% complete
+											<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40">
+												<Label className="text-base font-bold">Keep Aspect Ratio</Label>
+												<Switch
+													checked={conversionSettings.maintainAspectRatio}
+													onCheckedChange={(checked) => setConversionSettings(prev => ({ ...prev, maintainAspectRatio: checked }))}
+												/>
+											</div>
+										</div>
+									)}
+								</TabsContent>
+							</Tabs>
+						</GlassCard>
+
+						{/* Action & Stats Card */}
+						<GlassCard className="p-8">
+							<div className="space-y-6">
+								<div className="space-y-4">
+									<div className="flex justify-between text-base font-bold">
+										<span className="text-muted-foreground uppercase tracking-widest text-[10px]">Queue Status</span>
+										<span>{files.length} Item(s)</span>
+									</div>
+									{isConverting && <Progress value={progress} className="h-3 rounded-full bg-muted/50 overflow-hidden shadow-inner" />}
+								</div>
+								
+								<div className="space-y-4">
+									<Button 
+										onClick={handleConvert} 
+										disabled={isConverting || files.length === 0}
+										className="w-full h-20 rounded-[2rem] text-xl font-black tracking-tighter shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-4 group overflow-hidden"
+									>
+										{isConverting ? (
+											<>
+												<RefreshCwIcon className="w-8 h-8 animate-spin" />
+												<span>OPTIMIZING...</span>
+											</>
+										) : (
+											<>
+												<ZapIcon className="w-8 h-8 fill-current group-hover:animate-pulse" />
+												<span>CONVERT NOW</span>
+											</>
+										)}
+										<div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+									</Button>
+
+									{files.some(f => f.status === "completed") && (
+										<Button 
+											onClick={downloadAll} 
+											variant="secondary" 
+											className="w-full h-16 rounded-2xl font-black text-lg shadow-xl hover:bg-secondary/80 transition-all flex items-center justify-center gap-3"
+										>
+											<DownloadIcon className="w-6 h-6" />
+											DOWNLOAD ALL (.ZIP)
+										</Button>
+									)}
 								</div>
 							</div>
-						)}
-
-						{files.some((f) => f.status === "completed") && (
-							<Button
-								onClick={downloadAll}
-								variant="outline"
-								className="w-full"
-							>
-								<DownloadIcon className="h-4 w-4 mr-2" />
-								Download All
-							</Button>
-						)}
+						</GlassCard>
 					</div>
-				</CardContent>
-			</Card>
+				</div>
+			)}
 		</div>
 	);
 }

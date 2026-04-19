@@ -7,20 +7,17 @@ import {
 	ReplaceAll,
 	UploadIcon,
 	XIcon,
+	ZapIcon,
+	ArrowRight
 } from "lucide-react";
 import { useCallback, useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Progress } from "@/components/ui/progress";
 import { Slider } from "@/components/ui/slider";
+import { GlassCard, PremiumDropZone } from "../shared/WorkspaceComponents";
+import { cn } from "@/lib/utils";
 
 export default function ImageCompressorTool() {
 	const [files, setFiles] = useState([]);
@@ -53,7 +50,7 @@ export default function ImageCompressorTool() {
 				processFiles(imageFiles);
 			}
 		},
-		[processFiles],
+		[],
 	);
 
 	const handleFileInput = (e) => {
@@ -112,7 +109,6 @@ export default function ImageCompressorTool() {
 				ctx.drawImage(img, 0, 0, width, height);
 
 				// Determine optimal format and quality
-				const _originalFormat = fileItem.file.type;
 				let outputFormat = "image/jpeg";
 				let outputQuality = quality[0] / 100;
 
@@ -242,201 +238,193 @@ export default function ImageCompressorTool() {
 	};
 
 	return (
-		<div className="w-full max-w-4xl mx-auto">
-			{/* Upload Area */}
-			<Card className="mb-6">
-				<CardHeader>
-					<CardTitle>Upload Images to Compress</CardTitle>
-					<CardDescription>
-						Drag and drop your JPEG, PNG, or WebP images here to shrink file
-						size for web, social, and email
-					</CardDescription>
-				</CardHeader>
-				<CardContent>
-					<div
-						className={`border-2 border-dashed sition-colors ${
-							dragActive
-								? "border-primary bg-primary/10"
-								: "border-muted-foreground/25"
-						}`}
-						onDragEnter={handleDrag}
-						onDragLeave={handleDrag}
-						onDragOver={handleDrag}
-						onDrop={handleDrop}
-					>
-						<UploadIcon className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-						<p className="text-lg font-medium mb-2">
-							Drop your photos here to compress and optimize image files
-						</p>
-						<p className="text-sm text-muted-foreground mb-4">
-							Free online image compressor for JPEG, PNG, and WebP
-						</p>
-						<input
-							type="file"
-							multiple
-							accept="image/*"
-							onChange={handleFileInput}
-							className="hidden"
-							id="file-upload"
-						/>
-						<label htmlFor="file-upload">
-							<Button asChild className="cursor-pointer">
-								<span>Choose Images to Compress</span>
-							</Button>
-						</label>
-					</div>
-				</CardContent>
-			</Card>
+		<div className="w-full max-w-5xl mx-auto space-y-12 animate-in pb-24">
+			{/* Uploader */}
+			<section>
+				<PremiumDropZone 
+					onDrop={handleDrop}
+					onDragOver={handleDrag}
+					onDragLeave={handleDrag}
+					onClick={() => document.getElementById('file-upload').click()}
+					dragActive={dragActive}
+					title="Drop photos to compress"
+					subtitle="Instant size reduction for JPEG, PNG, and WebP images."
+				/>
+				<input
+					type="file"
+					multiple
+					accept="image/*"
+					onChange={handleFileInput}
+					className="hidden"
+					id="file-upload"
+				/>
+			</section>
 
-			{/* Quality Settings */}
 			{files.length > 0 && (
-				<Card className="mb-6">
-					<CardHeader>
-						<CardTitle>Image Compression Settings</CardTitle>
-						<CardDescription>
-							Adjust quality to balance smaller file size with sharp image
-							quality
-						</CardDescription>
-					</CardHeader>
-					<CardContent>
-						<div className="space-y-4">
-							<div>
-								<Label htmlFor="quality-slider">
-									Compression Quality: {quality[0]}%
-								</Label>
-								<Slider
-									id="quality-slider"
-									value={quality}
-									onValueChange={setQuality}
-									min={10}
-									max={100}
-									step={5}
-									className="mt-2"
-								/>
-								<div className="flex justify-between text-sm text-muted-foreground mt-1">
-									<span>Smaller file size</span>
-									<span>Better image quality</span>
+				<div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+					{/* Settings & Summary Column (Fixed width on desktop) */}
+					<div className="lg:col-span-5 space-y-8 order-last lg:order-first">
+						<GlassCard className="p-8">
+							<div className="flex items-center gap-3 mb-8">
+								<ReplaceAll className="text-primary w-6 h-6" />
+								<h3 className="text-2xl font-bold">Compression</h3>
+							</div>
+
+							<div className="space-y-10">
+								<div className="space-y-6 px-2">
+									<div className="flex justify-between items-end">
+										<Label className="text-lg font-bold">Target Quality</Label>
+										<span className="text-4xl font-black text-primary font-mono tracking-tighter">
+											{quality[0]}
+											<span className="text-xl">%</span>
+										</span>
+									</div>
+									<Slider
+										id="quality-slider"
+										value={quality}
+										onValueChange={setQuality}
+										min={10}
+										max={100}
+										step={5}
+										className="py-4"
+									/>
+									<div className="flex justify-between text-xs font-bold text-muted-foreground leading-none">
+										<span>Smallest File</span>
+										<span>Best Quality</span>
+									</div>
+								</div>
+
+								<div className="grid grid-cols-2 gap-4">
+									<Button 
+										onClick={handleCompress} 
+										disabled={isCompressing || !files.some(f => f.status === "pending")}
+										className="h-20 rounded-3xl text-lg font-black tracking-tight shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3"
+									>
+										{isCompressing ? <RefreshCwIcon className="animate-spin w-5 h-5" /> : <ZapIcon className="w-5 h-5 fill-current" />}
+										{isCompressing ? "Shrinking..." : "Optimise"}
+									</Button>
+									
+									<Button 
+										variant="outline" 
+										onClick={clearAll}
+										className="h-20 rounded-3xl font-bold border-border/40 hover:bg-destructive/5 hover:text-destructive hover:border-destructive/20 transition-all px-0"
+									>
+										Clear All
+									</Button>
 								</div>
 							</div>
-						</div>
-					</CardContent>
-				</Card>
-			)}
+						</GlassCard>
 
-			{/* File List */}
-			{files.length > 0 && (
-				<Card className="mb-6">
-					<CardHeader>
-						<div className="flex items-center justify-between">
-							<div>
-								<CardTitle>Files ({files.length})</CardTitle>
-								<CardDescription>
-									{files.filter((f) => f.status === "completed").length} of{" "}
-									{files.length} processed
-								</CardDescription>
-							</div>
-							<div className="flex gap-2">
-								{files.some((f) => f.status === "completed") && (
-									<Button
-										onClick={downloadAllAsZip}
-										variant="outline"
-										size="sm"
+						<GlassCard className="p-8">
+							<div className="space-y-6">
+								<div className="flex justify-between text-base font-bold text-muted-foreground uppercase tracking-widest text-[10px]">
+									Optimization Stats
+								</div>
+								<div className="grid grid-cols-2 gap-4">
+									<div className="p-6 rounded-3xl bg-muted/20 border border-border/40 text-center">
+										<div className="text-2xl font-black">{files.length}</div>
+										<div className="text-xs text-muted-foreground font-bold">Files</div>
+									</div>
+									<div className="p-6 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 text-center">
+										<div className="text-2xl font-black text-emerald-500">
+											{files.filter(f => f.status === "completed").length}
+										</div>
+										<div className="text-xs text-emerald-600 font-bold">Done</div>
+									</div>
+								</div>
+
+								{files.some(f => f.status === "completed") && (
+									<Button 
+										onClick={downloadAllAsZip} 
+										variant="secondary" 
+										className="w-full h-14 rounded-2xl font-black text-lg shadow-xl"
 									>
-										<DownloadIcon className="h-4 w-4 mr-2" />
+										<DownloadIcon className="w-5 h-5 mr-3" />
 										Download All
 									</Button>
 								)}
-								<Button onClick={clearAll} variant="outline" size="sm">
-									Clear All
-								</Button>
 							</div>
-						</div>
-					</CardHeader>
-					<CardContent>
-						<div className="space-y-4">
-							{files.map((fileItem) => (
-								<div
-									key={fileItem.id}
-									className="flex items-center justify-between p-4 border "
-								>
-									<div className="flex items-center space-x-3 flex-1">
-										<FileIcon className="h-5 w-5 text-muted-foreground" />
-										<div className="flex-1">
-											<p className="font-medium truncate">{fileItem.name}</p>
-											<div className="flex items-center space-x-2 text-sm text-muted-foreground">
-												<span>{formatFileSize(fileItem.originalSize)}</span>
+						</GlassCard>
+					</div>
+
+					{/* File List Column */}
+					<div className="lg:col-span-7 space-y-6">
+						<GlassCard className="p-8 h-full">
+							<h3 className="text-2xl font-bold mb-8">Ready to Process</h3>
+							<div className="space-y-4 max-h-[650px] overflow-y-auto pr-2 custom-scrollbar">
+								{files.map((fileItem) => (
+									<div
+										key={fileItem.id}
+										className={cn(
+											"flex items-center gap-5 p-5 rounded-3xl border border-border/40 transition-all duration-300",
+											fileItem.status === "completed" && "bg-emerald-500/[0.03] border-emerald-500/20 shadow-sm shadow-emerald-500/5"
+										)}
+									>
+										<div className="w-16 h-16 rounded-2xl bg-muted/30 flex items-center justify-center text-primary flex-shrink-0">
+											<FileIcon className="h-7 w-7" />
+										</div>
+										
+										<div className="flex-1 min-w-0">
+											<p className="font-bold truncate text-lg group-hover:text-primary transition-colors">
+												{fileItem.name}
+											</p>
+											<div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
+												<span className="bg-muted/30 px-2 py-0.5 rounded-md font-mono">{formatFileSize(fileItem.originalSize)}</span>
 												{fileItem.compressedSize && (
 													<>
-														<span>→</span>
-														<span>
+														<ArrowRight className="h-3 w-3" />
+														<span className="text-emerald-500 font-bold">
 															{formatFileSize(fileItem.compressedSize)}
 														</span>
-														<Badge variant="secondary" className="ml-2">
-															{getSavingsPercentage(
-																fileItem.originalSize,
-																fileItem.compressedSize,
-															)}
-															% saved
-														</Badge>
 													</>
 												)}
 											</div>
+											
+											{fileItem.compressedSize && (
+												<div className="mt-2">
+													<Badge variant="success" className="rounded-full px-3 py-1 bg-emerald-500 text-white border-0">
+														{getSavingsPercentage(fileItem.originalSize, fileItem.compressedSize)}% Saved
+													</Badge>
+												</div>
+											)}
+											
 											{fileItem.status === "compressing" && (
-												<Progress value={fileItem.progress} className="mt-2" />
+												<Progress value={fileItem.progress} className="mt-3 h-2 rounded-full" />
 											)}
 										</div>
-									</div>
-									<div className="flex items-center space-x-2">
-										{fileItem.status === "completed" && (
-											<>
-												<CheckIcon className="h-4 w-4 text-primary" />
-												<Button
-													onClick={() => downloadFile(fileItem)}
-													size="sm"
-												>
-													<DownloadIcon className="h-4 w-4 mr-2" />
-													Download
-												</Button>
-											</>
-										)}
-										<Button
-											onClick={() => removeFile(fileItem.id)}
-											variant="outline"
-											size="sm"
-										>
-											<XIcon className="h-4 w-4" />
-										</Button>
-									</div>
-								</div>
-							))}
-						</div>
-					</CardContent>
-				</Card>
-			)}
 
-			{/* Compress Button */}
-			{files.length > 0 && files.some((f) => f.status === "pending") && (
-				<div className="text-center mb-12">
-					<Button
-						onClick={handleCompress}
-						disabled={isCompressing}
-						size="lg"
-						className="px-8"
-					>
-						{isCompressing ? (
-							<>
-								<ReplaceAll className="h-5 w-5 mr-2 animate-spin" />
-								Compressing Images...
-							</>
-						) : (
-							<>
-								<ReplaceAll className="h-5 w-5 mr-2" />
-								Compress Images Now
-							</>
-						)}
-					</Button>
+										<div className="flex flex-col gap-2">
+											{fileItem.status === "completed" && (
+												<Button 
+													size="icon" 
+													variant="secondary" 
+													onClick={() => downloadFile(fileItem)}
+													className="rounded-xl hover:scale-110 transition-transform shadow-md"
+												>
+													<DownloadIcon className="h-5 w-5" />
+												</Button>
+											)}
+											<Button 
+												onClick={() => removeFile(fileItem.id)} 
+												variant="ghost" 
+												size="icon"
+												className="rounded-xl hover:text-destructive transition-colors"
+											>
+												<XIcon className="h-5 w-5" />
+											</Button>
+										</div>
+									</div>
+								))}
+							</div>
+						</GlassCard>
+					</div>
 				</div>
 			)}
 		</div>
 	);
+}
+
+// Minimal stub for missing icon
+function RefreshCwIcon({ className }) {
+	return <ReplaceAll className={cn("animate-spin", className)} />;
 }

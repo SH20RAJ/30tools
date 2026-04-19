@@ -13,7 +13,7 @@ import {
 
 export function ThemeToggle() {
 	const [mounted, setMounted] = useState(false);
-	const { setTheme } = useTheme();
+	const { theme, setTheme } = useTheme();
 
 	useEffect(() => {
 		setMounted(true);
@@ -27,34 +27,21 @@ export function ThemeToggle() {
 		);
 	}
 
+	const toggleTheme = () => {
+		setTheme(theme === "dark" ? "light" : "dark");
+	};
+
 	return (
-		<DropdownMenu>
-			<DropdownMenuTrigger asChild>
-				<Button
-					variant="ghost"
-					size="icon"
-					className="relative"
-					aria-label="Toggle theme"
-				>
-					<SunIcon className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-					<MoonIcon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-					<span className="sr-only">Toggle theme</span>
-				</Button>
-			</DropdownMenuTrigger>
-			<DropdownMenuContent align="end">
-				<DropdownMenuItem onClick={() => setTheme("light")}>
-					<SunIcon className="mr-2 h-4 w-4" />
-					Light
-				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme("dark")}>
-					<MoonIcon className="mr-2 h-4 w-4" />
-					Dark
-				</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme("system")}>
-					<MonitorIcon className="mr-2 h-4 w-4" />
-					System
-				</DropdownMenuItem>
-			</DropdownMenuContent>
-		</DropdownMenu>
+		<Button
+			variant="ghost"
+			size="icon"
+			className="relative"
+			aria-label="Toggle theme"
+			onClick={toggleTheme}
+		>
+			<SunIcon className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+			<MoonIcon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+			<span className="sr-only">Toggle theme</span>
+		</Button>
 	);
 }
