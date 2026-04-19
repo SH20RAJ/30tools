@@ -6,6 +6,7 @@ import {
 	ToolSteps,
 	ToolTrust,
 } from "./ToolSharedComponents";
+import VariantLinks from "./VariantLinks";
 
 /**
  * @typedef {Object} Tool
@@ -13,6 +14,7 @@ import {
  * @property {string} name
  * @property {string} description
  * @property {string} [category]
+ * @property {string[]} [extraSlugs]
  * @property {string[]} [features]
  * @property {Object} [howTo]
  * @property {Object[]} [howTo.steps]
@@ -73,6 +75,9 @@ export default function ToolLayout({
 						<ToolFAQ faqs={tool.faqs} toolName={tool.name} />
 					</div>
 				</div>
+
+				{/* Internal Link Sculpting Segment */}
+				<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />
 
 				{relatedTools.length > 0 && (
 					<RelatedTools

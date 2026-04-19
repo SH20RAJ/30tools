@@ -68,7 +68,7 @@ export function GoogleFooter() {
 						<div className="mb-6">
 							<GoogleLogo />
 						</div>
-						<p className="text-sm text-muted-foreground leading-relaxed mb-8">
+						<p className="text-sm text-foreground/90 leading-relaxed mb-8">
 							30Tools provides over 200 free tools for SEO experts, developers,
 							students, and writers. Everything you need to process files,
 							optimize content, and streamline your workflow — all for free.
@@ -82,7 +82,7 @@ export function GoogleFooter() {
 								<li key={item.name}>
 									<Link
 										href={item.href}
-										className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline"
+										className="text-sm text-foreground/90 hover:text-primary transition-colors no-underline"
 									>
 										{item.name}
 									</Link>
@@ -93,7 +93,7 @@ export function GoogleFooter() {
 									href="https://github.com/sh20raj/30tools"
 									target="_blank"
 									rel="noopener noreferrer"
-									className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline flex items-center gap-1"
+									className="text-sm text-foreground/90 hover:text-primary transition-colors no-underline flex items-center gap-1"
 								>
 									Open Source <ArrowUpRight className="w-3 h-3" />
 								</a>
@@ -103,19 +103,22 @@ export function GoogleFooter() {
 						<div className="flex items-center gap-4">
 							<a
 								href="#"
-								className="text-muted-foreground hover:text-primary transition-colors"
+								className="text-foreground/90 hover:text-primary transition-colors"
+								aria-label="Follow us on Facebook"
 							>
 								<Facebook className="w-5 h-5" />
 							</a>
 							<a
 								href="#"
-								className="text-muted-foreground hover:text-primary transition-colors"
+								className="text-foreground/90 hover:text-primary transition-colors"
+								aria-label="Follow us on Twitter"
 							>
 								<Twitter className="w-5 h-5" />
 							</a>
 							<a
 								href="https://github.com/sh20raj/30tools"
-								className="text-muted-foreground hover:text-primary transition-colors"
+								className="text-foreground/90 hover:text-primary transition-colors"
+								aria-label="View source on GitHub"
 							>
 								<Github className="w-5 h-5" />
 							</a>
@@ -132,7 +135,7 @@ export function GoogleFooter() {
 								<li key={item.label}>
 									<Link
 										href={item.href}
-										className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline"
+										className="text-sm text-foreground/90 hover:text-primary transition-colors no-underline"
 									>
 										{item.label}
 									</Link>
@@ -147,7 +150,7 @@ export function GoogleFooter() {
 							<li>
 								<Link
 									href="/blog"
-									className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline"
+									className="text-sm text-foreground/90 hover:text-primary transition-colors no-underline"
 								>
 									Blog & Guides
 								</Link>
@@ -155,7 +158,7 @@ export function GoogleFooter() {
 							<li>
 								<Link
 									href="/other-tools"
-									className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline"
+									className="text-sm text-foreground/90 hover:text-primary transition-colors no-underline"
 								>
 									All Platforms
 								</Link>
@@ -173,7 +176,7 @@ export function GoogleFooter() {
 								<li key={item.label}>
 									<Link
 										href={item.href}
-										className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline"
+										className="text-sm text-foreground/90 hover:text-primary transition-colors no-underline"
 									>
 										{item.label}
 									</Link>
@@ -192,7 +195,7 @@ export function GoogleFooter() {
 								<li key={item.label}>
 									<Link
 										href={item.href}
-										className="text-sm text-muted-foreground hover:text-primary transition-colors no-underline"
+										className="text-sm text-foreground/90 hover:text-primary transition-colors no-underline"
 									>
 										{item.label}
 									</Link>
@@ -203,7 +206,7 @@ export function GoogleFooter() {
 				</div>
 
 				<div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-6">
-					<p className="text-xs text-muted-foreground font-medium">
+					<p className="text-xs text-foreground/90 font-medium">
 						© 2026 30tools.com — All rights reserved. Made for the web.
 					</p>
 
@@ -212,13 +215,13 @@ export function GoogleFooter() {
 						<div className="flex items-center gap-4">
 							<Link
 								href="/privacy"
-								className="text-xs text-muted-foreground hover:text-foreground no-underline font-medium"
+								className="text-xs text-foreground/90 hover:text-foreground no-underline font-medium"
 							>
 								Privacy
 							</Link>
 							<Link
 								href="/terms"
-								className="text-xs text-muted-foreground hover:text-foreground no-underline font-medium"
+								className="text-xs text-foreground/90 hover:text-foreground no-underline font-medium"
 							>
 								Terms
 							</Link>
