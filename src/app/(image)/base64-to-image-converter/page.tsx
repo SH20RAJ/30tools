@@ -2,29 +2,29 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
-	title: "Free Base64 to Image Converter Online - No Signup | 30tools",
+	title: "Free Base64 to Image Converter Online - Decode Base64 Strings",
 	description:
-		"Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Instantly decode Base64 strings back into viewable images. Free online tool to convert Base64 code to PNG, JPG, or SVG files. 100% private, no signup.",
 	keywords:
-		"base64 to image converter, free online tool, no signup, image, base64 to image converter online, 30tools",
+		"base64 to image converter, decode base64 to image online, base64 to png, base64 to jpg, image decoder, 30tools, data uri to image",
 	alternates: {
 		canonical: "https://30tools.com/base64-to-image-converter",
 	},
 	openGraph: {
-		title: "Free Base64 to Image Converter Online - No Signup | 30tools",
+		title: "Free Base64 to Image Converter Online - Decode Base64 Strings",
 		description:
-			"Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Instantly decode Base64 strings back into viewable images. Download as PNG, JPG, or SVG. No signup required.",
 		url: "https://30tools.com/base64-to-image-converter",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Base64%20to%20Image%20Converter" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Base64 to Image Converter Online - No Signup | 30tools",
+		title: "Free Base64 to Image Converter Online - Decode Base64 Strings",
 		description:
-			"Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+			"Instantly decode Base64 strings back into viewable images. Download as PNG, JPG, or SVG. No signup required.",
+		images: ["/api/og?title=Base64%20to%20Image%20Converter"],
 	},
 	robots: { index: true, follow: true },
 };
@@ -34,7 +34,7 @@ export default async function ToolPage() {
 		id: "base64-to-image-converter",
 		name: "Base64 to Image Converter",
 		description:
-			"Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Instantly decode Base64 strings or Data URIs back into viewable and downloadable images.",
 		route: "/base64-to-image-converter",
 		extraSlugs: [
 			"add-text-to-image",
@@ -152,6 +152,43 @@ export default async function ToolPage() {
 		],
 		popular: false,
 		category: "image",
+		features: [
+			"Instant Decoding: Paste your Base64 string and see the image appear instantly.",
+			"Data URI Support: Automatically handles raw Base64 strings or full Data URIs (e.g., data:image/png;base64,...).",
+			"Download Options: Save the decoded image to your computer as a PNG or JPG file.",
+			"100% Private: All decoding happens securely in your browser. Your data is never sent to our servers.",
+		],
+		howTo: {
+			name: "How to Decode Base64 to Image",
+			steps: [
+				{
+					name: "Paste the String",
+					text: "Copy your Base64 encoded string from your code, CSS, or JSON file and paste it into the input box.",
+				},
+				{
+					name: "Preview the Image",
+					text: "The tool will automatically detect the image type and render a preview on your screen.",
+				},
+				{
+					name: "Download",
+					text: "Click the download button to save the decoded image to your device.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What formats can this tool decode?",
+				answer: "The tool can decode any standard image format encoded in Base64, including JPEG, PNG, GIF, SVG, and WebP.",
+			},
+			{
+				question: "Do I need to include 'data:image/png;base64,'?",
+				answer: "No, our tool is smart enough to handle both raw Base64 strings and fully formatted Data URIs. It will automatically strip out the prefix if it's there.",
+			},
+			{
+				question: "Why would I need to decode a Base64 string?",
+				answer: "Developers often encounter Base64 encoded images inside JSON API responses, CSS files, or database dumps. This tool allows you to easily extract and view the actual image hidden within that text.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{
