@@ -97,7 +97,7 @@ export default function ArchivePage() {
 															<Link
 																key={slug}
 																href={`/${slug}`}
-																className="px-2 py-1 bg-secondary/50 hover:bg-primary/10 sition-all underline decoration-border/50 underline-offset-4"
+																className="px-2 py-1 bg-secondary/50 hover:bg-primary/10 transition-all underline decoration-border/50 underline-offset-4"
 															>
 																{slug.split("-").join(" ")}
 															</Link>

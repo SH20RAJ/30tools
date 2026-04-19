@@ -126,7 +126,7 @@ export default function PdfMerger() {
 					</div>
 
 					{files.length === 0 ? (
-						<div className="border-2 border-dashed border-input sition-colors cursor-pointer relative">
+						<div className="border-2 border-dashed border-input transition-colors cursor-pointer relative">
 							<input
 								id="pdf-upload"
 								type="file"
@@ -148,7 +148,7 @@ export default function PdfMerger() {
 									className="flex items-center justify-between p-3 bg-muted/40 "
 								>
 									<div className="flex items-center gap-3 overflow-hidden">
-										<span className="bg-primary/10 text-primary w-6 h-6 s-center justify-center text-xs font-bold shrink-0">
+										<span className="bg-primary/10 text-primary w-6 h-6 items-center justify-center text-xs font-bold shrink-0">
 											{index + 1}
 										</span>
 										<span

@@ -127,7 +127,7 @@ export default function ImagesToPdf() {
 					<Label htmlFor="image-upload" className="text-base font-medium">
 						1. Select Images
 					</Label>
-					<div className="border-2 border-dashed border-input sition-colors cursor-pointer relative">
+					<div className="border-2 border-dashed border-input transition-colors cursor-pointer relative">
 						<input
 							id="image-upload"
 							type="file"
@@ -164,7 +164,7 @@ export default function ImagesToPdf() {
 									</div>
 									<button
 										onClick={() => removeImage(img.id)}
-										className="absolute top-1 right-1 bg-red-500 text-white sition-opacity"
+										className="absolute top-1 right-1 bg-red-500 text-white transition-opacity"
 									>
 										<X className="w-3 h-3" />
 									</button>

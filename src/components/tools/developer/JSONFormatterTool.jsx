@@ -16,7 +16,7 @@ import {
 	Upload,
 	Zap,
 } from "lucide-react";
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useRef, useState, useEffect } from "react";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -43,41 +43,8 @@ export default function JSONFormatterTool() {
 	const [sortKeys, setSortKeys] = useState(false);
 	const fileInputRef = useRef(null);
 
-	const validateAndFormat = useCallback(
-		(jsonText) => {
-			try {
-				// Parse JSON to validate
-				const parsed = JSON.parse(jsonText);
-
-				// Sort keys if option is enabled
-				const processedObj = sortKeys ? sortObjectKeys(parsed) : parsed;
-
-				// Format with proper indentation
-				const formatted = JSON.stringify(processedObj, null, indentSize);
-				const minified = JSON.stringify(processedObj);
-
-				setFormattedJson(formatted);
-				setMinifiedJson(minified);
-				setIsValid(true);
-				setErrors([]);
-
-				return { isValid: true, formatted, minified };
-			} catch (error) {
-				setIsValid(false);
-				setFormattedJson("");
-				setMinifiedJson("");
-
-				// Parse error details
-				const errorDetails = parseJSONError(error.message, jsonText);
-				setErrors(errorDetails);
-
-				return { isValid: false, error: error.message };
-			}
-		},
-		[indentSize, sortKeys, sortObjectKeys, parseJSONError],
-	);
-
-	const sortObjectKeys = (obj) => {
+	// Hoisting fix: Define helper functions before validateAndFormat
+	const sortObjectKeys = useCallback((obj) => {
 		if (Array.isArray(obj)) {
 			return obj.map(sortObjectKeys);
 		} else if (obj !== null && typeof obj === "object") {
@@ -90,12 +57,10 @@ export default function JSONFormatterTool() {
 			return sorted;
 		}
 		return obj;
-	};
+	}, []);
 
-	const parseJSONError = (errorMessage, jsonText) => {
+	const parseJSONError = useCallback((errorMessage, jsonText) => {
 		const errors = [];
-
-		// Extract position information from error message
 		const positionMatch = errorMessage.match(/position (\d+)/);
 		if (positionMatch) {
 			const position = parseInt(positionMatch[1], 10);
@@ -116,9 +81,42 @@ export default function JSONFormatterTool() {
 				message: errorMessage,
 			});
 		}
-
 		return errors;
-	};
+	}, []);
+
+	const validateAndFormat = useCallback(
+		(jsonText) => {
+			if (!jsonText) return { isValid: true };
+			try {
+				const parsed = JSON.parse(jsonText);
+				const processedObj = sortKeys ? sortObjectKeys(parsed) : parsed;
+				const formatted = JSON.stringify(processedObj, null, indentSize);
+				const minified = JSON.stringify(processedObj);
+
+				setFormattedJson(formatted);
+				setMinifiedJson(minified);
+				setIsValid(true);
+				setErrors([]);
+
+				return { isValid: true, formatted, minified };
+			} catch (error) {
+				setIsValid(false);
+				setFormattedJson("");
+				setMinifiedJson("");
+				const errorDetails = parseJSONError(error.message, jsonText);
+				setErrors(errorDetails);
+				return { isValid: false, error: error.message };
+			}
+		},
+		[indentSize, sortKeys, sortObjectKeys, parseJSONError],
+	);
+
+	// Initialize on mount
+	useEffect(() => {
+		if (jsonInput) {
+			validateAndFormat(jsonInput);
+		}
+	}, [validateAndFormat, jsonInput]);
 
 	const handleInputChange = (value) => {
 		setJsonInput(value);
@@ -146,16 +144,19 @@ export default function JSONFormatterTool() {
 	};
 
 	const copyToClipboard = async (text, type) => {
-		try {
-			await navigator.clipboard.writeText(text);
-			setCopied(type);
-			setTimeout(() => setCopied(""), 2000);
-		} catch (_err) {
-			console.error("Failed to copy:", err);
+		if (typeof navigator !== "undefined" && navigator.clipboard) {
+			try {
+				await navigator.clipboard.writeText(text);
+				setCopied(type);
+				setTimeout(() => setCopied(""), 2000);
+			} catch (err) {
+				console.error("Failed to copy:", err);
+			}
 		}
 	};
 
 	const downloadJSON = (content, filename) => {
+		if (typeof document === "undefined") return;
 		const blob = new Blob([content], { type: "application/json" });
 		const url = URL.createObjectURL(blob);
 		const link = document.createElement("a");
@@ -221,19 +222,7 @@ export default function JSONFormatterTool() {
 		validateAndFormat(jsonString);
 	};
 
-	const getJsonStats = () => {
-		if (!formattedJson) return null;
-
-		try {
-			const parsed = JSON.parse(formattedJson);
-			const stats = analyzeJSON(parsed);
-			return stats;
-		} catch {
-			return null;
-		}
-	};
-
-	const analyzeJSON = (obj, depth = 0) => {
+	const analyzeJSON = useCallback((obj, depth = 0) => {
 		let stats = {
 			objects: 0,
 			arrays: 0,
@@ -249,14 +238,28 @@ export default function JSONFormatterTool() {
 			stats.arrays++;
 			obj.forEach((item) => {
 				const childStats = analyzeJSON(item, depth + 1);
-				stats = mergeStats(stats, childStats);
+				stats.objects += childStats.objects;
+				stats.arrays += childStats.arrays;
+				stats.strings += childStats.strings;
+				stats.numbers += childStats.numbers;
+				stats.booleans += childStats.booleans;
+				stats.nulls += childStats.nulls;
+				stats.maxDepth = Math.max(stats.maxDepth, childStats.maxDepth);
+				stats.totalKeys += childStats.totalKeys;
 			});
 		} else if (obj !== null && typeof obj === "object") {
 			stats.objects++;
 			stats.totalKeys += Object.keys(obj).length;
 			Object.values(obj).forEach((value) => {
 				const childStats = analyzeJSON(value, depth + 1);
-				stats = mergeStats(stats, childStats);
+				stats.objects += childStats.objects;
+				stats.arrays += childStats.arrays;
+				stats.strings += childStats.strings;
+				stats.numbers += childStats.numbers;
+				stats.booleans += childStats.booleans;
+				stats.nulls += childStats.nulls;
+				stats.maxDepth = Math.max(stats.maxDepth, childStats.maxDepth);
+				stats.totalKeys += childStats.totalKeys;
 			});
 		} else {
 			const type =
@@ -271,22 +274,22 @@ export default function JSONFormatterTool() {
 		}
 
 		return stats;
-	};
+	}, []);
 
-	const mergeStats = (stats1, stats2) => {
-		return {
-			objects: stats1.objects + stats2.objects,
-			arrays: stats1.arrays + stats2.arrays,
-			strings: stats1.strings + stats2.strings,
-			numbers: stats1.numbers + stats2.numbers,
-			booleans: stats1.booleans + stats2.booleans,
-			nulls: stats1.nulls + stats2.nulls,
-			maxDepth: Math.max(stats1.maxDepth, stats2.maxDepth),
-			totalKeys: stats1.totalKeys + stats2.totalKeys,
-		};
-	};
+	const [jsonStats, setJsonStats] = useState(null);
 
-	const jsonStats = getJsonStats();
+	useEffect(() => {
+		if (formattedJson) {
+			try {
+				const parsed = JSON.parse(formattedJson);
+				setJsonStats(analyzeJSON(parsed));
+			} catch {
+				setJsonStats(null);
+			}
+		} else {
+			setJsonStats(null);
+		}
+	}, [formattedJson, analyzeJSON]);
 
 	return (
 		<div className="container mx-auto px-4 py-8 max-w-7xl">
@@ -413,11 +416,8 @@ export default function JSONFormatterTool() {
 											value={indentSize}
 											onChange={(e) => {
 												setIndentSize(parseInt(e.target.value, 10));
-												if (jsonInput.trim() && isValid) {
-													validateAndFormat(jsonInput);
-												}
 											}}
-											className="border rounded px-2 py-1 text-sm"
+											className="border rounded px-2 py-1 text-sm bg-background"
 										>
 											<option value={2}>2 spaces</option>
 											<option value={4}>4 spaces</option>
@@ -431,9 +431,6 @@ export default function JSONFormatterTool() {
 											checked={sortKeys}
 											onChange={(e) => {
 												setSortKeys(e.target.checked);
-												if (jsonInput.trim() && isValid) {
-													validateAndFormat(jsonInput);
-												}
 											}}
 										/>
 										<Label htmlFor="sortKeys">Sort Keys</Label>
@@ -591,7 +588,8 @@ export default function JSONFormatterTool() {
 									<p className="text-sm text-muted-foreground">
 										Compression:{" "}
 										{Math.round(
-											(1 - minifiedJson.length / formattedJson.length) * 100,
+											(1 - minifiedJson.length / (formattedJson.length || 1)) *
+												100,
 										)}
 										% size reduction
 									</p>
@@ -634,55 +632,6 @@ export default function JSONFormatterTool() {
 								<li>• JSON schema validation</li>
 								<li>• Production optimization</li>
 							</ul>
-						</div>
-					</div>
-				</CardContent>
-			</Card>
-
-			{/* FAQ Section */}
-			<Card className="mt-6">
-				<CardHeader>
-					<CardTitle>Frequently Asked Questions</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<div className="space-y-4">
-						<div>
-							<h4 className="font-medium mb-2">
-								What's the difference between formatted and minified JSON?
-							</h4>
-							<p className="text-sm text-muted-foreground">
-								Formatted JSON includes proper indentation and line breaks for
-								readability, while minified JSON removes all unnecessary
-								whitespace to reduce file size for production use.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">
-								How does error detection work?
-							</h4>
-							<p className="text-sm text-muted-foreground">
-								Our validator parses your JSON and provides detailed error
-								messages with line and column numbers to help you quickly
-								identify and fix syntax issues.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">Is my JSON data safe?</h4>
-							<p className="text-sm text-muted-foreground">
-								Yes, all JSON processing happens locally in your browser. Your
-								data is never sent to our servers, ensuring complete privacy and
-								security.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">
-								What file formats are supported?
-							</h4>
-							<p className="text-sm text-muted-foreground">
-								You can upload .json and .txt files. The tool will attempt to
-								parse any text content as JSON and provide appropriate
-								validation feedback.
-							</p>
 						</div>
 					</div>
 				</CardContent>

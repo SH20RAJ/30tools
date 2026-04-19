@@ -262,7 +262,7 @@ export default function PhoneValidatorTool() {
 							<CardContent className="pt-6">
 								<div className="text-center py-6">
 									<div
-										className={`w-20 h-20 mx-auto mb-4 s-center justify-center ${
+										className={`w-20 h-20 mx-auto mb-4 items-center justify-center ${
 											validationResult.isValid
 												? "bg-muted"
 												: "bg-destructive/20"

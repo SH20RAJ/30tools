@@ -695,8 +695,8 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 				</CardHeader>
 				<CardContent>
 					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-						<div className="text-center p-4 border sition-colors">
-							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border transition-colors">
+							<div className="w-12 h-12 bg-primary/10 items-center justify-center mx-auto mb-3">
 								<Search className="h-6 w-6 text-primary" />
 							</div>
 							<h4 className="font-medium mb-1">Meta Tags Generator</h4>
@@ -705,8 +705,8 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 							</p>
 						</div>
 
-						<div className="text-center p-4 border sition-colors">
-							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border transition-colors">
+							<div className="w-12 h-12 bg-primary/10 items-center justify-center mx-auto mb-3">
 								<Globe className="h-6 w-6 text-primary" />
 							</div>
 							<h4 className="font-medium mb-1">Sitemap Generator</h4>
@@ -715,8 +715,8 @@ export default function KeywordResearchTool({ searchEngine = "bing" }) {
 							</p>
 						</div>
 
-						<div className="text-center p-4 border sition-colors">
-							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto mb-3">
+						<div className="text-center p-4 border transition-colors">
+							<div className="w-12 h-12 bg-primary/10 items-center justify-center mx-auto mb-3">
 								<Shield className="h-6 w-6 text-primary" />
 							</div>
 							<h4 className="font-medium mb-1">SSL Checker</h4>

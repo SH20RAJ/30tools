@@ -289,7 +289,7 @@ export default function ApiKeyTester({ toolId }) {
 					{result && (
 						<div className="space-y-4 animate-in fade-in slide-in-from-top-4">
 							<div
-								className={`p-4 s-center gap-3 ${
+								className={`p-4 items-center gap-3 ${
 									result.success
 										? "bg-green-500/10 border-green-500/20 text-green-700"
 										: "bg-red-500/10 border-red-500/20 text-red-700"

@@ -256,7 +256,7 @@ export default function BackwardsTextGenerator() {
 						key={m.id}
 						onClick={() => setMode(m.id as Mode)}
 						className={cn(
-							"flex flex-col items-center gap-3 p-4 sition-all duration-200 text-center",
+							"flex flex-col items-center gap-3 p-4 transition-all duration-200 text-center",
 							mode === m.id
 								? "border-primary bg-primary/5 shadow-sm"
 								: "border-border bg-card hover:border-primary/50 hover:bg-muted/50",
@@ -264,7 +264,7 @@ export default function BackwardsTextGenerator() {
 					>
 						<div
 							className={cn(
-								"w-12 h-12 s-center justify-center transition-colors",
+								"w-12 h-12 items-center justify-center transition-colors",
 								mode === m.id
 									? "bg-primary text-primary-foreground"
 									: "bg-muted text-muted-foreground",
@@ -361,7 +361,7 @@ export default function BackwardsTextGenerator() {
 			{/* Statistics Footer */}
 			<div className="flex flex-wrap items-center justify-center gap-8 py-6 px-10 bg-card border border-border/50 shadow-sm">
 				<div className="flex items-center gap-3">
-					<div className="w-10 h-10 s-center justify-center text-primary">
+					<div className="w-10 h-10 items-center justify-center text-primary">
 						<Type className="w-5 h-5" />
 					</div>
 					<div className="flex flex-col">
@@ -375,7 +375,7 @@ export default function BackwardsTextGenerator() {
 				</div>
 				<div className="w-px h-8 bg-border hidden sm:block" />
 				<div className="flex items-center gap-3">
-					<div className="w-10 h-10 s-center justify-center text-primary">
+					<div className="w-10 h-10 items-center justify-center text-primary">
 						<List className="w-5 h-5" />
 					</div>
 					<div className="flex flex-col">
@@ -389,7 +389,7 @@ export default function BackwardsTextGenerator() {
 				</div>
 				<div className="w-px h-8 bg-border hidden sm:block" />
 				<div className="flex items-center gap-3">
-					<div className="w-10 h-10 s-center justify-center text-primary">
+					<div className="w-10 h-10 items-center justify-center text-primary">
 						<RefreshCw className="w-5 h-5" />
 					</div>
 					<div className="flex flex-col">

@@ -49,7 +49,7 @@ export function ToolAuthGuard({
 				<div className="absolute inset-0 flex items-center justify-center bg-background/80 backdrop-blur-sm">
 					<Card className="w-full max-w-md">
 						<CardHeader className="text-center">
-							<div className="w-16 h-16 mx-auto mb-4 s-center justify-center">
+							<div className="w-16 h-16 mx-auto mb-4 items-center justify-center">
 								<Icon className="w-8 h-8 text-primary" />
 							</div>
 							<CardTitle>{title}</CardTitle>
@@ -74,7 +74,7 @@ export function ToolAuthGuard({
 	return (
 		<Card className="w-full">
 			<CardHeader className="text-center">
-				<div className="w-16 h-16 mx-auto mb-4 s-center justify-center">
+				<div className="w-16 h-16 mx-auto mb-4 items-center justify-center">
 					<Icon className="w-8 h-8 text-primary" />
 				</div>
 				<CardTitle>{title}</CardTitle>

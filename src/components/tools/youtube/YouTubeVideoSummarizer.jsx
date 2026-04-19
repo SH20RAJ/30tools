@@ -280,7 +280,7 @@ export default function YouTubeVideoSummarizer() {
 												<ul className="space-y-3">
 													{summary.keyPoints?.map((point, index) => (
 														<li key={index} className="flex items-start gap-3">
-															<span className="flex-shrink-0 w-6 h-6 bg-primary/10 text-primary s-center justify-center text-sm font-semibold">
+															<span className="flex-shrink-0 w-6 h-6 bg-primary/10 text-primary items-center justify-center text-sm font-semibold">
 																{index + 1}
 															</span>
 															<span className="text-foreground">{point}</span>

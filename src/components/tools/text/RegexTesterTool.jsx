@@ -230,7 +230,7 @@ export default function RegexTesterTool() {
 								onChange={(e) => setPattern(e.target.value)}
 								className={`font-mono ${error ? "border-border" : isValid && pattern ? "border-border" : ""}`}
 							/>
-							<div className="absolute right-2 top-1/2 transform -translate-y-1/2">
+							<div className="absolute right-2 top-1/2 transform -transpace-y-1/2">
 								{error ? (
 									<AlertCircle className="h-4 w-4 text-destructive" />
 								) : isValid && pattern ? (

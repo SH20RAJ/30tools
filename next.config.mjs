@@ -2,6 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import withPWA from "next-pwa";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const toolsJsonPath = path.join(process.cwd(), "src/constants/tools.json");
 const toolsData = JSON.parse(fs.readFileSync(toolsJsonPath, "utf8"));
@@ -108,7 +109,7 @@ const nextConfig = {
 
 	// Performance optimizations
 	experimental: {
-		optimizeCss: true,
+		optimizeCss: false,
 		optimizePackageImports: [
 			"lucide-react",
 			"@radix-ui/react-icons",
@@ -263,6 +264,6 @@ const pwaConfig = withPWA({
 export default pwaConfig(nextConfig);
 
 // added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
-import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
-
-initOpenNextCloudflareForDev();
+if (process.env.NODE_ENV === "development") {
+	initOpenNextCloudflareForDev();
+}

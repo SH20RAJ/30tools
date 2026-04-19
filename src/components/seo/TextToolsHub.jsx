@@ -139,7 +139,7 @@ export default function TextToolsHub({
 
 					{/* Search Bar */}
 					<div className="max-w-2xl mx-auto relative">
-						<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+						<Search className="absolute left-3 top-1/2 transform -transpace-y-1/2 h-5 w-5 text-muted-foreground" />
 						<Input
 							placeholder="Search text tools..."
 							value={searchQuery}

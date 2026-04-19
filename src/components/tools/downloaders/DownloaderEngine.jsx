@@ -150,7 +150,7 @@ export const DownloaderEngine = ({ placeholder, buttonText }) => {
 						{videoData.qualities.map((quality, idx) => (
 							<div
 								key={idx}
-								className="flex items-center justify-between p-4 bg-card border border-border/50 sition-colors"
+								className="flex items-center justify-between p-4 bg-card border border-border/50 transition-colors"
 							>
 								<div className="flex items-center gap-4">
 									<div className="font-bold">{quality.quality}</div>

@@ -45,7 +45,7 @@ export default async function ToolPage() {
 			"google-rank-checker-bulk",
 			"keyword position tracker",
 			"keyword rank checker",
-			"keyword-position-checker",
+			"keyword-potransition-checker",
 			"rank-checker-bulk",
 			"serp checker",
 			"serp-tracker-bulk",

@@ -408,7 +408,7 @@ export default function TikTokDownloaderTool() {
 				<CardContent>
 					<div className="grid md:grid-cols-3 gap-6">
 						<div className="text-center space-y-2">
-							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto">
+							<div className="w-12 h-12 bg-primary/10 items-center justify-center mx-auto">
 								<LinkIcon className="h-6 w-6 text-primary" />
 							</div>
 							<h3 className="font-semibold">1. Copy TikTok URL</h3>
@@ -417,7 +417,7 @@ export default function TikTokDownloaderTool() {
 							</p>
 						</div>
 						<div className="text-center space-y-2">
-							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto">
+							<div className="w-12 h-12 bg-primary/10 items-center justify-center mx-auto">
 								<Download className="h-6 w-6 text-primary" />
 							</div>
 							<h3 className="font-semibold">2. Paste & Process</h3>
@@ -426,7 +426,7 @@ export default function TikTokDownloaderTool() {
 							</p>
 						</div>
 						<div className="text-center space-y-2">
-							<div className="w-12 h-12 bg-primary/10 s-center justify-center mx-auto">
+							<div className="w-12 h-12 bg-primary/10 items-center justify-center mx-auto">
 								<Play className="h-6 w-6 text-primary" />
 							</div>
 							<h3 className="font-semibold">3. Save & Enjoy</h3>

@@ -6,7 +6,7 @@ export default function ToolInteractivePlaceholder({ toolName = "Tool" }) {
  <div className="min-h-[400px] flex flex-col items-center justify-center text-center space-y-8 p-12">
  <div className="relative">
  <div className="absolute inset-0 bg-primary/20 blur-3xl " />
- <div className="relative w-24 h-24 s-center justify-center text-primary border border-primary/20">
+ <div className="relative w-24 h-24 items-center justify-center text-primary border border-primary/20">
  <Zap className="w-12 h-12 animate-float" />
  </div>
  </div>

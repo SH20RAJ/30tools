@@ -5,9 +5,9 @@ const AuthorBio = ({
 	expertVerify = true,
 }) => {
 	return (
-		<div className="mt-12 p-6 bg-muted/30 s-center gap-6">
+		<div className="mt-12 p-6 bg-muted/30 items-center gap-6">
 			<div className="relative">
-				<div className="w-16 h-16 bg-primary/10 s-center justify-center text-primary">
+				<div className="w-16 h-16 bg-primary/10 items-center justify-center text-primary">
 					<UserCheck className="w-8 h-8" />
 				</div>
 				{expertVerify && (

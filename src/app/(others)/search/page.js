@@ -57,7 +57,7 @@ export default async function SearchPage({ searchParams }) {
 
 				<form action="/search" method="GET" className="relative w-full max-w-2xl group">
 					<div className="relative">
-						<Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
+						<Search className="absolute left-4 top-1/2 -transpace-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
 						<Input 
 							name="q" 
 							defaultValue={query} 
@@ -66,7 +66,7 @@ export default async function SearchPage({ searchParams }) {
 						/>
 						<button 
 							type="submit"
-							className="absolute right-2 top-1/2 -translate-y-1/2 bg-primary text-primary-foreground px-6 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity"
+							className="absolute right-2 top-1/2 -transpace-y-1/2 bg-primary text-primary-foreground px-6 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity"
 						>
 							Search
 						</button>

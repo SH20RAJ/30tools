@@ -205,7 +205,7 @@ export default function UTMBuilderTool() {
 						</div>
 						<Button
 							size="icon"
-							className="absolute right-2 top-1/2 -translate-y-1/2"
+							className="absolute right-2 top-1/2 -transpace-y-1/2"
 							onClick={copyToClipboard}
 							disabled={!generatedUrl}
 						>

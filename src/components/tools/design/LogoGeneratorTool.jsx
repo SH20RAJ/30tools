@@ -468,7 +468,7 @@ export default function LogoGeneratorTool() {
 										{logoStyles.map((style) => (
 											<button
 												key={style.name}
-												className={`p-3 text-left sition-all ${
+												className={`p-3 text-left transition-all ${
 													selectedStyle.name === style.name
 														? "border-primary bg-primary/5"
 														: "border-border hover:border-primary/50"
@@ -612,7 +612,7 @@ export default function LogoGeneratorTool() {
 							<CardContent>
 								<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 									<div className="flex items-start space-x-3">
-										<div className="w-8 h-8 bg-muted dark:bg-primary/30 s-center justify-center">
+										<div className="w-8 h-8 bg-muted dark:bg-primary/30 items-center justify-center">
 											<Zap className="w-4 h-4 text-primary dark:text-primary" />
 										</div>
 										<div>
@@ -623,7 +623,7 @@ export default function LogoGeneratorTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-8 h-8 bg-muted dark:bg-primary/30 s-center justify-center">
+										<div className="w-8 h-8 bg-muted dark:bg-primary/30 items-center justify-center">
 											<Type className="w-4 h-4 text-primary dark:text-primary" />
 										</div>
 										<div>
@@ -634,7 +634,7 @@ export default function LogoGeneratorTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-8 h-8 bg-muted dark:bg-primary/30 s-center justify-center">
+										<div className="w-8 h-8 bg-muted dark:bg-primary/30 items-center justify-center">
 											<Palette className="w-4 h-4 text-primary dark:text-primary" />
 										</div>
 										<div>
@@ -645,7 +645,7 @@ export default function LogoGeneratorTool() {
 										</div>
 									</div>
 									<div className="flex items-start space-x-3">
-										<div className="w-8 h-8 bg-muted dark:bg-primary/30 s-center justify-center">
+										<div className="w-8 h-8 bg-muted dark:bg-primary/30 items-center justify-center">
 											<Download className="w-4 h-4 text-primary dark:text-primary" />
 										</div>
 										<div>

@@ -328,7 +328,7 @@ END:VCARD`;
 											<button
 												key={type.id}
 												onClick={() => setQrType(type.id)}
-												className={`p-4 sition-all text-left ${
+												className={`p-4 transition-all text-left ${
 													qrType === type.id
 														? "border-primary bg-primary/5"
 														: "border-border hover:border-primary/50"

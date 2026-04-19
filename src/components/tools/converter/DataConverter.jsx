@@ -221,7 +221,7 @@ export default function DataConverter({ fromFormat, toFormat }) {
 							/>
 						) : (
 							<div className="absolute inset-0 flex flex-col items-center justify-center text-muted-foreground p-8 text-center">
-								<div className="w-16 h-16 bg-muted s-center justify-center mb-4">
+								<div className="w-16 h-16 bg-muted items-center justify-center mb-4">
 									<ArrowRight className="w-8 h-8 opacity-50" />
 								</div>
 								<p className="mb-6">Enter data on the left to transform it.</p>

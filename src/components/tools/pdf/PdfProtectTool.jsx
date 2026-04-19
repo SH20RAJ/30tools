@@ -274,7 +274,7 @@ export default function PdfProtectTool() {
 										</div>
 										<div className="w-full bg-gray-200 ">
 											<div
-												className={`h-1.5 sition-all ${
+												className={`h-1.5 transition-all ${
 													passwordStrength.score <= 2
 														? "bg-destructive/100"
 														: passwordStrength.score <= 3

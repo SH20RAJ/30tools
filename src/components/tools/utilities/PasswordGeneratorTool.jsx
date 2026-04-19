@@ -1,7 +1,7 @@
 "use client";
 
 import { Copy, KeyRound, RefreshCw, ShieldCheck } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
@@ -25,11 +25,19 @@ export default function PasswordGeneratorTool() {
 	const [useSymbols, setUseSymbols] = useState(true);
 	const [strength, setStrength] = useState(0);
 
-	useEffect(() => {
-		generatePassword();
-	}, [generatePassword]);
+	const calculateStrength = useCallback((pass) => {
+		let score = 0;
+		if (pass.length > 8) score += 10;
+		if (pass.length > 12) score += 20;
+		if (pass.length >= 16) score += 20;
+		if (/[A-Z]/.test(pass)) score += 10;
+		if (/[a-z]/.test(pass)) score += 10;
+		if (/[0-9]/.test(pass)) score += 10;
+		if (/[^A-Za-z0-9]/.test(pass)) score += 20;
+		setStrength(Math.min(100, score));
+	}, []);
 
-	const generatePassword = () => {
+	const generatePassword = useCallback(() => {
 		let charset = "";
 		if (useUppercase) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 		if (useLowercase) charset += "abcdefghijklmnopqrstuvwxyz";
@@ -48,24 +56,18 @@ export default function PasswordGeneratorTool() {
 		}
 		setPassword(generatedPassword);
 		calculateStrength(generatedPassword);
-	};
+	}, [length, useUppercase, useLowercase, useNumbers, useSymbols, calculateStrength]);
 
-	const calculateStrength = (pass) => {
-		let score = 0;
-		if (pass.length > 8) score += 10;
-		if (pass.length > 12) score += 20;
-		if (pass.length >= 16) score += 20;
-		if (/[A-Z]/.test(pass)) score += 10;
-		if (/[a-z]/.test(pass)) score += 10;
-		if (/[0-9]/.test(pass)) score += 10;
-		if (/[^A-Za-z0-9]/.test(pass)) score += 20;
-		setStrength(Math.min(100, score));
-	};
+	useEffect(() => {
+		generatePassword();
+	}, [generatePassword]);
 
 	const copyToClipboard = () => {
 		if (!password) return;
-		navigator.clipboard.writeText(password);
-		toast.success("Password copied to clipboard!");
+		if (typeof navigator !== "undefined" && navigator.clipboard) {
+			navigator.clipboard.writeText(password);
+			toast.success("Password copied to clipboard!");
+		}
 	};
 
 	const strengthColor = () => {
@@ -95,7 +97,7 @@ export default function PasswordGeneratorTool() {
 			<CardContent className="p-6 space-y-8">
 				{/* Password Display */}
 				<div className="relative">
-					<div className="p-6 bg-secondary/50 s-center justify-center border-2 border-dashed border-muted-foreground/20">
+					<div className="p-6 bg-secondary/50 flex items-center justify-center border-2 border-dashed border-muted-foreground/20 font-mono text-xl tracking-wider">
 						{password || "Select options..."}
 					</div>
 					<Button
@@ -145,52 +147,52 @@ export default function PasswordGeneratorTool() {
 
 					<div className="grid grid-cols-2 gap-4">
 						<div
-							className="flex items-center space-x-2 border p-4 sition-colors cursor-pointer"
+							className="flex items-center space-x-2 border p-4 transition-colors cursor-pointer hover:bg-muted/50"
 							onClick={() => setUseUppercase(!useUppercase)}
 						>
 							<Checkbox
 								id="uppercase"
 								checked={useUppercase}
-								onCheckedChange={setUseUppercase}
+								onCheckedChange={(val) => setUseUppercase(!!val)}
 							/>
 							<Label htmlFor="uppercase" className="cursor-pointer">
 								ABC Uppercase
 							</Label>
 						</div>
 						<div
-							className="flex items-center space-x-2 border p-4 sition-colors cursor-pointer"
+							className="flex items-center space-x-2 border p-4 transition-colors cursor-pointer hover:bg-muted/50"
 							onClick={() => setUseLowercase(!useLowercase)}
 						>
 							<Checkbox
 								id="lowercase"
 								checked={useLowercase}
-								onCheckedChange={setUseLowercase}
+								onCheckedChange={(val) => setUseLowercase(!!val)}
 							/>
 							<Label htmlFor="lowercase" className="cursor-pointer">
 								abc Lowercase
 							</Label>
 						</div>
 						<div
-							className="flex items-center space-x-2 border p-4 sition-colors cursor-pointer"
+							className="flex items-center space-x-2 border p-4 transition-colors cursor-pointer hover:bg-muted/50"
 							onClick={() => setUseNumbers(!useNumbers)}
 						>
 							<Checkbox
 								id="numbers"
 								checked={useNumbers}
-								onCheckedChange={setUseNumbers}
+								onCheckedChange={(val) => setUseNumbers(!!val)}
 							/>
 							<Label htmlFor="numbers" className="cursor-pointer">
 								123 Numbers
 							</Label>
 						</div>
 						<div
-							className="flex items-center space-x-2 border p-4 sition-colors cursor-pointer"
+							className="flex items-center space-x-2 border p-4 transition-colors cursor-pointer hover:bg-muted/50"
 							onClick={() => setUseSymbols(!useSymbols)}
 						>
 							<Checkbox
 								id="symbols"
 								checked={useSymbols}
-								onCheckedChange={setUseSymbols}
+								onCheckedChange={(val) => setUseSymbols(!!val)}
 							/>
 							<Label htmlFor="symbols" className="cursor-pointer">
 								!@# Symbols

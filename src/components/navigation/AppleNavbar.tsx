@@ -31,7 +31,7 @@ function SearchInput() {
 
 	return (
 		<form onSubmit={handleSearch} className="relative w-full max-w-sm group hidden md:block">
-			<Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-foreground transition-colors" />
+			<Search className="absolute left-3 top-1/2 -transpace-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-foreground transition-colors" />
 			<Input
 				type="text"
 				placeholder="Search tools... (⌘K)"
@@ -174,7 +174,7 @@ export function AppleNavbar() {
 								}}
 								className="relative"
 							>
-								<Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+								<Search className="absolute left-3 top-1/2 -transpace-y-1/2 h-4 w-4 text-muted-foreground" />
 								<Input
 									name="q"
 									placeholder="Search tools..."

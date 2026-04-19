@@ -3069,12 +3069,12 @@
     "category": "seo"
   },
   {
-    "id": "seo-position-tracker",
+    "id": "seo-potransition-tracker",
     "name": "Seo Position Tracker",
     "description": "Free Seo Position Tracker online. Seo Position Tracker allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-    "route": "/seo-position-tracker",
+    "route": "/seo-potransition-tracker",
     "extraSlugs": [
-      "seo-position-tracker"
+      "seo-potransition-tracker"
     ],
     "category": "seo"
   },

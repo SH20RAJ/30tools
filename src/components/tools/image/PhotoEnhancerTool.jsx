@@ -141,7 +141,7 @@ export default function PhotoEnhancerTool() {
 					className="border-2 border-dashed border-gray-300 dark:border-gray-700 sor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
 					onClick={() => fileInputRef.current?.click()}
 				>
-					<div className="w-20 h-20 bg-primary/10 s-center justify-center mx-auto mb-6">
+					<div className="w-20 h-20 bg-primary/10 items-center justify-center mx-auto mb-6">
 						<Upload className="w-10 h-10 text-primary" />
 					</div>
 					<h2 className="text-2xl font-bold mb-2">
@@ -296,11 +296,11 @@ export default function PhotoEnhancerTool() {
 
 					{/* Preview Area */}
 					<div className="lg:col-span-8">
-						<div className="bg-gray-100 dark:bg-gray-900 s-center justify-center relative overflow-hidden border">
+						<div className="bg-gray-100 dark:bg-gray-900 items-center justify-center relative overflow-hidden border">
 							<img
 								src={showCompare ? originalUrl : previewUrl}
 								alt="Preview"
-								className="max-w-full max-h-full object-contain shadow-lg sition-all duration-200"
+								className="max-w-full max-h-full object-contain shadow-lg transition-all duration-200"
 							/>
 
 							<Button

@@ -652,7 +652,7 @@ export default function AIImageGeneratorTool() {
 														loading="lazy"
 													/>
 													{loading && (
-														<div className="absolute inset-0 bg-background/80 backdrop-blur-sm s-center justify-center">
+														<div className="absolute inset-0 bg-background/80 backdrop-blur-sm items-center justify-center">
 															<div className="text-center">
 																<RefreshCwIcon className="h-8 w-8 animate-spin mx-auto mb-2" />
 																<p className="text-sm font-medium">

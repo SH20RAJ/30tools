@@ -342,7 +342,7 @@ export function ToolFeatures({
 		<div className="space-y-3">
 			{features.map((feature, index) => (
 				<div key={index} className="flex items-start gap-3">
-					<div className="flex-shrink-0 w-6 h-6 bg-primary/10 s-center justify-center mt-0.5">
+					<div className="flex-shrink-0 w-6 h-6 bg-primary/10 items-center justify-center mt-0.5">
 						<div className="w-2 h-2 bg-primary " />
 					</div>
 					<div>
@@ -360,7 +360,7 @@ export function ToolFeatures({
 					key={index}
 					className="flex items-center gap-3 p-3 border "
 				>
-					<div className="flex-shrink-0 w-8 h-8 bg-primary/10 s-center justify-center">
+					<div className="flex-shrink-0 w-8 h-8 bg-primary/10 items-center justify-center">
 						<div className="w-3 h-3 bg-primary " />
 					</div>
 					<span className="font-medium text-sm">{feature}</span>

@@ -257,7 +257,7 @@ export default function ImageCompressionTool() {
 					</CardHeader>
 					<CardContent>
 						<div
-							className={`border-2 border-dashed sition-colors ${
+							className={`border-2 border-dashed transition-colors ${
 								dragActive
 									? "border-primary bg-primary/10"
 									: "border-muted-foreground/25"

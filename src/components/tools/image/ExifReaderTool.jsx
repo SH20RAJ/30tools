@@ -110,7 +110,7 @@ export default function ExifReaderTool() {
 					className="border-2 border-dashed border-gray-300 dark:border-gray-700 sor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
 					onClick={() => fileInputRef.current?.click()}
 				>
-					<div className="w-20 h-20 bg-primary/10 s-center justify-center mx-auto mb-6">
+					<div className="w-20 h-20 bg-primary/10 items-center justify-center mx-auto mb-6">
 						<Camera className="w-10 h-10 text-primary" />
 					</div>
 					<h2 className="text-2xl font-bold mb-2">

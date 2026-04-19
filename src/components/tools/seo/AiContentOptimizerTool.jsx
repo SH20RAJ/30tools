@@ -120,7 +120,7 @@ export default function AiContentOptimizerTool() {
 						)}
 					</Button>
 					{error && (
-						<div className="p-4 bg-red-50 text-red-600 s-center gap-2">
+						<div className="p-4 bg-red-50 text-red-600 items-center gap-2">
 							<AlertCircle className="w-5 h-5" />
 							{error}
 						</div>
@@ -235,7 +235,7 @@ export default function AiContentOptimizerTool() {
 							<ul className="space-y-3">
 								{result.suggestions.map((suggestion, index) => (
 									<li key={index} className="flex items-start gap-3">
-										<div className="mt-1 min-w-6 h-6 s-center justify-center text-xs font-bold text-primary">
+										<div className="mt-1 min-w-6 h-6 items-center justify-center text-xs font-bold text-primary">
 											{index + 1}
 										</div>
 										<span className="text-muted-foreground">{suggestion}</span>

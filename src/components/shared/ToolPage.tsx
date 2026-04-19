@@ -130,7 +130,7 @@ export default function ToolPage({ toolId, children }: ToolPageProps) {
 					{children || (
 						<div className="min-h-[400px] flex items-center justify-center bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 ">
 							<div className="text-center space-y-6 max-w-md">
-								<div className="w-16 h-16 s-center justify-center mx-auto mb-4 animate-in zoom-in duration-500">
+								<div className="w-16 h-16 items-center justify-center mx-auto mb-4 animate-in zoom-in duration-500">
 									<Zap className="w-8 h-8 text-[#0071e3]" />
 								</div>
 								<h3 className="text-2xl font-semibold tracking-tight">

@@ -124,7 +124,7 @@ export default function InstagramDPDownloader() {
 												className="w-24 h-24 "
 											/>
 											{profileData.isVerified && (
-												<div className="absolute -bottom-1 -right-1 w-6 h-6 bg-muted/500 s-center justify-center">
+												<div className="absolute -bottom-1 -right-1 w-6 h-6 bg-muted/500 items-center justify-center">
 													<CheckCircle className="h-4 w-4 text-white" />
 												</div>
 											)}

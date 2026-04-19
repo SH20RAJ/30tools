@@ -201,7 +201,7 @@ export default function TeraboxPlayerTool() {
 										href="https://terabox.beer"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary/90 text-white font-medium sition-colors"
+										className="inline-flex items-center px-4 py-2 bg-primary hover:bg-primary/90 text-white font-medium transition-colors"
 									>
 										Visit terabox.beer →
 									</a>
@@ -286,7 +286,7 @@ export default function TeraboxPlayerTool() {
 							<Card>
 								<CardContent className="py-8">
 									<div className="text-center space-y-3">
-										<div className="w-16 h-16 bg-muted dark:bg-primary/20 s-center justify-center mx-auto">
+										<div className="w-16 h-16 bg-muted dark:bg-primary/20 items-center justify-center mx-auto">
 											<PlayIcon className="h-8 w-8 text-primary" />
 										</div>
 										<div>

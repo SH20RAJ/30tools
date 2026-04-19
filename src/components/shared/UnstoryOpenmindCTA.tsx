@@ -86,7 +86,7 @@ export default function UnstoryOpenmindCTA() {
 					<div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-pink-200/20 to-purple-200/20 dark:from-pink-700/10 dark:to-purple-700/10 " />
 					{/* Floating Elements */}
 					<div
-						className={`absolute transition-all duration-1000 ${isHovered ? "translate-y-2 scale-110" : "translate-y-0"}`}
+						className={`absolute transition-all duration-1000 ${isHovered ? "transpace-y-2 scale-110" : "transpace-y-0"}`}
 					>
 						<Heart className="absolute top-20 left-20 w-6 h-6 text-pink-300/40 dark:text-primary/30" />
 						<Star className="absolute top-32 right-32 w-4 h-4 text-yellow-300/40 dark:text-primary/30" />

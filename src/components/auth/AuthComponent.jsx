@@ -56,7 +56,7 @@ export default function AuthComponent() {
 	if (isSignedIn && user) {
 		return (
 			<div className="flex items-center space-x-2">
-				<div className="flex items-center space-x-2 px-2 py-1 sition-colors">
+				<div className="flex items-center space-x-2 px-2 py-1 transition-colors">
 					<Avatar className="w-8 h-8">
 						<AvatarImage src={user.avatar} alt={user.name} />
 						<AvatarFallback className="bg-primary text-primary-foreground">

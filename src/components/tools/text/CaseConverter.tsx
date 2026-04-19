@@ -122,7 +122,7 @@ export default function CaseConverter() {
 						size="default"
 						onClick={() => handleModeClick(m.id as Mode)}
 						className={cn(
-							"h-12 sition-all duration-200",
+							"h-12 transition-all duration-200",
 							mode === m.id
 								? "shadow-md scale-[1.02]"
 								: "hover:border-primary/50",
@@ -180,7 +180,7 @@ export default function CaseConverter() {
 			{/* Stats Cards */}
 			<div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
 				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 shadow-sm">
-					<div className="w-12 h-12 s-center justify-center text-primary">
+					<div className="w-12 h-12 items-center justify-center text-primary">
 						<Type className="w-6 h-6" />
 					</div>
 					<div className="flex flex-col">
@@ -192,7 +192,7 @@ export default function CaseConverter() {
 				</div>
 
 				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 shadow-sm">
-					<div className="w-12 h-12 s-center justify-center text-primary">
+					<div className="w-12 h-12 items-center justify-center text-primary">
 						<CaseSensitive className="w-6 h-6" />
 					</div>
 					<div className="flex flex-col">
@@ -206,7 +206,7 @@ export default function CaseConverter() {
 				</div>
 
 				<div className="flex items-center gap-4 p-6 bg-card border border-border/50 shadow-sm">
-					<div className="w-12 h-12 s-center justify-center text-primary">
+					<div className="w-12 h-12 items-center justify-center text-primary">
 						<ArrowDownUp className="w-6 h-6" />
 					</div>
 					<div className="flex flex-col">

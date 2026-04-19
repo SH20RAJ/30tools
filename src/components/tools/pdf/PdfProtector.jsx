@@ -72,7 +72,7 @@ export default function PdfProtector() {
 					<Label htmlFor="pdf-upload" className="text-base font-medium">
 						1. Upload PDF
 					</Label>
-					<div className="border-2 border-dashed border-input sition-colors cursor-pointer relative">
+					<div className="border-2 border-dashed border-input transition-colors cursor-pointer relative">
 						<input
 							id="pdf-upload"
 							type="file"

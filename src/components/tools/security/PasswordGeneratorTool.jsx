@@ -257,7 +257,7 @@ export default function PasswordGeneratorTool() {
 									className="font-mono text-lg pr-20"
 									placeholder="Generated password will appear here..."
 								/>
-								<div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex gap-1">
+								<div className="absolute right-2 top-1/2 transform -transpace-y-1/2 flex gap-1">
 									<Button
 										size="sm"
 										variant="ghost"
@@ -307,7 +307,7 @@ export default function PasswordGeneratorTool() {
 									</div>
 									<div className="w-full bg-gray-200 ">
 										<div
-											className={`h-3 sition-all duration-300 ${getStrengthColor()}`}
+											className={`h-3 transition-all duration-300 ${getStrengthColor()}`}
 											style={{ width: `${strength}%` }}
 										/>
 									</div>

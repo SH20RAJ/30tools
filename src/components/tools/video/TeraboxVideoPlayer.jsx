@@ -166,7 +166,7 @@ export default function TeraboxVideoPlayer() {
 						</div>
 
 						{error && (
-							<div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 s-start gap-2">
+							<div className="bg-destructive/10 border border-destructive/50 text-destructive px-4 py-3 items-start gap-2">
 								<AlertCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
 								<span>{error}</span>
 							</div>

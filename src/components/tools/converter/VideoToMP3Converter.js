@@ -195,7 +195,7 @@ export default function VideoToMP3Converter() {
 							<Card>
 								<CardContent className="p-4">
 									<div className="flex items-center gap-4 mb-4">
-										<div className="w-16 h-16 bg-muted s-center justify-center">
+										<div className="w-16 h-16 bg-muted items-center justify-center">
 											<Music className="h-8 w-8 text-primary" />
 										</div>
 										<div className="flex-1">

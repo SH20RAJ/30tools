@@ -317,7 +317,7 @@ export default function YouTubeDownloader() {
 
 				{/* Minimal Error */}
 				{error && (
-					<div className="mt-4 p-4 bg-destructive/5 border border-destructive/10 text-destructive s-center justify-center gap-2 animate-in slide-in-from-top-2">
+					<div className="mt-4 p-4 bg-destructive/5 border border-destructive/10 text-destructive items-center justify-center gap-2 animate-in slide-in-from-top-2">
 						<X className="w-5 h-5" />
 						<p className="font-medium text-center">{error}</p>
 					</div>
@@ -373,7 +373,7 @@ export default function YouTubeDownloader() {
 																href={format.finalUrl}
 																target="_blank"
 																rel="noopener noreferrer"
-																className="h-10 px-4 sition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+																className="h-10 px-4 transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
 															>
 																<div className="text-left mr-3">
 																	<div className="font-medium flex items-center gap-2 text-sm">
@@ -408,7 +408,7 @@ export default function YouTubeDownloader() {
 																downloadingFormat !== null &&
 																downloadingFormat !== format.url
 															}
-															className="h-10 px-4 sition-all group"
+															className="h-10 px-4 transition-all group"
 														>
 															<div className="text-left mr-3">
 																<div className="font-medium flex items-center gap-2 text-sm">
@@ -464,7 +464,7 @@ export default function YouTubeDownloader() {
 																href={format.finalUrl}
 																target="_blank"
 																rel="noopener noreferrer"
-																className="h-10 px-4 sition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
+																className="h-10 px-4 transition-all group bg-green-600 hover:bg-green-700 text-white animate-pulse inline-flex items-center justify-center border"
 															>
 																<div className="text-left mr-3">
 																	<div className="font-medium text-sm">MP3</div>
@@ -492,7 +492,7 @@ export default function YouTubeDownloader() {
 																downloadingFormat !== null &&
 																downloadingFormat !== format.url
 															}
-															className="h-10 px-4 sition-all group"
+															className="h-10 px-4 transition-all group"
 														>
 															<div className="text-left mr-3">
 																<div className="font-medium text-sm">MP3</div>
@@ -534,7 +534,7 @@ export default function YouTubeDownloader() {
 					rel="noopener noreferrer"
 					className="group inline-flex items-center gap-2 px-6 py-3 sm font-medium hover:bg-muted/80 transition-colors"
 				>
-					<Send className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+					<Send className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-transpace-y-0.5 transition-transform" />
 					<span>Try our Telegram Bot for faster downloads</span>
 				</a>
 			</div>

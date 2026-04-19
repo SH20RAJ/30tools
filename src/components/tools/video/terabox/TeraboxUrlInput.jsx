@@ -77,7 +77,7 @@ export default function TeraboxUrlInput({
 							disabled={isLoading}
 						/>
 						{isLoading && (
-							<div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+							<div className="absolute right-3 top-1/2 transform -transpace-y-1/2">
 								<LoaderIcon className="h-4 w-4 animate-spin text-primary" />
 							</div>
 						)}

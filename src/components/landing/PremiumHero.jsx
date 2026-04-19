@@ -102,17 +102,3 @@ export function PremiumHero({ title, subtitle, lang = "en" }) {
 		</div>
 	);
 }
-e tracking-widest">Privacy First</span>
-					</div>
-					<div className="flex items-center gap-2">
-						<Zap className="h-5 w-5" />
-						<span className="text-sm font-semibold uppercase tracking-widest">Lightning Fast</span>
-					</div>
-					<div className="flex items-center gap-2 px-2 py-1 rounded bg-foreground text-background">
-						<span className="text-[10px] font-black uppercase tracking-tighter">100% Free</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
-}

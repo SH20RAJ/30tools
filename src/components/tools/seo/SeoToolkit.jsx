@@ -296,7 +296,7 @@ export default function SeoToolkit() {
 									<XCircle className="w-5 h-5 text-red-500" />
 								)}
 							</div>
-							<div className="w-10 h-10 s-center justify-center mb-4 text-orange-500">
+							<div className="w-10 h-10 items-center justify-center mb-4 text-orange-500">
 								{check.icon}
 							</div>
 							<h4 className="font-semibold mb-2 pr-8">{check.title}</h4>
@@ -381,7 +381,7 @@ export default function SeoToolkit() {
 						key={i}
 						className="p-6 border border-border/50 shadow-sm hover:shadow-md transition-all"
 					>
-						<div className="w-10 h-10 s-center justify-center mb-4">
+						<div className="w-10 h-10 items-center justify-center mb-4">
 							{check.icon}
 						</div>
 						<h3 className="font-semibold mb-2">{check.title}</h3>
@@ -391,7 +391,7 @@ export default function SeoToolkit() {
 
 				{/* Upgrade / More Card */}
 				<div className="p-6 flex flex-col items-center justify-center text-center border-2 border-dashed border-border ">
-					<div className="w-10 h-10 s-center justify-center mb-4">
+					<div className="w-10 h-10 items-center justify-center mb-4">
 						<Zap className="w-5 h-5 text-muted-foreground" />
 					</div>
 					<h3 className="font-semibold mb-2">And much more...</h3>

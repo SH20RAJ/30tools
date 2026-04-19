@@ -159,7 +159,7 @@ export default function ImageToPDFTool() {
 											/>
 											<button
 												onClick={() => removeFile(index)}
-												className="absolute top-1 right-1 bg-black/50 text-white sition-opacity"
+												className="absolute top-1 right-1 bg-black/50 text-white transition-opacity"
 											>
 												<X className="w-4 h-4" />
 											</button>

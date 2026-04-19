@@ -516,7 +516,7 @@ export default function JsonFormatterTool() {
 
 								<div className="flex items-center gap-2">
 									<div className="relative">
-										<Search className="h-4 w-4 absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
+										<Search className="h-4 w-4 absolute left-3 top-1/2 transform -transpace-y-1/2 text-muted-foreground" />
 										<Input
 											placeholder="Search in JSON..."
 											value={searchTerm}

@@ -30,7 +30,7 @@ const TreeNode = ({ node, depth = 0 }) => {
 		<div className="select-none">
 			<div
 				className={`
- flex items-center gap-2 py-1.5 px-2 sition-colors cursor-pointer
+ flex items-center gap-2 py-1.5 px-2 transition-colors cursor-pointer
  ${isExpanded ? "bg-muted/30" : "hover:bg-muted/50"}
  ${isRoot ? "font-bold text-lg text-primary" : "text-sm"}
  `}

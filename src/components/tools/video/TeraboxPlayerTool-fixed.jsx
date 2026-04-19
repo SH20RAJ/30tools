@@ -868,7 +868,7 @@ export default function TeraboxPlayerTool() {
 							<CardContent className="space-y-6">
 								<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 									<div className="text-center">
-										<div className="w-12 h-12 bg-primary text-primary-foreground s-center justify-center mx-auto mb-3 text-xl font-bold">
+										<div className="w-12 h-12 bg-primary text-primary-foreground items-center justify-center mx-auto mb-3 text-xl font-bold">
 											1
 										</div>
 										<h3 className="font-semibold mb-2">Paste Terabox URL</h3>
@@ -878,7 +878,7 @@ export default function TeraboxPlayerTool() {
 										</p>
 									</div>
 									<div className="text-center">
-										<div className="w-12 h-12 bg-primary text-primary-foreground s-center justify-center mx-auto mb-3 text-xl font-bold">
+										<div className="w-12 h-12 bg-primary text-primary-foreground items-center justify-center mx-auto mb-3 text-xl font-bold">
 											2
 										</div>
 										<h3 className="font-semibold mb-2">
@@ -890,7 +890,7 @@ export default function TeraboxPlayerTool() {
 										</p>
 									</div>
 									<div className="text-center">
-										<div className="w-12 h-12 bg-primary text-primary-foreground s-center justify-center mx-auto mb-3 text-xl font-bold">
+										<div className="w-12 h-12 bg-primary text-primary-foreground items-center justify-center mx-auto mb-3 text-xl font-bold">
 											3
 										</div>
 										<h3 className="font-semibold mb-2">Generate Player</h3>

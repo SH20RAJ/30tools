@@ -40,7 +40,7 @@ export default async function ToolPage() {
 			"local-business-seo",
 			"local-seo-tool",
 			"seo-competition-analysis",
-			"seo-position-tracker",
+			"seo-potransition-tracker",
 			"seo-tools",
 			"technical-seo-audit",
 			"website-meta-audit",

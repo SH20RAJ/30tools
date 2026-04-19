@@ -133,7 +133,7 @@ export default function DeveloperToolsHub({
 
 					{/* Search Bar */}
 					<div className="max-w-2xl mx-auto relative">
-						<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+						<Search className="absolute left-3 top-1/2 transform -transpace-y-1/2 h-5 w-5 text-muted-foreground" />
 						<Input
 							placeholder="Search developer tools..."
 							value={searchQuery}
@@ -173,7 +173,7 @@ export default function DeveloperToolsHub({
 									<CardHeader className="pb-3">
 										<div className="flex items-center justify-between mb-2">
 											<div className="flex items-center gap-2">
-												<div className="p-2 bg-primary/10 sition-colors">
+												<div className="p-2 bg-primary/10 transition-colors">
 													<Icon className="h-5 w-5 text-primary" />
 												</div>
 												<Badge variant="secondary" className="text-xs">

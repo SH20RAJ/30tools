@@ -289,7 +289,7 @@ export default function FaviconGeneratorTool() {
 			<div className="lg:col-span-2 space-y-6">
 				{/* Browser Preview */}
 				<Card className="bg-gray-100 border-b-0 ">
-					<div className="bg-gray-200 px-4 py-2 s-center gap-2 border-b border-gray-300">
+					<div className="bg-gray-200 px-4 py-2 items-center gap-2 border-b border-gray-300">
 						<div className="flex gap-1.5">
 							<div className="w-3 h-3 "></div>
 							<div className="w-3 h-3 "></div>
@@ -307,7 +307,7 @@ export default function FaviconGeneratorTool() {
 							<span className="ml-2 text-gray-400">×</span>
 						</div>
 					</div>
-					<div className="bg-white h-64 border-x border-b s-center justify-center text-muted-foreground">
+					<div className="bg-white h-64 border-x border-b items-center justify-center text-muted-foreground">
 						Live favicon preview
 					</div>
 				</Card>
@@ -318,7 +318,7 @@ export default function FaviconGeneratorTool() {
 						<CardTitle>High-resolution preview</CardTitle>
 					</CardHeader>
 					<CardContent className="flex justify-center p-12 bg-gray-50/50">
-						<div className="w-32 h-32 shadow-lg s-center justify-center bg-white">
+						<div className="w-32 h-32 shadow-lg items-center justify-center bg-white">
 							<canvas
 								ref={canvasRef}
 								className="w-full h-full object-contain"

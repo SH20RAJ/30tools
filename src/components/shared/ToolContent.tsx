@@ -43,7 +43,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					{toolData.howTo?.steps?.map((step: any, idx: number) => (
 						<div
 							key={idx}
-							className="relative p-8 bg-white dark:bg-[#1d1d1f] sition-all"
+							className="relative p-8 bg-white dark:bg-[#1d1d1f] transition-all"
 						>
 							<div className="text-[#0071e3] font-bold text-lg mb-4">
 								{idx + 1}.
@@ -72,7 +72,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 							key={idx}
 							className="flex items-start gap-4 p-6 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 shadow-sm transition-all"
 						>
-							<div className="mt-1 w-5 h-5 s-center justify-center text-[#0071e3]">
+							<div className="mt-1 w-5 h-5 items-center justify-center text-[#0071e3]">
 								<Check className="w-3 h-3" />
 							</div>
 							<span className="text-base font-medium">{feature}</span>
@@ -84,7 +84,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 			{/* Trust Section */}
 			<section className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-12 bg-[#f5f5f7] dark:bg-[#161617] ">
 				<div className="text-center space-y-4">
-					<div className="w-12 h-12 bg-[#0071e3]/10 s-center justify-center mx-auto text-[#0071e3]">
+					<div className="w-12 h-12 bg-[#0071e3]/10 items-center justify-center mx-auto text-[#0071e3]">
 						<Zap className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Instant Results</h3>
@@ -94,7 +94,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					</p>
 				</div>
 				<div className="text-center space-y-4">
-					<div className="w-12 h-12 bg-[#0071e3]/10 s-center justify-center mx-auto text-[#0071e3]">
+					<div className="w-12 h-12 bg-[#0071e3]/10 items-center justify-center mx-auto text-[#0071e3]">
 						<Shield className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Maximum Privacy</h3>
@@ -104,7 +104,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 					</p>
 				</div>
 				<div className="text-center space-y-4">
-					<div className="w-12 h-12 bg-[#0071e3]/10 s-center justify-center mx-auto text-[#0071e3]">
+					<div className="w-12 h-12 bg-[#0071e3]/10 items-center justify-center mx-auto text-[#0071e3]">
 						<Download className="w-6 h-6" />
 					</div>
 					<h3 className="font-semibold text-lg">Free Forever</h3>
@@ -125,7 +125,7 @@ export default function ToolContent({ toolId }: ToolContentProps) {
 						{toolData.faqs?.map((faq: any, idx: number) => (
 							<div
 								key={idx}
-								className="p-8 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 sition-all"
+								className="p-8 bg-white dark:bg-[#1d1d1f] border border-black/5 dark:border-white/5 transition-all"
 							>
 								<h3 className="text-xl font-semibold mb-4">{faq.question}</h3>
 								<p className="opacity-60 leading-relaxed text-lg">

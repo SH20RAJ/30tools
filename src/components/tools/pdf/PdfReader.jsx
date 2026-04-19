@@ -34,7 +34,7 @@ export default function PdfReader() {
 						<Label htmlFor="pdf-upload" className="text-base font-medium">
 							Select PDF to Read
 						</Label>
-						<div className="border-2 border-dashed border-input sition-colors cursor-pointer relative">
+						<div className="border-2 border-dashed border-input transition-colors cursor-pointer relative">
 							<input
 								id="pdf-upload"
 								type="file"

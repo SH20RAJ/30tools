@@ -15,7 +15,7 @@ import {
 	WifiIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import SocialShareButtons from "@/components/shared/SocialShareButtons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -80,31 +80,9 @@ export default function QRCodeGeneratorTool() {
 	const [locationLat, setLocationLat] = useState("");
 	const [locationLng, setLocationLng] = useState("");
 
-	// Load QRCode.js library from CDN
-	useEffect(() => {
-		const script = document.createElement("script");
-		script.src =
-			"https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js";
-		script.async = true;
-		script.onload = () => {
-			setQrCodeLibLoaded(true);
-			generateQRCode(); // Generate initial QR code
-		};
-		script.onerror = () => {
-			console.error("Failed to load QRCode library");
-			setQrCodeLibLoaded(false);
-		};
-		document.head.appendChild(script);
-
-		return () => {
-			// Cleanup: remove script on unmount
-			document.head.removeChild(script);
-		};
-	}, [generateQRCode]);
-
 	// Enhanced QR Code generation function using QRCode.js library
-	const generateQRCode = async () => {
-		if (!qrCodeLibLoaded || !window.QRCode) {
+	const generateQRCode = useCallback(async () => {
+		if (typeof window === "undefined" || !window.QRCode) {
 			return;
 		}
 
@@ -176,7 +154,32 @@ export default function QRCodeGeneratorTool() {
 		} finally {
 			setIsGenerating(false);
 		}
-	};
+	}, [qrType, qrData, qrSize, foregroundColor, backgroundColor, errorCorrectionLevel, includeMargin, wifiSSID, wifiPassword, wifiSecurity, wifiHidden, contactName, contactPhone, contactEmail, contactOrg, contactUrl, emailTo, emailSubject, emailBody, smsNumber, smsMessage, locationLat, locationLng]);
+
+	// Load QRCode.js library from CDN
+	useEffect(() => {
+		if (typeof document === "undefined") return;
+		
+		const script = document.createElement("script");
+		script.src = "https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js";
+		script.async = true;
+		script.onload = () => {
+			setQrCodeLibLoaded(true);
+			// We don't call generateQRCode here directly to avoid hoisting issues, 
+			// the next useEffect will handle it when qrCodeLibLoaded changes
+		};
+		script.onerror = () => {
+			console.error("Failed to load QRCode library");
+			setQrCodeLibLoaded(false);
+		};
+		document.head.appendChild(script);
+
+		return () => {
+			if (document.head.contains(script)) {
+				document.head.removeChild(script);
+			}
+		};
+	}, []); // Empty dependency array for library load
 
 	// Generate QR code on mount and when data changes
 	useEffect(() => {
@@ -206,7 +209,7 @@ export default function QRCodeGeneratorTool() {
 	};
 
 	const copyToClipboard = () => {
-		if (navigator.clipboard && qrCodeSvg) {
+		if (typeof navigator !== "undefined" && navigator.clipboard && qrCodeSvg) {
 			navigator.clipboard.writeText(qrCodeSvg);
 		}
 	};
@@ -466,7 +469,7 @@ export default function QRCodeGeneratorTool() {
 					</Link>
 
 					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
+						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 rounded-xl">
 							<QrCodeIcon className="h-6 w-6 text-primary" />
 						</div>
 						<div>
@@ -656,18 +659,20 @@ export default function QRCodeGeneratorTool() {
 								<CardDescription>{getPreviewData()}</CardDescription>
 							</CardHeader>
 							<CardContent className="space-y-4">
-								<div className="flex justify-center p-8 bg-muted/50 ">
+								<div className="flex justify-center p-8 bg-muted/50 rounded-2xl border border-dashed border-border/50">
 									{isGenerating ? (
 										<div className="flex items-center gap-2">
-											<RefreshCwIcon className="h-6 w-6 animate-spin" />
-											Generating...
+											<RefreshCwIcon className="h-6 w-6 animate-spin text-primary" />
+											<span className="font-medium">Generating...</span>
 										</div>
 									) : (
-										<canvas
-											ref={canvasRef}
-											className="border shadow-sm"
-											style={{ maxWidth: "100%", height: "auto" }}
-										/>
+										<div ref={qrContainerRef}>
+											<canvas
+												ref={canvasRef}
+												className="border shadow-sm rounded-lg"
+												style={{ maxWidth: "100%", height: "auto" }}
+											/>
+										</div>
 									)}
 								</div>
 
@@ -697,7 +702,7 @@ export default function QRCodeGeneratorTool() {
 									</Button>
 
 									<Button
-										onClick={generateQRCode}
+										onClick={() => generateQRCode()}
 										variant="ghost"
 										disabled={isGenerating}
 									>
@@ -726,7 +731,7 @@ export default function QRCodeGeneratorTool() {
 											setQrData("https://30tools.com");
 										}}
 									>
-										<div className="flex items-center gap-2">
+										<div className="flex items-center gap-2 text-primary">
 											<LinkIcon className="h-4 w-4" />
 											<span className="font-medium">Website Link</span>
 										</div>
@@ -745,7 +750,7 @@ export default function QRCodeGeneratorTool() {
 											setWifiSecurity("WPA");
 										}}
 									>
-										<div className="flex items-center gap-2">
+										<div className="flex items-center gap-2 text-primary">
 											<WifiIcon className="h-4 w-4" />
 											<span className="font-medium">WiFi Sharing</span>
 										</div>
@@ -764,7 +769,7 @@ export default function QRCodeGeneratorTool() {
 											setContactEmail("john@example.com");
 										}}
 									>
-										<div className="flex items-center gap-2">
+										<div className="flex items-center gap-2 text-primary">
 											<UserIcon className="h-4 w-4" />
 											<span className="font-medium">Contact Card</span>
 										</div>
@@ -782,7 +787,7 @@ export default function QRCodeGeneratorTool() {
 											setLocationLng("-74.0060");
 										}}
 									>
-										<div className="flex items-center gap-2">
+										<div className="flex items-center gap-2 text-primary">
 											<MapPinIcon className="h-4 w-4" />
 											<span className="font-medium">Location</span>
 										</div>
@@ -795,80 +800,6 @@ export default function QRCodeGeneratorTool() {
 						</Card>
 					</div>
 				</div>
-
-				{/* Features & FAQ */}
-				<div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-					{/* Features */}
-					<Card>
-						<CardHeader>
-							<CardTitle>Features</CardTitle>
-						</CardHeader>
-						<CardContent>
-							<ul className="space-y-2 text-sm">
-								<li>✅ Multiple QR code types (URL, WiFi, Contact, etc.)</li>
-								<li>✅ Custom colors and styling</li>
-								<li>✅ Adjustable size and error correction</li>
-								<li>✅ High-resolution PNG and SVG downloads</li>
-								<li>✅ No watermarks or branding</li>
-								<li>✅ Unlimited QR code generation</li>
-								<li>✅ Mobile-friendly interface</li>
-								<li>✅ No registration required</li>
-							</ul>
-						</CardContent>
-					</Card>
-
-					{/* FAQ */}
-					<Card>
-						<CardHeader>
-							<CardTitle>Frequently Asked Questions</CardTitle>
-						</CardHeader>
-						<CardContent className="space-y-4">
-							<div>
-								<h4 className="font-medium mb-1">Do QR codes expire?</h4>
-								<p className="text-sm text-muted-foreground">
-									No, QR codes generated here never expire. They contain the
-									data permanently.
-								</p>
-							</div>
-
-							<div>
-								<h4 className="font-medium mb-1">
-									What's the best size for printing?
-								</h4>
-								<p className="text-sm text-muted-foreground">
-									For business cards, use 256px minimum. For posters, 512px or
-									higher works best.
-								</p>
-							</div>
-
-							<div>
-								<h4 className="font-medium mb-1">Can I use custom colors?</h4>
-								<p className="text-sm text-muted-foreground">
-									Yes! Make sure there's enough contrast between foreground and
-									background colors.
-								</p>
-							</div>
-
-							<div>
-								<h4 className="font-medium mb-1">What's error correction?</h4>
-								<p className="text-sm text-muted-foreground">
-									Higher levels make QR codes more readable even when partially
-									damaged or obscured.
-								</p>
-							</div>
-						</CardContent>
-					</Card>
-				</div>
-			</div>
-
-			{/* Social Share */}
-			<div className="mt-8">
-				<SocialShareButtons
-					toolName="QR Code Generator"
-					toolDescription="Free QR code generator for URLs, WiFi, contacts, and more. Customize colors, size, and download in multiple formats"
-					toolUrl="https://30tools.com/qr-code-generator"
-					category="utility"
-				/>
 			</div>
 		</div>
 	);
