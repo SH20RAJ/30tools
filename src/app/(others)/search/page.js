@@ -30,8 +30,8 @@ export default async function SearchPage({ searchParams }) {
 	if (query) {
 		filteredCategories = filteredCategories.map((cat) => ({
 			...cat,
-			tools: cat.tools.filter((tool) => 
-				tool.name.toLowerCase().includes(query) || 
+			tools: cat.tools.filter((tool) =>
+				tool.name.toLowerCase().includes(query) ||
 				tool.description.toLowerCase().includes(query) ||
 				tool.category?.toLowerCase().includes(query)
 			),
@@ -47,7 +47,7 @@ export default async function SearchPage({ searchParams }) {
 		<main className="container mx-auto px-4 py-12 max-w-6xl">
 			<div className="flex flex-col items-center mb-12 text-center">
 				<h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">
-					{categoryKey && categoryKey !== "all" 
+					{categoryKey && categoryKey !== "all"
 						? `${toolsData.categories[categoryKey]?.name || "Search Results"}`
 						: "Search Our Toolkit"}
 				</h1>
@@ -58,13 +58,13 @@ export default async function SearchPage({ searchParams }) {
 				<form action="/search" method="GET" className="relative w-full max-w-2xl group">
 					<div className="relative">
 						<Search className="absolute left-4 top-1/2 -transpace-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
-						<Input 
-							name="q" 
-							defaultValue={query} 
-							placeholder="What tool are you looking for?" 
+						<Input
+							name="q"
+							defaultValue={query}
+							placeholder="What tool are you looking for?"
 							className="pl-12 h-14 text-lg rounded-2xl border-2 focus-visible:ring-0 focus-visible:border-primary transition-all shadow-sm"
 						/>
-						<button 
+						<button
 							type="submit"
 							className="absolute right-2 top-1/2 -transpace-y-1/2 bg-primary text-primary-foreground px-6 py-2 rounded-xl font-medium hover:opacity-90 transition-opacity"
 						>
@@ -79,11 +79,10 @@ export default async function SearchPage({ searchParams }) {
 						<Link
 							key={cat.key}
 							href={`/search?category=${cat.key}${query ? `&q=${query}` : ""}`}
-							className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-								(categoryKey === cat.key || (!categoryKey && cat.key === "all"))
+							className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${(categoryKey === cat.key || (!categoryKey && cat.key === "all"))
 									? "bg-primary text-primary-foreground shadow-md"
 									: "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-							}`}
+								}`}
 						>
 							{cat.name}
 						</Link>
@@ -113,14 +112,14 @@ export default async function SearchPage({ searchParams }) {
 			{filteredCategories.length > 0 ? (
 				<ToolDirectory categories={filteredCategories} />
 			) : (
-				<div className="text-center py-32 border-2 border-dashed rounded-3xl bg-secondary/10">
+				<div className="text-center py-32 border-2 border-dashed rounded-3xl-off bg-secondary/10">
 					<div className="bg-secondary/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
 						<Search className="h-8 w-8 text-muted-foreground" />
 					</div>
 					<h3 className="text-xl font-bold mb-2">No tools found</h3>
 					<p className="text-muted-foreground mb-6">We couldn't find any tools matching your search criteria.</p>
-					<Link 
-						href="/search" 
+					<Link
+						href="/search"
 						className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 rounded-2xl font-bold hover:opacity-90 transition-all"
 					>
 						Browse All Tools

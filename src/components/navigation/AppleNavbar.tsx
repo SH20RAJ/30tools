@@ -31,7 +31,7 @@ function SearchInput() {
 
 	return (
 		<form onSubmit={handleSearch} className="relative w-full max-w-sm group hidden md:block">
-			<Search className="absolute left-3 top-1/2 -transpace-y-1/2 h-4 w-4 text-muted-foreground group-focus-within:text-foreground transition-colors" />
+			<Search className="absolute left-3  h-4 w-4 text-muted-foreground group-focus-within:text-foreground transition-colors" />
 			<Input
 				type="text"
 				placeholder="Search tools... (⌘K)"
@@ -99,7 +99,7 @@ export function AppleNavbar() {
 							</span>
 						</Link>
 
-						<nav className="hidden lg:flex items-center gap-6">
+						{/* <nav className="hidden lg:flex items-center gap-6">
 							{navLinks.map((link) => (
 								<Link
 									key={link.name}
@@ -109,7 +109,7 @@ export function AppleNavbar() {
 									{link.name}
 								</Link>
 							))}
-						</nav>
+						</nav> */}
 					</div>
 
 					{/* Center: Search */}

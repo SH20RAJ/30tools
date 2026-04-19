@@ -29,7 +29,7 @@ export function HomeSEOContent() {
 					<p className="text-lg text-muted-foreground mb-8 leading-relaxed">
 						At 30tools, we believe that powerful software should be accessible to everyone. We've built a massive ecosystem of specialized utilities to help you solve everyday digital problems—whether you're a developer, designer, student, or content creator.
 					</p>
-					
+
 					<div className="space-y-6">
 						{features.map((feature, i) => (
 							<div key={i} className="flex gap-4">
@@ -43,7 +43,7 @@ export function HomeSEOContent() {
 					</div>
 				</div>
 
-				<div className="bg-card border border-border/60 p-8 md:p-12 rounded-3xl shadow-3xl bg-apple-glass relative overflow-hidden group">
+				<div className="bg-card border border-border/60 p-8 md:p-12 rounded-3xl-off shadow-3xl bg-apple-glass relative overflow-hidden group">
 					<div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
 						<Zap className="h-32 w-32" />
 					</div>

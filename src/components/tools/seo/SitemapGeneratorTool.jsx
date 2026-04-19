@@ -211,7 +211,7 @@ export default function SitemapGeneratorTool() {
 									<Textarea
 										value={generatedXml}
 										readOnly
-										className="flex-1 min-h-[400px] font-mono text-sm rounded-3xl bg-primary/[0.03] border-primary/20 p-6 focus-visible:ring-0 text-primary"
+										className="flex-1 min-h-[400px] font-mono text-sm rounded-3xl-off bg-primary/[0.03] border-primary/20 p-6 focus-visible:ring-0 text-primary"
 									/>
 									<div className="grid grid-cols-1 gap-3">
 										<Button onClick={downloadSitemap} className="h-16 rounded-2xl font-black text-lg shadow-xl gap-3">
@@ -231,7 +231,7 @@ export default function SitemapGeneratorTool() {
 								</div>
 							)}
 
-							<div className="p-6 rounded-3xl bg-primary/5 border border-primary/10">
+							<div className="p-6 rounded-3xl-off bg-primary/5 border border-primary/10">
 								<h4 className="text-xs font-black uppercase text-primary mb-3 flex items-center gap-2">
 									<CalendarIcon className="w-4 h-4" />
 									Post-Generation Tips

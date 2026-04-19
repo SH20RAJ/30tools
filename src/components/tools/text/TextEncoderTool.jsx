@@ -34,21 +34,21 @@ export default function TextEncoderTool() {
 			switch (encodingType) {
 				case "url": result = encodeURIComponent(inputText); break;
 				case "base64": result = btoa(unescape(encodeURIComponent(inputText))); break;
-				case "html": 
-					result = inputText.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;").replace(/\//g, "&#x2F;"); 
+				case "html":
+					result = inputText.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#x27;").replace(/\//g, "&#x2F;");
 					break;
 				case "uri": result = encodeURI(inputText); break;
-				case "css": 
-					result = inputText.replace(/[^\w\s-]/g, (char) => `\\${char.charCodeAt(0).toString(16)} `); 
+				case "css":
+					result = inputText.replace(/[^\w\s-]/g, (char) => `\\${char.charCodeAt(0).toString(16)} `);
 					break;
-				case "javascript": 
-					result = inputText.replace(/[\\'"]/g, "\\$&").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t"); 
+				case "javascript":
+					result = inputText.replace(/[\\'"]/g, "\\$&").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t");
 					break;
-				case "hex": 
-					result = Array.from(inputText).map((char) => char.charCodeAt(0).toString(16).padStart(2, "0")).join(" "); 
+				case "hex":
+					result = Array.from(inputText).map((char) => char.charCodeAt(0).toString(16).padStart(2, "0")).join(" ");
 					break;
-				case "unicode": 
-					result = Array.from(inputText).map((char) => `\\u${char.charCodeAt(0).toString(16).padStart(4, "0")}`).join(""); 
+				case "unicode":
+					result = Array.from(inputText).map((char) => `\\u${char.charCodeAt(0).toString(16).padStart(4, "0")}`).join("");
 					break;
 				default: result = inputText;
 			}
@@ -70,21 +70,21 @@ export default function TextEncoderTool() {
 			switch (encodingType) {
 				case "url": result = decodeURIComponent(inputText); break;
 				case "base64": result = decodeURIComponent(escape(atob(inputText))); break;
-				case "html": 
-					result = inputText.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&#x2F;/g, "/"); 
+				case "html":
+					result = inputText.replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&#x2F;/g, "/");
 					break;
 				case "uri": result = decodeURI(inputText); break;
-				case "css": 
-					result = inputText.replace(/\\([0-9a-fA-F]+)\s?/g, (_match, code) => String.fromCharCode(parseInt(code, 16))); 
+				case "css":
+					result = inputText.replace(/\\([0-9a-fA-F]+)\s?/g, (_match, code) => String.fromCharCode(parseInt(code, 16)));
 					break;
-				case "javascript": 
-					result = inputText.replace(/\\n/g, "\n").replace(/\\r/g, "\r").replace(/\\t/g, "\t").replace(/\\([\\'"])/g, "$1"); 
+				case "javascript":
+					result = inputText.replace(/\\n/g, "\n").replace(/\\r/g, "\r").replace(/\\t/g, "\t").replace(/\\([\\'"])/g, "$1");
 					break;
-				case "hex": 
-					result = inputText.split(" ").filter((hex) => hex.length > 0).map((hex) => String.fromCharCode(parseInt(hex, 16))).join(""); 
+				case "hex":
+					result = inputText.split(" ").filter((hex) => hex.length > 0).map((hex) => String.fromCharCode(parseInt(hex, 16))).join("");
 					break;
-				case "unicode": 
-					result = inputText.replace(/\\u([0-9a-fA-F]{4})/g, (_match, code) => String.fromCharCode(parseInt(code, 16))); 
+				case "unicode":
+					result = inputText.replace(/\\u([0-9a-fA-F]{4})/g, (_match, code) => String.fromCharCode(parseInt(code, 16)));
 					break;
 				default: result = inputText;
 			}
@@ -156,7 +156,7 @@ export default function TextEncoderTool() {
 								</Tabs>
 							</div>
 
-							<Button 
+							<Button
 								onClick={activeTab === "encode" ? encodeText : decodeText}
 								disabled={!inputText.trim()}
 								className="w-full h-20 rounded-[2rem] text-xl font-black shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all gap-4 relative overflow-hidden"
@@ -201,7 +201,7 @@ export default function TextEncoderTool() {
 							placeholder="Paste your source text here..."
 							value={inputText}
 							onChange={(e) => setInputText(e.target.value)}
-							className="min-h-[220px] rounded-3xl bg-muted/20 border-border/40 p-6 font-mono text-lg focus-visible:ring-primary/20 transition-all"
+							className="min-h-[220px] rounded-3xl-off bg-muted/20 border-border/40 p-6 font-mono text-lg focus-visible:ring-primary/20 transition-all"
 						/>
 					</GlassCard>
 
@@ -224,11 +224,11 @@ export default function TextEncoderTool() {
 							<Textarea
 								value={outputText}
 								readOnly
-								className="min-h-[220px] rounded-3xl bg-primary/[0.03] border-primary/20 p-6 font-mono text-lg text-primary focus-visible:ring-0 cursor-default"
+								className="min-h-[220px] rounded-3xl-off bg-primary/[0.03] border-primary/20 p-6 font-mono text-lg text-primary focus-visible:ring-0 cursor-default"
 							/>
 						</GlassCard>
 					)}
-					
+
 					{!outputText && (
 						<div className="h-[220px] flex flex-col items-center justify-center rounded-[2.5rem] border-2 border-dashed border-border/30 bg-muted/5">
 							<HelpCircle className="w-12 h-12 text-muted-foreground/20 mb-4" />

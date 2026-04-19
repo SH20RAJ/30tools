@@ -115,69 +115,26 @@ export default function LogoGeneratorTool() {
 	const canvasRef = useRef(null);
 	const downloadLinkRef = useRef(null);
 
-	useEffect(() => {
-		generateLogo();
-	}, [generateLogo]);
+	const adjustColorBrightness = useCallback((hex, percent) => {
+		const num = parseInt(hex.replace("#", ""), 16);
+		const amt = Math.round(2.55 * percent);
+		const R = (num >> 16) + amt;
+		const G = ((num >> 8) & 0x00ff) + amt;
+		const B = (num & 0x0000ff) + amt;
+		return (
+			"#" +
+			(
+				0x1000000 +
+				(R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
+				(G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
+				(B < 255 ? (B < 1 ? 0 : B) : 255)
+			)
+				.toString(16)
+				.slice(1)
+		);
+	}, []);
 
-	const generateLogo = () => {
-		const canvas = canvasRef.current;
-		if (!canvas) return;
-
-		const ctx = canvas.getContext("2d");
-		const dpr = window.devicePixelRatio || 1;
-
-		// Set canvas size
-		canvas.width = 400 * dpr;
-		canvas.height = 200 * dpr;
-		canvas.style.width = "400px";
-		canvas.style.height = "200px";
-
-		ctx.scale(dpr, dpr);
-
-		// Clear canvas
-		ctx.clearRect(0, 0, 400, 200);
-
-		// Background
-		if (!isTransparent) {
-			ctx.fillStyle = backgroundColor;
-			ctx.fillRect(0, 0, 400, 200);
-		}
-
-		// Set font
-		ctx.font = `${fontSize[0]}px ${selectedFont.value}`;
-		ctx.textAlign = "center";
-		ctx.textBaseline = "middle";
-
-		// Measure text
-		const metrics = ctx.measureText(logoText);
-		const _textWidth = metrics.width;
-		const _textHeight = fontSize[0];
-
-		const x = 200;
-		const y = 100;
-
-		// Apply letter spacing
-		if (letterSpacing[0] !== 0) {
-			drawTextWithSpacing(ctx, logoText, x, y);
-		} else {
-			drawStyledText(ctx, logoText, x, y);
-		}
-	};
-
-	const drawTextWithSpacing = (ctx, text, x, y) => {
-		const chars = text.split("");
-		const totalWidth =
-			chars.reduce((acc, char) => acc + ctx.measureText(char).width, 0) +
-			(chars.length - 1) * letterSpacing[0];
-		let currentX = x - totalWidth / 2;
-
-		chars.forEach((char) => {
-			drawStyledText(ctx, char, currentX + ctx.measureText(char).width / 2, y);
-			currentX += ctx.measureText(char).width + letterSpacing[0];
-		});
-	};
-
-	const drawStyledText = (ctx, text, x, y) => {
+	const drawStyledText = useCallback((ctx, text, x, y) => {
 		// Shadow
 		if (selectedStyle.shadow) {
 			ctx.shadowColor = "rgba(0, 0, 0, 0.3)";
@@ -220,26 +177,74 @@ export default function LogoGeneratorTool() {
 		ctx.shadowBlur = 0;
 		ctx.shadowOffsetX = 0;
 		ctx.shadowOffsetY = 0;
-	};
+	}, [selectedStyle, selectedColor, adjustColorBrightness]);
 
-	const adjustColorBrightness = (hex, percent) => {
-		const num = parseInt(hex.replace("#", ""), 16);
-		const amt = Math.round(2.55 * percent);
-		const R = (num >> 16) + amt;
-		const G = ((num >> 8) & 0x00ff) + amt;
-		const B = (num & 0x0000ff) + amt;
-		return (
-			"#" +
-			(
-				0x1000000 +
-				(R < 255 ? (R < 1 ? 0 : R) : 255) * 0x10000 +
-				(G < 255 ? (G < 1 ? 0 : G) : 255) * 0x100 +
-				(B < 255 ? (B < 1 ? 0 : B) : 255)
-			)
-				.toString(16)
-				.slice(1)
-		);
-	};
+	const drawTextWithSpacing = useCallback((ctx, text, x, y) => {
+		const chars = text.split("");
+		const totalWidth =
+			chars.reduce((acc, char) => acc + ctx.measureText(char).width, 0) +
+			(chars.length - 1) * letterSpacing[0];
+		let currentX = x - totalWidth / 2;
+
+		chars.forEach((char) => {
+			drawStyledText(ctx, char, currentX + ctx.measureText(char).width / 2, y);
+			currentX += ctx.measureText(char).width + letterSpacing[0];
+		});
+	}, [letterSpacing, drawStyledText]);
+
+	const generateLogo = useCallback(() => {
+		if (typeof window === "undefined") return;
+		const canvas = canvasRef.current;
+		if (!canvas) return;
+
+		const ctx = canvas.getContext("2d");
+		const dpr = window.devicePixelRatio || 1;
+
+		// Set canvas size
+		canvas.width = 400 * dpr;
+		canvas.height = 200 * dpr;
+		canvas.style.width = "400px";
+		canvas.style.height = "200px";
+
+		ctx.scale(dpr, dpr);
+
+		// Clear canvas
+		ctx.clearRect(0, 0, 400, 200);
+
+		// Background
+		if (!isTransparent) {
+			ctx.fillStyle = backgroundColor;
+			ctx.fillRect(0, 0, 400, 200);
+		}
+
+		// Set font
+		ctx.font = `${fontSize[0]}px ${selectedFont.value}`;
+		ctx.textAlign = "center";
+		ctx.textBaseline = "middle";
+
+		const x = 200;
+		const y = 100;
+
+		// Apply letter spacing
+		if (letterSpacing[0] !== 0) {
+			drawTextWithSpacing(ctx, logoText, x, y);
+		} else {
+			drawStyledText(ctx, logoText, x, y);
+		}
+	}, [
+		isTransparent,
+		backgroundColor,
+		fontSize,
+		selectedFont,
+		letterSpacing,
+		logoText,
+		drawTextWithSpacing,
+		drawStyledText,
+	]);
+
+	useEffect(() => {
+		generateLogo();
+	}, [generateLogo]);
 
 	const downloadLogo = (format = "png") => {
 		const canvas = canvasRef.current;

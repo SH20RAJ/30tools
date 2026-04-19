@@ -10,7 +10,7 @@ export default function MarkdownToText() {
 	const [markdown, setMarkdown] = useState("");
 	const [plainText, setPlainText] = useState("");
 
-	const markdownToText = (md) => {
+	const markdownToText = useCallback((md) => {
 		if (!md) return "";
 
 		let text = md;
@@ -52,7 +52,7 @@ export default function MarkdownToText() {
 		text = text.replace(/\n\s*\n/g, "\n\n").trim();
 
 		return text;
-	};
+	}, []);
 
 	useEffect(() => {
 		setPlainText(markdownToText(markdown));

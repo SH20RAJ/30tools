@@ -284,13 +284,13 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 					prev.map((f) =>
 						f.id === fileData.id
 							? {
-									...f,
-									status: "completed",
-									convertedBlob: result.blob,
-									convertedSize: result.size,
-									convertedWidth: result.width,
-									convertedHeight: result.height,
-								}
+								...f,
+								status: "completed",
+								convertedBlob: result.blob,
+								convertedSize: result.size,
+								convertedWidth: result.width,
+								convertedHeight: result.height,
+							}
 							: f,
 					),
 				);
@@ -401,7 +401,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 		<div className="w-full max-w-5xl mx-auto space-y-12 pb-24 animate-in">
 			{/* Hero / Uploader Section */}
 			<section>
-				<PremiumDropZone 
+				<PremiumDropZone
 					onDrop={handleDrop}
 					onDragOver={handleDragOver}
 					onDragLeave={handleDragLeave}
@@ -419,7 +419,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 					onChange={handleFileSelect}
 					className="hidden"
 				/>
-				
+
 				{files.length > 0 && (
 					<div className="mt-8 flex justify-between items-center px-4">
 						<div className="flex items-center gap-4">
@@ -448,7 +448,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 								<ImageIcon className="text-primary w-6 h-6" />
 								Your Gallery
 							</h3>
-							
+
 							<div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
 								{files.map((fileData) => {
 									const savings = getSavingsInfo(fileData.size, fileData.convertedSize);
@@ -456,7 +456,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 										<div
 											key={fileData.id}
 											className={cn(
-												"flex items-center gap-4 p-5 rounded-3xl border border-border/40 transition-all duration-300 group hover:bg-primary/[0.02]",
+												"flex items-center gap-4 p-5 rounded-3xl-off border border-border/40 transition-all duration-300 group hover:bg-primary/[0.02]",
 												fileData.status === "completed" && "bg-emerald-500/[0.03] border-emerald-500/20"
 											)}
 										>
@@ -492,14 +492,14 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 													<ArrowRightIcon className="h-3 w-3" />
 													<span className="text-foreground">
 														{supportedFormats.output[conversionSettings.outputFormat].name}
-														{fileData.convertedSize && 
+														{fileData.convertedSize &&
 															<span className="ml-2 font-bold text-emerald-500">
 																({formatFileSize(fileData.convertedSize)})
 															</span>
 														}
 													</span>
 												</div>
-												
+
 												{savings && (
 													<div className="mt-3">
 														<Badge variant={savings.isSmaller ? "success" : "secondary"} className="rounded-full">
@@ -568,7 +568,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 										</Select>
 									</div>
 
-									<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40">
+									<div className="flex items-center justify-between p-6 rounded-3xl-off bg-muted/20 border border-border/40">
 										<div className="space-y-1">
 											<Label htmlFor="preserve-exif" className="text-lg font-bold">Preserve Metadata</Label>
 											<p className="text-sm text-muted-foreground leading-tight">Keep camera settings & location</p>
@@ -627,7 +627,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 								</TabsContent>
 
 								<TabsContent value="resize" className="space-y-8 mt-0">
-									<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40 overflow-hidden relative">
+									<div className="flex items-center justify-between p-6 rounded-3xl-off bg-muted/20 border border-border/40 overflow-hidden relative">
 										<div className="space-y-1 z-10">
 											<Label htmlFor="enable-resize" className="text-lg font-bold">Image Rescaling</Label>
 											<p className="text-sm text-muted-foreground leading-tight">Change pixel dimensions</p>
@@ -666,7 +666,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 												</div>
 											</div>
 
-											<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40">
+											<div className="flex items-center justify-between p-6 rounded-3xl-off bg-muted/20 border border-border/40">
 												<Label className="text-base font-bold">Keep Aspect Ratio</Label>
 												<Switch
 													checked={conversionSettings.maintainAspectRatio}
@@ -689,10 +689,10 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 									</div>
 									{isConverting && <Progress value={progress} className="h-3 rounded-full bg-muted/50 overflow-hidden shadow-inner" />}
 								</div>
-								
+
 								<div className="space-y-4">
-									<Button 
-										onClick={handleConvert} 
+									<Button
+										onClick={handleConvert}
 										disabled={isConverting || files.length === 0}
 										className="w-full h-20 rounded-[2rem] text-xl font-black tracking-tighter shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-4 group overflow-hidden"
 									>
@@ -711,9 +711,9 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 									</Button>
 
 									{files.some(f => f.status === "completed") && (
-										<Button 
-											onClick={downloadAll} 
-											variant="secondary" 
+										<Button
+											onClick={downloadAll}
+											variant="secondary"
 											className="w-full h-16 rounded-2xl font-black text-lg shadow-xl hover:bg-secondary/80 transition-all flex items-center justify-center gap-3"
 										>
 											<DownloadIcon className="w-6 h-6" />

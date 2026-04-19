@@ -61,15 +61,20 @@ export default function HashGeneratorTool() {
 		"This is a sample text for hashing demonstration.",
 	];
 
-	useEffect(() => {
-		if (inputText) {
-			generateHashes(inputText);
-		} else {
-			setHashes({});
-		}
-	}, [inputText, generateHashes]);
+	const loadCryptoJS = useCallback(() => {
+		return new Promise((resolve, reject) => {
+			if (typeof document === "undefined") return resolve();
+			const script = document.createElement("script");
+			script.src =
+				"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js";
+			script.onload = resolve;
+			script.onerror = reject;
+			document.head.appendChild(script);
+		});
+	}, []);
 
-	const generateHashes = async (text) => {
+	const generateHashes = useCallback(async (text) => {
+		if (typeof window === "undefined") return;
 		setIsHashing(true);
 		const encoder = new TextEncoder();
 		const data = encoder.encode(text);
@@ -86,7 +91,7 @@ export default function HashGeneratorTool() {
 				results["SHA-3"] = window.CryptoJS.SHA3(text).toString();
 			} else {
 				// Fallback to Web Crypto API for supported algorithms
-				if (crypto.subtle) {
+				if (typeof crypto !== "undefined" && crypto.subtle) {
 					try {
 						const sha256Buffer = await crypto.subtle.digest("SHA-256", data);
 						results["SHA-256"] = Array.from(new Uint8Array(sha256Buffer))
@@ -126,18 +131,15 @@ export default function HashGeneratorTool() {
 		} finally {
 			setIsHashing(false);
 		}
-	};
+	}, [loadCryptoJS]);
 
-	const loadCryptoJS = () => {
-		return new Promise((resolve, reject) => {
-			const script = document.createElement("script");
-			script.src =
-				"https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js";
-			script.onload = resolve;
-			script.onerror = reject;
-			document.head.appendChild(script);
-		});
-	};
+	useEffect(() => {
+		if (inputText) {
+			generateHashes(inputText);
+		} else {
+			setHashes({});
+		}
+	}, [inputText, generateHashes]);
 
 	const copyToClipboard = (text, algorithm) => {
 		navigator.clipboard.writeText(text);

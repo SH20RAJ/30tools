@@ -20,7 +20,7 @@ export default function UserAgentParserTool() {
 	const [parsedData, setParsedData] = useState(null);
 	const [copied, setCopied] = useState(false);
 
-	const parseUserAgent = (ua) => {
+	const parseUserAgent = useCallback((ua) => {
 		if (!ua) return null;
 
 		// Basic parsing logic (in production, use a proper UA parser library)
@@ -131,7 +131,18 @@ export default function UserAgentParserTool() {
 		}
 
 		return parsed;
-	};
+	}, []);
+
+	const loadCurrentUserAgent = useCallback(() => {
+		if (typeof navigator === "undefined") return;
+		setUserAgent(navigator.userAgent);
+		const parsed = parseUserAgent(navigator.userAgent);
+		setParsedData(parsed);
+	}, [parseUserAgent]);
+
+	useEffect(() => {
+		loadCurrentUserAgent();
+	}, [loadCurrentUserAgent]);
 
 	const handleParse = () => {
 		if (!userAgent.trim()) {
@@ -143,39 +154,6 @@ export default function UserAgentParserTool() {
 		setParsedData(parsed);
 		toast.success("User agent parsed successfully!");
 	};
-
-	const loadCurrentUserAgent = () => {
-		setUserAgent(navigator.userAgent);
-		const parsed = parseUserAgent(navigator.userAgent);
-		setParsedData(parsed);
-		toast.success("Current user agent loaded!");
-	};
-
-	const copyToClipboard = async (text) => {
-		try {
-			await navigator.clipboard.writeText(text);
-			setCopied(true);
-			toast.success("Copied to clipboard!");
-			setTimeout(() => setCopied(false), 2000);
-		} catch (error) {
-			toast.error("Failed to copy");
-		}
-	};
-
-	const getDeviceIcon = (type) => {
-		switch (type) {
-			case "Mobile":
-				return <Smartphone className="h-5 w-5" />;
-			case "Tablet":
-				return <Smartphone className="h-5 w-5" />;
-			default:
-				return <Monitor className="h-5 w-5" />;
-		}
-	};
-
-	useEffect(() => {
-		loadCurrentUserAgent();
-	}, [loadCurrentUserAgent]);
 
 	return (
 		<div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-pink-50 py-12 px-4">

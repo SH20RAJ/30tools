@@ -16,13 +16,15 @@ export default function NotesTool() {
 
 	// Load content from localStorage on mount
 	useEffect(() => {
-		const savedContent = localStorage.getItem("notes-content");
-		const savedTime = localStorage.getItem("notes-last-saved");
+		if (typeof window !== "undefined") {
+			const savedContent = localStorage.getItem("notes-content");
+			const savedTime = localStorage.getItem("notes-last-saved");
 
-		if (savedContent) {
-			setContent(savedContent);
-			if (savedTime) {
-				setLastSaved(new Date(savedTime));
+			if (savedContent) {
+				setContent(savedContent);
+				if (savedTime) {
+					setLastSaved(new Date(savedTime));
+				}
 			}
 		}
 	}, []);

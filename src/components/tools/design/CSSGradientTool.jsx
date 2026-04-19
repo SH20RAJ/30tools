@@ -113,7 +113,7 @@ export default function CSSGradientTool() {
 		{ label: "↑ Top", value: "0deg" },
 	];
 
-	const generateCSS = () => {
+	const generateCSS = useCallback(() => {
 		const colorStops = colors
 			.sort((a, b) => a.position - b.position)
 			.map((c) => `${c.color} ${c.position}%`)
@@ -128,7 +128,7 @@ export default function CSSGradientTool() {
 
 		setCssOutput(css);
 		return css;
-	};
+	}, [gradientType, direction, colors]);
 
 	useEffect(() => {
 		generateCSS();

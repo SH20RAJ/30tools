@@ -59,7 +59,7 @@ export default function PdfCompressorTool() {
 
 		// Simulate compression progress
 		const progressSteps = [10, 25, 45, 60, 80, 95, 100];
-		
+
 		for (let i = 0; i < progressSteps.length; i++) {
 			await new Promise((resolve) => setTimeout(resolve, 600));
 			setCompressionProgress(progressSteps[i]);
@@ -73,7 +73,7 @@ export default function PdfCompressorTool() {
 			high: 0.7,
 			lossless: 0.85,
 		}[compressionSettings.quality] || 0.5;
-		
+
 		const compressedSize = Math.floor(originalSize * compressionRatio);
 		const reductionPercentage = Math.round(
 			((originalSize - compressedSize) / originalSize) * 100,
@@ -129,7 +129,7 @@ export default function PdfCompressorTool() {
 			{/* Uploader */}
 			<section>
 				{!selectedFile ? (
-					<PremiumDropZone 
+					<PremiumDropZone
 						onDrop={(e) => { e.preventDefault(); handleFileUpload({ target: { files: e.dataTransfer.files } }); }}
 						onDragOver={(e) => e.preventDefault()}
 						onClick={() => fileInputRef.current?.click()}
@@ -140,7 +140,7 @@ export default function PdfCompressorTool() {
 				) : (
 					<GlassCard className="p-8 group relative overflow-hidden">
 						<div className="flex items-center gap-6">
-							<div className="w-20 h-20 rounded-3xl bg-destructive/10 text-destructive flex items-center justify-center flex-shrink-0 shadow-lg shadow-destructive/5 group-hover:scale-110 transition-transform duration-500">
+							<div className="w-20 h-20 rounded-3xl-off bg-destructive/10 text-destructive flex items-center justify-center flex-shrink-0 shadow-lg shadow-destructive/5 group-hover:scale-110 transition-transform duration-500">
 								<FileIcon className="w-10 h-10" />
 							</div>
 							<div className="flex-1 min-w-0">
@@ -185,7 +185,7 @@ export default function PdfCompressorTool() {
 											variant={compressionSettings.quality === q.id ? "default" : "outline"}
 											size="lg"
 											className={cn(
-												"h-24 rounded-3xl flex flex-col items-center justify-center gap-1 border-border/40 transition-all",
+												"h-24 rounded-3xl-off flex flex-col items-center justify-center gap-1 border-border/40 transition-all",
 												compressionSettings.quality !== q.id && "hover:border-primary/40 bg-muted/10"
 											)}
 											onClick={() => setCompressionSettings(prev => ({ ...prev, quality: q.id }))}
@@ -197,11 +197,11 @@ export default function PdfCompressorTool() {
 								</div>
 
 								<div className="space-y-4">
-									<div className="flex items-center justify-between p-5 rounded-3xl bg-muted/20 border border-border/40">
+									<div className="flex items-center justify-between p-5 rounded-3xl-off bg-muted/20 border border-border/40">
 										<Label className="font-bold">Optimise Images</Label>
-										<Button 
-											variant={compressionSettings.optimizeImages ? "default" : "outline"} 
-											size="sm" 
+										<Button
+											variant={compressionSettings.optimizeImages ? "default" : "outline"}
+											size="sm"
 											className="rounded-full px-6 font-bold"
 											onClick={() => setCompressionSettings(prev => ({ ...prev, optimizeImages: !prev.optimizeImages }))}
 										>
@@ -210,8 +210,8 @@ export default function PdfCompressorTool() {
 									</div>
 								</div>
 
-								<Button 
-									onClick={simulateCompression} 
+								<Button
+									onClick={simulateCompression}
 									disabled={isCompressing || compressedFile}
 									className="w-full h-20 rounded-[2rem] text-xl font-black shadow-2xl shadow-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all gap-4 overflow-hidden relative"
 								>
@@ -227,7 +227,7 @@ export default function PdfCompressorTool() {
 					<div className="lg:col-span-7 space-y-8">
 						<GlassCard className="p-8 h-full flex flex-col">
 							<h3 className="text-2xl font-bold mb-8">Optimization Summary</h3>
-							
+
 							<div className="flex-1 flex flex-col justify-center gap-12">
 								{isCompressing ? (
 									<div className="space-y-8 animate-in text-center p-12">

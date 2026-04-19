@@ -14,24 +14,24 @@ export const GlassCard = ({ children, className }) => (
 );
 
 export const PremiumDropZone = ({ onDrop, onDragOver, onDragLeave, onClick, dragActive, title, subtitle, icon: Icon = Upload }) => (
-	<div 
+	<div
 		onDrop={onDrop}
 		onDragOver={onDragOver}
 		onDragLeave={onDragLeave}
 		className={cn(
 			"group relative flex flex-col items-center justify-center py-20 px-8 rounded-[2rem] border-2 border-dashed transition-all duration-500",
-			dragActive 
-				? "border-primary bg-primary/5 scale-[0.99] shadow-inner" 
+			dragActive
+				? "border-primary bg-primary/5 scale-[0.99] shadow-inner"
 				: "border-border/60 hover:border-primary/40 hover:bg-primary/[0.02]"
 		)}
 	>
 		<div className={cn(
-			"w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center mb-6 text-primary scale-110 shadow-lg shadow-primary/10 group-hover:scale-125 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-700",
+			"w-20 h-20 rounded-3xl-off bg-primary/10 flex items-center justify-center mb-6 text-primary scale-110 shadow-lg shadow-primary/10 group-hover:scale-125 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-700",
 			dragActive && "animate-pulse"
 		)}>
 			<Icon className="w-10 h-10" />
 		</div>
-		
+
 		<h3 className="text-2xl font-bold mb-3 tracking-tight text-center">
 			{title || "Click or drop files here"}
 		</h3>
@@ -39,7 +39,7 @@ export const PremiumDropZone = ({ onDrop, onDragOver, onDragLeave, onClick, drag
 			{subtitle || "Secure browser-side processing. No files are uploaded to our servers."}
 		</p>
 
-		<Button 
+		<Button
 			onClick={onClick}
 			size="lg"
 			className="h-14 px-10 rounded-2xl font-bold bg-primary text-primary-foreground hover:scale-105 active:scale-95 transition-all shadow-xl shadow-primary/20"

@@ -39,7 +39,7 @@ export default function PasswordCheckerTool() {
 	const [_isCompromised, _setIsCompromised] = useState(false);
 	const [estimatedCrackTime, setEstimatedCrackTime] = useState("");
 
-	const calculatePasswordStrength = (pwd) => {
+	const calculatePasswordStrength = useCallback((pwd) => {
 		let score = 0;
 		const checks = [];
 
@@ -114,9 +114,9 @@ export default function PasswordCheckerTool() {
 		}
 
 		return { score: Math.max(0, Math.min(100, score)), checks };
-	};
+	}, []);
 
-	const calculateCrackTime = (pwd) => {
+	const calculateCrackTime = useCallback((pwd) => {
 		if (!pwd) return "";
 
 		let charset = 0;
@@ -125,7 +125,7 @@ export default function PasswordCheckerTool() {
 		if (/\d/.test(pwd)) charset += 10;
 		if (/[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(pwd)) charset += 32;
 
-		const combinations = charset ** pwd.length;
+		const combinations = Math.pow(charset, pwd.length);
 		const secondsToCrack = combinations / (2 * 1000000000); // Assuming 1 billion guesses per second
 
 		if (secondsToCrack < 60) return "Less than a minute";
@@ -138,7 +138,7 @@ export default function PasswordCheckerTool() {
 		if (secondsToCrack < 31536000000)
 			return `${Math.ceil(secondsToCrack / 31536000)} years`;
 		return "Centuries";
-	};
+	}, []);
 
 	useEffect(() => {
 		if (password) {

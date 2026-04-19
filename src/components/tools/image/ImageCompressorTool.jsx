@@ -25,6 +25,21 @@ export default function ImageCompressorTool() {
 	const [quality, setQuality] = useState([80]);
 	const [dragActive, setDragActive] = useState(false);
 
+	const processFiles = useCallback((fileList) => {
+		const newFiles = fileList.map((file, index) => ({
+			id: Date.now() + index,
+			file,
+			name: file.name,
+			originalSize: file.size,
+			status: "pending",
+			progress: 0,
+			compressedBlob: null,
+			compressedSize: null,
+		}));
+
+		setFiles((prev) => [...prev, ...newFiles]);
+	}, []);
+
 	const handleDrag = useCallback((e) => {
 		e.preventDefault();
 		e.stopPropagation();
@@ -50,7 +65,7 @@ export default function ImageCompressorTool() {
 				processFiles(imageFiles);
 			}
 		},
-		[],
+		[processFiles],
 	);
 
 	const handleFileInput = (e) => {
@@ -58,21 +73,6 @@ export default function ImageCompressorTool() {
 		if (selectedFiles.length > 0) {
 			processFiles(selectedFiles);
 		}
-	};
-
-	const processFiles = (fileList) => {
-		const newFiles = fileList.map((file, index) => ({
-			id: Date.now() + index,
-			file,
-			name: file.name,
-			originalSize: file.size,
-			status: "pending",
-			progress: 0,
-			compressedBlob: null,
-			compressedSize: null,
-		}));
-
-		setFiles((prev) => [...prev, ...newFiles]);
 	};
 
 	const formatFileSize = (bytes) => {
@@ -83,8 +83,9 @@ export default function ImageCompressorTool() {
 		return `${parseFloat((bytes / k ** i).toFixed(2))} ${sizes[i]}`;
 	};
 
-	const compressImage = async (fileItem) => {
+	const compressImage = useCallback(async (fileItem) => {
 		return new Promise((resolve) => {
+			if (typeof window === "undefined") return resolve(null);
 			const canvas = document.createElement("canvas");
 			const ctx = canvas.getContext("2d");
 			const img = new Image();
@@ -161,7 +162,7 @@ export default function ImageCompressorTool() {
 
 			img.src = URL.createObjectURL(fileItem.file);
 		});
-	};
+	}, [quality]);
 
 	const handleCompress = async () => {
 		setIsCompressing(true);
@@ -181,12 +182,12 @@ export default function ImageCompressorTool() {
 						prev.map((f, index) =>
 							index === i
 								? {
-										...f,
-										status: "completed",
-										progress: 100,
-										compressedBlob: result.blob,
-										compressedSize: result.size,
-									}
+									...f,
+									status: "completed",
+									progress: 100,
+									compressedBlob: result.blob,
+									compressedSize: result.size,
+								}
 								: f,
 						),
 					);
@@ -241,7 +242,7 @@ export default function ImageCompressorTool() {
 		<div className="w-full max-w-5xl mx-auto space-y-12 animate-in pb-24">
 			{/* Uploader */}
 			<section>
-				<PremiumDropZone 
+				<PremiumDropZone
 					onDrop={handleDrop}
 					onDragOver={handleDrag}
 					onDragLeave={handleDrag}
@@ -297,7 +298,7 @@ export default function ImageCompressorTool() {
 								<div className="grid grid-cols-2 gap-4">
 									<Button 
 										onClick={handleCompress} 
-										disabled={isCompressing || !files.some(f => f.status === "pending")}
+										disabled={isComprounded-3xl-off!files.some(f => f.status === "pending")}
 										className="h-20 rounded-3xl text-lg font-black tracking-tight shadow-xl shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-3"
 									>
 										{isCompressing ? <RefreshCwIcon className="animate-spin w-5 h-5" /> : <ZapIcon className="w-5 h-5 fill-current" />}
@@ -306,7 +307,7 @@ export default function ImageCompressorTool() {
 									
 									<Button 
 										variant="outline" 
-										onClick={clearAll}
+										onClick={clearAlrounded-3xl-off
 										className="h-20 rounded-3xl font-bold border-border/40 hover:bg-destructive/5 hover:text-destructive hover:border-destructive/20 transition-all px-0"
 									>
 										Clear All
@@ -320,11 +321,11 @@ export default function ImageCompressorTool() {
 								<div className="flex justify-between text-base font-bold text-muted-foreground uppercase tracking-widest text-[10px]">
 									Optimization Stats
 								</div>
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid rounded-3xl-off gap-4">
 									<div className="p-6 rounded-3xl bg-muted/20 border border-border/40 text-center">
 										<div className="text-2xl font-black">{files.length}</div>
 										<div className="text-xs text-muted-foreground font-bold">Files</div>
-									</div>
+									</div>rounded-3xl-off
 									<div className="p-6 rounded-3xl bg-emerald-500/5 border border-emerald-500/20 text-center">
 										<div className="text-2xl font-black text-emerald-500">
 											{files.filter(f => f.status === "completed").length}
@@ -347,80 +348,81 @@ export default function ImageCompressorTool() {
 						</GlassCard>
 					</div>
 
-					{/* File List Column */}
-					<div className="lg:col-span-7 space-y-6">
-						<GlassCard className="p-8 h-full">
-							<h3 className="text-2xl font-bold mb-8">Ready to Process</h3>
-							<div className="space-y-4 max-h-[650px] overflow-y-auto pr-2 custom-scrollbar">
-								{files.map((fileItem) => (
-									<div
-										key={fileItem.id}
-										className={cn(
+					{/* File List Column */ }
+	<div className="lg:col-span-7 space-y-6">
+		<GlassCard className="p-8 h-full">
+			<h3 className="text-2xl font-bold mb-8">Ready to Process</h3>
+			<div className="space-y-4 max-h-[650px] overflow-y-auto pr-2 custom-scrollbar">
+				{files.map((fileItem) => (
+					<div
+						key={fileItem.id}
+						className={cn(rounded - 3xl - off
 											"flex items-center gap-5 p-5 rounded-3xl border border-border/40 transition-all duration-300",
-											fileItem.status === "completed" && "bg-emerald-500/[0.03] border-emerald-500/20 shadow-sm shadow-emerald-500/5"
-										)}
-									>
-										<div className="w-16 h-16 rounded-2xl bg-muted/30 flex items-center justify-center text-primary flex-shrink-0">
-											<FileIcon className="h-7 w-7" />
-										</div>
-										
-										<div className="flex-1 min-w-0">
-											<p className="font-bold truncate text-lg group-hover:text-primary transition-colors">
-												{fileItem.name}
-											</p>
-											<div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
-												<span className="bg-muted/30 px-2 py-0.5 rounded-md font-mono">{formatFileSize(fileItem.originalSize)}</span>
-												{fileItem.compressedSize && (
-													<>
-														<ArrowRight className="h-3 w-3" />
-														<span className="text-emerald-500 font-bold">
-															{formatFileSize(fileItem.compressedSize)}
-														</span>
-													</>
-												)}
-											</div>
-											
-											{fileItem.compressedSize && (
-												<div className="mt-2">
-													<Badge variant="success" className="rounded-full px-3 py-1 bg-emerald-500 text-white border-0">
-														{getSavingsPercentage(fileItem.originalSize, fileItem.compressedSize)}% Saved
-													</Badge>
-												</div>
-											)}
-											
-											{fileItem.status === "compressing" && (
-												<Progress value={fileItem.progress} className="mt-3 h-2 rounded-full" />
-											)}
-										</div>
+							fileItem.status === "completed" && "bg-emerald-500/[0.03] border-emerald-500/20 shadow-sm shadow-emerald-500/5"
+						)}
+					>
+						<div className="w-16 h-16 rounded-2xl bg-muted/30 flex items-center justify-center text-primary flex-shrink-0">
+							<FileIcon className="h-7 w-7" />
+						</div>
 
-										<div className="flex flex-col gap-2">
-											{fileItem.status === "completed" && (
-												<Button 
-													size="icon" 
-													variant="secondary" 
-													onClick={() => downloadFile(fileItem)}
-													className="rounded-xl hover:scale-110 transition-transform shadow-md"
-												>
-													<DownloadIcon className="h-5 w-5" />
-												</Button>
-											)}
-											<Button 
-												onClick={() => removeFile(fileItem.id)} 
-												variant="ghost" 
-												size="icon"
-												className="rounded-xl hover:text-destructive transition-colors"
-											>
-												<XIcon className="h-5 w-5" />
-											</Button>
-										</div>
-									</div>
-								))}
+						<div className="flex-1 min-w-0">
+							<p className="font-bold truncate text-lg group-hover:text-primary transition-colors">
+								{fileItem.name}
+							</p>
+							<div className="flex items-center gap-4 text-sm font-medium text-muted-foreground">
+								<span className="bg-muted/30 px-2 py-0.5 rounded-md font-mono">{formatFileSize(fileItem.originalSize)}</span>
+								{fileItem.compressedSize && (
+									<>
+										<ArrowRight className="h-3 w-3" />
+										<span className="text-emerald-500 font-bold">
+											{formatFileSize(fileItem.compressedSize)}
+										</span>
+									</>
+								)}
 							</div>
-						</GlassCard>
+
+							{fileItem.compressedSize && (
+								<div className="mt-2">
+									<Badge variant="success" className="rounded-full px-3 py-1 bg-emerald-500 text-white border-0">
+										{getSavingsPercentage(fileItem.originalSize, fileItem.compressedSize)}% Saved
+									</Badge>
+								</div>
+							)}
+
+							{fileItem.status === "compressing" && (
+								<Progress value={fileItem.progress} className="mt-3 h-2 rounded-full" />
+							)}
+						</div>
+
+						<div className="flex flex-col gap-2">
+							{fileItem.status === "completed" && (
+								<Button
+									size="icon"
+									variant="secondary"
+									onClick={() => downloadFile(fileItem)}
+									className="rounded-xl hover:scale-110 transition-transform shadow-md"
+								>
+									<DownloadIcon className="h-5 w-5" />
+								</Button>
+							)}
+							<Button
+								onClick={() => removeFile(fileItem.id)}
+								variant="ghost"
+								size="icon"
+								className="rounded-xl hover:text-destructive transition-colors"
+							>
+								<XIcon className="h-5 w-5" />
+							</Button>
+						</div>
 					</div>
-				</div>
-			)}
-		</div>
+				))}
+			</div>
+		</GlassCard>
+	</div>
+				</div >
+			)
+}
+		</div >
 	);
 }
 

@@ -56,20 +56,7 @@ export default function BackgroundRemoverTool() {
 		processFiles(selectedFiles);
 	};
 
-	const handleDrop = useCallback(
-		(e) => {
-			e.preventDefault();
-			const droppedFiles = Array.from(e.dataTransfer.files);
-			processFiles(droppedFiles);
-		},
-		[processFiles],
-	);
-
-	const handleDragOver = useCallback((e) => {
-		e.preventDefault();
-	}, []);
-
-	const processFiles = (fileList) => {
+	const processFiles = useCallback((fileList) => {
 		const validFiles = fileList.filter((file) => {
 			const isValidType = supportedFormats.includes(file.type);
 			const isValidSize = file.size <= maxFileSize;
@@ -104,11 +91,11 @@ export default function BackgroundRemoverTool() {
 		}));
 
 		setFiles((prev) => [...prev, ...newFiles]);
-	};
+	}, [supportedFormats, maxFileSize]);
 
-	// Simulate background removal (in real implementation, you'd use a service like remove.bg API or client-side ML)
 	const removeBackground = useCallback(async (fileData) => {
 		return new Promise((resolve) => {
+			if (typeof window === "undefined") return resolve(null);
 			const img = new Image();
 			img.onload = () => {
 				const canvas = document.createElement("canvas");
@@ -121,7 +108,6 @@ export default function BackgroundRemoverTool() {
 				ctx.drawImage(img, 0, 0);
 
 				// Simulate background removal by creating a simple edge detection effect
-				// In a real implementation, this would use ML models or API services
 				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 				const data = imageData.data;
 
@@ -132,7 +118,6 @@ export default function BackgroundRemoverTool() {
 					const b = data[i + 2];
 					const brightness = (r + g + b) / 3;
 
-					// If pixel is bright (likely background), make it transparent
 					if (brightness > 200) {
 						data[i + 3] = 0; // Set alpha to 0 (transparent)
 					}
@@ -151,6 +136,19 @@ export default function BackgroundRemoverTool() {
 
 			img.src = fileData.originalUrl;
 		});
+	}, []);
+
+	const handleDrop = useCallback(
+		(e) => {
+			e.preventDefault();
+			const droppedFiles = Array.from(e.dataTransfer.files);
+			processFiles(droppedFiles);
+		},
+		[processFiles],
+	);
+
+	const handleDragOver = useCallback((e) => {
+		e.preventDefault();
 	}, []);
 
 	const handleRemoveBackground = async () => {
