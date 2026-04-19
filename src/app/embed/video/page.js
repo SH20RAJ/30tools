@@ -30,7 +30,7 @@ export const metadata = {
 		siteName: "30tools",
 		images: [
 			{
-				url: "/og-images/video.jpg",
+				url: "/og-image.jpg",
 				width: 1200,
 				height: 630,
 				alt: "Free Video Player Online - No Signup | 30tools",
@@ -44,7 +44,7 @@ export const metadata = {
 		title: "Free Video Player Online - No Signup | 30tools",
 		description:
 			"Professional video tool. Free online processing with high-quality results. No registration required, instant results.",
-		images: ["/og-images/video.jpg"],
+		images: ["/og-image.jpg"],
 		creator: "@30tools",
 	},
 

@@ -14,7 +14,7 @@
 
 [Explore all 733+ tools →](https://30tools.com/search)
 
-![30tools](https://30tools.com/og-image.png)
+![30tools](https://30tools.com/og-image.jpg)
 
 ---
 

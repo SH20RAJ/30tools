@@ -1,5 +1,5 @@
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
+import { AppleFooter } from "@/components/footers/AppleFooter";
+import { AppleNavbar } from "@/components/navigation/AppleNavbar";
 
 export const metadata = {
 	title: "Free SEO Tools Online - No Signup | 30tools",
@@ -15,7 +15,7 @@ export const metadata = {
 		siteName: "30tools",
 		images: [
 			{
-				url: "/og-images/seo-tools.jpg",
+				url: "/og-image.jpg",
 				width: 1200,
 				height: 630,
 				alt: "Free SEO Tools Collection",
@@ -28,14 +28,7 @@ export const metadata = {
 		title: "SEO Tools - Free Online SEO Suite",
 		description:
 			"Boost your rankings with our free SEO tools. Keyword planner, backlink checker, site audit, and more.",
-		images: [
-			{
-				url: "/og-images/seo-tools.jpg",
-				width: 1200,
-				height: 630,
-				alt: "Free SEO Tools Collection",
-			},
-		],
+		images: ["/og-image.jpg"],
 	},
 	robots: {
 		index: true,
@@ -96,19 +89,22 @@ const jsonLdSchemas = {
 };
 
 export default function SEOToolsLayout({ children }) {
+	const categories = [
+		{ label: "SEO Tools", href: "/search?category=seo" },
+		{ label: "Developer Tools", href: "/search?category=developer" },
+	];
+
 	return (
-		<>
+		<div className="min-h-screen flex flex-col bg-background">
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			{children}
-		</>
-	);
-}
- />
+			<AppleNavbar />
+			<main className="flex-1">{children}</main>
+			<AppleFooter categories={categories} />
 		</div>
 	);
 }

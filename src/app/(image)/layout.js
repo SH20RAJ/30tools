@@ -13,7 +13,7 @@ export const metadata = {
 		siteName: "30tools",
 		images: [
 			{
-				url: "/og-images/image-tools.jpg",
+				url: "/og-image.jpg",
 				width: 1200,
 				height: 630,
 				alt: "Free Image Tools Collection",
@@ -26,7 +26,7 @@ export const metadata = {
 		title: "Image Tools - Free AI Photo Editing Suite",
 		description:
 			"Edit, convert, and enhance your photos with our free AI-powered tools.",
-		images: ["/og-images/image-tools.jpg"],
+		images: ["/og-image.jpg"],
 	},
 };
 

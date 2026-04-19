@@ -10,8 +10,8 @@ import {
 	ZapIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { GoogleFooter } from "@/components/footers/GoogleFooter";
-import { GoogleNavbar } from "@/components/navigation/GoogleNavbar";
+import { AppleFooter } from "@/components/footers/AppleFooter";
+import { AppleNavbar } from "@/components/navigation/AppleNavbar";
 import toolsData from "@/constants/tools.json";
 
 /**
@@ -42,7 +42,7 @@ export default function ArchivePage() {
 
 	return (
 		<div className="min-h-screen flex flex-col bg-[#f8f9fa] dark:bg-background">
-			<GoogleNavbar />
+			<AppleNavbar />
 
 			<main className="flex-1 container mx-auto px-4 py-16 max-w-7xl">
 				<header className="mb-16 text-center">
@@ -114,7 +114,7 @@ export default function ArchivePage() {
 				</div>
 			</main>
 
-			<GoogleFooter />
+			<AppleFooter />
 		</div>
 	);
 }

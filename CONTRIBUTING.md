@@ -1,6 +1,6 @@
 # Contributing to 30tools
 
-![30tools](https://30tools.com/og-image.png)
+![30tools](https://30tools.com/og-image.jpg)
 
 First off, thank you for considering contributing to **30tools**! With over **733+ tools** and a massive SEO ecosystem, your help is vital in making this the premier open-source utility engine.
 

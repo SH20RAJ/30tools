@@ -13,7 +13,7 @@ export const metadata = {
 		siteName: "30tools",
 		images: [
 			{
-				url: "/og-images/utility-tools.jpg",
+				url: "/og-image.jpg",
 				width: 1200,
 				height: 630,
 				alt: "Free Utility Tools Collection",
