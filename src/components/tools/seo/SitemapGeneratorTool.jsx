@@ -1,28 +1,26 @@
 "use client";
 
 import {
-	ArrowLeftIcon,
 	CalendarIcon,
 	DownloadIcon,
 	LinkIcon,
 	MapIcon,
 	PlusIcon,
 	XIcon,
+	Zap,
+	Copy,
+	Globe,
+	Settings
 } from "lucide-react";
-import Link from "next/link";
 import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardHeader,
-	CardTitle,
-} from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { GlassCard } from "../shared/WorkspaceComponents";
+import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 export default function SitemapGeneratorTool() {
 	const [urls, setUrls] = useState([
@@ -51,7 +49,7 @@ export default function SitemapGeneratorTool() {
 		const validUrls = urls.filter((item) => item.url.trim() !== "");
 
 		if (validUrls.length === 0) {
-			alert("Please add at least one URL");
+			toast.error("Please add at least one URL");
 			return;
 		}
 
@@ -75,11 +73,11 @@ export default function SitemapGeneratorTool() {
 		xml += `</urlset>`;
 
 		setGeneratedXml(xml);
+		toast.success("Sitemap generated successfully!");
 	};
 
 	const downloadSitemap = () => {
 		if (!generatedXml) return;
-
 		const blob = new Blob([generatedXml], { type: "application/xml" });
 		const url = URL.createObjectURL(blob);
 		const a = document.createElement("a");
@@ -93,249 +91,159 @@ export default function SitemapGeneratorTool() {
 
 	const copyToClipboard = () => {
 		navigator.clipboard.writeText(generatedXml);
-		alert("Sitemap copied to clipboard!");
+		toast.success("Sitemap copied to clipboard!");
 	};
 
 	return (
-		<div className="min-h-screen bg-background">
-			<div className="container mx-auto px-4 py-8 max-w-6xl">
-				{/* Header */}
-				<div className="mb-8">
-					<Link href="/">
-						<Button variant="ghost" className="mb-4">
-							<ArrowLeftIcon className="h-4 w-4 mr-2" />
-							Back to Home
-						</Button>
-					</Link>
-
-					<div className="flex items-center gap-3 mb-4">
-						<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
-							<MapIcon className="h-6 w-6 text-primary" />
+		<div className="w-full max-w-5xl mx-auto space-y-12 animate-in pb-24">
+			<div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+				{/* Configuration Panel */}
+				<div className="lg:col-span-12">
+					<GlassCard className="p-8">
+						<div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
+							<div className="flex items-center gap-4">
+								<div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary shadow-lg shadow-primary/5">
+									<Globe className="w-6 h-6" />
+								</div>
+								<div>
+									<h3 className="text-2xl font-black">Base Domain</h3>
+									<p className="text-muted-foreground font-bold text-sm uppercase tracking-tight">Specify your website root</p>
+								</div>
+							</div>
+							<div className="flex-1 max-w-md">
+								<Input
+									value={baseUrl}
+									onChange={(e) => setBaseUrl(e.target.value)}
+									placeholder="https://yourwebsite.com"
+									className="h-14 rounded-2xl bg-muted/20 border-border/40 px-6 font-bold text-lg focus-visible:ring-primary/20"
+								/>
+							</div>
 						</div>
-						<div>
-							<h2 className="text-3xl font-bold">XML Sitemap Generator</h2>
-							<p className="text-muted-foreground">
-								Generate XML sitemaps for better SEO and search engine indexing
-							</p>
-						</div>
-					</div>
-
-					<div className="flex flex-wrap gap-2 mb-4">
-						<Badge variant="secondary">SEO Optimized</Badge>
-						<Badge variant="secondary">XML Format</Badge>
-						<Badge variant="secondary">Search Engine Ready</Badge>
-						<Badge variant="secondary">Free Download</Badge>
-					</div>
+					</GlassCard>
 				</div>
 
-				<div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-					{/* Input Section */}
-					<div className="space-y-6">
-						<Card>
-							<CardHeader>
-								<CardTitle className="flex items-center gap-2">
-									<LinkIcon className="h-5 w-5" />
-									Website Configuration
-								</CardTitle>
-							</CardHeader>
-							<CardContent className="space-y-4">
-								<div>
-									<Label htmlFor="baseUrl">Base URL (Optional)</Label>
+				{/* URL Workspace */}
+				<div className="lg:col-span-7 space-y-8">
+					<GlassCard className="p-8">
+						<div className="flex items-center justify-between mb-8">
+							<div className="flex items-center gap-3">
+								<LinkIcon className="text-primary w-6 h-6" />
+								<h3 className="text-2xl font-bold">Priority URLs</h3>
+							</div>
+							<Badge variant="secondary" className="rounded-full px-4 py-1.5 font-bold">
+								{urls.length} Page(s)
+							</Badge>
+						</div>
+
+						<div className="space-y-4 max-h-[600px] overflow-y-auto pr-2 custom-scrollbar">
+							{urls.map((item, index) => (
+								<div key={index} className="p-6 rounded-[2.5rem] border border-border/40 bg-muted/5 group hover:bg-primary/[0.02] transition-all space-y-4 relative overflow-hidden">
+									<div className="flex items-center justify-between">
+										<span className="text-[10px] uppercase font-black tracking-widest text-muted-foreground/60">Node {index + 1}</span>
+										{urls.length > 1 && (
+											<Button variant="ghost" size="icon" onClick={() => removeUrl(index)} className="rounded-xl hover:bg-destructive/10 hover:text-destructive transition-colors">
+												<XIcon className="h-4 w-4" />
+											</Button>
+										)}
+									</div>
+
 									<Input
-										id="baseUrl"
-										value={baseUrl}
-										onChange={(e) => setBaseUrl(e.target.value)}
-										placeholder="https://example.com"
-										className="mt-1"
+										value={item.url}
+										onChange={(e) => updateUrl(index, "url", e.target.value)}
+										placeholder="/services or contact-us"
+										className="h-12 border-0 bg-transparent p-0 text-xl font-black focus-visible:ring-0 placeholder:text-muted-foreground/30"
 									/>
-									<p className="text-xs text-muted-foreground mt-1">
-										Will be prepended to relative URLs
-									</p>
-								</div>
-							</CardContent>
-						</Card>
 
-						<Card>
-							<CardHeader>
-								<CardTitle>URLs to Include</CardTitle>
-								<CardDescription>
-									Add the pages you want to include in your sitemap
-								</CardDescription>
-							</CardHeader>
-							<CardContent className="space-y-4">
-								{urls.map((item, index) => (
-									<div key={index} className="p-4 border space-y-3">
-										<div className="flex items-center justify-between">
-											<Label>URL {index + 1}</Label>
-											{urls.length > 1 && (
-												<Button
-													variant="ghost"
-													size="sm"
-													onClick={() => removeUrl(index)}
-												>
-													<XIcon className="h-4 w-4" />
-												</Button>
-											)}
+									<div className="grid grid-cols-2 gap-4">
+										<div className="space-y-1">
+											<Label className="text-[10px] font-black uppercase text-muted-foreground/80 ml-1">Frequency</Label>
+											<select
+												value={item.changefreq}
+												onChange={(e) => updateUrl(index, "changefreq", e.target.value)}
+												className="w-full h-11 bg-muted/20 rounded-xl border border-border/40 px-3 font-bold text-sm focus:outline-none focus:ring-1 focus:ring-primary/40 appearance-none"
+											>
+												{["always", "hourly", "daily", "weekly", "monthly", "yearly"].map(o => (
+													<option key={o} value={o}>{o.charAt(0).toUpperCase() + o.slice(1)}</option>
+												))}
+											</select>
 										</div>
-
-										<Input
-											value={item.url}
-											onChange={(e) => updateUrl(index, "url", e.target.value)}
-											placeholder="/about-us or https://example.com/page"
-										/>
-
-										<div className="grid grid-cols-2 gap-3">
-											<div>
-												<Label className="text-xs">Change Frequency</Label>
-												<select
-													value={item.changefreq}
-													onChange={(e) =>
-														updateUrl(index, "changefreq", e.target.value)
-													}
-													className="w-full mt-1 px-3 py-2 border sm"
-												>
-													<option value="always">Always</option>
-													<option value="hourly">Hourly</option>
-													<option value="daily">Daily</option>
-													<option value="weekly">Weekly</option>
-													<option value="monthly">Monthly</option>
-													<option value="yearly">Yearly</option>
-													<option value="never">Never</option>
-												</select>
-											</div>
-
-											<div>
-												<Label className="text-xs">Priority</Label>
-												<select
-													value={item.priority}
-													onChange={(e) =>
-														updateUrl(index, "priority", e.target.value)
-													}
-													className="w-full mt-1 px-3 py-2 border sm"
-												>
-													<option value="1.0">1.0 (Highest)</option>
-													<option value="0.9">0.9</option>
-													<option value="0.8">0.8</option>
-													<option value="0.7">0.7</option>
-													<option value="0.6">0.6</option>
-													<option value="0.5">0.5</option>
-													<option value="0.4">0.4</option>
-													<option value="0.3">0.3</option>
-													<option value="0.2">0.2</option>
-													<option value="0.1">0.1 (Lowest)</option>
-												</select>
-											</div>
+										<div className="space-y-1">
+											<Label className="text-[10px] font-black uppercase text-muted-foreground/80 ml-1">SEO Priority</Label>
+											<select
+												value={item.priority}
+												onChange={(e) => updateUrl(index, "priority", e.target.value)}
+												className="w-full h-11 bg-muted/20 rounded-xl border border-border/40 px-3 font-bold text-sm focus:outline-none focus:ring-1 focus:ring-primary/40 appearance-none text-primary"
+											>
+												{["1.0", "0.9", "0.8", "0.6", "0.4", "0.1"].map(p => (
+													<option key={p} value={p}>{p} {p === "1.0" ? "(Main)" : ""}</option>
+												))}
+											</select>
 										</div>
 									</div>
-								))}
+								</div>
+							))}
+						</div>
 
-								<Button onClick={addUrl} variant="outline" className="w-full">
-									<PlusIcon className="h-4 w-4 mr-2" />
-									Add Another URL
-								</Button>
+						<div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-4">
+							<Button onClick={addUrl} variant="outline" className="h-16 rounded-[2rem] border-border/40 hover:bg-primary/5 font-black text-lg gap-3">
+								<PlusIcon className="w-5 h-5" />
+								ADD NODE
+							</Button>
+							<Button onClick={generateSitemap} className="h-16 rounded-[2rem] font-black text-lg shadow-2xl shadow-primary/20 gap-3 group">
+								<Zap className="w-5 h-5 fill-current group-hover:animate-pulse" />
+								GENERATE XML
+							</Button>
+						</div>
+					</GlassCard>
+				</div>
 
-								<Button onClick={generateSitemap} className="w-full" size="lg">
-									<MapIcon className="h-4 w-4 mr-2" />
-									Generate Sitemap
-								</Button>
-							</CardContent>
-						</Card>
-					</div>
+				{/* Output Panel */}
+				<div className="lg:col-span-5 space-y-8">
+					<GlassCard className="p-8 h-full flex flex-col">
+						<div className="flex items-center gap-3 mb-8">
+							<Settings className="text-primary w-6 h-6" />
+							<h3 className="text-2xl font-bold">XML Output</h3>
+						</div>
 
-					{/* Output Section */}
-					<div className="space-y-6">
-						<Card>
-							<CardHeader>
-								<CardTitle className="flex items-center gap-2">
-									<DownloadIcon className="h-5 w-5" />
-									Generated Sitemap
-								</CardTitle>
-							</CardHeader>
-							<CardContent>
-								{generatedXml ? (
-									<div className="space-y-4">
-										<Textarea
-											value={generatedXml}
-											readOnly
-											className="font-mono text-sm h-64"
-										/>
-
-										<div className="flex gap-2">
-											<Button onClick={downloadSitemap} className="flex-1">
-												<DownloadIcon className="h-4 w-4 mr-2" />
-												Download sitemap.xml
-											</Button>
-											<Button onClick={copyToClipboard} variant="outline">
-												Copy to Clipboard
-											</Button>
-										</div>
-
-										<div className="text-sm text-muted-foreground space-y-1">
-											<p>
-												• Upload the sitemap.xml file to your website's root
-												directory
-											</p>
-											<p>• Submit the sitemap URL to Google Search Console</p>
-											<p>• Add sitemap location to your robots.txt file</p>
-										</div>
-									</div>
-								) : (
-									<div className="text-center py-12">
-										<MapIcon className="h-16 w-16 mx-auto mb-4 text-muted-foreground" />
-										<h3 className="text-lg font-medium mb-2">
-											No Sitemap Generated
-										</h3>
-										<p className="text-muted-foreground">
-											Add URLs and click "Generate Sitemap" to create your XML
-											sitemap
-										</p>
-									</div>
-								)}
-							</CardContent>
-						</Card>
-
-						{/* SEO Tips */}
-						<Card>
-							<CardHeader>
-								<CardTitle className="flex items-center gap-2">
-									<CalendarIcon className="h-5 w-5" />
-									SEO Best Practices
-								</CardTitle>
-							</CardHeader>
-							<CardContent className="space-y-3 text-sm">
-								<div className="flex items-start gap-2">
-									<div className="w-2 h-2 bg-primary shrink-0"></div>
-									<div>
-										<p className="font-medium">Update Frequency</p>
-										<p className="text-muted-foreground">
-											Set appropriate change frequencies based on how often
-											content updates
-										</p>
+						<div className="flex-1 flex flex-col gap-6">
+							{generatedXml ? (
+								<div className="flex-1 flex flex-col animate-in slide-in-from-right-4 duration-500 gap-6">
+									<Textarea
+										value={generatedXml}
+										readOnly
+										className="flex-1 min-h-[400px] font-mono text-sm rounded-3xl bg-primary/[0.03] border-primary/20 p-6 focus-visible:ring-0 text-primary"
+									/>
+									<div className="grid grid-cols-1 gap-3">
+										<Button onClick={downloadSitemap} className="h-16 rounded-2xl font-black text-lg shadow-xl gap-3">
+											<DownloadIcon className="w-6 h-6" />
+											DOWNLOAD XML
+										</Button>
+										<Button onClick={copyToClipboard} variant="outline" className="h-14 rounded-2xl font-bold border-border/40 gap-3">
+											<Copy className="w-5 h-5" />
+											COPY TO CLIPBOARD
+										</Button>
 									</div>
 								</div>
-								<div className="flex items-start gap-2">
-									<div className="w-2 h-2 bg-primary shrink-0"></div>
-									<div>
-										<p className="font-medium">Priority Settings</p>
-										<p className="text-muted-foreground">
-											Use higher priorities (0.8-1.0) for important pages like
-											homepage and key content
-										</p>
-									</div>
+							) : (
+								<div className="flex-1 flex flex-col items-center justify-center p-12 text-center rounded-[2.5rem] border-2 border-dashed border-border/30 bg-muted/5">
+									<MapIcon className="w-20 h-20 text-muted-foreground/10 mb-6" />
+									<p className="text-muted-foreground/40 font-bold italic leading-tight">Your search engine map will appear here...</p>
 								</div>
-								<div className="flex items-start gap-2">
-									<div className="w-2 h-2 bg-primary shrink-0"></div>
-									<div>
-										<p className="font-medium">Submit to Search Engines</p>
-										<p className="text-muted-foreground">
-											Submit your sitemap to Google Search Console and Bing
-											Webmaster Tools
-										</p>
-									</div>
-								</div>
-							</CardContent>
-						</Card>
-					</div>
+							)}
+
+							<div className="p-6 rounded-3xl bg-primary/5 border border-primary/10">
+								<h4 className="text-xs font-black uppercase text-primary mb-3 flex items-center gap-2">
+									<CalendarIcon className="w-4 h-4" />
+									Post-Generation Tips
+								</h4>
+								<ul className="text-xs space-y-2 text-muted-foreground font-medium list-disc ml-4">
+									<li>Upload to your domain's root directory</li>
+									<li>Submit URL to Google Search Console</li>
+									<li>Reference in your robots.txt file</li>
+								</ul>
+							</div>
+						</div>
+					</GlassCard>
 				</div>
 			</div>
 		</div>
