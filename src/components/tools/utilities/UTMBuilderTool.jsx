@@ -1,7 +1,7 @@
 "use client";
 
 import { AlertCircle, Copy, Link as LinkIcon, RefreshCw } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { toast } from "sonner";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -25,11 +25,7 @@ export default function UTMBuilderTool() {
 	const [generatedUrl, setGeneratedUrl] = useState("");
 	const [error, setError] = useState("");
 
-	useEffect(() => {
-		generateUrl();
-	}, [generateUrl]);
-
-	const generateUrl = () => {
+	const generateUrl = useCallback(() => {
 		if (!url) {
 			setGeneratedUrl("");
 			setError("");
@@ -57,12 +53,18 @@ export default function UTMBuilderTool() {
 			setError("Please enter a valid URL (e.g., website.com)");
 			setGeneratedUrl("");
 		}
-	};
+	}, [url, source, medium, campaign, term, content]);
+
+	useEffect(() => {
+		generateUrl();
+	}, [generateUrl]);
 
 	const copyToClipboard = () => {
 		if (!generatedUrl) return;
-		navigator.clipboard.writeText(generatedUrl);
-		toast.success("UTM URL copied to clipboard!");
+		if (typeof navigator !== "undefined" && navigator.clipboard) {
+			navigator.clipboard.writeText(generatedUrl);
+			toast.success("UTM URL copied to clipboard!");
+		}
 	};
 
 	const resetForm = () => {
@@ -200,12 +202,12 @@ export default function UTMBuilderTool() {
 				<div className="space-y-3 pt-6 border-t">
 					<h3 className="text-lg font-semibold">Generated Campaign URL</h3>
 					<div className="relative">
-						<div className="p-4 bg-secondary sm break-all min-h-[3rem] flex items-center pr-12">
+						<div className="p-4 bg-secondary break-all min-h-[3rem] flex items-center pr-12">
 							{generatedUrl || "Fill in the fields above to generate URL..."}
 						</div>
 						<Button
 							size="icon"
-							className="absolute right-2 top-1/2 -transpace-y-1/2"
+							className="absolute right-2 top-1/2 -translate-y-1/2"
 							onClick={copyToClipboard}
 							disabled={!generatedUrl}
 						>
