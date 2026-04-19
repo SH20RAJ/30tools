@@ -66,15 +66,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		},
 	];
 
-	const toolPages: MetadataRoute.Sitemap = allTools.map((tool) => ({
-		url: `${BASE_URL}${tool.route}`,
-		lastModified: currentDate,
-		changeFrequency: "weekly",
-		priority: tool.popular ? 0.9 : 0.8,
-		alternates: {
-			languages: getAlternates(tool.route),
-		},
-	}));
+	const toolPages: MetadataRoute.Sitemap = allTools.flatMap((tool) => {
+		const pages: MetadataRoute.Sitemap = [
+			{
+				url: `${BASE_URL}${tool.route}`,
+				lastModified: currentDate,
+				changeFrequency: "weekly",
+				priority: tool.popular ? 0.9 : 0.8,
+				alternates: {
+					languages: getAlternates(tool.route),
+				},
+			}
+		];
+
+		if (tool.extraSlugs && tool.extraSlugs.length > 0) {
+			for (const slug of tool.extraSlugs) {
+				const slugRoute = slug.startsWith('/') ? slug : `/${slug}`;
+				pages.push({
+					url: `${BASE_URL}${slugRoute}`,
+					lastModified: currentDate,
+					changeFrequency: "weekly",
+					priority: 0.7, // Slightly lower priority for extra slugs
+					alternates: {
+						languages: getAlternates(slugRoute),
+					},
+				});
+			}
+		}
+
+		return pages;
+	});
 
 	const categoryPages: MetadataRoute.Sitemap = allCategories.map((cat) => ({
 		url: `${BASE_URL}/${cat.slug}`,
