@@ -2,29 +2,29 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
-	title: "Free Image Enlarger Online - No Signup | 30tools",
+	title: "Free AI Image Enlarger Online - Upscale Without Quality Loss",
 	description:
-		"Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Enlarge and upscale images for free using AI. Increase photo resolution and size without losing quality or adding blur. 100% private, no signup required.",
 	keywords:
-		"image enlarger, free online tool, no signup, image, image enlarger online, 30tools",
+		"image enlarger, ai image upscaler, upscale image without losing quality, increase image resolution free, photo enlarger, 30tools, image scaler online",
 	alternates: {
 		canonical: "https://30tools.com/image-enlarger",
 	},
 	openGraph: {
-		title: "Free Image Enlarger Online - No Signup | 30tools",
+		title: "Free AI Image Enlarger Online - Upscale Without Quality Loss",
 		description:
-			"Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Enlarge and upscale images for free using AI. Increase photo resolution and size without losing quality. No signup required.",
 		url: "https://30tools.com/image-enlarger",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Image%20Enlarger%20-%20Upscale%20Photos%20Free" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Enlarger Online - No Signup | 30tools",
+		title: "Free AI Image Enlarger Online - Upscale Without Quality Loss",
 		description:
-			"Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+			"Enlarge and upscale images for free using AI. Increase photo resolution without losing quality.",
+		images: ["/api/og?title=Image%20Enlarger%20-%20Upscale%20Photos%20Free"],
 	},
 	robots: { index: true, follow: true },
 };
@@ -34,11 +34,48 @@ export default async function ToolPage() {
 		id: "image-enlarger",
 		name: "Image Enlarger",
 		description:
-			"Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Enlarge and upscale images with high quality, perfect for printing or large displays.",
 		route: "/image-enlarger",
 		extraSlugs: ["free-image-enlarger-online", "image-enlarger-tool"],
 		popular: false,
 		category: "image",
+		features: [
+			"High-Quality Upscaling: Increase the pixel dimensions of your images without the typical blurriness of standard resizing.",
+			"Custom Scale Factors: Choose to double (2x) or quadruple (4x) the size of your original photo.",
+			"Browser-Based Processing: Fast and secure. Your images are enlarged directly on your device, ensuring maximum privacy.",
+			"Format Support: Works with common image formats like JPEG, PNG, and WebP.",
+		],
+		howTo: {
+			name: "How to Enlarge an Image",
+			steps: [
+				{
+					name: "Upload Image",
+					text: "Select a low-resolution photo or image that you need to make larger.",
+				},
+				{
+					name: "Select Scale",
+					text: "Choose your desired enlargement factor (e.g., 2x, 4x) or enter specific dimensions.",
+				},
+				{
+					name: "Enlarge and Download",
+					text: "Click the button to process the image. Once finished, download the high-resolution result.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "How does the image enlarger maintain quality?",
+				answer: "Instead of simply stretching pixels (which causes blurriness), advanced algorithms analyze the image and intelligently interpolate new pixels, preserving sharp edges and details.",
+			},
+			{
+				question: "Is there a limit to how much I can enlarge an image?",
+				answer: "For the best results, we recommend upscaling up to 4x the original size. Extreme upscaling beyond that may start to look artificial.",
+			},
+			{
+				question: "Do I need to create an account?",
+				answer: "No, our Image Enlarger is completely free to use with no account or registration required.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{

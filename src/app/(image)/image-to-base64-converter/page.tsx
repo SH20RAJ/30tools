@@ -2,29 +2,29 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
 
 export const metadata = {
-	title: "Free Image to Base64 Converter Online - No Signup | 30tools",
+	title: "Free Image to Base64 Converter Online - Encode Images Instantly",
 	description:
-		"Free image to base64 converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert any image to a Base64 string for free. Easily encode JPEG, PNG, SVG, or WebP images to Base64 format for CSS, HTML, or JSON. 100% private, no signup.",
 	keywords:
-		"image to base64 converter, free online tool, no signup, image, image to base64 converter online, 30tools",
+		"image to base64, base64 converter, encode image to base64 string, base64 encoder online, convert jpg to base64, base64 image generator, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/image-to-base64-converter",
 	},
 	openGraph: {
-		title: "Free Image to Base64 Converter Online - No Signup | 30tools",
+		title: "Free Image to Base64 Converter Online - Encode Images Instantly",
 		description:
-			"Free image to base64 converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Convert any image to a Base64 string for free. Easily encode JPEG, PNG, SVG, or WebP. No signup required.",
 		url: "https://30tools.com/image-to-base64-converter",
 		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
+		images: [{ url: "/api/og?title=Image%20to%20Base64%20Converter" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image to Base64 Converter Online - No Signup | 30tools",
+		title: "Free Image to Base64 Converter Online - Encode Images Instantly",
 		description:
-			"Free image to base64 converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/og-image.jpg"],
+			"Convert any image to a Base64 string for free. Easily encode JPEG, PNG, SVG, or WebP. No signup required.",
+		images: ["/api/og?title=Image%20to%20Base64%20Converter"],
 	},
 	robots: { index: true, follow: true },
 };
@@ -34,7 +34,7 @@ export default async function ToolPage() {
 		id: "image-to-base64-converter",
 		name: "Image to Base64 Converter",
 		description:
-			"Free image to base64 converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+			"Instantly encode any image file into a Base64 string for embedding directly into HTML, CSS, or JSON.",
 		route: "/image-to-base64-converter",
 		extraSlugs: [
 			"free-image-to-base64-converter-online",
@@ -42,6 +42,43 @@ export default async function ToolPage() {
 		],
 		popular: false,
 		category: "image",
+		features: [
+			"Instant Encoding: Convert images to Base64 strings in milliseconds without waiting for server uploads.",
+			"Data URI Formatting: Automatically formats the Base64 string into a ready-to-use Data URI (e.g., data:image/png;base64,...).",
+			"Multiple Formats: Supports encoding JPG, PNG, GIF, WebP, SVG, and BMP images.",
+			"Privacy Guaranteed: All encoding happens securely within your web browser. We never see your images.",
+		],
+		howTo: {
+			name: "How to Convert an Image to Base64",
+			steps: [
+				{
+					name: "Upload Image",
+					text: "Drag and drop the image file you want to encode into the tool.",
+				},
+				{
+					name: "Copy the String",
+					text: "The tool will instantly generate the Base64 string. Click the 'Copy' button to copy the encoded text.",
+				},
+				{
+					name: "Use in Code",
+					text: "Paste the copied Data URI directly into your HTML <img> tag, CSS background-image property, or JSON payload.",
+				},
+			],
+		},
+		faqs: [
+			{
+				question: "What is Base64 encoding?",
+				answer: "Base64 is an encoding scheme used to convert binary data (like an image file) into an ASCII string format. This is commonly used to embed images directly into web pages (HTML/CSS) or API payloads without needing external image links.",
+			},
+			{
+				question: "Why should I embed images using Base64?",
+				answer: "Embedding small images (like icons or logos) using Base64 can reduce the number of HTTP requests your browser makes, potentially speeding up initial page load times. However, it increases the HTML/CSS file size, so it's best avoided for large photographs.",
+			},
+			{
+				question: "Is there a file size limit?",
+				answer: "Because Base64 strings are roughly 33% larger than the original binary file, we recommend only encoding small images (under 1MB) to prevent your browser or code editor from freezing.",
+			},
+		],
 	};
 	const breadcrumbs = [
 		{
