@@ -1,4 +1,29 @@
-import { getAllTools } from "@/lib/tools";
+import { getAllTools, Tool } from "@/lib/tools";
+
+export interface Breadcrumb {
+	name: string;
+	url: string;
+}
+
+export interface FAQ {
+	question: string;
+	answer: string;
+}
+
+export interface HowToStep {
+	name: string;
+	description: string;
+}
+
+export interface VideoData {
+	name: string;
+	description: string;
+	thumbnail: string;
+	uploadDate: string;
+	duration: string;
+	embedUrl: string;
+	contentUrl: string;
+}
 
 // Advanced Schema.org markup generator for 30tools
 export function generateOrganizationSchema() {
@@ -79,7 +104,7 @@ export function generateWebApplicationSchema() {
 	};
 }
 
-export function generateBreadcrumbSchema(breadcrumbs) {
+export function generateBreadcrumbSchema(breadcrumbs: Breadcrumb[]) {
 	return {
 		"@context": "https://schema.org",
 		"@type": "BreadcrumbList",
@@ -92,7 +117,7 @@ export function generateBreadcrumbSchema(breadcrumbs) {
 	};
 }
 
-export function generateToolSchema(tool) {
+export function generateToolSchema(tool: Tool) {
 	return {
 		"@context": "https://schema.org",
 		"@type": "SoftwareApplication",
@@ -116,7 +141,7 @@ export function generateToolSchema(tool) {
 			name: "30tools",
 			url: "https://30tools.com",
 		},
-		keywords: tool.keywords?.join(", ") || "",
+		keywords: (tool as any).keywords?.join(", ") || "",
 		aggregateRating: {
 			"@type": "AggregateRating",
 			ratingValue: "4.7",
@@ -127,7 +152,7 @@ export function generateToolSchema(tool) {
 	};
 }
 
-export function generateFAQSchema(faqs) {
+export function generateFAQSchema(faqs: FAQ[]) {
 	return {
 		"@context": "https://schema.org",
 		"@type": "FAQPage",
@@ -142,7 +167,7 @@ export function generateFAQSchema(faqs) {
 	};
 }
 
-export function generateCollectionPageSchema(category, tools) {
+export function generateCollectionPageSchema(category: any, tools: Tool[]) {
 	return {
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
@@ -163,7 +188,7 @@ export function generateCollectionPageSchema(category, tools) {
 	};
 }
 
-export function generateHowToSchema(toolName, steps) {
+export function generateHowToSchema(toolName: string, steps: HowToStep[]) {
 	return {
 		"@context": "https://schema.org",
 		"@type": "HowTo",
@@ -183,7 +208,7 @@ export function generateHowToSchema(toolName, steps) {
 	};
 }
 
-export function generateVideoObjectSchema(videoData) {
+export function generateVideoObjectSchema(videoData: VideoData) {
 	return {
 		"@context": "https://schema.org",
 		"@type": "VideoObject",
@@ -217,7 +242,7 @@ export function generatePerformanceHints() {
 }
 
 // Advanced keyword optimization helpers
-export function generateLongTailKeywords(primaryKeyword) {
+export function generateLongTailKeywords(primaryKeyword: string) {
 	const modifiers = [
 		"free online",
 		"best free",
@@ -247,8 +272,8 @@ export function generateLongTailKeywords(primaryKeyword) {
 	);
 }
 
-export function generateSemanticKeywords(category) {
-	const semanticMap = {
+export function generateSemanticKeywords(category: string) {
+	const semanticMap: Record<string, string[]> = {
 		image: [
 			"photo",
 			"picture",
@@ -276,7 +301,7 @@ export function generateSemanticKeywords(category) {
 }
 
 // Internal linking strategies
-export function generateInternalLinks(currentTool) {
+export function generateInternalLinks(currentTool: Tool) {
 	const allTools = getAllTools();
 	const relatedTools = allTools
 		.filter(

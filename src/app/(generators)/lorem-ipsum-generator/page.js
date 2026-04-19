@@ -2,29 +2,29 @@ import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGen
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+	title: "Free Lorem Ipsum Generator Online - Dummy & Placeholder Text",
 	description:
-		"Free Lorem Ipsum Generator online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Generate custom Lorem Ipsum dummy text for your designs and layouts. Fast, free, and secure placeholder text generator for designers and developers. No signup required.",
 	keywords:
-		"lorem ipsum generator, free online tool, no signup, generators, lorem ipsum generator online, 30tools",
+		"lorem ipsum generator, dummy text generator, placeholder text, blind text generator, designer tools, 30tools, free online tool",
 	alternates: {
 		canonical: "https://30tools.com/lorem-ipsum-generator",
 	},
 	openGraph: {
-		title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+		title: "Free Lorem Ipsum Generator Online - Dummy & Placeholder Text",
 		description:
-			"Free Lorem Ipsum Generator online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Generate custom Lorem Ipsum dummy text for your designs. Fast, free, and secure placeholder text generator. No signup required.",
 		url: "https://30tools.com/lorem-ipsum-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20Lorem%20Ipsum%20Generator%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=Lorem%20Ipsum%20Generator%20-%20Dummy%20Text" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+		title: "Free Lorem Ipsum Generator Online - Dummy & Placeholder Text",
 		description:
-			"Free Lorem Ipsum Generator online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20Lorem%20Ipsum%20Generator%20Online%20-%20No%20Signup"],
+			"Generate custom Lorem Ipsum dummy text for your designs. No signup required.",
+		images: ["/api/og?title=Lorem%20Ipsum%20Generator%20-%20Dummy%20Text"],
 	},
 	robots: { index: true, follow: true },
 };

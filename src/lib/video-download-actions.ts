@@ -1,6 +1,24 @@
 "use server";
 
-export async function fetchVideoData(url) {
+export interface VideoQuality {
+	quality: string;
+	size: string;
+	url: string;
+	type: string;
+	id: string | number;
+}
+
+export interface VideoData {
+	title: string;
+	thumbnail: string;
+	duration: string;
+	author: string;
+	music: string;
+	qualities: VideoQuality[];
+	platform: string;
+}
+
+export async function fetchVideoData(url: string): Promise<VideoData> {
 	try {
 		if (!url || typeof url !== "string" || url.trim().length === 0) {
 			throw new Error("Video URL is required");
@@ -39,7 +57,7 @@ export async function fetchVideoData(url) {
 		}
 
 		// Detect platform from URL
-		const detectPlatform = (videoUrl) => {
+		const detectPlatform = (videoUrl: string): string => {
 			if (videoUrl.includes("tiktok.com")) return "TikTok";
 			if (videoUrl.includes("facebook.com") || videoUrl.includes("fb.watch"))
 				return "Facebook";
@@ -60,7 +78,7 @@ export async function fetchVideoData(url) {
 		const platform = detectPlatform(url);
 
 		// Process the response from savevideo.me API
-		const processedData = {
+		const processedData: Omit<VideoData, 'platform'> = {
 			title: data.title || `${platform} Video`,
 			thumbnail: data.thumbnail || "/placeholder-video-thumbnail.jpg",
 			duration: data.duration || "0:30",
@@ -77,7 +95,7 @@ export async function fetchVideoData(url) {
 
 		// Process available formats from API response
 		if (data.formats && Array.isArray(data.formats)) {
-			processedData.qualities = data.formats.map((format, index) => ({
+			processedData.qualities = data.formats.map((format: any, index: number) => ({
 				quality: format.quality || format.resolution || `Quality ${index + 1}`,
 				size: format.size || "Unknown",
 				url: format.url || format.download_url || "#",
@@ -128,7 +146,7 @@ export async function fetchVideoData(url) {
 			...processedData,
 			platform: platform,
 		};
-	} catch (_error) {
+	} catch (error: any) {
 		console.error("Video download API error:", error);
 		throw new Error(`Failed to process the video. ${error.message}`);
 	}

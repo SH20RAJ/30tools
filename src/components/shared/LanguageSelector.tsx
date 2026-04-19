@@ -10,7 +10,16 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function LanguageSelector({ languages = [] }) {
+interface Language {
+	code: string;
+	name: string;
+}
+
+interface LanguageSelectorProps {
+	languages?: Language[];
+}
+
+export function LanguageSelector({ languages = [] }: LanguageSelectorProps) {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
@@ -32,7 +41,7 @@ export function LanguageSelector({ languages = [] }) {
 					<DropdownMenuItem
 						key={lang.code}
 						asChild
-						className="flex items-center justify-between px-3 py-2 text-[12px] cursor-pointer s:bg-primary/10 focus:text-primary transition-colors"
+						className="flex items-center justify-between px-3 py-2 text-[12px] cursor-pointer focus:bg-primary/10 focus:text-primary transition-colors"
 					>
 						<Link href={`?lang=${lang.code}`} className="no-underline w-full">
 							<span className="font-medium">{lang.name}</span>

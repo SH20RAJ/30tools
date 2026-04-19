@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export function GoogleLogo({ className = "" }) {
+interface GoogleLogoProps {
+  className?: string;
+}
+
+export function GoogleLogo({ className = "" }: GoogleLogoProps) {
 	return (
 		<Link href="/" className={`flex items-center group ${className}`}>
 			<div className="flex items-center text-2xl font-semibold tracking-tight">

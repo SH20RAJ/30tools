@@ -1,7 +1,8 @@
-import { MinimalHero } from "@/components/landing/MinimalHero";
-import { SimpleStats } from "@/components/landing/SimpleStats";
+import { PremiumHero } from "@/components/landing/PremiumHero";
 import { ToolDirectory } from "@/components/landing/ToolDirectory";
 import { TrustSection } from "@/components/landing/TrustSection";
+import { HomeSEOContent } from "@/components/landing/HomeSEOContent";
+import { HomeFAQ } from "@/components/landing/HomeFAQ";
 import toolsData from "@/constants/tools.json";
 import translateEngine from "@/lib/translate";
 
@@ -11,61 +12,20 @@ const TOOL_COUNT = Object.values(toolsData.categories || {}).reduce(
 );
 
 export const metadata = {
-	title: `Free Online Tools Collection - No Signup | 30tools`,
-	description: `Access ${TOOL_COUNT}+ free online tools for image, PDF, video, SEO, and developer workflows. Fast processing, privacy-first design, and no signup required.`,
+	title: `30tools - The Premium Free Online Toolkit (No Signup)`,
+	description: `Access ${TOOL_COUNT}+ pro-grade online tools for Image, PDF, Video, Audio, and SEO. Secure, private, and 100% free with no registration required.`,
 	keywords: [
 		"free online tools",
-		"online toolkit",
-		"web tools",
-		"image tools online",
-		"video converters",
-		"pdf tools free",
-		"developer utilities",
-		"seo tools",
-		"no registration required",
-		"privacy focused tools",
+		"private web tools",
+		"online toolkit no signup",
+		"pro image compressor",
+		"fast pdf tools",
+		"video conversion toolkit",
+		"developer utilities online",
 		"30tools",
 	].join(", "),
 	alternates: {
 		canonical: "https://30tools.com/",
-		languages: {
-			en: "https://30tools.com/?lang=en",
-			es: "https://30tools.com/?lang=es",
-			fr: "https://30tools.com/?lang=fr",
-			de: "https://30tools.com/?lang=de",
-			hi: "https://30tools.com/?lang=hi",
-			it: "https://30tools.com/?lang=it",
-			pt: "https://30tools.com/?lang=pt",
-			ja: "https://30tools.com/?lang=ja",
-			zh: "https://30tools.com/?lang=zh",
-			ko: "https://30tools.com/?lang=ko",
-			ru: "https://30tools.com/?lang=ru",
-			ar: "https://30tools.com/?lang=ar",
-			tr: "https://30tools.com/?lang=tr",
-			vi: "https://30tools.com/?lang=vi",
-			id: "https://30tools.com/?lang=id",
-		},
-	},
-	openGraph: {
-		title: `Free Online Tools Collection - No Signup | 30tools`,
-		description: `Access ${TOOL_COUNT}+ free online tools for image, PDF, video, SEO, and developer workflows.`,
-		url: "https://30tools.com/",
-		siteName: "30tools",
-		type: "website",
-		images: [
-			{
-				url: "https://30tools.com/og-image.jpg",
-				width: 1200,
-				height: 630,
-				alt: "30tools free online tools directory",
-			},
-		],
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: `Free Online Tools Collection - No Signup | 30tools`,
-		description: `Access ${TOOL_COUNT}+ free online tools for image, PDF, video, SEO, and developer workflows.`,
-		images: ["https://30tools.com/og-image.jpg"],
 	},
 };
 
@@ -76,11 +36,11 @@ export default async function LandingPage({ searchParams }) {
 	const isEnglish = lang === "en" || lang === "default";
 
 	const [heroTitle, heroSubtitle] = isEnglish 
-		? ["30Tools - 100% Free Online Toolkit", "Efficiently process files with over 200+ free online tools. Image compressors, PDF editors, video converters, SEO utilities, and more. Fast, secure, and always free."]
+		? ["The Unlimited Toolkit for Your Digital Life.", "Access 600+ professional tools for image, video, PDF, and developer workflows. No subscriptions. No signups. Just high-performance utilities."]
 		: await Promise.all([
-			translateEngine.translate("30Tools - 100% Free Online Toolkit", lang),
+			translateEngine.translate("The Unlimited Toolkit for Your Digital Life.", lang),
 			translateEngine.translate(
-				"Efficiently process files with over 200+ free online tools. Image compressors, PDF editors, video converters, SEO utilities, and more. Fast, secure, and always free.",
+				"Access 600+ professional tools for image, video, PDF, and developer workflows. No subscriptions. No signups. Just high-performance utilities.",
 				lang,
 			),
 		]);
@@ -119,19 +79,12 @@ export default async function LandingPage({ searchParams }) {
 						translateEngine.translate(cat.description, lang),
 					]);
 
-					const translatedTools = await Promise.all(
-						(cat.tools || []).map(async (tool) => ({
-							...tool,
-							name: await translateEngine.translate(tool.name, lang),
-						})),
-					);
-
 					return {
 						key,
 						iconKey: cat.icon || key,
 						name: translatedName,
 						description: translatedDesc,
-						tools: translatedTools,
+						tools: cat.tools || [],
 					};
 				}),
 			);
@@ -139,15 +92,42 @@ export default async function LandingPage({ searchParams }) {
 	const filteredCategories = toolCategories.filter(Boolean);
 
 	return (
-		<main className="bg-background min-h-screen py-8 md:py-16">
+		<main className="bg-background min-h-screen relative overflow-hidden">
+			{/* Global Decorative Gradients */}
+			<div className="absolute top-0 left-0 w-full h-[1000px] bg-gradient-cute opacity-20 -z-10" />
+			
 			<div className="container mx-auto px-4 max-w-7xl">
-				<MinimalHero title={heroTitle} subtitle={heroSubtitle} />
+				{/* Hero Section */}
+				<PremiumHero title={heroTitle} subtitle={heroSubtitle} lang={lang} />
 
+				{/* Social Trust Marks */}
 				<TrustSection />
 
-				<SimpleStats />
+				{/* Core Discovery Directory */}
+				<div className="py-24">
+					<ToolDirectory categories={filteredCategories} lang={lang} />
+				</div>
 
-				<ToolDirectory categories={filteredCategories} lang={lang} />
+				{/* High-Value SEO Content Section */}
+				<HomeSEOContent />
+
+				{/* Conversational SEO (FAQs) */}
+				<HomeFAQ />
+
+				{/* Final CTA */}
+				<section className="py-32 text-center">
+					<div className="max-w-2xl mx-auto px-4 py-16 rounded-[40px] bg-foreground text-background relative overflow-hidden group">
+						<div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />
+						<h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Ready to work faster?</h2>
+						<p className="text-xl opacity-80 mb-10 text-background/90">Start using any of our 600+ tools today. No accounts, no hassle.</p>
+						<a 
+							href="/search" 
+							className="inline-flex h-14 items-center justify-center rounded-2xl bg-background text-foreground px-10 text-lg font-bold hover:scale-105 transition-transform"
+						>
+							Browse All Tools
+						</a>
+					</div>
+				</section>
 			</div>
 		</main>
 	);

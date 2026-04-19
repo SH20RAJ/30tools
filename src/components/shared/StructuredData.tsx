@@ -1,21 +1,27 @@
-import { getAllCategories, getAllTools } from "@/lib/tools";
+import { getAllCategories, getAllTools, type Tool, type Category } from "@/lib/tools";
 
 const BASE_URL = "https://30tools.com";
 const allCategories = getAllCategories();
 const allTools = getAllTools();
 const TOOL_COUNT = allTools.length;
 const CATEGORY_COUNT = allCategories.length;
+
 const categoryLookup = Object.fromEntries(
 	allCategories.map((category) => [
-		category.key,
+		category.slug,
 		{ name: category.name, slug: category.slug },
 	]),
 );
 
-export default function StructuredData({ tool, includeFAQ = true }) {
+interface StructuredDataProps {
+	tool?: Tool;
+	includeFAQ?: boolean;
+}
+
+export default function StructuredData({ tool, includeFAQ = true }: StructuredDataProps) {
 	if (tool) {
 		const categoryDetails =
-			categoryLookup[tool.category] || categoryLookup[tool.categoryKey] || null;
+			categoryLookup[tool.category] || categoryLookup[tool.categorySlug || ""] || null;
 		const toolUrl = `${BASE_URL}${tool.route}`;
 		const toolCategoryName =
 			categoryDetails?.name || tool.categoryName || "Utilities";
@@ -51,10 +57,10 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 					"@type": "FAQPage",
 					mainEntity: tool.faqs.map((faq) => ({
 						"@type": "Question",
-						name: faq.question || faq.name,
+						name: faq.question,
 						acceptedAnswer: {
 							"@type": "Answer",
-							text: faq.answer || faq.acceptedAnswer?.text,
+							text: faq.answer,
 						},
 					})),
 				}
@@ -69,8 +75,8 @@ export default function StructuredData({ tool, includeFAQ = true }) {
 						? tool.howTo.steps.map((step, index) => ({
 								"@type": "HowToStep",
 								position: index + 1,
-								name: step.name || step.title,
-								text: step.text || step.desc,
+								name: step.name,
+								text: step.text,
 								url: step.url,
 							}))
 						: [],

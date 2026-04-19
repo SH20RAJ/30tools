@@ -2,29 +2,29 @@ import AIImageGeneratorTool from "@/components/tools/generators/AIImageGenerator
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free AI Image Generator Online - No Signup | 30tools",
+	title: "Free AI Image Generator Online - Stable Diffusion & DALL-E Alternative",
 	description:
-		"Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Create stunning AI art for free with our Stable Diffusion and DALL-E 3 alternative. Generate realistic photos, anime, and digital illustrations from text prompts. No signup, no limits, and 100% private browser-based AI generation.",
 	keywords:
-		"ai image generator, free online tool, no signup, generators, ai image generator online, 30tools",
+		"free ai image generator, stable diffusion online, dall-e 3 free alternative, ai art generator no signup, text to image ai, 30tools, ai picture generator",
 	alternates: {
 		canonical: "https://30tools.com/ai-image-generator",
 	},
 	openGraph: {
-		title: "Free AI Image Generator Online - No Signup | 30tools",
+		title: "Free AI Image Generator Online - Stable Diffusion & DALL-E Alternative",
 		description:
-			"Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Create stunning AI art for free with our Stable Diffusion and DALL-E 3 alternative. Generate realistic photos, anime, and digital illustrations from text prompts. No signup, no limits, and 100% private.",
 		url: "https://30tools.com/ai-image-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20AI%20Image%20Generator%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=AI%20Image%20Generator%20-%20Stable%20Diffusion%20Alternative" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AI Image Generator Online - No Signup | 30tools",
+		title: "Free AI Image Generator Online - Stable Diffusion & DALL-E Alternative",
 		description:
-			"Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20AI%20Image%20Generator%20Online%20-%20No%20Signup"],
+			"Create stunning AI art for free with our Stable Diffusion and DALL-E 3 alternative. No signup, no limits.",
+		images: ["/api/og?title=AI%20Image%20Generator%20-%20Stable%20Diffusion%20Alternative"],
 	},
 	robots: { index: true, follow: true },
 };

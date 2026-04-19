@@ -1,6 +1,49 @@
 "use server";
 
-export async function performKeywordResearch(keyword, searchEngine = "bing") {
+export interface KeywordResult {
+	keyword: string;
+	tag: string;
+	searchVolume: number;
+	difficulty: number;
+	cpc: string;
+	competition: string;
+	trend: string;
+}
+
+export interface FAQ {
+	question: string;
+	answer: string;
+}
+
+export interface HowToStep {
+	title: string;
+	description: string;
+}
+
+export interface HowToGuide {
+	title: string;
+	steps: HowToStep[];
+	tips: string[];
+}
+
+export interface Review {
+	name: string;
+	rating: number;
+	review: string;
+	date: string;
+}
+
+export interface ToolSEOContent {
+	title: string;
+	description: string;
+	keywords: string[];
+	faqs: FAQ[];
+	howToGuide: HowToGuide;
+	reviews: Review[];
+	relatedKeywords: KeywordResult[];
+}
+
+export async function performKeywordResearch(keyword: string, searchEngine = "bing"): Promise<KeywordResult[]> {
 	try {
 		if (
 			!keyword ||
@@ -39,7 +82,7 @@ export async function performKeywordResearch(keyword, searchEngine = "bing") {
 
 		// Transform the API response to match our expected format
 		if (Array.isArray(data)) {
-			return data.map((item) => ({
+			return data.map((item: any) => ({
 				keyword: item.keyword,
 				tag: item.tag,
 				searchVolume: Math.floor(Math.random() * 10000) + 100, // Simulated since API doesn't provide this
@@ -52,7 +95,7 @@ export async function performKeywordResearch(keyword, searchEngine = "bing") {
 
 		// If API returns unexpected format, return empty array
 		return [];
-	} catch (_error) {
+	} catch (error: any) {
 		console.error("Keyword research API error:", error);
 		throw new Error(
 			"Failed to perform keyword research. Please try again later.",
@@ -63,12 +106,12 @@ export async function performKeywordResearch(keyword, searchEngine = "bing") {
 /**
  * Get SEO content suggestions for a tool based on keyword research
  */
-export async function getToolSEOContent(toolName, category) {
+export async function getToolSEOContent(toolName: string, category: string): Promise<ToolSEOContent> {
 	try {
 		const keywords = await performKeywordResearch(toolName, "bing");
 
 		// Generate SEO content based on keyword research
-		const content = {
+		const content: ToolSEOContent = {
 			title: `${toolName} - Free Online ${category} Tool | 30Tools`,
 			description: `Free ${toolName} online tool. ${keywords
 				.slice(0, 3)
@@ -82,7 +125,7 @@ export async function getToolSEOContent(toolName, category) {
 		};
 
 		return content;
-	} catch (_error) {
+	} catch (error: any) {
 		console.error("SEO content generation error:", error);
 		return getFallbackSEOContent(toolName, category);
 	}
@@ -91,12 +134,12 @@ export async function getToolSEOContent(toolName, category) {
 /**
  * Generate FAQs based on keyword research
  */
-function generateFAQs(toolName, category, keywords) {
+function generateFAQs(toolName: string, category: string, keywords: KeywordResult[]): FAQ[] {
 	const questionKeywords = keywords
 		.filter((k) => k.tag === "questions")
 		.slice(0, 5);
 
-	const faqs = [
+	const faqs: FAQ[] = [
 		{
 			question: `What is ${toolName}?`,
 			answer: `${toolName} is a free online ${category.toLowerCase()} tool that helps you ${getToolDescription(toolName, category)}. It's completely free to use with no registration required.`,
@@ -133,7 +176,7 @@ function generateFAQs(toolName, category, keywords) {
 /**
  * Generate how-to guide
  */
-function generateHowToGuide(toolName, category) {
+function generateHowToGuide(toolName: string, category: string): HowToGuide {
 	return {
 		title: `How to Use ${toolName} - Complete Guide`,
 		steps: [
@@ -166,7 +209,7 @@ function generateHowToGuide(toolName, category) {
 /**
  * Generate reviews/testimonials
  */
-function generateReviews(toolName) {
+function generateReviews(toolName: string): Review[] {
 	return [
 		{
 			name: "Sarah Johnson",
@@ -198,8 +241,8 @@ function generateReviews(toolName) {
 /**
  * Helper functions for content generation
  */
-function getToolDescription(toolName, category) {
-	const descriptions = {
+function getToolDescription(toolName: string, category: string): string {
+	const descriptions: Record<string, string> = {
 		"video downloader":
 			"download videos from social media platforms without watermarks",
 		"image compressor": "compress images while maintaining quality",
@@ -217,8 +260,8 @@ function getToolDescription(toolName, category) {
 	);
 }
 
-function getUsageSteps(toolName) {
-	const steps = {
+function getUsageSteps(toolName: string): string {
+	const steps: Record<string, string> = {
 		"video downloader":
 			"paste the video URL, click download, and select your preferred quality",
 		"image compressor":
@@ -240,8 +283,8 @@ function getUsageSteps(toolName) {
 	return steps[toolName.toLowerCase()] || "follow the on-screen instructions";
 }
 
-function getPreparationStep(toolName) {
-	const preparations = {
+function getPreparationStep(toolName: string): string {
+	const preparations: Record<string, string> = {
 		"video downloader":
 			"Copy the video URL from TikTok, Instagram, Facebook, or other supported platforms",
 		"image compressor": "Select high-quality images that need compression",
@@ -262,7 +305,7 @@ function getPreparationStep(toolName) {
 /**
  * Fallback SEO content when API fails
  */
-function getFallbackSEOContent(toolName, category) {
+function getFallbackSEOContent(toolName: string, category: string): ToolSEOContent {
 	return {
 		title: `${toolName} - Free Online Tool | 30Tools`,
 		description: `Free ${toolName} online tool. No registration required, works on all devices.`,

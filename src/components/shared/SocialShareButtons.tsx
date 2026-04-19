@@ -4,16 +4,21 @@ import {
 	CheckCircle2,
 	Copy,
 	Facebook,
-	Heart,
 	Linkedin,
 	Mail,
 	MessageCircle,
-	Share2,
 	Twitter,
 } from "lucide-react";
 import { useState } from "react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+
+interface SocialShareButtonsProps {
+	toolName: string;
+	toolDescription: string;
+	toolUrl: string;
+	category?: string;
+	customMessage?: string | null;
+}
 
 const SocialShareButtons = ({
 	toolName,
@@ -21,14 +26,14 @@ const SocialShareButtons = ({
 	toolUrl,
 	category = "tool",
 	customMessage = null,
-}) => {
+}: SocialShareButtonsProps) => {
 	const [copied, setCopied] = useState(false);
 
 	// Generate attractive share messages
-	const generateShareText = (platform) => {
+	const generateShareText = (platform: string) => {
 		if (customMessage) return customMessage;
 
-		const messages = {
+		const messages: Record<string, string> = {
 			twitter: `🚀 Just discovered ${toolName} on 30tools! ${toolDescription} Perfect for ${category} work. Try it free: ${toolUrl} #${category}tools #webtools #free`,
 			facebook: `Amazing free tool alert! 🎉 ${toolName} - ${toolDescription}. This saved me so much time! Check it out at ${toolUrl}`,
 			linkedin: `Productivity boost: ${toolName} 📈 ${toolDescription} Great tool for professionals. Available free at ${toolUrl}`,
@@ -40,7 +45,7 @@ const SocialShareButtons = ({
 		return messages[platform] || messages.copy;
 	};
 
-	const shareUrls = {
+	const shareUrls: Record<string, string> = {
 		twitter: `https://twitter.com/intent/tweet?text=${encodeURIComponent(generateShareText("twitter"))}`,
 		facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(toolUrl)}&quote=${encodeURIComponent(generateShareText("facebook"))}`,
 		linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(toolUrl)}&title=${encodeURIComponent(toolName)}&summary=${encodeURIComponent(generateShareText("linkedin"))}`,
@@ -48,7 +53,7 @@ const SocialShareButtons = ({
 		email: `mailto:?${generateShareText("email").replace("Subject: ", "subject=").replace("\n\n", "&body=").replace(/\n/g, "%0D%0A")}`,
 	};
 
-	const handleShare = (platform) => {
+	const handleShare = (platform: string) => {
 		if (platform === "copy") {
 			navigator.clipboard.writeText(generateShareText("copy"));
 			setCopied(true);

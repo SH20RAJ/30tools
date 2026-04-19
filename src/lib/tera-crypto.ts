@@ -1,36 +1,37 @@
 /* eslint-disable */
 // @ts-nocheck
 
-function md5(t) {
-	function n(t, n) {
+function md5(t: string): string {
+	function n(t: number, n: number): number {
 		const r = (65535 & t) + (65535 & n);
 		return (((t >> 16) + (n >> 16) + (r >> 16)) << 16) | (65535 & r);
 	}
-	function r(t, r, e, c, o, u) {
-		return n(((a = n(n(r, t), n(c, u))) << (i = o)) | (a >>> (32 - i)), e);
-		var a, i;
+	function r(t: number, r: number, e: number, c: number, o: number, u: number): number {
+		const a = n(n(r, t), n(c, u));
+		const i = o;
+		return n((a << i) | (a >>> (32 - i)), e);
 	}
-	function e(t, n, e, c, o, u, a) {
+	function e(t: number, n: number, e: number, c: number, o: number, u: number, a: number): number {
 		return r((n & e) | (~n & c), t, n, o, u, a);
 	}
-	function c(t, n, e, c, o, u, a) {
+	function c(t: number, n: number, e: number, c: number, o: number, u: number, a: number): number {
 		return r((n & c) | (e & ~c), t, n, o, u, a);
 	}
-	function o(t, n, e, c, o, u, a) {
+	function o(t: number, n: number, e: number, c: number, o: number, u: number, a: number): number {
 		return r(n ^ e ^ c, t, n, o, u, a);
 	}
-	function u(t, n, e, c, o, u, a) {
+	function u(t: number, n: number, e: number, c: number, o: number, u: number, a: number): number {
 		return r(e ^ (n | ~c), t, n, o, u, a);
 	}
-	function a(t) {
+	function a(t: number): string {
 		let n = "";
 		for (let r = 0; r < 4; r++) {
 			n += `0${((t >>> (8 * r)) & 255).toString(16)}`.slice(-2);
 		}
 		return n;
 	}
-	const i = ((t) => {
-		const n = [];
+	const i = ((t: string) => {
+		const n: number[] = [];
 		for (let r = 0; r < 8 * t.length; r += 8)
 			n[r >> 5] |= (255 & t.charCodeAt(r / 8)) << (r % 32);
 		return n;
@@ -43,7 +44,7 @@ function md5(t) {
 		(i[14 + (((8 * t.length + 64) >>> 9) << 4)] = 8 * t.length);
 	for (let t = 0; t < i.length; t += 16) {
 		const r = f,
-			a = s,
+			a_val = s,
 			w = l,
 			_ = d;
 		(f = e(f, s, l, d, i[t + 0], 7, 3614090360)),
@@ -111,12 +112,13 @@ function md5(t) {
 			(l = u(l, d, f, s, i[t + 2], 15, 718787259)),
 			(s = u(s, l, d, f, i[t + 9], 21, 3951481745)),
 			(f = n(f, r)),
-			(s = n(s, a)),
+			(s = n(s, a_val)),
 			(l = n(l, w)),
 			(d = n(d, _));
 	}
 	return (a(f) + a(s) + a(l) + a(d)).toLowerCase();
 }
+
 const _0xc = {
 	_k1: atob("SWFBVHJ3TFZHVGREY0txMQ=="),
 	_s: atob("aVRlcmFQbGF5X1NhbHRfNTIzZmQ5MTFhM2M0ZWVhNGU2YjBmYmQxX1NlY3VyZQ=="),
@@ -125,26 +127,24 @@ const _0xc = {
 	),
 	_tw: 30,
 };
-function _0xh2b(t) {
+
+function _0xh2b(t: string): Uint8Array {
 	const n = new Uint8Array(t.length / 2);
 	for (let r = 0; r < t.length; r += 2) n[r / 2] = parseInt(t.substr(r, 2), 16);
 	return n;
 }
-function _0xmd5(t) {
+
+function _0xmd5(t: string): string {
 	return md5(t);
 }
-async function _0xsha256(t) {
+
+async function _0xsha256(t: string): Promise<Uint8Array> {
 	const n = new TextEncoder().encode(t),
 		r = await crypto.subtle.digest("SHA-256", n);
 	return new Uint8Array(r);
 }
 
-export async function decryptSecureCookie(t) {
-	if (typeof window === "undefined") {
-		// Basic check for server-side execution where crypto might behave differently or be missing subtle.
-		// However, Node 18+ has global crypto.
-	}
-
+export async function decryptSecureCookie(t: string): Promise<any> {
 	try {
 		const n = atob(t),
 			r = n.substring(0, 16),
@@ -156,29 +156,29 @@ export async function decryptSecureCookie(t) {
 			i = _0xh2b(o),
 			f = Math.floor(Date.now() / 1e3),
 			s = Math.floor(f / _0xc._tw);
-		for (let t = -5000; t <= 5000; t++)
+		for (let offset = -5000; offset <= 5000; offset++)
 			try {
-				const n = _0xmd5(s + t + _0xc._s).substring(0, 16),
-					e = _0xmd5(r + _0xc._p).substring(0, 16),
-					c = _0xc._k1 + n + e,
-					o = await _0xsha256(c),
-					f = await crypto.subtle.importKey("raw", o, { name: "AES-GCM" }, !1, [
+				const n_val = _0xmd5(s + offset + _0xc._s).substring(0, 16),
+					e_val = _0xmd5(r + _0xc._p).substring(0, 16),
+					c_val = _0xc._k1 + n_val + e_val,
+					o_val = await _0xsha256(c_val),
+					f_val = await crypto.subtle.importKey("raw", o_val, { name: "AES-GCM" }, !1, [
 						"decrypt",
 					]),
 					l = new Uint8Array(i.length + a.length);
 				l.set(i), l.set(a, i.length);
-				const d = await crypto.subtle.decrypt({ name: "AES-GCM", iv: u }, f, l),
+				const d = await crypto.subtle.decrypt({ name: "AES-GCM", iv: u }, f_val, l),
 					w = new TextDecoder().decode(d);
-				console.log("Decrypted successfully with offset:", t);
+				console.log("Decrypted successfully with offset:", offset);
 				return JSON.parse(w);
-			} catch (_t) {}
+			} catch (e) {}
 		console.error("Decryption failed after trying all time offsets.");
 		return JSON.parse(atob(t));
 	} catch (n) {
 		console.error("Decryption error:", n);
 		try {
 			return JSON.parse(atob(t));
-		} catch (_t) {
+		} catch (error) {
 			return null;
 		}
 	}

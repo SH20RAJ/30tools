@@ -7,6 +7,7 @@ import "./globals.css";
 import Script from "next/script";
 import { AppleNavbar } from "@/components/navigation/AppleNavbar";
 import { AppleFooter } from "@/components/footers/AppleFooter";
+import { Metadata } from "next";
 
 const SITE_URL = "https://30tools.com";
 const TOOL_COUNT = getAllTools().length;
@@ -31,7 +32,7 @@ const siteVerification = {
 		: {}),
 };
 
-export const metadata = {
+export const metadata: Metadata = {
 	title: {
 		default: "Free Online Tools - No Signup | 30tools",
 		template: "%s | 30tools",
@@ -162,7 +163,7 @@ export const metadata = {
 		},
 	},
 	...(Object.keys(siteVerification).length > 0
-		? { verification: siteVerification }
+		? { verification: siteVerification as any }
 		: {}),
 	manifest: "/manifest.json",
 	icons: {
@@ -192,7 +193,7 @@ export const metadata = {
 	},
 };
 
-export default async function RootLayout({ children }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
 	const tools = getAllTools();
 	const categoriesMap = new Map();
 	

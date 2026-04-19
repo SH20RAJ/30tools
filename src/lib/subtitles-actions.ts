@@ -3,7 +3,13 @@
 // Server actions for YouTube Subtitles Downloader
 // Using multiple APIs for reliability and comprehensive subtitle fetching
 
-export async function extractYouTubeVideoId(url) {
+export interface YouTubeVideoIdResult {
+	success?: boolean;
+	videoId?: string;
+	error?: string;
+}
+
+export async function extractYouTubeVideoId(url: string): Promise<YouTubeVideoIdResult> {
 	try {
 		console.log("🔍 Extracting video ID from URL:", url);
 
@@ -36,14 +42,23 @@ export async function extractYouTubeVideoId(url) {
 		return {
 			error: "Invalid YouTube URL. Please check the URL and try again.",
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("❌ Error extracting video ID:", error);
 		return { error: "Failed to process the YouTube URL" };
 	}
 }
 
+export interface YouTubeMetadataResult {
+	success?: boolean;
+	title?: string;
+	channelName?: string;
+	channelUrl?: string;
+	videoId?: string;
+	error?: string;
+}
+
 // Server action to get YouTube video metadata using oEmbed
-export async function getYouTubeVideoMetadata(videoId) {
+export async function getYouTubeVideoMetadata(videoId: string): Promise<YouTubeMetadataResult> {
 	try {
 		console.log("📄 Fetching metadata for video ID:", videoId);
 
@@ -76,7 +91,7 @@ export async function getYouTubeVideoMetadata(videoId) {
 			channelUrl: data.author_url || "",
 			videoId: videoId,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("❌ Error fetching video metadata:", error);
 		return {
 			error:
@@ -86,8 +101,37 @@ export async function getYouTubeVideoMetadata(videoId) {
 	}
 }
 
+export interface SubtitleSegment {
+	start: number;
+	end: number;
+	dur: number;
+	text: string;
+}
+
+export interface ProcessedSubtitles {
+	title: string;
+	language: string;
+	segments: SubtitleSegment[];
+	plainText: string;
+	timestampedText: string;
+	srtContent: string;
+	vttContent: string;
+	jsonContent: string;
+	csvContent: string;
+	wordCount: number;
+	duration: number;
+	segmentCount: number;
+	metadata: any;
+}
+
+export interface SubtitleResult {
+	success?: boolean;
+	data?: ProcessedSubtitles;
+	error?: string;
+}
+
 // Server action to download subtitles using multiple methods
-export async function downloadYouTubeSubtitles(url, language = "en") {
+export async function downloadYouTubeSubtitles(url: string, language: string = "en"): Promise<SubtitleResult> {
 	try {
 		console.log("🎬 Starting subtitle download for URL:", url);
 		console.log("🌐 Requested language:", language);
@@ -98,7 +142,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 
 		// Extract video ID
 		const videoIdResult = await extractYouTubeVideoId(url);
-		if (!videoIdResult.success) {
+		if (!videoIdResult.success || !videoIdResult.videoId) {
 			return { error: videoIdResult.error };
 		}
 
@@ -109,7 +153,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 		const metadataResult = await getYouTubeVideoMetadata(videoId);
 
 		// Try multiple subtitle sources
-		let subtitleData = null;
+		let subtitleData: any = null;
 
 		// Method 1: Try Tactiq API first
 		try {
@@ -118,7 +162,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 			if (subtitleData) {
 				console.log("✅ Tactiq API successful");
 			}
-		} catch (_error) {
+		} catch (error: any) {
 			console.log("❌ Tactiq API failed:", error.message);
 		}
 
@@ -130,7 +174,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 				if (subtitleData) {
 					console.log("✅ YouTube Transcript API successful");
 				}
-			} catch (_error) {
+			} catch (error: any) {
 				console.log("❌ YouTube Transcript API failed:", error.message);
 			}
 		}
@@ -143,7 +187,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 				if (subtitleData) {
 					console.log("✅ Direct YouTube API successful");
 				}
-			} catch (_error) {
+			} catch (error: any) {
 				console.log("❌ Direct YouTube API failed:", error.message);
 			}
 		}
@@ -173,7 +217,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 			success: true,
 			data: processedData,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("❌ Error downloading subtitles:", error);
 		return {
 			error:
@@ -183,7 +227,7 @@ export async function downloadYouTubeSubtitles(url, language = "en") {
 }
 
 // Fetch subtitles from Tactiq API
-async function fetchFromTactiq(url, langCode) {
+async function fetchFromTactiq(url: string, langCode: string) {
 	const response = await fetch(
 		"https://tactiq-apps-prod.tactiq.io/transcript",
 		{
@@ -217,7 +261,7 @@ async function fetchFromTactiq(url, langCode) {
 	// Convert Tactiq format to our standard format
 	return {
 		title: data.title,
-		segments: data.captions.map((caption) => ({
+		segments: data.captions.map((caption: any) => ({
 			start: parseFloat(caption.start),
 			end: parseFloat(caption.start) + parseFloat(caption.dur),
 			dur: parseFloat(caption.dur),
@@ -227,7 +271,7 @@ async function fetchFromTactiq(url, langCode) {
 }
 
 // Fetch subtitles using a mock YouTube Transcript API (placeholder)
-async function fetchFromYouTubeTranscript(videoId, language) {
+async function fetchFromYouTubeTranscript(videoId: string, language: string) {
 	// This would use a library like youtube-transcript or similar
 	// For now, returning null to simulate API failure
 	console.log(
@@ -240,7 +284,7 @@ async function fetchFromYouTubeTranscript(videoId, language) {
 }
 
 // Fetch subtitles directly from YouTube (placeholder)
-async function fetchFromYouTubeDirect(videoId, language) {
+async function fetchFromYouTubeDirect(videoId: string, language: string) {
 	// This would parse YouTube's subtitle tracks directly
 	// For now, returning null to simulate API failure
 	console.log(
@@ -253,8 +297,8 @@ async function fetchFromYouTubeDirect(videoId, language) {
 }
 
 // Process and format subtitle data into all supported formats
-function processSubtitleData(subtitleData, metadata) {
-	const { title, segments } = subtitleData;
+function processSubtitleData(subtitleData: any, metadata: any): ProcessedSubtitles {
+	const { title, segments }: { title: string; segments: SubtitleSegment[] } = subtitleData;
 	const videoTitle = metadata?.title || title || "YouTube Video Subtitles";
 
 	// Create plain text version
@@ -334,7 +378,7 @@ function processSubtitleData(subtitleData, metadata) {
 }
 
 // Helper function to format timestamp for display (MM:SS or HH:MM:SS)
-function formatTimestamp(seconds) {
+function formatTimestamp(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
@@ -346,12 +390,12 @@ function formatTimestamp(seconds) {
 }
 
 // Helper function to format duration
-function formatDuration(seconds) {
+function formatDuration(seconds: number): string {
 	return `${seconds.toFixed(2)}s`;
 }
 
 // Helper function to format time for SRT
-function formatSRTTime(seconds) {
+function formatSRTTime(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
@@ -361,7 +405,7 @@ function formatSRTTime(seconds) {
 }
 
 // Helper function to format time for VTT
-function formatVTTTime(seconds) {
+function formatVTTTime(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);

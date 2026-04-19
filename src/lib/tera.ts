@@ -3,11 +3,17 @@
  * Fetches video streaming URLs from Terabox links
  */
 
+interface TeraboxVideoData {
+	status: string;
+	source: string;
+	download: string;
+}
+
 /**
  * Extract video ID from Terabox URL
  * Example: https://teraboxshare.com/s/1Qx3vtX3rpRcI6poGaRe5wA -> Qx3vtX3rpRcI6poGaRe5wA
  */
-export function extractTeraboxId(url) {
+export function extractTeraboxId(url: string): string | null {
 	try {
 		// Handle different Terabox URL formats
 		const patterns = [
@@ -29,7 +35,7 @@ export function extractTeraboxId(url) {
 		}
 
 		return null;
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error extracting Terabox ID:", error);
 		return null;
 	}
@@ -40,7 +46,7 @@ export function extractTeraboxId(url) {
  * @param {string} url - Terabox share URL or video ID
  * @returns {Promise<{status: string, source: string, download: string}>}
  */
-export async function fetchTeraboxVideo(url) {
+export async function fetchTeraboxVideo(url: string): Promise<TeraboxVideoData> {
 	try {
 		// Extract video ID from URL
 		const videoId = extractTeraboxId(url);
@@ -75,7 +81,7 @@ export async function fetchTeraboxVideo(url) {
 			source: data.source, // M3U8 playlist URL
 			download: data.download, // Direct MP4 download URL
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error fetching Terabox video:", error);
 		throw error;
 	}
@@ -86,7 +92,7 @@ export async function fetchTeraboxVideo(url) {
  * @param {string} m3u8Url - URL to M3U8 playlist
  * @returns {Promise<Array<string>>} Array of video segment URLs
  */
-export async function parseM3U8Playlist(m3u8Url) {
+export async function parseM3U8Playlist(m3u8Url: string): Promise<string[]> {
 	try {
 		const response = await fetch(m3u8Url);
 		const m3u8Content = await response.text();
@@ -95,7 +101,7 @@ export async function parseM3U8Playlist(m3u8Url) {
 		const baseUrl = m3u8Url.substring(0, m3u8Url.lastIndexOf("/") + 1);
 
 		// Parse M3U8 content and extract .ts segments
-		const segments = [];
+		const segments: string[] = [];
 		const lines = m3u8Content.split("\n");
 
 		for (const line of lines) {
@@ -116,7 +122,7 @@ export async function parseM3U8Playlist(m3u8Url) {
 		}
 
 		return segments;
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error parsing M3U8 playlist:", error);
 		throw error;
 	}
@@ -129,7 +135,7 @@ export async function parseM3U8Playlist(m3u8Url) {
  * @param {string} videoHash - Video hash for streaming URL
  * @returns {string} Full URL to video segment
  */
-export function getVideoSegmentUrl(segmentName, videoHash) {
+export function getVideoSegmentUrl(segmentName: string, videoHash: string): string {
 	return `https://streams.mdiskplay.com/videos/${videoHash}/${segmentName}`;
 }
 
@@ -138,7 +144,7 @@ export function getVideoSegmentUrl(segmentName, videoHash) {
  * Example: https://sin1.contabostorage.com/.../mdiskplay1.m3u8
  * Returns the hash needed for streaming URLs
  */
-export function extractVideoHash(m3u8Url) {
+export function extractVideoHash(m3u8Url: string): string | null {
 	try {
 		// Extract hash from the M3U8 URL by parsing the path
 		// Looking for patterns in the URL that might contain the video hash
@@ -167,7 +173,7 @@ export function extractVideoHash(m3u8Url) {
 
 		// If no hash found in path or query params, return null
 		return null;
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error extracting video hash:", error);
 		return null;
 	}

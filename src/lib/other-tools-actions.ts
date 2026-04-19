@@ -1,6 +1,19 @@
 "use server";
 
 import toolsData from "@/constants/tools.json";
+import { type Tool, type Category } from "@/lib/tools";
+
+interface ToolWithCategory extends Tool {
+	categoryName: string;
+	categorySlug: string;
+}
+
+interface GroupedOtherTools {
+	[key: string]: {
+		categoryName: string;
+		tools: ToolWithCategory[];
+	};
+}
 
 const mainCategories = [
 	"image",
@@ -16,12 +29,14 @@ const mainCategories = [
 	"youtube",
 ];
 
+const typedCategories = toolsData.categories as Record<string, Category>;
+
 export async function getOtherTools() {
 	try {
-		const allTools = [];
+		const allTools: ToolWithCategory[] = [];
 
 		// Collect all tools from all categories
-		Object.entries(toolsData.categories).forEach(([categoryKey, category]) => {
+		Object.entries(typedCategories).forEach(([categoryKey, category]) => {
 			if (category.tools && Array.isArray(category.tools)) {
 				category.tools.forEach((tool) => {
 					allTools.push({
@@ -39,7 +54,7 @@ export async function getOtherTools() {
 		);
 
 		// Group by category for better organization
-		const groupedOtherTools = {};
+		const groupedOtherTools: GroupedOtherTools = {};
 		otherTools.forEach((tool) => {
 			if (!groupedOtherTools[tool.categorySlug]) {
 				groupedOtherTools[tool.categorySlug] = {
@@ -59,7 +74,7 @@ export async function getOtherTools() {
 				categories: Object.keys(groupedOtherTools),
 			},
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error fetching other tools:", error);
 		return {
 			success: false,
@@ -74,17 +89,17 @@ export async function getOtherTools() {
 	}
 }
 
-export async function getToolsByCategory(category) {
+export async function getToolsByCategory(category: string) {
 	try {
-		if (!toolsData.categories[category]) {
+		if (!typedCategories[category]) {
 			return {
 				success: false,
 				error: "Category not found",
-				data: [],
+				data: null,
 			};
 		}
 
-		const categoryData = toolsData.categories[category];
+		const categoryData = typedCategories[category];
 		const tools = categoryData.tools || [];
 
 		return {
@@ -99,19 +114,19 @@ export async function getToolsByCategory(category) {
 				totalCount: tools.length,
 			},
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error fetching tools by category:", error);
 		return {
 			success: false,
 			error: "Failed to fetch tools",
-			data: [],
+			data: null,
 		};
 	}
 }
 
 export async function getAllCategories() {
 	try {
-		const categories = Object.entries(toolsData.categories).map(
+		const categories = Object.entries(typedCategories).map(
 			([key, category]) => ({
 				slug: key,
 				name: category.name,
@@ -131,7 +146,7 @@ export async function getAllCategories() {
 				totalCategories: categories.length,
 			},
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error fetching categories:", error);
 		return {
 			success: false,

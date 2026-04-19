@@ -3,8 +3,35 @@
 import { generateText } from "./ai-services/openrouter-service.js";
 import { downloadYouTubeSubtitles } from "./subtitles-actions.js";
 
+export interface SummaryOptions {
+	summaryLength?: "short" | "medium" | "long";
+	summaryStyle?: "paragraph" | "bullet-points" | "detailed";
+	language?: string;
+	includeTimestamps?: boolean;
+	includeKeywords?: boolean;
+}
+
+export interface SummaryResult {
+	success?: boolean;
+	data?: {
+		summary: string;
+		title: string;
+		originalTranscript: string;
+		wordCount: number;
+		duration: number;
+		segmentCount: number;
+		summaryLength: string;
+		summaryStyle: string;
+		keywords: string[];
+		aiModel?: string;
+		generatedAt: string;
+		metadata?: any;
+	};
+	error?: string;
+}
+
 // Server action to generate AI-powered YouTube video summary
-export async function generateYouTubeSummary(url, options = {}) {
+export async function generateYouTubeSummary(url: string, options: SummaryOptions = {}): Promise<SummaryResult> {
 	try {
 		console.log("🤖 Starting AI YouTube summary generation for URL:", url);
 
@@ -77,7 +104,7 @@ export async function generateYouTubeSummary(url, options = {}) {
 		return {
 			success: true,
 			data: {
-				summary: summaryResult.summary,
+				summary: summaryResult.summary!,
 				title: title,
 				originalTranscript: transcript,
 				wordCount: subtitleData.wordCount,
@@ -99,12 +126,24 @@ export async function generateYouTubeSummary(url, options = {}) {
 	}
 }
 
+interface AISummaryOptions extends SummaryOptions {
+	segments?: any[] | null;
+}
+
+interface AISummaryResult {
+	success: boolean;
+	summary?: string;
+	keywords?: string[];
+	aiModel?: string;
+	error?: string;
+}
+
 // Generate AI-powered summary using OpenRouter
-async function generateAISummary(transcript, title, options) {
+async function generateAISummary(transcript: string, title: string, options: AISummaryOptions): Promise<AISummaryResult> {
 	try {
 		const {
-			summaryLength,
-			summaryStyle,
+			summaryLength = "medium",
+			summaryStyle = "bullet-points",
 			includeTimestamps,
 			includeKeywords,
 			segments,
@@ -165,15 +204,15 @@ Please provide a well-structured summary that captures the essence and value of 
 		}
 
 		// Extract keywords if requested
-		let keywords = [];
+		let keywords: string[] = [];
 		if (includeKeywords) {
 			try {
 				console.log("🔍 Extracting keywords...");
 				const keywordResult = await extractKeywords(transcript, title);
 				if (keywordResult.success) {
-					keywords = keywordResult.keywords;
+					keywords = keywordResult.keywords || [];
 				}
-			} catch (error) {
+			} catch (error: any) {
 				console.log("⚠️ Keyword extraction failed:", error.message);
 			}
 		}
@@ -191,7 +230,7 @@ Please provide a well-structured summary that captures the essence and value of 
 }
 
 // Extract keywords from the transcript
-async function extractKeywords(transcript, title) {
+async function extractKeywords(transcript: string, title: string) {
 	try {
 		const systemPrompt = `You are a keyword extraction expert. Extract the most relevant and important keywords, topics, and phrases from video content.`;
 
@@ -225,7 +264,7 @@ Format: ["keyword1", "keyword2", "keyword3", ...]`;
 				const keywords = JSON.parse(keywordsMatch[0]);
 				return { success: true, keywords: keywords };
 			}
-		} catch (parseError) {
+		} catch (parseError: any) {
 			console.log(
 				"⚠️ Could not parse keywords as JSON, extracting manually:",
 				parseError.message,
@@ -252,7 +291,7 @@ Format: ["keyword1", "keyword2", "keyword3", ...]`;
 }
 
 // Helper functions for prompt customization
-function getSummaryLengthDescription(length) {
+function getSummaryLengthDescription(length: string) {
 	switch (length) {
 		case "short":
 			return "Brief overview (2-3 sentences, key points only)";
@@ -265,7 +304,7 @@ function getSummaryLengthDescription(length) {
 	}
 }
 
-function getSummaryStyleDescription(style) {
+function getSummaryStyleDescription(style: string) {
 	switch (style) {
 		case "paragraph":
 			return "Flowing paragraphs with smooth transitions";
@@ -278,7 +317,7 @@ function getSummaryStyleDescription(style) {
 	}
 }
 
-function getSummaryMaxTokens(length) {
+function getSummaryMaxTokens(length: string) {
 	switch (length) {
 		case "short":
 			return 300;
@@ -292,7 +331,7 @@ function getSummaryMaxTokens(length) {
 }
 
 // Helper function to format timestamp
-function formatTimestamp(seconds) {
+function formatTimestamp(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
@@ -304,7 +343,7 @@ function formatTimestamp(seconds) {
 }
 
 // Server action for quick summary (simplified version)
-export async function generateQuickSummary(url) {
+export async function generateQuickSummary(url: string) {
 	console.log("⚡ Generating quick summary for:", url);
 
 	return await generateYouTubeSummary(url, {
@@ -316,7 +355,7 @@ export async function generateQuickSummary(url) {
 }
 
 // Server action for detailed summary (comprehensive version)
-export async function generateDetailedSummary(url, options = {}) {
+export async function generateDetailedSummary(url: string, options: SummaryOptions = {}) {
 	console.log("📋 Generating detailed summary for:", url);
 
 	return await generateYouTubeSummary(url, {

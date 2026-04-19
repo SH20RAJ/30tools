@@ -1,7 +1,52 @@
 "use server";
 
+interface TeraboxOGData {
+	title: string;
+	description: string;
+	image: string | null;
+	type: string;
+	url: string;
+	error?: string;
+}
+
+interface TeraboxVideoSegment {
+	filename: string;
+	url: string;
+	index: number;
+}
+
+interface TeraboxVideoData {
+	name: string;
+	type: string;
+	size: number;
+	size_formatted: string;
+	image: string | null;
+	download_links: {
+		url_1: string;
+		url_2: string;
+		stream: string;
+	};
+	stream_url: string;
+	thumbnail: string | null;
+	file_size: string;
+	download_link: string;
+	proxy_url: string;
+	size_bytes: number;
+	m3u8_url?: string | null;
+	segments?: TeraboxVideoSegment[];
+	total_segments?: number;
+	mdiskplay_source?: string;
+	mdiskplay_download?: string;
+}
+
+interface FetchResult<T> {
+	success?: boolean;
+	data?: T;
+	error?: string;
+}
+
 // Server action to fetch OG metadata from Terabox URL
-export async function fetchTeraboxOGData(url) {
+export async function fetchTeraboxOGData(url: string): Promise<TeraboxOGData | { error: string }> {
 	try {
 		if (!url?.includes("teraboxapp.com")) {
 			return { error: "Invalid Terabox URL" };
@@ -45,7 +90,7 @@ export async function fetchTeraboxOGData(url) {
 			type: typeMatch?.[1] || "video",
 			url: url,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error fetching OG data:", error);
 		return {
 			title: "Terabox Video",
@@ -58,7 +103,7 @@ export async function fetchTeraboxOGData(url) {
 }
 
 // Extract video ID from terabox URL
-function extractVideoIdFromTeraboxUrl(url) {
+function extractVideoIdFromTeraboxUrl(url: string): string | null {
 	// Handle both teraboxapp.com and teraboxshare.com URLs
 	// Extract video ID from URLs like https://teraboxshare.com/s/1Qx3vtX3rpRcI6poGaRe5wA
 	// or https://teraboxapp.com/s/1abc123def456
@@ -67,8 +112,8 @@ function extractVideoIdFromTeraboxUrl(url) {
 }
 
 // Parse M3U8 content and generate segment URLs
-function parseM3u8Content(m3u8Content, videoId) {
-	const segments = [];
+function parseM3u8Content(m3u8Content: string, videoId: string): TeraboxVideoSegment[] {
+	const segments: TeraboxVideoSegment[] = [];
 	const lines = m3u8Content.split("\n");
 
 	for (let i = 0; i < lines.length; i++) {
@@ -94,7 +139,7 @@ function parseM3u8Content(m3u8Content, videoId) {
 }
 
 // Server action to fetch video data using mdiskplay API
-export async function fetchTeraboxVideoDataMdiskplay(url) {
+export async function fetchTeraboxVideoDataMdiskplay(url: string): Promise<FetchResult<TeraboxVideoData>> {
 	try {
 		if (
 			!url ||
@@ -136,7 +181,7 @@ export async function fetchTeraboxVideoDataMdiskplay(url) {
 		}
 
 		// Process M3U8 playlist if available
-		let segments = [];
+		let segments: TeraboxVideoSegment[] = [];
 		if (data.source?.includes(".m3u8")) {
 			try {
 				const m3u8Response = await fetch(data.source, {
@@ -158,7 +203,7 @@ export async function fetchTeraboxVideoDataMdiskplay(url) {
 		}
 
 		// Transform the response to match the expected format
-		const transformedData = {
+		const transformedData: TeraboxVideoData = {
 			name: `Terabox Video ${videoId}`,
 			type: "video",
 			size: 0, // Size not available from mdiskplay API
@@ -191,7 +236,7 @@ export async function fetchTeraboxVideoDataMdiskplay(url) {
 			success: true,
 			data: transformedData,
 		};
-	} catch (_error) {
+	} catch (error: any) {
 		console.error("❌ Error fetching video data from mdiskplay:", error);
 		return {
 			error:
@@ -203,9 +248,9 @@ export async function fetchTeraboxVideoDataMdiskplay(url) {
 
 // Server action to fetch full video data from Terabox API with mdiskplay fallback
 export async function fetchTeraboxVideoData(
-	url,
-	cookies = "ndus=Y2YqaCTteHuiU3Ud_MYU7vHoVW4DNBi0MPmg_1tQ",
-) {
+	url: string,
+	cookies: string = "ndus=Y2YqaCTteHuiU3Ud_MYU7vHoVW4DNBi0MPmg_1tQ",
+): Promise<FetchResult<TeraboxVideoData>> {
 	try {
 		if (
 			!url ||
@@ -260,7 +305,7 @@ export async function fetchTeraboxVideoData(
 
 		// Transform the response to match the expected format
 		// proxy_url is the video src for playback
-		const transformedData = {
+		const transformedData: TeraboxVideoData = {
 			name: data.file_name || "Terabox Video",
 			type: "video",
 			size: data.size_bytes || 0,
@@ -286,7 +331,7 @@ export async function fetchTeraboxVideoData(
 			success: true,
 			data: transformedData,
 		};
-	} catch (_error) {
+	} catch (error: any) {
 		console.error("❌ Error fetching video data:", error);
 		return {
 			error:

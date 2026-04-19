@@ -2,29 +2,29 @@ import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGenerator
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free AI Voice Generator Online - No Signup | 30tools",
+	title: "Free AI Voice Generator Online - Realistic ElevenLabs Alternative",
 	description:
-		"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
+		"Convert text to lifelike AI voices for free with our ElevenLabs alternative. Generate natural-sounding speech for videos, podcasts, and presentations. No signup, multiple languages, and instant MP3 download.",
 	keywords:
-		"ai voice generator, free online tool, no signup, generators, ai voice generator online, 30tools",
+		"free ai voice generator, elevenlabs alternative free, text to speech ai, realistic ai voices, free tts online, 30tools, ai voice maker",
 	alternates: {
 		canonical: "https://30tools.com/ai-voice-generator",
 	},
 	openGraph: {
-		title: "Free AI Voice Generator Online - No Signup | 30tools",
+		title: "Free AI Voice Generator Online - Realistic ElevenLabs Alternative",
 		description:
-			"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
+			"Convert text to lifelike AI voices for free with our ElevenLabs alternative. Generate natural-sounding speech instantly. No signup, multiple languages.",
 		url: "https://30tools.com/ai-voice-generator",
 		siteName: "30tools",
-		images: [{ url: "/api/og?title=Free%20AI%20Voice%20Generator%20Online%20-%20No%20Signup" }],
+		images: [{ url: "/api/og?title=AI%20Voice%20Generator%20-%20Realistic%20ElevenLabs%20Alternative" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AI Voice Generator Online - No Signup | 30tools",
+		title: "Free AI Voice Generator Online - Realistic ElevenLabs Alternative",
 		description:
-			"Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly. 100% free, no signup required, and privacy-focused processing in your browser.",
-		images: ["/api/og?title=Free%20AI%20Voice%20Generator%20Online%20-%20No%20Signup"],
+			"Convert text to lifelike AI voices for free with our ElevenLabs alternative. No signup required.",
+		images: ["/api/og?title=AI%20Voice%20Generator%20-%20Realistic%20ElevenLabs%20Alternative"],
 	},
 	robots: { index: true, follow: true },
 };

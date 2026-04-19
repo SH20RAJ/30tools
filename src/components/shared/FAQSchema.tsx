@@ -1,4 +1,13 @@
-export default function FAQSchema({ faqs }) {
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface FAQSchemaProps {
+  faqs: FAQ[];
+}
+
+export default function FAQSchema({ faqs }: FAQSchemaProps) {
 	if (!faqs || faqs.length === 0) return null;
 
 	const faqStructuredData = {

@@ -11,8 +11,13 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
+interface BeforeInstallPromptEvent extends Event {
+	prompt: () => Promise<void>;
+	userChoice: Promise<{ outcome: "accepted" | "dismissed" }>;
+}
+
 export default function PWAInstallPrompt() {
-	const [deferredPrompt, setDeferredPrompt] = useState(null);
+	const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
 	const [showPrompt, setShowPrompt] = useState(false);
 	const [isIOS, setIsIOS] = useState(false);
 
@@ -25,7 +30,7 @@ export default function PWAInstallPrompt() {
 		const isStandalone = window.matchMedia(
 			"(display-mode: standalone)",
 		).matches;
-		const isPWA = window.navigator.standalone === true;
+		const isPWA = (window.navigator as any).standalone === true;
 
 		if (isStandalone || isPWA) {
 			return; // Already installed
@@ -36,16 +41,16 @@ export default function PWAInstallPrompt() {
 		if (dismissed) {
 			const dismissedTime = new Date(dismissed);
 			const daysSinceDismissed =
-				(Date.now() - dismissedTime) / (1000 * 60 * 60 * 24);
+				(Date.now() - dismissedTime.getTime()) / (1000 * 60 * 60 * 24);
 			if (daysSinceDismissed < 7) {
 				// Don't show again for 7 days
 				return;
 			}
 		}
 
-		const handleBeforeInstallPrompt = (e) => {
+		const handleBeforeInstallPrompt = (e: Event) => {
 			e.preventDefault();
-			setDeferredPrompt(e);
+			setDeferredPrompt(e as BeforeInstallPromptEvent);
 			// Show prompt after 30 seconds
 			setTimeout(() => setShowPrompt(true), 30000);
 		};

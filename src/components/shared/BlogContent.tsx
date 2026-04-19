@@ -3,8 +3,18 @@
 import Script from "next/script";
 import { useEffect, useRef } from "react";
 
-export default function BlogContent({ html }) {
-	const contentRef = useRef(null);
+declare global {
+  interface Window {
+    hljs: any;
+  }
+}
+
+interface BlogContentProps {
+  html: string;
+}
+
+export default function BlogContent({ html }: BlogContentProps) {
+	const contentRef = useRef<HTMLDivElement>(null);
 
 	useEffect(() => {
 		// Apply syntax highlighting after content is rendered
@@ -56,7 +66,7 @@ export default function BlogContent({ html }) {
 				dangerouslySetInnerHTML={{ __html: html }}
 			/>
 			{/* Using standard style tag for client-side styling */}
-			<style jsx>{`
+			<style>{`
  .prose pre code {
  background: transparent !important;
  padding: 1rem !important;

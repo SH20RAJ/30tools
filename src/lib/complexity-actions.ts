@@ -1,17 +1,79 @@
 "use server";
 
+export interface TimeComplexity {
+	bigO: string;
+	bestCase: string;
+	averageCase: string;
+	worstCase: string;
+	explanation: string;
+}
+
+export interface SpaceComplexity {
+	bigO: string;
+	auxiliary: string;
+	explanation: string;
+}
+
+export interface ComplexityAnalysis {
+	timeComplexity: TimeComplexity;
+	spaceComplexity: SpaceComplexity;
+	algorithmType: string;
+	optimizations: string[];
+	keyInsights: string[];
+	complexity_analysis: {
+		loops: string;
+		recursion: string;
+		dataStructures: string;
+	};
+}
+
+export interface AnalysisResponse {
+	success: boolean;
+	analysis?: ComplexityAnalysis;
+	error?: string;
+	metadata: {
+		language: string;
+		model: string;
+		codeLength: number;
+		analysisTimestamp: string;
+	};
+}
+
+export interface ModelInfo {
+	name: string;
+	description: string;
+	aliases: string[];
+	tier: string;
+	maxInputChars: number;
+	reasoning: boolean;
+}
+
+export interface ModelsResponse {
+	success: boolean;
+	models: ModelInfo[];
+	error?: string;
+}
+
+export interface LanguageInfo {
+	value: string;
+	label: string;
+	extensions: string[];
+}
+
+export interface ValidationResult {
+	valid: boolean;
+	issues: string[];
+	warnings: string[];
+}
+
 /**
  * Analyzes the time and space complexity of provided code using Pollinations AI API
- * @param {string} code - The source code to analyze
- * @param {string} language - Programming language of the code (e.g., 'javascript', 'python', 'java', 'cpp', etc.)
- * @param {string} model - AI model to use for analysis (default: 'qwen-coder')
- * @returns {Promise<Object>} Analysis result containing time complexity, space complexity, and explanations
  */
 export async function analyzeComplexity(
-	code,
+	code: string,
 	language = "javascript",
 	model = "qwen-coder",
-) {
+): Promise<AnalysisResponse> {
 	try {
 		console.log(`🔍 Starting complexity analysis for ${language} code...`);
 
@@ -98,7 +160,7 @@ ${code}
 		console.log("✅ Received response from API");
 
 		// Try to parse the JSON response
-		let analysisResult;
+		let analysisResult: ComplexityAnalysis;
 		try {
 			// Clean up the response text (remove any markdown code blocks)
 			const cleanedResponse = responseText
@@ -145,7 +207,7 @@ ${code}
 				analysisTimestamp: new Date().toISOString(),
 			},
 		};
-	} catch (error) {
+	} catch (error: any) {
 		console.error("❌ Error in analyzeComplexity:", error);
 		return {
 			success: false,
@@ -162,9 +224,8 @@ ${code}
 
 /**
  * Get available models for complexity analysis
- * @returns {Promise<Array>} List of available AI models
  */
-export async function getAvailableModels() {
+export async function getAvailableModels(): Promise<ModelsResponse> {
 	try {
 		console.log("📡 Fetching available models from Pollinations API...");
 
@@ -177,7 +238,7 @@ export async function getAvailableModels() {
 		const models = await response.json();
 
 		// Filter models suitable for code analysis
-		const codeAnalysisModels = models.filter(
+		const codeAnalysisModels = (models as any[]).filter(
 			(model) =>
 				model.input_modalities.includes("text") &&
 				model.output_modalities.includes("text") &&
@@ -203,7 +264,7 @@ export async function getAvailableModels() {
 				reasoning: model.reasoning || false,
 			})),
 		};
-	} catch (error) {
+	} catch (error: any) {
 		console.error("❌ Error fetching models:", error);
 		return {
 			success: false,
@@ -214,9 +275,12 @@ export async function getAvailableModels() {
 					name: "qwen-coder",
 					description: "Qwen 2.5 Coder 32B",
 					tier: "anonymous",
+					aliases: [],
+					maxInputChars: 10000,
+					reasoning: false
 				},
-				{ name: "deepseek", description: "DeepSeek V3.1", tier: "seed" },
-				{ name: "openai", description: "OpenAI GPT-5 Nano", tier: "anonymous" },
+				{ name: "deepseek", description: "DeepSeek V3.1", tier: "seed", aliases: [], maxInputChars: 10000, reasoning: false },
+				{ name: "openai", description: "OpenAI GPT-5 Nano", tier: "anonymous", aliases: [], maxInputChars: 10000, reasoning: false },
 			],
 		};
 	}
@@ -224,17 +288,14 @@ export async function getAvailableModels() {
 
 /**
  * Validate code syntax for basic issues before analysis
- * @param {string} code - Code to validate
- * @param {string} language - Programming language
- * @returns {Promise<Object>} Validation result
  */
-export async function validateCode(code, language) {
-	const issues = [];
+export async function validateCode(code: string, language: string): Promise<ValidationResult> {
+	const issues: string[] = [];
 
 	// Basic validation
 	if (!code || code.trim().length === 0) {
 		issues.push("Code cannot be empty");
-		return { valid: false, issues };
+		return { valid: false, issues, warnings: [] };
 	}
 
 	if (code.length > 50000) {
@@ -298,9 +359,8 @@ export async function validateCode(code, language) {
 
 /**
  * Get supported programming languages
- * @returns {Promise<Array>} List of supported languages
  */
-export async function getSupportedLanguages() {
+export async function getSupportedLanguages(): Promise<LanguageInfo[]> {
 	return [
 		{ value: "javascript", label: "JavaScript", extensions: [".js", ".mjs"] },
 		{ value: "typescript", label: "TypeScript", extensions: [".ts", ".tsx"] },
