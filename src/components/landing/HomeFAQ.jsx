@@ -39,8 +39,8 @@ export function HomeFAQ() {
 				
 				<Accordion type="single" collapsible className="w-full space-y-4">
 					{faqs.map((faq, i) => (
-						<AccordionItem key={i} value={`item-${i}`} className="border border-border/60 bg-card/50 rounded-2xl px-6">
-							<AccordionTrigger className="text-lg font-semibold py-6 hover:no-underline">
+						<AccordionItem key={i} value={`item-${i}`} className="border border-border/60 bg-card/50 px-6 rounded-none">
+							<AccordionTrigger className="text-lg font-semibold py-6 hover:no-underline rounded-none">
 								{faq.question}
 							</AccordionTrigger>
 							<AccordionContent className="text-muted-foreground text-base pb-6 leading-relaxed">

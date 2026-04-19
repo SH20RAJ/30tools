@@ -35,7 +35,7 @@ export function LanguageSelector({ languages = [] }: LanguageSelectorProps) {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent
 				align="end"
-				className="w-[260px] p-1 grid grid-cols-2 gap-1 shadow-xl border-border"
+				className="w-[260px] p-1 grid grid-cols-2 gap-1 shadow-xl border-border rounded-none"
 			>
 				{languages.map((lang) => (
 					<DropdownMenuItem

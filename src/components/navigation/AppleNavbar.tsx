@@ -153,7 +153,7 @@ export function AppleNavbar() {
 
 						{/* Mobile Menu Button */}
 						<button 
-							className="p-2 text-muted-foreground hover:text-foreground md:hidden"
+							className="p-2 text-muted-foreground hover:text-foreground md:hidden rounded-none"
 							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 						>
 							{mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -178,7 +178,7 @@ export function AppleNavbar() {
 								<Input
 									name="q"
 									placeholder="Search tools..."
-									className="bg-muted border-transparent text-foreground pl-9 w-full"
+									className="bg-muted border-transparent text-foreground pl-9 w-full rounded-none"
 								/>
 							</form>
 							{navLinks.map((link) => (

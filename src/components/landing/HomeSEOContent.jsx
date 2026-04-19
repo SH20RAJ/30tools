@@ -43,7 +43,7 @@ export function HomeSEOContent() {
 					</div>
 				</div>
 
-				<div className="bg-card border border-border/60 p-8 md:p-12 rounded-3xl-off shadow-3xl bg-apple-glass relative overflow-hidden group">
+				<div className="bg-card border border-border/60 p-8 md:p-12 rounded-none shadow-3xl bg-apple-glass relative overflow-hidden group">
 					<div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
 						<Zap className="h-32 w-32" />
 					</div>
@@ -63,7 +63,7 @@ export function HomeSEOContent() {
 							</li>
 						))}
 					</ul>
-					<div className="mt-10 p-6 rounded-2xl bg-primary/5 border border-primary/10">
+					<div className="mt-10 p-6 rounded-none bg-primary/5 border border-primary/10">
 						<p className="text-sm font-medium italic">
 							"30tools has replaced over a dozen paid subscriptions for my team. The browser-based processing is a game changer for our sensitive client data."
 						</p>

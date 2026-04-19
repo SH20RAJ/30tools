@@ -30,7 +30,7 @@ export function ToolDirectory({ categories = [], lang = "en" }) {
 			{categories.map((category) => (
 				<section key={category.key} className="relative">
 					<div className="mb-12 flex items-center gap-4 border-b border-border/40 pb-6">
-						<div className="p-3 rounded-2xl bg-primary/10 text-primary">
+						<div className="p-3 rounded-none bg-primary/10 text-primary">
 							{iconMap[category.key] || <Settings className="h-6 w-6" />}
 						</div>
 						<div>
@@ -47,7 +47,7 @@ export function ToolDirectory({ categories = [], lang = "en" }) {
 							<Link
 								key={tool.id}
 								href={tool.route}
-								className="group flex flex-col justify-between p-6 md:p-8 bg-card border border-border/60 rounded-3xl-off hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_50px_rgba(255,255,255,0.05)] hover:border-primary/40 hover:-transpace-y-1 transition-all duration-500 no-underline h-full relative overflow-hidden"
+								className="group flex flex-col justify-between p-6 md:p-8 bg-card border border-border/60 rounded-none hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_50px_rgba(255,255,255,0.05)] hover:border-primary/40 hover:-transpace-y-1 transition-all duration-500 no-underline h-full relative overflow-hidden"
 							>
 								{/* Subtle Gradient Glow on Hover */}
 								<div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

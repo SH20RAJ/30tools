@@ -66,7 +66,7 @@ export default async function NotFoundPage({ searchParams }: NotFoundPageProps) 
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 rounded-lg bg-transparent group-hover:bg-primary/10 transition-colors">
+									<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
 										<span className="text-sm">Try it</span>
 										<ArrowRightIcon className="w-4 h-4" />
 									</div>
@@ -85,7 +85,7 @@ export default async function NotFoundPage({ searchParams }: NotFoundPageProps) 
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 rounded-lg bg-transparent group-hover:bg-primary/10 transition-colors">
+									<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
 										<span className="text-sm">Try it</span>
 										<ArrowRightIcon className="w-4 h-4" />
 									</div>
@@ -104,7 +104,7 @@ export default async function NotFoundPage({ searchParams }: NotFoundPageProps) 
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 rounded-lg bg-transparent group-hover:bg-primary/10 transition-colors">
+									<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
 										<span className="text-sm">Try it</span>
 										<ArrowRightIcon className="w-4 h-4" />
 									</div>
@@ -123,7 +123,7 @@ export default async function NotFoundPage({ searchParams }: NotFoundPageProps) 
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 rounded-lg bg-transparent group-hover:bg-primary/10 transition-colors">
+									<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
 										<span className="text-sm">Try it</span>
 										<ArrowRightIcon className="w-4 h-4" />
 									</div>

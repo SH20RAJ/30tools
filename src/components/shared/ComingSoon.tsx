@@ -24,23 +24,23 @@ export default function ComingSoon({ toolName }: ComingSoonProps) {
 					you. It will be available very soon!
 				</p>
 
-				<div className="p-6 bg-card border border-border/50 rounded-2xl shadow-sm">
+				<div className="p-6 bg-card border border-border/50 rounded-none shadow-sm">
 					<p className="font-medium mb-4">
 						While you wait, check out our other popular tools:
 					</p>
 					<div className="flex flex-wrap justify-center gap-4">
 						<Link href="/youtube-downloader">
-							<Button variant="outline" className="rounded-xl gap-2">
+							<Button variant="outline" className="rounded-none gap-2">
 								YouTube Downloader
 							</Button>
 						</Link>
 						<Link href="/tiktok-downloader">
-							<Button variant="outline" className="rounded-xl gap-2">
+							<Button variant="outline" className="rounded-none gap-2">
 								TikTok Downloader
 							</Button>
 						</Link>
 						<Link href="/pdf-compressor">
-							<Button variant="outline" className="rounded-xl gap-2">
+							<Button variant="outline" className="rounded-none gap-2">
 								PDF Compressor
 							</Button>
 						</Link>
@@ -49,7 +49,7 @@ export default function ComingSoon({ toolName }: ComingSoonProps) {
 
 				<div className="pt-8">
 					<Link href="/">
-						<Button size="lg" className="rounded-full">
+						<Button size="lg" className="rounded-none">
 							Explore All Tools
 						</Button>
 					</Link>
