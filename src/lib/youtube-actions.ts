@@ -7,8 +7,14 @@ import {
 	generateYouTubeScriptAI,
 } from "./ai-services/youtube-ai-actions.js";
 
+export interface YouTubeVideoIdResult {
+	success?: boolean;
+	videoId?: string;
+	error?: string;
+}
+
 // Server action to extract YouTube video ID from URL
-export async function extractYouTubeVideoId(url) {
+export async function extractYouTubeVideoId(url: string): Promise<YouTubeVideoIdResult> {
 	try {
 		if (!url) {
 			return { error: "Please provide a YouTube URL" };
@@ -37,14 +43,23 @@ export async function extractYouTubeVideoId(url) {
 		return {
 			error: "Invalid YouTube URL. Please check the URL and try again.",
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error extracting video ID:", error);
 		return { error: "Failed to process the YouTube URL" };
 	}
 }
 
+export interface YouTubeMetadataResult {
+	success?: boolean;
+	title?: string;
+	channelName?: string;
+	channelUrl?: string;
+	videoId?: string;
+	error?: string;
+}
+
 // Server action to get YouTube video metadata
-export async function getYouTubeVideoMetadata(videoId) {
+export async function getYouTubeVideoMetadata(videoId: string): Promise<YouTubeMetadataResult> {
 	try {
 		if (!videoId) {
 			return { error: "Video ID is required" };
@@ -73,7 +88,7 @@ export async function getYouTubeVideoMetadata(videoId) {
 			channelUrl: data.author_url || "",
 			videoId: videoId,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error fetching video metadata:", error);
 		return {
 			error:
@@ -83,14 +98,28 @@ export async function getYouTubeVideoMetadata(videoId) {
 	}
 }
 
+export interface ThumbnailUrl {
+	name: string;
+	url: string;
+	size: string;
+	quality: string;
+}
+
+export interface ThumbnailUrlsResult {
+	success?: boolean;
+	thumbnails?: ThumbnailUrl[];
+	videoId?: string;
+	error?: string;
+}
+
 // Server action to generate thumbnail URLs
-export async function generateThumbnailUrls(videoId) {
+export async function generateThumbnailUrls(videoId: string): Promise<ThumbnailUrlsResult> {
 	try {
 		if (!videoId) {
 			return { error: "Video ID is required" };
 		}
 
-		const thumbnails = [
+		const thumbnails: ThumbnailUrl[] = [
 			{
 				name: "Default (120x90)",
 				url: `https://img.youtube.com/vi/${videoId}/default.jpg`,
@@ -128,21 +157,21 @@ export async function generateThumbnailUrls(videoId) {
 			thumbnails: thumbnails,
 			videoId: videoId,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error generating thumbnail URLs:", error);
 		return { error: "Failed to generate thumbnail URLs" };
 	}
 }
 
 // Server action to validate thumbnail existence
-export async function validateThumbnailExists(url) {
+export async function validateThumbnailExists(url: string) {
 	try {
 		const response = await fetch(url, { method: "HEAD" });
 		return {
 			exists: response.ok,
 			url: url,
 		};
-	} catch (_error) {
+	} catch (error) {
 		return {
 			exists: false,
 			url: url,
@@ -151,10 +180,10 @@ export async function validateThumbnailExists(url) {
 }
 
 // Server action for YouTube Video/Audio Downloader
-export async function downloadYouTubeVideo(url) {
+export async function downloadYouTubeVideo(url: string) {
 	try {
 		const videoIdResult = await extractYouTubeVideoId(url);
-		if (!videoIdResult.success) {
+		if (!videoIdResult.success || !videoIdResult.videoId) {
 			return { success: false, error: videoIdResult.error };
 		}
 
@@ -165,7 +194,7 @@ export async function downloadYouTubeVideo(url) {
 
 		// Generate thumbnail for preview
 		const thumbnailUrls = await generateThumbnailUrls(videoIdResult.videoId);
-		const thumbnail = thumbnailUrls.success
+		const thumbnail = (thumbnailUrls.success && thumbnailUrls.thumbnails)
 			? thumbnailUrls.thumbnails[2].url
 			: null;
 
@@ -215,7 +244,7 @@ export async function downloadYouTubeVideo(url) {
 			success: true,
 			data: videoData,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error processing YouTube video download:", error);
 		return {
 			success: false,
@@ -225,10 +254,10 @@ export async function downloadYouTubeVideo(url) {
 }
 
 // Server action for YouTube Shorts Downloader
-export async function downloadYouTubeShorts(url) {
+export async function downloadYouTubeShorts(url: string) {
 	try {
 		const videoIdResult = await extractYouTubeVideoId(url);
-		if (!videoIdResult.success) {
+		if (!videoIdResult.success || !videoIdResult.videoId) {
 			return { success: false, error: videoIdResult.error };
 		}
 
@@ -239,7 +268,7 @@ export async function downloadYouTubeShorts(url) {
 
 		// Generate thumbnail for preview
 		const thumbnailUrls = await generateThumbnailUrls(videoIdResult.videoId);
-		const thumbnail = thumbnailUrls.success
+		const thumbnail = (thumbnailUrls.success && thumbnailUrls.thumbnails)
 			? thumbnailUrls.thumbnails[2].url
 			: null;
 
@@ -261,7 +290,7 @@ export async function downloadYouTubeShorts(url) {
 			success: true,
 			data: shortsData,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error processing YouTube Shorts download:", error);
 		return {
 			success: false,
@@ -271,12 +300,12 @@ export async function downloadYouTubeShorts(url) {
 }
 
 // Server action for YouTube Transcript Downloader
-export async function downloadYouTubeTranscript(url, language = "en") {
+export async function downloadYouTubeTranscript(url: string, language: string = "en") {
 	return await downloadYouTubeTranscriptTactiq(url, language);
 }
 
 // Server action to download YouTube transcript using Tactiq API
-export async function downloadYouTubeTranscriptTactiq(url, langCode = "en") {
+export async function downloadYouTubeTranscriptTactiq(url: string, langCode: string = "en") {
 	try {
 		if (!url) {
 			return { error: "Please provide a YouTube URL" };
@@ -331,22 +360,43 @@ export async function downloadYouTubeTranscriptTactiq(url, langCode = "en") {
 			success: true,
 			data: processedTranscript,
 		};
-	} catch (_error) {
+	} catch (error: any) {
 		console.error("Error downloading transcript:", error);
 		return {
-			error: error.message.includes("API request failed")
+			error: error.message?.includes("API request failed")
 				? "Failed to fetch transcript from the API. Please try again later."
 				: "Failed to download transcript. Please check the video URL and try again.",
 		};
 	}
 }
 
+export interface TranscriptSegment {
+	start: number;
+	end: number;
+	dur: number;
+	text: string;
+}
+
+export interface ProcessedTranscript {
+	title: string;
+	language: string;
+	segments: TranscriptSegment[];
+	plainText: string;
+	timestampedText: string;
+	srtContent: string;
+	vttContent: string;
+	jsonContent: string;
+	wordCount: number;
+	duration: number;
+	segmentCount: number;
+}
+
 // Helper function to process and format transcript data
-function processTranscriptData(tactiqData) {
+function processTranscriptData(tactiqData: any): ProcessedTranscript {
 	const { title, captions } = tactiqData;
 
 	// Convert Tactiq format to our standard format
-	const segments = captions.map((caption) => ({
+	const segments: TranscriptSegment[] = captions.map((caption: any) => ({
 		start: parseFloat(caption.start),
 		end: parseFloat(caption.start) + parseFloat(caption.dur),
 		dur: parseFloat(caption.dur),
@@ -414,7 +464,7 @@ function processTranscriptData(tactiqData) {
 }
 
 // Helper function to format timestamp for display
-function formatTimestamp(seconds) {
+function formatTimestamp(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
@@ -426,7 +476,7 @@ function formatTimestamp(seconds) {
 }
 
 // Helper function to format time for SRT
-function formatSRTTime(seconds) {
+function formatSRTTime(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
@@ -436,7 +486,7 @@ function formatSRTTime(seconds) {
 }
 
 // Helper function to format time for VTT
-function formatVTTTime(seconds) {
+function formatVTTTime(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
@@ -446,7 +496,7 @@ function formatVTTTime(seconds) {
 }
 
 // Server action to generate YouTube timestamps
-export async function generateTimestamps(videoUrl, transcript) {
+export async function generateTimestamps(videoUrl: string, transcript?: string) {
 	try {
 		if (!videoUrl && !transcript) {
 			return { error: "Please provide either a YouTube URL or transcript" };
@@ -458,7 +508,7 @@ export async function generateTimestamps(videoUrl, transcript) {
 		}
 
 		// Extract video ID if URL is provided
-		let videoId = null;
+		let videoId: string | undefined = undefined;
 		if (videoUrl) {
 			const result = await extractYouTubeVideoId(videoUrl);
 			if (result.error) {
@@ -509,21 +559,21 @@ export async function generateTimestamps(videoUrl, transcript) {
 			timestamps: mockTimestamps,
 			videoId,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error generating timestamps:", error);
 		return { error: "Failed to generate timestamps" };
 	}
 }
 
 // Server action to create GIF from YouTube video
-export async function createGifFromYoutube(videoUrl, options) {
+export async function createGifFromYoutube(videoUrl: string, options: any) {
 	try {
 		if (!videoUrl) {
 			return { error: "Please provide a YouTube URL" };
 		}
 
 		const result = await extractYouTubeVideoId(videoUrl);
-		if (result.error) {
+		if (result.error || !result.videoId) {
 			return { error: result.error };
 		}
 
@@ -555,14 +605,14 @@ export async function createGifFromYoutube(videoUrl, options) {
 				dimensions: { width, height },
 			},
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error creating GIF:", error);
 		return { error: "Failed to create GIF from YouTube video" };
 	}
 }
 
 // Server action to generate YouTube script with AI
-export async function generateYouTubeScript(scriptData) {
+export async function generateYouTubeScript(scriptData: any) {
 	try {
 		const { topic } = scriptData;
 
@@ -572,14 +622,14 @@ export async function generateYouTubeScript(scriptData) {
 
 		// Use AI service for script generation
 		return await generateYouTubeScriptAI(scriptData);
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error generating script:", error);
 		return { error: "Failed to generate script" };
 	}
 }
 
 // Server action to generate comment responses
-export async function generateCommentResponse(requestData) {
+export async function generateCommentResponse(requestData: any) {
 	try {
 		const { comment } = requestData;
 
@@ -589,21 +639,21 @@ export async function generateCommentResponse(requestData) {
 
 		// Use AI service for comment response generation
 		return await generateCommentResponseAI(requestData);
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error generating comment response:", error);
 		return { error: "Failed to generate comment responses" };
 	}
 }
 
 // Server action to download YouTube video pack
-export async function downloadYouTubePack(videoUrl, selectedAssets) {
+export async function downloadYouTubePack(videoUrl: string, selectedAssets: any) {
 	try {
 		if (!videoUrl) {
 			return { error: "Please provide a YouTube URL" };
 		}
 
 		const result = await extractYouTubeVideoId(videoUrl);
-		if (result.error) {
+		if (result.error || !result.videoId) {
 			return { error: result.error };
 		}
 
@@ -616,7 +666,7 @@ export async function downloadYouTubePack(videoUrl, selectedAssets) {
 		}
 
 		// Build comprehensive video data pack
-		const packData = {
+		const packData: any = {
 			videoId,
 			url: videoUrl,
 			extractedAt: new Date().toISOString(),
@@ -627,9 +677,9 @@ export async function downloadYouTubePack(videoUrl, selectedAssets) {
 		if (selectedAssets.metadata || selectedAssets.title) {
 			packData.metadata = {
 				title: metadata.title || "YouTube Video",
-				description: metadata.description || "",
-				duration: metadata.duration || "Unknown",
-				publishedAt: metadata.publishedAt || new Date().toISOString(),
+				description: (metadata as any).description || "",
+				duration: (metadata as any).duration || "Unknown",
+				publishedAt: (metadata as any).publishedAt || new Date().toISOString(),
 				viewCount: Math.floor(Math.random() * 1000000) + 10000, // Mock data
 				likeCount: Math.floor(Math.random() * 50000) + 1000,
 				commentCount: Math.floor(Math.random() * 10000) + 100,
@@ -639,7 +689,7 @@ export async function downloadYouTubePack(videoUrl, selectedAssets) {
 		// Add title and description if selected
 		if (selectedAssets.title) {
 			packData.title = metadata.title || "YouTube Video";
-			packData.description = metadata.description || "No description available";
+			packData.description = (metadata as any).description || "No description available";
 		}
 
 		// Add tags if selected
@@ -683,7 +733,7 @@ export async function downloadYouTubePack(videoUrl, selectedAssets) {
 		if (selectedAssets.channelInfo) {
 			packData.channel = {
 				id: `UC${videoId.substring(0, 22)}`, // Mock channel ID
-				title: metadata.author_name || "YouTube Channel",
+				title: metadata.channelName || "YouTube Channel",
 				subscriberCount: Math.floor(Math.random() * 1000000) + 1000,
 				videoCount: Math.floor(Math.random() * 1000) + 50,
 				description: "Sample channel description",
@@ -726,19 +776,19 @@ export async function downloadYouTubePack(videoUrl, selectedAssets) {
 			videoId,
 			assetCount: Object.values(selectedAssets).filter(Boolean).length,
 		};
-	} catch (_error) {
+	} catch (error) {
 		console.error("Error downloading YouTube pack:", error);
 		return { error: "Failed to download YouTube video pack" };
 	}
 }
 
 // Server action for AI-powered YouTube idea generation
-export async function generateYouTubeIdeas(requestData) {
+export async function generateYouTubeIdeas(requestData: any) {
 	return await generateYouTubeIdeasAI(requestData);
 }
 
 // Server action to get Channel Info (ID, Title, etc.) from URL
-export async function getChannelInfo(url) {
+export async function getChannelInfo(url: string) {
 	try {
 		if (!url) throw new Error("URL is required");
 
@@ -800,7 +850,7 @@ export async function getChannelInfo(url) {
 				url,
 			},
 		};
-	} catch (_error) {
+	} catch (error: any) {
 		console.error("Error fetching channel info:", error);
 		return {
 			success: false,

@@ -3,10 +3,40 @@
  * Supports multiple transcript sources and formats
  */
 
+export interface TranscriptSegment {
+	start: number;
+	duration: number;
+	text: string;
+	offset?: number;
+	dur?: number;
+}
+
+export interface TranscriptData {
+	segments: TranscriptSegment[];
+	text: string;
+	title?: string;
+	thumbnail?: string;
+	duration?: string;
+	language?: string;
+	wordCount?: number;
+}
+
+export interface VideoInfo {
+	title?: string;
+	thumbnail?: string;
+	language?: string;
+}
+
+export interface ApiResponse<T> {
+	success: boolean;
+	data?: T;
+	error?: string;
+}
+
 /**
  * Extract video ID from YouTube URL
  */
-export function extractVideoId(url) {
+export function extractVideoId(url: string): string | null {
 	const patterns = [
 		/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
 		/youtube\.com\/watch\?.*v=([^&\n?#]+)/,
@@ -22,7 +52,7 @@ export function extractVideoId(url) {
 /**
  * Format time in seconds to SRT/VTT timestamp format
  */
-export function formatTime(seconds) {
+export function formatTime(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);
@@ -34,7 +64,7 @@ export function formatTime(seconds) {
 /**
  * Format transcript data to SRT format
  */
-export function formatSRT(transcriptData) {
+export function formatSRT(transcriptData: TranscriptData): string {
 	if (!transcriptData.segments || transcriptData.segments.length === 0) {
 		return transcriptData.text || "";
 	}
@@ -51,7 +81,7 @@ export function formatSRT(transcriptData) {
 /**
  * Format transcript data to VTT format
  */
-export function formatVTT(transcriptData) {
+export function formatVTT(transcriptData: TranscriptData): string {
 	if (!transcriptData.segments || transcriptData.segments.length === 0) {
 		return `WEBVTT\n\n${transcriptData.text || ""}`;
 	}
@@ -72,7 +102,7 @@ export function formatVTT(transcriptData) {
 /**
  * Fetch transcript using YouTube's internal API
  */
-export async function fetchYouTubeTranscript(videoId, languageCode = "en") {
+export async function fetchYouTubeTranscript(videoId: string, languageCode = "en"): Promise<ApiResponse<any>> {
 	try {
 		// This would typically use a server-side API or proxy
 		// For client-side, we'll use the youtube-transcript package via API route
@@ -89,7 +119,7 @@ export async function fetchYouTubeTranscript(videoId, languageCode = "en") {
 			success: true,
 			data: data,
 		};
-	} catch (error) {
+	} catch (error: any) {
 		return {
 			success: false,
 			error: error.message,
@@ -100,16 +130,16 @@ export async function fetchYouTubeTranscript(videoId, languageCode = "en") {
 /**
  * Parse transcript segments and calculate metadata
  */
-export function parseTranscriptData(rawTranscript, videoInfo = {}) {
-	const segments = rawTranscript.map((item) => ({
-		start: item.offset / 1000 || item.start || 0,
-		duration: item.duration / 1000 || item.dur || 3,
+export function parseTranscriptData(rawTranscript: any[], videoInfo: VideoInfo = {}): TranscriptData {
+	const segments: TranscriptSegment[] = rawTranscript.map((item) => ({
+		start: (item.offset ? item.offset / 1000 : item.start) || 0,
+		duration: (item.duration ? item.duration / 1000 : item.dur) || 3,
 		text: item.text || "",
 	}));
 
 	const text = segments.map((s) => s.text).join(" ");
 	const wordCount = text.split(/\s+/).filter((w) => w.length > 0).length;
-	const duration =
+	const durationSeconds =
 		segments.length > 0
 			? segments[segments.length - 1].start +
 				segments[segments.length - 1].duration
@@ -118,7 +148,7 @@ export function parseTranscriptData(rawTranscript, videoInfo = {}) {
 	return {
 		title: videoInfo.title || "YouTube Video",
 		thumbnail: videoInfo.thumbnail || "",
-		duration: formatDuration(duration),
+		duration: formatDuration(durationSeconds),
 		language: videoInfo.language || "en",
 		wordCount: wordCount,
 		segments: segments,
@@ -129,7 +159,7 @@ export function parseTranscriptData(rawTranscript, videoInfo = {}) {
 /**
  * Format duration in seconds to readable format
  */
-function formatDuration(seconds) {
+function formatDuration(seconds: number): string {
 	const hours = Math.floor(seconds / 3600);
 	const minutes = Math.floor((seconds % 3600) / 60);
 	const secs = Math.floor(seconds % 60);

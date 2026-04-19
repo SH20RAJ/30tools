@@ -6,7 +6,40 @@ const openai = new OpenAI({
 	apiKey: process.env.OPENAI_API_KEY,
 });
 
-export async function analyzeContent(content, keyword) {
+export interface ContentAnalysisResult {
+	score: number;
+	summary: string;
+	missingEntities: string[];
+	sentiment: "positive" | "neutral" | "negative";
+	readability: "Easy" | "Medium" | "Hard";
+	suggestions: string[];
+}
+
+export interface VoiceSearchQuestion {
+	question: string;
+	answer: string;
+	intent: "Informational" | "Transactional" | "Navigational";
+}
+
+export interface VoiceSearchOptimizationResult {
+	questions: VoiceSearchQuestion[];
+	strategy: string;
+}
+
+export interface TechnicalSeoFixResult {
+	analysis: string;
+	code: string;
+	language: "html" | "javascript" | "json" | "apache" | "text";
+	explanation: string;
+}
+
+export interface ActionResponse<T> {
+	success: boolean;
+	data?: T;
+	error?: string;
+}
+
+export async function analyzeContent(content: string, keyword: string): Promise<ActionResponse<ContentAnalysisResult>> {
 	if (!content || !keyword) {
 		return { success: false, error: "Content and keyword are required" };
 	}
@@ -40,9 +73,12 @@ export async function analyzeContent(content, keyword) {
 			response_format: { type: "json_object" },
 		});
 
-		const result = JSON.parse(completion.choices[0].message.content);
+		const contentStr = completion.choices[0].message.content;
+		if (!contentStr) throw new Error("No content in response");
+		
+		const result = JSON.parse(contentStr) as ContentAnalysisResult;
 		return { success: true, data: result };
-	} catch (error) {
+	} catch (error: any) {
 		console.error("AI Content Analysis Error:", error);
 		return {
 			success: false,
@@ -51,7 +87,7 @@ export async function analyzeContent(content, keyword) {
 	}
 }
 
-export async function optimizeForVoiceSearch(topic) {
+export async function optimizeForVoiceSearch(topic: string): Promise<ActionResponse<VoiceSearchOptimizationResult>> {
 	if (!topic) {
 		return { success: false, error: "Topic is required" };
 	}
@@ -88,9 +124,12 @@ export async function optimizeForVoiceSearch(topic) {
 			response_format: { type: "json_object" },
 		});
 
-		const result = JSON.parse(completion.choices[0].message.content);
+		const contentStr = completion.choices[0].message.content;
+		if (!contentStr) throw new Error("No content in response");
+
+		const result = JSON.parse(contentStr) as VoiceSearchOptimizationResult;
 		return { success: true, data: result };
-	} catch (error) {
+	} catch (error: any) {
 		console.error("Voice Search Optimization Error:", error);
 		return {
 			success: false,
@@ -99,7 +138,7 @@ export async function optimizeForVoiceSearch(topic) {
 	}
 }
 
-export async function fixTechnicalSeo(issue) {
+export async function fixTechnicalSeo(issue: string): Promise<ActionResponse<TechnicalSeoFixResult>> {
 	if (!issue) {
 		return { success: false, error: "Issue description is required" };
 	}
@@ -131,9 +170,12 @@ export async function fixTechnicalSeo(issue) {
 			response_format: { type: "json_object" },
 		});
 
-		const result = JSON.parse(completion.choices[0].message.content);
+		const contentStr = completion.choices[0].message.content;
+		if (!contentStr) throw new Error("No content in response");
+
+		const result = JSON.parse(contentStr) as TechnicalSeoFixResult;
 		return { success: true, data: result };
-	} catch (error) {
+	} catch (error: any) {
 		console.error("Technical SEO Fix Error:", error);
 		return {
 			success: false,

@@ -6,11 +6,11 @@ export function useToolAuth() {
 	// Mock user object
 	const user = null;
 
-	const requireAuth = useCallback(() => {
+	const requireAuth = useCallback((): boolean => {
 		return true;
 	}, []);
 
-	const signInWithRedirect = useCallback(() => {
+	const signInWithRedirect = useCallback((): void => {
 		// No-op or redirect to a custom sign-in page if one existed
 		console.log("Sign in requested (Stack Auth removed)");
 	}, []);
